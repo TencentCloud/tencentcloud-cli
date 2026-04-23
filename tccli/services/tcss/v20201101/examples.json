@@ -140,6 +140,22 @@
         "title": "容器网络创建yaml网络策略添加任务示例"
       }
     ],
+    "AddOrModifyMaliciousConnectionWhiteList": [
+      {
+        "document": "增加或修改恶意外连的白名单",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddOrModifyMaliciousConnectionWhiteList\n<公共请求参数>\n\n{\n    \"RequestType\": \"IP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "增加或修改恶意外连的白名单"
+      }
+    ],
+    "AddOrModifyVirusWhiteListRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddOrModifyVirusWhiteListRule\n<公共请求参数>\n\n{\n    \"Md5List\": [\n        \"fc7fd32908d50c4e2a0b40acbc5b281a\"\n    ],\n    \"Scope\": 1,\n    \"Id\": 256,\n    \"Remark\": \"image\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4acafaf7-70ff-43b0-860b-94a99e415ce3\"\n    }\n}",
+        "title": "新增木马白名单规则"
+      }
+    ],
     "CheckNetworkFirewallPolicyYaml": [
       {
         "document": "",
@@ -630,6 +646,14 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSearchTemplate\n<公共请求参数>\n\n{\n    \"Id\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"49082d4a-71b4-4e32-9ca1-b33872a4a63a\"\n    }\n}",
         "title": "删除检索模板"
+      }
+    ],
+    "DeleteVirusWhiteListRule": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DeleteVirusWhiteListRule\n&RuleIdSet.0=1\n&RuleIdSet.1=2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"safdswwasafd\"\n    }\n}",
+        "title": "批量删除木马白名单规则"
       }
     ],
     "DescribeABTestConfig": [
@@ -2182,6 +2206,14 @@
         "title": "查询木马一键检测预估超时时间"
       }
     ],
+    "DescribeVirusMonitorConfig": [
+      {
+        "document": "运行时查询文件查杀实时监控设置信息",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusMonitorSettingV2\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"EnableScan\": true,\n        \"IsIncludePath\": true,\n        \"ScanPath\": [\n            \"abc\"\n        ],\n        \"ScanPathMode\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "运行时查询文件查杀实时监控设置信息"
+      }
+    ],
     "DescribeVirusMonitorSetting": [
       {
         "document": "运行时查询文件查杀实时监控设置",
@@ -2196,6 +2228,14 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusSampleDownloadUrl\n<公共请求参数>\n\n{\n    \"ID\": \"1000\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\",\n        \"FileUrl\": \"http://****/a***\"\n    }\n}",
         "title": "查询木马样本下载url"
+      }
+    ],
+    "DescribeVirusScanConfig": [
+      {
+        "document": "运行时查询文件查杀新设置",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusScanSettingV2\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"EnableScan\": true,\n        \"Cycle\": 1,\n        \"BeginScanAt\": \"abc\",\n        \"Timeout\": 1,\n        \"ScanRangeType\": \"abc\",\n        \"ScanIDs\": [\n            {\n                \"IsAll\": true,\n                \"RangeType\": \"abc\",\n                \"IDs\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"ScanPath\": [\n            \"abc\"\n        ],\n        \"ScanPathMode\": \"abc\",\n        \"IsIncludePath\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "运行时查询文件查杀新设置"
       }
     ],
     "DescribeVirusScanSetting": [
@@ -2236,6 +2276,14 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusTaskList\n<公共请求参数>\n\n{\n    \"TaskId\": \"faketaskid\"\n}",
         "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"ff49ad4b-fe52-4f9d-8810-ba377eab9124\",\n        \"TotalCount\": 6\n    }\n}",
         "title": "运行时查询文件查杀任务列表"
+      }
+    ],
+    "DescribeVirusWhiteListRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusWhiteListRules\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Order\": \"DESC\",\n    \"By\": \"InsertTime\",\n    \"Filters\": [\n        {\n            \"Name\": \"id\",\n            \"Values\": [\n                \"246\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Id\": 276,\n                \"ImageCount\": 0,\n                \"ImageIds\": [],\n                \"InsertTime\": \"2026-04-07T21:53:45+08:00\",\n                \"Md5Count\": 1,\n                \"Md5List\": [\n                    \"923d548dd3c1431d18357da8dffd5780\"\n                ],\n                \"Remark\": \"\",\n                \"Scope\": 1,\n                \"UpdateTime\": \"2026-04-07T21:53:45+08:00\"\n            }\n        ],\n        \"TotalCount\": 28,\n        \"RequestId\": \"d9c3c32e-4e80-48bc-aa00-969b43b16485\"\n    }\n}",
+        "title": "文件查杀白名单列表"
       }
     ],
     "DescribeVulContainerList": [

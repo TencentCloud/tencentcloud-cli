@@ -2185,7 +2185,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "来源文档ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>来源文档ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "来源文档ID",
           "member": "string",
           "name": "DocId",
@@ -2196,7 +2196,7 @@
         },
         {
           "disabled": false,
-          "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id",
           "member": "string",
           "name": "Id",
@@ -2207,7 +2207,7 @@
         },
         {
           "disabled": false,
-          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "名称",
           "member": "string",
           "name": "Name",
@@ -2218,7 +2218,7 @@
         },
         {
           "disabled": false,
-          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>类型</p><p>枚举值：</p><ul><li>1： 问答</li><li>2： 文档片段</li><li>4： 联网检索到的内容</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
           "name": "Type",
@@ -2229,7 +2229,7 @@
         },
         {
           "disabled": false,
-          "document": "链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>链接</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "链接",
           "member": "string",
           "name": "Url",
@@ -2240,7 +2240,7 @@
         },
         {
           "disabled": false,
-          "document": "文档业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文档业务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "文档业务ID",
           "member": "string",
           "name": "DocBizId",
@@ -2251,7 +2251,7 @@
         },
         {
           "disabled": false,
-          "document": "文档名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文档名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "文档名称",
           "member": "string",
           "name": "DocName",
@@ -2262,7 +2262,7 @@
         },
         {
           "disabled": false,
-          "document": "问答业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>问答业务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "问答业务ID",
           "member": "string",
           "name": "QaBizId",
@@ -2273,7 +2273,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索引擎索引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>搜索引擎索引</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "Index",
@@ -2284,7 +2284,7 @@
         },
         {
           "disabled": false,
-          "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标题</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "标题",
           "member": "string",
           "name": "Title",
@@ -2295,7 +2295,7 @@
         },
         {
           "disabled": false,
-          "document": "知识库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>知识库名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "知识库名称",
           "member": "string",
           "name": "KnowledgeName",
@@ -2306,7 +2306,7 @@
         },
         {
           "disabled": false,
-          "document": "知识库标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>知识库标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "知识库标识",
           "member": "string",
           "name": "KnowledgeBizId",
@@ -3342,10 +3342,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型名称",
-          "example": "",
+          "document": "<p>模型别名</p>",
+          "example": "\"DeepSeek-V3-0324\"",
           "member": "string",
-          "name": "ModelName",
+          "name": "AliasName",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -3353,19 +3353,8 @@
         },
         {
           "disabled": false,
-          "document": "模型参数",
-          "example": "",
-          "member": "ModelParams",
-          "name": "ModelParams",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "限制",
-          "example": "",
+          "document": "<p>限制</p>",
+          "example": "5",
           "member": "uint64",
           "name": "HistoryLimit",
           "output_required": false,
@@ -3375,13 +3364,24 @@
         },
         {
           "disabled": false,
-          "document": "模型别名",
-          "example": "",
+          "document": "<p>模型名称</p>",
+          "example": "Deepseek/deepseek-v3-250324",
           "member": "string",
-          "name": "AliasName",
+          "name": "ModelName",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型参数</p>",
+          "example": "无",
+          "member": "ModelParams",
+          "name": "ModelParams",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -5423,7 +5423,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID, 获取方式参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
+          "document": "<p>应用ID, 获取方式参看如何获取<a href=\"https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa\">BotBizId</a></p>",
           "example": "1844287616635371520",
           "member": "string",
           "name": "BotBizId",
@@ -5432,7 +5432,7 @@
         },
         {
           "disabled": false,
-          "document": "拒答问题\n\n",
+          "document": "<p>拒答问题</p>",
           "example": "您是谁",
           "member": "string",
           "name": "Question",
@@ -5441,7 +5441,7 @@
         },
         {
           "disabled": false,
-          "document": "拒答问题来源， 1- 来源于不满意回复;  2 - 来源于手动添加",
+          "document": "<p>拒答问题来源， 1- 来源于不满意回复;  2 - 来源于手动添加</p>",
           "example": "2",
           "member": "uint64",
           "name": "BusinessSource",
@@ -5450,12 +5450,21 @@
         },
         {
           "disabled": false,
-          "document": "拒答问题来源的数据源唯一id\n\n",
+          "document": "<p>拒答问题来源的数据源唯一id</p>",
           "example": "18781034349007",
           "member": "string",
           "name": "BusinessId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>拒答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效 默认值：2。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "EnableScope",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5532,7 +5541,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "共享知识库名称，字符数量范围：[1, 50]",
+          "document": "<p>共享知识库名称，字符数量范围：[1, 50]</p>",
           "example": "共享知识库1",
           "member": "string",
           "name": "KnowledgeName",
@@ -5541,7 +5550,7 @@
         },
         {
           "disabled": false,
-          "document": "共享知识库描述，字符数量上限2000",
+          "document": "<p>共享知识库描述，字符数量上限2000</p>",
           "example": "计算机基础理论知识库",
           "member": "string",
           "name": "KnowledgeDescription",
@@ -5550,7 +5559,7 @@
         },
         {
           "disabled": true,
-          "document": "Embedding模型，字符数量上限128",
+          "document": "<p>Embedding模型，字符数量上限128</p>",
           "example": "general-text-embedding-v2.7",
           "member": "string",
           "name": "EmbeddingModel",
@@ -5559,12 +5568,21 @@
         },
         {
           "disabled": false,
-          "document": "共享知识库类型，0普通，1公众号",
+          "document": "<p>共享知识库类型，0普通，1公众号</p>",
           "example": "0",
           "member": "int64",
           "name": "KnowledgeType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>ES存储配置</p>",
+          "example": "无",
+          "member": "ESConfig",
+          "name": "EsConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5574,7 +5592,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "共享知识库业务ID",
+          "document": "<p>共享知识库业务ID</p>",
           "example": "1908652910168703294",
           "member": "string",
           "name": "KnowledgeBizId",
@@ -9408,6 +9426,78 @@
       ],
       "usage": "in"
     },
+    "ESConfig": {
+      "document": "ES存储配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存储类型，0: 未知类型， 1:默认存储(平台提供)，2: 自定义存储(用户自建ES)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "StorageType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ES集群名称(自定义存储时必填)</p>",
+          "example": "adp-es-test",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ES集群ID(自定义存储时必填)</p>",
+          "example": "es-lrdea212",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ES用户名(自定义存储时必填)</p>",
+          "example": "elastic",
+          "member": "string",
+          "name": "Username",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ES密码(自定义存储时必填)</p>",
+          "example": "Yxw-1234",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>允许修改存储方式</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CanModify",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ExportAttributeLabelRequest": {
       "document": "ExportAttributeLabel请求参数结构体",
       "members": [
@@ -9782,6 +9872,30 @@
         }
       ],
       "usage": "both"
+    },
+    "FilterItem": {
+      "document": "筛选条件。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "筛选内容。\n例如筛选审核状态可以使用\"AuditStatus\"",
+          "example": "AuditStatus",
+          "member": "string",
+          "name": "FilterKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件。\n例如对于筛选内容\"AuditStatus\"，可使用筛选条件:\n\"ContentFailed\":\"内容审核失败\",\n\"PictureFailed\":\"图片审核失败\",\n\"ContentAndPictureFailed\":\"图片和内容审核失败\",",
+          "example": "[\"ContentFailed\",\"PictureFailed\",\"ContentAndPictureFailed\"]",
+          "member": "string",
+          "name": "FilterValue",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "Filters": {
       "document": "不满意回复检索过滤",
@@ -14296,7 +14410,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID, 获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。",
+          "document": "<p>应用ID, 获取方法参看如何获取   <a href=\"https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa\">BotBizId</a>。</p>",
           "example": "1963122248037063424",
           "member": "string",
           "name": "BotBizId",
@@ -14305,7 +14419,7 @@
         },
         {
           "disabled": false,
-          "document": "页码（必须大于0）",
+          "document": "<p>页码（必须大于0）</p><p>默认值：1</p>",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -14314,7 +14428,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量（取值范围1-200）",
+          "document": "<p>每页数量（取值范围1-200）</p><p>默认值：15</p>",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
@@ -14323,12 +14437,21 @@
         },
         {
           "disabled": false,
-          "document": "查询内容\n",
+          "document": "<p>查询内容</p>",
           "example": "11",
           "member": "string",
           "name": "Query",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件：<br>生效： EnableScope: 1,2,3,4</p>",
+          "example": "无",
+          "member": "FilterItem",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -14338,7 +14461,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "1423",
           "member": "string",
           "name": "Total",
@@ -14348,7 +14471,7 @@
         },
         {
           "disabled": false,
-          "document": "拒答问题列表",
+          "document": "<p>拒答问题列表</p>",
           "example": "无",
           "member": "RejectedQuestion",
           "name": "List",
@@ -15362,6 +15485,15 @@
           "name": "LoginSubAccountUin",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询内容",
+          "example": "bnis908spzb4",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15403,7 +15535,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cs-normal",
           "member": "string",
           "name": "ModelName",
@@ -15414,7 +15546,7 @@
         },
         {
           "disabled": false,
-          "document": "模型描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "模型描述信息",
           "member": "string",
           "name": "ModelDesc",
@@ -15425,7 +15557,7 @@
         },
         {
           "disabled": false,
-          "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "精调模型",
           "member": "string",
           "name": "AliasName",
@@ -15436,7 +15568,7 @@
         },
         {
           "disabled": false,
-          "document": "资源状态 1：资源可用；2：资源已用尽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源状态 1：资源可用；2：资源已用尽</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "ResourceStatus",
@@ -15447,7 +15579,7 @@
         },
         {
           "disabled": false,
-          "document": "提示词内容字符限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>提示词内容字符限制</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"8K\", \"256K\"]",
           "member": "string",
           "name": "PromptWordsLimit",
@@ -15458,7 +15590,7 @@
         },
         {
           "disabled": false,
-          "document": "通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ModelParameter",
           "name": "TopP",
@@ -15469,7 +15601,7 @@
         },
         {
           "disabled": false,
-          "document": "温度控制随机性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>温度控制随机性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ModelParameter",
           "name": "Temperature",
@@ -15480,7 +15612,7 @@
         },
         {
           "disabled": false,
-          "document": "最多能生成的token数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最多能生成的token数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ModelParameter",
           "name": "MaxTokens",
@@ -15491,7 +15623,7 @@
         },
         {
           "disabled": false,
-          "document": "模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型",
+          "document": "<p>模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型</p>",
           "example": "Hunyuan",
           "member": "string",
           "name": "Source",
@@ -15502,7 +15634,7 @@
         },
         {
           "disabled": false,
-          "document": "模型图标",
+          "document": "<p>模型图标</p>",
           "example": "https://cdn.xiaowei.qq.com/lke/assets/static/modelicon/hunyuan.png",
           "member": "string",
           "name": "Icon",
@@ -15513,7 +15645,7 @@
         },
         {
           "disabled": false,
-          "document": "是否免费",
+          "document": "<p>是否免费</p>",
           "example": "true",
           "member": "bool",
           "name": "IsFree",
@@ -15524,7 +15656,7 @@
         },
         {
           "disabled": false,
-          "document": "模型对话框可输入的上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型对话框可输入的上限</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4000",
           "member": "uint64",
           "name": "InputLenLimit",
@@ -15535,7 +15667,7 @@
         },
         {
           "disabled": false,
-          "document": "支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "SupportWorkflowStatus",
@@ -15546,7 +15678,7 @@
         },
         {
           "disabled": false,
-          "document": "模型类别 generate：生成模型，thought：思考模型",
+          "document": "<p>模型类别 generate：生成模型，thought：思考模型</p>",
           "example": "generate",
           "member": "string",
           "name": "ModelCategory",
@@ -15557,7 +15689,7 @@
         },
         {
           "disabled": false,
-          "document": "是否默认模型",
+          "document": "<p>是否默认模型</p>",
           "example": "true",
           "member": "bool",
           "name": "IsDefault",
@@ -15568,7 +15700,7 @@
         },
         {
           "disabled": false,
-          "document": "角色提示词输入长度限制",
+          "document": "<p>角色提示词输入长度限制</p>",
           "example": "4000",
           "member": "uint64",
           "name": "RoleLenLimit",
@@ -15579,7 +15711,7 @@
         },
         {
           "disabled": false,
-          "document": "是否专属并发模型",
+          "document": "<p>是否专属并发模型</p>",
           "example": "true",
           "member": "bool",
           "name": "IsExclusive",
@@ -15590,7 +15722,7 @@
         },
         {
           "disabled": false,
-          "document": "模型支持智能通话效果",
+          "document": "<p>模型支持智能通话效果</p><p>枚举值：</p><ul><li>0： 模型不支持</li><li>1： 模型支持ai通话</li><li>2： 模型ai通话支持效果不佳</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "SupportAiCallStatus",
@@ -15601,7 +15733,7 @@
         },
         {
           "disabled": false,
-          "document": "专属并发数",
+          "document": "<p>专属并发数</p>",
           "example": "5",
           "member": "uint64",
           "name": "Concurrency",
@@ -15612,7 +15744,7 @@
         },
         {
           "disabled": false,
-          "document": "模型标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"文本推理\"]",
           "member": "string",
           "name": "ModelTags",
@@ -15623,7 +15755,7 @@
         },
         {
           "disabled": false,
-          "document": "模型超参定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型超参定义</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ModelParameter",
           "name": "ModelParams",
@@ -15634,7 +15766,7 @@
         },
         {
           "disabled": false,
-          "document": "提供商名称",
+          "document": "<p>提供商名称</p>",
           "example": "Hunyuan",
           "member": "string",
           "name": "ProviderName",
@@ -15645,7 +15777,7 @@
         },
         {
           "disabled": false,
-          "document": "提供商别名",
+          "document": "<p>提供商别名</p>",
           "example": "腾讯混元",
           "member": "string",
           "name": "ProviderAliasName",
@@ -15656,7 +15788,7 @@
         },
         {
           "disabled": false,
-          "document": "提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商",
+          "document": "<p>提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商</p>",
           "example": "Self",
           "member": "string",
           "name": "ProviderType",
@@ -15667,7 +15799,7 @@
         },
         {
           "disabled": false,
-          "document": "是否关闭模型超参",
+          "document": "<p>是否关闭模型超参</p>",
           "example": "false",
           "member": "bool",
           "name": "IsCloseModelParams",
@@ -15678,7 +15810,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持深度思考",
+          "document": "<p>是否支持深度思考</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDeepThinking",
@@ -15695,7 +15827,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "超参名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>超参名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "temperature",
           "member": "string",
           "name": "Name",
@@ -15706,7 +15838,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "<p>类型</p><p>枚举值：</p><ul><li>string： 字符类型</li><li>int： 整数类型</li><li>float： 浮点数类型</li><li>array： 数组类型</li></ul>",
           "example": "string",
           "member": "string",
           "name": "Type",
@@ -15717,7 +15849,7 @@
         },
         {
           "disabled": false,
-          "document": "默认值",
+          "document": "<p>默认值</p>",
           "example": "1",
           "member": "string",
           "name": "DefaultValue",
@@ -15728,7 +15860,7 @@
         },
         {
           "disabled": false,
-          "document": "枚举值",
+          "document": "<p>枚举值</p>",
           "example": "[\"disable\",\"high\"]",
           "member": "string",
           "name": "EnumValues",
@@ -15739,7 +15871,7 @@
         },
         {
           "disabled": false,
-          "document": "默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>默认值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3.2",
           "member": "float",
           "name": "Default",
@@ -15750,7 +15882,7 @@
         },
         {
           "disabled": false,
-          "document": "最小值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最小值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2.3",
           "member": "float",
           "name": "Min",
@@ -15761,7 +15893,7 @@
         },
         {
           "disabled": false,
-          "document": "最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最大值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3.4",
           "member": "float",
           "name": "Max",
@@ -15778,106 +15910,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "温度",
-          "example": "0.1",
-          "member": "float",
-          "name": "Temperature",
-          "output_required": false,
-          "required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Top_P",
-          "example": "0.1",
-          "member": "float",
-          "name": "TopP",
-          "output_required": false,
-          "required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "随机种子",
-          "example": "3",
-          "member": "int64",
-          "name": "Seed",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "存在惩罚",
-          "example": "0.1",
-          "member": "float",
-          "name": "PresencePenalty",
-          "output_required": false,
-          "required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "频率惩罚",
-          "example": "0.1",
-          "member": "float",
-          "name": "FrequencyPenalty",
-          "output_required": false,
-          "required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "重复惩罚",
-          "example": "0.1",
-          "member": "float",
-          "name": "RepetitionPenalty",
-          "output_required": false,
-          "required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "最大输出长度",
-          "example": "1",
-          "member": "int64",
-          "name": "MaxTokens",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "停止序列",
-          "example": "[\"set\"]",
-          "member": "string",
-          "name": "StopSequences",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "输出格式",
-          "example": "text",
-          "member": "string",
-          "name": "ReplyFormat",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "深度思考值\ndisabled\nenabled\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>深度思考值<br>disabled<br>enabled</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "enabled",
           "member": "string",
           "name": "DeepThinking",
@@ -15888,7 +15921,40 @@
         },
         {
           "disabled": false,
-          "document": "效果 disabled low medium high\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>频率惩罚</p>",
+          "example": "0.1",
+          "member": "float",
+          "name": "FrequencyPenalty",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大输出长度</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存在惩罚</p>",
+          "example": "0.1",
+          "member": "float",
+          "name": "PresencePenalty",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>效果 disabled low medium high</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "disabled",
           "member": "string",
           "name": "ReasoningEffort",
@@ -15896,6 +15962,72 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>重复惩罚</p>",
+          "example": "0.1",
+          "member": "float",
+          "name": "RepetitionPenalty",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出格式</p>",
+          "example": "text",
+          "member": "string",
+          "name": "ReplyFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>随机种子</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Seed",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>停止序列</p>",
+          "example": "[\"set\"]",
+          "member": "string",
+          "name": "StopSequences",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>温度</p>",
+          "example": "0.1",
+          "member": "float",
+          "name": "Temperature",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Top_P</p>",
+          "example": "0.1",
+          "member": "float",
+          "name": "TopP",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -16712,7 +16844,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "内容",
+          "document": "<p>内容</p>",
           "example": "出差酒店房间推荐",
           "member": "string",
           "name": "Content",
@@ -16722,7 +16854,7 @@
         },
         {
           "disabled": false,
-          "document": "当前记录所对应的 Session ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前记录所对应的 Session ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abb03b38-efcc-4d8e-bfc2-231100a04a26",
           "member": "string",
           "name": "SessionId",
@@ -16732,7 +16864,7 @@
         },
         {
           "disabled": false,
-          "document": "记录ID",
+          "document": "<p>记录ID</p>",
           "example": "Fp3_20250910_202900_770_j31qfUuB",
           "member": "string",
           "name": "RecordId",
@@ -16742,7 +16874,7 @@
         },
         {
           "disabled": false,
-          "document": "关联记录ID",
+          "document": "<p>关联记录ID</p>",
           "example": "Fp3_20250910_202900_770_j31qfUuB",
           "member": "string",
           "name": "RelatedRecordId",
@@ -16752,7 +16884,7 @@
         },
         {
           "disabled": false,
-          "document": "是否来自自己",
+          "document": "<p>是否来自自己</p>",
           "example": "false",
           "member": "bool",
           "name": "IsFromSelf",
@@ -16762,7 +16894,7 @@
         },
         {
           "disabled": false,
-          "document": "发送者名称",
+          "document": "<p>发送者名称</p>",
           "example": "访客",
           "member": "string",
           "name": "FromName",
@@ -16772,7 +16904,7 @@
         },
         {
           "disabled": false,
-          "document": "发送者头像",
+          "document": "<p>发送者头像</p>",
           "example": "https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/avatar_monkey01.png",
           "member": "string",
           "name": "FromAvatar",
@@ -16782,7 +16914,7 @@
         },
         {
           "disabled": false,
-          "document": "时间戳",
+          "document": "<p>时间戳</p>",
           "example": "1757507341",
           "member": "string",
           "name": "Timestamp",
@@ -16792,7 +16924,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已读",
+          "document": "<p>是否已读</p>",
           "example": "false",
           "member": "bool",
           "name": "HasRead",
@@ -16802,7 +16934,7 @@
         },
         {
           "disabled": false,
-          "document": "评价",
+          "document": "<p>评价</p>",
           "example": "0",
           "member": "uint64",
           "name": "Score",
@@ -16812,7 +16944,7 @@
         },
         {
           "disabled": false,
-          "document": "是否评分",
+          "document": "<p>是否评分</p>",
           "example": "false",
           "member": "bool",
           "name": "CanRating",
@@ -16822,7 +16954,7 @@
         },
         {
           "disabled": false,
-          "document": "是否展示反馈按钮\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否展示反馈按钮</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "CanFeedback",
@@ -16832,7 +16964,7 @@
         },
         {
           "disabled": false,
-          "document": "记录类型",
+          "document": "<p>记录类型</p>",
           "example": "0",
           "member": "uint64",
           "name": "Type",
@@ -16842,7 +16974,7 @@
         },
         {
           "disabled": false,
-          "document": "引用来源",
+          "document": "<p>引用来源</p>",
           "example": "无",
           "member": "MsgRecordReference",
           "name": "References",
@@ -16852,7 +16984,7 @@
         },
         {
           "disabled": false,
-          "document": "评价原因",
+          "document": "<p>评价原因</p>",
           "example": "[\"评价\"]",
           "member": "string",
           "name": "Reasons",
@@ -16862,7 +16994,7 @@
         },
         {
           "disabled": false,
-          "document": "是否大模型",
+          "document": "<p>是否大模型</p>",
           "example": "false",
           "member": "bool",
           "name": "IsLlmGenerated",
@@ -16872,7 +17004,7 @@
         },
         {
           "disabled": false,
-          "document": "图片链接，可公有读\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>图片链接，可公有读</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"https://xxx.jpg\"]",
           "member": "string",
           "name": "ImageUrls",
@@ -16882,7 +17014,7 @@
         },
         {
           "disabled": false,
-          "document": "当次 token 统计信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当次 token 统计信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TokenStat",
           "name": "TokenStat",
@@ -16892,7 +17024,7 @@
         },
         {
           "disabled": false,
-          "document": "回复方式\n1:大模型直接回复;\n2:保守回复, 未知问题回复;\n3:拒答问题回复;\n4:敏感回复;\n5:问答对直接回复, 已采纳问答对优先回复;\n6:欢迎语回复;\n7:并发超限回复;\n8:全局干预知识;\n9:任务流程过程回复, 当历史记录中 task_flow.type = 0 时, 为大模型回复;\n10:任务流程答案回复;\n11:搜索引擎回复;\n12:知识润色后回复;\n13:图片理解回复;\n14:实时文档回复;\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>回复方式<br>1:大模型直接回复;<br>2:保守回复, 未知问题回复;<br>3:拒答问题回复;<br>4:敏感回复;<br>5:问答对直接回复, 已采纳问答对优先回复;<br>6:欢迎语回复;<br>7:并发超限回复;<br>8:全局干预知识;<br>9:任务流程过程回复, 当历史记录中 task_flow.type = 0 时, 为大模型回复;<br>10:任务流程答案回复;<br>11:搜索引擎回复;<br>12:知识润色后回复;<br>13:图片理解回复;<br>14:实时文档回复;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "ReplyMethod",
@@ -16902,7 +17034,7 @@
         },
         {
           "disabled": false,
-          "document": "选项卡, 用于多轮对话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>选项卡, 用于多轮对话</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"选项1\",\"选项2\"]",
           "member": "string",
           "name": "OptionCards",
@@ -16912,7 +17044,7 @@
         },
         {
           "disabled": false,
-          "document": "任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskFlowInfo",
           "name": "TaskFlow",
@@ -16922,7 +17054,7 @@
         },
         {
           "disabled": false,
-          "document": "用户传入的文件信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户传入的文件信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileInfo",
           "name": "FileInfos",
@@ -16932,7 +17064,7 @@
         },
         {
           "disabled": false,
-          "document": "参考来源引用位置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参考来源引用位置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "QuoteInfo",
           "name": "QuoteInfos",
@@ -16942,7 +17074,7 @@
         },
         {
           "disabled": false,
-          "document": "Agent的思考过程信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Agent的思考过程信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AgentThought",
           "name": "AgentThought",
@@ -16952,7 +17084,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>扩展信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExtraInfo",
           "name": "ExtraInfo",
@@ -16962,7 +17094,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowInfo",
           "name": "WorkFlow",
@@ -16972,7 +17104,7 @@
         },
         {
           "disabled": false,
-          "document": "Widget信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Widget信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Widget",
           "name": "Widgets",
@@ -16982,7 +17114,7 @@
         },
         {
           "disabled": false,
-          "document": "Widget动作信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Widget动作信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WidgetAction",
           "name": "WidgetAction",
@@ -16992,13 +17124,23 @@
         },
         {
           "disabled": false,
-          "document": "音频信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>音频信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Audio",
           "name": "Audios",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标识选项卡为单选还是双选</p><p>枚举值：</p><ul><li>0： 单选</li><li>1： 双选</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "OptionMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17008,7 +17150,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "id",
+          "document": "<p>id</p>",
           "example": "asasdf",
           "member": "string",
           "name": "Id",
@@ -17019,7 +17161,7 @@
         },
         {
           "disabled": false,
-          "document": "链接",
+          "document": "<p>链接</p>",
           "example": "https://xxxxxx.com/xxx",
           "member": "string",
           "name": "Url",
@@ -17030,7 +17172,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "<p>类型</p><p>枚举值：</p><ul><li>1： 问答</li><li>2： 文档片段</li><li>4： 联网检索到的内容</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -17041,7 +17183,7 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "<p>名称</p>",
           "example": "todo",
           "member": "string",
           "name": "Name",
@@ -17052,7 +17194,7 @@
         },
         {
           "disabled": false,
-          "document": "来源文档ID",
+          "document": "<p>来源文档ID</p>",
           "example": "1134",
           "member": "string",
           "name": "DocId",
@@ -17063,7 +17205,7 @@
         },
         {
           "disabled": false,
-          "document": "知识库名称",
+          "document": "<p>知识库名称</p>",
           "example": "知识库名称",
           "member": "string",
           "name": "KnowledgeName",
@@ -17074,7 +17216,7 @@
         },
         {
           "disabled": false,
-          "document": "知识库业务id",
+          "document": "<p>知识库业务id</p>",
           "example": "知识库标识",
           "member": "string",
           "name": "KnowledgeBizId",
@@ -17085,7 +17227,7 @@
         },
         {
           "disabled": false,
-          "document": "文档业务id",
+          "document": "<p>文档业务id</p>",
           "example": "文档标识",
           "member": "string",
           "name": "DocBizId",
@@ -17096,7 +17238,7 @@
         },
         {
           "disabled": false,
-          "document": "问答业务id",
+          "document": "<p>问答业务id</p>",
           "example": "问答标识",
           "member": "string",
           "name": "QaBizId",
@@ -17107,7 +17249,7 @@
         },
         {
           "disabled": false,
-          "document": "文档索引id",
+          "document": "<p>文档索引id</p>",
           "example": "1",
           "member": "uint64",
           "name": "Index",
@@ -17705,10 +17847,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数名称",
-          "example": "姓名",
+          "document": "AnyOf类型参数",
+          "example": "无",
+          "member": "PluginToolReqParam",
+          "name": "AnyOf",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数默认值",
+          "example": "张三",
           "member": "string",
-          "name": "Name",
+          "name": "DefaultValue",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -17727,13 +17880,13 @@
         },
         {
           "disabled": false,
-          "document": "参数类型，0:string, 1:int, 2:float，3:bool 4:object 5:array_string, 6:array_int, 7:array_float, 8:array_bool, 9:array_object, 99:null, 100:upspecified",
-          "example": "0",
-          "member": "int64",
-          "name": "Type",
+          "document": "插件参数配置是否隐藏不可见，true-隐藏不可见，false-可见",
+          "example": "false",
+          "member": "bool",
+          "name": "GlobalHidden",
           "output_required": false,
           "required": false,
-          "type": "int",
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -17749,35 +17902,13 @@
         },
         {
           "disabled": false,
-          "document": "参数默认值",
-          "example": "张三",
+          "document": "参数名称",
+          "example": "姓名",
           "member": "string",
-          "name": "DefaultValue",
+          "name": "Name",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "子参数,ParamType 是OBJECT 或 ARRAY<>类型有用",
-          "example": "无",
-          "member": "PluginToolReqParam",
-          "name": "SubParams",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "插件参数配置是否隐藏不可见，true-隐藏不可见，false-可见",
-          "example": "false",
-          "member": "bool",
-          "name": "GlobalHidden",
-          "output_required": false,
-          "required": false,
-          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -17793,13 +17924,24 @@
         },
         {
           "disabled": false,
-          "document": "AnyOf类型参数",
+          "document": "子参数,ParamType 是OBJECT 或 ARRAY<>类型有用",
           "example": "无",
           "member": "PluginToolReqParam",
-          "name": "AnyOf",
+          "name": "SubParams",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数类型，0:string, 1:int, 2:float，3:bool 4:object 5:array_string, 6:array_int, 7:array_float, 8:array_bool, 9:array_object, 99:null, 100:upspecified",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -18831,6 +18973,16 @@
           "name": "Operator",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "拒答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "EnableScope",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -20032,7 +20184,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "deepseek-v3",
           "member": "string",
           "name": "ModelName",
@@ -20043,7 +20195,7 @@
         },
         {
           "disabled": false,
-          "document": "首Token耗时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>首Token耗时</p><p>单位：ms</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "FirstTokenCost",
@@ -20054,7 +20206,7 @@
         },
         {
           "disabled": false,
-          "document": "总耗时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总耗时</p><p>单位：ms</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "TotalCost",
@@ -20065,7 +20217,7 @@
         },
         {
           "disabled": false,
-          "document": "输入Token数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输入Token数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "InputTokens",
@@ -20076,7 +20228,7 @@
         },
         {
           "disabled": false,
-          "document": "输出Token数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出Token数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "OutputTokens",
@@ -20087,7 +20239,7 @@
         },
         {
           "disabled": false,
-          "document": "总Token数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总Token数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "TotalTokens",
@@ -21535,7 +21687,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "asdf125",
           "member": "string",
           "name": "WorkflowId",
@@ -21546,7 +21698,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "挂号工作流",
           "member": "string",
           "name": "WorkflowName",
@@ -21557,7 +21709,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流运行ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流运行ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "asdf2125",
           "member": "string",
           "name": "WorkflowRunId",
@@ -21568,7 +21720,7 @@
         },
         {
           "disabled": false,
-          "document": "节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowRunNodeInfo",
           "name": "RunNodes",
@@ -21579,7 +21731,7 @@
         },
         {
           "disabled": false,
-          "document": "选项卡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>选项卡</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"选项A\",\"选项B\"]",
           "member": "string",
           "name": "OptionCards",
@@ -21590,7 +21742,7 @@
         },
         {
           "disabled": false,
-          "document": "多气泡的输出结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>多气泡的输出结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"是的\",\"请稍等，正在为您查询\"]",
           "member": "string",
           "name": "Outputs",
@@ -21601,7 +21753,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流发布时间，unix时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流发布时间，unix时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "WorkflowReleaseTime",
@@ -21612,7 +21764,7 @@
         },
         {
           "disabled": false,
-          "document": "中间消息",
+          "document": "<p>中间消息</p>",
           "example": "[\"中间消息\"]",
           "member": "string",
           "name": "PendingMessages",
@@ -21623,7 +21775,7 @@
         },
         {
           "disabled": false,
-          "document": "选项卡索引",
+          "document": "<p>选项卡索引</p>",
           "example": "无",
           "member": "OptionCardIndex",
           "name": "OptionCardIndex",
@@ -21634,7 +21786,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流多气泡输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流多气泡输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Content",
           "name": "Contents",
@@ -21642,6 +21794,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标识选项卡为单选还是双选</p><p>枚举值：</p><ul><li>0： 单选</li><li>1： 多选</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "OptionMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -21651,7 +21814,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "07d859ac-ec6a-0387-3121-a5ca6514e880",
           "member": "string",
           "name": "WorkflowId",
@@ -21662,7 +21825,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "挂号工作流",
           "member": "string",
           "name": "WorkflowName",
@@ -21673,7 +21836,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流运行ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流运行ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "07d859ac-ec6a-0387-3121-a5ca6514e880",
           "member": "string",
           "name": "WorkflowRunId",
@@ -21684,7 +21847,7 @@
         },
         {
           "disabled": false,
-          "document": "选项卡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>选项卡</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"选项A\",\"选项B\"]",
           "member": "string",
           "name": "OptionCards",
@@ -21695,7 +21858,7 @@
         },
         {
           "disabled": false,
-          "document": "多气泡的输出结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>多气泡的输出结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"是的\",\"请稍等，正在为您查询\"]",
           "member": "string",
           "name": "Outputs",
@@ -21706,7 +21869,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流发布时间，unix时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流发布时间，unix时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1746800121",
           "member": "string",
           "name": "WorkflowReleaseTime",
@@ -21717,7 +21880,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流多气泡输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流多气泡输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Content",
           "name": "Contents",
@@ -21725,6 +21888,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标识选项卡为单选还是双选</p><p>枚举值：</p><ul><li>0： 单选</li><li>1： 多选</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "OptionMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -22137,7 +22311,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>节点类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点类型</p><p>枚举值：</p><ul><li>0： 未指定</li><li>1： 开始节点</li><li>2： 参数提取节点</li><li>3： 大模型节点</li><li>4： 知识问答节点</li><li>5： 知识检索节点</li><li>6： 标签提取节点</li><li>7： 代码执行节点</li><li>8： 工具节点</li><li>9： 逻辑判断节点</li><li>10： 消息节点</li><li>11： 选项卡节点</li><li>12： 循环节点</li><li>13： 意图识别节点</li><li>14： 工作流节点</li><li>15： 插件节点</li><li>16： 结束节点</li><li>17： 变量聚合节点</li><li>18： 批处理节点</li><li>19： 消息队列节点</li><li>20： 数据库节点</li><li>21： 变量赋值节点</li><li>22： 变量转换节点</li><li>23： Agent节点</li><li>24： 注释节点</li><li>25： 文件收集节点</li><li>26： 文本收集节点</li><li>27： Widget 节点</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "NodeType",
@@ -22159,7 +22333,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>0： 初始状态</li><li>1： 运行中</li><li>2： 运行成功</li><li>3： 运行失败</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "Status",

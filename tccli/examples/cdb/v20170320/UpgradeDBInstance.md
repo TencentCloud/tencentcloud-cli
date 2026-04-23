@@ -1,25 +1,27 @@
-**Example 1: 升级云数据库实例**
+**Example 1: 实例升级**
 
-升级云数据库实例
+
 
 Input: 
 
 ```
 tccli cdb UpgradeDBInstance --cli-unfold-argument  \
-    --InstanceId cdb-6si6qy6p \
-    --Volume 50 \
-    --Memory 1000
+    --InstanceId cdb-bxtgirxj \
+    --Memory 2000 \
+    --Volume 110 \
+    --ProtectMode 1 \
+    --WaitSwitch 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
+        "AsyncRequestId": "ec58aec9-05d6185f-02dad5fa-b67f1dff",
         "DealIds": [
-            "20171204110077"
+            "20260423753022636848431"
         ],
-        "AsyncRequestId": "a6040589-3b098df5-b551d9e5-81c6bfdc"
+        "RequestId": "fe1a3323-5968-40c1-939e-56f659c2f3c5"
     }
 }
 ```

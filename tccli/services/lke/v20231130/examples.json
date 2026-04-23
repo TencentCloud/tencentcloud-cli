@@ -82,10 +82,10 @@
     ],
     "CreateSharedKnowledge": [
       {
-        "document": "创建共享知识库",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSharedKnowledge\n<公共请求参数>\n\n{\n    \"KnowledgeName\": \"共享知识库1\",\n    \"KnowledgeDescription\": \"计算机基础理论知识库\",\n    \"EmbeddingModel\": \"general-text-embedding-v2.7\"\n}",
-        "output": "{\n    \"Response\": {\n        \"KnowledgeBizId\": \"1908652910168703294\",\n        \"RequestId\": \"798dbcd5-80e1-277d-aeb7-0018abab7686\"\n    }\n}",
-        "title": "创建共享知识库"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSharedKnowledge\n<公共请求参数>\n\n{\n    \"KnowledgeName\": \"test-0423\",\n    \"KnowledgeType\": 0,\n    \"EsConfig\": {\n        \"StorageType\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"KnowledgeBizId\": \"2047150542445725376\",\n        \"RequestId\": \"ae90730a-57cd-4668-bdec-2389880ad12c\"\n    }\n}",
+        "title": "正常请求"
       }
     ],
     "CreateVar": [
@@ -598,10 +598,10 @@
     ],
     "ListRejectedQuestion": [
       {
-        "document": "获取拒答问题列表",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRejectedQuestion\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1995331832265990976\",\n    \"Query\": \"价\",\n    \"PageNumber\": 1,\n    \"PageSize\": 15\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"IsAllowDelete\": true,\n                \"IsAllowEdit\": true,\n                \"Operator\": \"coco测试11\",\n                \"Question\": \"内部员工价是多少？\",\n                \"RejectedBizId\": \"2001120585035292864\",\n                \"Status\": 3,\n                \"StatusDesc\": \"已发布\",\n                \"UpdateTime\": \"1765939321\"\n            },\n            {\n                \"IsAllowDelete\": true,\n                \"IsAllowEdit\": true,\n                \"Operator\": \"coco测试11\",\n                \"Question\": \"你们的价格能比拼多多便宜么?\",\n                \"RejectedBizId\": \"2001120437290934464\",\n                \"Status\": 3,\n                \"StatusDesc\": \"已发布\",\n                \"UpdateTime\": \"1765939321\"\n            },\n            {\n                \"IsAllowDelete\": true,\n                \"IsAllowEdit\": true,\n                \"Operator\": \"coco测试11\",\n                \"Question\": \"能告诉我进货价是多少么?\",\n                \"RejectedBizId\": \"2001120335801360576\",\n                \"Status\": 3,\n                \"StatusDesc\": \"已发布\",\n                \"UpdateTime\": \"1765939321\"\n            }\n        ],\n        \"RequestId\": \"6dd9b41d-9b7d-4b5b-a968-5ddfba77f3a7\",\n        \"Total\": \"3\"\n    }\n}",
-        "title": "获取拒答问题列表"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRejectedQuestion\n<公共请求参数>\n\n{\n    \"BotBizId\": \"2003116222155701696\",\n    \"Query\": \"\",\n    \"PageNumber\": 1,\n    \"PageSize\": 15\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"f5868e30-fb21-47ca-88d3-da240a5cbebf\",\n        \"Total\": \"0\"\n    }\n}",
+        "title": "ListRejectedQuestion"
       }
     ],
     "ListRejectedQuestionPreview": [
@@ -678,9 +678,9 @@
     ],
     "ListWorkflowRuns": [
       {
-        "document": "已经通过CreateWorkflowRun接口创建了多个异步运行实例，调用本接口来查询列表。",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListWorkflowRuns\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1854548189164339200\",\n    \"Page\": 1,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"WorkflowRuns\": [\n            {\n                \"RunEnv\": 1,\n                \"AppBizId\": \"1854548189164339200\",\n                \"WorkflowRunId\": \"run-id-123\",\n                \"WorkflowId\": \"workflow-id-456\",\n                \"State\": 4,\n                \"FailMessage\": \"\",\n                \"TotalTokens\": 100,\n                \"StartTime\": \"1672531200000\",\n                \"EndTime\": \"1672531300000\",\n                \"CreateTime\": \"1672531100000\"\n            }\n        ],\n        \"RequestId\": \"925208e7-46fa-43b3-a429-ddcbccad24f6\"\n    }\n}",
+        "document": "查询工作流异步运行实例的列表",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListWorkflowRuns\n<公共请求参数>\n\n{\n    \"AppBizId\": \"2029461666234922753\",\n    \"PageSize\": 20,\n    \"Page\": 1,\n    \"Query\": \"bnis908spzb4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"WorkflowRuns\": [\n            {\n                \"AppBizId\": \"2029461666234922753\",\n                \"CreateTime\": \"1772751757725\",\n                \"EndTime\": \"1772751765933\",\n                \"FailMessage\": \"\",\n                \"Name\": \"异步工作流\",\n                \"RunEnv\": 0,\n                \"StartTime\": \"1772751758509\",\n                \"State\": 2,\n                \"TotalTokens\": 436,\n                \"WorkflowId\": \"0e3510a6-1855-4dc2-9065-996a510a543c\",\n                \"WorkflowRunId\": \"wfr-bnis908spzb4\"\n            }\n        ],\n        \"RequestId\": \"109d44bc-937f-4ea5-9e99-b7480161efee\"\n    }\n}",
         "title": "查询工作流异步运行实例的列表"
       }
     ],

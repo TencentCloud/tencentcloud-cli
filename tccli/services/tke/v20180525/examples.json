@@ -349,8 +349,8 @@
     "CreateRollOutSequence": [
       {
         "document": "创建一个集群发布序列",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRollOutSequence\n<公共请求参数>\n\n{\n    \"Name\": \"test1\",\n    \"SequenceFlows\": [\n        {\n            \"Tags\": [\n                \"Test\"\n            ],\n            \"SoakTime\": 86400\n        },\n        {\n            \"Tags\": [\n                \"Pre-Production\"\n            ],\n            \"SoakTime\": 86400\n        },\n        {\n            \"Tags\": [\n                \"Production\"\n            ],\n            \"SoakTime\": 86400\n        }\n    ],\n    \"Enabled\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRollOutSequence\n<公共请求参数>\n\n{\n    \"Name\": \"test1\",\n    \"SequenceFlows\": [\n        {\n            \"Tags\": [\n                {\n                    \"Key\": \"Env\",\n                    \"Value\": [\n                        \"Test\"\n                    ]\n                }\n            ],\n            \"SoakTime\": 86400\n        },\n        {\n            \"Tags\": [\n                {\n                    \"Key\": \"Protection-Level\",\n                    \"Value\": [\n                        \"Pre-Production\"\n                    ]\n                }\n            ],\n            \"SoakTime\": 86400\n        },\n        {\n            \"Tags\": [\n                {\n                    \"Key\": \"Env\",\n                    \"Value\": [\n                        \"Production\"\n                    ]\n                }\n            ],\n            \"SoakTime\": 86400\n        }\n    ],\n    \"Enabled\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\",\n        \"ID\": 10\n    }\n}",
         "title": "创建发布序列"
       }
     ],

@@ -105,6 +105,13 @@
       "output": "ReportConversionResponse",
       "status": "online"
     },
+    "SendMultiGlobalSms": {
+      "document": "本接口 (SendMultiGlobalSms) 用于批量发送国际/港澳台短信，相比 SendSms 接口，支持在单次请求中向多个手机号发送不同内容的短信，并支持指定不同的SenderId。",
+      "input": "SendMultiGlobalSmsRequest",
+      "name": "批量发送国际短信",
+      "output": "SendMultiGlobalSmsResponse",
+      "status": "online"
+    },
     "SendSms": {
       "document": "本接口 (SendSms) 用于发送验证码、通知类短信和营销短信。支持国内短信与国际/港澳台短信。\n- 当前接口属于 2021-01-11 版本，如果您仍在使用 [2019-07-11 版本](https://cloud.tencent.com/document/product/382/38778)，建议您使用当前最新版本的接口，版本差异可参考[版本描述](https://cloud.tencent.com/document/product/382/63195#.E7.89.88.E6.9C.AC.E6.8F.8F.E8.BF.B0)。",
       "input": "SendSmsRequest",
@@ -1196,6 +1203,57 @@
       ],
       "usage": "out"
     },
+    "MultiSmsInfo": {
+      "document": "批量发送中每个手机号的发送信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>下发手机号码，采用 E.164 标准，格式为+[国家或地区码][手机号]，单次请求最多支持200个手机号且要求全为国际/港澳台手机号。 例如：+60198890000， 其中前面有一个+号 ，60为国家码，198890000为手机号。</p>",
+          "example": "+60198890000",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板 ID，必须填写已审核通过的模板 ID。模板 ID 可前往 <a href=\"https://console.cloud.tencent.com/smsv2/isms-template\">国际/港澳台短信</a> 的正文模板管理查看，仅支持使用国际/港澳台短信模板。</p>",
+          "example": "1800103",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板参数，若无模板参数，则设置为空。<blockquote class=\"rno-document-tips rno-document-tips-notice\">    <div class=\"rno-document-tips-body\">        <i class=\"rno-document-tip-icon\"></i>        <div class=\"rno-document-tip-title\">注意</div>        <div class=\"rno-document-tip-desc\"><p>模板参数的个数需要与 TemplateId 对应模板的变量个数保持一致。</p></div>    </div></blockquote></p>",
+          "example": "[\"1871\"]",
+          "member": "string",
+          "name": "TemplateParamSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>国际/港澳台短信 Sender ID。可参考 <a href=\"https://cloud.tencent.com/document/product/382/102831\">Sender ID 说明</a>。注：国际/港澳台短信已申请独立 SenderId 需要填写该字段，默认使用公共 SenderId，无需填写该字段。</p>",
+          "example": "Qsms",
+          "member": "string",
+          "name": "SenderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户的 session 内容，可以携带用户侧 ID 等上下文信息，server 会原样返回。注意长度需小于512字节。</p>",
+          "example": "outsid_1729495320_1011",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "PhoneNumberInfo": {
       "document": "号码信息。",
       "members": [
@@ -1765,6 +1823,128 @@
           "member": "string",
           "name": "Message",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SendMultiGlobalSmsRequest": {
+      "document": "SendMultiGlobalSms请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>短信 SdkAppId，在 <a href=\"https://console.cloud.tencent.com/smsv2/app-manage\">短信控制台</a>  添加应用后生成的实际 SdkAppId。</p>",
+          "example": "1400006666",
+          "member": "string",
+          "name": "SmsSdkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>批量发送信息列表，单次请求最多支持200个号码且要求全为国际/港澳台号码。每个元素包含一个手机号码及其对应的模板、模板参数等信息。</p>",
+          "example": "无",
+          "member": "MultiSmsInfo",
+          "name": "MultiSmsInfoSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SendMultiGlobalSmsResponse": {
+      "document": "SendMultiGlobalSms返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>短信批量发送状态。</p>",
+          "example": "无",
+          "member": "SendMultiStatus",
+          "name": "SendMultiStatusSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendMultiStatus": {
+      "document": "发送短信状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>发送流水号。</p>",
+          "example": "c07754a8-323f-434f-8606-a52ff9beeab5",
+          "member": "string",
+          "name": "SerialNo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+60198890000， 其中前面有一个+号 ，60为国家码，198890000为手机号。</p>",
+          "example": "+60198890000",
+          "member": "string",
+          "name": "PhoneNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费条数，计费规则请查询 <a href=\"https://cloud.tencent.com/document/product/382/36135\">计费策略</a>。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Fee",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 session 内容。</p>",
+          "example": "outsid_1729495320_1011",
+          "member": "string",
+          "name": "SessionContext",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>短信请求错误码，具体含义请参考 <a href=\"https://cloud.tencent.com/document/product/382/59177#.E7.9F.AD.E4.BF.A1-API-3.0-.E5.8F.91.E9.80.81.E9.94.99.E8.AF.AF.E7.A0.81\">错误码</a>，发送成功返回 &quot;Ok&quot;。</p>",
+          "example": "Ok",
+          "member": "string",
+          "name": "Code",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>短信请求错误码描述。</p>",
+          "example": "send success",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>国家码或地区码，例如 US、MY 等，对于未识别出国家码或者地区码，默认返回 DEF，具体支持列表请参考 <a href=\"https://cloud.tencent.com/document/product/382/18051\">国际/港澳台短信价格总览</a>。</p>",
+          "example": "TH",
+          "member": "string",
+          "name": "IsoCode",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

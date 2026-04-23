@@ -161,6 +161,13 @@
       "output": "DescribeBillingResourceGroupResponse",
       "status": "online"
     },
+    "DescribeBillingResourceGroupAttachedWorkspaces": {
+      "document": "查询资源组关联的工作空间列表",
+      "input": "DescribeBillingResourceGroupAttachedWorkspacesRequest",
+      "name": "查询资源组绑定的工作空间列表",
+      "output": "DescribeBillingResourceGroupAttachedWorkspacesResponse",
+      "status": "online"
+    },
     "DescribeBillingResourceGroups": {
       "document": "查询资源组列表",
       "input": "DescribeBillingResourceGroupsRequest",
@@ -4332,6 +4339,23 @@
     },
     "DeleteTrainingTaskResponse": {
       "document": "DeleteTrainingTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingResourceGroupAttachedWorkspacesRequest": {
+      "document": "DescribeBillingResourceGroupAttachedWorkspaces请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBillingResourceGroupAttachedWorkspacesResponse": {
+      "document": "DescribeBillingResourceGroupAttachedWorkspaces返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

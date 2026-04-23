@@ -112,6 +112,20 @@
       "output": "AddNetworkFirewallPolicyYamlDetailResponse",
       "status": "deprecated"
     },
+    "AddOrModifyMaliciousConnectionWhiteList": {
+      "document": "增加或修改恶意外连的白名单",
+      "input": "AddOrModifyMaliciousConnectionWhiteListRequest",
+      "name": "增加或修改恶意外连的白名单",
+      "output": "AddOrModifyMaliciousConnectionWhiteListResponse",
+      "status": "online"
+    },
+    "AddOrModifyVirusWhiteListRule": {
+      "document": "新增或修改木马白名单规则",
+      "input": "AddOrModifyVirusWhiteListRuleRequest",
+      "name": "新增或修改木马白名单规则",
+      "output": "AddOrModifyVirusWhiteListRuleResponse",
+      "status": "online"
+    },
     "CheckNetworkFirewallPolicyYaml": {
       "document": "功能已下线待三合一重构\n\n容器网络创建检查Yaml网络策略任务",
       "input": "CheckNetworkFirewallPolicyYamlRequest",
@@ -530,6 +544,13 @@
       "input": "DeleteSearchTemplateRequest",
       "name": "删除检索模板",
       "output": "DeleteSearchTemplateResponse",
+      "status": "online"
+    },
+    "DeleteVirusWhiteListRule": {
+      "document": "删除木马白名单规则",
+      "input": "DeleteVirusWhiteListRuleRequest",
+      "name": "删除木马白名单规则",
+      "output": "DeleteVirusWhiteListRuleResponse",
       "status": "online"
     },
     "DescribeABTestConfig": {
@@ -1841,6 +1862,13 @@
       "output": "DescribeVirusManualScanEstimateTimeoutResponse",
       "status": "online"
     },
+    "DescribeVirusMonitorConfig": {
+      "document": "运行时查询文件查杀实时监控设置信息",
+      "input": "DescribeVirusMonitorConfigRequest",
+      "name": "运行时查询文件查杀实时监控设置信息",
+      "output": "DescribeVirusMonitorConfigResponse",
+      "status": "online"
+    },
     "DescribeVirusMonitorSetting": {
       "document": "运行时查询文件查杀实时监控设置",
       "input": "DescribeVirusMonitorSettingRequest",
@@ -1853,6 +1881,13 @@
       "input": "DescribeVirusSampleDownloadUrlRequest",
       "name": "查询木马样本下载url",
       "output": "DescribeVirusSampleDownloadUrlResponse",
+      "status": "online"
+    },
+    "DescribeVirusScanConfig": {
+      "document": "运行时查询文件查杀新设置",
+      "input": "DescribeVirusScanConfigRequest",
+      "name": "运行时查询文件查杀新设置",
+      "output": "DescribeVirusScanConfigResponse",
       "status": "online"
     },
     "DescribeVirusScanSetting": {
@@ -1888,6 +1923,13 @@
       "input": "DescribeVirusTaskListRequest",
       "name": "运行时查询文件查杀任务列表",
       "output": "DescribeVirusTaskListResponse",
+      "status": "online"
+    },
+    "DescribeVirusWhiteListRules": {
+      "document": "查询木马白名单规则列表",
+      "input": "DescribeVirusWhiteListRulesRequest",
+      "name": "查询木马白名单规则列表",
+      "output": "DescribeVirusWhiteListRulesResponse",
       "status": "online"
     },
     "DescribeVulContainerList": {
@@ -4913,6 +4955,141 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddOrModifyMaliciousConnectionWhiteListRequest": {
+      "document": "AddOrModifyMaliciousConnectionWhiteList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "枚举\nIP: IP\n域名：DOMAIN",
+          "example": "IP",
+          "member": "string",
+          "name": "RequestType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "白名单域名",
+          "example": "[\"https://cloud.tencent.com\"]",
+          "member": "string",
+          "name": "WhiteDomainList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "白名单IP",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "WhiteIPList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "这是一条黑名单",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "白名单记录id，只有修改时需要",
+          "example": "1",
+          "member": "uint64",
+          "name": "ID",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AddOrModifyMaliciousConnectionWhiteListResponse": {
+      "document": "AddOrModifyMaliciousConnectionWhiteList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddOrModifyVirusWhiteListRuleRequest": {
+      "document": "AddOrModifyVirusWhiteListRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MD5列表</p>",
+          "example": "[\"fc7fd32908d50c4e2a0b40acbc5b281a\"]",
+          "member": "string",
+          "name": "Md5List",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效范围：1=全部镜像，0=自选镜像</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Scope",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则ID，有值为修改，无值为新增</p>",
+          "example": "256",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像ID列表，最大1000个。Scope为0（自选镜像）时必填</p>",
+          "example": "[\"sha256:eeb6ee3f44bd0b5103bb561b4c16bcb82328cfe5809ab675bb17ab3a16c517c9\"]",
+          "member": "string",
+          "name": "ImageIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则备注，最大256字符</p>",
+          "example": "image",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件id</p>",
+          "example": "2268464",
+          "member": "uint64",
+          "name": "EventId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AddOrModifyVirusWhiteListRuleResponse": {
+      "document": "AddOrModifyVirusWhiteListRule返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -12604,6 +12781,33 @@
     },
     "DeleteSearchTemplateResponse": {
       "document": "DeleteSearchTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVirusWhiteListRuleRequest": {
+      "document": "DeleteVirusWhiteListRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID列表",
+          "example": "[1, 2, 3]",
+          "member": "uint64",
+          "name": "RuleIdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVirusWhiteListRuleResponse": {
+      "document": "DeleteVirusWhiteListRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -30125,6 +30329,59 @@
       ],
       "type": "object"
     },
+    "DescribeVirusMonitorConfigRequest": {
+      "document": "DescribeVirusMonitorConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeVirusMonitorConfigResponse": {
+      "document": "DescribeVirusMonitorConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启实时监控",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableScan",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "true:包含路径 false:排除路径",
+          "example": "true",
+          "member": "bool",
+          "name": "IsIncludePath",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自选排除或扫描的地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "ScanPath",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫描路径模式：\nSCAN_PATH_ALL：全部路径\nSCAN_PATH_DEFAULT：默认路径\nSCAN_PATH_USER_DEFINE：用户自定义路径\n",
+          "example": "SCAN_PATH_ALL",
+          "member": "string",
+          "name": "ScanPathMode",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVirusMonitorSettingRequest": {
       "document": "DescribeVirusMonitorSetting请求参数结构体",
       "members": [],
@@ -30218,6 +30475,104 @@
           "name": "FileUrl",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVirusScanConfigRequest": {
+      "document": "DescribeVirusScanConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeVirusScanConfigResponse": {
+      "document": "DescribeVirusScanConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启定期扫描",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableScan",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检测周期每隔多少天",
+          "example": "1",
+          "member": "uint64",
+          "name": "Cycle",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫描开始时间",
+          "example": "10:00:00",
+          "member": "string",
+          "name": "BeginScanAt",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超时时长，单位小时",
+          "example": "1",
+          "member": "uint64",
+          "name": "Timeout",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCAN_NODE:扫描节点\nSCAN_CONTAINER:扫描容器",
+          "example": "SCAN_NODE",
+          "member": "string",
+          "name": "ScanRangeType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自选扫描范围的容器id或者节点id ",
+          "example": "[]",
+          "member": "ScanRangeInfo",
+          "name": "ScanIDs",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自选排除或扫描的地址",
+          "example": "[]",
+          "member": "string",
+          "name": "ScanPath",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫描路径模式：\nSCAN_PATH_ALL：全部路径\nSCAN_PATH_DEFAULT：默认路径\nSCAN_PATH_USER_DEFINE：用户自定义路径\n",
+          "example": "SCAN_PATH_ALL",
+          "member": "string",
+          "name": "ScanPathMode",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "true:包含路径\nfalse:排除路径",
+          "example": "true",
+          "member": "bool",
+          "name": "IsIncludePath",
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -30708,6 +31063,89 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVirusWhiteListRulesRequest": {
+      "document": "DescribeVirusWhiteListRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页大小，默认为10</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量，默认为0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方向，ASC/DESC，默认DESC</p>",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段，支持 InsertTime/UpdateTime</p>",
+          "example": "InsertTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤</p>",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVirusWhiteListRulesResponse": {
+      "document": "DescribeVirusWhiteListRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "28",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>白名单规则列表</p>",
+          "example": "无",
+          "member": "VirusWhiteListRuleInfo",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -33644,7 +34082,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主机id",
+          "document": "<p>主机id</p>",
           "example": "29b37d86-f63d-43d1-b21a-640e82965198",
           "member": "string",
           "name": "HostID",
@@ -33654,7 +34092,7 @@
         },
         {
           "disabled": false,
-          "document": "主机ip即内网ip",
+          "document": "<p>主机ip即内网ip</p>",
           "example": "172.16.100.*",
           "member": "string",
           "name": "HostIP",
@@ -33664,7 +34102,7 @@
         },
         {
           "disabled": false,
-          "document": "主机名称",
+          "document": "<p>主机名称</p>",
           "example": "host1",
           "member": "string",
           "name": "HostName",
@@ -33674,7 +34112,7 @@
         },
         {
           "disabled": false,
-          "document": "业务组",
+          "document": "<p>业务组</p>",
           "example": "groupA",
           "member": "string",
           "name": "Group",
@@ -33684,7 +34122,7 @@
         },
         {
           "disabled": false,
-          "document": "docker 版本",
+          "document": "<p>docker 版本</p>",
           "example": "1.2.5",
           "member": "string",
           "name": "DockerVersion",
@@ -33694,7 +34132,7 @@
         },
         {
           "disabled": false,
-          "document": "docker 文件系统类型",
+          "document": "<p>docker 文件系统类型</p>",
           "example": "Container",
           "member": "string",
           "name": "DockerFileSystemDriver",
@@ -33704,7 +34142,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像个数",
+          "document": "<p>镜像个数</p>",
           "example": "10",
           "member": "uint64",
           "name": "ImageCnt",
@@ -33714,7 +34152,7 @@
         },
         {
           "disabled": false,
-          "document": "容器个数",
+          "document": "<p>容器个数</p>",
           "example": "10",
           "member": "uint64",
           "name": "ContainerCnt",
@@ -33724,7 +34162,7 @@
         },
         {
           "disabled": false,
-          "document": "agent运行状态",
+          "document": "<p>agent运行状态</p>",
           "example": "ONLINE",
           "member": "string",
           "name": "Status",
@@ -33734,7 +34172,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是Containerd",
+          "document": "<p>是否是Containerd</p>",
           "example": "true",
           "member": "bool",
           "name": "IsContainerd",
@@ -33744,7 +34182,7 @@
         },
         {
           "disabled": false,
-          "document": "主机来源：[\"CVM\", \"ECM\", \"LH\", \"BM\"]  中的之一为腾讯云服务器；[\"Other\"]之一非腾讯云服务器；",
+          "document": "<p>主机来源：[&quot;CVM&quot;, &quot;ECM&quot;, &quot;LH&quot;, &quot;BM&quot;]  中的之一为腾讯云服务器；[&quot;Other&quot;]之一非腾讯云服务器；</p>",
           "example": "CVM",
           "member": "string",
           "name": "MachineType",
@@ -33754,7 +34192,7 @@
         },
         {
           "disabled": false,
-          "document": "外网ip",
+          "document": "<p>外网ip</p>",
           "example": "1.2.3.*",
           "member": "string",
           "name": "PublicIp",
@@ -33764,7 +34202,7 @@
         },
         {
           "disabled": false,
-          "document": "主机uuid",
+          "document": "<p>主机uuid</p>",
           "example": "29b37d86-f63d-43d1-b21a-640e82965198",
           "member": "string",
           "name": "Uuid",
@@ -33774,7 +34212,7 @@
         },
         {
           "disabled": false,
-          "document": "主机实例ID",
+          "document": "<p>主机实例ID</p>",
           "example": "ins-busi*",
           "member": "string",
           "name": "InstanceID",
@@ -33784,7 +34222,7 @@
         },
         {
           "disabled": false,
-          "document": "地域ID",
+          "document": "<p>地域ID</p>",
           "example": "1",
           "member": "int64",
           "name": "RegionID",
@@ -33794,7 +34232,7 @@
         },
         {
           "disabled": false,
-          "document": "所属项目",
+          "document": "<p>所属项目</p>",
           "example": "无",
           "member": "ProjectInfo",
           "name": "Project",
@@ -33804,7 +34242,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -33814,7 +34252,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "cluster-ins1*",
           "member": "string",
           "name": "ClusterID",
@@ -33824,7 +34262,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "cluster-bj",
           "member": "string",
           "name": "ClusterName",
@@ -33834,7 +34272,7 @@
         },
         {
           "disabled": false,
-          "document": "集群接入状态",
+          "document": "<p>集群接入状态</p>",
           "example": "Accessed",
           "member": "string",
           "name": "ClusterAccessedStatus",
@@ -33844,7 +34282,27 @@
         },
         {
           "disabled": false,
-          "document": "计费核数",
+          "document": "<p>集群接入子状态</p><p>枚举值：</p><ul><li>AccessedSubNone： 无</li><li>AccessedSubUninstallException： 卸载异常</li><li>AccessedSubTimeout： 接入超时</li><li>AccessedSubUninstallTimeout： 卸载超时</li><li>AccessedSubResourceException： 集群组件检查异常-Deployment/DaemonSet等异常</li><li>AccessedSubCAMPermissionDenied： CAM权限不够</li></ul>",
+          "example": "AccessedSubUninstallException",
+          "member": "string",
+          "name": "ClusterAccessedSubStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败具体原因描述</p>",
+          "example": "deployment not exists",
+          "member": "string",
+          "name": "ClusterAccessedErrorReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费核数</p>",
           "example": "10",
           "member": "uint64",
           "name": "ChargeCoresCnt",
@@ -33854,7 +34312,7 @@
         },
         {
           "disabled": false,
-          "document": "防护状态:\n已防护: Defended\n未防护: UnDefended",
+          "document": "<p>防护状态:<br>已防护: Defended<br>未防护: UnDefended</p>",
           "example": "DEFENDED",
           "member": "string",
           "name": "DefendStatus",
@@ -33864,7 +34322,7 @@
         },
         {
           "disabled": false,
-          "document": "核数",
+          "document": "<p>核数</p>",
           "example": "10",
           "member": "uint64",
           "name": "CoresCnt",
@@ -33874,7 +34332,7 @@
         },
         {
           "disabled": false,
-          "document": "最近在线时间",
+          "document": "<p>最近在线时间</p>",
           "example": "2025-12-24 08:37:11",
           "member": "string",
           "name": "LastOnlineTime",
@@ -43556,6 +44014,42 @@
       ],
       "usage": "out"
     },
+    "ScanRangeInfo": {
+      "document": "扫描范围信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "true:选择全部；\nfalse:部分选择",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAll",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCAN_NORMAL:普通节点；\nSCAN_SUPER:超级节点\nSCAN_CONTAINER:容器",
+          "example": "SCAN_NORMAL",
+          "member": "string",
+          "name": "RangeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "选择的ID",
+          "example": "[\"xxx\"]",
+          "member": "string",
+          "name": "IDs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SearchTemplate": {
       "document": "快速搜索模板",
       "members": [
@@ -44523,7 +45017,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "超级节点ID",
+          "document": "<p>超级节点ID</p>",
           "example": "eklet-subnet-gb8sbjg0-1ilj****",
           "member": "string",
           "name": "NodeID",
@@ -44533,7 +45027,7 @@
         },
         {
           "disabled": false,
-          "document": "超级节点名称",
+          "document": "<p>超级节点名称</p>",
           "example": "VM-3-211-tencentos",
           "member": "string",
           "name": "NodeName",
@@ -44543,7 +45037,7 @@
         },
         {
           "disabled": false,
-          "document": "所属集群名",
+          "document": "<p>所属集群名</p>",
           "example": "gztxy-tke-prd-erp-cluste****",
           "member": "string",
           "name": "ClusterName",
@@ -44553,7 +45047,7 @@
         },
         {
           "disabled": false,
-          "document": "所属集群ID",
+          "document": "<p>所属集群ID</p>",
           "example": "cls-8pbe****",
           "member": "string",
           "name": "ClusterID",
@@ -44563,7 +45057,7 @@
         },
         {
           "disabled": false,
-          "document": "节点状态:Running,Ready,Notready,Initializing,Failed,Error",
+          "document": "<p>节点状态:Running,Ready,Notready,Initializing,Failed,Error</p>",
           "example": "Running",
           "member": "string",
           "name": "Status",
@@ -44573,7 +45067,7 @@
         },
         {
           "disabled": false,
-          "document": "子网ID",
+          "document": "<p>子网ID</p>",
           "example": "subnet-gb8s****",
           "member": "string",
           "name": "SubNetID",
@@ -44583,7 +45077,7 @@
         },
         {
           "disabled": false,
-          "document": "子网名称",
+          "document": "<p>子网名称</p>",
           "example": "subnet-name",
           "member": "string",
           "name": "SubNetName",
@@ -44593,7 +45087,7 @@
         },
         {
           "disabled": false,
-          "document": "子网网段",
+          "document": "<p>子网网段</p>",
           "example": "10.124.120.****",
           "member": "string",
           "name": "SubNetCidr",
@@ -44603,7 +45097,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区ID",
+          "document": "<p>可用区ID</p>",
           "example": "ap-guangzhou-6 广州六区",
           "member": "string",
           "name": "ZoneID",
@@ -44613,7 +45107,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "100006",
           "member": "string",
           "name": "Zone",
@@ -44623,7 +45117,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-10-24 16:4****",
           "member": "string",
           "name": "CreateTime",
@@ -44633,7 +45127,7 @@
         },
         {
           "disabled": false,
-          "document": "关联pod数",
+          "document": "<p>关联pod数</p>",
           "example": "1",
           "member": "uint64",
           "name": "RelatePodCount",
@@ -44643,7 +45137,7 @@
         },
         {
           "disabled": false,
-          "document": "关联容器数",
+          "document": "<p>关联容器数</p>",
           "example": "3",
           "member": "uint64",
           "name": "RelateContainerCount",
@@ -44653,7 +45147,7 @@
         },
         {
           "disabled": false,
-          "document": "agent安装状态UNINSTALL:未安装;INSTALLED:已安装;INSTALLING:安装中;",
+          "document": "<p>agent安装状态UNINSTALL:未安装;INSTALLED:已安装;INSTALLING:安装中;</p>",
           "example": "INSTA****",
           "member": "string",
           "name": "AgentStatus",
@@ -44663,7 +45157,7 @@
         },
         {
           "disabled": false,
-          "document": "节点唯一id",
+          "document": "<p>节点唯一id</p>",
           "example": "3f4dac4d87c439acf768332da8a0****",
           "member": "string",
           "name": "NodeUniqueID",
@@ -44673,7 +45167,7 @@
         },
         {
           "disabled": false,
-          "document": "集群接入状态",
+          "document": "<p>集群接入状态</p>",
           "example": "AccessedDefe****",
           "member": "string",
           "name": "ClusterAccessedStatus",
@@ -44683,7 +45177,7 @@
         },
         {
           "disabled": false,
-          "document": "计费核数",
+          "document": "<p>计费核数</p>",
           "example": "2000",
           "member": "uint64",
           "name": "ChargeCoresCnt",
@@ -44693,11 +45187,31 @@
         },
         {
           "disabled": false,
-          "document": "防护状态:\n已防护: Defended\n未防护: UnDefended",
+          "document": "<p>防护状态:<br>已防护: Defended<br>未防护: UnDefended</p>",
           "example": "Defended",
           "member": "string",
           "name": "DefendStatus",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群接入子状态</p><p>枚举值：</p><ul><li>AccessedSubNone： 无</li><li>AccessedSubUninstallException： 卸载异常</li><li>AccessedSubTimeout： 接入超时</li><li>AccessedSubUninstallTimeout： 卸载超时</li><li>AccessedSubResourceException： 集群组件检查异常-Deployment/DaemonSet等异常</li><li>AccessedSubCAMPermissionDenied： CAM权限不够</li></ul>",
+          "example": "AccessedSubUninstallException",
+          "member": "string",
+          "name": "ClusterAccessedSubStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败具体原因描述</p>",
+          "example": "deployment not exists",
+          "member": "string",
+          "name": "ClusterAccessedErrorReason",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -46481,6 +46995,111 @@
         }
       ],
       "usage": "out"
+    },
+    "VirusWhiteListRuleInfo": {
+      "document": "VirusWhiteListRuleInfo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>白名单id</p>",
+          "example": "259",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>md5加白内容</p>",
+          "example": "[\"923d548dd3c1431d18357da8dffd5780\"]",
+          "member": "string",
+          "name": "Md5List",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像id</p>",
+          "example": "[\"sha256:eeb6ee3f44bd0b5103bb561b4c16bcb82328cfe5809ab675bb17ab3a16c517c9\"]",
+          "member": "string",
+          "name": "ImageIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>范围</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Scope",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ImageCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>md5数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Md5Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标记</p>",
+          "example": "image test",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>插入时间</p>",
+          "example": "2026-04-07T21:53:45+08:00",
+          "member": "string",
+          "name": "InsertTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-04-03T23:15:40+08:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "VulAffectedComponentInfo": {
       "document": "受漏洞影响的组件信息",

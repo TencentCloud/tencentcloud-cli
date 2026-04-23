@@ -966,6 +966,13 @@
       "output": "DescribeTasksResponse",
       "status": "online"
     },
+    "DescribeTextToSpeechAsyncTask": {
+      "document": "查询异步语音合成任务结果",
+      "input": "DescribeTextToSpeechAsyncTaskRequest",
+      "name": "查询语音合成任务结果",
+      "output": "DescribeTextToSpeechAsyncTaskResponse",
+      "status": "online"
+    },
     "DescribeTranscodeTemplates": {
       "document": "根据转码模板唯一标识，获取转码模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置转码模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。",
       "input": "DescribeTranscodeTemplatesRequest",
@@ -1405,6 +1412,13 @@
       "input": "SyncDubbingRequest",
       "name": "同步配音",
       "output": "SyncDubbingResponse",
+      "status": "online"
+    },
+    "TextToSpeechAsync": {
+      "document": "异步语音合成接口，支持长文本转语音",
+      "input": "TextToSpeechAsyncRequest",
+      "name": "异步语音合成",
+      "output": "TextToSpeechAsyncResponse",
       "status": "online"
     },
     "TextTranslation": {
@@ -7971,7 +7985,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定所生成视频的宽高比。\n\n不同模型支持的宽高比:\n1. GEM支持：1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9 和 21:9。\n\n注：具体模型的宽高比参数，可查看相应模型官网获取更完整描述。",
+          "document": "<p>指定所生成视频的宽高比。</p><p>不同模型支持的宽高比:</p><ol><li>GEM支持：1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9 和 21:9。</li></ol><p>注：具体模型的宽高比参数，可查看相应模型官网获取更完整描述。</p>",
           "example": "16:9",
           "member": "string",
           "name": "AspectRatio",
@@ -7982,13 +7996,24 @@
         },
         {
           "disabled": false,
-          "document": "指定图片输出分辨率。\n\n支持该参数的模型：\n支持选择: 720P, 1080P, 2K, 4K。\n",
+          "document": "<p>指定图片输出分辨率。</p><p>支持该参数的模型：<br>支持选择: 720P, 1080P, 2K, 4K。</p>",
           "example": "1080P",
           "member": "string",
           "name": "Resolution",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否添加图标水印。默认不加。1-添加，0-不添加。</p><p>取值范围：[0, 1]</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "LogoAdd",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -11554,7 +11579,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>模型名称。<br>当前支持的模型列表:<br>Hunyuan,<br>Hailuo，<br>Kling，<br>Vidu，<br>OS，<br>GV。</p>",
+          "document": "<p>模型名称。<br>当前支持的模型列表:<br>Hunyuan,<br>Hailuo，<br>Kling，<br>Vidu，<br>OS，<br>GV，<br>PixVerse。</p>",
           "example": "Hailuo",
           "member": "string",
           "name": "ModelName",
@@ -11563,7 +11588,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。</p><ol><li>Hailuo， 可选[02、2.3]。</li><li>Kling，可选[2.0、2.1、2.5、O1、2.6、3.0、3.0-Omni]。</li><li>Vidu,可选[q2、q2-pro、q2-turbo、q3-pro、q3-turbo]。</li><li>GV, 可选[3.1]。</li><li>OS，可选[2.0]。</li></ol>",
+          "document": "<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。</p><ol><li>Hailuo， 可选[02、2.3、2.3-fast]。</li><li>Kling，可选[1.6、2.0、2.1、2.5、O1、2.6、3.0、3.0-Omni]。</li><li>Vidu,可选[q2、q2-pro、q2-turbo、q3-pro、q3-turbo、q3、q3-mix]。</li><li>GV, 可选[3.1、3.1-fast]。</li><li>OS，可选[2.0]。</li><li>PixVerse，可选[v5.6、v6、c1]</li></ol>",
           "example": "2.3",
           "member": "string",
           "name": "ModelVersion",
@@ -21964,6 +21989,93 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTextToSpeechAsyncTaskRequest": {
+      "document": "DescribeTextToSpeechAsyncTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "1300057393-DubbingAsync-fc3f52cf-f5f2-453c-882c-8847e5b2fe2f",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTextToSpeechAsyncTaskResponse": {
+      "document": "DescribeTextToSpeechAsyncTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，成功时返回0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息，成功时返回success</p>",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态</p><p>枚举值：</p><ul><li>success： 成功</li><li>fail： 失败</li><li>processing： 处理中</li></ul>",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合成音频url</p>",
+          "example": "https://laurie-tmp-1300828900.cos.ap-nanjing.myqcloud.com/async_dubbing/fc3f52cf-f5f2-453c-882c-8847e5b2fe2f.wav",
+          "member": "string",
+          "name": "AudioUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用的音色ID</p>",
+          "example": "s1_+DSBRZuGbfKlwsN1lV5OsriSYvOB3aSqqCsHH0LJ5BWHsmfmn13my4ki/QL+g+7RaRUWLhwPcEI6gtCTkA==",
+          "member": "string",
+          "name": "VoiceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展信息</p>",
+          "example": "{\"duration\":1.00325}",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -37947,7 +38059,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "频道ID，全局唯一标识。",
+          "document": "<p>频道ID，全局唯一标识。</p>",
           "example": "698AAD421D3EA5656115",
           "member": "string",
           "name": "ID",
@@ -37958,7 +38070,7 @@
         },
         {
           "disabled": false,
-          "document": "频道名称。",
+          "document": "<p>频道名称。</p>",
           "example": "TestConf",
           "member": "string",
           "name": "Name",
@@ -37969,7 +38081,7 @@
         },
         {
           "disabled": false,
-          "document": "广告源信息。",
+          "document": "<p>广告源信息。</p>",
           "example": "https://www.tencent.com/abc",
           "member": "string",
           "name": "ContentSource",
@@ -37980,7 +38092,7 @@
         },
         {
           "disabled": false,
-          "document": "播放地址。",
+          "document": "<p>播放地址。兼容旧版本参数，推荐使用HlsPlaybackPrefix或DashPlaybackPrefix</p>",
           "example": "http://251009588.ap-shanghai.streampackage.srclivepull.myqcloud.com/v1/ssai/master/019c45b4c912150043f634b5a3c17/",
           "member": "string",
           "name": "PlaybackPrefix",
@@ -37991,7 +38103,29 @@
         },
         {
           "disabled": false,
-          "document": "广告插入SSAI配置信息。",
+          "document": "<p>hls播放地址</p>",
+          "example": "http://25100*588.ap-mumbai.streampackage.s**livepull.myqcloud.*************aster/019d6811b9**150043f61bc6dfe8f9/",
+          "member": "string",
+          "name": "HlsPlaybackPrefix",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>dash播放地址</p>",
+          "example": "http://25100***8.ap-mu*****streampack*ge.sr****epull.myqcloud.com/****sai/dash/019d6811b988150043**1bc6dfe8f9/",
+          "member": "string",
+          "name": "DashPlaybackPrefix",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>广告插入SSAI配置信息。</p>",
           "example": "无",
           "member": "SSAIConf",
           "name": "SSAIInfo",
@@ -38002,7 +38136,7 @@
         },
         {
           "disabled": false,
-          "document": "地域信息。",
+          "document": "<p>地域信息。</p>",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
@@ -38013,7 +38147,7 @@
         },
         {
           "disabled": false,
-          "document": "用于clickthrough地址",
+          "document": "<p>用于clickthrough地址</p>",
           "example": "http://251009588.ap-shanghai.streampackage.srclivepull.myqcloud.com/v1/ssai/session/019c45b4c912150043f634b5a3c17/",
           "member": "string",
           "name": "SessionInitPrefix",
@@ -38202,6 +38336,50 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>dash周期类型：SinglePeriod 或 MultiPeriod，默认 MultiPeriod</p>",
+          "example": "MultiPeriod",
+          "member": "string",
+          "name": "DashOriginManifestType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Empty VAST时是否播放Slate，默认开启(true)</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SlateOnEmptyVast",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SCTE marker duration，默认180，范围0-3600</p>",
+          "example": "180",
+          "member": "int64",
+          "name": "SCTEMarkerDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全组Id</p>",
+          "example": "69E09A2340836DFDC04F",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -43941,6 +44119,90 @@
         }
       ],
       "usage": "in"
+    },
+    "TextToSpeechAsyncRequest": {
+      "document": "TextToSpeechAsync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>语音合成文本</p>",
+          "example": "你好",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色ID</p>",
+          "example": "s1_+DSBRZuGbfKlwsN1lV5OsriSYvOB3aSqqCsHH0LJ5BWHsmfmn13my4ki/QL+g+7RaRUWLhwPcEI6gtCTkA==",
+          "member": "string",
+          "name": "VoiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文本语言，默认中文</p>",
+          "example": "zh",
+          "member": "string",
+          "name": "TextLang",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数，json字符串</p><p>synExt Object 语音合成扩展参数<br>  duration Float 合成音频时长，单位秒，示例：5.2<br>  sampleRate Integer 合成音频采样率，默认16000，支持[8000,16000,22050,32000,44100]<br>  pitch Integer 音调，默认0原音色输出，取值[-12, 12]</p><p>transExt Object 翻译扩展参数<br>  transInfo Object<br>   transDst String 目标语言，如en<br>  transRequirement String 翻译要求</p>",
+          "example": "{\n    \"transExt\": {\n        \"transInfo\": {\n            \"transDst\": \"en\"\n        },\n        \"transRequirement\": \"引号中（包括\\\"\\\",“”）的内容不翻译（是中文就是中文，是英文就是英文）\"\n    }\n}",
+          "member": "string",
+          "name": "ExtParam",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TextToSpeechAsyncResponse": {
+      "document": "TextToSpeechAsync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，成功时返回0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息，成功时返回success</p>",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务ID，使用该ID查询结果</p>",
+          "example": "1300057393-DubbingAsync-0d810bb0-d78b-4545-b36e-eab983b40a6a",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TextTranslationRequest": {
       "document": "TextTranslation请求参数结构体",

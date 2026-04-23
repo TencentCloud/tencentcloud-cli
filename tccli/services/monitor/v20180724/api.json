@@ -21366,7 +21366,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "多写url",
+          "document": "<p>多写url</p>",
           "example": "http://172.30.0.9:9090/api/v1/prom/write",
           "member": "string",
           "name": "URL",
@@ -21377,7 +21377,7 @@
         },
         {
           "disabled": false,
-          "document": "RelabelConfig\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>RelabelConfig</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "- source_labels: [label]   target_label: label1",
           "member": "string",
           "name": "URLRelabelConfig",
@@ -21388,7 +21388,7 @@
         },
         {
           "disabled": false,
-          "document": "鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>鉴权</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BasicAuth",
           "name": "BasicAuth",
@@ -21399,7 +21399,7 @@
         },
         {
           "disabled": true,
-          "document": "最大block\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最大block</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "16MB",
           "member": "string",
           "name": "MaxBlockSize",
@@ -21410,7 +21410,7 @@
         },
         {
           "disabled": true,
-          "document": "Label\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Label</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"instance_id\": \"prom-xxxxx\"}]",
           "member": "string",
           "name": "Label",
@@ -21421,13 +21421,24 @@
         },
         {
           "disabled": false,
-          "document": "HTTP 额外添加的头\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>HTTP 额外添加的头</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RemoteWriteHeader",
           "name": "Headers",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据多写类型:<br>1- 只多写采集指标<br>2- 只多写预聚合指标<br>3- 同时多写采集和预聚合指标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RemoteWriteType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

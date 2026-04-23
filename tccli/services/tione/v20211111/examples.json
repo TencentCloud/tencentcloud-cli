@@ -184,6 +184,14 @@
         "title": "查询资源组节点列表"
       }
     ],
+    "DescribeBillingResourceGroupAttachedWorkspaces": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillingResourceGroupAttachedWorkspaces\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bbb99db1-33fc-4c4c-9e71-206ac2cf97e1\"\n    }\n}",
+        "title": "查询资源组关联的工作空间列表"
+      }
+    ],
     "DescribeBillingResourceGroups": [
       {
         "document": "",

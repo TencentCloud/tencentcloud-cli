@@ -1,22 +1,22 @@
-**Example 1: 创建共享知识库**
+**Example 1: 正常请求**
 
-创建共享知识库
+
 
 Input: 
 
 ```
 tccli lke CreateSharedKnowledge --cli-unfold-argument  \
-    --KnowledgeName 共享知识库1 \
-    --KnowledgeDescription 计算机基础理论知识库 \
-    --EmbeddingModel general-text-embedding-v2.7
+    --KnowledgeName test-0423 \
+    --KnowledgeType 0 \
+    --EsConfig.StorageType 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "KnowledgeBizId": "1908652910168703294",
-        "RequestId": "798dbcd5-80e1-277d-aeb7-0018abab7686"
+        "KnowledgeBizId": "2047150542445725376",
+        "RequestId": "ae90730a-57cd-4668-bdec-2389880ad12c"
     }
 }
 ```

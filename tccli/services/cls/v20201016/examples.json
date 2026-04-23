@@ -332,6 +332,14 @@
         "title": "创建ScheduledSQL任务"
       }
     ],
+    "CreateSearchView": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSearchView\n<公共请求参数>\n\n{\n    \"LogsetId\": \"b*******-diy-1254139626\",\n    \"LogsetRegion\": \"ap-**************\",\n    \"ViewName\": \"b*******_test_00001\",\n    \"ViewType\": \"log\",\n    \"Topics\": [\n        {\n            \"Region\": \"ap-guang*********\",\n            \"LogsetId\": \"1dbef1b5-2559-45fd-b41f-272ebd5a4535\",\n            \"TopicId\": \"b*******-diy-1254139626\"\n        }\n    ],\n    \"ViewIdPrefix\": \"b*******_test_00001\",\n    \"Description\": \"b*******-tag-key-value test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ViewId\": \"b*******_test_00001-view\",\n        \"RequestId\": \"550f786a-3943-43f0-a88e-1c3222bee72d\"\n    }\n}",
+        "title": "创建查询视图"
+      }
+    ],
     "CreateShipper": [
       {
         "document": "用于创建cos投递任务规则",
@@ -600,6 +608,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScheduledSql\n<公共请求参数>\n\n{\n    \"SrcTopicId\": \"6ef60bec-0242-43af-bb20-270359fb54xx\",\n    \"TaskId\": \"6ef60bec-0242-43af-bb20-270359fbxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除ScheduledSql任务"
+      }
+    ],
+    "DeleteSearchView": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSearchView\n<公共请求参数>\n\n{\n    \"ViewId\": \"b*******_test_00001-view\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dd9a1cff-4e24-4a3d-bf54-7731d7b07270\"\n    }\n}",
+        "title": "删除查询视图"
       }
     ],
     "DeleteShipper": [
@@ -1024,6 +1040,14 @@
         "title": "获取ScheduledSql任务列表"
       }
     ],
+    "DescribeSearchViews": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSearchViews\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"logsetId\",\n            \"Values\": [\n                \"9ec1f40f-7bca-4da8-bbd0-29b358a1ba2a\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"CreateTime\": 1776912487,\n                \"LogsetId\": \"9ec1f40f-7bca-4da8-bbd0-29b358a1ba2a\",\n                \"LogsetRegion\": \"ap-**************\",\n                \"Topics\": [\n                    {\n                        \"LogsetId\": \"9ec1f40f-7bca-4da8-bbd0-29b358a1ba2a\",\n                        \"Region\": \"ap-**************\",\n                        \"TopicId\": \"k****-5-1254139626\"\n                    }\n                ],\n                \"UpdateTime\": 1776912487,\n                \"ViewId\": \"k****-search-4-view\",\n                \"ViewName\": \"k****-search-4\",\n                \"ViewType\": \"log\"\n            }\n        ],\n        \"Total\": 4,\n        \"RequestId\": \"7090fbf8-4000-4712-992f-3a2d7816b702\"\n    }\n}",
+        "title": "获取查询视图列表"
+      }
+    ],
     "DescribeShipperTasks": [
       {
         "document": "",
@@ -1360,6 +1384,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScheduledSql\n<公共请求参数>\n\n{\n    \"EnableFlag\": 1,\n    \"TaskId\": \"6ef60bec-0242-43af-bb20-270359fxxxxx\",\n    \"DstResource\": {\n        \"TopicId\": \"6ef60bec-0242-43af-bb20-270359fxxxxx\",\n        \"Region\": \"ap-guangzhou\",\n        \"BizType\": 1,\n        \"MetricName\": \"pv\"\n    },\n    \"ProcessTimeWindow\": \"@m-15m,@m\",\n    \"ProcessPeriod\": 5,\n    \"ScheduledSqlContent\": \"* | select count(*) as pv\",\n    \"SrcTopicId\": \"6ef60bec-0242-43af-bb20-270359fbxxxx\",\n    \"ProcessDelay\": 0,\n    \"SrcTopicRegion\": \"ap-guangzhou\",\n    \"Name\": \"task\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54ax\"\n    }\n}",
         "title": "修改ScheduledSQL任务"
+      }
+    ],
+    "ModifySearchView": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySearchView\n<公共请求参数>\n\n{\n    \"ViewId\": \"b*******_test_00001-view\",\n    \"ViewName\": \"b*******_test_00001-update\",\n    \"ViewType\": \"log\",\n    \"Description\": \"b*******-tag-key-value test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c5a7a89-42d9-41df-8093-b8237a061dbd\"\n    }\n}",
+        "title": "修改查询视图"
       }
     ],
     "ModifyShipper": [

@@ -1327,6 +1327,73 @@
       ],
       "usage": "out"
     },
+    "AvailableTimeConfig": {
+      "document": "工作时间配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日期类型，默认为每天</p><p>枚举值：</p><ul><li>EveryDay： 每天</li><li>BusinessDay： 法定工作日</li><li>Holiday： 法定休息日</li><li>Custom： 自定义</li></ul>",
+          "example": "Custom",
+          "member": "string",
+          "name": "DayType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅在 DayType 为 Custom 时生效，指定适用的星期几</p><p>枚举值：</p><ul><li>Monday： 星期一</li><li>Tuesday： 星期二</li><li>Wednesday： 星期三</li><li>Thursday： 星期四</li><li>Friday： 星期五</li><li>Saturday： 星期六</li><li>Sunday： 星期日</li></ul>",
+          "example": "[\"Wednesday\"]",
+          "member": "string",
+          "name": "DaysOfWeek",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>该日期类型下的时间段列表</p>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "TimeRanges",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "BasicAuth": {
+      "document": "basic 鉴权",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "BasicToken",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BearerAuth": {
+      "document": "Bearer 鉴权",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "BearerToken",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BindNumberCallInInterfaceRequest": {
       "document": "BindNumberCallInInterface请求参数结构体",
       "members": [
@@ -2888,7 +2955,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "document": "<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -2897,7 +2964,7 @@
         },
         {
           "disabled": false,
-          "document": "任务起始时间戳，Unix 秒级时间戳",
+          "document": "<p>任务起始时间戳，Unix 秒级时间戳</p>",
           "example": "1642500621",
           "member": "int64",
           "name": "NotBefore",
@@ -2906,7 +2973,7 @@
         },
         {
           "disabled": false,
-          "document": "被叫号码列表",
+          "document": "<p>被叫号码列表</p>",
           "example": "[\"0086139xxxxxxxx\",\"0086130xxxxxxxxx\"]",
           "member": "string",
           "name": "Callees",
@@ -2915,7 +2982,7 @@
         },
         {
           "disabled": false,
-          "document": "主叫号码列表",
+          "document": "<p>主叫号码列表</p>",
           "example": "[\"0086010xxxxxxxx\"]",
           "member": "string",
           "name": "Callers",
@@ -2924,7 +2991,7 @@
         },
         {
           "disabled": false,
-          "document": "呼叫使用的 IVR Id，不填时需要填写 AIAgentId",
+          "document": "<p>呼叫使用的 IVR Id，不填时需要填写 AIAgentId</p>",
           "example": "3",
           "member": "uint64",
           "name": "IvrId",
@@ -2933,7 +3000,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名",
+          "document": "<p>任务名</p>",
           "example": "任务1",
           "member": "string",
           "name": "Name",
@@ -2942,7 +3009,7 @@
         },
         {
           "disabled": false,
-          "document": "任务描述",
+          "document": "<p>任务描述</p>",
           "example": "任务描述1",
           "member": "string",
           "name": "Description",
@@ -2951,7 +3018,7 @@
         },
         {
           "disabled": false,
-          "document": "任务停止时间戳，Unix 秒级时间戳",
+          "document": "<p>任务停止时间戳，Unix 秒级时间戳</p>",
           "example": "1642500622",
           "member": "int64",
           "name": "NotAfter",
@@ -2960,7 +3027,7 @@
         },
         {
           "disabled": false,
-          "document": "最大尝试次数，1-3 次",
+          "document": "<p>最大尝试次数，1-3 次</p>",
           "example": "1",
           "member": "uint64",
           "name": "Tries",
@@ -2969,7 +3036,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处",
+          "document": "<p>自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处</p>",
           "example": "无",
           "member": "Variable",
           "name": "Variables",
@@ -2978,7 +3045,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处",
+          "document": "<p>用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处</p>",
           "example": "foobar",
           "member": "string",
           "name": "UUI",
@@ -2987,7 +3054,7 @@
         },
         {
           "disabled": false,
-          "document": "被叫属性",
+          "document": "<p>被叫属性</p>",
           "example": "无",
           "member": "CalleeAttribute",
           "name": "CalleeAttributes",
@@ -2996,7 +3063,7 @@
         },
         {
           "disabled": false,
-          "document": "IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones",
+          "document": "<p>IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones</p>",
           "example": "Asia/Shanghai",
           "member": "string",
           "name": "TimeZone",
@@ -3005,7 +3072,7 @@
         },
         {
           "disabled": false,
-          "document": "可用时间段",
+          "document": "<p>可用时间段</p>",
           "example": "无",
           "member": "TimeRange",
           "name": "AvailableTime",
@@ -3014,7 +3081,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体 ID，不填写时需要填写 IvrId",
+          "document": "<p>智能体 ID，不填写时需要填写 IvrId</p>",
           "example": "5845",
           "member": "int64",
           "name": "AIAgentId",
@@ -3023,7 +3090,7 @@
         },
         {
           "disabled": false,
-          "document": "任务失败重试时间间隔，重试间隔 600秒～86400 秒",
+          "document": "<p>任务失败重试时间间隔，重试间隔 600秒～86400 秒</p>",
           "example": "600",
           "member": "int64",
           "name": "RetryInterval",
@@ -3032,12 +3099,48 @@
         },
         {
           "disabled": false,
-          "document": "最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数",
+          "document": "<p>最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数</p>",
           "example": "15",
           "member": "int64",
           "name": "MaxRingTimeoutSecond",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据限定的挂断原因(可选挂断状态码:202,203,204,205,206,207,208,210,212,213,215,216,217,218,219,221,222,234)进行重试，只对使用AIAgentID的任务有效，挂断状态码说明</p><p><a href=\"https://cloud.tencent.com/document/product/679/123938\">详见</a></p>",
+          "example": "[\"212\"]",
+          "member": "string",
+          "name": "RetryHangupTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据限定的话后标签进行重试，只对使用对话模型的AIAgentID任务有效，标签信息可在智能体配置中查询</p>",
+          "example": "无",
+          "member": "RetryTagItem",
+          "name": "RetryTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效的工作时间配置。建议使用此字段代替AvailableTime 字段，当同时使用时，优先生效AvailableTime。</p>",
+          "example": "无",
+          "member": "AvailableTimeConfig",
+          "name": "AvailableWorkTimeConfig",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发策略</p>",
+          "example": "无",
+          "member": "TriggerStrategyItem",
+          "name": "TriggerStrategy",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3047,7 +3150,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务Id",
+          "document": "<p>任务Id</p>",
           "example": "2",
           "member": "uint64",
           "name": "TaskId",
@@ -7922,6 +8025,189 @@
       ],
       "type": "object"
     },
+    "HeaderParams": {
+      "document": "http header 参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HttpCallbackConfig": {
+      "document": "http 回调包体参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>http 标准 url</p>",
+          "example": "https://webhook.site/5e789103-af06-4d93-8ffc-8bd8871fad0b",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>http header 参数</p>",
+          "example": "无",
+          "member": "HeaderParams",
+          "name": "HeaderParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>http 请求包参数</p>",
+          "example": "无",
+          "member": "HttpParams",
+          "name": "Params",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对端输出值，由对端 url 返回的 json 包里包含该字段就行</p>",
+          "example": "无",
+          "member": "ReturnKey",
+          "name": "Returns",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否异步</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Async",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否鉴权</p><p>枚举值：</p><ul><li>0： 不开启鉴权</li><li>1： 启用鉴权</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AuthType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>basic token 鉴权</p>",
+          "example": "无",
+          "member": "BasicAuth",
+          "name": "BasicAuth",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>bearer token 鉴权</p>",
+          "example": "无",
+          "member": "BearerAuth",
+          "name": "BearerAuth",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义鉴权</p>",
+          "example": "无",
+          "member": "HttpParams",
+          "name": "CustomAuth",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>oauth2 鉴权</p>",
+          "example": "无",
+          "member": "OauthConfig",
+          "name": "Oauth2Auth",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HttpParams": {
+      "document": "http 请求包体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "ValueType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "IMCdrInfo": {
       "document": "文本会话服务记录信息",
       "members": [
@@ -8648,6 +8934,45 @@
         }
       ],
       "usage": "out"
+    },
+    "OauthConfig": {
+      "document": "Oauth2鉴权",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "TokenURL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "ClientSecret",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "OwnNumberApplyDetailItem": {
       "document": "用户自带号码审批明细数据类型",
@@ -9412,6 +9737,51 @@
         }
       ],
       "type": "object"
+    },
+    "RetryTagItem": {
+      "document": "自动外呼限定重呼标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签名称</p>",
+          "example": "是否需要稍后联系",
+          "member": "string",
+          "name": "TagName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值</p>",
+          "example": "需要",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ReturnKey": {
+      "document": "http return key",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SdkAppIdBuyInfo": {
       "document": "应用购买信息",
@@ -11231,6 +11601,56 @@
         }
       ],
       "type": "object"
+    },
+    "TriggerStrategyItem": {
+      "document": "触发策略数组，每个策略里包含接口调用信息，挂断类型，通话标签，触发模式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>http 接口相关参数</p>",
+          "example": "无",
+          "member": "HttpCallbackConfig",
+          "name": "InterfaceConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂断类型</p>",
+          "example": "[\"206\"]",
+          "member": "string",
+          "name": "HangupTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通话标签</p>",
+          "example": "无",
+          "member": "RetryTagItem",
+          "name": "CallTags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发模式</p><p>枚举值：</p><ul><li>ONCE_PER_NUMBER： 每个号码仅第一次命中条件时触发</li><li>ALWAYS_ON_MATCH： 每次命中条件均触发</li></ul>",
+          "example": "ONCE_PER_NUMBER",
+          "member": "string",
+          "name": "TriggerMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "UnbindNumberCallOutSkillGroupRequest": {
       "document": "UnbindNumberCallOutSkillGroup请求参数结构体",

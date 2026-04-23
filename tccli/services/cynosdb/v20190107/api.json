@@ -2296,7 +2296,7 @@
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "required": false,
           "type": "string"
         }
       ],
@@ -9381,7 +9381,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户Uin",
+          "document": "<p>用户Uin</p>",
           "example": "1000***499845",
           "member": "string",
           "name": "Uin",
@@ -9391,7 +9391,7 @@
         },
         {
           "disabled": false,
-          "document": "用户AppId",
+          "document": "<p>用户AppId</p>",
           "example": "12510243",
           "member": "int64",
           "name": "AppId",
@@ -9401,7 +9401,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-5ne6bjyx",
           "member": "string",
           "name": "ClusterId",
@@ -9411,7 +9411,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "cynosdbmysql-5ne6bjyx",
           "member": "string",
           "name": "ClusterName",
@@ -9421,7 +9421,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "cynosdbmysql-ins-bzkxxrmt",
           "member": "string",
           "name": "InstanceId",
@@ -9431,7 +9431,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "cynosdbmysql-ins-bzkxxrmt",
           "member": "string",
           "name": "InstanceName",
@@ -9441,7 +9441,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -9451,7 +9451,7 @@
         },
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -9461,7 +9461,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -9471,7 +9471,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态\ncreating：创建中\nrunning：运行中\nisolating：隔离中\nisolated：已隔离\nactivating：恢复中\nofflining：下线中\nofflined：已下线\n",
+          "document": "<p>实例状态<br>creating：创建中<br>running：运行中<br>isolating：隔离中<br>isolated：已隔离<br>activating：恢复中<br>offlining：下线中<br>offlined：已下线</p>",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -9481,7 +9481,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态中文描述",
+          "document": "<p>实例状态中文描述</p>",
           "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
@@ -9491,7 +9491,7 @@
         },
         {
           "disabled": false,
-          "document": "serverless实例状态, 可能值：\nresume\npause",
+          "document": "<p>serverless实例状态, 可能值：<br>resume<br>pause</p>",
           "example": "resume",
           "member": "string",
           "name": "ServerlessStatus",
@@ -9501,7 +9501,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库类型",
+          "document": "<p>数据库类型</p>",
           "example": "MYSQL",
           "member": "string",
           "name": "DbType",
@@ -9511,7 +9511,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库版本",
+          "document": "<p>数据库版本</p>",
           "example": "5.7",
           "member": "string",
           "name": "DbVersion",
@@ -9521,7 +9521,7 @@
         },
         {
           "disabled": false,
-          "document": "Cpu，单位：核",
+          "document": "<p>Cpu，单位：核</p>",
           "example": "2",
           "member": "int64",
           "name": "Cpu",
@@ -9531,7 +9531,7 @@
         },
         {
           "disabled": false,
-          "document": "内存，单位：GB",
+          "document": "<p>内存，单位：GB</p>",
           "example": "4",
           "member": "int64",
           "name": "Memory",
@@ -9541,7 +9541,7 @@
         },
         {
           "disabled": false,
-          "document": "存储量，单位：GB",
+          "document": "<p>存储量，单位：GB</p>",
           "example": "100",
           "member": "int64",
           "name": "Storage",
@@ -9551,7 +9551,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型",
+          "document": "<p>实例类型</p>",
           "example": "rw",
           "member": "string",
           "name": "InstanceType",
@@ -9561,7 +9561,7 @@
         },
         {
           "disabled": false,
-          "document": "实例当前角色",
+          "document": "<p>实例当前角色</p>",
           "example": "master",
           "member": "string",
           "name": "InstanceRole",
@@ -9571,7 +9571,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2024-06-20 19:12:54",
           "member": "datetime",
           "name": "UpdateTime",
@@ -9581,7 +9581,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-05-20 19:12:54",
           "member": "datetime",
           "name": "CreateTime",
@@ -9591,7 +9591,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式",
+          "document": "<p>付费模式</p>",
           "example": "0",
           "member": "int64",
           "name": "PayMode",
@@ -9601,7 +9601,7 @@
         },
         {
           "disabled": false,
-          "document": "实例过期时间",
+          "document": "<p>实例过期时间</p>",
           "example": "2024-07-20 19:17:16",
           "member": "datetime",
           "name": "PeriodEndTime",
@@ -9611,7 +9611,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型",
+          "document": "<p>网络类型</p>",
           "example": "1",
           "member": "int64",
           "name": "NetType",
@@ -9621,7 +9621,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC网络ID",
+          "document": "<p>VPC网络ID</p>",
           "example": "vpc-1ptuei0b",
           "member": "string",
           "name": "VpcId",
@@ -9631,7 +9631,7 @@
         },
         {
           "disabled": false,
-          "document": "子网ID",
+          "document": "<p>子网ID</p>",
           "example": "subnet-1tmw9t4o",
           "member": "string",
           "name": "SubnetId",
@@ -9641,7 +9641,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内网IP",
+          "document": "<p>实例内网IP</p>",
           "example": "10.0.1.2",
           "member": "string",
           "name": "Vip",
@@ -9651,7 +9651,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内网端口",
+          "document": "<p>实例内网端口</p>",
           "example": "5432",
           "member": "int64",
           "name": "Vport",
@@ -9661,7 +9661,7 @@
         },
         {
           "disabled": false,
-          "document": "实例外网域名",
+          "document": "<p>实例外网域名</p>",
           "example": "cynosdbpg-bzkxxrmt.wan.domain.com",
           "member": "string",
           "name": "WanDomain",
@@ -9671,7 +9671,7 @@
         },
         {
           "disabled": false,
-          "document": "字符集",
+          "document": "<p>字符集</p>",
           "example": "utf8",
           "member": "string",
           "name": "Charset",
@@ -9681,7 +9681,7 @@
         },
         {
           "disabled": false,
-          "document": "Cynos内核版本",
+          "document": "<p>Cynos内核版本</p>",
           "example": "2.0.12",
           "member": "string",
           "name": "CynosVersion",
@@ -9691,7 +9691,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标志",
+          "document": "<p>续费标志</p>",
           "example": "0",
           "member": "int64",
           "name": "RenewFlag",
@@ -9701,7 +9701,7 @@
         },
         {
           "disabled": false,
-          "document": "serverless实例cpu下限",
+          "document": "<p>serverless实例cpu下限</p>",
           "example": "1.0",
           "member": "float",
           "name": "MinCpu",
@@ -9711,7 +9711,7 @@
         },
         {
           "disabled": false,
-          "document": "serverless实例cpu上限",
+          "document": "<p>serverless实例cpu上限</p>",
           "example": "2.0",
           "member": "float",
           "name": "MaxCpu",
@@ -9721,10 +9721,20 @@
         },
         {
           "disabled": false,
-          "document": "Db类型:<li>NORMAL</li><li>SERVERLESS</li>",
+          "document": "<p>Db类型:<li>NORMAL</li><li>SERVERLESS</li></p>",
           "example": "NORMAL",
           "member": "string",
           "name": "DbMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群的读写实例所在可用区</p>",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "MasterZone",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -17930,7 +17940,7 @@
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "required": false,
           "type": "string"
         }
       ],
@@ -23650,7 +23660,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网络组id(cynosdbmysql-grp-前缀开头)或集群id（例如 cynosdbmysql-xxxxxxxx前缀）,当通过实例IP地址三元组（UniqVpcId、Vip、Vport）配置安全组时，该字段必须设置为集群ID（例如 cynosdbmysql-xxxxxxxx前缀）。",
+          "document": "<p>网络组id(cynosdbmysql-grp-前缀开头)或集群id（例如 cynosdbmysql-xxxxxxxx前缀）,当通过实例IP地址三元组（UniqVpcId、Vip、Vport）配置安全组时，该字段必须设置为集群ID（例如 cynosdbmysql-xxxxxxxx前缀）。</p>",
           "example": "cynosdbmysql-grp-4senc2fm",
           "member": "string",
           "name": "InstanceId",
@@ -23659,7 +23669,7 @@
         },
         {
           "disabled": false,
-          "document": "要修改的安全组ID列表，一个或者多个安全组ID组成的数组。\n注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。",
+          "document": "<p>要修改的安全组ID列表，一个或者多个安全组ID组成的数组。<br>注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。</p>",
           "example": "[\"sg-ajr1jzgj\\n\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -23668,17 +23678,17 @@
         },
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "实例所属VPC网络ID,（UniqVpcId、Vip 和 Vport 三个参数需同时指定，用于唯一标识网络实例）",
-          "example": "",
+          "document": "<p>实例所属VPC网络ID,（UniqVpcId、Vip 和 Vport 三个参数需同时指定，用于唯一标识网络实例）</p>",
+          "example": "vpc-95mugkpt",
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
@@ -23686,8 +23696,8 @@
         },
         {
           "disabled": false,
-          "document": "实例IP地址,实例IP地址三元组UniqVpcId、Vip 和 Vport) 三个参数需同时指定，用于唯一标识网络实实例",
-          "example": "",
+          "document": "<p>实例IP地址,实例IP地址三元组UniqVpcId、Vip 和 Vport) 三个参数需同时指定，用于唯一标识网络实实例</p>",
+          "example": "192.168.18.109",
           "member": "string",
           "name": "Vip",
           "required": false,
@@ -23695,8 +23705,8 @@
         },
         {
           "disabled": false,
-          "document": "实例端口,实例IP地址三元组UniqVpcId、Vip 和 Vport) 三个参数需同时指定，用于唯一标识网络实实例",
-          "example": "",
+          "document": "<p>实例端口,实例IP地址三元组UniqVpcId、Vip 和 Vport) 三个参数需同时指定，用于唯一标识网络实实例</p>",
+          "example": "3306",
           "member": "int64",
           "name": "Vport",
           "required": false,

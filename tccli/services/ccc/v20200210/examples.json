@@ -82,10 +82,10 @@
     ],
     "CreateAutoCalloutTask": [
       {
-        "document": "创建任务",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoCalloutTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400123455,\n    \"NotBefore\": 1642500621,\n    \"Callees\": [\n        \"008613012345678\"\n    ],\n    \"Callers\": [\n        \"008602012345678\"\n    ],\n    \"IvrId\": 8\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": 1,\n        \"RequestId\": \"a561d5e7-2680-481f-b86e-a9ad7316f4d5\"\n    }\n}",
-        "title": "创建任务"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoCalloutTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1500098925,\n    \"NotBefore\": 1777641412,\n    \"Callees\": [\n        \"008613675881491\"\n    ],\n    \"Callers\": [\n        \"0086075533614747\"\n    ],\n    \"Name\": \"dinoggagagag\",\n    \"TimeZone\": \"Asia/Shanghai\",\n    \"AIAgentId\": 973,\n    \"TriggerStrategy\": [\n        {\n            \"InterfaceConfig\": {\n                \"Url\": \"https://webhook.site/8f9aa946-3190-4107-b175-38914e8aa6f6\",\n                \"HeaderParams\": [\n                    {\n                        \"Key\": \"taskid\",\n                        \"Value\": \"{taskId}\"\n                    }\n                ],\n                \"Params\": [\n                    {\n                        \"Key\": \"callStatus\",\n                        \"Value\": \"{callStatus}\"\n                    }\n                ],\n                \"Async\": false\n            },\n            \"HangupTypes\": [\n                \"202\",\n                \"203\",\n                \"206\"\n            ],\n            \"CallTags\": [\n                {\n                    \"TagName\": \"test123\",\n                    \"TagValue\": \"345\"\n                }\n            ],\n            \"TriggerMode\": \"ALWAYS_ON_MATCH\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec683719-4460-4686-b976-a6dd64e4accb\",\n        \"TaskId\": 17110\n    }\n}",
+        "title": "TriggerStrategy 调用示例"
       }
     ],
     "CreateCCCSkillGroup": [

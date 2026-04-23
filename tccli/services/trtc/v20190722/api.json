@@ -948,6 +948,33 @@
           "name": "VadLevel",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否过滤脏词（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 2]，默认值为 0。\n0：不过滤脏词；1：过滤脏词；2：将脏词替换为 \" * \"。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FilterDirty",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否过滤语气词（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 2]，默认值为 0。\n0：不过滤语气词；1：部分过滤；2：严格过滤。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FilterModal",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否过滤句末的句号（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 1]，默认值为 0。\n0：不过滤句末的句号；1：过滤句末的句号。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FilterPunc",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
