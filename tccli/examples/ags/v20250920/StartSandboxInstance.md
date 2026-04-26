@@ -14,6 +14,7 @@ Output:
 {
     "Response": {
         "Instance": {
+            "AuthMode": "DEFAULT",
             "CreateTime": "2026-04-14T21:12:48+08:00",
             "CustomConfiguration": {
                 "Args": [

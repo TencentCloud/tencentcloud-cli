@@ -3122,8 +3122,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "KMS服务是否开通， true 表示已开通",
-          "example": "1",
+          "document": "<p>KMS服务是否开通， true 表示已开通</p>",
+          "example": "true",
           "member": "bool",
           "name": "ServiceEnabled",
           "output_required": true,
@@ -3132,7 +3132,7 @@
         },
         {
           "disabled": false,
-          "document": "服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放",
+          "document": "<p>服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放</p>",
           "example": "1",
           "member": "int64",
           "name": "InvalidType",
@@ -3142,7 +3142,7 @@
         },
         {
           "disabled": false,
-          "document": "0-普通版，1-旗舰版",
+          "document": "<p>0-普通版，1-旗舰版</p>",
           "example": "0",
           "member": "uint64",
           "name": "UserLevel",
@@ -3152,7 +3152,7 @@
         },
         {
           "disabled": false,
-          "document": "旗舰版到期时间（Epoch Unix Timestamp）。",
+          "document": "<p>旗舰版到期时间（Epoch Unix Timestamp）。</p>",
           "example": "1603701385",
           "member": "uint64",
           "name": "ProExpireTime",
@@ -3162,7 +3162,7 @@
         },
         {
           "disabled": false,
-          "document": "旗舰版是否自动续费：0-不自动续费，1-自动续费",
+          "document": "<p>旗舰版是否自动续费：0-不自动续费，1-自动续费</p>",
           "example": "1",
           "member": "uint64",
           "name": "ProRenewFlag",
@@ -3172,7 +3172,7 @@
         },
         {
           "disabled": false,
-          "document": "旗舰版购买记录的唯一性标识。如果未开通旗舰版，则返回值为空",
+          "document": "<p>旗舰版购买记录的唯一性标识。如果未开通旗舰版，则返回值为空</p>",
           "example": "kms_pro_12345",
           "member": "string",
           "name": "ProResourceId",
@@ -3182,7 +3182,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开通 KMS 托管版",
+          "document": "<p>是否开通 KMS 托管版</p>",
           "example": "false",
           "member": "bool",
           "name": "ExclusiveVSMEnabled",
@@ -3192,7 +3192,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开通 KMS 独享版",
+          "document": "<p>是否开通 KMS 独享版</p>",
           "example": "false",
           "member": "bool",
           "name": "ExclusiveHSMEnabled",
@@ -3202,7 +3202,7 @@
         },
         {
           "disabled": false,
-          "document": "KMS 订阅信息。",
+          "document": "<p>KMS 订阅信息。</p>",
           "example": "Prepaid_KMS",
           "member": "string",
           "name": "SubscriptionInfo",
@@ -3212,7 +3212,7 @@
         },
         {
           "disabled": false,
-          "document": "返回KMS用户密钥使用数量",
+          "document": "<p>返回KMS用户密钥使用数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "CmkUserCount",
@@ -3222,7 +3222,7 @@
         },
         {
           "disabled": false,
-          "document": "返回KMS用户密钥规格数量",
+          "document": "<p>返回KMS用户密钥规格数量</p>",
           "example": "200",
           "member": "uint64",
           "name": "CmkLimit",
@@ -3232,8 +3232,8 @@
         },
         {
           "disabled": false,
-          "document": "返回独享集群组",
-          "example": "[{\"HsmClusterId\":\"cls-hsm-a1b2c3d4\",\"HsmClusterName\":\"cls-hsm-a1b2c3d4-name\"},{\"HsmClusterId\":\"cls-hsm-a1b2cd5\",\"HsmClusterName\":\"cls-hsm-a1b2c3d5-name\"}]",
+          "document": "<p>返回独享集群组</p>",
+          "example": "无",
           "member": "ExclusiveHSM",
           "name": "ExclusiveHSMList",
           "output_required": false,
@@ -3242,8 +3242,8 @@
         },
         {
           "disabled": false,
-          "document": "是否支持数据密钥托管。1:支持，0:不支持。",
-          "example": "0",
+          "document": "<p>是否支持数据密钥托管。1:支持，0:不支持。</p>",
+          "example": "true",
           "member": "bool",
           "name": "IsAllowedDataKeyHosted",
           "output_required": false,
@@ -3252,7 +3252,7 @@
         },
         {
           "disabled": false,
-          "document": "IsAllowedDataKeyHosted为1时有效，数据密钥的购买额度",
+          "document": "<p>IsAllowedDataKeyHosted为1时有效，数据密钥的购买额度</p>",
           "example": "0",
           "member": "uint64",
           "name": "DataKeyLimit",
@@ -3262,7 +3262,7 @@
         },
         {
           "disabled": false,
-          "document": "IsAllowedDataKeyHosted为1时有效，数据密钥免费额度。",
+          "document": "<p>IsAllowedDataKeyHosted为1时有效，数据密钥免费额度。</p>",
           "example": "0",
           "member": "uint64",
           "name": "FreeDataKeyLimit",
@@ -3272,7 +3272,7 @@
         },
         {
           "disabled": false,
-          "document": "IsAllowedDataKeyHosted为1时有效，已使用的数据密钥数量。",
+          "document": "<p>IsAllowedDataKeyHosted为1时有效，已使用的数据密钥数量。</p>",
           "example": "0",
           "member": "uint64",
           "name": "DataKeyUsedCount",
@@ -3282,7 +3282,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务的目标地域信息",
+          "document": "<p>同步任务的目标地域信息</p>",
           "example": "无",
           "member": "DestinationSyncConfig",
           "name": "SyncTaskList",
@@ -3292,12 +3292,42 @@
         },
         {
           "disabled": false,
-          "document": "是否支持同步任务。true:支持，false:不支持。",
+          "document": "<p>是否支持同步任务。true:支持，false:不支持。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsAllowedSync",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域下的QPS</p>",
+          "example": "3000",
+          "member": "uint64",
+          "name": "QpsLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总的QPS值</p>",
+          "example": "12000",
+          "member": "uint64",
+          "name": "QpsTotalLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域下的QPS</p>",
+          "example": "无",
+          "member": "RegionQps",
+          "name": "RegionsQps",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -4643,6 +4673,34 @@
         }
       ],
       "type": "object"
+    },
+    "RegionQps": {
+      "document": "地域的QPS扩展包",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>qps的大小</p>",
+          "example": "3000",
+          "member": "uint64",
+          "name": "Qps",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ScheduleDataKeyDeletionRequest": {
       "document": "ScheduleDataKeyDeletion请求参数结构体",

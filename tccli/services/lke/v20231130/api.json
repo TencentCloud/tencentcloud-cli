@@ -18166,6 +18166,15 @@
           "name": "LoginSubAccountUin",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拒答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableScope",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -22436,7 +22445,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "不满意回复ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>不满意回复ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "18781034349007",
           "member": "string",
           "name": "ReplyBizId",
@@ -22446,7 +22455,7 @@
         },
         {
           "disabled": false,
-          "document": "消息记录ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消息记录ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "888ff487-51fb-42c9-81d2-1bfc4dae24ae无",
           "member": "string",
           "name": "RecordBizId",
@@ -22456,7 +22465,7 @@
         },
         {
           "disabled": false,
-          "document": "用户问题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户问题</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "你是谁",
           "member": "string",
           "name": "Question",
@@ -22466,7 +22475,7 @@
         },
         {
           "disabled": false,
-          "document": "问题回复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>问题回复</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "我是答案",
           "member": "string",
           "name": "Answer",
@@ -22476,7 +22485,7 @@
         },
         {
           "disabled": false,
-          "document": "错误类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"回答不准确\"]",
           "member": "string",
           "name": "Reasons",
@@ -22486,7 +22495,7 @@
         },
         {
           "disabled": false,
-          "document": "处理状态，0：待处理，1：已拒答，2：已忽略，3：已纠错\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>处理状态，0：待处理，1：已拒答，2：已忽略，3：已纠错</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -22496,7 +22505,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，秒级时间戳",
+          "document": "<p>创建时间，秒级时间戳</p>",
           "example": "1756864444",
           "member": "string",
           "name": "CreateTime",
@@ -22506,7 +22515,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间,秒级时间戳",
+          "document": "<p>更新时间,秒级时间戳</p>",
           "example": "1756864444",
           "member": "string",
           "name": "UpdateTime",
@@ -22516,7 +22525,7 @@
         },
         {
           "disabled": false,
-          "document": "操作人",
+          "document": "<p>操作人</p>",
           "example": "张三",
           "member": "string",
           "name": "Operator",
@@ -22526,7 +22535,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义反馈",
+          "document": "<p>自定义反馈</p>",
           "example": "自定义",
           "member": "string",
           "name": "FeedbackContent",

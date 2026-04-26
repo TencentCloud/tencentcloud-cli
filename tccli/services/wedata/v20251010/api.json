@@ -9713,7 +9713,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID",
+          "document": "<p>主键ID</p>",
           "example": "1",
           "member": "string",
           "name": "Id",
@@ -9724,7 +9724,7 @@
         },
         {
           "disabled": false,
-          "document": "标签名称",
+          "document": "<p>标签名称</p>",
           "example": "12",
           "member": "string",
           "name": "Name",
@@ -9735,7 +9735,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述",
+          "document": "<p>标签描述</p>",
           "example": "12",
           "member": "string",
           "name": "Description",
@@ -9746,7 +9746,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间",
+          "document": "<p>工作空间</p>",
           "example": "default",
           "member": "string",
           "name": "WorkspaceId",
@@ -9757,7 +9757,7 @@
         },
         {
           "disabled": false,
-          "document": "是否被管控",
+          "document": "<p>是否被管控</p>",
           "example": "1",
           "member": "int64",
           "name": "Control",
@@ -9768,7 +9768,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者",
+          "document": "<p>创建者</p>",
           "example": "test2",
           "member": "string",
           "name": "Creator",
@@ -9779,7 +9779,7 @@
         },
         {
           "disabled": false,
-          "document": "修改者",
+          "document": "<p>修改者</p>",
           "example": "test1",
           "member": "string",
           "name": "Modifier",
@@ -9790,7 +9790,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "134",
           "member": "string",
           "name": "CreateTime",
@@ -9801,7 +9801,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "134",
           "member": "string",
           "name": "ModifiedTime",
@@ -9812,7 +9812,7 @@
         },
         {
           "disabled": false,
-          "document": "标签值列表",
+          "document": "<p>标签值列表</p>",
           "example": "无",
           "member": "BizLabelValue",
           "name": "Values",
@@ -9823,13 +9823,35 @@
         },
         {
           "disabled": false,
-          "document": "标签类型",
+          "document": "<p>标签类型</p>",
           "example": "1",
           "member": "int64",
           "name": "Type",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签来源</p><p>枚举值：</p><ul><li>1： 系统</li><li>2： 自定义</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "SourceType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全策略类型</p>",
+          "example": "[\"DSS\"]",
+          "member": "string",
+          "name": "SecurityTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -18547,7 +18569,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签名称",
+          "document": "<p>标签名称</p>",
           "example": "标签名称",
           "member": "string",
           "name": "Name",
@@ -18558,7 +18580,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述",
+          "document": "<p>标签描述</p>",
           "example": "标签描述",
           "member": "string",
           "name": "Description",
@@ -18569,7 +18591,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者",
+          "document": "<p>创建者</p>",
           "example": "创建者",
           "member": "string",
           "name": "Creator",
@@ -18580,7 +18602,7 @@
         },
         {
           "disabled": false,
-          "document": "是否被管控",
+          "document": "<p>是否被管控</p>",
           "example": "1",
           "member": "int64",
           "name": "Control",
@@ -18591,7 +18613,7 @@
         },
         {
           "disabled": false,
-          "document": "标签值列表",
+          "document": "<p>标签值列表</p>",
           "example": "无",
           "member": "CreateLabelValueInfo",
           "name": "Values",
@@ -18602,13 +18624,35 @@
         },
         {
           "disabled": false,
-          "document": "标签类型",
-          "example": "",
+          "document": "<p>标签类型</p>",
+          "example": "4",
           "member": "int64",
           "name": "Type",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签类型</p><p>枚举值：</p><ul><li>1： 治理标签</li><li>2： 自定义标签</li><li>3： 属性标签</li><li>4： 脱敏标签</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "SourceType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全类型</p>",
+          "example": "[\"DSS\"]",
+          "member": "string",
+          "name": "SecurityTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -29558,6 +29602,67 @@
       ],
       "usage": "out"
     },
+    "FieldTagInfo": {
+      "document": "字段标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签ID</p>",
+          "example": "14",
+          "member": "string",
+          "name": "LabelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签名称</p>",
+          "example": "testLabel",
+          "member": "string",
+          "name": "LabelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签类型，参考 LabelType 枚举：1-治理标签，2-自定义标签，3-属性标签，4-脱敏标签</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "LabelType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段名称</p>",
+          "example": "id",
+          "member": "string",
+          "name": "FieldName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段类型，如 string、int、bigint 等</p>",
+          "example": "long",
+          "member": "string",
+          "name": "FieldType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "FieldValue": {
       "document": "文件的行数据中的各个列数据",
       "members": [
@@ -29963,6 +30068,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件git配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "GitRepoConfig",
+          "name": "GitConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -40387,6 +40503,34 @@
         }
       ],
       "usage": "in"
+    },
+    "GitRepoConfig": {
+      "document": "git配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检出规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "SparseCheckoutConfig",
+          "name": "SparseCheckout",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "git配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "AuthConfigItem",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "GitSandboxFolderConfig": {
       "document": "git沙箱目录配置",
@@ -71922,9 +72066,27 @@
         {
           "disabled": false,
           "document": "工作空间路径筛选(非catalog类资产)",
-          "example": "",
+          "example": "[\"/path/to/workspace\"]",
           "member": "string",
           "name": "WorkspacePaths",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启混合搜索",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableHybridSearch",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "字段标签ID列表（可选）。使用场景：根据字段上打的标签检索资产（表），返回包含该字段标签的资产。与 TagIds 的区别：TagIds 是表级标签过滤，FieldTagIds 是字段级标签过滤。规格要求：int64 数组，最多支持 20 个标签 ID 同时过滤",
+          "example": "[1]",
+          "member": "int64",
+          "name": "FieldTagIds",
           "required": false,
           "type": "list"
         }
@@ -72368,7 +72530,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资产全名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资产全名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "FullName",
@@ -72378,7 +72540,7 @@
         },
         {
           "disabled": false,
-          "document": "资产全局ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资产全局ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "AssetGuid",
@@ -72388,7 +72550,7 @@
         },
         {
           "disabled": false,
-          "document": "各资产类别下的唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>各资产类别下的唯一ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "AssetId",
@@ -72398,7 +72560,7 @@
         },
         {
           "disabled": false,
-          "document": "资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资产名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "AssetName",
@@ -72408,7 +72570,7 @@
         },
         {
           "disabled": false,
-          "document": "资产类型，参见ListEntityTypeMetas返回的EntityType\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资产类型，参见ListEntityTypeMetas返回的EntityType</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CATALOG",
           "member": "string",
           "name": "AssetType",
@@ -72418,7 +72580,7 @@
         },
         {
           "disabled": false,
-          "document": "用户活动\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户活动</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UserActivityInfo",
           "name": "UserActivityInfo",
@@ -72428,7 +72590,7 @@
         },
         {
           "disabled": false,
-          "document": "热度，值范围：[1,2,3,4]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>热度，值范围：[1,2,3,4]</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Popularity",
@@ -72438,7 +72600,7 @@
         },
         {
           "disabled": false,
-          "document": "资产标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资产标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -72448,7 +72610,7 @@
         },
         {
           "disabled": false,
-          "document": "责任人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>责任人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Owner",
           "name": "Owner",
@@ -72458,7 +72620,7 @@
         },
         {
           "disabled": false,
-          "document": "最近更新时间，毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最近更新时间，毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "ModifiedTime",
@@ -72468,7 +72630,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Comment",
@@ -72478,7 +72640,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作空间ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "WorkspaceId",
@@ -72488,7 +72650,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间文件夹路径（废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作空间文件夹路径（废弃）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "WorkspaceFolderPath",
@@ -72498,7 +72660,7 @@
         },
         {
           "disabled": false,
-          "document": "高亮(废弃)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>高亮(废弃)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Highlighting",
           "name": "Highlighting",
@@ -72508,7 +72670,7 @@
         },
         {
           "disabled": false,
-          "document": "各类资产扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>各类资产扩展信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KVPair",
           "name": "Properties",
@@ -72518,8 +72680,8 @@
         },
         {
           "disabled": false,
-          "document": "工作空间文件夹路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>工作空间文件夹路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/Workspace/Users/wedata30-dev@tencent.com@700002164618/erinhong",
           "member": "string",
           "name": "WorkspacePath",
           "output_required": false,
@@ -72528,8 +72690,8 @@
         },
         {
           "disabled": false,
-          "document": "字段信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>字段信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FieldInfo",
           "name": "FieldInfo",
           "output_required": false,
@@ -72538,8 +72700,8 @@
         },
         {
           "disabled": false,
-          "document": "废弃\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>废弃</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "SignalLevel",
           "output_required": false,
@@ -72548,8 +72710,8 @@
         },
         {
           "disabled": false,
-          "document": "热度值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>热度值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
           "member": "string",
           "name": "PopularityQuantity",
           "output_required": false,
@@ -72558,12 +72720,22 @@
         },
         {
           "disabled": false,
-          "document": "高亮\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>高亮</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "HighlightingInfo",
           "name": "HighlightingInfo",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段标签列表，返回资产下所有字段上打的标签信息，用于展示字段级标签；每项包含 LabelId、LabelName、LabelType、FieldName、FieldType</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FieldTagInfo",
+          "name": "FieldTags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -73704,6 +73876,45 @@
           "output_required": false,
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SparseCheckoutConfig": {
+      "document": "git检出规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用稀疏检出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否使用 cone 模式（推荐 true，按目录匹配更高效）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "ConeMode",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "稀疏检出路径列表（如 [\"src/module-a/\", \"docs/\"]）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Patterns",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -88714,11 +88925,11 @@
       "usage": "both"
     },
     "VoteAssetTagReq": {
-      "document": "资产打标请求",
+      "document": "资产打标请求（支持一个资产打多个标签）",
       "members": [
         {
           "disabled": false,
-          "document": "资产类型",
+          "document": "资产类型，如TABLE、VIEW等",
           "example": "catalog",
           "member": "string",
           "name": "PropertyType",
@@ -88762,10 +88973,21 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "标签列表（一个资产可以有多个标签）",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段标签列表，用于同步更新表级 ES 索引 wedata3_es_table 中的 fieldTags 字段；可选，单次最多 100 条",
+          "example": "无",
+          "member": "FieldTagInfo",
+          "name": "FieldTags",
           "output_required": false,
           "required": false,
           "type": "list",
