@@ -1032,7 +1032,7 @@
     "DesignVoiceAsync": {
       "document": "音色设计，根据prompt生成音色ID",
       "input": "DesignVoiceAsyncRequest",
-      "name": "音色设计-异步",
+      "name": "异步音色设计",
       "output": "DesignVoiceAsyncResponse",
       "status": "online"
     },

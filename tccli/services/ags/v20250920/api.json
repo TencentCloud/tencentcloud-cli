@@ -186,7 +186,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "沙箱实例ID，生成的访问Token将仅可用于访问此沙箱实例",
+          "document": "<p>沙箱实例ID，生成的访问Token将仅可用于访问此沙箱实例</p>",
           "example": "a123478903213307971e7bc5793",
           "member": "string",
           "name": "InstanceId",
@@ -201,7 +201,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问Token",
+          "document": "<p>访问Token</p>",
           "example": "sit_1XXJWXVbosp4ZeSSlnZBMs4wsWirZtx3Ixp1Ndz2_gQ",
           "member": "string",
           "name": "Token",
@@ -211,10 +211,20 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "<p>过期时间</p>",
           "example": "2025-09-12T09:00:03.094Z",
           "member": "string",
           "name": "ExpiresAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>非管控面（envd）的访问Token</p>",
+          "example": "f0XXXXX077d7d61862e0f144568bd2c207cbbbbe94eb5ef919f884dc614796ab",
+          "member": "string",
+          "name": "TrafficToken",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1819,6 +1829,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱访问认证模式</p><p>枚举值：</p><ul><li>DEFAULT： 默认，即 TOKEN 认证</li><li>TOKEN： Token认证，即所有端口访问都需携带TOKEN</li><li>NONE： 免认证，即所有端口访问无需携带TOKEN</li><li>PUBLIC： 公开模式，即ENVD管理端口（49983）访问需携带TOKEN，其他端口无需携带TOKEN</li></ul><p>默认值：DEFAULT</p>",
+          "example": "TOKEN",
+          "member": "string",
+          "name": "AuthMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2064,7 +2085,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>沙箱访问认证模式</p><p>枚举值：</p><ul><li>DEFAULT： 跟随系统策略</li><li>TOKEN： Token认证</li><li>NONE： 免认证 </li></ul><p>默认值：DEFAULT</p>",
+          "document": "<p>沙箱访问认证模式</p><p>枚举值：</p><ul><li>DEFAULT： 默认，即 TOKEN 认证</li><li>TOKEN： Token认证，即所有端口访问都需携带TOKEN</li><li>NONE： 免认证，即所有端口访问无需携带TOKEN</li><li>PUBLIC： 公开模式，即ENVD管理端口（49983）访问需携带TOKEN，其他端口无需携带TOKEN</li></ul><p>默认值：DEFAULT</p>",
           "example": "DEFAULT",
           "member": "string",
           "name": "AuthMode",

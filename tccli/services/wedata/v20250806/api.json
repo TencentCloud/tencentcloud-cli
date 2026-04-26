@@ -5412,6 +5412,15 @@
           "name": "AllowDownstreamDependency",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度类型: 0 正常调度 1 空跑调度</p><p>枚举值：</p><ul><li>0： 正常调度</li><li>1： 空跑调度</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ScheduleType",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -10723,7 +10732,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参数名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "intask_v",
           "member": "string",
           "name": "ParamKey",
@@ -10734,7 +10743,7 @@
         },
         {
           "disabled": false,
-          "document": "参数描述：格式为 项目标识.任务名称.参数名；例：project_wedata_1.sh_250820_104107.pp_out\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参数描述：格式为 项目标识.任务名称.参数名；例：project_wedata_1.sh_250820_104107.pp_out</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DATA_DEV_SIM_PROJ_01.sh_241204_111248.taskout_v1",
           "member": "string",
           "name": "ParamDesc",
@@ -10745,7 +10754,7 @@
         },
         {
           "disabled": false,
-          "document": "父任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>父任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20241204111252781",
           "member": "string",
           "name": "FromTaskId",
@@ -10756,12 +10765,23 @@
         },
         {
           "disabled": false,
-          "document": "父任务参数key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>父任务参数key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "taskout_v1",
           "member": "string",
           "name": "FromParamKey",
           "output_required": false,
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务输入类型，默认使用TASK</p><p>枚举值：</p><ul><li>TASK： 来源为父任务</li><li>CONSTANT： 常量值，目前仅for-each节点支持</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TASK",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -30248,6 +30268,17 @@
           "example": "1",
           "member": "int64",
           "name": "AllowDownstreamDependency",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度类型: 0 正常调度 1 空跑调度</p><p>枚举值：</p><ul><li>0： 正常调度</li><li>1： 空跑调度</li></ul><p>默认值：0</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ScheduleType",
           "output_required": false,
           "required": false,
           "type": "int",

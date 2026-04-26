@@ -2293,15 +2293,15 @@
     "OperateFlowRemarks": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateFlowRemarks\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDCp0UUckpay74u2Uxgcd4v1197NeSXv\"\n    },\n    \"FlowId\": \"yDt**************************wzZ\",\n    \"OperateType\": \"UPDATE\",\n    \"FlowItem\": {\n        \"RemarkId\": 1,\n        \"RemarkValue\": \"新的标签\"\n    },\n    \"FlowGroupId\": \"yD3**************************CkC\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5de73ff1-d7ab-4292-9c0c-fc412ae28f3f\"\n    }\n}",
-        "title": "更新合同备注"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateFlowRemarks\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDC**************************SXv\"\n    },\n    \"OperateType\": \"CREATE\",\n    \"FlowGroupId\": \"yD3**************************CkC\",\n    \"FlowItems\": [\n        \"合同组标签1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"31b900d2-18ce-4304-9164-63fa98b6375e\"\n    }\n}",
         "title": "创建合同备注"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateFlowRemarks\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDCp0UUckpay74u2Uxgcd4v1197NeSXv\"\n    },\n    \"FlowId\": \"yDt**************************wzZ\",\n    \"OperateType\": \"UPDATE\",\n    \"FlowItem\": {\n        \"RemarkId\": 1,\n        \"RemarkValue\": \"新的标签\"\n    },\n    \"FlowGroupId\": \"yD3**************************CkC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5de73ff1-d7ab-4292-9c0c-fc412ae28f3f\"\n    }\n}",
+        "title": "更新合同备注"
       }
     ],
     "OperateSeals": [

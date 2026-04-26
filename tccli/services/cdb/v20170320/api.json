@@ -2237,7 +2237,7 @@
         {
           "disabled": false,
           "document": "执行时间，微秒。",
-          "example": "ExecTime",
+          "example": "1",
           "member": "int64",
           "name": "ExecTime",
           "output_required": true,
@@ -2337,7 +2337,7 @@
         {
           "disabled": false,
           "document": "日志命中规则模板的基本信息",
-          "example": "[{\"RuleTemplateId\": \"cdb-art-8qx2kcr7\",\"RuleTemplateName\": \"andy_rule\",\"AlarmLevel\": \"2\",\"RuleTemplateStatus\": \"1\"}]",
+          "example": "无",
           "member": "LogRuleTemplateInfo",
           "name": "TemplateInfo",
           "output_required": false,
@@ -2353,6 +2353,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3306",
+          "member": "int64",
+          "name": "ClientPort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8286,7 +8296,7 @@
         {
           "disabled": false,
           "document": "过滤条件。多个值之前是且的关系。",
-          "example": "[{\"Type\": \"host\", \"Compare\": \"EXC\",\"Value\": \t\"10.0.\"}]",
+          "example": "无",
           "member": "InstanceAuditLogFilters",
           "name": "LogFilter",
           "required": false,
@@ -8311,7 +8321,7 @@
         {
           "disabled": false,
           "document": "审计日志详情。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"AffectRows\": 1,\"CheckRows\": 0,\"CpuTime\": 375.786,\"DBName\": \"wyang\",\"User\": \"root\"}]",
+          "example": "无",
           "member": "AuditLog",
           "name": "Items",
           "output_required": true,

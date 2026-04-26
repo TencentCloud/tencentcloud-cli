@@ -693,7 +693,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Markdown文件中表格返回的形式\n0，表格以MD形式返回\n1，表格以HTML形式返回\n默认为0",
+          "document": "<p>Markdown文件中表格返回的形式<br>0，表格以MD形式返回<br>1，表格以HTML形式返回<br>默认为0</p>",
           "example": "1",
           "member": "string",
           "name": "TableResultType",
@@ -702,7 +702,7 @@
         },
         {
           "disabled": false,
-          "document": "智能文档解析返回结果的格式\n0：只返回全文MD；\n1：只返回每一页的OCR原始Json；\n2：只返回每一页的MD，\n3：返回全文MD + 每一页的OCR原始Json；\n4：返回全文MD + 每一页的MD\n5: 返回全文md，每一页ocr原始json，每一页md\n默认值为0\n",
+          "document": "<p>智能文档解析返回结果的格式<br>0：只返回全文MD；<br>1：只返回每一页的OCR原始Json；<br>2：只返回每一页的MD，<br>3：返回全文MD + 每一页的OCR原始Json；<br>4：返回全文MD + 每一页的MD<br>5: 返回全文md，每一页ocr原始json，每一页md<br>默认值为0</p>",
           "example": "3",
           "member": "string",
           "name": "ResultType",
@@ -711,12 +711,30 @@
         },
         {
           "disabled": false,
-          "document": "是否忽略失败页，返回已成功的页数据。默认为true。",
+          "document": "<p>是否忽略失败页，返回已成功的页数据。默认为true。</p>",
           "example": "true",
           "member": "bool",
           "name": "IgnoreFailedPage",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Markdown文件中是否包含页码信息</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ReturnPageFormat",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义输出页码样式,{{p}}为页码占位符，开启ReturnPageFormat生效。未填默认样式:<page_num>page {{p}}</page_num></p>",
+          "example": "<page_num>page {{p}}</page_num>",
+          "member": "string",
+          "name": "PageFormat",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -808,7 +826,7 @@
       "members": [
         {
           "disabled": true,
-          "document": "Markdown文件中表格返回的形式\n0，表格以MD形式返回\n1，表格以HTML形式返回\n默认为",
+          "document": "<p>Markdown文件中表格返回的形式<br>0，表格以MD形式返回<br>1，表格以HTML形式返回<br>默认为</p>",
           "example": "1",
           "member": "string",
           "name": "TableResultType",
@@ -817,7 +835,7 @@
         },
         {
           "disabled": true,
-          "document": "智能文档解析返回结果的格式\n0：只返回全文MD；\n1：只返回每一页的OCR原始Json；\n2：只返回每一页的MD；\n3：返回全文MD + 每一页的OCR原始Json；\n4：返回全文MD + 每一页的MD；\n5：返回全文md，每一页ocr原始json，每一页md。\n\n",
+          "document": "<p>智能文档解析返回结果的格式<br>0：只返回全文MD；<br>1：只返回每一页的OCR原始Json；<br>2：只返回每一页的MD；<br>3：返回全文MD + 每一页的OCR原始Json；<br>4：返回全文MD + 每一页的MD；<br>5：返回全文md，每一页ocr原始json，每一页md。</p>",
           "example": "3",
           "member": "string",
           "name": "ResultType",
@@ -826,7 +844,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启mllm",
+          "document": "<p>是否开启mllm</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableMllm",
@@ -835,7 +853,7 @@
         },
         {
           "disabled": false,
-          "document": "最大分片长度",
+          "document": "<p>最大分片长度</p>",
           "example": "4800",
           "member": "int64",
           "name": "MaxChunkSize",
@@ -844,7 +862,7 @@
         },
         {
           "disabled": false,
-          "document": "是否忽略返回失败页码",
+          "document": "<p>是否忽略返回失败页码</p>",
           "example": "true",
           "member": "bool",
           "name": "IgnoreFailedPage",
@@ -853,7 +871,7 @@
         },
         {
           "disabled": false,
-          "document": "智能文档解析返回结果的格式\n0：只返回全文MD；\n1：只返回每一页的OCR原始Json；\n2：只返回每一页的MD；\n3：返回全文MD + 每一页的OCR原始Json；\n4：返回全文MD + 每一页的MD；\n5：返回全文md，每一页ocr原始json，每一页md。\n\n",
+          "document": "<p>智能文档解析返回结果的格式<br>0：只返回全文MD；<br>1：只返回每一页的OCR原始Json；<br>2：只返回每一页的MD；<br>3：返回全文MD + 每一页的OCR原始Json；<br>4：返回全文MD + 每一页的MD；<br>5：返回全文md，每一页ocr原始json，每一页md。</p>",
           "example": "0",
           "member": "string",
           "name": "SplitResultType",
@@ -862,10 +880,28 @@
         },
         {
           "disabled": false,
-          "document": "Markdown文件中表格返回的形式\n0，表格以MD形式返回\n1，表格以HTML形式返回\n默认为",
+          "document": "<p>Markdown文件中表格返回的形式<br>0，表格以MD形式返回<br>1，表格以HTML形式返回<br>默认为</p>",
           "example": "0",
           "member": "string",
           "name": "SplitTableResultType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Markdown文件中是否包含页码信息</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ReturnPageFormat",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义输出页码样式,{{p}}为页码占位符，开启ReturnPageFormat生效。未填默认样式:<page_num>page {{p}}</page_num></p>",
+          "example": "<page_num>page {{p}}</page_num>",
+          "member": "string",
+          "name": "PageFormat",
           "required": false,
           "type": "string"
         }

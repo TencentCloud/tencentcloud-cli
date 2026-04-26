@@ -3114,7 +3114,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "横坐标",
+          "document": "<p>横坐标。</p>",
           "example": "480",
           "member": "int64",
           "name": "X",
@@ -3124,7 +3124,7 @@
         },
         {
           "disabled": false,
-          "document": "纵坐标",
+          "document": "<p>纵坐标。</p>",
           "example": "640",
           "member": "int64",
           "name": "Y",
@@ -3725,7 +3725,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "置信度 0 ~100",
+          "document": "<p>置信度 0 ~100。</p>",
           "example": "100",
           "member": "int64",
           "name": "Confidence",
@@ -3735,7 +3735,7 @@
         },
         {
           "disabled": false,
-          "document": "候选字Character",
+          "document": "<p>候选字Character。</p>",
           "example": "字",
           "member": "string",
           "name": "Character",
@@ -9593,7 +9593,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "左上角x",
+          "document": "<p>左上角x。</p>",
           "example": "537",
           "member": "int64",
           "name": "X",
@@ -9603,7 +9603,7 @@
         },
         {
           "disabled": false,
-          "document": "左上角y",
+          "document": "<p>左上角y。</p>",
           "example": "335",
           "member": "int64",
           "name": "Y",
@@ -9613,7 +9613,7 @@
         },
         {
           "disabled": false,
-          "document": "宽width",
+          "document": "<p>宽width。</p>",
           "example": "169",
           "member": "int64",
           "name": "Width",
@@ -9623,7 +9623,7 @@
         },
         {
           "disabled": false,
-          "document": "高height",
+          "document": "<p>高height。</p>",
           "example": "63",
           "member": "int64",
           "name": "Height",
@@ -19298,7 +19298,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>识别出的文本行内容</p>",
+          "document": "<p>识别出的文本行内容。</p>",
           "example": "轻断食:正在横扫全球的瘦身革命",
           "member": "string",
           "name": "DetectedText",
@@ -19308,7 +19308,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>置信度 0 ~100</p>",
+          "document": "<p>置信度 0 ~100。</p>",
           "example": "0",
           "member": "int64",
           "name": "Confidence",
@@ -19318,7 +19318,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文本行坐标，以四个顶点坐标表示</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文本行坐标，以四个顶点坐标表示。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Coord",
           "name": "Polygon",
@@ -19328,7 +19328,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>此字段为扩展字段。<br>GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。</p>",
+          "document": "<p>此字段为扩展字段。GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。</p>",
           "example": "{\"Parag\":{\"ParagNo\":2}}",
           "member": "string",
           "name": "AdvancedInfo",
@@ -19338,7 +19338,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）</p>",
+          "document": "<p>文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）。</p>",
           "example": "无",
           "member": "ItemCoord",
           "name": "ItemPolygon",
@@ -19348,7 +19348,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR</p>",
+          "document": "<p>识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR。</p>",
           "example": "无",
           "member": "DetectedWords",
           "name": "Words",
@@ -19358,7 +19358,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR</p>",
+          "document": "<p>单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR。</p>",
           "example": "无",
           "member": "DetectedWordCoordPoint",
           "name": "WordCoordPoint",
@@ -19368,7 +19368,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>语种信息。zh:中文; en:英文; th:泰语; id:印尼语; ja:日语; ko:韩语; es:西班牙语; fr:法语; de:德语; pt:葡萄牙语; vi:越南语; ms:马来语; ru:俄语; it:意大利语; nl:荷兰语; sv:瑞典语; fi:芬兰语; no:挪威语; hu:匈牙利语; ar:阿拉伯语; hi:印地语</p>",
+          "document": "<p>语种信息。注：仅ConfigID配置为MulOCR时支持。zh:中文; en:英文; tha:泰语; may:印尼语; jap:日语; kor:韩语; spa:西班牙语; fre:法语; ger:德语; por:葡萄牙语; vie:越南语; may:马来语; rus:俄语; ita:意大利语; hol:荷兰语; swe:瑞典语; fin:芬兰语; nor:挪威语; hun:匈牙利语; ara:阿拉伯语; hi:印地语。</p>",
           "example": "zh",
           "member": "string",
           "name": "Language",
