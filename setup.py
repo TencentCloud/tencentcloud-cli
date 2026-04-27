@@ -8,7 +8,7 @@ def main():
     dep_sdk = "tencentcloud-sdk-python >= %s" % __version__.rsplit(".", 1)[0]
     setup(
         name='tccli',
-        install_requires=[dep_sdk, "jmespath==0.10.0", "six==1.16.0"],
+        install_requires=[dep_sdk, "jmespath==0.10.0", "six==1.16.0", "cos-python-sdk-v5>=1.9.0"],
         version=__version__,
         packages=find_packages(),
         include_package_data=True,
