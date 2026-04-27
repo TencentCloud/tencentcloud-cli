@@ -3017,7 +3017,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>设备状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "BlackListStatus",
@@ -3027,7 +3027,7 @@
         },
         {
           "disabled": false,
-          "document": "账号分组名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>账号分组名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "研发组",
           "member": "string",
           "name": "AccountGroupName",
@@ -3037,7 +3037,7 @@
         },
         {
           "disabled": false,
-          "document": "分组名地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分组名地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "全网账号.研发组",
           "member": "string",
           "name": "GroupNamePath",
@@ -3047,7 +3047,7 @@
         },
         {
           "disabled": false,
-          "document": "接入状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>接入状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "State",
@@ -3057,7 +3057,7 @@
         },
         {
           "disabled": false,
-          "document": "最后登录时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最后登录时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-11-12 12:00:00",
           "member": "string",
           "name": "LastLoginTime",
@@ -3067,7 +3067,7 @@
         },
         {
           "disabled": false,
-          "document": "接入设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>接入设备ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -3077,7 +3077,7 @@
         },
         {
           "disabled": false,
-          "document": "Mac地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Mac地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12:12:23:23",
           "member": "string",
           "name": "MacAddress",
@@ -3087,7 +3087,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>修改时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-11-12 12:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -3097,7 +3097,7 @@
         },
         {
           "disabled": false,
-          "document": "用户源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "UserSource",
@@ -3107,7 +3107,7 @@
         },
         {
           "disabled": false,
-          "document": "主机名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主机名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PC-lucy",
           "member": "string",
           "name": "HostName",
@@ -3117,7 +3117,7 @@
         },
         {
           "disabled": false,
-          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "user1",
           "member": "string",
           "name": "UserId",
@@ -3127,7 +3127,7 @@
         },
         {
           "disabled": false,
-          "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "23.13.94.11",
           "member": "string",
           "name": "IP",
@@ -3137,7 +3137,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统类别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作系统类别</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
           "name": "OsType",
@@ -3147,7 +3147,7 @@
         },
         {
           "disabled": false,
-          "document": "票据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>票据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dafehfe.dfe12k.121i,1",
           "member": "string",
           "name": "Ticket",
@@ -3157,7 +3157,7 @@
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备注</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "票据过期",
           "member": "string",
           "name": "Remark",
@@ -3167,7 +3167,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>设备名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ADFEFKJI2",
           "member": "string",
           "name": "DeviceName",
@@ -3177,7 +3177,7 @@
         },
         {
           "disabled": false,
-          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "int64",
           "name": "TimeStamp",
@@ -3187,7 +3187,7 @@
         },
         {
           "disabled": false,
-          "document": "最后登出时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最后登出时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-11-12 12:00:00",
           "member": "string",
           "name": "LastLogoutTime",
@@ -3197,7 +3197,7 @@
         },
         {
           "disabled": false,
-          "document": "分组名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分组名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "研发组",
           "member": "string",
           "name": "GroupName",
@@ -3207,7 +3207,7 @@
         },
         {
           "disabled": false,
-          "document": "设备类别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>设备类别</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "string",
           "name": "DeviceType",
@@ -3217,7 +3217,7 @@
         },
         {
           "disabled": false,
-          "document": "登录人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>登录人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "user2",
           "member": "string",
           "name": "LoginUser",
@@ -3227,7 +3227,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作系统</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
           "name": "Os",
@@ -3237,7 +3237,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>客户端IP</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3.12.12.44",
           "member": "string",
           "name": "ClientIP",
@@ -3247,7 +3247,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-11-12 12:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -3257,7 +3257,7 @@
         },
         {
           "disabled": false,
-          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>设备ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1213133434343212",
           "member": "string",
           "name": "DeviceId",
@@ -3267,7 +3267,7 @@
         },
         {
           "disabled": false,
-          "document": "设备使用者用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>设备使用者用户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "somebody PC",
           "member": "string",
           "name": "DeviceUserName",
@@ -3277,7 +3277,7 @@
         },
         {
           "disabled": false,
-          "document": "分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分组ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "GroupId",
@@ -3287,7 +3287,7 @@
         },
         {
           "disabled": false,
-          "document": "NGN终端开关是否开启",
+          "document": "<p>NGN终端开关是否开启</p><p>枚举值：</p><ul><li>1： 开启</li><li>2： 关闭</li><li>0： 未知</li></ul><p>默认值：0</p><p>未知</p>",
           "example": "2",
           "member": "int64",
           "name": "NgnSwitch",
@@ -3297,7 +3297,7 @@
         },
         {
           "disabled": false,
-          "document": "NGN客户端代理模式",
+          "document": "<p>NGN客户端代理模式</p>",
           "example": "PAC,WFP",
           "member": "string",
           "name": "NgnMode",
@@ -3307,7 +3307,7 @@
         },
         {
           "disabled": false,
-          "document": "上线带宽单位 Bps",
+          "document": "<p>上线带宽单位 Bps</p>",
           "example": "23",
           "member": "int64",
           "name": "CurrentUploadTraffic",
@@ -3317,7 +3317,7 @@
         },
         {
           "disabled": false,
-          "document": "下线带宽单位 Bps",
+          "document": "<p>下线带宽单位 Bps</p>",
           "example": "43",
           "member": "int64",
           "name": "CurrentDownloadTraffic",
@@ -3327,7 +3327,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端本地ip",
+          "document": "<p>客户端本地ip</p>",
           "example": "192.168.1.1,192.168.1.2",
           "member": "string",
           "name": "ClientLocalIP",
@@ -3337,7 +3337,7 @@
         },
         {
           "disabled": false,
-          "document": "禁用有效期，ms",
+          "document": "<p>禁用有效期，ms</p>",
           "example": "18271767361",
           "member": "int64",
           "name": "BlackStatusDeadline",
@@ -14003,7 +14003,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务资源id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>业务资源id(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "ServiceId",
@@ -14014,7 +14014,7 @@
         },
         {
           "disabled": false,
-          "document": "业务资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>业务资源名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dd",
           "member": "string",
           "name": "ServiceName",
@@ -14025,7 +14025,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型:ip,domain,ip_section，对应ip，域名，ip段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源类型:ip,domain,ip_section，对应ip，域名，ip段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ip",
           "member": "string",
           "name": "ServiceType",
@@ -14036,7 +14036,7 @@
         },
         {
           "disabled": false,
-          "document": "业务资源地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>业务资源地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ip",
           "member": "string",
           "name": "ServiceAddress",
@@ -14047,7 +14047,7 @@
         },
         {
           "disabled": false,
-          "document": "业务资源端口 all,1-65535\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>业务资源端口 all,1-65535</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "80",
           "member": "string",
           "name": "ServicePort",
@@ -14058,7 +14058,7 @@
         },
         {
           "disabled": false,
-          "document": "业务资源创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>业务资源创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2026-02-03 17:48:06",
           "member": "string",
           "name": "CreateTime",
@@ -14069,7 +14069,7 @@
         },
         {
           "disabled": false,
-          "document": "业务资源最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>业务资源最后修改时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2026-02-03 17:48:06",
           "member": "string",
           "name": "UpdateTime",
@@ -14080,7 +14080,7 @@
         },
         {
           "disabled": false,
-          "document": "说明字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>说明字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "no",
           "member": "string",
           "name": "Remark",
@@ -14091,7 +14091,7 @@
         },
         {
           "disabled": false,
-          "document": "资源模块ID(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源模块ID(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "AreaId",
@@ -14102,7 +14102,7 @@
         },
         {
           "disabled": false,
-          "document": "零信任网关id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>零信任网关id(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[10,10]",
           "member": "int64",
           "name": "SmartGateIds",
@@ -14113,7 +14113,7 @@
         },
         {
           "disabled": false,
-          "document": "业务资源协议类型,3：所有,2：UDP，1：TCP(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>业务资源协议类型,3：所有,2：UDP，1：TCP(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "Protocol",
@@ -14124,7 +14124,7 @@
         },
         {
           "disabled": false,
-          "document": "业务资源等级(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>业务资源等级(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Levels",
@@ -14135,7 +14135,7 @@
         },
         {
           "disabled": false,
-          "document": "零信任网关名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>零信任网关名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "name",
           "member": "string",
           "name": "SmartGateNames",
@@ -14146,7 +14146,7 @@
         },
         {
           "disabled": false,
-          "document": "网关连通性(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>网关连通性(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "DirectConn",
@@ -14157,7 +14157,7 @@
         },
         {
           "disabled": false,
-          "document": "网关连通性状态(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>网关连通性状态(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "DetectState",
@@ -14168,7 +14168,7 @@
         },
         {
           "disabled": false,
-          "document": "网关连通性信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>网关连通性信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "info",
           "member": "string",
           "name": "DetectInfo",
@@ -14179,7 +14179,7 @@
         },
         {
           "disabled": false,
-          "document": "网关连通性创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>网关连通性创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0001-01-01 00:00:00",
           "member": "string",
           "name": "DetectTime",
@@ -14190,7 +14190,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的连接器组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的连接器组Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "ConnectorGroupId",
@@ -14201,7 +14201,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的连接器组的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的连接器组的名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "group",
           "member": "string",
           "name": "ConnectorGroupName",
@@ -14212,7 +14212,7 @@
         },
         {
           "disabled": false,
-          "document": "资源连通性可达最后的检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源连通性可达最后的检测时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "time",
           "member": "string",
           "name": "ReachableTime",
@@ -14223,7 +14223,7 @@
         },
         {
           "disabled": false,
-          "document": "资源连通性可达状态,0：未检测，1：未连通，2：已连通\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源连通性可达状态,0：未检测，1：未连通，2：已连通</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ReachableState",
@@ -14234,7 +14234,7 @@
         },
         {
           "disabled": false,
-          "document": "访问类型:0-NGN 1-web(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>访问类型:0-NGN 1-web(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "AccessType",
@@ -14245,7 +14245,7 @@
         },
         {
           "disabled": false,
-          "document": "web资源-后端协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web资源-后端协议</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http",
           "member": "string",
           "name": "BackendScheme",
@@ -14256,7 +14256,7 @@
         },
         {
           "disabled": false,
-          "document": "web资源-后端路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web资源-后端路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/",
           "member": "string",
           "name": "BackendPath",
@@ -14267,7 +14267,7 @@
         },
         {
           "disabled": false,
-          "document": "web资源-前端协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web资源-前端协议</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https",
           "member": "string",
           "name": "FrontScheme",
@@ -14278,7 +14278,7 @@
         },
         {
           "disabled": false,
-          "document": "web资源-前端host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web资源-前端host</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hr",
           "member": "string",
           "name": "FrontHost",
@@ -14289,7 +14289,7 @@
         },
         {
           "disabled": false,
-          "document": "web资源-前端host(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web资源-前端host(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "443",
           "member": "int64",
           "name": "FrontPort",
@@ -14300,7 +14300,7 @@
         },
         {
           "disabled": false,
-          "document": "web资源-前端路径 默认\"/\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web资源-前端路径 默认&quot;/&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/",
           "member": "string",
           "name": "FrontPath",
@@ -14311,7 +14311,7 @@
         },
         {
           "disabled": false,
-          "document": "web资源-是否禁用外网访问：0-可通过外网访问 1-不能通过外网访问(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web资源-是否禁用外网访问：0-可通过外网访问 1-不能通过外网访问(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "DisableFront",
@@ -14322,7 +14322,7 @@
         },
         {
           "disabled": false,
-          "document": "web资源-租户自定义域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web资源-租户自定义域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hr.qq.com",
           "member": "string",
           "name": "CustomDomain",
@@ -14333,7 +14333,7 @@
         },
         {
           "disabled": false,
-          "document": "web资源-自定义host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web资源-自定义host</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hr.qq.com",
           "member": "string",
           "name": "CustomHost",
@@ -14344,7 +14344,7 @@
         },
         {
           "disabled": false,
-          "document": "web资源-Cname状态(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web资源-Cname状态(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "CnameStatus",
@@ -14355,7 +14355,7 @@
         },
         {
           "disabled": false,
-          "document": "web资源-关联证书ID(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web资源-关联证书ID(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "CertificateId",
@@ -14366,7 +14366,7 @@
         },
         {
           "disabled": false,
-          "document": "web资源类型：0-应用 1-API(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web资源类型：0-应用 1-API(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "WebGwResourceType",
@@ -14377,7 +14377,7 @@
         },
         {
           "disabled": false,
-          "document": "web资源-如果选择API类型资源，则需要配置密钥(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web资源-如果选择API类型资源，则需要配置密钥(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "APISecretId",
@@ -14388,7 +14388,7 @@
         },
         {
           "disabled": false,
-          "document": "所属资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所属资源组名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "area",
           "member": "string",
           "name": "AreaName",
@@ -14399,7 +14399,7 @@
         },
         {
           "disabled": false,
-          "document": "web资源-前端协议是HTTPS类型，需要配置证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web资源-前端协议是HTTPS类型，需要配置证书</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "SSLCertId",
@@ -14410,7 +14410,7 @@
         },
         {
           "disabled": false,
-          "document": "web资源-是否启用依赖地址：0-不启用 1-启用(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web资源-是否启用依赖地址：0-不启用 1-启用(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "EnableDependentAddr",
@@ -14421,7 +14421,7 @@
         },
         {
           "disabled": false,
-          "document": "web资源-依赖地址的后端服务器地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web资源-依赖地址的后端服务器地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://10.0.2.3",
           "member": "string",
           "name": "DependentAddr",
@@ -14432,13 +14432,35 @@
         },
         {
           "disabled": false,
-          "document": "web免鉴权：1-鉴权 2-免鉴权",
+          "document": "<p>web免鉴权：1-鉴权 2-免鉴权</p>",
           "example": "1",
           "member": "int64",
           "name": "WebGwNoAuth",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通道类型</p><p>枚举值：</p><ul><li>vpc： vpc类型</li><li>native： 专线类型</li></ul><p>默认值：native</p>",
+          "example": "vpc",
+          "member": "string",
+          "name": "ConnectorGroupType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名后缀</p>",
+          "example": "ztnwork.com",
+          "member": "string",
+          "name": "DomainSuffix",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -22696,7 +22718,16 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询条件：过滤或排序\n1、UserName，string类型，姓名\n是否必填：否\n过滤支持：是，支持eq、like、ilike\n排序支持：否\n2、UserId，string类型，账户\n是否必填：否\n过滤支持：是，支持eq、like、ilike\n排序支持：否\n3、Phone，string类型，手机号\n是否必填：否\n过滤支持：是，支持eq、like、ilike\n排序支持：否",
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件：过滤或排序\n1、UserName，string类型，姓名\n是否必填：否\n过滤支持：是，支持eq、like、ilike\n排序支持：否\n2、UserId，string类型，账户\n是否必填：否\n过滤支持：是，支持eq、like、ilike\n排序支持：否\n3、Phone，string类型，手机号\n是否必填：否\n过滤支持：是，支持eq、like、ilike\n排序支持：否\n4、Email，string类型，邮箱\n是否必填：否\n过滤支持：是，支持eq、like、ilike\n排序支持：否",
           "example": "{     \"FilterGroups\": [         {             \"Filters\": [                 {                     \"Field\": \"UserId\",                     \"Operator\": \"ilike\",                     \"Values\": [                         \"weiwang\"                     ]                 }             ]         }     ],     \"PageNum\": 1,     \"PageSize\": 10 }",
           "member": "Condition",
           "name": "Condition",
@@ -31930,13 +31961,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "前端域名后缀\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>前端域名后缀</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": ".ztnwork.com",
           "member": "string",
           "name": "FrontDomainSuffix",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>vpc场景下根域名</p>",
+          "example": ".ztn.gateway.tencentwsd.cn",
+          "member": "string",
+          "name": "FrontDomainSuffixVPC",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -32007,7 +32048,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备ID",
+          "document": "<p>设备ID</p>",
           "example": "1749",
           "member": "int64",
           "name": "Id",
@@ -32018,7 +32059,7 @@
         },
         {
           "disabled": false,
-          "document": "设备唯一标识码，在ioa中每个设备有唯一标识码",
+          "document": "<p>设备唯一标识码，在ioa中每个设备有唯一标识码</p>",
           "example": "702DFBFC9A9E31FDDBCD082B35AB2842667155F7",
           "member": "string",
           "name": "Mid",
@@ -32029,7 +32070,7 @@
         },
         {
           "disabled": false,
-          "document": "终端名（设备名）",
+          "document": "<p>终端名（设备名）</p>",
           "example": "DESKTOP-U9QR7P1",
           "member": "string",
           "name": "Name",
@@ -32040,7 +32081,7 @@
         },
         {
           "disabled": false,
-          "document": "设备所在分组ID",
+          "document": "<p>设备所在分组ID</p>",
           "example": "2",
           "member": "int64",
           "name": "GroupId",
@@ -32051,7 +32092,7 @@
         },
         {
           "disabled": false,
-          "document": "OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0",
+          "document": "<p>OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0</p>",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -32062,7 +32103,7 @@
         },
         {
           "disabled": false,
-          "document": "设备IP地址（出口IP）",
+          "document": "<p>设备IP地址（出口IP）</p>",
           "example": "10.18.104.56",
           "member": "string",
           "name": "Ip",
@@ -32073,7 +32114,7 @@
         },
         {
           "disabled": false,
-          "document": "在线状态，2：在线、0或者1:离线",
+          "document": "<p>在线状态，2：在线、0或者1:离线</p>",
           "example": "2",
           "member": "int64",
           "name": "OnlineStatus",
@@ -32084,7 +32125,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端版本号-大整数",
+          "document": "<p>客户端版本号-大整数</p>",
           "example": "30399320386433584",
           "member": "string",
           "name": "Version",
@@ -32095,7 +32136,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端版本号-点分字符串",
+          "document": "<p>客户端版本号-点分字符串</p>",
           "example": "108.5.21771.62000",
           "member": "string",
           "name": "StrVersion",
@@ -32106,7 +32147,7 @@
         },
         {
           "disabled": false,
-          "document": "首次在线时间",
+          "document": "<p>首次在线时间</p>",
           "example": "2024-06-18T17:40:07.171192+08:00",
           "member": "string",
           "name": "Itime",
@@ -32117,7 +32158,7 @@
         },
         {
           "disabled": false,
-          "document": "最后一次在线时间",
+          "document": "<p>最后一次在线时间</p>",
           "example": "2024-06-20T22:24:19.022634+08:00",
           "member": "string",
           "name": "ConnActiveTime",
@@ -32128,7 +32169,7 @@
         },
         {
           "disabled": false,
-          "document": "设备是否加锁 ，1：锁定 0或者2：未锁定。",
+          "document": "<p>设备是否加锁 ，1：锁定 0或者2：未锁定。</p>",
           "example": "0",
           "member": "int64",
           "name": "Locked",
@@ -32139,7 +32180,7 @@
         },
         {
           "disabled": false,
-          "document": "设备本地IP列表, 包括IP",
+          "document": "<p>设备本地IP列表, 包括IP</p>",
           "example": "192.168.142.138",
           "member": "string",
           "name": "LocalIpList",
@@ -32150,7 +32191,7 @@
         },
         {
           "disabled": false,
-          "document": "宿主机id（需要宿主机也安装iOA才能显示）",
+          "document": "<p>宿主机id（需要宿主机也安装iOA才能显示）</p>",
           "example": "1",
           "member": "int64",
           "name": "HostId",
@@ -32161,7 +32202,7 @@
         },
         {
           "disabled": false,
-          "document": "设备所属分组名",
+          "document": "<p>设备所属分组名</p>",
           "example": "未分组终端",
           "member": "string",
           "name": "GroupName",
@@ -32172,7 +32213,7 @@
         },
         {
           "disabled": false,
-          "document": "设备所属分组路径",
+          "document": "<p>设备所属分组路径</p>",
           "example": "全网终端.未分组终端",
           "member": "string",
           "name": "GroupNamePath",
@@ -32183,7 +32224,7 @@
         },
         {
           "disabled": false,
-          "document": "未修复高危漏洞数(只支持32位)",
+          "document": "<p>未修复高危漏洞数(只支持32位)</p>",
           "example": "0",
           "member": "int64",
           "name": "CriticalVulListCount",
@@ -32194,7 +32235,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统名称",
+          "document": "<p>操作系统名称</p>",
           "example": "Microsoft Windows 10 专业版",
           "member": "string",
           "name": "Os",
@@ -32205,7 +32246,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统位数",
+          "document": "<p>操作系统位数</p>",
           "example": "64",
           "member": "int64",
           "name": "OsBits",
@@ -32216,7 +32257,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统版本",
+          "document": "<p>操作系统版本</p>",
           "example": "10.0.19045",
           "member": "string",
           "name": "OsVersion",
@@ -32227,7 +32268,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统语言",
+          "document": "<p>操作系统语言</p>",
           "example": "简体中文",
           "member": "string",
           "name": "OsLanguage",
@@ -32238,7 +32279,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统安装时间",
+          "document": "<p>操作系统安装时间</p>",
           "example": "2024-05-13",
           "member": "string",
           "name": "OsInstallDate",
@@ -32249,7 +32290,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名，和Name相同",
+          "document": "<p>设备名，和Name相同</p>",
           "example": "DESKTOP-U9QR7P1",
           "member": "string",
           "name": "ComputerName",
@@ -32260,7 +32301,7 @@
         },
         {
           "disabled": false,
-          "document": "登录域名",
+          "document": "<p>登录域名</p>",
           "example": "tencent.com",
           "member": "string",
           "name": "DomainName",
@@ -32271,7 +32312,7 @@
         },
         {
           "disabled": false,
-          "document": "MAC地址",
+          "document": "<p>MAC地址</p>",
           "example": "00:0C:29:71:A7:29",
           "member": "string",
           "name": "MacAddr",
@@ -32282,7 +32323,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞数",
+          "document": "<p>漏洞数</p>",
           "example": "0",
           "member": "int64",
           "name": "VulCount",
@@ -32293,7 +32334,7 @@
         },
         {
           "disabled": false,
-          "document": "病毒风险数",
+          "document": "<p>病毒风险数</p>",
           "example": "0",
           "member": "int64",
           "name": "RiskCount",
@@ -32304,7 +32345,7 @@
         },
         {
           "disabled": false,
-          "document": "病毒库版本",
+          "document": "<p>病毒库版本</p>",
           "example": "2.0.13712.595",
           "member": "string",
           "name": "VirusVer",
@@ -32315,7 +32356,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞库版本",
+          "document": "<p>漏洞库版本</p>",
           "example": "2024.06.12.11.25.18",
           "member": "string",
           "name": "VulVersion",
@@ -32326,7 +32367,7 @@
         },
         {
           "disabled": false,
-          "document": "系统修复引擎版本",
+          "document": "<p>系统修复引擎版本</p>",
           "example": "2024.06.17.16.26.22",
           "member": "string",
           "name": "SysRepVersion",
@@ -32337,7 +32378,7 @@
         },
         {
           "disabled": false,
-          "document": "高危补丁列表",
+          "document": "<p>高危补丁列表</p>",
           "example": "[\"5043051\",\"4132216\"]",
           "member": "string",
           "name": "VulCriticalList",
@@ -32348,7 +32389,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "\"commpany assert\"",
           "member": "string",
           "name": "Tags",
@@ -32359,7 +32400,7 @@
         },
         {
           "disabled": false,
-          "document": "终端用户名",
+          "document": "<p>终端用户名</p>",
           "example": "Lucky",
           "member": "string",
           "name": "UserName",
@@ -32370,7 +32411,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙状态，不等于0表示开启",
+          "document": "<p>防火墙状态，不等于0表示开启</p>",
           "example": "1",
           "member": "int64",
           "name": "FirewallStatus",
@@ -32381,7 +32422,7 @@
         },
         {
           "disabled": false,
-          "document": "SN序列号",
+          "document": "<p>SN序列号</p>",
           "example": "VMware-56 4d 8c 1a 6c 51 b7 71-1f 2a 3b 71 e6 71 a7 29",
           "member": "string",
           "name": "SerialNum",
@@ -32392,7 +32433,7 @@
         },
         {
           "disabled": false,
-          "document": "设备管控策略版本",
+          "document": "<p>设备管控策略版本</p>",
           "example": "2024-06-21 17:08:00",
           "member": "string",
           "name": "DeviceStrategyVer",
@@ -32403,7 +32444,7 @@
         },
         {
           "disabled": false,
-          "document": "NGN策略版本",
+          "document": "<p>NGN策略版本</p>",
           "example": "2024-06-21 17:08:00",
           "member": "string",
           "name": "NGNStrategyVer",
@@ -32414,7 +32455,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录账户的账号(账号系统用户账号)",
+          "document": "<p>最近登录账户的账号(账号系统用户账号)</p>",
           "example": "LuckyLI",
           "member": "string",
           "name": "IOAUserName",
@@ -32425,7 +32466,7 @@
         },
         {
           "disabled": false,
-          "document": "设备管控新策略",
+          "document": "<p>设备管控新策略</p>",
           "example": "2024-06-24 20:27:00",
           "member": "string",
           "name": "DeviceNewStrategyVer",
@@ -32436,7 +32477,7 @@
         },
         {
           "disabled": false,
-          "document": "NGN策略新版本",
+          "document": "<p>NGN策略新版本</p>",
           "example": "2024-06-24 20:27:00",
           "member": "string",
           "name": "NGNNewStrategyVer",
@@ -32447,7 +32488,7 @@
         },
         {
           "disabled": false,
-          "document": "宿主机名称（需要宿主机也安装iOA才能显示）",
+          "document": "<p>宿主机名称（需要宿主机也安装iOA才能显示）</p>",
           "example": "DESKTOP-U9QR7P0",
           "member": "string",
           "name": "HostName",
@@ -32458,7 +32499,7 @@
         },
         {
           "disabled": false,
-          "document": "主板序列号",
+          "document": "<p>主板序列号</p>",
           "example": "C02FVC8CQ05P",
           "member": "string",
           "name": "BaseBoardSn",
@@ -32469,7 +32510,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定账户名称",
+          "document": "<p>绑定账户名称</p>",
           "example": "”sariel“",
           "member": "string",
           "name": "AccountUsers",
@@ -32480,7 +32521,7 @@
         },
         {
           "disabled": false,
-          "document": "身份策略版本",
+          "document": "<p>身份策略版本</p>",
           "example": "2024-06-21 17:08:00",
           "member": "string",
           "name": "IdentityStrategyVer",
@@ -32491,7 +32532,7 @@
         },
         {
           "disabled": false,
-          "document": "身份策略新版本",
+          "document": "<p>身份策略新版本</p>",
           "example": "2024-06-24 20:27:00",
           "member": "string",
           "name": "IdentityNewStrategyVer",
@@ -32502,7 +32543,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录账号部门",
+          "document": "<p>最近登录账号部门</p>",
           "example": "测试分组",
           "member": "string",
           "name": "AccountGroupName",
@@ -32513,7 +32554,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录账户的姓名(账号系统用户姓名)",
+          "document": "<p>最近登录账户的姓名(账号系统用户姓名)</p>",
           "example": "LuckyLI",
           "member": "string",
           "name": "AccountName",
@@ -32524,7 +32565,7 @@
         },
         {
           "disabled": false,
-          "document": "账号组id",
+          "document": "<p>账号组id</p>",
           "example": "1",
           "member": "int64",
           "name": "AccountGroupId",
@@ -32535,7 +32576,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启",
+          "document": "<p>是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启</p>",
           "example": "0",
           "member": "int64",
           "name": "ScreenRecordingPermission",
@@ -32546,7 +32587,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启",
+          "document": "<p>是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启</p>",
           "example": "0",
           "member": "int64",
           "name": "DiskAccessPermission",
@@ -32557,13 +32598,35 @@
         },
         {
           "disabled": false,
-          "document": "终端备注名",
+          "document": "<p>终端备注名</p>",
           "example": "张三的终端",
           "member": "string",
           "name": "RemarkName",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>多网卡MAC地址列表</p>",
+          "example": "无",
+          "member": "DeviceNetworkCardBrief",
+          "name": "NetworkCards",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>多显卡数据列表</p>",
+          "example": "无",
+          "member": "DeviceVideoCardBrief",
+          "name": "VideoCards",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -33127,6 +33190,78 @@
       ],
       "usage": "both"
     },
+    "DeviceNetworkCardBrief": {
+      "document": "多网卡MAC地址等列表数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MAC地址</p>",
+          "example": "52:54:00:04:AE:29",
+          "member": "string",
+          "name": "MacAddress",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网卡名称</p>",
+          "example": "Tencent VirtIO Ethernet Adapter",
+          "member": "string",
+          "name": "NetworkCardName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网卡类型</p><p>枚举值：</p><ul><li>1： 物理网卡</li><li>2： 虚拟网卡</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "NetworkCardType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网卡状态</p><p>枚举值：</p><ul><li>1： 启用中</li><li>2： 未启用</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "NetworkCardStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IPv4地址</p>",
+          "example": "192.168.42.1",
+          "member": "string",
+          "name": "Ipv4Address",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IPv6地址</p>",
+          "example": "fe80::67be:dc22:17be:c80f",
+          "member": "string",
+          "name": "Ipv6Address",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DeviceNetworkInfo": {
       "document": "分页的具体数据对象",
       "members": [
@@ -33528,6 +33663,23 @@
         }
       ],
       "usage": "out"
+    },
+    "DeviceVideoCardBrief": {
+      "document": "设备显卡简要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>显卡名称</p>",
+          "example": "Microsoft Basic Display Adapter | Microsoft Remote Display Adapter",
+          "member": "string",
+          "name": "VideoCardName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DeviceVirtualDeviceGroupsDetail": {
       "document": "终端自定义分组列表数据",
@@ -37054,8 +37206,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "流量带宽，单位Mbps(公有云)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>流量带宽</p><p>单位：Mbps</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "uint64",
           "name": "InquireNum",
           "required": false,
@@ -37064,8 +37216,8 @@
         },
         {
           "disabled": false,
-          "document": "带宽模式，1:独立 2:共享\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>带宽模式</p><p>枚举值：</p><ul><li>1： 独立</li><li>2： 共享</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "uint64",
           "name": "BandwidthMode",
           "required": false,
@@ -42898,33 +43050,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>下载链接</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://ioa-test-1-1258344699.cos.ap-nanjing.myqcloud.com/data/services/pcmgr_enterprise/public/www/public/store/package/resource/on-premise/PCMgr_Setup.deb",
           "member": "string",
           "name": "Url",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "系统类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>系统类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "linux",
           "member": "string",
           "name": "OsType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "系统版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>系统版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "210.12.30413.62002",
           "member": "string",
           "name": "Version",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>架构 x64/arm64/loong</p>",
+          "example": "arm64",
+          "member": "string",
+          "name": "Arch",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>包格式 deb/rpm</p>",
+          "example": "deb",
+          "member": "string",
+          "name": "Format",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
