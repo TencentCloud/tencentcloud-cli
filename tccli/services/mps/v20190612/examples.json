@@ -257,9 +257,9 @@
     "CreateSmartSubtitleTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSmartSubtitleTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"创建智能字幕模板\",\n    \"VideoSrcLanguage\": \"auto\",\n    \"SubtitleType\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Definition\": 286972,\n        \"RequestId\": \"d16800f5-479c-49b9-8ff1-62580cc87712\"\n    }\n}",
-        "title": "创建智能字幕模板"
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmartSubtitleTemplate\n<公共请求参数>\n\n{\n    \"SubtitleType\": 0,\n    \"Name\": \"修改智能字幕模板名称\",\n    \"VideoSrcLanguage\": \"auto\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 266307,\n        \"RequestId\": \"a38bc8ff-9826-4a43-a7d3-ed4c370d305f\"\n    }\n}",
+        "title": "创建智能字幕模版"
       }
     ],
     "CreateSnapshotByTimeOffsetTemplate": [

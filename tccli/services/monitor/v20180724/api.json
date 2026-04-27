@@ -21,6 +21,13 @@
       "output": "BindingPolicyTagResponse",
       "status": "online"
     },
+    "CheckAddressByPrometheus": {
+      "document": "检查用户地址联通性",
+      "input": "CheckAddressByPrometheusRequest",
+      "name": "检查用户地址联通性",
+      "output": "CheckAddressByPrometheusResponse",
+      "status": "online"
+    },
     "CleanGrafanaInstance": {
       "document": "强制销毁 Grafana 实例",
       "input": "CleanGrafanaInstanceRequest",
@@ -3123,6 +3130,81 @@
         }
       ],
       "usage": "both"
+    },
+    "CheckAddressByPrometheusRequest": {
+      "document": "CheckAddressByPrometheus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "prom-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>探测地址</p>",
+          "example": "http://1.1.1.1:1111/test",
+          "member": "string",
+          "name": "Target",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>探测方式。tcp或http，默认是tcp</p>",
+          "example": "tcp",
+          "member": "string",
+          "name": "ProbeProtocol",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckAddressByPrometheusResponse": {
+      "document": "CheckAddressByPrometheus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实际探测的地址</p>",
+          "example": "1.1.1.1:1111",
+          "member": "string",
+          "name": "Target",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>探测是否成功</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Success",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>探测失败时返回错误信息</p>",
+          "example": "connnection timeout",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CleanGrafanaInstanceRequest": {
       "document": "CleanGrafanaInstance请求参数结构体",

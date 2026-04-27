@@ -2222,7 +2222,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型名称",
+          "document": "<p>模型名称</p>",
           "example": "DeepSeek-V3.2-Channel-INT8",
           "member": "string",
           "name": "ModelName",
@@ -2232,7 +2232,7 @@
         },
         {
           "disabled": false,
-          "document": "模型ID",
+          "document": "<p>模型ID</p>",
           "example": "mdl-s1cop2oq",
           "member": "string",
           "name": "ModelId",
@@ -2242,7 +2242,7 @@
         },
         {
           "disabled": false,
-          "document": "应用描述\t",
+          "document": "<p>应用描述</p>",
           "example": "DeepSeek-V3.2-Channel-INT8量化版本",
           "member": "string",
           "name": "Description",
@@ -2252,7 +2252,7 @@
         },
         {
           "disabled": false,
-          "document": "官方社区链接\t",
+          "document": "<p>官方社区链接</p>",
           "example": "https://tairos.tencent.com/docs",
           "member": "string",
           "name": "CommunityUrl",
@@ -2262,7 +2262,7 @@
         },
         {
           "disabled": false,
-          "document": "最佳实践链接",
+          "document": "<p>最佳实践链接</p>",
           "example": "https://tairos.tencent.com/docs",
           "member": "string",
           "name": "GuideUrl",
@@ -2272,7 +2272,7 @@
         },
         {
           "disabled": false,
-          "document": "模型状态",
+          "document": "<p>模型状态</p>",
           "example": "ONLINE",
           "member": "string",
           "name": "ModelState",
@@ -2282,7 +2282,7 @@
         },
         {
           "disabled": false,
-          "document": "应用对应的标签，如机器学习",
+          "document": "<p>应用对应的标签，如机器学习</p>",
           "example": "[\"大语言模型\"]",
           "member": "string",
           "name": "Tags",
@@ -2292,7 +2292,7 @@
         },
         {
           "disabled": false,
-          "document": "配置环境",
+          "document": "<p>配置环境</p>",
           "example": "CentOS 5.4 64位; nvidia 535.216.01| cuda12.2 | LLM",
           "member": "string",
           "name": "ConfigEnvironment",

@@ -6349,7 +6349,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板名称。\n长度上限：255字节。\n仅支持中文、英文、数字、_、-。",
+          "document": "<p>模板名称。<br>长度上限：255字节。<br>仅支持中文、英文、数字、_、-。</p>",
           "example": "testName",
           "member": "string",
           "name": "TemplateName",
@@ -6358,7 +6358,7 @@
         },
         {
           "disabled": false,
-          "document": "垫片内容。",
+          "document": "<p>垫片内容。</p>",
           "example": "https://test.com/a.mp4",
           "member": "string",
           "name": "Url",
@@ -6367,7 +6367,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息。\n长度上限：1024字节。\n仅支持中文、英文、数字、_、-。",
+          "document": "<p>描述信息。<br>长度上限：1024字节。<br>仅支持中文、英文、数字、_、-。</p>",
           "example": "testDesc",
           "member": "string",
           "name": "Description",
@@ -6376,7 +6376,7 @@
         },
         {
           "disabled": false,
-          "document": "断流等待时间。\n取值范围：0-30000。\n单位：ms。",
+          "document": "<p>断流等待时间。<br>取值范围：0-30000。<br>单位：ms。</p>",
           "example": "1",
           "member": "uint64",
           "name": "WaitDuration",
@@ -6385,7 +6385,7 @@
         },
         {
           "disabled": false,
-          "document": "最大垫片时长。\n取值范围：0 - 正无穷。\n单位：ms。",
+          "document": "<p>最大垫片时长。<br>取值范围：0 - 正无穷。<br>单位：ms。</p>",
           "example": "1",
           "member": "uint64",
           "name": "MaxDuration",
@@ -6394,10 +6394,19 @@
         },
         {
           "disabled": false,
-          "document": "垫片内容类型：\n1：图片，2：视频。\n默认值：1。",
+          "document": "<p>垫片内容类型：<br>1：图片，2：视频。<br>默认值：1。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>断流垫片触发条件</p><p>枚举值：</p><ul><li>0： 主动及异常断流</li><li>1： 异常断流</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "TriggerCondition",
           "required": false,
           "type": "int"
         }
@@ -6409,7 +6418,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板Id。",
+          "document": "<p>模板Id。</p>",
           "example": "1000",
           "member": "int64",
           "name": "TemplateId",
@@ -18702,7 +18711,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板id。",
+          "document": "<p>模板id。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TemplateId",
@@ -18711,7 +18720,7 @@
         },
         {
           "disabled": false,
-          "document": "垫片内容。",
+          "document": "<p>垫片内容。</p>",
           "example": "https://test.com/a.mp4",
           "member": "string",
           "name": "Url",
@@ -18720,7 +18729,7 @@
         },
         {
           "disabled": false,
-          "document": "断流等待时间。\n取值范围：0-30000。\n单位：ms。",
+          "document": "<p>断流等待时间。<br>取值范围：0-30000。<br>单位：ms。</p>",
           "example": "1",
           "member": "uint64",
           "name": "WaitDuration",
@@ -18729,7 +18738,7 @@
         },
         {
           "disabled": false,
-          "document": "最大垫片时长。\n取值范围：0 - 正无穷。\n单位：ms。",
+          "document": "<p>最大垫片时长。<br>取值范围：0 - 正无穷。<br>单位：ms。</p>",
           "example": "1",
           "member": "uint64",
           "name": "MaxDuration",
@@ -18738,7 +18747,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名称。\n长度上限：255字节。\n仅支持中文、英文、数字、_、-。",
+          "document": "<p>模板名称。<br>长度上限：255字节。<br>仅支持中文、英文、数字、_、-。</p>",
           "example": "testName",
           "member": "string",
           "name": "TemplateName",
@@ -18747,7 +18756,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息。\n长度上限：1024字节。\n仅支持中文、英文、数字、_、-。",
+          "document": "<p>描述信息。<br>长度上限：1024字节。<br>仅支持中文、英文、数字、_、-。</p>",
           "example": "testDesc",
           "member": "string",
           "name": "Description",
@@ -18756,10 +18765,19 @@
         },
         {
           "disabled": false,
-          "document": "垫片内容类型： 1：图片，2：视频。 默认值：1。",
+          "document": "<p>垫片内容类型： 1：图片，2：视频。 默认值：1。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>断流垫片触发条件</p><p>枚举值：</p><ul><li>0： 主动及异常断流</li><li>1： 异常断流</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "TriggerCondition",
           "required": false,
           "type": "int"
         }

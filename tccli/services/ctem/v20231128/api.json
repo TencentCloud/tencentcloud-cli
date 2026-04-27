@@ -1546,7 +1546,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "企业Id",
+          "document": "<p>企业Id</p>",
           "example": "1",
           "member": "int64",
           "name": "CustomerId",
@@ -1555,7 +1555,7 @@
         },
         {
           "disabled": false,
-          "document": "子域名",
+          "document": "<p>子域名</p>",
           "example": "doc.test.com",
           "member": "string",
           "name": "SubDomain",
@@ -1564,7 +1564,7 @@
         },
         {
           "disabled": false,
-          "document": "Ip",
+          "document": "<p>Ip</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -1573,7 +1573,7 @@
         },
         {
           "disabled": false,
-          "document": "国家",
+          "document": "<p>国家</p>",
           "example": "中国",
           "member": "string",
           "name": "Country",
@@ -1582,7 +1582,7 @@
         },
         {
           "disabled": false,
-          "document": "省",
+          "document": "<p>省</p>",
           "example": "广东",
           "member": "string",
           "name": "Province",
@@ -1591,7 +1591,7 @@
         },
         {
           "disabled": false,
-          "document": "城市",
+          "document": "<p>城市</p>",
           "example": "深圳",
           "member": "string",
           "name": "City",
@@ -1600,7 +1600,7 @@
         },
         {
           "disabled": false,
-          "document": "Isp",
+          "document": "<p>Isp</p>",
           "example": "电信",
           "member": "string",
           "name": "Isp",
@@ -1609,10 +1609,28 @@
         },
         {
           "disabled": false,
-          "document": "子公司",
+          "document": "<p>子公司</p>",
           "example": "6512bd43d9caa6e02c990b0a82652dca",
           "member": "string",
           "name": "EnterpriseUid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>DNS解析类型。A、AAAA、CNAME等</p>",
+          "example": "A",
+          "member": "string",
+          "name": "DnsType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>DNS解析值。域名或者ip</p>",
+          "example": "6.6.6.6",
+          "member": "string",
+          "name": "DnsValue",
           "required": false,
           "type": "string"
         }
@@ -1624,7 +1642,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Id",
+          "document": "<p>Id</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -9684,7 +9702,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID",
+          "document": "<p>主键ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -9694,7 +9712,7 @@
         },
         {
           "disabled": false,
-          "document": "子域名",
+          "document": "<p>子域名</p>",
           "example": "test.qq.com",
           "member": "string",
           "name": "SubDomain",
@@ -9704,7 +9722,7 @@
         },
         {
           "disabled": false,
-          "document": "Ip",
+          "document": "<p>Ip</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -9714,7 +9732,7 @@
         },
         {
           "disabled": false,
-          "document": "国家",
+          "document": "<p>国家</p>",
           "example": "中国",
           "member": "string",
           "name": "Country",
@@ -9724,7 +9742,7 @@
         },
         {
           "disabled": false,
-          "document": "省份",
+          "document": "<p>省份</p>",
           "example": "广东",
           "member": "string",
           "name": "Province",
@@ -9734,7 +9752,7 @@
         },
         {
           "disabled": false,
-          "document": "城市",
+          "document": "<p>城市</p>",
           "example": "深圳",
           "member": "string",
           "name": "City",
@@ -9744,7 +9762,7 @@
         },
         {
           "disabled": false,
-          "document": "互联网服务提供商",
+          "document": "<p>互联网服务提供商</p>",
           "example": "中国电信",
           "member": "string",
           "name": "Isp",
@@ -9754,7 +9772,7 @@
         },
         {
           "disabled": false,
-          "document": "公共字段",
+          "document": "<p>公共字段</p>",
           "example": "无",
           "member": "DisplayToolCommon",
           "name": "DisplayToolCommon",
@@ -9764,7 +9782,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为云资产：0-非云资产 1-是云资产",
+          "document": "<p>是否为云资产：0-非云资产 1-是云资产</p>",
           "example": "1",
           "member": "int64",
           "name": "IsCloudAsset",
@@ -9774,7 +9792,7 @@
         },
         {
           "disabled": false,
-          "document": "云资产是否下线：-1-已下线 0-正常",
+          "document": "<p>云资产是否下线：-1-已下线 0-正常</p>",
           "example": "0",
           "member": "int64",
           "name": "CloudAssetStatus",
@@ -9784,7 +9802,7 @@
         },
         {
           "disabled": false,
-          "document": "可用率（百分比）",
+          "document": "<p>可用率（百分比）</p>",
           "example": "0",
           "member": "int64",
           "name": "AvailabilityRate",
@@ -9794,7 +9812,7 @@
         },
         {
           "disabled": false,
-          "document": "可用状态 1:异常 0:正常",
+          "document": "<p>可用状态 1:异常 0:正常</p>",
           "example": "0",
           "member": "int64",
           "name": "AvailabilityState",
@@ -9804,7 +9822,7 @@
         },
         {
           "disabled": false,
-          "document": "域名解析状态 1:异常 0:正常",
+          "document": "<p>域名解析状态 1:异常 0:正常</p>",
           "example": "0",
           "member": "int64",
           "name": "AnalysisState",
@@ -9814,7 +9832,7 @@
         },
         {
           "disabled": false,
-          "document": "平均时延：单位ms",
+          "document": "<p>平均时延：单位ms</p>",
           "example": "0",
           "member": "int64",
           "name": "AverageDelay",
@@ -9824,12 +9842,32 @@
         },
         {
           "disabled": false,
-          "document": "丢包率（百分比）",
+          "document": "<p>丢包率（百分比）</p>",
           "example": "0",
           "member": "int64",
           "name": "LossRate",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>DNS解析类型</p><p>A、AAAA、MX、CNAME、NX</p>",
+          "example": "A",
+          "member": "string",
+          "name": "DnsType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>DNS解析值</p>",
+          "example": "8.8.8.8",
+          "member": "string",
+          "name": "DnsValue",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -8258,7 +8258,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频转动图模板 ID。",
+          "document": "<p>视频转动图模板 ID。</p>",
           "example": "20000",
           "member": "uint64",
           "name": "Definition",
@@ -8269,7 +8269,7 @@
         },
         {
           "disabled": false,
-          "document": "动图在视频中的开始时间，单位为秒。",
+          "document": "<p>动图在视频中的开始时间，单位为秒。</p>",
           "example": "1.5",
           "member": "float",
           "name": "StartTimeOffset",
@@ -8280,7 +8280,7 @@
         },
         {
           "disabled": false,
-          "document": "动图在视频中的结束时间，单位为秒。",
+          "document": "<p>动图在视频中的结束时间，单位为秒。</p>",
           "example": "11.2",
           "member": "float",
           "name": "EndTimeOffset",
@@ -8291,7 +8291,7 @@
         },
         {
           "disabled": false,
-          "document": "转动图后文件的目标存储，不填则继承上层的 OutputStorage 值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>转动图后文件的目标存储，不填则继承上层的 OutputStorage 值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
@@ -8302,11 +8302,22 @@
         },
         {
           "disabled": false,
-          "document": "转动图后文件的输出路径，可以为相对路径或者绝对路径。\n若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。\n相对路径示例：\n<li>文件名_{变量名}.{format}</li>\n<li>文件名.{format}</li>\n绝对路径示例：\n<li>/自定义路径/文件名_{变量名}.{format}</li>\n如果不填，则默认为相对路径：`{inputName}_animatedGraphic_{definition}.{format}`。",
+          "document": "<p>转动图后文件的输出路径，可以为相对路径或者绝对路径。<br>若需定义输出路径，路径需以<code>.{format}</code>结尾。变量名请参考 <a href=\"https://cloud.tencent.com/document/product/862/37039\">文件名变量说明</a>。<br>相对路径示例：</p><li>文件名_{变量名}.{format}</li><li>文件名.{format}</li>绝对路径示例：<li>/自定义路径/文件名_{变量名}.{format}</li>如果不填，则默认为相对路径：<code>{inputName}_animatedGraphic_{definition}.{format}</code>。",
           "example": "文件名_{变量名}.{format}",
           "member": "string",
           "name": "OutputObjectPath",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"ainmated\":\"\"}",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -13807,6 +13818,24 @@
           "example": "1011",
           "member": "int64",
           "name": "SubtitleEmbedId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人识别开关，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别；<br>默认不开启说话人识别。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeakerMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人识别输出到字幕文件，可选值：<br>0：表示不输出到字幕文件；<br>1：表示输出到vtt字幕文件<br>注意：使用此参数SpeakerMode的值不能为0；<br>默认不输出到字幕文件。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeakerLabel",
           "required": false,
           "type": "int"
         }
@@ -25908,7 +25937,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "雪碧图模板 ID。",
+          "document": "<p>雪碧图模板 ID。</p>",
           "example": "10001",
           "member": "uint64",
           "name": "Definition",
@@ -25919,7 +25948,7 @@
         },
         {
           "disabled": false,
-          "document": "截取雪碧图后文件的目标存储，不填则继承上层的 OutputStorage 值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>截取雪碧图后文件的目标存储，不填则继承上层的 OutputStorage 值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
@@ -25930,7 +25959,7 @@
         },
         {
           "disabled": false,
-          "document": "截取雪碧图后，雪碧图图片文件的输出路径，可以为相对路径或者绝对路径。\n若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。\n相对路径示例：\n<li>文件名_{变量名}.{format}</li>\n<li>文件名.{format}</li>\n绝对路径示例：\n<li>/自定义路径/文件名_{变量名}.{format}</li>\n如果不填，则默认为相对路径：`{inputName}_imageSprite_{definition}_{number}.{format}`。",
+          "document": "<p>截取雪碧图后，雪碧图图片文件的输出路径，可以为相对路径或者绝对路径。<br>若需定义输出路径，路径需以<code>.{format}</code>结尾。变量名请参考 <a href=\"https://cloud.tencent.com/document/product/862/37039\">文件名变量说明</a>。<br>相对路径示例：</p><li>文件名_{变量名}.{format}</li><li>文件名.{format}</li>绝对路径示例：<li>/自定义路径/文件名_{变量名}.{format}</li>如果不填，则默认为相对路径：<code>{inputName}_imageSprite_{definition}_{number}.{format}</code>。",
           "example": "xxx_imageSprite_10001_0.png",
           "member": "string",
           "name": "OutputObjectPath",
@@ -25941,7 +25970,7 @@
         },
         {
           "disabled": false,
-          "document": "截取雪碧图后，Web VTT 文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_imageSprite_{definition}.{format}`。",
+          "document": "<p>截取雪碧图后，Web VTT 文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：<code>{inputName}_imageSprite_{definition}.{format}</code>。</p>",
           "example": "xxx_imageSprite_10001_0.vtt",
           "member": "string",
           "name": "WebVttObjectName",
@@ -25952,7 +25981,7 @@
         },
         {
           "disabled": false,
-          "document": "截取雪碧图后输出路径中的`{number}`变量的规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>截取雪碧图后输出路径中的<code>{number}</code>变量的规则。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NumberFormat",
           "name": "ObjectNumberFormat",
@@ -25960,6 +25989,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"image\":\"\"}",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -32584,6 +32624,24 @@
           "name": "SubtitleEmbedId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人识别开关，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeakerMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人识别输出到字幕文件，可选值：<br>0：表示不输出到字幕文件；<br>1：表示输出到vtt字幕文件<br>注意：使用此参数SpeakerMode的值不能为0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeakerLabel",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -37169,6 +37227,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人识别模式，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别；<br>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeakerMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人识别输出到字幕文件，可选值：<br>0：表示不输出到字幕文件；<br>1：表示输出到vtt字幕文件<br>注意：使用此参数SpeakerMode的值不能为0；<br>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeakerLabel",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -38496,7 +38576,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "采样截图模板 ID。",
+          "document": "<p>采样截图模板 ID。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Definition",
@@ -38507,7 +38587,7 @@
         },
         {
           "disabled": false,
-          "document": "水印列表，支持多张图片或文字水印，最大可支持 10 张。",
+          "document": "<p>水印列表，支持多张图片或文字水印，最大可支持 10 张。</p>",
           "example": "无",
           "member": "WatermarkInput",
           "name": "WatermarkSet",
@@ -38518,7 +38598,7 @@
         },
         {
           "disabled": false,
-          "document": "采样截图后文件的目标存储，不填则继承上层的 OutputStorage 值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>采样截图后文件的目标存储，不填则继承上层的 OutputStorage 值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
@@ -38529,7 +38609,7 @@
         },
         {
           "disabled": false,
-          "document": "采样截图后图片文件的输出路径，可以为相对路径或者绝对路径。\n若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。\n相对路径示例：\n<li>文件名_{变量名}.{format}</li>\n<li>文件名.{format}</li>\n绝对路径示例：\n<li>/自定义路径/文件名_{变量名}.{format}</li>\n如果不填，则默认为相对路径：`{inputName}_sampleSnapshot_{definition}_{number}.{format}`。\n",
+          "document": "<p>采样截图后图片文件的输出路径，可以为相对路径或者绝对路径。<br>若需定义输出路径，路径需以<code>.{format}</code>结尾。变量名请参考 <a href=\"https://cloud.tencent.com/document/product/862/37039\">文件名变量说明</a>。<br>相对路径示例：</p><li>文件名_{变量名}.{format}</li><li>文件名.{format}</li>绝对路径示例：<li>/自定义路径/文件名_{变量名}.{format}</li>如果不填，则默认为相对路径：<code>{inputName}_sampleSnapshot_{definition}_{number}.{format}</code>。",
           "example": "/{inputName}_snapshotByTimeOffsetTest_{definition}_{number}.{format}",
           "member": "string",
           "name": "OutputObjectPath",
@@ -38540,7 +38620,7 @@
         },
         {
           "disabled": false,
-          "document": "采样截图后输出路径中的`{number}`变量的规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>采样截图后输出路径中的<code>{number}</code>变量的规则。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NumberFormat",
           "name": "ObjectNumberFormat",
@@ -38548,6 +38628,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"sample\":\"\"}",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -40695,7 +40786,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "智能字幕模板 ID。",
+          "document": "<p>智能字幕模板 ID。</p>",
           "example": "10",
           "member": "int64",
           "name": "Definition",
@@ -40705,13 +40796,23 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕自定义参数，当 Definition 填 0 时有效。\n该参数用于高度定制场景，建议您优先使用 Definition 指定智能字幕参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "自定义参数",
+          "document": "<p>智能字幕自定义参数，当 Definition 填 0 时有效。<br>该参数用于高度定制场景，建议您优先使用 Definition 指定智能字幕参数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RawSmartSubtitleParameter",
           "name": "RawParameter",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"subtitle\":\"\"}",
+          "member": "string",
+          "name": "UserExtPara",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -40965,7 +41066,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "智能字幕模板唯一标识",
+          "document": "<p>智能字幕模板唯一标识</p>",
           "example": "30",
           "member": "int64",
           "name": "Definition",
@@ -40975,7 +41076,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>智能字幕模板名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "模板1",
           "member": "string",
           "name": "Name",
@@ -40985,7 +41086,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕模板描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>智能字幕模板描述信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "用于A的模板",
           "member": "string",
           "name": "Comment",
@@ -40995,7 +41096,7 @@
         },
         {
           "disabled": false,
-          "document": "模板类型，取值范围：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模板类型，取值范围：</p><ul><li>Preset：系统预置模板；</li><li>Custom：用户自定义模板。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Preset",
           "member": "string",
           "name": "Type",
@@ -41005,7 +41106,7 @@
         },
         {
           "disabled": false,
-          "document": "ASR热词库参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>ASR热词库参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AsrHotWordsConfigure",
           "name": "AsrHotWordsConfigure",
@@ -41015,7 +41116,7 @@
         },
         {
           "disabled": false,
-          "document": "模板关联热词库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模板关联热词库名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "HotwordsName1",
           "member": "string",
           "name": "AsrHotWordsLibraryName",
@@ -41025,7 +41126,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕视频源语言列表：\n\n`zh`：简体中文\n`yue`：中文粵语\n`zh-PY`：中英粤\n`zh_medical`：中文医疗\n`zh_dialect`：中文方言\n`prime_zh`：中英方言\n`zh_en`：中英\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`fr`：法语\n`es`：西班牙语\n`it`：意大利语\n`de`：德语\n`tr`：土耳其语\n`ru`：俄语\n`pt`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`vi`：越南语\n`id`：印度尼西亚语\n`ms`：马来语\n`th`：泰语\n`ar`：阿拉伯语\n`hi`：印地语\n`fil`：菲律宾语\n`auto`：自动识别（仅在纯字幕翻译中支持）",
+          "document": "<p>智能字幕视频源语言列表：</p><p><code>zh</code>：简体中文<br><code>yue</code>：中文粵语<br><code>zh-PY</code>：中英粤<br><code>zh_medical</code>：中文医疗<br><code>zh_dialect</code>：中文方言<br><code>prime_zh</code>：中英方言<br><code>zh_en</code>：中英<br><code>en</code>：英语<br><code>ja</code>：日语<br><code>ko</code>：韩语<br><code>fr</code>：法语<br><code>es</code>：西班牙语<br><code>it</code>：意大利语<br><code>de</code>：德语<br><code>tr</code>：土耳其语<br><code>ru</code>：俄语<br><code>pt</code>：葡萄牙语（巴西）<br><code>pt-PT</code>：葡萄牙语（葡萄牙）<br><code>vi</code>：越南语<br><code>id</code>：印度尼西亚语<br><code>ms</code>：马来语<br><code>th</code>：泰语<br><code>ar</code>：阿拉伯语<br><code>hi</code>：印地语<br><code>fil</code>：菲律宾语<br><code>auto</code>：自动识别（仅在纯字幕翻译中支持）</p>",
           "example": "zh",
           "member": "string",
           "name": "VideoSrcLanguage",
@@ -41035,7 +41136,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕文件格式\n- vtt: WebVTT 格式\n- srt: SRT格式\n- original：与源字幕文件一致（用于纯字幕翻译模板）\n- 不填或填空：不生成字幕文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>智能字幕文件格式</p><ul><li>vtt: WebVTT 格式</li><li>srt: SRT格式</li><li>original：与源字幕文件一致（用于纯字幕翻译模板）</li><li>不填或填空：不生成字幕文件</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vtt",
           "member": "string",
           "name": "SubtitleFormat",
@@ -41045,7 +41146,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕字幕语言类型\n0: 源语言\n1: 翻译语言\n2: 源语言+翻译语言\n当TranslateSwitch为OFF时仅支持取0\n当TranslateSwitch为ON时仅支持取1或2",
+          "document": "<p>智能字幕字幕语言类型<br>0: 源语言<br>1: 翻译语言<br>2: 源语言+翻译语言<br>当TranslateSwitch为OFF时仅支持取0<br>当TranslateSwitch为ON时仅支持取1或2</p>",
           "example": "0",
           "member": "int64",
           "name": "SubtitleType",
@@ -41055,7 +41156,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕翻译开关\nON: 开启翻译\nOFF: 关闭翻译\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>字幕翻译开关<br>ON: 开启翻译<br>OFF: 关闭翻译</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ON",
           "member": "string",
           "name": "TranslateSwitch",
@@ -41065,7 +41166,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效\n`zh`：简体中文\n`zh-TW`：繁体中文\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`fr`：法语\n`es`：西班牙语 \n`it`：意大利语\n`de`：德语\n`tr`：土耳其语\n`ru`：俄语\n`pt`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`vi`：越南语\n`id`：印度尼西亚语 \n`ms`：马来语\n`th`：泰语\n`ar`：阿拉伯语\n`hi`：印地语\n`fil`：菲律宾语\n\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>字幕翻译目标语言<br>当TranslateSwitch为ON的时候生效<br><code>zh</code>：简体中文<br><code>zh-TW</code>：繁体中文<br><code>en</code>：英语<br><code>ja</code>：日语<br><code>ko</code>：韩语<br><code>fr</code>：法语<br><code>es</code>：西班牙语<br><code>it</code>：意大利语<br><code>de</code>：德语<br><code>tr</code>：土耳其语<br><code>ru</code>：俄语<br><code>pt</code>：葡萄牙语（巴西）<br><code>pt-PT</code>：葡萄牙语（葡萄牙）<br><code>vi</code>：越南语<br><code>id</code>：印度尼西亚语<br><code>ms</code>：马来语<br><code>th</code>：泰语<br><code>ar</code>：阿拉伯语<br><code>hi</code>：印地语<br><code>fil</code>：菲律宾语</p><p><strong>注意</strong>：多语言方式，则使用 <code>/</code> 分割，如：<code>en/ja</code>，表示英语和日语。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "en",
           "member": "string",
           "name": "TranslateDstLanguage",
@@ -41075,7 +41176,7 @@
         },
         {
           "disabled": false,
-          "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "document": "<p>模板创建时间，使用 <a href=\"https://cloud.tencent.com/document/product/862/37710#52\">ISO 日期格式</a>。</p>",
           "example": "2023-10-05T14:30:00Z",
           "member": "string",
           "name": "CreateTime",
@@ -41085,7 +41186,7 @@
         },
         {
           "disabled": false,
-          "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "document": "<p>模板最后修改时间，使用 <a href=\"https://cloud.tencent.com/document/product/862/37710#52\">ISO 日期格式</a>。</p>",
           "example": "2024-10-05T14:32:00Z",
           "member": "string",
           "name": "UpdateTime",
@@ -41095,7 +41196,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕预设模板别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>智能字幕预设模板别名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PresetTemplate1",
           "member": "string",
           "name": "AliasName",
@@ -41105,7 +41206,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕处理类型：\n- 0：ASR识别字幕\n- 1：纯字幕翻译\n- 2:  OCR识别字幕",
+          "document": "<p>字幕处理类型：</p><ul><li>0：ASR识别字幕</li><li>1：纯字幕翻译</li><li>2:  OCR识别字幕</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "ProcessType",
@@ -41115,13 +41216,43 @@
         },
         {
           "disabled": false,
-          "document": "字幕OCR提取框选区域配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>字幕OCR提取框选区域配置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SelectingSubtitleAreasConfig",
           "name": "SelectingSubtitleAreasConfig",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕压制模板id</p>",
+          "example": "1011",
+          "member": "int64",
+          "name": "SubtitleEmbedId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人识别模式，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别；<br>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeakerMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人识别输出到字幕文件，可选值：<br>0：表示不输出到字幕文件；<br>1：表示输出到vtt字幕文件<br>注意：使用此参数SpeakerMode的值不能为0；<br>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeakerLabel",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -41248,7 +41379,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定时间点截图模板 ID。",
+          "document": "<p>指定时间点截图模板 ID。</p>",
           "example": "11028",
           "member": "uint64",
           "name": "Definition",
@@ -41259,7 +41390,7 @@
         },
         {
           "disabled": false,
-          "document": "截图时间点列表，时间点支持 s、% 两种格式：\n<li>当字符串以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒；</li>\n<li>当字符串以 % 结尾，表示时间点为视频时长的百分比大小，如10%表示时间点为视频前第10%的时间。</li>",
+          "document": "<p>截图时间点列表，时间点支持 s、% 两种格式：</p><li>当字符串以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒；</li><li>当字符串以 % 结尾，表示时间点为视频时长的百分比大小，如10%表示时间点为视频前第10%的时间。</li>",
           "example": "[\"3.5s\", \"50%\"]",
           "member": "string",
           "name": "ExtTimeOffsetSet",
@@ -41270,7 +41401,7 @@
         },
         {
           "disabled": false,
-          "document": "截图时间点列表，单位为<font color=red>秒</font>。此参数已不再建议使用，建议您使用 ExtTimeOffsetSet 参数。",
+          "document": "<p>截图时间点列表，单位为<font color=\"red\">秒</font>。此参数已不再建议使用，建议您使用 ExtTimeOffsetSet 参数。</p>",
           "example": "[7.5, 10]",
           "member": "float",
           "name": "TimeOffsetSet",
@@ -41281,7 +41412,7 @@
         },
         {
           "disabled": false,
-          "document": "水印列表，支持多张图片或文字水印，最大可支持 10 张。",
+          "document": "<p>水印列表，支持多张图片或文字水印，最大可支持 10 张。</p>",
           "example": "无",
           "member": "WatermarkInput",
           "name": "WatermarkSet",
@@ -41292,7 +41423,7 @@
         },
         {
           "disabled": false,
-          "document": "时间点截图后文件的目标存储，不填则继承上层的 OutputStorage 值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>时间点截图后文件的目标存储，不填则继承上层的 OutputStorage 值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
@@ -41303,7 +41434,7 @@
         },
         {
           "disabled": false,
-          "document": "时间点截图后图片文件的输出路径，可以为相对路径或者绝对路径。\n若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。\n相对路径示例：\n<li>文件名_{变量名}.{format}</li>\n<li>文件名.{format}</li>\n绝对路径示例：\n<li>/自定义路径/文件名_{变量名}.{format}</li>\n如果不填，则默认为相对路径：`{inputName}_snapshotByTimeOffset_{definition}_{number}.{format}`。",
+          "document": "<p>时间点截图后图片文件的输出路径，可以为相对路径或者绝对路径。<br>若需定义输出路径，路径需以<code>.{format}</code>结尾。变量名请参考 <a href=\"https://cloud.tencent.com/document/product/862/37039\">文件名变量说明</a>。<br>相对路径示例：</p><li>文件名_{变量名}.{format}</li><li>文件名.{format}</li>绝对路径示例：<li>/自定义路径/文件名_{变量名}.{format}</li>如果不填，则默认为相对路径：<code>{inputName}_snapshotByTimeOffset_{definition}_{number}.{format}</code>。",
           "example": "/mps/output/{inputName}_test_{definition}.{format}",
           "member": "string",
           "name": "OutputObjectPath",
@@ -41314,7 +41445,7 @@
         },
         {
           "disabled": false,
-          "document": "时间点截图后输出路径中的`{number}`变量的规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>时间点截图后输出路径中的<code>{number}</code>变量的规则。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NumberFormat",
           "name": "ObjectNumberFormat",
@@ -41322,6 +41453,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"snapshot\":\"\"}",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

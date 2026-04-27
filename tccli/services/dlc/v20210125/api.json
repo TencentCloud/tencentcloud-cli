@@ -1786,7 +1786,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务Id",
+          "document": "<p>任务Id</p>",
           "example": "89570c65-49de-4bbd-ac0a-a67c724fc80f",
           "member": "string",
           "name": "Id",
@@ -1796,7 +1796,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间，毫秒时间戳",
+          "document": "<p>任务创建时间，毫秒时间戳</p>",
           "example": "1715141119301",
           "member": "int64",
           "name": "InstanceStartTime",
@@ -1806,7 +1806,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结束时间，毫秒时间戳",
+          "document": "<p>任务结束时间，毫秒时间戳</p>",
           "example": "1715141437247",
           "member": "int64",
           "name": "InstanceCompleteTime",
@@ -1816,7 +1816,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态：0 初始化， 1 执行中， 2 执行成功，3 数据写入中，4 排队中。-1 执行失败，-3 已取消。",
+          "document": "<p>任务状态：0 初始化， 1 执行中， 2 执行成功，3 数据写入中，4 排队中。-1 执行失败，-3 已取消。</p>",
           "example": "2",
           "member": "int64",
           "name": "State",
@@ -1826,7 +1826,7 @@
         },
         {
           "disabled": false,
-          "document": "任务SQL语句",
+          "document": "<p>任务SQL语句</p>",
           "example": "INSERT INTO person_table values(100, 'John', 30, 1, 'Street 1')",
           "member": "string",
           "name": "SQL",
@@ -1836,7 +1836,7 @@
         },
         {
           "disabled": false,
-          "document": "计算资源名字",
+          "document": "<p>计算资源名字</p>",
           "example": "标准SPARK",
           "member": "string",
           "name": "DataEngineName",
@@ -1846,7 +1846,7 @@
         },
         {
           "disabled": false,
-          "document": "单位毫秒，引擎内执行耗时, 反映真正用于计算所需的耗时，即从  Spark 任务第一个 Task  开始执行到任务结束之间的耗时。\n具体的：会统计任务的每个 Spark Stage 第一个 Task 到最后一个 Task 完成时长之和，不包含任务开始的排队耗时（即剔除从任务提交到 Spark Task 开始执行之间的调度等其他耗时），也不包含任务执行过程中多个 Spark Stage 之间因 executor 资源不足而等待执行 Task 所消耗的时间。",
+          "document": "<p>单位毫秒，引擎内执行耗时, 反映真正用于计算所需的耗时，即从  Spark 任务第一个 Task  开始执行到任务结束之间的耗时。<br>具体的：会统计任务的每个 Spark Stage 第一个 Task 到最后一个 Task 完成时长之和，不包含任务开始的排队耗时（即剔除从任务提交到 Spark Task 开始执行之间的调度等其他耗时），也不包含任务执行过程中多个 Spark Stage 之间因 executor 资源不足而等待执行 Task 所消耗的时间。</p>",
           "example": "80852",
           "member": "int64",
           "name": "JobTimeSum",
@@ -1856,7 +1856,7 @@
         },
         {
           "disabled": false,
-          "document": "单位秒，累计 CPU* 秒 ( 累计 CPU * 时 = 累计 CPU* 秒/ 3600)，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和",
+          "document": "<p>单位秒，累计 CPU* 秒 ( 累计 CPU * 时 = 累计 CPU* 秒/ 3600)，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和</p>",
           "example": "4329",
           "member": "int64",
           "name": "TaskTimeSum",
@@ -1866,7 +1866,7 @@
         },
         {
           "disabled": false,
-          "document": "数据扫描总行数",
+          "document": "<p>数据扫描总行数</p>",
           "example": "0",
           "member": "int64",
           "name": "InputRecordsSum",
@@ -1876,7 +1876,7 @@
         },
         {
           "disabled": false,
-          "document": "数据扫描总 bytes",
+          "document": "<p>数据扫描总 bytes</p>",
           "example": "99330",
           "member": "int64",
           "name": "InputBytesSum",
@@ -1886,7 +1886,7 @@
         },
         {
           "disabled": false,
-          "document": "输出总行数",
+          "document": "<p>输出总行数</p>",
           "example": "0",
           "member": "int64",
           "name": "OutputRecordsSum",
@@ -1896,7 +1896,7 @@
         },
         {
           "disabled": false,
-          "document": "输出总 bytes",
+          "document": "<p>输出总 bytes</p>",
           "example": "0",
           "member": "int64",
           "name": "OutputBytesSum",
@@ -1906,7 +1906,7 @@
         },
         {
           "disabled": false,
-          "document": "shuffle read 总 bytes",
+          "document": "<p>shuffle read 总 bytes</p>",
           "example": "9807",
           "member": "int64",
           "name": "ShuffleReadBytesSum",
@@ -1916,7 +1916,7 @@
         },
         {
           "disabled": false,
-          "document": "shuffle read 总行数",
+          "document": "<p>shuffle read 总行数</p>",
           "example": "28",
           "member": "int64",
           "name": "ShuffleReadRecordsSum",
@@ -1926,7 +1926,7 @@
         },
         {
           "disabled": false,
-          "document": "洞察结果类型分类，一个 json 数组，有如下几种类型：SPARK-StageScheduleDelay（资源抢占）, SPARK-ShuffleFailure（Shuffle异常）, SPARK-SlowTask（慢task）, SPARK-DataSkew（数据倾斜）, SPARK-InsufficientResource（磁盘或内存不足）",
+          "document": "<p>洞察结果类型分类，一个 json 数组，有如下几种类型：SPARK-StageScheduleDelay（资源抢占）, SPARK-ShuffleFailure（Shuffle异常）, SPARK-SlowTask（慢task）, SPARK-DataSkew（数据倾斜）, SPARK-InsufficientResource（磁盘或内存不足）</p>",
           "example": "[\\\"SPARK-StageScheduleDelay\\\"]",
           "member": "string",
           "name": "AnalysisStatus",
@@ -1936,7 +1936,7 @@
         },
         {
           "disabled": false,
-          "document": "任务输出文件总数",
+          "document": "<p>任务输出文件总数</p>",
           "example": "0",
           "member": "int64",
           "name": "OutputFilesNum",
@@ -1946,10 +1946,20 @@
         },
         {
           "disabled": false,
-          "document": "任务输出小文件总数",
+          "document": "<p>任务输出小文件总数</p>",
           "example": "0",
           "member": "int64",
           "name": "OutputSmallFilesNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>shuffle write 总 Bytes 大小</p><p>单位：Bytes</p><p>默认值：无</p>",
+          "example": "9807",
+          "member": "int64",
+          "name": "ShuffleWriteBytesSum",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -23810,7 +23820,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务所属Database的名称。",
+          "document": "<p>任务所属Database的名称。</p>",
           "example": "database1",
           "member": "string",
           "name": "DatabaseName",
@@ -23820,7 +23830,7 @@
         },
         {
           "disabled": false,
-          "document": "任务数据量。",
+          "document": "<p>任务数据量。</p>",
           "example": "1024",
           "member": "int64",
           "name": "DataAmount",
@@ -23830,7 +23840,7 @@
         },
         {
           "disabled": false,
-          "document": "任务Id。",
+          "document": "<p>任务Id。</p>",
           "example": "89570c65-49de-4bbd-ac0a-a67c724fc80f",
           "member": "string",
           "name": "Id",
@@ -23840,7 +23850,7 @@
         },
         {
           "disabled": false,
-          "document": "计算耗时，单位： ms",
+          "document": "<p>计算耗时，单位： ms</p>",
           "example": "60000",
           "member": "int64",
           "name": "UsedTime",
@@ -23850,7 +23860,7 @@
         },
         {
           "disabled": false,
-          "document": "任务输出路径。",
+          "document": "<p>任务输出路径。</p>",
           "example": "cosn://test-bucket-123434324234/result/",
           "member": "string",
           "name": "OutputPath",
@@ -23860,7 +23870,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间。",
+          "document": "<p>任务创建时间。</p>",
           "example": "1611646962000",
           "member": "string",
           "name": "CreateTime",
@@ -23870,7 +23880,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态：0 初始化， 1 执行中， 2 执行成功，3 数据写入中，4 排队中。-1 执行失败，-3 已取消。",
+          "document": "<p>任务状态：0 初始化， 1 执行中， 2 执行成功，3 数据写入中，4 排队中。-1 执行失败，-3 已取消。</p>",
           "example": "2",
           "member": "int64",
           "name": "State",
@@ -23880,7 +23890,7 @@
         },
         {
           "disabled": false,
-          "document": "任务SQL类型，DDL|DML等",
+          "document": "<p>任务SQL类型，DDL|DML等</p>",
           "example": "DDL",
           "member": "string",
           "name": "SQLType",
@@ -23890,7 +23900,7 @@
         },
         {
           "disabled": false,
-          "document": "任务SQL语句",
+          "document": "<p>任务SQL语句</p>",
           "example": "U0VMRUNUICogRlJPTSBgdGVzdGA7",
           "member": "string",
           "name": "SQL",
@@ -23900,7 +23910,7 @@
         },
         {
           "disabled": false,
-          "document": "结果是否过期。",
+          "document": "<p>结果是否过期。</p>",
           "example": "false",
           "member": "bool",
           "name": "ResultExpired",
@@ -23910,7 +23920,7 @@
         },
         {
           "disabled": false,
-          "document": "数据影响统计信息。",
+          "document": "<p>数据影响统计信息。</p>",
           "example": "500 rows selected (0.077 seconds)",
           "member": "string",
           "name": "RowAffectInfo",
@@ -23920,7 +23930,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结果数据表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务结果数据表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Schema\":[\"name\",\"age\"],\"Data\":[{\"name\":\"29\",\"age\":\"Michael\"}]}",
           "member": "string",
           "name": "DataSet",
@@ -23930,7 +23940,7 @@
         },
         {
           "disabled": false,
-          "document": "失败信息, 例如：errorMessage。该字段已废弃。",
+          "document": "<p>失败信息, 例如：errorMessage。该字段已废弃。</p>",
           "example": "errorMessage",
           "member": "string",
           "name": "Error",
@@ -23940,7 +23950,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行进度num/100(%)",
+          "document": "<p>任务执行进度num/100(%)</p>",
           "example": "100",
           "member": "int64",
           "name": "Percentage",
@@ -23950,7 +23960,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行输出信息。",
+          "document": "<p>任务执行输出信息。</p>",
           "example": "Invalid compression codec: ,Available codecs are none,bzip2,gzip,deflate.",
           "member": "string",
           "name": "OutputMessage",
@@ -23960,7 +23970,7 @@
         },
         {
           "disabled": false,
-          "document": "执行SQL的引擎类型",
+          "document": "<p>执行SQL的引擎类型</p>",
           "example": "SparkBatchSQL",
           "member": "string",
           "name": "TaskType",
@@ -23970,7 +23980,7 @@
         },
         {
           "disabled": false,
-          "document": "任务进度明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务进度明细</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"jobId\":1,\"stages\":[{\"stageId\":1,\"numTasks\":3,\"numActiveTasks\"",
           "member": "string",
           "name": "ProgressDetail",
@@ -23980,7 +23990,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611646962000",
           "member": "string",
           "name": "UpdateTime",
@@ -23990,7 +24000,7 @@
         },
         {
           "disabled": false,
-          "document": "计算资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计算资源id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "resource-1gghpd1t",
           "member": "string",
           "name": "DataEngineId",
@@ -24000,7 +24010,7 @@
         },
         {
           "disabled": false,
-          "document": "执行sql的子uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行sql的子uin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "****",
           "member": "string",
           "name": "OperateUin",
@@ -24010,7 +24020,7 @@
         },
         {
           "disabled": false,
-          "document": "计算资源名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计算资源名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "shared_presto",
           "member": "string",
           "name": "DataEngineName",
@@ -24020,7 +24030,7 @@
         },
         {
           "disabled": false,
-          "document": "导入类型是本地导入还是cos\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>导入类型是本地导入还是cos</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "local",
           "member": "string",
           "name": "InputType",
@@ -24030,7 +24040,7 @@
         },
         {
           "disabled": false,
-          "document": "导入配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>导入配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"Key\":\"paths\",\"Value\":\"lakefs://20000003366d155f79a522c8349496",
           "member": "string",
           "name": "InputConf",
@@ -24040,7 +24050,7 @@
         },
         {
           "disabled": false,
-          "document": "数据条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据条数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "925",
           "member": "int64",
           "name": "DataNumber",
@@ -24050,7 +24060,7 @@
         },
         {
           "disabled": false,
-          "document": "查询数据能不能下载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>查询数据能不能下载</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "CanDownload",
@@ -24060,7 +24070,7 @@
         },
         {
           "disabled": false,
-          "document": "用户别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户别名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testname",
           "member": "string",
           "name": "UserAlias",
@@ -24070,7 +24080,7 @@
         },
         {
           "disabled": false,
-          "document": "spark应用作业名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>spark应用作业名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "spark_app",
           "member": "string",
           "name": "SparkJobName",
@@ -24080,7 +24090,7 @@
         },
         {
           "disabled": false,
-          "document": "spark应用作业Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>spark应用作业Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "batch_sdafa",
           "member": "string",
           "name": "SparkJobId",
@@ -24090,7 +24100,7 @@
         },
         {
           "disabled": false,
-          "document": "spark应用入口jar文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>spark应用入口jar文件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "example.jar",
           "member": "string",
           "name": "SparkJobFile",
@@ -24100,7 +24110,7 @@
         },
         {
           "disabled": false,
-          "document": "spark ui url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>spark ui url</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://dlc-spark-ui.cloud.tencent.com/history/spark-893c606226b",
           "member": "string",
           "name": "UiUrl",
@@ -24110,7 +24120,7 @@
         },
         {
           "disabled": false,
-          "document": "任务耗时，单位： ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务耗时，单位： ms</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "80000",
           "member": "int64",
           "name": "TotalTime",
@@ -24120,7 +24130,7 @@
         },
         {
           "disabled": false,
-          "document": "spark app job执行task的程序入口参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>spark app job执行task的程序入口参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "spark.sql.shuffle.partitions",
           "member": "string",
           "name": "CmdArgs",
@@ -24130,7 +24140,7 @@
         },
         {
           "disabled": false,
-          "document": "集群镜像大版本名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群镜像大版本名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SuperSQL P 1.0",
           "member": "string",
           "name": "ImageVersion",
@@ -24140,7 +24150,7 @@
         },
         {
           "disabled": false,
-          "document": "driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "small",
           "member": "string",
           "name": "DriverSize",
@@ -24150,7 +24160,7 @@
         },
         {
           "disabled": false,
-          "document": "executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "small",
           "member": "string",
           "name": "ExecutorSize",
@@ -24160,7 +24170,7 @@
         },
         {
           "disabled": false,
-          "document": "指定executor数量，最小值为1，最大值小于集群规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>指定executor数量，最小值为1，最大值小于集群规格</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "ExecutorNums",
@@ -24170,7 +24180,7 @@
         },
         {
           "disabled": false,
-          "document": "指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "ExecutorMaxNumbers",
@@ -24180,7 +24190,7 @@
         },
         {
           "disabled": false,
-          "document": "任务公共指标数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务公共指标数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CommonMetrics",
           "name": "CommonMetrics",
@@ -24190,7 +24200,7 @@
         },
         {
           "disabled": false,
-          "document": "spark任务指标数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>spark任务指标数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SparkMonitorMetrics",
           "name": "SparkMonitorMetrics",
@@ -24200,7 +24210,7 @@
         },
         {
           "disabled": false,
-          "document": "presto任务指标数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>presto任务指标数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrestoMonitorMetrics",
           "name": "PrestoMonitorMetrics",
@@ -24210,7 +24220,7 @@
         },
         {
           "disabled": false,
-          "document": "结果文件格式：默认为csv\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>结果文件格式：默认为csv</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "csv",
           "member": "string",
           "name": "ResultFormat",
@@ -24220,7 +24230,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎类型，SparkSQL：SparkSQL 引擎；SparkBatch：Spark作业引擎；PrestoSQL：Presto引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>引擎类型，SparkSQL：SparkSQL 引擎；SparkBatch：Spark作业引擎；PrestoSQL：Presto引擎</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SparkSQL",
           "member": "string",
           "name": "EngineTypeDetail",
@@ -24230,7 +24240,7 @@
         },
         {
           "disabled": false,
-          "document": "spark引擎资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>spark引擎资源组名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ResourceGroupName1",
           "member": "string",
           "name": "ResourceGroupName",
@@ -24240,7 +24250,7 @@
         },
         {
           "disabled": false,
-          "document": "任务来源信息,如thirdPartyApi,dataExploration, sparkAppTask等",
+          "document": "<p>任务来源信息,如thirdPartyApi,dataExploration, sparkAppTask等</p>",
           "example": "thirdPartyApi",
           "member": "string",
           "name": "Source",
@@ -24250,7 +24260,7 @@
         },
         {
           "disabled": false,
-          "document": "子渠道信息，一般由第三方调用定义",
+          "document": "<p>子渠道信息，一般由第三方调用定义</p>",
           "example": "4c022a43-9ed6-46cc-836c-44994a0bf959",
           "member": "string",
           "name": "SourceExtra",
@@ -24260,7 +24270,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人uin",
+          "document": "<p>创建人uin</p>",
           "example": "100039223798",
           "member": "string",
           "name": "CreatorUin",
@@ -24270,7 +24280,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人名字",
+          "document": "<p>创建人名字</p>",
           "example": "小明",
           "member": "string",
           "name": "CreatorAlias",
@@ -24280,7 +24290,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎参数",
+          "document": "<p>引擎参数</p>",
           "example": "query_max_execution_time=6m",
           "member": "string",
           "name": "CustomizedConf",
@@ -24290,7 +24300,7 @@
         },
         {
           "disabled": false,
-          "document": "单位秒，累计 CPU* 秒 ( 累计 CPU * 时 = 累计 CPU* 秒/ 3600)，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和\n示例值：4329",
+          "document": "<p>单位秒，累计 CPU* 秒 ( 累计 CPU * 时 = 累计 CPU* 秒/ 3600)，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和<br>示例值：4329</p>",
           "example": "215",
           "member": "int64",
           "name": "TaskTimeSum",
@@ -24300,7 +24310,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎执行时间",
+          "document": "<p>引擎执行时间</p>",
           "example": "1736009241127",
           "member": "int64",
           "name": "StageStartTime",
@@ -24310,7 +24320,7 @@
         },
         {
           "disabled": false,
-          "document": "数据扫描条数",
+          "document": "<p>数据扫描条数</p>",
           "example": "1210",
           "member": "int64",
           "name": "InputRecordsSum",
@@ -24320,7 +24330,7 @@
         },
         {
           "disabled": false,
-          "document": "健康状态",
+          "document": "<p>健康状态</p>",
           "example": "1",
           "member": "int64",
           "name": "AnalysisStatusType",
@@ -24330,7 +24340,7 @@
         },
         {
           "disabled": false,
-          "document": "输出总行数",
+          "document": "<p>输出总行数</p>",
           "example": "2087",
           "member": "int64",
           "name": "OutputRecordsSum",
@@ -24340,7 +24350,7 @@
         },
         {
           "disabled": false,
-          "document": "输出总大小",
+          "document": "<p>输出总大小</p>",
           "example": "24",
           "member": "int64",
           "name": "OutputBytesSum",
@@ -24350,7 +24360,7 @@
         },
         {
           "disabled": false,
-          "document": "输出文件个数",
+          "document": "<p>输出文件个数</p>",
           "example": "7",
           "member": "int64",
           "name": "OutputFilesNum",
@@ -24360,7 +24370,7 @@
         },
         {
           "disabled": false,
-          "document": "输出小文件个数",
+          "document": "<p>输出小文件个数</p>",
           "example": "5",
           "member": "int64",
           "name": "OutputSmallFilesNum",
@@ -24370,7 +24380,7 @@
         },
         {
           "disabled": false,
-          "document": "数据shuffle行数",
+          "document": "<p>数据shuffle行数</p>",
           "example": "502",
           "member": "int64",
           "name": "ShuffleReadRecordsSum",
@@ -24380,7 +24390,7 @@
         },
         {
           "disabled": false,
-          "document": "数据shuffle大小",
+          "document": "<p>数据shuffle大小</p>",
           "example": "67",
           "member": "int64",
           "name": "ShuffleReadBytesSum",
@@ -24390,7 +24400,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业id",
+          "document": "<p>spark作业id</p>",
           "example": "batch_8d1fa0f3-4da7-4bd2-a3d0-72e83582e70b",
           "member": "string",
           "name": "SparkAppId",
@@ -24400,7 +24410,7 @@
         },
         {
           "disabled": false,
-          "document": "任务大类，DLC2.0中任务区分为两大类，sql任务和作业任务",
+          "document": "<p>任务大类，DLC2.0中任务区分为两大类，sql任务和作业任务</p>",
           "example": "SQL",
           "member": "string",
           "name": "TaskCategory",
@@ -24410,7 +24420,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "<p>任务名称</p>",
           "example": "import_20241126212510_f2a65wk1",
           "member": "string",
           "name": "TaskName",
@@ -24420,7 +24430,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎类型，用做任务详情页跳转引擎tab",
+          "document": "<p>引擎类型，用做任务详情页跳转引擎tab</p>",
           "example": "spark",
           "member": "string",
           "name": "EngineType",
@@ -24430,7 +24440,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎是否支持洞察数据采集",
+          "document": "<p>引擎是否支持洞察数据采集</p>",
           "example": "true",
           "member": "bool",
           "name": "EngineHasListenerConfig",
@@ -24440,7 +24450,7 @@
         },
         {
           "disabled": false,
-          "document": "spark引擎资源组id",
+          "document": "<p>spark引擎资源组id</p>",
           "example": "default-rg-js8kdi6xzt",
           "member": "string",
           "name": "ResourceGroupId",
@@ -24450,7 +24460,7 @@
         },
         {
           "disabled": false,
-          "document": "任务计算耗时",
+          "document": "<p>任务计算耗时</p>",
           "example": "6000",
           "member": "int64",
           "name": "JobTimeSum",
@@ -24460,7 +24470,7 @@
         },
         {
           "disabled": false,
-          "document": "任务启动耗时",
+          "document": "<p>任务启动耗时</p>",
           "example": "1min30s",
           "member": "string",
           "name": "LaunchTime",
@@ -24470,7 +24480,7 @@
         },
         {
           "disabled": false,
-          "document": "Gpu Driver 规格",
+          "document": "<p>Gpu Driver 规格</p>",
           "example": "1",
           "member": "int64",
           "name": "GpuDriverSize",
@@ -24480,10 +24490,30 @@
         },
         {
           "disabled": false,
-          "document": "Gpu Executor 规格",
+          "document": "<p>Gpu Executor 规格</p>",
           "example": "1",
           "member": "int64",
           "name": "GpuExecutorSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ShuffleWrite数据量</p>",
+          "example": "1000",
+          "member": "int64",
+          "name": "ShuffleWriteBytesSum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>活跃core</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ActiveCore",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

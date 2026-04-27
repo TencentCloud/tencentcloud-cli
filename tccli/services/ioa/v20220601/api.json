@@ -3531,7 +3531,16 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询条件：过滤或排序\n1、UserName，string类型，姓名\n是否必填：否\n过滤支持：是，支持eq、like、ilike\n排序支持：否\n2、UserId，string类型，账户\n是否必填：否\n过滤支持：是，支持eq、like、ilike\n排序支持：否\n3、Phone，string类型，手机号\n是否必填：否\n过滤支持：是，支持eq、like、ilike\n排序支持：否",
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件：过滤或排序\n1、UserName，string类型，姓名\n是否必填：否\n过滤支持：是，支持eq、like、ilike\n排序支持：否\n2、UserId，string类型，账户\n是否必填：否\n过滤支持：是，支持eq、like、ilike\n排序支持：否\n3、Phone，string类型，手机号\n是否必填：否\n过滤支持：是，支持eq、like、ilike\n排序支持：否\n4、Email，string类型，邮箱\n是否必填：否\n过滤支持：是，支持eq、like、ilike\n排序支持：否",
           "example": "{     \"FilterGroups\": [         {             \"Filters\": [                 {                     \"Field\": \"UserId\",                     \"Operator\": \"ilike\",                     \"Values\": [                         \"weiwang\"                     ]                 }             ]         }     ],     \"PageNum\": 1,     \"PageSize\": 10 }",
           "member": "Condition",
           "name": "Condition",
@@ -4021,7 +4030,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备ID",
+          "document": "<p>设备ID</p>",
           "example": "1749",
           "member": "int64",
           "name": "Id",
@@ -4032,7 +4041,7 @@
         },
         {
           "disabled": false,
-          "document": "设备唯一标识码，在ioa中每个设备有唯一标识码",
+          "document": "<p>设备唯一标识码，在ioa中每个设备有唯一标识码</p>",
           "example": "702DFBFC9A9E31FDDBCD082B35AB2842667155F7",
           "member": "string",
           "name": "Mid",
@@ -4043,7 +4052,7 @@
         },
         {
           "disabled": false,
-          "document": "终端名（设备名）",
+          "document": "<p>终端名（设备名）</p>",
           "example": "DESKTOP-U9QR7P1",
           "member": "string",
           "name": "Name",
@@ -4054,7 +4063,7 @@
         },
         {
           "disabled": false,
-          "document": "设备所在分组ID",
+          "document": "<p>设备所在分组ID</p>",
           "example": "2",
           "member": "int64",
           "name": "GroupId",
@@ -4065,7 +4074,7 @@
         },
         {
           "disabled": false,
-          "document": "OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0",
+          "document": "<p>OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0</p>",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -4076,7 +4085,7 @@
         },
         {
           "disabled": false,
-          "document": "设备IP地址（出口IP）",
+          "document": "<p>设备IP地址（出口IP）</p>",
           "example": "10.18.104.56",
           "member": "string",
           "name": "Ip",
@@ -4087,7 +4096,7 @@
         },
         {
           "disabled": false,
-          "document": "在线状态，2：在线、0或者1:离线",
+          "document": "<p>在线状态，2：在线、0或者1:离线</p>",
           "example": "2",
           "member": "int64",
           "name": "OnlineStatus",
@@ -4098,7 +4107,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端版本号-大整数",
+          "document": "<p>客户端版本号-大整数</p>",
           "example": "30399320386433584",
           "member": "string",
           "name": "Version",
@@ -4109,7 +4118,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端版本号-点分字符串",
+          "document": "<p>客户端版本号-点分字符串</p>",
           "example": "108.5.21771.62000",
           "member": "string",
           "name": "StrVersion",
@@ -4120,7 +4129,7 @@
         },
         {
           "disabled": false,
-          "document": "首次在线时间",
+          "document": "<p>首次在线时间</p>",
           "example": "2024-06-18T17:40:07.171192+08:00",
           "member": "string",
           "name": "Itime",
@@ -4131,7 +4140,7 @@
         },
         {
           "disabled": false,
-          "document": "最后一次在线时间",
+          "document": "<p>最后一次在线时间</p>",
           "example": "2024-06-20T22:24:19.022634+08:00",
           "member": "string",
           "name": "ConnActiveTime",
@@ -4142,7 +4151,7 @@
         },
         {
           "disabled": false,
-          "document": "设备是否加锁 ，1：锁定 0或者2：未锁定。",
+          "document": "<p>设备是否加锁 ，1：锁定 0或者2：未锁定。</p>",
           "example": "0",
           "member": "int64",
           "name": "Locked",
@@ -4153,7 +4162,7 @@
         },
         {
           "disabled": false,
-          "document": "设备本地IP列表, 包括IP",
+          "document": "<p>设备本地IP列表, 包括IP</p>",
           "example": "192.168.142.138",
           "member": "string",
           "name": "LocalIpList",
@@ -4164,7 +4173,7 @@
         },
         {
           "disabled": false,
-          "document": "宿主机id（需要宿主机也安装iOA才能显示）",
+          "document": "<p>宿主机id（需要宿主机也安装iOA才能显示）</p>",
           "example": "1",
           "member": "int64",
           "name": "HostId",
@@ -4175,7 +4184,7 @@
         },
         {
           "disabled": false,
-          "document": "设备所属分组名",
+          "document": "<p>设备所属分组名</p>",
           "example": "未分组终端",
           "member": "string",
           "name": "GroupName",
@@ -4186,7 +4195,7 @@
         },
         {
           "disabled": false,
-          "document": "设备所属分组路径",
+          "document": "<p>设备所属分组路径</p>",
           "example": "全网终端.未分组终端",
           "member": "string",
           "name": "GroupNamePath",
@@ -4197,7 +4206,7 @@
         },
         {
           "disabled": false,
-          "document": "未修复高危漏洞数(只支持32位)",
+          "document": "<p>未修复高危漏洞数(只支持32位)</p>",
           "example": "0",
           "member": "int64",
           "name": "CriticalVulListCount",
@@ -4208,7 +4217,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统名称",
+          "document": "<p>操作系统名称</p>",
           "example": "Microsoft Windows 10 专业版",
           "member": "string",
           "name": "Os",
@@ -4219,7 +4228,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统位数",
+          "document": "<p>操作系统位数</p>",
           "example": "64",
           "member": "int64",
           "name": "OsBits",
@@ -4230,7 +4239,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统版本",
+          "document": "<p>操作系统版本</p>",
           "example": "10.0.19045",
           "member": "string",
           "name": "OsVersion",
@@ -4241,7 +4250,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统语言",
+          "document": "<p>操作系统语言</p>",
           "example": "简体中文",
           "member": "string",
           "name": "OsLanguage",
@@ -4252,7 +4261,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统安装时间",
+          "document": "<p>操作系统安装时间</p>",
           "example": "2024-05-13",
           "member": "string",
           "name": "OsInstallDate",
@@ -4263,7 +4272,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名，和Name相同",
+          "document": "<p>设备名，和Name相同</p>",
           "example": "DESKTOP-U9QR7P1",
           "member": "string",
           "name": "ComputerName",
@@ -4274,7 +4283,7 @@
         },
         {
           "disabled": false,
-          "document": "登录域名",
+          "document": "<p>登录域名</p>",
           "example": "tencent.com",
           "member": "string",
           "name": "DomainName",
@@ -4285,7 +4294,7 @@
         },
         {
           "disabled": false,
-          "document": "MAC地址",
+          "document": "<p>MAC地址</p>",
           "example": "00:0C:29:71:A7:29",
           "member": "string",
           "name": "MacAddr",
@@ -4296,7 +4305,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞数",
+          "document": "<p>漏洞数</p>",
           "example": "0",
           "member": "int64",
           "name": "VulCount",
@@ -4307,7 +4316,7 @@
         },
         {
           "disabled": false,
-          "document": "病毒风险数",
+          "document": "<p>病毒风险数</p>",
           "example": "0",
           "member": "int64",
           "name": "RiskCount",
@@ -4318,7 +4327,7 @@
         },
         {
           "disabled": false,
-          "document": "病毒库版本",
+          "document": "<p>病毒库版本</p>",
           "example": "2.0.13712.595",
           "member": "string",
           "name": "VirusVer",
@@ -4329,7 +4338,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞库版本",
+          "document": "<p>漏洞库版本</p>",
           "example": "2024.06.12.11.25.18",
           "member": "string",
           "name": "VulVersion",
@@ -4340,7 +4349,7 @@
         },
         {
           "disabled": false,
-          "document": "系统修复引擎版本",
+          "document": "<p>系统修复引擎版本</p>",
           "example": "2024.06.17.16.26.22",
           "member": "string",
           "name": "SysRepVersion",
@@ -4351,7 +4360,7 @@
         },
         {
           "disabled": false,
-          "document": "高危补丁列表",
+          "document": "<p>高危补丁列表</p>",
           "example": "[\"5043051\",\"4132216\"]",
           "member": "string",
           "name": "VulCriticalList",
@@ -4362,7 +4371,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "\"commpany assert\"",
           "member": "string",
           "name": "Tags",
@@ -4373,7 +4382,7 @@
         },
         {
           "disabled": false,
-          "document": "终端用户名",
+          "document": "<p>终端用户名</p>",
           "example": "Lucky",
           "member": "string",
           "name": "UserName",
@@ -4384,7 +4393,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙状态，不等于0表示开启",
+          "document": "<p>防火墙状态，不等于0表示开启</p>",
           "example": "1",
           "member": "int64",
           "name": "FirewallStatus",
@@ -4395,7 +4404,7 @@
         },
         {
           "disabled": false,
-          "document": "SN序列号",
+          "document": "<p>SN序列号</p>",
           "example": "VMware-56 4d 8c 1a 6c 51 b7 71-1f 2a 3b 71 e6 71 a7 29",
           "member": "string",
           "name": "SerialNum",
@@ -4406,7 +4415,7 @@
         },
         {
           "disabled": false,
-          "document": "设备管控策略版本",
+          "document": "<p>设备管控策略版本</p>",
           "example": "2024-06-21 17:08:00",
           "member": "string",
           "name": "DeviceStrategyVer",
@@ -4417,7 +4426,7 @@
         },
         {
           "disabled": false,
-          "document": "NGN策略版本",
+          "document": "<p>NGN策略版本</p>",
           "example": "2024-06-21 17:08:00",
           "member": "string",
           "name": "NGNStrategyVer",
@@ -4428,7 +4437,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录账户的账号(账号系统用户账号)",
+          "document": "<p>最近登录账户的账号(账号系统用户账号)</p>",
           "example": "LuckyLI",
           "member": "string",
           "name": "IOAUserName",
@@ -4439,7 +4448,7 @@
         },
         {
           "disabled": false,
-          "document": "设备管控新策略",
+          "document": "<p>设备管控新策略</p>",
           "example": "2024-06-24 20:27:00",
           "member": "string",
           "name": "DeviceNewStrategyVer",
@@ -4450,7 +4459,7 @@
         },
         {
           "disabled": false,
-          "document": "NGN策略新版本",
+          "document": "<p>NGN策略新版本</p>",
           "example": "2024-06-24 20:27:00",
           "member": "string",
           "name": "NGNNewStrategyVer",
@@ -4461,7 +4470,7 @@
         },
         {
           "disabled": false,
-          "document": "宿主机名称（需要宿主机也安装iOA才能显示）",
+          "document": "<p>宿主机名称（需要宿主机也安装iOA才能显示）</p>",
           "example": "DESKTOP-U9QR7P0",
           "member": "string",
           "name": "HostName",
@@ -4472,7 +4481,7 @@
         },
         {
           "disabled": false,
-          "document": "主板序列号",
+          "document": "<p>主板序列号</p>",
           "example": "C02FVC8CQ05P",
           "member": "string",
           "name": "BaseBoardSn",
@@ -4483,7 +4492,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定账户名称",
+          "document": "<p>绑定账户名称</p>",
           "example": "”sariel“",
           "member": "string",
           "name": "AccountUsers",
@@ -4494,7 +4503,7 @@
         },
         {
           "disabled": false,
-          "document": "身份策略版本",
+          "document": "<p>身份策略版本</p>",
           "example": "2024-06-21 17:08:00",
           "member": "string",
           "name": "IdentityStrategyVer",
@@ -4505,7 +4514,7 @@
         },
         {
           "disabled": false,
-          "document": "身份策略新版本",
+          "document": "<p>身份策略新版本</p>",
           "example": "2024-06-24 20:27:00",
           "member": "string",
           "name": "IdentityNewStrategyVer",
@@ -4516,7 +4525,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录账号部门",
+          "document": "<p>最近登录账号部门</p>",
           "example": "测试分组",
           "member": "string",
           "name": "AccountGroupName",
@@ -4527,7 +4536,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录账户的姓名(账号系统用户姓名)",
+          "document": "<p>最近登录账户的姓名(账号系统用户姓名)</p>",
           "example": "LuckyLI",
           "member": "string",
           "name": "AccountName",
@@ -4538,7 +4547,7 @@
         },
         {
           "disabled": false,
-          "document": "账号组id",
+          "document": "<p>账号组id</p>",
           "example": "1",
           "member": "int64",
           "name": "AccountGroupId",
@@ -4549,7 +4558,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启",
+          "document": "<p>是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启</p>",
           "example": "0",
           "member": "int64",
           "name": "ScreenRecordingPermission",
@@ -4560,7 +4569,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启",
+          "document": "<p>是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启</p>",
           "example": "0",
           "member": "int64",
           "name": "DiskAccessPermission",
@@ -4571,7 +4580,7 @@
         },
         {
           "disabled": false,
-          "document": "终端备注名",
+          "document": "<p>终端备注名</p>",
           "example": "张三的终端",
           "member": "string",
           "name": "RemarkName",

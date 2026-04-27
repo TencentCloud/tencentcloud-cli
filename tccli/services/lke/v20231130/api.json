@@ -269,7 +269,7 @@
     "DescribeSearchStatsGraph": {
       "document": "查询搜索服务调用折线图",
       "input": "DescribeSearchStatsGraphRequest",
-      "name": "查询搜索服务调用折线图",
+      "name": "查询搜索服务调用量统计",
       "output": "DescribeSearchStatsGraphResponse",
       "status": "online"
     },
@@ -5614,7 +5614,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID，获取方法参看如何获取   <a href=\"https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa\">BotBizId</a>。</p>",
           "example": "1793260396881641472",
           "member": "string",
           "name": "AppBizId",
@@ -5623,7 +5623,7 @@
         },
         {
           "disabled": false,
-          "document": "变量名称，不允许重复，最大支持50个字符",
+          "document": "<p>变量名称，不允许重复，最大支持50个字符，英文字母开头，支持英文数字与下划线”_”。</p>",
           "example": "TimeID",
           "member": "string",
           "name": "VarName",
@@ -5632,7 +5632,7 @@
         },
         {
           "disabled": false,
-          "document": "变量描述，最大支持120个字符",
+          "document": "<p>变量描述，最大支持120个字符</p>",
           "example": "TimeID变量表示时间",
           "member": "string",
           "name": "VarDesc",
@@ -5641,7 +5641,7 @@
         },
         {
           "disabled": false,
-          "document": "变量类型定义，支持类型如下：(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO);传输过程是json字符串，标签中仅支持\"STRING\"类型使用",
+          "document": "<p>变量类型定义，支持类型如下：(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO);传输过程是json字符串，标签中仅支持&quot;STRING&quot;类型使用</p>",
           "example": "STRING",
           "member": "string",
           "name": "VarType",
@@ -5650,7 +5650,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义变量默认值",
+          "document": "<p>自定义变量默认值，<code>VarDefaultValue</code>xa0默认为空</p>",
           "example": "2025-05-14",
           "member": "string",
           "name": "VarDefaultValue",
@@ -5659,8 +5659,8 @@
         },
         {
           "disabled": false,
-          "document": "自定义变量文件默认名称",
-          "example": "无",
+          "document": "<p>自定义变量文件默认名称，<code>VarDefaultFileName</code>默认为空</p>",
+          "example": "test_file",
           "member": "string",
           "name": "VarDefaultFileName",
           "required": false,
@@ -5668,7 +5668,7 @@
         },
         {
           "disabled": false,
-          "document": "参数类型",
+          "document": "<p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "VarModuleType",
@@ -5683,7 +5683,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "变量ID",
+          "document": "<p>变量ID</p>",
           "example": "55127e9e-6e9e-4c11-bcf8-b524959cd841",
           "member": "string",
           "name": "VarId",
@@ -6255,7 +6255,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID，获取方法参看如何获取   <a href=\"https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa\">BotBizId</a>。</p>",
           "example": "1793260396881641472",
           "member": "string",
           "name": "AppBizId",
@@ -6264,7 +6264,7 @@
         },
         {
           "disabled": false,
-          "document": "变量ID",
+          "document": "<p>变量 ID，可通过 CreateVar；DescribeVar；DescribeVarList 接口返回结果中获取。DeleteVar</p>",
           "example": "b7f9ef77-caa1-49c5-a693-075a2ba3eeb4",
           "member": "string",
           "name": "VarId",
@@ -6273,7 +6273,7 @@
         },
         {
           "disabled": false,
-          "document": "参数类型",
+          "document": "<p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul><p>默认值：0</p>",
           "example": "0",
           "member": "uint64",
           "name": "VarModuleType",
@@ -8238,7 +8238,7 @@
         },
         {
           "disabled": false,
-          "document": "uin列表",
+          "document": "子账号标识列表，支持批量查询多个子账号。不填时查询主账号下所有子账号的汇总数据",
           "example": "[\"uin:6000005624511\"]",
           "member": "string",
           "name": "UinAccount",
@@ -8247,7 +8247,7 @@
         },
         {
           "disabled": false,
-          "document": "子业务类型",
+          "document": "子业务类型，用于筛选不同业务场景的调用统计",
           "example": "\"biztype\"",
           "member": "string",
           "name": "SubBizType",
@@ -8264,7 +8264,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "开始时间戳, 单位为秒(废弃)",
           "example": "1754816440",
           "member": "string",
@@ -8273,7 +8273,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "结束时间戳, 单位为秒(废弃)",
           "example": "1754816440",
           "member": "string",
@@ -8292,7 +8292,7 @@
         },
         {
           "disabled": false,
-          "document": "空间id",
+          "document": "空间ID，用于限定查询范围。不填时查询所有空间的数据",
           "example": "space1",
           "member": "string",
           "name": "SpaceId",
@@ -8301,7 +8301,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间戳, 单位为秒",
+          "document": "开始时间。Unix 时间戳，单位是秒，默认为空。",
           "example": "1754816440",
           "member": "int64",
           "name": "StatStartTime",
@@ -8310,7 +8310,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳, 单位为秒",
+          "document": "结束时间。Unix 时间戳，单位是秒，默认为空。",
           "example": "1754816440",
           "member": "int64",
           "name": "StatEndTime",
@@ -8430,7 +8430,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID，参数非必填不代表不需要填写，下面不同的参数组合会获取到不同的权限，具体请参考 https://cloud.tencent.com/document/product/1759/116238",
+          "document": "<p>应用ID，参数非必填不代表不需要填写，下面不同的参数组合会获取到不同的权限，具体请参考 https://cloud.tencent.com/document/product/1759/116238</p>",
           "example": "177106121651545*****",
           "member": "string",
           "name": "BotBizId",
@@ -8439,7 +8439,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型,正常的文件名类型后缀，支持 docx、doc、pdf、txt、md、wps、pages、html、mhtml、epub、xml、json、log、xlsx、xls、csv、tsv、numbers、pptx、ppt、ppsx、ppsm、key、png、jpg、jpeg、gif、bmp、tiff、webp、heif、heic、jp2、eps、icns、im、pcx、ppm、xbm、xmind\n",
+          "document": "<p>文件类型,正常的文件名类型后缀，支持 docx、doc、pdf、txt、md、wps、pages、html、mhtml、epub、xml、json、log、xlsx、xls、csv、tsv、numbers、pptx、ppt、ppsx、ppsm、key、png、jpg、jpeg、gif、bmp、tiff、webp、heif、heic、jp2、eps、icns、im、pcx、ppm、xbm、xmind</p>",
           "example": "pdf",
           "member": "string",
           "name": "FileType",
@@ -8448,7 +8448,7 @@
         },
         {
           "disabled": false,
-          "document": "IsPublic用于上传文件或图片时选择场景，当上传对话端图片时IsPublic为true，上传文件（包括文档库文件/图片等和对话端文件）时IsPublic为false\n",
+          "document": "<p>IsPublic用于上传文件或图片时选择场景，当上传对话端图片时IsPublic为true，上传文件（包括文档库文件/图片等和对话端文件）时IsPublic为false</p>",
           "example": "false",
           "member": "bool",
           "name": "IsPublic",
@@ -8457,7 +8457,7 @@
         },
         {
           "disabled": false,
-          "document": "存储类型: offline:离线文件，realtime:实时文件；为空默认为offline",
+          "document": "<p>存储类型: offline:离线文件，realtime:实时文件；为空默认为offline</p>",
           "example": "offline",
           "member": "string",
           "name": "TypeKey",
@@ -8472,7 +8472,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "密钥信息",
+          "document": "<p>密钥信息</p>",
           "example": "无",
           "member": "Credentials",
           "name": "Credentials",
@@ -8482,7 +8482,7 @@
         },
         {
           "disabled": false,
-          "document": "失效时间",
+          "document": "<p>失效时间，为 Unix 时间戳</p><p>单位：秒</p>",
           "example": "1717063483",
           "member": "int64",
           "name": "ExpiredTime",
@@ -8492,7 +8492,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间，为 Unix 时间戳</p><p>单位：秒</p>",
           "example": "1717062883",
           "member": "int64",
           "name": "StartTime",
@@ -8502,7 +8502,7 @@
         },
         {
           "disabled": false,
-          "document": "对象存储桶",
+          "document": "<p>对象存储桶</p>",
           "example": "qidian-qbot-test-1251316161",
           "member": "string",
           "name": "Bucket",
@@ -8512,7 +8512,7 @@
         },
         {
           "disabled": false,
-          "document": "对象存储可用区",
+          "document": "<p>对象存储可用区</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -8522,7 +8522,7 @@
         },
         {
           "disabled": false,
-          "document": "文件存储目录",
+          "document": "<p>文件存储目录</p>",
           "example": "/corp/137/doc/",
           "member": "string",
           "name": "FilePath",
@@ -8532,7 +8532,7 @@
         },
         {
           "disabled": false,
-          "document": "存储类型",
+          "document": "<p>存储类型</p>",
           "example": "cos",
           "member": "string",
           "name": "Type",
@@ -8542,7 +8542,7 @@
         },
         {
           "disabled": false,
-          "document": "企业主账号",
+          "document": "<p>企业主账号</p>",
           "example": "0",
           "member": "string",
           "name": "CorpUin",
@@ -8552,7 +8552,7 @@
         },
         {
           "disabled": false,
-          "document": "图片存储目录",
+          "document": "<p>图片存储目录</p>",
           "example": "/corp/17685678771866/image/",
           "member": "string",
           "name": "ImagePath",
@@ -8562,7 +8562,7 @@
         },
         {
           "disabled": false,
-          "document": "上传存储路径，到具体文件",
+          "document": "<p>上传存储路径，到具体文件</p>",
           "example": "/corp/1768567877186617344/1768574873671565312/doc/XIEVIQBxpnltliscsSAu-1796171935184060416.pdf",
           "member": "string",
           "name": "UploadPath",
@@ -8572,7 +8572,7 @@
         },
         {
           "disabled": false,
-          "document": "文件上传地址，使用put请求上传文件到该地址",
+          "document": "<p>文件上传地址，使用put请求上传文件到该地址</p>",
           "example": "https://lke-realtime-1251316161.cos.ap-guangzhou.myqcloud.com/%2Fcorp/xxxxxxxxxx/xxxxxxxxx/doc/xxxxxxxxxxx-2020788481547555584.xlsx",
           "member": "string",
           "name": "UploadUrl",
@@ -8582,7 +8582,7 @@
         },
         {
           "disabled": false,
-          "document": "文件的预签名地址，支持下载",
+          "document": "<p>文件的预签名地址，支持下载</p>",
           "example": "https://lke-realtime-1251316161.cos.ap-guangzhou.myqcloud.com/%2Fcorp/xxxxxxxxxx/xxxxxxxxx/doc/xxxxxxxxxxx-2020788481547555584.xlsx",
           "member": "string",
           "name": "FileUrl",
@@ -10737,7 +10737,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID，获取方法参看如何获取   <a href=\"https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa\">BotBizId</a>。</p>",
           "example": "1793260396881641472",
           "member": "string",
           "name": "AppBizId",
@@ -10746,7 +10746,7 @@
         },
         {
           "disabled": false,
-          "document": "变量ID数组",
+          "document": "<p>变量ID数组</p>",
           "example": "[\"d125c28b-55db-4478-9066-6115ab97ee17\"]",
           "member": "string",
           "name": "VarIds",
@@ -10755,7 +10755,7 @@
         },
         {
           "disabled": false,
-          "document": "按变量名称关键词搜索",
+          "document": "<p>按变量名称关键词搜索</p>",
           "example": "UserID",
           "member": "string",
           "name": "Keyword",
@@ -10764,7 +10764,7 @@
         },
         {
           "disabled": false,
-          "document": "起始偏移量（默认0）",
+          "document": "<p>起始偏移量（默认0），取值范围 &gt; 0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -10773,7 +10773,7 @@
         },
         {
           "disabled": false,
-          "document": "限定数量（默认15）",
+          "document": "<p>限定数量（默认15），取值范围 1-200</p>",
           "example": "15",
           "member": "uint64",
           "name": "Limit",
@@ -10782,7 +10782,7 @@
         },
         {
           "disabled": false,
-          "document": "按变量类型过滤，默认查询所有类型(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO)",
+          "document": "<p>按变量类型过滤，默认查询所有类型(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO)</p>",
           "example": "STRING",
           "member": "string",
           "name": "VarType",
@@ -10791,7 +10791,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要内部变量(默认false)",
+          "document": "<p>是否需要内部变量, 在结果中包含平台预置的“内置自定义变量” (默认false)。</p><ul><li>当&nbsp;<code>NeedInternalVar = true</code>&nbsp;且&nbsp;<code>VarModuleType</code>&nbsp;为&nbsp;<code>AllVar</code>&nbsp;或&nbsp;<code>ApiVar</code>&nbsp;时，返回列表会在用户变量之前拼入内置变量，并同样支持&nbsp;<code>Keyword</code>&nbsp;<code>VarType</code>&nbsp;<code>VarIds</code>&nbsp;过滤。</li><li>其他<code>VarModuleType</code>下，该开关不生效。</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "NeedInternalVar",
@@ -10800,7 +10800,7 @@
         },
         {
           "disabled": false,
-          "document": "变量类型",
+          "document": "<p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul><p>默认值：0</p>",
           "example": "0",
           "member": "int64",
           "name": "VarModuleType",
@@ -10815,7 +10815,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "变量总数",
+          "document": "<p>变量总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "Total",
@@ -10825,8 +10825,8 @@
         },
         {
           "disabled": false,
-          "document": "变量信息列表",
-          "example": "[{\"VarId\":\"d125c28b-55db-4478-9066-6115ab97ee17\",\"VarName\":\"UserID\"}]",
+          "document": "<p>变量信息列表</p>",
+          "example": "无",
           "member": "TaskFLowVar",
           "name": "List",
           "output_required": false,
@@ -13463,7 +13463,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID, 获取方式参看 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。\n查询知识库下文档时，该参数填入知识库ID。",
+          "document": "<p>应用ID, 获取方式参看 <a href=\"https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa\">BotBizId</a>。<br>查询知识库下文档时，该参数填入知识库ID。</p>",
           "example": "1727231073371148288",
           "member": "string",
           "name": "BotBizId",
@@ -13472,7 +13472,7 @@
         },
         {
           "disabled": false,
-          "document": "页码(必须大于0)",
+          "document": "<p>页码(必须大于0)</p>",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -13481,7 +13481,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量(取值范围1-200)",
+          "document": "<p>每页数量(取值范围1-200)</p>",
           "example": "15",
           "member": "uint64",
           "name": "PageSize",
@@ -13490,7 +13490,7 @@
         },
         {
           "disabled": false,
-          "document": "查询内容\n\n输入特定标识 lke:system:untagged  将查询所有未关联标签的文档",
+          "document": "<p>查询内容</p><p>输入特定标识 lke:system:untagged  将查询所有未关联标签的文档</p>",
           "example": "\"我的文档\"",
           "member": "string",
           "name": "Query",
@@ -13499,7 +13499,7 @@
         },
         {
           "disabled": false,
-          "document": "文档状态： 1-未生成 2-生成中 3-生成成功 4-生成失败 5-删除中 6-删除成功  7-审核中  8-审核失败 9-审核成功  10,12-导入成功  13-学习中  14-学习失败  15-更新中  16-更新失败  17-解析中  18-解析失败  19-导入失败   20-已过期 21-超量失效 22-超量失效恢复",
+          "document": "<p>文档状态： 1-未生成 2-生成中 3-生成成功 4-生成失败 5-删除中 6-删除成功  7-审核中  8-审核失败 9-审核成功  10,12-导入成功  13-学习中  14-学习失败  15-更新中  16-更新失败  17-解析中  18-解析失败  19-导入失败   20-已过期 21-超量失效 22-超量失效恢复</p>",
           "example": "[1]",
           "member": "int64",
           "name": "Status",
@@ -13508,7 +13508,7 @@
         },
         {
           "disabled": false,
-          "document": "查询类型 filename 文档、 attribute 标签",
+          "document": "<p>查询类型 filename 文档、 attribute 标签</p>",
           "example": "filename",
           "member": "string",
           "name": "QueryType",
@@ -13517,7 +13517,7 @@
         },
         {
           "disabled": false,
-          "document": "分类ID, 可以通过调用ListDocCate接口,查看其返回结果获取",
+          "document": "<p>分类ID, 可以通过调用ListDocCate接口,查看其返回结果获取</p>",
           "example": "0",
           "member": "string",
           "name": "CateBizId",
@@ -13526,7 +13526,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型分类筛选",
+          "document": "<p>文件类型分类筛选</p>",
           "example": "[\"txt\",\"jpg\"]",
           "member": "string",
           "name": "FileTypes",
@@ -13535,7 +13535,7 @@
         },
         {
           "disabled": false,
-          "document": "文档列表筛选标识位",
+          "document": "<p>文档列表筛选标识位</p>",
           "example": "无",
           "member": "DocFilterFlag",
           "name": "FilterFlag",
@@ -13544,7 +13544,7 @@
         },
         {
           "disabled": false,
-          "document": "是否只展示当前分类的数据 0不是，1是",
+          "document": "<p>是否只展示当前分类的数据 0不是，1是</p>",
           "example": "0",
           "member": "uint64",
           "name": "ShowCurrCate",
@@ -13553,12 +13553,21 @@
         },
         {
           "disabled": false,
-          "document": "文档生效域；不检索默认为0。检索枚举值如下：\n1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效",
+          "document": "<p>文档生效域；不检索默认为0。检索枚举值如下：<br>1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableScope",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档更新时间范围</p>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -13568,7 +13577,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文档数量",
+          "document": "<p>文档数量</p>",
           "example": "15",
           "member": "string",
           "name": "Total",
@@ -13578,7 +13587,7 @@
         },
         {
           "disabled": false,
-          "document": "文档列表",
+          "document": "<p>文档列表</p>",
           "example": "无",
           "member": "ListDocItem",
           "name": "List",
@@ -13755,7 +13764,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID\n若要操作共享知识库，传KnowledgeBizId",
+          "document": "<p>应用ID<br>若要操作共享知识库，传KnowledgeBizId</p>",
           "example": "1952993275700732800",
           "member": "string",
           "name": "BotBizId",
@@ -13764,7 +13773,7 @@
         },
         {
           "disabled": false,
-          "document": "页码（取值范围>0）",
+          "document": "<p>页码（取值范围&gt;0）</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -13773,7 +13782,7 @@
         },
         {
           "disabled": false,
-          "document": "每页大小(取值范围1-200)",
+          "document": "<p>每页大小(取值范围1-200)</p>",
           "example": "15",
           "member": "int64",
           "name": "PageSize",
@@ -13782,7 +13791,7 @@
         },
         {
           "disabled": false,
-          "document": "查询问题\n\n输入特定标识 lke:system:untagged  将查询所有未关联标签的问答",
+          "document": "<p>查询问题</p><p>输入特定标识 lke:system:untagged  将查询所有未关联标签的问答</p>",
           "example": "name",
           "member": "string",
           "name": "Query",
@@ -13791,7 +13800,7 @@
         },
         {
           "disabled": false,
-          "document": "校验状态(1未校验2采纳3不采纳)\n如果不填默认值为空数组，表示不筛选，返回所有状态",
+          "document": "<p>校验状态(1未校验2采纳3不采纳)<br>如果不填默认值为空数组，表示不筛选，返回所有状态</p>",
           "example": "[1]",
           "member": "int64",
           "name": "AcceptStatus",
@@ -13800,7 +13809,7 @@
         },
         {
           "disabled": false,
-          "document": "发布状态(2,4导入成功 7审核中 8审核失败 9人工申述中 11人工申述失败 12已过期 13超量失效 14超量失效恢复)\n如果不填默认值为空数组，表示不筛选返回所有状态",
+          "document": "<p>发布状态(2,4导入成功 7审核中 8审核失败 9人工申述中 11人工申述失败 12已过期 13超量失效 14超量失效恢复)<br>如果不填默认值为空数组，表示不筛选返回所有状态</p>",
           "example": "[2]",
           "member": "int64",
           "name": "ReleaseStatus",
@@ -13809,7 +13818,7 @@
         },
         {
           "disabled": false,
-          "document": "文档ID",
+          "document": "<p>文档ID</p>",
           "example": "1965693041497188096",
           "member": "string",
           "name": "DocBizId",
@@ -13818,7 +13827,7 @@
         },
         {
           "disabled": false,
-          "document": "来源(1 文档生成 2 批量导入 3 手动添加)\n不填默认值为0，表示不过滤，返回所有状态",
+          "document": "<p>来源(1 文档生成 2 批量导入 3 手动添加)<br>不填默认值为0，表示不过滤，返回所有状态</p>",
           "example": "1",
           "member": "int64",
           "name": "Source",
@@ -13827,7 +13836,7 @@
         },
         {
           "disabled": false,
-          "document": "查询答案",
+          "document": "<p>查询答案</p>",
           "example": "name",
           "member": "string",
           "name": "QueryAnswer",
@@ -13836,7 +13845,7 @@
         },
         {
           "disabled": false,
-          "document": "分类ID",
+          "document": "<p>分类ID</p>",
           "example": "0",
           "member": "string",
           "name": "CateBizId",
@@ -13845,7 +13854,7 @@
         },
         {
           "disabled": false,
-          "document": "QA业务ID列表",
+          "document": "<p>QA业务ID列表</p>",
           "example": "[\"1965693041497188096\"]",
           "member": "string",
           "name": "QaBizIds",
@@ -13854,7 +13863,7 @@
         },
         {
           "disabled": false,
-          "document": "查询类型 filename 名称、 attribute 标签\n如果不填默认值为\"filename\"",
+          "document": "<p>查询类型 filename 名称、 attribute 标签<br>如果不填默认值为&quot;filename&quot;</p>",
           "example": "filename",
           "member": "string",
           "name": "QueryType",
@@ -13863,7 +13872,7 @@
         },
         {
           "disabled": false,
-          "document": "是否只展示当前分类的数据 0不是，1是",
+          "document": "<p>是否只展示当前分类的数据 0不是，1是</p>",
           "example": "0",
           "member": "uint64",
           "name": "ShowCurrCate",
@@ -13872,12 +13881,30 @@
         },
         {
           "disabled": false,
-          "document": "问答生效域检索，不检索不传。枚举值如下：\n1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。",
+          "document": "<p>问答生效域检索，不检索不传。枚举值如下：<br>1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableScope",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>问答创建时间范围</p>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "CreateTime",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>问答更新时间范围</p>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -13887,7 +13914,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "问答数量",
+          "document": "<p>问答数量</p>",
           "example": "4735",
           "member": "string",
           "name": "Total",
@@ -13897,7 +13924,7 @@
         },
         {
           "disabled": false,
-          "document": "待校验问答数量",
+          "document": "<p>待校验问答数量</p>",
           "example": "318",
           "member": "string",
           "name": "WaitVerifyTotal",
@@ -13907,7 +13934,7 @@
         },
         {
           "disabled": false,
-          "document": "未采纳问答数量",
+          "document": "<p>未采纳问答数量</p>",
           "example": "0",
           "member": "string",
           "name": "NotAcceptedTotal",
@@ -13917,7 +13944,7 @@
         },
         {
           "disabled": false,
-          "document": "已采纳问答数量",
+          "document": "<p>已采纳问答数量</p>",
           "example": "4412",
           "member": "string",
           "name": "AcceptedTotal",
@@ -13927,7 +13954,7 @@
         },
         {
           "disabled": false,
-          "document": "页码",
+          "document": "<p>页码</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -13937,7 +13964,7 @@
         },
         {
           "disabled": false,
-          "document": "问答详情",
+          "document": "<p>问答详情</p>",
           "example": "无",
           "member": "ListQaItem",
           "name": "List",
@@ -18286,7 +18313,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页码 从1开始\n",
+          "document": "<p>页码 从1开始</p>",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -18295,7 +18322,7 @@
         },
         {
           "disabled": false,
-          "document": "页大小 默认15 最大100\n",
+          "document": "<p>页大小 默认15 最大100</p>",
           "example": "15",
           "member": "uint64",
           "name": "PageSize",
@@ -18304,7 +18331,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "\"1952993275700732800\"",
           "member": "string",
           "name": "BotBizId",
@@ -18313,7 +18340,7 @@
         },
         {
           "disabled": false,
-          "document": "查询内容\n",
+          "document": "<p>查询内容</p>",
           "example": "\"name\"",
           "member": "string",
           "name": "Query",
@@ -18322,7 +18349,7 @@
         },
         {
           "disabled": false,
-          "document": "分类ID\n",
+          "document": "<p>分类ID</p>",
           "example": "\"1734144647474577408\"",
           "member": "string",
           "name": "CateBizId",
@@ -18331,7 +18358,7 @@
         },
         {
           "disabled": false,
-          "document": "校验状态的枚举值\n",
+          "document": "<p>校验状态的枚举值</p>",
           "example": "[1,2,3]",
           "member": "uint64",
           "name": "AcceptStatus",
@@ -18340,7 +18367,7 @@
         },
         {
           "disabled": false,
-          "document": "发布状态的枚举值\n",
+          "document": "<p>发布状态的枚举值</p>",
           "example": "[2,3,4,7,8,9,11]",
           "member": "uint64",
           "name": "ReleaseStatus",
@@ -18349,7 +18376,7 @@
         },
         {
           "disabled": false,
-          "document": "文档ID\n",
+          "document": "<p>文档ID</p>",
           "example": "\"19517346915356272\"",
           "member": "string",
           "name": "DocBizId",
@@ -18358,7 +18385,7 @@
         },
         {
           "disabled": false,
-          "document": "QAID\n",
+          "document": "<p>QAID</p>",
           "example": "\"19517346915356272\"",
           "member": "string",
           "name": "QaBizId",
@@ -18367,7 +18394,7 @@
         },
         {
           "disabled": false,
-          "document": "来源\n",
+          "document": "<p>来源</p>",
           "example": "1",
           "member": "uint64",
           "name": "Source",
@@ -18376,7 +18403,7 @@
         },
         {
           "disabled": false,
-          "document": "查询答案\n",
+          "document": "<p>查询答案</p>",
           "example": "\"name\"",
           "member": "string",
           "name": "QueryAnswer",
@@ -18385,7 +18412,7 @@
         },
         {
           "disabled": false,
-          "document": "查询类型 filename 名称、 attribute 标签",
+          "document": "<p>查询类型 filename 名称、 attribute 标签</p>",
           "example": "\"filename\"",
           "member": "string",
           "name": "QueryType",
@@ -18394,12 +18421,30 @@
         },
         {
           "disabled": false,
-          "document": "问答生效域检索，不检索不传。枚举值如下：\n1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。",
+          "document": "<p>问答生效域检索，不检索不传。枚举值如下：<br>1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableScope",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间范围</p>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "CreateTime",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间范围</p>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -20659,6 +20704,34 @@
         }
       ],
       "usage": "out"
+    },
+    "TimeRange": {
+      "document": "时间范围",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p><p>参数格式：YYYY-MM-DDThh:mm:ssZ</p>",
+          "example": "2026-04-22T00:00:00+08:00",
+          "member": "string",
+          "name": "Start",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p><p>参数格式：YYYY-MM-DDThh:mm:ssZ</p>",
+          "example": "2026-05-19T23:59:59+08:00",
+          "member": "string",
+          "name": "End",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TokenStat": {
       "document": "当前执行的 token 统计信息",

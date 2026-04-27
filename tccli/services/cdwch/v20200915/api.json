@@ -3209,7 +3209,7 @@
       "usage": "both"
     },
     "InstanceInfo": {
-      "document": "实例描述信息",
+      "document": "实例的描述信息",
       "members": [
         {
           "disabled": false,
@@ -3779,6 +3779,16 @@
           "name": "EnableConfigKeyValue",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例是否开启HTTPS</p><p>枚举值：</p><ul><li>true： 已开启HTTPS</li><li>false： 未开启HTTPS</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "HttpsEnabled",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

@@ -14,6 +14,13 @@
       "output": "ClearEmbedTokenResponse",
       "status": "online"
     },
+    "CreateAuthApiKey": {
+      "document": "创建ApiKey",
+      "input": "CreateAuthApiKeyRequest",
+      "name": "创建ApiKey",
+      "output": "CreateAuthApiKeyResponse",
+      "status": "online"
+    },
     "CreateDatasource": {
       "document": "创建数据源",
       "input": "CreateDatasourceRequest",
@@ -77,6 +84,13 @@
       "output": "CreateUserRoleProjectResponse",
       "status": "online"
     },
+    "DeleteAuthApiKey": {
+      "document": "删除ApiKey",
+      "input": "DeleteAuthApiKeyRequest",
+      "name": "删除ApiKey",
+      "output": "DeleteAuthApiKeyResponse",
+      "status": "online"
+    },
     "DeleteDatasource": {
       "document": "删除数据源",
       "input": "DeleteDatasourceRequest",
@@ -117,6 +131,20 @@
       "input": "DeleteUserRoleProjectRequest",
       "name": "项目内-删除用户角色",
       "output": "DeleteUserRoleProjectResponse",
+      "status": "online"
+    },
+    "DescribeAuthApiKeyInfo": {
+      "document": "ApiKey信息",
+      "input": "DescribeAuthApiKeyInfoRequest",
+      "name": "ApiKey信息",
+      "output": "DescribeAuthApiKeyInfoResponse",
+      "status": "online"
+    },
+    "DescribeAuthApiKeyList": {
+      "document": "ApiKey列表",
+      "input": "DescribeAuthApiKeyListRequest",
+      "name": "ApiKey列表",
+      "output": "DescribeAuthApiKeyListResponse",
       "status": "online"
     },
     "DescribeDatasourceList": {
@@ -224,6 +252,13 @@
       "output": "ExportScreenPageResponse",
       "status": "online"
     },
+    "ModifyAuthApiKey": {
+      "document": "更新ApiKey",
+      "input": "ModifyAuthApiKeyRequest",
+      "name": "更新ApiKey",
+      "output": "ModifyAuthApiKeyResponse",
+      "status": "online"
+    },
     "ModifyDatasource": {
       "document": "更新数据源",
       "input": "ModifyDatasourceRequest",
@@ -302,6 +337,128 @@
     "serviceShortName": "bi"
   },
   "objects": {
+    "ApiKeyAuthApplyVO": {
+      "document": "创建ApiKey接口出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10001009",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700000231283",
+          "member": "string",
+          "name": "CorpId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>apiKey</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5e1e693f6e13497691fece0373d3e88c",
+          "member": "string",
+          "name": "ApiKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认用户</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700000231283",
+          "member": "string",
+          "name": "DefaultUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700000280185",
+          "member": "string",
+          "name": "CreatedUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-10-16 16:51:38",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700000280185",
+          "member": "string",
+          "name": "UpdatedUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-10-16 16:51:38",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApiKeyAuthApplyVOList": {
+      "document": "ApiKey列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>页数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalPages",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>列表数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiKeyAuthApplyVO",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ApplyEmbedIntervalRequest": {
       "document": "ApplyEmbedInterval请求参数结构体",
       "members": [
@@ -686,6 +843,73 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateAuthApiKeyRequest": {
+      "document": "CreateAuthApiKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>默认用户</p>",
+          "example": "10001",
+          "member": "string",
+          "name": "DefaultUser",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuthApiKeyResponse": {
+      "document": "CreateAuthApiKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>&quot;&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Extra",
+          "member": "string",
+          "name": "Extra",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>&quot;success&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiKeyAuthApplyVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateDatasourceCloudRequest": {
       "document": "CreateDatasourceCloud请求参数结构体",
@@ -2416,6 +2640,73 @@
       ],
       "usage": "out"
     },
+    "DeleteAuthApiKeyRequest": {
+      "document": "DeleteAuthApiKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ApiKey</p>",
+          "example": "cdefe97f29ad41f69653c5a6cfed1b78",
+          "member": "string",
+          "name": "ApiKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuthApiKeyResponse": {
+      "document": "DeleteAuthApiKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>&quot;&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "**",
+          "member": "string",
+          "name": "Extra",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>&quot;success&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认业务成功",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDatasourceRequest": {
       "document": "DeleteDatasource请求参数结构体",
       "members": [
@@ -2792,6 +3083,167 @@
           "name": "Msg",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuthApiKeyInfoRequest": {
+      "document": "DescribeAuthApiKeyInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ApiKey</p>",
+          "example": "5e1e693f6e13497691fece0373d3e88c",
+          "member": "string",
+          "name": "ApiKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuthApiKeyInfoResponse": {
+      "document": "DescribeAuthApiKeyInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>&quot;&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "**",
+          "member": "string",
+          "name": "Extra",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>&quot;success&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认业务成功",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiKeyAuthApplyVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuthApiKeyListRequest": {
+      "document": "DescribeAuthApiKeyList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全部</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AllPage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页大小</p><p>默认值：10</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键字过滤</p>",
+          "example": "e693f",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuthApiKeyListResponse": {
+      "document": "DescribeAuthApiKeyList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>{}</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "**",
+          "member": "string",
+          "name": "Extra",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认业务成功",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiKeyAuthApplyVOList",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -4764,6 +5216,82 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyAuthApiKeyRequest": {
+      "document": "ModifyAuthApiKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ApiKey</p>",
+          "example": "a46a65f2d17444c4800e57ed2a9f0206",
+          "member": "string",
+          "name": "ApiKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认用户</p>",
+          "example": "700000280185",
+          "member": "string",
+          "name": "DefaultUser",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuthApiKeyResponse": {
+      "document": "ModifyAuthApiKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>&quot;&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "**",
+          "member": "string",
+          "name": "Extra",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>&quot;success&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认业务成功",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiKeyAuthApplyVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyDatasourceCloudRequest": {
       "document": "ModifyDatasourceCloud请求参数结构体",

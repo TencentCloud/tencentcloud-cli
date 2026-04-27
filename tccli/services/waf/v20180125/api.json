@@ -952,6 +952,13 @@
       "output": "GenerateDealsAndPayNewResponse",
       "status": "online"
     },
+    "GenerateLLMSecAnswer": {
+      "document": "大模型安全代答生成接口。当用户输入或模型输出命中内容安全风险检测规则时，调用本接口由大模型实时生成安全合规的替代回答。",
+      "input": "GenerateLLMSecAnswerRequest",
+      "name": "大模型安全代答生成接口。当用户输入命中内容安全风险检测规则时，调用本接口由大模型实时生成安全合规的替代回答。",
+      "output": "GenerateLLMSecAnswerResponse",
+      "status": "online"
+    },
     "GetAttackDownloadRecords": {
       "document": "查询下载攻击日志任务记录列表",
       "input": "GetAttackDownloadRecordsRequest",
@@ -15753,7 +15760,7 @@
       "members": [
         {
           "disabled": false,
-          "document": " 服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则",
+          "document": "<p>服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>",
           "example": "9000002887",
           "member": "string",
           "name": "ServiceId",
@@ -15762,16 +15769,7 @@
         },
         {
           "disabled": false,
-          "document": "要审核的内容",
-          "example": "***",
-          "member": "string",
-          "name": "Content",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "流量类型，是入向流量还是出向流量，入向：1，出向：2；入向和出向必填",
+          "document": "<p>流量类型，是入向流量还是出向流量，入向：1，出向：2；入向和出向必填</p>",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -15780,7 +15778,7 @@
         },
         {
           "disabled": false,
-          "document": "实例id，必传",
+          "document": "<p>实例id，必传</p>",
           "example": "waf_2l15cfe009ya8lg3",
           "member": "string",
           "name": "InstanceId",
@@ -15789,7 +15787,16 @@
         },
         {
           "disabled": false,
-          "document": "对话的id",
+          "document": "<p>要审核的内容</p>",
+          "example": "***",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对话的id</p>",
           "example": "test-request-001",
           "member": "string",
           "name": "ChatId",
@@ -15798,7 +15805,7 @@
         },
         {
           "disabled": false,
-          "document": "标识用户的id，限速使用，不填，则限速会不生效",
+          "document": "<p>标识用户的id，限速使用，不填，则限速会不生效</p>",
           "example": "700002174132",
           "member": "string",
           "name": "UserId",
@@ -15807,12 +15814,21 @@
         },
         {
           "disabled": false,
-          "document": "token使用量，不填，会采用默认的token计算方法，计算的是模型的消耗，因为该值时在出向方向上添加，即Type=2",
+          "document": "<p>token使用量，不填，会采用默认的token计算方法，计算的是模型的消耗，因为该值时在出向方向上添加，即Type=2</p>",
           "example": "10000",
           "member": "uint64",
           "name": "TokenUsage",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片base64编码后的数据,body大小最大支持10M</p>",
+          "example": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==",
+          "member": "string",
+          "name": "ImageEncode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15822,7 +15838,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检测结果",
+          "document": "<p>检测结果</p>",
           "example": "无",
           "member": "LLMDetectResult",
           "name": "Data",
@@ -20452,6 +20468,42 @@
       ],
       "type": "object"
     },
+    "GenerateLLMSecAnswerRequest": {
+      "document": "GenerateLLMSecAnswer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>消息结构体内容</p>",
+          "example": "无",
+          "member": "SSEClientMessage",
+          "name": "Message",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息id，传入 要回答的MsgID ，用于匹配自定义回答模板，最终可得到优化的代答结果</p>",
+          "example": "test-001",
+          "member": "string",
+          "name": "MsgID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateLLMSecAnswerResponse": {
+      "document": "GenerateLLMSecAnswer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetAttackDownloadRecordsRequest": {
       "document": "GetAttackDownloadRecords请求参数结构体",
       "members": [],
@@ -21630,6 +21682,34 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageResult": {
+      "document": "llm要检测的图片的检测结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>命中类别标识</p>",
+          "example": "pornography",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>类别的名称</p>",
+          "example": "色情",
+          "member": "string",
+          "name": "CategoryName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -23310,6 +23390,16 @@
           "name": "Payload",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片检测结果</p>",
+          "example": "无",
+          "member": "ImageResult",
+          "name": "ImageResult",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -31413,6 +31503,45 @@
           "example": "16",
           "member": "int64",
           "name": "TotalRuleCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SSEClientMessage": {
+      "document": "对话消息结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>对话角色，填user</p>",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>prompt内容</p>",
+          "example": "你好，你能干些什么",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测类型，0是文本内容代答，目前只支持0，可以不传，默认值是0</p><p>枚举值：</p><ul><li>0： 文件内容代答</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ContentType",
           "output_required": false,
           "required": false,
           "type": "int",

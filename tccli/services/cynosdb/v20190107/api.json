@@ -3166,7 +3166,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "快照文件ID，已废弃，请使用BackupId",
+          "document": "<p>快照文件ID，已废弃，请使用BackupId</p>",
           "example": "17623",
           "member": "uint64",
           "name": "SnapshotId",
@@ -3176,7 +3176,7 @@
         },
         {
           "disabled": false,
-          "document": "备份文件名",
+          "document": "<p>备份文件名</p>",
           "example": "andy_20241127040007",
           "member": "string",
           "name": "FileName",
@@ -3186,7 +3186,7 @@
         },
         {
           "disabled": false,
-          "document": "备份文件大小",
+          "document": "<p>备份文件大小</p>",
           "example": "100",
           "member": "uint64",
           "name": "FileSize",
@@ -3196,7 +3196,7 @@
         },
         {
           "disabled": false,
-          "document": "备份开始时间",
+          "document": "<p>备份开始时间</p>",
           "example": "2024-11-27 04:02:19",
           "member": "string",
           "name": "StartTime",
@@ -3206,7 +3206,7 @@
         },
         {
           "disabled": false,
-          "document": "备份完成时间",
+          "document": "<p>备份完成时间</p>",
           "example": "2024-11-27 04:03:03",
           "member": "string",
           "name": "FinishTime",
@@ -3216,7 +3216,7 @@
         },
         {
           "disabled": false,
-          "document": "备份类型：snapshot，快照备份；logic，逻辑备份",
+          "document": "<p>备份类型：snapshot，快照备份；logic，逻辑备份</p>",
           "example": "snapshot",
           "member": "string",
           "name": "BackupType",
@@ -3226,7 +3226,7 @@
         },
         {
           "disabled": false,
-          "document": "备份方式：auto，自动备份；manual，手动备份",
+          "document": "<p>备份方式：auto，自动备份；manual，手动备份</p>",
           "example": "auto",
           "member": "string",
           "name": "BackupMethod",
@@ -3236,7 +3236,7 @@
         },
         {
           "disabled": false,
-          "document": "备份文件状态：success：备份成功；fail：备份失败；creating：备份文件创建中；deleting：备份文件删除中",
+          "document": "<p>备份文件状态：success：备份成功；fail：备份失败；creating：备份文件创建中；deleting：备份文件删除中</p>",
           "example": "success",
           "member": "string",
           "name": "BackupStatus",
@@ -3246,7 +3246,7 @@
         },
         {
           "disabled": false,
-          "document": "备份文件时间",
+          "document": "<p>备份文件时间</p>",
           "example": "2024-11-27 04:00:06",
           "member": "string",
           "name": "SnapshotTime",
@@ -3256,7 +3256,7 @@
         },
         {
           "disabled": false,
-          "document": "备份ID",
+          "document": "<p>备份ID</p>",
           "example": "2009211",
           "member": "int64",
           "name": "BackupId",
@@ -3266,7 +3266,7 @@
         },
         {
           "disabled": false,
-          "document": "快照类型，可选值：full，全量；increment，增量",
+          "document": "<p>快照类型，可选值：full，全量；increment，增量</p>",
           "example": "full",
           "member": "string",
           "name": "SnapShotType",
@@ -3276,7 +3276,7 @@
         },
         {
           "disabled": false,
-          "document": "备份文件备注",
+          "document": "<p>备份文件备注</p>",
           "example": "andy",
           "member": "string",
           "name": "BackupName",
@@ -3286,7 +3286,7 @@
         },
         {
           "disabled": false,
-          "document": "投递状态",
+          "document": "<p>投递状态</p>",
           "example": "done",
           "member": "string",
           "name": "CopyStatus",
@@ -3296,7 +3296,7 @@
         },
         {
           "disabled": false,
-          "document": "秘钥id",
+          "document": "<p>秘钥id</p>",
           "example": "1764ae22-72f0-11f0-8904-52540009df14",
           "member": "string",
           "name": "EncryptKeyId",
@@ -3306,7 +3306,7 @@
         },
         {
           "disabled": false,
-          "document": "秘钥地域",
+          "document": "<p>秘钥地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "EncryptRegion",
@@ -3316,12 +3316,22 @@
         },
         {
           "disabled": false,
-          "document": "保险箱信息",
+          "document": "<p>保险箱信息</p>",
           "example": "无",
           "member": "VaultInfo",
           "name": "VaultInfos",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份周期策略</p>",
+          "example": "periodically",
+          "member": "string",
+          "name": "BackupPeriodStrategy",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -11039,6 +11049,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递异常错误",
+          "example": "topic is not exist",
+          "member": "string",
+          "name": "DeliverError",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11722,7 +11742,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-45knmnra",
           "member": "string",
           "name": "ClusterId",
@@ -11737,7 +11757,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200",
+          "document": "<p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>",
           "example": "7200",
           "member": "uint64",
           "name": "BackupTimeBeg",
@@ -11747,7 +11767,7 @@
         },
         {
           "disabled": false,
-          "document": "表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200",
+          "document": "<p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>",
           "example": "21600",
           "member": "uint64",
           "name": "BackupTimeEnd",
@@ -11757,7 +11777,7 @@
         },
         {
           "disabled": false,
-          "document": "表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800",
+          "document": "<p>表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600<em>24</em>7=604800</p>",
           "example": "604800",
           "member": "uint64",
           "name": "ReserveDuration",
@@ -11767,7 +11787,7 @@
         },
         {
           "disabled": false,
-          "document": "备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份",
+          "document": "<p>备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份</p>",
           "example": "[\"full\",\"increment\",\"increment\",\"increment\",\"increment\",\"increment\",\"increment\"]",
           "member": "string",
           "name": "BackupFreq",
@@ -11777,7 +11797,7 @@
         },
         {
           "disabled": false,
-          "document": "备份方式，logic-逻辑备份，snapshot-快照备份",
+          "document": "<p>备份方式，logic-逻辑备份，snapshot-快照备份</p>",
           "example": "snapshot",
           "member": "string",
           "name": "BackupType",
@@ -11787,7 +11807,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域逻辑备份配置修改时间",
+          "document": "<p>跨地域逻辑备份配置修改时间</p>",
           "example": "2023-07-12 12:00:00",
           "member": "string",
           "name": "LogicCrossRegionsConfigUpdateTime",
@@ -11797,7 +11817,7 @@
         },
         {
           "disabled": false,
-          "document": "自动逻辑备份配置",
+          "document": "<p>自动逻辑备份配置</p>",
           "example": "无",
           "member": "LogicBackupConfigInfo",
           "name": "LogicBackupConfig",
@@ -11807,13 +11827,23 @@
         },
         {
           "disabled": false,
-          "document": "二级快照备份配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>二级快照备份配置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BackupConfigInfo",
           "name": "SnapshotSecondaryBackupConfig",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>稀疏备份配置</p>",
+          "example": "无",
+          "member": "SparseBackupConfigRsp",
+          "name": "SparseBackupConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -22760,7 +22790,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-45knmnra",
           "member": "string",
           "name": "ClusterId",
@@ -22769,7 +22799,7 @@
         },
         {
           "disabled": false,
-          "document": "表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200",
+          "document": "<p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>",
           "example": "7200",
           "member": "uint64",
           "name": "BackupTimeBeg",
@@ -22778,7 +22808,7 @@
         },
         {
           "disabled": false,
-          "document": "表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200",
+          "document": "<p>表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>",
           "example": "21600",
           "member": "uint64",
           "name": "BackupTimeEnd",
@@ -22787,7 +22817,7 @@
         },
         {
           "disabled": false,
-          "document": "表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000",
+          "document": "<p>表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600<em>24</em>7=604800，最大为158112000</p>",
           "example": "604800",
           "member": "uint64",
           "name": "ReserveDuration",
@@ -22796,7 +22826,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份",
+          "document": "<p>该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份</p>",
           "example": "[\"full\",\"full\",\"full\",\"full\",\"full\",\"full\",\"full\"]",
           "member": "string",
           "name": "BackupFreq",
@@ -22805,7 +22835,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数目前不支持修改，无需填写。",
+          "document": "<p>该参数目前不支持修改，无需填写。</p>",
           "example": "logic",
           "member": "string",
           "name": "BackupType",
@@ -22814,7 +22844,7 @@
         },
         {
           "disabled": false,
-          "document": "逻辑备份配置",
+          "document": "<p>逻辑备份配置</p>",
           "example": "无",
           "member": "LogicBackupConfigInfo",
           "name": "LogicBackupConfig",
@@ -22823,7 +22853,7 @@
         },
         {
           "disabled": false,
-          "document": "是否删除自动逻辑备份",
+          "document": "<p>是否删除自动逻辑备份</p>",
           "example": "false",
           "member": "bool",
           "name": "DeleteAutoLogicBackup",
@@ -22832,10 +22862,19 @@
         },
         {
           "disabled": false,
-          "document": "二级快照备份参数",
+          "document": "<p>二级快照备份参数</p>",
           "example": "无",
           "member": "SnapshotBackupConfig",
           "name": "SnapshotSecondaryBackupConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>稀疏备份配置</p>",
+          "example": "无",
+          "member": "SparseBackupConfig",
+          "name": "SparseBackupConfig",
           "required": false,
           "type": "object"
         }
@@ -25468,6 +25507,34 @@
         }
       ],
       "usage": "out"
+    },
+    "MonthDay": {
+      "document": "月份日期信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "月份信息",
+          "example": "3",
+          "member": "int64",
+          "name": "Month",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日期信息",
+          "example": "17",
+          "member": "int64",
+          "name": "Day",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "NetAddr": {
       "document": "网络信息",
@@ -31521,6 +31588,156 @@
           "example": "无",
           "member": "CreateBackupVaultItem",
           "name": "AutoCopyVaults",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SparseBackupConfig": {
+      "document": "稀疏备份配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "稀疏备份开关：ON/OFF",
+          "example": "ON",
+          "member": "string",
+          "name": "SparseBackupSwitch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "稀疏备份策略列表（1-3条）",
+          "example": "无",
+          "member": "SparseBackupConfigInfo",
+          "name": "SparseBackupConfigInfos",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "SparseBackupConfigInfo": {
+      "document": "稀疏备份策略配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作类型:add,modify,remove",
+          "example": "add",
+          "member": "string",
+          "name": "OpType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置 ID",
+          "example": "SparseConfig-0yj7gkuv",
+          "member": "string",
+          "name": "ConfigId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期策略类型：weekly/monthly/yearly",
+          "example": "yearly",
+          "member": "string",
+          "name": "SparsePeriodConfig",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期时间配置",
+          "example": "无",
+          "member": "SparsePeriodTime",
+          "name": "SparsePeriodTime",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保留天数（7-7320天，最长20年）",
+          "example": "365",
+          "member": "int64",
+          "name": "SparseBackupSaveDays",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SparseBackupConfigRsp": {
+      "document": "稀疏备份配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "稀疏备份开关：ON/OFF\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ON",
+          "member": "string",
+          "name": "SparseBackupSwitch",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "稀疏备份策略列表（1-3条）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SparseBackupConfigInfo",
+          "name": "SparseBackupConfigInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SparsePeriodTime": {
+      "document": "稀疏备份周期信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "按周：星期几列表，1-7，1=周一，7=周日（仅 weekly 周期使用，最多7个）",
+          "example": "[2]",
+          "member": "int64",
+          "name": "WeekDays",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "按月：日期列表，1-31（仅 monthly 周期使用，最多7个）",
+          "example": "[17]",
+          "member": "int64",
+          "name": "Days",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "按年：月日组合列表（仅 yearly 周期使用，最多7个）",
+          "example": "无",
+          "member": "MonthDay",
+          "name": "MonthDays",
           "output_required": false,
           "required": false,
           "type": "list",

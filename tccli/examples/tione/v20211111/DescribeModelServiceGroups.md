@@ -171,6 +171,7 @@ Output:
             }
         ],
         "TotalCount": 1,
+        "GlobalTotalCount": 100,
         "RequestId": "e5daa146-abed-4d31-ab15-ac9e251fc13c"
     }
 }

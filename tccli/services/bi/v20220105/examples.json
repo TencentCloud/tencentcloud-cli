@@ -16,6 +16,14 @@
         "title": "page token 清理"
       }
     ],
+    "CreateAuthApiKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuthApiKey\n<公共请求参数>\n\n{\n    \"DefaultUser\": \"700000280185\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ApiKey\": \"a46a65f2d17444c4800e57ed2a9f0206\",\n            \"CorpId\": \"700000231283\",\n            \"CreatedAt\": \"2026-04-15 19:47:13\",\n            \"CreatedUser\": \"700000280185\",\n            \"DefaultUser\": \"700000280185\",\n            \"Id\": 10001010,\n            \"UpdatedAt\": \"2026-04-15 19:47:13\",\n            \"UpdatedUser\": \"700000280185\"\n        },\n        \"Extra\": \"\",\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"90bc35bb-235b-4b68-861f-8b0ca79f87db\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "CreateDatasource": [
       {
         "document": "创建数据源",
@@ -88,6 +96,14 @@
         "title": "demo"
       }
     ],
+    "DeleteAuthApiKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuthApiKey\n<公共请求参数>\n\n{\n    \"ApiKey\": \"cdefe97f29ad41f69653c5a6cfed1b78\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"success\",\n        \"Extra\": \"**\",\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"4c82f722-9b52-4ac0-829f-408748c433de\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "DeleteDatasource": [
       {
         "document": "",
@@ -140,6 +156,22 @@
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserRoleProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 1982493789748932,\n    \"UserId\": \"zhangsan\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"13609343-ad23-43cb-92d4-27233296004e\",\n        \"Extra\": \"\",\n        \"Data\": null,\n        \"Msg\": \"success\"\n    }\n}",
         "title": "项目内-删除用户接口"
+      }
+    ],
+    "DescribeAuthApiKeyInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuthApiKeyInfo\n<公共请求参数>\n\n{\n    \"ApiKey\": \"5e1e693f6e13497691fece0373d3e88c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ApiKey\": \"5e1e693f6e13497691fece0373d3e88c\",\n            \"CorpId\": \"700000231283\",\n            \"CreatedAt\": \"2025-10-16 16:51:38\",\n            \"CreatedUser\": \"700000280185\",\n            \"DefaultUser\": \"700000231283\",\n            \"Id\": 10001009,\n            \"UpdatedAt\": \"2025-10-16 16:51:38\",\n            \"UpdatedUser\": \"700000280185\"\n        },\n        \"Extra\": \"**\",\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"3fa241e0-be7e-457e-8220-142dfc20d2aa\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DescribeAuthApiKeyList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuthApiKeyList\n<公共请求参数>\n\n{\n    \"AllPage\": false,\n    \"PageNo\": 0,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"ApiKey\": \"5e1e693f6e13497691fece0373d3e88c\",\n                    \"CorpId\": \"700000231283\",\n                    \"CreatedAt\": \"2025-10-16 16:51:38\",\n                    \"CreatedUser\": \"700000280185\",\n                    \"DefaultUser\": \"700000231283\",\n                    \"Id\": 10001009,\n                    \"UpdatedAt\": \"2025-10-16 16:51:38\",\n                    \"UpdatedUser\": \"700000280185\"\n                }\n            ],\n            \"Total\": 1,\n            \"TotalPages\": 1\n        },\n        \"Extra\": \"**\",\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"461fd326-b1f5-42b3-ac0b-a2a887f78bb1\"\n    }\n}",
+        "title": "成功"
       }
     ],
     "DescribeDatasourceList": [
@@ -266,6 +298,14 @@
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportScreenPage\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1907\",\n    \"PageId\": \"39618\",\n    \"CanvasType\": \"FREE\",\n    \"PicType\": \"url\",\n    \"WidgetIds\": []\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"\",\n            \"ErrorMessage\": \"接口错误\",\n            \"ErrorLevel\": \"ERROR\",\n            \"DocLink\": \"\",\n            \"FAQ\": \"\",\n            \"ReservedField\": \"\"\n        },\n        \"Extra\": \"\",\n        \"Data\": {\n            \"PicType\": \"PNG\",\n            \"List\": [\n                {\n                    \"Content\": \"\",\n                    \"WidgetId\": \"saia192\"\n                }\n            ],\n            \"TranId\": \"qwq211221\",\n            \"TranStatus\": 0\n        },\n        \"Msg\": \"失败\",\n        \"RequestId\": \"ddsds122321-fdsd12\"\n    }\n}",
         "title": "导出自由画布"
+      }
+    ],
+    "ModifyAuthApiKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuthApiKey\n<公共请求参数>\n\n{\n    \"ApiKey\": \"a46a65f2d17444c4800e57ed2a9f0206\",\n    \"DefaultUser\": \"700000280185\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ApiKey\": \"a46a65f2d17444c4800e57ed2a9f0206\",\n            \"CorpId\": \"700000231283\",\n            \"CreatedAt\": \"2026-04-15 19:47:14\",\n            \"CreatedUser\": \"700000280185\",\n            \"DefaultUser\": \"700000280185\",\n            \"Id\": 10001010,\n            \"UpdatedAt\": \"2026-04-15 19:47:14\",\n            \"UpdatedUser\": \"700000280185\"\n        },\n        \"Extra\": \"**\",\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"9df975b5-1b9a-4dfc-bc2d-da2dbd2de18d\"\n    }\n}",
+        "title": "成功"
       }
     ],
     "ModifyDatasource": [

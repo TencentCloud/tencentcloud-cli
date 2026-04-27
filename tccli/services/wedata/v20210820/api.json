@@ -14768,7 +14768,7 @@
         {
           "disabled": false,
           "document": "分页页码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "output_required": false,
@@ -14778,7 +14778,7 @@
         {
           "disabled": false,
           "document": "分页大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageSize",
           "output_required": false,
@@ -14788,7 +14788,7 @@
         {
           "disabled": false,
           "document": "总个数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
@@ -14798,7 +14798,7 @@
         {
           "disabled": false,
           "document": "总分页页码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalPageNumber",
           "output_required": false,
@@ -14813,6 +14813,16 @@
           "name": "Rows",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页快照id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "adhhs",
+          "member": "string",
+          "name": "SnapshotId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -28299,7 +28309,7 @@
         {
           "disabled": false,
           "document": "请求来源，WEB 前端；CLIENT 客户端",
-          "example": "无",
+          "example": "Web",
           "member": "string",
           "name": "RequestFromSource",
           "required": false,
@@ -28323,7 +28333,7 @@
         {
           "disabled": false,
           "document": "请求来源，WEB 前端；CLIENT 客户端\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Web",
           "member": "string",
           "name": "RequestFromSource",
           "output_required": false,
@@ -50208,7 +50218,7 @@
         {
           "disabled": false,
           "document": "请求来源，WEB 前端；CLIENT 客户端\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Web",
           "member": "string",
           "name": "RequestFromSource",
           "output_required": false,

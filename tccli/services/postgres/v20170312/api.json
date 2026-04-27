@@ -21,6 +21,13 @@
       "output": "CloseAccountCAMResponse",
       "status": "online"
     },
+    "CloseAuditService": {
+      "document": "关闭数据库实例的审计功能",
+      "input": "CloseAuditServiceRequest",
+      "name": "关闭数据库审计",
+      "output": "CloseAuditServiceResponse",
+      "status": "online"
+    },
     "CloseDBExtranetAccess": {
       "document": "本接口（CloseDBExtranetAccess）用于关闭实例公网地址。",
       "input": "CloseDBExtranetAccessRequest",
@@ -33,6 +40,13 @@
       "input": "CreateAccountRequest",
       "name": "创建数据库账号",
       "output": "CreateAccountResponse",
+      "status": "online"
+    },
+    "CreateAuditLogFile": {
+      "document": "创建审计日志文件",
+      "input": "CreateAuditLogFileRequest",
+      "name": "创建审计日志文件",
+      "output": "CreateAuditLogFileResponse",
       "status": "online"
     },
     "CreateBackupPlan": {
@@ -105,6 +119,13 @@
       "output": "DeleteAccountResponse",
       "status": "online"
     },
+    "DeleteAuditLogFile": {
+      "document": "删除审计日志文件",
+      "input": "DeleteAuditLogFileRequest",
+      "name": "删除审计日志文件",
+      "output": "DeleteAuditLogFileResponse",
+      "status": "online"
+    },
     "DeleteBackupPlan": {
       "document": "删除备份策略",
       "input": "DeleteBackupPlanRequest",
@@ -166,6 +187,27 @@
       "input": "DescribeAccountsRequest",
       "name": "查询实例的数据库账号列表",
       "output": "DescribeAccountsResponse",
+      "status": "online"
+    },
+    "DescribeAuditInstanceList": {
+      "document": "查询审计实例列表",
+      "input": "DescribeAuditInstanceListRequest",
+      "name": "查询审计实例列表",
+      "output": "DescribeAuditInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeAuditLogFiles": {
+      "document": "查询审计日志文件",
+      "input": "DescribeAuditLogFilesRequest",
+      "name": "查询审计日志文件",
+      "output": "DescribeAuditLogFilesResponse",
+      "status": "online"
+    },
+    "DescribeAuditLogs": {
+      "document": "查询数据库审计日志",
+      "input": "DescribeAuditLogsRequest",
+      "name": "查询审计日志",
+      "output": "DescribeAuditLogsResponse",
       "status": "online"
     },
     "DescribeAvailableRecoveryTime": {
@@ -490,6 +532,13 @@
       "output": "ModifyAccountRemarkResponse",
       "status": "online"
     },
+    "ModifyAuditService": {
+      "document": "修改数据库实例的审计功能",
+      "input": "ModifyAuditServiceRequest",
+      "name": "修改数据库审计",
+      "output": "ModifyAuditServiceResponse",
+      "status": "online"
+    },
     "ModifyBackupDownloadRestriction": {
       "document": "本接口（ModifyBackupDownloadRestriction）用于修改备份文件下载限制。",
       "input": "ModifyBackupDownloadRestrictionRequest",
@@ -635,6 +684,13 @@
       "input": "OpenAccountCAMRequest",
       "name": "为数据库账户开启CAM验证",
       "output": "OpenAccountCAMResponse",
+      "status": "online"
+    },
+    "OpenAuditService": {
+      "document": "开启数据库实例的审计功能",
+      "input": "OpenAuditServiceRequest",
+      "name": "开启数据库审计",
+      "output": "OpenAuditServiceResponse",
       "status": "online"
     },
     "OpenDBExtranetAccess": {
@@ -1023,6 +1079,423 @@
         }
       ],
       "usage": "out"
+    },
+    "AuditInstanceInfo": {
+      "document": "审计实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "postgres-mvbuhx2j",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启状态</p><p>枚举值：</p><ul><li>OFF： 关闭</li><li>ON： 打开</li></ul>",
+          "example": "OFF",
+          "member": "string",
+          "name": "AuditStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志存储有效期</p><p>单位：天</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "LogExpireDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>热存储有效期</p><p>单位：天</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "HotLogExpireDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>冷存储有效期</p><p>单位：天</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "ColdLogExpireDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>热存储大小</p><p>单位：MB</p>",
+          "example": "0",
+          "member": "float",
+          "name": "HotLogSize",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>冷存储大小</p><p>单位：MB</p>",
+          "example": "0",
+          "member": "float",
+          "name": "ColdLogSize",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启时间</p>",
+          "example": "2026-04-13 20:48:55",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递状态</p>",
+          "example": "OFF",
+          "member": "string",
+          "name": "Deliver",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeliverSummary",
+          "name": "DeliverSummary",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例信息</p>",
+          "example": "无",
+          "member": "LogInstanceInfo",
+          "name": "InstanceInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AuditLog": {
+      "document": "审计日志详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-04-15 23:37:43.656",
+          "member": "string",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>影响行数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AffectRows",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postgres",
+          "member": "string",
+          "name": "DBName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX000",
+          "member": "string",
+          "name": "ErrCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Call shark failed. Error code: 6",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "688",
+          "member": "int64",
+          "name": "ExecTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问来源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30.101.227.23",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postgres-loe5jryf",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>对象名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "public.audit_fk_20260415234243",
+          "member": "string",
+          "name": "ObjectName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>对象类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TABLE",
+          "member": "string",
+          "name": "ObjectType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>sql</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DROP FUNCTION audit_etfunc_20260415234254();",
+          "member": "string",
+          "name": "Sql",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>sql类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DROP FUNCTION",
+          "member": "string",
+          "name": "SqlType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>线程ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "69dfb0c6.dcaef",
+          "member": "string",
+          "name": "ThreadId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AuditLogFile": {
+      "document": "数据库审计日志文件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件名</p>",
+          "example": "postgres-loe5jryf_20260415-221850_to_20260415-222450_1776263111778.tar.gz",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态</p><p>枚举值：</p><ul><li>success： 成功</li><li>running： 创建中</li><li>failed： 失败</li></ul>",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件大小</p><p>单位：MB</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "FileSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-04-15 22:25:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下载链接</p>",
+          "example": "https://audit-9b492a",
+          "member": "string",
+          "name": "DownloadUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "sce",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下载进度</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>完成时间</p>",
+          "example": "2026-04-15 22:25:25",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AuditLogFilter": {
+      "document": "审计日志过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>影响函数</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "AffectRows",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名字</p>",
+          "example": "[\"audit_postgres_loe5jryf\"]",
+          "member": "string",
+          "name": "DBName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行时间</p>",
+          "example": "1677",
+          "member": "uint64",
+          "name": "ExecTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机Host</p>",
+          "example": "[\"30.101.227.17\"]",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>sql语句</p>",
+          "example": "SET",
+          "member": "string",
+          "name": "Sql",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录名</p>",
+          "example": "[\"root\"]",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计类型</p>",
+          "example": "[\"CLUSTER\"]",
+          "member": "string",
+          "name": "SqlType",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "BackupDownloadRestriction": {
       "document": "备份下载限制信息",
@@ -1741,6 +2214,42 @@
       ],
       "type": "object"
     },
+    "CloseAuditServiceRequest": {
+      "document": "CloseAuditService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "postgres-nqg1hcnj",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品名称</p><p>入参限制：postgres</p>",
+          "example": "postgres",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseAuditServiceResponse": {
+      "document": "CloseAuditService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CloseDBExtranetAccessRequest": {
       "document": "CloseDBExtranetAccess请求参数结构体",
       "members": [
@@ -1859,6 +2368,69 @@
     },
     "CreateAccountResponse": {
       "document": "CreateAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuditLogFileRequest": {
+      "document": "CreateAuditLogFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "postgres-nqg1hcnj",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p><p>参数格式：2026-03-25 00:00:00</p>",
+          "example": "2026-03-25 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p><p>参数格式：2026-03-25 01:00:00</p>",
+          "example": "2026-03-25 01:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品名称</p><p>入参限制：postgres</p>",
+          "example": "postgres",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "AuditLogFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuditLogFileResponse": {
+      "document": "CreateAuditLogFile返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4062,6 +4634,51 @@
       ],
       "type": "object"
     },
+    "DeleteAuditLogFileRequest": {
+      "document": "DeleteAuditLogFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "postgres-nqg1hcnj",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品名称，固定值：postgres</p>",
+          "example": "postgres",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计日志文件名称</p>",
+          "example": "1253431691_postgres-nqg1hcnj_1774420264_151841011.csv",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuditLogFileResponse": {
+      "document": "DeleteAuditLogFile返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteBackupPlanRequest": {
       "document": "DeleteBackupPlan请求参数结构体",
       "members": [
@@ -4382,6 +4999,67 @@
       ],
       "type": "object"
     },
+    "DeliverSummary": {
+      "document": "日志投递信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>投递消费者，当前仅支持CLS</p>",
+          "example": "client",
+          "member": "string",
+          "name": "DeliverConsumer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递消费者名称，当前仅支持CLS</p>",
+          "example": "logDeliver",
+          "member": "string",
+          "name": "DeliverConsumerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递类型当前仅支持mq</p>",
+          "example": "store",
+          "member": "string",
+          "name": "DeliverType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递子类型，当前仅支持CLS</p>",
+          "example": "cls",
+          "member": "string",
+          "name": "DeliverSubType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递报错</p>",
+          "example": "主题不存在",
+          "member": "string",
+          "name": "DeliverError",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DescribeAccountPrivilegesRequest": {
       "document": "DescribeAccountPrivileges请求参数结构体",
       "members": [
@@ -4510,6 +5188,291 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditInstanceListRequest": {
+      "document": "DescribeAuditInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品名称：postgres</p>",
+          "example": "postgres",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开通</p><p>枚举值：</p><ul><li>0： 未开通</li><li>1： 已开通</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AuditSwitch",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页限制</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页偏移量</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例过滤参数</p><p>入参限制：支持过滤条件：InstanceId-实例ID,InstanceName-实例名称</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditInstanceListResponse": {
+      "document": "DescribeAuditInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例日志信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuditInstanceInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogFilesRequest": {
+      "document": "DescribeAuditLogFiles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "postgres-nqg1hcnj",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品名称</p><p>入参限制：postgres</p>",
+          "example": "postgres",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志文件名称</p>",
+          "example": "postgres-2pxzpfux_20260325-113149_to_20260325-143149_1774420313536.tar.gz",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询限制</p><p>取值范围：[1, 300]</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p><p>取值范围：[0, 1000]</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogFilesResponse": {
+      "document": "DescribeAuditLogFiles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询总数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计日志文件列表</p>",
+          "example": "无",
+          "member": "AuditLogFile",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogsRequest": {
+      "document": "DescribeAuditLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "postgres-loe5jryf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p><p>参数格式：2026-03-25 00:00:00</p>",
+          "example": "2026-04-15 22:42:59",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p><p>参数格式：2026-03-25 01:00:00</p>",
+          "example": "2026-04-15 23:42:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询限制</p><p>取值范围：[1, 100]</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品名称</p><p>参数格式：postgres</p>",
+          "example": "postgres",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>位移量</p><p>取值范围：[0, 10000]</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方法</p><p>入参限制：Timestamp,AffectRows,ExecTime</p>",
+          "example": "Timestamp",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段</p><p>入参限制：ASC,DESC</p>",
+          "example": "ASC",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "AuditLogFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogsResponse": {
+      "document": "DescribeAuditLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志条数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuditLog",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8121,6 +9084,102 @@
       ],
       "usage": "in"
     },
+    "LogInstanceInfo": {
+      "document": "日志实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "athena-测试-jiangm",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postgresql",
+          "member": "string",
+          "name": "Engine",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v18.1_r1.5",
+          "member": "string",
+          "name": "EngineVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持审计。1代表支持，0代表不支持。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsSupportAudit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "postgres-ck63er3d",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型</p><p>枚举值：</p><ul><li>complex： 精细审计</li><li>simple： 极速审计</li></ul>",
+          "example": "complex",
+          "member": "string",
+          "name": "AuditType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyAccountPrivilegesRequest": {
       "document": "ModifyAccountPrivileges请求参数结构体",
       "members": [
@@ -8201,6 +9260,69 @@
     },
     "ModifyAccountRemarkResponse": {
       "document": "ModifyAccountRemark返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuditServiceRequest": {
+      "document": "ModifyAuditService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "postgres-nqg1hcnj",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志保存时长（天）</p><p>枚举值：</p><ul><li>7： 7天</li><li>30： 30天</li><li>90： 90天</li><li>180： 180天</li><li>365： 365天</li><li>1095： 1095天</li><li>1825： 1825天</li></ul>",
+          "example": "7",
+          "member": "uint64",
+          "name": "LogExpireDay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>高频存储时长（天）</p><p>枚举值：</p><ul><li>7： 7天</li><li>30： 30天</li><li>90： 90天</li><li>180： 180天</li><li>365： 365天</li><li>1095： 1095天</li><li>1825： 1825天</li></ul>",
+          "example": "7",
+          "member": "uint64",
+          "name": "HotLogExpireDay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计类型</p><p>枚举值：</p><ul><li>complex： 精细审计，审计日志更全面，包含对象类型、对象等，开启后对性能有一定影响</li><li>simple： 极速审计，审计日志覆盖绝大多数字段，开启审计后对性能影响较小</li></ul>",
+          "example": "complex",
+          "member": "string",
+          "name": "AuditType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品名称</p><p>入参限制：postgres</p>",
+          "example": "postgres",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuditServiceResponse": {
+      "document": "ModifyAuditService返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9568,6 +10690,69 @@
     },
     "OpenAccountCAMResponse": {
       "document": "OpenAccountCAM返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenAuditServiceRequest": {
+      "document": "OpenAuditService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "postgres-nqg1hcnj",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志保存时长</p><p>枚举值：</p><ul><li>7： 7天</li><li>30： 30天</li><li>90： 90天</li><li>180： 180天</li><li>365： 365天</li><li>1095： 1095天</li><li>1825： 1825天</li></ul>",
+          "example": "7",
+          "member": "uint64",
+          "name": "LogExpireDay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>高频存储时长</p><p>枚举值：</p><ul><li>7： 7天</li><li>30： 30天</li><li>90： 90天</li><li>180： 180天</li><li>365： 365天</li><li>1095： 1095天</li><li>1825： 1825天</li></ul>",
+          "example": "7",
+          "member": "uint64",
+          "name": "HotLogExpireDay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计类型</p><p>枚举值：</p><ul><li>complex： 精细审计，审计日志更全面，包含对象类型、对象等，开启后对性能有一定影响</li><li>simple： 极速审计，审计日志覆盖绝大多数字段，开启审计后对性能影响较小</li></ul>",
+          "example": "complex",
+          "member": "string",
+          "name": "AuditType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品名称</p><p>入参限制：postgres</p>",
+          "example": "postgres",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenAuditServiceResponse": {
+      "document": "OpenAuditService返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

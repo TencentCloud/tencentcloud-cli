@@ -1118,6 +1118,14 @@
         "title": "下单样例"
       }
     ],
+    "GenerateLLMSecAnswer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateLLMSecAnswer\n<公共请求参数>\n\n{\n    \"Message\": {\n        \"Role\": \"user\",\n        \"Content\": \"你能干些什么\",\n        \"ContentType\": 1\n    },\n    \"MsgID\": \"test-001\"\n}",
+        "output": "流式响应输出格式：\ndata: {\"index\":1,\"success\":true,\"data\":\"您好\"}\n\ndata: {\"index\":2,\"success\":true,\"data\":\"！\"}\n\ndata: {\"index\":3,\"success\":true,\"data\":\"我\"}\n\ndata: {\"index\":4,\"success\":true,\"data\":\"是一款\"}\n\ndata: {\"index\":5,\"success\":true,\"data\":\"人工智能\"}\n\ndata: {\"index\":6,\"success\":true,\"data\":\"助手\"}\n\ndata: {\"index\":7,\"success\":true,\"data\":\"，\"}\n\ndata: {\"index\":8,\"success\":true,\"data\":\"名为\"}\n\ndata: {\"index\":9,\"success\":true,\"data\":\"腾讯\"}\n\ndata: {\"index\":10,\"success\":true,\"data\":\"元宝\"}\n\ndata: {\"index\":11,\"success\":true,\"data\":\"。\"}\n\ndata: {\"index\":12,\"success\":true,\"data\":\"我可以\"}\n\ndata: {\"index\":13,\"success\":true,\"data\":\"回答\"}\n\ndata: {\"index\":14,\"success\":true,\"data\":\"您\"}\n\ndata: {\"index\":15,\"success\":true,\"data\":\"的问题\"}\n\ndata: {\"index\":16,\"success\":true,\"data\":\"、\"}\n\ndata: {\"index\":17,\"success\":true,\"data\":\"提供\"}\n\ndata: {\"index\":18,\"success\":true,\"data\":\"信息\"}\n\ndata: {\"index\":19,\"success\":true,\"data\":\"和建议\"}\n\ndata: {\"index\":20,\"success\":true,\"data\":\"，\"}\n\ndata: {\"index\":21,\"success\":true,\"data\":\"甚至\"}\n\ndata: {\"index\":22,\"success\":true,\"data\":\"进行\"}\n\ndata: {\"index\":23,\"success\":true,\"data\":\"简单的\"}\n\ndata: {\"index\":24,\"success\":true,\"data\":\"对话\"}\n\ndata: {\"index\":25,\"success\":true,\"data\":\"。\"}\n\ndata: {\"index\":26,\"success\":true,\"data\":\"我的\"}\n\ndata: {\"index\":27,\"success\":true,\"data\":\"目的是\"}\n\ndata: {\"index\":28,\"success\":true,\"data\":\"为您提供\"}\n\ndata: {\"index\":29,\"success\":true,\"data\":\"帮助\"}\n\ndata: {\"index\":30,\"success\":true,\"data\":\"和支持\"}\n\ndata: {\"index\":31,\"success\":true,\"data\":\"。\"}\n\ndata: {\"index\":32,\"success\":true,\"data\":\"有什么\"}\n\ndata: {\"index\":33,\"success\":true,\"data\":\"可以\"}\n\ndata: {\"index\":34,\"success\":true,\"data\":\"帮\"}\n\ndata: {\"index\":35,\"success\":true,\"data\":\"您的\"}\n\ndata: {\"index\":36,\"success\":true,\"data\":\"吗\"}\n\ndata: {\"index\":37,\"success\":true,\"data\":\"？\"}\n\ndata: {\"index\":38,\"success\":true,\"end\":true}",
+        "title": "流式响应测试用例"
+      }
+    ],
     "GetAttackDownloadRecords": [
       {
         "document": "",
