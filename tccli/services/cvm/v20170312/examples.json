@@ -624,6 +624,20 @@
         "title": "修改CHC物理服务器的属性"
       }
     ],
+    "ModifyChcNetworkMode": [
+      {
+        "document": "pxe装机结束前，切换chc物理服务器到业务网络",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyChcNetworkMode\n<公共请求参数>\n\n{\n    \"ChcIds\": [\n        \"chc-fc5plksv\"\n    ],\n    \"NetworkMode\": \"BUSINESS\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"41f75bb5-0a62-4a58-be1a-4181eb1514f4\"\n    }\n}",
+        "title": "切换业务网络"
+      },
+      {
+        "document": "pxe装机开始前，切换chc物理机服务器到部署网络",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyChcNetworkMode\n<公共请求参数>\n\n{\n    \"ChcIds\": [\n        \"chc-nzufwq77\"\n    ],\n    \"NetworkMode\": \"DEPLOY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78c8e8c2-c3b7-4ee4-9fbf-8819e688c405\"\n    }\n}",
+        "title": "切换部署网络"
+      }
+    ],
     "ModifyDisasterRecoverGroupAttribute": [
       {
         "document": "修改分散置放群组属性",

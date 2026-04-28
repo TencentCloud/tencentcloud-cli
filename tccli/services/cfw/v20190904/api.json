@@ -1465,7 +1465,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "eni-4ymwnaoe",
           "member": "string",
           "name": "InstanceId",
@@ -1476,7 +1476,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "private1",
           "member": "string",
           "name": "InstanceName",
@@ -1487,7 +1487,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，3是cvm实例,4是clb实例,5是eni实例,6是云数据库",
+          "document": "<p>实例类型，3是cvm实例,4是clb实例,5是eni实例,6是云数据库</p>",
           "example": "6",
           "member": "uint64",
           "name": "Type",
@@ -1498,7 +1498,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID",
+          "document": "<p>私有网络ID</p>",
           "example": "vpc-406waega",
           "member": "string",
           "name": "VpcId",
@@ -1509,7 +1509,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络名称",
+          "document": "<p>私有网络名称</p>",
           "example": "vpc4",
           "member": "string",
           "name": "VpcName",
@@ -1520,7 +1520,7 @@
         },
         {
           "disabled": false,
-          "document": "公网IP",
+          "document": "<p>公网IP</p>",
           "example": "11.11.11.11",
           "member": "string",
           "name": "PublicIp",
@@ -1531,7 +1531,7 @@
         },
         {
           "disabled": false,
-          "document": "内网IP",
+          "document": "<p>内网IP</p>",
           "example": "192.168.0.13,192.168.0.3",
           "member": "string",
           "name": "Ip",
@@ -1542,7 +1542,7 @@
         },
         {
           "disabled": false,
-          "document": "关联安全组数量",
+          "document": "<p>关联安全组数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "SecurityGroupCount",
@@ -1553,7 +1553,7 @@
         },
         {
           "disabled": false,
-          "document": "关联安全组规则数量",
+          "document": "<p>关联安全组规则数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "SecurityGroupRuleCount",
@@ -1564,11 +1564,22 @@
         },
         {
           "disabled": false,
-          "document": "关联数据库代理Id",
+          "document": "<p>关联数据库代理Id</p>",
           "example": "192.168.0.13/24",
           "member": "string",
           "name": "CdbId",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器服务集群ID</p>",
+          "example": "cls-4be80m52",
+          "member": "string",
+          "name": "TkeClusterId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false

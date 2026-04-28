@@ -624,6 +624,14 @@
         "title": "查询用户组信息"
       }
     ],
+    "GetIPWhitelist": [
+      {
+        "document": "GetIPWhitelist",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetIPWhitelist\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-dh5i84h***\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IpWhitelist\": [\n            \"88.88.88.88\",\n            \"11.179.212.0\",\n            \"21.36.103.0\",\n            \"8.8.9.9\",\n            \"8.8.8.99\"\n        ],\n        \"RequestId\": \"c3142b5b-6963-40bd-a97e-5ec0fa15fa24\"\n    }\n}",
+        "title": "GetIPWhitelist"
+      }
+    ],
     "GetProvisioningTaskStatus": [
       {
         "document": "查询用户同步异步任务的状态",

@@ -4086,7 +4086,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。",
+          "document": "<p>数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。</p>",
           "example": "mysql",
           "member": "string",
           "name": "DatabaseType",
@@ -4095,7 +4095,7 @@
         },
         {
           "disabled": false,
-          "document": "实例作为迁移的源还是目标,src(表示源)，dst(表示目标)",
+          "document": "<p>实例作为迁移的源还是目标,src(表示源)，dst(表示目标)</p>",
           "example": "dst",
           "member": "string",
           "name": "MigrateRole",
@@ -4104,7 +4104,7 @@
         },
         {
           "disabled": false,
-          "document": "云数据库实例ID，可通过对应业务实例列表获取实例信息。",
+          "document": "<p>云数据库实例ID，可通过对应业务实例列表获取实例信息。</p>",
           "example": "cdb-ktexpqjo",
           "member": "string",
           "name": "InstanceId",
@@ -4113,7 +4113,7 @@
         },
         {
           "disabled": false,
-          "document": "云数据库名称，可通过对应业务实例列表获取实例信息。",
+          "document": "<p>云数据库名称，可通过对应业务实例列表获取实例信息。</p>",
           "example": "cdb-name1",
           "member": "string",
           "name": "InstanceName",
@@ -4122,7 +4122,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量限制",
+          "document": "<p>返回数量限制</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -4131,7 +4131,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4140,7 +4140,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)",
+          "document": "<p>资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)</p>",
           "example": "self",
           "member": "string",
           "name": "AccountMode",
@@ -4149,7 +4149,7 @@
         },
         {
           "disabled": false,
-          "document": "临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。",
+          "document": "<p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>",
           "example": "AKIDXXXXXX",
           "member": "string",
           "name": "TmpSecretId",
@@ -4158,7 +4158,7 @@
         },
         {
           "disabled": false,
-          "document": "临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。",
+          "document": "<p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>",
           "example": "vobJXXXXXX",
           "member": "string",
           "name": "TmpSecretKey",
@@ -4167,7 +4167,7 @@
         },
         {
           "disabled": false,
-          "document": "临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。",
+          "document": "<p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>",
           "example": "MvIVXXXXXX",
           "member": "string",
           "name": "TmpToken",
@@ -4182,7 +4182,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合筛选条件的数量",
+          "document": "<p>符合筛选条件的数量</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -4192,7 +4192,7 @@
         },
         {
           "disabled": false,
-          "document": "实例列表",
+          "document": "<p>实例列表</p>",
           "example": "无",
           "member": "MigrateDBItem",
           "name": "Instances",

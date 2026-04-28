@@ -38431,7 +38431,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Empty VAST时是否播放Slate，默认开启(true)</p>",
+          "document": "<p>广告为空时是否插入Slate，默认开启(true)</p>",
           "example": "true",
           "member": "bool",
           "name": "SlateOnEmptyVast",

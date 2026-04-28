@@ -971,6 +971,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件能力标识列表</p>",
+          "example": "[\"readme\"]",
+          "member": "string",
+          "name": "Capabilities",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1249,7 +1260,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "知识库id",
+          "document": "<p>知识库id</p>",
           "example": "klbase-dxjajwq",
           "member": "string",
           "name": "KnowledgeBaseId",
@@ -1260,7 +1271,7 @@
         },
         {
           "disabled": false,
-          "document": "知识库名称\n",
+          "document": "<p>知识库名称</p>",
           "example": "测试知识库",
           "member": "string",
           "name": "KnowledgeBaseName",
@@ -1271,7 +1282,7 @@
         },
         {
           "disabled": false,
-          "document": "知识库描述",
+          "document": "<p>知识库描述</p>",
           "example": "用户存放测试数据",
           "member": "string",
           "name": "KnowledgeBaseDesc",
@@ -1282,7 +1293,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者subuin",
+          "document": "<p>创建者subuin</p>",
           "example": "4348798",
           "member": "string",
           "name": "Creator",
@@ -1293,7 +1304,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2025-02-23 23:23:11",
           "member": "string",
           "name": "CreateTime",
@@ -1304,7 +1315,7 @@
         },
         {
           "disabled": false,
-          "document": "文件数量",
+          "document": "<p>文件数量</p>",
           "example": "12",
           "member": "int64",
           "name": "FileNum",
@@ -1315,13 +1326,24 @@
         },
         {
           "disabled": false,
-          "document": "知识库关联的数据库列表，目前是只绑定一个数据源，数组预留拓展",
+          "document": "<p>知识库关联的数据库列表，目前是只绑定一个数据源，数组预留拓展</p>",
           "example": "[\"datasource-xjaj\",\"datasource_jxuamj\"]",
           "member": "string",
           "name": "DatasourceIds",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库任务配置</p>",
+          "example": "无",
+          "member": "KnowledgeTaskConfig",
+          "name": "Config",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -1332,7 +1354,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "切片类型  0:自定义切片，1：智能切片",
+          "document": "<p>切片类型  0:自定义切片，1：智能切片</p>",
           "example": "1",
           "member": "int64",
           "name": "ChunkType",
@@ -1343,7 +1365,7 @@
         },
         {
           "disabled": false,
-          "document": "/智能切片：最小值 1000，默认 4800 自定义切片：正整数即可,默认值 1000",
+          "document": "<p>/智能切片：最小值 1000，默认 4800 自定义切片：正整数即可,默认值 1000</p>",
           "example": "1",
           "member": "int64",
           "name": "MaxChunkSize",
@@ -1354,7 +1376,7 @@
         },
         {
           "disabled": false,
-          "document": " 切片分隔符,自定义切片使用：默认值为：[\"\\n\\n\", \"\\n\", \"。\", \"！\", \"？\", \"，\", \"\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>切片分隔符,自定义切片使用：默认值为：[&quot;\\n\\n&quot;, &quot;\\n&quot;, &quot;。&quot;, &quot;！&quot;, &quot;？&quot;, &quot;，&quot;, &quot;&quot;]</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\",\",\"|\"]",
           "member": "string",
           "name": "Delimiters",
@@ -1365,7 +1387,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义切片使用:默认0 可重叠字符长度",
+          "document": "<p>自定义切片使用:默认0 可重叠字符长度</p>",
           "example": "100",
           "member": "int64",
           "name": "ChunkOverlap",
@@ -1376,7 +1398,7 @@
         },
         {
           "disabled": false,
-          "document": "表格类文档解析",
+          "document": "<p>表格类文档解析</p>",
           "example": "无",
           "member": "ColumnInfo",
           "name": "Columns",
@@ -1387,7 +1409,7 @@
         },
         {
           "disabled": false,
-          "document": "带检索的索引列表",
+          "document": "<p>带检索的索引列表</p>",
           "example": "[1,2]",
           "member": "int64",
           "name": "Indexes",
@@ -1398,7 +1420,7 @@
         },
         {
           "disabled": false,
-          "document": "0：不生成文档摘要，1：生成文档概要。默认0，当取1时，GenParaSummary必须也为1",
+          "document": "<p>0：不生成文档摘要，1：生成文档概要。默认0，当取1时，GenParaSummary必须也为1</p>",
           "example": "1",
           "member": "int64",
           "name": "GenDocSummary",
@@ -1409,10 +1431,21 @@
         },
         {
           "disabled": false,
-          "document": "0：不生成段落摘要，1：生成段落概要。默认0",
+          "document": "<p>0：不生成段落摘要，1：生成段落概要。默认0</p>",
           "example": "1",
           "member": "int64",
           "name": "GenParaSummary",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>0：不开启图片理解，1：开启图片理解。默认1</p><p>取值范围：[1, 10000]</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableImageUnderstanding",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -1583,7 +1616,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "dataagent-xjasjxja",
           "member": "string",
           "name": "InstanceId",
@@ -1592,7 +1625,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型：Create，Update，Delete",
+          "document": "<p>操作类型：Create，Update，Delete</p>",
           "example": "Create",
           "member": "string",
           "name": "OperateType",
@@ -1601,7 +1634,7 @@
         },
         {
           "disabled": false,
-          "document": "知识库id，update和delete时必填",
+          "document": "<p>知识库id，update和delete时必填</p>",
           "example": "klbase-xjqaxjaz",
           "member": "string",
           "name": "KnowledgeBaseId",
@@ -1610,7 +1643,7 @@
         },
         {
           "disabled": false,
-          "document": "知识库名称，create和update时必填。只允许字母、数字、汉字、下划线",
+          "document": "<p>知识库名称，create和update时必填。只允许字母、数字、汉字、下划线</p>",
           "example": "测试知识库",
           "member": "string",
           "name": "KnowledgeBaseName",
@@ -1619,7 +1652,7 @@
         },
         {
           "disabled": false,
-          "document": "知识库描述，create和update时必填",
+          "document": "<p>知识库描述，create和update时必填</p>",
           "example": "用来存放测试数据",
           "member": "string",
           "name": "KnowledgeBaseDesc",
@@ -1628,7 +1661,7 @@
         },
         {
           "disabled": false,
-          "document": "1仅自己使用，2指定用户，0全员",
+          "document": "<p>1仅自己使用，2指定用户，0全员</p>",
           "example": "1",
           "member": "int64",
           "name": "UseScope",
@@ -1637,12 +1670,21 @@
         },
         {
           "disabled": false,
-          "document": "可使用用户列表",
+          "document": "<p>可使用用户列表</p>",
           "example": "[\"10101012\",\"10110003\"]",
           "member": "string",
           "name": "AuthorityUins",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库任务配置</p>",
+          "example": "无",
+          "member": "KnowledgeTaskConfig",
+          "name": "Config",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1652,7 +1694,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "知识库id",
+          "document": "<p>知识库id</p>",
           "example": "klbase-xjqaxjaz",
           "member": "string",
           "name": "KnowledgeBaseId",
@@ -2111,7 +2153,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "场景ID",
+          "document": "<p>场景ID</p>",
           "example": "sn001",
           "member": "string",
           "name": "SceneId",
@@ -2122,7 +2164,7 @@
         },
         {
           "disabled": false,
-          "document": "场景名称",
+          "document": "<p>场景名称</p>",
           "example": "cran_sn",
           "member": "string",
           "name": "SceneName",
@@ -2133,7 +2175,7 @@
         },
         {
           "disabled": false,
-          "document": "技能列表，包含：rag（知识检索）、data_analytics（数据分析）、data_prediction（数据预测）",
+          "document": "<p>技能列表，包含：rag（知识检索）、data_analytics（数据分析）、data_prediction（数据预测）</p>",
           "example": "[\"rag\"]",
           "member": "string",
           "name": "Skills",
@@ -2144,7 +2186,7 @@
         },
         {
           "disabled": false,
-          "document": "提示词文本",
+          "document": "<p>提示词文本</p>",
           "example": "key",
           "member": "string",
           "name": "Prompt",
@@ -2155,7 +2197,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "mytest",
           "member": "string",
           "name": "Description",
@@ -2166,7 +2208,7 @@
         },
         {
           "disabled": false,
-          "document": "检索配置",
+          "document": "<p>检索配置</p>",
           "example": "无",
           "member": "SearchConfig",
           "name": "SearchConfig",
@@ -2177,7 +2219,7 @@
         },
         {
           "disabled": false,
-          "document": "示例问答列表",
+          "document": "<p>示例问答列表</p>",
           "example": "无",
           "member": "ExampleQA",
           "name": "ExampleQAList",
@@ -2188,7 +2230,7 @@
         },
         {
           "disabled": false,
-          "document": "记录的创建时间",
+          "document": "<p>记录的创建时间</p>",
           "example": "2025-11-02 12:12:12",
           "member": "string",
           "name": "CreateTime",
@@ -2199,7 +2241,7 @@
         },
         {
           "disabled": false,
-          "document": "记录的最后更新时间",
+          "document": "<p>记录的最后更新时间</p>",
           "example": "2025-11-02 12:12:12",
           "member": "string",
           "name": "UpdateTime",
@@ -2210,10 +2252,21 @@
         },
         {
           "disabled": false,
-          "document": "创建者Uin",
+          "document": "<p>创建者Uin</p>",
           "example": "10104343253",
           "member": "string",
           "name": "CreatorUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识</p>",
+          "example": "ufo",
+          "member": "string",
+          "name": "Knowledge",
           "output_required": false,
           "required": false,
           "type": "string",

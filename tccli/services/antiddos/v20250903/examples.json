@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "DescribeDDoSBlockRecords": [
+      {
+        "document": "查询封堵解封列表。",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDoSBlockRecords\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-04-05T11:30:00+08:00\",\n    \"EndTime\": \"2026-04-21T11:15:00+08:00\",\n    \"Filters\": [\n        {\n            \"Name\": \"Resource\",\n            \"Values\": [\n                \"43.136.33.201\"\n            ]\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"BlockRecords\": [\n            {\n                \"BlockTime\": \"2026-04-21T10:53:00+08:00\",\n                \"Resource\": \"43.136.33.201\",\n                \"Status\": \"Blocked\"\n            }\n        ],\n        \"TotalCount\": 4,\n        \"UnblockQuotaInfo\": {\n            \"QuotaEndTime\": \"2026-04-22T00:00:00+08:00\",\n            \"QuotaStartTime\": \"2026-04-21T00:00:00+08:00\",\n            \"TotalQuota\": 3,\n            \"UsedQuota\": 3\n        },\n        \"RequestId\": \"b450f3fd-6f30-4e2d-84d6-35e5c0afd25d\"\n    }\n}",
+        "title": "按照公网IP查询封堵列表"
+      }
+    ],
+    "UnblockResources": [
+      {
+        "document": "按照公网IP申请解封。",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnblockResources\n<公共请求参数>\n\n{\n    \"Resources\": [\n        \"117.175.94.230\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a550592d-8fda-423d-b053-65aaade9b89c\"\n    }\n}",
+        "title": "按照公网IP申请解封"
+      }
+    ]
+  },
+  "version": "1.0"
+}

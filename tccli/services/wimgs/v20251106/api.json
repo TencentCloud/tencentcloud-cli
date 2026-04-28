@@ -20,7 +20,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询词",
+          "document": "<p>查询词</p>",
           "example": "北京故宫",
           "member": "string",
           "name": "Query",
@@ -35,7 +35,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "原始查询词",
+          "document": "<p>原始查询词</p>",
           "example": "car",
           "member": "string",
           "name": "Query",
@@ -45,7 +45,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索结果图片列表，格式为json字符串。\n\n- thumbnailUrl：缩略图地址。\n- thumbnailWidth：缩略图宽度。\n- thumbnailHeight：缩略图高度。\n- origPicUrl：原图地址。\n-  origPicWidth：原图宽度。\n- siteUrl：站点地址，原图来源网页URL。\n- siteName：站点名称。\n- title：标题，原图标题或原图来源网页标题。\n- date：内容发布时间。",
+          "document": "<p>搜索结果图片列表，格式为json字符串。</p><ul><li>thumbnailUrl：缩略图地址。</li><li>thumbnailWidth：缩略图宽度。</li><li>thumbnailHeight：缩略图高度。</li><li>origPicUrl：原图地址。</li><li>origPicWidth：原图宽度。</li><li>origPicHeight：原图高度。</li><li>siteUrl：站点地址，原图来源网页URL。</li><li>siteName：站点名称。</li><li>title：标题，原图标题或原图来源网页标题。</li><li>date：内容发布时间。</li></ul>",
           "example": "[\"{\\\"siteName\\\":\\\"搜狗百科\\\",\\\"title\\\":\\\"the car book\\\"}\"]",
           "member": "string",
           "name": "Images",
