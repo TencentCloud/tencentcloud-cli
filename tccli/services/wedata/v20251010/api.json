@@ -5003,7 +5003,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abe4f55b177432519620289c794dd",
           "member": "string",
           "name": "Key",
@@ -5013,7 +5013,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "700002164618",
           "member": "string",
           "name": "CreatedBy",
@@ -5023,7 +5023,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1774325196201",
           "member": "string",
           "name": "CreatedOn",
@@ -5033,7 +5033,7 @@
         },
         {
           "disabled": false,
-          "document": "App 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>App 名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "330dd6f5177432457674675f5d116",
           "member": "string",
           "name": "AppKey",
@@ -5043,7 +5043,7 @@
         },
         {
           "disabled": false,
-          "document": "App 描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>App 描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2a14a3b0177432519618659421aeb",
           "member": "string",
           "name": "VersionKey",
@@ -5053,7 +5053,7 @@
         },
         {
           "disabled": false,
-          "document": "App 类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>App 类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "v4",
           "member": "string",
           "name": "VersionNumber",
@@ -5063,7 +5063,7 @@
         },
         {
           "disabled": false,
-          "document": "App 状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>App 状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "FAILED",
           "member": "string",
           "name": "Status",
@@ -5073,7 +5073,7 @@
         },
         {
           "disabled": false,
-          "document": "当前运行版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前运行版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "部署失败: ConnectRPC 流式调用异常 [process.Process/Start]",
           "member": "string",
           "name": "DeployLog",
@@ -5083,7 +5083,7 @@
         },
         {
           "disabled": false,
-          "document": "触发方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>触发方式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MANUAL",
           "member": "string",
           "name": "TriggeredBy",
@@ -5093,7 +5093,7 @@
         },
         {
           "disabled": false,
-          "document": "部署完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署完成时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1774325196847",
           "member": "string",
           "name": "FinishedOn",
@@ -5103,10 +5103,70 @@
         },
         {
           "disabled": false,
-          "document": "部署耗时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署耗时</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "910",
           "member": "string",
           "name": "Duration",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wedata30-test1@tencent.com",
+          "member": "string",
+          "name": "CreatedUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wedata30-test1@tencent.com",
+          "member": "string",
+          "name": "ModifiedUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>owner user</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wedata30-test1@tencent.com",
+          "member": "string",
+          "name": "OwnerUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>owner</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700002164619",
+          "member": "string",
+          "name": "Owner",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1776844861153",
+          "member": "string",
+          "name": "ModifiedOn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700002164619",
+          "member": "string",
+          "name": "ModifiedBy",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46286,7 +46346,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间id",
+          "document": "<p>工作空间id</p>",
           "example": "17678671667189298",
           "member": "string",
           "name": "WorkspaceId",
@@ -46295,7 +46355,7 @@
         },
         {
           "disabled": false,
-          "document": "appkey",
+          "document": "<p>appkey</p>",
           "example": "330dd6f5177432457674675f5d116",
           "member": "string",
           "name": "AppKey",
@@ -46304,7 +46364,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数",
+          "document": "<p>分页参数</p>",
           "example": "无",
           "member": "ApplicationPageRequestParam",
           "name": "PageRequest",
@@ -46319,7 +46379,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "app详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>app详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ListAppDeploysRsp",
           "name": "Data",

@@ -2804,15 +2804,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>实例所属主可用区， 如：ap-guangzhou-3；若需要支持多可用区，在DBNodeSet.N字段中进行添加主可用区和备可用区信息；<br>可用区信息可以通过调用 <a href=\"https://cloud.tencent.com/document/api/409/16769\">DescribeZones</a> 接口的返回值中的Zone字段来获取。</p>",
-          "example": "ap-guangzhou-6",
-          "member": "string",
-          "name": "Zone",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "<p>售卖规格码。该参数可以通过调用<a href=\"https://cloud.tencent.com/document/api/409/89019\">DescribeClasses</a>的返回值中的SpecCode字段来获取。</p>",
           "example": "pg.it.2xlarge16",
           "member": "string",
@@ -2871,6 +2862,15 @@
           "example": "A8b!C2d#E4f&",
           "member": "string",
           "name": "AdminPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例所属主可用区， 如：ap-guangzhou-3；若需要支持多可用区，在DBNodeSet.N字段中进行添加主可用区和备可用区信息；<br>可用区信息可以通过调用 <a href=\"https://cloud.tencent.com/document/api/409/16769\">DescribeZones</a> 接口的返回值中的Zone字段来获取。</p>",
+          "example": "ap-guangzhou-6",
+          "member": "string",
+          "name": "Zone",
           "required": true,
           "type": "string"
         },
@@ -3125,6 +3125,42 @@
           "name": "Category",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例种类，当前只有normal和cloudbase两种形态的实例</p><p>枚举值：</p><ul><li>normal： 普通形态实例</li><li>cloudbase： cloudbase形态实例</li></ul><p>默认值：normal</p>",
+          "example": "normal",
+          "member": "string",
+          "name": "InstanceCategory",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建特定的InstanceCategory实例所需要标记的来源</p><p>参数格式：API</p>",
+          "example": "API",
+          "member": "string",
+          "name": "CallerSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建特定InstanceCategory所需要的Token</p>",
+          "example": "thisisatoken",
+          "member": "string",
+          "name": "CallerToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建PostgREST服务所需要的参数</p>",
+          "example": "无",
+          "member": "ParamEntry",
+          "name": "RestConfig",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4362,6 +4398,16 @@
           "example": "General-Purpose",
           "member": "string",
           "name": "DBInstanceClassType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例是否可访问</p><p>枚举值：</p><ul><li>active： 可访问</li><li>inactive： 不可访问</li></ul>",
+          "example": "active",
+          "member": "string",
+          "name": "DBRestAccessStatus",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8491,11 +8537,29 @@
       "members": [
         {
           "disabled": false,
-          "document": "待下线实例ID",
+          "document": "<p>待下线实例ID</p>",
           "example": "postgres-19nmz2xb",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建特定的InstanceCategory实例所需要标记的来源</p>",
+          "example": "cloudbase",
+          "member": "string",
+          "name": "CallerSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建特定InstanceCategory所需要的Token</p>",
+          "example": "thisisatoken",
+          "member": "string",
+          "name": "CallerToken",
+          "required": false,
           "type": "string"
         }
       ],
@@ -8554,7 +8618,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID列表。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时解隔离多个实例。",
+          "document": "<p>实例ID列表。可通过<a href=\"https://cloud.tencent.com/document/api/409/16773\">DescribeDBInstances</a>接口获取。支持同时解隔离多个实例。</p>",
           "example": "[\"postgres-xxxxxxx\"]",
           "member": "string",
           "name": "DBInstanceIdSet",
@@ -8563,7 +8627,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长，单位：月。\n<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>\n<li>后付费：该参数不生效</li>",
+          "document": "<p>购买时长，单位：月。</p><li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li><li>后付费：该参数不生效</li>",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -8572,7 +8636,7 @@
         },
         {
           "disabled": false,
-          "document": "是否使用代金券：\n<li>true：使用</li>\n<li>false：不使用</li>\n默认值：false",
+          "document": "<p>是否使用代金券：</p><li>true：使用</li><li>false：不使用</li>默认值：false",
           "example": "true",
           "member": "bool",
           "name": "AutoVoucher",
@@ -8581,12 +8645,30 @@
         },
         {
           "disabled": false,
-          "document": "代金券id列表。",
-          "example": "[\"a\"]",
+          "document": "<p>代金券id列表。</p>",
+          "example": "[\"voucherId\"]",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建特定的InstanceCategory实例所需要标记的来源</p>",
+          "example": "cloudbase",
+          "member": "string",
+          "name": "CallerSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建特定InstanceCategory所需要的Token</p>",
+          "example": "thisisatoken",
+          "member": "string",
+          "name": "CallerToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9408,12 +9490,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID集合。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。注意：不推荐同时隔离多个实例。建议每次操作仅传入单个实例ID。",
+          "document": "<p>实例ID集合。可通过<a href=\"https://cloud.tencent.com/document/api/409/16773\">DescribeDBInstances</a>接口获取。注意：不推荐同时隔离多个实例。建议每次操作仅传入单个实例ID。</p>",
           "example": "[\"postgres-xxxxxxxx\"]",
           "member": "string",
           "name": "DBInstanceIdSet",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建特定的InstanceCategory实例所需要标记的来源</p>",
+          "example": "cloudbase",
+          "member": "string",
+          "name": "CallerSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建特定InstanceCategory所需要的Token</p>",
+          "example": "thisisatoken",
+          "member": "string",
+          "name": "CallerToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

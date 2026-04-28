@@ -14527,7 +14527,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Serverless索引空间ID",
+          "document": "<p>Serverless索引空间ID</p>",
           "example": "space-xxxx",
           "member": "string",
           "name": "SpaceId",
@@ -14537,7 +14537,7 @@
         },
         {
           "disabled": false,
-          "document": "Serverless索引空间名",
+          "document": "<p>Serverless索引空间名</p>",
           "example": "spaceName",
           "member": "string",
           "name": "SpaceName",
@@ -14547,7 +14547,7 @@
         },
         {
           "disabled": false,
-          "document": "Serverless索引空间状态，0正常，-1已删除",
+          "document": "<p>Serverless索引空间状态</p><p>枚举值：</p><ul><li>0： 创建中</li><li>1： 正常</li><li>2： 流程中</li><li>-3： 已删除</li><li>-4： 隔离中</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -14557,7 +14557,7 @@
         },
         {
           "disabled": false,
-          "document": "创建日期",
+          "document": "<p>创建日期</p>",
           "example": "2022-01-01 11:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -14567,7 +14567,7 @@
         },
         {
           "disabled": false,
-          "document": "空间内索引数量",
+          "document": "<p>空间内索引数量</p>",
           "example": "1",
           "member": "int64",
           "name": "IndexCount",
@@ -14577,7 +14577,7 @@
         },
         {
           "disabled": false,
-          "document": "kibana公网uri\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>kibana公网uri</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://space-xxxxxx.ap-nanjing.kibana.qcloudes.com:5601",
           "member": "string",
           "name": "KibanaUrl",
@@ -14587,7 +14587,7 @@
         },
         {
           "disabled": false,
-          "document": "kibana内网url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>kibana内网url</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://space-xxxxxx-internal.ap-nanjing.kibana.qcloudes.com:5601",
           "member": "string",
           "name": "KibanaPrivateUrl",
@@ -14597,7 +14597,7 @@
         },
         {
           "disabled": false,
-          "document": "空间内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>空间内网访问地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "space-xxxxxx.ap-nanjing.qcloudes.com",
           "member": "string",
           "name": "IndexAccessUrl",
@@ -14607,7 +14607,7 @@
         },
         {
           "disabled": false,
-          "document": "空间白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>空间白名单</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EsAcl",
           "name": "KibanaPublicAcl",
@@ -14617,7 +14617,7 @@
         },
         {
           "disabled": false,
-          "document": "空间检索分析域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>空间检索分析域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://space-xxxxxx.kibana-embed.qcloudes.com:5601",
           "member": "string",
           "name": "KibanaEmbedUrl",
@@ -14627,7 +14627,7 @@
         },
         {
           "disabled": false,
-          "document": "数据联路\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据联路</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiData",
           "name": "DiDataList",
@@ -14637,7 +14637,7 @@
         },
         {
           "disabled": false,
-          "document": "空间vpc信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>空间vpc信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VpcInfo",
           "name": "VpcInfo",
@@ -14647,7 +14647,7 @@
         },
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
@@ -14657,7 +14657,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-shanghai-3",
           "member": "string",
           "name": "Zone",
@@ -14667,7 +14667,7 @@
         },
         {
           "disabled": false,
-          "document": "kibana公网开关，0关闭，1开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>kibana公网开关，0关闭，1开启</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "EnableKibanaPublicAccess",
@@ -14677,7 +14677,7 @@
         },
         {
           "disabled": false,
-          "document": "kibana内网开关，0关闭，1开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>kibana内网开关，0关闭，1开启</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "EnableKibanaPrivateAccess",
@@ -14687,7 +14687,7 @@
         },
         {
           "disabled": false,
-          "document": "空间所属appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>空间所属appid</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10004222",
           "member": "uint64",
           "name": "AppId",
@@ -14697,7 +14697,7 @@
         },
         {
           "disabled": false,
-          "document": "//默认en， 可选zh-CN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>//默认en， 可选zh-CN</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "en",
           "member": "string",
           "name": "KibanaLanguage",
@@ -14707,7 +14707,7 @@
         },
         {
           "disabled": false,
-          "document": "0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>0</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ClusterType",
@@ -14717,7 +14717,7 @@
         },
         {
           "disabled": false,
-          "document": "空间标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>空间标签信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TagInfo",
           "name": "TagList",
@@ -14727,7 +14727,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启mcp服务",
+          "document": "<p>是否开启mcp服务</p>",
           "example": "0",
           "member": "int64",
           "name": "EnableMcpAccess",
@@ -14737,7 +14737,7 @@
         },
         {
           "disabled": false,
-          "document": "mcp的访问地址",
+          "document": "<p>mcp的访问地址</p>",
           "example": "http://ip:port/sse",
           "member": "string",
           "name": "McpAccess",
