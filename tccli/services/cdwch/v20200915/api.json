@@ -1836,7 +1836,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "cdwch-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -1845,7 +1845,7 @@
         },
         {
           "disabled": false,
-          "document": "api接口名称,GetClusters:获取集群cluster列表\nGetSystemUsers:获取系统用户列表\nCheckNodeCluster: 检查节点是否隶属一个cluster\nGetClusterDatabases: 获取一个cluster下的数据库列表\nGetClusterTables: 获取一个cluster下的数据库表列表\nGetPrivilegeUsers: 获取授权的用户列表\nGET_USER_CLUSTER_PRIVILEGES:获取用户cluster下的权限   \nGetUserClusterNewPrivileges:获取用户cluster下的权限 (新版）\nRevokeClusterUser:解绑cluster用户\nDeleteSystemUser:删除系统用户 —— 必须所有cluster先解绑\nGetUserOptionMessages:获取用户配置备注信息\nGET_USER_CONFIGS:获取用户配置列表  QUOTA、PROFILE、POLICY",
+          "document": "<p>api接口名称,GetClusters:获取集群cluster列表<br>GetSystemUsers:获取系统用户列表<br>CheckNodeCluster: 检查节点是否隶属一个cluster<br>GetClusterDatabases: 获取一个cluster下的数据库列表<br>GetClusterTables: 获取一个cluster下的数据库表列表<br>GetPrivilegeUsers: 获取授权的用户列表<br>GET_USER_CLUSTER_PRIVILEGES:获取用户cluster下的权限<br>GetUserClusterNewPrivileges:获取用户cluster下的权限 (新版）<br>RevokeClusterUser:解绑cluster用户<br>DeleteSystemUser:删除系统用户 —— 必须所有cluster先解绑<br>GetUserOptionMessages:获取用户配置备注信息<br>GET_USER_CONFIGS:获取用户配置列表  QUOTA、PROFILE、POLICY</p>",
           "example": "GetClusters",
           "member": "string",
           "name": "ApiType",
@@ -1854,8 +1854,8 @@
         },
         {
           "disabled": false,
-          "document": "集群名称，当ApiType取值为GET_SYSTEM_USERS，GET_PRIVILEGE_USERS，GET_CLUSTER_DATABASES，GET_CLUSTER_TABLES 时，此参数必填",
-          "example": "default",
+          "document": "<p>clickhouse逻辑集群名称，可通过连接集群执行 <code>SHOW CLUSTERS</code> 查询获得。当 ApiType 取值为 GET_SYSTEM_USERS、GET_PRIVILEGE_USERS、GET_CLUSTER_DATABASES或GET_CLUSTER_TABLES 时，本参数必填。</p>",
+          "example": "default_cluster",
           "member": "string",
           "name": "Cluster",
           "required": false,
@@ -1863,7 +1863,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名称，api与user相关的必填",
+          "document": "<p>用户名称，api与user相关的必填</p>",
           "example": "user1",
           "member": "string",
           "name": "UserName",
@@ -1872,7 +1872,7 @@
         },
         {
           "disabled": false,
-          "document": "账户的类型",
+          "document": "<p>账户的类型</p>",
           "example": "XML",
           "member": "string",
           "name": "UserType",
@@ -1887,7 +1887,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的查询数据，大部分情况是list，也可能是bool",
+          "document": "<p>返回的查询数据，大部分情况是list，也可能是bool</p>",
           "example": "[{\"InstanceId\":\"cdwch-xxxxxxxx\",\"UserName\":\"test_user\",\"Describe\":\"\",\"Type\":\"RBAC\",\"Cluster\":\"default_cluster\"}]",
           "member": "string",
           "name": "ReturnData",
@@ -4264,7 +4264,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "cdwch-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -4273,8 +4273,8 @@
         },
         {
           "disabled": false,
-          "document": "cluster名称",
-          "example": "cdwch-xxxx",
+          "document": "<p>clickhouse逻辑集群名称，可通过连接集群执行 <code>SHOW CLUSTERS</code> 查询获得</p>",
+          "example": "default_cluster",
           "member": "string",
           "name": "Cluster",
           "required": true,
@@ -4282,8 +4282,8 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
-          "example": "cdwch-xxxx",
+          "document": "<p>用户名</p>",
+          "example": "test_user",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -4291,7 +4291,7 @@
         },
         {
           "disabled": false,
-          "document": "是否所有数据库表",
+          "document": "<p>是否所有数据库表</p>",
           "example": "false",
           "member": "bool",
           "name": "AllDatabase",
@@ -4300,8 +4300,8 @@
         },
         {
           "disabled": false,
-          "document": "全局权限",
-          "example": "数组",
+          "document": "<p>全局权限</p>",
+          "example": "[\"SELECT\",\"INSERT_ALL\",\"ALTER\"]",
           "member": "string",
           "name": "GlobalPrivileges",
           "required": false,
@@ -4309,8 +4309,8 @@
         },
         {
           "disabled": false,
-          "document": "数据库表权限",
-          "example": "数组",
+          "document": "<p>数据库表权限</p>",
+          "example": "无",
           "member": "DatabasePrivilegeInfo",
           "name": "DatabasePrivilegeList",
           "required": false,

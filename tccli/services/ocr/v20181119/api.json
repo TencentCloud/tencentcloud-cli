@@ -378,6 +378,13 @@
       "output": "QuotaInvoiceOCRResponse",
       "status": "online"
     },
+    "RecognizeAgent": {
+      "document": "支持对输入图的内容进行判断、分类以及总结；支持用户对通用文字识别输出结构进行自定义。",
+      "input": "RecognizeAgentRequest",
+      "name": "通用文字识别Agent",
+      "output": "RecognizeAgentResponse",
+      "status": "online"
+    },
     "RecognizeContainerOCR": {
       "document": "本接口支持集装箱箱门信息识别，识别字段包括集装箱箱号、类型、总重量、有效承重、容量、自身重量，具备集装箱箱号、类型不完整或者不清晰的告警功能。\n默认接口请求频率限制：5次/秒。",
       "input": "RecognizeContainerOCRRequest",
@@ -621,6 +628,13 @@
       "input": "VerifyOfdVatInvoiceOCRRequest",
       "name": "OFD发票识别",
       "output": "VerifyOfdVatInvoiceOCRResponse",
+      "status": "online"
+    },
+    "VerifyScenePhoto": {
+      "document": "提供针对特定场景（如商户门头照、车牌等）图片的PS篡改、AIGC合成、图片质量检测能力，可应用于业务流程中对特定场景图片真实性、有效性校验的场景。",
+      "input": "VerifyScenePhotoRequest",
+      "name": "场景鉴伪（大模型版）",
+      "output": "VerifyScenePhotoResponse",
       "status": "online"
     },
     "VinOCR": {
@@ -3116,6 +3130,52 @@
           "name": "Y",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CoordList": {
+      "document": "坐标数组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>左上角坐标。</p>",
+          "example": "无",
+          "member": "Coord",
+          "name": "TopLeft",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>右上角坐标。</p>",
+          "example": "无",
+          "member": "Coord",
+          "name": "TopRight",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>左下角坐标。</p>",
+          "example": "无",
+          "member": "Coord",
+          "name": "BottomLeft",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>右下角坐标。</p>",
+          "example": "无",
+          "member": "Coord",
+          "name": "BottomRight",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -6124,6 +6184,72 @@
         }
       ],
       "type": "object"
+    },
+    "FieldsInfo": {
+      "document": "用于展示抽取出的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户自定义的提取字段名。</p>",
+          "example": "出生年月日",
+          "member": "string",
+          "name": "KeyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户自定义的提取字段名的提示词。</p>",
+          "example": "如，2026年1月",
+          "member": "string",
+          "name": "KeyPrompt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>出参字段对应的值。</p><p>注意：此字段可能返回 null，表示取不到有效值。</p>",
+          "example": "王臣",
+          "member": "string",
+          "name": "KeyValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>出参类型。</p><p>注：与入参对应同个值。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "KeyType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文本行坐标，以四个顶点坐标表示。</p><p>注：仅当入参EnableCoord不为null时生效，默认是false。</p>",
+          "example": "无",
+          "member": "CoordList",
+          "name": "Polygon",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>嵌套FieldsInfo结构，仅当KeyType=1时有效。</p>",
+          "example": "无",
+          "member": "SubItemGroup",
+          "name": "SubItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "FinanBillInfo": {
       "document": "金融票据整单识别单个字段的内容",
@@ -9681,6 +9807,52 @@
           "member": "ItemInfo",
           "name": "Lines",
           "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListInfo": {
+      "document": "用于展示结构化提取出的结果与输入给模型的提示词和模型的输出",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理任务的完整提示词。注：仅当QueryType=1/2/3时有效，否则返回为null。</p>",
+          "example": "根据图片内容，判断这张图是不是增值税发票？只回答 是 / 否",
+          "member": "string",
+          "name": "QueryInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据QueryType对应任务的返回内容。注：仅当QueryType=1/2/3时有效，其他情况为null。</p>",
+          "example": "均不符合",
+          "member": "string",
+          "name": "Answer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结构化提取结果。注：仅当QueryType=4时有效，否则返回null。</p>",
+          "example": "无",
+          "member": "FieldsInfo",
+          "name": "ExtractFields",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测到的文本信息，包括内容、坐标以及旋转纠正后的坐标等，具体内容请参见 TextDetection。注：仅当QueryType=0时TextDetections不为空，否则返回null。</p>",
+          "example": "无",
+          "member": "TextDetection",
+          "name": "TextDetections",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         }
@@ -14074,6 +14246,116 @@
       ],
       "usage": "out"
     },
+    "RecognizeAgentRequest": {
+      "document": "RecognizeAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片/PDF的 Base64 值。要求图片经Base64编码后不超过 10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需识别的PDF页码。仅支持PDF单页识别，当上传文件为PDF时有效。</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型选择。</p><p>枚举值：</p><ul><li>0： 推理模型。</li><li>1： 识别、推理模型。</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SelectModel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型。</p><p>枚举值：</p><ul><li><p>0： 全文识别。识别且输出全文内容。</p></li><li><p>1： 判断。判断输入图的内容是否为Query中的内容，返回结果为是或否。如Query:&quot;增值税发票&quot;，该任务类型下，将判断输入图是否为增值税发票，返回&quot;是&quot;或&quot;否&quot;。</p></li><li><p>2： 分类。判断输入图属于Query中具体哪个分类项。如Query:[&quot;营业执照&quot;,&quot;合同&quot;,&quot;票据&quot;]，在该任务类型下，将判断输入图是否属于&quot;营业执照&quot;、&quot;合同&quot;、&quot;票据&quot;，返回&quot;营业执照&quot;/&quot;合同&quot;/&quot;票据&quot;或&quot;均不符合&quot;。</p></li><li><p>3： 总结提炼。总结输入图与Query相关的内容。如Query:&quot;工作经历&quot;，在该任务类型下，将输出输入图中和&quot;工作经历&quot;相关的内容，或&quot;无相关内容&quot;。</p></li><li><p>4： 信息提取。按照自定义字段提取Key-Value，且支持多层级提取，详见入参SchemaItems说明。入参可参考下面的接口示例QueryType=4场景</p></li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "QueryType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义提取字段的结构，详见SchemaList结构。仅当QueryType=4时生效。</p><p>注：.N表示数组型参数。</p>",
+          "example": "无",
+          "member": "SchemaList",
+          "name": "SchemaItems",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理任务的提示词。与QueryType搭配使用，具体说明见QueryType描述。1）仅当QueryType=1/2/3时生效，且QueryType=1/3时，长度必须为1；2）QueryType=2，Query长度必须符合2≤x≤5。</p><p>注：.N表示数组型参数。</p>",
+          "example": "[\"增值税专用发票\"]",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要返回坐标。</p><p>默认值：false</p><p>注：仅对QueryType=4时生效，且坐标位置为 Response.ExtractFields.Polygon。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableCoord",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeAgentResponse": {
+      "document": "RecognizeAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回内容。详见ListInfo。</p>",
+          "example": "无",
+          "member": "ListInfo",
+          "name": "Response",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。</p>",
+          "example": "0",
+          "member": "float",
+          "name": "Angle",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RecognizeContainerOCRRequest": {
       "document": "RecognizeContainerOCR请求参数结构体",
       "members": [
@@ -16745,6 +17027,84 @@
       ],
       "usage": "out"
     },
+    "SceneWarnInfo": {
+      "document": "用于风险提示和表示不同场景下的风险程度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否存在该提示</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsWarn",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险程度（0-1）</p>",
+          "example": "0.9999968",
+          "member": "float",
+          "name": "RiskConfidence",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示位置四点坐标，仅部分提示类型支持返回提示位置坐标</p>",
+          "example": "无",
+          "member": "Polygon",
+          "name": "Polygon",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SchemaList": {
+      "document": "描述用户提供的出参结构的模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自定义需提取的字段名称。注：若需提取多个字段，可定义多个KeyName。</p>",
+          "example": "出生年月",
+          "member": "string",
+          "name": "KeyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段类型。</p><p>枚举值：</p><ul><li>0： 表示KeyName为简单字段（如姓名、性别等）。</li><li>1： 表示KeyName为数组对象（如工作经历、教育经历列表）。</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "KeyType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>补充提取字段的描述。</p>",
+          "example": "如，2026年1月",
+          "member": "string",
+          "name": "KeyPrompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>嵌套SchemaList结构，最多支持嵌套三层。注：仅当KeyType=1时生效。</p>",
+          "example": "无",
+          "member": "SchemaList",
+          "name": "SubItems",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "SealInfo": {
       "document": "印章信息",
       "members": [
@@ -17778,6 +18138,22 @@
           "name": "Row",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SubItemGroup": {
+      "document": "用于分层展示抽取出的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>子结构嵌套FieldsInfo结构</p>",
+          "example": "无",
+          "member": "FieldsInfo",
+          "name": "Groups",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -24503,6 +24879,111 @@
           "example": "重庆增值税电子普通发票",
           "member": "string",
           "name": "InvoiceTitle",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyScenePhotoRequest": {
+      "document": "VerifyScenePhoto请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>场景类型参数，如果场景无法细分请选用该大类的第一个子类，目前支持以下类型：<br><strong>经营场所照</strong><br>0101 门头照<br>0102 店内照<br>0103 流动经营照</p>",
+          "example": "0101",
+          "member": "string",
+          "name": "Scene",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片的 Url 地址。要求图片经Base64编码后不超过 10M。</p>",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/RecognizeGeneralCardWarn/RecognizeGeneralCardWarn2.png",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片的 Base64 值。要求图片经Base64编码后不超过 10M。</p>",
+          "example": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUkAAABICAYAAAB7oQe5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAgAElEQVR4nKy9x7NlS3be90uz3fHX1C37vEN3P7SBI5oDiiIRoQHFgaCBQqGQMOJ",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyScenePhotoResponse": {
+      "document": "VerifyScenePhoto返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>区域篡改提示</p>",
+          "example": "无",
+          "member": "SceneWarnInfo",
+          "name": "Tamper",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AIGC合成提示</p>",
+          "example": "无",
+          "member": "SceneWarnInfo",
+          "name": "Synthesis",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>屏幕翻拍提示</p>",
+          "example": "无",
+          "member": "SceneWarnInfo",
+          "name": "RemakeScreen",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图提示</p>",
+          "example": "无",
+          "member": "SceneWarnInfo",
+          "name": "Screenshot",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文字水印提示</p>",
+          "example": "无",
+          "member": "SceneWarnInfo",
+          "name": "TextWatermark",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>水印内容，当未检测到文字水印时不返回，返回多组水印时以 | 分隔。</p>",
+          "example": "仅用于办理商户注册，他用无效。",
+          "member": "string",
+          "name": "WatermarkContent",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

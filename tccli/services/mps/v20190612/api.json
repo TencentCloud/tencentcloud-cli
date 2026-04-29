@@ -22454,12 +22454,84 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>音色类别</p><p>枚举值：</p><ul><li>system： 系统音色</li></ul>",
-          "example": "system",
+          "document": "<p>音色ID</p>",
+          "example": "s1_ffgIs/z6m/4N0fS1/MSotjeSxrtaVMTXMovoBjRATytSYVzhffFMWxq4pnx36Mq75Sh/v6d5smsJaA7z8w==",
+          "member": "string",
+          "name": "VoiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色类别</p><p>枚举值：</p><ul><li>system： 系统音色</li><li>clone： 克隆音色</li><li>design： 设计音色</li><li>all： 所有音色（默认）</li></ul>",
+          "example": "all",
           "member": "string",
           "name": "VoiceType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色名</p>",
+          "example": "新闻女声",
+          "member": "string",
+          "name": "VoiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色描述</p>",
+          "example": "中年男性高管",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>性别</p><p>枚举值：</p><ul><li>male： 男</li><li>female： 女</li><li>unknown： 未知</li></ul>",
+          "example": "female",
+          "member": "string",
+          "name": "Gender",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>年龄</p><p>枚举值：</p><ul><li>child： 儿童</li><li>teenager： 少年</li><li>youth： 青年</li><li>middle_aged： 中年</li><li>senior： 老年</li><li>unknown： 未知</li></ul>",
+          "example": "middle_aged",
+          "member": "string",
+          "name": "Age",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>语言</p>",
+          "example": "[\"zh\"]",
+          "member": "string",
+          "name": "Languages",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "[\"知性\"]",
+          "member": "string",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>场景</p>",
+          "example": "[\"教学\"]",
+          "member": "string",
+          "name": "Scenes",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -22766,6 +22838,15 @@
           "name": "Prompt",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色属性</p>",
+          "example": "无",
+          "member": "VoiceProfile",
+          "name": "VoiceProfile",
+          "required": false,
+          "type": "object"
         },
         {
           "disabled": false,
@@ -43522,12 +43603,30 @@
         },
         {
           "disabled": false,
+          "document": "<p>音色属性</p>",
+          "example": "无",
+          "member": "VoiceProfile",
+          "name": "VoiceProfile",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "<p>输出相关参数</p><p>可以指定输出形式等</p>",
           "example": "无",
           "member": "SyncDubbingOutputOption",
           "name": "Output",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>",
+          "example": "vts-24000191-0",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -47116,6 +47215,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>年龄</p><p>枚举值：</p><ul><li>child： 儿童</li><li>teenager： 少年</li><li>youth： 青年</li><li>middle_aged： 中年</li><li>senior： 老年</li><li>unknown： 未知</li></ul>",
+          "example": "youth",
+          "member": "string",
+          "name": "Age",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>支持语种列表</p><p>如：en</p>",
           "example": "[\"zh\"]",
           "member": "string",
@@ -47151,6 +47261,78 @@
           "disabled": false,
           "document": "<p>推荐场景</p><p>如：教育</p>",
           "example": "[\"教学\"]",
+          "member": "string",
+          "name": "Scenes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VoiceProfile": {
+      "document": "音色属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>音色名</p>",
+          "example": "clone-test",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色描述</p>",
+          "example": "这是一个克隆音色",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>性别</p><p>枚举值：</p><ul><li>male： 男性</li><li>female： 女性</li><li>unknown： 未知</li></ul>",
+          "example": "female",
+          "member": "string",
+          "name": "Gender",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>年龄</p><p>枚举值：</p><ul><li>child： 儿童</li><li>teenager： 少年</li><li>youth： 青年</li><li>middle_aged： 中年</li><li>senior： 老年</li><li>unknown： 未知</li></ul>",
+          "example": "middle_aged",
+          "member": "string",
+          "name": "Age",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "[\"磁性\"]",
+          "member": "string",
+          "name": "Labels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用场景</p>",
+          "example": "[\"解说\"]",
           "member": "string",
           "name": "Scenes",
           "output_required": false,

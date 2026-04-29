@@ -1361,9 +1361,21 @@
     "InvokeAISearchService": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeAISearchService\n\n{\n    \"ProductId\": \"MVTYMD8YCD\",\n    \"DeviceName\": \"dev001\",\n    \"Query\": \"What happened on April 1st\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\",\n        \"Summary\": \"Nine videos captured various scenes on April 1st, showcasing pets eating and playing, a peaceful baby interaction, a resting child, and diligent workers like cleaners and delivery men, all without any safety concerns.\",\n        \"Targets\": [\n            {\n                \"ProductId\": \"MVTYMD8YCD\",\n                \"DeviceName\": \"dev001\",\n                \"StartTimeMs\": 1743456533000,\n                \"EndTimeMs\": 1743456543000,\n                \"EventId\": \"alarm\",\n                \"Summary\": \"Two cats and a dog eating\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeAISearchService\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev20260428a\",\n    \"Query\": \"有人走过\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Summary\": \"共1段视频：雨后路滑，浅色路人正小心行走。安全起见，请防滑慢行哦！\",\n        \"Targets\": [\n            {\n                \"ChannelId\": 0,\n                \"DeviceName\": \"dev20260428a\",\n                \"EndTimeMs\": 1777357077918,\n                \"EventId\": \"_sys_id1_data\",\n                \"Id\": \"019dd2bc-baa9-70ff-acd3-b7e88473c32d_1\",\n                \"ProductId\": \"4AHMY9X89Y\",\n                \"StartTimeMs\": 1777357076918,\n                \"Summary\": \"穿浅色衣物的人在雨后湿滑的路边行走\",\n                \"Thumbnail\": \"/700000975417/4AHMY9X89Y/dev20260428a/events/1777357076.jpg\"\n            }\n        ],\n        \"VideoURL\": \"https://1259367869.vod2.myqcloud.com/timeshift/live/dev20260428a/timeshift.m3u8\",\n        \"RequestId\": \"5485cc1a-5c7a-4d86-98f9-da7bba179f6c\"\n    }\n}",
         "title": "视频语义搜索"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeAISearchService\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev20260428en\",\n    \"Query\": \"person walking\",\n    \"SummaryLang\": \"en-US\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Summary\": \"1 video shows a person walking safely on a wet sidewalk after rain. Stay cautious on slippery paths!\",\n        \"Targets\": [\n            {\n                \"ChannelId\": 0,\n                \"DeviceName\": \"dev20260428en\",\n                \"EndTimeMs\": 1777356974727,\n                \"EventId\": \"\",\n                \"Id\": \"019dd2bb-273c-7a95-bf08-8da22f56f415_1\",\n                \"ProductId\": \"4AHMY9X89Y\",\n                \"StartTimeMs\": 1777356973727,\n                \"Summary\": \"A person in light-colored clothes walking on a wet and slippery roadside after the rain\",\n                \"Thumbnail\": \"/700000975417/4AHMY9X89Y/dev20260428en/events/1777356973.jpg\"\n            }\n        ],\n        \"VideoURL\": \"https://1259367869.vod2.myqcloud.com/timeshift/live/dev20260428en/timeshift.m3u8\",\n        \"RequestId\": \"b91d707d-bb24-40e8-8887-1984a58de77a\"\n    }\n}",
+        "title": "视频语义搜索（英文）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeAISearchService\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev20260426\",\n    \"Query\": \"今天的视频\",\n    \"Order\": \"TIME_ASC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Summary\": \"共2段视频：雨后湿滑路面行人慢行，蓝色货车弯道行驶。雨天路滑，请注意交通安全哦！\",\n        \"Targets\": [\n            {\n                \"ChannelId\": 0,\n                \"DeviceName\": \"dev20260426\",\n                \"EndTimeMs\": 1777212005402,\n                \"EventId\": \"\",\n                \"Id\": \"019dca17-1c33-7650-8294-bb99e524059b_1\",\n                \"ProductId\": \"4AHMY9X89Y\",\n                \"StartTimeMs\": 1777212005402,\n                \"Summary\": \"穿浅色衣物的人在雨后湿滑的路边行走\",\n                \"Thumbnail\": \"/700000975417/4AHMY9X89Y/dev20260426/events/1777212005.jpg\"\n            }\n        ],\n        \"VideoURL\": \"https://1259367869.vod2.myqcloud.com/timeshift/live/dev20260426/timeshift.m3u8\",\n        \"RequestId\": \"6e9d71e1-b778-415d-a276-59de83ecab97\"\n    }\n}",
+        "title": "视频语义搜索（结果按时间升序排序）"
       }
     ],
     "InvokeCloudStorageAIServiceTask": [
@@ -1455,9 +1467,15 @@
     "InvokeVideosKeywordsAnalyzer": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeAISearchService\n\n{\n    \"ProductId\": \"MVTYMD8YCD\",\n    \"DeviceName\": \"dev001\",\n    \"StartTimeMs\": 1750158420000,\n    \"EndTimeMs\": 1750169220000\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\",\n        \"Keywords\": [\n            \"key1\",\n            \"key2\"\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeVideosKeywordsAnalyzer\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev20260426\",\n    \"StartTimeMs\": 1777211099723,\n    \"EndTimeMs\": 1777212099723\n}",
+        "output": "{\n    \"Response\": {\n        \"Keywords\": [\n            \"人在行走\"\n        ],\n        \"RequestId\": \"e099a05d-0dd9-4253-9d68-b0ed6eaf6bb2\"\n    }\n}",
         "title": "获取某个时间段的视频内容关键字"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeVideosKeywordsAnalyzer\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev20260428\",\n    \"StartTimeMs\": 1777305600000,\n    \"EndTimeMs\": 1777391999000,\n    \"KeywordsLang\": \"en-US\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Keywords\": [\n            \"穿浅色衣物的人在行走\"\n        ],\n        \"RequestId\": \"b7509c52-2a5e-44ea-b97d-0e471b77b3f7\"\n    }\n}",
+        "title": "获取某个时间段的视频内容关键字（指定语言）"
       }
     ],
     "ListEventHistory": [

@@ -14649,7 +14649,7 @@
         {
           "disabled": false,
           "document": "自然语言查询",
-          "example": "今天发生了什么?",
+          "example": "有人走过",
           "member": "string",
           "name": "Query",
           "required": true,
@@ -14744,6 +14744,15 @@
           "name": "VectorSearchTopK",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索结果的排序方式，可选值：\n\n- `CORRELATION`：按相关性（默认）\n- `TIME_ASC`：按时间升序\n- `TIME_DESC`：按时间降序",
+          "example": "CORRELATION",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14754,7 +14763,7 @@
         {
           "disabled": false,
           "document": "基于搜索结果的总结",
-          "example": "What happened on April 1st",
+          "example": "共1段视频：雨后路滑，浅色路人正小心行走。安全起见，请防滑慢行哦！",
           "member": "string",
           "name": "Summary",
           "output_required": false,
@@ -15428,12 +15437,21 @@
         },
         {
           "disabled": false,
-          "document": "返回的关键字最大数量，默认为5；最大不能超过10",
+          "document": "返回的关键词的最大数量，默认为5；最大不能超过10",
           "example": "5",
           "member": "uint64",
           "name": "KeywordsMaxNum",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回的关键词的语言类型，支持的类型有：en-US、zh-CN",
+          "example": "zh-CN",
+          "member": "string",
+          "name": "KeywordsLang",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15443,8 +15461,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "基于搜索结果的总结",
-          "example": "What happened on April 1st",
+          "document": "根据视频内容生成的关键词",
+          "example": "[\"人走在路边\"]",
           "member": "string",
           "name": "Keywords",
           "output_required": false,

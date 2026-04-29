@@ -623,6 +623,13 @@
       "output": "DescribeContractDiffTaskWebUrlResponse",
       "status": "online"
     },
+    "DescribeContractReviewChecklist": {
+      "document": "此接口（DescribeContractReviewChecklist）用于获取已有的合同风险审查清单详情。",
+      "input": "DescribeContractReviewChecklistRequest",
+      "name": "获取合同风险审查清单",
+      "output": "DescribeContractReviewChecklistResponse",
+      "status": "online"
+    },
     "DescribeContractReviewChecklistWebUrl": {
       "document": "此接口（DescribeContractReviewChecklistWebUrl）用来创建查看审查要点清单web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。\n\n适用场景：根据合同内容识别出合同的风险信息。审查结果由AI生成，仅供参考。请结合相关法律法规和公司制度要求综合判断。\n\n注意:  `如果文件资源为word类型生成的链接不能进行iframe嵌入，需要在单独窗口打开`",
       "input": "DescribeContractReviewChecklistWebUrlRequest",
@@ -901,6 +908,13 @@
       "input": "GetTaskResultApiRequest",
       "name": "查询转换任务状态",
       "output": "GetTaskResultApiResponse",
+      "status": "online"
+    },
+    "ImportContractReviewChecklist": {
+      "document": "此接口（ImportRiskIdentificationChecklist）用于创建或更新合同审查清单。",
+      "input": "ImportContractReviewChecklistRequest",
+      "name": "导入合同风险审查清单",
+      "output": "ImportContractReviewChecklistResponse",
       "status": "online"
     },
     "ModifyApplicationCallbackInfo": {
@@ -2546,6 +2560,150 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ChecklistCategory": {
+      "document": "合同审查清单大类",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合同风险审查清单分组名称，每个分组下可以包含多个检查点</p>",
+          "example": "主体信息审查",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同风险审查清单检查点列表，每个检查点定义了一个具体的风险项</p>",
+          "example": "无",
+          "member": "ChecklistPoint",
+          "name": "Points",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ChecklistPoint": {
+      "document": "合同审查清单检查点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合同风险审查清单检查点名称</p>",
+          "example": "签约方主体信息完整明确",
+          "member": "string",
+          "name": "Summary",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同风险审查清单检查点详细描述，说明具体风险信息</p>",
+          "example": "审查合同中签约方主体信息是否完善，企业签署方需包括企业名称、统一社会信用代码、法定代表人/经办人的姓名和有效身份证件号。个人签署方需要包括个人姓名和有效身份证件号。",
+          "member": "string",
+          "name": "Explanation",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同风险审查清单检查点对应的风险等级，一般分为 高风险、中风险、一般风险</p>",
+          "example": "中风险",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同风险审查清单检查点ID，创建清单时无需填写</p>",
+          "example": "yD3XCUUckpzdumleUyb9Q4tvHLnQFX0c",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同风险审查清单检查点是否不可缺失，若为true，相关条款未出现在内容中，视作风险</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsIndispensable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同风险审查清单检查点是否要求和参考条款一致</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsConsistentWithReferenceItem",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同风险审查清单检查点参考条款，用于辅助审查</p>",
+          "example": "可以参考的条款",
+          "member": "string",
+          "name": "ReferenceItem",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同风险审查清单检查点固定修改建议，优先级高于AiSuggestion</p>",
+          "example": "固定建议",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同风险审查清单检查点AI修改建议提示，会参考该配置生成对应的修改建议</p>",
+          "example": "AI生成建议",
+          "member": "string",
+          "name": "AiSuggestion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同风险审查清单检查点表现标签，用于自定义不同的风险类型</p>",
+          "example": "[\"身份\"]",
+          "member": "string",
+          "name": "RiskPresentation",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -11955,6 +12113,91 @@
       ],
       "type": "object"
     },
+    "DescribeContractReviewChecklistRequest": {
+      "document": "DescribeContractReviewChecklist请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要获取的合同风险审查清单ID</p>",
+          "example": "yD3XCUUckpzdumlzUyb9Q4tyW8MppCjy",
+          "member": "string",
+          "name": "ChecklistId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContractReviewChecklistResponse": {
+      "document": "DescribeContractReviewChecklist返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>获取的合同风险审查清单ID</p>",
+          "example": "yD3XCUUckpzdumlzUyb9Q4tyW8MppCjy",
+          "member": "string",
+          "name": "ChecklistId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>获取的合同风险审查清单名称</p>",
+          "example": "测试API创建审查清单",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>获取的合同风险审查清单是否启用</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>获取的合同风险审查清单审查点列表</p>",
+          "example": "无",
+          "member": "ChecklistCategory",
+          "name": "Categories",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeContractReviewChecklistWebUrlRequest": {
       "document": "DescribeContractReviewChecklistWebUrl请求参数结构体",
       "members": [
@@ -17835,6 +18078,88 @@
         }
       ],
       "usage": "both"
+    },
+    "ImportContractReviewChecklistRequest": {
+      "document": "ImportContractReviewChecklist请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>导入的合同审查清单名称</p>",
+          "example": "测试API创建审查清单",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>导入的合同审查清单审查点列表</p>",
+          "example": "无",
+          "member": "ChecklistCategory",
+          "name": "Categories",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>如果传值，则更新对应的合同审查清单，否则创建新的合同审查清单</p>",
+          "example": "yD3XCUUckpzdumlzUyb9Q4tyW8MppCjy",
+          "member": "string",
+          "name": "ChecklistID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设置为true则启动清单，否则禁用清单</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportContractReviewChecklistResponse": {
+      "document": "ImportContractReviewChecklist返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>导入成功的合同审查清单ID</p>",
+          "example": "yD3XCUUckpzdumlzUyb9Q4tyW8MppCjy",
+          "member": "string",
+          "name": "ChecklistId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "IntegrateRole": {
       "document": "企业角色数据信息",

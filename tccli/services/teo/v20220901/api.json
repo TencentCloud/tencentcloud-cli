@@ -8192,7 +8192,7 @@
         },
         {
           "disabled": false,
-          "document": "节点缓存清除类型取值为 purge_cache_tag 时附带的信息。",
+          "document": "节点缓存清除类型取值为 purge_cache_tag 时，该参数必填，入参值为域名。",
           "example": "无",
           "member": "CacheTag",
           "name": "CacheTag",
@@ -9340,7 +9340,7 @@
           "example": "123",
           "member": "string",
           "name": "EventId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9350,7 +9350,7 @@
           "example": "ddos攻击",
           "member": "string",
           "name": "AttackType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9360,27 +9360,27 @@
           "example": "1",
           "member": "int64",
           "name": "AttackStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "攻击最大带宽。",
+          "document": "攻击最大带宽，单位为 bps。",
           "example": "4930",
           "member": "int64",
           "name": "AttackMaxBandWidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "攻击包速率峰值。",
+          "document": "攻击包速率峰值，单位为 pps。",
           "example": "4930",
           "member": "int64",
           "name": "AttackPacketMaxRate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9390,7 +9390,7 @@
           "example": "4930",
           "member": "int64",
           "name": "AttackStartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9400,7 +9400,7 @@
           "example": "4930",
           "member": "int64",
           "name": "AttackEndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9410,7 +9410,7 @@
           "example": "4930",
           "member": "int64",
           "name": "PolicyId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9420,7 +9420,7 @@
           "example": "\"zone-xx\"",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9430,7 +9430,7 @@
           "example": "mainland",
           "member": "string",
           "name": "Area",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9440,7 +9440,7 @@
           "example": "无",
           "member": "DDoSBlockData",
           "name": "DDoSBlockData",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

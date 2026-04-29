@@ -9195,7 +9195,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体类型，可选值请参考 [上传能力综述](/document/product/266/9760#.E6.96.87.E4.BB.B6.E7.B1.BB.E5.9E.8B)。",
+          "document": "<p>媒体类型，可选值请参考 <a href=\"/document/product/266/9760#.E6.96.87.E4.BB.B6.E7.B1.BB.E5.9E.8B\">上传能力综述</a>。</p>",
           "example": "mp4",
           "member": "string",
           "name": "MediaType",
@@ -9204,7 +9204,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "123456",
           "member": "uint64",
           "name": "SubAppId",
@@ -9213,7 +9213,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体名称。",
+          "document": "<p>媒体名称。</p>",
           "example": "vod.mp4",
           "member": "string",
           "name": "MediaName",
@@ -9222,7 +9222,7 @@
         },
         {
           "disabled": false,
-          "document": "封面类型，可选值请参考 [上传能力综述](/document/product/266/9760#.E6.96.87.E4.BB.B6.E7.B1.BB.E5.9E.8B)。",
+          "document": "<p>封面类型，可选值请参考 <a href=\"/document/product/266/9760#.E6.96.87.E4.BB.B6.E7.B1.BB.E5.9E.8B\">上传能力综述</a>。</p>",
           "example": "jpg",
           "member": "string",
           "name": "CoverType",
@@ -9231,7 +9231,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体后续任务处理操作，即完成媒体上传后，可自动发起任务流操作。参数值为任务流模板名，云点播支持 [创建任务流模板](/document/product/266/33819) 并为模板命名。",
+          "document": "<p>媒体后续任务处理操作，即完成媒体上传后，可自动发起任务流操作。参数值为任务流模板名，云点播支持 <a href=\"/document/product/266/33819\">创建任务流模板</a> 并为模板命名。</p>",
           "example": "LongVideoPreset",
           "member": "string",
           "name": "Procedure",
@@ -9240,7 +9240,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "document": "<p>媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 <a href=\"/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F\">ISO 日期格式说明</a>。</p>",
           "example": "2024-01-01T18:00:00Z",
           "member": "datetime_iso",
           "name": "ExpireTime",
@@ -9249,7 +9249,7 @@
         },
         {
           "disabled": false,
-          "document": "指定上传园区，仅适用于对上传地域有特殊需求的用户。",
+          "document": "<p>指定上传园区，仅适用于对上传地域有特殊需求的用户。</p>",
           "example": "ap-chongqing",
           "member": "string",
           "name": "StorageRegion",
@@ -9258,7 +9258,7 @@
         },
         {
           "disabled": false,
-          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>",
+          "document": "<p>分类ID，用于对媒体进行分类管理，可通过 <a href=\"/document/product/266/7812\">创建分类</a> 接口，创建分类，获得分类 ID。</p><li>默认值：0，表示其他分类。</li>",
           "example": "0",
           "member": "int64",
           "name": "ClassId",
@@ -9267,7 +9267,7 @@
         },
         {
           "disabled": false,
-          "document": "来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。",
+          "document": "<p>来源上下文，用于透传用户请求信息，<a href=\"/document/product/266/7830\">上传完成回调</a> 将返回该字段值，最长 250 个字符。</p>",
           "example": "custom information for NewFileUpload",
           "member": "string",
           "name": "SourceContext",
@@ -9276,7 +9276,7 @@
         },
         {
           "disabled": false,
-          "document": "会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。",
+          "document": "<p>会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，<a href=\"/document/product/266/9636\">任务流状态变更回调</a> 将返回该字段值，最长 1000 个字符。</p>",
           "example": "custom information for ProcedureStateChanged",
           "member": "string",
           "name": "SessionContext",
@@ -9285,7 +9285,7 @@
         },
         {
           "disabled": false,
-          "document": "保留字段，特殊用途时使用。",
+          "document": "<p>保留字段，特殊用途时使用。</p>",
           "example": "custom information for ExtInfo",
           "member": "string",
           "name": "ExtInfo",
@@ -9294,7 +9294,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体存储路径，以/开头。\n只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以指定存储路径。",
+          "document": "<p>媒体存储路径，以/开头。<br>只有<a href=\"https://cloud.tencent.com/document/product/266/126825\">FileID + Path 模式</a>的子应用可以指定存储路径。</p>",
           "example": "/dir1/video.mp4",
           "member": "string",
           "name": "MediaStoragePath",
@@ -9309,7 +9309,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "存储桶，用于上传接口 URL 的 bucket_name。",
+          "document": "<p>存储桶，用于上传接口 URL 的 bucket_name。</p>",
           "example": "xadacq111211-100922",
           "member": "string",
           "name": "StorageBucket",
@@ -9319,7 +9319,7 @@
         },
         {
           "disabled": false,
-          "document": "存储园区，用于上传接口 Host 的 Region。",
+          "document": "<p>存储园区，用于上传接口 Host 的 Region。</p>",
           "example": "ap-chongqing",
           "member": "string",
           "name": "StorageRegion",
@@ -9329,7 +9329,7 @@
         },
         {
           "disabled": false,
-          "document": "点播会话，用于确认上传接口的参数 VodSessionKey。",
+          "document": "<p>点播会话，用于确认上传接口的参数 VodSessionKey。</p>",
           "example": "VodSessionKey",
           "member": "string",
           "name": "VodSessionKey",
@@ -9339,7 +9339,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体存储路径，用于上传接口存储媒体的对象键（Key）。",
+          "document": "<p>媒体存储路径，用于上传接口存储媒体的对象键（Key）。</p>",
           "example": "/dir/name.xx",
           "member": "string",
           "name": "MediaStoragePath",
@@ -9349,7 +9349,7 @@
         },
         {
           "disabled": false,
-          "document": "封面存储路径，用于上传接口存储封面的对象键（Key）。",
+          "document": "<p>封面存储路径，用于上传接口存储封面的对象键（Key）。</p>",
           "example": "/dir/cover.xx",
           "member": "string",
           "name": "CoverStoragePath",
@@ -9359,7 +9359,7 @@
         },
         {
           "disabled": false,
-          "document": "临时凭证，用于上传接口的权限验证。",
+          "document": "<p>临时凭证，用于上传接口的权限验证。</p>",
           "example": "无",
           "member": "TempCertificate",
           "name": "TempCertificate",
@@ -10682,7 +10682,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "点播会话，取申请上传接口的返回值 VodSessionKey。",
+          "document": "<p>点播会话，取申请上传接口的返回值 VodSessionKey。</p>",
           "example": "3KEGq9DWHl1xF819mM4jVFkGn5WON80NwN/rTrx56UoEFApIV9DQ7t5m1g4...",
           "member": "string",
           "name": "VodSessionKey",
@@ -10691,7 +10691,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -10706,7 +10706,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体文件的唯一标识。",
+          "document": "<p>媒体文件的唯一标识。</p>",
           "example": "24820810452266399",
           "member": "string",
           "name": "FileId",
@@ -10716,7 +10716,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体播放地址。",
+          "document": "<p>媒体播放地址。</p>",
           "example": "http://example.com/6c0f1c00vodgzp251000333/dee2125c24820810452266399/f0.mp4",
           "member": "string",
           "name": "MediaUrl",
@@ -10726,7 +10726,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体封面地址。",
+          "document": "<p>媒体封面地址。</p>",
           "example": "http://example.com/6c0f1c00vodgzp251000333/dee2125c24820810452266399/24820810452266400.jpg",
           "member": "string",
           "name": "CoverUrl",

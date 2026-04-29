@@ -1666,6 +1666,14 @@
         "title": "获取合同对比结果web页面"
       }
     ],
+    "DescribeContractReviewChecklist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContractReviewChecklist\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\"\n    },\n    \"ChecklistId\": \"yD3XCUUckpzdumlzUyb9Q4tyW8MppCjy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Categories\": [\n            {\n                \"Name\": \"主体信息审查\",\n                \"Points\": [\n                    {\n                        \"AiSuggestion\": \"AI生成建议\",\n                        \"Explanation\": \"审查合同中签约方主体信息是否完善，企业签署方需包括企业名称、统一社会信用代码、法定代表人/经办人的姓名和有效身份证件号。个人签署方需要包括个人姓名和有效身份证件号。\",\n                        \"Id\": \"yD3XCUUckpzdumleUyb9Q4tvHLnQFX0c\",\n                        \"IsConsistentWithReferenceItem\": false,\n                        \"IsIndispensable\": false,\n                        \"ReferenceItem\": \"可以参考的条款\",\n                        \"RiskLevel\": \"高风险\",\n                        \"RiskPresentation\": [\n                            \"身份\"\n                        ],\n                        \"Suggestion\": \"固定建议\",\n                        \"Summary\": \"签约方主体信息完整明确\"\n                    }\n                ]\n            }\n        ],\n        \"ChecklistId\": \"yD3XCUUckpzdumlzUyb9Q4tyW8MppCjy\",\n        \"Enabled\": true,\n        \"Name\": \"测试API创建审查清单\",\n        \"RequestId\": \"cdfa675b-509a-4337-82e9-4ed9482f4498\"\n    }\n}",
+        "title": "常规获取合同审查清单"
+      }
+    ],
     "DescribeContractReviewChecklistWebUrl": [
       {
         "document": "",
@@ -2158,6 +2166,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTaskResultApi\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxoQxxxxxxxxxxxxxxxxxx1h2hnnR\"\n    },\n    \"TaskId\": \"2022xxxxxxxxxx992850\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2255xxxxx76-6192fc301053\",\n        \"ResourceId\": \"yDRtsUxxxxxjEyx4jZM3A7\",\n        \"TaskId\": \"2022072xxxx992850\",\n        \"TaskMessage\": \"任务处理完成\",\n        \"TaskStatus\": 8\n    }\n}",
         "title": "通过转换任务Id查询任务状态"
+      }
+    ],
+    "ImportContractReviewChecklist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportContractReviewChecklist\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\"\n    },\n    \"Name\": \"测试API创建审查清单\",\n    \"Categories\": [\n        {\n            \"Name\": \"主体信息审查\",\n            \"Points\": [\n                {\n                    \"Summary\": \"签约方主体信息完整明确\",\n                    \"Explanation\": \"审查合同中签约方主体信息是否完善，企业签署方需包括企业名称、统一社会信用代码、法定代表人/经办人的姓名和有效身份证件号。个人签署方需要包括个人姓名和有效身份证件号。\",\n                    \"RiskLevel\": \"高风险\",\n                    \"IsIndispensable\": false,\n                    \"IsConsistentWithReferenceItem\": false,\n                    \"ReferenceItem\": \"可以参考的条款\",\n                    \"Suggestion\": \"固定建议\",\n                    \"AiSuggestion\": \"AI生成建议\",\n                    \"RiskPresentation\": [\n                        \"身份\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"ChecklistID\": \"yD3XCUUckpzdumlzUyb9Q4tyW8MppCjy\",\n    \"Enabled\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"ChecklistId\": \"yD3XCUUckpzdumlzUyb9Q4tyW8MppCjy\",\n        \"RequestId\": \"224836f8-22d1-4255-9077-c38f8e314153\"\n    }\n}",
+        "title": "常规导入合同风险审查清单"
       }
     ],
     "ModifyApplicationCallbackInfo": [
