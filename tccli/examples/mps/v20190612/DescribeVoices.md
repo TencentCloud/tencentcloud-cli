@@ -37,7 +37,7 @@ Output:
 }
 ```
 
-**Example 2: 根据标签查询音色**
+**Example 2: 查询克隆音色**
 
 
 
@@ -45,10 +45,7 @@ Input:
 
 ```
 tccli mps DescribeVoices --cli-unfold-argument  \
-    --VoiceType system \
-    --ExtParam {
-    "labels": ["温柔"]
-}
+    --VoiceType clone
 ```
 
 Output: 
@@ -59,24 +56,57 @@ Output:
         "Msg": "success",
         "Voices": [
             {
-                "AudioUrl": "https://ie-mps-1258344699.cos.ap-nanjing.myqcloud.com/common/lauriehuang/dubbing/voice/samples/s1_wXuUdY32P.wav",
+                "Age": "youth",
+                "Category": "clone",
+                "Description": "克隆测试",
+                "Gender": "male",
+                "Name": "未命名",
+                "VoiceId": "v1_+38rmmZflaNfzl9AMwUugfRJkBskigFnqJbzgo+k4HM/n8hw92Tgi4PsdUEtShj/DdM="
+            }
+        ],
+        "RequestId": "f4d95f98-d817-4f9c-badb-753edf459d25"
+    }
+}
+```
+
+**Example 3: 根据标签查询音色**
+
+
+
+Input: 
+
+```
+tccli mps DescribeVoices --cli-unfold-argument  \
+    --Labels 知性
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ErrorCode": 0,
+        "Msg": "success",
+        "Voices": [
+            {
+                "Age": "middle_aged",
+                "AudioUrl": "https://ie-mps-1258344699.cos.ap-nanjing.myqcloud.com/common/lauriehuang/dubbing/voice/samples/s1_6jogxFovm.wav",
                 "Category": "system",
-                "Description": "一位温和善良的中年大婶声音，标准普通话，温暖而体贴。",
+                "Description": "一位专业、播音腔的中年女性新闻主播，标准普通话。",
                 "Gender": "female",
                 "Labels": [
-                    "温柔"
+                    "知性"
                 ],
                 "Languages": [
                     "zh"
                 ],
-                "Name": "热心大婶",
+                "Name": "新闻女声",
                 "Scenes": [
-                    "通用"
+                    "解说"
                 ],
-                "VoiceId": "s1_wXuUdY32PfFMzV4mcz9qoIK9c4lKMWCzs+bdPaQ4//v+GnH0M9P4lXtue27Z3tCMtNOCYSnffKMmj3Y1gQ=="
+                "VoiceId": "s1_6jogxFovmuGaSPZKIG8rCm8bhAN8bOQhfsy/BCpaCz3SIK8Z+FrmhzH/I4xg2cX1OGy+g/yK"
             }
         ],
-        "RequestId": "1941cce3-628c-4201-93ec-5463750181ff"
+        "RequestId": "7e2cf256-3631-4433-bb56-c14b6c35f28d"
     }
 }
 ```

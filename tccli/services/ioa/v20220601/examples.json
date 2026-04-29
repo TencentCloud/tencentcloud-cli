@@ -2468,6 +2468,30 @@
         "title": "查询资源分组"
       }
     ],
+    "DescribeResourceGrantedAccountGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGrantedAccountGroups\n<公共请求参数>\n\n{\n    \"ResourceId\": 2,\n    \"ResourceType\": 2,\n    \"Condition\": {\n        \"PageSize\": 100000,\n        \"PageNum\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AccountCount\": 3,\n                    \"AccountGroupId\": 96,\n                    \"ExpireTime\": 0,\n                    \"IdPathArray\": [\n                        2\n                    ],\n                    \"Name\": \"旧版-自建-勿删\",\n                    \"NamePathArray\": [\n                        \"全网账户\"\n                    ],\n                    \"RelationId\": 12\n                }\n            ],\n            \"Page\": {\n                \"PageCount\": 1,\n                \"PageNum\": 1,\n                \"PageSize\": 10000,\n                \"Total\": 2\n            }\n        },\n        \"RequestId\": \"41dc529a-e6d1-434c-9e30-9de07a42097e\"\n    }\n}",
+        "title": "查询授权的账号分组"
+      }
+    ],
+    "DescribeResourceGrantedAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGrantedAccounts\n<公共请求参数>\n\n{\n    \"ResourceId\": 7,\n    \"ResourceType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AccountId\": 5101,\n                    \"ExpireTime\": 1,\n                    \"GroupId\": 2571,\n                    \"GroupIdPathArray\": [\n                        2\n                    ],\n                    \"GroupNamePathArray\": [\n                        \"全网账户\"\n                    ],\n                    \"MenuId\": 2571,\n                    \"RelationId\": 23,\n                    \"UserId\": \"lshawn\",\n                    \"UserName\": \"lshawn\"\n                }\n            ],\n            \"Page\": {\n                \"PageCount\": 1,\n                \"PageNum\": 1,\n                \"PageSize\": 1000,\n                \"Total\": 1\n            }\n        },\n        \"RequestId\": \"16fb06f0-6619-4594-b5bd-1f330be83a37\"\n    }\n}",
+        "title": "查询直接授权的账号"
+      }
+    ],
+    "DescribeResourceGrantedVirtualGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGrantedVirtualGroups\n<公共请求参数>\n\n{\n    \"ResourceId\": 7,\n    \"ResourceType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AccountCount\": 0,\n                    \"Description\": \"\",\n                    \"ExpireTime\": 0,\n                    \"MenuID\": 1099,\n                    \"Name\": \"正编\",\n                    \"RelationId\": 27,\n                    \"VirtualGroupId\": 126\n                }\n            ],\n            \"Page\": {\n                \"PageCount\": 1,\n                \"PageNum\": 1,\n                \"PageSize\": 1000,\n                \"Total\": 2\n            }\n        },\n        \"RequestId\": \"cde84834-df28-4aac-9251-9f1941a730c5\"\n    }\n}",
+        "title": "查询授权的自定义分组"
+      }
+    ],
     "DescribeResourceModules": [
       {
         "document": "",
@@ -3070,6 +3094,30 @@
         "title": "示例2"
       }
     ],
+    "GrantResourcesByAccountGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GrantResourcesByAccountGroups\n<公共请求参数>\n\n{\n    \"Operations\": [\n        {\n            \"OperationType\": 1,\n            \"ResourceId\": 1,\n            \"ResourceType\": 2,\n            \"ExpireTime\": 1,\n            \"AccountGroupId\": 2571\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SuccessCount\": 1,\n            \"SuccessOperations\": [\n                {\n                    \"AccountGroupId\": 2571,\n                    \"ExpireTime\": 1,\n                    \"OperationType\": 1,\n                    \"ResourceId\": 1,\n                    \"ResourceType\": 2\n                }\n            ]\n        },\n        \"RequestId\": \"c392af65-c12c-4fd0-b97e-1138dffbbbfd\"\n    }\n}",
+        "title": "给资源授权某个分组"
+      }
+    ],
+    "GrantResourcesByAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GrantResourcesByAccounts\n<公共请求参数>\n\n{\n    \"Operations\": [\n        {\n            \"OperationType\": 1,\n            \"ResourceId\": 7,\n            \"ResourceType\": 1,\n            \"ExpireTime\": 1,\n            \"AccountUserId\": \"lshawn\",\n            \"MenuId\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SuccessCount\": 1,\n            \"SuccessOperations\": [\n                {\n                    \"AccountUserId\": \"lshawn\",\n                    \"ExpireTime\": 1,\n                    \"MenuId\": 0,\n                    \"OperationType\": 1,\n                    \"ResourceId\": 7,\n                    \"ResourceType\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"72c8b455-b4ac-4604-bd73-844a9c70ba2e\"\n    }\n}",
+        "title": "给特殊的资源授权给某个账号"
+      }
+    ],
+    "GrantResourcesByVirtualGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GrantResourcesByVirtualGroups\n<公共请求参数>\n\n{\n    \"Operations\": [\n        {\n            \"OperationType\": 1,\n            \"ResourceId\": 7,\n            \"ResourceType\": 1,\n            \"ExpireTime\": 0,\n            \"VirtualAccountGroupId\": 544\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SuccessCount\": 1,\n            \"SuccessOperations\": [\n                {\n                    \"ExpireTime\": 0,\n                    \"OperationType\": 1,\n                    \"ResourceId\": 7,\n                    \"ResourceType\": 1,\n                    \"VirtualAccountGroupId\": 544\n                }\n            ]\n        },\n        \"RequestId\": \"16979b9c-08f5-48bf-95e5-ac143dacb3ae\"\n    }\n}",
+        "title": "增加授权"
+      }
+    ],
     "ImportBusinessResources": [
       {
         "document": "确认资源无误导入资源",
@@ -3406,6 +3454,14 @@
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceGroup\n<公共请求参数>\n\n{\n    \"DomainInstanceId\": \"1\",\n    \"Id\": 299589,\n    \"Name\": \"测试名称-修改\",\n    \"Description\": \"1\",\n    \"ParentId\": 101020,\n    \"Locked\": 0,\n    \"OsType\": 2,\n    \"DivideRules\": {\n        \"SimpleRules\": [\n            {\n                \"Expressions\": [\n                    {\n                        \"Items\": [\n                            {\n                                \"Key\": \"name\",\n                                \"Operate\": \"等于\",\n                                \"Values\": [\n                                    \"111111111111\",\n                                    \"222222222mac\"\n                                ]\n                            }\n                        ],\n                        \"Relation\": \"或者\"\n                    }\n                ],\n                \"Relation\": \"或者\"\n            }\n        ]\n    },\n    \"Priority\": 30\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"02240971-4244-4750-acec-2250360aade8\"\n    }\n}",
         "title": "有分组规则的示例"
+      }
+    ],
+    "ModifyDeviceTrustStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceTrustStatus\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"DeviceIDList\": [\n        \"9AD917AB73CBEC5FEF0B1877414C0208693683FA\"\n    ],\n    \"BlackStatusDeadline\": 1000000,\n    \"UpdateFlags\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e5c06a80-7e52-4fb7-81e6-3dbbbfde98f7\"\n    }\n}",
+        "title": "将设备禁用NGN访问"
       }
     ],
     "ModifyDeviceVirtualGroup": [

@@ -1939,6 +1939,27 @@
       "output": "DescribeResourceAreasResponse",
       "status": "online"
     },
+    "DescribeResourceGrantedAccountGroups": {
+      "document": "列表账户组直接关联的资源，私有化调用path为：capi/NGN/DescribeResourceGrantedAccounts",
+      "input": "DescribeResourceGrantedAccountGroupsRequest",
+      "name": "DescribeResourceGrantedAccountGroups",
+      "output": "DescribeResourceGrantedAccountGroupsResponse",
+      "status": "online"
+    },
+    "DescribeResourceGrantedAccounts": {
+      "document": "列表账户组直接关联的资源，私有化调用path为：capi/NGN/DescribeResourceGrantedAccounts",
+      "input": "DescribeResourceGrantedAccountsRequest",
+      "name": "DescribeResourceGrantedAccounts",
+      "output": "DescribeResourceGrantedAccountsResponse",
+      "status": "online"
+    },
+    "DescribeResourceGrantedVirtualGroups": {
+      "document": "列表账户组直接关联的资源，私有化调用path为：capi/NGN/DescribeResourceGrantedVirtualGroups",
+      "input": "DescribeResourceGrantedVirtualGroupsRequest",
+      "name": "DescribeResourceGrantedVirtualGroups",
+      "output": "DescribeResourceGrantedVirtualGroupsResponse",
+      "status": "online"
+    },
     "DescribeResourceModules": {
       "document": "获取资源模块列表数据支持分页，资源模块名称模糊搜索",
       "input": "DescribeResourceModulesRequest",
@@ -2366,6 +2387,27 @@
       "output": "GivenLicenseResponse",
       "status": "online"
     },
+    "GrantResourcesByAccountGroups": {
+      "document": "添加资源授权到账号组",
+      "input": "GrantResourcesByAccountGroupsRequest",
+      "name": "按照账户分组组授权资源",
+      "output": "GrantResourcesByAccountGroupsResponse",
+      "status": "online"
+    },
+    "GrantResourcesByAccounts": {
+      "document": "添加资源授权到账号组",
+      "input": "GrantResourcesByAccountsRequest",
+      "name": "按照账号授权资源访问",
+      "output": "GrantResourcesByAccountsResponse",
+      "status": "online"
+    },
+    "GrantResourcesByVirtualGroups": {
+      "document": "添加资源授权到账号组",
+      "input": "GrantResourcesByVirtualGroupsRequest",
+      "name": "按照虚拟分组授权资源访问",
+      "output": "GrantResourcesByVirtualGroupsResponse",
+      "status": "online"
+    },
     "ImportBusinessResources": {
       "document": "批量导入隧道资源，私有化调用path为：capi/GatewayResource/ImportBusinessResources",
       "input": "ImportBusinessResourcesRequest",
@@ -2644,6 +2686,13 @@
       "input": "ModifyDeviceGroupRequest",
       "name": "修改终端分组",
       "output": "ModifyDeviceGroupResponse",
+      "status": "online"
+    },
+    "ModifyDeviceTrustStatus": {
+      "document": "给接入设备加黑加白,私有化调用path为：capi/NGN/ModifyDeviceTrustStatus",
+      "input": "ModifyDeviceTrustStatusRequest",
+      "name": "给接入设备批量加黑加白",
+      "output": "ModifyDeviceTrustStatusResponse",
       "status": "online"
     },
     "ModifyDeviceVirtualGroup": {
@@ -27022,6 +27071,259 @@
       ],
       "usage": "out"
     },
+    "DescribeResourceGrantedAccountGroupsData": {
+      "document": "DescribeResourceGrantedAccountsData",
+      "members": [
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "GrantedAccountGroupItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "Paging",
+          "name": "Page",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeResourceGrantedAccountGroupsRequest": {
+      "document": "DescribeResourceGrantedAccountGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源或资源组Id;",
+          "example": "2",
+          "member": "uint64",
+          "name": "ResourceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "1:资源 2:资源组;",
+          "example": "2",
+          "member": "uint64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "Condition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGrantedAccountGroupsResponse": {
+      "document": "DescribeResourceGrantedAccountGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询的数据集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeResourceGrantedAccountGroupsData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGrantedAccountsData": {
+      "document": "DescribeResourceGrantedAccountsData",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "GrantedAccountItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "Paging",
+          "name": "Page",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeResourceGrantedAccountsRequest": {
+      "document": "DescribeResourceGrantedAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账户组Id(只支持32位)",
+          "example": "7",
+          "member": "uint64",
+          "name": "ResourceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "1:资源 2:资源组;",
+          "example": "1",
+          "member": "uint64",
+          "name": "ResourceType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "Condition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGrantedAccountsResponse": {
+      "document": "DescribeResourceGrantedAccounts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询的数据集合",
+          "example": "无",
+          "member": "DescribeResourceGrantedAccountsData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGrantedVirtualGroupsData": {
+      "document": "DescribeResourceGrantedAccountsData",
+      "members": [
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "GrantedVirtualGroupItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "Paging",
+          "name": "Page",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeResourceGrantedVirtualGroupsRequest": {
+      "document": "DescribeResourceGrantedVirtualGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "7",
+          "member": "uint64",
+          "name": "ResourceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "ResourceType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "Condition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGrantedVirtualGroupsResponse": {
+      "document": "DescribeResourceGrantedVirtualGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询的数据集合",
+          "example": "无",
+          "member": "DescribeResourceGrantedVirtualGroupsData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResourceModulesData": {
       "document": "返回资源模块数据集合，没有数据返回一个空的集合",
       "members": [
@@ -35947,6 +36249,666 @@
       ],
       "type": "object"
     },
+    "GrantResourceOperationByAccountGroups": {
+      "document": "授权操作",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作类型: 1-增加授权 2-删除授权;",
+          "example": "1",
+          "member": "uint64",
+          "name": "OperationType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源或资源组Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源类型 ,1:资源 2:资源组",
+          "example": "2",
+          "member": "uint64",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间,时间戳(秒)",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组id",
+          "example": "2571",
+          "member": "uint64",
+          "name": "AccountGroupId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GrantResourceOperationByAccounts": {
+      "document": "授权操作",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作类型: 1-增加授权 2-删除授权;",
+          "example": "1",
+          "member": "uint64",
+          "name": "OperationType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源或资源组Id",
+          "example": "7",
+          "member": "uint64",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源类型 ,1:资源 2:资源组",
+          "example": "1",
+          "member": "uint64",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间,时间戳(秒)",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号userid",
+          "example": "lshawn",
+          "member": "string",
+          "name": "AccountUserId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号目录ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "MenuId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GrantResourceOperationByVirtualGroups": {
+      "document": "授权操作",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作类型: 1-增加授权 2-删除授权;",
+          "example": "1",
+          "member": "uint64",
+          "name": "OperationType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源或资源组Id",
+          "example": "7",
+          "member": "uint64",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源类型 ,1:资源 2:资源组",
+          "example": "1",
+          "member": "uint64",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间,时间戳(秒)",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组id",
+          "example": "544",
+          "member": "uint64",
+          "name": "VirtualAccountGroupId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GrantResourcesByAccountGroupsData": {
+      "document": "账号授权返回内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成功更新数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuccessCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "GrantResourceOperationByAccountGroups",
+          "name": "SuccessOperations",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GrantResourcesByAccountGroupsRequest": {
+      "document": "GrantResourcesByAccountGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "GrantResourceOperationByAccountGroups",
+          "name": "Operations",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GrantResourcesByAccountGroupsResponse": {
+      "document": "GrantResourcesByAccountGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "GrantResourcesByAccountGroupsData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GrantResourcesByAccountsData": {
+      "document": "账号授权返回内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成功更新数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuccessCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "GrantResourceOperationByAccounts",
+          "name": "SuccessOperations",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GrantResourcesByAccountsRequest": {
+      "document": "GrantResourcesByAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "GrantResourceOperationByAccounts",
+          "name": "Operations",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GrantResourcesByAccountsResponse": {
+      "document": "GrantResourcesByAccounts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "GrantResourcesByAccountsData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GrantResourcesByVirtualGroupsData": {
+      "document": "账号授权返回内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成功更新数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuccessCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "GrantResourceOperationByVirtualGroups",
+          "name": "SuccessOperations",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GrantResourcesByVirtualGroupsRequest": {
+      "document": "GrantResourcesByVirtualGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "GrantResourceOperationByVirtualGroups",
+          "name": "Operations",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GrantResourcesByVirtualGroupsResponse": {
+      "document": "GrantResourcesByVirtualGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": " ",
+          "example": "无",
+          "member": "GrantResourcesByVirtualGroupsData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GrantedAccountGroupItem": {
+      "document": "GrantedAccountItem",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账户组Id",
+          "example": "96",
+          "member": "uint64",
+          "name": "AccountGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组名称",
+          "example": "旧******删",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属分组Id",
+          "example": "[2]",
+          "member": "uint64",
+          "name": "IdPathArray",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属分组NamePathArray",
+          "example": "[\"全网账*\"]",
+          "member": "string",
+          "name": "NamePathArray",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目录id",
+          "example": "3",
+          "member": "uint64",
+          "name": "AccountCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联id",
+          "example": "12",
+          "member": "uint64",
+          "name": "RelationId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GrantedAccountItem": {
+      "document": "GrantedAccountItem",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账户Id",
+          "example": "5101",
+          "member": "uint64",
+          "name": "AccountId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户UserId",
+          "example": "l***wn",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名称",
+          "example": "l**awn",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属分组Id",
+          "example": "2571",
+          "member": "uint64",
+          "name": "GroupId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组路劲GroupIdPathArray",
+          "example": "[2]",
+          "member": "uint64",
+          "name": "GroupIdPathArray",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属分组NamePathArray",
+          "example": "[\"全网账户\"]",
+          "member": "string",
+          "name": "GroupNamePathArray",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目录id",
+          "example": "2571",
+          "member": "uint64",
+          "name": "MenuId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联id",
+          "example": "23",
+          "member": "uint64",
+          "name": "RelationId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GrantedVirtualGroupItem": {
+      "document": "GrantedAccountItem",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账户组Id",
+          "example": "544",
+          "member": "uint64",
+          "name": "VirtualGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组名称",
+          "example": "vpn****",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "虚拟分组所在的目录ID",
+          "example": "1495",
+          "member": "uint64",
+          "name": "MenuID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述信息",
+          "example": "1*",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目录id",
+          "example": "2",
+          "member": "uint64",
+          "name": "AccountCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联id",
+          "example": "47",
+          "member": "uint64",
+          "name": "RelationId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GroupItem": {
       "document": "设备组数组",
       "members": [
@@ -39504,6 +40466,69 @@
     },
     "ModifyDeviceGroupResponse": {
       "document": "ModifyDeviceGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceTrustStatusRequest": {
+      "document": "ModifyDeviceTrustStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>设备状态，1表示拉黑，0表示加白</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备MID列表</p>",
+          "example": "[\"9AD917AB73CBEC5FEF0B1877414C0208693683FA\"]",
+          "member": "string",
+          "name": "DeviceIDList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备拉黑有效期，UnixTime, 单位是 ms,0表示永久有效，默认值是0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "BlackStatusDeadline",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>DescribeAccuserList返回的Id 列表</p>",
+          "example": "[8]",
+          "member": "int64",
+          "name": "IdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认值：0，根据id更新，1根据DeviceIDList</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "UpdateFlags",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceTrustStatusResponse": {
+      "document": "ModifyDeviceTrustStatus返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -4000,7 +4000,7 @@
   },
   "metadata": {
     "apiVersion": "2025-10-10",
-    "api_brief": "欢迎使用数据开发治理平台 WeData。\n数据开发治理平台 WeData（以下简称 WeData） 是腾讯云推出的一站式数据开发治理平台，融合了包含数据集成 DataInLong、数据开发 DataStudio 的全链路 DataOps 数据开发能力，以及数据地图、数据质量、数据安全等一系列数据开发与治理能力，帮助企业在数据构建和应用的过程中实现降本增效，数据价值最大化。\nWeData将自身基础的能力以API的方式对外开放，方便企业进行定制开发或企业内部系统进行对接打通，详情请参考API概览。\n\n",
+    "api_brief": "欢迎使用数据开发治理平台 WeData。\n数据开发治理平台 WeData（以下简称 WeData） 是腾讯云推出的一站式数据开发治理平台，融合了包含数据集成 DataInLong、数据开发 DataStudio 的全链路 DataOps 数据开发能力，以及数据地图、数据质量、数据安全等一系列数据开发与治理能力，帮助企业在数据构建和应用的过程中实现降本增效，数据价值最大化。\nWeData将自身基础的能力以API的方式对外开放，方便企业进行定制开发或企业内部系统进行对接打通，详情请参考API概览。",
     "serviceNameCN": "数据开发治理平台 WeData",
     "serviceShortName": "wedata"
   },
@@ -28091,7 +28091,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "基本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>基本信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExecAdminComputeResourceBasicInfo",
           "name": "BasicInfo",
@@ -28102,7 +28102,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>引擎信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExecAdminEngineInfo",
           "name": "EngineInfo",
@@ -28113,7 +28113,7 @@
         },
         {
           "disabled": false,
-          "document": "可用配额",
+          "document": "<p>可用配额</p>",
           "example": "1.1",
           "member": "float",
           "name": "AvailableCU",
@@ -28124,7 +28124,7 @@
         },
         {
           "disabled": false,
-          "document": "总配额",
+          "document": "<p>总配额</p>",
           "example": "1.1",
           "member": "float",
           "name": "TotalCU",
@@ -28135,13 +28135,57 @@
         },
         {
           "disabled": false,
-          "document": "资源是否可用",
+          "document": "<p>资源是否可用</p>",
           "example": "1",
           "member": "uint64",
           "name": "AvailableStatus",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU 1<br>GPU 2</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ComputeType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU 总配额（卡数）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "GpuQuota",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU 可用量（卡数）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "GpuAvailable",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>111</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "MLEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -28636,7 +28680,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间Id",
+          "document": "<p>工作空间Id</p>",
           "example": "1231",
           "member": "string",
           "name": "ExperimentId",
@@ -28646,7 +28690,7 @@
         },
         {
           "disabled": false,
-          "document": "实验名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实验名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "名称",
           "member": "string",
           "name": "Name",
@@ -28656,7 +28700,7 @@
         },
         {
           "disabled": false,
-          "document": "实验类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实验类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MACHINE_LEARNING",
           "member": "string",
           "name": "Type",
@@ -28666,7 +28710,7 @@
         },
         {
           "disabled": false,
-          "document": "实验描述",
+          "document": "<p>实验描述</p>",
           "example": "描述1",
           "member": "string",
           "name": "Description",
@@ -28676,7 +28720,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间戳",
+          "document": "<p>创建时间戳</p>",
           "example": "1231",
           "member": "string",
           "name": "CreationTime",
@@ -28686,7 +28730,7 @@
         },
         {
           "disabled": false,
-          "document": "automl实验信息",
+          "document": "<p>automl实验信息</p>",
           "example": "无",
           "member": "AutoMlInfo",
           "name": "AutoMlInfo",
@@ -28696,7 +28740,7 @@
         },
         {
           "disabled": false,
-          "document": "StudioId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>StudioId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "798952138280505344",
           "member": "string",
           "name": "StudioId",
@@ -28706,7 +28750,7 @@
         },
         {
           "disabled": false,
-          "document": "实验状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实验状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TRAINING",
           "member": "string",
           "name": "Status",
@@ -28716,7 +28760,7 @@
         },
         {
           "disabled": false,
-          "document": "实验状态启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实验状态启动时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1768293026145",
           "member": "string",
           "name": "StatusTimestamp",
@@ -28726,7 +28770,7 @@
         },
         {
           "disabled": false,
-          "document": "实验权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实验权限</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MANAGE",
           "member": "string",
           "name": "Permission",
@@ -28736,7 +28780,7 @@
         },
         {
           "disabled": false,
-          "document": "最后修改时间",
+          "document": "<p>最后修改时间</p>",
           "example": "1768968000265",
           "member": "string",
           "name": "LastModifiedTime",
@@ -28746,7 +28790,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期状态",
+          "document": "<p>生命周期状态</p>",
           "example": "active",
           "member": "string",
           "name": "LifecycleStage",
@@ -28756,7 +28800,7 @@
         },
         {
           "disabled": false,
-          "document": "ArtifactLocation",
+          "document": "<p>ArtifactLocation</p>",
           "example": "mlflow-artifacts:/127",
           "member": "string",
           "name": "ArtifactLocation",
@@ -28766,13 +28810,23 @@
         },
         {
           "disabled": false,
-          "document": "实验标签",
+          "document": "<p>实验标签</p>",
           "example": "无",
           "member": "ExperimentTag",
           "name": "Tags",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件位置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/Workspace/Users/wedata30-dev@tencent.com@700002164618/gem_01",
+          "member": "string",
+          "name": "Location",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
