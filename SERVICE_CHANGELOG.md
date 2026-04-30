@@ -1,79 +1,10 @@
-# Release 3.0.1414.1
+# Release 3.0.1415.1
 
-## 弹性 MapReduce(emr) 版本：2019-01-03
+## 数据开发治理平台 WeData(wedata) 版本：2025-10-10
 
-### 第 139 次发布
+### 第 19 次发布
 
-发布时间：2026-04-30 01:40:48
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateDynamicInstance](http://document.tencentcloudapi.woa.com/document/product/589/90105)
-* [DescribeDynamicInstanceList](http://document.tencentcloudapi.woa.com/document/product/589/90106)
-* [ModifyDynamicInstance](http://document.tencentcloudapi.woa.com/document/product/589/90104)
-* [TerminateDynamicInstances](http://document.tencentcloudapi.woa.com/document/product/589/90103)
-
-新增数据结构：
-
-* [CBSVolume](http://document.tencentcloudapi.woa.com/document/product/589/33981#CBSVolume)
-* [CFSTurboVolume](http://document.tencentcloudapi.woa.com/document/product/589/33981#CFSTurboVolume)
-* [CFSVolume](http://document.tencentcloudapi.woa.com/document/product/589/33981#CFSVolume)
-* [COSVolume](http://document.tencentcloudapi.woa.com/document/product/589/33981#COSVolume)
-* [DynamicInstanceForm](http://document.tencentcloudapi.woa.com/document/product/589/33981#DynamicInstanceForm)
-* [DynamicInstanceGroup](http://document.tencentcloudapi.woa.com/document/product/589/33981#DynamicInstanceGroup)
-* [ModifyDynamicInstanceForm](http://document.tencentcloudapi.woa.com/document/product/589/33981#ModifyDynamicInstanceForm)
-* [NameValue](http://document.tencentcloudapi.woa.com/document/product/589/33981#NameValue)
-* [RayCluster](http://document.tencentcloudapi.woa.com/document/product/589/33981#RayCluster)
-* [VolumeMount](http://document.tencentcloudapi.woa.com/document/product/589/33981#VolumeMount)
-
-
-
-## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
-
-### 第 39 次发布
-
-发布时间：2026-04-30 01:50:36
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeResourceGrantedAccountGroups](http://document.tencentcloudapi.woa.com/document/product/1794/90112)
-* [DescribeResourceGrantedAccounts](http://document.tencentcloudapi.woa.com/document/product/1794/90111)
-* [DescribeResourceGrantedVirtualGroups](http://document.tencentcloudapi.woa.com/document/product/1794/90110)
-* [GrantResourcesByAccountGroups](http://document.tencentcloudapi.woa.com/document/product/1794/90109)
-* [GrantResourcesByAccounts](http://document.tencentcloudapi.woa.com/document/product/1794/90108)
-* [GrantResourcesByVirtualGroups](http://document.tencentcloudapi.woa.com/document/product/1794/90107)
-* [ModifyDeviceTrustStatus](http://document.tencentcloudapi.woa.com/document/product/1794/90113)
-
-新增数据结构：
-
-* [DescribeResourceGrantedAccountGroupsData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeResourceGrantedAccountGroupsData)
-* [DescribeResourceGrantedAccountsData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeResourceGrantedAccountsData)
-* [DescribeResourceGrantedVirtualGroupsData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeResourceGrantedVirtualGroupsData)
-* [GrantResourceOperationByAccountGroups](http://document.tencentcloudapi.woa.com/document/product/1794/86648#GrantResourceOperationByAccountGroups)
-* [GrantResourceOperationByAccounts](http://document.tencentcloudapi.woa.com/document/product/1794/86648#GrantResourceOperationByAccounts)
-* [GrantResourceOperationByVirtualGroups](http://document.tencentcloudapi.woa.com/document/product/1794/86648#GrantResourceOperationByVirtualGroups)
-* [GrantResourcesByAccountGroupsData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#GrantResourcesByAccountGroupsData)
-* [GrantResourcesByAccountsData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#GrantResourcesByAccountsData)
-* [GrantResourcesByVirtualGroupsData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#GrantResourcesByVirtualGroupsData)
-* [GrantedAccountGroupItem](http://document.tencentcloudapi.woa.com/document/product/1794/86648#GrantedAccountGroupItem)
-* [GrantedAccountItem](http://document.tencentcloudapi.woa.com/document/product/1794/86648#GrantedAccountItem)
-* [GrantedVirtualGroupItem](http://document.tencentcloudapi.woa.com/document/product/1794/86648#GrantedVirtualGroupItem)
-
-
-
-## 媒体处理(mps) 版本：2019-06-12
-
-### 第 168 次发布
-
-发布时间：2026-04-30 02:03:52
+发布时间：2026-05-01 02:34:43
 
 本次发布包含了以下内容：
 
@@ -81,51 +12,35 @@
 
 修改接口：
 
-* [DescribeVoices](http://document.tencentcloudapi.woa.com/document/product/862/89375)
+* [GetNotebookPreloadScript](http://document.tencentcloudapi.woa.com/document/product/1607/89448)
 
-	* 新增入参：VoiceId, VoiceName, Description, Gender, Age, Languages, Labels, Scenes
+	* 新增入参：MLEnabled
 
-* [DesignVoiceAsync](http://document.tencentcloudapi.woa.com/document/product/862/90010)
+* [UpdateMLModelService](http://document.tencentcloudapi.woa.com/document/product/1607/89832)
 
-	* 新增入参：VoiceProfile
-
-* [SyncDubbing](http://document.tencentcloudapi.woa.com/document/product/862/88809)
-
-	* 新增入参：VoiceProfile, ResourceId
+	* 新增入参：CronScaleJobs, ModelHotUpdateEnable, MaxRetryTimes, RollingUpdate, SchedulingStrategy, HorizontalPodAutoscaler, ScaleStrategy, ServiceEIPInfo
 
 
 新增数据结构：
 
-* [VoiceProfile](http://document.tencentcloudapi.woa.com/document/product/862/37615#VoiceProfile)
+* [CronScaleJob](http://document.tencentcloudapi.woa.com/document/product/1607/88970#CronScaleJob)
+* [HorizontalPodAutoscaler](http://document.tencentcloudapi.woa.com/document/product/1607/88970#HorizontalPodAutoscaler)
+* [NumOrPercent](http://document.tencentcloudapi.woa.com/document/product/1607/88970#NumOrPercent)
+* [RollingUpdate](http://document.tencentcloudapi.woa.com/document/product/1607/88970#RollingUpdate)
 
 修改数据结构：
 
-* [VoiceInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#VoiceInfo)
+* [CreateServiceInfos](http://document.tencentcloudapi.woa.com/document/product/1607/88970#CreateServiceInfos)
 
-	* 新增成员：Age
+	* 新增成员：InstancePerReplicas, ScaleStrategy, ServiceEIPInfo, CronScaleJobs, ModelHotUpdateEnable, SchedulingStrategy, RollingUpdate, HorizontalPodAutoscaler
 
+* [MLModelService](http://document.tencentcloudapi.woa.com/document/product/1607/88970#MLModelService)
 
+	* 新增成员：HorizontalPodAutoscaler, InstancePerReplicas, ScaleStrategy, TerminationGracePeriodSeconds, CronScaleJobs, ModelHotUpdateEnable, MaxRetryTimes, RollingUpdate, SchedulingStrategy
 
+* [ServiceEIPInfo](http://document.tencentcloudapi.woa.com/document/product/1607/88970#ServiceEIPInfo)
 
-## 数据开发治理平台 WeData(wedata) 版本：2025-10-10
-
-### 第 18 次发布
-
-发布时间：2026-04-30 02:37:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ExecAdminComputeResourceMeta](http://document.tencentcloudapi.woa.com/document/product/1607/88970#ExecAdminComputeResourceMeta)
-
-	* 新增成员：ComputeType, GpuQuota, GpuAvailable, MLEnabled
-
-* [ExperimentDetail](http://document.tencentcloudapi.woa.com/document/product/1607/88970#ExperimentDetail)
-
-	* 新增成员：Location
+	* <font color="#dd0000">**修改成员**：</font>ServiceId, VpcId, SubnetId
 
 
 

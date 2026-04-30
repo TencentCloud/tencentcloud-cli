@@ -26,10 +26,10 @@
     ],
     "CreateApp": [
       {
-        "document": "创建应用",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApp\n<公共请求参数>\n\n{\n    \"AppType\": \"knowledge_qa\",\n    \"BaseConfig\": {\n        \"Name\": \"知识问答\",\n        \"Avatar\": \"头像\",\n        \"Desc\": \"第一个应用\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"AppBizId\": \"198848848484848\",\n        \"RequestId\": \"dwec-adsdsdsd-sfsfdsfsf\"\n    }\n}",
-        "title": "创建应用"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApp\n<公共请求参数>\n\n{\n    \"AppType\": \"knowledge_qa\",\n    \"BaseConfig\": {\n        \"Name\": \"我的智能体应用\",\n        \"Avatar\": \"https://cdn.xiaowei.qq.com/static/adp/app-default-avatar.png\",\n        \"Desc\": \"应用描述信息\"\n    },\n    \"Pattern\": \"ClawAgent\",\n    \"AgentType\": \"dialogue\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppBizId\": \"2049767047020830336\",\n        \"IsCustomList\": false,\n        \"RequestId\": \"7c04aa7f-45ce-41fc-91a9-0743aa65104d\"\n    }\n}",
+        "title": "CreateApp"
       }
     ],
     "CreateAttributeLabel": [

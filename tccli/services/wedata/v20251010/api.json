@@ -19662,7 +19662,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "空间id",
+          "document": "<p>空间id</p>",
           "example": "1464962169590902784",
           "member": "string",
           "name": "WorkspaceId",
@@ -19671,7 +19671,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启日志",
+          "document": "<p>是否开启日志</p>",
           "example": "true",
           "member": "bool",
           "name": "LogEnable",
@@ -19680,7 +19680,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组名称",
+          "document": "<p>服务组名称</p>",
           "example": "tiny_test120303",
           "member": "string",
           "name": "ServiceName",
@@ -19689,7 +19689,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组描述",
+          "document": "<p>服务组描述</p>",
           "example": "带带",
           "member": "string",
           "name": "ServiceDescription",
@@ -19698,7 +19698,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启推理表",
+          "document": "<p>是否开启推理表</p>",
           "example": "true",
           "member": "bool",
           "name": "InferenceTablePushEnable",
@@ -19707,7 +19707,7 @@
         },
         {
           "disabled": false,
-          "document": "大模型或者ML",
+          "document": "<p>大模型或者ML</p>",
           "example": "MODEL",
           "member": "string",
           "name": "ModelSource",
@@ -19716,7 +19716,7 @@
         },
         {
           "disabled": false,
-          "document": "日志设置",
+          "document": "<p>日志设置</p>",
           "example": "无",
           "member": "LogConfig",
           "name": "LogConfig",
@@ -19725,7 +19725,7 @@
         },
         {
           "disabled": false,
-          "document": "推理表对应的第一层目录，只能是DataLakeCatalog",
+          "document": "<p>推理表对应的第一层目录，只能是DataLakeCatalog</p>",
           "example": "DataLakeCatalog",
           "member": "string",
           "name": "CatalogPath",
@@ -19734,7 +19734,7 @@
         },
         {
           "disabled": false,
-          "document": "推理表对应的第二层，数据库",
+          "document": "<p>推理表对应的第二层，数据库</p>",
           "example": "tiny_wedata",
           "member": "string",
           "name": "SchemaPath",
@@ -19743,8 +19743,8 @@
         },
         {
           "disabled": false,
-          "document": "推理表对应的第三层，数据表，可以为空",
-          "example": " ",
+          "document": "<p>推理表对应的第三层，数据表，可以为空</p>",
+          "example": "tiny1",
           "member": "string",
           "name": "PayloadPath",
           "required": false,
@@ -19752,7 +19752,7 @@
         },
         {
           "disabled": false,
-          "document": "服务状态",
+          "document": "<p>服务状态</p>",
           "example": "NEW",
           "member": "string",
           "name": "Status",
@@ -19761,7 +19761,7 @@
         },
         {
           "disabled": false,
-          "document": "启动服务",
+          "document": "<p>启动服务</p>",
           "example": "START",
           "member": "string",
           "name": "ServiceAction",
@@ -19770,7 +19770,7 @@
         },
         {
           "disabled": false,
-          "document": "多个服务组信息",
+          "document": "<p>多个服务组信息</p>",
           "example": "无",
           "member": "CreateServiceInfos",
           "name": "Services",
@@ -19779,7 +19779,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启鉴权",
+          "document": "<p>是否开启鉴权</p>",
           "example": "true",
           "member": "bool",
           "name": "AuthorizationEnable",
@@ -19788,7 +19788,7 @@
         },
         {
           "disabled": false,
-          "document": "是否创建新版本，true-创建新版本 false-更新现有版本",
+          "document": "<p>是否创建新版本，true-创建新版本 false-更新现有版本</p>",
           "example": "true",
           "member": "bool",
           "name": "NewVersion",
@@ -19797,7 +19797,7 @@
         },
         {
           "disabled": false,
-          "document": "在新增版本时必传",
+          "document": "<p>在新增版本时必传</p>",
           "example": "sss1",
           "member": "string",
           "name": "ServiceGroupId",
@@ -19812,7 +19812,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型服务详情",
+          "document": "<p>模型服务详情</p>",
           "example": "无",
           "member": "MLModelServiceGroup",
           "name": "Data",
@@ -20686,179 +20686,267 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务id，用来更新服务用，可以不传",
+          "document": "<p>服务id，用来更新服务用，可以不传</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ServiceId",
           "member": "string",
           "name": "ServiceId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "资源组id",
+          "document": "<p>资源组id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ResourceGroupId",
           "member": "string",
           "name": "ResourceGroupId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "TiOne资源信息",
+          "document": "<p>TiOne资源信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResourceInfo",
           "name": "TioneResourceInfo",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "计费类型：PREPAID-包年包月 POSTPAID_BY_HOUR-按量计费，必填",
+          "document": "<p>计费类型：PREPAID-包年包月 POSTPAID_BY_HOUR-按量计费，必填</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "ML模型信息，可选",
+          "document": "<p>ML模型信息，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MLModelInfo",
           "name": "MlModelInfo",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "镜像信息，必填",
+          "document": "<p>镜像信息，必填</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": " 实例类型，必填",
+          "document": "<p>实例类型，必填</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TI.S6.LARGE8.POST",
           "member": "string",
           "name": "InstanceType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "模式：MANUAL-手动 AUTO-自动，必填",
+          "document": "<p>模式：MANUAL-手动 AUTO-自动，必填</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MANUAL",
           "member": "string",
           "name": "ScaleMode",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "副本数量，范围：1-100，必填",
+          "document": "<p>副本数量，范围：1-100，必填</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Replicas",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "服务端口号，范围：1-65535，必填",
+          "document": "<p>服务端口号，范围：1-65535，必填</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "222",
           "member": "int64",
           "name": "ServicePort",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "启动命令，可选",
-          "example": " ",
+          "document": "<p>启动命令，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tail -f /dev/null",
           "member": "string",
           "name": "Command",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "服务限流配置，可选",
+          "document": "<p>服务限流配置，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ServiceLimit",
           "name": "ServiceLimit",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "定时动作配置，可选",
+          "document": "<p>定时动作配置，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScheduledAction",
           "name": "ScheduledAction",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "环境变量",
+          "document": "<p>环境变量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NVPair",
           "name": "EnvVar",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "模型对应的catalog目录",
+          "document": "<p>模型对应的catalog目录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test_1",
           "member": "string",
           "name": "CatalogName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "模型对应的Schema目录",
+          "document": "<p>模型对应的Schema目录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SchemaName",
           "member": "string",
           "name": "SchemaName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>每个副本的实例数量，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "InstancePerReplicas",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩、缩容策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CRON",
+          "member": "string",
+          "name": "ScaleStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务EIP信息，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceEIP",
+          "name": "ServiceEIPInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>定时扩、缩容任务列表，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CronScaleJob",
+          "name": "CronScaleJobs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用模型热更新，默认false，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ModelHotUpdateEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度策略，如 binpack（优先占满整机）/ spread（优先分散节点），可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "binpack",
+          "member": "string",
+          "name": "SchedulingStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>滚动更新策略，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RollingUpdate",
+          "name": "RollingUpdate",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>水平弹性伸缩配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HorizontalPodAutoscaler",
+          "name": "HorizontalPodAutoscaler",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -22448,6 +22536,78 @@
         }
       ],
       "usage": "out"
+    },
+    "CronScaleJob": {
+      "document": "定时扩、缩容任务结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>必填，Cron表达式，标识任务的执行时间，精确到分钟级，如：&quot;0 30 12 * * *&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0 0 0 1 * ?",
+          "member": "string",
+          "name": "Schedule",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>定时任务名，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "workday-business-hours",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标实例数，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "TargetReplicas",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标最小副本数，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "MinReplicas",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标最大副本数，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "MaxReplicas",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>例外时间，Cron表达式，在对应时间内不执行任务，最多支持3条，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"b\"]",
+          "member": "string",
+          "name": "ExcludeDates",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DataMaskGroup": {
       "document": "用户组脱敏规则，描述某个用户组对应的脱敏方法",
@@ -37458,8 +37618,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务名称",
-          "example": "",
+          "document": "<p>服务名称</p>",
+          "example": "1fa4e87a-9e3e-4440-aa26-d9a4cc7416c0-1",
           "member": "string",
           "name": "ServiceId",
           "required": false,
@@ -37467,8 +37627,8 @@
         },
         {
           "disabled": false,
-          "document": "项目Id",
-          "example": "",
+          "document": "<p>项目Id</p>",
+          "example": "147054705052100092",
           "member": "string",
           "name": "WorkspaceId",
           "required": false,
@@ -37482,8 +37642,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "重名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>重名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MLModelService",
           "name": "Data",
           "output_required": false,
@@ -38130,7 +38290,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间",
+          "document": "<p>工作空间</p>",
           "example": "1707666632100",
           "member": "string",
           "name": "WorkspaceId",
@@ -38139,7 +38299,7 @@
         },
         {
           "disabled": false,
-          "document": "文件ID与路径二选一",
+          "document": "<p>文件ID与路径二选一</p>",
           "example": "10098",
           "member": "string",
           "name": "FileId",
@@ -38148,12 +38308,21 @@
         },
         {
           "disabled": false,
-          "document": "文件绝对路径",
+          "document": "<p>文件绝对路径</p>",
           "example": "/home/xxx/a/b/c.ipynb",
           "member": "string",
           "name": "FilePath",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>true: 返回预执行脚本，false：不返回</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "MLEnabled",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -38163,7 +38332,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预执行脚本回报",
+          "document": "<p>预执行脚本回报</p>",
           "example": "无",
           "member": "GetNotebookPreloadScriptRsp",
           "name": "Data",
@@ -41137,6 +41306,56 @@
         }
       ],
       "usage": "out"
+    },
+    "HorizontalPodAutoscaler": {
+      "document": "水平弹性伸缩配置（对应腾讯云 TI-ONE API HorizontalPodAutoscaler）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>必填，最小实例数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MinReplicas",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>必填，最大实例数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "MaxReplicas",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩容观察期，单位：秒，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ScaleUpStabilizationWindowSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>缩容观察期，单位：秒，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "303",
+          "member": "int64",
+          "name": "ScaleDownStabilizationWindowSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ImageInfo": {
       "document": "模型镜像",
@@ -62631,7 +62850,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务Id",
+          "document": "<p>服务Id</p>",
           "example": "ss",
           "member": "string",
           "name": "ServiceId",
@@ -62641,7 +62860,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名字",
+          "document": "<p>服务名字</p>",
           "example": "s22",
           "member": "string",
           "name": "ServiceName",
@@ -62651,7 +62870,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ss1",
           "member": "string",
           "name": "Description",
@@ -62661,7 +62880,7 @@
         },
         {
           "disabled": false,
-          "document": "计费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计费类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "22",
           "member": "string",
           "name": "ChargeType",
@@ -62671,7 +62890,7 @@
         },
         {
           "disabled": false,
-          "document": "模型信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MLModelInfo",
           "name": "MlModelInfo",
@@ -62681,7 +62900,7 @@
         },
         {
           "disabled": false,
-          "document": "资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResourceInfo",
           "name": "Resources",
@@ -62691,7 +62910,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>镜像</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
@@ -62701,7 +62920,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ss01",
           "member": "string",
           "name": "InstanceType",
@@ -62711,7 +62930,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容或者缩容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>扩容或者缩容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ss",
           "member": "string",
           "name": "ScaleMode",
@@ -62721,7 +62940,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务端口</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "11",
           "member": "int64",
           "name": "ServicePort",
@@ -62731,7 +62950,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>弹性网卡信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ServiceEIP",
           "name": "ServiceEIPInfo",
@@ -62741,7 +62960,7 @@
         },
         {
           "disabled": false,
-          "document": "命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>命令</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "css",
           "member": "string",
           "name": "Command",
@@ -62751,7 +62970,7 @@
         },
         {
           "disabled": false,
-          "document": "限流信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>限流信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ServiceLimit",
           "name": "ServiceLimit",
@@ -62761,7 +62980,7 @@
         },
         {
           "disabled": false,
-          "document": "定时信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>定时信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScheduledAction",
           "name": "ScheduledAction",
@@ -62771,7 +62990,7 @@
         },
         {
           "disabled": false,
-          "document": "日志开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志开关</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "LogEnable",
@@ -62781,7 +63000,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS 日志集和日志主题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>CLS 日志集和日志主题</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CreateMLServiceLogConfig",
           "name": "LogConfig",
@@ -62791,7 +63010,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启推理表上报\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启推理表上报</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "InferenceTablePushEnable",
@@ -62801,7 +63020,7 @@
         },
         {
           "disabled": false,
-          "document": "推理表投递的COS桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>推理表投递的COS桶名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ss",
           "member": "string",
           "name": "InferenceTableCosBucket",
@@ -62811,7 +63030,7 @@
         },
         {
           "disabled": false,
-          "document": "权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>权限</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "AuthorizationEnable",
@@ -62821,7 +63040,7 @@
         },
         {
           "disabled": false,
-          "document": "环境变量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>环境变量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NVPair",
           "name": "Env",
@@ -62831,7 +63050,7 @@
         },
         {
           "disabled": false,
-          "document": "pod信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>pod信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Pod",
           "name": "PodInfos",
@@ -62841,7 +63060,7 @@
         },
         {
           "disabled": false,
-          "document": "工作负载的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作负载的状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkloadStatus",
           "name": "WorkloadStatus",
@@ -62851,37 +63070,37 @@
         },
         {
           "disabled": false,
-          "document": "创建中",
+          "document": "<p>创建中</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Normal",
           "member": "string",
           "name": "Status",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "创建者",
+          "document": "<p>创建者</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sd",
           "member": "string",
           "name": "CreateBy",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1111102111",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -62891,7 +63110,7 @@
         },
         {
           "disabled": false,
-          "document": "副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>副本数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "11",
           "member": "int64",
           "name": "Replicas",
@@ -62901,7 +63120,7 @@
         },
         {
           "disabled": false,
-          "document": "id\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dss",
           "member": "string",
           "name": "TiOneServiceId",
@@ -62911,7 +63130,7 @@
         },
         {
           "disabled": false,
-          "document": "od\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>od</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sdd",
           "member": "string",
           "name": "TiOneServiceGroupId",
@@ -62921,37 +63140,37 @@
         },
         {
           "disabled": false,
-          "document": "kdk",
+          "document": "<p>kdk</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dd",
           "member": "string",
           "name": "BillingStatus",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "计费单位",
+          "document": "<p>计费单位</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MLSpecUnitInfo",
           "name": "BillingUnits",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "计费信息",
+          "document": "<p>计费信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SSD",
           "member": "string",
           "name": "BillingInfo",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sd",
           "member": "string",
           "name": "ServiceType",
@@ -62961,7 +63180,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>项目id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12312",
           "member": "string",
           "name": "WorkspaceId",
@@ -62971,7 +63190,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12312111",
           "member": "string",
           "name": "UpdateTime",
@@ -62981,7 +63200,7 @@
         },
         {
           "disabled": false,
-          "document": "版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>版本信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Version",
@@ -62991,7 +63210,7 @@
         },
         {
           "disabled": false,
-          "document": "使用CVM部署的时候，资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>使用CVM部署的时候，资源ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "11",
           "member": "string",
           "name": "ResourceGroupId",
@@ -63001,7 +63220,7 @@
         },
         {
           "disabled": false,
-          "document": "使用CVM部署的时候，资源name\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>使用CVM部署的时候，资源name</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "ResourceGroupName",
@@ -63011,17 +63230,17 @@
         },
         {
           "disabled": false,
-          "document": "serviceGroupId",
+          "document": "<p>serviceGroupId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "ServiceGroupId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>权重</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "Weight",
@@ -63031,7 +63250,7 @@
         },
         {
           "disabled": false,
-          "document": "投递日志是否开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>投递日志是否开启</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "LogStatus",
@@ -63041,7 +63260,7 @@
         },
         {
           "disabled": false,
-          "document": "模型来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型来源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "ModelSource",
@@ -63051,53 +63270,143 @@
         },
         {
           "disabled": false,
-          "document": "catalog目录名称",
+          "document": "<p>catalog目录名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CatalogName",
           "member": "string",
           "name": "CatalogName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "catalog目录Schema名称",
+          "document": "<p>catalog目录Schema名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SchemaName",
           "member": "string",
           "name": "SchemaName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "目录路径，可选 用于同步推理表给catalog",
+          "document": "<p>目录路径，可选 用于同步推理表给catalog</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CatalogPath",
           "member": "string",
           "name": "CatalogPath",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": " Schema地址，可选 用于同步推理表给catalog",
+          "document": "<p>Schema地址，可选 用于同步推理表给catalog</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Schema",
           "member": "string",
           "name": "SchemaPath",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "表头前缀（可选）支持用户选填表头：（1）用户填写表头：则推理表名为：用户填写名称_payload（2）用户未填写表头：则推理表名为：服务名称_payload\n",
+          "document": "<p>表头前缀（可选）支持用户选填表头：（1）用户填写表头：则推理表名为：用户填写名称_payload（2）用户未填写表头：则推理表名为：服务名称_payload</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tt",
           "member": "string",
           "name": "PayloadPath",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>水平弹性伸缩配置，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HorizontalPodAutoscaler",
+          "name": "HorizontalPodAutoscaler",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>每个副本的实例数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "InstancePerReplicas",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩缩容策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FIXED",
+          "member": "string",
+          "name": "ScaleStrategy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>终止宽限期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "TerminationGracePeriodSeconds",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>定时扩缩容任务列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CronScaleJob",
+          "name": "CronScaleJobs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用模型热更新</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ModelHotUpdateEnable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大重试次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "MaxRetryTimes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>滚动更新策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RollingUpdate",
+          "name": "RollingUpdate",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "binpack",
+          "member": "string",
+          "name": "SchedulingStrategy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -65591,6 +65900,34 @@
         }
       ],
       "usage": "out"
+    },
+    "NumOrPercent": {
+      "document": "用于表示百分比或数量（对应腾讯云 TI-ONE API NumOrPercent）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>类型：Num-数量 Percent-百分比，默认为 Num</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Percent",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "25",
+          "member": "int64",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "OfflineFeatureConfiguration": {
       "document": "离线表信息",
@@ -71154,6 +71491,34 @@
       ],
       "usage": "out"
     },
+    "RollingUpdate": {
+      "document": "滚动更新策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>滚动更新的最大不可用实例数，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NumOrPercent",
+          "name": "MaxUnavailable",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>滚动更新的最大新增实例数，可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NumOrPercent",
+          "name": "MaxSurge",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "RunApplicationDatasetRequest": {
       "document": "RunApplicationDataset请求参数结构体",
       "members": [
@@ -73259,36 +73624,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "service Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>service Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "service1",
           "member": "string",
           "name": "ServiceId",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>vpc id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-1",
           "member": "string",
           "name": "VpcId",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "SubnetI d\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>SubnetI d</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sub1",
           "member": "string",
           "name": "SubnetId",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ServiceGroupMonitorConfigRsp": {
       "document": "模型服务对应的日志信息",
@@ -84140,7 +84508,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务名称",
+          "document": "<p>服务名称</p>",
           "example": "11",
           "member": "string",
           "name": "ServiceId",
@@ -84149,7 +84517,7 @@
         },
         {
           "disabled": false,
-          "document": "计费方式",
+          "document": "<p>计费方式</p>",
           "example": "h",
           "member": "string",
           "name": "ChargeType",
@@ -84158,7 +84526,7 @@
         },
         {
           "disabled": false,
-          "document": "模型信息",
+          "document": "<p>模型信息</p>",
           "example": "无",
           "member": "MLModelInfo",
           "name": "MlModelInfo",
@@ -84167,7 +84535,7 @@
         },
         {
           "disabled": false,
-          "document": "副本数量",
+          "document": "<p>副本数量</p>",
           "example": "1",
           "member": "int64",
           "name": "Replicas",
@@ -84176,7 +84544,7 @@
         },
         {
           "disabled": false,
-          "document": "服务描述",
+          "document": "<p>服务描述</p>",
           "example": "服务描述",
           "member": "string",
           "name": "ServiceDescription",
@@ -84185,7 +84553,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像信息",
+          "document": "<p>镜像信息</p>",
           "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
@@ -84194,8 +84562,8 @@
         },
         {
           "disabled": false,
-          "document": "实例类型",
-          "example": " ",
+          "document": "<p>实例类型</p>",
+          "example": "TI.S.MEDIUM.POST",
           "member": "string",
           "name": "InstanceType",
           "required": false,
@@ -84203,8 +84571,8 @@
         },
         {
           "disabled": false,
-          "document": "扩缩容类型",
-          "example": " ",
+          "document": "<p>扩缩容类型</p>",
+          "example": "MANUAL",
           "member": "string",
           "name": "ScaleMode",
           "required": false,
@@ -84212,7 +84580,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端口",
+          "document": "<p>服务端口</p>",
           "example": "1",
           "member": "int64",
           "name": "ServicePort",
@@ -84221,8 +84589,8 @@
         },
         {
           "disabled": false,
-          "document": "命令行",
-          "example": " ",
+          "document": "<p>命令行</p>",
+          "example": "python -m tione.inference.server --model-dir /data/model",
           "member": "string",
           "name": "Command",
           "required": false,
@@ -84230,7 +84598,7 @@
         },
         {
           "disabled": false,
-          "document": "限流",
+          "document": "<p>限流</p>",
           "example": "无",
           "member": "ServiceLimit",
           "name": "ServiceLimit",
@@ -84239,7 +84607,7 @@
         },
         {
           "disabled": false,
-          "document": "定时",
+          "document": "<p>定时</p>",
           "example": "无",
           "member": "ScheduledAction",
           "name": "ScheduledAction",
@@ -84248,7 +84616,7 @@
         },
         {
           "disabled": false,
-          "document": "日志",
+          "document": "<p>日志</p>",
           "example": "false",
           "member": "bool",
           "name": "LogEnable",
@@ -84257,7 +84625,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志配置",
+          "document": "<p>CLS日志配置</p>",
           "example": "无",
           "member": "LogConfig",
           "name": "LogConfig",
@@ -84266,7 +84634,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启推理表推送Cos",
+          "document": "<p>是否开启推理表推送Cos</p>",
           "example": "false",
           "member": "bool",
           "name": "InferenceTablePushEnable",
@@ -84275,8 +84643,8 @@
         },
         {
           "disabled": false,
-          "document": "推理表推送的Cos桶名",
-          "example": " ",
+          "document": "<p>推理表推送的Cos桶名</p>",
+          "example": "cos1",
           "member": "string",
           "name": "InferenceTableCosBucket",
           "required": false,
@@ -84284,8 +84652,8 @@
         },
         {
           "disabled": false,
-          "document": "cos桶所在地域",
-          "example": " ",
+          "document": "<p>cos桶所在地域</p>",
+          "example": "ap-chongqing",
           "member": "string",
           "name": "CosRegion",
           "required": false,
@@ -84293,7 +84661,7 @@
         },
         {
           "disabled": false,
-          "document": "权限",
+          "document": "<p>权限</p>",
           "example": "false",
           "member": "bool",
           "name": "AuthorizationEnable",
@@ -84302,7 +84670,7 @@
         },
         {
           "disabled": false,
-          "document": "变量",
+          "document": "<p>变量</p>",
           "example": "无",
           "member": "NVPair",
           "name": "Env",
@@ -84311,8 +84679,8 @@
         },
         {
           "disabled": false,
-          "document": "模型状态",
-          "example": " ",
+          "document": "<p>模型状态</p>",
+          "example": "NEW",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -84320,8 +84688,8 @@
         },
         {
           "disabled": false,
-          "document": "操作",
-          "example": " ",
+          "document": "<p>操作</p>",
+          "example": "START",
           "member": "string",
           "name": "ServiceAction",
           "required": false,
@@ -84329,8 +84697,8 @@
         },
         {
           "disabled": false,
-          "document": "项目Id",
-          "example": " ",
+          "document": "<p>项目Id</p>",
+          "example": "1464962169590902784",
           "member": "string",
           "name": "WorkspaceId",
           "required": false,
@@ -84338,8 +84706,8 @@
         },
         {
           "disabled": false,
-          "document": "使用CVM时传入资源组id",
-          "example": " ",
+          "document": "<p>使用CVM时传入资源组id</p>",
+          "example": "rg-mock-0001",
           "member": "string",
           "name": "ResourceGroupId",
           "required": false,
@@ -84347,7 +84715,7 @@
         },
         {
           "disabled": false,
-          "document": "资源占用信息",
+          "document": "<p>资源占用信息</p>",
           "example": "无",
           "member": "TiResourceInfo",
           "name": "Resources",
@@ -84356,8 +84724,8 @@
         },
         {
           "disabled": false,
-          "document": "独立站点地域信息",
-          "example": " ",
+          "document": "<p>独立站点地域信息</p>",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "WeDataRegion",
           "required": false,
@@ -84365,8 +84733,8 @@
         },
         {
           "disabled": false,
-          "document": "模型来源，image和model",
-          "example": " ",
+          "document": "<p>模型来源，image和model</p>",
+          "example": "model",
           "member": "string",
           "name": "ModelSource",
           "required": false,
@@ -84374,7 +84742,7 @@
         },
         {
           "disabled": false,
-          "document": "catelog名称",
+          "document": "<p>catelog名称</p>",
           "example": "1",
           "member": "string",
           "name": "CatalogName",
@@ -84383,7 +84751,7 @@
         },
         {
           "disabled": false,
-          "document": "Schema名称",
+          "document": "<p>Schema名称</p>",
           "example": "1",
           "member": "string",
           "name": "SchemaName",
@@ -84392,7 +84760,7 @@
         },
         {
           "disabled": false,
-          "document": "目录路径，可选 用于同步推理表给catalog",
+          "document": "<p>目录路径，可选 用于同步推理表给catalog</p>",
           "example": "DataLakeCatelog",
           "member": "string",
           "name": "CatalogPath",
@@ -84401,7 +84769,7 @@
         },
         {
           "disabled": false,
-          "document": "Schema地址，可选 用于同步推理表给catalog",
+          "document": "<p>Schema地址，可选 用于同步推理表给catalog</p>",
           "example": "Schema",
           "member": "string",
           "name": "SchemaPath",
@@ -84410,12 +84778,84 @@
         },
         {
           "disabled": false,
-          "document": "表头前缀（可选）支持用户选填表头：（1）用户填写表头：则推理表名为：用户填写名称_payload（2）用户未填写表头：则推理表名为：服务名称_payload",
+          "document": "<p>表头前缀（可选）支持用户选填表头：（1）用户填写表头：则推理表名为：用户填写名称_payload（2）用户未填写表头：则推理表名为：服务名称_payload</p>",
           "example": "ts",
           "member": "string",
           "name": "PayloadPath",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>定时扩缩容任务列表</p>",
+          "example": "无",
+          "member": "CronScaleJob",
+          "name": "CronScaleJobs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用模型热更新，默认false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ModelHotUpdateEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大重试次数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxRetryTimes",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>滚动更新策略</p>",
+          "example": "无",
+          "member": "RollingUpdate",
+          "name": "RollingUpdate",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>// 调度策略，如 binpack（优先占满整机）/ spread（优先分散节点），可选</p>",
+          "example": "binpack",
+          "member": "string",
+          "name": "SchedulingStrategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>水平弹性伸缩配置，可选</p>",
+          "example": "无",
+          "member": "HorizontalPodAutoscaler",
+          "name": "HorizontalPodAutoscaler",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩缩容策略</p>",
+          "example": "FIXED",
+          "member": "string",
+          "name": "ScaleStrategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有网络连接信息</p>",
+          "example": "无",
+          "member": "ServiceEIP",
+          "name": "ServiceEIPInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -84425,7 +84865,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "重名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MLModelService",
           "name": "Data",
