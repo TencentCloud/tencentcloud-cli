@@ -946,7 +946,7 @@
       "status": "online"
     },
     "DescribeTimingL7OriginPullData": {
-      "document": "本接口用以查询七层域名业务的回源时序数据，可以通过指定查询维度 <code>DimensionName</code> 进行分组查询，返回多组时序数据。\n\n<p>单次请求最多返回 <strong>50,000</strong> 个数据项<code> TimingDataItem </code>。数据项总数的计算规则如下：</p>\n<pre>\n   指标个数 * 时间点个数 * 维度值个数 = 数据项总数\n</pre>\n<ul>\n  <li>\n    <strong>指标个数</strong>：<code>MetricNames</code> 的列表长度。\n  </li>\n  <li>\n    <strong>时间点个数</strong>：<code>(EndTime - StartTime) / Interval</code>。\n  </li>\n  <li>\n    <strong>维度值个数</strong>：\n    <ul>\n      <li>当未指定 <code>DimensionName</code> 时，默认按账号维度汇总数据，维度值个数为 1。</li>\n      <li>当 <code>DimensionName = domain</code> 时，维度值个数为 <code>Filters</code> 中 <code>domain</code> 过滤条件指定的域名列表长度。</li>\n      <li>当 <code>DimensionName = origin-status-code-category</code> 时，维度值个数默认为 <code>6</code>。</li>\n      <li>当 <code>DimensionName = origin-status-code</code> 时，维度值个数默认为 <code>600</code>。</li>\n    </ul>\n  </li>\n</ul>\n\n<p><code>DimensionName</code> 可以与 <code>Filters</code> 组合使用，通过在 <code>Filters</code> 中指定 <code>DimensionName</code> 对应的过滤条件以限制维度值个数。</p>\n\n<h3>示例</h3>\n<p>以查询某一小时的具体状态码维度的时序数据为例，假设查询条件如下：</p>\n<ul>\n  <li><code>MetricNames = [\"l7Flow_request_hy\"]</code>（指标个数 = 1）</li>\n  <li><code>StartTime = 2025-10-01T06:00:00+08:00</code>，<code>EndTime = 2025-10-01T06:59:59+08:00</code>，<code>Interval = \"min\"</code>（时间点个数 = 60）</li>\n  <li><code>DimensionName = origin-status-code</code>，<code>Filters = [{\"originStatusCode\": [\"0\", \"4xx\", \"5xx\"]}]</code>（维度值个数 = 201）</li>\n</ul>\n<p>则数据项总数为：</p>\n<pre>1 × 60 × 201 = 12060 </pre>\n<p>未超过限制。</p>\n\n<p><strong>注意</strong>：若查询的数据项总数超过 <strong>50,000</strong>，系统会返回错误 <strong>LimitExceeded.TimingDataItemLimitExceeded</strong>。</p>\n<p>此时，请通过调整入参减少单次查询的数据项至 50,000 以内，可采取的做法有：</p>\n<ol>\n  <li>\n    <strong>减少时间点个数</strong>：\n    <ul>\n      <li>缩短查询时间范围（<code>StartTime</code> 到 <code>EndTime</code> 之间的时间跨度）。</li>\n      <li>选择更大的时间间隔（<code>Interval</code>）。</li>\n    </ul>\n  </li>\n  <li>\n    <strong>减少维度值个数</strong>：\n    <ul>\n      <li>调整 <code>Filters</code>，指定更少的 <code>domain</code> 或 <code>originStatusCode</code> 列表。</li>\n    </ul>\n  </li>\n  <li>\n    <strong>减少指标值个数</strong>：\n    <ul>\n      <li>调整 <code>MetricNames</code>，指定更少的查询指标。</li>\n    </ul>\n  </li>\n</ol>",
+      "document": "本接口用以查询七层域名业务的回源时序数据。\n您可以选择通过指定查询维度 <code>DimensionName</code> 进行分组查询，返回多组时序数据，详细指引与使用限制请参考 [如何使用 API 实现单次调用中的分组查询](https://cloud.tencent.com/document/product/1552/127501)。",
       "input": "DescribeTimingL7OriginPullDataRequest",
       "name": "查询回源时序数据",
       "output": "DescribeTimingL7OriginPullDataResponse",
@@ -2808,7 +2808,7 @@
         },
         {
           "disabled": false,
-          "document": "会话保持时间。",
+          "document": "会话保持时间，单位为秒。",
           "example": "3600",
           "member": "uint64",
           "name": "SessionPersistTime",
@@ -2937,7 +2937,7 @@
         },
         {
           "disabled": false,
-          "document": "源站信息：\n<li>当 OriginType 为 custom 时，表示一个或多个源站，如`[\"8.8.8.8\",\"9.9.9.9\"]` 或 `OriginValue=[\"test.com\"]`；</li>\n<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`[\"lb-xdffsfasdfs\"]`；</li>\n<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`[\"origin-537f5b41-162a-11ed-abaa-525400c5da15\"]`。</li>",
+          "document": "源站信息：\n<li>当 OriginType 为 custom 时，表示一个或多个源站，如`[\"8.8.8.8\",\"9.9.9.9\"]` 或 `OriginValue=[\"test.com\"]`；</li>\n<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`[\"lb-3pbiw4d9iqz0\"]`；</li>\n<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`[\"origin-537f5b41-162a-11ed-abaa-525400c5da15\"]`。</li>",
           "example": "[\"1.1.1.1\",\"2.2.2.2\"]",
           "member": "string",
           "name": "OriginValue",
@@ -2992,7 +2992,7 @@
         },
         {
           "disabled": false,
-          "document": "会话保持的时间，只有当SessionPersist为true时，该值才会生效。",
+          "document": "会话保持的时间，单位为秒，只有当SessionPersist为true时，该值才会生效。",
           "example": "3600",
           "member": "uint64",
           "name": "SessionPersistTime",
@@ -6704,7 +6704,7 @@
         },
         {
           "disabled": false,
-          "document": "会话保持的时间，只有当SessionPersist为true时，该值才会生效。",
+          "document": "会话保持的时间，单位为秒，只有当SessionPersist为true时，该值才会生效。",
           "example": "3600",
           "member": "uint64",
           "name": "SessionPersistTime",
