@@ -7,6 +7,13 @@
       "output": "CreateSyncApplicationResponse",
       "status": "online"
     },
+    "GetApplicationDetail": {
+      "document": "申请单详情",
+      "input": "GetApplicationDetailRequest",
+      "name": "申请单详情",
+      "output": "GetApplicationDetailResponse",
+      "status": "online"
+    },
     "GetBpaasApplicationList": {
       "document": "获取申请列表",
       "input": "GetBpaasApplicationListRequest",
@@ -396,6 +403,132 @@
       ],
       "type": "object"
     },
+    "GetApplicationDetailRequest": {
+      "document": "GetApplicationDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>申请单id</p>",
+          "example": "771",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetApplicationDetailResponse": {
+      "document": "GetApplicationDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>申请人uin</p>",
+          "example": "100000007999",
+          "member": "string",
+          "name": "Uin",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>申请人昵称</p>",
+          "example": "nickname",
+          "member": "string",
+          "name": "Nick",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标题</p>",
+          "example": "申请cdb",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>scf参数</p>",
+          "example": "%7B%22PayPaas%22%3A%5B%7B%22Value%22%3A%7B%22OrderIds.0%22%3A%2220240708289061883544191%22%7D%2C%22Key%22%3A%22queryString%22%7D%5D%7D",
+          "member": "string",
+          "name": "Param",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原因</p>",
+          "example": "testing",
+          "member": "string",
+          "name": "Reason",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2024-07-08 10:56:47",
+          "member": "string",
+          "name": "CreateTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审批意见</p>",
+          "example": "无",
+          "member": "Opinion",
+          "name": "Opinions",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "2",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点</p>",
+          "example": "无",
+          "member": "ReNode",
+          "name": "Nodes",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审批流id</p>",
+          "example": "223",
+          "member": "string",
+          "name": "BpaasId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>申请人OwnUin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000007999",
+          "member": "string",
+          "name": "OwnUin",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetBpaasApplicationListRequest": {
       "document": "GetBpaasApplicationList请求参数结构体",
       "members": [
@@ -617,6 +750,52 @@
       ],
       "type": "object"
     },
+    "Opinion": {
+      "document": "审批意见",
+      "members": [
+        {
+          "disabled": false,
+          "document": "顺序",
+          "example": "",
+          "member": "string",
+          "name": "Seq",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "意见标题",
+          "example": "",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "方式（1：输入，2：选项）",
+          "example": "",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "选项值",
+          "example": "",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "OutApproveBpaasApplicationRequest": {
       "document": "OutApproveBpaasApplication请求参数结构体",
       "members": [
@@ -661,6 +840,122 @@
         }
       ],
       "type": "object"
+    },
+    "ReNode": {
+      "document": "节点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "顺序",
+          "example": "",
+          "member": "string",
+          "name": "Seq",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点类型（1：审批节点，2：触发事件）",
+          "example": "",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "scf函数名",
+          "example": "",
+          "member": "string",
+          "name": "Scf",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态（0：待审批，1：审批通过，2：拒绝，3：scf执行失败，4：scf执行成功）",
+          "example": "",
+          "member": "string",
+          "name": "SubStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审批节点审批人",
+          "example": "",
+          "member": "string",
+          "name": "ApprovedUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审批时间",
+          "example": "",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有权限审批该节点的uin",
+          "example": "",
+          "member": "User",
+          "name": "Users",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "type=1：审批人意见，type=2：scf函数执行日志",
+          "example": "",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有权限审批该节点",
+          "example": "",
+          "member": "bool",
+          "name": "IsApprove",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审批id",
+          "example": "",
+          "member": "string",
+          "name": "ApproveId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Resource": {
       "document": "申bpaas申请单关联资源列表",
@@ -1025,6 +1320,52 @@
         }
       ],
       "usage": "out"
+    },
+    "User": {
+      "document": "用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户uin",
+          "example": "",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户类型 (1：用户；2：用户组；3：动态审批人；4：动态审批组)",
+          "example": "",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户描述",
+          "example": "",
+          "member": "string",
+          "name": "Desc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户昵称",
+          "example": "",
+          "member": "string",
+          "name": "Nick",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

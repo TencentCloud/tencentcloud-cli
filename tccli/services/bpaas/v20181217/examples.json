@@ -8,6 +8,14 @@
         "title": "发起异步审批流申请"
       }
     ],
+    "GetApplicationDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bpaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetApplicationDetail\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"771\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BpaasId\": \"223\",\n        \"CreateTime\": \"2024-07-08 10:56:47\",\n        \"Name\": \"申请cdb\",\n        \"Nick\": \"\",\n        \"Nodes\": [\n            {\n                \"ApproveId\": \"0\",\n                \"ApprovedUin\": \"0\",\n                \"CreateTime\": \"2024-07-08 14:23:05\",\n                \"IsApprove\": false,\n                \"Msg\": \"AssumeRole error\",\n                \"Scf\": \"helloworld-1618219767\",\n                \"Seq\": \"1\",\n                \"SubStatus\": \"3\",\n                \"Title\": \"节点1\",\n                \"Type\": \"2\",\n                \"Users\": []\n            }\n        ],\n        \"Opinions\": [\n            {\n                \"Content\": [\n                    \"leader审批\"\n                ],\n                \"Seq\": \"1\",\n                \"Title\": \"审批字段\",\n                \"Type\": \"2\"\n            }\n        ],\n        \"OwnUin\": \"100000007999\",\n        \"Param\": \"%7B%22PayPaas%22%3A%5B%7B%22Value%22%3A%7B%22OrderIds.0%22%3A%2220240708289061883544191%22%7D%2C%22Key%22%3A%22queryString%22%7D%5D%7D\",\n        \"Reason\": \"testing\",\n        \"Status\": \"2\",\n        \"Uin\": \"100000007999\",\n        \"RequestId\": \"5d15e609-d4bb-4237-b5be-f0034738591d\"\n    }\n}",
+        "title": "申请单详情"
+      }
+    ],
     "GetBpaasApplicationList": [
       {
         "document": "",

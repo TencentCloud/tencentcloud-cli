@@ -36,7 +36,7 @@
 | bmeip | [黑石弹性公网IP](http://document.tencentcloudapi.woa.com/document/product/1028) | [查看](http://document.tencentcloudapi.woa.com/document/product/1028/32844) | 2025-11-19 01:12:33 |
 | bmlb | [黑石负载均衡](http://document.tencentcloudapi.woa.com/document/product/1027) | [查看](http://document.tencentcloudapi.woa.com/document/product/1027/33232) | 2025-11-19 01:12:41 |
 | bmvpc | [黑石私有网络](http://document.tencentcloudapi.woa.com/document/product/1024) | [查看](http://document.tencentcloudapi.woa.com/document/product/1024/34192) | 2025-11-19 01:12:58 |
-| bpaas | [商业流程服务](http://document.tencentcloudapi.woa.com/document/product/1083) | [查看](http://document.tencentcloudapi.woa.com/document/product/1628/78470) | 2025-11-19 01:13:16 |
+| bpaas | [商业流程服务](http://document.tencentcloudapi.woa.com/document/product/1083) | [查看](http://document.tencentcloudapi.woa.com/document/product/1628/78470) | 2026-05-06 12:47:19 |
 | bri | [业务风险情报](http://document.tencentcloudapi.woa.com/document/product/1064) | [查看](http://document.tencentcloudapi.woa.com/document/product/1669/79385) | 2024-06-19 01:08:36 |
 | bsca | [软件成分分析](http://document.tencentcloudapi.woa.com/document/product/1483) | [查看](http://document.tencentcloudapi.woa.com/document/product/1693/79894) | 2025-11-19 01:13:20 |
 | btoe | [区块链可信取证](http://document.tencentcloudapi.woa.com/document/product/1259) | [查看](http://document.tencentcloudapi.woa.com/document/product/1259/56584) | 2025-11-19 01:13:32 |
@@ -249,7 +249,7 @@
 | tbase | [TDSQL PostgreSQL 版](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1644/78651) | 2025-11-19 01:56:09 |
 | tbp | [腾讯智能对话平台](http://document.tencentcloudapi.woa.com/document/product/1060) | [查看](http://document.tencentcloudapi.woa.com/document/product/1060/37435) | 2025-11-19 01:56:12 |
 | tcaplusdb | [游戏数据库 TcaplusDB](http://document.tencentcloudapi.woa.com/document/product/596) | [查看](http://document.tencentcloudapi.woa.com/document/product/596/39655) | 2025-12-23 02:09:51 |
-| tcb | [云开发 CloudBase](http://document.tencentcloudapi.woa.com/document/product/876) | [查看](http://document.tencentcloudapi.woa.com/document/product/876/34816) | 2026-04-21 02:14:21 |
+| tcb | [云开发 CloudBase](http://document.tencentcloudapi.woa.com/document/product/876) | [查看](http://document.tencentcloudapi.woa.com/document/product/876/34816) | 2026-05-04 02:13:20 |
 | tcbr | [云托管 CloudBase Run](http://document.tencentcloudapi.woa.com/document/product/1243) | [查看](http://document.tencentcloudapi.woa.com/document/product/1711/80411) | 2026-04-16 02:16:03 |
 | tccatalog | [多模态智能数据湖 TCLake](http://document.tencentcloudapi.woa.com/document/product/1784) | [查看](http://document.tencentcloudapi.woa.com/document/product/1785/85716) | 2026-04-30 02:16:34 |
 | tcex | [腾讯云释义](http://document.tencentcloudapi.woa.com/document/product/1266) | [查看](http://document.tencentcloudapi.woa.com/document/product/1266/49002) | 2022-07-21 06:03:13 |
