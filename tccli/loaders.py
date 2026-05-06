@@ -503,7 +503,7 @@ class Loader(object):
     def generate_cli_example(self, service, version, action):
         examples = self.get_action_example_model(service, version, action)
         for example in examples:
-            example["input"] = self.translate_cli_example(service, action, example)
+            example["input"] = self.translate_cli_example(service, action, example) or []
             try:
                 example["output"] = json.dumps(json.loads(example["output"], object_pairs_hook=OrderedDict),
                                                indent=4, separators=(',', ': '), ensure_ascii=False)
