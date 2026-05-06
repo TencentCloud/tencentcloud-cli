@@ -3,7 +3,7 @@
     "AsyncTextToSpeech": {
       "document": "异步语音合成",
       "input": "AsyncTextToSpeechRequest",
-      "name": "异步实时文本转语音",
+      "name": "异步文本转语音",
       "output": "AsyncTextToSpeechResponse",
       "status": "online"
     },
@@ -122,7 +122,7 @@
     "DescribeAsyncTextToSpeech": {
       "document": "查询异步语音合成状态",
       "input": "DescribeAsyncTextToSpeechRequest",
-      "name": "查询异步语音合成",
+      "name": "查询异步文本转语音",
       "output": "DescribeAsyncTextToSpeechResponse",
       "status": "online"
     },
@@ -472,14 +472,14 @@
     "TextToSpeech": {
       "document": "语音合成接口",
       "input": "TextToSpeechRequest",
-      "name": "实时文本转语音",
+      "name": "文本转语音",
       "output": "TextToSpeechResponse",
       "status": "online"
     },
     "TextToSpeechSSE": {
       "document": "SSE流式文本转语音",
       "input": "TextToSpeechSSERequest",
-      "name": "实时SSE流式文本转语音",
+      "name": "流式文本转语音",
       "output": "TextToSpeechSSEResponse",
       "status": "online"
     },

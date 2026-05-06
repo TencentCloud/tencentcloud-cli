@@ -1,23 +1,26 @@
-**Example 1: 创建应用**
+**Example 1: CreateApp**
 
-创建应用
+
 
 Input: 
 
 ```
 tccli lke CreateApp --cli-unfold-argument  \
     --AppType knowledge_qa \
-    --BaseConfig.Name 知识问答 \
-    --BaseConfig.Avatar 头像 \
-    --BaseConfig.Desc 第一个应用
+    --BaseConfig.Name 我的智能体应用 \
+    --BaseConfig.Avatar https://cdn.xiaowei.qq.com/static/adp/app-default-avatar.png \
+    --BaseConfig.Desc 应用描述信息 \
+    --Pattern ClawAgent \
+    --AgentType dialogue
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "AppBizId": "198848848484848",
-        "RequestId": "dwec-adsdsdsd-sfsfdsfsf"
+        "AppBizId": "2049767047020830336",
+        "IsCustomList": false,
+        "RequestId": "7c04aa7f-45ce-41fc-91a9-0743aa65104d"
     }
 }
 ```

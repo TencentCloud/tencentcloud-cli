@@ -7790,6 +7790,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>场景类型。取值如下：<li>当 ModelName 为 Hunyuan 时：   3d_panorama 表示全景图；</li><li>其他 ModelName 暂不支持。</li></p>",
+          "example": "3d_panorama",
+          "member": "string",
+          "name": "SceneType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8944,7 +8954,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "存储模式。取值有： <li>Permanent：永久存储；</li> <li>Temporary：临时存储；</li>\n默认值：Temporary",
+          "document": "<p>存储模式。取值有： <li>Permanent：永久存储；</li> <li>Temporary：临时存储；</li><br>默认值：Temporary</p>",
           "example": "Permanent",
           "member": "string",
           "name": "StorageMode",
@@ -8954,7 +8964,7 @@
         },
         {
           "disabled": false,
-          "document": "输出文件名，最长 64 个字符。缺省由系统指定生成文件名。当 StorageMode 为 Permanent 时有效。",
+          "document": "<p>输出文件名，最长 64 个字符。缺省由系统指定生成文件名。当 StorageMode 为 Permanent 时有效。</p>",
           "example": "myfile",
           "member": "string",
           "name": "MediaName",
@@ -8964,7 +8974,7 @@
         },
         {
           "disabled": false,
-          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。当 StorageMode 为 Permanent 时有效。\n",
+          "document": "<p>分类ID，用于对媒体进行分类管理，可通过 <a href=\"/document/product/266/7812\">创建分类</a> 接口，创建分类，获得分类 ID。当 StorageMode 为 Permanent 时有效。</p>",
           "example": "1",
           "member": "int64",
           "name": "ClassId",
@@ -8974,7 +8984,7 @@
         },
         {
           "disabled": false,
-          "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "<p>输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式说明</a>。</p>",
           "example": "2025-12-28T00:35:00Z",
           "member": "string",
           "name": "ExpireTime",
@@ -8984,7 +8994,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型，例如 mp4、flv 等。",
+          "document": "<p>文件类型，例如 mp4、flv 等。</p>",
           "example": "mp4",
           "member": "string",
           "name": "FileType",
@@ -8994,7 +9004,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体文件播放地址。",
+          "document": "<p>媒体文件播放地址。</p>",
           "example": "http://251007502.vod-qcloud.com/1a1***1510859450449/aigcVideoGenFile.mp4",
           "member": "string",
           "name": "FileUrl",
@@ -9004,7 +9014,17 @@
         },
         {
           "disabled": false,
-          "document": "媒体文件 ID。当 StorageMode 为 Permanent 时有效。",
+          "document": "<p>文件内容。当 UsageType 为 position_info 时有返回值。</p>",
+          "example": "JSON字符串",
+          "member": "string",
+          "name": "FileContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>媒体文件 ID。当 StorageMode 为 Permanent 时有效。</p>",
           "example": "3704211***450449",
           "member": "string",
           "name": "FileId",
@@ -9014,12 +9034,22 @@
         },
         {
           "disabled": false,
-          "document": "输出视频的元信息。当 StorageMode 为 Permanent 时有效。",
+          "document": "<p>输出视频的元信息。当 StorageMode 为 Permanent 时有效。</p>",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件的用途类型。</p><p>枚举值：</p><ul><li>scene_url： 3D 场景文件，FileUrl 字段有返回值。</li><li>point_url： 点云文件，FileUrl 字段有返回值。</li><li>mesh_url： 原始网格模型文，FileUrl 字段有返回值。</li><li>mesh_simplified_url： 简化后的网格模型文件，FileUrl 字段有返回值。</li><li>position_info： 场景空间位置信息，FileContent 字段有返回值。</li><li>image_url： 生成的图片，FileUrl 字段有返回值。</li></ul>",
+          "example": "image_url",
+          "member": "string",
+          "name": "UsageType",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -13059,6 +13089,15 @@
           "example": "Mainland",
           "member": "string",
           "name": "InputRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>场景类型。取值如下：<li>当 ModelName 为 Hunyuan 时：   3d_panorama 表示全景图；</li><li>其他 ModelName 暂不支持。</li></p>",
+          "example": "3d_panorama",
+          "member": "string",
+          "name": "SceneType",
           "required": false,
           "type": "string"
         },
