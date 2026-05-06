@@ -8,6 +8,14 @@
         "title": "调用请求示例"
       }
     ],
+    "DescribeHunyuanTo3DMotionJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHunyuanTo3DMotionJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1439092349727752192\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"ResultFile3Ds\": [\n            {\n                \"Type\": \"FBX\",\n                \"Url\": \"https://*******************.cos.ap-guangzhou.tencentcos.cn/text2motion/output/251202827/cfb02f90-e884-415d-8dcd-60cc7e1503de_output.fbx?q-sign-algorithm=sha1&q-ak=************************************&q-sign-time=1777001423%3B1777087822&q-key-time=1777001423%3B1777087822&q-header-list=host&q-url-param-list=&q-signature=54bba445ebf011e4b3f07147f0184f3623a87350\"\n            }\n        ],\n        \"Status\": \"DONE\",\n        \"RequestId\": \"578477b2-29ad-4226-b883-cdd04059e0ac\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
     "DescribeHunyuanTo3DUVJob": [
       {
         "document": "",
@@ -70,6 +78,14 @@
         "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuan3DPartJob\n<公共请求参数>\n\n{\n    \"File\": {\n        \"Type\": \"FBX\",\n        \"Url\": \"https://vcg-test-1258344699.cos.ap-guangzhou.myqcloud.com/test/3d/test.fbx\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"1384898587778465792\",\n        \"RequestId\": \"5265eb4a-0f4f-4cb1-9b3d-d9f1fb9347d2\"\n    }\n}",
         "title": "提交组件拆分任务示例"
+      }
+    ],
+    "SubmitHunyuanTo3DMotionJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanTo3DMotionJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"A person walks forward\",\n    \"Model\": \"HY-Motion-1.0\",\n    \"Duration\": 5,\n    \"EnableMesh\": true,\n    \"EnableRewrite\": true,\n    \"EnableDurationEst\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1440974607266955264\",\n        \"RequestId\": \"52038f80-fc7e-4dcd-be4a-eb48a31e8508\"\n    }\n}",
+        "title": "调用示例"
       }
     ],
     "SubmitHunyuanTo3DProJob": [

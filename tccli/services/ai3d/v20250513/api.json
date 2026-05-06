@@ -7,6 +7,13 @@
       "output": "Convert3DFormatResponse",
       "status": "online"
     },
+    "DescribeHunyuanTo3DMotionJob": {
+      "document": "查询组件生成任务。",
+      "input": "DescribeHunyuanTo3DMotionJobRequest",
+      "name": "查询文生动作任务",
+      "output": "DescribeHunyuanTo3DMotionJobResponse",
+      "status": "online"
+    },
     "DescribeHunyuanTo3DUVJob": {
       "document": "查询组件拆分任务。",
       "input": "DescribeHunyuanTo3DUVJobRequest",
@@ -61,6 +68,13 @@
       "input": "SubmitHunyuan3DPartJobRequest",
       "name": "提交组件生成任务",
       "output": "SubmitHunyuan3DPartJobResponse",
+      "status": "online"
+    },
+    "SubmitHunyuanTo3DMotionJob": {
+      "document": "输入文本后，可根据文本描述生成对应的 3D人物 动作数据，输出带动画数据的FBX文件。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "SubmitHunyuanTo3DMotionJobRequest",
+      "name": "提交文生动作任务",
+      "output": "SubmitHunyuanTo3DMotionJobResponse",
       "status": "online"
     },
     "SubmitHunyuanTo3DProJob": {
@@ -148,6 +162,73 @@
           "name": "ResultFile3D",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHunyuanTo3DMotionJobRequest": {
+      "document": "DescribeHunyuanTo3DMotionJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID。</p>",
+          "example": "1439092349727752192",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHunyuanTo3DMotionJobResponse": {
+      "document": "DescribeHunyuanTo3DMotionJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功 示例值：RUN。</p>",
+          "example": "DONE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码。</p>",
+          "example": "FailedOperation.InnerError",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息。</p>",
+          "example": "服务内部错误，请重试。",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成文件的URL地址，有效期1天。</p>",
+          "example": "无",
+          "member": "File3D",
+          "name": "ResultFile3Ds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -770,6 +851,97 @@
           "disabled": false,
           "document": "<p>任务ID。</p>",
           "example": "1384898587778465792",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitHunyuanTo3DMotionJobRequest": {
+      "document": "SubmitHunyuanTo3DMotionJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入文本prompt，限定最大字符为128。</p>",
+          "example": "A person walks forward",
+          "member": "string",
+          "name": "Prompt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称：HY-Motion-1.0，默认HY-Motion-1.0。</p>",
+          "example": "HY-Motion-1.0",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需重定向的模型地址，只能支持混元生3D动画生成的模型（动画模板的接口）</p>",
+          "example": "无",
+          "member": "InputFile3D",
+          "name": "RetargetFile",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成动画的时长，默认5，范围：1-12（单位s）</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "Duration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认true，返回的fbx是否带蒙皮mesh</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableMesh",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启prompt扩写，开启后将补充完善输入的prompt。<br>默认false。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRewrite",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启时长自动匹配，开启后将自动根据prompt匹配适合时长的动作数据<br>默认false。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableDurationEst",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitHunyuanTo3DMotionJobResponse": {
+      "document": "SubmitHunyuanTo3DMotionJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID（有效期24小时）</p>",
+          "example": "1440974607266955264",
           "member": "string",
           "name": "JobId",
           "output_required": false,
