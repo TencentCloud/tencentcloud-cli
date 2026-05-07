@@ -169,7 +169,7 @@
       "status": "online"
     },
     "UpdateServiceConfigs": {
-      "document": "本接口(UpdateServiceConfigs)用于更新服务配置",
+      "document": "本接口(UpdateServiceConfigs)用于更新服务配置。",
       "input": "UpdateServiceConfigsRequest",
       "name": "更新服务配置",
       "output": "UpdateServiceConfigsResponse",
@@ -433,7 +433,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源类型及数量",
+          "document": "<p>资源类型及数量</p>",
           "example": "无",
           "member": "ComputeResource",
           "name": "ComputeResources",
@@ -442,12 +442,21 @@
         },
         {
           "disabled": false,
-          "document": "副本数",
+          "document": "<p>副本数</p>",
           "example": "3",
           "member": "int64",
           "name": "Replicas",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色副本数</p><p>入参限制：RoleReplicasInfo对象的数组</p>",
+          "example": "无",
+          "member": "RoleReplicasInfo",
+          "name": "RoleReplicas",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -659,6 +668,15 @@
           "name": "NetworkSetting",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色副本数</p>",
+          "example": "无",
+          "member": "RoleReplicasInfo",
+          "name": "RoleReplicas",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2895,6 +2913,34 @@
       ],
       "type": "object"
     },
+    "RoleReplicasInfo": {
+      "document": "role的replicas，用于模版/自定义创建",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>部署模版中的角色</p><p>pd分离场景：prefill/decode/router</p>",
+          "example": "prefill",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对应role的副本数量</p><p>单位：个</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Replicas",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RunInstancesRequest": {
       "document": "RunInstances请求参数结构体",
       "members": [
@@ -3478,6 +3524,15 @@
           "example": "无",
           "member": "DeploymentConfig",
           "name": "DeploymentConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标角色副本数量</p><p>参考：[{&quot;role&quot;:&quot;prefill&quot;,&quot;replicas&quot;:1}]</p>",
+          "example": "无",
+          "member": "RoleReplicasInfo",
+          "name": "TargetRoleReplicas",
           "required": false,
           "type": "list"
         }

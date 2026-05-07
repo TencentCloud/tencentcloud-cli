@@ -12038,6 +12038,15 @@
           "name": "ExperimentalParams",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "不填写则不进行更新，仅 TCCC 支持更新 STTConfig",
+          "example": "无",
+          "member": "STTConfig",
+          "name": "STTConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

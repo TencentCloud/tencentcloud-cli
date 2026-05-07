@@ -30025,6 +30025,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值id</p>",
+          "example": "1349",
+          "member": "string",
+          "name": "LabelValueId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值</p>",
+          "example": "asfsdfsdfasd标签超长标签超长标签超长asfsdfsdfasd标签超长标签超长标签超长asfsdfsdfasd标签超长标签超长标签超长asfsdfsdfasd标签超长标签超长标签超长asfsdfsdfasd标签超长标签超长标签超长",
+          "member": "string",
+          "name": "LabelValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -72892,6 +72914,15 @@
           "example": "[\"builtin_table\"]",
           "member": "string",
           "name": "KbNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引名称</p>",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "IndexNames",
           "required": false,
           "type": "list"
         }
