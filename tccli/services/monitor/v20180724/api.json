@@ -2901,7 +2901,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "必填。固定值\"monitor\"",
+          "document": "<p>必填。固定值&quot;monitor&quot;</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -2910,7 +2910,7 @@
         },
         {
           "disabled": false,
-          "document": "策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数",
+          "document": "<p>策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数</p>",
           "example": "111111",
           "member": "int64",
           "name": "GroupId",
@@ -2919,7 +2919,7 @@
         },
         {
           "disabled": false,
-          "document": "告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准",
+          "document": "<p>告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准</p>",
           "example": "policy-abc123",
           "member": "string",
           "name": "PolicyId",
@@ -2928,7 +2928,7 @@
         },
         {
           "disabled": false,
-          "document": "实例分组ID",
+          "document": "<p>实例分组ID</p>",
           "example": "0",
           "member": "int64",
           "name": "InstanceGroupId",
@@ -2937,7 +2937,7 @@
         },
         {
           "disabled": false,
-          "document": "需要绑定的对象维度信息，当为实例绑定渠道时，此处为必填信息",
+          "document": "<p>需要绑定的对象维度信息。当告警对象选择为实例绑定方式时，该参数为必填参数；当告警对象选择为标签绑定、实例分组方式时，该参数为选填参数。</p>",
           "example": "无",
           "member": "BindingPolicyObjectDimension",
           "name": "Dimensions",
@@ -2946,7 +2946,7 @@
         },
         {
           "disabled": false,
-          "document": "事件配置的告警",
+          "document": "<p>事件配置的告警</p>",
           "example": "\"{\\\"source\\\":[\\\"cvm.cloud.tencent\\\"]}\"",
           "member": "string",
           "name": "EbSubject",
@@ -2955,7 +2955,7 @@
         },
         {
           "disabled": false,
-          "document": "是否配置了事件告警",
+          "document": "<p>是否配置了事件告警</p>",
           "example": "1",
           "member": "int64",
           "name": "EbEventFlag",

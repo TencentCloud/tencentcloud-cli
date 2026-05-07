@@ -1281,8 +1281,8 @@
     "DescribeOriginStreamInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOriginStreamInfo\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c8e1724-8e56-4ae0-ab6e-2cef6e3c3a20\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOriginStreamInfo\n<公共请求参数>\n\n{\n    \"DomainName\": \"autotest-third-source01.elementtest.org\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"DomainName\": \"autotest-third-source01.elementtest.org\",\n        \"CdnStreamPlayType\": [\n            \"rtmp\",\n            \"hls\",\n            \"flv\"\n        ],\n        \"OriginStreamType\": 1,\n        \"OriginStreamPlayType\": \"rtmp\",\n        \"OriginAddressType\": 1,\n        \"OriginAddress\": [\n            \"60.215.15.235:1935\",\n            \"32.16.116.191:1935\"\n        ],\n        \"OriginTimeout\": 10000,\n        \"OriginRetryTimes\": 10,\n        \"TimeJitter\": \"off\",\n        \"HlsPlayFragmentCount\": 3,\n        \"HlsPlayFragmentDuration\": 3000,\n        \"PassThroughHttpHeader\": \"off\",\n        \"PassThroughResponse\": \"off\",\n        \"PassThroughParam\": \"off\",\n        \"OriginHost\": null,\n        \"IndexerCache\": null,\n        \"FragmentCache\": null,\n        \"UsingHttps\": \"off\",\n        \"CacheFollowOrigin\": \"off\",\n        \"CacheStatusCode\": [],\n        \"UrlReplaceRules\": [],\n        \"OptionsRequest\": \"off\",\n        \"FollowRedirect\": \"on\",\n        \"CustomerName\": null,\n        \"StreamPackageRegion\": null,\n        \"IndexerKeepParam\": [],\n        \"FragmentKeepParam\": [],\n        \"MediaPackageType\": null,\n        \"IndexerHeader\": [],\n        \"FragmentHeader\": [],\n        \"RequestId\": \"85f82143-b8a2-467c-bcff-6729fd7a471f\"\n    }\n}",
         "title": "获取直播源站配置信息"
       }
     ],
@@ -1673,7 +1673,7 @@
     "ModifyOriginStreamInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOriginStreamInfo\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOriginStreamInfo\n<公共请求参数>\n\n{\n    \"DomainName\": \"www.test.live\",\n    \"OriginStreamPlayType\": \"hls\",\n    \"CdnStreamPlayType\": [\n        \"hls\"\n    ],\n    \"OriginStreamType\": 1,\n    \"OriginAddress\": [\n        \"81.68.241.194:8082\"\n    ],\n    \"OriginAddressType\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2b73d79c-2726-4906-810c-7ad2f2c6f76e\"\n    }\n}",
         "title": "ModifyOriginStreamInfo"
       }

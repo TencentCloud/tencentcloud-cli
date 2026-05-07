@@ -380,6 +380,14 @@
         "title": "开启实例数据透明加密"
       }
     ],
+    "EnableWanService": [
+      {
+        "document": "实例未开启外网访问，请求该接口开启外网访问。",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableWanService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-qwla****\",\n    \"LoadBalancerId\": \"lb-94d6****\",\n    \"NodeList\": [\n        {\n            \"VipVport\": \"10.0.30.*:27017\",\n            \"ListenerPort\": \"10001\"\n        },\n        {\n            \"VipVport\": \"10.0.30.*:27017\",\n            \"ListenerPort\": \"10002\"\n        },\n        {\n            \"VipVport\": \"10.0.30.1*:27017\",\n            \"ListenerPort\": \"10003\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 174548484400,\n        \"RequestId\": \"ce73f291-7ffd-4390-9434-7c****12sa1b0\"\n    }\n}",
+        "title": "开启实例的外网访问地址。"
+      }
+    ],
     "FlashBackDBInstance": [
       {
         "document": "",

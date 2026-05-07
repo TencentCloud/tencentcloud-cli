@@ -790,20 +790,38 @@
       "members": [
         {
           "disabled": false,
-          "document": "签名 ID 数组。\n注：默认数组最大长度100。",
-          "example": "[1110]",
-          "member": "uint64",
-          "name": "SignIdSet",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "document": "<p>是否国际/港澳台短信：<br>0：表示国内短信。<br>1：表示国际/港澳台短信。</p>",
           "example": "0",
           "member": "uint64",
           "name": "International",
           "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>签名 ID 数组。<br>注：默认数组最大长度100。</p>",
+          "example": "[1110]",
+          "member": "uint64",
+          "name": "SignIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大上限，最多100。注：默认为10，SignIdSet 为空时启用。</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量。注：默认为0，SignIdSet 为空时启用。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
           "type": "int"
         }
       ],
@@ -814,8 +832,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "获取签名信息响应",
-          "example": "[{\"SignName\":\"腾讯云\",\"International\":0,\"SignId\":1110,\"ReviewReply\":\"\",\"CreateTime\":1617508800,\"StatusCode\":0}]",
+          "document": "<p>获取签名信息响应</p>",
+          "example": "无",
           "member": "DescribeSignListStatus",
           "name": "DescribeSignListStatusSet",
           "output_required": true,

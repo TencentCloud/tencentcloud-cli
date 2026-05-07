@@ -1016,10 +1016,10 @@
     ],
     "CreateMultiFlowSignQRCode": [
       {
-        "document": "创建一码多扫流程签署二维码，指定固定的用户才能扫码签署。",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUU******wg0vjoimj\"\n    },\n    \"FlowName\": \"测试合同\",\n    \"TemplateId\": \"yDRS4U******TmzsIAR\",\n    \"Restrictions\": [\n        {\n            \"Name\": \"张三\",\n            \"Mobile\": \"188********\"\n        },\n        {\n            \"Name\": \"李四\",\n            \"Mobile\": \"189********\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"QrCode\": {\n            \"QrCodeUrl\": \"https://res.ess.tencent.cn/mp-gate/release/CHANNEL_CONTRACT_COVER/xxx\",\n            \"ExpiredTime\": 1693814798,\n            \"QrCodeId\": \"yDRS****jEuBzwyiofZ\",\n            \"WeixinQrCodeUrl\": \"https://embed.beta.qian.tencent.cn/code=yDtwRUUckp7fyqz6UuQZAp18BNrB74xu\"\n        },\n        \"SignUrls\": {\n            \"EffectiveTime\": \"2022-08-05 15:55:01\",\n            \"HttpSignUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?where=mini&from=MSG&to=CHANNEL_CONTRACT_COVER&xxx\",\n            \"AppSignUrl\": \"pages/guide?from=default&where=mini&autoJumpBack=true&to=CHANNEL_CONTRACT_COVER&xxx\"\n        },\n        \"RequestId\": \"s198*****111\"\n    }\n}",
-        "title": "创建指定用户的的合同流程签署二维码"
+        "document": "如果模板不符合以下以下任意一个条件\n1. 模板中配置的签署顺序是无序\n2. B端企业的签署方式是静默签署\n3. B端企业是非首位签署\n则创建二维码失败，返回错误信息",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"FlowName\": \"测试合同\",\n    \"MaxFlowNum\": 100,\n    \"QrEffectiveDay\": 7,\n    \"FlowEffectiveDay\": 7,\n    \"Operator\": {\n        \"UserId\": \"yDRCLUU******wg0vjoimj\"\n    },\n    \"TemplateId\": \"yDRS4U******xmzsIAR\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.QrCodeTemplateId\",\n            \"Message\": \"二维码生成失败，模板未满足生成二维码\"\n        },\n        \"RequestId\": \"s169*****0872\"\n    }\n}",
+        "title": "创建指合同流程签署二维码失败-模板不支持"
       },
       {
         "document": "1. 使用B2C模板 yDRscUUgyg1zr7wnUyJ8QMwwnHc4OOcQ 创建了一个签署二维码。\n\n2.指定RecipientId 为 yDRscUUgyg3zr9vfUyJ8QKwCN7z9YcOh 的签署人在签名时可以手写（HANDWRITE） 或者使用系统签名 (SYSTEM_ESIGN)。\n\n3.指定RecipientId 为 yDwJNUUckpkojrmqUxTFHk0yndh70CpW 的签署人在签名时只能使用AI智能识别手写签名（OCR_ESIGN）。",
@@ -1028,10 +1028,10 @@
         "title": "创建指定了签署方签名方式的签署二维码"
       },
       {
-        "document": "如果模板不符合以下以下任意一个条件\n1. 模板中配置的签署顺序是无序\n2. B端企业的签署方式是静默签署\n3. B端企业是非首位签署\n则创建二维码失败，返回错误信息",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"FlowName\": \"测试合同\",\n    \"MaxFlowNum\": 100,\n    \"QrEffectiveDay\": 7,\n    \"FlowEffectiveDay\": 7,\n    \"Operator\": {\n        \"UserId\": \"yDRCLUU******wg0vjoimj\"\n    },\n    \"TemplateId\": \"yDRS4U******xmzsIAR\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.QrCodeTemplateId\",\n            \"Message\": \"二维码生成失败，模板未满足生成二维码\"\n        },\n        \"RequestId\": \"s169*****0872\"\n    }\n}",
-        "title": "创建指合同流程签署二维码失败-模板不支持"
+        "document": "创建一码多扫流程签署二维码，指定固定的用户才能扫码签署。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUU******wg0vjoimj\"\n    },\n    \"FlowName\": \"测试合同\",\n    \"TemplateId\": \"yDRS4U******TmzsIAR\",\n    \"Restrictions\": [\n        {\n            \"Name\": \"张三\",\n            \"Mobile\": \"188********\"\n        },\n        {\n            \"Name\": \"李四\",\n            \"Mobile\": \"189********\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"QrCode\": {\n            \"QrCodeUrl\": \"https://res.ess.tencent.cn/mp-gate/release/CHANNEL_CONTRACT_COVER/xxx\",\n            \"ExpiredTime\": 1693814798,\n            \"QrCodeId\": \"yDRS****jEuBzwyiofZ\",\n            \"WeixinQrCodeUrl\": \"https://embed.beta.qian.tencent.cn/code=yDtwRUUckp7fyqz6UuQZAp18BNrB74xu\"\n        },\n        \"SignUrls\": {\n            \"EffectiveTime\": \"2022-08-05 15:55:01\",\n            \"HttpSignUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?where=mini&from=MSG&to=CHANNEL_CONTRACT_COVER&xxx\",\n            \"AppSignUrl\": \"pages/guide?from=default&where=mini&autoJumpBack=true&to=CHANNEL_CONTRACT_COVER&xxx\"\n        },\n        \"RequestId\": \"s198*****111\"\n    }\n}",
+        "title": "创建指定用户的的合同流程签署二维码"
       },
       {
         "document": "创建一码多扫流程签署二维码，设置该二维码在7天内有效，并将最大合同流程签署数量限制为100份。\n设定签署合同的有效期为7天。",

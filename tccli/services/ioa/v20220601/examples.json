@@ -346,6 +346,14 @@
         "title": "增加授权"
       }
     ],
+    "ModifyBusinessResource": [
+      {
+        "document": "",
+        "input": "Path : /capi/GatewayResource/ModifyBusinessResource\n\n<body>\n{\n    \"AreaId\":156,\n    \"DirectConn\":0,\n    \"Protocol\":2,\n    \"Levels\":5000,\n    \"ServiceType\":\"domain\",\n    \"SmartGates\":[\n        186\n    ],\n    \"ServiceName\":\"资源名称\",\n    \"ServiceAddress\":\"*tencent1658370342.com\",\n    \"ServiceId\":112,\n    \"ServicePort\":\"all\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1658370416.5806396\"\n    }\n}",
+        "title": "修改业务资源"
+      }
+    ],
     "ModifyDeviceTrustStatus": [
       {
         "document": "",

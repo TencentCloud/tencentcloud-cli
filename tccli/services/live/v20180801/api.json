@@ -1093,7 +1093,7 @@
       "status": "online"
     },
     "DescribeOriginStreamInfo": {
-      "document": "获取直播源站配置信息，支持直播原站格式。",
+      "document": "获取直播源站配置信息，支持直播源站格式。",
       "input": "DescribeOriginStreamInfoRequest",
       "name": "获取直播源站配置信息",
       "output": "DescribeOriginStreamInfoResponse",
@@ -1436,7 +1436,7 @@
       "status": "online"
     },
     "ModifyOriginStreamInfo": {
-      "document": "变更直播源站配置，支持直播原站格式。",
+      "document": "变更直播源站配置，支持直播源站格式。",
       "input": "ModifyOriginStreamInfoRequest",
       "name": "变更直播源站配置",
       "output": "ModifyOriginStreamInfoResponse",
@@ -14091,7 +14091,17 @@
     },
     "DescribeOriginStreamInfoRequest": {
       "document": "DescribeOriginStreamInfo请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>域名。</p>",
+          "example": "autotest-third-source01.elementtest.org",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeOriginStreamInfoResponse": {
@@ -14099,7 +14109,337 @@
       "members": [
         {
           "disabled": false,
-          "document": "缓存格式规则。 \n0：默认格式。\n1：云直播源站格式。\n当 OriginStreamPlayType 为 customization 时候生效。",
+          "document": "<p>配置状态信息：0 配置中，1 成功，2 关闭中，3 关闭成功。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>播放类型。</p>",
+          "example": "[\"rtmp\"]",
+          "member": "string",
+          "name": "CdnStreamPlayType",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站配置类型：1 直播原站。<br>2 streamPackage。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginStreamType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站播放类型。</p>",
+          "example": "customization",
+          "member": "string",
+          "name": "OriginStreamPlayType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站地址类型：1 ip，2 域名。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginAddressType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站地址信息，每项用分号分割域名（ip）、端口信息。<br>端口为空也要带上分号，表示取默认端口。</p>",
+          "example": "[\"1.2.3.4:8800\"]",
+          "member": "string",
+          "name": "OriginAddress",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>超时时间，单位 ms。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "int64",
+          "name": "OriginTimeout",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>重试次数，单位 次。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginRetryTimes",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间戳修正，可取值：on、off。<br>当原站播放协议为 rtmp、flv 时，传递该字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "TimeJitter",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分片数，单位 个。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "HlsPlayFragmentCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分片时长，单位 ms。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3500",
+          "member": "int64",
+          "name": "HlsPlayFragmentDuration",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传 http 头信息，可取值：on、off。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughHttpHeader",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传相应，可取值：on、off。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughResponse",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传参数，可取值：on、off。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughParam",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站 host。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.play.fake.com",
+          "member": "string",
+          "name": "OriginHost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引缓存，单位 ms。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "IndexerCache",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分片缓存，单位 ms。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "FragmentCache",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "autotest-third-source01.elementtest.org",
+          "member": "string",
+          "name": "DomainName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>https 回源，可取值：on、off。<br>当原站播放协议为flv、hls时，传递此字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "UsingHttps",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否遵循原站，可取值：on、off。<br>当原站播放协议为hls时，此字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "CacheFollowOrigin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态码缓存，数组元素格式：<br>cacheKey:interval<br>cacheKey 可取值：cache_400_sec、cache_403_sec、cache_404_sec、cache_405_sec、cache_500_sec、cache_503_sec、cache_504_sec。<br>interval 单位 ms。<br>当原站播放协议为hls时，此字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cache_400_sec:1\"]",
+          "member": "string",
+          "name": "CacheStatusCode",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>url改写， 格式为： url1&lt;|&gt;url2; 其中，&lt;|&gt; 为分隔符。<br>url1、url2 长度限制100，不可包含特殊字符。<br>当原站播放协议为hls时，此字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/live<|>/live2\",\"pgm<|>clean\"]",
+          "member": "string",
+          "name": "UrlReplaceRules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否 options 支持，可取值：on、off。<br>当原站播放协议为hls时，此字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "OptionsRequest",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否 follow 301/302，可取值：on、off。<br>当原站播放协议为hls时，此字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
+          "member": "string",
+          "name": "FollowRedirect",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>源站类型 OriginStreamType 为 2 时，该字段有效。 代表源站地址 OriginAddress 对应的地区 region。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ap-mumbai\"]",
+          "member": "string",
+          "name": "StreamPackageRegion",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "customer1",
+          "member": "string",
+          "name": "CustomerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamPlayType 为 hls 时生效，设置索引缓存保留指定参数列表，最多支持 30 组，每个参数小于等于 20 字符。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"key1\",\"key2\"]",
+          "member": "string",
+          "name": "IndexerKeepParam",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamPlayType 为 hls 时生效，设置分片缓存保留指定参数列表，最多支持 30 组，每个参数小于等于 20 字符。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"key1\",\"key2\"]",
+          "member": "string",
+          "name": "FragmentKeepParam",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamType = 2 时有效，表示 mediapackage 具体类型：<br>media_package =&gt; 仅配置普通频道。<br>media_package_pure_ad =&gt; 仅配置广告。<br>media_package_mix_ad =&gt; 同时配置普通频道和广告。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "media_package",
+          "member": "string",
+          "name": "MediaPackageType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamType = 2 且 MediaPackageType = media_package 时有效，表示 mediapackage 频道类型，可组合如下值：normal（频道）、ssai（广告）、linear_assembly（线性组装）。</p>",
+          "example": "[\"normal\"]",
+          "member": "string",
+          "name": "MediaPackageChannelTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamPlayType 为 hls 时生效，设置索引自定义 header，每一组参数、取值用空格分开。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"k1:v1\",\"k2:v2\"]",
+          "member": "string",
+          "name": "IndexerHeader",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamPlayType 为 hls 时生效，设置分片自定义 header，每一组参数、取值用空格分开。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"k1:v1\",\"k2:v2\"]",
+          "member": "string",
+          "name": "FragmentHeader",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义规则列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OriginStreamCustomizationRule",
+          "name": "CustomizationRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存格式规则。<br>0：默认格式。<br>1：云直播源站格式。<br>当 OriginStreamPlayType 为 customization 时候生效。</p>",
           "example": "1",
           "member": "int64",
           "name": "CacheFormatRule",
@@ -19869,7 +20209,296 @@
     },
     "ModifyOriginStreamInfoRequest": {
       "document": "ModifyOriginStreamInfo请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>域名。</p>",
+          "example": "www.playtest.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>源站播放协议，可取值：rtmp、flv、hls、dash、hls|dash、customization。</p>",
+          "example": "hls",
+          "member": "string",
+          "name": "OriginStreamPlayType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>播放协议，可取值：rtmp、flv、hls、dash、hls|dash、customization。<br>自定义回源协议填写 customization。</p>",
+          "example": "[\"customization\"]",
+          "member": "string",
+          "name": "CdnStreamPlayType",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站类型：<br>1 =&gt; 直播原站。<br>2 =&gt; mediaPackage。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginStreamType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站地址信息，每项用冒号分割域名（ip）、端口信息。<br>端口为空也要带上分号，表示取默认端口。<br>自定义回源协议填写 customization。</p>",
+          "example": "[\"1.2.3.4:80\"]",
+          "member": "string",
+          "name": "OriginAddress",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站地址类型：<br>1 =&gt; IP 类型。<br>2 =&gt; 域名类型。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginAddressType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义名称</p>",
+          "example": "customer1",
+          "member": "string",
+          "name": "CustomerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站 host。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>",
+          "example": "www.test.host.com",
+          "member": "string",
+          "name": "OriginHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>超时时间，单位 ms，取值范围：1 ～ 60000，默认值：10000。</p>",
+          "example": "10000",
+          "member": "int64",
+          "name": "OriginTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>重试次数，单位 次，取值范围：1 ～ 10，默认值：10。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "OriginRetryTimes",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传 http 头信息，可取值：on、off。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughHttpHeader",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传相应，可取值：on、off。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughResponse",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传参数，可取值：on、off。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughParam",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引缓存，单位 ms，取值范围：1 ～ 60000，默认值：10000。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>",
+          "example": "10000",
+          "member": "int64",
+          "name": "IndexerCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分片缓存，单位 ms，取值范围：1 ～ 60000，默认值：10000。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>",
+          "example": "10000",
+          "member": "int64",
+          "name": "FragmentCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分片数，单位 个，取值范围：1 ～ 10，默认值：3。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "HlsPlayFragmentCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分片时长，单位 ms，取值范围：1 ～ 10000，默认值：3000。</p>",
+          "example": "3000",
+          "member": "int64",
+          "name": "HlsPlayFragmentDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间戳修正，可取值：on、off，默认值：off。<br>当原站播放协议为 rtmp、flv 时，传递该字段才会生效。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "TimeJitter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>https 回源，可取值：on、off，默认值：off。<br>当原站播放协议为flv、hls时，传递此字段才会生效。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "UsingHttps",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>遵循原站，可取值：on、off，默认值：off。<br>当原站播放协议为hls时，传递此字段才会生效。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "CacheFollowOrigin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态码缓存，数组元素格式：<br>cacheKey:interval<br>cacheKey 可取值：cache_400_sec、cache_403_sec、cache_404_sec、cache_405_sec、cache_500_sec、cache_503_sec、cache_504_sec。<br>interval 单位 ms。<br>当原站播放协议为hls时，传递此字段才会生效。</p>",
+          "example": "[\"cache_400_sec:1\"]",
+          "member": "string",
+          "name": "CacheStatusCode",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>url改写， 格式为： url1&lt;|&gt;url2; 其中，&lt;|&gt; 为分隔符。<br>url1、url2 长度限制100，不可包含特殊字符。<br>当原站播放协议为hls时，传递此字段才会生效。</p>",
+          "example": "[\"/live<|>/live2\"]",
+          "member": "string",
+          "name": "UrlReplaceRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>options 支持，可取值：on、off，默认值：off。<br>当原站播放协议为hls时，传递此字段才会生效。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "OptionsRequest",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>follow 301/302，可取值：on、off，默认值：off。<br>当原站播放协议为hls时，传递此字段才会生效。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "FollowRedirect",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamPlayType 为 hls 时生效，设置索引缓存保留指定参数列表，最多支持 30 组，每个参数小于等于 20 字符。</p>",
+          "example": "[\"key1\",\"key2\"]",
+          "member": "string",
+          "name": "IndexerKeepParam",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamPlayType 为 hls 时生效，设置分片缓存保留指定参数列表，最多支持 30 组，每个参数小于等于 20 字符。</p>",
+          "example": "[\"key1\",\"key2\"]",
+          "member": "string",
+          "name": "FragmentKeepParam",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamType = 2 时有效，表示 mediapackage 具体类型：<br>media_package =&gt; 仅配置普通频道。<br>media_package_pure_ad =&gt; 仅配置广告。<br>media_package_mix_ad =&gt; 同时配置普通频道和广告。<br>注意：配置时候，优先使用 media_package。和 MediaPackageChannelTypes 字段配合使用。</p>",
+          "example": "media_package_pure_ad",
+          "member": "string",
+          "name": "MediaPackageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamType = 2 且 MediaPackageType = media_package 时有效，表示 mediapackage 频道类型，可组合如下值：normal（频道）、ssai（广告）、linear_assembly（线性组装）。</p>",
+          "example": "[\"normal\"]",
+          "member": "string",
+          "name": "MediaPackageChannelTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamPlayType 为 hls 时生效，设置索引自定义 header，最大支持 10 组，每一组参数、取值用空格分开，允许字符规则如下：<br>头部参数：由大小写字母、数字及-组成，长度支持1 ～100个字符，黑名单：Host、Connection、Content-Length、Range。<br>头部取值：不支持中文、不支持以$开头，长度支持1 ～ 100个字符，不允许有空格。</p>",
+          "example": "[\"k1:v1\",\"k2:v2\"]",
+          "member": "string",
+          "name": "IndexerHeader",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamPlayType 为 hls 时生效，设置分片自定义 header，最大支持 10 组，每一组参数、取值用空格分开，允许字符规则如下：<br>头部参数：由大小写字母、数字及-组成，长度支持1 ～100个字符，黑名单：Host、Connection、Content-Length、Range。<br>头部取值：不支持中文、不支持以$开头，长度支持1 ～ 100个字符，不允许有空格。</p>",
+          "example": "[\"k1:v1\",\"k2:v2\"]",
+          "member": "string",
+          "name": "FragmentHeader",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义回源规则列表，当 OriginStreamPlayType 为 customization 时候生效。</p>",
+          "example": "无",
+          "member": "OriginStreamCustomizationRule",
+          "name": "CustomizationRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存格式规则。<br>0：默认格式。<br>1：云直播源站格式。<br>当 OriginStreamPlayType 为 customization 时候生效。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CacheFormatRule",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "ModifyOriginStreamInfoResponse": {
@@ -20076,6 +20705,199 @@
         }
       ],
       "usage": "out"
+    },
+    "OriginStreamCustomizationRule": {
+      "document": "播放域名回源自定义协议规则。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>匹配规则，可选项如下：<br>.m3u8、.mpd、.ts、.mp4、.m4s、.m4a、.m4i、.m4v、.m4f、.aac、.webm。</p>",
+          "example": "/*/*.m3u8",
+          "member": "string",
+          "name": "MatchRule",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站地址类型： 1 =&gt; IP 类型。 2 =&gt; 域名类型。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginAddressType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站 host。</p>",
+          "example": "www.test.play.com",
+          "member": "string",
+          "name": "OriginHost",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站地址信息，每项用冒号分割域名（ip）、端口信息。 端口为空也要带上分号，表示取默认端口。</p>",
+          "example": "[\"1.2.3.4:8800\"]",
+          "member": "string",
+          "name": "OriginAddress",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传 http 头信息，可取值：on、off。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughHttpHeader",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传相应，可取值：on、off。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughResponse",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传参数，可取值：on、off。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughParam",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>url改写， 格式为： url1&lt;|&gt;url2; 其中，&lt;|&gt; 为分隔符。 url1、url2 长度限制100，不可包含特殊字符。</p>",
+          "example": "[\"/live<|>/live2\"]",
+          "member": "string",
+          "name": "UrlReplaceRules",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>options 支持，可取值：on、off，默认值：off。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "OptionsRequest",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回源超时时间，单位 ms，取值范围：1 ～ 60000，默认值：10000。</p>",
+          "example": "10000",
+          "member": "int64",
+          "name": "OriginTimeout",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>重试次数，单位 次，取值范围：1 ～ 10。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginRetryTimes",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态码缓存，数组元素格式： cacheKey:interval cacheKey 可取值：cache_400_sec、cache_403_sec、cache_404_sec、cache_405_sec、cache_500_sec、cache_503_sec、cache_504_sec。 interval 单位 s。</p>",
+          "example": "[\"cache_400_sec:1\"]",
+          "member": "string",
+          "name": "CacheStatusCode",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存时间，单位 s，取值范围：0 ～ 31536000。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Cache",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存键。</p>",
+          "example": "[\"key1\",\"key2\"]",
+          "member": "string",
+          "name": "KeepParam",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设置索引自定义 header，最大支持 10 组，每一组参数、取值用空格分开，允许字符规则如下： 头部参数：由大小写字母、数字及-组成，长度支持1 ～100个字符，黑名单：Host、Connection、Content-Length、Range。 头部取值：不支持中文、不支持以$开头，长度支持1 ～ 100个字符，不允许有空格。</p>",
+          "example": "[\"k1:v1\",\"k2:v2\"]",
+          "member": "string",
+          "name": "HttpHeader",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义回源缓存随源配置。<br>0：不开启。<br>1：开启。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CustomizationCacheFollowOrigin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存 Http 头部键。</p>",
+          "example": "[\"Accept-Encoding\",\"accept-encoding\"]",
+          "member": "string",
+          "name": "KeepHttpHeader",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "PadStreamInfo": {
       "document": "查询当前垫片流的信息",

@@ -5,7 +5,14 @@
 Input: 
 
 ```
-tccli live ModifyOriginStreamInfo --cli-unfold-argument ```
+tccli live ModifyOriginStreamInfo --cli-unfold-argument  \
+    --DomainName www.test.live \
+    --OriginStreamPlayType hls \
+    --CdnStreamPlayType hls \
+    --OriginStreamType 1 \
+    --OriginAddress 81.68.241.194:8082 \
+    --OriginAddressType 1
+```
 
 Output: 
 ```

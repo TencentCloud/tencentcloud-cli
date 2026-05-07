@@ -322,6 +322,13 @@
       "output": "EnableTransparentDataEncryptionResponse",
       "status": "online"
     },
+    "EnableWanService": {
+      "document": "本接口(OpenWanService)用于开启当前实例的外网访问地址。",
+      "input": "EnableWanServiceRequest",
+      "name": "开启外网访问地址",
+      "output": "EnableWanServiceResponse",
+      "status": "online"
+    },
     "FlashBackDBInstance": {
       "document": "该接口用于发起按 Key 闪回任务，依据数据的闪回 Key（默认为 id）对数据进行极速回档，快速恢复业务。\n**说明：按 Key 闪回于2023年09月11日正式进行公测，在此期间，该接口仅对公测用户开放。**",
       "input": "FlashBackDBInstanceRequest",
@@ -5525,6 +5532,61 @@
       ],
       "type": "object"
     },
+    "EnableWanServiceRequest": {
+      "document": "EnableWanService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "cmgo-abcdef",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡ID。",
+          "example": "lb-dabkt44i",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点及监听端口信息。",
+          "example": "无",
+          "member": "WanServiceNodeList",
+          "name": "NodeList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableWanServiceResponse": {
+      "document": "EnableWanService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID。",
+          "example": "1745484844",
+          "member": "uint64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "FBKeyValue": {
       "document": "按 Key 闪回键值对",
       "members": [
@@ -9908,6 +9970,32 @@
         }
       ],
       "usage": "out"
+    },
+    "WanServiceNodeList": {
+      "document": "mongodb外网服务节点信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例节点的vip及端口信息。",
+          "example": "10.0.0.0:27017",
+          "member": "string",
+          "name": "VipVport",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CLB监听器监听端口，取值范围1~65535。",
+          "example": "9000",
+          "member": "string",
+          "name": "ListenerPort",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

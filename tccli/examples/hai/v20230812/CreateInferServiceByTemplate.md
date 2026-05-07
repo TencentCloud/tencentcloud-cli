@@ -1,4 +1,4 @@
-**Example 1: 根据模板创建服务**
+**Example 1: CreateInferServiceByTemplate**
 
 
 

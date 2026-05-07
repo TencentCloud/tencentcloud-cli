@@ -16,6 +16,14 @@
         "title": "示例"
       }
     ],
+    "CreateAIModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIModel\n<公共请求参数>\n\n{\n    \"EnvId\": \"free-xxxxx\",\n    \"GroupName\": \"kimi-custom\",\n    \"BaseUrl\": \"https://api.moonshot.cn/v1\",\n    \"Models\": [\n        {\n            \"Model\": \"kimi-k2.5\",\n            \"EnableMCP\": true\n        }\n    ],\n    \"Remark\": \"kimi\",\n    \"Status\": 1,\n    \"Secret\": {\n        \"ApiKey\": \"sk-zxxxxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"RequestId\": \"c9625322-1b4d-4790-9e3f-d79e889797eb\"\n    }\n}",
+        "title": "创建自定义分组"
+      }
+    ],
     "CreateApiKey": [
       {
         "document": "",
@@ -174,6 +182,14 @@
         "title": "创建LightHouse实例"
       }
     ],
+    "DeleteAIModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAIModel\n<公共请求参数>\n\n{\n    \"EnvId\": \"test-envid-2\",\n    \"GroupNames\": [\n        \"test-group-1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"RequestId\": \"dadc82f9-c479-402a-862e-dbceddbacc94\"\n    }\n}",
+        "title": "删除AI模型"
+      }
+    ],
     "DeleteApiKey": [
       {
         "document": "",
@@ -234,6 +250,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVmInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-4amyetqm\",\n    \"EnvId\": \"reinstate-3gle1iv1f6e5c582\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"29aa6dd0-d8f9-479a-8e65-8c2c7ae48b54\"\n    }\n}",
         "title": "删除云主机"
+      }
+    ],
+    "DescribeAIModels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIModels\n<公共请求参数>\n\n{\n    \"EnvId\": \"test_envid\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AIModels\": [\n            {\n                \"BaseUrl\": \"https://api.hunyuan.cloud.tencent.com\",\n                \"GroupName\": \"hunyuan-exp\",\n                \"Models\": [\n                    {\n                        \"EnableMCP\": false,\n                        \"Model\": \"hunyuan-lite\"\n                    },\n                    {\n                        \"EnableMCP\": true,\n                        \"Model\": \"hunyuan-turbos-latest\"\n                    },\n                    {\n                        \"EnableMCP\": true,\n                        \"Model\": \"hunyuan-t1-latest\"\n                    }\n                ],\n                \"Remark\": \"\",\n                \"Secret\": {\n                    \"ApiKey\": \"\",\n                    \"SecretId\": \"\",\n                    \"SecretKey\": \"\"\n                },\n                \"Status\": 1,\n                \"Type\": \"builtin\"\n            },\n            {\n                \"BaseUrl\": \"https://api.lkeap.cloud.tencent.com\",\n                \"GroupName\": \"deepseek\",\n                \"Models\": [\n                    {\n                        \"EnableMCP\": false,\n                        \"Model\": \"deepseek-r1\"\n                    },\n                    {\n                        \"EnableMCP\": false,\n                        \"Model\": \"deepseek-v3\"\n                    },\n                    {\n                        \"EnableMCP\": false,\n                        \"Model\": \"deepseek-0324\"\n                    }\n                ],\n                \"Remark\": \"\",\n                \"Secret\": {\n                    \"ApiKey\": \"\",\n                    \"SecretId\": \"\",\n                    \"SecretKey\": \"\"\n                },\n                \"Status\": 1,\n                \"Type\": \"builtin\"\n            }\n        ],\n        \"RequestId\": \"fd638756-5ea9-4b82-85ba-8544ce0d054d\"\n    }\n}",
+        "title": "查询AI模型列表"
       }
     ],
     "DescribeApiKeyList": [
@@ -382,6 +406,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoginConfig\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\"\n}",
         "output": "{\n    \"Response\": {\n        \"AnonymousLogin\": true,\n        \"EmailLogin\": true,\n        \"MfaConfig\": {\n            \"Email\": \"FALSE\",\n            \"On\": \"TRUE\",\n            \"RequiredBindPhone\": \"TRUE\",\n            \"Sms\": \"TRUE\"\n        },\n        \"PhoneNumberLogin\": true,\n        \"PwdUpdateStrategy\": {\n            \"FirstLoginUpdate\": true,\n            \"PeriodType\": \"MONTH\",\n            \"PeriodUpdate\": true,\n            \"PeriodValue\": 6\n        },\n        \"SmsVerificationConfig\": {\n            \"Method\": \"\",\n            \"Name\": \"\",\n            \"SmsDayLimit\": -1,\n            \"Type\": \"default\"\n        },\n        \"UserNameLogin\": true,\n        \"RequestId\": \"9f69a66b-7302-4c00-b83a-04526851dd8f\"\n    }\n}",
         "title": "查询登录配置"
+      }
+    ],
+    "DescribeManagedAIModelList": [
+      {
+        "document": "查询托管模型列表",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeManagedAIModelList\n<公共请求参数>\n\n{\n    \"EnvId\": \"free-********-7g5aa8xnfd5428b4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ManagedAIModelList\": [\n            {\n                \"GroupName\": \"cloudbase\",\n                \"Models\": [\n                    {\n                        \"EnableMCP\": true,\n                        \"Model\": \"deepseek-v3.2\",\n                        \"ModelChargingInfo\": [\n                            {\n                                \"InputOutputUnit\": \"千tokens\",\n                                \"InputPrice\": \"2\",\n                                \"OutputPrice\": \"3\",\n                                \"Type\": \"Uniform\"\n                            }\n                        ],\n                        \"ModelSpec\": {\n                            \"ContextLength\": \"128k\",\n                            \"MaxInputToken\": \"96k\",\n                            \"MaxOutputToken\": \"32k\"\n                        }\n                    }\n                ],\n                \"Remark\": \"腾讯云开发\"\n            }\n        ],\n        \"RequestId\": \"8a6ee0a7-8708-4eeb-98cd-cd1f22216818\"\n    }\n}",
+        "title": "查询托管模型列表"
       }
     ],
     "DescribeMySQLClusterDetail": [
@@ -702,6 +734,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchClsLog\n<公共请求参数>\n\n{\n    \"Context\": \"\",\n    \"EnvId\": \"aitest-9g96e4tn46773d08\",\n    \"StartTime\": \"2026-01-29 06:47:17\",\n    \"EndTime\": \"2026-01-30 23:52:17\",\n    \"QueryString\": \"* | select request_id, max(status_code) as status  where (request_id='35b9abe7-xxxx-11f1-9ce5-52540059feef' AND retry_num=0)) AND status_code!=202 group by request_id, retry_num\",\n    \"Sort\": \"desc\",\n    \"UseLucene\": true,\n    \"Limit\": 100\n}",
         "output": "{\n    \"Response\": {\n        \"LogResults\": {\n            \"AnalysisRecords\": [\n                \"{\\\"request_id\\\":\\\"35b9abe7-xxxx-11f1-9ce5-52540059feef\\\",\\\"status\\\":200}\",\n                \"{\\\"request_id\\\":\\\"640c1490-xxxx-11f1-823c-525400a9be57\\\",\\\"status\\\":200}\"\n            ],\n            \"Context\": \"\",\n            \"ListOver\": true,\n            \"Results\": []\n        },\n        \"RequestId\": \"27108be7-20ac-xxxx927a-4c5aaa2c4969\"\n    }\n}",
         "title": "聚合分析日志结果"
+      }
+    ],
+    "UpdateAIModel": [
+      {
+        "document": "更新模型列表",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAIModel\n<公共请求参数>\n\n{\n    \"EnvId\": \"httpservice-wushan-8devh79e82d2a\",\n    \"GroupName\": \"cloudbase-test\",\n    \"Models\": [\n        {\n            \"Model\": \"hy3-preview\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"RequestId\": \"dffc99bc-c381-4d74-9bf4-ec8e141ea3bd\"\n    }\n}",
+        "title": "更新模型列表"
       }
     ],
     "UpdateTable": [

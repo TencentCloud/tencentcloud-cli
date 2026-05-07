@@ -379,7 +379,7 @@
       "status": "online"
     },
     "RecognizeAgent": {
-      "document": "支持对输入图的内容进行判断、分类以及总结；支持用户对通用文字识别输出结构进行自定义。\n默认接口请求频率限制：1次/秒",
+      "document": "支持对输入图的内容进行判断、分类以及总结；支持用户对通用文字识别输出结构进行自定义。",
       "input": "RecognizeAgentRequest",
       "name": "通用文字识别Agent",
       "output": "RecognizeAgentResponse",
@@ -631,7 +631,7 @@
       "status": "online"
     },
     "VerifyScenePhoto": {
-      "document": "提供针对特定场景（如商户门头照、车牌等）图片的PS篡改、AIGC合成、图片质量检测能力，可应用于业务流程中对特定场景图片真实性、有效性校验的场景。\n默认接口请求频率限制：10次/秒",
+      "document": "提供针对特定场景（如商户门头照、车牌等）图片的PS篡改、AIGC合成、图片质量检测能力，可应用于业务流程中对特定场景图片真实性、有效性校验的场景。",
       "input": "VerifyScenePhotoRequest",
       "name": "场景鉴伪（大模型版）",
       "output": "VerifyScenePhotoResponse",

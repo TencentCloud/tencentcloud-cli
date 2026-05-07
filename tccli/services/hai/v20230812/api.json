@@ -169,7 +169,7 @@
       "status": "online"
     },
     "UpdateServiceConfigs": {
-      "document": "本接口(UpdateServiceConfigs)用于更新服务配置",
+      "document": "本接口(UpdateServiceConfigs)用于更新服务配置。",
       "input": "UpdateServiceConfigsRequest",
       "name": "更新服务配置",
       "output": "UpdateServiceConfigsResponse",
@@ -423,7 +423,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源类型及数量",
+          "document": "<p>资源类型及数量</p>",
           "example": "无",
           "member": "ComputeResource",
           "name": "ComputeResources",
@@ -432,7 +432,7 @@
         },
         {
           "disabled": false,
-          "document": "副本数",
+          "document": "<p>副本数</p>",
           "example": "3",
           "member": "int64",
           "name": "Replicas",
