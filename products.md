@@ -188,7 +188,7 @@
 | mongodb | [云数据库 MongoDB](http://document.tencentcloudapi.woa.com/document/product/240) | [查看](http://document.tencentcloudapi.woa.com/document/product/240/38561) | 2026-05-08 02:00:35 |
 | monitor | [腾讯云可观测平台](http://document.tencentcloudapi.woa.com/document/product/248) | [查看](http://document.tencentcloudapi.woa.com/document/product/248/86910) | 2026-04-08 02:02:57 |
 | mps | [媒体处理](http://document.tencentcloudapi.woa.com/document/product/862) | [查看](http://document.tencentcloudapi.woa.com/document/product/862/37576) | 2026-05-08 02:03:05 |
-| mqtt | [消息队列 MQTT 版](http://document.tencentcloudapi.woa.com/document/product/1778) | [查看](http://document.tencentcloudapi.woa.com/document/product/1773/84909) | 2026-04-21 02:04:19 |
+| mqtt | [消息队列 MQTT 版](http://document.tencentcloudapi.woa.com/document/product/1778) | [查看](http://document.tencentcloudapi.woa.com/document/product/1773/84909) | 2026-05-09 10:51:40 |
 | mrs | [医疗报告结构化](http://document.tencentcloudapi.woa.com/document/product/1314) | [查看](http://document.tencentcloudapi.woa.com/document/product/1314/56240) | 2023-09-07 02:14:35 |
 | ms | [移动应用安全](http://document.tencentcloudapi.woa.com/document/product/283) | [查看](http://document.tencentcloudapi.woa.com/document/product/1617/78380) | 2025-11-19 01:48:08 |
 | msp | [迁移服务平台](http://document.tencentcloudapi.woa.com/document/product/659) | [查看](http://document.tencentcloudapi.woa.com/document/product/659/18597) | 2025-02-12 01:23:34 |

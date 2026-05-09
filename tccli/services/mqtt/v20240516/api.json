@@ -35,6 +35,13 @@
       "output": "CreateAuthorizationPolicyResponse",
       "status": "online"
     },
+    "CreateClusterAdminForOperation": {
+      "document": "在 cluster_admin_info 插入一条 broker 资源池记录的请求。\n仅供运营系统（operation）内部调用，严禁挂接到外部云API网关。",
+      "input": "CreateClusterAdminForOperationRequest",
+      "name": "创建ClusterAdmin接口（仅为运营端使用）",
+      "output": "CreateClusterAdminForOperationResponse",
+      "status": "online"
+    },
     "CreateDeviceIdentity": {
       "document": "创建一机一密设备签名",
       "input": "CreateDeviceIdentityRequest",
@@ -82,6 +89,13 @@
       "input": "CreateMessageEnrichmentRuleRequest",
       "name": "创建消息属性增强规则",
       "output": "CreateMessageEnrichmentRuleResponse",
+      "status": "online"
+    },
+    "CreateMetaDatabaseInfoForOperation": {
+      "document": "在 meta_database_info 插入一条 CDB 资源池信息记录的请求。\n仅供运营系统（operation）内部调用，严禁挂接到外部云API网关。",
+      "input": "CreateMetaDatabaseInfoForOperationRequest",
+      "name": "创建共享发货CDB接口（仅为运营端使用）",
+      "output": "CreateMetaDatabaseInfoForOperationResponse",
       "status": "online"
     },
     "CreateTopic": {
@@ -224,6 +238,20 @@
       "output": "DescribeClientListResponse",
       "status": "online"
     },
+    "DescribeClusterAdminForOperation": {
+      "document": "根据 ClusterId 查询单条 broker 资源池记录的响应。\n仅供运营系统（operation）内部调用，严禁挂接到外部云API网关。",
+      "input": "DescribeClusterAdminForOperationRequest",
+      "name": "查询ClusterAdmin详情接口（仅为运营端使用）",
+      "output": "DescribeClusterAdminForOperationResponse",
+      "status": "online"
+    },
+    "DescribeClusterAdminListForOperation": {
+      "document": "列出所有 broker 资源池记录的响应，不分页、不返回 TotalCount。\n仅供运营系统（operation）内部调用，严禁挂接到外部云API网关。",
+      "input": "DescribeClusterAdminListForOperationRequest",
+      "name": "查询ClusterAdmin列表接口（仅为运营端使用）",
+      "output": "DescribeClusterAdminListForOperationResponse",
+      "status": "online"
+    },
     "DescribeDeviceCertificate": {
       "document": "查询设备证书详情接口",
       "input": "DescribeDeviceCertificateRequest",
@@ -308,11 +336,32 @@
       "output": "DescribeMessageListResponse",
       "status": "online"
     },
+    "DescribeMetaDatabaseInfoForOperation": {
+      "document": "根据 CdbId 查询单条 CDB 资源池信息记录。\n   仅供运营系统（operation）内部调用。",
+      "input": "DescribeMetaDatabaseInfoForOperationRequest",
+      "name": "查询共享发货CDB资源池详情接口（仅为运营端使用）",
+      "output": "DescribeMetaDatabaseInfoForOperationResponse",
+      "status": "online"
+    },
+    "DescribeMetaDatabaseInfoListForOperation": {
+      "document": "列出所有 CDB 资源池信息记录的响应，不分页、不返回 TotalCount。\n仅供运营系统（operation）内部调用，严禁挂接到外部云API网关。",
+      "input": "DescribeMetaDatabaseInfoListForOperationRequest",
+      "name": "查询共享发货CDB列表接口（仅为运营端使用）",
+      "output": "DescribeMetaDatabaseInfoListForOperationResponse",
+      "status": "online"
+    },
     "DescribeProductSKUList": {
       "document": "获取产品售卖规格",
       "input": "DescribeProductSKUListRequest",
       "name": "获取MQTT产品售卖规格",
       "output": "DescribeProductSKUListResponse",
+      "status": "online"
+    },
+    "DescribeSharedClusterBindingListForOperation": {
+      "document": "列出共享发货路由记录的响应，不分页、不返回 TotalCount，按 createTime 降序。\n仅供运营系统（operation）内部调用，严禁挂接到外部云API网关。",
+      "input": "DescribeSharedClusterBindingListForOperationRequest",
+      "name": "共享发货路由查询接口（仅为运营端使用）",
+      "output": "DescribeSharedClusterBindingListForOperationResponse",
       "status": "online"
     },
     "DescribeSharedSubscriptionGroups": {
@@ -418,6 +467,13 @@
       "input": "ModifyMessageEnrichmentRuleRequest",
       "name": "修改消息属性增强规则",
       "output": "ModifyMessageEnrichmentRuleResponse",
+      "status": "online"
+    },
+    "ModifySharedClusterBindingForOperation": {
+      "document": "Upsert 共享发货路由：Uin 传 null 或 \"\" 代表修改默认发货指向；Uin 传具体值代表为该用户配置特殊发货指向。\n仅供运营系统（operation）内部调用。",
+      "input": "ModifySharedClusterBindingForOperationRequest",
+      "name": "修改共享发货路由（仅为运营端使用）",
+      "output": "ModifySharedClusterBindingForOperationResponse",
       "status": "online"
     },
     "ModifyTopic": {
@@ -1011,6 +1067,112 @@
       ],
       "usage": "out"
     },
+    "ClusterAdminForOperationVO": {
+      "document": "集群管理员资源池（cluster_admin_info）记录视图对象。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>共享发货Broker-id</p>",
+          "example": "mqtt-broker-cddev-1",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源池状态</p><p>枚举值：</p><ul><li>RUNNING： 正常使用</li></ul>",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "ClusterStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群版本</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>broker指向的nameserver</p>",
+          "example": "mqtt-namesrv-cddev-1",
+          "member": "string",
+          "name": "Room",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署的环境</p><p>枚举值：</p><ul><li>LEGACY： 默认</li></ul>",
+          "example": "LEGACY",
+          "member": "string",
+          "name": "DeployEnv",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>nameserver的连接地址</p>",
+          "example": "rocketmq-nameserver.mqtt-namesrv-cddev-1.svc.cluster.local:9876",
+          "member": "string",
+          "name": "NameServer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接nameserver的ak</p>",
+          "example": "ak1",
+          "member": "string",
+          "name": "AccessKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接nameserver的sk</p>",
+          "example": "sk1",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录创建时间</p><p>单位：毫秒级时间戳</p>",
+          "example": "1735612520000",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录更新时间</p><p>单位：毫秒级时间戳</p>",
+          "example": "1752117142000",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateAuthorizationPolicyRequest": {
       "document": "CreateAuthorizationPolicy请求参数结构体",
       "members": [
@@ -1157,6 +1319,51 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterAdminForOperationRequest": {
+      "document": "CreateClusterAdminForOperation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>共享broker-id</p>",
+          "example": "mqtt-broker-cddev-3",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享broker对应的nameserver-id</p>",
+          "example": "mqtt-namesrv-cddev-3",
+          "member": "string",
+          "name": "Room",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>nameserver的连接地址</p>",
+          "example": "mock.nameserver-3.loca:9876",
+          "member": "string",
+          "name": "NameServer",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterAdminForOperationResponse": {
+      "document": "CreateClusterAdminForOperation返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1781,6 +1988,69 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMetaDatabaseInfoForOperationRequest": {
+      "document": "CreateMetaDatabaseInfoForOperation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>共享发货数据库ID</p>",
+          "example": "cdb-3x542xo",
+          "member": "string",
+          "name": "CdbId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享发货数据库名</p>",
+          "example": "cde-test",
+          "member": "string",
+          "name": "CdbName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享发货数据库连接账号</p>",
+          "example": "****",
+          "member": "string",
+          "name": "ParamOne",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享发货数据库连接密码</p>",
+          "example": "**",
+          "member": "string",
+          "name": "ParamTwo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享发货数据库JDBCURL</p>",
+          "example": "jdbc:mysql://*********:3306/mqtt_meta?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8&socketTimeout=60000&connectTimeout=3000",
+          "member": "string",
+          "name": "JdbcUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMetaDatabaseInfoForOperationResponse": {
+      "document": "CreateMetaDatabaseInfoForOperation返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2687,6 +2957,160 @@
           "member": "MQTTClientInfo",
           "name": "Clients",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterAdminForOperationRequest": {
+      "document": "DescribeClusterAdminForOperation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>共享broker-id</p>",
+          "example": "mqtt-broker-cddev-3",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterAdminForOperationResponse": {
+      "document": "DescribeClusterAdminForOperation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>共享发货broker-id</p>",
+          "example": "mqtt-broker-cddev-3",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录状态</p><p>枚举值：</p><ul><li>RUNNING： 正常服务</li></ul>",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "ClusterStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录版本</p>",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>broker指向的命名空间</p>",
+          "example": "mqtt-namesrv-cddev-3",
+          "member": "string",
+          "name": "Room",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署的环境</p><p>默认为LEGACY</p>",
+          "example": "LEGACY",
+          "member": "string",
+          "name": "DeployEnv",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>nameserver连接地址</p>",
+          "example": "mock.nameserver-3.loca:9876",
+          "member": "string",
+          "name": "NameServer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接nameserver ak</p>",
+          "example": "***",
+          "member": "string",
+          "name": "AccessKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接nameserver sk</p>",
+          "example": "****",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录创建时间</p><p>单位：毫秒级时间戳</p>",
+          "example": "1777453726000",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p><p>单位：毫秒级时间戳</p>",
+          "example": "1777454515000",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterAdminListForOperationRequest": {
+      "document": "DescribeClusterAdminListForOperation请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeClusterAdminListForOperationResponse": {
+      "document": "DescribeClusterAdminListForOperation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>发货broker资源池信息</p>",
+          "example": "无",
+          "member": "ClusterAdminForOperationVO",
+          "name": "Data",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4091,6 +4515,130 @@
       ],
       "type": "object"
     },
+    "DescribeMetaDatabaseInfoForOperationRequest": {
+      "document": "DescribeMetaDatabaseInfoForOperation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>共享发货数据库ID</p>",
+          "example": "cdb-3x542xo",
+          "member": "string",
+          "name": "CdbId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetaDatabaseInfoForOperationResponse": {
+      "document": "DescribeMetaDatabaseInfoForOperation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>共享发货数据库ID</p>",
+          "example": "cdb-3x542xo",
+          "member": "string",
+          "name": "CdbId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享发货数据库名字</p>",
+          "example": "cde-test",
+          "member": "string",
+          "name": "CdbName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享发货数据库登录账号</p>",
+          "example": "r**t",
+          "member": "string",
+          "name": "ParamOne",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享发货数据库登录密码</p>",
+          "example": "**",
+          "member": "string",
+          "name": "ParamTwo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享发货数据库JDBCURL</p>",
+          "example": "jdbc:mysql://*********:3306/mqtt_meta?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8&socketTimeout=60000&connectTimeout=3000",
+          "member": "string",
+          "name": "JdbcUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录创建时间</p><p>单位：毫秒级时间戳</p>",
+          "example": "1777452688000",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录更新时间</p><p>单位：毫秒级时间戳</p>",
+          "example": "1777452688000",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetaDatabaseInfoListForOperationRequest": {
+      "document": "DescribeMetaDatabaseInfoListForOperation请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeMetaDatabaseInfoListForOperationResponse": {
+      "document": "DescribeMetaDatabaseInfoListForOperation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>共享发货CDB信息</p>",
+          "example": "无",
+          "member": "MetaDatabaseInfoForOperationVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProductSKUListRequest": {
       "document": "DescribeProductSKUList请求参数结构体",
       "members": [],
@@ -4116,6 +4664,52 @@
           "member": "ProductSkuItem",
           "name": "MQTTProductSkuList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSharedClusterBindingListForOperationRequest": {
+      "document": "DescribeSharedClusterBindingListForOperation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询UIN</p><p>为空表示查询默认发货路由</p>",
+          "example": "*******",
+          "member": "string",
+          "name": "Uin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SKU类型</p><p>枚举值：</p><ul><li>BASIC： 基础版</li><li>PRO： 增强版</li></ul>",
+          "example": "BASIC",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSharedClusterBindingListForOperationResponse": {
+      "document": "DescribeSharedClusterBindingListForOperation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>发货路由</p>",
+          "example": "无",
+          "member": "SharedClusterBindingForOperationVO",
+          "name": "Data",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5711,6 +6305,82 @@
       ],
       "usage": "in"
     },
+    "MetaDatabaseInfoForOperationVO": {
+      "document": "/**\n * 列出所有 CDB 资源池信息记录的响应，不分页、不返回 TotalCount。\n * <p>仅供运营系统（operation）内部调用，严禁挂接到外部云API网关。</p>\n */",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>共享集群发货数据库ID</p>",
+          "example": "cdb-7890",
+          "member": "string",
+          "name": "CdbId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享集群发货数据库名字</p>",
+          "example": "mqtt-dev-1",
+          "member": "string",
+          "name": "CdbName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享集群发货数据库连接账号</p>",
+          "example": "root",
+          "member": "string",
+          "name": "ParamOne",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享集群发货数据库连接密码</p>",
+          "example": "mqtt_1234567A",
+          "member": "string",
+          "name": "ParamTwo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享集群发货数据库JDBCURL</p>",
+          "example": "jdbc:mysql://21.57.103.150:3306/mqtt_meta_dev?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8&socketTimeout=60000&connectTimeout=3000",
+          "member": "string",
+          "name": "JdbcUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录创建时间</p><p>单位：毫秒级时间戳</p>",
+          "example": "1772525276000",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录上次更新时间</p><p>单位：毫秒级时间戳</p>",
+          "example": "1772525276000",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyAuthorizationPolicyRequest": {
       "document": "ModifyAuthorizationPolicy请求参数结构体",
       "members": [
@@ -6521,6 +7191,69 @@
       ],
       "type": "object"
     },
+    "ModifySharedClusterBindingForOperationRequest": {
+      "document": "ModifySharedClusterBindingForOperation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>要指定发货路由的UIN</p><p>不传则为修改默认共享发货路由</p>",
+          "example": "7834231",
+          "member": "string",
+          "name": "Uin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SKU类型</p><p>枚举值：</p><ul><li>PRO： MQTT增强版</li><li>BASIC： MQTT基础版</li></ul>",
+          "example": "PRO",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>发货broker-id</p>",
+          "example": "mqtt-broker-cddev-3",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>发货cdb-id</p>",
+          "example": "cdb-3x542xo",
+          "member": "string",
+          "name": "CdbId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录描述</p>",
+          "example": "MQTT增强版",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySharedClusterBindingForOperationResponse": {
+      "document": "ModifySharedClusterBindingForOperation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyTopicRequest": {
       "document": "ModifyTopic请求参数结构体",
       "members": [
@@ -7121,6 +7854,92 @@
         }
       ],
       "type": "object"
+    },
+    "SharedClusterBindingForOperationVO": {
+      "document": "列出共享发货路由记录的响应，不分页、不返回 TotalCount，按 createTime 降序。\n仅供运营系统（operation）内部调用，严禁挂接到外部云API网关。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定发货路由的UIN</p><p>UIN为空表示为默认发货路由</p>",
+          "example": "2342512",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>发货类型</p><p>枚举值：</p><ul><li>BASIC： 基础版</li><li>PRO： 增强版</li></ul>",
+          "example": "BASIC",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>发货的broker-id</p>",
+          "example": "mqtt-broker-cddev-2",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>发货的数据库id</p>",
+          "example": "cdb-3x542xo",
+          "member": "string",
+          "name": "CdbId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否正常使用</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录描述</p>",
+          "example": "MQTT基础版",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录创建时间</p><p>单位：毫秒级时间戳</p>",
+          "example": "1777453229000",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录更新时间</p><p>单位：毫秒级时间戳</p>",
+          "example": "1777453229000",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SharedGroup": {
       "document": "共享订阅组",

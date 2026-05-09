@@ -40,6 +40,14 @@
         "title": "示例"
       }
     ],
+    "CreateClusterAdminForOperation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterAdminForOperation\n<公共请求参数>\n\n{\n    \"ClusterId\": \"mqtt-broker-cddev-3\",\n    \"Room\": \"mqtt-namesrv-cddev-3\",\n    \"NameServer\": \"mock.nameserver-3.loca:9876\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03b8611c-3f11-4ee5-8997-3e4d7169ca0b\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateDeviceIdentity": [
       {
         "document": "示例",
@@ -93,6 +101,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMessageEnrichmentRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g4r4wpne\",\n    \"RuleName\": \"rule1\",\n    \"Condition\": \"eyJjbGllbnRJZCI6ImNsaWVudC0xIiwidXNlcm5hbWUiOiJjbGllbnQtMSIsInRvcGljIjoiaG9tZS9yb29tMSJ9\",\n    \"Actions\": \"eyJtZXNzYWdlRXhwaXJ5SW50ZXJ2YWwiOjM2MCwicmVzcG9uc2VUb3BpYyI6InJlcGxpZXMvZGV2aWNlcy8ke2NsaWVudGlkfSIsImNvcnJlbGF0aW9uRGF0YSI6IiR7dHJhY2VpZH0iLCJ1c2VyUHJvcGVydHkiOlt7ImtleSI6InRyYWNlLWlkIiwidmFsdWUiOiIke3RyYWNlaWR9In1dfQ==\",\n    \"Priority\": 2,\n    \"Status\": 1,\n    \"Remark\": \"remark\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Id\": 6,\n        \"InstanceId\": \"mqtt-g4r4wpne\",\n        \"RequestId\": \"63e5ecf1-3d79-4f28-aef3-6e7396f78dcd\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "CreateMetaDatabaseInfoForOperation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMetaDatabaseInfoForOperation\n<公共请求参数>\n\n{\n    \"CdbId\": \"cdb-3x542xo\",\n    \"CdbName\": \"cde-test\",\n    \"ParamOne\": \"****\",\n    \"ParamTwo\": \"**\",\n    \"JdbcUrl\": \"jdbc:mysql://*********:3306/mqtt_meta?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8&socketTimeout=60000&connectTimeout=3000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ba5c3ec-e97a-4a03-908b-7f06c45ff318\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -256,6 +272,22 @@
         "title": "示例"
       }
     ],
+    "DescribeClusterAdminForOperation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterAdminForOperation\n<公共请求参数>\n\n{\n    \"ClusterId\": \"mqtt-broker-cddev-3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessKey\": \"***\",\n        \"ClusterId\": \"mqtt-broker-cddev-3\",\n        \"ClusterStatus\": \"RUNNING\",\n        \"ClusterVersion\": \"1\",\n        \"CreateTime\": 1777453726000,\n        \"DeployEnv\": \"LEGACY\",\n        \"NameServer\": \"mock.nameserver-3.loca:9876\",\n        \"Room\": \"mqtt-namesrv-cddev-3\",\n        \"SecretKey\": \"****\",\n        \"UpdateTime\": 1777454515000,\n        \"RequestId\": \"92f2cc1a-4fef-4955-9e68-5d7a8fff2a2e\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeClusterAdminListForOperation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterAdminListForOperation\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AccessKey\": \" \",\n                \"ClusterId\": \"mqtt-broker-cddev-3\",\n                \"ClusterStatus\": \"RUNNING\",\n                \"ClusterVersion\": \"1\",\n                \"CreateTime\": 1777453726000,\n                \"DeployEnv\": \"LEGACY\",\n                \"NameServer\": \"mock.nameserver-3.loca:9876\",\n                \"Room\": \"mqtt-namesrv-cddev-3\",\n                \"SecretKey\": \" \",\n                \"UpdateTime\": 1777453726000\n            }\n        ],\n        \"RequestId\": \"baf061bb-b5f7-4ccb-8f28-892e8cd9f374\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeDeviceCertificate": [
       {
         "document": "示例",
@@ -352,11 +384,35 @@
         "title": "示例"
       }
     ],
+    "DescribeMetaDatabaseInfoForOperation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMetaDatabaseInfoForOperation\n<公共请求参数>\n\n{\n    \"CdbId\": \"cdb-3x542xo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CdbId\": \"cdb-3x542xo\",\n        \"CdbName\": \"cde-test\",\n        \"CreateTime\": 1777452688000,\n        \"JdbcUrl\": \"jdbc:mysql://*********:3306/mqtt_meta?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8&socketTimeout=60000&connectTimeout=3000\",\n        \"ParamOne\": \"r**t\",\n        \"ParamTwo\": \"**\",\n        \"UpdateTime\": 1777452688000,\n        \"RequestId\": \"bc8c88d8-3735-43a7-aef8-929dc3f1b1b6\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeMetaDatabaseInfoListForOperation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMetaDatabaseInfoListForOperation\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CdbId\": \"cdb-1234\",\n                \"CdbName\": \"mqtt-dev-cdb\",\n                \"CreateTime\": 1768295273000,\n                \"JdbcUrl\": \"jdbc:mysql://*************:3306/mqtt_meta_dev?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8&socketTimeout=60000&connectTimeout=3000\",\n                \"ParamOne\": \"root\",\n                \"ParamTwo\": \"*************\",\n                \"UpdateTime\": 1768295273000\n            }\n        ],\n        \"RequestId\": \"c032fdf2-0af6-426c-9f78-030321df56a5\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeProductSKUList": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProductSKUList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"MQTTProductSkuList\": [\n            {\n                \"AuthorizationPolicyLimit\": 10,\n                \"ClientNumLimit\": 2000,\n                \"InstanceType\": \"BASIC\",\n                \"MaxSubscriptionPerClient\": 30,\n                \"OnSale\": true,\n                \"PriceTags\": [\n                    {\n                        \"Category\": \"v_tdmq_mqtt_instance_specification\",\n                        \"Code\": \"sv_tdmq_mqtt_instance_specification_basic_config\",\n                        \"Name\": \"tps\",\n                        \"Step\": 1\n                    },\n                    {\n                        \"Category\": \"v_tdmq_instance_specification\",\n                        \"Code\": \"sv_tdmq_mqtt_instance_specification_basic_tps\",\n                        \"Name\": \"stepTps\",\n                        \"Step\": 2\n                    }\n                ],\n                \"SkuCode\": \"basic_2k\",\n                \"TopicNumLimit\": 100,\n                \"TpsLimit\": 2000\n            },\n            {\n                \"AuthorizationPolicyLimit\": 10,\n                \"ClientNumLimit\": 5000,\n                \"InstanceType\": \"BASIC\",\n                \"MaxSubscriptionPerClient\": 30,\n                \"OnSale\": true,\n                \"PriceTags\": [\n                    {\n                        \"Category\": \"v_tdmq_mqtt_instance_specification\",\n                        \"Code\": \"sv_tdmq_mqtt_instance_specification_basic_config\",\n                        \"Name\": \"tps\",\n                        \"Step\": 1\n                    },\n                    {\n                        \"Category\": \"v_tdmq_instance_specification\",\n                        \"Code\": \"sv_tdmq_mqtt_instance_specification_basic_tps\",\n                        \"Name\": \"stepTps\",\n                        \"Step\": 5\n                    }\n                ],\n                \"SkuCode\": \"basic_5k\",\n                \"TopicNumLimit\": 100,\n                \"TpsLimit\": 5000\n            }\n        ],\n        \"RequestId\": \"590f4a66-aa96-49d7-9572-0e01e90dc85c\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeSharedClusterBindingListForOperation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSharedClusterBindingListForOperation\n<公共请求参数>\n\n{\n    \"Uin\": \"*******\",\n    \"InstanceType\": \"BASIC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CdbId\": \"cdb-3x542xo\",\n                \"ClusterId\": \"mqtt-broker-cddev-2\",\n                \"CreateTime\": 1777453229000,\n                \"Enabled\": true,\n                \"InstanceType\": \"BASIC\",\n                \"Remark\": \"MQTT基础版\",\n                \"Uin\": \"*******\",\n                \"UpdateTime\": 1777453229000\n            }\n        ],\n        \"RequestId\": \"5d45df74-0dca-4faa-aa12-5ae924a251d8\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -477,6 +533,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMessageEnrichmentRule\n<公共请求参数>\n\n{\n    \"Id\": 6,\n    \"InstanceId\": \"mqtt-g4r4wpne\",\n    \"RuleName\": \"rule2\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"018d5c6a-33bb-41b5-aa38-98cd4e226546\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifySharedClusterBindingForOperation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySharedClusterBindingForOperation\n<公共请求参数>\n\n{\n    \"Uin\": \"7834231\",\n    \"InstanceType\": \"PRO\",\n    \"ClusterId\": \"mqtt-broker-cddev-3\",\n    \"CdbId\": \"cdb-3x542xo\",\n    \"Remark\": \"MQTT增强版\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ad092ab-4b77-4e53-bf4f-7052e655b5a7\"\n    }\n}",
         "title": "示例"
       }
     ],
