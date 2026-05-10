@@ -1,107 +1,68 @@
-**Example 1: 镜像仓库查询镜像仓库列表**
+**Example 1: 成功样例**
 
 
 
 Input: 
 
 ```
-tccli tcss DescribeAssetImageRegistryList --cli-unfold-argument  \
-    --Filters.0.ExactMatch False \
-    --Filters.0.Name ScanStatus \
-    --Filters.0.Values all \
-    --Filters.1.ExactMatch False \
-    --Filters.1.Name RepoType \
-    --Filters.1.Values all \
-    --Filters.2.ExactMatch False \
-    --Filters.2.Name SecurityRisk \
-    --Filters.2.Values all \
-    --Filters.3.ExactMatch False \
-    --Filters.3.Name IsAuthorized \
-    --Filters.3.Values all \
-    --Limit 10 \
-    --Offset 0
-```
+tccli tcss DescribeAssetImageRegistryList --cli-unfold-argument ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "a17ead82-00d3-4bf2-8ec2-55292c42d6e3",
-        "TotalCount": 100,
         "List": [
             {
-                "Id": 20933905,
-                "ImageDigest": "sha256:8d8d7593f6da4e909bba63a3a22080eca935c57afd81ad0b8f069b90064324ba",
-                "ImageId": "sha256:a810b384f08c95a472d7364b9b3198d4746f1ea001a26c5cb9d7e95272004afc",
-                "RegistryType": "ccr",
-                "RegistryRegion": "default",
-                "ImageRepoAddress": "ccr.ccs.tencentyun.com/xcar/executor",
-                "InstanceId": "ins-apqv42***",
-                "InstanceName": "ccr-default",
-                "Namespace": "xcar",
-                "ImageName": "executor",
+                "ComponentCnt": 123,
+                "ContainerCnt": 1,
+                "CriticalLevelVulCnt": 0,
+                "CveStatus": "SCANNED",
+                "HasNeedFixVul": false,
+                "HighLevelVulCnt": 0,
+                "Id": 110207177,
+                "ImageCreateTime": "2026-03-31T21:04:17+08:00",
+                "ImageDigest": "sha256:1b31fd41db6d4119c43d4ec03571859f4eabc206b8a77fc8fb7940ed9e7c457d",
+                "ImageId": "sha256:f2de8ed54c7b02ee05e42abaa454978c76fb552a883877b37588ebb62f31e41a",
+                "ImageName": "ollama",
+                "ImageRepoAddress": "ccr.ccs.tencentyun.com/csip/ollama",
+                "ImageSize": 3360774711,
                 "ImageTag": "latest",
-                "ImageSize": 22952972,
-                "ScanTime": "2020-11-21 15:16:00",
-                "ScanStatus": "NOT_SCAN",
-                "Progress": 0,
-                "VulCnt": 0,
-                "VirusCnt": 0,
-                "RiskCnt": 0,
-                "SentiveInfoCnt": 0,
-                "IsTrustImage": false,
-                "OsName": "linux",
-                "ScanVirusError": "OperateFa****",
-                "ScanVulError": "OperateFa****",
-                "ScanRiskError": "MessageRegistry****",
-                "ScanVirusProgress": 0,
-                "ScanVulProgress": 0,
-                "ScanRiskProgress": 0,
-                "ScanRemainTime": 0,
-                "CveStatus": "NOT_SCAN",
-                "RiskStatus": "NOT_SCAN",
-                "VirusStatus": "NOT_SCAN",
+                "InstanceId": "",
+                "InstanceName": "ccr-ap-bangkok",
                 "IsAuthorized": 0,
-                "ImageCreateTime": "2020-09-22T00:00:00+00:00",
-                "IsLatestImage": true
-            },
-            {
-                "Id": 20933905,
-                "ImageDigest": "sha256:8d8d7593f6da4e909bba63a3a22080eca935c57afd81ad0b8f069b90064324ba",
-                "ImageId": "sha256:a810b384f08c95a472d7364b9b3198d4746f1ea001a26c5cb9d7e95272004afc",
+                "IsLatestImage": true,
+                "IsRunning": true,
+                "IsTrustImage": false,
+                "LowLevelVulCnt": 0,
+                "MediumLevelVulCnt": 0,
+                "Namespace": "csip",
+                "OsName": "linux",
+                "Progress": 100,
+                "Reason": "连接失败",
+                "RecommendedFix": false,
+                "RegistryRegion": "ap-bangkok",
                 "RegistryType": "ccr",
-                "RegistryRegion": "default",
-                "ImageRepoAddress": "ccr.ccs.tencentyun.com/xcar/executor",
-                "InstanceId": "ins-apqv42***",
-                "InstanceName": "ccr-default",
-                "Namespace": "xcar",
-                "ImageName": "executor",
-                "ImageTag": "latest",
-                "ImageSize": 22952972,
-                "ScanTime": "2020-11-21 15:16:00",
-                "ScanStatus": "NOT_SCAN",
-                "Progress": 0,
-                "VulCnt": 0,
-                "VirusCnt": 0,
                 "RiskCnt": 0,
-                "SentiveInfoCnt": 0,
-                "IsTrustImage": false,
-                "OsName": "linux",
-                "ScanVirusError": "ScanVirusError",
-                "ScanVulError": "ScanVulError",
-                "ScanRiskError": "ScanRiskError",
-                "ScanVirusProgress": 0,
-                "ScanVulProgress": 0,
-                "ScanRiskProgress": 0,
+                "RiskStatus": "SCANNED",
                 "ScanRemainTime": 0,
-                "CveStatus": "NOT_SCAN",
-                "RiskStatus": "NOT_SCAN",
-                "VirusStatus": "NOT_SCAN",
-                "IsAuthorized": 0,
-                "ImageCreateTime": "2020-09-22T00:00:00+00:00",
-                "IsLatestImage": true
+                "ScanRiskError": "",
+                "ScanRiskProgress": 100,
+                "ScanStatus": "SCANNED",
+                "ScanTime": "2026-05-09T05:48:06+08:00",
+                "ScanVirusError": "ConnFailed",
+                "ScanVirusProgress": 100,
+                "ScanVulError": "",
+                "ScanVulProgress": 100,
+                "SensitiveInfoCnt": 0,
+                "SentiveInfoCnt": 0,
+                "Solution": "扫描节点与仓库连接失败，请到镜像仓库管理重新配置连接方式后重试",
+                "VirusCnt": 0,
+                "VirusStatus": "SCAN_ERR",
+                "VulCnt": 0
             }
-        ]
+        ],
+        "TotalCount": 2145,
+        "RequestId": "0785bc94-dbd3-4d82-b236-add96cab1f88"
     }
 }
 ```

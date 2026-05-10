@@ -125,6 +125,24 @@
           "name": "LibraryExtension",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用专属集群时指定专属集群标签，请与 SMH 团队沟通确认</p>",
+          "example": "clawpro",
+          "member": "string",
+          "name": "ClusterTag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用专属存储桶时指定专属存储桶标签，请与 SMH 团队沟通确认</p>",
+          "example": "clawpro",
+          "member": "string",
+          "name": "BucketTag",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -144,7 +162,7 @@
         },
         {
           "disabled": false,
-          "document": "",
+          "document": "<p>用于访问 SMH 的域名</p>",
           "example": "smh3etdq8gpi2201.api.tencentmsh.cn",
           "member": "string",
           "name": "AccessDomain",

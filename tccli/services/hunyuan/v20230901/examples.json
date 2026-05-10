@@ -142,6 +142,14 @@
         "title": "调用示例"
       }
     ],
+    "DescribeAutoRiggingJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoRiggingJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1440599109062270976\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"ResultFile3Ds\": [\n            {\n                \"Type\": \"FBX\",\n                \"Url\": \"https://**************************.cos.ap-singapore.tencentcos.cn/auto_rigging/output/251292921/99ebfc94-6914-4da5-9bc9-282dec6668f4_0.fbx?q-sign-algorithm=sha1&q-ak=************************************&q-sign-time=1777360055%3B1777446454&q-key-time=1777360055%3B1777446454&q-header-list=host&q-url-param-list=&q-signature=a3a7c84e18b90234e71f1d2236b4031a1a1122b6\"\n            }\n        ],\n        \"Status\": \"DONE\",\n        \"RequestId\": \"0c8fbea2-96d6-43a8-88da-c218d820eb1a\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
     "DescribeConvert3DFormatJob": [
       {
         "document": "",
@@ -331,6 +339,14 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: Submit3DSmartTopologyJob\n<公共请求参数>\n\n{\n    \"File3D\": {\n        \"Url\": \"https://cos.ap-guangzhou.myqcloud.com/xxx.glb\",\n        \"Type\": \"GLB\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"1405140131170074624\",\n        \"RequestId\": \"f1dcd98c-47d2-47fe-81f2-26f4e0fec5d7\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "SubmitAutoRiggingJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitAutoRiggingJob\n<公共请求参数>\n\n{\n    \"File3D\": {\n        \"Url\": \"https://********************cos.ap-singapore.myqcloud.com/217f6940-bd92-4b15-9bd5-924ae622b1b7_0.fbx\",\n        \"Type\": \"FBX\"\n    },\n    \"MotionType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1440373416789442560\",\n        \"RequestId\": \"9635e235-a5b9-4b03-8409-81f8e2921806\"\n    }\n}",
         "title": "调用示例"
       }
     ],

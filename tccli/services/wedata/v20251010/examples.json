@@ -112,14 +112,6 @@
         "title": "取消对话"
       }
     ],
-    "CancelMarkWorkflow": [
-      {
-        "document": "取消收藏工作流失败",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelMarkWorkflow\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"1346\",\n    \"WorkflowId\": \"22b9891f-7f72-4e20-a746-d2b78f8c52e2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": false\n        },\n        \"RequestId\": \"53a94687-c733-46d2-8ec5-d27191d1d7f1\"\n    }\n}",
-        "title": "失败"
-      }
-    ],
     "ChatAI": [
       {
         "document": "简单智能问数",
@@ -3352,14 +3344,6 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LocateCatalogTree\n<公共请求参数>\n\n{\n    \"FullName\": \"DataLakeCatalog.create_test.test1\",\n    \"AssetType\": \"TABLE\",\n    \"MaxResults\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AssetName\": \"mico_catalog_volume_1027\",\n                    \"AssetType\": \"CATALOG\",\n                    \"ChildNodes\": [],\n                    \"Comment\": \"\",\n                    \"FullName\": \"mico_catalog_volume_1027\",\n                    \"IsFavorite\": false\n                },\n                {\n                    \"AssetName\": \"myq_test1234\",\n                    \"AssetType\": \"CATALOG\",\n                    \"ChildNodes\": [],\n                    \"Comment\": \"asads\",\n                    \"FullName\": \"myq_test1234\",\n                    \"IsFavorite\": false\n                },\n                {\n                    \"AssetName\": \"DataLakeCatalog\",\n                    \"AssetType\": \"CATALOG\",\n                    \"ChildNodes\": [\n                        {\n                            \"AssetName\": \"create_test\",\n                            \"AssetType\": \"SCHEMA\",\n                            \"ChildNodes\": [\n                                {\n                                    \"AssetName\": \"test1\",\n                                    \"AssetType\": \"TABLE\",\n                                    \"ChildNodes\": [],\n                                    \"Comment\": \"aaaaa\",\n                                    \"FullName\": \"DataLakeCatalog.create_test.test\",\n                                    \"IsFavorite\": false\n                                }\n                            ],\n                            \"Comment\": \"\",\n                            \"FullName\": \"DataLakeCatalog.create_test\",\n                            \"IsFavorite\": false\n                        },\n                        {\n                            \"AssetName\": \"aorakili_test\",\n                            \"AssetType\": \"SCHEMA\",\n                            \"ChildNodes\": [],\n                            \"Comment\": \"\",\n                            \"FullName\": \"DataLakeCatalog.aorakili_test\",\n                            \"IsFavorite\": false\n                        },\n                        {\n                            \"AssetName\": \"create_1024_01\",\n                            \"AssetType\": \"SCHEMA\",\n                            \"ChildNodes\": [],\n                            \"Comment\": \"\",\n                            \"FullName\": \"DataLakeCatalog.create_1024_01\",\n                            \"IsFavorite\": false\n                        }\n                    ],\n                    \"Comment\": \"\",\n                    \"FullName\": \"DataLakeCatalog\",\n                    \"IsFavorite\": false\n                }\n            ]\n        },\n        \"RequestId\": \"d8615da7-5af7-49ae-beb7-449ceb88255f\"\n    }\n}",
         "title": "定位表"
-      }
-    ],
-    "MarkWorkflow": [
-      {
-        "document": "收藏工作流成功",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MarkWorkflow\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"1346\",\n    \"WorkflowId\": \"22b9891f-7f72-4e20-a746-d2b78f8c52e2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"23818d9a-f8cc-4b2e-84f2-bf2d5ca7bf2d\"\n    }\n}",
-        "title": "成功"
       }
     ],
     "ModelServiceInterfaceCallTest": [

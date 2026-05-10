@@ -250,7 +250,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点ID",
+          "document": "<p>节点ID</p>",
           "example": "xx-xxx-xxx",
           "member": "string",
           "name": "DiagramId",
@@ -260,7 +260,7 @@
         },
         {
           "disabled": false,
-          "document": "节点数字ID，可能发生变化，以DiagramId为准\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点数字ID，可能发生变化，以DiagramId为准</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "234",
           "member": "int64",
           "name": "NodeId",
@@ -270,7 +270,7 @@
         },
         {
           "disabled": false,
-          "document": "产品类型",
+          "document": "<p>产品类型</p>",
           "example": "CVM",
           "member": "string",
           "name": "ProductType",
@@ -280,7 +280,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "测试节点",
           "member": "string",
           "name": "NodeName",
@@ -290,7 +290,7 @@
         },
         {
           "disabled": false,
-          "document": "节点地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "NodeRegion",
@@ -300,8 +300,8 @@
         },
         {
           "disabled": false,
-          "document": "资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{}]",
+          "document": "<p>资源列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ArchResourceDetail",
           "name": "ResourceList",
           "output_required": false,
@@ -310,7 +310,7 @@
         },
         {
           "disabled": false,
-          "document": "父节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>父节点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc-dd",
           "member": "string",
           "name": "ParentDiagramId",
@@ -320,7 +320,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定方式",
+          "document": "<p>绑定方式</p>",
           "example": "instance",
           "member": "string",
           "name": "BindingType",
@@ -330,7 +330,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2025-01-02 10:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -952,8 +952,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "类别，非必填，all: 所有产品，mr：我的资源，默认：all",
-          "example": "无",
+          "document": "<p>类别，非必填，默认all</p><p>枚举值：</p><ul><li>all： 所有产品</li><li>mr： 我的资源</li><li>chatbi： chatbi支持产品</li></ul>",
+          "example": "all",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -961,10 +961,19 @@
         },
         {
           "disabled": false,
-          "document": "插件标识",
-          "example": "无",
+          "document": "<p>插件标识</p>",
+          "example": "dsafaer",
           "member": "string",
           "name": "PluginKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>云厂商标识</p><p>枚举值：</p><ul><li>aliyun： 阿里云</li><li>aws： aws</li><li>空： 腾讯云</li><li>all： 所有云，腾讯云+其他云</li></ul><p>默认值：空</p>",
+          "example": "aliyun",
+          "member": "string",
+          "name": "CloudProvider",
           "required": false,
           "type": "string"
         }
@@ -976,7 +985,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品列表",
+          "document": "<p>产品列表</p>",
           "example": "无",
           "member": "ArchProductInfo",
           "name": "ProductList",

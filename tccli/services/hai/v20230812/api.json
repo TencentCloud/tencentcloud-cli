@@ -863,7 +863,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "容器配置",
+          "document": "<p>容器配置</p>",
           "example": "无",
           "member": "ContainerInfo",
           "name": "Container",
@@ -874,13 +874,24 @@
         },
         {
           "disabled": false,
-          "document": "容器数量",
+          "document": "<p>容器数量</p>",
           "example": "2",
           "member": "int64",
           "name": "ContainerCount",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理服务部署角色</p>",
+          "example": "prefill",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

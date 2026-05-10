@@ -842,10 +842,10 @@
     ],
     "DescribeImageTaskDetail": [
       {
-        "document": "查询任务结果",
-        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageTaskDetail\n<公共请求参数>\n\n{\n    \"TaskId\": \"24000089-WorkflowTask-0723542d0c164c958ba116874fa9b0c4\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2025-05-16T07:44:26Z\",\n        \"FinishTime\": \"2025-05-16T07:44:30Z\",\n        \"RequestId\": \"147e6b46-efeb-48cf-9186-b195b2bf4f9d\",\n        \"Status\": \"FINISH\",\n        \"TaskType\": \"WorkflowTask\"\n    }\n}",
-        "title": "获取任务详情"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageTaskDetail\n<公共请求参数>\n\n{\n    \"TaskId\": \"24******-WorkflowTask-***************tt6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2026-04-30T06:26:49Z\",\n        \"ImageTask\": {\n            \"BeautyConfig\": {\n                \"BeautyEffectItems\": [\n                    {\n                        \"ExtInfo\": \"\",\n                        \"ResourcePath\": \"\",\n                        \"Switch\": \"ON\",\n                        \"Type\": \"Smooth\",\n                        \"Value\": 40\n                    }\n                ]\n            }\n        },\n        \"InputInfo\": {\n            \"CosInputInfo\": {\n                \"Bucket\": \"\",\n                \"Object\": \"\",\n                \"Region\": \"\"\n            },\n            \"S3InputInfo\": null,\n            \"Type\": \"URL\",\n            \"UrlInputInfo\": {\n                \"Url\": \"http://***************.cos.ap-shanghai.tencentcos.cn/**********/01.jpeg\"\n            },\n            \"VODInputInfo\": null\n        },\n        \"Status\": \"PROCESSING\",\n        \"TaskType\": \"WorkflowTask\",\n        \"RequestId\": \"1610103f-dd39-44ca-90ea-e533219d9b53\"\n    }\n}",
+        "title": "查询图片处理任务"
       }
     ],
     "DescribeLiveRecordTemplates": [

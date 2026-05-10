@@ -8052,6 +8052,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定图片的输出格式，支持jpeg, png。</p>",
+          "example": "png",
+          "member": "string",
+          "name": "OutputFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -18129,6 +18140,16 @@
           "name": "InputInfo",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片处理工作流ID。</p>",
+          "example": "30000",
+          "member": "uint64",
+          "name": "ScheduleId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

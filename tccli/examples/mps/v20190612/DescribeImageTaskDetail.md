@@ -1,23 +1,48 @@
-**Example 1: 获取任务详情**
+**Example 1: 查询图片处理任务**
 
-查询任务结果
+
 
 Input: 
 
 ```
 tccli mps DescribeImageTaskDetail --cli-unfold-argument  \
-    --TaskId 24000089-WorkflowTask-0723542d0c164c958ba116874fa9b0c4
+    --TaskId 24******-WorkflowTask-***************tt6
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "CreateTime": "2025-05-16T07:44:26Z",
-        "FinishTime": "2025-05-16T07:44:30Z",
-        "RequestId": "147e6b46-efeb-48cf-9186-b195b2bf4f9d",
-        "Status": "FINISH",
-        "TaskType": "WorkflowTask"
+        "CreateTime": "2026-04-30T06:26:49Z",
+        "ImageTask": {
+            "BeautyConfig": {
+                "BeautyEffectItems": [
+                    {
+                        "ExtInfo": "",
+                        "ResourcePath": "",
+                        "Switch": "ON",
+                        "Type": "Smooth",
+                        "Value": 40
+                    }
+                ]
+            }
+        },
+        "InputInfo": {
+            "CosInputInfo": {
+                "Bucket": "",
+                "Object": "",
+                "Region": ""
+            },
+            "S3InputInfo": null,
+            "Type": "URL",
+            "UrlInputInfo": {
+                "Url": "http://***************.cos.ap-shanghai.tencentcos.cn/**********/01.jpeg"
+            },
+            "VODInputInfo": null
+        },
+        "Status": "PROCESSING",
+        "TaskType": "WorkflowTask",
+        "RequestId": "1610103f-dd39-44ca-90ea-e533219d9b53"
     }
 }
 ```

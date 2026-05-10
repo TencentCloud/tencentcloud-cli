@@ -4424,7 +4424,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "存储类型",
+          "document": "<p>存储类型</p>",
           "example": "\"COS\",\"CFS\"",
           "member": "string",
           "name": "Type",
@@ -4435,7 +4435,7 @@
         },
         {
           "disabled": false,
-          "document": "对象存储桶名称",
+          "document": "<p>对象存储桶名称</p>",
           "example": "xxx-appid",
           "member": "string",
           "name": "BucketName",
@@ -4446,7 +4446,7 @@
         },
         {
           "disabled": false,
-          "document": "存储连接地址",
+          "document": "<p>存储连接地址</p>",
           "example": "https://cos.ap-shanghai",
           "member": "string",
           "name": "Endpoint",
@@ -4457,7 +4457,7 @@
         },
         {
           "disabled": false,
-          "document": "存储连接用户密码",
+          "document": "<p>存储连接用户密码</p>",
           "example": "xxxx-xxxx",
           "member": "string",
           "name": "KeyID",
@@ -4468,7 +4468,7 @@
         },
         {
           "disabled": false,
-          "document": "存储挂载目的目录",
+          "document": "<p>存储挂载目的目录</p>",
           "example": "/data",
           "member": "string",
           "name": "DstPath",
@@ -4479,10 +4479,43 @@
         },
         {
           "disabled": false,
-          "document": "存储挂载源目录",
+          "document": "<p>存储挂载源目录</p>",
           "example": "/data",
           "member": "string",
           "name": "SrcPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>cfs 实例ip</p>",
+          "example": "192.168.0.5",
+          "member": "string",
+          "name": "MountIP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认读写</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ReadOnly",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CFS 实例 ID</p>",
+          "example": "cfs-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
           "output_required": false,
           "required": false,
           "type": "string",

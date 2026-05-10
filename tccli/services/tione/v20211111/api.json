@@ -1973,6 +1973,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "数据源名称",
           "example": "测试数据源",
           "member": "string",
@@ -2865,6 +2874,15 @@
           "member": "string",
           "name": "StorageId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
           "type": "string"
         },
         {
@@ -5043,6 +5061,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "数据源ID",
           "example": "dsrc-Cfs-abum82k1s7wg",
           "member": "string",
@@ -5240,6 +5267,15 @@
     "DeleteMountLimitRequest": {
       "document": "DeleteMountLimit请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
         {
           "disabled": false,
           "document": "数据源类型英文名",
@@ -6495,6 +6531,15 @@
     "DescribeDataSourcesRequest": {
       "document": "DescribeDataSources请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
         {
           "disabled": false,
           "document": "过滤条件",
@@ -7788,6 +7833,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "存储实例ID",
           "example": "cfs-du6hjitx",
           "member": "string",
@@ -7830,6 +7884,15 @@
           "member": "string",
           "name": "Type",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
           "type": "string"
         },
         {
@@ -7888,6 +7951,15 @@
     "DescribeMountLimitsRequest": {
       "document": "DescribeMountLimits请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
         {
           "disabled": false,
           "document": "过滤条件",
@@ -21022,6 +21094,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "数据源ID",
           "example": "dsrc-Cfs-abum82k1s7wg",
           "member": "string",
@@ -21100,6 +21181,15 @@
           "name": "LimitMount",
           "required": true,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

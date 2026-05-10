@@ -1,23 +1,21 @@
-**Example 1: 获取Token**
+**Example 1: GetFaceIdTokenIntl 示例**
 
-	
-获取 SDK 核验 token
+指定活体重试次数，调用成功
 
 Input: 
 
 ```
 tccli faceid GetFaceIdTokenIntl --cli-unfold-argument  \
     --CheckMode liveness \
-    --SecureLevel 4 \
-    --Extra idxxxx
+    --RetryLimit 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "c27f8a53-1766-4d62-84fc-c400843e9e21",
-        "SdkToken": "91BF5AD0-C5C9-41CC-9562-DB35BBA2712D"
+        "RequestId": "ace1147a-d761-49a2-a180-0c95263b50ff",
+        "SdkToken": "C8CFF283-539AF-014E77-A5CF-DD9CAD93EFE2"
     }
 }
 ```

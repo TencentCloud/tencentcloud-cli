@@ -663,6 +663,15 @@
           "name": "CardOcrDisplayFields",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>活体重试次数</p><p>取值范围：[1, 5]</p><p>默认值：5</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "RetryLimit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5194,7 +5203,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "表示检测模式，参数取值如下：\n“liveness”：仅活体检测；\n“compare”：活体检测+人脸比对；\n默认值为：“liveness”。",
+          "document": "<p>表示检测模式，参数取值如下：<br>“liveness”：仅活体检测；<br>“compare”：活体检测+人脸比对；<br>默认值为：“liveness”。</p>",
           "example": "liveness",
           "member": "string",
           "name": "CheckMode",
@@ -5203,7 +5212,7 @@
         },
         {
           "disabled": false,
-          "document": "表示认证的安全等级，安全等级分为：\n“1”：静默活体；\n“2”：动作活体；\n“3”：光线活体：\n“4”：动作+光线活体；\n默认值为“4”。",
+          "document": "<p>表示认证的安全等级，安全等级分为：<br>“1”：静默活体；<br>“2”：动作活体；<br>“3”：光线活体：<br>“4”：动作+光线活体；<br>默认值为“4”。</p>",
           "example": "1",
           "member": "string",
           "name": "SecureLevel",
@@ -5212,7 +5221,7 @@
         },
         {
           "disabled": false,
-          "document": "比对照片的base64编码，用于“活体比对”模式。当参数CheckMode为“compare”时，本参数必传。",
+          "document": "<p>比对照片的base64编码，用于“活体比对”模式。当参数CheckMode为“compare”时，本参数必传。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "Image",
@@ -5221,7 +5230,7 @@
         },
         {
           "disabled": false,
-          "document": "业务透传参数，如无特殊需求本参数可以不传。",
+          "document": "<p>业务透传参数，如无特殊需求本参数可以不传。</p>",
           "example": "extra",
           "member": "string",
           "name": "Extra",
@@ -5230,7 +5239,7 @@
         },
         {
           "disabled": false,
-          "document": "此接口用于控制动作序列，动作类型如下：\n“blink”\n“mouth”\n“nod”\n“shake”\n可以选择四个中的1-2个动作。\n单动作示例：“blink”\n多动作示例：“blink,mouth”.\n默认值为blink\n仅当SecureLevel为2或4时传入此参数不同动作类型生效；否则接口报错。",
+          "document": "<p>此接口用于控制动作序列，动作类型如下：<br>“blink”<br>“mouth”<br>“nod”<br>“shake”<br>可以选择四个中的1-2个动作。<br>单动作示例：“blink”<br>多动作示例：“blink,mouth”.<br>默认值为blink<br>仅当SecureLevel为2或4时传入此参数不同动作类型生效；否则接口报错。</p>",
           "example": "blink",
           "member": "string",
           "name": "ActionList",
@@ -5239,12 +5248,21 @@
         },
         {
           "disabled": false,
-          "document": "PLUS：PLUS版，PRO：PRO版，ENHANCED：增强版，BASIC：基础版（默认）",
+          "document": "<p>PLUS：PLUS版，PRO：PRO版，ENHANCED：增强版，BASIC：基础版（默认）</p>",
           "example": "BASIC",
           "member": "string",
           "name": "SdkVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>活体重试次数</p><p>取值范围：[1, 5]</p><p>默认值：5</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "RetryLimit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5254,7 +5272,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "SdkToken，用来串联核身流程，通过该Token可以拉取核身结果，每个SdkToken的有效期为10分钟。",
+          "document": "<p>SdkToken，用来串联核身流程，通过该Token可以拉取核身结果，每个SdkToken的有效期为10分钟。</p>",
           "example": "0749c982-499e-4d1d-9e6a-103390933016",
           "member": "string",
           "name": "SdkToken",

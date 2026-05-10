@@ -98,13 +98,6 @@
       "output": "CancelChatBiDialogueResponse",
       "status": "online"
     },
-    "CancelMarkWorkflow": {
-      "document": "接口废弃\n\n取消工作流收藏",
-      "input": "CancelMarkWorkflowRequest",
-      "name": "取消工作流收藏",
-      "output": "CancelMarkWorkflowResponse",
-      "status": "deprecated"
-    },
     "ChatAI": {
       "document": "# ChatAI 接口文档\n\n## 接口概述\n\n**接口名称**: ChatAI\n**接口路径**: `/cloudapi/application/chatbi/v1/ChatAI`\n**接口类型**: SSE（Server-Sent Events）流式接口\n**接口描述**: 基于SSE协议的智能对话处理接口，支持实时流式输出对话处理过程和结果\n\n## 使用场景\n\n该接口主要用于以下场景：\n\n1. **智能问数对话**：用户通过自然语言查询数据，系统实时返回处理过程和结果\n2. **AI生成图卡**：AI自动生成数据可视化图表，实时展示生成过程\n3. **流式输出场景**：需要实时展示任务处理进度和中间结果的场景\n4. **长时间任务处理**：处理耗时较长的任务，通过流式输出保持连接活跃\n5. **重新生成场景**：基于已有任务和对话重新生成结果\n\n## 适用范围\n\n- 适用于 ChatBI 对话系统中的所有智能对话场景\n- 支持流式和非流式两种输出模式\n- 支持多种对话类型（智能问数、AI生成图卡等）\n- 基于 SSE 协议，前端需要使用 EventSource 或类似技术接收消息流\n\n---\n\n## 请求参数\n\n### 请求方式\n\n- **HTTP Method**: POST\n- **Content-Type**: application/json\n- **Accept**: text/event-stream\n\n### 请求消息体：HandlerRequest\n\n| 参数名      | 类型    | 必填 | 说明                                                                 |\n| ----------- | ------- | ---- | -------------------------------------------------------------------- |\n| WorkspaceId | string  | 是   | 工作空间ID，用于数据隔离和权限验证                                   |\n| RoomKey     | string  | 条件 | 对话空间ID，CHAT_BI场景下必填                                        |\n| TaskKey     | string  | 否   | 任务唯一标识，不传则自动创建新任务                                   |\n| DialogueKey | string  | 否   | 对话唯一标识，系统自动生成，重生成场景下必填                         |\n| AppType     | string  | 是   | 应用类型，标识消息所属的应用模块。可选值：BI, CHAT_BI                |\n| ChatType    | string  | 是   | 对话类型，用于路由到对应的处理器。可选值：CHAT_QUERY_DATA, AI_DASHBOARD_CARD |\n| Query       | string  | 是   | 自然语言查询语句，用户输入的查询内容                                 |\n| Data        | string  | 否   | 业务数据（JSON格式），用于补充额外的业务信息，默认为\"{}\"             |\n| IsStream    | boolean | 否   | 是否支持流式输出，默认为true                                         |\n\n### 请求租户信息\n\n接口会自动从请求上下文中获取以下租户信息：\n\n- **OwnerUin**: 企业ID，用于数据隔离\n- **AppId**: 应用ID，用于应用级别的数据隔离\n- **CurrentUin**: 当前用户ID，用于权限验证\n\n### 参数说明\n\n#### WorkspaceId（工作空间ID）\n\n- 必填参数，用于工作空间级别的数据隔离\n- 确保用户只能在所属工作空间内进行对话\n- 示例：`\"workspace_123\"`\n\n#### RoomKey（对话空间ID）\n\n- CHAT_BI场景下必填，用于标识对话所属的特定空间\n- 用于关联对话空间和权限验证\n- 示例：`\"room_456\"`\n\n#### TaskKey（任务标识符）\n\n- 可选参数，标识一个完整的消息处理任务\n- 如果不传，系统会自动创建新任务\n- 如果传入，则在该任务下创建新对话\n- 示例：`\"task_20251112_001\"`\n\n#### DialogueKey（对话标识符）\n\n- 可选参数，标记一次对话\n- 系统自动生成，一般不需要传入\n- 重生成场景下必须传入，用于基于已有对话重新生成\n- 示例：`\"dialogue_20251112_001\"`\n\n#### AppType（应用类型）\n\n- 必填参数，标识消息所属的应用模块\n- 可选值：\n  - `BI`: BI数据分析\n  - `CHAT_BI`: ChatBI智能分析\n- 示例：`\"CHAT_BI\"`\n\n#### ChatType（对话类型）\n\n- 必填参数，用于路由到对应的消息处理器\n- 可选值：\n  - `CHAT_QUERY_DATA`: 智能问数对话\n  - `AI_DASHBOARD_CARD`: AI生成图卡对话\n- 示例：`\"CHAT_QUERY_DATA\"`\n\n#### Query（查询语句）\n\n- 必填参数，用户输入的自然语言查询内容\n- 是消息处理的核心输入\n- 不能为空字符串\n- 示例：`\"查询本月销售额\"`\n\n#### Data（业务数据）\n\n- 可选参数，JSON格式的扩展参数\n- 用于补充额外的业务信息\n- 默认值为 `\"{}\"`\n- 重生成场景下，需要设置 `{\"regenerate\": true}`\n- 示例：`\"{\\\"timeRange\\\":\\\"thisMonth\\\",\\\"regenerate\\\":false}\"`\n\n#### IsStream（流式输出）\n\n- 可选参数，是否启用流式输出\n- 默认值为 `true`\n- 启用后可在处理过程中不断输出中间结果\n- 示例：`true`\n\n---\n\n## 响应参数\n\n### 响应类型\n\n- **Content-Type**: text/event-stream\n- **响应格式**: SSE（Server-Sent Events）事件流\n\n### SSE 事件流结构\n\n每个 SSE 事件包含以下字段：\n\n```\nevent: <事件类型>\ndata: <JSON格式的消息数据>\n\n```\n\n### 消息数据结构：MessageResponse\n\n| 字段名        | 类型             | 说明                                                         |\n| ------------- | ---------------- | ------------------------------------------------------------ |\n| TaskKey       | string           | 任务唯一标识                                                 |\n| DialogueKey   | string           | 对话唯一标识                                                 |\n| RoomKey       | string           | 对话空间ID                                                   |\n| WorkspaceId   | string           | 工作空间ID                                                   |\n| ConnectionId  | string           | SSE连接的唯一标识                                            |\n| ChatType      | string           | 对话类型（CHAT_QUERY_DATA, AI_DASHBOARD_CARD）              |\n| MessageType   | string           | 消息类型，标识当前消息在流式处理中的阶段，见下方枚举说明     |\n| Code          | integer          | 响应状态码，0表示成功，其他值表示失败                        |\n| CostTime      | int64            | 处理耗时（毫秒）                                             |\n| Timestamp     | int64            | 响应时间戳（Unix毫秒时间戳）                                 |\n| ErrorDetail   | string           | 错误详情，当处理失败时包含具体的错误信息                     |\n| Data          | object           | 处理结果数据，流式输出中间结果                               |\n| FinalData     | array            | 最终数据，对话结束后的完整数据，包含关键步骤的结果数据       |\n| ExtraData     | map              | 额外数据，用于填充扩展参数                                   |\n\n### MessageType 枚举值说明\n\n#### 通用消息类型\n\n| 枚举值       | 说明         | 使用场景                   |\n| ------------ | ------------ | -------------------------- |\n| RUN_START    | 对话开始标志 | 任务开始处理时发送         |\n| RUN_FINISHED | 对话结束标志 | 任务成功完成时发送         |\n\n#### 智能问数对话（CHAT_QUERY_DATA）消息类型\n\n| 枚举值                | 说明         | 使用场景                                 |\n| --------------------- | ------------ | ---------------------------------------- |\n| QUESTION_UNDERSTANDING | 问题理解     | 理解用户问题，提取查询意图               |\n| TABLE_SELECTION       | 表选择       | 选择合适的数据表                         |\n| EXECUTION_PLANNING    | 执行计划     | 制定查询执行计划                         |\n| SQL_GENERATION        | SQL生成      | 生成SQL查询语句                          |\n| SQL_EXECUTION         | SQL执行      | 执行SQL查询并获取结果                    |\n| CHART_GENERATION      | 图表生成     | 根据查询结果生成可视化图表               |\n\n### SSE 事件流程\n\n对于智能问数对话（CHAT_QUERY_DATA），完整的事件流程如下：\n\n1. **RUN_START** - 对话开始\n2. **QUESTION_UNDERSTANDING** - 问题理解（包含多个子事件）\n   - StepStartedEvent - 步骤开始\n   - TextMessageStartEvent - 文本消息开始\n   - TextMessageContentEvent - 文本消息内容（流式输出）\n   - TextMessageEndEvent - 文本消息结束\n   - StepFinishedEvent - 步骤完成\n3. **TABLE_SELECTION** - 表选择（包含多个子事件）\n4. **EXECUTION_PLANNING** - 执行计划（包含多个子事件）\n5. **SQL_GENERATION** - SQL生成\n6. **SQL_EXECUTION** - SQL执行\n7. **CHART_GENERATION** - 图表生成\n8. **RUN_FINISHED** - 对话结束\n\n---\n\n## 权限限制\n\n### 权限验证规则\n\n接口执行以下权限验证：\n\n1. **参数有效性验证**\n   - 验证必填参数不为空\n   - 验证参数格式正确\n   - 如果验证失败，返回错误：`\"参数验证失败\"`\n\n2. **消息类型支持验证**\n   - 验证系统是否支持该消息类型\n   - 如果不支持，返回错误：`\"不支持的消息类型\"`\n\n3. **工作空间权限验证**\n   - 验证用户是否有访问指定工作空间的权限\n   - 通过 OwnerUin、AppId、WorkspaceId 实现数据隔离\n\n4. **对话空间权限验证**\n   - CHAT_BI场景下，验证用户是否有访问该对话空间的权限\n   - 如果没有权限，返回错误：`\"无权限访问该对话空间\"`\n\n5. **任务所有权验证**\n   - 如果指定了 TaskKey，验证任务是否属于当前用户\n   - 如果不属于，返回错误：`\"对话任务不属于当前用户\"`\n\n6. **对话所有权验证**\n   - 如果指定了 DialogueKey，验证对话是否属于当前用户\n   - 如果不属于，返回错误：`\"对话记录不属于当前用户\"`\n\n### 权限说明\n\n- **本人操作**：用户只能在自己的工作空间和对话空间内进行对话\n- **跨用户操作**：不支持跨用户操作\n- **数据隔离**：通过 OwnerUin、AppId、WorkspaceId 实现多租户数据隔离\n\n---\n\n## 错误码\n\n| 错误类型     | 说明                                       | 解决方案                                |\n| ------------ | ------------------------------------------ | --------------------------------------- |\n| 参数错误     | 请求参数为空、格式错误或缺少必填参数       | 检查并提供完整且合法的必填参数          |\n| 不支持的类型 | 系统不支持该消息类型                       | 检查ChatType参数是否正确                |\n| 权限验证失败 | 用户无权限访问工作空间或对话空间           | 确保用户有访问权限                      |\n| 任务不存在   | 指定的任务不存在                           | 检查TaskKey是否正确                     |\n| 对话不存在   | 指定的对话不存在                           | 检查DialogueKey是否正确                 |\n| 处理失败     | 任务处理过程中发生错误                     | 查看ErrorDetail字段获取详细错误信息     |\n\n---\n\n## 调用示例\n\n### 示例1：智能问数对话（新建任务）\n\n**请求示例**：\n```json\n{\n  \"WorkspaceId\": \"workspace_123\",\n  \"RoomKey\": \"room_456\",\n  \"AppType\": \"CHAT_BI\",\n  \"ChatType\": \"CHAT_QUERY_DATA\",\n  \"Query\": \"查询本月销售额\",\n  \"Data\": \"{\\\"timeRange\\\":\\\"thisMonth\\\"}\",\n  \"IsStream\": true\n}\n```\n\n**响应示例（SSE事件流）**:\n\n```\nevent: RUN_START\ndata: {\"taskKey\":\"task_20241028001\",\"dialogueKey\":\"dialog_1028001\",\"roomKey\":\"1\",\"workspaceId\":\"1\",\"connectionId\":\"conn_001\",\"chatType\":\"CHAT_QUERY_DATA\",\"messageType\":\"RUN_START\",\"code\":0,\"timestamp\":\"1761569192000\"}\n\nevent: QUESTION_UNDERSTANDING\ndata: {\"taskKey\":\"task_20241028001\",\"dialogueKey\":\"dialog_1028001\",\"messageType\":\"QUESTION_UNDERSTANDING\",\"code\":0,\"costTime\":\"500\",\"data\":{\"baseContent\":\"用户想要查询最近30天的销售数据，时间范围：从当前时间往前推30天\"},\"timestamp\":\"1761569192500\"}\n\nevent: TABLE_SELECTION\ndata: {\"taskKey\":\"task_20241028001\",\"dialogueKey\":\"dialog_1028001\",\"messageType\":\"TABLE_SELECTION\",\"code\":0,\"costTime\":\"500\",\"data\":{\"selectedTables\":[{\"table\":\"sales_fact\",\"schema\":\"bi_dw\",\"catalog\":\"catalog1\",\"confidence\":0.92}],\"thinking\":\"根据用户查询意图，选择sales_fact表最合适\"},\"timestamp\":\"1761569192500\"}\n\nevent: EXECUTION_PLANNING\ndata: {\"taskKey\":\"task_20241028001\",\"dialogueKey\":\"dialog_1028001\",\"messageType\":\"EXECUTION_PLANNING\",\"code\":0,\"costTime\":\"500\",\"data\":{\"baseContent\":\"1.先计算时间范围\\n2.再聚合销售数据\"},\"timestamp\":\"1761569192500\"}\n\nevent: SQL_GENERATION\ndata: {\"taskKey\":\"task_20241028001\",\"dialogueKey\":\"dialog_1028001\",\"messageType\":\"SQL_GENERATION\",\"code\":0,\"costTime\":\"1100\",\"data\":{\"baseContent\":\"SELECT date, SUM(sales) as total_sales FROM sales_data WHERE date >= DATE_SUB(CURRENT_DATE(), 30) GROUP BY date ORDER BY date\"},\"timestamp\":\"1761569193100\"}\n\nevent: SQL_EXECUTION\ndata: {\"taskKey\":\"task_20241028001\",\"dialogueKey\":\"dialog_1028001\",\"messageType\":\"SQL_EXECUTION\",\"code\":0,\"costTime\":\"1300\",\"data\":{\"result\":[{\"month\":\"2023-10\",\"product_category\":\"电子产品\",\"total_sales\":1284500,\"sales_growth\":0.15}]},\"timestamp\":\"1761569193300\"}\n\nevent: CHART_GENERATION\ndata: {\"taskKey\":\"task_20241028001\",\"dialogueKey\":\"dialog_1028001\",\"messageType\":\"CHART_GENERATION\",\"code\":0,\"costTime\":\"1500\",\"data\":{},\"timestamp\":\"1761569193500\"}\n\nevent: RUN_FINISHED\ndata: {\"type\":\"RUN_FINISHED\",\"timestamp\":\"1762929316116\",\"rawEvent\":{\"taskKey\":\"task_20241028001\",\"dialogueKey\":\"dialog_1028001\",\"roomKey\":\"1\",\"workspaceId\":\"1\",\"connectionId\":\"conn_001\",\"code\":0,\"costTime\":\"5470\",\"timestamp\":\"1762929316116\",\"data\":{\"finalData\":[{\"type\":\"STEP_FINISHED\",\"timestamp\":\"1761569192500\",\"stepName\":\"QUESTION_UNDERSTANDING\",\"rawEvent\":{\"taskKey\":\"task_20241028001\",\"dialogueKey\":\"dialog_1028001\",\"messageType\":\"QUESTION_UNDERSTANDING\",\"code\":0,\"costTime\":\"500\",\"data\":{\"baseContent\":\"时间范围：从当前时间往前推30天\"}}},{\"taskKey\":\"task_20241028001\",\"dialogueKey\":\"dialog_1028001\",\"messageType\":\"TABLE_SELECTION\",\"code\":0,\"costTime\":\"500\",\"data\":{\"selectedTables\":[{\"table\":\"sales_fact\",\"schema\":\"bi_dw\",\"catalog\":\"catalog1\",\"confidence\":0.92}],\"thinking\":\"用户使用A更好\"}},{\"taskKey\":\"task_20241028001\",\"dialogueKey\":\"dialog_1028001\",\"messageType\":\"EXECUTION_PLANNING\",\"code\":0,\"costTime\":\"500\",\"data\":{\"baseContent\":\"1.先计算A指标\\n\\n2.再计算B指标\"}},{\"taskKey\":\"task_20241028001\",\"dialogueKey\":\"dialog_1028001\",\"messageType\":\"SQL_GENERATION\",\"code\":0,\"costTime\":\"1100\",\"data\":{\"baseContent\":\"SELECT date, SUM(sales) as total_sales FROM sales_data WHERE date >= DATE_SUB(CURRENT_DATE(), 30) GROUP BY date ORDER BY date\"}},{\"taskKey\":\"task_20241028001\",\"dialogueKey\":\"dialog_1028001\",\"messageType\":\"SQL_EXECUTION\",\"code\":0,\"costTime\":\"1300\",\"data\":{\"result\":[{\"month\":\"2023-10\",\"product_category\":\"电子产品\",\"total_sales\":1284500,\"sales_growth\":0.15}]}},{\"type\":\"STEP_FINISHED\",\"timestamp\":\"1761569193500\",\"stepName\":\"CHART_GENERATION\",\"rawEvent\":{\"taskKey\":\"task_20241028001\",\"dialogueKey\":\"dialog_1028001\",\"messageType\":\"CHART_GENERATION\",\"code\":0,\"costTime\":\"1500\",\"data\":{}}}]}}}\n\n```\n\n### 示例2：在已有任务下创建新对话\n\n**请求示例**：\n```json\n{\n  \"WorkspaceId\": \"workspace_123\",\n  \"RoomKey\": \"room_456\",\n  \"TaskKey\": \"task_20251112_001\",\n  \"AppType\": \"CHAT_BI\",\n  \"ChatType\": \"CHAT_QUERY_DATA\",\n  \"Query\": \"查询上月销售额\",\n  \"Data\": \"{\\\"timeRange\\\":\\\"lastMonth\\\"}\",\n  \"IsStream\": true\n}\n```\n\n**说明**：在已有任务下创建新对话，系统会自动生成新的 DialogueKey。\n\n### 示例3：重新生成对话结果\n\n**请求示例**：\n```json\n{\n  \"WorkspaceId\": \"workspace_123\",\n  \"RoomKey\": \"room_456\",\n  \"TaskKey\": \"task_20251112_001\",\n  \"DialogueKey\": \"dialogue_20251112_001\",\n  \"AppType\": \"CHAT_BI\",\n  \"ChatType\": \"CHAT_QUERY_DATA\",\n  \"Query\": \"查询本月销售额\",\n  \"Data\": \"{\\\"regenerate\\\":true,\\\"timeRange\\\":\\\"thisMonth\\\"}\",\n  \"IsStream\": true\n}\n```\n\n**说明**：重新生成场景下，必须提供 TaskKey 和 DialogueKey，并在 Data 中设置 `regenerate: true`。\n\n---\n\n## 注意事项\n\n1. **连接管理**：SSE连接会在任务完成后自动关闭，前端需要正确处理连接关闭事件\n2. **超时处理**：长时间无响应时，连接可能会超时，建议设置合理的超时时间\n3. **错误处理**：需要监听 onerror 事件，处理连接错误和任务失败的情况\n4. **事件顺序**：事件按照处理流程顺序发送，前端需要按顺序处理\n5. **数据格式**：所有事件数据都是 JSON 格式，需要解析后使用\n6. **重连机制**：如果连接断开，EventSource 会自动重连，但建议实现自定义重连逻辑\n7. **浏览器兼容性**：EventSource API 在现代浏览器中都支持，但需要注意 IE 不支持\n8. **跨域问题**：如果前后端不在同一域名下，需要配置 CORS\n9. **任务自动创建**：如果不提供 TaskKey，系统会自动创建新任务\n10. **对话自动创建**：系统会自动创建对话记录，并在响应中返回 DialogueKey\n\n---\n\n## 业务规则\n\n### 任务和对话创建规则\n\n- **新建任务**：不提供 TaskKey 时，系统自动创建新任务，任务名称取自 Query 的前50个字符\n- **已有任务**：提供 TaskKey 时，在该任务下创建新对话\n- **重新生成**：提供 TaskKey 和 DialogueKey，且 Data 中设置 `regenerate: true` 时，重新生成对话结果\n\n### 流式输出规则\n\n- **流式模式**：IsStream 为 true 时，实时返回处理过程和中间结果\n- **非流式模式**：IsStream 为 false 时，只在任务完成后返回最终结果\n- **事件顺序**：流式事件按照处理流程顺序发送，保证顺序性\n\n### 权限规则\n\n- **工作空间隔离**：用户只能在自己的工作空间内进行对话\n- **对话空间隔离**：CHAT_BI场景下，用户只能在有权限的对话空间内进行对话\n- **任务所有权**：用户只能操作自己创建的任务和对话\n\n---\n\n## 相关接口\n\n- **ListChatBiTask**: 查询任务列表\n- **ListChatBiDialogue**: 查询对话列表\n- **FeedBackChatBiDialogue**: 对对话进行反馈\n- **ReviewChatBiDialogue**: 对对话进行审核\n- **DeleteChatBiDialogue**: 删除对话\n\n---\n\n## 版本历史\n\n| 版本 | 日期       | 修改内容               | 作者      |\n| ---- | ---------- | ---------------------- | --------- |\n| 1.0  | 2025-11-12 | 初始版本，创建接口文档 | arthurzhu |\n\n---\n\n## 联系方式\n\n如有问题或建议，请联系：\n\n- **开发团队**: WeData Team\n- **维护人员**: arthurzhu",
       "input": "ChatAIRequest",
@@ -2877,13 +2870,6 @@
       "output": "LocateCatalogTreeResponse",
       "status": "online"
     },
-    "MarkWorkflow": {
-      "document": "接口废弃\n\n收藏工作流",
-      "input": "MarkWorkflowRequest",
-      "name": "收藏工作流",
-      "output": "MarkWorkflowResponse",
-      "status": "deprecated"
-    },
     "ModelServiceInterfaceCallTest": {
       "document": "服务接口调用测试",
       "input": "ModelServiceInterfaceCallTestRequest",
@@ -4573,6 +4559,34 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AdvancedParameter": {
+      "document": "任务调度变量参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参数名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cc",
+          "member": "string",
+          "name": "ParamKey",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ParamValue",
+          "output_required": false,
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -10685,68 +10699,6 @@
         }
       ],
       "type": "object"
-    },
-    "CancelMarkWorkflowRequest": {
-      "document": "CancelMarkWorkflow请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "项目ID",
-          "example": "12333",
-          "member": "string",
-          "name": "WorkspaceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "工作流ID",
-          "example": "ahdk",
-          "member": "string",
-          "name": "WorkflowId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CancelMarkWorkflowResponse": {
-      "document": "CancelMarkWorkflow返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "返回是否操作成功\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "CancelMarkWorkflowRsp",
-          "name": "Data",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CancelMarkWorkflowRsp": {
-      "document": "取消收藏返回体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "取消收藏是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "true",
-          "member": "bool",
-          "name": "Status",
-          "output_required": false,
-          "type": "bool",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
     },
     "Catalog": {
       "document": "数据目录实体结构",
@@ -29917,8 +29869,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "字段名称",
-          "example": "",
+          "document": "<p>字段名称</p>",
+          "example": "user_id",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -29927,8 +29879,8 @@
         },
         {
           "disabled": false,
-          "document": "字段描述",
-          "example": "",
+          "document": "<p>字段描述</p>",
+          "example": "柠檬酸",
           "member": "string",
           "name": "Comment",
           "output_required": false,
@@ -29937,8 +29889,8 @@
         },
         {
           "disabled": false,
-          "document": "字段类型",
-          "example": "",
+          "document": "<p>字段类型</p>",
+          "example": "float",
           "member": "string",
           "name": "Type",
           "output_required": false,
@@ -29947,7 +29899,7 @@
         },
         {
           "disabled": false,
-          "document": "语言类型",
+          "document": "<p>语言类型</p>",
           "example": "",
           "member": "string",
           "name": "Lang",
@@ -29957,12 +29909,22 @@
         },
         {
           "disabled": false,
-          "document": "字段内容或代码片段",
-          "example": "",
+          "document": "<p>字段内容或代码片段</p>",
+          "example": "print(\"xzp_tes\")c = 1 + 'a3'",
           "member": "string",
           "name": "Content",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段采样值</p>",
+          "example": "[\"user4573\"]",
+          "member": "string",
+          "name": "SampleValues",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -40208,7 +40170,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流ID",
+          "document": "<p>工作流ID</p>",
           "example": "rt36b929bk50e",
           "member": "string",
           "name": "WorkflowId",
@@ -40217,7 +40179,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间ID",
+          "document": "<p>工作空间ID</p>",
           "example": "250929203330250",
           "member": "string",
           "name": "WorkspaceId",
@@ -40226,7 +40188,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义条件查询,示例key: StartTime，EndTime，WorkflowId，WorkflowName ，LabelKeyId，ExecutionState，ErrorCodeStr，ExecuteUserUin，Keyword",
+          "document": "<p>自定义条件查询,示例key: StartTime，EndTime，WorkflowId，WorkflowName ，LabelKeyId，ExecutionState，ErrorCodeStr，ExecuteUserUin，Keyword</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -40235,7 +40197,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段：CreateTime，EndTime，ExecutionTime",
+          "document": "<p>排序字段：CreateTime，EndTime，ExecutionTime</p>",
           "example": "无",
           "member": "OrderField",
           "name": "OrderFields",
@@ -40244,7 +40206,7 @@
         },
         {
           "disabled": false,
-          "document": "请求的数据页数。默认值为1，取值大于等于1",
+          "document": "<p>请求的数据页数。默认值为1，取值大于等于1</p>",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -40253,10 +40215,28 @@
         },
         {
           "disabled": false,
-          "document": "每页显示的数据条数。默认值为10 ，最小值为10，最大值为200",
+          "document": "<p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200</p>",
           "example": "30",
           "member": "uint64",
           "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务运行实例每页的显示数据条数。默认值为10，最小值为10，最大值为200</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "TaskPageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务运行实例请求的数据页数。默认值为1，取值大于等于1</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskPageNumber",
           "required": false,
           "type": "int"
         }
@@ -40268,7 +40248,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流任务历史运行时间变化趋势图表分页信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流任务历史运行时间变化趋势图表分页信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GetWorkflowTaskExecutionHistogramResult",
           "name": "Data",
@@ -64038,68 +64018,6 @@
       ],
       "usage": "in"
     },
-    "MarkWorkflowRequest": {
-      "document": "MarkWorkflow请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "工作空间ID",
-          "example": "1239939",
-          "member": "string",
-          "name": "WorkspaceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "工作流ID",
-          "example": "ahdlld",
-          "member": "string",
-          "name": "WorkflowId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "MarkWorkflowResponse": {
-      "document": "MarkWorkflow返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "返回是否操作成功\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "MarkWorkflowRsp",
-          "name": "Data",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "MarkWorkflowRsp": {
-      "document": "收藏工作流返回体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "收藏是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "true",
-          "member": "bool",
-          "name": "Status",
-          "output_required": false,
-          "type": "bool",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
     "MetaOwner": {
       "document": "元数据责任人信息数据结构",
       "members": [
@@ -78383,7 +78301,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务运行ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务运行ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "o1byd46si972c5y7rt",
           "member": "string",
           "name": "ExecutionId",
@@ -78393,7 +78311,7 @@
         },
         {
           "disabled": false,
-          "document": "执行状态，运行失败:FAILED、运行成功:SUCCESS、等待中:PENDING、跳过运行:SKIP、运行中:RUNNING\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行状态，运行失败:FAILED、运行成功:SUCCESS、等待中:PENDING、跳过运行:SKIP、运行中:RUNNING</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SUCCESS",
           "member": "string",
           "name": "ExecutionState",
@@ -78403,7 +78321,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作空间ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "158746972540691",
           "member": "string",
           "name": "WorkspaceId",
@@ -78413,7 +78331,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "a1s746si972c540c6om91",
           "member": "string",
           "name": "WorkflowId",
@@ -78423,7 +78341,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流运行ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流运行ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "b1sd46si972c5yme",
           "member": "string",
           "name": "WorkflowExecutionId",
@@ -78433,7 +78351,7 @@
         },
         {
           "disabled": false,
-          "document": "任务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "a1s746si972c540c6om91",
           "member": "string",
           "name": "TaskId",
@@ -78443,7 +78361,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AutoGen",
           "member": "string",
           "name": "TaskTypeName",
@@ -78453,7 +78371,7 @@
         },
         {
           "disabled": false,
-          "document": "任务版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "uuid",
           "member": "string",
           "name": "TaskVersionId",
@@ -78463,7 +78381,7 @@
         },
         {
           "disabled": false,
-          "document": "触发类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>触发类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dryRun",
           "member": "string",
           "name": "TriggerType",
@@ -78473,7 +78391,7 @@
         },
         {
           "disabled": false,
-          "document": "等待时长，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>等待时长，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "826",
           "member": "string",
           "name": "WaitTime",
@@ -78483,7 +78401,7 @@
         },
         {
           "disabled": false,
-          "document": "所属资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所属资源组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cluster-2025",
           "member": "string",
           "name": "ResourceGroup",
@@ -78493,7 +78411,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Cancelled",
           "member": "string",
           "name": "ErrorCode",
@@ -78503,7 +78421,7 @@
         },
         {
           "disabled": false,
-          "document": "运行账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行账号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "760115600",
           "member": "string",
           "name": "ExecuteUserUin",
@@ -78513,7 +78431,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "760115600",
           "member": "string",
           "name": "CreaterUin",
@@ -78523,7 +78441,7 @@
         },
         {
           "disabled": false,
-          "document": "执行平台执行 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行平台执行 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dgpcvpasnglsd",
           "member": "string",
           "name": "JobId",
@@ -78533,7 +78451,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，系统当前时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间，系统当前时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1760338224444",
           "member": "string",
           "name": "CreateTime",
@@ -78543,7 +78461,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间，系统当前时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间，系统当前时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1760338224444",
           "member": "string",
           "name": "UpdateTime",
@@ -78553,7 +78471,7 @@
         },
         {
           "disabled": false,
-          "document": "依赖任务完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>依赖任务完成时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1760338224444",
           "member": "string",
           "name": "DependenceFinishedTime",
@@ -78563,7 +78481,7 @@
         },
         {
           "disabled": false,
-          "document": "任务下发执行平台时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务下发执行平台时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1760338224444",
           "member": "string",
           "name": "QueueStartTime",
@@ -78573,7 +78491,7 @@
         },
         {
           "disabled": false,
-          "document": "开始等待资源时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>开始等待资源时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1760338224444",
           "member": "string",
           "name": "PendingStartTime",
@@ -78583,7 +78501,7 @@
         },
         {
           "disabled": false,
-          "document": "运行开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1760338224444",
           "member": "string",
           "name": "ExecutionStartTime",
@@ -78593,7 +78511,7 @@
         },
         {
           "disabled": false,
-          "document": "运行结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1760338224444",
           "member": "string",
           "name": "ExecutionEndTime",
@@ -78603,7 +78521,7 @@
         },
         {
           "disabled": false,
-          "document": "排队时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>排队时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1760338224444",
           "member": "string",
           "name": "QueueCostTime",
@@ -78613,7 +78531,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "string",
           "name": "ExecutionTime",
@@ -78623,7 +78541,7 @@
         },
         {
           "disabled": false,
-          "document": "总花费时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总花费时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "string",
           "name": "AllCostTime",
@@ -78633,7 +78551,7 @@
         },
         {
           "disabled": false,
-          "document": "时区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>时区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "utc+8",
           "member": "string",
           "name": "TimeZone",
@@ -78643,7 +78561,7 @@
         },
         {
           "disabled": false,
-          "document": "依赖上游任务 ID 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>依赖上游任务 ID 列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"task_id1\", \"task_id2\"]",
           "member": "string",
           "name": "DependOnList",
@@ -78653,7 +78571,7 @@
         },
         {
           "disabled": false,
-          "document": "运行参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"['key':'value']\"",
           "member": "string",
           "name": "RunParams",
@@ -78663,7 +78581,7 @@
         },
         {
           "disabled": false,
-          "document": "任务扩展信息，包含脚本路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务扩展信息，包含脚本路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"key_id\", \"value_str\"}",
           "member": "string",
           "name": "TaskTypeExtensions",
@@ -78673,7 +78591,7 @@
         },
         {
           "disabled": false,
-          "document": "重试次数，为 0 则表示首次运行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重试次数，为 0 则表示首次运行</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "RetryTimes",
@@ -78683,7 +78601,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "task_1",
           "member": "string",
           "name": "TaskKey",
@@ -78693,7 +78611,7 @@
         },
         {
           "disabled": false,
-          "document": "左侧坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>左侧坐标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
           "name": "LeftCoordinate",
@@ -78703,7 +78621,7 @@
         },
         {
           "disabled": false,
-          "document": "顶部坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>顶部坐标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2.0",
           "member": "float",
           "name": "TopCoordinate",
@@ -78713,7 +78631,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源组 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "resourceGroupId",
           "member": "string",
           "name": "ResourceGroupId",
@@ -78723,7 +78641,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误码描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无效参数",
           "member": "string",
           "name": "ErrorCodeStr",
@@ -78733,7 +78651,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人 UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人 UIN</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12540",
           "member": "string",
           "name": "CreateUin",
@@ -78743,7 +78661,7 @@
         },
         {
           "disabled": false,
-          "document": "下发执行平台时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>下发执行平台时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "135430503",
           "member": "string",
           "name": "IssueTime",
@@ -78753,7 +78671,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "任务名",
           "member": "string",
           "name": "TaskName",
@@ -78763,7 +78681,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "workflow_name",
           "member": "string",
           "name": "WorkflowName",
@@ -78773,7 +78691,7 @@
         },
         {
           "disabled": false,
-          "document": "运行用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行用户名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testName",
           "member": "string",
           "name": "ExecuteUserName",
@@ -78783,7 +78701,7 @@
         },
         {
           "disabled": false,
-          "document": "重跑次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重跑次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "RerunTimes",
@@ -78793,7 +78711,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是最新一次运行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否是最新一次运行</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "IsLatestExecution",
@@ -78803,7 +78721,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源组详情列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowListResourceGroupInfo",
           "name": "ResourceGroupInfoList",
@@ -78813,7 +78731,7 @@
         },
         {
           "disabled": false,
-          "document": "执行结果，当前仅支持嵌套工作流任务类型。结果为对应的工作流执行ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行结果，当前仅支持嵌套工作流任务类型。结果为对应的工作流执行ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{   \"workflowExecutionId\":\"12072d42-1d6d-40b1-8ef0-2645d9e7d539\" }",
           "member": "string",
           "name": "ExecutionResult",
@@ -78823,7 +78741,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行错误信息",
+          "document": "<p>任务执行错误信息</p>",
           "example": "引擎资源不足",
           "member": "string",
           "name": "ErrorMessage",
@@ -78833,7 +78751,7 @@
         },
         {
           "disabled": false,
-          "document": "任务依赖运行条件\n\nALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功\nONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功\nNONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中\nALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败\nONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败\nALL_FAILED: 全部失败：所有上游依赖任务都失败\nALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行\nALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\nONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游\nALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行\nNONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\nALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行\nADVANCED:运行条件为高级模式时配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务依赖运行条件</p><p>ALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功<br>ONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功<br>NONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中<br>ALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败<br>ONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败<br>ALL_FAILED: 全部失败：所有上游依赖任务都失败<br>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行<br>ALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行<br>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游<br>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行<br>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行<br>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行<br>ADVANCED:运行条件为高级模式时配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL_SUCCESS",
           "member": "string",
           "name": "DependOnRunCondition",
@@ -78843,7 +78761,7 @@
         },
         {
           "disabled": false,
-          "document": "任务高级运行参数，当DependOnRunCondition为ADVANCED时配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务高级运行参数，当DependOnRunCondition为ADVANCED时配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AdvancedDependencyConfig",
           "name": "AdvancedDependencyConfig",
@@ -90442,7 +90360,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户AppId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1394028945",
           "member": "string",
           "name": "AppId",
@@ -90452,7 +90370,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "wf_test",
           "member": "string",
           "name": "WorkflowName",
@@ -90462,7 +90380,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流ID",
+          "document": "<p>工作流ID</p>",
           "example": "5dbb66d3-a4ca-4a45-9836",
           "member": "string",
           "name": "WorkflowId",
@@ -90472,7 +90390,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流运行ID",
+          "document": "<p>工作流运行ID</p>",
           "example": "89dty66d3-a4ca-4aa45-9805",
           "member": "string",
           "name": "ExecutionId",
@@ -90482,7 +90400,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作空间ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2509292033302509292",
           "member": "string",
           "name": "WorkspaceId",
@@ -90492,7 +90410,7 @@
         },
         {
           "disabled": false,
-          "document": "触发方式:Scheduler、ManualTrigger、Event\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>触发方式:Scheduler、ManualTrigger、Event</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Scheduler",
           "member": "string",
           "name": "TriggerType",
@@ -90502,7 +90420,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流触发时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流触发时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1761201295754",
           "member": "string",
           "name": "CreateTime",
@@ -90512,7 +90430,7 @@
         },
         {
           "disabled": false,
-          "document": "执行开始时间戳（毫秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行开始时间戳（毫秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1761201295754",
           "member": "string",
           "name": "ExecutionStartTime",
@@ -90522,7 +90440,7 @@
         },
         {
           "disabled": false,
-          "document": "执行结束时间戳（毫秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行结束时间戳（毫秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1761201295754",
           "member": "string",
           "name": "ExecutionEndTime",
@@ -90532,7 +90450,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时长，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行时长，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "291",
           "member": "string",
           "name": "ExecutionCostTime",
@@ -90542,7 +90460,7 @@
         },
         {
           "disabled": false,
-          "document": "并发排队花费时间，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>并发排队花费时间，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "765",
           "member": "string",
           "name": "QueueCostTime",
@@ -90552,7 +90470,7 @@
         },
         {
           "disabled": false,
-          "document": "等待资源花费时间，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>等待资源花费时间，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "785",
           "member": "string",
           "name": "PendingCostTime",
@@ -90562,7 +90480,7 @@
         },
         {
           "disabled": false,
-          "document": "执行状态，运行失败:FAILED、运行成功:SUCCESS、等待中:PENDING、跳过运行:SKIP、运行中:RUNNING",
+          "document": "<p>执行状态，运行失败:FAILED、运行成功:SUCCESS、等待中:PENDING、跳过运行:SKIP、运行中:RUNNING</p>",
           "example": "SUCCESS",
           "member": "string",
           "name": "ExecutionState",
@@ -90572,7 +90490,7 @@
         },
         {
           "disabled": false,
-          "document": "计算资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计算资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"serverless\"]",
           "member": "string",
           "name": "ResourceGroupIds",
@@ -90582,7 +90500,7 @@
         },
         {
           "disabled": false,
-          "document": "运行用户UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行用户UIN</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "623423",
           "member": "string",
           "name": "ExecuteUserUin",
@@ -90592,7 +90510,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "UserCanceled",
           "member": "string",
           "name": "ErrorCodeStr",
@@ -90602,7 +90520,7 @@
         },
         {
           "disabled": false,
-          "document": "运行参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"['key':'value']\"",
           "member": "string",
           "name": "WorkflowParams",
@@ -90612,7 +90530,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流版本信息ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流版本信息ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ksi5dbb66d3",
           "member": "string",
           "name": "WorkflowVersionId",
@@ -90622,7 +90540,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持重跑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否支持重跑</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "SupportRerun",
@@ -90632,7 +90550,7 @@
         },
         {
           "disabled": false,
-          "document": "重跑次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重跑次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "RerunTimes",
@@ -90642,7 +90560,7 @@
         },
         {
           "disabled": false,
-          "document": "运行的任务范围,逗号分隔的任务ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行的任务范围,逗号分隔的任务ID列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"dsd5d67ad8a\"]",
           "member": "string",
           "name": "SelectedTaskIds",
@@ -90652,7 +90570,7 @@
         },
         {
           "disabled": false,
-          "document": "等待并发开始时间【毫秒】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>等待并发开始时间【毫秒】</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1761201295754\"",
           "member": "string",
           "name": "PendingStartTime",
@@ -90662,7 +90580,7 @@
         },
         {
           "disabled": false,
-          "document": "排队等待开始时间【毫秒】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>排队等待开始时间【毫秒】</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1761201295754\"",
           "member": "string",
           "name": "QueueStartTime",
@@ -90672,7 +90590,7 @@
         },
         {
           "disabled": false,
-          "document": "运行结束时间【毫秒】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行结束时间【毫秒】</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1761201295754\"",
           "member": "string",
           "name": "EndTime",
@@ -90682,7 +90600,7 @@
         },
         {
           "disabled": false,
-          "document": "运行用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行用户名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testName",
           "member": "string",
           "name": "ExecuteUserName",
@@ -90692,7 +90610,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流绑定资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流绑定资源组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowListResourceGroupInfo",
           "name": "ResourceGroupInfoList",
@@ -90702,7 +90620,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LabelBrief",
           "name": "LabelList",
@@ -90712,7 +90630,7 @@
         },
         {
           "disabled": false,
-          "document": "父工作流运行ID 【当前嵌套工作流触发独有】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>父工作流运行ID 【当前嵌套工作流触发独有】</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f27d650c-1402-4a05-a2b5-4c67f8ee01df",
           "member": "string",
           "name": "ParentWorkflowExecutionId",
@@ -90722,7 +90640,7 @@
         },
         {
           "disabled": false,
-          "document": " 父任务运行ID 【当前由嵌套工作流触发独有】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>父任务运行ID 【当前由嵌套工作流触发独有】</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0029fecd-6ec9-4168-910b-216b7d33a4c4",
           "member": "string",
           "name": "ParentTaskExecutionId",
@@ -90732,7 +90650,7 @@
         },
         {
           "disabled": false,
-          "document": "父任务运行名称 【当前由嵌套工作流触发独有】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>父任务运行名称 【当前由嵌套工作流触发独有】</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "task_name",
           "member": "string",
           "name": "ParentTaskExecutionName",
@@ -90742,12 +90660,22 @@
         },
         {
           "disabled": false,
-          "document": "授权权限类型\nPERMISSION_TYPE_UNSPECIFIED：未指定权限\nMANAGE : 管理权限：包含所有操作权限\nRUN : 运行权限：可执行实体\nVIEW : 查看权限：可查看实体内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>授权权限类型<br>PERMISSION_TYPE_UNSPECIFIED：未指定权限<br>MANAGE : 管理权限：包含所有操作权限<br>RUN : 运行权限：可执行实体<br>VIEW : 查看权限：可查看实体内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MANAGE",
           "member": "string",
           "name": "Permission",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>手动触发时自定义的参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AdvancedParameter",
+          "name": "AdvancedParameters",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -91223,7 +91151,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流运行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流运行</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowExecutionBrief",
           "name": "WorkflowExecution",
@@ -91233,7 +91161,7 @@
         },
         {
           "disabled": false,
-          "document": "归属该工作流运行的任务运行信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>归属该工作流运行的任务运行信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskExecutionBrief",
           "name": "TaskExecutions",
@@ -91243,12 +91171,52 @@
         },
         {
           "disabled": false,
-          "document": "状态枚举信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态枚举信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowExecutionBizEnumBrief",
           "name": "BizStateEnumInfos",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务运行实例满足查询条件的数据总条数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TaskTotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务运行实例满足查询条件的数据总页数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskTotalPageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务运行实例当前请求的数据条数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskPageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务运行实例当前请求的数据页条数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TaskPageSize",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
