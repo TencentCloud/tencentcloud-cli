@@ -11751,7 +11751,7 @@
         {
           "disabled": false,
           "document": "实例规格ID，可通过DescribeProductConfig接口获取。",
-          "example": " [62]",
+          "example": "[62]",
           "member": "uint64",
           "name": "SpecIdSet",
           "required": true,
@@ -11802,7 +11802,7 @@
         {
           "disabled": false,
           "document": "规格在不同地域状态集合",
-          "example": "[{\"Architecture\": \"SINGLE\",\"Id\": \"11000036233\",\"InstanceType\": \"SI\",\"MultiZonesStatus\": \"Invalid\",\"PayModeStatus\": \"ALL\",\"Price\": {\"PostpaidPrice\": 47,\"PostpaidPriceUnit\": \"H\",\"PrepaidPrice\": 26000,\"PrepaidPriceUnit\": \"M\"},\"SpecId\": 62,\"Status\": 1,\"Style\": \"EXCLUSIVE\",\"Version\": \"2016SP1\",\"ZoneStatusSet\": [{\"Region\": \"ap-guangzhou\",\"Status\": 1,\"Zone\": \"ap-guangzhou-3\"}, {\"Region\": \"ap-guangzhou\",\"Status\": 3,\"Zone\": \"ap-guangzhou-4\"}, {\"Region\": \"ap-guangzhou\",\"Status\": 1,\"Zone\": \"ap-guangzhou-6\"}, {\"Region\": \"ap-singapore\",\"Status\": 1,\"Zone\": \"ap-singapore-2\"}, {\"Region\": \"ap-singapore\",\"Status\": 1,\"Zone\": \"ap-singapore-1\"}, {\"Region\": \"ap-hongkong\",\"Status\": 1,\"Zone\": \"ap-hongkong-2\"}, {\"Region\": \"ap-shanghai\",\"Status\": 1,\"Zone\": \"ap-shanghai-2\"}, {\"Region\": \"ap-shanghai\",\"Status\": 1,\"Zone\": \"ap-shanghai-3\"}, {\"Region\": \"ap-shanghai\",\"Status\": 1,\"Zone\": \"ap-shanghai-4\"}, {\"Region\": \"ap-shanghai\",\"Status\": 1,\"Zone\": \"ap-shanghai-5\"}, {\"Region\": \"ap-beijing\",\"Status\": 1,\"Zone\": \"ap-beijing-2\"}, {\"Region\": \"ap-beijing\",\"Status\": 1,\"Zone\": \"ap-beijing-3\"}, {\"Region\": \"ap-beijing\",\"Status\": 1,\"Zone\": \"ap-beijing-5\"}}]}]",
+          "example": "无",
           "member": "SpecSellStatus",
           "name": "DescribeSpecSellStatusSet",
           "output_required": true,

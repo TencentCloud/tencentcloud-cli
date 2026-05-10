@@ -1,5 +1,12 @@
 {
   "actions": {
+    "BindBusinessResourceConnectorGroup": {
+      "document": "saas版本，创建/修改业务资源后，调用绑定连接器接口,私有化调用path为：capi/GatewayResource/BindBusinessResourceConnectorGroup",
+      "input": "BindBusinessResourceConnectorGroupRequest",
+      "name": "绑定业务资源连接器",
+      "output": "BindBusinessResourceConnectorGroupResponse",
+      "status": "online"
+    },
     "CreateBusinessResource": {
       "document": "创建业务资源，会对一些必填参数进行校验和参数合法性校验，创建业务资源时，先调用下校验相同业务资源接口，看资源是不是有冲突。创建时也会做校验，但没有返回对应的异常信息，私有化调用path为：capi/GatewayResource/CreateBusinessResource",
       "input": "CreateBusinessResourceRequest",
@@ -646,6 +653,42 @@
         }
       ],
       "usage": "both"
+    },
+    "BindBusinessResourceConnectorGroupRequest": {
+      "document": "BindBusinessResourceConnectorGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要绑定连接器的业务资源id，创建时候响应会返回，修改调用端自己获取传递",
+          "example": "无",
+          "member": "int64",
+          "name": "ServiceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "业务资源要绑定的连接器id",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindBusinessResourceConnectorGroupResponse": {
+      "document": "BindBusinessResourceConnectorGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ComplexRule": {
       "document": "自动划分规则数据",

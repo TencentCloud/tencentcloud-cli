@@ -1861,6 +1861,61 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>OAuth授权主体</p><p>枚举值：</p><ul><li>0： 开发者授权</li><li>1： 使用者授权</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "AuthMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权方式</p><p>枚举值：</p><ul><li>0： 无鉴权</li><li>1： api key鉴权</li><li>2： 支持CAM授权</li><li>3： 支持Oauth2.0授权</li></ul>",
+          "example": "3",
+          "member": "int64",
+          "name": "AuthType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权配置状态</p><p>枚举值：</p><ul><li>0： 不需要授权</li><li>1： 未配置</li><li>2： 已配置</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "AuthConfigStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>插件用途类型</p><p>枚举值：</p><ul><li>0： 工具类</li><li>1： 连接器类</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "PluginClass",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>插件状态</p><p>枚举值：</p><ul><li>1： 成功</li><li>2： 不可用</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "PluginStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2458,7 +2513,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "插件id",
+          "document": "<p>插件id</p>",
           "example": "0960ae93-80a0-408d-928b-f484064f833h",
           "member": "string",
           "name": "PluginId",
@@ -2469,7 +2524,7 @@
         },
         {
           "disabled": false,
-          "document": "插件名称",
+          "document": "<p>插件名称</p>",
           "example": "天气",
           "member": "string",
           "name": "PluginName",
@@ -2480,7 +2535,7 @@
         },
         {
           "disabled": false,
-          "document": "插件图标url",
+          "document": "<p>插件图标url</p>",
           "example": "http://xxxx.jpg",
           "member": "string",
           "name": "IconUrl",
@@ -2491,7 +2546,7 @@
         },
         {
           "disabled": false,
-          "document": "0 自定义插件\n1 官方插件\n2 第三方插件 目前用于第三方实现的mcp server",
+          "document": "<p>0 自定义插件<br>1 官方插件<br>2 第三方插件 目前用于第三方实现的mcp server</p>",
           "example": "1",
           "member": "uint64",
           "name": "PluginType",
@@ -2502,7 +2557,7 @@
         },
         {
           "disabled": false,
-          "document": "工具id",
+          "document": "<p>工具id</p>",
           "example": "0960ae93-80a0-408d-928b-f484064f834a",
           "member": "string",
           "name": "ToolId",
@@ -2513,7 +2568,7 @@
         },
         {
           "disabled": false,
-          "document": "工具名称",
+          "document": "<p>工具名称</p>",
           "example": "GetWeatherInfo",
           "member": "string",
           "name": "ToolName",
@@ -2524,7 +2579,7 @@
         },
         {
           "disabled": false,
-          "document": "工具描述",
+          "document": "<p>工具描述</p>",
           "example": "获取指定日期和地点的天气信息",
           "member": "string",
           "name": "ToolDesc",
@@ -2535,7 +2590,7 @@
         },
         {
           "disabled": false,
-          "document": "输入参数",
+          "document": "<p>输入参数</p>",
           "example": "无",
           "member": "AgentToolReqParam",
           "name": "Inputs",
@@ -2546,7 +2601,7 @@
         },
         {
           "disabled": false,
-          "document": "输出参数",
+          "document": "<p>输出参数</p>",
           "example": "无",
           "member": "AgentToolRspParam",
           "name": "Outputs",
@@ -2557,7 +2612,7 @@
         },
         {
           "disabled": false,
-          "document": "创建方式，0:服务创建，1:代码创建，2:MCP创建\t",
+          "document": "<p>创建方式，0:服务创建，1:代码创建，2:MCP创建</p>",
           "example": "0",
           "member": "int64",
           "name": "CreateType",
@@ -2568,7 +2623,7 @@
         },
         {
           "disabled": false,
-          "document": "MCP插件的配置信息",
+          "document": "<p>MCP插件的配置信息</p>",
           "example": "无",
           "member": "AgentMCPServerInfo",
           "name": "McpServer",
@@ -2579,7 +2634,7 @@
         },
         {
           "disabled": false,
-          "document": "该工具是否和知识库绑定",
+          "document": "<p>该工具是否和知识库绑定</p>",
           "example": "false",
           "member": "bool",
           "name": "IsBindingKnowledge",
@@ -2590,7 +2645,7 @@
         },
         {
           "disabled": false,
-          "document": "插件状态，1:可用，2:不可用\t",
+          "document": "<p>插件状态，1:可用，2:不可用</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -2601,7 +2656,7 @@
         },
         {
           "disabled": false,
-          "document": "header信息",
+          "document": "<p>header信息</p>",
           "example": "无",
           "member": "AgentPluginHeader",
           "name": "Headers",
@@ -2612,7 +2667,7 @@
         },
         {
           "disabled": false,
-          "document": "NON_STREAMING: 非流式  STREAMIN: 流式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>NON_STREAMING: 非流式  STREAMIN: 流式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NON_STREAMING",
           "member": "string",
           "name": "CallingMethod",
@@ -2623,7 +2678,7 @@
         },
         {
           "disabled": false,
-          "document": "query信息",
+          "document": "<p>query信息</p>",
           "example": "无",
           "member": "AgentPluginQuery",
           "name": "Query",
@@ -2634,7 +2689,7 @@
         },
         {
           "disabled": false,
-          "document": "工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）",
+          "document": "<p>工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）</p>",
           "example": "0",
           "member": "int64",
           "name": "FinanceStatus",
@@ -2645,7 +2700,7 @@
         },
         {
           "disabled": false,
-          "document": "工具来源: 0-来自插件，1-来自工作流",
+          "document": "<p>工具来源: 0-来自插件，1-来自工作流</p>",
           "example": "0",
           "member": "uint64",
           "name": "ToolSource",
@@ -2656,7 +2711,7 @@
         },
         {
           "disabled": false,
-          "document": "计费状态；0-不计费，1-限时免费，2-官方收费",
+          "document": "<p>计费状态；0-不计费，1-限时免费，2-官方收费</p>",
           "example": "0",
           "member": "int64",
           "name": "FinanceType",
@@ -2667,7 +2722,7 @@
         },
         {
           "disabled": false,
-          "document": "工具高级设置",
+          "document": "<p>工具高级设置</p>",
           "example": "无",
           "member": "ToolAdvanceConfig",
           "name": "ToolAdvanceConfig",
@@ -2678,7 +2733,7 @@
         },
         {
           "disabled": false,
-          "document": "授权模式； 0-开发者授权；1-使用者授权",
+          "document": "<p>授权模式； 0-开发者授权；1-使用者授权</p>",
           "example": "1",
           "member": "int64",
           "name": "AuthMode",
@@ -2689,7 +2744,7 @@
         },
         {
           "disabled": false,
-          "document": "授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；",
+          "document": "<p>授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；</p>",
           "example": "0",
           "member": "int64",
           "name": "AuthType",
@@ -2700,13 +2755,35 @@
         },
         {
           "disabled": false,
-          "document": "工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置",
+          "document": "<p>工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置</p>",
           "example": "0",
           "member": "int64",
           "name": "AuthConfigStatus",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接器工具 API 类型</p><p>枚举值：</p><ul><li>1： 只读</li><li>2： 写/删除</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "ToolAccessMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否禁用该工具</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDisabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -21708,7 +21785,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数名称",
+          "document": "<p>参数名称</p>",
           "example": "param",
           "member": "string",
           "name": "Name",
@@ -21719,7 +21796,7 @@
         },
         {
           "disabled": false,
-          "document": "参数类型",
+          "document": "<p>参数类型</p><p>枚举值：</p><ul><li>0： string</li><li>1： int</li><li>2： float</li><li>3： bool</li><li>4： object</li><li>5： array_string</li><li>6： array_int</li><li>7： array_float</li><li>8： array_bool</li><li>9： array_object</li><li>20： array_array</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "Type",
@@ -21730,7 +21807,7 @@
         },
         {
           "disabled": false,
-          "document": "子参数",
+          "document": "<p>子参数</p>",
           "example": "无",
           "member": "WidgetParam",
           "name": "SubParams",
@@ -21741,7 +21818,7 @@
         },
         {
           "disabled": false,
-          "document": "默认值, Input未指定时，使用该值",
+          "document": "<p>默认值, Input未指定时，使用该值</p>",
           "example": "value",
           "member": "string",
           "name": "DefaultValue",
@@ -21752,7 +21829,7 @@
         },
         {
           "disabled": false,
-          "document": "输入的值",
+          "document": "<p>输入的值</p>",
           "example": "无",
           "member": "AgentInput",
           "name": "Input",

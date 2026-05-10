@@ -1,68 +1,46 @@
-**Example 1: 发起智能分析高光任务**
+**Example 1: 使用MPSProcessMediaParams参数发起智能分析任务**
 
-对 fileId 为 5285485487985271487 的视频发起智能分析高光任务。
+使用MPSProcessMediaParams参数发起智能分析任务
 
 Input: 
 
 ```
 tccli vod ProcessMediaByMPS --cli-unfold-argument  \
-    --FileId 5285485487985271487 \
-    --SubAppId 1500000001 \
-    --MPSProcessMediaParams {"AiAnalysisTask":{"Definition": 26,"ExtendedParameter":""}}
+    --FileId 966263619095884274 \
+    --SubAppId 221157 \
+    --MPSProcessMediaParams {"AiAnalysisTask":{"Definition": 21,"ExtendedParameter":""}}
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TaskId": "1500000001-ProcessMediaByMPS-29700e29ad5d252175d009042e09f30ft",
-        "RequestId": "7987d7bd-068e-4138-863e-b63208bd0f6b"
+        "TaskId": "221157-ProcessMediaByMPS-c80d6b074ba566e4e4097bccc0044b9bt",
+        "RequestId": "4cc2a86b-7463-4ac2-9a32-e64882716f9e"
     }
 }
 ```
 
-**Example 2: 发起智能擦除任务**
+**Example 2: 使用结构化参数发起智能分析任务**
 
-对 fileId 为 5285485487985271487 的视频发起智能擦除任务。
+使用结构化参数发起智能分析任务
 
 Input: 
 
 ```
 tccli vod ProcessMediaByMPS --cli-unfold-argument  \
-    --FileId 5285485487985271487 \
-    --SubAppId 1500000001 \
-    --MPSProcessMediaParams {"AiAnalysisTask": {"Definition":25,"ExtendedParameter":"{\"delogo\":{\"cluster_id\":\"gpu_zhiyan\",\"CustomerAppId\":\"subtitle_erase_fast\"}}"}}
+    --FileId 966263619095884274 \
+    --SubAppId 221157 \
+    --AiAnalysisTask.Definition 21 \
+    --AiAnalysisTask.ExtendedParameter 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6ca31e3a-6b8e-4b4e-9256-fdc700064ef3",
-        "TaskId": "1500000001-ProcessMediaByMPS-bffb15f07530b57bc1aab01fac74bca"
-    }
-}
-```
-
-**Example 3: 发起自定义模版转码任务**
-
-对 fileId 为 5285485487985271487 的视频发起自定义模版转码任务。
-
-Input: 
-
-```
-tccli vod ProcessMediaByMPS --cli-unfold-argument  \
-    --FileId 5285485487985271487 \
-    --SubAppId 1500000001 \
-    --MPSProcessMediaParams {"MediaProcessTask":{"TranscodeTaskSet":[{"Definition":10101001}]}}
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TaskId": "1500000001-ProcessMediaByMPS-c356d99d90c78c9fc7fac06641edf0d7t",
-        "RequestId": "499738f8-bc4d-4e52-ab6e-9b7552c25a0f"
+        "TaskId": "221157-ProcessMediaByMPS-fd5bcd2cf2195fda7c7b571aa18cb68dt",
+        "RequestId": "c8bbd537-0815-4123-b284-8c1ee856bbe8"
     }
 }
 ```

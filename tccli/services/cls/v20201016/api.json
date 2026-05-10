@@ -252,6 +252,20 @@
       "output": "CreateRebuildIndexTaskResponse",
       "status": "online"
     },
+    "CreateRecordingRuleTask": {
+      "document": "创建指标预聚合任务",
+      "input": "CreateRecordingRuleTaskRequest",
+      "name": "创建预聚合任务",
+      "output": "CreateRecordingRuleTaskResponse",
+      "status": "online"
+    },
+    "CreateRecordingRuleYamlTask": {
+      "document": "通过yaml文件创建指标预聚合任务",
+      "input": "CreateRecordingRuleYamlTaskRequest",
+      "name": "通过YAML批量创建预聚合任务",
+      "output": "CreateRecordingRuleYamlTaskResponse",
+      "status": "online"
+    },
     "CreateScheduledSql": {
       "document": "本接口用于创建定时SQL分析任务",
       "input": "CreateScheduledSqlRequest",
@@ -488,6 +502,20 @@
       "input": "DeleteNoticeContentRequest",
       "name": "删除通知内容模板",
       "output": "DeleteNoticeContentResponse",
+      "status": "online"
+    },
+    "DeleteRecordingRuleTask": {
+      "document": "本接口用于删除预聚合分析任务",
+      "input": "DeleteRecordingRuleTaskRequest",
+      "name": "删除预聚合任务",
+      "output": "DeleteRecordingRuleTaskResponse",
+      "status": "online"
+    },
+    "DeleteRecordingRuleYamlTask": {
+      "document": "本接口用于删除yaml预聚合任务",
+      "input": "DeleteRecordingRuleYamlTaskRequest",
+      "name": "删除YAML预聚合任务",
+      "output": "DeleteRecordingRuleYamlTaskResponse",
       "status": "online"
     },
     "DeleteScheduledSql": {
@@ -861,6 +889,20 @@
       "output": "DescribeRebuildIndexTasksResponse",
       "status": "online"
     },
+    "DescribeRecordingRuleTask": {
+      "document": "本接口用于获取预聚合任务列表",
+      "input": "DescribeRecordingRuleTaskRequest",
+      "name": "获取预聚合任务列表",
+      "output": "DescribeRecordingRuleTaskResponse",
+      "status": "online"
+    },
+    "DescribeRecordingRuleYamlTask": {
+      "document": "本接口用于获取yaml预聚合任务列表",
+      "input": "DescribeRecordingRuleYamlTaskRequest",
+      "name": "获取YAML预聚合任务列表",
+      "output": "DescribeRecordingRuleYamlTaskResponse",
+      "status": "online"
+    },
     "DescribeScheduledSqlInfo": {
       "document": "本接口用于获取定时SQL分析任务列表",
       "input": "DescribeScheduledSqlInfoRequest",
@@ -1146,6 +1188,20 @@
       "input": "ModifyNoticeContentRequest",
       "name": "修改通知内容模板",
       "output": "ModifyNoticeContentResponse",
+      "status": "online"
+    },
+    "ModifyRecordingRuleTask": {
+      "document": "本接口用于修改定时预聚合任务",
+      "input": "ModifyRecordingRuleTaskRequest",
+      "name": "修改预聚合任务",
+      "output": "ModifyRecordingRuleTaskResponse",
+      "status": "online"
+    },
+    "ModifyRecordingRuleYamlTask": {
+      "document": "通过yaml文件修改指标预聚合任务",
+      "input": "ModifyRecordingRuleYamlTaskRequest",
+      "name": "修改YAML创建预聚合任务",
+      "output": "ModifyRecordingRuleYamlTaskResponse",
       "status": "online"
     },
     "ModifyScheduledSql": {
@@ -7957,6 +8013,242 @@
       ],
       "type": "object"
     },
+    "CreateRecordingRuleTaskRequest": {
+      "document": "CreateRecordingRuleTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>源指标主题id</p><p>取值参考：</p><ul><li><a href=\"https://cloud.tencent.com/document/api/614/56454\">DescribeTopics</a></li><li><a href=\"https://console.cloud.tencent.com/cls/metric\">指标主题</a></li></ul>",
+          "example": "6ef60bec-0242-43af-bb20-270359fbx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标指标主题id，可与 TopicId 相同</p>",
+          "example": "6ef60bec-0242-43af-bb20-270359fbx",
+          "member": "string",
+          "name": "DstTopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预聚合任务名称</p><p>入参限制：仅支持字母、数字、及下划线，不允许下划线开头，小于256个字符</p>",
+          "example": "demo",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态； 1:开启；2:关闭</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableFlag",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务执行开始时间 ,Unix时间戳</p><p>单位：ms</p>",
+          "example": "1778308263665",
+          "member": "uint64",
+          "name": "ProcessStartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度周期(分钟)，支持范围(0,1440]分钟。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ProcessPeriod",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行延迟，建议设置为30秒，避免指标上报延迟导致预聚合任务计算结果不精确</p><p>单位：秒</p>",
+          "example": "30",
+          "member": "int64",
+          "name": "ProcessDelay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行语句(PromQL)</p>",
+          "example": "sum by (code)(prometheus_http_requests_total)",
+          "member": "string",
+          "name": "RecordingRuleContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标名称</p>",
+          "example": "demo_metric",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标自定义维度</p>",
+          "example": "无",
+          "member": "MetricLabel",
+          "name": "CustomMetricLabels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启投递服务日志。1：关闭，2：开启。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRecordingRuleTaskResponse": {
+      "document": "CreateRecordingRuleTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务id</p>",
+          "example": "6ef60bec-0242-43af-bb20-270359fxxxx",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRecordingRuleYamlTaskRequest": {
+      "document": "CreateRecordingRuleYamlTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>源指标主题id</p><p>取值参考：</p><ul><li><a href=\"https://cloud.tencent.com/document/api/614/56454\">DescribeTopics</a></li><li><a href=\"https://console.cloud.tencent.com/cls/metric\">指标主题</a></li></ul>",
+          "example": "6ef60bec-0242-43af-bb20-270359fbx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标指标主题id，可与 TopicId 相同</p>",
+          "example": "6ef60bec-0242-43af-bb20-270359fbx",
+          "member": "string",
+          "name": "DstTopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态； 1:开启；2:关闭</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableFlag",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务执行开始时间 ,Unix时间戳</p><p>单位：ms</p>",
+          "example": "1690515360000",
+          "member": "uint64",
+          "name": "ProcessStartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度周期(分钟)，支持范围(0,1440]分钟。</p><p>单位：分钟</p><p>也可在YAML中使用 interval: duration 为每个group单独设置执行间隔</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ProcessPeriod",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行延迟，建议设置为30秒，避免指标上报延迟导致预聚合任务计算结果不精确</p><p>单位：秒</p>",
+          "example": "30",
+          "member": "int64",
+          "name": "ProcessDelay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>yaml配置名称</p>",
+          "example": "demo",
+          "member": "string",
+          "name": "YamlConfigName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>yaml配置内容</p><p>兼容 Prometheus Recording Rules 配置文件，API调用时请注意字符串中的换行与缩进。</p>",
+          "example": "参见调用示例",
+          "member": "string",
+          "name": "YamlContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启投递服务日志。1：关闭，2：开启。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRecordingRuleYamlTaskResponse": {
+      "document": "CreateRecordingRuleYamlTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Yaml配置id， 可以关联多子任务</p>",
+          "example": "6ef60bec-0242-43af-bb20-270359fxxxx",
+          "member": "string",
+          "name": "YamlId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateScheduledSqlRequest": {
       "document": "CreateScheduledSql请求参数结构体",
       "members": [
@@ -8524,7 +8816,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志集ID\n- 通过[获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。",
+          "document": "<p>日志集ID</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/58624\">获取日志集列表</a>获取日志集Id。</li></ul>",
           "example": "64aebb76-644b-4e60-90f6-3c183094da40-ab2f-47ab-9dcd-31413b057812",
           "member": "string",
           "name": "LogsetId",
@@ -8533,7 +8825,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称\n名称限制\n- 不能为空字符串\n- 不能包含字符'|'\n- 不能使用以下名称[\"cls_service_log\",\"loglistener_status\",\"loglistener_alarm\",\"loglistener_business\",\"cls_service_metric\"]\n",
+          "document": "<p>主题名称<br>名称限制</p><ul><li>不能为空字符串</li><li>不能包含字符&#39;|&#39;</li><li>不能使用以下名称[&quot;cls_service_log&quot;,&quot;loglistener_status&quot;,&quot;loglistener_alarm&quot;,&quot;loglistener_business&quot;,&quot;cls_service_metric&quot;]</li></ul>",
           "example": "testname",
           "member": "string",
           "name": "TopicName",
@@ -8542,7 +8834,7 @@
         },
         {
           "disabled": false,
-          "document": "主题分区个数。默认创建1个，最大支持创建10个分区。",
+          "document": "<p>主题分区个数。默认创建1个，最大支持创建10个分区。</p>",
           "example": "1",
           "member": "int64",
           "name": "PartitionCount",
@@ -8551,7 +8843,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。",
+          "document": "<p>标签描述列表，通过指定该参数可以同时绑定标签到相应的主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -8560,7 +8852,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自动分裂，默认值为true",
+          "document": "<p>是否开启自动分裂，默认值为true</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoSplit",
@@ -8569,7 +8861,7 @@
         },
         {
           "disabled": false,
-          "document": "开启自动分裂后，每个主题能够允许的最大分区数，默认值为50",
+          "document": "<p>开启自动分裂后，每个主题能够允许的最大分区数，默认值为50</p>",
           "example": "50",
           "member": "int64",
           "name": "MaxSplitPartitions",
@@ -8578,7 +8870,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题的存储类型，可选值 hot（标准存储），cold（低频存储）；默认为hot。指标主题不支持该配置。",
+          "document": "<p>日志主题的存储类型，可选值 hot（标准存储），cold（低频存储）；默认为hot。指标主题不支持该配置。</p>",
           "example": "hot",
           "member": "string",
           "name": "StorageType",
@@ -8587,7 +8879,7 @@
         },
         {
           "disabled": false,
-          "document": "存储时间，单位天。\n- 日志主题：日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。\n- 日志主题：日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。\n- 指标主题：支持1至3600天，值为3640时代表永久保存。",
+          "document": "<p>存储时间，单位天。</p><ul><li>日志主题：日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。</li><li>日志主题：日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。</li><li>指标主题：支持1至3600天，值为3640时代表永久保存。</li></ul>",
           "example": "30",
           "member": "int64",
           "name": "Period",
@@ -8596,7 +8888,7 @@
         },
         {
           "disabled": false,
-          "document": "主题描述",
+          "document": "<p>主题描述</p>",
           "example": "xx部门xx任务topic",
           "member": "string",
           "name": "Describes",
@@ -8605,7 +8897,7 @@
         },
         {
           "disabled": false,
-          "document": "0：日志主题关闭日志沉降。\n非0：日志主题开启日志沉降后标准存储的天数，HotPeriod需要大于等于7，且小于Period。\n仅在StorageType为 hot 时生效，指标主题不支持该配置。",
+          "document": "<p>0：日志主题关闭日志沉降。<br>非0：日志主题开启日志沉降后标准存储的天数，HotPeriod需要大于等于7，且小于Period。<br>仅在StorageType为 hot 时生效，指标主题不支持该配置。</p>",
           "example": "7",
           "member": "uint64",
           "name": "HotPeriod",
@@ -8614,7 +8906,7 @@
         },
         {
           "disabled": false,
-          "document": "加密相关参数。 支持加密地域并且开白用户可以传此参数，其他场景不能传递该参数。\n0或者不传： 不加密\n1：kms-cls 云产品密钥加密\n\n支持地域：ap-beijing,ap-guangzhou,ap-shanghai,ap-singapore,ap-bangkok,ap-jakarta,eu-frankfurt,ap-seoul,ap-tokyo",
+          "document": "<p>加密相关参数。 支持加密地域并且开白用户可以传此参数，其他场景不能传递该参数。<br>0或者不传： 不加密<br>1：kms-cls 云产品密钥加密</p><p>支持地域：ap-beijing,ap-guangzhou,ap-shanghai,ap-singapore,ap-bangkok,ap-jakarta,eu-frankfurt,ap-seoul,ap-tokyo</p>",
           "example": "0",
           "member": "uint64",
           "name": "Encryption",
@@ -8623,7 +8915,7 @@
         },
         {
           "disabled": false,
-          "document": "主题类型\n- 0:日志主题，默认值\n- 1:指标主题",
+          "document": "<p>主题类型</p><ul><li>0:日志主题，默认值</li><li>1:指标主题</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "BizType",
@@ -8632,7 +8924,7 @@
         },
         {
           "disabled": false,
-          "document": "主题自定义ID，格式为：用户自定义部分-用户APPID。未填写该参数时将自动生成ID。\n- 用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符\n- 尾部需要使用-拼接用户APPID，APPID可在https://console.cloud.tencent.com/developer页面查询。\n- 如果指定该字段，需保证全地域唯一",
+          "document": "<p>主题自定义ID，格式为：用户自定义部分-用户APPID。未填写该参数时将自动生成ID。</p><ul><li>用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符</li><li>尾部需要使用-拼接用户APPID，APPID可在https://console.cloud.tencent.com/developer页面查询。</li><li>如果指定该字段，需保证全地域唯一</li></ul>",
           "example": "eb9ec10d-1343-4386-9a6e-75fd9d68726e",
           "member": "string",
           "name": "TopicId",
@@ -8641,7 +8933,7 @@
         },
         {
           "disabled": false,
-          "document": "免鉴权开关。 false：关闭； true：开启。默认为false。\n开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。指标主题不支持该配置。",
+          "document": "<p>免鉴权开关。 false：关闭； true：开启。默认为false。<br>开启后将支持指定操作匿名访问该日志主题。详情请参见<a href=\"https://cloud.tencent.com/document/product/614/41035\">日志主题</a>。指标主题不支持该配置。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsWebTracking",
@@ -8650,7 +8942,7 @@
         },
         {
           "disabled": false,
-          "document": "主题扩展信息",
+          "document": "<p>主题扩展信息</p>",
           "example": "无",
           "member": "TopicExtendInfo",
           "name": "Extends",
@@ -8659,12 +8951,21 @@
         },
         {
           "disabled": false,
-          "document": "开启记录公网来源ip和服务端接收时间",
+          "document": "<p>开启记录公网来源ip和服务端接收时间</p>",
           "example": "false",
           "member": "bool",
           "name": "IsSourceFrom",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>0： 按功能项计费</li><li>1： 原始日志量计费</li></ul><p>默认值：0</p><p>通过接口调用时默认值为0，通过控制台调用时默认值为1</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "BillingMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -8674,7 +8975,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主题ID",
+          "document": "<p>主题ID</p>",
           "example": "xxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
           "name": "TopicId",
@@ -10625,6 +10926,78 @@
     },
     "DeleteNoticeContentResponse": {
       "document": "DeleteNoticeContent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRecordingRuleTaskRequest": {
+      "document": "DeleteRecordingRuleTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "6ef60bec-0242-43af-bb20-270359fb5xxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>源指标主题id</p>",
+          "example": "6ef60bec-0242-43af-bb20-270359fxxxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRecordingRuleTaskResponse": {
+      "document": "DeleteRecordingRuleTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRecordingRuleYamlTaskRequest": {
+      "document": "DeleteRecordingRuleYamlTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "abdcebec-0242-43af-bb20-270359fb54a7",
+          "member": "string",
+          "name": "YamlId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>源指标主题id</p>",
+          "example": "6ef60bec-0242-43af-bb20-270359fxxxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRecordingRuleYamlTaskResponse": {
+      "document": "DeleteRecordingRuleYamlTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14052,6 +14425,154 @@
           "name": "RebuildTasks",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordingRuleTaskRequest": {
+      "document": "DescribeRecordingRuleTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>源指标主题id</p>",
+          "example": "539ba7bc-25e2-4696-bde5-0a5567164xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页的偏移量，默认值为0。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页单页限制数目，默认值为20，最大值100。</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<li>yamlId【关联yaml配置ID】进行过滤，模糊匹配。类型：String。必选：否</li> <li>taskName按照【任务名称】进行过滤，模糊匹配。类型：String。必选：否</li> <li>taskId按照【任务ID】进行过滤，模糊匹配。类型：String。必选：否</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordingRuleTaskResponse": {
+      "document": "DescribeRecordingRuleTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>RecordingRule任务列表信息</p>",
+          "example": "无",
+          "member": "RecordingRuleTaskInfo",
+          "name": "RecordingRuleTaskInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务总条数</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordingRuleYamlTaskRequest": {
+      "document": "DescribeRecordingRuleYamlTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>源指标主题id</p>",
+          "example": "539ba7bc-25e2-4696-bde5-0a5567164xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页的偏移量，默认值为0。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页单页限制数目，默认值为20，最大值100。</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<li>yamlConfigName【配置文件名称】进行过滤，模糊匹配。类型：String。必选：否</li> <li>yamlId按照【yamlID】进行过滤，模糊匹配。类型：String。必选：否</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordingRuleYamlTaskResponse": {
+      "document": "DescribeRecordingRuleYamlTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>RecordingRule任务列表信息</p>",
+          "example": "无",
+          "member": "RecordingRuleYamlTaskInfo",
+          "name": "RecordingRuleYamlTaskInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务总条数</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -21422,6 +21943,250 @@
       ],
       "type": "object"
     },
+    "ModifyRecordingRuleTaskRequest": {
+      "document": "ModifyRecordingRuleTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "6ef60bec-0242-43af-bb20-270359fxxxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>源指标主题id</p>",
+          "example": "xxxx-0889-4ec0-accc-xxxxxxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标指标主题id</p>",
+          "example": "xxxx-0889-4ec0-accc-xxxxxxx",
+          "member": "string",
+          "name": "DstTopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名称</p>",
+          "example": "demo",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务启动状态.   1开启,  2关闭</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度开始时间,Unix时间戳，单位ms</p>",
+          "example": "1690515360000",
+          "member": "int64",
+          "name": "ProcessStartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度周期(分钟)，支持范围(0,1440]分钟。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ProcessPeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行延迟(秒)</p>",
+          "example": "30",
+          "member": "int64",
+          "name": "ProcessDelay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标名称</p>",
+          "example": "demo",
+          "member": "string",
+          "name": "MetricName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行语句(PromQL)</p>",
+          "example": "sum by (code)(prometheus_http_requests_total)",
+          "member": "string",
+          "name": "RecordingRuleContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义指标名称</p>",
+          "example": "无",
+          "member": "MetricLabel",
+          "name": "CustomMetricLabels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启投递服务日志。1：关闭，2：开启。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRecordingRuleTaskResponse": {
+      "document": "ModifyRecordingRuleTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>预聚合任务id</p>",
+          "example": "abdcebec-0242-43af-bb20-270359fb54a7",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRecordingRuleYamlTaskRequest": {
+      "document": "ModifyRecordingRuleYamlTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Yaml配置id</p>",
+          "example": "6ef60bec-0242-43af-bb20-270359fbx",
+          "member": "string",
+          "name": "YamlID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>源指标主题id</p>",
+          "example": "6ef60bec-0242-43af-bb20-270359fbx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标指标主题id</p>",
+          "example": "6ef60bec-0242-43af-bb20-270359fbx",
+          "member": "string",
+          "name": "DstTopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态； 1:开启；2:关闭</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度开始时间,Unix时间戳，单位ms</p>",
+          "example": "1690515360000",
+          "member": "uint64",
+          "name": "ProcessStartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度周期(分钟)，支持范围(0,1440]分钟。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ProcessPeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行延迟(秒)</p>",
+          "example": "30",
+          "member": "int64",
+          "name": "ProcessDelay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>yaml配置名称</p>",
+          "example": "demo",
+          "member": "string",
+          "name": "YamlConfigName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>yaml配置内容</p>",
+          "example": "参见调用示例",
+          "member": "string",
+          "name": "YamlContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启投递服务日志。1：关闭，2：开启。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRecordingRuleYamlTaskResponse": {
+      "document": "ModifyRecordingRuleYamlTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyScheduledSqlRequest": {
       "document": "ModifyScheduledSql请求参数结构体",
       "members": [
@@ -21922,7 +22687,7 @@
       "members": [
         {
           "disabled": false,
-          "document": " 主题ID- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。",
+          "document": "<p>主题ID- 通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取主题列表</a>获取主题Id。</p>",
           "example": "eb9ec10d-1343-4386-9a6e-75fd9d68726e",
           "member": "string",
           "name": "TopicId",
@@ -21931,7 +22696,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称\n输入限制：\n- 不能为空字符串\n- 不能包含字符'|'\n- 不能使用以下名称[\"cls_service_log\",\"loglistener_status\",\"loglistener_alarm\",\"loglistener_business\",\"cls_service_metric\"]",
+          "document": "<p>主题名称<br>输入限制：</p><ul><li>不能为空字符串</li><li>不能包含字符&#39;|&#39;</li><li>不能使用以下名称[&quot;cls_service_log&quot;,&quot;loglistener_status&quot;,&quot;loglistener_alarm&quot;,&quot;loglistener_business&quot;,&quot;cls_service_metric&quot;]</li></ul>",
           "example": "testname",
           "member": "string",
           "name": "TopicName",
@@ -21940,7 +22705,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的主题。最大支持10个标签键值对，并且不能有重复的键值对。",
+          "document": "<p>标签描述列表，通过指定该参数可以同时绑定标签到相应的主题。最大支持10个标签键值对，并且不能有重复的键值对。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -21949,7 +22714,7 @@
         },
         {
           "disabled": false,
-          "document": "主题是否开启采集，true：开启采集；false：关闭采集。\n控制台目前不支持修改此参数。",
+          "document": "<p>主题是否开启采集，true：开启采集；false：关闭采集。<br>控制台目前不支持修改此参数。</p>",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -21958,7 +22723,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自动分裂",
+          "document": "<p>是否开启自动分裂</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoSplit",
@@ -21967,7 +22732,7 @@
         },
         {
           "disabled": false,
-          "document": "若开启最大分裂，该主题能够允许的最大分区数；\n默认为50；必须为正数",
+          "document": "<p>若开启最大分裂，该主题能够允许的最大分区数；<br>默认为50；必须为正数</p>",
           "example": "50",
           "member": "int64",
           "name": "MaxSplitPartitions",
@@ -21976,7 +22741,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期，单位天，标准存储取值范围1\\~3600，低频存储取值范围7\\~3600。取值为3640时代表永久保存",
+          "document": "<p>生命周期，单位天，标准存储取值范围1~3600，低频存储取值范围7~3600。取值为3640时代表永久保存</p>",
           "example": "30",
           "member": "int64",
           "name": "Period",
@@ -21985,7 +22750,7 @@
         },
         {
           "disabled": false,
-          "document": "存储类型：cold 低频存储，hot 标准存储",
+          "document": "<p>存储类型：cold 低频存储，hot 标准存储</p>",
           "example": "cold",
           "member": "string",
           "name": "StorageType",
@@ -21994,7 +22759,7 @@
         },
         {
           "disabled": false,
-          "document": "主题描述",
+          "document": "<p>主题描述</p>",
           "example": "xx部门xx业务topic",
           "member": "string",
           "name": "Describes",
@@ -22003,7 +22768,7 @@
         },
         {
           "disabled": false,
-          "document": "0：日志主题关闭日志沉降。\n非0：日志主题开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。\n仅在StorageType为 hot 时生效，指标主题不支持该配置。",
+          "document": "<p>0：日志主题关闭日志沉降。<br>非0：日志主题开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。<br>仅在StorageType为 hot 时生效，指标主题不支持该配置。</p>",
           "example": "1",
           "member": "uint64",
           "name": "HotPeriod",
@@ -22012,7 +22777,7 @@
         },
         {
           "disabled": false,
-          "document": "免鉴权开关。 false：关闭； true：开启。\n开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。",
+          "document": "<p>免鉴权开关。 false：关闭； true：开启。<br>开启后将支持指定操作匿名访问该日志主题。详情请参见<a href=\"https://cloud.tencent.com/document/product/614/41035\">日志主题</a>。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsWebTracking",
@@ -22021,7 +22786,7 @@
         },
         {
           "disabled": false,
-          "document": "主题扩展信息",
+          "document": "<p>主题扩展信息</p>",
           "example": "无",
           "member": "TopicExtendInfo",
           "name": "Extends",
@@ -22030,7 +22795,7 @@
         },
         {
           "disabled": false,
-          "document": "主题分区数量。\n默认为1；\n取值范围及约束：\n- 当输入值<=0，系统自动调整为1。\n- 如果未传MaxSplitPartitions，需要PartitionCount<=50；\n- 如果传递了MaxSplitPartitions，需要PartitionCount<=MaxSplitPartitions；",
+          "document": "<p>主题分区数量。<br>默认为1；<br>取值范围及约束：</p><ul><li>当输入值&lt;=0，系统自动调整为1。</li><li>如果未传MaxSplitPartitions，需要PartitionCount&lt;=50；</li><li>如果传递了MaxSplitPartitions，需要PartitionCount&lt;=MaxSplitPartitions；</li></ul>",
           "example": "10",
           "member": "uint64",
           "name": "PartitionCount",
@@ -22039,7 +22804,7 @@
         },
         {
           "disabled": false,
-          "document": "取消切换存储任务的id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id【Topics中的TopicAsyncTaskID字段】。",
+          "document": "<p>取消切换存储任务的id</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取取消切换存储任务的id【Topics中的TopicAsyncTaskID字段】。</li></ul>",
           "example": "87b94286-1b33-44df-8568-924eb250ef4e",
           "member": "string",
           "name": "CancelTopicAsyncTaskID",
@@ -22048,7 +22813,7 @@
         },
         {
           "disabled": false,
-          "document": "加密相关参数。 支持加密地域并且开白用户可以传此参数，其他场景不能传递该参数。\n只支持传入1：kms-cls 云产品秘钥加密",
+          "document": "<p>加密相关参数。 支持加密地域并且开白用户可以传此参数，其他场景不能传递该参数。<br>只支持传入1：kms-cls 云产品秘钥加密</p>",
           "example": "1",
           "member": "uint64",
           "name": "Encryption",
@@ -22057,12 +22822,21 @@
         },
         {
           "disabled": false,
-          "document": "开启记录公网来源ip和服务端接收时间",
+          "document": "<p>开启记录公网来源ip和服务端接收时间</p>",
           "example": "false",
           "member": "bool",
           "name": "IsSourceFrom",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>0： 按功能项计费</li><li>1： 原始日志量计费</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "BillingMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -23771,6 +24545,328 @@
           "name": "StatusMessage",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RecordingRuleTaskInfo": {
+      "document": "预聚合任务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预聚合任务id",
+          "example": "6ef60bec-0242-43af-bb20-270359fb5xxx",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源日志主题id",
+          "example": "5237e8f4-0889-4ec0-accc-xxxxxxx",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预聚合任务名称",
+          "example": "task",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间",
+          "example": "2023-07-28 11:36:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务更新时间",
+          "example": "2023-07-28 11:36:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态，1:运行 2:停止 3:异常-找不到源日志主题 4:异常-找不到目标主题\n\n5: 访问权限问题 6:内部故障 7:其他故障",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务启用状态，1开启,  2关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调度开始时间",
+          "example": "20304858483",
+          "member": "uint64",
+          "name": "ProcessStartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调度周期(分钟)",
+          "example": "5",
+          "member": "int64",
+          "name": "ProcessPeriod",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行延迟(秒)",
+          "example": "5",
+          "member": "int64",
+          "name": "ProcessDelay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启投递服务日志。1：关闭，2：开启。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预聚合检索语句",
+          "example": "test",
+          "member": "string",
+          "name": "RecordingRuleContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标名称",
+          "example": "test",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义指标名称",
+          "example": "无",
+          "member": "MetricLabel",
+          "name": "CustomMetricLabels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "yaml配置文件id",
+          "example": "无",
+          "member": "string",
+          "name": "YamlId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "yaml配置文件名称",
+          "example": "无",
+          "member": "string",
+          "name": "YamlConfigName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标日志主题id",
+          "example": "无",
+          "member": "string",
+          "name": "DstTopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RecordingRuleYamlTaskInfo": {
+      "document": "预聚合Yaml任务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "yaml配置文件id",
+          "example": "6ef60bec-0242-43af-bb20-270359fb5xxx",
+          "member": "string",
+          "name": "YamlId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源日志主题id",
+          "example": "5237e8f4-0889-4ec0-accc-xxxxxxx",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "写入描述的日志主题id",
+          "example": "无",
+          "member": "string",
+          "name": "DstTopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间",
+          "example": "2023-07-28 11:36:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务更新时间",
+          "example": "2023-07-28 11:36:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态，1:运行 2:停止 3:异常-找不到源日志主题 4:异常-找不到目标主题\n\n5: 访问权限问题 6:内部故障 7:其他故障",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务启用状态，1开启,  2关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调度开始时间",
+          "example": "4829745892375",
+          "member": "uint64",
+          "name": "ProcessStartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调度周期(分钟)",
+          "example": "5",
+          "member": "int64",
+          "name": "ProcessPeriod",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行延迟(秒)",
+          "example": "5",
+          "member": "int64",
+          "name": "ProcessDelay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启投递服务日志。1：关闭，2：开启。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "yaml配置文件名称",
+          "example": "无",
+          "member": "string",
+          "name": "YamlConfigName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "yaml配置文件内容",
+          "example": "无",
+          "member": "string",
+          "name": "YamlContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "yaml文件子任务数量",
+          "example": "0",
+          "member": "int64",
+          "name": "SubTaskCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -25761,7 +26857,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志集ID",
+          "document": "<p>日志集ID</p>",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "LogsetId",
@@ -25771,7 +26867,7 @@
         },
         {
           "disabled": false,
-          "document": "主题ID",
+          "document": "<p>主题ID</p>",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "TopicId",
@@ -25781,7 +26877,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称",
+          "document": "<p>主题名称</p>",
           "example": "业务A",
           "member": "string",
           "name": "TopicName",
@@ -25791,7 +26887,7 @@
         },
         {
           "disabled": false,
-          "document": "主题分区个数",
+          "document": "<p>主题分区个数</p>",
           "example": "1",
           "member": "int64",
           "name": "PartitionCount",
@@ -25801,7 +26897,7 @@
         },
         {
           "disabled": false,
-          "document": "主题是否开启索引（主题类型需为日志主题）",
+          "document": "<p>主题是否开启索引（主题类型需为日志主题）</p>",
           "example": "true",
           "member": "bool",
           "name": "Index",
@@ -25811,7 +26907,7 @@
         },
         {
           "disabled": false,
-          "document": "AssumerUin非空则表示创建该日志主题的服务方Uin",
+          "document": "<p>AssumerUin非空则表示创建该日志主题的服务方Uin</p>",
           "example": "12341231",
           "member": "uint64",
           "name": "AssumerUin",
@@ -25821,7 +26917,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE",
+          "document": "<p>云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE</p>",
           "example": "CLS_bus",
           "member": "string",
           "name": "AssumerName",
@@ -25831,7 +26927,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。格式：yyyy-MM-dd HH:mm:ss",
+          "document": "<p>创建时间。格式：yyyy-MM-dd HH:mm:ss</p>",
           "example": "2024-11-13 14:48:23",
           "member": "string",
           "name": "CreateTime",
@@ -25841,7 +26937,7 @@
         },
         {
           "disabled": false,
-          "document": "主题是否开启采集，true：开启采集；false：关闭采集。\n创建日志主题时默认开启，可通过SDK调用ModifyTopic修改此字段。\n控制台目前不支持修改此参数。",
+          "document": "<p>主题是否开启采集，true：开启采集；false：关闭采集。<br>创建日志主题时默认开启，可通过SDK调用ModifyTopic修改此字段。<br>控制台目前不支持修改此参数。</p>",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -25851,7 +26947,7 @@
         },
         {
           "disabled": false,
-          "document": "主题绑定的标签信息",
+          "document": "<p>主题绑定的标签信息</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -25861,7 +26957,7 @@
         },
         {
           "disabled": false,
-          "document": "RoleName非空则表示创建该日志主题的服务方使用的角色",
+          "document": "<p>RoleName非空则表示创建该日志主题的服务方使用的角色</p>",
           "example": "CLB_QcsRole",
           "member": "string",
           "name": "RoleName",
@@ -25871,7 +26967,7 @@
         },
         {
           "disabled": false,
-          "document": "该主题是否开启自动分裂",
+          "document": "<p>该主题是否开启自动分裂</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoSplit",
@@ -25881,7 +26977,7 @@
         },
         {
           "disabled": false,
-          "document": "若开启自动分裂的话，该主题能够允许的最大分区数",
+          "document": "<p>若开启自动分裂的话，该主题能够允许的最大分区数</p>",
           "example": "50",
           "member": "int64",
           "name": "MaxSplitPartitions",
@@ -25891,7 +26987,7 @@
         },
         {
           "disabled": false,
-          "document": "主题的存储类型\n\n- hot: 标准存储\n- cold: 低频存储",
+          "document": "<p>主题的存储类型</p><ul><li>hot: 标准存储</li><li>cold: 低频存储</li></ul>",
           "example": "hot",
           "member": "string",
           "name": "StorageType",
@@ -25901,7 +26997,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存",
+          "document": "<p>生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存</p>",
           "example": "30",
           "member": "int64",
           "name": "Period",
@@ -25911,7 +27007,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。",
+          "document": "<p>云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。</p>",
           "example": "TKE-Audio",
           "member": "string",
           "name": "SubAssumerName",
@@ -25921,7 +27017,7 @@
         },
         {
           "disabled": false,
-          "document": "主题描述",
+          "document": "<p>主题描述</p>",
           "example": "xx部门xx业务topic",
           "member": "string",
           "name": "Describes",
@@ -25931,7 +27027,7 @@
         },
         {
           "disabled": false,
-          "document": "开启日志沉降，标准存储的生命周期， hotPeriod < Period。\n标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）\nHotPeriod=0为没有开启日志沉降。",
+          "document": "<p>开启日志沉降，标准存储的生命周期， hotPeriod &lt; Period。<br>标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）<br>HotPeriod=0为没有开启日志沉降。</p>",
           "example": "0",
           "member": "uint64",
           "name": "HotPeriod",
@@ -25941,7 +27037,7 @@
         },
         {
           "disabled": false,
-          "document": "kms-cls服务秘钥id",
+          "document": "<p>kms-cls服务秘钥id</p>",
           "example": "ASF-AFAS-JGJISDJG-SDGF",
           "member": "string",
           "name": "KeyId",
@@ -25951,7 +27047,7 @@
         },
         {
           "disabled": false,
-          "document": "主题类型。\n- 0: 日志主题 \n- 1: 指标主题",
+          "document": "<p>主题类型。</p><ul><li>0: 日志主题 </li><li>1: 指标主题</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "BizType",
@@ -25961,7 +27057,7 @@
         },
         {
           "disabled": false,
-          "document": "免鉴权开关。 false：关闭； true：开启。\n开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。",
+          "document": "<p>免鉴权开关。 false：关闭； true：开启。<br>开启后将支持指定操作匿名访问该日志主题。详情请参见<a href=\"https://cloud.tencent.com/document/product/614/41035\">日志主题</a>。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsWebTracking",
@@ -25971,7 +27067,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题扩展信息",
+          "document": "<p>日志主题扩展信息</p>",
           "example": "无",
           "member": "TopicExtendInfo",
           "name": "Extends",
@@ -25981,7 +27077,7 @@
         },
         {
           "disabled": false,
-          "document": "异步迁移任务ID",
+          "document": "<p>异步迁移任务ID</p>",
           "example": "b5d24fc0-xxxx-xxxx-8c5d-ceed655c204b",
           "member": "string",
           "name": "TopicAsyncTaskID",
@@ -25991,7 +27087,7 @@
         },
         {
           "disabled": false,
-          "document": "异步迁移状态\n- 1：进行中\n- 2：已完成\n- 3：失败\n- 4：已取消",
+          "document": "<p>异步迁移状态</p><ul><li>1：进行中</li><li>2：已完成</li><li>3：失败</li><li>4：已取消</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "MigrationStatus",
@@ -26001,7 +27097,7 @@
         },
         {
           "disabled": false,
-          "document": "异步迁移完成后，预计生效日期\n时间格式：yyyy-MM-dd HH:mm:ss",
+          "document": "<p>异步迁移完成后，预计生效日期<br>时间格式：yyyy-MM-dd HH:mm:ss</p>",
           "example": "2024-11-13 14:48:23",
           "member": "string",
           "name": "EffectiveDate",
@@ -26011,12 +27107,32 @@
         },
         {
           "disabled": false,
-          "document": "IsSourceFrom 开启记录公网来源ip和服务端接收时间",
+          "document": "<p>IsSourceFrom 开启记录公网来源ip和服务端接收时间</p>",
           "example": "false",
           "member": "bool",
           "name": "IsSourceFrom",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前计费模式</p><p>枚举值：</p><ul><li>0： 按功能项计费</li><li>1： 原始日志量计费</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "BillingMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>如果有异步任务，任务成功后的新计费模式</p><p>枚举值：</p><ul><li>0： 按功能项计费</li><li>1： 原始日志量计费</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "NewBillingMode",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

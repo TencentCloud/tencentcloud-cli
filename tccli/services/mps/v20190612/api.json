@@ -8015,6 +8015,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定图片的输出格式，支持jpeg, png。</p>",
+          "example": "png",
+          "member": "string",
+          "name": "OutputFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

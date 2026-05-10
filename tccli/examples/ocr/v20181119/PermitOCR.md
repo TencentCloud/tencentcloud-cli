@@ -1,27 +1,29 @@
-**Example 1: 港澳台通行证识别示例代码**
+**Example 1: PermitOCR调用**
 
-港澳台通行证识
+
 
 Input: 
 
 ```
 tccli ocr PermitOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg 
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/PermitOCR/PermitOCR1.jpg
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Name": "李明",
-        "EnglishName": "LIMING",
-        "Number": "C00000000",
-        "Sex": "男",
-        "ValidDate": "2018.10.09-2028.10.08",
+        "Birthday": "1900.10.27",
+        "EnglishName": "XXX,XXXX",
+        "IssueAddress": "XX",
         "IssueAuthority": "公安部出入境管理局",
-        "IssueAddress": "广东",
-        "Birthday": "1981.08.03",
-        "RequestId": "3090debe-3662-4ef1-8784-6ef2fb59f75e"
+        "Name": "某某某",
+        "Number": "C900001111",
+        "PortraitImage": "",
+        "RequestId": "fedf285d-60bc-4e46-8d27-3f1d80bb19f6",
+        "Sex": "女",
+        "Type": "往来港澳通行证",
+        "ValidDate": "2018.10.09-2028.10.08"
     }
 }
 ```

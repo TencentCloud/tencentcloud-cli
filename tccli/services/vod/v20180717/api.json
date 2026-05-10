@@ -70,6 +70,13 @@
       "output": "CreateAigcApiTokenResponse",
       "status": "online"
     },
+    "CreateAigcAudioTask": {
+      "document": "调用该接口，用于创建AI生音频任务。",
+      "input": "CreateAigcAudioTaskRequest",
+      "name": "创建AIGC生音频任务",
+      "output": "CreateAigcAudioTaskResponse",
+      "status": "online"
+    },
     "CreateAigcCustomElement": {
       "document": "调用该接口，针对指定模型进行主体创建。",
       "input": "CreateAigcCustomElementRequest",
@@ -85,7 +92,7 @@
       "status": "online"
     },
     "CreateAigcImageTask": {
-      "document": "该接口用于[生成 AIGC 图片](https://cloud.tencent.com/document/product/266/124473)。<b>接口处于内测阶段，如需使用请[联系我们](https://cloud.tencent.com/online-service?from=sales_sales&source=PRESALE)，接口调用会产生实际费用，</b>请参考点播 [AIGC 生图片计费文档](https://cloud.tencent.com/document/product/266/95125#9c4dc6ff-4b3f-4b25-bf2d-393889dfb9ac)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。",
+      "document": "该接口用于[生成 AIGC 图片](https://cloud.tencent.com/document/product/266/124473)。默认限制1个并发处理，接口调用会产生实际费用，请参考点播 [AIGC 生图片计费文档](https://cloud.tencent.com/document/product/266/95125#9c4dc6ff-4b3f-4b25-bf2d-393889dfb9ac)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。",
       "input": "CreateAigcImageTaskRequest",
       "name": "创建 AIGC 生图任务",
       "output": "CreateAigcImageTaskResponse",
@@ -106,7 +113,7 @@
       "status": "online"
     },
     "CreateAigcVideoTask": {
-      "document": "该接口用于[生成 AIGC 视频](https://cloud.tencent.com/document/product/266/124474)。<b>接口处于内测阶段，如需使用请[联系我们](https://cloud.tencent.com/online-service?from=sales_sales&source=PRESALE)，接口调用会产生实际费用</b>，请参考点播 [AIGC 生视频计费文档](https://cloud.tencent.com/document/product/266/95125#96b3b59a-f9e1-49e9-966a-bedb70a4bf12)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。",
+      "document": "该接口用于[生成 AIGC 视频](https://cloud.tencent.com/document/product/266/124474)。默认限制1个并发处理，接口调用会产生实际费用，请参考点播 [AIGC 生视频计费文档](https://cloud.tencent.com/document/product/266/95125#96b3b59a-f9e1-49e9-966a-bedb70a4bf12)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。",
       "input": "CreateAigcVideoTaskRequest",
       "name": "创建 AIGC 生视频任务",
       "output": "CreateAigcVideoTaskResponse",
@@ -364,6 +371,13 @@
       "output": "DeleteAdaptiveDynamicStreamingTemplateResponse",
       "status": "online"
     },
+    "DeleteAigcAdvancedCustomElement": {
+      "document": "该接口用于删除 AIGC 高级自定义主体。",
+      "input": "DeleteAigcAdvancedCustomElementRequest",
+      "name": "删除 AIGC 高级自定义主体",
+      "output": "DeleteAigcAdvancedCustomElementResponse",
+      "status": "online"
+    },
     "DeleteAigcApiToken": {
       "document": "删除 AIGC API Token",
       "input": "DeleteAigcApiTokenRequest",
@@ -581,6 +595,13 @@
       "output": "DescribeAdaptiveDynamicStreamingTemplatesResponse",
       "status": "online"
     },
+    "DescribeAigcAdvancedCustomElements": {
+      "document": "该接口用于获取 AIGC 高级自定义主体。",
+      "input": "DescribeAigcAdvancedCustomElementsRequest",
+      "name": "获取 AIGC 高级自定义主体",
+      "output": "DescribeAigcAdvancedCustomElementsResponse",
+      "status": "online"
+    },
     "DescribeAigcApiTokens": {
       "document": "查询 AIGC API Token 列表。创建或删除后数据同步有延时，约30秒后可查询最新数据。",
       "input": "DescribeAigcApiTokensRequest",
@@ -687,7 +708,7 @@
       "status": "online"
     },
     "DescribeDailyMediaPlayStat": {
-      "document": "该接口用于查询指定日期范围内每天的播放统计数据。\n* 可以查询最近一年的播放统计数据。\n* 结束日期和起始日期的时间跨度最大为90天。\n* 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。",
+      "document": "该接口用于查询指定日期范围内每天的播放统计数据。\n* 可以查询最近一年的播放统计数据。\n* 结束日期和起始日期的时间跨度最大为90天。\n* 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。\n* 因数据存在延迟，建议您于第二天中午12点后查询前一天的用量数据。",
       "input": "DescribeDailyMediaPlayStatRequest",
       "name": "查询媒体文件的播放统计数据",
       "output": "DescribeDailyMediaPlayStatResponse",
@@ -1359,7 +1380,7 @@
       "status": "online"
     },
     "ProcessMediaByMPS": {
-      "document": "使用媒体处理服务（MPS）的媒体处理能力，对点播中的视频发起媒体处理，任务发起时需将 MPS 相关参数以 JSON 格式填入 MPSProcessMediaParams 参数中。具体任务参数配置请参考[媒体处理 ProcessMedia 接口](https://cloud.tencent.com/document/api/862/37578)。 \n当前支持的 MPS 功能：\n1. [智能擦除](https://cloud.tencent.com/document/product/862/101530)：能够对视频画面中的 Logo、字幕、人脸和车牌等元素进行模糊、马赛克或无痕化处理，从而便于内容的传播和分享。该任务产生的新视频将生成新的 FileId 存储在点播平台的子应用中。\n2. [音视频增强](https://cloud.tencent.com/document/product/862/118703)：该功能支持分布式实时画质增强，包含视频去毛刺、降噪、色彩增强、细节增强、人脸增强、SDR2HDR、大模型增强等功能，可大幅提升音视频质量，广泛应用于 OTT、电商、赛事等场景，有效实现 QoE 与 QoS 双维度提升，创造显著业务价值。\n3. [智能字幕](https://cloud.tencent.com/document/product/862/89091)：该功能支持处理离线音频文件、视频文件及直播流，可通过 ASR 语音识别或 OCR 文本识别提取视频源语言字幕，并实现多语言翻译。\n4. [智能分析](https://cloud.tencent.com/document/product/862/113756)：该功能支持智能封面、智能高光、智能摘要、视频理解等功能。\n\n\n> 以该种方式发起的视频处理任务：\n> 1. 任务状态及结果的查询仍在点播平台中完成，使用 [DescribeTaskDetail](https://cloud.tencent.com/document/product/266/33431) 或 [DescribeTasks](https://cloud.tencent.com/document/product/266/33430) 查询任务。\n> 2. 相关功能的用量及账单将在 MPS 平台给出，因此在使用该功能前，首先需要开通 MPS 服务。\n> 3. 该功能目前仍在内测中，如需测试体验，您可以联系我们获得支持。",
+      "document": "使用媒体处理服务（MPS）的媒体处理能力，对点播中的视频发起媒体处理。\n当前支持的 MPS 功能：\n1.智能字幕：该功能支持处理离线音频文件、视频文件及直播流，可通过 ASR 语音识别或 OCR 文本识别提取视频源语言字幕，并实现多语言翻译。详情查看[接入指南](https://cloud.tencent.com/document/product/266/131210)。\n2.智能擦除：能够对视频画面中的 Logo、字幕、人脸和车牌等元素进行模糊、马赛克或无痕化处理，从而便于内容的传播和分享。该任务产生的新视频将生成新的 FileId 存储在点播平台的子应用中。详情查看[接入指南](https://cloud.tencent.com/document/product/266/131211)。\n3.智能分析：该功能支持[一站式译制](https://cloud.tencent.com/document/product/266/131212)、[精彩集锦](https://cloud.tencent.com/document/product/266/131213)、[大模型视频摘要](https://cloud.tencent.com/document/product/266/131214)、[大模型音视频理解](https://cloud.tencent.com/document/product/266/131215)、[智能拆条](https://cloud.tencent.com/document/product/266/131216)、[智能横转竖](https://cloud.tencent.com/document/product/266/131217)、[视频去重](https://cloud.tencent.com/document/product/266/131218)等功能。\n\n\n> 以该种方式发起的视频处理任务：\n> 1. 任务状态及结果的查询仍在点播平台中完成，使用 [DescribeTaskDetail](https://cloud.tencent.com/document/product/266/33431) 或 [DescribeTasks](https://cloud.tencent.com/document/product/266/33430) 查询任务。\n> 2. 相关功能的用量及账单将在 MPS 平台给出，因此在使用该功能前，首先需要在控制台开通 MPS 服务。开通方式见接入文档的前置操作部分。",
       "input": "ProcessMediaByMPSRequest",
       "name": "使用 MPS 进行视频处理",
       "output": "ProcessMediaByMPSResponse",
@@ -1513,7 +1534,7 @@
       "status": "online"
     },
     "WeChatMiniProgramPublish": {
-      "document": "将点播视频发布到微信小程序，供微信小程序播放器播放。\n本接口支持发布原始视频和转码后视频，暂不支持发布自适应码流。",
+      "document": "将点播视频发布到微信小程序，供微信小程序播放器播放。\n本接口支持发布原始视频和转码后视频。",
       "input": "WeChatMiniProgramPublishRequest",
       "name": "微信小程序视频发布",
       "output": "WeChatMiniProgramPublishResponse",
@@ -7332,6 +7353,62 @@
       ],
       "usage": "in"
     },
+    "AigcAdvancedCustomElementInfo": {
+      "document": "AIGC 高级自定义主体信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>主体 ID。</p>",
+          "example": "308*********165",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主体名字。</p>",
+          "example": "name************",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主体音色 ID。</p>",
+          "example": "878************988",
+          "member": "string",
+          "name": "VoiceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主体描述。</p>",
+          "example": "desc************",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主体创建时间。格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式说明</a>。</p>",
+          "example": "2026-04-24T03:55:48Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AigcAudioOutputConfig": {
       "document": "AIGC 生音效任务的输出媒体文件配置。",
       "members": [
@@ -7396,6 +7473,84 @@
           "example": "wav",
           "member": "string",
           "name": "OutputAudioFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcAudioReferenceAudioInfo": {
+      "document": "参考音频信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>可访问的文件 URL。当 Type 取值为 Url 时，本参数有效。说明：1. 推荐使用小于7M的图片；2. 图片格式的取值为：jpeg，jpg, png, webp。</p>",
+          "example": "Url",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频文件的媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 <a href=\"/document/product/266/7830\">视频上传完成事件通知</a> 或 <a href=\"https://console.cloud.tencent.com/vod/media\">云点播控制台</a> 获取该字段。当 Type 取值为 File 时，本参数有效。</p>",
+          "example": "653321134",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频文件 URL，需要外网可访问。当 Type 取值为 Url 时，本参数有效。</p>",
+          "example": "https://****************/media/user_uploads/1/b737792e-c273-436e-b515-cb2d501f140a.mp4",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcAudioReferenceVideoInfo": {
+      "document": "用于AIGC视频生成的参考视频素材。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入的视频文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 Url；</li></p>",
+          "example": "Url",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频文件的媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 <a href=\"/document/product/266/7830\">视频上传完成事件通知</a> 或 <a href=\"https://console.cloud.tencent.com/vod/media\">云点播控制台</a> 获取该字段。当 Type 取值为 File 时，本参数有效。</p>",
+          "example": "653321134",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参考视频URL，需要外网可访问。当 Type 取值为 Url 时，本参数有效。</p>",
+          "example": "https://***t****o*******/media/user_uploads/1/b737792e-c273-436e-b515-cb2d501f140a.mp4",
+          "member": "string",
+          "name": "Url",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -9226,7 +9381,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用于区分输入是首帧或参考帧。可选值：</p><ul><li>FirstFrame：首帧；</li><li>Reference：参考帧；</li></ul><p><strong>注意，默认是FirstFrame</strong></p>",
+          "document": "<p>用于区分输入图像用于<strong>首（尾）帧生视频</strong>、<strong>图生视频</strong>或<strong>参考生视频</strong>。可选值：</p><ul><li>FirstFrame：用于首（尾）帧生视频 或 图生视频；</li><li>Reference：用于参考生视频；</li></ul><p><strong>注意，默认是FirstFrame</strong></p>",
           "example": "FirstFrame",
           "member": "string",
           "name": "Usage",
@@ -9636,7 +9791,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 <a href=\"/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F\">ISO 日期格式说明</a>。</p>",
+          "document": "<p>媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 <a href=\"/document/product/266/11732#I\">ISO 日期格式说明</a>。</p>",
           "example": "2024-01-01T18:00:00Z",
           "member": "datetime_iso",
           "name": "ExpireTime",
@@ -10844,7 +10999,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志所属日期， 格式为：yyyy-MM-dd ，如2018-03-01。",
+          "document": "<p>日志所属日期， 格式为：yyyy-MM-dd ，如2018-03-01。</p>",
           "example": "2018-03-01",
           "member": "string",
           "name": "Date",
@@ -10854,7 +11009,7 @@
         },
         {
           "disabled": false,
-          "document": "日志名称，格式为：日期小时-域名\n如 example.com。",
+          "document": "<p>日志名称，格式为：日期小时-域名<br>如 example.com。</p>",
           "example": "example.com",
           "member": "string",
           "name": "Name",
@@ -10864,7 +11019,7 @@
         },
         {
           "disabled": false,
-          "document": "日志下载链接，24小时内下载有效。",
+          "document": "<p>日志下载链接，24小时内下载有效。</p>",
           "example": "http://test.com",
           "member": "string",
           "name": "Url",
@@ -10874,7 +11029,7 @@
         },
         {
           "disabled": false,
-          "document": "日志起始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "document": "<p>日志起始时间，使用 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式</a>。</p>",
           "example": "2018-10-01T18:00:00+08:00",
           "member": "string",
           "name": "StartTime",
@@ -10884,7 +11039,7 @@
         },
         {
           "disabled": false,
-          "document": "日志结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "document": "<p>日志结束时间，使用 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式</a>。</p>",
           "example": "2018-10-01T18:00:00+08:00",
           "member": "string",
           "name": "EndTime",
@@ -11180,7 +11335,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频源的媒体 ID。固定取该媒体中的首个音频流，视频流和其它音频流（如有）将被忽略。",
+          "document": "<p>音频源的媒体 ID。固定取该媒体源文件中的首个音频流，视频流和其它音频流（如有）将被忽略。</p>",
           "example": "5145403691207231260",
           "member": "string",
           "name": "FileId",
@@ -11191,7 +11346,7 @@
         },
         {
           "disabled": false,
-          "document": "输出的自适应码流中的音频流名称，长度限制为16个字符。",
+          "document": "<p>输出的自适应码流中的音频流名称，长度限制为16个字符。</p>",
           "example": "English",
           "member": "string",
           "name": "Name",
@@ -11202,7 +11357,7 @@
         },
         {
           "disabled": false,
-          "document": "输出的自适应码流中的音频流语言，长度限制为16个字符。要求符合 RFC5646 规范。",
+          "document": "<p>输出的自适应码流中的音频流语言，长度限制为16个字符。要求符合 RFC5646 规范。</p>",
           "example": "en-US",
           "member": "string",
           "name": "Language",
@@ -11213,7 +11368,7 @@
         },
         {
           "disabled": false,
-          "document": "是否设置为自适应码流的默认音频。取值：\n<li>YES：设置为默认音频；</li>\n<li>NO：不设置为默认音频（默认值）。</li>\n",
+          "document": "<p>是否设置为自适应码流的默认音频。取值：</p><li>YES：设置为默认音频；</li><li>NO：不设置为默认音频（默认值）。</li>",
           "example": "YES",
           "member": "string",
           "name": "Default",
@@ -11224,7 +11379,7 @@
         },
         {
           "disabled": false,
-          "document": "音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。",
+          "document": "<p>音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。</p>",
           "example": "0",
           "member": "uint64",
           "name": "AudioTrackIdx",
@@ -13061,6 +13216,106 @@
       ],
       "type": "object"
     },
+    "CreateAigcAudioTaskRequest": {
+      "document": "CreateAigcAudioTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名称。</p>",
+          "example": "Kling",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。</p>",
+          "example": "1.0",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定场景，目前支持sfx（音效）。</p>",
+          "example": "sfx",
+          "member": "string",
+          "name": "SceneType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成音频的描述</p>",
+          "example": "春节庆祝时的烟花声",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>参考视频信息</p>",
+          "example": "无",
+          "member": "AigcAudioReferenceVideoInfo",
+          "name": "VideoInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>传入参考音频信息。</p><p>比如传入音频生成音乐时需要传入。</p>",
+          "example": "无",
+          "member": "AigcAudioReferenceAudioInfo",
+          "name": "AudioInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出参数</p>",
+          "example": "无",
+          "member": "AigcAudioOutputConfig",
+          "name": "OutputConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。<br>示例：<br>{\"camera_control\":{\"type\":\"simple\"}}</p>",
+          "example": "{\"bgm_prompt\": \"治愈系钢琴曲，轻柔的弦乐伴奏，温暖舒缓的旋律，带有淡淡的情感起伏，适合剧情类视频\", \"asmr_mode\": true}",
+          "member": "string",
+          "name": "AdditionalParameters",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAigcAudioTaskResponse": {
+      "document": "CreateAigcAudioTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务创建成功后，返回的任务ID。<br>调用查询接口，轮询获取任务进度及生成结果。</p>",
+          "example": "251441341-AigcAudioTask-f3259ddeb615203726d73c03da05d9fft",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAigcCustomElementRequest": {
       "document": "CreateAigcCustomElement请求参数结构体",
       "members": [
@@ -13910,7 +14165,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型名称。取值：<br>Kling：可灵；<br>Vidu；<br>Hailuo：海螺；<br>Jimeng：即梦；<br>Hunyuan：混元；<br>Mingmou：明眸；<br>GV；<br>OS；<br>PixVerse;</p>",
+          "document": "<p>模型名称。取值：<br>Kling：可灵；<br>Vidu；<br>Hailuo：海螺；<br>Hunyuan：混元；<br>Mingmou：明眸；<br>GV；<br>OS；<br>PixVerse;</p>",
           "example": "Kling",
           "member": "string",
           "name": "ModelName",
@@ -15316,7 +15571,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。</b></p>",
           "example": "1500000001",
           "member": "uint64",
           "name": "SubAppId",
@@ -15325,8 +15580,8 @@
         },
         {
           "disabled": false,
-          "document": "需要创建的 MPS 模板的类型。取值：\n<li>Transcode: 创建转码模板，目前仅支持创建增强模板。</li>\n<li>AIAnalysis: 创建智能分析模板。</li>\n<li>SmartSubtitle: 创建智能字幕模板。</li>\n<li>SmartErase: 创建智能擦除模板。</li>",
-          "example": "Transcode",
+          "document": "<p>需要创建的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li>",
+          "example": "SmartSubtitle",
           "member": "string",
           "name": "TemplateType",
           "required": true,
@@ -15334,12 +15589,39 @@
         },
         {
           "disabled": false,
-          "document": "MPS 创建模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧创建用户自定义的 MPS 任务模板。\n目前仅支持通过此方式创建以下任务类型的模板：\n1. 音视频增强：仅支持填写“[创建转码模板](https://cloud.tencent.com/document/product/862/37605)”接口中的 Container 、Name、Comment、RemoveVideo、RemoveAudio、VideoTemplate、AudioTemplate 和 EnhanceConfig 几个参数。其中 EnhanceConfig 此处必填，且 Container 目前暂不支持 hls。\n2. 智能分析：仅支持填写“[创建内容分析模板](https://cloud.tencent.com/document/api/862/40249)”接口中的Name、Comment、ClassificationConfigure、TagConfigure、CoverConfigure、FrameTagConfigure几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。\n3. 智能字幕：仅支持填写“[创建智能字幕模板](https://cloud.tencent.com/document/api/862/117004)”接口中的Name、Comment、TranslateSwitch、VideoSrcLanguage、SubtitleFormat、SubtitleType、AsrHotWordsConfigure、TranslateDstLanguage、ProcessType几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。\n4. 智能擦除：仅支持填写“[创建智能擦除模板](https://cloud.tencent.com/document/api/862/123735)”接口中的Name、Comment、EraseType、EraseSubtitleConfig、EraseWatermarkConfig、ErasePrivacyConfig几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。\n\n目前模板中仅支持配置以上参数，其他参数无需填写。若包含其它参数，系统将自动忽略。以上透传参数以JSON形式表示。\n",
-          "example": "{\"Container\":\"mp4\",\"Name\":\"test\",\"RemoveAudio\":1,\"VideoTemplate\":{\"Codec\":\"h264\",\"Fps\":0,\"Bitrate\":0},\"EnhanceConfig\":{\"VideoEnhance\":{\"FrameRate\":{\"Switch\":\"ON\",\"Fps\":50}}}}",
+          "document": "<p>MPS 创建模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧创建用户自定义的 MPS 任务模板。<br>目前仅支持通过此方式创建以下任务类型的模板：</p><ol><li>智能分析：仅支持填写“<a href=\"https://cloud.tencent.com/document/api/862/40249\">创建内容分析模板</a>”接口中的Name、Comment、ClassificationConfigure、TagConfigure、CoverConfigure、FrameTagConfigure几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能字幕：仅支持填写“<a href=\"https://cloud.tencent.com/document/api/862/117004\">创建智能字幕模板</a>”接口中的Name、Comment、TranslateSwitch、VideoSrcLanguage、SubtitleFormat、SubtitleType、AsrHotWordsConfigure、TranslateDstLanguage、ProcessType几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能擦除：仅支持填写“<a href=\"https://cloud.tencent.com/document/api/862/123735\">创建智能擦除模板</a>”接口中的Name、Comment、EraseType、EraseSubtitleConfig、EraseWatermarkConfig、ErasePrivacyConfig几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li></ol><p>目前模板中仅支持配置以上参数，其他参数无需填写。若包含其它参数，系统将自动忽略。以上透传参数以JSON形式表示。</p>",
+          "example": "{  \"Name\": \"smartsubtitle\",  \"VideoSrcLanguage\": \"zh_en\",  \"SubtitleType\": 0,  \"Comment\": \"smartsubtitle\",  \"SubtitleFormat\": \"vtt\",  \"ProcessType\": 0}",
           "member": "string",
           "name": "MPSCreateTemplateParams",
-          "required": true,
+          "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能分析模板参数，MPSCreateTemplateParams为空时有效。</p>",
+          "example": "无",
+          "member": "MPSAIAnalysisTemplate",
+          "name": "AIAnalysisTemplate",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能字幕模板参数，MPSCreateTemplateParams为空时有效。</p>",
+          "example": "无",
+          "member": "MPSSmartSubtitleTemplate",
+          "name": "SmartSubtitleTemplate",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能擦除模板参数，MPSCreateTemplateParams为空时有效。</p>",
+          "example": "无",
+          "member": "MPSSmartEraseTemplate",
+          "name": "SmartEraseTemplate",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -15349,7 +15631,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "MPS 任务模板唯一标识。该模板独立于直接在 MPS 服务中创建的模板。",
+          "document": "<p>MPS 任务模板唯一标识。该模板独立于直接在 MPS 服务中创建的模板。</p>",
           "example": "30",
           "member": "int64",
           "name": "Definition",
@@ -17317,6 +17599,42 @@
       ],
       "type": "object"
     },
+    "DeleteAigcAdvancedCustomElementRequest": {
+      "document": "DeleteAigcAdvancedCustomElement请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
+          "example": "251007502",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AIGC 高级自定义主体的 ID</p>",
+          "example": "3089***********",
+          "member": "string",
+          "name": "ElementId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAigcAdvancedCustomElementResponse": {
+      "document": "DeleteAigcAdvancedCustomElement返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAigcApiTokenRequest": {
       "document": "DeleteAigcApiToken请求参数结构体",
       "members": [
@@ -18583,6 +18901,71 @@
       ],
       "type": "object"
     },
+    "DescribeAigcAdvancedCustomElementsRequest": {
+      "document": "DescribeAigcAdvancedCustomElements请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p><b>点播<a href=\"https://cloud.tencent.com/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
+          "example": "251007502",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页返回的起始偏移量。将返回第 Offset 到第 Offset+Limit-1 条。</p><p>默认值：0</p><p>Offset 必须是 Limit 的整数倍。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页返回的记录条数。</p><p>取值范围：[1, 300]</p><p>默认值：10</p><p>Offset 必须是 Limit 的整数倍。</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcAdvancedCustomElementsResponse": {
+      "document": "DescribeAigcAdvancedCustomElements返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>AIGC 高级自定义主体信息。</p>",
+          "example": "无",
+          "member": "AigcAdvancedCustomElementInfo",
+          "name": "ElementSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录总数。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAigcApiTokensRequest": {
       "document": "DescribeAigcApiTokens请求参数结构体",
       "members": [
@@ -19325,7 +19708,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名。",
+          "document": "<p>域名。</p>",
           "example": "example.com",
           "member": "string",
           "name": "DomainName",
@@ -19334,7 +19717,7 @@
         },
         {
           "disabled": false,
-          "document": "获取日志起始时间点，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "document": "<p>获取日志起始时间点，使用 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式</a>。</p><p>参数格式：YYYY-MM-DDThh:mm:ssZ</p>",
           "example": "2018-12-01T16:00:00Z",
           "member": "string",
           "name": "StartTime",
@@ -19343,7 +19726,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间需大于起始时间；使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "document": "<p>结束时间需大于起始时间；使用 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式</a>。</p><p>参数格式：YYYY-MM-DDThh:mm:ssZ</p>",
           "example": "2018-12-03T16:00:00Z",
           "member": "string",
           "name": "EndTime",
@@ -19352,7 +19735,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "0",
           "member": "uint64",
           "name": "SubAppId",
@@ -19361,7 +19744,7 @@
         },
         {
           "disabled": false,
-          "document": "分页拉取的最大返回结果数。默认值：100；最大值：1000。",
+          "document": "<p>分页拉取的最大返回结果数。默认值：100；最大值：1000。</p>",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
@@ -19370,7 +19753,7 @@
         },
         {
           "disabled": false,
-          "document": "分页拉取的起始偏移量。默认值：0。",
+          "document": "<p>分页拉取的起始偏移量。默认值：0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -19385,7 +19768,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志下载链接总数量。",
+          "document": "<p>日志下载链接总数量。</p>",
           "example": "5",
           "member": "uint64",
           "name": "TotalCount",
@@ -19395,7 +19778,7 @@
         },
         {
           "disabled": false,
-          "document": "海外CDN节点的日志下载列表。如果域名没有开启海外加速，忽略该参数。",
+          "document": "<p>海外CDN节点的日志下载列表。如果域名没有开启海外加速，忽略该参数。</p>",
           "example": "无",
           "member": "CdnLogInfo",
           "name": "OverseaCdnLogs",
@@ -19405,7 +19788,7 @@
         },
         {
           "disabled": false,
-          "document": "国内CDN节点的日志下载列表。",
+          "document": "<p>国内CDN节点的日志下载列表。</p>",
           "example": "无",
           "member": "CdnLogInfo",
           "name": "DomesticCdnLogs",
@@ -23393,7 +23776,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名名称。",
+          "document": "<p>域名名称。</p>",
           "example": "www.text.com",
           "member": "string",
           "name": "Domain",
@@ -23403,7 +23786,7 @@
         },
         {
           "disabled": false,
-          "document": "加速地区信息。",
+          "document": "<p>加速地区信息。</p>",
           "example": "无",
           "member": "AccelerateAreaInfo",
           "name": "AccelerateAreaInfos",
@@ -23413,7 +23796,7 @@
         },
         {
           "disabled": false,
-          "document": "部署状态，取值有：\n<li>Online：上线；</li>\n<li>Deploying：部署中；</li>\n<li>Locked: 锁定中，出现该状态时，无法对该域名进行部署变更。</li>",
+          "document": "<p>部署状态，取值有：</p><li>Online：上线；</li><li>Deploying：部署中；</li><li>Locked: 锁定中，出现该状态时，无法对该域名进行部署变更。</li>",
           "example": "Online",
           "member": "string",
           "name": "DeployStatus",
@@ -23423,7 +23806,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTPS 配置信息。",
+          "document": "<p>HTTPS 配置信息。</p>",
           "example": "无",
           "member": "DomainHTTPSConfig",
           "name": "HTTPSConfig",
@@ -23433,7 +23816,7 @@
         },
         {
           "disabled": false,
-          "document": "[Key 防盗链](https://cloud.tencent.com/document/product/266/14047)配置信息。",
+          "document": "<p><a href=\"https://cloud.tencent.com/document/product/266/14047\">Key 防盗链</a>配置信息。</p>",
           "example": "无",
           "member": "UrlSignatureAuthPolicy",
           "name": "UrlSignatureAuthPolicy",
@@ -23443,7 +23826,7 @@
         },
         {
           "disabled": false,
-          "document": "[Referer 防盗链](https://cloud.tencent.com/document/product/266/14046)配置信息。",
+          "document": "<p><a href=\"https://cloud.tencent.com/document/product/266/14046\">Referer 防盗链</a>配置信息。</p>",
           "example": "无",
           "member": "RefererAuthPolicy",
           "name": "RefererAuthPolicy",
@@ -23453,7 +23836,7 @@
         },
         {
           "disabled": false,
-          "document": "域名添加到腾讯云点播系统中的时间。\n<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>",
+          "document": "<p>域名添加到腾讯云点播系统中的时间。<li>格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式说明</a>。</li></p>",
           "example": "2018-10-01T18:00:00+08:00",
           "member": "string",
           "name": "CreateTime",
@@ -23463,7 +23846,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 QUIC 配置信息。",
+          "document": "<p>域名 QUIC 配置信息。</p>",
           "example": "无",
           "member": "DomainQUICConfig",
           "name": "QUICConfig",
@@ -23473,7 +23856,7 @@
         },
         {
           "disabled": false,
-          "document": "IP 访问限制配置信息。",
+          "document": "<p>IP 访问限制配置信息。</p>",
           "example": "无",
           "member": "IPFilterPolicy",
           "name": "IPFilterPolicy",
@@ -23483,7 +23866,7 @@
         },
         {
           "disabled": false,
-          "document": "域名类型，取值有： <li>VOD：使用 VOD 产品分发的域名；</li> <li>EdgeOne：使用 EdgeOne 产品分发的域名。</li>",
+          "document": "<p>域名类型，取值有： <li>VOD：使用 VOD 产品分发的域名；</li> <li>EdgeOne：使用 EdgeOne 产品分发的域名。</li></p>",
           "example": "VOD",
           "member": "string",
           "name": "Type",
@@ -23499,7 +23882,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "证书过期时间。\n<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>",
+          "document": "<p>证书过期时间。<li>格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式说明</a>。</li></p><p>参数格式：YYYY-MM-DDThh:mm:ss+08:00</p>",
           "example": "2018-10-01T18:00:00+08:00",
           "member": "string",
           "name": "CertExpireTime",
@@ -23510,7 +23893,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云 SSL 产品中的证书 ID。",
+          "document": "<p>腾讯云 SSL 产品中的证书 ID。</p>",
           "example": "xxx234xxx",
           "member": "string",
           "name": "CloudCertId",
@@ -28819,6 +29202,272 @@
       ],
       "usage": "both"
     },
+    "MPSAIAnalysisConfigureInfo": {
+      "document": "MPS智能分析模板配置选项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>智能分类任务开关，可选值： <li>ON：开启智能分类任务；</li> <li>OFF：关闭智能分类任务。</li></p>",
+          "example": "OFF",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSAIAnalysisTemplate": {
+      "document": "MPS智能分析模板输入",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>视频内容分析模板名称，长度限制：64 个字符。</p>",
+          "example": "智能分析",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频内容分析模板描述信息，长度限制：256 个字符。</p>",
+          "example": "智能分析模版",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能分类任务控制参数。</p>",
+          "example": "无",
+          "member": "MPSAIAnalysisConfigureInfo",
+          "name": "ClassificationConfigure",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能标签任务控制参数。</p>",
+          "example": "无",
+          "member": "MPSAIAnalysisConfigureInfo",
+          "name": "TagConfigure",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能封面任务控制参数。</p>",
+          "example": "无",
+          "member": "MPSAIAnalysisConfigureInfo",
+          "name": "CoverConfigure",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能按帧标签任务控制参数。</p>",
+          "example": "无",
+          "member": "MPSAIAnalysisConfigureInfo",
+          "name": "FrameTagConfigure",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能拆条任务控制参数。</p>",
+          "example": "无",
+          "member": "MPSAIAnalysisConfigureInfo",
+          "name": "SplitConfigure",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能集锦任务控制参数。</p>",
+          "example": "无",
+          "member": "MPSAIAnalysisConfigureInfo",
+          "name": "HighlightConfigure",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能片头片尾任务控制参数。</p>",
+          "example": "无",
+          "member": "MPSAIAnalysisConfigureInfo",
+          "name": "OpeningAndEndingConfigure",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSAIAnalysisTemplateForUpdate": {
+      "document": "MPS智能分析模板输入",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>视频内容分析模板唯一标识。</p>",
+          "example": "30188",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频内容分析模板名称，长度限制：64 个字符。</p>",
+          "example": "智能分析",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频内容分析模板描述信息，长度限制：256 个字符。</p>",
+          "example": "智能分析模版",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能分类任务控制参数。</p>",
+          "example": "无",
+          "member": "MPSAIAnalysisConfigureInfo",
+          "name": "ClassificationConfigure",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能标签任务控制参数。</p>",
+          "example": "无",
+          "member": "MPSAIAnalysisConfigureInfo",
+          "name": "TagConfigure",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能封面任务控制参数。</p>",
+          "example": "无",
+          "member": "MPSAIAnalysisConfigureInfo",
+          "name": "CoverConfigure",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能按帧标签任务控制参数。</p>",
+          "example": "无",
+          "member": "MPSAIAnalysisConfigureInfo",
+          "name": "FrameTagConfigure",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能拆条任务控制参数。</p>",
+          "example": "无",
+          "member": "MPSAIAnalysisConfigureInfo",
+          "name": "SplitConfigure",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能集锦任务控制参数。</p>",
+          "example": "无",
+          "member": "MPSAIAnalysisConfigureInfo",
+          "name": "HighlightConfigure",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能片头片尾任务控制参数。</p>",
+          "example": "无",
+          "member": "MPSAIAnalysisConfigureInfo",
+          "name": "OpeningAndEndingConfigure",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSAiAnalysisTaskInput": {
+      "document": "AI 视频智能分析输入参数类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>视频内容分析模板 ID。</p>",
+          "example": "21",
+          "member": "uint64",
+          "name": "Definition",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数，其值为序列化的 json字符串。注意：此参数为定制需求参数，参考如下：<a href=\"https://cloud.tencent.com/document/product/862/101530\">智能檫除</a><a href=\"https://cloud.tencent.com/document/product/862/112098\">智能拆条</a><a href=\"https://cloud.tencent.com/document/product/862/107280\">高光集锦</a><a href=\"https://cloud.tencent.com/document/product/862/112112\">智能横转竖</a></p>",
+          "example": "{\"vremake\": \"test\"}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MPSAiMediaInfo": {
       "document": "使用MPS进行处理后的智能媒体信息",
       "members": [
@@ -28896,6 +29545,106 @@
         }
       ],
       "usage": "out"
+    },
+    "MPSEraseArea": {
+      "document": "智能擦除，擦除区域坐标配置。\n区域由左上角与右下角点的坐标确定。\n坐标原点为画面左上角，坐标点可使用像素值或百分比单位指定。\n对自动擦除区域：\n当单位为%时，坐标范围为[0,1]；\n当单位为px时，X值范围为 [0，视频画面宽度]，Y值范围为 [0，视频画面高度]\n对指定擦除区域：\n当单位为%时，坐标范围为[0,1)；\n当单位为px时，X值范围为 [0，视频画面宽度]，Y值范围为 [0，视频画面高度]",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>区域左上角X坐标。 如当Unit取1即使用百分比单位时，0.05表示区域左上角离整个画面左上角的横向距离为画面宽度的5%。</p>",
+          "example": "0.05",
+          "member": "float",
+          "name": "LeftTopX",
+          "output_required": false,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>区域左上角Y坐标。 如当Unit取1即使用百分比单位时，0.1表示区域左上角离整个画面左上角的纵向距离为画面高度的10%。</p>",
+          "example": "0.1",
+          "member": "float",
+          "name": "LeftTopY",
+          "output_required": false,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>区域右下角X坐标。 如当Unit取1即使用百分比单位时，0.75表示区域右下角离整个画面左上角的横向距离为画面宽度的75%。</p>",
+          "example": "0.75",
+          "member": "float",
+          "name": "RightBottomX",
+          "output_required": false,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>区域右下角Y坐标。 如当Unit取1即使用百分比单位时，0.9表示区域右下角离整个画面左上角的纵向距离为画面高度的90%。</p>",
+          "example": "0.9",
+          "member": "float",
+          "name": "RightBottomY",
+          "output_required": false,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>坐标单位 - 1 百分比 - 2 像素值</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Unit",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSEraseTimeArea": {
+      "document": "智能擦除，指定擦除区域配置。\n对指定时间段内的指定区域直接进行擦除。\n当BeginMs和EndMs均取0时对整个视频内的指定区域直接进行擦除。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>开始时间，单位:毫秒</p>",
+          "example": "1000",
+          "member": "uint64",
+          "name": "BeginMs",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间，单位:毫秒</p>",
+          "example": "2000",
+          "member": "uint64",
+          "name": "EndMs",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间段内擦除区域列表</p>",
+          "example": "无",
+          "member": "MPSEraseArea",
+          "name": "Areas",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "MPSOutputFile": {
       "document": "用于描述 MPS 视频处理任务中的返回文件结果。",
@@ -28988,6 +29737,1008 @@
         }
       ],
       "usage": "out"
+    },
+    "MPSOverrideEraseParameter": {
+      "document": "智能擦除自定义参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>擦除类型</p><ul><li>subtitle 去字幕</li><li>watermark 去水印</li><li>privacy 隐私保护</li></ul>",
+          "example": "subtitle",
+          "member": "string",
+          "name": "EraseType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕擦除配置；<br>当EraseType值为：subtitle，此字段为必填参数</p>",
+          "example": "无",
+          "member": "MPSUpdateSmartEraseSubtitleConfig",
+          "name": "EraseSubtitleConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>水印擦除配置；<br>当EraseType值为：watermark，此字段为必填参数</p>",
+          "example": "无",
+          "member": "MPSUpdateSmartEraseWatermarkConfig",
+          "name": "EraseWatermarkConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>隐私保护配置；<br>当EraseType值为：privacy，此字段为必填参数</p>",
+          "example": "无",
+          "member": "MPSSmartErasePrivacyConfig",
+          "name": "ErasePrivacyConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>擦除压制字幕模板id。</p>",
+          "example": "10001",
+          "member": "int64",
+          "name": "SubtitleEmbedId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSRawSmartEraseParameter": {
+      "document": "智能擦除自定义参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>擦除类型</p><ul><li>subtitle 去字幕</li><li>watermark 去水印</li><li>privacy 隐私保护</li></ul>",
+          "example": "subtitle",
+          "member": "string",
+          "name": "EraseType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕擦除配置；<br>当EraseType值为：subtitle，此字段为必填参数</p>",
+          "example": "无",
+          "member": "MPSSmartEraseSubtitleConfig",
+          "name": "EraseSubtitleConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>水印擦除配置；<br>当EraseType值为：watermark，此字段为必填参数</p>",
+          "example": "无",
+          "member": "MPSSmartEraseWatermarkConfig",
+          "name": "EraseWatermarkConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>隐私保护配置；<br>当EraseType值为：privacy，此字段为必填参数</p>",
+          "example": "无",
+          "member": "MPSSmartErasePrivacyConfig",
+          "name": "ErasePrivacyConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>擦除字幕压制模板id。</p>",
+          "example": "1001",
+          "member": "int64",
+          "name": "SubtitleEmbedId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>压制配置，默认开启1, 把字幕压制回原字幕位置。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "UseOriginalPos",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>压制配置，默认开启1, 开启后使用原字幕字号。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "UseOriginalSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSRawSmartSubtitleParameter": {
+      "document": "自定义智能字幕参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>智能字幕字幕语言类型。</p><p>枚举值：</p><ul><li>0： 源语言</li><li>1： 翻译语言</li><li>2： 源语言+翻译语言</li></ul><p>当TranslateSwitch为OFF时仅支持取0当TranslateSwitch为ON时仅支持取1或2</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SubtitleType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能字幕视频源语言<br>OCR识别仅支持以下语言：<br><code>zh_en</code>：中英<br><code>multi</code>：其他<br>ASR识别和纯字幕翻译当前支持以下语言：<br><code>auto</code>：自动识别<br><code>zh</code>：简体中文<br><code>en</code>：英语<br><code>ja</code>：日语<br><code>ko</code>：韩语<br><code>zh-PY</code>：中英粤<br><code>zh_medical</code>：中文医疗<br><code>vi</code>：越南语<br><code>ms</code>：马来语<br><code>id</code>：印度尼西亚语<br><code>fil</code>：菲律宾语<br><code>th</code>：泰语<br><code>pt</code>：葡萄牙语<br><code>tr</code>：土耳其语<br><code>ar</code>：阿拉伯语<br><code>es</code>：西班牙语<br><code>hi</code>：印地语<br><code>fr</code>：法语<br><code>de</code>：德语<br><code>it</code>：意大利语<br><code>zh_dialect</code>：中文方言<br><code>zh_en</code>：中英<br><code>yue</code>：粤语<br><code>ru</code>：俄语<br><code>prime_zh</code>：中英方言<br><code>af-ZA</code>：南非荷兰语（南非）<br><code>sq-AL</code>：阿尔巴尼亚语（阿尔巴尼亚）<br><code>am-ET</code>：阿姆哈拉语（埃塞俄比亚）<br><code>ar-DZ</code>：阿拉伯语（阿尔及利亚）<br><code>ar-BH</code>：阿拉伯语（巴林）<br><code>ar-EG</code>：阿拉伯语（埃及）<br><code>ar-IQ</code>：阿拉伯语（伊拉克）<br><code>ar-IL</code>：阿拉伯语（以色列）<br><code>ar-JO</code>：阿拉伯语（约旦）<br><code>ar-KW</code>：阿拉伯语（科威特）<br><code>ar-LB</code>：阿拉伯语（黎巴嫩）<br><code>ar-MR</code>：阿拉伯语（毛里塔尼亚）<br><code>ar-MA</code>：阿拉伯语（摩洛哥）<br><code>ar-OM</code>：阿拉伯语（阿曼）<br><code>ar-QA</code>：阿拉伯语（卡塔尔）<br><code>ar-SA</code>：阿拉伯语（沙特阿拉伯）<br><code>ar-PS</code>：阿拉伯语（巴勒斯坦国）<br><code>ar-SY</code>：阿拉伯语（叙利亚）<br><code>ar-TN</code>：阿拉伯语（突尼斯）<br><code>ar-AE</code>：阿拉伯语（阿拉伯联合酋长国）<br><code>ar-YE</code>：阿拉伯语（也门）<br><code>hy-AM</code>：亚美尼亚语（亚美尼亚）<br><code>az-AZ</code>：阿塞拜疆语（阿塞拜疆）<br><code>eu-ES</code>：巴斯克语（西班牙）<br><code>bn-BD</code>：孟加拉语（孟加拉）<br><code>bn-IN</code>：孟加拉语（印度）<br><code>bs-BA</code>：波斯尼亚语（波斯尼亚和黑塞哥维那）<br><code>bg-BG</code>：保加利亚语（保加利亚）<br><code>my-MM</code>：缅甸语（缅甸）<br><code>ca-ES</code>：加泰罗尼亚语（西班牙）<br><code>hr-HR</code>：克罗地亚语（克罗地亚）<br><code>cs-CZ</code>：捷克语（捷克共和国）<br><code>da-DK</code>：丹麦语（丹麦）<br><code>nl-BE</code>：荷兰语（比利时）<br><code>nl-NL</code>：荷兰语（荷兰）<br><code>en-AU</code>：英语（澳大利亚）<br><code>en-CA</code>：英语（加拿大）<br><code>en-GH</code>：英语（加纳）<br><code>en-HK</code>：英语（中国香港）<br><code>en-IN</code>：英语（印度）<br><code>en-IE</code>：英语（爱尔兰）<br><code>en-KE</code>：英语（肯尼亚）<br><code>en-NZ</code>：英语（新西兰）<br><code>en-NG</code>：英语（尼日利亚）<br><code>en-PK</code>：英语（巴基斯坦）<br><code>en-PH</code>：英语（菲律宾）<br><code>en-SG</code>：英语（新加坡）<br><code>en-ZA</code>：英语（南非）<br><code>en-TZ</code>：英语（坦桑尼亚）<br><code>en-GB</code>：英语（英国）<br><code>en-US</code>：英语（美国）<br><code>et-EE</code>：爱沙尼亚语（爱沙尼亚）<br><code>fil-PH</code>：菲律宾语（菲律宾）<br><code>fi-FI</code>：芬兰语（芬兰）<br><code>fr-BE</code>：法语（比利时）<br><code>fr-CA</code>：法语（加拿大）<br><code>fr-FR</code>：法语（法国）<br><code>fr-CH</code>：法语（瑞士）<br><code>gl-ES</code>：加利西亚语（西班牙）<br><code>ka-GE</code>：格鲁吉亚语（格鲁吉亚）<br><code>el-GR</code>：希腊语（希腊）<br><code>gu-IN</code>：古吉拉特语（印度）<br><code>iw-IL</code>：希伯来语（以色列）<br><code>hi-IN</code>：印地语（印度）<br><code>hu-HU</code>：匈牙利语（匈牙利）<br><code>is-IS</code>：冰岛语（冰岛）<br><code>id-ID</code>：印度尼西亚语（印度尼西亚）<br><code>it-IT</code>：意大利语（意大利）<br><code>it-CH</code>：意大利语（瑞士）<br><code>ja-JP</code>：日语（日本）<br><code>jv-ID</code>：爪哇语（印度尼西亚）<br><code>kn-IN</code>：卡纳达语（印度）<br><code>kk-KZ</code>：哈萨克语（哈萨克斯坦）<br><code>km-KH</code>：高棉语（柬埔寨）<br><code>rw-RW</code>：卢旺达语（卢旺达）<br><code>ko-KR</code>：韩语（韩国）<br><code>lo-LA</code>：老挝语（老挝）<br><code>lv-LV</code>：拉脱维亚语（拉脱维亚）<br><code>lt-LT</code>：立陶宛语（立陶宛）<br><code>mk-MK</code>：马其顿语（北马其顿）<br><code>ms-MY</code>：马来语（马来西亚）<br><code>ml-IN</code>：马拉雅拉姆语（印度）<br><code>mr-IN</code>：马拉地语（印度）<br><code>mn-MN</code>：蒙古语（蒙古）<br><code>ne-NP</code>：尼泊尔语（尼泊尔）<br><code>no-NO</code>：博克马尔挪威语（挪威）<br><code>fa-IR</code>：波斯语（伊朗）<br><code>pl-PL</code>：波兰语（波兰）<br><code>pt-BR</code>：葡萄牙语（巴西）<br><code>pt-PT</code>：葡萄牙语（葡萄牙）<br><code>ro-RO</code>：罗马尼亚语（罗马尼亚）<br><code>ru-RU</code>：俄语（俄罗斯）<br><code>sr-RS</code>：塞尔维亚语（塞尔维亚）<br><code>si-LK</code>：僧伽罗语（斯里兰卡）<br><code>sk-SK</code>：斯洛伐克语（斯洛伐克）<br><code>sl-SI</code>：斯洛文尼亚语（斯洛文尼亚）<br><code>st-ZA</code>：南索托语（南非）<br><code>es-AR</code>：西班牙语（阿根廷）<br><code>es-BO</code>：西班牙语（玻利维亚）<br><code>es-CL</code>：西班牙语（智利）<br><code>es-CO</code>：西班牙语（哥伦比亚）<br><code>es-CR</code>：西班牙语（哥斯达黎加）<br><code>es-DO</code>：西班牙语（多米尼加共和国）<br><code>es-EC</code>：西班牙语（厄瓜多尔）<br><code>es-SV</code>：西班牙语（萨尔瓦多）<br><code>es-GT</code>：西班牙语（危地马拉）<br><code>es-HN</code>：西班牙语（洪都拉斯）<br><code>es-MX</code>：西班牙语（墨西哥）<br><code>es-NI</code>：西班牙语（尼加拉瓜）<br><code>es-PA</code>：西班牙语（巴拿马）<br><code>es-PY</code>：西班牙语（巴拉圭）<br><code>es-PE</code>：西班牙语（秘鲁）<br><code>es-PR</code>：西班牙语（波多黎各）<br><code>es-ES</code>：西班牙语（西班牙）<br><code>es-US</code>：西班牙语（美国）<br><code>es-UY</code>：西班牙语（乌拉圭）<br><code>es-VE</code>：西班牙语（委内瑞拉）<br><code>su-ID</code>：巽他语（印度尼西亚）<br><code>sw-KE</code>：斯瓦希里语（肯尼亚）<br><code>sw-TZ</code>：斯瓦希里语（坦桑尼亚）<br><code>sv-SE</code>：瑞典语（瑞典）<br><code>ta-IN</code>：泰米尔语（印度）<br><code>ta-MY</code>：泰米尔语（马来西亚）<br><code>ta-SG</code>：泰米尔语（新加坡）<br><code>ta-LK</code>：泰米尔语（斯里兰卡）<br><code>te-IN</code>：泰卢固语（印度）<br><code>th-TH</code>：泰语（泰国）<br><code>ts-ZA</code>：聪加语（南非）<br><code>tr-TR</code>：土耳其语（土耳其）<br><code>uk-UA</code>：乌克兰语（乌克兰）<br><code>ur-IN</code>：乌尔都语（印度）<br><code>ur-PK</code>：乌尔都语（巴基斯坦）<br><code>uz-UZ</code>：乌兹别克语（乌兹别克斯坦）<br><code>ve-ZA</code>：文达语（南非）<br><code>vi-VN</code>：越南语（越南）<br><code>xh-ZA</code>：科萨语（南非）<br><code>zu-ZA</code>：祖鲁语（南非）</p>",
+          "example": "zh",
+          "member": "string",
+          "name": "VideoSrcLanguage",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能字幕文件格式:</p><ul><li>ASR识别翻译处理类型下：<ul><li>vtt: WebVTT 格式字幕</li><li>srt: SRT 格式字幕</li><li>不填或填空：不生成字幕文件</li></ul></li><li>纯字幕翻译处理类型下：<ul><li>original：与源文件一致</li><li>vtt: WebVTT 格式字幕</li><li>srt: SRT 格式字幕</li></ul></li><li>OCR识别翻译处理类型下：<ul><li>vtt: WebVTT 格式字幕</li><li>srt: SRT 格式字幕</li></ul></li></ul><p><strong>注意</strong>：</p><ul><li>ASR识别方式下，翻译大于等于2种语言时不允许传空或不传；</li><li>纯字幕翻译和OCR识别翻译方式下，不允许传空或不传</li><li>OCR类型的任务，在开启压制时，允许不传或传空</li></ul>",
+          "example": "vtt",
+          "member": "string",
+          "name": "SubtitleFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕翻译开关<br><code>ON</code>: 开启翻译<br><code>OFF</code>: 关闭翻译</p><p><strong>注意</strong>：纯字幕翻译方式下，不传默认是打开的，不允许传空或<code>OFF</code>；</p>",
+          "example": "OFF",
+          "member": "string",
+          "name": "TranslateSwitch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕翻译目标语言<br>当TranslateSwitch为ON的时候生效，翻译语言列表：<br><code>ab</code>：阿布哈兹语<br><code>ace</code>：亚齐语<br><code>ach</code>：阿乔利语<br><code>af</code>：南非荷兰语<br><code>ak</code>：契维语（阿坎语）<br><code>am</code>：Amharic<br><code>ar</code>：阿拉伯语<br><code>as</code>：阿萨姆语<br><code>ay</code>：艾马拉语<br><code>az</code>：阿塞拜疆语<br><code>ba</code>：巴什基尔语<br><code>ban</code>：巴厘语<br><code>bbc</code>：巴塔克托巴语<br><code>bem</code>：Bemba<br><code>bew</code>：Betawi<br><code>bg</code>：保加利亚语<br><code>bho</code>：博杰普尔语<br><code>bik</code>：Bikol<br><code>bm</code>：班巴拉语<br><code>bn</code>：孟加拉语<br><code>br</code>：布列塔尼语<br><code>bs</code>：波斯尼亚语<br><code>btx</code>：巴塔克卡罗语<br><code>bts</code>：巴塔克西马隆贡语<br><code>bua</code>：布里亚特语<br><code>ca</code>：加泰罗尼亚语<br><code>ceb</code>：宿务语<br><code>cgg</code>：Kiga<br><code>chm</code>：草原马里语<br><code>ckb</code>：库尔德语（索拉尼语）<br><code>cnh</code>：哈卡钦语<br><code>co</code>：科西嘉语<br><code>crh</code>：克里米亚鞑靼语<br><code>crs</code>：塞舌尔克里奥尔语<br><code>cs</code>：捷克语<br><code>cv</code>：楚瓦什语<br><code>cy</code>：威尔士语<br><code>da</code>：丹麦语<br><code>de</code>：德语<br><code>din</code>：Dinka<br><code>doi</code>：多格来语<br><code>dov</code>：敦贝语<br><code>dv</code>：第维埃语<br><code>dz</code>：宗卡语<br><code>ee</code>：Ewe<br><code>el</code>：希腊语<br><code>en</code>：英语<br><code>eo</code>：世界语<br><code>es</code>：西班牙语<br><code>et</code>：爱沙尼亚语<br><code>eu</code>：巴斯克语<br><code>fa</code>：波斯语<br><code>ff</code>：富拉语<br><code>fi</code>：芬兰语<br><code>fil</code>：菲律宾语（塔加拉语）<br><code>fj</code>：斐济语<br><code>fr</code>：法语<br><code>fr-CA</code>：法语（加拿大）<br><code>fr-FR</code>：法语（法国）<br><code>fy</code>：弗里斯兰语<br><code>ga</code>：爱尔兰语<br><code>gaa</code>：加 (Ga) 语<br><code>gd</code>：苏格兰盖尔语<br><code>gl</code>：加利西亚语<br><code>gn</code>：瓜拉尼语<br><code>gom</code>：贡根语<br><code>gu</code>：古吉拉特语<br><code>gv</code>：马恩岛语<br><code>ha</code>：Hausa<br><code>haw</code>：夏威夷语<br><code>he</code>：希伯来语<br><code>hi</code>：印地语<br><code>hil</code>：希利盖农语<br><code>hmn</code>：苗语<br><code>hr</code>：克罗地亚语<br><code>hrx</code>：洪斯吕克语<br><code>ht</code>：海地克里奥尔语<br><code>hu</code>：匈牙利语<br><code>hy</code>：亚美尼亚语<br><code>id</code>：印度尼西亚语<br><code>ig</code>：Igbo<br><code>ilo</code>：伊洛果语<br><code>is</code>：冰岛语<br><code>it</code>：意大利语<br><code>iw</code>：希伯来语<br><code>ja</code>：日语<br><code>jv</code>：爪哇语<br><code>ka</code>：格鲁吉亚语<br><code>kk</code>：哈萨克语<br><code>km</code>：高棉语<br><code>kn</code>：卡纳达语<br><code>ko</code>：韩语<br><code>kri</code>：Krio<br><code>ku</code>：库尔德语（库尔曼吉语）<br><code>ktu</code>：吉土巴语<br><code>ky</code>：吉尔吉斯语<br><code>la</code>：拉丁语<br><code>lb</code>：卢森堡语<br><code>lg</code>：干达语（卢干达语）<br><code>li</code>：林堡语<br><code>lij</code>：利古里亚语<br><code>lmo</code>：伦巴第语<br><code>ln</code>：林加拉语<br><code>lo</code>：老挝语<br><code>lt</code>：立陶宛语<br><code>ltg</code>：拉特加莱语<br><code>luo</code>：Luo<br><code>lus</code>：米佐语<br><code>lv</code>：拉脱维亚语<br><code>mai</code>：迈蒂利语<br><code>mak</code>：马卡萨<br><code>mg</code>：马尔加什语<br><code>mi</code>：毛利语<br><code>min</code>：米南语<br><code>mk</code>：马其顿语<br><code>ml</code>：马拉雅拉姆语<br><code>mn</code>：蒙古语<br><code>mr</code>：马拉地语<br><code>ms</code>：马来语<br><code>mt</code>：马耳他语<br><code>my</code>：缅甸语<br><code>ne</code>：尼泊尔语<br><code>new</code>：尼瓦尔语<br><code>nl</code>：荷兰语<br><code>no</code>：挪威语<br><code>nr</code>：恩德贝莱语（南部）<br><code>nso</code>：北索托语（塞佩蒂语）<br><code>nus</code>：努尔语<br><code>ny</code>：齐切瓦语（尼扬贾语）<br><code>oc</code>：奥克斯坦语<br><code>om</code>：Oromo<br><code>or</code>：奥里亚语<br><code>pa</code>：旁遮普语<br><code>pag</code>：邦阿西楠语<br><code>pam</code>：邦板牙语<br><code>pap</code>：Papiamento<br><code>pl</code>：波兰语<br><code>ps</code>：Pashto<br><code>pt</code>：葡萄牙语<br><code>pt-BR</code>：葡萄牙语（巴西）<br><code>pt-PT</code>：葡萄牙语（葡萄牙）<br><code>qu</code>：克丘亚语<br><code>ro</code>：罗马尼亚语<br><code>rom</code>：罗姆语<br><code>rn</code>：Rundi<br><code>ru</code>：俄语<br><code>rw</code>：卢旺达语<br><code>sa</code>：梵语<br><code>scn</code>：西西里语<br><code>sd</code>：信德语<br><code>sg</code>：Sango<br><code>shn</code>：掸语<br><code>si</code>：僧伽罗语<br><code>sk</code>：斯洛伐克语<br><code>sl</code>：斯洛文尼亚语<br><code>sm</code>：萨摩亚语<br><code>sn</code>：修纳语<br><code>so</code>：索马里语<br><code>sq</code>：阿尔巴尼亚语<br><code>sr</code>：塞尔维亚语<br><code>ss</code>：斯瓦特语<br><code>st</code>：塞索托语<br><code>su</code>：巽他语<br><code>sv</code>：瑞典语<br><code>sw</code>：斯瓦希里语<br><code>szl</code>：西里西亚语<br><code>ta</code>：泰米尔语<br><code>te</code>：泰卢固语<br><code>tet</code>：德顿语<br><code>tg</code>：塔吉克语<br><code>th</code>：泰语<br><code>ti</code>：提格里尼亚语<br><code>tk</code>：土库曼语<br><code>tn</code>：茨瓦纳语<br><code>tr</code>：土耳其语<br><code>ts</code>：聪加语<br><code>tt</code>：鞑靼语<br><code>ug</code>：维吾尔语<br><code>uk</code>：乌克兰语<br><code>ur</code>：乌尔都语<br><code>uz</code>：乌兹别克语<br><code>vi</code>：越南语<br><code>xh</code>：科萨语<br><code>yi</code>：意第绪语<br><code>yo</code>：约鲁巴语<br><code>yua</code>：尤卡坦玛雅语<br><code>yue</code>：粤语<br><code>zh</code>：简体中文<br><code>zh-TW</code>：中文（繁体）<br><code>zu</code>：祖鲁语</p><p><strong>注意</strong>：多语言方式，则使用 <code>/</code> 分割，如：<code>en/ja</code>，表示英语和日语。</p>",
+          "example": "en",
+          "member": "string",
+          "name": "TranslateDstLanguage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义参数</p>",
+          "example": "\"{}\"",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕处理类型：</p><ul><li>0：ASR识别字幕</li><li>1：纯字幕翻译</li><li>2：OCR识别字幕</li></ul><p><strong>注意</strong>：不传的情况下默认类型为 ASR识别字幕</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProcessType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSSelectingSubtitleAreasConfig": {
+      "document": "字幕OCR提取框选区域配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自动选择自定义区域。 对选定区域，利用AI模型自动检测其中存在的选择目标并提取。</p>",
+          "example": "无",
+          "member": "MPSEraseArea",
+          "name": "AutoAreas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>示例视频或图片的宽，单位像素值</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SampleWidth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>示例视频或图片的高，单位像素值</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SampleHeight",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSSmartErasePrivacyConfig": {
+      "document": "智能擦除模板隐私保护配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>隐私保护擦除方式。</p><p>枚举值：</p><ul><li>blur： 模糊</li><li>mosaic： 马赛克</li></ul>",
+          "example": "blur",
+          "member": "string",
+          "name": "PrivacyModel",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>隐私保护目标，（在API Explorer上使用时无需传入数组，添加相应项并填入对应值即可）。</p><p>枚举值：</p><ul><li>face： 人脸</li><li>plate： 车牌</li></ul>",
+          "example": "[\"face\"]",
+          "member": "string",
+          "name": "PrivacyTargets",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSSmartEraseSubtitleConfig": {
+      "document": "智能擦除模板去字幕配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>字幕擦除方式。<br><strong>自动擦除：</strong>通过AI模型自动识别视频中的字幕文本内容，进行无痕化擦除，生成新的视频。但画面干扰、特殊字幕样式可能会带来一定漏擦误擦问题，可以通过指定区域擦除处理。<br>当使用自动擦除时，若您不指定AutoAreas，将对默认区域（画面中下部）进行自动擦除；若指定AutoAreas，将改为对您指定的区域进行自动擦除。<br><strong>指定区域擦除：</strong>若您的字幕位置较固定，建议您直接指定擦除区域，最大程度减少漏擦的情况。<br>当您选择指定区域擦除时，请在CustomAreas中至少传入一个指定区域。</p><ul><li>auto 自动擦除</li><li>custom 指定区域擦除</li></ul>",
+          "example": "auto",
+          "member": "string",
+          "name": "SubtitleEraseMethod",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕擦除模型。<br><strong>标准版（推荐）：</strong>若您的字幕样式标准，通常建议选择该版本，细节无痕化效果更好。<br><strong>区域版：</strong>若您的字幕存在花体、阴影、动效等特殊样式，建议选择区域版，擦除面积更大，但细节效果不如标准版。</p><ul><li>standard 标准模型</li><li>area 区域模型</li></ul>",
+          "example": "standard",
+          "member": "string",
+          "name": "SubtitleModel",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启OCR字幕提取，默认取OFF。<br>当且仅当SubtitleEraseMethod取auto时支持开启OCR字幕提取，开启后将识别自动擦除区域内出现时间最长且最稳定的文字区域为字幕区域，对字幕区域中的文字进行提取和擦除。</p><ul><li>ON 开启</li><li>OFF 关闭</li></ul>",
+          "example": "ON",
+          "member": "string",
+          "name": "OcrSwitch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕语言，用于指导OCR识别，默认取zh_en；仅当OcrSwitch取\"ON\"时生效。</p><ul><li>zh_en 中英文</li><li>multi 其他<br>其他具体支持识别如下语言：<br>中文、英文、日文、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语、印地语、阿拉伯语、印度-孟加拉语、印度-古吉拉特语、印度-卡纳达语 、印度-马拉亚拉姆语 、印度-泰米尔语、印度-泰卢固语、斯洛文尼亚语、波兰语、加泰罗尼亚语、波斯尼亚语、捷克语、爱沙尼亚语、克罗地亚语、旁遮普语、马拉地语、阿塞拜疆语、印尼语、卢森堡语 、立陶宛语、拉脱维亚语、马耳他语、斯洛伐克语、土耳其语、哈萨克语、希腊语、爱尔兰语、白俄罗斯语、高棉语、他加禄语、普什图语、波斯语、塔吉克斯坦语</li></ul>",
+          "example": "zh_en",
+          "member": "string",
+          "name": "SubtitleLang",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕文件格式，默认取vtt；仅当OcrSwitch取\"ON\"时生效。</p><ul><li>srt srt格式</li><li>vtt WebVTT格式</li><li>当填写SubtitleEmbedId时可以取值空字符串，表示不输出字幕文件</li></ul>",
+          "example": "vtt",
+          "member": "string",
+          "name": "SubtitleFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启字幕翻译，默认取OFF；仅当OcrSwitch取\"ON\"时生效。</p><ul><li>ON 开启</li><li>OFF 关闭</li></ul>",
+          "example": "ON",
+          "member": "string",
+          "name": "TransSwitch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕翻译目标语言，默认取en；仅当TransSwitch取\"ON\"时生效。<br>当前支持以下语言：<br>zh：简体中文<br>en：英语<br>ja：日语<br>ko：韩语<br>fr：法语<br>es：西班牙语<br>it：意大利语<br>de：德语<br>tr：土耳其语<br>ru：俄语<br>pt：葡萄牙语<br>vi：越南语<br>id：印度尼西亚语<br>ms：马来语<br>th：泰语<br>ar：阿拉伯语<br>hi：印地语</p>",
+          "example": "en",
+          "member": "string",
+          "name": "TransDstLang",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动擦除自定义区域。<br>对选定区域，利用AI模型自动检测其中存在的擦除目标并擦除。<br>注意：当擦除方式选择custom时，此参数将不会生效；修改模板时，清除区域请传入[]，不传时将保持模板区域信息不变。</p>",
+          "example": "无",
+          "member": "MPSEraseArea",
+          "name": "AutoAreas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定擦除自定义区域。<br>对选定区域，在选定时间段内不进行检测识别直接进行擦除。<br>注意：修改模板时，清除区域请传入[]，不传时将保持模板区域信息不变。</p>",
+          "example": "无",
+          "member": "MPSEraseTimeArea",
+          "name": "CustomAreas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>压制配置，默认开启1, 把字幕压制回原字幕位置。只有开启OCR翻译时可以填写，取0时表示不开启压回原位</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "UseOriginalPos",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>压制配置，默认开启1, 开启后使用原字幕字号。只有开启OCR翻译时可以填写，取0时表示不使用原字号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "UseOriginalSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSSmartEraseTaskInput": {
+      "document": "智能擦除任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>智能擦除模板id。</p>",
+          "example": "101",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能擦除自定义参数，当 Definition 填 0 时有效。 该参数用于高度定制场景，建议您优先使用 Definition 指定智能擦除参数。</p>",
+          "example": "无",
+          "member": "MPSRawSmartEraseParameter",
+          "name": "RawParameter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能擦除自定义参数，当 Definition 不填 0 时有效。 当填写了该结构中的部分擦除参数时，将使用填写的参数覆盖智能擦除模板中的参数。 该参数用于高度定制场景，建议您仅使用 Definition 指定智能擦除参数。</p>",
+          "example": "无",
+          "member": "MPSOverrideEraseParameter",
+          "name": "OverrideParameter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSSmartEraseTemplate": {
+      "document": "MPS智能擦除模板输入",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>智能擦除模板名称长度限制：64 个字符。</p>",
+          "example": "智能擦除",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>擦除类型</p><ul><li>subtitle 去字幕</li><li>watermark 去水印</li><li>privacy 隐私保护</li></ul>",
+          "example": "subtitle",
+          "member": "string",
+          "name": "EraseType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能擦除模板描述信息长度限制：256 个字符。</p>",
+          "example": "模板",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕擦除配置，EraseType取subtitle时必填且仅此时生效。</p>",
+          "example": "无",
+          "member": "MPSSmartEraseSubtitleConfig",
+          "name": "EraseSubtitleConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>水印擦除配置，EraseType取watermark时必填且仅此时生效。</p>",
+          "example": "无",
+          "member": "MPSSmartEraseWatermarkConfig",
+          "name": "EraseWatermarkConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>隐私保护配置，EraseType取privacy时必填且仅此时生效。</p>",
+          "example": "无",
+          "member": "MPSSmartErasePrivacyConfig",
+          "name": "ErasePrivacyConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>示例视频或图片的宽，单位像素值</p>",
+          "example": "1000",
+          "member": "uint64",
+          "name": "SampleWidth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>示例视频或图片的高，单位像素值</p>",
+          "example": "800",
+          "member": "uint64",
+          "name": "SampleHeight",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSSmartEraseTemplateForUpdate": {
+      "document": "MPS智能擦除模板输入",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>智能擦除模板唯一标识</p>",
+          "example": "30188",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能擦除模板名称长度限制：64 个字符。</p>",
+          "example": "智能擦除",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>擦除类型</p><ul><li>subtitle 去字幕</li><li>watermark 去水印</li><li>privacy 隐私保护</li></ul>",
+          "example": "subtitle",
+          "member": "string",
+          "name": "EraseType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能擦除模板描述信息长度限制：256 个字符。</p>",
+          "example": "智能擦除模版",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕擦除配置，EraseType取subtitle或者EraseType不填，对应模板原EraseType为subtitle时生效。</p>",
+          "example": "无",
+          "member": "MPSSmartEraseSubtitleConfig",
+          "name": "EraseSubtitleConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>水印擦除配置，EraseType取watermark或者EraseType不填，对应模板原EraseType为watermark时生效。</p>",
+          "example": "无",
+          "member": "MPSSmartEraseWatermarkConfig",
+          "name": "EraseWatermarkConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>隐私保护配置，EraseType取privacy或者EraseType不填，对应模板原EraseType为privacy时生效。</p>",
+          "example": "无",
+          "member": "MPSSmartErasePrivacyConfig",
+          "name": "ErasePrivacyConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>示例视频或图片的宽，单位像素值</p>",
+          "example": "1000",
+          "member": "uint64",
+          "name": "SampleWidth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>示例视频或图片的高，单位像素值</p>",
+          "example": "800",
+          "member": "uint64",
+          "name": "SampleHeight",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSSmartEraseWatermarkConfig": {
+      "document": "智能擦除模板去水印配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>水印擦除方式。 <strong>自动擦除：</strong>通过A模型自动识别视频中的水印，擦除后生成新的视频。适用于动态水印。 当使用自动擦除时，若您不指定AutoAreas，将对视频全屏进行自动擦除；若指定AutoAreas，将改为对您指定的区域进行自动擦除。 <strong>指定区域擦除：</strong>针对位置较固定的静态水印，建议您直接指定擦除区域。 当您选择指定区域擦除时，请至少传入一个指定区域。 - auto 自动擦除 - custom 指定区域擦除</p>",
+          "example": "auto",
+          "member": "string",
+          "name": "WatermarkEraseMethod",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>水印擦除模型。 基础版：效果一般，性价比高，适合动画或背景较干净的视频。 高级版：效果更好，适合短剧等现实风格视频。 - basic 基础版 - advanced 高级版</p>",
+          "example": "basic",
+          "member": "string",
+          "name": "WatermarkModel",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动擦除自定义区域。 对选定区域，利用AI模型自动检测其中存在的擦除目标并擦除。 注意，当擦除方式为custom时，此参数将不会生效。清除区域请传入[]，不传时将保持模板区域信息不变。</p>",
+          "example": "无",
+          "member": "MPSEraseArea",
+          "name": "AutoAreas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定擦除自定义区域。 对选定区域，在选定时间段内不进行检测识别直接进行擦除。 注意：清除区域请传入[]，不传时将保持模板区域信息不变。</p>",
+          "example": "无",
+          "member": "MPSEraseTimeArea",
+          "name": "CustomAreas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSSmartSubtitleTemplate": {
+      "document": "MPS智能字幕模板输入",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>智能字幕模板名称<br>长度限制：64 个字符。</p>",
+          "example": "智能字幕",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能字幕模板描述信息<br>长度限制：256 个字符。</p>",
+          "example": "智能字幕模版",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能字幕字幕语言类型<br>0: 源语言<br>1: 翻译语言<br>2: 源语言+翻译语言<br>当TranslateSwitch为OFF时仅支持取0<br>当TranslateSwitch为ON时仅支持取1或2</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SubtitleType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能字幕视频源语言<br>OCR识别仅支持以下语言：<br><code>zh_en</code>：中英<br><code>multi</code>：其他<br>ASR识别和纯字幕翻译当前支持以下语言：<br><code>auto</code>：自动识别<br><code>zh</code>：简体中文<br><code>en</code>：英语<br><code>ja</code>：日语<br><code>ko</code>：韩语<br><code>zh-PY</code>：中英粤<br><code>zh_medical</code>：中文医疗<br><code>vi</code>：越南语<br><code>ms</code>：马来语<br><code>id</code>：印度尼西亚语<br><code>fil</code>：菲律宾语<br><code>th</code>：泰语<br><code>pt</code>：葡萄牙语<br><code>tr</code>：土耳其语<br><code>ar</code>：阿拉伯语<br><code>es</code>：西班牙语<br><code>hi</code>：印地语<br><code>fr</code>：法语<br><code>de</code>：德语<br><code>it</code>：意大利语<br><code>zh_dialect</code>：中文方言<br><code>zh_en</code>：中英<br><code>yue</code>：粤语<br><code>ru</code>：俄语<br><code>prime_zh</code>：中英方言<br><code>af-ZA</code>：南非荷兰语（南非）<br><code>sq-AL</code>：阿尔巴尼亚语（阿尔巴尼亚）<br><code>am-ET</code>：阿姆哈拉语（埃塞俄比亚）<br><code>ar-DZ</code>：阿拉伯语（阿尔及利亚）<br><code>ar-BH</code>：阿拉伯语（巴林）<br><code>ar-EG</code>：阿拉伯语（埃及）<br><code>ar-IQ</code>：阿拉伯语（伊拉克）<br><code>ar-IL</code>：阿拉伯语（以色列）<br><code>ar-JO</code>：阿拉伯语（约旦）<br><code>ar-KW</code>：阿拉伯语（科威特）<br><code>ar-LB</code>：阿拉伯语（黎巴嫩）<br><code>ar-MR</code>：阿拉伯语（毛里塔尼亚）<br><code>ar-MA</code>：阿拉伯语（摩洛哥）<br><code>ar-OM</code>：阿拉伯语（阿曼）<br><code>ar-QA</code>：阿拉伯语（卡塔尔）<br><code>ar-SA</code>：阿拉伯语（沙特阿拉伯）<br><code>ar-PS</code>：阿拉伯语（巴勒斯坦国）<br><code>ar-SY</code>：阿拉伯语（叙利亚）<br><code>ar-TN</code>：阿拉伯语（突尼斯）<br><code>ar-AE</code>：阿拉伯语（阿拉伯联合酋长国）<br><code>ar-YE</code>：阿拉伯语（也门）<br><code>hy-AM</code>：亚美尼亚语（亚美尼亚）<br><code>az-AZ</code>：阿塞拜疆语（阿塞拜疆）<br><code>eu-ES</code>：巴斯克语（西班牙）<br><code>bn-BD</code>：孟加拉语（孟加拉）<br><code>bn-IN</code>：孟加拉语（印度）<br><code>bs-BA</code>：波斯尼亚语（波斯尼亚和黑塞哥维那）<br><code>bg-BG</code>：保加利亚语（保加利亚）<br><code>my-MM</code>：缅甸语（缅甸）<br><code>ca-ES</code>：加泰罗尼亚语（西班牙）<br><code>hr-HR</code>：克罗地亚语（克罗地亚）<br><code>cs-CZ</code>：捷克语（捷克共和国）<br><code>da-DK</code>：丹麦语（丹麦）<br><code>nl-BE</code>：荷兰语（比利时）<br><code>nl-NL</code>：荷兰语（荷兰）<br><code>en-AU</code>：英语（澳大利亚）<br><code>en-CA</code>：英语（加拿大）<br><code>en-GH</code>：英语（加纳）<br><code>en-HK</code>：英语（中国香港）<br><code>en-IN</code>：英语（印度）<br><code>en-IE</code>：英语（爱尔兰）<br><code>en-KE</code>：英语（肯尼亚）<br><code>en-NZ</code>：英语（新西兰）<br><code>en-NG</code>：英语（尼日利亚）<br><code>en-PK</code>：英语（巴基斯坦）<br><code>en-PH</code>：英语（菲律宾）<br><code>en-SG</code>：英语（新加坡）<br><code>en-ZA</code>：英语（南非）<br><code>en-TZ</code>：英语（坦桑尼亚）<br><code>en-GB</code>：英语（英国）<br><code>en-US</code>：英语（美国）<br><code>et-EE</code>：爱沙尼亚语（爱沙尼亚）<br><code>fil-PH</code>：菲律宾语（菲律宾）<br><code>fi-FI</code>：芬兰语（芬兰）<br><code>fr-BE</code>：法语（比利时）<br><code>fr-CA</code>：法语（加拿大）<br><code>fr-FR</code>：法语（法国）<br><code>fr-CH</code>：法语（瑞士）<br><code>gl-ES</code>：加利西亚语（西班牙）<br><code>ka-GE</code>：格鲁吉亚语（格鲁吉亚）<br><code>el-GR</code>：希腊语（希腊）<br><code>gu-IN</code>：古吉拉特语（印度）<br><code>iw-IL</code>：希伯来语（以色列）<br><code>hi-IN</code>：印地语（印度）<br><code>hu-HU</code>：匈牙利语（匈牙利）<br><code>is-IS</code>：冰岛语（冰岛）<br><code>id-ID</code>：印度尼西亚语（印度尼西亚）<br><code>it-IT</code>：意大利语（意大利）<br><code>it-CH</code>：意大利语（瑞士）<br><code>ja-JP</code>：日语（日本）<br><code>jv-ID</code>：爪哇语（印度尼西亚）<br><code>kn-IN</code>：卡纳达语（印度）<br><code>kk-KZ</code>：哈萨克语（哈萨克斯坦）<br><code>km-KH</code>：高棉语（柬埔寨）<br><code>rw-RW</code>：卢旺达语（卢旺达）<br><code>ko-KR</code>：韩语（韩国）<br><code>lo-LA</code>：老挝语（老挝）<br><code>lv-LV</code>：拉脱维亚语（拉脱维亚）<br><code>lt-LT</code>：立陶宛语（立陶宛）<br><code>mk-MK</code>：马其顿语（北马其顿）<br><code>ms-MY</code>：马来语（马来西亚）<br><code>ml-IN</code>：马拉雅拉姆语（印度）<br><code>mr-IN</code>：马拉地语（印度）<br><code>mn-MN</code>：蒙古语（蒙古）<br><code>ne-NP</code>：尼泊尔语（尼泊尔）<br><code>no-NO</code>：博克马尔挪威语（挪威）<br><code>fa-IR</code>：波斯语（伊朗）<br><code>pl-PL</code>：波兰语（波兰）<br><code>pt-BR</code>：葡萄牙语（巴西）<br><code>pt-PT</code>：葡萄牙语（葡萄牙）<br><code>ro-RO</code>：罗马尼亚语（罗马尼亚）<br><code>ru-RU</code>：俄语（俄罗斯）<br><code>sr-RS</code>：塞尔维亚语（塞尔维亚）<br><code>si-LK</code>：僧伽罗语（斯里兰卡）<br><code>sk-SK</code>：斯洛伐克语（斯洛伐克）<br><code>sl-SI</code>：斯洛文尼亚语（斯洛文尼亚）<br><code>st-ZA</code>：南索托语（南非）<br><code>es-AR</code>：西班牙语（阿根廷）<br><code>es-BO</code>：西班牙语（玻利维亚）<br><code>es-CL</code>：西班牙语（智利）<br><code>es-CO</code>：西班牙语（哥伦比亚）<br><code>es-CR</code>：西班牙语（哥斯达黎加）<br><code>es-DO</code>：西班牙语（多米尼加共和国）<br><code>es-EC</code>：西班牙语（厄瓜多尔）<br><code>es-SV</code>：西班牙语（萨尔瓦多）<br><code>es-GT</code>：西班牙语（危地马拉）<br><code>es-HN</code>：西班牙语（洪都拉斯）<br><code>es-MX</code>：西班牙语（墨西哥）<br><code>es-NI</code>：西班牙语（尼加拉瓜）<br><code>es-PA</code>：西班牙语（巴拿马）<br><code>es-PY</code>：西班牙语（巴拉圭）<br><code>es-PE</code>：西班牙语（秘鲁）<br><code>es-PR</code>：西班牙语（波多黎各）<br><code>es-ES</code>：西班牙语（西班牙）<br><code>es-US</code>：西班牙语（美国）<br><code>es-UY</code>：西班牙语（乌拉圭）<br><code>es-VE</code>：西班牙语（委内瑞拉）<br><code>su-ID</code>：巽他语（印度尼西亚）<br><code>sw-KE</code>：斯瓦希里语（肯尼亚）<br><code>sw-TZ</code>：斯瓦希里语（坦桑尼亚）<br><code>sv-SE</code>：瑞典语（瑞典）<br><code>ta-IN</code>：泰米尔语（印度）<br><code>ta-MY</code>：泰米尔语（马来西亚）<br><code>ta-SG</code>：泰米尔语（新加坡）<br><code>ta-LK</code>：泰米尔语（斯里兰卡）<br><code>te-IN</code>：泰卢固语（印度）<br><code>th-TH</code>：泰语（泰国）<br><code>ts-ZA</code>：聪加语（南非）<br><code>tr-TR</code>：土耳其语（土耳其）<br><code>uk-UA</code>：乌克兰语（乌克兰）<br><code>ur-IN</code>：乌尔都语（印度）<br><code>ur-PK</code>：乌尔都语（巴基斯坦）<br><code>uz-UZ</code>：乌兹别克语（乌兹别克斯坦）<br><code>ve-ZA</code>：文达语（南非）<br><code>vi-VN</code>：越南语（越南）<br><code>xh-ZA</code>：科萨语（南非）<br><code>zu-ZA</code>：祖鲁语（南非）</p>",
+          "example": "zh",
+          "member": "string",
+          "name": "VideoSrcLanguage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能字幕文件格式:</p><ul><li>ASR识别翻译处理类型下：<ul><li>vtt: WebVTT 格式字幕</li><li>srt: SRT 格式字幕</li><li>不填或填空：不生成字幕文件</li></ul></li><li>纯字幕翻译处理类型下：<ul><li>original：与源文件一致</li><li>vtt: WebVTT 格式字幕</li><li>srt: SRT 格式字幕</li></ul></li><li>OCR识别翻译处理类型下：<ul><li>vtt: WebVTT 格式字幕</li><li>srt: SRT 格式字幕</li></ul></li></ul><p><strong>注意</strong>：</p><ul><li>ASR识别方式下，翻译大于等于2种语言时不允许传空或不传；</li><li>纯字幕翻译方式下，不允许传空或不传</li><li>OCR类型的任务，在开启压制时，允许不传或传空</li></ul>",
+          "example": "vtt",
+          "member": "string",
+          "name": "SubtitleFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕翻译开关<br><code>ON</code>: 开启翻译<br><code>OFF</code>: 关闭翻译</p><p><strong>注意</strong>：纯字幕翻译方式下，不传默认是打开的，不允许传空或<code>OFF</code>；</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "TranslateSwitch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕翻译目标语言<br>当TranslateSwitch为ON的时候生效，翻译语言列表：<br><code>ab</code>：阿布哈兹语<br><code>ace</code>：亚齐语<br><code>ach</code>：阿乔利语<br><code>af</code>：南非荷兰语<br><code>ak</code>：契维语（阿坎语）<br><code>am</code>：Amharic<br><code>ar</code>：阿拉伯语<br><code>as</code>：阿萨姆语<br><code>ay</code>：艾马拉语<br><code>az</code>：阿塞拜疆语<br><code>ba</code>：巴什基尔语<br><code>ban</code>：巴厘语<br><code>bbc</code>：巴塔克托巴语<br><code>bem</code>：Bemba<br><code>bew</code>：Betawi<br><code>bg</code>：保加利亚语<br><code>bho</code>：博杰普尔语<br><code>bik</code>：Bikol<br><code>bm</code>：班巴拉语<br><code>bn</code>：孟加拉语<br><code>br</code>：布列塔尼语<br><code>bs</code>：波斯尼亚语<br><code>btx</code>：巴塔克卡罗语<br><code>bts</code>：巴塔克西马隆贡语<br><code>bua</code>：布里亚特语<br><code>ca</code>：加泰罗尼亚语<br><code>ceb</code>：宿务语<br><code>cgg</code>：Kiga<br><code>chm</code>：草原马里语<br><code>ckb</code>：库尔德语（索拉尼语）<br><code>cnh</code>：哈卡钦语<br><code>co</code>：科西嘉语<br><code>crh</code>：克里米亚鞑靼语<br><code>crs</code>：塞舌尔克里奥尔语<br><code>cs</code>：捷克语<br><code>cv</code>：楚瓦什语<br><code>cy</code>：威尔士语<br><code>da</code>：丹麦语<br><code>de</code>：德语<br><code>din</code>：Dinka<br><code>doi</code>：多格来语<br><code>dov</code>：敦贝语<br><code>dv</code>：第维埃语<br><code>dz</code>：宗卡语<br><code>ee</code>：Ewe<br><code>el</code>：希腊语<br><code>en</code>：英语<br><code>eo</code>：世界语<br><code>es</code>：西班牙语<br><code>et</code>：爱沙尼亚语<br><code>eu</code>：巴斯克语<br><code>fa</code>：波斯语<br><code>ff</code>：富拉语<br><code>fi</code>：芬兰语<br><code>fil</code>：菲律宾语（塔加拉语）<br><code>fj</code>：斐济语<br><code>fr</code>：法语<br><code>fr-CA</code>：法语（加拿大）<br><code>fr-FR</code>：法语（法国）<br><code>fy</code>：弗里斯兰语<br><code>ga</code>：爱尔兰语<br><code>gaa</code>：加 (Ga) 语<br><code>gd</code>：苏格兰盖尔语<br><code>gl</code>：加利西亚语<br><code>gn</code>：瓜拉尼语<br><code>gom</code>：贡根语<br><code>gu</code>：古吉拉特语<br><code>gv</code>：马恩岛语<br><code>ha</code>：Hausa<br><code>haw</code>：夏威夷语<br><code>he</code>：希伯来语<br><code>hi</code>：印地语<br><code>hil</code>：希利盖农语<br><code>hmn</code>：苗语<br><code>hr</code>：克罗地亚语<br><code>hrx</code>：洪斯吕克语<br><code>ht</code>：海地克里奥尔语<br><code>hu</code>：匈牙利语<br><code>hy</code>：亚美尼亚语<br><code>id</code>：印度尼西亚语<br><code>ig</code>：Igbo<br><code>ilo</code>：伊洛果语<br><code>is</code>：冰岛语<br><code>it</code>：意大利语<br><code>iw</code>：希伯来语<br><code>ja</code>：日语<br><code>jv</code>：爪哇语<br><code>ka</code>：格鲁吉亚语<br><code>kk</code>：哈萨克语<br><code>km</code>：高棉语<br><code>kn</code>：卡纳达语<br><code>ko</code>：韩语<br><code>kri</code>：Krio<br><code>ku</code>：库尔德语（库尔曼吉语）<br><code>ktu</code>：吉土巴语<br><code>ky</code>：吉尔吉斯语<br><code>la</code>：拉丁语<br><code>lb</code>：卢森堡语<br><code>lg</code>：干达语（卢干达语）<br><code>li</code>：林堡语<br><code>lij</code>：利古里亚语<br><code>lmo</code>：伦巴第语<br><code>ln</code>：林加拉语<br><code>lo</code>：老挝语<br><code>lt</code>：立陶宛语<br><code>ltg</code>：拉特加莱语<br><code>luo</code>：Luo<br><code>lus</code>：米佐语<br><code>lv</code>：拉脱维亚语<br><code>mai</code>：迈蒂利语<br><code>mak</code>：马卡萨<br><code>mg</code>：马尔加什语<br><code>mi</code>：毛利语<br><code>min</code>：米南语<br><code>mk</code>：马其顿语<br><code>ml</code>：马拉雅拉姆语<br><code>mn</code>：蒙古语<br><code>mr</code>：马拉地语<br><code>ms</code>：马来语<br><code>mt</code>：马耳他语<br><code>my</code>：缅甸语<br><code>ne</code>：尼泊尔语<br><code>new</code>：尼瓦尔语<br><code>nl</code>：荷兰语<br><code>no</code>：挪威语<br><code>nr</code>：恩德贝莱语（南部）<br><code>nso</code>：北索托语（塞佩蒂语）<br><code>nus</code>：努尔语<br><code>ny</code>：齐切瓦语（尼扬贾语）<br><code>oc</code>：奥克斯坦语<br><code>om</code>：Oromo<br><code>or</code>：奥里亚语<br><code>pa</code>：旁遮普语<br><code>pag</code>：邦阿西楠语<br><code>pam</code>：邦板牙语<br><code>pap</code>：Papiamento<br><code>pl</code>：波兰语<br><code>ps</code>：Pashto<br><code>pt</code>：葡萄牙语<br><code>pt-BR</code>：葡萄牙语（巴西）<br><code>pt-PT</code>：葡萄牙语（葡萄牙）<br><code>qu</code>：克丘亚语<br><code>ro</code>：罗马尼亚语<br><code>rom</code>：罗姆语<br><code>rn</code>：Rundi<br><code>ru</code>：俄语<br><code>rw</code>：卢旺达语<br><code>sa</code>：梵语<br><code>scn</code>：西西里语<br><code>sd</code>：信德语<br><code>sg</code>：Sango<br><code>shn</code>：掸语<br><code>si</code>：僧伽罗语<br><code>sk</code>：斯洛伐克语<br><code>sl</code>：斯洛文尼亚语<br><code>sm</code>：萨摩亚语<br><code>sn</code>：修纳语<br><code>so</code>：索马里语<br><code>sq</code>：阿尔巴尼亚语<br><code>sr</code>：塞尔维亚语<br><code>ss</code>：斯瓦特语<br><code>st</code>：塞索托语<br><code>su</code>：巽他语<br><code>sv</code>：瑞典语<br><code>sw</code>：斯瓦希里语<br><code>szl</code>：西里西亚语<br><code>ta</code>：泰米尔语<br><code>te</code>：泰卢固语<br><code>tet</code>：德顿语<br><code>tg</code>：塔吉克语<br><code>th</code>：泰语<br><code>ti</code>：提格里尼亚语<br><code>tk</code>：土库曼语<br><code>tn</code>：茨瓦纳语<br><code>tr</code>：土耳其语<br><code>ts</code>：聪加语<br><code>tt</code>：鞑靼语<br><code>ug</code>：维吾尔语<br><code>uk</code>：乌克兰语<br><code>ur</code>：乌尔都语<br><code>uz</code>：乌兹别克语<br><code>vi</code>：越南语<br><code>xh</code>：科萨语<br><code>yi</code>：意第绪语<br><code>yo</code>：约鲁巴语<br><code>yua</code>：尤卡坦玛雅语<br><code>yue</code>：粤语<br><code>zh</code>：简体中文<br><code>zh-TW</code>：中文（繁体）<br><code>zu</code>：祖鲁语</p><p><strong>注意</strong>：多语言方式，则使用 <code>/</code> 分割，如：<code>en/ja</code>，表示英语和日语。</p>",
+          "example": "zh-TW",
+          "member": "string",
+          "name": "TranslateDstLanguage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕处理类型：</p><ul><li>0：ASR识别字幕</li><li>1：纯字幕翻译</li><li>2：OCR识别字幕</li></ul><p><strong>注意</strong>：不传的情况下默认类型为 ASR识别字幕</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProcessType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕OCR提取框选区域配置</p>",
+          "example": "无",
+          "member": "MPSSelectingSubtitleAreasConfig",
+          "name": "SelectingSubtitleAreasConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人识别开关，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别；<br>默认不开启说话人识别。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeakerMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人识别输出到字幕文件，可选值：<br>0：表示不输出到字幕文件；<br>1：表示输出到vtt字幕文件<br>注意：使用此参数SpeakerMode的值不能为0；<br>默认不输出到字幕文件。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeakerLabel",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSSmartSubtitleTemplateForUpdate": {
+      "document": "MPS智能字幕模板输入",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>智能字幕模板唯一标识</p>",
+          "example": "30188",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能字幕模板名称<br>长度限制：64 个字符。</p>",
+          "example": "智能字幕",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能字幕模板描述信息<br>长度限制：256 个字符。</p>",
+          "example": "智能字幕模版",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能字幕字幕语言类型<br>0: 源语言<br>1: 翻译语言<br>2: 源语言+翻译语言<br>当TranslateSwitch为OFF时仅支持取0<br>当TranslateSwitch为ON时仅支持取1或2</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SubtitleType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能字幕视频源语言<br>OCR识别仅支持以下语言：<br><code>zh_en</code>：中英<br><code>multi</code>：其他<br>ASR识别和纯字幕翻译当前支持以下语言：<br><code>auto</code>：自动识别<br><code>zh</code>：简体中文<br><code>en</code>：英语<br><code>ja</code>：日语<br><code>ko</code>：韩语<br><code>zh-PY</code>：中英粤<br><code>zh_medical</code>：中文医疗<br><code>vi</code>：越南语<br><code>ms</code>：马来语<br><code>id</code>：印度尼西亚语<br><code>fil</code>：菲律宾语<br><code>th</code>：泰语<br><code>pt</code>：葡萄牙语<br><code>tr</code>：土耳其语<br><code>ar</code>：阿拉伯语<br><code>es</code>：西班牙语<br><code>hi</code>：印地语<br><code>fr</code>：法语<br><code>de</code>：德语<br><code>it</code>：意大利语<br><code>zh_dialect</code>：中文方言<br><code>zh_en</code>：中英<br><code>yue</code>：粤语<br><code>ru</code>：俄语<br><code>prime_zh</code>：中英方言<br><code>af-ZA</code>：南非荷兰语（南非）<br><code>sq-AL</code>：阿尔巴尼亚语（阿尔巴尼亚）<br><code>am-ET</code>：阿姆哈拉语（埃塞俄比亚）<br><code>ar-DZ</code>：阿拉伯语（阿尔及利亚）<br><code>ar-BH</code>：阿拉伯语（巴林）<br><code>ar-EG</code>：阿拉伯语（埃及）<br><code>ar-IQ</code>：阿拉伯语（伊拉克）<br><code>ar-IL</code>：阿拉伯语（以色列）<br><code>ar-JO</code>：阿拉伯语（约旦）<br><code>ar-KW</code>：阿拉伯语（科威特）<br><code>ar-LB</code>：阿拉伯语（黎巴嫩）<br><code>ar-MR</code>：阿拉伯语（毛里塔尼亚）<br><code>ar-MA</code>：阿拉伯语（摩洛哥）<br><code>ar-OM</code>：阿拉伯语（阿曼）<br><code>ar-QA</code>：阿拉伯语（卡塔尔）<br><code>ar-SA</code>：阿拉伯语（沙特阿拉伯）<br><code>ar-PS</code>：阿拉伯语（巴勒斯坦国）<br><code>ar-SY</code>：阿拉伯语（叙利亚）<br><code>ar-TN</code>：阿拉伯语（突尼斯）<br><code>ar-AE</code>：阿拉伯语（阿拉伯联合酋长国）<br><code>ar-YE</code>：阿拉伯语（也门）<br><code>hy-AM</code>：亚美尼亚语（亚美尼亚）<br><code>az-AZ</code>：阿塞拜疆语（阿塞拜疆）<br><code>eu-ES</code>：巴斯克语（西班牙）<br><code>bn-BD</code>：孟加拉语（孟加拉）<br><code>bn-IN</code>：孟加拉语（印度）<br><code>bs-BA</code>：波斯尼亚语（波斯尼亚和黑塞哥维那）<br><code>bg-BG</code>：保加利亚语（保加利亚）<br><code>my-MM</code>：缅甸语（缅甸）<br><code>ca-ES</code>：加泰罗尼亚语（西班牙）<br><code>hr-HR</code>：克罗地亚语（克罗地亚）<br><code>cs-CZ</code>：捷克语（捷克共和国）<br><code>da-DK</code>：丹麦语（丹麦）<br><code>nl-BE</code>：荷兰语（比利时）<br><code>nl-NL</code>：荷兰语（荷兰）<br><code>en-AU</code>：英语（澳大利亚）<br><code>en-CA</code>：英语（加拿大）<br><code>en-GH</code>：英语（加纳）<br><code>en-HK</code>：英语（中国香港）<br><code>en-IN</code>：英语（印度）<br><code>en-IE</code>：英语（爱尔兰）<br><code>en-KE</code>：英语（肯尼亚）<br><code>en-NZ</code>：英语（新西兰）<br><code>en-NG</code>：英语（尼日利亚）<br><code>en-PK</code>：英语（巴基斯坦）<br><code>en-PH</code>：英语（菲律宾）<br><code>en-SG</code>：英语（新加坡）<br><code>en-ZA</code>：英语（南非）<br><code>en-TZ</code>：英语（坦桑尼亚）<br><code>en-GB</code>：英语（英国）<br><code>en-US</code>：英语（美国）<br><code>et-EE</code>：爱沙尼亚语（爱沙尼亚）<br><code>fil-PH</code>：菲律宾语（菲律宾）<br><code>fi-FI</code>：芬兰语（芬兰）<br><code>fr-BE</code>：法语（比利时）<br><code>fr-CA</code>：法语（加拿大）<br><code>fr-FR</code>：法语（法国）<br><code>fr-CH</code>：法语（瑞士）<br><code>gl-ES</code>：加利西亚语（西班牙）<br><code>ka-GE</code>：格鲁吉亚语（格鲁吉亚）<br><code>el-GR</code>：希腊语（希腊）<br><code>gu-IN</code>：古吉拉特语（印度）<br><code>iw-IL</code>：希伯来语（以色列）<br><code>hi-IN</code>：印地语（印度）<br><code>hu-HU</code>：匈牙利语（匈牙利）<br><code>is-IS</code>：冰岛语（冰岛）<br><code>id-ID</code>：印度尼西亚语（印度尼西亚）<br><code>it-IT</code>：意大利语（意大利）<br><code>it-CH</code>：意大利语（瑞士）<br><code>ja-JP</code>：日语（日本）<br><code>jv-ID</code>：爪哇语（印度尼西亚）<br><code>kn-IN</code>：卡纳达语（印度）<br><code>kk-KZ</code>：哈萨克语（哈萨克斯坦）<br><code>km-KH</code>：高棉语（柬埔寨）<br><code>rw-RW</code>：卢旺达语（卢旺达）<br><code>ko-KR</code>：韩语（韩国）<br><code>lo-LA</code>：老挝语（老挝）<br><code>lv-LV</code>：拉脱维亚语（拉脱维亚）<br><code>lt-LT</code>：立陶宛语（立陶宛）<br><code>mk-MK</code>：马其顿语（北马其顿）<br><code>ms-MY</code>：马来语（马来西亚）<br><code>ml-IN</code>：马拉雅拉姆语（印度）<br><code>mr-IN</code>：马拉地语（印度）<br><code>mn-MN</code>：蒙古语（蒙古）<br><code>ne-NP</code>：尼泊尔语（尼泊尔）<br><code>no-NO</code>：博克马尔挪威语（挪威）<br><code>fa-IR</code>：波斯语（伊朗）<br><code>pl-PL</code>：波兰语（波兰）<br><code>pt-BR</code>：葡萄牙语（巴西）<br><code>pt-PT</code>：葡萄牙语（葡萄牙）<br><code>ro-RO</code>：罗马尼亚语（罗马尼亚）<br><code>ru-RU</code>：俄语（俄罗斯）<br><code>sr-RS</code>：塞尔维亚语（塞尔维亚）<br><code>si-LK</code>：僧伽罗语（斯里兰卡）<br><code>sk-SK</code>：斯洛伐克语（斯洛伐克）<br><code>sl-SI</code>：斯洛文尼亚语（斯洛文尼亚）<br><code>st-ZA</code>：南索托语（南非）<br><code>es-AR</code>：西班牙语（阿根廷）<br><code>es-BO</code>：西班牙语（玻利维亚）<br><code>es-CL</code>：西班牙语（智利）<br><code>es-CO</code>：西班牙语（哥伦比亚）<br><code>es-CR</code>：西班牙语（哥斯达黎加）<br><code>es-DO</code>：西班牙语（多米尼加共和国）<br><code>es-EC</code>：西班牙语（厄瓜多尔）<br><code>es-SV</code>：西班牙语（萨尔瓦多）<br><code>es-GT</code>：西班牙语（危地马拉）<br><code>es-HN</code>：西班牙语（洪都拉斯）<br><code>es-MX</code>：西班牙语（墨西哥）<br><code>es-NI</code>：西班牙语（尼加拉瓜）<br><code>es-PA</code>：西班牙语（巴拿马）<br><code>es-PY</code>：西班牙语（巴拉圭）<br><code>es-PE</code>：西班牙语（秘鲁）<br><code>es-PR</code>：西班牙语（波多黎各）<br><code>es-ES</code>：西班牙语（西班牙）<br><code>es-US</code>：西班牙语（美国）<br><code>es-UY</code>：西班牙语（乌拉圭）<br><code>es-VE</code>：西班牙语（委内瑞拉）<br><code>su-ID</code>：巽他语（印度尼西亚）<br><code>sw-KE</code>：斯瓦希里语（肯尼亚）<br><code>sw-TZ</code>：斯瓦希里语（坦桑尼亚）<br><code>sv-SE</code>：瑞典语（瑞典）<br><code>ta-IN</code>：泰米尔语（印度）<br><code>ta-MY</code>：泰米尔语（马来西亚）<br><code>ta-SG</code>：泰米尔语（新加坡）<br><code>ta-LK</code>：泰米尔语（斯里兰卡）<br><code>te-IN</code>：泰卢固语（印度）<br><code>th-TH</code>：泰语（泰国）<br><code>ts-ZA</code>：聪加语（南非）<br><code>tr-TR</code>：土耳其语（土耳其）<br><code>uk-UA</code>：乌克兰语（乌克兰）<br><code>ur-IN</code>：乌尔都语（印度）<br><code>ur-PK</code>：乌尔都语（巴基斯坦）<br><code>uz-UZ</code>：乌兹别克语（乌兹别克斯坦）<br><code>ve-ZA</code>：文达语（南非）<br><code>vi-VN</code>：越南语（越南）<br><code>xh-ZA</code>：科萨语（南非）<br><code>zu-ZA</code>：祖鲁语（南非）</p>",
+          "example": "en",
+          "member": "string",
+          "name": "VideoSrcLanguage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能字幕文件格式:</p><ul><li>ASR识别翻译处理类型下：<ul><li>vtt: WebVTT 格式字幕</li><li>srt: SRT 格式字幕</li><li>不填或填空：不生成字幕文件</li></ul></li><li>纯字幕翻译处理类型下：<ul><li>original：与源文件一致</li><li>vtt: WebVTT 格式字幕</li><li>srt: SRT 格式字幕</li></ul></li><li>OCR识别翻译处理类型下：<ul><li>vtt: WebVTT 格式字幕</li><li>srt: SRT 格式字幕</li></ul></li></ul><p><strong>注意</strong>：</p><ul><li>ASR识别方式下，翻译大于等于2种语言时不允许传空或不传；</li><li>纯字幕翻译方式下，不允许传空或不传</li><li>OCR类型的任务，在开启压制时，允许不传或传空</li></ul>",
+          "example": "vtt",
+          "member": "string",
+          "name": "SubtitleFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕翻译开关<br><code>ON</code>: 开启翻译<br><code>OFF</code>: 关闭翻译</p><p><strong>注意</strong>：纯字幕翻译方式下，不传默认是打开的，不允许传空或<code>OFF</code>；</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "TranslateSwitch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕翻译目标语言<br>当TranslateSwitch为ON的时候生效，翻译语言列表：<br><code>ab</code>：阿布哈兹语<br><code>ace</code>：亚齐语<br><code>ach</code>：阿乔利语<br><code>af</code>：南非荷兰语<br><code>ak</code>：契维语（阿坎语）<br><code>am</code>：Amharic<br><code>ar</code>：阿拉伯语<br><code>as</code>：阿萨姆语<br><code>ay</code>：艾马拉语<br><code>az</code>：阿塞拜疆语<br><code>ba</code>：巴什基尔语<br><code>ban</code>：巴厘语<br><code>bbc</code>：巴塔克托巴语<br><code>bem</code>：Bemba<br><code>bew</code>：Betawi<br><code>bg</code>：保加利亚语<br><code>bho</code>：博杰普尔语<br><code>bik</code>：Bikol<br><code>bm</code>：班巴拉语<br><code>bn</code>：孟加拉语<br><code>br</code>：布列塔尼语<br><code>bs</code>：波斯尼亚语<br><code>btx</code>：巴塔克卡罗语<br><code>bts</code>：巴塔克西马隆贡语<br><code>bua</code>：布里亚特语<br><code>ca</code>：加泰罗尼亚语<br><code>ceb</code>：宿务语<br><code>cgg</code>：Kiga<br><code>chm</code>：草原马里语<br><code>ckb</code>：库尔德语（索拉尼语）<br><code>cnh</code>：哈卡钦语<br><code>co</code>：科西嘉语<br><code>crh</code>：克里米亚鞑靼语<br><code>crs</code>：塞舌尔克里奥尔语<br><code>cs</code>：捷克语<br><code>cv</code>：楚瓦什语<br><code>cy</code>：威尔士语<br><code>da</code>：丹麦语<br><code>de</code>：德语<br><code>din</code>：Dinka<br><code>doi</code>：多格来语<br><code>dov</code>：敦贝语<br><code>dv</code>：第维埃语<br><code>dz</code>：宗卡语<br><code>ee</code>：Ewe<br><code>el</code>：希腊语<br><code>en</code>：英语<br><code>eo</code>：世界语<br><code>es</code>：西班牙语<br><code>et</code>：爱沙尼亚语<br><code>eu</code>：巴斯克语<br><code>fa</code>：波斯语<br><code>ff</code>：富拉语<br><code>fi</code>：芬兰语<br><code>fil</code>：菲律宾语（塔加拉语）<br><code>fj</code>：斐济语<br><code>fr</code>：法语<br><code>fr-CA</code>：法语（加拿大）<br><code>fr-FR</code>：法语（法国）<br><code>fy</code>：弗里斯兰语<br><code>ga</code>：爱尔兰语<br><code>gaa</code>：加 (Ga) 语<br><code>gd</code>：苏格兰盖尔语<br><code>gl</code>：加利西亚语<br><code>gn</code>：瓜拉尼语<br><code>gom</code>：贡根语<br><code>gu</code>：古吉拉特语<br><code>gv</code>：马恩岛语<br><code>ha</code>：Hausa<br><code>haw</code>：夏威夷语<br><code>he</code>：希伯来语<br><code>hi</code>：印地语<br><code>hil</code>：希利盖农语<br><code>hmn</code>：苗语<br><code>hr</code>：克罗地亚语<br><code>hrx</code>：洪斯吕克语<br><code>ht</code>：海地克里奥尔语<br><code>hu</code>：匈牙利语<br><code>hy</code>：亚美尼亚语<br><code>id</code>：印度尼西亚语<br><code>ig</code>：Igbo<br><code>ilo</code>：伊洛果语<br><code>is</code>：冰岛语<br><code>it</code>：意大利语<br><code>iw</code>：希伯来语<br><code>ja</code>：日语<br><code>jv</code>：爪哇语<br><code>ka</code>：格鲁吉亚语<br><code>kk</code>：哈萨克语<br><code>km</code>：高棉语<br><code>kn</code>：卡纳达语<br><code>ko</code>：韩语<br><code>kri</code>：Krio<br><code>ku</code>：库尔德语（库尔曼吉语）<br><code>ktu</code>：吉土巴语<br><code>ky</code>：吉尔吉斯语<br><code>la</code>：拉丁语<br><code>lb</code>：卢森堡语<br><code>lg</code>：干达语（卢干达语）<br><code>li</code>：林堡语<br><code>lij</code>：利古里亚语<br><code>lmo</code>：伦巴第语<br><code>ln</code>：林加拉语<br><code>lo</code>：老挝语<br><code>lt</code>：立陶宛语<br><code>ltg</code>：拉特加莱语<br><code>luo</code>：Luo<br><code>lus</code>：米佐语<br><code>lv</code>：拉脱维亚语<br><code>mai</code>：迈蒂利语<br><code>mak</code>：马卡萨<br><code>mg</code>：马尔加什语<br><code>mi</code>：毛利语<br><code>min</code>：米南语<br><code>mk</code>：马其顿语<br><code>ml</code>：马拉雅拉姆语<br><code>mn</code>：蒙古语<br><code>mr</code>：马拉地语<br><code>ms</code>：马来语<br><code>mt</code>：马耳他语<br><code>my</code>：缅甸语<br><code>ne</code>：尼泊尔语<br><code>new</code>：尼瓦尔语<br><code>nl</code>：荷兰语<br><code>no</code>：挪威语<br><code>nr</code>：恩德贝莱语（南部）<br><code>nso</code>：北索托语（塞佩蒂语）<br><code>nus</code>：努尔语<br><code>ny</code>：齐切瓦语（尼扬贾语）<br><code>oc</code>：奥克斯坦语<br><code>om</code>：Oromo<br><code>or</code>：奥里亚语<br><code>pa</code>：旁遮普语<br><code>pag</code>：邦阿西楠语<br><code>pam</code>：邦板牙语<br><code>pap</code>：Papiamento<br><code>pl</code>：波兰语<br><code>ps</code>：Pashto<br><code>pt</code>：葡萄牙语<br><code>pt-BR</code>：葡萄牙语（巴西）<br><code>pt-PT</code>：葡萄牙语（葡萄牙）<br><code>qu</code>：克丘亚语<br><code>ro</code>：罗马尼亚语<br><code>rom</code>：罗姆语<br><code>rn</code>：Rundi<br><code>ru</code>：俄语<br><code>rw</code>：卢旺达语<br><code>sa</code>：梵语<br><code>scn</code>：西西里语<br><code>sd</code>：信德语<br><code>sg</code>：Sango<br><code>shn</code>：掸语<br><code>si</code>：僧伽罗语<br><code>sk</code>：斯洛伐克语<br><code>sl</code>：斯洛文尼亚语<br><code>sm</code>：萨摩亚语<br><code>sn</code>：修纳语<br><code>so</code>：索马里语<br><code>sq</code>：阿尔巴尼亚语<br><code>sr</code>：塞尔维亚语<br><code>ss</code>：斯瓦特语<br><code>st</code>：塞索托语<br><code>su</code>：巽他语<br><code>sv</code>：瑞典语<br><code>sw</code>：斯瓦希里语<br><code>szl</code>：西里西亚语<br><code>ta</code>：泰米尔语<br><code>te</code>：泰卢固语<br><code>tet</code>：德顿语<br><code>tg</code>：塔吉克语<br><code>th</code>：泰语<br><code>ti</code>：提格里尼亚语<br><code>tk</code>：土库曼语<br><code>tn</code>：茨瓦纳语<br><code>tr</code>：土耳其语<br><code>ts</code>：聪加语<br><code>tt</code>：鞑靼语<br><code>ug</code>：维吾尔语<br><code>uk</code>：乌克兰语<br><code>ur</code>：乌尔都语<br><code>uz</code>：乌兹别克语<br><code>vi</code>：越南语<br><code>xh</code>：科萨语<br><code>yi</code>：意第绪语<br><code>yo</code>：约鲁巴语<br><code>yua</code>：尤卡坦玛雅语<br><code>yue</code>：粤语<br><code>zh</code>：简体中文<br><code>zh-TW</code>：中文（繁体）<br><code>zu</code>：祖鲁语</p><p><strong>注意</strong>：多语言方式，则使用 <code>/</code> 分割，如：<code>en/ja</code>，表示英语和日语。</p>",
+          "example": "zh-TW",
+          "member": "string",
+          "name": "TranslateDstLanguage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕处理类型：</p><ul><li>0：ASR识别字幕</li><li>1：纯字幕翻译</li><li>2：OCR识别字幕</li></ul><p><strong>注意</strong>：不传的情况下，默认是ASR方式</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProcessType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕OCR提取框选区域配置</p>",
+          "example": "无",
+          "member": "MPSSelectingSubtitleAreasConfig",
+          "name": "SelectingSubtitleAreasConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人识别开关，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeakerMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人识别输出到字幕文件，可选值：<br>0：表示不输出到字幕文件；<br>1：表示输出到vtt字幕文件<br>注意：使用此参数SpeakerMode的值不能为0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeakerLabel",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSSmartSubtitlesTaskInput": {
+      "document": "智能字幕输入结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>智能字幕模板 ID。</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Definition",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能字幕自定义参数，当 Definition 填 0 时有效。 该参数用于高度定制场景，建议您优先使用 Definition 指定智能字幕参数。</p>",
+          "example": "无",
+          "member": "MPSRawSmartSubtitleParameter",
+          "name": "RawParameter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "MPSSubTaskResult": {
       "document": "MPS 具体子任务查询结果类型。",
@@ -29106,6 +30857,161 @@
         }
       ],
       "usage": "out"
+    },
+    "MPSUpdateSmartEraseSubtitleConfig": {
+      "document": "智能擦除模板去字幕配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>字幕擦除方式。 <strong>自动擦除：</strong>通过AI模型自动识别视频中的字幕文本内容，进行无痕化擦除，生成新的视频。但画面干扰、特殊字幕样式可能会带来一定漏擦误擦问题，可以通过指定区域擦除处理。 当使用自动擦除时，若您不指定AutoAreas，将对默认区域（画面中下部）进行自动擦除；若指定AutoAreas，将改为对您指定的区域进行自动擦除。 <strong>指定区域擦除：</strong>若您的字幕位置较固定，建议您直接指定擦除区域，最大程度减少漏擦的情况。 当您选择指定区域擦除时，请在CustomAreas中至少传入一个指定区域。 </p><ul><li>auto 自动擦除 -</li><li>custom 指定区域擦除</li></ul>",
+          "example": "auto",
+          "member": "string",
+          "name": "SubtitleEraseMethod",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕擦除模型。 <strong>标准版（推荐）：</strong>若您的字幕样式标准，通常建议选择该版本，细节无痕化效果更好。 <strong>区域版：</strong>若您的字幕存在花体、阴影、动效等特殊样式，建议选择区域版，擦除面积更大，但细节效果不如标准版。 - standard 标准模型 - area 区域模型</p>",
+          "example": "standard",
+          "member": "string",
+          "name": "SubtitleModel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启OCR字幕提取，默认取OFF。 当且仅当SubtitleEraseMethod取auto时支持开启OCR字幕提取，开启后将识别自动擦除区域内出现时间最长且最稳定的文字区域为字幕区域，对字幕区域中的文字进行提取和擦除。 </p><ul><li>ON 开启</li><li>OFF 关闭</li></ul>",
+          "example": "ON",
+          "member": "string",
+          "name": "OcrSwitch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕语言，用于指导OCR识别，默认取zh_en；<br>仅当OcrSwitch取&quot;ON&quot;时生效。 </p><ul><li>zh_en 中英文 </li><li>multi 其他 其他具体支持识别如下语言： 中文、英文、日文、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语、印地语、阿拉伯语、印度-孟加拉语、印度-古吉拉特语、印度-卡纳达语 、印度-马拉亚拉姆语 、印度-泰米尔语、印度-泰卢固语、斯洛文尼亚语、波兰语、加泰罗尼亚语、波斯尼亚语、捷克语、爱沙尼亚语、克罗地亚语、旁遮普语、马拉地语、阿塞拜疆语、印尼语、卢森堡语 、立陶宛语、拉脱维亚语、马耳他语、斯洛伐克语、土耳其语、哈萨克语、希腊语、爱尔兰语、白俄罗斯语、高棉语、他加禄语、普什图语、波斯语、塔吉克斯坦语</li></ul>",
+          "example": "zh_en",
+          "member": "string",
+          "name": "SubtitleLang",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕文件格式，默认取vtt；仅当OcrSwitch取&quot;ON&quot;时生效。</p><ul><li>srt srt格式 </li><li>vtt WebVTT格式</li></ul>",
+          "example": "vtt",
+          "member": "string",
+          "name": "SubtitleFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启字幕翻译，默认取OFF；仅当OcrSwitch取&quot;ON&quot;时生效。 </p><ul><li>ON 开启 </li><li>OFF 关闭</li></ul>",
+          "example": "ON",
+          "member": "string",
+          "name": "TransSwitch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕翻译目标语言，默认取en；仅当TransSwitch取&quot;ON&quot;时生效。当前支持以下语言：<br>zh：简体中文<br>en：英语<br>ja：日语<br>ko：韩语<br>fr：法语<br>es：西班牙语<br>it：意大利语<br>de：德语<br>tr：土耳其语<br>ru：俄语<br>pt：葡萄牙语<br>vi：越南语<br>id：印度尼西亚语<br>ms：马来语<br>th：泰语<br>ar：阿拉伯语<br>hi：印地语</p>",
+          "example": "en",
+          "member": "string",
+          "name": "TransDstLang",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动擦除自定义区域。 对选定区域，利用AI模型自动检测其中存在的擦除目标并擦除。<br>注意：当擦除方式选择custom时，此参数将不会生效；修改模板时，清除区域请传入[]，不传时将保持模板区域信息不变。</p>",
+          "example": "无",
+          "member": "MPSEraseArea",
+          "name": "AutoAreas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定擦除自定义区域。 对选定区域，在选定时间段内不进行检测识别直接进行擦除。 注意：修改模板时，清除区域请传入[]，不传时将保持模板区域信息不变。</p>",
+          "example": "无",
+          "member": "MPSEraseTimeArea",
+          "name": "CustomAreas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MPSUpdateSmartEraseWatermarkConfig": {
+      "document": "智能擦除模板去水印配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>水印擦除方式。<br> <strong>自动擦除：</strong>通过A模型自动识别视频中的水印，擦除后生成新的视频。适用于动态水印。 当使用自动擦除时，若您不指定AutoAreas，将对视频全屏进行自动擦除；若指定AutoAreas，将改为对您指定的区域进行自动擦除。<br><strong>指定区域擦除：</strong>针对位置较固定的静态水印，建议您直接指定擦除区域。 当您选择指定区域擦除时，请至少传入一个指定区域。 - auto 自动擦除 - custom 指定区域擦除</p>",
+          "example": "auto",
+          "member": "string",
+          "name": "WatermarkEraseMethod",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>水印擦除模型。 基础版：效果一般，性价比高，适合动画或背景较干净的视频。 高级版：效果更好，适合短剧等现实风格视频。 </p><ul><li>basic 基础版 </li><li>advanced 高级版</li></ul>",
+          "example": "advanced",
+          "member": "string",
+          "name": "WatermarkModel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动擦除自定义区域。 对选定区域，利用AI模型自动检测其中存在的擦除目标并擦除。 注意，当擦除方式为custom时，此参数将不会生效。清除区域请传入[]，不传时将保持模板区域信息不变。</p>",
+          "example": "无",
+          "member": "MPSEraseArea",
+          "name": "AutoAreas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定擦除自定义区域。 对选定区域，在选定时间段内不进行检测识别直接进行擦除。 注意：清除区域请传入[]，不传时将保持模板区域信息不变。</p>",
+          "example": "无",
+          "member": "MPSEraseTimeArea",
+          "name": "CustomAreas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ManageTaskRequest": {
       "document": "ManageTask请求参数结构体",
@@ -33728,8 +35634,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>Transcode： 转码模板，目前仅支持修改增强参数</li><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>",
-          "example": "Transcode",
+          "document": "<p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>",
+          "example": "SmartSubtitle",
           "member": "string",
           "name": "TemplateType",
           "required": true,
@@ -33738,11 +35644,38 @@
         {
           "disabled": false,
           "document": "<p>MPS 修改模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧修改用户自定义的 MPS 任务模板。<br> 目前仅支持通过此方式修改以下任务类型的模板：</p><ol><li>音视频增强：仅支持填写“<a href=\"https://cloud.tencent.com/document/api/862/37578\">修改转码模板</a>”接口中的 Name、Comment、RemoveVideo、RemoveAudio、VideoTemplate、AudioTemplate 和 EnhanceConfig 几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能分析：仅支持填写“<a href=\"https://cloud.tencent.com/document/api/862/40246\">修改内容分析模板</a>”接口中的Name、Comment、ClassificationConfigure、TagConfigure、CoverConfigure、FrameTagConfigure几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能字幕：仅支持填写“<a href=\"https://cloud.tencent.com/document/api/862/117001\">修改智能字幕模板</a>”接口中的Name、Comment、TranslateSwitch、VideoSrcLanguage、SubtitleFormat、SubtitleType、AsrHotWordsConfigure、TranslateDstLanguage、ProcessType几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能擦除：仅支持填写“<a href=\"https://cloud.tencent.com/document/api/862/123732\">修改智能擦除模板</a>”接口中的Name、Comment、EraseType、EraseSubtitleConfig、EraseWatermarkConfig、ErasePrivacyConfig几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li></ol>",
-          "example": "{\"Definition\":24214,\"Container\":\"mp4\",\"Name\":\"test\",\"RemoveAudio\":1,\"VideoTemplate\":{\"Codec\":\"h264\",\"Fps\":0,\"Bitrate\":0},\"EnhanceConfig\":{\"VideoEnhance\":{\"FrameRate\":{\"Switch\":\"ON\",\"Fps\":50}}}}",
+          "example": "{ \"Definition\": 30021, \"TranslateSwitch\": \"ON\", \"Name\": \"SmartSubtitle\", \"VideoSrcLanguage\": \"zh\",  \"TranslateDstLanguage\": \"en\",\"SubtitleType\": 1}",
           "member": "string",
           "name": "MPSModifyTemplateParams",
-          "required": true,
+          "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能分析模板参数，MPSModifyTemplateParams为空时有效。</p>",
+          "example": "无",
+          "member": "MPSAIAnalysisTemplateForUpdate",
+          "name": "AIAnalysisTemplate",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能字幕模板参数，MPSModifyTemplateParams为空时有效。</p>",
+          "example": "无",
+          "member": "MPSSmartSubtitleTemplateForUpdate",
+          "name": "SmartSubtitleTemplate",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能擦除模板参数，MPSModifyTemplateParams为空时有效。</p>",
+          "example": "无",
+          "member": "MPSSmartEraseTemplateForUpdate",
+          "name": "SmartEraseTemplate",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -35957,7 +37890,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "播放器配置名字。",
+          "document": "<p>播放器配置名字。</p>",
           "example": "MyPlayConfigName",
           "member": "string",
           "name": "Name",
@@ -35967,7 +37900,7 @@
         },
         {
           "disabled": false,
-          "document": "播放器配置类型，取值范围：\n<li>Preset：系统预置配置；</li>\n<li>Custom：用户自定义配置。</li>",
+          "document": "<p>播放器配置类型，取值范围：</p><li>Preset：系统预置配置；</li><li>Custom：用户自定义配置。</li>",
           "example": "Preset",
           "member": "string",
           "name": "Type",
@@ -35977,7 +37910,7 @@
         },
         {
           "disabled": false,
-          "document": "播放的音视频类型，可选值有：\n<li>AdaptiveDynamicStream：自适应码流输出；</li>\n<li>Transcode：转码输出；</li>\n<li>Original：原始音视频。</li>",
+          "document": "<p>播放的音视频类型，可选值有：</p><li>AdaptiveDynamicStream：自适应码流输出；</li><li>Transcode：转码输出；</li><li>Original：原始音视频。</li>",
           "example": "AdaptiveDynamicStream",
           "member": "string",
           "name": "AudioVideoType",
@@ -35987,7 +37920,7 @@
         },
         {
           "disabled": false,
-          "document": "播放 DRM 保护的自适应码流开关：\n<li>ON：开启，表示仅播放 DRM  保护的自适应码流输出；</li>\n<li>OFF：关闭，表示播放未加密的自适应码流输出。</li>",
+          "document": "<p>播放 DRM 保护的自适应码流开关：</p><li>ON：开启，表示仅播放 DRM  保护的自适应码流输出；</li><li>OFF：关闭，表示播放未加密的自适应码流输出。</li>",
           "example": "ON",
           "member": "string",
           "name": "DrmSwitch",
@@ -35997,7 +37930,7 @@
         },
         {
           "disabled": false,
-          "document": "允许输出的未加密的自适应码流模板 ID。",
+          "document": "<p>允许输出的未加密的自适应码流模板 ID。</p>",
           "example": "10",
           "member": "uint64",
           "name": "AdaptiveDynamicStreamingDefinition",
@@ -36007,7 +37940,7 @@
         },
         {
           "disabled": false,
-          "document": "允许输出的 DRM 自适应码流模板内容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>允许输出的 DRM 自适应码流模板内容。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DrmStreamingsInfo",
           "name": "DrmStreamingsInfo",
@@ -36017,7 +37950,7 @@
         },
         {
           "disabled": false,
-          "document": "允许输出的转码模板 ID。",
+          "document": "<p>允许输出的转码模板 ID。</p>",
           "example": "10",
           "member": "uint64",
           "name": "TranscodeDefinition",
@@ -36027,7 +37960,7 @@
         },
         {
           "disabled": false,
-          "document": "允许输出的雪碧图模板 ID。",
+          "document": "<p>允许输出的雪碧图模板 ID。</p>",
           "example": "10",
           "member": "uint64",
           "name": "ImageSpriteDefinition",
@@ -36037,7 +37970,7 @@
         },
         {
           "disabled": false,
-          "document": "播放器对不于不同分辨率的子流展示名字。",
+          "document": "<p>播放器对不于不同分辨率的子流展示名字。</p>",
           "example": "无",
           "member": "ResolutionNameInfo",
           "name": "ResolutionNameSet",
@@ -36047,7 +37980,7 @@
         },
         {
           "disabled": false,
-          "document": "播放器配置创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "document": "<p>播放器配置创建时间，使用 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式</a>。</p>",
           "example": "2023-09-08T02:23:29Z",
           "member": "string",
           "name": "CreateTime",
@@ -36057,7 +37990,7 @@
         },
         {
           "disabled": false,
-          "document": "播放器配置最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "document": "<p>播放器配置最后修改时间，使用 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式</a>。</p>",
           "example": "2023-09-08T02:23:29Z",
           "member": "string",
           "name": "UpdateTime",
@@ -36067,7 +38000,7 @@
         },
         {
           "disabled": false,
-          "document": "播放时使用的域名。值为 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的域名。",
+          "document": "<p>播放时使用的域名。值为 Default，表示使用<a href=\"https://cloud.tencent.com/document/product/266/33373\">默认分发配置</a>中的域名。</p>",
           "example": "xxx.com",
           "member": "string",
           "name": "Domain",
@@ -36077,7 +38010,7 @@
         },
         {
           "disabled": false,
-          "document": "播放时使用的 Scheme。取值范围：\n<li>Default：使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的 Scheme；</li>\n<li>HTTP；</li>\n<li>HTTPS。</li>",
+          "document": "<p>播放时使用的 Scheme。取值范围：</p><li>Default：使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的 Scheme；</li><li>HTTP；</li><li>HTTPS。</li>",
           "example": "Default",
           "member": "string",
           "name": "Scheme",
@@ -36087,7 +38020,7 @@
         },
         {
           "disabled": false,
-          "document": "模板描述信息。",
+          "document": "<p>模板描述信息。</p>",
           "example": "Your Commment",
           "member": "string",
           "name": "Comment",
@@ -37825,12 +39758,39 @@
         },
         {
           "disabled": false,
-          "document": "<p>该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。<br>视频处理参数详情请参考：<a href=\"https://cloud.tencent.com/document/api/862/37578\">MPS 发起媒体处理</a>。<br>填写说明：</p><ol><li>目前仅需要配置 MPS “发起媒体处理”接口中任务配置相关的参数，如 AiAnalysisTask 与 MediaProcessTask，其他参数无需填写。若包含其它参数，系统将自动忽略；</li><li>当前仅支持通过此方式发起智能擦除及音视频增强任务。若配置了其他任务类型的相关参数，系统将自动忽略这些参数；</li><li>音视频增强任务目前不支持使用预置模板发起，可通过 <a href=\"https://cloud.tencent.com/document/product/266/122580\">CreateMPSTemplate</a> 接口创建自定义模板。</li></ol>",
+          "document": "<p>可选参数，该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。不同类型的视频处理参数详情请参考 <a href=\"https://cloud.tencent.com/document/product/266/131209\">使用MPS 媒体 AI 能力</a>，可通过<a href=\"https://cloud.tencent.com/document/product/266/122580\">CreateMPSTemplate</a> 接口创建自定义模板。</p>",
           "example": "{\"AiAnalysisTask\":{\"Definition\":25,\"ExtendedParameter\":\"\"}}",
           "member": "string",
           "name": "MPSProcessMediaParams",
-          "required": true,
+          "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频内容分析类型任务参数，MPSProcessMediaParams为空时有效。</p>",
+          "example": "无",
+          "member": "MPSAiAnalysisTaskInput",
+          "name": "AiAnalysisTask",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能字幕类型任务参数，MPSProcessMediaParams为空时有效。</p>",
+          "example": "无",
+          "member": "MPSSmartSubtitlesTaskInput",
+          "name": "SmartSubtitlesTask",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能擦除类型任务参数，MPSProcessMediaParams为空时有效。</p>",
+          "example": "无",
+          "member": "MPSSmartEraseTaskInput",
+          "name": "SmartEraseTask",
+          "required": false,
+          "type": "object"
         },
         {
           "disabled": false,
@@ -38108,7 +40068,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。\nFileId和MediaStoragePath必须提供其中一个。",
+          "document": "<p>媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 <a href=\"/document/product/266/7830\">视频上传完成事件通知</a> 或 <a href=\"https://console.cloud.tencent.com/vod/media\">云点播控制台</a> 获取该字段。<br>FileId和MediaStoragePath必须提供其中一个。</p>",
           "example": "5285485487985271487",
           "member": "string",
           "name": "FileId",
@@ -38117,7 +40077,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体的存储路径。\n只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以通过MediaStoragePath发起任务。\nFileId和MediaStoragePath必须提供其中一个。",
+          "document": "<p>媒体的存储路径。<br>只有<a href=\"https://cloud.tencent.com/document/product/266/126825\">FileID + Path 模式</a>的子应用可以通过MediaStoragePath发起任务。<br>FileId和MediaStoragePath必须提供其中一个。</p>",
           "example": "/dir1/video.mp4",
           "member": "string",
           "name": "MediaStoragePath",
@@ -38126,7 +40086,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "1500000001",
           "member": "uint64",
           "name": "SubAppId",
@@ -38135,7 +40095,7 @@
         },
         {
           "disabled": false,
-          "document": "视频处理类型任务参数。",
+          "document": "<p>视频处理类型任务参数。</p>",
           "example": "无",
           "member": "MediaProcessTaskInput",
           "name": "MediaProcessTask",
@@ -38144,7 +40104,7 @@
         },
         {
           "disabled": false,
-          "document": "音视频内容审核类型任务参数 \\*。\n<font color=red>\\* 不建议使用</font>，推荐使用 [音视频审核(ReviewAudioVideo)](https://cloud.tencent.com/document/api/266/80283) 或 [图片审核(ReviewImage)](https://cloud.tencent.com/document/api/266/73217)。",
+          "document": "<p>音视频内容审核类型任务参数 *。<br><font color=\"red\">* 不建议使用</font>，推荐使用 <a href=\"https://cloud.tencent.com/document/api/266/80283\">音视频审核(ReviewAudioVideo)</a> 或 <a href=\"https://cloud.tencent.com/document/api/266/73217\">图片审核(ReviewImage)</a>。</p>",
           "example": "无",
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
@@ -38153,7 +40113,7 @@
         },
         {
           "disabled": false,
-          "document": "音视频内容分析类型任务参数。",
+          "document": "<p>音视频内容分析类型任务参数。</p>",
           "example": "无",
           "member": "AiAnalysisTaskInput",
           "name": "AiAnalysisTask",
@@ -38162,7 +40122,7 @@
         },
         {
           "disabled": false,
-          "document": "音视频内容识别类型任务参数。",
+          "document": "<p>音视频内容识别类型任务参数。</p>",
           "example": "无",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
@@ -38171,7 +40131,7 @@
         },
         {
           "disabled": false,
-          "document": "任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "document": "<p>任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "TasksPriority",
@@ -38180,7 +40140,7 @@
         },
         {
           "disabled": false,
-          "document": "任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。",
+          "document": "<p>任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。</p>",
           "example": "Finish",
           "member": "string",
           "name": "TasksNotifyMode",
@@ -38189,7 +40149,7 @@
         },
         {
           "disabled": false,
-          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "document": "<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>",
           "example": "SessionContext",
           "member": "string",
           "name": "SessionContext",
@@ -38198,7 +40158,7 @@
         },
         {
           "disabled": false,
-          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "document": "<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>",
           "example": "SessionId",
           "member": "string",
           "name": "SessionId",
@@ -38207,10 +40167,19 @@
         },
         {
           "disabled": false,
-          "document": "保留字段，特殊用途时使用。",
+          "document": "<p>保留字段，特殊用途时使用。</p>",
           "example": "ExtInfo",
           "member": "string",
           "name": "ExtInfo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>FileID为空时有效，拉取Url生成新媒资产生新FileID，媒体处理产物将作为新媒资的附属产物。</p><p>注意：新媒资会产生存储费用</p>",
+          "example": "https://vodtest.cos.ap-guangzhou.myqcloud.com/video.mp4",
+          "member": "string",
+          "name": "Url",
           "required": false,
           "type": "string"
         }
@@ -38222,7 +40191,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID",
+          "document": "<p>任务 ID</p>",
           "example": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
@@ -38305,7 +40274,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预付费商品实例类型，取值有：\n<li>StarterPackage：点播新手包。</li>\n<li>MiniProgramPlugin：点播小程序插件。</li>\n<li>ResourcePackage：点播资源包。</li>",
+          "document": "<p>预付费商品实例类型，取值有：</p><li>StarterPackage：点播新手包。</li><li>MiniProgramPlugin：点播小程序插件。</li><li>ResourcePackage：点播资源包。</li>",
           "example": "ResourcePackage",
           "member": "string",
           "name": "ProductType",
@@ -38315,7 +40284,7 @@
         },
         {
           "disabled": false,
-          "document": "资源包实例起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "document": "<p>资源包实例起始日期。使用 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式</a>。</p>",
           "example": "2019-02-23T16:00:00Z",
           "member": "string",
           "name": "StartTime",
@@ -38325,7 +40294,7 @@
         },
         {
           "disabled": false,
-          "document": "资源包实例过期日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "document": "<p>资源包实例过期日期。使用 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式</a>。</p>",
           "example": "2020-02-23T16:01:00Z",
           "member": "string",
           "name": "ExpireTime",
@@ -38335,7 +40304,7 @@
         },
         {
           "disabled": false,
-          "document": "资源包实例ID。对应每个资源包，系统会分配相应的资源。续费或者升级资源包时，需要带上这个资源ID。",
+          "document": "<p>资源包实例ID。对应每个资源包，系统会分配相应的资源。续费或者升级资源包时，需要带上这个资源ID。</p>",
           "example": "50011-251007502-27891",
           "member": "string",
           "name": "ProductInstanceId",
@@ -38345,7 +40314,7 @@
         },
         {
           "disabled": false,
-          "document": "系统最近一次扣除资源包的日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "document": "<p>系统最近一次扣除资源包的日期。使用 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式</a>。</p>",
           "example": "2020-02-22T16:00:00Z",
           "member": "string",
           "name": "LastConsumeDate",
@@ -38355,7 +40324,7 @@
         },
         {
           "disabled": false,
-          "document": "资源包绑定 License 状态，取值有：\n<li>0：未绑定。</li>\n<li>1：已绑定。</li>",
+          "document": "<p>资源包绑定 License 状态，取值有：</p><li>0：未绑定。</li><li>1：已绑定。</li>",
           "example": "0",
           "member": "int64",
           "name": "BindStatus",
@@ -38365,8 +40334,8 @@
         },
         {
           "disabled": true,
-          "document": "预付费资源包实例中包含的资源包列表。",
-          "example": "*",
+          "document": "<p>预付费资源包实例中包含的资源包列表。</p>",
+          "example": "无",
           "member": "ProductInstanceRecource",
           "name": "ProductInstanceResourceSet",
           "output_required": true,
@@ -38375,7 +40344,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费资源包实例中包含的资源包列表。",
+          "document": "<p>预付费资源包实例中包含的资源包列表。</p>",
           "example": "无",
           "member": "ProductInstanceResource",
           "name": "ResourceSet",
@@ -38385,7 +40354,7 @@
         },
         {
           "disabled": false,
-          "document": "资源包实例的状态，取值有：\n<li>Effective：生效，可用于计费抵扣。</li>\n<li>Isolated：隔离，不可用于计费抵扣。</li>",
+          "document": "<p>资源包实例的状态，取值有：</p><li>Effective：生效，可用于计费抵扣。</li><li>Isolated：隔离，不可用于计费抵扣。</li>",
           "example": "Effective",
           "member": "string",
           "name": "ProductInstanceStatus",
@@ -38395,7 +40364,7 @@
         },
         {
           "disabled": false,
-          "document": "资源包实例的可退还状态，取值有：\n<li>FullRefund：可全额退款。</li>\n<li>Denied：不可退款。</li>",
+          "document": "<p>资源包实例的可退还状态，取值有：</p><li>FullRefund：可全额退款。</li><li>Denied：不可退款。</li>",
           "example": "Denied",
           "member": "string",
           "name": "RefundStatus",
@@ -38405,7 +40374,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费状态，取值有：\n<li>Never：不自动续费。</li>\n<li>Expire：到期自动续费。</li>\n<li>ExpireOrUseOut：到期或用完自动续费。</li>\n<li>NotSupport：不支持。</li>",
+          "document": "<p>自动续费状态，取值有：</p><li>Never：不自动续费。</li><li>Expire：到期自动续费。</li><li>ExpireOrUseOut：到期或用完自动续费。</li><li>NotSupport：不支持。</li>",
           "example": "Expire",
           "member": "string",
           "name": "RenewStatus",

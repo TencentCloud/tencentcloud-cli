@@ -1,5 +1,13 @@
 {
   "actions": {
+    "BindBusinessResourceConnectorGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindBusinessResourceConnectorGroup\n<公共请求参数>\n\n{\n    \"ServiceId\": 981,\n    \"ConnectorGroupId\": \"ccbiulcd58kci8p7jk00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"63c2ccb8-a88b-4084-8db9-804ffecfa911\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "CreateBusinessResource": [
       {
         "document": "测试用例",

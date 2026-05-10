@@ -324,6 +324,22 @@
         "title": "创建重建索引任务"
       }
     ],
+    "CreateRecordingRuleTask": [
+      {
+        "document": "创建指标预聚合任务",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRecordingRuleTask\n<公共请求参数>\n\n{\n    \"TopicId\": \"e66648c8-0d90-xxxx-8009-b4ee9f4b3c7c\",\n    \"Name\": \"demo\",\n    \"EnableFlag\": 1,\n    \"RecordingRuleContent\": \"sum by (code)(prometheus_http_requests_total)\",\n    \"MetricName\": \"demo_metric\",\n    \"CustomMetricLabels\": [\n        {\n            \"Key\": \"demo_key\",\n            \"Value\": \"demo_value\"\n        }\n    ],\n    \"HasServicesLog\": 2,\n    \"ProcessPeriod\": 1,\n    \"ProcessDelay\": 30,\n    \"DstTopicId\": \"e66648c8-0d90-xxxx-8009-b4ee9f4b3c7c\",\n    \"ProcessStartTime\": 1778308263665\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abdcebec-0242-43af-bb20-270359fb54a7\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "创建指标预聚合任务"
+      }
+    ],
+    "CreateRecordingRuleYamlTask": [
+      {
+        "document": "通过yaml文件创建指标预聚合任务",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRecordingRuleYamlTask\n<公共请求参数>\n\n{\n    \"TopicId\": \"e66648c8-0d90-4a32-8009-b4ee9f4b3c7c\",\n    \"YamlConfigName\": \"demo\",\n    \"EnableFlag\": 1,\n    \"HasServicesLog\": 2,\n    \"ProcessPeriod\": 1,\n    \"ProcessDelay\": 30,\n    \"YamlContent\": \"groups:\\n  - name: example\\n    rules:\\n    - record: code:prometheus_http_requests_total:sum\\n      expr: sum by (code) (prometheus_http_requests_total)\",\n    \"DstTopicId\": \"e66648c8-0d90-4a32-8009-b4ee9f4b3c7c\",\n    \"ProcessStartTime\": 1778309756421\n}",
+        "output": "{\n    \"Response\": {\n        \"YamlId\": \"abdcebec-0242-43af-bb20-270359fb54a7\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "通过yaml文件创建指标预聚合任务"
+      }
+    ],
     "CreateScheduledSql": [
       {
         "document": "创建ScheduledSQL任务",
@@ -358,16 +374,16 @@
     ],
     "CreateTopic": [
       {
-        "document": "创建日志主题",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"29ccb4c0-ab2f-47ab-9dcd-31413b057812\",\n    \"TopicName\": \"testname\",\n    \"Period\": 12\n}",
-        "output": "{\n    \"Response\": {\n        \"TopicId\": \"866f8a15-ae8e-4ab4-afb2-4ff169fa3dc0\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "创建日志主题"
-      },
-      {
         "document": "创建指标主题",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"29ccb4c0-ab2f-47ab-9dcd-31413b057812\",\n    \"TopicName\": \"testname\",\n    \"BizType\": 1,\n    \"Period\": 12\n}",
         "output": "{\n    \"Response\": {\n        \"TopicId\": \"6d069a26-1606-4142-9fa6-17ccee4f9bc9\",\n        \"RequestId\": \"c1731e60-e00d-45ee-a9e8-5343d4f38325\"\n    }\n}",
         "title": "创建指标主题"
+      },
+      {
+        "document": "创建日志主题",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"29ccb4c0-ab2f-47ab-9dcd-31413b057812\",\n    \"TopicName\": \"testname\",\n    \"Period\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicId\": \"866f8a15-ae8e-4ab4-afb2-4ff169fa3dc0\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "创建日志主题"
       }
     ],
     "CreateWebCallback": [
@@ -600,6 +616,22 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNoticeContent\n<公共请求参数>\n\n{\n    \"NoticeContentId\": \"noticetemplate-d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\"\n    }\n}",
         "title": "删除通知内容配置"
+      }
+    ],
+    "DeleteRecordingRuleTask": [
+      {
+        "document": "删除预聚合任务",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecordingRuleTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\",\n    \"TopicId\": \"e66648c8-0d90-4a32-8009-b4ee9f4b3c7c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "删除预聚合任务"
+      }
+    ],
+    "DeleteRecordingRuleYamlTask": [
+      {
+        "document": "删除yaml预聚合任务",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecordingRuleYamlTask\n<公共请求参数>\n\n{\n    \"TopicId\": \"6ef60bec-0242-43af-bb20-270359fxxxx\",\n    \"YamlId\": \"abdcebec-0242-43af-bb20-270359fb54a7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "删除yaml预聚合任务"
       }
     ],
     "DeleteScheduledSql": [
@@ -1032,6 +1064,22 @@
         "title": "获取索引重建任务列表"
       }
     ],
+    "DescribeRecordingRuleTask": [
+      {
+        "document": "用于获取预聚合任务列表",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordingRuleTask\n<公共请求参数>\n\n{\n    \"TopicId\": \"539ba7bc-25e2-4696-bde5-0a5567164xxx\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RecordingRuleTaskInfos\": [\n            {\n                \"CreateTime\": \"2024-07-23 11:39:23\",\n                \"CustomMetricLabels\": [],\n                \"DstTopicId\": \"539ba7bc-25e2-4696-bde5-0a5567164xxx\",\n                \"EnableFlag\": 1,\n                \"HasServicesLog\": 2,\n                \"MetricName\": \"demo\",\n                \"Name\": \"test-1234\",\n                \"ProcessDelay\": 60,\n                \"ProcessPeriod\": 1,\n                \"ProcessStartTime\": 2024,\n                \"RecordingRuleContent\": \"sum by (code)(prometheus_http_requests_total)\",\n                \"Status\": 1,\n                \"TaskId\": \"938a5abf-f121-4d07-b965-3ae5626d1f43\",\n                \"TopicId\": \"539ba7bc-25e2-4696-bde5-0a5567164xxx\",\n                \"UpdateTime\": \"2024-07-23 11:39:23\",\n                \"YamlConfigName\": \"\",\n                \"YamlId\": \"\"\n            }\n        ],\n        \"RequestId\": \"d64d5787-a440-400f-96ea-d9752a347216\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "用于获取预聚合任务列表"
+      }
+    ],
+    "DescribeRecordingRuleYamlTask": [
+      {
+        "document": "用于获取yaml预聚合任务列表",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordingRuleYamlTask\n<公共请求参数>\n\n{\n    \"TopicId\": \"539ba7bc-25e2-4696-bde5-0a5567164xxx\",\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RecordingRuleYamlTaskInfos\": [],\n        \"RequestId\": \"76f39b5e-8476-4247-9331-9d415530d447\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "用于获取yaml预聚合任务列表"
+      }
+    ],
     "DescribeScheduledSqlInfo": [
       {
         "document": "",
@@ -1376,6 +1424,22 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNoticeContent\n<公共请求参数>\n\n{\n    \"NoticeContentId\": \"noticetemplate-5b2ea996-4dae-47cc-bbad-5b12888b4c89\",\n    \"Name\": \"内部监控告警专用\",\n    \"Type\": 0,\n    \"NoticeContents\": [\n        {\n            \"Type\": \"Http\",\n            \"TriggerContent\": {\n                \"Title\": \"this is title\",\n                \"Content\": \"this is content\",\n                \"Headers\": [\n                    \"Content-Type:application/json\"\n                ]\n            },\n            \"RecoveryContent\": {\n                \"Title\": \"this is title\",\n                \"Content\": \"this is content\",\n                \"Headers\": [\n                    \"Content-Type:application/json\"\n                ]\n            }\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\"\n    }\n}",
         "title": "修改通知内容配置"
+      }
+    ],
+    "ModifyRecordingRuleTask": [
+      {
+        "document": "修改预聚合任务",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecordingRuleTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"abdcebec-0242-43af-bb20-270359fb54a7\",\n    \"TopicId\": \"e66648c8-0d90-xxxx-8009-b4ee9f4b3c7c\",\n    \"Name\": \"demo\",\n    \"EnableFlag\": 1,\n    \"RecordingRuleContent\": \"sum by (code)(prometheus_http_requests_total)\",\n    \"MetricName\": \"demo_metric\",\n    \"CustomMetricLabels\": [\n        {\n            \"Key\": \"demo_key\",\n            \"Value\": \"demo_value\"\n        }\n    ],\n    \"HasServicesLog\": 2,\n    \"ProcessPeriod\": 1,\n    \"ProcessDelay\": 30,\n    \"DstTopicId\": \"e66648c8-0d90-xxxx-8009-b4ee9f4b3c7c\",\n    \"ProcessStartTime\": 1778308263665\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abdcebec-0242-43af-bb20-270359fb54a7\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "修改预聚合任务"
+      }
+    ],
+    "ModifyRecordingRuleYamlTask": [
+      {
+        "document": "通过yaml文件修改指标预聚合任务",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecordingRuleYamlTask\n<公共请求参数>\n\n{\n    \"YamlID\": \"abdcebec-0242-43af-bb20-270359fb54a7\",\n    \"TopicId\": \"e66648c8-0d90-4a32-8009-b4ee9f4b3c7c\",\n    \"YamlConfigName\": \"demo\",\n    \"EnableFlag\": 1,\n    \"HasServicesLog\": 2,\n    \"ProcessPeriod\": 1,\n    \"ProcessDelay\": 30,\n    \"YamlContent\": \"groups:\\n  - name: example\\n    rules:\\n    - record: code:prometheus_http_requests_total:sum\\n      expr: sum by (code) (prometheus_http_requests_total)\",\n    \"DstTopicId\": \"e66648c8-0d90-4a32-8009-b4ee9f4b3c7c\",\n    \"ProcessStartTime\": 1778309756421\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "通过yaml文件修改指标预聚合任务"
       }
     ],
     "ModifyScheduledSql": [

@@ -30721,7 +30721,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检测结果",
+          "document": "<p>检测结果</p>",
           "example": "prompt_injection",
           "member": "string",
           "name": "Result",
@@ -30732,13 +30732,24 @@
         },
         {
           "disabled": false,
-          "document": "置信度",
+          "document": "<p>置信度</p>",
           "example": "100",
           "member": "uint64",
           "name": "Confidence",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检出类别</p>",
+          "example": "[\"提示词注入\"]",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

@@ -144,7 +144,7 @@
         },
         {
           "disabled": false,
-          "document": "",
+          "document": "<p>用于访问 SMH 的域名</p>",
           "example": "smh3etdq8gpi2201.api.tencentmsh.cn",
           "member": "string",
           "name": "AccessDomain",

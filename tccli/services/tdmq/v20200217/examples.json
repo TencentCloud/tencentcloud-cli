@@ -166,6 +166,14 @@
         "title": "创建角色"
       }
     ],
+    "CreateRocketMQRouterRule": [
+      {
+        "document": "创建从MQTT到RocketMQ集群的Topic数据复制任务",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRocketMQRouterRule\n<公共请求参数>\n\n{\n    \"StartNow\": true,\n    \"Rule\": {\n        \"SourceType\": \"TENCENT_MQTT\",\n        \"TargetType\": \"TENCENT_ROCKETMQ\",\n        \"RemarkName\": \"test-rmq-mqtt-sync\",\n        \"TenRocketMQTarget\": {\n            \"Topic\": \"true\",\n            \"ClusterId\": \"rmq-16vjxq59j2\",\n            \"TargetRegion\": \"ap-chengdu\",\n            \"RoleName\": \"test_ben\",\n            \"AccessKey\": \"testak16vcb04be9d04\",\n            \"SecretKey\": \"testskca1f0368ee4\"\n        },\n        \"TenMQTTSource\": {\n            \"ClusterId\": \"mqtt-embkr9ar\",\n            \"Topic\": \"mqtt-topic-6\",\n            \"SourceRegion\": \"ap-chengdu\",\n            \"UserName\": \"dev-user\",\n            \"Password\": \"123qweASD123\",\n            \"Endpoint\": \"mqtt-embkr9ar-gz-internal.mqtt.tencenttdmq.com:1883\"\n        }\n    },\n    \"SyncType\": \"Topic\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46d960fa-5761-41ae-b908-4d023c7d3511\"\n    }\n}",
+        "title": "创建从MQTT到RocketMQ集群的Topic数据复制任务"
+      }
+    ],
     "CreateRocketMQTopic": [
       {
         "document": "创建主题",

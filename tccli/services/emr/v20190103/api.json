@@ -4106,6 +4106,15 @@
           "name": "WebUiVersion",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统盘是否加密</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableCbsSysEncryptFlag",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4611,6 +4620,15 @@
           "example": "1",
           "member": "int64",
           "name": "WebUiVersion",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启集群维度cbs系统盘加密,0关闭1开启</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CbsSysEncrypt",
           "required": false,
           "type": "int"
         }

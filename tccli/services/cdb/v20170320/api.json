@@ -10485,7 +10485,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目 ID。",
+          "document": "<p>项目 ID。</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -10494,7 +10494,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，可取值：1 - 主实例，2 - 灾备实例，3 - 只读实例。",
+          "document": "<p>实例类型，可取值：1 - 主实例，2 - 灾备实例，3 - 只读实例。</p>",
           "example": "[1]",
           "member": "uint64",
           "name": "InstanceTypes",
@@ -10503,7 +10503,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的内网 IP 地址。",
+          "document": "<p>实例的内网 IP 地址。</p>",
           "example": "[\"172.1.1.1\"]",
           "member": "string",
           "name": "Vips",
@@ -10512,7 +10512,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态，可取值：<br>0 - 创建中<br>1 - 运行中<br>4 - 正在进行隔离操作<br>5 - 已隔离（可在回收站恢复开机）",
+          "document": "<p>实例状态，可取值：<br>0 - 创建中<br>1 - 运行中<br>4 - 正在进行隔离操作<br>5 - 已隔离（可在回收站恢复开机）</p>",
           "example": "[1]",
           "member": "uint64",
           "name": "Status",
@@ -10521,7 +10521,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认值为 0。",
+          "document": "<p>偏移量，默认值为 0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -10530,7 +10530,7 @@
         },
         {
           "disabled": false,
-          "document": "单次请求返回的数量，默认值为 20，最大值为 2000。",
+          "document": "<p>单次请求返回的数量，默认值为 20，最大值为 2000。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -10539,7 +10539,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组 ID。当使用安全组 ID 为过滤条件时，需指定 WithSecurityGroup 参数为 1。",
+          "document": "<p>安全组 ID。当使用安全组 ID 为过滤条件时，需指定 WithSecurityGroup 参数为 1。</p>",
           "example": "sg-ajr1jzgj",
           "member": "string",
           "name": "SecurityGroupId",
@@ -10548,7 +10548,7 @@
         },
         {
           "disabled": false,
-          "document": "付费类型，可取值：0 - 包年包月，1 - 小时计费。",
+          "document": "<p>付费类型，可取值：0 - 包年包月，1 - 小时计费。</p>",
           "example": "[1]",
           "member": "uint64",
           "name": "PayTypes",
@@ -10557,7 +10557,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称。",
+          "document": "<p>实例名称。</p>",
           "example": "[\"cdb27418\"]",
           "member": "string",
           "name": "InstanceNames",
@@ -10566,7 +10566,7 @@
         },
         {
           "disabled": false,
-          "document": "实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行",
+          "document": "<p>实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行</p>",
           "example": "[0]",
           "member": "uint64",
           "name": "TaskStatus",
@@ -10575,7 +10575,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数据库引擎版本，可能取值：5.1、5.5、5.6 和 5.7。",
+          "document": "<p>实例数据库引擎版本，可能取值：5.1、5.5、5.6 和 5.7。</p>",
           "example": "[\"5.7\",\"8.0\"]",
           "member": "string",
           "name": "EngineVersions",
@@ -10584,7 +10584,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络的 ID。",
+          "document": "<p>私有网络的 ID。</p>",
           "example": "[0]",
           "member": "uint64",
           "name": "VpcIds",
@@ -10593,7 +10593,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区的 ID。",
+          "document": "<p>可用区的 ID。</p>",
           "example": "[720001]",
           "member": "uint64",
           "name": "ZoneIds",
@@ -10602,7 +10602,7 @@
         },
         {
           "disabled": false,
-          "document": "子网 ID。",
+          "document": "<p>子网 ID。</p>",
           "example": "[0]",
           "member": "uint64",
           "name": "SubnetIds",
@@ -10611,7 +10611,7 @@
         },
         {
           "disabled": false,
-          "document": "是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。",
+          "document": "<p>是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。</p>",
           "example": "[0]",
           "member": "int64",
           "name": "CdbErrors",
@@ -10620,7 +10620,7 @@
         },
         {
           "disabled": false,
-          "document": "返回结果集排序的字段，目前支持：\"instanceId\"，\"instanceName\"，\"createTime\"，\"deadlineTime\"。",
+          "document": "<p>返回结果集排序的字段，目前支持：&quot;instanceId&quot;，&quot;instanceName&quot;，&quot;createTime&quot;，&quot;deadlineTime&quot;。</p>",
           "example": "instanceId",
           "member": "string",
           "name": "OrderBy",
@@ -10629,7 +10629,7 @@
         },
         {
           "disabled": false,
-          "document": "返回结果集排序方式。目前支持值：\"ASC\" - 表示升序，\"DESC\" - 表示降序，默认为 \"DESC\"。",
+          "document": "<p>返回结果集排序方式。目前支持值：&quot;ASC&quot; - 表示升序，&quot;DESC&quot; - 表示降序，默认为 &quot;DESC&quot;。</p>",
           "example": "\"DESC\"",
           "member": "string",
           "name": "OrderDirection",
@@ -10638,7 +10638,7 @@
         },
         {
           "disabled": false,
-          "document": "是否以安全组 ID 为过滤条件。\n说明：0表示否，1表示是。",
+          "document": "<p>是否以安全组 ID 为过滤条件。<br>说明：0表示否，1表示是。</p>",
           "example": "0",
           "member": "int64",
           "name": "WithSecurityGroup",
@@ -10647,7 +10647,7 @@
         },
         {
           "disabled": false,
-          "document": "是否包含独享集群详细信息，可取值：0 - 不包含，1 - 包含。",
+          "document": "<p>是否包含独享集群详细信息，可取值：0 - 不包含，1 - 包含。</p>",
           "example": "0",
           "member": "int64",
           "name": "WithExCluster",
@@ -10656,7 +10656,7 @@
         },
         {
           "disabled": false,
-          "document": "独享集群 ID。",
+          "document": "<p>独享集群 ID。</p>",
           "example": "cdb-g2ql0j11",
           "member": "string",
           "name": "ExClusterId",
@@ -10665,7 +10665,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "<p>实例 ID。</p>",
           "example": "[\"cdb-70zdmgg1\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -10674,7 +10674,7 @@
         },
         {
           "disabled": false,
-          "document": "初始化标记，可取值：0 - 未初始化，1 - 初始化。",
+          "document": "<p>初始化标记，可取值：0 - 未初始化，1 - 初始化。</p>",
           "example": "0",
           "member": "int64",
           "name": "InitFlag",
@@ -10683,7 +10683,7 @@
         },
         {
           "disabled": false,
-          "document": "是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。",
+          "document": "<p>是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。</p>",
           "example": "0",
           "member": "int64",
           "name": "WithDr",
@@ -10692,7 +10692,7 @@
         },
         {
           "disabled": false,
-          "document": "是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。",
+          "document": "<p>是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。</p>",
           "example": "0",
           "member": "int64",
           "name": "WithRo",
@@ -10701,7 +10701,7 @@
         },
         {
           "disabled": false,
-          "document": "是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。",
+          "document": "<p>是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。</p>",
           "example": "0",
           "member": "int64",
           "name": "WithMaster",
@@ -10710,7 +10710,7 @@
         },
         {
           "disabled": false,
-          "document": "置放群组ID列表。",
+          "document": "<p>置放群组ID列表。</p>",
           "example": "[\"ps-7t11vrwf\"]",
           "member": "string",
           "name": "DeployGroupIds",
@@ -10719,7 +10719,7 @@
         },
         {
           "disabled": false,
-          "document": "是否以标签键为过滤条件。",
+          "document": "<p>是否以标签键为过滤条件。</p>",
           "example": "[\"tagKey\"]",
           "member": "string",
           "name": "TagKeysForSearch",
@@ -10728,7 +10728,7 @@
         },
         {
           "disabled": false,
-          "document": "金融围拢 ID 。",
+          "document": "<p>金融围拢 ID 。</p>",
           "example": "[\"cage-dhges\"]",
           "member": "string",
           "name": "CageIds",
@@ -10737,7 +10737,7 @@
         },
         {
           "disabled": false,
-          "document": "标签值",
+          "document": "<p>标签值</p>",
           "example": "[\"a12\",\"v22\"]",
           "member": "string",
           "name": "TagValues",
@@ -10746,7 +10746,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络字符型vpcId",
+          "document": "<p>私有网络字符型vpcId</p>",
           "example": "[\"vpc-saxa\",\"vpc-sss\"]",
           "member": "string",
           "name": "UniqueVpcIds",
@@ -10755,7 +10755,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络字符型subnetId",
+          "document": "<p>私有网络字符型subnetId</p>",
           "example": "[\"subnet-kkai\"]",
           "member": "string",
           "name": "UniqSubnetIds",
@@ -10764,7 +10764,7 @@
         },
         {
           "disabled": false,
-          "document": "标签键值\n请注意，创建中的实例无法查询到标签。",
+          "document": "<p>标签键值<br>请注意，创建中的实例无法查询到标签。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -10773,7 +10773,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理 IP 。",
+          "document": "<p>数据库代理 IP 。</p>",
           "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "ProxyVips",
@@ -10782,7 +10782,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理 ID 。",
+          "document": "<p>数据库代理 ID 。</p>",
           "example": "[\"proxynode-xxxx\"]",
           "member": "string",
           "name": "ProxyIds",
@@ -10791,7 +10791,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库引擎类型。可选值为：InnoDB、RocksDB。",
+          "document": "<p>数据库引擎类型。可选值为：InnoDB、RocksDB。</p>",
           "example": "[\"InnoDB\"]",
           "member": "string",
           "name": "EngineTypes",
@@ -10800,7 +10800,7 @@
         },
         {
           "disabled": false,
-          "document": "是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。",
+          "document": "<p>是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。</p>",
           "example": "false",
           "member": "bool",
           "name": "QueryClusterInfo",
@@ -10815,7 +10815,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合查询条件的实例总数。",
+          "document": "<p>符合查询条件的实例总数。</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -10825,7 +10825,7 @@
         },
         {
           "disabled": false,
-          "document": "实例详细信息列表。",
+          "document": "<p>实例详细信息列表。</p>",
           "example": "无",
           "member": "InstanceInfo",
           "name": "Items",
@@ -14881,7 +14881,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "外网状态，可能的返回值为：0-未开通外网；1-已开通外网；2-已关闭外网",
+          "document": "<p>外网状态，可能的返回值为：0-未开通外网；1-已开通外网；2-已关闭外网</p>",
           "example": "2",
           "member": "int64",
           "name": "WanStatus",
@@ -14891,7 +14891,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区信息",
+          "document": "<p>可用区信息</p>",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
@@ -14901,7 +14901,7 @@
         },
         {
           "disabled": false,
-          "document": "初始化标志，可能的返回值为：0-未初始化；1-已初始化",
+          "document": "<p>初始化标志，可能的返回值为：0-未初始化；1-已初始化</p>",
           "example": "1",
           "member": "int64",
           "name": "InitFlag",
@@ -14911,7 +14911,7 @@
         },
         {
           "disabled": false,
-          "document": "只读vip信息。单独开通只读实例访问的只读实例才有该字段",
+          "document": "<p>只读vip信息。单独开通只读实例访问的只读实例才有该字段</p>",
           "example": "无",
           "member": "RoVipInfo",
           "name": "RoVipInfo",
@@ -14921,7 +14921,7 @@
         },
         {
           "disabled": false,
-          "document": "内存容量，单位为 MB",
+          "document": "<p>内存容量，单位为 MB</p>",
           "example": "1000",
           "member": "int64",
           "name": "Memory",
@@ -14931,7 +14931,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态，可能的返回值：0-创建中；1-运行中；4-正在进行隔离操作；5-已隔离",
+          "document": "<p>实例状态，可能的返回值：0-创建中；1-运行中；4-正在进行隔离操作；5-已隔离</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -14941,7 +14941,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID，例如：51102",
+          "document": "<p>私有网络 ID，例如：51102</p>",
           "example": "51102",
           "member": "int64",
           "name": "VpcId",
@@ -14951,7 +14951,7 @@
         },
         {
           "disabled": false,
-          "document": "备机信息",
+          "document": "<p>备机信息</p>",
           "example": "无",
           "member": "SlaveInfo",
           "name": "SlaveInfo",
@@ -14961,8 +14961,8 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID",
-          "example": "cdb-***",
+          "document": "<p>实例 ID</p>",
+          "example": "cdbaro-9l8z65sf",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -14971,7 +14971,7 @@
         },
         {
           "disabled": false,
-          "document": "硬盘容量，单位为 GB",
+          "document": "<p>硬盘容量，单位为 GB</p>",
           "example": "50",
           "member": "int64",
           "name": "Volume",
@@ -14981,7 +14981,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标志，可能的返回值：0-未开通自动续费；1-已开通自动续费；2-已关闭自动续费",
+          "document": "<p>自动续费标志，可能的返回值：0-未开通自动续费；1-已开通自动续费；2-已关闭自动续费</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRenew",
@@ -14991,7 +14991,7 @@
         },
         {
           "disabled": false,
-          "document": "数据复制方式。0 - 异步复制；1 - 半同步复制；2 - 强同步复制",
+          "document": "<p>数据复制方式。0 - 异步复制；1 - 半同步复制；2 - 强同步复制</p>",
           "example": "1",
           "member": "int64",
           "name": "ProtectMode",
@@ -15001,7 +15001,7 @@
         },
         {
           "disabled": false,
-          "document": "只读组详细信息",
+          "document": "<p>只读组详细信息</p>",
           "example": "无",
           "member": "RoGroup",
           "name": "RoGroups",
@@ -15011,7 +15011,7 @@
         },
         {
           "disabled": false,
-          "document": "子网 ID，例如：2333",
+          "document": "<p>子网 ID，例如：2333</p>",
           "example": "2333",
           "member": "int64",
           "name": "SubnetId",
@@ -15021,7 +15021,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，可能的返回值：1-主实例；2-灾备实例；3-只读实例",
+          "document": "<p>实例类型，可能的返回值：1-主实例；2-灾备实例；3-只读实例</p>",
           "example": "1",
           "member": "int64",
           "name": "InstanceType",
@@ -15031,7 +15031,7 @@
         },
         {
           "disabled": false,
-          "document": "项目 ID",
+          "document": "<p>项目 ID</p>",
           "example": "12451",
           "member": "int64",
           "name": "ProjectId",
@@ -15041,7 +15041,7 @@
         },
         {
           "disabled": false,
-          "document": "地域信息",
+          "document": "<p>地域信息</p>",
           "example": "ap-beijing",
           "member": "string",
           "name": "Region",
@@ -15051,7 +15051,7 @@
         },
         {
           "disabled": false,
-          "document": "实例到期时间",
+          "document": "<p>实例到期时间</p>",
           "example": "2020-09-29 08:37:33",
           "member": "datetime",
           "name": "DeadlineTime",
@@ -15061,7 +15061,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区部署方式。可能的值为：0 - 单可用区；1 - 多可用区",
+          "document": "<p>可用区部署方式。可能的值为：0 - 单可用区；1 - 多可用区</p>",
           "example": "1",
           "member": "int64",
           "name": "DeployMode",
@@ -15071,7 +15071,7 @@
         },
         {
           "disabled": false,
-          "document": "实例任务状态。0 - 没有任务 ,1 - 升级中,2 - 数据导入中,3 - 开放Slave中,4 - 外网访问开通中,5 - 批量操作执行中,6 - 回档中,7 - 外网访问关闭中,8 - 密码修改中,9 - 实例名修改中,10 - 重启中,12 - 自建迁移中,13 - 删除库表中,14 - 灾备实例创建同步中,15 - 升级待切换,16 - 升级切换中,17 - 升级切换完成",
+          "document": "<p>实例任务状态。0 - 没有任务 ,1 - 升级中,2 - 数据导入中,3 - 开放Slave中,4 - 外网访问开通中,5 - 批量操作执行中,6 - 回档中,7 - 外网访问关闭中,8 - 密码修改中,9 - 实例名修改中,10 - 重启中,12 - 自建迁移中,13 - 删除库表中,14 - 灾备实例创建同步中,15 - 升级待切换,16 - 升级切换中,17 - 升级切换完成</p>",
           "example": "1",
           "member": "int64",
           "name": "TaskStatus",
@@ -15081,7 +15081,7 @@
         },
         {
           "disabled": false,
-          "document": "主实例详细信息",
+          "document": "<p>主实例详细信息</p>",
           "example": "无",
           "member": "MasterInfo",
           "name": "MasterInfo",
@@ -15091,7 +15091,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型",
+          "document": "<p>实例类型</p>",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
@@ -15101,7 +15101,7 @@
         },
         {
           "disabled": false,
-          "document": "内核版本",
+          "document": "<p>内核版本</p>",
           "example": "5.7",
           "member": "string",
           "name": "EngineVersion",
@@ -15111,7 +15111,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "******",
           "member": "string",
           "name": "InstanceName",
@@ -15121,7 +15121,7 @@
         },
         {
           "disabled": false,
-          "document": "灾备实例详细信息",
+          "document": "<p>灾备实例详细信息</p>",
           "example": "无",
           "member": "DrInfo",
           "name": "DrInfo",
@@ -15131,7 +15131,7 @@
         },
         {
           "disabled": false,
-          "document": "外网域名",
+          "document": "<p>外网域名</p>",
           "example": "gz-cdb-******.sql.tencentcdb.com",
           "member": "string",
           "name": "WanDomain",
@@ -15141,7 +15141,7 @@
         },
         {
           "disabled": false,
-          "document": "外网端口号",
+          "document": "<p>外网端口号</p>",
           "example": "25640",
           "member": "int64",
           "name": "WanPort",
@@ -15151,7 +15151,7 @@
         },
         {
           "disabled": false,
-          "document": "付费类型，可能的返回值：0-包年包月；1-按量计费",
+          "document": "<p>付费类型，可能的返回值：0-包年包月；1-按量计费</p>",
           "example": "1",
           "member": "int64",
           "name": "PayType",
@@ -15161,7 +15161,7 @@
         },
         {
           "disabled": false,
-          "document": "实例创建时间",
+          "document": "<p>实例创建时间</p>",
           "example": "2020-08-29 08:37:33",
           "member": "string",
           "name": "CreateTime",
@@ -15171,7 +15171,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 IP",
+          "document": "<p>实例 IP</p>",
           "example": "1.2.3.4",
           "member": "string",
           "name": "Vip",
@@ -15181,7 +15181,7 @@
         },
         {
           "disabled": false,
-          "document": "端口号",
+          "document": "<p>端口号</p>",
           "example": "3306",
           "member": "int64",
           "name": "Vport",
@@ -15191,7 +15191,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘写入是否被锁定（实例数据写入量已经超过磁盘配额）。0 -未被锁定 1 -已被锁定",
+          "document": "<p>磁盘写入是否被锁定（实例数据写入量已经超过磁盘配额）。0 -未被锁定 1 -已被锁定</p>",
           "example": "0",
           "member": "int64",
           "name": "CdbError",
@@ -15201,7 +15201,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络描述符，例如：“vpc-5v8wn9mg”",
+          "document": "<p>私有网络描述符，例如：“vpc-5v8wn9mg”</p>",
           "example": "vpc-5v8wn9mg",
           "member": "string",
           "name": "UniqVpcId",
@@ -15211,7 +15211,7 @@
         },
         {
           "disabled": false,
-          "document": "子网描述符，例如：“subnet-1typ0s7d”",
+          "document": "<p>子网描述符，例如：“subnet-1typ0s7d”</p>",
           "example": "subnet-1typ0s7d",
           "member": "string",
           "name": "UniqSubnetId",
@@ -15221,7 +15221,7 @@
         },
         {
           "disabled": false,
-          "document": "物理 ID",
+          "document": "<p>物理 ID</p>",
           "example": "phyxxx",
           "member": "string",
           "name": "PhysicalId",
@@ -15231,7 +15231,7 @@
         },
         {
           "disabled": false,
-          "document": "核心数",
+          "document": "<p>核心数</p>",
           "example": "1",
           "member": "int64",
           "name": "Cpu",
@@ -15241,7 +15241,7 @@
         },
         {
           "disabled": false,
-          "document": "每秒查询数量",
+          "document": "<p>每秒查询数量</p>",
           "example": "1000",
           "member": "int64",
           "name": "Qps",
@@ -15251,7 +15251,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区中文名称",
+          "document": "<p>可用区中文名称</p>",
           "example": "北京三区",
           "member": "string",
           "name": "ZoneName",
@@ -15261,7 +15261,7 @@
         },
         {
           "disabled": false,
-          "document": "物理机型",
+          "document": "<p>物理机型</p>",
           "example": "VSWEQ",
           "member": "string",
           "name": "DeviceClass",
@@ -15271,7 +15271,7 @@
         },
         {
           "disabled": false,
-          "document": "置放群组 ID",
+          "document": "<p>置放群组 ID</p>",
           "example": "andy",
           "member": "string",
           "name": "DeployGroupId",
@@ -15281,7 +15281,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区 ID",
+          "document": "<p>可用区 ID</p>",
           "example": "800003",
           "member": "int64",
           "name": "ZoneId",
@@ -15291,7 +15291,7 @@
         },
         {
           "disabled": false,
-          "document": "节点数",
+          "document": "<p>节点数</p>",
           "example": "1",
           "member": "int64",
           "name": "InstanceNodes",
@@ -15301,7 +15301,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "TagInfoItem",
           "name": "TagList",
@@ -15311,7 +15311,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎类型",
+          "document": "<p>引擎类型</p>",
           "example": "InnoDB",
           "member": "string",
           "name": "EngineType",
@@ -15321,7 +15321,7 @@
         },
         {
           "disabled": false,
-          "document": "最大延迟阈值",
+          "document": "<p>最大延迟阈值</p>",
           "example": "1",
           "member": "int64",
           "name": "MaxDelayTime",
@@ -15331,7 +15331,7 @@
         },
         {
           "disabled": false,
-          "document": "实例磁盘类型，仅云盘版和单节点（云盘）实例才会返回有效值。\n说明：\n1. 若返回：\"DiskType\": \"CLOUD_HSSD\"，则表示该实例磁盘类型为增强型 SSD 云硬盘。\n2. 若返回：\"DiskType\": \"CLOUD_SSD\"，则表示该实例磁盘类型为 SSD 云硬盘。\n3. 若返回：\"DiskType\": \"\"，且参数 DeviceType 值为 UNIVERSAL 或 EXCLUSIVE，则表示该实例采用的是本地 SSD 盘。",
+          "document": "<p>实例磁盘类型，仅云盘版和单节点（云盘）实例才会返回有效值。<br>说明：</p><ol><li>若返回：&quot;DiskType&quot;: &quot;CLOUD_HSSD&quot;，则表示该实例磁盘类型为增强型 SSD 云硬盘。</li><li>若返回：&quot;DiskType&quot;: &quot;CLOUD_SSD&quot;，则表示该实例磁盘类型为 SSD 云硬盘。</li><li>若返回：&quot;DiskType&quot;: &quot;&quot;，且参数 DeviceType 值为 UNIVERSAL 或 EXCLUSIVE，则表示该实例采用的是本地 SSD 盘。</li></ol>",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -15341,7 +15341,7 @@
         },
         {
           "disabled": false,
-          "document": "当前扩容的CPU核心数。",
+          "document": "<p>当前扩容的CPU核心数。</p>",
           "example": "2",
           "member": "int64",
           "name": "ExpandCpu",
@@ -15351,7 +15351,7 @@
         },
         {
           "disabled": false,
-          "document": "云盘版实例节点信息",
+          "document": "<p>云盘版实例节点信息</p>",
           "example": "无",
           "member": "ClusterInfo",
           "name": "ClusterInfo",
@@ -15361,7 +15361,7 @@
         },
         {
           "disabled": false,
-          "document": "分析引擎节点列表",
+          "document": "<p>分析引擎节点列表</p>",
           "example": "无",
           "member": "AnalysisNodeInfo",
           "name": "AnalysisNodeInfos",
@@ -15371,7 +15371,7 @@
         },
         {
           "disabled": false,
-          "document": "设备带宽，单位G。当DeviceClass不为空时此参数才有效。例：25-表示当前设备带宽为25G；10-表示当前设备带宽为10G。",
+          "document": "<p>设备带宽，单位G。当DeviceClass不为空时此参数才有效。例：25-表示当前设备带宽为25G；10-表示当前设备带宽为10G。</p>",
           "example": "25",
           "member": "uint64",
           "name": "DeviceBandwidth",
@@ -15381,7 +15381,7 @@
         },
         {
           "disabled": false,
-          "document": "实例销毁保护状态，on表示开启保护，否则为关闭保护",
+          "document": "<p>实例销毁保护状态，on表示开启保护，否则为关闭保护</p>",
           "example": "on",
           "member": "string",
           "name": "DestroyProtect",
@@ -15391,13 +15391,23 @@
         },
         {
           "disabled": false,
-          "document": "TDSQL引擎参数",
+          "document": "<p>TDSQL引擎参数</p>",
           "example": "Hygon-1",
           "member": "string",
           "name": "CpuModel",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析引擎实例版本升级信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpgradeAnalysisInstanceVersionInfo",
+          "name": "AnalysisUpgradeVersionInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -15660,7 +15670,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域信息",
+          "document": "<p>地域信息</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -15670,7 +15680,7 @@
         },
         {
           "disabled": false,
-          "document": "地域ID",
+          "document": "<p>地域ID</p>",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
@@ -15680,7 +15690,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区ID",
+          "document": "<p>可用区ID</p>",
           "example": "100003",
           "member": "int64",
           "name": "ZoneId",
@@ -15690,7 +15700,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区信息",
+          "document": "<p>可用区信息</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -15700,7 +15710,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "cdb-***",
           "member": "string",
           "name": "InstanceId",
@@ -15710,7 +15720,7 @@
         },
         {
           "disabled": false,
-          "document": "实例长ID",
+          "document": "<p>实例长ID</p>",
           "example": "1241asdd-qwed1-213-dad",
           "member": "string",
           "name": "ResourceId",
@@ -15720,7 +15730,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态",
+          "document": "<p>实例状态</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -15730,7 +15740,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "***",
           "member": "string",
           "name": "InstanceName",
@@ -15740,7 +15750,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型",
+          "document": "<p>实例类型</p>",
           "example": "1",
           "member": "int64",
           "name": "InstanceType",
@@ -15750,7 +15760,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态",
+          "document": "<p>任务状态</p>",
           "example": "0",
           "member": "int64",
           "name": "TaskStatus",
@@ -15760,7 +15770,7 @@
         },
         {
           "disabled": false,
-          "document": "内存容量",
+          "document": "<p>内存容量</p>",
           "example": "1000",
           "member": "int64",
           "name": "Memory",
@@ -15770,7 +15780,7 @@
         },
         {
           "disabled": false,
-          "document": "硬盘容量",
+          "document": "<p>硬盘容量</p>",
           "example": "50",
           "member": "int64",
           "name": "Volume",
@@ -15780,7 +15790,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机型",
+          "document": "<p>实例机型</p>",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
@@ -15790,7 +15800,7 @@
         },
         {
           "disabled": false,
-          "document": "每秒查询数",
+          "document": "<p>每秒查询数</p>",
           "example": "1000",
           "member": "int64",
           "name": "Qps",
@@ -15800,7 +15810,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID",
+          "document": "<p>私有网络ID</p>",
           "example": "1533",
           "member": "int64",
           "name": "VpcId",
@@ -15810,7 +15820,7 @@
         },
         {
           "disabled": false,
-          "document": "子网ID",
+          "document": "<p>子网ID</p>",
           "example": "12364",
           "member": "int64",
           "name": "SubnetId",
@@ -15820,7 +15830,7 @@
         },
         {
           "disabled": false,
-          "document": "独享集群ID",
+          "document": "<p>独享集群ID</p>",
           "example": "andy",
           "member": "string",
           "name": "ExClusterId",
@@ -15830,7 +15840,7 @@
         },
         {
           "disabled": false,
-          "document": "独享集群名称",
+          "document": "<p>独享集群名称</p>",
           "example": "andy",
           "member": "string",
           "name": "ExClusterName",
@@ -20887,8 +20897,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "第一备机信息",
-          "example": "{\"Vport\": 3306,\"Vip\": \"10.1.1.1\",\"Region\": \"ap-guangzhou\",\"Zone\": \"ap-guangzhou-1\"}",
+          "document": "<p>第一备机信息</p>",
+          "example": "无",
           "member": "SlaveInstanceInfo",
           "name": "First",
           "output_required": true,
@@ -20897,8 +20907,8 @@
         },
         {
           "disabled": false,
-          "document": "第二备机信息",
-          "example": "{\"Vport\": 3306,\"Vip\": \"10.1.0.1\",\"Region\": \"ap-guangzhou\",\"Zone\": \"ap-guangzhou-1\"}",
+          "document": "<p>第二备机信息</p>",
+          "example": "无",
           "member": "SlaveInstanceInfo",
           "name": "Second",
           "output_required": true,
@@ -22177,6 +22187,52 @@
         }
       ],
       "usage": "both"
+    },
+    "UpgradeAnalysisInstanceVersionInfo": {
+      "document": "分析引擎实例版本升级信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>版本升级灰度ip</p>",
+          "example": "172.16.48.55",
+          "member": "string",
+          "name": "Vip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本升级灰度port</p>",
+          "example": "3306",
+          "member": "int64",
+          "name": "Vport",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>升级之后版本</p>",
+          "example": "5.2512.1.0",
+          "member": "string",
+          "name": "EngineVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例升级灰度事件</p><p>单位：天</p>",
+          "example": "1778331353",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UpgradeCDBProxyVersionRequest": {
       "document": "UpgradeCDBProxyVersion请求参数结构体",

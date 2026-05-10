@@ -566,6 +566,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>发货进度详情</p>",
+          "example": "无",
+          "member": "CreatingProgress",
+          "name": "CreatingProgress",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1176,6 +1187,106 @@
         }
       ],
       "type": "object"
+    },
+    "CreatingProgress": {
+      "document": "发货步骤描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总步骤数</p>",
+          "example": "6",
+          "member": "int64",
+          "name": "TotalSteps",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前步骤</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "CurrentStep",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>步骤详情</p>",
+          "example": "无",
+          "member": "CreatingStepInfo",
+          "name": "Steps",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreatingStepInfo": {
+      "document": "发货步骤详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>步骤名称</p>",
+          "example": "CreateTKECluster",
+          "member": "string",
+          "name": "StepName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>步骤描述</p>",
+          "example": "创建TKE集群",
+          "member": "string",
+          "name": "StepDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>步骤状态</p>",
+          "example": "done",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>完成时间</p>",
+          "example": "2026-05-06 20:13:06",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息描述</p>",
+          "example": "QueryAddInstances: CVM instance ins-1flbim5k failed",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DescribeAgentDutyTaskDetailRequest": {
       "document": "DescribeAgentDutyTaskDetail请求参数结构体",

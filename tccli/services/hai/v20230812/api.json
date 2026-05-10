@@ -835,7 +835,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "容器配置",
+          "document": "<p>容器配置</p>",
           "example": "无",
           "member": "ContainerInfo",
           "name": "Container",
@@ -846,7 +846,7 @@
         },
         {
           "disabled": false,
-          "document": "容器数量",
+          "document": "<p>容器数量</p>",
           "example": "2",
           "member": "int64",
           "name": "ContainerCount",

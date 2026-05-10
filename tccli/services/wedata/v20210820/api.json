@@ -2045,11 +2045,11 @@
       "status": "online"
     },
     "SubmitWorkflow": {
-      "document": "提交工作流。本接口已废弃，请使用接口BatchCreateTaskVersionAsync。",
+      "document": "接口已经废弃，调用会产生脏数据\n\n提交工作流。本接口已废弃，请使用接口BatchCreateTaskVersionAsync。",
       "input": "SubmitWorkflowRequest",
       "name": "提交工作流（废弃）",
       "output": "SubmitWorkflowResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "SuspendIntegrationTask": {
       "document": "暂停集成任务",
