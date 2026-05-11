@@ -586,6 +586,14 @@
         "title": "查询安全组规则列表"
       }
     ],
+    "DescribeSerialRegion": [
+      {
+        "document": "查询串行防火墙地域带宽分配信息",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSerialRegion\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"SerialRegionLst\": [\n            {\n                \"Region\": \"ap-shanghai\",\n                \"Width\": 100\n            }\n        ],\n        \"UnUsedWidth\": 100,\n        \"UnUsedQuota\": 100,\n        \"RequestId\": \"11122333313\"\n    }\n}",
+        "title": "查询串行防火墙地域带宽分配信息"
+      }
+    ],
     "DescribeSourceAsset": [
       {
         "document": "DescribeSourceAsset-查询全部资产信息",

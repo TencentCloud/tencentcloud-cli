@@ -17409,7 +17409,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模糊查询数据集ID，数据集名称，不传入时查询全量",
+          "document": "<p>模糊查询数据集ID，数据集名称，不传入时查询全量</p>",
           "example": "program-xxx",
           "member": "string",
           "name": "SearchWord",
@@ -17418,7 +17418,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量，默认值20",
+          "document": "<p>每页数量，默认值20</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -17427,12 +17427,21 @@
         },
         {
           "disabled": false,
-          "document": "起始偏移量，默认值0",
+          "document": "<p>起始偏移量，默认值0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模糊查询，传递模糊查询字段和对应的值</p>",
+          "example": "无",
+          "member": "SearchFiltersProgram",
+          "name": "SearchFilters",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -17442,7 +17451,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据集列表",
+          "document": "<p>数据集列表</p>",
           "example": "无",
           "member": "PagedProgram",
           "name": "Result",
@@ -28560,6 +28569,30 @@
         }
       ],
       "type": "object"
+    },
+    "SearchFiltersProgram": {
+      "document": "模糊查询数据集信息指定字段和值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据集ID</p>",
+          "example": "program-96a79v5b",
+          "member": "string",
+          "name": "ProgramId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据集名称</p>",
+          "example": "AUTO-NOTHING",
+          "member": "string",
+          "name": "ProgramName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "SearchStdoutLogRequest": {
       "document": "SearchStdoutLog请求参数结构体",

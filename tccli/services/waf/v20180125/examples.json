@@ -918,6 +918,20 @@
         "title": "查询Tiga引擎大类规则及其防护模式"
       }
     ],
+    "DescribeQClawContentSecCheck": [
+      {
+        "document": "高危命令",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQClawContentSecCheck\n<公共请求参数>\n\n{\n    \"ServiceId\": \"3244\",\n    \"ToolName\": \"ex\",\n    \"ToolArgs\": \"rm -rf /\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Risks\": [\n                {\n                    \"RiskType\": \"tool_call\",\n                    \"RuleId\": \"gtc-baseline-001\",\n                    \"RuleName\": \"高危系统命令工具阻断\",\n                    \"Score\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"3c181ddd-5a1d-4740-896c-fa94381f2254\"\n    }\n}",
+        "title": "审核toolcall工具调用测试用例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQClawContentSecCheck\n<公共请求参数>\n\n{\n    \"ServiceId\": \"9000000004\",\n    \"Content\": {\n        \"Prompt\": \"跑得比*****续航水分严重\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Risks\": [\n                {\n                    \"RiskType\": \"sensitive_content\",\n                    \"RuleId\": \"grl-safety-brand-strict\",\n                    \"RuleName\": \"车辆品牌保护\",\n                    \"Score\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"1a268503-a272-4033-888f-d044e9118ddc\"\n    }\n}",
+        "title": "审核内容调用用例"
+      }
+    ],
     "DescribeRateLimitsV2": [
       {
         "document": "",

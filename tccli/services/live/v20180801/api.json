@@ -294,6 +294,13 @@
       "output": "CreateRecordTaskResponse",
       "status": "online"
     },
+    "CreateSceneVideoTask": {
+      "document": "该接口用于创建场景化视频任务。",
+      "input": "CreateSceneVideoTaskRequest",
+      "name": "创建场景化生视频任务",
+      "output": "CreateSceneVideoTaskResponse",
+      "status": "online"
+    },
     "CreateScreenshotTask": {
       "document": "创建一个在指定时间启动、结束的截图任务，并使用指定截图模板ID对应的配置进行截图。\n- 注意事项\n1. 断流会结束当前截图。在结束时间到达之前任务仍然有效，期间只要正常推流都会正常截图，与是否多次推、断流无关。\n2. 使用上避免创建时间段相互重叠的截图任务。若同一条流当前存在多个时段重叠的任务，为避免重复系统将启动最多3个截图任务。\n3. 创建的截图任务记录在平台侧只保留3个月。\n4. 当前截图任务管理API（CreateScreenshotTask/StopScreenshotTask/DeleteScreenshotTask）与旧API（CreateLiveInstantSnapshot/StopLiveInstantSnapshot）不兼容，两套接口不能混用。\n5. 避免 创建截图任务 与 推流 操作同时进行，可能导致因截图任务未生效而引起任务延迟启动问题，两者操作间隔建议大于3秒。",
       "input": "CreateScreenshotTaskRequest",
@@ -1160,6 +1167,13 @@
       "input": "DescribeRecordTaskRequest",
       "name": "查询录制任务列表（新）",
       "output": "DescribeRecordTaskResponse",
+      "status": "online"
+    },
+    "DescribeSceneVideoTask": {
+      "document": "该接口用于查询场景化视频任务进展及结果。",
+      "input": "DescribeSceneVideoTaskRequest",
+      "name": "查询场景化生视频任务",
+      "output": "DescribeSceneVideoTaskResponse",
       "status": "online"
     },
     "DescribeScreenShotSheetNumList": {
@@ -8016,6 +8030,151 @@
           "member": "string",
           "name": "TaskId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSceneVideoTaskRequest": {
+      "document": "CreateSceneVideoTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名称。</p>",
+          "example": "Kling",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型版本号。</p>",
+          "example": "3.0",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>场景化类型。</p><p>枚举值：</p><ul><li>template_effect： 模板特效。</li></ul>",
+          "example": "template_effect",
+          "member": "string",
+          "name": "SceneType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入的Prompt。避免出现违规词汇，审核会进行拦截。</p>",
+          "example": "生成一只小狗",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定输出的视频时长。</p><p>部分场景不支持指定时长。</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "Duration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入的首帧参考图片Url。需外网可访问。</p>",
+          "example": "https://m**********a*********344703.******cel******myqcloud.com/multimodel-agent-1258344703/***nt/ead65276-ba60-44b6-ac0d-81a4e1f****6.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入的尾帧参考图片Url。</p>",
+          "example": "https://***ti*****-age**-1258****03.cos.***elerate.myqcloud.com/multimodel-agent-1258344703/agent*****5276-ba60-44b6-ac0d-81*****230b6.jpg",
+          "member": "string",
+          "name": "LastImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多图参考生视频时，通过该参数指定多张参考图。</p>",
+          "example": "无",
+          "member": "SceneVideoReferenceImageInfo",
+          "name": "ImageInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频编辑时，指定参考视频信息。</p>",
+          "example": "无",
+          "member": "SceneVideoReferenceVideoInfo",
+          "name": "VideoInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>常规扩展参数。</p>",
+          "example": "无",
+          "member": "SceneVideoExtraParam",
+          "name": "ExtraParameters",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型扩展参数，用于透传到模型侧。</p>",
+          "example": "{\"effect_scene\":\"great_success\"}",
+          "member": "string",
+          "name": "AdditionalParameters",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出结果存储到私有cos，需授权响应角色权限。</p>",
+          "example": "无",
+          "member": "SceneStoreCosParam",
+          "name": "StoreCosParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作者名称。</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSceneVideoTaskResponse": {
+      "document": "CreateSceneVideoTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输出的任务ID。</p>",
+          "example": "**10**278-live-*****ideo-721d18cefa094ba4a******dfcbbacab",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15444,6 +15603,83 @@
           "member": "RecordTask",
           "name": "TaskList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSceneVideoTaskRequest": {
+      "document": "DescribeSceneVideoTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID。</p>",
+          "example": "2*****278-*********Video-721d18cefa094ba4a6*******cbbacab",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSceneVideoTaskResponse": {
+      "document": "DescribeSceneVideoTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>一些特殊场景的返回信息。</p>",
+          "example": "无",
+          "member": "SceneVideoOutputInfo",
+          "name": "InfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态。</p><p>枚举值：</p><ul><li>DONE： 任务结束。</li><li>RUN： 任务运行中。</li><li>WAIT： 任务准备中。</li><li>FAIL： 任务失败。</li></ul>",
+          "example": "DONE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出视频的分辨率。示例：720x1280。</p>",
+          "example": "1920x1080",
+          "member": "string",
+          "name": "Resolution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息。</p>",
+          "example": "role not exist",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出的视频Url。默认过期时间:12小时，请尽快拉取并转存。也可以使用私有Cos桶长期存储。</p>",
+          "example": "[\"https://a*****u**ut-video-file-1326893053.cos.ap-guangzhou.myqcloud.com/251006278/251006278-live-AigcVideo-721d18cefa094ba4****6****cbbacab_0.mp4\"]",
+          "member": "string",
+          "name": "VideoUrls",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -23046,6 +23282,223 @@
         }
       ],
       "usage": "out"
+    },
+    "SceneStoreCosParam": {
+      "document": "场景化视频结果文件上传COS时，需传入的信息。 需创建并授权LVB_QCSRole角色。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Cos桶名称。</p>",
+          "example": "live-q****d-tts-13***02212",
+          "member": "string",
+          "name": "CosBucketName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Cos桶地域。</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CosBucketRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储路径。</p>",
+          "example": "/scene_video/",
+          "member": "string",
+          "name": "CosBucketPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SceneVideoExtraParam": {
+      "document": "用于场景化创作视频时用到的扩展参数信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定输出分辨率。选项:720P, 1080P, 2K, 4K。</p>",
+          "example": "1080P",
+          "member": "string",
+          "name": "Resolution",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定输出视频的宽高比，示例：16:9。</p>",
+          "example": "16:9",
+          "member": "string",
+          "name": "AspectRatio",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错峰模型，仅支持的模型可使用。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "OffPeak",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动添加水印，默认左上角添加 &quot;AI生成&quot; 标识。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "LogoAdd",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用音画同出。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableAudio",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成背景音乐。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableBgm",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对输入的Prompt进行优化。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnablePromptEnhance",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调URL。</p>",
+          "example": "http://my.c***back.**m/l***/test.p**",
+          "member": "string",
+          "name": "CallbackUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SceneVideoOutputInfo": {
+      "document": "场景化视频输出信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输出信息。</p>",
+          "example": "https://a****out*****ideo-file-1326893053.cos.ap-guangzhou.myqcloud.com/***0**278/251006278-liv*******ideo-721d18cefa094ba4a61****dfcbbacab_0.mp4",
+          "member": "string",
+          "name": "Info",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出类型。</p>",
+          "example": "video_url",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SceneVideoReferenceImageInfo": {
+      "document": "用于场景化生视频创作的参考图片信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入的参考图Url，需外网可访问。</p>",
+          "example": "https://******ode******t-1258344703.*********erate.myqcloud.com/m*****odel-agent-1258344703/agent/e****276-ba60-44b6-ac0d-81a4e1****b6.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>针对该参考图的Prompt描述，仅部分模型是支持。</p>",
+          "example": "这是图1",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参考类型。</p>",
+          "example": "style",
+          "member": "string",
+          "name": "ReferenceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SceneVideoReferenceVideoInfo": {
+      "document": "用于场景化视频生成的参考视频素材。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参考视频Url，需外网可访问。</p>",
+          "example": "https:/*****-o*****-video-file-1326*****3.co****-gu**g**ou.myqclo**.com/4/4-AigcVideo-c77c***3d161428087f1a44d6f134475_0.mp4",
+          "member": "string",
+          "name": "VideoUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ScreenshotTask": {
       "document": "截图任务",

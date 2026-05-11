@@ -217,6 +217,20 @@
       "output": "DescribeStreamIngestResponse",
       "status": "online"
     },
+    "DescribeTRTCAIRecognitionUsage": {
+      "document": "AI 智能识别与对话用量查询（AI对话/语音转文本/实时翻译/实时语音合成）\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。",
+      "input": "DescribeTRTCAIRecognitionUsageRequest",
+      "name": "AI 智能识别与对话用量查询",
+      "output": "DescribeTRTCAIRecognitionUsageResponse",
+      "status": "online"
+    },
+    "DescribeTRTCDedicatedCloudAccUsage": {
+      "document": "TRTC专属云网络加速用量查询\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。",
+      "input": "DescribeTRTCDedicatedCloudAccUsageRequest",
+      "name": "TRTC专属云网络加速用量查询",
+      "output": "DescribeTRTCDedicatedCloudAccUsageResponse",
+      "status": "online"
+    },
     "DescribeTRTCMarketQualityData": {
       "document": "查询TRTC监控仪表盘-数据大盘质量指标（包括下列指标）\njoinSuccessRate：加入频道成功率。\njoinSuccessIn5sRate：5s内加入频道成功率。\naudioFreezeRate：音频卡顿率。\nvideoFreezeRate：视频卡顿率。\nnetworkDelay ：网络延迟率。\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘[版本功能和计费说明](https://cloud.tencent.com/document/product/647/81331)。\n2.查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天。",
       "input": "DescribeTRTCMarketQualityDataRequest",
@@ -250,6 +264,13 @@
       "input": "DescribeTRTCRealTimeScaleDataRequest",
       "name": "查询TRTC实时监控规模数据",
       "output": "DescribeTRTCRealTimeScaleDataResponse",
+      "status": "online"
+    },
+    "DescribeTRTCSegmentModerationUsage": {
+      "document": "切片截图与内容理解用量查询，支持查询音视频切片（云端切片场景）和 AI 内容理解（审核场景）两种业务类型\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。",
+      "input": "DescribeTRTCSegmentModerationUsageRequest",
+      "name": "切片截图与内容理解用量查询",
+      "output": "DescribeTRTCSegmentModerationUsageResponse",
       "status": "online"
     },
     "DescribeTrtcMcuTranscodeTime": {
@@ -3608,6 +3629,165 @@
       ],
       "type": "object"
     },
+    "DescribeTRTCAIRecognitionUsageRequest": {
+      "document": "DescribeTRTCAIRecognitionUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询开始时间，格式为YYYY-MM-DD HH:mm:ss。",
+          "example": "2026-04-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间，格式为YYYY-MM-DD HH:mm:ss。单次查询统计区间最多不能超过31天。",
+          "example": "2026-04-02 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用量类型列表。\n- conversation AI 实时对话\n- asr 语音转文本\n- translation 实时翻译\n- tts 实时语音合成",
+          "example": "[\"conversation\"]",
+          "member": "string",
+          "name": "AuType",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。",
+          "example": "1400763596",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCAIRecognitionUsageResponse": {
+      "document": "DescribeTRTCAIRecognitionUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用量类型列表",
+          "example": "[\"Conversation\"]",
+          "member": "string",
+          "name": "UsageKey",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用量列表",
+          "example": "无",
+          "member": "UsageList",
+          "name": "UsageList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总用量列表",
+          "example": "[0]",
+          "member": "float",
+          "name": "TotalUsage",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCDedicatedCloudAccUsageRequest": {
+      "document": "DescribeTRTCDedicatedCloudAccUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询开始时间，格式为YYYY-MM-DD HH:mm:ss。",
+          "example": "2026-04-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间，格式为YYYY-MM-DD HH:mm:ss。单次查询统计区间最多不能超过31天。",
+          "example": "2026-04-03 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。",
+          "example": "1400621940",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCDedicatedCloudAccUsageResponse": {
+      "document": "DescribeTRTCDedicatedCloudAccUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用量指标名列表",
+          "example": "[\"Time\"]",
+          "member": "string",
+          "name": "UsageKey",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用量明细列表",
+          "example": "无",
+          "member": "UsageList",
+          "name": "UsageList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "汇总用量列表",
+          "example": "[0]",
+          "member": "uint64",
+          "name": "TotalUsage",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTRTCMarketQualityDataRequest": {
       "document": "DescribeTRTCMarketQualityData请求参数结构体",
       "members": [
@@ -3927,6 +4107,99 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCSegmentModerationUsageRequest": {
+      "document": "DescribeTRTCSegmentModerationUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询开始时间，格式为YYYY-MM-DD HH:mm:ss。",
+          "example": "2026-04-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间，格式为YYYY-MM-DD HH:mm:ss。单次查询统计区间最多不能超过31天。",
+          "example": "2026-04-10 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体类型，枚举值：audio（音频）、picture（图片）",
+          "example": "audio",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用场景（业务类型），枚举值：0 = AI 内容理解（审核场景）、1 = 音视频切片（云端切片场景）",
+          "example": "0",
+          "member": "uint64",
+          "name": "Business",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。",
+          "example": "1400621940",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCSegmentModerationUsageResponse": {
+      "document": "DescribeTRTCSegmentModerationUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用量指标名列表",
+          "example": "[\"Audio\"]",
+          "member": "string",
+          "name": "UsageKey",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用量明细列表",
+          "example": "无",
+          "member": "UsageList",
+          "name": "UsageList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "汇总用量列表",
+          "example": "[0]",
+          "member": "uint64",
+          "name": "TotalUsage",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10262,6 +10535,32 @@
         }
       ],
       "type": "object"
+    },
+    "UsageList": {
+      "document": "用量列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间",
+          "example": "2026-04-01 00:00:00",
+          "member": "string",
+          "name": "TimeKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用量数值",
+          "example": "[0]",
+          "member": "float",
+          "name": "UsageValue",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UserInformation": {
       "document": "用户信息，包括用户进房时间，退房时间等",

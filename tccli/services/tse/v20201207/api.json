@@ -10073,7 +10073,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "按照服务名过滤，精确匹配。",
+          "document": "<p>按照服务名过滤，精确匹配。</p>",
           "example": "Producer",
           "member": "string",
           "name": "Name",
@@ -10082,7 +10082,7 @@
         },
         {
           "disabled": false,
-          "document": "按照命名空间过滤，精确匹配。",
+          "document": "<p>按照命名空间过滤，精确匹配。</p>",
           "example": "Development",
           "member": "string",
           "name": "Namespace",
@@ -10091,7 +10091,7 @@
         },
         {
           "disabled": false,
-          "document": "使用元数据过滤，目前只支持一组元组数，若传了多条，只会使用第一条元数据过滤。",
+          "document": "<p>使用元数据过滤，目前只支持一组元组数，若传了多条，只会使用第一条元数据过滤。</p>",
           "example": "无",
           "member": "Metadata",
           "name": "Metadatas",
@@ -10100,7 +10100,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -10109,7 +10109,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -10118,7 +10118,7 @@
         },
         {
           "disabled": false,
-          "document": "tse 实例 id。",
+          "document": "<p>tse 实例 id。</p>",
           "example": "ins-df344df5",
           "member": "string",
           "name": "InstanceId",
@@ -10127,7 +10127,7 @@
         },
         {
           "disabled": false,
-          "document": "服务所属部门。",
+          "document": "<p>服务所属部门。</p>",
           "example": "市场部",
           "member": "string",
           "name": "Department",
@@ -10136,7 +10136,7 @@
         },
         {
           "disabled": false,
-          "document": "服务所属业务。",
+          "document": "<p>服务所属业务。</p>",
           "example": "采购业务",
           "member": "string",
           "name": "Business",
@@ -10145,7 +10145,7 @@
         },
         {
           "disabled": false,
-          "document": "服务中实例的ip，用来过滤服务。",
+          "document": "<p>服务中实例的ip，用来过滤服务。</p>",
           "example": "10.10.6.2",
           "member": "string",
           "name": "Host",
@@ -10154,7 +10154,7 @@
         },
         {
           "disabled": false,
-          "document": "是否只查询存在健康实例的服务",
+          "document": "<p>是否只查询存在健康实例的服务</p>",
           "example": "true",
           "member": "bool",
           "name": "OnlyExistHealthyInstance",
@@ -10163,7 +10163,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启同步到全局注册中心\t",
+          "document": "<p>是否开启同步到全局注册中心</p>",
           "example": "false",
           "member": "string",
           "name": "SyncToGlobalRegistry",
@@ -10172,12 +10172,21 @@
         },
         {
           "disabled": false,
-          "document": "过滤筛选条件",
+          "document": "<p>过滤筛选条件</p>",
           "example": "无",
           "member": "Filter",
           "name": "StatusFilter",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型</p><p>枚举值：</p><ul><li>0： 微服务（默认）</li><li>1： MCP Server</li><li>2： AI Agent</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10187,7 +10196,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务数总量。",
+          "document": "<p>服务数总量。</p>",
           "example": "15",
           "member": "uint64",
           "name": "TotalCount",
@@ -10197,7 +10206,7 @@
         },
         {
           "disabled": false,
-          "document": "服务信息详情。",
+          "document": "<p>服务信息详情。</p>",
           "example": "无",
           "member": "GovernanceService",
           "name": "Content",
@@ -13279,7 +13288,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务名称。",
+          "document": "<p>服务名称。</p>",
           "example": "provider-demo",
           "member": "string",
           "name": "Name",
@@ -13289,7 +13298,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间名称。",
+          "document": "<p>命名空间名称。</p>",
           "example": "namespaceName",
           "member": "string",
           "name": "Namespace",
@@ -13299,7 +13308,7 @@
         },
         {
           "disabled": false,
-          "document": "元数据信息数组。",
+          "document": "<p>元数据信息数组。</p>",
           "example": "无",
           "member": "Metadata",
           "name": "Metadatas",
@@ -13309,7 +13318,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息。",
+          "document": "<p>描述信息。</p>",
           "example": "comment",
           "member": "string",
           "name": "Comment",
@@ -13319,7 +13328,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "CreateTime",
@@ -13329,7 +13338,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间。",
+          "document": "<p>修改时间。</p>",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "ModifyTime",
@@ -13339,7 +13348,7 @@
         },
         {
           "disabled": false,
-          "document": "服务所属部门。",
+          "document": "<p>服务所属部门。</p>",
           "example": "departmentName",
           "member": "string",
           "name": "Department",
@@ -13349,7 +13358,7 @@
         },
         {
           "disabled": false,
-          "document": "服务所属业务。",
+          "document": "<p>服务所属业务。</p>",
           "example": "businessName",
           "member": "string",
           "name": "Business",
@@ -13359,7 +13368,7 @@
         },
         {
           "disabled": false,
-          "document": "健康服务实例数",
+          "document": "<p>健康服务实例数</p>",
           "example": "1",
           "member": "uint64",
           "name": "HealthyInstanceCount",
@@ -13369,7 +13378,7 @@
         },
         {
           "disabled": false,
-          "document": "服务实例总数",
+          "document": "<p>服务实例总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalInstanceCount",
@@ -13379,7 +13388,7 @@
         },
         {
           "disabled": false,
-          "document": "服务ID",
+          "document": "<p>服务ID</p>",
           "example": "1",
           "member": "string",
           "name": "Id",
@@ -13389,7 +13398,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以编辑",
+          "document": "<p>是否可以编辑</p>",
           "example": "true",
           "member": "bool",
           "name": "Editable",
@@ -13399,7 +13408,7 @@
         },
         {
           "disabled": false,
-          "document": "可以编辑该资源的用户ID",
+          "document": "<p>可以编辑该资源的用户ID</p>",
           "example": "[\"usera\"]",
           "member": "string",
           "name": "UserIds",
@@ -13409,7 +13418,7 @@
         },
         {
           "disabled": false,
-          "document": "可以编辑该资源的用户组ID",
+          "document": "<p>可以编辑该资源的用户组ID</p>",
           "example": "[\"group-1\"]",
           "member": "string",
           "name": "GroupIds",
@@ -13419,7 +13428,7 @@
         },
         {
           "disabled": false,
-          "document": "移除可以编辑该资源的用户ID",
+          "document": "<p>移除可以编辑该资源的用户ID</p>",
           "example": "[\"usera\"]",
           "member": "string",
           "name": "RemoveUserIds",
@@ -13429,7 +13438,7 @@
         },
         {
           "disabled": false,
-          "document": "移除可以编辑该资源的用户组ID",
+          "document": "<p>移除可以编辑该资源的用户组ID</p>",
           "example": "[\"group-1\"]",
           "member": "string",
           "name": "RemoveGroupIds",
@@ -13439,7 +13448,7 @@
         },
         {
           "disabled": false,
-          "document": "该服务对哪些命名空间可见\t",
+          "document": "<p>该服务对哪些命名空间可见</p>",
           "example": "[ \"Namespace-2\"]",
           "member": "string",
           "name": "ExportTo",
@@ -13449,7 +13458,7 @@
         },
         {
           "disabled": false,
-          "document": "该服务信息摘要签名",
+          "document": "<p>该服务信息摘要签名</p>",
           "example": "hash",
           "member": "string",
           "name": "Revision",
@@ -13459,7 +13468,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启同步到全局注册中心",
+          "document": "<p>是否开启同步到全局注册中心</p>",
           "example": "false",
           "member": "bool",
           "name": "SyncToGlobalRegistry",
@@ -13469,7 +13478,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离实例数",
+          "document": "<p>隔离实例数</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsolateInstanceCount",
@@ -13479,10 +13488,20 @@
         },
         {
           "disabled": false,
-          "document": "服务健康状态",
+          "document": "<p>服务健康状态</p>",
           "example": "1",
           "member": "int64",
           "name": "ServiceStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型</p><p>枚举值：</p><ul><li>0： 微服务（默认）</li><li>1： MCP Server</li><li>2： AI Agent</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -13708,7 +13727,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务名。",
+          "document": "<p>服务名。</p>",
           "example": "Producer",
           "member": "string",
           "name": "Name",
@@ -13717,7 +13736,7 @@
         },
         {
           "disabled": false,
-          "document": "服务所属命名空间。",
+          "document": "<p>服务所属命名空间。</p>",
           "example": "Development",
           "member": "string",
           "name": "Namespace",
@@ -13726,7 +13745,7 @@
         },
         {
           "disabled": false,
-          "document": "服务描述信息。",
+          "document": "<p>服务描述信息。</p>",
           "example": "生产者服务。",
           "member": "string",
           "name": "Comment",
@@ -13735,7 +13754,7 @@
         },
         {
           "disabled": false,
-          "document": "服务元数据。",
+          "document": "<p>服务元数据。</p>",
           "example": "无",
           "member": "Metadata",
           "name": "Metadatas",
@@ -13744,7 +13763,7 @@
         },
         {
           "disabled": false,
-          "document": "服务所属部门。",
+          "document": "<p>服务所属部门。</p>",
           "example": "市场部",
           "member": "string",
           "name": "Department",
@@ -13753,7 +13772,7 @@
         },
         {
           "disabled": false,
-          "document": "服务所属业务。",
+          "document": "<p>服务所属业务。</p>",
           "example": "采购业务",
           "member": "string",
           "name": "Business",
@@ -13762,8 +13781,8 @@
         },
         {
           "disabled": false,
-          "document": "被添加进来可以操作此命名空间的用户ID列表",
-          "example": "[1,2,3]",
+          "document": "<p>被添加进来可以操作此命名空间的用户ID列表</p>",
+          "example": "[\"1\",\"2\",\"3\"]",
           "member": "string",
           "name": "UserIds",
           "required": false,
@@ -13771,8 +13790,8 @@
         },
         {
           "disabled": false,
-          "document": "被添加进来可以操作此命名空间的用户组ID列表",
-          "example": "[1,2,3]",
+          "document": "<p>被添加进来可以操作此命名空间的用户组ID列表</p>",
+          "example": "[\"1\",\"2\",\"3\"]",
           "member": "string",
           "name": "GroupIds",
           "required": false,
@@ -13780,8 +13799,8 @@
         },
         {
           "disabled": false,
-          "document": "从操作此命名空间的用户组ID列表被移除的ID列表",
-          "example": "[1,2,3]",
+          "document": "<p>从操作此命名空间的用户组ID列表被移除的ID列表</p>",
+          "example": "[\"1\",\"2\",\"3\"]",
           "member": "string",
           "name": "RemoveUserIds",
           "required": false,
@@ -13789,8 +13808,8 @@
         },
         {
           "disabled": false,
-          "document": "从可以操作此命名空间的用户组ID列表中被移除的ID列表",
-          "example": "[1,2,3]",
+          "document": "<p>从可以操作此命名空间的用户组ID列表中被移除的ID列表</p>",
+          "example": "[\"1\",\"2\",\"3\"]",
           "member": "string",
           "name": "RemoveGroupIds",
           "required": false,
@@ -13798,8 +13817,8 @@
         },
         {
           "disabled": false,
-          "document": "该服务对哪些命名空间可见",
-          "example": "[Namespace-1,Namespace-2]",
+          "document": "<p>该服务对哪些命名空间可见</p>",
+          "example": "[\"Namespace-1\",\"Namespace-2\"]",
           "member": "string",
           "name": "ExportTo",
           "required": false,
@@ -13807,12 +13826,21 @@
         },
         {
           "disabled": false,
-          "document": "是否开启同步到全局注册中心",
+          "document": "<p>是否开启同步到全局注册中心</p>",
           "example": "false",
           "member": "bool",
           "name": "SyncToGlobalRegistry",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型</p><p>枚举值：</p><ul><li>0： 微服务（默认）</li><li>1： MCP Server</li><li>2： AI Agent</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

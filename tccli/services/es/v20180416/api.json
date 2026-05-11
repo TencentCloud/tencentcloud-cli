@@ -1373,7 +1373,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启cos自动备份",
+          "document": "<p>是否开启cos自动备份</p>",
           "example": "true",
           "member": "bool",
           "name": "IsAutoBackup",
@@ -1384,7 +1384,7 @@
         },
         {
           "disabled": false,
-          "document": "自动备份执行时间（精确到小时）, e.g. \"22:00\"",
+          "document": "<p>自动备份执行时间（精确到小时）, e.g. &quot;22:00&quot;</p>",
           "example": "00:00",
           "member": "string",
           "name": "BackupTime",
@@ -1395,7 +1395,7 @@
         },
         {
           "disabled": false,
-          "document": "备份快照前缀",
+          "document": "<p>备份快照前缀</p>",
           "example": "es-xxxx",
           "member": "string",
           "name": "SnapshotName",
@@ -1406,7 +1406,7 @@
         },
         {
           "disabled": false,
-          "document": "0 腾讯云仓库; 1 客户仓库",
+          "document": "<p>0 腾讯云仓库; 1 客户仓库</p>",
           "example": "0",
           "member": "uint64",
           "name": "EsRepositoryType",
@@ -1417,7 +1417,7 @@
         },
         {
           "disabled": false,
-          "document": "托管快照仓库名称",
+          "document": "<p>托管快照仓库名称</p>",
           "example": "ES_AUTO_BACKUP",
           "member": "string",
           "name": "PaasEsRepository",
@@ -1428,7 +1428,7 @@
         },
         {
           "disabled": false,
-          "document": "客户快照仓库名称",
+          "document": "<p>客户快照仓库名称</p>",
           "example": "testRepository",
           "member": "string",
           "name": "UserEsRepository",
@@ -1439,7 +1439,7 @@
         },
         {
           "disabled": false,
-          "document": "cos存储文件夹目录",
+          "document": "<p>cos存储文件夹目录</p>",
           "example": "/es_backup/es-xxxx",
           "member": "string",
           "name": "CosBasePath",
@@ -1450,7 +1450,7 @@
         },
         {
           "disabled": false,
-          "document": "快照存储周期 单位天",
+          "document": "<p>快照存储周期 单位天</p>",
           "example": "15",
           "member": "uint64",
           "name": "StorageDuration",
@@ -1461,7 +1461,7 @@
         },
         {
           "disabled": false,
-          "document": "自动备份频率单位小时",
+          "document": "<p>自动备份频率单位小时</p>",
           "example": "4",
           "member": "uint64",
           "name": "AutoBackupInterval",
@@ -1472,7 +1472,7 @@
         },
         {
           "disabled": false,
-          "document": "备份锁定 0 不锁定; 1 锁定",
+          "document": "<p>备份锁定 0 不锁定; 1 锁定</p>",
           "example": "0",
           "member": "uint64",
           "name": "CosRetention",
@@ -1483,7 +1483,7 @@
         },
         {
           "disabled": false,
-          "document": "锁定截止日期 2022-12-10T08:34:48.000Z",
+          "document": "<p>锁定截止日期 2022-12-10T08:34:48.000Z</p>",
           "example": "2022-12-10T08:34:48.000Z",
           "member": "string",
           "name": "RetainUntilDate",
@@ -1494,7 +1494,7 @@
         },
         {
           "disabled": false,
-          "document": "锁定宽限期",
+          "document": "<p>锁定宽限期</p>",
           "example": "2",
           "member": "uint64",
           "name": "RetentionGraceTime",
@@ -1505,7 +1505,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域备份 0 不跨地域; 1 跨地域",
+          "document": "<p>跨地域备份 0 不跨地域; 1 跨地域</p>",
           "example": "0",
           "member": "uint64",
           "name": "RemoteCos",
@@ -1516,7 +1516,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域备份地域名称 ap-guangzhou",
+          "document": "<p>跨地域备份地域名称 ap-guangzhou</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "RemoteCosRegion",
@@ -1527,7 +1527,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名称",
+          "document": "<p>策略名称</p>",
           "example": "mypolicy",
           "member": "string",
           "name": "StrategyName",
@@ -1538,7 +1538,7 @@
         },
         {
           "disabled": false,
-          "document": "备份索引列表，如果不填表示备份所有索引",
+          "document": "<p>备份索引列表，如果不填表示备份所有索引</p>",
           "example": "*",
           "member": "string",
           "name": "Indices",
@@ -1549,7 +1549,7 @@
         },
         {
           "disabled": false,
-          "document": "cos多AZ备份 0 单AZ; 1 多AZ",
+          "document": "<p>cos多AZ备份 0 单AZ; 1 多AZ</p>",
           "example": "0",
           "member": "uint64",
           "name": "MultiAz",
@@ -1560,10 +1560,43 @@
         },
         {
           "disabled": false,
-          "document": "策略创建时间",
+          "document": "<p>每节点写入仓库的最大速度 max_snapshot_bytes_per_sec, 默认40m</p>",
+          "example": "50mb",
+          "member": "string",
+          "name": "MaxSnapshotPerSec",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每节点读取仓库的最大速度 max_restore_bytes_per_sec, 710前默认40m, 710及以后默认无限制</p>",
+          "example": "50mb",
+          "member": "string",
+          "name": "MaxRestorePerSec",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略创建时间</p>",
           "example": "2022-12-10 08:34:48",
           "member": "string",
           "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "es-xxx",
+          "member": "string",
+          "name": "InstanceId",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -1699,7 +1732,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "es-xxx",
           "member": "string",
           "name": "InstanceId",
@@ -1708,7 +1741,7 @@
         },
         {
           "disabled": false,
-          "document": "快照名称",
+          "document": "<p>快照名称</p>",
           "example": "test-snapshot_20220202",
           "member": "string",
           "name": "SnapshotName",
@@ -1717,7 +1750,7 @@
         },
         {
           "disabled": false,
-          "document": "索引名称",
+          "document": "<p>索引名称</p>",
           "example": "index1,index2",
           "member": "string",
           "name": "Indices",
@@ -1726,7 +1759,7 @@
         },
         {
           "disabled": false,
-          "document": "0 腾讯云仓库; 1 客户仓库",
+          "document": "<p>0 腾讯云仓库; 1 客户仓库</p>",
           "example": "0",
           "member": "uint64",
           "name": "EsRepositoryType",
@@ -1735,7 +1768,7 @@
         },
         {
           "disabled": false,
-          "document": "客户快照仓库名称",
+          "document": "<p>客户快照仓库名称</p>",
           "example": "UserEsRepository",
           "member": "string",
           "name": "UserEsRepository",
@@ -1744,7 +1777,7 @@
         },
         {
           "disabled": false,
-          "document": "快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天",
+          "document": "<p>快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天</p>",
           "example": "3",
           "member": "uint64",
           "name": "StorageDuration",
@@ -1753,7 +1786,7 @@
         },
         {
           "disabled": false,
-          "document": "备份锁定 0 不锁定; 1 锁定",
+          "document": "<p>备份锁定 0 不锁定; 1 锁定</p>",
           "example": "0",
           "member": "uint64",
           "name": "CosRetention",
@@ -1762,7 +1795,7 @@
         },
         {
           "disabled": false,
-          "document": "锁定截止日期 2022-12-10T08:34:48.000Z",
+          "document": "<p>锁定截止日期 2022-12-10T08:34:48.000Z</p>",
           "example": "2022-12-10T08:34:48.000Z",
           "member": "string",
           "name": "RetainUntilDate",
@@ -1771,7 +1804,7 @@
         },
         {
           "disabled": false,
-          "document": "锁定宽限期,单位天",
+          "document": "<p>锁定宽限期,单位天</p>",
           "example": "7",
           "member": "uint64",
           "name": "RetentionGraceTime",
@@ -1780,7 +1813,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域备份 0 不跨地域; 1 跨地域",
+          "document": "<p>跨地域备份 0 不跨地域; 1 跨地域</p>",
           "example": "0",
           "member": "uint64",
           "name": "RemoteCos",
@@ -1789,7 +1822,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域备份地域名称 ap-guangzhou",
+          "document": "<p>跨地域备份地域名称 ap-guangzhou</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "RemoteCosRegion",
@@ -1798,12 +1831,21 @@
         },
         {
           "disabled": false,
-          "document": "cos多AZ备份 0 单AZ; 1 多AZ",
+          "document": "<p>cos多AZ备份 0 单AZ; 1 多AZ</p>",
           "example": "0",
           "member": "uint64",
           "name": "MultiAz",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照创建速率（单位mb）</p>",
+          "example": "50mb",
+          "member": "string",
+          "name": "MaxSnapshotPerSec",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1813,7 +1855,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "es-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -3178,12 +3220,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "es-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回收站锁定设置，true时不可手动销毁，到预设时间后自动销毁</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "LockEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>放入回收站的锁定时间</p><p>取值范围：[1, 7]</p><p>单位：天</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "LockDuration",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7295,7 +7355,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "es-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -7305,7 +7365,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "实例名称",
           "member": "string",
           "name": "InstanceName",
@@ -7315,7 +7375,7 @@
         },
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -7325,7 +7385,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -7335,7 +7395,7 @@
         },
         {
           "disabled": false,
-          "document": "用户ID",
+          "document": "<p>用户ID</p>",
           "example": "12341312",
           "member": "uint64",
           "name": "AppId",
@@ -7345,7 +7405,7 @@
         },
         {
           "disabled": false,
-          "document": "用户UIN",
+          "document": "<p>用户UIN</p>",
           "example": "100xxxxxxxx",
           "member": "string",
           "name": "Uin",
@@ -7355,7 +7415,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属VPC的UID",
+          "document": "<p>实例所属VPC的UID</p>",
           "example": "vpc-xxxxxxx",
           "member": "string",
           "name": "VpcUid",
@@ -7365,7 +7425,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属子网的UID",
+          "document": "<p>实例所属子网的UID</p>",
           "example": "subnet-xxxxxxx",
           "member": "string",
           "name": "SubnetUid",
@@ -7375,7 +7435,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中",
+          "document": "<p>实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -7385,7 +7445,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。取值范围：\nRENEW_FLAG_AUTO：自动续费  \nRENEW_FLAG_MANUAL：不自动续费\n默认取值：\nRENEW_FLAG_DEFAULT：不自动续费\n若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。",
+          "document": "<p>自动续费标识。取值范围：<br>RENEW_FLAG_AUTO：自动续费<br>RENEW_FLAG_MANUAL：不自动续费<br>默认取值：<br>RENEW_FLAG_DEFAULT：不自动续费<br>若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。</p>",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -7395,7 +7455,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。",
+          "document": "<p>实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。</p>",
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
@@ -7405,7 +7465,7 @@
         },
         {
           "disabled": false,
-          "document": "包年包月购买时长,单位:月",
+          "document": "<p>包年包月购买时长,单位:月</p>",
           "example": "6",
           "member": "uint64",
           "name": "ChargePeriod",
@@ -7415,7 +7475,7 @@
         },
         {
           "disabled": false,
-          "document": "节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "document": "<p>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>",
           "example": "ES.S1.SMALL2",
           "member": "string",
           "name": "NodeType",
@@ -7425,7 +7485,7 @@
         },
         {
           "disabled": false,
-          "document": "节点个数",
+          "document": "<p>节点个数</p>",
           "example": "3",
           "member": "uint64",
           "name": "NodeNum",
@@ -7435,7 +7495,7 @@
         },
         {
           "disabled": false,
-          "document": "节点CPU核数",
+          "document": "<p>节点CPU核数</p>",
           "example": "4",
           "member": "uint64",
           "name": "CpuNum",
@@ -7445,7 +7505,7 @@
         },
         {
           "disabled": false,
-          "document": "节点内存大小，单位GB",
+          "document": "<p>节点内存大小，单位GB</p>",
           "example": "8",
           "member": "uint64",
           "name": "MemSize",
@@ -7455,7 +7515,7 @@
         },
         {
           "disabled": false,
-          "document": "节点磁盘类型",
+          "document": "<p>节点磁盘类型</p>",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
@@ -7465,7 +7525,7 @@
         },
         {
           "disabled": false,
-          "document": "节点磁盘大小，单位GB",
+          "document": "<p>节点磁盘大小，单位GB</p>",
           "example": "100",
           "member": "uint64",
           "name": "DiskSize",
@@ -7475,7 +7535,7 @@
         },
         {
           "disabled": false,
-          "document": "ES域名",
+          "document": "<p>ES域名</p>",
           "example": "http://es-xxxxxxxx",
           "member": "string",
           "name": "EsDomain",
@@ -7485,7 +7545,7 @@
         },
         {
           "disabled": false,
-          "document": "ES VIP",
+          "document": "<p>ES VIP</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "EsVip",
@@ -7495,7 +7555,7 @@
         },
         {
           "disabled": false,
-          "document": "ES端口",
+          "document": "<p>ES端口</p>",
           "example": "9200",
           "member": "uint64",
           "name": "EsPort",
@@ -7505,7 +7565,7 @@
         },
         {
           "disabled": false,
-          "document": "Kibana访问url",
+          "document": "<p>Kibana访问url</p>",
           "example": "http://es-xxxxxxxx",
           "member": "string",
           "name": "KibanaUrl",
@@ -7515,7 +7575,7 @@
         },
         {
           "disabled": false,
-          "document": "ES版本号",
+          "document": "<p>ES版本号</p>",
           "example": "5.6.4",
           "member": "string",
           "name": "EsVersion",
@@ -7525,7 +7585,7 @@
         },
         {
           "disabled": false,
-          "document": "ES配置项",
+          "document": "<p>ES配置项</p>",
           "example": "\"{}\"",
           "member": "string",
           "name": "EsConfig",
@@ -7535,7 +7595,7 @@
         },
         {
           "disabled": false,
-          "document": "Kibana访问控制配置",
+          "document": "<p>Kibana访问控制配置</p>",
           "example": "无",
           "member": "EsAcl",
           "name": "EsAcl",
@@ -7545,7 +7605,7 @@
         },
         {
           "disabled": false,
-          "document": "实例创建时间",
+          "document": "<p>实例创建时间</p>",
           "example": "2021-03-01 10:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -7555,7 +7615,7 @@
         },
         {
           "disabled": false,
-          "document": "实例最后修改操作时间",
+          "document": "<p>实例最后修改操作时间</p>",
           "example": "2021-03-01 10:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -7565,7 +7625,7 @@
         },
         {
           "disabled": false,
-          "document": "实例到期时间",
+          "document": "<p>实例到期时间</p>",
           "example": "2021-03-01 10:00:00",
           "member": "string",
           "name": "Deadline",
@@ -7575,7 +7635,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型（实例类型标识，当前只有1,2两种）",
+          "document": "<p>实例类型（实例类型标识，当前只有1,2两种）</p>",
           "example": "1",
           "member": "uint64",
           "name": "InstanceType",
@@ -7585,7 +7645,7 @@
         },
         {
           "disabled": false,
-          "document": "Ik分词器配置",
+          "document": "<p>Ik分词器配置</p>",
           "example": "无",
           "member": "EsDictionaryInfo",
           "name": "IkConfig",
@@ -7595,7 +7655,7 @@
         },
         {
           "disabled": false,
-          "document": "专用主节点配置",
+          "document": "<p>专用主节点配置</p>",
           "example": "无",
           "member": "MasterNodeInfo",
           "name": "MasterNodeInfo",
@@ -7605,7 +7665,7 @@
         },
         {
           "disabled": false,
-          "document": "cos自动备份配置",
+          "document": "<p>cos自动备份配置</p>",
           "example": "无",
           "member": "CosBackup",
           "name": "CosBackup",
@@ -7615,7 +7675,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许cos自动备份",
+          "document": "<p>是否允许cos自动备份</p>",
           "example": "true",
           "member": "bool",
           "name": "AllowCosBackup",
@@ -7625,7 +7685,7 @@
         },
         {
           "disabled": false,
-          "document": "实例拥有的标签列表",
+          "document": "<p>实例拥有的标签列表</p>",
           "example": "无",
           "member": "TagInfo",
           "name": "TagList",
@@ -7635,7 +7695,7 @@
         },
         {
           "disabled": false,
-          "document": "License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum",
+          "document": "<p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum</p>",
           "example": "platinum",
           "member": "string",
           "name": "LicenseType",
@@ -7645,7 +7705,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "EnableHotWarmMode",
@@ -7655,7 +7715,7 @@
         },
         {
           "disabled": false,
-          "document": "温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ES.S1.SMALL2",
           "member": "string",
           "name": "WarmNodeType",
@@ -7665,7 +7725,7 @@
         },
         {
           "disabled": false,
-          "document": "温节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>温节点个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "uint64",
           "name": "WarmNodeNum",
@@ -7675,7 +7735,7 @@
         },
         {
           "disabled": false,
-          "document": "温节点CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>温节点CPU核数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
           "name": "WarmCpuNum",
@@ -7685,7 +7745,7 @@
         },
         {
           "disabled": false,
-          "document": "温节点内存内存大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>温节点内存内存大小，单位GB</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "uint64",
           "name": "WarmMemSize",
@@ -7695,7 +7755,7 @@
         },
         {
           "disabled": false,
-          "document": "温节点磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>温节点磁盘类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "WarmDiskType",
@@ -7705,7 +7765,7 @@
         },
         {
           "disabled": false,
-          "document": "温节点磁盘大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>温节点磁盘大小，单位GB</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
           "name": "WarmDiskSize",
@@ -7715,7 +7775,7 @@
         },
         {
           "disabled": false,
-          "document": "集群节点信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群节点信息列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NodeInfo",
           "name": "NodeInfoList",
@@ -7725,7 +7785,7 @@
         },
         {
           "disabled": false,
-          "document": "Es公网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Es公网地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://es-xxxxxxxx",
           "member": "string",
           "name": "EsPublicUrl",
@@ -7735,7 +7795,7 @@
         },
         {
           "disabled": false,
-          "document": "多可用区网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>多可用区网络信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ZoneDetail",
           "name": "MultiZoneInfo",
@@ -7745,7 +7805,7 @@
         },
         {
           "disabled": false,
-          "document": "部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "DeployMode",
@@ -7755,7 +7815,7 @@
         },
         {
           "disabled": false,
-          "document": "ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OPEN",
           "member": "string",
           "name": "PublicAccess",
@@ -7765,7 +7825,7 @@
         },
         {
           "disabled": false,
-          "document": "ES公网访问控制配置",
+          "document": "<p>ES公网访问控制配置</p>",
           "example": "无",
           "member": "EsAcl",
           "name": "EsPublicAcl",
@@ -7775,7 +7835,7 @@
         },
         {
           "disabled": false,
-          "document": "Kibana内网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Kibana内网地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://es-xxxxxxxx",
           "member": "string",
           "name": "KibanaPrivateUrl",
@@ -7785,7 +7845,7 @@
         },
         {
           "disabled": false,
-          "document": "Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OPEN",
           "member": "string",
           "name": "KibanaPublicAccess",
@@ -7795,7 +7855,7 @@
         },
         {
           "disabled": false,
-          "document": "Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OPEN",
           "member": "string",
           "name": "KibanaPrivateAccess",
@@ -7805,7 +7865,7 @@
         },
         {
           "disabled": false,
-          "document": "6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "SecurityType",
@@ -7815,7 +7875,7 @@
         },
         {
           "disabled": false,
-          "document": "场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "SceneType",
@@ -7825,7 +7885,7 @@
         },
         {
           "disabled": false,
-          "document": "Kibana配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Kibana配置项</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"{}\"",
           "member": "string",
           "name": "KibanaConfig",
@@ -7835,7 +7895,7 @@
         },
         {
           "disabled": false,
-          "document": "Kibana节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Kibana节点信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KibanaNodeInfo",
           "name": "KibanaNodeInfo",
@@ -7845,7 +7905,7 @@
         },
         {
           "disabled": false,
-          "document": "可视化节点配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可视化节点配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WebNodeTypeInfo",
           "name": "WebNodeTypeInfo",
@@ -7855,7 +7915,7 @@
         },
         {
           "disabled": false,
-          "document": "JDK类型，oracle或kona\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>JDK类型，oracle或kona</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "oracle",
           "member": "string",
           "name": "Jdk",
@@ -7865,7 +7925,7 @@
         },
         {
           "disabled": false,
-          "document": "集群网络通讯协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群网络通讯协议</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https",
           "member": "string",
           "name": "Protocol",
@@ -7875,7 +7935,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>安全组id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"str\"]",
           "member": "string",
           "name": "SecurityGroups",
@@ -7885,7 +7945,7 @@
         },
         {
           "disabled": false,
-          "document": "冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ES.S1.SMALL2",
           "member": "string",
           "name": "ColdNodeType",
@@ -7895,7 +7955,7 @@
         },
         {
           "disabled": false,
-          "document": "冷节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>冷节点个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "uint64",
           "name": "ColdNodeNum",
@@ -7905,7 +7965,7 @@
         },
         {
           "disabled": false,
-          "document": "冷节点CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>冷节点CPU核数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
           "name": "ColdCpuNum",
@@ -7915,7 +7975,7 @@
         },
         {
           "disabled": false,
-          "document": "冷节点内存大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>冷节点内存大小，单位GB</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "uint64",
           "name": "ColdMemSize",
@@ -7925,7 +7985,7 @@
         },
         {
           "disabled": false,
-          "document": "冷节点磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>冷节点磁盘类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "ColdDiskType",
@@ -7935,7 +7995,7 @@
         },
         {
           "disabled": false,
-          "document": "冷节点磁盘大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>冷节点磁盘大小，单位GB</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
           "name": "ColdDiskSize",
@@ -7945,7 +8005,7 @@
         },
         {
           "disabled": false,
-          "document": "冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ES.S1.SMALL2",
           "member": "string",
           "name": "FrozenNodeType",
@@ -7955,7 +8015,7 @@
         },
         {
           "disabled": false,
-          "document": "冻节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>冻节点个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "uint64",
           "name": "FrozenNodeNum",
@@ -7965,7 +8025,7 @@
         },
         {
           "disabled": false,
-          "document": "冻节点CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>冻节点CPU核数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
           "name": "FrozenCpuNum",
@@ -7975,7 +8035,7 @@
         },
         {
           "disabled": false,
-          "document": "冻节点内存大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>冻节点内存大小，单位GB</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "uint64",
           "name": "FrozenMemSize",
@@ -7985,7 +8045,7 @@
         },
         {
           "disabled": false,
-          "document": "冻节点磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>冻节点磁盘类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "FrozenDiskType",
@@ -7995,7 +8055,7 @@
         },
         {
           "disabled": false,
-          "document": "冻节点磁盘大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>冻节点磁盘大小，单位GB</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
           "name": "FrozenDiskSize",
@@ -8005,7 +8065,7 @@
         },
         {
           "disabled": false,
-          "document": "集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "HealthStatus",
@@ -8015,7 +8075,7 @@
         },
         {
           "disabled": false,
-          "document": "https集群内网url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>https集群内网url</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xxx.com",
           "member": "string",
           "name": "EsPrivateUrl",
@@ -8025,7 +8085,7 @@
         },
         {
           "disabled": false,
-          "document": "https集群内网域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>https集群内网域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx.com",
           "member": "string",
           "name": "EsPrivateDomain",
@@ -8035,7 +8095,7 @@
         },
         {
           "disabled": false,
-          "document": "集群的配置组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群的配置组信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EsConfigSetInfo",
           "name": "EsConfigSets",
@@ -8045,7 +8105,7 @@
         },
         {
           "disabled": false,
-          "document": "集群可维护时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群可维护时间段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OperationDuration",
           "name": "OperationDuration",
@@ -8055,7 +8115,7 @@
         },
         {
           "disabled": false,
-          "document": "web节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web节点列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OptionalWebServiceInfo",
           "name": "OptionalWebServiceInfos",
@@ -8065,7 +8125,7 @@
         },
         {
           "disabled": false,
-          "document": "自治索引开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自治索引开关</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "AutoIndexEnabled",
@@ -8075,7 +8135,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持存储计算分离\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否支持存储计算分离</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "EnableHybridStorage",
@@ -8085,7 +8145,7 @@
         },
         {
           "disabled": false,
-          "document": "流程进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>流程进度</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
           "name": "ProcessPercent",
@@ -8095,7 +8155,7 @@
         },
         {
           "disabled": false,
-          "document": "Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OPEN",
           "member": "string",
           "name": "KibanaAlteringPublicAccess",
@@ -8105,7 +8165,7 @@
         },
         {
           "disabled": false,
-          "document": "本月是否有内核可以更新：false-无，true-有\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本月是否有内核可以更新：false-无，true-有</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "HasKernelUpgrade",
@@ -8115,7 +8175,7 @@
         },
         {
           "disabled": false,
-          "document": "cdcId，使用cdc子网时传递\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>cdcId，使用cdc子网时传递</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cluster-xxxxxx",
           "member": "string",
           "name": "CdcId",
@@ -8125,7 +8185,7 @@
         },
         {
           "disabled": false,
-          "document": "kibana内网vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>kibana内网vip</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.0.0.1",
           "member": "string",
           "name": "KibanaPrivateVip",
@@ -8135,7 +8195,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义kibana内网url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义kibana内网url</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://xxx.com",
           "member": "string",
           "name": "CustomKibanaPrivateUrl",
@@ -8145,7 +8205,7 @@
         },
         {
           "disabled": false,
-          "document": "节点出站访问详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点出站访问详细信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OutboundPublicAcl",
           "name": "OutboundPublicAcls",
@@ -8155,7 +8215,7 @@
         },
         {
           "disabled": false,
-          "document": "网络连接方案\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>网络连接方案</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PrivateLink",
           "member": "string",
           "name": "NetConnectScheme",
@@ -8165,7 +8225,7 @@
         },
         {
           "disabled": false,
-          "document": "置放群组相关参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>置放群组相关参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "DisasterRecoverGroupAffinity",
@@ -8175,7 +8235,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品ID枚举值： 开源版：\"sp_es_io2\"， 基础版：\"sp_es_basic\"，白金版：\"sp_es_platinum\"，企业版：\"sp_es_enterprise\"，CDC白金版：\"sp_es_cdc_platinum\"，日志增强版：\"sp_es_enlogging\"，tsearch：\"sp_tsearch_io2\"，logstash：\"sp_es_logstash\" ，可以为空，为空的时候后台取LicenseType映射该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sp_es_platinum",
           "member": "string",
           "name": "SubProductCode",
@@ -8185,7 +8245,7 @@
         },
         {
           "disabled": false,
-          "document": "存算分离cos用量，单位M\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存算分离cos用量，单位M</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "CosBucketStorageSize",
@@ -8195,7 +8255,7 @@
         },
         {
           "disabled": false,
-          "document": "读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ReadWriteMode",
@@ -8205,7 +8265,7 @@
         },
         {
           "disabled": false,
-          "document": "是否有置放群组异步调度任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否有置放群组异步调度任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "EnableScheduleRecoverGroup",
@@ -8215,7 +8275,7 @@
         },
         {
           "disabled": false,
-          "document": "异步调度任务的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>异步调度任务的时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EnableScheduleOperationDuration",
           "name": "EnableScheduleOperationDuration",
@@ -8225,7 +8285,7 @@
         },
         {
           "disabled": false,
-          "document": "开启集群保护：OPEN-开启，CLOSE-关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>开启集群保护：OPEN-开启，CLOSE-关闭</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLOSE",
           "member": "string",
           "name": "EnableDestroyProtection",
@@ -8235,7 +8295,7 @@
         },
         {
           "disabled": false,
-          "document": "kibana内网访问地址",
+          "document": "<p>kibana内网访问地址</p>",
           "example": "http://10.0.0.1:5601",
           "member": "string",
           "name": "ShowKibanaIpPort",
@@ -8245,7 +8305,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为CDZLite可用区",
+          "document": "<p>是否为CDZLite可用区</p>",
           "example": "false",
           "member": "bool",
           "name": "IsCdzLite",
@@ -8255,12 +8315,52 @@
         },
         {
           "disabled": false,
-          "document": "集群内网tcp地址",
+          "document": "<p>集群内网tcp地址</p>",
           "example": "10.1.2.3:9300",
           "member": "string",
           "name": "EsPrivateTcpUrl",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否在回收站内</p><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsInRecycleBin",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回收站内是否锁定</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "RecycleLockEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预计销毁的时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>",
+          "example": "2026-05-10 10:00:00",
+          "member": "string",
+          "name": "MayDestroyPoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>延迟销毁的时间</p><p>单位：天</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DelayDestroyInterval",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -10272,7 +10372,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作唯一id",
+          "document": "<p>操作唯一id</p>",
           "example": "190587",
           "member": "uint64",
           "name": "Id",
@@ -10282,7 +10382,7 @@
         },
         {
           "disabled": false,
-          "document": "操作开始时间",
+          "document": "<p>操作开始时间</p>",
           "example": "2023-03-06 16:24:44",
           "member": "string",
           "name": "StartTime",
@@ -10292,7 +10392,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型",
+          "document": "<p>操作类型</p>",
           "example": "UpdateKibanaConfig",
           "member": "string",
           "name": "Type",
@@ -10302,8 +10402,8 @@
         },
         {
           "disabled": false,
-          "document": "操作详情",
-          "example": "{\"OldInfo\":[{\"Key\":\"KibanaConfig\",\"Value\":\"{}\"}],\"NewInfo\":[{\"Key\":\"KibanaConfig\",\"Value\":\"{\\\"xpack.reporting.csv.maxSizeBytes\\\":\\\"104857600\\\"}\"}]}",
+          "document": "<p>操作详情</p>",
+          "example": "无",
           "member": "OperationDetail",
           "name": "Detail",
           "output_required": true,
@@ -10312,7 +10412,7 @@
         },
         {
           "disabled": false,
-          "document": "操作结果",
+          "document": "<p>操作结果</p>",
           "example": "completed",
           "member": "string",
           "name": "Result",
@@ -10322,8 +10422,8 @@
         },
         {
           "disabled": false,
-          "document": "流程任务信息",
-          "example": "[{\"Name\":\"upgradeCheck\",\"Progress\":1,\"FinishTime\":\"2020-04-26 14:45:55\",\"SubTasks\":[{\"Name\":\"userAgentPipelinesCheck\",\"Type\":\"cluster\",\"Level\":1,\"Result\":false,\"Status\":1,\"FinishTime\":\"2020-04-26 14:45:51\",\"ErrMsg\":\"\",\"FailedIndices\":[]}]",
+          "document": "<p>流程任务信息</p>",
+          "example": "无",
           "member": "TaskDetail",
           "name": "Tasks",
           "output_required": true,
@@ -10332,7 +10432,7 @@
         },
         {
           "disabled": false,
-          "document": "操作进度",
+          "document": "<p>操作进度</p>",
           "example": "1",
           "member": "float",
           "name": "Progress",
@@ -10342,7 +10442,7 @@
         },
         {
           "disabled": false,
-          "document": "回滚标记， 0未回滚 ，1回滚中，2已回滚",
+          "document": "<p>回滚标记， 0未回滚 ，1回滚中，2已回滚</p>",
           "example": "0",
           "member": "int64",
           "name": "RollbackTag",
@@ -10352,7 +10452,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作者Uin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000xxxx",
           "member": "string",
           "name": "SubAccountUin",
@@ -10362,12 +10462,22 @@
         },
         {
           "disabled": false,
-          "document": "自动扩容标识：0-非自动，1-自动",
+          "document": "<p>自动扩容标识：0-非自动，1-自动</p>",
           "example": "0",
           "member": "uint64",
           "name": "AutoScaleTag",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流程异常原因</p>",
+          "example": "集群访问超时",
+          "member": "string",
+          "name": "SuspendedReason",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -10680,7 +10790,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "已完成数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>已完成数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "Completed",
@@ -10690,7 +10800,7 @@
         },
         {
           "disabled": false,
-          "document": "剩余数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>剩余数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "Remain",
@@ -10700,7 +10810,7 @@
         },
         {
           "disabled": false,
-          "document": "总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
           "name": "Total",
@@ -10710,13 +10820,23 @@
         },
         {
           "disabled": false,
-          "document": "任务类型：\n60：重启型任务\n70：分片迁移型任务\n80：节点变配任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型：<br>60：重启型任务<br>70：分片迁移型任务<br>80：节点变配任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
           "member": "int64",
           "name": "TaskType",
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>预估剩余时间</p><p>单位：秒</p>",
+          "example": "120",
+          "member": "int64",
+          "name": "EstimatedTimeRemaining",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11140,7 +11260,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群实例Id，格式：es-xxxx",
+          "document": "<p>集群实例Id，格式：es-xxxx</p>",
           "example": "es-xxx",
           "member": "string",
           "name": "InstanceId",
@@ -11149,7 +11269,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库名称",
+          "document": "<p>仓库名称</p>",
           "example": "ES_AUTO_BACKUP",
           "member": "string",
           "name": "RepositoryName",
@@ -11158,7 +11278,7 @@
         },
         {
           "disabled": false,
-          "document": "集群快照名称",
+          "document": "<p>集群快照名称</p>",
           "example": "test_snapshot",
           "member": "string",
           "name": "SnapshotName",
@@ -11167,7 +11287,7 @@
         },
         {
           "disabled": false,
-          "document": "目标集群实例Id，格式：es-xxxx，如果是恢复到本地，则和InstanceId一致",
+          "document": "<p>目标集群实例Id，格式：es-xxxx，如果是恢复到本地，则和InstanceId一致</p>",
           "example": "es-xxxxxxxx",
           "member": "string",
           "name": "TargetInstanceId",
@@ -11176,7 +11296,7 @@
         },
         {
           "disabled": false,
-          "document": "elastic用户名对应的密码信息",
+          "document": "<p>elastic用户名对应的密码信息</p>",
           "example": "G7j#kL9p$2w",
           "member": "string",
           "name": "Password",
@@ -11185,7 +11305,7 @@
         },
         {
           "disabled": false,
-          "document": "要在所有恢复的索引中添加或更改的设置的逗号分隔列表。使用此参数可以在恢复快照时覆盖索引设置。",
+          "document": "<p>要在所有恢复的索引中添加或更改的设置的逗号分隔列表。使用此参数可以在恢复快照时覆盖索引设置。</p>",
           "example": "{\"index.number_of_replicas\": 1}",
           "member": "string",
           "name": "IndexSettings",
@@ -11194,7 +11314,7 @@
         },
         {
           "disabled": false,
-          "document": "不应从快照还原的以逗号分隔的索引设置列表。",
+          "document": "<p>不应从快照还原的以逗号分隔的索引设置列表。</p>",
           "example": "[\"false\"]",
           "member": "string",
           "name": "IncludeGlobalState",
@@ -11203,7 +11323,7 @@
         },
         {
           "disabled": false,
-          "document": "需要恢复的索引名称，非必填，为空则表示恢复所有\n\n支持传多个索引名称",
+          "document": "<p>需要恢复的索引名称，非必填，为空则表示恢复所有</p><p>支持传多个索引名称</p>",
           "example": "*,-.*",
           "member": "string",
           "name": "Indices",
@@ -11212,10 +11332,19 @@
         },
         {
           "disabled": false,
-          "document": "如果为 false，则如果快照中包含的一个或多个索引没有所有主分片可用，则整个恢复操作将失败。默认为 false,\n\n如果为 true，则允许恢复具有不可用分片的索引的部分快照。只有成功包含在快照中的分片才会被恢复。所有丢失的碎片将被重新创建为空",
+          "document": "<p>如果为 false，则如果快照中包含的一个或多个索引没有所有主分片可用，则整个恢复操作将失败。默认为 false,</p><p>如果为 true，则允许恢复具有不可用分片的索引的部分快照。只有成功包含在快照中的分片才会被恢复。所有丢失的碎片将被重新创建为空</p>",
           "example": "true",
           "member": "string",
           "name": "Partial",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照恢复速率（单位mb）</p>",
+          "example": "50mb",
+          "member": "string",
+          "name": "MaxRestorePerSec",
           "required": false,
           "type": "string"
         }
@@ -11227,7 +11356,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群实例id",
+          "document": "<p>集群实例id</p>",
           "example": "es-xxx",
           "member": "string",
           "name": "InstanceId",
@@ -12012,7 +12141,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "快照名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>快照名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "snapshot-abc12",
           "member": "string",
           "name": "SnapshotName",
@@ -12023,7 +12152,7 @@
         },
         {
           "disabled": false,
-          "document": "快照Uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>快照Uuid</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4pf6R*************a6DA",
           "member": "string",
           "name": "Uuid",
@@ -12034,7 +12163,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>仓库名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testRepository",
           "member": "string",
           "name": "Repository",
@@ -12045,7 +12174,7 @@
         },
         {
           "disabled": false,
-          "document": "该快照所属集群的版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>该快照所属集群的版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7.14.2",
           "member": "string",
           "name": "Version",
@@ -12056,7 +12185,7 @@
         },
         {
           "disabled": false,
-          "document": "备份的索引列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备份的索引列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"jmeter_index\"]",
           "member": "string",
           "name": "Indices",
@@ -12067,7 +12196,7 @@
         },
         {
           "disabled": false,
-          "document": "备份的datastream列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备份的datastream列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"ilm-history-10\"]",
           "member": "string",
           "name": "DataStreams",
@@ -12078,7 +12207,7 @@
         },
         {
           "disabled": false,
-          "document": "备份的状态\n\nFAILED            备份失败\n\nIN_PROGRESS 备份执行中\n\nPARTIAL          备份部分成功，部分失败，备份失败的索引和原因会在Failures字段中展示\n\nSUCCESS     备份成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备份的状态</p><p>FAILED            备份失败</p><p>IN_PROGRESS 备份执行中</p><p>PARTIAL          备份部分成功，部分失败，备份失败的索引和原因会在Failures字段中展示</p><p>SUCCESS     备份成功</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SUCCESS",
           "member": "string",
           "name": "State",
@@ -12089,7 +12218,7 @@
         },
         {
           "disabled": false,
-          "document": "快照备份的开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>快照备份的开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-03-19T18:02:27.977Z",
           "member": "string",
           "name": "StartTime",
@@ -12100,7 +12229,7 @@
         },
         {
           "disabled": false,
-          "document": "快照备份的结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>快照备份的结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-03-19T18:02:32.378Z",
           "member": "string",
           "name": "EndTime",
@@ -12111,7 +12240,7 @@
         },
         {
           "disabled": false,
-          "document": "快照备份的耗时时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>快照备份的耗时时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4401",
           "member": "int64",
           "name": "DurationInMillis",
@@ -12122,7 +12251,7 @@
         },
         {
           "disabled": false,
-          "document": "备份的总分片数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备份的总分片数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "TotalShards",
@@ -12133,7 +12262,7 @@
         },
         {
           "disabled": false,
-          "document": "备份失败的分片数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备份失败的分片数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "FailedShards",
@@ -12144,7 +12273,7 @@
         },
         {
           "disabled": false,
-          "document": "备份成功的分片数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备份成功的分片数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "SuccessfulShards",
@@ -12155,7 +12284,7 @@
         },
         {
           "disabled": false,
-          "document": "备份失败的索引分片和失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备份失败的索引分片和失败原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Failures",
           "name": "Failures",
@@ -12166,7 +12295,7 @@
         },
         {
           "disabled": false,
-          "document": "是否用户备份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否用户备份</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "string",
           "name": "UserBackUp",
@@ -12177,7 +12306,7 @@
         },
         {
           "disabled": false,
-          "document": "0 腾讯云仓库; 1 客户仓库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>0 腾讯云仓库; 1 客户仓库</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "EsRepositoryType",
@@ -12188,7 +12317,7 @@
         },
         {
           "disabled": false,
-          "document": "托管快照仓库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>托管快照仓库名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PaasEsRepository",
           "member": "string",
           "name": "PaasEsRepository",
@@ -12199,7 +12328,7 @@
         },
         {
           "disabled": false,
-          "document": "客户快照仓库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>客户快照仓库名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "UserEsRepository",
           "member": "string",
           "name": "UserEsRepository",
@@ -12210,7 +12339,7 @@
         },
         {
           "disabled": false,
-          "document": "快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7",
           "member": "uint64",
           "name": "StorageDuration",
@@ -12221,7 +12350,7 @@
         },
         {
           "disabled": false,
-          "document": "自动备份频率, 如果是0,则等效24\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自动备份频率, 如果是0,则等效24</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7",
           "member": "uint64",
           "name": "AutoBackupInterval",
@@ -12232,7 +12361,7 @@
         },
         {
           "disabled": false,
-          "document": "备份锁定 0 不锁定; 1 锁定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备份锁定 0 不锁定; 1 锁定</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "CosRetention",
@@ -12243,7 +12372,7 @@
         },
         {
           "disabled": false,
-          "document": "锁定截止日期 2022-12-10T08:34:48.000Z\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>锁定截止日期 2022-12-10T08:34:48.000Z</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-12-10T08:34:48.000Z",
           "member": "string",
           "name": "RetainUntilDate",
@@ -12254,7 +12383,7 @@
         },
         {
           "disabled": false,
-          "document": "锁定宽限期,单位天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>锁定宽限期,单位天</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
           "name": "RetentionGraceTime",
@@ -12265,7 +12394,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已经备份锁定 0 不锁定; 1 锁定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否已经备份锁定 0 不锁定; 1 锁定</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "IsLocked",
@@ -12276,7 +12405,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域备份 0 不跨地域; 1 跨地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>跨地域备份 0 不跨地域; 1 跨地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "RemoteCos",
@@ -12287,7 +12416,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域备份地域名称 ap-guangzhou\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>跨地域备份地域名称 ap-guangzhou</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "RemoteCosRegion",
@@ -12298,7 +12427,7 @@
         },
         {
           "disabled": false,
-          "document": "备份加密 0 不加密; 1 加密\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备份加密 0 不加密; 1 加密</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "CosEncryption",
@@ -12309,7 +12438,7 @@
         },
         {
           "disabled": false,
-          "document": "kms密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>kms密钥</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "das-asdasd-asda",
           "member": "string",
           "name": "KmsKey",
@@ -12320,7 +12449,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>策略名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mypolicy",
           "member": "string",
           "name": "StrategyName",
@@ -12331,13 +12460,35 @@
         },
         {
           "disabled": false,
-          "document": "cos多AZ备份 0 单AZ; 1 多AZ\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>cos多AZ备份 0 单AZ; 1 多AZ</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "MultiAz",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>每节点写入仓库的最大速度 max_snapshot_bytes_per_sec, 默认40m</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "40mb",
+          "member": "string",
+          "name": "MaxSnapshotPerSec",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "es-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -257,9 +257,9 @@
     "CreateSmartSubtitleTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmartSubtitleTemplate\n<公共请求参数>\n\n{\n    \"SubtitleType\": 0,\n    \"Name\": \"修改智能字幕模板名称\",\n    \"VideoSrcLanguage\": \"auto\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Definition\": 266307,\n        \"RequestId\": \"a38bc8ff-9826-4a43-a7d3-ed4c370d305f\"\n    }\n}",
-        "title": "创建智能字幕模版"
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSmartSubtitleTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"智能字幕模板测试\",\n    \"VideoSrcLanguage\": \"zh\",\n    \"SubtitleType\": 2,\n    \"SubtitleFormat\": \"vtt\",\n    \"TranslateSwitch\": \"ON\",\n    \"TranslateDstLanguage\": \"en/ja\",\n    \"SubtitleEmbedId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 304479,\n        \"RequestId\": \"92b23ad2-452e-4887-927e-7b4cc9325538\"\n    }\n}",
+        "title": "创建智能字幕模板"
       }
     ],
     "CreateSnapshotByTimeOffsetTemplate": [
@@ -1320,6 +1320,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DesignVoiceAsync\n<公共请求参数>\n\n{\n    \"Prompt\": \"电影解说男声，抑扬顿挫，低沉富有磁性\",\n    \"VoiceProfile\": {\n        \"Name\": \"design-test\",\n        \"Gender\": \"male\",\n        \"Age\": \"middle_aged\",\n        \"Labels\": [\n            \"磁性\"\n        ],\n        \"Scenes\": [\n            \"解说\"\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"Msg\": \"success\",\n        \"TaskId\": \"1300057393-DesignVoiceAsync-57778be2-5fdf-4c2b-b699-15aed0123085\",\n        \"RequestId\": \"57778be2-5fdf-4c2b-b699-15aed0123085\"\n    }\n}",
         "title": "音色设计自定义属性"
+      }
+    ],
+    "DetectVideoSubtitleArea": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectVideoSubtitleArea\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Type\": \"URL\",\n        \"UrlInputInfo\": {\n            \"Url\": \"http://*********************************************************************************************************************************************.mp4\"\n        }\n    },\n    \"VideoLanguage\": \"zh_en\",\n    \"UserExtPara\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Height\": 1280,\n        \"Result\": [\n            {\n                \"Area\": {\n                    \"LeftTopX\": 64,\n                    \"LeftTopY\": 748,\n                    \"RightBottomX\": 576,\n                    \"RightBottomY\": 791,\n                    \"Unit\": 2\n                },\n                \"Confidence\": 70\n            }\n        ],\n        \"Width\": 720,\n        \"RequestId\": \"4af4d815-d608-4aff-afb3-45f3b46563b0\"\n    }\n}",
+        "title": "发起字幕框检测"
       }
     ],
     "DisableSchedule": [

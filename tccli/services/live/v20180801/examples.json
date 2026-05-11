@@ -366,6 +366,14 @@
         "title": "示例"
       }
     ],
+    "CreateSceneVideoTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSceneVideoTask\n<公共请求参数>\n\n{\n    \"ModelName\": \"Kling\",\n    \"ModelVersion\": \"3.0\",\n    \"SceneType\": \"template_effect\",\n    \"Prompt\": \"生成一只小狗\",\n    \"Duration\": 5,\n    \"ImageUrl\": \"https://m**********a*********344703.******cel******myqcloud.com/multimodel-agent-1258344703/***nt/ead65276-ba60-44b6-ac0d-81a4e1f****6.jpg\",\n    \"LastImageUrl\": \"https://***ti*****-age**-1258****03.cos.***elerate.myqcloud.com/multimodel-agent-1258344703/agent*****5276-ba60-44b6-ac0d-81*****230b6.jpg\",\n    \"ImageInfos\": [\n        {\n            \"ImageUrl\": \"https://*****mod***agent-1258344703.***.a*****rate.myqcloud.com/multimo****agent-1258344703/agent/e*d65276-ba60-44b6-ac0d-81a4e1f***b6.jpg\",\n            \"Text\": \"这是图1\",\n            \"ReferenceType\": \"style\"\n        }\n    ],\n    \"VideoInfos\": [\n        {\n            \"VideoUrl\": \"https://******u**ut-video-file-1326893053.cos.ap-gu***zhou.my**lo****om/4/4-AigcVideo-c77c36***16142******a44*6f134475_0.mp4\"\n        }\n    ],\n    \"ExtraParameters\": {\n        \"Resolution\": \"1080P\",\n        \"AspectRatio\": \"16:9\",\n        \"OffPeak\": false,\n        \"LogoAdd\": true,\n        \"EnableAudio\": true,\n        \"EnableBgm\": true,\n        \"EnablePromptEnhance\": true\n    },\n    \"AdditionalParameters\": \"{\\\"effect_scene\\\":\\\"great_success\\\"}\",\n    \"StoreCosParam\": {\n        \"CosBucketName\": \"live-****ud-tts-****402212\",\n        \"CosBucketRegion\": \"ap-guangzhou\",\n        \"CosBucketPath\": \"/scene_video/\"\n    },\n    \"Operator\": \"admin\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"**10**278-live-*****ideo-721d18cefa094ba4a******dfcbbacab\",\n        \"RequestId\": \"1f77ee4d-9802-40b5-aaa2-2752e8750590\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CreateScreenshotTask": [
       {
         "document": "",
@@ -1356,6 +1364,14 @@
         "input": "https://live.tencentcloudapi.com/?Action=DescribeRecordTask\n&AppName=live\n&DomainName=5000.live.push.com\n&StreamName=livetest\n&StartTime=1595779200\n&EndTime=1595865600\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"ScrollToken\": \"\",\n        \"TaskList\": [\n            {\n                \"TaskId\": \"UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLU1JAWW9EUb\",\n                \"DomainName\": \"5000.live.push.com\",\n                \"AppName\": \"live\",\n                \"StreamName\": \"livetest\",\n                \"StartTime\": 1595779900,\n                \"EndTime\": 1595789900,\n                \"TemplateId\": 123,\n                \"Stopped\": 1595783500\n            },\n            {\n                \"TaskId\": \"UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLFszdDWW9EUb\",\n                \"DomainName\": \"5000.live.push.com\",\n                \"AppName\": \"live\",\n                \"StreamName\": \"livetest\",\n                \"StartTime\": 1595789900,\n                \"EndTime\": 1595799900,\n                \"TemplateId\": 0,\n                \"Stopped\": 0\n            }\n        ]\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DescribeSceneVideoTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSceneVideoTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"2*****278-*********Video-721d18cefa094ba4a6*******cbbacab\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"role not exist\",\n        \"Resolution\": \"1920x1080\",\n        \"Status\": \"DONE\",\n        \"VideoUrls\": [\n            \"https://a*****u**ut-video-file-1326893053.cos.ap-guangzhou.myqcloud.com/251006278/251006278-live-AigcVideo-721d18cefa094ba4****6****cbbacab_0.mp4?q-sign-algorithm=sha1&q-ak=AKIDLm***5**********k04*****keLrAG9C&q-sign-time=1778220128;1778**********ey-time=1778220128;1778263338&q-h**de*-list=ho***q-url-param-list=&q-signature=*f0133***fdf5d****f6366c98b95736b7293d8c\"\n        ],\n        \"RequestId\": \"e76ec0ff-6faa-4f16-8e81-d7c160457496\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "DescribeScreenShotSheetNumList": [
