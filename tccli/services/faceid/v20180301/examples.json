@@ -170,12 +170,28 @@
         "title": "活体检测失败"
       }
     ],
+    "CreateAMLWebhook": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAMLWebhook\n<公共请求参数>\n\n{\n    \"WebhookName\": \"asdsd\",\n    \"WebhookURL\": \"https://www.baidu.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"WebhookId\": 41,\n        \"RequestId\": \"2dd492e9-876b-46b5-8b77-bf824f0c4de3\"\n    }\n}",
+        "title": "测试用例"
+      }
+    ],
     "CreateUploadUrl": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUploadUrl\n<公共请求参数>\n\n{\n    \"TargetAction\": \"ApplyWebVerificationToken\"\n}",
         "output": "{\n    \"Response\": {\n        \"ExpiredTimestamp\": 1637212877,\n        \"RequestId\": \"2e546a7c-4e12-43f6-bf98-d33d3724ea5b\",\n        \"ResourceUrl\": \"https://singapore-1257237511.cos.ap-singapore.myqcloud.com/faceid%2FApplyWebVerificationToken%2F2e546a7c-4e12-43f6-bf98-d33d3724ea5b?q-sign-algorithm=sha1&q-ak=AKIDeQ4Zsyob70ywoF8ijZDj5IJ8bzBHfuQk&q-sign-time=1637205677%3B1637212877&q-key-time=1637205677%3B1637212877&q-header-list=host&q-url-param-list=&q-signature=32302bad71219f9ebcae6f4703ae05b0ae33378f\",\n        \"UploadUrl\": \"https://singapore-1257237511.cos.ap-singapore.myqcloud.com/faceid%2FApplyWebVerificationToken%2F2e546a7c-4e12-43f6-bf98-d33d3724ea5b?q-sign-algorithm=sha1&q-ak=AKIDeQ4Zsyob70ywoF8ijZDj5IJ8bzBHfuQk&q-sign-time=1637205677%3B1637212877&q-key-time=1637205677%3B1637212877&q-header-list=host&q-url-param-list=&q-signature=9495ea0b69a2b2fb6b53a0e8d8a0dcd836762bbd\"\n    }\n}",
         "title": "成功示例"
+      }
+    ],
+    "DeleteAMLWebhook": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAMLWebhook\n<公共请求参数>\n\n{\n    \"WebhookId\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"DELETED\",\n        \"WebhookId\": 2,\n        \"RequestId\": \"c82ca1fa-f331-42a9-95b6-743d107ed7ad\"\n    }\n}",
+        "title": "调用示例"
       }
     ],
     "DeleteSDKRecord": [
@@ -664,6 +680,22 @@
         "input": "https://faceid.tencentcloudapi.com/?Action=PhoneVerificationCUCC\n&IdCard=11204416541220243X\n&Name=韦小宝\n&Phone=16137688175\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Description\": \"信息不一致\",\n        \"Isp\": \"联通\",\n        \"RequestId\": \"74182f34-cc90-40b6-b96d-e4189726f0ba\",\n        \"Result\": \"-4\"\n    }\n}",
         "title": "联通手机号三要素核验不一致示例"
+      }
+    ],
+    "ProcessAMLCallback": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessAMLCallback\n<公共请求参数>\n\n{\n    \"CaseIdentifier\": \"019d76e3-6cb9-7d59-a254-800a0a14f7a6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"OK\",\n        \"RequestId\": \"3afb514f-48da-4554-9289-ee213a68ba73\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "UpdateAMLWebhook": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAMLWebhook\n<公共请求参数>\n\n{\n    \"WebhookId\": 2,\n    \"WebhookName\": \"aasasd\",\n    \"WebhookURL\": \"https://www.baidu.com/\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModTime\": \"2026-04-10 17:13:27\",\n        \"WebhookId\": 2,\n        \"RequestId\": \"7f18dd3f-37cd-4e8d-bf60-0fb8ccc7024a\"\n    }\n}",
+        "title": "调用示例"
       }
     ],
     "VideoLivenessCompare": [

@@ -91,11 +91,25 @@
       "output": "CompareFaceLivenessResponse",
       "status": "online"
     },
+    "CreateAMLWebhook": {
+      "document": "创建Webhook配置",
+      "input": "CreateAMLWebhookRequest",
+      "name": "创建Webhook配置",
+      "output": "CreateAMLWebhookResponse",
+      "status": "online"
+    },
     "CreateUploadUrl": {
       "document": "生成一个临时的UploadUrl用于上传资源文件，客户需要使用HTTP PUT方法上传，上传完成后将ResourceUrl传给TargetAction对应接口完成资源传递（具体字段由使用场景确定）。\n数据存储于Region参数对应地域的腾讯云COS Bucket，存储有效期2小时。",
       "input": "CreateUploadUrlRequest",
       "name": "生成上传链接",
       "output": "CreateUploadUrlResponse",
+      "status": "online"
+    },
+    "DeleteAMLWebhook": {
+      "document": "删除Webhook配置",
+      "input": "DeleteAMLWebhookRequest",
+      "name": "删除Webhook配置",
+      "output": "DeleteAMLWebhookResponse",
       "status": "online"
     },
     "DeleteSDKRecord": {
@@ -376,6 +390,20 @@
       "input": "PhoneVerificationCUCCRequest",
       "name": "手机号三要素核验（联通）",
       "output": "PhoneVerificationCUCCResponse",
+      "status": "online"
+    },
+    "ProcessAMLCallback": {
+      "document": "持续筛查回调处理",
+      "input": "ProcessAMLCallbackRequest",
+      "name": "持续筛查回调处理",
+      "output": "ProcessAMLCallbackResponse",
+      "status": "online"
+    },
+    "UpdateAMLWebhook": {
+      "document": "更新Webhook配置",
+      "input": "UpdateAMLWebhookRequest",
+      "name": "更新Webhook配置",
+      "output": "UpdateAMLWebhookResponse",
       "status": "online"
     },
     "VideoLivenessCompare": {
@@ -2385,6 +2413,52 @@
       ],
       "usage": "out"
     },
+    "CreateAMLWebhookRequest": {
+      "document": "CreateAMLWebhook请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Webhook 名称，用于控制台展示</p>",
+          "example": "asdsd",
+          "member": "string",
+          "name": "WebhookName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调地址，必须为 HTTPS 协议</p>",
+          "example": "https://www.baidu.com",
+          "member": "string",
+          "name": "WebhookURL",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAMLWebhookResponse": {
+      "document": "CreateAMLWebhook返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建的 Webhook 配置 ID</p>",
+          "example": "41",
+          "member": "int64",
+          "name": "WebhookId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateUploadUrlRequest": {
       "document": "CreateUploadUrl请求参数结构体",
       "members": [
@@ -2431,6 +2505,53 @@
           "name": "ExpiredTimestamp",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAMLWebhookRequest": {
+      "document": "DeleteAMLWebhook请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>要删除的 Webhook 配置 ID</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "WebhookId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAMLWebhookResponse": {
+      "document": "DeleteAMLWebhook返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>要删除的 Webhook 配置 ID</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "WebhookId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作结果状态，固定值 &quot;DELETED&quot;</p><p>枚举值：</p><ul><li>DELETED： DELETED</li></ul>",
+          "example": "DELETED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -10004,6 +10125,43 @@
       ],
       "type": "object"
     },
+    "ProcessAMLCallbackRequest": {
+      "document": "ProcessAMLCallback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ComplyAdvantage 的案例标识符</p>",
+          "example": "019d76e3-6cb9-7d59-a254-800a0a14f7a6",
+          "member": "string",
+          "name": "CaseIdentifier",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ProcessAMLCallbackResponse": {
+      "document": "ProcessAMLCallback返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>处理状态：OK / NO_ALERTS</p><p>枚举值：</p><ul><li>OK： 正常处理</li><li>NO_ALERTS： 无告警</li></ul>",
+          "example": "OK",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RetrievalLivenessExtraInfo": {
       "document": "模板检索详细信息",
       "members": [
@@ -10379,6 +10537,71 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateAMLWebhookRequest": {
+      "document": "UpdateAMLWebhook请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>要更新的 Webhook 配置 ID</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "WebhookId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的 Webhook 名称</p>",
+          "example": "aasasd",
+          "member": "string",
+          "name": "WebhookName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的回调地址，必须为 HTTPS 协议</p>",
+          "example": "https://www.baidu.com/",
+          "member": "string",
+          "name": "WebhookURL",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAMLWebhookResponse": {
+      "document": "UpdateAMLWebhook返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>被更新的 Webhook 配置 ID</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "WebhookId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新后的修改时间，格式 YYYY-MM-DD HH:mm:ss</p>",
+          "example": "2026-04-10 17:13:27",
+          "member": "string",
+          "name": "ModTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VerificationDetail": {
       "document": "核验流程详细信息",
