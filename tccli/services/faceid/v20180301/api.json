@@ -315,6 +315,13 @@
       "output": "ImageRecognitionV2Response",
       "status": "online"
     },
+    "ListAMLWebhooks": {
+      "document": "Webhook 配置列表",
+      "input": "ListAMLWebhooksRequest",
+      "name": "查询Webhook配置列表",
+      "output": "ListAMLWebhooksResponse",
+      "status": "online"
+    },
     "LivenessCompare": {
       "document": "传入视频和照片，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。",
       "input": "LivenessCompareRequest",
@@ -397,6 +404,13 @@
       "input": "ProcessAMLCallbackRequest",
       "name": "持续筛查回调处理",
       "output": "ProcessAMLCallbackResponse",
+      "status": "online"
+    },
+    "ScreenAMLName": {
+      "document": "AML 名单筛查（单次 / 持续）",
+      "input": "ScreenAMLNameRequest",
+      "name": "AML 名单筛查（单次 、持续）",
+      "output": "ScreenAMLNameResponse",
       "status": "online"
     },
     "UpdateAMLWebhook": {
@@ -2152,6 +2166,56 @@
         }
       ],
       "type": "object"
+    },
+    "Company": {
+      "document": "AML Company对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>企业名称（必填）</p>",
+          "example": "COMPANY_HK_002",
+          "member": "string",
+          "name": "CompanyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业注册号 / 统一社会信用代码（可选）</p>",
+          "example": "",
+          "member": "string",
+          "name": "CompanyCertNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业注册国，ISO 3166-1 alpha-2 国家代码（可选）</p>",
+          "example": "US",
+          "member": "string",
+          "name": "CompanyCountry",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业地址（可选）</p>",
+          "example": "",
+          "member": "string",
+          "name": "CompanyAddress",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CompareFaceLivenessRequest": {
       "document": "CompareFaceLiveness请求参数结构体",
@@ -7240,6 +7304,62 @@
       ],
       "usage": "out"
     },
+    "ListAMLWebhooksRequest": {
+      "document": "ListAMLWebhooks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量，默认值 0</p><p>取值范围：[0, 100]</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页返回数量，默认值 20，最大值 100（超过自动截断为 100）</p><p>取值范围：[20, 100]</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAMLWebhooksResponse": {
+      "document": "ListAMLWebhooks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Webhook 配置总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Webhook 配置列表</p>",
+          "example": "无",
+          "member": "WebhookList",
+          "name": "WebhookList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "LivenessCompareRequest": {
       "document": "LivenessCompare请求参数结构体",
       "members": [
@@ -9382,6 +9502,122 @@
       ],
       "type": "object"
     },
+    "Person": {
+      "document": "AML Person对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全名（与 LastName 二选一必填）。填了 FullName 就不能填 FirstName/MiddleName/LastName</p>",
+          "example": "John Smith",
+          "member": "string",
+          "name": "FullName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>姓名（与 FullName 二选一必填）</p>",
+          "example": "John Smith",
+          "member": "string",
+          "name": "LastName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>第一个姓名（可选）</p>",
+          "example": "John",
+          "member": "string",
+          "name": "FirstName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>中间名（可选）</p>",
+          "example": "John",
+          "member": "string",
+          "name": "MiddleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证件号码（可选）</p>",
+          "example": "",
+          "member": "string",
+          "name": "IdentityNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>出生日期，格式 YYYY-MM-DD、YYYY-MM、YYYY（年月日使用-间隔）</p><p>参数格式： YYYY-MM-DD</p>",
+          "example": "1990-05-15",
+          "member": "string",
+          "name": "DateOfBirth",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>性别：MALE / FEMALE / OTHER / NOT_KNOWN</p><p>枚举值：</p><ul><li>MALE： 男</li><li>FEMALE： 女</li><li>OTHER： OTHER</li><li>NOT_KNOWN： NOT_KNOWN</li></ul>",
+          "example": "MALE",
+          "member": "string",
+          "name": "Gender",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地址</p>",
+          "example": "",
+          "member": "string",
+          "name": "Address",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>国籍，ISO 3166-1 alpha-2 国家代码（可选）</p>",
+          "example": "US",
+          "member": "string",
+          "name": "Nationality",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>居住国家，ISO 3166-1 alpha-2 国家代码（可选）</p>",
+          "example": "US",
+          "member": "string",
+          "name": "Country",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PhilippinesDrivingLicense": {
       "document": "菲律宾驾驶证",
       "members": [
@@ -10240,6 +10476,99 @@
       ],
       "usage": "in"
     },
+    "ScreenAMLNameRequest": {
+      "document": "ScreenAMLName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>客户系统中终端用户的唯一标识，最长 256 字符。</p>",
+          "example": "Acme International Ltdxx",
+          "member": "string",
+          "name": "UniqueCustomerID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实体类型，枚举值：PERSON / COMPANY</p><p>枚举值：</p><ul><li>PERSON： 个人</li><li>COMPANY： 公司</li></ul>",
+          "example": "COMPANY",
+          "member": "string",
+          "name": "EntityType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>个人信息，EntityType=PERSON 时必填</p><p>入参限制：EntityType=PERSON</p>",
+          "example": "无",
+          "member": "Person",
+          "name": "Person",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业信息，EntityType=COMPANY 时必填</p><p>入参限制：EntityType=COMPANY</p>",
+          "example": "无",
+          "member": "Company",
+          "name": "Company",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启持续监控筛查，默认 false</p><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableOngoingScreening",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ScreenAMLNameResponse": {
+      "document": "ScreenAMLName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>筛查结果：NO-HITS（未命中）/ HAS-HITS（命中）</p>",
+          "example": "HAS-HITS",
+          "member": "string",
+          "name": "ScreeningResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中时返回，命中的 AML 类型列表（去重）</p>",
+          "example": "[\"ADVERSE_MEDIA\"]",
+          "member": "string",
+          "name": "AMLTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中时返回，命中风险详情列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"AMLTypes\":[\"adverse-media\"],\"Decision\":\"NOT_REVIEWED\",\"MatchScore\":0.3,\"MatchTypes\":[\"name_variations_removal\"],\"MatchingName\":\"Two Company\",\"Media\":[],\"ProfileIdentifier\":\"0SQ8H86709B662Y\",\"RiskIdentifier\":\"019df8b0-b894-70ae-ab4c-bc022f41b5d0\"}]",
+          "member": "string",
+          "name": "HitDetail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SingaporeIDCard": {
       "document": "新加坡身份证",
       "members": [
@@ -11051,6 +11380,78 @@
         }
       ],
       "usage": "in"
+    },
+    "WebhookList": {
+      "document": "Webhook 配置列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "int64",
+          "name": "WebhookId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "WebhookName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Scene",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "WebhookURL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "AddTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "ModTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

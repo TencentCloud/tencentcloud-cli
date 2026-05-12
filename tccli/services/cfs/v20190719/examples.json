@@ -344,6 +344,14 @@
         "title": "更新生命周期管理策略"
       }
     ],
+    "OverrideCfsRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OverrideCfsRules\n<公共请求参数>\n\n{\n    \"PermissionGroupId\": \"pgroup-12345\",\n    \"RuleList\": [\n        {\n            \"RWPermission\": \"rw\",\n            \"AuthClientIp\": \"10.1.1.10\",\n            \"UserPermission\": \"root_squash\",\n            \"Priority\": \"9\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"RuleList\": [\n            {\n                \"RuleId\": \"rule-12345\",\n                \"AuthClientIp\": \"10.1.1.100\",\n                \"RWPermission\": \"rw\",\n                \"UserPermission\": \"root_squash\",\n                \"Priority\": 7\n            }\n        ]\n    }\n}",
+        "title": "批量创建权限组规则"
+      }
+    ],
     "ScaleUpFileSystem": [
       {
         "document": "扩容文件系统",

@@ -6,12 +6,16 @@ Input:
 
 ```
 tccli dc CreateCloudAttachService --cli-unfold-argument  \
-    --Data.Name 我的实例01 \
-    --Data.IdcAddress 北京东城区IDC地址 \
+    --Data.Name 测试线路名 \
+    --Data.IdcAddress 湖北省武汉市高薪大道xx机房xxx地址 \
     --Data.IdcType CUCC \
     --Data.Bandwidth 100 \
-    --Data.Telephone 18888888888 \
-    --Data.Remarks 字符串
+    --Data.Telephone 13888888888 \
+    --Data.Remarks None \
+    --Data.ArRegion gz \
+    --Data.IdcPointType CLOUD \
+    --Data.BIapLinkProtected True \
+    --Data.ServiceType SHARE
 ```
 
 Output: 
@@ -19,27 +23,32 @@ Output:
 {
     "Response": {
         "CloudAttach": {
-            "Uin": "100001332514",
-            "CustomerAuthName": "网测技术",
-            "InstanceId": "cas-3vocyz07",
-            "Name": "我的实例01",
-            "AppId": "1254277469",
-            "IapId": "",
-            "IdcAddress": "北京东城区IDC地址",
-            "IdcType": "CUCC",
-            "DirectConnectId": "",
-            "CloudAttachServiceGatewaysSupport": false,
+            "AppId": "251202094",
+            "ApplyTime": "2026-04-17 17:26:52",
+            "ArRegion": "gz",
+            "BIapLinkProtected": true,
             "BUpdateBandwidth": false,
             "Bandwidth": 100,
-            "RegionStatus": "same-region",
-            "Status": "applying",
-            "ApplyTime": "2024-10-14 13:04:33",
-            "ReadyTime": "2038-01-08 23:59:59",
+            "CloudAttachServiceGatewaysSupport": false,
+            "CustomerAuthName": "客户名称",
+            "DirectConnectId": "",
             "ExpireTime": "2038-01-08 23:59:59",
-            "Telephone": "18888888888",
-            "Remarks": "6个月，其他"
+            "IapId": "",
+            "IdcAddress": "湖北省武汉市高薪大道xx机房xxx地址",
+            "IdcPointType": "CLOUD",
+            "IdcType": "CUCC",
+            "InstanceId": "aoc-cigdpnb5",
+            "Name": "测试线路名",
+            "ReadyTime": null,
+            "RegionStatus": "same-region",
+            "Remarks": "",
+            "ServiceType": "SHARE",
+            "Status": "applying",
+            "Telephone": "13888888888",
+            "Uin": "700000161058",
+            "VlanRange": ""
         },
-        "RequestId": "4fb676d2-3100-4018-aa07-73008eaa135d"
+        "RequestId": "ba33a478-e39a-4e1f-8cc8-2f46981e896e"
     }
 }
 ```
