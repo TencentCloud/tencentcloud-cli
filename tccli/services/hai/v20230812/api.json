@@ -2383,6 +2383,46 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>基础模型名称</p>",
+          "example": "DeepSeek-V3.1",
+          "member": "string",
+          "name": "BaseModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型品牌</p>",
+          "example": "GLM",
+          "member": "string",
+          "name": "Provider",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上下文长度</p>",
+          "example": "131072",
+          "member": "uint64",
+          "name": "ContextLength",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型发布时间</p>",
+          "example": "2025-06-18",
+          "member": "string",
+          "name": "PublishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3546,6 +3586,15 @@
           "name": "TargetRoleReplicas",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>",
+          "example": "hai-infer-test-2",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

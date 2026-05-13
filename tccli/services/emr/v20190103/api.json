@@ -581,6 +581,13 @@
       "output": "ModifyBootScriptResponse",
       "status": "online"
     },
+    "ModifyComponentImage": {
+      "document": "修改服务角色自定义镜像",
+      "input": "ModifyComponentImageRequest",
+      "name": "修改服务角色自定义镜像",
+      "output": "ModifyComponentImageResponse",
+      "status": "online"
+    },
     "ModifyDynamicInstance": {
       "document": "更新容器EMR-TKE集群DynamicInstance",
       "input": "ModifyDynamicInstanceRequest",
@@ -16854,6 +16861,88 @@
       ],
       "type": "object"
     },
+    "ModifyComponentImageRequest": {
+      "document": "ModifyComponentImage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群Id",
+          "example": "emr-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务编号",
+          "example": "0",
+          "member": "int64",
+          "name": "ServiceGroup",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "角色编号",
+          "example": "0",
+          "member": "int64",
+          "name": "ServiceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义镜像信息",
+          "example": "无",
+          "member": "CustomImage",
+          "name": "CustomImage",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否滚动重建",
+          "example": "false",
+          "member": "bool",
+          "name": "Rebuild",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "ray集群 id",
+          "example": "1238",
+          "member": "int64",
+          "name": "RayClusterId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyComponentImageResponse": {
+      "document": "ModifyComponentImage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程Id",
+          "example": "0",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDynamicInstanceForm": {
       "document": "更新DynamicInstance提交的表单数据",
       "members": [
@@ -19514,7 +19603,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置Id",
+          "document": "<p>配置Id</p>",
           "example": "75714",
           "member": "uint64",
           "name": "ResourceConfigId",
@@ -19524,7 +19613,7 @@
         },
         {
           "disabled": false,
-          "document": "Resource\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Resource</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Resource",
           "name": "Resource",
@@ -19534,7 +19623,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-12-09 20:32:39",
           "member": "string",
           "name": "CreateTime",
@@ -19544,7 +19633,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2024-12-09 20:32:39",
           "member": "string",
           "name": "UpdateTime",
@@ -19554,7 +19643,7 @@
         },
         {
           "disabled": false,
-          "document": "是否默认配置,DEFAULT,BACKUP",
+          "document": "<p>是否默认配置,DEFAULT,BACKUP</p>",
           "example": "DEFAULT",
           "member": "string",
           "name": "IsDefault",
@@ -19564,7 +19653,7 @@
         },
         {
           "disabled": false,
-          "document": "该类型剩余",
+          "document": "<p>该类型剩余</p>",
           "example": "0",
           "member": "uint64",
           "name": "MaxResourceNum",
@@ -19574,13 +19663,33 @@
         },
         {
           "disabled": false,
-          "document": "支持的包销时长\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "<p>支持的包销时长</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[100]",
           "member": "int64",
           "name": "PrepaidUnderwritePeriods",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "QuotaNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额单位</p>",
+          "example": "VCPU",
+          "member": "string",
+          "name": "QuotaUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -19885,7 +19994,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规格",
+          "document": "<p>规格</p>",
           "example": "SA2.4XALARGE",
           "member": "string",
           "name": "InstanceType",
@@ -19896,8 +20005,8 @@
         },
         {
           "disabled": false,
-          "document": "4",
-          "example": "核数",
+          "document": "<p>4</p>",
+          "example": "10",
           "member": "int64",
           "name": "Cpu",
           "output_required": true,
@@ -19907,8 +20016,8 @@
         },
         {
           "disabled": false,
-          "document": "8，单位G",
-          "example": "内存",
+          "document": "<p>8，单位G</p>",
+          "example": "4096",
           "member": "int64",
           "name": "Memory",
           "output_required": true,
@@ -19918,7 +20027,7 @@
         },
         {
           "disabled": false,
-          "document": "排序，越小排的越前",
+          "document": "<p>排序，越小排的越前</p>",
           "example": "1",
           "member": "int64",
           "name": "Order",
@@ -19929,7 +20038,7 @@
         },
         {
           "disabled": false,
-          "document": "数量",
+          "document": "<p>数量</p>",
           "example": "1",
           "member": "int64",
           "name": "Num",
@@ -19940,7 +20049,7 @@
         },
         {
           "disabled": false,
-          "document": "售罄原因",
+          "document": "<p>售罄原因</p>",
           "example": "Fileterd",
           "member": "string",
           "name": "SellOutReason",
@@ -19951,7 +20060,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>系统盘</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NodeSpecDisk",
           "name": "SystemDisk",
@@ -19962,7 +20071,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据盘</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NodeSpecDisk",
           "name": "DataDisk",
@@ -19973,7 +20082,7 @@
         },
         {
           "disabled": false,
-          "document": "本地数据盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本地数据盘</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NodeSpecDisk",
           "name": "LocalDataDisk",
@@ -19984,7 +20093,7 @@
         },
         {
           "disabled": false,
-          "document": "售罄原因",
+          "document": "<p>售罄原因</p>",
           "example": "Fileterd",
           "member": "string",
           "name": "SoldOutReason",
@@ -19995,7 +20104,7 @@
         },
         {
           "disabled": false,
-          "document": "机型类别",
+          "document": "<p>机型类别</p>",
           "example": "S6",
           "member": "string",
           "name": "InstanceFamily",
@@ -20006,7 +20115,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名称",
+          "document": "<p>节点名称</p>",
           "example": "Master 节点",
           "member": "string",
           "name": "NodeName",
@@ -20017,7 +20126,7 @@
         },
         {
           "disabled": false,
-          "document": "节点类型",
+          "document": "<p>节点类型</p>",
           "example": "Master",
           "member": "string",
           "name": "NodeType",
@@ -20028,7 +20137,7 @@
         },
         {
           "disabled": false,
-          "document": "类别",
+          "document": "<p>类别</p>",
           "example": "typeTest",
           "member": "string",
           "name": "Type",
@@ -20039,7 +20148,7 @@
         },
         {
           "disabled": false,
-          "document": "类别名称",
+          "document": "<p>类别名称</p>",
           "example": "typeTest",
           "member": "string",
           "name": "TypeName",
@@ -20050,7 +20159,7 @@
         },
         {
           "disabled": false,
-          "document": "类别分类",
+          "document": "<p>类别分类</p>",
           "example": "s6",
           "member": "string",
           "name": "FamilyName",
@@ -20061,7 +20170,7 @@
         },
         {
           "disabled": false,
-          "document": "cpu类型",
+          "document": "<p>cpu类型</p>",
           "example": "AMD EPYC™ Rome",
           "member": "string",
           "name": "CpuType",
@@ -20072,7 +20181,7 @@
         },
         {
           "disabled": false,
-          "document": "售罄 RunOut、库存少 Less、充足 Enough",
+          "document": "<p>售罄 RunOut、库存少 Less、充足 Enough</p>",
           "example": "RunOut",
           "member": "string",
           "name": "Remark",
@@ -20083,7 +20192,7 @@
         },
         {
           "disabled": false,
-          "document": "原价",
+          "document": "<p>原价</p>",
           "example": "10.31",
           "member": "float",
           "name": "OriginPrice",
@@ -20094,7 +20203,7 @@
         },
         {
           "disabled": false,
-          "document": "包销计费机型支持的购买时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>包销计费机型支持的购买时长</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[1]",
           "member": "int64",
           "name": "PrepaidUnderwritePeriods",
@@ -20105,10 +20214,32 @@
         },
         {
           "disabled": false,
-          "document": "GPU信息",
+          "document": "<p>GPU信息</p>",
           "example": "4 * NVIDIA T4 4 * 16GB",
           "member": "string",
           "name": "GpuDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "QuotaNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额单位</p>",
+          "example": "VCPU",
+          "member": "string",
+          "name": "QuotaUnit",
           "output_required": false,
           "required": false,
           "type": "string",

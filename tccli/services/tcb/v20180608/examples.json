@@ -8,6 +8,22 @@
         "title": "添加谷歌认证源"
       }
     ],
+    "AllocateEnv": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AllocateEnv\n<公共请求参数>\n\n{\n    \"AllocateId\": \"m****************3\",\n    \"ExternalAppId\": \"appid*********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvId\": \"******-d8gx4e0pr5de21d1c\",\n        \"ExternalAppId\": \"appid*********\",\n        \"RequestId\": \"633be6a9-049a-4a88-a111-e78be09d58bc\"\n    }\n}",
+        "title": "从环境池里分配1个环境"
+      }
+    ],
+    "AssumeRoleForAllocatedEnv": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssumeRoleForAllocatedEnv\n<公共请求参数>\n\n{\n    \"EnvId\": \"mpdemo-d6ga2156e93c0228c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1778249652,\n        \"IsCache\": false,\n        \"SecretId\": \"AKI*****************************************************************\",\n        \"SecretKey\": \"V4m*****************************************\",\n        \"Token\": \"A6ABa1wqZnAFi95JuQ7BIgWqU8Im5YPa283df148910f67e4cb0789f5783133b4zHqyBHG_9fFGP1hqbOgzW4_f9P8vAUhxq6HpuxsWfSkJH5_qOUWwQiILad6W1zBDo-hFSyVoGPnwglEbflbwbpc6QQE5sjwq3ZAbfWmhVMZQB2RPqmJz3Gm0F-qKCsZjFAWn6xtmset1Md4CySETuQ2A-IsDC1tfQGEPMYOWW_X7IFchndIoLmqccAi27dJihlB_g7Bp009y7QCFICWFJdJ9uKzFdRu_A6FeXfvQGFGbPiMhYmo0LujgYHPOhYNZLMNbx7MdYoAh5lXCGodqKbu3S8z3GTYNftRHAUKxWC562IQ1QnyMyBEmUxNLabFsvefyYf_i27ZK1re4-xRfjF******************************************\",\n        \"RequestId\": \"b07ee256-5624-4ce1-92ac-cc12d2a792ab\"\n    }\n}",
+        "title": "获取环境对应的临时密钥"
+      }
+    ],
     "CheckTcbService": [
       {
         "document": "",
@@ -722,6 +738,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefreshClsIndex\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-4gs26nnz095f6f4d\",\n    \"RebuildIndex\": true,\n    \"RebuildTime\": -1,\n    \"IndexFields\": [\n        {\n            \"Key\": \"log\",\n            \"Type\": \"text\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"99649fbd-1b4f-4581-b0f3-881707f6c521\"\n    }\n}",
         "title": "刷新索引"
+      }
+    ],
+    "ReleaseEnv": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReleaseEnv\n<公共请求参数>\n\n{\n    \"EnvId\": \"*******d2g0eh0ey8e8c1001\",\n    \"AllocateId\": \"all******\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aee747a9-fe87-4da5-b589-8d9c29a31d33\"\n    }\n}",
+        "title": "释放从环境池里分配的环境"
       }
     ],
     "RenewEnv": [

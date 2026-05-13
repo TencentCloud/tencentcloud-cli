@@ -182,6 +182,13 @@
       "output": "GetGroupListResponse",
       "status": "online"
     },
+    "GetHardwareInfo": {
+      "document": "获取硬件设备信息",
+      "input": "GetHardwareInfoRequest",
+      "name": "获取硬件设备信息",
+      "output": "GetHardwareInfoResponse",
+      "status": "online"
+    },
     "GetHardwareList": {
       "document": "获取厂商硬件列表",
       "input": "GetHardwareListRequest",
@@ -3020,6 +3027,82 @@
           "name": "TotalPage",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetHardwareInfoRequest": {
+      "document": "GetHardwareInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "厂商名称",
+          "example": "TENCENT",
+          "member": "string",
+          "name": "Vendor",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备SN序列号",
+          "example": "abcd",
+          "member": "string",
+          "name": "SN",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetHardwareInfoResponse": {
+      "document": "GetHardwareInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "license授权有效期 \n0：月度授权 \n1：永久授权 \n-1：未知",
+          "example": "0",
+          "member": "int64",
+          "name": "LicensePayMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费方 0：客户付费 1：厂商付费",
+          "example": "0",
+          "member": "int64",
+          "name": "Payer",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "硬件序列号",
+          "example": "abcd",
+          "member": "string",
+          "name": "SN",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "厂商名称",
+          "example": "TENCENT",
+          "member": "string",
+          "name": "Vendor",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

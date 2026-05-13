@@ -13274,6 +13274,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果和dashboard配置字段，用于python和ipynb文件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OutputConf",
+          "name": "OutputConf",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -66215,6 +66226,45 @@
         }
       ],
       "usage": "in"
+    },
+    "OutputConf": {
+      "document": "python/notebook文件的输出和dashboard配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ipynb的cellId，python类型文件cellId=0</p>",
+          "example": "cell-0-1778496477249",
+          "member": "string",
+          "name": "CellId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>python或者ipynb文件输出表格结果配置的dashboardConf</p>",
+          "example": "{\"table_0_021541dc\":{\"charts\":[]}}}",
+          "member": "string",
+          "name": "DashboardConf",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>python/ipynb 输出结果文件的cos地址</p>",
+          "example": "https://wedata3-fusion-260073493.cos.ap-guangzhou.myqcloud.com/studio/260073493/notebookFile/2026-05-11/8322884064356",
+          "member": "string",
+          "name": "OutputPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Owner": {
       "document": "责任人",

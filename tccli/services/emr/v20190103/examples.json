@@ -664,6 +664,14 @@
         "title": "修改引导脚本"
       }
     ],
+    "ModifyComponentImage": [
+      {
+        "document": "修改服务角色自定义镜像",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyComponentImage\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-2rbbuac8\",\n    \"ServiceGroup\": 6,\n    \"ServiceType\": 17,\n    \"CustomImage\": {\n        \"ImageSourceType\": \"tcr\",\n        \"ImageInfo\": {\n            \"RegistryId\": \"tcr-qickpmsq\",\n            \"DomainName\": \"tcr-test.tencentcloudcr.com\",\n            \"NamespaceName\": \"default\",\n            \"RepositoryName\": \"spark\",\n            \"ImageVersion\": \"v3.3.2\",\n            \"ImagePullPolicy\": \"Always\",\n            \"Image\": \"tcr-test.tencentcloudcr.com/test/spark:v3.3.2\"\n        },\n        \"ImagePullSecret\": {\n            \"SourceNamespace\": \"emr\",\n            \"SecretNames\": [\n                \"name_test\"\n            ]\n        }\n    },\n    \"Rebuild\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"326c14b9-6371-4767-8ab6-8f2f6ba71396\",\n        \"FlowId\": 0\n    }\n}",
+        "title": "修改服务角色自定义镜像"
+      }
+    ],
     "ModifyDynamicInstance": [
       {
         "document": "",
