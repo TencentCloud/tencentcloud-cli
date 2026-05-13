@@ -7,6 +7,20 @@
       "output": "AddProviderResponse",
       "status": "online"
     },
+    "AllocateEnv": {
+      "document": "从环境池里立即取出1个环境",
+      "input": "AllocateEnvRequest",
+      "name": "从环境池分配环境",
+      "output": "AllocateEnvResponse",
+      "status": "online"
+    },
+    "AssumeRoleForAllocatedEnv": {
+      "document": "白名单接口，申请Tcb角色临时凭证",
+      "input": "AssumeRoleForAllocatedEnvRequest",
+      "name": "为环境池里的环境申请角色临时凭证",
+      "output": "AssumeRoleForAllocatedEnvResponse",
+      "status": "online"
+    },
     "CheckTcbService": {
       "document": "检查是否开通Tcb服务",
       "input": "CheckTcbServiceRequest",
@@ -490,6 +504,13 @@
       "output": "ModifyUserResponse",
       "status": "online"
     },
+    "ReleaseEnv": {
+      "document": "从环境池里立即取出1个环境",
+      "input": "ReleaseEnvRequest",
+      "name": "释放从环境池里分配的环境",
+      "output": "ReleaseEnvResponse",
+      "status": "online"
+    },
     "RenewEnv": {
       "document": "本接口用于云开发环境套餐续费。\n该接口会自动下单并支付，会在腾讯云账户中扣除余额（余额不足会下单失败）。\n该接口支持自动扣除代金券（AutoVoucher=true时），符合条件的代金券会被自动扣除。",
       "input": "RenewEnvRequest",
@@ -870,6 +891,62 @@
       ],
       "type": "object"
     },
+    "AllocateEnvRequest": {
+      "document": "AllocateEnv请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分配请求ID，会按这个值做幂等</p><p>入参限制：长度不超过64</p>",
+          "example": "m****************3",
+          "member": "string",
+          "name": "AllocateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户平台的应用标识，如果没有则不传</p>",
+          "example": "appid*********",
+          "member": "string",
+          "name": "ExternalAppId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AllocateEnvResponse": {
+      "document": "AllocateEnv返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "******-d8gx4e0pr5de21d1c",
+          "member": "string",
+          "name": "EnvId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回显    客户平台的应用标识，如果没有则不传</p>",
+          "example": "appid*********",
+          "member": "string",
+          "name": "ExternalAppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ApiKeyToken": {
       "document": "API Key 访问凭证信息。描述云开发环境下 API Key 的完整信息，包括标识符、名称、令牌值、创建时间和过期时间。支持两种类型：api_key（服务端管理员访问凭证，用于服务端接口调用的身份认证，可设置有效期，单个环境最多 5 个）和 publish_key（前端匿名访问凭证，固定有效期，每个环境仅保留一个）。注意：令牌值（ApiKey 字段）仅在创建时返回完整明文，列表查询时将进行脱敏处理。",
       "members": [
@@ -930,6 +1007,83 @@
         }
       ],
       "usage": "both"
+    },
+    "AssumeRoleForAllocatedEnvRequest": {
+      "document": "AssumeRoleForAllocatedEnv请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "mpdemo-d6ga2156e93c0228c",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssumeRoleForAllocatedEnvResponse": {
+      "document": "AssumeRoleForAllocatedEnv返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>SecretId</p>",
+          "example": "AKI*****************************************************************",
+          "member": "string",
+          "name": "SecretId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SecretKey</p>",
+          "example": "V4m*****************************************",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Token值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "A6ABa1wqZnAFi95JuQ7BIgWqU8Im5YPa283df148910f67e4cb0789f5783133b4zHqyBHG",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1778249652",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否从缓存中加载。标明该值是否实时从sts服务获取，还是从缓存中获取。调用方可不关心</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCache",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AuthDomain": {
       "document": "合法域名",
@@ -9794,6 +9948,42 @@
         }
       ],
       "usage": "both"
+    },
+    "ReleaseEnvRequest": {
+      "document": "ReleaseEnv请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "*******d2g0eh0ey8e8c1001",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分配请求ID</p>",
+          "example": "all******",
+          "member": "string",
+          "name": "AllocateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseEnvResponse": {
+      "document": "ReleaseEnv返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RenewEnvRequest": {
       "document": "RenewEnv请求参数结构体",

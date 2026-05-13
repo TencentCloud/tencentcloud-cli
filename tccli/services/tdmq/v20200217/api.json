@@ -18059,6 +18059,42 @@
       ],
       "usage": "out"
     },
+    "RabbitMQVHostBaseQuota": {
+      "document": "RabbitMQ 虚拟主机基础配额信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "单个 vhost 下允许的最大连接数",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxConnectionPerVhost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单个 vhost 下允许的最大交换机数",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxExchangePerVhost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单个 vhost 下允许的最大队列数",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxQueuePerVhost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RabbitMQVipInstance": {
       "document": "RabbitMQ 托管版实例信息",
       "members": [
@@ -18446,6 +18482,16 @@
           "name": "ModifyTs",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基础配额信息",
+          "example": "{\"maxConnectionsPerVHost\":1000}",
+          "member": "RabbitMQVHostBaseQuota",
+          "name": "Quota",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

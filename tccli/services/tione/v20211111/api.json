@@ -16995,7 +16995,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>绑定的资源组信息</p>",
           "example": "无",
           "member": "ResourceGroupInWorkspace",

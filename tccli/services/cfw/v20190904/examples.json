@@ -394,6 +394,14 @@
         "title": "入侵防御开关相关"
       }
     ],
+    "DescribeEdgeIpSimple": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeIpSimple\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"InstanceId\",\n            \"OperatorType\": 9,\n            \"Values\": [\n                \"ins-ighogubo\"\n            ]\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Order\": \"PublicIp\",\n    \"By\": \"desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AssetType\": \"CVM\",\n                \"InstanceId\": \"ins-ighogubo\",\n                \"InstanceName\": \"test123\",\n                \"PublicIp\": \"124.156.218.153\",\n                \"PublicIpType\": 1,\n                \"Region\": \"ap-tokyo\",\n                \"Status\": 1,\n                \"SwitchMode\": 0\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"1e6399f6-58d7-4b23-b047-c94462740360\"\n    }\n}",
+        "title": "互联网边界开关查询"
+      }
+    ],
     "DescribeEnterpriseSGRuleProgress": [
       {
         "document": "",

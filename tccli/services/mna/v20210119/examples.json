@@ -214,6 +214,14 @@
         "title": "示例1"
       }
     ],
+    "GetHardwareInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetHardwareInfo\n<公共请求参数>\n\n{\n    \"Vendor\": \"kainan\",\n    \"SN\": \"123321\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LicensePayMode\": 0,\n        \"Payer\": 1,\n        \"RequestId\": \"e7c277b9-690f-46a3-910e-09b3aae1ee94\",\n        \"SN\": \"123321\",\n        \"Vendor\": \"kainan\"\n    }\n}",
+        "title": "获取硬件设备信息"
+      }
+    ],
     "GetHardwareList": [
       {
         "document": "",

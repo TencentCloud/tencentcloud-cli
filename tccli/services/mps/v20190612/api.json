@@ -14691,7 +14691,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "封装格式，可选值：mp4、flv、hls、ts、webm、mkv、mxf、mov、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。",
+          "document": "<p>封装格式，可选值：mp4、flv、hls、ts、webm、mkv、mxf、mov、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。</p>",
           "example": "mp4",
           "member": "string",
           "name": "Container",
@@ -14700,7 +14700,7 @@
         },
         {
           "disabled": false,
-          "document": "转码模板名称，长度限制：64 个字符。",
+          "document": "<p>转码模板名称，长度限制：64 个字符。</p>",
           "example": "转码模板1",
           "member": "string",
           "name": "Name",
@@ -14709,7 +14709,7 @@
         },
         {
           "disabled": false,
-          "document": "模板描述信息，长度限制：256 个字符。",
+          "document": "<p>模板描述信息，长度限制：256 个字符。</p>",
           "example": "转码模板",
           "member": "string",
           "name": "Comment",
@@ -14718,7 +14718,7 @@
         },
         {
           "disabled": false,
-          "document": "是否去除视频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值：0。",
+          "document": "<p>是否去除视频数据，可选值：</p><li>0：保留</li><li>1：去除</li>默认值：0。",
           "example": "0",
           "member": "int64",
           "name": "RemoveVideo",
@@ -14727,7 +14727,7 @@
         },
         {
           "disabled": false,
-          "document": "是否去除音频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值：0。",
+          "document": "<p>是否去除音频数据，可选值：</p><li>0：保留</li><li>1：去除</li>默认值：0。",
           "example": "0",
           "member": "int64",
           "name": "RemoveAudio",
@@ -14736,7 +14736,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流配置参数，当 RemoveVideo 为 0，该字段必填。",
+          "document": "<p>视频流配置参数，当 RemoveVideo 为 0，该字段必填。</p>",
           "example": "无",
           "member": "VideoTemplateInfo",
           "name": "VideoTemplate",
@@ -14745,7 +14745,7 @@
         },
         {
           "disabled": false,
-          "document": "音频流配置参数，当 RemoveAudio 为 0，该字段必填。",
+          "document": "<p>音频流配置参数，当 RemoveAudio 为 0，该字段必填。</p>",
           "example": "无",
           "member": "AudioTemplateInfo",
           "name": "AudioTemplate",
@@ -14754,7 +14754,7 @@
         },
         {
           "disabled": false,
-          "document": "极速高清转码参数。",
+          "document": "<p>极速高清转码参数。</p>",
           "example": "无",
           "member": "TEHDConfig",
           "name": "TEHDConfig",
@@ -14763,7 +14763,7 @@
         },
         {
           "disabled": false,
-          "document": "音视频增强配置。",
+          "document": "<p>音视频增强配置。</p>",
           "example": "无",
           "member": "EnhanceConfig",
           "name": "EnhanceConfig",
@@ -14772,7 +14772,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展参数，序列化的 json 字符串。",
+          "document": "<p>扩展参数，序列化的 json 字符串。</p>",
           "example": "{\\\"video_info\\\":{\\\"keep_gop\\\":0}}",
           "member": "string",
           "name": "StdExtInfo",
@@ -14787,7 +14787,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "转码模板唯一标识。",
+          "document": "<p>转码模板唯一标识。</p>",
           "example": "1008",
           "member": "int64",
           "name": "Definition",
@@ -33577,7 +33577,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "转码模板唯一标识。",
+          "document": "<p>转码模板唯一标识。</p>",
           "example": "1008",
           "member": "int64",
           "name": "Definition",
@@ -33586,7 +33586,7 @@
         },
         {
           "disabled": false,
-          "document": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。",
+          "document": "<p>封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。</p>",
           "example": "mp4",
           "member": "string",
           "name": "Container",
@@ -33595,7 +33595,7 @@
         },
         {
           "disabled": false,
-          "document": "转码模板名称，长度限制：64 个字符。",
+          "document": "<p>转码模板名称，长度限制：64 个字符。</p>",
           "example": "转码模板12",
           "member": "string",
           "name": "Name",
@@ -33604,7 +33604,7 @@
         },
         {
           "disabled": false,
-          "document": "模板描述信息，长度限制：256 个字符。",
+          "document": "<p>模板描述信息，长度限制：256 个字符。</p>",
           "example": "转码模板12",
           "member": "string",
           "name": "Comment",
@@ -33613,7 +33613,7 @@
         },
         {
           "disabled": false,
-          "document": "是否去除视频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>",
+          "document": "<p>是否去除视频数据，可选值：</p><li>0：保留</li><li>1：去除</li>",
           "example": "0",
           "member": "int64",
           "name": "RemoveVideo",
@@ -33622,7 +33622,7 @@
         },
         {
           "disabled": false,
-          "document": "是否去除音频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>",
+          "document": "<p>是否去除音频数据，可选值：</p><li>0：保留</li><li>1：去除</li>",
           "example": "0",
           "member": "int64",
           "name": "RemoveAudio",
@@ -33631,7 +33631,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流配置参数。",
+          "document": "<p>视频流配置参数。</p>",
           "example": "无",
           "member": "VideoTemplateInfoForUpdate",
           "name": "VideoTemplate",
@@ -33640,7 +33640,7 @@
         },
         {
           "disabled": false,
-          "document": "音频流配置参数。",
+          "document": "<p>音频流配置参数。</p>",
           "example": "无",
           "member": "AudioTemplateInfoForUpdate",
           "name": "AudioTemplate",
@@ -33649,7 +33649,7 @@
         },
         {
           "disabled": false,
-          "document": "极速高清转码参数。",
+          "document": "<p>极速高清转码参数。</p>",
           "example": "无",
           "member": "TEHDConfigForUpdate",
           "name": "TEHDConfig",
@@ -33658,7 +33658,7 @@
         },
         {
           "disabled": false,
-          "document": "音视频增强参数。",
+          "document": "<p>音视频增强参数。</p>",
           "example": "无",
           "member": "EnhanceConfig",
           "name": "EnhanceConfig",

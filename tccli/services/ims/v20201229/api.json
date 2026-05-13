@@ -922,7 +922,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标识模型命中还是关键词命中",
+          "document": "<p>标识模型命中还是关键词命中</p>",
           "example": "Keyword",
           "member": "string",
           "name": "Type",
@@ -932,7 +932,7 @@
         },
         {
           "disabled": false,
-          "document": "命中关键词",
+          "document": "<p>命中关键词</p>",
           "example": "名师试听",
           "member": "string",
           "name": "Keyword",
@@ -942,7 +942,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义词库名称",
+          "document": "<p>自定义词库名称</p>",
           "example": "测试词库",
           "member": "string",
           "name": "LibName",
@@ -952,12 +952,22 @@
         },
         {
           "disabled": false,
-          "document": "位置信息",
+          "document": "<p>位置信息</p>",
           "example": "无",
           "member": "Positions",
           "name": "Positions",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中标签</p>",
+          "example": "Ad",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -112,6 +112,13 @@
       "output": "CreateRiskCenterScanTaskResponse",
       "status": "online"
     },
+    "CreateSkillScan": {
+      "document": "上传 Skill ZIP 文件，触发异步安全检测。上传成功后应使用返回的 ContentHash + EngineVersion 轮询 DescribeSkillScanResult 接口获取结果。上传接口具备幂等性，同一 Hash 的文件重复上传不会创建重复任务。检测结果保留90天，超期后需重新上传检测。",
+      "input": "CreateSkillScanRequest",
+      "name": "上传 Skill 触发安全检测",
+      "output": "CreateSkillScanResponse",
+      "status": "online"
+    },
     "DeleteDomainAndIp": {
       "document": "删除域名和ip请求",
       "input": "DeleteDomainAndIpRequest",
@@ -882,6 +889,13 @@
       "output": "DescribeSearchBugInfoResponse",
       "status": "online"
     },
+    "DescribeSkillScanResult": {
+      "document": "查询 Skill 安全检测结果。调用 CreateSkillScan 成功后使用返回的 ContentHash + EngineVersion 轮询本接口获取结果。上传成功后建议5分钟后首次轮询，如未检测完成之后每隔1分钟轮询一次。响应通过 Status 字段区分四种状态：检测完成（SUCCESS）、检测中（SCANNING）、无记录（NOT_FOUND）、检测失败（FAILED）。注意：检测结果保留90天，超期后将返回 NOT_FOUND。",
+      "input": "DescribeSkillScanResultRequest",
+      "name": "查询 Skill 安全检测结果",
+      "output": "DescribeSkillScanResultResponse",
+      "status": "online"
+    },
     "DescribeSourceIPAsset": {
       "document": "获取用户访问密钥资产列表（源IP视角）",
       "input": "DescribeSourceIPAssetRequest",
@@ -1331,6 +1345,36 @@
           "example": "无",
           "member": "SkillState",
           "name": "SkillState",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量沙箱插件状态</p>",
+          "example": "无",
+          "member": "TrafficPluginState",
+          "name": "TrafficPluginState",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量沙箱规则状态</p>",
+          "example": "无",
+          "member": "TrafficRuleState",
+          "name": "TrafficRuleState",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命令沙箱插件状态</p>",
+          "example": "无",
+          "member": "CommandPluginState",
+          "name": "CommandPluginState",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -8740,6 +8784,22 @@
       ],
       "usage": "out"
     },
+    "CommandPluginState": {
+      "document": "AI Agent 命令沙箱插件状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>插件安装状态（上层聚合）<br>枚举值：<br>NONE：未安装<br>INSTALLING：安装中<br>INSTALLED：已安装<br>INSTALL_FAIL：安装失败</p>",
+          "example": "UNINSTALL",
+          "member": "string",
+          "name": "InstallStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateAccessKeyCheckTaskRequest": {
       "document": "CreateAccessKeyCheckTask请求参数结构体",
       "members": [
@@ -9964,6 +10024,82 @@
           "name": "UnAuthAsset",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSkillScanRequest": {
+      "document": "CreateSkillScan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ZIP 文件内容的 Base64 编码\n入参限制：文件大小上限 7MB（编码前），仅接受有效的 ZIP 格式",
+          "example": "UEsDBBQAAAAIAA...",
+          "member": "string",
+          "name": "FileBase64",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件名，用于服务端日志记录\n参数格式：形如 my-skill.zip",
+          "example": "my-skill.zip",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSkillScanResponse": {
+      "document": "CreateSkillScan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件的 SHA256 Hash，用于轮询 DescribeSkillScanResult 接口\n参数格式：sha256:<64位hex>",
+          "example": "sha256:a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2",
+          "member": "string",
+          "name": "ContentHash",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次请求实际绑定的引擎版本号。调用方应保存并在后续 DescribeSkillScanResult 时显式传入",
+          "example": "20260501",
+          "member": "int64",
+          "name": "EngineVersion",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态，固定为 SCANNING，表示任务已接收",
+          "example": "SCANNING",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可读的操作结果描述",
+          "example": "File received, scan task created",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -19488,6 +19624,71 @@
       ],
       "type": "object"
     },
+    "DescribeSkillScanResultRequest": {
+      "document": "DescribeSkillScanResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ZIP 文件的 SHA256 Hash\n参数格式：sha256:<64位hex>",
+          "example": "sha256:93329ab36e34abf927eb029bc27db54e0041d7905c1f80a222998d88d62dd4c5",
+          "member": "string",
+          "name": "ContentHash",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定引擎版本号\n取值参考：由 CreateSkillScan 接口返回",
+          "example": "20200",
+          "member": "int64",
+          "name": "EngineVersion",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "报告签名地址有效期\n单位：小时\n默认值：8760（1年）\n补充说明：对返回的 ReportURL 生效",
+          "example": "24",
+          "member": "int64",
+          "name": "ReportURLExpireHours",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSkillScanResultResponse": {
+      "document": "DescribeSkillScanResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测状态\n枚举值：\nSUCCESS：检测完成，有结果\nSCANNING：检测进行中\nNOT_FOUND：无检测记录\nFAILED：检测失败",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检测结果详情。Status=SUCCESS 时大部分字段有值；Status=SCANNING 时仅包含 ContentHash 和 CreatedAt；Status=FAILED 时仅包含 ContentHash、FailedAt 和 Message；Status=NOT_FOUND 时仅包含 ContentHash",
+          "example": "无",
+          "member": "SkillScanItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSourceIPAssetRequest": {
       "document": "DescribeSourceIPAsset请求参数结构体",
       "members": [
@@ -26198,12 +26399,12 @@
       "usage": "out"
     },
     "Filters": {
-      "document": "filter过滤条件",
+      "document": "过滤条件。同一 Name 下多个 Values 为或关系；不同 Name 之间为且关系",
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "InstanceId",
+          "document": "过滤条件名称",
+          "example": "RuleName",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -26213,8 +26414,8 @@
         },
         {
           "disabled": false,
-          "document": "实例ID内容",
-          "example": "[\"ins-dsd1671\"]",
+          "document": "过滤条件值列表",
+          "example": "[\"意图识别\",\"敏感数据\"]",
           "member": "string",
           "name": "Values",
           "output_required": true,
@@ -26224,7 +26425,7 @@
         },
         {
           "disabled": false,
-          "document": "模糊匹配",
+          "document": "是否精确匹配：1 精确匹配；默认模糊匹配",
           "example": "1",
           "member": "string",
           "name": "ExactMatch",
@@ -31767,6 +31968,296 @@
       ],
       "usage": "out"
     },
+    "SkillCapabilityTag": {
+      "document": "Skill 能力标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "能力标签标识，适合程序判定、过滤或聚合使用",
+          "example": "file_read",
+          "member": "string",
+          "name": "ID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "能力标签展示名称",
+          "example": "文件读取",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SkillRuleCatalogItem": {
+      "document": "融合规则目录项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "融合规则 ID（9xxxx）",
+          "example": "90001",
+          "member": "string",
+          "name": "RuleID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险类别名称",
+          "example": "供应链风险",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SkillScanEngineResult": {
+      "document": "子引擎扫描结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子引擎类型\n枚举值：\nAI：AI 引擎\nSTATIC：静态分析引擎",
+          "example": "AI",
+          "member": "string",
+          "name": "ScanType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该引擎命中的规则列表",
+          "example": "无",
+          "member": "SkillScanRuleHit",
+          "name": "RuleList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SkillScanItem": {
+      "document": "Skill 安全检测结果详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Skill 名称",
+          "example": "git-helper",
+          "member": "string",
+          "name": "SkillName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Skill 描述，帮助理解 Skill 的主要用途",
+          "example": "用于批量执行 Git 仓库初始化、配置同步与辅助操作的 Skill。",
+          "member": "string",
+          "name": "SkillDescription",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ZIP 文件的 SHA256 Hash\n参数格式：sha256:<64位hex>",
+          "example": "sha256:93329ab36e34abf927eb029bc27db54e0041d7905c1f80a222998d88d62dd4c5",
+          "member": "string",
+          "name": "ContentHash",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原始上传 ZIP 文件解压后的实际文件数，也是计费的范围，扫描成功后1个文件计为1次额度",
+          "example": "37",
+          "member": "int64",
+          "name": "UploadFileCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "综合风险等级\n枚举值：\nmalicious：恶意\nsuspicious：可疑\nbenign：可信",
+          "example": "malicious",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险主标签融合规则 ID（9xxxx），由服务端从命中的融合风险标签中生成；benign 且无规则命中时为空。展示名称可通过 RuleCatalog 获取",
+          "example": "90002",
+          "member": "string",
+          "name": "PrimaryRuleID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "综合处置建议，用于指导调用方优先执行下线、隔离、修复、复检等动作。历史结果中可能为空。传 Language=en-US 时返回英文文案",
+          "example": "建议立即停止使用该 Skill，清理恶意持久化与外联逻辑，轮换疑似泄露凭证，并在修复完成后重新提交检测。",
+          "member": "string",
+          "name": "Mitigation",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险综合描述，对本次检测发现的风险进行概括性说明。传 Language=en-US 时返回英文文案",
+          "example": "该 Skill 存在命令注入、凭证窃取与数据外传等多项高危行为，综合判定为恶意。",
+          "member": "string",
+          "name": "RiskDescription",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全评分\n取值范围：[0, 100]\n补充说明：100 为最安全",
+          "example": "0",
+          "member": "int64",
+          "name": "SecurityScore",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次扫描使用的引擎版本号",
+          "example": "20200",
+          "member": "int64",
+          "name": "EngineVersion",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Skill 能力标签列表，描述 Skill 具备的能力特征或适用场景。不等同于风险标签，也不参与风险等级判定。传 Language=en-US 时 Name 切换为英文，ID 保持不变",
+          "example": "无",
+          "member": "SkillCapabilityTag",
+          "name": "CapabilityTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "融合规则目录全集，包含所有融合规则类别（9xxxx），调用方可据此展示分类标签，无需本地维护映射表。传 Language=en-US 时返回英文名称",
+          "example": "无",
+          "member": "SkillRuleCatalogItem",
+          "name": "RuleCatalog",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫描结果详情，按子引擎分组。每个元素包含 ScanType（引擎类型）和 RuleList（命中规则列表）。规则中的 RuleID 使用融合编码（9xxxx），可与 RuleCatalog 交叉引用。传 Language=en-US 时 Description 返回英文文本",
+          "example": "无",
+          "member": "SkillScanEngineResult",
+          "name": "ScanItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "综合安全审计报告地址（签名 URL）。有效期由请求参数 ReportURLExpireHours 控制",
+          "example": "https://skill-scan-1258344699.cos.ap-guangzhou.myqcloud.com/html-reports/2026/04/02/42_a1b2c3d4e5f6g7h8.html",
+          "member": "string",
+          "name": "ReportURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫描完成时间。仅 Status=SUCCESS 时有值\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "example": "2026-04-02T09:13:23+08:00",
+          "member": "datetime_iso",
+          "name": "ScannedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间。仅 Status=SCANNING 时有值\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "example": "2026-04-02T09:08:00+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败时间。仅 Status=FAILED 时有值\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "example": "2026-04-02T09:13:00+08:00",
+          "member": "datetime_iso",
+          "name": "FailedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败原因描述。仅 Status=FAILED 时有值",
+          "example": "Scan task execution failed, please resubmit",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SkillScanRuleHit": {
+      "document": "命中规则项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "融合规则编号（9xxxx），可与 RuleCatalog 交叉引用",
+          "example": "90002",
+          "member": "string",
+          "name": "RuleID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前命中规则的具体发现描述，包含文件位置、行为特征、风险点等信息",
+          "example": "在 git_helper/run.py 第 16 行发现 subprocess.run 调用，用户参数直接拼接至 shell 命令导致命令注入",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SkillState": {
       "document": "SKILL安装状态信息",
       "members": [
@@ -33140,6 +33631,78 @@
           "member": "string",
           "name": "AppId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TrafficPluginState": {
+      "document": "AI Agent 流量沙箱插件状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "插件安装状态（上层聚合）\n枚举值：\nNONE：未安装\nINSTALLING：安装中\nINSTALLED：已安装\nINSTALL_FAIL：安装失败",
+          "example": "INSTALL_FAIL",
+          "member": "string",
+          "name": "InstallStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件安装细分状态。取值与 InstallStatus 对应：未安装（InstallStatus=UNINSTALL）时为空字符串；安装成功（InstallStatus=INSTALLED）时为 SUCCESS；安装失败（InstallStatus=INSTALL_FAIL）时为具体失败原因\n枚举值：\nNOT_SUPPORT：环境不支持\nCONTAINER_NOT_FOUND：容器不存在\nREQUIRE_RESTART：需要重启\nCA_FAILED：CA 失败\nEBPF_FAILED：eBPF 失败\nIPTABLE_FAILED：iptables 失败\nREDIRECT_FAILED：流量重定向失败",
+          "example": "IPTABLE_FAILED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态文案（由 Status 根据请求语言派生的国际化描述）",
+          "example": "iptables 规则下发失败",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件最近活跃时间\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "example": "2025-03-19T10:35:00+08:00",
+          "member": "datetime_iso",
+          "name": "ActivityTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TrafficRuleState": {
+      "document": "流量沙箱规则状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>沙箱插件模块名</p>",
+          "example": "ACL",
+          "member": "string",
+          "name": "Module",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱规则状态</p><p>枚举值：</p><ul><li>ON： 开启</li><li>OFF： 关闭</li></ul>",
+          "example": "OFF",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
