@@ -421,7 +421,7 @@
       "status": "online"
     },
     "StartPublishCdnStream": {
-      "document": "接口说明：  \n启动一个混流转推任务，将  TRTC 房间的多路音视频流混成一路音视频流，编码后推到直播 CDN 或者回推到 TRTC 房间。也支持不转码直接转推 TRTC 房间的单路流。启动成功后，会返回一个 SdkAppid 维度唯一的任务 Id（TaskId）。您需要保存该 TaskId，后续需要依赖此 TaskId 更新和结束任务。可以参考文档： [功能说明](https://cloud.tencent.com/document/product/647/84721#b9a855f4-e38c-4616-9b07-fc44e0e8282a) 和 [常见问题](https://cloud.tencent.com/document/product/647/62620)\n\n注意：\n您可以在控制台开通旁路转推回调功能，对转推 CDN 状态的事件进行监控，回调请参考文档：[旁路转推回调说明](https://cloud.tencent.com/document/product/647/88552)  \n您发起混流转推任务时，可能会产生如下费用：  \nMCU 混流转码费用，请参考文档：[云端混流转码计费说明](https://cloud.tencent.com/document/product/647/49446)  \n转推非腾讯云 CDN 费用，请参考文档：[云端转推计费说明](https://cloud.tencent.com/document/product/647/82155)",
+      "document": "接口说明：  \n启动一个混流转推任务，将  TRTC 房间的多路音视频流混成一路音视频流，编码后推到直播 CDN 或者回推到 TRTC 房间。也支持不转码直接转推 TRTC 房间的单路流。启动成功后，会返回一个 SdkAppid 维度唯一的任务 Id（TaskId）。您需要保存该 TaskId，后续需要依赖此 TaskId 更新和结束任务。可以参考文档： [功能说明](https://cloud.tencent.com/document/product/647/84721#b9a855f4-e38c-4616-9b07-fc44e0e8282a) 和 [常见问题](https://cloud.tencent.com/document/product/647/62620)\n需要注意的是，TaskId调用时效性是30天，从成功启动转推并获得任务ID后开始计算，超时后无法调用更新和停止等接口，但是转推任务不会停止。最终任务会等所有参与混流转推的主播离开TRTC房间或切换成观众，并且超过MaxIdleTime时长后，自动停止。\n\n注意：\n您可以在控制台开通旁路转推回调功能，对转推 CDN 状态的事件进行监控，回调请参考文档：[旁路转推回调说明](https://cloud.tencent.com/document/product/647/88552)  \n您发起混流转推任务时，可能会产生如下费用：  \nMCU 混流转码费用，请参考文档：[云端混流转码计费说明](https://cloud.tencent.com/document/product/647/49446)  \n转推非腾讯云 CDN 费用，请参考文档：[云端转推计费说明](https://cloud.tencent.com/document/product/647/82155)",
       "input": "StartPublishCdnStreamRequest",
       "name": "启动转推任务",
       "output": "StartPublishCdnStreamResponse",
@@ -8577,7 +8577,7 @@
         {
           "disabled": false,
           "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。",
-          "example": "1400***000",
+          "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -8604,7 +8604,7 @@
         {
           "disabled": false,
           "document": "转推服务加入TRTC房间的机器人参数。",
-          "example": "{\"UserId\":\"trtc_user_agent\",\"UserSig\":\"eJw1zV8****pljzBb*IOTE_\",\"MaxIdleTime\":30}",
+          "example": "无",
           "member": "AgentParams",
           "name": "AgentParams",
           "required": true,
@@ -8612,7 +8612,7 @@
         },
         {
           "disabled": false,
-          "document": "是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。\n注：混流是必须转码，这个参数需设置为1。",
+          "document": "是否转码，0表示无需转码，1表示需要转码。\nWithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。\n注：\n1，混流是必须转码的，这个参数需设置为1。\n2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。",
           "example": "1",
           "member": "uint64",
           "name": "WithTranscoding",
@@ -8622,7 +8622,7 @@
         {
           "disabled": false,
           "document": "转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。",
-          "example": "{\"AudioEncode\":{\"SampleRate\":48000,\"Channel\":2,\"BitRate\":64,\"Codec\":0}}",
+          "example": "无",
           "member": "McuAudioParams",
           "name": "AudioParams",
           "required": false,
@@ -8631,7 +8631,7 @@
         {
           "disabled": false,
           "document": "转推流的视频编码参数，不填表示纯音频转推。",
-          "example": "{\"VideoEncode\":{\"Width\":64,\"Height\":64,\"Fps\":15,\"BitRate\":128,\"Gop\":2},\"LayoutParams\":{\"MixLayoutMode\":3}}",
+          "example": "无",
           "member": "McuVideoParams",
           "name": "VideoParams",
           "required": false,
@@ -8640,7 +8640,7 @@
         {
           "disabled": false,
           "document": "需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。",
-          "example": "{\"UserMediaStream\":{\"UserInfo\":{\"RoomId\":\"123456\",\"RoomIdType\":0,\"UserId\":\"trtc_user_id\"},\"StreamType\":0}}",
+          "example": "无",
           "member": "SingleSubscribeParams",
           "name": "SingleSubscribeParams",
           "required": false,
@@ -8649,7 +8649,7 @@
         {
           "disabled": false,
           "document": "转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。",
-          "example": "[{\"IsTencentCdn\":1,\"PublishCdnUrl\":\"rtmp://***&txTime=68639060\"}]",
+          "example": "无",
           "member": "McuPublishCdnParam",
           "name": "PublishCdnParams",
           "required": false,
@@ -8658,7 +8658,7 @@
         {
           "disabled": false,
           "document": "混流SEI参数",
-          "example": "{\"LayoutVolume\":{\"AppData\":\"***\",\"PayloadType\":120, \"Interval\":3000,\"FollowIdr\":1}}",
+          "example": "无",
           "member": "McuSeiParams",
           "name": "SeiParams",
           "required": false,
@@ -8667,7 +8667,7 @@
         {
           "disabled": false,
           "document": "回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。",
-          "example": "[{\"RoomId\":\"123456\",\"RoomIdType\":0,\"UserId\":\"trtc_user_fb\",\"UserSig\":\"eJw1jdEKgj***AEOjOFw_\"}]",
+          "example": "无",
           "member": "McuFeedBackRoomParams",
           "name": "FeedBackRoomParams",
           "required": false,
@@ -8676,7 +8676,7 @@
         {
           "disabled": false,
           "document": "转推录制参数，[参考文档](https://cloud.tencent.com/document/product/647/111748)。",
-          "example": "{\"UniRecord\":1,\"RecordKey\": \"test_recore_key_a\"}",
+          "example": "无",
           "member": "McuRecordParams",
           "name": "RecordParams",
           "required": false,

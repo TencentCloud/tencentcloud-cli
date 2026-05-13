@@ -28,7 +28,8 @@ Output:
             }
         ],
         "RequestId": "-1y24pm54antkuiziyii7hxwv2974riq",
-        "TotalCount": 1
+        "TotalCount": 1,
+        "TotalRuleCount": 5
     }
 }
 ```

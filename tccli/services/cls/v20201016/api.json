@@ -4015,6 +4015,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网访问域名</p>",
+          "example": "https://xxx.clsconsole.tencentcls.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网访问域名</p>",
+          "example": "https://xxx.internal.clsconsole.tencentcls.com",
+          "member": "string",
+          "name": "IntranetDomain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

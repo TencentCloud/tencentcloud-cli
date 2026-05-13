@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddDspmAssetManager": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddDspmAssetManager\n<公共请求参数>\n\n{\n    \"AssetId\": [\n        \"cdb-c2thbt00\"\n    ],\n    \"IdentifyIds\": [\n        \"100001\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "添加资产管理员"
+      }
+    ],
     "AddNewBindRoleUser": [
       {
         "document": "新用户加入通知",
@@ -32,6 +40,86 @@
         "title": "添加资产"
       }
     ],
+    "CreateDspmAccessExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmAccessExportJob\n<公共请求参数>\n\n{\n    \"View\": \"ip\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"job-21c491y9\",\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "创建Dspm访问记录导出任务"
+      }
+    ],
+    "CreateDspmApplyOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmApplyOrder\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-c2thbt00\",\n    \"Subject\": \"pid_mwnmmjiz\",\n    \"Privilege\": {},\n    \"ApproverUin\": [\n        \"100000\"\n    ],\n    \"Reason\": \"for test\",\n    \"ManagerType\": 0,\n    \"ApplyType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"OrderId\": \"order-yzfhzjvk\",\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "创建Dspm申请单"
+      }
+    ],
+    "CreateDspmApproveHistoryExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmApproveHistoryExportJob\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"job-21c491y9\",\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "创建Dspm审批历史导出任务"
+      }
+    ],
+    "CreateDspmAssetAccessTopologyExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmAssetAccessTopologyExportJob\n<公共请求参数>\n\n{\n    \"View\": \"ip\",\n    \"Filter\": {}\n}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"job-21c491y9\",\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "创建Dspm资产访问拓扑导出任务"
+      }
+    ],
+    "CreateDspmAssetsExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmAssetsExportJob\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"job-21c491y9\",\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "创建Dspm资产列表导出任务"
+      }
+    ],
+    "CreateDspmExportTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExportTask\n<公共请求参数>\n\n{\n    \"DangerLevel\": 0,\n    \"DbName\": \"cdb-mysql\",\n    \"DbPort\": 0,\n    \"DbIp\": \"127.0.0.1\",\n    \"AssetsId\": 3306,\n    \"SessionId\": \"1711987200000-140227893131008-2045\",\n    \"ClientSideIp\": \"127.0.0.1\",\n    \"EndTime\": 0,\n    \"HitRule\": 0,\n    \"StartTime\": 0,\n    \"FuzzySearch\": \"select\",\n    \"UserName\": \"root\",\n    \"ClientName\": \"VM-0-124\",\n    \"SourceTypes\": [\n        \"Agent\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e67fb37-ebe9-4e44-8bc8-7810b66ce6a2\"\n    }\n}",
+        "title": "创建导出任务"
+      }
+    ],
+    "CreateDspmIdentifyInfoListExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmIdentifyInfoListExportJob\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"job-21c491y9\",\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "创建Dspm身份列表导出任务"
+      }
+    ],
+    "CreateDspmPersonalIdentify": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmPersonalIdentify\n<公共请求参数>\n\n{\n    \"Phone\": \"17790000000\",\n    \"Name\": \"张三\",\n    \"Remark\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PersonId\": \"pid_cd0b2mdj\",\n        \"IdentifyId\": \"dspm_c1d0b2mdj2\",\n        \"RequestId\": \"45ca21d4-f373-4274-9295-5380abc74bed\"\n    }\n}",
+        "title": "创建Dspm个人身份id"
+      }
+    ],
+    "CreateDspmRiskExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmRiskExportJob\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"job-21c491y9\",\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "创建Dspm风险导出任务"
+      }
+    ],
+    "CreateDspmWhitelistStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmWhitelistStrategy\n<公共请求参数>\n\n{\n    \"StrategyType\": \"ExposingPublicNetworkAccess\",\n    \"Rule\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"WhitelistStrategyId\": \"d13d396a-d798-4229-899f-023da9230532\",\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "创建Dspm白名单策略"
+      }
+    ],
     "CreateRiskCenterScanTask": [
       {
         "document": "创建风险中心扫描任务",
@@ -46,6 +134,62 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomainAndIp\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-68b8087a65268000\"\n    ],\n    \"Content\": [\n        {\n            \"Asset\": \"172.**.**.1\"\n        }\n    ],\n    \"RetainPath\": 0,\n    \"IgnoreAsset\": 0,\n    \"Tags\": [\n        {\n            \"TagKey\": \"foo\",\n            \"TagValue\": \"foo\"\n        }\n    ],\n    \"Type\": \"CLB\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": 1,\n        \"RequestId\": \"7cf2ba3d-87ad-4691-a374-fd92ec11d9c8\"\n    }\n}",
         "title": "删除公网IP/域名"
+      }
+    ],
+    "DeleteDspmApplyOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmApplyOrder\n<公共请求参数>\n\n{\n    \"OrderId\": [\n        \"ord-6wfo0fzks3\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "删除Dspm申请单"
+      }
+    ],
+    "DeleteDspmAssetAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmAssetAccount\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-c2thbt00\",\n    \"Account\": \"testaccount\",\n    \"Host\": \"%\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "删除Dspm资产账号"
+      }
+    ],
+    "DeleteDspmBackupLogList": [
+      {
+        "document": "删除备份日志",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackupLogList\n<公共请求参数>\n\n{\n    \"Id\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123-12343-abc\"\n    }\n}",
+        "title": "删除备份日志"
+      }
+    ],
+    "DeleteDspmExportTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmExportTask\n<公共请求参数>\n\n{\n    \"TaskIds\": [\n        0\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1233-122k3-xx\"\n    }\n}",
+        "title": "删除导出任务"
+      }
+    ],
+    "DeleteDspmPersonalIdentify": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmPersonalIdentify\n<公共请求参数>\n\n{\n    \"PersonId\": \"pid_zdazymzh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45ca21d4-f373-4274-9295-5380abc74bed\"\n    }\n}",
+        "title": "删除Dspm个人身份id"
+      }
+    ],
+    "DeleteDspmRestoreLogList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRestoreLogList\n<公共请求参数>\n\n{\n    \"Id\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ae461ef6-abc7-4a3d-9224-09a56b94fcfc\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DeleteDspmWhitelistStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmWhitelistStrategy\n<公共请求参数>\n\n{\n    \"WhitelistStrategyId\": [\n        \"rule-c2thbt00\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "删除Dspm白名单策略"
       }
     ],
     "DeleteRiskScanTask": [
@@ -168,6 +312,14 @@
         "title": "获取资产视角的漏洞风险列表"
       }
     ],
+    "DescribeAssumeRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssumeRole\n<公共请求参数>\n\n{\n    \"RoleName\": \"TencentCloudRoleName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Bind\": 1,\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询是否绑定角色"
+      }
+    ],
     "DescribeCFWAssetStatistics": [
       {
         "document": "资产中心统计",
@@ -262,6 +414,356 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainAssets\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Filters\": [\n            {\n                \"Name\": \"WAFStatus\",\n                \"Values\": [\n                    \"1\"\n                ],\n                \"OperatorType\": 7\n            },\n            {\n                \"Name\": \"TimeRange\",\n                \"Values\": [\n                    \"2\"\n                ],\n                \"OperatorType\": 7\n            }\n        ],\n        \"Limit\": 10,\n        \"Offset\": 0,\n        \"Order\": \"desc\",\n        \"By\": \"AssetCreateTime\"\n    },\n    \"MemberId\": [\n        \"mem-62522c05c913c901\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AssetLocationList\": [\n            {\n                \"Text\": \"其他\",\n                \"Value\": \"2\"\n            }\n        ],\n        \"Data\": [\n            {\n                \"AssetId\": [\n                    \"book.szzucieva.com\"\n                ],\n                \"AssetName\": [\n                    \"book.szzucieva.com\"\n                ],\n                \"SubDomain\": \"book.szzucieva.com\",\n                \"SourceType\": \"未知\",\n                \"BotAccessCount\": 0,\n                \"BotCount\": 0,\n                \"WebAttack\": 0,\n                \"PortRisk\": 0,\n                \"VulnerabilityRisk\": 0,\n                \"WeakPassword\": 0,\n                \"WebContentRisk\": 0,\n                \"ServiceRisk\": 0,\n                \"WAFStatus\": 1,\n                \"AssetType\": [\n                    \"未知\"\n                ],\n                \"AssetCreateTime\": \"2024-08-31 06:01:18\",\n                \"Region\": [\n                    \"other\"\n                ],\n                \"SeverIp\": [\n                    \"**************\"\n                ],\n                \"AppId\": 1302396219625,\n                \"Uin\": \"100014592145978\",\n                \"NickName\": \"生生乌龙\",\n                \"IsCore\": 2,\n                \"IsCloud\": 3,\n                \"Attack\": 0,\n                \"Access\": 0,\n                \"Intercept\": 0,\n                \"InBandwidth\": \"0bps\",\n                \"OutBandwidth\": \"0bps\",\n                \"InFlow\": \"0B\",\n                \"OutFlow\": \"0B\",\n                \"LastScanTime\": \"2024-10-30 05:02:29\",\n                \"ConfigurationRisk\": 0,\n                \"ScanTask\": 0,\n                \"Tag\": [\n                    {\n                        \"Name\": \"name1\",\n                        \"Value\": \"value1\"\n                    }\n                ],\n                \"MemberId\": \"mem-625c229153c9c001\",\n                \"CCAttack\": 0,\n                \"IsNewAsset\": 0,\n                \"VerifyDomain\": \"verify.te.foo1.***.dxoyxy.top\",\n                \"VerifyTXTRecord\": \"verify/cnkj1bn2k4n124n14n12\",\n                \"VerifyStatus\": 0\n            },\n            {\n                \"AssetId\": [\n                    \"docker.dzoxyxy.top\"\n                ],\n                \"AssetName\": [\n                    \"docker.dzoxyxy.top\"\n                ],\n                \"SubDomain\": \"docker.dzoxyxy.top\",\n                \"SourceType\": \"未知\",\n                \"BotAccessCount\": 0,\n                \"BotCount\": 0,\n                \"WebAttack\": 0,\n                \"PortRisk\": 0,\n                \"VulnerabilityRisk\": 0,\n                \"WeakPassword\": 0,\n                \"WebContentRisk\": 0,\n                \"ServiceRisk\": 0,\n                \"WAFStatus\": 1,\n                \"AssetType\": [],\n                \"AssetCreateTime\": \"2023-12-14 11:06:37\",\n                \"Region\": [\n                    \"other\"\n                ],\n                \"SeverIp\": [\n                    \"43.165.126.15\"\n                ],\n                \"AppId\": 1302396219625,\n                \"Uin\": \"100014592145978\",\n                \"NickName\": \"生生乌龙\",\n                \"IsCore\": 2,\n                \"IsCloud\": 2,\n                \"Attack\": 0,\n                \"Access\": 0,\n                \"Intercept\": 0,\n                \"InBandwidth\": \"0bps\",\n                \"OutBandwidth\": \"0bps\",\n                \"InFlow\": \"0B\",\n                \"OutFlow\": \"0B\",\n                \"LastScanTime\": \"2024-10-30 05:02:29\",\n                \"ConfigurationRisk\": 0,\n                \"ScanTask\": 31,\n                \"Tag\": [\n                    {\n                        \"Name\": \"name1\",\n                        \"Value\": \"value1\"\n                    }\n                ],\n                \"MemberId\": \"mem-625c229153c9c001\",\n                \"CCAttack\": 0,\n                \"IsNewAsset\": 0,\n                \"VerifyDomain\": \"verify.te.foo3.***.dxoyxy.top\",\n                \"VerifyTXTRecord\": \"verify/qnwofhqocnasonr31cv3ir414j21pj4p12j41u0921u\",\n                \"VerifyStatus\": 0\n            },\n            {\n                \"AssetId\": [\n                    \"example.te.dxoyxy.top\"\n                ],\n                \"AssetName\": [\n                    \"example.te.dxoyxy.top\"\n                ],\n                \"SubDomain\": \"example.te.dxoyxy.top\",\n                \"SourceType\": \"未知\",\n                \"BotAccessCount\": 0,\n                \"BotCount\": 0,\n                \"WebAttack\": 0,\n                \"PortRisk\": 0,\n                \"VulnerabilityRisk\": 0,\n                \"WeakPassword\": 0,\n                \"WebContentRisk\": 0,\n                \"ServiceRisk\": 0,\n                \"WAFStatus\": 1,\n                \"AssetType\": [],\n                \"AssetCreateTime\": \"2023-12-14 11:30:07\",\n                \"Region\": [\n                    \"other\"\n                ],\n                \"SeverIp\": [\n                    \"43.137.128.53\"\n                ],\n                \"AppId\": 1302396219625,\n                \"Uin\": \"100014592145978\",\n                \"NickName\": \"生生乌龙\",\n                \"IsCore\": 2,\n                \"IsCloud\": 2,\n                \"Attack\": 0,\n                \"Access\": 0,\n                \"Intercept\": 0,\n                \"InBandwidth\": \"0bps\",\n                \"OutBandwidth\": \"0bps\",\n                \"InFlow\": \"0B\",\n                \"OutFlow\": \"0B\",\n                \"LastScanTime\": \"2024-10-30 05:02:29\",\n                \"ConfigurationRisk\": 0,\n                \"ScanTask\": 31,\n                \"Tag\": [\n                    {\n                        \"Name\": \"name1\",\n                        \"Value\": \"value1\"\n                    }\n                ],\n                \"MemberId\": \"mem-625c229153c9c001\",\n                \"CCAttack\": 0,\n                \"IsNewAsset\": 0,\n                \"VerifyDomain\": \"verify.te.foo.***.dxoyxy.top\",\n                \"VerifyTXTRecord\": \"verify/qnwofhqoir414j21pj4p12j41u0921u\",\n                \"VerifyStatus\": 0\n            }\n        ],\n        \"DefenseStatusList\": [\n            {\n                \"Text\": \"已防护\",\n                \"Value\": \"1\"\n            },\n            {\n                \"Text\": \"未防护\",\n                \"Value\": \"5\"\n            }\n        ],\n        \"RegionList\": [\n            {\n                \"Text\": \"未知\",\n                \"Value\": \"other\"\n            }\n        ],\n        \"RequestId\": \"ddca49aa-8aaf-4525-b2ff-fdd6fe7d1d20\",\n        \"SourceTypeList\": [\n            {\n                \"Text\": \"未知\",\n                \"Value\": \"unknown\"\n            }\n        ],\n        \"Total\": 3\n    }\n}",
         "title": "接口示例"
+      }
+    ],
+    "DescribeDspmAccessRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAccessRecord\n<公共请求参数>\n\n{\n    \"View\": \"ip\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AccessSet\": [],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm访问记录"
+      }
+    ],
+    "DescribeDspmAccessTopologyAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAccessTopologyAccounts\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            \"\"\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm访问拓扑账号列表"
+      }
+    ],
+    "DescribeDspmAccessTopologyAssets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAccessTopologyAssets\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            \"\"\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm访问拓扑资产列表"
+      }
+    ],
+    "DescribeDspmAccessTopologyIps": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAccessTopologyIps\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            \"\"\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm访问拓扑ip列表"
+      }
+    ],
+    "DescribeDspmApplyHistory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmApplyHistory\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ApplySet\": [],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm申请历史"
+      }
+    ],
+    "DescribeDspmApplyOrderList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmApplyOrderList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"OrderSet\": [],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm申请单列表"
+      }
+    ],
+    "DescribeDspmApproveHistory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmApproveHistory\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ApproveSet\": [],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm审批历史"
+      }
+    ],
+    "DescribeDspmApproveOrderList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmApproveOrderList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"OrderSet\": [],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm审批单列表"
+      }
+    ],
+    "DescribeDspmAssetAccessTopology": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetAccessTopology\n<公共请求参数>\n\n{\n    \"View\": \"ip\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ItemSet\": [],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm资产访问拓扑"
+      }
+    ],
+    "DescribeDspmAssetAccountIdentify": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetAccountIdentify\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-7ukt2wpx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"IdentifySet\": [],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm资产账号身份信息"
+      }
+    ],
+    "DescribeDspmAssetAccountPresetPrivileges": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetAccountPresetPrivileges\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-dgtiaz1q\",\n    \"Account\": \"root\",\n    \"Host\": \"%\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Privilege\": {},\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm资产账号预设特权信息"
+      }
+    ],
+    "DescribeDspmAssetAccountRecycledPrivileges": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetAccountRecycledPrivileges\n<公共请求参数>\n\n{\n    \"RiskId\": \"4f61bab8-c01f-4230-91dc-cbefa781db2a\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Privilege\": {},\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm资产账号回收后特权信息"
+      }
+    ],
+    "DescribeDspmAssetAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetAccounts\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-c2thbt00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AccountSet\": [],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm资产账号列表"
+      }
+    ],
+    "DescribeDspmAssetDatabaseList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetDatabaseList\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-21e9sdha\",\n    \"Filter\": {\n        \"Limit\": 10,\n        \"Offset\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DataSet\": [\n            {\n                \"AssetId\": \"cdb-c2thbt00\",\n                \"DbName\": \"test_db\",\n                \"TableCount\": 10,\n                \"SensitiveTableCount\": 5,\n                \"RuleIds\": [\n                    5800\n                ],\n                \"RuleNames\": [\n                    \"姓名\"\n                ]\n            }\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询资产数据库信息"
+      }
+    ],
+    "DescribeDspmAssetDatabases": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetDatabases\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-c2thbt00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            \"testdatabase1\",\n            \"testdatabase2\"\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm资产数据库列表"
+      }
+    ],
+    "DescribeDspmAssetFieldList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetFieldList\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-21e9sdha\",\n    \"DbName\": \"test_db\",\n    \"TableName\": \"test_db\",\n    \"Filter\": {\n        \"Limit\": 10,\n        \"Offset\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DataSet\": [\n            {\n                \"AssetId\": \"cdb-c2thbt00\",\n                \"DbName\": \"test_db\",\n                \"SchemaName\": \"test_schema\",\n                \"TableName\": \"test_tb\",\n                \"FieldName\": \"test_field\",\n                \"RuleIds\": [\n                    5800\n                ],\n                \"RuleNames\": [\n                    \"姓名\"\n                ],\n                \"CategoryIds\": [\n                    356\n                ],\n                \"CategoryNames\": [\n                    \"姓名\"\n                ]\n            }\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询dspm资产字段信息"
+      }
+    ],
+    "DescribeDspmAssetIds": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetIds\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AssetSet\": [\n            {\n                \"Id\": 1,\n                \"AssetId\": \"cdb-c2thbt00\",\n                \"AssetType\": \"cdb\",\n                \"Name\": \"测试cdb\"\n            }\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm资产id列表"
+      }
+    ],
+    "DescribeDspmAssetLoginCredential": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetLoginCredential\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-c2thbt00\",\n    \"EncryptMethod\": \"RSA\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45ca21d4-f373-4274-9295-5380abc74bed\",\n        \"Account\": \"dspm_bob\",\n        \"Password\": \"DokJ6DDlgL48Mjbj+HeMLsGS4g1I+TtV2D9rA+xLmrCJG7rxSmHQx7VTdzrj8h1XtJl2hK+nlnJ0z1s/iT27Ao1MTcMrdiMwO3fCAtgm7jE5u//aix0nrwkEL84uvH1RaE+6ZL1zWs17ZPXhDtDOxLpAmYee/yzRpPOdrWAcgHhCzngUU61aeDwfS7eoC+z04b8aQumdbhrxkLZ5sa+hFdaLdWBP3yRWmaB8na9195jA2/vlo6fMrTwdU/oHX/hMYDcAElQbj4v+ERGT6SsBM3vfUsDLer3n6WR58Qu8wUUweQV46RbNTEpP/GJ3yNiwkPpLLUv1SSiox+KdwBgA0g==\",\n        \"ValidateStart\": \"2025-01-01 12:00:00\",\n        \"ValidateEnd\": \"2025-01-01 23:59:59\"\n    }\n}",
+        "title": "查询Dspm资产登录凭据"
+      }
+    ],
+    "DescribeDspmAssetSecurityAnalyseStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetSecurityAnalyseStatus\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-6wfo0fzks3\"\n    ],\n    \"Filter\": {\n        \"Limit\": 100\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AssetSet\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"af6e2ac5-e336-42be-b994-c2225b411397\"\n    }\n}",
+        "title": "查询Dspm资产安全分析状态"
+      }
+    ],
+    "DescribeDspmAssetSupportedPrivileges": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetSupportedPrivileges\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-c2thbt00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GlobalSupportedPrivileges\": [\n            \"SELECT\",\n            \"INSERT\",\n            \"UPDATE\",\n            \"DELETE\"\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm资产支持的权限"
+      }
+    ],
+    "DescribeDspmAssetTableList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetTableList\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-21e9sdha\",\n    \"DbName\": \"test_db\",\n    \"Filter\": {\n        \"Limit\": 10,\n        \"Offset\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DataSet\": [\n            {\n                \"AssetId\": \"cdb-c2thbt00\",\n                \"DbName\": \"test_db\",\n                \"SchemaName\": \"test_schema\",\n                \"TableName\": \"test_tb\",\n                \"FieldCount\": 10,\n                \"SensitiveFieldCount\": 5,\n                \"RuleIds\": [\n                    5800\n                ],\n                \"RuleNames\": [\n                    \"姓名\"\n                ],\n                \"CategoryIds\": [\n                    356\n                ],\n                \"CategoryNames\": [\n                    \"姓名\"\n                ]\n            }\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询资产表信息"
+      }
+    ],
+    "DescribeDspmAssets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssets\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AssetSet\": [\n            {\n                \"AssetId\": \"cdb-c2thbt00\",\n                \"AssetType\": \"cdb\",\n                \"AccountCount\": 0,\n                \"Name\": \"测试cdb\",\n                \"PublicIp\": \"1.1.1.1:3306\",\n                \"PrivateIp\": \"192.168.0.1:3306\",\n                \"WanDomain\": \"gz-cdb-c2thbt00.sql.tencentcdb.com:3306\",\n                \"Region\": \"ap-guangzhou\",\n                \"VpcId\": \"vpc-c2thbt00\",\n                \"VpcName\": \"default-vpc\",\n                \"SubnetId\": \"subnet-c2thbt00\",\n                \"SubnetName\": \"default-subnet\",\n                \"Status\": 0,\n                \"CreateTime\": \"2025-01-20 18:51:00\"\n            }\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm资产列表"
+      }
+    ],
+    "DescribeDspmBackupLogList": [
+      {
+        "document": "查询备份日志列表",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupLogList\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Sort\": \"desc\",\n    \"Field\": \"ip\",\n    \"StartTime\": 0,\n    \"EndTime\": 0,\n    \"Status\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"List\": [\n            {\n                \"Id\": 0,\n                \"IndexStartTime\": 0,\n                \"IndexEndTime\": 0,\n                \"BackupSize\": 0,\n                \"Status\": 0,\n                \"RestoreProcessRemindTime\": 0,\n                \"RestoreRemindTime\": 0\n            }\n        ],\n        \"RequestId\": \"24adbdda-a605-4501-9e8c-3f0894936a62\"\n    }\n}",
+        "title": "查询备份日志列表"
+      }
+    ],
+    "DescribeDspmBackupSetting": [
+      {
+        "document": "查询日志备份配置",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupSetting\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"BackupLogSaveTime\": 0,\n        \"RestoreLogSaveTime\": 0,\n        \"LogMaxSaveTime\": 180,\n        \"OnlineLogMaxSaveTime\": 30,\n        \"RequestId\": \"qwedaexczcqwe\"\n    }\n}",
+        "title": "查询日志备份配置"
+      }
+    ],
+    "DescribeDspmDictionaryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmDictionaryList\n<公共请求参数>\n\n{\n    \"DictType\": \"IdentifyRule\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"DictId\": 5800,\n                \"DictName\": \"姓名\"\n            }\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询dspm字典信息列表"
+      }
+    ],
+    "DescribeDspmExportTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmExportTask\n<公共请求参数>\n\n{\n    \"TaskStatus\": 0,\n    \"StartTime\": 0,\n    \"EndTime\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Id\": 0,\n                \"AppId\": 0,\n                \"Percentage\": 0,\n                \"TaskStatus\": 0,\n                \"CreateTime\": 0,\n                \"ModifyTime\": 0\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"1230-222k-xx\"\n    }\n}",
+        "title": "查询导出任务"
+      }
+    ],
+    "DescribeDspmIdentifyIdList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyIdList\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Limit\": 100,\n        \"Offset\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询Dspm身份id列表"
+      }
+    ],
+    "DescribeDspmIdentifyInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45ca21d4-f373-4274-9295-5380abc74bed\",\n        \"IdentifyId\": \"dspm_blob\"\n    }\n}",
+        "title": "查询Dspm身份信息"
+      }
+    ],
+    "DescribeDspmIdentifyInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyInfoList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InfoSet\": [],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm身份信息列表"
+      }
+    ],
+    "DescribeDspmLogList": [
+      {
+        "document": "根据风险等级升序查询日志列表",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogList\n<公共请求参数>\n\n{\n    \"Sort\": \"desc\",\n    \"DbPort\": 0,\n    \"FuzzySearch\": \"select\",\n    \"HitRule\": 0,\n    \"DangerLevel\": \"high\",\n    \"RestoreLogId\": 0,\n    \"AssetsId\": 0,\n    \"UserName\": \"root\",\n    \"DbIp\": \"127.0.0.1\",\n    \"Field\": \"ip\",\n    \"SessionId\": \"1711987200000-140227893131008-2045\",\n    \"Limit\": 1,\n    \"StartTime\": 0,\n    \"Offset\": 1,\n    \"EndTime\": 0,\n    \"ClientSideIp\": \"127.0.0.1\",\n    \"DbName\": \"mysql\",\n    \"ClientName\": \"Proxy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"AiScore\": 1,\n                \"AppUser\": \"testuser\",\n                \"BackPacket\": \"\",\n                \"ClientIp\": \"127.0.0.1\",\n                \"ClientMac\": \"52:54:00:c9:38:87\",\n                \"ClientName\": \"root\",\n                \"ClientUser\": \"39510\",\n                \"ClientPort\": 3306,\n                \"DangerLevel\": 1,\n                \"DbIp\": \"127.0.0.1\",\n                \"DbName\": \"monitor\",\n                \"DbPort\": 3306,\n                \"DbUser\": \"root\",\n                \"EffectRow\": 0,\n                \"ExecTime\": 1,\n                \"HitRule\": \"10000\",\n                \"Id\": 104709,\n                \"InstanceId\": 1,\n                \"InstanceName\": \"审计测试资产\",\n                \"OpSql\": \"login\",\n                \"OpTime\": 1631760308,\n                \"RetMsg\": \"login failed\",\n                \"RetNo\": 0,\n                \"SessionId\": \"1631721600000-140388847871744-5319\",\n                \"SqlType\": \"LOGIN\",\n                \"TableName\": \"information_schema\",\n                \"AssetName\": \"审计测试资产\",\n                \"HitRules\": [],\n                \"SourceType\": \"cdb\",\n                \"ReqId\": \"req-testidaseeada\",\n                \"SqlMainType\": \"DML\",\n                \"TableNames\": [\n                    \"table1,table2,table3\"\n                ],\n                \"FieldNames\": [\n                    \"field1,field2,field3\"\n                ],\n                \"FieldName\": \"phonenum,username,id\",\n                \"DbType\": \"MYSQL\",\n                \"ClientDriverName\": \"mongosh\"\n            }\n        ],\n        \"RequestId\": \"a8aa8bbc-c255-42b1-88c4-04419f435a77\"\n    }\n}",
+        "title": "根据风险等级升序查询日志列表"
+      }
+    ],
+    "DescribeDspmPayInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmPayInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AppID\": 251237296,\n        \"AssetNum\": 9,\n        \"AutoRenew\": 0,\n        \"BeginTime\": \"2025-11-27 16:09:30\",\n        \"BetaEndTime\": \"\",\n        \"EndTime\": \"2025-12-27 16:09:30\",\n        \"InquireData\": [\n            {\n                \"Name\": \"sv_soccloud_dspm_exp_1in\",\n                \"Value\": 6\n            },\n            {\n                \"Name\": \"sv_soccloud_dspm_exp_1t\",\n                \"Value\": 2\n            },\n            {\n                \"Name\": \"sv_soccloud_dspm_package_pro\",\n                \"Value\": 1\n            }\n        ],\n        \"IsSelfBuy\": 1,\n        \"IsShareToOther\": 0,\n        \"LogStorage\": 3.1,\n        \"NickName\": \"\",\n        \"OrderStatus\": 1,\n        \"PayMode\": 1,\n        \"RequestId\": \"61d76fce-c5ed-4e41-9c49-aa33cadb19e2\",\n        \"ResourceId\": \"dspm-99643271\",\n        \"TimeNow\": \"2025-12-01 10:43:45\",\n        \"TimeSpan\": 1,\n        \"TimeUnit\": \"m\",\n        \"Uin\": \"700000579945\",\n        \"UsedAssetNum\": 0,\n        \"UsedLogStorage\": 0\n    }\n}",
+        "title": "获取dspm购买信息"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmPayInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AppID\": 251237296,\n        \"AssetNum\": 9,\n        \"AutoRenew\": 0,\n        \"BeginTime\": \"2025-11-27 16:09:30\",\n        \"BetaEndTime\": \"\",\n        \"EndTime\": \"2025-12-27 16:09:30\",\n        \"InquireData\": [\n            {\n                \"Name\": \"sv_soccloud_dspm_exp_1in\",\n                \"Value\": 6\n            },\n            {\n                \"Name\": \"sv_soccloud_dspm_exp_1t\",\n                \"Value\": 2\n            },\n            {\n                \"Name\": \"sv_soccloud_dspm_package_pro\",\n                \"Value\": 1\n            }\n        ],\n        \"IsSelfBuy\": 1,\n        \"IsShareToOther\": 0,\n        \"LogStorage\": 3.1,\n        \"NickName\": \"\",\n        \"OrderStatus\": 1,\n        \"PayMode\": 1,\n        \"RequestId\": \"61d76fce-c5ed-4e41-9c49-aa33cadb19e2\",\n        \"ResourceId\": \"dspm-99643271\",\n        \"TimeNow\": \"2025-12-01 10:43:45\",\n        \"TimeSpan\": 1,\n        \"TimeUnit\": \"m\",\n        \"Uin\": \"700000579945\",\n        \"UsedAssetNum\": 0,\n        \"UsedLogStorage\": 0\n    }\n}",
+        "title": "计费项信息"
+      }
+    ],
+    "DescribeDspmPersonApplyHistory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmPersonApplyHistory\n<公共请求参数>\n\n{\n    \"Subject\": \"100000\",\n    \"AssetId\": \"cdb-c2thbt00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ApplySet\": [],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm访客申请记录"
+      }
+    ],
+    "DescribeDspmPersonalIdentifyList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmPersonalIdentifyList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InfoSet\": [],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm个人身份信息列表"
+      }
+    ],
+    "DescribeDspmRisk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmRisk\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RiskSet\": [],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm风险记录"
+      }
+    ],
+    "DescribeDspmRiskDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmRiskDetail\n<公共请求参数>\n\n{\n    \"RiskId\": \"f7966e40-e20f-4540-9927-d34fb6cc4747\",\n    \"Filter\": {\n        \"Limit\": 100,\n        \"Offset\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm风险详情"
+      }
+    ],
+    "DescribeDspmRiskStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmRiskStrategy\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"StrategySet\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm风险策略"
+      }
+    ],
+    "DescribeDspmRiskStrategyGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmRiskStrategyGroup\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"StrategyGroupSet\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm风险分组策略"
+      }
+    ],
+    "DescribeDspmRiskTendency": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmRiskTendency\n<公共请求参数>\n\n{\n    \"StartDate\": \"2025-03-01\",\n    \"EndDate\": \"2025-03-03\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RiskTendencySet\": [],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm风险趋势"
+      }
+    ],
+    "DescribeDspmStatistics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmStatistics\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm统计信息"
+      }
+    ],
+    "DescribeDspmSupportedAssetType": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmSupportedAssetType\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AssetTypeSet\": [],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm支持的资产类型信息"
+      }
+    ],
+    "DescribeDspmSyncAssetsStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmSyncAssetsStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm同步资产状态"
+      }
+    ],
+    "DescribeDspmSyncUsersStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmSyncUsersStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm同步用户状态"
+      }
+    ],
+    "DescribeDspmWhitelistStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmWhitelistStrategy\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"WhitelistSet\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm白名单策略"
       }
     ],
     "DescribeExposeAssetCategory": [
@@ -582,6 +1084,14 @@
         "title": "获取账号调用记录列表"
       }
     ],
+    "DescribeUserDspmInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDspmInfoList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-5b28e2760c18f07a\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"List\": [\n            {\n                \"AppID\": 251237296,\n                \"AssetNum\": 30,\n                \"IsSelfBuy\": 1,\n                \"IsShared\": 2,\n                \"NickName\": \"\",\n                \"ShareFromAppID\": 251237296,\n                \"Uin\": \"700000579945\"\n            }\n        ],\n        \"SelectedAssetNum\": 30,\n        \"RequestId\": \"a5f433c4-9bcb-4b6a-8c7b-7ce9bd65e84e\"\n    }\n}",
+        "title": "获取账号dspm信息列表"
+      }
+    ],
     "DescribeVULList": [
       {
         "document": "示例1",
@@ -630,6 +1140,134 @@
         "title": "获取漏洞视角的漏洞风险列表"
       }
     ],
+    "DownloadDspmExportLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadExportLog\n<公共请求参数>\n\n{\n    \"TaskId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Url\": \"test.tencent.com\",\n        \"RequestId\": \"123-12343-abc\"\n    }\n}",
+        "title": "下载导出日志"
+      }
+    ],
+    "ModifyDspmAccessRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmAccessRecord\n<公共请求参数>\n\n{\n    \"Id\": [\n        {\n            \"SourceIp\": \"10.10.0.1\",\n            \"AssetId\": \"cdb-c2thbt00\",\n            \"RecordTime\": \"2025-03-01 12:00:00\"\n        }\n    ],\n    \"View\": \"ip\",\n    \"Noted\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "修改Dspm访问管理信息"
+      }
+    ],
+    "ModifyDspmApproveStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmApproveStatus\n<公共请求参数>\n\n{\n    \"OrderId\": \"order-6wfo0fzks3\",\n    \"Status\": 1,\n    \"Comment\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45ca21d4-f373-4274-9295-5380abc74bed\"\n    }\n}",
+        "title": "修改Dspm审批单状态"
+      }
+    ],
+    "ModifyDspmAssetAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmAssetAccount\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-c2thbt00\",\n    \"Account\": \"root\",\n    \"Host\": \"%\",\n    \"AccountType\": 1,\n    \"Remark\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "修改Dspm资产账号信息"
+      }
+    ],
+    "ModifyDspmAssetAccountPrivileges": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmAssetAccountPrivileges\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-c2thbt00\",\n    \"Account\": \"dspm_y2flnzuy\",\n    \"Host\": \"%\",\n    \"Privilege\": {}\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "修改Dspm资产账号权限"
+      }
+    ],
+    "ModifyDspmAssetDataScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmAssetDataScanTask\n<公共请求参数>\n\n{\n    \"AssetIds\": [\n        \"cdb-8pwcu099\"\n    ],\n    \"IsScheduled\": false,\n    \"IsAgreeAuth\": true,\n    \"IsRunAtOnce\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\",\n        \"TaskIdSet\": [\n            1\n        ]\n    }\n}",
+        "title": "修改Dspm资产数据扫描任务"
+      }
+    ],
+    "ModifyDspmAssetLogDeliverySwitch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmAssetLogDeliverySwitch\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-8pwcu099\",\n    \"Enable\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "修改Dspm资产日志投递开关"
+      }
+    ],
+    "ModifyDspmAssetSecurityAnalysisSwitch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmAssetSecurityAnalysisSwitch\n<公共请求参数>\n\n{\n    \"Instances\": [\n        {\n            \"AssetId\": \"cdb-mmg7t7v0\",\n            \"AssetType\": \"cdb\",\n            \"Region\": \"ap-guangzhou\",\n            \"AppId\": 260083796\n        }\n    ],\n    \"MemberId\": [\n        \"mem-6wfo0fzks3\"\n    ],\n    \"Enable\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d5d0327-41a1-46d3-95cc-55916dcd4f97\"\n    }\n}",
+        "title": "修改Dspm安全分析开关"
+      }
+    ],
+    "ModifyDspmBackupSetting": [
+      {
+        "document": "修改日志备份设置",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupSetting\n<公共请求参数>\n\n{\n    \"BackupLogSaveTime\": 0,\n    \"RestoreLogSaveTime\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"asdqw123aweqweq\"\n    }\n}",
+        "title": "修改日志备份设置"
+      }
+    ],
+    "ModifyDspmIdentifyInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmIdentifyInfo\n<公共请求参数>\n\n{\n    \"Subject\": \"pid_zdazymzh\",\n    \"Remark\": \"test remark\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45ca21d4-f373-4274-9295-5380abc74bed\"\n    }\n}",
+        "title": "修改Dspm身份信息"
+      }
+    ],
+    "ModifyDspmIpInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmIpInfo\n<公共请求参数>\n\n{\n    \"Ip\": \"10.10.10.10\",\n    \"Remark\": \"测试ip\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "修改DspmIp信息"
+      }
+    ],
+    "ModifyDspmPersonalIdentify": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmPersonalIdentify\n<公共请求参数>\n\n{\n    \"PersonId\": \"pid_cd0b2mdj\",\n    \"Phone\": \"17790000000\",\n    \"Remark\": \"张三\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45ca21d4-f373-4274-9295-5380abc74bed\"\n    }\n}",
+        "title": "修改Dspm个人身份id"
+      }
+    ],
+    "ModifyDspmRestoreLogTask": [
+      {
+        "document": "恢复备份日志",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRestoreLogTask\n<公共请求参数>\n\n{\n    \"Id\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123-12343-abc\"\n    }\n}",
+        "title": "恢复备份日志"
+      }
+    ],
+    "ModifyDspmRiskInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmRiskInfo\n<公共请求参数>\n\n{\n    \"RiskId\": [\n        \"risk-adto2t6b\"\n    ],\n    \"Status\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "修改Dspm风险信息"
+      }
+    ],
+    "ModifyDspmRiskStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmRiskStrategy\n<公共请求参数>\n\n{\n    \"StrategyType\": \"ExposingPublicNetworkAccess\",\n    \"IsEnabled\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "修改Dspm风险策略"
+      }
+    ],
+    "ModifyDspmWhitelistStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmWhitelistStrategy\n<公共请求参数>\n\n{\n    \"WhitelistStrategyId\": \"d13d396a-d798-4229-899f-023da9230532\",\n    \"Rule\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "修改Dspm白名单策略"
+      }
+    ],
     "ModifyOrganizationAccountStatus": [
       {
         "document": "修改集团账号状态",
@@ -662,12 +1300,60 @@
         "title": "test"
       }
     ],
+    "ResetDspmAssetAccountPassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetDspmAssetAccountPassword\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-c2thbt00\",\n    \"Account\": \"testaccount\",\n    \"Host\": \"%\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "重置Dspm资产账号密码"
+      }
+    ],
+    "RetryDspmExportLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetryExportLog\n<公共请求参数>\n\n{\n    \"TaskId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123-12343-abc\"\n    }\n}",
+        "title": "重试导出任务"
+      }
+    ],
+    "RevertDspmAssetAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RevertDspmAssetAccount\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-c2thbt00\",\n    \"Account\": \"dspm_blob\",\n    \"Host\": \"%\",\n    \"PrivilegeFlag\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "恢复Dspm资产账号"
+      }
+    ],
+    "SendDspmAssetLoginSmsCode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendDspmAssetLoginSmsCode\n<公共请求参数>\n\n{\n    \"PersonId\": \"pid_zdazymzh\",\n    \"AssetId\": \"cdb-c2thbt00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "title": "发送Dspm资产访问验证码"
+      }
+    ],
     "StopRiskCenterTask": [
       {
         "document": "停止扫风险中心扫描任务",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopRiskCenterTask\n<公共请求参数>\n\n{\n    \"TaskIdList\": [\n        {\n            \"TaskId\": \"rmis-******\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"7c9179a6-1dbe-4ee6-933c-c53f5d3bb0d4\"\n    }\n}",
         "title": "停止扫风险中心扫描任务"
+      }
+    ],
+    "SyncDspmAssets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncDspmAssets\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45ca21d4-f373-4274-9295-5380abc74bed\"\n    }\n}",
+        "title": "同步dspm支持的资产"
+      }
+    ],
+    "SyncDspmUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncDspmUsers\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45ca21d4-f373-4274-9295-5380abc74bed\"\n    }\n}",
+        "title": "同步dspm用户列表"
       }
     ],
     "UpdateAccessKeyAlarmStatus": [
@@ -692,6 +1378,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAlertStatusList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-tencent-4120f232321129\"\n    ],\n    \"OperateType\": 3,\n    \"ID\": [\n        {\n            \"AppId\": \"1235123242\",\n            \"Type\": \"ActiveOutbound\",\n            \"SubType\": \"MaliciousRequest\",\n            \"Source\": \"CWP\",\n            \"Name\": \"访问恶意地址或域名\",\n            \"Key\": \"WRzIsdfMPkmukkUdsfsXfpZu\",\n            \"Date\": \"2024-10-30T00:00:00+08:00\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Code\": \"0\",\n        \"Msg\": \"success\",\n        \"RequestId\": \"fa5de592-7926-4e69-8ebe-00d1a7d6df55\"\n    }\n}",
         "title": "批量处理告警状态"
+      }
+    ],
+    "VerifyDspmAssetLoginCode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyDspmAssetLoginCode\n<公共请求参数>\n\n{\n    \"PersonId\": \"pid_zdazymzh\",\n    \"AssetId\": \"cdb-c2thbt00\",\n    \"Code\": \"00000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45ca21d4-f373-4274-9295-5380abc74bed\",\n        \"Account\": \"dspm_bob\",\n        \"Password\": \"DokJ6DDlgL48Mjbj+HeMLsGS4g1I+TtV2D9rA+xLmrCJG7rxSmHQx7VTdzrj8h1XtJl2hK+nlnJ0z1s/iT27Ao1MTcMrdiMwO3fCAtgm7jE5u//aix0nrwkEL84uvH1RaE+6ZL1zWs17ZPXhDtDOxLpAmYee/yzRpPOdrWAcgHhCzngUU61aeDwfS7eoC+z04b8aQumdbhrxkLZ5sa+hFdaLdWBP3yRWmaB8na9195jA2/vlo6fMrTwdU/oHX/hMYDcAElQbj4v+ERGT6SsBM3vfUsDLer3n6WR58Qu8wUUweQV46RbNTEpP/GJ3yNiwkPpLLUv1SSiox+KdwBgA0g==\",\n        \"ValidateStart\": \"2025-01-01 12:00:00\",\n        \"ValidateEnd\": \"2025-01-01 23:59:59\"\n    }\n}",
+        "title": "验证Dspm资产登录验证码"
       }
     ]
   },

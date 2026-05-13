@@ -746,6 +746,26 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务类型：SHARE-共享型，EXCLUSIVE-独占型",
+          "example": "SHARE",
+          "member": "string",
+          "name": "ServiceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VLAN范围",
+          "example": "100-1000,2000,2020-2030",
+          "member": "string",
+          "name": "VlanRange",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -877,12 +897,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建敏捷上云入参",
+          "document": "<p>创建敏捷上云入参</p>",
           "example": "无",
           "member": "CreateCasInput",
           "name": "Data",
           "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -892,7 +921,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "敏捷上云服务详情",
+          "document": "<p>敏捷上云服务详情</p>",
           "example": "无",
           "member": "CloudAttachInfo",
           "name": "CloudAttach",

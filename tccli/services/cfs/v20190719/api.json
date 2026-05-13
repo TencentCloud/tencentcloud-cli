@@ -301,6 +301,13 @@
       "output": "ModifyLifecyclePolicyResponse",
       "status": "online"
     },
+    "OverrideCfsRules": {
+      "document": "本接口（OverrideCfsRules）用于批量覆盖式创建权限组规则。",
+      "input": "OverrideCfsRulesRequest",
+      "name": "批量覆盖式创建权限组规则",
+      "output": "OverrideCfsRulesResponse",
+      "status": "online"
+    },
     "ScaleUpFileSystem": {
       "document": "该接口用于对turbo 文件系统扩容使用,该接口只支持扩容不支持缩容。turbo标准型扩容步长是10240GIB，turbo性能型扩容步长是5120GIB",
       "input": "ScaleUpFileSystemRequest",
@@ -4313,6 +4320,52 @@
       ],
       "usage": "in"
     },
+    "InputPermissionGroupRules": {
+      "document": "入参权限组规则列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "允许访问的客户端IP",
+          "example": "",
+          "member": "string",
+          "name": "AuthClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "读写权限, ro为只读，rw为读写",
+          "example": "",
+          "member": "string",
+          "name": "RWPermission",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户权限。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。",
+          "example": "",
+          "member": "string",
+          "name": "UserPermission",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则优先级，1-100。 其中 1 为最高，100为最低",
+          "example": "",
+          "member": "uint64",
+          "name": "Priority",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "LifecycleDataTaskInfo": {
       "document": "生命周期任务",
       "members": [
@@ -5358,6 +5411,52 @@
         }
       ],
       "usage": "out"
+    },
+    "OverrideCfsRulesRequest": {
+      "document": "OverrideCfsRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限组 ID",
+          "example": "pgroup-12345",
+          "member": "string",
+          "name": "PermissionGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限组规则列表",
+          "example": "无",
+          "member": "InputPermissionGroupRules",
+          "name": "RuleList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "OverrideCfsRulesResponse": {
+      "document": "OverrideCfsRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限组规则列表",
+          "example": "无",
+          "member": "PGroupRuleInfo",
+          "name": "RuleList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "PGroup": {
       "document": "文件系统绑定权限组信息",

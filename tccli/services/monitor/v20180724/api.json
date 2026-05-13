@@ -13885,7 +13885,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Prometheus 实例 ID",
+          "document": "<p>Prometheus 实例 ID</p>",
           "example": "prom-sdf342",
           "member": "string",
           "name": "InstanceId",
@@ -13894,7 +13894,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为 20，最大值为 100",
+          "document": "<p>返回数量，默认为 20，最大值为 100</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -13903,7 +13903,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为 0",
+          "document": "<p>偏移量，默认为 0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -13912,7 +13912,7 @@
         },
         {
           "disabled": false,
-          "document": "规则 ID",
+          "document": "<p>规则 ID</p>",
           "example": "rrule-abc",
           "member": "string",
           "name": "RuleId",
@@ -13921,7 +13921,7 @@
         },
         {
           "disabled": false,
-          "document": "规则状态码，取值如下：\n<li>1=RuleDeleted</li>\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>",
+          "document": "<p>规则状态码，取值如下：</p><li>1=RuleDeleted</li><li>2=RuleEnabled</li><li>3=RuleDisabled</li>",
           "example": "2",
           "member": "int64",
           "name": "RuleState",
@@ -13930,7 +13930,7 @@
         },
         {
           "disabled": false,
-          "document": "规则名称",
+          "document": "<p>规则名称</p>",
           "example": "example",
           "member": "string",
           "name": "Name",
@@ -13945,7 +13945,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则组数量",
+          "document": "<p>规则组数量</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -13955,13 +13955,23 @@
         },
         {
           "disabled": false,
-          "document": "规则组详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则组详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RecordingRuleSet",
           "name": "RecordingRuleSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>预聚合规则数</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "TotalRuleCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

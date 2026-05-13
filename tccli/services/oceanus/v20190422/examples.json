@@ -11,7 +11,7 @@
     "CheckSavepoint": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckSavepoint\n<公共请求参数>\n\n{\n    \"SerialId\": \"cql-52xkpymp\",\n    \"WorkSpaceId\": \"default-12345ap-beijing\",\n    \"SavepointPath\": \"cosn://52xkpymp-12345/12345/10000/cql-12345/2/flink-savepoints/savepoint-000000-12334\",\n    \"RecordType\": \"1\",\n    \"JobId\": \"cql-52xkpymp\"\n}",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckSavepoint\n<公共请求参数>\n\n{\n    \"SerialId\": \"cql-52xkpymp\",\n    \"WorkSpaceId\": \"default-12345ap-beijing\",\n    \"SavepointPath\": \"cosn://52xkpymp-12345/12345/10000/cql-12345/2/flink-savepoints/savepoint-000000-12334\",\n    \"RecordType\": 1,\n    \"JobId\": \"cql-52xkpymp\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e9e8172-17e2-4fc5-b363-1d480a4795ae\",\n        \"SavepointStatus\": 2,\n        \"SerialId\": \"cql-52xkpymp\"\n    }\n}",
         "title": "成功"
       },
@@ -133,7 +133,7 @@
     "DeleteResourceConfigs": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteResourceConfigs\n<公共请求参数>\n\n{\n    \"ResourceId\": \"resource-gk2iv5z5\",\n    \"ResourceConfigVersions\": [\n        \"1\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteResourceConfigs\n<公共请求参数>\n\n{\n    \"ResourceId\": \"resource-gk2iv5z5\",\n    \"ResourceConfigVersions\": [\n        1\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccca348a\"\n    }\n}",
         "title": "删除资源版本"
       }
@@ -298,6 +298,14 @@
         "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVariables\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"VariableSet\": [\n            {\n                \"Remark\": \"xx\",\n                \"Name\": \"xx\",\n                \"CreatorUin\": \"xx\",\n                \"Value\": \"xx\",\n                \"SerialId\": \"xx\",\n                \"Type\": 0,\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"123\"\n    }\n}",
         "title": "变量列表展示"
+      }
+    ],
+    "DescribeWorkSpaceUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkSpaceUsers\n<公共请求参数>\n\n{\n    \"WorkSpaceId\": \"space-1327\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"EF17520C-A177-404C-9B0A-01EBE4C0E15D\",\n        \"RoleAuths\": [\n            {\n                \"AppId\": 1257058945,\n                \"WorkSpaceSerialId\": \"spc-xxx\",\n                \"OwnerUin\": \"100006386216\",\n                \"CreatorUin\": \"100006386219\",\n                \"AuthSubAccountUin\": \"100006386216\",\n                \"Permission\": 0,\n                \"CreateTime\": \"2021-12-25 13:30:28\",\n                \"UpdateTime\": \"2021-12-25 13:30:28\",\n                \"Status\": 2\n            }\n        ]\n    }\n}",
+        "title": "空间用户列表"
       }
     ],
     "DescribeWorkSpaces": [

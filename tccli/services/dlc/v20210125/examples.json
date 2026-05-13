@@ -900,6 +900,14 @@
         "title": "实例一"
       }
     ],
+    "DescribeTCLakeMetaInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTCLakeMetaInstance\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"Running\",\n        \"RequestId\": \"0d585b29-431b-42d0-bff4-b5f5f10dccb1\"\n    }\n}",
+        "title": "查询TCLake开通状态"
+      }
+    ],
     "DescribeTable": [
       {
         "document": "查询表信息",
@@ -1182,6 +1190,14 @@
         "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-1234\",\n    \"Product\": \"EMR\",\n    \"Description\": \"EMR生产集群\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1234-4567\"\n    }\n}",
         "title": "授权访问DLC元数据"
+      }
+    ],
+    "InitializeTCLake": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InitializeTCLake\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"tcc-qov558lt\",\n        \"IsSuccess\": true,\n        \"RequestId\": \"4771cbab-609c-4afd-91c7-d947563c16d8\"\n    }\n}",
+        "title": "开通TCLake"
       }
     ],
     "LaunchStandardEngineResourceGroups": [
