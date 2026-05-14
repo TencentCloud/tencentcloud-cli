@@ -22,8 +22,8 @@ classifiers = [
     "Intended Audience :: Developers",
 ]
 dependencies = [
-    "jmespath==0.10.0",
-    "six==1.16.0",
+    "jmespath>=0.10.0",
+    "six>=1.16.0",
     "tencentcloud-sdk-python>=3.1.92",
 ]
 
