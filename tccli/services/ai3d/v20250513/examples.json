@@ -8,6 +8,14 @@
         "title": "调用请求示例"
       }
     ],
+    "DescribeAutoRiggingJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoRiggingJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1445334238810423296\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"ResultFile3Ds\": [\n            {\n                \"Type\": \"FBX\",\n                \"Url\": \"https://*******************.cos.ap-guangzhou.tencentcos.cn/auto_rigging/output/251197750/0505fe2f-db7d-4ff3-9042-fee009749664_0.fbx?q-sign-algorithm=sha1&q-ak=************************************&q-sign-time=1778488950%3B1778575349&q-key-time=1778488950%3B1778575349&q-header-list=host&q-url-param-list=&q-signature=8d15859d57e2da3acd6bac9fba12b724baf549ba\"\n            }\n        ],\n        \"Status\": \"DONE\",\n        \"RequestId\": \"06201b08-dbe4-4fa6-8a16-c7f574c33824\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
     "DescribeHunyuanTo3DMotionJob": [
       {
         "document": "",
@@ -70,6 +78,14 @@
         "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuanTo3DRapidJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1336255233494892544\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"3020cd6c-4ad6-4df3-8560-c233f35d6221\",\n        \"ResultFile3Ds\": [\n            {\n                \"PreviewImageUrl\": \"https://xxx.cos.ap-guangzhou.tencentcos.cn/xxx.png\",\n                \"Type\": \"OBJ\",\n                \"Url\": \"https:/xxx.cos.ap-guangzhou.tencentcos.cn/xxx.zip\"\n            }\n        ],\n        \"Status\": \"DONE\"\n    }\n}",
         "title": "查询任务调用示例"
+      }
+    ],
+    "SubmitAutoRiggingJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitAutoRiggingJob\n<公共请求参数>\n\n{\n    \"File3D\": {\n        \"Url\": \"https://************************.cos.ap-guangzhou.myqcloud.com/3d/%E4%BA%BA%E7%89%A97k.fbx\",\n        \"Type\": \"FBX\"\n    },\n    \"MotionType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1445334238810423296\",\n        \"RequestId\": \"0505fe2f-db7d-4ff3-9042-fee009749664\"\n    }\n}",
+        "title": "调用示例"
       }
     ],
     "SubmitHunyuan3DPartJob": [

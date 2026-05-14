@@ -7007,7 +7007,7 @@
           "type": "string"
         },
         {
-          "disabled": true,
+          "disabled": false,
           "document": "客户端证书注册方式：\nJITP：自动注册\nAPI：手动通过API注册",
           "example": "JITP",
           "member": "string",
@@ -7016,7 +7016,7 @@
           "type": "string"
         },
         {
-          "disabled": true,
+          "disabled": false,
           "document": "自动注册证书是否自动激活",
           "example": "false",
           "member": "bool",

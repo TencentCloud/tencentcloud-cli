@@ -18555,15 +18555,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>索引字段定义，至少包含 1 个字段，max 50。创建后不可变更</p>",
-          "example": "无",
-          "member": "KnowledgeFieldDefinition",
-          "name": "Fields",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "<p>知识库名称，max 256</p>",
           "example": "qizhi1231111111111111",
           "member": "string",
@@ -18579,6 +18570,15 @@
           "name": "WorkspaceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引字段定义，至少包含 1 个字段，max 50。创建后不可变更</p>",
+          "example": "无",
+          "member": "KnowledgeFieldDefinition",
+          "name": "Fields",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -18606,6 +18606,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外信息</p>",
+          "example": "\"{\\\"a\\\": \\\"a\\\"}\"",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -77916,6 +77925,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签类型，参考 LabelType 枚举：0=未知，1=治理标签，2=自定义标签，3=属性标签，4=脱敏标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

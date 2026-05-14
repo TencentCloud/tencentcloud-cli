@@ -49,3 +49,29 @@ Output:
 }
 ```
 
+**Example 3: 音色设计带试听**
+
+
+
+Input: 
+
+```
+tccli mps DesignVoiceAsync --cli-unfold-argument  \
+    --Prompt 电影解说男声，抑扬顿挫，低沉富有磁性 \
+    --VoiceProfile.Name 测试预览 \
+    --VoiceProfile.Gender male \
+    --Text 在一个风雨交加的夜晚，古老的钟楼敲响了十二下。
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ErrorCode": 0,
+        "Msg": "success",
+        "TaskId": "1300057393-DesignVoiceAsync-0ce1e964-516d-490a-80e2-1c8f574fd493",
+        "RequestId": "0ce1e964-516d-490a-80e2-1c8f574fd493"
+    }
+}
+```
+

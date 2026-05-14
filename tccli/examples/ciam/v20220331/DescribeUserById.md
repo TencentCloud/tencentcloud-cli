@@ -30,6 +30,10 @@ Output:
             "UserGroups": [
                 "6cd22e51****************f6f7cb81"
             ],
+            "UserOrgs": [
+                "07c4e9********7093",
+                "842bd7********0377"
+            ],
             "LastModifiedDate": 1722420973329,
             "CustomAttributes": [
                 {

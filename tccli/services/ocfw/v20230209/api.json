@@ -242,7 +242,7 @@
         {
           "disabled": false,
           "document": "检索的值，各检索值间为OR关系",
-          "example": "[\"109.24.115.11\", \"83.24.11.24\"]",
+          "example": "[\"109.24.115.11\",\"83.24.11.24\"]",
           "member": "string",
           "name": "Values",
           "required": true,

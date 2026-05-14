@@ -36621,7 +36621,7 @@
       "members": [
         {
           "disabled": false,
-          "document": " ",
+          "document": "<p>授权信息</p>",
           "example": "无",
           "member": "GrantResourcesByVirtualGroupsData",
           "name": "Data",
