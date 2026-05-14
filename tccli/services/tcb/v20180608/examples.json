@@ -120,6 +120,12 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEnv\n<公共请求参数>\n\n{\n    \"Alias\": \"cloudbase\",\n    \"PackageId\": \"baas_personal\",\n    \"Resources\": [\n        \"flexdb\",\n        \"storage\",\n        \"function\"\n    ],\n    \"Period\": 1,\n    \"AutoVoucher\": true\n}",
         "output": "{\n    \"Response\": {\n        \"EnvId\": \"cloudbase-8grqda2hfc2f62bb\",\n        \"RequestId\": \"53d30c8d-53ba-46c0-89a5-c791ad79a2b8\"\n    }\n}",
         "title": "创建个人版环境"
+      },
+      {
+        "document": "创建环境时，使用外部数据源(如：腾讯云COS)作为云开发-云存储的存储介质。此时云开发环境不再自动分配cos桶。",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEnv\n<公共请求参数>\n\n{\n    \"Alias\": \"ext-storage-v2\",\n    \"PackageId\": \"baas_personal\",\n    \"Resources\": [\n        \"storage\"\n    ],\n    \"ExternalStorage\": {\n        \"Enabled\": true,\n        \"BucketName\": \"t-1257619089\",\n        \"Region\": \"ap-shanghai\",\n        \"BasePath\": \"ext-storage-v1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvId\": \"ext-storage-v2-6gpiuka85aac3005\",\n        \"RequestId\": \"f90946f2-dcd3-4834-be98-ddb533378664\"\n    }\n}",
+        "title": "创建环境，并指定外部存储源"
       }
     ],
     "CreateEnvResource": [

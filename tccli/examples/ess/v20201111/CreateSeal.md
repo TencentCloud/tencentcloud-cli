@@ -28,7 +28,90 @@ Output:
 }
 ```
 
-**Example 2: 通过图片创建电子印章**
+**Example 2: 创建印章预览图片**
+
+
+
+Input: 
+
+```
+tccli ess CreateSeal --cli-unfold-argument  \
+    --Operator.UserId yDCxxxxxxxxxxxxxxxxxxxxxxxNeSXv \
+    --SealName 测试创建印章optional逻辑 \
+    --GenerateSource SealGenerateSourceSystem \
+    --SealType OTHER \
+    --SealStyle ellipse \
+    --Options.0.Key CreateSealPreview \
+    --Options.0.Value true
+```
+
+Output: 
+```
+{
+    "Response": {
+        "PreviewFileUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=xxxxxxxxxxxxxxx",
+        "PreviewPdfUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PDF?hkey=xxxxxxxxxxxxxxx",
+        "SealId": "",
+        "SealOperatorVerifyPath": "",
+        "SealOperatorVerifyQrcodeUrl": "",
+        "RequestId": "cabcb113-xxxx-xxxx-xxxx-3xxxx2d8b4f0"
+    }
+}
+```
+
+**Example 3: 通过企业印章横向文字创建企业圆形公章**
+
+通过企业印章横向文字创建企业圆形公章
+
+Input: 
+
+```
+tccli ess CreateSeal --cli-unfold-argument  \
+    --Operator.UserId user-id-xxxx \
+    --GenerateSource SealGenerateSourceSystem \
+    --SealType OFFICIAL \
+    --SealName 这是一个圆形电子印章名称 \
+    --SealHorizontalText 测试专业用章圆形横向一号 \
+    --SealStyle circle
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SealId": "yDxxx12345xxx",
+        "RequestId": "s1692775850696494235"
+    }
+}
+```
+
+**Example 4: 通过企业印章横向文字创建椭圆形印章**
+
+通过企业印章横向文字创建椭圆形印章
+
+Input: 
+
+```
+tccli ess CreateSeal --cli-unfold-argument  \
+    --Operator.UserId user-id-xxxx \
+    --GenerateSource SealGenerateSourceSystem \
+    --SealType OFFICIAL \
+    --SealName 这是一个椭圆形电子印章名称 \
+    --SealHorizontalText 测试专业用椭圆印章一号 \
+    --SealStyle ellipse
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SealId": "yDxxx1234556677xxx",
+        "RequestId": "s1692775850696494255"
+    }
+}
+```
+
+**Example 5: 通过图片创建电子印章**
 
 1.SealImage传递图片的base64编码, GenerateSource不设置
 2. 通过图片创建电子印章，需要电子签人工审核
@@ -56,58 +139,6 @@ Output:
     "Response": {
         "SealId": "429b82b4xxxx0a90d45c715bad7",
         "RequestId": "62DDFFC6xxxxxA6-59152E3D129A"
-    }
-}
-```
-
-**Example 3: 通过企业印章横向文字创建椭圆形印章**
-
-通过企业印章横向文字创建椭圆形印章
-
-Input: 
-
-```
-tccli ess CreateSeal --cli-unfold-argument  \
-    --Operator.UserId user-id-xxxx \
-    --GenerateSource SealGenerateSourceSystem \
-    --SealType OFFICIAL \
-    --SealName 这是一个椭圆形电子印章名称 \
-    --SealHorizontalText 测试专业用椭圆印章一号 \
-    --SealStyle ellipse
-```
-
-Output: 
-```
-{
-    "Response": {
-        "SealId": "yDxxx1234556677xxx",
-        "RequestId": "s1692775850696494255"
-    }
-}
-```
-
-**Example 4: 通过企业印章横向文字创建企业圆形公章**
-
-通过企业印章横向文字创建企业圆形公章
-
-Input: 
-
-```
-tccli ess CreateSeal --cli-unfold-argument  \
-    --Operator.UserId user-id-xxxx \
-    --GenerateSource SealGenerateSourceSystem \
-    --SealType OFFICIAL \
-    --SealName 这是一个圆形电子印章名称 \
-    --SealHorizontalText 测试专业用章圆形横向一号 \
-    --SealStyle circle
-```
-
-Output: 
-```
-{
-    "Response": {
-        "SealId": "yDxxx12345xxx",
-        "RequestId": "s1692775850696494235"
     }
 }
 ```

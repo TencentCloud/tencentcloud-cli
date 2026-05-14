@@ -2599,7 +2599,16 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片路径。",
+          "document": "<p>图片类型。</p>",
+          "example": "mask",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片路径。</p>",
           "example": "无",
           "member": "MediaInputInfo",
           "name": "Image",
@@ -17342,6 +17351,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>试听音频Url</p>",
+          "example": "https://laurie-tmp-1300828900.cos.ap-nanjing.myqcloud.com/async_dubbing/0ce1e964-516d-490a-80e2-1c8f574fd493-preview.mp3",
+          "member": "string",
+          "name": "AudioUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>扩展信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"name\": \"甜美女声\"}",
           "member": "string",
@@ -22874,6 +22893,15 @@
           "name": "VoiceProfile",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>试听音频文本。长度不超过500</p>",
+          "example": "在一个风雨交加的夜晚，古老的钟楼敲响了十二下。",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,

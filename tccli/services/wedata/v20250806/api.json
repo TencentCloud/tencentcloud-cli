@@ -5430,7 +5430,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1470547050521227264",
           "member": "string",
           "name": "ProjectId",
@@ -5439,7 +5439,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流名称",
+          "document": "<p>工作流名称</p>",
           "example": "213das",
           "member": "string",
           "name": "WorkflowName",
@@ -5448,7 +5448,7 @@
         },
         {
           "disabled": false,
-          "document": "所属文件夹路径",
+          "document": "<p>所属文件夹路径</p>",
           "example": "/默认文件夹",
           "member": "string",
           "name": "ParentFolderPath",
@@ -5457,7 +5457,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流描述",
+          "document": "<p>工作流描述</p>",
           "example": "描述信息",
           "member": "string",
           "name": "WorkflowDesc",
@@ -5466,7 +5466,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流负责人ID",
+          "document": "<p>工作流负责人ID</p>",
           "example": "100028579606",
           "member": "string",
           "name": "OwnerUin",
@@ -5475,7 +5475,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流参数",
+          "document": "<p>工作流参数</p>",
           "example": "无",
           "member": "ParamInfo",
           "name": "WorkflowParams",
@@ -5484,7 +5484,7 @@
         },
         {
           "disabled": false,
-          "document": "统一调度信息",
+          "document": "<p>统一调度信息</p>",
           "example": "无",
           "member": "WorkflowTriggerConfig",
           "name": "TriggerWorkflowSchedulerConfigurations",
@@ -5493,7 +5493,7 @@
         },
         {
           "disabled": false,
-          "document": "BundleId项",
+          "document": "<p>BundleId项</p>",
           "example": "132",
           "member": "string",
           "name": "BundleId",
@@ -5502,7 +5502,7 @@
         },
         {
           "disabled": false,
-          "document": "Bundle信息",
+          "document": "<p>Bundle信息</p>",
           "example": "bundleInfo信息",
           "member": "string",
           "name": "BundleInfo",
@@ -5511,12 +5511,21 @@
         },
         {
           "disabled": false,
-          "document": "通用参数配置",
+          "document": "<p>通用参数配置</p>",
           "example": "无",
           "member": "WorkflowGeneralTaskParam",
           "name": "GeneralTaskParams",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流调度运行配置</p>",
+          "example": "无",
+          "member": "WorkflowRunConfig",
+          "name": "TriggerWorkflowRunConfiguration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5526,7 +5535,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>返回工作流ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CreateTriggerWorkflowResult",
           "name": "Data",
@@ -30580,7 +30589,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hour_to_一次性",
           "member": "string",
           "name": "WorkflowName",
@@ -30590,7 +30599,7 @@
         },
         {
           "disabled": false,
-          "document": "责任人ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>责任人ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100029705957",
           "member": "string",
           "name": "OwnerUin",
@@ -30600,7 +30609,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100029705957",
           "member": "string",
           "name": "CreateUserUin",
@@ -30610,7 +30619,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流参数数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流参数数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ParamInfo",
           "name": "WorkflowParams",
@@ -30620,7 +30629,7 @@
         },
         {
           "disabled": false,
-          "document": "统一调度参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>统一调度参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowTriggerConfig",
           "name": "TriggerWorkflowSchedulerConfigurations",
@@ -30630,7 +30639,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "描述信息",
           "member": "string",
           "name": "WorkflowDesc",
@@ -30640,7 +30649,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流所属路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流所属路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/keyl_p0_test/hour_to_一次性",
           "member": "string",
           "name": "Path",
@@ -30650,7 +30659,7 @@
         },
         {
           "disabled": false,
-          "document": "BundleId项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>BundleId项</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "be4b6673-96da-4402-beae-a89dbc4d627b",
           "member": "string",
           "name": "BundleId",
@@ -30660,7 +30669,7 @@
         },
         {
           "disabled": false,
-          "document": "BundleInfo项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>BundleInfo项</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"aaa\":\"bbb\"}",
           "member": "string",
           "name": "BundleInfo",
@@ -30670,7 +30679,7 @@
         },
         {
           "disabled": false,
-          "document": "通用参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>通用参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowGeneralTaskParam",
           "name": "GeneralTaskParams",
@@ -30680,12 +30689,22 @@
         },
         {
           "disabled": false,
-          "document": "Trigger 状态 启动ACTIVE，暂停PAUSED\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Trigger 状态 启动ACTIVE，暂停PAUSED</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ACTIVE",
           "member": "string",
           "name": "SchedulerStatus",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流运行参数配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkflowRunConfig",
+          "name": "TriggerWorkflowRunConfiguration",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -32777,7 +32796,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流名称",
+          "document": "<p>工作流名称</p>",
           "example": "name",
           "member": "string",
           "name": "WorkflowName",
@@ -32786,7 +32805,7 @@
         },
         {
           "disabled": false,
-          "document": "责任人ID",
+          "document": "<p>责任人ID</p>",
           "example": "123453453",
           "member": "string",
           "name": "OwnerUin",
@@ -32795,7 +32814,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流参数数组",
+          "document": "<p>工作流参数数组</p>",
           "example": "无",
           "member": "ParamInfo",
           "name": "WorkflowParams",
@@ -32804,7 +32823,7 @@
         },
         {
           "disabled": false,
-          "document": "统一调度参数",
+          "document": "<p>统一调度参数</p>",
           "example": "无",
           "member": "WorkflowTriggerConfig",
           "name": "TriggerWorkflowSchedulerConfigurations",
@@ -32813,7 +32832,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流描述",
+          "document": "<p>工作流描述</p>",
           "example": "工作流描述",
           "member": "string",
           "name": "WorkflowDesc",
@@ -32822,7 +32841,7 @@
         },
         {
           "disabled": false,
-          "document": "BundleId项",
+          "document": "<p>BundleId项</p>",
           "example": "atret",
           "member": "string",
           "name": "BundleId",
@@ -32831,7 +32850,7 @@
         },
         {
           "disabled": false,
-          "document": "BundleInfo项",
+          "document": "<p>BundleInfo项</p>",
           "example": "dsa",
           "member": "string",
           "name": "BundleInfo",
@@ -32840,12 +32859,21 @@
         },
         {
           "disabled": false,
-          "document": "通用参数",
+          "document": "<p>通用参数</p>",
           "example": "无",
           "member": "WorkflowGeneralTaskParam",
           "name": "GeneralTaskParams",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流运行参数配置</p>",
+          "example": "无",
+          "member": "WorkflowRunConfig",
+          "name": "TriggerWorkflowRunConfiguration",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -33006,6 +33034,15 @@
           "name": "GeneralTaskParams",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "WorkflowRunConfig",
+          "name": "TriggerWorkflowRunConfiguration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -33736,6 +33773,34 @@
         }
       ],
       "usage": "out"
+    },
+    "WorkflowRunConfig": {
+      "document": "工作流运行配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作流运行最大并发数，取值范围：[1, 1000]</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxConcurrentNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>1：开启  0：关闭<br>当工作流达到最大并发上限时，若开启，新工作流运行排队等待，直到其他运行释放并发，最大等待时长为48小时，超过则自动跳过不再执行；若关闭，新工作流直接跳过结束。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "QueuingMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "WorkflowSchedulerConfiguration": {
       "document": "工作流统一调度出参",

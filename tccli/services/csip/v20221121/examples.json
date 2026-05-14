@@ -1028,6 +1028,14 @@
         "title": "查询漏洞信息"
       }
     ],
+    "DescribeSkillScanPayInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSkillScanPayInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AppID\": 260083796,\n        \"AutoRenew\": 0,\n        \"BeginTime\": \"2026-05-14 00:48:15\",\n        \"BetaEndTime\": \"2026-06-30 23:59:59\",\n        \"EndTime\": \"2026-06-30 23:59:59\",\n        \"NickName\": \"多账号-管理员\",\n        \"OrderStatus\": 6,\n        \"PayMode\": 0,\n        \"ResourceId\": \"skillscan-a1b2c3d4\",\n        \"TimeNow\": \"2026-05-14 00:48:25\",\n        \"TimeSpan\": 0,\n        \"TimeUnit\": \"m\",\n        \"TotalQuota\": 1000,\n        \"Uin\": \"700002365149\",\n        \"UsedCount\": 0,\n        \"RequestId\": \"023e3667-87d4-4fae-9a86-83cfbb7c583a\"\n    }\n}",
+        "title": "请求成功"
+      }
+    ],
     "DescribeSkillScanResult": [
       {
         "document": "",

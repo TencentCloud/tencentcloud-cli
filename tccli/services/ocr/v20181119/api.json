@@ -17383,7 +17383,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "<p>图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -17392,7 +17392,7 @@
         },
         {
           "disabled": false,
-          "document": "图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "<p>图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -17401,7 +17401,7 @@
         },
         {
           "disabled": true,
-          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前5页。",
+          "document": "<p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前5页。</p>",
           "example": "1",
           "member": "int64",
           "name": "PdfPageNumber",
@@ -17410,7 +17410,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义抽取需要的字段名称、字段类型、字段提示词。",
+          "document": "<p>自定义抽取需要的字段名称、字段类型、字段提示词。</p>",
           "example": "无",
           "member": "ItemNames",
           "name": "ItemNames",
@@ -17419,7 +17419,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要返回坐标，默认false。",
+          "document": "<p>是否需要返回坐标，默认false。</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableCoord",
@@ -17428,7 +17428,7 @@
         },
         {
           "disabled": false,
-          "document": "起始页",
+          "document": "<p>起始页</p>",
           "example": "1",
           "member": "uint64",
           "name": "FileStartPageNumber",
@@ -17437,12 +17437,21 @@
         },
         {
           "disabled": false,
-          "document": "结束页",
+          "document": "<p>结束页</p>",
           "example": "1",
           "member": "uint64",
           "name": "FileEndPageNumber",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>model_hunyuan:选择混元底座视觉大模型精调抽取任务  model_youtu：选择优图底座多模态大模型精调抽取任务</p>",
+          "example": "model_hunyuan",
+          "member": "string",
+          "name": "ModelConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -17452,7 +17461,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务唯一ID。由服务端生成。",
+          "document": "<p>任务唯一ID。由服务端生成。</p>",
           "example": "1334797167793684480",
           "member": "string",
           "name": "JobId",

@@ -23565,7 +23565,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "vpc的id",
+          "document": "<p>vpc的id</p>",
           "example": "vpc-xxxx",
           "member": "string",
           "name": "VpcId",
@@ -23576,7 +23576,7 @@
         },
         {
           "disabled": false,
-          "document": "子网id",
+          "document": "<p>子网id</p>",
           "example": "subnet-xxx",
           "member": "string",
           "name": "SubnetId",
@@ -23587,7 +23587,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc接入点信息",
+          "document": "<p>vpc接入点信息</p>",
           "example": "ip:port",
           "member": "string",
           "name": "VpcEndpoint",
@@ -23598,7 +23598,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc接入点状态 OFF/ON/CREATING/DELETING",
+          "document": "<p>vpc接入点状态 OFF/ON/CREATING/DELETING</p>",
           "example": "OFF/ON/CREATING/DELETING",
           "member": "string",
           "name": "VpcDataStreamEndpointStatus",
@@ -23609,7 +23609,7 @@
         },
         {
           "disabled": false,
-          "document": "TLS加密的数据流接入点",
+          "document": "<p>TLS加密的数据流接入点</p>",
           "example": "amqps://amqp-xxx.amqp.tencenttdmq.com:5671",
           "member": "string",
           "name": "VpcTlsEndpoint",
@@ -23620,7 +23620,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC 接入点操作失败的错误信息",
+          "document": "<p>VPC 接入点操作失败的错误信息</p>",
           "example": "Conflict:vpc ip '127.0.0.1' is used",
           "member": "string",
           "name": "VpcErrorMessage",

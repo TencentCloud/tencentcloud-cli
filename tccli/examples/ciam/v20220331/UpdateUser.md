@@ -13,6 +13,7 @@ tccli ciam UpdateUser --cli-unfold-argument  \
     --Nickname 昵称1 \
     --Address 北京市海淀区 \
     --UserGroup 6cd22e51****************f6f7cb81 \
+    --UserOrg 07c4e9********7093 842bd7********0377 \
     --Birthdate 1706682491339 \
     --CustomizationAttributes.0.Name k \
     --CustomizationAttributes.0.Value v \
@@ -43,6 +44,10 @@ Output:
             "Birthdate": 1706682491339,
             "UserGroups": [
                 "6cd22e51****************f6f7cb81"
+            ],
+            "UserOrgs": [
+                "07c4e9********7093",
+                "842bd7********0377"
             ],
             "LastModifiedDate": 1722420973329,
             "CustomAttributes": [

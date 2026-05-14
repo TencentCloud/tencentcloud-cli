@@ -586,6 +586,22 @@
         "title": "获取日志列表"
       }
     ],
+    "DescribeRumGroupLogV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumGroupLogV2\n<公共请求参数>\n\n{\n    \"OrderBy\": \"asc\",\n    \"StartTime\": 1665993060000,\n    \"Limit\": \"10\",\n    \"Filter\": \"[{\\\"Key\\\": \\\"instanceId\\\", \\\"Operator\\\": \\\"eq\\\", \\\"Value\\\": \\\"rum-xyz\\\"}]\",\n    \"EndTime\": 1665996660000,\n    \"ID\": \"100\",\n    \"Label\": \"date\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81a43a52-d00f-462a-82da-89841117f4ca\",\n        \"Result\": \"{\\\"code\\\":0,\\\"data\\\":[{\\\"1737254300150\\\":1},{\\\"1737254310941\\\":1}],\\\"msg\\\":\\\"\\\",\\\"request_id\\\":\\\"81a43a52-d00f-462a-82da-89841117f4ca\\\"}\"\n    }\n}",
+        "title": "success"
+      }
+    ],
+    "DescribeRumLogDetailsV2": [
+      {
+        "document": "查询日志细节",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogDetailsV2\n<公共请求参数>\n\n{\n    \"OrderBy\": \"asc\",\n    \"StartTime\": 1767860481,\n    \"Limit\": 100,\n    \"Filter\": \"[{\\\"Key\\\": \\\"id\\\",\\\"Operator\\\": \\\"eq\\\",\\\"Value\\\": \\\"120000\\\"}]\",\n    \"EndTime\": 1767946881,\n    \"ID\": 120000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2eb407f1-108c-4fc2-9aa4-b94e72eb7e0b\",\n        \"Result\": \"{\\\"Result\\\":[]}\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
     "DescribeRumLogExport": [
       {
         "document": "",
@@ -598,6 +614,14 @@
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExport\n<公共请求参数>\n\n{\n    \"Name\": \"logDemo\",\n    \"Fields\": [\n        \"date\"\n    ],\n    \"StartTime\": \"1714103013\",\n    \"Query\": \"id:15\",\n    \"EndTime\": \"1714103013\",\n    \"ID\": 15\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"code\\\":0,\\\"data\\\":{\\\"id\\\":15,\\\"name\\\":\\\"132495_log\\\",\\\"message\\\":\\\"\\\"},\\\"msg\\\":\\\"\\\"}\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取日志列表"
+      }
+    ],
+    "DescribeRumLogExportV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExportV2\n<公共请求参数>\n\n{\n    \"Name\": \"20250520160524\",\n    \"StartTime\": 1665993060000,\n    \"Filter\": \"[{\\\"Key\\\": \\\"instanceId\\\", \\\"Operator\\\": \\\"eq\\\", \\\"Value\\\": \\\"rum-xyz\\\"}]\",\n    \"EndTime\": 1665996660000,\n    \"ID\": 100,\n    \"Fields\": [\n        \"msg\",\n        \"url\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81a43a52-d00f-462a-82da-89841117f4ca\",\n        \"Result\": \"{\\\"code\\\": 0, \\\"data\\\": {\\\"id\\\": 1, \\\"name\\\": \\\"132445_log\\\", \\\"message\\\": \\\"export log\\\"}, \\\"msg\\\": \\\"export log success\\\"}\"\n    }\n}",
+        "title": "success"
       }
     ],
     "DescribeRumLogExports": [
@@ -614,6 +638,14 @@
         "title": "获取日志列表"
       }
     ],
+    "DescribeRumLogExportsV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExportsV2\n<公共请求参数>\n\n{\n    \"PageSize\": 10,\n    \"PageNum\": 1,\n    \"ID\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81a43a52-d00f-462a-82da-89841117f4ca\",\n        \"Result\": \"{\\\"code\\\":0,\\\"data\\\":{\\\"code\\\":0,\\\"data\\\":{\\\"page\\\":1,\\\"pageSize\\\":999,\\\"totalCount\\\":1},\\\"msg\\\":\\\"\\\",\\\"request_id\\\":\\\"81a43a52-d00f-462a-82da-89841117f4ca\\\"}}\"\n    }\n}",
+        "title": "success"
+      }
+    ],
     "DescribeRumLogList": [
       {
         "document": "",
@@ -628,6 +660,14 @@
         "title": "获取日志列表"
       }
     ],
+    "DescribeRumLogTotalV2": [
+      {
+        "document": "获取接口总数",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogTotalV2\n<公共请求参数>\n\n{\n    \"OrderBy\": \"asc\",\n    \"StartTime\": 1767860481,\n    \"Limit\": 100,\n    \"Filter\": \"[{\\\"Key\\\": \\\"id\\\",\\\"Operator\\\": \\\"eq\\\",\\\"Value\\\": \\\"120000\\\"}]\",\n    \"EndTime\": 1767946881,\n    \"ID\": 120000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2eb407f1-108c-4fc2-9aa4-b94e72eb7e0b\",\n        \"Result\": \"{\\\"Result\\\":total:0}\"\n    }\n}",
+        "title": "接口示例"
+      }
+    ],
     "DescribeRumStatsLogList": [
       {
         "document": "",
@@ -640,6 +680,14 @@
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumStatsLogList\n<公共请求参数>\n\n{\n    \"StartTime\": \"\\\"1\\\"\",\n    \"Limit\": 10,\n    \"Query\": \"\\\"*\\\"\",\n    \"EndTime\": \"\\\"20\\\"\",\n    \"ID\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": \"Traceback (most recent call last):\\n  File \\\"/opt/app-root/lib64/python3.8/site-packages/tornado/web.py\\\", line 1763, in _execute\\n    result = self.prepare()\\n  File \\\"/opt/app-root/lib64/python3.8/site-packages/tornado/web.py\\\", line 2538, in prepare\\n    raise HTTPError(self._status_code)\\ntornado.web.HTTPError: HTTP 404: Not Found\\n\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取日志列表"
+      }
+    ],
+    "DescribeRumStatsLogListV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumStatsLogListV2\n<公共请求参数>\n\n{\n    \"StartTime\": 1665993060000,\n    \"Limit\": \"100\",\n    \"Filter\": \"[{\\\"Key\\\": \\\"instanceId\\\", \\\"Operator\\\": \\\"eq\\\", \\\"Value\\\": \\\"rum-xyz\\\"}]\",\n    \"EndTime\": 1665996660000,\n    \"ID\": \"100\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6bafa2f-3f6a-4f1a-b9a3-d1d848d34168\",\n        \"Result\": \"{\\\"code\\\":0,\\\"data\\\":{\\\"total\\\":0,\\\"limit\\\":100,\\\"page\\\":1},\\\"msg\\\":\\\"\\\",\\\"request_id\\\":\\\"a6bafa2f-3f6a-4f1a-b9a3-d1d848d34168\\\"}\"\n    }\n}",
+        "title": "success"
       }
     ],
     "DescribeScores": [
