@@ -2199,7 +2199,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例",
+          "document": "<p>实例</p>",
           "example": "ins-a7af1980",
           "member": "string",
           "name": "InstanceID",
@@ -2208,7 +2208,7 @@
         },
         {
           "disabled": false,
-          "document": "模型名称",
+          "document": "<p>模型名称</p>",
           "example": "hehehee",
           "member": "string",
           "name": "Name",
@@ -2217,7 +2217,7 @@
         },
         {
           "disabled": false,
-          "document": "协议类型：http/https",
+          "document": "<p>协议类型：http/https</p>",
           "example": "http",
           "member": "string",
           "name": "HttpProtocolType",
@@ -2226,7 +2226,7 @@
         },
         {
           "disabled": false,
-          "document": "目标路径",
+          "document": "<p>目标路径</p>",
           "example": "/v12222",
           "member": "string",
           "name": "TargetPath",
@@ -2235,7 +2235,7 @@
         },
         {
           "disabled": false,
-          "document": "目标服务器",
+          "document": "<p>目标服务器</p>",
           "example": "无",
           "member": "TargetHostDTO",
           "name": "TargetHosts",
@@ -2244,7 +2244,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据ID",
+          "document": "<p>凭据ID</p>",
           "example": "agc-4440aa1d",
           "member": "string",
           "name": "CredentialID",
@@ -2253,7 +2253,7 @@
         },
         {
           "disabled": false,
-          "document": "https时，是否检查证书合法",
+          "document": "<p>https时，是否检查证书合法</p>",
           "example": "true",
           "member": "bool",
           "name": "CheckTargetCertsError",
@@ -2262,10 +2262,28 @@
         },
         {
           "disabled": false,
-          "document": "http协议版本：1.1/2.0",
+          "document": "<p>http协议版本：1.1/2.0</p>",
           "example": "1.1",
           "member": "string",
           "name": "HttpProtocolVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>model ID</p>",
+          "example": "deepseek-v3",
+          "member": "string",
+          "name": "ModelID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "deepseek-v3",
+          "member": "string",
+          "name": "Description",
           "required": false,
           "type": "string"
         }
@@ -2277,7 +2295,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果集",
+          "document": "<p>结果集</p>",
           "example": "无",
           "member": "ResultIDVO",
           "name": "Data",
@@ -2539,6 +2557,15 @@
           "name": "FallbackModels",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型协议</p>",
+          "example": "Anthropic",
+          "member": "string",
+          "name": "ModelProtocol",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5801,7 +5828,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云AppID",
+          "document": "<p>腾讯云AppID</p>",
           "example": "1300273807",
           "member": "int64",
           "name": "AppID",
@@ -5811,7 +5838,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云Uin",
+          "document": "<p>腾讯云Uin</p>",
           "example": "700001136234",
           "member": "string",
           "name": "Uin",
@@ -5821,7 +5848,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-a7af1980",
           "member": "string",
           "name": "InstanceID",
@@ -5831,7 +5858,7 @@
         },
         {
           "disabled": false,
-          "document": "模型ID",
+          "document": "<p>模型ID</p>",
           "example": "mod-85b343e0",
           "member": "string",
           "name": "ID",
@@ -5841,7 +5868,7 @@
         },
         {
           "disabled": false,
-          "document": "模型名称",
+          "document": "<p>模型名称</p>",
           "example": "{55.52493325438*55.52493325438}",
           "member": "string",
           "name": "Name",
@@ -5851,7 +5878,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据ID",
+          "document": "<p>凭据ID</p>",
           "example": "agc-4440aa1d",
           "member": "string",
           "name": "CredentialID",
@@ -5861,7 +5888,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据名称",
+          "document": "<p>凭据名称</p>",
           "example": "pingju",
           "member": "string",
           "name": "CredentialName",
@@ -5871,7 +5898,7 @@
         },
         {
           "disabled": false,
-          "document": "http协议类型",
+          "document": "<p>http协议类型</p>",
           "example": "http",
           "member": "string",
           "name": "HttpProtocolType",
@@ -5881,7 +5908,7 @@
         },
         {
           "disabled": false,
-          "document": "https时，是否校验目标证书",
+          "document": "<p>https时，是否校验目标证书</p>",
           "example": "true",
           "member": "bool",
           "name": "CheckTargetCertsError",
@@ -5891,7 +5918,7 @@
         },
         {
           "disabled": false,
-          "document": "http协议版本：1.1/2.0",
+          "document": "<p>http协议版本：1.1/2.0</p>",
           "example": "1.1",
           "member": "string",
           "name": "HttpProtocolVersion",
@@ -5901,7 +5928,7 @@
         },
         {
           "disabled": false,
-          "document": "目标路径",
+          "document": "<p>目标路径</p>",
           "example": "/v122222",
           "member": "string",
           "name": "TargetPath",
@@ -5911,7 +5938,7 @@
         },
         {
           "disabled": false,
-          "document": "目标器列表",
+          "document": "<p>目标器列表</p>",
           "example": "无",
           "member": "TargetHostDTO",
           "name": "TargetHosts",
@@ -5921,7 +5948,7 @@
         },
         {
           "disabled": false,
-          "document": "被模型服务使用的个数",
+          "document": "<p>被模型服务使用的个数</p>",
           "example": "1",
           "member": "int64",
           "name": "ModelServiceCount",
@@ -5931,7 +5958,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2026-02-10T18:09:29.011Z",
           "member": "string",
           "name": "CreateTime",
@@ -5941,10 +5968,30 @@
         },
         {
           "disabled": false,
-          "document": "最后修改时间",
+          "document": "<p>最后修改时间</p>",
           "example": "2026-02-10T18:09:32.104Z",
           "member": "string",
           "name": "LastUpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>model ID</p>",
+          "example": "deepseek-v4",
+          "member": "string",
+          "name": "ModelID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "deepseek-v4",
+          "member": "string",
+          "name": "Description",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6360,6 +6407,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OpenAI",
+          "member": "string",
+          "name": "ModelProtocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6369,7 +6426,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例",
+          "document": "<p>实例</p>",
           "example": "ins-a7af1980",
           "member": "string",
           "name": "InstanceID",
@@ -6378,7 +6435,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数",
+          "document": "<p>分页参数</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -6387,7 +6444,7 @@
         },
         {
           "disabled": false,
-          "document": "分页限制",
+          "document": "<p>分页限制</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -6396,7 +6453,7 @@
         },
         {
           "disabled": false,
-          "document": "ID列表",
+          "document": "<p>ID列表</p>",
           "example": "[\"mds-0101\"]",
           "member": "string",
           "name": "IDs",
@@ -6405,7 +6462,7 @@
         },
         {
           "disabled": false,
-          "document": "排除的ID列表",
+          "document": "<p>排除的ID列表</p>",
           "example": "[\"mds-0101\"]",
           "member": "string",
           "name": "NotIDs",
@@ -6414,7 +6471,7 @@
         },
         {
           "disabled": false,
-          "document": "状态：normal，disabled",
+          "document": "<p>状态：normal，disabled</p>",
           "example": "normal",
           "member": "string",
           "name": "Status",
@@ -6423,7 +6480,7 @@
         },
         {
           "disabled": false,
-          "document": "关键词",
+          "document": "<p>关键词</p>",
           "example": "hehe_tes",
           "member": "string",
           "name": "Keyword",
@@ -6432,7 +6489,7 @@
         },
         {
           "disabled": false,
-          "document": "模型ID",
+          "document": "<p>模型ID</p>",
           "example": "mod-0101",
           "member": "string",
           "name": "ModelID",
@@ -6441,12 +6498,21 @@
         },
         {
           "disabled": false,
-          "document": "排序",
+          "document": "<p>排序</p>",
           "example": "无",
           "member": "DescribeModelServicesSort",
           "name": "Sort",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类型，OpenAI或Anthropic</p>",
+          "example": "OpenAI",
+          "member": "string",
+          "name": "ModelProtocol",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6456,7 +6522,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果集",
+          "document": "<p>结果集</p>",
           "example": "无",
           "member": "DescribeModelServicesResponseVO",
           "name": "Data",
@@ -8782,7 +8848,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例",
+          "document": "<p>实例</p>",
           "example": "ins-a7af1980",
           "member": "string",
           "name": "InstanceID",
@@ -8791,7 +8857,7 @@
         },
         {
           "disabled": false,
-          "document": "模型ID",
+          "document": "<p>模型ID</p>",
           "example": "mod-fe2c8801",
           "member": "string",
           "name": "ID",
@@ -8800,7 +8866,7 @@
         },
         {
           "disabled": false,
-          "document": "模型名称",
+          "document": "<p>模型名称</p>",
           "example": "hello_eee",
           "member": "string",
           "name": "Name",
@@ -8809,7 +8875,7 @@
         },
         {
           "disabled": false,
-          "document": "协议类型：http/https",
+          "document": "<p>协议类型：http/https</p>",
           "example": "http",
           "member": "string",
           "name": "HttpProtocolType",
@@ -8818,7 +8884,7 @@
         },
         {
           "disabled": false,
-          "document": "目标路径",
+          "document": "<p>目标路径</p>",
           "example": "/v122444",
           "member": "string",
           "name": "TargetPath",
@@ -8827,7 +8893,7 @@
         },
         {
           "disabled": false,
-          "document": "目标服务器",
+          "document": "<p>目标服务器</p>",
           "example": "无",
           "member": "TargetHostDTO",
           "name": "TargetHosts",
@@ -8836,7 +8902,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据ID",
+          "document": "<p>凭据ID</p>",
           "example": "agc-4440aa1d",
           "member": "string",
           "name": "CredentialID",
@@ -8845,7 +8911,7 @@
         },
         {
           "disabled": false,
-          "document": "https时，是否检查证书合法",
+          "document": "<p>https时，是否检查证书合法</p>",
           "example": "false",
           "member": "bool",
           "name": "CheckTargetCertsError",
@@ -8854,10 +8920,28 @@
         },
         {
           "disabled": false,
-          "document": "http协议版本：1.1/2.0",
+          "document": "<p>http协议版本：1.1/2.0</p>",
           "example": "1.1",
           "member": "string",
           "name": "HttpProtocolVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>model ID</p>",
+          "example": "deepseek-v4",
+          "member": "string",
+          "name": "ModelID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "deepseek-v4",
+          "member": "string",
+          "name": "Description",
           "required": false,
           "type": "string"
         }
@@ -8869,7 +8953,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果集",
+          "document": "<p>结果集</p>",
           "example": "无",
           "member": "ResultIDVO",
           "name": "Data",
@@ -9122,6 +9206,15 @@
           "name": "FallbackModels",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类型</p>",
+          "example": "OpenAI",
+          "member": "string",
+          "name": "ModelProtocol",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9253,7 +9346,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行动作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行动作</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "watch",
           "member": "string",
           "name": "Action",
@@ -9264,10 +9357,21 @@
         },
         {
           "disabled": false,
-          "document": "响应拦截内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>响应拦截内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "intercept",
           "member": "string",
           "name": "InterceptMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测上下文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hybrid",
+          "member": "string",
+          "name": "ContextScope",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -9382,6 +9486,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测上下文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "global",
+          "member": "string",
+          "name": "ContextScope",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -9486,7 +9601,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检测范围,请求/响应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>检测范围,请求/响应</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"request\"]",
           "member": "string",
           "name": "Scope",
@@ -9497,7 +9612,7 @@
         },
         {
           "disabled": false,
-          "document": "检测形式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>检测形式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sync",
           "member": "string",
           "name": "Mode",
@@ -9508,7 +9623,7 @@
         },
         {
           "disabled": false,
-          "document": "执行动作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行动作</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "watch",
           "member": "string",
           "name": "Action",
@@ -9519,7 +9634,7 @@
         },
         {
           "disabled": false,
-          "document": "合并请求检测event数，联动Mode字段sync\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>合并请求检测event数，联动Mode字段sync</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "uint64",
           "name": "MergeCount",
@@ -9530,7 +9645,7 @@
         },
         {
           "disabled": false,
-          "document": "风控策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>风控策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tms-01010",
           "member": "string",
           "name": "BizType",
@@ -9541,10 +9656,21 @@
         },
         {
           "disabled": false,
-          "document": "响应拦截内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>响应拦截内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "failed",
           "member": "string",
           "name": "InterceptMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测上下文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "latest",
+          "member": "string",
+          "name": "ContextScope",
           "output_required": false,
           "required": false,
           "type": "string",

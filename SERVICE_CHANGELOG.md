@@ -1,27 +1,10 @@
-# Release 3.0.1424.1
+# Release 3.0.1425.1
 
-## 腾讯混元生3D(ai3d) 版本：2025-05-13
+## AI Agent 安全网关(apis) 版本：2024-08-01
 
-### 第 15 次发布
+### 第 17 次发布
 
-发布时间：2026-05-15 01:08:09
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeAutoRiggingJob](http://document.tencentcloudapi.woa.com/document/product/1800/90263)
-* [SubmitAutoRiggingJob](http://document.tencentcloudapi.woa.com/document/product/1800/90262)
-
-
-
-## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
-
-### 第 75 次发布
-
-发布时间：2026-05-15 01:20:04
+发布时间：2026-05-18 01:08:23
 
 本次发布包含了以下内容：
 
@@ -29,131 +12,57 @@
 
 修改接口：
 
-* [DescribeBackUpJob](http://document.tencentcloudapi.woa.com/document/product/1706/84386)
+* [CreateModel](http://document.tencentcloudapi.woa.com/document/product/1805/88915)
 
-	* 新增入参：TypeFilters, StatusFilters, ScheduleNameFilters, OrderType
+	* 新增入参：ModelID, Description
 
-* [DescribeBackUpSchedules](http://document.tencentcloudapi.woa.com/document/product/1706/84384)
+* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/1805/88920)
 
-	* 新增入参：UsersFilters, TypeFilters, StatusFilters, OrderType, ScheduleNameFilters, PageSize, PageNum
+	* 新增入参：ModelProtocol
 
-	* 新增出参：BackUpOpened, CosBucketName, BackUpStatus, BackupScheduleInfos
+* [DescribeModelServices](http://document.tencentcloudapi.woa.com/document/product/1805/88917)
 
+	* 新增入参：ModelProtocol
 
-新增数据结构：
+* [ModifyModel](http://document.tencentcloudapi.woa.com/document/product/1805/88911)
 
-* [BackupScheduleInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackupScheduleInfo)
+	* 新增入参：ModelID, Description
 
+* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/1805/88916)
 
-
-## 账号风控平台(ciam) 版本：2022-03-31
-
-### 第 6 次发布
-
-发布时间：2026-05-15 01:22:45
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateUser](http://document.tencentcloudapi.woa.com/document/product/1683/79613)
-
-	* 新增入参：UserOrg
-
-* [UpdateUser](http://document.tencentcloudapi.woa.com/document/product/1683/79604)
-
-	* 新增入参：UserOrg
+	* 新增入参：ModelProtocol
 
 
 修改数据结构：
 
-* [User](http://document.tencentcloudapi.woa.com/document/product/1683/79620#User)
+* [DescribeModelResponseVO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#DescribeModelResponseVO)
 
-	* 新增成员：UserGroupNames, UserOrgs, WeComUserOrgs
+	* 新增成员：ModelID, Description
 
+* [DescribeModelServiceResponseVO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#DescribeModelServiceResponseVO)
 
+	* 新增成员：ModelProtocol
 
+* [PromptModerateConfigDTO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#PromptModerateConfigDTO)
 
-## 账号风控平台(ciam) 版本：2021-04-20
+	* 新增成员：ContextScope
+
+* [SensitiveDataCheckConfigDTO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#SensitiveDataCheckConfigDTO)
+
+	* 新增成员：ContextScope
+
+* [TmsConfigDTO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#TmsConfigDTO)
+
+	* 新增成员：ContextScope
+
 
 
 
 ## 云安全一体化平台(csip) 版本：2022-11-21
 
-### 第 75 次发布
+### 第 76 次发布
 
-发布时间：2026-05-15 01:27:08
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeSkillScanPayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/90264)
-
-修改数据结构：
-
-* [AssetRiskItem](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetRiskItem)
-
-	* 新增成员：AssetTypeIconURL
-
-* [CheckViewRiskItem](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CheckViewRiskItem)
-
-	* 新增成员：AssetTypeIconURL
-
-* [DspmAssetFieldInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#DspmAssetFieldInfo)
-
-	* 新增成员：CategoryDetails, FieldComment
-
-* [DspmAssetTableInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#DspmAssetTableInfo)
-
-	* 新增成员：CategoryDetails, TableId, TableComment
-
-* [ExposesItem](http://document.tencentcloudapi.woa.com/document/product/1726/80814#ExposesItem)
-
-	* 新增成员：AssetTypeIconURL, AssetTypeIconSolidURL
-
-
-
-
-## 媒体处理(mps) 版本：2019-06-12
-
-### 第 172 次发布
-
-发布时间：2026-05-15 02:03:31
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeDesignTask](http://document.tencentcloudapi.woa.com/document/product/862/90011)
-
-	* 新增出参：AudioUrl
-
-* [DesignVoiceAsync](http://document.tencentcloudapi.woa.com/document/product/862/90010)
-
-	* 新增入参：Text
-
-
-修改数据结构：
-
-* [AddOnImageInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AddOnImageInput)
-
-	* 新增成员：Type
-
-
-
-
-## 前端性能监控(rum) 版本：2021-06-22
-
-### 第 49 次发布
-
-发布时间：2026-05-15 02:11:12
+发布时间：2026-05-18 01:15:25
 
 本次发布包含了以下内容：
 
@@ -161,20 +70,96 @@
 
 新增接口：
 
-* [DescribeRumGroupLogV2](http://document.tencentcloudapi.woa.com/document/product/1464/90270)
-* [DescribeRumLogDetailsV2](http://document.tencentcloudapi.woa.com/document/product/1464/90269)
-* [DescribeRumLogExportV2](http://document.tencentcloudapi.woa.com/document/product/1464/90268)
-* [DescribeRumLogExportsV2](http://document.tencentcloudapi.woa.com/document/product/1464/90267)
-* [DescribeRumLogTotalV2](http://document.tencentcloudapi.woa.com/document/product/1464/90266)
-* [DescribeRumStatsLogListV2](http://document.tencentcloudapi.woa.com/document/product/1464/90265)
+* [CreateCosAssetSyncTask](http://document.tencentcloudapi.woa.com/document/product/1726/90316)
+* [CreateCosObjectScanTask](http://document.tencentcloudapi.woa.com/document/product/1726/90315)
+* [CreateCosPolicy](http://document.tencentcloudapi.woa.com/document/product/1726/90314)
+* [CreateCosRiskScanTask](http://document.tencentcloudapi.woa.com/document/product/1726/90313)
+* [DeleteCosAkAsset](http://document.tencentcloudapi.woa.com/document/product/1726/90312)
+* [DeleteCosPolicy](http://document.tencentcloudapi.woa.com/document/product/1726/90311)
+* [DescribeBucketInvokeIpList](http://document.tencentcloudapi.woa.com/document/product/1726/90310)
+* [DescribeCosAccessPermission](http://document.tencentcloudapi.woa.com/document/product/1726/90309)
+* [DescribeCosAccessPermissions](http://document.tencentcloudapi.woa.com/document/product/1726/90308)
+* [DescribeCosActionList](http://document.tencentcloudapi.woa.com/document/product/1726/90307)
+* [DescribeCosAkAsset](http://document.tencentcloudapi.woa.com/document/product/1726/90306)
+* [DescribeCosAkInvokeIpList](http://document.tencentcloudapi.woa.com/document/product/1726/90305)
+* [DescribeCosAlarmList](http://document.tencentcloudapi.woa.com/document/product/1726/90304)
+* [DescribeCosAlarmTrendData](http://document.tencentcloudapi.woa.com/document/product/1726/90303)
+* [DescribeCosAsset](http://document.tencentcloudapi.woa.com/document/product/1726/90302)
+* [DescribeCosAssetSyncTask](http://document.tencentcloudapi.woa.com/document/product/1726/90301)
+* [DescribeCosAuditAppIdList](http://document.tencentcloudapi.woa.com/document/product/1726/90300)
+* [DescribeCosAuditDictionaryList](http://document.tencentcloudapi.woa.com/document/product/1726/90299)
+* [DescribeCosAuditPayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/90298)
+* [DescribeCosBucketBillingInfo](http://document.tencentcloudapi.woa.com/document/product/1726/90297)
+* [DescribeCosBucketList](http://document.tencentcloudapi.woa.com/document/product/1726/90296)
+* [DescribeCosBucketRisk](http://document.tencentcloudapi.woa.com/document/product/1726/90295)
+* [DescribeCosIdentifyFileList](http://document.tencentcloudapi.woa.com/document/product/1726/90294)
+* [DescribeCosInvokeUa](http://document.tencentcloudapi.woa.com/document/product/1726/90293)
+* [DescribeCosIpInvokeLog](http://document.tencentcloudapi.woa.com/document/product/1726/90292)
+* [DescribeCosIpInvokeRecordFile](http://document.tencentcloudapi.woa.com/document/product/1726/90291)
+* [DescribeCosOverview](http://document.tencentcloudapi.woa.com/document/product/1726/90290)
+* [DescribeCosPolicy](http://document.tencentcloudapi.woa.com/document/product/1726/90289)
+* [DescribeCosRiskActionList](http://document.tencentcloudapi.woa.com/document/product/1726/90288)
+* [DescribeCosRiskEvidence](http://document.tencentcloudapi.woa.com/document/product/1726/90287)
+* [DescribeCosRiskScanTask](http://document.tencentcloudapi.woa.com/document/product/1726/90286)
+* [DescribeCosRoleAccessPermission](http://document.tencentcloudapi.woa.com/document/product/1726/90285)
+* [DescribeCosRoleAccessPermissions](http://document.tencentcloudapi.woa.com/document/product/1726/90284)
+* [DescribeCosSourceIp](http://document.tencentcloudapi.woa.com/document/product/1726/90283)
+* [DescribeIpInvokeRecord](http://document.tencentcloudapi.woa.com/document/product/1726/90282)
+* [DescribeIpInvokeRecordDetail](http://document.tencentcloudapi.woa.com/document/product/1726/90281)
+* [DescribePolicyHitData](http://document.tencentcloudapi.woa.com/document/product/1726/90280)
+* [DescribeRiskBucketList](http://document.tencentcloudapi.woa.com/document/product/1726/90279)
+* [DescribeRiskItemList](http://document.tencentcloudapi.woa.com/document/product/1726/90278)
+* [DescribeRiskTrendData](http://document.tencentcloudapi.woa.com/document/product/1726/90277)
+* [ModifyAlarmRiskStatus](http://document.tencentcloudapi.woa.com/document/product/1726/90276)
+* [ModifyCosAuditMonitorAccount](http://document.tencentcloudapi.woa.com/document/product/1726/90275)
+* [ModifyCosMarkInfo](http://document.tencentcloudapi.woa.com/document/product/1726/90274)
+* [ModifyPolicyStatus](http://document.tencentcloudapi.woa.com/document/product/1726/90273)
+
+新增数据结构：
+
+* [CosAccessInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosAccessInfo)
+* [CosActionInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosActionInfo)
+* [CosAkAssetInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosAkAssetInfo)
+* [CosAkSet](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosAkSet)
+* [CosAlarmInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosAlarmInfo)
+* [CosAlarmRiskIdInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosAlarmRiskIdInfo)
+* [CosAlarmTrendInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosAlarmTrendInfo)
+* [CosAssetDataScanDetail](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosAssetDataScanDetail)
+* [CosAssetFileIdentifyInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosAssetFileIdentifyInfo)
+* [CosAssetInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosAssetInfo)
+* [CosAssetSyncTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosAssetSyncTaskInfo)
+* [CosAuditPayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosAuditPayInfo)
+* [CosBucketAccessWay](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosBucketAccessWay)
+* [CosBucketBillingInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosBucketBillingInfo)
+* [CosBucketId](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosBucketId)
+* [CosBucketInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosBucketInfo)
+* [CosBucketTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosBucketTaskInfo)
+* [CosDictionary](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosDictionary)
+* [CosIdentifyCategoryDetail](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosIdentifyCategoryDetail)
+* [CosIdentifyRuleDetail](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosIdentifyRuleDetail)
+* [CosInvokeDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosInvokeDetailInfo)
+* [CosInvokeIpVpcInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosInvokeIpVpcInfo)
+* [CosInvokeLog](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosInvokeLog)
+* [CosInvokeRecordInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosInvokeRecordInfo)
+* [CosOverview](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosOverview)
+* [CosPermissionInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosPermissionInfo)
+* [CosPolicyInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosPolicyInfo)
+* [CosRiskActionInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosRiskActionInfo)
+* [CosRiskAlarmInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosRiskAlarmInfo)
+* [CosRiskBucketInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosRiskBucketInfo)
+* [CosRiskInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosRiskInfo)
+* [CosRiskTrendInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosRiskTrendInfo)
+* [CosRiskViewInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosRiskViewInfo)
+* [CosRoleAccessInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosRoleAccessInfo)
+* [CosSourceIpInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosSourceIpInfo)
 
 
 
-## 节省计划(svp) 版本：2024-01-25
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-### 第 7 次发布
+### 第 227 次发布
 
-发布时间：2026-05-15 02:14:53
+发布时间：2026-05-18 01:25:30
 
 本次发布包含了以下内容：
 
@@ -182,18 +167,22 @@
 
 修改接口：
 
-* [CreateSavingPlanOrder](http://document.tencentcloudapi.woa.com/document/product/1757/83146)
+* [CreateSealByImage](http://document.tencentcloudapi.woa.com/document/product/1595/75256)
 
-	* 新增入参：CommitmentPeriod
-
-
+	* 新增出参：PreviewFileUrl, PreviewPdfUrl
 
 
-## 云开发 CloudBase(tcb) 版本：2018-06-08
 
-### 第 43 次发布
 
-发布时间：2026-05-15 02:16:06
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 133 次发布
+
+发布时间：2026-05-18 01:42:18
 
 本次发布包含了以下内容：
 
@@ -201,37 +190,60 @@
 
 修改接口：
 
-* [CreateEnv](http://document.tencentcloudapi.woa.com/document/product/876/89200)
+* [DescribeBillingSpecs](http://document.tencentcloudapi.woa.com/document/product/851/75918)
 
-	* 新增入参：ExternalStorage, EnableOverrun
+	* 新增入参：TiProjectId, InstanceFamily, AvailableVisibility, Zone
 
+
+新增数据结构：
+
+* [CBSInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#CBSInfo)
+* [LocalDiskType](http://document.tencentcloudapi.woa.com/document/product/851/74915#LocalDiskType)
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/851/74915#Instance)
+
+	* 新增成员：CBSInfoList
+
+* [Service](http://document.tencentcloudapi.woa.com/document/product/851/74915#Service)
+
+	* 新增成员：Changer, ChangerName
+
+* [ServiceGroup](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceGroup)
+
+	* 新增成员：Changer, ChangerName
+
+* [Spec](http://document.tencentcloudapi.woa.com/document/product/851/74915#Spec)
+
+	* 新增成员：LocalDiskTypeList
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
 
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2025-10-10
 
-### 第 23 次发布
+### 第 24 次发布
 
-发布时间：2026-05-15 02:37:10
+发布时间：2026-05-18 01:47:31
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
-
-* [CreateKnowledgeBase](http://document.tencentcloudapi.woa.com/document/product/1607/89942)
-
-	* 新增入参：ExtInfo
-
-	* <font color="#dd0000">**修改入参**：</font>Fields
-
-
 修改数据结构：
 
-* [Tag](http://document.tencentcloudapi.woa.com/document/product/1607/88970#Tag)
+* [ExperimentInfo](http://document.tencentcloudapi.woa.com/document/product/1607/88970#ExperimentInfo)
 
-	* 新增成员：Type
+	* 新增成员：RunCount, LoggedModelCount
+
+* [Task](http://document.tencentcloudapi.woa.com/document/product/1607/88970#Task)
+
+	* 新增成员：InnerTask
 
 
 

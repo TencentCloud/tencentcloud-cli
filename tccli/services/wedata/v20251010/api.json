@@ -28968,7 +28968,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实验名称",
+          "document": "<p>实验名称</p>",
           "example": "demo-name",
           "member": "string",
           "name": "Name",
@@ -28978,7 +28978,7 @@
         },
         {
           "disabled": false,
-          "document": "实验类型，可选值LARGE_MODEL和MACHINE_LEARNING\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实验类型，可选值LARGE_MODEL和MACHINE_LEARNING</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "LARGE_MODEL",
           "member": "string",
           "name": "Type",
@@ -28988,7 +28988,7 @@
         },
         {
           "disabled": false,
-          "document": "实验描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实验描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "Description",
@@ -28998,7 +28998,7 @@
         },
         {
           "disabled": false,
-          "document": "创建实验时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建实验时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1742453062290",
           "member": "string",
           "name": "CreationTime",
@@ -29008,7 +29008,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo-name",
           "member": "string",
           "name": "CreatorUid",
@@ -29018,7 +29018,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人的名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "jack",
           "member": "string",
           "name": "CreatorName",
@@ -29028,7 +29028,7 @@
         },
         {
           "disabled": false,
-          "document": "实验ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实验ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "saj2",
           "member": "string",
           "name": "ExperimentId",
@@ -29038,7 +29038,7 @@
         },
         {
           "disabled": false,
-          "document": "studio id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>studio id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "StudioId",
@@ -29048,7 +29048,7 @@
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/Workspace/Users/wedata30-dev@tencent.com@700002164618/garrizhangtest1154",
           "member": "string",
           "name": "Location",
@@ -29058,10 +29058,30 @@
         },
         {
           "disabled": false,
-          "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最后修改时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1767580776287",
           "member": "string",
           "name": "LastModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "string",
+          "name": "RunCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "string",
+          "name": "LoggedModelCount",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -78029,7 +78049,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f9b36c95-36a3-4458-a40d-215cf99cf46a",
           "member": "string",
           "name": "TaskId",
@@ -78040,7 +78060,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "task_01",
           "member": "string",
           "name": "TaskName",
@@ -78051,7 +78071,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskType",
           "name": "TaskType",
@@ -78062,7 +78082,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源组ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f9b36c95-36a3-4458-a40d-215cf99cf4c",
           "member": "string",
           "name": "ResourceGroupId",
@@ -78073,7 +78093,7 @@
         },
         {
           "disabled": false,
-          "document": "任务描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "this is a task!",
           "member": "string",
           "name": "Description",
@@ -78084,7 +78104,7 @@
         },
         {
           "disabled": false,
-          "document": "任依赖运行条件\n\n* ALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功\n* ONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功\n* NONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中\n* ALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败\n* ONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败\n* ALL_FAILED: 全部失败：所有上游依赖任务都失败\n* ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行\n* ALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\n* ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游\n* ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行\n* NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\n* ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行\n* ADVANCED:运行条件为高级模式时配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任依赖运行条件</p><ul><li>ALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功</li><li>ONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功</li><li>NONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中</li><li>ALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败</li><li>ONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败</li><li>ALL_FAILED: 全部失败：所有上游依赖任务都失败</li><li>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行</li><li>ALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游</li><li>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行</li><li>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行</li><li>ADVANCED:运行条件为高级模式时配置</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL_SUCCESS",
           "member": "string",
           "name": "DependOnRunCondition",
@@ -78095,7 +78115,7 @@
         },
         {
           "disabled": false,
-          "document": "任务告警\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务告警</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AlarmBrief",
           "name": "Alarm",
@@ -78106,7 +78126,7 @@
         },
         {
           "disabled": false,
-          "document": "指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>指标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MonitorMetricBrief",
           "name": "MonitorMetric",
@@ -78117,7 +78137,7 @@
         },
         {
           "disabled": false,
-          "document": "任务重试策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务重试策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskRetryStrategy",
           "name": "TaskRetryStrategy",
@@ -78128,7 +78148,7 @@
         },
         {
           "disabled": false,
-          "document": "任务依赖\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务依赖</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DependOnBrief",
           "name": "DependOnList",
@@ -78139,7 +78159,7 @@
         },
         {
           "disabled": false,
-          "document": "任务参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskSchedulingParameter",
           "name": "ParamList",
@@ -78150,7 +78170,7 @@
         },
         {
           "disabled": false,
-          "document": "任务高级运行参数，当DependOnRunCondition为ADVANCED时配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务高级运行参数，当DependOnRunCondition为ADVANCED时配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AdvancedDependencyConfig",
           "name": "AdvancedDependencyConfig",
@@ -78161,7 +78181,7 @@
         },
         {
           "disabled": false,
-          "document": "任务X坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务X坐标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "400.1",
           "member": "float",
           "name": "LeftCoordinate",
@@ -78172,7 +78192,7 @@
         },
         {
           "disabled": false,
-          "document": "任务Y坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务Y坐标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "200.1",
           "member": "float",
           "name": "TopCoordinate",
@@ -78183,7 +78203,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间（入参不填）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间（入参不填）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1768229915900",
           "member": "string",
           "name": "CreateTime",
@@ -78194,7 +78214,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间（入参不填）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间（入参不填）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1768455054042",
           "member": "string",
           "name": "UpdateTime",
@@ -78205,7 +78225,7 @@
         },
         {
           "disabled": true,
-          "document": "任务额外参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务额外参数列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskExtConfiguration",
           "name": "TaskExtConfigurationList",
@@ -78216,13 +78236,24 @@
         },
         {
           "disabled": false,
-          "document": "创建人Uin（入参不填）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人Uin（入参不填）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100046609411",
           "member": "string",
           "name": "CreateUserUin",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内嵌任务（FOR_EACH任务的子任务）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Task",
+          "name": "InnerTask",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
