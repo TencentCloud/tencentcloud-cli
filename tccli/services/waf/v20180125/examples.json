@@ -1554,6 +1554,14 @@
         "title": "批量绑定实例ID"
       }
     ],
+    "ModifyOwaspDomainUpdateStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOwaspDomainUpdateStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"yyxz.1030.testwaf.com\",\n    \"UpdateStatus\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f7f86a0-2678-49d6-af37-b0d73ada629a\"\n    }\n}",
+        "title": "修改新规则更新状态"
+      }
+    ],
     "ModifyOwaspRuleStatus": [
       {
         "document": "",

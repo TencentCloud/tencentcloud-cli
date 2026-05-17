@@ -22,6 +22,7 @@ Output:
 ```
 {
     "Response": {
+        "ImageUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=xxxxxxxxxxxxxx",
         "RequestId": "s170xxxxxxxx1760718",
         "SealId": "yDwfwUUgygorm2w0UuS2eARCYT5rtPIi"
     }
@@ -49,6 +50,7 @@ Output:
 ```
 {
     "Response": {
+        "ImageUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=xxxxxxxxxxxxxxxx",
         "PreviewFileUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=xxxxxxxxxxxxxxx",
         "PreviewPdfUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PDF?hkey=xxxxxxxxxxxxxxx",
         "SealId": "",
@@ -80,6 +82,7 @@ Output:
 {
     "Response": {
         "SealId": "yDxxx12345xxx",
+        "ImageUrl": "https://file.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=249b64be37ea7bd7622f3bb2b18bf1f7ce396f2f8712a2b93fb280xxxx",
         "RequestId": "s1692775850696494235"
     }
 }
@@ -106,6 +109,7 @@ Output:
 {
     "Response": {
         "SealId": "yDxxx1234556677xxx",
+        "ImageUrl": "https://file.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=249b64be37ea7bd7622f3bb2b18bf1f7ce396f2f8712a2b93fb280xxxxyyy",
         "RequestId": "s1692775850696494255"
     }
 }

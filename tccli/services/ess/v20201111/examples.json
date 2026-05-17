@@ -1372,25 +1372,25 @@
       {
         "document": "1.设置GenerateSource为SealGenerateSourceSystem\n2.设置SealType为发票专用章INVOICE\n3.设置SealStyle为椭圆形ellipse\n4.设置SealSize为40_30",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSeal\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"user-id-xxxx\"\n    },\n    \"GenerateSource\": \"SealGenerateSourceSystem\",\n    \"SealType\": \"INVOICE\",\n    \"SealName\": \"这是一个发票专用章\",\n    \"SealHorizontalText\": \"\",\n    \"SealStyle\": \"ellipse\",\n    \"SealSize\": \"SealSize\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s170xxxxxxxx1760718\",\n        \"SealId\": \"yDwfwUUgygorm2w0UuS2eARCYT5rtPIi\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=xxxxxxxxxxxxxx\",\n        \"RequestId\": \"s170xxxxxxxx1760718\",\n        \"SealId\": \"yDwfwUUgygorm2w0UuS2eARCYT5rtPIi\"\n    }\n}",
         "title": "创建一个发票专用章"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSeal\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDCxxxxxxxxxxxxxxxxxxxxxxxNeSXv\"\n    },\n    \"SealName\": \"测试创建印章optional逻辑\",\n    \"GenerateSource\": \"SealGenerateSourceSystem\",\n    \"SealType\": \"OTHER\",\n    \"SealStyle\": \"ellipse\",\n    \"Options\": [\n        {\n            \"Key\": \"CreateSealPreview\",\n            \"Value\": \"true\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"PreviewFileUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=xxxxxxxxxxxxxxx\",\n        \"PreviewPdfUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PDF?hkey=xxxxxxxxxxxxxxx\",\n        \"SealId\": \"\",\n        \"SealOperatorVerifyPath\": \"\",\n        \"SealOperatorVerifyQrcodeUrl\": \"\",\n        \"RequestId\": \"cabcb113-xxxx-xxxx-xxxx-3xxxx2d8b4f0\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=xxxxxxxxxxxxxxxx\",\n        \"PreviewFileUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=xxxxxxxxxxxxxxx\",\n        \"PreviewPdfUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PDF?hkey=xxxxxxxxxxxxxxx\",\n        \"SealId\": \"\",\n        \"SealOperatorVerifyPath\": \"\",\n        \"SealOperatorVerifyQrcodeUrl\": \"\",\n        \"RequestId\": \"cabcb113-xxxx-xxxx-xxxx-3xxxx2d8b4f0\"\n    }\n}",
         "title": "创建印章预览图片"
       },
       {
         "document": "通过企业印章横向文字创建企业圆形公章",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSeal\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"user-id-xxxx\"\n    },\n    \"GenerateSource\": \"SealGenerateSourceSystem\",\n    \"SealType\": \"OFFICIAL\",\n    \"SealName\": \"这是一个圆形电子印章名称\",\n    \"SealHorizontalText\": \"测试专业用章圆形横向一号\",\n    \"SealStyle\": \"circle\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SealId\": \"yDxxx12345xxx\",\n        \"RequestId\": \"s1692775850696494235\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SealId\": \"yDxxx12345xxx\",\n        \"ImageUrl\": \"https://file.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=249b64be37ea7bd7622f3bb2b18bf1f7ce396f2f8712a2b93fb280xxxx\",\n        \"RequestId\": \"s1692775850696494235\"\n    }\n}",
         "title": "通过企业印章横向文字创建企业圆形公章"
       },
       {
         "document": "通过企业印章横向文字创建椭圆形印章",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSeal\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"user-id-xxxx\"\n    },\n    \"GenerateSource\": \"SealGenerateSourceSystem\",\n    \"SealType\": \"OFFICIAL\",\n    \"SealName\": \"这是一个椭圆形电子印章名称\",\n    \"SealHorizontalText\": \"测试专业用椭圆印章一号\",\n    \"SealStyle\": \"ellipse\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SealId\": \"yDxxx1234556677xxx\",\n        \"RequestId\": \"s1692775850696494255\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SealId\": \"yDxxx1234556677xxx\",\n        \"ImageUrl\": \"https://file.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=249b64be37ea7bd7622f3bb2b18bf1f7ce396f2f8712a2b93fb280xxxxyyy\",\n        \"RequestId\": \"s1692775850696494255\"\n    }\n}",
         "title": "通过企业印章横向文字创建椭圆形印章"
       },
       {

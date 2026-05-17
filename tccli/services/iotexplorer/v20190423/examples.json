@@ -960,6 +960,14 @@
         "title": "实例详情"
       }
     ],
+    "DescribeLicenseOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicenseOverview\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-DGAFvpuVF7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c383b1f6-4666-47fe-9a3d-c1741d7b5f22\"\n    }\n}",
+        "title": "获取激活码概览"
+      }
+    ],
     "DescribeLoRaFrequency": [
       {
         "document": "获取LoRa自定义频点详情",

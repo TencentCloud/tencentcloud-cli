@@ -10238,6 +10238,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>电子印章预览链接地址，地址默认失效时间为24小时。</p>",
+          "example": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+          "member": "string",
+          "name": "ImageUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>人脸验证操作人链接，用法可以参考&quot;<a href=\"https://qian.tencent.com/developers/company/openwxminiprogram/\">跳转电子签小程序配置</a>&quot;，默认为空。</p>",
           "example": "/pages/guide/index?to=FACE_IDENTIFY&request_token=yDXXXXXXXXXXXXXX&expired_time=1758888888",
           "member": "string",
@@ -10258,7 +10268,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建印章预览逻辑，返回的是印章加盖在示例文件上的效果图片链接。</p>",
+          "document": "<p>创建印章预览逻辑，返回的是印章加盖在示例文件上的效果图片链接。链接有效期为90天。</p>",
           "example": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=xxxxxxxxxx",
           "member": "string",
           "name": "PreviewFileUrl",
@@ -10268,7 +10278,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建印章预览逻辑，返回的是印章加盖在示例文件上的效果PDF文件链接。</p>",
+          "document": "<p>创建印章预览逻辑，返回的是印章加盖在示例文件上的效果PDF文件链接。链接有效期为90天。</p>",
           "example": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PDF?hkey=xxxxxxxxxx",
           "member": "string",
           "name": "PreviewPdfUrl",

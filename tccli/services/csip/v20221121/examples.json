@@ -32,6 +32,38 @@
         "title": "1"
       }
     ],
+    "CreateCosAssetSyncTask": [
+      {
+        "document": "创建资产同步任务",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosAssetSyncTask\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"task-1qazxsw2\",\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "CreateCosAssetSyncTask"
+      }
+    ],
+    "CreateCosObjectScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosObjectScanTask\n<公共请求参数>\n\n{\n    \"TaskType\": 1,\n    \"MemberId\": [\n        \"mem-1edsada\"\n    ],\n    \"BucketSet\": [\n        \"brainzhao-test-251002343\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"79078187-7aa0-446e-9c05-6c85f91a928b\"\n    }\n}",
+        "title": "创建cos对象存储扫描任务"
+      }
+    ],
+    "CreateCosPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosPolicy\n<公共请求参数>\n\n{\n    \"CosPolicyInfo\": {\n        \"PolicyName\": \"custom-bucket-read-policy\",\n        \"PolicyType\": 1,\n        \"PolicySource\": 2,\n        \"PolicyAbnormalType\": 1,\n        \"RiskLevel\": 1,\n        \"PolicyContent\": \"e1wiVmVyc2lvblwiOlwiMi4wXCIsXCJTdGF0ZW1lbnRcIjpbe1wiRWZmZWN0XCI6XCJBbGxvd1wiLFwiUHJpbmNpcGFsXCI6e1wicWNzXCI6W1wicWNzOjpjYW06OnVpbi8xMDAwMTIzNDU2Nzg6dWluLzEwMDAxMjM0NTY3OFwiXX0sXCJBY3Rpb25cIjpbXCJjb3M6R2V0T2JqZWN0XCIsXCJjb3M6R2V0T2JqZWN0VmVyc2lvblwiXSxcIlJlc291cmNlXCI6W1wicWNzOjpjb3M6YXAtZ3Vhbmd6aG91OnVpZC8xMDAwMTIzNDU2Nzg6bXktYnVja2V0LypcIl19XX0=\",\n        \"PolicyStatus\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "添加cos告警策略"
+      }
+    ],
+    "CreateCosRiskScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosRiskScanTask\n<公共请求参数>\n\n{\n    \"BucketNameSet\": [\n        {\n            \"AppId\": 214244555,\n            \"BucketName\": \"brain-231241444\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "创建风险监测任务"
+      }
+    ],
     "CreateDomainAndIp": [
       {
         "document": "",
@@ -134,6 +166,22 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSkillScan\n<公共请求参数>\n\n{\n    \"FileBase64\": \"UEsDBBQAAAAIAA...\",\n    \"FileName\": \"my-skill.zip\"\n}",
         "output": "{\n    \"Response\": {\n        \"ContentHash\": \"sha256:a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2\",\n        \"EngineVersion\": 20260501,\n        \"Status\": \"SCANNING\",\n        \"Message\": \"File received, scan task created\",\n        \"RequestId\": \"d3b7c5a1-6e4f-2d8a-9c1b-f5e3a7d2b8c6\"\n    }\n}",
         "title": "上传 Skill 触发检测"
+      }
+    ],
+    "DeleteCosAkAsset": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCosAkAsset\n<公共请求参数>\n\n{\n    \"CosAkSet\": [\n        {\n            \"AppId\": 1378282892,\n            \"AkNameSet\": [\n                \"AK1yuwiijdkqwke423fkkdqwk\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "删除已删除的COSAK资产"
+      }
+    ],
+    "DeleteCosPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCosPolicy\n<公共请求参数>\n\n{\n    \"IsDeleteAll\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "删除告警策略"
       }
     ],
     "DeleteDomainAndIp": [
@@ -328,6 +376,14 @@
         "title": "查询是否绑定角色"
       }
     ],
+    "DescribeBucketInvokeIpList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBucketInvokeIpList\n<公共请求参数>\n\n{\n    \"RelAppId\": 17223414,\n    \"BucketName\": \"brain-17223414\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {}\n        ],\n        \"Total\": 156,\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "查看存储桶调用源ip列表"
+      }
+    ],
     "DescribeCFWAssetStatistics": [
       {
         "document": "资产中心统计",
@@ -398,6 +454,222 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigCheckRules\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"CheckTypeList\": [\n            {\n                \"Text\": \"账号安全\",\n                \"Value\": \"account_security\"\n            },\n            {\n                \"Text\": \"基础安全\",\n                \"Value\": \"basic_security\"\n            },\n            {\n                \"Text\": \"安全审计\",\n                \"Value\": \"security_audit\"\n            },\n            {\n                \"Text\": \"配置安全\",\n                \"Value\": \"config_security\"\n            },\n            {\n                \"Text\": \"鉴权管控\",\n                \"Value\": \"auth_control\"\n            },\n            {\n                \"Text\": \"权限管控\",\n                \"Value\": \"permission_control\"\n            },\n            {\n                \"Text\": \"网络安全\",\n                \"Value\": \"network_security\"\n            },\n            {\n                \"Text\": \"数据安全\",\n                \"Value\": \"data_security\"\n            }\n        ],\n        \"DispositionTypeList\": [\n            {\n                \"Text\": \"紧急风险治理\",\n                \"Value\": \"emergency\"\n            },\n            {\n                \"Text\": \"边界管控\",\n                \"Value\": \"expose\"\n            },\n            {\n                \"Text\": \"云资产加固\",\n                \"Value\": \"asset_weakness\"\n            },\n            {\n                \"Text\": \"安全防护提升\",\n                \"Value\": \"safety_protection\"\n            },\n            {\n                \"Text\": \"深度优化\",\n                \"Value\": \"optimize\"\n            }\n        ],\n        \"ProviderList\": [\n            {\n                \"Text\": \"阿里云\",\n                \"Value\": \"alibaba\"\n            },\n            {\n                \"Text\": \"亚马逊云\",\n                \"Value\": \"aws\"\n            },\n            {\n                \"Text\": \"华为云\",\n                \"Value\": \"huawei\"\n            },\n            {\n                \"Text\": \"微软云\",\n                \"Value\": \"azure\"\n            },\n            {\n                \"Text\": \"谷歌云\",\n                \"Value\": \"gc\"\n            },\n            {\n                \"Text\": \"腾讯云\",\n                \"Value\": \"tencent\"\n            }\n        ],\n        \"RequestId\": \"da381e6c-32fc-41b5-9f2b-a88c546e5392\",\n        \"RiskLevelList\": [\n            {\n                \"Text\": \"严重\",\n                \"Value\": \"critical\"\n            },\n            {\n                \"Text\": \"高危\",\n                \"Value\": \"high\"\n            },\n            {\n                \"Text\": \"中危\",\n                \"Value\": \"medium\"\n            },\n            {\n                \"Text\": \"低危\",\n                \"Value\": \"low\"\n            }\n        ],\n        \"RuleList\": [\n            {\n                \"CheckType\": \"network_security\",\n                \"DispositionType\": \"optimize\",\n                \"InstanceType\": \"clb_instance\",\n                \"Provider\": \"tencent\",\n                \"RiskFixAdvance\": \"https://xxx\",\n                \"RiskInfluence\": \"TLS 1.1及以下版本的协议已被证明存在安全漏洞，如BEAST、CRIME和POODLE等攻击。这些漏洞可能会被攻击者利用，从而导致数据泄露或者被恶意篡改。如果您的负载均衡器（Load Balancer，LB）使用的是TLS 1.1或以下版本的协议，那么它可能会面临这些安全风险。\",\n                \"RiskLevel\": \"medium\",\n                \"RiskTitle\": \"负载均衡启用TLS1.1及以下版本高危策略\",\n                \"RuleID\": \"tc_200\"\n            }\n        ],\n        \"TotalCount\": 294\n    }\n}",
         "title": "云资源配置风险规则列表示例"
+      }
+    ],
+    "DescribeCosAccessPermission": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosAccessPermission\n<公共请求参数>\n\n\n\n\n\n{\n   \"RelAppId\":17326141245,\n   \"BucketName\":\"brain-17326141245\",\n   \"RelUin\":\"2141241255\"\n\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-123456789\",\n        \"Total\": 10,\n        \"Data\": [\n            {\n                \"PermissionSource\": \"CAM\",\n                \"PermissionContent\": \"{\\\"Version\\\":\\\"2.0\\\",\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":{\\\"QCS\\\":[\\\"qcs::cam::uin/100000000001:uin/100000000001\\\"]},\\\"Action\\\":[\\\"name/cos:GetObject\\\",\\\"name/cos:PutObject\\\"],\\\"Resource\\\":[\\\"qcs::cos:ap-beijing:uid/100000000001:my-bucket/*\\\"]}]}\",\n                \"GrantResource\": \"qcs::cos:ap-beijing:uid/100000000001:my-bucket/*\",\n                \"GrantAction\": \"name/cos:GetObject,name/cos:PutObject\",\n                \"GrantCondition\": \"{\\\"StringEquals\\\":{\\\"cos:prefix\\\":\\\"example/\\\"}}\"\n            }\n        ]\n    }\n}",
+        "title": "查看cos桶访问权限信息"
+      }
+    ],
+    "DescribeCosAccessPermissions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosAccessPermissions\n<公共请求参数>\n\n{\n    \"RelAppId\": 183479120,\n    \"BucketName\": \"brain-183479120\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\",\n        \"Data\": [\n            {\n                \"AccessUin\": \"100000000001\",\n                \"NickName\": \"测试用户\",\n                \"Identity\": 1,\n                \"MainNickName\": \"主账号用户\",\n                \"AkList\": [\n                    \"AKID1234567890abcdef,AKID0987654321fedcba\"\n                ],\n                \"CamPolicyCount\": 3,\n                \"UpdateTime\": 1705293000\n            },\n            {\n                \"AccessUin\": \"100000000002\",\n                \"NickName\": \"生产用户\",\n                \"Identity\": 2,\n                \"MainNickName\": \"主账号用户\",\n                \"AkList\": [\n                    \"AKIDabcdef1234567890\"\n                ],\n                \"CamPolicyCount\": 1,\n                \"UpdateTime\": 1705296000\n            },\n            {\n                \"AccessUin\": \"100000000003\",\n                \"NickName\": \"子账号用户\",\n                \"Identity\": 3,\n                \"MainNickName\": \"主账号用户\",\n                \"AkList\": [\n                    \"AKIDfedcba0987654321\"\n                ],\n                \"CamPolicyCount\": 2,\n                \"UpdateTime\": 1705299000\n            }\n        ],\n        \"Total\": 3\n    }\n}",
+        "title": "查看对象存储访问权限列表"
+      }
+    ],
+    "DescribeCosActionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosActionList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-123456789\",\n        \"Data\": [\n            {\n                \"ActionName\": \"GetObject\",\n                \"ActionNameCn\": \"获取对象\",\n                \"ActionDescription\": \"从存储桶中获取指定对象的内容\"\n            },\n            {\n                \"ActionName\": \"PutObject\",\n                \"ActionNameCn\": \"上传对象\",\n                \"ActionDescription\": \"将对象上传到指定的存储桶中\"\n            },\n            {\n                \"ActionName\": \"DeleteObject\",\n                \"ActionNameCn\": \"删除对象\",\n                \"ActionDescription\": \"从存储桶中删除指定的对象\"\n            },\n            {\n                \"ActionName\": \"ListObjects\",\n                \"ActionNameCn\": \"列出对象\",\n                \"ActionDescription\": \"列出存储桶中的对象列表\"\n            },\n            {\n                \"ActionName\": \"GetBucketAcl\",\n                \"ActionNameCn\": \"获取存储桶访问控制列表\",\n                \"ActionDescription\": \"获取存储桶的访问控制列表配置\"\n            },\n            {\n                \"ActionName\": \"PutBucketAcl\",\n                \"ActionNameCn\": \"设置存储桶访问控制列表\",\n                \"ActionDescription\": \"设置存储桶的访问控制列表\"\n            },\n            {\n                \"ActionName\": \"GetBucketPolicy\",\n                \"ActionNameCn\": \"获取存储桶策略\",\n                \"ActionDescription\": \"获取存储桶的策略配置\"\n            },\n            {\n                \"ActionName\": \"PutBucketPolicy\",\n                \"ActionNameCn\": \"设置存储桶策略\",\n                \"ActionDescription\": \"设置存储桶的策略配置\"\n            },\n            {\n                \"ActionName\": \"GetBucketVersioning\",\n                \"ActionNameCn\": \"获取存储桶版本控制\",\n                \"ActionDescription\": \"获取存储桶的版本控制配置\"\n            },\n            {\n                \"ActionName\": \"PutBucketVersioning\",\n                \"ActionNameCn\": \"设置存储桶版本控制\",\n                \"ActionDescription\": \"设置存储桶的版本控制\"\n            },\n            {\n                \"ActionName\": \"GetBucketLifecycle\",\n                \"ActionNameCn\": \"获取存储桶生命周期\",\n                \"ActionDescription\": \"获取存储桶的生命周期配置\"\n            },\n            {\n                \"ActionName\": \"PutBucketLifecycle\",\n                \"ActionNameCn\": \"设置存储桶生命周期\",\n                \"ActionDescription\": \"设置存储桶的生命周期规则\"\n            },\n            {\n                \"ActionName\": \"GetBucketEncryption\",\n                \"ActionNameCn\": \"获取存储桶加密\",\n                \"ActionDescription\": \"获取存储桶的加密配置\"\n            },\n            {\n                \"ActionName\": \"PutBucketEncryption\",\n                \"ActionNameCn\": \"设置存储桶加密\",\n                \"ActionDescription\": \"设置存储桶的加密配置\"\n            },\n            {\n                \"ActionName\": \"GetBucketReplication\",\n                \"ActionNameCn\": \"获取存储桶复制\",\n                \"ActionDescription\": \"获取存储桶的复制配置\"\n            },\n            {\n                \"ActionName\": \"PutBucketReplication\",\n                \"ActionNameCn\": \"设置存储桶复制\",\n                \"ActionDescription\": \"设置存储桶的复制规则\"\n            },\n            {\n                \"ActionName\": \"GetBucketNotification\",\n                \"ActionNameCn\": \"获取存储桶通知\",\n                \"ActionDescription\": \"获取存储桶的通知配置\"\n            },\n            {\n                \"ActionName\": \"PutBucketNotification\",\n                \"ActionNameCn\": \"设置存储桶通知\",\n                \"ActionDescription\": \"设置存储桶的通知配置\"\n            },\n            {\n                \"ActionName\": \"GetBucketTagging\",\n                \"ActionNameCn\": \"获取存储桶标签\",\n                \"ActionDescription\": \"获取存储桶的标签配置\"\n            },\n            {\n                \"ActionName\": \"PutBucketTagging\",\n                \"ActionNameCn\": \"设置存储桶标签\",\n                \"ActionDescription\": \"设置存储桶的标签\"\n            }\n        ]\n    }\n}",
+        "title": "查看COS接口列表"
+      }
+    ],
+    "DescribeCosAkAsset": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosAkAsset\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 10,\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "查看cos关联ak资产信息"
+      }
+    ],
+    "DescribeCosAkInvokeIpList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosAkInvokeIpList\n<公共请求参数>\n\n{\n    \"RelAppId\": 1378281929,\n    \"Ak\": \"AKIwtemp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 10,\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "查看cos ak调用源ip列表"
+      }
+    ],
+    "DescribeCosAlarmList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosAlarmList\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Limit\": 10,\n        \"Offset\": 0,\n        \"Filters\": [\n            {\n                \"Name\": \"BucketName\",\n                \"Values\": [\n                    \"brainzhao-test-251002343\"\n                ],\n                \"OperatorType\": 9\n            }\n        ],\n        \"StartTime\": \"2026-03-10 00:00:00\",\n        \"EndTime\": \"2026-03-14 00:00:00\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AccountIdentify\": 1,\n                \"AccountMainNickName\": \"\",\n                \"AccountNickName\": \"测试环境账号\",\n                \"AccountUin\": \"100000007008\",\n                \"AlarmId\": 8523,\n                \"AlarmTimestamp\": 1773374151000,\n                \"AppId\": 251002343,\n                \"BucketAccessWay\": \"specify\",\n                \"BucketMarker\": \"\",\n                \"BucketName\": \"test-251002111\",\n                \"BucketRegion\": \"广东 广州\",\n                \"BucketRegionCode\": \"ap-guangzhou\",\n                \"BucketTagInfo\": \"null\",\n                \"CategoryDetails\": [\n                    {\n                        \"CategoryId\": 356,\n                        \"CategoryName\": \"个人信息\",\n                        \"RuleSet\": [\n                            {\n                                \"LevelId\": 10,\n                                \"LevelName\": \"一般\",\n                                \"LevelScore\": 1,\n                                \"RuleId\": 6600,\n                                \"RuleName\": \"姓名\"\n                            }\n                        ]\n                    }\n                ],\n                \"HandleStatus\": 0,\n                \"PolicyAbnormalType\": 1,\n                \"PolicyDescription\": \"匿名获取存储桶或对象策略，返回值为 200\",\n                \"PolicyId\": 2281,\n                \"PolicyName\": \"wx告警-202511062129\",\n                \"PolicyRiskLevel\": 3\n            }\n        ],\n        \"Total\": 18,\n        \"RequestId\": \"b6a18fec-7234-49e5-b82c-e75461e29d18\"\n    }\n}",
+        "title": "查看告警列表"
+      }
+    ],
+    "DescribeCosAlarmTrendData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosAlarmTrendData\n<公共请求参数>\n\n{\n    \"LastDays\": 30\n}",
+        "output": "{\n    \"Response\": {\n        \"CosAlarmTrendInfo\": [\n            {\n                \"CurrentDateStr\": \"2024-01-31\",\n                \"CurrentDayCount\": 23,\n                \"CurrentDayOverView\": [\n                    {\n                        \"PolicyType\": 1,\n                        \"PolicyTypeName\": \"\",\n                        \"PolicyCount\": 10\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "每日告警新增数据"
+      }
+    ],
+    "DescribeCosAsset": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosAsset\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Limit\": 10,\n        \"Filters\": [\n            {\n                \"Name\": \"BucketName\",\n                \"Values\": [\n                    \"brainzhao-test-1302396215\"\n                ],\n                \"OperatorType\": 9\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AppId\": 1302396215,\n                \"BucketAccessWay\": {\n                    \"AccessAkCount\": 0,\n                    \"AccessRoleCount\": 31,\n                    \"AccessType\": \"specify\",\n                    \"AccessUserCount\": 43\n                },\n                \"BucketAlarmList\": [],\n                \"BucketId\": 0,\n                \"BucketInvokeSourceIpCount\": 0,\n                \"BucketMarker\": \"\",\n                \"BucketName\": \"brainzhao-test-1302396215\",\n                \"BucketOwnerNickName\": \"声声乌龙\",\n                \"BucketOwnerUin\": \"100014592178\",\n                \"BucketRegion\": \"广东 广州\",\n                \"BucketRegionCode\": \"ap-guangzhou\",\n                \"BucketRiskList\": [\n                    {\n                        \"PolicyCount\": 3,\n                        \"PolicyType\": 2,\n                        \"PolicyTypeName\": \"权限过大\"\n                    }\n                ],\n                \"BucketSecuritySuggestion\": 2,\n                \"BucketTagInfo\": \"[{\\\"Key\\\":\\\"tke-lb-serviceuuid\\\",\\\"Value\\\":\\\"935e9f8f-0ed3-4b3a-b374-087538cc57eb\\\"}]\",\n                \"CreateTime\": 1754639424000,\n                \"DataScanInfo\": {\n                    \"CategoryDetails\": [\n                        {\n                            \"CategoryId\": 356,\n                            \"CategoryName\": \"个人信息\",\n                            \"RuleSet\": [\n                                {\n                                    \"LevelId\": 10,\n                                    \"LevelName\": \"一般\",\n                                    \"LevelScore\": 1,\n                                    \"RuleId\": 5802,\n                                    \"RuleName\": \"生日\"\n                                }\n                            ]\n                        }\n                    ],\n                    \"ErrorInfo\": \"\",\n                    \"LatestScanTime\": \"2026-02-26 12:00:00\",\n                    \"Status\": 2\n                },\n                \"LastAccessTime\": 0,\n                \"MonitorStatus\": 1\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"b701d18d-f68f-44f7-a46a-8b62efa20bea\"\n    }\n}",
+        "title": "查看COS资产列表"
+      }
+    ],
+    "DescribeCosAssetSyncTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosAssetSyncTask\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [],\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "获取对象存储资产同步任务"
+      }
+    ],
+    "DescribeCosAuditAppIdList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosAuditAppIdList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            2712414112\n        ],\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "查看该appid下已购买的appid集合"
+      }
+    ],
+    "DescribeCosAuditDictionaryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosAuditDictionaryList\n<公共请求参数>\n\n{\n    \"DictType\": \"IdentifyRule\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"DictId\": 5800,\n                \"DictName\": \"姓名\"\n            }\n        ],\n        \"RequestId\": \"ad346878-e03e-4945-9e90-7fd5e08fe677\"\n    }\n}",
+        "title": "查询cos审计字典值"
+      }
+    ],
+    "DescribeCosAuditPayInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosAuditPayInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CosAuditPayInfo\": {\n            \"AppId\": 1302396215,\n            \"AutoRenew\": 0,\n            \"BeginTime\": 1974533233000,\n            \"BetaEndTime\": 1974533233000,\n            \"EndTime\": 1974533233000,\n            \"IsSelfBuy\": 1,\n            \"IsShareToOther\": 1,\n            \"BucketNum\": 358,\n            \"NickName\": \"声声乌龙\",\n            \"OrderStatus\": 1,\n            \"PayMode\": 1,\n            \"ResourceId\": \"cos-audit-wedr4yu7\",\n            \"TimeNow\": 1974533233000,\n            \"TimeSpan\": 1,\n            \"TimeUnit\": \"m\",\n            \"Uin\": \"100014592178\"\n        },\n        \"RequestId\": \"68d816ed-cf60-427f-b38a-8ac2a10a0acd\"\n    }\n}",
+        "title": "获取审计支付信息"
+      }
+    ],
+    "DescribeCosBucketBillingInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosBucketBillingInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "获取存储桶计费信息"
+      }
+    ],
+    "DescribeCosBucketList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosBucketList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "获取存储桶信息"
+      }
+    ],
+    "DescribeCosBucketRisk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosBucketRisk\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-123456789\",\n        \"Data\": [\n            {\n                \"RiskId\": 10,\n                \"AppId\": 123456789,\n                \"BucketName\": \"test-bucket\",\n                \"BucketRegion\": \"ap-guangzhou\",\n                \"BucketMarker\": \"测试存储桶\",\n                \"BucketAccessWay\": \"specify\",\n                \"BucketUin\": \"100000000003\",\n                \"BucketNickName\": \"子账号用户\",\n                \"BucketMainNickName\": \"主账号用户\",\n                \"BucketTagInfo\": \"[{\\\"Key\\\":\\\"Value\\\"}]\",\n                \"BucketIdentify\": 3,\n                \"LastScanTimestamp\": 1705299000,\n                \"HandleStatus\": 0,\n                \"PolicyName\": \"COS异常访问检测\",\n                \"PolicyType\": 3,\n                \"PolicyId\": 1,\n                \"PolicyLevel\": 1,\n                \"PolicyDescription\": \"风险问题命中\"\n            }\n        ],\n        \"Total\": 5\n    }\n}",
+        "title": "查看风险资产视角"
+      }
+    ],
+    "DescribeCosIdentifyFileList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosIdentifyFileList\n<公共请求参数>\n\n{\n    \"BucketName\": \"brainzhao-test-1302396215\",\n    \"MemberId\": [\n        \"mem-68b8087a65268000\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"CategoryDetails\": [\n                    {\n                        \"CategoryId\": 356,\n                        \"CategoryName\": \"个人信息\",\n                        \"RuleSet\": [\n                            {\n                                \"LevelId\": 10,\n                                \"LevelName\": \"一般\",\n                                \"LevelScore\": 1,\n                                \"RuleId\": 5813,\n                                \"RuleName\": \"车牌号码\"\n                            }\n                        ]\n                    }\n                ],\n                \"DirName\": \"\",\n                \"FileName\": \"Sensitive_data_data.csv\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"e0a254a4-18d5-4c7c-9766-23ed2e790925\"\n    }\n}",
+        "title": "查询cos数据识别结果列表"
+      }
+    ],
+    "DescribeCosInvokeUa": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosInvokeUa\n<公共请求参数>\n\n{\n    \"RelAppId\": 1382781291\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 3,\n        \"Data\": [\n            \"file1\",\n            \"file2\",\n            \"file3\"\n        ],\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "查看cos调用ua"
+      }
+    ],
+    "DescribeCosIpInvokeLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosIpInvokeLog\n<公共请求参数>\n\n{\n    \"RelAppId\": 1372819291\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "查看调用记录日志"
+      }
+    ],
+    "DescribeCosIpInvokeRecordFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosIpInvokeRecordFile\n<公共请求参数>\n\n{\n    \"RelAppId\": 251002343,\n    \"Filter\": {\n        \"Limit\": 10,\n        \"Offset\": 0,\n        \"Filters\": [\n            {\n                \"Name\": \"CategoryId\",\n                \"Values\": [\n                    \"355\"\n                ],\n                \"OperatorType\": 7\n            }\n        ],\n        \"StartTime\": \"2026-03-13 11:19:17\",\n        \"EndTime\": \"2026-03-13 11:55:51\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            \"Sensitive_data_data.txt\"\n        ],\n        \"DataSet\": [\n            {\n                \"CategoryDetails\": [\n                    {\n                        \"CategoryId\": 355,\n                        \"CategoryName\": \"个人敏感信息\",\n                        \"RuleSet\": [\n                            {\n                                \"LevelId\": 8,\n                                \"LevelName\": \"敏感\",\n                                \"LevelScore\": 10,\n                                \"RuleId\": 6662,\n                                \"RuleName\": \"婚姻状况\"\n                            }\n                        ]\n                    }\n                ],\n                \"DirName\": \"\",\n                \"FileName\": \"Sensitive_data_data.txt\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"bf11ccc9-2a5b-4d9c-9b69-e118192cbf5b\"\n    }\n}",
+        "title": "查看cos调用记录文件列表"
+      }
+    ],
+    "DescribeCosOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosOverview\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Filters\": [],\n        \"Offset\": 0,\n        \"Limit\": 10,\n        \"Order\": \"desc\",\n        \"By\": \"CreateTime\",\n        \"StartTime\": \"2024-01-24 00:00:00\",\n        \"EndTime\": \"2024-01-31 23:59:59\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CosOverview\": {\n            \"AssetCount\": 1256,\n            \"AlarmAssetCount\": 89,\n            \"RiskAssetCount\": 34,\n            \"AlarmCount\": 156,\n            \"IncrementAlarmCount\": 12,\n            \"RiskCount\": 67,\n            \"IncrementRiskCount\": 5,\n            \"RiskTop\": [\n                {\n                    \"PolicyType\": 1,\n                    \"PolicyTypeName\": \"公共读取权限风险\",\n                    \"PolicyCount\": 23\n                }\n            ]\n        },\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "cos概览信息"
+      }
+    ],
+    "DescribeCosPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosPolicy\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Filters\": [\n            {\n                \"Name\": \"PolicyName\",\n                \"Values\": [\n                    \"bucket-*-policy\"\n                ],\n                \"OperatorType\": 9\n            },\n            {\n                \"Name\": \"PolicyType\",\n                \"Values\": [\n                    \"1\",\n                    \"2\"\n                ],\n                \"OperatorType\": 7\n            },\n            {\n                \"Name\": \"PolicySource\",\n                \"Values\": [\n                    \"system\"\n                ],\n                \"OperatorType\": 1\n            },\n            {\n                \"Name\": \"PolicyStatus\",\n                \"Values\": [\n                    \"1\"\n                ],\n                \"OperatorType\": 1\n            }\n        ],\n        \"Offset\": 0,\n        \"Limit\": 20,\n        \"Order\": \"desc\",\n        \"By\": \"PolicyName\",\n        \"StartTime\": \"2024-01-01 00:00:00\",\n        \"EndTime\": \"2024-01-31 23:59:59\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"PolicyId\": 1,\n                \"PolicyName\": \"bucket-public-read-policy\",\n                \"PolicyType\": 1,\n                \"PolicyContent\": \"{\\\"Version\\\":\\\"2.0\\\",\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":{\\\"qcs\\\":[\\\"qcs::cam::anyone:anyone\\\"]},\\\"Action\\\":[\\\"cos:GetObject\\\"],\\\"Resource\\\":[\\\"qcs::cos:ap-guangzhou:uid/100012345678:bucket-001/*\\\"]}]}\",\n                \"PolicyStatus\": 1,\n                \"PolicyDescription\": \"\",\n                \"PolicyAbnormalType\": 1,\n                \"RiskLevel\": 1,\n                \"PolicySource\": 1,\n                \"PolicyHitCount\": 10,\n                \"PolicyCreateTime\": 173147231,\n                \"PolicyUpdateTime\": 173147231,\n                \"PolicyContentHash\": \"529fd413763fdcc00e2dae6c55c0a0fe\",\n                \"RelAccountCount\": 10,\n                \"RelAccountUin\": \"\",\n                \"RelAccountName\": \"\"\n            }\n        ],\n        \"Total\": 156,\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "获取策略列表信息"
+      }
+    ],
+    "DescribeCosRiskActionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosRiskActionList\n<公共请求参数>\n\n{\n    \"RelAppId\": 1372183813,\n    \"BucketName\": \"brain-13712132323\",\n    \"PolicyId\": 34\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-123456789\",\n        \"Data\": [\n            {\n                \"ActionName\": \"GetObject\",\n                \"ActionNameCn\": \"获取对象\",\n                \"ActionAccessTime\": 172814214,\n                \"InvokeCount\": 1250\n            }\n        ],\n        \"Total\": 10\n    }\n}",
+        "title": "风险接口列表信息"
+      }
+    ],
+    "DescribeCosRiskEvidence": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosRiskEvidence\n<公共请求参数>\n\n{\n    \"RelAppId\": 122321414,\n    \"PolicyId\": 1,\n    \"BucketName\": \"brain-122321414\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-123456789\",\n        \"Total\": 1,\n        \"Evidences\": [\n            {\n                \"PermissionSource\": \"CAM\",\n                \"PermissionContent\": \"{\\\"Version\\\":\\\"2.0\\\",\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":{\\\"QCS\\\":[\\\"qcs::cam::uin/100000000001:uin/100000000001\\\"]},\\\"Action\\\":[\\\"name/cos:GetObject\\\",\\\"name/cos:PutObject\\\"],\\\"Resource\\\":[\\\"qcs::cos:ap-beijing:uid/100000000001:my-bucket/*\\\"]}]}\",\n                \"GrantResource\": \"qcs::cos:ap-beijing:uid/100000000001:my-bucket/*\",\n                \"GrantAction\": \"name/cos:GetObject,name/cos:PutObject\",\n                \"GrantCondition\": \"{\\\"StringEquals\\\":{\\\"cos:prefix\\\":\\\"example/\\\"}}\"\n            },\n            {\n                \"PermissionSource\": \"Bucket Policy\",\n                \"PermissionContent\": \"{\\\"Version\\\":\\\"2012-10-17\\\",\\\"Statement\\\":[{\\\"Sid\\\":\\\"PublicReadGetObject\\\",\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":\\\"*\\\",\\\"Action\\\":\\\"s3:GetObject\\\",\\\"Resource\\\":\\\"arn:aws:s3:::my-bucket/*\\\"}]}\",\n                \"GrantResource\": \"arn:aws:s3:::my-bucket/*\",\n                \"GrantAction\": \"s3:GetObject\",\n                \"GrantCondition\": \"{\\\"StringEquals\\\":{\\\"aws:Referer\\\":\\\"https://example.com\\\"}}\"\n            },\n            {\n                \"PermissionSource\": \"ACL\",\n                \"PermissionContent\": \"{\\\"Owner\\\":{\\\"ID\\\":\\\"qcs::cam::uin/100000000001:uin/100000000001\\\"},\\\"Grants\\\":[{\\\"Grantee\\\":{\\\"Type\\\":\\\"Group\\\",\\\"URI\\\":\\\"http://acs.amazonaws.com/groups/global/AllUsers\\\"},\\\"Permission\\\":\\\"READ\\\"}]}\",\n                \"GrantResource\": \"my-bucket\",\n                \"GrantAction\": \"READ\",\n                \"GrantCondition\": \"\"\n            },\n            {\n                \"PermissionSource\": \"CAM\",\n                \"PermissionContent\": \"{\\\"Version\\\":\\\"2.0\\\",\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":{\\\"QCS\\\":[\\\"qcs::cam::uin/100000000002:uin/100000000002\\\"]},\\\"Action\\\":[\\\"name/cos:DeleteObject\\\"],\\\"Resource\\\":[\\\"qcs::cos:ap-shanghai:uid/100000000002:prod-bucket/*\\\"]}]}\",\n                \"GrantResource\": \"qcs::cos:ap-shanghai:uid/100000000002:prod-bucket/*\",\n                \"GrantAction\": \"name/cos:DeleteObject\",\n                \"GrantCondition\": \"{\\\"StringEquals\\\":{\\\"cos:prefix\\\":\\\"temp/\\\"}}\"\n            },\n            {\n                \"PermissionSource\": \"Bucket Policy\",\n                \"PermissionContent\": \"{\\\"Version\\\":\\\"2012-10-17\\\",\\\"Statement\\\":[{\\\"Sid\\\":\\\"FullAccess\\\",\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":{\\\"AWS\\\":\\\"arn:aws:iam::123456789012:user/test-user\\\"},\\\"Action\\\":\\\"s3:*\\\",\\\"Resource\\\":[\\\"arn:aws:s3:::prod-bucket\\\",\\\"arn:aws:s3:::prod-bucket/*\\\"]}]}\",\n                \"GrantResource\": \"arn:aws:s3:::prod-bucket/*\",\n                \"GrantAction\": \"s3:*\",\n                \"GrantCondition\": \"{\\\"StringEquals\\\":{\\\"aws:SourceIp\\\":\\\"192.168.1.0/24\\\"}}\"\n            }\n        ]\n    }\n}",
+        "title": "查看风险证据以及描述"
+      }
+    ],
+    "DescribeCosRiskScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosRiskScanTask\n<公共请求参数>\n\n{\n    \"BucketInfoSet\": [\n        {\n            \"AppId\": 134567888,\n            \"BucketName\": \"brain-134525356\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BucketTaskInfoSet\": [\n            {\n                \"AppId\": 134567888,\n                \"BucketName\": \"brain-134525356\",\n                \"TaskId\": \"task-1qazsxsw\"\n            }\n        ],\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "查看存储桶扫描任务详情"
+      }
+    ],
+    "DescribeCosRoleAccessPermission": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosRoleAccessPermission\n<公共请求参数>\n\n{\n   \"RelAppId\":137812939,\n   \"RelRoleId\":\"role-1we2344\",\n   \"BucketName\":\"bucket-137812939\"\n\n}\n",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "查看角色可访问权限列表"
+      }
+    ],
+    "DescribeCosRoleAccessPermissions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosRoleAccessPermissions\n<公共请求参数>\n\n{\n    \"RelAppId\":1373829129,\n    \"BucketName\":\"bucket-1373829129\"\n\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "查看cos桶角色相关权限"
+      }
+    ],
+    "DescribeCosSourceIp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosSourceIp\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Filters\": [\n            {\n                \"Name\": \"IpType\",\n                \"Values\": [\n                    \"2\"\n                ],\n                \"OperatorType\": 1\n            }\n        ],\n        \"Offset\": 0,\n        \"Limit\": 20,\n        \"Order\": \"desc\",\n        \"By\": \"LastAccessTime\",\n        \"StartTime\": \"2024-01-01 00:00:00\",\n        \"EndTime\": \"2024-01-31 23:59:59\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"UA\": [\n                    \"cos-console\"\n                ]\n            }\n        ],\n        \"Total\": 156,\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "调用源ip列表"
       }
     ],
     "DescribeDbAssetInfo": [
@@ -814,6 +1086,22 @@
         "title": "查询云边界分析-暴露路径下主机节点的高危基线风险列表"
       }
     ],
+    "DescribeIpInvokeRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIpInvokeRecord\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "对象存储异常检测调用记录信息"
+      }
+    ],
+    "DescribeIpInvokeRecordDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIpInvokeRecordDetail\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\",\n        \"InvokeDetailInfo\": [\n            {\n                \"InvokeTimestamp\": 1705293000,\n                \"InvokeRequestId\": \"req-123456789\",\n                \"InvokeContent\": \"{\\\"Action\\\":\\\"GetObject\\\",\\\"Bucket\\\":\\\"my-bucket\\\",\\\"Key\\\":\\\"example/file.txt\\\",\\\"VersionId\\\":\\\"null\\\"}\"\n            },\n            {\n                \"InvokeTimestamp\": 1705296000,\n                \"InvokeRequestId\": \"req-123456790\",\n                \"InvokeContent\": \"{\\\"Action\\\":\\\"PutObject\\\",\\\"Bucket\\\":\\\"my-bucket\\\",\\\"Key\\\":\\\"example/upload.txt\\\",\\\"Content-Length\\\":\\\"1024\\\"}\"\n            },\n            {\n                \"InvokeTimestamp\": 1705299000,\n                \"InvokeRequestId\": \"req-123456791\",\n                \"InvokeContent\": \"{\\\"Action\\\":\\\"ListObjects\\\",\\\"Bucket\\\":\\\"my-bucket\\\",\\\"Prefix\\\":\\\"example/\\\",\\\"MaxKeys\\\":\\\"1000\\\"}\"\n            }\n        ],\n        \"InvokePermission\": [\n            {\n                \"PermissionSource\": \"CAM\",\n                \"PermissionContent\": \"{\\\"Version\\\":\\\"2.0\\\",\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":{\\\"QCS\\\":[\\\"qcs::cam::uin/100000000001:uin/100000000001\\\"]},\\\"Action\\\":[\\\"name/cos:GetObject\\\"],\\\"Resource\\\":[\\\"qcs::cos:ap-beijing:uid/100000000001:my-bucket/*\\\"]}]}\",\n                \"GrantResource\": \"qcs::cos:ap-beijing:uid/100000000001:my-bucket/*\",\n                \"GrantAction\": \"name/cos:GetObject\",\n                \"GrantCondition\": \"{\\\"StringEquals\\\":{\\\"cos:prefix\\\":\\\"example/\\\"}}\"\n            },\n            {\n                \"PermissionSource\": \"Bucket Policy\",\n                \"PermissionContent\": \"{\\\"Version\\\":\\\"2012-10-17\\\",\\\"Statement\\\":[{\\\"Sid\\\":\\\"PublicReadGetObject\\\",\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":\\\"*\\\",\\\"Action\\\":\\\"s3:GetObject\\\",\\\"Resource\\\":\\\"arn:aws:s3:::my-bucket/*\\\"}]}\",\n                \"GrantResource\": \"arn:aws:s3:::my-bucket/*\",\n                \"GrantAction\": \"s3:GetObject\",\n                \"GrantCondition\": \"{\\\"StringEquals\\\":{\\\"aws:Referer\\\":\\\"https://example.com\\\"}}\"\n            },\n            {\n                \"PermissionSource\": \"ACL\",\n                \"PermissionContent\": \"{\\\"Owner\\\":{\\\"ID\\\":\\\"qcs::cam::uin/100000000001:uin/100000000001\\\"},\\\"Grants\\\":[{\\\"Grantee\\\":{\\\"Type\\\":\\\"Group\\\",\\\"URI\\\":\\\"http://acs.amazonaws.com/groups/global/AllUsers\\\"},\\\"Permission\\\":\\\"READ\\\"}]}\",\n                \"GrantResource\": \"my-bucket\",\n                \"GrantAction\": \"READ\",\n                \"GrantCondition\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "ip访问列表详情信息"
+      }
+    ],
     "DescribeKeySandboxCredential": [
       {
         "document": "",
@@ -876,6 +1164,14 @@
         "title": "其他云资源列表"
       }
     ],
+    "DescribePolicyHitData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyHitData\n<公共请求参数>\n\n{\n    \"IndexTimestamp\": 173841676\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyHitDetail\": [],\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "按日期查看策略命中详情"
+      }
+    ],
     "DescribePublicIpAssets": [
       {
         "document": "",
@@ -890,6 +1186,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRepositoryImageAssets\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Filters\": [\n            {\n                \"Name\": \"TimeRange\",\n                \"Values\": [\n                    \"2\"\n                ],\n                \"OperatorType\": 7\n            }\n        ],\n        \"Limit\": 10,\n        \"Offset\": 0,\n        \"Order\": \"desc\",\n        \"By\": \"InstanceCreateTime\"\n    },\n    \"MemberId\": [\n        \"mem-1fc116ccbc8ac7f6\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AppId\": 1256299843,\n                \"Uin\": \"100004506473\",\n                \"NickName\": \"飞快的云镜\",\n                \"InstanceId\": \"sha256:2edaeff81ea32d22d88bd7725c7a9fdf6057f8157b45f3bd9d3f75fbf692c187\",\n                \"InstanceName\": \"sha256:2edaeff81ea32d22d88bd7725c7a9fdf6057f8157b45f3bd9d3f75fbf692c187\",\n                \"InstanceCreateTime\": \"2024-12-11 10:25:01\",\n                \"RepositoryName\": \"openobserve\",\n                \"RepositoryUrl\": \"piper.tencentcloudcr.com/redau/openobserve\",\n                \"InstanceType\": \"TCR镜像\",\n                \"Region\": \"ap-guangzhou\",\n                \"InstanceVersion\": \"v0.13.2\",\n                \"InstanceSize\": \"69.22MB\",\n                \"BuildCount\": 5,\n                \"CheckCount\": 3,\n                \"VulRisk\": 0,\n                \"AuthStatus\": 0,\n                \"IsCore\": 2,\n                \"CheckTime\": \"2025-06-03 20:04:30\",\n                \"IsNewAsset\": 0\n            },\n            {\n                \"AppId\": 1256299843,\n                \"Uin\": \"100004506473\",\n                \"NickName\": \"飞快的云镜\",\n                \"InstanceId\": \"sha256:7a1293036d51f6db27889bc5907e3d8264b1c749f0c9d88412bca6004a221148\",\n                \"InstanceName\": \"sha256:7a1293036d51f6db27889bc5907e3d8264b1c749f0c9d88412bca6004a221148\",\n                \"InstanceCreateTime\": \"2024-12-10 17:43:13\",\n                \"RepositoryName\": \"etcd\",\n                \"RepositoryUrl\": \"piper.tencentcloudcr.com/redau/etcd\",\n                \"InstanceType\": \"TCR镜像\",\n                \"Region\": \"ap-guangzhou\",\n                \"InstanceVersion\": \"3.5.11\",\n                \"InstanceSize\": \"54.17MB\",\n                \"BuildCount\": 1,\n                \"CheckCount\": 3,\n                \"VulRisk\": 0,\n                \"AuthStatus\": 0,\n                \"IsCore\": 2,\n                \"CheckTime\": \"2025-06-03 20:04:30\",\n                \"IsNewAsset\": 0\n            },\n            {\n                \"AppId\": 1256299843,\n                \"Uin\": \"100004506473\",\n                \"NickName\": \"飞快的云镜\",\n                \"InstanceId\": \"sha256:89d22e819fbd4f7fb97fe2bfd756993e0a193f66029a3eb8e41f43c42bedfaf7\",\n                \"InstanceName\": \"sha256:89d22e819fbd4f7fb97fe2bfd756993e0a193f66029a3eb8e41f43c42bedfaf7\",\n                \"InstanceCreateTime\": \"2024-12-10 17:42:02\",\n                \"RepositoryName\": \"openresty-waf\",\n                \"RepositoryUrl\": \"piper.tencentcloudcr.com/redau/openresty-waf\",\n                \"InstanceType\": \"TCR镜像\",\n                \"Region\": \"ap-guangzhou\",\n                \"InstanceVersion\": \"latest\",\n                \"InstanceSize\": \"162.18MB\",\n                \"BuildCount\": 10,\n                \"CheckCount\": 3,\n                \"VulRisk\": 0,\n                \"AuthStatus\": 0,\n                \"IsCore\": 2,\n                \"CheckTime\": \"2025-06-03 20:04:30\",\n                \"IsNewAsset\": 0\n            },\n            {\n                \"AppId\": 1256299843,\n                \"Uin\": \"100004506473\",\n                \"NickName\": \"飞快的云镜\",\n                \"InstanceId\": \"sha256:13e1b9e5d6d1d14bb84c6110604ba31bebb5cd0225efd72d943ae9f138d2153c\",\n                \"InstanceName\": \"sha256:13e1b9e5d6d1d14bb84c6110604ba31bebb5cd0225efd72d943ae9f138d2153c\",\n                \"InstanceCreateTime\": \"2024-12-09 19:02:20\",\n                \"RepositoryName\": \"apisix\",\n                \"RepositoryUrl\": \"piper.tencentcloudcr.com/redau/apisix\",\n                \"InstanceType\": \"TCR镜像\",\n                \"Region\": \"ap-guangzhou\",\n                \"InstanceVersion\": \"3.11.0-debian\",\n                \"InstanceSize\": \"109.72MB\",\n                \"BuildCount\": 17,\n                \"CheckCount\": 3,\n                \"VulRisk\": 0,\n                \"AuthStatus\": 0,\n                \"IsCore\": 2,\n                \"CheckTime\": \"2025-06-03 20:04:30\",\n                \"IsNewAsset\": 0\n            },\n            {\n                \"AppId\": 1256299843,\n                \"Uin\": \"100004506473\",\n                \"NickName\": \"飞快的云镜\",\n                \"InstanceId\": \"sha256:d80c3a4e5e0c8112f09b706334d774178f4819d7af0a26425ce982616a03fe22\",\n                \"InstanceName\": \"sha256:d80c3a4e5e0c8112f09b706334d774178f4819d7af0a26425ce982616a03fe22\",\n                \"InstanceCreateTime\": \"2024-11-28 15:43:10\",\n                \"RepositoryName\": \"a_test\",\n                \"RepositoryUrl\": \"piper.tencentcloudcr.com/tcss/a_test\",\n                \"InstanceType\": \"TCR镜像\",\n                \"Region\": \"ap-guangzhou\",\n                \"InstanceVersion\": \"20241128154243\",\n                \"InstanceSize\": \"2.68MB\",\n                \"BuildCount\": 17,\n                \"CheckCount\": 3,\n                \"VulRisk\": 0,\n                \"AuthStatus\": 0,\n                \"IsCore\": 2,\n                \"CheckTime\": \"2025-06-03 20:04:30\",\n                \"IsNewAsset\": 0\n            },\n            {\n                \"AppId\": 1256299843,\n                \"Uin\": \"100004506473\",\n                \"NickName\": \"飞快的云镜\",\n                \"InstanceId\": \"sha256:187e97a2774010c25471303e53657f9c6e379f2b4154c383c42bb5fb24feb5d9\",\n                \"InstanceName\": \"sha256:187e97a2774010c25471303e53657f9c6e379f2b4154c383c42bb5fb24feb5d9\",\n                \"InstanceCreateTime\": \"2024-11-27 21:15:38\",\n                \"RepositoryName\": \"a_test\",\n                \"RepositoryUrl\": \"piper.tencentcloudcr.com/tcss/a_test\",\n                \"InstanceType\": \"TCR镜像\",\n                \"Region\": \"ap-guangzhou\",\n                \"InstanceVersion\": \"20241127211511\",\n                \"InstanceSize\": \"2.68MB\",\n                \"BuildCount\": 17,\n                \"CheckCount\": 6,\n                \"VulRisk\": 0,\n                \"AuthStatus\": 0,\n                \"IsCore\": 2,\n                \"CheckTime\": \"2025-06-03 20:04:30\",\n                \"IsNewAsset\": 0\n            },\n            {\n                \"AppId\": 1256299843,\n                \"Uin\": \"100004506473\",\n                \"NickName\": \"飞快的云镜\",\n                \"InstanceId\": \"sha256:797709008ddc697c8a5ec5075ac91b871f78bd90bbeae8a9dec7c8b369b242a7\",\n                \"InstanceName\": \"sha256:797709008ddc697c8a5ec5075ac91b871f78bd90bbeae8a9dec7c8b369b242a7\",\n                \"InstanceCreateTime\": \"2024-11-27 20:20:43\",\n                \"RepositoryName\": \"a_test\",\n                \"RepositoryUrl\": \"piper.tencentcloudcr.com/tcss/a_test\",\n                \"InstanceType\": \"TCR镜像\",\n                \"Region\": \"ap-guangzhou\",\n                \"InstanceVersion\": \"20241127202016\",\n                \"InstanceSize\": \"2.68MB\",\n                \"BuildCount\": 17,\n                \"CheckCount\": 3,\n                \"VulRisk\": 0,\n                \"AuthStatus\": 0,\n                \"IsCore\": 2,\n                \"CheckTime\": \"2025-06-03 20:04:30\",\n                \"IsNewAsset\": 0\n            },\n            {\n                \"AppId\": 1256299843,\n                \"Uin\": \"100004506473\",\n                \"NickName\": \"飞快的云镜\",\n                \"InstanceId\": \"sha256:1f87a796cb813e82f915f4a58864b9b7ccd544ad007391fd2b6dc722f5805e69\",\n                \"InstanceName\": \"sha256:1f87a796cb813e82f915f4a58864b9b7ccd544ad007391fd2b6dc722f5805e69\",\n                \"InstanceCreateTime\": \"2024-11-20 15:01:24\",\n                \"RepositoryName\": \"tlinux3.1-ttyd-nvim\",\n                \"RepositoryUrl\": \"piper.tencentcloudcr.com/redau/tlinux3.1-ttyd-nvim\",\n                \"InstanceType\": \"TCR镜像\",\n                \"Region\": \"ap-guangzhou\",\n                \"InstanceVersion\": \"v1\",\n                \"InstanceSize\": \"1.80GB\",\n                \"BuildCount\": 16,\n                \"CheckCount\": 3,\n                \"VulRisk\": 0,\n                \"AuthStatus\": 0,\n                \"IsCore\": 2,\n                \"CheckTime\": \"2025-06-03 20:04:30\",\n                \"IsNewAsset\": 0\n            },\n            {\n                \"AppId\": 1256299843,\n                \"Uin\": \"100004506473\",\n                \"NickName\": \"飞快的云镜\",\n                \"InstanceId\": \"sha256:82f6de470fd94cfa6e210541a5d10f8a8bf0b941759afb1239101653e6e451dd\",\n                \"InstanceName\": \"sha256:82f6de470fd94cfa6e210541a5d10f8a8bf0b941759afb1239101653e6e451dd\",\n                \"InstanceCreateTime\": \"2024-11-20 14:28:15\",\n                \"RepositoryName\": \"apereo-cas\",\n                \"RepositoryUrl\": \"piper.tencentcloudcr.com/redau/apereo-cas\",\n                \"InstanceType\": \"TCR镜像\",\n                \"Region\": \"ap-guangzhou\",\n                \"InstanceVersion\": \"4.1.5\",\n                \"InstanceSize\": \"265.16MB\",\n                \"BuildCount\": 31,\n                \"CheckCount\": 6,\n                \"VulRisk\": 0,\n                \"AuthStatus\": 0,\n                \"IsCore\": 2,\n                \"CheckTime\": \"2025-06-03 20:04:30\",\n                \"IsNewAsset\": 0\n            },\n            {\n                \"AppId\": 1256299843,\n                \"Uin\": \"100004506473\",\n                \"NickName\": \"飞快的云镜\",\n                \"InstanceId\": \"sha256:358ff7cbe6c0aa21f7bd99152074f4d951c7a91857c33f4a8c2790261c8ad404\",\n                \"InstanceName\": \"sha256:358ff7cbe6c0aa21f7bd99152074f4d951c7a91857c33f4a8c2790261c8ad404\",\n                \"InstanceCreateTime\": \"2024-10-15 17:24:46\",\n                \"RepositoryName\": \"a_test\",\n                \"RepositoryUrl\": \"piper.tencentcloudcr.com/tcss/a_test\",\n                \"InstanceType\": \"TCR镜像\",\n                \"Region\": \"ap-guangzhou\",\n                \"InstanceVersion\": \"20241015172428\",\n                \"InstanceSize\": \"2.68MB\",\n                \"BuildCount\": 17,\n                \"CheckCount\": 3,\n                \"VulRisk\": 0,\n                \"AuthStatus\": 0,\n                \"IsCore\": 2,\n                \"CheckTime\": \"2025-06-03 20:04:30\",\n                \"IsNewAsset\": 0\n            }\n        ],\n        \"RegionList\": [\n            {\n                \"Text\": \"广州\",\n                \"Value\": \"ap-guangzhou\"\n            },\n            {\n                \"Text\": \"新加坡\",\n                \"Value\": \"ap-singapore\"\n            }\n        ],\n        \"RequestId\": \"a107da68-7b14-48e4-9b1a-8c8688fb7d20\",\n        \"Total\": 411\n    }\n}",
         "title": "仓库镜像列表"
+      }
+    ],
+    "DescribeRiskBucketList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskBucketList\n<公共请求参数>\n\n{\n    \"RelAppId\": 137182812,\n    \"PolicyId\": \"rule-1qazxsw2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-123456789\",\n        \"Data\": [\n            {\n                \"AppId\": 123456789,\n                \"BucketName\": \"my-bucket\",\n                \"BucketRegion\": \"ap-beijing\",\n                \"BucketUin\": \"100000000001\",\n                \"BucketNickName\": \"测试用户\",\n                \"BucketMainNickName\": \"主账号用户\",\n                \"BucketIdentify\": 1,\n                \"LastScanTimestamp\": 1705293000,\n                \"HandleStatus\": 0\n            },\n            {\n                \"AppId\": 123456789,\n                \"BucketName\": \"prod-bucket\",\n                \"BucketRegion\": \"ap-shanghai\",\n                \"BucketUin\": \"100000000002\",\n                \"BucketNickName\": \"生产用户\",\n                \"BucketMainNickName\": \"主账号用户\",\n                \"BucketIdentify\": 2,\n                \"LastScanTimestamp\": 1705296000,\n                \"HandleStatus\": 1\n            },\n            {\n                \"AppId\": 123456789,\n                \"BucketName\": \"test-bucket\",\n                \"BucketRegion\": \"ap-guangzhou\",\n                \"BucketUin\": \"100000000003\",\n                \"BucketNickName\": \"子账号用户\",\n                \"BucketMainNickName\": \"主账号用户\",\n                \"BucketIdentify\": 3,\n                \"LastScanTimestamp\": 1705299000,\n                \"HandleStatus\": 0\n            },\n            {\n                \"AppId\": 123456789,\n                \"BucketName\": \"backup-bucket\",\n                \"BucketRegion\": \"ap-chengdu\",\n                \"BucketUin\": \"100000000004\",\n                \"BucketNickName\": \"备份用户\",\n                \"BucketMainNickName\": \"主账号用户\",\n                \"BucketIdentify\": 1,\n                \"LastScanTimestamp\": 1705302000,\n                \"HandleStatus\": 2\n            }\n        ],\n        \"Total\": 4\n    }\n}",
+        "title": "查看风险关联的存储桶信息"
       }
     ],
     "DescribeRiskCallRecord": [
@@ -980,6 +1284,14 @@
         "title": "风险详情列表"
       }
     ],
+    "DescribeRiskItemList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskItemList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-123456789\",\n        \"Data\": [\n            {\n                \"AppId\": 123456789,\n                \"PolicyName\": \"COS公开访问检测\",\n                \"PolicyId\": \"policy-001\",\n                \"PolicyType\": 1,\n                \"PolicyRiskLevel\": 3,\n                \"HandleBucketCount\": 5,\n                \"LastScanTimestamp\": 1705293000\n            },\n            {\n                \"AppId\": 123456789,\n                \"PolicyName\": \"COS敏感数据检测\",\n                \"PolicyId\": \"policy-002\",\n                \"PolicyType\": 2,\n                \"PolicyRiskLevel\": 4,\n                \"HandleBucketCount\": 3,\n                \"LastScanTimestamp\": 1705296000\n            },\n            {\n                \"AppId\": 123456789,\n                \"PolicyName\": \"COS异常访问检测\",\n                \"PolicyId\": \"policy-003\",\n                \"PolicyType\": 3,\n                \"PolicyRiskLevel\": 2,\n                \"HandleBucketCount\": 8,\n                \"LastScanTimestamp\": 1705299000\n            },\n            {\n                \"AppId\": 123456789,\n                \"PolicyName\": \"COS权限配置检测\",\n                \"PolicyId\": \"policy-004\",\n                \"PolicyType\": 4,\n                \"PolicyRiskLevel\": 3,\n                \"HandleBucketCount\": 2,\n                \"LastScanTimestamp\": 1705302000\n            },\n            {\n                \"AppId\": 123456789,\n                \"PolicyName\": \"COS数据加密检测\",\n                \"PolicyId\": \"policy-005\",\n                \"PolicyType\": 5,\n                \"PolicyRiskLevel\": 2,\n                \"HandleBucketCount\": 6,\n                \"LastScanTimestamp\": 1705305000\n            }\n        ],\n        \"Total\": 5\n    }\n}",
+        "title": "获取风险项视角列表"
+      }
+    ],
     "DescribeRiskRuleDetail": [
       {
         "document": "查询风险规则详情",
@@ -994,6 +1306,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskRules\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"InstanceTypeList\": [\n            {\n                \"Text\": \"Elasticsearch Service\",\n                \"Value\": \"es_cluster\"\n            },\n            {\n                \"Text\": \"轻量应用服务器\",\n                \"Value\": \"lighthouse_instance\"\n            },\n            {\n                \"Text\": \"云数据库 MariaDB\",\n                \"Value\": \"mariadb_instance\"\n            },\n            {\n                \"Text\": \"云数据库 MariaDB账号\",\n                \"Value\": \"mariadb_account\"\n            },\n            {\n                \"Text\": \"腾讯云可观测平台Grafana服务\",\n                \"Value\": \"monitor_grafana\"\n            },\n            {\n                \"Text\": \"NAT网关\",\n                \"Value\": \"nat_gateway\"\n            },\n            {\n                \"Text\": \"云数据库 PostgreSQL\",\n                \"Value\": \"postgres_instance\"\n            },\n            {\n                \"Text\": \"云数据库 PostgreSQL Serverless版\",\n                \"Value\": \"postgres_serverless\"\n            },\n            {\n                \"Text\": \"云数据库Redis\",\n                \"Value\": \"redis_instance\"\n            },\n            {\n                \"Text\": \"安全组\",\n                \"Value\": \"security_group\"\n            },\n            {\n                \"Text\": \"云数据库 SQL Server\",\n                \"Value\": \"sqlserver_instance\"\n            },\n            {\n                \"Text\": \"访问管理用户密钥\",\n                \"Value\": \"cam_user_ak\"\n            },\n            {\n                \"Text\": \"访问管理用户\",\n                \"Value\": \"cam_user\"\n            },\n            {\n                \"Text\": \"容器服务标准集群\",\n                \"Value\": \"tke_cluster\"\n            },\n            {\n                \"Text\": \"容器服务边缘集群\",\n                \"Value\": \"edge_cluster\"\n            },\n            {\n                \"Text\": \"容器服务Serverless集群\",\n                \"Value\": \"eks_cluster\"\n            },\n            {\n                \"Text\": \"微服务引擎Apollo服务\",\n                \"Value\": \"tse_apollo\"\n            },\n            {\n                \"Text\": \"微服务引擎Eureka服务\",\n                \"Value\": \"tse_eureka\"\n            },\n            {\n                \"Text\": \"微服务引擎Nacos服务\",\n                \"Value\": \"tse_nacos\"\n            },\n            {\n                \"Text\": \"微服务引擎Polaris服务\",\n                \"Value\": \"tse_polaris\"\n            },\n            {\n                \"Text\": \"微服务引擎Zookeeper服务\",\n                \"Value\": \"tse_zookeeper\"\n            },\n            {\n                \"Text\": \"微服务引擎云原生API网关\",\n                \"Value\": \"kong_instance\"\n            },\n            {\n                \"Text\": \"云服务器\",\n                \"Value\": \"cvm_instance\"\n            },\n            {\n                \"Text\": \"消息队列 TDMQ RocketMQ版\",\n                \"Value\": \"tdmq_rocketmq\"\n            },\n            {\n                \"Text\": \"消息队列 TDMQ RabbitMQ版\",\n                \"Value\": \"tdmq_rabbitmq\"\n            },\n            {\n                \"Text\": \"消息队列 TDMQ Pulsar版\",\n                \"Value\": \"tdmq_pulsar\"\n            },\n            {\n                \"Text\": \"Web 应用防火墙\",\n                \"Value\": \"waf_instance\"\n            },\n            {\n                \"Text\": \"VPN网关\",\n                \"Value\": \"vpn_gateway\"\n            },\n            {\n                \"Text\": \"文件存储\",\n                \"Value\": \"cfs_instance\"\n            },\n            {\n                \"Text\": \"云数据库 MySQL\",\n                \"Value\": \"cdb_instance\"\n            },\n            {\n                \"Text\": \"云数据库 MySQL账号\",\n                \"Value\": \"cdb_account\"\n            },\n            {\n                \"Text\": \"域名记录\",\n                \"Value\": \"domain_record\"\n            },\n            {\n                \"Text\": \"消息队列 CKafka 版\",\n                \"Value\": \"ckafka_instance\"\n            },\n            {\n                \"Text\": \"负载均衡\",\n                \"Value\": \"clb_instance\"\n            },\n            {\n                \"Text\": \"对象存储\",\n                \"Value\": \"cos_bucket\"\n            },\n            {\n                \"Text\": \"TDSQL-C MySQL 版\",\n                \"Value\": \"cynosdb_cluster\"\n            },\n            {\n                \"Text\": \"TDSQL-C MySQL 版账号\",\n                \"Value\": \"cynosdb_account\"\n            },\n            {\n                \"Text\": \"TDSQL MySQL 版\",\n                \"Value\": \"dcdb_instance\"\n            },\n            {\n                \"Text\": \"弹性 MapReduce\",\n                \"Value\": \"emr_cluster\"\n            },\n            {\n                \"Text\": \"云函数函数服务\",\n                \"Value\": \"scf_instance\"\n            },\n            {\n                \"Text\": \"云数据库 SQL Server账号\",\n                \"Value\": \"sqlserver_account\"\n            },\n            {\n                \"Text\": \"云数据库 MongoDB\",\n                \"Value\": \"mongodb_instance\"\n            },\n            {\n                \"Text\": \"云数据库 KeeWiDB\",\n                \"Value\": \"keewidb_instance\"\n            },\n            {\n                \"Text\": \"容器服务标准集群策略\",\n                \"Value\": \"tke_policy\"\n            },\n            {\n                \"Text\": \"向量数据库\",\n                \"Value\": \"vdb_instance\"\n            },\n            {\n                \"Text\": \"Elasticsearch Service采集器\",\n                \"Value\": \"es_beats\"\n            },\n            {\n                \"Text\": \"主机漏洞\",\n                \"Value\": \"cwp_asset_vuln\"\n            },\n            {\n                \"Text\": \"主机基线风险\",\n                \"Value\": \"cwp_asset_baseline_risk\"\n            },\n            {\n                \"Text\": \"主机列表\",\n                \"Value\": \"cwp_asset_machine\"\n            },\n            {\n                \"Text\": \"主机安全事件\",\n                \"Value\": \"cwp_asset_event\"\n            }\n        ],\n        \"RequestId\": \"651a037f-9bab-42ba-980c-6e26c7935191\",\n        \"RiskRuleList\": [\n            {\n                \"CheckType\": \"network_security\",\n                \"InstanceName\": \"Elasticsearch Service\",\n                \"InstanceType\": \"es_cluster\",\n                \"Provider\": \"腾讯云\",\n                \"RiskInfluence\": \"云上多种产品都有管理后台功能且具有对公网开放能力，管理后台对外开放后后容易存在口令被爆破/被入侵风险，可导致重要数据泄露，服务器遭受入侵等严重后果。\",\n                \"ItemId\": \"11.1-10.1\",\n                \"RiskTitle\": \"Elasticsearch Service对外网开放管理后台\",\n                \"Severity\": \"high\"\n            }\n        ],\n        \"TotalCount\": 179\n    }\n}",
         "title": "高级配置风险规则列表"
+      }
+    ],
+    "DescribeRiskTrendData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskTrendData\n<公共请求参数>\n\n{\n    \"LastDays\": 14\n}",
+        "output": "{\n    \"Response\": {\n        \"CosRiskTrendData\": [\n            {\n                \"CurrentDateStr\": \"2024-01-31\",\n                \"RiskDataSet\": [\n                    {\n                        \"PolicyType\": 1,\n                        \"PolicyTypeName\": \"公共读取权限风险\",\n                        \"PolicyCount\": 15\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "查看风险趋势图"
       }
     ],
     "DescribeScanReportList": [
@@ -1190,6 +1510,30 @@
         "title": "下载导出日志"
       }
     ],
+    "ModifyAlarmRiskStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmRiskStatus\n<公共请求参数>\n\n{\n    \"AlarmRiskIdSet\": [\n        {\n            \"AlarmRiskId\": 1001,\n            \"AppId\": 123456789\n        },\n        {\n            \"AlarmRiskId\": 1002,\n            \"AppId\": 123456789\n        },\n        {\n            \"AlarmRiskId\": 1003,\n            \"AppId\": 123456789\n        }\n    ],\n    \"HandleStatus\": 1,\n    \"AlarmRiskType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "修改或者更改处置状态"
+      }
+    ],
+    "ModifyCosAuditMonitorAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCosAuditMonitorAccount\n<公共请求参数>\n\n{\n    \"ResourceId\": \"cos-audit-1qweds123\",\n    \"MonitorAppIdSet\": [\n        1754092892\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "修改cos审计监测账号"
+      }
+    ],
+    "ModifyCosMarkInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCosMarkInfo\n<公共请求参数>\n\n{\n    \"BucketNameSet\": [\n        {\n            \"AppId\": 1357673452,\n            \"BucketName\": \"brainzs-1357673452\"\n        }\n    ],\n    \"MarkInfo\": \"安全通\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a625df7-dea0-4ba2-9942-97303d13d23e\"\n    }\n}",
+        "title": "修改对象存储备注"
+      }
+    ],
     "ModifyDspmAccessRecord": [
       {
         "document": "",
@@ -1316,6 +1660,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOrganizationAccountStatus\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-5b28e2010c18f07a\"\n    ],\n    \"Status\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"f9184c15-9721-456d-8ca0-4263967b5ead\"\n    }\n}",
         "title": "修改集团账号状态"
+      }
+    ],
+    "ModifyPolicyStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPolicyStatus\n<公共请求参数>\n\n{\n    \"PolicyIdSet\": [\n        1,\n        3,\n        7\n    ],\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1qazxxsw221r353425\"\n    }\n}",
+        "title": "修改策略状态"
       }
     ],
     "ModifyRiskCenterRiskStatus": [

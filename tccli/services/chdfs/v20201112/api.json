@@ -2000,7 +2000,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "回热任务ID",
+          "document": "<p>回热任务ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "RestoreTaskId",
@@ -2011,7 +2011,7 @@
         },
         {
           "disabled": false,
-          "document": "回热任务文件路径",
+          "document": "<p>回热任务文件路径，不支持目录和通配符</p>",
           "example": "/test/file0",
           "member": "string",
           "name": "FilePath",
@@ -2022,7 +2022,7 @@
         },
         {
           "disabled": false,
-          "document": "回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）",
+          "document": "<p>回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）</p>",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -2033,7 +2033,7 @@
         },
         {
           "disabled": false,
-          "document": "指定恢复出的临时副本的有效时长（单位天）",
+          "document": "<p>指定恢复出的临时副本的有效时长（单位天）</p>",
           "example": "7",
           "member": "uint64",
           "name": "Days",
@@ -2044,7 +2044,7 @@
         },
         {
           "disabled": false,
-          "document": "回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）",
+          "document": "<p>回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -2055,7 +2055,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2019-07-30T16:24:38+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",

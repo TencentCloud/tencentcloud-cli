@@ -5137,7 +5137,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月",
+          "document": "<p>付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月</p>",
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
@@ -5146,7 +5146,16 @@
         },
         {
           "disabled": false,
-          "document": "枚举值：空、TRAIN、NOTEBOOK、INFERENCE或EMS",
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>枚举值：空、TRAIN、NOTEBOOK、INFERENCE或EMS</p>",
           "example": "TRAIN",
           "member": "string",
           "name": "TaskType",
@@ -5155,7 +5164,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型：[\"\", \"CALC\", \"CPU\", \"GPU\", \"GPU-SW\"]",
+          "document": "<p>资源类型：[&quot;&quot;, &quot;CALC&quot;, &quot;CPU&quot;, &quot;GPU&quot;, &quot;GPU-SW&quot;]</p>",
           "example": "CALC",
           "member": "string",
           "name": "ResourceType",
@@ -5170,7 +5179,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计费项列表",
+          "document": "<p>计费项列表</p>",
           "example": "无",
           "member": "Spec",
           "name": "Specs",
@@ -8507,7 +8516,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源组节点id",
+          "document": "<p>资源组节点id</p>",
           "example": "eins-8jpj27jc",
           "member": "string",
           "name": "InstanceId",
@@ -8517,7 +8526,7 @@
         },
         {
           "disabled": false,
-          "document": "节点已用资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点已用资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResourceInfo",
           "name": "UsedResource",
@@ -8527,7 +8536,7 @@
         },
         {
           "disabled": false,
-          "document": "节点总资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点总资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResourceInfo",
           "name": "TotalResource",
@@ -8537,7 +8546,7 @@
         },
         {
           "disabled": false,
-          "document": "节点状态 \n注意：此字段为枚举值\n说明: \nDEPLOYING: 部署中\nRUNNING: 运行中 \nDEPLOY_FAILED: 部署失败\nRELEASING 释放中 \nRELEASED：已释放 \nEXCEPTION：异常\nDEBT_OR_EXPIRED: 欠费过期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点状态<br>注意：此字段为枚举值<br>说明:<br>DEPLOYING: 部署中<br>RUNNING: 运行中<br>DEPLOY_FAILED: 部署失败<br>RELEASING 释放中<br>RELEASED：已释放<br>EXCEPTION：异常<br>DEBT_OR_EXPIRED: 欠费过期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RUNNING",
           "member": "string",
           "name": "InstanceStatus",
@@ -8547,7 +8556,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人",
+          "document": "<p>创建人</p>",
           "example": "100005875",
           "member": "string",
           "name": "SubUin",
@@ -8557,7 +8566,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间: \n注意：北京时间，比如: 2021-12-01 12:00:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间:<br>注意：北京时间，比如: 2021-12-01 12:00:00</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-01 12:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -8567,7 +8576,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间\n注意：北京时间，比如：2021-12-11 12:00:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>到期时间<br>注意：北京时间，比如：2021-12-11 12:00:00</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-11 12:00:00",
           "member": "string",
           "name": "ExpireTime",
@@ -8577,7 +8586,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识\n注意：此字段为枚举值\n说明：\nNOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期通知\nNOTIFY_AND_AUTO_RENEW：自动续费且到期通知\nDISABLE_NOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期不通知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自动续费标识<br>注意：此字段为枚举值<br>说明：<br>NOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期通知<br>NOTIFY_AND_AUTO_RENEW：自动续费且到期通知<br>DISABLE_NOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期不通知</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "AutoRenewFlag",
@@ -8587,7 +8596,7 @@
         },
         {
           "disabled": false,
-          "document": "计费项ID",
+          "document": "<p>计费项ID</p>",
           "example": "sv_xx",
           "member": "string",
           "name": "SpecId",
@@ -8597,7 +8606,7 @@
         },
         {
           "disabled": false,
-          "document": "计费项别名",
+          "document": "<p>计费项别名</p>",
           "example": "8C40G V100*1",
           "member": "string",
           "name": "SpecAlias",
@@ -8607,7 +8616,7 @@
         },
         {
           "disabled": false,
-          "document": "计费项特性列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计费项特性列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"COS\",\"CBS\",\"RDMA\",\"CFS\"]",
           "member": "string",
           "name": "SpecFeatures",
@@ -8617,7 +8626,7 @@
         },
         {
           "disabled": false,
-          "document": "纳管cvmid",
+          "document": "<p>纳管cvmid</p>",
           "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "CvmInstanceId",
@@ -8627,7 +8636,7 @@
         },
         {
           "disabled": false,
-          "document": "部署失败错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署失败错误码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RegisterJobNetworkError",
           "member": "string",
           "name": "ErrCode",
@@ -8637,7 +8646,7 @@
         },
         {
           "disabled": false,
-          "document": "部署失败错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署失败错误信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "registernode job noderegister-ins-fczfco95 network connect failed",
           "member": "string",
           "name": "ErrMsg",
@@ -11832,7 +11841,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "pod名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>pod名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ms-24xzphkz-1-55cc4779cc-9j6tb",
           "member": "string",
           "name": "Name",
@@ -11843,7 +11852,7 @@
         },
         {
           "disabled": false,
-          "document": "pod的唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>pod的唯一id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "989e5db6-af8c-4ea0-816a-a97369b36152",
           "member": "string",
           "name": "Uid",
@@ -11854,7 +11863,7 @@
         },
         {
           "disabled": false,
-          "document": "服务付费模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务付费模式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
@@ -11865,7 +11874,7 @@
         },
         {
           "disabled": false,
-          "document": "pod的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>pod的状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Pending",
           "member": "string",
           "name": "Phase",
@@ -11876,7 +11885,7 @@
         },
         {
           "disabled": false,
-          "document": "pod的IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>pod的IP</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "9.0.0.1",
           "member": "string",
           "name": "IP",
@@ -11887,7 +11896,7 @@
         },
         {
           "disabled": false,
-          "document": "pod的创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>pod的创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-08-19T09:32:15Z",
           "member": "string",
           "name": "CreateTime",
@@ -11898,7 +11907,7 @@
         },
         {
           "disabled": true,
-          "document": "容器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>容器列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Container",
           "name": "Containers",
@@ -11909,7 +11918,7 @@
         },
         {
           "disabled": false,
-          "document": "容器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>容器列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Container",
           "name": "ContainerInfos",
@@ -11920,7 +11929,7 @@
         },
         {
           "disabled": false,
-          "document": "容器调用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>容器调用信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CrossTenantENIInfo",
           "name": "CrossTenantENIInfo",
@@ -11931,7 +11940,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的状态信息",
+          "document": "<p>实例的状态信息</p>",
           "example": "Running",
           "member": "string",
           "name": "Status",
@@ -11942,7 +11951,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的开始调度时间",
+          "document": "<p>实例的开始调度时间</p>",
           "example": "2025-05-14 15:47:01",
           "member": "string",
           "name": "StartScheduleTime",
@@ -11953,7 +11962,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态的补充信息",
+          "document": "<p>实例状态的补充信息</p>",
           "example": "当前实例已排队x小时x分钟，优先级P0",
           "member": "string",
           "name": "Message",
@@ -11964,7 +11973,7 @@
         },
         {
           "disabled": false,
-          "document": "当前实例所在的节点 IP",
+          "document": "<p>当前实例所在的节点 IP</p>",
           "example": "9.0.0.8",
           "member": "string",
           "name": "NodeIP",
@@ -11975,7 +11984,7 @@
         },
         {
           "disabled": false,
-          "document": "当前实例所在节点id",
+          "document": "<p>当前实例所在节点id</p>",
           "example": "sm-esffesx",
           "member": "string",
           "name": "NodeId",
@@ -11986,7 +11995,7 @@
         },
         {
           "disabled": false,
-          "document": "当时实例所属资源组 id",
+          "document": "<p>当时实例所属资源组 id</p>",
           "example": "rsg-tt2sxcf",
           "member": "string",
           "name": "ResourceGroupId",
@@ -11997,7 +12006,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组名称",
+          "document": "<p>资源组名称</p>",
           "example": "资源组1",
           "member": "string",
           "name": "ResourceGroupName",
@@ -12008,7 +12017,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的资源占用信息",
+          "document": "<p>实例的资源占用信息</p>",
           "example": "无",
           "member": "ResourceInfo",
           "name": "ResourceInfo",
@@ -13361,7 +13370,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务组id",
+          "document": "<p>服务组id</p>",
           "example": "ms-testtest",
           "member": "string",
           "name": "ServiceGroupId",
@@ -13371,7 +13380,7 @@
         },
         {
           "disabled": false,
-          "document": "服务id",
+          "document": "<p>服务id</p>",
           "example": "ms-testtest-0",
           "member": "string",
           "name": "ServiceId",
@@ -13381,7 +13390,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组名",
+          "document": "<p>服务组名</p>",
           "example": "ms-testtest-0",
           "member": "string",
           "name": "ServiceGroupName",
@@ -13391,7 +13400,7 @@
         },
         {
           "disabled": false,
-          "document": "服务描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ms-testtest-0",
           "member": "string",
           "name": "ServiceDescription",
@@ -13401,7 +13410,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务的详细信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ServiceInfo",
           "name": "ServiceInfo",
@@ -13411,7 +13420,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cls-sssss",
           "member": "string",
           "name": "ClusterId",
@@ -13421,7 +13430,7 @@
         },
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-beijing",
           "member": "string",
           "name": "Region",
@@ -13431,7 +13440,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>命名空间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "infer-eeeee",
           "member": "string",
           "name": "Namespace",
@@ -13441,7 +13450,7 @@
         },
         {
           "disabled": false,
-          "document": "付费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>付费类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PRE_PAID",
           "member": "string",
           "name": "ChargeType",
@@ -13451,7 +13460,7 @@
         },
         {
           "disabled": false,
-          "document": "包年包月服务的资源组id，按量计费的服务为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>包年包月服务的资源组id，按量计费的服务为空</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rr-sssss",
           "member": "string",
           "name": "ResourceGroupId",
@@ -13461,7 +13470,7 @@
         },
         {
           "disabled": false,
-          "document": "包年包月服务对应的资源组名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>包年包月服务对应的资源组名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pregroup",
           "member": "string",
           "name": "ResourceGroupName",
@@ -13471,7 +13480,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务的标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -13481,7 +13490,7 @@
         },
         {
           "disabled": false,
-          "document": "服务所在的 ingress 的 name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务所在的 ingress 的 name</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "my-ingress",
           "member": "string",
           "name": "IngressName",
@@ -13491,7 +13500,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建者</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1541252152",
           "member": "string",
           "name": "CreatedBy",
@@ -13501,7 +13510,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ms-testtest",
           "member": "string",
           "name": "CreateTime",
@@ -13511,7 +13520,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ms-testtest",
           "member": "string",
           "name": "UpdateTime",
@@ -13521,7 +13530,7 @@
         },
         {
           "disabled": false,
-          "document": "主账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主账号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1541252152",
           "member": "string",
           "name": "Uin",
@@ -13531,7 +13540,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子账号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1541252152",
           "member": "string",
           "name": "SubUin",
@@ -13541,7 +13550,7 @@
         },
         {
           "disabled": false,
-          "document": "app_id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>app_id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1541252152",
           "member": "int64",
           "name": "AppId",
@@ -13551,7 +13560,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的业务状态\nCREATING 创建中\nCREATE_FAILED 创建失败\nCREATE_SUCCEED 创建成功\nARREARS_STOP 因欠费停止\nWHITELIST_STOP 白名单额度不足\nRELEASE_FAILED 资源释放失败\nWHITELIST_RELEASE_FAILED 白名单资源释放失败\nTIMEOUT_EXCEPTION 创建超时异常\nBILLING 计费中\nWHITELIST_USING 白名单试用中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务的业务状态<br>CREATING 创建中<br>CREATE_FAILED 创建失败<br>CREATE_SUCCEED 创建成功<br>ARREARS_STOP 因欠费停止<br>WHITELIST_STOP 白名单额度不足<br>RELEASE_FAILED 资源释放失败<br>WHITELIST_RELEASE_FAILED 白名单资源释放失败<br>TIMEOUT_EXCEPTION 创建超时异常<br>BILLING 计费中<br>WHITELIST_USING 白名单试用中</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CREATING",
           "member": "string",
           "name": "BusinessStatus",
@@ -13561,7 +13570,7 @@
         },
         {
           "disabled": true,
-          "document": "已废弃,以ServiceInfo中的对应为准",
+          "document": "<p>已废弃,以ServiceInfo中的对应为准</p>",
           "example": "无",
           "member": "ServiceLimit",
           "name": "ServiceLimit",
@@ -13571,7 +13580,7 @@
         },
         {
           "disabled": true,
-          "document": "已废弃,以ServiceInfo中的对应为准",
+          "document": "<p>已废弃,以ServiceInfo中的对应为准</p>",
           "example": "无",
           "member": "ScheduledAction",
           "name": "ScheduledAction",
@@ -13581,7 +13590,7 @@
         },
         {
           "disabled": false,
-          "document": "服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "api网关注册失败",
           "member": "string",
           "name": "CreateFailedReason",
@@ -13591,7 +13600,7 @@
         },
         {
           "disabled": false,
-          "document": "服务状态\nCREATING 创建中\nCREATE_FAILED 创建失败\nTIMEOUT_EXCEPTION 创建超时异常\nNormal 正常运行中\nStopped 已停止\nStopping 停止中\nAbnormal 异常\nPending 启动中\nWaiting 就绪中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务状态<br>CREATING 创建中<br>CREATE_FAILED 创建失败<br>TIMEOUT_EXCEPTION 创建超时异常<br>Normal 正常运行中<br>Stopped 已停止<br>Stopping 停止中<br>Abnormal 异常<br>Pending 启动中<br>Waiting 就绪中</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Normal",
           "member": "string",
           "name": "Status",
@@ -13601,7 +13610,7 @@
         },
         {
           "disabled": false,
-          "document": "费用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>费用信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "模型服务计费中：1.2元/小时",
           "member": "string",
           "name": "BillingInfo",
@@ -13611,7 +13620,7 @@
         },
         {
           "disabled": false,
-          "document": "模型权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型权重</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "int64",
           "name": "Weight",
@@ -13621,7 +13630,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的创建来源\nAUTO_ML: 来自自动学习的一键发布\nDEFAULT: 其他来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务的创建来源<br>AUTO_ML: 来自自动学习的一键发布<br>DEFAULT: 其他来源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AUTO_ML",
           "member": "string",
           "name": "CreateSource",
@@ -13631,7 +13640,7 @@
         },
         {
           "disabled": false,
-          "document": "版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Version",
@@ -13641,7 +13650,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组下服务的最高版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务组下服务的最高版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "LatestVersion",
@@ -13651,7 +13660,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组类别 托管 NORMAL，纳管 SW\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源组类别 托管 NORMAL，纳管 SW</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NORMAL",
           "member": "string",
           "name": "ResourceGroupSWType",
@@ -13661,7 +13670,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的归档状态  Waiting 等待归档中，Archived 已归档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务的归档状态  Waiting 等待归档中，Archived 已归档</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Archived",
           "member": "string",
           "name": "ArchiveStatus",
@@ -13671,7 +13680,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "STANDARD",
           "member": "string",
           "name": "DeployType",
@@ -13681,7 +13690,7 @@
         },
         {
           "disabled": false,
-          "document": "单副本下的实例数，仅在部署类型为DIST时生效，默认1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单副本下的实例数，仅在部署类型为DIST时生效，默认1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "InstancePerReplicas",
@@ -13691,7 +13700,7 @@
         },
         {
           "disabled": false,
-          "document": "用于监控查询的Source\n枚举值，部分情况下与CreateSource不同，通过该字段兼容",
+          "document": "<p>用于监控查询的Source<br>枚举值，部分情况下与CreateSource不同，通过该字段兼容</p>",
           "example": "NORMAL",
           "member": "string",
           "name": "MonitorSource",
@@ -13701,7 +13710,7 @@
         },
         {
           "disabled": false,
-          "document": "服务创建者的子账号名称",
+          "document": "<p>服务创建者的子账号名称</p>",
           "example": "子账号1",
           "member": "string",
           "name": "SubUinName",
@@ -13711,7 +13720,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的调度策略",
+          "document": "<p>服务的调度策略</p>",
           "example": "无",
           "member": "SchedulingPolicy",
           "name": "SchedulingPolicy",
@@ -13721,12 +13730,32 @@
         },
         {
           "disabled": false,
-          "document": "外部的资源组信息，表示借调了哪些资源组的资源",
+          "document": "<p>外部的资源组信息，表示借调了哪些资源组的资源</p>",
           "example": "无",
           "member": "ResourceGroupInfo",
           "name": "ExternalResourceGroups",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>变更服务的子账户</p>",
+          "example": "1541252152",
+          "member": "string",
+          "name": "Changer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>变更服务的子账户名称</p>",
+          "example": "子账号1",
+          "member": "string",
+          "name": "ChangerName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -14243,6 +14272,26 @@
           "name": "GatewayConfig",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>变更服务的子账户</p>",
+          "example": "103649483",
+          "member": "string",
+          "name": "Changer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>变更服务的子账户名称</p>",
+          "example": "user2",
+          "member": "string",
+          "name": "ChangerName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -14777,7 +14826,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计费项标签",
+          "document": "<p>计费项标签</p>",
           "example": "sv_tio_platform_cloud_post_gpu_8c40g_1v100",
           "member": "string",
           "name": "SpecId",
@@ -14787,7 +14836,7 @@
         },
         {
           "disabled": false,
-          "document": "计费项名称",
+          "document": "<p>计费项名称</p>",
           "example": "TI.GN10.2XLARGE40.POST",
           "member": "string",
           "name": "SpecName",
@@ -14797,7 +14846,7 @@
         },
         {
           "disabled": false,
-          "document": "计费项显示名称",
+          "document": "<p>计费项显示名称</p>",
           "example": "8核40GB V100*1",
           "member": "string",
           "name": "SpecAlias",
@@ -14807,7 +14856,7 @@
         },
         {
           "disabled": false,
-          "document": "是否售罄",
+          "document": "<p>是否售罄</p>",
           "example": "true",
           "member": "bool",
           "name": "Available",
@@ -14817,7 +14866,7 @@
         },
         {
           "disabled": false,
-          "document": "当前资源售罄时，可用的区域有哪些",
+          "document": "<p>当前资源售罄时，可用的区域有哪些</p>",
           "example": "[\"ap-beijing\"]",
           "member": "string",
           "name": "AvailableRegion",
@@ -14827,7 +14876,7 @@
         },
         {
           "disabled": false,
-          "document": "当前计费项支持的特性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前计费项支持的特性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"CFS\",\"COS\"]",
           "member": "string",
           "name": "SpecFeatures",
@@ -14837,7 +14886,7 @@
         },
         {
           "disabled": false,
-          "document": "计费项类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计费项类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "GPU",
           "member": "string",
           "name": "SpecType",
@@ -14847,7 +14896,7 @@
         },
         {
           "disabled": false,
-          "document": "GPU类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>GPU类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "V100",
           "member": "string",
           "name": "GpuType",
@@ -14857,7 +14906,7 @@
         },
         {
           "disabled": false,
-          "document": "计费项CategoryId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计费项CategoryId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1024554",
           "member": "string",
           "name": "CategoryId",

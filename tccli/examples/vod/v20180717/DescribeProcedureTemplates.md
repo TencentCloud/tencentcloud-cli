@@ -1,256 +1,129 @@
-**Example 1: 查询指定任务流模板**
+**Example 1: 查询指定应用任务流并按创建时间降序**
 
-查询名为“我的任务流A”的任务流模板的详情
+
 
 Input: 
 
 ```
 tccli vod DescribeProcedureTemplates --cli-unfold-argument  \
-    --Names 我的任务流A
+    --SubAppId 221094 \
+    --SortBy.0.Field create_time \
+    --SortBy.0.Order desc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "ProcedureTemplateSet": [
             {
-                "Name": "我的任务流A",
-                "Type": "Custom",
-                "Comment": "我的任务流A",
-                "UpdateTime": "2018-10-01T18:00:00",
-                "CreateTime": "2018-10-01T18:00:00",
+                "AiAnalysisTask": null,
+                "AiContentReviewTask": null,
+                "AiRecognitionTask": null,
+                "AiRecognitionTaskSet": [],
+                "Comment": "",
+                "CreateTime": "2026-05-12T14:58:40+08:00",
                 "MediaProcessTask": {
+                    "AdaptiveDynamicStreamingTaskSet": [],
+                    "AnimatedGraphicTaskSet": [],
+                    "CoverBySnapshotTaskSet": [],
+                    "ImageSpriteTaskSet": [],
+                    "SampleSnapshotTaskSet": [],
+                    "SnapshotByTimeOffsetTaskSet": [],
                     "TranscodeTaskSet": [
                         {
-                            "Definition": 20,
-                            "WatermarkSet": [],
-                            "MosaicSet": [],
-                            "TraceWatermark": {
-                                "Switch": "OFF",
-                                "Definition": 0
-                            },
-                            "StartTimeOffset": 0,
+                            "BlindWatermark": null,
                             "CopyRightWatermark": {
                                 "Text": ""
                             },
+                            "Definition": 1140,
+                            "EndTimeOffset": 0,
                             "HeadTailSet": [],
-                            "EndTimeOffset": 0
-                        },
-                        {
-                            "Definition": 30,
-                            "WatermarkSet": [],
                             "MosaicSet": [],
-                            "TraceWatermark": {
-                                "Switch": "OFF",
-                                "Definition": 0
-                            },
                             "StartTimeOffset": 0,
-                            "CopyRightWatermark": {
-                                "Text": ""
-                            },
-                            "HeadTailSet": [],
-                            "EndTimeOffset": 0
-                        },
-                        {
-                            "Definition": 40,
-                            "WatermarkSet": [],
-                            "MosaicSet": [],
+                            "SubtitleInfoSet": [],
                             "TraceWatermark": {
-                                "Switch": "OFF",
-                                "Definition": 0
+                                "Definition": 0,
+                                "Switch": ""
                             },
-                            "StartTimeOffset": 0,
-                            "CopyRightWatermark": {
-                                "Text": ""
-                            },
-                            "HeadTailSet": [],
-                            "EndTimeOffset": 0
+                            "WatermarkSet": []
                         }
-                    ],
-                    "AnimatedGraphicTaskSet": [],
-                    "SnapshotByTimeOffsetTaskSet": [],
-                    "SampleSnapshotTaskSet": [],
-                    "ImageSpriteTaskSet": [],
-                    "CoverBySnapshotTaskSet": []
+                    ]
                 },
-                "AiContentReviewTask": null,
-                "AiAnalysisTask": null,
-                "AiRecognitionTaskSet": [],
                 "MiniProgramPublishTask": null,
-                "ReviewAudioVideoTask": null
+                "Name": "hy-test2",
+                "ReviewAudioVideoTask": null,
+                "Type": "Custom",
+                "UpdateTime": "2026-05-12T14:58:40+08:00"
             }
         ],
-        "RequestId": "6ca31e3a-6b8e-4b4e-9256-fdc700064ef3"
+        "TotalCount": 5,
+        "RequestId": "884b286f-de85-4065-a5d5-64ce54dfe5bf"
     }
 }
 ```
 
-**Example 2: 查询所有的任务流模板**
+**Example 2: 查询指定应用全部任务流**
 
-查询所有的任务流模板的详情，共查到3个任务流模板
+
 
 Input: 
 
 ```
-tccli vod DescribeProcedureTemplates --cli-unfold-argument ```
+tccli vod DescribeProcedureTemplates --cli-unfold-argument  \
+    --SubAppId 221094
+```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 3,
         "ProcedureTemplateSet": [
             {
-                "Name": "我的任务流A",
-                "Type": "Custom",
-                "Comment": "我的任务流A",
-                "UpdateTime": "2018-10-01T18:00:00",
-                "CreateTime": "2018-10-01T18:00:00",
+                "AiAnalysisTask": null,
+                "AiContentReviewTask": null,
+                "AiRecognitionTask": {
+                    "Definition": 70
+                },
+                "AiRecognitionTaskSet": [],
+                "Comment": "",
+                "CreateTime": "2019-10-23T20:47:15+08:00",
                 "MediaProcessTask": {
+                    "AdaptiveDynamicStreamingTaskSet": [],
+                    "AnimatedGraphicTaskSet": [],
+                    "CoverBySnapshotTaskSet": [],
+                    "ImageSpriteTaskSet": [],
+                    "SampleSnapshotTaskSet": [],
+                    "SnapshotByTimeOffsetTaskSet": [],
                     "TranscodeTaskSet": [
                         {
-                            "Definition": 20,
-                            "WatermarkSet": [],
-                            "MosaicSet": [],
-                            "TraceWatermark": {
-                                "Switch": "OFF",
-                                "Definition": 0
-                            },
-                            "StartTimeOffset": 0,
+                            "BlindWatermark": null,
                             "CopyRightWatermark": {
                                 "Text": ""
                             },
+                            "Definition": 1010,
+                            "EndTimeOffset": 0,
                             "HeadTailSet": [],
-                            "EndTimeOffset": 0
-                        },
-                        {
-                            "Definition": 30,
-                            "WatermarkSet": [],
                             "MosaicSet": [],
-                            "TraceWatermark": {
-                                "Switch": "OFF",
-                                "Definition": 0
-                            },
                             "StartTimeOffset": 0,
-                            "CopyRightWatermark": {
-                                "Text": ""
-                            },
-                            "HeadTailSet": [],
-                            "EndTimeOffset": 0
-                        },
-                        {
-                            "Definition": 40,
-                            "WatermarkSet": [],
-                            "MosaicSet": [],
+                            "SubtitleInfoSet": [],
                             "TraceWatermark": {
-                                "Switch": "OFF",
-                                "Definition": 0
+                                "Definition": 0,
+                                "Switch": ""
                             },
-                            "StartTimeOffset": 0,
-                            "CopyRightWatermark": {
-                                "Text": ""
-                            },
-                            "HeadTailSet": [],
-                            "EndTimeOffset": 0
+                            "WatermarkSet": []
                         }
-                    ],
-                    "AnimatedGraphicTaskSet": [],
-                    "SnapshotByTimeOffsetTaskSet": [],
-                    "SampleSnapshotTaskSet": [],
-                    "ImageSpriteTaskSet": [],
-                    "CoverBySnapshotTaskSet": []
+                    ]
                 },
-                "AiContentReviewTask": null,
-                "AiAnalysisTask": null,
-                "AiRecognitionTaskSet": [],
                 "MiniProgramPublishTask": null,
-                "ReviewAudioVideoTask": null
-            },
-            {
-                "Name": "我的任务流B",
-                "Type": "Custom",
-                "Comment": "我的任务流B",
-                "UpdateTime": "2018-10-01T18:00:00",
-                "CreateTime": "2018-10-01T18:00:00",
-                "MediaProcessTask": {
-                    "TranscodeTaskSet": [
-                        {
-                            "Definition": 20,
-                            "WatermarkSet": [],
-                            "MosaicSet": [],
-                            "TraceWatermark": {
-                                "Switch": "OFF",
-                                "Definition": 0
-                            },
-                            "StartTimeOffset": 0,
-                            "CopyRightWatermark": {
-                                "Text": ""
-                            },
-                            "HeadTailSet": [],
-                            "EndTimeOffset": 0
-                        },
-                        {
-                            "Definition": 30,
-                            "WatermarkSet": [],
-                            "MosaicSet": [],
-                            "TraceWatermark": {
-                                "Switch": "OFF",
-                                "Definition": 0
-                            },
-                            "StartTimeOffset": 0,
-                            "CopyRightWatermark": {
-                                "Text": ""
-                            },
-                            "HeadTailSet": [],
-                            "EndTimeOffset": 0
-                        },
-                        {
-                            "Definition": 40,
-                            "WatermarkSet": [],
-                            "MosaicSet": [],
-                            "TraceWatermark": {
-                                "Switch": "OFF",
-                                "Definition": 0
-                            },
-                            "StartTimeOffset": 0,
-                            "CopyRightWatermark": {
-                                "Text": ""
-                            },
-                            "HeadTailSet": [],
-                            "EndTimeOffset": 0
-                        }
-                    ],
-                    "AnimatedGraphicTaskSet": [],
-                    "SnapshotByTimeOffsetTaskSet": [],
-                    "SampleSnapshotTaskSet": [],
-                    "ImageSpriteTaskSet": [],
-                    "CoverBySnapshotTaskSet": []
-                },
-                "AiContentReviewTask": null,
-                "AiAnalysisTask": null,
-                "AiRecognitionTaskSet": [],
-                "MiniProgramPublishTask": null,
-                "ReviewAudioVideoTask": null
-            },
-            {
-                "Name": "我的任务流C",
-                "Type": "Custom",
-                "Comment": "我的任务流C",
-                "UpdateTime": "2018-10-01T18:00:00",
-                "CreateTime": "2018-10-01T18:00:00",
-                "MediaProcessTask": null,
-                "AiContentReviewTask": {
-                    "Definition": 10
-                },
-                "AiAnalysisTask": null,
-                "AiRecognitionTaskSet": [],
-                "MiniProgramPublishTask": null,
-                "ReviewAudioVideoTask": null
+                "Name": "default",
+                "ReviewAudioVideoTask": null,
+                "Type": "Preset",
+                "UpdateTime": "2019-10-23T20:47:15+08:00"
             }
         ],
-        "RequestId": "6ca31e3a-6b8e-4b4e-9256-fdc700064ef3"
+        "TotalCount": 5,
+        "RequestId": "84dc6ce1-df4c-4950-88a4-1d9c4cf96e2d"
     }
 }
 ```
