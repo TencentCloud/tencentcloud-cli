@@ -327,22 +327,36 @@ class Loader(object):
         param_info[para["name"]]["members"] = member
         return param_info
 
-    def _get_param_info(self, param_model, object_model):
+    def _get_param_info(self, param_model, object_model, visited=None):
+        if visited is None:
+            visited = set()
+
         param_info = {}
         for para in param_model:
             if para["type"] == "list":
                 if para["member"] not in BASE_TYPE:
+                    if para["member"] in visited:
+                        self._filling_param_info(param_info, para, "list", [para["member"]])
+                        continue
+                    visited.add(para["member"])
                     self._filling_param_info(
                         param_info, para, "list",
-                        [self._get_param_info(object_model[para["member"]]["members"], object_model)])
+                        [self._get_param_info(object_model[para["member"]]["members"], object_model, visited)]
+                    )
+                    visited.remove(para["member"])
                 else:
-                    self._filling_param_info(
-                        param_info, para, "list", [para["member"]])
+                    self._filling_param_info(param_info, para, "list", [para["member"]])
             else:
                 if para["member"] not in BASE_TYPE:
+                    if para["member"] in visited:
+                        self._filling_param_info(param_info, para, para["member"], para["member"])
+                        continue
+                    visited.add(para["member"])
                     param_info = self._filling_param_info(
                         param_info, para, para["member"],
-                        self._get_param_info(object_model[para["member"]]["members"], object_model))
+                        self._get_param_info(object_model[para["member"]]["members"], object_model, visited)
+                    )
+                    visited.remove(para["member"])
                 else:
                     self._filling_param_info(param_info, para, para["member"], para["member"])
         return param_info
@@ -383,9 +397,10 @@ class Loader(object):
         service_model = self.get_service_model(service, version)
         object_model = service_model["objects"]
         all_param_list = []
+        visited = set()
         for para in object_model[action + "Request"]["members"]:
             param_list = []
-            self._get_unfold_param_info(object_model, all_param_list, param_list, para)
+            self._get_unfold_param_info(object_model, all_param_list, param_list, para, visited)
 
         if param_array:
             all_param_list = self._add_array_item(all_param_list, profile)
@@ -409,19 +424,25 @@ class Loader(object):
                         all_param_list.append(tmp)
         return all_param_list
 
-    def _recur_get_unfold_param_info(self, param_model, object_model, return_param_list, param_list):
+    def _recur_get_unfold_param_info(self, param_model, object_model, return_param_list, param_list, visited):
         for para in param_model:
-            self._get_unfold_param_info(object_model, return_param_list, param_list, para)
+            self._get_unfold_param_info(object_model, return_param_list, param_list, para, visited)
         if param_list.pop().isdigit():
             param_list.pop()
 
-    def _get_unfold_param_info(self, object_model, return_param_list, param_list, para):
+    def _get_unfold_param_info(self, object_model, return_param_list, param_list, para, visited):
         param_list.append(para["name"])
         if para["type"] == "list" and para["member"] not in BASE_TYPE:
             param_list.append('0')
         if para["member"] not in BASE_TYPE:
+            if para["member"] in visited:
+                if param_list:
+                    param_list.pop()
+                return
+            visited.add(para["member"])
             self._recur_get_unfold_param_info(object_model[para["member"]]["members"],
-                                              object_model, return_param_list, param_list)
+                                              object_model, return_param_list, param_list, visited)
+            visited.remove(para["member"])
         else:
             tmp = copy.deepcopy(param_list)
             return_param_list.append(tmp)
