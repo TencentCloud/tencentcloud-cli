@@ -93,7 +93,7 @@
     "CreateVariable": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVariable\n<公共请求参数>\n\n{\n    \"Name\": \"MyPassword\",\n    \"Value\": \"abcabc\",\n    \"Type\": 2\n}",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVariable\n<公共请求参数>\n\n{\n    \"Name\": \"MyPassword\",\n    \"Value\": \"testvalue\",\n    \"Type\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"VariableId\": \"var-b035ds\",\n        \"RequestId\": \"5f124d6f-b035-4d29-9467-dd62eccdbf23\"\n    }\n}",
         "title": "创建变量"
       }

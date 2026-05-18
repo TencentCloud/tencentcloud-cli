@@ -16,6 +16,14 @@
         "title": "创建业务资源测试用例"
       }
     ],
+    "CreateCompanyDirectoryConfig": [
+      {
+        "document": "示例是以微软 AAD 配置参考，强烈建议接口调用时，Scene填QuickStart，会自动生成一些兼容配置，Config为JSON 字符串，不同类型配置是不一致的。返回值的Id表示目录Id，非常重要，后续查询编辑都要用到此Id",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCompanyDirectoryConfig\n<公共请求参数>\n\n{\n    \"Type\": \"MicrosoftEntraID\",\n    \"Name\": \"AAD配置测试\",\n    \"Config\": \"{\\\"azure_tenant_id\\\":\\\"目录（租户）ID，必填\\\",\\\"client_id\\\":\\\"应用程序(客户端) ID，必填\\\",\\\"client_secret\\\":\\\"客户端密码值，必填\\\",\\\"cloud_type\\\":\\\"版本类型,必填，可选值为 Global 是国际版, 21Vianet 是中国版\\\"}\",\n    \"SyncEnable\": true,\n    \"SyncPolicy\": \"\",\n    \"SyncPolicyParams\": \"\",\n    \"CreateAuthConfig\": true,\n    \"DisplayOnLoginPage\": true,\n    \"Scene\": \"QuickStart\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AuthConfigId\": 121773,\n            \"AuthMethods\": [\n                \"SSO认证\"\n            ],\n            \"AuthPolicyId\": 39217,\n            \"AuthSourceId\": \"ioa-union-260092225bqX2szz6RRUDUxaRN5EdoA\",\n            \"AuthSupportPlatforms\": [\n                \"PC\"\n            ],\n            \"CreateAuthConfig\": true,\n            \"Id\": 278390,\n            \"IdentifySourceId\": \"ioa-union-260092225bqX2szz6RRUDUxaRN5EdoA\",\n            \"Name\": \"AAD配置测试\"\n        },\n        \"RequestId\": \"a7246c21-50d0-4893-bc9e-80f24dc9e916\"\n    }\n}",
+        "title": "创建企业目录配置示例"
+      }
+    ],
     "CreateDLPFileDetectTask": [
       {
         "document": "直接指定节点鉴定文件",
@@ -124,6 +132,14 @@
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBusinessResources\n<公共请求参数>\n\n{\n    \"AreaId\": 108,\n    \"ServiceName\": \"名称\",\n    \"Keywords\": \"资源\",\n    \"StartTime\": \"2002-01-02 15:04:05\",\n    \"EndTime\": \"2022-07-02 15:04:05\",\n    \"Condition\": {\n        \"Sort\": {\n            \"Field\": \"Level\",\n            \"Order\": \"desc\"\n        },\n        \"PageNum\": 0,\n        \"PageSize\": 10\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Levels\": 5000,\n                    \"SmartGateNames\": \"网关名称\",\n                    \"CreateTime\": \"2022-07-21 10:24:43\",\n                    \"DetectState\": 1,\n                    \"DetectInfo\": \"[]\",\n                    \"DetectTime\": \"2022-07-21 10:24:43\",\n                    \"AreaId\": 108,\n                    \"ServiceId\": 62,\n                    \"ServiceName\": \"资源名称\",\n                    \"ServiceType\": \"domain\",\n                    \"ServiceAddress\": \"*.baidu.com\",\n                    \"DirectConn\": 0,\n                    \"ServicePort\": \"all\",\n                    \"UpdateTime\": \"2022-07-21 10:24:43\",\n                    \"Remark\": \"\",\n                    \"SmartGateIds\": [\n                        1\n                    ],\n                    \"Protocol\": 2\n                }\n            ]\n        },\n        \"RequestId\": \"1658370329.784533\"\n    }\n}",
         "title": "获取业务资源"
+      }
+    ],
+    "DescribeCompanyDirectoryConfig": [
+      {
+        "document": "Config为目录生成后的完整配置，敏感字段会被直接脱敏返回",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCompanyDirectoryConfig\n<公共请求参数>\n\n{\n    \"Id\": 278390\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Config\": \"{\\\"attribute_map\\\":{\\\"avatar\\\":\\\"-\\\",\\\"email\\\":\\\"mail\\\",\\\"extended_id\\\":\\\"-\\\",\\\"name\\\":\\\"displayName\\\",\\\"phone\\\":\\\"mobilePhone\\\",\\\"user_id\\\":\\\"userPrincipalName\\\"},\\\"azure_tenant_id\\\":\\\"目录（租户）ID，必填\\\",\\\"client_id\\\":\\\"应用程序(客户端) ID，必填\\\",\\\"client_secret\\\":\\\"******\\\",\\\"cloud_type\\\":\\\"版本类型,必填，可选值为 Global 是国际版, 21Vianet 是中国版\\\",\\\"extended_attributes\\\":[],\\\"group_ids\\\":\\\"\\\",\\\"sensitive_fields\\\":[\\\"client_secret\\\"],\\\"status_attribute\\\":{\\\"type\\\":\\\"none\\\"}}\",\n            \"CreateAuthConfig\": true,\n            \"Description\": \"\",\n            \"DisplayOnLoginPage\": true,\n            \"Id\": 278390,\n            \"Name\": \"AAD配置测试\",\n            \"SourceId\": \"ioa-union-260092225bqX2szz6RRUDUxaRN5EdoA\",\n            \"SyncEnable\": true,\n            \"SyncPolicy\": \"4hours\",\n            \"SyncPolicyParams\": \"{\\\"week\\\":\\\"SAT\\\",\\\"hour\\\":\\\"02\\\",\\\"minute\\\":\\\"30\\\"}\",\n            \"Type\": \"MicrosoftEntraID\"\n        },\n        \"RequestId\": \"ed8ce64f-ecd5-46b4-a47c-9bdc394e3db3\"\n    }\n}",
+        "title": "获取企业目录配置详情"
       }
     ],
     "DescribeDLPEdgeNodeGroups": [
@@ -360,6 +376,14 @@
         "input": "Path : /capi/GatewayResource/ModifyBusinessResource\n\n<body>\n{\n    \"AreaId\":156,\n    \"DirectConn\":0,\n    \"Protocol\":2,\n    \"Levels\":5000,\n    \"ServiceType\":\"domain\",\n    \"SmartGates\":[\n        186\n    ],\n    \"ServiceName\":\"资源名称\",\n    \"ServiceAddress\":\"*tencent1658370342.com\",\n    \"ServiceId\":112,\n    \"ServicePort\":\"all\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1658370416.5806396\"\n    }\n}",
         "title": "修改业务资源"
+      }
+    ],
+    "ModifyCompanyDirectoryConfig": [
+      {
+        "document": "先通过DescribeCompanyDirectoryConfig 获取配置数据后，在修改数据调用此接口请求变更",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCompanyDirectoryConfig\n<公共请求参数>\n\n{\n    \"Type\": \"MicrosoftEntraID\",\n    \"Name\": \"AAD配置测试2\",\n    \"Config\": \"{\\\"attribute_map\\\":{\\\"avatar\\\":\\\"-\\\",\\\"email\\\":\\\"mail\\\",\\\"extended_id\\\":\\\"-\\\",\\\"name\\\":\\\"displayName\\\",\\\"phone\\\":\\\"mobilePhone\\\",\\\"user_id\\\":\\\"userPrincipalName\\\"},\\\"azure_tenant_id\\\":\\\"目录（租户）ID，必填\\\",\\\"client_id\\\":\\\"应用程序(客户端) ID，必填\\\",\\\"client_secret\\\":\\\"******\\\",\\\"cloud_type\\\":\\\"版本类型,必填，可选值为 Global 是国际版, 21Vianet 是中国版\\\",\\\"extended_attributes\\\":[],\\\"group_ids\\\":\\\"\\\",\\\"sensitive_fields\\\":[\\\"client_secret\\\"],\\\"status_attribute\\\":{\\\"type\\\":\\\"none\\\"}}\",\n    \"SyncEnable\": true,\n    \"SyncPolicy\": \"4hours\",\n    \"SyncPolicyParams\": \"{\\\"week\\\":\\\"SAT\\\",\\\"hour\\\":\\\"02\\\",\\\"minute\\\":\\\"30\\\"}\",\n    \"CreateAuthConfig\": true,\n    \"DisplayOnLoginPage\": true,\n    \"Id\": 278390\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AuthConfigId\": 0,\n            \"AuthMethods\": [],\n            \"AuthPolicyId\": 0,\n            \"AuthSourceId\": \"\",\n            \"AuthSupportPlatforms\": [],\n            \"CreateAuthConfig\": true,\n            \"Id\": 278390,\n            \"IdentifySourceId\": \"ioa-union-260092225bqX2szz6RRUDUxaRN5EdoA\",\n            \"Name\": \"AAD配置测试2\"\n        },\n        \"RequestId\": \"91d4f838-654f-4f6e-b265-b012b81b4614\"\n    }\n}",
+        "title": "更新目录配置示例"
       }
     ],
     "ModifyDeviceTrustStatus": [

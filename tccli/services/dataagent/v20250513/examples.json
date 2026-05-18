@@ -96,6 +96,14 @@
         "title": "查询上传任务"
       }
     ],
+    "GetUserInstanceList": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetUserInstanceList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bc17beaf-a9ea-4b47-9165-80cfbb4c4903\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ModifyChunk": [
       {
         "document": "编辑修改分片",

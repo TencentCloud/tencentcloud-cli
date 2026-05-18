@@ -64,7 +64,7 @@
       "status": "online"
     },
     "CreateVariable": {
-      "document": "创建变量 ",
+      "document": "创建变量",
       "input": "CreateVariableRequest",
       "name": "创建变量",
       "output": "CreateVariableResponse",
@@ -2751,7 +2751,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "变量名",
+          "document": "<p>变量名</p>",
           "example": "Key",
           "member": "string",
           "name": "Name",
@@ -2760,7 +2760,7 @@
         },
         {
           "disabled": false,
-          "document": "变量值",
+          "document": "<p>变量值</p>",
           "example": "Value",
           "member": "string",
           "name": "Value",
@@ -2769,7 +2769,7 @@
         },
         {
           "disabled": false,
-          "document": "变量类型  1：显式   2：隐藏",
+          "document": "<p>变量类型  1：显式   2：隐藏</p>",
           "example": "2",
           "member": "int64",
           "name": "Type",
@@ -2778,8 +2778,8 @@
         },
         {
           "disabled": false,
-          "document": "描述信息",
-          "example": "无",
+          "document": "<p>描述信息</p>",
+          "example": "test Remark",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -2787,10 +2787,55 @@
         },
         {
           "disabled": false,
-          "document": "工作空间 SerialId",
+          "document": "<p>工作空间 SerialId</p>",
           "example": "space-1327",
           "member": "string",
           "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>变量值类型</p><p>枚举值：</p><ul><li>0： 自定义变量</li><li>1： 凭据值</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ValueType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据所在地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "SecretRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据名称</p>",
+          "example": "testname",
+          "member": "string",
+          "name": "SecretName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据版本</p>",
+          "example": "凭据版本",
+          "member": "string",
+          "name": "SecretVersionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据值md5</p>",
+          "example": "testmd5",
+          "member": "string",
+          "name": "SecretValueMd5",
           "required": false,
           "type": "string"
         }
@@ -2802,11 +2847,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "变量Id",
-          "example": "无",
+          "document": "<p>变量Id</p>",
+          "example": "var-b035ds",
           "member": "string",
           "name": "VariableId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8483,6 +8528,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>setats集群的名字</p>",
+          "example": "setats-test",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>setats集群注释</p>",
+          "example": "setats测试集群",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9457,7 +9524,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "变量id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>变量id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx-111",
           "member": "string",
           "name": "SerialId",
@@ -9467,8 +9534,8 @@
         },
         {
           "disabled": false,
-          "document": "变量名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxx",
+          "document": "<p>变量名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testname",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -9477,8 +9544,8 @@
         },
         {
           "disabled": false,
-          "document": "变量值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxx",
+          "document": "<p>变量值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testvalue",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -9487,7 +9554,47 @@
         },
         {
           "disabled": false,
-          "document": "变量值是否隐藏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>变量值类型</p><p>枚举值：</p><ul><li>0： 自定义变量</li><li>1： 凭据值</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ValueType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据所在地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "SecretRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据名称</p>",
+          "example": "testname",
+          "member": "string",
+          "name": "SecretName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据版本</p>",
+          "example": "testversion",
+          "member": "string",
+          "name": "SecretVersionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>变量值是否隐藏</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -9497,8 +9604,8 @@
         },
         {
           "disabled": false,
-          "document": "变量描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "<p>变量描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test Remark",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -9507,7 +9614,7 @@
         },
         {
           "disabled": false,
-          "document": "变量创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>变量创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021",
           "member": "string",
           "name": "CreateTime",
@@ -9517,8 +9624,8 @@
         },
         {
           "disabled": false,
-          "document": "变量创建人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "x x x",
+          "document": "<p>变量创建人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2510567563",
           "member": "string",
           "name": "CreatorUin",
           "output_required": true,

@@ -15910,6 +15910,24 @@
           "name": "ImageEncode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>tool_call 场景工具名称</p>",
+          "example": "exec",
+          "member": "string",
+          "name": "ToolName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>tool_call 场景工具参数</p>",
+          "example": "rm -rf /",
+          "member": "string",
+          "name": "ToolArgs",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

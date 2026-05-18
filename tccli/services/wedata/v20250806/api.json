@@ -16258,7 +16258,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "135",
           "member": "string",
           "name": "ProjectId",
@@ -16267,7 +16267,7 @@
         },
         {
           "disabled": false,
-          "document": "请求的数据页数。默认值为1，取值大于等于1",
+          "document": "<p>请求的数据页数。默认值为1，取值大于等于1</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -16276,7 +16276,7 @@
         },
         {
           "disabled": false,
-          "document": "每页显示的数据条数。默认值为10 ，最小值为10，最大值为200",
+          "document": "<p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -16285,7 +16285,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "<p>任务名称</p>",
           "example": "任务名",
           "member": "string",
           "name": "TaskName",
@@ -16294,7 +16294,7 @@
         },
         {
           "disabled": false,
-          "document": "所属工作流ID",
+          "document": "<p>所属工作流ID</p>",
           "example": "20250904154242224",
           "member": "string",
           "name": "WorkflowId",
@@ -16303,7 +16303,7 @@
         },
         {
           "disabled": false,
-          "document": "责任人ID",
+          "document": "<p>责任人ID</p>",
           "example": "135",
           "member": "string",
           "name": "OwnerUin",
@@ -16312,7 +16312,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型",
+          "document": "<p>任务类型</p>",
           "example": "26",
           "member": "int64",
           "name": "TaskTypeId",
@@ -16321,7 +16321,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态\n* N: 新建 \n* Y: 调度中 \n* F: 已下线 \n* O: 已暂停 \n* T: 下线中 \n* INVALID: 已失效",
+          "document": "<p>任务状态</p><ul><li>N: 新建 </li><li>Y: 调度中 </li><li>F: 已下线 </li><li>O: 已暂停 </li><li>T: 下线中 </li><li>INVALID: 已失效</li></ul>",
           "example": "F",
           "member": "string",
           "name": "Status",
@@ -16330,7 +16330,7 @@
         },
         {
           "disabled": false,
-          "document": "提交状态",
+          "document": "<p>提交状态</p>",
           "example": "true",
           "member": "bool",
           "name": "Submit",
@@ -16339,7 +16339,7 @@
         },
         {
           "disabled": false,
-          "document": "BundleId信息",
+          "document": "<p>BundleId信息</p>",
           "example": "be4b6673-96da-4402-beae-a89dbc4d627b",
           "member": "string",
           "name": "BundleId",
@@ -16348,7 +16348,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人ID",
+          "document": "<p>创建人ID</p>",
           "example": "135",
           "member": "string",
           "name": "CreateUserUin",
@@ -16357,7 +16357,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间",
+          "document": "<p>修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>",
           "example": "[\"2023-06-20 14:29:59\",\"2026-06-20 14:29:59\"]",
           "member": "string",
           "name": "ModifyTime",
@@ -16366,10 +16366,37 @@
         },
         {
           "disabled": false,
-          "document": "创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间",
+          "document": "<p>创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>",
           "example": "[\"2023-06-20 14:29:59\",\"2026-06-20 14:29:59\"]",
           "member": "string",
           "name": "CreateTime",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务文件夹路径列表，支持多选，从工作流下的目录开始填写，节点类型无需填写。选择上层文件夹时，自动包含所有子文件夹下的任务。 路径格式为绝对路径，如 &quot;/子目录A&quot;，根目录为 &quot;/&quot;</p>",
+          "example": "[\"/folder\"]",
+          "member": "string",
+          "name": "TaskFolderPathList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流文件夹路径列表，支持多选。选择上层文件夹时，自动包含所有子文件夹下工作流的任务。 路径格式为绝对路径，如 &quot;/数据开发/子目录&quot;，根目录为 &quot;/&quot;。</p>",
+          "example": "[\"/folder\"]",
+          "member": "string",
+          "name": "WorkflowFolderPathList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点类型列表，用于按任务节点分类筛选，支持多选， 可选值参考下面枚举类型 。 传入后将根据这些节点类型包含的任务类型ID列表进行筛选。</p><p>枚举值：</p><ul><li>ETL： 数据集成节点</li><li>EMR： EMR节点</li><li>DLC： DLC节点</li><li>SETATS： SETATS节点</li><li>TDSQL： TDSQL节点</li><li>TCHOUSE： TCHOUSE节点</li><li>GENERAL： 通用节点</li><li>DATA_QUALITY： 数据质量节点</li><li>INDICATOR： 指标节点</li><li>TI_ONE： TI-ONE机器学习节点</li></ul>",
+          "example": "[\"EMR\"]",
+          "member": "string",
+          "name": "TaskNodeTypeList",
           "required": false,
           "type": "list"
         }
@@ -16381,7 +16408,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务分页信息",
+          "document": "<p>任务分页信息</p>",
           "example": "无",
           "member": "ListTaskInfo",
           "name": "Data",
@@ -16950,7 +16977,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1464962169590902784",
           "member": "string",
           "name": "ProjectId",
@@ -16959,7 +16986,7 @@
         },
         {
           "disabled": false,
-          "document": "请求的数据页数。默认值为1，取值大于等于1",
+          "document": "<p>请求的数据页数。默认值为1，取值大于等于1</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -16968,7 +16995,7 @@
         },
         {
           "disabled": false,
-          "document": "每页显示的数据条数。默认值为10 ，最小值为10，最大值为200",
+          "document": "<p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -16977,7 +17004,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "<p>任务名称</p>",
           "example": "name",
           "member": "string",
           "name": "TaskName",
@@ -16986,7 +17013,7 @@
         },
         {
           "disabled": false,
-          "document": "所属工作流ID",
+          "document": "<p>所属工作流ID</p>",
           "example": "185c35d4-958e-4574-9f6c-3eca00b95870",
           "member": "string",
           "name": "WorkflowId",
@@ -16995,7 +17022,7 @@
         },
         {
           "disabled": false,
-          "document": "责任人ID",
+          "document": "<p>责任人ID</p>",
           "example": "100028579801",
           "member": "string",
           "name": "OwnerUin",
@@ -17004,7 +17031,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型",
+          "document": "<p>任务类型</p>",
           "example": "35",
           "member": "int64",
           "name": "TaskTypeId",
@@ -17013,7 +17040,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态\n* N: 新建 \n* Y: 调度中 \n",
+          "document": "<p>任务状态</p><ul><li>N: 新建 </li><li>Y: 调度中</li></ul>",
           "example": "N",
           "member": "string",
           "name": "Status",
@@ -17022,7 +17049,7 @@
         },
         {
           "disabled": false,
-          "document": "提交状态",
+          "document": "<p>提交状态</p>",
           "example": "true",
           "member": "bool",
           "name": "Submit",
@@ -17031,7 +17058,7 @@
         },
         {
           "disabled": false,
-          "document": "BundleId信息",
+          "document": "<p>BundleId信息</p>",
           "example": "be4b6673-96da-4402-beae-a89dbc4d627b",
           "member": "string",
           "name": "BundleId",
@@ -17040,7 +17067,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人ID",
+          "document": "<p>创建人ID</p>",
           "example": "100028579801",
           "member": "string",
           "name": "CreateUserUin",
@@ -17049,7 +17076,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间",
+          "document": "<p>修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>",
           "example": "[\"2023-06-20 14:29:59\",\"2026-06-20 14:29:59\"]",
           "member": "string",
           "name": "ModifyTime",
@@ -17058,10 +17085,37 @@
         },
         {
           "disabled": false,
-          "document": "创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间",
+          "document": "<p>创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>",
           "example": "[\"2023-06-20 14:29:59\",\"2026-06-20 14:29:59\"]",
           "member": "string",
           "name": "CreateTime",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务文件夹路径列表，支持多选，从工作流下的目录开始填写，节点类型无需填写。选择上层文件夹时，自动包含所有子文件夹下的任务。 路径格式为绝对路径，如 &quot;/子目录A&quot;，根目录为 &quot;/&quot;</p>",
+          "example": "[\"/folder\"]",
+          "member": "string",
+          "name": "TaskFolderPathList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流文件夹路径列表，支持多选。选择上层文件夹时，自动包含所有子文件夹下工作流的任务。 路径格式为绝对路径，如 &quot;/数据开发/子目录&quot;，根目录为 &quot;/&quot;</p>",
+          "example": "[\"/folder\"]",
+          "member": "string",
+          "name": "WorkflowFolderPathList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点类型列表，用于按任务节点分类筛选，支持多选，可选值参考下面枚举类型 。 传入后将根据这些节点类型包含的任务类型ID列表进行筛选。</p><p>枚举值：</p><ul><li>ETL： 数据集成节点</li><li>EMR： EMR节点</li><li>DLC： DLC节点</li><li>SETATS： SETATS节点</li><li>TDSQL： TDSQL节点</li><li>TCHOUSE： TCHOUSE节点</li><li>GENERAL： 通用节点</li><li>DATA_QUALITY： 数据质量节点</li><li>INDICATOR： 指标节点</li><li>TI_ONE： TI-ONE机器学习节点</li></ul>",
+          "example": "[\"EMR\"]",
+          "member": "string",
+          "name": "TaskNodeTypeList",
           "required": false,
           "type": "list"
         }
@@ -17073,7 +17127,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务分页信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务分页信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ListTriggerTaskInfo",
           "name": "Data",

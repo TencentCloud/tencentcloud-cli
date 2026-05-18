@@ -239,13 +239,13 @@
       },
       {
         "document": "创建 Prometheus 集成-使用密钥（name、secretId 和 secretKey 必填，organizationIds 是选填，选填的字段如果不填可直接删除）",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-test\",\n    \"Kind\": \"tencentcloud-monitor-app\",\n    \"Content\": \"{\\\"kind\\\":\\\"tencentcloud-monitor-app\\\",\\\"spec\\\":{\\\"dataSourceSpec\\\":{\\\"name\\\":\\\"prometheus-monitor\\\",\\\"authProvider\\\":{\\\"__anyOf\\\":\\\"使用密钥\\\",\\\"secretId\\\":\\\"AKIDtest\\\",\\\"secretKey\\\":\\\"test\\\"}},\\\"grafanaSpec\\\":{\\\"organizationIds\\\":[\\\"2\\\"]}}}\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-test\",\n    \"Kind\": \"tencentcloud-monitor-app\",\n    \"Content\": \"{\\\"kind\\\":\\\"tencentcloud-monitor-app\\\",\\\"spec\\\":{\\\"dataSourceSpec\\\":{\\\"name\\\":\\\"prometheus-monitor\\\",\\\"authProvider\\\":{\\\"secretId\\\":\\\"AKIDtest\\\",\\\"secretKey\\\":\\\"test\\\"}},\\\"grafanaSpec\\\":{\\\"organizationIds\\\":[\\\"2\\\"]}}}\"\n}",
         "output": "{\n    \"Response\": {\n        \"IntegrationId\": \"integration-test\",\n        \"RequestId\": \"requestid\"\n    }\n}",
         "title": "创建 Prometheus 集成-使用密钥"
       },
       {
         "document": "创建日志服务集成-使用密钥（name、secretId 和 secretKey 必填，organizationIds 是选填，选填的字段如果不填可直接删除）",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-test\",\n    \"Kind\": \"tencent-cls-grafana-datasource-v2\",\n    \"Content\": \"{\\\"kind\\\":\\\"tencent-cls-grafana-datasource-v2\\\",\\\"spec\\\":{\\\"dataSourceSpec\\\":{\\\"name\\\":\\\"prometheus-cls\\\",\\\"authProvider\\\":{\\\"__anyOf\\\":\\\"使用密钥\\\",\\\"secretId\\\":\\\"AKIDtest\\\",\\\"secretKey\\\":\\\"test\\\"}},\\\"grafanaSpec\\\":{\\\"organizationIds\\\":[\\\"2\\\"]}}}\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-test\",\n    \"Kind\": \"tencent-cls-grafana-datasource-v3\",\n    \"Content\": \"{\\\"kind\\\":\\\"tencent-cls-grafana-datasource-v3\\\",\\\"spec\\\":{\\\"dataSourceSpec\\\":{\\\"name\\\":\\\"test\\\",\\\"secretId\\\":\\\"XXXXXXXXXXXXXXXXXXXXAKIDXXXXXXXXXXXX\\\",\\\"secretKey\\\":\\\"XXXXXXXXXXXXXXXXXXXXAKIDXXXXXXXX\\\"},\\\"grafanaSpec\\\":{\\\"organizationIds\\\":[]}}}\"\n}",
         "output": "{\n    \"Response\": {\n        \"IntegrationId\": \"integration-test\",\n        \"RequestId\": \"requestid\"\n    }\n}",
         "title": "创建日志服务集成-使用密钥"
       }
@@ -372,14 +372,6 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSSOAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"UserId\": \"100000000\",\n    \"Role\": [\n        {\n            \"Organization\": \"Org\",\n            \"Role\": \"Admin\"\n        }\n    ],\n    \"Notes\": \"授权该用户\"\n}",
         "output": "{\n    \"Response\": {\n        \"UserId\": \"100000000\",\n        \"RequestId\": \"requestid\"\n    }\n}",
         "title": "授权腾讯云用户"
-      }
-    ],
-    "CreateServiceDiscovery": [
-      {
-        "document": "",
-        "input": "https://monitor.tencentcloudapi.com/?Action=CreateServiceDiscovery\n&InstanceId=prom-sdfk2342a\n&KubeClusterId=cls-pwerf3k3\n&KubeType=1\n&Type=1\n&Yaml=yaml\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ServiceDiscovery\": {\n            \"Kind\": \"ServiceMonitor\",\n            \"Name\": \"name\",\n            \"Namespace\": \"namespace\",\n            \"Selector\": \"{\\\"matchLabels\\\":{\\\"k8sapp\\\":\\\"mysql-exporter\\\"}}\",\n            \"Yaml\": \"apiVersion: monitoring.coreos.com...\",\n            \"NamespaceSelector\": \"{\\\"matchNames\\\":[\\\"demo-ns\\\"]}\",\n            \"Endpoints\": \"[{\\\"port\\\":\\\"tcp-port\\\",\\\"path\\\":\\\"/metrics\\\",\\\"interval\\\":\\\"30s\\\",\\\"bearerTokenSecret\\\":{\\\"key\\\":\\\"\\\"}}]\"\n        },\n        \"RequestId\": \"nrtlca1qmunlpf51noe13qp5vyvg7mq5\"\n    }\n}",
-        "title": "创建服务发现"
       }
     ],
     "DeleteAlarmNotices": [
@@ -1098,14 +1090,6 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSSOAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\"\n}",
         "output": "{\n    \"Response\": {\n        \"AccountSet\": [\n            {\n                \"UserId\": \"100000000\",\n                \"Role\": [\n                    {\n                        \"Organization\": \"org\",\n                        \"Role\": \"Admin\"\n                    }\n                ],\n                \"Notes\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"qmunlpf51noe13qp5vyvg7mq5t4t4w6u\"\n    }\n}",
         "title": "DescribeSSOAccount"
-      }
-    ],
-    "DescribeServiceDiscovery": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceDiscovery\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-sdfk2342a\",\n    \"KubeClusterId\": \"cls-pwerf3k3\",\n    \"KubeType\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0523dedd-1235-428d-885c-9443cf9175d1\",\n        \"ServiceDiscoverySet\": [\n            {\n                \"Kind\": \"ServiceMonitor\",\n                \"Name\": \"name\",\n                \"Namespace\": \"namespace\",\n                \"Selector\": \"{\\\"matchLabels\\\":{\\\"k8sapp\\\":\\\"mysql-exporter\\\"}}\",\n                \"Yaml\": \"apiVersion: monitoring.coreos.com...\",\n                \"NamespaceSelector\": \"{\\\"matchNames\\\":[\\\"demo-ns\\\"]}\",\n                \"Endpoints\": \"[{\\\"port\\\":\\\"tcp-port\\\",\\\"path\\\":\\\"/metrics\\\",\\\"interval\\\":\\\"30s\\\",\\\"bearerTokenSecret\\\":{\\\"key\\\":\\\"\\\"}}]\"\n            }\n        ]\n    }\n}",
-        "title": "列出服务发现列表"
       }
     ],
     "DescribeStatisticData": [

@@ -24595,6 +24595,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>排队时间</p><p>单位：毫秒</p>",
+          "example": "1000",
+          "member": "int64",
+          "name": "QueueTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

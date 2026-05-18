@@ -25527,7 +25527,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "授权ID",
+          "document": "<p>授权ID取DescribeLicenseList接口List对象下的LicenseId参数值</p>",
           "example": "1",
           "member": "uint64",
           "name": "LicenseId",
@@ -25536,7 +25536,7 @@
         },
         {
           "disabled": false,
-          "document": "授权类型",
+          "document": "<p>授权类型</p><p>枚举值：</p><ul><li>0： 专业版-按量计费</li><li>1： 专业版-包年包月(主机安全)</li><li>2： 旗舰版-包年包月(主机安全)</li><li>3： 轻量版-LH-包年包月</li><li>6： 专业版-包年包月（云安全中心）</li><li>7： 旗舰版-包年包月（云安全中心）</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "LicenseType",
@@ -25545,8 +25545,8 @@
         },
         {
           "disabled": false,
-          "document": "资源ID",
-          "example": " ",
+          "document": "<p>资源ID,取DescribeLicenseList接口List对象下的ResourceId参数值</p>",
+          "example": "cwplic-xxxxxxxx",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -25554,8 +25554,8 @@
         },
         {
           "disabled": false,
-          "document": "<li>InstanceID、IP、\n\nMachineName 模糊查询</li>",
-          "example": "[{\"Name\":\"MachineName\",\"Values\":[\"dev\"]}]",
+          "document": "<li>InstanceID、IP、<p>MachineName 模糊查询</li></p>",
+          "example": "无",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -25563,7 +25563,7 @@
         },
         {
           "disabled": false,
-          "document": "限制条数,默认10.",
+          "document": "<p>限制条数,默认10.</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -25572,7 +25572,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量,默认0.",
+          "document": "<p>偏移量,默认0.</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -25587,7 +25587,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总条数",
+          "document": "<p>总条数</p>",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
@@ -25597,8 +25597,8 @@
         },
         {
           "disabled": false,
-          "document": "绑定机器列表信息",
-          "example": "[       {         \"MachineName\": \"测试机器\",         \"MachineWanIp\": \"10.0.0.0\",         \"MachineIp\": \"10.0.0.0\",         \"Quuid\": \"f6481aac-78f7-403e-867d-553c4af8b025\",         \"Uuid\": \"f6481aac-78f7-403e-867d-553c4af8b025\",         \"Tags\": [\"dev\"],         \"AgentStatus\": \"ONLINE\",         \"IsUnBind\": false,         \"IsSwitchBind\": false,         \"MachineExtraInfo\": {           \"WanIP\": \"10.0.0.0\",           \"PrivateIP\": \"10.0.0.0\",           \"NetworkType\": 0,           \"NetworkName\": \"dev\",           \"InstanceID\": \"ins-onxyg5w\",           \"HostName\": \"dev-one\"         }       }     ]",
+          "document": "<p>绑定机器列表信息</p>",
+          "example": "无",
           "member": "LicenseBindDetail",
           "name": "List",
           "output_required": true,
