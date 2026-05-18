@@ -1,11 +1,11 @@
 {
   "actions": {
     "DescribeUserInfo": {
-      "document": "获取用户信息，购买状态等",
+      "document": "产品已下线\n\n获取用户信息，购买状态等",
       "input": "DescribeUserInfoRequest",
       "name": "获取用户信息",
       "output": "DescribeUserInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

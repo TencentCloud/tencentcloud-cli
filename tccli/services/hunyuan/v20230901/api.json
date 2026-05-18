@@ -3933,7 +3933,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID。\t",
+          "document": "<p>任务ID。</p>",
           "example": "1376862528873414656",
           "member": "string",
           "name": "JobId",
@@ -3948,7 +3948,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功 示例值：RUN。\t",
+          "document": "<p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功 示例值：RUN。</p>",
           "example": "WAIT",
           "member": "string",
           "name": "Status",
@@ -3958,7 +3958,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码。\t",
+          "document": "<p>错误码。</p>",
           "example": "InvalidParameter",
           "member": "string",
           "name": "ErrorCode",
@@ -3968,8 +3968,8 @@
         },
         {
           "disabled": false,
-          "document": "错误信息。\t",
-          "example": "参数错误。\t",
+          "document": "<p>错误信息。</p>",
+          "example": "参数错误。",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": false,
@@ -3978,12 +3978,22 @@
         },
         {
           "disabled": false,
-          "document": "生成文件的URL地址，有效期1天。\t",
+          "document": "<p>生成文件的URL地址，有效期1天。</p>",
           "example": "无",
           "member": "File3D",
           "name": "ResultFile3Ds",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组件分割数据；</p><p>输出格式为：{\"MeshName_part_1\":{\"face_ids\":[1,2,3..],\"color\":\"#FF805C\"}}</p><p>其中，face_ids 是整型数组，表示切片的一组面片ID, color是颜色。</p>",
+          "example": "{\\\"part_0\\\":{\\\"face_ids\\\":[4560,4561,...],\\\"color\\\":\\\"#598DC6\\\"}}",
+          "member": "string",
+          "name": "PartSegmentationInfo",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5210,12 +5220,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "建议输入由AIGC生成的3D模型，建议文件大小≤100MB，面数≤1500000面，仅支持FBX格式输入。",
+          "document": "<p>建议输入由AIGC生成的3D模型，建议文件大小≤100MB，面数≤1500000面，仅支持FBX格式输入。</p>",
           "example": "无",
           "member": "InputFile3D",
           "name": "File",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型组件分割数据；<br>格式为json字符串形式，如：{\"MeshName_part_1\":{\"face_ids\":[1,2,3..],\"color\":\"#FF805C\"}}<br>其中，face_ids 是整型数组，表示切片的一组面片ID, color是颜色。</p>",
+          "example": "{\"MeshName_part_1\": {\"face_ids\": [1, 2, 3], \"color\": \"#FF805C\"}}",
+          "member": "string",
+          "name": "PartSegmentationInfo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否分步骤进行组件生成；<br>开启后，输入原始模型后，可生成带分割信息的模型以及分割数据，可对此信息编辑后再传入带有分割信息的模型和分割数据进行编辑后的组件生成；<br>此参数默认关闭。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableStagedGeneration",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5225,7 +5253,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id（有效期24小时）。",
+          "document": "<p>任务id（有效期24小时）。</p>",
           "example": "1384898587778465792",
           "member": "string",
           "name": "JobId",

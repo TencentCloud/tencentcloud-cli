@@ -9363,8 +9363,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户ID",
-          "example": "无",
+          "document": "<p>用户ID</p>",
+          "example": "9178",
           "member": "int64",
           "name": "Id",
           "output_required": false,
@@ -9373,8 +9373,8 @@
         },
         {
           "disabled": false,
-          "document": "备注",
-          "example": "无",
+          "document": "<p>备注</p>",
+          "example": "测试数据",
           "member": "string",
           "name": "Remark",
           "output_required": false,
@@ -9383,8 +9383,8 @@
         },
         {
           "disabled": false,
-          "document": "用户名（唯一）",
-          "example": "无",
+          "document": "<p>用户名（唯一）</p>",
+          "example": "7000401375",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -9393,8 +9393,8 @@
         },
         {
           "disabled": false,
-          "document": "姓名",
-          "example": "无",
+          "document": "<p>姓名</p>",
+          "example": "1229178",
           "member": "string",
           "name": "NickName",
           "output_required": false,
@@ -9403,8 +9403,8 @@
         },
         {
           "disabled": false,
-          "document": "控制菜单显示",
-          "example": "无",
+          "document": "<p>控制菜单显示</p>",
+          "example": "[\"暴露面管理\"]",
           "member": "string",
           "name": "Groups",
           "output_required": false,
@@ -9413,8 +9413,8 @@
         },
         {
           "disabled": false,
-          "document": "登录模式",
-          "example": "无",
+          "document": "<p>登录模式</p>",
+          "example": "yunapi",
           "member": "string",
           "name": "LoginMode",
           "output_required": false,
@@ -9423,8 +9423,8 @@
         },
         {
           "disabled": false,
-          "document": "用户Uin",
-          "example": "无",
+          "document": "<p>用户Uin</p>",
+          "example": "7000401375",
           "member": "string",
           "name": "Uin",
           "output_required": false,
@@ -9433,8 +9433,8 @@
         },
         {
           "disabled": false,
-          "document": "用户AppId",
-          "example": "无",
+          "document": "<p>用户AppId</p>",
+          "example": "9178",
           "member": "int64",
           "name": "AppId",
           "output_required": false,
@@ -9443,8 +9443,8 @@
         },
         {
           "disabled": false,
-          "document": "无",
-          "example": "无",
+          "document": "<p>无</p>",
+          "example": "true",
           "member": "bool",
           "name": "IsEnableHook",
           "output_required": false,
@@ -9453,8 +9453,8 @@
         },
         {
           "disabled": false,
-          "document": "是否付费客户",
-          "example": "无",
+          "document": "<p>是否付费客户</p>",
+          "example": "true",
           "member": "bool",
           "name": "IsPay",
           "output_required": false,
@@ -9463,8 +9463,8 @@
         },
         {
           "disabled": false,
-          "document": "是否可以扫描",
-          "example": "无",
+          "document": "<p>是否可以扫描</p>",
+          "example": "true",
           "member": "bool",
           "name": "HasScanPermission",
           "output_required": false,
@@ -9473,8 +9473,8 @@
         },
         {
           "disabled": false,
-          "document": "用户角色",
-          "example": "无",
+          "document": "<p>用户角色</p>",
+          "example": "admin",
           "member": "string",
           "name": "Role",
           "output_required": false,
@@ -9483,8 +9483,8 @@
         },
         {
           "disabled": false,
-          "document": "有:未购买、体验中、已到期、使用中",
-          "example": "无",
+          "document": "<p>有:未购买、体验中、已到期、使用中</p>",
+          "example": "使用中",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -9493,8 +9493,8 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
-          "example": "无",
+          "document": "<p>创建时间</p>",
+          "example": "2024-09-25 10:25:14",
           "member": "string",
           "name": "CreatedAt",
           "output_required": false,
@@ -9503,8 +9503,8 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
-          "example": "无",
+          "document": "<p>过期时间</p>",
+          "example": "2026-05-27 16:51:43",
           "member": "string",
           "name": "ExpiredAt",
           "output_required": false,
@@ -9513,8 +9513,8 @@
         },
         {
           "disabled": false,
-          "document": "是否可以查看全部数据",
-          "example": "无",
+          "document": "<p>是否可以查看全部数据</p>",
+          "example": "true",
           "member": "bool",
           "name": "CanViewAllData",
           "output_required": false,
@@ -9523,8 +9523,8 @@
         },
         {
           "disabled": false,
-          "document": "是否提交过问卷",
-          "example": "无",
+          "document": "<p>是否提交过问卷</p>",
+          "example": "true",
           "member": "bool",
           "name": "HasSubmitQuestionnaire",
           "output_required": false,
@@ -9533,10 +9533,20 @@
         },
         {
           "disabled": false,
-          "document": "是否启用仿冒监测",
-          "example": "无",
+          "document": "<p>是否启用仿冒监测</p>",
+          "example": "true",
           "member": "bool",
           "name": "EnablePhishingMonitor",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否演示模式</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDemoMode",
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -11248,7 +11258,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID",
+          "document": "<p>主键ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -11258,7 +11268,7 @@
         },
         {
           "disabled": false,
-          "document": "主域名",
+          "document": "<p>主域名</p>",
           "example": "qq.com",
           "member": "string",
           "name": "Domain",
@@ -11268,7 +11278,7 @@
         },
         {
           "disabled": false,
-          "document": "ICP",
+          "document": "<p>ICP</p>",
           "example": "粤ICP备1900xx号",
           "member": "string",
           "name": "ICP",
@@ -11278,7 +11288,7 @@
         },
         {
           "disabled": false,
-          "document": "注册时间",
+          "document": "<p>注册时间</p>",
           "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "RegisteredTime",
@@ -11288,7 +11298,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "<p>过期时间</p>",
           "example": "2099-01-01 00:00:00",
           "member": "string",
           "name": "ExpiredTime",
@@ -11298,7 +11308,7 @@
         },
         {
           "disabled": false,
-          "document": "公司",
+          "document": "<p>公司</p>",
           "example": "腾讯科技",
           "member": "string",
           "name": "Company",
@@ -11308,7 +11318,7 @@
         },
         {
           "disabled": false,
-          "document": "公共字段",
+          "document": "<p>公共字段</p>",
           "example": "无",
           "member": "DisplayToolCommon",
           "name": "DisplayToolCommon",
@@ -11318,7 +11328,7 @@
         },
         {
           "disabled": false,
-          "document": "子域名数量",
+          "document": "<p>子域名数量</p>",
           "example": "0",
           "member": "int64",
           "name": "SubDomainCount",
@@ -11328,7 +11338,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为云资产",
+          "document": "<p>是否为云资产</p>",
           "example": "1",
           "member": "int64",
           "name": "IsCloudAsset",
@@ -11338,7 +11348,7 @@
         },
         {
           "disabled": false,
-          "document": "云资产状态，-1为下线",
+          "document": "<p>云资产状态，-1为下线</p>",
           "example": "0",
           "member": "int64",
           "name": "CloudAssetStatus",
@@ -14100,7 +14110,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子公司ID",
+          "document": "<p>子公司ID</p>",
           "example": "2664c3d2bcf233f2052ba78177394415",
           "member": "string",
           "name": "EnterpriseUid",
@@ -14110,7 +14120,7 @@
         },
         {
           "disabled": false,
-          "document": "子公司名称",
+          "document": "<p>子公司名称</p>",
           "example": "暴露面管理",
           "member": "string",
           "name": "EnterpriseName",
@@ -14120,7 +14130,7 @@
         },
         {
           "disabled": false,
-          "document": "主任务ID",
+          "document": "<p>主任务ID</p>",
           "example": "1",
           "member": "int64",
           "name": "JobId",
@@ -14130,7 +14140,7 @@
         },
         {
           "disabled": false,
-          "document": "单任务ID",
+          "document": "<p>单任务ID</p>",
           "example": "1",
           "member": "int64",
           "name": "JobStageId",
@@ -14140,7 +14150,7 @@
         },
         {
           "disabled": false,
-          "document": "是否忽略",
+          "document": "<p>是否忽略</p>",
           "example": "false",
           "member": "bool",
           "name": "Ignored",
@@ -14150,7 +14160,7 @@
         },
         {
           "disabled": false,
-          "document": "子任务ID",
+          "document": "<p>子任务ID</p>",
           "example": "1",
           "member": "int64",
           "name": "JobRecordId",
@@ -14160,7 +14170,7 @@
         },
         {
           "disabled": false,
-          "document": "企业ID",
+          "document": "<p>企业ID</p>",
           "example": "100",
           "member": "int64",
           "name": "CustomerId",
@@ -14170,7 +14180,7 @@
         },
         {
           "disabled": false,
-          "document": "企业名称",
+          "document": "<p>企业名称</p>",
           "example": "腾讯",
           "member": "string",
           "name": "CustomerName",
@@ -14180,7 +14190,7 @@
         },
         {
           "disabled": false,
-          "document": "是否被删除",
+          "document": "<p>是否被删除</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDeleted",
@@ -14190,7 +14200,7 @@
         },
         {
           "disabled": false,
-          "document": "详情",
+          "document": "<p>详情</p>",
           "example": "测试数据",
           "member": "string",
           "name": "Detail",
@@ -14200,7 +14210,7 @@
         },
         {
           "disabled": false,
-          "document": "Md5值",
+          "document": "<p>Md5值</p>",
           "example": "145314895749100ae8306079519b3393",
           "member": "string",
           "name": "Md5",
@@ -14210,7 +14220,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "CreateAt",
@@ -14220,7 +14230,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "UpdateAt",
@@ -14230,7 +14240,7 @@
         },
         {
           "disabled": false,
-          "document": "是否新增数据",
+          "document": "<p>是否新增数据</p>",
           "example": "false",
           "member": "bool",
           "name": "IsNew",
@@ -14240,7 +14250,7 @@
         },
         {
           "disabled": false,
-          "document": "工具ID",
+          "document": "<p>工具ID</p>",
           "example": "1001",
           "member": "int64",
           "name": "ToolId",
@@ -14250,12 +14260,22 @@
         },
         {
           "disabled": false,
-          "document": "标签列表，json格式：{\\\"tag1\\\":[\\\"责任人xxx\\\"],\\\"tag2\\\":[\\\"测试站\\\"]}",
+          "document": "<p>标签列表，json格式：{\"tag1\":[\"责任人xxx\"],\"tag2\":[\"测试站\"]}</p>",
           "example": "{\\\"tag1\\\":[\\\"责任人xxx\\\"],\\\"tag2\\\":[\\\"测试站\\\"]}",
           "member": "string",
           "name": "Labels",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>演示模式是否明文展示</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "IsPlainTextInDemo",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

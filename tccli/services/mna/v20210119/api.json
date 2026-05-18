@@ -1142,7 +1142,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备唯一ID",
+          "document": "<p>设备唯一ID</p>",
           "example": "\"mna-2x2tllhb18\"",
           "member": "string",
           "name": "DeviceId",
@@ -1152,7 +1152,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名称",
+          "document": "<p>设备名称</p>",
           "example": "\"mna-2x2tllhb18\"",
           "member": "string",
           "name": "DeviceName",
@@ -1162,7 +1162,7 @@
         },
         {
           "disabled": false,
-          "document": "设备创建的时间，单位：ms",
+          "document": "<p>设备创建的时间，单位：ms</p>",
           "example": "169043203113091072",
           "member": "string",
           "name": "CreateTime",
@@ -1172,7 +1172,7 @@
         },
         {
           "disabled": false,
-          "document": "设备最后在线时间，单位：ms",
+          "document": "<p>设备最后在线时间，单位：ms</p>",
           "example": "169043203113091072",
           "member": "string",
           "name": "LastTime",
@@ -1182,7 +1182,7 @@
         },
         {
           "disabled": false,
-          "document": "设备的备注",
+          "document": "<p>设备的备注</p>",
           "example": "\"remark\"",
           "member": "string",
           "name": "Remark",
@@ -1192,7 +1192,7 @@
         },
         {
           "disabled": false,
-          "document": "接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）",
+          "document": "<p>接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）</p>",
           "example": "0",
           "member": "int64",
           "name": "AccessScope",
@@ -1202,7 +1202,7 @@
         },
         {
           "disabled": false,
-          "document": "license授权有效期 0：月度授权 1：永久授权",
+          "document": "<p>license授权有效期 0：月度授权 1：永久授权</p>",
           "example": "1",
           "member": "int64",
           "name": "LicensePayMode",
@@ -1212,7 +1212,7 @@
         },
         {
           "disabled": false,
-          "document": "付费方 0：厂商付费 1：客户付费",
+          "document": "<p>付费方 0：厂商付费 1：客户付费</p>",
           "example": "1",
           "member": "int64",
           "name": "Payer",
@@ -1222,7 +1222,7 @@
         },
         {
           "disabled": false,
-          "document": "设备分组ID",
+          "document": "<p>设备分组ID</p>",
           "example": "\"cliGrp-xf8rboasbh\"",
           "member": "string",
           "name": "GroupId",
@@ -1232,7 +1232,7 @@
         },
         {
           "disabled": false,
-          "document": "设备分组名称",
+          "document": "<p>设备分组名称</p>",
           "example": "\"cliGrp-xf8rboasbh\"",
           "member": "string",
           "name": "GroupName",
@@ -1242,7 +1242,7 @@
         },
         {
           "disabled": false,
-          "document": "设备无流量包处理方式，0: 按量付费，1: 截断加速",
+          "document": "<p>设备无流量包处理方式，0: 按量付费，1: 截断加速</p>",
           "example": "0",
           "member": "int64",
           "name": "FlowTrunc",
@@ -1252,7 +1252,7 @@
         },
         {
           "disabled": false,
-          "document": "设备sn",
+          "document": "<p>设备sn</p>",
           "example": "\"AN\"",
           "member": "string",
           "name": "Sn",
@@ -1262,12 +1262,22 @@
         },
         {
           "disabled": false,
-          "document": "厂商",
+          "document": "<p>厂商</p>",
           "example": "\"vendor\"",
           "member": "string",
           "name": "Vendor",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可接入地域列表。</p>",
+          "example": "[\"ap-beijing\"]",
+          "member": "string",
+          "name": "AllowedRegions",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -3507,7 +3517,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备id",
+          "document": "<p>设备id</p>",
           "example": "\"mna-xxx\"",
           "member": "string",
           "name": "DeviceId",
@@ -3516,7 +3526,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "1662622200",
           "member": "int64",
           "name": "BeginTime",
@@ -3525,7 +3535,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "1662624800",
           "member": "int64",
           "name": "EndTime",
@@ -3534,7 +3544,7 @@
         },
         {
           "disabled": false,
-          "document": "统计指标（上行速率：\"TxRate\":bit/s，下行速率：\"RxRate\":bit/s，丢包：\"Loss\":%，时延：\"RTT\":ms）",
+          "document": "<p>统计指标（上行速率：&quot;TxRate&quot;:bit/s，下行速率：&quot;RxRate&quot;:bit/s，丢包：&quot;Loss&quot;:%，时延：&quot;RTT&quot;:ms）</p>",
           "example": "\"TxRate\"",
           "member": "string",
           "name": "Metrics",
@@ -3543,7 +3553,7 @@
         },
         {
           "disabled": false,
-          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "document": "<p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "GatewayType",
@@ -3558,7 +3568,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "监控数据",
+          "document": "<p>监控数据</p>",
           "example": "无",
           "member": "MonitorData",
           "name": "MonitorData",
@@ -3568,7 +3578,7 @@
         },
         {
           "disabled": false,
-          "document": "接入区域。取值范围：['MC','AP','EU','AM']\nMC=中国大陆\nAP=亚太\nEU=欧洲\nAM=美洲",
+          "document": "<p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;]<br>MC=中国大陆<br>AP=亚太<br>EU=欧洲<br>AM=美洲</p>",
           "example": "MC",
           "member": "string",
           "name": "AccessRegion",

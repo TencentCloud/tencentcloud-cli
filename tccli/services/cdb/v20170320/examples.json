@@ -920,6 +920,14 @@
         "title": "查询实例支持代理版本和参数"
       }
     ],
+    "DescribeRegion": [
+      {
+        "document": "获取地域配置",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegion\n<公共请求参数>\n\n{\n    \"MasterRegion\": \"ap-guangzhou\",\n    \"IsDr\": 0,\n    \"IsRo\": 0,\n    \"MasterZone\": \"ap-guangzhou-3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Regions\": [],\n        \"Configs\": [],\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "获取地域配置"
+      }
+    ],
     "DescribeRemoteBackupConfig": [
       {
         "document": "查询云数据库异地备份配置信息",

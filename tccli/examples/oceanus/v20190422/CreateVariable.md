@@ -7,7 +7,7 @@ Input:
 ```
 tccli oceanus CreateVariable --cli-unfold-argument  \
     --Name MyPassword \
-    --Value abcabc \
+    --Value testvalue \
     --Type 2
 ```
 

@@ -16,6 +16,14 @@
         "title": "应用采集配置到指定机器组"
       }
     ],
+    "BatchSetCloudProductLogType": [
+      {
+        "document": "用于批量设置云产品日志主题LogType",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchSetCloudProductLogType\n<公共请求参数>\n\n{\n    \"AssumerName\": \"example-assumer\",\n    \"LogType\": \"access-log\",\n    \"TopicIds\": [\n        \"a******u_test_***3\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ead6751e-1ad8-422c-b606-b2277f10ed6e\"\n    }\n}",
+        "title": "批量设置云产品日志主题LogType"
+      }
+    ],
     "CancelRebuildIndexTask": [
       {
         "document": "",

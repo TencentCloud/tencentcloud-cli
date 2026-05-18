@@ -6,7 +6,9 @@ Input:
 
 ```
 tccli trro DescribeDeviceSessionDetails --cli-unfold-argument  \
-    --SessionId c52cc0cc-3663-467b-a6d1-2f01d20ad7ae-1
+    --SessionId c52cc0cc-3663-467b-a6d1-2f01d20ad7ae-1 \
+    --StartTime 1731399569 \
+    --EndTime 1731399627
 ```
 
 Output: 
