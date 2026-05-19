@@ -57,6 +57,8 @@ HELPER_MAP = {
                 "`expr` is the inquiry expresion, `to` is the ending status"
                 ".`timeout` and `interval` are optional params.",
     "--language": "specify an output language, valid choices: [zh-CN, en-US], default value: zh-CN",
+    "--request-client": "specify a custom request client identifier, used to mark the client name "
+                        "(format: ^[0-9a-zA-Z-_,.]+$, max length 128).",
 }
 
 class Loader(object):
@@ -169,6 +171,10 @@ class Loader(object):
                     "zh-CN",
                     "en-US"
                 ],
+            },
+            "request-client": {
+                "help": HELPER_MAP['--request-client'],
+                "metavar": "request_client",
             },
         }
 
@@ -576,4 +582,3 @@ class Loader(object):
         # null array
         else:
             pass
-
