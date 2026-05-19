@@ -6,19 +6,17 @@ Input:
 
 ```
 tccli ga2 ModifyListener --cli-unfold-argument  \
-    --GlobalAcceleratorId ga-80bzejka \
-    --ListenerId lsr-5lkfom8v \
-    --Name garendu-UDP-modify \
-    --Description garendu-UDP-modify \
-    --IdleTimeout 16
+    --GlobalAcceleratorId ga-xxxxxxx \
+    --ListenerId lsr-xxxxxx \
+    --Name 端口段测试
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "141079e2-c9ce-424f-9d5a-e0474b2da088",
-        "TaskId": "24fdeb66-ad40-4a78-864c-15e49b6ef8d0"
+        "RequestId": "30b391b1-6086-4118-a314-4a2b78111fbd",
+        "TaskId": "099c31b3-82bd-4b1a-bbd1-0ad614b4f54c"
     }
 }
 ```

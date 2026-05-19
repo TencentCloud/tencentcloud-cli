@@ -136,7 +136,7 @@
   },
   "metadata": {
     "apiVersion": "2025-07-17",
-    "api_brief": "腾讯云数据库 AI 服务相关API接口主要提供数据库智能体实例的管控操作。",
+    "api_brief": "腾讯云数据库 AI 服务相关 API 接口主要提供 DatabaseClaw 实例的管控操作。",
     "serviceNameCN": "腾讯云数据库 AI 服务",
     "serviceShortName": "tdai"
   },

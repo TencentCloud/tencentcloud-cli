@@ -16698,7 +16698,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群公网接入地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群公网接入地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "101.10.10.101:5672",
           "member": "string",
           "name": "PublicAccessEndpoint",
@@ -16708,7 +16708,7 @@
         },
         {
           "disabled": false,
-          "document": "集群控制台访问地址",
+          "document": "<p>集群 Web 控制台公网访问地址</p>",
           "example": "https://amqp-xx.com",
           "member": "string",
           "name": "WebConsoleEndpoint",
@@ -16718,7 +16718,7 @@
         },
         {
           "disabled": false,
-          "document": "集群控制台登录用户名",
+          "document": "<p>集群 Web 控制台登录用户名</p>",
           "example": "username",
           "member": "string",
           "name": "WebConsoleUsername",
@@ -16728,7 +16728,7 @@
         },
         {
           "disabled": false,
-          "document": "集群控制台登录密码",
+          "document": "<p>集群 Web 控制台登录密码</p>",
           "example": "56A1S61651fd56a1",
           "member": "string",
           "name": "WebConsolePassword",
@@ -16738,7 +16738,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃",
+          "document": "<p>已废弃</p>",
           "example": "true",
           "member": "bool",
           "name": "PublicAccessEndpointStatus",
@@ -16748,7 +16748,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃",
+          "document": "<p>已废弃</p>",
           "example": "true",
           "member": "bool",
           "name": "PublicControlConsoleSwitchStatus",
@@ -16758,7 +16758,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃",
+          "document": "<p>已废弃</p>",
           "example": "true",
           "member": "bool",
           "name": "VpcControlConsoleSwitchStatus",
@@ -16768,7 +16768,7 @@
         },
         {
           "disabled": false,
-          "document": "Vpc管控台访问地址，示例值，http://1.1.1.1:15672",
+          "document": "<p>Web 管控台 VPC 访问地址</p>",
           "example": "http://1.1.1.1:15672",
           "member": "string",
           "name": "VpcWebConsoleEndpoint",
@@ -16778,7 +16778,7 @@
         },
         {
           "disabled": false,
-          "document": "公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING",
+          "document": "<p>Web 控制台公网访问开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>",
           "example": "OFF/ON/CREATING/DELETING",
           "member": "string",
           "name": "PublicWebConsoleSwitchStatus",
@@ -16788,7 +16788,7 @@
         },
         {
           "disabled": false,
-          "document": "Vpc管控台开关状态，示例值，\nOFF/ON/CREATING/DELETING",
+          "document": "<p>Web 控制台 VPC 访问开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>",
           "example": "OFF/ON/CREATING/DELETING",
           "member": "string",
           "name": "VpcWebConsoleSwitchStatus",
@@ -16798,7 +16798,7 @@
         },
         {
           "disabled": false,
-          "document": "公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING",
+          "document": "<p>公网接入点开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>",
           "example": "OFF/ON/CREATING/DELETING",
           "member": "string",
           "name": "PublicDataStreamStatus",
@@ -16808,7 +16808,7 @@
         },
         {
           "disabled": false,
-          "document": "Prometheus信息",
+          "document": "<p>Prometheus信息</p>",
           "example": "无",
           "member": "PrometheusEndpointInfo",
           "name": "PrometheusEndpointInfo",
@@ -16818,7 +16818,7 @@
         },
         {
           "disabled": false,
-          "document": "公网域名接入点",
+          "document": "<p>公网域名接入点</p>",
           "example": "http://amqp-test.dashboard.rabbitmq.cq.public.tencenttdmq.com:15672/",
           "member": "string",
           "name": "WebConsoleDomainEndpoint",
@@ -16828,7 +16828,7 @@
         },
         {
           "disabled": false,
-          "document": "控制面所使用的VPC信息",
+          "document": "<p>控制面所使用的VPC信息</p>",
           "example": "无",
           "member": "VpcEndpointInfo",
           "name": "ControlPlaneEndpointInfo",
@@ -16838,7 +16838,7 @@
         },
         {
           "disabled": false,
-          "document": "TLS加密的数据流公网接入点",
+          "document": "<p>TLS加密的数据流公网接入点</p>",
           "example": "amqps://amqp-xxx.amqp.tencenttdmq.com:5672",
           "member": "string",
           "name": "PublicTlsAccessEndpoint",
@@ -16848,7 +16848,7 @@
         },
         {
           "disabled": false,
-          "document": "公网IP是否复用",
+          "document": "<p>公网IP是否复用</p>",
           "example": "true",
           "member": "bool",
           "name": "PublicIpReused",
@@ -16858,7 +16858,7 @@
         },
         {
           "disabled": false,
-          "document": "公网控制台接入点操作的错误信息",
+          "document": "<p>Web 控制台公网访问操作的错误信息</p>",
           "example": "Qcloud Exception:modifyLoadBalancerConfig action failed",
           "member": "string",
           "name": "PublicWebConsoleErrorMessage",
@@ -16868,7 +16868,7 @@
         },
         {
           "disabled": false,
-          "document": "内网控制台接入点操作的错误信息",
+          "document": "<p>Web 控制台 VPC 访问操作的错误信息</p>",
           "example": "Conflict:vpc ip '127.0.0.1' is used",
           "member": "string",
           "name": "VpcWebConsoleErrorMessage",
@@ -16878,10 +16878,20 @@
         },
         {
           "disabled": false,
-          "document": "公网接入点操作的错误信息",
+          "document": "<p>公网接入点操作的错误信息</p>",
           "example": "Qcloud Exception:modifyLoadBalancerConfig action failed",
           "member": "string",
           "name": "PublicDataStreamErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网Stream接入点</p>",
+          "example": "rabbitmq-stream://amqp-axrwrazp-gz-public-d.amqp.tencenttdmq.com:5552",
+          "member": "string",
+          "name": "PublicStreamAccessEndpoint",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -17912,7 +17922,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。",
+          "document": "<p>实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href=\"https://console.cloud.tencent.com/trabbitmq/cluster?rid=1\">TDMQ RabbitMQ 控制台</a>查询。</p>",
           "example": "amqp-2ppxx4rq",
           "member": "string",
           "name": "InstanceId",
@@ -17922,7 +17932,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名，登录时使用",
+          "document": "<p>用户名，登录时使用</p>",
           "example": "test_user",
           "member": "string",
           "name": "User",
@@ -17932,7 +17942,7 @@
         },
         {
           "disabled": false,
-          "document": "密码，登录时使用",
+          "document": "<p>密码，登录时使用</p>",
           "example": "abc123",
           "member": "string",
           "name": "Password",
@@ -17942,7 +17952,7 @@
         },
         {
           "disabled": false,
-          "document": "用户描述",
+          "document": "<p>用户描述</p>",
           "example": "测试账号",
           "member": "string",
           "name": "Description",
@@ -17952,8 +17962,8 @@
         },
         {
           "disabled": false,
-          "document": "用户标签，用于决定改用户访问RabbitMQ Management的权限范围",
-          "example": "monitoring",
+          "document": "<p>用户标签，用于决定改用户访问RabbitMQ Management的权限范围</p>",
+          "example": "[\"management\"]",
           "member": "string",
           "name": "Tags",
           "output_required": true,
@@ -17962,7 +17972,7 @@
         },
         {
           "disabled": false,
-          "document": "用户创建时间",
+          "document": "<p>用户创建时间</p>",
           "example": "2022-11-11 11:11:11",
           "member": "string",
           "name": "CreateTime",
@@ -17972,7 +17982,7 @@
         },
         {
           "disabled": false,
-          "document": "用户最后修改时间",
+          "document": "<p>用户最后修改时间</p>",
           "example": "2022-11-11 11:11:11",
           "member": "string",
           "name": "ModifyTime",
@@ -17982,7 +17992,7 @@
         },
         {
           "disabled": false,
-          "document": "用户类型，System：系统创建，User：用户创建",
+          "document": "<p>用户类型，System：系统创建，User：用户创建</p>",
           "example": "System",
           "member": "string",
           "name": "Type",
@@ -17992,7 +18002,7 @@
         },
         {
           "disabled": false,
-          "document": "单个用户最大可用连接数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单个用户最大可用连接数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
           "name": "MaxConnections",
@@ -18002,7 +18012,7 @@
         },
         {
           "disabled": false,
-          "document": "单个用户最大可用通道数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单个用户最大可用通道数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
           "name": "MaxChannels",
@@ -18012,7 +18022,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间时间戳",
+          "document": "<p>创建时间时间戳</p>",
           "example": "1736845619365",
           "member": "uint64",
           "name": "CreateTs",
@@ -18022,13 +18032,33 @@
         },
         {
           "disabled": false,
-          "document": "修改时间时间戳",
+          "document": "<p>修改时间时间戳</p>",
           "example": "1743481475296",
           "member": "uint64",
           "name": "ModifyTs",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启cam验证</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "CamAuthEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>cam凭据名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sadfsdfui",
+          "member": "string",
+          "name": "CamCredentialName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -18100,7 +18130,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
+          "document": "<p>实例 ID</p>",
           "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
@@ -18110,7 +18140,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "prod_rabbitmq",
           "member": "string",
           "name": "InstanceName",
@@ -18120,7 +18150,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本",
+          "document": "<p>实例版本</p>",
           "example": "3.11.8",
           "member": "string",
           "name": "InstanceVersion",
@@ -18130,7 +18160,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败",
+          "document": "<p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败</p>",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -18140,7 +18170,7 @@
         },
         {
           "disabled": false,
-          "document": "节点数量",
+          "document": "<p>节点数量</p>",
           "example": "5",
           "member": "uint64",
           "name": "NodeCount",
@@ -18150,7 +18180,7 @@
         },
         {
           "disabled": false,
-          "document": "实例配置规格名称",
+          "document": "<p>实例配置规格名称</p>",
           "example": "基础型",
           "member": "string",
           "name": "ConfigDisplay",
@@ -18160,7 +18190,7 @@
         },
         {
           "disabled": false,
-          "document": "峰值TPS",
+          "document": "<p>峰值TPS</p>",
           "example": "10000",
           "member": "uint64",
           "name": "MaxTps",
@@ -18170,7 +18200,7 @@
         },
         {
           "disabled": false,
-          "document": "峰值带宽，Mbps为单位",
+          "document": "<p>峰值带宽，Mbps为单位</p>",
           "example": "1200",
           "member": "uint64",
           "name": "MaxBandWidth",
@@ -18180,7 +18210,7 @@
         },
         {
           "disabled": false,
-          "document": "存储容量，GB为单位",
+          "document": "<p>存储容量，GB为单位</p>",
           "example": "100",
           "member": "uint64",
           "name": "MaxStorage",
@@ -18190,7 +18220,7 @@
         },
         {
           "disabled": false,
-          "document": "实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳",
+          "document": "<p>实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳</p>",
           "example": "1666257531143",
           "member": "uint64",
           "name": "ExpireTime",
@@ -18200,7 +18230,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)",
+          "document": "<p>自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>",
           "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
@@ -18210,7 +18240,7 @@
         },
         {
           "disabled": false,
-          "document": "1 表示预付费，0 表示后付费",
+          "document": "<p>1 表示预付费，0 表示后付费</p>",
           "example": "0",
           "member": "uint64",
           "name": "PayMode",
@@ -18220,7 +18250,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息",
+          "document": "<p>备注信息</p>",
           "example": "生产使用集群",
           "member": "string",
           "name": "Remark",
@@ -18230,7 +18260,7 @@
         },
         {
           "disabled": false,
-          "document": "集群的节点规格，对应的规格标识：\n2C8G：rabbit-vip-profession-2c8g\n4C16G：rabbit-vip-profession-4c16g\n8C32G：rabbit-vip-profession-8c32g\n16C32G：rabbit-vip-basic-4\n16C64G：rabbit-vip-profession-16c64g\n2C4G：rabbit-vip-basic-5\n4C8G：rabbit-vip-basic-1\n8C16G（已售罄）：rabbit-vip-basic-2\n不传默认为 4C8G：rabbit-vip-basic-1",
+          "document": "<p>集群的节点规格，对应的规格标识：<br>2C8G：rabbit-vip-profession-2c8g<br>4C16G：rabbit-vip-profession-4c16g<br>8C32G：rabbit-vip-profession-8c32g<br>16C32G：rabbit-vip-basic-4<br>16C64G：rabbit-vip-profession-16c64g<br>2C4G：rabbit-vip-basic-5<br>4C8G：rabbit-vip-basic-1<br>8C16G（已售罄）：rabbit-vip-basic-2<br>不传默认为 4C8G：rabbit-vip-basic-1</p>",
           "example": "rabbit-vip-basic-1",
           "member": "string",
           "name": "SpecName",
@@ -18240,7 +18270,7 @@
         },
         {
           "disabled": false,
-          "document": "集群异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群异常信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "节点[rabbit@rabbitmq-broker-2.rabbitmq-broker-internal.amqp-jero744g.svc.cluster.local]连接异常",
           "member": "string",
           "name": "ExceptionInformation",
@@ -18250,7 +18280,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败\n为了和计费区分开，额外开启一个状态位，用于显示。",
+          "document": "<p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败<br>为了和计费区分开，额外开启一个状态位，用于显示。</p>",
           "example": "0",
           "member": "int64",
           "name": "ClusterStatus",
@@ -18260,7 +18290,7 @@
         },
         {
           "disabled": false,
-          "document": "公网接入点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>公网接入点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "amqp://127.0.0.1:5672",
           "member": "string",
           "name": "PublicAccessEndpoint",
@@ -18270,7 +18300,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC 接入点列表",
+          "document": "<p>VPC 接入点列表</p>",
           "example": "无",
           "member": "VpcEndpointInfo",
           "name": "Vpcs",
@@ -18280,7 +18310,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，毫秒为单位。unix 时间戳",
+          "document": "<p>创建时间，毫秒为单位。unix 时间戳</p>",
           "example": "1666257531143",
           "member": "uint64",
           "name": "CreateTime",
@@ -18290,7 +18320,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，0 托管版、1 Serverless 版",
+          "document": "<p>实例类型</p><p>枚举值：</p><ul><li>0： 托管版实例</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "InstanceType",
@@ -18300,7 +18330,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离时间，毫秒为单位。unix 时间戳",
+          "document": "<p>隔离时间，毫秒为单位。unix 时间戳</p>",
           "example": "1666257531143",
           "member": "uint64",
           "name": "IsolatedTime",
@@ -18310,7 +18340,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已开启删除保护",
+          "document": "<p>是否已开启删除保护</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableDeletionProtection",
@@ -18320,12 +18350,22 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公有数据流Stream接入点</p>",
+          "example": "rabbitmq-stream://amqp-axrwrazp-gz-public-d.amqp.tencenttdmq.com:5552",
+          "member": "string",
+          "name": "PublicStreamAccessEndpoint",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -23624,6 +23664,28 @@
           "example": "Conflict:vpc ip '127.0.0.1' is used",
           "member": "string",
           "name": "VpcErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入点ID</p>",
+          "example": "210940",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>vpc Stream接入点</p>",
+          "example": "rabbitmq-stream://amqp-q4km75j8-cd-3ov618b4-dnbdbnmt-d.amqp.tencenttdmq.com:5552",
+          "member": "string",
+          "name": "VpcStreamEndpoint",
           "output_required": false,
           "required": false,
           "type": "string",

@@ -6407,7 +6407,7 @@
         {
           "disabled": false,
           "document": "<p>指定 role 执行 SQL</p>",
-          "example": "cloudbase_postgres",
+          "example": "cloudbase_********",
           "member": "string",
           "name": "Role",
           "required": false,

@@ -1,4 +1,4 @@
-**Example 1: 点查询(Instant query)**
+**Example 1: 点查询(Instant query)，更多示例详见RoutePrometheusDynamicAPI**
 
 ```
 Path: api/v1/query

@@ -1258,7 +1258,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，形如：tdsql3-42f40429.",
+          "document": "<p>实例 ID，形如：tdsql3-42f40429.</p>",
           "example": "tdsql3-42f40429",
           "member": "string",
           "name": "InstanceId",
@@ -1267,11 +1267,38 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称，通过 DescribeDatabases 接口获取。",
+          "document": "<p>数据库名称，通过 DescribeDatabases 接口获取。</p>",
           "example": "mysql",
           "member": "string",
           "name": "DbName",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页索引</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据表名称匹配表达式</p>",
+          "example": "tpc",
+          "member": "string",
+          "name": "TableRegexp",
+          "required": false,
           "type": "string"
         }
       ],
@@ -1282,61 +1309,61 @@
       "members": [
         {
           "disabled": false,
-          "document": "透传入参。",
+          "document": "<p>透传入参。</p>",
           "example": "tdsql3-42f40429",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据库名称。",
+          "document": "<p>数据库名称。</p>",
           "example": "mysql",
           "member": "string",
           "name": "DbName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "user",
+          "document": "<p>表列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DatabaseTable",
           "name": "Tables",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "视图列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视图列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DatabaseView",
           "name": "Views",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "存储过程列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存储过程列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DatabaseProcedure",
           "name": "Procs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "函数列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>函数列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DatabaseFunction",
           "name": "Funcs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

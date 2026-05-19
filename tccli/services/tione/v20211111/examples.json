@@ -440,6 +440,14 @@
         "title": "训练任务详情"
       }
     ],
+    "DescribeTrainingTaskPodUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrainingTaskPodUrl\n<公共请求参数>\n\n{\n    \"PodName\": \"train-51c30e6fbe1000-36xslo3d8e0w-launcher\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PodUrl\": \"train-51c30e6fbe1000-36xslo3d8e0w-launcher.ap-nanjing.tencent.com\",\n        \"RequestId\": \"fdsafds-fdsafd\"\n    }\n}",
+        "title": "查询Pod的URL"
+      }
+    ],
     "DescribeTrainingTaskPods": [
       {
         "document": "获取任务对应的pod列表",

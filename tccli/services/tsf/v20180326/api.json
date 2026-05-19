@@ -661,7 +661,7 @@
     "DescribeDownloadInfo": {
       "document": "TSF上传的程序包存放在腾讯云对象存储（COS）中，通过该API可以获取从COS下载程序包需要的信息，包括包所在的桶、存储路径、鉴权信息等，之后使用COS API（或SDK）进行下载。\n请查阅[COS相关文档](https://cloud.tencent.com/document/product/436)",
       "input": "DescribeDownloadInfoRequest",
-      "name": "获取下载程序包信息",
+      "name": "查询下载程序包信息",
       "output": "DescribeDownloadInfoResponse",
       "status": "online"
     },

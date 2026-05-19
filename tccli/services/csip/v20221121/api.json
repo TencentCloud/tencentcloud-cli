@@ -37416,7 +37416,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Skill 名称",
+          "document": "<p>Skill 名称</p>",
           "example": "git-helper",
           "member": "string",
           "name": "SkillName",
@@ -37426,7 +37426,7 @@
         },
         {
           "disabled": false,
-          "document": "Skill 描述，帮助理解 Skill 的主要用途",
+          "document": "<p>Skill 描述，帮助理解 Skill 的主要用途</p>",
           "example": "用于批量执行 Git 仓库初始化、配置同步与辅助操作的 Skill。",
           "member": "string",
           "name": "SkillDescription",
@@ -37436,7 +37436,7 @@
         },
         {
           "disabled": false,
-          "document": "ZIP 文件的 SHA256 Hash\n参数格式：sha256:<64位hex>",
+          "document": "<p>ZIP 文件的 SHA256 Hash<br>参数格式：sha256:&lt;64位hex&gt;</p>",
           "example": "sha256:93329ab36e34abf927eb029bc27db54e0041d7905c1f80a222998d88d62dd4c5",
           "member": "string",
           "name": "ContentHash",
@@ -37446,7 +37446,7 @@
         },
         {
           "disabled": false,
-          "document": "原始上传 ZIP 文件解压后的实际文件数，也是计费的范围，扫描成功后1个文件计为1次额度",
+          "document": "<p>原始上传 ZIP 文件解压后的实际文件数，也是计费的范围，扫描成功后1个文件计为1次额度</p>",
           "example": "37",
           "member": "int64",
           "name": "UploadFileCount",
@@ -37456,7 +37456,7 @@
         },
         {
           "disabled": false,
-          "document": "综合风险等级\n枚举值：\nmalicious：恶意\nsuspicious：可疑\nbenign：可信",
+          "document": "<p>综合风险等级<br>枚举值：<br>malicious：恶意<br>suspicious：可疑<br>benign：可信</p>",
           "example": "malicious",
           "member": "string",
           "name": "RiskLevel",
@@ -37466,7 +37466,7 @@
         },
         {
           "disabled": false,
-          "document": "风险主标签融合规则 ID（9xxxx），由服务端从命中的融合风险标签中生成；benign 且无规则命中时为空。展示名称可通过 RuleCatalog 获取",
+          "document": "<p>风险主标签融合规则 ID（9xxxx），由服务端从命中的融合风险标签中生成；benign 且无规则命中时为空。展示名称可通过 RuleCatalog 获取</p>",
           "example": "90002",
           "member": "string",
           "name": "PrimaryRuleID",
@@ -37476,7 +37476,7 @@
         },
         {
           "disabled": false,
-          "document": "综合处置建议，用于指导调用方优先执行下线、隔离、修复、复检等动作。历史结果中可能为空。传 Language=en-US 时返回英文文案",
+          "document": "<p>综合处置建议，用于指导调用方优先执行下线、隔离、修复、复检等动作。历史结果中可能为空。传 Language=en-US 时返回英文文案</p>",
           "example": "建议立即停止使用该 Skill，清理恶意持久化与外联逻辑，轮换疑似泄露凭证，并在修复完成后重新提交检测。",
           "member": "string",
           "name": "Mitigation",
@@ -37486,7 +37486,7 @@
         },
         {
           "disabled": false,
-          "document": "风险综合描述，对本次检测发现的风险进行概括性说明。传 Language=en-US 时返回英文文案",
+          "document": "<p>风险综合描述，对本次检测发现的风险进行概括性说明。传 Language=en-US 时返回英文文案</p>",
           "example": "该 Skill 存在命令注入、凭证窃取与数据外传等多项高危行为，综合判定为恶意。",
           "member": "string",
           "name": "RiskDescription",
@@ -37496,7 +37496,7 @@
         },
         {
           "disabled": false,
-          "document": "安全评分\n取值范围：[0, 100]\n补充说明：100 为最安全",
+          "document": "<p>安全评分取值范围：[0, 100]补充说明：分数越高越安全</p>",
           "example": "0",
           "member": "int64",
           "name": "SecurityScore",
@@ -37506,7 +37506,7 @@
         },
         {
           "disabled": false,
-          "document": "本次扫描使用的引擎版本号",
+          "document": "<p>本次扫描使用的引擎版本号</p>",
           "example": "20200",
           "member": "int64",
           "name": "EngineVersion",
@@ -37516,7 +37516,7 @@
         },
         {
           "disabled": false,
-          "document": "Skill 能力标签列表，描述 Skill 具备的能力特征或适用场景。不等同于风险标签，也不参与风险等级判定。传 Language=en-US 时 Name 切换为英文，ID 保持不变",
+          "document": "<p>Skill 能力标签列表，描述 Skill 具备的能力特征或适用场景。不等同于风险标签，也不参与风险等级判定。传 Language=en-US 时 Name 切换为英文，ID 保持不变</p>",
           "example": "无",
           "member": "SkillCapabilityTag",
           "name": "CapabilityTags",
@@ -37526,7 +37526,7 @@
         },
         {
           "disabled": false,
-          "document": "融合规则目录全集，包含所有融合规则类别（9xxxx），调用方可据此展示分类标签，无需本地维护映射表。传 Language=en-US 时返回英文名称",
+          "document": "<p>融合规则目录全集，包含所有融合规则类别（9xxxx），调用方可据此展示分类标签，无需本地维护映射表。传 Language=en-US 时返回英文名称</p>",
           "example": "无",
           "member": "SkillRuleCatalogItem",
           "name": "RuleCatalog",
@@ -37536,7 +37536,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描结果详情，按子引擎分组。每个元素包含 ScanType（引擎类型）和 RuleList（命中规则列表）。规则中的 RuleID 使用融合编码（9xxxx），可与 RuleCatalog 交叉引用。传 Language=en-US 时 Description 返回英文文本",
+          "document": "<p>扫描结果详情，按子引擎分组。每个元素包含 ScanType（引擎类型）和 RuleList（命中规则列表）。规则中的 RuleID 使用融合编码（9xxxx），可与 RuleCatalog 交叉引用。传 Language=en-US 时 Description 返回英文文本</p>",
           "example": "无",
           "member": "SkillScanEngineResult",
           "name": "ScanItems",
@@ -37546,7 +37546,7 @@
         },
         {
           "disabled": false,
-          "document": "综合安全审计报告地址（签名 URL）。有效期由请求参数 ReportURLExpireHours 控制",
+          "document": "<p>综合安全审计报告地址（签名 URL）。有效期由请求参数 ReportURLExpireHours 控制</p>",
           "example": "https://skill-scan-1258344699.cos.ap-guangzhou.myqcloud.com/html-reports/2026/04/02/42_a1b2c3d4e5f6g7h8.html",
           "member": "string",
           "name": "ReportURL",
@@ -37556,7 +37556,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描完成时间。仅 Status=SUCCESS 时有值\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "document": "<p>扫描完成时间。仅 Status=SUCCESS 时有值<br>参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）</p>",
           "example": "2026-04-02T09:13:23+08:00",
           "member": "datetime_iso",
           "name": "ScannedAt",
@@ -37566,7 +37566,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间。仅 Status=SCANNING 时有值\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "document": "<p>任务创建时间。仅 Status=SCANNING 时有值<br>参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）</p>",
           "example": "2026-04-02T09:08:00+08:00",
           "member": "datetime_iso",
           "name": "CreatedAt",
@@ -37576,7 +37576,7 @@
         },
         {
           "disabled": false,
-          "document": "失败时间。仅 Status=FAILED 时有值\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "document": "<p>失败时间。仅 Status=FAILED 时有值<br>参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）</p>",
           "example": "2026-04-02T09:13:00+08:00",
           "member": "datetime_iso",
           "name": "FailedAt",
@@ -37586,7 +37586,7 @@
         },
         {
           "disabled": false,
-          "document": "失败原因描述。仅 Status=FAILED 时有值",
+          "document": "<p>失败原因描述。仅 Status=FAILED 时有值</p>",
           "example": "Scan task execution failed, please resubmit",
           "member": "string",
           "name": "Message",
