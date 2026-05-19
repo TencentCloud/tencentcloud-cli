@@ -7,6 +7,27 @@
       "output": "ChatCompletionResponse",
       "status": "online"
     },
+    "CreateBillingInstanceSemiCheckTask": {
+      "document": "创建纳管预检查任务",
+      "input": "CreateBillingInstanceSemiCheckTaskRequest",
+      "name": "创建纳管预检查任务",
+      "output": "CreateBillingInstanceSemiCheckTaskResponse",
+      "status": "online"
+    },
+    "CreateBillingPostpaidSWInstances": {
+      "document": "创建按量计费的资源组纳管节点",
+      "input": "CreateBillingPostpaidSWInstancesRequest",
+      "name": "创建按量计费资源组纳管节点",
+      "output": "CreateBillingPostpaidSWInstancesResponse",
+      "status": "online"
+    },
+    "CreateBillingResourceGroup": {
+      "document": "创建资源组",
+      "input": "CreateBillingResourceGroupRequest",
+      "name": "创建资源组",
+      "output": "CreateBillingResourceGroupResponse",
+      "status": "online"
+    },
     "CreateBillingResourceInstanceHealthCheckTask": {
       "document": "创建资源组节点健康检测任务",
       "input": "CreateBillingResourceInstanceHealthCheckTaskRequest",
@@ -201,6 +222,20 @@
       "input": "DescribeAnnotatedTaskListRequest",
       "name": "查询标注任务列表",
       "output": "DescribeAnnotatedTaskListResponse",
+      "status": "online"
+    },
+    "DescribeAvailableSWInstances": {
+      "document": "获取可纳管实例",
+      "input": "DescribeAvailableSWInstancesRequest",
+      "name": "获取可纳管实例",
+      "output": "DescribeAvailableSWInstancesResponse",
+      "status": "online"
+    },
+    "DescribeBillingInstanceSemiCheckTask": {
+      "document": "查询纳管预检查任务",
+      "input": "DescribeBillingInstanceSemiCheckTaskRequest",
+      "name": "查询纳管预检查任务",
+      "output": "DescribeBillingInstanceSemiCheckTaskResponse",
       "status": "online"
     },
     "DescribeBillingResourceGroup": {
@@ -476,6 +511,13 @@
       "output": "DescribeTrainingTaskResponse",
       "status": "online"
     },
+    "DescribeTrainingTaskPodUrl": {
+      "document": "获取单个训练任务实例的登录链接",
+      "input": "DescribeTrainingTaskPodUrlRequest",
+      "name": "获取实例登录URL",
+      "output": "DescribeTrainingTaskPodUrlResponse",
+      "status": "online"
+    },
     "DescribeTrainingTaskPods": {
       "document": "训练任务pod列表",
       "input": "DescribeTrainingTaskPodsRequest",
@@ -495,6 +537,13 @@
       "input": "DescribeWorkspacesRequest",
       "name": "查询工作空间列表",
       "output": "DescribeWorkspacesResponse",
+      "status": "online"
+    },
+    "DestroyBillingResource": {
+      "document": "释放资源组节点; 适用场景：运行中和异常状态的节点",
+      "input": "DestroyBillingResourceRequest",
+      "name": "释放资源组节点",
+      "output": "DestroyBillingResourceResponse",
       "status": "online"
     },
     "ModifyCodeRepo": {
@@ -572,6 +621,13 @@
       "input": "RebuildModelServicePodRequest",
       "name": "重建模型服务Pod",
       "output": "RebuildModelServicePodResponse",
+      "status": "online"
+    },
+    "ReleaseBillingPostpaidSWInstances": {
+      "document": "释放按量计费的纳管节点",
+      "input": "ReleaseBillingPostpaidSWInstancesRequest",
+      "name": "释放按量计费的纳管节点",
+      "output": "ReleaseBillingPostpaidSWInstancesResponse",
       "status": "online"
     },
     "StartNotebook": {
@@ -2041,6 +2097,197 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateBillingInstanceSemiCheckTaskRequest": {
+      "document": "CreateBillingInstanceSemiCheckTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "rsg-xde2",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计费类型",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cvm实例id",
+          "example": "[\"INS-FEWDFW\"]",
+          "member": "string",
+          "name": "CVMInstanceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBillingInstanceSemiCheckTaskResponse": {
+      "document": "CreateBillingInstanceSemiCheckTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "sr32ed",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBillingPostpaidSWInstancesRequest": {
+      "document": "CreateBillingPostpaidSWInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "第三方节点",
+          "example": "无",
+          "member": "ExternalNode",
+          "name": "ExternalNodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "竞价资源购买节点",
+          "example": "无",
+          "member": "SpotPaidNode",
+          "name": "SpotPaidNodes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBillingPostpaidSWInstancesResponse": {
+      "document": "CreateBillingPostpaidSWInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBillingResourceGroupRequest": {
+      "document": "CreateBillingResourceGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源组名称<br>注意：此字段仅支持英文、数字、下划线 _、短横 -，只能以英文、数字开头，长度为60个字<br>注意：此字段相同地域相同资源组类型下不可同名。</p>",
+          "example": "mingcheng12",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源组类型;<br>枚举值:<br>空: 通用, TRAIN: 训练, INFERENCE: 推理</p>",
+          "example": "SW",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源组标签列表<br>注意：此字段从腾讯云标签服务获取。</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要关联的工作空间ID列表</p>",
+          "example": "[\"8007120441274851\"]",
+          "member": "string",
+          "name": "AttachedWorkspaceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用空间编辑, true-启用，false-禁用</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SpaceEditEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>第三方资源组关联的VpcId</p>",
+          "example": "vpc-7a419cd24",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>第三方资源组关联的子网ID</p>",
+          "example": "subnet-2ac964bf",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBillingResourceGroupResponse": {
+      "document": "CreateBillingResourceGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源组id;</p>",
+          "example": "ersg-8jpj27jc",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateBillingResourceInstanceHealthCheckTaskRequest": {
       "document": "CreateBillingResourceInstanceHealthCheckTask请求参数结构体",
@@ -5783,6 +6030,139 @@
       ],
       "type": "object"
     },
+    "DescribeAvailableSWInstancesRequest": {
+      "document": "DescribeAvailableSWInstances请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAvailableSWInstancesResponse": {
+      "document": "DescribeAvailableSWInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingInstanceSemiCheckTaskRequest": {
+      "document": "DescribeBillingInstanceSemiCheckTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "rsg-fwd23",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "task-fe2d23",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingInstanceSemiCheckTaskResponse": {
+      "document": "DescribeBillingInstanceSemiCheckTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "task-fw32d",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "rsg-fwe23",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费类型",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "NoCheck",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2006-11-11 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2006-11-11 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查实例总数",
+          "example": "1",
+          "member": "string",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "纳管检查结果",
+          "example": "无",
+          "member": "SemiCheckResult",
+          "name": "Results",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBillingResourceGroupAttachedWorkspacesRequest": {
       "document": "DescribeBillingResourceGroupAttachedWorkspaces请求参数结构体",
       "members": [
@@ -8815,6 +9195,43 @@
       ],
       "type": "object"
     },
+    "DescribeTrainingTaskPodUrlRequest": {
+      "document": "DescribeTrainingTaskPodUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务实例名",
+          "example": "train-909937194963423616-6wvltqoyd3sw-launcher",
+          "member": "string",
+          "name": "PodName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrainingTaskPodUrlResponse": {
+      "document": "DescribeTrainingTaskPodUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Pod登录URL",
+          "example": "train-13213.ap-nanjing.tencent.com",
+          "member": "string",
+          "name": "PodUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTrainingTaskPodsRequest": {
       "document": "DescribeTrainingTaskPods请求参数结构体",
       "members": [
@@ -9129,6 +9546,52 @@
       ],
       "type": "object"
     },
+    "DestroyBillingResourceRequest": {
+      "document": "DestroyBillingResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组节点id列表\n注意: 单次最多100个",
+          "example": "[\"eins-8jpj27jc\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "ersg-8jpj27jc",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyBillingResourceResponse": {
+      "document": "DestroyBillingResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点失败详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FailResource",
+          "name": "FailResources",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeviceImageInfo": {
       "document": "设备对应的镜像信息",
       "members": [
@@ -9428,6 +9891,115 @@
         }
       ],
       "usage": "both"
+    },
+    "ExternalNode": {
+      "document": "第三方节点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点ip",
+          "example": "172.20.4.12",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ssh登录端口号",
+          "example": "22",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ssh登录用户名",
+          "example": "Qb6qgx8TSXjRPhLW",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ssh登录用户密码",
+          "example": "MHoCIQCzq3wJKInr0eXE26vpQ/7kwFv5FBTK3vXL3nkS5nhcrAIhANkhfFljRWfxuV+cg8jUNbmNLnJ5kPOCy39g0EGyDM/hBCB3trxK9tjGKqo6hCb3wli1PjYkAadBymSTjFF6G2VspgQQ3HJ0rlNQCTRFUHxpfDpUlw==",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "kms加密秘钥ID",
+          "example": "kms-1ec9d43",
+          "member": "string",
+          "name": "KeyId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "纳管节点",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异构加速器类型，可选值NVIDIA、AMD、DCU、XPU、ZIXIAO等",
+          "example": "NVIDIA",
+          "member": "string",
+          "name": "AcceleratorType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FailResource": {
+      "document": "错误资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eins-8jpj27jc",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"续费失败\"",
+          "member": "string",
+          "name": "FailMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Filter": {
       "document": "过滤器",
@@ -16439,6 +17011,49 @@
       ],
       "type": "object"
     },
+    "RejectedInfo": {
+      "document": "CVM节点被拒绝纳管的原因",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CVM节点被拒绝纳管的原因类型",
+          "example": "SystemDiskTooSmall",
+          "member": "string",
+          "name": "Code",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVM节点被拒绝纳管的具体原因信息",
+          "example": "system disk too small",
+          "member": "string",
+          "name": "Reason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReleaseBillingPostpaidSWInstancesRequest": {
+      "document": "ReleaseBillingPostpaidSWInstances请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ReleaseBillingPostpaidSWInstancesResponse": {
+      "document": "ReleaseBillingPostpaidSWInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResourceConf": {
       "document": "Notebook资源参数",
       "members": [
@@ -17724,6 +18339,42 @@
         }
       ],
       "usage": "both"
+    },
+    "SemiCheckResult": {
+      "document": "纳管检查结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cvm实例id",
+          "example": "ins-hsrsaxfo",
+          "member": "string",
+          "name": "CVMInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否能被纳管，为true时RejectedInfo为空，为false的时候需要展示RejectedInfo中的信息",
+          "example": "false",
+          "member": "bool",
+          "name": "Valid",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被拒绝纳管的原因",
+          "example": "无",
+          "member": "RejectedInfo",
+          "name": "RejectedInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Service": {
       "document": "描述在线服务",
@@ -19622,6 +20273,75 @@
         }
       ],
       "usage": "both"
+    },
+    "SpotPaidNode": {
+      "document": "竞价类型节点购买参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费类型, 竞价默认写SPOTPAID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例机型, S5.LARGE4",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "购买实例数量",
+          "example": "无",
+          "member": "int64",
+          "name": "InstanceCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "高性能计算集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "HpcClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例所属安全组",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续买",
+          "example": "无",
+          "member": "bool",
+          "name": "AutoRenew",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "实例名称模板",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "StartCmdInfo": {
       "document": "启动命令信息",

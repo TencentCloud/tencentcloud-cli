@@ -1,37 +1,10 @@
-# Release 3.0.1426.1
+# Release 3.0.1427.1
 
-## 云数据库 MySQL(cdb) 版本：2017-03-20
+## 配置审计(config) 版本：2022-08-02
 
-### 第 166 次发布
+### 第 10 次发布
 
-发布时间：2026-05-19 01:17:28
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeRegion](http://document.tencentcloudapi.woa.com/document/product/236/90317)
-
-修改接口：
-
-* [AdjustCdbProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/77512)
-
-	* <font color="#dd0000">**修改入参**：</font>ApNodeAsRoNode, ApQueryToOtherNode
-
-
-新增数据结构：
-
-* [NewGetRegion](http://document.tencentcloudapi.woa.com/document/product/236/15878#NewGetRegion)
-
-
-
-## 智能顾问-混沌演练(cfg) 版本：2021-08-20
-
-### 第 29 次发布
-
-发布时间：2026-05-19 01:21:01
+发布时间：2026-05-20 01:25:27
 
 本次发布包含了以下内容：
 
@@ -39,34 +12,18 @@
 
 修改数据结构：
 
-* [TaskListItem](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TaskListItem)
+* [SystemConfigRule](http://document.tencentcloudapi.woa.com/document/product/1751/82623#SystemConfigRule)
 
-	* 新增成员：Tags
-
-
-
-
-## 日志服务(cls) 版本：2020-10-16
-
-### 第 150 次发布
-
-发布时间：2026-05-19 01:24:36
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [BatchSetCloudProductLogType](http://document.tencentcloudapi.woa.com/document/product/614/90318)
+	* 新增成员：OnlineShow
 
 
 
-## 暴露面管理服务(ctem) 版本：2023-11-28
 
-### 第 17 次发布
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-发布时间：2026-05-19 01:28:48
+### 第 165 次发布
+
+发布时间：2026-05-20 01:31:56
 
 本次发布包含了以下内容：
 
@@ -74,133 +31,18 @@
 
 修改接口：
 
-* [DescribeUserInfo](http://document.tencentcloudapi.woa.com/document/product/1792/87464)
+* [DescribeProxies](http://document.tencentcloudapi.woa.com/document/product/1003/78066)
 
-	* 新增出参：IsDemoMode
+	* 新增出参：ColumnStoreProxyForward
 
 
-修改数据结构：
 
-* [DisplayToolCommon](http://document.tencentcloudapi.woa.com/document/product/1792/87475#DisplayToolCommon)
 
-	* 新增成员：IsPlainTextInDemo
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
 
+### 第 37 次发布
 
-
-
-## 腾讯云数据分析智能体(dataagent) 版本：2025-05-13
-
-### 第 14 次发布
-
-发布时间：2026-05-19 01:34:50
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [GetUserInstanceList](http://document.tencentcloudapi.woa.com/document/product/1806/90319)
-
-新增数据结构：
-
-* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1806/87994#InstanceInfo)
-
-
-
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
-
-### 第 156 次发布
-
-发布时间：2026-05-19 01:37:41
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [TaskFullRespInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TaskFullRespInfo)
-
-	* 新增成员：QueueTime
-
-
-
-
-## 腾讯混元大模型(hunyuan) 版本：2023-09-01
-
-### 第 31 次发布
-
-发布时间：2026-05-19 01:48:30
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [QueryHunyuan3DPartJob](http://document.tencentcloudapi.woa.com/document/product/1744/88616)
-
-	* 新增出参：PartSegmentationInfo
-
-* [SubmitHunyuan3DPartJob](http://document.tencentcloudapi.woa.com/document/product/1744/88614)
-
-	* 新增入参：PartSegmentationInfo, EnableStagedGeneration
-
-
-
-
-## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
-
-### 第 40 次发布
-
-发布时间：2026-05-19 01:51:57
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateCompanyDirectoryConfig](http://document.tencentcloudapi.woa.com/document/product/1794/90322)
-* [DescribeCompanyDirectoryConfig](http://document.tencentcloudapi.woa.com/document/product/1794/90321)
-* [ModifyCompanyDirectoryConfig](http://document.tencentcloudapi.woa.com/document/product/1794/90320)
-
-新增数据结构：
-
-* [DirectoryConfigData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DirectoryConfigData)
-* [DirectoryConfigResultData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DirectoryConfigResultData)
-
-
-
-## 多网聚合加速(mna) 版本：2021-01-19
-
-### 第 33 次发布
-
-发布时间：2026-05-19 02:09:42
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DeviceBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#DeviceBaseInfo)
-
-	* 新增成员：AllowedRegions
-
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2023-06-16
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
-
-### 第 125 次发布
-
-发布时间：2026-05-19 02:10:58
+发布时间：2026-05-20 01:58:38
 
 本次发布包含了以下内容：
 
@@ -208,92 +50,115 @@
 
 <font color="#dd0000">**删除接口**：</font>
 
-* CreateServiceDiscovery
-* DescribeServiceDiscovery
+* CreateAttributeLabel
+* CreateKnowledgeBase
+* CreateQA
+* DeleteAttributeLabels
+* DeleteDocs
+* DeleteKnowledgeBase
+* DeleteQAs
+* DescribeDoc
+* ImportQAs
+* ListAttributeLabels
+* ListDocs
+* ListQAs
+* ModifyAttributeLabel
+* ModifyQA
+* RetrieveKnowledge
+* UploadDoc
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* AttributeItem
+* AttributeLabelItem
+* AttributeLabelReferItem
+* DocItem
+* QaItem
+* RetrievalRecord
+* RetrievalRecordMetadata
+* RetrievalSetting
+* SegmentationConfig
 
 
 
-## 流计算 Oceanus(oceanus) 版本：2019-04-22
+## 媒体处理(mps) 版本：2019-06-12
 
-### 第 81 次发布
+### 第 173 次发布
 
-发布时间：2026-05-19 02:15:39
+发布时间：2026-05-20 02:02:27
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-修改接口：
-
-* [CreateVariable](http://document.tencentcloudapi.woa.com/document/product/849/87831)
-
-	* 新增入参：ValueType, SecretRegion, SecretName, SecretVersionId, SecretValueMd5
-
 
 修改数据结构：
 
-* [Setats](http://document.tencentcloudapi.woa.com/document/product/849/52010#Setats)
+* [VoiceProfile](http://document.tencentcloudapi.woa.com/document/product/862/37615#VoiceProfile)
 
-	* 新增成员：Name, Remark
-
-* [VariableItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#VariableItem)
-
-	* 新增成员：ValueType, SecretRegion, SecretName, SecretVersionId
+	* 新增成员：Languages
 
 
 
 
-## 容器安全服务(tcss) 版本：2020-11-01
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
-### 第 55 次发布
+### 第 178 次发布
 
-发布时间：2026-05-19 02:28:02
+发布时间：2026-05-20 02:19:58
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+修改数据结构：
 
-* [CreateAssetImageRegistryScanTask](http://document.tencentcloudapi.woa.com/document/product/1662/78909)
+* [RabbitMQClusterAccessInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQClusterAccessInfo)
 
-	* 新增入参：Timeout
+	* 新增成员：PublicStreamAccessEndpoint
 
+* [RabbitMQUser](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQUser)
 
+	* 新增成员：CamAuthEnabled, CamCredentialName
 
+* [RabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQVipInstance)
 
-## 腾讯云图数据可视化(tcv) 版本：2021-06-11
+	* 新增成员：PublicStreamAccessEndpoint
 
-### 第 2 次发布
+* [VpcEndpointInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#VpcEndpointInfo)
 
-发布时间：2026-05-19 02:30:31
+	* 新增成员：Id, VpcStreamEndpoint
 
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* DescribeUserInfo
 
 
 
 ## TI-ONE 训练平台(tione) 版本：2021-11-11
 
-### 第 134 次发布
+### 第 135 次发布
 
-发布时间：2026-05-19 02:35:15
+发布时间：2026-05-20 02:24:31
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+新增接口：
 
-* [NotebookDetail](http://document.tencentcloudapi.woa.com/document/product/851/74915#NotebookDetail)
+* [CreateBillingInstanceSemiCheckTask](http://document.tencentcloudapi.woa.com/document/product/851/90329)
+* [CreateBillingPostpaidSWInstances](http://document.tencentcloudapi.woa.com/document/product/851/90328)
+* [CreateBillingResourceGroup](http://document.tencentcloudapi.woa.com/document/product/851/90327)
+* [DescribeAvailableSWInstances](http://document.tencentcloudapi.woa.com/document/product/851/90326)
+* [DescribeBillingInstanceSemiCheckTask](http://document.tencentcloudapi.woa.com/document/product/851/90325)
+* [DescribeTrainingTaskPodUrl](http://document.tencentcloudapi.woa.com/document/product/851/90330)
+* [DestroyBillingResource](http://document.tencentcloudapi.woa.com/document/product/851/90324)
+* [ReleaseBillingPostpaidSWInstances](http://document.tencentcloudapi.woa.com/document/product/851/90323)
 
-	* 新增成员：HasWorkerInstance
+新增数据结构：
 
+* [ExternalNode](http://document.tencentcloudapi.woa.com/document/product/851/74915#ExternalNode)
+* [FailResource](http://document.tencentcloudapi.woa.com/document/product/851/74915#FailResource)
+* [RejectedInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#RejectedInfo)
+* [SemiCheckResult](http://document.tencentcloudapi.woa.com/document/product/851/74915#SemiCheckResult)
+* [SpotPaidNode](http://document.tencentcloudapi.woa.com/document/product/851/74915#SpotPaidNode)
 
 
 
@@ -301,11 +166,11 @@
 
 
 
-## 实时互动-工业能源版(trro) 版本：2022-03-25
+## 数据开发治理平台 WeData(wedata) 版本：2025-10-10
 
-### 第 12 次发布
+### 第 25 次发布
 
-发布时间：2026-05-19 02:39:17
+发布时间：2026-05-20 02:37:29
 
 本次发布包含了以下内容：
 
@@ -313,17 +178,61 @@
 
 修改接口：
 
-* [DescribeDeviceSessionDetails](http://document.tencentcloudapi.woa.com/document/product/1714/80496)
+* [CreateWorkflow](http://document.tencentcloudapi.woa.com/document/product/1607/89318)
 
-	* 新增入参：StartTime, EndTime
+	* 新增入参：GitConfigId
 
+* [GetTaskExecution](http://document.tencentcloudapi.woa.com/document/product/1607/89290)
+
+	* 新增入参：InnerWorkflowExecutionPageOption
+
+* [ResetWorkflow](http://document.tencentcloudapi.woa.com/document/product/1607/89721)
+
+	* 新增入参：GitConfigId
+
+
+新增数据结构：
+
+* [InnerTaskBriefInfo](http://document.tencentcloudapi.woa.com/document/product/1607/88970#InnerTaskBriefInfo)
+* [InnerTaskExecutionBrief](http://document.tencentcloudapi.woa.com/document/product/1607/88970#InnerTaskExecutionBrief)
+* [InnerWorkflowExecutionDetail](http://document.tencentcloudapi.woa.com/document/product/1607/88970#InnerWorkflowExecutionDetail)
+* [InnerWorkflowExecutionItem](http://document.tencentcloudapi.woa.com/document/product/1607/88970#InnerWorkflowExecutionItem)
+* [InnerWorkflowExecutionPageOptionInfo](http://document.tencentcloudapi.woa.com/document/product/1607/88970#InnerWorkflowExecutionPageOptionInfo)
 
 修改数据结构：
 
-* [SessionDeviceDetail](http://document.tencentcloudapi.woa.com/document/product/1714/80497#SessionDeviceDetail)
+* [TaskBrief](http://document.tencentcloudapi.woa.com/document/product/1607/88970#TaskBrief)
 
-	* 新增成员：ControlLatency
+	* 新增成员：InnerTask
 
+* [TaskExecutionBrief](http://document.tencentcloudapi.woa.com/document/product/1607/88970#TaskExecutionBrief)
+
+	* 新增成员：InnerTask, InnerWorkflowExecutionDetail
+
+* [Workflow](http://document.tencentcloudapi.woa.com/document/product/1607/88970#Workflow)
+
+	* 新增成员：GitConfigId
+
+* [WorkflowCanvas](http://document.tencentcloudapi.woa.com/document/product/1607/88970#WorkflowCanvas)
+
+	* 新增成员：GitConfigId
+
+* [WorkflowInfo](http://document.tencentcloudapi.woa.com/document/product/1607/88970#WorkflowInfo)
+
+	* 新增成员：BundleId, BundleInfo, GitConfigId
+
+* [WorkflowTaskBrief](http://document.tencentcloudapi.woa.com/document/product/1607/88970#WorkflowTaskBrief)
+
+	* 新增成员：TaskTypeName, InnerTask
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2025-08-06
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
 
 
 

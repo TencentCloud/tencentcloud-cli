@@ -22229,7 +22229,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间ID",
+          "document": "<p>工作空间ID</p>",
           "example": "12356483444046",
           "member": "string",
           "name": "WorkspaceId",
@@ -22238,7 +22238,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流基本信息",
+          "document": "<p>工作流基本信息</p>",
           "example": "无",
           "member": "WorkflowBaseInfo",
           "name": "BaseInfo",
@@ -22247,7 +22247,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流调度配置",
+          "document": "<p>工作流调度配置</p>",
           "example": "无",
           "member": "WorkflowTriggerConfig",
           "name": "Trigger",
@@ -22256,7 +22256,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流参数列表\n参数名必填且只能包含数字、大小写字母、空格、.$@#!%^&*()-_+=></'，最长128个字符",
+          "document": "<p>工作流参数列表<br>参数名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;<!--'，最长128个字符--></p>",
           "example": "无",
           "member": "ParamInfo",
           "name": "ParamList",
@@ -22265,7 +22265,7 @@
         },
         {
           "disabled": false,
-          "document": "标签\n标签名必填且只能包含数字、大小写字母、空格、.$@#!%^&*()-_+=></'，最长128个字符",
+          "document": "<p>标签<br>标签名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;<!--'，最长128个字符--></p>",
           "example": "无",
           "member": "LabelBrief",
           "name": "LabelList",
@@ -22274,7 +22274,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流告警",
+          "document": "<p>工作流告警</p>",
           "example": "无",
           "member": "AlarmBrief",
           "name": "Alarm",
@@ -22283,7 +22283,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流监控指标",
+          "document": "<p>工作流监控指标</p>",
           "example": "无",
           "member": "MonitorMetricBrief",
           "name": "MonitorMetric",
@@ -22292,7 +22292,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流高级设置",
+          "document": "<p>工作流高级设置</p>",
           "example": "无",
           "member": "WorkflowAdvanceConfig",
           "name": "AdvanceConfig",
@@ -22301,7 +22301,7 @@
         },
         {
           "disabled": false,
-          "document": "任务",
+          "document": "<p>任务</p>",
           "example": "无",
           "member": "Task",
           "name": "TaskList",
@@ -22310,7 +22310,7 @@
         },
         {
           "disabled": false,
-          "document": "BundleId项",
+          "document": "<p>BundleId项</p>",
           "example": "0b785b8d-bd8e-4513-be65-36f989bc8a64",
           "member": "string",
           "name": "BundleId",
@@ -22319,10 +22319,19 @@
         },
         {
           "disabled": false,
-          "document": "Bundle信息",
+          "document": "<p>Bundle信息</p>",
           "example": "{\"a\":\"1\"}",
           "member": "string",
           "name": "BundleInfo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>GIT配置ID，对应GetWorkspaceConfig接口中的ConfigKey</p>",
+          "example": "17770026741688900",
+          "member": "string",
+          "name": "GitConfigId",
           "required": false,
           "type": "string"
         }
@@ -22334,7 +22343,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回工作流ID",
+          "document": "<p>返回工作流ID</p>",
           "example": "无",
           "member": "CreateWorkflowRsp",
           "name": "Data",
@@ -39547,7 +39556,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间 ID",
+          "document": "<p>工作空间 ID</p>",
           "example": "9jkn7sf0-9sf8gss7",
           "member": "string",
           "name": "WorkspaceId",
@@ -39556,12 +39565,21 @@
         },
         {
           "disabled": false,
-          "document": "任务运行 ID",
+          "document": "<p>任务运行 ID</p>",
           "example": "1fgoagb2-s42gsg4",
           "member": "string",
           "name": "TaskExecutionId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内嵌工作流实例分页选项</p>",
+          "example": "无",
+          "member": "InnerWorkflowExecutionPageOptionInfo",
+          "name": "InnerWorkflowExecutionPageOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -39571,7 +39589,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务运行详情",
+          "document": "<p>任务运行详情</p>",
           "example": "无",
           "member": "TaskExecutionBrief",
           "name": "Data",
@@ -41731,6 +41749,386 @@
         }
       ],
       "usage": "out"
+    },
+    "InnerTaskBriefInfo": {
+      "document": "内嵌任务简要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c647e382-f635-4cf8-bd04-8e5cd3da66d1",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fh_260507_164228_iteration",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PYTHON",
+          "member": "string",
+          "name": "TaskTypeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "InnerTaskExecutionBrief": {
+      "document": "内嵌工作流执行条目",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>内嵌工作流运行ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c58cb0a0-ccab-4858-90aa-c823342feb04_2a3f2777-715e-427e-b808-db1e0049830c_1778513446309_2_iter_2_1",
+          "member": "string",
+          "name": "ExecutionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内嵌工作流循环次数（迭代序号）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "IterationIndex",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行开始时间戳，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1778660584000",
+          "member": "string",
+          "name": "ExecutionStartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行结束时间戳，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1778660629000",
+          "member": "string",
+          "name": "ExecutionEndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行状态 (参考WorkflowExecutionState)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ExecutionState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时长，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "45000",
+          "member": "string",
+          "name": "ExecutionCostTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"loopDataArray\":\"[1,2,3]\"}",
+          "member": "string",
+          "name": "TaskParams",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UserKilled",
+          "member": "string",
+          "name": "ErrorCodeStr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InnerWorkflowExecutionDetail": {
+      "document": "内嵌工作流执行记录详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>当前页码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>页内条数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总页数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalPageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内嵌工作流执行记录条目列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InnerWorkflowExecutionItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>迭代次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "IterationCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FailureCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>成功次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "SuccessCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内嵌工作流ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c27ade4d-d585-4565-a55f-d50b59b26993",
+          "member": "string",
+          "name": "InnerWorkflowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内嵌任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "b6d4d2e5-8faa-4492-aff1-925afb7a12f9",
+          "member": "string",
+          "name": "InnerTaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内部任务实例业务状态枚举</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkflowExecutionBizEnumBrief",
+          "name": "InnerTaskExecutionBizEnumInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InnerWorkflowExecutionItem": {
+      "document": "内嵌工作流执行条目",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>内嵌工作流ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c27ade4d-d585-4565-a55f-d50b59b26993",
+          "member": "string",
+          "name": "WorkflowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内嵌工作流运行ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c27ade4d-d585-4565-a55f-d50b59b26993_1778160626773_1_iter_1",
+          "member": "string",
+          "name": "ExecutionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内嵌工作流循环次数（迭代序号）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "IterationIndex",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行开始时间戳，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1778162400511",
+          "member": "string",
+          "name": "ExecutionStartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行结束时间戳，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1778160688351",
+          "member": "string",
+          "name": "ExecutionEndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行状态 (参考WorkflowExecutionState)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "ExecutionState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时长，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "29",
+          "member": "string",
+          "name": "ExecutionCostTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"loopDataArray\":\"[1,2,3]\"}",
+          "member": "string",
+          "name": "WorkflowParams",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UserKilled",
+          "member": "string",
+          "name": "ErrorCodeStr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内部任务的实例信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InnerTaskExecutionBrief",
+          "name": "InnerTaskExecution",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InnerWorkflowExecutionPageOptionInfo": {
+      "document": "内嵌工作流执行记录分页选项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>请求的数据页数。默认值为1，取值大于等于1。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页显示的数据条数。默认值为10，最小值为10，最大值为200。</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>【过滤参数】自定义条件查询 ExecutionState（可选值为： SUCCESS、FAILED 等）</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "InstallAppRequest": {
       "document": "InstallApp请求参数结构体",
@@ -70372,7 +70770,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间ID",
+          "document": "<p>工作空间ID</p>",
           "example": "12356483444046",
           "member": "string",
           "name": "WorkspaceId",
@@ -70381,7 +70779,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流基本信息",
+          "document": "<p>工作流基本信息</p>",
           "example": "无",
           "member": "WorkflowBaseInfo",
           "name": "BaseInfo",
@@ -70390,7 +70788,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流调度配置",
+          "document": "<p>工作流调度配置</p>",
           "example": "无",
           "member": "WorkflowTriggerConfig",
           "name": "Trigger",
@@ -70399,7 +70797,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流参数列表\n参数名必填且只能包含数字、大小写字母、空格、.$@#!%^&*()-_+=></'，最长128个字符",
+          "document": "<p>工作流参数列表<br>参数名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;<!--'，最长128个字符--></p>",
           "example": "无",
           "member": "ParamInfo",
           "name": "ParamList",
@@ -70408,7 +70806,7 @@
         },
         {
           "disabled": false,
-          "document": "标签，标签名必填且只能包含数字、大小写字母、空格、.$@#!%^&*()-_+=></'，最长128个字符",
+          "document": "<p>标签，标签名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;<!--'，最长128个字符--></p>",
           "example": "无",
           "member": "LabelBrief",
           "name": "LabelList",
@@ -70417,7 +70815,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流告警",
+          "document": "<p>工作流告警</p>",
           "example": "无",
           "member": "AlarmBrief",
           "name": "Alarm",
@@ -70426,7 +70824,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流指标",
+          "document": "<p>工作流指标</p>",
           "example": "无",
           "member": "MonitorMetricBrief",
           "name": "MonitorMetric",
@@ -70435,7 +70833,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流高级设置",
+          "document": "<p>工作流高级设置</p>",
           "example": "无",
           "member": "WorkflowAdvanceConfig",
           "name": "AdvanceConfig",
@@ -70444,7 +70842,7 @@
         },
         {
           "disabled": false,
-          "document": "任务属性",
+          "document": "<p>任务属性</p>",
           "example": "无",
           "member": "Task",
           "name": "TaskList",
@@ -70453,7 +70851,7 @@
         },
         {
           "disabled": false,
-          "document": "BundleID项",
+          "document": "<p>BundleID项</p>",
           "example": "0b785b8d-bd8e-4513-be65-36f989bc8a64",
           "member": "string",
           "name": "BundleId",
@@ -70462,10 +70860,19 @@
         },
         {
           "disabled": false,
-          "document": "Bundle信息",
+          "document": "<p>Bundle信息</p>",
           "example": "{\"a\":\"1\"}",
           "member": "string",
           "name": "BundleInfo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>GIT配置ID，对应GetWorkspaceConfig接口中的ConfigKey</p>",
+          "example": "17770026741688900",
+          "member": "string",
+          "name": "GitConfigId",
           "required": false,
           "type": "string"
         }
@@ -70477,7 +70884,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "true代表成功，false代表失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>true代表成功，false代表失败</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResetWorkflowRsp",
           "name": "Data",
@@ -78264,7 +78671,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务依赖\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务依赖</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DependOnBrief",
           "name": "DependOnList",
@@ -78275,7 +78682,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "d137d9bc-9ade-466a-b592-bb1b1cd2d955",
           "member": "string",
           "name": "TaskId",
@@ -78286,7 +78693,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "name",
           "member": "string",
           "name": "TaskName",
@@ -78297,7 +78704,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NOTEBOOK",
           "member": "string",
           "name": "TaskTypeName",
@@ -78308,7 +78715,7 @@
         },
         {
           "disabled": false,
-          "document": "任务X坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务X坐标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "45.0",
           "member": "float",
           "name": "LeftCoordinate",
@@ -78319,7 +78726,7 @@
         },
         {
           "disabled": false,
-          "document": "任务Y坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务Y坐标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "78.0",
           "member": "float",
           "name": "TopCoordinate",
@@ -78330,7 +78737,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源组ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "54534124324",
           "member": "string",
           "name": "ResourceGroupId",
@@ -78341,7 +78748,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源组名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "serverless",
           "member": "string",
           "name": "ResourceGroupName",
@@ -78352,7 +78759,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1286736242",
           "member": "string",
           "name": "WorkflowId",
@@ -78363,7 +78770,7 @@
         },
         {
           "disabled": false,
-          "document": "任务重试策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务重试策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskRetryStrategy",
           "name": "TaskRetryStrategy",
@@ -78374,7 +78781,7 @@
         },
         {
           "disabled": false,
-          "document": "任务依赖运行条件\n\nALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功\nONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功\nNONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中\nALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败\nONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败\nALL_FAILED: 全部失败：所有上游依赖任务都失败\nALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行\nALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\nONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游\nALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行\nNONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\nALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行\nADVANCED:运行条件为高级模式时配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务依赖运行条件</p><p>ALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功<br>ONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功<br>NONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中<br>ALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败<br>ONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败<br>ALL_FAILED: 全部失败：所有上游依赖任务都失败<br>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行<br>ALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行<br>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游<br>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行<br>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行<br>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行<br>ADVANCED:运行条件为高级模式时配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL_SUCCESS",
           "member": "string",
           "name": "DependOnRunCondition",
@@ -78385,10 +78792,21 @@
         },
         {
           "disabled": false,
-          "document": "任务高级运行参数，当DependOnRunCondition为ADVANCED时配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务高级运行参数，当DependOnRunCondition为ADVANCED时配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AdvancedDependencyConfig",
           "name": "AdvancedDependencyConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内嵌任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskBrief",
+          "name": "InnerTask",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -78869,6 +79287,26 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内嵌任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InnerTaskBriefInfo",
+          "name": "InnerTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内嵌工作流执行详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InnerWorkflowExecutionDetail",
+          "name": "InnerWorkflowExecutionDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -79164,7 +79602,7 @@
       "usage": "both"
     },
     "TaskType": {
-      "document": "### `TaskTypePropertyList` 中 `TaskTypeProperty` 针对不同任务类型需要填写不同的 key 和 value；\n\n### 1. NOTEBOOK 任务类型\n\n#### 属性配置\n\n| 属性键 | 属性名称 | 描述  | UI类型 | 是否必需 |\n| --- | --- | --- | --- | --- |\n| Source | 来源  | 可填2或5,来源 2:GIT, 5:工作空间 | TASK_SOURCE_SELECT | 是   |\n| NotebookPath | Notebook 相对路径 | Source为5时，需从（ListFiles）获取 | WORKSPACE_FILE_SELECT | Source 为 2、5 时，必填 |\n\n### 2. DATA_INTEGRATION 任务类型\n\n#### 属性配置\n\n| 属性键 | 属性名称 | 描述  | UI类型 | 是否必需 |\n| --- | --- | --- | --- | --- |\n| Source | 来源  | 必填:4,表示来源为COS | INPUT | 是   |\n| TemplatePath | 数据接入任务配置路径 | 需从（ListIntegrationTasks）接口获取 | INPUT | 是   |\n| DataIntegrationTaskId | 数据接入任务ID | 需从（ListIntegrationTasks）接口获取 | DATA_INTEGRATION_SELECT | 是   |\n\n### 3. RUN_WORKFLOW 任务类型\n\n#### 属性配置\n\n| 属性键 | 属性名称 | 描述  | UI类型 | 是否必需 |\n| --- | --- | --- | --- | --- |\n| WorkflowId | 选择工作流 | 需从（ListWorkflows）接口获取 | WORKFLOW_SELECT | 是   |\n\n### 4. SQL 任务类型\n\n#### 属性配置\n\n| 属性键 | 属性名称 | 描述  | UI类型 | 是否必需 |\n| --- | --- | --- | --- | --- |\n| Source | 来源  | 可填2或5,来源 2:GIT, 5:工作空间 | TASK_SOURCE_SELECT | 是   |\n| SqlPath | SQL脚本路径 | SQL脚本路径 | SQL_FILE_SELECT | Source 为 2 时，必填 |\n| CodeFileName | 文件名称 | Source为5时，需从（ListReleasedCodeFile）接口获取 | INPUT | 否   |\n| CodeFileId | 文件ID | Source为5时，需从（ListReleasedCodeFile）接口获取 | INPUT | Source 为 5 时，必填 |\n| CodeFileVersion | 文件版本 | Source为5时，需从（ListReleasedCodeFile）接口获取 | INPUT | 否   |\n\n### 5. Python File 任务类型\n\n#### 属性配置\n\n| 属性键 | 属性名称 | 描述  | UI类型 | 是否必需 |\n| --- | --- | --- | --- | --- |\n| Source | 来源  | 可填2或5,来源 2:GIT, 5:工作空间 | TASK_SOURCE_SELECT | 是   |\n| SourcePath | Python脚本路径 | Source为5时，需从（ListFiles）接口获取 | WORKSPACE_FILE_SELECT | 是   |\n\n### 6.质量监控 任务类型\n\n#### 属性配置\n\n| 属性键 | 属性名称 | 描述  | UI类型 | 是否必需 |\n| --- | --- | --- | --- | --- |\n| Source | 来源  | 必填:4,表示来源为COS | INPUT | 是   |\n| TemplatePath | 质量监控配置路径 | 需从(ListDataQualityTasksForWorkflow)接口获取 | INPUT | 是   |\n| SourceUniqueId | 质量监控ID | 需从(ListDataQualityTasksForWorkflow)接口获取 | DATA_QUALITY_SELECT | 是   |\n| ExecutionType | 执行类型 | 必填:SQL | INPUT | 是   |\n| AfterAspect | 质量任务后置切面 | 需从(ListDataQualityTasksForWorkflow)接口获取 | INPUT | 否   |\n| BeforeAspect | 质量任务前置切面 | 需从(ListDataQualityTasksForWorkflow)接口获取 | INPUT | 否   |",
+      "document": "### `TaskTypePropertyList` 中 `TaskTypeProperty` 针对不同任务类型需要填写不同的 key 和 value；\n\n### 1. NOTEBOOK 任务类型\n\n#### 属性配置\n\n| 属性键       | 属性名称          | 描述                               | UI类型                | 是否必需                |\n| ------------ | ----------------- | ---------------------------------- | --------------------- | ----------------------- |\n| Source       | 来源              | 可填2或5,来源 2:GIT, 5:工作空间    | TASK_SOURCE_SELECT    | 是                      |\n| NotebookPath | Notebook 相对路径 | Source为5时，需从（ListFiles）获取 | WORKSPACE_FILE_SELECT | Source 为 2、5 时，必填 |\n\n### 2. DATA_INTEGRATION 任务类型\n\n#### 属性配置\n\n| 属性键                | 属性名称             | 描述                                 | UI类型                  | 是否必需 |\n| --------------------- | -------------------- | ------------------------------------ | ----------------------- | -------- |\n| Source                | 来源                 | 必填:4,表示来源为COS                 | INPUT                   | 是       |\n| TemplatePath          | 数据接入任务配置路径 | 需从（ListIntegrationTasks）接口获取 | INPUT                   | 是       |\n| DataIntegrationTaskId | 数据接入任务ID       | 需从（ListIntegrationTasks）接口获取 | DATA_INTEGRATION_SELECT | 是       |\n\n### 3. RUN_WORKFLOW 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称   | 描述                          | UI类型          | 是否必需 |\n| ---------- | ---------- | ----------------------------- | --------------- | -------- |\n| WorkflowId | 选择工作流 | 需从（ListWorkflows）接口获取 | WORKFLOW_SELECT | 是       |\n\n### 4. SQL 任务类型\n\n#### 属性配置\n\n| 属性键          | 属性名称    | 描述                                              | UI类型             | 是否必需             |\n| --------------- | ----------- | ------------------------------------------------- | ------------------ | -------------------- |\n| Source          | 来源        | 可填2或5,来源 2:GIT, 5:工作空间                   | TASK_SOURCE_SELECT | 是                   |\n| SqlPath         | SQL脚本路径 | SQL脚本路径                                       | SQL_FILE_SELECT    | Source 为 2 时，必填 |\n| CodeFileName    | 文件名称    | Source为5时，需从（ListReleasedCodeFile）接口获取 | INPUT              | 否                   |\n| CodeFileId      | 文件ID      | Source为5时，需从（ListReleasedCodeFile）接口获取 | INPUT              | Source 为 5 时，必填 |\n| CodeFileVersion | 文件版本    | Source为5时，需从（ListReleasedCodeFile）接口获取 | INPUT              | 否                   |\n\n### 5. Python File 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称       | 描述                                   | UI类型                | 是否必需 |\n| ---------- | -------------- | -------------------------------------- | --------------------- | -------- |\n| Source     | 来源           | 可填2或5,来源 2:GIT, 5:工作空间        | TASK_SOURCE_SELECT    | 是       |\n| SourcePath | Python脚本路径 | Source为5时，需从（ListFiles）接口获取 | WORKSPACE_FILE_SELECT | 是       |\n\n### 6.质量监控 任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称         | 描述                                          | UI类型              | 是否必需 |\n| -------------- | ---------------- | --------------------------------------------- | ------------------- | -------- |\n| Source         | 来源             | 必填:4,表示来源为COS                          | INPUT               | 是       |\n| TemplatePath   | 质量监控配置路径 | 需从(ListDataQualityTasksForWorkflow)接口获取 | INPUT               | 是       |\n| SourceUniqueId | 质量监控ID       | 需从(ListDataQualityTasksForWorkflow)接口获取 | DATA_QUALITY_SELECT | 是       |\n| ExecutionType  | 执行类型         | 必填:SQL                                      | INPUT               | 是       |\n| AfterAspect    | 质量任务后置切面 | 需从(ListDataQualityTasksForWorkflow)接口获取 | INPUT               | 否       |\n| BeforeAspect   | 质量任务前置切面 | 需从(ListDataQualityTasksForWorkflow)接口获取 | INPUT               | 否       |\n\n\n### 7.IF_ELSE 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称 | 描述            | UI类型 | 是否必需 |\n| ---------- | -------- | --------------- | ------ | -------- |\n| Conditions | 条件列表 | IF-ELSE条件配置 | INPUT  | 是       |\n\n### 8.FOR_EACH 任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称     | 描述                               | UI类型 | 是否必需 |\n| -------------- | ------------ | ---------------------------------- | ------ | -------- |\n| MaxConcurrency | 最大并发数   | 最大并发数，默认为1                | INPUT  | 是       |\n| MaxIterations  | 最大迭代次数 | 最大迭代次数，默认1000             | INPUT  | 是       |\n| LoopDataArray  | 循环参数     | JSON格式的数组，或 {{}} 包裹的变量 | INPUT  | 是       |",
       "members": [
         {
           "disabled": false,
@@ -89891,7 +90329,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流基本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流基本信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowBaseInfo",
           "name": "BaseInfo",
@@ -89902,7 +90340,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流调度配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流调度配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowTriggerConfig",
           "name": "Trigger",
@@ -89913,7 +90351,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流参数列表 参数名必填且只能包含数字、大小写字母、空格、.$@#!%^&*()-_+=></'，最长128个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流参数列表 参数名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;<!--'，最长128个字符--></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ParamInfo",
           "name": "ParamList",
@@ -89924,7 +90362,7 @@
         },
         {
           "disabled": false,
-          "document": "标签 标签名必填且只能包含数字、大小写字母、空格、.$@#!%^&*()-_+=></'，最长128个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签 标签名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;<!--'，最长128个字符--></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LabelBrief",
           "name": "LabelList",
@@ -89935,7 +90373,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流告警\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流告警</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AlarmBrief",
           "name": "Alarm",
@@ -89946,7 +90384,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流指标监控\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流指标监控</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MonitorMetricBrief",
           "name": "MonitorMetric",
@@ -89957,7 +90395,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流高级设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流高级设置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowAdvanceConfig",
           "name": "AdvanceConfig",
@@ -89968,7 +90406,7 @@
         },
         {
           "disabled": false,
-          "document": "任务实体\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务实体</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Task",
           "name": "TaskList",
@@ -89979,7 +90417,7 @@
         },
         {
           "disabled": false,
-          "document": "BundleId项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>BundleId项</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0b785b8d-bd8e-4513-be65-36123",
           "member": "string",
           "name": "BundleId",
@@ -89990,7 +90428,7 @@
         },
         {
           "disabled": false,
-          "document": "Bundle信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Bundle信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"a\":\"1\"}",
           "member": "string",
           "name": "BundleInfo",
@@ -90001,10 +90439,21 @@
         },
         {
           "disabled": false,
-          "document": "项目空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>项目空间ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0b785b8d-bd8e-4513-be65-36123",
           "member": "string",
           "name": "WorkspaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>GIT配置ID，对应GetWorkspaceConfig接口中的ConfigKey</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "17770026741688900",
+          "member": "string",
+          "name": "GitConfigId",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -90118,7 +90567,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流参数列表 参数名必填且只能包含数字、大小写字母、空格、.$@#!%^&*()-_+=></'，最长128个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流参数列表 参数名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;<!--'，最长128个字符--></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ParamInfo",
           "name": "ParamList",
@@ -90129,7 +90578,7 @@
         },
         {
           "disabled": false,
-          "document": "标签 标签名必填且只能包含数字、大小写字母、空格、.$@#!%^&*()-_+=></'，最长128个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签 标签名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;<!--'，最长128个字符--></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LabelBrief",
           "name": "LabelList",
@@ -90140,7 +90589,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流基本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流基本信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowCanvasBaseInfo",
           "name": "BaseInfo",
@@ -90151,7 +90600,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流调度配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流调度配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowTriggerConfig",
           "name": "Trigger",
@@ -90162,7 +90611,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流告警\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流告警</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AlarmBrief",
           "name": "Alarm",
@@ -90173,7 +90622,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流指标监控\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流指标监控</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MonitorMetricBrief",
           "name": "MonitorMetric",
@@ -90184,7 +90633,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流高级设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流高级设置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowAdvanceConfig",
           "name": "AdvanceConfig",
@@ -90195,7 +90644,7 @@
         },
         {
           "disabled": false,
-          "document": "任务实体\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务实体</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskBrief",
           "name": "TaskList",
@@ -90206,7 +90655,7 @@
         },
         {
           "disabled": false,
-          "document": "BundleId项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>BundleId项</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "BundleId",
@@ -90217,7 +90666,7 @@
         },
         {
           "disabled": false,
-          "document": "Bundle信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Bundle信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "info",
           "member": "string",
           "name": "BundleInfo",
@@ -90228,7 +90677,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作空间ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1cfb1f90-2089-45c1-aa26-d47151b026b9",
           "member": "string",
           "name": "WorkspaceId",
@@ -90239,7 +90688,7 @@
         },
         {
           "disabled": false,
-          "document": "是否我收藏的\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否我收藏的</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "MyFavorite",
@@ -90250,13 +90699,24 @@
         },
         {
           "disabled": false,
-          "document": "工作流计算资源组（收集所有任务的计算资源）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流计算资源组（收集所有任务的计算资源）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowDrawResourceGroup",
           "name": "ResourceGroupInfoList",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>GIT配置ID，对应GetWorkspaceConfig接口中的ConfigKey</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "17770026741688900",
+          "member": "string",
+          "name": "GitConfigId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -90869,7 +91329,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "be4b6673-96da-4402-beae-a89dbc4d627b",
           "member": "string",
           "name": "WorkflowId",
@@ -90879,7 +91339,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "workflow_name",
           "member": "string",
           "name": "WorkflowName",
@@ -90889,7 +91349,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "描述信息",
           "member": "string",
           "name": "Description",
@@ -90899,7 +91359,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人UIN</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "13531",
           "member": "string",
           "name": "CreateUserUin",
@@ -90909,7 +91369,7 @@
         },
         {
           "disabled": false,
-          "document": "负责人UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>负责人UIN</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "24621",
           "member": "string",
           "name": "InChargerUin",
@@ -90919,7 +91379,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1768029273000",
           "member": "string",
           "name": "CreateTime",
@@ -90929,7 +91389,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1768029274000",
           "member": "string",
           "name": "UpdateTime",
@@ -90939,7 +91399,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LabelBrief",
           "name": "LabelList",
@@ -90949,7 +91409,7 @@
         },
         {
           "disabled": false,
-          "document": "运行账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行账号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"100\"]",
           "member": "string",
           "name": "ExecuteUserUin",
@@ -90959,7 +91419,7 @@
         },
         {
           "disabled": false,
-          "document": "任务数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskBrief",
           "name": "TaskList",
@@ -90969,7 +91429,7 @@
         },
         {
           "disabled": false,
-          "document": "计算资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计算资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowListResourceGroupInfo",
           "name": "ResourceGroupInfoList",
@@ -90979,7 +91439,7 @@
         },
         {
           "disabled": false,
-          "document": "最近运行情况：返回最近5次运行情况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最近运行情况：返回最近5次运行情况</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowRunInfo",
           "name": "WorkflowListRunList",
@@ -90989,7 +91449,7 @@
         },
         {
           "disabled": false,
-          "document": "运行名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "name",
           "member": "string",
           "name": "ExecuteUserName",
@@ -90999,7 +91459,7 @@
         },
         {
           "disabled": false,
-          "document": "调度器信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>调度器信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowTriggerConfig",
           "name": "Trigger",
@@ -91009,10 +91469,40 @@
         },
         {
           "disabled": false,
-          "document": "授权权限类型\nPERMISSION_TYPE_UNSPECIFIED：未指定权限\nMANAGE : 管理权限：包含所有操作权限\nRUN : 运行权限：可执行实体\nVIEW : 查看权限：可查看实体内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>授权权限类型<br>PERMISSION_TYPE_UNSPECIFIED：未指定权限<br>MANAGE : 管理权限：包含所有操作权限<br>RUN : 运行权限：可执行实体<br>VIEW : 查看权限：可查看实体内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MANAGE",
           "member": "string",
           "name": "Permission",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>bundleId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3f791633-c86b-44e3-bf04-17df5a7fa901",
+          "member": "string",
+          "name": "BundleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>bundle信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"bundleName\":\"test\"}",
+          "member": "string",
+          "name": "BundleInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>GIT配置ID，对应GetWorkspaceConfig接口中的ConfigKey</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "17770026741688900",
+          "member": "string",
+          "name": "GitConfigId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -91169,7 +91659,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f9b36c95-36a3-4458-a40d-215cf99cf461",
           "member": "string",
           "name": "WorkflowId",
@@ -91180,7 +91670,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "wf_01",
           "member": "string",
           "name": "WorkflowName",
@@ -91191,7 +91681,7 @@
         },
         {
           "disabled": false,
-          "document": "任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f9b36c95-36a3-4458-a40d-215cf99cf46a",
           "member": "string",
           "name": "TaskId",
@@ -91202,7 +91692,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "task_01",
           "member": "string",
           "name": "TaskName",
@@ -91213,7 +91703,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2313124",
           "member": "string",
           "name": "CreateUserUin",
@@ -91224,7 +91714,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "user",
           "member": "string",
           "name": "CreateUserName",
@@ -91235,13 +91725,35 @@
         },
         {
           "disabled": false,
-          "document": "创建时间戳（毫秒级）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间戳（毫秒级）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1765533222171",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SQL",
+          "member": "string",
+          "name": "TaskTypeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内嵌任务信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InnerTaskBriefInfo",
+          "name": "InnerTask",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
