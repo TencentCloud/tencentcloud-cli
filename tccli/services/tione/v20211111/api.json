@@ -2158,6 +2158,24 @@
       "members": [
         {
           "disabled": false,
+          "document": "资源组ID",
+          "example": "rsg-wbgc62v5",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "第三方节点",
           "example": "无",
           "member": "ExternalNode",
@@ -2180,6 +2198,16 @@
     "CreateBillingPostpaidSWInstancesResponse": {
       "document": "CreateBillingPostpaidSWInstances返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "纳管失败的节点列表",
+          "example": "无",
+          "member": "FailedPostpaidSWInstance",
+          "name": "FailedCVMInstances",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10001,6 +10029,42 @@
       ],
       "usage": "out"
     },
+    "FailedPostpaidSWInstance": {
+      "document": "按量计费纳管失败的节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CVM节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-noga764v",
+          "member": "string",
+          "name": "CVMInstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "纳管失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "create instance failed",
+          "member": "string",
+          "name": "FailedErrorMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "第三方节点ip",
+          "example": "192.127.0.1",
+          "member": "string",
+          "name": "ExternalNodeIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Filter": {
       "document": "过滤器",
       "members": [
@@ -17039,7 +17103,35 @@
     },
     "ReleaseBillingPostpaidSWInstancesRequest": {
       "document": "ReleaseBillingPostpaidSWInstances请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组ID",
+          "example": "rsg-wbgc62v5",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "纳管节点列表",
+          "example": "[\"ins-noga764v\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "ReleaseBillingPostpaidSWInstancesResponse": {

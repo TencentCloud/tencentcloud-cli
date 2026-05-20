@@ -68963,7 +68963,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "整数vpcId",
+          "document": "<p>整数vpcId</p>",
           "example": "1",
           "member": "int64",
           "name": "VpcId",
@@ -68974,7 +68974,7 @@
         },
         {
           "disabled": false,
-          "document": "对外唯一VpcId",
+          "document": "<p>对外唯一VpcId</p>",
           "example": "vpc-jmaywf6r",
           "member": "string",
           "name": "UniqueVpcId",
@@ -68985,7 +68985,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.type",
+          "document": "<p>原VPC OSS APIv2名称: AddService.type</p>",
           "example": "0",
           "member": "int64",
           "name": "Type",
@@ -68996,7 +68996,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.proto",
+          "document": "<p>原VPC OSS APIv2名称: AddService.proto</p>",
           "example": "tcp",
           "member": "string",
           "name": "Protocol",
@@ -69007,7 +69007,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.vport",
+          "document": "<p>原VPC OSS APIv2名称: AddService.vport</p>",
           "example": "22",
           "member": "int64",
           "name": "VirtualPort",
@@ -69018,7 +69018,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.vip",
+          "document": "<p>原VPC OSS APIv2名称: AddService.vip</p>",
           "example": "172.16.0.18",
           "member": "string",
           "name": "Vip",
@@ -69029,7 +69029,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.remoteVpcId",
+          "document": "<p>原VPC OSS APIv2名称: AddService.remoteVpcId</p>",
           "example": "1",
           "member": "int64",
           "name": "RemoteVpcId",
@@ -69040,8 +69040,8 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.uniqVpcgwId",
-          "example": "xxx",
+          "document": "<p>原VPC OSS APIv2名称: AddService.uniqVpcgwId</p>",
+          "example": "0",
           "member": "string",
           "name": "UniqueVpcGatewayId",
           "output_required": true,
@@ -69051,8 +69051,8 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.uniqClassicVpcgwId",
-          "example": "xxx",
+          "document": "<p>原VPC OSS APIv2名称: AddService.uniqClassicVpcgwId</p>",
+          "example": "0",
           "member": "string",
           "name": "UniqueClassicVpcGatewayId",
           "output_required": true,
@@ -69062,8 +69062,8 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.uniqVpcGwIpVpcgwId",
-          "example": "xxx",
+          "document": "<p>原VPC OSS APIv2名称: AddService.uniqVpcGwIpVpcgwId</p>",
+          "example": "0",
           "member": "string",
           "name": "VipVpcGatewayId",
           "output_required": true,
@@ -69073,7 +69073,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.vpcGwIp",
+          "document": "<p>原VPC OSS APIv2名称: AddService.vpcGwIp</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "VpcGatewayIp",
@@ -69084,7 +69084,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.vpcGwType",
+          "document": "<p>原VPC OSS APIv2名称: AddService.vpcGwType</p>",
           "example": "1",
           "member": "int64",
           "name": "VpcGatewayType",
@@ -69095,7 +69095,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.vpcgwZoneId",
+          "document": "<p>原VPC OSS APIv2名称: AddService.vpcgwZoneId</p>",
           "example": "1",
           "member": "int64",
           "name": "VpcGatewayZoneId",
@@ -69106,7 +69106,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.bVpcgwAttrFlag",
+          "document": "<p>原VPC OSS APIv2名称: AddService.bVpcgwAttrFlag</p>",
           "example": "0",
           "member": "int64",
           "name": "VpcGatewayAttrFlag",
@@ -69117,7 +69117,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.subnetRouteAlgorithm",
+          "document": "<p>原VPC OSS APIv2名称: AddService.subnetRouteAlgorithm</p>",
           "example": "0",
           "member": "int64",
           "name": "SubnetRouteAlgorithm",
@@ -69128,7 +69128,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.noSnatFlag",
+          "document": "<p>原VPC OSS APIv2名称: AddService.noSnatFlag</p>",
           "example": "0",
           "member": "int64",
           "name": "NoSnatFlag",
@@ -69139,7 +69139,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.stickyFlag",
+          "document": "<p>原VPC OSS APIv2名称: AddService.stickyFlag</p>",
           "example": "0",
           "member": "int64",
           "name": "StickyFlag",
@@ -69150,7 +69150,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.stickyTimeout",
+          "document": "<p>原VPC OSS APIv2名称: AddService.stickyTimeout</p>",
           "example": "0",
           "member": "int64",
           "name": "StickyTimeout",
@@ -69161,7 +69161,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.stickyMaxCount",
+          "document": "<p>原VPC OSS APIv2名称: AddService.stickyMaxCount</p>",
           "example": "0",
           "member": "int64",
           "name": "StickyMaxCount",
@@ -69172,7 +69172,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.lbType",
+          "document": "<p>原VPC OSS APIv2名称: AddService.lbType</p>",
           "example": "0",
           "member": "int64",
           "name": "LbType",
@@ -69183,7 +69183,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.rstFlag",
+          "document": "<p>原VPC OSS APIv2名称: AddService.rstFlag</p>",
           "example": "0",
           "member": "int64",
           "name": "ResetFlag",
@@ -69194,7 +69194,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.bypassFlag",
+          "document": "<p>原VPC OSS APIv2名称: AddService.bypassFlag</p>",
           "example": "0",
           "member": "int64",
           "name": "BypassFlag",
@@ -69205,8 +69205,8 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.business",
-          "example": "xxx",
+          "document": "<p>原VPC OSS APIv2名称: AddService.business</p>",
+          "example": "0",
           "member": "string",
           "name": "Business",
           "output_required": true,
@@ -69216,7 +69216,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.routeGroupFlag",
+          "document": "<p>原VPC OSS APIv2名称: AddService.routeGroupFlag</p>",
           "example": "0",
           "member": "int64",
           "name": "RouteGroupFlag",
@@ -69227,7 +69227,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.routeGroupId",
+          "document": "<p>原VPC OSS APIv2名称: AddService.routeGroupId</p>",
           "example": "1",
           "member": "int64",
           "name": "RouteGroupId",
@@ -69238,8 +69238,8 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.uniqRouteGroupId",
-          "example": "xxx",
+          "document": "<p>原VPC OSS APIv2名称: AddService.uniqRouteGroupId</p>",
+          "example": "0",
           "member": "string",
           "name": "UniqueRouteGroupId",
           "output_required": true,
@@ -69249,7 +69249,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.route",
+          "document": "<p>原VPC OSS APIv2名称: AddService.route</p>",
           "example": "无",
           "member": "VpcOssRouteForDeleteRouteInternal",
           "name": "RouteSet",
@@ -69260,7 +69260,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.groupId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>原VPC OSS APIv2名称: AddService.groupId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "GroupId",
@@ -69271,7 +69271,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.sip",
+          "document": "<p>原VPC OSS APIv2名称: AddService.sip</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Sip",
@@ -69282,8 +69282,8 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.uniqCdcId",
-          "example": "xxx",
+          "document": "<p>原VPC OSS APIv2名称: AddService.uniqCdcId</p>",
+          "example": "0",
           "member": "string",
           "name": "UniqueCdcId",
           "output_required": true,
@@ -69293,7 +69293,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService.bCdc",
+          "document": "<p>原VPC OSS APIv2名称: AddService.bCdc</p>",
           "example": "0",
           "member": "int64",
           "name": "CdcFlag",
@@ -69304,7 +69304,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService. bDelPipRoute",
+          "document": "<p>原VPC OSS APIv2名称: AddService. bDelPipRoute</p>",
           "example": "0",
           "member": "int64",
           "name": "DelPipRouteFlag",
@@ -69315,7 +69315,7 @@
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: AddService. fakeToaIp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>原VPC OSS APIv2名称: AddService. fakeToaIp</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "192.168.0.1",
           "member": "string",
           "name": "FakeToaIp",
@@ -69323,6 +69323,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>oss参数vpcGwIpZoneId</p>",
+          "example": "100002",
+          "member": "int64",
+          "name": "VpcGwIpZoneId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -72670,130 +72681,154 @@
       "members": [
         {
           "disabled": false,
-          "document": "整数vpcId",
+          "document": "<p>整数vpcId</p>",
           "example": "1",
           "member": "int64",
           "name": "VpcId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对外唯一VpcId",
+          "document": "<p>对外唯一VpcId</p>",
           "example": "vpc-jmaywf6r",
           "member": "string",
           "name": "UniqueVpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.vip",
+          "document": "<p>原VPC OSS APIv2名称: UpdateServiceVpcgw.vip</p>",
           "example": "172.16.0.18",
           "member": "string",
           "name": "Vip",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.uniqVpcgwId",
+          "document": "<p>原VPC OSS APIv2名称: UpdateServiceVpcgw.uniqVpcgwId</p>",
           "example": "vpcgw-fxu02n4l",
           "member": "string",
           "name": "UniqueVpcGatewayId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.subnetRouteAlgorithm",
+          "document": "<p>原VPC OSS APIv2名称: UpdateServiceVpcgw.subnetRouteAlgorithm</p>",
           "example": "0",
           "member": "int64",
           "name": "SubnetRouteAlgorithm",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.noSnatFlag",
+          "document": "<p>原VPC OSS APIv2名称: UpdateServiceVpcgw.noSnatFlag</p>",
           "example": "1",
           "member": "int64",
           "name": "SnatFlag",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.vpcgwZoneId",
+          "document": "<p>原VPC OSS APIv2名称: UpdateServiceVpcgw.vpcgwZoneId</p>",
           "example": "1231",
           "member": "int64",
           "name": "VpcGatewayZoneId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.bVpcgwAttrFlag",
+          "document": "<p>原VPC OSS APIv2名称: UpdateServiceVpcgw.bVpcgwAttrFlag</p>",
           "example": "1",
           "member": "int64",
           "name": "VpcGatewayAttrFlag",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.vpcGwIp",
+          "document": "<p>原VPC OSS APIv2名称: UpdateServiceVpcgw.vpcGwIp</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "VpcGatewayIp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.uniqClassicVpcgwId",
-          "example": "xxxxxx",
+          "document": "<p>原VPC OSS APIv2名称: UpdateServiceVpcgw.uniqClassicVpcgwId</p>",
+          "example": "0",
           "member": "string",
           "name": "UniqueClassicVpcGatewayId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.uniqVpcGwIpVpcgwId",
-          "example": "xxxxx",
+          "document": "<p>原VPC OSS APIv2名称: UpdateServiceVpcgw.uniqVpcGwIpVpcgwId</p>",
+          "example": "0",
           "member": "string",
           "name": "VipVpcGatewayId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.bypassVpcgwFlag",
+          "document": "<p>原VPC OSS APIv2名称: UpdateServiceVpcgw.bypassVpcgwFlag</p>",
           "example": "1",
           "member": "int64",
           "name": "BypassVpcGatewayFlag",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.bSyncVpcgwIp",
+          "document": "<p>原VPC OSS APIv2名称: UpdateServiceVpcgw.bSyncVpcgwIp</p>",
           "example": "1",
           "member": "int64",
           "name": "SyncVpcGatewayIpFlag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>oss参数vpcGwIpZoneId</p>",
+          "example": "100002",
+          "member": "int64",
+          "name": "VpcGwIpZoneId",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false

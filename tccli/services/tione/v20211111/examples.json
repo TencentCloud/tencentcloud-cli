@@ -19,8 +19,8 @@
     "CreateBillingPostpaidSWInstances": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillingPostpaidSWInstances\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d5405c55-a79d-4ecf-8b53-196859e45aa9\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillingPostpaidSWInstances\n<公共请求参数>\n\n{\n    \"ResourceGroupId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedCVMInstances\": [\n            {\n                \"CVMInstanceId\": \"ins-zxc125\",\n                \"FailedErrorMessage\": \"节点状态异常\"\n            }\n        ],\n        \"RequestId\": \"d5405c55-a79d-4ecf-8b53-196859e45aa9\"\n    }\n}",
         "title": "创建按量计费的资源组纳管节点"
       }
     ],
@@ -721,7 +721,7 @@
     "ReleaseBillingPostpaidSWInstances": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReleaseBillingPostpaidSWInstances\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReleaseBillingPostpaidSWInstances\n<公共请求参数>\n\n{\n    \"ResourceGroupId\": \"rsg-vcp4c6mm\",\n    \"InstanceIds\": [\n        \"sm-wtgf8mh9\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3fd23rd2r423\"\n    }\n}",
         "title": "释放按量计费的纳管节点"
       }
