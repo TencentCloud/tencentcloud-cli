@@ -8980,7 +8980,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>0： 按功能项计费</li><li>1： 原始日志量计费</li></ul><p>默认值：0</p><p>通过接口调用时默认值为0，通过控制台调用时默认值为1</p>",
+          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>0： 按使用功能计费</li><li>1： 按原始日志量计费（目前仅面向少部分客户支持）</li></ul><p>默认值：0</p>",
           "example": "0",
           "member": "uint64",
           "name": "BillingMode",
@@ -22851,7 +22851,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>0： 按功能项计费</li><li>1： 原始日志量计费</li></ul>",
+          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>0： 按使用功能计费</li><li>1： 按原始日志量计费（目前仅面向少部分客户支持）</li></ul><p>默认值：0</p>",
           "example": "0",
           "member": "uint64",
           "name": "BillingMode",
@@ -27137,7 +27137,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>当前计费模式</p><p>枚举值：</p><ul><li>0： 按功能项计费</li><li>1： 原始日志量计费</li></ul>",
+          "document": "<p>当前计费模式</p><p>枚举值：</p><ul><li>0： 按使用功能计费</li><li>1： 按原始日志量计费（目前仅面向少部分客户支持）</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "BillingMode",
@@ -27147,7 +27147,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>如果有异步任务，任务成功后的新计费模式</p><p>枚举值：</p><ul><li>0： 按功能项计费</li><li>1： 原始日志量计费</li></ul>",
+          "document": "<p>如果有异步任务，任务成功后的新计费模式</p><p>枚举值：</p><ul><li>0： 按使用功能计费</li><li>1： 按原始日志量计费（目前仅面向少部分客户支持）</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "NewBillingMode",

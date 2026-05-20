@@ -686,6 +686,14 @@
         "title": "删除转码模板"
       }
     ],
+    "DeleteVoice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVoice\n<公共请求参数>\n\n{\n    \"VoiceId\": \"v1_t/swku2LEj6lgNZU0i3uwrYvx7zuPn5emkuzocwZ65f/QQofSo/YrU5mohm32XWj0L4=\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"Msg\": \"success\",\n        \"RequestId\": \"ee186104-ab49-486b-8740-5cb0f95f7243\"\n    }\n}",
+        "title": "删除音色示例"
+      }
+    ],
     "DeleteWatermarkTemplate": [
       {
         "document": "",

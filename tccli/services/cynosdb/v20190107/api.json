@@ -35,6 +35,13 @@
       "output": "AddInstancesResponse",
       "status": "online"
     },
+    "AddLibraDBInstances": {
+      "document": "本接口（AddLibraDBInstances）用于集群添加只读分析引擎",
+      "input": "AddLibraDBInstancesRequest",
+      "name": "创建只读分析引擎",
+      "output": "AddLibraDBInstancesResponse",
+      "status": "online"
+    },
     "AssociateSecurityGroups": {
       "document": "本接口（AssociateSecurityGroups）用于安全组批量绑定云资源。",
       "input": "AssociateSecurityGroupsRequest",
@@ -2233,6 +2240,271 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddLibraDBInstancesRequest": {
+      "document": "AddLibraDBInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-6gtlgm5l",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Cpu核数",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "内存，单位为GB",
+          "example": "4",
+          "member": "int64",
+          "name": "Mem",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "磁盘大小",
+          "example": "100",
+          "member": "int64",
+          "name": "StorageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "付费模式",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "同步对象列表",
+          "example": "无",
+          "member": "Objects",
+          "name": "Objects",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "新增RO组时使用的Port，取值范围为[0,65535)",
+          "example": "2000",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "新增只读实例数，取值范围为(0,15]",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，'_','-','.'",
+          "example": "cynosmysql-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "副本数",
+          "example": "1",
+          "member": "int64",
+          "name": "ReplicasNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "ReplicasNum>1或者ReplicasNum=1且Cpu>=32核的时候取值为'Exclusive'，其余场景取值'Common'",
+          "example": "Common",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "磁盘类型",
+          "example": "本地盘",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动选择代金券 1是 0否 默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "订单来源，字符串长度范围为[0,64)",
+          "example": "api",
+          "member": "string",
+          "name": "OrderSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "交易模式 0-下单并支付 1-下单",
+          "example": "0",
+          "member": "int64",
+          "name": "DealMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "所属VPC网络ID。",
+          "example": "vpc-1ptuei0b",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属子网ID，如果设置了VpcId，则SubnetId必填。",
+          "example": "subnet-1tmw9t4o",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安全组ID，新建只读实例时可以指定安全组。",
+          "example": "[\"sg-rgf3qgld\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分析引擎版本",
+          "example": "1.2404.21.0",
+          "member": "string",
+          "name": "LibraDBVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "购买时长,与TimeUnit组合才能生效",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买时长单位, 与TimeSpan组合生效，可选:日:d,月:m",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源端实例id",
+          "example": "cynosdbmysql-ins-xxx",
+          "member": "string",
+          "name": "SrcInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddLibraDBInstancesResponse": {
+      "document": "AddLibraDBInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"202411073872\"]",
+          "member": "string",
+          "name": "BigDealIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "冻结流水，一次开通一个冻结流水。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "myTranId",
+          "member": "string",
+          "name": "TranId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后付费订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"182711111\"]",
+          "member": "string",
+          "name": "DealNames",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发货资源id列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cynosdbmysql-mwg712mm\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5936,7 +6208,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos</p>",
+          "document": "<p>实例数量</p><p>取值范围：[1, 16]</p><p>默认值：2</p><ul><li>取值为2，表示一个 rw 实例 + 一个 ro 实例。</li><li>传递的 n 表示1个 rw 实例 + n-1个 ro 实例（规格相同）。</li><li>如需要更精确的集群组成搭配，请使用 InstanceInitInfos。</li><li>此参数设置的数值适用于预置资源集群，如需设置 Serverless 集群的实例规格及数量，请使用 InstanceInitInfos.N 中的 InstanceInitInfo 结构。</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "InstanceCount",
@@ -6266,6 +6538,15 @@
           "name": "AutoArchiveDelayHours",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群级别，可空。例如 P0, P1。（可忽略该字段）</p>",
+          "example": "P0",
+          "member": "string",
+          "name": "ClusterLevel",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -25810,6 +26091,23 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Objects": {
+      "document": "同步对象列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "包含数据库表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MigrateObject",
+          "name": "DatabaseTables",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

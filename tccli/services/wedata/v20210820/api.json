@@ -14133,7 +14133,7 @@
           "example": "0",
           "member": "uint64",
           "name": "PageNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14143,7 +14143,7 @@
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14153,7 +14153,7 @@
           "example": "无",
           "member": "DataSourceInfo",
           "name": "Rows",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -14163,7 +14163,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14173,8 +14173,18 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalPageNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“ijn”",
+          "member": "string",
+          "name": "SnapshotId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -18615,7 +18625,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页码",
+          "document": "<p>页码</p>",
           "example": "0",
           "member": "uint64",
           "name": "PageNumber",
@@ -18624,7 +18634,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量",
+          "document": "<p>返回数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
@@ -18633,7 +18643,7 @@
         },
         {
           "disabled": false,
-          "document": "排序配置",
+          "document": "<p>排序配置</p>",
           "example": "无",
           "member": "OrderField",
           "name": "OrderFields",
@@ -18642,7 +18652,7 @@
         },
         {
           "disabled": false,
-          "document": "可选过滤条件，Filter可选配置(参考): \"Name\": { \"type\": \"string\", \"description\": \"数据源名称\" }, \"Type\": { \"type\": \"string\", \"description\": \"类型\" }, \"ClusterId\": { \"type\": \"string\", \"description\": \"集群id\" }, \"CategoryId\": { \"type\": \"string\", \"description\": \"分类，项目或空间id\" }",
+          "document": "<p>可选过滤条件，Filter可选配置(参考): &quot;Name&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;数据源名称&quot; }, &quot;Type&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;类型&quot; }, &quot;ClusterId&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;集群id&quot; }, &quot;CategoryId&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;分类，项目或空间id&quot; }</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -18657,7 +18667,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据源列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataSourceInfoPage",
           "name": "Data",
@@ -20781,7 +20791,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "\"1485413914375667\"",
           "member": "string",
           "name": "ProjectId",
@@ -20790,7 +20800,7 @@
         },
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "\"20210602165654425\"",
           "member": "string",
           "name": "TaskId",
@@ -20799,7 +20809,7 @@
         },
         {
           "disabled": false,
-          "document": "数据时间",
+          "document": "<p>数据时间</p>",
           "example": "\"2021-06-02 00:00:00\"",
           "member": "string",
           "name": "CurRunDate",
@@ -20808,7 +20818,7 @@
         },
         {
           "disabled": false,
-          "document": "日志级别，Info/Debug/Warn/Error/All",
+          "document": "<p>日志级别，Info/Debug/Warn/Error/All</p>",
           "example": "info",
           "member": "string",
           "name": "LogLevelType",
@@ -20817,7 +20827,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型,Log/Code",
+          "document": "<p>文件类型,Log/Code</p>",
           "example": "Log",
           "member": "string",
           "name": "ExecutionFileType",
@@ -20826,7 +20836,7 @@
         },
         {
           "disabled": false,
-          "document": "统一执行平台执行id, 注意: ExecutionJobId 跟 \"BrokerIp+OriginFileName\" 必须有一个不为空",
+          "document": "<p>统一执行平台执行id, 注意: ExecutionJobId 跟 &quot;BrokerIp+OriginFileName&quot; 必须有一个不为空</p>",
           "example": "10001",
           "member": "string",
           "name": "ExecutionJobId",
@@ -20835,7 +20845,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器Ip, 注意: \"BrokerIp+OriginFileName\"跟ExecutionJobId必须有一个不为空",
+          "document": "<p>服务器Ip, 注意: &quot;BrokerIp+OriginFileName&quot;跟ExecutionJobId必须有一个不为空</p>",
           "example": "\"172.16.16.16\"",
           "member": "string",
           "name": "BrokerIp",
@@ -20844,7 +20854,7 @@
         },
         {
           "disabled": false,
-          "document": "文件Name, 注意: \"BrokerIp+OriginFileName\"跟ExecutionJobId必须有一个不为空",
+          "document": "<p>文件Name, 注意: &quot;BrokerIp+OriginFileName&quot;跟ExecutionJobId必须有一个不为空</p>",
           "example": "\"20210602000000-9-all-log-0.20210602222614.log\"",
           "member": "string",
           "name": "OriginFileName",
@@ -20853,7 +20863,7 @@
         },
         {
           "disabled": false,
-          "document": "起始行",
+          "document": "<p>起始行</p>",
           "example": "1",
           "member": "int64",
           "name": "StartCount",
@@ -20862,7 +20872,7 @@
         },
         {
           "disabled": false,
-          "document": "每次查询行数",
+          "document": "<p>每次查询行数</p>",
           "example": "10000",
           "member": "int64",
           "name": "LineCount",
@@ -20871,7 +20881,7 @@
         },
         {
           "disabled": false,
-          "document": "查询日志扩展信息,通过统一执行平台接口分页查询日志时需要带上,第一页时为null",
+          "document": "<p>查询日志扩展信息,通过统一执行平台接口分页查询日志时需要带上,第一页时为null</p>",
           "example": "{\"\"}",
           "member": "string",
           "name": "ExtInfo",
@@ -20889,7 +20899,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期为基础数据进行日志匹配",
+          "document": "<p>生命周期为基础数据进行日志匹配</p>",
           "example": "无",
           "member": "InstanceLifeDetailDto",
           "name": "InstanceLifeDetailDtoList",
@@ -20898,7 +20908,7 @@
         },
         {
           "disabled": false,
-          "document": "当前生命周期",
+          "document": "<p>当前生命周期</p>",
           "example": "0",
           "member": "int64",
           "name": "CurrentLifeRound",
@@ -20907,7 +20917,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期总数",
+          "document": "<p>生命周期总数</p>",
           "example": "10",
           "member": "int64",
           "name": "MaxLifeRound",
@@ -20916,7 +20926,7 @@
         },
         {
           "disabled": false,
-          "document": "当前生命周期重试次数",
+          "document": "<p>当前生命周期重试次数</p>",
           "example": "1",
           "member": "int64",
           "name": "Tries",
@@ -20925,7 +20935,7 @@
         },
         {
           "disabled": false,
-          "document": "动态加载日志",
+          "document": "<p>动态加载日志</p>",
           "example": "true",
           "member": "bool",
           "name": "Dynamic",
@@ -20940,7 +20950,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InstanceLogInfoOpsDto",
           "name": "Data",
@@ -20962,7 +20972,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "\"1485413914375667\"",
           "member": "string",
           "name": "ProjectId",
@@ -20971,7 +20981,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "\"19920226154637701\"",
           "member": "string",
           "name": "TaskId",
@@ -20980,7 +20990,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数据时间",
+          "document": "<p>实例数据时间</p>",
           "example": "\"2024-04-09 00:00:00\"",
           "member": "string",
           "name": "CurRunDate",
@@ -20998,7 +21008,7 @@
         },
         {
           "disabled": false,
-          "document": "执行机IP",
+          "document": "<p>执行机IP</p>",
           "example": "\"172.16.1.119\"",
           "member": "string",
           "name": "BrokerIp",
@@ -21007,7 +21017,7 @@
         },
         {
           "disabled": false,
-          "document": "日志文件名",
+          "document": "<p>日志文件名</p>",
           "example": "\"20230309190426-9-all-log-0.20230309190612.log\"",
           "member": "string",
           "name": "OriginFileName",
@@ -21016,7 +21026,7 @@
         },
         {
           "disabled": false,
-          "document": "执行平台下发执行id",
+          "document": "<p>执行平台下发执行id</p>",
           "example": "10001",
           "member": "string",
           "name": "ExecutionJobId",
@@ -21025,7 +21035,7 @@
         },
         {
           "disabled": false,
-          "document": "日志级别，Info/Debug/Warn/Error/All",
+          "document": "<p>日志级别，Info/Debug/Warn/Error/All</p>",
           "example": "info",
           "member": "string",
           "name": "LogLevelType",
@@ -21034,7 +21044,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型,Log/Code",
+          "document": "<p>文件类型,Log/Code</p>",
           "example": "Log",
           "member": "string",
           "name": "ExecutionFileType",
@@ -21043,7 +21053,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用",
+          "document": "<p>生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用</p>",
           "example": "无",
           "member": "InstanceLifeDetailDto",
           "name": "InstanceLifeDetailDtoList",
@@ -21052,7 +21062,7 @@
         },
         {
           "disabled": false,
-          "document": "当前生命周期数",
+          "document": "<p>当前生命周期数</p>",
           "example": "1",
           "member": "int64",
           "name": "CurrentLifeRound",
@@ -21061,7 +21071,7 @@
         },
         {
           "disabled": false,
-          "document": "最大生命周期数",
+          "document": "<p>最大生命周期数</p>",
           "example": "10",
           "member": "int64",
           "name": "MaxLifeRound",
@@ -21070,7 +21080,7 @@
         },
         {
           "disabled": false,
-          "document": "当前生命周期重试次数",
+          "document": "<p>当前生命周期重试次数</p>",
           "example": "1",
           "member": "int64",
           "name": "Tries",
@@ -21079,7 +21089,7 @@
         },
         {
           "disabled": false,
-          "document": "动态获取日志信息标识",
+          "document": "<p>动态获取日志信息标识</p>",
           "example": "true",
           "member": "bool",
           "name": "Dynamic",
@@ -21094,7 +21104,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "下载文件详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>下载文件详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InstanceDownloadLogInfo",
           "name": "Data",
@@ -34360,8 +34370,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目id",
-          "example": "无",
+          "document": "<p>项目id</p>",
+          "example": "13579",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -34369,8 +34379,8 @@
         },
         {
           "disabled": false,
-          "document": "请求域名",
-          "example": "无",
+          "document": "<p>请求域名</p>",
+          "example": "*",
           "member": "string",
           "name": "OriginDomain",
           "required": true,
@@ -34378,8 +34388,8 @@
         },
         {
           "disabled": false,
-          "document": "是否需要跨域",
-          "example": "无",
+          "document": "<p>是否需要跨域</p>",
+          "example": "true",
           "member": "bool",
           "name": "CrossFlag",
           "required": true,
@@ -34387,8 +34397,8 @@
         },
         {
           "disabled": false,
-          "document": "桶名",
-          "example": "无",
+          "document": "<p>桶名</p>",
+          "example": "acf",
           "member": "string",
           "name": "BucketName",
           "required": false,
@@ -34396,8 +34406,8 @@
         },
         {
           "disabled": false,
-          "document": "远程地址",
-          "example": "无",
+          "document": "<p>远程地址</p>",
+          "example": "*",
           "member": "string",
           "name": "RemotePath",
           "required": false,
@@ -34405,8 +34415,8 @@
         },
         {
           "disabled": false,
-          "document": "地域",
-          "example": "无",
+          "document": "<p>地域</p>",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "RemoteRegion",
           "required": false,
@@ -34420,8 +34430,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "cos地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>cos地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -34430,7 +34440,7 @@
         },
         {
           "disabled": false,
-          "document": "Token信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Token信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CosTokenResponse",
           "name": "Token",
@@ -34440,8 +34450,8 @@
         },
         {
           "disabled": false,
-          "document": "桶名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>桶名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dev-12345",
           "member": "string",
           "name": "Bucket",
           "output_required": true,
@@ -34450,8 +34460,8 @@
         },
         {
           "disabled": false,
-          "document": "终止点（针对私有云环境）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>终止点（针对私有云环境）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
           "member": "string",
           "name": "EndPoint",
           "output_required": true,

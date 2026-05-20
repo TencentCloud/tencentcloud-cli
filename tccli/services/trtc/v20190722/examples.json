@@ -612,10 +612,16 @@
     ],
     "TextToSpeechSSE": [
       {
-        "document": "注意sse接口需要使用trtc.ai.tencentcloudapi.com域名，否则会调用接口失败",
+        "document": "在合成过程中，如果出现错误，会返回sse格式的错误",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeechSSE\n<公共请求参数>\n\n{\n    \"Text\": \"你好呀\",\n    \"SdkAppId\": 14600000000,\n    \"Voice\": {\n        \"VoiceId\": \"v-female-R2s4N9qJ\"\n    },\n    \"AlignmentMode\": 1\n}",
         "output": "data: {\"Type\": \"chunk\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"ChunkId\": \"chunk_0\", \"Audio\": \"base64编码的音频数据...\", \"Seq\": 0, \"IsEnd\": false}\n\ndata: {\"Type\": \"error\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"Error\": {\"Code\": \"InternalError\", \"Message\": \"internal error message\"}}",
         "title": "中途合成出错"
+      },
+      {
+        "document": "在正式进行合成前，如果有参数错误，会直接返回一个json错误，可以通过content type来判断这种情况",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeechSSE\n<公共请求参数>\n\n{\n    \"Text\": \"你好呀\",\n    \"SdkAppId\": 14600000000,\n    \"Voice\": {\n        \"VoiceId\": \"fake\"\n    },\n    \"AlignmentMode\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78033210-b9c2-4c2a-b378-6a0c63646d81\",\n        \"Error\": {\n            \"Code\": \"InvalidParameter.VoiceId\",\n            \"Message\": \"Cloud API TTS parameter error: Voice ID 'fake' not found. Please check if the voice exists or create it via voice clone API.\"\n        }\n    }\n}",
+        "title": "合成前出错"
       },
       {
         "document": "注意sse接口需要使用trtc.ai.tencentcloudapi.com域名，否则会调用接口失败",

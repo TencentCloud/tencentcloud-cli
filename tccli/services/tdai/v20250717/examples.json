@@ -19,7 +19,7 @@
     "CreateChatCompletion": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChatCompletion\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChatCompletion\n<公共请求参数>\n\n{\n    \"InputContent\": \"hello\",\n    \"InstanceId\": \"agentins-f1a2k3e4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"58e4fd58-6d47-5418-17ab-ce5bab7e5318\"\n    }\n}",
         "title": "创建会话示例"
       }

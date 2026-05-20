@@ -1,3 +1,103 @@
+**Example 1: 任务类型132：Notebook**
+
+任务类型132：Notebook; notebook.source 取值为： codeDevelopment、codeStudio、csWorkspace、git， 默认取 csWorkspace; TaskExt各参数取值列表：
+
+
+根据notebook.source 取值有不同的传参要求：
+
+1）notebook.source=csWorkspace 时：配置Notebook任务所需的全部参数，所有参数均为必填。其中，工作空间标识（notebook.workspace.mapping）、执行引擎信息（notebook.engineClusters）及工作空间环境配置（notebook.workspaceEnvs）均需调用DescribeNotebookWorkspaceMappingList接口，并分别获取其返回的WorkspaceMappingGId、EngineClusters和WorkspaceEnvs字段值。要执行的脚本文件（ftp.file.name）需从DescribeNotebookWorkspaceScriptTree接口获取，而其MD5值（notebook.script.scriptmd5）需调用DescribeScriptFileMd5接口获得，任务名称（notebook.task.name）则由该脚本文件名截取而来。脚本的特定环境配置（notebook.scriptEnvs）是一个JSON数组，必须包含从DescribeScriptFileMd5接口获取的ScriptEnvs字段，并可选择性地合并用户在页面上编辑的高级参数。最后，用于存储脚本的对象存储（COS）配置信息也至关重要：tenantId字段（即COS桶租户ID）需从DescribeNotebookWorkspaceMappingList接口返回的UserScriptCosConfig.CosAppId字段获取；region字段（即COS桶地域）需从UserScriptCosConfig.Region字段获取；bucket字段（即COS桶名称）需从UserScriptCosConfig.BucketName字段获取。
+
+
+2）notebook.source=codeStudio 时，参数“notebook.scriptId”表示notebook脚本id，其值需通过调用DescribeNotebookWorkspaceScriptTree接口选择引用，且为必填项；参数“notebook.engineClusters”指notebook执行引擎信息，值来源于调用DescribeNotebookExecutionEnv接口获取EngineClusters字段，同样必填；参数“notebook.workspaceEnvs”用于配置notebook环境，值通过调用DescribeNotebookExecutionEnv接口获取WorkspaceEnvs字段，也是必填；参数“notebook.scriptEnvs”表示notebook脚本配置，其值为jsonArray格式，由两部分组成：一部分是调用DescribeNotebookExecutionEnv接口获取ScriptEnvs字段（传参与前述相同），另一部分是用户在页面编辑的高级参数（获取方式同csWorkspace形式），此参数同样必填；参数“ftp.file.name”对应notebook脚本，值通过调用DescribeNotebookWorkspaceScriptTree接口获取，为非必填项；而参数“notebook.task.name”指notebook脚本名，其值通过截取ftp.file.name的脚本名称来获得，也为非必填。
+
+
+3）notebook.source=git 时，参数“isGitTask”表示是否引用远程git，其值来源为TRUE，是必填项；参数“git.repo.filepath”描述为git文件路径，其值需要通过DescribeGitChildPath接口获取Git文件信息，同样为必填项；参数“notebook.source”表示notebook来源，值来源为git，也是必填项；参数“git.config.id”描述为git配置信息，其值通过DescribeProjectUserConf接口获取，为非必填项；
+
+
+Input: 
+
+```
+tccli wedata CreateTask --cli-unfold-argument  \
+    --ProjectId 1464962169590902784 \
+    --TaskBaseAttribute.TaskName nb_api_250827_163800 \
+    --TaskBaseAttribute.TaskTypeId 132 \
+    --TaskBaseAttribute.WorkflowId 09cfab2c-8d4d-45e5-8af5-80b82f87ccb4 \
+    --TaskBaseAttribute.OwnerUin 100028579801 \
+    --TaskBaseAttribute.TaskDescription nb_api_250827_163804 \
+    --TaskConfiguration.TaskExtConfigurationList.0.ParamKey extraInfo \
+    --TaskConfiguration.TaskExtConfigurationList.0.ParamValue {"fromMapping":false} \
+    --TaskConfiguration.TaskExtConfigurationList.1.ParamKey notebook.script.md5 \
+    --TaskConfiguration.TaskExtConfigurationList.1.ParamValue 921a051921505f7c62916f177cd8d1cf \
+    --TaskConfiguration.TaskExtConfigurationList.2.ParamKey clusterType \
+    --TaskConfiguration.TaskExtConfigurationList.2.ParamValue DLC \
+    --TaskConfiguration.TaskExtConfigurationList.3.ParamKey calendar_id \
+    --TaskConfiguration.TaskExtConfigurationList.3.ParamValue  \
+    --TaskConfiguration.TaskExtConfigurationList.4.ParamKey calendar_open \
+    --TaskConfiguration.TaskExtConfigurationList.4.ParamValue 0 \
+    --TaskConfiguration.TaskExtConfigurationList.5.ParamKey notebook.source \
+    --TaskConfiguration.TaskExtConfigurationList.5.ParamValue csWorkspace \
+    --TaskConfiguration.TaskExtConfigurationList.6.ParamKey clusterId \
+    --TaskConfiguration.TaskExtConfigurationList.6.ParamValue u54usqbq \
+    --TaskConfiguration.TaskExtConfigurationList.7.ParamKey calendar_name \
+    --TaskConfiguration.TaskExtConfigurationList.7.ParamValue  \
+    --TaskConfiguration.TaskExtConfigurationList.8.ParamKey notebook.workspace.mappingId \
+    --TaskConfiguration.TaskExtConfigurationList.8.ParamValue 47d60e3a-601a-4d48-b062-8f810f9ef9ce \
+    --TaskConfiguration.TaskExtConfigurationList.9.ParamKey waitExecutionTotalTTL \
+    --TaskConfiguration.TaskExtConfigurationList.9.ParamValue -1 \
+    --TaskConfiguration.TaskExtConfigurationList.10.ParamKey bucket \
+    --TaskConfiguration.TaskExtConfigurationList.10.ParamValue wedata-fusion-dev-1257305158 \
+    --TaskConfiguration.TaskExtConfigurationList.11.ParamKey notebook.engineClusters \
+    --TaskConfiguration.TaskExtConfigurationList.11.ParamValue [{"ClusterId":"u54usqbq","ClusterName":"dlc_lina测试勿动","ClusterType":"DLC","ComputeResource":"dlc_lina测试勿动","DlcRoleArn":"qcs::cam::uin/100028448903:roleName/dlc_cos","Params":"{\"envType\":\"prod\",\"dlcSupportAITraining\":\"true\",\"dlcEngineTypeDetail\":\"StandardSpark\",\"DLC_DATA_ENGINE\":\"dlc_lina测试勿动\",\"DLC_ENDPOINT\":\"dlc.internal.tencentcloudapi.com\",\"DLC_REGION\":\"ap-guangzhou\",\"DLC_ROLE_ARN\":\"qcs::cam::uin/100028448903:roleName/dlc_cos\",\"NOTEBOOK_KERNEL_RUN_MODE\":\"REMOTE\",\"REMOTE_KERNEL_GATEWAY_URL\":\"http://10.21.9.111:8888/\",\"NEED_PROXY_JUPYTER_SERVER\":\"true\"}"}] \
+    --TaskConfiguration.TaskExtConfigurationList.12.ParamKey dlcJobData \
+    --TaskConfiguration.TaskExtConfigurationList.12.ParamValue  \
+    --TaskConfiguration.TaskExtConfigurationList.13.ParamKey notebook.workspaceEnvs \
+    --TaskConfiguration.TaskExtConfigurationList.13.ParamValue [{"Name":"TDLC_HOME","Value":"/workspace/.engine-config/u54usqbq"},{"Name":"KERNEL_SUBUIN","Value":"100028650795"},{"Name":"NOTEBOOK_KERNEL_RUN_MODE","Value":"REMOTE"},{"Name":"JUPYTER_GATEWAY_CONNECT_TIMEOUT","Value":"600"},{"Name":"JUPYTER_GATEWAY_REQUEST_TIMEOUT","Value":"600"},{"Name":"REMOTE_KERNEL_GATEWAY_URL","Value":"http://10.21.9.111:8888/"},{"Name":"NEED_PROXY_JUPYTER_SERVER","Value":"true"},{"Name":"PROXY_JUPYTER_SERVER_URL","Value":"http://127.0.0.1:8889"},{"Name":"PROXY_JUPYTER_SERVER_PORT","Value":"8889"},{"Name":"PROXY_JUPYTER_SERVER_TOKEN","Value":"aaa"},{"Name":"KERNEL_PRE_EXECUTE_CODE","Value":"JXBpcCBpbnN0YWxsIHRlbmNlbnQtd2VkYXRhLWZlYXR1cmUtZW5naW5lZXJpbmc9PTAuMS4yMiAtaSBodHRwczovL21pcnJvcnMudGVuY2VudC5jb20vcHlwaS9zaW1wbGUgIC0tdHJ1c3RlZC1ob3N0IG1pcnJvcnMudGVuY2VudC5jb20KCmltcG9ydCBvcwpvcy5lbnZpcm9uWydXRURBVEFfUFJPSkVDVF9JRCddID0gJzE0NjQ5NjIxNjk1OTA5MDI3ODQnCm9zLmVudmlyb25bJ1dFREFUQV9OT1RFQk9PS19FTkdJTkUnXSA9ICdkbGNfbGluYea1i+ivleWLv+WKqCcKb3MuZW52aXJvblsnUUNMT1VEX1VJTiddID0gJzEwMDAyODQ0ODkwMycKb3MuZW52aXJvblsnUUNMT1VEX1NVQlVJTiddID0gJzEwMDAyODY1MDc5NScKCnNwYXJrLnNxbCgiQ1JFQVRFIERBVEFCQVNFIElGIE5PVCBFWElTVFMgZmVhdHVyZV9zdG9yZV8xMDAwMjg0NDg5MDMiKQ=="},{"Name":"BIND_ENGINE_TYPES","Value":"DLC"},{"Name":"WEDATA_NOTEBOOK_ENGINE","Value":"dlc_lina测试勿动"},{"Name":"NOTEBOOK_COS_BUCKET","Value":"wedata-fusion-dev-1257305158"},{"Name":"NOTEBOOK_COS_REGION","Value":"ap-nanjing"},{"Name":"KERNEL_COS_BUCKET","Value":"wedata-fusion-dev-1257305158"},{"Name":"KERNEL_COS_REGION","Value":"ap-nanjing"},{"Name":"KERNEL_WORKSPACE_COS_ROOT_PATH","Value":"/dataexploration/internal-hosting/notebook/1315051789/1464962169590902784/100028650795/1de5cd51-4ff2-4c7d-be27-1687eebb9bd9/scripts"},{"Name":"MLFLOW_TRACKING_URI","Value":"http://10.123.22.11:5000"},{"Name":"KERNEL_MLFLOW_TRACKING_URI","Value":"http://10.123.22.11:5000"},{"Name":"QCLOUD_APPID","Value":"1315051789"},{"Name":"QCLOUD_UIN","Value":"100028448903"},{"Name":"QCLOUD_SUBUIN","Value":"100028650795"},{"Name":"REGION","Value":"ap-guangzhou"},{"Name":"WEDATA_JWT_SECRET","Value":"**********"},{"Name":"KERNEL_WORKSPACE_SCRIPT_ROOT_PATH","Value":"/workspace"},{"Name":"IS_INTERNATIONAL_SITE","Value":"true"},{"Name":"WEDATA_PROJECT_ID","Value":"1464962169590902784"}] \
+    --TaskConfiguration.TaskExtConfigurationList.14.ParamKey ftp.file.name \
+    --TaskConfiguration.TaskExtConfigurationList.14.ParamValue /dataexploration/internal-hosting/notebook/1315051789/1464962169590902784/100028650795/1de5cd51-4ff2-4c7d-be27-1687eebb9bd9/scripts/test2.ipynb \
+    --TaskConfiguration.TaskExtConfigurationList.15.ParamKey notebook.task.name \
+    --TaskConfiguration.TaskExtConfigurationList.15.ParamValue test2.ipynb \
+    --TaskConfiguration.TaskExtConfigurationList.16.ParamKey tenantId \
+    --TaskConfiguration.TaskExtConfigurationList.16.ParamValue 1257305158 \
+    --TaskConfiguration.TaskExtConfigurationList.17.ParamKey notebook.scriptEnvs \
+    --TaskConfiguration.TaskExtConfigurationList.17.ParamValue [{"Name":"KERNEL_CONTAINER_POD_SIZE","Value":"large(4CU)"},{"Name":"KERNEL_SCRIPT_ABSOLUTE_PATH","Value":"/test2.ipynb"},{"Name":"KERNEL_SCRIPT_DIR","Value":"/workspace"},{"Name":"KERNEL_SCRIPT_NAME","Value":"test2.ipynb"},{"Name":"WEDATA_PROJECT_PARAMS","Value":"{\"444\":\"4343\",\"p_user\":\"p_user\",\"p_0417_5\":\"d\",\"p_04192\":\"dev\",\"p_0419\":\"dev\",\"p_0418\":\"dev\",\"yyyy-MM-dd\":\"2024-03-21 06:43:42\",\"dasd\":\"dddd\",\"fff\":\"dfss\",\"dddd\":\"dddddgggg\",\"ddd\":\"dasd\",\"hhhz\":\"fff\",\"aa\":\"1\",\"gallop-param\":\"gallop_v1_value\"}"},{"Name":"KERNEL_LOGIN_UIN","Value":"100028597773"},{"Name":"KERNEL_MLFLOW_TRACKING_USERNAME","Value":"jonsljiang"},{"Name":"KERNEL_RG_RID","Value":"rg-9zhinr8e6s"},{"Name":"KERNEL_RG_NAME","Value":"Spark - (sparml)"},{"Name":"KERNEL_PRE_EXECUTE_CODE","Value":"aW1wb3J0IG9zCm9zLmVudmlyb25bJ1dFREFUQV9QUk9KRUNUX0lEJ10gPSAnMTQ2NDk2MjE2OTU5MDkwMjc4NCcKb3MuZW52aXJvblsnV0VEQVRBX05PVEVCT09LX0VOR0lORSddID0gJ2RsY19saW5h5rWL6K+V5Yu/5YqoJwpvcy5lbnZpcm9uWydRQ0xPVURfVUlOJ10gPSAnMTAwMDI4NDQ4OTAzJwpvcy5lbnZpcm9uWydRQ0xPVURfU1VCVUlOJ10gPSAnMTAwMDI4NjUwNzk1Jwpvcy5lbnZpcm9uWydXRURBVEFfREVGQVVMVF9GRUFUVVJFX1NUT1JFX0RBVEFCQVNFJ10gPSAnYXRfbXlzcWwyZGxjX2RiX3N5bmNfZ3pfcHJvZF8wdycKb3MuZW52aXJvblsnV0VEQVRBX0ZFQVRVUkVfU1RPUkVfREFUQUJBU0VTJ10gPSAnWyJhMDUiLCJhMGEwYSIsImF0X215c3FsMmRsY19kYl9zeW5jX2d6X3Byb2RfMHciLCJCSUdfRUUiLCJCSUdfRUVfbWF4IiwiZGJfZF9jcGt4bCIsInRlc3RfMTQ2NDk2MjE2OTU5MDkwMjc4NF8xIiwidGVzdF95dW5hcGlfMDcyOSIsInRlc3RfeXVuYXBpXzA3MjlhcyIsInRlc3RfeXVuYXBpXzIiLCJ0ZXN0X3l1bl9hcGlfdGVzdCIsIlhFIl0nCg=="},{"Name":"KERNEL_SUBMIT_FORM_WORKFLOW","Value":"true"},{"Name":"TaskId","Value":"20250827162855758"}] \
+    --TaskConfiguration.TaskExtConfigurationList.18.ParamKey region \
+    --TaskConfiguration.TaskExtConfigurationList.18.ParamValue ap-nanjing \
+    --TaskConfiguration.TaskExtConfigurationList.19.ParamKey extraInfo \
+    --TaskConfiguration.TaskExtConfigurationList.19.ParamValue {"fromMapping":false} \
+    --TaskConfiguration.TaskExtConfigurationList.20.ParamKey notebook.source \
+    --TaskConfiguration.TaskExtConfigurationList.20.ParamValue csWorkspace \
+    --TaskConfiguration.BrokerIp any \
+    --TaskConfiguration.ResourceGroup 20221201071126354503 \
+    --TaskSchedulerConfiguration.CycleType DAY_CYCLE \
+    --TaskSchedulerConfiguration.ScheduleTimeZone UTC+8 \
+    --TaskSchedulerConfiguration.StartTime 2025-08-26 00:00:00 \
+    --TaskSchedulerConfiguration.EndTime 2099-12-31 23:59:59 \
+    --TaskSchedulerConfiguration.ExecutionStartTime 00:00 \
+    --TaskSchedulerConfiguration.ExecutionEndTime 23:59 \
+    --TaskSchedulerConfiguration.ScheduleRunType 0 \
+    --TaskSchedulerConfiguration.CalendarOpen 0 \
+    --TaskSchedulerConfiguration.SelfDepend serial \
+    --TaskSchedulerConfiguration.RunPriority 6 \
+    --TaskSchedulerConfiguration.RetryWait 5 \
+    --TaskSchedulerConfiguration.MaxRetryAttempts 4 \
+    --TaskSchedulerConfiguration.ExecutionTTL -1 \
+    --TaskSchedulerConfiguration.WaitExecutionTotalTTL -1 \
+    --TaskSchedulerConfiguration.AllowRedoType ALL \
+    --TaskSchedulerConfiguration.InitStrategy T_PLUS_0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": {
+            "TaskId": "20250910174559006"
+        },
+        "RequestId": "65fbdbbb-6a9b-4002-95ba-15347e9ed6f5"
+    }
+}
+```
+
 **Example 2: 任务类型133：SSH**
 
 任务类型133：SSH

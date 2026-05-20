@@ -3793,7 +3793,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。",
+          "document": "<p>实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href=\"https://console.cloud.tencent.com/trabbitmq/cluster?rid=1\">TDMQ RabbitMQ 控制台</a>查询。</p>",
           "example": "amqp-2ppxx4rq",
           "member": "string",
           "name": "InstanceId",
@@ -3802,7 +3802,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名，登录时使用",
+          "document": "<p>用户名，登录时使用</p>",
           "example": "test_user",
           "member": "string",
           "name": "User",
@@ -3811,7 +3811,7 @@
         },
         {
           "disabled": false,
-          "document": "密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&*_=|{}[]:;',.?/】中的两项",
+          "document": "<p>密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&amp;*_=|{}[]:;&#39;,.?/】中的两项</p>",
           "example": "abc123._",
           "member": "string",
           "name": "Password",
@@ -3820,7 +3820,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "hello",
           "member": "string",
           "name": "Description",
@@ -3829,8 +3829,8 @@
         },
         {
           "disabled": false,
-          "document": "用户标签，用于决定改用户访问RabbitMQ Management的权限范围\nmanagement：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户",
-          "example": "monitoring",
+          "document": "<p>用户标签，用于决定改用户访问RabbitMQ Management的权限范围<br>management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户</p>",
+          "example": "[\"monitoring\"]",
           "member": "string",
           "name": "Tags",
           "required": false,
@@ -3838,7 +3838,7 @@
         },
         {
           "disabled": false,
-          "document": "该用户的最大连接数，不填写则不限制",
+          "document": "<p>该用户的最大连接数，不填写则不限制</p>",
           "example": "1000",
           "member": "int64",
           "name": "MaxConnections",
@@ -3847,12 +3847,21 @@
         },
         {
           "disabled": false,
-          "document": "该用户的最大channel数，不填写则不限制",
+          "document": "<p>该用户的最大channel数，不填写则不限制</p>",
           "example": "2000",
           "member": "int64",
           "name": "MaxChannels",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启cam验证</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableCamAuth",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3862,7 +3871,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户名，登录时使用",
+          "document": "<p>用户名，登录时使用</p>",
           "example": "test_user",
           "member": "string",
           "name": "User",
@@ -14327,7 +14336,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。",
+          "document": "<p>实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href=\"https://console.cloud.tencent.com/trabbitmq/cluster?rid=1\">TDMQ RabbitMQ 控制台</a>查询。</p>",
           "example": "amqp-2ppxx4rq",
           "member": "string",
           "name": "InstanceId",
@@ -14336,7 +14345,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名，形如rabbitmq。有效的 User 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。当前不支持修改admin的密码。",
+          "document": "<p>用户名，形如rabbitmq。有效的 User 名称可通过登录 <a href=\"https://console.cloud.tencent.com/trabbitmq/cluster?rid=1\">TDMQ RabbitMQ 控制台</a>查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。当前不支持修改admin的密码。</p>",
           "example": "admin",
           "member": "string",
           "name": "User",
@@ -14345,7 +14354,7 @@
         },
         {
           "disabled": false,
-          "document": "密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&*_=|{}[]:;',.?/】中的两项",
+          "document": "<p>密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&amp;*_=|{}[]:;&#39;,.?/】中的两项</p>",
           "example": "abc123._",
           "member": "string",
           "name": "Password",
@@ -14354,7 +14363,7 @@
         },
         {
           "disabled": false,
-          "document": "描述，不传则不修改",
+          "document": "<p>描述，不传则不修改</p>",
           "example": "production",
           "member": "string",
           "name": "Description",
@@ -14363,8 +14372,8 @@
         },
         {
           "disabled": false,
-          "document": "用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围\nmanagement：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户",
-          "example": "monitoring",
+          "document": "<p>用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围<br>management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户</p>",
+          "example": "[\"monitoring\"]",
           "member": "string",
           "name": "Tags",
           "required": false,
@@ -14372,7 +14381,7 @@
         },
         {
           "disabled": false,
-          "document": "该用户的最大连接数，不传则不修改",
+          "document": "<p>该用户的最大连接数，不传则不修改</p>",
           "example": "1000",
           "member": "int64",
           "name": "MaxConnections",
@@ -14381,12 +14390,21 @@
         },
         {
           "disabled": false,
-          "document": "该用户的最大channel数，不传则不修改",
+          "document": "<p>该用户的最大channel数，不传则不修改</p>",
           "example": "2000",
           "member": "int64",
           "name": "MaxChannels",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启cam验证</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableCamAuth",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

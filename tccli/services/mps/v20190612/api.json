@@ -532,6 +532,13 @@
       "output": "DeleteTranscodeTemplateResponse",
       "status": "online"
     },
+    "DeleteVoice": {
+      "document": "删除音色（通过音色克隆或设计创建的）。",
+      "input": "DeleteVoiceRequest",
+      "name": "删除音色",
+      "output": "DeleteVoiceResponse",
+      "status": "online"
+    },
     "DeleteWatermarkTemplate": {
       "document": "删除用户自定义水印模板。",
       "input": "DeleteWatermarkTemplateRequest",
@@ -16110,6 +16117,62 @@
     "DeleteTranscodeTemplateResponse": {
       "document": "DeleteTranscodeTemplate返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVoiceRequest": {
+      "document": "DeleteVoice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>音色Id</p>",
+          "example": "v1_t/swku2LEj6lgNZU0i3uwrYvx7zuPn5emkuzocwZ65f/QQofSo/YrU5mohm32XWj0L4=",
+          "member": "string",
+          "name": "VoiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数，json字符串</p>",
+          "example": "{\"engine\": \"auto\"}",
+          "member": "string",
+          "name": "ExtParam",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVoiceResponse": {
+      "document": "DeleteVoice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，成功时返回0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息，成功时返回success</p>",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -43742,7 +43805,7 @@
         {
           "disabled": false,
           "document": "<p>克隆音频Url，AudioData为空时有效</p>",
-          "example": "https://ie-mps-1258344699.cos-internal.ap-nanjing.tencentcos.cn/common/lauriehuang/dubbing/test/leleqihang/AI_voice.mp4",
+          "example": "https://ie-mps-1258344699.cos-internal.ap-nanjing.tencentcos.cn/common/lauriehuang/reel/test/narration_voice_zh.wav",
           "member": "string",
           "name": "AudioUrl",
           "required": false,
@@ -43786,7 +43849,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>扩展参数，json字符串</p><p>synExt    Object    语音合成扩展参数<br>    -duration    Float    合成音频时长，单位秒，示例：5.2<br>    -sampleRate    Integer    合成音频采样率，默认16000，支持[8000,16000,22050,32000,44100]<br>    -pitch    Integer    音调，默认0原音色输出，取值[-12, 12]<br>cloneExt    Object    音色克隆扩展参数<br>    -timeRanges    Float[][]    指定克隆音频时间范围，默认[[0, 20]]，示例[[5.2, 10], [45, 59.8]]</p>",
+          "document": "<p>扩展参数，json字符串</p><p><strong>synExt</strong>    Object    语音合成扩展参数<br>  <strong>duration</strong>    Float    合成音频时长（单位秒），默认不控制时长。示例：5.2<br>  <strong>sampleRate</strong>    Integer    合成音频采样率，默认16000，支持[8000,16000,22050,24000,32000,44100]<br>  <strong>pitch</strong>    Integer    音调，默认0原音色输出，取值[-12, 12]<br><strong>cloneExt</strong>    Object    音色克隆扩展参数<br>  <strong>timeRanges</strong>    Float[][]    指定克隆音频时间范围（单位秒），默认取音频前20s。示例：[[5.2, 10], [45, 59.8]]</p>",
           "example": "{\n    \"synExt\": {\n        \"duration\": 10\n    }\n}",
           "member": "string",
           "name": "ExtParam",

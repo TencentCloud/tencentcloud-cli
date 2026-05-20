@@ -17883,7 +17883,7 @@
         },
         {
           "disabled": false,
-          "document": "导出配置项的类型列表，不填表示导出所有类型的配置，当前支持的取值有：<li>L7AccelerationConfig：表示导出七层加速配置，对应控制台「站点加速-全局加速配置」和「站点加速-规则引擎」。</li><li>WebSecurity：表示导出 Web 防护配置。</li> 需注意：后续支持导出的类型会随着迭代增加，导出所有类型时需要注意导出文件大小，建议使用时指定需要导出的配置类型，以便控制请求响应包负载大小。",
+          "document": "导出配置项的类型列表，不填表示导出所有类型的配置，当前支持的取值有：<li>L7AccelerationConfig：表示导出七层加速配置，对应控制台「站点加速-全局加速配置」和「站点加速-规则引擎」。</li><li>WebSecurity：表示导出 Web 防护配置。</li><li> AccelerationDomain：表示导出加速域名配置，对应控制台「域名服务-域名管理」和「域名服务-共享 CNAME 管理」。</li><li> Origin：表示导出源站配置，对应控制台「源站配置-源站组」和「源站配置-负载均衡」。</li> 需注意：后续支持导出的类型会随着迭代增加，导出所有类型时需要注意导出文件大小，建议使用时指定需要导出的配置类型，以便控制请求响应包负载大小。",
           "example": "[\"L7AccelerationConfig\"]",
           "member": "string",
           "name": "Types",
@@ -28324,7 +28324,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。\n<li>Cache：节点缓存 TTL；</li>\n<li>CacheKey：自定义 Cache Key；</li>\n<li>CachePrefresh：缓存预刷新；</li>\n<li>AccessURLRedirect：访问 URL 重定向；</li>\n<li>UpstreamURLRewrite：回源 URL 重写；</li>\n<li>QUIC：QUIC；</li>\n<li>WebSocket：WebSocket；</li>\n<li>Authentication：Token 鉴权；</li>\n<li>MaxAge：浏览器缓存 TTL；</li>\n<li>StatusCodeCache：状态码缓存 TTL；</li>\n<li>OfflineCache：离线缓存；</li>\n<li>SmartRouting：智能加速；</li>\n<li>RangeOriginPull：分片回源 ；</li>\n<li>UpstreamHTTP2：HTTP2 回源；</li>\n<li>HostHeader：Host Header 重写；</li>\n<li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li>\n<li>OriginPullProtocol：回源 HTTPS；</li>\n<li>Compression：智能压缩配置；</li>\n<li>HSTS：HSTS；</li>\n<li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li>\n<li>OCSPStapling：OCSP 装订；</li>\n<li>HTTP2：HTTP2 接入；</li>\n<li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li>\n<li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li>\n<li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li>\n<li>UpstreamRequest：回源请求参数；</li>\n<li>Shield：源站卸载配置；</li>\n<li>TLSConfig：SSL/TLS 安全；</li>\n<li>ModifyOrigin：修改源站；</li>\n<li>HTTPUpstreamTimeout：七层回源超时配置；</li>\n<li>HttpResponse：HTTP 应答；</li>\n<li>ErrorPage：自定义错误页面；</li>\n<li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>\n<li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>\n<li>ResponseSpeedLimit：单连接下载限速；</li>\n<li>SetContentIdentifier：设置内容标识符；</li>\n<li>Vary：Vary 特性配置；</li>\n<li>ContentCompression：内容压缩配置；</li>\n<li>OriginAuthentication：回源鉴权配置。</li>",
+          "document": "操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。\n<li>Cache：节点缓存 TTL；</li>\n<li>CacheKey：自定义 Cache Key；</li>\n<li>CachePrefresh：缓存预刷新；</li>\n<li>AccessURLRedirect：访问 URL 重定向；</li>\n<li>UpstreamURLRewrite：回源 URL 重写；</li>\n<li>QUIC：QUIC；</li>\n<li>WebSocket：WebSocket；</li>\n<li>Authentication：Token 鉴权；</li>\n<li>MaxAge：浏览器缓存 TTL；</li>\n<li>StatusCodeCache：状态码缓存 TTL；</li>\n<li>OfflineCache：离线缓存；</li>\n<li>SmartRouting：智能加速；</li>\n<li>RangeOriginPull：分片回源 ；</li>\n<li>UpstreamHTTP2：HTTP2 回源；</li>\n<li>HostHeader：Host Header 重写；</li>\n<li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li>\n<li>OriginPullProtocol：回源 HTTPS；</li>\n<li>Compression：智能压缩配置；</li>\n<li>HSTS：HSTS；</li>\n<li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li>\n<li>OCSPStapling：OCSP 装订；</li>\n<li>HTTP2：HTTP2 接入；</li>\n<li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li>\n<li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li>\n<li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li>\n<li>UpstreamRequest：回源请求参数；</li>\n<li>Shield：源站卸载配置；</li>\n<li>TLSConfig：SSL/TLS 安全；</li>\n<li>ModifyOrigin：修改源站；</li>\n<li> SiteFailover：源站故障转移；</li>\n<li>HTTPUpstreamTimeout：七层回源超时配置；</li>\n<li>HttpResponse：HTTP 应答；</li>\n<li>ErrorPage：自定义错误页面；</li>\n<li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>\n<li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>\n<li>ResponseSpeedLimit：单连接下载限速；</li>\n<li>SetContentIdentifier：设置内容标识符；</li>\n<li>Vary：Vary 特性配置；</li>\n<li>ContentCompression：内容压缩配置；</li>\n<li>OriginAuthentication：回源鉴权配置。</li>",
           "example": "Cache",
           "member": "string",
           "name": "Name",
@@ -28647,6 +28647,17 @@
           "example": "无",
           "member": "ModifyOriginParameters",
           "name": "ModifyOriginParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源站故障转移配置参数，当 Name 取值为 SiteFailover 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SiteFailoverParameters",
+          "name": "SiteFailoverParameters",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -29986,6 +29997,194 @@
           "output_required": false,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SiteFailover": {
+      "document": "源站故障转移 配置参数内部结构。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源站故障转移类型。取值有：\n<li>FailoverToHost:回源到指定 IP/域名；</li>\n<li> FailoverToCOS:回源到腾讯云 COS；</li>\n<li>FailoverToS3CompatibleObjectStorage:回源到 S3 兼容；</li>\n<li> FailoverRedirectToURL :重定向至指定 URL；</li>\n<li> FailoverCustomResponsePage:使用自定义响应页面。</li>",
+          "example": "FailoverRedirectToURL",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站地址，根据 Mode 的取值分为以下情况：\n<li>当 Mode = FailoverToHost 时，该参数请填写 IPV4、IPV6 地址或域名；</li>\n<li>当 Mode = FailoverToCOS 时，该参数请填写 COS 桶的访问域名；</li>\n<li>当 Mode = FailoverToS3CompatibleObjectStorage，该参数请填写 S3 桶的访问域名。</li>",
+          "example": "www.example.com",
+          "member": "string",
+          "name": "Origin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源协议配置。当 Mode 取值为 FailoverToHost 时该参数必填。取值有：\n<li>http：使用 HTTP 协议；</li>\n<li>https：使用 HTTPS 协议；</li>\n<li>follow：协议跟随。</li>",
+          "example": "follow",
+          "member": "string",
+          "name": "OriginProtocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 回源端口，取值范围 1～65535。当回源协议 OriginProtocol 为 http 或者 follow 时该参数必填。",
+          "example": "80",
+          "member": "int64",
+          "name": "HTTPOriginPort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTPS 回源端口，取值范围 1～65535。当回源协议 OriginProtocol 为 https 或者 follow 时该参数必填。",
+          "example": "443",
+          "member": "int64",
+          "name": "HTTPSOriginPort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源Host Header 重写配置，",
+          "example": "无",
+          "member": "HostHeaderParameters",
+          "name": "UpstreamHostHeader",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源 URL 重写配置。",
+          "example": "无",
+          "member": "UpstreamURLRewriteParameters",
+          "name": "UpstreamURLRewrite",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源请求参数配置。",
+          "example": "无",
+          "member": "UpstreamRequestParameters",
+          "name": "UpstreamRequestParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTP2 回源配置参数。",
+          "example": "无",
+          "member": "UpstreamHTTP2Parameters",
+          "name": "UpstreamHTTP2Parameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定是否允许访问私有对象存储源站，当源站类型 Mode = FailoverToCOS 或 FailoverToS3CompatibleObjectStorage 时该参数必填，取值有：\n<li>on：使用私有鉴权；</li>\n<li>off：不使用私有鉴权。</li>",
+          "example": "off",
+          "member": "string",
+          "name": "PrivateAccess",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有鉴权使用参数，该参数仅当 Mode = FailoverToS3CompatibleObjectStorage 且 PrivateAccess = on 时会生效。",
+          "example": "无",
+          "member": "OriginPrivateParameters",
+          "name": "PrivateParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重定向目标 URL。当 Mode 取值为 FailoverRedirectToURL 时该参数必填。",
+          "example": "http://www.example.com",
+          "member": "string",
+          "name": "RedirectURL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应页面 ID。当 Mode 取值为 FailoverCustomResponsePage 时该参数必填。",
+          "example": "p-3qck1u3hvaqk",
+          "member": "string",
+          "name": "ResponsePageId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应状态码。当 Mode 取值为 FailoverRedirectToURL 或 FailoverCustomResponsePage 时该参数必填。取值有：\n<li>当 Mode = FailoverRedirectToURL 时，该参数取值为 301、302、303、307、308 之一；</li>\n<li>当 Mode = FailoverCustomResponsePage 时，该参数取值为 400、403、404、405、414、416、451、500、501、502、503、504 之一。</li>",
+          "example": "302",
+          "member": "int64",
+          "name": "StatusCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SiteFailoverParameters": {
+      "document": "源站故障转移配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源站故障转移条件状态码。当源站返回的响应状态码命中本字段返回时，才会按照SiteFailoverParams执行源站转移。该参数取值为 4xx、5xx 之一。",
+          "example": "[502]",
+          "member": "int64",
+          "name": "SiteFailoverStatusCodes",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站故障转移配置参数列表。最小长度为1，最大长度为2。",
+          "example": "无",
+          "member": "SiteFailover",
+          "name": "SiteFailoverParams",
+          "output_required": false,
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

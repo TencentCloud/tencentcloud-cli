@@ -62,7 +62,7 @@ Output:
                     "OwnerProjectIdent": "project1",
                     "OwnerProjectName": "[project1]",
                     "Params": null,
-                    "ParamsString": "{\"vport\":\"63348\",\"connectType\":\"public\",\"ip\":\"156.16.156.156\",\"publicPort\":\"6658\",\"publicIp\":\"189.15.15\",\"type\":\"MYSQL\",\"authorityType\":\"true\",\"deployType\":\"CONNSTR_PUBLICDB\",\"url\":\"jdbc:mysql://156.15.161.65:63258/emall\",\"vurl\":\"jdbc:mysql://68.23.265.86:63618/emall\",\"password\":\"********\",\"vpcTenantId\":\"131506509\",\"port\":\"65113\",\"passwordEncrypt\":\"40de7fbe6ad34c9d581af31416ef2a6c\",\"publicUrl\":\"jdbc:mysql://32.13.26.23:66413/emall\",\"vip\":\"156.168.95.62\",\"db\":\"emall\",\"username\":\"sdggds\"}",
+                    "ParamsString": "{\"vport\":\"63348\",\"connectType\":\"public\",\"ip\":\"156.16.156.156\",\"publicPort\":\"6658\",\"publicIp\":\"189.15.15\",\"type\":\"MYSQL\",\"authorityType\":\"true\",\"deployType\":\"CONNSTR_PUBLICDB\",\"url\":\"jdbc:mysql://156.15.161.65:63258/emall\",\"vurl\":\"jdbc:mysql://68.23.265.86:63618/emall\",\"password\":\"********\",\"vpcTenantId\":\"131506509\",\"port\":\"65113\",\"passwordEncrypt\":\"********************************\",\"publicUrl\":\"jdbc:mysql://32.13.26.23:66413/emall\",\"vip\":\"156.168.95.62\",\"db\":\"emall\",\"username\":\"sdggds\"}",
                     "ProductId": "59111",
                     "Region": "ap-beijing",
                     "ShowType": "MySQL",

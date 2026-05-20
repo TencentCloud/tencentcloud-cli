@@ -40,6 +40,14 @@
         "title": "新增实例"
       }
     ],
+    "AddLibraDBInstances": [
+      {
+        "document": "本接口（AddLibraDBInstances）用于集群添加只读分析引擎",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddLibraDBInstances\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-7\",\n    \"ClusterId\": \"cynosdbmysql-037c8yll\",\n    \"Cpu\": 4,\n    \"Mem\": 16,\n    \"StorageSize\": 100,\n    \"PayMode\": 0,\n    \"Objects\": {\n        \"DatabaseTables\": {\n            \"MigrateDBMode\": \"all\"\n        }\n    },\n    \"GoodsNum\": 1,\n    \"VpcId\": \"vpc-nnakli31\",\n    \"SubnetId\": \"subnet-558rhwt2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BigDealIds\": null,\n        \"DealNames\": [\n            \"20250417625002746837731\"\n        ],\n        \"RequestId\": \"173601bd-d6ab-4774-8714-775b37c8613d\",\n        \"ResourceIds\": [\n            \"libradb-ins-7ohnx2nu\"\n        ],\n        \"TranId\": \"20250417625002746837741\"\n    }\n}",
+        "title": "创建只读分析引擎实例"
+      }
+    ],
     "AssociateSecurityGroups": [
       {
         "document": "",

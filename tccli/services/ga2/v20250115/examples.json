@@ -136,6 +136,14 @@
         "title": "查询监听器"
       }
     ],
+    "DescribeTaskResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"340899b5-29b3-4cc1-825b-69d4de7ee200\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23e8949a-487c-4c6a-82e9-fb1636eeac33\",\n        \"Status\": \"SUCCESS\"\n    }\n}",
+        "title": "查询异步任务结果"
+      }
+    ],
     "ModifyAccelerateAreas": [
       {
         "document": "",

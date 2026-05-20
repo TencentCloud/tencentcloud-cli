@@ -1041,7 +1041,34 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否隐藏",
+          "document": "<p>输入内容</p>",
+          "example": "请介绍一下你自己",
+          "member": "string",
+          "name": "InputContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "agentins-ctee3glp",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对话窗口ID，空值表示新的会话</p>",
+          "example": "key-new-chat",
+          "member": "string",
+          "name": "ChatId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否隐藏</p>",
           "example": "false",
           "member": "bool",
           "name": "IsHidden",
@@ -1050,7 +1077,7 @@
         },
         {
           "disabled": false,
-          "document": "是否隐藏会话",
+          "document": "<p>是否隐藏会话</p>",
           "example": "false",
           "member": "bool",
           "name": "IsChatHidden",
