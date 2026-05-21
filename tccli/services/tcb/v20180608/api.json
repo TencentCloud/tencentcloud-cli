@@ -21,6 +21,13 @@
       "output": "AssumeRoleForAllocatedEnvResponse",
       "status": "online"
     },
+    "BindStorageSource": {
+      "document": "为云存储绑定外部云存储源。\n将一个用户自有的 COS桶 作为外部存储源绑定到指定云开发环境的云存储。绑定后，该环境的云存储文件操作将指向此桶，通过 BasePath 路径前缀实现与其他环境的数据隔离。\n每个环境仅允许绑定 1 个外部云存储源。",
+      "input": "BindStorageSourceRequest",
+      "name": "云存储绑定外部存储源",
+      "output": "BindStorageSourceResponse",
+      "status": "online"
+    },
     "CheckTcbService": {
       "document": "检查是否开通Tcb服务",
       "input": "CheckTcbServiceRequest",
@@ -532,6 +539,13 @@
       "output": "ModifySafeRuleResponse",
       "status": "online"
     },
+    "ModifyStorageSource": {
+      "document": "修改指定云开发环境已绑定的外部云存储源配置。\n修改之后，大约3~5分钟生效。\n\n注意⚠️\n本接口仅更新存储源绑定关系，不会迁移您的数据。",
+      "input": "ModifyStorageSourceRequest",
+      "name": "更新云存储外部数据源",
+      "output": "ModifyStorageSourceResponse",
+      "status": "online"
+    },
     "ModifyUser": {
       "document": "修改tcb用户",
       "input": "ModifyUserRequest",
@@ -593,6 +607,13 @@
       "input": "SearchClsLogRequest",
       "name": "搜索CLS日志",
       "output": "SearchClsLogResponse",
+      "status": "online"
+    },
+    "UnbindStorageSource": {
+      "document": "从指定云开发环境中解绑已绑定的外部云存储源。解绑后，该环境将不再关联外部 存储源，云存储功能恢复为未绑定状态。\n解绑操作仅移除 CloudBase 侧的绑定关系，不会删除桶本身及桶内数据，桶仍由用户自行管理。\n\n注意⚠️\n解绑之后，会导致云存储不可用，请谨慎操作。",
+      "input": "UnbindStorageSourceRequest",
+      "name": "解绑云存储外部云存储源",
+      "output": "UnbindStorageSourceResponse",
       "status": "online"
     },
     "UpdateAIModel": {
@@ -1481,6 +1502,42 @@
         }
       ],
       "usage": "both"
+    },
+    "BindStorageSourceRequest": {
+      "document": "BindStorageSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "cloudbase-0gx36sm8ddc58be0",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储源",
+          "example": "无",
+          "member": "ExternalStorage",
+          "name": "StorageConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "BindStorageSourceResponse": {
+      "document": "BindStorageSource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CheckTcbServiceRequest": {
       "document": "CheckTcbService请求参数结构体",
@@ -9997,6 +10054,42 @@
       ],
       "type": "object"
     },
+    "ModifyStorageSourceRequest": {
+      "document": "ModifyStorageSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "cloudbase-0gx36sm8ddc58be0",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储源",
+          "example": "无",
+          "member": "ExternalStorage",
+          "name": "StorageConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStorageSourceResponse": {
+      "document": "ModifyStorageSource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyUserRequest": {
       "document": "ModifyUser请求参数结构体",
       "members": [
@@ -12102,6 +12195,33 @@
         }
       ],
       "usage": "both"
+    },
+    "UnbindStorageSourceRequest": {
+      "document": "UnbindStorageSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "cloudbase-0gx36sm8ddc58be0",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindStorageSourceResponse": {
+      "document": "UnbindStorageSource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateAIModelRequest": {
       "document": "UpdateAIModel请求参数结构体",

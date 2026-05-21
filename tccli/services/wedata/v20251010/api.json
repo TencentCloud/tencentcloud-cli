@@ -23377,6 +23377,15 @@
           "name": "Creator",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间ID（必填）",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -40594,11 +40603,20 @@
         },
         {
           "disabled": false,
-          "document": "配置项\n- git\n- other",
+          "document": "配置项- git- other，未指定 ConfigItem 查询某 ConfigType 下所有配置时返回",
           "example": "git",
           "member": "string",
           "name": "ConfigItem",
-          "required": true,
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关键字",
+          "example": "key",
+          "member": "string",
+          "name": "Keywords",
+          "required": false,
           "type": "string"
         }
       ],
@@ -58924,6 +58942,15 @@
           "name": "QueryItems",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间ID（必填）",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -59381,7 +59408,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "ide",
           "member": "string",
           "name": "WorkspaceId",
@@ -59390,7 +59417,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "ide",
           "member": "string",
           "name": "TaskId",
@@ -59399,7 +59426,7 @@
         },
         {
           "disabled": false,
-          "document": "作业ID",
+          "document": "<p>作业ID</p>",
           "example": "ide",
           "member": "string",
           "name": "JobId",
@@ -59408,7 +59435,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "1769070661054",
           "member": "int64",
           "name": "EndTime",
@@ -59417,7 +59444,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "1768984261054",
           "member": "int64",
           "name": "StartTime",
@@ -59426,7 +59453,7 @@
         },
         {
           "disabled": false,
-          "document": "container名字",
+          "document": "<p>container名字</p>",
           "example": "ide",
           "member": "string",
           "name": "Container",
@@ -59435,7 +59462,7 @@
         },
         {
           "disabled": false,
-          "document": "条数",
+          "document": "<p>条数</p>",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -59444,7 +59471,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型 desc asc",
+          "document": "<p>排序类型 desc asc</p>",
           "example": "ide",
           "member": "string",
           "name": "OrderType",
@@ -59453,7 +59480,7 @@
         },
         {
           "disabled": false,
-          "document": "作业运行的实例ID",
+          "document": "<p>作业运行的实例ID</p>",
           "example": "tg-11600b05-taskmanager-1-1",
           "member": "string",
           "name": "RunningOrderId",
@@ -59462,7 +59489,7 @@
         },
         {
           "disabled": false,
-          "document": "关键字",
+          "document": "<p>关键字</p>",
           "example": "ide",
           "member": "string",
           "name": "Keyword",
@@ -59470,13 +59497,22 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "分页偏移量",
+          "disabled": true,
+          "document": "<p>分页偏移量</p>",
           "example": "1000",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>下一页的起点</p>",
+          "example": "200",
+          "member": "string",
+          "name": "NextOffset",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -59486,7 +59522,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回",
+          "document": "<p>返回</p>",
           "example": "无",
           "member": "ListTaskRunningLogRsp",
           "name": "Data",
@@ -62364,7 +62400,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志时间戳，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志时间戳，单位毫秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "time",
           "member": "string",
           "name": "Time",
@@ -62374,7 +62410,7 @@
         },
         {
           "disabled": false,
-          "document": "日志包id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志包id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pkg",
           "member": "string",
           "name": "PkgId",
@@ -62384,13 +62420,33 @@
         },
         {
           "disabled": false,
-          "document": "日志内容",
+          "document": "<p>日志内容</p>",
           "example": "log",
           "member": "string",
           "name": "Log",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "string",
+          "name": "PkgLogId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tg-11600b05-taskmanager-1-1",
+          "member": "string",
+          "name": "ContainerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -79400,36 +79456,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "jobId",
+          "document": "<p>jobId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tg-ebb682dd",
           "member": "string",
           "name": "JobId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "runningId",
-          "example": "tg-11600b05-taskmanager-1-1",
+          "document": "<p>runningId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "string",
           "name": "RunningOrderId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "容器名称",
-          "example": "taskmanager",
+          "document": "<p>容器名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tg-11600b05-taskmanager-1-1",
           "member": "string",
           "name": "Container",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "taskmanager",
+          "member": "string",
+          "name": "ContainerType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -81777,6 +81844,15 @@
           "example": "tester",
           "member": "string",
           "name": "Modifier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间ID（必填）",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
           "required": false,
           "type": "string"
         }

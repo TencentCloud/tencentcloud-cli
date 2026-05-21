@@ -1,6 +1,6 @@
-**Example 1: 查询授权概览信息**
+**Example 1: 示例**
 
-
+示例1
 
 Input: 
 
@@ -11,26 +11,32 @@ Output:
 ```
 {
     "Response": {
-        "AutoOpenStatus": true,
-        "AvailableFlagshipVersionLicenseCnt": 1,
-        "AvailableLHLicenseCnt": 0,
-        "AvailableLicenseCnt": 3,
-        "AvailableProVersionLicenseCnt": 2,
-        "CwpVersionLicenseCnt": 0,
-        "ExpireLicenseCnt": 0,
-        "FlagshipVersionLicenseCnt": 1,
-        "IsOpenStatusHistory": true,
-        "LicenseCnt": 3,
-        "NearExpiryLicenseCnt": 0,
-        "NotExpiredLicenseCnt": 3,
-        "ProVersionLicenseCnt": 2,
-        "ProtectType": "FLAGSHIP_PREPAY",
-        "RequestId": "d9a5456b-a2db-4106-bd12-32e2c735435d",
-        "UsedLicenseCnt": 0,
-        "AutoRepurchaseSwitch": false,
+        "AISecurityVersionLicenseCnt": 0,
+        "ApplicationAvailableLicenseCnt": 0,
+        "AutoBindRaspSwitch": false,
+        "AutoDowngradeSwitch": false,
+        "AutoOpenRaspSwitch": false,
+        "AutoOpenStatus": false,
         "AutoRepurchaseRenewSwitch": false,
-        "DestroyOrderNum": 0,
-        "RepurchaseRenewSwitch": false
+        "AutoRepurchaseSwitch": false,
+        "AvailableAISecurityLicenseCnt": 0,
+        "AvailableFlagshipVersionLicenseCnt": 0,
+        "AvailableLHLicenseCnt": 0,
+        "AvailableLicenseCnt": 0,
+        "AvailableProVersionLicenseCnt": 0,
+        "CwpVersionLicenseCnt": 0,
+        "DestroyOrderNum": 1,
+        "ExpireLicenseCnt": 10,
+        "FlagshipVersionLicenseCnt": 0,
+        "IsOpenStatusHistory": false,
+        "LicenseCnt": 0,
+        "NearExpiryLicenseCnt": 0,
+        "NotExpiredLicenseCnt": 0,
+        "ProVersionLicenseCnt": 0,
+        "ProtectType": "FLAGSHIP_PREPAY",
+        "RepurchaseRenewSwitch": false,
+        "UsedLicenseCnt": 0,
+        "RequestId": "98fd0d2c-c27c-43f3-8622-1b5fe386c5fa"
     }
 }
 ```

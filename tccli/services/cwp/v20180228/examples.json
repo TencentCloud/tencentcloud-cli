@@ -1620,10 +1620,10 @@
     ],
     "DescribeLicenseGeneral": [
       {
-        "document": "",
+        "document": "示例1",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicenseGeneral\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"AutoOpenStatus\": true,\n        \"AvailableFlagshipVersionLicenseCnt\": 1,\n        \"AvailableLHLicenseCnt\": 0,\n        \"AvailableLicenseCnt\": 3,\n        \"AvailableProVersionLicenseCnt\": 2,\n        \"CwpVersionLicenseCnt\": 0,\n        \"ExpireLicenseCnt\": 0,\n        \"FlagshipVersionLicenseCnt\": 1,\n        \"IsOpenStatusHistory\": true,\n        \"LicenseCnt\": 3,\n        \"NearExpiryLicenseCnt\": 0,\n        \"NotExpiredLicenseCnt\": 3,\n        \"ProVersionLicenseCnt\": 2,\n        \"ProtectType\": \"FLAGSHIP_PREPAY\",\n        \"RequestId\": \"d9a5456b-a2db-4106-bd12-32e2c735435d\",\n        \"UsedLicenseCnt\": 0,\n        \"AutoRepurchaseSwitch\": false,\n        \"AutoRepurchaseRenewSwitch\": false,\n        \"DestroyOrderNum\": 0,\n        \"RepurchaseRenewSwitch\": false\n    }\n}",
-        "title": "查询授权概览信息"
+        "output": "{\n    \"Response\": {\n        \"AISecurityVersionLicenseCnt\": 0,\n        \"ApplicationAvailableLicenseCnt\": 0,\n        \"AutoBindRaspSwitch\": false,\n        \"AutoDowngradeSwitch\": false,\n        \"AutoOpenRaspSwitch\": false,\n        \"AutoOpenStatus\": false,\n        \"AutoRepurchaseRenewSwitch\": false,\n        \"AutoRepurchaseSwitch\": false,\n        \"AvailableAISecurityLicenseCnt\": 0,\n        \"AvailableFlagshipVersionLicenseCnt\": 0,\n        \"AvailableLHLicenseCnt\": 0,\n        \"AvailableLicenseCnt\": 0,\n        \"AvailableProVersionLicenseCnt\": 0,\n        \"CwpVersionLicenseCnt\": 0,\n        \"DestroyOrderNum\": 1,\n        \"ExpireLicenseCnt\": 10,\n        \"FlagshipVersionLicenseCnt\": 0,\n        \"IsOpenStatusHistory\": false,\n        \"LicenseCnt\": 0,\n        \"NearExpiryLicenseCnt\": 0,\n        \"NotExpiredLicenseCnt\": 0,\n        \"ProVersionLicenseCnt\": 0,\n        \"ProtectType\": \"FLAGSHIP_PREPAY\",\n        \"RepurchaseRenewSwitch\": false,\n        \"UsedLicenseCnt\": 0,\n        \"RequestId\": \"98fd0d2c-c27c-43f3-8622-1b5fe386c5fa\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeLicenseList": [
@@ -1637,8 +1637,8 @@
     "DescribeLicenseWhiteConfig": [
       {
         "document": "查询是否有试用配置",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicenseWhiteConfig\n<公共请求参数>\n\n{\n    \"RuleName\": \"cwp\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FlagShip\": {\n            \"Deadline\": 7,\n            \"IsApplyFor\": true,\n            \"LicenseNum\": 10,\n            \"SourceType\": 1\n        },\n        \"PrattWhitney\": {\n            \"Deadline\": 0,\n            \"IsApplyFor\": false,\n            \"LicenseNum\": 0,\n            \"SourceType\": 0\n        },\n        \"Professional\": {\n            \"Deadline\": 7,\n            \"IsApplyFor\": false,\n            \"LicenseNum\": 10,\n            \"SourceType\": 1\n        },\n        \"RequestId\": \"5ebd92e8-9873-4b4c-a26a-7f43048d42d2\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicenseWhiteConfig\n<公共请求参数>\n\n{\n    \"RuleName\": \"cwp_yunying\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlagShip\": {\n            \"Deadline\": 7,\n            \"IsApplyFor\": false,\n            \"LicenseNum\": 10,\n            \"SourceType\": 6\n        },\n        \"LOG\": {\n            \"Deadline\": 0,\n            \"IsApplyFor\": false,\n            \"LicenseNum\": 0,\n            \"SourceType\": 0\n        },\n        \"PrattWhitney\": {\n            \"Deadline\": 0,\n            \"IsApplyFor\": false,\n            \"LicenseNum\": 0,\n            \"SourceType\": 0\n        },\n        \"Professional\": {\n            \"Deadline\": 0,\n            \"IsApplyFor\": false,\n            \"LicenseNum\": 0,\n            \"SourceType\": 0\n        },\n        \"RASP\": {\n            \"Deadline\": 0,\n            \"IsApplyFor\": false,\n            \"LicenseNum\": 0,\n            \"SourceType\": 0\n        },\n        \"RequestId\": \"09c2d4b3-ffdf-495d-9817-a89fdad0de89\"\n    }\n}",
         "title": "示例"
       }
     ],

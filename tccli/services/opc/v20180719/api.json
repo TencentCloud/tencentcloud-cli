@@ -196,7 +196,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "点石活动ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>点石活动ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12202",
           "member": "uint64",
           "name": "ActivityId",
@@ -207,7 +207,7 @@
         },
         {
           "disabled": false,
-          "document": "报名场次列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>报名场次列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"Basics\",\"businessExpand\"]",
           "member": "string",
           "name": "FormSessionList",
@@ -218,7 +218,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>姓名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "lam",
           "member": "string",
           "name": "Name",
@@ -229,7 +229,7 @@
         },
         {
           "disabled": false,
-          "document": "公司名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>公司名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "腾讯科技",
           "member": "string",
           "name": "CompanyName",
@@ -240,7 +240,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>邮箱</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo@tencent.com",
           "member": "string",
           "name": "Mail",
@@ -251,7 +251,7 @@
         },
         {
           "disabled": false,
-          "document": "部门名称/职位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部门名称/职位</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "engineer",
           "member": "string",
           "name": "Position",
@@ -262,7 +262,7 @@
         },
         {
           "disabled": false,
-          "document": "电话国际区号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>电话国际区号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "86",
           "member": "string",
           "name": "CountryCode",
@@ -273,7 +273,7 @@
         },
         {
           "disabled": false,
-          "document": "电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>电话</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "13412526590",
           "member": "string",
           "name": "Phone",
@@ -284,7 +284,7 @@
         },
         {
           "disabled": false,
-          "document": "同意条款 0-不同意 1-同意\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>同意条款 0-不同意 1-同意</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "Agreement",
@@ -295,7 +295,7 @@
         },
         {
           "disabled": false,
-          "document": "参与方式 0-线下参与 1-线上参与\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参与方式 0-线下参与 1-线上参与</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "ParticipationMode",
@@ -306,7 +306,7 @@
         },
         {
           "disabled": false,
-          "document": "联系方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>联系方式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ActivityRegFormRecordContactInfo",
           "name": "ContactInfo",
@@ -317,7 +317,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-01-25 15:00:00",
           "member": "string",
           "name": "CreatedAt",
@@ -328,7 +328,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-01-25 15:00:00",
           "member": "string",
           "name": "UpdatedAt",
@@ -339,7 +339,7 @@
         },
         {
           "disabled": false,
-          "document": "渠道追踪fromSource\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>渠道追踪fromSource</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gwzcw.7891547.7891547.7891547",
           "member": "string",
           "name": "FromSource",
@@ -350,14 +350,58 @@
         },
         {
           "disabled": false,
-          "document": "拓展参数，需要先json反序列化再使用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>拓展参数，需要先json反序列化再使用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"region\":\"1\"}",
           "member": "string",
           "name": "ExtParam",
           "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>页面标题</p>",
+          "example": "活动页标题",
+          "member": "string",
+          "name": "PageName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务类型</p><p>枚举值：</p><ul><li>activity： 日常活动</li><li>market： 市场部活动</li><li>techpedia_intl： 国际站技术百科</li></ul>",
+          "example": "activity",
+          "member": "string",
+          "name": "BizType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务ID</p>",
+          "example": "1",
+          "member": "string",
+          "name": "BizID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务扩展ID</p>",
+          "example": "1",
+          "member": "string",
+          "name": "BizExtID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -815,7 +859,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页码",
+          "document": "<p>页码</p>",
           "example": "1",
           "member": "uint64",
           "name": "Page",
@@ -824,7 +868,7 @@
         },
         {
           "disabled": false,
-          "document": "页大小",
+          "document": "<p>页大小</p>",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
@@ -833,12 +877,66 @@
         },
         {
           "disabled": false,
-          "document": "点石活动ID",
+          "document": "<p>点石活动ID</p>",
           "example": "12202",
           "member": "uint64",
           "name": "ActivityId",
-          "required": true,
+          "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务类型</p><p>枚举值：</p><ul><li>activity： 日常活动</li><li>market： 市场部活动</li><li>techpedia_intl： 国际站技术百科</li></ul>",
+          "example": "activity",
+          "member": "string",
+          "name": "BizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务ID</p>",
+          "example": "1",
+          "member": "string",
+          "name": "BizID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务扩展ID</p>",
+          "example": "1",
+          "member": "string",
+          "name": "BizExtID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页面标题</p>",
+          "example": "活动页标题",
+          "member": "string",
+          "name": "PageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间起始时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>",
+          "example": "2026-05-21 00:00:00",
+          "member": "string",
+          "name": "CreateTimeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间结束时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>",
+          "example": "2026-05-22 00:00:00",
+          "member": "string",
+          "name": "CreateTimeEnd",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -848,7 +946,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "记录总数",
+          "document": "<p>记录总数</p>",
           "example": "100",
           "member": "uint64",
           "name": "TotalNum",
@@ -858,7 +956,7 @@
         },
         {
           "disabled": false,
-          "document": "记录列表",
+          "document": "<p>记录列表</p>",
           "example": "无",
           "member": "ActivityRegFormRecord",
           "name": "List",

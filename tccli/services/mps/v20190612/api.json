@@ -3706,6 +3706,16 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>编辑译制信息</p>",
+          "example": "https://xx-xx.cos-internal.ap-nanjing.tencentcos.cn/smart_dub/edit_info/2026/03/07/xxxxx-WorkflowTask-46c29a89dcd6ec9cb40f762418ef1e0dtt259184_edit_info.json",
+          "member": "string",
+          "name": "EditDubbingUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5341,7 +5351,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "识别片段置信度。取值：0~100。",
+          "document": "<p>识别片段置信度。取值：0~100。</p>",
           "example": "100",
           "member": "float",
           "name": "Confidence",
@@ -5351,7 +5361,7 @@
         },
         {
           "disabled": false,
-          "document": "识别片段起始的偏移时间，单位：秒。",
+          "document": "<p>识别片段起始的偏移时间，单位：秒。</p>",
           "example": "3.204",
           "member": "float",
           "name": "StartTimeOffset",
@@ -5361,7 +5371,7 @@
         },
         {
           "disabled": false,
-          "document": "识别片段终止的偏移时间，单位：秒。",
+          "document": "<p>识别片段终止的偏移时间，单位：秒。</p>",
           "example": "7.204",
           "member": "float",
           "name": "EndTimeOffset",
@@ -5371,7 +5381,7 @@
         },
         {
           "disabled": false,
-          "document": "识别文本。",
+          "document": "<p>识别文本。</p>",
           "example": "腾讯云媒体处理",
           "member": "string",
           "name": "Text",
@@ -5381,12 +5391,22 @@
         },
         {
           "disabled": false,
-          "document": "字词时间戳信息。",
+          "document": "<p>字词时间戳信息。</p>",
           "example": "无",
           "member": "WordResult",
           "name": "Wordlist",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展结果</p>",
+          "example": "{\\\"keywords\\\": [\\\"耳机壳\\\"]}",
+          "member": "string",
+          "name": "ExtResult",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -6159,7 +6179,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "识别片段置信度。取值：0~100。",
+          "document": "<p>识别片段置信度。取值：0~100。</p>",
           "example": "100",
           "member": "float",
           "name": "Confidence",
@@ -6169,8 +6189,8 @@
         },
         {
           "disabled": false,
-          "document": "识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。",
-          "example": " [1592,84,1774,131]",
+          "document": "<p>识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。</p>",
+          "example": "[1592,84,1774,131]",
           "member": "int64",
           "name": "AreaCoordSet",
           "output_required": true,
@@ -6179,11 +6199,21 @@
         },
         {
           "disabled": false,
-          "document": "识别文本。",
+          "document": "<p>识别文本。</p>",
           "example": "腾讯云",
           "member": "string",
           "name": "Text",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展结果</p>",
+          "example": "{\\\"keywords\\\": [\\\"耳机壳\\\"]}",
+          "member": "string",
+          "name": "ExtResult",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6483,7 +6513,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "识别片段置信度。取值：0~100。",
+          "document": "<p>识别片段置信度。取值：0~100。</p>",
           "example": "100",
           "member": "float",
           "name": "Confidence",
@@ -6493,7 +6523,7 @@
         },
         {
           "disabled": false,
-          "document": "识别片段起始的偏移时间，单位：秒。",
+          "document": "<p>识别片段起始的偏移时间，单位：秒。</p>",
           "example": "17.45",
           "member": "float",
           "name": "StartTimeOffset",
@@ -6503,7 +6533,7 @@
         },
         {
           "disabled": false,
-          "document": "识别片段终止的偏移时间，单位：秒。",
+          "document": "<p>识别片段终止的偏移时间，单位：秒。</p>",
           "example": "29.99",
           "member": "float",
           "name": "EndTimeOffset",
@@ -6513,7 +6543,7 @@
         },
         {
           "disabled": false,
-          "document": "识别文本。",
+          "document": "<p>识别文本。</p>",
           "example": "你好",
           "member": "string",
           "name": "Text",
@@ -6523,7 +6553,7 @@
         },
         {
           "disabled": false,
-          "document": "翻译文本。",
+          "document": "<p>翻译文本。</p>",
           "example": "Hello",
           "member": "string",
           "name": "Trans",
@@ -6533,12 +6563,22 @@
         },
         {
           "disabled": false,
-          "document": "字词时间戳信息。",
+          "document": "<p>字词时间戳信息。</p>",
           "example": "无",
           "member": "WordResult",
           "name": "Wordlist",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展信息</p>",
+          "example": "{\\\"keywords\\\": [\\\"耳机壳\\\"]}",
+          "member": "string",
+          "name": "ExtResult",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -41640,6 +41680,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色识别结果</p>",
+          "example": "无",
+          "member": "Speakers",
+          "name": "Speakers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -41649,7 +41699,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "识别片段置信度。取值：0~100。",
+          "document": "<p>识别片段置信度。取值：0~100。</p>",
           "example": "100.0",
           "member": "float",
           "name": "Confidence",
@@ -41659,7 +41709,7 @@
         },
         {
           "disabled": false,
-          "document": "识别片段起始的偏移时间，单位：秒。",
+          "document": "<p>识别片段起始的偏移时间，单位：秒。</p>",
           "example": "3.204",
           "member": "float",
           "name": "StartTimeOffset",
@@ -41669,7 +41719,7 @@
         },
         {
           "disabled": false,
-          "document": "识别片段终止的偏移时间，单位：秒。",
+          "document": "<p>识别片段终止的偏移时间，单位：秒。</p>",
           "example": "7.204",
           "member": "float",
           "name": "EndTimeOffset",
@@ -41679,7 +41729,7 @@
         },
         {
           "disabled": false,
-          "document": "识别文本。",
+          "document": "<p>识别文本。</p>",
           "example": "腾讯云媒体处理",
           "member": "string",
           "name": "Text",
@@ -41689,7 +41739,7 @@
         },
         {
           "disabled": false,
-          "document": "字词时间戳信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>字词时间戳信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WordResult",
           "name": "Wordlist",
@@ -41699,10 +41749,40 @@
         },
         {
           "disabled": false,
-          "document": "说话人ID（如启用说话人识别）",
+          "document": "<p>说话人ID（如启用说话人识别）</p>",
           "example": "speaker_0",
           "member": "string",
           "name": "SpeakerId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话性别</p><p>枚举值：</p><ul><li>male： 男</li><li>female： 女</li></ul>",
+          "example": "female",
+          "member": "string",
+          "name": "SpeakerGender",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人情绪</p>",
+          "example": "fluent",
+          "member": "string",
+          "name": "Emotion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展结果</p>",
+          "example": "{\\\"keywords\\\": [\\\"耳机壳\\\"]}",
+          "member": "string",
+          "name": "ExtResult",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -41920,6 +42000,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色识别结果</p>",
+          "example": "无",
+          "member": "Speakers",
+          "name": "Speakers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -42125,6 +42215,16 @@
           "example": "speaker_0",
           "member": "string",
           "name": "SpeakerId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展结果</p>",
+          "example": "{\\\"keywords\\\": [\\\"耳机壳\\\"]}",
+          "member": "string",
+          "name": "ExtResult",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -43076,6 +43176,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展结果信息</p>",
+          "example": "{\\\"keywords\\\": [\\\"技术\\\", \\\"3D打印\\\"]}",
+          "member": "string",
+          "name": "ExtResult",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -44821,7 +44932,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知类型，可选值：\n<li>CMQ：已下线，建议切换到TDMQ-CMQ</li>\n<li>TDMQ-CMQ：消息队列</li>\n<li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>\n<li>SCF：不推荐使用，需要在控制台额外配置SCF</li>\n<li>AWS-SQS：AWS 队列，只适用于 AWS 任务，且要求同区域</li>\n<font color=\"red\"> 注：不填或为空时默认 TDMQ-CMQ，如需采用其他类型需填写对应类型值；如果使用TDMQ-CMQ消息队列，任务回包过大可能会写入队列失败 </font>",
+          "document": "<p>通知类型，可选值：</p><li>CMQ：已下线，建议切换到TDMQ-CMQ</li><li>TDMQ-CMQ：消息队列</li><li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li><li>SCF：不推荐使用，需要在控制台额外配置SCF</li><li>AWS-SQS：AWS 队列，只适用于 AWS 任务，且要求同区域</li><font color=\"red\"> 注：不填或为空时默认 TDMQ-CMQ，如需采用其他类型需填写对应类型值；如果使用TDMQ-CMQ消息队列，任务回包过大可能会写入队列失败 </font>",
           "example": "URL",
           "member": "string",
           "name": "NotifyType",
@@ -44832,8 +44943,8 @@
         },
         {
           "disabled": false,
-          "document": "工作流通知的模式，可取值有 Finish 和 Change，不填代表 Finish。",
-          "example": "Finish ",
+          "document": "<p>工作流通知的模式，可取值有 Finish 和 Change，不填代表 Finish。</p>",
+          "example": "Finish",
           "member": "string",
           "name": "NotifyMode",
           "output_required": true,
@@ -44843,7 +44954,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP回调地址，NotifyType为URL时必填。",
+          "document": "<p>HTTP回调地址，NotifyType为URL时必填。</p>",
           "example": "http://www.qq.com/callback",
           "member": "string",
           "name": "NotifyUrl",
@@ -44854,8 +44965,8 @@
         },
         {
           "disabled": false,
-          "document": "CMQ或TDMQ-CMQ 的模型，有 Queue 和 Topic 两种。",
-          "example": "Queue ",
+          "document": "<p>CMQ或TDMQ-CMQ 的模型，有 Queue 和 Topic 两种。</p>",
+          "example": "Queue",
           "member": "string",
           "name": "CmqModel",
           "output_required": true,
@@ -44865,7 +44976,7 @@
         },
         {
           "disabled": false,
-          "document": "CMQ或TDMQ-CMQ 的园区，如 sh，bj 等。",
+          "document": "<p>CMQ或TDMQ-CMQ 的园区，如 sh，bj 等。</p>",
           "example": "sh",
           "member": "string",
           "name": "CmqRegion",
@@ -44876,7 +44987,7 @@
         },
         {
           "disabled": false,
-          "document": "当模型为 Topic 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的主题名。",
+          "document": "<p>当模型为 Topic 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的主题名。</p>",
           "example": "mps_notify",
           "member": "string",
           "name": "TopicName",
@@ -44887,7 +44998,7 @@
         },
         {
           "disabled": false,
-          "document": "当模型为 Queue 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的队列名。",
+          "document": "<p>当模型为 Queue 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的队列名。</p>",
           "example": "mps_que",
           "member": "string",
           "name": "QueueName",
@@ -44898,8 +45009,8 @@
         },
         {
           "disabled": false,
-          "document": "AWS SQS 回调，NotifyType为 AWS-SQS 时必填。\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "document": "<p>AWS SQS 回调，NotifyType为 AWS-SQS 时必填。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AwsSQS",
           "name": "AwsSQS",
           "output_required": true,
@@ -44909,7 +45020,7 @@
         },
         {
           "disabled": false,
-          "document": "用于生成回调签名的key。",
+          "document": "<p>用于生成回调签名的key。</p>",
           "example": "0se***9idaY",
           "member": "string",
           "name": "NotifyKey",
@@ -44920,7 +45031,7 @@
         },
         {
           "disabled": false,
-          "document": "北极星回调。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>北极星回调。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NotifyPolaris",
           "name": "NotifyPolaris",

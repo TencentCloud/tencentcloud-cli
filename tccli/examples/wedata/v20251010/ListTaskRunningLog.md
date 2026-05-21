@@ -6,14 +6,15 @@ Input:
 
 ```
 tccli wedata ListTaskRunningLog --cli-unfold-argument  \
-    --WorkspaceId 17663856806379896 \
-    --TaskId ta-f30950e8 \
-    --JobId tg-d250b756 \
-    --EndTime 1769070661054 \
-    --StartTime 1768984261054 \
-    --Container taskmanager \
+    --WorkspaceId 17697667906247629 \
+    --TaskId ta-e1ca6861 \
+    --JobId cql-2c9a0ijf \
+    --EndTime 1779187800000 \
+    --StartTime 1779184200000 \
+    --Container cql-2c9a0ijf-258045-taskmanager-1-1 \
     --Limit 3000 \
-    --Offset 23000
+    --OrderType asc \
+    --RunningOrderId 1
 ```
 
 Output: 
@@ -24,16 +25,16 @@ Output:
             "ListOver": false,
             "LogContentList": [
                 {
-                    "ContainerName": "container",
-                    "Log": "2026-01-22 03:41:01.373 [Z][SchemaRegistry-Coordinator] INFO  org.apache.flink.configuration.GlobalConfiguration [] - Loading configuration property: classloader.resolve-order, child-first",
-                    "PkgId": "1a7d269f-4694-48ae-a257-d4939fde2934",
-                    "PkgLogId": "1a7d269f-4694-48ae-a257-d4939fde2934",
-                    "Time": "1769024461373"
+                    "ContainerName": "cql-2c9a0ijf-258045-taskmanager-1-1",
+                    "Log": "2026-05-19 17:50:19.301 [+08:00][RowDataExtractor -> SchemaClient -> Writer (1/1)#1] INFO  org.apache.inlong.sort.iceberg.common.AbstractMultipleIcebergTableSink - beforeSnapshotState get registeredOperatorStates.size:1 getIndexOfThisSubtask:0",
+                    "PkgId": "207617D375D7235B-4",
+                    "PkgLogId": "1376256",
+                    "Time": "1779184219000"
                 }
             ],
-            "NextOffset": "26000"
+            "NextOffset": "Y29udGV4dC1kYTE1N2FiZi05YWNmLTQ4Y2YtYjMwZS1kYTk0OTQxYWIyNTcxNzc5MTk4NDkxMDg2"
         },
-        "RequestId": "95c962df-1745-47a3-885c-f926658bddc9"
+        "RequestId": "17bdbad8-aecb-4e90-a6a9-11eb50ff3286"
     }
 }
 ```

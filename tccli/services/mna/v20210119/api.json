@@ -77,6 +77,13 @@
       "output": "DeleteL3ConnResponse",
       "status": "online"
     },
+    "DescribeAccessRegions": {
+      "document": "查询可接入地域列表。",
+      "input": "DescribeAccessRegionsRequest",
+      "name": "查询可接入地域列表",
+      "output": "DescribeAccessRegionsResponse",
+      "status": "online"
+    },
     "DownloadActiveDeviceCount": {
       "document": "下载活跃设备数量统计",
       "input": "DownloadActiveDeviceCountRequest",
@@ -271,6 +278,13 @@
       "input": "GroupDeleteDeviceRequest",
       "name": "分组删除设备",
       "output": "GroupDeleteDeviceResponse",
+      "status": "online"
+    },
+    "ModifyDeviceAccessRegions": {
+      "document": "修改设备接入地域。",
+      "input": "ModifyDeviceAccessRegionsRequest",
+      "name": "修改设备接入地域",
+      "output": "ModifyDeviceAccessRegionsResponse",
       "status": "online"
     },
     "ModifyPackageRenewFlag": {
@@ -1072,6 +1086,33 @@
     "DeleteL3ConnResponse": {
       "document": "DeleteL3Conn返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessRegionsRequest": {
+      "document": "DescribeAccessRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAccessRegionsResponse": {
+      "document": "DescribeAccessRegions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>地域信息列表</p>",
+          "example": "无",
+          "member": "RegionInfo",
+          "name": "RegionList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4358,6 +4399,42 @@
       ],
       "usage": "both"
     },
+    "ModifyDeviceAccessRegionsRequest": {
+      "document": "ModifyDeviceAccessRegions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>设备ID</p>",
+          "example": "[\"mna-w***bzezug\"]",
+          "member": "string",
+          "name": "DeviceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入地域</p>",
+          "example": "[\"ap-beijing\"]",
+          "member": "string",
+          "name": "AllowedRegions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceAccessRegionsResponse": {
+      "document": "ModifyDeviceAccessRegions返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyPackageRenewFlagRequest": {
       "document": "ModifyPackageRenewFlag请求参数结构体",
       "members": [
@@ -4685,6 +4762,45 @@
         }
       ],
       "type": "object"
+    },
+    "RegionInfo": {
+      "document": "此数据结构用来展示可用地域信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>地域 ID。</p>",
+          "example": "GZ",
+          "member": "string",
+          "name": "RegionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域名称。</p>",
+          "example": "广州",
+          "member": "string",
+          "name": "RegionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域英文缩写。</p>",
+          "example": "gz",
+          "member": "string",
+          "name": "RegionAbbr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ReportOrderRequest": {
       "document": "ReportOrder请求参数结构体",

@@ -1105,7 +1105,7 @@
       "usage": "out"
     },
     "AggregateResourceInfo": {
-      "document": "资源列列表信息",
+      "document": "资源列表信息",
       "members": [
         {
           "disabled": false,
