@@ -5331,7 +5331,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境ID，如果传了这个参数则只返回该环境的相关信息",
+          "document": "<p>环境ID，如果传了这个参数则只返回该环境的相关信息</p>",
           "example": "yourenvid-2fb346",
           "member": "string",
           "name": "EnvId",
@@ -5340,7 +5340,7 @@
         },
         {
           "disabled": false,
-          "document": "指定Channels字段为可见渠道列表或不可见渠道列表\n如只想获取渠道A的环境 就填写IsVisible= true,Channels = [\"A\"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [\"A\"]",
+          "document": "<p>指定Channels字段为可见渠道列表或不可见渠道列表<br>如只想获取渠道A的环境 就填写IsVisible= true,Channels = [&quot;A&quot;], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [&quot;A&quot;]</p>",
           "example": "true",
           "member": "bool",
           "name": "IsVisible",
@@ -5349,8 +5349,8 @@
         },
         {
           "disabled": false,
-          "document": "渠道列表，代表可见或不可见渠道由IsVisible参数指定",
-          "example": "[ide,qc_console]",
+          "document": "<p>渠道列表，代表可见或不可见渠道由IsVisible参数指定</p>",
+          "example": "[\"ide\",\"qc_console\"]",
           "member": "string",
           "name": "Channels",
           "required": false,
@@ -5358,7 +5358,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数，单页限制个数",
+          "document": "<p>分页参数，单页限制个数</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -5367,7 +5367,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数，偏移量",
+          "document": "<p>分页参数，偏移量</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -5382,7 +5382,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境信息列表",
+          "document": "<p>环境信息列表</p>",
           "example": "无",
           "member": "EnvInfo",
           "name": "EnvList",
@@ -5392,7 +5392,7 @@
         },
         {
           "disabled": false,
-          "document": "环境个数",
+          "document": "<p>环境个数</p>",
           "example": "1",
           "member": "int64",
           "name": "Total",
@@ -10789,50 +10789,6 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>JNSGW代理VIP</p>",
-          "example": "3*.4*.*4.*6",
-          "member": "string",
-          "name": "Host",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>JNSGW 代理端口</p>",
-          "example": "18361",
-          "member": "int64",
-          "name": "Port",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>PostgREST 服务信息</p>",
-          "example": "无",
-          "member": "RestServiceInfo",
-          "name": "RestService",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>角色名称列表</p>",
-          "example": "[\"cloudbase_authenticator\"]",
-          "member": "string",
-          "name": "Roles",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -11574,23 +11530,6 @@
         }
       ],
       "type": "object"
-    },
-    "RestServiceInfo": {
-      "document": "RestService信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>服务基础地址列表</p>",
-          "example": "[\"http://2*.95.2*2.1*7:8080/v1/rdb/rest/v1/\"]",
-          "member": "string",
-          "name": "BaseUrls",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
     },
     "RunCommandsRequest": {
       "document": "RunCommands请求参数结构体",

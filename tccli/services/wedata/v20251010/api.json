@@ -2353,7 +2353,7 @@
       "status": "online"
     },
     "ListLabels": {
-      "document": "查询标签",
+      "document": "查询标签接口",
       "input": "ListLabelsRequest",
       "name": "查询标签",
       "output": "ListLabelsResponse",
@@ -9927,6 +9927,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的脱敏策略简明信息（仅在标签详情/列表中回填，可选）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LabelMaskPolicyBrief",
+          "name": "MaskPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -17585,7 +17596,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间id",
+          "document": "<p>工作空间id</p>",
           "example": "\"workspace id\"",
           "member": "string",
           "name": "WorkspaceId",
@@ -17594,7 +17605,7 @@
         },
         {
           "disabled": false,
-          "document": "计算资源名称，字母、数字、下划线，最大128字符",
+          "document": "<p>计算资源名称，字母、数字、下划线，最大128字符</p>",
           "example": "\"name\"",
           "member": "string",
           "name": "ResourceName",
@@ -17603,7 +17614,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息，最大300字符，可选",
+          "document": "<p>描述信息，最大300字符，可选</p>",
           "example": "\"desc\"",
           "member": "string",
           "name": "Description",
@@ -17612,7 +17623,7 @@
         },
         {
           "disabled": false,
-          "document": "计算资源类型，参考：ComputeResourceType",
+          "document": "<p>计算资源类型，参考：ComputeResourceType</p>",
           "example": "1",
           "member": "int64",
           "name": "ResourceType",
@@ -17621,7 +17632,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式，目前支持 postpaid（按量计费）prepaid （预付费）",
+          "document": "<p>计费模式，目前支持 postpaid（按量计费）prepaid （预付费）</p>",
           "example": "\"postpaid\"",
           "member": "string",
           "name": "BillType",
@@ -17630,7 +17641,7 @@
         },
         {
           "disabled": false,
-          "document": "资源配置信息",
+          "document": "<p>资源配置信息</p>",
           "example": "无",
           "member": "ExecAdminComputeResourceConfig",
           "name": "Config",
@@ -17639,7 +17650,7 @@
         },
         {
           "disabled": false,
-          "document": "资源创建方式\n\nenum CreateType {\n    CreateTypeNone = 0;\n    CreateTypeOnyCreate = 1; // 仅创建\n    CreateTypeCreateAndStart = 2; // 创建并启动\n}",
+          "document": "<p>资源创建方式</p><p>enum CreateType {<br>    CreateTypeNone = 0;<br>    CreateTypeOnyCreate = 1; // 仅创建<br>    CreateTypeCreateAndStart = 2; // 创建并启动<br>}</p>",
           "example": "1",
           "member": "int64",
           "name": "CreateType",
@@ -17648,7 +17659,7 @@
         },
         {
           "disabled": false,
-          "document": "付费信息",
+          "document": "<p>付费信息</p>",
           "example": "无",
           "member": "PayInfo",
           "name": "PayInfo",
@@ -17657,10 +17668,19 @@
         },
         {
           "disabled": false,
-          "document": "引擎镜像版本，可选。对应 EngineImage.Id，如 \"Standard-S 1.1\"、\"Ai-Universal\"、\"Standard-S 1.1 native\"。不传默认使用最新版本。如果传入，需在配置的镜像列表中存在，否则报错",
+          "document": "<p>引擎镜像版本，可选。对应 EngineImage.Id，如 &quot;Standard-S 1.1&quot;、&quot;Ai-Universal&quot;、&quot;Standard-S 1.1 native&quot;。不传默认使用最新版本。如果传入，需在配置的镜像列表中存在，否则报错</p>",
           "example": "Standard-S 1.1",
           "member": "string",
           "name": "EngineVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>BillType=prepaid 时使用，提前给引擎id</p>",
+          "example": "dataengine111",
+          "member": "string",
+          "name": "EngineId",
           "required": false,
           "type": "string"
         }
@@ -17672,7 +17692,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源ID",
+          "document": "<p>资源ID</p>",
           "example": "无",
           "member": "CreateComputeResourceRsp",
           "name": "Data",
@@ -18766,6 +18786,28 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的脱敏策略 ID（仅当 SourceType=4 脱敏标签时有效，可空）。空字符串=不关联策略，仅创建标签</p>",
+          "example": "strategy-001",
+          "member": "string",
+          "name": "PolicyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联调用方的 workspace ID（仅当 PolicyId 非空时有效）。透传给 Security.AttachDataMaskPolicy + 写入关联表审计</p>",
+          "example": "workspace-001",
+          "member": "string",
+          "name": "PolicyBindingWorkspaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -27926,7 +27968,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源id",
+          "document": "<p>资源id</p>",
           "example": "\"1\"",
           "member": "string",
           "name": "ResourceId",
@@ -27937,7 +27979,7 @@
         },
         {
           "disabled": false,
-          "document": "资源名称",
+          "document": "<p>资源名称</p>",
           "example": "“name”",
           "member": "string",
           "name": "ResourceName",
@@ -27948,7 +27990,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型",
+          "document": "<p>资源类型</p>",
           "example": "1",
           "member": "uint64",
           "name": "ResourceType",
@@ -27959,7 +28001,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "<p>状态</p>",
           "example": "1",
           "member": "uint64",
           "name": "ResourceStatus",
@@ -27970,13 +28012,35 @@
         },
         {
           "disabled": false,
-          "document": "ExecAvailableStatus 根据计算资源状态映射执行可用状态",
+          "document": "<p>ExecAvailableStatus 根据计算资源状态映射执行可用状态</p>",
           "example": "5",
           "member": "int64",
           "name": "ExecAvailableStatus",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型</p><p>枚举值：</p><ul><li>SPARK： spark集群</li><li>RAY： ray集群</li></ul>",
+          "example": "SPARK",
+          "member": "string",
+          "name": "ClusterType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎id</p>",
+          "example": "引擎id",
+          "member": "string",
+          "name": "EngineId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -27987,7 +28051,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "最小CU数（仅 data_access/data_compute 可选，最小1，最大256，步长1）",
+          "document": "<p>最小CU数（仅 data_access/data_compute 可选，最小1，最大256，步长1）</p>",
           "example": "1",
           "member": "int64",
           "name": "MinCU",
@@ -27998,7 +28062,7 @@
         },
         {
           "disabled": false,
-          "document": "最大CU数（仅 data_access/data_compute 可选，最小1，最大256，步长1，且 max_cu >= min_cu）",
+          "document": "<p>最大CU数（仅 data_access/data_compute 可选，最小1，最大256，步长1，且 max_cu &gt;= min_cu）</p>",
           "example": "1",
           "member": "int64",
           "name": "MaxCU",
@@ -28009,7 +28073,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自动启停（默认true）",
+          "document": "<p>是否开启自动启停（默认true）</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoStartStop",
@@ -28020,7 +28084,7 @@
         },
         {
           "disabled": false,
-          "document": "自动启停时间",
+          "document": "<p>自动启停时间</p>",
           "example": "60",
           "member": "int64",
           "name": "AutoStopSeconds",
@@ -28031,7 +28095,7 @@
         },
         {
           "disabled": false,
-          "document": "数据分析型: 实例个数. 可选，最小1，最大200，步长1",
+          "document": "<p>数据分析型: 实例个数. 可选，最小1，最大200，步长1</p>",
           "example": "1",
           "member": "int64",
           "name": "MaxInstances",
@@ -28042,7 +28106,7 @@
         },
         {
           "disabled": false,
-          "document": "数据分析型：单实例配额（CU，可选，最小1，最大256，步长1）",
+          "document": "<p>数据分析型：单实例配额（CU，可选，最小1，最大256，步长1）</p>",
           "example": "1",
           "member": "int64",
           "name": "SingleInstanceQuota",
@@ -28053,7 +28117,7 @@
         },
         {
           "disabled": false,
-          "document": "数据分析型：单实例最大并发数（可选，最小1，最大512，步长1，默认32）",
+          "document": "<p>数据分析型：单实例最大并发数（可选，最小1，最大512，步长1，默认32）</p>",
           "example": "1",
           "member": "int64",
           "name": "MaxConcurrency",
@@ -28064,7 +28128,7 @@
         },
         {
           "disabled": false,
-          "document": "交互式集群：最小实例数",
+          "document": "<p>交互式集群：最小实例数</p>",
           "example": "1",
           "member": "int64",
           "name": "MinInstances",
@@ -28075,7 +28139,7 @@
         },
         {
           "disabled": false,
-          "document": "GPU 机器规格，如 GN10X.2XLARGE40",
+          "document": "<p>GPU 机器规格，如 GN10X.2XLARGE40</p>",
           "example": "GN10X.2XLARGE40",
           "member": "string",
           "name": "InstanceType",
@@ -28086,7 +28150,7 @@
         },
         {
           "disabled": false,
-          "document": "GPU 机器数量，范围 [1, 50]",
+          "document": "<p>GPU 机器数量，范围 [1, 50]</p>",
           "example": "1",
           "member": "int64",
           "name": "InstanceCount",
@@ -28097,7 +28161,7 @@
         },
         {
           "disabled": false,
-          "document": " 计算类型：参考 common.compute_resource.ComputeType（1-CPU 2-GPU）",
+          "document": "<p>计算类型：参考 common.compute_resource.ComputeType（1-CPU 2-GPU）</p>",
           "example": "1",
           "member": "int64",
           "name": "ComputeType",
@@ -28108,13 +28172,79 @@
         },
         {
           "disabled": false,
-          "document": "是否支持机器学习：true-支持，false-不支持（默认false）",
+          "document": "<p>是否支持机器学习：true-支持，false-不支持（默认false）</p>",
           "example": "true",
           "member": "bool",
           "name": "MLEnabled",
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 VPC ID</p>",
+          "example": "vpc-mkswmh6p",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户子网 ID</p>",
+          "example": "subnet-9x72ijob",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型</p><p>枚举值：</p><ul><li>SPARK： spark集群</li><li>RAY： ray集群</li></ul>",
+          "example": "SPARK",
+          "member": "string",
+          "name": "ClusterType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规格</p>",
+          "example": "spec",
+          "member": "string",
+          "name": "Spec",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SpecSnapshot</p>",
+          "example": "SpecSnapshot",
+          "member": "string",
+          "name": "SpecSnapshot",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>拓展ext</p>",
+          "example": "ext",
+          "member": "string",
+          "name": "Ext",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -28125,7 +28255,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "基本信息",
+          "document": "<p>基本信息</p>",
           "example": "无",
           "member": "ExecAdminComputeResourceBasicInfo",
           "name": "BasicInfo",
@@ -28136,7 +28266,7 @@
         },
         {
           "disabled": false,
-          "document": "计费类型",
+          "document": "<p>计费类型</p>",
           "example": "true",
           "member": "string",
           "name": "BillType",
@@ -28147,7 +28277,7 @@
         },
         {
           "disabled": false,
-          "document": "资源配额",
+          "document": "<p>资源配额</p>",
           "example": "1",
           "member": "int64",
           "name": "CUQuota",
@@ -28158,7 +28288,7 @@
         },
         {
           "disabled": false,
-          "document": "自动启停时间",
+          "document": "<p>自动启停时间</p>",
           "example": "1",
           "member": "string",
           "name": "AutoStopSeconds",
@@ -28169,7 +28299,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "\"1234\"",
           "member": "string",
           "name": "CreateTime",
@@ -28180,7 +28310,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "\"1234\"",
           "member": "string",
           "name": "UpdateTime",
@@ -28191,7 +28321,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "<p>过期时间</p>",
           "example": "\"1234\"",
           "member": "string",
           "name": "ExpirationTime",
@@ -28202,7 +28332,7 @@
         },
         {
           "disabled": false,
-          "document": "可执行操作列表: start-启动、stop-停止、edit-编辑、delete-删除",
+          "document": "<p>可执行操作列表: start-启动、stop-停止、edit-编辑、delete-删除</p>",
           "example": "[1,2]",
           "member": "uint64",
           "name": "Operations",
@@ -28213,7 +28343,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者",
+          "document": "<p>创建者</p>",
           "example": "\"y\"",
           "member": "string",
           "name": "Creator",
@@ -28224,13 +28354,57 @@
         },
         {
           "disabled": false,
-          "document": "权限信息",
+          "document": "<p>权限信息</p>",
           "example": "[\"read\", \"edit\", \"delete\"]",
           "member": "string",
           "name": "Capabilities",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>1 CPU<br>2 GPU</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ComputeType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU 资源上限（卡数）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "GpuQuota",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规格配置</p>",
+          "example": "无",
+          "member": "ExecAdminComputeResourceConfig",
+          "name": "ResourceConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数</p>",
+          "example": "Ext",
+          "member": "string",
+          "name": "Ext",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -41314,8 +41488,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>资产名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "<em>user_info_data</em>",
           "member": "string",
           "name": "AssetName",
           "output_required": false,
@@ -41324,8 +41498,8 @@
         },
         {
           "disabled": false,
-          "document": "资产全名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>资产全名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "<em>xzp_test.information_schema.udfs</em>",
           "member": "string",
           "name": "FullName",
           "output_required": false,
@@ -41334,8 +41508,8 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "该<em>表</em>记录了零<em>",
           "member": "string",
           "name": "Comment",
           "output_required": false,
@@ -41344,8 +41518,8 @@
         },
         {
           "disabled": false,
-          "document": "代码片段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>代码片段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Fragment",
           "name": "CodeFragments",
           "output_required": false,
@@ -41354,8 +41528,8 @@
         },
         {
           "disabled": false,
-          "document": "文本片段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>文本片段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Fragment",
           "name": "TextFragments",
           "output_required": false,
@@ -41364,8 +41538,8 @@
         },
         {
           "disabled": false,
-          "document": "标签(废弃)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>标签(废弃)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "output_required": false,
@@ -41374,10 +41548,20 @@
         },
         {
           "disabled": false,
-          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TagInfo",
           "name": "TagFragments",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>别名高亮片段列表。使用场景：资产别名命中关键词时，返回带 <em></em> 标签的高亮片段供前端渲染</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"<em>别名</em>1\"]",
+          "member": "string",
+          "name": "AliasFragments",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
@@ -46191,6 +46375,45 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LabelMaskPolicyBrief": {
+      "document": "标签关联的脱敏策略简明信息（仅用于前端列表展示与跳转）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "脱敏策略 ID（前端用于跳转脱敏策略详情页）",
+          "example": "strategy-001",
+          "member": "string",
+          "name": "PolicyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "脱敏策略名称",
+          "example": "身份证脱敏",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联建立时间（13 位时间戳，字符串格式）",
+          "example": "1779000000000",
+          "member": "string",
+          "name": "BindTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -54898,7 +55121,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间唯一id",
+          "document": "<p>工作空间唯一id</p>",
           "example": "1734213423",
           "member": "string",
           "name": "WorkspaceId",
@@ -54907,7 +55130,7 @@
         },
         {
           "disabled": false,
-          "document": "标签ID列表",
+          "document": "<p>标签ID列表</p>",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "LabelIds",
@@ -54916,7 +55139,7 @@
         },
         {
           "disabled": false,
-          "document": "标签名称列表",
+          "document": "<p>标签名称列表</p>",
           "example": "[\"a1\"]",
           "member": "string",
           "name": "LabelNames",
@@ -54925,7 +55148,7 @@
         },
         {
           "disabled": false,
-          "document": "管控状态过滤",
+          "document": "<p>管控状态过滤</p>",
           "example": "1",
           "member": "int64",
           "name": "Control",
@@ -54934,7 +55157,7 @@
         },
         {
           "disabled": false,
-          "document": "分页结构体",
+          "document": "<p>分页结构体</p>",
           "example": "无",
           "member": "Page",
           "name": "Page",
@@ -54943,7 +55166,7 @@
         },
         {
           "disabled": false,
-          "document": "关键字模糊查询",
+          "document": "<p>关键字模糊查询</p>",
           "example": "labeltest",
           "member": "string",
           "name": "KeyWord",
@@ -54952,7 +55175,7 @@
         },
         {
           "disabled": false,
-          "document": "标签类型查询",
+          "document": "<p>标签类型查询</p>",
           "example": "[1,2]",
           "member": "int64",
           "name": "Types",
@@ -54961,12 +55184,39 @@
         },
         {
           "disabled": false,
-          "document": "排序设置",
-          "example": "",
+          "document": "<p>排序设置</p>",
+          "example": "无",
           "member": "OrderField",
           "name": "OrderBy",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签来源类型筛选（多选）。枚举值：1=治理标签 / 2=自定义标签 / 3=属性标签 / 4=脱敏标签</p>",
+          "example": "[4]",
+          "member": "int64",
+          "name": "SourceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全规范筛选（多选，OR 关系）。取值范围：PII / GDPR / HIPAA / PCI-DSS / CCPA / PDPA</p>",
+          "example": "[\"PII\",\"GDPR\"]",
+          "member": "string",
+          "name": "SecurityTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>脱敏策略关联状态筛选。0/不传=不过滤；1=仅查询已关联脱敏策略的标签；2=仅查询未关联的标签</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyBindStatus",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -54976,13 +55226,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询标签响应",
+          "document": "<p>查询标签响应</p>",
           "example": "无",
           "member": "ListLabelsRsp",
           "name": "Data",
           "output_required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -73799,6 +74048,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产别名列表。使用场景：仅指标、语义模型等业务资产支持多别名，其他资产类型返回空列表。前端可选择在资产名后面以【别名1、别名2】的形式展示</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"别名1\",\"别名2\"]",
+          "member": "string",
+          "name": "Aliases",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -77375,6 +77634,28 @@
           "example": "true",
           "member": "string",
           "name": "ValidateIsCheck",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务配置的CU数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "string",
+          "name": "ConfigCu",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务运行的CU数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "string",
+          "name": "RunningCu",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -84709,6 +84990,28 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全规范更新（wrapper 三态：null=不更新；含空数组=显式清空；含非空数组=覆盖）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpdateSecurityTypes",
+          "name": "SecurityTypesUpdate",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略关联更新（wrapper 三态：null=不更新；PolicyId 空字符串=解绑；PolicyId 非空=关联或更换）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpdatePolicyBinding",
+          "name": "PolicyBindingUpdate",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -86357,6 +86660,34 @@
       ],
       "usage": "both"
     },
+    "UpdatePolicyBinding": {
+      "document": "修改标签关联脱敏策略的 wrapper（三态语义：保持/关联或更换/解绑）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标策略 ID。非空字符串=关联或更换；空字符串=解除关联",
+          "example": "strategy-001",
+          "member": "string",
+          "name": "PolicyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联调用方的工作空间 ID（透传给 Security.AttachDataMaskPolicy + 关联表审计）",
+          "example": "workspace-001",
+          "member": "string",
+          "name": "WorkspaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "UpdateSchemaCommentRequest": {
       "document": "UpdateSchemaComment请求参数结构体",
       "members": [
@@ -86436,6 +86767,23 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateSecurityTypes": {
+      "document": "修改标签安全规范的 wrapper（用于区分「不更新」和「显式清空」语义）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全规范列表（覆盖更新；空数组 = 显式清空）。取值范围：PII/GDPR/HIPAA/PCI-DSS/CCPA/PDPA",
+          "example": "[\"PII\",\"GDPR\"]",
+          "member": "string",
+          "name": "SecurityTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "UpdateServiceGroupMonitorConfigRequest": {
       "document": "UpdateServiceGroupMonitorConfig请求参数结构体",

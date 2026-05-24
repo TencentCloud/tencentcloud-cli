@@ -559,7 +559,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源Id",
+          "document": "<p>资源Id</p>",
           "example": "hsm-r19rq1b0",
           "member": "string",
           "name": "ResourceId",
@@ -574,7 +574,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源Id",
+          "document": "<p>资源Id</p>",
           "example": "hsm-r19rq1b0",
           "member": "string",
           "name": "ResourceId",
@@ -584,7 +584,7 @@
         },
         {
           "disabled": false,
-          "document": "资源名称",
+          "document": "<p>资源名称</p>",
           "example": "default-hsmName",
           "member": "string",
           "name": "ResourceName",
@@ -594,7 +594,7 @@
         },
         {
           "disabled": false,
-          "document": "资源状态，1表示资源为正常，2表示资源处于隔离状态",
+          "document": "<p>资源状态，1表示资源为正常，2表示资源处于隔离状态</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -604,7 +604,7 @@
         },
         {
           "disabled": false,
-          "document": "资源IP",
+          "document": "<p>资源IP</p>",
           "example": "192.168.1.1",
           "member": "string",
           "name": "Vip",
@@ -614,7 +614,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所属Vpc",
+          "document": "<p>资源所属Vpc</p>",
           "example": "vpc-nc9yvu5p",
           "member": "string",
           "name": "VpcId",
@@ -624,7 +624,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所属子网",
+          "document": "<p>资源所属子网</p>",
           "example": "subnet-4vxnrlco",
           "member": "string",
           "name": "SubnetId",
@@ -634,7 +634,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所属HSM的规格",
+          "document": "<p>资源所属HSM的规格</p>",
           "example": "SJJ1528",
           "member": "string",
           "name": "Model",
@@ -644,7 +644,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型，17表示EVSM，33表示GVSM，49表示SVSM",
+          "document": "<p>资源类型，17表示EVSM，33表示GVSM，49表示SVSM</p>",
           "example": "17",
           "member": "int64",
           "name": "VsmType",
@@ -654,7 +654,7 @@
         },
         {
           "disabled": false,
-          "document": "地域Id，返回腾讯云地域代码，如广州为1，北京为8",
+          "document": "<p>地域Id，返回腾讯云地域代码，如广州为1，北京为8</p>",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
@@ -664,7 +664,7 @@
         },
         {
           "disabled": false,
-          "document": "区域Id，返回腾讯云每个地域的可用区代码",
+          "document": "<p>区域Id，返回腾讯云每个地域的可用区代码</p>",
           "example": "100001",
           "member": "int64",
           "name": "ZoneId",
@@ -674,7 +674,7 @@
         },
         {
           "disabled": false,
-          "document": "资源过期时间，以时间戳形式展示。",
+          "document": "<p>资源过期时间，以时间戳形式展示。</p>",
           "example": "1612332287",
           "member": "int64",
           "name": "ExpireTime",
@@ -684,7 +684,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组详情信息,如果未配置字段返回null",
+          "document": "<p>安全组详情信息,如果未配置字段返回null</p>",
           "example": "无",
           "member": "UsgRuleDetail",
           "name": "SgList",
@@ -694,7 +694,7 @@
         },
         {
           "disabled": false,
-          "document": "子网名",
+          "document": "<p>子网名</p>",
           "example": "Default-Subnet",
           "member": "string",
           "name": "SubnetName",
@@ -704,7 +704,7 @@
         },
         {
           "disabled": false,
-          "document": "地域名",
+          "document": "<p>地域名</p>",
           "example": "广州",
           "member": "string",
           "name": "RegionName",
@@ -714,7 +714,7 @@
         },
         {
           "disabled": false,
-          "document": "区域名",
+          "document": "<p>区域名</p>",
           "example": "广州三区",
           "member": "string",
           "name": "ZoneName",
@@ -724,7 +724,7 @@
         },
         {
           "disabled": false,
-          "document": "实例是否已经过期",
+          "document": "<p>实例是否已经过期</p>",
           "example": "false",
           "member": "bool",
           "name": "Expired",
@@ -734,7 +734,7 @@
         },
         {
           "disabled": false,
-          "document": "为正数表示实例距离过期时间剩余秒数，为负数表示实例已经过期多少秒",
+          "document": "<p>为正数表示实例距离过期时间剩余秒数，为负数表示实例已经过期多少秒</p>",
           "example": "20",
           "member": "int64",
           "name": "RemainSeconds",
@@ -744,7 +744,7 @@
         },
         {
           "disabled": false,
-          "document": "私有虚拟网络名称",
+          "document": "<p>私有虚拟网络名称</p>",
           "example": "VPC-CLOUD-GZ",
           "member": "string",
           "name": "VpcName",
@@ -754,7 +754,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC的IPv4 CIDR",
+          "document": "<p>VPC的IPv4 CIDR</p>",
           "example": "192.168.0.0/16",
           "member": "string",
           "name": "VpcCidrBlock",
@@ -764,7 +764,7 @@
         },
         {
           "disabled": false,
-          "document": "子网的CIDR",
+          "document": "<p>子网的CIDR</p>",
           "example": "192.168.1.0/24",
           "member": "string",
           "name": "SubnetCidrBlock",
@@ -774,7 +774,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所关联的标签Tag",
+          "document": "<p>资源所关联的标签Tag</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -784,7 +784,7 @@
         },
         {
           "disabled": false,
-          "document": "资源续费标识，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)",
+          "document": "<p>资源续费标识，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>",
           "example": "1",
           "member": "int64",
           "name": "RenewFlag",
@@ -794,7 +794,7 @@
         },
         {
           "disabled": false,
-          "document": "厂商",
+          "document": "<p>厂商</p>",
           "example": "TASS",
           "member": "string",
           "name": "Manufacturer",
@@ -804,12 +804,22 @@
         },
         {
           "disabled": false,
-          "document": "0-关闭，1-开启",
+          "document": "<p>0-关闭，1-开启</p>",
           "example": "1",
           "member": "int64",
           "name": "PqcFlag",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境</p><p>默认值：cloud</p><p>cloud或者cdc</p>",
+          "example": "cloud",
+          "member": "string",
+          "name": "DeployEnv",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1328,7 +1338,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源Id",
+          "document": "<p>资源Id</p>",
           "example": "hsm-aj8fp8a0",
           "member": "string",
           "name": "ResourceId",
@@ -1338,7 +1348,7 @@
         },
         {
           "disabled": false,
-          "document": "资源名称",
+          "document": "<p>资源名称</p>",
           "example": "defaultHsmName",
           "member": "string",
           "name": "ResourceName",
@@ -1348,7 +1358,7 @@
         },
         {
           "disabled": false,
-          "document": "资源状态，1-正常，2-隔离，3-销毁",
+          "document": "<p>资源状态，1-正常，2-隔离，3-销毁</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -1358,7 +1368,7 @@
         },
         {
           "disabled": false,
-          "document": "资源IP",
+          "document": "<p>资源IP</p>",
           "example": "1.2.3.4",
           "member": "string",
           "name": "Vip",
@@ -1368,7 +1378,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所属Vpc",
+          "document": "<p>资源所属Vpc</p>",
           "example": "vpc-7vv1q6x9",
           "member": "string",
           "name": "VpcId",
@@ -1378,7 +1388,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所属子网",
+          "document": "<p>资源所属子网</p>",
           "example": "subnet-1xaztwla",
           "member": "string",
           "name": "SubnetId",
@@ -1388,7 +1398,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所属HSM规格",
+          "document": "<p>资源所属HSM规格</p>",
           "example": "SJJ1528",
           "member": "string",
           "name": "Model",
@@ -1398,7 +1408,7 @@
         },
         {
           "disabled": false,
-          "document": "云加密机类型id",
+          "document": "<p>云加密机类型id</p>",
           "example": "17",
           "member": "int64",
           "name": "VsmType",
@@ -1408,7 +1418,7 @@
         },
         {
           "disabled": false,
-          "document": "地域Id",
+          "document": "<p>地域Id</p>",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
@@ -1418,7 +1428,7 @@
         },
         {
           "disabled": false,
-          "document": "区域Id",
+          "document": "<p>区域Id</p>",
           "example": "100001",
           "member": "int64",
           "name": "ZoneId",
@@ -1428,7 +1438,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间（Epoch Unix Timestamp）",
+          "document": "<p>过期时间（Epoch Unix Timestamp）</p>",
           "example": "0",
           "member": "int64",
           "name": "ExpireTime",
@@ -1438,7 +1448,7 @@
         },
         {
           "disabled": false,
-          "document": "地域名",
+          "document": "<p>地域名</p>",
           "example": "广州",
           "member": "string",
           "name": "RegionName",
@@ -1448,7 +1458,7 @@
         },
         {
           "disabled": false,
-          "document": "区域名",
+          "document": "<p>区域名</p>",
           "example": "广州一区",
           "member": "string",
           "name": "ZoneName",
@@ -1458,7 +1468,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的安全组列表",
+          "document": "<p>实例的安全组列表</p>",
           "example": "无",
           "member": "SgUnit",
           "name": "SgList",
@@ -1468,7 +1478,7 @@
         },
         {
           "disabled": false,
-          "document": "子网名称",
+          "document": "<p>子网名称</p>",
           "example": "Default-Subnet",
           "member": "string",
           "name": "SubnetName",
@@ -1478,7 +1488,7 @@
         },
         {
           "disabled": false,
-          "document": "当前实例是否已经过期",
+          "document": "<p>当前实例是否已经过期</p>",
           "example": "false",
           "member": "bool",
           "name": "Expired",
@@ -1488,7 +1498,7 @@
         },
         {
           "disabled": false,
-          "document": "为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒",
+          "document": "<p>为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒</p>",
           "example": "29123420",
           "member": "int64",
           "name": "RemainSeconds",
@@ -1498,7 +1508,7 @@
         },
         {
           "disabled": false,
-          "document": "Vpc名称",
+          "document": "<p>Vpc名称</p>",
           "example": "VPC-CLOUD-GZ",
           "member": "string",
           "name": "VpcName",
@@ -1508,7 +1518,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者Uin账号",
+          "document": "<p>创建者Uin账号</p>",
           "example": "2942368751",
           "member": "string",
           "name": "CreateUin",
@@ -1518,7 +1528,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续",
+          "document": "<p>自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续</p>",
           "example": "2",
           "member": "int64",
           "name": "RenewFlag",
@@ -1528,7 +1538,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -1538,7 +1548,7 @@
         },
         {
           "disabled": false,
-          "document": "厂商",
+          "document": "<p>厂商</p>",
           "example": "TASS",
           "member": "string",
           "name": "Manufacturer",
@@ -1548,7 +1558,7 @@
         },
         {
           "disabled": false,
-          "document": "告警状态，0：停用，1：启用",
+          "document": "<p>告警状态，0：停用，1：启用</p>",
           "example": "0",
           "member": "int64",
           "name": "AlarmStatus",
@@ -1558,7 +1568,7 @@
         },
         {
           "disabled": false,
-          "document": "0不支持\n1关闭\n2开启",
+          "document": "<p>0不支持<br>1关闭<br>2开启</p>",
           "example": "0",
           "member": "int64",
           "name": "PqcStatus",
@@ -1568,12 +1578,22 @@
         },
         {
           "disabled": false,
-          "document": "0关闭，1开启",
+          "document": "<p>0关闭，1开启</p>",
           "example": "0",
           "member": "int64",
           "name": "PqcFlag",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境</p><p>默认值：cloud</p><p>cloud或者cdc</p>",
+          "example": "cloud",
+          "member": "string",
+          "name": "DeployEnv",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

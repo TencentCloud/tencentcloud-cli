@@ -203,6 +203,13 @@
       "output": "CreateClustersResponse",
       "status": "online"
     },
+    "CreateDarInstance": {
+      "document": "创建dar实例",
+      "input": "CreateDarInstanceRequest",
+      "name": "创建Dar实例",
+      "output": "CreateDarInstanceResponse",
+      "status": "online"
+    },
     "CreateIntegrateCluster": {
       "document": "本接口（CreateClusters）用于新购集群。",
       "input": "CreateIntegrateClusterRequest",
@@ -579,6 +586,13 @@
       "input": "DescribeDBSecurityGroupsRequest",
       "name": "查询实例安全组信息",
       "output": "DescribeDBSecurityGroupsResponse",
+      "status": "online"
+    },
+    "DescribeDarPublicKey": {
+      "document": "查询公钥信息",
+      "input": "DescribeDarPublicKeyRequest",
+      "name": "查询公钥信息",
+      "output": "DescribeDarPublicKeyResponse",
       "status": "online"
     },
     "DescribeDbTknPwdRules": {
@@ -6924,6 +6938,125 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDarInstanceRequest": {
+      "document": "CreateDarInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型配置</p>",
+          "example": "无",
+          "member": "ModelConfig",
+          "name": "ModelConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Dar实例名称</p>",
+          "example": "xiuwenqin",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区</p>",
+          "example": "ap-hongkong-3",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>cpu</p><p>单位：core</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存大小</p><p>单位：GB</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Mem",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘空间大小</p><p>单位：GB</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "Storage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>VpcId</p>",
+          "example": "vpc-e864hbjo",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网id</p>",
+          "example": "subnet-0ao81x2n",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>加密方法</p>",
+          "example": "RSA",
+          "member": "string",
+          "name": "EncryptMethod",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDarInstanceResponse": {
+      "document": "CreateDarInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Dar实例id</p>",
+          "example": "dar-l1jaunpu",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务id</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14468,6 +14601,43 @@
           "name": "Groups",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDarPublicKeyRequest": {
+      "document": "DescribeDarPublicKey请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDarPublicKeyResponse": {
+      "document": "DescribeDarPublicKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>公钥</p>",
+          "example": "LS0tLS1CRU*********************************************************************************************************************************************************************************************wUVRNYmJ5N3ZWOEtXdW5Rb1lpNzY1VlN0RzJINFnY",
+          "member": "string",
+          "name": "PublicKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>加密方法</p>",
+          "example": "RSA-2048-v1",
+          "member": "string",
+          "name": "EncryptMethod",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -24045,6 +24215,45 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ModelConfig": {
+      "document": "模型接入配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名字</p>",
+          "example": "hunyuan-t1",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>API密钥</p>",
+          "example": "sk-tp-RVEkNzheLHXwnMArI3R9AU8NlYcTR5rFprRCSzIhyD9T21de",
+          "member": "string",
+          "name": "ApiKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型通行证</p>",
+          "example": "Esqdwkqd",
+          "member": "string",
+          "name": "Passport",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
