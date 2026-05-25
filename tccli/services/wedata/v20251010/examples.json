@@ -93,7 +93,7 @@
         "document": "给资产进行打标",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchVoteAssetTag\n<公共请求参数>\n\n{\n    \"Votes\": [\n        {\n            \"PropertyType\": \"catalog\",\n            \"PropertyId\": \"566\",\n            \"Tags\": [\n                {\n                    \"LabelId\": \"27\",\n                    \"LabelName\": \"label1\",\n                    \"LabelValueId\": \"53\",\n                    \"LabelValue\": \"labelvalue1\"\n                }\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"FailureCount\": 0,\n            \"Results\": [\n                {\n                    \"Message\": \"成功\",\n                    \"Success\": true,\n                    \"VoteId\": \"0\"\n                }\n            ],\n            \"SuccessCount\": 1\n        },\n        \"RequestId\": \"0dec0cb1-7d99-4537-82e5-089a01d01baa\"\n    }\n}",
-        "title": "给资产进行打标"
+        "title": "资产打标"
       }
     ],
     "CalculatePrice": [

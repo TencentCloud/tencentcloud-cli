@@ -29,6 +29,9 @@ Output:
                         "IsGlobal": 1,
                         "Max": "65535",
                         "Min": "1",
+                        "ModifiableInfo": {
+                            "IsModifiable": 1
+                        },
                         "NeedReboot": 0,
                         "ParamName": "auto_increment_increment",
                         "ParamType": "integer",

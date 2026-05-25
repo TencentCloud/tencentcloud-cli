@@ -9170,7 +9170,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "训练数据路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>训练数据路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"xzp_test.a11.sample_orders\"]",
           "member": "string",
           "name": "TrainingDataPath",
@@ -9180,7 +9180,7 @@
         },
         {
           "disabled": false,
-          "document": "最佳运行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最佳运行</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "trial_003_arima",
           "member": "string",
           "name": "BestRun",
@@ -9190,7 +9190,7 @@
         },
         {
           "disabled": false,
-          "document": "数据挖掘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据挖掘</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"key\": \"data_mining\"}",
           "member": "string",
           "name": "DataMining",
@@ -9200,7 +9200,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签列</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "o_orderdate",
           "member": "string",
           "name": "LabelColumn",
@@ -9210,7 +9210,7 @@
         },
         {
           "disabled": false,
-          "document": "丢弃列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>丢弃列</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"id\"]",
           "member": "string",
           "name": "DropColumns",
@@ -9220,7 +9220,7 @@
         },
         {
           "disabled": false,
-          "document": "评估指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>评估指标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"accuracy\"]",
           "member": "string",
           "name": "EvaluationMetrics",
@@ -9230,7 +9230,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>搜索空间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"lightgbm\",\"xgboost\",\"prophet\"]",
           "member": "string",
           "name": "SearchSpace",
@@ -9240,7 +9240,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "225",
           "member": "string",
           "name": "RuntimeInSeconds",
@@ -9250,7 +9250,7 @@
         },
         {
           "disabled": false,
-          "document": "运行次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "int64",
           "name": "RunCount",
@@ -9260,7 +9260,7 @@
         },
         {
           "disabled": false,
-          "document": "时间间隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>时间间隔</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "d",
           "member": "string",
           "name": "TimeInterval",
@@ -9270,7 +9270,7 @@
         },
         {
           "disabled": false,
-          "document": "预测范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>预测范围</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7",
           "member": "int64",
           "name": "ForecastSequenceLength",
@@ -9280,7 +9280,7 @@
         },
         {
           "disabled": false,
-          "document": "预测列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>预测列</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "o_totalprice",
           "member": "string",
           "name": "PredictionColumn",
@@ -9290,10 +9290,40 @@
         },
         {
           "disabled": false,
-          "document": "预测结果储存位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>预测结果储存位置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Table\": \"xyprediction_order\", \"Schema\": \"a11\", \"Catalog\": \"xzp_test\"}",
           "member": "string",
           "name": "PredictionResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>训练列</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"passenger_count\"]",
+          "member": "string",
+          "name": "SelectedColumns",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最佳运行任务的任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "run-best-mock-39281",
+          "member": "string",
+          "name": "BestRunId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>AutoML创建的工作流的Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a1abe6f3-b572-47be-b439-d718f8d6ca4d",
+          "member": "string",
+          "name": "WorkflowId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9711,12 +9741,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量打标请求",
+          "document": "<p>批量打标请求</p>",
           "example": "无",
           "member": "VoteAssetTagReq",
           "name": "Votes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID（必填）</p>",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9726,7 +9765,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量资产打标响应",
+          "document": "<p>批量资产打标响应</p>",
           "example": "无",
           "member": "BatchVoteAssetTagRsp",
           "name": "Data",
@@ -27220,8 +27259,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务的调用信息，服务组下唯一\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>服务的调用信息，服务组下唯一</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MLIntranetCallInfo",
           "name": "IntranetCallInfo",
           "output_required": false,
@@ -27230,10 +27269,20 @@
         },
         {
           "disabled": false,
-          "document": "调用信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>调用信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ServiceCallInfoV2",
           "name": "ServiceCallInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型签名信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModelSignatureInfo",
+          "name": "ModelSignatureInfo",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
@@ -65587,6 +65636,68 @@
         }
       ],
       "type": "object"
+    },
+    "ModelSignatureField": {
+      "document": "模型签名字段信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>列名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "feature_A",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>类型</p><p>枚举值：</p><ul><li>double： double类型</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "double",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否可选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Optional",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelSignatureInfo": {
+      "document": "模型签名信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入字段列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModelSignatureField",
+          "name": "Inputs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出字段列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModelSignatureField",
+          "name": "Outputs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ModelVersionAuditLog": {
       "document": "ModelVersionAuditLog",

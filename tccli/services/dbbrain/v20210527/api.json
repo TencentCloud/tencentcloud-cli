@@ -3838,7 +3838,7 @@
           "example": "5",
           "member": "int64",
           "name": "EventId",
-          "required": false,
+          "required": true,
           "type": "int"
         },
         {

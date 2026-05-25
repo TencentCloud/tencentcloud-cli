@@ -112,6 +112,13 @@
       "output": "CreateReadOnlyGroupNetworkAccessResponse",
       "status": "online"
     },
+    "CreateWarmPoolTemplate": {
+      "document": "本接口用于创建预热池模板，定义预热实例的规格、网络、水位目标等配置。目前仅支持 full 模式。",
+      "input": "CreateWarmPoolTemplateRequest",
+      "name": "创建预热池模板",
+      "output": "CreateWarmPoolTemplateResponse",
+      "status": "online"
+    },
     "DeleteAccount": {
       "document": "此接口用于删除数据库账号，需要同时输入Oid与UserName，避免误删。注：该接口可重入，如果账号已经不存在，调用此接口进行删除时不会报错。",
       "input": "DeleteAccountRequest",
@@ -173,6 +180,13 @@
       "input": "DeleteReadOnlyGroupNetworkAccessRequest",
       "name": "删除RO组网络",
       "output": "DeleteReadOnlyGroupNetworkAccessResponse",
+      "status": "online"
+    },
+    "DeleteWarmPoolTemplate": {
+      "document": "本接口用于删除预热池模板（逻辑删除）。若模板下仍有就绪实例，将拒绝删除，需等待实例自然消耗后再操作。",
+      "input": "DeleteWarmPoolTemplateRequest",
+      "name": "删除预热池模板",
+      "output": "DeleteWarmPoolTemplateResponse",
       "status": "online"
     },
     "DescribeAccountPrivileges": {
@@ -476,6 +490,13 @@
       "output": "DescribeTasksResponse",
       "status": "online"
     },
+    "DescribeWarmPoolTemplate": {
+      "document": "本接口用于查询指定预热池模板的详细信息，包括模板配置及当前水位状态。",
+      "input": "DescribeWarmPoolTemplateRequest",
+      "name": "查询预热池模板详情",
+      "output": "DescribeWarmPoolTemplateResponse",
+      "status": "online"
+    },
     "DescribeZones": {
       "document": "本接口 (DescribeZones) 用于查询支持的可用区信息。",
       "input": "DescribeZonesRequest",
@@ -698,6 +719,13 @@
       "input": "ModifySwitchTimePeriodRequest",
       "name": "修改变更配置切换时间",
       "output": "ModifySwitchTimePeriodResponse",
+      "status": "online"
+    },
+    "ModifyWarmPoolTemplate": {
+      "document": "本接口用于启用或禁用预热池模板。禁用后该模板将停止补充新的预热实例。",
+      "input": "ModifyWarmPoolTemplateRequest",
+      "name": "修改预热池模板启停状态",
+      "output": "ModifyWarmPoolTemplateResponse",
       "status": "online"
     },
     "OpenAccountCAM": {
@@ -2799,6 +2827,21 @@
       ],
       "type": "object"
     },
+    "CreateInstanceAIConfig": {
+      "document": "实例创建AI场景相关参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源池预热模板名称</p>",
+          "example": "TestName",
+          "member": "string",
+          "name": "TemplateName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "CreateInstancesRequest": {
       "document": "CreateInstances请求参数结构体",
       "members": [
@@ -3161,6 +3204,15 @@
           "name": "RestConfig",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建实例AI相关配置</p>",
+          "example": "无",
+          "member": "CreateInstanceAIConfig",
+          "name": "AIConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3783,6 +3835,205 @@
           "name": "TaskId",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWarmPoolTemplateRequest": {
+      "document": "CreateWarmPoolTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板名称，长度不超过128字符</p>",
+          "example": "test_my_template",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预热模式，目前仅支持 &quot;full&quot;</p>",
+          "example": "full",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例类别：normal / cloudbase</p>",
+          "example": "normal",
+          "member": "string",
+          "name": "InstanceCategory",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区组合，逗号分隔，如 &quot;ap-guangzhou-3,ap-guangzhou-4&quot;</p>",
+          "example": "ap-guangzhou-2,ap-guangzhou-3",
+          "member": "string",
+          "name": "ZoneKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU核数（核）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存大小（MB）</p>",
+          "example": "2048",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储容量（GB）</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Storage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库大版本</p>",
+          "example": "18",
+          "member": "string",
+          "name": "DBMajorVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储类型</p>",
+          "example": "PHYSICAL_LOCAL_SSD",
+          "member": "string",
+          "name": "StorageType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有网络ID</p>",
+          "example": "vpc-a27ykb0r",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网ID</p>",
+          "example": "subnet-3hekhnki",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标水位（期望预热的实例数量），须满足 MinReady &lt;= Target &lt;= MaxReady</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Target",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小就绪数（&gt;=0），须满足 MinReady &lt;= Target</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MinReady",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大就绪数（&gt;0），须满足 Target &lt;= MaxReady</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxReady",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板描述（可选）</p>",
+          "example": "测试模版用例",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全组ID列表，JSON数组字符串，如 &quot;[\"sg-001\",\"sg-002\"]&quot;（可选）</p>",
+          "example": "[\"sg-bisigzhp\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板优先级，值越大优先级越高，默认10（可选）</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用方标识，InstanceCategory=cloudbase 时必填</p>",
+          "example": "cloudbase",
+          "member": "string",
+          "name": "CallerSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用方Token，InstanceCategory=cloudbase 时必填</p>",
+          "example": "**********************Dq*d7Y****************",
+          "member": "string",
+          "name": "CallerToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWarmPoolTemplateResponse": {
+      "document": "CreateWarmPoolTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建成功的模板名称</p>",
+          "example": "test_my_template",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5232,6 +5483,43 @@
           "name": "FlowId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWarmPoolTemplateRequest": {
+      "document": "DeleteWarmPoolTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板名称</p>",
+          "example": "test-zero-target-0522",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWarmPoolTemplateResponse": {
+      "document": "DeleteWarmPoolTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>被删除的模板名称</p>",
+          "example": "test-zero-target-0522",
+          "member": "string",
+          "name": "TemplateName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -8495,6 +8783,43 @@
       ],
       "type": "object"
     },
+    "DescribeWarmPoolTemplateRequest": {
+      "document": "DescribeWarmPoolTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板名称</p>",
+          "example": "test_my_template2",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWarmPoolTemplateResponse": {
+      "document": "DescribeWarmPoolTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>预热池模板详细信息</p>",
+          "example": "无",
+          "member": "WarmPoolTemplateDetail",
+          "name": "Template",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeZonesRequest": {
       "document": "DescribeZones请求参数结构体",
       "members": [],
@@ -11226,6 +11551,62 @@
       ],
       "type": "object"
     },
+    "ModifyWarmPoolTemplateRequest": {
+      "document": "ModifyWarmPoolTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板名称</p>",
+          "example": "test_my_template2",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用：0=禁用，1=启用</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Enabled",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWarmPoolTemplateResponse": {
+      "document": "ModifyWarmPoolTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>被修改的模板名称</p>",
+          "example": "test_my_template2",
+          "member": "string",
+          "name": "TemplateName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改后的启用状态：0=禁用，1=启用</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Enabled",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "NetworkAccess": {
       "document": "网络相关信息。（该数据结构已废弃，网络相关信息使用DBInstanceNetInfo）",
       "members": [
@@ -13768,6 +14149,304 @@
         }
       ],
       "usage": "out"
+    },
+    "WarmPoolStatus": {
+      "document": "预热池当前水位状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>就绪中的实例数量</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Ready",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建中的实例数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Creating",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已分配的实例数量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Assigned",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>不健康的实例数量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Unhealthy",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WarmPoolTemplateDetail": {
+      "document": "预热池模板详细信息（含水位状态）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板名称</p>",
+          "example": "my-template",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板描述</p>",
+          "example": "测试预热池模板",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用</p><p>枚举值：</p><ul><li>0：禁用</li><li>1：启用</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域ID</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区组合，逗号分隔，如 \"ap-guangzhou-3,ap-guangzhou-4\"</p>",
+          "example": "ap-guangzhou-3,ap-guangzhou-4",
+          "member": "string",
+          "name": "ZoneKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU核数（核）</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存大小（MB）</p>",
+          "example": "4096",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储容量（GB）</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "Storage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库内核版本</p>",
+          "example": "18",
+          "member": "string",
+          "name": "DBKernelVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储类型</p>",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例类别</p><p>枚举值：</p><ul><li>normal：普通实例</li><li>cloudbase：CloudBase实例</li></ul>",
+          "example": "normal",
+          "member": "string",
+          "name": "InstanceCategory",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有网络ID</p>",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网ID</p>",
+          "example": "subnet-xxxxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户AppId</p>",
+          "example": "1234567890",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户Uin</p>",
+          "example": "100000000001",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标水位（期望预热的实例数量）</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "Target",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小就绪数，须满足 MinReady &lt;= Target</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "MinReady",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大就绪数，须满足 Target &lt;= MaxReady</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxReady",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板优先级，值越大优先级越高，默认10</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预热池当前水位状态</p>",
+          "example": "无",
+          "member": "WarmPoolStatus",
+          "name": "PoolStatus",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板创建时间</p><p>参数格式：2026-05-06 17:07:26</p>",
+          "example": "2026-05-06 17:07:26",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板最后更新时间</p><p>参数格式：2026-05-06 17:07:26</p>",
+          "example": "2026-05-06 17:07:26",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Xlog": {
       "document": "数据库Xlog信息",
