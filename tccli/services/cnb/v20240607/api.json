@@ -249,7 +249,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预算单折前费用",
+          "document": "<p>预算单折前费用</p>",
           "example": "1.00",
           "member": "float",
           "name": "TotalCost",
@@ -260,7 +260,7 @@
         },
         {
           "disabled": false,
-          "document": "git存储实际费用",
+          "document": "<p>git存储实际费用</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbStorageGitRealCost",
@@ -271,7 +271,7 @@
         },
         {
           "disabled": false,
-          "document": "对象存储实际费用",
+          "document": "<p>对象存储实际费用</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbStorageObjectRealCost",
@@ -282,7 +282,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生构建实际费用",
+          "document": "<p>云原生构建实际费用</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbComputeBuildRealCost",
@@ -293,7 +293,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生开发实际费用",
+          "document": "<p>云原生开发实际费用</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbComputeDevelopRealCost",
@@ -304,7 +304,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生构建-gpu实际费用",
+          "document": "<p>云原生构建-gpu实际费用</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbComputeBuildGPURealCost",
@@ -315,7 +315,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生开发-gpu实际费用",
+          "document": "<p>云原生开发-gpu实际费用</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbComputeDevelopGPURealCost",
@@ -326,7 +326,7 @@
         },
         {
           "disabled": false,
-          "document": "git存储单价",
+          "document": "<p>git存储单价</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbStorageGitPrice",
@@ -337,7 +337,7 @@
         },
         {
           "disabled": false,
-          "document": "对象存储单价",
+          "document": "<p>对象存储单价</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbStorageObjectPrice",
@@ -348,7 +348,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生构建单价",
+          "document": "<p>云原生构建单价</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbComputeBuildPrice",
@@ -359,7 +359,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生开发单价",
+          "document": "<p>云原生开发单价</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbComputeDevelopPrice",
@@ -370,7 +370,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生构建-gpu单价",
+          "document": "<p>云原生构建-gpu单价</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbComputeBuildGPUPrice",
@@ -381,7 +381,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生开发-gpu单价",
+          "document": "<p>云原生开发-gpu单价</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbComputeDevelopGPUPrice",
@@ -392,7 +392,7 @@
         },
         {
           "disabled": false,
-          "document": "git存储折前费用",
+          "document": "<p>git存储折前费用</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbStorageGitCost",
@@ -403,7 +403,7 @@
         },
         {
           "disabled": false,
-          "document": "对象存储折前费用",
+          "document": "<p>对象存储折前费用</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbStorageObjectCost",
@@ -414,7 +414,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生构建折前费用",
+          "document": "<p>云原生构建折前费用</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbComputeBuildCost",
@@ -425,7 +425,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生开发折前费用",
+          "document": "<p>云原生开发折前费用</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbComputeDevelopCost",
@@ -436,7 +436,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生构建-gpu折前费用",
+          "document": "<p>云原生构建-gpu折前费用</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbComputeBuildGPUCost",
@@ -447,7 +447,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生开发-gpu折前费用",
+          "document": "<p>云原生开发-gpu折前费用</p>",
           "example": "1.00",
           "member": "float",
           "name": "CnbComputeDevelopGPUCost",
@@ -458,10 +458,43 @@
         },
         {
           "disabled": false,
-          "document": "预算单实际费用",
+          "document": "<p>预算单实际费用</p>",
           "example": "1.00",
           "member": "float",
           "name": "TotalRealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Credit 折前费用</p>",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbAIUsageCreditCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Credit 实际费用</p>",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbAIUsageCreditRealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Credit 单价</p>",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbAIUsageCreditPrice",
           "output_required": false,
           "required": false,
           "type": "float",
@@ -475,7 +508,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Git存储预算，单位GiB",
+          "document": "<p>Git存储预算，单位GiB</p>",
           "example": "100",
           "member": "uint64",
           "name": "StorageGit",
@@ -484,7 +517,7 @@
         },
         {
           "disabled": false,
-          "document": "对象存储预算，单位GiB",
+          "document": "<p>对象存储预算，单位GiB</p>",
           "example": "100",
           "member": "uint64",
           "name": "StorageObject",
@@ -493,7 +526,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生构建预算，单位核时",
+          "document": "<p>云原生构建预算，单位核时</p>",
           "example": "100",
           "member": "uint64",
           "name": "ComputeBuild",
@@ -502,7 +535,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生开发预算，单位核时",
+          "document": "<p>云原生开发预算，单位核时</p>",
           "example": "100",
           "member": "uint64",
           "name": "ComputeDevelop",
@@ -511,7 +544,7 @@
         },
         {
           "disabled": false,
-          "document": "预算名称",
+          "document": "<p>预算名称</p>",
           "example": "Cnb组织预算",
           "member": "string",
           "name": "BudgetName",
@@ -520,8 +553,8 @@
         },
         {
           "disabled": false,
-          "document": "资源标签",
-          "example": "[{\"TagKey\": \"march\",\"TagValue\": [\"march1\"]}]",
+          "document": "<p>资源标签</p>",
+          "example": "无",
           "member": "Tag",
           "name": "ResourceTags",
           "required": false,
@@ -529,7 +562,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生构建-gpu预算，单位核时",
+          "document": "<p>云原生构建-gpu预算，单位核时</p>",
           "example": "100",
           "member": "uint64",
           "name": "ComputeBuildGPU",
@@ -538,10 +571,19 @@
         },
         {
           "disabled": false,
-          "document": "云原生开发-gpu预算，单位核时",
+          "document": "<p>云原生开发-gpu预算，单位核时</p>",
           "example": "100",
           "member": "uint64",
           "name": "ComputeDevelopGPU",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Credit 预算</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "AIUsageCredit",
           "required": false,
           "type": "int"
         }
@@ -553,8 +595,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "预算资源 id",
-          "example": "无",
+          "document": "<p>预算资源 id</p>",
+          "example": "700001520516-700002467747-2047589901103435776",
           "member": "string",
           "name": "ResourceId",
           "output_required": false,
@@ -563,7 +605,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定失败的标签",
+          "document": "<p>绑定失败的标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "FailedTags",
@@ -585,7 +627,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预估折前费用",
+          "document": "<p>预估折前费用</p>",
           "example": "0.00",
           "member": "float",
           "name": "EsCost",
@@ -596,7 +638,7 @@
         },
         {
           "disabled": false,
-          "document": "git存储预估折前费用",
+          "document": "<p>git存储预估折前费用</p>",
           "example": "0.00",
           "member": "float",
           "name": "CnbStorageGitEstimatedCost",
@@ -607,7 +649,7 @@
         },
         {
           "disabled": false,
-          "document": "对象存储预估折前费用",
+          "document": "<p>对象存储预估折前费用</p>",
           "example": "0.00",
           "member": "float",
           "name": "CnbStorageObjectEstimatedCost",
@@ -618,7 +660,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生构建预估折前费用",
+          "document": "<p>云原生构建预估折前费用</p>",
           "example": "0.00",
           "member": "float",
           "name": "CnbComputeBuildEstimatedCost",
@@ -629,7 +671,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生开发预估折前费用",
+          "document": "<p>云原生开发预估折前费用</p>",
           "example": "0.00",
           "member": "float",
           "name": "CnbComputeDevelopEstimatedCost",
@@ -640,7 +682,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生构建-gpu预估折前费用",
+          "document": "<p>云原生构建-gpu预估折前费用</p>",
           "example": "0.00",
           "member": "float",
           "name": "CnbComputeBuildGPUEstimatedCost",
@@ -651,7 +693,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生开发-gpu预估折前费用",
+          "document": "<p>云原生开发-gpu预估折前费用</p>",
           "example": "0.00",
           "member": "float",
           "name": "CnbComputeDevelopGPUEstimatedCost",
@@ -662,7 +704,7 @@
         },
         {
           "disabled": false,
-          "document": "git存储预估费用",
+          "document": "<p>git存储预估费用</p>",
           "example": "0.00",
           "member": "float",
           "name": "CnbStorageGitEstimatedRealCost",
@@ -673,7 +715,7 @@
         },
         {
           "disabled": false,
-          "document": "对象存储预估费用",
+          "document": "<p>对象存储预估费用</p>",
           "example": "0.00",
           "member": "float",
           "name": "CnbStorageObjectEstimatedRealCost",
@@ -684,7 +726,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生构建预估费用",
+          "document": "<p>云原生构建预估费用</p>",
           "example": "0.00",
           "member": "float",
           "name": "CnbComputeBuildEstimatedRealCost",
@@ -695,7 +737,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生开发预估费用",
+          "document": "<p>云原生开发预估费用</p>",
           "example": "0.00",
           "member": "float",
           "name": "CnbComputeDevelopEstimatedRealCost",
@@ -706,7 +748,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生构建-gpu预估费用",
+          "document": "<p>云原生构建-gpu预估费用</p>",
           "example": "0.00",
           "member": "float",
           "name": "CnbComputeBuildGPUEstimatedRealCost",
@@ -717,7 +759,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生开发-gpu预估费用",
+          "document": "<p>云原生开发-gpu预估费用</p>",
           "example": "0.00",
           "member": "float",
           "name": "CnbComputeDevelopGPUEstimatedRealCost",
@@ -728,10 +770,32 @@
         },
         {
           "disabled": false,
-          "document": "预估实际费用",
+          "document": "<p>预估实际费用</p>",
           "example": "0.00",
           "member": "float",
           "name": "EsRealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Credit 预估费用</p>",
+          "example": "0.00",
+          "member": "float",
+          "name": "CnbAIUsageCreditEstimatedCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Credit 实际费用</p>",
+          "example": "0.00",
+          "member": "float",
+          "name": "CnbAIUsageCreditEstimatedRealCost",
           "output_required": false,
           "required": false,
           "type": "float",
@@ -886,7 +950,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "git存储总量",
+          "document": "<p>git存储总量</p>",
           "example": "10",
           "member": "int64",
           "name": "CnbStorageGit",
@@ -897,7 +961,7 @@
         },
         {
           "disabled": false,
-          "document": "对象存储总量",
+          "document": "<p>对象存储总量</p>",
           "example": "10",
           "member": "int64",
           "name": "CnbStorageObject",
@@ -908,7 +972,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生构建核时总量",
+          "document": "<p>云原生构建核时总量</p>",
           "example": "19",
           "member": "int64",
           "name": "CnbComputeBuild",
@@ -919,7 +983,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生开发核时总量",
+          "document": "<p>云原生开发核时总量</p>",
           "example": "10",
           "member": "int64",
           "name": "CnbComputeDevelop",
@@ -930,7 +994,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生构建-gpu核时总量",
+          "document": "<p>云原生构建-gpu核时总量</p>",
           "example": "10",
           "member": "int64",
           "name": "CnbComputeBuildGPU",
@@ -941,10 +1005,21 @@
         },
         {
           "disabled": false,
-          "document": "云原生开发-gpu核时总量",
+          "document": "<p>云原生开发-gpu核时总量</p>",
           "example": "10",
           "member": "int64",
           "name": "CnbComputeDevelopGPU",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Credit 总量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "CnbAIUsageCredit",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -958,7 +1033,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "git存储使用用量",
+          "document": "<p>git存储使用用量</p>",
           "example": "\"11\"",
           "member": "string",
           "name": "CnbStorageGitUsed",
@@ -969,7 +1044,7 @@
         },
         {
           "disabled": false,
-          "document": "对象存储使用用量",
+          "document": "<p>对象存储使用用量</p>",
           "example": "\"11\"",
           "member": "string",
           "name": "CnbStorageObjectUsed",
@@ -980,7 +1055,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生构建使用核时",
+          "document": "<p>云原生构建使用核时</p>",
           "example": "\"11\"",
           "member": "string",
           "name": "CnbComputeBuildUsed",
@@ -991,7 +1066,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生开发使用核时",
+          "document": "<p>云原生开发使用核时</p>",
           "example": "\"11\"",
           "member": "string",
           "name": "CnbComputeDevelopUsed",
@@ -1002,7 +1077,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生构建-gpu使用核时",
+          "document": "<p>云原生构建-gpu使用核时</p>",
           "example": "\"11\"",
           "member": "string",
           "name": "CnbComputeBuildGPUUsed",
@@ -1013,10 +1088,21 @@
         },
         {
           "disabled": false,
-          "document": "云原生开发-gpu使用核时",
+          "document": "<p>云原生开发-gpu使用核时</p>",
           "example": "\"11\"",
           "member": "string",
           "name": "CnbComputeDevelopGPUUsed",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Credit 使用量</p>",
+          "example": "\"11\"",
+          "member": "string",
+          "name": "CnbAIUsageCreditUsed",
           "output_required": false,
           "required": false,
           "type": "string",

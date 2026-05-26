@@ -1990,6 +1990,14 @@
         "title": "迁移cdb"
       }
     ],
+    "TriggerAIOptimizerTraining": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerAIOptimizerTraining\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-1ai3vvcz\",\n    \"InstanceId\": \"cynosdbmysql-ins-ltdlsq3i\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 8053,\n        \"RequestId\": \"1e85cc6d-86b3-4ffb-bafe-2a2a12662e6c\"\n    }\n}",
+        "title": "发起训练"
+      }
+    ],
     "UnbindClusterResourcePackages": [
       {
         "document": "cynos解绑资源包",

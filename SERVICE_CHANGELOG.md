@@ -1,71 +1,48 @@
-# Release 3.0.1431.1
+# Release 3.0.1432.1
 
-## AI Agent 安全网关(apis) 版本：2024-08-01
+## 云原生构建(cnb) 版本：2024-06-07
 
-### 第 18 次发布
+### 第 2 次发布
 
-发布时间：2026-05-26 01:08:26
+发布时间：2026-05-27 01:24:56
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+修改接口：
+
+* [CreateBudget](http://document.tencentcloudapi.woa.com/document/product/1798/87393)
+
+	* 新增入参：AIUsageCredit
+
+
 修改数据结构：
 
-* [TokenLimitConfigDTO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#TokenLimitConfigDTO)
+* [Cost](http://document.tencentcloudapi.woa.com/document/product/1798/87394#Cost)
 
-	* 新增成员：Type
+	* 新增成员：CnbAIUsageCreditCost, CnbAIUsageCreditRealCost, CnbAIUsageCreditPrice
+
+* [EstimatedCost](http://document.tencentcloudapi.woa.com/document/product/1798/87394#EstimatedCost)
+
+	* 新增成员：CnbAIUsageCreditEstimatedCost, CnbAIUsageCreditEstimatedRealCost
+
+* [SvTotalAmount](http://document.tencentcloudapi.woa.com/document/product/1798/87394#SvTotalAmount)
+
+	* 新增成员：CnbAIUsageCredit
+
+* [SvUsedAmount](http://document.tencentcloudapi.woa.com/document/product/1798/87394#SvUsedAmount)
+
+	* 新增成员：CnbAIUsageCreditUsed
 
 
 
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-### 第 168 次发布
+### 第 169 次发布
 
-发布时间：2026-05-26 01:16:06
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ParamItemDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamItemDetail)
-
-	* 新增成员：ModifiableInfo
-
-
-
-
-## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
-
-### 第 52 次发布
-
-发布时间：2026-05-26 01:17:17
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeDBDiagEvent](http://document.tencentcloudapi.woa.com/document/product/1130/57788)
-
-	* <font color="#dd0000">**修改入参**：</font>EventId
-
-
-
-
-## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
-
-
-
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
-
-### 第 157 次发布
-
-发布时间：2026-05-26 01:17:59
+发布时间：2026-05-27 01:31:16
 
 本次发布包含了以下内容：
 
@@ -73,15 +50,34 @@
 
 新增接口：
 
-* [CreateUserRole](http://document.tencentcloudapi.woa.com/document/product/1342/90384)
+* [TriggerAIOptimizerTraining](http://document.tencentcloudapi.woa.com/document/product/1003/90391)
+
+修改接口：
+
+* [CreateDarInstance](http://document.tencentcloudapi.woa.com/document/product/1003/90379)
+
+	* 新增入参：AgenticBaseInfo
+
+
+新增数据结构：
+
+* [AIOptimizerStatus](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AIOptimizerStatus)
+* [AgenticBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AgenticBaseInfo)
+
+修改数据结构：
+
+* [ClusterInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterInstanceDetail)
+
+	* 新增成员：AIOptimizerStatus
 
 
 
-## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
 
-### 第 59 次发布
+## 弹性 MapReduce(emr) 版本：2019-01-03
 
-发布时间：2026-05-26 01:33:19
+### 第 143 次发布
+
+发布时间：2026-05-27 01:41:16
 
 本次发布包含了以下内容：
 
@@ -89,108 +85,25 @@
 
 新增接口：
 
-* [CreateWarmPoolTemplate](http://document.tencentcloudapi.woa.com/document/product/409/90389)
-* [DeleteWarmPoolTemplate](http://document.tencentcloudapi.woa.com/document/product/409/90388)
-* [DescribeWarmPoolTemplate](http://document.tencentcloudapi.woa.com/document/product/409/90387)
-* [ModifyWarmPoolTemplate](http://document.tencentcloudapi.woa.com/document/product/409/90386)
-
-修改接口：
-
-* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/409/56107)
-
-	* 新增入参：AIConfig
-
+* [DescribeMaskRulesSTDV2](http://document.tencentcloudapi.woa.com/document/product/589/90392)
+* [IssueMaskRulesSTD](http://document.tencentcloudapi.woa.com/document/product/589/90393)
 
 新增数据结构：
 
-* [CreateInstanceAIConfig](http://document.tencentcloudapi.woa.com/document/product/409/16778#CreateInstanceAIConfig)
-* [WarmPoolStatus](http://document.tencentcloudapi.woa.com/document/product/409/16778#WarmPoolStatus)
-* [WarmPoolTemplateDetail](http://document.tencentcloudapi.woa.com/document/product/409/16778#WarmPoolTemplateDetail)
+* [RangerDataMaskInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#RangerDataMaskInfo)
+* [RangerDataMaskPolicyItem](http://document.tencentcloudapi.woa.com/document/product/589/33981#RangerDataMaskPolicyItem)
+* [RangerOrderFields](http://document.tencentcloudapi.woa.com/document/product/589/33981#RangerOrderFields)
+* [RangerPolicy](http://document.tencentcloudapi.woa.com/document/product/589/33981#RangerPolicy)
+* [RangerResource](http://document.tencentcloudapi.woa.com/document/product/589/33981#RangerResource)
+* [RangerResultItem](http://document.tencentcloudapi.woa.com/document/product/589/33981#RangerResultItem)
 
 
 
-## 凭据管理系统(ssm) 版本：2019-09-23
+## Elasticsearch Service(es) 版本：2018-04-16
 
-### 第 16 次发布
+### 第 108 次发布
 
-发布时间：2026-05-26 01:35:48
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateProductSecret](http://document.tencentcloudapi.woa.com/document/product/1140/58266)
-
-	* 新增入参：EncryptType
-
-* [CreateSSHKeyPairSecret](http://document.tencentcloudapi.woa.com/document/product/1140/60331)
-
-	* 新增入参：EncryptType
-
-* [CreateSecret](http://document.tencentcloudapi.woa.com/document/product/1140/40529)
-
-	* 新增入参：EncryptType
-
-* [DescribeSecret](http://document.tencentcloudapi.woa.com/document/product/1140/40526)
-
-	* 新增出参：EncryptType, EncryptSwitching
-
-* [ListSecrets](http://document.tencentcloudapi.woa.com/document/product/1140/40519)
-
-	* 新增入参：EncryptType
-
-
-修改数据结构：
-
-* [SecretMetadata](http://document.tencentcloudapi.woa.com/document/product/1140/40530#SecretMetadata)
-
-	* 新增成员：EncryptType, EncryptSwitching
-
-
-
-
-## TI-ONE 训练平台(tione) 版本：2021-11-11
-
-### 第 137 次发布
-
-发布时间：2026-05-26 01:39:54
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DataConfig](http://document.tencentcloudapi.woa.com/document/product/851/74915#DataConfig)
-
-	* 新增成员：ReadOnly
-
-* [GooseFS](http://document.tencentcloudapi.woa.com/document/product/851/74915#GooseFS)
-
-	* 新增成员：MountOptions
-
-* [GooseFSx](http://document.tencentcloudapi.woa.com/document/product/851/74915#GooseFSx)
-
-	* 新增成员：MountOptions
-
-* [VolumeMount](http://document.tencentcloudapi.woa.com/document/product/851/74915#VolumeMount)
-
-	* 新增成员：ReadOnly
-
-
-
-
-## TI-ONE 训练平台(tione) 版本：2019-10-22
-
-
-
-## 数据开发治理平台 WeData(wedata) 版本：2025-10-10
-
-### 第 28 次发布
-
-发布时间：2026-05-26 01:44:54
+发布时间：2026-05-27 01:42:57
 
 本次发布包含了以下内容：
 
@@ -198,34 +111,93 @@
 
 修改接口：
 
-* [BatchVoteAssetTag](http://document.tencentcloudapi.woa.com/document/product/1607/89529)
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30633)
 
-	* 新增入参：WorkspaceId
+	* 新增入参：AlarmPolicyIds
 
+
+修改数据结构：
+
+* [NodeInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#NodeInfo)
+
+	* 新增成员：KmsKeyId, KmsKeyName
+
+
+
+
+## 消息队列 MQTT 版(mqtt) 版本：2024-05-16
+
+### 第 29 次发布
+
+发布时间：2026-05-27 02:05:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSharedSubscriptionGroupsWithSubscriptions](http://document.tencentcloudapi.woa.com/document/product/1773/90395)
+* [ModifyX509Config](http://document.tencentcloudapi.woa.com/document/product/1773/90394)
 
 新增数据结构：
 
-* [ModelSignatureField](http://document.tencentcloudapi.woa.com/document/product/1607/88970#ModelSignatureField)
-* [ModelSignatureInfo](http://document.tencentcloudapi.woa.com/document/product/1607/88970#ModelSignatureInfo)
+* [SharedSubscriptionGroupWithSubscriptions](http://document.tencentcloudapi.woa.com/document/product/1773/84898#SharedSubscriptionGroupWithSubscriptions)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 79 次发布
+
+发布时间：2026-05-27 02:22:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 修改数据结构：
 
-* [AutoMlInfo](http://document.tencentcloudapi.woa.com/document/product/1607/88970#AutoMlInfo)
+* [RateLimitingRule](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RateLimitingRule)
 
-	* 新增成员：SelectedColumns, BestRunId, WorkflowId
-
-* [DescribeModelServiceCallInfo](http://document.tencentcloudapi.woa.com/document/product/1607/88970#DescribeModelServiceCallInfo)
-
-	* 新增成员：ModelSignatureInfo
+	* 新增成员：Mode
 
 
 
 
-## 数据开发治理平台 WeData(wedata) 版本：2025-08-06
+## 边缘安全加速平台(teo) 版本：2022-01-06
 
 
 
-## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 126 次发布
+
+发布时间：2026-05-27 02:25:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [SubnetAllocation](http://document.tencentcloudapi.woa.com/document/product/457/31866#SubnetAllocation)
+* [SubnetAllocationPolicy](http://document.tencentcloudapi.woa.com/document/product/457/31866#SubnetAllocationPolicy)
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/457/31866#Cluster)
+
+	* 新增成员：ClusterCategory
+
+* [VirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNodePool)
+
+	* 新增成员：SubnetAllocationPolicy
+
 
 
 

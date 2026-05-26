@@ -1715,6 +1715,13 @@
       "output": "TransferFromCDBResponse",
       "status": "online"
     },
+    "TriggerAIOptimizerTraining": {
+      "document": "本接口(TriggerAIOptimizerTraining)用于触发一次优化器的训练。",
+      "input": "TriggerAIOptimizerTrainingRequest",
+      "name": "触发优化器训练",
+      "output": "TriggerAIOptimizerTrainingResponse",
+      "status": "online"
+    },
     "UnbindClusterResourcePackages": {
       "document": "本接口（UnbindClusterResourcePackages）用于解除资源包与集群之间的绑定关系。",
       "input": "UnbindClusterResourcePackagesRequest",
@@ -1765,6 +1772,42 @@
     "serviceShortName": "cynosdb"
   },
   "objects": {
+    "AIOptimizerStatus": {
+      "document": "AI 优化器状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>状态。closing-关闭中，closed-关闭，opening-开启中，training-训练中，trained-训练完成，train_failed-训练失败。</p>",
+          "example": "training",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启时间</p>",
+          "example": "2026-05-24 11:39:55",
+          "member": "string",
+          "name": "OpenTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>训练进度</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "TrainingProgress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Ability": {
       "document": "集群支持的功能",
       "members": [
@@ -2745,6 +2788,34 @@
         }
       ],
       "usage": "out"
+    },
+    "AgenticBaseInfo": {
+      "document": "AI基座信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>基模类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AgenticBase-pg",
+          "member": "string",
+          "name": "AgenticBaseType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>基模 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AgenticBase-xxx",
+          "member": "string",
+          "name": "AgenticBaseId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "AssociateSecurityGroupsRequest": {
       "document": "AssociateSecurityGroups请求参数结构体",
@@ -5471,7 +5542,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "cynosdbmysql-ins-4vdteifv",
           "member": "string",
           "name": "InstanceId",
@@ -5481,7 +5552,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "cynosdbmysql-ins-4vdteifv",
           "member": "string",
           "name": "InstanceName",
@@ -5491,7 +5562,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎类型",
+          "document": "<p>引擎类型</p>",
           "example": "rw",
           "member": "string",
           "name": "InstanceType",
@@ -5501,7 +5572,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态",
+          "document": "<p>实例状态</p>",
           "example": "running",
           "member": "string",
           "name": "InstanceStatus",
@@ -5511,7 +5582,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态描述",
+          "document": "<p>实例状态描述</p>",
           "example": "运行中",
           "member": "string",
           "name": "InstanceStatusDesc",
@@ -5521,7 +5592,7 @@
         },
         {
           "disabled": false,
-          "document": "cpu核数",
+          "document": "<p>cpu核数</p>",
           "example": "1",
           "member": "int64",
           "name": "InstanceCpu",
@@ -5531,7 +5602,7 @@
         },
         {
           "disabled": false,
-          "document": "内存",
+          "document": "<p>内存</p>",
           "example": "2",
           "member": "int64",
           "name": "InstanceMemory",
@@ -5541,7 +5612,7 @@
         },
         {
           "disabled": false,
-          "document": "硬盘",
+          "document": "<p>硬盘</p>",
           "example": "50",
           "member": "int64",
           "name": "InstanceStorage",
@@ -5551,7 +5622,7 @@
         },
         {
           "disabled": false,
-          "document": "实例角色",
+          "document": "<p>实例角色</p>",
           "example": "master",
           "member": "string",
           "name": "InstanceRole",
@@ -5561,7 +5632,7 @@
         },
         {
           "disabled": false,
-          "document": "执行开始时间(距离0点的秒数)\t",
+          "document": "<p>执行开始时间(距离0点的秒数)</p>",
           "example": "10920",
           "member": "int64",
           "name": "MaintainStartTime",
@@ -5571,7 +5642,7 @@
         },
         {
           "disabled": false,
-          "document": "持续的时间(单位：秒)\t",
+          "document": "<p>持续的时间(单位：秒)</p>",
           "example": "3600",
           "member": "int64",
           "name": "MaintainDuration",
@@ -5581,7 +5652,7 @@
         },
         {
           "disabled": false,
-          "document": "可以执行的时间，枚举值：[\"Mon\",\"Tue\",\"Wed\",\"Thu\",\"Fri\", \"Sat\", \"Sun\"]",
+          "document": "<p>可以执行的时间，枚举值：[&quot;Mon&quot;,&quot;Tue&quot;,&quot;Wed&quot;,&quot;Thu&quot;,&quot;Fri&quot;, &quot;Sat&quot;, &quot;Sun&quot;]</p>",
           "example": "[\"Mon\"]",
           "member": "string",
           "name": "MaintainWeekDays",
@@ -5591,7 +5662,7 @@
         },
         {
           "disabled": false,
-          "document": "serverless实例子状态",
+          "document": "<p>serverless实例子状态</p>",
           "example": "pause",
           "member": "string",
           "name": "ServerlessStatus",
@@ -5601,7 +5672,7 @@
         },
         {
           "disabled": false,
-          "document": "实例任务信息",
+          "document": "<p>实例任务信息</p>",
           "example": "无",
           "member": "ObjectTask",
           "name": "InstanceTasks",
@@ -5611,7 +5682,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机器类型\n1. common，通用型。\n2. exclusive，独享型。",
+          "document": "<p>实例机器类型</p><ol><li>common，通用型。</li><li>exclusive，独享型。</li></ol>",
           "example": "exclusive",
           "member": "string",
           "name": "InstanceDeviceType",
@@ -5621,7 +5692,7 @@
         },
         {
           "disabled": false,
-          "document": "实例存储类型\n说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。",
+          "document": "<p>实例存储类型<br>说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。</p>",
           "example": "CLOUD_TCS",
           "member": "string",
           "name": "InstanceStorageType",
@@ -5631,7 +5702,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库类型",
+          "document": "<p>数据库类型</p>",
           "example": "normal",
           "member": "string",
           "name": "DbMode",
@@ -5641,12 +5712,22 @@
         },
         {
           "disabled": false,
-          "document": "节点列表\n说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。",
+          "document": "<p>节点列表<br>说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。</p>",
           "example": "[\"libran-0\"]",
           "member": "string",
           "name": "NodeList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI优化器状态</p>",
+          "example": "无",
+          "member": "AIOptimizerStatus",
+          "name": "AIOptimizerStatus",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -5861,7 +5942,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标保险箱ID，备份文件将复制到此保险箱",
+          "document": "<p>目标保险箱ID，备份文件将复制到此保险箱</p>",
           "example": "vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a",
           "member": "string",
           "name": "VaultId",
@@ -5870,7 +5951,7 @@
         },
         {
           "disabled": false,
-          "document": "备份文件ID列表，支持批量复制多个备份文件",
+          "document": "<p>备份文件ID列表，支持批量复制多个备份文件</p>",
           "example": "[126511]",
           "member": "int64",
           "name": "BackupIds",
@@ -5885,7 +5966,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "4295131269",
           "member": "int64",
           "name": "TaskId",
@@ -7031,6 +7112,15 @@
           "name": "EncryptMethod",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>ai 基座信息</p>",
+          "example": "无",
+          "member": "AgenticBaseInfo",
+          "name": "AgenticBaseInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -34561,7 +34651,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作类型:add,modify,remove",
+          "document": "<p>操作类型:add,modify,remove</p>",
           "example": "add",
           "member": "string",
           "name": "OpType",
@@ -34572,7 +34662,7 @@
         },
         {
           "disabled": false,
-          "document": "配置 ID",
+          "document": "<p>配置 ID</p>",
           "example": "SparseConfig-0yj7gkuv",
           "member": "string",
           "name": "ConfigId",
@@ -34583,7 +34673,7 @@
         },
         {
           "disabled": false,
-          "document": "周期策略类型：weekly/monthly/yearly",
+          "document": "<p>周期策略类型：weekly/monthly/yearly</p>",
           "example": "yearly",
           "member": "string",
           "name": "SparsePeriodConfig",
@@ -34594,7 +34684,7 @@
         },
         {
           "disabled": false,
-          "document": "周期时间配置",
+          "document": "<p>周期时间配置</p>",
           "example": "无",
           "member": "SparsePeriodTime",
           "name": "SparsePeriodTime",
@@ -34605,7 +34695,7 @@
         },
         {
           "disabled": false,
-          "document": "保留天数（7-7320天，最长20年）",
+          "document": "<p>保留天数（7-7320天，最长20年）</p>",
           "example": "365",
           "member": "int64",
           "name": "SparseBackupSaveDays",
@@ -34622,7 +34712,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "稀疏备份开关：ON/OFF\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>稀疏备份开关：ON/OFF</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ON",
           "member": "string",
           "name": "SparseBackupSwitch",
@@ -34632,7 +34722,7 @@
         },
         {
           "disabled": false,
-          "document": "稀疏备份策略列表（1-3条）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>稀疏备份策略列表（1-3条）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SparseBackupConfigInfo",
           "name": "SparseBackupConfigInfos",
@@ -35767,6 +35857,52 @@
           "member": "int64",
           "name": "MigrateDBTaskId",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TriggerAIOptimizerTrainingRequest": {
+      "document": "TriggerAIOptimizerTraining请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "cynosdbmysql-1ai3vvcz",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "cynosdbmysql-ins-ltdlsq3i",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TriggerAIOptimizerTrainingResponse": {
+      "document": "TriggerAIOptimizerTraining返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务流id</p>",
+          "example": "8053",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },

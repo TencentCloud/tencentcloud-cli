@@ -364,6 +364,13 @@
       "output": "DescribeKyuubiQueryInfoResponse",
       "status": "online"
     },
+    "DescribeMaskRulesSTDV2": {
+      "document": "Ranger 查询脱敏规则接口",
+      "input": "DescribeMaskRulesSTDV2Request",
+      "name": "查询脱敏策略",
+      "output": "DescribeMaskRulesSTDV2Response",
+      "status": "online"
+    },
     "DescribeNodeDataDisks": {
       "document": "查询节点数据盘信息",
       "input": "DescribeNodeDataDisksRequest",
@@ -565,6 +572,13 @@
       "input": "InstallSoftwareRequest",
       "name": "安装组件",
       "output": "InstallSoftwareResponse",
+      "status": "online"
+    },
+    "IssueMaskRulesSTD": {
+      "document": "EMR集群 下发或修改脱敏规则",
+      "input": "IssueMaskRulesSTDRequest",
+      "name": "新增修改脱敏规则",
+      "output": "IssueMaskRulesSTDResponse",
       "status": "online"
     },
     "ModifyAutoRenewFlag": {
@@ -9739,6 +9753,134 @@
       ],
       "type": "object"
     },
+    "DescribeMaskRulesSTDV2Request": {
+      "document": "DescribeMaskRulesSTDV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "emr-ja22ar7t",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型</p>",
+          "example": "HIVE",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通过用户查询</p>",
+          "example": "[\"ana\",\"bob\"]",
+          "member": "string",
+          "name": "Users",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通过用户组查询</p>",
+          "example": "[\"group1\",\"group2\"]",
+          "member": "string",
+          "name": "Groups",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通过角色查询</p>",
+          "example": "[\"role1\", \"role2\"]",
+          "member": "string",
+          "name": "Roles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p>",
+          "example": "\"database\"",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通过具体的资源筛选</p>",
+          "example": "无",
+          "member": "RangerResource",
+          "name": "Resource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于排序的信息</p>",
+          "example": "无",
+          "member": "RangerOrderFields",
+          "name": "OrderFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，默认 20，最大100</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页参数，默认 0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMaskRulesSTDV2Response": {
+      "document": "DescribeMaskRulesSTDV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略列表</p>",
+          "example": "无",
+          "member": "RangerPolicy",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的权限列表</p>",
+          "example": "11",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNodeDataDisksRequest": {
       "document": "DescribeNodeDataDisks请求参数结构体",
       "members": [
@@ -16230,6 +16372,70 @@
         }
       ],
       "usage": "both"
+    },
+    "IssueMaskRulesSTDRequest": {
+      "document": "IssueMaskRulesSTD请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎ID",
+          "example": "\"emr-xa2zsd\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于创建的批量用户信息",
+          "example": "无",
+          "member": "RangerPolicy",
+          "name": "PolicySet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "ADD：增加规则 DELETE：删除规则 UPDATE:先删除后新增",
+          "example": "\"ADD\"",
+          "member": "string",
+          "name": "OperateType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组件类型",
+          "example": "“HIVE”",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IssueMaskRulesSTDResponse": {
+      "document": "IssueMaskRulesSTD返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每个用户的输出结果",
+          "example": "无",
+          "member": "RangerResultItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Item": {
       "document": "代表一个kv结构",
@@ -22776,6 +22982,394 @@
         }
       ],
       "usage": "out"
+    },
+    "RangerDataMaskInfo": {
+      "document": "Ranger 查询接口 脱敏信息对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "脱敏类型",
+          "example": "“MASK_NULL”",
+          "member": "string",
+          "name": "DataMaskType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值表达式",
+          "example": "null",
+          "member": "string",
+          "name": "ValueExpr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RangerDataMaskPolicyItem": {
+      "document": "Ranger 查询接口 数据脱敏策略 Item",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组数组",
+          "example": "[\"group1\",\"group2\"]",
+          "member": "string",
+          "name": "Groups",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户数组",
+          "example": "[\"ana\",\"bob\"]",
+          "member": "string",
+          "name": "Users",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "脱敏信息对象",
+          "example": "无",
+          "member": "RangerDataMaskInfo",
+          "name": "DataMaskInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RangerOrderFields": {
+      "document": "Ranger 查询接口 排序规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "Desc",
+          "member": "string",
+          "name": "Direction",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "“name”",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RangerPolicy": {
+      "document": "Ranger 查询接口 脱敏策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源</p>",
+          "example": "无",
+          "member": "RangerResource",
+          "name": "Resource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据脱敏策略ITEM</p>",
+          "example": "无",
+          "member": "RangerDataMaskPolicyItem",
+          "name": "DataMaskPolicyItems",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略名称</p>",
+          "example": "“test_describe_policy_003”",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略ID</p>",
+          "example": "“1”",
+          "member": "string",
+          "name": "PolicyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略优先级参数仅支持 0 或 1，默认值为 0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "PolicyPriority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略有效期开始时间</p><p>单位：时间戳</p>",
+          "example": "1744531200",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略有效期截止时间</p><p>单位：时间戳</p>",
+          "example": "1744531200",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时区</p>",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "TimeZone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RangerResource": {
+      "document": "Ranger 脱敏查询-通过具体资源筛选",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库",
+          "example": "“database”",
+          "member": "string",
+          "name": "Database",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据表",
+          "example": "“table”",
+          "member": "string",
+          "name": "Table",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段",
+          "example": "“column”",
+          "member": "string",
+          "name": "Column",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据Schema",
+          "example": "“schema”",
+          "member": "string",
+          "name": "Schema",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源路径",
+          "example": "“path”",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "catalog",
+          "example": "“catalog”",
+          "member": "string",
+          "name": "Catalog",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "“namespace”",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "行",
+          "example": "“row”",
+          "member": "string",
+          "name": "Row",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列族",
+          "example": "“columnFamily”",
+          "member": "string",
+          "name": "ColumnFamily",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列限定名",
+          "example": "“columnQualifier”",
+          "member": "string",
+          "name": "ColumnQualifier",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单元格",
+          "example": "“cell”",
+          "member": "string",
+          "name": "Cell",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题",
+          "example": "“topic”",
+          "member": "string",
+          "name": "Topic",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "hive",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RangerResultItem": {
+      "document": "修改新增脱敏接口-每个用户的输出结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源名称\n",
+          "example": "default.a.c",
+          "member": "string",
+          "name": "Item",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前资源的规则是否创建成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "若是创建失败, 提供失败原因",
+          "example": "null",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略ID",
+          "example": "1",
+          "member": "string",
+          "name": "PolicyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RayCluster": {
       "document": "RayCluster",

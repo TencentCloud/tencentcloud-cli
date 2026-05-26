@@ -416,6 +416,14 @@
         "title": "DescribeKyuubiQueryInfo"
       }
     ],
+    "DescribeMaskRulesSTDV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMaskRulesSTDV2\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-ja22ar7t\",\n    \"ServiceType\": \"HIVE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataMaskPolicyItems\": [\n                    {\n                        \"DataMaskInfo\": {\n                            \"DataMaskType\": \"MASK_HASH\",\n                            \"ValueExpr\": \"\"\n                        },\n                        \"Groups\": [\n                            \"public\"\n                        ],\n                        \"Users\": []\n                    }\n                ],\n                \"PolicyId\": \"88\",\n                \"PolicyName\": \"hive-abaa2324-d962-4e6a-8d37-9ea5cdadf572\",\n                \"Resource\": {\n                    \"Catalog\": \"\",\n                    \"Cell\": \"\",\n                    \"Column\": \"id\",\n                    \"ColumnFamily\": \"\",\n                    \"ColumnQualifier\": \"\",\n                    \"Database\": \"security_mask_test2\",\n                    \"Namespace\": \"\",\n                    \"Path\": \"\",\n                    \"ResourceType\": \"column\",\n                    \"Row\": \"\",\n                    \"Schema\": \"\",\n                    \"Table\": \"user_info\",\n                    \"Topic\": \"\"\n                }\n            }\n        ],\n        \"TotalCount\": 11,\n        \"RequestId\": \"212ccbaf-1af1-4bd4-b87a-cd75c045f426\"\n    }\n}",
+        "title": "查询脱敏规则"
+      }
+    ],
     "DescribeNodeDataDisks": [
       {
         "document": "",
@@ -646,6 +654,14 @@
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallSoftware\n<公共请求参数>\n\n{\n    \"ExternalService\": [],\n    \"InstanceId\": \"emr-16ybdkys\",\n    \"SoftInfo\": [\n        \"delta-2.2.0\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorMessages\": null,\n        \"RequestId\": \"a7f4bda9-8fc5-4b32-9cc2-7178200d4719\"\n    }\n}",
         "title": "安装服务"
+      }
+    ],
+    "IssueMaskRulesSTD": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IssueMaskRulesSTD\n<公共请求参数>\n\n{\n    \"InstanceId\": \"实例ID\",\n    \"OperateType\": \"ADD\",\n    \"PolicySet\": {}\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2b41c59d-93c8-43e2-a2f0-6c5df9735d21\",\n        \"Data\": [\n            {\n                \"Item\": \"default.a.c\",\n                \"Result\": true\n            },\n            {\n                \"Item\": \"abc\",\n                \"Result\": \"Duplicated\"\n            }\n        ]\n    }\n}",
+        "title": "创建/修改脱敏规则"
       }
     ],
     "ModifyAutoRenewFlag": [
