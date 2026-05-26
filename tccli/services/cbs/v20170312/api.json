@@ -2616,71 +2616,11 @@
       "type": "object"
     },
     "DetailPrice": {
-      "document": "描述购买云盘时的费用明细。",
+      "document": "描述购买云硬盘时的费用明细。",
       "members": [
         {
           "disabled": false,
-          "document": "描述计费项目名称。",
-          "example": "云硬盘空间",
-          "member": "string",
-          "name": "PriceTitle",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "描述计费项目显示名称，用户控制台展示。",
-          "example": "DiskSpace",
-          "member": "string",
-          "name": "PriceName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "预付费云盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "100.0",
-          "member": "float",
-          "name": "OriginalPrice",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "预付费云盘预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "100.0",
-          "member": "float",
-          "name": "DiscountPrice",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "后付费云盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10.0",
-          "member": "float",
-          "name": "UnitPrice",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "后付费云盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10.0",
-          "member": "float",
-          "name": "UnitPriceDiscount",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "后付费云盘的计价单元，取值范围：HOUR：表示后付费云盘的计价单元是按小时计算。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费云硬盘的计价单元，取值范围：HOUR：表示后付费云硬盘的计价单元是按小时计算。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "HOUR",
           "member": "string",
           "name": "ChargeUnit",
@@ -2690,18 +2630,18 @@
         },
         {
           "disabled": false,
-          "document": "高精度预付费云盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "100",
-          "member": "string",
-          "name": "OriginalPriceHigh",
+          "document": "预付费云硬盘预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80.00",
+          "member": "float",
+          "name": "DiscountPrice",
           "output_required": true,
-          "type": "string",
+          "type": "float",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "高精度预付费云盘预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "100",
+          "document": "高精度预付费云硬盘预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80.00",
           "member": "string",
           "name": "DiscountPriceHigh",
           "output_required": true,
@@ -2710,20 +2650,80 @@
         },
         {
           "disabled": false,
-          "document": "高精度后付费云盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "100",
+          "document": "预付费云硬盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100.00",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高精度预付费云硬盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100.00",
           "member": "string",
-          "name": "UnitPriceHigh",
+          "name": "OriginalPriceHigh",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "高精度后付费云盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "100",
+          "document": "描述计费项目名称",
+          "example": "DiskSpace",
+          "member": "string",
+          "name": "PriceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述计费项目显示名称，用户控制台展示",
+          "example": "云硬盘空间",
+          "member": "string",
+          "name": "PriceTitle",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后付费云硬盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100.00",
+          "member": "float",
+          "name": "UnitPrice",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后付费云硬盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80.00",
+          "member": "float",
+          "name": "UnitPriceDiscount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高精度后付费云硬盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80.00",
           "member": "string",
           "name": "UnitPriceDiscountHigh",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高精度后付费云硬盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100.00",
+          "member": "string",
+          "name": "UnitPriceHigh",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
@@ -4323,6 +4323,39 @@
         },
         {
           "disabled": false,
+          "document": "实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdc-8pz1i7hg",
+          "member": "string",
+          "name": "CdcId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CdcName",
+          "member": "string",
+          "name": "CdcName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "独享集群id。",
+          "example": "cluster-es1mfycs",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "实例所属项目ID，可通过DescribeProject获取。不填默认为0，表示默认项目。",
           "example": "0",
           "member": "uint64",
@@ -4342,39 +4375,6 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "CdcName",
-          "member": "string",
-          "name": "CdcName",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "cdc-8pz1i7hg",
-          "member": "string",
-          "name": "CdcId",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "独享集群id。",
-          "example": "cluster-es1mfycs",
-          "member": "string",
-          "name": "DedicatedClusterId",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4536,22 +4536,22 @@
       "usage": "out"
     },
     "Price": {
-      "document": "描述预付费或后付费云盘的价格。",
+      "document": "描述预付费或后付费云硬盘的价格。",
       "members": [
         {
           "disabled": false,
-          "document": "后付费云盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1.0",
-          "member": "float",
-          "name": "UnitPriceDiscount",
+          "document": "后付费云硬盘的计价单元，取值范围：HOUR：表示后付费云硬盘的计价单元是按小时计算。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HOUR",
+          "member": "string",
+          "name": "ChargeUnit",
           "output_required": true,
-          "type": "float",
+          "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "预付费云盘预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1.0",
+          "document": "预付费云硬盘预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80.00",
           "member": "float",
           "name": "DiscountPrice",
           "output_required": true,
@@ -4560,48 +4560,8 @@
         },
         {
           "disabled": false,
-          "document": "后付费云盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1.0",
-          "member": "float",
-          "name": "UnitPrice",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "高精度后付费云盘原单价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"1.00\"",
-          "member": "string",
-          "name": "UnitPriceHigh",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "高精度预付费云盘预支费用的原价, 单位：元\t。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"1.00\"",
-          "member": "string",
-          "name": "OriginalPriceHigh",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "预付费云盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1.0",
-          "member": "float",
-          "name": "OriginalPrice",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "高精度预付费云盘预支费用的折扣价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"1.00\"",
+          "document": "高精度预付费云硬盘预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80.00",
           "member": "string",
           "name": "DiscountPriceHigh",
           "output_required": true,
@@ -4610,8 +4570,48 @@
         },
         {
           "disabled": false,
-          "document": "高精度后付费云盘折扣单价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"1.00\"",
+          "document": "预付费云硬盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100.00",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高精度预付费云硬盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100.00",
+          "member": "string",
+          "name": "OriginalPriceHigh",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后付费云硬盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100.00",
+          "member": "float",
+          "name": "UnitPrice",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后付费云硬盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80.00",
+          "member": "float",
+          "name": "UnitPriceDiscount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高精度后付费云硬盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80.00",
           "member": "string",
           "name": "UnitPriceDiscountHigh",
           "output_required": true,
@@ -4620,10 +4620,10 @@
         },
         {
           "disabled": false,
-          "document": "后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"HOUR\"",
+          "document": "高精度后付费云硬盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100.00",
           "member": "string",
-          "name": "ChargeUnit",
+          "name": "UnitPriceHigh",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
@@ -5136,6 +5136,7 @@
           "example": "TagKey",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5146,6 +5147,7 @@
           "example": "TagValue",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

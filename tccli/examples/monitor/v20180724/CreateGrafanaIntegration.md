@@ -31,7 +31,7 @@ Input:
 tccli monitor CreateGrafanaIntegration --cli-unfold-argument  \
     --InstanceId grafana-test \
     --Kind tencentcloud-monitor-app \
-    --Content {"kind":"tencentcloud-monitor-app","spec":{"dataSourceSpec":{"name":"prometheus-monitor","authProvider":{"__anyOf":"使用密钥","secretId":"AKIDtest","secretKey":"test"}},"grafanaSpec":{"organizationIds":["2"]}}}
+    --Content {"kind":"tencentcloud-monitor-app","spec":{"dataSourceSpec":{"name":"prometheus-monitor","authProvider":{"secretId":"AKIDtest","secretKey":"test"}},"grafanaSpec":{"organizationIds":["2"]}}}
 ```
 
 Output: 
@@ -53,8 +53,8 @@ Input:
 ```
 tccli monitor CreateGrafanaIntegration --cli-unfold-argument  \
     --InstanceId grafana-test \
-    --Kind tencent-cls-grafana-datasource-v2 \
-    --Content {"kind":"tencent-cls-grafana-datasource-v2","spec":{"dataSourceSpec":{"name":"prometheus-cls","authProvider":{"__anyOf":"使用密钥","secretId":"AKIDtest","secretKey":"test"}},"grafanaSpec":{"organizationIds":["2"]}}}
+    --Kind tencent-cls-grafana-datasource-v3 \
+    --Content {"kind":"tencent-cls-grafana-datasource-v3","spec":{"dataSourceSpec":{"name":"test","secretId":"XXXXXXXXXXXXXXXXXXXXAKIDXXXXXXXXXXXX","secretKey":"XXXXXXXXXXXXXXXXXXXXAKIDXXXXXXXX"},"grafanaSpec":{"organizationIds":[]}}}
 ```
 
 Output: 

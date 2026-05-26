@@ -136,6 +136,14 @@
         "title": "查询监听器"
       }
     ],
+    "DescribeTaskResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"340899b5-29b3-4cc1-825b-69d4de7ee200\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23e8949a-487c-4c6a-82e9-fb1636eeac33\",\n        \"Status\": \"SUCCESS\"\n    }\n}",
+        "title": "查询异步任务结果"
+      }
+    ],
     "ModifyAccelerateAreas": [
       {
         "document": "",
@@ -171,8 +179,8 @@
     "ModifyListener": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyListener\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"ListenerId\": \"lsr-5lkfom8v\",\n    \"Name\": \"garendu-UDP-modify\",\n    \"Description\": \"garendu-UDP-modify\",\n    \"IdleTimeout\": 16\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"141079e2-c9ce-424f-9d5a-e0474b2da088\",\n        \"TaskId\": \"24fdeb66-ad40-4a78-864c-15e49b6ef8d0\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyListener\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-xxxxxxx\",\n    \"ListenerId\": \"lsr-xxxxxx\",\n    \"Name\": \"端口段测试\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"30b391b1-6086-4118-a314-4a2b78111fbd\",\n        \"TaskId\": \"099c31b3-82bd-4b1a-bbd1-0ad614b4f54c\"\n    }\n}",
         "title": "修改监听器"
       }
     ]

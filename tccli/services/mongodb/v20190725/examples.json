@@ -96,6 +96,14 @@
         "title": "删除审计日志文件"
       }
     ],
+    "DeleteDBBackups": [
+      {
+        "document": "删除全量备份",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDBBackups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-51l0dj35\",\n    \"BackupIds\": [\n        39983\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ab09c94-b2fc-4053-9115-ccc178e56000\"\n    }\n}",
+        "title": "删除全量备份"
+      }
+    ],
     "DeleteLogDownloadTask": [
       {
         "document": "删除日志下载任务",
@@ -294,6 +302,14 @@
         "title": "查询日志"
       }
     ],
+    "DescribePasswordRotation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePasswordRotation\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"930afb21-78c2-4abc-ad18-9432ec144df5\"\n    }\n}",
+        "title": "查询账号轮转信息"
+      }
+    ],
     "DescribeSRVConnectionDomain": [
       {
         "document": "",
@@ -356,6 +372,14 @@
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DropDBInstanceParamTpl\n<公共请求参数>\n\n{\n    \"TplId\": \"tpl-b2l1n0886\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"33bb57b9-4090-40d8-a608-22299973063f\"\n    }\n}",
         "title": "删除参数模板"
+      }
+    ],
+    "EnablePasswordRotation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnablePasswordRotation\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ab09c94-b2fc-4053-9115-ccc178e56000\"\n    }\n}",
+        "title": "开启密码轮转"
       }
     ],
     "EnableSRVConnectionUrl": [
@@ -458,6 +482,14 @@
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuditService\n<公共请求参数>\n\n{\n    \"LogExpireDay\": 365,\n    \"InstanceId\": \"cmgo-xfts****\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "更改审计服务配置"
+      }
+    ],
+    "ModifyBackupExpireTime": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupExpireTime\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-********\",\n    \"ExpireTime\": \"2026-06-06 04:02:00\",\n    \"BackupIds\": [\n        11123430\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedBackups\": [\n            21123430\n        ],\n        \"RequestId\": \"35a28e4e-a5bf-441a-8729-b63442bd5cf2\"\n    }\n}",
+        "title": "修改备份过期时间"
       }
     ],
     "ModifyDBInstanceNetworkAddress": [

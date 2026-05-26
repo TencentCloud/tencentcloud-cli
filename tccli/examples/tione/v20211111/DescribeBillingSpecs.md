@@ -1,32 +1,35 @@
-**Example 1: 查询计费项列表 示例**
+**Example 1: 查询可用的计算资源计费项规格**
 
-查询计费项列表
+
 
 Input: 
 
 ```
 tccli tione DescribeBillingSpecs --cli-unfold-argument  \
-    --ChargeType PREPAID \
-    --TaskType TRAIN
+    --ChargeType POSTPAID_BY_HOUR \
+    --ResourceType GPU
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "9f91ba5c-03bb-4c02-b9cc-d2740821112f",
         "Specs": [
             {
-                "SpecName": "TI.GN10.2XLARGE40.POST",
-                "SpecAlias": "8核40GB V100*1",
-                "SpecId": "sv_tio_platform_cloud_post_gpu_8c40g_1v100",
-                "Available": false,
-                "AvailableRegion": [
-                    "ap-guangzhou",
-                    "ap-beijing"
-                ]
+                "Available": true,
+                "AvailableRegion": [],
+                "CategoryId": "1024552",
+                "GpuType": "T4",
+                "SpecAlias": "8C32GB GPU(T4)*1",
+                "SpecFeatures": [
+                    "TurboCFS"
+                ],
+                "SpecId": "sv_tio_platform_cloud_post_gpu_8c32g_1t4",
+                "SpecName": "TI.GN7.2XLARGE32.POST",
+                "SpecType": "GPU"
             }
-        ]
+        ],
+        "RequestId": "41cf032e-3bcd-4e60-8c97-98cb0812b505"
     }
 }
 ```

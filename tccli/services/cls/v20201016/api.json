@@ -8709,7 +8709,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>splunk投递任务名称；<br>name有如下限制：</p><ul><li>不能为空</li><li>长度不大于64</li><li>只能包含aA-zZ、下划线、-、0-9</li></ul>",
+          "document": "<p>splunk投递任务名称；name有如下限制：- 不能为空- 长度不大于256- 只能包含aA-zZ、下划线、-、0-9</p>",
           "example": "template-1",
           "member": "string",
           "name": "Name",
@@ -8980,7 +8980,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>0： 按功能项计费</li><li>1： 原始日志量计费</li></ul><p>默认值：0</p><p>通过接口调用时默认值为0，通过控制台调用时默认值为1</p>",
+          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>0： 按使用功能计费</li><li>1： 按原始日志量计费（目前仅面向少部分客户支持）</li></ul><p>默认值：0</p>",
           "example": "0",
           "member": "uint64",
           "name": "BillingMode",
@@ -22581,7 +22581,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>投递任务名称<br>name有以下限制：</p><ul><li>不能为空</li><li>长度不大于64</li><li>只能包含aA-zZ、下划线、-、0-9</li></ul>",
+          "document": "<p>投递任务名称name有以下限制：- 不能为空- 长度不大于256- 只能包含aA-zZ、下划线、-、0-9</p>",
           "example": "template-1",
           "member": "string",
           "name": "Name",
@@ -22851,7 +22851,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>0： 按功能项计费</li><li>1： 原始日志量计费</li></ul>",
+          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>0： 按使用功能计费</li><li>1： 按原始日志量计费（目前仅面向少部分客户支持）</li></ul><p>默认值：0</p>",
           "example": "0",
           "member": "uint64",
           "name": "BillingMode",
@@ -23006,7 +23006,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行周期， 可选值：`Period`、`Fixed`、`Cron`。\n\n- Period：固定频率\n- Fixed：固定时间\n- Cron：Cron表达式",
+          "document": "<p>执行周期， 可选值：<code>Period</code>、<code>Fixed</code>、<code>Cron</code>。</p><ul><li>Period：固定频率</li><li>Fixed：固定时间</li><li>Cron：Cron表达式</li></ul>",
           "example": "Period",
           "member": "string",
           "name": "Type",
@@ -23017,7 +23017,7 @@
         },
         {
           "disabled": false,
-          "document": "执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。\n当type为`Period`,`Fixed`时，time字段生效。",
+          "document": "<p>执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。<br>当type为<code>Period</code>,<code>Fixed</code>时，time字段生效。</p>",
           "example": "1",
           "member": "int64",
           "name": "Time",
@@ -23028,8 +23028,8 @@
         },
         {
           "disabled": false,
-          "document": "执行的周期cron表达式。示例：`\"*/1 * * * *\"` 从左到右每个field的含义 Minutes field(分钟), Hours field(小时),Day of month field(日期),Month field(月份),Day of week field(星期)， 不支持秒级别。\n当type为`Cron`时，CronExpression字段生效。",
-          "example": "*/1 * * * *",
+          "document": "<p>执行的周期cron表达式。示例：<code>0/1 * * * *</code> 从左到右每个field的含义 Minutes field(分钟), Hours field(小时),Day of month field(日期),Month field(月份),Day of week field(星期)， 不支持秒级别。当type为<code>Cron</code>时，CronExpression字段生效。</p>",
+          "example": "0/1 * * * *",
           "member": "string",
           "name": "CronExpression",
           "output_required": false,
@@ -27137,7 +27137,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>当前计费模式</p><p>枚举值：</p><ul><li>0： 按功能项计费</li><li>1： 原始日志量计费</li></ul>",
+          "document": "<p>当前计费模式</p><p>枚举值：</p><ul><li>0： 按使用功能计费</li><li>1： 按原始日志量计费（目前仅面向少部分客户支持）</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "BillingMode",
@@ -27147,7 +27147,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>如果有异步任务，任务成功后的新计费模式</p><p>枚举值：</p><ul><li>0： 按功能项计费</li><li>1： 原始日志量计费</li></ul>",
+          "document": "<p>如果有异步任务，任务成功后的新计费模式</p><p>枚举值：</p><ul><li>0： 按使用功能计费</li><li>1： 按原始日志量计费（目前仅面向少部分客户支持）</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "NewBillingMode",

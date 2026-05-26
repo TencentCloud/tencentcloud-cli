@@ -693,6 +693,13 @@
       "output": "DescribeInstanceResponse",
       "status": "online"
     },
+    "DescribeLicenseOverview": {
+      "document": "查询实例概览详情。",
+      "input": "DescribeLicenseOverviewRequest",
+      "name": "获取实例激活码详情",
+      "output": "DescribeLicenseOverviewResponse",
+      "status": "online"
+    },
     "DescribeLoRaFrequency": {
       "document": "提供查询LoRa自定义频点详情的能力",
       "input": "DescribeLoRaFrequencyRequest",
@@ -10030,6 +10037,33 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseOverviewRequest": {
+      "document": "DescribeLicenseOverview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-DGAFvpuVF7",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseOverviewResponse": {
+      "document": "DescribeLicenseOverview返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

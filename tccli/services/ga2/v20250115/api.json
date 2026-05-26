@@ -119,6 +119,13 @@
       "output": "DescribeListenersResponse",
       "status": "online"
     },
+    "DescribeTaskResult": {
+      "document": "查询异步任务结果",
+      "input": "DescribeTaskResultRequest",
+      "name": "查询异步任务结果",
+      "output": "DescribeTaskResultResponse",
+      "status": "online"
+    },
     "ModifyAccelerateAreas": {
       "document": "修改加速地域",
       "input": "ModifyAccelerateAreasRequest",
@@ -1525,45 +1532,82 @@
       ],
       "type": "object"
     },
+    "DescribeTaskResultRequest": {
+      "document": "DescribeTaskResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID。",
+          "example": "37f82c4e-a9b3-4c05-bf21-9c5492f9f856",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskResultResponse": {
+      "document": "DescribeTaskResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EndpointConfigurations": {
       "document": "终端节点配置",
       "members": [
         {
           "disabled": false,
-          "document": "域名类型。可选值'Domain', 'PublicIp'。",
+          "document": "<p>域名类型。可选值&#39;Domain&#39;, &#39;PublicIp&#39;。</p>",
           "example": "Domain",
           "member": "string",
           "name": "EndpointType",
-          "output_required": false,
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "域名。",
-          "example": "无",
+          "document": "<p>域名。</p>",
+          "example": "www.test.com",
           "member": "string",
           "name": "EndpointService",
-          "output_required": false,
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "权重。",
+          "document": "<p>权重。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Weight",
-          "output_required": false,
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "健康检查状态；HEALTH：健康；UNHEALTH：不健康。",
+          "document": "<p>健康检查状态；HEALTH：健康；UNHEALTH：不健康。</p>",
           "example": "HEALTH",
           "member": "string",
           "name": "HealthCheckStatus",
@@ -3052,7 +3096,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全球加速实例ID。",
+          "document": "<p>全球加速实例ID。</p>",
           "example": "ga-sfg45k23",
           "member": "string",
           "name": "GlobalAcceleratorId",
@@ -3061,7 +3105,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器ID。",
+          "document": "<p>监听器ID。</p>",
           "example": "lsr-00048c4x",
           "member": "string",
           "name": "ListenerId",
@@ -3070,7 +3114,7 @@
         },
         {
           "disabled": false,
-          "document": "名称，最大长度不能超过60个字节。",
+          "document": "<p>名称，最大长度不能超过60个字节。</p>",
           "example": "name",
           "member": "string",
           "name": "Name",
@@ -3079,7 +3123,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息，最大长度不能超过100个字节。",
+          "document": "<p>描述信息，最大长度不能超过100个字节。</p>",
           "example": "description",
           "member": "string",
           "name": "Description",
@@ -3088,7 +3132,7 @@
         },
         {
           "disabled": false,
-          "document": "连接空闲等待时间。",
+          "document": "<p>连接空闲等待时间。</p>",
           "example": "3",
           "member": "uint64",
           "name": "IdleTimeout",
@@ -3097,7 +3141,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启会话保持。",
+          "document": "<p>是否开启会话保持。</p>",
           "example": "Open",
           "member": "string",
           "name": "ClientAffinity",
@@ -3106,7 +3150,7 @@
         },
         {
           "disabled": false,
-          "document": "会话保持时间。",
+          "document": "<p>会话保持时间。</p>",
           "example": "1",
           "member": "uint64",
           "name": "ClientAffinityTime",
@@ -3115,7 +3159,7 @@
         },
         {
           "disabled": false,
-          "document": "请求超时时间。",
+          "document": "<p>请求超时时间。</p>",
           "example": "1",
           "member": "uint64",
           "name": "RequestTimeout",
@@ -3124,8 +3168,8 @@
         },
         {
           "disabled": false,
-          "document": "是否打开七层获取源IP方式。",
-          "example": "True",
+          "document": "<p>是否打开七层获取源IP方式。</p>",
+          "example": "true",
           "member": "bool",
           "name": "XForwardedForRealIp",
           "required": false,
@@ -3133,7 +3177,7 @@
         },
         {
           "disabled": false,
-          "document": "解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。",
+          "document": "<p>解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。</p>",
           "example": "UNIDIRECTIONAL",
           "member": "string",
           "name": "CertificationType",
@@ -3142,7 +3186,7 @@
         },
         {
           "disabled": false,
-          "document": "加密算法套件。",
+          "document": "<p>加密算法套件。</p>",
           "example": "tls_cipher_policy_1_0",
           "member": "string",
           "name": "CipherPolicyId",
@@ -3151,8 +3195,8 @@
         },
         {
           "disabled": false,
-          "document": "服务器证书。",
-          "example": "LBNUH4N3",
+          "document": "<p>服务器证书。</p>",
+          "example": "[\"LBNUH4N3\"]",
           "member": "string",
           "name": "ServerCertificates",
           "required": false,
@@ -3160,8 +3204,8 @@
         },
         {
           "disabled": false,
-          "document": "客户端证书。",
-          "example": "KVfO6PUQ",
+          "document": "<p>客户端证书。</p>",
+          "example": "[\"KVfO6PUQ\"]",
           "member": "string",
           "name": "ClientCaCertificates",
           "required": false,
@@ -3169,7 +3213,7 @@
         },
         {
           "disabled": false,
-          "document": "四层获取源IP方式。",
+          "document": "<p>四层获取源IP方式。</p>",
           "example": "ProxyProtocol",
           "member": "string",
           "name": "GetRealIpType",
@@ -3184,7 +3228,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID。",
+          "document": "<p>任务ID。</p>",
           "example": "0a162e80-c98e-47eb-a145-d2015fd490fb",
           "member": "string",
           "name": "TaskId",

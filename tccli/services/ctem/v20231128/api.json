@@ -7721,7 +7721,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID",
+          "document": "<p>主键ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -7731,7 +7731,7 @@
         },
         {
           "disabled": false,
-          "document": "主域名",
+          "document": "<p>主域名</p>",
           "example": "qq.com",
           "member": "string",
           "name": "Domain",
@@ -7741,7 +7741,7 @@
         },
         {
           "disabled": false,
-          "document": "ICP",
+          "document": "<p>ICP</p>",
           "example": "粤ICP备1900xx号",
           "member": "string",
           "name": "ICP",
@@ -7751,7 +7751,7 @@
         },
         {
           "disabled": false,
-          "document": "注册时间",
+          "document": "<p>注册时间</p>",
           "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "RegisteredTime",
@@ -7761,7 +7761,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "<p>过期时间</p>",
           "example": "2099-01-01 00:00:00",
           "member": "string",
           "name": "ExpiredTime",
@@ -7771,7 +7771,7 @@
         },
         {
           "disabled": false,
-          "document": "公司",
+          "document": "<p>公司</p>",
           "example": "腾讯科技",
           "member": "string",
           "name": "Company",
@@ -7781,7 +7781,7 @@
         },
         {
           "disabled": false,
-          "document": "公共字段",
+          "document": "<p>公共字段</p>",
           "example": "无",
           "member": "DisplayToolCommon",
           "name": "DisplayToolCommon",
@@ -7791,7 +7791,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为云资产",
+          "document": "<p>是否为云资产</p>",
           "example": "1",
           "member": "int64",
           "name": "IsCloudAsset",
@@ -7801,7 +7801,7 @@
         },
         {
           "disabled": false,
-          "document": "云资产状态，-1为下线",
+          "document": "<p>云资产状态，-1为下线</p>",
           "example": "0",
           "member": "int64",
           "name": "CloudAssetStatus",
@@ -10064,7 +10064,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子公司ID",
+          "document": "<p>子公司ID</p>",
           "example": "2664c3d2bcf233f2052ba78177394415",
           "member": "string",
           "name": "EnterpriseUid",
@@ -10074,7 +10074,7 @@
         },
         {
           "disabled": false,
-          "document": "子公司名称",
+          "document": "<p>子公司名称</p>",
           "example": "暴露面管理",
           "member": "string",
           "name": "EnterpriseName",
@@ -10084,7 +10084,7 @@
         },
         {
           "disabled": false,
-          "document": "主任务ID",
+          "document": "<p>主任务ID</p>",
           "example": "1",
           "member": "int64",
           "name": "JobId",
@@ -10094,7 +10094,7 @@
         },
         {
           "disabled": false,
-          "document": "单任务ID",
+          "document": "<p>单任务ID</p>",
           "example": "1",
           "member": "int64",
           "name": "JobStageId",
@@ -10104,7 +10104,7 @@
         },
         {
           "disabled": false,
-          "document": "是否忽略",
+          "document": "<p>是否忽略</p>",
           "example": "false",
           "member": "bool",
           "name": "Ignored",
@@ -10114,7 +10114,7 @@
         },
         {
           "disabled": false,
-          "document": "子任务ID",
+          "document": "<p>子任务ID</p>",
           "example": "1",
           "member": "int64",
           "name": "JobRecordId",
@@ -10124,7 +10124,7 @@
         },
         {
           "disabled": false,
-          "document": "企业ID",
+          "document": "<p>企业ID</p>",
           "example": "100",
           "member": "int64",
           "name": "CustomerId",
@@ -10134,7 +10134,7 @@
         },
         {
           "disabled": false,
-          "document": "企业名称",
+          "document": "<p>企业名称</p>",
           "example": "腾讯",
           "member": "string",
           "name": "CustomerName",
@@ -10144,7 +10144,7 @@
         },
         {
           "disabled": false,
-          "document": "详情",
+          "document": "<p>详情</p>",
           "example": "测试数据",
           "member": "string",
           "name": "Detail",
@@ -10154,7 +10154,7 @@
         },
         {
           "disabled": false,
-          "document": "Md5值",
+          "document": "<p>Md5值</p>",
           "example": "145314895749100ae8306079519b3393",
           "member": "string",
           "name": "Md5",
@@ -10164,7 +10164,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "CreateAt",
@@ -10174,7 +10174,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "UpdateAt",
@@ -10184,12 +10184,22 @@
         },
         {
           "disabled": false,
-          "document": "标签列表，json格式：{\\\"tag1\\\":[\\\"责任人xxx\\\"],\\\"tag2\\\":[\\\"测试站\\\"]}",
+          "document": "<p>标签列表，json格式：{\"tag1\":[\"责任人xxx\"],\"tag2\":[\"测试站\"]}</p>",
           "example": "{\\\"tag1\\\":[\\\"责任人xxx\\\"],\\\"tag2\\\":[\\\"测试站\\\"]}",
           "member": "string",
           "name": "Labels",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>演示模式是否明文展示</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "IsPlainTextInDemo",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -3241,7 +3241,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "329",
           "member": "int64",
           "name": "TaskId",
@@ -3251,7 +3251,7 @@
         },
         {
           "disabled": false,
-          "document": "任务标题",
+          "document": "<p>任务标题</p>",
           "example": "“任务标题”",
           "member": "string",
           "name": "TaskTitle",
@@ -3261,7 +3261,7 @@
         },
         {
           "disabled": false,
-          "document": "任务描述",
+          "document": "<p>任务描述</p>",
           "example": "“任务描述”",
           "member": "string",
           "name": "TaskDescription",
@@ -3271,7 +3271,7 @@
         },
         {
           "disabled": false,
-          "document": "任务标签",
+          "document": "<p>任务标签</p>",
           "example": "“任务标签”",
           "member": "string",
           "name": "TaskTag",
@@ -3281,7 +3281,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态(1001 -- 未开始   1002 -- 进行中  1003 -- 暂停中   1004 -- 任务结束)",
+          "document": "<p>任务状态(1001 -- 未开始   1002 -- 进行中  1003 -- 暂停中   1004 -- 任务结束)</p>",
           "example": "1004",
           "member": "int64",
           "name": "TaskStatus",
@@ -3291,7 +3291,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间",
+          "document": "<p>任务创建时间</p>",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskCreateTime",
@@ -3301,7 +3301,7 @@
         },
         {
           "disabled": false,
-          "document": "任务更新时间",
+          "document": "<p>任务更新时间</p>",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskUpdateTime",
@@ -3311,7 +3311,7 @@
         },
         {
           "disabled": false,
-          "document": "0--未开始，1--进行中，2--已完成",
+          "document": "<p>0--未开始，1--进行中，2--已完成</p>",
           "example": "0",
           "member": "int64",
           "name": "TaskPreCheckStatus",
@@ -3321,7 +3321,7 @@
         },
         {
           "disabled": false,
-          "document": "环境检查是否通过",
+          "document": "<p>环境检查是否通过</p>",
           "example": "true",
           "member": "bool",
           "name": "TaskPreCheckSuccess",
@@ -3331,7 +3331,7 @@
         },
         {
           "disabled": false,
-          "document": "演练是否符合预期 1-符合预期 2-不符合预期",
+          "document": "<p>演练是否符合预期 1-符合预期 2-不符合预期</p>",
           "example": "1",
           "member": "int64",
           "name": "TaskExpect",
@@ -3341,7 +3341,7 @@
         },
         {
           "disabled": false,
-          "document": "关联应用ID",
+          "document": "<p>关联应用ID</p>",
           "example": "\"app-faee9ba9\"",
           "member": "string",
           "name": "ApplicationId",
@@ -3351,7 +3351,7 @@
         },
         {
           "disabled": false,
-          "document": "关联应用名称",
+          "document": "<p>关联应用名称</p>",
           "example": "\"yh-test001\"",
           "member": "string",
           "name": "ApplicationName",
@@ -3361,7 +3361,7 @@
         },
         {
           "disabled": false,
-          "document": "验证项ID",
+          "document": "<p>验证项ID</p>",
           "example": "3001",
           "member": "uint64",
           "name": "VerifyId",
@@ -3371,7 +3371,7 @@
         },
         {
           "disabled": false,
-          "document": "状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止",
+          "document": "<p>状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止</p>",
           "example": "1",
           "member": "uint64",
           "name": "TaskStatusType",
@@ -3381,7 +3381,7 @@
         },
         {
           "disabled": false,
-          "document": "架构ID",
+          "document": "<p>架构ID</p>",
           "example": "arch-sd4sce",
           "member": "string",
           "name": "ArchId",
@@ -3391,7 +3391,7 @@
         },
         {
           "disabled": false,
-          "document": "架构名称",
+          "document": "<p>架构名称</p>",
           "example": "游戏战斗服",
           "member": "string",
           "name": "ArchName",
@@ -3401,12 +3401,22 @@
         },
         {
           "disabled": false,
-          "document": "来源",
+          "document": "<p>来源</p>",
           "example": "1",
           "member": "int64",
           "name": "TaskSource",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云资源标签列表</p>",
+          "example": "无",
+          "member": "TagWithDescribe",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

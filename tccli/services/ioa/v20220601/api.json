@@ -14,6 +14,13 @@
       "output": "CreateBusinessResourceResponse",
       "status": "online"
     },
+    "CreateCompanyDirectoryConfig": {
+      "document": "创建企业目录配置",
+      "input": "CreateCompanyDirectoryConfigRequest",
+      "name": "新建企业目录配置",
+      "output": "CreateCompanyDirectoryConfigResponse",
+      "status": "online"
+    },
     "CreateDLPFileDetectTask": {
       "document": "创建文件鉴定任务，私有化调用path为：capi/DlpOpenApi/CreateDLPFileDetectTask",
       "input": "CreateDLPFileDetectTaskRequest",
@@ -49,6 +56,13 @@
       "output": "CreatePrivilegeCodeResponse",
       "status": "online"
     },
+    "DeleteDeviceVirtualGroup": {
+      "document": "删除终端自定义分组，私有化调用path为：/capi/Assets/Device/DeleteDeviceVirtualGroup",
+      "input": "DeleteDeviceVirtualGroupRequest",
+      "name": "删除终端自定义分组",
+      "output": "DeleteDeviceVirtualGroupResponse",
+      "status": "online"
+    },
     "DescribeAccountGroups": {
       "document": "以分页的方式查询账号分组列表，私有化调用path为：/capi/Assets/DescribeAccountGroups",
       "input": "DescribeAccountGroupsRequest",
@@ -82,6 +96,13 @@
       "input": "DescribeBusinessResourcesRequest",
       "name": "获取业务资源列表",
       "output": "DescribeBusinessResourcesResponse",
+      "status": "online"
+    },
+    "DescribeCompanyDirectoryConfig": {
+      "document": "获取企业目录配置",
+      "input": "DescribeCompanyDirectoryConfigRequest",
+      "name": "获取企业目录配置",
+      "output": "DescribeCompanyDirectoryConfigResponse",
       "status": "online"
     },
     "DescribeDLPEdgeNodeGroups": {
@@ -257,6 +278,13 @@
       "input": "ModifyBusinessResourceRequest",
       "name": "修改业务资源",
       "output": "ModifyBusinessResourceResponse",
+      "status": "online"
+    },
+    "ModifyCompanyDirectoryConfig": {
+      "document": "编辑企业目录配置",
+      "input": "ModifyCompanyDirectoryConfigRequest",
+      "name": "编辑企业目录配置",
+      "output": "ModifyCompanyDirectoryConfigResponse",
       "status": "online"
     },
     "ModifyDeviceTrustStatus": {
@@ -916,6 +944,124 @@
       ],
       "type": "object"
     },
+    "CreateCompanyDirectoryConfigRequest": {
+      "document": "CreateCompanyDirectoryConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>企业目录类型</p>",
+          "example": "MicrosoftEntraID",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业目录名</p>",
+          "example": "AAD配置测试",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置是通过 SM2 加密再 Hex 之后的数据</p>",
+          "example": "{\"azure_tenant_id\":\"目录（租户）ID，必填\",\"client_id\":\"应用程序(客户端) ID，必填\",\"client_secret\":\"客户端密码值，必填\",\"cloud_type\":\"版本类型,必填，可选值为 Global 是国际版, 21Vianet 是中国版\"}",
+          "member": "string",
+          "name": "Config",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启定时同步</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SyncEnable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>定时同步的策略，枚举值：支持每4小时（4hours）/每日定时（daily）/每周定时（weekly）</p>",
+          "example": "4hours",
+          "member": "string",
+          "name": "SyncPolicy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>JSON 字符串，针对不同类型的同步策略，提取对应不同的值</p>",
+          "example": "{\"week\":\"SAT\",\"hour\":\"02\",\"minute\":\"30\"}",
+          "member": "string",
+          "name": "SyncPolicyParams",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否同步创建认证源</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CreateAuthConfig",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否在登录页展示</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DisplayOnLoginPage",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "目录描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用场景：API 创建，快速上手，普通配置等</p>",
+          "example": "QuickStart",
+          "member": "string",
+          "name": "Scene",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCompanyDirectoryConfigResponse": {
+      "document": "CreateCompanyDirectoryConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建企业目录配置的结果</p>",
+          "example": "无",
+          "member": "DirectoryConfigResultData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDLPFileDetectTaskData": {
       "document": "文件鉴定任务分页数据",
       "members": [
@@ -1327,6 +1473,51 @@
         }
       ],
       "usage": "both"
+    },
+    "DeleteDeviceVirtualGroupRequest": {
+      "document": "DeleteDeviceVirtualGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "必填，终端自定义分组id",
+          "example": "无",
+          "member": "int64",
+          "name": "DeviceVirtualGroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
+          "example": "0",
+          "member": "int64",
+          "name": "OsType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceVirtualGroupResponse": {
+      "document": "DeleteDeviceVirtualGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeAccountGroupsData": {
       "document": "账号分组信息",
@@ -2765,6 +2956,43 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCompanyDirectoryConfigRequest": {
+      "document": "DescribeCompanyDirectoryConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>企业目录 ID</p>",
+          "example": "278390",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCompanyDirectoryConfigResponse": {
+      "document": "DescribeCompanyDirectoryConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>企业目录配置详情</p>",
+          "example": "无",
+          "member": "DirectoryConfigData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6340,6 +6568,218 @@
       ],
       "usage": "both"
     },
+    "DirectoryConfigData": {
+      "document": "企业目录的配置数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>企业目录 ID</p>",
+          "example": "278390",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目录对应身份源类型</p><p>枚举值：</p><ul><li>WeCom： 企业微信</li><li>Lark： 飞书</li><li>DingTalk： 钉钉</li><li>MicrosoftEntraID： 微软 AAD</li></ul>",
+          "example": "MicrosoftEntraID",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业目录名称</p>",
+          "example": "AAD配置测试",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用 JSON 字符串表示的配置信息</p>",
+          "example": "{\"azure_tenant_id\":\"目录（租户）ID，必填\",\"client_id\":\"应用程序(客户端) ID，必填\",\"client_secret\":\"******\",\"cloud_type\":\"版本类型,必填，可选值为 Global 是国际版, 21Vianet 是中国版\",\"sensitive_fields\":[\"client_secret\"]}",
+          "member": "string",
+          "name": "Config",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启了定时同步</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SyncEnable",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>定时同步的策略</p><p>枚举值：</p><ul><li>4hours： 按创建时间开始的每 4 小时</li><li>daily： 每日</li><li>weekly： 每周</li></ul>",
+          "example": "4hours",
+          "member": "string",
+          "name": "SyncPolicy",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>JSON 字符串，针对不同类型的同步策略，提取对应不同的值</p>",
+          "example": "{\"week\":\"SAT\",\"hour\":\"02\",\"minute\":\"30\"}",
+          "member": "string",
+          "name": "SyncPolicyParams",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否配置了同步创建认证配置</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CreateAuthConfig",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "目录描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对应 Config 的配置 ID</p>",
+          "example": "ioa-union-260092225bqX2szz6RRUDUxaRN5EdoA",
+          "member": "string",
+          "name": "SourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否在登录页展示</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DisplayOnLoginPage",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DirectoryConfigResultData": {
+      "document": "创建/编辑企业目录配置之后返回结果数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>企业目录 ID</p>",
+          "example": "278390",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业目录名称</p>",
+          "example": "AAD配置测试",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>身份源配置 ID</p>",
+          "example": "ioa-union-260092225bqX2szz6RRUDUxaRN5EdoA",
+          "member": "string",
+          "name": "IdentifySourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否同步创建了认证配置</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CreateAuthConfig",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>认证源配置 ID</p>",
+          "example": "ioa-union-260092225bqX2szz6RRUDUxaRN5EdoA",
+          "member": "string",
+          "name": "AuthSourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>认证配置 ID</p>",
+          "example": "121773",
+          "member": "int64",
+          "name": "AuthConfigId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>认证策略 ID</p>",
+          "example": "39217",
+          "member": "int64",
+          "name": "AuthPolicyId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>认证支持的平台, PC 或 Mobile</p>",
+          "example": "[\"PC\"]",
+          "member": "string",
+          "name": "AuthSupportPlatforms",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>认证方式，授权认证/扫码认证 等</p>",
+          "example": "[\"SSO认证\"]",
+          "member": "string",
+          "name": "AuthMethods",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ExportDeviceDownloadTaskRequest": {
       "document": "ExportDeviceDownloadTask请求参数结构体",
       "members": [
@@ -7388,6 +7828,124 @@
     "ModifyBusinessResourceResponse": {
       "document": "ModifyBusinessResource返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCompanyDirectoryConfigRequest": {
+      "document": "ModifyCompanyDirectoryConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>企业目录类型</p>",
+          "example": "MicrosoftEntraID",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业目录名</p>",
+          "example": "AAD配置测试2",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用 JSON 字符串表示的配置信息</p><p>调用此接口前，需要先调用DescribeCompanyDirectoryConfig获取完整的配置，然后对里面需要更新的配置进行修改，请求的时候必须传完整配置，否则可能导致配置缺失出现错误。如果是脱敏的信息，保持原样的脱敏格式提交，如果和脱敏格式不一致，会认为是新的配置值更新原有配置</p>",
+          "example": "{\"azure_tenant_id\":\"目录（租户）ID，必填\",\"client_id\":\"应用程序(客户端) ID，必填\",\"client_secret\":\"******\",\"cloud_type\":\"版本类型,必填，可选值为 Global 是国际版, 21Vianet 是中国版\",\"sensitive_fields\":[\"client_secret\"]}",
+          "member": "string",
+          "name": "Config",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启定时同步</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SyncEnable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>定时同步的策略，枚举值：支持每4小时（4hours）/每日定时（daily）/每周定时（weekly）</p>",
+          "example": "4hours",
+          "member": "string",
+          "name": "SyncPolicy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>JSON 字符串，针对不同类型的同步策略，提取对应不同的值</p>",
+          "example": "{\"week\":\"SAT\",\"hour\":\"02\",\"minute\":\"30\"}",
+          "member": "string",
+          "name": "SyncPolicyParams",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否同步创建认证源</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CreateAuthConfig",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否在登录页展示</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DisplayOnLoginPage",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业目录 ID</p>",
+          "example": "278390",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "目录描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCompanyDirectoryConfigResponse": {
+      "document": "ModifyCompanyDirectoryConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>编辑企业目录配置的结果</p>",
+          "example": "无",
+          "member": "DirectoryConfigResultData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -74,7 +74,7 @@ Output:
 
 **Example 3: 为个人用户生成合同组H5批量签署链接, 并且指定视频问答模式的认证方式**
 
-为个人用户生成合同组H5批量签署链接, 并且指定视频问答模式的认证方式
+为个人用户生成合同组H5批量签署链接, 并且指定视频问答模式的认证方式，设置多轮对话
 
 Input: 
 
@@ -91,6 +91,8 @@ tccli essbasic ChannelCreateBatchQuickSignUrl --cli-unfold-argument  \
     --Intention.IntentionType 1 \
     --Intention.IntentionQuestions.0.Question 请问，您是否同意签署本协议？可语音回复“同意”或“不同意”。 \
     --Intention.IntentionQuestions.0.Answers 同意 我同意 \
+    --Intention.IntentionQuestions.1.Question 请问，您是否清楚本协议内容？可语音回复“清楚”或“不清楚”。 \
+    --Intention.IntentionQuestions.1.Answers 清楚 我清楚 \
     --FlowGroupId yDSL9UUckpo*****jwSsug2y3cW
 ```
 

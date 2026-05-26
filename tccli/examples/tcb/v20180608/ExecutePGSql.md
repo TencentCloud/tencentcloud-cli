@@ -16,7 +16,8 @@ tccli tcb ExecutePGSql --cli-unfold-argument  \
     stock_quantity INTEGER DEFAULT 0,            -- 库存数量
     tags JSONB,                                  -- 标签（使用 JSONB 存储扩展属性）
     last_updated TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW() -- 最后更新时间
-);
+); \
+    --Role cloudbase_********
 ```
 
 Output: 

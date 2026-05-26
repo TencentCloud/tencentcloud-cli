@@ -384,6 +384,14 @@
         "title": "创建用户"
       }
     ],
+    "CreateUserRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserRole\n<公共请求参数>\n\n{\n    \"Arn\": \"test_arn\",\n    \"Desc\": \"role desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\"\n    }\n}",
+        "title": "创建用户角色"
+      }
+    ],
     "CreateUserVpcConnection": [
       {
         "document": "创建用户vpc连接到引擎网络",

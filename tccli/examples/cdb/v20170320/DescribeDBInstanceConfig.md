@@ -20,6 +20,12 @@ Output:
             "Zone": "ap-guangzhou-4"
         },
         "DeployMode": 0,
+        "FourthConfig": {
+            "ReplicationMode": "sync",
+            "Vip": "",
+            "Vport": 0,
+            "Zone": "ap-guangzhou-4"
+        },
         "ProtectMode": 2,
         "RequestId": "e6ad4a50-f251-4236-9c30-1887f330a38c",
         "SlaveConfig": {

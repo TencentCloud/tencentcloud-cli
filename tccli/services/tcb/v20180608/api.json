@@ -21,6 +21,13 @@
       "output": "AssumeRoleForAllocatedEnvResponse",
       "status": "online"
     },
+    "BindStorageSource": {
+      "document": "为云存储绑定外部云存储源。\n将一个用户自有的 COS桶 作为外部存储源绑定到指定云开发环境的云存储。绑定后，该环境的云存储文件操作将指向此桶，通过 BasePath 路径前缀实现与其他环境的数据隔离。\n每个环境仅允许绑定 1 个外部云存储源。",
+      "input": "BindStorageSourceRequest",
+      "name": "云存储绑定外部存储源",
+      "output": "BindStorageSourceResponse",
+      "status": "online"
+    },
     "CheckTcbService": {
       "document": "检查是否开通Tcb服务",
       "input": "CheckTcbServiceRequest",
@@ -29,14 +36,14 @@
       "status": "online"
     },
     "CreateAIModel": {
-      "document": "创建 AI 模型配置分组。云开发标准版及以上套餐才可使用\n\n支持自定义类型（custom）：用户自行提供模型服务地址（baseUrl）和访问密钥，分组名可自由命名，适用于接入第三方或自建模型服务。\n\n注意：内置类型（builtin）分组由云开发平台统一创建和管理，不支持通过此接口创建。如需修改内置分组的模型列表或启用状态，请使用 [UpdateAIModel]() 接口。\n\n创建成功后，可通过 [DescribeAIModelList]() 接口查询分组信息，并在云开发 AI+ 功能中使用所配置的模型。",
+      "document": "创建 AI 模型配置分组。云开发标准版及以上套餐才可使用\n\n支持自定义类型（custom）：用户自行提供模型服务地址（baseUrl）和访问密钥，分组名可自由命名，适用于接入第三方或自建模型服务。\n\n注意：内置类型（builtin）分组由云开发平台统一创建和管理，不支持通过此接口创建。如需修改内置分组的模型列表或启用状态，请使用 [UpdateAIModel](https://cloud.tencent.com/document/product/876/131316) 接口。\n\n创建成功后，可通过 [DescribeAIModels](https://cloud.tencent.com/document/product/876/131318) 接口查询分组信息，并在云开发 AI+ 功能中使用所配置的模型。",
       "input": "CreateAIModelRequest",
       "name": "创建AI模型",
       "output": "CreateAIModelResponse",
       "status": "online"
     },
     "CreateApiKey": {
-      "document": "创建云开发平台的API Key。在指定云开发环境下创建一个 API Key 访问凭证。支持两种类型：api_key（服务端管理员访问凭证，以管理员身份签发，可设置有效期，不设置有效期则永不过期，单个环境最多创建 5 个）和 publish_key（前端匿名访问凭证，固定有效期，每个环境仅保留一个）。创建成功后将返回 API Key 明文 Token，该值仅在创建时返回一次，请妥善保存。需要管理员权限。",
+      "document": "创建云开发平台的API Key。在指定云开发环境下创建一个 API Key 访问凭证。支持两种类型：api_key（服务端管理员访问凭证，以管理员身份签发，可设置有效期，不设置有效期则永不过期，单个环境最多创建 5 个）和 publish_key（前端匿名访问凭证，固定有效期，每个环境仅保留一个）。创建成功后将返回 API Key 明文 Token，该值仅在创建时返回一次，请妥善保存。需要管理员权限。\n权限范围与注意事项：\n - api_key 是以\"管理员身份\"签发的访问凭证，持有该 Token 即拥有腾讯云云开发数据流（含数据库、云函数、云存储、托管等）资源的完整访问与操作权限。该凭证不区分子资源粒度，一旦泄露等同于环境管理员权限被泄露，请按\"高敏感凭证\"管理： 仅用于服务端调用、严禁下发到前端/客户端、严禁写入代码仓库或日志、定期轮换并回收闲置凭证。\n - 在为子账号 / 协作者 / RAM 子用户授权该接口权限时，须先评估该子账号是否有资格获得该环境的管理员级数据流权限，能创建 api_key ≈ 能拥有环境管理员权限。",
       "input": "CreateApiKeyRequest",
       "name": "创建云开发平台的API Key",
       "output": "CreateApiKeyResponse",
@@ -309,7 +316,7 @@
       "status": "online"
     },
     "DescribeManagedAIModelList": {
-      "document": "查询云开发平台支持的托管类型 AI 模型列表。\n\n托管类型模型由云开发平台统一接入和管理，用户无需自行配置模型服务地址和访问密钥，开通后即可直接使用。返回结果按模型分组（Group）组织，包含各模型的规格参数（ModelSpec）和计费信息（ModelChargingInfo）。\n\n通常在以下场景中使用：\n\n开通托管模型前：通过本接口查询平台支持的托管模型及其规格，结合 [CreateAIModel]() 接口完成模型开通。",
+      "document": "查询云开发平台支持的托管类型 AI 模型列表。\n\n托管类型模型由云开发平台统一接入和管理，用户无需自行配置模型服务地址和访问密钥，开通后即可直接使用。返回结果按模型分组（Group）组织，包含各模型的规格参数（ModelSpec）和计费信息（ModelChargingInfo）。\n\n通常在以下场景中使用：\n\n开通托管模型前：通过本接口查询平台支持的托管模型及其规格，结合 [UpdateAIModel](https://cloud.tencent.com/document/product/876/131316) 接口完成模型配置。",
       "input": "DescribeManagedAIModelListRequest",
       "name": "查询托管类型AI模型列表",
       "output": "DescribeManagedAIModelListResponse",
@@ -497,6 +504,13 @@
       "output": "ModifySafeRuleResponse",
       "status": "online"
     },
+    "ModifyStorageSource": {
+      "document": "修改指定云开发环境已绑定的外部云存储源配置。\n修改之后，大约3~5分钟生效。\n\n注意⚠️\n本接口仅更新存储源绑定关系，不会迁移您的数据。",
+      "input": "ModifyStorageSourceRequest",
+      "name": "更新云存储外部数据源",
+      "output": "ModifyStorageSourceResponse",
+      "status": "online"
+    },
     "ModifyUser": {
       "document": "修改tcb用户",
       "input": "ModifyUserRequest",
@@ -539,8 +553,15 @@
       "output": "SearchClsLogResponse",
       "status": "online"
     },
+    "UnbindStorageSource": {
+      "document": "从指定云开发环境中解绑已绑定的外部云存储源。解绑后，该环境将不再关联外部 存储源，云存储功能恢复为未绑定状态。\n解绑操作仅移除 CloudBase 侧的绑定关系，不会删除桶本身及桶内数据，桶仍由用户自行管理。\n\n注意⚠️\n解绑之后，会导致云存储不可用，请谨慎操作。",
+      "input": "UnbindStorageSourceRequest",
+      "name": "解绑云存储外部云存储源",
+      "output": "UnbindStorageSourceResponse",
+      "status": "online"
+    },
     "UpdateAIModel": {
-      "document": "更新 AI 模型配置分组。支持修改分组的模型列表、服务地址、访问密钥、备注及启用状态。\n\n不同分组类型支持的更新操作如下：\n自定义类型（custom）：可更新模型服务地址（BaseUrl）、访问密钥（Secret）、模型列表及分组备注。\n内置类型（builtin）：默认由云开发平台统一管理服务地址和密钥。若同时传入自定义 BaseURL 和 Secret，该分组将自动转换为自定义类型（custom），后续使用用户自行提供的服务地址和访问密钥，平台不再托管其凭证。\n\n分组类型转换说明:\n调用本接口时，可通过传入 BaseURL 与 Secret 参数触发分组类型的自动转换，规则如下：\n(1) builtin → custom（内置转自定义）\n当分组当前类型（Type）为 builtin 时，若请求中同时传入有效的 BaseURL（非 http://default.tcb）和 Secret，系统将自动将该分组转换为自定义类型（Type = custom）。转换后，平台不再托管该分组的服务地址和访问密钥，后续将使用用户自行提供的 BaseUrl 与 Secret 对模型服务发起请求。\n\n(2) custom → builtin（自定义恢复内置托管）\n仅当分组的原始类型（OriginType）为 builtin 时，支持将分组恢复为内置托管类型。将 BaseUrl 传入固定值 http://default.tcb，且不传入 Secret，系统将自动将该分组转换回内置托管类型（Type = builtin），平台重新接管其服务地址和访问密钥。\n若 OriginType 为 CUSTOM（即用户通过 CreateAIModel 接口自行创建的自定义分组），不支持恢复为内置托管类型。\n\n更新成功后，可通过 [DescribeAIModelList]() 接口查询最新分组配置。",
+      "document": "更新 AI 模型配置分组。支持修改分组的模型列表、服务地址、访问密钥、备注及启用状态。\n\n不同分组类型支持的更新操作如下：\n自定义类型（custom）：可更新模型服务地址（BaseUrl）、访问密钥（Secret）、模型列表及分组备注。\n内置类型（builtin）：默认由云开发平台统一管理服务地址和密钥。若同时传入自定义 BaseURL 和 Secret，该分组将自动转换为自定义类型（custom），后续使用用户自行提供的服务地址和访问密钥，平台不再托管其凭证。\n\n分组类型转换说明:\n调用本接口时，可通过传入 BaseURL 与 Secret 参数触发分组类型的自动转换，规则如下：\n(1) builtin → custom（内置转自定义）\n当分组当前类型（Type）为 builtin 时，若请求中同时传入有效的 BaseURL（非 http://default.tcb）和 Secret，系统将自动将该分组转换为自定义类型（Type = custom）。转换后，平台不再托管该分组的服务地址和访问密钥，后续将使用用户自行提供的 BaseUrl 与 Secret 对模型服务发起请求。\n\n(2) custom → builtin（自定义恢复内置托管）\n仅当分组的原始类型（OriginType）为 builtin 时，支持将分组恢复为内置托管类型。将 BaseUrl 传入固定值 http://default.tcb，且不传入 Secret，系统将自动将该分组转换回内置托管类型（Type = builtin），平台重新接管其服务地址和访问密钥。\n若 OriginType 为 CUSTOM（即用户通过 [CreateAIModel](https://cloud.tencent.com/document/product/876/131320) 接口自行创建的自定义分组），不支持恢复为内置托管类型。\n\n更新成功后，可通过 [DescribeAIModels](https://cloud.tencent.com/document/product/876/131318) 接口查询最新分组配置。",
       "input": "UpdateAIModelRequest",
       "name": "更新AI模型",
       "output": "UpdateAIModelResponse",
@@ -1297,6 +1318,42 @@
       ],
       "usage": "both"
     },
+    "BindStorageSourceRequest": {
+      "document": "BindStorageSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "cloudbase-0gx36sm8ddc58be0",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储源",
+          "example": "无",
+          "member": "ExternalStorage",
+          "name": "StorageConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "BindStorageSourceResponse": {
+      "document": "BindStorageSource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CheckTcbServiceRequest": {
       "document": "CheckTcbService请求参数结构体",
       "members": [],
@@ -1931,7 +1988,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境别名。\n\n### 格式要求\n- 可选字符： 小写字母(a~z)、数字、减号(-)\n- 不能以 减号(-) 开头或结尾\n- 不能有连个连续的 减号(-)\n- 长度不超过20位\n示例值：cloud",
+          "document": "<p>环境别名。</p><h3 id=\".E6.A0.BC.E5.BC.8F.E8.A6.81.E6.B1.82\">格式要求</h3><ul><li>可选字符： 小写字母(a~z)、数字、减号(-)</li><li>不能以 减号(-) 开头或结尾</li><li>不能有连个连续的 减号(-)</li><li>长度不超过20位<br>示例值：cloud</li></ul>",
           "example": "cloudbase",
           "member": "string",
           "name": "Alias",
@@ -1940,7 +1997,7 @@
         },
         {
           "disabled": false,
-          "document": "云开发环境套餐Id。\n对于云开发环境套餐，可通过 [DescribeBaasPackageList](https://cloud.tencent.com/document/product/876/78167) 接口获取，对应其出参的PackageName。",
+          "document": "<p>云开发环境套餐Id。<br>对于云开发环境套餐，可通过 <a href=\"https://cloud.tencent.com/document/product/876/78167\">DescribeBaasPackageList</a> 接口获取，对应其出参的PackageName。</p>",
           "example": "baas_personal",
           "member": "string",
           "name": "PackageId",
@@ -1949,7 +2006,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型。代表新购环境时需要发货哪些资源。\n可取值以及含义：\n- flexdb : 表示文档型数据库\n- storage : 表示云存储\n- function : 表示云函数\n\n**该字段不可为空**",
+          "document": "<p>资源类型。代表新购环境时需要发货哪些资源。<br>可取值以及含义：</p><ul><li>flexdb : 表示文档型数据库</li><li>storage : 表示云存储</li><li>function : 表示云函数</li><li>postgresql：表示postgresql数据库</li></ul><p><strong>该字段不可为空</strong></p>",
           "example": "[\"flexdb\"]",
           "member": "string",
           "name": "Resources",
@@ -1958,7 +2015,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24。\n默认值为1，即1个月。",
+          "document": "<p>购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24。<br>默认值为1，即1个月。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Period",
@@ -1967,7 +2024,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动选择代金券支付。",
+          "document": "<p>是否自动选择代金券支付。</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoVoucher",
@@ -1976,7 +2033,7 @@
         },
         {
           "disabled": false,
-          "document": "环境标签。\n可取值通过接口 [tag:DescribeTags](https://cloud.tencent.com/document/product/651/35316) 可获取到。\n不传或为空则默认不打任何标签。",
+          "document": "<p>环境标签。<br>可取值通过接口 <a href=\"https://cloud.tencent.com/document/product/651/35316\">tag:DescribeTags</a> 可获取到。<br>不传或为空则默认不打任何标签。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -1985,10 +2042,28 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。取值范围：\n- NOTIFY_AND_AUTO_RENEW：通知过期且自动续费\n- NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费（需要手动续费，可通过接口 [RenewEnv](https://cloud.tencent.com/document/product/876/128590) 来续费）\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。\n若该参数指定为NOTIFY_AND_AUTO_RENEW（即：自动续费），在账户余额充足的情况下，实例到期后将按月自动续费；但如果账户余额不足，将无法自动续费。请留意腾讯云短信和邮件通知。",
+          "document": "<p>自动续费标识。取值范围：</p><ul><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费（需要手动续费，可通过接口 <a href=\"https://cloud.tencent.com/document/product/876/128590\">RenewEnv</a> 来续费）</li></ul><p>默认取值：NOTIFY_AND_MANUAL_RENEW。<br>若该参数指定为NOTIFY_AND_AUTO_RENEW（即：自动续费），在账户余额充足的情况下，实例到期后将按月自动续费；但如果账户余额不足，将无法自动续费。请留意腾讯云短信和邮件通知。</p>",
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>云存储外部存储源。<br>表示该环境下不再自动分配云存储cos桶，而是由指定的bucket作为该环境的云存储介质。</p><p>仅当 Resources 中包含storage时有效。</p>",
+          "example": "无",
+          "member": "ExternalStorage",
+          "name": "ExternalStorage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启或关闭 超限转按量。 可取值： TRUE/FALSE （字符串类型） 非法制、不传、为空 则不变更该字段。</p>",
+          "example": "TRUE",
+          "member": "string",
+          "name": "EnableOverrun",
           "required": false,
           "type": "string"
         }
@@ -2036,7 +2111,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自动生成的环境ID",
+          "document": "<p>自动生成的环境ID</p>",
           "example": "cloudbase-7g0gd9j012a86ed6",
           "member": "string",
           "name": "EnvId",
@@ -4576,7 +4651,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境ID，如果传了这个参数则只返回该环境的相关信息",
+          "document": "<p>环境ID，如果传了这个参数则只返回该环境的相关信息</p>",
           "example": "yourenvid-2fb346",
           "member": "string",
           "name": "EnvId",
@@ -4585,7 +4660,7 @@
         },
         {
           "disabled": false,
-          "document": "指定Channels字段为可见渠道列表或不可见渠道列表\n如只想获取渠道A的环境 就填写IsVisible= true,Channels = [\"A\"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [\"A\"]",
+          "document": "<p>指定Channels字段为可见渠道列表或不可见渠道列表<br>如只想获取渠道A的环境 就填写IsVisible= true,Channels = [&quot;A&quot;], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [&quot;A&quot;]</p>",
           "example": "true",
           "member": "bool",
           "name": "IsVisible",
@@ -4594,8 +4669,8 @@
         },
         {
           "disabled": false,
-          "document": "渠道列表，代表可见或不可见渠道由IsVisible参数指定",
-          "example": "[ide,qc_console]",
+          "document": "<p>渠道列表，代表可见或不可见渠道由IsVisible参数指定</p>",
+          "example": "[\"ide\",\"qc_console\"]",
           "member": "string",
           "name": "Channels",
           "required": false,
@@ -4603,7 +4678,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数，单页限制个数",
+          "document": "<p>分页参数，单页限制个数</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -4612,7 +4687,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数，偏移量",
+          "document": "<p>分页参数，偏移量</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4627,7 +4702,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境信息列表",
+          "document": "<p>环境信息列表</p>",
           "example": "无",
           "member": "EnvInfo",
           "name": "EnvList",
@@ -4637,7 +4712,7 @@
         },
         {
           "disabled": false,
-          "document": "环境个数",
+          "document": "<p>环境个数</p>",
           "example": "1",
           "member": "int64",
           "name": "Total",
@@ -6361,6 +6436,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境meta信息列表</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Meta",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>pg信息</p>",
+          "example": "无",
+          "member": "PostgreSQLInfo",
+          "name": "PostgreSQL",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6389,7 +6484,7 @@
         {
           "disabled": false,
           "document": "<p>指定 role 执行 SQL</p>",
-          "example": "cloudbase_postgres",
+          "example": "cloudbase_********",
           "member": "string",
           "name": "Role",
           "required": false,
@@ -8857,6 +8952,42 @@
       ],
       "type": "object"
     },
+    "ModifyStorageSourceRequest": {
+      "document": "ModifyStorageSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "cloudbase-0gx36sm8ddc58be0",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储源",
+          "example": "无",
+          "member": "ExternalStorage",
+          "name": "StorageConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStorageSourceResponse": {
+      "document": "ModifyStorageSource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyUserRequest": {
       "document": "ModifyUser请求参数结构体",
       "members": [
@@ -9407,6 +9538,67 @@
         }
       ],
       "usage": "in"
+    },
+    "PostgreSQLInfo": {
+      "document": "PostgreSQL资源信息结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据库名称</p>",
+          "example": "postgres",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "postgres-176pdmhs",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库引擎版本</p>",
+          "example": "17.6",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Provider": {
       "document": "身份源配置信息。描述云开发环境下用户登录身份源的完整配置，定义了用户通过何种方式进入系统并完成身份认证。支持多种类型：包括标准协议身份源（OAuth 2.0、OIDC、SAML 2.0）、内置身份源（邮箱登录、自定义登录）以及通过插件机制扩展的身份源（如 CAS）。每个身份源包含认证配置、启用状态、用户自动注册策略、信息透传模式等核心属性，是登录认证流程的核心数据结构。",
@@ -10596,6 +10788,33 @@
         }
       ],
       "usage": "both"
+    },
+    "UnbindStorageSourceRequest": {
+      "document": "UnbindStorageSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "cloudbase-0gx36sm8ddc58be0",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindStorageSourceResponse": {
+      "document": "UnbindStorageSource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateAIModelRequest": {
       "document": "UpdateAIModel请求参数结构体",

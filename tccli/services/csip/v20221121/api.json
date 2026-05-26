@@ -28,6 +28,34 @@
       "output": "CreateAccessKeySyncTaskResponse",
       "status": "online"
     },
+    "CreateCosAssetSyncTask": {
+      "document": "创建资产同步任务",
+      "input": "CreateCosAssetSyncTaskRequest",
+      "name": "创建对象存储资产同步任务",
+      "output": "CreateCosAssetSyncTaskResponse",
+      "status": "online"
+    },
+    "CreateCosObjectScanTask": {
+      "document": "创建cos病毒扫描、敏感数据识别任务",
+      "input": "CreateCosObjectScanTaskRequest",
+      "name": "创建cos文件内容扫描任务",
+      "output": "CreateCosObjectScanTaskResponse",
+      "status": "online"
+    },
+    "CreateCosPolicy": {
+      "document": "添加cos告警策略",
+      "input": "CreateCosPolicyRequest",
+      "name": "创建cos策略",
+      "output": "CreateCosPolicyResponse",
+      "status": "online"
+    },
+    "CreateCosRiskScanTask": {
+      "document": "创建风险监测任务",
+      "input": "CreateCosRiskScanTaskRequest",
+      "name": "创建对象存储风险监测任务",
+      "output": "CreateCosRiskScanTaskResponse",
+      "status": "online"
+    },
     "CreateDomainAndIp": {
       "document": "创建域名、ip相关信息",
       "input": "CreateDomainAndIpRequest",
@@ -117,6 +145,20 @@
       "input": "CreateSkillScanRequest",
       "name": "上传 Skill 触发安全检测",
       "output": "CreateSkillScanResponse",
+      "status": "online"
+    },
+    "DeleteCosAkAsset": {
+      "document": "删除已删除的cos ak资产",
+      "input": "DeleteCosAkAssetRequest",
+      "name": "删除cosak资产",
+      "output": "DeleteCosAkAssetResponse",
+      "status": "online"
+    },
+    "DeleteCosPolicy": {
+      "document": "删除策略",
+      "input": "DeleteCosPolicyRequest",
+      "name": "删除cos策略",
+      "output": "DeleteCosPolicyResponse",
       "status": "online"
     },
     "DeleteDomainAndIp": {
@@ -287,6 +329,13 @@
       "output": "DescribeAssumeRoleResponse",
       "status": "online"
     },
+    "DescribeBucketInvokeIpList": {
+      "document": "查看存储桶调用源ip列表",
+      "input": "DescribeBucketInvokeIpListRequest",
+      "name": "查看存储桶调用源ip列表",
+      "output": "DescribeBucketInvokeIpListResponse",
+      "status": "online"
+    },
     "DescribeCFWAssetStatistics": {
       "document": "云防资产中心统计数据",
       "input": "DescribeCFWAssetStatisticsRequest",
@@ -348,6 +397,195 @@
       "input": "DescribeConfigCheckRulesRequest",
       "name": "云资源配置风险规则列表",
       "output": "DescribeConfigCheckRulesResponse",
+      "status": "online"
+    },
+    "DescribeCosAccessPermission": {
+      "document": "查看cos桶访问权限信息",
+      "input": "DescribeCosAccessPermissionRequest",
+      "name": "查看可访问权限列表",
+      "output": "DescribeCosAccessPermissionResponse",
+      "status": "online"
+    },
+    "DescribeCosAccessPermissions": {
+      "document": "查看对象存储访问权限列表",
+      "input": "DescribeCosAccessPermissionsRequest",
+      "name": "访问权限列表",
+      "output": "DescribeCosAccessPermissionsResponse",
+      "status": "online"
+    },
+    "DescribeCosActionList": {
+      "document": "查看COS接口列表",
+      "input": "DescribeCosActionListRequest",
+      "name": "查看cos操作名列表",
+      "output": "DescribeCosActionListResponse",
+      "status": "online"
+    },
+    "DescribeCosAkAsset": {
+      "document": "查看ak资产列表信息",
+      "input": "DescribeCosAkAssetRequest",
+      "name": "查看cos关联ak资产信息",
+      "output": "DescribeCosAkAssetResponse",
+      "status": "online"
+    },
+    "DescribeCosAkInvokeIpList": {
+      "document": "查看存储桶调用源ip列表",
+      "input": "DescribeCosAkInvokeIpListRequest",
+      "name": "查看cos ak调用源ip列表",
+      "output": "DescribeCosAkInvokeIpListResponse",
+      "status": "online"
+    },
+    "DescribeCosAlarmList": {
+      "document": "查看告警列表",
+      "input": "DescribeCosAlarmListRequest",
+      "name": "查看cos告警列表",
+      "output": "DescribeCosAlarmListResponse",
+      "status": "online"
+    },
+    "DescribeCosAlarmTrendData": {
+      "document": "每日告警新增数据",
+      "input": "DescribeCosAlarmTrendDataRequest",
+      "name": "查看cos告警趋势图",
+      "output": "DescribeCosAlarmTrendDataResponse",
+      "status": "online"
+    },
+    "DescribeCosAsset": {
+      "document": "查看cos资产列表",
+      "input": "DescribeCosAssetRequest",
+      "name": "查看cos资产列表",
+      "output": "DescribeCosAssetResponse",
+      "status": "online"
+    },
+    "DescribeCosAssetSyncTask": {
+      "document": "获取对应appid对应的当前正在扫描的taskid",
+      "input": "DescribeCosAssetSyncTaskRequest",
+      "name": "查看对象存储资产同步任务",
+      "output": "DescribeCosAssetSyncTaskResponse",
+      "status": "online"
+    },
+    "DescribeCosAuditAppIdList": {
+      "document": "查看该appid下已购买的appid集合",
+      "input": "DescribeCosAuditAppIdListRequest",
+      "name": "查看该appid下已购买的appid集合",
+      "output": "DescribeCosAuditAppIdListResponse",
+      "status": "online"
+    },
+    "DescribeCosAuditDictionaryList": {
+      "document": "查询cos审计字典信息列表",
+      "input": "DescribeCosAuditDictionaryListRequest",
+      "name": "查询cos审计字典信息列表",
+      "output": "DescribeCosAuditDictionaryListResponse",
+      "status": "online"
+    },
+    "DescribeCosAuditPayInfo": {
+      "document": "获取审计支付信息",
+      "input": "DescribeCosAuditPayInfoRequest",
+      "name": "查看对象存储审计支付信息",
+      "output": "DescribeCosAuditPayInfoResponse",
+      "status": "online"
+    },
+    "DescribeCosBucketBillingInfo": {
+      "document": "获取存储桶计费信息",
+      "input": "DescribeCosBucketBillingInfoRequest",
+      "name": "获取存储桶计费信息",
+      "output": "DescribeCosBucketBillingInfoResponse",
+      "status": "online"
+    },
+    "DescribeCosBucketList": {
+      "document": "获取存储桶信息",
+      "input": "DescribeCosBucketListRequest",
+      "name": "查询cos存储桶列表",
+      "output": "DescribeCosBucketListResponse",
+      "status": "online"
+    },
+    "DescribeCosBucketRisk": {
+      "document": "查看风险资产视角",
+      "input": "DescribeCosBucketRiskRequest",
+      "name": "查看存储桶风险信息",
+      "output": "DescribeCosBucketRiskResponse",
+      "status": "online"
+    },
+    "DescribeCosIdentifyFileList": {
+      "document": "查询cos文件数据识别结果列表",
+      "input": "DescribeCosIdentifyFileListRequest",
+      "name": "查询cos文件数据识别结果列表",
+      "output": "DescribeCosIdentifyFileListResponse",
+      "status": "online"
+    },
+    "DescribeCosInvokeUa": {
+      "document": "查看调用记录关联的文件信息",
+      "input": "DescribeCosInvokeUaRequest",
+      "name": "查看cos调用ua",
+      "output": "DescribeCosInvokeUaResponse",
+      "status": "online"
+    },
+    "DescribeCosIpInvokeLog": {
+      "document": "查看cos调用日志",
+      "input": "DescribeCosIpInvokeLogRequest",
+      "name": "查看调用记录日志",
+      "output": "DescribeCosIpInvokeLogResponse",
+      "status": "online"
+    },
+    "DescribeCosIpInvokeRecordFile": {
+      "document": "查看调用记录关联的文件信息",
+      "input": "DescribeCosIpInvokeRecordFileRequest",
+      "name": "查看cos调用记录文件列表",
+      "output": "DescribeCosIpInvokeRecordFileResponse",
+      "status": "online"
+    },
+    "DescribeCosOverview": {
+      "document": "cos概览信息",
+      "input": "DescribeCosOverviewRequest",
+      "name": "查看cos统计概览",
+      "output": "DescribeCosOverviewResponse",
+      "status": "online"
+    },
+    "DescribeCosPolicy": {
+      "document": "获取策略列表信息",
+      "input": "DescribeCosPolicyRequest",
+      "name": "告警策略列表",
+      "output": "DescribeCosPolicyResponse",
+      "status": "online"
+    },
+    "DescribeCosRiskActionList": {
+      "document": "风险接口列表信息",
+      "input": "DescribeCosRiskActionListRequest",
+      "name": "查看存储桶风险接口列表",
+      "output": "DescribeCosRiskActionListResponse",
+      "status": "online"
+    },
+    "DescribeCosRiskEvidence": {
+      "document": "查看风险证据以及描述",
+      "input": "DescribeCosRiskEvidenceRequest",
+      "name": "查看风险证据信息",
+      "output": "DescribeCosRiskEvidenceResponse",
+      "status": "online"
+    },
+    "DescribeCosRiskScanTask": {
+      "document": "查看存储桶扫描任务详情",
+      "input": "DescribeCosRiskScanTaskRequest",
+      "name": "查看cos风险监测任务",
+      "output": "DescribeCosRiskScanTaskResponse",
+      "status": "online"
+    },
+    "DescribeCosRoleAccessPermission": {
+      "document": "查看cos桶访问权限信息",
+      "input": "DescribeCosRoleAccessPermissionRequest",
+      "name": "查看角色可访问权限列表",
+      "output": "DescribeCosRoleAccessPermissionResponse",
+      "status": "online"
+    },
+    "DescribeCosRoleAccessPermissions": {
+      "document": "获取存储桶角色权限列表",
+      "input": "DescribeCosRoleAccessPermissionsRequest",
+      "name": "查看cos桶角色相关权限",
+      "output": "DescribeCosRoleAccessPermissionsResponse",
+      "status": "online"
+    },
+    "DescribeCosSourceIp": {
+      "document": "调用源ip列表",
+      "input": "DescribeCosSourceIpRequest",
+      "name": "获取调用源ip列表",
+      "output": "DescribeCosSourceIpResponse",
       "status": "online"
     },
     "DescribeDbAssetInfo": {
@@ -707,6 +945,20 @@
       "output": "DescribeHighBaseLineRiskListResponse",
       "status": "online"
     },
+    "DescribeIpInvokeRecord": {
+      "document": "对象存储异常检测调用记录信息",
+      "input": "DescribeIpInvokeRecordRequest",
+      "name": "查看ip调用记录详情",
+      "output": "DescribeIpInvokeRecordResponse",
+      "status": "online"
+    },
+    "DescribeIpInvokeRecordDetail": {
+      "document": "ip访问列表详情信息",
+      "input": "DescribeIpInvokeRecordDetailRequest",
+      "name": "调用记录详情",
+      "output": "DescribeIpInvokeRecordDetailResponse",
+      "status": "online"
+    },
     "DescribeKeySandboxCredential": {
       "document": "查询凭证详情，返回凭证元数据和打码后的凭据数据。access类型返回Access数组（Key原文、Value打码），sts类型返回STS对象（System原文、SecretID和SecretKey打码）",
       "input": "DescribeKeySandboxCredentialRequest",
@@ -756,6 +1008,13 @@
       "output": "DescribeOtherCloudAssetsResponse",
       "status": "online"
     },
+    "DescribePolicyHitData": {
+      "document": "按日期查看策略命中详情",
+      "input": "DescribePolicyHitDataRequest",
+      "name": "查看风险趋势图详情数据",
+      "output": "DescribePolicyHitDataResponse",
+      "status": "online"
+    },
     "DescribePublicIpAssets": {
       "document": "ip公网列表",
       "input": "DescribePublicIpAssetsRequest",
@@ -768,6 +1027,13 @@
       "input": "DescribeRepositoryImageAssetsRequest",
       "name": "仓库镜像列表",
       "output": "DescribeRepositoryImageAssetsResponse",
+      "status": "online"
+    },
+    "DescribeRiskBucketList": {
+      "document": "查看风险关联的存储桶信息",
+      "input": "DescribeRiskBucketListRequest",
+      "name": "查看受影响的存储桶列表",
+      "output": "DescribeRiskBucketListResponse",
       "status": "online"
     },
     "DescribeRiskCallRecord": {
@@ -847,6 +1113,13 @@
       "output": "DescribeRiskDetailListResponse",
       "status": "online"
     },
+    "DescribeRiskItemList": {
+      "document": "获取风险项视角列表",
+      "input": "DescribeRiskItemListRequest",
+      "name": "查看风险项视角列表",
+      "output": "DescribeRiskItemListResponse",
+      "status": "online"
+    },
     "DescribeRiskRuleDetail": {
       "document": "查询风险规则详情示例",
       "input": "DescribeRiskRuleDetailRequest",
@@ -859,6 +1132,13 @@
       "input": "DescribeRiskRulesRequest",
       "name": "高级配置风险规则列表",
       "output": "DescribeRiskRulesResponse",
+      "status": "online"
+    },
+    "DescribeRiskTrendData": {
+      "document": "查看风险趋势图",
+      "input": "DescribeRiskTrendDataRequest",
+      "name": "查看风险趋势图信息",
+      "output": "DescribeRiskTrendDataResponse",
       "status": "online"
     },
     "DescribeScanReportList": {
@@ -887,6 +1167,13 @@
       "input": "DescribeSearchBugInfoRequest",
       "name": "查询漏洞信息",
       "output": "DescribeSearchBugInfoResponse",
+      "status": "online"
+    },
+    "DescribeSkillScanPayInfo": {
+      "document": "查询 Skill 安全检测计费信息，包括订单状态、总配额、已消耗配额、到期时间、支付模式等。无订单时返回零值（仅含 TimeNow 和 BetaEndTime）。试用订单通过 ModifyTrialStatus(Module=9) 领取，正式订单通过计费系统创建。",
+      "input": "DescribeSkillScanPayInfoRequest",
+      "name": "查询 Skill 安全检测计费信息",
+      "output": "DescribeSkillScanPayInfoResponse",
       "status": "online"
     },
     "DescribeSkillScanResult": {
@@ -1008,6 +1295,27 @@
       "output": "DownloadDspmExportLogResponse",
       "status": "online"
     },
+    "ModifyAlarmRiskStatus": {
+      "document": "修改或者更改处置状态",
+      "input": "ModifyAlarmRiskStatusRequest",
+      "name": "风险或者告警处理",
+      "output": "ModifyAlarmRiskStatusResponse",
+      "status": "online"
+    },
+    "ModifyCosAuditMonitorAccount": {
+      "document": "修改cos审计监测账号",
+      "input": "ModifyCosAuditMonitorAccountRequest",
+      "name": "修改cos审计监测账号",
+      "output": "ModifyCosAuditMonitorAccountResponse",
+      "status": "online"
+    },
+    "ModifyCosMarkInfo": {
+      "document": "修改对象存储备注",
+      "input": "ModifyCosMarkInfoRequest",
+      "name": "修改对象存储备注信息",
+      "output": "ModifyCosMarkInfoResponse",
+      "status": "online"
+    },
     "ModifyDspmAccessRecord": {
       "document": "修改Dspm访问管理信息",
       "input": "ModifyDspmAccessRecordRequest",
@@ -1118,6 +1426,13 @@
       "input": "ModifyOrganizationAccountStatusRequest",
       "name": "修改集团账号状态",
       "output": "ModifyOrganizationAccountStatusResponse",
+      "status": "online"
+    },
+    "ModifyPolicyStatus": {
+      "document": "修改策略状态",
+      "input": "ModifyPolicyStatusRequest",
+      "name": "修改策略状态",
+      "output": "ModifyPolicyStatusResponse",
       "status": "online"
     },
     "ModifyRiskCenterRiskStatus": {
@@ -4865,7 +5180,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "租户ID",
+          "document": "<p>租户ID</p>",
           "example": "1302396215",
           "member": "int64",
           "name": "AppId",
@@ -4875,7 +5190,7 @@
         },
         {
           "disabled": false,
-          "document": "云厂商",
+          "document": "<p>云厂商</p>",
           "example": "tencent",
           "member": "string",
           "name": "Provider",
@@ -4885,7 +5200,7 @@
         },
         {
           "disabled": false,
-          "document": "云厂商名称",
+          "document": "<p>云厂商名称</p>",
           "example": "腾讯云",
           "member": "string",
           "name": "ProviderName",
@@ -4895,7 +5210,7 @@
         },
         {
           "disabled": false,
-          "document": "云账号名称",
+          "document": "<p>云账号名称</p>",
           "example": "声声乌龙",
           "member": "string",
           "name": "CloudAccountName",
@@ -4905,7 +5220,7 @@
         },
         {
           "disabled": false,
-          "document": "云账号ID",
+          "document": "<p>云账号ID</p>",
           "example": "100014592178",
           "member": "string",
           "name": "CloudAccountId",
@@ -4915,7 +5230,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "AI测试",
           "member": "string",
           "name": "InstanceName",
@@ -4925,7 +5240,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-p7x4hn7p",
           "member": "string",
           "name": "InstanceId",
@@ -4935,7 +5250,7 @@
         },
         {
           "disabled": false,
-          "document": "首次发现时间",
+          "document": "<p>首次发现时间</p>",
           "example": "2025-01-01 12:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -4945,7 +5260,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2025-01-01 12:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -4955,7 +5270,7 @@
         },
         {
           "disabled": false,
-          "document": "风险状态",
+          "document": "<p>风险状态</p>",
           "example": "0",
           "member": "int64",
           "name": "RiskStatus",
@@ -4965,7 +5280,7 @@
         },
         {
           "disabled": false,
-          "document": "风险名称",
+          "document": "<p>风险名称</p>",
           "example": "子账号未开启登录操作保护",
           "member": "string",
           "name": "RiskTitle",
@@ -4975,7 +5290,7 @@
         },
         {
           "disabled": false,
-          "document": "检查类型",
+          "document": "<p>检查类型</p>",
           "example": "data_security",
           "member": "string",
           "name": "CheckType",
@@ -4985,7 +5300,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级",
+          "document": "<p>风险等级</p>",
           "example": "high",
           "member": "string",
           "name": "Severity",
@@ -4995,7 +5310,7 @@
         },
         {
           "disabled": false,
-          "document": "风险规则ID",
+          "document": "<p>风险规则ID</p>",
           "example": "tc_001",
           "member": "string",
           "name": "RiskRuleId",
@@ -5005,7 +5320,7 @@
         },
         {
           "disabled": false,
-          "document": "处置分类",
+          "document": "<p>处置分类</p>",
           "example": "expose",
           "member": "string",
           "name": "Classify",
@@ -5015,7 +5330,7 @@
         },
         {
           "disabled": false,
-          "document": "等保合规",
+          "document": "<p>等保合规</p>",
           "example": "无",
           "member": "StandardTerm",
           "name": "StandardTerms",
@@ -5025,10 +5340,20 @@
         },
         {
           "disabled": false,
-          "document": "资产类型",
+          "document": "<p>资产类型</p>",
           "example": "CVM",
           "member": "string",
           "name": "AssetType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型图标</p>",
+          "example": "https://cloud-xspm-web-1258344699.cos.ap-guangzhou.myqcloud.com/asset-icon/networkingIcon_2d.svg",
+          "member": "string",
+          "name": "AssetTypeIconURL",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8461,7 +8786,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检查项规则ID",
+          "document": "<p>检查项规则ID</p>",
           "example": "tc_001",
           "member": "string",
           "name": "RiskRuleId",
@@ -8471,7 +8796,7 @@
         },
         {
           "disabled": false,
-          "document": "风险名称",
+          "document": "<p>风险名称</p>",
           "example": "子账号未开启操作保护",
           "member": "string",
           "name": "RiskTitle",
@@ -8481,7 +8806,7 @@
         },
         {
           "disabled": false,
-          "document": "检查类型",
+          "document": "<p>检查类型</p>",
           "example": "网络安全",
           "member": "string",
           "name": "CheckType",
@@ -8491,7 +8816,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级",
+          "document": "<p>风险等级</p>",
           "example": "high",
           "member": "string",
           "name": "Severity",
@@ -8501,7 +8826,7 @@
         },
         {
           "disabled": false,
-          "document": "存在1个风险项",
+          "document": "<p>存在1个风险项</p>",
           "example": "风险描述",
           "member": "string",
           "name": "RiskDesc",
@@ -8511,7 +8836,7 @@
         },
         {
           "disabled": false,
-          "document": "首次发现时间",
+          "document": "<p>首次发现时间</p>",
           "example": "2025-05-05 12:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -8521,7 +8846,7 @@
         },
         {
           "disabled": false,
-          "document": "风险更新时间",
+          "document": "<p>风险更新时间</p>",
           "example": "2025-05-05 12:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -8531,7 +8856,7 @@
         },
         {
           "disabled": false,
-          "document": "云厂商",
+          "document": "<p>云厂商</p>",
           "example": "tencent",
           "member": "string",
           "name": "Provider",
@@ -8541,7 +8866,7 @@
         },
         {
           "disabled": false,
-          "document": "风险状态",
+          "document": "<p>风险状态</p>",
           "example": "0",
           "member": "uint64",
           "name": "RiskStatus",
@@ -8551,7 +8876,7 @@
         },
         {
           "disabled": false,
-          "document": "受影响资产数量",
+          "document": "<p>受影响资产数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "AssetCount",
@@ -8561,7 +8886,7 @@
         },
         {
           "disabled": false,
-          "document": "风险数量",
+          "document": "<p>风险数量</p>",
           "example": "2",
           "member": "uint64",
           "name": "RiskCount",
@@ -8571,7 +8896,7 @@
         },
         {
           "disabled": false,
-          "document": "资产类型",
+          "document": "<p>资产类型</p>",
           "example": "安全组",
           "member": "string",
           "name": "AssetType",
@@ -8581,7 +8906,7 @@
         },
         {
           "disabled": false,
-          "document": "事件类型",
+          "document": "<p>事件类型</p>",
           "example": "不合理规则",
           "member": "string",
           "name": "EventType",
@@ -8591,7 +8916,7 @@
         },
         {
           "disabled": false,
-          "document": "处置分类",
+          "document": "<p>处置分类</p>",
           "example": "expose",
           "member": "string",
           "name": "Classify",
@@ -8601,12 +8926,22 @@
         },
         {
           "disabled": false,
-          "document": "cspm规范条款",
+          "document": "<p>cspm规范条款</p>",
           "example": "无",
           "member": "StandardTerm",
           "name": "StandardTerms",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型图标</p>",
+          "example": "https://cloud-xspm-web-1258344699.cos.ap-guangzhou.myqcloud.com/asset-icon/imageIcon_2d.svg",
+          "member": "string",
+          "name": "AssetTypeIconURL",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -8800,6 +9135,2565 @@
       ],
       "usage": "out"
     },
+    "CosAccessInfo": {
+      "document": "cos访问权限信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可访问账号uin",
+          "example": "12324244",
+          "member": "string",
+          "name": "AccessUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可访问账号uid",
+          "example": "",
+          "member": "string",
+          "name": "AccessUid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "昵称",
+          "example": "brainzha",
+          "member": "string",
+          "name": "NickName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "身份标识 \n1 主账号\n2 子账号",
+          "example": "1",
+          "member": "int64",
+          "name": "Identity",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属主账号名称",
+          "example": "brainzha",
+          "member": "string",
+          "name": "MainNickName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可访问ak列表",
+          "example": "[\"AK232dweqr23r23r23r\"]",
+          "member": "string",
+          "name": "AkList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可访问权限数",
+          "example": "10",
+          "member": "int64",
+          "name": "CamPolicyCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间Unix时间单位毫秒",
+          "example": "1758163142000",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosActionInfo": {
+      "document": "cos命令信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "接口名",
+          "example": "GetService",
+          "member": "string",
+          "name": "ActionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接口中文名",
+          "example": "获取存储桶列表",
+          "member": "string",
+          "name": "ActionNameCn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接口描述",
+          "example": "获取存储桶列表信息",
+          "member": "string",
+          "name": "ActionDescription",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosAkAssetInfo": {
+      "document": "cos关联ak资产信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak id",
+          "example": "",
+          "member": "string",
+          "name": "AkId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak名称",
+          "example": "",
+          "member": "string",
+          "name": "AkName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak备注",
+          "example": "",
+          "member": "string",
+          "name": "AkRemark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak所属uin",
+          "example": "",
+          "member": "string",
+          "name": "AkOwnerUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak类型 1 主 2 子",
+          "example": "",
+          "member": "int64",
+          "name": "AkOwnerType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak所属账号名",
+          "example": "",
+          "member": "string",
+          "name": "AkOwnerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak主账号名",
+          "example": "",
+          "member": "string",
+          "name": "AkMainOwnerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak关联桶集合",
+          "example": "",
+          "member": "string",
+          "name": "AkRelBucketSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak关联告警集合",
+          "example": "",
+          "member": "CosRiskInfo",
+          "name": "AkRelAlarmSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ak关联ip数",
+          "example": "",
+          "member": "uint64",
+          "name": "AkRelIpCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak状态 0 禁用 1 启用",
+          "example": "",
+          "member": "int64",
+          "name": "AkStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "",
+          "member": "uint64",
+          "name": "CreateTimestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后访问时间",
+          "example": "",
+          "member": "uint64",
+          "name": "LastAccessTimestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosAkSet": {
+      "document": "cos ak 集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ak所属appid",
+          "example": "",
+          "member": "uint64",
+          "name": "AppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "ak名称集合",
+          "example": "",
+          "member": "string",
+          "name": "AkNameSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "CosAlarmInfo": {
+      "document": "对象存储告警信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid\n",
+          "example": "1378219944",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略id",
+          "example": "12",
+          "member": "int64",
+          "name": "PolicyId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "恶意文件下载",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略类型 0-未知规则分类(Unknown), 1-异常行为(AbnormalBehavior), 2-权限过大(ExcessivePermission), 3-资源枚举(ResourceEnumerated), 4-匿名访问(AnonymousAccess)\n",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyAbnormalType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级：0:Normal, 1:Tip, 2:Low, 3:Middle, 4:High, 5:Critical",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyRiskLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略信息描述",
+          "example": "风险策略描述",
+          "member": "string",
+          "name": "PolicyDescription",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶名",
+          "example": "brainzh-13782991",
+          "member": "string",
+          "name": "BucketName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶地域",
+          "example": "广东广州",
+          "member": "string",
+          "name": "BucketRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶备注",
+          "example": "生产",
+          "member": "string",
+          "name": "BucketMarker",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶tag信息",
+          "example": "[{\"Key\":\"Value\"}]",
+          "member": "string",
+          "name": "BucketTagInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶可访问属性",
+          "example": "specify",
+          "member": "string",
+          "name": "BucketAccessWay",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属账号uin",
+          "example": "1213214555",
+          "member": "string",
+          "name": "AccountUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属账号昵称",
+          "example": "rainhao",
+          "member": "string",
+          "name": "AccountNickName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属账号社身份 1 主 2子",
+          "example": "1",
+          "member": "int64",
+          "name": "AccountIdentify",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号所属主账号昵称",
+          "example": "admin",
+          "member": "string",
+          "name": "AccountMainNickName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警时间戳Unix时间单位毫秒",
+          "example": "13412245512000",
+          "member": "int64",
+          "name": "AlarmTimestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置状态 0 未处理 1 标记处置 2标记忽略",
+          "example": "0",
+          "member": "int64",
+          "name": "HandleStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警对象id",
+          "example": "1",
+          "member": "int64",
+          "name": "AlarmId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶地域码值",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "BucketRegionCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据识别分类详情",
+          "example": "无",
+          "member": "CosIdentifyCategoryDetail",
+          "name": "CategoryDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosAlarmRiskIdInfo": {
+      "document": "告警或者风险id信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警id",
+          "example": "1",
+          "member": "int64",
+          "name": "AlarmRiskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "租户id",
+          "example": "1379873245",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "CosAlarmTrendInfo": {
+      "document": "cos每日告警/风险信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前日期字符串格式",
+          "example": "06-09",
+          "member": "string",
+          "name": "CurrentDateStr",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前日期总数",
+          "example": "100",
+          "member": "int64",
+          "name": "CurrentDayCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当天告警分类详情",
+          "example": "无",
+          "member": "CosRiskInfo",
+          "name": "CurrentDayOverView",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosAssetDataScanDetail": {
+      "document": "cos审计资产数据识别详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败</p>",
+          "example": "4",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>识别进度</p>",
+          "example": "100",
+          "member": "float",
+          "name": "Progress",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近扫描时间</p>",
+          "example": "1775045033216",
+          "member": "uint64",
+          "name": "LatestScanTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>识别失败信息</p>",
+          "example": "identify scan failed",
+          "member": "string",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>识别结果分类详情</p>",
+          "example": "无",
+          "member": "CosIdentifyCategoryDetail",
+          "name": "CategoryDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosAssetFileIdentifyInfo": {
+      "document": "cos审计文件数据识别信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件名称",
+          "example": "",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件路径",
+          "example": "",
+          "member": "string",
+          "name": "DirName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类数据项详情",
+          "example": "",
+          "member": "CosIdentifyCategoryDetail",
+          "name": "CategoryDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosAssetInfo": {
+      "document": "Cos资产信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "1332535553",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos桶名",
+          "example": "cos-134137551",
+          "member": "string",
+          "name": "BucketName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos region名",
+          "example": "广东广州",
+          "member": "string",
+          "name": "BucketRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域码值",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "BucketRegionCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos桶备注",
+          "example": "备注",
+          "member": "string",
+          "name": "BucketMarker",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos桶主账号所属者",
+          "example": "brainzhao",
+          "member": "string",
+          "name": "BucketOwnerUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos主账号所属者昵称",
+          "example": "brainzhao",
+          "member": "string",
+          "name": "BucketOwnerNickName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos桶标签详情",
+          "example": "[{\"Key\":\"测试1\",\"Value\":\"brainzhao\"},{\"Key\":\"测试2\",\"Value\":\"brainzhao1\"}]",
+          "member": "string",
+          "name": "BucketTagInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全建议\n1 暂无异常\n2 建议加固\n3 立即处理",
+          "example": "1",
+          "member": "int64",
+          "name": "BucketSecuritySuggestion",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警列表",
+          "example": "无",
+          "member": "CosRiskAlarmInfo",
+          "name": "BucketAlarmList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险列表",
+          "example": "无",
+          "member": "CosRiskAlarmInfo",
+          "name": "BucketRiskList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用源ip数",
+          "example": "1",
+          "member": "int64",
+          "name": "BucketInvokeSourceIpCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问策略",
+          "example": "无",
+          "member": "CosBucketAccessWay",
+          "name": "BucketAccessWay",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间Unix时间单位毫秒",
+          "example": "134423122000",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后访问时间Unix时间单位毫秒",
+          "example": "121323233000",
+          "member": "int64",
+          "name": "LastAccessTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储桶id",
+          "example": "1",
+          "member": "uint64",
+          "name": "BucketId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 关闭\n1 开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "MonitorStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据识别扫描信息",
+          "example": "",
+          "member": "CosAssetDataScanDetail",
+          "name": "DataScanInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosAssetSyncTaskInfo": {
+      "document": "cos资产同步任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "123444212",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步任务id",
+          "example": "task-1qazxs2",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后一次扫描时间",
+          "example": "",
+          "member": "int64",
+          "name": "LastScanTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosAuditPayInfo": {
+      "document": "cos审计支付信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "APPID",
+          "example": "212451270",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单状态 0未购买 1正常，2隔离，3销毁，6试用中，7到期",
+          "example": "0",
+          "member": "uint64",
+          "name": "OrderStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已购对象存储数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "BucketNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支付模式，0-后付费 1-预付费",
+          "example": "0",
+          "member": "uint64",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否单独购买，1-单独购买，2-被其它账号共享",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsSelfBuy",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单开始时间",
+          "example": "1367645323",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单到期时间",
+          "example": "1367645323",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0-用户未设置,1-用户设置自动续费,2-用户设置不自动续费",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRenew",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单时长",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时长单位",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源id ",
+          "example": "casb-audit-1w34r31",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公测结束时间",
+          "example": "1367645323",
+          "member": "string",
+          "name": "BetaEndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统当前时间",
+          "example": "1367645323",
+          "member": "string",
+          "name": "TimeNow",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否分享给其它账号，1-是，2-否",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsShareToOther",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "uin",
+          "example": "173526917380",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "昵称",
+          "example": "brain",
+          "member": "string",
+          "name": "NickName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享的bucketIdSet ",
+          "example": "无",
+          "member": "CosBucketId",
+          "name": "BindBucket",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享的appid",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "SharedAppIdSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已经开启后付费",
+          "example": "0",
+          "member": "uint64",
+          "name": "PostPayStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0：未做过试用期试用   1 ：做过试用期试用",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsTestUser",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余可用数",
+          "example": "0",
+          "member": "uint64",
+          "name": "AvailableBucketNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已开启的监测存储桶数",
+          "example": "10",
+          "member": "uint64",
+          "name": "MonitorBucketNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总的存储桶数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalBucketNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosBucketAccessWay": {
+      "document": "cos风险识别桶访问规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可访问方式：\nspecify 指定用户\nanonymous 可匿名访问",
+          "example": "specify",
+          "member": "string",
+          "name": "AccessType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户数",
+          "example": "1",
+          "member": "int64",
+          "name": "AccessUserCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak数",
+          "example": "1",
+          "member": "int64",
+          "name": "AccessAkCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色数",
+          "example": "",
+          "member": "int64",
+          "name": "AccessRoleCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosBucketBillingInfo": {
+      "document": "存储桶数量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "17369246190",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "uin",
+          "example": "17369246190",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "昵称",
+          "example": "brain",
+          "member": "string",
+          "name": "OwnerNickName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储桶数量",
+          "example": "21",
+          "member": "uint64",
+          "name": "BucketCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 未购买 1  已单独购买 2 已被共享",
+          "example": "0",
+          "member": "uint64",
+          "name": "BuyStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享账号appid",
+          "example": "17369246190",
+          "member": "uint64",
+          "name": "ShareFromAppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享账号uin",
+          "example": "17369246190",
+          "member": "string",
+          "name": "ShareFromUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享账号昵称",
+          "example": "brain",
+          "member": "string",
+          "name": "ShareFromNickName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监控的存储桶数",
+          "example": "100",
+          "member": "uint64",
+          "name": "MonitorBucketCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 关闭 1 开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsAutoMonitor",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosBucketId": {
+      "document": "存储桶id",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "173582910",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "bucket id集合",
+          "example": "[\"1\",\"3\"]",
+          "member": "string",
+          "name": "BucketIdSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CosBucketInfo": {
+      "document": "cos存储桶详情信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12412432523",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储桶名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"brain-13718212\"]",
+          "member": "string",
+          "name": "BucketName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域信息",
+          "example": "广东 广州",
+          "member": "string",
+          "name": "BucketRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域码值",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "BucketRegionCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "BucketMarker",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CosBucketTaskInfo": {
+      "document": "cos存储桶任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "13124124",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储桶名",
+          "example": "braun-121413555",
+          "member": "string",
+          "name": "BucketName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "task-11waddqwe",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后一次扫描时间",
+          "example": "",
+          "member": "int64",
+          "name": "LastScanTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosDictionary": {
+      "document": "cos字典信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>字典id</p>",
+          "example": "5815",
+          "member": "uint64",
+          "name": "DictId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字典名称</p>",
+          "example": "驾驶证",
+          "member": "string",
+          "name": "DictName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosIdentifyCategoryDetail": {
+      "document": "cos数据识别结果分类详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分类id</p>",
+          "example": "356",
+          "member": "uint64",
+          "name": "CategoryId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类名称</p>",
+          "example": "个人信息",
+          "member": "string",
+          "name": "CategoryName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项集合</p>",
+          "example": "无",
+          "member": "CosIdentifyRuleDetail",
+          "name": "RuleSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosIdentifyRuleDetail": {
+      "document": "cos数据项详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据项id",
+          "example": "6657",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据项名称",
+          "example": "银行卡",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏感级别id",
+          "example": "10",
+          "member": "uint64",
+          "name": "LevelId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏感级别名称",
+          "example": "一般",
+          "member": "string",
+          "name": "LevelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏感程度",
+          "example": "1",
+          "member": "uint64",
+          "name": "LevelScore",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosInvokeDetailInfo": {
+      "document": "cos调用详情信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用时间",
+          "example": "13784355222",
+          "member": "int64",
+          "name": "InvokeTimestamp",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求id",
+          "example": "req-2ssfq31e32",
+          "member": "string",
+          "name": "InvokeRequestId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用内容",
+          "example": "{\"staement\":[]}",
+          "member": "string",
+          "name": "InvokeContent",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CosInvokeIpVpcInfo": {
+      "document": "cos调用源ip vpc信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vpc所属uin",
+          "example": "",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc所属appid",
+          "example": "",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "昵称",
+          "example": "",
+          "member": "string",
+          "name": "NickName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpcid信息",
+          "example": "",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc名称",
+          "example": "",
+          "member": "string",
+          "name": "VpcName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CosInvokeLog": {
+      "document": "cos调用日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用时间戳",
+          "example": "",
+          "member": "uint64",
+          "name": "InvokeTimestamp",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求id",
+          "example": "",
+          "member": "string",
+          "name": "RequestId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求内容 base64 json 结构",
+          "example": "",
+          "member": "string",
+          "name": "RequestContent",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CosOverview": {
+      "document": "cos概览页面数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资产总数",
+          "example": "100",
+          "member": "int64",
+          "name": "AssetCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要立即处理的资产数",
+          "example": "1",
+          "member": "int64",
+          "name": "AlarmAssetCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要加固的资产数",
+          "example": "99",
+          "member": "int64",
+          "name": "RiskAssetCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警总数",
+          "example": "1",
+          "member": "int64",
+          "name": "AlarmCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当日新增告警总数",
+          "example": "2",
+          "member": "int64",
+          "name": "IncrementAlarmCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险总数",
+          "example": "4",
+          "member": "int64",
+          "name": "RiskCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当日新增告警总数",
+          "example": "7",
+          "member": "int64",
+          "name": "IncrementRiskCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险top详情",
+          "example": "[{\"PolicyName\":\"权限过大\"}]",
+          "member": "CosRiskInfo",
+          "name": "RiskTop",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警风险top",
+          "example": "",
+          "member": "CosRiskInfo",
+          "name": "AlarmTop",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosPermissionInfo": {
+      "document": "cos权限信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限来源",
+          "example": "Policy",
+          "member": "string",
+          "name": "PermissionSource",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限内容",
+          "example": "policyId:12431455",
+          "member": "string",
+          "name": "PermissionContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权资源",
+          "example": "csip-auto-test-123414/*",
+          "member": "string",
+          "name": "GrantResource",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权动作",
+          "example": "读操作",
+          "member": "string",
+          "name": "GrantAction",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权条件",
+          "example": "ip==1.1.1.1",
+          "member": "string",
+          "name": "GrantCondition",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosPolicyInfo": {
+      "document": "cos策略信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "告警策略",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略类型\nPolicyType：1 告警策略 2 风险策略  3  白名单策略  4 ip隐藏策略",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "system:系统内置 user:用户自定义",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicySource",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略内容",
+          "example": "{\"PolicyName\":\"risk\"}",
+          "member": "string",
+          "name": "PolicyContent",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 关闭\n1 开启",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyStatus",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略分类",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyAbnormalType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险级别",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskLevel",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略id",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "13213244213",
+          "member": "int64",
+          "name": "PolicyCreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "13213244213",
+          "member": "int64",
+          "name": "PolicyUpdateTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略近七天命中次数",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyHitCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警内容hash",
+          "example": "1wr3e1r23re",
+          "member": "string",
+          "name": "PolicyContentHash",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联账户数",
+          "example": "10",
+          "member": "int64",
+          "name": "RelAccountCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联账号uin",
+          "example": "1752835621",
+          "member": "string",
+          "name": "RelAccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联账号名",
+          "example": "brainzhao",
+          "member": "string",
+          "name": "RelAccountName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述信息",
+          "example": "policy",
+          "member": "string",
+          "name": "PolicyDescription",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "marker",
+          "member": "string",
+          "name": "PolicyMarker",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "13795326",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多账号场景下的id集合",
+          "example": "[1,5,7]",
+          "member": "int64",
+          "name": "PolicyIdSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否处置历史数据状态  0 无须处置 1 需要处置 2 已处置",
+          "example": "",
+          "member": "uint64",
+          "name": "PolicyHistoryHandleStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统策略编辑状态",
+          "example": "",
+          "member": "int64",
+          "name": "SystemPolicyEditStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CosRiskActionInfo": {
+      "document": "风险接口情况",
+      "members": [
+        {
+          "disabled": false,
+          "document": "接口名",
+          "example": "GetService",
+          "member": "string",
+          "name": "ActionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接口名中文",
+          "example": "获取cos桶列表",
+          "member": "string",
+          "name": "ActionNameCn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用次数",
+          "example": "1",
+          "member": "int64",
+          "name": "InvokeCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后访问时间Unix时间单位毫秒",
+          "example": "174324441000",
+          "member": "int64",
+          "name": "ActionAccessTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosRiskAlarmInfo": {
+      "document": "cos风险告警信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略类型枚举值",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略名",
+          "example": "异常访问",
+          "member": "string",
+          "name": "PolicyTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略类型对应的策略数量",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosRiskBucketInfo": {
+      "document": "受影响的存储桶信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "1378345521",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶名",
+          "example": "test-1378345521",
+          "member": "string",
+          "name": "BucketName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶地域",
+          "example": "广东 广州",
+          "member": "string",
+          "name": "BucketRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶备注信息",
+          "example": "生产桶",
+          "member": "string",
+          "name": "BucketMarker",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶uin",
+          "example": "1342561214",
+          "member": "string",
+          "name": "BucketUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "uin昵称",
+          "example": "brain",
+          "member": "string",
+          "name": "BucketNickName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "uin主账号昵称",
+          "example": "brainzhai",
+          "member": "string",
+          "name": "BucketMainNickName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "uin身份",
+          "example": "1",
+          "member": "int64",
+          "name": "BucketIdentify",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险检出时间Unix时间单位毫秒",
+          "example": "13783452524000",
+          "member": "int64",
+          "name": "LastScanTimestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态信息",
+          "example": "1",
+          "member": "int64",
+          "name": "HandleStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险名称",
+          "example": "不改拥有高权限",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险类型",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略id",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略级别",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略描述",
+          "example": "适应策略",
+          "member": "string",
+          "name": "PolicyDescription",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问方式",
+          "example": "specify",
+          "member": "string",
+          "name": "BucketAccessWay",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签信息",
+          "example": "\"Key\":\"ru\"",
+          "member": "string",
+          "name": "BucketTagInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险id",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos地域码值",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "BucketRegionCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自动监测状态 0 关闭 1 开启",
+          "example": "",
+          "member": "uint64",
+          "name": "BucketMonitorStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosRiskInfo": {
+      "document": "cos风险详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略类型码值",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略分类名",
+          "example": "权限过大",
+          "member": "string",
+          "name": "PolicyTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命中策略总数",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosRiskTrendInfo": {
+      "document": "对象存储风险趋势图",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前日期",
+          "example": "06-01",
+          "member": "string",
+          "name": "CurrentDateStr",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险数据信息",
+          "example": "[{\"权限过大\":100}]",
+          "member": "CosRiskInfo",
+          "name": "RiskDataSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosRiskViewInfo": {
+      "document": "风险视角风险列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "137545632",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "不应该拥有高权限预设策略",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略id",
+          "example": "rule-1qazxsw2",
+          "member": "string",
+          "name": "PolicyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略分类",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略风险等级",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyRiskLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略描述",
+          "example": "不能拥有高权限的账号",
+          "member": "string",
+          "name": "PolicyDescription",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "待处理的桶数",
+          "example": "1",
+          "member": "int64",
+          "name": "HandleBucketCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近风险检出时间Unix时间单位毫秒",
+          "example": "1758163142000",
+          "member": "int64",
+          "name": "LastScanTimestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosRoleAccessInfo": {
+      "document": "Cos桶关联角色列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色ID",
+          "example": "",
+          "member": "string",
+          "name": "RoleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色名称",
+          "example": "",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色描述",
+          "example": "",
+          "member": "string",
+          "name": "RoleDescription",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可访问权限数",
+          "example": "",
+          "member": "uint64",
+          "name": "PermissionCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略创建时间",
+          "example": "",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosSourceIpInfo": {
+      "document": "对象存储调用源ip信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用UA",
+          "example": "[\"cos-console\"]",
+          "member": "string",
+          "name": "UA",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用vpc信息",
+          "example": "",
+          "member": "CosInvokeIpVpcInfo",
+          "name": "VpcInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateAccessKeyCheckTaskRequest": {
       "document": "CreateAccessKeyCheckTask请求参数结构体",
       "members": [
@@ -8931,6 +11825,178 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCosAssetSyncTaskRequest": {
+      "document": "CreateCosAssetSyncTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "1 同步所有 2 仅同步资产数",
+          "example": "1",
+          "member": "int64",
+          "name": "SyncType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCosAssetSyncTaskResponse": {
+      "document": "CreateCosAssetSyncTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "同步任务id",
+          "example": "task-1qazxsw2",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCosObjectScanTaskRequest": {
+      "document": "CreateCosObjectScanTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>1: 敏感数据识别 2:恶意文件扫描</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-1edsada\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储桶列表</p>",
+          "example": "[\"brainzhao-test-251002343\"]",
+          "member": "string",
+          "name": "BucketSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCosObjectScanTaskResponse": {
+      "document": "CreateCosObjectScanTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCosPolicyRequest": {
+      "document": "CreateCosPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略信息",
+          "example": "无",
+          "member": "CosPolicyInfo",
+          "name": "CosPolicyInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCosPolicyResponse": {
+      "document": "CreateCosPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCosRiskScanTaskRequest": {
+      "document": "CreateCosRiskScanTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要扫描的桶列表",
+          "example": "无",
+          "member": "CosBucketInfo",
+          "name": "BucketNameSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否扫描全部的桶",
+          "example": "true",
+          "member": "bool",
+          "name": "IsScanAllBucket",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCosRiskScanTaskResponse": {
+      "document": "CreateCosRiskScanTask返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10773,6 +13839,69 @@
       ],
       "usage": "out"
     },
+    "DeleteCosAkAssetRequest": {
+      "document": "DeleteCosAkAsset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要删除的cos ak集合",
+          "example": "",
+          "member": "CosAkSet",
+          "name": "CosAkSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCosAkAssetResponse": {
+      "document": "DeleteCosAkAsset返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCosPolicyRequest": {
+      "document": "DeleteCosPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要删除的策略集合",
+          "example": "[1,3,7]",
+          "member": "int64",
+          "name": "PolicyIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否删除所有",
+          "example": "1",
+          "member": "int64",
+          "name": "IsDeleteAll",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCosPolicyResponse": {
+      "document": "DeleteCosPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDomainAndIpRequest": {
       "document": "DeleteDomainAndIp请求参数结构体",
       "members": [
@@ -11984,7 +15113,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -12085,7 +15214,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -12354,6 +15483,71 @@
       ],
       "type": "object"
     },
+    "DescribeBucketInvokeIpListRequest": {
+      "document": "DescribeBucketInvokeIpList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "1739321522",
+          "member": "int64",
+          "name": "RelAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "桶名",
+          "example": "brain-1739321522",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBucketInvokeIpListResponse": {
+      "document": "DescribeBucketInvokeIpList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ip信息",
+          "example": "无",
+          "member": "CosSourceIpInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCFWAssetStatisticsRequest": {
       "document": "DescribeCFWAssetStatistics请求参数结构体",
       "members": [],
@@ -12486,7 +15680,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -12837,7 +16031,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -13171,7 +16365,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -13287,6 +16481,1491 @@
           "name": "CheckTypeList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAccessPermissionRequest": {
+      "document": "DescribeCosAccessPermission请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关联的appid",
+          "example": "137976213",
+          "member": "int64",
+          "name": "RelAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "桶名",
+          "example": "brain-137976213",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要查看的uin",
+          "example": "3623891832",
+          "member": "string",
+          "name": "RelUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAccessPermissionResponse": {
+      "document": "DescribeCosAccessPermission返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cos权限信息",
+          "example": "无",
+          "member": "CosPermissionInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAccessPermissionsRequest": {
+      "document": "DescribeCosAccessPermissions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "173578213",
+          "member": "int64",
+          "name": "RelAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "桶名",
+          "example": "brain-173578213",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAccessPermissionsResponse": {
+      "document": "DescribeCosAccessPermissions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据列表",
+          "example": "无",
+          "member": "CosAccessInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosActionListRequest": {
+      "document": "DescribeCosActionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosActionListResponse": {
+      "document": "DescribeCosActionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表",
+          "example": "无",
+          "member": "CosActionInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAkAssetRequest": {
+      "document": "DescribeCosAkAsset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询过滤器",
+          "example": "",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAkAssetResponse": {
+      "document": "DescribeCosAkAsset返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak资产列表",
+          "example": "",
+          "member": "CosAkAssetInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAkInvokeIpListRequest": {
+      "document": "DescribeCosAkInvokeIpList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "",
+          "member": "int64",
+          "name": "RelAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "ak",
+          "example": "",
+          "member": "string",
+          "name": "Ak",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAkInvokeIpListResponse": {
+      "document": "DescribeCosAkInvokeIpList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ip信息",
+          "example": "",
+          "member": "CosSourceIpInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAlarmListRequest": {
+      "document": "DescribeCosAlarmList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAlarmListResponse": {
+      "document": "DescribeCosAlarmList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警列表",
+          "example": "无",
+          "member": "CosAlarmInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAlarmTrendDataRequest": {
+      "document": "DescribeCosAlarmTrendData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要查看多久的时间",
+          "example": "10",
+          "member": "int64",
+          "name": "LastDays",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAlarmTrendDataResponse": {
+      "document": "DescribeCosAlarmTrendData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警趋势信息",
+          "example": "无",
+          "member": "CosAlarmTrendInfo",
+          "name": "CosAlarmTrendInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAssetRequest": {
+      "document": "DescribeCosAsset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAssetResponse": {
+      "document": "DescribeCosAsset返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶信息",
+          "example": "无",
+          "member": "CosAssetInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAssetSyncTaskRequest": {
+      "document": "DescribeCosAssetSyncTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAssetSyncTaskResponse": {
+      "document": "DescribeCosAssetSyncTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据信息",
+          "example": "[{\"AppId\":1222123,\"TaskId\":\"task-1qazxswe\"}]",
+          "member": "CosAssetSyncTaskInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAuditAppIdListRequest": {
+      "document": "DescribeCosAuditAppIdList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCosAuditAppIdListResponse": {
+      "document": "DescribeCosAuditAppIdList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "已购买appid集合",
+          "example": "[1342134155]",
+          "member": "int64",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAuditDictionaryListRequest": {
+      "document": "DescribeCosAuditDictionaryList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>字典类型（RootCategory：一级分类，IdentifyRule:敏感识别数据项）</p>",
+          "example": "IdentifyRule",
+          "member": "string",
+          "name": "DictType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>筛选条件</p>",
+          "example": "无",
+          "member": "WhereFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAuditDictionaryListResponse": {
+      "document": "DescribeCosAuditDictionaryList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>结果集</p>",
+          "example": "无",
+          "member": "CosDictionary",
+          "name": "DataSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosAuditPayInfoRequest": {
+      "document": "DescribeCosAuditPayInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCosAuditPayInfoResponse": {
+      "document": "DescribeCosAuditPayInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cos审计支付信息",
+          "example": "无",
+          "member": "CosAuditPayInfo",
+          "name": "CosAuditPayInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosBucketBillingInfoRequest": {
+      "document": "DescribeCosBucketBillingInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosBucketBillingInfoResponse": {
+      "document": "DescribeCosBucketBillingInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储桶计费信息",
+          "example": "无",
+          "member": "CosBucketBillingInfo",
+          "name": "CosBucketBillingInfoSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosBucketListRequest": {
+      "document": "DescribeCosBucketList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosBucketListResponse": {
+      "document": "DescribeCosBucketList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产信息",
+          "example": "无",
+          "member": "CosAssetInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosBucketRiskRequest": {
+      "document": "DescribeCosBucketRisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosBucketRiskResponse": {
+      "document": "DescribeCosBucketRisk返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列表",
+          "example": "无",
+          "member": "CosRiskBucketInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosIdentifyFileListRequest": {
+      "document": "DescribeCosIdentifyFileList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存储桶名</p>",
+          "example": "brainzhao-test-1302396215",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-68b8087a65268000\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>筛选项</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>0：没有识别结果 1：有识别结果</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ResultStatus",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosIdentifyFileListResponse": {
+      "document": "DescribeCosIdentifyFileList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果集</p>",
+          "example": "无",
+          "member": "CosAssetFileIdentifyInfo",
+          "name": "DataSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosInvokeUaRequest": {
+      "document": "DescribeCosInvokeUa请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "",
+          "member": "uint64",
+          "name": "RelAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosInvokeUaResponse": {
+      "document": "DescribeCosInvokeUa返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件列表",
+          "example": "",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosIpInvokeLogRequest": {
+      "document": "DescribeCosIpInvokeLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "",
+          "member": "uint64",
+          "name": "RelAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosIpInvokeLogResponse": {
+      "document": "DescribeCosIpInvokeLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求日志数据",
+          "example": "",
+          "member": "CosInvokeLog",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosIpInvokeRecordFileRequest": {
+      "document": "DescribeCosIpInvokeRecordFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "251002343",
+          "member": "uint64",
+          "name": "RelAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosIpInvokeRecordFileResponse": {
+      "document": "DescribeCosIpInvokeRecordFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "文件列表",
+          "example": "[\"Sensitive_data_data.txt\"]",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件列表详情",
+          "example": "无",
+          "member": "CosAssetFileIdentifyInfo",
+          "name": "DataSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosOverviewRequest": {
+      "document": "DescribeCosOverview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤信息",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosOverviewResponse": {
+      "document": "DescribeCosOverview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cos概览",
+          "example": "无",
+          "member": "CosOverview",
+          "name": "CosOverview",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosPolicyRequest": {
+      "document": "DescribeCosPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosPolicyResponse": {
+      "document": "DescribeCosPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略总数",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略信息",
+          "example": "无",
+          "member": "CosPolicyInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosRiskActionListRequest": {
+      "document": "DescribeCosRiskActionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "173773711",
+          "member": "int64",
+          "name": "RelAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略id",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "桶名",
+          "example": "brain-173773711",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosRiskActionListResponse": {
+      "document": "DescribeCosRiskActionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列表",
+          "example": "无",
+          "member": "CosRiskActionInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosRiskEvidenceRequest": {
+      "document": "DescribeCosRiskEvidence请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "1377132213",
+          "member": "int64",
+          "name": "RelAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略id",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "存储桶名",
+          "example": "brain-1377132213",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosRiskEvidenceResponse": {
+      "document": "DescribeCosRiskEvidence返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证据信息",
+          "example": "无",
+          "member": "CosPermissionInfo",
+          "name": "Evidences",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosRiskScanTaskRequest": {
+      "document": "DescribeCosRiskScanTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要查看的存储桶详情",
+          "example": "无",
+          "member": "CosBucketInfo",
+          "name": "BucketInfoSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosRiskScanTaskResponse": {
+      "document": "DescribeCosRiskScanTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cos桶任务详情",
+          "example": "无",
+          "member": "CosBucketTaskInfo",
+          "name": "BucketTaskInfoSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosRoleAccessPermissionRequest": {
+      "document": "DescribeCosRoleAccessPermission请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关联的appid",
+          "example": "",
+          "member": "int64",
+          "name": "RelAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要查看的角色id",
+          "example": "",
+          "member": "string",
+          "name": "RelRoleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "桶名",
+          "example": "",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosRoleAccessPermissionResponse": {
+      "document": "DescribeCosRoleAccessPermission返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cos权限信息",
+          "example": "",
+          "member": "CosPermissionInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosRoleAccessPermissionsRequest": {
+      "document": "DescribeCosRoleAccessPermissions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储桶所属appid",
+          "example": "",
+          "member": "uint64",
+          "name": "RelAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "存储桶名",
+          "example": "",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosRoleAccessPermissionsResponse": {
+      "document": "DescribeCosRoleAccessPermissions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色详情",
+          "example": "",
+          "member": "CosRoleAccessInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosSourceIpRequest": {
+      "document": "DescribeCosSourceIp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosSourceIpResponse": {
+      "document": "DescribeCosSourceIp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表信息",
+          "example": "无",
+          "member": "CosSourceIpInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -16826,7 +21505,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -16863,7 +21542,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -16936,7 +21615,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -17124,7 +21803,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -17220,6 +21899,80 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpInvokeRecordDetailRequest": {
+      "document": "DescribeIpInvokeRecordDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "{\"Order\":\"ip\"}",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpInvokeRecordDetailResponse": {
+      "document": "DescribeIpInvokeRecordDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用详情信息",
+          "example": "[{}]",
+          "member": "CosInvokeDetailInfo",
+          "name": "InvokeDetailInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用权限相关",
+          "example": "[{}]",
+          "member": "CosPermissionInfo",
+          "name": "InvokePermission",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpInvokeRecordRequest": {
+      "document": "DescribeIpInvokeRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpInvokeRecordResponse": {
+      "document": "DescribeIpInvokeRecord返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -17790,6 +22543,52 @@
       ],
       "type": "object"
     },
+    "DescribePolicyHitDataRequest": {
+      "document": "DescribePolicyHitData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查看的日期时间戳",
+          "example": "12345678908",
+          "member": "int64",
+          "name": "IndexTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyHitDataResponse": {
+      "document": "DescribePolicyHitData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略命中详情信息",
+          "example": "无",
+          "member": "CosRiskInfo",
+          "name": "PolicyHitDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePublicIpAssetsRequest": {
       "document": "DescribePublicIpAssets请求参数结构体",
       "members": [
@@ -17969,6 +22768,71 @@
           "member": "FilterDataObject",
           "name": "RegionList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskBucketListRequest": {
+      "document": "DescribeRiskBucketList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关联的appid",
+          "example": "1373242354",
+          "member": "int64",
+          "name": "RelAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则id",
+          "example": "rule-1qazxsw2",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "{\"Order\":\"scan_time\"}",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskBucketListResponse": {
+      "document": "DescribeRiskBucketList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "受影响的存储桶",
+          "example": "[{\"BucketName\":\"brain-1371923\"}]",
+          "member": "CosRiskBucketInfo",
+          "name": "Data",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19016,7 +23880,7 @@
         },
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -19101,6 +23965,62 @@
           "name": "AssetRiskDetailList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskItemListRequest": {
+      "document": "DescribeRiskItemList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskItemListResponse": {
+      "document": "DescribeRiskItemList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表信息",
+          "example": "无",
+          "member": "CosRiskViewInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -19279,6 +24199,52 @@
           "member": "AttributeOptionSet",
           "name": "InstanceTypeList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskTrendDataRequest": {
+      "document": "DescribeRiskTrendData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定的日期",
+          "example": "10",
+          "member": "int64",
+          "name": "LastDays",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskTrendDataResponse": {
+      "document": "DescribeRiskTrendData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险趋势数据",
+          "example": "无",
+          "member": "CosRiskTrendInfo",
+          "name": "CosRiskTrendData",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19612,6 +24578,173 @@
           "member": "string",
           "name": "ReturnMsg",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSkillScanPayInfoRequest": {
+      "document": "DescribeSkillScanPayInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSkillScanPayInfoResponse": {
+      "document": "DescribeSkillScanPayInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>订单所属租户 AppID</p>",
+          "example": "260083796",
+          "member": "uint64",
+          "name": "AppID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单状态<br>枚举值：<br>0：未购买<br>1：正常<br>2：隔离<br>6：试用中<br>7：已过期<br>8：试用到期</p>",
+          "example": "6",
+          "member": "int64",
+          "name": "OrderStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总配额</p>",
+          "example": "1000",
+          "member": "int64",
+          "name": "TotalQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已消耗配额</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "UsedCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付模式<br>枚举值：<br>0：后付费<br>1：预付费</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动续费标志<br>枚举值：<br>0：未设置<br>1：自动续费<br>2：不自动续费</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRenew",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源ID</p>",
+          "example": "skillscan-a1b2c3d4",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买时长</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TimeSpan",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时长单位</p>",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单开始时间</p>",
+          "example": "2026-05-14 00:48:15",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单到期时间</p>",
+          "example": "2026-06-30 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公测结束时间，固定为 2026-06-30 23:59:59</p>",
+          "example": "2026-06-30 23:59:59",
+          "member": "string",
+          "name": "BetaEndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务器当前时间</p>",
+          "example": "2026-05-14 00:48:25",
+          "member": "string",
+          "name": "TimeNow",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>租户 Uin</p>",
+          "example": "700002365149",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>租户昵称</p>",
+          "example": "多账号-管理员",
+          "member": "string",
+          "name": "NickName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20752,7 +25885,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -22881,7 +28014,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资产实例id",
+          "document": "<p>资产实例id</p>",
           "example": "cdb-c2thbt00",
           "member": "string",
           "name": "AssetId",
@@ -22891,7 +28024,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称",
+          "document": "<p>数据库名称</p>",
           "example": "test_db",
           "member": "string",
           "name": "DbName",
@@ -22901,7 +28034,7 @@
         },
         {
           "disabled": false,
-          "document": "schema名",
+          "document": "<p>schema名</p>",
           "example": "test_schema",
           "member": "string",
           "name": "SchemaName",
@@ -22911,7 +28044,7 @@
         },
         {
           "disabled": false,
-          "document": "表名",
+          "document": "<p>表名</p>",
           "example": "test_tb",
           "member": "string",
           "name": "TableName",
@@ -22921,7 +28054,7 @@
         },
         {
           "disabled": false,
-          "document": "字段名",
+          "document": "<p>字段名</p>",
           "example": "test_field",
           "member": "string",
           "name": "FieldName",
@@ -22931,7 +28064,7 @@
         },
         {
           "disabled": false,
-          "document": "数据项id集合",
+          "document": "<p>数据项id集合</p>",
           "example": "[5800]",
           "member": "uint64",
           "name": "RuleIds",
@@ -22941,7 +28074,7 @@
         },
         {
           "disabled": false,
-          "document": "数据项名称集合",
+          "document": "<p>数据项名称集合</p>",
           "example": "[\"姓名\"]",
           "member": "string",
           "name": "RuleNames",
@@ -22951,7 +28084,7 @@
         },
         {
           "disabled": false,
-          "document": "分类id集合",
+          "document": "<p>分类id集合</p>",
           "example": "[356]",
           "member": "uint64",
           "name": "CategoryIds",
@@ -22961,12 +28094,32 @@
         },
         {
           "disabled": false,
-          "document": "分类名称集合",
+          "document": "<p>分类名称集合</p>",
           "example": "[\"个人信息\"]",
           "member": "string",
           "name": "CategoryNames",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类详情</p>",
+          "example": "无",
+          "member": "DspmIdentifyCategoryDetail",
+          "name": "CategoryDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段注释</p>",
+          "example": "正样本-字段描述匹配-ICCID",
+          "member": "string",
+          "name": "FieldComment",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -23153,7 +28306,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资产实例id",
+          "document": "<p>资产实例id</p>",
           "example": "cdb-c2thbt00",
           "member": "string",
           "name": "AssetId",
@@ -23163,7 +28316,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称",
+          "document": "<p>数据库名称</p>",
           "example": "test_db",
           "member": "string",
           "name": "DbName",
@@ -23173,7 +28326,7 @@
         },
         {
           "disabled": false,
-          "document": "schema名称",
+          "document": "<p>schema名称</p>",
           "example": "test_schema",
           "member": "string",
           "name": "SchemaName",
@@ -23183,7 +28336,7 @@
         },
         {
           "disabled": false,
-          "document": "表名",
+          "document": "<p>表名</p>",
           "example": "test_tb",
           "member": "string",
           "name": "TableName",
@@ -23193,7 +28346,7 @@
         },
         {
           "disabled": false,
-          "document": "字段数",
+          "document": "<p>字段数</p>",
           "example": "10",
           "member": "uint64",
           "name": "FieldCount",
@@ -23203,7 +28356,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感字段数",
+          "document": "<p>敏感字段数</p>",
           "example": "5",
           "member": "uint64",
           "name": "SensitiveFieldCount",
@@ -23213,7 +28366,7 @@
         },
         {
           "disabled": false,
-          "document": "数据项id集合",
+          "document": "<p>数据项id集合</p>",
           "example": "[5800]",
           "member": "uint64",
           "name": "RuleIds",
@@ -23223,7 +28376,7 @@
         },
         {
           "disabled": false,
-          "document": "数据项名称集合",
+          "document": "<p>数据项名称集合</p>",
           "example": "[\"姓名\"]",
           "member": "string",
           "name": "RuleNames",
@@ -23233,7 +28386,7 @@
         },
         {
           "disabled": false,
-          "document": "分类id集合",
+          "document": "<p>分类id集合</p>",
           "example": "[356]",
           "member": "uint64",
           "name": "CategoryIds",
@@ -23243,12 +28396,42 @@
         },
         {
           "disabled": false,
-          "document": "分类名称集合",
+          "document": "<p>分类名称集合</p>",
           "example": "[\"个人信息\"]",
           "member": "string",
           "name": "CategoryNames",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类详情</p>",
+          "example": "无",
+          "member": "DspmIdentifyCategoryDetail",
+          "name": "CategoryDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据表id</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TableId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>表注释</p>",
+          "example": "薪水",
+          "member": "string",
+          "name": "TableComment",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -25942,7 +31125,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云厂商",
+          "document": "<p>云厂商</p>",
           "example": "tencent",
           "member": "string",
           "name": "Provider",
@@ -25952,7 +31135,7 @@
         },
         {
           "disabled": false,
-          "document": "云账号名称",
+          "document": "<p>云账号名称</p>",
           "example": "长安守夜人",
           "member": "string",
           "name": "CloudAccountName",
@@ -25962,7 +31145,7 @@
         },
         {
           "disabled": false,
-          "document": "云账号",
+          "document": "<p>云账号</p>",
           "example": "1112222",
           "member": "string",
           "name": "CloudAccountId",
@@ -25972,7 +31155,7 @@
         },
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "www.test.com",
           "member": "string",
           "name": "Domain",
@@ -25982,7 +31165,7 @@
         },
         {
           "disabled": false,
-          "document": "IP",
+          "document": "<p>IP</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -25992,7 +31175,7 @@
         },
         {
           "disabled": false,
-          "document": "端口或者端口范围",
+          "document": "<p>端口或者端口范围</p>",
           "example": "1-65535",
           "member": "string",
           "name": "Port",
@@ -26002,7 +31185,7 @@
         },
         {
           "disabled": false,
-          "document": "开放",
+          "document": "<p>开放</p>",
           "example": "open",
           "member": "string",
           "name": "Status",
@@ -26012,7 +31195,7 @@
         },
         {
           "disabled": false,
-          "document": "风险类型",
+          "document": "<p>风险类型</p>",
           "example": "high_risk_port",
           "member": "string",
           "name": "RiskType",
@@ -26022,7 +31205,7 @@
         },
         {
           "disabled": false,
-          "document": "acl类型",
+          "document": "<p>acl类型</p>",
           "example": "blacklist",
           "member": "string",
           "name": "AclType",
@@ -26032,7 +31215,7 @@
         },
         {
           "disabled": false,
-          "document": "acl列表",
+          "document": "<p>acl列表</p>",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "AclList",
@@ -26042,7 +31225,7 @@
         },
         {
           "disabled": false,
-          "document": "资产ID",
+          "document": "<p>资产ID</p>",
           "example": "ins-test",
           "member": "string",
           "name": "AssetId",
@@ -26052,7 +31235,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "cvm_sdhj123",
           "member": "string",
           "name": "InstanceName",
@@ -26062,7 +31245,7 @@
         },
         {
           "disabled": false,
-          "document": "资产类型",
+          "document": "<p>资产类型</p>",
           "example": "cvm_instance",
           "member": "string",
           "name": "AssetType",
@@ -26072,7 +31255,7 @@
         },
         {
           "disabled": false,
-          "document": "端口服务数量",
+          "document": "<p>端口服务数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "PortServiceCount",
@@ -26082,7 +31265,7 @@
         },
         {
           "disabled": false,
-          "document": "高危端口数量",
+          "document": "<p>高危端口数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "HighRiskPortServiceCount",
@@ -26092,7 +31275,7 @@
         },
         {
           "disabled": false,
-          "document": "web应用数量",
+          "document": "<p>web应用数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "WebAppCount",
@@ -26102,7 +31285,7 @@
         },
         {
           "disabled": false,
-          "document": "有风险web应用数量",
+          "document": "<p>有风险web应用数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "RiskWebAppCount",
@@ -26112,7 +31295,7 @@
         },
         {
           "disabled": false,
-          "document": "弱口令数量",
+          "document": "<p>弱口令数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "WeakPasswordCount",
@@ -26122,7 +31305,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞数量",
+          "document": "<p>漏洞数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "VulCount",
@@ -26132,7 +31315,7 @@
         },
         {
           "disabled": false,
-          "document": "首次发现时间",
+          "document": "<p>首次发现时间</p>",
           "example": "2024-12-30 00:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -26142,7 +31325,7 @@
         },
         {
           "disabled": false,
-          "document": "最近更新时间",
+          "document": "<p>最近更新时间</p>",
           "example": "2024-12-30 00:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -26152,7 +31335,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型名称",
+          "document": "<p>实例类型名称</p>",
           "example": "云服务器",
           "member": "string",
           "name": "AssetTypeName",
@@ -26162,7 +31345,7 @@
         },
         {
           "disabled": false,
-          "document": "开放状态",
+          "document": "<p>开放状态</p>",
           "example": "完全开放/Open",
           "member": "string",
           "name": "DisplayStatus",
@@ -26172,7 +31355,7 @@
         },
         {
           "disabled": false,
-          "document": "端口状态",
+          "document": "<p>端口状态</p>",
           "example": "高危端口",
           "member": "string",
           "name": "DisplayRiskType",
@@ -26182,7 +31365,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描任务状态",
+          "document": "<p>扫描任务状态</p>",
           "example": "running",
           "member": "string",
           "name": "ScanTaskStatus",
@@ -26192,7 +31375,7 @@
         },
         {
           "disabled": false,
-          "document": "uuid",
+          "document": "<p>uuid</p>",
           "example": "uuid",
           "member": "string",
           "name": "Uuid",
@@ -26202,7 +31385,7 @@
         },
         {
           "disabled": false,
-          "document": "是否进行过安全体检",
+          "document": "<p>是否进行过安全体检</p>",
           "example": "true",
           "member": "string",
           "name": "HasScan",
@@ -26212,7 +31395,7 @@
         },
         {
           "disabled": false,
-          "document": "租户ID",
+          "document": "<p>租户ID</p>",
           "example": "1235316210",
           "member": "uint64",
           "name": "AppId",
@@ -26222,7 +31405,7 @@
         },
         {
           "disabled": false,
-          "document": "租户ID字符串",
+          "document": "<p>租户ID字符串</p>",
           "example": "1235316210",
           "member": "string",
           "name": "AppIdStr",
@@ -26232,7 +31415,7 @@
         },
         {
           "disabled": false,
-          "document": "记录ID",
+          "document": "<p>记录ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "ExposureID",
@@ -26242,7 +31425,7 @@
         },
         {
           "disabled": false,
-          "document": "端口开放数量",
+          "document": "<p>端口开放数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "PortDetectCount",
@@ -26252,7 +31435,7 @@
         },
         {
           "disabled": false,
-          "document": "端口开放结果",
+          "document": "<p>端口开放结果</p>",
           "example": "80,443",
           "member": "string",
           "name": "PortDetectResult",
@@ -26262,8 +31445,8 @@
         },
         {
           "disabled": false,
-          "document": "标签",
-          "example": "",
+          "document": "<p>标签</p>",
+          "example": "legit_business",
           "member": "string",
           "name": "Tag",
           "output_required": false,
@@ -26272,8 +31455,8 @@
         },
         {
           "disabled": false,
-          "document": "备注",
-          "example": "",
+          "document": "<p>备注</p>",
+          "example": "打标测试",
           "member": "string",
           "name": "Comment",
           "output_required": false,
@@ -26282,8 +31465,8 @@
         },
         {
           "disabled": false,
-          "document": "待治理风险数量",
-          "example": "",
+          "document": "<p>待治理风险数量</p>",
+          "example": "6",
           "member": "uint64",
           "name": "ToGovernedRiskCount",
           "output_required": false,
@@ -26292,10 +31475,30 @@
         },
         {
           "disabled": false,
-          "document": "待治理风险内容",
-          "example": "",
+          "document": "<p>待治理风险内容</p>",
+          "example": "网络扫描发现高危端口服务:high;使用了高危的端口号:high;使用了非标的端口号:low",
           "member": "string",
           "name": "ToGovernedRiskContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型图标</p>",
+          "example": "https://cloud-xspm-web-1258344699.cos.ap-guangzhou.myqcloud.com/asset-icon/serverInstanceIcon_2d.svg",
+          "member": "string",
+          "name": "AssetTypeIconURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型3D图标</p>",
+          "example": "https://cloud-xspm-web-1258344699.cos.ap-guangzhou.myqcloud.com/asset-icon/IPIcon_3d.png",
+          "member": "string",
+          "name": "AssetTypeIconSolidURL",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -27449,6 +32652,132 @@
       ],
       "usage": "out"
     },
+    "ModifyAlarmRiskStatusRequest": {
+      "document": "ModifyAlarmRiskStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警或者风险id",
+          "example": "无",
+          "member": "CosAlarmRiskIdInfo",
+          "name": "AlarmRiskIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "风险或告警状态  1 告警 2风险",
+          "example": "1",
+          "member": "int64",
+          "name": "AlarmRiskType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "处置状态",
+          "example": "1",
+          "member": "int64",
+          "name": "HandleStatus",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmRiskStatusResponse": {
+      "document": "ModifyAlarmRiskStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCosAuditMonitorAccountRequest": {
+      "document": "ModifyCosAuditMonitorAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "cos-audit-1wtu3sgt",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要监测的appid信息",
+          "example": "[1378925190]",
+          "member": "uint64",
+          "name": "MonitorAppIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "选择存储桶映射关系",
+          "example": "无",
+          "member": "CosBucketId",
+          "name": "BindBucket",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCosAuditMonitorAccountResponse": {
+      "document": "ModifyCosAuditMonitorAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCosMarkInfoRequest": {
+      "document": "ModifyCosMarkInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要修改的存储桶列表",
+          "example": "[{}]",
+          "member": "CosBucketInfo",
+          "name": "BucketNameSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "生产桶",
+          "member": "string",
+          "name": "MarkInfo",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCosMarkInfoResponse": {
+      "document": "ModifyCosMarkInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDspmAccessRecordRequest": {
       "document": "ModifyDspmAccessRecord请求参数结构体",
       "members": [
@@ -28306,6 +33635,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPolicyStatusRequest": {
+      "document": "ModifyPolicyStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略id集合",
+          "example": "[1,4,10]",
+          "member": "int64",
+          "name": "PolicyIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "状态值",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPolicyStatusResponse": {
+      "document": "ModifyPolicyStatus返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -29740,7 +35105,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-chongqing",
           "member": "string",
           "name": "Region",
@@ -29750,7 +35115,7 @@
         },
         {
           "disabled": false,
-          "document": "地域中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域中文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "重庆",
           "member": "string",
           "name": "RegionName",
@@ -29760,7 +35125,7 @@
         },
         {
           "disabled": false,
-          "document": "是否国外\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否境外</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Foreign",
@@ -29770,7 +35135,7 @@
         },
         {
           "disabled": false,
-          "document": "地域码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Code",
@@ -29780,7 +35145,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自驾云\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否自驾云</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "IsAutoDriveCloud",
@@ -29790,7 +35155,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持nat\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否支持nat</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "IsSupportNat",
@@ -29800,7 +35165,7 @@
         },
         {
           "disabled": false,
-          "document": "地区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地区信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "华东地区",
           "member": "string",
           "name": "RegionArea",
@@ -29810,7 +35175,7 @@
         },
         {
           "disabled": false,
-          "document": "地域英文",
+          "document": "<p>地域英文</p>",
           "example": "Chongqing",
           "member": "string",
           "name": "RegionNameEN",
@@ -32051,7 +37416,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Skill 名称",
+          "document": "<p>Skill 名称</p>",
           "example": "git-helper",
           "member": "string",
           "name": "SkillName",
@@ -32061,7 +37426,7 @@
         },
         {
           "disabled": false,
-          "document": "Skill 描述，帮助理解 Skill 的主要用途",
+          "document": "<p>Skill 描述，帮助理解 Skill 的主要用途</p>",
           "example": "用于批量执行 Git 仓库初始化、配置同步与辅助操作的 Skill。",
           "member": "string",
           "name": "SkillDescription",
@@ -32071,7 +37436,7 @@
         },
         {
           "disabled": false,
-          "document": "ZIP 文件的 SHA256 Hash\n参数格式：sha256:<64位hex>",
+          "document": "<p>ZIP 文件的 SHA256 Hash<br>参数格式：sha256:&lt;64位hex&gt;</p>",
           "example": "sha256:93329ab36e34abf927eb029bc27db54e0041d7905c1f80a222998d88d62dd4c5",
           "member": "string",
           "name": "ContentHash",
@@ -32081,7 +37446,7 @@
         },
         {
           "disabled": false,
-          "document": "原始上传 ZIP 文件解压后的实际文件数，也是计费的范围，扫描成功后1个文件计为1次额度",
+          "document": "<p>原始上传 ZIP 文件解压后的实际文件数，也是计费的范围，扫描成功后1个文件计为1次额度</p>",
           "example": "37",
           "member": "int64",
           "name": "UploadFileCount",
@@ -32091,7 +37456,7 @@
         },
         {
           "disabled": false,
-          "document": "综合风险等级\n枚举值：\nmalicious：恶意\nsuspicious：可疑\nbenign：可信",
+          "document": "<p>综合风险等级<br>枚举值：<br>malicious：恶意<br>suspicious：可疑<br>benign：可信</p>",
           "example": "malicious",
           "member": "string",
           "name": "RiskLevel",
@@ -32101,7 +37466,7 @@
         },
         {
           "disabled": false,
-          "document": "风险主标签融合规则 ID（9xxxx），由服务端从命中的融合风险标签中生成；benign 且无规则命中时为空。展示名称可通过 RuleCatalog 获取",
+          "document": "<p>风险主标签融合规则 ID（9xxxx），由服务端从命中的融合风险标签中生成；benign 且无规则命中时为空。展示名称可通过 RuleCatalog 获取</p>",
           "example": "90002",
           "member": "string",
           "name": "PrimaryRuleID",
@@ -32111,7 +37476,7 @@
         },
         {
           "disabled": false,
-          "document": "综合处置建议，用于指导调用方优先执行下线、隔离、修复、复检等动作。历史结果中可能为空。传 Language=en-US 时返回英文文案",
+          "document": "<p>综合处置建议，用于指导调用方优先执行下线、隔离、修复、复检等动作。历史结果中可能为空。传 Language=en-US 时返回英文文案</p>",
           "example": "建议立即停止使用该 Skill，清理恶意持久化与外联逻辑，轮换疑似泄露凭证，并在修复完成后重新提交检测。",
           "member": "string",
           "name": "Mitigation",
@@ -32121,7 +37486,7 @@
         },
         {
           "disabled": false,
-          "document": "风险综合描述，对本次检测发现的风险进行概括性说明。传 Language=en-US 时返回英文文案",
+          "document": "<p>风险综合描述，对本次检测发现的风险进行概括性说明。传 Language=en-US 时返回英文文案</p>",
           "example": "该 Skill 存在命令注入、凭证窃取与数据外传等多项高危行为，综合判定为恶意。",
           "member": "string",
           "name": "RiskDescription",
@@ -32131,7 +37496,7 @@
         },
         {
           "disabled": false,
-          "document": "安全评分\n取值范围：[0, 100]\n补充说明：100 为最安全",
+          "document": "<p>安全评分取值范围：[0, 100]补充说明：分数越高越安全</p>",
           "example": "0",
           "member": "int64",
           "name": "SecurityScore",
@@ -32141,7 +37506,7 @@
         },
         {
           "disabled": false,
-          "document": "本次扫描使用的引擎版本号",
+          "document": "<p>本次扫描使用的引擎版本号</p>",
           "example": "20200",
           "member": "int64",
           "name": "EngineVersion",
@@ -32151,7 +37516,7 @@
         },
         {
           "disabled": false,
-          "document": "Skill 能力标签列表，描述 Skill 具备的能力特征或适用场景。不等同于风险标签，也不参与风险等级判定。传 Language=en-US 时 Name 切换为英文，ID 保持不变",
+          "document": "<p>Skill 能力标签列表，描述 Skill 具备的能力特征或适用场景。不等同于风险标签，也不参与风险等级判定。传 Language=en-US 时 Name 切换为英文，ID 保持不变</p>",
           "example": "无",
           "member": "SkillCapabilityTag",
           "name": "CapabilityTags",
@@ -32161,7 +37526,7 @@
         },
         {
           "disabled": false,
-          "document": "融合规则目录全集，包含所有融合规则类别（9xxxx），调用方可据此展示分类标签，无需本地维护映射表。传 Language=en-US 时返回英文名称",
+          "document": "<p>融合规则目录全集，包含所有融合规则类别（9xxxx），调用方可据此展示分类标签，无需本地维护映射表。传 Language=en-US 时返回英文名称</p>",
           "example": "无",
           "member": "SkillRuleCatalogItem",
           "name": "RuleCatalog",
@@ -32171,7 +37536,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描结果详情，按子引擎分组。每个元素包含 ScanType（引擎类型）和 RuleList（命中规则列表）。规则中的 RuleID 使用融合编码（9xxxx），可与 RuleCatalog 交叉引用。传 Language=en-US 时 Description 返回英文文本",
+          "document": "<p>扫描结果详情，按子引擎分组。每个元素包含 ScanType（引擎类型）和 RuleList（命中规则列表）。规则中的 RuleID 使用融合编码（9xxxx），可与 RuleCatalog 交叉引用。传 Language=en-US 时 Description 返回英文文本</p>",
           "example": "无",
           "member": "SkillScanEngineResult",
           "name": "ScanItems",
@@ -32181,7 +37546,7 @@
         },
         {
           "disabled": false,
-          "document": "综合安全审计报告地址（签名 URL）。有效期由请求参数 ReportURLExpireHours 控制",
+          "document": "<p>综合安全审计报告地址（签名 URL）。有效期由请求参数 ReportURLExpireHours 控制</p>",
           "example": "https://skill-scan-1258344699.cos.ap-guangzhou.myqcloud.com/html-reports/2026/04/02/42_a1b2c3d4e5f6g7h8.html",
           "member": "string",
           "name": "ReportURL",
@@ -32191,7 +37556,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描完成时间。仅 Status=SUCCESS 时有值\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "document": "<p>扫描完成时间。仅 Status=SUCCESS 时有值<br>参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）</p>",
           "example": "2026-04-02T09:13:23+08:00",
           "member": "datetime_iso",
           "name": "ScannedAt",
@@ -32201,7 +37566,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间。仅 Status=SCANNING 时有值\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "document": "<p>任务创建时间。仅 Status=SCANNING 时有值<br>参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）</p>",
           "example": "2026-04-02T09:08:00+08:00",
           "member": "datetime_iso",
           "name": "CreatedAt",
@@ -32211,7 +37576,7 @@
         },
         {
           "disabled": false,
-          "document": "失败时间。仅 Status=FAILED 时有值\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "document": "<p>失败时间。仅 Status=FAILED 时有值<br>参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）</p>",
           "example": "2026-04-02T09:13:00+08:00",
           "member": "datetime_iso",
           "name": "FailedAt",
@@ -32221,7 +37586,7 @@
         },
         {
           "disabled": false,
-          "document": "失败原因描述。仅 Status=FAILED 时有值",
+          "document": "<p>失败原因描述。仅 Status=FAILED 时有值</p>",
           "example": "Scan task execution failed, please resubmit",
           "member": "string",
           "name": "Message",

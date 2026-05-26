@@ -168,6 +168,13 @@
       "output": "DescribeDAGInfoResponse",
       "status": "online"
     },
+    "DescribeDynamicInstanceDetail": {
+      "document": "描述容器EMR-TKE集群DynamicInstance详情",
+      "input": "DescribeDynamicInstanceDetailRequest",
+      "name": "描述容器EMR-TKE集群DynamicInstance详细信息",
+      "output": "DescribeDynamicInstanceDetailResponse",
+      "status": "online"
+    },
     "DescribeDynamicInstanceList": {
       "document": "描述容器EMR-TKE集群DynamicInstance列表",
       "input": "DescribeDynamicInstanceListRequest",
@@ -6032,6 +6039,262 @@
       ],
       "type": "object"
     },
+    "DescribeDynamicInstanceDetailRequest": {
+      "document": "DescribeDynamicInstanceDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>EMR 集群 id</p>",
+          "example": "emr-23fj93hg",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ray集群Id</p>",
+          "example": "937975",
+          "member": "int64",
+          "name": "RayClusterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDynamicInstanceDetailResponse": {
+      "document": "DescribeDynamicInstanceDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ray集群名</p>",
+          "example": "ray-f320gjo",
+          "member": "string",
+          "name": "RayClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ray集群ID</p>",
+          "example": "9397946",
+          "member": "int64",
+          "name": "RayClusterId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建类型</p><p>枚举值：</p><ul><li>1： 表单创建</li><li>2： yaml创建</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "SubmitType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命名空间</p>",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2025-10-23 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2025-10-23 12:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>labels</p>",
+          "example": "无",
+          "member": "NameValue",
+          "name": "Labels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Tolerations</p>",
+          "example": "无",
+          "member": "Toleration",
+          "name": "Tolerations",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量</p>",
+          "example": "无",
+          "member": "NameValue",
+          "name": "Env",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否依赖 Kerberos 外部组件</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportExternalKerberosService",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>依赖的Kerberos集群</p>",
+          "example": "emr-w23jgj",
+          "member": "string",
+          "name": "KerberosCluster",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>token</p>",
+          "example": "hfiewhgie921789",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>HeadGroup</p>",
+          "example": "无",
+          "member": "DynamicInstanceGroupSpec",
+          "name": "HeadGroupSpec",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>WorkerGroup</p>",
+          "example": "无",
+          "member": "DynamicInstanceGroupSpec",
+          "name": "WorkerGroupSpecs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启存储配置</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "StorageConfigEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Redis 实例信息</p>",
+          "example": "无",
+          "member": "RedisInstance",
+          "name": "RedisInstance",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像信息</p>",
+          "example": "无",
+          "member": "CustomImage",
+          "name": "CustomImage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>dashboard链接</p>",
+          "example": "http://10.0.0.1:8080/raycluster",
+          "member": "string",
+          "name": "DashboardUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>pod 总数</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalPodCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否高可用</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HighAvailability",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储信息</p>",
+          "example": "无",
+          "member": "PersistentVolume",
+          "name": "PersistentVolume",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>rayClusterYamlJson</p>",
+          "example": "(rayClusterYamlJson)",
+          "member": "string",
+          "name": "RayClusterYaml",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDynamicInstanceListRequest": {
       "document": "DescribeDynamicInstanceList请求参数结构体",
       "members": [
@@ -10348,6 +10611,188 @@
         }
       ],
       "usage": "in"
+    },
+    "DynamicInstanceGroupSpec": {
+      "document": "DynamicInstanceGroupSpec",
+      "members": [
+        {
+          "disabled": false,
+          "document": "group 名称",
+          "example": "rayClusterHeader",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pod 数量",
+          "example": "5",
+          "member": "int64",
+          "name": "PodCount",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最小节点数",
+          "example": "2",
+          "member": "int64",
+          "name": "MinNodes",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大节点数",
+          "example": "7",
+          "member": "int64",
+          "name": "MaxNodes",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " 是否开启存储配置",
+          "example": "true",
+          "member": "bool",
+          "name": "StorageConfigEnabled",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "headGroup:head;\nworkerGroup:worker",
+          "example": "headGroup",
+          "member": "string",
+          "name": "GroupType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU 核数",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存(GB)",
+          "example": "2",
+          "member": "int64",
+          "name": "MemSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU类型",
+          "example": "T4",
+          "member": "string",
+          "name": "GpuType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU核数",
+          "example": "2",
+          "member": "int64",
+          "name": "Gpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源标签",
+          "example": "{\"key\":\"value\"}",
+          "member": "string",
+          "name": "ResourceLabels",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境变量",
+          "example": "无",
+          "member": "NameValue",
+          "name": "Env",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "无",
+          "member": "NameValue",
+          "name": "Labels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容忍度",
+          "example": "无",
+          "member": "Toleration",
+          "name": "Tolerations",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调度策略",
+          "example": "{\"key\":\"value\"}",
+          "member": "string",
+          "name": "Scheduler",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "卷目录",
+          "example": "无",
+          "member": "PersistentVolume",
+          "name": "PersistentVolume",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DynamicPodSpec": {
       "document": "POD浮动规格",
@@ -18190,6 +18635,89 @@
       ],
       "usage": "both"
     },
+    "PersistentVolume": {
+      "document": "卷目录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>cbs 存储卷</p>",
+          "example": "无",
+          "member": "CBSVolume",
+          "name": "CBSVolumes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>cfs存储卷</p>",
+          "example": "无",
+          "member": "CFSVolume",
+          "name": "CFSVolumes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>cos 存储卷</p>",
+          "example": "无",
+          "member": "COSVolume",
+          "name": "COSVolumes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储卷名称（yaml 提交的没有存储卷的类型）</p>",
+          "example": "[\"dev1\", \"dev2\"]",
+          "member": "string",
+          "name": "StorageVolumeName",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储卷列表</p>",
+          "example": "无",
+          "member": "VolumeMount",
+          "name": "VolumeMounts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储卷详情</p>",
+          "example": "无",
+          "member": "StorageVolumeDetail",
+          "name": "StorageVolumeDetail",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>cfs trubo存储卷</p>",
+          "example": "无",
+          "member": "CFSTurboVolume",
+          "name": "CFSTurboVolumes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PersistentVolumeContext": {
       "document": "Pod PVC存储方式描述",
       "members": [
@@ -19566,6 +20094,45 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RedisInstance": {
+      "document": "Redis 实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "redis实例id",
+          "example": "redis-f92an",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例 ip",
+          "example": "129.12.134.2",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例端口",
+          "example": "3306",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -23086,6 +23653,45 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "StorageVolumeDetail": {
+      "document": "存储卷详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储卷名称",
+          "example": "cos-1",
+          "member": "string",
+          "name": "VolumeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储卷类型",
+          "example": "COS",
+          "member": "string",
+          "name": "VolumeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储卷详情",
+          "example": "size:5GB",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -89,8 +89,8 @@
     "CreateRabbitMQUser": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-2ppxx4rq\",\n    \"User\": \"test_user\",\n    \"Password\": \"abc123._\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"User\": \"test_user\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-7jwe5pr5\",\n    \"User\": \"grace\",\n    \"Password\": \"abcABC123\",\n    \"EnableCamAuth\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"User\": \"grace\",\n        \"RequestId\": \"83a4c4d3-43d9-456a-bf80-c8a5aa27c26a\"\n    }\n}",
         "title": "创建RabbitMQ用户"
       }
     ],

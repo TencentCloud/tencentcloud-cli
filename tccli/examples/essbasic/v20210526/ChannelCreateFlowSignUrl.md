@@ -70,7 +70,7 @@ Output:
 
 **Example 3: 创建个人用户H5签署链接，并指定视频问答模式认证**
 
-发起流程后，给其中的C端签署人创建签署链接，并指定视频问答模式认证
+发起流程后，给其中的C端签署人创建签署链接，并指定视频问答模式认证，设置多轮对话
 
 Input: 
 
@@ -85,6 +85,8 @@ tccli essbasic ChannelCreateFlowSignUrl --cli-unfold-argument  \
     --FlowApproverInfos.0.Intention.IntentionType 1 \
     --FlowApproverInfos.0.Intention.IntentionQuestions.0.Question 请问，您是否同意签署本协议？可语音回复“同意”或“不同意”。 \
     --FlowApproverInfos.0.Intention.IntentionQuestions.0.Answers 同意 我同意 \
+    --FlowApproverInfos.0.Intention.IntentionQuestions.1.Question 请问，您是否清楚本协议内容？可语音回复“清楚”或“不清楚”。 \
+    --FlowApproverInfos.0.Intention.IntentionQuestions.1.Answers 清楚 我清楚 \
     --FlowId yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm
 ```
 

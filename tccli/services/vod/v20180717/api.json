@@ -70,6 +70,13 @@
       "output": "CreateAigcApiTokenResponse",
       "status": "online"
     },
+    "CreateAigcAudioClone": {
+      "document": "该接口用于创建 AIGC 音色复刻。注意，调用本接口会产生费用，请参考[计费文档](https://cloud.tencent.com/document/product/266/95125#96b3b59a-f9e1-49e9-966a-bedb70a4bf12)。",
+      "input": "CreateAigcAudioCloneRequest",
+      "name": "创建 AIGC 声音复刻",
+      "output": "CreateAigcAudioCloneResponse",
+      "status": "online"
+    },
     "CreateAigcAudioTask": {
       "document": "调用该接口，用于创建AI生音频任务。",
       "input": "CreateAigcAudioTaskRequest",
@@ -8046,7 +8053,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>生成图片的分辨率。各模型可选值：</p><ul><li>OG：1080P、2K、4K；</li><li>GG 2.5：1K、2K、4K，默认1K；</li><li>GG 3.0：1K、2K、4K，默认1K；</li><li>GG 3.1：512、1K、2K、4K，默认1K；</li><li>Kling 2.1：1k、2k，默认1k；</li><li>Kling 3.0：1k、2k，默认1k；</li><li>Kling 3.0-Omni：1k、2k、4k，默认1k；</li><li>Kling O1：1k、2k、4k，默认1k；</li><li>SI 4.0：1K、2K、4K，默认1K；</li><li>SI 4.5：2K、4K，默认2K；</li><li>SI 5.0-lite：2K、3K，默认2K；</li><li>Vidu q2：1080p、2K、4K，默认1080p；</li><li>Hunyuan 3.0：暂不支持本字段，可通过<code>ExtInfo</code>字段设置分辨率；</li><li>Qwen 0925：暂不支持本字段，可通过<code>ExtInfo</code>字段设置分辨率；</li></ul>",
+          "document": "<p>生成图片的分辨率。各模型可选值：</p><ul><li>OG：1K、2K、4K，默认1K；</li><li>GG 2.5：1K、2K、4K，默认1K；</li><li>GG 3.0：1K、2K、4K，默认1K；</li><li>GG 3.1：512、1K、2K、4K，默认1K；</li><li>Kling 2.1：1k、2k，默认1k；</li><li>Kling 3.0：1k、2k，默认1k；</li><li>Kling 3.0-Omni：1k、2k、4k，默认1k；</li><li>Kling O1：1k、2k、4k，默认1k；</li><li>SI 4.0：1K、2K、4K，默认1K；</li><li>SI 4.5：2K、4K，默认2K；</li><li>SI 5.0-lite：2K、3K，默认2K；</li><li>Vidu q2：1080p、2K、4K，默认1080p；</li><li>Hunyuan 3.0：暂不支持本字段，可通过<code>ExtInfo</code>字段设置分辨率；</li><li>Qwen 0925：暂不支持本字段，可通过<code>ExtInfo</code>字段设置分辨率；</li></ul>",
           "example": "1K",
           "member": "string",
           "name": "Resolution",
@@ -8391,7 +8398,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入的视频文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 Url；</li> ",
+          "document": "<p>输入的文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 Url；</li>  <li>Base64：图片或视频转换的Base64字符串；</li></p>",
           "example": "File",
           "member": "string",
           "name": "Type",
@@ -8402,7 +8409,7 @@
         },
         {
           "disabled": false,
-          "document": "图片文件的媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。当 Type 取值为 File 时，本参数有效。\n说明：\n1. 推荐使用小于7M的图片；\n2. 图片格式的取值为：jpeg，jpg, png, webp。",
+          "document": "<p>图片文件的媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 <a href=\"/document/product/266/7830\">视频上传完成事件通知</a> 或 <a href=\"https://console.cloud.tencent.com/vod/media\">云点播控制台</a> 获取该字段。当 Type 取值为 File 时，本参数有效。<br>说明：</p><ol><li>推荐使用小于7M的图片；</li><li>图片格式的取值为：jpeg，jpg, png, webp。</li></ol>",
           "example": "3704211***509819",
           "member": "string",
           "name": "FileId",
@@ -8413,7 +8420,7 @@
         },
         {
           "disabled": false,
-          "document": "可访问的文件 URL。当 Type 取值为 Url 时，本参数有效。\n说明：\n1. 推荐使用小于7M的图片；\n2. 图片格式的取值为：jpeg，jpg, png, webp。",
+          "document": "<p>可访问的文件 URL。当 Type 取值为 Url 时，本参数有效。<br>说明：</p><ol><li>推荐使用小于7M的图片；</li><li>图片格式的取值为：jpeg，jpg, png, webp。</li></ol>",
           "example": "https://test.com/1.png",
           "member": "string",
           "name": "Url",
@@ -8424,10 +8431,32 @@
         },
         {
           "disabled": false,
-          "document": "输入图片的描述信息，用于帮助模型理解图片。仅GEM 2.5、GEM 3.0 有效。",
+          "document": "<p>可访问的文件 Base64。当 Type 取值为 Base64 时，本参数有效。说明：</p><ol><li>所有文件的文件大小总和不能超过 7 MB，避免转为 Base64 后超出云 API 的 10 MB包大小上限；</li><li>图片格式应为：jpeg，jpg, png, webp；</li><li>不要有data:image/jpeg;base64,之类的前缀。</li></ol>",
+          "example": "base64",
+          "member": "string",
+          "name": "Base64",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入图片的描述信息，用于帮助模型理解图片。仅GEM 2.5、GEM 3.0 有效。</p>",
           "example": "任务背景：这是需要翻新的主建筑（图1），不得改变其几何结构。",
           "member": "string",
           "name": "Text",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p><strong>仅当 ModelName 为 OG 时有效</strong>。图片类型。</p><p>枚举值：</p><ul><li>mask： 图片蒙版。</li></ul>",
+          "example": "mask",
+          "member": "string",
+          "name": "ReferenceType",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -9354,7 +9383,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>输入的视频文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 Url；</li></p>",
+          "document": "<p>输入的视频文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 Url；</li> <li>Base64：图片或视频转换的Base64字符串；</li></p>",
           "example": "File",
           "member": "string",
           "name": "Type",
@@ -9391,6 +9420,17 @@
           "example": "https://test.com/1.png",
           "member": "string",
           "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可访问的文件 Base64。当 Type 取值为 Base64 时，本参数有效。说明：</p><ol><li>所有文件的文件大小总和不能超过7MB，避免转为 Base64 后超出云API的10MB包大小上限；</li><li>图片格式应为：jpeg，jpg, png, webp。</li><li>视频格式应为：mp4, mov, avi。</li><li>不要有data:image/jpeg;base64,之类的前缀。</li></ol>",
+          "example": "base64",
+          "member": "string",
+          "name": "Base64",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -9531,10 +9571,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "AIGC 生视频任务的输出文件信息。\t",
+          "document": "<p>AIGC 生视频任务的输出文件信息。</p>",
           "example": "无",
           "member": "AigcVideoTaskOutputFileInfo",
           "name": "FileInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型为 Procedure 的任务 ID。若发起<a href=\"https://cloud.tencent.com/document/product/266/126239\">创建 AIGC 生视频任务</a>时指定了任务流模板(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。</p>",
+          "example": "[\"12530xxx-procedurev2-xxx\"]",
+          "member": "string",
+          "name": "ProcedureTaskIds",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -13420,6 +13470,133 @@
       ],
       "usage": "out"
     },
+    "CreateAigcAudioCloneRequest": {
+      "document": "CreateAigcAudioClone请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p><b>点播<a href=\"https://cloud.tencent.com/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
+          "example": "221073",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原音频文件（需要确保可访问） 模型将以此参数中传入的音频音色为示例对音色进行复刻。  </p><p>入参限制：注1：音频仅支持格式：mp3、m4a、wav； 注2：上传的音频文件的时长最少应不低于 10 秒，最长应不超过 5 分钟； 注3：上传的音频文件大小需不超过20mb； 注4：音频内容免涉版权，否则会被下架或销毁。</p>",
+          "example": "无",
+          "member": "AigcAudioCloneInputFileInfo",
+          "name": "AudioFileInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义的声音ID，示例：&quot;vidu01&quot;。</p><p>入参限制：</p><ul><li>自定义的 voice_id 长度范围[8,256];</li><li>首字符必须为英文字母;</li><li>允许数字、字母、横线、下划线;</li><li>末位字符不可为 -、_</li><li>voice_id 不可与已有 id 重复，否则会报错.</li></ul>",
+          "example": "maigua111",
+          "member": "string",
+          "name": "VoiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>复刻试听参数。</p><p>参数格式：限制 1000 字符以内，模型将使用复刻后的音色朗读本段文本内容，并返回试听音频链接。 注：试听将根据字符数正常收取语音合成费用。</p>",
+          "example": "华强怎么还没来",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色复刻示例音频。提供本参数将有助于增强语音合成的音色相似度和稳定性，若使用本参数，需同时上传一小段示例音频。</p><p>入参限制：注1：音频仅支持格式：mp3、m4a、wav； 注2：上传的音频文件的时长最少应小于 8 秒； 注3：上传的音频文件大小需不超过20mb。</p>",
+          "example": "无",
+          "member": "AigcAudioCloneInputFileInfo",
+          "name": "PromptAudioFileInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>示例音频对应的文本内容 需确保和音频内容一致，句末需有标点符号做结尾。</p>",
+          "example": "你瞧瞧现在哪有瓜呀，这都是大棚的瓜，你嫌贵我还嫌贵呢。",
+          "member": "string",
+          "name": "PromptText",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>透传参数。  入参限制：不做任何处理，仅数据传输 注：最多 1048576个字符</p>",
+          "example": "mypayload",
+          "member": "string",
+          "name": "Payload",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>",
+          "example": "mySessionid",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。</p>",
+          "example": "mySessionContext",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>保留字段，特殊用途时使用。</p>",
+          "example": "myExtInfo",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAigcAudioCloneResponse": {
+      "document": "CreateAigcAudioClone返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID。</p>",
+          "example": "221073-CreateAigcAudioClone-4f736149667baa953315afe87daacad6t",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAigcAudioCloneTask": {
       "document": "创建 AIGC 声音复刻任务信息。",
       "members": [
@@ -14578,6 +14755,15 @@
           "example": "motion_control",
           "member": "string",
           "name": "SceneType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p><a href=\"https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81\">任务流名称</a>，在需要对生成的新视频执行任务流时填写。</p>",
+          "example": "testProcedure",
+          "member": "string",
+          "name": "Procedure",
           "required": false,
           "type": "string"
         },
@@ -21968,7 +22154,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -21977,7 +22163,7 @@
         },
         {
           "disabled": false,
-          "document": "任务流模板名字过滤条件，数组长度限制：100。",
+          "document": "<p>任务流模板名字过滤条件，数组长度限制：100。</p>",
           "example": "[\"\\u6211\\u7684\\u4efb\\u52a1\\u6d41A\\r\\n\"]",
           "member": "string",
           "name": "Names",
@@ -21986,7 +22172,7 @@
         },
         {
           "disabled": false,
-          "document": "任务流模板类型过滤条件，可选值：\n<li>Preset：系统预置任务流模板；</li>\n<li>Custom：用户自定义任务流模板。</li>",
+          "document": "<p>任务流模板类型过滤条件，可选值：</p><li>Preset：系统预置任务流模板；</li><li>Custom：用户自定义任务流模板。</li>",
           "example": "Custom",
           "member": "string",
           "name": "Type",
@@ -21995,7 +22181,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，默认值：0。",
+          "document": "<p>分页偏移量，默认值：0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -22004,12 +22190,21 @@
         },
         {
           "disabled": false,
-          "document": "返回记录条数，默认值：10，最大值：100。",
+          "document": "<p>返回记录条数，默认值：10，最大值：100。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定字段对返回结果进行生序或者降序Sort.Field 目前只支持 CreateTime 。Sort.Order 为 desc（降序）或者 asc（升序）</p><p>入参限制：当前仅支持排序字段为CreateTime</p>",
+          "example": "无",
+          "member": "SortBy",
+          "name": "SortBy",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -22019,7 +22214,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合过滤条件的记录总数。",
+          "document": "<p>符合过滤条件的记录总数。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -22029,7 +22224,7 @@
         },
         {
           "disabled": false,
-          "document": "任务流模板详情列表。",
+          "document": "<p>任务流模板详情列表。</p>",
           "example": "无",
           "member": "ProcedureTemplate",
           "name": "ProcedureTemplateSet",
@@ -50523,6 +50718,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频编码标准中对允许使用哪些编码工具或特性的一组预定义组合，适用于不同场景。</p><p>枚举值：</p><ul><li>baseline： 只支持I/P帧，并只支持无交错的场景，适用于视频通话、手机视频等场景。</li><li>main： 主流 Profile，提供I帧、P帧、B帧，并支持无交错模式和交错模式。主要用在主流的音视频消费产品如视频播放器、流媒体传输设备上。</li><li>high： 最高编码等级，在Main Profile上添加了8X8的预测，并支持自定义量化。广泛应用在蓝光存储、高清电视等场景。</li><li>default： 随原视频自动填充。  </li></ul><p>默认值：default</p><p>仅 Codec 为 libx264 时该配置项有效。</p>",
+          "example": "baseline",
+          "member": "string",
+          "name": "VideoProfile",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -50693,6 +50899,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频编码标准中对允许使用哪些编码工具或特性的一组预定义组合，适用于不同场景。</p><p>枚举值：</p><ul><li>baseline： 只支持I/P帧，并只支持无交错的场景，适用于视频通话、手机视频等场景。</li><li>main： 主流 Profile，提供I帧、P帧、B帧，并支持无交错模式和交错模式。主要用在主流的音视频消费产品如视频播放器、流媒体传输设备上。</li><li>high： 最高编码等级，在Main Profile上添加了8X8的预测，并支持自定义量化。广泛应用在蓝光存储、高清电视等场景。</li><li>default： 随原视频自动填充。  </li></ul><p>默认值：default</p><p>仅 Codec 为 libx264 时该配置项有效。</p>",
+          "example": "baseline",
+          "member": "string",
+          "name": "VideoProfile",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

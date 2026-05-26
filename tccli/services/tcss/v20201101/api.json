@@ -9593,8 +9593,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否扫描全部镜像",
-          "example": "False",
+          "document": "<p>是否扫描全部镜像</p>",
+          "example": "false",
           "member": "bool",
           "name": "All",
           "required": false,
@@ -9602,8 +9602,8 @@
         },
         {
           "disabled": false,
-          "document": "扫描的镜像列表",
-          "example": "[\"sha256:gydgshdg62656***\"]",
+          "document": "<p>扫描的镜像列表</p>",
+          "example": "无",
           "member": "ImageInfo",
           "name": "Images",
           "required": false,
@@ -9611,7 +9611,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描类型数组",
+          "document": "<p>扫描类型数组</p>",
           "example": "[\"CVE\"]",
           "member": "string",
           "name": "ScanType",
@@ -9620,7 +9620,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描的镜像列表",
+          "document": "<p>扫描的镜像列表</p>",
           "example": "[137828455]",
           "member": "uint64",
           "name": "Id",
@@ -9629,8 +9629,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件",
-          "example": "[{\"Name\":\"ScanScope\",\"Values\":[\"2\"]}]",
+          "document": "<p>过滤条件</p>",
+          "example": "无",
           "member": "AssetFilters",
           "name": "Filters",
           "required": false,
@@ -9638,8 +9638,8 @@
         },
         {
           "disabled": false,
-          "document": "不需要扫描的镜像列表, 与Filters配合使用",
-          "example": "[\"sha256:gydgshdg62656***\"]",
+          "document": "<p>不需要扫描的镜像列表, 与Filters配合使用</p>",
+          "example": "[100]",
           "member": "uint64",
           "name": "ExcludeImageList",
           "required": false,
@@ -9647,12 +9647,21 @@
         },
         {
           "disabled": false,
-          "document": "是否仅扫描各repository最新版的镜像, 与Filters配合使用",
+          "document": "<p>是否仅扫描各repository最新版的镜像, 与Filters配合使用</p>",
           "example": "true",
           "member": "bool",
           "name": "OnlyScanLatest",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务超时时长</p><p>单位：秒</p>",
+          "example": "86400",
+          "member": "uint64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9662,7 +9671,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的任务ID",
+          "document": "<p>返回的任务ID</p>",
           "example": "2",
           "member": "uint64",
           "name": "TaskID",

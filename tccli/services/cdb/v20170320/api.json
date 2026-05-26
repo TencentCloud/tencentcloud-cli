@@ -1534,7 +1534,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
+          "document": "<p>代理组 ID。可通过 <a href=\"https://cloud.tencent.com/document/api/236/90585\">DescribeCdbProxyInfo</a> 接口获取。</p>",
           "example": "proxy-il2nlsdn",
           "member": "string",
           "name": "ProxyGroupId",
@@ -1543,7 +1543,7 @@
         },
         {
           "disabled": false,
-          "document": "权重分配模式，\n系统自动分配：\"system\"， 自定义：\"custom\"",
+          "document": "<p>权重分配模式，<br>系统自动分配：&quot;system&quot;， 自定义：&quot;custom&quot;</p>",
           "example": "system",
           "member": "string",
           "name": "WeightMode",
@@ -1552,7 +1552,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启延迟剔除，取值：\"true\" | \"false\"",
+          "document": "<p>是否开启延迟剔除，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "IsKickOut",
@@ -1561,7 +1561,7 @@
         },
         {
           "disabled": false,
-          "document": "最小保留数量，最小取值：0。\n说明：当 IsKickOut 为 true 时才有效。",
+          "document": "<p>最小保留数量，最小取值：0。<br>说明：当 IsKickOut 为 true 时才有效。</p>",
           "example": "2",
           "member": "uint64",
           "name": "MinCount",
@@ -1570,7 +1570,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟剔除阈值，最小取值：1，取值范围：[1,10000]，整数。",
+          "document": "<p>延迟剔除阈值，最小取值：1，取值范围：[1,10000]，整数。</p>",
           "example": "100",
           "member": "uint64",
           "name": "MaxDelay",
@@ -1579,7 +1579,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启故障转移，取值：\"true\" | \"false\"",
+          "document": "<p>是否开启故障转移，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "FailOver",
@@ -1588,7 +1588,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动添加RO，取值：\"true\" | \"false\"",
+          "document": "<p>是否自动添加RO，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoAddRo",
@@ -1597,7 +1597,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是只读，取值：\"true\" | \"false\"",
+          "document": "<p>是否是只读，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "ReadOnly",
@@ -1606,7 +1606,7 @@
         },
         {
           "disabled": false,
-          "document": "代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
+          "document": "<p>代理组地址 ID。可通过 <a href=\"https://cloud.tencent.com/document/api/236/90585\">DescribeCdbProxyInfo</a> 接口获取。</p>",
           "example": "proxyadd-il2nlsdn",
           "member": "string",
           "name": "ProxyAddressId",
@@ -1615,7 +1615,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启事务分离，取值：\"true\" | \"false\"，默认值 false。",
+          "document": "<p>是否开启事务分离，取值：&quot;true&quot; | &quot;false&quot;，默认值 false。</p>",
           "example": "true",
           "member": "bool",
           "name": "TransSplit",
@@ -1624,7 +1624,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启连接池。默认关闭。\n注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。",
+          "document": "<p>是否开启连接池。默认关闭。<br>注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。</p>",
           "example": "true",
           "member": "bool",
           "name": "ConnectionPool",
@@ -1633,7 +1633,7 @@
         },
         {
           "disabled": false,
-          "document": "读写权重分配。如果 WeightMode 传的是 system ，则传入的权重不生效，由系统分配默认权重。",
+          "document": "<p>读写权重分配。如果 WeightMode 传的是 system ，则传入的权重不生效，由系统分配默认权重。</p>",
           "example": "无",
           "member": "ProxyAllocation",
           "name": "ProxyAllocation",
@@ -1642,7 +1642,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自适应负载均衡。默认关闭。",
+          "document": "<p>是否开启自适应负载均衡。默认关闭。</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoLoadBalance",
@@ -1651,7 +1651,7 @@
         },
         {
           "disabled": false,
-          "document": "访问模式：nearby - 就近访问，balance - 均衡分配，默认就近访问。",
+          "document": "<p>访问模式：nearby - 就近访问，balance - 均衡分配，默认就近访问。</p>",
           "example": "balance",
           "member": "string",
           "name": "AccessMode",
@@ -1660,21 +1660,21 @@
         },
         {
           "disabled": false,
-          "document": "是否将libra节点当作普通RO节点",
+          "document": "<p>是否将libra节点当作普通RO节点</p>",
           "example": "true",
-          "member": "string",
+          "member": "bool",
           "name": "ApNodeAsRoNode",
           "required": false,
-          "type": "string"
+          "type": "bool"
         },
         {
           "disabled": false,
-          "document": "libra节点故障，是否转发给其他节点",
-          "example": "true",
-          "member": "string",
+          "document": "<p>libra节点故障，是否转发给其他节点</p>",
+          "example": "false",
+          "member": "bool",
           "name": "ApQueryToOtherNode",
           "required": false,
-          "type": "string"
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1684,7 +1684,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务ID",
+          "document": "<p>异步任务ID</p>",
           "example": "a6040589-3b098df5-b551d9e5-81c6bfdc",
           "member": "string",
           "name": "AsyncRequestId",
@@ -5639,7 +5639,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>如果需要克隆实例回档到指定备份集，则指定该值为备份文件的 Id。请使用 <a href=\"/document/api/236/15842\">查询数据备份文件列表</a>。<br>说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、云盘版实例，备份文件为快照备份。</p>",
+          "document": "<p>如果需要克隆实例回档到指定备份集，则指定该值为备份文件的 Id。请使用 <a href=\"/document/api/236/15842\">查询数据备份文件列表</a>。</p><p>如果是克隆双节点、三节点、四节点实例，备份文件为物理备份，如果是克隆单节点、云盘版实例，备份文件为快照备份。</p>",
           "example": "118127",
           "member": "int64",
           "name": "SpecifiedBackupId",
@@ -5765,7 +5765,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>新克隆实例节点数。如果需要克隆出三节点实例， 请将该值设置为3 或指定 BackupZone 参数。如果需要克隆出两节点实例，请将该值设置为2。默认克隆出两节点实例。</p>",
+          "document": "<p>新克隆实例节点数。</p><p>如果需要克隆出三节点实例，请将该值设置为3，或指定 BackupZone 参数；如果需要克隆出双节点实例，请将该值设置为2，默认克隆出双节点实例；如果需要克隆出四节点实例，请将该值设置为4，或指定 FourthZone 参数。</p>",
           "example": "2",
           "member": "int64",
           "name": "InstanceNodes",
@@ -5868,6 +5868,15 @@
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备库 3 的可用区信息，默认为空，购买四节点主实例时可指定该参数。</p>",
+          "example": "ap-guangzhou-4",
+          "member": "string",
+          "name": "FourthZone",
           "required": false,
           "type": "string"
         }
@@ -6046,7 +6055,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区信息，请使用 <a href=\"https://cloud.tencent.com/document/api/236/17229\">获取云数据库可售卖规格</a> 接口获取可创建的可用区。<br>说明：若您创建单节点、双节点、三节点实例，此参数为必填项，请指定可用区，若不指定可用区，则系统会自动选择一个可用区（可能不是您希望部署的可用区）；若您创建云盘版实例，此参数不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置。</p>",
+          "document": "<p>可用区信息，请使用 <a href=\"https://cloud.tencent.com/document/api/236/17229\">获取云数据库可售卖规格</a> 接口获取可创建的可用区。</p><p>若您创建单节点、双节点、三节点、四节点实例，此参数为必填项，请指定可用区，若不指定可用区，则系统会自动选择一个可用区（可能不是您希望部署的可用区）；若您创建云盘版实例，此参数不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置。</p>",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
@@ -6127,7 +6136,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>备库 1 的可用区信息。<br>说明：双节点、三节点实例请指定此参数值，若不指定，则默认为 Zone 的值；云盘版实例此参数可不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置；单节点实例为单可用区，无需指定此参数。</p>",
+          "document": "<p>备库 1 的可用区信息。</p><p>双节点、三节点、四节点实例请指定此参数值，若不指定，则默认为 Zone 的值；云盘版实例此参数可不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置；单节点实例为单可用区，无需指定此参数。</p>",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "SlaveZone",
@@ -6136,7 +6145,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>备库 2 的可用区信息，默认为空，购买三节点主实例时可指定该参数。</p>",
+          "document": "<p>备库 2 的可用区信息，默认为空。</p><p>购买三节点主实例、四节点主实例时可指定该参数。</p>",
           "example": "ap-beijing-4",
           "member": "string",
           "name": "BackupZone",
@@ -6235,7 +6244,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例节点数。对于 RO 和 基础版实例， 该值默认为1。 如果需要购买三节点实例， 请将该值设置为3 或指定 BackupZone 参数。当购买主实例，且未指定该参数和 BackupZone 参数时，该值默认是 2， 即购买两节点实例。</p>",
+          "document": "<p>实例节点数。</p><p>对于 RO 和 基础版实例，该值默认为1。如果需要购买三节点实例，请将该值设置为3，或指定 BackupZone 参数；当购买主实例，且未指定该参数和 BackupZone 参数时，该值默认是2，即购买双节点实例；如果需要购买四节点实例，请将该值设置为4，或指定 FourthZone 参数。</p>",
           "example": "2",
           "member": "int64",
           "name": "InstanceNodes",
@@ -6358,6 +6367,15 @@
           "name": "DestroyProtect",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备库 3 的可用区信息，默认为空，购买四节点主实例时可指定该参数。</p>",
+          "example": "ap-guangzhou-4",
+          "member": "string",
+          "name": "FourthZone",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6435,7 +6453,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区信息，请使用 <a href=\"https://cloud.tencent.com/document/api/236/17229\">获取云数据库可售卖规格</a> 接口获取可创建的可用区。<br>说明：若您创建单节点、双节点、三节点实例，此参数为必填项，请指定可用区，若不指定可用区，则系统会自动选择一个可用区（可能不是您希望部署的可用区）；若您创建云盘版实例，此参数不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置。</p>",
+          "document": "<p>可用区信息，请使用 <a href=\"https://cloud.tencent.com/document/api/236/17229\">获取云数据库可售卖规格</a> 接口获取可创建的可用区。</p><p>若您创建单节点、双节点、三节点、四节点实例，此参数为必填项，请指定可用区，若不指定可用区，则系统会自动选择一个可用区（可能不是您希望部署的可用区）；若您创建云盘版实例，此参数不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置。</p>",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
@@ -6534,7 +6552,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>备库 1 的可用区信息。<br>说明：双节点、三节点实例请指定此参数值，若不指定，则默认为 Zone 的值；云盘版实例此参数可不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置；单节点实例为单可用区，无需指定此参数。</p>",
+          "document": "<p>备库 1 的可用区信息。</p><p>双节点、三节点、四节点实例请指定此参数值，若不指定，则默认为 Zone 的值；云盘版实例此参数可不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置；单节点实例为单可用区，无需指定此参数。</p>",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "SlaveZone",
@@ -6552,7 +6570,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>备库 2 的可用区信息，默认为空，购买三节点主实例时可指定该参数。</p>",
+          "document": "<p>备库 2 的可用区信息，默认为空。</p><p>购买三节点主实例、四节点主实例时可指定该参数。</p>",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "BackupZone",
@@ -6660,7 +6678,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例节点数。对于 RO 和 基础版实例， 该值默认为1。 如果需要购买三节点实例， 请将该值设置为3 或指定 BackupZone 参数。当购买主实例，且未指定该参数和 BackupZone 参数时，该值默认是 2， 即购买两节点实例。</p>",
+          "document": "<p>实例节点数。</p><p>对于 RO 和基础版实例，该值默认为1。如果需要购买三节点实例，请将该值设置为3，或指定 BackupZone 参数；当购买主实例，且未指定该参数和 BackupZone 参数时，该值默认是2，即购买双节点实例；如果需要购买四节点实例，请将该值设置为4，或指定 FourthZone 参数。</p>",
           "example": "2",
           "member": "int64",
           "name": "InstanceNodes",
@@ -6772,6 +6790,15 @@
           "example": "on",
           "member": "string",
           "name": "DestroyProtect",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备库 3 的可用区信息，默认为空，购买四节点主实例时可指定该参数。</p>",
+          "example": "ap-guangzhou-4",
+          "member": "string",
+          "name": "FourthZone",
           "required": false,
           "type": "string"
         }
@@ -10206,7 +10233,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例可用区信息，格式如 &quot;ap-shanghai-2&quot;。</p>",
+          "document": "<p>实例主可用区信息，格式如 &quot;ap-shanghai-2&quot;。</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -10216,7 +10243,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>备库的配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>双节点、三节点、四节点实例第一备库的配置信息。</p><p>查询双节点时，此参数返回为双节点的备库信息；查询三节点、四节点时，此参数返回为实例的第一备库信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SlaveConfig",
           "name": "SlaveConfig",
@@ -10226,7 +10253,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>强同步实例第二备库的配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>三节点、四节点实例第二备库的配置信息。</p><p>查询三节点、四节点时，此参数返回为第二备库的信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BackupConfig",
           "name": "BackupConfig",
@@ -10242,6 +10269,16 @@
           "name": "Switched",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>四节点实例第三备库的配置信息。</p><p>查询四节点时，此参数返回为第三备库的信息。</p>",
+          "example": "无",
+          "member": "BackupConfig",
+          "name": "FourthConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -10847,7 +10884,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例时长，单位：月，最小值 1，最大值为 36；查询按量计费价格时，该字段无效。",
+          "document": "<p>实例时长，单位：月，最小值 1，最大值为 36；查询按量计费价格时，该字段无效。</p>",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -10856,7 +10893,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区信息，格式如 \"ap-guangzhou-2\"。具体能设置的值请通过 <a href=\"https://cloud.tencent.com/document/api/236/17229\">DescribeDBZoneConfig</a> 接口查询。InstanceId为空时该参数为必填项。",
+          "document": "<p>可用区信息，格式如 &quot;ap-guangzhou-2&quot;。具体能设置的值请通过 <a href=\"https://cloud.tencent.com/document/api/236/17229\">DescribeDBZoneConfig</a> 接口查询。InstanceId为空时该参数为必填项。</p>",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
@@ -10865,7 +10902,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数量，默认值为 1，最小值 1，最大值为 100。InstanceId为空时该参数为必填项。",
+          "document": "<p>实例数量，默认值为 1，最小值 1，最大值为 100。InstanceId为空时该参数为必填项。</p>",
           "example": "1",
           "member": "int64",
           "name": "GoodsNum",
@@ -10874,7 +10911,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存大小，单位：MB。InstanceId 为空时该参数为必填项。为保证传入值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可售卖的实例内存大小范围。",
+          "document": "<p>实例内存大小，单位：MB。InstanceId 为空时该参数为必填项。为保证传入值有效，请使用 <a href=\"https://cloud.tencent.com/document/product/236/17229\">获取云数据库可售卖规格</a> 接口获取可售卖的实例内存大小范围。</p>",
           "example": "1000",
           "member": "int64",
           "name": "Memory",
@@ -10883,7 +10920,7 @@
         },
         {
           "disabled": false,
-          "document": "实例硬盘大小，单位：GB。InstanceId 为空时该参数为必填项。为保证传入值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可售卖的硬盘大小范围。",
+          "document": "<p>实例硬盘大小，单位：GB。InstanceId 为空时该参数为必填项。为保证传入值有效，请使用 <a href=\"https://cloud.tencent.com/document/product/236/17229\">获取云数据库可售卖规格</a> 接口获取可售卖的硬盘大小范围。</p>",
           "example": "50",
           "member": "int64",
           "name": "Volume",
@@ -10892,7 +10929,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。InstanceId为空时该参数为必填项。",
+          "document": "<p>实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。InstanceId为空时该参数为必填项。</p>",
           "example": "master",
           "member": "string",
           "name": "InstanceRole",
@@ -10901,7 +10938,7 @@
         },
         {
           "disabled": false,
-          "document": "付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。InstanceId为空时该参数为必填项。",
+          "document": "<p>付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。InstanceId为空时该参数为必填项。</p>",
           "example": "PRE_PAID",
           "member": "string",
           "name": "PayType",
@@ -10910,7 +10947,7 @@
         },
         {
           "disabled": false,
-          "document": "数据复制方式，默认为 0，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。",
+          "document": "<p>数据复制方式，默认为 0，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。</p>",
           "example": "0",
           "member": "int64",
           "name": "ProtectMode",
@@ -10919,7 +10956,7 @@
         },
         {
           "disabled": false,
-          "document": "实例隔离类型。支持值包括： \"UNIVERSAL\" - 通用型实例， \"EXCLUSIVE\" - 独享型实例， \"BASIC_V2\" - 单节点云盘版实例。 \"CLOUD_NATIVE_CLUSTER\" - 集群版标准型， \"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" - 集群版加强型。   不指定则默认为通用型实例。",
+          "document": "<p>实例隔离类型。</p><p>枚举值：</p><ul><li>UNIVERSAL： 通用型实例</li><li>EXCLUSIVE： 独享型实例</li><li>CLOUD_NATIVE_CLUSTER： 云盘版标准型</li><li>CLOUD_NATIVE_CLUSTER_EXCLUSIVE： 云盘版加强型</li><li>CLOUD_NATIVE_CLUSTER_ULTRA： 云盘版旗舰型</li></ul><p>默认值：UNIVERSAL</p><p>如需查询单节点云盘版实例的价格，请设置此参数为 CLOUD_NATIVE_CLUSTER，并且指定参数 InstanceNodes 为1。</p>",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
@@ -10928,7 +10965,7 @@
         },
         {
           "disabled": false,
-          "document": "实例节点数。对于 RO 和 基础版实例， 该值默认为1。 如果需要询价三节点实例， 请将该值设置为3。其余主实例该值默认为2。",
+          "document": "<p>实例节点数。<br>1.查询 RO 实例或者单节点实例价格时，此字段值为1。<br>2.查询双节点实例价格时，此字段值为2。<br>3.查询三节点实例价格时，此字段值为3。<br>4.查询云盘版实例价格时，此字段值范围可输入2 - 6，取值为2表示云盘版实例下对应有1个读写节点 + 1个只读节点；取值为6表示云盘版实例下对应有1个读写节点 + 5个只读节点；其余取值（3 - 5）按1个读写节点 +（取值数 - 1）个只读节点规则类推。</p>",
           "example": "2",
           "member": "int64",
           "name": "InstanceNodes",
@@ -10937,7 +10974,7 @@
         },
         {
           "disabled": false,
-          "document": "询价实例的CPU核心数目，单位：核，为保证传入 CPU 值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可售卖的核心数目，当未指定该值时，将按照 Memory 大小补全一个默认值。",
+          "document": "<p>询价实例的CPU核心数目，单位：核，为保证传入 CPU 值有效，请使用 <a href=\"https://cloud.tencent.com/document/product/236/17229\">获取云数据库可售卖规格</a> 接口获取可售卖的核心数目，当未指定该值时，将按照 Memory 大小补全一个默认值。</p>",
           "example": "4",
           "member": "int64",
           "name": "Cpu",
@@ -10946,7 +10983,7 @@
         },
         {
           "disabled": false,
-          "document": "询价续费实例ID。如需查询实例续费价格，填写InstanceId和Period即可。",
+          "document": "<p>询价续费实例ID。如需查询实例续费价格，填写InstanceId和Period即可。</p>",
           "example": "\"cdb-xxx\"",
           "member": "string",
           "name": "InstanceId",
@@ -10955,7 +10992,7 @@
         },
         {
           "disabled": false,
-          "document": "按量计费阶梯。仅PayType=HOUR_PAID有效，支持值包括：1，2，3。阶梯时长见https://cloud.tencent.com/document/product/236/18335。",
+          "document": "<p>按量计费阶梯。仅PayType=HOUR_PAID有效，支持值包括：1，2，3。阶梯时长见https://cloud.tencent.com/document/product/236/18335。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Ladder",
@@ -10964,7 +11001,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘类型，查询集群版、单节点云盘版实例价格可以指定该参数。支持值包括： \"CLOUD_SSD\" - SSD云硬盘， \"CLOUD_HSSD\" - 增强型SSD云硬盘。  默认为 SSD云硬盘。",
+          "document": "<p>磁盘类型，查询云盘版、单节点云盘版实例价格可以指定该参数。默认值为 SSD 云硬盘。<br>支持值包括：<br>&quot;CLOUD_SSD&quot; - SSD 云硬盘。<br>&quot;CLOUD_HSSD&quot; - 增强型 SSD 云硬盘。<br>&quot;CLOUD_PREMIUM&quot; - 高性能云硬盘。</p>",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -10979,7 +11016,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例价格，单位：分。",
+          "document": "<p>实例价格，单位：分。</p>",
           "example": "48000",
           "member": "int64",
           "name": "Price",
@@ -10989,7 +11026,7 @@
         },
         {
           "disabled": false,
-          "document": "实例原价，单位：分。",
+          "document": "<p>实例原价，单位：分。</p>",
           "example": "460800",
           "member": "int64",
           "name": "OriginalPrice",
@@ -10999,7 +11036,7 @@
         },
         {
           "disabled": false,
-          "document": "货币单位。CNY-人民币，USD-美元。",
+          "document": "<p>货币单位。CNY-人民币，USD-美元。</p>",
           "example": "CNY",
           "member": "string",
           "name": "Currency",
