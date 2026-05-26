@@ -3286,6 +3286,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>集群分类：tke=标准TKE集群，agent=Agent集群</p><p>默认值：tke</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterCategory",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "<p>开启后会下发Gatekeeper和网络策略</p>",
           "example": "无",
           "member": "SecurityModeConfig",
@@ -29015,6 +29025,51 @@
       ],
       "usage": "out"
     },
+    "SubnetAllocation": {
+      "document": "子网资源分配",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>子网 ID</p>",
+          "example": "subnet-nybi965y",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分配比例（百分比），所有 Ratio 之和必须等于 100</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "Ratio",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SubnetAllocationPolicy": {
+      "document": "子网资源分配策略，精确控制各子网之间的资源分配比例。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>子网分配列表</p>",
+          "example": "无",
+          "member": "SubnetAllocation",
+          "name": "Allocations",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SubnetInfos": {
       "document": "子网信息",
       "members": [
@@ -31167,7 +31222,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点池ID",
+          "document": "<p>节点池ID</p>",
           "example": "np-5tx2jmn9",
           "member": "string",
           "name": "NodePoolId",
@@ -31177,7 +31232,7 @@
         },
         {
           "disabled": false,
-          "document": "子网列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子网列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"subnet-e55paxnt\"]",
           "member": "string",
           "name": "SubnetIds",
@@ -31187,7 +31242,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池名称",
+          "document": "<p>节点池名称</p>",
           "example": "tke",
           "member": "string",
           "name": "Name",
@@ -31197,7 +31252,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池生命周期\n- creating：创建中\n- normal：正常\n- updating：更新中",
+          "document": "<p>节点池生命周期</p><ul><li>creating：创建中</li><li>normal：正常</li><li>updating：更新中</li></ul>",
           "example": "running",
           "member": "string",
           "name": "LifeState",
@@ -31207,7 +31262,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟节点label\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>虚拟节点label</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Label",
           "name": "Labels",
@@ -31217,13 +31272,23 @@
         },
         {
           "disabled": false,
-          "document": "虚拟节点taint\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>虚拟节点taint</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Taint",
           "name": "Taints",
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网分配策略</p>",
+          "example": "无",
+          "member": "SubnetAllocationPolicy",
+          "name": "SubnetAllocationPolicy",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

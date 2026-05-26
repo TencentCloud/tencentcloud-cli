@@ -329,6 +329,13 @@
       "output": "DescribeSharedSubscriptionGroupsResponse",
       "status": "online"
     },
+    "DescribeSharedSubscriptionGroupsWithSubscriptions": {
+      "document": "查询集群下共享订阅组列表",
+      "input": "DescribeSharedSubscriptionGroupsWithSubscriptionsRequest",
+      "name": "查询共享订阅组列表（带订阅）",
+      "output": "DescribeSharedSubscriptionGroupsWithSubscriptionsResponse",
+      "status": "online"
+    },
     "DescribeSharedSubscriptionLag": {
       "document": "查询共享订阅消息堆积量",
       "input": "DescribeSharedSubscriptionLagRequest",
@@ -446,6 +453,13 @@
       "input": "ModifyUserRequest",
       "name": "修改MQTT角色",
       "output": "ModifyUserResponse",
+      "status": "online"
+    },
+    "ModifyX509Config": {
+      "document": "修改集群X509配置",
+      "input": "ModifyX509ConfigRequest",
+      "name": "修改集群X509配置",
+      "output": "ModifyX509ConfigResponse",
       "status": "online"
     },
     "PublishMessage": {
@@ -4254,6 +4268,53 @@
       ],
       "type": "object"
     },
+    "DescribeSharedSubscriptionGroupsWithSubscriptionsRequest": {
+      "document": "DescribeSharedSubscriptionGroupsWithSubscriptions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>腾讯云MQTT实例ID，从 <a href=\"https://cloud.tencent.com/document/api/1778/111029\">DescribeInstanceList</a>接口或控制台获得。</p>",
+          "example": "mqtt-b843q2px",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSharedSubscriptionGroupsWithSubscriptionsResponse": {
+      "document": "DescribeSharedSubscriptionGroupsWithSubscriptions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群下共享订阅组列表</p>",
+          "example": "无",
+          "member": "SharedSubscriptionGroupWithSubscriptions",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询总数</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSharedSubscriptionLagRequest": {
       "document": "DescribeSharedSubscriptionLag请求参数结构体",
       "members": [
@@ -6756,6 +6817,60 @@
       ],
       "type": "object"
     },
+    "ModifyX509ConfigRequest": {
+      "document": "ModifyX509Config请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>腾讯云MQTT实例ID，从 <a href=\"https://cloud.tencent.com/document/api/1778/111029\">DescribeInstanceList</a>接口或控制台获得。</p>",
+          "example": "mqtt-pb7zkmgj",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书验证模式</p><p>枚举值：</p><ul><li>TLS： 单向认证</li><li>mTLS： 双向认证</li><li>BYOC： 一机一证</li></ul>",
+          "example": "BYOC",
+          "member": "string",
+          "name": "X509Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书注册方式</p><p>枚举值：</p><ul><li>JITP： 自动注册</li><li>API： 手工注册</li></ul>",
+          "example": "JITP",
+          "member": "string",
+          "name": "DeviceCertificateProvisionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书自动后激活状态</p><p>枚举值：</p><ul><li>true： 自动激活</li><li>false： 不激活</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "AutomaticActivation",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyX509ConfigResponse": {
+      "document": "ModifyX509Config返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PriceTag": {
       "document": "价格标签信息",
       "members": [
@@ -7384,6 +7499,52 @@
           "name": "Online",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SharedSubscriptionGroupWithSubscriptions": {
+      "document": "查询共享订阅组（带订阅）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>共享组名</p>",
+          "example": "group1",
+          "member": "string",
+          "name": "SharedName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p><p>单位：毫秒级时间戳</p>",
+          "example": "1773992718000",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p><p>单位：毫秒级时间戳</p>",
+          "example": "1773992718000",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>订阅表达式</p>",
+          "example": "[\"home/room1\"]",
+          "member": "string",
+          "name": "TopicFilters",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

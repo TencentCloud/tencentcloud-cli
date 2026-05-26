@@ -2158,7 +2158,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -2167,7 +2167,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本（支持\"5.6.4\"、\"6.4.3\"、\"6.8.2\"、\"7.5.1\"、\"7.10.1\"）",
+          "document": "<p>实例版本（支持&quot;5.6.4&quot;、&quot;6.4.3&quot;、&quot;6.8.2&quot;、&quot;7.5.1&quot;、&quot;7.10.1&quot;）</p>",
           "example": "6.4.3",
           "member": "string",
           "name": "EsVersion",
@@ -2176,7 +2176,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID",
+          "document": "<p>私有网络ID</p>",
           "example": "vpc-xxxxxx",
           "member": "string",
           "name": "VpcId",
@@ -2185,7 +2185,7 @@
         },
         {
           "disabled": false,
-          "document": "子网ID",
+          "document": "<p>子网ID</p>",
           "example": "subnet-xxxxxx",
           "member": "string",
           "name": "SubnetId",
@@ -2194,7 +2194,7 @@
         },
         {
           "disabled": false,
-          "document": "访问密码（密码需8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）",
+          "document": "<p>访问密码（密码需8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&amp;^*+=_:;,.?]的特殊符号）</p>",
           "example": "ascq23***********cjaw",
           "member": "string",
           "name": "Password",
@@ -2203,7 +2203,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）",
+          "document": "<p>实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）</p>",
           "example": "es_test",
           "member": "string",
           "name": "InstanceName",
@@ -2212,7 +2212,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃请使用NodeInfoList\n节点数量（2-50个）",
+          "document": "<p>已废弃请使用NodeInfoList<br>节点数量（2-50个）</p>",
           "example": "3",
           "member": "uint64",
           "name": "NodeNum",
@@ -2221,7 +2221,7 @@
         },
         {
           "disabled": false,
-          "document": "计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR",
+          "document": "<p>计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR</p>",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
@@ -2230,7 +2230,7 @@
         },
         {
           "disabled": false,
-          "document": "包年包月购买时长（单位由参数TimeUnit决定）",
+          "document": "<p>包年包月购买时长（单位由参数TimeUnit决定）</p>",
           "example": "12",
           "member": "uint64",
           "name": "ChargePeriod",
@@ -2239,7 +2239,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费",
+          "document": "<p>自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费</p>",
           "example": "RENEW_FLAG_AUTO",
           "member": "string",
           "name": "RenewFlag",
@@ -2248,7 +2248,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃请使用NodeInfoList\n节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "document": "<p>已废弃请使用NodeInfoList<br>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>",
           "example": "ES.S1.4XLARGE64",
           "member": "string",
           "name": "NodeType",
@@ -2257,7 +2257,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃请使用NodeInfoList\n节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li> CLOUD_HSSD：增强型SSD云硬盘</li><li> CLOUD_BSSD：通用型SSD云硬盘</li>默认值CLOUD_SSD",
+          "document": "<p>已废弃请使用NodeInfoList<br>节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li> CLOUD_HSSD：增强型SSD云硬盘</li><li> CLOUD_BSSD：通用型SSD云硬盘</li>默认值CLOUD_SSD</p>",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -2266,7 +2266,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃请使用NodeInfoList\n节点磁盘容量（单位GB）",
+          "document": "<p>已废弃请使用NodeInfoList<br>节点磁盘容量（单位GB）</p>",
           "example": "500",
           "member": "uint64",
           "name": "DiskSize",
@@ -2275,7 +2275,7 @@
         },
         {
           "disabled": false,
-          "document": "计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）",
+          "document": "<p>计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）</p>",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
@@ -2284,7 +2284,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0",
+          "document": "<p>是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0</p>",
           "example": "0",
           "member": "int64",
           "name": "AutoVoucher",
@@ -2293,7 +2293,7 @@
         },
         {
           "disabled": false,
-          "document": "代金券ID列表（目前仅支持指定一张代金券）",
+          "document": "<p>代金券ID列表（目前仅支持指定一张代金券）</p>",
           "example": "[\"1asdfa\"]",
           "member": "string",
           "name": "VoucherIds",
@@ -2302,7 +2302,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃请使用NodeInfoList\n是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false",
+          "document": "<p>已废弃请使用NodeInfoList<br>是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableDedicatedMaster",
@@ -2311,7 +2311,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃请使用NodeInfoList\n专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）",
+          "document": "<p>已废弃请使用NodeInfoList<br>专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）</p>",
           "example": "3",
           "member": "uint64",
           "name": "MasterNodeNum",
@@ -2320,7 +2320,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃请使用NodeInfoList\n专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "document": "<p>已废弃请使用NodeInfoList<br>专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>",
           "example": "ES.S1.4XLARGE64",
           "member": "string",
           "name": "MasterNodeType",
@@ -2329,7 +2329,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃请使用NodeInfoList\n专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）",
+          "document": "<p>已废弃请使用NodeInfoList<br>专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）</p>",
           "example": "100",
           "member": "uint64",
           "name": "MasterNodeDiskSize",
@@ -2338,7 +2338,7 @@
         },
         {
           "disabled": false,
-          "document": "集群配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义）",
+          "document": "<p>集群配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义）</p>",
           "example": "testnew",
           "member": "string",
           "name": "ClusterNameInConf",
@@ -2347,7 +2347,7 @@
         },
         {
           "disabled": false,
-          "document": "集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>默认为0",
+          "document": "<p>集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>默认为0</p>",
           "example": "0",
           "member": "uint64",
           "name": "DeployMode",
@@ -2356,7 +2356,7 @@
         },
         {
           "disabled": false,
-          "document": "多可用区部署时可用区的详细信息(DeployMode为1时必传)",
+          "document": "<p>多可用区部署时可用区的详细信息(DeployMode为1时必传)</p>",
           "example": "无",
           "member": "ZoneDetail",
           "name": "MultiZoneInfo",
@@ -2365,7 +2365,7 @@
         },
         {
           "disabled": false,
-          "document": "License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum",
+          "document": "<p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum</p>",
           "example": "platinum",
           "member": "string",
           "name": "LicenseType",
@@ -2374,7 +2374,7 @@
         },
         {
           "disabled": false,
-          "document": "节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等",
+          "document": "<p>节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等</p>",
           "example": "无",
           "member": "NodeInfo",
           "name": "NodeInfoList",
@@ -2383,7 +2383,7 @@
         },
         {
           "disabled": false,
-          "document": "节点标签信息列表",
+          "document": "<p>节点标签信息列表</p>",
           "example": "无",
           "member": "TagInfo",
           "name": "TagList",
@@ -2392,7 +2392,7 @@
         },
         {
           "disabled": false,
-          "document": "6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>",
+          "document": "<p>6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li></p>",
           "example": "2",
           "member": "uint64",
           "name": "BasicSecurityType",
@@ -2401,7 +2401,7 @@
         },
         {
           "disabled": false,
-          "document": "场景化模板类型 0：不启用 1：通用 2：日志 3：搜索",
+          "document": "<p>场景化模板类型 0：不启用 1：通用 2：日志 3：搜索</p>",
           "example": "0",
           "member": "int64",
           "name": "SceneType",
@@ -2410,7 +2410,7 @@
         },
         {
           "disabled": false,
-          "document": "可视化节点配置",
+          "document": "<p>可视化节点配置</p>",
           "example": "无",
           "member": "WebNodeTypeInfo",
           "name": "WebNodeTypeInfo",
@@ -2419,7 +2419,7 @@
         },
         {
           "disabled": false,
-          "document": "创建https集群，默认是http",
+          "document": "<p>创建https集群，默认是http</p>",
           "example": "https",
           "member": "string",
           "name": "Protocol",
@@ -2428,7 +2428,7 @@
         },
         {
           "disabled": false,
-          "document": "可维护时间段",
+          "document": "<p>可维护时间段</p>",
           "example": "无",
           "member": "OperationDuration",
           "name": "OperationDuration",
@@ -2437,7 +2437,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启存算分离",
+          "document": "<p>是否开启存算分离</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableHybridStorage",
@@ -2446,7 +2446,7 @@
         },
         {
           "disabled": false,
-          "document": "硬盘额外性能",
+          "document": "<p>硬盘额外性能</p>",
           "example": "0",
           "member": "uint64",
           "name": "DiskEnhance",
@@ -2455,7 +2455,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启智能巡检",
+          "document": "<p>是否开启智能巡检</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableDiagnose",
@@ -2464,7 +2464,7 @@
         },
         {
           "disabled": false,
-          "document": "cdcId，使用cdc子网时传递",
+          "document": "<p>cdcId，使用cdc子网时传递</p>",
           "example": "cluster-xxxxxx",
           "member": "string",
           "name": "CdcId",
@@ -2473,7 +2473,7 @@
         },
         {
           "disabled": false,
-          "document": "置放群组亲和度，范围[0,10]，0表示不开启",
+          "document": "<p>置放群组亲和度，范围[0,10]，0表示不开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "DisasterRecoverGroupAffinity",
@@ -2482,7 +2482,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品ID枚举值： 开源版：\"sp_es_io2\"， 基础版：\"sp_es_basic\"，白金版：\"sp_es_platinum\"，企业版：\"sp_es_enterprise\"，CDC白金版：\"sp_es_cdc_platinum\"，日志增强版：\"sp_es_enlogging\"，tsearch：\"sp_tsearch_io2\"，logstash：\"sp_es_logstash\" ，可以为空，为空的时候后台取LicenseType映射该字段",
+          "document": "<p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>",
           "example": "sp_es_platinum",
           "member": "string",
           "name": "SubProductCode",
@@ -2491,7 +2491,7 @@
         },
         {
           "disabled": false,
-          "document": "读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离",
+          "document": "<p>读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离</p>",
           "example": "0",
           "member": "int64",
           "name": "ReadWriteMode",
@@ -2500,7 +2500,7 @@
         },
         {
           "disabled": false,
-          "document": "置放群组是否开启异步任务",
+          "document": "<p>置放群组是否开启异步任务</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableScheduleRecoverGroup",
@@ -2509,7 +2509,7 @@
         },
         {
           "disabled": false,
-          "document": "置放群组开启异步任务的可维护时间段",
+          "document": "<p>置放群组开启异步任务的可维护时间段</p>",
           "example": "无",
           "member": "EnableScheduleOperationDuration",
           "name": "EnableScheduleOperationDuration",
@@ -2518,7 +2518,7 @@
         },
         {
           "disabled": false,
-          "document": "自动扩盘参数列表",
+          "document": "<p>自动扩盘参数列表</p>",
           "example": "无",
           "member": "AutoScaleDiskInfo",
           "name": "AutoScaleDiskInfoList",
@@ -2527,12 +2527,21 @@
         },
         {
           "disabled": false,
-          "document": "是否开启kibana公网访问，不传默认开启",
+          "document": "<p>是否开启kibana公网访问，不传默认开启</p>",
           "example": "false",
           "member": "string",
           "name": "EnableKibanaPublicAccess",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>已有的云监控告警策略 ID</p>",
+          "example": "[\"policy-abcd1234\"]",
+          "member": "string",
+          "name": "AlarmPolicyIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2542,7 +2551,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "es-xxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -2552,7 +2561,7 @@
         },
         {
           "disabled": false,
-          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>订单号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "737749",
           "member": "string",
           "name": "DealName",
@@ -10018,7 +10027,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点数量",
+          "document": "<p>节点数量</p>",
           "example": "3",
           "member": "uint64",
           "name": "NodeNum",
@@ -10029,7 +10038,7 @@
         },
         {
           "disabled": false,
-          "document": "节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "document": "<p>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>",
           "example": "ES.S1.4XLARGE64",
           "member": "string",
           "name": "NodeType",
@@ -10040,7 +10049,7 @@
         },
         {
           "disabled": false,
-          "document": "节点类型<li>hotData: 热数据节点</li>\n<li>warmData: 冷数据节点</li>\n<li>dedicatedMaster: 专用主节点</li>\n默认值为hotData",
+          "document": "<p>节点类型<li>hotData: 热数据节点</li></p><li>warmData: 冷数据节点</li><li>dedicatedMaster: 专用主节点</li>默认值为hotData",
           "example": "dedicatedMaster",
           "member": "string",
           "name": "Type",
@@ -10051,7 +10060,7 @@
         },
         {
           "disabled": false,
-          "document": "节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD",
+          "document": "<p>节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD</p>",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -10062,7 +10071,7 @@
         },
         {
           "disabled": false,
-          "document": "节点磁盘容量（单位GB）",
+          "document": "<p>节点磁盘容量（单位GB）</p>",
           "example": "50",
           "member": "uint64",
           "name": "DiskSize",
@@ -10073,7 +10082,7 @@
         },
         {
           "disabled": false,
-          "document": "节点本地盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点本地盘信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LocalDiskInfo",
           "name": "LocalDiskInfo",
@@ -10084,7 +10093,7 @@
         },
         {
           "disabled": false,
-          "document": "节点磁盘块数",
+          "document": "<p>节点磁盘块数</p>",
           "example": "1",
           "member": "uint64",
           "name": "DiskCount",
@@ -10095,7 +10104,7 @@
         },
         {
           "disabled": false,
-          "document": "节点磁盘是否加密 0: 不加密，1: 加密；默认不加密",
+          "document": "<p>节点磁盘是否加密 0: 不加密，1: 加密；默认不加密</p>",
           "example": "0",
           "member": "uint64",
           "name": "DiskEncrypt",
@@ -10106,7 +10115,29 @@
         },
         {
           "disabled": false,
-          "document": "cpu数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义加密密钥id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "831****9-53**-11**-b8**-52******64f7",
+          "member": "string",
+          "name": "KmsKeyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义加密密钥name</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Weijiali_test_000000005",
+          "member": "string",
+          "name": "KmsKeyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>cpu数目</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "CpuNum",
@@ -10117,7 +10148,7 @@
         },
         {
           "disabled": false,
-          "document": "内存大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>内存大小，单位GB</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "MemSize",
@@ -10128,7 +10159,7 @@
         },
         {
           "disabled": false,
-          "document": "硬盘额外性能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>硬盘额外性能</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "DiskEnhance",
@@ -10139,7 +10170,7 @@
         },
         {
           "disabled": false,
-          "document": "节点Gpu信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点Gpu信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GpuInfo",
           "name": "GpuInfo",

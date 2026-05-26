@@ -2947,7 +2947,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要防护的域名",
+          "document": "<p>需要防护的域名</p>",
           "example": "randy.qcloudwaf.com",
           "member": "string",
           "name": "Domain",
@@ -2956,7 +2956,7 @@
         },
         {
           "disabled": false,
-          "document": "证书类型。\n0：仅配置HTTP监听端口，没有证书\n1：证书来源为自有证书\n2：证书来源为托管证书",
+          "document": "<p>证书类型。<br>0：仅配置HTTP监听端口，没有证书<br>1：证书来源为自有证书<br>2：证书来源为托管证书</p>",
           "example": "0",
           "member": "int64",
           "name": "CertType",
@@ -2965,7 +2965,7 @@
         },
         {
           "disabled": false,
-          "document": "waf前是否部署有七层代理服务。\n0：没有部署代理服务\n1：有部署代理服务，waf将使用XFF获取客户端IP\n2：有部署代理服务，waf将使用remote_addr获取客户端IP\n3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP",
+          "document": "<p>waf前是否部署有七层代理服务。<br>0：没有部署代理服务<br>1：有部署代理服务，waf将使用XFF获取客户端IP<br>2：有部署代理服务，waf将使用remote_addr获取客户端IP<br>3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP</p>",
           "example": "0",
           "member": "int64",
           "name": "IsCdn",
@@ -2974,7 +2974,7 @@
         },
         {
           "disabled": false,
-          "document": "回源类型。\n0：通过IP回源\n1：通过域名回源",
+          "document": "<p>回源类型。<br>0：通过IP回源<br>1：通过域名回源</p>",
           "example": "0",
           "member": "int64",
           "name": "UpstreamType",
@@ -2983,7 +2983,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启WebSocket支持。\n0：关闭\n1：开启",
+          "document": "<p>是否开启WebSocket支持。<br>0：关闭<br>1：开启</p>",
           "example": "0",
           "member": "int64",
           "name": "IsWebsocket",
@@ -2992,7 +2992,7 @@
         },
         {
           "disabled": false,
-          "document": "回源负载均衡策略。\n0：轮询\n1：IP hash\n2：加权轮询",
+          "document": "<p>回源负载均衡策略。<br>0：轮询<br>1：IP hash<br>2：加权轮询</p>",
           "example": "0",
           "member": "string",
           "name": "LoadBalance",
@@ -3001,7 +3001,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端口列表配置。\nNginxServerId：新增域名时填'0'\nPort：监听端口号\nProtocol：端口协议\nUpstreamPort：与Port相同\nUpstreamProtocol：与Protocol相同",
+          "document": "<p>服务端口列表配置。<br>NginxServerId：新增域名时填&#39;0&#39;<br>Port：监听端口号<br>Protocol：端口协议<br>UpstreamPort：与Port相同<br>UpstreamProtocol：与Protocol相同</p>",
           "example": "无",
           "member": "PortItem",
           "name": "Ports",
@@ -3010,7 +3010,7 @@
         },
         {
           "disabled": false,
-          "document": "必填项，是否开启长连接。\n0： 短连接\n1： 长连接",
+          "document": "<p>必填项，是否开启长连接。<br>0： 短连接<br>1： 长连接</p>",
           "example": "1",
           "member": "string",
           "name": "IsKeepAlive",
@@ -3019,7 +3019,7 @@
         },
         {
           "disabled": false,
-          "document": "必填项，域名所属实例id",
+          "document": "<p>必填项，域名所属实例id</p>",
           "example": "waf_2kl62zgs0108e8j3",
           "member": "string",
           "name": "InstanceID",
@@ -3028,7 +3028,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转",
+          "document": "<p>是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转</p>",
           "example": "1",
           "member": "int64",
           "name": "HttpsRewrite",
@@ -3037,7 +3037,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启",
+          "document": "<p>是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启</p>",
           "example": "0",
           "member": "int64",
           "name": "IsHttp2",
@@ -3046,7 +3046,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启主动健康检测。0：不开启1：开启",
+          "document": "<p>是否开启主动健康检测。0：不开启1：开启</p>",
           "example": "1",
           "member": "int64",
           "name": "ActiveCheck",
@@ -3055,7 +3055,7 @@
         },
         {
           "disabled": false,
-          "document": "加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板",
+          "document": "<p>加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板</p>",
           "example": "0",
           "member": "int64",
           "name": "CipherTemplate",
@@ -3064,7 +3064,7 @@
         },
         {
           "disabled": false,
-          "document": "CertType为1时，需要填充此参数，表示自有证书的证书链",
+          "document": "<p>CertType为1时，需要填充此参数，表示自有证书的证书链</p>",
           "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
           "member": "string",
           "name": "Cert",
@@ -3073,7 +3073,7 @@
         },
         {
           "disabled": false,
-          "document": "CertType为1时，需要填充此参数，表示自有证书的私钥",
+          "document": "<p>CertType为1时，需要填充此参数，表示自有证书的私钥</p>",
           "example": "-----BEGIN RSA PRIVATE KEY----- xxx -----END RSA PRIVATE KEY-----",
           "member": "string",
           "name": "PrivateKey",
@@ -3082,7 +3082,7 @@
         },
         {
           "disabled": false,
-          "document": "CertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id",
+          "document": "<p>CertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id</p>",
           "example": "cKnKQLJ",
           "member": "string",
           "name": "SSLId",
@@ -3091,7 +3091,7 @@
         },
         {
           "disabled": true,
-          "document": "Waf的资源ID。",
+          "document": "<p>Waf的资源ID。</p>",
           "example": "waf_2kl62zgs0108e8j3",
           "member": "string",
           "name": "ResourceId",
@@ -3100,7 +3100,7 @@
         },
         {
           "disabled": false,
-          "document": "IsCdn为3时，需要填此参数，表示自定义header",
+          "document": "<p>IsCdn为3时，需要填此参数，表示自定义header</p>",
           "example": "[\"x-real-ip\"]",
           "member": "string",
           "name": "IpHeaders",
@@ -3109,7 +3109,7 @@
         },
         {
           "disabled": false,
-          "document": "服务配置有HTTPS端口时，HTTPS的回源协议。\nhttp：使用http协议回源，和HttpsUpstreamPort配合使用\nhttps：使用https协议回源",
+          "document": "<p>服务配置有HTTPS端口时，HTTPS的回源协议。<br>http：使用http协议回源，和HttpsUpstreamPort配合使用<br>https：使用https协议回源</p>",
           "example": "https",
           "member": "string",
           "name": "UpstreamScheme",
@@ -3118,7 +3118,7 @@
         },
         {
           "disabled": true,
-          "document": "HTTPS回源端口,仅UpstreamScheme为http时需要填当前字段",
+          "document": "<p>HTTPS回源端口,仅UpstreamScheme为http时需要填当前字段</p>",
           "example": "80",
           "member": "string",
           "name": "HttpsUpstreamPort",
@@ -3127,7 +3127,7 @@
         },
         {
           "disabled": true,
-          "document": "是否开启灰度，0表示不开启灰度。",
+          "document": "<p>是否开启灰度，0表示不开启灰度。</p>",
           "example": "0",
           "member": "int64",
           "name": "IsGray",
@@ -3136,7 +3136,7 @@
         },
         {
           "disabled": true,
-          "document": "灰度的地区",
+          "document": "<p>灰度的地区</p>",
           "example": "[\"gz\",\"bj\"]",
           "member": "string",
           "name": "GrayAreas",
@@ -3145,7 +3145,7 @@
         },
         {
           "disabled": false,
-          "document": "域名回源时的回源域名。UpstreamType为1时，需要填充此字段",
+          "document": "<p>域名回源时的回源域名。UpstreamType为1时，需要填充此字段</p>",
           "example": "www.qq.com",
           "member": "string",
           "name": "UpstreamDomain",
@@ -3154,7 +3154,7 @@
         },
         {
           "disabled": false,
-          "document": "IP回源时的回源IP列表。UpstreamType为0时，需要填充此字段",
+          "document": "<p>IP回源时的回源IP列表。UpstreamType为0时，需要填充此字段</p>",
           "example": "[\"25.66.42.153\",\"156.32.3.65\"]",
           "member": "string",
           "name": "SrcList",
@@ -3163,7 +3163,7 @@
         },
         {
           "disabled": true,
-          "document": "WAF实例类型。\nsparta-waf：SAAS型WAF\nclb-waf：负载均衡型WAF\ncdn-waf：CDN上的Web防护能力",
+          "document": "<p>WAF实例类型。<br>sparta-waf：SAAS型WAF<br>clb-waf：负载均衡型WAF<br>cdn-waf：CDN上的Web防护能力</p>",
           "example": "sparta-waf",
           "member": "string",
           "name": "Edition",
@@ -3172,7 +3172,7 @@
         },
         {
           "disabled": true,
-          "document": "目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP",
+          "document": "<p>目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP</p>",
           "example": "0",
           "member": "int64",
           "name": "Anycast",
@@ -3181,7 +3181,7 @@
         },
         {
           "disabled": false,
-          "document": "回源IP列表各IP的权重，和SrcList一一对应。当且仅当UpstreamType为0，并且SrcList有多个IP，并且LoadBalance为2时需要填写，否则填 []",
+          "document": "<p>回源IP列表各IP的权重，和SrcList一一对应。当且仅当UpstreamType为0，并且SrcList有多个IP，并且LoadBalance为2时需要填写，否则填 []</p>",
           "example": "[10,10,10]",
           "member": "int64",
           "name": "Weights",
@@ -3190,7 +3190,7 @@
         },
         {
           "disabled": false,
-          "document": "TLS版本信息",
+          "document": "<p>TLS版本信息</p>",
           "example": "1",
           "member": "int64",
           "name": "TLSVersion",
@@ -3199,7 +3199,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。",
+          "document": "<p>自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。</p>",
           "example": "[1,2,15]",
           "member": "int64",
           "name": "Ciphers",
@@ -3208,7 +3208,7 @@
         },
         {
           "disabled": false,
-          "document": "WAF与源站的连接超时，默认10s。",
+          "document": "<p>WAF与源站的连接超时，默认10s。</p>",
           "example": "10",
           "member": "int64",
           "name": "ProxyConnectTimeout",
@@ -3217,7 +3217,7 @@
         },
         {
           "disabled": false,
-          "document": "WAF与源站的读超时时间，默认300s。",
+          "document": "<p>WAF与源站的读超时时间，默认300s。</p>",
           "example": "300",
           "member": "int64",
           "name": "ProxyReadTimeout",
@@ -3226,7 +3226,7 @@
         },
         {
           "disabled": false,
-          "document": "WAF与源站的写超时时间，默认300s。",
+          "document": "<p>WAF与源站的写超时时间，默认300s。</p>",
           "example": "300",
           "member": "int64",
           "name": "ProxySendTimeout",
@@ -3235,7 +3235,7 @@
         },
         {
           "disabled": false,
-          "document": "WAF回源时的SNI类型。\n0：关闭SNI，不配置client_hello中的server_name\n1：开启SNI，client_hello中的server_name为防护域名\n2：开启SNI，SNI为域名回源时的源站域名\n3：开启SNI，SNI为自定义域名",
+          "document": "<p>WAF回源时的SNI类型。<br>0：关闭SNI，不配置client_hello中的server_name<br>1：开启SNI，client_hello中的server_name为防护域名<br>2：开启SNI，SNI为域名回源时的源站域名<br>3：开启SNI，SNI为自定义域名</p>",
           "example": "2",
           "member": "int64",
           "name": "SniType",
@@ -3244,7 +3244,7 @@
         },
         {
           "disabled": false,
-          "document": "SniType为3时，需要填此参数，表示自定义的SNI；",
+          "document": "<p>SniType为3时，需要填此参数，表示自定义的SNI；</p>",
           "example": "randy.testwaf.com",
           "member": "string",
           "name": "SniHost",
@@ -3253,7 +3253,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启XFF重置。0：关闭 1：开启",
+          "document": "<p>是否开启XFF重置。0：关闭 1：开启</p>",
           "example": "0",
           "member": "int64",
           "name": "XFFReset",
@@ -3262,7 +3262,7 @@
         },
         {
           "disabled": false,
-          "document": "域名备注信息",
+          "document": "<p>域名备注信息</p>",
           "example": "域名备注",
           "member": "string",
           "name": "Note",
@@ -3271,7 +3271,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。",
+          "document": "<p>自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。</p>",
           "example": "www.qq.com",
           "member": "string",
           "name": "UpstreamHost",
@@ -3280,7 +3280,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启缓存。 0：关闭 1：开启",
+          "document": "<p>是否开启缓存。 0：关闭 1：开启</p>",
           "example": "0",
           "member": "int64",
           "name": "ProxyBuffer",
@@ -3289,7 +3289,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启拨测。 0: 禁用拨测  1: 启用拨测。默认启用拨测",
+          "document": "<p>是否开启拨测。 0: 禁用拨测  1: 启用拨测。默认启用拨测</p>",
           "example": "1",
           "member": "int64",
           "name": "ProbeStatus",
@@ -3298,7 +3298,7 @@
         },
         {
           "disabled": false,
-          "document": "国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问",
+          "document": "<p>国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问</p>",
           "example": "0",
           "member": "int64",
           "name": "GmType",
@@ -3307,7 +3307,7 @@
         },
         {
           "disabled": false,
-          "document": "国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书",
+          "document": "<p>国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书</p>",
           "example": "0",
           "member": "int64",
           "name": "GmCertType",
@@ -3316,7 +3316,7 @@
         },
         {
           "disabled": false,
-          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的证书链",
+          "document": "<p>GmCertType为1时，需要填充此参数，表示自有国密证书的证书链</p>",
           "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
           "member": "string",
           "name": "GmCert",
@@ -3325,7 +3325,7 @@
         },
         {
           "disabled": false,
-          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的私钥",
+          "document": "<p>GmCertType为1时，需要填充此参数，表示自有国密证书的私钥</p>",
           "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
           "member": "string",
           "name": "GmPrivateKey",
@@ -3334,7 +3334,7 @@
         },
         {
           "disabled": false,
-          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书",
+          "document": "<p>GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书</p>",
           "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
           "member": "string",
           "name": "GmEncCert",
@@ -3343,7 +3343,7 @@
         },
         {
           "disabled": false,
-          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥",
+          "document": "<p>GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥</p>",
           "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
           "member": "string",
           "name": "GmEncPrivateKey",
@@ -3352,7 +3352,7 @@
         },
         {
           "disabled": false,
-          "document": "GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id",
+          "document": "<p>GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id</p>",
           "example": "aKnKQLJ",
           "member": "string",
           "name": "GmSSLId",
@@ -3361,7 +3361,7 @@
         },
         {
           "disabled": false,
-          "document": "回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源",
+          "document": "<p>回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源</p>",
           "example": "0",
           "member": "int64",
           "name": "UpstreamPolicy",
@@ -3370,7 +3370,7 @@
         },
         {
           "disabled": false,
-          "document": "分流回源时生效，分流回源的规则。",
+          "document": "<p>分流回源时生效，分流回源的规则。</p>",
           "example": "无",
           "member": "UpstreamRule",
           "name": "UpstreamRules",
@@ -3379,7 +3379,7 @@
         },
         {
           "disabled": false,
-          "document": "业务场景。0：默认值，表示常规业务场景 1：大模型业务场景",
+          "document": "<p>业务场景。0：默认值，表示常规业务场景 1：大模型业务场景</p>",
           "example": "0",
           "member": "int64",
           "name": "UseCase",
@@ -3388,12 +3388,21 @@
         },
         {
           "disabled": false,
-          "document": "gzip开关。0：关闭 1：默认值，打开。",
+          "document": "<p>gzip开关。0：关闭 1：默认值，打开。</p>",
           "example": "1",
           "member": "int64",
           "name": "Gzip",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签信息</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4659,6 +4668,128 @@
         }
       ],
       "usage": "out"
+    },
+    "ApiSecSensitiveWhiteField": {
+      "document": "敏感数据加白字段模型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>字段名称</p>",
+          "example": "ipv4",
+          "member": "string",
+          "name": "FieldName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段位置</p>",
+          "example": "body",
+          "member": "string",
+          "name": "FieldType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>敏感数据类型列表</p>",
+          "example": "[\"ipv4_address\"]",
+          "member": "string",
+          "name": "SensitiveTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ApiSecSensitiveWhiteRule": {
+      "document": "敏感数据加白规则模型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>白名单规则名称</p>",
+          "example": "all",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>加白对象配置</p>",
+          "example": "无",
+          "member": "ApiNameOp",
+          "name": "ApiNameOp",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>加白模式</p><p>枚举值：</p><ul><li>1： 对整个API加白</li><li>2： 对指定字段加白</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "WhiteMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>加白字段配置列表</p>",
+          "example": "无",
+          "member": "ApiSecSensitiveWhiteField",
+          "name": "WhiteFields",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则开关</p><p>枚举值：</p><ul><li>0： 关</li><li>1： 开</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则描述</p>",
+          "example": "Description sample",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p><p>单位：s</p>",
+          "example": "1775899787",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Area": {
       "document": "地域信息",
@@ -7909,7 +8040,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "test.qcloud.com",
           "member": "string",
           "name": "Domain",
@@ -7919,7 +8050,7 @@
         },
         {
           "disabled": false,
-          "document": "域名唯一ID",
+          "document": "<p>域名唯一ID</p>",
           "example": "waf-d4foqwZy",
           "member": "string",
           "name": "DomainId",
@@ -7929,7 +8060,7 @@
         },
         {
           "disabled": false,
-          "document": "域名所属实例ID",
+          "document": "<p>域名所属实例ID</p>",
           "example": "waf_2kxtpov80s9z6skb",
           "member": "string",
           "name": "InstanceId",
@@ -7939,7 +8070,7 @@
         },
         {
           "disabled": false,
-          "document": "域名所属实例名",
+          "document": "<p>域名所属实例名</p>",
           "example": "TEST实例",
           "member": "string",
           "name": "InstanceName",
@@ -7949,7 +8080,7 @@
         },
         {
           "disabled": false,
-          "document": "域名所属实例类型",
+          "document": "<p>域名所属实例类型</p>",
           "example": "clb-waf",
           "member": "string",
           "name": "Edition",
@@ -7959,7 +8090,7 @@
         },
         {
           "disabled": false,
-          "document": "waf前是否部署有七层代理服务。 0：没有部署代理服务 1：有部署代理服务，waf将使用XFF获取客户端IP 2：有部署代理服务，waf将使用remote_addr获取客户端IP 3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP",
+          "document": "<p>waf前是否部署有七层代理服务。 0：没有部署代理服务 1：有部署代理服务，waf将使用XFF获取客户端IP 2：有部署代理服务，waf将使用remote_addr获取客户端IP 3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsCdn",
@@ -7969,8 +8100,8 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡类型为clb时，对应的负载均衡器信息",
-          "example": "详见数据结构各字段示例",
+          "document": "<p>负载均衡类型为clb时，对应的负载均衡器信息</p>",
+          "example": "无",
           "member": "LoadBalancerPackageNew",
           "name": "LoadBalancerSet",
           "output_required": true,
@@ -7979,7 +8110,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡型WAF的流量模式，1：清洗模式，0：镜像模式",
+          "document": "<p>负载均衡型WAF的流量模式，1：清洗模式，0：镜像模式</p>",
           "example": "1",
           "member": "uint64",
           "name": "FlowMode",
@@ -7989,7 +8120,7 @@
         },
         {
           "disabled": false,
-          "document": "域名绑定负载均衡器状态",
+          "document": "<p>域名绑定负载均衡器状态</p>",
           "example": "1",
           "member": "int64",
           "name": "State",
@@ -7999,7 +8130,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡类型，clb或者apisix",
+          "document": "<p>负载均衡类型，clb或者apisix</p>",
           "example": "clb",
           "member": "string",
           "name": "AlbType",
@@ -8009,7 +8140,7 @@
         },
         {
           "disabled": false,
-          "document": "IsCdn=3时，表示自定义header",
+          "document": "<p>IsCdn=3时，表示自定义header</p>",
           "example": "[\"x-real-ip\"]",
           "member": "string",
           "name": "IpHeaders",
@@ -8019,7 +8150,7 @@
         },
         {
           "disabled": false,
-          "document": "cdc-clb-waf类型WAF的CDC集群信息",
+          "document": "<p>cdc-clb-waf类型WAF的CDC集群信息</p>",
           "example": "\"cluster-asd\"",
           "member": "string",
           "name": "CdcClusters",
@@ -8029,7 +8160,7 @@
         },
         {
           "disabled": false,
-          "document": "云类型:public:公有云；private:私有云;hybrid:混合云",
+          "document": "<p>云类型:public:公有云；private:私有云;hybrid:混合云</p>",
           "example": "\"public”",
           "member": "string",
           "name": "CloudType",
@@ -8039,7 +8170,7 @@
         },
         {
           "disabled": false,
-          "document": "域名备注信息",
+          "document": "<p>域名备注信息</p>",
           "example": "备注",
           "member": "string",
           "name": "Note",
@@ -8049,7 +8180,7 @@
         },
         {
           "disabled": false,
-          "document": "域名标签",
+          "document": "<p>域名标签</p>",
           "example": "[\"label1\",\"label2\"]",
           "member": "string",
           "name": "Labels",
@@ -8059,12 +8190,22 @@
         },
         {
           "disabled": false,
-          "document": "clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”",
+          "document": "<p>clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”</p>",
           "example": "1",
           "member": "int64",
           "name": "AccessStatus",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签信息</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagInfos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -8075,7 +8216,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "对象ID",
+          "document": "<p>对象ID</p>",
           "example": "lb-70mdt3it",
           "member": "string",
           "name": "ObjectId",
@@ -8085,7 +8226,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "waf_2kuil2ft02vqm7z3",
           "member": "string",
           "name": "InstanceId",
@@ -8095,7 +8236,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "gz-high-level",
           "member": "string",
           "name": "InstanceName",
@@ -8105,7 +8246,7 @@
         },
         {
           "disabled": false,
-          "document": "精准域名列表",
+          "document": "<p>精准域名列表</p>",
           "example": "[\"zunhua.qcloudwaf.com\"]",
           "member": "string",
           "name": "PreciseDomains",
@@ -8115,7 +8256,7 @@
         },
         {
           "disabled": false,
-          "document": "WAF功能开关状态，0关闭1开启",
+          "document": "<p>WAF功能开关状态，0关闭1开启</p>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -8125,7 +8266,7 @@
         },
         {
           "disabled": false,
-          "document": "WAF日志开关状态，0关闭1开启",
+          "document": "<p>WAF日志开关状态，0关闭1开启</p>",
           "example": "0",
           "member": "int64",
           "name": "ClsStatus",
@@ -8135,7 +8276,7 @@
         },
         {
           "disabled": false,
-          "document": "CLB对象对应的虚拟域名",
+          "document": "<p>CLB对象对应的虚拟域名</p>",
           "example": "lb-70mdt3it.clb-default.qcloudwaf.com",
           "member": "string",
           "name": "VirtualDomain",
@@ -8145,7 +8286,7 @@
         },
         {
           "disabled": false,
-          "document": "对象名称",
+          "document": "<p>对象名称</p>",
           "example": "zunhua-multi-tt_pjk1",
           "member": "string",
           "name": "ObjectName",
@@ -8155,7 +8296,7 @@
         },
         {
           "disabled": false,
-          "document": "公网地址",
+          "document": "<p>公网地址</p>",
           "example": "[\"139.186.100.71\"]",
           "member": "string",
           "name": "PublicIp",
@@ -8165,7 +8306,7 @@
         },
         {
           "disabled": false,
-          "document": "内网地址",
+          "document": "<p>内网地址</p>",
           "example": "[\"1.1.11.7\"]",
           "member": "string",
           "name": "PrivateIp",
@@ -8175,7 +8316,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC名称",
+          "document": "<p>VPC名称</p>",
           "example": "MyonlyWaf-VPC",
           "member": "string",
           "name": "VpcName",
@@ -8185,7 +8326,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC ID",
+          "document": "<p>VPC ID</p>",
           "example": "vpc-jl1cw1e8",
           "member": "string",
           "name": "Vpc",
@@ -8195,7 +8336,7 @@
         },
         {
           "disabled": false,
-          "document": "waf实例等级，如果未绑定实例为0",
+          "document": "<p>waf实例等级，如果未绑定实例为0</p>",
           "example": "3",
           "member": "int64",
           "name": "InstanceLevel",
@@ -8205,7 +8346,7 @@
         },
         {
           "disabled": false,
-          "document": "clb投递开关",
+          "document": "<p>clb投递开关</p>",
           "example": "0",
           "member": "int64",
           "name": "PostCLSStatus",
@@ -8215,7 +8356,7 @@
         },
         {
           "disabled": false,
-          "document": "kafka投递开关",
+          "document": "<p>kafka投递开关</p>",
           "example": "0",
           "member": "int64",
           "name": "PostCKafkaStatus",
@@ -8225,7 +8366,7 @@
         },
         {
           "disabled": false,
-          "document": "对象类型：CLB:负载均衡器，TSE:云原生网关",
+          "document": "<p>对象类型：CLB:负载均衡器，TSE:云原生网关</p>",
           "example": "CLB",
           "member": "string",
           "name": "Type",
@@ -8235,7 +8376,7 @@
         },
         {
           "disabled": false,
-          "document": "对象地域",
+          "document": "<p>对象地域</p>",
           "example": "gz",
           "member": "string",
           "name": "Region",
@@ -8245,7 +8386,7 @@
         },
         {
           "disabled": false,
-          "document": "代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出",
+          "document": "<p>代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出</p>",
           "example": "0",
           "member": "uint64",
           "name": "Proxy",
@@ -8255,7 +8396,7 @@
         },
         {
           "disabled": false,
-          "document": "指定获取客户端IP的头部字段列表。IsCdn为3时有效",
+          "document": "<p>指定获取客户端IP的头部字段列表。IsCdn为3时有效</p>",
           "example": "[\"spheader\",\"myheader\"]",
           "member": "string",
           "name": "IpHeaders",
@@ -8265,7 +8406,7 @@
         },
         {
           "disabled": false,
-          "document": "bot防护开关",
+          "document": "<p>bot防护开关</p>",
           "example": "0",
           "member": "int64",
           "name": "BotStatus",
@@ -8275,7 +8416,7 @@
         },
         {
           "disabled": false,
-          "document": "api防护开关",
+          "document": "<p>api防护开关</p>",
           "example": "0",
           "member": "int64",
           "name": "ApiStatus",
@@ -8285,7 +8426,7 @@
         },
         {
           "disabled": false,
-          "document": "对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式",
+          "document": "<p>对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式</p>",
           "example": "0",
           "member": "int64",
           "name": "ObjectFlowMode",
@@ -8295,7 +8436,7 @@
         },
         {
           "disabled": false,
-          "document": "数值形式的私有网络 ID",
+          "document": "<p>数值形式的私有网络 ID</p>",
           "example": "416562",
           "member": "int64",
           "name": "NumericalVpcId",
@@ -8305,7 +8446,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间",
+          "document": "<p>修改时间</p>",
           "example": "2025-03-26 12:00:05",
           "member": "string",
           "name": "ModifyTime",
@@ -8315,7 +8456,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2025-03-20 00:00:05",
           "member": "string",
           "name": "AddTime",
@@ -8325,7 +8466,7 @@
         },
         {
           "disabled": false,
-          "document": "跨账号时，表示成员账号的appid",
+          "document": "<p>跨账号时，表示成员账号的appid</p>",
           "example": "251240572",
           "member": "uint64",
           "name": "MemberAppId",
@@ -8335,7 +8476,7 @@
         },
         {
           "disabled": false,
-          "document": "跨账号时，表示成员账号的uin",
+          "document": "<p>跨账号时，表示成员账号的uin</p>",
           "example": "700000670233",
           "member": "string",
           "name": "MemberUin",
@@ -8345,12 +8486,42 @@
         },
         {
           "disabled": false,
-          "document": "跨账号时，表示成员账号的昵称",
+          "document": "<p>跨账号时，表示成员账号的昵称</p>",
           "example": "member-nickname",
           "member": "string",
           "name": "MemberNickName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签信息</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>精准域名信息</p>",
+          "example": "无",
+          "member": "DomainInfo",
+          "name": "PreciseDomainDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>waf接入状态</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "WafAccessStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -9107,7 +9278,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防护域名配置信息。内网负载均衡器必须携带对应的NumericalVpcId。",
+          "document": "<p>防护域名配置信息。内网负载均衡器必须携带对应的NumericalVpcId。</p>",
           "example": "无",
           "member": "HostRecord",
           "name": "Host",
@@ -9116,12 +9287,21 @@
         },
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "waf_2kl34sf9ads9ad3s",
           "member": "string",
           "name": "InstanceID",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签信息</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9131,7 +9311,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新增防护域名ID",
+          "document": "<p>新增防护域名ID</p>",
           "example": "waf-uEvTJG67",
           "member": "string",
           "name": "DomainId",
@@ -9569,7 +9749,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防护对象组名称",
+          "document": "<p>防护对象组名称</p>",
           "example": "防护对象组",
           "member": "string",
           "name": "Name",
@@ -9578,7 +9758,7 @@
         },
         {
           "disabled": false,
-          "document": "防护对象组的应用范围",
+          "document": "<p>防护对象组的应用范围</p>",
           "example": "[\"www.testwaf1.com\"]",
           "member": "string",
           "name": "Domains",
@@ -9587,12 +9767,21 @@
         },
         {
           "disabled": false,
-          "document": "防护对象组备注",
+          "document": "<p>防护对象组备注</p>",
           "example": "备注",
           "member": "string",
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签信息</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9602,7 +9791,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防护对象组的ID",
+          "document": "<p>防护对象组的ID</p>",
           "example": "11101",
           "member": "uint64",
           "name": "GroupId",
@@ -12152,7 +12341,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "qcloudwaf.com",
           "member": "string",
           "name": "Domain",
@@ -12161,7 +12350,7 @@
         },
         {
           "disabled": false,
-          "document": "是否查询api提取规则策略，true表示查询",
+          "document": "<p>是否查询api提取规则策略，true表示查询</p>",
           "example": "false",
           "member": "bool",
           "name": "IsQueryApiExtractRule",
@@ -12170,7 +12359,7 @@
         },
         {
           "disabled": false,
-          "document": "是否查询api鉴权规则",
+          "document": "<p>是否查询api鉴权规则</p>",
           "example": "false",
           "member": "bool",
           "name": "IsQueryApiPrivilegeRule",
@@ -12179,7 +12368,7 @@
         },
         {
           "disabled": false,
-          "document": "是否查询api场景规则",
+          "document": "<p>是否查询api场景规则</p>",
           "example": "false",
           "member": "bool",
           "name": "IsQueryApiSceneRule",
@@ -12188,7 +12377,7 @@
         },
         {
           "disabled": false,
-          "document": "查询鉴权配置的时候，该rule只返回鉴权配置的规则",
+          "document": "<p>查询鉴权配置的时候，该rule只返回鉴权配置的规则</p>",
           "example": "\"ddpd\"",
           "member": "string",
           "name": "RuleName",
@@ -12197,7 +12386,7 @@
         },
         {
           "disabled": false,
-          "document": "是否查询api自定义事件规则",
+          "document": "<p>是否查询api自定义事件规则</p>",
           "example": "false",
           "member": "bool",
           "name": "IsQueryApiCustomEventRule",
@@ -12206,10 +12395,19 @@
         },
         {
           "disabled": false,
-          "document": "是否查询无效api排除策略",
+          "document": "<p>是否查询无效api排除策略</p>",
           "example": "false",
           "member": "bool",
           "name": "IsQueryApiExcludeRule",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否查询敏感数据加白规则</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsQueryApiSensitiveWhiteRule",
           "required": false,
           "type": "bool"
         }
@@ -12221,7 +12419,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "api敏感规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>api敏感规则列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApiSecSensitiveRule",
           "name": "Data",
@@ -12231,7 +12429,7 @@
         },
         {
           "disabled": false,
-          "document": "规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "uint64",
           "name": "Total",
@@ -12241,7 +12439,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义敏感检测规则总开关",
+          "document": "<p>自定义敏感检测规则总开关</p>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -12251,7 +12449,7 @@
         },
         {
           "disabled": false,
-          "document": "非内置规则的rulename列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>非内置规则的rulename列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"asd\"]",
           "member": "string",
           "name": "RuleNameList",
@@ -12261,7 +12459,7 @@
         },
         {
           "disabled": false,
-          "document": "api提取规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>api提取规则列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApiSecExtractRule",
           "name": "ApiExtractRule",
@@ -12271,7 +12469,7 @@
         },
         {
           "disabled": false,
-          "document": "api鉴权规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>api鉴权规则列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApiSecPrivilegeRule",
           "name": "ApiSecPrivilegeRule",
@@ -12281,7 +12479,7 @@
         },
         {
           "disabled": false,
-          "document": "api场景规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>api场景规则列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApiSecSceneRule",
           "name": "ApiSecSceneRule",
@@ -12291,7 +12489,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义事件规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义事件规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApiSecCustomEventRule",
           "name": "ApiSecCustomEventRule",
@@ -12301,13 +12499,23 @@
         },
         {
           "disabled": false,
-          "document": "无效api排除规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>无效api排除规则列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApiSecExcludeRule",
           "name": "ApiExcludeRule",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>敏感数据加白规则列表</p>",
+          "example": "无",
+          "member": "ApiSecSensitiveWhiteRule",
+          "name": "ApiSecSensitiveWhiteRule",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14866,7 +15074,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整",
+          "document": "<p>分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -14875,7 +15083,7 @@
         },
         {
           "disabled": false,
-          "document": "返回域名的数量",
+          "document": "<p>返回域名的数量</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -14884,8 +15092,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤数组，过滤字段包括：Edition：实例版本，sparta-waf或clb-waf Domain：域名 DomainId：域名ID InstanceName：实例名称 InstanceId：实例ID FlowMode：流量接入模式，仅支持CLBWAF FlowCheckMode：流量体检模式，仅支持CLBWAF ClsStatus：日志开关 Status：WAF开关BotStatus：BOT开关 ApiStatus：API安全开关 Engine：引擎模式 UpstreamIP：源站IP，仅支持SAAS型WAF UpstreamDomain：源站域名，仅支持SAAS型WAF DomainState：域名状态，仅支持SAAS型WAF SgState：安全组状态，仅支持SAAS型WAF Label：分组标签，同时仅支持一种标签过滤",
-          "example": "[{\"Name\":\"InstanceId\",\"Values\":[\"waf_2kw60zgy0908e8j3\"],\"ExactMatch\":false}]",
+          "document": "<p>过滤数组，过滤字段包括：Edition：实例版本，sparta-waf或clb-waf AlbType：七层接入类型细分，clb或tsegw或apisix或scf Domain：域名 DomainId：域名ID InstanceName：实例名称 InstanceId：实例ID FlowMode：流量接入模式，仅支持CLBWAF FlowCheckMode：流量体检模式，仅支持CLBWAF ClsStatus：日志开关 Status：WAF开关BotStatus：BOT开关 ApiStatus：API安全开关 Engine：引擎模式 UpstreamIP：源站IP，仅支持SAAS型WAF UpstreamDomain：源站域名，仅支持SAAS型WAF DomainState：域名状态，仅支持SAAS型WAF SgState：安全组状态，仅支持SAAS型WAF Label：分组标签，同时仅支持一种标签过滤</p>",
+          "example": "无",
           "member": "FiltersItemNew",
           "name": "Filters",
           "required": false,
@@ -14899,7 +15107,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "2",
           "member": "uint64",
           "name": "Total",
@@ -14909,7 +15117,7 @@
         },
         {
           "disabled": false,
-          "document": "domain列表",
+          "document": "<p>domain列表</p>",
           "example": "无",
           "member": "DomainInfo",
           "name": "Domains",
@@ -18718,7 +18926,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "randy.qcloudwaf.com",
           "member": "string",
           "name": "Domain",
@@ -18729,7 +18937,7 @@
         },
         {
           "disabled": false,
-          "document": "域名ID",
+          "document": "<p>域名ID</p>",
           "example": "11c88f0f292a5fd4a3002344271367b2",
           "member": "string",
           "name": "DomainId",
@@ -18740,7 +18948,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "waf_2kw60jgy0908e8j3",
           "member": "string",
           "name": "InstanceId",
@@ -18751,7 +18959,7 @@
         },
         {
           "disabled": false,
-          "document": "cname地址",
+          "document": "<p>cname地址</p>",
           "example": "dae1cae7d48ec31c7727a86a5c1a2a62.qcloudzygj.com",
           "member": "string",
           "name": "Cname",
@@ -18762,7 +18970,7 @@
         },
         {
           "disabled": false,
-          "document": "域名所属实例类型。\nsparta-waf：SaaS型WAF实例\nclb-waf：负载均衡型WAF实例\ncdc-clb-waf：CDC环境下负载均衡型WAF实例",
+          "document": "<p>域名所属实例类型。<br>sparta-waf：SaaS型WAF实例<br>clb-waf：负载均衡型WAF实例<br>cdc-clb-waf：CDC环境下负载均衡型WAF实例</p>",
           "example": "sparta_waf",
           "member": "string",
           "name": "Edition",
@@ -18773,7 +18981,7 @@
         },
         {
           "disabled": false,
-          "document": "地域。\n\"多伦多\": \"ca\"\n\"广州\": \"gz\"\n\"成都\": \"cd\"\n\"福州\": \"fzec\"\n\"深圳\": \"szx\"\n\"印度\": \"in\"\n\"济南\": \"jnec\"\n\"重庆\": \"cq\"\n\"天津\": \"tsn\"\n\"欧洲东北\": \"ru\"\n\"南京\": \"nj\"\n\"美国硅谷\": \"usw\"\n\"泰国\": \"th\"\n\"广州Open\": \"gzopen\"\n\"深圳金融\": \"szjr\"\n\"法兰克福\": \"de\"\n\"日本\": \"jp\"\n\"弗吉尼亚\": \"use\"\n\"北京\": \"bj\"\n\"中国香港\": \"hk\"\n\"杭州\": \"hzec\"\n\"北京金融\": \"bjjr\"\n\"上海金融\": \"shjr\"\n\"台北\": \"tpe\"\n\"首尔\": \"kr\"\n\"上海\": \"sh\"\n\"新加坡\": \"sg\"\n\"清远\": \"qy\"",
+          "document": "<p>地域。<br>&quot;多伦多&quot;: &quot;ca&quot;<br>&quot;广州&quot;: &quot;gz&quot;<br>&quot;成都&quot;: &quot;cd&quot;<br>&quot;福州&quot;: &quot;fzec&quot;<br>&quot;深圳&quot;: &quot;szx&quot;<br>&quot;印度&quot;: &quot;in&quot;<br>&quot;济南&quot;: &quot;jnec&quot;<br>&quot;重庆&quot;: &quot;cq&quot;<br>&quot;天津&quot;: &quot;tsn&quot;<br>&quot;欧洲东北&quot;: &quot;ru&quot;<br>&quot;南京&quot;: &quot;nj&quot;<br>&quot;美国硅谷&quot;: &quot;usw&quot;<br>&quot;泰国&quot;: &quot;th&quot;<br>&quot;广州Open&quot;: &quot;gzopen&quot;<br>&quot;深圳金融&quot;: &quot;szjr&quot;<br>&quot;法兰克福&quot;: &quot;de&quot;<br>&quot;日本&quot;: &quot;jp&quot;<br>&quot;弗吉尼亚&quot;: &quot;use&quot;<br>&quot;北京&quot;: &quot;bj&quot;<br>&quot;中国香港&quot;: &quot;hk&quot;<br>&quot;杭州&quot;: &quot;hzec&quot;<br>&quot;北京金融&quot;: &quot;bjjr&quot;<br>&quot;上海金融&quot;: &quot;shjr&quot;<br>&quot;台北&quot;: &quot;tpe&quot;<br>&quot;首尔&quot;: &quot;kr&quot;<br>&quot;上海&quot;: &quot;sh&quot;<br>&quot;新加坡&quot;: &quot;sg&quot;<br>&quot;清远&quot;: &quot;qy&quot;</p>",
           "example": "gz",
           "member": "string",
           "name": "Region",
@@ -18784,7 +18992,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名",
+          "document": "<p>实例名</p>",
           "example": "广州主实例",
           "member": "string",
           "name": "InstanceName",
@@ -18795,7 +19003,7 @@
         },
         {
           "disabled": false,
-          "document": "访问日志开关状态。\n0：关闭\n1：开启",
+          "document": "<p>访问日志开关状态。<br>0：关闭<br>1：开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "ClsStatus",
@@ -18806,7 +19014,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡型WAF使用模式。\n0：镜像模式 \n1：清洗模式",
+          "document": "<p>负载均衡型WAF使用模式。<br>0：镜像模式<br>1：清洗模式</p>",
           "example": "1",
           "member": "uint64",
           "name": "FlowMode",
@@ -18817,7 +19025,7 @@
         },
         {
           "disabled": false,
-          "document": "waf开关状态。\n0：关闭 \n1：开启",
+          "document": "<p>waf开关状态。<br>0：关闭<br>1：开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -18828,7 +19036,7 @@
         },
         {
           "disabled": false,
-          "document": "规则引擎防护模式。\n0：观察模式 \n1：拦截模式",
+          "document": "<p>规则引擎防护模式。<br>0：观察模式<br>1：拦截模式</p>",
           "example": "1",
           "member": "uint64",
           "name": "Mode",
@@ -18839,7 +19047,7 @@
         },
         {
           "disabled": false,
-          "document": "规则引擎和AI引擎防护模式联合状态。\n1:初始状态,规则引擎拦截&&AI引擎未操作开关状态\n10：规则引擎观察&&AI引擎关闭模式 \n11：规则引擎观察&&AI引擎观察模式 \n12：规则引擎观察&&AI引擎拦截模式 \n20：规则引擎拦截&&AI引擎关闭模式 \n21：规则引擎拦截&&AI引擎观察模式 \n22：规则引擎拦截&&AI引擎拦截模式",
+          "document": "<p>规则引擎和AI引擎防护模式联合状态。<br>1:初始状态,规则引擎拦截&amp;&amp;AI引擎未操作开关状态<br>10：规则引擎观察&amp;&amp;AI引擎关闭模式<br>11：规则引擎观察&amp;&amp;AI引擎观察模式<br>12：规则引擎观察&amp;&amp;AI引擎拦截模式<br>20：规则引擎拦截&amp;&amp;AI引擎关闭模式<br>21：规则引擎拦截&amp;&amp;AI引擎观察模式<br>22：规则引擎拦截&amp;&amp;AI引擎拦截模式</p>",
           "example": "10",
           "member": "uint64",
           "name": "Engine",
@@ -18850,7 +19058,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱集群回源出口IP列表",
+          "document": "<p>沙箱集群回源出口IP列表</p>",
           "example": "[\"129.101.25.0/24\",\"129.101.20.0/24\"]",
           "member": "string",
           "name": "CCList",
@@ -18861,7 +19069,7 @@
         },
         {
           "disabled": false,
-          "document": "生产集群回源出口IP列表",
+          "document": "<p>生产集群回源出口IP列表</p>",
           "example": "[\"134.175.221.0/24\",\"2402:4e00:1020:1707::/64\"]",
           "member": "string",
           "name": "RsList",
@@ -18872,7 +19080,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端口配置",
+          "document": "<p>服务端口配置</p>",
           "example": "无",
           "member": "PortInfo",
           "name": "Ports",
@@ -18883,7 +19091,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡器相关配置",
+          "document": "<p>负载均衡器相关配置</p>",
           "example": "无",
           "member": "LoadBalancerPackageNew",
           "name": "LoadBalancerSet",
@@ -18894,7 +19102,7 @@
         },
         {
           "disabled": false,
-          "document": "用户id",
+          "document": "<p>用户id</p>",
           "example": "323345279",
           "member": "uint64",
           "name": "AppId",
@@ -18905,7 +19113,7 @@
         },
         {
           "disabled": false,
-          "document": "SAAS型WAF域名状态：\n-2：配置下发失败\n-1：配置下发中\n0：DNS解析中\n1：无DNS解析记录，请接入WAF\n10：DNS解析未知，域名启用了代理\n11：DNS解析异常，使用A记录接入WAF IP\n200：检测源站不可达\n220：源站不支持长连接\n311：证书过期\n312：证书即将过期\n310：证书异常\n316：备案异常\n5：WAF回源已变更\n负载均衡型WAF域名LB监听器状态：\n0：操作成功 \n4：正在绑定LB \n6：正在解绑LB \n7：解绑LB失败 \n8：绑定LB失败 \n10：内部错误",
+          "document": "<p>SAAS型WAF域名状态：<br>-2：配置下发失败<br>-1：配置下发中<br>0：DNS解析中<br>1：无DNS解析记录，请接入WAF<br>10：DNS解析未知，域名启用了代理<br>11：DNS解析异常，使用A记录接入WAF IP<br>200：检测源站不可达<br>220：源站不支持长连接<br>311：证书过期<br>312：证书即将过期<br>310：证书异常<br>316：备案异常<br>5：WAF回源已变更<br>负载均衡型WAF域名LB监听器状态：<br>0：操作成功<br>4：正在绑定LB<br>6：正在解绑LB<br>7：解绑LB失败<br>8：绑定LB失败<br>10：内部错误</p>",
           "example": "0",
           "member": "int64",
           "name": "State",
@@ -18916,7 +19124,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2018-10-16 08:53:47",
           "member": "string",
           "name": "CreateTime",
@@ -18927,7 +19135,18 @@
         },
         {
           "disabled": false,
-          "document": "Ipv6开关状态。\n0：关闭 \n1：开启",
+          "document": "<p>编辑时间</p>",
+          "example": "2019-10-16 08:53:47",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ipv6开关状态。<br>0：关闭<br>1：开启</p>",
           "example": "1",
           "member": "int64",
           "name": "Ipv6Status",
@@ -18938,7 +19157,7 @@
         },
         {
           "disabled": false,
-          "document": "BOT开关状态。\n0：关闭 \n1：关闭\n2：开启\n3：开启",
+          "document": "<p>BOT开关状态。<br>0：关闭<br>1：关闭<br>2：开启<br>3：开启</p>",
           "example": "1",
           "member": "int64",
           "name": "BotStatus",
@@ -18949,7 +19168,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本信息。\n101：小微敏捷版 \n102：小微超轻版\n2：高级版\n3：企业版\n4：旗舰版\n6：独享版",
+          "document": "<p>实例版本信息。<br>101：小微敏捷版<br>102：小微超轻版<br>2：高级版<br>3：企业版<br>4：旗舰版<br>6：独享版</p>",
           "example": "1",
           "member": "int64",
           "name": "Level",
@@ -18960,7 +19179,7 @@
         },
         {
           "disabled": false,
-          "document": "投递CLS状态。\n0：关闭 \n1：开启",
+          "document": "<p>投递CLS状态。<br>0：关闭<br>1：开启</p>",
           "example": "1",
           "member": "int64",
           "name": "PostCLSStatus",
@@ -18971,7 +19190,7 @@
         },
         {
           "disabled": false,
-          "document": "投递CKafka状态。\n0：关闭 \n1：开启",
+          "document": "<p>投递CKafka状态。<br>0：关闭<br>1：开启</p>",
           "example": "1",
           "member": "int64",
           "name": "PostCKafkaStatus",
@@ -18982,7 +19201,7 @@
         },
         {
           "disabled": false,
-          "document": "cdc实例域名接入的集群信息,非cdc实例忽略。",
+          "document": "<p>cdc实例域名接入的集群信息,非cdc实例忽略。</p>",
           "example": "\"cluster-asdfas\"",
           "member": "string",
           "name": "CdcClusters",
@@ -18993,7 +19212,7 @@
         },
         {
           "disabled": false,
-          "document": "api安全开关状态。\n0：关闭 \n1：开启",
+          "document": "<p>api安全开关状态。<br>0：关闭<br>1：开启</p>",
           "example": "1",
           "member": "int64",
           "name": "ApiStatus",
@@ -19004,7 +19223,7 @@
         },
         {
           "disabled": false,
-          "document": "应用型负载均衡类型，默认clb。\nclb：七层负载均衡器类型\napisix：apisix网关型",
+          "document": "<p>应用型负载均衡类型，默认clb。<br>clb：七层负载均衡器类型<br>apisix：apisix网关型</p>",
           "example": "\"clb\"",
           "member": "string",
           "name": "AlbType",
@@ -19015,7 +19234,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组状态。\n0：不展示\n1：非腾讯云源站\n2：安全组绑定失败\n3：安全组发生变更",
+          "document": "<p>安全组状态。<br>0：不展示<br>1：非腾讯云源站<br>2：安全组绑定失败<br>3：安全组发生变更</p>",
           "example": "1",
           "member": "int64",
           "name": "SgState",
@@ -19026,7 +19245,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组状态的详细解释",
+          "document": "<p>安全组状态的详细解释</p>",
           "example": "“因为超出安全组数量，添加失败”",
           "member": "string",
           "name": "SgDetail",
@@ -19037,7 +19256,7 @@
         },
         {
           "disabled": false,
-          "document": "域名云环境。hybrid：混合云域名\npublic：公有云域名",
+          "document": "<p>域名云环境。hybrid：混合云域名<br>public：公有云域名</p>",
           "example": "public",
           "member": "string",
           "name": "CloudType",
@@ -19048,7 +19267,7 @@
         },
         {
           "disabled": false,
-          "document": "域名备注信息",
+          "document": "<p>域名备注信息</p>",
           "example": "备注",
           "member": "string",
           "name": "Note",
@@ -19059,7 +19278,7 @@
         },
         {
           "disabled": false,
-          "document": "SAASWAF源站IP列表",
+          "document": "<p>SAASWAF源站IP列表</p>",
           "example": "[\"36.25.14.3\",\"23.25.37.156\"]",
           "member": "string",
           "name": "SrcList",
@@ -19070,7 +19289,7 @@
         },
         {
           "disabled": false,
-          "document": "SAASWAF源站域名列表",
+          "document": "<p>SAASWAF源站域名列表</p>",
           "example": "[\"upstream1.com\",\"upstream2.com\"]",
           "member": "string",
           "name": "UpstreamDomainList",
@@ -19081,7 +19300,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组ID",
+          "document": "<p>安全组ID</p>",
           "example": "sg-dasxs1",
           "member": "string",
           "name": "SgID",
@@ -19092,7 +19311,7 @@
         },
         {
           "disabled": false,
-          "document": "clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”",
+          "document": "<p>clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”</p>",
           "example": "1",
           "member": "int64",
           "name": "AccessStatus",
@@ -19103,7 +19322,7 @@
         },
         {
           "disabled": false,
-          "document": "域名标签",
+          "document": "<p>域名标签</p>",
           "example": "[\"label1\",\"label2\"]",
           "member": "string",
           "name": "Labels",
@@ -19114,10 +19333,54 @@
         },
         {
           "disabled": false,
-          "document": "saaswaf独享ip状态，0是关闭，1是开启，2是开启中",
+          "document": "<p>saaswaf独享ip状态，0是关闭，1是开启，2是开启中</p>",
           "example": "0",
           "member": "int64",
           "name": "PrivateVipStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>代表是否是四层clbwaf域名</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsREIP",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>四层关联的对象ID</p>",
+          "example": "lb-degx6mj0",
+          "member": "string",
+          "name": "REIPObjectId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签结构体</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>大模型开关</p><p>枚举值：</p><ul><li>0： 大模型开关关闭状态</li><li>1： 大模型开关开启状态</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "LLMStatus",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -19259,7 +19522,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "randy.qcloudwaf.com",
           "member": "string",
           "name": "Domain",
@@ -19269,7 +19532,7 @@
         },
         {
           "disabled": false,
-          "document": "域名唯一ID",
+          "document": "<p>域名唯一ID</p>",
           "example": "7d58ebf3db7e5f7e8a9145b0a7c6a7b31",
           "member": "string",
           "name": "DomainId",
@@ -19279,7 +19542,7 @@
         },
         {
           "disabled": false,
-          "document": "域名所属实例唯一ID",
+          "document": "<p>域名所属实例唯一ID</p>",
           "example": "waf_000q6ntyb21sdlk",
           "member": "string",
           "name": "InstanceId",
@@ -19289,7 +19552,7 @@
         },
         {
           "disabled": false,
-          "document": "域名所属实例类型",
+          "document": "<p>域名所属实例类型</p>",
           "example": "sparta-waf",
           "member": "string",
           "name": "Edition",
@@ -19299,7 +19562,7 @@
         },
         {
           "disabled": false,
-          "document": "域名所属实例名",
+          "document": "<p>域名所属实例名</p>",
           "example": "防护主实例",
           "member": "string",
           "name": "InstanceName",
@@ -19309,7 +19572,7 @@
         },
         {
           "disabled": false,
-          "document": "证书",
+          "document": "<p>证书</p>",
           "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
           "member": "string",
           "name": "Cert",
@@ -19319,7 +19582,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2023-12-04 19:52:24",
           "member": "string",
           "name": "CreateTime",
@@ -19329,7 +19592,17 @@
         },
         {
           "disabled": false,
-          "document": "规则引擎和AI引擎防护模式联合状态。\n1:初始状态,规则引擎拦截&&AI引擎未操作开关状态\n10：规则引擎观察&&AI引擎关闭模式 \n11：规则引擎观察&&AI引擎观察模式 \n12：规则引擎观察&&AI引擎拦截模式 \n20：规则引擎拦截&&AI引擎关闭模式 \n21：规则引擎拦截&&AI引擎观察模式 \n22：规则引擎拦截&&AI引擎拦截模式",
+          "document": "<p>更新时间</p>",
+          "example": "2023-12-04 19:52:24",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则引擎和AI引擎防护模式联合状态。<br>1:初始状态,规则引擎拦截&amp;&amp;AI引擎未操作开关状态<br>10：规则引擎观察&amp;&amp;AI引擎关闭模式<br>11：规则引擎观察&amp;&amp;AI引擎观察模式<br>12：规则引擎观察&amp;&amp;AI引擎拦截模式<br>20：规则引擎拦截&amp;&amp;AI引擎关闭模式<br>21：规则引擎拦截&amp;&amp;AI引擎观察模式<br>22：规则引擎拦截&amp;&amp;AI引擎拦截模式</p>",
           "example": "10",
           "member": "uint64",
           "name": "Engine",
@@ -19339,7 +19612,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启HTTP强制跳转到HTTPS。\n0：不强制跳转\n1：开启强制跳转",
+          "document": "<p>是否开启HTTP强制跳转到HTTPS。<br>0：不强制跳转<br>1：开启强制跳转</p>",
           "example": "1",
           "member": "uint64",
           "name": "HttpsRewrite",
@@ -19349,7 +19622,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTPS回源端口",
+          "document": "<p>HTTPS回源端口</p>",
           "example": "80",
           "member": "string",
           "name": "HttpsUpstreamPort",
@@ -19359,7 +19632,7 @@
         },
         {
           "disabled": false,
-          "document": "waf前是否部署有七层代理服务。\n0：没有部署代理服务\n1：有部署代理服务，waf将使用XFF获取客户端IP\n2：有部署代理服务，waf将使用remote_addr获取客户端IP\n3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP",
+          "document": "<p>waf前是否部署有七层代理服务。<br>0：没有部署代理服务<br>1：有部署代理服务，waf将使用XFF获取客户端IP<br>2：有部署代理服务，waf将使用remote_addr获取客户端IP<br>3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP</p>",
           "example": "0",
           "member": "uint64",
           "name": "IsCdn",
@@ -19369,7 +19642,7 @@
         },
         {
           "disabled": true,
-          "document": "是否开启灰度。",
+          "document": "<p>是否开启灰度。</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsGray",
@@ -19379,7 +19652,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启HTTP2，需要开启HTTPS协议支持。\n0：关闭\n1：开启",
+          "document": "<p>是否开启HTTP2，需要开启HTTPS协议支持。<br>0：关闭<br>1：开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsHttp2",
@@ -19389,7 +19662,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启WebSocket支持。\n0：关闭\n1：开启",
+          "document": "<p>是否开启WebSocket支持。<br>0：关闭<br>1：开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsWebsocket",
@@ -19399,7 +19672,7 @@
         },
         {
           "disabled": false,
-          "document": "回源负载均衡策略。\n0：轮询\n1：IP hash\n2：加权轮询",
+          "document": "<p>回源负载均衡策略。<br>0：轮询<br>1：IP hash<br>2：加权轮询</p>",
           "example": "0",
           "member": "uint64",
           "name": "LoadBalance",
@@ -19409,7 +19682,7 @@
         },
         {
           "disabled": false,
-          "document": "防护模式。\n0：观察模式\n1：拦截模式",
+          "document": "<p>防护模式。<br>0：观察模式<br>1：拦截模式</p>",
           "example": "1",
           "member": "uint64",
           "name": "Mode",
@@ -19419,7 +19692,7 @@
         },
         {
           "disabled": false,
-          "document": "自有证书的私钥",
+          "document": "<p>自有证书的私钥</p>",
           "example": "-----BEGIN RSA PRIVATE KEY----- xxx -----END RSA PRIVATE KEY-----",
           "member": "string",
           "name": "PrivateKey",
@@ -19429,7 +19702,7 @@
         },
         {
           "disabled": false,
-          "document": "CertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id",
+          "document": "<p>CertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id</p>",
           "example": "cKnKQLJ",
           "member": "string",
           "name": "SSLId",
@@ -19439,7 +19712,7 @@
         },
         {
           "disabled": false,
-          "document": "域名回源时的回源域名。UpstreamType为1时，需要填充此字段",
+          "document": "<p>域名回源时的回源域名。UpstreamType为1时，需要填充此字段</p>",
           "example": "www.qq.com",
           "member": "string",
           "name": "UpstreamDomain",
@@ -19449,7 +19722,7 @@
         },
         {
           "disabled": false,
-          "document": "回源类型。\n0：通过IP回源\n1：通过域名回源",
+          "document": "<p>回源类型。<br>0：通过IP回源<br>1：通过域名回源</p>",
           "example": "1",
           "member": "uint64",
           "name": "UpstreamType",
@@ -19459,7 +19732,7 @@
         },
         {
           "disabled": false,
-          "document": "IP回源时的回源IP列表。UpstreamType为0时，需要填充此字段",
+          "document": "<p>IP回源时的回源IP列表。UpstreamType为0时，需要填充此字段</p>",
           "example": "[\"26.35.125.29\",\"86.236.39.87\"]",
           "member": "string",
           "name": "SrcList",
@@ -19469,7 +19742,7 @@
         },
         {
           "disabled": false,
-          "document": "域名端口配置",
+          "document": "<p>域名端口配置</p>",
           "example": "无",
           "member": "PortInfo",
           "name": "Ports",
@@ -19479,7 +19752,7 @@
         },
         {
           "disabled": false,
-          "document": "证书类型。\n0：仅配置HTTP监听端口，没有证书\n1：证书来源为自有证书\n2：证书来源为托管证书",
+          "document": "<p>证书类型。<br>0：仅配置HTTP监听端口，没有证书<br>1：证书来源为自有证书<br>2：证书来源为托管证书</p>",
           "example": "1",
           "member": "uint64",
           "name": "CertType",
@@ -19489,7 +19762,7 @@
         },
         {
           "disabled": false,
-          "document": "服务配置有HTTPS端口时，HTTPS的回源协议。\nhttp：使用http协议回源，和HttpsUpstreamPort配合使用\nhttps：使用https协议回源",
+          "document": "<p>服务配置有HTTPS端口时，HTTPS的回源协议。<br>http：使用http协议回源，和HttpsUpstreamPort配合使用<br>https：使用https协议回源</p>",
           "example": "https",
           "member": "string",
           "name": "UpstreamScheme",
@@ -19499,7 +19772,7 @@
         },
         {
           "disabled": false,
-          "document": "日志包是否开启。\n0：关闭\n1：开启",
+          "document": "<p>日志包是否开启。<br>0：关闭<br>1：开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "Cls",
@@ -19509,7 +19782,7 @@
         },
         {
           "disabled": false,
-          "document": "接入Cname，SaaS型域名使用此Cname进行接入",
+          "document": "<p>接入Cname，SaaS型域名使用此Cname进行接入</p>",
           "example": "940f377475e9155caa96623ccad545a78.qcloudwzgj.com",
           "member": "string",
           "name": "Cname",
@@ -19519,7 +19792,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启长连接。\n0： 短连接\n1： 长连接",
+          "document": "<p>是否开启长连接。<br>0： 短连接<br>1： 长连接</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsKeepAlive",
@@ -19529,7 +19802,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启主动健康检测。\n0：不开启\n1：开启",
+          "document": "<p>是否开启主动健康检测。<br>0：不开启<br>1：开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "ActiveCheck",
@@ -19539,7 +19812,7 @@
         },
         {
           "disabled": false,
-          "document": "TLS版本信息",
+          "document": "<p>TLS版本信息</p>",
           "example": "1",
           "member": "int64",
           "name": "TLSVersion",
@@ -19549,7 +19822,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。",
+          "document": "<p>自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。</p>",
           "example": "[1,2]",
           "member": "int64",
           "name": "Ciphers",
@@ -19559,7 +19832,7 @@
         },
         {
           "disabled": false,
-          "document": "加密套件模板。\n0：不支持选择，使用默认模板  \n1：通用型模板 \n2：安全型模板\n3：自定义模板",
+          "document": "<p>加密套件模板。<br>0：不支持选择，使用默认模板<br>1：通用型模板<br>2：安全型模板<br>3：自定义模板</p>",
           "example": "0",
           "member": "int64",
           "name": "CipherTemplate",
@@ -19569,7 +19842,7 @@
         },
         {
           "disabled": false,
-          "document": "WAF与源站的连接超时，默认10s。",
+          "document": "<p>WAF与源站的连接超时，默认10s。</p>",
           "example": "10",
           "member": "int64",
           "name": "ProxyConnectTimeout",
@@ -19579,7 +19852,7 @@
         },
         {
           "disabled": false,
-          "document": "WAF与源站的读超时时间，默认300s。",
+          "document": "<p>WAF与源站的读超时时间，默认300s。</p>",
           "example": "300",
           "member": "int64",
           "name": "ProxyReadTimeout",
@@ -19589,7 +19862,7 @@
         },
         {
           "disabled": false,
-          "document": "WAF与源站的写超时时间，默认300s。",
+          "document": "<p>WAF与源站的写超时时间，默认300s。</p>",
           "example": "300",
           "member": "int64",
           "name": "ProxySendTimeout",
@@ -19599,7 +19872,7 @@
         },
         {
           "disabled": false,
-          "document": "WAF回源时的SNI类型。\n0：关闭SNI，不配置client_hello中的server_name\n1：开启SNI，client_hello中的server_name为防护域名\n2：开启SNI，SNI为域名回源时的源站域名\n3：开启SNI，SNI为自定义域名",
+          "document": "<p>WAF回源时的SNI类型。<br>0：关闭SNI，不配置client_hello中的server_name<br>1：开启SNI，client_hello中的server_name为防护域名<br>2：开启SNI，SNI为域名回源时的源站域名<br>3：开启SNI，SNI为自定义域名</p>",
           "example": "2",
           "member": "int64",
           "name": "SniType",
@@ -19609,7 +19882,7 @@
         },
         {
           "disabled": false,
-          "document": "SniType为3时，需要填此参数，表示自定义的SNI；",
+          "document": "<p>SniType为3时，需要填此参数，表示自定义的SNI；</p>",
           "example": "randy.testwaf.com",
           "member": "string",
           "name": "SniHost",
@@ -19619,7 +19892,7 @@
         },
         {
           "disabled": false,
-          "document": "回源IP权重",
+          "document": "<p>回源IP权重</p>",
           "example": "[ \"1\",\"1\" ]",
           "member": "string",
           "name": "Weights",
@@ -19629,7 +19902,7 @@
         },
         {
           "disabled": false,
-          "document": "IsCdn=3时，表示自定义header",
+          "document": "<p>IsCdn=3时，表示自定义header</p>",
           "example": "[\"x-real-ip\"]",
           "member": "string",
           "name": "IpHeaders",
@@ -19639,7 +19912,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启XFF重置。\n0：关闭\n1：开启",
+          "document": "<p>是否开启XFF重置。<br>0：关闭<br>1：开启</p>",
           "example": "0",
           "member": "int64",
           "name": "XFFReset",
@@ -19649,7 +19922,7 @@
         },
         {
           "disabled": false,
-          "document": "域名备注信息",
+          "document": "<p>域名备注信息</p>",
           "example": "备注",
           "member": "string",
           "name": "Note",
@@ -19659,7 +19932,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。",
+          "document": "<p>自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。</p>",
           "example": "www.qq.com",
           "member": "string",
           "name": "UpstreamHost",
@@ -19669,7 +19942,7 @@
         },
         {
           "disabled": false,
-          "document": "防护规则",
+          "document": "<p>防护规则</p>",
           "example": "10",
           "member": "string",
           "name": "Level",
@@ -19679,7 +19952,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启缓存 0-关闭 1-开启",
+          "document": "<p>是否开启缓存 0-关闭 1-开启</p>",
           "example": "0",
           "member": "int64",
           "name": "ProxyBuffer",
@@ -19689,7 +19962,7 @@
         },
         {
           "disabled": false,
-          "document": "国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问",
+          "document": "<p>国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问</p>",
           "example": "0",
           "member": "int64",
           "name": "GmType",
@@ -19699,7 +19972,7 @@
         },
         {
           "disabled": false,
-          "document": "国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书",
+          "document": "<p>国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书</p>",
           "example": "0",
           "member": "int64",
           "name": "GmCertType",
@@ -19709,7 +19982,7 @@
         },
         {
           "disabled": false,
-          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的证书链",
+          "document": "<p>GmCertType为1时，需要填充此参数，表示自有国密证书的证书链</p>",
           "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
           "member": "string",
           "name": "GmCert",
@@ -19719,7 +19992,7 @@
         },
         {
           "disabled": false,
-          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的私钥",
+          "document": "<p>GmCertType为1时，需要填充此参数，表示自有国密证书的私钥</p>",
           "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
           "member": "string",
           "name": "GmPrivateKey",
@@ -19729,7 +20002,7 @@
         },
         {
           "disabled": false,
-          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书",
+          "document": "<p>GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书</p>",
           "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
           "member": "string",
           "name": "GmEncCert",
@@ -19739,7 +20012,7 @@
         },
         {
           "disabled": false,
-          "document": "GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥",
+          "document": "<p>GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥</p>",
           "example": "-----BEGIN PRIVATE KEY----- xxx -----END PRIVATE KEY-----",
           "member": "string",
           "name": "GmEncPrivateKey",
@@ -19749,7 +20022,7 @@
         },
         {
           "disabled": false,
-          "document": "GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id",
+          "document": "<p>GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id</p>",
           "example": "aKnKQLJ",
           "member": "string",
           "name": "GmSSLId",
@@ -19759,7 +20032,7 @@
         },
         {
           "disabled": false,
-          "document": "域名标签",
+          "document": "<p>域名标签</p>",
           "example": "[\"label1\",\"label2\"]",
           "member": "string",
           "name": "Labels",
@@ -19769,7 +20042,7 @@
         },
         {
           "disabled": false,
-          "document": "拨测状态。 0: 禁用拨测, 1: 启用拨测",
+          "document": "<p>拨测状态。 0: 禁用拨测, 1: 启用拨测</p>",
           "example": "1",
           "member": "int64",
           "name": "ProbeStatus",
@@ -19779,7 +20052,7 @@
         },
         {
           "disabled": false,
-          "document": "回源策略。\n0：负载均衡回源\n1：分流回源",
+          "document": "<p>回源策略。<br>0：负载均衡回源<br>1：分流回源</p>",
           "example": "1",
           "member": "int64",
           "name": "UpstreamPolicy",
@@ -19789,7 +20062,7 @@
         },
         {
           "disabled": false,
-          "document": "分流回源策略",
+          "document": "<p>分流回源策略</p>",
           "example": "无",
           "member": "UpstreamRule",
           "name": "UpstreamRules",
@@ -19799,7 +20072,7 @@
         },
         {
           "disabled": false,
-          "document": "业务场景。0：默认值，表示常规业务场景 1：大模型业务场景",
+          "document": "<p>业务场景。0：默认值，表示常规业务场景 1：大模型业务场景</p>",
           "example": "0",
           "member": "int64",
           "name": "UseCase",
@@ -19809,7 +20082,7 @@
         },
         {
           "disabled": false,
-          "document": "gzip开关。0：关闭 1：默认值，打开。",
+          "document": "<p>gzip开关。0：关闭 1：默认值，打开。</p>",
           "example": "1",
           "member": "int64",
           "name": "Gzip",
@@ -19819,7 +20092,7 @@
         },
         {
           "disabled": false,
-          "document": "SAAS型WAF域名状态：\n-2：配置下发失败\n-1：配置下发中\n0：DNS解析中\n1：无DNS解析记录，请接入WAF\n10：DNS解析未知，域名启用了代理\n11：DNS解析异常，使用A记录接入WAF IP\n200：检测源站不可达\n220：源站不支持长连接\n311：证书过期\n312：证书即将过期\n310：证书异常\n316：备案异常\n5：WAF回源已变更\n负载均衡型WAF域名LB监听器状态：\n0：操作成功 \n4：正在绑定LB \n6：正在解绑LB \n7：解绑LB失败 \n8：绑定LB失败 \n10：内部错误",
+          "document": "<p>SAAS型WAF域名状态：<br>-2：配置下发失败<br>-1：配置下发中<br>0：DNS解析中<br>1：无DNS解析记录，请接入WAF<br>10：DNS解析未知，域名启用了代理<br>11：DNS解析异常，使用A记录接入WAF IP<br>200：检测源站不可达<br>220：源站不支持长连接<br>311：证书过期<br>312：证书即将过期<br>310：证书异常<br>316：备案异常<br>5：WAF回源已变更<br>负载均衡型WAF域名LB监听器状态：<br>0：操作成功<br>4：正在绑定LB<br>6：正在解绑LB<br>7：解绑LB失败<br>8：绑定LB失败<br>10：内部错误</p>",
           "example": "1",
           "member": "int64",
           "name": "State",
@@ -19829,10 +20102,30 @@
         },
         {
           "disabled": false,
-          "document": "saaswaf独享ip状态，0是关闭状态，1是开启状态，2是开启中",
+          "document": "<p>saaswaf独享ip状态，0是关闭状态，1是开启状态，2是开启中</p>",
           "example": "0",
           "member": "int64",
           "name": "PrivateVipStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签结构体</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ipv6开启状态</p><p>枚举值：</p><ul><li>1： ipv6开关打开</li><li>0： ipv6开关关闭</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Ipv6Status",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -20985,7 +21278,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Admin:集团账号创建，DelegatedAdmin:委派管理员，Member：成员，NoMember：非集团账号成员",
+          "document": "<p>Admin:集团账号创建，DelegatedAdmin:委派管理员，Member：成员，NoMember：非集团账号成员</p>",
           "example": "Member",
           "member": "string",
           "name": "Role",
@@ -22488,7 +22781,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例唯一ID",
+          "document": "<p>实例唯一ID</p>",
           "example": "waf_2kufmr9u71ae5dz7",
           "member": "string",
           "name": "InstanceId",
@@ -22499,7 +22792,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "TEST实例",
           "member": "string",
           "name": "InstanceName",
@@ -22510,7 +22803,7 @@
         },
         {
           "disabled": false,
-          "document": "实例对应资源ID，计费使用",
+          "document": "<p>实例对应资源ID，计费使用</p>",
           "example": "waf_2kufmr9u71ae5dz7",
           "member": "string",
           "name": "ResourceIds",
@@ -22521,7 +22814,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属地域",
+          "document": "<p>实例所属地域</p>",
           "example": "gz",
           "member": "string",
           "name": "Region",
@@ -22532,7 +22825,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式",
+          "document": "<p>付费模式</p>",
           "example": "1",
           "member": "uint64",
           "name": "PayMode",
@@ -22543,7 +22836,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。\n0：关闭\n1：开启",
+          "document": "<p>自动续费标识。<br>0：关闭<br>1：开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
@@ -22554,7 +22847,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性计费开关。\n0：关闭\n1：开启",
+          "document": "<p>弹性计费开关。<br>0：关闭<br>1：开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "Mode",
@@ -22565,7 +22858,7 @@
         },
         {
           "disabled": false,
-          "document": "实例套餐版本。\n101：小微版\n102：超轻版\n2：高级版\n3：企业版\n4：旗舰版\n6：独享版",
+          "document": "<p>实例套餐版本。<br>101：小微版<br>102：超轻版<br>2：高级版<br>3：企业版<br>4：旗舰版<br>6：独享版</p>",
           "example": "2",
           "member": "uint64",
           "name": "Level",
@@ -22576,7 +22869,7 @@
         },
         {
           "disabled": false,
-          "document": "实例过期时间",
+          "document": "<p>实例过期时间</p>",
           "example": "2023-11-15 19:23:06",
           "member": "string",
           "name": "ValidTime",
@@ -22587,7 +22880,7 @@
         },
         {
           "disabled": false,
-          "document": "实例开始时间",
+          "document": "<p>实例开始时间</p>",
           "example": "2023-11-15 19:23:06",
           "member": "string",
           "name": "BeginTime",
@@ -22598,7 +22891,7 @@
         },
         {
           "disabled": false,
-          "document": "已配置域名个数",
+          "document": "<p>已配置域名个数</p>",
           "example": "4",
           "member": "uint64",
           "name": "DomainCount",
@@ -22609,7 +22902,7 @@
         },
         {
           "disabled": false,
-          "document": "域名数量上限",
+          "document": "<p>域名数量上限</p>",
           "example": "5",
           "member": "uint64",
           "name": "SubDomainLimit",
@@ -22620,7 +22913,7 @@
         },
         {
           "disabled": false,
-          "document": "已配置主域名个数",
+          "document": "<p>已配置主域名个数</p>",
           "example": "4",
           "member": "uint64",
           "name": "MainDomainCount",
@@ -22631,7 +22924,7 @@
         },
         {
           "disabled": false,
-          "document": "主域名数量上限",
+          "document": "<p>主域名数量上限</p>",
           "example": "5",
           "member": "uint64",
           "name": "MainDomainLimit",
@@ -22642,7 +22935,7 @@
         },
         {
           "disabled": false,
-          "document": "实例30天内QPS峰值",
+          "document": "<p>实例30天内QPS峰值</p>",
           "example": "10000",
           "member": "uint64",
           "name": "MaxQPS",
@@ -22653,7 +22946,7 @@
         },
         {
           "disabled": false,
-          "document": "qps扩展包信息",
+          "document": "<p>qps扩展包信息</p>",
           "example": "无",
           "member": "QPSPackageNew",
           "name": "QPS",
@@ -22664,7 +22957,7 @@
         },
         {
           "disabled": false,
-          "document": "域名扩展包信息",
+          "document": "<p>域名扩展包信息</p>",
           "example": "无",
           "member": "DomainPackageNew",
           "name": "DomainPkg",
@@ -22675,7 +22968,7 @@
         },
         {
           "disabled": false,
-          "document": "用户appid",
+          "document": "<p>用户appid</p>",
           "example": "129873089",
           "member": "uint64",
           "name": "AppId",
@@ -22686,7 +22979,7 @@
         },
         {
           "disabled": false,
-          "document": "clb或saas",
+          "document": "<p>clb或saas</p>",
           "example": "sparta-waf",
           "member": "string",
           "name": "Edition",
@@ -22697,7 +22990,7 @@
         },
         {
           "disabled": false,
-          "document": "业务安全包",
+          "document": "<p>业务安全包</p>",
           "example": "无",
           "member": "FraudPkg",
           "name": "FraudPkg",
@@ -22708,7 +23001,7 @@
         },
         {
           "disabled": false,
-          "document": "Bot资源包",
+          "document": "<p>Bot资源包</p>",
           "example": "无",
           "member": "BotPkg",
           "name": "BotPkg",
@@ -22719,7 +23012,7 @@
         },
         {
           "disabled": false,
-          "document": "bot的qps详情",
+          "document": "<p>bot的qps详情</p>",
           "example": "无",
           "member": "BotQPS",
           "name": "BotQPS",
@@ -22730,7 +23023,7 @@
         },
         {
           "disabled": false,
-          "document": "qps弹性计费上限",
+          "document": "<p>qps弹性计费上限</p>",
           "example": "10000",
           "member": "uint64",
           "name": "ElasticBilling",
@@ -22741,7 +23034,7 @@
         },
         {
           "disabled": false,
-          "document": "攻击日志投递开关",
+          "document": "<p>攻击日志投递开关</p>",
           "example": "0",
           "member": "int64",
           "name": "AttackLogPost",
@@ -22752,7 +23045,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽峰值，单位为B/s(字节每秒)",
+          "document": "<p>带宽峰值，单位为B/s(字节每秒)</p>",
           "example": "1024",
           "member": "uint64",
           "name": "MaxBandwidth",
@@ -22763,7 +23056,7 @@
         },
         {
           "disabled": false,
-          "document": "api安全是否购买",
+          "document": "<p>api安全是否购买</p>",
           "example": "1",
           "member": "uint64",
           "name": "APISecurity",
@@ -22774,7 +23067,7 @@
         },
         {
           "disabled": false,
-          "document": "购买的qps规格",
+          "document": "<p>购买的qps规格</p>",
           "example": "10000",
           "member": "uint64",
           "name": "QpsStandard",
@@ -22785,7 +23078,7 @@
         },
         {
           "disabled": false,
-          "document": "购买的带宽规格",
+          "document": "<p>购买的带宽规格</p>",
           "example": "500",
           "member": "uint64",
           "name": "BandwidthStandard",
@@ -22796,7 +23089,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态",
+          "document": "<p>实例状态</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -22807,7 +23100,7 @@
         },
         {
           "disabled": false,
-          "document": "实例沙箱qps值",
+          "document": "<p>实例沙箱qps值</p>",
           "example": "30000",
           "member": "uint64",
           "name": "SandboxQps",
@@ -22818,7 +23111,7 @@
         },
         {
           "disabled": false,
-          "document": "是否api 安全试用",
+          "document": "<p>是否api 安全试用</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsAPISecurityTrial",
@@ -22829,7 +23122,7 @@
         },
         {
           "disabled": false,
-          "document": "重保包",
+          "document": "<p>重保包</p>",
           "example": "无",
           "member": "MajorEventsPkg",
           "name": "MajorEventsPkg",
@@ -22840,7 +23133,7 @@
         },
         {
           "disabled": false,
-          "document": "混合云子节点包",
+          "document": "<p>混合云子节点包</p>",
           "example": "无",
           "member": "HybridPkg",
           "name": "HybridPkg",
@@ -22851,7 +23144,7 @@
         },
         {
           "disabled": false,
-          "document": "API安全资源包",
+          "document": "<p>API安全资源包</p>",
           "example": "无",
           "member": "ApiPkg",
           "name": "ApiPkg",
@@ -22862,7 +23155,7 @@
         },
         {
           "disabled": false,
-          "document": "小程序安全加速包",
+          "document": "<p>小程序安全加速包</p>",
           "example": "无",
           "member": "MiniPkg",
           "name": "MiniPkg",
@@ -22873,7 +23166,7 @@
         },
         {
           "disabled": false,
-          "document": "小程序qps规格",
+          "document": "<p>小程序qps规格</p>",
           "example": "100",
           "member": "uint64",
           "name": "MiniQpsStandard",
@@ -22884,7 +23177,7 @@
         },
         {
           "disabled": false,
-          "document": "小程序qps峰值",
+          "document": "<p>小程序qps峰值</p>",
           "example": "50",
           "member": "uint64",
           "name": "MiniMaxQPS",
@@ -22895,7 +23188,7 @@
         },
         {
           "disabled": false,
-          "document": "最近一次超量时间",
+          "document": "<p>最近一次超量时间</p>",
           "example": "2023-11-15 19:23:06",
           "member": "string",
           "name": "LastQpsExceedTime",
@@ -22906,7 +23199,7 @@
         },
         {
           "disabled": false,
-          "document": "小程序安全接入ID数量扩张包",
+          "document": "<p>小程序安全接入ID数量扩张包</p>",
           "example": "无",
           "member": "MiniExtendPkg",
           "name": "MiniExtendPkg",
@@ -22917,7 +23210,7 @@
         },
         {
           "disabled": false,
-          "document": "计费项",
+          "document": "<p>计费项</p>",
           "example": "sv_wsm_waf_package_ultimate",
           "member": "string",
           "name": "BillingItem",
@@ -22928,7 +23221,7 @@
         },
         {
           "disabled": false,
-          "document": "实例延期释放标识",
+          "document": "<p>实例延期释放标识</p>",
           "example": "1",
           "member": "uint64",
           "name": "FreeDelayFlag",
@@ -22939,7 +23232,7 @@
         },
         {
           "disabled": false,
-          "document": "最近3天最大qps",
+          "document": "<p>最近3天最大qps</p>",
           "example": "300",
           "member": "uint64",
           "name": "Last3MaxQPS",
@@ -22950,7 +23243,7 @@
         },
         {
           "disabled": false,
-          "document": "最近3天最大带宽",
+          "document": "<p>最近3天最大带宽</p>",
           "example": "1000",
           "member": "uint64",
           "name": "Last3MaxBandwidth",
@@ -22961,7 +23254,7 @@
         },
         {
           "disabled": false,
-          "document": "重保增强包",
+          "document": "<p>重保增强包</p>",
           "example": "无",
           "member": "MajorEventsProPkg",
           "name": "MajorEventsProPkg",
@@ -22972,7 +23265,7 @@
         },
         {
           "disabled": false,
-          "document": "1是基础2025版本；0不是",
+          "document": "<p>1是基础2025版本；0不是</p>",
           "example": "1",
           "member": "uint64",
           "name": "BasicFlag",
@@ -22983,7 +23276,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的网络配置",
+          "document": "<p>实例的网络配置</p>",
           "example": "无",
           "member": "NetworkConfig",
           "name": "NetworkConfig",
@@ -22994,7 +23287,7 @@
         },
         {
           "disabled": false,
-          "document": "RCE设备安全信息包",
+          "document": "<p>RCE设备安全信息包</p>",
           "example": "无",
           "member": "RCEPkg",
           "name": "RCEPkg",
@@ -23005,7 +23298,7 @@
         },
         {
           "disabled": false,
-          "document": "超量策略。0：超量沙箱\n1：超量限流",
+          "document": "<p>超量策略。0：超量沙箱<br>1：超量限流</p>",
           "example": "0",
           "member": "int64",
           "name": "ExceedPolicy",
@@ -23016,7 +23309,7 @@
         },
         {
           "disabled": false,
-          "document": "大模型安全信息包",
+          "document": "<p>大模型安全信息包</p>",
           "example": "无",
           "member": "LLMPkg",
           "name": "LLMPkg",
@@ -23027,7 +23320,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性资源Id",
+          "document": "<p>弹性资源Id</p>",
           "example": "waf_000qjs0ik_eqps",
           "member": "string",
           "name": "ElasticResourceId",
@@ -23038,7 +23331,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费大模型安全信息包",
+          "document": "<p>预付费大模型安全信息包</p>",
           "example": "无",
           "member": "LLMMonPkg",
           "name": "LLMMonPkg",
@@ -23049,7 +23342,7 @@
         },
         {
           "disabled": false,
-          "document": "地域id",
+          "document": "<p>地域id</p>",
           "example": "1",
           "member": "uint64",
           "name": "RegionId",
@@ -23060,7 +23353,7 @@
         },
         {
           "disabled": false,
-          "document": "BOT安全护航信息",
+          "document": "<p>BOT安全护航信息</p>",
           "example": "无",
           "member": "BotSecurityPkg",
           "name": "BotSecurityPkg",
@@ -23071,7 +23364,7 @@
         },
         {
           "disabled": false,
-          "document": "BOT安全监测资源信息",
+          "document": "<p>BOT安全监测资源信息</p>",
           "example": "无",
           "member": "BotMonitorPkg",
           "name": "BotMonitorPkg",
@@ -23082,7 +23375,7 @@
         },
         {
           "disabled": false,
-          "document": "独享ip资源信息",
+          "document": "<p>独享ip资源信息</p>",
           "example": "无",
           "member": "DedicatedIPPkg",
           "name": "DedicatedIPPkg",
@@ -23093,13 +23386,24 @@
         },
         {
           "disabled": false,
-          "document": "已经配置独享ip的数量",
+          "document": "<p>已经配置独享ip的数量</p>",
           "example": "1",
           "member": "int64",
           "name": "DedicatedIPCount",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签结构体</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -23635,7 +23939,7 @@
         {
           "disabled": false,
           "document": "<p>攻击payload</p>",
-          "example": "风险类型:内置关键词库-涉政-高敏感,风险内容:***",
+          "example": "风险类型:内置关键词库-**-高敏感,风险内容:***",
           "member": "string",
           "name": "Payload",
           "output_required": false,
@@ -23660,6 +23964,16 @@
           "name": "MsgID",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>toolcall的检测结果</p>",
+          "example": "无",
+          "member": "ToolCallResult",
+          "name": "ToolCallResult",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -25689,7 +26003,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "qcloudwaf.com",
           "member": "string",
           "name": "Domain",
@@ -25698,7 +26012,7 @@
         },
         {
           "disabled": false,
-          "document": "1表示开，0表示关，3表示删除",
+          "document": "<p>1表示开，0表示关，3表示删除</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -25707,7 +26021,7 @@
         },
         {
           "disabled": false,
-          "document": "规则名称",
+          "document": "<p>规则名称</p>",
           "example": "id_card",
           "member": "string",
           "name": "RuleName",
@@ -25716,16 +26030,7 @@
         },
         {
           "disabled": false,
-          "document": "客户自定义配置",
-          "example": "无",
-          "member": "ApiSecCustomSensitiveRule",
-          "name": "CustomRule",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "rulename列表，批量操作的时候填改值",
+          "document": "<p>rulename列表，批量操作的时候填改值</p>",
           "example": "[\"rulename1\"]",
           "member": "string",
           "name": "RuleNameList",
@@ -25734,16 +26039,16 @@
         },
         {
           "disabled": false,
-          "document": "api提取规则内容",
+          "document": "<p>客户自定义配置</p>",
           "example": "无",
-          "member": "ApiSecExtractRule",
-          "name": "CustomApiExtractRule",
+          "member": "ApiSecCustomSensitiveRule",
+          "name": "CustomRule",
           "required": false,
           "type": "object"
         },
         {
           "disabled": false,
-          "document": "批量操作的时候的api提取规则",
+          "document": "<p>批量操作的时候的api提取规则</p>",
           "example": "[\"string\"]",
           "member": "string",
           "name": "ApiExtractRuleName",
@@ -25752,16 +26057,16 @@
         },
         {
           "disabled": false,
-          "document": "自定义api鉴权规则",
+          "document": "<p>api提取规则内容</p>",
           "example": "无",
-          "member": "ApiSecPrivilegeRule",
-          "name": "ApiSecPrivilegeRule",
+          "member": "ApiSecExtractRule",
+          "name": "CustomApiExtractRule",
           "required": false,
           "type": "object"
         },
         {
           "disabled": false,
-          "document": "匹配操作时候的api鉴权规则",
+          "document": "<p>匹配操作时候的api鉴权规则</p>",
           "example": "[\"string\"]",
           "member": "string",
           "name": "ApiSecPrivilegeRuleName",
@@ -25770,7 +26075,16 @@
         },
         {
           "disabled": false,
-          "document": "批量操作的时候的自定义场景列表",
+          "document": "<p>自定义api鉴权规则</p>",
+          "example": "无",
+          "member": "ApiSecPrivilegeRule",
+          "name": "ApiSecPrivilegeRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>批量操作的时候的自定义场景列表</p>",
           "example": "[\"string\"]",
           "member": "string",
           "name": "ApiSecSceneRuleNameList",
@@ -25779,7 +26093,7 @@
         },
         {
           "disabled": false,
-          "document": "单条自定义api场景规则",
+          "document": "<p>单条自定义api场景规则</p>",
           "example": "无",
           "member": "ApiSecSceneRule",
           "name": "ApiSecSceneRule",
@@ -25788,7 +26102,7 @@
         },
         {
           "disabled": false,
-          "document": "批量操作的时候的自定义事件规则列表",
+          "document": "<p>批量操作的时候的自定义事件规则列表</p>",
           "example": "[\"string\"]",
           "member": "string",
           "name": "ApiSecCustomEventRuleNameList",
@@ -25797,7 +26111,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义事件规则",
+          "document": "<p>自定义事件规则</p>",
           "example": "无",
           "member": "ApiSecCustomEventRule",
           "name": "ApiSecCustomEventRuleRule",
@@ -25806,7 +26120,16 @@
         },
         {
           "disabled": false,
-          "document": "无效api排除规则",
+          "document": "<p>批量操作的时候的无效api排除规则</p>",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "ApiExcludeRuleName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无效api排除规则</p>",
           "example": "无",
           "member": "ApiSecExcludeRule",
           "name": "CustomApiExcludeRule",
@@ -25815,12 +26138,21 @@
         },
         {
           "disabled": false,
-          "document": "批量操作的时候的无效api排除规则",
+          "document": "<p>批量操作时的敏感数据加白规则名称列表</p>",
           "example": "[\"string\"]",
           "member": "string",
-          "name": "ApiExcludeRuleName",
+          "name": "ApiSecSensitiveWhiteRuleNameList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>敏感数据加白规则</p>",
+          "example": "无",
+          "member": "ApiSecSensitiveWhiteRule",
+          "name": "ApiSecSensitiveWhiteRuleRule",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -27752,8 +28084,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "编辑的域名配置信息",
-          "example": "{       \"Domain\": \"txwafstar.qcloudwaf.com\",       \"DomainId\": \"waf-Lt6LGSlM\",       \"IsCdn\": 0,       \"LoadBalancerSet\": [         {           \"LoadBalancerId\": \"lb-mtb5j9gj\",           \"LoadBalancerName\": \"cd-clbwaf\",           \"ListenerId\": \"lbl-2k0gmnv1\",           \"ListenerName\": \"clbwaf-cd.qcloudwaf.com\",           \"Vip\": \"140.143.83.191\",           \"Vport\": 8080,           \"Region\": \"cd\",           \"Protocol\": \"HTTP\",           \"Zone\": \"ap-chengdu-2\",           \"NumericalVpcId\": 1140321,           \"LoadBalancerType\": \"OPEN\",           \"LoadBalancerDomain\": \"\"         }       ],       \"Region\": \"cd\",       \"AlbType\": \"clb\",       \"IpHeaders\": [],       \"Note\": \"\"     }",
+          "document": "<p>编辑的域名配置信息</p>",
+          "example": "无",
           "member": "HostRecord",
           "name": "Host",
           "required": true,
@@ -27761,7 +28093,7 @@
         },
         {
           "disabled": false,
-          "document": "实例唯一ID",
+          "document": "<p>实例唯一ID</p>",
           "example": "waf_2kw60zgy0235e8j3",
           "member": "string",
           "name": "InstanceID",
@@ -27776,7 +28108,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "编辑的域名ID",
+          "document": "<p>编辑的域名ID</p>",
           "example": "waf-Lt6LGSlM",
           "member": "string",
           "name": "DomainId",
@@ -28250,7 +28582,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改对象标识",
+          "document": "<p>修改对象标识</p>",
           "example": "lb-3zkvjmn7",
           "member": "string",
           "name": "ObjectId",
@@ -28259,7 +28591,7 @@
         },
         {
           "disabled": false,
-          "document": "改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态",
+          "document": "<p>改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态</p>",
           "example": "Status",
           "member": "string",
           "name": "OpType",
@@ -28268,7 +28600,7 @@
         },
         {
           "disabled": false,
-          "document": "新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1",
+          "document": "<p>新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1</p>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -28277,7 +28609,7 @@
         },
         {
           "disabled": false,
-          "document": "新的实例ID，如果和已绑定的实例相同认为修改成功",
+          "document": "<p>新的实例ID，如果和已绑定的实例相同认为修改成功</p>",
           "example": "waf_2kuil2f1cvqm7z3",
           "member": "string",
           "name": "InstanceId",
@@ -28286,7 +28618,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)",
+          "document": "<p>是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)</p>",
           "example": "1",
           "member": "uint64",
           "name": "Proxy",
@@ -28295,7 +28627,7 @@
         },
         {
           "disabled": false,
-          "document": "IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)",
+          "document": "<p>IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)</p>",
           "example": "[\"spheader\",\"myheader\"]",
           "member": "string",
           "name": "IpHeaders",
@@ -28304,7 +28636,7 @@
         },
         {
           "disabled": false,
-          "document": "对象所属集团成员appid",
+          "document": "<p>对象所属集团成员appid</p>",
           "example": "251240572",
           "member": "uint64",
           "name": "MemberAppId",
@@ -28313,12 +28645,21 @@
         },
         {
           "disabled": false,
-          "document": "对象所属集团成员uin",
+          "document": "<p>对象所属集团成员uin</p>",
           "example": "700000670233",
           "member": "string",
           "name": "MemberUin",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签信息</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -31089,7 +31430,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防护对象组ID",
+          "document": "<p>防护对象组ID</p>",
           "example": "11101",
           "member": "uint64",
           "name": "ID",
@@ -31099,7 +31440,7 @@
         },
         {
           "disabled": false,
-          "document": "防护对象组名称",
+          "document": "<p>防护对象组名称</p>",
           "example": "rulename",
           "member": "string",
           "name": "Name",
@@ -31109,7 +31450,7 @@
         },
         {
           "disabled": false,
-          "document": "防护对象组备注",
+          "document": "<p>防护对象组备注</p>",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -31119,8 +31460,8 @@
         },
         {
           "disabled": false,
-          "document": "防护对象组中绑定的域名详情",
-          "example": "[{\"Domain\":\"www.testwaf.com\", \"Instances\":[{\"ID\":\"waf_int0dxss\",\"Name\":\"waf_instance\"}]}]",
+          "document": "<p>防护对象组中绑定的域名详情</p>",
+          "example": "无",
           "member": "ProtectGroupDomainInfo",
           "name": "Domains",
           "output_required": true,
@@ -31129,7 +31470,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的批量规则数",
+          "document": "<p>关联的批量规则数</p>",
           "example": "10",
           "member": "uint64",
           "name": "RuleNum",
@@ -31139,8 +31480,8 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
-          "example": "2012-03-07T13:02:47+08:00\t",
+          "document": "<p>创建时间</p>",
+          "example": "2012-03-07T13:02:47+08:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -31149,13 +31490,33 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
-          "example": "2012-03-07T13:02:47+08:00\t",
+          "document": "<p>更新时间</p>",
+          "example": "2012-03-07T13:02:47+08:00",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签信息</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否绑定了模板</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "BoundTemplate",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -33295,6 +33656,34 @@
       "members": [],
       "usage": "both"
     },
+    "TagInfo": {
+      "document": "标签结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签键</p>",
+          "example": "env",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值</p>",
+          "example": "prod",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TargetEntity": {
       "document": "需要开启/关闭API安全的 实例+域名 组合实体",
       "members": [
@@ -33569,6 +33958,42 @@
         }
       ],
       "usage": "both"
+    },
+    "ToolCallResult": {
+      "document": "tool_call 场景检测结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>命中规则名称</p>",
+          "example": "高危系统命令工具阻断",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则动作</p>",
+          "example": "deny",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险等级</p><p>枚举值：</p><ul><li>critical： 严重</li><li>high： 高危    </li><li>medium： 中危    </li><li>low： 低危</li></ul>",
+          "example": "critical",
+          "member": "string",
+          "name": "Severity",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TopicExtendInfo": {
       "document": "日志主题扩展信息",
@@ -34922,11 +35347,11 @@
       "usage": "both"
     },
     "UserDomainInfo": {
-      "document": "saas和clb信息",
+      "document": "saas和clb、四层域名信息",
       "members": [
         {
           "disabled": false,
-          "document": "用户id",
+          "document": "<p>用户id</p>",
           "example": "125670321",
           "member": "uint64",
           "name": "Appid",
@@ -34936,7 +35361,7 @@
         },
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "randy.qcloudwaf.com",
           "member": "string",
           "name": "Domain",
@@ -34946,7 +35371,7 @@
         },
         {
           "disabled": false,
-          "document": "域名id",
+          "document": "<p>域名id</p>",
           "example": "waf-lOu59Dut",
           "member": "string",
           "name": "DomainId",
@@ -34956,7 +35381,7 @@
         },
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "waf_2kze90gy0pkqxp5t",
           "member": "string",
           "name": "InstanceId",
@@ -34966,7 +35391,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名",
+          "document": "<p>实例名</p>",
           "example": "bj-Default",
           "member": "string",
           "name": "InstanceName",
@@ -34976,7 +35401,7 @@
         },
         {
           "disabled": false,
-          "document": "waf类型",
+          "document": "<p>waf类型</p>",
           "example": "clb-waf",
           "member": "string",
           "name": "Edition",
@@ -34986,7 +35411,7 @@
         },
         {
           "disabled": false,
-          "document": "版本",
+          "document": "<p>版本</p>",
           "example": "3",
           "member": "string",
           "name": "Level",
@@ -34996,7 +35421,7 @@
         },
         {
           "disabled": false,
-          "document": "指定域名访问日志字段的开关",
+          "document": "<p>指定域名访问日志字段的开关</p>",
           "example": "{\"EnableBody\": 1,\"EnableHeaders\":1}",
           "member": "string",
           "name": "WriteConfig",
@@ -35006,7 +35431,7 @@
         },
         {
           "disabled": false,
-          "document": "指定域名是否写cls的开关 1:写 0:不写",
+          "document": "<p>指定域名是否写cls的开关 1:写 0:不写</p>",
           "example": "1",
           "member": "uint64",
           "name": "Cls",
@@ -35016,7 +35441,7 @@
         },
         {
           "disabled": false,
-          "document": "标记是否是混合云接入。hybrid表示混合云接入域名",
+          "document": "<p>标记是否是混合云接入。hybrid表示混合云接入域名</p>",
           "example": "\"hybrid\"",
           "member": "string",
           "name": "CloudType",
@@ -35026,7 +35451,7 @@
         },
         {
           "disabled": false,
-          "document": "标记clbwaf类型",
+          "document": "<p>标记clbwaf类型</p>",
           "example": "\"clb\"",
           "member": "string",
           "name": "AlbType",
@@ -35036,7 +35461,7 @@
         },
         {
           "disabled": false,
-          "document": "BOT开关状态",
+          "document": "<p>BOT开关状态</p>",
           "example": "0",
           "member": "int64",
           "name": "BotStatus",
@@ -35046,10 +35471,20 @@
         },
         {
           "disabled": false,
-          "document": "API开关状态",
+          "document": "<p>API开关状态</p>",
           "example": "0",
           "member": "int64",
           "name": "ApiStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是四层clbwaf域名</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsREIP",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

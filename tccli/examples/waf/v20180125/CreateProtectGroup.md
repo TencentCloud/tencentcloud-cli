@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "GroupId": 55201922,
-        "RequestId": "xxxx"
+        "RequestId": "test-id"
     }
 }
 ```
