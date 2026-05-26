@@ -88,6 +88,14 @@
         "title": "测试"
       }
     ],
+    "DeleteDeviceVirtualGroup": [
+      {
+        "document": "删除终端自定义分组",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeviceVirtualGroup\n<公共请求参数>\n\n{\n    \"DomainInstanceId\": \"3\",\n    \"DeviceVirtualGroupId\": 11,\n    \"OsType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c870bad-ac85-4f20-a9d1-84721fb738dd\"\n    }\n}",
+        "title": "删除终端自定义分组"
+      }
+    ],
     "DescribeAccountGroups": [
       {
         "document": "",

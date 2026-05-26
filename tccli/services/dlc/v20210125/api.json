@@ -336,6 +336,13 @@
       "output": "CreateUserResponse",
       "status": "online"
     },
+    "CreateUserRole": {
+      "document": "创建用户角色",
+      "input": "CreateUserRoleRequest",
+      "name": "创建用户角色",
+      "output": "CreateUserRoleResponse",
+      "status": "online"
+    },
     "CreateUserVpcConnection": {
       "document": "创建用户vpc连接到指定引擎网络",
       "input": "CreateUserVpcConnectionRequest",
@@ -6279,6 +6286,78 @@
     },
     "CreateUserResponse": {
       "document": "CreateUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserRoleRequest": {
+      "document": "CreateUserRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色Arn信息",
+          "example": "无",
+          "member": "string",
+          "name": "Arn",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色描述信息",
+          "example": "无",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cos授权路径列表",
+          "example": "无",
+          "member": "CosPermission",
+          "name": "CosPermissionList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "cam策略json",
+          "example": "无",
+          "member": "string",
+          "name": "PermissionJson",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否设置为常驻：1非常驻（默认）、2常驻（仅能设置一个常驻）",
+          "example": "2",
+          "member": "int64",
+          "name": "IsDefault",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserRoleResponse": {
+      "document": "CreateUserRole返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

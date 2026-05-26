@@ -147,11 +147,25 @@
       "output": "GetLiveCodeResponse",
       "status": "online"
     },
+    "GetNFCToken": {
+      "document": "NFC核验服务，获取NFC识别请求对应的Token信息。",
+      "input": "GetNFCTokenRequest",
+      "name": "获取NFC识别Token信息",
+      "output": "GetNFCTokenResponse",
+      "status": "online"
+    },
     "GetWeChatBillDetails": {
       "document": "查询微信渠道服务（微信小程序、微信原生H5、微信普通H5）的账单明细及计费状态。",
       "input": "GetWeChatBillDetailsRequest",
       "name": "查询账单明细（微信渠道）",
       "output": "GetWeChatBillDetailsResponse",
+      "status": "online"
+    },
+    "GetWxNFCResult": {
+      "document": "获取到证件NFC数据，接口传入NFC SDK返回的Token（十分钟内有效），可返回对应NFC获取的证件信息。支持身份证类证件（二代身份证、港澳居住证、台湾居住证、外国人永居证）以及旅行类证件（港澳通行证、台湾通行证、台胞证、回乡证）的NFC识别及核验。",
+      "input": "GetWxNFCResultRequest",
+      "name": "获取证件NFC数据",
+      "output": "GetWxNFCResultResponse",
       "status": "online"
     },
     "IdCardOCRVerification": {
@@ -3254,6 +3268,33 @@
       ],
       "type": "object"
     },
+    "GetNFCTokenRequest": {
+      "document": "GetNFCToken请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetNFCTokenResponse": {
+      "document": "GetNFCToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "NFCToken",
+          "example": "26ee9cb0-3fe7-44ee-990a-7c173c76766",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetWeChatBillDetailsRequest": {
       "document": "GetWeChatBillDetails请求参数结构体",
       "members": [
@@ -3319,6 +3360,223 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetWxNFCResultRequest": {
+      "document": "GetWxNFCResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>前端 NFC SDK返回的唯一标识ID</p>",
+          "example": "d102c9c8-5423-11f1-97f9-52540044344e",
+          "member": "string",
+          "name": "NFCToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetWxNFCResultResponse": {
+      "document": "GetWxNFCResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>NFC计费结果码，NFC识读成功一次则计费一次（同一个NFC请求重复拉取结果不会重复计费）。计费结果码取值范围：<br>  0：识读成功，计费<br>-1：识读失败，不计费</p>",
+          "example": "0",
+          "member": "string",
+          "name": "ResultCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>身份证号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "350481***111140011",
+          "member": "string",
+          "name": "IdNum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>姓名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "张*",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>证件中的人像照片</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSkZJRgABAgAAAQAB",
+          "member": "string",
+          "name": "Picture",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>身份类证件正面照片（人像面）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSkZJRgABAgAAAQAB",
+          "member": "string",
+          "name": "IdCardFrontImg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>身份类证件背面照片（国徽面）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSkZJRgABAgAAAQ",
+          "member": "string",
+          "name": "IdCardBackImg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>出生日期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20011114",
+          "member": "string",
+          "name": "BirthDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>有效期起始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20220905",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>有效期结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20320905",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>住址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "福建省**市*************区*幢*单元***室",
+          "member": "string",
+          "name": "Address",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>民族</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "汉",
+          "member": "string",
+          "name": "Nation",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>性别</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "男",
+          "member": "string",
+          "name": "Sex",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>证件类型</p><p>枚举值：</p><ul><li>01： 身份证</li><li>03： 中国护照</li><li>06： 港澳通行证</li><li>07： 台胞证</li><li>08： 外国护照</li><li>13： 外国人永久居留证</li><li>14： 港澳台居民居住证</li><li>15： 回乡证</li><li>16： 大陆居民来往台湾通行证</li><li>99： 其他证件</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "01",
+          "member": "string",
+          "name": "IdType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>英文姓名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ZHAN***ZHEN",
+          "member": "string",
+          "name": "EnName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>签发机关</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "永安市***",
+          "member": "string",
+          "name": "SigningOrganization",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>港澳台居民居住证，通行证号码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "83100019900101123X",
+          "member": "string",
+          "name": "OtherIdNum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>旅行证件国籍</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CHN",
+          "member": "string",
+          "name": "Nationality",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>旅行证件机读区第二行 29~42 位</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NFMFNFOGA0",
+          "member": "string",
+          "name": "PersonalNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>证件的验真结果</p><ul><li>JSON格式如下： {&quot;result_issuer &quot;:&quot;签发者证书合法性验证结果 &quot;,&quot;result_paper&quot;:&quot;证件安全对象合法性验证结果 &quot;,&quot;result_data&quot; :&quot;防数据篡改验证结果 &quot;,&quot;result_chip&quot; :&quot;防证书件芯片被复制验证结果&quot;} 。 - 取值范围： 0:验证通过，1: 验证不通过，2: 未验证，3:部分通过，当4项核验结果都为0时，表示证件为真。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "CheckMRTD",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

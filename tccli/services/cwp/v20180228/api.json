@@ -25708,7 +25708,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总授权数 (包含隔离,过期等不可用状态)",
+          "document": "<p>总授权数 (包含隔离,过期等不可用状态)</p>",
           "example": "3",
           "member": "uint64",
           "name": "LicenseCnt",
@@ -25718,7 +25718,7 @@
         },
         {
           "disabled": false,
-          "document": "可用授权数",
+          "document": "<p>可用授权数</p>",
           "example": "3",
           "member": "uint64",
           "name": "AvailableLicenseCnt",
@@ -25728,7 +25728,7 @@
         },
         {
           "disabled": false,
-          "document": "可用专业版授权数(包含后付费).",
+          "document": "<p>可用专业版授权数(包含后付费).</p>",
           "example": "2",
           "member": "uint64",
           "name": "AvailableProVersionLicenseCnt",
@@ -25738,7 +25738,7 @@
         },
         {
           "disabled": false,
-          "document": "可用旗舰版授权数",
+          "document": "<p>可用旗舰版授权数</p>",
           "example": "1",
           "member": "uint64",
           "name": "AvailableFlagshipVersionLicenseCnt",
@@ -25748,7 +25748,7 @@
         },
         {
           "disabled": false,
-          "document": "即将到期授权数 (15天内到期的)",
+          "document": "<p>即将到期授权数 (15天内到期的)</p>",
           "example": "0",
           "member": "uint64",
           "name": "NearExpiryLicenseCnt",
@@ -25758,7 +25758,7 @@
         },
         {
           "disabled": false,
-          "document": "已到期授权数(不包含已删除的记录)",
+          "document": "<p>已到期授权数(不包含已删除的记录)</p>",
           "example": "0",
           "member": "uint64",
           "name": "ExpireLicenseCnt",
@@ -25768,7 +25768,7 @@
         },
         {
           "disabled": false,
-          "document": "自动升级开关状态,默认 false,  true 开启, false 关闭",
+          "document": "<p>自动升级开关状态,默认 false,  true 开启, false 关闭</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoOpenStatus",
@@ -25778,7 +25778,7 @@
         },
         {
           "disabled": false,
-          "document": "PROVERSION_POSTPAY 专业版-后付费, PROVERSION_PREPAY 专业版-预付费, FLAGSHIP_PREPAY 旗舰版-预付费",
+          "document": "<p>PROVERSION_POSTPAY 专业版-后付费, PROVERSION_PREPAY 专业版-预付费, FLAGSHIP_PREPAY 旗舰版-预付费</p>",
           "example": "PROVERSION_POSTPAY",
           "member": "string",
           "name": "ProtectType",
@@ -25788,7 +25788,7 @@
         },
         {
           "disabled": false,
-          "document": "历史是否开通过自动升级开关",
+          "document": "<p>历史是否开通过自动升级开关</p>",
           "example": "false",
           "member": "bool",
           "name": "IsOpenStatusHistory",
@@ -25798,7 +25798,7 @@
         },
         {
           "disabled": false,
-          "document": "已使用授权数",
+          "document": "<p>已使用授权数</p>",
           "example": "0",
           "member": "uint64",
           "name": "UsedLicenseCnt",
@@ -25808,7 +25808,7 @@
         },
         {
           "disabled": false,
-          "document": "未到期授权数",
+          "document": "<p>未到期授权数</p>",
           "example": "3",
           "member": "uint64",
           "name": "NotExpiredLicenseCnt",
@@ -25818,7 +25818,7 @@
         },
         {
           "disabled": false,
-          "document": "旗舰版总授权数(有效订单)",
+          "document": "<p>旗舰版总授权数(有效订单)</p>",
           "example": "1",
           "member": "uint64",
           "name": "FlagshipVersionLicenseCnt",
@@ -25828,7 +25828,7 @@
         },
         {
           "disabled": false,
-          "document": "专业版总授权数(有效订单)",
+          "document": "<p>专业版总授权数(有效订单)</p>",
           "example": "2",
           "member": "uint64",
           "name": "ProVersionLicenseCnt",
@@ -25838,7 +25838,7 @@
         },
         {
           "disabled": false,
-          "document": "轻量版总授权数(有效订单的授权数)",
+          "document": "<p>轻量版总授权数(有效订单的授权数)</p>",
           "example": "0",
           "member": "uint64",
           "name": "CwpVersionLicenseCnt",
@@ -25848,7 +25848,7 @@
         },
         {
           "disabled": false,
-          "document": "可用惠普版授权数",
+          "document": "<p>可用惠普版授权数</p>",
           "example": "0",
           "member": "uint64",
           "name": "AvailableLHLicenseCnt",
@@ -25858,7 +25858,7 @@
         },
         {
           "disabled": false,
-          "document": "自动加购开关, true 开启, false 关闭",
+          "document": "<p>自动加购开关, true 开启, false 关闭</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoRepurchaseSwitch",
@@ -25868,7 +25868,7 @@
         },
         {
           "disabled": false,
-          "document": "自动加购订单是否自动续费 ,true 开启, false 关闭",
+          "document": "<p>自动加购订单是否自动续费 ,true 开启, false 关闭</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoRepurchaseRenewSwitch",
@@ -25878,7 +25878,7 @@
         },
         {
           "disabled": false,
-          "document": "已销毁订单数",
+          "document": "<p>已销毁订单数</p>",
           "example": "0",
           "member": "uint64",
           "name": "DestroyOrderNum",
@@ -25888,7 +25888,7 @@
         },
         {
           "disabled": false,
-          "document": "自动加购是否自动续费开关,true 开启,false 关闭",
+          "document": "<p>自动加购是否自动续费开关,true 开启,false 关闭</p>",
           "example": "false",
           "member": "bool",
           "name": "RepurchaseRenewSwitch",
@@ -25898,7 +25898,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动新增机器绑定rasp防护,false 关闭 true 开启",
+          "document": "<p>是否自动新增机器绑定rasp防护,false 关闭 true 开启</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoBindRaspSwitch",
@@ -25908,7 +25908,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动新增机器开启rasp防护,false 关闭 true 开启",
+          "document": "<p>是否自动新增机器开启rasp防护,false 关闭 true 开启</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoOpenRaspSwitch",
@@ -25918,12 +25918,42 @@
         },
         {
           "disabled": false,
-          "document": "是否自动缩容开关开启",
+          "document": "<p>是否自动缩容开关开启</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoDowngradeSwitch",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可使用的AI防护版授权数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AvailableAISecurityLicenseCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI 防护版总授权数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AISecurityVersionLicenseCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用防护授权数+旗舰版授权数相加后的可使用授权数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ApplicationAvailableLicenseCnt",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -26059,7 +26089,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则名称,例如: cwp",
+          "document": "<p>规则名称,例如: cwp</p>",
           "example": "cwp",
           "member": "string",
           "name": "RuleName",
@@ -26074,7 +26104,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "旗舰版 配置信息",
+          "document": "<p>旗舰版 配置信息</p>",
           "example": "无",
           "member": "VersionWhiteConfig",
           "name": "FlagShip",
@@ -26084,7 +26114,7 @@
         },
         {
           "disabled": false,
-          "document": "专业版 配置信息",
+          "document": "<p>专业版 配置信息</p>",
           "example": "无",
           "member": "VersionWhiteConfig",
           "name": "Professional",
@@ -26094,7 +26124,7 @@
         },
         {
           "disabled": false,
-          "document": "轻量版 配置信息",
+          "document": "<p>轻量版 配置信息</p>",
           "example": "无",
           "member": "VersionWhiteConfig",
           "name": "PrattWhitney",
@@ -26104,10 +26134,20 @@
         },
         {
           "disabled": false,
-          "document": "重保授权包 配置信息",
+          "document": "<p>重保授权包 配置信息</p>",
           "example": "无",
           "member": "VersionWhiteConfig",
           "name": "RASP",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志分析配置信息</p>",
+          "example": "无",
+          "member": "VersionWhiteConfig",
+          "name": "LOG",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false

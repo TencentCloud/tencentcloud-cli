@@ -792,7 +792,7 @@
       "status": "online"
     },
     "DescribeClusterVirtualNode": {
-      "document": "查看超级节点列表",
+      "document": "查看超级节点列表，仅支持TKE标准集群",
       "input": "DescribeClusterVirtualNodeRequest",
       "name": "查看超级节点列表",
       "output": "DescribeClusterVirtualNodeResponse",

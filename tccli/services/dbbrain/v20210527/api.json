@@ -3804,7 +3804,7 @@
           "example": "5",
           "member": "int64",
           "name": "EventId",
-          "required": false,
+          "required": true,
           "type": "int"
         },
         {
@@ -3946,7 +3946,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间，如“2021-05-27 00:00:00”，支持的最早查询时间为当前时间的前30天。",
+          "document": "<p>开始时间，如“2021-05-27 00:00:00”，支持的最早查询时间为当前时间的前30天。</p>",
           "example": "2025-09-03T10:41:59+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
@@ -3955,7 +3955,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，如“2021-05-27 01:00:00”，支持的最早查询时间为当前时间的前30天。",
+          "document": "<p>结束时间，如“2021-05-27 01:00:00”，支持的最早查询时间为当前时间的前30天。</p>",
           "example": "2025-09-03T10:41:59+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -3964,7 +3964,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级列表，取值按影响程度从高至低分别为：1 - 致命、2 -严重、3 - 告警、4 - 提示、5 -健康。",
+          "document": "<p>风险等级列表，取值按影响程度从高至低分别为：1 - 致命、2 -严重、3 - 告警、4 - 提示、5 -健康。</p>",
           "example": "[1, 2, 3, 4]",
           "member": "int64",
           "name": "Severities",
@@ -3973,7 +3973,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID列表。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。\n查询TDSQL MySQL分布式实例:Instanceld：填写集群ID&Shard实例ID，如：dcdbt-157xxxk&shard-qxxxx",
+          "document": "<p>实例ID列表。可通过 <a href=\"https://cloud.tencent.com/document/api/1130/57798\">DescribeDiagDBInstances</a> 接口获取。<br>查询TDSQL MySQL分布式实例:Instanceld：填写集群ID&amp;Shard实例ID，如：dcdbt-157xxxk&amp;shard-qxxxx</p>",
           "example": "[\"cdb-test\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -3982,7 +3982,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括：\"mysql\" - 云数据库 MySQL，\"redis\" - 云数据库 Redis，\"mariadb\"-数据库mariadb    默认为\"mysql\"。",
+          "document": "<p>服务产品类型，支持值包括：&quot;mysql&quot; - 云数据库 MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mariadb&quot;-数据库mariadb，&quot;cynosdb&quot;-数据库 TDSQL-C, &quot;dcdb&quot;-数据库TDSQL MySQL    默认为&quot;mysql&quot;。</p>",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -3991,7 +3991,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认0。",
+          "document": "<p>偏移量，默认0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4000,7 +4000,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认20，最大值为50。",
+          "document": "<p>返回数量，默认20，最大值为50。</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -4015,7 +4015,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "诊断事件的总数目。",
+          "document": "<p>诊断事件的总数目。</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -4025,7 +4025,7 @@
         },
         {
           "disabled": false,
-          "document": "诊断事件的列表。",
+          "document": "<p>诊断事件的列表。</p>",
           "example": "无",
           "member": "DiagHistoryEventItem",
           "name": "Items",
@@ -4599,8 +4599,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要获取健康得分的实例ID。",
-          "example": "cdb-test123",
+          "document": "<p>需要获取健康得分的实例ID。可通过 <a href=\"https://cloud.tencent.com/document/api/1130/57798\">DescribeDiagDBInstances</a> 接口获取。如果是dcdb(TDSQL MySQL)，请使用 <code>{ClusterId}&amp;{InstanceId}</code> 拼接结果代替入参</p>",
+          "example": "cdb-test1213",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4608,7 +4608,7 @@
         },
         {
           "disabled": false,
-          "document": "获取健康得分的时间，时间格式如：2019-09-10 12:13:14。",
+          "document": "<p>获取健康得分的时间，时间格式如：2019-09-10 12:13:14。</p>",
           "example": "2019-01-01T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "Time",
@@ -4617,7 +4617,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，\"redis\" - 云数据库 Redis，默认为\"mysql\"。",
+          "document": "<p>服务产品类型，支持值包括： &quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，默认为&quot;mysql&quot;。</p>",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -4632,7 +4632,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "健康得分以及异常扣分项。",
+          "document": "<p>健康得分以及异常扣分项。</p>",
           "example": "无",
           "member": "HealthScoreInfo",
           "name": "Data",
@@ -8091,7 +8091,7 @@
         },
         {
           "disabled": false,
-          "document": "诊断类型。",
+          "document": "诊断类型。包含以下值：内存利用率，CPU利用率，磁盘空间利用率，复制，复制IO线程中断。",
           "example": "复制",
           "member": "string",
           "name": "DiagType",
@@ -8101,7 +8101,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间。",
+          "document": "开始时间。格式: \"yyyy-MM-dd'T'HH:mm:ssXXX\"",
           "example": "2019-01-01T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
@@ -8111,7 +8111,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。",
+          "document": "结束时间。格式: \"yyyy-MM-dd'T'HH:mm:ssXXX\"",
           "example": "2019-01-01T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -8300,10 +8300,10 @@
         {
           "disabled": false,
           "document": "异常详情。",
-          "example": "-",
+          "example": "无",
           "member": "IssueTypeInfo",
           "name": "IssueTypes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8313,7 +8313,7 @@
           "example": "3",
           "member": "int64",
           "name": "EventsTotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8323,17 +8323,17 @@
           "example": "100",
           "member": "int64",
           "name": "HealthScore",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "健康等级, 如：\"HEALTH\", \"SUB_HEALTH\", \"RISK\", \"HIGH_RISK\"。",
+          "document": "健康等级, 如：\"HEALTH\", \"SUB_HEALTH\", \"RISK\", \"HIGH_RISK\"。\n其中：\nHEALTH - 健康\nSUB_HEALTH - 亚健康\nRISK - 危险\nHIGH_RISK - 高危",
           "example": "RISK",
           "member": "string",
           "name": "HealthLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

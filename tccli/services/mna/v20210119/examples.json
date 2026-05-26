@@ -88,6 +88,14 @@
         "title": "示例1"
       }
     ],
+    "DescribeAccessRegions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessRegions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RegionList\": [\n            {\n                \"RegionAbbr\": \"\",\n                \"RegionId\": \"ap-beijing\",\n                \"RegionName\": \"北京\"\n            }\n        ],\n        \"RequestId\": \"f82a3da5-2d49-4689-b8e6-37214feae55a\"\n    }\n}",
+        "title": "查询可用地域列表"
+      }
+    ],
     "DownloadActiveDeviceCount": [
       {
         "document": "下载活跃设备数量统计",
@@ -322,6 +330,14 @@
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GroupDeleteDevice\n<公共请求参数>\n\n{\n    \"DeviceList\": [\n        \"mna-test1\",\n        \"mna-test2\"\n    ],\n    \"GroupId\": \"group-id1\"\n}",
         "output": "{\n    \"Response\": {\n        \"DeviceNum\": 5,\n        \"RequestId\": \"a1434e98-16e8-41de-9b9b-27805a9cffbf\"\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "ModifyDeviceAccessRegions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceAccessRegions\n<公共请求参数>\n\n{\n    \"DeviceIds\": [\n        \"mna-w***bzezug\"\n    ],\n    \"AllowedRegions\": [\n        \"ap-beijing\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b5325b8a-349f-44d9-9f1e-2a84ba5e2c84\"\n    }\n}",
+        "title": "修改设备可接入网关地域"
       }
     ],
     "ModifyPackageRenewFlag": [

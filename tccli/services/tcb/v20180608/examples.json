@@ -24,6 +24,14 @@
         "title": "获取环境对应的临时密钥"
       }
     ],
+    "BindStorageSource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindStorageSource\n<公共请求参数>\n\n{\n    \"EnvId\": \"cloudbase-0gx36sm8ddc58be0\",\n    \"StorageConfig\": {\n        \"Enabled\": true,\n        \"BucketName\": \"tencent-cos-bucket-1257619089\",\n        \"Region\": \"ap-shanghai\",\n        \"BasePath\": \"cloudbase-env-v1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd56e5d7-8b26-4ac2-ad17-82f9a3265337\"\n    }\n}",
+        "title": "绑定腾讯云COS作为外部数据源"
+      }
+    ],
     "CheckTcbService": [
       {
         "document": "",
@@ -392,10 +400,16 @@
     ],
     "DescribeEnvs": [
       {
-        "document": "查询环境信息 ",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeEnvs\n&EnvId=yourenvid-2fb346\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"EnvList\": [\n            {\n                \"EnvId\": \"yourenvid-2fb346\",\n                \"PackageType\": \"\",\n                \"EnvType\": \"baas\",\n                \"IsDauPackage\": false,\n                \"Source\": \"miniapp\",\n                \"Alias\": \"默认环境\",\n                \"Status\": \"NORMAL\",\n                \"PayMode\": \"postpaid\",\n                \"Tags\": [],\n                \"PackageName\": \"free\",\n                \"IsAutoDegrade\": true,\n                \"EnvChannel\": \"web\",\n                \"Region\": \"ap-shanghai\",\n                \"IsDefault\": true,\n                \"PackageId\": \"free\",\n                \"CreateTime\": \"2018-08-13 10:52:09\",\n                \"UpdateTime\": \"2018-08-13 10:52:40\",\n                \"LogServices\": [],\n                \"StaticStorages\": [],\n                \"Databases\": [\n                    {\n                        \"InstanceId\": \"default\",\n                        \"Region\": \"ap-shanghai\",\n                        \"Status\": \"RUNNING\",\n                        \"UpdateTime\": \"2023-10-05T14:48:00Z\"\n                    }\n                ],\n                \"CustomLogServices\": [\n                    {\n                        \"ClsTopicId\": \"topicId\",\n                        \"ClsRegion\": \"ap-shanghai\",\n                        \"ClsLogsetId\": \"logset\",\n                        \"CreateTime\": \"2020-09-22 00:00:00\"\n                    }\n                ],\n                \"Storages\": [\n                    {\n                        \"Region\": \"ap-shanghai\",\n                        \"Bucket\": \"yourenvid-2fb346-12532284\",\n                        \"CdnDomain\": \"yourenvid-2fb346.tcb.qcloud.la\",\n                        \"AppId\": \"1234567890\"\n                    }\n                ],\n                \"Functions\": [\n                    {\n                        \"Namespace\": \"yourenvid-2fb346\",\n                        \"Region\": \"ap-shanghai\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"75ec26f6-b624-40f1-a3f4-e724843f483e\"\n    }\n}",
-        "title": "查询环境信息"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvs\n<公共请求参数>\n\n{\n    \"Limit\": 50,\n    \"Offset\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvList\": [\n            {\n                \"Alias\": \"env-alias\",\n                \"CreateTime\": \"2026-04-16 10:32:21\",\n                \"CustomLogServices\": [],\n                \"Databases\": [],\n                \"EnvChannel\": \"wxrun\",\n                \"EnvId\": \"env-alias-3gf2x8bcb714facd\",\n                \"EnvType\": \"run\",\n                \"Functions\": [],\n                \"IsAutoDegrade\": false,\n                \"IsDauPackage\": false,\n                \"IsDefault\": false,\n                \"LogServices\": [],\n                \"Meta\": [],\n                \"PackageId\": \"\",\n                \"PackageName\": \"\",\n                \"PackageType\": \"normal\",\n                \"PayMode\": \"postpaid\",\n                \"PostgreSQL\": [],\n                \"Region\": \"ap-shanghai\",\n                \"Source\": \"miniapp\",\n                \"StaticStorages\": [],\n                \"Status\": \"NORMAL\",\n                \"Storages\": [\n                    {\n                        \"AppId\": \"\",\n                        \"Bucket\": \"656e-env-alias\",\n                        \"CdnDomain\": \"656e-env-alias.tcb.qcloud.la\",\n                        \"ExternalStorage\": {\n                            \"BasePath\": \"\",\n                            \"BucketName\": \"\",\n                            \"Enabled\": false,\n                            \"Region\": \"\"\n                        },\n                        \"Region\": \"ap-shanghai\"\n                    }\n                ],\n                \"Tags\": [],\n                \"UpdateTime\": \"2026-04-16 10:32:35\"\n            }\n        ],\n        \"Total\": 10000,\n        \"RequestId\": \"3c628980-0441-48d7-a9ca-850209a646c2\"\n    }\n}",
+        "title": "分批查询环境信息"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvs\n<公共请求参数>\n\n{\n    \"EnvId\": \"pg-cassieluliu-d5gmvd3id25eb60d6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvList\": [\n            {\n                \"Alias\": \"alias\",\n                \"CreateTime\": \"2026-05-08 16:31:20\",\n                \"CustomLogServices\": [],\n                \"Databases\": [],\n                \"EnvChannel\": \"qc_console\",\n                \"EnvId\": \"alis-d5gmvd3id25eb60d6\",\n                \"EnvType\": \"baas\",\n                \"Functions\": [\n                    {\n                        \"Namespace\": \"palis-d5gmvd3id25eb60d6\",\n                        \"Region\": \"ap-shanghai\"\n                    }\n                ],\n                \"IsAutoDegrade\": false,\n                \"IsDauPackage\": false,\n                \"IsDefault\": false,\n                \"LogServices\": [],\n                \"Meta\": [\n                    {\n                        \"Key\": \"postgresql\",\n                        \"Value\": \"enable\"\n                    }\n                ],\n                \"PackageId\": \"baas_personal\",\n                \"PackageName\": \"个人版\",\n                \"PackageType\": \"baas\",\n                \"PayMode\": \"prepayment\",\n                \"PostgreSQL\": [\n                    {\n                        \"InstanceName\": \"postgres-4**0*5*g\",\n                        \"Name\": \"postgres\",\n                        \"Region\": \"ap-shanghai\",\n                        \"Status\": 1,\n                        \"Version\": \"17.6\"\n                    }\n                ],\n                \"Region\": \"ap-shanghai\",\n                \"Source\": \"qcloud\",\n                \"StaticStorages\": [\n                    {\n                        \"Bucket\": \"14c1-st*tic-**-***********-d5g*******5**6**6****9***930\",\n                        \"DefaultDirName\": \"\",\n                        \"ExternalStorage\": {\n                            \"BasePath\": \"\",\n                            \"BucketName\": \"\",\n                            \"Enabled\": false,\n                            \"Region\": \"\"\n                        },\n                        \"Region\": \"ap-shanghai\",\n                        \"StaticDomain\": \"asdas-1259548930.tcloudbaseapp.com\",\n                        \"Status\": \"online\"\n                    }\n                ],\n                \"Status\": \"NORMAL\",\n                \"Storages\": [\n                    {\n                        \"AppId\": \"\",\n                        \"Bucket\": \"7067-asasff-121412430\",\n                        \"CdnDomain\": \"7067-asafsfafasf-id25eb60d6-112131430.tcb.qcloud.la\",\n                        \"ExternalStorage\": {\n                            \"BasePath\": \"\",\n                            \"BucketName\": \"\",\n                            \"Enabled\": false,\n                            \"Region\": \"\"\n                        },\n                        \"Region\": \"ap-shanghai\"\n                    }\n                ],\n                \"Tags\": [],\n                \"UpdateTime\": \"2026-05-08 16:33:26\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"332159dc-278e-45b9-ba47-1444e3f35002\"\n    }\n}",
+        "title": "查询某个环境的信息"
       }
     ],
     "DescribeGatewayVersions": [
@@ -682,6 +696,14 @@
         "title": "修改安全规则为私有读写"
       }
     ],
+    "ModifyStorageSource": [
+      {
+        "document": "修改云存储外部数据源，更换 COS桶 和 BasePath",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStorageSource\n<公共请求参数>\n\n{\n    \"EnvId\": \"cloudbase-0gx36sm8ddc58be0\",\n    \"StorageConfig\": {\n        \"BucketName\": \"tencent-cos-v2-1257619089\",\n        \"Region\": \"ap-shanghai\",\n        \"BasePath\": \"cloudbase-0gx36sm8ddc58be0\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c13cdb3-a99b-49fb-a42a-f106527ec577\"\n    }\n}",
+        "title": "修改云存储外部数据源"
+      }
+    ],
     "ModifyUser": [
       {
         "document": "",
@@ -764,6 +786,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchClsLog\n<公共请求参数>\n\n{\n    \"Context\": \"\",\n    \"EnvId\": \"aitest-9g96e4tn46773d08\",\n    \"StartTime\": \"2026-01-29 06:47:17\",\n    \"EndTime\": \"2026-01-30 23:52:17\",\n    \"QueryString\": \"* | select request_id, max(status_code) as status  where (request_id='35b9abe7-xxxx-11f1-9ce5-52540059feef' AND retry_num=0)) AND status_code!=202 group by request_id, retry_num\",\n    \"Sort\": \"desc\",\n    \"UseLucene\": true,\n    \"Limit\": 100\n}",
         "output": "{\n    \"Response\": {\n        \"LogResults\": {\n            \"AnalysisRecords\": [\n                \"{\\\"request_id\\\":\\\"35b9abe7-xxxx-11f1-9ce5-52540059feef\\\",\\\"status\\\":200}\",\n                \"{\\\"request_id\\\":\\\"640c1490-xxxx-11f1-823c-525400a9be57\\\",\\\"status\\\":200}\"\n            ],\n            \"Context\": \"\",\n            \"ListOver\": true,\n            \"Results\": []\n        },\n        \"RequestId\": \"27108be7-20ac-xxxx927a-4c5aaa2c4969\"\n    }\n}",
         "title": "聚合分析日志结果"
+      }
+    ],
+    "UnbindStorageSource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindStorageSource\n<公共请求参数>\n\n{\n    \"EnvId\": \"cloudbase-0gx36sm8ddc58be0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1649d710-ae1d-4a4d-b696-45ee6e56f662\"\n    }\n}",
+        "title": "解绑云存储外部存储源"
       }
     ],
     "UpdateAIModel": [

@@ -3551,7 +3551,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导播台ID",
+          "document": "<p>导播台ID</p>",
           "example": "63501",
           "member": "uint64",
           "name": "CasterId",
@@ -3561,7 +3561,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台名称",
+          "document": "<p>导播台名称</p>",
           "example": "example_name",
           "member": "string",
           "name": "CasterName",
@@ -3571,7 +3571,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台上一次启动pgm的时间，值为unix时间戳。",
+          "document": "<p>导播台上一次启动pgm的时间，值为unix时间戳。</p>",
           "example": "0",
           "member": "uint64",
           "name": "StartLiveTime",
@@ -3581,7 +3581,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台的描述",
+          "document": "<p>导播台的描述</p>",
           "example": "example description",
           "member": "string",
           "name": "Description",
@@ -3591,7 +3591,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台创建时间，值为unix时间戳。",
+          "document": "<p>导播台创建时间，值为unix时间戳。</p>",
           "example": "1603158528",
           "member": "uint64",
           "name": "CreateTime",
@@ -3601,7 +3601,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台状态 \n0：停止状态，无预监，无主监\n1：无预监，有主监\n2：有预监，无主监\n3：有预监，有主监",
+          "document": "<p>导播台状态<br>0：停止状态，无预监，无主监<br>1：无预监，有主监<br>2：有预监，无主监<br>3：有预监，有主监</p>",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -3611,7 +3611,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台的过期时间戳。值为-1或unix时间戳。 \n默认值为-1。 当值为-1时，表示该导播台永不过期。 \n当值为正常unix时间戳时，导播台将在该时间过期。 \n导播台过期后，预监与主监画面将自动停止，转推自动停止。 \n点播、直播url将停止转拉，推流url需自行停止推流。",
+          "document": "<p>导播台的过期时间戳。值为-1或unix时间戳。<br>默认值为-1。 当值为-1时，表示该导播台永不过期。<br>当值为正常unix时间戳时，导播台将在该时间过期。<br>导播台过期后，预监与主监画面将自动停止，转推自动停止。<br>点播、直播url将停止转拉，推流url需自行停止推流。</p>",
           "example": "-1",
           "member": "int64",
           "name": "ExpireTime",
@@ -3621,7 +3621,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台延时播放时间，单位为秒。 ",
+          "document": "<p>导播台延时播放时间，单位为秒。</p>",
           "example": "0",
           "member": "uint64",
           "name": "DelayTime",
@@ -3631,7 +3631,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的宽度，单位为像素。",
+          "document": "<p>导播台主监输出的宽度，单位为像素。</p>",
           "example": "1280",
           "member": "uint64",
           "name": "PgmWidth",
@@ -3641,7 +3641,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的高度，单位为像素。",
+          "document": "<p>导播台主监输出的高度，单位为像素。</p>",
           "example": "720",
           "member": "uint64",
           "name": "PgmHeight",
@@ -3651,7 +3651,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的帧率。",
+          "document": "<p>导播台主监输出的帧率。</p>",
           "example": "25",
           "member": "uint64",
           "name": "PgmFps",
@@ -3661,7 +3661,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的码率，单位为kbps",
+          "document": "<p>导播台主监输出的码率，单位为kbps</p>",
           "example": "2000",
           "member": "uint64",
           "name": "PgmBitRate",
@@ -3671,7 +3671,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的音频码率，单位为kbps。",
+          "document": "<p>导播台主监输出的音频码率，单位为kbps。</p>",
           "example": "256",
           "member": "uint64",
           "name": "PgmAudioBitRate",
@@ -3681,7 +3681,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台的计费类型。 \n0 通用型 1 播单型。\n注： 本参数暂无作用。",
+          "document": "<p>导播台的计费类型。<br>0 通用型 1 播单型。<br>注： 本参数暂无作用。</p>",
           "example": "0",
           "member": "int64",
           "name": "FeeType",
@@ -3691,7 +3691,7 @@
         },
         {
           "disabled": false,
-          "document": "录制模板id。",
+          "document": "<p>录制模板id。</p>",
           "example": "1",
           "member": "uint64",
           "name": "RecordTemplateId",
@@ -3701,7 +3701,7 @@
         },
         {
           "disabled": false,
-          "document": "录制状态。 \n0：未录制 \n1：录制中",
+          "document": "<p>录制状态。<br>0：未录制<br>1：录制中</p>",
           "example": "0",
           "member": "uint64",
           "name": "RecordStatus",
@@ -3711,10 +3711,20 @@
         },
         {
           "disabled": false,
-          "document": "录制接口返回的taskid",
+          "document": "<p>录制接口返回的taskid</p>",
           "example": "UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLU1JAWW9EUb",
           "member": "string",
           "name": "RecordTaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>导播台主监输出的编码方式</p><p>枚举值：</p><ul><li>h264： h264编码</li><li>h265： h265编码</li></ul><p>默认值：h264</p>",
+          "example": "h264",
+          "member": "string",
+          "name": "PgmVcodec",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5719,7 +5729,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导播台名称",
+          "document": "<p>导播台名称</p>",
           "example": "example",
           "member": "string",
           "name": "CasterName",
@@ -5728,7 +5738,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台的描述\n最大允许长度256",
+          "document": "<p>导播台的描述<br>最大允许长度256</p>",
           "example": "example_caster",
           "member": "string",
           "name": "Description",
@@ -5737,7 +5747,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台的过期时间戳。值为-1或unix时间戳。\n默认值为-1。\n当值为-1时，表示该导播台永不过期。\n当值为正常unix时间戳时，导播台将在该时间过期。\n导播台过期后，预监与主监画面将自动停止，转推自动停止。\n点播、直播url将停止转拉，推流url需自行停止推流。",
+          "document": "<p>导播台的过期时间戳。值为-1或unix时间戳。<br>默认值为-1。<br>当值为-1时，表示该导播台永不过期。<br>当值为正常unix时间戳时，导播台将在该时间过期。<br>导播台过期后，预监与主监画面将自动停止，转推自动停止。<br>点播、直播url将停止转拉，推流url需自行停止推流。</p>",
           "example": "-1",
           "member": "int64",
           "name": "ExpireTime",
@@ -5746,7 +5756,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台延时播放时间，单位为秒。\n默认为0，最大支持300秒",
+          "document": "<p>导播台延时播放时间，单位为秒。<br>默认为0，最大支持300秒</p>",
           "example": "0",
           "member": "uint64",
           "name": "DelayTime",
@@ -5755,8 +5765,8 @@
         },
         {
           "disabled": false,
-          "document": "导播台转场类型。\n默认为空。\n允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。",
-          "example": " heart",
+          "document": "<p>导播台转场类型。<br>默认为空。<br>允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>",
+          "example": "heart",
           "member": "string",
           "name": "TransitionType",
           "required": false,
@@ -5764,7 +5774,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的宽度，单位为像素。\n默认为1280，最大允许4096。",
+          "document": "<p>导播台主监输出的宽度，单位为像素。<br>默认为1280，最大允许4096。</p>",
           "example": "1280",
           "member": "uint64",
           "name": "PgmWidth",
@@ -5773,7 +5783,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的高度，单位为像素。\n默认为720，最大允许2160。",
+          "document": "<p>导播台主监输出的高度，单位为像素。<br>默认为720，最大允许2160。</p>",
           "example": "720",
           "member": "uint64",
           "name": "PgmHeight",
@@ -5782,7 +5792,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的帧率。\n默认为0，表示随源输出。\n最大支持60。",
+          "document": "<p>导播台主监输出的帧率。<br>默认为0，表示随源输出。<br>最大支持60。</p>",
           "example": "25",
           "member": "uint64",
           "name": "PgmFps",
@@ -5791,7 +5801,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的码率，单位为kbps。\n默认为0，表示随源的码率输出。\n最大允许10000kbps。",
+          "document": "<p>导播台主监输出的码率，单位为kbps。<br>默认为0，表示随源的码率输出。<br>最大允许10000kbps。</p>",
           "example": "1500",
           "member": "uint64",
           "name": "PgmBitRate",
@@ -5800,7 +5810,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台的计费类型。\n0 通用型 \n1 播单型。\n注： 本参数暂无作用。",
+          "document": "<p>导播台的计费类型。<br>0 通用型<br>1 播单型。<br>注： 本参数暂无作用。</p>",
           "example": "0",
           "member": "int64",
           "name": "FeeType",
@@ -5809,12 +5819,21 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的音频码率，单位为kbps。\n可选项：[0, 128, 192, 256]\n默认值为0，表示随源的音频码率输出。",
+          "document": "<p>导播台主监输出的音频码率，单位为kbps。<br>可选项：[0, 128, 192, 256]<br>默认值为0，表示随源的音频码率输出。</p>",
           "example": "128",
           "member": "uint64",
           "name": "PgmAudioBitRate",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>导播台主监输出的编码方式</p><p>枚举值：</p><ul><li>h264： h264编码</li><li>h265： h265编码</li></ul><p>默认值：h264</p>",
+          "example": "h264",
+          "member": "string",
+          "name": "PgmVcodec",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5824,7 +5843,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导播台ID",
+          "document": "<p>导播台ID</p>",
           "example": "63501",
           "member": "uint64",
           "name": "CasterId",
@@ -18787,6 +18806,15 @@
           "name": "PgmAudioBitRate",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>导播台主监输出的编码方式</p><p>枚举值：</p><ul><li>h264： h264编码</li><li>h265： h265编码</li></ul><p>默认值：h264</p>",
+          "example": "h264",
+          "member": "string",
+          "name": "PgmVcodec",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

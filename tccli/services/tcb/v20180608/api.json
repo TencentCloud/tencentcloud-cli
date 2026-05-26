@@ -21,6 +21,13 @@
       "output": "AssumeRoleForAllocatedEnvResponse",
       "status": "online"
     },
+    "BindStorageSource": {
+      "document": "为云存储绑定外部云存储源。\n将一个用户自有的 COS桶 作为外部存储源绑定到指定云开发环境的云存储。绑定后，该环境的云存储文件操作将指向此桶，通过 BasePath 路径前缀实现与其他环境的数据隔离。\n每个环境仅允许绑定 1 个外部云存储源。",
+      "input": "BindStorageSourceRequest",
+      "name": "云存储绑定外部存储源",
+      "output": "BindStorageSourceResponse",
+      "status": "online"
+    },
     "CheckTcbService": {
       "document": "检查是否开通Tcb服务",
       "input": "CheckTcbServiceRequest",
@@ -497,6 +504,13 @@
       "output": "ModifySafeRuleResponse",
       "status": "online"
     },
+    "ModifyStorageSource": {
+      "document": "修改指定云开发环境已绑定的外部云存储源配置。\n修改之后，大约3~5分钟生效。\n\n注意⚠️\n本接口仅更新存储源绑定关系，不会迁移您的数据。",
+      "input": "ModifyStorageSourceRequest",
+      "name": "更新云存储外部数据源",
+      "output": "ModifyStorageSourceResponse",
+      "status": "online"
+    },
     "ModifyUser": {
       "document": "修改tcb用户",
       "input": "ModifyUserRequest",
@@ -537,6 +551,13 @@
       "input": "SearchClsLogRequest",
       "name": "搜索CLS日志",
       "output": "SearchClsLogResponse",
+      "status": "online"
+    },
+    "UnbindStorageSource": {
+      "document": "从指定云开发环境中解绑已绑定的外部云存储源。解绑后，该环境将不再关联外部 存储源，云存储功能恢复为未绑定状态。\n解绑操作仅移除 CloudBase 侧的绑定关系，不会删除桶本身及桶内数据，桶仍由用户自行管理。\n\n注意⚠️\n解绑之后，会导致云存储不可用，请谨慎操作。",
+      "input": "UnbindStorageSourceRequest",
+      "name": "解绑云存储外部云存储源",
+      "output": "UnbindStorageSourceResponse",
       "status": "online"
     },
     "UpdateAIModel": {
@@ -1296,6 +1317,42 @@
         }
       ],
       "usage": "both"
+    },
+    "BindStorageSourceRequest": {
+      "document": "BindStorageSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "cloudbase-0gx36sm8ddc58be0",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储源",
+          "example": "无",
+          "member": "ExternalStorage",
+          "name": "StorageConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "BindStorageSourceResponse": {
+      "document": "BindStorageSource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CheckTcbServiceRequest": {
       "document": "CheckTcbService请求参数结构体",
@@ -4594,7 +4651,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境ID，如果传了这个参数则只返回该环境的相关信息",
+          "document": "<p>环境ID，如果传了这个参数则只返回该环境的相关信息</p>",
           "example": "yourenvid-2fb346",
           "member": "string",
           "name": "EnvId",
@@ -4603,7 +4660,7 @@
         },
         {
           "disabled": false,
-          "document": "指定Channels字段为可见渠道列表或不可见渠道列表\n如只想获取渠道A的环境 就填写IsVisible= true,Channels = [\"A\"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [\"A\"]",
+          "document": "<p>指定Channels字段为可见渠道列表或不可见渠道列表<br>如只想获取渠道A的环境 就填写IsVisible= true,Channels = [&quot;A&quot;], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [&quot;A&quot;]</p>",
           "example": "true",
           "member": "bool",
           "name": "IsVisible",
@@ -4612,8 +4669,8 @@
         },
         {
           "disabled": false,
-          "document": "渠道列表，代表可见或不可见渠道由IsVisible参数指定",
-          "example": "[ide,qc_console]",
+          "document": "<p>渠道列表，代表可见或不可见渠道由IsVisible参数指定</p>",
+          "example": "[\"ide\",\"qc_console\"]",
           "member": "string",
           "name": "Channels",
           "required": false,
@@ -4621,7 +4678,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数，单页限制个数",
+          "document": "<p>分页参数，单页限制个数</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -4630,7 +4687,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数，偏移量",
+          "document": "<p>分页参数，偏移量</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4645,7 +4702,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境信息列表",
+          "document": "<p>环境信息列表</p>",
           "example": "无",
           "member": "EnvInfo",
           "name": "EnvList",
@@ -4655,7 +4712,7 @@
         },
         {
           "disabled": false,
-          "document": "环境个数",
+          "document": "<p>环境个数</p>",
           "example": "1",
           "member": "int64",
           "name": "Total",
@@ -6378,6 +6435,26 @@
           "name": "Recycle",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境meta信息列表</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Meta",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>pg信息</p>",
+          "example": "无",
+          "member": "PostgreSQLInfo",
+          "name": "PostgreSQL",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -8875,6 +8952,42 @@
       ],
       "type": "object"
     },
+    "ModifyStorageSourceRequest": {
+      "document": "ModifyStorageSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "cloudbase-0gx36sm8ddc58be0",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储源",
+          "example": "无",
+          "member": "ExternalStorage",
+          "name": "StorageConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStorageSourceResponse": {
+      "document": "ModifyStorageSource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyUserRequest": {
       "document": "ModifyUser请求参数结构体",
       "members": [
@@ -9425,6 +9538,67 @@
         }
       ],
       "usage": "in"
+    },
+    "PostgreSQLInfo": {
+      "document": "PostgreSQL资源信息结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据库名称</p>",
+          "example": "postgres",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "postgres-176pdmhs",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库引擎版本</p>",
+          "example": "17.6",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Provider": {
       "document": "身份源配置信息。描述云开发环境下用户登录身份源的完整配置，定义了用户通过何种方式进入系统并完成身份认证。支持多种类型：包括标准协议身份源（OAuth 2.0、OIDC、SAML 2.0）、内置身份源（邮箱登录、自定义登录）以及通过插件机制扩展的身份源（如 CAS）。每个身份源包含认证配置、启用状态、用户自动注册策略、信息透传模式等核心属性，是登录认证流程的核心数据结构。",
@@ -10614,6 +10788,33 @@
         }
       ],
       "usage": "both"
+    },
+    "UnbindStorageSourceRequest": {
+      "document": "UnbindStorageSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "cloudbase-0gx36sm8ddc58be0",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindStorageSourceResponse": {
+      "document": "UnbindStorageSource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateAIModelRequest": {
       "document": "UpdateAIModel请求参数结构体",

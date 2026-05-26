@@ -41,7 +41,7 @@ Output:
 2. 使用默认的签名类型
 3. 使用默认的签署方式
 4. 默认跳转到合同列表页
-5.指定视频问答模式的认证方式
+5.指定视频问答模式的认证方式，设置多轮对话
 
 Input: 
 
@@ -58,7 +58,9 @@ tccli ess CreateBatchQuickSignUrl --cli-unfold-argument  \
     --ApproverSignTypes 1 \
     --Intention.IntentionType 1 \
     --Intention.IntentionQuestions.0.Question 请问，您是否同意签署本协议？可语音回复“同意”或“不同意”。 \
-    --Intention.IntentionQuestions.0.Answers 同意 我同意
+    --Intention.IntentionQuestions.0.Answers 同意 我同意 \
+    --Intention.IntentionQuestions.1.Question 请问，您是否清楚本协议内容？可语音回复“清楚”或“不清楚”。 \
+    --Intention.IntentionQuestions.1.Answers 清楚 我清楚
 ```
 
 Output: 

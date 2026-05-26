@@ -29,7 +29,40 @@ Output:
 }
 ```
 
-**Example 2: 获取特征向量v2**
+**Example 2: 获取特征向量v1**
+
+
+
+Input: 
+
+```
+tccli lkeap GetEmbedding --cli-unfold-argument  \
+    --Model lke-text-embedding-v1 \
+    --Inputs 1 \
+    --TextType query \
+    --Instruction query:
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": [
+            {
+                "Embedding": [
+                    0.009212733
+                ]
+            }
+        ],
+        "Usage": {
+            "TotalTokens": 3
+        },
+        "RequestId": "b69e784e-8807-440e-a8df-f970eca48f3c"
+    }
+}
+```
+
+**Example 3: 获取特征向量v2**
 
 
 
@@ -57,39 +90,6 @@ Output:
             "TotalTokens": 3
         },
         "RequestId": "d4b6b8fb-597c-43f3-860d-715916c787b8"
-    }
-}
-```
-
-**Example 3: 获取特征向量-自定义Instruction**
-
-
-
-Input: 
-
-```
-tccli lkeap GetEmbedding --cli-unfold-argument  \
-    --Model youtu-embedding-llm-v1 \
-    --Inputs 1 \
-    --TextType query \
-    --Instruction query:
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Data": [
-            {
-                "Embedding": [
-                    0.009212733
-                ]
-            }
-        ],
-        "Usage": {
-            "TotalTokens": 3
-        },
-        "RequestId": "b69e784e-8807-440e-a8df-f970eca48f3c"
     }
 }
 ```

@@ -196,6 +196,55 @@
       "output": "DescribeCustomRulesResponse",
       "status": "online"
     },
+    "DescribeFlavorKingCycleBrandImportantCityScanAnalysis": {
+      "document": "统计用户次数",
+      "input": "DescribeFlavorKingCycleBrandImportantCityScanAnalysisRequest",
+      "name": "获取周、半月、月品牌城市扫码数据",
+      "output": "DescribeFlavorKingCycleBrandImportantCityScanAnalysisResponse",
+      "status": "online"
+    },
+    "DescribeFlavorKingCycleBrandImportantProvinceScanAnalysis": {
+      "document": "统计用户次数",
+      "input": "DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisRequest",
+      "name": "获取周、半月、月扫码数据",
+      "output": "DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisResponse",
+      "status": "online"
+    },
+    "DescribeFlavorKingCycleBrandImportantProvinceUserAnalysis": {
+      "document": "统计用户次数",
+      "input": "DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisRequest",
+      "name": "获取周、半月、月品牌省用户数据",
+      "output": "DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisResponse",
+      "status": "online"
+    },
+    "DescribeFlavorKingCycleBrandProvinceCityScanAnalysis": {
+      "document": "统计用户次数",
+      "input": "DescribeFlavorKingCycleBrandProvinceCityScanAnalysisRequest",
+      "name": "获取口味王日热度明细",
+      "output": "DescribeFlavorKingCycleBrandProvinceCityScanAnalysisResponse",
+      "status": "online"
+    },
+    "DescribeFlavorKingCycleBrandProvinceScanAnalysis": {
+      "document": "统计用户次数",
+      "input": "DescribeFlavorKingCycleBrandProvinceScanAnalysisRequest",
+      "name": "获取周、半月、月品牌省扫码数据",
+      "output": "DescribeFlavorKingCycleBrandProvinceScanAnalysisResponse",
+      "status": "online"
+    },
+    "DescribeFlavorKingCycleBrandScanAnalysis": {
+      "document": "统计扫码次数",
+      "input": "DescribeFlavorKingCycleBrandScanAnalysisRequest",
+      "name": "获取周、半月、月品牌扫描数据",
+      "output": "DescribeFlavorKingCycleBrandScanAnalysisResponse",
+      "status": "online"
+    },
+    "DescribeFlavorKingCycleBrandScanMetrics": {
+      "document": "统计用户次数",
+      "input": "DescribeFlavorKingCycleBrandScanMetricsRequest",
+      "name": "获取口味王日热度趋势",
+      "output": "DescribeFlavorKingCycleBrandScanMetricsResponse",
+      "status": "online"
+    },
     "DescribeJobFileUrl": {
       "document": "获取异步任务的输出地址",
       "input": "DescribeJobFileUrlRequest",
@@ -299,6 +348,13 @@
       "input": "DescribeTraceDataListRequest",
       "name": "查询溯源信息",
       "output": "DescribeTraceDataListResponse",
+      "status": "online"
+    },
+    "DownloadGEO": {
+      "document": "地理位置信息下载",
+      "input": "DownloadGEORequest",
+      "name": "地图位置文件下载",
+      "output": "DownloadGEOResponse",
       "status": "online"
     },
     "EffectFeedback": {
@@ -3473,6 +3529,391 @@
       ],
       "type": "object"
     },
+    "DescribeFlavorKingCycleBrandImportantCityScanAnalysisRequest": {
+      "document": "DescribeFlavorKingCycleBrandImportantCityScanAnalysis请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>企业ID</p>",
+          "example": "10046",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日期类型</p>",
+          "example": "week",
+          "member": "string",
+          "name": "TypeDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>溯源ID</p>",
+          "example": "2026-04-26",
+          "member": "string",
+          "name": "QueryDate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlavorKingCycleBrandImportantCityScanAnalysisResponse": {
+      "document": "DescribeFlavorKingCycleBrandImportantCityScanAnalysis返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据</p>",
+          "example": "无",
+          "member": "FlavorKingCycleBrandImportantCityScanAnalysisCityItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisRequest": {
+      "document": "DescribeFlavorKingCycleBrandImportantProvinceScanAnalysis请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>企业ID</p>",
+          "example": "10046",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日期类型</p>",
+          "example": "month",
+          "member": "string",
+          "name": "TypeDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>溯源ID</p>",
+          "example": "2025-04-30",
+          "member": "string",
+          "name": "QueryDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>省份</p>",
+          "example": "[\"湖南\"]",
+          "member": "string",
+          "name": "ProvinceList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisResponse": {
+      "document": "DescribeFlavorKingCycleBrandImportantProvinceScanAnalysis返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据</p>",
+          "example": "无",
+          "member": "FlavorKingCycleBrandImportantProvinceScanAnalysisProvinceItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisRequest": {
+      "document": "DescribeFlavorKingCycleBrandImportantProvinceUserAnalysis请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>企业ID</p>",
+          "example": "10046",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日期类型</p>",
+          "example": "month",
+          "member": "string",
+          "name": "TypeDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>溯源ID</p>",
+          "example": "2026-04-30",
+          "member": "string",
+          "name": "QueryDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>省份</p>",
+          "example": "[\"广东\"]",
+          "member": "string",
+          "name": "ProvinceList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisResponse": {
+      "document": "DescribeFlavorKingCycleBrandImportantProvinceUserAnalysis返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据</p>",
+          "example": "无",
+          "member": "FlavorKingCycleBrandImportantProvinceUserAnalysisProvinceItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlavorKingCycleBrandProvinceCityScanAnalysisRequest": {
+      "document": "DescribeFlavorKingCycleBrandProvinceCityScanAnalysis请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>CorpId</p>",
+          "example": "10046",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>溯源ID</p>",
+          "example": "2026-05-01",
+          "member": "string",
+          "name": "QueryDate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlavorKingCycleBrandProvinceCityScanAnalysisResponse": {
+      "document": "DescribeFlavorKingCycleBrandProvinceCityScanAnalysis返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据</p>",
+          "example": "无",
+          "member": "FlavorKingCycleBrandProvinceCityScanAnalysisProvinceItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlavorKingCycleBrandProvinceScanAnalysisRequest": {
+      "document": "DescribeFlavorKingCycleBrandProvinceScanAnalysis请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>企业ID</p>",
+          "example": "10046",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日期类型</p>",
+          "example": "month",
+          "member": "string",
+          "name": "TypeDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>溯源ID</p>",
+          "example": "2026-04-30",
+          "member": "string",
+          "name": "QueryDate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlavorKingCycleBrandProvinceScanAnalysisResponse": {
+      "document": "DescribeFlavorKingCycleBrandProvinceScanAnalysis返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据</p>",
+          "example": "无",
+          "member": "FlavorKingCycleBrandProvinceScanAnalysisResponse",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlavorKingCycleBrandScanAnalysisRequest": {
+      "document": "DescribeFlavorKingCycleBrandScanAnalysis请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>企业ID</p>",
+          "example": "10046",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日期类型</p>",
+          "example": "month",
+          "member": "string",
+          "name": "TypeDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>溯源ID</p>",
+          "example": "2026-04-30",
+          "member": "string",
+          "name": "QueryDate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlavorKingCycleBrandScanAnalysisResponse": {
+      "document": "DescribeFlavorKingCycleBrandScanAnalysis返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>响应</p>",
+          "example": "无",
+          "member": "FlavorKingCycleBrandScanAnalysisResponse",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlavorKingCycleBrandScanMetricsRequest": {
+      "document": "DescribeFlavorKingCycleBrandScanMetrics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>CorpId</p>",
+          "example": "10046",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>溯源ID</p>",
+          "example": "2026-05-01",
+          "member": "string",
+          "name": "QueryDate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlavorKingCycleBrandScanMetricsResponse": {
+      "document": "DescribeFlavorKingCycleBrandScanMetrics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据</p>",
+          "example": "无",
+          "member": "FlavorKingCycleBrandScanMetricsItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeJobFileUrlRequest": {
       "document": "DescribeJobFileUrl请求参数结构体",
       "members": [
@@ -4552,6 +4993,23 @@
       ],
       "type": "object"
     },
+    "DownloadGEORequest": {
+      "document": "DownloadGEO请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DownloadGEOResponse": {
+      "document": "DownloadGEO返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EffectFeedbackRequest": {
       "document": "EffectFeedback请求参数结构体",
       "members": [
@@ -4602,6 +5060,970 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FlavorKingCycleBrandImportantCityScanAnalysisCityItem": {
+      "document": "品牌扫码数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>口味王分布</p>",
+          "example": "0.0061",
+          "member": "float",
+          "name": "Ratio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>口味王市场份额</p>",
+          "example": "0.8623",
+          "member": "float",
+          "name": "MarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>其他品牌市场份额</p>",
+          "example": "0.4416",
+          "member": "float",
+          "name": "OtherMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上周期口味王分布</p>",
+          "example": "0.0156",
+          "member": "float",
+          "name": "LastCycleRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上周期口味王牌市场份额</p>",
+          "example": "0.9035",
+          "member": "float",
+          "name": "LastCycleMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上周期其他品牌市场份额</p>",
+          "example": "0.1031",
+          "member": "float",
+          "name": "LastCycleOtherMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>口味王增长率</p>",
+          "example": "0.5074",
+          "member": "float",
+          "name": "GrowRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>其他品牌增长率</p>",
+          "example": "-0.0088",
+          "member": "float",
+          "name": "OtherGrowRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下属城市明细</p>",
+          "example": "无",
+          "member": "FlavorKingCycleBrandImportantCityScanAnalysisRegionItem",
+          "name": "Regions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>城市</p>",
+          "example": "沧州",
+          "member": "string",
+          "name": "City",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FlavorKingCycleBrandImportantCityScanAnalysisRegionItem": {
+      "document": "品牌扫码数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>口味王分布</p>",
+          "example": "0.0421",
+          "member": "float",
+          "name": "Ratio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>口味王市场份额</p>",
+          "example": "0.4429",
+          "member": "float",
+          "name": "MarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>其他品牌市场份额</p>",
+          "example": "0.0302",
+          "member": "float",
+          "name": "OtherMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上周期口味王分布</p>",
+          "example": "0.131",
+          "member": "float",
+          "name": "LastCycleRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上周期口味王市场份额</p>",
+          "example": "0.6392",
+          "member": "float",
+          "name": "LastCycleMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上周期其他品牌市场份额</p>",
+          "example": "0.1322",
+          "member": "float",
+          "name": "LastCycleOtherMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>口味王增长率</p>",
+          "example": "0.1401",
+          "member": "float",
+          "name": "GrowRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>其他品牌增长率</p>",
+          "example": "-0.1223",
+          "member": "float",
+          "name": "OtherGrowRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>区</p>",
+          "example": "孙吴县",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FlavorKingCycleBrandImportantProvinceScanAnalysisCityItem": {
+      "document": "品牌扫码数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>口味王分布</p>",
+          "example": "0.0057",
+          "member": "float",
+          "name": "Ratio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>口味王市场份额</p>",
+          "example": "0.7649",
+          "member": "float",
+          "name": "MarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>其他品牌市场份额</p>",
+          "example": "0.0788",
+          "member": "float",
+          "name": "OtherMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上周期口味王分布</p>",
+          "example": "0.0735",
+          "member": "float",
+          "name": "LastCycleRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上周期口味王市场份额</p>",
+          "example": "0.9167",
+          "member": "float",
+          "name": "LastCycleMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上周期其他品牌市场份额</p>",
+          "example": "0.5838",
+          "member": "float",
+          "name": "LastCycleOtherMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>口味王增长率</p>",
+          "example": "-0.0533",
+          "member": "float",
+          "name": "GrowRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>其他品牌增长率</p>",
+          "example": "1.1635",
+          "member": "float",
+          "name": "OtherGrowRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>城市</p>",
+          "example": "张家口",
+          "member": "string",
+          "name": "City",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FlavorKingCycleBrandImportantProvinceScanAnalysisProvinceItem": {
+      "document": "品牌扫码数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>口味王分布</p>",
+          "example": "0.0027",
+          "member": "float",
+          "name": "Ratio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>口味王市场份额</p>",
+          "example": "0.6501",
+          "member": "float",
+          "name": "MarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>其他品牌市场份额</p>",
+          "example": "0.3499",
+          "member": "float",
+          "name": "OtherMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上周期口味王分布</p>",
+          "example": "0.0023",
+          "member": "float",
+          "name": "LastCycleRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上周期口味王市场份额</p>",
+          "example": "0.6356",
+          "member": "float",
+          "name": "LastCycleMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上周期其他品牌市场份额</p>",
+          "example": "0.3644",
+          "member": "float",
+          "name": "LastCycleOtherMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>口味王增长率</p>",
+          "example": "0.062",
+          "member": "float",
+          "name": "GrowRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>其他品牌增长率</p>",
+          "example": "-0.0029",
+          "member": "float",
+          "name": "OtherGrowRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下属城市明细</p>",
+          "example": "无",
+          "member": "FlavorKingCycleBrandImportantProvinceScanAnalysisCityItem",
+          "name": "Cities",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>省份</p>",
+          "example": "新疆",
+          "member": "string",
+          "name": "Province",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FlavorKingCycleBrandImportantProvinceUserAnalysisCityItem": {
+      "document": "品牌扫码数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>口味王市场份额</p>",
+          "example": "0",
+          "member": "float",
+          "name": "MarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>其他品牌市场份额</p>",
+          "example": "0",
+          "member": "float",
+          "name": "OtherMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>口味王增长率</p>",
+          "example": "0",
+          "member": "float",
+          "name": "GrowRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>其他品牌增长率</p>",
+          "example": "0",
+          "member": "float",
+          "name": "OtherGrowRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>城市</p>",
+          "example": "东莞",
+          "member": "string",
+          "name": "City",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FlavorKingCycleBrandImportantProvinceUserAnalysisProvinceItem": {
+      "document": "品牌扫码数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>口味王市场份额</p>",
+          "example": "0",
+          "member": "float",
+          "name": "MarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>其他品牌市场份额</p>",
+          "example": "0",
+          "member": "float",
+          "name": "OtherMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>口味王增长率</p>",
+          "example": "0",
+          "member": "float",
+          "name": "GrowRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>其他品牌增长率</p>",
+          "example": "0",
+          "member": "float",
+          "name": "OtherGrowRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下属城市明细</p>",
+          "example": "无",
+          "member": "FlavorKingCycleBrandImportantProvinceUserAnalysisCityItem",
+          "name": "Cities",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>省份</p>",
+          "example": "广东",
+          "member": "string",
+          "name": "Province",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FlavorKingCycleBrandProvinceCityScanAnalysisCityItem": {
+      "document": "品牌扫码数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>口味王分布</p>",
+          "example": "[0.6667]",
+          "member": "float",
+          "name": "Ratio",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区域数据</p>",
+          "example": "无",
+          "member": "FlavorKingCycleBrandProvinceCityScanAnalysisRegionItem",
+          "name": "Regions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>城市</p>",
+          "example": "泸州",
+          "member": "string",
+          "name": "City",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FlavorKingCycleBrandProvinceCityScanAnalysisProvinceItem": {
+      "document": "品牌扫码数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>口味王分布</p>",
+          "example": "[0.7358]",
+          "member": "float",
+          "name": "Ratio",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下属城市明细</p>",
+          "example": "无",
+          "member": "FlavorKingCycleBrandProvinceCityScanAnalysisCityItem",
+          "name": "Cities",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>省份</p>",
+          "example": "山东",
+          "member": "string",
+          "name": "Province",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FlavorKingCycleBrandProvinceCityScanAnalysisRegionItem": {
+      "document": "品牌扫码数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>口味王分布</p>",
+          "example": "[0.9205]",
+          "member": "float",
+          "name": "Ratio",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>区域</p>",
+          "example": "西区",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FlavorKingCycleBrandProvinceScanAnalysisDataItem": {
+      "document": "品牌扫码数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>口味王市场份额</p>",
+          "example": "0.7853",
+          "member": "float",
+          "name": "MarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>其他品牌市场份额</p>",
+          "example": "0.3781",
+          "member": "float",
+          "name": "OtherMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上周期口味王市场份额</p>",
+          "example": "0.8112",
+          "member": "float",
+          "name": "LastCycleMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上周期其他品牌市场份额</p>",
+          "example": "0.3582",
+          "member": "float",
+          "name": "OtherLastCycleMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>口味王分布</p>",
+          "example": "0.0186",
+          "member": "float",
+          "name": "Ratio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上周期口味王分布</p>",
+          "example": "0.0017",
+          "member": "float",
+          "name": "LastCycleRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>省份</p>",
+          "example": "青海",
+          "member": "string",
+          "name": "Province",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>口味王环比</p>",
+          "example": "-0.0834",
+          "member": "float",
+          "name": "GrowRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>其他平台环比</p>",
+          "example": "0.0765",
+          "member": "float",
+          "name": "OtherGrowRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FlavorKingCycleBrandProvinceScanAnalysisResponse": {
+      "document": "品牌扫码数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>口味王全国份额</p>",
+          "example": "0.7009",
+          "member": "float",
+          "name": "MarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上周期口味王市场份额</p>",
+          "example": "0.7044",
+          "member": "float",
+          "name": "LastCycleMarketShare",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>口味王全国周环比</p>",
+          "example": "无",
+          "member": "FlavorKingCycleBrandProvinceScanAnalysisDataItem",
+          "name": "Provinces",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>口味王环比</p>",
+          "example": "-0.1399",
+          "member": "float",
+          "name": "GrowRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>其他品牌环比</p>",
+          "example": "-0.1253",
+          "member": "float",
+          "name": "OtherGrowRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FlavorKingCycleBrandScanAnalysisDataItem": {
+      "document": "品牌扫码数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>周期时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20260301-20260331",
+          "member": "string",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>品牌</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "伍子醉",
+          "member": "string",
+          "name": "BrandName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>品牌占比</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.2956",
+          "member": "float",
+          "name": "Ratio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FlavorKingCycleBrandScanAnalysisResponse": {
+      "document": "品牌扫码数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "107253136",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>占比</p>",
+          "example": "0.7009",
+          "member": "float",
+          "name": "CycleRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环比</p>",
+          "example": "-0.1399",
+          "member": "float",
+          "name": "CycleOverCycle",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>占比详情</p>",
+          "example": "无",
+          "member": "FlavorKingCycleBrandScanAnalysisDataItem",
+          "name": "CycleRatioItems",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FlavorKingCycleBrandScanMetricsItem": {
+      "document": "品牌扫码数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日期范围</p>",
+          "example": "20260425",
+          "member": "string",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>口味王分布</p>",
+          "example": "0.74",
+          "member": "float",
+          "name": "Ratio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6495,6 +7917,33 @@
           "name": "Code",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Uid扩展字段</p>",
+          "example": "2",
+          "member": "string",
+          "name": "ExtUid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>维度</p><p>取值范围：[-90, 90]</p>",
+          "example": "12.1",
+          "member": "float",
+          "name": "Latitude",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "<p>精度</p><p>取值范围：[-180, 180]</p>",
+          "example": "12.2",
+          "member": "float",
+          "name": "Longitude",
+          "required": false,
+          "type": "float"
         }
       ],
       "usage": "in"

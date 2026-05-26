@@ -598,7 +598,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdbro-j99ornco\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BackupConfig\": {\n            \"ReplicationMode\": \"sync\",\n            \"Vip\": \"\",\n            \"Vport\": 0,\n            \"Zone\": \"ap-guangzhou-4\"\n        },\n        \"DeployMode\": 0,\n        \"ProtectMode\": 2,\n        \"RequestId\": \"e6ad4a50-f251-4236-9c30-1887f330a38c\",\n        \"SlaveConfig\": {\n            \"ReplicationMode\": \"sync\",\n            \"Zone\": \"ap-guangzhou-4\"\n        },\n        \"Switched\": false,\n        \"Zone\": \"ap-guangzhou-4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupConfig\": {\n            \"ReplicationMode\": \"sync\",\n            \"Vip\": \"\",\n            \"Vport\": 0,\n            \"Zone\": \"ap-guangzhou-4\"\n        },\n        \"DeployMode\": 0,\n        \"FourthConfig\": {\n            \"ReplicationMode\": \"sync\",\n            \"Vip\": \"\",\n            \"Vport\": 0,\n            \"Zone\": \"ap-guangzhou-4\"\n        },\n        \"ProtectMode\": 2,\n        \"RequestId\": \"e6ad4a50-f251-4236-9c30-1887f330a38c\",\n        \"SlaveConfig\": {\n            \"ReplicationMode\": \"sync\",\n            \"Zone\": \"ap-guangzhou-4\"\n        },\n        \"Switched\": false,\n        \"Zone\": \"ap-guangzhou-4\"\n    }\n}",
         "title": "查询实例架构信息"
       }
     ],

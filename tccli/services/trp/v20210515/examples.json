@@ -224,6 +224,62 @@
         "title": "查自定义码规则列表"
       }
     ],
+    "DescribeFlavorKingCycleBrandImportantCityScanAnalysis": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlavorKingCycleBrandImportantCityScanAnalysis\n<公共请求参数>\n\n{\n    \"CorpId\": 10046,\n    \"TypeDate\": \"week\",\n    \"QueryDate\": \"2026-04-26\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"City\": \"上海\",\n                \"GrowRatio\": 0.1261,\n                \"LastCycleMarketShare\": 0.7968,\n                \"LastCycleOtherMarketShare\": 0.2032,\n                \"LastCycleRatio\": 0.0169,\n                \"MarketShare\": 0.8249,\n                \"OtherGrowRatio\": -0.0625,\n                \"OtherMarketShare\": 0.1751,\n                \"Ratio\": 0.0161,\n                \"Regions\": [\n                    {\n                        \"GrowRatio\": 0.1323,\n                        \"LastCycleMarketShare\": 0.8123,\n                        \"LastCycleOtherMarketShare\": 0.1877,\n                        \"LastCycleRatio\": 0.1036,\n                        \"MarketShare\": 0.8352,\n                        \"OtherGrowRatio\": -0.0334,\n                        \"OtherMarketShare\": 0.1648,\n                        \"Ratio\": 0.1042,\n                        \"Region\": \"嘉定区\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"42a3b034-9cee-4286-b2ca-e146411a9b14\"\n    }\n}",
+        "title": "获取周、半月、月品牌城市扫码数据"
+      }
+    ],
+    "DescribeFlavorKingCycleBrandImportantProvinceScanAnalysis": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlavorKingCycleBrandImportantProvinceScanAnalysis\n<公共请求参数>\n\n{\n    \"CorpId\": 10046,\n    \"TypeDate\": \"month\",\n    \"QueryDate\": \"2025-04-30\",\n    \"ProvinceList\": [\n        \"湖南\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [],\n        \"RequestId\": \"0ae9eb9a-67ee-460e-9582-91448f39b39c\"\n    }\n}",
+        "title": "获取周、半月、月扫码数据"
+      }
+    ],
+    "DescribeFlavorKingCycleBrandImportantProvinceUserAnalysis": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlavorKingCycleBrandImportantProvinceUserAnalysis\n<公共请求参数>\n\n{\n    \"CorpId\": 10046,\n    \"TypeDate\": \"month\",\n    \"QueryDate\": \"2026-04-30\",\n    \"ProvinceList\": [\n        \"广东\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Cities\": [\n                    {\n                        \"City\": \"东莞\",\n                        \"GrowRatio\": 0,\n                        \"MarketShare\": 0,\n                        \"OtherGrowRatio\": 0,\n                        \"OtherMarketShare\": 0\n                    }\n                ],\n                \"GrowRatio\": 0,\n                \"MarketShare\": 0,\n                \"OtherGrowRatio\": 0,\n                \"OtherMarketShare\": 0,\n                \"Province\": \"广东\"\n            }\n        ],\n        \"RequestId\": \"4ab28b10-2480-438c-bbea-2102e04a3401\"\n    }\n}",
+        "title": "获取周、半月、月品牌省用户数据"
+      }
+    ],
+    "DescribeFlavorKingCycleBrandProvinceCityScanAnalysis": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlavorKingCycleBrandProvinceCityScanAnalysis\n<公共请求参数>\n\n{\n    \"CorpId\": 10046,\n    \"QueryDate\": \"2026-05-01\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Cities\": [\n                    {\n                        \"City\": \"上海\",\n                        \"Ratio\": [\n                            0.8491\n                        ],\n                        \"Regions\": [\n                            {\n                                \"Ratio\": [\n                                    0.8528\n                                ],\n                                \"Region\": \"嘉定区\"\n                            }\n                        ]\n                    }\n                ],\n                \"Province\": \"上海\",\n                \"Ratio\": [\n                    0.8491\n                ]\n            }\n        ],\n        \"RequestId\": \"61828e83-6500-4e84-b736-747f9034300b\"\n    }\n}",
+        "title": "获取口味王日热度明细"
+      }
+    ],
+    "DescribeFlavorKingCycleBrandProvinceScanAnalysis": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlavorKingCycleBrandProvinceScanAnalysis\n<公共请求参数>\n\n{\n    \"CorpId\": 10046,\n    \"TypeDate\": \"month\",\n    \"QueryDate\": \"2026-04-30\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"GrowRatio\": -0.1399,\n            \"LastCycleMarketShare\": 0.7044,\n            \"MarketShare\": 0.7009,\n            \"OtherGrowRatio\": -0.1253,\n            \"Provinces\": [\n                {\n                    \"GrowRatio\": -0.0496,\n                    \"LastCycleMarketShare\": 0.7917,\n                    \"LastCycleRatio\": 0.0145,\n                    \"MarketShare\": 0.805,\n                    \"OtherGrowRatio\": -0.125,\n                    \"OtherLastCycleMarketShare\": 0.2083,\n                    \"OtherMarketShare\": 0.195,\n                    \"Province\": \"上海\",\n                    \"Ratio\": 0.016\n                }\n            ]\n        },\n        \"RequestId\": \"3111732e-bba2-403e-99f7-b2e2b40a89a1\"\n    }\n}",
+        "title": "获取周、半月、月品牌省扫码数据"
+      }
+    ],
+    "DescribeFlavorKingCycleBrandScanAnalysis": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlavorKingCycleBrandScanAnalysis\n<公共请求参数>\n\n{\n    \"CorpId\": 10046,\n    \"TypeDate\": \"month\",\n    \"QueryDate\": \"2026-04-30\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Count\": 107253136,\n            \"CycleOverCycle\": -0.1399,\n            \"CycleRatio\": 0.7009,\n            \"CycleRatioItems\": [\n                {\n                    \"BrandName\": \"伍子醉\",\n                    \"Duration\": \"20260301-20260331\",\n                    \"Ratio\": 0.2956\n                }\n            ]\n        },\n        \"RequestId\": \"bc52b11a-1d96-411b-a085-f153cdc07ac3\"\n    }\n}",
+        "title": "获取周、半月、月品牌扫描数据"
+      }
+    ],
+    "DescribeFlavorKingCycleBrandScanMetrics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlavorKingCycleBrandScanMetrics\n<公共请求参数>\n\n{\n    \"CorpId\": 10046,\n    \"QueryDate\": \"2026-05-01\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Duration\": \"20260425\",\n                \"Ratio\": 0.74\n            }\n        ],\n        \"RequestId\": \"7e82bdd9-5d65-45e6-b18b-6d589dd175da\"\n    }\n}",
+        "title": "指标趋势"
+      }
+    ],
     "DescribeJobFileUrl": [
       {
         "document": "",
@@ -342,6 +398,14 @@
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTraceDataList\n<公共请求参数>\n\n{\n    \"BatchId\": \"xfetmgoiky2nms6nk8\",\n    \"Code\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TraceDataList\": [\n            {\n                \"TraceId\": \"1mO3n3W0LDhAaADGwHjj3\",\n                \"TraceItems\": [\n                    {\n                        \"Key\": \"name\",\n                        \"Name\": \"名称\",\n                        \"Value\": \"xltest\",\n                        \"Type\": \"text\",\n                        \"ReadOnly\": true,\n                        \"Hidden\": false,\n                        \"Values\": [],\n                        \"Ext\": \"\",\n                        \"Attrs\": [],\n                        \"List\": []\n                    },\n                    {\n                        \"Key\": \"avatar\",\n                        \"Name\": \"主图\",\n                        \"Value\": \"\",\n                        \"Type\": \"image\",\n                        \"ReadOnly\": false,\n                        \"Hidden\": false,\n                        \"Values\": [\n                            \"https://webcdn.m.qq.com/anxin/public/4054d20b71d30db847492eecc8057e90.jpg\"\n                        ],\n                        \"Ext\": \"\",\n                        \"Attrs\": [],\n                        \"List\": []\n                    },\n                    {\n                        \"Key\": \"message\",\n                        \"Name\": \"提示文本\",\n                        \"Value\": \"商品信息溯源详情\",\n                        \"Type\": \"text\",\n                        \"ReadOnly\": false,\n                        \"Hidden\": false,\n                        \"Values\": [],\n                        \"Ext\": \"\",\n                        \"Attrs\": [],\n                        \"List\": []\n                    },\n                    {\n                        \"Key\": \"desc\",\n                        \"Name\": \"卡片描述\",\n                        \"Value\": \"二维码已完成扫码，请查看信息\",\n                        \"Type\": \"text\",\n                        \"ReadOnly\": false,\n                        \"Hidden\": false,\n                        \"Values\": [],\n                        \"Ext\": \"\",\n                        \"Attrs\": [],\n                        \"List\": []\n                    }\n                ],\n                \"PhaseName\": \"设计阶段\",\n                \"PhaseData\": {\n                    \"AppId\": \"\",\n                    \"AppName\": \"\",\n                    \"AppPath\": \"\",\n                    \"HeadEnabled\": false,\n                    \"HeadTitle\": \"\",\n                    \"Key\": \"\"\n                },\n                \"Status\": 1,\n                \"Rank\": 1,\n                \"Type\": 1,\n                \"Code\": \"https://anxin.qq.com/q99j9ovp5c6sok7l5g\",\n                \"Phase\": 2,\n                \"TraceTime\": \"2024-10-30T07:16:21.265Z\",\n                \"CreateTime\": \"2024-10-30T07:16:21.265Z\",\n                \"ChainStatus\": 1,\n                \"ChainTime\": \"2024-10-30T07:16:21.265Z\",\n                \"ChainData\": {\n                    \"BlockTime\": \"2024-03-27T03:33:21.000Z\",\n                    \"BlockHash\": \"129fd196158b497b88bcb02ac7b34f3729c806e925074b448bad35f3da960072\",\n                    \"BlockHeight\": \"684\"\n                },\n                \"CorpId\": 10000\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询溯源信息"
+      }
+    ],
+    "DownloadGEO": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadGEO\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7a5f1a2-682b-4946-9951-638d9e1d7f38\"\n    }\n}",
+        "title": "geo下载"
       }
     ],
     "EffectFeedback": [

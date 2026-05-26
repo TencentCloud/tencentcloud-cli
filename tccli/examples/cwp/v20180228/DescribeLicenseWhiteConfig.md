@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DescribeLicenseWhiteConfig --cli-unfold-argument  \
-    --RuleName cwp
+    --RuleName cwp_yunying
 ```
 
 Output: 
@@ -15,9 +15,15 @@ Output:
     "Response": {
         "FlagShip": {
             "Deadline": 7,
-            "IsApplyFor": true,
+            "IsApplyFor": false,
             "LicenseNum": 10,
-            "SourceType": 1
+            "SourceType": 6
+        },
+        "LOG": {
+            "Deadline": 0,
+            "IsApplyFor": false,
+            "LicenseNum": 0,
+            "SourceType": 0
         },
         "PrattWhitney": {
             "Deadline": 0,
@@ -26,12 +32,18 @@ Output:
             "SourceType": 0
         },
         "Professional": {
-            "Deadline": 7,
+            "Deadline": 0,
             "IsApplyFor": false,
-            "LicenseNum": 10,
-            "SourceType": 1
+            "LicenseNum": 0,
+            "SourceType": 0
         },
-        "RequestId": "5ebd92e8-9873-4b4c-a26a-7f43048d42d2"
+        "RASP": {
+            "Deadline": 0,
+            "IsApplyFor": false,
+            "LicenseNum": 0,
+            "SourceType": 0
+        },
+        "RequestId": "09c2d4b3-ffdf-495d-9817-a89fdad0de89"
     }
 }
 ```

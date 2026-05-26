@@ -972,6 +972,24 @@
           "name": "InstanceIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "绑定类型。可选值：\nONLINE - 在线绑定，不需要关机。\nOFFLINE - 离线绑定，会对实例进行关机。",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "AssociateType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定的用户名。当 AssociateType 为 OFFLINE 时，不支持该参数。",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -987,6 +1005,32 @@
         }
       ],
       "type": "object"
+    },
+    "AssociatedInstanceInfo": {
+      "document": "密钥对关联的实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID。</p>",
+          "example": "lhins-bzm4pg35",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥对绑定的用户。</p>",
+          "example": "ubuntu",
+          "member": "string",
+          "name": "Username",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AttachCcnRequest": {
       "document": "AttachCcn请求参数结构体",
@@ -5491,6 +5535,24 @@
           "name": "InstanceIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "解绑定类型。可选值：\nONLINE - 在线解绑定，不需要关机。\nOFFLINE - 离线解绑定，需要关机。",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "DisassociateType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "解绑定的用户名。当 DisassociateType 为 OFFLINE 时，不支持该参数。",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8217,6 +8279,16 @@
           "member": "string",
           "name": "AssociatedInstanceIds",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥对关联的实例列表。",
+          "example": "无",
+          "member": "AssociatedInstanceInfo",
+          "name": "AssociatedInstanceSet",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },

@@ -84,6 +84,13 @@
       "output": "DeleteAuditLogFileResponse",
       "status": "online"
     },
+    "DeleteDBBackups": {
+      "document": "删除全量备份",
+      "input": "DeleteDBBackupsRequest",
+      "name": "删除全量备份",
+      "output": "DeleteDBBackupsResponse",
+      "status": "online"
+    },
     "DeleteLogDownloadTask": {
       "document": "删除日志下载任务",
       "input": "DeleteLogDownloadTaskRequest",
@@ -252,6 +259,13 @@
       "output": "DescribeMongodbLogsResponse",
       "status": "online"
     },
+    "DescribePasswordRotation": {
+      "document": "获取密码轮转状态信息",
+      "input": "DescribePasswordRotationRequest",
+      "name": "查询密码轮转状态",
+      "output": "DescribePasswordRotationResponse",
+      "status": "online"
+    },
     "DescribeSRVConnectionDomain": {
       "document": "本接口（DescribeSRVConnectionDomain）用于查询MongoDB数据库当前的域名信息。",
       "input": "DescribeSRVConnectionDomainRequest",
@@ -306,6 +320,13 @@
       "input": "DropDBInstanceParamTplRequest",
       "name": "删除参数模板",
       "output": "DropDBInstanceParamTplResponse",
+      "status": "online"
+    },
+    "EnablePasswordRotation": {
+      "document": "开启密码轮转",
+      "input": "EnablePasswordRotationRequest",
+      "name": "开启密码轮转",
+      "output": "EnablePasswordRotationResponse",
       "status": "online"
     },
     "EnableSRVConnectionUrl": {
@@ -390,6 +411,13 @@
       "input": "ModifyAuditServiceRequest",
       "name": "修改审计配置",
       "output": "ModifyAuditServiceResponse",
+      "status": "online"
+    },
+    "ModifyBackupExpireTime": {
+      "document": "修改备份过期时间",
+      "input": "ModifyBackupExpireTimeRequest",
+      "name": "修改备份过期时间",
+      "output": "ModifyBackupExpireTimeResponse",
       "status": "online"
     },
     "ModifyDBInstanceNetworkAddress": {
@@ -2819,6 +2847,42 @@
       ],
       "type": "object"
     },
+    "DeleteDBBackupsRequest": {
+      "document": "DeleteDBBackups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id,cmgo-xxxx",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份文件id列表",
+          "example": "无",
+          "member": "int64",
+          "name": "BackupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDBBackupsResponse": {
+      "document": "DeleteDBBackups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteLogDownloadTaskRequest": {
       "document": "DeleteLogDownloadTask请求参数结构体",
       "members": [
@@ -5016,6 +5080,23 @@
       ],
       "type": "object"
     },
+    "DescribePasswordRotationRequest": {
+      "document": "DescribePasswordRotation请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePasswordRotationResponse": {
+      "document": "DescribePasswordRotation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSRVConnectionDomainRequest": {
       "document": "DescribeSRVConnectionDomain请求参数结构体",
       "members": [
@@ -5430,6 +5511,23 @@
     },
     "DropDBInstanceParamTplResponse": {
       "document": "DropDBInstanceParamTpl返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnablePasswordRotationRequest": {
+      "document": "EnablePasswordRotation请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "EnablePasswordRotationResponse": {
+      "document": "EnablePasswordRotation返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7501,6 +7599,61 @@
     "ModifyAuditServiceResponse": {
       "document": "ModifyAuditService返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBackupExpireTimeRequest": {
+      "document": "ModifyBackupExpireTime请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "cmgo-********",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>",
+          "example": "2026-06-06 04:02:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份ID</p>",
+          "example": "[11123430]",
+          "member": "int64",
+          "name": "BackupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBackupExpireTimeResponse": {
+      "document": "ModifyBackupExpireTime返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>失败的备份ID</p>",
+          "example": "[21123430]",
+          "member": "int64",
+          "name": "FailedBackups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

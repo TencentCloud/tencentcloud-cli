@@ -8398,7 +8398,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入的视频文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 Url；</li> ",
+          "document": "<p>输入的文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 Url；</li>  <li>Base64：图片或视频转换的Base64字符串；</li></p>",
           "example": "File",
           "member": "string",
           "name": "Type",
@@ -8409,7 +8409,7 @@
         },
         {
           "disabled": false,
-          "document": "图片文件的媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。当 Type 取值为 File 时，本参数有效。\n说明：\n1. 推荐使用小于7M的图片；\n2. 图片格式的取值为：jpeg，jpg, png, webp。",
+          "document": "<p>图片文件的媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 <a href=\"/document/product/266/7830\">视频上传完成事件通知</a> 或 <a href=\"https://console.cloud.tencent.com/vod/media\">云点播控制台</a> 获取该字段。当 Type 取值为 File 时，本参数有效。<br>说明：</p><ol><li>推荐使用小于7M的图片；</li><li>图片格式的取值为：jpeg，jpg, png, webp。</li></ol>",
           "example": "3704211***509819",
           "member": "string",
           "name": "FileId",
@@ -8420,7 +8420,7 @@
         },
         {
           "disabled": false,
-          "document": "可访问的文件 URL。当 Type 取值为 Url 时，本参数有效。\n说明：\n1. 推荐使用小于7M的图片；\n2. 图片格式的取值为：jpeg，jpg, png, webp。",
+          "document": "<p>可访问的文件 URL。当 Type 取值为 Url 时，本参数有效。<br>说明：</p><ol><li>推荐使用小于7M的图片；</li><li>图片格式的取值为：jpeg，jpg, png, webp。</li></ol>",
           "example": "https://test.com/1.png",
           "member": "string",
           "name": "Url",
@@ -8431,10 +8431,32 @@
         },
         {
           "disabled": false,
-          "document": "输入图片的描述信息，用于帮助模型理解图片。仅GEM 2.5、GEM 3.0 有效。",
+          "document": "<p>可访问的文件 Base64。当 Type 取值为 Base64 时，本参数有效。说明：</p><ol><li>所有文件的文件大小总和不能超过 7 MB，避免转为 Base64 后超出云 API 的 10 MB包大小上限；</li><li>图片格式应为：jpeg，jpg, png, webp；</li><li>不要有data:image/jpeg;base64,之类的前缀。</li></ol>",
+          "example": "base64",
+          "member": "string",
+          "name": "Base64",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入图片的描述信息，用于帮助模型理解图片。仅GEM 2.5、GEM 3.0 有效。</p>",
           "example": "任务背景：这是需要翻新的主建筑（图1），不得改变其几何结构。",
           "member": "string",
           "name": "Text",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p><strong>仅当 ModelName 为 OG 时有效</strong>。图片类型。</p><p>枚举值：</p><ul><li>mask： 图片蒙版。</li></ul>",
+          "example": "mask",
+          "member": "string",
+          "name": "ReferenceType",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -9361,7 +9383,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>输入的视频文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 Url；</li></p>",
+          "document": "<p>输入的视频文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 Url；</li> <li>Base64：图片或视频转换的Base64字符串；</li></p>",
           "example": "File",
           "member": "string",
           "name": "Type",
@@ -9398,6 +9420,17 @@
           "example": "https://test.com/1.png",
           "member": "string",
           "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可访问的文件 Base64。当 Type 取值为 Base64 时，本参数有效。说明：</p><ol><li>所有文件的文件大小总和不能超过7MB，避免转为 Base64 后超出云API的10MB包大小上限；</li><li>图片格式应为：jpeg，jpg, png, webp。</li><li>视频格式应为：mp4, mov, avi。</li><li>不要有data:image/jpeg;base64,之类的前缀。</li></ol>",
+          "example": "base64",
+          "member": "string",
+          "name": "Base64",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -9538,10 +9571,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "AIGC 生视频任务的输出文件信息。\t",
+          "document": "<p>AIGC 生视频任务的输出文件信息。</p>",
           "example": "无",
           "member": "AigcVideoTaskOutputFileInfo",
           "name": "FileInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型为 Procedure 的任务 ID。若发起<a href=\"https://cloud.tencent.com/document/product/266/126239\">创建 AIGC 生视频任务</a>时指定了任务流模板(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。</p>",
+          "example": "[\"12530xxx-procedurev2-xxx\"]",
+          "member": "string",
+          "name": "ProcedureTaskIds",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -14712,6 +14755,15 @@
           "example": "motion_control",
           "member": "string",
           "name": "SceneType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p><a href=\"https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81\">任务流名称</a>，在需要对生成的新视频执行任务流时填写。</p>",
+          "example": "testProcedure",
+          "member": "string",
+          "name": "Procedure",
           "required": false,
           "type": "string"
         },

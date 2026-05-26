@@ -288,6 +288,14 @@
         "title": "获取数字验证码失败示例"
       }
     ],
+    "GetNFCToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetNFCToken\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26ee9cb0-3fe7-44ee-990a-7c173c767664\",\n        \"Token\": \"f2a14662-78b9-11f0-9e8b-52540094e657\"\n    }\n}",
+        "title": "NFC识别信息token获取成功"
+      }
+    ],
     "GetWeChatBillDetails": [
       {
         "document": "获取第一页数据时，Cursor值传0。当HasNextPage的值为true时，继续调用接口。",
@@ -306,6 +314,14 @@
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWeChatBillDetails\n<公共请求参数>\n\n{\n    \"Date\": \"2020-09-22\",\n    \"Cursor\": 1873,\n    \"RuleId\": \"23\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.RuleIdNotExist\",\n            \"Message\": \"RuleId不存在，请到人脸核身控制台申请。\"\n        },\n        \"RequestId\": \"c5f6c7e4-2b4e-4a77-acc5-d111fffe8302\"\n    }\n}",
         "title": "获取后续页面数据异常示例"
+      }
+    ],
+    "GetWxNFCResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWxNFCResult\n<公共请求参数>\n\n{\n    \"NFCToken\": \"d102c9c8-5423-11f1-97f9-52540044344e\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Address\": \"福建省**市*************区*幢*单元***室\",\n        \"BeginTime\": \"\",\n        \"BirthDate\": \"\",\n        \"CheckMRTD\": \"\",\n        \"EnName\": \"ZHAN***ZHEN\",\n        \"EndTime\": \"\",\n        \"IdCardBackImg\": \"\",\n        \"IdCardFrontImg\": \"\",\n        \"IdNum\": \"350481***111140011\",\n        \"IdType\": \"\",\n        \"Name\": \"张*\",\n        \"Nation\": \"\",\n        \"Nationality\": \"\",\n        \"OtherIdNum\": \"\",\n        \"PersonalNumber\": \"\",\n        \"Picture\": \"\",\n        \"ResultCode\": \"-1\",\n        \"Sex\": \"\",\n        \"SigningOrganization\": \"永安市***\",\n        \"RequestId\": \"096513c7-1ee5-4620-a36b-9f5101cd2737\"\n    }\n}",
+        "title": "拉取NFC结果"
       }
     ],
     "IdCardOCRVerification": [

@@ -3401,6 +3401,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是只读存储</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ReadOnly",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7802,7 +7813,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "goosefs实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>goosefs实例id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "goosefs-instance-id",
           "member": "string",
           "name": "Id",
@@ -7813,7 +7824,7 @@
         },
         {
           "disabled": false,
-          "document": "GooseFS类型，包括GooseFS和GooseFSx\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>GooseFS类型，包括GooseFS和GooseFSx</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "GooseFSx",
           "member": "string",
           "name": "Type",
@@ -7824,7 +7835,7 @@
         },
         {
           "disabled": false,
-          "document": "GooseFSx实例需要挂载的路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>GooseFSx实例需要挂载的路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/test",
           "member": "string",
           "name": "Path",
@@ -7835,7 +7846,7 @@
         },
         {
           "disabled": false,
-          "document": "GooseFS命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>GooseFS命名空间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test-1318247806",
           "member": "string",
           "name": "NameSpace",
@@ -7843,6 +7854,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端的挂载参数，逗号分隔的参数名</p>",
+          "example": "allow_other,direct_io",
+          "member": "string",
+          "name": "MountOptions",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7852,7 +7874,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "goosefsx实例id",
+          "document": "<p>goosefsx实例id</p>",
           "example": "gs-fsxfs",
           "member": "string",
           "name": "Id",
@@ -7863,7 +7885,7 @@
         },
         {
           "disabled": false,
-          "document": "GooseFSx实例需要挂载的路径",
+          "document": "<p>GooseFSx实例需要挂载的路径</p>",
           "example": "/model",
           "member": "string",
           "name": "Path",

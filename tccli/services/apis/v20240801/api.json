@@ -5948,8 +5948,19 @@
       "members": [
         {
           "disabled": false,
-          "document": "单次请求上限，k\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10000",
+          "document": "<p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "day",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次请求上限，k</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
           "member": "uint64",
           "name": "LimitRequestBody",
           "output_required": false,
@@ -5959,7 +5970,7 @@
         },
         {
           "disabled": false,
-          "document": "累次token总量消耗上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>累次token总量消耗上限</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LimitWindowsDTO",
           "name": "LimitWindows",

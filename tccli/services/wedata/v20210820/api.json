@@ -6939,7 +6939,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作Id</p><p>可使用JobId字段通过ListBatchDetail接口 查询异步操作结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "JobId",
@@ -34981,8 +34981,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目编号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1111",
+          "document": "<p>项目编号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3178765294825680384",
           "member": "string",
           "name": "ProjectId",
           "output_required": false,
@@ -34991,8 +34991,8 @@
         },
         {
           "disabled": false,
-          "document": "任务编号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1111",
+          "document": "<p>任务编号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20260523172811726",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
@@ -35001,7 +35001,7 @@
         },
         {
           "disabled": false,
-          "document": "页内尺寸\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>页内尺寸</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8192",
           "member": "int64",
           "name": "PageSize",
@@ -35011,7 +35011,7 @@
         },
         {
           "disabled": false,
-          "document": "页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>页码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "PageNum",
@@ -35021,7 +35021,7 @@
         },
         {
           "disabled": false,
-          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总页数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "PageTotal",
@@ -35031,8 +35031,8 @@
         },
         {
           "disabled": false,
-          "document": "分页内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "aaaa",
+          "document": "<p>分页内容</p><p>分页拉取全部代码内容后，先拼接，再Base64解码获取完整脚本内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c2VsZWN0IDE=",
           "member": "string",
           "name": "Base64ScriptContent",
           "output_required": false,
@@ -66190,7 +66190,7 @@
       "usage": "out"
     },
     "TestRunningRecord": {
-      "document": "编排空间试运行记录",
+      "document": "编排空间试运行记录\n查询执行日志 可调用DownloadLogByLine接口",
       "members": [
         {
           "disabled": false,
