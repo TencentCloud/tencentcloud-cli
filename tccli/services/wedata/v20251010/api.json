@@ -30625,7 +30625,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前节点",
+          "document": "<p>当前节点</p>",
           "example": "无",
           "member": "FileMeta",
           "name": "Node",
@@ -30636,7 +30636,7 @@
         },
         {
           "disabled": false,
-          "document": "父节点",
+          "document": "<p>父节点</p>",
           "example": "无",
           "member": "FileMeta",
           "name": "Parent",
@@ -30647,7 +30647,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人",
+          "document": "<p>创建人</p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Creator",
@@ -30658,7 +30658,7 @@
         },
         {
           "disabled": false,
-          "document": "拥有者",
+          "document": "<p>拥有者</p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Owner",
@@ -30669,7 +30669,7 @@
         },
         {
           "disabled": false,
-          "document": "节点类型",
+          "document": "<p>节点类型</p>",
           "example": "“ROOT”",
           "member": "string",
           "name": "NodeType",
@@ -30680,7 +30680,7 @@
         },
         {
           "disabled": false,
-          "document": "原始路径",
+          "document": "<p>原始路径</p>",
           "example": "/a/b/c",
           "member": "string",
           "name": "OriginPath",
@@ -30691,7 +30691,7 @@
         },
         {
           "disabled": false,
-          "document": "回收时间",
+          "document": "<p>回收时间</p>",
           "example": "“1766631841”",
           "member": "string",
           "name": "DeleteTime",
@@ -30702,13 +30702,24 @@
         },
         {
           "disabled": false,
-          "document": "文件git配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>文件git配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "GitRepoConfig",
           "name": "GitConfig",
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件所属</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"GIT_FOLDER\"",
+          "member": "string",
+          "name": "FileSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

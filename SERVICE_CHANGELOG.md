@@ -1,10 +1,33 @@
-# Release 3.0.1432.1
+# Release 3.0.1433.1
 
-## 云原生构建(cnb) 版本：2024-06-07
+## 负载均衡(clb) 版本：2023-04-17
 
-### 第 2 次发布
 
-发布时间：2026-05-27 01:24:56
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 84 次发布
+
+发布时间：2026-05-28 01:22:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TargetGroupInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#TargetGroupInfo)
+
+	* 新增成员：SnatEnable
+
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 77 次发布
+
+发布时间：2026-05-28 01:26:05
 
 本次发布包含了以下内容：
 
@@ -12,72 +35,35 @@
 
 修改接口：
 
-* [CreateBudget](http://document.tencentcloudapi.woa.com/document/product/1798/87393)
+* [CreateCosObjectScanTask](http://document.tencentcloudapi.woa.com/document/product/1726/90315)
 
-	* 新增入参：AIUsageCredit
+	* 新增入参：TaskArgs, IsScanAll, DeleteBucketSet
+
+	* 新增出参：TaskId
 
 
 修改数据结构：
 
-* [Cost](http://document.tencentcloudapi.woa.com/document/product/1798/87394#Cost)
+* [CosAssetInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosAssetInfo)
 
-	* 新增成员：CnbAIUsageCreditCost, CnbAIUsageCreditRealCost, CnbAIUsageCreditPrice
+	* 新增成员：BucketAzType, BucketStorageSize, BucketObjectCount, IdentifySampleRate
 
-* [EstimatedCost](http://document.tencentcloudapi.woa.com/document/product/1798/87394#EstimatedCost)
+* [CosAuditPayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosAuditPayInfo)
 
-	* 新增成员：CnbAIUsageCreditEstimatedCost, CnbAIUsageCreditEstimatedRealCost
+	* 新增成员：PostProductStatusList, PostProductBuyStatusList, NewPostPayResourceId
 
-* [SvTotalAmount](http://document.tencentcloudapi.woa.com/document/product/1798/87394#SvTotalAmount)
+* [CosBucketBillingInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosBucketBillingInfo)
 
-	* 新增成员：CnbAIUsageCredit
-
-* [SvUsedAmount](http://document.tencentcloudapi.woa.com/document/product/1798/87394#SvUsedAmount)
-
-	* 新增成员：CnbAIUsageCreditUsed
+	* 新增成员：LogFeatureWhitelist, IsHaveNewPostOrder, IsHaveOldPostOrder, PostProductList
 
 
 
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-### 第 169 次发布
+### 第 170 次发布
 
-发布时间：2026-05-27 01:31:16
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [TriggerAIOptimizerTraining](http://document.tencentcloudapi.woa.com/document/product/1003/90391)
-
-修改接口：
-
-* [CreateDarInstance](http://document.tencentcloudapi.woa.com/document/product/1003/90379)
-
-	* 新增入参：AgenticBaseInfo
-
-
-新增数据结构：
-
-* [AIOptimizerStatus](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AIOptimizerStatus)
-* [AgenticBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AgenticBaseInfo)
-
-修改数据结构：
-
-* [ClusterInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterInstanceDetail)
-
-	* 新增成员：AIOptimizerStatus
-
-
-
-
-## 弹性 MapReduce(emr) 版本：2019-01-03
-
-### 第 143 次发布
-
-发布时间：2026-05-27 01:41:16
+发布时间：2026-05-28 01:31:57
 
 本次发布包含了以下内容：
 
@@ -85,25 +71,21 @@
 
 新增接口：
 
-* [DescribeMaskRulesSTDV2](http://document.tencentcloudapi.woa.com/document/product/589/90392)
-* [IssueMaskRulesSTD](http://document.tencentcloudapi.woa.com/document/product/589/90393)
+* [AddServerlessRoInstances](http://document.tencentcloudapi.woa.com/document/product/1003/90396)
+* [DescribeSQLExecutionPlan](http://document.tencentcloudapi.woa.com/document/product/1003/90397)
 
 新增数据结构：
 
-* [RangerDataMaskInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#RangerDataMaskInfo)
-* [RangerDataMaskPolicyItem](http://document.tencentcloudapi.woa.com/document/product/589/33981#RangerDataMaskPolicyItem)
-* [RangerOrderFields](http://document.tencentcloudapi.woa.com/document/product/589/33981#RangerOrderFields)
-* [RangerPolicy](http://document.tencentcloudapi.woa.com/document/product/589/33981#RangerPolicy)
-* [RangerResource](http://document.tencentcloudapi.woa.com/document/product/589/33981#RangerResource)
-* [RangerResultItem](http://document.tencentcloudapi.woa.com/document/product/589/33981#RangerResultItem)
+* [ExecutionPlanDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ExecutionPlanDetail)
+* [ExplainRow](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ExplainRow)
 
 
 
-## Elasticsearch Service(es) 版本：2018-04-16
+## 人脸核身(faceid) 版本：2018-03-01
 
-### 第 108 次发布
+### 第 100 次发布
 
-发布时间：2026-05-27 01:42:57
+发布时间：2026-05-28 01:44:42
 
 本次发布包含了以下内容：
 
@@ -111,25 +93,45 @@
 
 修改接口：
 
-* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30633)
+* [ProcessAMLCallback](http://document.tencentcloudapi.woa.com/document/product/1007/90150)
 
-	* 新增入参：AlarmPolicyIds
+	* 新增出参：Description, Result
 
+* [ScreenAMLName](http://document.tencentcloudapi.woa.com/document/product/1007/90250)
 
-修改数据结构：
-
-* [NodeInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#NodeInfo)
-
-	* 新增成员：KmsKeyId, KmsKeyName
+	* 新增出参：Result, Description
 
 
 
 
-## 消息队列 MQTT 版(mqtt) 版本：2024-05-16
+## 高性能应用服务(hai) 版本：2023-08-12
 
 ### 第 29 次发布
 
-发布时间：2026-05-27 02:05:00
+发布时间：2026-05-28 01:47:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ServiceDetail](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ServiceDetail)
+
+	* 新增成员：SecurityType, RoleComputeSet, TargetReplicas
+
+* [TemplateDetail](http://document.tencentcloudapi.woa.com/document/product/1750/82570#TemplateDetail)
+
+	* 新增成员：RoleComputeSet
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 45 次发布
+
+发布时间：2026-05-28 01:50:59
 
 本次发布包含了以下内容：
 
@@ -137,47 +139,44 @@
 
 新增接口：
 
-* [DescribeSharedSubscriptionGroupsWithSubscriptions](http://document.tencentcloudapi.woa.com/document/product/1773/90395)
-* [ModifyX509Config](http://document.tencentcloudapi.woa.com/document/product/1773/90394)
+* [DescribeCustomerOwnCostExplorerFilter](http://document.tencentcloudapi.woa.com/document/product/1724/90400)
+* [DescribeCustomerOwnCostExplorerSummary](http://document.tencentcloudapi.woa.com/document/product/1724/90399)
 
 新增数据结构：
 
-* [SharedSubscriptionGroupWithSubscriptions](http://document.tencentcloudapi.woa.com/document/product/1773/84898#SharedSubscriptionGroupWithSubscriptions)
+* [BillQueryFilterMsg](http://document.tencentcloudapi.woa.com/document/product/1724/80754#BillQueryFilterMsg)
+* [CostAnalyzeDimensionData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#CostAnalyzeDimensionData)
+* [CostAnalyzeFilter](http://document.tencentcloudapi.woa.com/document/product/1724/80754#CostAnalyzeFilter)
+* [CostAnalyzeFilterDetail](http://document.tencentcloudapi.woa.com/document/product/1724/80754#CostAnalyzeFilterDetail)
+* [DimensionPeriodData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#DimensionPeriodData)
+* [PeriodItemDetail](http://document.tencentcloudapi.woa.com/document/product/1724/80754#PeriodItemDetail)
 
 
 
-## 边缘安全加速平台(teo) 版本：2022-09-01
+## SSL 证书(ssl) 版本：2019-12-05
 
-### 第 79 次发布
+### 第 97 次发布
 
-发布时间：2026-05-27 02:22:07
+发布时间：2026-05-28 02:12:48
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+修改接口：
 
-* [RateLimitingRule](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RateLimitingRule)
+* [DescribeCertificateDetail](http://document.tencentcloudapi.woa.com/document/product/400/41673)
 
-	* 新增成员：Mode
-
-
-
-
-## 边缘安全加速平台(teo) 版本：2022-01-06
+	* 新增出参：HostingStatus
 
 
 
-## 容器服务(tke) 版本：2022-05-01
 
+## 云开发 CloudBase(tcb) 版本：2018-06-08
 
+### 第 46 次发布
 
-## 容器服务(tke) 版本：2018-05-25
-
-### 第 126 次发布
-
-发布时间：2026-05-27 02:25:46
+发布时间：2026-05-28 02:15:05
 
 本次发布包含了以下内容：
 
@@ -185,19 +184,42 @@
 
 新增数据结构：
 
-* [SubnetAllocation](http://document.tencentcloudapi.woa.com/document/product/457/31866#SubnetAllocation)
-* [SubnetAllocationPolicy](http://document.tencentcloudapi.woa.com/document/product/457/31866#SubnetAllocationPolicy)
+* [SMSProviderTemplateConfig](http://document.tencentcloudapi.woa.com/document/product/876/34822#SMSProviderTemplateConfig)
+* [SMSTemplateParams](http://document.tencentcloudapi.woa.com/document/product/876/34822#SMSTemplateParams)
 
 修改数据结构：
 
-* [Cluster](http://document.tencentcloudapi.woa.com/document/product/457/31866#Cluster)
+* [VerificationConfig](http://document.tencentcloudapi.woa.com/document/product/876/34822#VerificationConfig)
 
-	* 新增成员：ClusterCategory
+	* 新增成员：TemplateProvider
 
-* [VirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNodePool)
 
-	* 新增成员：SubnetAllocationPolicy
 
+
+## 数据开发治理平台 WeData(wedata) 版本：2025-10-10
+
+### 第 29 次发布
+
+发布时间：2026-05-28 02:36:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FileNode](http://document.tencentcloudapi.woa.com/document/product/1607/88970#FileNode)
+
+	* 新增成员：FileSource
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2025-08-06
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
 
 
 

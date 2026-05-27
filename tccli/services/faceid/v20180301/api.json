@@ -421,9 +421,9 @@
       "status": "online"
     },
     "ScreenAMLName": {
-      "document": "AML 名单筛查（单次 / 持续）",
+      "document": "AML 名单筛查",
       "input": "ScreenAMLNameRequest",
-      "name": "AML 名单筛查（单次 、持续）",
+      "name": "AML 名单筛查",
       "output": "ScreenAMLNameResponse",
       "status": "online"
     },
@@ -10625,7 +10625,7 @@
         {
           "disabled": false,
           "document": "<p>ComplyAdvantage 的案例标识符</p>",
-          "example": "019d76e3-6cb9-7d59-a254-800a0a14f7a6",
+          "example": "019dfc21-95f7-7a21-905e-1a32ebd38488",
           "member": "string",
           "name": "CaseIdentifier",
           "required": true,
@@ -10646,6 +10646,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Success",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10740,7 +10760,7 @@
         {
           "disabled": false,
           "document": "<p>客户系统中终端用户的唯一标识，最长 256 字符。</p>",
-          "example": "Acme International Ltdxx",
+          "example": "Acme Internationalxxx",
           "member": "string",
           "name": "UniqueCustomerID",
           "required": true,
@@ -10801,7 +10821,7 @@
         {
           "disabled": false,
           "document": "<p>命中时返回，命中的 AML 类型列表（去重）</p>",
-          "example": "[\"ADVERSE_MEDIA\"]",
+          "example": "[\"adverse-media\"]",
           "member": "string",
           "name": "AMLTypes",
           "output_required": false,
@@ -10811,9 +10831,29 @@
         {
           "disabled": false,
           "document": "<p>命中时返回，命中风险详情列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"AMLTypes\":[\"adverse-media\"],\"Decision\":\"NOT_REVIEWED\",\"MatchScore\":0.3,\"MatchTypes\":[\"name_variations_removal\"],\"MatchingName\":\"Two Company\",\"Media\":[],\"ProfileIdentifier\":\"0SQ8H86709B662Y\",\"RiskIdentifier\":\"019df8b0-b894-70ae-ab4c-bc022f41b5d0\"}]",
+          "example": "[{\"AMLTypes\":[\"fitness-probity\"]}]",
           "member": "string",
           "name": "HitDetail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Success",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "Description",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

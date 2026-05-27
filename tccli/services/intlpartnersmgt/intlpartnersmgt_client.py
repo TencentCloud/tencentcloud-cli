@@ -1117,7 +1117,7 @@ def doDescribeBillSummaryByPayMode(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCustomerVoucherUsageDetails(args, parsed_globals):
+def doDescribeCustomerBillDetailByDay(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1149,11 +1149,11 @@ def doDescribeCustomerVoucherUsageDetails(args, parsed_globals):
     client = mod.IntlpartnersmgtClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCustomerVoucherUsageDetailsRequest()
+    model = models.DescribeCustomerBillDetailByDayRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeCustomerVoucherUsageDetails(model)
+        rsp = client.DescribeCustomerBillDetailByDay(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1447,7 +1447,7 @@ def doQueryDirectCustomersCredit(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doApproveClientApply(args, parsed_globals):
+def doDescribeCustomerOwnCostExplorerFilter(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1479,11 +1479,11 @@ def doApproveClientApply(args, parsed_globals):
     client = mod.IntlpartnersmgtClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ApproveClientApplyRequest()
+    model = models.DescribeCustomerOwnCostExplorerFilterRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ApproveClientApply(model)
+        rsp = client.DescribeCustomerOwnCostExplorerFilter(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1502,7 +1502,7 @@ def doApproveClientApply(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetTradeConfigList(args, parsed_globals):
+def doQueryInvitationInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1534,11 +1534,11 @@ def doGetTradeConfigList(args, parsed_globals):
     client = mod.IntlpartnersmgtClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetTradeConfigListRequest()
+    model = models.QueryInvitationInfoRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.GetTradeConfigList(model)
+        rsp = client.QueryInvitationInfo(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1997,7 +1997,7 @@ def doQueryAccountVerificationStatus(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCustomerBillDetailByDay(args, parsed_globals):
+def doDescribeCustomerVoucherUsageDetails(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2029,11 +2029,11 @@ def doDescribeCustomerBillDetailByDay(args, parsed_globals):
     client = mod.IntlpartnersmgtClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCustomerBillDetailByDayRequest()
+    model = models.DescribeCustomerVoucherUsageDetailsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeCustomerBillDetailByDay(model)
+        rsp = client.DescribeCustomerVoucherUsageDetails(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2217,6 +2217,61 @@ def doQueryVoucherAmountByUin(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doApproveClientApply(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IntlpartnersmgtClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ApproveClientApplyRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ApproveClientApply(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doQueryPolicyProductListByCode(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2382,7 +2437,7 @@ def doQueryCreditAllocationHistory(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryInvitationInfo(args, parsed_globals):
+def doGetTradeConfigList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2414,11 +2469,66 @@ def doQueryInvitationInfo(args, parsed_globals):
     client = mod.IntlpartnersmgtClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryInvitationInfoRequest()
+    model = models.GetTradeConfigListRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.QueryInvitationInfo(model)
+        rsp = client.GetTradeConfigList(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCustomerOwnCostExplorerSummary(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IntlpartnersmgtClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCustomerOwnCostExplorerSummaryRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeCustomerOwnCostExplorerSummary(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2578,14 +2688,14 @@ ACTION_MAP = {
     "DescribeCustomerVoucherList": doDescribeCustomerVoucherList,
     "DescribeCustomerOwnVoucherUsageDetails": doDescribeCustomerOwnVoucherUsageDetails,
     "DescribeBillSummaryByPayMode": doDescribeBillSummaryByPayMode,
-    "DescribeCustomerVoucherUsageDetails": doDescribeCustomerVoucherUsageDetails,
+    "DescribeCustomerBillDetailByDay": doDescribeCustomerBillDetailByDay,
     "CreateAndSendClientInvitationMail": doCreateAndSendClientInvitationMail,
     "DescribeBillDownloadUrl": doDescribeBillDownloadUrl,
     "QueryResellerUinByCustomerUin": doQueryResellerUinByCustomerUin,
     "QueryCreditByUinList": doQueryCreditByUinList,
     "QueryDirectCustomersCredit": doQueryDirectCustomersCredit,
-    "ApproveClientApply": doApproveClientApply,
-    "GetTradeConfigList": doGetTradeConfigList,
+    "DescribeCustomerOwnCostExplorerFilter": doDescribeCustomerOwnCostExplorerFilter,
+    "QueryInvitationInfo": doQueryInvitationInfo,
     "QueryCustomerUinListByResellerUin": doQueryCustomerUinListByResellerUin,
     "DescribeCustomerOwnVoucherList": doDescribeCustomerOwnVoucherList,
     "DescribeCustomerBillDownloadUrl": doDescribeCustomerBillDownloadUrl,
@@ -2594,14 +2704,16 @@ ACTION_MAP = {
     "DescribeCustomerBillDetail": doDescribeCustomerBillDetail,
     "DescribeCustomerBillSummary": doDescribeCustomerBillSummary,
     "QueryAccountVerificationStatus": doQueryAccountVerificationStatus,
-    "DescribeCustomerBillDetailByDay": doDescribeCustomerBillDetailByDay,
+    "DescribeCustomerVoucherUsageDetails": doDescribeCustomerVoucherUsageDetails,
     "ForceQN": doForceQN,
     "QueryVoucherPool": doQueryVoucherPool,
     "QueryVoucherAmountByUin": doQueryVoucherAmountByUin,
+    "ApproveClientApply": doApproveClientApply,
     "QueryPolicyProductListByCode": doQueryPolicyProductListByCode,
     "ApproveSubAgentApply": doApproveSubAgentApply,
     "QueryCreditAllocationHistory": doQueryCreditAllocationHistory,
-    "QueryInvitationInfo": doQueryInvitationInfo,
+    "GetTradeConfigList": doGetTradeConfigList,
+    "DescribeCustomerOwnCostExplorerSummary": doDescribeCustomerOwnCostExplorerSummary,
     "QueryCustomersCredit": doQueryCustomersCredit,
     "QueryCustomerBillingQuota": doQueryCustomerBillingQuota,
 

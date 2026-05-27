@@ -119,6 +119,20 @@
       "output": "DescribeCustomerInfoResponse",
       "status": "online"
     },
+    "DescribeCustomerOwnCostExplorerFilter": {
+      "document": "成本分析接口高级筛选",
+      "input": "DescribeCustomerOwnCostExplorerFilterRequest",
+      "name": "查询成本分析筛选项列表",
+      "output": "DescribeCustomerOwnCostExplorerFilterResponse",
+      "status": "online"
+    },
+    "DescribeCustomerOwnCostExplorerSummary": {
+      "document": "成本分析接口",
+      "input": "DescribeCustomerOwnCostExplorerSummaryRequest",
+      "name": "查询子客成本分析接口",
+      "output": "DescribeCustomerOwnCostExplorerSummaryResponse",
+      "status": "online"
+    },
     "DescribeCustomerOwnVoucherList": {
       "document": "描述说明：子客查询自己的代金券列表 可调用角色：子客",
       "input": "DescribeCustomerOwnVoucherListRequest",
@@ -981,6 +995,32 @@
       ],
       "usage": "out"
     },
+    "BillQueryFilterMsg": {
+      "document": "账单查询条件内容kv格式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询条件key：各种code</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "p_cbs",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询条件value：展示名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cloud block storage",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "BusinessInfo": {
       "document": "产品信息",
       "members": [
@@ -1098,6 +1138,288 @@
           "name": "TotalCost",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CostAnalyzeDimensionData": {
+      "document": "成本分析维度数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>按照维度统计后的总条数</p>",
+          "example": "13",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>金额总和</p>",
+          "example": "0.7",
+          "member": "string",
+          "name": "SumCost",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>按照日期维度分类后的金额总和</p>",
+          "example": "无",
+          "member": "PeriodItemDetail",
+          "name": "PeriodItemDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CostAnalyzeFilter": {
+      "document": "成本分析筛选入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>包含产品code</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"p_cbs\"]",
+          "member": "string",
+          "name": "BusinessIn",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>包含子产品code</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sp_cbs_premium\"]",
+          "member": "string",
+          "name": "ProductIn",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>包含区域id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "RegionIn",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>包含交易类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"pre_purchase\"]",
+          "member": "string",
+          "name": "ActionTypeIn",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>包含支付模式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"prePay\"]",
+          "member": "string",
+          "name": "PayModeIn",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>包含项目名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"0\"]",
+          "member": "string",
+          "name": "ProjectIn",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>包含支付者uin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"800000400309\"]",
+          "member": "string",
+          "name": "PayerUinIn",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签键</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qingyun",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>包含的标签值列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"biqian11\"]",
+          "member": "string",
+          "name": "TagIn",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>包含可用区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"100002\"]",
+          "member": "string",
+          "name": "ZoneIn",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>所有者uin</p>",
+          "example": "[\"800000425835\"]",
+          "member": "string",
+          "name": "OwnerUinIn",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组件类型信息</p>",
+          "example": "[\"v_cvm_mem\"]",
+          "member": "string",
+          "name": "ComponentIn",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组件名称</p>",
+          "example": "[\"sp_cbs_premium\"]",
+          "member": "string",
+          "name": "ItemIn",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源id信息</p>",
+          "example": "[\"disk-fata3hgu\"]",
+          "member": "string",
+          "name": "ResourceIn",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CostAnalyzeFilterDetail": {
+      "document": "成本分析高级筛选",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品键值对</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillQueryFilterMsg",
+          "name": "Business",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>区域键值对</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillQueryFilterMsg",
+          "name": "Region",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区键值对</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillQueryFilterMsg",
+          "name": "Zone",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>交易类型键值对</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillQueryFilterMsg",
+          "name": "ActionType",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付模式键值对</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillQueryFilterMsg",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目键值对</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillQueryFilterMsg",
+          "name": "Project",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>payeruin信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillQueryFilterMsg",
+          "name": "PayerUin",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>子客uin信息</p>",
+          "example": "无",
+          "member": "BillQueryFilterMsg",
+          "name": "OwnerUin",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -2504,6 +2826,199 @@
       ],
       "type": "object"
     },
+    "DescribeCustomerOwnCostExplorerFilterRequest": {
+      "document": "DescribeCustomerOwnCostExplorerFilter请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p><p>参数格式：参数格式：YYYY-MM-DD hh:mm:ss， 例如2006-01-02 15:04:05</p><p>入参限制：当PeriodType为month时，时间范围为6个自然月；当PeriodType为day时，时间范围为2个自然月；</p>",
+          "example": "2024-09-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss， 例如2006-01-02 15:04:05</p><p>入参限制：当PeriodType为month时，时间范围为6个自然月；当PeriodType为day时，时间范围为2个自然月；</p>",
+          "example": "2024-09-12 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日期类型</p><p>枚举值：</p><ul><li>day： 按日</li><li>month： 按月</li></ul>",
+          "example": "month",
+          "member": "string",
+          "name": "PeriodType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerOwnCostExplorerFilterResponse": {
+      "document": "DescribeCustomerOwnCostExplorerFilter返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>筛选器信息</p>",
+          "example": "无",
+          "member": "CostAnalyzeFilterDetail",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerOwnCostExplorerSummaryRequest": {
+      "document": "DescribeCustomerOwnCostExplorerSummary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分类维度</p><p>枚举值：</p><ul><li>Default： 默认维度</li><li>Business： 产品</li><li>Product： 子产品</li><li>Region： 区域</li><li>Zone： 可用区</li><li>ActionType： 交易类型</li><li>PayMode： 付费模式</li><li>Project： 项目</li><li>PayerUin： 支付者uin</li><li>OwnerUin： 所有者uin</li><li>Tag： 标签</li></ul>",
+          "example": "Default",
+          "member": "string",
+          "name": "Dimension",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>费用类型</p><p>枚举值：</p><ul><li>originalCost： 原价</li><li>totalCost： 总计金额</li></ul>",
+          "example": "originalCost",
+          "member": "string",
+          "name": "FeeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>账单类型</p><p>枚举值：</p><ul><li>1： 费用账单</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "BillType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss， 例如2006-01-02 15:04:05</p><p>入参限制：当PeriodType为month时，时间范围为6个自然月；当PeriodType为day时，时间范围为2个自然月；</p>",
+          "example": "2024-09-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p><p>参数格式：参数格式：YYYY-MM-DD hh:mm:ss， 例如2006-01-02 15:04:05</p><p>入参限制：当PeriodType为month时，时间范围为6个自然月；当PeriodType为day时，时间范围为2个自然月；</p>",
+          "example": "2024-09-12 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间类型</p><p>枚举值：</p><ul><li>day： 按日维度</li><li>month： 按月维度</li></ul>",
+          "example": "day",
+          "member": "string",
+          "name": "PeriodType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码</p><p>取值范围：[1, 10000]</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页大小</p><p>取值范围：[1, 200]</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签统计维度key，当Dimension为Tag时，TagKey为必填</p>",
+          "example": "qingyun",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤筛选</p>",
+          "example": "无",
+          "member": "CostAnalyzeFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerOwnCostExplorerSummaryResponse": {
+      "document": "DescribeCustomerOwnCostExplorerSummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分类维度</p>",
+          "example": "Default",
+          "member": "string",
+          "name": "DimensionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>详情</p>",
+          "example": "无",
+          "member": "DimensionPeriodData",
+          "name": "Detail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类维度统计</p>",
+          "example": "无",
+          "member": "CostAnalyzeDimensionData",
+          "name": "TotalDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCustomerOwnVoucherItem": {
       "document": "代金券数据",
       "members": [
@@ -3313,6 +3828,52 @@
       ],
       "type": "object"
     },
+    "DimensionPeriodData": {
+      "document": "成本维度周期数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>按照维度分类后的具体名称</p>",
+          "example": "default",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>按照维度分类后的具体名称对应的code</p>",
+          "example": "biqian11",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前分组下的金额总和</p>",
+          "example": "0.7",
+          "member": "string",
+          "name": "SumCost",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日期分组下的金额统计</p>",
+          "example": "无",
+          "member": "PeriodItemDetail",
+          "name": "ItemDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ForceQNRequest": {
       "document": "ForceQN请求参数结构体",
       "members": [
@@ -3529,6 +4090,32 @@
           "member": "string",
           "name": "TotalCost",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PeriodItemDetail": {
+      "document": "成本周期条目信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日期</p>",
+          "example": "2024-09-09",
+          "member": "string",
+          "name": "Period",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>费用</p>",
+          "example": "2.1",
+          "member": "string",
+          "name": "Cost",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

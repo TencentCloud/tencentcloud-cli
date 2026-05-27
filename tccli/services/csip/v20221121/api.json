@@ -9818,7 +9818,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "appid",
+          "document": "<p>appid</p>",
           "example": "1332535553",
           "member": "int64",
           "name": "AppId",
@@ -9828,7 +9828,7 @@
         },
         {
           "disabled": false,
-          "document": "cos桶名",
+          "document": "<p>cos桶名</p>",
           "example": "cos-134137551",
           "member": "string",
           "name": "BucketName",
@@ -9838,7 +9838,7 @@
         },
         {
           "disabled": false,
-          "document": "cos region名",
+          "document": "<p>cos region名</p>",
           "example": "广东广州",
           "member": "string",
           "name": "BucketRegion",
@@ -9848,7 +9848,7 @@
         },
         {
           "disabled": false,
-          "document": "地域码值",
+          "document": "<p>地域码值</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegionCode",
@@ -9858,7 +9858,7 @@
         },
         {
           "disabled": false,
-          "document": "cos桶备注",
+          "document": "<p>cos桶备注</p>",
           "example": "备注",
           "member": "string",
           "name": "BucketMarker",
@@ -9868,7 +9868,7 @@
         },
         {
           "disabled": false,
-          "document": "cos桶主账号所属者",
+          "document": "<p>cos桶主账号所属者</p>",
           "example": "brainzhao",
           "member": "string",
           "name": "BucketOwnerUin",
@@ -9878,7 +9878,7 @@
         },
         {
           "disabled": false,
-          "document": "cos主账号所属者昵称",
+          "document": "<p>cos主账号所属者昵称</p>",
           "example": "brainzhao",
           "member": "string",
           "name": "BucketOwnerNickName",
@@ -9888,7 +9888,7 @@
         },
         {
           "disabled": false,
-          "document": "cos桶标签详情",
+          "document": "<p>cos桶标签详情</p>",
           "example": "[{\"Key\":\"测试1\",\"Value\":\"brainzhao\"},{\"Key\":\"测试2\",\"Value\":\"brainzhao1\"}]",
           "member": "string",
           "name": "BucketTagInfo",
@@ -9898,7 +9898,7 @@
         },
         {
           "disabled": false,
-          "document": "安全建议\n1 暂无异常\n2 建议加固\n3 立即处理",
+          "document": "<p>安全建议<br>1 暂无异常<br>2 建议加固<br>3 立即处理</p>",
           "example": "1",
           "member": "int64",
           "name": "BucketSecuritySuggestion",
@@ -9908,7 +9908,7 @@
         },
         {
           "disabled": false,
-          "document": "告警列表",
+          "document": "<p>告警列表</p>",
           "example": "无",
           "member": "CosRiskAlarmInfo",
           "name": "BucketAlarmList",
@@ -9918,7 +9918,7 @@
         },
         {
           "disabled": false,
-          "document": "风险列表",
+          "document": "<p>风险列表</p>",
           "example": "无",
           "member": "CosRiskAlarmInfo",
           "name": "BucketRiskList",
@@ -9928,7 +9928,7 @@
         },
         {
           "disabled": false,
-          "document": "调用源ip数",
+          "document": "<p>调用源ip数</p>",
           "example": "1",
           "member": "int64",
           "name": "BucketInvokeSourceIpCount",
@@ -9938,7 +9938,7 @@
         },
         {
           "disabled": false,
-          "document": "访问策略",
+          "document": "<p>访问策略</p>",
           "example": "无",
           "member": "CosBucketAccessWay",
           "name": "BucketAccessWay",
@@ -9948,7 +9948,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间Unix时间单位毫秒",
+          "document": "<p>创建时间Unix时间单位毫秒</p>",
           "example": "134423122000",
           "member": "int64",
           "name": "CreateTime",
@@ -9958,7 +9958,7 @@
         },
         {
           "disabled": false,
-          "document": "最后访问时间Unix时间单位毫秒",
+          "document": "<p>最后访问时间Unix时间单位毫秒</p>",
           "example": "121323233000",
           "member": "int64",
           "name": "LastAccessTime",
@@ -9968,7 +9968,7 @@
         },
         {
           "disabled": false,
-          "document": "存储桶id",
+          "document": "<p>存储桶id</p>",
           "example": "1",
           "member": "uint64",
           "name": "BucketId",
@@ -9978,7 +9978,7 @@
         },
         {
           "disabled": false,
-          "document": "0 关闭\n1 开启",
+          "document": "<p>0 关闭<br>1 开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "MonitorStatus",
@@ -9988,12 +9988,52 @@
         },
         {
           "disabled": false,
-          "document": "数据识别扫描信息",
-          "example": "",
+          "document": "<p>数据识别扫描信息</p>",
+          "example": "无",
           "member": "CosAssetDataScanDetail",
           "name": "DataScanInfo",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储桶Az类型</p><p>枚举值：</p><ul><li>MAZ： 多az</li><li>SAZ： 单az</li></ul>",
+          "example": "MAZ",
+          "member": "string",
+          "name": "BucketAzType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储桶存储大小</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "BucketStorageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储桶对象个数</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "BucketObjectCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储桶敏感识别采样率</p><p>取值范围：[0, 1]</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "float",
+          "name": "IdentifySampleRate",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],
@@ -10040,7 +10080,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "APPID",
+          "document": "<p>APPID</p>",
           "example": "212451270",
           "member": "uint64",
           "name": "AppId",
@@ -10050,7 +10090,7 @@
         },
         {
           "disabled": false,
-          "document": "订单状态 0未购买 1正常，2隔离，3销毁，6试用中，7到期",
+          "document": "<p>订单状态 0未购买 1正常，2隔离，3销毁，6试用中，7到期</p>",
           "example": "0",
           "member": "uint64",
           "name": "OrderStatus",
@@ -10060,7 +10100,7 @@
         },
         {
           "disabled": false,
-          "document": "已购对象存储数量",
+          "document": "<p>已购对象存储数量</p>",
           "example": "100",
           "member": "uint64",
           "name": "BucketNum",
@@ -10070,7 +10110,7 @@
         },
         {
           "disabled": false,
-          "document": "支付模式，0-后付费 1-预付费",
+          "document": "<p>支付模式，0-后付费 1-预付费</p>",
           "example": "0",
           "member": "uint64",
           "name": "PayMode",
@@ -10080,7 +10120,7 @@
         },
         {
           "disabled": false,
-          "document": "是否单独购买，1-单独购买，2-被其它账号共享",
+          "document": "<p>是否单独购买，1-单独购买，2-被其它账号共享</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsSelfBuy",
@@ -10090,7 +10130,7 @@
         },
         {
           "disabled": false,
-          "document": "订单开始时间",
+          "document": "<p>订单开始时间</p>",
           "example": "1367645323",
           "member": "string",
           "name": "BeginTime",
@@ -10100,7 +10140,7 @@
         },
         {
           "disabled": false,
-          "document": "订单到期时间",
+          "document": "<p>订单到期时间</p>",
           "example": "1367645323",
           "member": "string",
           "name": "EndTime",
@@ -10110,7 +10150,7 @@
         },
         {
           "disabled": false,
-          "document": "0-用户未设置,1-用户设置自动续费,2-用户设置不自动续费",
+          "document": "<p>0-用户未设置,1-用户设置自动续费,2-用户设置不自动续费</p>",
           "example": "0",
           "member": "uint64",
           "name": "AutoRenew",
@@ -10120,7 +10160,7 @@
         },
         {
           "disabled": false,
-          "document": "订单时长",
+          "document": "<p>订单时长</p>",
           "example": "1",
           "member": "uint64",
           "name": "TimeSpan",
@@ -10130,7 +10170,7 @@
         },
         {
           "disabled": false,
-          "document": "时长单位",
+          "document": "<p>时长单位</p>",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
@@ -10140,7 +10180,7 @@
         },
         {
           "disabled": false,
-          "document": "资源id ",
+          "document": "<p>资源id</p>",
           "example": "casb-audit-1w34r31",
           "member": "string",
           "name": "ResourceId",
@@ -10150,7 +10190,7 @@
         },
         {
           "disabled": false,
-          "document": "公测结束时间",
+          "document": "<p>公测结束时间</p>",
           "example": "1367645323",
           "member": "string",
           "name": "BetaEndTime",
@@ -10160,7 +10200,7 @@
         },
         {
           "disabled": false,
-          "document": "系统当前时间",
+          "document": "<p>系统当前时间</p>",
           "example": "1367645323",
           "member": "string",
           "name": "TimeNow",
@@ -10170,7 +10210,7 @@
         },
         {
           "disabled": false,
-          "document": "是否分享给其它账号，1-是，2-否",
+          "document": "<p>是否分享给其它账号，1-是，2-否</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsShareToOther",
@@ -10180,7 +10220,7 @@
         },
         {
           "disabled": false,
-          "document": "uin",
+          "document": "<p>uin</p>",
           "example": "173526917380",
           "member": "string",
           "name": "Uin",
@@ -10190,7 +10230,7 @@
         },
         {
           "disabled": false,
-          "document": "昵称",
+          "document": "<p>昵称</p>",
           "example": "brain",
           "member": "string",
           "name": "NickName",
@@ -10200,7 +10240,7 @@
         },
         {
           "disabled": false,
-          "document": "共享的bucketIdSet ",
+          "document": "<p>共享的bucketIdSet</p>",
           "example": "无",
           "member": "CosBucketId",
           "name": "BindBucket",
@@ -10210,7 +10250,7 @@
         },
         {
           "disabled": false,
-          "document": "共享的appid",
+          "document": "<p>共享的appid</p>",
           "example": "[1]",
           "member": "uint64",
           "name": "SharedAppIdSet",
@@ -10220,7 +10260,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已经开启后付费",
+          "document": "<p>是否已经开启后付费</p>",
           "example": "0",
           "member": "uint64",
           "name": "PostPayStatus",
@@ -10230,7 +10270,7 @@
         },
         {
           "disabled": false,
-          "document": "0：未做过试用期试用   1 ：做过试用期试用",
+          "document": "<p>0：未做过试用期试用   1 ：做过试用期试用</p>",
           "example": "0",
           "member": "uint64",
           "name": "IsTestUser",
@@ -10240,7 +10280,7 @@
         },
         {
           "disabled": false,
-          "document": "剩余可用数",
+          "document": "<p>剩余可用数</p>",
           "example": "0",
           "member": "uint64",
           "name": "AvailableBucketNum",
@@ -10250,7 +10290,7 @@
         },
         {
           "disabled": false,
-          "document": "已开启的监测存储桶数",
+          "document": "<p>已开启的监测存储桶数</p>",
           "example": "10",
           "member": "uint64",
           "name": "MonitorBucketNum",
@@ -10260,12 +10300,42 @@
         },
         {
           "disabled": false,
-          "document": "总的存储桶数",
+          "document": "<p>总的存储桶数</p>",
           "example": "100",
           "member": "uint64",
           "name": "TotalBucketNum",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>后付费产品开关状态</p>",
+          "example": "[0]",
+          "member": "uint64",
+          "name": "PostProductStatusList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>后付费产品购买状态</p>",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "PostProductBuyStatusList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>新后付费资源id</p>",
+          "example": "cos-audit-910ad184",
+          "member": "string",
+          "name": "NewPostPayResourceId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -10322,7 +10392,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "appid",
+          "document": "<p>appid</p>",
           "example": "17369246190",
           "member": "uint64",
           "name": "AppId",
@@ -10332,7 +10402,7 @@
         },
         {
           "disabled": false,
-          "document": "uin",
+          "document": "<p>uin</p>",
           "example": "17369246190",
           "member": "string",
           "name": "OwnerUin",
@@ -10342,7 +10412,7 @@
         },
         {
           "disabled": false,
-          "document": "昵称",
+          "document": "<p>昵称</p>",
           "example": "brain",
           "member": "string",
           "name": "OwnerNickName",
@@ -10352,7 +10422,7 @@
         },
         {
           "disabled": false,
-          "document": "存储桶数量",
+          "document": "<p>存储桶数量</p>",
           "example": "21",
           "member": "uint64",
           "name": "BucketCount",
@@ -10362,7 +10432,7 @@
         },
         {
           "disabled": false,
-          "document": "0 未购买 1  已单独购买 2 已被共享",
+          "document": "<p>0 未购买 1  已单独购买 2 已被共享</p>",
           "example": "0",
           "member": "uint64",
           "name": "BuyStatus",
@@ -10372,7 +10442,7 @@
         },
         {
           "disabled": false,
-          "document": "共享账号appid",
+          "document": "<p>共享账号appid</p>",
           "example": "17369246190",
           "member": "uint64",
           "name": "ShareFromAppId",
@@ -10382,7 +10452,7 @@
         },
         {
           "disabled": false,
-          "document": "共享账号uin",
+          "document": "<p>共享账号uin</p>",
           "example": "17369246190",
           "member": "string",
           "name": "ShareFromUin",
@@ -10392,7 +10462,7 @@
         },
         {
           "disabled": false,
-          "document": "共享账号昵称",
+          "document": "<p>共享账号昵称</p>",
           "example": "brain",
           "member": "string",
           "name": "ShareFromNickName",
@@ -10402,7 +10472,7 @@
         },
         {
           "disabled": false,
-          "document": "监控的存储桶数",
+          "document": "<p>监控的存储桶数</p>",
           "example": "100",
           "member": "uint64",
           "name": "MonitorBucketCount",
@@ -10412,12 +10482,52 @@
         },
         {
           "disabled": false,
-          "document": "0 关闭 1 开启",
+          "document": "<p>0 关闭 1 开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsAutoMonitor",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用白名单日志功能</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "LogFeatureWhitelist",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否存在新的后付费订单</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsHaveNewPostOrder",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否存在旧后付费订单</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsHaveOldPostOrder",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>后付费产品列表</p>",
+          "example": "[0]",
+          "member": "int64",
+          "name": "PostProductList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -12359,7 +12469,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>1: 敏感数据识别 2:恶意文件扫描</p>",
+          "document": "<p>1: 敏感数据识别 2:恶意文件扫描 3:批量扫描敏感数据</p>",
           "example": "1",
           "member": "int64",
           "name": "TaskType",
@@ -12368,7 +12478,7 @@
         },
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-1edsada\"]",
           "member": "string",
           "name": "MemberId",
@@ -12383,6 +12493,33 @@
           "name": "BucketSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务参数</p>",
+          "example": "{\"SampleRateType\":\"total\",SampleRate:0.2}",
+          "member": "string",
+          "name": "TaskArgs",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否全部扫描</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsScanAll",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描时需要剔除的存储桶</p>",
+          "example": "[\"auto-test-251002343\"]",
+          "member": "string",
+          "name": "DeleteBucketSet",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12390,6 +12527,16 @@
     "CreateCosObjectScanTaskResponse": {
       "document": "CreateCosObjectScanTask返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务id</p>",
+          "example": "task-8ee7fc4d",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -12852,7 +12999,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -12861,7 +13008,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级(0-安全,1-低风险,2-中风险,3-高风险,-1-全部)",
+          "document": "<p>风险等级(0-安全,1-低风险,2-中风险,3-高风险,-1-全部)</p>",
           "example": "0",
           "member": "int64",
           "name": "DangerLevel",
@@ -12870,7 +13017,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称",
+          "document": "<p>数据库名称</p>",
           "example": "测试环境数据库",
           "member": "string",
           "name": "DbName",
@@ -12879,7 +13026,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库端口",
+          "document": "<p>数据库端口</p>",
           "example": "3306",
           "member": "int64",
           "name": "DbPort",
@@ -12888,7 +13035,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库 IP",
+          "document": "<p>数据库 IP</p>",
           "example": "10.10.111.2",
           "member": "string",
           "name": "DbIp",
@@ -12897,7 +13044,7 @@
         },
         {
           "disabled": false,
-          "document": "资产 ID",
+          "document": "<p>资产 ID</p>",
           "example": "10001",
           "member": "int64",
           "name": "AssetsId",
@@ -12906,7 +13053,7 @@
         },
         {
           "disabled": false,
-          "document": "会话 ID",
+          "document": "<p>会话 ID</p>",
           "example": "1sdmkqweq",
           "member": "string",
           "name": "SessionId",
@@ -12915,7 +13062,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端 IP",
+          "document": "<p>客户端 IP</p>",
           "example": "10.12.33.12",
           "member": "string",
           "name": "ClientSideIp",
@@ -12924,7 +13071,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "1730429489",
           "member": "int64",
           "name": "EndTime",
@@ -12933,7 +13080,7 @@
         },
         {
           "disabled": false,
-          "document": "命中规则",
+          "document": "<p>命中规则</p>",
           "example": "1001",
           "member": "int64",
           "name": "HitRule",
@@ -12942,7 +13089,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "1710429489",
           "member": "int64",
           "name": "StartTime",
@@ -12951,7 +13098,7 @@
         },
         {
           "disabled": false,
-          "document": "模糊查询",
+          "document": "<p>模糊查询</p>",
           "example": "select",
           "member": "string",
           "name": "FuzzySearch",
@@ -12960,7 +13107,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "root",
           "member": "string",
           "name": "UserName",
@@ -12969,7 +13116,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端",
+          "document": "<p>客户端</p>",
           "example": "Proxy",
           "member": "string",
           "name": "ClientName",
@@ -12978,7 +13125,7 @@
         },
         {
           "disabled": false,
-          "document": "流量来源，取值 Agent/Proxy/空；传Agent会返回Agent的日志，传Proxy会返回Proxy日志，两都都传或不传则返回所有",
+          "document": "<p>流量来源，取值 Agent/Proxy/空；传Agent会返回Agent的日志，传Proxy会返回Proxy日志，两都传或不传则返回所有</p>",
           "example": "[\"Agent\"]",
           "member": "string",
           "name": "SourceTypes",
@@ -12987,7 +13134,7 @@
         },
         {
           "disabled": false,
-          "document": "表名，长度限制64，多个表名查询的话可以用空格连接\t",
+          "document": "<p>表名，长度限制64，多个表名查询的话可以用空格连接</p>",
           "example": "table_1",
           "member": "string",
           "name": "TableName",
@@ -12996,7 +13143,7 @@
         },
         {
           "disabled": false,
-          "document": "字段名，长度限制64，多个字段名查询的话可以用空格连接",
+          "document": "<p>字段名，长度限制64，多个字段名查询的话可以用空格连接</p>",
           "example": "field_1",
           "member": "string",
           "name": "FieldName",
@@ -13005,7 +13152,7 @@
         },
         {
           "disabled": false,
-          "document": "SQL 主要类型，DDL, DML, DCL, TCL\t",
+          "document": "<p>SQL 主要类型，DDL, DML, DCL, TCL</p>",
           "example": "[\"DML\"]",
           "member": "string",
           "name": "SqlMainTypes",
@@ -13014,8 +13161,8 @@
         },
         {
           "disabled": false,
-          "document": "操作类型\t",
-          "example": "select/update等\t",
+          "document": "<p>操作类型</p>",
+          "example": "select/update等",
           "member": "string",
           "name": "SqlType",
           "required": false,
@@ -13023,7 +13170,7 @@
         },
         {
           "disabled": false,
-          "document": "影响行数最小值\t",
+          "document": "<p>影响行数最小值</p>",
           "example": "1",
           "member": "int64",
           "name": "RowNumMin",
@@ -13032,7 +13179,7 @@
         },
         {
           "disabled": false,
-          "document": "影响行数最大值\t",
+          "document": "<p>影响行数最大值</p>",
           "example": "100",
           "member": "int64",
           "name": "RowNumMax",
@@ -13041,7 +13188,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库类型\t",
+          "document": "<p>数据库类型</p>",
           "example": "[\"mysql\"]",
           "member": "string",
           "name": "DbTypes",
@@ -13050,7 +13197,7 @@
         },
         {
           "disabled": false,
-          "document": "返回码\t",
+          "document": "<p>返回码</p>",
           "example": "0",
           "member": "int64",
           "name": "RetNo",
@@ -13059,8 +13206,8 @@
         },
         {
           "disabled": false,
-          "document": "客户端工具\t",
-          "example": "redis-cli\t",
+          "document": "<p>客户端工具</p>",
+          "example": "redis-cli",
           "member": "string",
           "name": "ClientDriverName",
           "required": false,
@@ -13068,7 +13215,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端端口\t",
+          "document": "<p>客户端端口</p>",
           "example": "65535",
           "member": "int64",
           "name": "ClientPort",
@@ -13077,7 +13224,7 @@
         },
         {
           "disabled": false,
-          "document": "审计日志 ID",
+          "document": "<p>审计日志 ID</p>",
           "example": "qweaczrq",
           "member": "string",
           "name": "LogId",
@@ -13086,7 +13233,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级数组(0-安全,1-低风险,2-中风险,3-高风险), 如果要全部，则需要将所有的值都传入。如果为空，则会参考：DangerLevel 入参",
+          "document": "<p>风险等级数组(0-安全,1-低风险,2-中风险,3-高风险), 如果要全部，则需要将所有的值都传入。如果为空，则会参考：DangerLevel 入参</p>",
           "example": "[11]",
           "member": "int64",
           "name": "DangerLevels",
@@ -13095,7 +13242,7 @@
         },
         {
           "disabled": false,
-          "document": "字段分类",
+          "document": "<p>字段分类</p>",
           "example": "个人身份信息/身份证",
           "member": "string",
           "name": "SensitiveCategoryRule",
@@ -13104,7 +13251,7 @@
         },
         {
           "disabled": false,
-          "document": "字段分级",
+          "document": "<p>字段分级</p>",
           "example": "高",
           "member": "string",
           "name": "SensitiveLevelRisk",
@@ -13113,7 +13260,7 @@
         },
         {
           "disabled": false,
-          "document": "事务Id",
+          "document": "<p>事务Id</p>",
           "example": "1021027",
           "member": "int64",
           "name": "TrxId",
@@ -13122,7 +13269,7 @@
         },
         {
           "disabled": false,
-          "document": "clientMac",
+          "document": "<p>clientMac</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "ClientMac",

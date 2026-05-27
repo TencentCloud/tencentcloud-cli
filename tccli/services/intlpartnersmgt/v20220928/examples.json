@@ -172,6 +172,22 @@
         "title": "查询子客信息"
       }
     ],
+    "DescribeCustomerOwnCostExplorerFilter": [
+      {
+        "document": "用于查询成本分析接口筛选项列表",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerOwnCostExplorerFilter\n<公共请求参数>\n\n{\n    \"StartTime\": \"2024-09-01 00:00:00\",\n    \"EndTime\": \"2024-09-12 23:59:59\",\n    \"PeriodType\": \"month\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ActionType\": [\n                {\n                    \"Key\": \"prepay_return\",\n                    \"Value\": \" Monthly subscription refund\"\n                }\n            ],\n            \"Business\": [\n                {\n                    \"Key\": \"p_cbs\",\n                    \"Value\": \"cloud block storage\"\n                }\n            ],\n            \"OwnerUin\": [\n                {\n                    \"Key\": \"80000*******\",\n                    \"Value\": \"**********-tes****uin (800000******)\"\n                }\n            ],\n            \"PayMode\": [\n                {\n                    \"Key\": \"prePay\",\n                    \"Value\": \"Monthly subscription\"\n                }\n            ],\n            \"PayerUin\": [\n                {\n                    \"Key\": \"80000*******\",\n                    \"Value\": \"***(80000*******)\"\n                }\n            ],\n            \"Project\": [\n                {\n                    \"Key\": \"default\",\n                    \"Value\": \"default\"\n                }\n            ],\n            \"Region\": [\n                {\n                    \"Key\": \"1\",\n                    \"Value\": \"South China (Guangzhou)\"\n                }\n            ],\n            \"Zone\": [\n                {\n                    \"Key\": \"100002\",\n                    \"Value\": \"Guangzhou Zone 2\"\n                }\n            ]\n        },\n        \"RequestId\": \"79e94658-fb30-40e4-be16-3edfd0391b35\"\n    }\n}",
+        "title": "DescribeCustomerOwnCostExplorerFilter"
+      }
+    ],
+    "DescribeCustomerOwnCostExplorerSummary": [
+      {
+        "document": "用于子客查询成本分析数据",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerOwnCostExplorerSummary\n<公共请求参数>\n\n{\n    \"Dimension\": \"Default\",\n    \"FeeType\": \"originalCost\",\n    \"BillType\": 1,\n    \"StartTime\": \"2024-09-01 00:00:00\",\n    \"EndTime\": \"2024-09-12 23:59:59\",\n    \"PeriodType\": \"day\",\n    \"Page\": 1,\n    \"PageSize\": 10,\n    \"Filter\": {\n        \"BusinessIn\": [\n            \"p_cbs\"\n        ],\n        \"ProductIn\": [\n            \"sp_cbs_premium\"\n        ],\n        \"RegionIn\": [\n            \"1\"\n        ],\n        \"ActionTypeIn\": [\n            \"pre_purchase\"\n        ],\n        \"PayModeIn\": [\n            \"prePay\"\n        ],\n        \"ProjectIn\": [\n            \"default\"\n        ],\n        \"PayerUinIn\": [\n            \"8000********\"\n        ],\n        \"ZoneIn\": [\n            \"100002\"\n        ],\n        \"OwnerUinIn\": [\n            \"80000*******\"\n        ],\n        \"ResourceIn\": [\n            \"disk-f*******\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Detail\": [\n            {\n                \"Code\": \"\",\n                \"ItemDetail\": [\n                    {\n                        \"Cost\": \"0.7\",\n                        \"Period\": \"2024-09-09\"\n                    }\n                ],\n                \"Name\": \"default\",\n                \"SumCost\": \"0.7\"\n            }\n        ],\n        \"DimensionName\": \"Default\",\n        \"TotalDetail\": {\n            \"PeriodItemDetail\": [\n                {\n                    \"Cost\": \"0.7\",\n                    \"Period\": \"2024-09-09\"\n                }\n            ],\n            \"SumCost\": \"0.7\",\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"af9d9375-bc8e-4bf5-ad4c-7a83033f4fc3\"\n    }\n}",
+        "title": "DescribeCustomerOwnCostExplorerSummary"
+      }
+    ],
     "DescribeCustomerOwnVoucherList": [
       {
         "document": "查询成功",
