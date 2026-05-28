@@ -514,6 +514,15 @@
           "name": "EmotionIntensity",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外参数</p>",
+          "example": "{\"audio_setting\":{\"channel_num\":1,\"format\":\"mp3\",\"sample_rate\":24000},\"model\":\"speech-2.6-hd\",\"subtitle_enable\":true,\"subtitle_type\":\"word\",\"voice_setting\":{\"emotion\":\"happy\",\"pitch\":0,\"speed\":1,\"voice_id\":\"male-qn-qingse\",\"vol\":1}}",
+          "member": "string",
+          "name": "ExtraParams",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -92,11 +92,11 @@
       "status": "online"
     },
     "CreateAMLWebhook": {
-      "document": "创建Webhook配置",
+      "document": "UpdateAMLWebhook,ListAMLWebhooks,DeleteAMLWebhook,CreateAMLWebhook的接口修改名称，替换AML为EKYC,即修改为UpdateEKYCWebhook,ListEKYCWebhooks,DeleteEKYCWebhook,CreateEKYCWebhook新增上线\n\n创建Webhook配置",
       "input": "CreateAMLWebhookRequest",
       "name": "创建Webhook配置",
       "output": "CreateAMLWebhookResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateUploadUrl": {
       "document": "生成一个临时的UploadUrl用于上传资源文件，客户需要使用HTTP PUT方法上传，上传完成后将ResourceUrl传给TargetAction对应接口完成资源传递（具体字段由使用场景确定）。\n数据存储于Region参数对应地域的腾讯云COS Bucket，存储有效期2小时。",
@@ -106,11 +106,11 @@
       "status": "online"
     },
     "DeleteAMLWebhook": {
-      "document": "删除Webhook配置",
+      "document": "UpdateAMLWebhook,ListAMLWebhooks,DeleteAMLWebhook,CreateAMLWebhook的接口修改名称，替换AML为EKYC,即修改为UpdateEKYCWebhook,ListEKYCWebhooks,DeleteEKYCWebhook,CreateEKYCWebhook新增上线\n\n删除Webhook配置",
       "input": "DeleteAMLWebhookRequest",
       "name": "删除Webhook配置",
       "output": "DeleteAMLWebhookResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteSDKRecord": {
       "document": "此接口提供给客户删除SDK验证记录，传入token，删除与此token相关的所有验证记录信息。此接口请求时的部分会进行排队处理，如一次请求删除的验证记录较多，则记录的删除时间可能存在时延。",
@@ -330,11 +330,11 @@
       "status": "online"
     },
     "ListAMLWebhooks": {
-      "document": "Webhook 配置列表",
+      "document": "UpdateAMLWebhook,ListAMLWebhooks,DeleteAMLWebhook,CreateAMLWebhook的接口修改名称，替换AML为EKYC,即修改为UpdateEKYCWebhook,ListEKYCWebhooks,DeleteEKYCWebhook,CreateEKYCWebhook新增上线\n\nWebhook 配置列表",
       "input": "ListAMLWebhooksRequest",
       "name": "查询Webhook配置列表",
       "output": "ListAMLWebhooksResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "LivenessCompare": {
       "document": "传入视频和照片，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。",
@@ -428,11 +428,11 @@
       "status": "online"
     },
     "UpdateAMLWebhook": {
-      "document": "更新Webhook配置",
+      "document": "UpdateAMLWebhook,ListAMLWebhooks,DeleteAMLWebhook,CreateAMLWebhook的接口修改名称，替换AML为EKYC,即修改为UpdateEKYCWebhook,ListEKYCWebhooks,DeleteEKYCWebhook,CreateEKYCWebhook新增上线\n\n更新Webhook配置",
       "input": "UpdateAMLWebhookRequest",
       "name": "更新Webhook配置",
       "output": "UpdateAMLWebhookResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "VideoLivenessCompare": {
       "document": "传入视频和照片地址，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。",

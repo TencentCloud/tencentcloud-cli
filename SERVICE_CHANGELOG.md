@@ -1,14 +1,10 @@
-# Release 3.0.1433.1
+# Release 3.0.1434.1
 
-## 负载均衡(clb) 版本：2023-04-17
+## 云防火墙(cfw) 版本：2019-09-04
 
+### 第 96 次发布
 
-
-## 负载均衡(clb) 版本：2018-03-17
-
-### 第 84 次发布
-
-发布时间：2026-05-28 01:22:19
+发布时间：2026-05-29 01:21:35
 
 本次发布包含了以下内容：
 
@@ -16,122 +12,37 @@
 
 修改数据结构：
 
-* [TargetGroupInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#TargetGroupInfo)
+* [CcnAssociatedInstance](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CcnAssociatedInstance)
 
-	* 新增成员：SnatEnable
+	* 新增成员：IsCrossInstance
 
-
-
-
-## 云安全一体化平台(csip) 版本：2022-11-21
-
-### 第 77 次发布
-
-发布时间：2026-05-28 01:26:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateCosObjectScanTask](http://document.tencentcloudapi.woa.com/document/product/1726/90315)
-
-	* 新增入参：TaskArgs, IsScanAll, DeleteBucketSet
-
-	* 新增出参：TaskId
-
-
-修改数据结构：
-
-* [CosAssetInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosAssetInfo)
-
-	* 新增成员：BucketAzType, BucketStorageSize, BucketObjectCount, IdentifySampleRate
-
-* [CosAuditPayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosAuditPayInfo)
-
-	* 新增成员：PostProductStatusList, PostProductBuyStatusList, NewPostPayResourceId
-
-* [CosBucketBillingInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CosBucketBillingInfo)
-
-	* 新增成员：LogFeatureWhitelist, IsHaveNewPostOrder, IsHaveOldPostOrder, PostProductList
-
-
-
-
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
-
-### 第 170 次发布
-
-发布时间：2026-05-28 01:31:57
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [AddServerlessRoInstances](http://document.tencentcloudapi.woa.com/document/product/1003/90396)
-* [DescribeSQLExecutionPlan](http://document.tencentcloudapi.woa.com/document/product/1003/90397)
-
-新增数据结构：
-
-* [ExecutionPlanDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ExecutionPlanDetail)
-* [ExplainRow](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ExplainRow)
 
 
 
 ## 人脸核身(faceid) 版本：2018-03-01
 
-### 第 100 次发布
+### 第 101 次发布
 
-发布时间：2026-05-28 01:44:42
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ProcessAMLCallback](http://document.tencentcloudapi.woa.com/document/product/1007/90150)
-
-	* 新增出参：Description, Result
-
-* [ScreenAMLName](http://document.tencentcloudapi.woa.com/document/product/1007/90250)
-
-	* 新增出参：Result, Description
-
-
-
-
-## 高性能应用服务(hai) 版本：2023-08-12
-
-### 第 29 次发布
-
-发布时间：2026-05-28 01:47:38
+发布时间：2026-05-29 01:48:35
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+<font color="#dd0000">**预下线接口**：</font>
 
-* [ServiceDetail](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ServiceDetail)
-
-	* 新增成员：SecurityType, RoleComputeSet, TargetReplicas
-
-* [TemplateDetail](http://document.tencentcloudapi.woa.com/document/product/1750/82570#TemplateDetail)
-
-	* 新增成员：RoleComputeSet
+* CreateAMLWebhook
+* DeleteAMLWebhook
+* ListAMLWebhooks
+* UpdateAMLWebhook
 
 
 
+## 云开发 CloudBase(tcb) 版本：2018-06-08
 
-## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+### 第 47 次发布
 
-### 第 45 次发布
-
-发布时间：2026-05-28 01:50:59
+发布时间：2026-05-29 02:23:56
 
 本次发布包含了以下内容：
 
@@ -139,25 +50,73 @@
 
 新增接口：
 
-* [DescribeCustomerOwnCostExplorerFilter](http://document.tencentcloudapi.woa.com/document/product/1724/90400)
-* [DescribeCustomerOwnCostExplorerSummary](http://document.tencentcloudapi.woa.com/document/product/1724/90399)
+* [DescribePGUserMigration](http://document.tencentcloudapi.woa.com/document/product/876/90408)
+* [DescribeResourcePermission](http://document.tencentcloudapi.woa.com/document/product/876/90402)
+* [ListPGUserMigrations](http://document.tencentcloudapi.woa.com/document/product/876/90407)
+* [ModifyResourcePermission](http://document.tencentcloudapi.woa.com/document/product/876/90401)
+* [PreviewPGUserMigrations](http://document.tencentcloudapi.woa.com/document/product/876/90406)
+* [PushPGUserMigrations](http://document.tencentcloudapi.woa.com/document/product/876/90405)
+* [RepairPGUserMigrationHistory](http://document.tencentcloudapi.woa.com/document/product/876/90404)
+* [RollbackPGUserMigrations](http://document.tencentcloudapi.woa.com/document/product/876/90403)
 
 新增数据结构：
 
-* [BillQueryFilterMsg](http://document.tencentcloudapi.woa.com/document/product/1724/80754#BillQueryFilterMsg)
-* [CostAnalyzeDimensionData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#CostAnalyzeDimensionData)
-* [CostAnalyzeFilter](http://document.tencentcloudapi.woa.com/document/product/1724/80754#CostAnalyzeFilter)
-* [CostAnalyzeFilterDetail](http://document.tencentcloudapi.woa.com/document/product/1724/80754#CostAnalyzeFilterDetail)
-* [DimensionPeriodData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#DimensionPeriodData)
-* [PeriodItemDetail](http://document.tencentcloudapi.woa.com/document/product/1724/80754#PeriodItemDetail)
+* [DescribeResourcePermissionResult](http://document.tencentcloudapi.woa.com/document/product/876/34822#DescribeResourcePermissionResult)
+* [MigrationConflict](http://document.tencentcloudapi.woa.com/document/product/876/34822#MigrationConflict)
+* [MigrationInput](http://document.tencentcloudapi.woa.com/document/product/876/34822#MigrationInput)
+* [MigrationPlanItem](http://document.tencentcloudapi.woa.com/document/product/876/34822#MigrationPlanItem)
+* [MigrationSummary](http://document.tencentcloudapi.woa.com/document/product/876/34822#MigrationSummary)
+* [ModifyResourcePermissionResult](http://document.tencentcloudapi.woa.com/document/product/876/34822#ModifyResourcePermissionResult)
+* [ResourcePermission](http://document.tencentcloudapi.woa.com/document/product/876/34822#ResourcePermission)
 
 
 
-## SSL 证书(ssl) 版本：2019-12-05
+## 高性能计算平台(thpc) 版本：2023-03-21
 
-### 第 97 次发布
+### 第 30 次发布
 
-发布时间：2026-05-28 02:12:48
+发布时间：2026-05-29 02:35:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [CosOption](http://document.tencentcloudapi.woa.com/document/product/1701/80209#CosOption)
+
+修改数据结构：
+
+* [GooseFSOption](http://document.tencentcloudapi.woa.com/document/product/1701/80209#GooseFSOption)
+
+	* 新增成员：FileSystemId
+
+	* <font color="#dd0000">**修改成员**：</font>Masters
+
+* [StorageOption](http://document.tencentcloudapi.woa.com/document/product/1701/80209#StorageOption)
+
+	* 新增成员：CosOptions
+
+
+
+
+## 高性能计算平台(thpc) 版本：2022-04-01
+
+
+
+## 高性能计算平台(thpc) 版本：2021-11-09
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 127 次发布
+
+发布时间：2026-05-29 02:38:14
 
 本次发布包含了以下内容：
 
@@ -165,52 +124,78 @@
 
 修改接口：
 
-* [DescribeCertificateDetail](http://document.tencentcloudapi.woa.com/document/product/400/41673)
+* [CreateClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76934)
 
-	* 新增出参：HostingStatus
-
-
+	* 新增入参：SubnetAllocationPolicy, AgentPlugin
 
 
-## 云开发 CloudBase(tcb) 版本：2018-06-08
+新增数据结构：
 
-### 第 46 次发布
+* [AgentPluginConfig](http://document.tencentcloudapi.woa.com/document/product/457/31866#AgentPluginConfig)
 
-发布时间：2026-05-28 02:15:05
+
+
+## 语音合成(tts) 版本：2019-08-23
+
+### 第 13 次发布
+
+发布时间：2026-05-29 02:44:20
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增数据结构：
+修改接口：
 
-* [SMSProviderTemplateConfig](http://document.tencentcloudapi.woa.com/document/product/876/34822#SMSProviderTemplateConfig)
-* [SMSTemplateParams](http://document.tencentcloudapi.woa.com/document/product/876/34822#SMSTemplateParams)
+* [TextToVoice](http://document.tencentcloudapi.woa.com/document/product/1073/37995)
 
-修改数据结构：
-
-* [VerificationConfig](http://document.tencentcloudapi.woa.com/document/product/876/34822#VerificationConfig)
-
-	* 新增成员：TemplateProvider
+	* 新增入参：ExtraParams
 
 
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2025-10-10
 
-### 第 29 次发布
+### 第 30 次发布
 
-发布时间：2026-05-28 02:36:49
+发布时间：2026-05-29 02:51:03
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+修改接口：
+
+* [CreateLabels](http://document.tencentcloudapi.woa.com/document/product/1607/89525)
+
+	* 新增入参：Shared
+
+* [DeleteLabels](http://document.tencentcloudapi.woa.com/document/product/1607/89517)
+
+	* 新增入参：Shared
+
+* [ListLabels](http://document.tencentcloudapi.woa.com/document/product/1607/89344)
+
+	* 新增入参：Shared
+
+* [UpdateLabels](http://document.tencentcloudapi.woa.com/document/product/1607/89480)
+
+	* 新增入参：Shared
+
+
+新增数据结构：
+
+* [FeatureJoinLookup](http://document.tencentcloudapi.woa.com/document/product/1607/88970#FeatureJoinLookup)
+
 修改数据结构：
 
-* [FileNode](http://document.tencentcloudapi.woa.com/document/product/1607/88970#FileNode)
+* [ExperimentDetail](http://document.tencentcloudapi.woa.com/document/product/1607/88970#ExperimentDetail)
 
-	* 新增成员：FileSource
+	* 新增成员：FeatureLookup
+
+* [TrainingData](http://document.tencentcloudapi.woa.com/document/product/1607/88970#TrainingData)
+
+	* 新增成员：FeatureLookup
 
 
 

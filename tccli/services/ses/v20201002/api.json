@@ -293,7 +293,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "发送时间",
+          "document": "<p>发送时间</p>",
           "example": "2025-10-01 11:11:11",
           "member": "string",
           "name": "DeliverTime",
@@ -304,7 +304,7 @@
         },
         {
           "disabled": false,
-          "document": "发信地址",
+          "document": "<p>发信地址</p>",
           "example": "example@qcloudmail.com",
           "member": "string",
           "name": "OriginalMailFrom",
@@ -315,7 +315,7 @@
         },
         {
           "disabled": false,
-          "document": "收信地址",
+          "document": "<p>收信地址</p>",
           "example": "example@gmail.com",
           "member": "string",
           "name": "OriginalRcptTo",
@@ -326,7 +326,7 @@
         },
         {
           "disabled": false,
-          "document": "发信域名",
+          "document": "<p>发信域名</p>",
           "example": "qcloudmail.com",
           "member": "string",
           "name": "FromDomain",
@@ -337,7 +337,7 @@
         },
         {
           "disabled": false,
-          "document": "投诉时间",
+          "document": "<p>投诉时间</p>",
           "example": "2025-10-01 11:11:11",
           "member": "string",
           "name": "ComplainTime",
@@ -348,7 +348,7 @@
         },
         {
           "disabled": false,
-          "document": "收信域名",
+          "document": "<p>收信域名</p>",
           "example": "gmail.com",
           "member": "string",
           "name": "Mta",
@@ -359,7 +359,7 @@
         },
         {
           "disabled": false,
-          "document": "来源ip",
+          "document": "<p>来源ip</p>",
           "example": "198.0.0.1",
           "member": "string",
           "name": "SourceIp",
@@ -370,7 +370,7 @@
         },
         {
           "disabled": false,
-          "document": "数据时间",
+          "document": "<p>数据时间</p>",
           "example": "2025-10-01 11:11:11",
           "member": "string",
           "name": "InsertTime",
@@ -381,7 +381,7 @@
         },
         {
           "disabled": false,
-          "document": "模板id",
+          "document": "<p>模板ID</p>",
           "example": "100",
           "member": "string",
           "name": "TemplateId",
@@ -392,7 +392,7 @@
         },
         {
           "disabled": false,
-          "document": "bulkId",
+          "document": "<p>bulkId</p>",
           "example": "qcloudapi-xxx-xxx",
           "member": "string",
           "name": "BulkId",
@@ -403,7 +403,7 @@
         },
         {
           "disabled": false,
-          "document": "邮件Message-Id",
+          "document": "<p>邮件Message-Id</p>",
           "example": "xxx-xxx@example.com",
           "member": "string",
           "name": "MessageId",
@@ -414,7 +414,7 @@
         },
         {
           "disabled": false,
-          "document": "投诉时间",
+          "document": "<p>投诉时间</p>",
           "example": "2025-10-01 11:11:11",
           "member": "string",
           "name": "AbuseTime",
@@ -425,7 +425,7 @@
         },
         {
           "disabled": false,
-          "document": "邮件主题",
+          "document": "<p>邮件主题</p>",
           "example": "abuse for example.com",
           "member": "string",
           "name": "Subject",

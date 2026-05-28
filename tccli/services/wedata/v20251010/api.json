@@ -19003,6 +19003,15 @@
           "name": "Source",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用标签接口时统一传 true（页面展示的业务标签 + 脱敏标签均通过此入口创建）；不传或 false 仅用于内部历史兼容场景，业务侧不应使用。",
+          "example": "true",
+          "member": "bool",
+          "name": "Shared",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -25398,6 +25407,15 @@
           "name": "Operator",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用标签接口时统一传 true；不传或 false 仅用于内部历史兼容场景，业务侧不应使用。",
+          "example": "true",
+          "member": "bool",
+          "name": "Shared",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -29200,6 +29218,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联表详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FeatureJoinLookup",
+          "name": "FeatureLookup",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -29714,6 +29742,56 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FeatureJoinLookup": {
+      "document": "特征表关联信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>关联表名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DataLakeCatalog.gem_test.test",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联主键</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"id\"]",
+          "member": "string",
+          "name": "LookupKey",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联时间类型字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "time",
+          "member": "string",
+          "name": "TimestampLookupKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>训练指定特征字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"name\"]",
+          "member": "string",
+          "name": "FeatureNames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -55277,6 +55355,15 @@
           "name": "PolicyBindStatus",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "调用标签接口时统一传 true（与页面展示行为对齐）；不传或 false 仅用于内部历史兼容场景，业务侧不应使用。",
+          "example": "true",
+          "member": "bool",
+          "name": "Shared",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -80991,7 +81078,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "catalog name",
+          "document": "<p>catalog name</p>",
           "example": "catalog_example",
           "member": "string",
           "name": "Catalog",
@@ -81000,7 +81087,7 @@
         },
         {
           "disabled": false,
-          "document": "schema name",
+          "document": "<p>schema name</p>",
           "example": "schema_example",
           "member": "string",
           "name": "Schema",
@@ -81009,7 +81096,7 @@
         },
         {
           "disabled": false,
-          "document": "table name",
+          "document": "<p>table name</p>",
           "example": "table_example",
           "member": "string",
           "name": "Table",
@@ -81018,7 +81105,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列（必填）\n分类：标签列\n回归：结果列\n时序预测：时间列",
+          "document": "<p>标签列（必填）<br>分类：标签列<br>回归：结果列<br>时序预测：时间列</p>",
           "example": "无",
           "member": "Label",
           "name": "TargetLabel",
@@ -81027,7 +81114,7 @@
         },
         {
           "disabled": false,
-          "document": "忽略列",
+          "document": "<p>忽略列</p>",
           "example": "无",
           "member": "Label",
           "name": "DiscardedLabels",
@@ -81036,7 +81123,7 @@
         },
         {
           "disabled": false,
-          "document": "时序预测 预测列",
+          "document": "<p>时序预测 预测列</p>",
           "example": "无",
           "member": "Label",
           "name": "PredictionLabel",
@@ -81045,7 +81132,7 @@
         },
         {
           "disabled": false,
-          "document": "时序预测 时间间隔单位",
+          "document": "<p>时序预测 时间间隔单位</p>",
           "example": "7",
           "member": "string",
           "name": "EvaluationInterval",
@@ -81054,7 +81141,7 @@
         },
         {
           "disabled": false,
-          "document": "时序预测 时序步长",
+          "document": "<p>时序预测 时序步长</p>",
           "example": "7day",
           "member": "string",
           "name": "ForecastHorizon",
@@ -81063,7 +81150,7 @@
         },
         {
           "disabled": false,
-          "document": "结果集Catalog名称",
+          "document": "<p>结果集Catalog名称</p>",
           "example": "storagecatalog_example",
           "member": "string",
           "name": "StorageCatalog",
@@ -81072,7 +81159,7 @@
         },
         {
           "disabled": false,
-          "document": "结果集Schema名称",
+          "document": "<p>结果集Schema名称</p>",
           "example": "storageschema_example",
           "member": "string",
           "name": "StorageSchema",
@@ -81081,7 +81168,7 @@
         },
         {
           "disabled": false,
-          "document": "结果集Table名称",
+          "document": "<p>结果集Table名称</p>",
           "example": "storagetable_example",
           "member": "string",
           "name": "StorageTable",
@@ -81090,10 +81177,19 @@
         },
         {
           "disabled": false,
-          "document": "选择列",
+          "document": "<p>选择列</p>",
           "example": "无",
           "member": "Label",
           "name": "SelectedLabels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联表信息</p>",
+          "example": "无",
+          "member": "FeatureJoinLookup",
+          "name": "FeatureLookup",
           "required": false,
           "type": "list"
         }
@@ -85219,6 +85315,15 @@
           "name": "Labels",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "调用标签接口时统一传 true；不传或 false 仅用于内部历史兼容场景，业务侧不应使用。",
+          "example": "true",
+          "member": "bool",
+          "name": "Shared",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
