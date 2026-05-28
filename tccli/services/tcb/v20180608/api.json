@@ -336,11 +336,25 @@
       "output": "DescribeMySQLTaskStatusResponse",
       "status": "online"
     },
+    "DescribePGUserMigration": {
+      "document": "本接口（DescribePGUserMigration）用于查询目标环境指定 migration 详情。",
+      "input": "DescribePGUserMigrationRequest",
+      "name": "查看指定环境单条 migration 详情",
+      "output": "DescribePGUserMigrationResponse",
+      "status": "online"
+    },
     "DescribeQuotaData": {
       "document": "查询指定指标的配额使用量",
       "input": "DescribeQuotaDataRequest",
       "name": "查询环境的配额使用量",
       "output": "DescribeQuotaDataResponse",
+      "status": "online"
+    },
+    "DescribeResourcePermission": {
+      "document": "查询资源基础权限。\n\n查询云函数、云存储和数据库表的基础权限配置。支持单个资源查询和批量查询。",
+      "input": "DescribeResourcePermissionRequest",
+      "name": "查询资源基础权限",
+      "output": "DescribeResourcePermissionResponse",
       "status": "online"
     },
     "DescribeSafeRule": {
@@ -434,6 +448,13 @@
       "output": "InquireVmPriceResponse",
       "status": "online"
     },
+    "ListPGUserMigrations": {
+      "document": "本接口（ListPGUserMigrations）用于查询目标环境已应用的用户 migration 列表。",
+      "input": "ListPGUserMigrationsRequest",
+      "name": "查询目标环境已应用的 Migration",
+      "output": "ListPGUserMigrationsResponse",
+      "status": "online"
+    },
     "ListTables": {
       "document": "本接口(ListTables)用于查询文档型数据库所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等。\n\n该接口跟 [DescribeTables](https://cloud.tencent.com/document/api/876/127962) 接口功能一致，后续该接口可能会下线，请使用 [DescribeTable](https://cloud.tencent.com/document/api/876/127962)接口。",
       "input": "ListTablesRequest",
@@ -497,6 +518,13 @@
       "output": "ModifyProviderResponse",
       "status": "online"
     },
+    "ModifyResourcePermission": {
+      "document": "修改资源基础权限。\n\n修改云函数、云存储和数据库表的基础权限配置。支持预定义权限级别和自定义安全规则两种方式配置资源访问权限。",
+      "input": "ModifyResourcePermissionRequest",
+      "name": "修改资源基础权限",
+      "output": "ModifyResourcePermissionResponse",
+      "status": "online"
+    },
     "ModifySafeRule": {
       "document": "设置数据库安全规则。\n安全规则，用于控制C端用户的访问权限。详见 [安全规则介绍 ](https://cloud.tencent.com/document/product/876/123478)。",
       "input": "ModifySafeRuleRequest",
@@ -518,6 +546,20 @@
       "output": "ModifyUserResponse",
       "status": "online"
     },
+    "PreviewPGUserMigrations": {
+      "document": "本接口（PreviewPGUserMigrations）用于预览SQL migrations 在远端的执行计划，不实际执行SQL。",
+      "input": "PreviewPGUserMigrationsRequest",
+      "name": "预览SQL migrations 在远端的执行计划，不实际执行 SQL",
+      "output": "PreviewPGUserMigrationsResponse",
+      "status": "online"
+    },
+    "PushPGUserMigrations": {
+      "document": "本接口（PushPGUserMigrations）用于批量应用Migrations。",
+      "input": "PushPGUserMigrationsRequest",
+      "name": "批量应用 Migrations",
+      "output": "PushPGUserMigrationsResponse",
+      "status": "online"
+    },
     "ReleaseEnv": {
       "document": "从环境池里立即取出1个环境",
       "input": "ReleaseEnvRequest",
@@ -530,6 +572,20 @@
       "input": "RenewEnvRequest",
       "name": "续费云开发环境",
       "output": "RenewEnvResponse",
+      "status": "online"
+    },
+    "RepairPGUserMigrationHistory": {
+      "document": "本接口（RepairPGUserMigrationHistory）用于受控修复 history，只修改 user_schema_migrations，不执行 SQL。",
+      "input": "RepairPGUserMigrationHistoryRequest",
+      "name": "修复Migration History",
+      "output": "RepairPGUserMigrationHistoryResponse",
+      "status": "online"
+    },
+    "RollbackPGUserMigrations": {
+      "document": "本接口（RollbackPGUserMigrations）用于按最近 N 条已应用 migration 倒序执行 rollback。",
+      "input": "RollbackPGUserMigrationsRequest",
+      "name": "回滚 Migration",
+      "output": "RollbackPGUserMigrationsResponse",
       "status": "online"
     },
     "RunCommands": {
@@ -5148,6 +5204,142 @@
       ],
       "type": "object"
     },
+    "DescribePGUserMigrationRequest": {
+      "document": "DescribePGUserMigration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云开发环境ID</p>",
+          "example": "pg-ethan06-d9gzgavrt1f14772b",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本号</p><p>参数格式：14位时间格式</p><p>入参限制：纯数字</p>",
+          "example": "20260526000000",
+          "member": "string",
+          "name": "MigrationVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePGUserMigrationResponse": {
+      "document": "DescribePGUserMigration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>版本号</p><p>参数格式：纯数字，14位时间格式</p>",
+          "example": "20260526000000",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本名</p><p>参数格式：只允许小写字母和下划线</p>",
+          "example": "test_init",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>要执行的migration sql 语句</p>",
+          "example": "CREATE TABLE IF NOT EXISTS public.test ( version BIGINT PRIMARY KEY, name TEXT NOT NULL);",
+          "member": "string",
+          "name": "Query",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回滚的sql 语句</p>",
+          "example": "DROP TABLE IF EXISTS public.test;",
+          "member": "string",
+          "name": "Rollback",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration query 语句的checksum值</p><p>由服务端自动生成，同版本 checksum 不一致会拒绝执行</p>",
+          "example": "eeaf0dd9391ba7829bd12b47482fab4a0e031a040f00cfb6eafc5c23b9fcf791",
+          "member": "string",
+          "name": "Checksum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于标记调用来源</p>",
+          "example": "repair",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于标记该条migration由谁创建，目前默认调用的用户uin</p>",
+          "example": "100019231666",
+          "member": "string",
+          "name": "CreatedBy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该migration创建时间</p>",
+          "example": "2026-05-26T11:34:19+08:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该migration应用时间</p>",
+          "example": "2026-05-26T11:34:19+08:00",
+          "member": "string",
+          "name": "AppliedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该migration执行耗时</p><p>单位：毫秒</p>",
+          "example": "153",
+          "member": "int64",
+          "name": "DurationMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeQuotaDataRequest": {
       "document": "DescribeQuotaData请求参数结构体",
       "members": [
@@ -5222,6 +5414,87 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeResourcePermissionRequest": {
+      "document": "DescribeResourcePermission请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境 ID",
+          "example": "**test-1gahsf0*********",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型：`function`-云函数、`storage`-云存储、`table`-SQL型数据库表、`collection`-文档型数据库表 `<br>`示例值：`table`。",
+          "example": "table",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源标识列表。云函数不传或传空数组、云存储传存储桶名、数据库表传表名，不能超过100条。",
+          "example": "[\"users\"]",
+          "member": "string",
+          "name": "Resources",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePermissionResponse": {
+      "document": "DescribeResourcePermission返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询资源权限返回结果",
+          "example": "无",
+          "member": "DescribeResourcePermissionResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePermissionResult": {
+      "document": "查询资源权限返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询到的资源总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源权限列表",
+          "example": "无",
+          "member": "ResourcePermission",
+          "name": "PermissionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DescribeSafeRuleRequest": {
       "document": "DescribeSafeRule请求参数结构体",
@@ -7706,6 +7979,81 @@
       ],
       "usage": "both"
     },
+    "ListPGUserMigrationsRequest": {
+      "document": "ListPGUserMigrations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云开发环境ID</p>",
+          "example": "pg-ethan06-d9gzgavrt1f14772b",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询条数</p><p>取值范围：[1, 500]</p><p>默认值：100</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPGUserMigrationsResponse": {
+      "document": "ListPGUserMigrations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已应用最新版本号</p><p>参数格式：纯数字，14位时间格式</p>",
+          "example": "20260526000000",
+          "member": "string",
+          "name": "LatestVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已应用migration列表</p>",
+          "example": "无",
+          "member": "MigrationSummary",
+          "name": "Migrations",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListTablesRequest": {
       "document": "ListTables请求参数结构体",
       "members": [
@@ -8403,6 +8751,256 @@
       ],
       "usage": "in"
     },
+    "MigrationConflict": {
+      "document": "migration 执行计划冲突项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>migration 版本号</p><p>参数格式：纯数字，14位时间格式</p>",
+          "example": "20260526000000",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration 版本名</p><p>参数格式：仅允许小写字母和下划线</p>",
+          "example": "test_init",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库已应用migration的版本名</p><p>参数格式：仅允许小写字母和下划线</p>",
+          "example": "test_init",
+          "member": "string",
+          "name": "RemoteName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次sql计算出来的checksum</p>",
+          "example": "73d9e386409264d3e7291e093d347f4019b80a94540e58f4149511881cfd3e5f",
+          "member": "string",
+          "name": "LocalChecksum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已应用的migration，数据库存储的checksum</p>",
+          "example": "eeaf0dd9391ba7829bd12b47482fab4a0e031a040f00cfb6eafc5c23b9fcf791",
+          "member": "string",
+          "name": "RemoteChecksum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>归入该分组的原因</p>",
+          "example": "checksum_mismatch",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>冲突信息</p>",
+          "example": "migration 20260526000000 has already been applied with different checksum",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MigrationInput": {
+      "document": "结构化 SQL migration 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>migration 版本号</p><p>参数格式：纯数字，14位时间格式</p>",
+          "example": "20260526000000",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration 版本名</p><p>入参限制：仅允许小写字母和下划线</p>",
+          "example": "test_init",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration 应用 sql 语句</p>",
+          "example": "CREATE TABLE IF NOT EXISTS public.test ( version BIGINT PRIMARY KEY, name TEXT NOT NULL);",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration 回滚 sql 语句</p>",
+          "example": "DROP TABLE IF EXISTS public.test;",
+          "member": "string",
+          "name": "Rollback",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "MigrationPlanItem": {
+      "document": "migration 执行计划",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>migration 版本号</p><p>参数格式：纯数字，14位时间格式</p>",
+          "example": "20260526000000",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration 版本名</p><p>参数格式：仅允许小写字母和下划线</p>",
+          "example": "test_init",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration query sql checksum</p><p>服务端自动生成，同版本不同checksum会拒绝执行</p>",
+          "example": "eeaf0dd9391ba7829bd12b47482fab4a0e031a040f00cfb6eafc5c23b9fcf791",
+          "member": "string",
+          "name": "Checksum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>applied： 已应用</li><li>pending： 待执行</li></ul>",
+          "example": "applied",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标记请求来源</p>",
+          "example": "cli",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>被归入该分组的原因，比如not_applied、checksum_matched</p>",
+          "example": "checksum_matched",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MigrationSummary": {
+      "document": "migration 列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>migration 版本号</p><p>参数格式：纯数字，14位时间格式</p>",
+          "example": "20260526000000",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration 版本名</p><p>参数格式：仅允许小写字母和下划线</p>",
+          "example": "test_init",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration query sql 语句checksum</p><p>服务端自动生成，同版本不同checksum会拒绝执行</p>",
+          "example": "eeaf0dd9391ba7829bd12b47482fab4a0e031a040f00cfb6eafc5c23b9fcf791",
+          "member": "string",
+          "name": "Checksum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用时间</p>",
+          "example": "2026-05-26T11:34:19+08:00",
+          "member": "string",
+          "name": "AppliedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求来源</p>",
+          "example": "cloudapi",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration 创建时间</p>",
+          "example": "100019231666",
+          "member": "string",
+          "name": "CreatedBy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyClientRequest": {
       "document": "ModifyClient请求参数结构体",
       "members": [
@@ -8897,6 +9495,95 @@
         }
       ],
       "type": "object"
+    },
+    "ModifyResourcePermissionRequest": {
+      "document": "ModifyResourcePermission请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境 ID",
+          "example": "**test-1gahsf0*********",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型：`function`-云函数、`storage`-云存储、`table`-SQL型数据库表、`collection`-文档型数据库表。",
+          "example": "table",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限级别。可选值：- SQL型数据库表：`READONLY`-读取全部数据，修改本人数据；`PRIVATE`-读取和修改本人数据；`ADMINWRITE`-读取全部数据，不可修改数据；`ADMINONLY`-无权限 。- 文档型数据库表：`READONLY`-读取全部数据，修改本人数据；`PRIVATE`-读取和修改本人数据；`ADMINWRITE`-读取全部数据，不可修改数据；`ADMINONLY`-无权限；`CUSTOM`-自定义安全规则 。- 云函数：`CUSTOM`-自定义安全规则 。- 云存储（权限标签）：`READONLY`-所有用户可读，仅创建者和管理员可写；`PRIVATE`-仅创建者及管理员可读写；`ADMINWRITE`-所有用户可读，仅管理员可写；`ADMINONLY`-仅管理员可读写；`CUSTOM`-自定义安全规则。",
+          "example": "READONLY",
+          "member": "string",
+          "name": "Permission",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源标识。云函数可不传、云存储传存储桶名、数据库表传表名。",
+          "example": "users",
+          "member": "string",
+          "name": "Resource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义安全规则配置，当Permission为 `CUSTOM`时必传。JSON字符串格式的规则表达式。配置参考：[云函数安全规则](https://docs.cloudbase.net/cloud-function/security-rules)、[云存储安全规则](https://docs.cloudbase.net/storage/security-rules)、[文档型数据库安全规则](https://docs.cloudbase.net/database/security-rules)。",
+          "example": "{\"read\":\"doc._openid == auth.uid\",\"write\":\"doc._openid == auth.uid\"}",
+          "member": "string",
+          "name": "SecurityRule",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourcePermissionResponse": {
+      "document": "ModifyResourcePermission返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改结果",
+          "example": "无",
+          "member": "ModifyResourcePermissionResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourcePermissionResult": {
+      "document": "修改资源基础权限结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Success",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ModifySafeRuleRequest": {
       "document": "ModifySafeRule请求参数结构体",
@@ -9600,6 +10287,91 @@
       ],
       "usage": "both"
     },
+    "PreviewPGUserMigrationsRequest": {
+      "document": "PreviewPGUserMigrations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云开发环境ID</p>",
+          "example": "pg-ethan06-d9gzgavrt1f14772b",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预览要执行的migration 列表</p>",
+          "example": "无",
+          "member": "MigrationInput",
+          "name": "Migrations",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标记请求来源</p>",
+          "example": "cli",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PreviewPGUserMigrationsResponse": {
+      "document": "PreviewPGUserMigrations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>将要执行的migration列表</p>",
+          "example": "无",
+          "member": "MigrationPlanItem",
+          "name": "Pending",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已经应用的migration列表</p>",
+          "example": "无",
+          "member": "MigrationPlanItem",
+          "name": "Applied",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本相同但 checksum 不一致冲突的migration列表</p>",
+          "example": "无",
+          "member": "MigrationConflict",
+          "name": "Conflicts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否可直接执行；当前仅表示没有 checksum 冲突</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Executable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Provider": {
       "document": "身份源配置信息。描述云开发环境下用户登录身份源的完整配置，定义了用户通过何种方式进入系统并完成身份认证。支持多种类型：包括标准协议身份源（OAuth 2.0、OIDC、SAML 2.0）、内置身份源（邮箱登录、自定义登录）以及通过插件机制扩展的身份源（如 CAS）。每个身份源包含认证配置、启用状态、用户自动注册策略、信息透传模式等核心属性，是登录认证流程的核心数据结构。",
       "members": [
@@ -10141,6 +10913,79 @@
       ],
       "usage": "both"
     },
+    "PushPGUserMigrationsRequest": {
+      "document": "PushPGUserMigrations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云开发环境ID</p>",
+          "example": "pg-ethan06-d9gzgavrt1f14772b",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结构化 SQL migration 列表；每项包含 Query SQL 内容</p>",
+          "example": "无",
+          "member": "MigrationInput",
+          "name": "Migrations",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>等待获取数据库锁的最长时间</p><p>单位：毫秒</p><p>默认值：5000</p>",
+          "example": "5000",
+          "member": "int64",
+          "name": "LockTimeoutMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单条 SQL 执行最长时间，超过后由 PostgreSQL 取消该语句</p><p>单位：毫秒</p><p>默认值：300000</p>",
+          "example": "300000",
+          "member": "int64",
+          "name": "StatementTimeoutMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标记请求来源</p>",
+          "example": "cloudapi",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PushPGUserMigrationsResponse": {
+      "document": "PushPGUserMigrations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p><p>可通过DescribeTaskResult 接口查询进度</p>",
+          "example": "task-1ef06db7",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ReleaseEnvRequest": {
       "document": "ReleaseEnv请求参数结构体",
       "members": [
@@ -10213,6 +11058,231 @@
     "RenewEnvResponse": {
       "document": "RenewEnv返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RepairPGUserMigrationHistoryRequest": {
+      "document": "RepairPGUserMigrationHistory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云开发环境ID</p>",
+          "example": "pg-ethan06-d9gzgavrt1f14772b",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration版本</p><p>参数格式：14位时间格式</p><p>入参限制：纯数字</p>",
+          "example": "20260526000000",
+          "member": "string",
+          "name": "MigrationVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration 版本名</p><p>入参限制：限制小写字母和下划线</p>",
+          "example": "test_init",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>applied： 已应用</li><li>reverted： 表示删除 history 记录</li></ul>",
+          "example": "applied",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修复原因</p>",
+          "example": "手动执行",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>applied的时候填写，记录应用的sql语句</p>",
+          "example": "CREATE TABLE IF NOT EXISTS public.test ( version BIGINT PRIMARY KEY, name TEXT NOT NULL);",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RepairPGUserMigrationHistoryResponse": {
+      "document": "RepairPGUserMigrationHistory返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResourcePermission": {
+      "document": "资源权限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型。",
+          "example": "table",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源标识",
+          "example": "org",
+          "member": "string",
+          "name": "Resource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限级别。取值：READONLY、PRIVATE、ADMINWRITE、ADMINONLY、CUSTOM。",
+          "example": "ADMINONLY",
+          "member": "string",
+          "name": "Permission",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义安全规则配置，当 Permission 为 CUSTOM 时返回。",
+          "example": "{\n    \"*\": {\n        \"invoke\": true    }\n}",
+          "member": "string",
+          "name": "SecurityRule",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RollbackPGUserMigrationsRequest": {
+      "document": "RollbackPGUserMigrations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云开发环境ID</p>",
+          "example": "pg-ethan06-d9gzgavrt1f14772b",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要回滚的条数</p><p>按照逆序回滚最近N条migration</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "LastN",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>等待获取数据库锁的最长时间</p><p>单位：毫秒</p><p>默认值：5000</p>",
+          "example": "5000",
+          "member": "int64",
+          "name": "LockTimeoutMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单条 SQL 执行最长时间，超过后由 PostgreSQL 取消该语句</p><p>单位：毫秒</p><p>默认值：300000</p>",
+          "example": "300000",
+          "member": "int64",
+          "name": "StatementTimeoutMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标记API调用来源</p>",
+          "example": "cli",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollbackPGUserMigrationsResponse": {
+      "document": "RollbackPGUserMigrations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p><p>可通过DescribeTaskResult 接口查询进度</p>",
+          "example": "task-d9fd1d51",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已成功回滚并删除 history 的 migration</p>",
+          "example": "无",
+          "member": "MigrationSummary",
+          "name": "RolledBack",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>未提供 Rollback SQL、视为成功并删除 history 的 migration</p>",
+          "example": "无",
+          "member": "MigrationSummary",
+          "name": "SkippedRollbackSql",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行 Rollback SQL 失败的 migration，可为空</p>",
+          "example": "无",
+          "member": "MigrationSummary",
+          "name": "Failed",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

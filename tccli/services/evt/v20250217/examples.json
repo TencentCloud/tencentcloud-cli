@@ -35,8 +35,8 @@
     "PutMessage": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"EventId\": \"event-sdiq\",\n    \"Data\": \"{\\\"testkey\\\":\\\"testvalue\\\"}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TicketId\": \"ticket-sydinq\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: evt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutMessage\n<公共请求参数>\n\n{\n    \"EventId\": \"eevnt-sx1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TicketId\": \"ticket-0a7fdfce-31f3-43ca-8bab-7945f2ca4559\",\n        \"RequestId\": \"388820a6-7225-43bb-80ec-992ad57325c6\"\n    }\n}",
         "title": "推送消息"
       }
     ]

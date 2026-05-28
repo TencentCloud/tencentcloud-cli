@@ -6489,7 +6489,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核4:音频流式审核 5:音频流式+视频截帧审核  默认值1 （流式审核需要供应商支持才生效）",
+          "document": "审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核  默认值1 ",
           "example": "1",
           "member": "uint64",
           "name": "ModerationType",
@@ -6507,7 +6507,7 @@
         },
         {
           "disabled": false,
-          "document": "音频切片时长，默认15s 示例值：15",
+          "document": "音频切片时长，默认15s 示例值：15, 范围15-60s",
           "example": "15",
           "member": "uint64",
           "name": "SliceAudio",
@@ -6516,7 +6516,7 @@
         },
         {
           "disabled": false,
-          "document": "视频截帧间隔时长，默认5s",
+          "document": "视频截帧间隔时长，默认5s, 范围1-60s",
           "example": "5",
           "member": "uint64",
           "name": "SliceVideo",
@@ -6525,7 +6525,7 @@
         },
         {
           "disabled": false,
-          "document": "供应商枚举，\ntianyu : 天御内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nace  : ACE内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nshumei : 数美审核（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nyidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）",
+          "document": "供应商枚举，\ntrtc : trtc内容理解（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\ntianyu : 天御内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nace  : ACE内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nshumei : 数美审核（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nyidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）",
           "example": "ace",
           "member": "string",
           "name": "ModerationSupplier",
@@ -6534,7 +6534,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方审核商送审需要配置信息",
+          "document": "第三方审核商送审需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化",
           "example": "无",
           "member": "ModerationSupplierParam",
           "name": "ModerationSupplierParam",
@@ -6543,7 +6543,7 @@
         },
         {
           "disabled": false,
-          "document": "是否保存文件  0不保存文件 1保存所有文件 2仅保存命中文件",
+          "document": "是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件",
           "example": "0",
           "member": "uint64",
           "name": "SaveModerationFile",

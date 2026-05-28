@@ -1203,6 +1203,39 @@
       ],
       "usage": "out"
     },
+    "CosOption": {
+      "document": "COS挂载信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件系统本地挂载路径。</p>",
+          "example": "/data/cos_mnt",
+          "member": "string",
+          "name": "LocalPath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>COS桶地址，可以在COS桶详情页查看。</p>",
+          "example": "cosn://my-bucket-1300242089/hpc-data/",
+          "member": "string",
+          "name": "RemotePath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>cosfs2挂载工具支持的参数。</p>",
+          "example": "-oallow_other",
+          "member": "string",
+          "name": "MountParamsOption",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "CreateClusterRequest": {
       "document": "CreateCluster请求参数结构体",
       "members": [
@@ -2847,7 +2880,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统本地挂载路径。",
+          "document": "<p>文件系统本地挂载路径。</p>",
           "example": "/data",
           "member": "string",
           "name": "LocalPath",
@@ -2856,7 +2889,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统远程挂载路径。",
+          "document": "<p>文件系统远程挂载路径。</p>",
           "example": "/data/goosefs-fuse",
           "member": "string",
           "name": "RemotePath",
@@ -2865,12 +2898,21 @@
         },
         {
           "disabled": false,
-          "document": "文件系统master的ip和端口。",
+          "document": "<p>文件系统master的ip和端口，此参数和FileSystemId互斥。</p>",
           "example": "[\"172.16.0.2:55533\",\"172.16.0.3:55533\",\"172.16.0.4:55533\"]",
           "member": "string",
           "name": "Masters",
-          "required": true,
+          "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>GooseFS的文件ID；此参数和Masters 互斥。</p>",
+          "example": "g_cvm_7yu01w7y",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -4777,33 +4819,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群挂载CFS文件系统选项。",
+          "document": "<p>集群挂载CFS文件系统选项。</p>",
           "example": "无",
           "member": "CFSOption",
           "name": "CFSOptions",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
-          "document": "集群挂载GooseFS文件系统选项。",
+          "document": "<p>集群挂载GooseFS文件系统选项。</p>",
           "example": "无",
           "member": "GooseFSOption",
           "name": "GooseFSOptions",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
-          "document": "集群挂载GooseFSx文件系统选项。",
+          "document": "<p>集群挂载GooseFSx文件系统选项。</p>",
           "example": "无",
           "member": "GooseFSxOption",
           "name": "GooseFSxOptions",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群挂载COS文件系统选项。</p>",
+          "example": "无",
+          "member": "CosOption",
+          "name": "CosOptions",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"

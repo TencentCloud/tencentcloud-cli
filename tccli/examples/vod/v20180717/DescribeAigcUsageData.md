@@ -8,7 +8,8 @@ Input:
 tccli vod DescribeAigcUsageData --cli-unfold-argument  \
     --StartTime 2025-11-18T00:00:00+08:00 \
     --EndTime 2025-11-19T23:59:00+08:00 \
-    --AigcType Video
+    --AigcType Video \
+    --APIKey xxxxxxxxxxxxx
 ```
 
 Output: 

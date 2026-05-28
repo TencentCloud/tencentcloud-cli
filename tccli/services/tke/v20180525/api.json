@@ -2326,6 +2326,89 @@
       ],
       "usage": "out"
     },
+    "AgentPluginConfig": {
+      "document": "AgentPlugin 安装配置，包含域名、Chart 版本和外部 PostgreSQL 连接信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Helm Chart 版本，一般无需指定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "ChartVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外部 PostgreSQL 内网地址；配置后跳过内置 PostgreSQL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.1.100",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外部 PostgreSQL 密码，配置 Host 时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dbpass",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外部 PostgreSQL 端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5432",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SSL 模式，取值：disable / require / verify-full\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "require",
+          "member": "string",
+          "name": "SSLMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Agent 实例访问域名，不填则不创建域名路由\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "agentplugin.example.com",
+          "member": "string",
+          "name": "ServiceDomain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外部 PostgreSQL 用户名，配置 Host 时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dbuser",
+          "member": "string",
+          "name": "Username",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AnnotationValue": {
       "document": "注释",
       "members": [
@@ -6078,7 +6161,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID，通过DescribeClusters接口获取",
+          "document": "<p>集群ID，通过DescribeClusters接口获取</p>",
           "example": "cls-e55paxnt",
           "member": "string",
           "name": "ClusterId",
@@ -6087,7 +6170,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池名称",
+          "document": "<p>节点池名称</p>",
           "example": "vk-nodepoll",
           "member": "string",
           "name": "Name",
@@ -6096,7 +6179,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组ID列表",
+          "document": "<p>安全组ID列表</p>",
           "example": "[\"sg-e55paxnt\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -6105,7 +6188,7 @@
         },
         {
           "disabled": false,
-          "document": "子网ID列表",
+          "document": "<p>子网ID列表</p>",
           "example": "[\"subnet-e55paxnt\"]",
           "member": "string",
           "name": "SubnetIds",
@@ -6114,7 +6197,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟节点label",
+          "document": "<p>虚拟节点label</p>",
           "example": "无",
           "member": "Label",
           "name": "Labels",
@@ -6123,7 +6206,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟节点taint",
+          "document": "<p>虚拟节点taint</p>",
           "example": "无",
           "member": "Taint",
           "name": "Taints",
@@ -6132,7 +6215,7 @@
         },
         {
           "disabled": false,
-          "document": "节点列表",
+          "document": "<p>节点列表</p>",
           "example": "无",
           "member": "VirtualNodeSpec",
           "name": "VirtualNodes",
@@ -6141,7 +6224,7 @@
         },
         {
           "disabled": false,
-          "document": "删除保护开关，默认关闭",
+          "document": "<p>删除保护开关，默认关闭</p>",
           "example": "false",
           "member": "bool",
           "name": "DeletionProtection",
@@ -6150,12 +6233,30 @@
         },
         {
           "disabled": false,
-          "document": "节点池操作系统：\n- linux（默认）\n- windows",
+          "document": "<p>节点池操作系统：</p><ul><li>linux（默认）</li><li>windows</li></ul>",
           "example": "Linux",
           "member": "string",
           "name": "OS",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网资源分配策略，精确控制各子网之间的资源分配比例。</p>",
+          "example": "无",
+          "member": "SubnetAllocationPolicy",
+          "name": "SubnetAllocationPolicy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AgentPlugin 安装配置。传入即表示需要安装（即使是空对象 {}）</p>",
+          "example": "无",
+          "member": "AgentPluginConfig",
+          "name": "AgentPlugin",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -6165,7 +6266,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点池ID",
+          "document": "<p>节点池ID</p>",
           "example": "np-e55paxnt",
           "member": "string",
           "name": "NodePoolId",

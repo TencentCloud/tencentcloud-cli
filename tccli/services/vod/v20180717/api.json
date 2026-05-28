@@ -19568,7 +19568,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>AIGC类型。</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li><li>Text： 文本</li><li>SceneAigcVideo： 场景化视频处理</li><li>SceneAigcImage： 场景化图片处理</li><li>SceneAigcTime： 场景化处理次数</li></ul>",
+          "document": "<p>AIGC类型。</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li><li>Text： 文本</li><li>Audio： 音频</li><li>SceneAigcVideo： 场景化视频处理</li><li>SceneAigcImage： 场景化图片处理</li><li>SceneAigcTime： 场景化处理次数</li></ul>",
           "example": "Image",
           "member": "string",
           "name": "AigcType",
@@ -19583,6 +19583,15 @@
           "name": "SubAppId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>API Key</p>",
+          "example": "abcxxx",
+          "member": "string",
+          "name": "APIKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

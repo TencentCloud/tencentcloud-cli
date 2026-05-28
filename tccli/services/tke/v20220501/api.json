@@ -2841,7 +2841,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群 ID",
+          "document": "<p>集群 ID</p>",
           "example": "cls-52mrjmcy",
           "member": "string",
           "name": "ClusterId",
@@ -2850,7 +2850,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名列表",
+          "document": "<p>节点名列表</p>",
           "example": "[\"np-6tpr9q6e-2gt8l\"]",
           "member": "string",
           "name": "MachineNames",
@@ -2859,7 +2859,7 @@
         },
         {
           "disabled": false,
-          "document": "machine的display name",
+          "document": "<p>machine的display name</p>",
           "example": "tke-np-6tpr9q6e-1",
           "member": "string",
           "name": "DisplayName",
@@ -2868,7 +2868,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘的信息",
+          "document": "<p>系统盘的信息</p>",
           "example": "无",
           "member": "Disk",
           "name": "SystemDisk",
@@ -2877,7 +2877,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组列表",
+          "document": "<p>安全组列表</p>",
           "example": "[\"sg-4h43fuxj\"]",
           "member": "string",
           "name": "SecurityGroupIDs",
@@ -2886,7 +2886,7 @@
         },
         {
           "disabled": false,
-          "document": "节点预付费信息",
+          "document": "<p>节点预付费信息</p>",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",

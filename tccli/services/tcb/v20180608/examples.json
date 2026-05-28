@@ -468,12 +468,46 @@
         "title": "DescribeMySQLTaskStatus"
       }
     ],
+    "DescribePGUserMigration": [
+      {
+        "document": "查询指定migration详情",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePGUserMigration\n<公共请求参数>\n\n{\n    \"EnvId\": \"pg-ethan06-d9gzgavrt1f14772b\",\n    \"MigrationVersion\": \"20260526000000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppliedAt\": \"2026-05-26T11:34:19+08:00\",\n        \"Checksum\": \"eeaf0dd9391ba7829bd12b47482fab4a0e031a040f00cfb6eafc5c23b9fcf791\",\n        \"CreatedAt\": \"2026-05-26T11:34:19+08:00\",\n        \"CreatedBy\": \"100019231666\",\n        \"DurationMs\": 0,\n        \"Name\": \"test_init\",\n        \"Query\": \"CREATE TABLE IF NOT EXISTS public.test ( version BIGINT PRIMARY KEY, name TEXT NOT NULL);\",\n        \"Rollback\": \"\",\n        \"Source\": \"repair\",\n        \"Version\": \"20260526000000\",\n        \"RequestId\": \"f68be1af-9118-45de-a062-88c6bbc671e3\"\n    }\n}",
+        "title": "DescribePGUserMigration"
+      }
+    ],
     "DescribeQuotaData": [
       {
         "document": "",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeQuotaData\n&EnvId=test-23\n&MetricName=DbWritepkg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"MetricName\": \"DbWritepkg\",\n        \"RequestId\": \"548c46c8-a177-4e39-820a-b544b3fd48c6\",\n        \"Value\": 0,\n        \"SubValue\": \"100\"\n    }\n}",
         "title": "查询指定指标的配额使用量"
+      }
+    ],
+    "DescribeResourcePermission": [
+      {
+        "document": "查询SQL型数据库表users的基础权限",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourcePermission\n<公共请求参数>\n\n{\n    \"EnvId\": \"**test-1gahsf0*********\",\n    \"ResourceType\": \"table\",\n    \"Resources\": [\n        \"users\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"PermissionList\": [\n                {\n                    \"Permission\": \"ADMINWRITE\",\n                    \"Resource\": \"users\",\n                    \"ResourceType\": \"table\"\n                }\n            ],\n            \"TotalCount\": 2\n        },\n        \"RequestId\": \"b71b3f05-0735-4320-9ef2-40b888bc42d0\"\n    }\n}",
+        "title": "批量查询SQL型数据库表的基础权限"
+      },
+      {
+        "document": "查询桶的基础权限",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourcePermission\n<公共请求参数>\n\n{\n    \"EnvId\": \"**test-1gahsf09********\",\n    \"ResourceType\": \"storage\",\n    \"Resources\": [\n        \"us***\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"PermissionList\": [\n                {\n                    \"Permission\": \"READONLY\",\n                    \"Resource\": \"us***\",\n                    \"ResourceType\": \"storage\",\n                    \"SecurityRule\": \"\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"76cee3db-ce4e-4428-9de0-04e1d5d6c1b8\"\n    }\n}",
+        "title": "批量查询云存储桶的基础权限"
+      },
+      {
+        "document": "查询文档型数据库表testte的基础权限",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourcePermission\n<公共请求参数>\n\n{\n    \"EnvId\": \"**test-1gahsf0*********\",\n    \"ResourceType\": \"collection\",\n    \"Resources\": [\n        \"testte\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"PermissionList\": [\n                {\n                    \"Permission\": \"READONLY\",\n                    \"Resource\": \"testte\",\n                    \"ResourceType\": \"collection\",\n                    \"SecurityRule\": \"\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"68c382a1-fb7a-4e43-b0f4-7f153c9c9bf2\"\n    }\n}",
+        "title": "批量查询文档型数据库表的基础权限"
+      },
+      {
+        "document": "查询云函数的安全规则",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourcePermission\n<公共请求参数>\n\n{\n    \"EnvId\": \"**test-1gahsf0*********\",\n    \"ResourceType\": \"function\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"PermissionList\": [\n                {\n                    \"Permission\": \"CUSTOM\",\n                    \"Resource\": \"\",\n                    \"ResourceType\": \"function\",\n                    \"SecurityRule\": \"{\\n    \\\"*\\\": {\\n        \\\"invoke\\\": true    }\\n}\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"8b4c9ee3-152e-44a5-a97a-5afff7571a22\"\n    }\n}",
+        "title": "查询云函数的安全规则"
       }
     ],
     "DescribeSafeRule": [
@@ -598,6 +632,14 @@
         "title": "查询价格"
       }
     ],
+    "ListPGUserMigrations": [
+      {
+        "document": "查询指定环境已应用migration列表",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPGUserMigrations\n<公共请求参数>\n\n{\n    \"EnvId\": \"pg-ethan06-d9gzgavrt1f14772b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LatestVersion\": \"20260526000000\",\n        \"Migrations\": [\n            {\n                \"AppliedAt\": \"2026-05-26T11:26:14+08:00\",\n                \"Checksum\": \"eeaf0dd9391ba7829bd12b47482fab4a0e031a040f00cfb6eafc5c23b9fcf791\",\n                \"CreatedBy\": \"100019231666\",\n                \"Name\": \"test_init\",\n                \"Source\": \"cloudapi\",\n                \"Version\": \"20260526000000\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"926c3526-a4e1-4c6a-a5e6-f8ca0c3e175e\"\n    }\n}",
+        "title": "ListPGUserMigrations"
+      }
+    ],
     "ListTables": [
       {
         "document": "",
@@ -688,6 +730,32 @@
         "title": "修改邮箱认证源"
       }
     ],
+    "ModifyResourcePermission": [
+      {
+        "document": "修改数据库表users的权限为READONLY（读取全部数据，修改本人数据）",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourcePermission\n<公共请求参数>\n\n{\n    \"EnvId\": \"**test-1gahsf0*********\",\n    \"ResourceType\": \"table\",\n    \"Resource\": \"users\",\n    \"Permission\": \"READONLY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Success\": true\n        },\n        \"RequestId\": \"8ab60429-c2a2-45fd-b458-1add52a5473c\"\n    }\n}",
+        "title": "修改sql数据库表的基础权限"
+      },
+      {
+        "document": "修改文档型数据库表testte的基础权限为ADMINWRITE。",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourcePermission\n<公共请求参数>\n\n{\n    \"EnvId\": \"**test-1gahsf0*********\",\n    \"ResourceType\": \"collection\",\n    \"Permission\": \"ADMINWRITE\",\n    \"Resource\": \"testte\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Success\": true\n        },\n        \"RequestId\": \"34b64585-bd0e-45ba-850d-8c950078fdf7\"\n    }\n}",
+        "title": "修改文档型数据库表的基础权限"
+      },
+      {
+        "document": "修改云函数的安全规则为全部可调用",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourcePermission\n<公共请求参数>\n\n{\n    \"EnvId\": \"**test-1gahsf0*********\",\n    \"ResourceType\": \"function\",\n    \"Permission\": \"CUSTOM\",\n    \"SecurityRule\": \"{\\n    \\\"*\\\": {\\n        \\\"invoke\\\": true    }\\n}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Success\": true\n        },\n        \"RequestId\": \"85a3896c-3237-4f8a-b78a-b15328b49e1d\"\n    }\n}",
+        "title": "修改云函数的安全规则"
+      },
+      {
+        "document": "修改云存储桶的基础权限为PRIVATE。",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourcePermission\n<公共请求参数>\n\n{\n    \"EnvId\": \"**test-1gahsf0*********\",\n    \"ResourceType\": \"storage\",\n    \"Permission\": \"PRIVATE\",\n    \"Resource\": \"or*\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Success\": true\n        },\n        \"RequestId\": \"6035aeb1-0840-4de9-8a0d-eee85803a893\"\n    }\n}",
+        "title": "修改云存储桶的基础权限"
+      }
+    ],
     "ModifySafeRule": [
       {
         "document": "将环境ID:myenv-c849jgkdldcmsd 下，文档型数据库(数据表 blogs) 的安全规则，调整为私有读写（PRIVATE，仅创建者可读写）",
@@ -712,6 +780,22 @@
         "title": "更新用户信息"
       }
     ],
+    "PreviewPGUserMigrations": [
+      {
+        "document": "预览 migration执行计划",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PreviewPGUserMigrations\n<公共请求参数>\n\n{\n    \"EnvId\": \"pg-ethan06-d9gzgavrt1f14772b\",\n    \"Migrations\": [\n        {\n            \"Version\": \"20260526000000\",\n            \"Name\": \"test_init\",\n            \"Query\": \"CREATE TABLE IF NOT EXISTS public.test ( version BIGINT PRIMARY KEY, name TEXT NOT NULL);\",\n            \"Rollback\": \"DROP TABLE IF EXISTS public.test;\"\n        }\n    ],\n    \"Source\": \"cli\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Applied\": [\n            {\n                \"Checksum\": \"eeaf0dd9391ba7829bd12b47482fab4a0e031a040f00cfb6eafc5c23b9fcf791\",\n                \"Name\": \"test_init\",\n                \"Reason\": \"checksum_matched\",\n                \"Source\": \"cli\",\n                \"Status\": \"applied\",\n                \"Version\": \"20260526000000\"\n            }\n        ],\n        \"Conflicts\": null,\n        \"Executable\": true,\n        \"Pending\": null,\n        \"RequestId\": \"b2792e8a-da94-422e-9ef5-b4e60a46ec0f\"\n    }\n}",
+        "title": "PreviewPGUserMigrations"
+      }
+    ],
+    "PushPGUserMigrations": [
+      {
+        "document": "应用migration",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PushPGUserMigrations\n<公共请求参数>\n\n{\n    \"EnvId\": \"pg-ethan06-d9gzgavrt1f14772b\",\n    \"Migrations\": [\n        {\n            \"Version\": \"20260526000000\",\n            \"Name\": \"test_init\",\n            \"Query\": \"CREATE TABLE IF NOT EXISTS public.test ( version BIGINT PRIMARY KEY, name TEXT NOT NULL);\",\n            \"Rollback\": \"DROP TABLE IF EXISTS public.test;\"\n        }\n    ],\n    \"LockTimeoutMs\": 5000,\n    \"StatementTimeoutMs\": 300000,\n    \"Source\": \"cloudapi\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"task-1ef06db7\",\n        \"RequestId\": \"9e40cb4d-ce83-442d-97f2-abdf65c0c58f\"\n    }\n}",
+        "title": "PushPGUserMigrations"
+      }
+    ],
     "ReleaseEnv": [
       {
         "document": "",
@@ -726,6 +810,22 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewEnv\n<公共请求参数>\n\n{\n    \"EnvId\": \"cloudbase-8grqda2hfc2f62bb\",\n    \"Period\": 1,\n    \"AutoVoucher\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a235158-b278-41ee-b3c5-0f4c39797e5c\"\n    }\n}",
         "title": "续费环境"
+      }
+    ],
+    "RepairPGUserMigrationHistory": [
+      {
+        "document": "修复migration历史",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RepairPGUserMigrationHistory\n<公共请求参数>\n\n{\n    \"EnvId\": \"pg-ethan06-d9gzgavrt1f14772b\",\n    \"MigrationVersion\": \"20260526000000\",\n    \"Name\": \"test_init\",\n    \"Status\": \"applied\",\n    \"Reason\": \"手动执行\",\n    \"Query\": \"CREATE TABLE IF NOT EXISTS public.test ( version BIGINT PRIMARY KEY, name TEXT NOT NULL);\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4730dcbe-09ce-40cc-9cd5-b0757449430b\"\n    }\n}",
+        "title": "RepairPGUserMigrationHistory"
+      }
+    ],
+    "RollbackPGUserMigrations": [
+      {
+        "document": "回滚最近2条migration",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackPGUserMigrations\n<公共请求参数>\n\n{\n    \"EnvId\": \"pg-ethan06-d9gzgavrt1f14772b\",\n    \"LastN\": 2,\n    \"LockTimeoutMs\": 5000,\n    \"StatementTimeoutMs\": 300000,\n    \"Source\": \"cli\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"task-d9fd1d51\",\n        \"RequestId\": \"ac6ed9c4-1560-4896-8706-52f715d73fed\"\n    }\n}",
+        "title": "RollbackPGUserMigrations"
       }
     ],
     "RunCommands": [

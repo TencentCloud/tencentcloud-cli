@@ -2038,7 +2038,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "vpc-92gxvdf1",
           "member": "string",
           "name": "InstanceId",
@@ -2048,7 +2048,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "策略路由测试1",
           "member": "string",
           "name": "InstanceName",
@@ -2058,7 +2058,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型",
+          "document": "<p>实例类型</p>",
           "example": "VPC",
           "member": "string",
           "name": "InsType",
@@ -2068,7 +2068,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的网段列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例的网段列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"10.0.0.0/16\"]",
           "member": "string",
           "name": "CidrLst",
@@ -2078,12 +2078,22 @@
         },
         {
           "disabled": false,
-          "document": "实例所属地域",
+          "document": "<p>实例所属地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "InstanceRegion",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否跨账号</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsCrossInstance",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -14556,7 +14566,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -14566,7 +14576,7 @@
         },
         {
           "disabled": false,
-          "document": "引流网络部署状态\n1. \"NotDeployed\"  防火墙集群未部署\n2. \"Deployed\"        防火墙集群已部署，但未创建引流网络\n3. \"Auto\"                防火墙集群已部署，并自动选择网段创建了引流网络\n4. \"Custom\"            防火墙集群已部署，并根据用户自定义网段创建了引流网络",
+          "document": "<p>引流网络部署状态</p><ol><li>&quot;NotDeployed&quot;  防火墙集群未部署</li><li>&quot;Deployed&quot;        防火墙集群已部署，但未创建引流网络</li><li>&quot;DeployedCustomOnly&quot;  防火墙集群已部署，但内网段被全覆盖，无法自动选择引流网络，需自定义设置引流网段</li><li>&quot;Auto&quot;                防火墙集群已部署，并自动选择网段创建了引流网络</li><li>&quot;Custom&quot;            防火墙集群已部署，并根据用户自定义网段创建了引流网络</li></ol>",
           "example": "Auto",
           "member": "string",
           "name": "Status",
@@ -14576,7 +14586,7 @@
         },
         {
           "disabled": false,
-          "document": "引流网络的cidr，如果没有部署引流网络则为空",
+          "document": "<p>引流网络的cidr，如果没有部署引流网络则为空</p>",
           "example": "172.31.0.0/26",
           "member": "string",
           "name": "Cidr",
