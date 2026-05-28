@@ -16,6 +16,14 @@
         "title": "创建终端节点组"
       }
     ],
+    "CreateForwardingPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateForwardingPolicy\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"ListenerId\": \"lsr-nd3qmz7h\",\n    \"Host\": \"www.aaa.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8306a684-0b45-4933-b8b5-eeac953fa4fa\",\n        \"TaskId\": \"9f4180a9-80e4-4e74-a5ea-df9fee4b0aef\",\n        \"ForwardingPolicyId\": \"dm-3vfx7nnq\"\n    }\n}",
+        "title": "创建七层转发策略"
+      }
+    ],
     "CreateForwardingRule": [
       {
         "document": "",
@@ -54,6 +62,14 @@
         "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEndpointGroups\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"ListenerId\": \"lsr-kzjzfs7n\",\n    \"EndpointGroupIds\": [\n        \"epg-5lkfesga\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f536f297-f2a9-466f-b54d-2ab56285e4c7\",\n        \"TaskId\": \"bbf56063-b48e-4caa-a721-11139fb63344\"\n    }\n}",
         "title": "删除终端节点组"
+      }
+    ],
+    "DeleteForwardingPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteForwardingPolicy\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"ListenerId\": \"lsr-nd3qmz7h\",\n    \"ForwardingPolicyId\": \"dm-io46vpu6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78864282-9abc-4f11-88e2-6548366b13f4\",\n        \"TaskId\": \"0965b82a-5ed1-4d0a-b44c-70295a8fdad3\"\n    }\n}",
+        "title": "删除七层转发策略"
       }
     ],
     "DeleteForwardingRule": [
@@ -112,6 +128,14 @@
         "title": "查询终端节点组"
       }
     ],
+    "DescribeForwardingPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeForwardingPolicy\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"ListenerId\": \"lsr-nd3qmz7h\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ForwardingPolicySet\": [\n            {\n                \"ForwardingPolicyId\": \"dm-io46vpu6\",\n                \"GlobalAcceleratorId\": \"ga-80bzejka\",\n                \"Host\": \"www.aaac.com\",\n                \"ListenerId\": \"lsr-nd3qmz7h\",\n                \"DefaultHostFlag\": true\n            }\n        ],\n        \"RequestId\": \"17b35c9f-79c9-4581-859a-5160c7884ef9\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查看七层转发策略"
+      }
+    ],
     "DescribeForwardingRule": [
       {
         "document": "",
@@ -158,6 +182,14 @@
         "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEndpointGroup\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-lb2dx0f4\",\n    \"ListenerId\": \"lsr-7sadofix\",\n    \"EndpointGroupId\": \"epg-poo6fkq2\",\n    \"Name\": \"moify\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"82c22f64-a8e3-4958-9655-e5a425e1e046\",\n        \"TaskId\": \"0668dba1-f4fa-4edc-84c5-f8bf91ba7b5f\"\n    }\n}",
         "title": "修改终端接节点组"
+      }
+    ],
+    "ModifyForwardingPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyForwardingPolicy\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"ListenerId\": \"lsr-nd3qmz7h\",\n    \"ForwardingPolicyId\": \"dm-io46vpu6\",\n    \"Host\": \"www.aaac.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ca492969-ebcc-4b8c-994a-60c1dbad1844\",\n        \"TaskId\": \"79ffdeef-b32f-49f1-9e1c-40d5c8750b4d\"\n    }\n}",
+        "title": "修改七层转发策略"
       }
     ],
     "ModifyForwardingRule": [

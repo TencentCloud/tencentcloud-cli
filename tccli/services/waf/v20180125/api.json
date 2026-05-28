@@ -694,7 +694,7 @@
       "status": "online"
     },
     "DescribeObjects": {
-      "document": "查看防护对象列表",
+      "document": "查看CLB/TSE防护对象列表",
       "input": "DescribeObjectsRequest",
       "name": "查看防护对象列表",
       "output": "DescribeObjectsResponse",
@@ -15718,7 +15718,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名，当操作对象为全局规则时，Domain参数应填写为\"global\"",
+          "document": "<p>域名，当操作对象为全局规则时，Domain参数应填写为&quot;global&quot;</p>",
           "example": "test.testwaf.com",
           "member": "string",
           "name": "Domain",
@@ -15727,7 +15727,7 @@
         },
         {
           "disabled": false,
-          "document": "计数标识",
+          "document": "<p>计数标识</p>",
           "example": "1",
           "member": "uint64",
           "name": "Count",
@@ -15736,7 +15736,7 @@
         },
         {
           "disabled": false,
-          "document": "动作，40表示查询白名单，42表示查询黑名单",
+          "document": "<p>动作，40表示查询白名单，42表示查询黑名单</p>",
           "example": "40",
           "member": "uint64",
           "name": "ActionType",
@@ -15745,7 +15745,7 @@
         },
         {
           "disabled": true,
-          "document": "最小有效时间的时间戳",
+          "document": "<p>最小有效时间的时间戳</p>",
           "example": "1674958082000",
           "member": "uint64",
           "name": "VtsMin",
@@ -15754,7 +15754,7 @@
         },
         {
           "disabled": true,
-          "document": "最大有效时间的时间戳",
+          "document": "<p>最大有效时间的时间戳</p>",
           "example": "1675130882000",
           "member": "uint64",
           "name": "VtsMax",
@@ -15763,7 +15763,7 @@
         },
         {
           "disabled": false,
-          "document": "最小创建时间的时间戳",
+          "document": "<p>最小创建时间的时间戳</p>",
           "example": "1643594882000",
           "member": "uint64",
           "name": "CtsMin",
@@ -15772,7 +15772,7 @@
         },
         {
           "disabled": false,
-          "document": "最大创建时间的时间戳",
+          "document": "<p>最大创建时间的时间戳</p>",
           "example": "1646273282000",
           "member": "uint64",
           "name": "CtsMax",
@@ -15781,7 +15781,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整",
+          "document": "<p>分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整</p>",
           "example": "0",
           "member": "uint64",
           "name": "OffSet",
@@ -15790,7 +15790,7 @@
         },
         {
           "disabled": false,
-          "document": "每页返回的数量，默认为20",
+          "document": "<p>每页返回的数量，默认为20</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -15799,7 +15799,7 @@
         },
         {
           "disabled": false,
-          "document": "用于按数据来源过滤黑白名单记录，非必填（默认为空字符串，表示不过滤/查询全部）。 \"\" (空字符串)\t，不按来源过滤，返回所有记录（默认值） custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护\t），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则 batch-group（防护对象组），防护对象组维度添加的黑白名单规则",
+          "document": "<p>用于按数据来源过滤黑白名单记录，非必填（默认为空字符串，表示不过滤/查询全部）。 &quot;&quot; (空字符串)    ，不按来源过滤，返回所有记录（默认值） custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护    ），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则 batch-group（防护对象组），防护对象组维度添加的黑白名单规则</p>",
           "example": "custom",
           "member": "string",
           "name": "Source",
@@ -15808,7 +15808,7 @@
         },
         {
           "disabled": false,
-          "document": "排序参数",
+          "document": "<p>排序参数</p>",
           "example": "ts_version:-1",
           "member": "string",
           "name": "Sort",
@@ -15817,7 +15817,7 @@
         },
         {
           "disabled": false,
-          "document": "IP",
+          "document": "<p>IP</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -15826,7 +15826,7 @@
         },
         {
           "disabled": false,
-          "document": "生效状态，1表示生效中，2表示过期，0表示全部",
+          "document": "<p>生效状态，1表示生效中，2表示过期，0表示全部</p>",
           "example": "1",
           "member": "int64",
           "name": "ValidStatus",
@@ -15835,7 +15835,7 @@
         },
         {
           "disabled": false,
-          "document": "最小有效时间的时间戳",
+          "document": "<p>最小有效时间的时间戳</p>",
           "example": "1674958082000",
           "member": "string",
           "name": "ValidTimeStampMin",
@@ -15844,7 +15844,7 @@
         },
         {
           "disabled": false,
-          "document": "最大有效时间的时间戳",
+          "document": "<p>最大有效时间的时间戳</p>",
           "example": "1674958082000",
           "member": "string",
           "name": "ValidTimeStampMax",
@@ -15853,7 +15853,7 @@
         },
         {
           "disabled": false,
-          "document": "规则ID",
+          "document": "<p>规则ID</p>",
           "example": "551024411",
           "member": "uint64",
           "name": "RuleId",
@@ -15862,12 +15862,21 @@
         },
         {
           "disabled": false,
-          "document": "0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效",
+          "document": "<p>0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效</p>",
           "example": "1",
           "member": "int64",
           "name": "TimerType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询的ip列表</p>",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "IpList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -15877,7 +15886,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输出",
+          "document": "<p>输出</p>",
           "example": "无",
           "member": "IpAccessControlData",
           "name": "Data",
@@ -15887,7 +15896,7 @@
         },
         {
           "disabled": false,
-          "document": "已经使用的IP黑白名单的IP总数",
+          "document": "<p>已经使用的IP黑白名单的IP总数</p>",
           "example": "100",
           "member": "uint64",
           "name": "UsedTotal",

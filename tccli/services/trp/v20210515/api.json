@@ -5113,7 +5113,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>上周期口味王牌市场份额</p>",
+          "document": "<p>上周期口味王品牌市场份额</p>",
           "example": "0.9035",
           "member": "float",
           "name": "LastCycleMarketShare",
@@ -5495,7 +5495,7 @@
         {
           "disabled": false,
           "document": "<p>省份</p>",
-          "example": "新疆",
+          "example": "山西",
           "member": "string",
           "name": "Province",
           "output_required": false,

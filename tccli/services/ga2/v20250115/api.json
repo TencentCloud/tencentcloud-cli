@@ -14,6 +14,13 @@
       "output": "CreateEndpointGroupResponse",
       "status": "online"
     },
+    "CreateForwardingPolicy": {
+      "document": "创建七层转发策略",
+      "input": "CreateForwardingPolicyRequest",
+      "name": "创建七层转发策略",
+      "output": "CreateForwardingPolicyResponse",
+      "status": "online"
+    },
     "CreateForwardingRule": {
       "document": "创建七层转发规则",
       "input": "CreateForwardingRuleRequest",
@@ -47,6 +54,13 @@
       "input": "DeleteEndpointGroupsRequest",
       "name": "删除终端节点组",
       "output": "DeleteEndpointGroupsResponse",
+      "status": "online"
+    },
+    "DeleteForwardingPolicy": {
+      "document": "删除七层转发策略",
+      "input": "DeleteForwardingPolicyRequest",
+      "name": "删除七层转发策略",
+      "output": "DeleteForwardingPolicyResponse",
       "status": "online"
     },
     "DeleteForwardingRule": {
@@ -98,6 +112,13 @@
       "output": "DescribeEndpointGroupsResponse",
       "status": "online"
     },
+    "DescribeForwardingPolicy": {
+      "document": "查看七层转发策略",
+      "input": "DescribeForwardingPolicyRequest",
+      "name": "查看七层转发策略",
+      "output": "DescribeForwardingPolicyResponse",
+      "status": "online"
+    },
     "DescribeForwardingRule": {
       "document": "查看七层转发规则",
       "input": "DescribeForwardingRuleRequest",
@@ -138,6 +159,13 @@
       "input": "ModifyEndpointGroupRequest",
       "name": "修改终端节点组",
       "output": "ModifyEndpointGroupResponse",
+      "status": "online"
+    },
+    "ModifyForwardingPolicy": {
+      "document": "修改七层转发策略",
+      "input": "ModifyForwardingPolicyRequest",
+      "name": "修改七层转发策略",
+      "output": "ModifyForwardingPolicyResponse",
       "status": "online"
     },
     "ModifyForwardingRule": {
@@ -435,6 +463,71 @@
           "example": "epg-agq25w5q",
           "member": "string",
           "name": "EndpointGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateForwardingPolicyRequest": {
+      "document": "CreateForwardingPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全球加速实例ID。",
+          "example": "ga-ask56kjh",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监听器ID。",
+          "example": "lsr-kzjzfs7n",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "www.bbc.com",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateForwardingPolicyResponse": {
+      "document": "CreateForwardingPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID。",
+          "example": "e1326769-29a9-43d5-8fbb-6af2e7165328",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "七层转发策略ID。",
+          "example": "dm-3vfx7nnq",
+          "member": "string",
+          "name": "ForwardingPolicyId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -933,6 +1026,61 @@
       ],
       "type": "object"
     },
+    "DeleteForwardingPolicyRequest": {
+      "document": "DeleteForwardingPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全球加速实例ID。",
+          "example": "ga-ask56kjh",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监听器ID。",
+          "example": "lsr-kzjzfs7n",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID。",
+          "example": "dm-dz058e4q",
+          "member": "string",
+          "name": "ForwardingPolicyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteForwardingPolicyResponse": {
+      "document": "DeleteForwardingPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID。",
+          "example": "e1326769-29a9-43d5-8fbb-6af2e7165328",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteForwardingRuleRequest": {
       "document": "DeleteForwardingRule请求参数结构体",
       "members": [
@@ -1288,6 +1436,80 @@
           "member": "EndpointGroupConfigurationSet",
           "name": "EndpointGroupConfigurationSet",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的实例个数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeForwardingPolicyRequest": {
+      "document": "DescribeForwardingPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全球加速实例ID。",
+          "example": "ga-dz058gbb",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监听器ID。",
+          "example": "lsr-dz058gbb",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeForwardingPolicyResponse": {
+      "document": "DescribeForwardingPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的策略信息。",
+          "example": "无",
+          "member": "ForwardingPolicySet",
+          "name": "ForwardingPolicySet",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2133,6 +2355,62 @@
       ],
       "usage": "in"
     },
+    "ForwardingPolicySet": {
+      "document": "七层转发策略信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全球加速实例ID。",
+          "example": "ga-dz058dxi",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器ID。",
+          "example": "lsr-io48ae1d",
+          "member": "string",
+          "name": "ListenerId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略ID。",
+          "example": "dm-00000ju6",
+          "member": "string",
+          "name": "ForwardingPolicyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "www.979137.com",
+          "member": "string",
+          "name": "Host",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为默认域名。",
+          "example": "True",
+          "member": "bool",
+          "name": "DefaultHostFlag",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ForwardingRuleSet": {
       "document": "七层转发规则信息",
       "members": [
@@ -2885,6 +3163,70 @@
           "disabled": false,
           "document": "<p>任务ID。</p>",
           "example": "b83b144d-a14d-45fb-91ec-04649d3c7537",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyForwardingPolicyRequest": {
+      "document": "ModifyForwardingPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全球加速实例ID。",
+          "example": "ga-ask56kjh",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监听器ID。",
+          "example": "lsr-kzjzfs7n",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID。",
+          "example": "dm-dz058e4q",
+          "member": "string",
+          "name": "ForwardingPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "www.bbc.com",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyForwardingPolicyResponse": {
+      "document": "ModifyForwardingPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID。",
+          "example": "e1326769-29a9-43d5-8fbb-6af2e7165328",
           "member": "string",
           "name": "TaskId",
           "output_required": true,

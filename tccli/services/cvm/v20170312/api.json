@@ -1784,24 +1784,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "决定启用的CPU物理核心数。",
+          "document": "决定启用的CPU物理核心数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
           "name": "CoreCount",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "每核心线程数。该参数决定是否开启或关闭超线程。<br><li>1 表示关闭超线程 </li><br><li>2 表示开启超线程</li>\n 不设置时，实例使用默认的超线程策略。开关超线程请参考文档：[开启与关闭超线程](https://cloud.tencent.com/document/product/213/103798)。",
+          "document": "每核心线程数。该参数决定是否开启或关闭超线程。<br><li>1 表示关闭超线程 </li><br><li>2 表示开启超线程</li>\n 不设置时，实例使用默认的超线程策略。开关超线程请参考文档：[开启与关闭超线程](https://cloud.tencent.com/document/product/213/103798)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "ThreadPerCore",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CreateDisasterRecoverGroupRequest": {
       "document": "CreateDisasterRecoverGroup请求参数结构体",

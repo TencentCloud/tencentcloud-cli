@@ -3019,6 +3019,36 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "SecurityType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "ComputeDetail",
+          "name": "RoleComputeSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "uint64",
+          "name": "TargetReplicas",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3284,6 +3314,16 @@
           "example": "[\"hicache\"]",
           "member": "string",
           "name": "SupportFunc",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "ComputeDetail",
+          "name": "RoleComputeSet",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false

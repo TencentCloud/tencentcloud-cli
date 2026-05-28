@@ -1443,7 +1443,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-bxtgirxj\",\n    \"Memory\": 2000,\n    \"Volume\": 110,\n    \"ProtectMode\": 1,\n    \"WaitSwitch\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"ec58aec9-05d6185f-02dad5fa-b67f1dff\",\n        \"DealIds\": [\n            \"20260423753022636848431\"\n        ],\n        \"RequestId\": \"fe1a3323-5968-40c1-939e-56f659c2f3c5\"\n    }\n}",
-        "title": "实例升级"
+        "title": "示例1 实例升级"
       }
     ],
     "UpgradeDBInstanceEngineVersion": [
