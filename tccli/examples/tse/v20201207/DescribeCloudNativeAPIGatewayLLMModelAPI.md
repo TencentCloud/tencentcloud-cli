@@ -6,33 +6,41 @@ Input:
 
 ```
 tccli tse DescribeCloudNativeAPIGatewayLLMModelAPI --cli-unfold-argument  \
-    --GatewayId gateway-04b00666 \
-    --ModelAPIId 769ebd672acb4640b0a35a31bd429de9
+    --GatewayId gateway-4eb46023 \
+    --ModelAPIId a1b2c3d4e5f6789012345678901234ab
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "48dddba4-5fa4-45ee-a026-d53333e275f0",
         "Result": {
-            "BasePath": "/base",
-            "CreateTime": "2025-11-26 10:16:16",
-            "Description": "OpenAI 格式模型 API",
-            "Id": "769ebd672acb4640b0a35a31bd429de9",
-            "ModifyTime": "2025-11-26 10:16:16",
-            "Name": "openai_chat_测试3",
-            "RequestProtocol": "OpenAI",
+            "Id": "a1b2c3d4e5f6789012345678901234ab",
+            "CreateTime": "2026-05-19T15:00:00+08:00",
+            "ModifyTime": "2026-05-19T15:00:00+08:00",
+            "Name": "openai_chat",
+            "SceneType": "Chat",
+            "RequestProtocol": "openai",
             "RouteList": [
                 {
+                    "Name": "openai_chat_route_1",
+                    "Methods": [
+                        "POST"
+                    ],
                     "Paths": [
                         "/v1/chat/completions"
                     ]
                 }
             ],
-            "SceneType": "Chat",
-            "StripPath": true
-        }
+            "BasePath": "/v1/openai",
+            "StripPath": false,
+            "Description": "大模型统一聊天 API",
+            "ModelServiceId": "d0742b86605340438a8018c658156622",
+            "ModelServiceName": "openai_test",
+            "MatchHeaders": [],
+            "EnableCrossServiceFallback": false
+        },
+        "RequestId": "f1234567-89ab-cdef-0123-456789abcdef"
     }
 }
 ```

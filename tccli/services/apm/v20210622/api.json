@@ -2488,7 +2488,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指标匹配规则ID",
+          "document": "<p>指标匹配规则ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -2498,7 +2498,7 @@
         },
         {
           "disabled": false,
-          "document": "指标匹配规则名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>指标匹配规则名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MyRule",
           "member": "string",
           "name": "Name",
@@ -2508,7 +2508,7 @@
         },
         {
           "disabled": false,
-          "document": "规则生效的应用。生效于全部应用就传空字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则生效的应用。生效于全部应用就传空字符串</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "profile-service",
           "member": "string",
           "name": "ServiceName",
@@ -2518,7 +2518,7 @@
         },
         {
           "disabled": false,
-          "document": "指标匹配规则状态：1(启用)、2（不启用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>指标匹配规则状态：1(启用)、2（不启用）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -2528,7 +2528,7 @@
         },
         {
           "disabled": false,
-          "document": "指标匹配规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>指标匹配规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "task.duration",
           "member": "string",
           "name": "MetricNameRule",
@@ -2538,13 +2538,23 @@
         },
         {
           "disabled": false,
-          "document": "匹配类型：0精准匹配，1前缀匹配，2后缀匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>匹配类型：0精准匹配，1前缀匹配，2后缀匹配</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "MetricMatchType",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否追加资源属性</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AppendResourceAttributes",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3002,7 +3012,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指标匹配规则名",
+          "document": "<p>指标匹配规则名</p>",
           "example": "MyRule",
           "member": "string",
           "name": "Name",
@@ -3011,7 +3021,7 @@
         },
         {
           "disabled": false,
-          "document": "规则生效的应用。作用全部应用就传空字符串",
+          "document": "<p>规则生效的应用。作用全部应用就传空字符串</p>",
           "example": "java-market-service",
           "member": "string",
           "name": "ServiceName",
@@ -3020,7 +3030,7 @@
         },
         {
           "disabled": false,
-          "document": "指标匹配类型：0精准匹配，1前缀匹配，2后缀匹配",
+          "document": "<p>指标匹配类型：0精准匹配，1前缀匹配，2后缀匹配</p>",
           "example": "1",
           "member": "int64",
           "name": "MetricMatchType",
@@ -3029,7 +3039,7 @@
         },
         {
           "disabled": false,
-          "document": "客户定义的命中指标名规则。",
+          "document": "<p>客户定义的命中指标名规则。</p>",
           "example": "task.duration",
           "member": "string",
           "name": "MetricNameRule",
@@ -3038,12 +3048,21 @@
         },
         {
           "disabled": false,
-          "document": "业务系统ID",
+          "document": "<p>业务系统ID</p>",
           "example": "apm-059oXBfTL",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否追加资源属性</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AppendResourceAttributes",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3053,7 +3072,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指标匹配规则的ID",
+          "document": "<p>指标匹配规则的ID</p>",
           "example": "438",
           "member": "int64",
           "name": "RuleId",
@@ -6877,7 +6896,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则ID",
+          "document": "<p>规则ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -6886,7 +6905,7 @@
         },
         {
           "disabled": false,
-          "document": "业务系统ID",
+          "document": "<p>业务系统ID</p>",
           "example": "apm-059oXBfTL",
           "member": "string",
           "name": "InstanceId",
@@ -6895,7 +6914,7 @@
         },
         {
           "disabled": false,
-          "document": "所要修改的规则名",
+          "document": "<p>所要修改的规则名</p>",
           "example": "MyRule",
           "member": "string",
           "name": "Name",
@@ -6904,7 +6923,7 @@
         },
         {
           "disabled": false,
-          "document": "规则状态：1(启用)、2（不启用）、3（删除）",
+          "document": "<p>规则状态：1(启用)、2（不启用）、3（删除）</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -6913,7 +6932,7 @@
         },
         {
           "disabled": false,
-          "document": "规则生效的应用。生效于全部应用就传空（这个如果不修改也要传旧的规则）",
+          "document": "<p>规则生效的应用。生效于全部应用就传空（这个如果不修改也要传旧的规则）</p>",
           "example": "profile-service",
           "member": "string",
           "name": "ServiceName",
@@ -6922,7 +6941,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配类型：0精准匹配，1前缀匹配，2后缀匹配（这个如果不修改也要传旧的规则）",
+          "document": "<p>匹配类型：0精准匹配，1前缀匹配，2后缀匹配（这个如果不修改也要传旧的规则）</p>",
           "example": "0",
           "member": "int64",
           "name": "MetricMatchType",
@@ -6931,12 +6950,21 @@
         },
         {
           "disabled": false,
-          "document": "客户定义的命中指标名规则。",
+          "document": "<p>客户定义的命中指标名规则。</p>",
           "example": "task.duration",
           "member": "string",
           "name": "MetricNameRule",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否追加资源属性</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AppendResourceAttributes",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

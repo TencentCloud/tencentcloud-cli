@@ -1,0 +1,133 @@
+{
+  "actions": {
+    "CreateTokenPlanApiKeys": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTokenPlanApiKeys\n<公共请求参数>\n\n{\n    \"TeamId\": \"team-3a834f2dbcf48840115cbf4b48f25342\",\n    \"ApiKeyName\": \"syytest-1\",\n    \"Count\": 2,\n    \"AllowedModels\": [\n        \"glm-5\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"ApiKeyId\": \"ak-tp-20260412-b2ddcfeb599f8345cb7ad22c370b1acd\"\n            },\n            {\n                \"ApiKeyId\": \"ak-tp-20260412-c727346e6086cc5c5594b40786957aa1\"\n            }\n        ],\n        \"RequestId\": \"2c146814-7ca2-494b-8d09-2f4cc6cef3a2\"\n    }\n}",
+        "title": "CreateTokenPlanApiKeys"
+      }
+    ],
+    "CreateTokenPlanTeamOrderAndBuy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTokenPlanTeamOrderAndBuy\n<公共请求参数>\n\n{\n    \"ProductType\": \"enterprise\",\n    \"TeamName\": \"test-team\",\n    \"TimeSpan\": 1,\n    \"CreditOrToken\": 500000,\n    \"EnableAutoRenew\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"BigOrderId\": \"big-order-id\",\n        \"RequestId\": \"83c3a50c-370f-42da-bb89-8231fe73d125\"\n    }\n}",
+        "title": "成功调用"
+      }
+    ],
+    "DeleteTokenPlanApiKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTokenPlanApiKey\n<公共请求参数>\n\n{\n    \"ApiKeyId\": \"ak-tp-20260412-72dddac0126f0eadf4670f6ce63b3db1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"93a4088b-cf68-4693-9511-b518dba61bce\"\n    }\n}",
+        "title": "DeleteTokenPlanApiKey"
+      }
+    ],
+    "DescribeApiKey": [
+      {
+        "document": "输入ApiKeyId查询 API 密钥详情",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiKey\n<公共请求参数>\n\n{\n    \"Platform\": \"maas\",\n    \"ApiKeyId\": \"ak-20260325-xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiKey\": \"sk-xxxxxx\",\n        \"ApiKeyId\": \"ak-20260325-xxxxxx\",\n        \"AppId\": \"111111\",\n        \"BindType\": \"model_custom_endpoint_custom\",\n        \"BindingItems\": [\n            {\n                \"ResourceId\": \"deepseek-v3.2\",\n                \"ResourceType\": \"model\"\n            }\n        ],\n        \"CreateTime\": \"2026-03-25 19:50:56\",\n        \"Creator\": \"\",\n        \"Editable\": true,\n        \"Name\": \"my-apikey\",\n        \"Platform\": \"maas\",\n        \"Remark\": \"test-new-remark\",\n        \"RequestId\": \"b56014db-c0e2-4a0f-b2dc-0155684771ac\",\n        \"Status\": \"disable\",\n        \"SubUin\": \"112233\",\n        \"Uin\": \"112233\",\n        \"UpdateTime\": \"2026-03-25 20:43:53\"\n    }\n}",
+        "title": "输入ApiKeyId查询 API 密钥详情"
+      }
+    ],
+    "DescribeApiKeyList": [
+      {
+        "document": "查询当前用户的 API 密钥列表，密钥值脱敏展示。支持分页、过滤和排序。",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiKeyList\n<公共请求参数>\n\n{\n    \"Platform\": \"maas\",\n    \"Filters\": [\n        {\n            \"Name\": \"apiKeyName\",\n            \"Op\": \"EXACT\",\n            \"Values\": [\n                \"my-apikey\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiKeySet\": [\n            {\n                \"ApiKey\": \"sk-2b***3sQc\",\n                \"ApiKeyId\": \"ak-20260325-xxxxxx\",\n                \"AppId\": \"1300056794\",\n                \"BindType\": \"model_custom_endpoint_custom\",\n                \"BindingItems\": [\n                    {\n                        \"ResourceId\": \"deepseek-v3.2\",\n                        \"ResourceType\": \"model\"\n                    }\n                ],\n                \"CreateTime\": \"2026-03-25 19:50:56\",\n                \"Creator\": \"\",\n                \"Editable\": true,\n                \"Name\": \"my-apikey\",\n                \"Platform\": \"maas\",\n                \"Remark\": \"for test use\",\n                \"Status\": \"enable\",\n                \"SubUin\": \"1234556\",\n                \"Uin\": \"1234556\",\n                \"UpdateTime\": \"2026-03-25 19:50:56\"\n            }\n        ],\n        \"RequestId\": \"3ec32d91-3e21-40bf-8874-516fa9197d5b\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询 API 密钥列表。"
+      }
+    ],
+    "DescribeTokenPlan": [
+      {
+        "document": "测试查询 TokenPlan 套餐详情",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTokenPlan\n<公共请求参数>\n\n{\n    \"TeamId\": \"team-1a2b3c4d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiKeyCount\": 10,\n        \"ApiKeyMax\": 10000,\n        \"AppId\": \"12438230\",\n        \"AutoRenewFlag\": 0,\n        \"CreatedAt\": \"2026-04-05T21:06:09+08:00\",\n        \"Creator\": \"12438230\",\n        \"Name\": \"my-test-team\",\n        \"PrepayResourceID\": \"\",\n        \"RequestId\": \"45b1f117-4a30-4d5f-a73c-6966d50ab010\",\n        \"Status\": \"enable\",\n        \"StopReason\": \"\",\n        \"TeamId\": \"team-1a2b3c4d\",\n        \"Uin\": \"21239852\",\n        \"UpdatedAt\": \"2026-04-07T23:26:01+08:00\"\n    }\n}",
+        "title": "DescribeTokenPlan"
+      }
+    ],
+    "DescribeTokenPlanApiKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTokenPlanApiKey\n<公共请求参数>\n\n{\n    \"ApiKeyId\": \"ak-tp-20260412-72dddac0126f0eadf4670f6ce63b3db1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiKey\": {\n            \"AllowedModels\": \"[\\\"glm-5\\\", \\\"auto\\\"]\",\n            \"ApiKey\": \"sk-tp-****L8py\",\n            \"ApiKeyId\": \"ak-tp-20260412-72dddac0126f0eadf4670f6ce63b3db1\",\n            \"AppId\": \"1300056794\",\n            \"CreatedAt\": \"2026-04-12T20:10:47+08:00\",\n            \"Creator\": \"600000563014\",\n            \"KeyVersion\": 1,\n            \"Name\": \"my-test-apikey\",\n            \"Status\": \"enable\",\n            \"StopReason\": \"NORMAL\",\n            \"TPM\": 0,\n            \"TeamId\": \"team-3a834f2dbcf48840115cbf4b48f25342\",\n            \"Uin\": \"600000563014\",\n            \"UpdatedAt\": \"2026-04-12T20:10:47+08:00\",\n            \"UseStatus\": \"enable\"\n        },\n        \"RequestId\": \"b51cda8e-5153-4855-bc34-a2910ec682f9\"\n    }\n}",
+        "title": "DescribeTokenPlanApiKey"
+      }
+    ],
+    "DescribeTokenPlanApiKeyList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTokenPlanApiKeyList\n<公共请求参数>\n\n{\n    \"TeamId\": \"team-3a834f2dbcf48840115cbf4b48f25342\",\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiKeySet\": [\n            {\n                \"AllowedModels\": \"[\\\"glm-5\\\"]\",\n                \"ApiKey\": \"sk-tp-****lQw0\",\n                \"ApiKeyId\": \"ak-tp-20260407-cd2b616ac0ce4d89ffc0f8be03220606\",\n                \"AppId\": \"1300056794\",\n                \"CreatedAt\": \"2026-05-25T15:04:10+08:00\",\n                \"Creator\": \"600000563014\",\n                \"KeyVersion\": 1,\n                \"Name\": \"syytest1111\",\n                \"Status\": \"enable\",\n                \"StopReason\": \"\",\n                \"TeamId\": \"team-3a834f2dbcf48840115cbf4b48f25342\",\n                \"Uin\": \"600000563014\",\n                \"UpdatedAt\": \"2026-05-25T15:04:26+08:00\",\n                \"UseStatus\": \"enable\"\n            }\n        ],\n        \"RequestId\": \"c2e09e22-f9eb-4881-b1a2-7f9f170381d3\",\n        \"TotalCount\": 47\n    }\n}",
+        "title": "DescribeTokenPlanApiKeyList"
+      }
+    ],
+    "DescribeTokenPlanApiKeySecret": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTokenPlanApiKeySecret\n<公共请求参数>\n\n{\n    \"ApiKeyId\": \"ak-tp-20260412-72dddac0126f0eadf4670f6ce63b3db1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiKey\": \"sk-tp-123456\",\n        \"ApiKeyId\": \"ak-tp-20260412-72dddac0126f0eadf4670f6ce63b3db1\",\n        \"RequestId\": \"a39a5d71-5e69-4d1b-b160-b5dbf2e858de\"\n    }\n}",
+        "title": "DescribeTokenPlanApiKeySecret"
+      }
+    ],
+    "DescribeTokenPlanApiKeyUsageDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTokenPlanApiKeyUsageDetail\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"409be278-ce7c-4362-93a5-62391cdf4256\"\n    }\n}",
+        "title": "DescribeTokenPlanApiKeyUsageDetail"
+      }
+    ],
+    "DescribeTokenPlanList": [
+      {
+        "document": "测试查询 TokenPlan 套餐列表",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTokenPlanList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be515245-e05f-4334-9f9d-6d55db1aa8b5\",\n        \"TokenPlanSet\": [\n            {\n                \"ApiKeyMax\": 10000,\n                \"AppId\": \"176623905\",\n                \"CreatedAt\": \"2026-04-05T21:06:09+08:00\",\n                \"Creator\": \"176623905\",\n                \"Name\": \"my-team-test-1\",\n                \"PrepayResourceID\": \"pre-123456\",\n                \"Status\": \"enable\",\n                \"StopReason\": \"\",\n                \"TeamId\": \"team-a1b2c3d4\",\n                \"Uin\": \"214508345\",\n                \"UpdatedAt\": \"2026-04-07T23:26:01+08:00\",\n                \"ProductType\": \"enterprise\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "DescribeTokenPlanList"
+      }
+    ],
+    "DescribeUsageRankList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsageRankList\n<公共请求参数>\n\n{\n    \"Dimension\": \"apikey\",\n    \"StartTime\": \"2026-04-09T00:00:00+08:00\",\n    \"EndTime\": \"2026-05-09T00:00:00+08:00\",\n    \"Period\": 86400\n}",
+        "output": "{\n    \"Response\": {\n        \"Dimension\": \"apikey\",\n        \"EndTime\": \"2026-05-09T00:00:00+08:00\",\n        \"Limit\": 0,\n        \"MetricKeys\": [\n            \"TotalToken\",\n            \"InputTotalToken\",\n            \"OutputTotalToken\"\n        ],\n        \"MetricType\": \"tokens\",\n        \"Offset\": 0,\n        \"PageStats\": {\n            \"InputTotalToken\": 0,\n            \"OutputTotalToken\": 0,\n            \"TotalToken\": 0\n        },\n        \"Period\": 86400,\n        \"RequestId\": \"1568bc1c-946b-4c2b-b69f-6ba93f2bb258\",\n        \"StartTime\": \"2026-04-09T00:00:00+08:00\",\n        \"Timestamps\": [],\n        \"TopList\": [],\n        \"Total\": 0,\n        \"TotalStats\": {\n            \"InputTotalToken\": 0,\n            \"OutputTotalToken\": 0,\n            \"TotalToken\": 0\n        },\n        \"ViewName\": \"tokenhub_uin_apikeyid\"\n    }\n}",
+        "title": "DescribeUsageRankList"
+      }
+    ],
+    "ModifyTokenPlanApiKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTokenPlanApiKey\n<公共请求参数>\n\n{\n    \"ApiKeyId\": \"ak-tp-20260412-72dddac0126f0eadf4670f6ce63b3db1\",\n    \"AllowedModels\": [\n        \"glm-5\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9eae973f-53e4-4713-bdd9-97730349636d\"\n    }\n}",
+        "title": "ModifyTokenPlanApiKey"
+      }
+    ],
+    "ModifyTokenPlanApiKeySecret": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTokenPlanApiKeySecret\n<公共请求参数>\n\n{\n    \"ApiKeyId\": \"ak-tp-20260412-72dddac0126f0eadf4670f6ce63b3db1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiKeyId\": \"ak-tp-20260412-72dddac0126f0eadf4670f6ce63b3db1\",\n        \"KeyVersion\": 2,\n        \"RequestId\": \"5cfcf183-20f7-44a9-a552-d8909e7c2a93\"\n    }\n}",
+        "title": "ModifyTokenPlanApiKeySecret"
+      }
+    ],
+    "RenewTokenPlanTeamOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewTokenPlanTeamOrder\n<公共请求参数>\n\n{\n    \"TeamId\": \"tp-ent-abcdefgh\",\n    \"TimeSpan\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"BigOrderId\": \"big-order-id\",\n        \"RequestId\": \"b98684bf-243d-4efa-b778-5252dcd8bfef\"\n    }\n}",
+        "title": "成功调用"
+      }
+    ],
+    "UpgradeTokenPlanTeamOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeTokenPlanTeamOrder\n<公共请求参数>\n\n{\n    \"TeamId\": \"tp-ent-abcdefgh\",\n    \"NewCreditOrToken\": 1000000\n}",
+        "output": "{\n    \"Response\": {\n        \"BigOrderId\": \"big-order-id\",\n        \"RequestId\": \"1ef43aa6-e830-4174-bfcd-d092e7e59bad\"\n    }\n}",
+        "title": "成功调用"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -8,7 +8,8 @@ Input:
 tccli tse DescribeCloudNativeAPIGatewaySecretKeyList --cli-unfold-argument  \
     --GatewayId gateway-c7fb18e4 \
     --Limit 10 \
-    --Offset 0
+    --Offset 0 \
+    --ResourceType Consumer
 ```
 
 Output: 

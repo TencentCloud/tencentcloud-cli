@@ -1,4 +1,4 @@
-**Example 1: 获取消费者列表**
+**Example 1: 查询消费者列表**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tse DescribeCloudNativeAPIGatewayConsumerList --cli-unfold-argument  \
-    --GatewayId gateway-c7fb18e4 \
-    --Limit 10 \
+    --GatewayId gateway-c67671ec \
+    --Limit 20 \
     --Offset 0
 ```
 
@@ -15,19 +15,19 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "1064a23d-68f6-4e0b-8205-33d341f0026b",
         "Result": {
             "Consumers": [
                 {
-                    "ConsumerId": "c31f5dd7-eab5-4e77-ac18-31add3c94a9d",
-                    "CreateTime": "2025-11-19 16:58:43",
-                    "Description": "消费者1",
-                    "ModifyTime": "2025-11-19 16:58:43",
-                    "Name": "消费者1"
+                    "ConsumerId": "50240110-fe3e-4cab-bd99-b9f37d330c2f",
+                    "CreateTime": "2026-04-30 11:49:52",
+                    "Description": "",
+                    "ModifyTime": "2026-04-30 11:49:52",
+                    "Name": "**********"
                 }
             ],
             "TotalCount": 1
-        }
+        },
+        "RequestId": "bdd74c6e-bd30-4583-a979-0f23477c825f"
     }
 }
 ```

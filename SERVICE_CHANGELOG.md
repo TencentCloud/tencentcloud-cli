@@ -1,48 +1,40 @@
-# Release 3.0.1434.1
+# Release 3.0.1435.1
 
-## 云防火墙(cfw) 版本：2019-09-04
+## 应用性能监控(apm) 版本：2021-06-22
 
-### 第 96 次发布
+### 第 32 次发布
 
-发布时间：2026-05-29 01:21:35
+发布时间：2026-06-01 01:10:40
 
 本次发布包含了以下内容：
 
 改善已有的文档。
+
+修改接口：
+
+* [CreateApmPrometheusRule](http://document.tencentcloudapi.woa.com/document/product/1463/88226)
+
+	* 新增入参：AppendResourceAttributes
+
+* [ModifyApmPrometheusRule](http://document.tencentcloudapi.woa.com/document/product/1463/88219)
+
+	* 新增入参：AppendResourceAttributes
+
 
 修改数据结构：
 
-* [CcnAssociatedInstance](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CcnAssociatedInstance)
+* [ApmPrometheusRules](http://document.tencentcloudapi.woa.com/document/product/1463/64927#ApmPrometheusRules)
 
-	* 新增成员：IsCrossInstance
-
-
-
-
-## 人脸核身(faceid) 版本：2018-03-01
-
-### 第 101 次发布
-
-发布时间：2026-05-29 01:48:35
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* CreateAMLWebhook
-* DeleteAMLWebhook
-* ListAMLWebhooks
-* UpdateAMLWebhook
+	* 新增成员：AppendResourceAttributes
 
 
 
-## 云开发 CloudBase(tcb) 版本：2018-06-08
 
-### 第 47 次发布
+## 媒体处理(mps) 版本：2019-06-12
 
-发布时间：2026-05-29 02:23:56
+### 第 176 次发布
+
+发布时间：2026-06-01 02:02:10
 
 本次发布包含了以下内容：
 
@@ -50,32 +42,19 @@
 
 新增接口：
 
-* [DescribePGUserMigration](http://document.tencentcloudapi.woa.com/document/product/876/90408)
-* [DescribeResourcePermission](http://document.tencentcloudapi.woa.com/document/product/876/90402)
-* [ListPGUserMigrations](http://document.tencentcloudapi.woa.com/document/product/876/90407)
-* [ModifyResourcePermission](http://document.tencentcloudapi.woa.com/document/product/876/90401)
-* [PreviewPGUserMigrations](http://document.tencentcloudapi.woa.com/document/product/876/90406)
-* [PushPGUserMigrations](http://document.tencentcloudapi.woa.com/document/product/876/90405)
-* [RepairPGUserMigrationHistory](http://document.tencentcloudapi.woa.com/document/product/876/90404)
-* [RollbackPGUserMigrations](http://document.tencentcloudapi.woa.com/document/product/876/90403)
+* [UpdateVoice](http://document.tencentcloudapi.woa.com/document/product/862/90437)
 
 新增数据结构：
 
-* [DescribeResourcePermissionResult](http://document.tencentcloudapi.woa.com/document/product/876/34822#DescribeResourcePermissionResult)
-* [MigrationConflict](http://document.tencentcloudapi.woa.com/document/product/876/34822#MigrationConflict)
-* [MigrationInput](http://document.tencentcloudapi.woa.com/document/product/876/34822#MigrationInput)
-* [MigrationPlanItem](http://document.tencentcloudapi.woa.com/document/product/876/34822#MigrationPlanItem)
-* [MigrationSummary](http://document.tencentcloudapi.woa.com/document/product/876/34822#MigrationSummary)
-* [ModifyResourcePermissionResult](http://document.tencentcloudapi.woa.com/document/product/876/34822#ModifyResourcePermissionResult)
-* [ResourcePermission](http://document.tencentcloudapi.woa.com/document/product/876/34822#ResourcePermission)
+* [VoiceUpdateFields](http://document.tencentcloudapi.woa.com/document/product/862/37615#VoiceUpdateFields)
 
 
 
 ## 高性能计算平台(thpc) 版本：2023-03-21
 
-### 第 30 次发布
+### 第 31 次发布
 
-发布时间：2026-05-29 02:35:57
+发布时间：2026-06-01 02:23:36
 
 本次发布包含了以下内容：
 
@@ -83,19 +62,15 @@
 
 新增数据结构：
 
-* [CosOption](http://document.tencentcloudapi.woa.com/document/product/1701/80209#CosOption)
+* [CosOptionOverview](http://document.tencentcloudapi.woa.com/document/product/1701/80209#CosOptionOverview)
 
 修改数据结构：
 
-* [GooseFSOption](http://document.tencentcloudapi.woa.com/document/product/1701/80209#GooseFSOption)
-
-	* 新增成员：FileSystemId
-
-	* <font color="#dd0000">**修改成员**：</font>Masters
-
-* [StorageOption](http://document.tencentcloudapi.woa.com/document/product/1701/80209#StorageOption)
+* [StorageOptionOverview](http://document.tencentcloudapi.woa.com/document/product/1701/80209#StorageOptionOverview)
 
 	* 新增成员：CosOptions
+
+	* <font color="#dd0000">**修改成员**：</font>GooseFSxOptions
 
 
 
@@ -114,9 +89,9 @@
 
 ## 容器服务(tke) 版本：2018-05-25
 
-### 第 127 次发布
+### 第 128 次发布
 
-发布时间：2026-05-29 02:38:14
+发布时间：2026-06-01 02:25:30
 
 本次发布包含了以下内容：
 
@@ -124,87 +99,105 @@
 
 修改接口：
 
-* [CreateClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76934)
+* [ModifyClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76928)
 
-	* 新增入参：SubnetAllocationPolicy, AgentPlugin
+	* 新增入参：SubnetAllocationPolicy
+
+
+
+
+## TokenHub(tokenhub) 版本：2026-03-22
+
+### 第 2 次发布
+
+发布时间：2026-06-01 02:27:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeApiKey](http://document.tencentcloudapi.woa.com/document/product/1814/90444)
+* [DescribeApiKeyList](http://document.tencentcloudapi.woa.com/document/product/1814/90443)
+* [DescribeTokenPlanApiKeyUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1814/90441)
+* [DescribeUsageRankList](http://document.tencentcloudapi.woa.com/document/product/1814/90439)
+
+新增数据结构：
+
+* [ApiKeyDetail](http://document.tencentcloudapi.woa.com/document/product/1814/90425#ApiKeyDetail)
+* [BindingItem](http://document.tencentcloudapi.woa.com/document/product/1814/90425#BindingItem)
+* [UsageRankItem](http://document.tencentcloudapi.woa.com/document/product/1814/90425#UsageRankItem)
+* [UsageSeries](http://document.tencentcloudapi.woa.com/document/product/1814/90425#UsageSeries)
+* [UsageStats](http://document.tencentcloudapi.woa.com/document/product/1814/90425#UsageStats)
+
+
+
+## TSF-Polaris&ZK&网关(tse) 版本：2020-12-07
+
+### 第 105 次发布
+
+发布时间：2026-06-01 02:30:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCloudNativeAPIGatewayLLMModelAPI](http://document.tencentcloudapi.woa.com/document/product/1364/90358)
+
+	* 新增入参：TagFilter, LogConfig
+
+* [CreateCloudNativeAPIGatewayLLMModelService](http://document.tencentcloudapi.woa.com/document/product/1364/90357)
+
+	* 新增入参：QuotaLimit, Tags
+
+* [DescribeCloudNativeAPIGatewaySecretKeyList](http://document.tencentcloudapi.woa.com/document/product/1364/90341)
+
+	* 新增入参：ResourceType
+
+* [ModifyCloudNativeAPIGatewayLLMModelAPI](http://document.tencentcloudapi.woa.com/document/product/1364/90337)
+
+	* 新增入参：TagFilter, LogConfig
+
+* [ModifyCloudNativeAPIGatewayLLMModelService](http://document.tencentcloudapi.woa.com/document/product/1364/90336)
+
+	* 新增入参：QuotaLimit, Tags
 
 
 新增数据结构：
 
-* [AgentPluginConfig](http://document.tencentcloudapi.woa.com/document/product/457/31866#AgentPluginConfig)
-
-
-
-## 语音合成(tts) 版本：2019-08-23
-
-### 第 13 次发布
-
-发布时间：2026-05-29 02:44:20
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [TextToVoice](http://document.tencentcloudapi.woa.com/document/product/1073/37995)
-
-	* 新增入参：ExtraParams
-
-
-
-
-## 数据开发治理平台 WeData(wedata) 版本：2025-10-10
-
-### 第 30 次发布
-
-发布时间：2026-05-29 02:51:03
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateLabels](http://document.tencentcloudapi.woa.com/document/product/1607/89525)
-
-	* 新增入参：Shared
-
-* [DeleteLabels](http://document.tencentcloudapi.woa.com/document/product/1607/89517)
-
-	* 新增入参：Shared
-
-* [ListLabels](http://document.tencentcloudapi.woa.com/document/product/1607/89344)
-
-	* 新增入参：Shared
-
-* [UpdateLabels](http://document.tencentcloudapi.woa.com/document/product/1607/89480)
-
-	* 新增入参：Shared
-
-
-新增数据结构：
-
-* [FeatureJoinLookup](http://document.tencentcloudapi.woa.com/document/product/1607/88970#FeatureJoinLookup)
+* [AIGWCustomDesensitizeRule](http://document.tencentcloudapi.woa.com/document/product/1364/54942#AIGWCustomDesensitizeRule)
+* [AIGWForwardDesensitizeConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#AIGWForwardDesensitizeConfig)
+* [AIGWIntentRoute](http://document.tencentcloudapi.woa.com/document/product/1364/54942#AIGWIntentRoute)
+* [AIGWIntentRouteRule](http://document.tencentcloudapi.woa.com/document/product/1364/54942#AIGWIntentRouteRule)
+* [AIGWLLMQuotaFallbackTrigger](http://document.tencentcloudapi.woa.com/document/product/1364/54942#AIGWLLMQuotaFallbackTrigger)
+* [AIGWLLMQuotaLimit](http://document.tencentcloudapi.woa.com/document/product/1364/54942#AIGWLLMQuotaLimit)
+* [AIGWLatencyPriorityConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#AIGWLatencyPriorityConfig)
+* [AIGWLatencyPriorityRouteRule](http://document.tencentcloudapi.woa.com/document/product/1364/54942#AIGWLatencyPriorityRouteRule)
+* [AIGWLogConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#AIGWLogConfig)
+* [AIGWLogDesensitizeConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#AIGWLogDesensitizeConfig)
+* [AIGWTagFilter](http://document.tencentcloudapi.woa.com/document/product/1364/54942#AIGWTagFilter)
 
 修改数据结构：
 
-* [ExperimentDetail](http://document.tencentcloudapi.woa.com/document/product/1607/88970#ExperimentDetail)
+* [AIGWCrossServiceFallbackConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#AIGWCrossServiceFallbackConfig)
 
-	* 新增成员：FeatureLookup
+	* 新增成员：QuotaFallbackTrigger
 
-* [TrainingData](http://document.tencentcloudapi.woa.com/document/product/1607/88970#TrainingData)
+* [CloudNativeAPIGatewayLLMModelAPI](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayLLMModelAPI)
 
-	* 新增成员：FeatureLookup
+	* 新增成员：TagFilter, LogConfig, LogDesensitizeConfig, ForwardDesensitizeConfig
 
+* [CloudNativeAPIGatewayLLMModelService](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayLLMModelService)
 
+	* 新增成员：QuotaLimit, Tags, SecretKeyIds
 
+* [CloudNativeAPIGatewayLLMModelServiceRoute](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayLLMModelServiceRoute)
 
-## 数据开发治理平台 WeData(wedata) 版本：2025-08-06
+	* 新增成员：IntentRouteConfig, LatencyPriorityConfig
 
-
-
-## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
 
 
 

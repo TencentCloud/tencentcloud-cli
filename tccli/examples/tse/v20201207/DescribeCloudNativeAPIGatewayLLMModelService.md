@@ -6,35 +6,42 @@ Input:
 
 ```
 tccli tse DescribeCloudNativeAPIGatewayLLMModelService --cli-unfold-argument  \
-    --GatewayId gateway-04b00666 \
-    --ModelServiceId 4bc1ed9534b74838a66b9f788cfd2c00
+    --GatewayId gateway-4eb46023 \
+    --ModelServiceId d0742b86605340438a8018c658156622
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2dce5b09-a6d5-4e54-a364-27cb0e859986",
         "Result": {
-            "CreateTime": "0001-01-01 00:00:00",
-            "Description": "gpt 测试 API-PassThrough",
-            "EnableModelParamCheck": true,
-            "Id": "4bc1ed9534b74838a66b9f788cfd2c00",
-            "ModelParamCheckRule": {
-                "AllowModelList": [
-                    "gpt-5.1 Pro",
-                    "gpt-4o",
-                    "gpt-4.1"
-                ],
-                "ModelValidationFailureStrategy": "Retuen404"
+            "Id": "d0742b86605340438a8018c658156622",
+            "Name": "openai_test",
+            "CreateTime": "2026-05-19T15:00:00+08:00",
+            "ModifyTime": "2026-05-19T15:00:00+08:00",
+            "ServiceType": "LLMService",
+            "ModelProvider": "openai",
+            "ModelProtocol": "OpenAI/V1",
+            "UpstreamURL": "",
+            "ModelSelector": "Specify",
+            "DefaultModel": "gpt-5.1",
+            "EnableModelFallback": true,
+            "ModelFallbackRule": {
+                "FallbackModels": [
+                    "gpt-5.2",
+                    "gpt-5-mini"
+                ]
             },
-            "ModelProtocol": "OpenAI/v1",
-            "ModelProvider": "OpenAI",
-            "ModelSelector": "PassThrough",
-            "ModifyTime": "0001-01-01 00:00:00",
-            "Name": "openai_test_PassThrough",
-            "ServiceType": "LLMService"
-        }
+            "EnableModelParamCheck": false,
+            "Description": "OpenAI 模型服务",
+            "ConnectTimeout": 10000,
+            "WriteTimeout": 60000,
+            "ReadTimeout": 60000,
+            "Retries": 0,
+            "UpstreamUrlMode": "AutoConcat",
+            "SNI": ""
+        },
+        "RequestId": "bb67a5c6-44c2-4ad7-acb4-bffdd4aa68fe"
     }
 }
 ```

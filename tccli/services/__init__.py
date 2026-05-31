@@ -905,6 +905,9 @@ SERVICE_VERSIONS = {
     "tocservice": [
         "2022-02-10"
     ],
+    "tokenhub": [
+        "2026-03-22"
+    ],
     "tourism": [
         "2023-02-15"
     ],
