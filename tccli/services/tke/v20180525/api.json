@@ -22760,7 +22760,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID，通过DescribeClusters接口获取",
+          "document": "<p>集群ID，通过DescribeClusters接口获取</p>",
           "example": "cls-e55paxnt",
           "member": "string",
           "name": "ClusterId",
@@ -22769,7 +22769,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池ID，通过DescribeNodePools接口获取",
+          "document": "<p>节点池ID，通过DescribeNodePools接口获取</p>",
           "example": "np-e55paxnt",
           "member": "string",
           "name": "NodePoolId",
@@ -22778,7 +22778,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池名称，必须修改至少一个参数",
+          "document": "<p>节点池名称，必须修改至少一个参数</p>",
           "example": "virtual-node-prod",
           "member": "string",
           "name": "Name",
@@ -22787,7 +22787,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组ID列表，必须修改至少一个参数",
+          "document": "<p>安全组ID列表，必须修改至少一个参数</p>",
           "example": "[\"sg-0kxvmoz1\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -22796,7 +22796,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟节点label，必须修改至少一个参数",
+          "document": "<p>虚拟节点label，必须修改至少一个参数</p>",
           "example": "无",
           "member": "Label",
           "name": "Labels",
@@ -22805,7 +22805,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟节点taint，必须修改至少一个参数",
+          "document": "<p>虚拟节点taint，必须修改至少一个参数</p>",
           "example": "无",
           "member": "Taint",
           "name": "Taints",
@@ -22814,12 +22814,21 @@
         },
         {
           "disabled": false,
-          "document": "删除保护开关，必须修改至少一个参数",
+          "document": "<p>删除保护开关，必须修改至少一个参数</p>",
           "example": "false",
           "member": "bool",
           "name": "DeletionProtection",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网分配策略</p>",
+          "example": "无",
+          "member": "SubnetAllocationPolicy",
+          "name": "SubnetAllocationPolicy",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

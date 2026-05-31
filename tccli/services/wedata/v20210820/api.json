@@ -62148,7 +62148,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建者帐号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建者账号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "101028578763",
           "member": "string",
           "name": "OwnId",

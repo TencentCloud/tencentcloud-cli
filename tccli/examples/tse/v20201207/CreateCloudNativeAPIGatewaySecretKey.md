@@ -1,4 +1,35 @@
-**Example 1: 创建自动生成密钥**
+**Example 1: 创建KMS秘钥**
+
+
+
+Input: 
+
+```
+tccli tse CreateCloudNativeAPIGatewaySecretKey --cli-unfold-argument  \
+    --GatewayId gateway-xxx \
+    --SecretType ApiKey \
+    --Name 测试KMS密钥 \
+    --GenerateType KMS \
+    --ResourceType Consumer \
+    --KmsKeyName XX \
+    --KmsKeyVersion v1 \
+    --Description 测试密钥
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "3f6008b8-249c-4b5c-a5ea-09bedb2a5b3b",
+        "Result": {
+            "ID": "secret-30859974",
+            "Success": true
+        }
+    }
+}
+```
+
+**Example 2: 创建自动生成密钥**
 
 
 
@@ -27,7 +58,7 @@ Output:
 }
 ```
 
-**Example 2: 创建自定义密钥**
+**Example 3: 创建自定义密钥**
 
 
 
@@ -51,37 +82,6 @@ Output:
         "RequestId": "173ebf7b-7beb-442d-bc4f-7a66eebd8264",
         "Result": {
             "ID": "secret-c3966447",
-            "Success": true
-        }
-    }
-}
-```
-
-**Example 3: 创建KMS秘钥**
-
-
-
-Input: 
-
-```
-tccli tse CreateCloudNativeAPIGatewaySecretKey --cli-unfold-argument  \
-    --GatewayId gateway-xxx \
-    --SecretType ApiKey \
-    --Name 测试KMS密钥 \
-    --GenerateType KMS \
-    --ResourceType Consumer \
-    --KmsKeyName XX \
-    --KmsKeyVersion v1 \
-    --Description 测试密钥
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "3f6008b8-249c-4b5c-a5ea-09bedb2a5b3b",
-        "Result": {
-            "ID": "secret-30859974",
             "Success": true
         }
     }

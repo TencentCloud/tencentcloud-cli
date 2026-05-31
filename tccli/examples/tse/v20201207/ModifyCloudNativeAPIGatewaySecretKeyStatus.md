@@ -1,4 +1,4 @@
-**Example 1: 禁用密钥**
+**Example 1: 启用密钥**
 
 
 
@@ -7,7 +7,7 @@ Input:
 ```
 tccli tse ModifyCloudNativeAPIGatewaySecretKeyStatus --cli-unfold-argument  \
     --GatewayId gateway-xxx \
-    --Status Disable \
+    --Status Enable \
     --SecretKeyId secret-xxx
 ```
 
@@ -20,7 +20,7 @@ Output:
 }
 ```
 
-**Example 2: 启用密钥**
+**Example 2: 禁用密钥**
 
 
 
@@ -29,7 +29,7 @@ Input:
 ```
 tccli tse ModifyCloudNativeAPIGatewaySecretKeyStatus --cli-unfold-argument  \
     --GatewayId gateway-xxx \
-    --Status Enable \
+    --Status Disable \
     --SecretKeyId secret-xxx
 ```
 

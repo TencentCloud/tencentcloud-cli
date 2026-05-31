@@ -1920,6 +1920,14 @@
         "title": "剧集项目更新"
       }
     ],
+    "UpdateVoice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateVoice\n<公共请求参数>\n\n{\n    \"VoiceId\": \"v1_bXtKSKkmijRkVuzHpVQMkZ/356N9EYGT6/o0liHuqhTc3l2C93vGsTgoqRZNy9MaTAs=\",\n    \"VoiceFields\": {\n        \"Age\": \"youth\",\n        \"Languages\": [\n            \"zh\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"Msg\": \"success\",\n        \"Voice\": {\n            \"Age\": \"youth\",\n            \"Category\": \"clone\",\n            \"Description\": \"This is an updated voice description\",\n            \"Gender\": \"female\",\n            \"Languages\": [\n                \"zh\"\n            ],\n            \"Name\": \"update-test\",\n            \"VoiceId\": \"v1_bXtKSKkmijRkVuzHpVQMkZ/356N9EYGT6/o0liHuqhTc3l2C93vGsTgoqRZNy9MaTAs=\"\n        },\n        \"RequestId\": \"e8af7402-5b5a-4e32-bb72-55886391d270\"\n    }\n}",
+        "title": "更新音色信息示例"
+      }
+    ],
     "WithdrawsWatermark": [
       {
         "document": "提取视频中的暗水印。",

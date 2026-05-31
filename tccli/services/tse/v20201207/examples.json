@@ -123,6 +123,12 @@
     "CreateCloudNativeAPIGatewaySecretKey": [
       {
         "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"SecretType\": \"ApiKey\",\n    \"Name\": \"测试KMS密钥\",\n    \"GenerateType\": \"KMS\",\n    \"ResourceType\": \"Consumer\",\n    \"KmsKeyName\": \"XX\",\n    \"KmsKeyVersion\": \"v1\",\n    \"Description\": \"测试密钥\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f6008b8-249c-4b5c-a5ea-09bedb2a5b3b\",\n        \"Result\": {\n            \"ID\": \"secret-30859974\",\n            \"Success\": true\n        }\n    }\n}",
+        "title": "创建KMS秘钥"
+      },
+      {
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"SecretType\": \"ApiKey\",\n    \"Name\": \"测试系统密钥\",\n    \"GenerateType\": \"System\",\n    \"ResourceType\": \"Consumer\",\n    \"Description\": \"密钥\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0edc69d-f575-44da-ba7a-b40656fcf878\",\n        \"Result\": {\n            \"ID\": \"secret-152eb264\",\n            \"Success\": true\n        }\n    }\n}",
         "title": "创建自动生成密钥"
@@ -132,12 +138,6 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"SecretType\": \"ApiKey\",\n    \"Name\": \"测试自定义密钥\",\n    \"GenerateType\": \"Custom\",\n    \"ResourceType\": \"Consumer\",\n    \"SecretValue\": \"sk-xxxxxxxx\",\n    \"Description\": \"测试密钥\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"173ebf7b-7beb-442d-bc4f-7a66eebd8264\",\n        \"Result\": {\n            \"ID\": \"secret-c3966447\",\n            \"Success\": true\n        }\n    }\n}",
         "title": "创建自定义密钥"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"SecretType\": \"ApiKey\",\n    \"Name\": \"测试KMS密钥\",\n    \"GenerateType\": \"KMS\",\n    \"ResourceType\": \"Consumer\",\n    \"KmsKeyName\": \"XX\",\n    \"KmsKeyVersion\": \"v1\",\n    \"Description\": \"测试密钥\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f6008b8-249c-4b5c-a5ea-09bedb2a5b3b\",\n        \"Result\": {\n            \"ID\": \"secret-30859974\",\n            \"Success\": true\n        }\n    }\n}",
-        "title": "创建KMS秘钥"
       }
     ],
     "CreateCloudNativeAPIGatewayService": [
@@ -591,17 +591,17 @@
     "DescribeCloudNativeAPIGatewayConsumerGroupList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayConsumerGroupList\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2478e2b2-e9a4-44cd-b958-419e0a809158\",\n        \"Result\": {\n            \"ConsumerGroups\": [\n                {\n                    \"ConsumerGroupId\": \"cg-2cd91a00\",\n                    \"CreateTime\": \"2025-11-20 09:13:16\",\n                    \"Description\": \"分组描述\",\n                    \"ModifyTime\": \"2025-11-20 09:13:16\",\n                    \"Name\": \"分组1\",\n                    \"Status\": \"Enable\",\n                    \"BindCount\": 0\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
-        "title": "根据分组id模糊查询"
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayConsumerGroupList\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c67671ec\",\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ConsumerGroups\": [\n                {\n                    \"BindCount\": 1,\n                    \"ConsumerGroupId\": \"cg-200bac0a61cd4c\",\n                    \"CreateTime\": \"2026-04-16 19:08:18\",\n                    \"Description\": \"Default consumer group created by the system\",\n                    \"ModifyTime\": \"2026-04-16 19:08:18\",\n                    \"Name\": \"default-consumer-group\",\n                    \"Status\": \"Enable\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"3dfde9ac-42a6-4982-9a58-d5b4f5b1b0d4\"\n    }\n}",
+        "title": "查询消费者分组列表"
       }
     ],
     "DescribeCloudNativeAPIGatewayConsumerList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayConsumerList\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1064a23d-68f6-4e0b-8205-33d341f0026b\",\n        \"Result\": {\n            \"Consumers\": [\n                {\n                    \"ConsumerId\": \"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\",\n                    \"CreateTime\": \"2025-11-19 16:58:43\",\n                    \"Description\": \"消费者1\",\n                    \"ModifyTime\": \"2025-11-19 16:58:43\",\n                    \"Name\": \"消费者1\"\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
-        "title": "获取消费者列表"
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayConsumerList\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c67671ec\",\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Consumers\": [\n                {\n                    \"ConsumerId\": \"50240110-fe3e-4cab-bd99-b9f37d330c2f\",\n                    \"CreateTime\": \"2026-04-30 11:49:52\",\n                    \"Description\": \"\",\n                    \"ModifyTime\": \"2026-04-30 11:49:52\",\n                    \"Name\": \"**********\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"bdd74c6e-bd30-4583-a979-0f23477c825f\"\n    }\n}",
+        "title": "查询消费者列表"
       }
     ],
     "DescribeCloudNativeAPIGatewayIPRestriction": [
@@ -623,8 +623,8 @@
     "DescribeCloudNativeAPIGatewayLLMModelAPI": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMModelAPI\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-04b00666\",\n    \"ModelAPIId\": \"769ebd672acb4640b0a35a31bd429de9\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48dddba4-5fa4-45ee-a026-d53333e275f0\",\n        \"Result\": {\n            \"BasePath\": \"/base\",\n            \"CreateTime\": \"2025-11-26 10:16:16\",\n            \"Description\": \"OpenAI 格式模型 API\",\n            \"Id\": \"769ebd672acb4640b0a35a31bd429de9\",\n            \"ModifyTime\": \"2025-11-26 10:16:16\",\n            \"Name\": \"openai_chat_测试3\",\n            \"RequestProtocol\": \"OpenAI\",\n            \"RouteList\": [\n                {\n                    \"Paths\": [\n                        \"/v1/chat/completions\"\n                    ]\n                }\n            ],\n            \"SceneType\": \"Chat\",\n            \"StripPath\": true\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMModelAPI\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-4eb46023\",\n    \"ModelAPIId\": \"a1b2c3d4e5f6789012345678901234ab\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Id\": \"a1b2c3d4e5f6789012345678901234ab\",\n            \"CreateTime\": \"2026-05-19T15:00:00+08:00\",\n            \"ModifyTime\": \"2026-05-19T15:00:00+08:00\",\n            \"Name\": \"openai_chat\",\n            \"SceneType\": \"Chat\",\n            \"RequestProtocol\": \"openai\",\n            \"RouteList\": [\n                {\n                    \"Name\": \"openai_chat_route_1\",\n                    \"Methods\": [\n                        \"POST\"\n                    ],\n                    \"Paths\": [\n                        \"/v1/chat/completions\"\n                    ]\n                }\n            ],\n            \"BasePath\": \"/v1/openai\",\n            \"StripPath\": false,\n            \"Description\": \"大模型统一聊天 API\",\n            \"ModelServiceId\": \"d0742b86605340438a8018c658156622\",\n            \"ModelServiceName\": \"openai_test\",\n            \"MatchHeaders\": [],\n            \"EnableCrossServiceFallback\": false\n        },\n        \"RequestId\": \"f1234567-89ab-cdef-0123-456789abcdef\"\n    }\n}",
         "title": "查询单个 LLM 模型 API 信息"
       }
     ],
@@ -639,8 +639,8 @@
     "DescribeCloudNativeAPIGatewayLLMModelService": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMModelService\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-04b00666\",\n    \"ModelServiceId\": \"4bc1ed9534b74838a66b9f788cfd2c00\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dce5b09-a6d5-4e54-a364-27cb0e859986\",\n        \"Result\": {\n            \"CreateTime\": \"0001-01-01 00:00:00\",\n            \"Description\": \"gpt 测试 API-PassThrough\",\n            \"EnableModelParamCheck\": true,\n            \"Id\": \"4bc1ed9534b74838a66b9f788cfd2c00\",\n            \"ModelParamCheckRule\": {\n                \"AllowModelList\": [\n                    \"gpt-5.1 Pro\",\n                    \"gpt-4o\",\n                    \"gpt-4.1\"\n                ],\n                \"ModelValidationFailureStrategy\": \"Retuen404\"\n            },\n            \"ModelProtocol\": \"OpenAI/v1\",\n            \"ModelProvider\": \"OpenAI\",\n            \"ModelSelector\": \"PassThrough\",\n            \"ModifyTime\": \"0001-01-01 00:00:00\",\n            \"Name\": \"openai_test_PassThrough\",\n            \"ServiceType\": \"LLMService\"\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMModelService\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-4eb46023\",\n    \"ModelServiceId\": \"d0742b86605340438a8018c658156622\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Id\": \"d0742b86605340438a8018c658156622\",\n            \"Name\": \"openai_test\",\n            \"CreateTime\": \"2026-05-19T15:00:00+08:00\",\n            \"ModifyTime\": \"2026-05-19T15:00:00+08:00\",\n            \"ServiceType\": \"LLMService\",\n            \"ModelProvider\": \"openai\",\n            \"ModelProtocol\": \"OpenAI/V1\",\n            \"UpstreamURL\": \"\",\n            \"ModelSelector\": \"Specify\",\n            \"DefaultModel\": \"gpt-5.1\",\n            \"EnableModelFallback\": true,\n            \"ModelFallbackRule\": {\n                \"FallbackModels\": [\n                    \"gpt-5.2\",\n                    \"gpt-5-mini\"\n                ]\n            },\n            \"EnableModelParamCheck\": false,\n            \"Description\": \"OpenAI 模型服务\",\n            \"ConnectTimeout\": 10000,\n            \"WriteTimeout\": 60000,\n            \"ReadTimeout\": 60000,\n            \"Retries\": 0,\n            \"UpstreamUrlMode\": \"AutoConcat\",\n            \"SNI\": \"\"\n        },\n        \"RequestId\": \"bb67a5c6-44c2-4ad7-acb4-bffdd4aa68fe\"\n    }\n}",
         "title": "查询单个 LLM 模型服务列表"
       }
     ],
@@ -695,7 +695,7 @@
     "DescribeCloudNativeAPIGatewaySecretKeyList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewaySecretKeyList\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewaySecretKeyList\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"ResourceType\": \"Consumer\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9b49623-c235-4839-b1d6-1f6f23ae8dcd\",\n        \"Result\": {\n            \"SecretKeys\": [\n                {\n                    \"BindCount\": 0,\n                    \"CreateTime\": \"2025-11-19 12:35:50\",\n                    \"Description\": \"密钥\",\n                    \"GenerateType\": \"System\",\n                    \"KmsKeyName\": \"\",\n                    \"KmsKeyVersion\": \"\",\n                    \"ModifyTime\": \"2025-11-19 12:35:50\",\n                    \"Name\": \"测试系统密钥\",\n                    \"ResourceType\": \"Consumer\",\n                    \"SecretKeyId\": \"secret-wefawwe\",\n                    \"SecretType\": \"ApiKey\",\n                    \"SecretValue\": \"sk-****wdk\",\n                    \"Status\": \"Enable\"\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
         "title": "查询密钥列表"
       }
@@ -1077,15 +1077,15 @@
     "ModifyCloudNativeAPIGatewaySecretKeyStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewaySecretKeyStatus\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"Status\": \"Disable\",\n    \"SecretKeyId\": \"secret-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b877a25a-207b-47b2-ad4b-1ad1d0345971\"\n    }\n}",
-        "title": "禁用密钥"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewaySecretKeyStatus\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"Status\": \"Enable\",\n    \"SecretKeyId\": \"secret-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b877a25a-207b-47b2-ad4b-1ad1d0345971\"\n    }\n}",
         "title": "启用密钥"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewaySecretKeyStatus\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"Status\": \"Disable\",\n    \"SecretKeyId\": \"secret-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b877a25a-207b-47b2-ad4b-1ad1d0345971\"\n    }\n}",
+        "title": "禁用密钥"
       }
     ],
     "ModifyCloudNativeAPIGatewayService": [

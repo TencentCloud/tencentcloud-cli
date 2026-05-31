@@ -17446,7 +17446,7 @@
         },
         {
           "disabled": false,
-          "document": "算法类目。可能取值：\n- `COMPREHENSION`：视觉理解",
+          "document": "算法类目。可选值：\n- `COMPREHENSION`：视觉理解\n- `HIGHLIGHT`：视频浓缩",
           "example": "COMPREHENSION",
           "member": "string",
           "name": "ServiceCategory",
@@ -17470,6 +17470,15 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型。\n\n当 ServiceCategory 为 `COMPREHENSION` 时，可选值包括：\n- `VID_COMP`：视频理解\n- `IMG_COMP`：图片理解\n- `CONT_PERSON_MOTIONLESS`：静姿检测\n\n当 ServiceCategory 为 `HIGHLIGHT` 时，可选值包括：\n- `COMP_HIGHLIGHT`：视频浓缩",
+          "example": "[\"VID_COMP\"]",
+          "member": "string",
+          "name": "ServiceTypes",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -17504,6 +17513,15 @@
           "example": "3",
           "member": "int64",
           "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL",
+          "example": "1780022332",
+          "member": "int64",
+          "name": "FileURLExpireTime",
           "required": false,
           "type": "int"
         }
@@ -21840,6 +21858,72 @@
       ],
       "usage": "out"
     },
+    "SeeDetectContinuousConfig": {
+      "document": "TWeSee 标签持续检测配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测标签。可选值：\n- `person_motionless`：人物静止",
+          "example": "person_motionless",
+          "member": "string",
+          "name": "DetectType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启用检测的按日周期起始时间分钟数。取值范围：0 ~ 1440",
+          "example": "0",
+          "member": "int64",
+          "name": "DailyStartTime",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启用检测的按日周期结束时间分钟数。取值范围：0 ~ 1440",
+          "example": "1440",
+          "member": "int64",
+          "name": "DailyEndTime",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检测间隔分钟数。取值范围：5 ~ 60。",
+          "example": "5",
+          "member": "int64",
+          "name": "Interval",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SeeDetectContinuousResult": {
+      "document": "TWeSee 标签持续检测结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测标签是否在当前区间内持续",
+          "example": "true",
+          "member": "bool",
+          "name": "IsContinuousInRange",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SeeEventIdFilterConfig": {
       "document": "TWeSee 处理云存事件 EventId 的过滤规则配置",
       "members": [
@@ -21949,7 +22033,7 @@
         },
         {
           "disabled": false,
-          "document": "算法类目。可能取值：\n\n- `COMPREHENSION`：视觉理解",
+          "document": "算法类目。可能取值：\n\n- `COMPREHENSION`：视觉理解\n- `HIGHLIGHT`：视频浓缩",
           "example": "COMPREHENSION",
           "member": "string",
           "name": "ServiceCategory",
@@ -21959,7 +22043,7 @@
         },
         {
           "disabled": false,
-          "document": "算法类型。可能取值：\n\n- `VID_COMP`：视频理解\n- `IMG_COMP`：图片理解",
+          "document": "算法类型。可能取值：\n\n- `VID_COMP`：视频理解\n- `IMG_COMP`：图片理解\n- `COMP_HIGHLIGHT`：视频浓缩",
           "example": "VID_COMP",
           "member": "string",
           "name": "ServiceType",
@@ -21993,6 +22077,16 @@
           "example": "无",
           "member": "SeeCompHighlightResult",
           "name": "CompHighlightResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签持续检测结果",
+          "example": "无",
+          "member": "SeeDetectContinuousResult",
+          "name": "DetectContinuousResult",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -24954,6 +25048,17 @@
           "example": "无",
           "member": "VisionCustomDetectQuery",
           "name": "CustomDetectQueries",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签持续检测配置",
+          "example": "无",
+          "member": "SeeDetectContinuousConfig",
+          "name": "DetectContinuous",
           "output_required": false,
           "required": false,
           "type": "list",

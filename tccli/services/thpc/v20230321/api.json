@@ -1236,6 +1236,42 @@
       ],
       "usage": "in"
     },
+    "CosOptionOverview": {
+      "document": "COS存储选项概览信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件系统本地挂载路径。</p>",
+          "example": "/mnt/cos-test",
+          "member": "string",
+          "name": "LocalPath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>COS桶地址。</p>",
+          "example": "test-thpc-cos-1300242089.cos.ap-guangzhou.myqcloud.com",
+          "member": "string",
+          "name": "RemotePath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>COS挂载参数</p>",
+          "example": "{\"mount_params_option\": \"\"}",
+          "member": "string",
+          "name": "MountOption",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateClusterRequest": {
       "document": "CreateCluster请求参数结构体",
       "members": [
@@ -2889,8 +2925,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件系统远程挂载路径。</p>",
-          "example": "/data/goosefs-fuse",
+          "document": "<p>文件系统远程挂载路径; 远端路径为GooseFS控制台看到的命名空间的url;命名空间文档参考https://cloud.tencent.com/document/product/1424/117877</p>",
+          "example": "/test-1251001001",
           "member": "string",
           "name": "RemotePath",
           "required": true,
@@ -4861,31 +4897,41 @@
       "members": [
         {
           "disabled": false,
-          "document": "CFS存储选项概览信息列表。",
+          "document": "<p>CFS存储选项概览信息列表。</p>",
           "example": "无",
           "member": "CFSOptionOverview",
           "name": "CFSOptions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "GooseFS存储选项概览信息列表。",
+          "document": "<p>GooseFS存储选项概览信息列表。</p>",
           "example": "无",
           "member": "GooseFSOptionOverview",
           "name": "GooseFSOptions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "GooseFSx存储选项概览信息列表。",
+          "document": "<p>GooseFSx存储选项概览信息列表。</p>",
           "example": "无",
           "member": "GooseFSxOptionOverview",
           "name": "GooseFSxOptions",
-          "required": false,
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>COS存储选项概览信息列表。</p>",
+          "example": "无",
+          "member": "CosOptionOverview",
+          "name": "CosOptions",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
