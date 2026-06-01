@@ -34556,7 +34556,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "转码后的视频文件地址。",
+          "document": "<p>转码后的视频文件地址。</p>",
           "example": "http://xxxx/xxx.mp4",
           "member": "string",
           "name": "Url",
@@ -34566,7 +34566,7 @@
         },
         {
           "disabled": false,
-          "document": "转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。\n<font color=red>注意：取值 0 表示原始文件。</font> ",
+          "document": "<p>转码规格 ID，参见<a href=\"https://cloud.tencent.com/document/product/266/33476\">转码参数模板</a>。<br><font color=\"red\">注意：取值 0 表示原始文件。</font></p>",
           "example": "10010",
           "member": "int64",
           "name": "Definition",
@@ -34576,7 +34576,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流码率平均值与音频流码率平均值之和， 单位：bps。",
+          "document": "<p>视频流码率平均值与音频流码率平均值之和， 单位：bps。</p>",
           "example": "125000",
           "member": "int64",
           "name": "Bitrate",
@@ -34586,7 +34586,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流高度的最大值，单位：px。",
+          "document": "<p>视频流高度的最大值，单位：px。</p>",
           "example": "720",
           "member": "int64",
           "name": "Height",
@@ -34596,7 +34596,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流宽度的最大值，单位：px。",
+          "document": "<p>视频流宽度的最大值，单位：px。</p>",
           "example": "1080",
           "member": "int64",
           "name": "Width",
@@ -34606,7 +34606,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体文件总大小，单位：字节。\n<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>",
+          "document": "<p>媒体文件总大小，单位：字节。</p><li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>",
           "example": "123000",
           "member": "int64",
           "name": "Size",
@@ -34616,7 +34616,7 @@
         },
         {
           "disabled": false,
-          "document": "视频时长，单位：秒。",
+          "document": "<p>视频时长，单位：秒。</p>",
           "example": "10",
           "member": "float",
           "name": "Duration",
@@ -34626,7 +34626,7 @@
         },
         {
           "disabled": false,
-          "document": "视频的 md5 值。",
+          "document": "<p>视频的 md5 值。</p>",
           "example": "1231",
           "member": "string",
           "name": "Md5",
@@ -34636,7 +34636,7 @@
         },
         {
           "disabled": false,
-          "document": "容器类型，例如 m4a，mp4 等。",
+          "document": "<p>容器类型，例如 m4a，mp4 等。</p>",
           "example": "mp4",
           "member": "string",
           "name": "Container",
@@ -34646,7 +34646,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流信息。",
+          "document": "<p>视频流信息。</p>",
           "example": "无",
           "member": "MediaVideoStreamItem",
           "name": "VideoStreamSet",
@@ -34656,7 +34656,7 @@
         },
         {
           "disabled": false,
-          "document": "音频流信息。",
+          "document": "<p>音频流信息。</p>",
           "example": "无",
           "member": "MediaAudioStreamItem",
           "name": "AudioStreamSet",
@@ -34666,7 +34666,7 @@
         },
         {
           "disabled": false,
-          "document": "数字水印类型。可选值：\n<li>Trace 表示经过溯源水印处理；</li>\n<li>CopyRight 表示经过版权水印处理；</li>\n<li>None 表示没有经过数字水印处理。</li>",
+          "document": "<p>数字水印类型。可选值：</p><li>Trace 表示经过溯源水印处理；</li><li>CopyRight 表示经过版权水印处理；</li><li>None 表示没有经过数字水印处理。</li>",
           "example": "Trace",
           "member": "string",
           "name": "DigitalWatermarkType",
@@ -34676,7 +34676,7 @@
         },
         {
           "disabled": false,
-          "document": "版权信息。",
+          "document": "<p>版权信息。</p>",
           "example": "None",
           "member": "string",
           "name": "CopyRightWatermarkText",
@@ -34686,12 +34686,22 @@
         },
         {
           "disabled": false,
-          "document": "数字水印模板id。",
+          "document": "<p>数字水印模板id。</p>",
           "example": "10000",
           "member": "int64",
           "name": "BlindWatermarkDefinition",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>转码生成的新FileId，请求开启独立媒资输出时有效。</p>",
+          "example": "5001834******823362",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

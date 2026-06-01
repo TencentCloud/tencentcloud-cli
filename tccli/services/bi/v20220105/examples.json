@@ -67,16 +67,16 @@
     "CreateUserGroup": [
       {
         "document": "添加用户组",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"测试用户组\",\n    \"Location\": 0,\n    \"ParentId\": -1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7b8dad84-4285-4717-ac6d-5a76a29cb815\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserGroup\n<公共请求参数>\n\n{\n    \"AdminUserId\": \"userId\",\n    \"Description\": \"/描述\",\n    \"GroupName\": \"测试用户组\",\n    \"Location\": 0,\n    \"ParentId\": -1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AdminUserId\": \"userId\",\n            \"Description\": \"/描述\",\n            \"GroupName\": \"测试用户组\",\n            \"Id\": 273,\n            \"IsDefault\": 0,\n            \"Location\": 7,\n            \"ParentId\": -1,\n            \"ParentName\": null,\n            \"UserList\": null\n        },\n        \"Extra\": \"\",\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"7b8dad84-4285-4717-ac6d-5a76a29cb815\"\n    }\n}",
         "title": "CreateUserGroup"
       }
     ],
     "CreateUserGroupMember": [
       {
         "document": "CreateUserGroupMember",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserGroupMember\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b2b04f1-80a7-434d-a138-3da4e082213e\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserGroupMember\n<公共请求参数>\n\n{\n    \"GroupId\": 256,\n    \"UserIdList\": [\n        \"700001088309\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"4b2b04f1-80a7-434d-a138-3da4e082213e\",\n        \"Extra\": \"\",\n        \"Data\": null\n    }\n}",
         "title": "CreateUserGroupMember"
       }
     ],
@@ -130,7 +130,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserGroup\n\n{\n    \"Id\": 274\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0695353-deaa-4220-9aa1-f4c42a9dc81a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"Extra\": \"\",\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"f0695353-deaa-4220-9aa1-f4c42a9dc81a\"\n    }\n}",
         "title": "DeleteUserGroup"
       }
     ],
@@ -138,7 +138,7 @@
       {
         "document": "DeleteUserGroupMember",
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserGroupMember\n<公共请求参数>\n\n{\n    \"GroupId\": 256,\n    \"UserIdList\": [\n        \"700000407453\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"47cbc0f1-6525-4e2c-a812-9f009628b306\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"47cbc0f1-6525-4e2c-a812-9f009628b306\",\n        \"Extra\": \"\",\n        \"Data\": null\n    }\n}",
         "title": "DeleteUserGroupMember"
       }
     ],
@@ -256,7 +256,7 @@
       {
         "document": "DescribeUserGroupMemberList",
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserGroupMemberList\n<公共请求参数>\n\n{\n    \"PageNo\": 0,\n    \"PageSize\": 10,\n    \"GroupIds\": [\n        256\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e56bb79b-f4ea-4ba3-92a7-431d23e6371c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"e56bb79b-f4ea-4ba3-92a7-431d23e6371c\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"List\": [\n                {\n                    \"UserName\": \"99999\",\n                    \"UserId\": \"700000401505\",\n                    \"CreatedBy\": \"700000280185\",\n                    \"CreatedOn\": \"2025-06-18 16:12:14\"\n                }\n            ],\n            \"Total\": 1,\n            \"TotalPages\": 1\n        }\n    }\n}",
         "title": "DescribeUserGroupMemberList"
       }
     ],
@@ -359,8 +359,8 @@
     "ModifyUserGroup": [
       {
         "document": "ModifyUserGroup",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserGroup\n\n{\n    \"UpdateList\": [\n        {\n            \"AdminUserId\": \"700000280185\",\n            \"Description\": \"123\",\n            \"GroupName\": \"测试用户组\",\n            \"Location\": 0,\n            \"ParentId\": -1,\n            \"Id\": 273\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fae2a374-801a-49df-8544-8fd865d4d34a\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserGroup\n\n{\n    \"UpdateList\": [\n        {\n            \"AdminUserId\": \"700000280185\",\n            \"Description\": \"/描述\",\n            \"GroupName\": \"测试用户组\",\n            \"Location\": 0,\n            \"ParentId\": -1,\n            \"Id\": 273\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AdminUserId\": \"700000280185\",\n                \"Description\": \"/描述\",\n                \"GroupName\": \"测试用户组\",\n                \"Id\": 273,\n                \"IsDefault\": 0,\n                \"Location\": 0,\n                \"ParentId\": -1\n            }\n        ],\n        \"Extra\": \"\",\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"fae2a374-801a-49df-8544-8fd865d4d34a\"\n    }\n}",
         "title": "ModifyUserGroup"
       }
     ],
@@ -384,7 +384,7 @@
       {
         "document": "QueryUserGroupMember",
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryUserGroupMember\n<公共请求参数>\n\n{\n    \"FilterGroupIds\": [\n        256\n    ],\n    \"AllPage\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b0f8718f-d45d-47ef-a395-804a82746fff\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"b0f8718f-d45d-47ef-a395-804a82746fff\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"List\": [\n                {\n                    \"UserName\": \"kira_sub_user\",\n                    \"UserId\": \"700000286953\",\n                    \"CreatedBy\": null,\n                    \"CreatedOn\": \"2022-03-21 16:34:56\"\n                }\n            ],\n            \"Total\": 1,\n            \"TotalPages\": 1\n        }\n    }\n}",
         "title": "QueryUserGroupMember"
       }
     ]

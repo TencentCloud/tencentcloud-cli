@@ -1343,7 +1343,29 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问方式：public - 公网，internal - 内网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>网段或IP，支持IPv4或IPv6。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"0.0.0.0/16\"]",
+          "member": "string",
+          "name": "CidrBlocks",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>ACCEPT 或 DROP。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ACCEPT",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问方式：public - 公网，internal - 内网</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "public",
           "member": "string",
           "name": "AccessMode",

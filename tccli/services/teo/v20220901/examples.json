@@ -212,6 +212,14 @@
         "title": "创建函数"
       }
     ],
+    "CreateFunctionReplica": [
+      {
+        "document": "为函数ID为 ef-crkwnfy0 的边缘函数添加一个名为 Hello-World-Replica 的边缘函数副本，创建副本后可通过添加请求头 EO-Function-Replica-Name: \"Hello-World-Replica\" 访问该副本的函数。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFunctionReplica\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3exa7oergn0l\",\n    \"FunctionId\": \"ef-crkwnfy0\",\n    \"ReplicaName\": \"Hello-World-Replica\",\n    \"Content\": \"addEventListener('fetch', e => {\\r\\n  const response = new Response('Hello World!');\\r\\n  e.respondWith(response);\\r\\n});\",\n    \"Remark\": \"Hello World Replica\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"176711aa-10e2-4573-b3ee-b4fbdac2780f\"\n    }\n}",
+        "title": "创建边缘函数副本"
+      }
+    ],
     "CreateFunctionRule": [
       {
         "document": "为站点 zone-293e7s5jne1i 创建一个边缘函数规则，当请求host为 www.function.com 时命中规则，采用 direct（直接指定）的方式选择目标函数，目标函数 ID 为 ef-1pakhnuy 。",
@@ -638,6 +646,14 @@
         "title": "删除边缘函数"
       }
     ],
+    "DeleteFunctionReplica": [
+      {
+        "document": "删除站点 ID 为 zone-3exa7oergn0l 下边缘函数 ID 为 ef-crkwnfy0 函数副本名称为 Hello-World-Replica 的边缘函数副本。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFunctionReplica\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3exa7oergn0l\",\n    \"FunctionId\": \"ef-crkwnfy0\",\n    \"ReplicaNames\": [\n        \"Hello-World-Replica\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed746f01-805b-474c-b020-9db1898a7302\"\n    }\n}",
+        "title": "删除边缘函数副本"
+      }
+    ],
     "DeleteFunctionRules": [
       {
         "document": "",
@@ -986,6 +1002,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFunctionComponentBindings\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3j1xw7910arp\",\n    \"FunctionId\": \"ef-x5tuixcj\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"FunctionComponentBindings\": [\n            {\n                \"KVNamespaceParameters\": {\n                    \"Namespace\": \"ns-011\",\n                    \"ZoneId\": \"zone-3j1xw7910arp\"\n                },\n                \"Type\": \"kv_namespace\",\n                \"VariableName\": \"MY_KV\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"34da5ee4-18b8-4d18-9354-907df99d4234\"\n    }\n}",
         "title": "查询边缘函数组件绑定列表"
+      }
+    ],
+    "DescribeFunctionReplicas": [
+      {
+        "document": "查询站点 ID 为 zone-3exa7oergn0l 下的边缘函数 ID 为 ef-crkwnfy0 的边缘函数副本列表。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFunctionReplicas\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3exa7oergn0l\",\n    \"FunctionId\": \"ef-crkwnfy0\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"SortBy\": \"created-on\",\n    \"SortOrder\": \"desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FunctionReplicas\": [\n            {\n                \"Content\": \"addEventListener('fetch', e => {\\r\\n  const response = new Response('Hello World 2!');\\r\\n  e.respondWith(response);\\r\\n});\",\n                \"CreatedOn\": \"2026-01-19T10:22:55+08:00\",\n                \"FunctionId\": \"ef-crkwnfy0\",\n                \"ModifiedOn\": \"2026-01-19T11:48:52+08:00\",\n                \"Remark\": \"Hello World Replica\",\n                \"ReplicaName\": \"Hello-World-Replica\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"9fc970ff-64bf-4234-a010-a8a7875f77f7\"\n    }\n}",
+        "title": "查询边缘函数副本列表"
       }
     ],
     "DescribeFunctionRules": [
@@ -1784,6 +1808,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFunctionComponentBindings\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3j1xw7910arp\",\n    \"FunctionId\": \"ef-x5tuixcj\",\n    \"Operation\": \"bind\",\n    \"FunctionComponentBindings\": [\n        {\n            \"Type\": \"kv_namespace\",\n            \"VariableName\": \"MY_KV\",\n            \"KVNamespaceParameters\": {\n                \"ZoneId\": \"zone-3j1xw7910arp\",\n                \"Namespace\": \"ns-011\"\n            }\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3fe9013c-47a3-4f0c-a660-e5f6e02faba1\"\n    }\n}",
         "title": "绑定 EdgeKV 命名空间到边缘函数"
+      }
+    ],
+    "ModifyFunctionReplica": [
+      {
+        "document": "修改函数ID为 ef-crkwnfy0 的边缘函数下的一个名为 Hello-World-Replica 的边缘函数副本的内容和描述。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFunctionReplica\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3exa7oergn0l\",\n    \"FunctionId\": \"ef-crkwnfy0\",\n    \"ReplicaName\": \"Hello-World-Replica\",\n    \"Content\": \"addEventListener('fetch', e => {\\r\\n  const response = new Response('Hello World 2!');\\r\\n  e.respondWith(response);\\r\\n});\",\n    \"Remark\": \"Hello World Replica\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"58b4ccab-3ce0-4e2a-a832-93c88eeb3c71\"\n    }\n}",
+        "title": "编辑边缘函数副本"
       }
     ],
     "ModifyFunctionRule": [

@@ -218,7 +218,7 @@
       "status": "online"
     },
     "DescribeBillingInfo": {
-      "document": "获取计费相关信息",
+      "document": "获取云开发环境的计费相关信息。\n包括环境的 状态、当前套餐、购买时间、到期时间 等。",
       "input": "DescribeBillingInfoRequest",
       "name": "获取计费相关信息",
       "output": "DescribeBillingInfoResponse",
@@ -3495,12 +3495,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境ID",
+          "document": "<p>环境ID</p>",
           "example": "env-xxyyzzaa",
           "member": "string",
           "name": "EnvId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境列表，当环境列表不为空时，查询的环境以该参数为准</p>",
+          "example": "[\"stress10new0060000zd-d1a82f617e3\"]",
+          "member": "string",
+          "name": "EnvIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页条数（用于拉取列表时分页）</p>",
+          "example": "1000",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3510,12 +3537,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境计费信息列表",
+          "document": "<p>环境计费信息列表</p>",
           "example": "无",
           "member": "EnvBillingInfoItem",
           "name": "EnvBillingInfoList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总个数</p>",
+          "example": "1000",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -6286,7 +6323,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境ID",
+          "document": "<p>环境ID</p>",
           "example": "env-xxxxxx",
           "member": "string",
           "name": "EnvId",
@@ -6296,7 +6333,7 @@
         },
         {
           "disabled": false,
-          "document": "tcb产品套餐ID，参考DescribePackages接口的返回值。",
+          "document": "<p>tcb产品套餐ID，参考DescribePackages接口的返回值。</p>",
           "example": "baas_personal",
           "member": "string",
           "name": "PackageId",
@@ -6306,7 +6343,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记",
+          "document": "<p>自动续费标记</p>",
           "example": "true",
           "member": "bool",
           "name": "IsAutoRenew",
@@ -6316,7 +6353,7 @@
         },
         {
           "disabled": false,
-          "document": "状态。包含以下取值：\n<li> 空字符串：初始化中</li>\n<li> NORMAL：正常</li>\n<li> ISOLATE：隔离</li>",
+          "document": "<p>状态。包含以下取值：</p><li> 空字符串：初始化中</li><li> NORMAL：正常</li><li> ISOLATE：隔离</li>",
           "example": "NORMAL",
           "member": "string",
           "name": "Status",
@@ -6326,7 +6363,7 @@
         },
         {
           "disabled": false,
-          "document": "支付方式。包含以下取值：\n<li> PREPAYMENT：预付费</li>\n<li> POSTPAID：后付费</li>",
+          "document": "<p>支付方式。包含以下取值：</p><li> PREPAYMENT：预付费</li><li> POSTPAID：后付费</li>",
           "example": "PREPAYMENT",
           "member": "string",
           "name": "PayMode",
@@ -6336,7 +6373,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离时间，最近一次隔离的时间",
+          "document": "<p>隔离时间，最近一次隔离的时间</p>",
           "example": "2022-01-01 12:34:56",
           "member": "string",
           "name": "IsolatedTime",
@@ -6346,7 +6383,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间，套餐即将到期的时间",
+          "document": "<p>过期时间，套餐即将到期的时间</p>",
           "example": "2022-01-01 12:34:56",
           "member": "string",
           "name": "ExpireTime",
@@ -6356,7 +6393,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，第一次接入计费方案的时间。",
+          "document": "<p>创建时间，第一次接入计费方案的时间。</p>",
           "example": "2022-01-01 12:34:56",
           "member": "string",
           "name": "CreateTime",
@@ -6366,7 +6403,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间，计费信息最近一次更新的时间。",
+          "document": "<p>更新时间，计费信息最近一次更新的时间。</p>",
           "example": "2022-01-01 12:34:56",
           "member": "string",
           "name": "UpdateTime",
@@ -6376,7 +6413,7 @@
         },
         {
           "disabled": false,
-          "document": "true表示从未升级过付费版。",
+          "document": "<p>true表示从未升级过付费版。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAlwaysFree",
@@ -6386,7 +6423,7 @@
         },
         {
           "disabled": false,
-          "document": "付费渠道。\n<li> miniapp：小程序</li>\n<li> qcloud：腾讯云</li>",
+          "document": "<p>付费渠道。</p><li> miniapp：小程序</li><li> qcloud：腾讯云</li>",
           "example": "miniapp",
           "member": "string",
           "name": "PaymentChannel",
@@ -6396,7 +6433,7 @@
         },
         {
           "disabled": false,
-          "document": "最新的订单信息",
+          "document": "<p>最新的订单信息</p>",
           "example": "无",
           "member": "OrderInfo",
           "name": "OrderInfo",
@@ -6406,7 +6443,7 @@
         },
         {
           "disabled": false,
-          "document": "免费配额信息。",
+          "document": "<p>免费配额信息。</p>",
           "example": "basic",
           "member": "string",
           "name": "FreeQuota",
@@ -6416,7 +6453,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启 `超过套餐额度部分转按量付费`",
+          "document": "<p>是否开启 <code>超过套餐额度部分转按量付费</code></p>",
           "example": "false",
           "member": "bool",
           "name": "EnableOverrun",
@@ -6426,7 +6463,7 @@
         },
         {
           "disabled": false,
-          "document": "环境套餐类型",
+          "document": "<p>环境套餐类型</p>",
           "example": "baas",
           "member": "string",
           "name": "ExtPackageType",
@@ -6436,7 +6473,7 @@
         },
         {
           "disabled": false,
-          "document": "是否付费期环境，可取值：yes/no。",
+          "document": "<p>是否付费期环境，可取值：yes/no。</p>",
           "example": "yes",
           "member": "string",
           "name": "EnvCharged",
@@ -6446,7 +6483,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已激活，可取值：yes/no。",
+          "document": "<p>是否已激活，可取值：yes/no。</p>",
           "example": "yes",
           "member": "string",
           "name": "EnvActivated",

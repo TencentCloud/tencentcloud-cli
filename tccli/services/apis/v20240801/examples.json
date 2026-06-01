@@ -3,7 +3,7 @@
     "CreateAgentApp": [
       {
         "document": "创建app",
-        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentApp\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-e6fbc9b9\",\n    \"Name\": \"hello1\",\n    \"AuthType\": \"apiKey\"\n}",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentApp\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-e6fbc9b9\",\n    \"Name\": \"hello1\",\n    \"AuthType\": \"apiKey\",\n    \"ConnectorIDs\": [\n        \"ctr-********\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"aga-2b2e0214\"\n        },\n        \"RequestId\": \"aaa7c5ac-d5fc-4f34-81a0-aeb0af415e28\"\n    }\n}",
         "title": "创建app"
       }

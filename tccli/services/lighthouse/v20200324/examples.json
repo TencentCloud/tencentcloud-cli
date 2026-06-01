@@ -222,6 +222,14 @@
         "title": "查询镜像信息"
       }
     ],
+    "DescribeBlueprintsShareAcrossAccountInfos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlueprintsShareAcrossAccountInfos\n<公共请求参数>\n\n{\n    \"BlueprintIds\": [\n        \"lhbp-6jc6l8yb\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BlueprintShareAcrossAccountInfoSet\": [\n            {\n                \"BlueprintId\": \"lhbp-6jc6l8yb\",\n                \"AccountId\": \"700000164995\",\n                \"CreatedTime\": \"2023-09-13T00:29:12Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d339efa9-f637-4ba9-a7c6-fb89ce67d76f\"\n    }\n}",
+        "title": "查询镜像跨账号共享信息"
+      }
+    ],
     "DescribeBundleDiscount": [
       {
         "document": "查询套餐折扣",

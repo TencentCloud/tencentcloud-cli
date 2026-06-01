@@ -14,7 +14,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "47cbc0f1-6525-4e2c-a812-9f009628b306"
+        "Msg": "默认业务成功",
+        "RequestId": "47cbc0f1-6525-4e2c-a812-9f009628b306",
+        "Extra": "",
+        "Data": null
     }
 }
 ```

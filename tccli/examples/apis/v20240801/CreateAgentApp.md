@@ -8,7 +8,8 @@ Input:
 tccli apis CreateAgentApp --cli-unfold-argument  \
     --InstanceID ins-e6fbc9b9 \
     --Name hello1 \
-    --AuthType apiKey
+    --AuthType apiKey \
+    --ConnectorIDs ctr-********
 ```
 
 Output: 

@@ -133,6 +133,13 @@
       "output": "CreateFunctionResponse",
       "status": "online"
     },
+    "CreateFunctionReplica": {
+      "document": "本接口用于创建指定边缘函数的副本。创建副本后，当客户端请求匹配已配置的触发规则或默认域名时，您可以通过在请求头中添加 EO-Function-Replica-Name:[副本名称] 来访问特定的函数副本。每个函数默认支持创建两个副本。",
+      "input": "CreateFunctionReplicaRequest",
+      "name": "创建边缘函数副本",
+      "output": "CreateFunctionReplicaResponse",
+      "status": "online"
+    },
     "CreateFunctionRule": {
       "document": "创建边缘函数的触发规则。支持通过自定义过滤条件来决定是否需要执行函数，当需要执行函数时，提供了多种选择目标函数的方式，包括：直接指定，基于客户端归属地区选择和基于权重选择。",
       "input": "CreateFunctionRuleRequest",
@@ -362,6 +369,13 @@
       "input": "DeleteFunctionRequest",
       "name": "删除边缘函数",
       "output": "DeleteFunctionResponse",
+      "status": "online"
+    },
+    "DeleteFunctionReplica": {
+      "document": "本接口用于删除指定的边缘函数副本。",
+      "input": "DeleteFunctionReplicaRequest",
+      "name": "删除边缘函数副本",
+      "output": "DeleteFunctionReplicaResponse",
       "status": "online"
     },
     "DeleteFunctionRules": {
@@ -642,6 +656,13 @@
       "input": "DescribeFunctionComponentBindingsRequest",
       "name": "查询函数组件绑定列表",
       "output": "DescribeFunctionComponentBindingsResponse",
+      "status": "online"
+    },
+    "DescribeFunctionReplicas": {
+      "document": "本接口用于查询边缘函数的副本列表。",
+      "input": "DescribeFunctionReplicasRequest",
+      "name": "查询边缘函数副本列表",
+      "output": "DescribeFunctionReplicasResponse",
       "status": "online"
     },
     "DescribeFunctionRules": {
@@ -1209,6 +1230,13 @@
       "input": "ModifyFunctionComponentBindingsRequest",
       "name": "修改函数组件绑定",
       "output": "ModifyFunctionComponentBindingsResponse",
+      "status": "online"
+    },
+    "ModifyFunctionReplica": {
+      "document": "本接口用于修改指定边缘函数副本的内容和描述。",
+      "input": "ModifyFunctionReplicaRequest",
+      "name": "编辑边缘函数副本",
+      "output": "ModifyFunctionReplicaResponse",
       "status": "online"
     },
     "ModifyFunctionRule": {
@@ -7127,6 +7155,69 @@
       ],
       "type": "object"
     },
+    "CreateFunctionReplicaRequest": {
+      "document": "CreateFunctionReplica请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3exa7oergn0l",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数 ID。",
+          "example": "ef-crkwnfy0",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "边缘函数副本名称。限制可输入 1-50 个字符，允许的字符为a-z、0-9、-，且-不能单独注册或连续使用，不能放在开头或结尾。同一 FunctionId 下副本名称需唯一。",
+          "example": "Hello-World-Replica",
+          "member": "string",
+          "name": "ReplicaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "边缘函数副本内容，当前仅支持 JavaScript 代码，最大支持 5MB。",
+          "example": "addEventListener('fetch', e => {\r\n  const response = new Response('Hello World!');\r\n  e.respondWith(response);\r\n});",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "边缘函数副本描述。最大支持 50 个字符。",
+          "example": "Hello World Replica",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFunctionReplicaResponse": {
+      "document": "CreateFunctionReplica返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateFunctionRequest": {
       "document": "CreateFunction请求参数结构体",
       "members": [
@@ -10018,6 +10109,51 @@
       ],
       "type": "object"
     },
+    "DeleteFunctionReplicaRequest": {
+      "document": "DeleteFunctionReplica请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3exa7oergn0l",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数 ID。",
+          "example": "ef-crkwnfy0",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要删除的函数的副本名称。支持以列表的形式传入。",
+          "example": "[\"Hello-World-Replica\"]",
+          "member": "string",
+          "name": "ReplicaNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFunctionReplicaResponse": {
+      "document": "DeleteFunctionReplica返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteFunctionRequest": {
       "document": "DeleteFunction请求参数结构体",
       "members": [
@@ -12501,6 +12637,107 @@
           "example": "无",
           "member": "FunctionComponentBinding",
           "name": "FunctionComponentBindings",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFunctionReplicasRequest": {
+      "document": "DescribeFunctionReplicas请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3exa7oergn0l",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数 ID。",
+          "example": "ef-crkwnfy0",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量。默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目。默认值：20，最大值：200。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序依据，取值有：  <li>created-on：创建时间。</li>  默认根据 created-on 属性排序。",
+          "example": "created-on",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "列表排序方式，取值有：  <li>asc：升序排列；</li>  <li>desc：降序排列。</li>  默认值为 asc。",
+          "example": "desc",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回函数 ID 下全部函数副本。详细的过滤条件如下：  <li> replica-name：按照函数副本名称进行过滤，支持模糊查询。</li> ",
+          "example": "无",
+          "member": "AdvancedFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFunctionReplicasResponse": {
+      "document": "DescribeFunctionReplicas返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "边缘函数副本总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "边缘函数副本列表。",
+          "example": "无",
+          "member": "FunctionReplica",
+          "name": "FunctionReplicas",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -18510,6 +18747,72 @@
       ],
       "usage": "both"
     },
+    "FunctionReplica": {
+      "document": "边缘函数副本。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "函数 ID。",
+          "example": "ef-crkwnfy0",
+          "member": "string",
+          "name": "FunctionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "边缘函数副本名称。",
+          "example": "Hello-World-Replica",
+          "member": "string",
+          "name": "ReplicaName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "边缘函数副本内容。格式为 JavaScript 代码。",
+          "example": "addEventListener('fetch', e => {\r\n  const response = new Response('Hello World 2!');\r\n  e.respondWith(response);\r\n});",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "边缘函数副本描述。",
+          "example": "Hello World Replica",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "边缘函数副本创建时间。",
+          "example": "2026-01-19T10:22:55+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "边缘函数副本更新时间。",
+          "example": "2026-01-19T11:48:52+08:00",
+          "member": "datetime_iso",
+          "name": "ModifiedOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "FunctionRule": {
       "document": "边缘函数触发规则。",
       "members": [
@@ -22395,6 +22698,69 @@
     },
     "ModifyFunctionComponentBindingsResponse": {
       "document": "ModifyFunctionComponentBindings返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFunctionReplicaRequest": {
+      "document": "ModifyFunctionReplica请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3exa7oergn0l",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数 ID。",
+          "example": "ef-crkwnfy0",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要修改的边缘函数副本名称。",
+          "example": "Hello-World-Replica",
+          "member": "string",
+          "name": "ReplicaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "边缘函数副本内容，当前仅支持 JavaScript 代码，最大支持 5MB。",
+          "example": "addEventListener('fetch', e => {\r\n  const response = new Response('Hello World 2!');\r\n  e.respondWith(response);\r\n});",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "边缘函数副本描述。最大支持 50 个字符。",
+          "example": "Hello World Replica",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFunctionReplicaResponse": {
+      "document": "ModifyFunctionReplica返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -1878,7 +1878,26 @@
     },
     "CreateUserGroupMemberRequest": {
       "document": "CreateUserGroupMember请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户组id</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户id集合</p>",
+          "example": "[\"100\"]",
+          "member": "string",
+          "name": "UserIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "CreateUserGroupMemberResponse": {
@@ -1895,6 +1914,36 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Extra",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Msg",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Data",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1908,7 +1957,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组名称",
+          "document": "<p>组管理员</p>",
+          "example": "subuin",
+          "member": "string",
+          "name": "AdminUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "/描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组名称</p>",
           "example": "用户组名称",
           "member": "string",
           "name": "GroupName",
@@ -1917,7 +1984,7 @@
         },
         {
           "disabled": false,
-          "document": "位置",
+          "document": "<p>位置</p>",
           "example": "0",
           "member": "int64",
           "name": "Location",
@@ -1926,7 +1993,7 @@
         },
         {
           "disabled": false,
-          "document": "父用户组id",
+          "document": "<p>父用户组id</p>",
           "example": "-1",
           "member": "int64",
           "name": "ParentId",
@@ -1946,6 +2013,36 @@
           "member": "ErrorInfo",
           "name": "ErrorInfo",
           "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Extra",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Msg",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserGroupVO",
+          "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2873,7 +2970,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组id",
+          "document": "<p>用户组id</p>",
           "example": "124",
           "member": "uint64",
           "name": "GroupId",
@@ -2882,8 +2979,8 @@
         },
         {
           "disabled": false,
-          "document": "用户id集合",
-          "example": "[\"123\"]",
+          "document": "<p>用户id集合</p>",
+          "example": "[\"1213\"]",
           "member": "string",
           "name": "UserIdList",
           "required": false,
@@ -2906,6 +3003,36 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Extra",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Msg",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Data",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2919,7 +3046,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组id",
+          "document": "<p>用户组id</p>",
           "example": "124",
           "member": "int64",
           "name": "Id",
@@ -2940,6 +3067,36 @@
           "name": "ErrorInfo",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Extra",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Msg",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Data",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -4148,7 +4305,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组id集合",
+          "document": "<p>用户组id集合</p>",
           "example": "[124,56]",
           "member": "int64",
           "name": "GroupIds",
@@ -4157,7 +4314,7 @@
         },
         {
           "disabled": false,
-          "document": "asc正序,desc倒序",
+          "document": "<p>asc正序,desc倒序</p>",
           "example": "asc",
           "member": "string",
           "name": "CreatedOnOrder",
@@ -4166,7 +4323,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字",
+          "document": "<p>搜索关键字</p>",
           "example": "搜索关键字",
           "member": "string",
           "name": "Keyword",
@@ -4175,7 +4332,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小",
+          "document": "<p>分页大小</p>",
           "example": "20",
           "member": "uint64",
           "name": "PageSize",
@@ -4184,7 +4341,7 @@
         },
         {
           "disabled": false,
-          "document": "分页页码",
+          "document": "<p>分页页码</p>",
           "example": "0",
           "member": "uint64",
           "name": "PageNo",
@@ -4193,7 +4350,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要分页",
+          "document": "<p>是否需要分页</p>",
           "example": "false",
           "member": "bool",
           "name": "AllPage",
@@ -4217,6 +4374,36 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Extra",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Msg",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeUserGroupMemberPageListContainer",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4224,6 +4411,42 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeUserGroupMemberPageListContainer": {
+      "document": "查询页面列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表数据集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserGroupMemberVO",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalPages",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribeUserGroupTreeListRequest": {
       "document": "DescribeUserGroupTreeList请求参数结构体",
@@ -6357,7 +6580,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组更新list",
+          "document": "<p>用户组更新list</p>",
           "example": "无",
           "member": "UserGroupUpdateDTO",
           "name": "UpdateList",
@@ -6378,6 +6601,36 @@
           "name": "ErrorInfo",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Extra",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Msg",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserGroupVO",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -7211,7 +7464,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组id集合",
+          "document": "<p>用户组id集合</p>",
           "example": "[124,56]",
           "member": "int64",
           "name": "GroupIds",
@@ -7220,7 +7473,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字",
+          "document": "<p>搜索关键字</p>",
           "example": "搜索关键字",
           "member": "string",
           "name": "Keyword",
@@ -7229,7 +7482,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小",
+          "document": "<p>分页大小</p>",
           "example": "20",
           "member": "uint64",
           "name": "PageSize",
@@ -7238,7 +7491,7 @@
         },
         {
           "disabled": false,
-          "document": "分页页码",
+          "document": "<p>分页页码</p>",
           "example": "0",
           "member": "uint64",
           "name": "PageNo",
@@ -7247,7 +7500,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要分页",
+          "document": "<p>是否需要分页</p>",
           "example": "false",
           "member": "bool",
           "name": "AllPage",
@@ -7256,7 +7509,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组节点信息",
+          "document": "<p>用户组节点信息</p>",
           "example": "无",
           "member": "UserGroupTreeNodeDTO",
           "name": "Nodes",
@@ -7265,7 +7518,7 @@
         },
         {
           "disabled": false,
-          "document": "标签值",
+          "document": "<p>标签值</p>",
           "example": "无",
           "member": "ResourceTagValue",
           "name": "TagValueList",
@@ -7274,7 +7527,7 @@
         },
         {
           "disabled": false,
-          "document": "需要过滤的用户组",
+          "document": "<p>需要过滤的用户组</p>",
           "example": "[123]",
           "member": "int64",
           "name": "FilterGroupIds",
@@ -7294,6 +7547,36 @@
           "member": "ErrorInfo",
           "name": "ErrorInfo",
           "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Extra",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Msg",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeUserGroupMemberPageListContainer",
+          "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7913,6 +8196,56 @@
       ],
       "usage": "both"
     },
+    "UserGroupMemberVO": {
+      "document": "用户组成员VO出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "用户名",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "124",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "124",
+          "member": "string",
+          "name": "CreatedBy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-06-10 12:00:00",
+          "member": "string",
+          "name": "CreatedOn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "UserGroupPageTreeVO": {
       "document": "用户组权限树",
       "members": [
@@ -8186,6 +8519,130 @@
         }
       ],
       "usage": "in"
+    },
+    "UserGroupUserInfoVO": {
+      "document": "用户组返回参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "用户id",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "用户名称",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UserGroupVO": {
+      "document": "用户组返回参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "用户组名称",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属用户组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
+          "member": "int64",
+          "name": "ParentId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属用户组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "所属名称",
+          "member": "string",
+          "name": "ParentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否默认用户组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsDefault",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户组管理员\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "用户组管理员",
+          "member": "string",
+          "name": "AdminUserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "排序位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Location",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserGroupUserInfoVO",
+          "name": "UserList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "UserIdAndUserName": {
       "document": "用户ID和用户名",
