@@ -2106,8 +2106,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组id",
-          "example": "123",
+          "document": "<p>用户组id</p>",
+          "example": "1",
           "member": "uint64",
           "name": "GroupId",
           "required": false,
@@ -2115,8 +2115,8 @@
         },
         {
           "disabled": false,
-          "document": "用户id集合",
-          "example": "[\"123\"]",
+          "document": "<p>用户id集合</p>",
+          "example": "[\"100\"]",
           "member": "string",
           "name": "UserIdList",
           "required": false,
@@ -2140,8 +2140,8 @@
         },
         {
           "disabled": false,
-          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Extra",
           "member": "string",
           "name": "Extra",
           "output_required": true,
@@ -2150,8 +2150,8 @@
         },
         {
           "disabled": false,
-          "document": "结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>结果信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Msg",
           "member": "string",
           "name": "Msg",
           "output_required": true,
@@ -2160,8 +2160,8 @@
         },
         {
           "disabled": false,
-          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "返回值",
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Data",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -2182,7 +2182,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "组管理员",
+          "document": "<p>组管理员</p>",
           "example": "subuin",
           "member": "string",
           "name": "AdminUserId",
@@ -2191,8 +2191,8 @@
         },
         {
           "disabled": false,
-          "document": "描述",
-          "example": "描述",
+          "document": "<p>描述</p>",
+          "example": "/描述",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2200,7 +2200,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组名称",
+          "document": "<p>用户组名称</p>",
           "example": "用户组名称",
           "member": "string",
           "name": "GroupName",
@@ -2209,7 +2209,7 @@
         },
         {
           "disabled": false,
-          "document": "位置",
+          "document": "<p>位置</p>",
           "example": "0",
           "member": "int64",
           "name": "Location",
@@ -2218,7 +2218,7 @@
         },
         {
           "disabled": false,
-          "document": "父用户组id",
+          "document": "<p>父用户组id</p>",
           "example": "-1",
           "member": "int64",
           "name": "ParentId",
@@ -2243,8 +2243,8 @@
         },
         {
           "disabled": false,
-          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Extra",
           "member": "string",
           "name": "Extra",
           "output_required": true,
@@ -2253,8 +2253,8 @@
         },
         {
           "disabled": false,
-          "document": "结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>结果信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Msg",
           "member": "string",
           "name": "Msg",
           "output_required": true,
@@ -2263,7 +2263,7 @@
         },
         {
           "disabled": false,
-          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UserGroupVO",
           "name": "Data",
@@ -3195,7 +3195,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组id",
+          "document": "<p>用户组id</p>",
           "example": "124",
           "member": "uint64",
           "name": "GroupId",
@@ -3204,8 +3204,8 @@
         },
         {
           "disabled": false,
-          "document": "用户id集合",
-          "example": "[\"123\"]",
+          "document": "<p>用户id集合</p>",
+          "example": "[\"1213\"]",
           "member": "string",
           "name": "UserIdList",
           "required": false,
@@ -3229,8 +3229,8 @@
         },
         {
           "disabled": false,
-          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Extra",
           "member": "string",
           "name": "Extra",
           "output_required": true,
@@ -3239,8 +3239,8 @@
         },
         {
           "disabled": false,
-          "document": "结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>结果信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Msg",
           "member": "string",
           "name": "Msg",
           "output_required": true,
@@ -3249,8 +3249,8 @@
         },
         {
           "disabled": false,
-          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Data",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -3271,7 +3271,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组id",
+          "document": "<p>用户组id</p>",
           "example": "124",
           "member": "int64",
           "name": "Id",
@@ -3296,8 +3296,8 @@
         },
         {
           "disabled": false,
-          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Extra",
           "member": "string",
           "name": "Extra",
           "output_required": true,
@@ -3306,8 +3306,8 @@
         },
         {
           "disabled": false,
-          "document": "结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>结果信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Msg",
           "member": "string",
           "name": "Msg",
           "output_required": true,
@@ -3316,8 +3316,8 @@
         },
         {
           "disabled": false,
-          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Data",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -4636,7 +4636,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组id集合",
+          "document": "<p>用户组id集合</p>",
           "example": "[124,56]",
           "member": "int64",
           "name": "GroupIds",
@@ -4645,7 +4645,7 @@
         },
         {
           "disabled": false,
-          "document": "asc正序,desc倒序",
+          "document": "<p>asc正序,desc倒序</p>",
           "example": "asc",
           "member": "string",
           "name": "CreatedOnOrder",
@@ -4654,7 +4654,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字",
+          "document": "<p>搜索关键字</p>",
           "example": "搜索关键字",
           "member": "string",
           "name": "Keyword",
@@ -4663,7 +4663,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小",
+          "document": "<p>分页大小</p>",
           "example": "20",
           "member": "uint64",
           "name": "PageSize",
@@ -4672,7 +4672,7 @@
         },
         {
           "disabled": false,
-          "document": "分页页码",
+          "document": "<p>分页页码</p>",
           "example": "0",
           "member": "uint64",
           "name": "PageNo",
@@ -4681,7 +4681,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要分页",
+          "document": "<p>是否需要分页</p>",
           "example": "false",
           "member": "bool",
           "name": "AllPage",
@@ -4706,8 +4706,8 @@
         },
         {
           "disabled": false,
-          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Extra",
           "member": "string",
           "name": "Extra",
           "output_required": true,
@@ -4716,8 +4716,8 @@
         },
         {
           "disabled": false,
-          "document": "结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>结果信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Msg",
           "member": "string",
           "name": "Msg",
           "output_required": true,
@@ -4726,7 +4726,7 @@
         },
         {
           "disabled": false,
-          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeUserGroupMemberPageListContainer",
           "name": "Data",
@@ -6911,7 +6911,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组更新list",
+          "document": "<p>用户组更新list</p>",
           "example": "无",
           "member": "UserGroupUpdateDTO",
           "name": "UpdateList",
@@ -6936,8 +6936,8 @@
         },
         {
           "disabled": false,
-          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Extra",
           "member": "string",
           "name": "Extra",
           "output_required": true,
@@ -6946,8 +6946,8 @@
         },
         {
           "disabled": false,
-          "document": "结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>结果信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Msg",
           "member": "string",
           "name": "Msg",
           "output_required": true,
@@ -6956,7 +6956,7 @@
         },
         {
           "disabled": false,
-          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UserGroupVO",
           "name": "Data",
@@ -7795,7 +7795,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组id集合",
+          "document": "<p>用户组id集合</p>",
           "example": "[124,56]",
           "member": "int64",
           "name": "GroupIds",
@@ -7804,7 +7804,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字",
+          "document": "<p>搜索关键字</p>",
           "example": "搜索关键字",
           "member": "string",
           "name": "Keyword",
@@ -7813,7 +7813,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小",
+          "document": "<p>分页大小</p>",
           "example": "20",
           "member": "uint64",
           "name": "PageSize",
@@ -7822,7 +7822,7 @@
         },
         {
           "disabled": false,
-          "document": "分页页码",
+          "document": "<p>分页页码</p>",
           "example": "0",
           "member": "uint64",
           "name": "PageNo",
@@ -7831,7 +7831,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要分页",
+          "document": "<p>是否需要分页</p>",
           "example": "false",
           "member": "bool",
           "name": "AllPage",
@@ -7840,7 +7840,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组节点信息",
+          "document": "<p>用户组节点信息</p>",
           "example": "无",
           "member": "UserGroupTreeNodeDTO",
           "name": "Nodes",
@@ -7849,7 +7849,7 @@
         },
         {
           "disabled": false,
-          "document": "标签值",
+          "document": "<p>标签值</p>",
           "example": "无",
           "member": "ResourceTagValue",
           "name": "TagValueList",
@@ -7858,7 +7858,7 @@
         },
         {
           "disabled": false,
-          "document": "需要过滤的用户组",
+          "document": "<p>需要过滤的用户组</p>",
           "example": "[123]",
           "member": "int64",
           "name": "FilterGroupIds",
@@ -7883,8 +7883,8 @@
         },
         {
           "disabled": false,
-          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Extra",
           "member": "string",
           "name": "Extra",
           "output_required": true,
@@ -7893,8 +7893,8 @@
         },
         {
           "disabled": false,
-          "document": "结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>结果信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Msg",
           "member": "string",
           "name": "Msg",
           "output_required": true,
@@ -7903,7 +7903,7 @@
         },
         {
           "disabled": false,
-          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeUserGroupMemberPageListContainer",
           "name": "Data",

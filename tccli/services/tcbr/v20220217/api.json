@@ -1716,7 +1716,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项 Key\nMinNum 最小副本数\nMaxNum 最大副本数\nPolicyDetails 扩缩容策略\nAccessTypes 访问类型\nTimerScale 定时扩缩容\nInternalAccess 内网访问\nOperationMode 运行模式 noScale | condScale | alwaysScale | custom ｜ manualScale\nSessionAffinity 会话亲和性 open | close\nCpuSpecs cpu 规格\nMemSpecs mem规格\nEnvParam 环境变量\nLogPath 日志采集路径\nPort 端口\nDockerfile dockerfile 文件名\nBuildDir 目标目录\nTag 服务标签\nLogType 日志类型 none | default | custom \nLogSetId 日志集Id\nLogTopicId 日志主题ID\nLogParseType 日志解析类型 json ｜ line\nEntryPoint entrypoint 命令\nCmd cmd命令\nVpcConf 网络信息",
+          "document": "<p>配置项 Key<br>MinNum 最小副本数<br>MaxNum 最大副本数<br>PolicyDetails 扩缩容策略<br>AccessTypes 访问类型<br>TimerScale 定时扩缩容<br>InternalAccess 内网访问<br>OperationMode 运行模式 noScale | condScale | alwaysScale | custom ｜ manualScale<br>SessionAffinity 会话亲和性 open | close<br>CpuSpecs cpu 规格<br>MemSpecs mem规格<br>EnvParam 环境变量<br>LogPath 日志采集路径<br>Port 端口<br>Dockerfile dockerfile 文件名<br>BuildDir 目标目录<br>Tag 服务标签<br>LogType 日志类型 none | default | custom<br>LogSetId 日志集Id<br>LogTopicId 日志主题ID<br>LogParseType 日志解析类型 json ｜ line<br>EntryPoint entrypoint 命令<br>Cmd cmd命令<br>VpcConf 网络信息</p>",
           "example": "MinNum",
           "member": "string",
           "name": "Key",
@@ -1725,7 +1725,7 @@
         },
         {
           "disabled": false,
-          "document": "字符串类型配置项值\nInternalAccess、OperationMode、SessionAffinity、EnvParam、LogPath、Dockerfile、BuildDir、Tag、LogType、LogSetId、LogTopicId、LogParseType",
+          "document": "<p>字符串类型配置项值<br>InternalAccess、OperationMode、SessionAffinity、EnvParam、LogPath、Dockerfile、BuildDir、Tag、LogType、LogSetId、LogTopicId、LogParseType</p>",
           "example": "logs",
           "member": "string",
           "name": "Value",
@@ -1734,7 +1734,7 @@
         },
         {
           "disabled": false,
-          "document": "int 类型配置项值\nMinNum、MaxNum、Port",
+          "document": "<p>int 类型配置项值<br>MinNum、MaxNum、Port</p>",
           "example": "1",
           "member": "int64",
           "name": "IntValue",
@@ -1743,7 +1743,7 @@
         },
         {
           "disabled": false,
-          "document": "bool 类型配置项值",
+          "document": "<p>bool 类型配置项值</p>",
           "example": "false",
           "member": "bool",
           "name": "BoolValue",
@@ -1752,7 +1752,7 @@
         },
         {
           "disabled": false,
-          "document": "浮点型配置项值\nCpuSpecs、MemSpecs",
+          "document": "<p>浮点型配置项值<br>CpuSpecs、MemSpecs</p>",
           "example": "0.25",
           "member": "float",
           "name": "FloatValue",
@@ -1761,7 +1761,7 @@
         },
         {
           "disabled": false,
-          "document": "字符串数组配置项值\nAccessTypes，EntryPoint，Cmd",
+          "document": "<p>字符串数组配置项值<br>AccessTypes，EntryPoint，Cmd</p>",
           "example": "[\"OA\", \"PUBLIC\"]",
           "member": "string",
           "name": "ArrayValue",
@@ -1770,7 +1770,7 @@
         },
         {
           "disabled": false,
-          "document": "扩缩容策略配置项值",
+          "document": "<p>扩缩容策略配置项值</p>",
           "example": "无",
           "member": "HpaPolicy",
           "name": "PolicyDetails",
@@ -1779,7 +1779,7 @@
         },
         {
           "disabled": false,
-          "document": "定时扩缩容配置项值",
+          "document": "<p>定时扩缩容配置项值</p>",
           "example": "无",
           "member": "TimerScale",
           "name": "TimerScale",
@@ -1788,7 +1788,7 @@
         },
         {
           "disabled": false,
-          "document": "配置内网访问时网络信息",
+          "document": "<p>配置内网访问时网络信息</p>",
           "example": "无",
           "member": "VpcConf",
           "name": "VpcConf",
@@ -1797,12 +1797,21 @@
         },
         {
           "disabled": false,
-          "document": "存储配置信息",
+          "document": "<p>存储配置信息</p>",
           "example": "无",
           "member": "VolumeConf",
           "name": "VolumesConf",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网访问配置</p>",
+          "example": "无",
+          "member": "PublicNetConf",
+          "name": "PublicNetConf",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -2558,6 +2567,23 @@
       ],
       "type": "object"
     },
+    "PublicNetConf": {
+      "document": "公网访问配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启公网访问</p><p>枚举值：</p><ul><li>ENABLE： 开启公网访问</li><li>DISABLE： 关闭公网访问</li></ul>",
+          "example": "DISABLE",
+          "member": "string",
+          "name": "PublicNetStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ReleaseGrayRequest": {
       "document": "ReleaseGray请求参数结构体",
       "members": [
@@ -2914,7 +2940,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境 Id",
+          "document": "<p>环境 Id</p>",
           "example": "test-1gbtbgkjf8f48e2c",
           "member": "string",
           "name": "EnvId",
@@ -2925,7 +2951,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名",
+          "document": "<p>服务名</p>",
           "example": "server-name",
           "member": "string",
           "name": "ServerName",
@@ -2936,7 +2962,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启公网访问",
+          "document": "<p>是否开启公网访问</p>",
           "example": "[\"PUBLIC\", \"OA\", \"MINIAPP\", \"VPC\"]",
           "member": "string",
           "name": "OpenAccessTypes",
@@ -2947,7 +2973,7 @@
         },
         {
           "disabled": false,
-          "document": "Cpu 规格",
+          "document": "<p>Cpu 规格</p>",
           "example": "0.25",
           "member": "float",
           "name": "Cpu",
@@ -2958,7 +2984,7 @@
         },
         {
           "disabled": false,
-          "document": "Mem 规格",
+          "document": "<p>Mem 规格</p>",
           "example": "0.25",
           "member": "float",
           "name": "Mem",
@@ -2969,7 +2995,7 @@
         },
         {
           "disabled": false,
-          "document": "最小副本数",
+          "document": "<p>最小副本数</p>",
           "example": "1",
           "member": "uint64",
           "name": "MinNum",
@@ -2980,7 +3006,7 @@
         },
         {
           "disabled": false,
-          "document": "最大副本数",
+          "document": "<p>最大副本数</p>",
           "example": "2",
           "member": "uint64",
           "name": "MaxNum",
@@ -2991,7 +3017,7 @@
         },
         {
           "disabled": false,
-          "document": "扩缩容配置",
+          "document": "<p>扩缩容配置</p>",
           "example": "无",
           "member": "HpaPolicy",
           "name": "PolicyDetails",
@@ -3002,7 +3028,7 @@
         },
         {
           "disabled": false,
-          "document": "日志采集路径",
+          "document": "<p>日志采集路径</p>",
           "example": "stdout",
           "member": "string",
           "name": "CustomLogs",
@@ -3013,7 +3039,7 @@
         },
         {
           "disabled": false,
-          "document": "环境变量",
+          "document": "<p>环境变量</p>",
           "example": "{\"MYSQL_USERNAME\":\"root\"}",
           "member": "string",
           "name": "EnvParams",
@@ -3024,7 +3050,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟检测时间",
+          "document": "<p>延迟检测时间</p>",
           "example": "2",
           "member": "uint64",
           "name": "InitialDelaySeconds",
@@ -3035,7 +3061,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "\"2022-03-10 19:44:07\"",
           "member": "string",
           "name": "CreateTime",
@@ -3046,7 +3072,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端口",
+          "document": "<p>服务端口</p>",
           "example": "8080",
           "member": "int64",
           "name": "Port",
@@ -3057,7 +3083,7 @@
         },
         {
           "disabled": false,
-          "document": "是否有Dockerfile",
+          "document": "<p>是否有Dockerfile</p>",
           "example": "true",
           "member": "bool",
           "name": "HasDockerfile",
@@ -3068,7 +3094,7 @@
         },
         {
           "disabled": false,
-          "document": "Dockerfile 文件名",
+          "document": "<p>Dockerfile 文件名</p>",
           "example": "\"Dickerfile\"",
           "member": "string",
           "name": "Dockerfile",
@@ -3079,7 +3105,7 @@
         },
         {
           "disabled": false,
-          "document": "构建目录",
+          "document": "<p>构建目录</p>",
           "example": "src/",
           "member": "string",
           "name": "BuildDir",
@@ -3090,7 +3116,7 @@
         },
         {
           "disabled": false,
-          "document": "日志类型: none | default | custom",
+          "document": "<p>日志类型: none | default | custom</p>",
           "example": "none",
           "member": "string",
           "name": "LogType",
@@ -3101,7 +3127,7 @@
         },
         {
           "disabled": false,
-          "document": "cls setId",
+          "document": "<p>cls setId</p>",
           "example": "dafslakfjkdal",
           "member": "string",
           "name": "LogSetId",
@@ -3112,7 +3138,7 @@
         },
         {
           "disabled": false,
-          "document": "cls 主题id",
+          "document": "<p>cls 主题id</p>",
           "example": "sfafkslkfj",
           "member": "string",
           "name": "LogTopicId",
@@ -3123,7 +3149,7 @@
         },
         {
           "disabled": false,
-          "document": "解析类型：json ｜ line",
+          "document": "<p>解析类型：json ｜ line</p>",
           "example": "json",
           "member": "string",
           "name": "LogParseType",
@@ -3134,7 +3160,7 @@
         },
         {
           "disabled": false,
-          "document": "服务标签, function: 函数托管",
+          "document": "<p>服务标签, function: 函数托管</p>",
           "example": "function",
           "member": "string",
           "name": "Tag",
@@ -3145,7 +3171,7 @@
         },
         {
           "disabled": false,
-          "document": "内网访问开关 close | open",
+          "document": "<p>内网访问开关 close | open</p>",
           "example": "close",
           "member": "string",
           "name": "InternalAccess",
@@ -3156,7 +3182,7 @@
         },
         {
           "disabled": false,
-          "document": "内网域名",
+          "document": "<p>内网域名</p>",
           "example": "https://sdfsdf",
           "member": "string",
           "name": "InternalDomain",
@@ -3167,7 +3193,7 @@
         },
         {
           "disabled": false,
-          "document": "运行模式",
+          "document": "<p>运行模式</p>",
           "example": "custom",
           "member": "string",
           "name": "OperationMode",
@@ -3178,7 +3204,7 @@
         },
         {
           "disabled": false,
-          "document": "定时扩缩容配置",
+          "document": "<p>定时扩缩容配置</p>",
           "example": "无",
           "member": "TimerScale",
           "name": "TimerScale",
@@ -3189,7 +3215,7 @@
         },
         {
           "disabled": false,
-          "document": "Dockerfile EntryPoint 参数",
+          "document": "<p>Dockerfile EntryPoint 参数</p>",
           "example": "[\"echo\"]",
           "member": "string",
           "name": "EntryPoint",
@@ -3200,7 +3226,7 @@
         },
         {
           "disabled": false,
-          "document": "Dockerfile Cmd 参数",
+          "document": "<p>Dockerfile Cmd 参数</p>",
           "example": "[\"echo\"]",
           "member": "string",
           "name": "Cmd",
@@ -3211,7 +3237,7 @@
         },
         {
           "disabled": false,
-          "document": "会话亲和性开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>会话亲和性开关</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "open",
           "member": "string",
           "name": "SessionAffinity",
@@ -3222,7 +3248,7 @@
         },
         {
           "disabled": false,
-          "document": "Vpc 配置参数",
+          "document": "<p>Vpc 配置参数</p>",
           "example": "无",
           "member": "VpcConf",
           "name": "VpcConf",
@@ -3233,7 +3259,7 @@
         },
         {
           "disabled": false,
-          "document": "存储配置信息",
+          "document": "<p>存储配置信息</p>",
           "example": "无",
           "member": "VolumeConf",
           "name": "VolumesConf",
@@ -3244,13 +3270,24 @@
         },
         {
           "disabled": false,
-          "document": "关联镜像密钥",
+          "document": "<p>关联镜像密钥</p>",
           "example": "ccr_xa13ada2",
           "member": "string",
           "name": "LinkImageRegistry",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网访问配置</p>",
+          "example": "无",
+          "member": "PublicNetConf",
+          "name": "PublicNetConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

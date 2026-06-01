@@ -7,7 +7,7 @@ Input:
 ```
 tccli bi CreateUserGroup --cli-unfold-argument  \
     --AdminUserId userId \
-    --Description 123 \
+    --Description /描述 \
     --GroupName 测试用户组 \
     --Location 0 \
     --ParentId -1
@@ -19,7 +19,7 @@ Output:
     "Response": {
         "Data": {
             "AdminUserId": "userId",
-            "Description": "123",
+            "Description": "/描述",
             "GroupName": "测试用户组",
             "Id": 273,
             "IsDefault": 0,

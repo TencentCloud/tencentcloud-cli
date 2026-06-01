@@ -7585,6 +7585,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>伸缩组创建实例时禁用 VNC 登录功能</p><p>默认值：false，表示不禁用 VNC 登录功能</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableVnc",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

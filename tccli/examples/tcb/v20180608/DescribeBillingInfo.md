@@ -1,4 +1,4 @@
-**Example 1: 示例**
+**Example 1: 分批查询计费信息**
 
 
 
@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli tcb DescribeBillingInfo --cli-unfold-argument  \
-    --EnvId tnt-j715s5gda
+    --Limit 1000 \
+    --Offset 30
 ```
 
 Output: 
@@ -15,18 +16,71 @@ Output:
     "Response": {
         "EnvBillingInfoList": [
             {
-                "EnvId": "tnt-j715s5gda",
-                "PackageId": "professional",
-                "IsAutoRenew": true,
-                "Status": "NORMAL",
-                "PayMode": "PREPAYMENT",
-                "IsolatedTime": "2011-5-16 12:15:01",
-                "ExpireTime": "2019-5-25 12:15:01",
-                "CreateTime": "2016-5-25 12:15:01",
-                "UpdateTime": "2019-4-25 12:15:01",
-                "FreeQuota": "",
+                "CreateTime": "2021-01-20 21:18:09",
+                "EnableOverrun": false,
+                "EnvActivated": "no",
+                "EnvCharged": "yes",
+                "EnvId": "carol-test-sms-6g7zpok6eb41cdfe",
+                "ExpireTime": "0000-00-00 00:00:00",
+                "ExtPackageType": "",
+                "FreeQuota": "free",
+                "IsAlwaysFree": false,
+                "IsAutoRenew": false,
+                "IsolatedTime": "2022-10-25 15:42:53",
+                "OrderInfo": {
+                    "CreateTime": "2021-01-20 21:17:53",
+                    "ExtensionId": "",
+                    "Flag": "",
+                    "PackageId": "",
+                    "PayMode": "POSTPAID",
+                    "ReqBody": "",
+                    "ResourceReady": "",
+                    "TranId": "20210120789001256921351",
+                    "TranStatus": "4",
+                    "TranType": "5",
+                    "UpdateTime": "2021-01-20 21:19:40"
+                },
+                "PackageId": "",
+                "PayMode": "POSTPAID",
                 "PaymentChannel": "qcloud",
+                "Status": "ISOLATE",
+                "UpdateTime": "2022-10-25 15:42:53"
+            }
+        ],
+        "Total": 10000,
+        "RequestId": "cf7490af-821b-4d33-94a2-0337a67f5910"
+    }
+}
+```
+
+**Example 2: 查询环境列表的计费信息**
+
+
+
+Input: 
+
+```
+tccli tcb DescribeBillingInfo --cli-unfold-argument  \
+    --EnvIds stress10new0059998or-d3aa7adb44f
+```
+
+Output: 
+```
+{
+    "Response": {
+        "EnvBillingInfoList": [
+            {
+                "CreateTime": "2026-05-15 15:56:43",
+                "EnableOverrun": false,
+                "EnvActivated": "no",
+                "EnvCharged": "yes",
+                "EnvId": "stress10new0059998or-d3aa7adb44f",
+                "ExpireTime": "2026-11-15 23:59:59",
                 "ExtPackageType": "baas",
+                "FreeQuota": "",
+                "IsAlwaysFree": false,
+                "IsAutoRenew": false,
+                "IsolatedTime": "0000-00-00 00:00:00",
                 "OrderInfo": {
                     "CreateTime": "",
                     "ExtensionId": "",
@@ -40,11 +94,15 @@ Output:
                     "TranType": "",
                     "UpdateTime": ""
                 },
-                "IsAlwaysFree": false,
-                "EnableOverrun": true
+                "PackageId": "baas_trial",
+                "PayMode": "PREPAYMENT",
+                "PaymentChannel": "miniapp",
+                "Status": "NORMAL",
+                "UpdateTime": "2026-05-15 15:56:43"
             }
         ],
-        "RequestId": "ec5dde6a-6c21-4777-bf4a-99e1f910247e"
+        "Total": 10000,
+        "RequestId": "68c26a28-5c00-4730-b701-5a7bc1981eae"
     }
 }
 ```

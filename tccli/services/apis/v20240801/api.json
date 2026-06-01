@@ -1664,7 +1664,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
@@ -1673,7 +1673,7 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "<p>名称</p>",
           "example": "name01",
           "member": "string",
           "name": "Name",
@@ -1682,7 +1682,7 @@
         },
         {
           "disabled": false,
-          "document": "认证类型",
+          "document": "<p>认证类型</p>",
           "example": "apiKey",
           "member": "string",
           "name": "AuthType",
@@ -1691,7 +1691,7 @@
         },
         {
           "disabled": false,
-          "document": "OAuth2资源服务器ID",
+          "document": "<p>OAuth2资源服务器ID</p>",
           "example": "ors-be1312ba",
           "member": "string",
           "name": "OAuth2ResourceServerID",
@@ -1700,12 +1700,21 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "description 01",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>API认证列表</p>",
+          "example": "[\"ctr-********\"]",
+          "member": "string",
+          "name": "ConnectorIDs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1761,7 +1770,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "app id",
+          "document": "<p>app id</p>",
           "example": "无",
           "member": "CreateAgentAppResp",
           "name": "Data",
@@ -3957,7 +3966,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "租户appID",
+          "document": "<p>租户appID</p>",
           "example": "1300273807",
           "member": "int64",
           "name": "AppID",
@@ -3967,7 +3976,7 @@
         },
         {
           "disabled": false,
-          "document": "租户ID",
+          "document": "<p>租户ID</p>",
           "example": "700001136234",
           "member": "string",
           "name": "Uin",
@@ -3977,7 +3986,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-a7af1980",
           "member": "string",
           "name": "InstanceID",
@@ -3987,7 +3996,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "aga-41d42939",
           "member": "string",
           "name": "ID",
@@ -3997,7 +4006,7 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "<p>名称</p>",
           "example": "测试agentApp",
           "member": "string",
           "name": "Name",
@@ -4007,7 +4016,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "description 01",
           "member": "string",
           "name": "Description",
@@ -4017,7 +4026,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "<p>状态</p>",
           "example": "normal",
           "member": "string",
           "name": "Status",
@@ -4027,7 +4036,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2025-12-28T00:55:30.53Z",
           "member": "string",
           "name": "CreateTime",
@@ -4037,7 +4046,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间",
+          "document": "<p>修改时间</p>",
           "example": "2025-12-28T00:55:30.53Z",
           "member": "string",
           "name": "UpdateTime",
@@ -4047,7 +4056,7 @@
         },
         {
           "disabled": false,
-          "document": "认证类型",
+          "document": "<p>认证类型</p>",
           "example": "apiKey",
           "member": "string",
           "name": "AuthType",
@@ -4057,7 +4066,7 @@
         },
         {
           "disabled": false,
-          "document": "apiKeys列表，脱敏",
+          "document": "<p>apiKeys列表，脱敏</p>",
           "example": "[\"SK******************************DF\"]",
           "member": "string",
           "name": "ApiKeys",
@@ -4067,7 +4076,7 @@
         },
         {
           "disabled": false,
-          "document": "secretKey列表，脱敏",
+          "document": "<p>secretKey列表，脱敏</p>",
           "example": "无",
           "member": "AgentAppSecretKeyVO",
           "name": "SecretKeys",
@@ -4077,7 +4086,7 @@
         },
         {
           "disabled": false,
-          "document": "OAuth2 Resource Server ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OAuth2 Resource Server ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ors-be1312ba",
           "member": "string",
           "name": "OAuth2ResourceServerID",
@@ -4087,7 +4096,7 @@
         },
         {
           "disabled": true,
-          "document": "关联的mcp列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联的mcp列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AgentAppMcpServerVO",
           "name": "McpServers",
@@ -4097,7 +4106,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定mcpServer数量",
+          "document": "<p>绑定mcpServer数量</p>",
           "example": "1",
           "member": "int64",
           "name": "McpServersNum",
@@ -4107,13 +4116,33 @@
         },
         {
           "disabled": false,
-          "document": "绑定的模型服务数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的模型服务数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ModelServicesNum",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>API认证列表</p>",
+          "example": "[\"ctr-********\"]",
+          "member": "string",
+          "name": "ConnectorIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联API数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ServicesNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4373,7 +4402,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "租户应用ID",
+          "document": "<p>租户应用ID</p>",
           "example": "1300273807",
           "member": "int64",
           "name": "AppID",
@@ -4383,7 +4412,7 @@
         },
         {
           "disabled": false,
-          "document": "租户ID",
+          "document": "<p>租户ID</p>",
           "example": "700001136234",
           "member": "string",
           "name": "Uin",
@@ -4393,7 +4422,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-a7af1980",
           "member": "string",
           "name": "InstanceID",
@@ -4403,7 +4432,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据ID",
+          "document": "<p>凭据ID</p>",
           "example": "agc-4440aa1d",
           "member": "string",
           "name": "ID",
@@ -4413,7 +4442,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据名称",
+          "document": "<p>凭据名称</p>",
           "example": "pingju",
           "member": "string",
           "name": "Name",
@@ -4423,7 +4452,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "<p>状态</p>",
           "example": "normal",
           "member": "string",
           "name": "Status",
@@ -4432,8 +4461,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "关联应用数",
+          "disabled": true,
+          "document": "<p>关联应用数</p>",
           "example": "0",
           "member": "int64",
           "name": "RelateAgentAppNum",
@@ -4443,7 +4472,7 @@
         },
         {
           "disabled": false,
-          "document": "关联mcp数",
+          "document": "<p>关联mcp数</p>",
           "example": "0",
           "member": "int64",
           "name": "RelateMcpServerNum",
@@ -4453,7 +4482,7 @@
         },
         {
           "disabled": false,
-          "document": "关联模型数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联模型数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RelateModelNum",
@@ -4463,7 +4492,17 @@
         },
         {
           "disabled": false,
-          "document": "凭据内容",
+          "document": "<p>关联服务数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RelateServiceNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据内容</p>",
           "example": "无",
           "member": "AgentCredentialContentDTO",
           "name": "Content",
@@ -4473,7 +4512,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2025-08-07T10:06:37.246Z",
           "member": "string",
           "name": "CreateTime",
@@ -4483,7 +4522,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间",
+          "document": "<p>修改时间</p>",
           "example": "2025-08-07T10:06:37.246Z",
           "member": "string",
           "name": "LastUpdateTime",
@@ -4493,7 +4532,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "<p>类型</p>",
           "example": "reqKey",
           "member": "string",
           "name": "Type",
@@ -8340,7 +8379,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
@@ -8349,7 +8388,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "aga-xxxxxxxx",
           "member": "string",
           "name": "ID",
@@ -8358,7 +8397,7 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "<p>名称</p>",
           "example": "testname",
           "member": "string",
           "name": "Name",
@@ -8367,7 +8406,7 @@
         },
         {
           "disabled": false,
-          "document": "OAuth2资源服务器ID",
+          "document": "<p>OAuth2资源服务器ID</p>",
           "example": "ors-xxxxxxxx",
           "member": "string",
           "name": "OAuth2ResourceServerID",
@@ -8376,12 +8415,21 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "description 01",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据ID</p>",
+          "example": "[\"ctr-eb8d2605\"]",
+          "member": "string",
+          "name": "ConnectorIDs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8391,7 +8439,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "app id",
+          "document": "<p>app id</p>",
           "example": "无",
           "member": "ResultIDVO",
           "name": "Data",

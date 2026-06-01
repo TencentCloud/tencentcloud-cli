@@ -481,6 +481,8 @@ tccli/services/ft/__init__.py
 tccli/services/ft/ft_client.py
 tccli/services/ft/v20200304/api.json
 tccli/services/ft/v20200304/examples.json
+tccli/services/ga2/__init__.py
+tccli/services/ga2/ga2_client.py
 tccli/services/gaap/__init__.py
 tccli/services/gaap/gaap_client.py
 tccli/services/gaap/v20180529/api.json
