@@ -25,7 +25,7 @@ class BasicConfigure(BasicCommand):
         super(BasicConfigure, self).__init__()
         self.config_list = [
             OptionsDefine.Region, OptionsDefine.Output, OptionsDefine.ArrayCount, OptionsDefine.Warnings,
-            OptionsDefine.Language
+            OptionsDefine.Language, OptionsDefine.RequestClient
         ]
         self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.Token,
                           OptionsDefine.RoleArn, OptionsDefine.RoleSessionName, OptionsDefine.UseCVMRole]
@@ -124,6 +124,7 @@ class ConfigureListCommand(BasicConfigure):
                "region = ap-guangzhou\n" \
                "output = json\n" \
                "language = zh-CN\n" \
+               "request-client = my-client\n" \
                "cvm.version = 2017-03-12\n" \
                "cvm.endpoint = cvm.tencentcloudapi.com\n" \
                "...\n" \
@@ -175,6 +176,7 @@ class ConfigureSetCommand(BasicConfigure):
                       "region: which the region you want to work with belongs.\n" \
                       "output: TencentCloud API response format[json, text, table]\n" \
                       "language: TCCLI output language[zh-CN, en-US]\n" \
+                      "request-client: a custom request client identifier (format: ^[0-9a-zA-Z-_,.]+$, max length 128)\n" \
                       "[cvm, cbs ...].version: service [cvm cbs ...] version\n" \
                       "[cvm, cbs ...].endpoint: service [cvm cbs ...] access point domain name"
     EXAMPLES = "$ tccli configure set secretId ******\n" \
@@ -297,6 +299,7 @@ class ConfigureGetCommand(BasicConfigure):
                       "region: which the region you want to work with belongs.\n" \
                       "output: TencentCloud API response format[json, text, table]\n" \
                       "language: TCCLI output language[zh-CN, en-US]\n" \
+                      "request-client: a custom request client identifier (format: ^[0-9a-zA-Z-_,.]+$, max length 128)\n" \
                       "[cvm, cbs ...].version: service [cvm cbs ...] version\n" \
                       "[cvm, cbs ...].endpoint: service [cvm cbs ...] access point domain name"
     EXAMPLES = "$ tccli configure get region\n" \
