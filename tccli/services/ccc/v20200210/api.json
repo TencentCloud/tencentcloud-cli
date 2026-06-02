@@ -6330,7 +6330,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "document": "<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -6339,7 +6339,7 @@
         },
         {
           "disabled": false,
-          "document": "任务 ID",
+          "document": "<p>任务 ID</p>",
           "example": "2569",
           "member": "int64",
           "name": "CampaignId",
@@ -6354,7 +6354,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID",
+          "document": "<p>任务 ID</p>",
           "example": "2569",
           "member": "int64",
           "name": "CampaignId",
@@ -6364,7 +6364,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "<p>任务名称</p>",
           "example": "新能源SUV推荐",
           "member": "string",
           "name": "Name",
@@ -6374,7 +6374,7 @@
         },
         {
           "disabled": false,
-          "document": "被叫呼叫顺序 0 随机 1 顺序",
+          "document": "<p>被叫呼叫顺序 0 随机 1 顺序</p>",
           "example": "0",
           "member": "int64",
           "name": "CallOrder",
@@ -6384,7 +6384,7 @@
         },
         {
           "disabled": false,
-          "document": "使用的座席技能组 ID",
+          "document": "<p>使用的座席技能组 ID</p>",
           "example": "255",
           "member": "int64",
           "name": "SkillGroupId",
@@ -6394,7 +6394,7 @@
         },
         {
           "disabled": false,
-          "document": "指定的 IVR ID",
+          "document": "<p>指定的 IVR ID</p>",
           "example": "4600",
           "member": "int64",
           "name": "IVRId",
@@ -6404,7 +6404,7 @@
         },
         {
           "disabled": false,
-          "document": "相同应用内多个任务运行优先级，从高到底 1 - 5",
+          "document": "<p>相同应用内多个任务运行优先级，从高到底 1 - 5</p>",
           "example": "3",
           "member": "int64",
           "name": "Priority",
@@ -6414,7 +6414,7 @@
         },
         {
           "disabled": false,
-          "document": "预期呼损率，百分比，5 - 50",
+          "document": "<p>预期呼损率，百分比，5 - 50</p>",
           "example": "10",
           "member": "int64",
           "name": "ExpectedAbandonRate",
@@ -6424,7 +6424,7 @@
         },
         {
           "disabled": false,
-          "document": "呼叫重试次数，0 - 2",
+          "document": "<p>呼叫重试次数，0 - 2</p>",
           "example": "2",
           "member": "int64",
           "name": "RetryTimes",
@@ -6434,7 +6434,7 @@
         },
         {
           "disabled": false,
-          "document": "呼叫重试间隔时间，单位秒，60 - 86400",
+          "document": "<p>呼叫重试间隔时间，单位秒，60 - 86400</p>",
           "example": "1800",
           "member": "int64",
           "name": "RetryInterval",
@@ -6444,7 +6444,7 @@
         },
         {
           "disabled": false,
-          "document": "任务启动时间，Unix 时间戳，到此时间后会自动启动任务",
+          "document": "<p>任务启动时间，Unix 时间戳，到此时间后会自动启动任务</p>",
           "example": "1708483433",
           "member": "int64",
           "name": "StartTime",
@@ -6454,10 +6454,50 @@
         },
         {
           "disabled": false,
-          "document": "任务结束时间，Unix 时间戳，到此时间后会自动终止任务",
+          "document": "<p>任务结束时间，Unix 时间戳，到此时间后会自动终止任务</p>",
           "example": "1708485433",
           "member": "int64",
           "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义变量</p>",
+          "example": "无",
+          "member": "Variable",
+          "name": "Variables",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>UUI</p>",
+          "example": "foobar",
+          "member": "string",
+          "name": "UUI",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态</p><p>枚举值：</p><ul><li>0： 待开始 </li><li>1： 进行中</li><li>2： 已暂停</li><li>3： 已终止</li><li>4： 已完成</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态原因 0 正常 1 手动结束 2 超时结束</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "StatusReason",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6562,7 +6602,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "document": "<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -6571,7 +6611,7 @@
         },
         {
           "disabled": false,
-          "document": "分页尺寸，最大为 100",
+          "document": "<p>分页尺寸，最大为 100</p>",
           "example": "25",
           "member": "int64",
           "name": "PageSize",
@@ -6580,7 +6620,7 @@
         },
         {
           "disabled": false,
-          "document": "分页页码，从 0 开始",
+          "document": "<p>分页页码，从 0 开始</p>",
           "example": "0",
           "member": "int64",
           "name": "PageNumber",
@@ -6589,7 +6629,7 @@
         },
         {
           "disabled": false,
-          "document": "查询任务列表名称关键字",
+          "document": "<p>查询任务列表名称关键字</p>",
           "example": "推荐",
           "member": "string",
           "name": "Name",
@@ -6598,10 +6638,19 @@
         },
         {
           "disabled": false,
-          "document": "查询任务列表技能组 ID",
+          "document": "<p>查询任务列表技能组 ID</p>",
           "example": "255",
           "member": "int64",
           "name": "SkillGroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "9854",
+          "member": "int64",
+          "name": "CampaignId",
           "required": false,
           "type": "int"
         }
@@ -6613,7 +6662,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据总量",
+          "document": "<p>数据总量</p>",
           "example": "66",
           "member": "int64",
           "name": "TotalCount",
@@ -6623,7 +6672,7 @@
         },
         {
           "disabled": false,
-          "document": "数据",
+          "document": "<p>数据</p>",
           "example": "无",
           "member": "DescribePredictiveDialingCampaignsElement",
           "name": "CampaignList",

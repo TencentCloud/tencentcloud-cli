@@ -649,6 +649,15 @@
           "name": "NetworkSetting",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理服务安全类型</p><p>枚举值：</p><ul><li>STANDARD： 标准推理服务</li><li>CONFIDENTIAL： 可信推理服务</li></ul>",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "SecurityType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1445,8 +1454,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务列表",
-          "example": "[\"svc-dde3hd4i\"]",
+          "document": "<p>服务列表</p>",
+          "example": "[\"svc-bx0xe65y\"]",
           "member": "string",
           "name": "ServiceIds",
           "required": false,
@@ -1454,8 +1463,8 @@
         },
         {
           "disabled": false,
-          "document": "分页大小",
-          "example": "1",
+          "document": "<p>分页大小</p>",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1463,8 +1472,8 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
-          "example": "0",
+          "document": "<p>偏移量</p>",
+          "example": "20",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1478,8 +1487,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
-          "example": "1",
+          "document": "<p>总数</p>",
+          "example": "38",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -1488,7 +1497,7 @@
         },
         {
           "disabled": false,
-          "document": "服务列表",
+          "document": "<p>服务列表</p>",
           "example": "无",
           "member": "ServiceDetail",
           "name": "ServiceInfoSet",

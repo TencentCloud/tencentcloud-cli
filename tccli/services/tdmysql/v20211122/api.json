@@ -3166,15 +3166,6 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>备份集ID,值来自 DescribeDBSBackupSets 接口返回</p>",
-          "example": "0",
-          "member": "int64",
-          "name": "BackupSetId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"

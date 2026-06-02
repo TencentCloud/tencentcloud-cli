@@ -17092,7 +17092,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
+          "document": "<p>实例 ID，可通过 <a href=\"https://cloud.tencent.com/document/product/236/15872\">DescribeDBInstances</a> 接口获取。</p>",
           "example": "cdb-234rsta",
           "member": "string",
           "name": "InstanceId",
@@ -17101,7 +17101,7 @@
         },
         {
           "disabled": false,
-          "document": "日志类型。error：错误日志，slowlog：慢日志。",
+          "document": "<p>日志类型。error：错误日志，slowlog：慢日志。</p>",
           "example": "error",
           "member": "string",
           "name": "LogType",
@@ -17110,7 +17110,7 @@
         },
         {
           "disabled": false,
-          "document": "投递状态。ON：开启，OFF：关闭。",
+          "document": "<p>投递状态。ON：开启，OFF：关闭。</p>",
           "example": "ON",
           "member": "string",
           "name": "Status",
@@ -17119,7 +17119,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要创建日志集。默认为 false。",
+          "document": "<p>是否需要创建日志集。默认为 false。</p>",
           "example": "true",
           "member": "bool",
           "name": "CreateLogset",
@@ -17128,7 +17128,7 @@
         },
         {
           "disabled": false,
-          "document": "需要创建日志集时为日志集名称；选择已有日志集时，为日志集 ID。默认为空。\n说明：当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。",
+          "document": "<p>需要创建日志集时为日志集名称；选择已有日志集时，为日志集 ID。默认为空。<br>说明：当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。</p>",
           "example": "my_test",
           "member": "string",
           "name": "Logset",
@@ -17137,7 +17137,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要创建日志主题。默认为 false。",
+          "document": "<p>是否需要创建日志主题。默认为 false。</p>",
           "example": "true",
           "member": "bool",
           "name": "CreateLogTopic",
@@ -17146,7 +17146,7 @@
         },
         {
           "disabled": false,
-          "document": "需要创建日志主题时为日志主题名称；选择已有日志主题时，为日志主题 ID。默认为空。\n说明：当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。",
+          "document": "<p>需要创建日志主题时为日志主题名称；选择已有日志主题时，为日志主题 ID。默认为空。<br>说明：当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。</p>",
           "example": "my_test",
           "member": "string",
           "name": "LogTopic",
@@ -17155,7 +17155,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题有效期，不填写时，默认30天，最大值3600。",
+          "document": "<p>日志主题有效期，不填写时，默认30天，最大值3600。</p>",
           "example": "30",
           "member": "int64",
           "name": "Period",
@@ -17164,7 +17164,7 @@
         },
         {
           "disabled": false,
-          "document": "创建日志主题时，是否创建索引，默认为 false。",
+          "document": "<p>创建日志主题时，是否创建索引，默认为 false。</p>",
           "example": "true",
           "member": "bool",
           "name": "CreateIndex",
@@ -17173,12 +17173,21 @@
         },
         {
           "disabled": false,
-          "document": "CLS 所在地域，不填择默认为 Region 的参数值。",
+          "document": "<p>CLS 所在地域，不填择默认为 Region 的参数值。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ClsRegion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建日志集和日志主题的时候可选，最多不能超过10个标签</p>",
+          "example": "无",
+          "member": "TagInfoItem",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

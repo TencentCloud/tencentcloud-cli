@@ -2997,7 +2997,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "人员库名称",
+          "document": "<p>人员库名称</p>",
           "example": "人员库",
           "member": "string",
           "name": "GroupName",
@@ -3007,7 +3007,7 @@
         },
         {
           "disabled": false,
-          "document": "人员库ID",
+          "document": "<p>人员库ID</p>",
           "example": "13",
           "member": "string",
           "name": "GroupId",
@@ -3017,7 +3017,7 @@
         },
         {
           "disabled": false,
-          "document": "人员库自定义描述字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>人员库自定义描述字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"年龄\"]",
           "member": "string",
           "name": "GroupExDescriptions",
@@ -3027,7 +3027,7 @@
         },
         {
           "disabled": false,
-          "document": "人员库信息备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>人员库信息备注</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无实习生",
           "member": "string",
           "name": "Tag",
@@ -3037,7 +3037,7 @@
         },
         {
           "disabled": false,
-          "document": "人脸识别所用的算法模型版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>人脸识别所用的算法模型版本。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
@@ -3047,13 +3047,23 @@
         },
         {
           "disabled": false,
-          "document": "Group的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 \nUnix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。有关更多信息，请参阅 Unix 时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Group的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。<br>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。有关更多信息，请参阅 Unix 时间。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1694139227378",
           "member": "uint64",
           "name": "CreationTimestamp",
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Group的更新时间和日期 UpdateTimestamp。</p><ul><li>UpdateTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 </li><li>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。</li><li>有关更多信息，请参阅 Unix 时间。</li></ul>",
+          "example": "1694139227378",
+          "member": "uint64",
+          "name": "UpdateTimestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

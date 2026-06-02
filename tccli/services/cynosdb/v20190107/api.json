@@ -1647,6 +1647,23 @@
       ],
       "usage": "out"
     },
+    "AIOptimizerTaskData": {
+      "document": "AI 优化器任务数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板ID</p>",
+          "example": "tpch1g:45afb52668a29314bbc68ec8803ef917416c271ce57521402d8da6af761d8497",
+          "member": "string",
+          "name": "TemplateID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Ability": {
       "document": "集群支持的功能",
       "members": [
@@ -4256,7 +4273,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "0",
           "member": "int64",
           "name": "ID",
@@ -4266,7 +4283,7 @@
         },
         {
           "disabled": false,
-          "document": "用户appid",
+          "document": "<p>用户appid</p>",
           "example": "1334748",
           "member": "int64",
           "name": "AppId",
@@ -4276,7 +4293,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "cynosdbmysql-j9i41hfv",
           "member": "string",
           "name": "ClusterId",
@@ -4286,7 +4303,7 @@
         },
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -4296,7 +4313,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间",
+          "document": "<p>任务创建时间</p>",
           "example": "2004-05-03T17:30:08+08:00",
           "member": "string",
           "name": "CreateTime",
@@ -4306,7 +4323,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟执行时间",
+          "document": "<p>延迟执行时间</p>",
           "example": "2004-05-03T17:30:08+08:00",
           "member": "string",
           "name": "DelayTime",
@@ -4316,7 +4333,7 @@
         },
         {
           "disabled": false,
-          "document": "任务失败信息",
+          "document": "<p>任务失败信息</p>",
           "example": "error",
           "member": "string",
           "name": "ErrMsg",
@@ -4326,7 +4343,7 @@
         },
         {
           "disabled": false,
-          "document": "异步任务流id",
+          "document": "<p>异步任务流id</p>",
           "example": "1",
           "member": "int64",
           "name": "FlowId",
@@ -4336,7 +4353,7 @@
         },
         {
           "disabled": false,
-          "document": "任务输入信息",
+          "document": "<p>任务输入信息</p>",
           "example": "{\"uin\":\"7043509\"}",
           "member": "string",
           "name": "Input",
@@ -4346,7 +4363,7 @@
         },
         {
           "disabled": true,
-          "document": "实例组id",
+          "document": "<p>实例组id</p>",
           "example": "cynosdbmysql-grp-xx",
           "member": "string",
           "name": "InstanceGrpId",
@@ -4356,7 +4373,7 @@
         },
         {
           "disabled": false,
-          "document": "实例组id",
+          "document": "<p>实例组id</p>",
           "example": "cynosdbmysql-grp-xx",
           "member": "string",
           "name": "InstanceGroupId",
@@ -4366,7 +4383,7 @@
         },
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "cynosmysql-ins-xx",
           "member": "string",
           "name": "InstanceId",
@@ -4376,7 +4393,7 @@
         },
         {
           "disabled": false,
-          "document": "任务操作对象id",
+          "document": "<p>任务操作对象id</p>",
           "example": "cynosmysql-ins-xx",
           "member": "string",
           "name": "ObjectId",
@@ -4386,7 +4403,7 @@
         },
         {
           "disabled": false,
-          "document": "任务操作对象类型",
+          "document": "<p>任务操作对象类型</p>",
           "example": "cluster",
           "member": "string",
           "name": "ObjectType",
@@ -4396,7 +4413,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者uin",
+          "document": "<p>操作者uin</p>",
           "example": "1",
           "member": "string",
           "name": "Operator",
@@ -4406,7 +4423,7 @@
         },
         {
           "disabled": false,
-          "document": "任务输出信息",
+          "document": "<p>任务输出信息</p>",
           "example": "1",
           "member": "string",
           "name": "Output",
@@ -4416,7 +4433,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态",
+          "document": "<p>任务状态</p>",
           "example": "success",
           "member": "string",
           "name": "Status",
@@ -4426,7 +4443,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型",
+          "document": "<p>任务类型</p>",
           "example": "taskCreateCluster",
           "member": "string",
           "name": "TaskType",
@@ -4436,7 +4453,7 @@
         },
         {
           "disabled": false,
-          "document": "触发本任务的父任务ID",
+          "document": "<p>触发本任务的父任务ID</p>",
           "example": "0",
           "member": "int64",
           "name": "TriggerTaskId",
@@ -4446,7 +4463,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2004-05-03T17:30:08+08:00",
           "member": "string",
           "name": "UpdateTime",
@@ -4456,7 +4473,7 @@
         },
         {
           "disabled": false,
-          "document": "任务开始时间",
+          "document": "<p>任务开始时间</p>",
           "example": "2004-05-03T17:30:08+08:00",
           "member": "string",
           "name": "StartTime",
@@ -4466,7 +4483,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结束时间",
+          "document": "<p>任务结束时间</p>",
           "example": "2004-05-03T17:30:08+08:00",
           "member": "string",
           "name": "EndTime",
@@ -4476,7 +4493,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "cynosdbmysql-j9i41hfv",
           "member": "string",
           "name": "ClusterName",
@@ -4486,7 +4503,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "cynosdbmysql-ins-4vdtei33",
           "member": "string",
           "name": "InstanceName",
@@ -4496,7 +4513,7 @@
         },
         {
           "disabled": false,
-          "document": "任务进度",
+          "document": "<p>任务进度</p>",
           "example": "100",
           "member": "int64",
           "name": "Process",
@@ -4506,7 +4523,7 @@
         },
         {
           "disabled": true,
-          "document": "修改参数任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>修改参数任务信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ModifyParamsData",
           "name": "ModifyParamsData",
@@ -4516,7 +4533,7 @@
         },
         {
           "disabled": false,
-          "document": "创建集群任务信息",
+          "document": "<p>创建集群任务信息</p>",
           "example": "无",
           "member": "CreateClustersData",
           "name": "CreateClustersData",
@@ -4526,7 +4543,7 @@
         },
         {
           "disabled": false,
-          "document": "集群回档任务信息",
+          "document": "<p>集群回档任务信息</p>",
           "example": "无",
           "member": "RollbackData",
           "name": "RollbackData",
@@ -4536,7 +4553,7 @@
         },
         {
           "disabled": false,
-          "document": "实例变配任务信息",
+          "document": "<p>实例变配任务信息</p>",
           "example": "无",
           "member": "ModifyInstanceData",
           "name": "ModifyInstanceData",
@@ -4546,7 +4563,7 @@
         },
         {
           "disabled": false,
-          "document": "手动备份任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>手动备份任务信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ManualBackupData",
           "name": "ManualBackupData",
@@ -4556,7 +4573,7 @@
         },
         {
           "disabled": false,
-          "document": "修改内核版本任务信息",
+          "document": "<p>修改内核版本任务信息</p>",
           "example": "无",
           "member": "ModifyDbVersionData",
           "name": "ModifyDbVersionData",
@@ -4566,7 +4583,7 @@
         },
         {
           "disabled": false,
-          "document": "集群可用区信息",
+          "document": "<p>集群可用区信息</p>",
           "example": "无",
           "member": "ClusterSlaveData",
           "name": "ClusterSlaveData",
@@ -4576,7 +4593,7 @@
         },
         {
           "disabled": false,
-          "document": "转换集群日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>转换集群日志</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SwitchClusterLogBin",
           "name": "SwitchClusterLogBin",
@@ -4586,7 +4603,7 @@
         },
         {
           "disabled": false,
-          "document": "修改实例参数数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>修改实例参数数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BizTaskModifyParamsData",
           "name": "ModifyInstanceParamsData",
@@ -4596,7 +4613,7 @@
         },
         {
           "disabled": false,
-          "document": "维护时间",
+          "document": "<p>维护时间</p>",
           "example": "无",
           "member": "TaskMaintainInfo",
           "name": "TaskMaintainInfo",
@@ -4606,7 +4623,7 @@
         },
         {
           "disabled": false,
-          "document": "实例日志投递信息\n",
+          "document": "<p>实例日志投递信息</p>",
           "example": "无",
           "member": "InstanceCLSDeliveryInfo",
           "name": "InstanceCLSDeliveryInfos",
@@ -4616,7 +4633,7 @@
         },
         {
           "disabled": false,
-          "document": "任务进度信息",
+          "document": "<p>任务进度信息</p>",
           "example": "无",
           "member": "TaskProgressInfo",
           "name": "TaskProgressInfo",
@@ -4626,7 +4643,7 @@
         },
         {
           "disabled": false,
-          "document": "全球数据库网络任务",
+          "document": "<p>全球数据库网络任务</p>",
           "example": "无",
           "member": "GdnTaskInfo",
           "name": "GdnTaskInfo",
@@ -4636,7 +4653,7 @@
         },
         {
           "disabled": false,
-          "document": "保险箱id",
+          "document": "<p>保险箱id</p>",
           "example": "vault-08535e43-40d0-4982-bbe8-9d15722f234f",
           "member": "string",
           "name": "VaultId",
@@ -4646,12 +4663,22 @@
         },
         {
           "disabled": false,
-          "document": "保险箱名称",
+          "document": "<p>保险箱名称</p>",
           "example": "vaults_1769683193_5oDpM",
           "member": "string",
           "name": "VaultName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI优化器任务信息</p>",
+          "example": "无",
+          "member": "AIOptimizerTaskData",
+          "name": "AIOptimizerTaskData",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

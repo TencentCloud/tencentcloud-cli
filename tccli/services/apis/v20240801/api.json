@@ -21,6 +21,13 @@
       "output": "CreateAgentAppModelServicesResponse",
       "status": "online"
     },
+    "CreateAgentAppServices": {
+      "document": "应用关联API",
+      "input": "CreateAgentAppServicesRequest",
+      "name": "应用API关联",
+      "output": "CreateAgentAppServicesResponse",
+      "status": "online"
+    },
     "CreateAgentCredential": {
       "document": "创建Credential",
       "input": "CreateAgentCredentialRequest",
@@ -49,6 +56,13 @@
       "output": "CreateModelServiceResponse",
       "status": "online"
     },
+    "CreateService": {
+      "document": "创建服务",
+      "input": "CreateServiceRequest",
+      "name": "创建服务",
+      "output": "CreateServiceResponse",
+      "status": "online"
+    },
     "DeleteAgentApp": {
       "document": "删除app",
       "input": "DeleteAgentAppRequest",
@@ -68,6 +82,13 @@
       "input": "DeleteAgentAppModelServicesRequest",
       "name": "删除app的model service关联",
       "output": "DeleteAgentAppModelServicesResponse",
+      "status": "online"
+    },
+    "DeleteAgentAppServices": {
+      "document": "应用API关联解除",
+      "input": "DeleteAgentAppServicesRequest",
+      "name": "应用API关联关系解除",
+      "output": "DeleteAgentAppServicesResponse",
       "status": "online"
     },
     "DeleteAgentCredential": {
@@ -98,6 +119,13 @@
       "output": "DeleteModelServiceResponse",
       "status": "online"
     },
+    "DeleteService": {
+      "document": "删除服务",
+      "input": "DeleteServiceRequest",
+      "name": "删除服务",
+      "output": "DeleteServiceResponse",
+      "status": "online"
+    },
     "DescribeAgentApp": {
       "document": "查询app详情",
       "input": "DescribeAgentAppRequest",
@@ -117,6 +145,13 @@
       "input": "DescribeAgentAppModelServicesRequest",
       "name": "查询app model服务关联列表",
       "output": "DescribeAgentAppModelServicesResponse",
+      "status": "online"
+    },
+    "DescribeAgentAppServices": {
+      "document": "创建app",
+      "input": "DescribeAgentAppServicesRequest",
+      "name": "应用API查询",
+      "output": "DescribeAgentAppServicesResponse",
       "status": "online"
     },
     "DescribeAgentApps": {
@@ -182,6 +217,20 @@
       "output": "DescribeModelsResponse",
       "status": "online"
     },
+    "DescribeService": {
+      "document": "查询服务详情",
+      "input": "DescribeServiceRequest",
+      "name": "查询服务详情",
+      "output": "DescribeServiceResponse",
+      "status": "online"
+    },
+    "DescribeServices": {
+      "document": "查询服务列表",
+      "input": "DescribeServicesRequest",
+      "name": "查询服务列表",
+      "output": "DescribeServicesResponse",
+      "status": "online"
+    },
     "ModifyAgentApp": {
       "document": "修改app",
       "input": "ModifyAgentAppRequest",
@@ -222,6 +271,13 @@
       "input": "ModifyModelServiceRequest",
       "name": "编辑模型服务",
       "output": "ModifyModelServiceResponse",
+      "status": "online"
+    },
+    "ModifyService": {
+      "document": "修改服务",
+      "input": "ModifyServiceRequest",
+      "name": "修改服务",
+      "output": "ModifyServiceResponse",
       "status": "online"
     }
   },
@@ -476,6 +532,163 @@
       ],
       "usage": "out"
     },
+    "AgentAppServiceDTO": {
+      "document": "Agent应用关联的服务配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ID</p>",
+          "example": "svr-17244a65",
+          "member": "string",
+          "name": "ID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否限流</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "InvokeLimitConfigStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限流配置</p>",
+          "example": "无",
+          "member": "InvokeLimitConfigDTO",
+          "name": "InvokeLimitConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否要认证</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedAuth",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据ID</p>",
+          "example": "agc-aca72fd4",
+          "member": "string",
+          "name": "AgentCredentialID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "AgentAppServiceVO": {
+      "document": "应用API详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ID</p>",
+          "example": "aga-cc2448c0-svr-17244a65",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>",
+          "example": "aga-cc2448c0",
+          "member": "string",
+          "name": "AgentAppID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>",
+          "example": "svr-17244a65",
+          "member": "string",
+          "name": "ServiceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否限流</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "InvokeLimitConfigStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>限流配置</p>",
+          "example": "无",
+          "member": "InvokeLimitConfigDTO",
+          "name": "InvokeLimitConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务详情</p>",
+          "example": "无",
+          "member": "ServiceVO",
+          "name": "ServiceVO",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联时间</p>",
+          "example": "2026-05-27T02:25:08.692Z",
+          "member": "string",
+          "name": "RelateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要认证</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedAuth",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据ID</p>",
+          "example": "agc-aca72fd4",
+          "member": "string",
+          "name": "AgentCredentialID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据详情</p>",
+          "example": "无",
+          "member": "DescribeAgentCredentialResp",
+          "name": "AgentCredentialVO",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AgentCredentialContentDTO": {
       "document": "凭证内容",
       "members": [
@@ -683,6 +896,34 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CompoundCondition": {
+      "document": "匹配条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否启用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>匹配信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SimpleCondition",
+          "name": "Rules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -911,6 +1152,61 @@
           "document": "<p>app id</p>",
           "example": "无",
           "member": "CreateAgentAppResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentAppServicesRequest": {
+      "document": "CreateAgentAppServices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ins-222fd0da",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>",
+          "example": "aga-cc2448c0",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务详情</p>",
+          "example": "无",
+          "member": "AgentAppServiceDTO",
+          "name": "Services",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentAppServicesResponse": {
+      "document": "CreateAgentAppServices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>app id</p>",
+          "example": "无",
+          "member": "ResultIDVO",
           "name": "Data",
           "output_required": false,
           "type": "object",
@@ -1575,6 +1871,51 @@
       ],
       "type": "object"
     },
+    "CreateServiceRequest": {
+      "document": "CreateService请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateServiceResponse": {
+      "document": "CreateService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CustomMatch": {
+      "document": "自定义匹配条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>请求头  匹配条件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompoundCondition",
+          "name": "HeadersMatch",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求参数 匹配条件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompoundCondition",
+          "name": "QueryMatch",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DeleteAgentAppMcpServersRequest": {
       "document": "DeleteAgentAppMcpServers请求参数结构体",
       "members": [
@@ -1715,6 +2056,61 @@
         {
           "disabled": false,
           "document": "app id",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentAppServicesRequest": {
+      "document": "DeleteAgentAppServices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ins-222fd0da",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>",
+          "example": "aga-a502f357",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务IDs</p>",
+          "example": "[\"svr-17244a65\"]",
+          "member": "string",
+          "name": "ServiceIDs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentAppServicesResponse": {
+      "document": "DeleteAgentAppServices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>app id</p>",
           "example": "无",
           "member": "ResultIDVO",
           "name": "Data",
@@ -1877,6 +2273,42 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceRequest": {
+      "document": "DeleteService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceResponse": {
+      "document": "DeleteService返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2241,6 +2673,141 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeAgentAppServicesRequest": {
+      "document": "DescribeAgentAppServices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ins-222fd0da",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据量</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IDs</p>",
+          "example": "[\"aga-cc2448c0-svr-17244a65\"]",
+          "member": "string",
+          "name": "IDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用IDs</p>",
+          "example": "[\"aga-cc2448c0\"]",
+          "member": "string",
+          "name": "AgentAppIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务IDs</p>",
+          "example": "[\"svr-17244a65\"]",
+          "member": "string",
+          "name": "ServiceIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键字</p>",
+          "example": "43343",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否有凭据</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AgentCredentialExist",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据ID</p>",
+          "example": "[\"agc-f063fc83\"]",
+          "member": "string",
+          "name": "AgentCredentialIDs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentAppServicesResponse": {
+      "document": "DescribeAgentAppServices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>app id</p>",
+          "example": "无",
+          "member": "DescribeAgentAppServicesVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentAppServicesVO": {
+      "document": "应用服务查询",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据列表</p>",
+          "example": "无",
+          "member": "AgentAppServiceVO",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DescribeAgentAppsRequest": {
       "document": "DescribeAgentApps请求参数结构体",
@@ -4203,6 +4770,126 @@
       ],
       "usage": "in"
     },
+    "DescribeServiceRequest": {
+      "document": "DescribeService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceResponse": {
+      "document": "DescribeService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServicesRequest": {
+      "document": "DescribeServices请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeServicesResponse": {
+      "document": "DescribeServices返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FieldValueDTO": {
+      "document": "FieldValue结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>属性</p>",
+          "example": "field1",
+          "member": "string",
+          "name": "Field",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>值</p>",
+          "example": "vaule1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HealthCheckConfigDTO": {
+      "document": "HealthCheckConfigDTO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检查路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HealthCheckPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ValidHealthCheckStatusCode",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求的超时时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "HealthCheckTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "IDNameVO": {
       "document": "IDNameVO",
       "members": [
@@ -5592,6 +6279,321 @@
       ],
       "type": "object"
     },
+    "ModifyServiceRequest": {
+      "document": "ModifyService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例</p>",
+          "example": "ins-a7af1980",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "test_name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "<p>里约应用ID</p>",
+          "example": "app-be27914b",
+          "member": "string",
+          "name": "PaasID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "test desc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "[\"lab-xxxxxxxx\"]",
+          "member": "string",
+          "name": "LabelIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目录</p>",
+          "example": "[\"cat-xxxxxxxx\"]",
+          "member": "string",
+          "name": "CategoryIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": true,
+          "document": "<p>鉴权方式</p>",
+          "example": "none",
+          "member": "string",
+          "name": "AuthType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "<p>签名</p>",
+          "example": "sha256",
+          "member": "string",
+          "name": "SignType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "<p>登录方式</p>",
+          "example": "[\"login\"]",
+          "member": "string",
+          "name": "LoginTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>负载方式</p>",
+          "example": "random",
+          "member": "string",
+          "name": "TargetSelect",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公开路径</p>",
+          "example": "/bbb",
+          "member": "string",
+          "name": "PubPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求方法</p>",
+          "example": "any",
+          "member": "string",
+          "name": "RequestMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否https</p>",
+          "example": "http",
+          "member": "string",
+          "name": "HttpProtocolType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书检查</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CheckTargetCertsError",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>http协议类型</p>",
+          "example": "1.1",
+          "member": "string",
+          "name": "HttpProtocolVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本号</p>",
+          "example": "无",
+          "member": "VersionDTO",
+          "name": "Versions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标路径</p>",
+          "example": "/",
+          "member": "string",
+          "name": "TargetPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>入参</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "RequestParamsValidatorStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>入参</p>",
+          "example": "{\"Body\":{\"Type\":\"object\"},\"Query\":{\"Type\":\"object\"},\"Header\":{\"Type\":\"object\"}}",
+          "member": "string",
+          "name": "RequestParamsValidatorJsonInfoT",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>出参</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ResponseParamsValidatorStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>出参</p>",
+          "example": "{\"Body\":{\"Type\":\"object\"},\"Query\":{\"Type\":\"object\"},\"Header\":{\"Type\":\"object\"}}",
+          "member": "string",
+          "name": "ResponseParamsValidatorJsonInfoT",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量控制</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "InvokeLimitConfigStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量控制</p>",
+          "example": "无",
+          "member": "InvokeLimitConfigDTO",
+          "name": "InvokeLimitConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HealthCheckStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查</p>",
+          "example": "无",
+          "member": "HealthCheckConfigDTO",
+          "name": "HealthCheckConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>格式转换</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SourceTypeStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>格式转换</p>",
+          "example": "无",
+          "member": "SourceTypeConfigDTO",
+          "name": "SourceTypeConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP白名单</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IpWhiteStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP白名单</p>",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "IpWhiteList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP黑名单</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IpBlackStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP黑名单</p>",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "IpBlackList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>插件</p>",
+          "example": "无",
+          "member": "PluginConfigDTO",
+          "name": "PluginConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>",
+          "example": "svr-b9027f2d",
+          "member": "string",
+          "name": "ID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyServiceResponse": {
+      "document": "ModifyService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PluginConfigDTO": {
       "document": "PluginConfigDTO",
       "members": [
@@ -5813,6 +6815,1005 @@
       ],
       "usage": "both"
     },
+    "ServiceDatabaseOrderParam": {
+      "document": "ServiceDatabaseOrderParam",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>字段名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "field",
+          "member": "string",
+          "name": "FieldName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序 asc desc</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceDatabaseReqParam": {
+      "document": "向导模式请求参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>表字段名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "field",
+          "member": "string",
+          "name": "FieldName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作符</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eq",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数名/常量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value",
+          "member": "string",
+          "name": "Val",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "string",
+          "member": "string",
+          "name": "ValType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内部字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "InternalField",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceDatabaseRespParam": {
+      "document": "响应参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>源字段名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "field1",
+          "member": "string",
+          "name": "FieldName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标字段名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "field2",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceVO": {
+      "document": "ServiceVO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-4fe8e5ab",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "llm_test",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "<p>里约应用ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "app-e0dfdb0f",
+          "member": "string",
+          "name": "PaasID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "大模型测试",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"lab-xxxxxxx\"]",
+          "member": "string",
+          "name": "LabelIDs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>目录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cat-xxxxxxxx\"]",
+          "member": "string",
+          "name": "CategoryIDs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "<p>鉴权方式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "none",
+          "member": "string",
+          "name": "AuthType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "<p>签名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sha256",
+          "member": "string",
+          "name": "SignType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "<p>登录方式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"login\"]",
+          "member": "string",
+          "name": "LoginTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>负载方式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "random",
+          "member": "string",
+          "name": "TargetSelect",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>公开路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/llm",
+          "member": "string",
+          "name": "PubPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求方法</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "any",
+          "member": "string",
+          "name": "RequestMethod",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标服务器</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TargetHostDTO",
+          "name": "TargetHosts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否https</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http",
+          "member": "string",
+          "name": "HttpProtocolType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书检查</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "CheckTargetCertsError",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>http协议类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1",
+          "member": "string",
+          "name": "HttpProtocolVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VersionDTO",
+          "name": "Versions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/compatible-mode/v1/chat/completions",
+          "member": "string",
+          "name": "TargetPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>入参</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "RequestParamsValidatorStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>入参</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Body\":{\"Type\":\"object\"},\"Query\":{\"Type\":\"object\"},\"Header\":{\"Type\":\"object\"}}",
+          "member": "string",
+          "name": "RequestParamsValidatorJsonInfoT",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>出参</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ResponseParamsValidatorStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>出参</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Body\":{\"Type\":\"object\"},\"Query\":{\"Type\":\"object\"},\"Header\":{\"Type\":\"object\"}}",
+          "member": "string",
+          "name": "ResponseParamsValidatorJsonInfoT",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量控制</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "InvokeLimitConfigStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量控制</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InvokeLimitConfigDTO",
+          "name": "InvokeLimitConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "HealthCheckStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HealthCheckConfigDTO",
+          "name": "HealthCheckConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>格式转换</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SourceTypeStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>格式转换</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SourceTypeConfigDTO",
+          "name": "SourceTypeConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "<p>是否开启Token限流</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "TokenLimitStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "<p>Token限流配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TokenLimitConfigDTO",
+          "name": "TokenLimitConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "<p>是否开启内容安全</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "TmsStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "<p>内容安全配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TmsConfigDTO",
+          "name": "TmsConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP白名单</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IpWhiteStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP白名单</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "IpWhiteList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP黑名单</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IpBlackStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP黑名单</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "IpBlackList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>插件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PluginConfigDTO",
+          "name": "PluginConfigs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "svr-462e07d3",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>预览地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://www.app.com/llm",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>app</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IDNameVO",
+          "name": "App",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>目录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IDNameVO",
+          "name": "Catalogs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IDNameVO",
+          "name": "Labels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>认证方式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IDNameVO",
+          "name": "Logins",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AuthAppNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-01-04T03:15:26.362Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最后修改时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-01-07T03:33:26.398Z",
+          "member": "string",
+          "name": "LastUpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "251272682",
+          "member": "int64",
+          "name": "AppID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700001382999",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启报文记录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "OpenMessageLogStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "<p>订阅页面的当前用户是否订阅了该API</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sub-xxx",
+          "member": "string",
+          "name": "CurrPaasIDSubscriptionID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标服务类型 Restful Database Mock</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Restful",
+          "member": "string",
+          "name": "TargetServiceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL模板</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SqlTemplate",
+          "name": "SqlTemplate",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标Host类型 0 默认 1 vpc</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TargetHostType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端服务类型 0 自定义 原始数据:ip/域名或vpc 1 后端服务 服务组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TargetServiceHostType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端服务组ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tsg-xxxxxxxx",
+          "member": "string",
+          "name": "TargetServerGroupID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端服务组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TargetServerGroupDTO",
+          "name": "TargetServerGroup",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义host</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.com",
+          "member": "string",
+          "name": "CustomHttpHost",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "targetHost",
+          "member": "string",
+          "name": "HttpHostType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>mock响应状态码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "400",
+          "member": "int64",
+          "name": "MockStatusCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>mock响应body</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MockBody",
+          "member": "string",
+          "name": "MockBody",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>mock响应头</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FieldValueDTO",
+          "name": "MockHeaders",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>路径匹配类型: prefix 前缀匹配(不送默认); absolute 绝对匹配; regex正则匹配;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "prefix",
+          "member": "string",
+          "name": "PathMatchType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义匹配条件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomMatch",
+          "name": "CustomMatch",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求的超时时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "uint64",
+          "name": "Timeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的mcp server数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "McpServerNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SimpleCondition": {
+      "document": "匹配条件请求参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>字段名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key1",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>匹配方式: eq 等于;ne 不等于;regex 正则;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eq",
+          "member": "string",
+          "name": "Condition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段值 或正则表达式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SourceTypeConfigDTO": {
+      "document": "SourceTypeConfigDTO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "json xml urlencoded amf0 amf3 hessian1 hessian2\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReqSourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "json xml urlencoded amf0 amf3 hessian1 hessian2\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReqTargetType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "json xml urlencoded amf0 amf3 hessian1 hessian2\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResSourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "json xml urlencoded amf0 amf3 hessian1 hessian2\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResTargetType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SqlTemplate": {
+      "document": "SqlTemplate SQL模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>配置方式  script  脚本 wizard 向导</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "script",
+          "member": "string",
+          "name": "DbConfigMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据源ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ds-********",
+          "member": "string",
+          "name": "DataSourceID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Sql代码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "select * from xxx",
+          "member": "string",
+          "name": "Sql",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>向导模式配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WizardConfig",
+          "name": "WizardConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "StartEndTime": {
       "document": "开始结束时间结构体",
       "members": [
@@ -5904,6 +7905,78 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TargetServerGroupDTO": {
+      "document": "后端服务组DTO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>后端服务组ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tsg-********",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testgroup",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标服务器列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TargetHostDTO",
+          "name": "TargetHosts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标Host类型 0 默认 1 vpc</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TargetHostType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的服务数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ServiceCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0001-01-01T00:00:00Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6125,6 +8198,106 @@
         }
       ],
       "usage": "out"
+    },
+    "VersionDTO": {
+      "document": "VersionDTO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Version版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "WizardConfig": {
+      "document": "WizardConfig 向导模式配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>表名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_table",
+          "member": "string",
+          "name": "DbTable",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否分页</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DbEnablePaging",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceDatabaseReqParam",
+          "name": "DbReqParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>响应参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceDatabaseRespParam",
+          "name": "DbRespParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceDatabaseOrderParam",
+          "name": "DbOrdParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启出参映射</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DbEnableMappingResp",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

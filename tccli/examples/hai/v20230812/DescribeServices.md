@@ -1,4 +1,4 @@
-**Example 1: DescribeServices**
+**Example 1: 查询所有服务信息**
 
 
 
@@ -6,9 +6,8 @@ Input:
 
 ```
 tccli hai DescribeServices --cli-unfold-argument  \
-    --ServiceIds svc-dde3hd4i \
-    --Limit 1 \
-    --Offset 0
+    --Limit 20 \
+    --Offset 20
 ```
 
 Output: 
@@ -19,28 +18,58 @@ Output:
             {
                 "ComputeSet": [
                     {
-                        "BundleType": "96G_A*8",
-                        "CPU": "384",
+                        "BundleType": "96G_A*1",
+                        "CPU": "8",
                         "Count": 1,
-                        "GPUCount": "8",
-                        "GPUMemory": "768",
-                        "GPUPerformance": "352",
-                        "Memory": "2304"
+                        "GPUCount": "1",
+                        "GPUMemory": "96",
+                        "GPUPerformance": "44",
+                        "Memory": "80"
                     }
                 ],
-                "CreateTime": "2026-02-13 17:28:31",
-                "DeploymentConfigs": [],
+                "CreateTime": "2026-04-07 10:30:09",
+                "DeploymentConfigs": [
+                    {
+                        "Container": {
+                            "Envs": [
+                                {
+                                    "Name": "MODEL_DIRECTORY",
+                                    "Value": "/data/model"
+                                }
+                            ],
+                            "Image": {
+                                "ImageRegistryUrl": "aicompute.tencentcloudcr.com/aibench/sglang:v0.5.3rc0-hml-mooncake-0.3.6"
+                            },
+                            "Port": "30000",
+                            "Scripts": [],
+                            "Storages": []
+                        },
+                        "ContainerCount": 1
+                    }
+                ],
                 "HyperParam": {},
-                "ModelName": "GLM-4.7-FP8",
-                "RunningReplicas": 0,
-                "ServiceId": "svc-dde3hd4i",
-                "ServiceName": "glm4.7-fp8",
-                "ServiceState": "RUNNING",
-                "TotalReplicas": 0
+                "ModelName": "deepseek-r1 671b sglang",
+                "RoleComputeSet": [
+                    {
+                        "BundleType": "96G_A*1",
+                        "CPU": "8",
+                        "Count": 1,
+                        "GPUCount": "1",
+                        "GPUMemory": "96",
+                        "GPUPerformance": "44",
+                        "Memory": "80"
+                    }
+                ],
+                "RunningReplicas": 1,
+                "SecurityType": "STANDARD",
+                "ServiceId": "svc-a1b0nsvq",
+                "ServiceName": "hai-autotest-final",
+                "ServiceState": "UPDATING",
+                "TotalReplicas": 1
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "02632e20-8bc6-4a27-b26a-92a44da57456"
+        "TotalCount": 38,
+        "RequestId": "5d65c1f9-59c5-4597-98ed-6ac9c020b98c"
     }
 }
 ```

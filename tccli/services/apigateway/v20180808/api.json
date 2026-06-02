@@ -225,11 +225,11 @@
       "status": "online"
     },
     "DescribeApiApp": {
-      "document": "本接口（DescribeApiApp）用于根据应用ID搜索应用。此接口已下线，如需使用功能请使用DescribeApiAppsStatus接口。",
+      "document": "历史接口，已经无用户调用\n\n本接口（DescribeApiApp）用于根据应用ID搜索应用。此接口已下线，如需使用功能请使用DescribeApiAppsStatus接口。",
       "input": "DescribeApiAppRequest",
       "name": "搜索应用",
       "output": "DescribeApiAppResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeApiAppBindApisStatus": {
       "document": "本接口（DescribeApiAppBindApisStatus）查询应用绑定的Api列表。",

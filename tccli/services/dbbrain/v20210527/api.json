@@ -266,6 +266,13 @@
       "output": "DescribeDBSpaceStatusResponse",
       "status": "online"
     },
+    "DescribeDatabaseAutonomyStatus": {
+      "document": "查询数据库自治功能的开关状态。当前支持 MongoDB 的索引推荐（AutoIndexAdvice）功能状态查询。",
+      "input": "DescribeDatabaseAutonomyStatusRequest",
+      "name": "查询数据库自治功能状态",
+      "output": "DescribeDatabaseAutonomyStatusResponse",
+      "status": "online"
+    },
     "DescribeDiagDBInstances": {
       "document": "获取实例信息列表。Region统一选择广州。",
       "input": "DescribeDiagDBInstancesRequest",
@@ -586,6 +593,13 @@
       "input": "UpdateAgentSwitchRequest",
       "name": "更新Agent状态",
       "output": "UpdateAgentSwitchResponse",
+      "status": "online"
+    },
+    "UpdateDatabaseAutonomyStatus": {
+      "document": "设置数据库自治功能的开关状态。当前支持 MongoDB 的索引推荐（AutoIndexAdvice）功能的开启或关闭。",
+      "input": "UpdateDatabaseAutonomyStatusRequest",
+      "name": "设置数据库自治功能状态",
+      "output": "UpdateDatabaseAutonomyStatusResponse",
       "status": "online"
     },
     "UpdateMonitorSwitch": {
@@ -4470,6 +4484,61 @@
           "example": "35",
           "member": "int64",
           "name": "AvailableDays",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseAutonomyStatusRequest": {
+      "document": "DescribeDatabaseAutonomyStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID。</p>",
+          "example": "cmgo-kuaetxyl",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务产品类型。取值：mongodb（云数据库 MongoDB）。</p>",
+          "example": "mongodb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自治功能类型。取值：AutoIndexAdvice（索引推荐）。</p>",
+          "example": "AutoIndexAdvice",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseAutonomyStatusResponse": {
+      "document": "DescribeDatabaseAutonomyStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自治功能开关状态。取值：0（关闭）、1（开启）。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -12573,6 +12642,70 @@
     "UpdateAgentSwitchResponse": {
       "document": "UpdateAgentSwitch返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDatabaseAutonomyStatusRequest": {
+      "document": "UpdateDatabaseAutonomyStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID。</p>",
+          "example": "cmgo-kuaetxyl",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务产品类型。取值：mongodb（云数据库 MongoDB）。</p>",
+          "example": "mongodb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自治功能类型。取值：AutoIndexAdvice（索引推荐）。</p>",
+          "example": "AutoIndexAdvice",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开关状态。取值：0（关闭）、1（开启）。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDatabaseAutonomyStatusResponse": {
+      "document": "UpdateDatabaseAutonomyStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作结果状态。取值：1（操作成功）。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

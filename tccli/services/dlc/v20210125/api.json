@@ -17531,7 +17531,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置的key值",
+          "document": "<p>配置的key值</p>",
           "example": "format-version",
           "member": "string",
           "name": "Key",
@@ -17542,7 +17542,7 @@
         },
         {
           "disabled": false,
-          "document": "配置的value值",
+          "document": "<p>配置的value值</p>",
           "example": "1",
           "member": "string",
           "name": "Value",

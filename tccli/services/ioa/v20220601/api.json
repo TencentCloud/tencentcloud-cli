@@ -176,7 +176,7 @@
       "status": "online"
     },
     "DescribeDirectAccountGroupResources": {
-      "document": "列表账户组直接关联的资源，私有化调用path为：capi/Assets/DescribeDirectAccountGroupResources",
+      "document": "列表账户组直接关联的资源，私有化调用path为：capi/NGN/DescribeDirectAccountGroupResources",
       "input": "DescribeDirectAccountGroupResourcesRequest",
       "name": "列表账户组直接关联的资源",
       "output": "DescribeDirectAccountGroupResourcesResponse",
@@ -255,7 +255,7 @@
     "GrantResourcesByAccountGroups": {
       "document": "添加资源授权到账号组",
       "input": "GrantResourcesByAccountGroupsRequest",
-      "name": "按照账户分组组授权资源",
+      "name": "按照账户分组授权资源",
       "output": "GrantResourcesByAccountGroupsResponse",
       "status": "online"
     },
@@ -4488,6 +4488,7 @@
           "example": "无",
           "member": "DescribeAccountResourcesData",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4836,11 +4837,11 @@
       "type": "object"
     },
     "DescribeResourceGrantedAccountGroupsData": {
-      "document": "DescribeResourceGrantedAccountsData",
+      "document": "账号分组授权信息",
       "members": [
         {
           "disabled": false,
-          "document": " ",
+          "document": "<p>授权信息</p>",
           "example": "无",
           "member": "GrantedAccountGroupItem",
           "name": "Items",
@@ -4893,7 +4894,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -4903,7 +4904,7 @@
         },
         {
           "disabled": false,
-          "document": " ",
+          "document": "<p>授权信息</p>",
           "example": "无",
           "member": "GrantedAccountItem",
           "name": "Items",
@@ -4956,7 +4957,7 @@
       "members": [
         {
           "disabled": false,
-          "document": " ",
+          "document": "<p>授权信息</p>",
           "example": "无",
           "member": "GrantedVirtualGroupItem",
           "name": "Items",
