@@ -118,8 +118,8 @@ class ConfigureListCommand(BasicConfigure):
     USEAGE = 'tccli configure list [--profile profile-name]'
     EXAMPLES = "$ tccli configure list\n" \
                "credential:\n" \
-               "secretId = ********************************\n" \
-               "secretKey = ********************************\n" \
+               "secretId = AKID************************1234\n" \
+               "secretKey = abcd************************5678\n" \
                "configure:\n" \
                "region = ap-guangzhou\n" \
                "output = json\n" \
@@ -128,10 +128,31 @@ class ConfigureListCommand(BasicConfigure):
                "cvm.endpoint = cvm.tencentcloudapi.com\n" \
                "...\n" \
                "..."
+    SENSITIVE_CREDENTIALS = [OptionsDefine.SecretId, OptionsDefine.SecretKey]
+    SECRET_VISIBLE_CHARS = 4
 
     def __init__(self, stream=sys.stdout):
         super(ConfigureListCommand, self).__init__()
         self._stream = stream
+
+    @classmethod
+    def _mask_sensitive_credential(cls, value):
+        if not isinstance(value, six.string_types):
+            value = str(value)
+
+        visible_chars = cls.SECRET_VISIBLE_CHARS
+        if len(value) <= visible_chars * 2:
+            return "*" * len(value)
+        return "%s%s%s" % (
+            value[:visible_chars],
+            "*" * (len(value) - visible_chars * 2),
+            value[-visible_chars:]
+        )
+
+    def _format_credential_value(self, config, value):
+        if config in self.SENSITIVE_CREDENTIALS:
+            return self._mask_sensitive_credential(value)
+        return value
 
     def _run_main(self, args, parsed_globals):
         profile_name = self._get_profile_name(parsed_globals)
@@ -142,7 +163,7 @@ class ConfigureListCommand(BasicConfigure):
             cred = Utils.load_json_msg(cred_path)
             for config in self.cred_list:
                 if config in cred and cred[config]:
-                    self._stream.write("%s = %s\n" % (config, cred[config]))
+                    self._stream.write("%s = %s\n" % (config, self._format_credential_value(config, cred[config])))
 
         # other in x.configure
         is_exit, config_path = self._profile_existed(profile_name + ".configure")
