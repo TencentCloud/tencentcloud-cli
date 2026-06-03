@@ -84,6 +84,13 @@
       "output": "DeleteAuditLogFileResponse",
       "status": "online"
     },
+    "DeleteDBBackups": {
+      "document": "删除全量备份",
+      "input": "DeleteDBBackupsRequest",
+      "name": "删除全量备份",
+      "output": "DeleteDBBackupsResponse",
+      "status": "online"
+    },
     "DeleteLogDownloadTask": {
       "document": "删除日志下载任务",
       "input": "DeleteLogDownloadTaskRequest",
@@ -252,6 +259,13 @@
       "output": "DescribeMongodbLogsResponse",
       "status": "online"
     },
+    "DescribePasswordRotation": {
+      "document": "获取密码轮转状态信息",
+      "input": "DescribePasswordRotationRequest",
+      "name": "查询密码轮转状态",
+      "output": "DescribePasswordRotationResponse",
+      "status": "online"
+    },
     "DescribeSRVConnectionDomain": {
       "document": "本接口（DescribeSRVConnectionDomain）用于查询MongoDB数据库当前的域名信息。",
       "input": "DescribeSRVConnectionDomainRequest",
@@ -308,6 +322,13 @@
       "output": "DropDBInstanceParamTplResponse",
       "status": "online"
     },
+    "EnablePasswordRotation": {
+      "document": "开启密码轮转",
+      "input": "EnablePasswordRotationRequest",
+      "name": "开启密码轮转",
+      "output": "EnablePasswordRotationResponse",
+      "status": "online"
+    },
     "EnableSRVConnectionUrl": {
       "document": "本接口（EnableSRVConnectionUrl）用于开启MongoDB数据库的SRV访问地址。",
       "input": "EnableSRVConnectionUrlRequest",
@@ -320,6 +341,13 @@
       "input": "EnableTransparentDataEncryptionRequest",
       "name": "开启实例数据透明加密",
       "output": "EnableTransparentDataEncryptionResponse",
+      "status": "online"
+    },
+    "EnableWanService": {
+      "document": "本接口(OpenWanService)用于开启当前实例的外网访问地址。",
+      "input": "EnableWanServiceRequest",
+      "name": "开启外网访问地址",
+      "output": "EnableWanServiceResponse",
       "status": "online"
     },
     "FlashBackDBInstance": {
@@ -383,6 +411,13 @@
       "input": "ModifyAuditServiceRequest",
       "name": "修改审计配置",
       "output": "ModifyAuditServiceResponse",
+      "status": "online"
+    },
+    "ModifyBackupExpireTime": {
+      "document": "修改备份过期时间",
+      "input": "ModifyBackupExpireTimeRequest",
+      "name": "修改备份过期时间",
+      "output": "ModifyBackupExpireTimeResponse",
       "status": "online"
     },
     "ModifyDBInstanceNetworkAddress": {
@@ -474,6 +509,13 @@
       "input": "RestartNodesRequest",
       "name": "重启数据库节点",
       "output": "RestartNodesResponse",
+      "status": "online"
+    },
+    "RestoreDBInstance": {
+      "document": "本接口(RestoreDBInstance)用于回档数据库实例到指定时间点。",
+      "input": "RestoreDBInstanceRequest",
+      "name": "回档实例",
+      "output": "RestoreDBInstanceResponse",
       "status": "online"
     },
     "SetAccountUserPrivilege": {
@@ -1215,7 +1257,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "<p>实例ID。</p>",
           "example": "cmgo-ca2n****",
           "member": "string",
           "name": "InstanceId",
@@ -1225,7 +1267,7 @@
         },
         {
           "disabled": false,
-          "document": "备份方式。\n- 0：自动备份。\n- 1：手动备份。",
+          "document": "<p>备份方式。</p><ul><li>0：自动备份。</li><li>1：手动备份。</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "BackupType",
@@ -1235,7 +1277,7 @@
         },
         {
           "disabled": false,
-          "document": "备份文件名称。",
+          "document": "<p>备份文件名称。</p>",
           "example": "cmgo-ca2n****_2021-12-13 02:02",
           "member": "string",
           "name": "BackupName",
@@ -1245,7 +1287,7 @@
         },
         {
           "disabled": false,
-          "document": "备份任务备注信息。",
+          "document": "<p>备份任务备注信息。</p>",
           "example": "系统后台每日定时自动备份",
           "member": "string",
           "name": "BackupDesc",
@@ -1255,7 +1297,7 @@
         },
         {
           "disabled": false,
-          "document": "备份文件大小，单位：KB。",
+          "document": "<p>备份文件大小，单位：KB。</p>",
           "example": "326594030",
           "member": "uint64",
           "name": "BackupSize",
@@ -1265,7 +1307,7 @@
         },
         {
           "disabled": false,
-          "document": "备份开始时间。",
+          "document": "<p>备份开始时间。</p>",
           "example": "2021-12-13 02:02:51",
           "member": "string",
           "name": "StartTime",
@@ -1275,7 +1317,7 @@
         },
         {
           "disabled": false,
-          "document": "备份结束时间。",
+          "document": "<p>备份结束时间。</p>",
           "example": "2021-12-13 03:02:51",
           "member": "string",
           "name": "EndTime",
@@ -1285,7 +1327,7 @@
         },
         {
           "disabled": false,
-          "document": "备份状态。\n- 1：备份中。\n- 2：备份成功。",
+          "document": "<p>备份状态。</p><ul><li>1：备份中。</li><li>2：备份成功。</li></ul>",
           "example": "2",
           "member": "uint64",
           "name": "Status",
@@ -1295,7 +1337,7 @@
         },
         {
           "disabled": false,
-          "document": "备份方式。\n- 0：逻辑备份。\n- 1：物理备份。\n- 3：快照备份。\n**说明:**\n- 通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。\n- 实例开通存储加密，则备份方式不能为物理备份。",
+          "document": "<p>备份方式。</p><ul><li>0：逻辑备份。</li><li>1：物理备份。</li><li>3：快照备份。<br><strong>说明:</strong></li><li>通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。</li><li>实例开通存储加密，则备份方式不能为物理备份。</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "BackupMethod",
@@ -1305,7 +1347,7 @@
         },
         {
           "disabled": false,
-          "document": "备份记录 ID。",
+          "document": "<p>备份记录 ID。</p>",
           "example": "6997433",
           "member": "int64",
           "name": "BackId",
@@ -1315,7 +1357,7 @@
         },
         {
           "disabled": false,
-          "document": "备份删除时间。",
+          "document": "<p>备份删除时间。</p>",
           "example": "2099-01-01 00:00:00",
           "member": "string",
           "name": "DeleteTime",
@@ -1325,7 +1367,7 @@
         },
         {
           "disabled": false,
-          "document": "异地备份地域。",
+          "document": "<p>异地备份地域。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "BackupRegion",
@@ -1335,7 +1377,7 @@
         },
         {
           "disabled": false,
-          "document": "备份支持的回档时间。",
+          "document": "<p>备份支持的回档时间。</p>",
           "example": "2021-12-13 03:02:51",
           "member": "string",
           "name": "RestoreTime",
@@ -1724,7 +1766,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例内存大小，单位：GB。具体售卖的内存规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
+          "document": "<p>实例内存大小，单位：GB。具体售卖的内存规格，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取。</p>",
           "example": "4",
           "member": "uint64",
           "name": "Memory",
@@ -1733,7 +1775,7 @@
         },
         {
           "disabled": false,
-          "document": "实例硬盘大小，单位：GB。每一个 CPU 规格对应的最大磁盘与最小磁盘范围，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
+          "document": "<p>实例硬盘大小，单位：GB。每一个 CPU 规格对应的最大磁盘与最小磁盘范围，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取。</p>",
           "example": "100",
           "member": "uint64",
           "name": "Volume",
@@ -1742,7 +1784,7 @@
         },
         {
           "disabled": false,
-          "document": "- 创建副本集实例，指副本集数量，该参数只能为1。\n- 创建分片集群实例，指分片的数量。请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询分片数量的取值范围，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。",
+          "document": "<ul><li>创建副本集实例，指副本集数量，该参数只能为1。</li><li>创建分片集群实例，指分片的数量。请通过接口<a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a>查询分片数量的取值范围，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "ReplicateSetNum",
@@ -1751,7 +1793,7 @@
         },
         {
           "disabled": false,
-          "document": "- 创建副本集实例，指每个副本集内主从节点数量。每个副本集所支持的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- 创建分片集群实例，指每个分片的主从节点数量。每个分片所支持的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
+          "document": "<ul><li>创建副本集实例，指每个副本集内主从节点数量。每个副本集所支持的最大节点数与最小节点数，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取。</li><li>创建分片集群实例，指每个分片的主从节点数量。每个分片所支持的最大节点数与最小节点数，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取。</li></ul>",
           "example": "2",
           "member": "uint64",
           "name": "NodeNum",
@@ -1760,7 +1802,7 @@
         },
         {
           "disabled": false,
-          "document": "指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。\n- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。",
+          "document": "<p>指版本信息。具体支持的版本信息 ，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取。</p><ul><li>MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。</li><li>MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。</li><li>MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。</li><li>MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。</li><li>MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。</li><li>MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。</li><li>MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。</li></ul>",
           "example": "MONGO_44_WT",
           "member": "string",
           "name": "MongoVersion",
@@ -1769,8 +1811,8 @@
         },
         {
           "disabled": false,
-          "document": "产品规格类型。\n- HIO10G：通用高HIO万兆型。\n- HCD：云盘版类型。",
-          "example": "HIO10G",
+          "document": "<p>产品推荐规格类型：</p><ul><li>GE.LD.T1：本地盘（通用I型）。</li><li>GE.CD.T1：云盘（通用I型）。</li></ul><p>产品白名单规格类型：</p><ul><li>HIO10G：本地盘（高IO万兆型）。</li><li>HCD：云盘（云盘版）。</li></ul><p>注意：白名单规格类型为白名单控制，如若需要，请 <a href=\"https://console.cloud.tencent.com/workorder/category\">提交工单</a> 申请</p>",
+          "example": "GE.LD.T1",
           "member": "string",
           "name": "MachineCode",
           "required": true,
@@ -1778,7 +1820,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数量，最小值1，最大值为30。",
+          "document": "<p>实例数量，最小值1，最大值为30。</p>",
           "example": "1",
           "member": "uint64",
           "name": "GoodsNum",
@@ -1787,7 +1829,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区信息，输入格式如：ap-guangzhou-2。\n- 具体信息，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- 该参数为主可用区，如果多可用区部署，Zone必须是AvailabilityZoneList中的一个。",
+          "document": "<p>可用区信息，输入格式如：ap-guangzhou-2。</p><ul><li>具体信息，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取。</li><li>该参数为主可用区，如果多可用区部署，Zone必须是AvailabilityZoneList中的一个。</li></ul>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -1796,7 +1838,7 @@
         },
         {
           "disabled": false,
-          "document": "实例架构类型。\n- REPLSET：副本集。\n- SHARD：分片集群。",
+          "document": "<p>实例架构类型。</p><ul><li>REPLSET：副本集。</li><li>SHARD：分片集群。</li></ul>",
           "example": "REPLSET",
           "member": "string",
           "name": "ClusterType",
@@ -1805,7 +1847,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID。\n- 仅支持配置私有网络，必须选择一个与实例同一地域的私有网络。请登录[私有网络控制台](https://console.cloud.tencent.com/vpc)获取可使用的私有网络 ID。\n- 实例创建成功之后，支持更换私有网络。具体操作，请参见[更换网络](https://cloud.tencent.com/document/product/239/30910)。",
+          "document": "<p>私有网络ID。</p><ul><li>仅支持配置私有网络，必须选择一个与实例同一地域的私有网络。请登录<a href=\"https://console.cloud.tencent.com/vpc\">私有网络控制台</a>获取可使用的私有网络 ID。</li><li>实例创建成功之后，支持更换私有网络。具体操作，请参见<a href=\"https://cloud.tencent.com/document/product/239/30910\">更换网络</a>。</li></ul>",
           "example": "vpc-k515****",
           "member": "string",
           "name": "VpcId",
@@ -1814,7 +1856,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 VPC 的子网 ID。\n- 必须在已选的私有网络内指定一个子网。请登录[私有网络控制台](https://console.cloud.tencent.com/vpc)获取可使用的子网 ID。\n- 实例创建成功之后，支持更换私有网络及子网。具体操作，请参见[更换网络](https://cloud.tencent.com/document/product/239/30910)。",
+          "document": "<p>私有网络 VPC 的子网 ID。</p><ul><li>必须在已选的私有网络内指定一个子网。请登录<a href=\"https://console.cloud.tencent.com/vpc\">私有网络控制台</a>获取可使用的子网 ID。</li><li>实例创建成功之后，支持更换私有网络及子网。具体操作，请参见<a href=\"https://cloud.tencent.com/document/product/239/30910\">更换网络</a>。</li></ul>",
           "example": "subnet-60dr****",
           "member": "string",
           "name": "SubnetId",
@@ -1823,7 +1865,7 @@
         },
         {
           "disabled": false,
-          "document": "实例密码。设置要求如下：\n- 字符个数为[8,32]。\n- 可输入[A,Z]、[a,z]、[0,9]范围内的字符。\n- 可输入的特殊字符包括：感叹号“!”，at“@”，警号“#”、百分号“%”、插入号“^”、星号“\\*”、括号“()”、下划线“_”。\n- 不能设置单一的字母或者数字。",
+          "document": "<p>实例密码。设置要求如下：</p><ul><li>字符个数为[8,32]。</li><li>可输入[A,Z]、[a,z]、[0,9]范围内的字符。</li><li>可输入的特殊字符包括：感叹号“!”，at“@”，警号“#”、百分号“%”、插入号“^”、星号“*”、括号“()”、下划线“_”。</li><li>不能设置单一的字母或者数字。</li></ul>",
           "example": "************",
           "member": "string",
           "name": "Password",
@@ -1832,7 +1874,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID。\n- 若不设置该参数，则为默认项目。\n- 在 [MongoDB 控制台项目管理](https://console.cloud.tencent.com/project)页面，可获取项目ID。",
+          "document": "<p>项目ID。</p><ul><li>若不设置该参数，则为默认项目。</li><li>在 <a href=\"https://console.cloud.tencent.com/project\">MongoDB 控制台项目管理</a>页面，可获取项目ID。</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "ProjectId",
@@ -1841,7 +1883,7 @@
         },
         {
           "disabled": false,
-          "document": "实例标签信息。",
+          "document": "<p>实例标签信息。</p>",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -1850,7 +1892,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型。\n- 1：正式实例。\n- 3：只读实例。\n- 4：灾备实例。\n- 5：克隆实例。注意：克隆实例 RestoreTime 为必填项。",
+          "document": "<p>实例类型。</p><ul><li>1：正式实例。</li><li>3：只读实例。</li><li>4：灾备实例。</li><li>5：克隆实例。注意：克隆实例 RestoreTime 为必填项。</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "Clone",
@@ -1859,7 +1901,7 @@
         },
         {
           "disabled": false,
-          "document": "父实例 ID。\n- 当参数**Clone**为3或者4时，即实例为只读或灾备实例时，该参数必须配置。\n- 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制父实例 ID。",
+          "document": "<p>父实例 ID。</p><ul><li>当参数<strong>Clone</strong>为3或者4时，即实例为只读或灾备实例时，该参数必须配置。</li><li>请登录 <a href=\"https://console.cloud.tencent.com/mongodb\">MongoDB 控制台</a>在实例列表复制父实例 ID。</li></ul>",
           "example": "cmgo-nh1o****",
           "member": "string",
           "name": "Father",
@@ -1868,7 +1910,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组 ID。 请登录[安全组控制台](https://console.cloud.tencent.com/vpc/security-group)页面获取与数据库实例同地域的安全组 ID。",
+          "document": "<p>安全组 ID。 请登录<a href=\"https://console.cloud.tencent.com/vpc/security-group\">安全组控制台</a>页面获取与数据库实例同地域的安全组 ID。</p>",
           "example": "[\"sg-1s3c****\"]",
           "member": "string",
           "name": "SecurityGroup",
@@ -1877,7 +1919,7 @@
         },
         {
           "disabled": false,
-          "document": "克隆实例回档时间。\n- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。\n- 回档时间范围：仅能回档7天内时间点的数据。",
+          "document": "<p>克隆实例回档时间。</p><ul><li>若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。</li><li>回档时间范围：仅能回档7天内时间点的数据。</li></ul>",
           "example": "2022-09-10 15:04:05",
           "member": "string",
           "name": "RestoreTime",
@@ -1886,7 +1928,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称。仅支持长度为128个字符的中文、英文、数字、下划线\\_、分隔符\\-。批量购买数据库实例时，支持通过自定义命名模式串与数字后缀自动升序功能，高效设置实例名称。\n- 基础模式：前缀＋自动升序编号（默认从1开始），**lnstanceName**仅需自定义实例名称前缀，例如设置为：cmgo，设置购买数量为5，则购买后，实例名称依次分别为cmgo1、cmgo2、cmgo3、cmgo4、cmgo5。\n- 自定义起始序号模式：前缀+｛R:x｝（x为自定义起始序号）。**InstanceName**需填写“前缀｛R:x｝”，例如：cmgo｛R:3｝，设置购买数量为5，则实例名称为cmgo3、cmgo4、cmgo5、cmgo6、cmgo7。\n- 复合模式串：前缀1{R:x}+前缀2{R:y}+ ⋯+固定后缀，x与y分别为每一段前缀的起始序号。**instanceName**需填写复合模式串，例如：cmgo{R:10}\\_node{R:12}\\_db，设置批量购买数量为5，则实例名称为 cmgo10\\_node12\\_db, cmgo11\\_node13\\_db, cmgo12\\_node14\\_db, cmgo13\\_node15\\_db, cluster14\\_node16\\_db. ",
+          "document": "<p>实例名称。仅支持长度为128个字符的中文、英文、数字、下划线_、分隔符-。批量购买数据库实例时，支持通过自定义命名模式串与数字后缀自动升序功能，高效设置实例名称。</p><ul><li>基础模式：前缀＋自动升序编号（默认从1开始），<strong>lnstanceName</strong>仅需自定义实例名称前缀，例如设置为：cmgo，设置购买数量为5，则购买后，实例名称依次分别为cmgo1、cmgo2、cmgo3、cmgo4、cmgo5。</li><li>自定义起始序号模式：前缀+｛R:x｝（x为自定义起始序号）。<strong>InstanceName</strong>需填写“前缀｛R:x｝”，例如：cmgo｛R:3｝，设置购买数量为5，则实例名称为cmgo3、cmgo4、cmgo5、cmgo6、cmgo7。</li><li>复合模式串：前缀1{R:x}+前缀2{R:y}+ ⋯+固定后缀，x与y分别为每一段前缀的起始序号。<strong>instanceName</strong>需填写复合模式串，例如：cmgo{R:10}_node{R:12}_db，设置批量购买数量为5，则实例名称为 cmgo10_node12_db, cmgo11_node13_db, cmgo12_node14_db, cmgo13_node15_db, cluster14_node16_db.</li></ul>",
           "example": "testInstance_{R:3}",
           "member": "string",
           "name": "InstanceName",
@@ -1895,7 +1937,7 @@
         },
         {
           "disabled": false,
-          "document": "若多可用区部署云数据库实例，指定多可用区列表。\n- 多可用区部署实例，参数 **Zone** 指定实例主可用区信息；**AvailabilityZoneList** 指定所有可用区信息，包含主可用区。输入格式如：[ap-guangzhou-2,ap-guangzhou-3,ap-guangzhou-4]。\n- 通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 可获取云数据库不同地域规划的可用区信息，以便指定有效的可用区。\n- 多可用区部署节点只能部署在3个不同可用区。不支持将集群的大多数节点部署在同一个可用区。例如：3节点集群不支持2个节点部署在同一个区。",
+          "document": "<p>若多可用区部署云数据库实例，指定多可用区列表。</p><ul><li>多可用区部署实例，参数 <strong>Zone</strong> 指定实例主可用区信息；<strong>AvailabilityZoneList</strong> 指定所有可用区信息，包含主可用区。输入格式如：[ap-guangzhou-2,ap-guangzhou-3,ap-guangzhou-4]。</li><li>通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 可获取云数据库不同地域规划的可用区信息，以便指定有效的可用区。</li><li>多可用区部署节点只能部署在3个不同可用区。不支持将集群的大多数节点部署在同一个可用区。例如：3节点集群不支持2个节点部署在同一个区。</li></ul>",
           "example": "[\"ap-guangzhou-2\",\"ap-guangzhou-3\",\"ap-guangzhou-4\"]",
           "member": "string",
           "name": "AvailabilityZoneList",
@@ -1904,7 +1946,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos CPU 核数，支持1、2、4、8、16。购买分片集群时，必须填写。",
+          "document": "<p>Mongos CPU 核数，支持1、2、4、8、16。购买分片集群时，必须填写。</p>",
           "example": "1",
           "member": "uint64",
           "name": "MongosCpu",
@@ -1913,7 +1955,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos 内存大小。\n-  购买分片集群时，必须填写。\n- 单位：GB，支持1核2GB、2核4GB、4核8GB、8核16GB、16核32GB。",
+          "document": "<p>Mongos 内存大小。</p><ul><li>购买分片集群时，必须填写。</li><li>单位：GB，支持1核2GB、2核4GB、4核8GB、8核16GB、16核32GB。</li></ul>",
           "example": "2",
           "member": "uint64",
           "name": "MongosMemory",
@@ -1922,7 +1964,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos 数量。购买分片集群时，必须填写。\n- 单可用区部署实例，其数量范围为[3,32]。\n- 多可用区部署实例，其数量范围为[6,32]。",
+          "document": "<p>Mongos 数量。购买分片集群时，必须填写。</p><ul><li>单可用区部署实例，其数量范围为[3,32]。</li><li>多可用区部署实例，其数量范围为[6,32]。</li></ul>",
           "example": "3",
           "member": "uint64",
           "name": "MongosNodeNum",
@@ -1931,7 +1973,7 @@
         },
         {
           "disabled": false,
-          "document": "只读节点数量，取值范围[0,5]。",
+          "document": "<p>只读节点数量，取值范围[0,5]。</p>",
           "example": "0",
           "member": "uint64",
           "name": "ReadonlyNodeNum",
@@ -1940,7 +1982,7 @@
         },
         {
           "disabled": false,
-          "document": "指只读节点所属可用区数组。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。",
+          "document": "<p>指只读节点所属可用区数组。跨可用区部署实例，参数<strong>ReadonlyNodeNum</strong>不为<strong>0</strong>时，必须配置该参数。</p>",
           "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "ReadonlyNodeAvailabilityZoneList",
@@ -1949,7 +1991,7 @@
         },
         {
           "disabled": false,
-          "document": "Hidden节点所属可用区。跨可用区部署实例，必须配置该参数。",
+          "document": "<p>Hidden节点所属可用区。跨可用区部署实例，必须配置该参数。</p>",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "HiddenZone",
@@ -1958,12 +2000,21 @@
         },
         {
           "disabled": false,
-          "document": "参数模板 ID。\n- 参数模板是预置了特定参数值的集合，可用于快速配置新的 MongoDB 实例。合理使用参数模板，能有效提升数据库的部署效率与运行性能。\n- 参数模板 ID 可通过 [DescribeDBInstanceParamTpl ](https://cloud.tencent.com/document/product/240/109155)接口获取。请选择与实例版本与架构所对应的参数模板 ID。",
+          "document": "<p>参数模板 ID。</p><ul><li>参数模板是预置了特定参数值的集合，可用于快速配置新的 MongoDB 实例。合理使用参数模板，能有效提升数据库的部署效率与运行性能。</li><li>参数模板 ID 可通过 <a href=\"https://cloud.tencent.com/document/product/240/109155\">DescribeDBInstanceParamTpl </a>接口获取。请选择与实例版本与架构所对应的参数模板 ID。</li></ul>",
           "example": "tpl-0vswu****",
           "member": "string",
           "name": "ParamTemplateId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例CPU核大小，单位：C。具体售卖的CPU规格，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取。<br>注意：通用 I 型实例必须设置 CPU 大小。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "CpuCore",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1973,7 +2024,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单ID。",
+          "document": "<p>订单ID。</p>",
           "example": "2019070916000000350241612094****",
           "member": "string",
           "name": "DealId",
@@ -1983,7 +2034,7 @@
         },
         {
           "disabled": false,
-          "document": "创建的实例ID列表。",
+          "document": "<p>创建的实例ID列表。</p>",
           "example": "[\"cmgo-m26c****\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -2087,7 +2138,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "- 创建副本集实例，指每个副本集内主从节点数量。每个副本集所支持的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- 创建分片集群实例，指每个分片的主从节点数量。每个分片所支持的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
+          "document": "<ul><li>创建副本集实例，指每个副本集内主从节点数量。每个副本集所支持的最大节点数与最小节点数，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取。</li><li>创建分片集群实例，指每个分片的主从节点数量。每个分片所支持的最大节点数与最小节点数，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取。</li></ul>",
           "example": "3",
           "member": "uint64",
           "name": "NodeNum",
@@ -2096,7 +2147,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存大小，单位：GB。具体售卖的内存规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
+          "document": "<p>实例内存大小，单位：GB。具体售卖的内存规格，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取。</p>",
           "example": "4",
           "member": "uint64",
           "name": "Memory",
@@ -2105,7 +2156,7 @@
         },
         {
           "disabled": false,
-          "document": "实例硬盘大小，单位：GB。每一个 CPU 规格对应的最大磁盘与最小磁盘范围，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
+          "document": "<p>实例硬盘大小，单位：GB。每一个 CPU 规格对应的最大磁盘与最小磁盘范围，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取。</p>",
           "example": "100",
           "member": "uint64",
           "name": "Volume",
@@ -2114,7 +2165,7 @@
         },
         {
           "disabled": false,
-          "document": "指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。\n- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。",
+          "document": "<p>指版本信息。具体支持的版本信息 ，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取。</p><ul><li>MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。</li><li>MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。</li><li>MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。</li><li>MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。</li><li>MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。</li><li>MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。</li><li>MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。</li></ul>",
           "example": "MONGO_44_WT",
           "member": "string",
           "name": "MongoVersion",
@@ -2123,7 +2174,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数量, 最小值1，最大值为30。",
+          "document": "<p>实例数量, 最小值1，最大值为30。</p>",
           "example": "1",
           "member": "uint64",
           "name": "GoodsNum",
@@ -2132,7 +2183,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区信息，输入格式如：ap-guangzhou-2。\n- 具体信息，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- 该参数为主可用区，如果多可用区部署，Zone必须是AvailabilityZoneList中的一个。",
+          "document": "<p>可用区信息，输入格式如：ap-guangzhou-2。</p><ul><li>具体信息，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取。</li><li>该参数为主可用区，如果多可用区部署，Zone必须是AvailabilityZoneList中的一个。</li></ul>",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
@@ -2141,7 +2192,7 @@
         },
         {
           "disabled": false,
-          "document": "指定购买实例的购买时长。取值可选：[1,2,3,4,5,6,7,8,9,10,11,12,24,36]；单位：月。",
+          "document": "<p>指定购买实例的购买时长。取值可选：[1,2,3,4,5,6,7,8,9,10,11,12,24,36]；单位：月。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Period",
@@ -2150,8 +2201,8 @@
         },
         {
           "disabled": false,
-          "document": "产品规格类型。\n- HIO10G：通用高HIO万兆型。\n- HCD：云盘版类型。",
-          "example": "HIO10G",
+          "document": "<p>产品推荐规格类型：</p><ul><li>GE.LD.T1：本地盘（通用I型）。</li><li>GE.CD.T1：云盘（通用I型）。</li></ul><p>产品白名单规格类型：</p><ul><li>HIO10G：本地盘（高IO万兆型）。</li><li>HCD：云盘（云盘版）。</li></ul><p>注意：白名单规格类型为白名单控制，如若需要，请 <a href=\"https://console.cloud.tencent.com/workorder/category\">提交工单</a> 申请</p>",
+          "example": "GE.LD.T1",
           "member": "string",
           "name": "MachineCode",
           "required": true,
@@ -2159,7 +2210,7 @@
         },
         {
           "disabled": false,
-          "document": "实例架构类型。\n- REPLSET：副本集。\n- SHARD：分片集群。",
+          "document": "<p>实例架构类型。</p><ul><li>REPLSET：副本集。</li><li>SHARD：分片集群。</li></ul>",
           "example": "REPLSET",
           "member": "string",
           "name": "ClusterType",
@@ -2168,7 +2219,7 @@
         },
         {
           "disabled": false,
-          "document": "- 创建副本集实例，指副本集数量，该参数只能为1。\n- 创建分片集群实例，指分片的数量。请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询分片数量的取值范围，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。",
+          "document": "<ul><li>创建副本集实例，指副本集数量，该参数只能为1。</li><li>创建分片集群实例，指分片的数量。请通过接口<a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a>查询分片数量的取值范围，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "ReplicateSetNum",
@@ -2177,7 +2228,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID。\n- 若不设置该参数，则为默认项目。\n- 在 [MongoDB 控制台项目管理](https://console.cloud.tencent.com/project)页面，可获取项目ID。",
+          "document": "<p>项目ID。</p><ul><li>若不设置该参数，则为默认项目。</li><li>在 <a href=\"https://console.cloud.tencent.com/project\">MongoDB 控制台项目管理</a>页面，可获取项目ID。</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -2186,7 +2237,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID。\n- 仅支持配置私有网络，必须选择一个与实例同一地域的私有网络。请登录[私有网络控制台](https://console.cloud.tencent.com/vpc)获取可使用的私有网络 ID。\n- 实例创建成功之后，支持更换私有网络。具体操作，请参见[更换网络](https://cloud.tencent.com/document/product/239/30910)。",
+          "document": "<p>私有网络 ID。</p><ul><li>仅支持配置私有网络，必须选择一个与实例同一地域的私有网络。请登录<a href=\"https://console.cloud.tencent.com/vpc\">私有网络控制台</a>获取可使用的私有网络 ID。</li><li>实例创建成功之后，支持更换私有网络。具体操作，请参见<a href=\"https://cloud.tencent.com/document/product/239/30910\">更换网络</a>。</li></ul>",
           "example": "vpc-0akb****",
           "member": "string",
           "name": "VpcId",
@@ -2195,7 +2246,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 VPC 的子网 ID。\n- 必须在已选的私有网络内指定一个子网。请登录[私有网络控制台](https://console.cloud.tencent.com/vpc)获取可使用的子网 ID。\n- 实例创建成功之后，支持更换私有网络及子网。具体操作，请参见[更换网络](https://cloud.tencent.com/document/product/239/30910)。",
+          "document": "<p>私有网络 VPC 的子网 ID。</p><ul><li>必须在已选的私有网络内指定一个子网。请登录<a href=\"https://console.cloud.tencent.com/vpc\">私有网络控制台</a>获取可使用的子网 ID。</li><li>实例创建成功之后，支持更换私有网络及子网。具体操作，请参见<a href=\"https://cloud.tencent.com/document/product/239/30910\">更换网络</a>。</li></ul>",
           "example": "subnet-fyrt****",
           "member": "string",
           "name": "SubnetId",
@@ -2204,7 +2255,7 @@
         },
         {
           "disabled": false,
-          "document": "实例密码。设置要求如下：\n- 字符个数为[8,32]。\n- 可输入[A,Z]、[a,z]、[0,9]范围内的字符。\n- 可输入的特殊字符包括：感叹号“!”，at“@”，警号“#”、百分号“%”、插入号“^”、星号“\\*”、括号“()”、下划线“\\_”。\n- 不能设置单一的字母或者数字。",
+          "document": "<p>实例密码。设置要求如下：</p><ul><li>字符个数为[8,32]。</li><li>可输入[A,Z]、[a,z]、[0,9]范围内的字符。</li><li>可输入的特殊字符包括：感叹号“!”，at“@”，警号“#”、百分号“%”、插入号“^”、星号“*”、括号“()”、下划线“_”。</li><li>不能设置单一的字母或者数字。</li></ul>",
           "example": "********",
           "member": "string",
           "name": "Password",
@@ -2213,7 +2264,7 @@
         },
         {
           "disabled": false,
-          "document": "实例标签信息。",
+          "document": "<p>实例标签信息。</p>",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -2222,7 +2273,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记。\n- 0：不自动续费。\n- 1：自动续费。",
+          "document": "<p>自动续费标记。</p><ul><li>0：不自动续费。</li><li>1：自动续费。</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "AutoRenewFlag",
@@ -2231,7 +2282,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动选择代金券。\n- 1：是。\n- 0：否。默认为0。",
+          "document": "<p>是否自动选择代金券。</p><ul><li>1：是。</li><li>0：否。默认为0。</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "AutoVoucher",
@@ -2240,7 +2291,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型。\n- 1：正式实例。\n- 3：只读实例。\n- 4：灾备实例。\n- 5：克隆实例。注意：克隆实例 RestoreTime 为必填项。",
+          "document": "<p>实例类型。</p><ul><li>1：正式实例。</li><li>3：只读实例。</li><li>4：灾备实例。</li><li>5：克隆实例。注意：克隆实例 RestoreTime 为必填项。</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "Clone",
@@ -2249,7 +2300,7 @@
         },
         {
           "disabled": false,
-          "document": "父实例 ID。\n- 当参数**Clone**为3或者4时，即实例为只读或灾备实例时，该参数必须配置。\n- 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制父实例 ID。",
+          "document": "<p>父实例 ID。</p><ul><li>当参数<strong>Clone</strong>为3或者4时，即实例为只读或灾备实例时，该参数必须配置。</li><li>请登录 <a href=\"https://console.cloud.tencent.com/mongodb\">MongoDB 控制台</a>在实例列表复制父实例 ID。</li></ul>",
           "example": "cmgo-nh1o****",
           "member": "string",
           "name": "Father",
@@ -2258,7 +2309,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组 ID。 请登录[安全组控制台](https://console.cloud.tencent.com/vpc/security-group)页面获取与数据库实例同地域的安全组 ID。",
+          "document": "<p>安全组 ID。 请登录<a href=\"https://console.cloud.tencent.com/vpc/security-group\">安全组控制台</a>页面获取与数据库实例同地域的安全组 ID。</p>",
           "example": "[\"sg-di48****\"]",
           "member": "string",
           "name": "SecurityGroup",
@@ -2267,7 +2318,7 @@
         },
         {
           "disabled": false,
-          "document": "克隆实例回档时间，当Clone取值为5或6时为必填。- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。- 回档时间范围：仅能回档7天内时间点的数据。",
+          "document": "<p>克隆实例回档时间，当Clone取值为5或6时为必填。- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。- 回档时间范围：仅能回档7天内时间点的数据。</p>",
           "example": "2022-09-15 15:04:05",
           "member": "string",
           "name": "RestoreTime",
@@ -2276,7 +2327,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称。仅支持长度为128个字符的中文、英文、数字、下划线\\_、分隔符\\-。批量购买数据库实例时，支持通过自定义命名模式串与数字后缀自动升序功能，高效设置实例名称。\n- 基础模式：前缀＋自动升序编号（默认从1开始），**lnstanceName**仅需自定义实例名称前缀，例如设置为：cmgo，设置购买数量为5，则购买后，实例名称依次分别为cmgo1、cmgo2、cmgo3、cmgo4、cmgo5。\n- 自定义起始序号模式：前缀+｛R:x｝（x为自定义起始序号）。**InstanceName**需填写“前缀｛R:x｝”，例如：cmgo｛R:3｝，设置购买数量为5，则实例名称为cmgo3、cmgo4、cmgo5、cmgo6、cmgo7。\n- 复合模式串：前缀1{R:x}+前缀2{R:y}+ ⋯+固定后缀，x与y分别为每一段前缀的起始序号。**instanceName**需填写复合模式串，例如：cmgo{R:10}\\_node{R:12}\\_db，设置批量购买数量为5，则实例名称为 cmgo10\\_node12\\_db, cmgo11\\_node13\\_db, cmgo12\\_node14\\_db, cmgo13\\_node15\\_db, cluster14\\_node16\\_db. ",
+          "document": "<p>实例名称。仅支持长度为128个字符的中文、英文、数字、下划线_、分隔符-。批量购买数据库实例时，支持通过自定义命名模式串与数字后缀自动升序功能，高效设置实例名称。</p><ul><li>基础模式：前缀＋自动升序编号（默认从1开始），<strong>lnstanceName</strong>仅需自定义实例名称前缀，例如设置为：cmgo，设置购买数量为5，则购买后，实例名称依次分别为cmgo1、cmgo2、cmgo3、cmgo4、cmgo5。</li><li>自定义起始序号模式：前缀+｛R:x｝（x为自定义起始序号）。<strong>InstanceName</strong>需填写“前缀｛R:x｝”，例如：cmgo｛R:3｝，设置购买数量为5，则实例名称为cmgo3、cmgo4、cmgo5、cmgo6、cmgo7。</li><li>复合模式串：前缀1{R:x}+前缀2{R:y}+ ⋯+固定后缀，x与y分别为每一段前缀的起始序号。<strong>instanceName</strong>需填写复合模式串，例如：cmgo{R:10}_node{R:12}_db，设置批量购买数量为5，则实例名称为 cmgo10_node12_db, cmgo11_node13_db, cmgo12_node14_db, cmgo13_node15_db, cluster14_node16_db.</li></ul>",
           "example": "myInstance_{R:3}",
           "member": "string",
           "name": "InstanceName",
@@ -2285,7 +2336,7 @@
         },
         {
           "disabled": false,
-          "document": "若多可用区部署云数据库实例，指定多可用区列表。\n- 多可用区部署实例，参数 **Zone** 指定实例主可用区信息；**AvailabilityZoneList** 指定所有可用区信息，包含主可用区。输入格式如：[ap-guangzhou-2,ap-guangzhou-3,ap-guangzhou-4]。\n- 通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 可获取云数据库不同地域规划的可用区信息，以便指定有效的可用区。\n- 多可用区部署节点只能部署在3个不同可用区。不支持将集群的大多数节点部署在同一个可用区。例如：3节点集群不支持2个节点部署在同一个区。",
+          "document": "<p>若多可用区部署云数据库实例，指定多可用区列表。</p><ul><li>多可用区部署实例，参数 <strong>Zone</strong> 指定实例主可用区信息；<strong>AvailabilityZoneList</strong> 指定所有可用区信息，包含主可用区。输入格式如：[ap-guangzhou-2,ap-guangzhou-3,ap-guangzhou-4]。</li><li>通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 可获取云数据库不同地域规划的可用区信息，以便指定有效的可用区。</li><li>多可用区部署节点只能部署在3个不同可用区。不支持将集群的大多数节点部署在同一个可用区。例如：3节点集群不支持2个节点部署在同一个区。</li></ul>",
           "example": "[\"ap-guangzhou-2\",\"ap-guangzhou-3\",\"ap-guangzhou-4\"]",
           "member": "string",
           "name": "AvailabilityZoneList",
@@ -2294,7 +2345,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos CPU 核数，支持1、2、4、8、16。购买分片集群时，必须填写。",
+          "document": "<p>Mongos CPU 核数，支持1、2、4、8、16。购买分片集群时，必须填写。</p>",
           "example": "1",
           "member": "uint64",
           "name": "MongosCpu",
@@ -2303,7 +2354,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos 内存大小。\n-  购买分片集群时，必须填写。\n- 单位：GB，支持1核2GB、2核4GB、4核8GB、8核16GB、16核32GB。",
+          "document": "<p>Mongos 内存大小。</p><ul><li>购买分片集群时，必须填写。</li><li>单位：GB，支持1核2GB、2核4GB、4核8GB、8核16GB、16核32GB。</li></ul>",
           "example": "2",
           "member": "uint64",
           "name": "MongosMemory",
@@ -2312,7 +2363,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos 数量。购买分片集群时，必须填写。\n- 单可用区部署实例，其数量范围为[3,32]。\n- 多可用区部署实例，其数量范围为[6,32]。",
+          "document": "<p>Mongos 数量。购买分片集群时，必须填写。</p><ul><li>单可用区部署实例，其数量范围为[3,32]。</li><li>多可用区部署实例，其数量范围为[6,32]。</li></ul>",
           "example": "3",
           "member": "uint64",
           "name": "MongosNodeNum",
@@ -2321,7 +2372,7 @@
         },
         {
           "disabled": false,
-          "document": "只读节点数量，取值范围[0,5]。",
+          "document": "<p>只读节点数量，取值范围[0,5]。</p>",
           "example": "0",
           "member": "uint64",
           "name": "ReadonlyNodeNum",
@@ -2330,7 +2381,7 @@
         },
         {
           "disabled": false,
-          "document": "指只读节点所属可用区数组。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。",
+          "document": "<p>指只读节点所属可用区数组。跨可用区部署实例，参数<strong>ReadonlyNodeNum</strong>不为<strong>0</strong>时，必须配置该参数。</p>",
           "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "ReadonlyNodeAvailabilityZoneList",
@@ -2339,7 +2390,7 @@
         },
         {
           "disabled": false,
-          "document": "Hidden节点所属可用区。跨可用区部署实例，必须配置该参数。",
+          "document": "<p>Hidden节点所属可用区。跨可用区部署实例，必须配置该参数。</p>",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "HiddenZone",
@@ -2348,12 +2399,21 @@
         },
         {
           "disabled": false,
-          "document": "参数模板 ID。\n- 参数模板是预置了特定参数值的集合，可用于快速配置新的 MongoDB 实例。合理使用参数模板，能有效提升数据库的部署效率与运行性能。\n- 参数模板 ID 可通过 [DescribeDBInstanceParamTpl ](https://cloud.tencent.com/document/product/240/109155)接口获取。请选择与实例版本与架构所对应的参数模板 ID。",
+          "document": "<p>参数模板 ID。</p><ul><li>参数模板是预置了特定参数值的集合，可用于快速配置新的 MongoDB 实例。合理使用参数模板，能有效提升数据库的部署效率与运行性能。</li><li>参数模板 ID 可通过 <a href=\"https://cloud.tencent.com/document/product/240/109155\">DescribeDBInstanceParamTpl </a>接口获取。请选择与实例版本与架构所对应的参数模板 ID。</li></ul>",
           "example": "tpl-0vswu****",
           "member": "string",
           "name": "ParamTemplateId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例CPU核大小，单位：C。具体售卖的CPU规格，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取<br>注意：通用 I 型实例必须设置 CPU 大小。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "CpuCore",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2363,7 +2423,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单ID",
+          "document": "<p>订单ID</p>",
           "example": "714****",
           "member": "string",
           "name": "DealId",
@@ -2373,7 +2433,7 @@
         },
         {
           "disabled": false,
-          "document": "创建的实例ID列表",
+          "document": "<p>创建的实例ID列表</p>",
           "example": "[\"cmgo-po5f****\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -2777,6 +2837,42 @@
     },
     "DeleteAuditLogFileResponse": {
       "document": "DeleteAuditLogFile返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDBBackupsRequest": {
+      "document": "DeleteDBBackups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id,cmgo-xxxx",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份文件id列表",
+          "example": "无",
+          "member": "int64",
+          "name": "BackupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDBBackupsResponse": {
+      "document": "DeleteDBBackups返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4984,6 +5080,23 @@
       ],
       "type": "object"
     },
+    "DescribePasswordRotationRequest": {
+      "document": "DescribePasswordRotation请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePasswordRotationResponse": {
+      "document": "DescribePasswordRotation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSRVConnectionDomainRequest": {
       "document": "DescribeSRVConnectionDomain请求参数结构体",
       "members": [
@@ -5408,6 +5521,23 @@
       ],
       "type": "object"
     },
+    "EnablePasswordRotationRequest": {
+      "document": "EnablePasswordRotation请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "EnablePasswordRotationResponse": {
+      "document": "EnablePasswordRotation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EnableSRVConnectionUrlRequest": {
       "document": "EnableSRVConnectionUrl请求参数结构体",
       "members": [
@@ -5488,6 +5618,61 @@
           "member": "int64",
           "name": "FlowId",
           "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableWanServiceRequest": {
+      "document": "EnableWanService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "cmgo-abcdef",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡ID。",
+          "example": "lb-dabkt44i",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点及监听端口信息。",
+          "example": "无",
+          "member": "WanServiceNodeList",
+          "name": "NodeList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableWanServiceResponse": {
+      "document": "EnableWanService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID。",
+          "example": "1745484844",
+          "member": "uint64",
+          "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5710,7 +5895,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例所属区域及可用区信息。具体信息，请参见[地域和可用区](https://cloud.tencent.com/document/product/240/3637)。",
+          "document": "<p>实例所属区域及可用区信息。具体信息，请参见<a href=\"https://cloud.tencent.com/document/product/240/3637\">地域和可用区</a>。</p>",
           "example": "ap-guangzhou-4",
           "member": "string",
           "name": "Zone",
@@ -5719,7 +5904,7 @@
         },
         {
           "disabled": false,
-          "document": "- 创建副本集实例，指每个副本集内主从节点数量。每个副本集所支持的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- 创建分片集群实例，指每个分片的主从节点数量。每个分片所支持的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
+          "document": "<ul><li>创建副本集实例，指每个副本集内主从节点数量。每个副本集所支持的最大节点数与最小节点数，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取。</li><li>创建分片集群实例，指每个分片的主从节点数量。每个分片所支持的最大节点数与最小节点数，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取。</li></ul>",
           "example": "3",
           "member": "int64",
           "name": "NodeNum",
@@ -5728,7 +5913,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存大小。\n- 单位：GB。\n- 取值范围：请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询，其返回的数据结构SpecItems中的参数CPU与Memory分别对应CPU核数与内存规格。",
+          "document": "<p>实例内存大小。</p><ul><li>单位：GB。</li><li>取值范围：请通过接口<a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数CPU与Memory分别对应CPU核数与内存规格。</li></ul>",
           "example": "4",
           "member": "int64",
           "name": "Memory",
@@ -5737,7 +5922,7 @@
         },
         {
           "disabled": false,
-          "document": "实例硬盘大小。\n- 单位：GB。\n- 取值范围：请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询，其返回的数据结构SpecItems中的参数MinStorage与MaxStorage分别对应其最小磁盘规格与最大磁盘规格。",
+          "document": "<p>实例硬盘大小。</p><ul><li>单位：GB。</li><li>取值范围：请通过接口<a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinStorage与MaxStorage分别对应其最小磁盘规格与最大磁盘规格。</li></ul>",
           "example": "100",
           "member": "int64",
           "name": "Volume",
@@ -5746,7 +5931,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本信息。具体支持的版本，请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询，其返回的数据结构SpecItems中的参数MongoVersionCode为实例所支持的版本信息。版本信息与版本号对应关系如下：\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。\n- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。",
+          "document": "<p>实例版本信息。具体支持的版本，请通过接口<a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MongoVersionCode为实例所支持的版本信息。版本信息与版本号对应关系如下：</p><ul><li>MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。</li><li>MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。</li><li>MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。</li><li>MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。</li><li>MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。</li><li>MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。</li><li>MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。</li></ul>",
           "example": "MONGO_50_WT",
           "member": "string",
           "name": "MongoVersion",
@@ -5755,8 +5940,8 @@
         },
         {
           "disabled": false,
-          "document": "产品规格类型。\n- HIO10G：通用高HIO万兆型。\n- HCD：云盘版。",
-          "example": "HIO10G",
+          "document": "<p>产品推荐规格类型：</p><ul><li>GE.LD.T1：本地盘（通用I型）。</li><li>GE.CD.T1：云盘（通用I型）。</li></ul><p>产品白名单规格类型：</p><ul><li>HIO10G：本地盘（高IO万兆型）。</li><li>HCD：云盘（云盘版）。</li></ul><p>注意：白名单规格类型为白名单控制，如若需要，请 <a href=\"https://console.cloud.tencent.com/workorder/category\">提交工单</a> 申请</p>",
+          "example": "GE.LD.T1",
           "member": "string",
           "name": "MachineCode",
           "required": true,
@@ -5764,7 +5949,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数量，取值范围为[1,10]。",
+          "document": "<p>实例数量，取值范围为[1,10]。</p>",
           "example": "2",
           "member": "int64",
           "name": "GoodsNum",
@@ -5773,7 +5958,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型。\n- REPLSET：副本集。\n- SHARD：分片集群。",
+          "document": "<p>实例类型。</p><ul><li>REPLSET：副本集。</li><li>SHARD：分片集群。</li></ul>",
           "example": "REPLSET",
           "member": "string",
           "name": "ClusterType",
@@ -5782,7 +5967,7 @@
         },
         {
           "disabled": false,
-          "document": "- 创建副本集实例，指副本集数量，该参数只能为1。\n- 创建分片集群实例，指分片的数量。请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询分片数量的取值范围，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。",
+          "document": "<ul><li>创建副本集实例，指副本集数量，该参数只能为1。</li><li>创建分片集群实例，指分片的数量。请通过接口<a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a>查询分片数量的取值范围，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "ReplicateSetNum",
@@ -5791,7 +5976,7 @@
         },
         {
           "disabled": false,
-          "document": "- 选择包年包月计费模式，即 <b>InstanceChargeType </b>设定为<b>PREPAID</b>时，必须设置该参数，指定购买实例的购买时长。取值可选：[1,2,3,4,5,6,7,8,9,10,11,12,24,36]；单位：月。\n-选择按量计费，即 <b>InstanceChargeType</b> 设定为 **POSTPAID_BY_HOUR** 时，该参数仅可配置为 1。",
+          "document": "<ul><li>选择包年包月计费模式，即 <b>InstanceChargeType </b>设定为<b>PREPAID</b>时，必须设置该参数，指定购买实例的购买时长。取值可选：[1,2,3,4,5,6,7,8,9,10,11,12,24,36]；单位：月。<br>-选择按量计费，即 <b>InstanceChargeType</b> 设定为 <strong>POSTPAID_BY_HOUR</strong> 时，该参数仅可配置为 1。</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -5800,7 +5985,7 @@
         },
         {
           "disabled": false,
-          "document": "实例付费方式。\n- PREPAID：包年包月计费。\n- POSTPAID_BY_HOUR：按量计费。",
+          "document": "<p>实例付费方式。</p><ul><li>PREPAID：包年包月计费。</li><li>POSTPAID_BY_HOUR：按量计费。</li></ul>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -5809,7 +5994,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos CPU 核数，支持1、2、4、8、16。购买分片集群时，必须填写。注意为空时取默认取值为2C。",
+          "document": "<p>Mongos CPU 核数，支持1、2、4、8、16。购买分片集群时，必须填写。注意为空时取默认取值为2C。</p>",
           "example": "2",
           "member": "uint64",
           "name": "MongosCpu",
@@ -5818,7 +6003,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos 内存大小。-  购买分片集群时，必须填写。- 单位：GB，支持1核2GB、2核4GB、4核8GB、8核16GB、16核32GB。注意为空时取默认取值为4G。",
+          "document": "<p>Mongos 内存大小。-  购买分片集群时，必须填写。- 单位：GB，支持1核2GB、2核4GB、4核8GB、8核16GB、16核32GB。注意为空时取默认取值为4G。</p>",
           "example": "4",
           "member": "uint64",
           "name": "MongosMemory",
@@ -5827,7 +6012,7 @@
         },
         {
           "disabled": false,
-          "document": "指 Mongos 个数，取值范围为[3,32]。若为分片集群实例询价，则该参数必须设置。注意为空时取默认取值为3个节点。",
+          "document": "<p>指 Mongos 个数，取值范围为[3,32]。若为分片集群实例询价，则该参数必须设置。注意为空时取默认取值为3个节点。</p>",
           "example": "3",
           "member": "uint64",
           "name": "MongosNum",
@@ -5836,7 +6021,7 @@
         },
         {
           "disabled": false,
-          "document": "指 ConfigServer CPU核数，固定取值为 1，单位：GB，可不配置该参数。",
+          "document": "<p>指 ConfigServer CPU核数，固定取值为 1，单位：GB，可不配置该参数。</p>",
           "example": "1",
           "member": "uint64",
           "name": "ConfigServerCpu",
@@ -5845,7 +6030,7 @@
         },
         {
           "disabled": false,
-          "document": "指 ConfigServer 内存大小，固定取值为 2，单位：GB，可不配置该参数。",
+          "document": "<p>指 ConfigServer 内存大小，固定取值为 2，单位：GB，可不配置该参数。</p>",
           "example": "2",
           "member": "uint64",
           "name": "ConfigServerMemory",
@@ -5854,10 +6039,28 @@
         },
         {
           "disabled": false,
-          "document": "指 ConfigServer 磁盘大小，固定取值为 20，单位：GB，可不配置该参数。",
+          "document": "<p>指 ConfigServer 磁盘大小，固定取值为 20，单位：GB，可不配置该参数。</p>",
           "example": "20",
           "member": "uint64",
           "name": "ConfigServerVolume",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<ul><li>创建副本集实例，指每个副本集内只读节点数量。 </li><li>创建分片集群实例，指每个分片的只读节点数量。<br>取值范围为［1,5］。</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "ReadonlyNodeNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例CPU大小。</p><ul><li>单位：C。</li><li>取值范围：请通过接口<a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数CPU与Memory分别对应CPU核数与内存规格。</li><li>注意：通用 I 型实例询价时必须传入与内存对应的 CPU 核数大小</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
           "required": false,
           "type": "int"
         }
@@ -5869,7 +6072,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "价格",
+          "document": "<p>价格</p>",
           "example": "无",
           "member": "DBInstancePrice",
           "name": "Price",
@@ -5931,6 +6134,15 @@
           "example": "2",
           "member": "int64",
           "name": "ReplicateSetNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "变更配置后实例CPU大小，单位：C。具体售卖的CPU规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n注意：通用 I 型实例询价时必须传入与内存对应的 CPU 核数大小",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
           "required": false,
           "type": "int"
         }
@@ -7396,6 +7608,61 @@
       ],
       "type": "object"
     },
+    "ModifyBackupExpireTimeRequest": {
+      "document": "ModifyBackupExpireTime请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "cmgo-********",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>",
+          "example": "2026-06-06 04:02:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份ID</p>",
+          "example": "[11123430]",
+          "member": "int64",
+          "name": "BackupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBackupExpireTimeResponse": {
+      "document": "ModifyBackupExpireTime返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>失败的备份ID</p>",
+          "example": "[21123430]",
+          "member": "int64",
+          "name": "FailedBackups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDBInstanceNetworkAddressRequest": {
       "document": "ModifyDBInstanceNetworkAddress请求参数结构体",
       "members": [
@@ -7564,7 +7831,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
+          "document": "<p>实例 ID。请登录 <a href=\"https://console.cloud.tencent.com/mongodb\">MongoDB 控制台</a>在实例列表复制实例 ID。</p>",
           "example": "cmgo-p8vn****",
           "member": "string",
           "name": "InstanceId",
@@ -7573,7 +7840,7 @@
         },
         {
           "disabled": false,
-          "document": "实例配置变更后的内存大小。单位：GB。该参数为空值时，默认取实例当前的内存大小。当前所支持的内存规格，请参见[产品规格](https://cloud.tencent.com/document/product/240/64125)。\n**注意**：内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。",
+          "document": "<p>实例配置变更后的内存大小。单位：GB。该参数为空值时，默认取实例当前的内存大小。当前所支持的内存规格，请参见<a href=\"https://cloud.tencent.com/document/product/240/64125\">产品规格</a>。<br><strong>注意</strong>：内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。</p>",
           "example": "4",
           "member": "uint64",
           "name": "Memory",
@@ -7582,7 +7849,7 @@
         },
         {
           "disabled": false,
-          "document": "实例配置变更后的硬盘大小，单位：GB。该参数为空值时，默认取当前实例的磁盘大小。当前所支持的磁盘容量，请参见[产品规格](https://cloud.tencent.com/document/product/240/64125)。\n- 内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。\n- 降配时，变更后的磁盘容量必须大于已用磁盘容量的1.2倍。",
+          "document": "<p>实例配置变更后的硬盘大小，单位：GB。该参数为空值时，默认取当前实例的磁盘大小。当前所支持的磁盘容量，请参见<a href=\"https://cloud.tencent.com/document/product/240/64125\">产品规格</a>。</p><ul><li>内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。</li><li>降配时，变更后的磁盘容量必须大于已用磁盘容量的1.2倍。</li></ul>",
           "example": "250",
           "member": "uint64",
           "name": "Volume",
@@ -7591,7 +7858,7 @@
         },
         {
           "disabled": true,
-          "document": "(已废弃) 请使用ResizeOplog独立接口完成。\n\n实例配置变更后 Oplog 的大小。\n- 单位：GB。\n- 默认 Oplog 占用容量为磁盘空间的10%。系统允许设置的 Oplog 容量范围为磁盘空间的[10%,90%]。",
+          "document": "<p>(已废弃) 请使用ResizeOplog独立接口完成。</p><p>实例配置变更后 Oplog 的大小。</p><ul><li>单位：GB。</li><li>默认 Oplog 占用容量为磁盘空间的10%。系统允许设置的 Oplog 容量范围为磁盘空间的[10%,90%]。</li></ul>",
           "example": "25",
           "member": "uint64",
           "name": "OplogSize",
@@ -7600,7 +7867,7 @@
         },
         {
           "disabled": false,
-          "document": "实例变更后 mongod 的节点数（不包含 readonly 只读节点数）。\n-  副本集节点数：请通过 [DescribeSpecInfo ](https://cloud.tencent.com/document/product/240/38567)接口返回的参数 MinNodeNum 与 MaxNodeNum 获取节点数量取值范围。\n-  分片集群每个分片节点数：请通过 [DescribeSpecInfo ](https://cloud.tencent.com/document/product/240/38567)接口返回的参数 MinReplicateSetNodeNum 与 MaxReplicateSetNodeNum 获取节点数量取值范围。\n**说明**：变更 mongod 或 mongos 的 CPU 与内存规格时，该参数可以不配置或者输入当前 mongod 或 mongos（不包含readonly）节点数量。",
+          "document": "<p>实例变更后 mongod 的节点数（不包含 readonly 只读节点数）。</p><ul><li>副本集节点数：请通过 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo </a>接口返回的参数 MinNodeNum 与 MaxNodeNum 获取节点数量取值范围。</li><li>分片集群每个分片节点数：请通过 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo </a>接口返回的参数 MinReplicateSetNodeNum 与 MaxReplicateSetNodeNum 获取节点数量取值范围。<br><strong>说明</strong>：变更 mongod 或 mongos 的 CPU 与内存规格时，该参数可以不配置或者输入当前 mongod 或 mongos（不包含readonly）节点数量。</li></ul>",
           "example": "3",
           "member": "uint64",
           "name": "NodeNum",
@@ -7609,7 +7876,7 @@
         },
         {
           "disabled": false,
-          "document": "实例变更后的分片数。\n- 请通过 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 接口返回的参数**MinReplicateSetNum**与**MaxReplicateSetNum**获取实例分片数取值范围。\n- 实例分片数量只允许增加不允许减少。",
+          "document": "<p>实例变更后的分片数。</p><ul><li>请通过 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 接口返回的参数<strong>MinReplicateSetNum</strong>与<strong>MaxReplicateSetNum</strong>获取实例分片数取值范围。</li><li>实例分片数量只允许增加不允许减少。</li></ul>",
           "example": "3",
           "member": "uint64",
           "name": "ReplicateSetNum",
@@ -7618,7 +7885,7 @@
         },
         {
           "disabled": false,
-          "document": "实例配置变更的切换时间。\n- 0：调整完成时，立即执行变配任务。默认为0。\n- 1：在维护时间窗内，执行变配任务。\n**说明**：调整节点数和分片数不支持在<b>维护时间窗内</b>变更。",
+          "document": "<p>实例配置变更的切换时间。</p><ul><li>0：调整完成时，立即执行变配任务。默认为0。</li><li>1：在维护时间窗内，执行变配任务。<br><strong>说明</strong>：调整节点数和分片数不支持在<b>维护时间窗内</b>变更。</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "InMaintenance",
@@ -7627,7 +7894,7 @@
         },
         {
           "disabled": false,
-          "document": "分片实例配置变更后的 mongos 内存大小。单位：GB。实例支持的规格，请参见[产品规格](https://cloud.tencent.com/document/product/240/64125)。",
+          "document": "<p>分片实例配置变更后的 mongos 内存大小。单位：GB。实例支持的规格，请参见<a href=\"https://cloud.tencent.com/document/product/240/64125\">产品规格</a>。</p>",
           "example": "2",
           "member": "string",
           "name": "MongosMemory",
@@ -7636,7 +7903,7 @@
         },
         {
           "disabled": false,
-          "document": "新增节点列表，节点类型及可用区信息。",
+          "document": "<p>新增节点列表，节点类型及可用区信息。</p>",
           "example": "无",
           "member": "AddNodeList",
           "name": "AddNodeList",
@@ -7645,12 +7912,30 @@
         },
         {
           "disabled": false,
-          "document": "删除节点列表。\n**注意**：基于分片实例各片节点的一致性原则，删除分片实例节点时，只需指定0分片对应的节点即可，如：cmgo-9nl1czif_0-node-readonly0 将删除每个分片的第1个只读节点。",
+          "document": "<p>删除节点列表。<br><strong>注意</strong>：基于分片实例各片节点的一致性原则，删除分片实例节点时，只需指定0分片对应的节点即可，如：cmgo-9nl1czif_0-node-readonly0 将删除每个分片的第1个只读节点。</p>",
           "example": "无",
           "member": "RemoveNodeList",
           "name": "RemoveNodeList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例配置变更后的CPU大小。单位：C。该参数为空值时，默认取实例当前的 CPU 大小。当前所支持的CPU规格，请参见<a href=\"https://cloud.tencent.com/document/product/240/64125\">产品规格</a>。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例配置变更后的产品规格类型。该参数为空值时，默认取实例当前的产品规格类型。<br>当前支持的产品规格类型如下：<br>产品推荐规格类型：</p><ul><li>GE.LD.T1：本地盘（通用I型）。</li><li>GE.CD.T1：云盘（通用I型）。</li></ul><p>产品白名单规格类型：</p><ul><li>HIO10G：本地盘（高IO万兆型）。</li><li>HCD：云盘（云盘版）。</li></ul><p>注意：</p><ol><li>白名单规格类型为白名单控制，如若需要，请 <a href=\"https://console.cloud.tencent.com/workorder/category\">提交工单</a> 申请</li><li>通用 I 型不能变更到白名单规格类型</li></ol>",
+          "example": "GE.LD.T1",
+          "member": "string",
+          "name": "MachineCode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7660,7 +7945,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单 ID。",
+          "document": "<p>订单 ID。</p>",
           "example": "20221111870001224049791",
           "member": "string",
           "name": "DealId",
@@ -8525,6 +8810,113 @@
       ],
       "type": "object"
     },
+    "RestoreCollection": {
+      "document": "待回档collection",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待回档的原collection",
+          "example": "oldColl",
+          "member": "string",
+          "name": "OldCollection",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回档后的collection",
+          "example": "newColl",
+          "member": "string",
+          "name": "NewCollection",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RestoreDBInstanceRequest": {
+      "document": "RestoreDBInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID。请登录 <a href=\"https://console.cloud.tencent.com/mongodb/instance\">MongoDB 控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "cmgo-7pje****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定回档的目标时间点。该时间必须处于实例的备份保留期内。</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>",
+          "example": "2021-09-28 14:25:38",
+          "member": "string",
+          "name": "RestoreTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回档的库表信息。</p>",
+          "example": "无",
+          "member": "RestoreDatabases",
+          "name": "Databases",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RestoreDBInstanceResponse": {
+      "document": "RestoreDBInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>回档任务流程 ID。</p>",
+          "example": "100000066",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestoreDatabases": {
+      "document": "库表回档到新实例，库表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DB名称。",
+          "example": "\"db_a\"",
+          "member": "string",
+          "name": "Db",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "待回档的集合信息。",
+          "example": "[{\"db_a\":\"db_a_bak\"}]",
+          "member": "RestoreCollection",
+          "name": "Collections",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "SecurityGroup": {
       "document": "安全组信息",
       "members": [
@@ -8747,7 +9139,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
+          "document": "<p>实例 ID。请登录 <a href=\"https://console.cloud.tencent.com/mongodb\">MongoDB 控制台</a>在实例列表复制实例 ID。</p>",
           "example": "cmgo-p8vn****",
           "member": "string",
           "name": "InstanceId",
@@ -8756,7 +9148,7 @@
         },
         {
           "disabled": false,
-          "document": "备份方式。\n- 0：逻辑备份。\n- 1：物理备份。\n- 3：快照备份。\n**说明**:\n1. 通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。\n2. 实例开通存储加密，则备份方式不能为物理备份。",
+          "document": "<p>备份方式。</p><ul><li>0：逻辑备份。</li><li>1：物理备份。</li><li>3：快照备份。<br><strong>说明</strong>:</li><li>通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。</li><li>实例开通存储加密，则备份方式不能为物理备份。</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "BackupMethod",
@@ -8765,7 +9157,7 @@
         },
         {
           "disabled": false,
-          "document": "设置自动备份开始时间。取值范围为：[0,23]，例如：该参数设置为2，表示02:00开始备份。",
+          "document": "<p>设置自动备份开始时间。取值范围为：[0,23]，例如：该参数设置为2，表示02:00开始备份。</p>",
           "example": "2",
           "member": "uint64",
           "name": "BackupTime",
@@ -8774,7 +9166,7 @@
         },
         {
           "disabled": false,
-          "document": "指定每日自动备份频率。\n- 12: 每日备份2次，间隔约12小时。\n- 24: 每日备份1次（默认），间隔约24小时。",
+          "document": "<p>指定每日自动备份频率。</p><ul><li>12: 每日备份2次，间隔约12小时。</li><li>24: 每日备份1次（默认），间隔约24小时。</li></ul>",
           "example": "2",
           "member": "uint64",
           "name": "BackupFrequency",
@@ -8783,7 +9175,7 @@
         },
         {
           "disabled": false,
-          "document": "设置自动备份发生错误时，是否发送失败告警。\n- true：发送。\n- false：不发送。",
+          "document": "<p>设置自动备份发生错误时，是否发送失败告警。</p><ul><li>true：发送。</li><li>false：不发送。</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "Notify",
@@ -8792,7 +9184,7 @@
         },
         {
           "disabled": false,
-          "document": "指定备份数据保留时长。\n- 单位：天，默认为 7 天。\n- 取值范围：[7,365]。",
+          "document": "<p>指定备份数据保留时长。</p><ul><li>单位：天，默认为 7 天。</li><li>取值范围：[7,365]。</li></ul>",
           "example": "7",
           "member": "uint64",
           "name": "BackupRetentionPeriod",
@@ -8801,7 +9193,7 @@
         },
         {
           "disabled": false,
-          "document": "指定每周内执行自动备份的具体日期。\n- 格式：请输入 0-6 之间的数字代表周日至周六（例如：1 代表周一），多个日期请用英文逗号 , 分隔。\n- 示例：输入 1,3,5 表示系统将在每周的周一、周三、周五执行备份。\n- 默认值：不设置，则默认为全周期 (0,1,2,3,4,5,6)，即每日执行备份。",
+          "document": "<p>指定每周内执行自动备份的具体日期。</p><ul><li>格式：请输入 0-6 之间的数字代表周日至周六（例如：1 代表周一），多个日期请用英文逗号 , 分隔。</li><li>示例：输入 1,3,5 表示系统将在每周的周一、周三、周五执行备份。</li><li>默认值：不设置，则默认为全周期 (0,1,2,3,4,5,6)，即每日执行备份。</li></ul>",
           "example": "0,1,2,3,4,5,6",
           "member": "string",
           "name": "ActiveWeekdays",
@@ -8810,7 +9202,7 @@
         },
         {
           "disabled": false,
-          "document": "长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。待废弃，使用LongTermInterval",
+          "document": "<p>长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。待废弃，使用LongTermInterval</p>",
           "example": "monthly",
           "member": "string",
           "name": "LongTermUnit",
@@ -8819,7 +9211,7 @@
         },
         {
           "disabled": false,
-          "document": "指定用于长期保留的具体备份日期。此设置仅在 **LongTermUnit** 被设为**weekly** 或 **monthly** 时生效。\n- 按周（weekly）保留：请输入 0-6 之间的数字来代表周日至周六。多个日期请用英文逗号分隔。\n- 按月（monthly）保留：请输入 1-31 之间的数字来代表月份中的具体日期。多个日期请用英文逗号分隔。",
+          "document": "<p>指定用于长期保留的具体备份日期。此设置仅在 <strong>LongTermUnit</strong> 被设为<strong>weekly</strong> 或 <strong>monthly</strong> 时生效。</p><ul><li>按周（weekly）保留：请输入 0-6 之间的数字来代表周日至周六。多个日期请用英文逗号分隔。</li><li>按月（monthly）保留：请输入 1-31 之间的数字来代表月份中的具体日期。多个日期请用英文逗号分隔。</li></ul>",
           "example": "1,2",
           "member": "string",
           "name": "LongTermActiveDays",
@@ -8828,7 +9220,7 @@
         },
         {
           "disabled": false,
-          "document": "长期备份保留时长。取值范围[30,1075]。",
+          "document": "<p>长期备份保留时长。取值范围[30,1075]。</p>",
           "example": "30",
           "member": "int64",
           "name": "LongTermExpiredDays",
@@ -8837,7 +9229,7 @@
         },
         {
           "disabled": false,
-          "document": "增量备份保留时长。\n- 单位：天。\n- 默认值：7天。\n- 取值范围：[7,365]。",
+          "document": "<p>增量备份保留时长。</p><ul><li>单位：天。</li><li>默认值：7天。</li><li>取值范围：[7,365]。</li></ul>",
           "example": "7",
           "member": "int64",
           "name": "OplogExpiredDays",
@@ -8846,7 +9238,7 @@
         },
         {
           "disabled": false,
-          "document": "指定备份版本。\n- 旧版本备份：0。\n- 开启高级备份：1。",
+          "document": "<p>指定备份版本。</p><ul><li>旧版本备份：0。</li><li>开启高级备份：1。</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "BackupVersion",
@@ -8855,7 +9247,7 @@
         },
         {
           "disabled": false,
-          "document": "设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。待废弃,使用AlertThreshold",
+          "document": "<p>设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。待废弃,使用AlertThreshold</p>",
           "example": "100",
           "member": "int64",
           "name": "AlarmWaterLevel",
@@ -8864,7 +9256,7 @@
         },
         {
           "disabled": false,
-          "document": "长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。",
+          "document": "<p>长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。</p>",
           "example": "monthly",
           "member": "string",
           "name": "LongTermInterval",
@@ -8873,7 +9265,7 @@
         },
         {
           "disabled": false,
-          "document": "设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。",
+          "document": "<p>设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。</p>",
           "example": "100",
           "member": "int64",
           "name": "AlertThreshold",
@@ -9731,6 +10123,32 @@
         }
       ],
       "usage": "out"
+    },
+    "WanServiceNodeList": {
+      "document": "mongodb外网服务节点信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例节点的vip及端口信息。",
+          "example": "10.0.0.0:27017",
+          "member": "string",
+          "name": "VipVport",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CLB监听器监听端口，取值范围1~65535。",
+          "example": "9000",
+          "member": "string",
+          "name": "ListenerPort",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

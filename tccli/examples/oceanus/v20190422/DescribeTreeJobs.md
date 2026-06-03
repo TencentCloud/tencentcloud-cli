@@ -1,13 +1,12 @@
-**Example 1: 分类中的自定义树状结构并筛选**
+**Example 1: DescribeTreeJobs**
 
-用户点击作业管理页面中的分类的自定义树状结构并点击分类旁的筛选按钮选择作业类型
+
 
 Input: 
 
 ```
 tccli oceanus DescribeTreeJobs --cli-unfold-argument  \
-    --Filters.0.Name JobType \
-    --Filters.0.Values 1 2
+    --WorkSpaceId space-1257058945ap-chengdu
 ```
 
 Output: 
@@ -17,33 +16,46 @@ Output:
         "Children": [
             {
                 "ParentId": "root",
-                "Id": "folder-xxx",
-                "Name": "test",
+                "Id": "folder-n130omz7",
+                "Name": "test1",
                 "JobSet": [
                     {
-                        "JobId": "cql-xxxx",
-                        "Name": "test_xxxx",
+                        "JobId": "cql-ladx4cg1",
+                        "Name": "test9261_1",
                         "JobType": 1,
                         "RunningCu": 0,
-                        "Status": 5
-                    },
-                    {
-                        "JobId": "cql-xxxx",
-                        "Name": "test_xxxx",
-                        "JobType": 1,
-                        "RunningCu": 0,
-                        "Status": 5
+                        "Status": 4,
+                        "ScalingType": 0,
+                        "RunningCpu": 2,
+                        "RunningMem": 8,
+                        "DecodeSqlCode": "",
+                        "PublishedJobConfigId": 139473
                     }
                 ],
                 "Children": null,
-                "RequestId": "015e7c7e-dad7-4bdb-9a16-b348ef8c1457"
+                "RequestId": "d9c3b849-da95-4275-83de-7f9170aa7061",
+                "PageAttach": "",
+                "HasMore": false
             }
         ],
         "Id": "root",
-        "JobSet": [],
+        "JobSet": [
+            {
+                "JobId": "cql-rvmmrqgq",
+                "Name": "agent_datagen2print_test_0409",
+                "JobType": 1,
+                "RunningCu": 0,
+                "Status": 1,
+                "ScalingType": 0,
+                "RunningCpu": 0,
+                "RunningMem": 0,
+                "DecodeSqlCode": "",
+                "PublishedJobConfigId": -1
+            }
+        ],
         "Name": "作业列表",
         "ParentId": "",
-        "RequestId": "015e7c7e-dad7-4bdb-9a16-b348ef8c1457"
+        "RequestId": "d9c3b849-da95-4275-83de-7f9170aa7061"
     }
 }
 ```

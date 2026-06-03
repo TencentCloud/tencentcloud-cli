@@ -1307,21 +1307,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "实付金额（单位：分）",
-          "example": "-10000",
+          "document": "<p>实付金额</p><p>单位：分</p><p>该金额与控制台展示金额一致，为订单实付价 - 代金券之后的结果</p>",
+          "example": "10000",
           "member": "int64",
           "name": "RealTotalCost",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原始金额（不含折扣，单位：分）",
-          "example": "10000",
+          "document": "<p>原始金额（不含折扣）</p><p>单位：分</p>",
+          "example": "12000",
           "member": "int64",
           "name": "OriginalTotalCost",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

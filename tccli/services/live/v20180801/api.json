@@ -70,6 +70,13 @@
       "output": "CancelCommonMixStreamResponse",
       "status": "online"
     },
+    "CloseSourceStream": {
+      "document": "用于关闭回源客户源站功能",
+      "input": "CloseSourceStreamRequest",
+      "name": "关闭回源客户源站",
+      "output": "CloseSourceStreamResponse",
+      "status": "online"
+    },
     "CopyCaster": {
       "document": "该接口用来复制导播台配置",
       "input": "CopyCasterRequest",
@@ -148,7 +155,7 @@
       "status": "online"
     },
     "CreateLiveAvatarScript": {
-      "document": "调用该接口，用于创建数字人直播间话术。",
+      "document": "调用该接口，用于创建数字人直播间/AIGC直播间话术。",
       "input": "CreateLiveAvatarScriptRequest",
       "name": "创建数字人直播间话术",
       "output": "CreateLiveAvatarScriptResponse",
@@ -285,6 +292,13 @@
       "input": "CreateRecordTaskRequest",
       "name": "创建录制任务（新）",
       "output": "CreateRecordTaskResponse",
+      "status": "online"
+    },
+    "CreateSceneVideoTask": {
+      "document": "该接口用于创建场景化视频任务。",
+      "input": "CreateSceneVideoTaskRequest",
+      "name": "创建场景化生视频任务",
+      "output": "CreateSceneVideoTaskResponse",
       "status": "online"
     },
     "CreateScreenshotTask": {
@@ -701,7 +715,7 @@
       "status": "online"
     },
     "DescribeLiveAvatarScripts": {
-      "document": "调用该接口，查询数字人直播间话术信息列表。",
+      "document": "调用该接口，查询数字人直播间话术信息列表。新增产品ID参数",
       "input": "DescribeLiveAvatarScriptsRequest",
       "name": "查询数字人直播间话术列表",
       "output": "DescribeLiveAvatarScriptsResponse",
@@ -1085,6 +1099,13 @@
       "output": "DescribeMonitorReportResponse",
       "status": "online"
     },
+    "DescribeOriginStreamInfo": {
+      "document": "获取直播源站配置信息，支持直播源站格式。",
+      "input": "DescribeOriginStreamInfoRequest",
+      "name": "获取直播源站配置信息",
+      "output": "DescribeOriginStreamInfoResponse",
+      "status": "online"
+    },
     "DescribePlayErrorCodeDetailInfoList": {
       "document": "该接口为监控数据接口，数据采集及统计方式与计费数据不同，仅供运营分析使用，不能用于计费对账参考。\n查询下行播放错误码信息，某段时间内1分钟粒度的各http错误码出现的次数，包括4xx，5xx。",
       "input": "DescribePlayErrorCodeDetailInfoListRequest",
@@ -1146,6 +1167,13 @@
       "input": "DescribeRecordTaskRequest",
       "name": "查询录制任务列表（新）",
       "output": "DescribeRecordTaskResponse",
+      "status": "online"
+    },
+    "DescribeSceneVideoTask": {
+      "document": "该接口用于查询场景化视频任务进展及结果。",
+      "input": "DescribeSceneVideoTaskRequest",
+      "name": "查询场景化生视频任务",
+      "output": "DescribeSceneVideoTaskResponse",
       "status": "online"
     },
     "DescribeScreenShotSheetNumList": {
@@ -1317,7 +1345,7 @@
       "status": "online"
     },
     "ModifyLiveAvatarRoom": {
-      "document": "调用该接口，用于修改数字人直播间。",
+      "document": "调用该接口，用于修改数字人(包括AIGC数字人)直播间。",
       "input": "ModifyLiveAvatarRoomRequest",
       "name": "修改数字人直播间配置",
       "output": "ModifyLiveAvatarRoomResponse",
@@ -1421,6 +1449,13 @@
       "output": "ModifyLiveTranscodeTemplateResponse",
       "status": "online"
     },
+    "ModifyOriginStreamInfo": {
+      "document": "变更直播源站配置，支持直播源站格式。",
+      "input": "ModifyOriginStreamInfoRequest",
+      "name": "变更直播源站配置",
+      "output": "ModifyOriginStreamInfoResponse",
+      "status": "online"
+    },
     "ModifyPullStreamConfig": {
       "document": "更新拉流配置。该接口为已下线接口，请使用新接口 ModifyLivePullStreamTask。",
       "input": "ModifyPullStreamConfigRequest",
@@ -1478,7 +1513,7 @@
       "status": "online"
     },
     "StartLiveAvatarRoom": {
-      "document": "调用该接口，用于启动数字人直播间。",
+      "document": "调用该接口，用于启动数字人（包括AIGC数字人）直播间。",
       "input": "StartLiveAvatarRoomRequest",
       "name": "启动数字人直播间",
       "output": "StartLiveAvatarRoomResponse",
@@ -2556,7 +2591,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数字人直播间话术 ID。",
+          "document": "<p>数字人直播间话术 ID。</p>",
           "example": "1000",
           "member": "string",
           "name": "ScriptId",
@@ -2566,7 +2601,17 @@
         },
         {
           "disabled": false,
-          "document": "话术标题。",
+          "document": "<p>数字人直播间产品 ID。</p>",
+          "example": "100",
+          "member": "string",
+          "name": "ProductId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>话术标题。</p>",
           "example": "标题",
           "member": "string",
           "name": "Title",
@@ -2576,7 +2621,7 @@
         },
         {
           "disabled": false,
-          "document": "话术内容。",
+          "document": "<p>话术内容。</p>",
           "example": "live",
           "member": "string",
           "name": "Content",
@@ -2586,7 +2631,7 @@
         },
         {
           "disabled": false,
-          "document": "话术状态。\nPENDING --未生成。\nPROCESSING --生成中。\nREADY --已生成。",
+          "document": "<p>话术状态。PENDING --未生成。PROCESSING --生成中。READY --已生成。FAILED-失败</p><p>枚举值：</p><ul><li>FAILED： 失败</li></ul>",
           "example": "PENDING",
           "member": "string",
           "name": "Status",
@@ -2596,7 +2641,7 @@
         },
         {
           "disabled": false,
-          "document": "时长。单位：毫秒。",
+          "document": "<p>时长。单位：毫秒。</p>",
           "example": "1200",
           "member": "int64",
           "name": "Duration",
@@ -2606,7 +2651,7 @@
         },
         {
           "disabled": false,
-          "document": "话术位置。",
+          "document": "<p>话术位置。</p>",
           "example": "100",
           "member": "int64",
           "name": "Position",
@@ -2616,7 +2661,7 @@
         },
         {
           "disabled": false,
-          "document": "话术创建时间，UTC时间。\n注意：UTC时间和北京时间相差八小时。",
+          "document": "<p>话术创建时间，UTC时间。<br>注意：UTC时间和北京时间相差八小时。</p>",
           "example": "2025-07-02T00:00:00Z",
           "member": "string",
           "name": "CreateTime",
@@ -2626,7 +2671,7 @@
         },
         {
           "disabled": false,
-          "document": "话术最后更新时间，UTC时间。\n注意：UTC时间和北京时间相差八小时。",
+          "document": "<p>话术最后更新时间，UTC时间。<br>注意：UTC时间和北京时间相差八小时。</p>",
           "example": "2025-07-03T00:00:00Z",
           "member": "string",
           "name": "UpdateTime",
@@ -3506,7 +3551,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导播台ID",
+          "document": "<p>导播台ID</p>",
           "example": "63501",
           "member": "uint64",
           "name": "CasterId",
@@ -3516,7 +3561,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台名称",
+          "document": "<p>导播台名称</p>",
           "example": "example_name",
           "member": "string",
           "name": "CasterName",
@@ -3526,7 +3571,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台上一次启动pgm的时间，值为unix时间戳。",
+          "document": "<p>导播台上一次启动pgm的时间，值为unix时间戳。</p>",
           "example": "0",
           "member": "uint64",
           "name": "StartLiveTime",
@@ -3536,7 +3581,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台的描述",
+          "document": "<p>导播台的描述</p>",
           "example": "example description",
           "member": "string",
           "name": "Description",
@@ -3546,7 +3591,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台创建时间，值为unix时间戳。",
+          "document": "<p>导播台创建时间，值为unix时间戳。</p>",
           "example": "1603158528",
           "member": "uint64",
           "name": "CreateTime",
@@ -3556,7 +3601,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台状态 \n0：停止状态，无预监，无主监\n1：无预监，有主监\n2：有预监，无主监\n3：有预监，有主监",
+          "document": "<p>导播台状态<br>0：停止状态，无预监，无主监<br>1：无预监，有主监<br>2：有预监，无主监<br>3：有预监，有主监</p>",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -3566,7 +3611,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台的过期时间戳。值为-1或unix时间戳。 \n默认值为-1。 当值为-1时，表示该导播台永不过期。 \n当值为正常unix时间戳时，导播台将在该时间过期。 \n导播台过期后，预监与主监画面将自动停止，转推自动停止。 \n点播、直播url将停止转拉，推流url需自行停止推流。",
+          "document": "<p>导播台的过期时间戳。值为-1或unix时间戳。<br>默认值为-1。 当值为-1时，表示该导播台永不过期。<br>当值为正常unix时间戳时，导播台将在该时间过期。<br>导播台过期后，预监与主监画面将自动停止，转推自动停止。<br>点播、直播url将停止转拉，推流url需自行停止推流。</p>",
           "example": "-1",
           "member": "int64",
           "name": "ExpireTime",
@@ -3576,7 +3621,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台延时播放时间，单位为秒。 ",
+          "document": "<p>导播台延时播放时间，单位为秒。</p>",
           "example": "0",
           "member": "uint64",
           "name": "DelayTime",
@@ -3586,7 +3631,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的宽度，单位为像素。",
+          "document": "<p>导播台主监输出的宽度，单位为像素。</p>",
           "example": "1280",
           "member": "uint64",
           "name": "PgmWidth",
@@ -3596,7 +3641,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的高度，单位为像素。",
+          "document": "<p>导播台主监输出的高度，单位为像素。</p>",
           "example": "720",
           "member": "uint64",
           "name": "PgmHeight",
@@ -3606,7 +3651,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的帧率。",
+          "document": "<p>导播台主监输出的帧率。</p>",
           "example": "25",
           "member": "uint64",
           "name": "PgmFps",
@@ -3616,7 +3661,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的码率，单位为kbps",
+          "document": "<p>导播台主监输出的码率，单位为kbps</p>",
           "example": "2000",
           "member": "uint64",
           "name": "PgmBitRate",
@@ -3626,7 +3671,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的音频码率，单位为kbps。",
+          "document": "<p>导播台主监输出的音频码率，单位为kbps。</p>",
           "example": "256",
           "member": "uint64",
           "name": "PgmAudioBitRate",
@@ -3636,7 +3681,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台的计费类型。 \n0 通用型 1 播单型。\n注： 本参数暂无作用。",
+          "document": "<p>导播台的计费类型。<br>0 通用型 1 播单型。<br>注： 本参数暂无作用。</p>",
           "example": "0",
           "member": "int64",
           "name": "FeeType",
@@ -3646,7 +3691,7 @@
         },
         {
           "disabled": false,
-          "document": "录制模板id。",
+          "document": "<p>录制模板id。</p>",
           "example": "1",
           "member": "uint64",
           "name": "RecordTemplateId",
@@ -3656,7 +3701,7 @@
         },
         {
           "disabled": false,
-          "document": "录制状态。 \n0：未录制 \n1：录制中",
+          "document": "<p>录制状态。<br>0：未录制<br>1：录制中</p>",
           "example": "0",
           "member": "uint64",
           "name": "RecordStatus",
@@ -3666,10 +3711,20 @@
         },
         {
           "disabled": false,
-          "document": "录制接口返回的taskid",
+          "document": "<p>录制接口返回的taskid</p>",
           "example": "UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLU1JAWW9EUb",
           "member": "string",
           "name": "RecordTaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>导播台主监输出的编码方式</p><p>枚举值：</p><ul><li>h264： h264编码</li><li>h265： h265编码</li></ul><p>默认值：h264</p>",
+          "example": "h264",
+          "member": "string",
+          "name": "PgmVcodec",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4653,6 +4708,33 @@
       ],
       "usage": "out"
     },
+    "CloseSourceStreamRequest": {
+      "document": "CloseSourceStream请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "播放域名。",
+          "example": "",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseSourceStreamResponse": {
+      "document": "CloseSourceStream返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CloudEffectInfo": {
       "document": "云端特效信息。",
       "members": [
@@ -5314,6 +5396,16 @@
       "document": "CreateAuditKeywordLib返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "<p>新建的词库 Id。</p>",
+          "example": "4c49c04f-6617-4705-b3ff-bedce642bfcb",
+          "member": "string",
+          "name": "LibId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5637,7 +5729,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导播台名称",
+          "document": "<p>导播台名称</p>",
           "example": "example",
           "member": "string",
           "name": "CasterName",
@@ -5646,7 +5738,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台的描述\n最大允许长度256",
+          "document": "<p>导播台的描述<br>最大允许长度256</p>",
           "example": "example_caster",
           "member": "string",
           "name": "Description",
@@ -5655,7 +5747,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台的过期时间戳。值为-1或unix时间戳。\n默认值为-1。\n当值为-1时，表示该导播台永不过期。\n当值为正常unix时间戳时，导播台将在该时间过期。\n导播台过期后，预监与主监画面将自动停止，转推自动停止。\n点播、直播url将停止转拉，推流url需自行停止推流。",
+          "document": "<p>导播台的过期时间戳。值为-1或unix时间戳。<br>默认值为-1。<br>当值为-1时，表示该导播台永不过期。<br>当值为正常unix时间戳时，导播台将在该时间过期。<br>导播台过期后，预监与主监画面将自动停止，转推自动停止。<br>点播、直播url将停止转拉，推流url需自行停止推流。</p>",
           "example": "-1",
           "member": "int64",
           "name": "ExpireTime",
@@ -5664,7 +5756,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台延时播放时间，单位为秒。\n默认为0，最大支持300秒",
+          "document": "<p>导播台延时播放时间，单位为秒。<br>默认为0，最大支持300秒</p>",
           "example": "0",
           "member": "uint64",
           "name": "DelayTime",
@@ -5673,8 +5765,8 @@
         },
         {
           "disabled": false,
-          "document": "导播台转场类型。\n默认为空。\n允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。",
-          "example": " heart",
+          "document": "<p>导播台转场类型。<br>默认为空。<br>允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>",
+          "example": "heart",
           "member": "string",
           "name": "TransitionType",
           "required": false,
@@ -5682,7 +5774,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的宽度，单位为像素。\n默认为1280，最大允许4096。",
+          "document": "<p>导播台主监输出的宽度，单位为像素。<br>默认为1280，最大允许4096。</p>",
           "example": "1280",
           "member": "uint64",
           "name": "PgmWidth",
@@ -5691,7 +5783,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的高度，单位为像素。\n默认为720，最大允许2160。",
+          "document": "<p>导播台主监输出的高度，单位为像素。<br>默认为720，最大允许2160。</p>",
           "example": "720",
           "member": "uint64",
           "name": "PgmHeight",
@@ -5700,7 +5792,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的帧率。\n默认为0，表示随源输出。\n最大支持60。",
+          "document": "<p>导播台主监输出的帧率。<br>默认为0，表示随源输出。<br>最大支持60。</p>",
           "example": "25",
           "member": "uint64",
           "name": "PgmFps",
@@ -5709,7 +5801,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的码率，单位为kbps。\n默认为0，表示随源的码率输出。\n最大允许10000kbps。",
+          "document": "<p>导播台主监输出的码率，单位为kbps。<br>默认为0，表示随源的码率输出。<br>最大允许10000kbps。</p>",
           "example": "1500",
           "member": "uint64",
           "name": "PgmBitRate",
@@ -5718,7 +5810,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台的计费类型。\n0 通用型 \n1 播单型。\n注： 本参数暂无作用。",
+          "document": "<p>导播台的计费类型。<br>0 通用型<br>1 播单型。<br>注： 本参数暂无作用。</p>",
           "example": "0",
           "member": "int64",
           "name": "FeeType",
@@ -5727,12 +5819,21 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的音频码率，单位为kbps。\n可选项：[0, 128, 192, 256]\n默认值为0，表示随源的音频码率输出。",
+          "document": "<p>导播台主监输出的音频码率，单位为kbps。<br>可选项：[0, 128, 192, 256]<br>默认值为0，表示随源的音频码率输出。</p>",
           "example": "128",
           "member": "uint64",
           "name": "PgmAudioBitRate",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>导播台主监输出的编码方式</p><p>枚举值：</p><ul><li>h264： h264编码</li><li>h265： h265编码</li></ul><p>默认值：h264</p>",
+          "example": "h264",
+          "member": "string",
+          "name": "PgmVcodec",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5742,7 +5843,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导播台ID",
+          "document": "<p>导播台ID</p>",
           "example": "63501",
           "member": "uint64",
           "name": "CasterId",
@@ -5873,7 +5974,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "话术标题。限制500字节。",
+          "document": "<p>话术标题。限制500字节。</p>",
           "example": "进入主题",
           "member": "string",
           "name": "Title",
@@ -5882,7 +5983,7 @@
         },
         {
           "disabled": false,
-          "document": "话术内容。中文最大支持150个汉字（全角标点符号算一个汉字）；英文最大支持500个字母（半角标点符号算一个字母）。",
+          "document": "<p>话术内容。中文最大支持150个汉字（全角标点符号算一个汉字）；英文最大支持500个字母（半角标点符号算一个字母）。</p>",
           "example": "hello, this is avatar.",
           "member": "string",
           "name": "Content",
@@ -5891,7 +5992,7 @@
         },
         {
           "disabled": false,
-          "document": "话术所属的数字人直播间 ID。",
+          "document": "<p>话术所属的数字人直播间 ID。</p>",
           "example": "10001",
           "member": "string",
           "name": "RoomId",
@@ -5900,7 +6001,7 @@
         },
         {
           "disabled": false,
-          "document": "话术插入时，可根据已有话术位置，指定新话术插入位置。\n如已有三条话术100，200，300。\n新话术可选择150插入到第一条和第二条中间。",
+          "document": "<p>话术插入时，可根据已有话术位置，指定新话术插入位置。<br>如已有三条话术100，200，300。<br>新话术可选择150插入到第一条和第二条中间。</p>",
           "example": "50",
           "member": "int64",
           "name": "SpecifyPosition",
@@ -5909,10 +6010,19 @@
         },
         {
           "disabled": false,
-          "document": "操作者。",
+          "document": "<p>操作者。</p>",
           "example": "admin",
           "member": "string",
           "name": "Operator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>话术所属的数字人产品 ID。</p>",
+          "example": "10001",
+          "member": "string",
+          "name": "ProductId",
           "required": false,
           "type": "string"
         }
@@ -5924,7 +6034,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "话术 ID。",
+          "document": "<p>话术 ID。</p>",
           "example": "10003",
           "member": "string",
           "name": "ScriptId",
@@ -6272,7 +6382,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板名称。\n长度上限：255字节。\n仅支持中文、英文、数字、_、-。",
+          "document": "<p>模板名称。<br>长度上限：255字节。<br>仅支持中文、英文、数字、_、-。</p>",
           "example": "testName",
           "member": "string",
           "name": "TemplateName",
@@ -6281,7 +6391,7 @@
         },
         {
           "disabled": false,
-          "document": "垫片内容。",
+          "document": "<p>垫片内容。</p>",
           "example": "https://test.com/a.mp4",
           "member": "string",
           "name": "Url",
@@ -6290,7 +6400,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息。\n长度上限：1024字节。\n仅支持中文、英文、数字、_、-。",
+          "document": "<p>描述信息。<br>长度上限：1024字节。<br>仅支持中文、英文、数字、_、-。</p>",
           "example": "testDesc",
           "member": "string",
           "name": "Description",
@@ -6299,7 +6409,7 @@
         },
         {
           "disabled": false,
-          "document": "断流等待时间。\n取值范围：0-30000。\n单位：ms。",
+          "document": "<p>断流等待时间。<br>取值范围：0-30000。<br>单位：ms。</p>",
           "example": "1",
           "member": "uint64",
           "name": "WaitDuration",
@@ -6308,7 +6418,7 @@
         },
         {
           "disabled": false,
-          "document": "最大垫片时长。\n取值范围：0 - 正无穷。\n单位：ms。",
+          "document": "<p>最大垫片时长。<br>取值范围：0 - 正无穷。<br>单位：ms。</p>",
           "example": "1",
           "member": "uint64",
           "name": "MaxDuration",
@@ -6317,10 +6427,19 @@
         },
         {
           "disabled": false,
-          "document": "垫片内容类型：\n1：图片，2：视频。\n默认值：1。",
+          "document": "<p>垫片内容类型：<br>1：图片，2：视频。<br>默认值：1。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>断流垫片触发条件</p><p>枚举值：</p><ul><li>0： 主动及异常断流</li><li>1： 异常断流</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "TriggerCondition",
           "required": false,
           "type": "int"
         }
@@ -6332,7 +6451,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板Id。",
+          "document": "<p>模板Id。</p>",
           "example": "1000",
           "member": "int64",
           "name": "TemplateId",
@@ -7930,6 +8049,151 @@
           "member": "string",
           "name": "TaskId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSceneVideoTaskRequest": {
+      "document": "CreateSceneVideoTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名称。</p>",
+          "example": "Kling",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型版本号。</p>",
+          "example": "3.0",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>场景化类型。</p><p>枚举值：</p><ul><li>template_effect： 模板特效。</li></ul>",
+          "example": "template_effect",
+          "member": "string",
+          "name": "SceneType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入的Prompt。避免出现违规词汇，审核会进行拦截。</p>",
+          "example": "生成一只小狗",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定输出的视频时长。</p><p>部分场景不支持指定时长。</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "Duration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入的首帧参考图片Url。需外网可访问。</p>",
+          "example": "https://m**********a*********344703.******cel******myqcloud.com/multimodel-agent-1258344703/***nt/ead65276-ba60-44b6-ac0d-81a4e1f****6.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入的尾帧参考图片Url。</p>",
+          "example": "https://***ti*****-age**-1258****03.cos.***elerate.myqcloud.com/multimodel-agent-1258344703/agent*****5276-ba60-44b6-ac0d-81*****230b6.jpg",
+          "member": "string",
+          "name": "LastImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多图参考生视频时，通过该参数指定多张参考图。</p>",
+          "example": "无",
+          "member": "SceneVideoReferenceImageInfo",
+          "name": "ImageInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频编辑时，指定参考视频信息。</p>",
+          "example": "无",
+          "member": "SceneVideoReferenceVideoInfo",
+          "name": "VideoInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>常规扩展参数。</p>",
+          "example": "无",
+          "member": "SceneVideoExtraParam",
+          "name": "ExtraParameters",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型扩展参数，用于透传到模型侧。</p>",
+          "example": "{\"effect_scene\":\"great_success\"}",
+          "member": "string",
+          "name": "AdditionalParameters",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出结果存储到私有cos，需授权响应角色权限。</p>",
+          "example": "无",
+          "member": "SceneStoreCosParam",
+          "name": "StoreCosParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作者名称。</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSceneVideoTaskResponse": {
+      "document": "CreateSceneVideoTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输出的任务ID。</p>",
+          "example": "**10**278-live-*****ideo-721d18cefa094ba4a******dfcbbacab",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10829,7 +11093,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数字人直播间 ID。",
+          "document": "<p>数字人直播间 ID。</p>",
           "example": "1001",
           "member": "string",
           "name": "RoomId",
@@ -10838,7 +11102,7 @@
         },
         {
           "disabled": false,
-          "document": "数字人直播间话术 ID。",
+          "document": "<p>数字人直播间话术 ID。</p>",
           "example": "10002",
           "member": "string",
           "name": "ScriptId",
@@ -10847,7 +11111,7 @@
         },
         {
           "disabled": false,
-          "document": "分页查询的页数。",
+          "document": "<p>分页查询的页数。</p>",
           "example": "1",
           "member": "int64",
           "name": "PageIndex",
@@ -10856,12 +11120,21 @@
         },
         {
           "disabled": false,
-          "document": "分页查询的每页个数。",
+          "document": "<p>分页查询的每页个数。</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数字人该话术所属的产品 ID。</p>",
+          "example": "10002",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10871,7 +11144,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数字人直播间话术信息列表。",
+          "document": "<p>数字人直播间话术信息列表。</p>",
           "example": "无",
           "member": "AvatarScriptInfo",
           "name": "InfoList",
@@ -10881,7 +11154,7 @@
         },
         {
           "disabled": false,
-          "document": "限制可创建的数字人直播间话术总条数。",
+          "document": "<p>限制可创建的数字人直播间话术总条数。</p>",
           "example": "100",
           "member": "int64",
           "name": "LimitCreateNum",
@@ -10891,7 +11164,7 @@
         },
         {
           "disabled": false,
-          "document": "当前数字人直播间话术总条数。",
+          "document": "<p>当前数字人直播间话术总条数。</p>",
           "example": "3",
           "member": "int64",
           "name": "TotalNum",
@@ -13994,6 +14267,373 @@
       ],
       "type": "object"
     },
+    "DescribeOriginStreamInfoRequest": {
+      "document": "DescribeOriginStreamInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>域名。</p>",
+          "example": "autotest-third-source01.elementtest.org",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOriginStreamInfoResponse": {
+      "document": "DescribeOriginStreamInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>配置状态信息：0 配置中，1 成功，2 关闭中，3 关闭成功。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>播放类型。</p>",
+          "example": "[\"rtmp\"]",
+          "member": "string",
+          "name": "CdnStreamPlayType",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站配置类型：1 直播原站。<br>2 streamPackage。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginStreamType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站播放类型。</p>",
+          "example": "customization",
+          "member": "string",
+          "name": "OriginStreamPlayType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站地址类型：1 ip，2 域名。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginAddressType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站地址信息，每项用分号分割域名（ip）、端口信息。<br>端口为空也要带上分号，表示取默认端口。</p>",
+          "example": "[\"1.2.3.4:8800\"]",
+          "member": "string",
+          "name": "OriginAddress",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>超时时间，单位 ms。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "int64",
+          "name": "OriginTimeout",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>重试次数，单位 次。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginRetryTimes",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间戳修正，可取值：on、off。<br>当原站播放协议为 rtmp、flv 时，传递该字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "TimeJitter",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分片数，单位 个。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "HlsPlayFragmentCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分片时长，单位 ms。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3500",
+          "member": "int64",
+          "name": "HlsPlayFragmentDuration",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传 http 头信息，可取值：on、off。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughHttpHeader",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传相应，可取值：on、off。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughResponse",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传参数，可取值：on、off。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughParam",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站 host。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.play.fake.com",
+          "member": "string",
+          "name": "OriginHost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引缓存，单位 ms。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "IndexerCache",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分片缓存，单位 ms。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "FragmentCache",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "autotest-third-source01.elementtest.org",
+          "member": "string",
+          "name": "DomainName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>https 回源，可取值：on、off。<br>当原站播放协议为flv、hls时，传递此字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "UsingHttps",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否遵循原站，可取值：on、off。<br>当原站播放协议为hls时，此字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "CacheFollowOrigin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态码缓存，数组元素格式：<br>cacheKey:interval<br>cacheKey 可取值：cache_400_sec、cache_403_sec、cache_404_sec、cache_405_sec、cache_500_sec、cache_503_sec、cache_504_sec。<br>interval 单位 ms。<br>当原站播放协议为hls时，此字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cache_400_sec:1\"]",
+          "member": "string",
+          "name": "CacheStatusCode",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>url改写， 格式为： url1&lt;|&gt;url2; 其中，&lt;|&gt; 为分隔符。<br>url1、url2 长度限制100，不可包含特殊字符。<br>当原站播放协议为hls时，此字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/live<|>/live2\",\"pgm<|>clean\"]",
+          "member": "string",
+          "name": "UrlReplaceRules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否 options 支持，可取值：on、off。<br>当原站播放协议为hls时，此字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "OptionsRequest",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否 follow 301/302，可取值：on、off。<br>当原站播放协议为hls时，此字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
+          "member": "string",
+          "name": "FollowRedirect",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>源站类型 OriginStreamType 为 2 时，该字段有效。 代表源站地址 OriginAddress 对应的地区 region。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ap-mumbai\"]",
+          "member": "string",
+          "name": "StreamPackageRegion",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "customer1",
+          "member": "string",
+          "name": "CustomerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamPlayType 为 hls 时生效，设置索引缓存保留指定参数列表，最多支持 30 组，每个参数小于等于 20 字符。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"key1\",\"key2\"]",
+          "member": "string",
+          "name": "IndexerKeepParam",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamPlayType 为 hls 时生效，设置分片缓存保留指定参数列表，最多支持 30 组，每个参数小于等于 20 字符。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"key1\",\"key2\"]",
+          "member": "string",
+          "name": "FragmentKeepParam",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamType = 2 时有效，表示 mediapackage 具体类型：<br>media_package =&gt; 仅配置普通频道。<br>media_package_pure_ad =&gt; 仅配置广告。<br>media_package_mix_ad =&gt; 同时配置普通频道和广告。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "media_package",
+          "member": "string",
+          "name": "MediaPackageType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamType = 2 且 MediaPackageType = media_package 时有效，表示 mediapackage 频道类型，可组合如下值：normal（频道）、ssai（广告）、linear_assembly（线性组装）。</p>",
+          "example": "[\"normal\"]",
+          "member": "string",
+          "name": "MediaPackageChannelTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamPlayType 为 hls 时生效，设置索引自定义 header，每一组参数、取值用空格分开。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"k1:v1\",\"k2:v2\"]",
+          "member": "string",
+          "name": "IndexerHeader",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamPlayType 为 hls 时生效，设置分片自定义 header，每一组参数、取值用空格分开。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"k1:v1\",\"k2:v2\"]",
+          "member": "string",
+          "name": "FragmentHeader",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义规则列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OriginStreamCustomizationRule",
+          "name": "CustomizationRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存格式规则。<br>0：默认格式。<br>1：云直播源站格式。<br>当 OriginStreamPlayType 为 customization 时候生效。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CacheFormatRule",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePlayErrorCodeDetailInfoListRequest": {
       "document": "DescribePlayErrorCodeDetailInfoList请求参数结构体",
       "members": [
@@ -14982,6 +15622,83 @@
           "member": "RecordTask",
           "name": "TaskList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSceneVideoTaskRequest": {
+      "document": "DescribeSceneVideoTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID。</p>",
+          "example": "2*****278-*********Video-721d18cefa094ba4a6*******cbbacab",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSceneVideoTaskResponse": {
+      "document": "DescribeSceneVideoTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>一些特殊场景的返回信息。</p>",
+          "example": "无",
+          "member": "SceneVideoOutputInfo",
+          "name": "InfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态。</p><p>枚举值：</p><ul><li>DONE： 任务结束。</li><li>RUN： 任务运行中。</li><li>WAIT： 任务准备中。</li><li>FAIL： 任务失败。</li></ul>",
+          "example": "DONE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出视频的分辨率。示例：720x1280。</p>",
+          "example": "1920x1080",
+          "member": "string",
+          "name": "Resolution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息。</p>",
+          "example": "role not exist",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出的视频Url。默认过期时间:12小时，请尽快拉取并转存。也可以使用私有Cos桶长期存储。</p>",
+          "example": "[\"https://a*****u**ut-video-file-1326893053.cos.ap-guangzhou.myqcloud.com/251006278/251006278-live-AigcVideo-721d18cefa094ba4****6****cbbacab_0.mp4\"]",
+          "member": "string",
+          "name": "VideoUrls",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -18089,6 +18806,15 @@
           "name": "PgmAudioBitRate",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>导播台主监输出的编码方式</p><p>枚举值：</p><ul><li>h264： h264编码</li><li>h265： h265编码</li></ul><p>默认值：h264</p>",
+          "example": "h264",
+          "member": "string",
+          "name": "PgmVcodec",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18110,7 +18836,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数字人直播间 ID。",
+          "document": "<p>数字人直播间 ID。</p>",
           "example": "10002",
           "member": "string",
           "name": "RoomId",
@@ -18119,7 +18845,7 @@
         },
         {
           "disabled": false,
-          "document": "直播间名称。",
+          "document": "<p>直播间名称。</p>",
           "example": "my live",
           "member": "string",
           "name": "Name",
@@ -18128,7 +18854,7 @@
         },
         {
           "disabled": false,
-          "document": "数字人形象KEY。",
+          "document": "<p>数字人形象KEY。</p>",
           "example": "sfsdfefsd",
           "member": "string",
           "name": "AvatarKey",
@@ -18137,7 +18863,7 @@
         },
         {
           "disabled": false,
-          "document": "音色KEY。",
+          "document": "<p>音色KEY。</p>",
           "example": "afdsdfs",
           "member": "string",
           "name": "TimbreKey",
@@ -18146,7 +18872,7 @@
         },
         {
           "disabled": false,
-          "document": "背景图片URL。",
+          "document": "<p>背景图片URL。</p>",
           "example": "http://avatar.image.com/live/background.png",
           "member": "string",
           "name": "BackgroundUrl",
@@ -18155,7 +18881,7 @@
         },
         {
           "disabled": false,
-          "document": "主播大小，默认1.00。\n取值范围(0, 15.00]。\n精度：使用小数点后两位。",
+          "document": "<p>主播大小，默认1.00。<br>取值范围(0, 15.00]。<br>精度：使用小数点后两位。</p>",
           "example": "1.00",
           "member": "float",
           "name": "AnchorScale",
@@ -18164,7 +18890,7 @@
         },
         {
           "disabled": false,
-          "document": "主播纵向位置。默认-1贴底部。\n左上角为原点，形象顶部离屏幕顶部的距离，最大不能使形象底部超出屏幕。\n即该纵向位置最大为：数字人分辨率的高 - 形象高。",
+          "document": "<p>主播纵向位置。默认-1贴底部。<br>左上角为原点，形象顶部离屏幕顶部的距离，最大不能使形象底部超出屏幕。<br>即该纵向位置最大为：数字人分辨率的高 - 形象高。</p>",
           "example": "10",
           "member": "int64",
           "name": "AnchorVerticalPos",
@@ -18173,7 +18899,7 @@
         },
         {
           "disabled": false,
-          "document": "主播横向位置。默认-1居中。\n左上角为原点，形象左侧离左侧屏幕的距离。最大值不可使形象右侧超出右侧屏幕。\n即最大值为：数字人分辨率的宽 - 形象宽。",
+          "document": "<p>主播横向位置。默认-1居中。<br>左上角为原点，形象左侧离左侧屏幕的距离。最大值不可使形象右侧超出右侧屏幕。<br>即最大值为：数字人分辨率的宽 - 形象宽。</p>",
           "example": "10",
           "member": "int64",
           "name": "AnchorHorizontalPos",
@@ -18182,7 +18908,7 @@
         },
         {
           "disabled": false,
-          "document": "语速（1.0为正常语速，范围[0.6-2.5]，值为0.6时播报语速最慢，值为2.5时播报语速最快。",
+          "document": "<p>语速（1.0为正常语速，范围[0.6-2.5]，值为0.6时播报语速最慢，值为2.5时播报语速最快。</p>",
           "example": "1.0",
           "member": "float",
           "name": "SpeechSpeed",
@@ -18191,7 +18917,7 @@
         },
         {
           "disabled": false,
-          "document": "音量大小，范围[0，10]，对应音量大小。默认为5，代表正常音量，值越大音量越高。",
+          "document": "<p>音量大小，范围[0，10]，对应音量大小。默认为5，代表正常音量，值越大音量越高。</p>",
           "example": "5",
           "member": "int64",
           "name": "SpeechVolume",
@@ -18200,10 +18926,19 @@
         },
         {
           "disabled": false,
-          "document": "操作者。",
+          "document": "<p>操作者。</p>",
           "example": "admin",
           "member": "string",
           "name": "Operator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间类型。AIGC：AIGC形象房间；PRESET：预设形象房间</p><p>枚举值：</p><ul><li>AIGC： AIGC形象房间</li><li>PRESET： 预设形象房间</li></ul>",
+          "example": "AIGC",
+          "member": "string",
+          "name": "RoomType",
           "required": false,
           "type": "string"
         }
@@ -18580,7 +19315,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板id。",
+          "document": "<p>模板id。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TemplateId",
@@ -18589,7 +19324,7 @@
         },
         {
           "disabled": false,
-          "document": "垫片内容。",
+          "document": "<p>垫片内容。</p>",
           "example": "https://test.com/a.mp4",
           "member": "string",
           "name": "Url",
@@ -18598,7 +19333,7 @@
         },
         {
           "disabled": false,
-          "document": "断流等待时间。\n取值范围：0-30000。\n单位：ms。",
+          "document": "<p>断流等待时间。<br>取值范围：0-30000。<br>单位：ms。</p>",
           "example": "1",
           "member": "uint64",
           "name": "WaitDuration",
@@ -18607,7 +19342,7 @@
         },
         {
           "disabled": false,
-          "document": "最大垫片时长。\n取值范围：0 - 正无穷。\n单位：ms。",
+          "document": "<p>最大垫片时长。<br>取值范围：0 - 正无穷。<br>单位：ms。</p>",
           "example": "1",
           "member": "uint64",
           "name": "MaxDuration",
@@ -18616,7 +19351,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名称。\n长度上限：255字节。\n仅支持中文、英文、数字、_、-。",
+          "document": "<p>模板名称。<br>长度上限：255字节。<br>仅支持中文、英文、数字、_、-。</p>",
           "example": "testName",
           "member": "string",
           "name": "TemplateName",
@@ -18625,7 +19360,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息。\n长度上限：1024字节。\n仅支持中文、英文、数字、_、-。",
+          "document": "<p>描述信息。<br>长度上限：1024字节。<br>仅支持中文、英文、数字、_、-。</p>",
           "example": "testDesc",
           "member": "string",
           "name": "Description",
@@ -18634,10 +19369,19 @@
         },
         {
           "disabled": false,
-          "document": "垫片内容类型： 1：图片，2：视频。 默认值：1。",
+          "document": "<p>垫片内容类型： 1：图片，2：视频。 默认值：1。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>断流垫片触发条件</p><p>枚举值：</p><ul><li>0： 主动及异常断流</li><li>1： 异常断流</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "TriggerCondition",
           "required": false,
           "type": "int"
         }
@@ -19727,6 +20471,312 @@
       ],
       "type": "object"
     },
+    "ModifyOriginStreamInfoRequest": {
+      "document": "ModifyOriginStreamInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>域名。</p>",
+          "example": "www.playtest.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>源站播放协议，可取值：rtmp、flv、hls、dash、hls|dash、customization。</p>",
+          "example": "hls",
+          "member": "string",
+          "name": "OriginStreamPlayType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>播放协议，可取值：rtmp、flv、hls、dash、hls|dash、customization。<br>自定义回源协议填写 customization。</p>",
+          "example": "[\"customization\"]",
+          "member": "string",
+          "name": "CdnStreamPlayType",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站类型：<br>1 =&gt; 直播原站。<br>2 =&gt; mediaPackage。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginStreamType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站地址信息，每项用冒号分割域名（ip）、端口信息。<br>端口为空也要带上分号，表示取默认端口。<br>自定义回源协议填写 customization。</p>",
+          "example": "[\"1.2.3.4:80\"]",
+          "member": "string",
+          "name": "OriginAddress",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站地址类型：<br>1 =&gt; IP 类型。<br>2 =&gt; 域名类型。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginAddressType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义名称</p>",
+          "example": "customer1",
+          "member": "string",
+          "name": "CustomerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站 host。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>",
+          "example": "www.test.host.com",
+          "member": "string",
+          "name": "OriginHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>超时时间，单位 ms，取值范围：1 ～ 60000，默认值：10000。</p>",
+          "example": "10000",
+          "member": "int64",
+          "name": "OriginTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>重试次数，单位 次，取值范围：1 ～ 10，默认值：10。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "OriginRetryTimes",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传 http 头信息，可取值：on、off。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughHttpHeader",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传相应，可取值：on、off。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughResponse",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传参数，可取值：on、off。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughParam",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引缓存，单位 ms，取值范围：1 ～ 60000，默认值：10000。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>",
+          "example": "10000",
+          "member": "int64",
+          "name": "IndexerCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分片缓存，单位 ms，取值范围：1 ～ 60000，默认值：10000。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>",
+          "example": "10000",
+          "member": "int64",
+          "name": "FragmentCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分片数，单位 个，取值范围：1 ～ 10，默认值：3。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "HlsPlayFragmentCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分片时长，单位 ms，取值范围：1 ～ 10000，默认值：3000。</p>",
+          "example": "3000",
+          "member": "int64",
+          "name": "HlsPlayFragmentDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间戳修正，可取值：on、off，默认值：off。<br>当原站播放协议为 rtmp、flv 时，传递该字段才会生效。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "TimeJitter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>https 回源，可取值：on、off，默认值：off。<br>当原站播放协议为flv、hls时，传递此字段才会生效。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "UsingHttps",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>遵循原站，可取值：on、off，默认值：off。<br>当原站播放协议为hls时，传递此字段才会生效。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "CacheFollowOrigin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态码缓存，数组元素格式：<br>cacheKey:interval<br>cacheKey 可取值：cache_400_sec、cache_403_sec、cache_404_sec、cache_405_sec、cache_500_sec、cache_503_sec、cache_504_sec。<br>interval 单位 ms。<br>当原站播放协议为hls时，传递此字段才会生效。</p>",
+          "example": "[\"cache_400_sec:1\"]",
+          "member": "string",
+          "name": "CacheStatusCode",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>url改写， 格式为： url1&lt;|&gt;url2; 其中，&lt;|&gt; 为分隔符。<br>url1、url2 长度限制100，不可包含特殊字符。<br>当原站播放协议为hls时，传递此字段才会生效。</p>",
+          "example": "[\"/live<|>/live2\"]",
+          "member": "string",
+          "name": "UrlReplaceRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>options 支持，可取值：on、off，默认值：off。<br>当原站播放协议为hls时，传递此字段才会生效。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "OptionsRequest",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>follow 301/302，可取值：on、off，默认值：off。<br>当原站播放协议为hls时，传递此字段才会生效。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "FollowRedirect",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamPlayType 为 hls 时生效，设置索引缓存保留指定参数列表，最多支持 30 组，每个参数小于等于 20 字符。</p>",
+          "example": "[\"key1\",\"key2\"]",
+          "member": "string",
+          "name": "IndexerKeepParam",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamPlayType 为 hls 时生效，设置分片缓存保留指定参数列表，最多支持 30 组，每个参数小于等于 20 字符。</p>",
+          "example": "[\"key1\",\"key2\"]",
+          "member": "string",
+          "name": "FragmentKeepParam",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamType = 2 时有效，表示 mediapackage 具体类型：<br>media_package =&gt; 仅配置普通频道。<br>media_package_pure_ad =&gt; 仅配置广告。<br>media_package_mix_ad =&gt; 同时配置普通频道和广告。<br>注意：配置时候，优先使用 media_package。和 MediaPackageChannelTypes 字段配合使用。</p>",
+          "example": "media_package_pure_ad",
+          "member": "string",
+          "name": "MediaPackageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamType = 2 且 MediaPackageType = media_package 时有效，表示 mediapackage 频道类型，可组合如下值：normal（频道）、ssai（广告）、linear_assembly（线性组装）。</p>",
+          "example": "[\"normal\"]",
+          "member": "string",
+          "name": "MediaPackageChannelTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamPlayType 为 hls 时生效，设置索引自定义 header，最大支持 10 组，每一组参数、取值用空格分开，允许字符规则如下：<br>头部参数：由大小写字母、数字及-组成，长度支持1 ～100个字符，黑名单：Host、Connection、Content-Length、Range。<br>头部取值：不支持中文、不支持以$开头，长度支持1 ～ 100个字符，不允许有空格。</p>",
+          "example": "[\"k1:v1\",\"k2:v2\"]",
+          "member": "string",
+          "name": "IndexerHeader",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当 OriginStreamPlayType 为 hls 时生效，设置分片自定义 header，最大支持 10 组，每一组参数、取值用空格分开，允许字符规则如下：<br>头部参数：由大小写字母、数字及-组成，长度支持1 ～100个字符，黑名单：Host、Connection、Content-Length、Range。<br>头部取值：不支持中文、不支持以$开头，长度支持1 ～ 100个字符，不允许有空格。</p>",
+          "example": "[\"k1:v1\",\"k2:v2\"]",
+          "member": "string",
+          "name": "FragmentHeader",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义回源规则列表，当 OriginStreamPlayType 为 customization 时候生效。</p>",
+          "example": "无",
+          "member": "OriginStreamCustomizationRule",
+          "name": "CustomizationRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存格式规则。<br>0：默认格式。<br>1：云直播源站格式。<br>当 OriginStreamPlayType 为 customization 时候生效。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CacheFormatRule",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOriginStreamInfoResponse": {
+      "document": "ModifyOriginStreamInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyPullStreamConfigRequest": {
       "document": "ModifyPullStreamConfig请求参数结构体",
       "members": [
@@ -19920,6 +20970,199 @@
       ],
       "usage": "out"
     },
+    "OriginStreamCustomizationRule": {
+      "document": "播放域名回源自定义协议规则。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>匹配规则，可选项如下：<br>.m3u8、.mpd、.ts、.mp4、.m4s、.m4a、.m4i、.m4v、.m4f、.aac、.webm。</p>",
+          "example": "/*/*.m3u8",
+          "member": "string",
+          "name": "MatchRule",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站地址类型： 1 =&gt; IP 类型。 2 =&gt; 域名类型。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginAddressType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站 host。</p>",
+          "example": "www.test.play.com",
+          "member": "string",
+          "name": "OriginHost",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原站地址信息，每项用冒号分割域名（ip）、端口信息。 端口为空也要带上分号，表示取默认端口。</p>",
+          "example": "[\"1.2.3.4:8800\"]",
+          "member": "string",
+          "name": "OriginAddress",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传 http 头信息，可取值：on、off。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughHttpHeader",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传相应，可取值：on、off。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughResponse",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否透传参数，可取值：on、off。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "PassThroughParam",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>url改写， 格式为： url1&lt;|&gt;url2; 其中，&lt;|&gt; 为分隔符。 url1、url2 长度限制100，不可包含特殊字符。</p>",
+          "example": "[\"/live<|>/live2\"]",
+          "member": "string",
+          "name": "UrlReplaceRules",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>options 支持，可取值：on、off，默认值：off。</p>",
+          "example": "off",
+          "member": "string",
+          "name": "OptionsRequest",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回源超时时间，单位 ms，取值范围：1 ～ 60000，默认值：10000。</p>",
+          "example": "10000",
+          "member": "int64",
+          "name": "OriginTimeout",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>重试次数，单位 次，取值范围：1 ～ 10。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginRetryTimes",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态码缓存，数组元素格式： cacheKey:interval cacheKey 可取值：cache_400_sec、cache_403_sec、cache_404_sec、cache_405_sec、cache_500_sec、cache_503_sec、cache_504_sec。 interval 单位 s。</p>",
+          "example": "[\"cache_400_sec:1\"]",
+          "member": "string",
+          "name": "CacheStatusCode",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存时间，单位 s，取值范围：0 ～ 31536000。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Cache",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存键。</p>",
+          "example": "[\"key1\",\"key2\"]",
+          "member": "string",
+          "name": "KeepParam",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设置索引自定义 header，最大支持 10 组，每一组参数、取值用空格分开，允许字符规则如下： 头部参数：由大小写字母、数字及-组成，长度支持1 ～100个字符，黑名单：Host、Connection、Content-Length、Range。 头部取值：不支持中文、不支持以$开头，长度支持1 ～ 100个字符，不允许有空格。</p>",
+          "example": "[\"k1:v1\",\"k2:v2\"]",
+          "member": "string",
+          "name": "HttpHeader",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义回源缓存随源配置。<br>0：不开启。<br>1：开启。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CustomizationCacheFollowOrigin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存 Http 头部键。</p>",
+          "example": "[\"Accept-Encoding\",\"accept-encoding\"]",
+          "member": "string",
+          "name": "KeepHttpHeader",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PadStreamInfo": {
       "document": "查询当前垫片流的信息",
       "members": [
@@ -19981,7 +21224,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板id。",
+          "document": "<p>模板id。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TemplateId",
@@ -19992,7 +21235,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名称。",
+          "document": "<p>模板名称。</p>",
           "example": "templatename",
           "member": "string",
           "name": "TemplateName",
@@ -20003,7 +21246,7 @@
         },
         {
           "disabled": false,
-          "document": "垫片内容。",
+          "document": "<p>垫片内容。</p>",
           "example": "https://test.com/a.mp4",
           "member": "string",
           "name": "Url",
@@ -20014,7 +21257,7 @@
         },
         {
           "disabled": false,
-          "document": "模板创建时间。",
+          "document": "<p>模板创建时间。</p>",
           "example": "2020-01-01 08:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -20025,7 +21268,7 @@
         },
         {
           "disabled": false,
-          "document": "模板修改时间。",
+          "document": "<p>模板修改时间。</p>",
           "example": "2020-01-01 08:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -20036,7 +21279,7 @@
         },
         {
           "disabled": false,
-          "document": "模板描述。",
+          "document": "<p>模板描述。</p>",
           "example": "description",
           "member": "string",
           "name": "Description",
@@ -20047,7 +21290,7 @@
         },
         {
           "disabled": false,
-          "document": "断流等待时间。\n取值范围：0-30000。\n单位：ms。",
+          "document": "<p>断流等待时间。<br>取值范围：0-30000。<br>单位：ms。</p>",
           "example": "0",
           "member": "uint64",
           "name": "WaitDuration",
@@ -20058,7 +21301,7 @@
         },
         {
           "disabled": false,
-          "document": "最大垫片时长。\n取值范围：0 - 正无穷。\n单位：ms。",
+          "document": "<p>最大垫片时长。<br>取值范围：0 - 正无穷。<br>单位：ms。</p>",
           "example": "0",
           "member": "uint64",
           "name": "MaxDuration",
@@ -20069,11 +21312,22 @@
         },
         {
           "disabled": false,
-          "document": "垫片内容类型： 1：图片，2：视频。 默认值：1。",
+          "document": "<p>垫片内容类型： 1：图片，2：视频。 默认值：1。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Type",
           "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>断流垫片触发条件</p><p>枚举值：</p><ul><li>0： 主动及异常断流</li><li>1： 异常断流</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "TriggerCondition",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -21438,7 +22692,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "录制间隔。\n单位秒，默认：1800。\nFLV、MP4取值范围： 60-43200， AAC取值范围： 60-7200 。\n此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。",
+          "document": "<p>录制间隔。<br>单位秒，默认：1800。<br>FLV、MP4取值范围： 60-43200， AAC取值范围： 60-7200 。<br>此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。</p>",
           "example": "400",
           "member": "int64",
           "name": "RecordInterval",
@@ -21449,7 +22703,7 @@
         },
         {
           "disabled": false,
-          "document": "录制存储时长。\n单位秒，取值范围： 0 - 1500天。\n0：表示永久存储。\n注：此参数只对录制到VOD有效。",
+          "document": "<p>录制存储时长。<br>单位秒，取值范围： 0 - 1500天。<br>0：表示永久存储。<br>注：此参数只对录制到VOD有效。</p>",
           "example": "800",
           "member": "int64",
           "name": "StorageTime",
@@ -21460,7 +22714,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启当前格式录制，默认值为0，0：否， 1：是。",
+          "document": "<p>是否开启当前格式录制，默认值为0，0：否， 1：是。</p>",
           "example": "0",
           "member": "int64",
           "name": "Enable",
@@ -21471,7 +22725,7 @@
         },
         {
           "disabled": false,
-          "document": "点播子应用 ID。",
+          "document": "<p>点播子应用 ID。</p>",
           "example": "1",
           "member": "int64",
           "name": "VodSubAppId",
@@ -21482,7 +22736,7 @@
         },
         {
           "disabled": false,
-          "document": "录制文件名。\n支持的特殊占位符有：\n{StreamID}: 流ID\n{StartYear}: 开始时间-年\n{StartMonth}: 开始时间-月\n{StartDay}: 开始时间-日\n{StartHour}: 开始时间-小时\n{StartMinute}: 开始时间-分钟\n{StartSecond}: 开始时间-秒\n{StartMillisecond}: 开始时间-毫秒\n{EndYear}: 结束时间-年\n{EndMonth}: 结束时间-月\n{EndDay}: 结束时间-日\n{EndHour}: 结束时间-小时\n{EndMinute}: 结束时间-分钟\n{EndSecond}: 结束时间-秒\n{EndMillisecond}: 结束时间-毫秒\n\n若未设置默认录制文件名为{StreamID}_{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}_{EndYear}-{EndMonth}-{EndDay}-{EndHour}-{EndMinute}-{EndSecond}",
+          "document": "<p>录制文件名。<br>支持的特殊占位符有：<br>{StreamID}: 流ID<br>{StartYear}: 开始时间-年<br>{StartMonth}: 开始时间-月<br>{StartDay}: 开始时间-日<br>{StartHour}: 开始时间-小时<br>{StartMinute}: 开始时间-分钟<br>{StartSecond}: 开始时间-秒<br>{StartMillisecond}: 开始时间-毫秒<br>{EndYear}: 结束时间-年<br>{EndMonth}: 结束时间-月<br>{EndDay}: 结束时间-日<br>{EndHour}: 结束时间-小时<br>{EndMinute}: 结束时间-分钟<br>{EndSecond}: 结束时间-秒<br>{EndMillisecond}: 结束时间-毫秒</p><p>若未设置默认录制文件名为{StreamID}_{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}_{EndYear}-{EndMonth}-{EndDay}-{EndHour}-{EndMinute}-{EndSecond}</p>",
           "example": "{StreamID}_{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}_{EndYear}-{EndMonth}-{EndDay}-{EndHour}-{EndMinute}-{EndSecond}",
           "member": "string",
           "name": "VodFileName",
@@ -21493,7 +22747,7 @@
         },
         {
           "disabled": false,
-          "document": "任务流\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务流</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "liu",
           "member": "string",
           "name": "Procedure",
@@ -21504,7 +22758,7 @@
         },
         {
           "disabled": false,
-          "document": "视频存储策略。\nnormal：标准存储。\ncold：低频存储。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频存储策略。<br>normal：标准存储。<br>cold：低频存储。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "normal",
           "member": "string",
           "name": "StorageMode",
@@ -21515,7 +22769,7 @@
         },
         {
           "disabled": false,
-          "document": "点播应用分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>点播应用分类</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4512",
           "member": "int64",
           "name": "ClassId",
@@ -21526,7 +22780,7 @@
         },
         {
           "disabled": false,
-          "document": "存储至 cos 的 bucket 桶名称。\n注：CosBucketName参数值不能包含-[appid] 部分。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存储至 cos 的 bucket 桶名称。<br>注：CosBucketName参数值不能包含-[appid] 部分。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bucket",
           "member": "string",
           "name": "CosBucketName",
@@ -21537,7 +22791,7 @@
         },
         {
           "disabled": false,
-          "document": "存储至 cos 的 bucket 区域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存储至 cos 的 bucket 区域。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bucket",
           "member": "string",
           "name": "CosBucketRegion",
@@ -21548,7 +22802,7 @@
         },
         {
           "disabled": false,
-          "document": "存储至 cos 的 bucket 路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存储至 cos 的 bucket 路径。<br>注意：若为输入参数，则该参数必填，且必须以斜杠（/）开头，建议至少包含 {StartYear}、{StartMonth}、{StartDay}、{StartHour}、{StartMinute}、{StartSecond} 或 {RandomID} 任意一种，否则可能出现录制文件名重复造成文件相互覆盖；若为返回参数，则此字段可能返回 null，表示取不到有效值。<br>示例值：/{RecordSource}/{Domain}/{AppName}/{StreamID}/{RecordId}-{RandomID}/{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}</p><p>支持的特殊占位符有：<br>{RecordSource}：区分录制内容，若录制原始流、水印流则为“origin”，录制转码流时，代表转码模板ID<br>{StreamID}: 流ID<br>{RecordId}：录制任务ID，断流前后该值可能重复；<br>{RandomID}：随机数，断流前后该值不同；<br>{StartYear}: 开始时间-年<br>{StartMonth}: 开始时间-月<br>{StartDay}: 开始时间-日<br>{StartHour}: 开始时间-小时<br>{StartMinute}: 开始时间-分钟<br>{StartSecond}: 开始时间-秒<br>{StartMillisecond}: 开始时间-毫秒<br>{EndYear}: 结束时间-年<br>{EndMonth}: 结束时间-月<br>{EndDay}: 结束时间-日<br>{EndHour}: 结束时间-小时<br>{EndMinute}: 结束时间-分钟<br>{EndSecond}: 结束时间-秒<br>{EndMillisecond}: 结束时间-毫秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bucket",
           "member": "string",
           "name": "CosBucketPath",
@@ -22057,6 +23311,223 @@
       ],
       "usage": "out"
     },
+    "SceneStoreCosParam": {
+      "document": "场景化视频结果文件上传COS时，需传入的信息。 需创建并授权LVB_QCSRole角色。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Cos桶名称。</p>",
+          "example": "live-q****d-tts-13***02212",
+          "member": "string",
+          "name": "CosBucketName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Cos桶地域。</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CosBucketRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储路径。</p>",
+          "example": "/scene_video/",
+          "member": "string",
+          "name": "CosBucketPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SceneVideoExtraParam": {
+      "document": "用于场景化创作视频时用到的扩展参数信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定输出分辨率。选项:720P, 1080P, 2K, 4K。</p>",
+          "example": "1080P",
+          "member": "string",
+          "name": "Resolution",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定输出视频的宽高比，示例：16:9。</p>",
+          "example": "16:9",
+          "member": "string",
+          "name": "AspectRatio",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错峰模型，仅支持的模型可使用。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "OffPeak",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动添加水印，默认左上角添加 &quot;AI生成&quot; 标识。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "LogoAdd",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用音画同出。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableAudio",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成背景音乐。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableBgm",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对输入的Prompt进行优化。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnablePromptEnhance",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调URL。</p>",
+          "example": "http://my.c***back.**m/l***/test.p**",
+          "member": "string",
+          "name": "CallbackUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SceneVideoOutputInfo": {
+      "document": "场景化视频输出信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输出信息。</p>",
+          "example": "https://a****out*****ideo-file-1326893053.cos.ap-guangzhou.myqcloud.com/***0**278/251006278-liv*******ideo-721d18cefa094ba4a61****dfcbbacab_0.mp4",
+          "member": "string",
+          "name": "Info",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出类型。</p>",
+          "example": "video_url",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SceneVideoReferenceImageInfo": {
+      "document": "用于场景化生视频创作的参考图片信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入的参考图Url，需外网可访问。</p>",
+          "example": "https://******ode******t-1258344703.*********erate.myqcloud.com/m*****odel-agent-1258344703/agent/e****276-ba60-44b6-ac0d-81a4e1****b6.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>针对该参考图的Prompt描述，仅部分模型是支持。</p>",
+          "example": "这是图1",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参考类型。</p>",
+          "example": "style",
+          "member": "string",
+          "name": "ReferenceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SceneVideoReferenceVideoInfo": {
+      "document": "用于场景化视频生成的参考视频素材。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参考视频Url，需外网可访问。</p>",
+          "example": "https:/*****-o*****-video-file-1326*****3.co****-gu**g**ou.myqclo**.com/4/4-AigcVideo-c77c***3d161428087f1a44d6f134475_0.mp4",
+          "member": "string",
+          "name": "VideoUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ScreenshotTask": {
       "document": "截图任务",
       "members": [
@@ -22409,7 +23880,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数字人直播间 ID。",
+          "document": "<p>数字人直播间 ID。</p>",
           "example": "10001",
           "member": "string",
           "name": "RoomId",
@@ -22418,7 +23889,7 @@
         },
         {
           "disabled": false,
-          "document": "目标地址描述。",
+          "document": "<p>目标地址描述。</p>",
           "example": "推往视频号",
           "member": "string",
           "name": "Comment",
@@ -22427,7 +23898,7 @@
         },
         {
           "disabled": false,
-          "document": "推流目标地址。",
+          "document": "<p>推流目标地址。</p>",
           "example": "rtmp://5000.livepush.com/live/stream",
           "member": "string",
           "name": "ToUrl",
@@ -22436,10 +23907,19 @@
         },
         {
           "disabled": false,
-          "document": "操作者。",
+          "document": "<p>操作者。</p>",
           "example": "admin",
           "member": "string",
           "name": "Operator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间类型。AIGC：AIGC形象房间；PRESET：预设形象房间</p><p>枚举值：</p><ul><li>AIGC： AIGC形象房间</li><li>PRESET： 预设形象房间</li></ul>",
+          "example": "AIGC",
+          "member": "string",
+          "name": "RoomType",
           "required": false,
           "type": "string"
         }

@@ -1,6 +1,6 @@
-**Example 1: 编辑Datahub连接源**
+**Example 1: 编辑连接器连接**
 
-编辑Datahub连接源
+编辑连接器连接
 
 Input: 
 

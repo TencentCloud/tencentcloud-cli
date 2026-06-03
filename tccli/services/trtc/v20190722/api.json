@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AsyncTextToSpeech": {
+      "document": "异步语音合成",
+      "input": "AsyncTextToSpeechRequest",
+      "name": "异步文本转语音",
+      "output": "AsyncTextToSpeechResponse",
+      "status": "online"
+    },
     "ControlAIConversation": {
       "document": "提供服务端控制机器人的功能",
       "input": "ControlAIConversationRequest",
@@ -112,6 +119,13 @@
       "output": "DescribeAITranscriptionResponse",
       "status": "online"
     },
+    "DescribeAsyncTextToSpeech": {
+      "document": "查询异步语音合成状态",
+      "input": "DescribeAsyncTextToSpeechRequest",
+      "name": "查询异步文本转语音",
+      "output": "DescribeAsyncTextToSpeechResponse",
+      "status": "online"
+    },
     "DescribeCallDetailInfo": {
       "document": "查询指定时间内的用户列表及用户通话质量数据，最大可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。（同老接口DescribeCallDetail）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，需订阅套餐解锁调用能力，提供以下两种解锁方式，可任选其一解锁：\n方式一：通过订阅[包月套餐](https://cloud.tencent.com/document/product/647/85386)「尊享版」（可查近7天）和「旗舰版」（可查近14天），[前往订阅](https://buy.cloud.tencent.com/trtc?trtcversion=top)。\n方式二：通过订阅[监控仪表盘](https://cloud.tencent.com/document/product/647/81331)商业套餐包「基础版」（可查近7天）和「进阶版」（可查近14天），[前往订阅](https://buy.cloud.tencent.com/trtc_monitor)。",
       "input": "DescribeCallDetailInfoRequest",
@@ -203,6 +217,20 @@
       "output": "DescribeStreamIngestResponse",
       "status": "online"
     },
+    "DescribeTRTCAIRecognitionUsage": {
+      "document": "AI 智能识别与对话用量查询（AI对话/语音转文本/实时翻译/实时语音合成）\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。",
+      "input": "DescribeTRTCAIRecognitionUsageRequest",
+      "name": "AI 智能识别与对话用量查询",
+      "output": "DescribeTRTCAIRecognitionUsageResponse",
+      "status": "online"
+    },
+    "DescribeTRTCDedicatedCloudAccUsage": {
+      "document": "TRTC专属云网络加速用量查询\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。",
+      "input": "DescribeTRTCDedicatedCloudAccUsageRequest",
+      "name": "TRTC专属云网络加速用量查询",
+      "output": "DescribeTRTCDedicatedCloudAccUsageResponse",
+      "status": "online"
+    },
     "DescribeTRTCMarketQualityData": {
       "document": "查询TRTC监控仪表盘-数据大盘质量指标（包括下列指标）\njoinSuccessRate：加入频道成功率。\njoinSuccessIn5sRate：5s内加入频道成功率。\naudioFreezeRate：音频卡顿率。\nvideoFreezeRate：视频卡顿率。\nnetworkDelay ：网络延迟率。\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘[版本功能和计费说明](https://cloud.tencent.com/document/product/647/81331)。\n2.查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天。",
       "input": "DescribeTRTCMarketQualityDataRequest",
@@ -236,6 +264,13 @@
       "input": "DescribeTRTCRealTimeScaleDataRequest",
       "name": "查询TRTC实时监控规模数据",
       "output": "DescribeTRTCRealTimeScaleDataResponse",
+      "status": "online"
+    },
+    "DescribeTRTCSegmentModerationUsage": {
+      "document": "切片截图与内容理解用量查询，支持查询音视频切片（云端切片场景）和 AI 内容理解（审核场景）两种业务类型\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。",
+      "input": "DescribeTRTCSegmentModerationUsageRequest",
+      "name": "切片截图与内容理解用量查询",
+      "output": "DescribeTRTCSegmentModerationUsageResponse",
       "status": "online"
     },
     "DescribeTrtcMcuTranscodeTime": {
@@ -386,7 +421,7 @@
       "status": "online"
     },
     "StartPublishCdnStream": {
-      "document": "接口说明：  \n启动一个混流转推任务，将  TRTC 房间的多路音视频流混成一路音视频流，编码后推到直播 CDN 或者回推到 TRTC 房间。也支持不转码直接转推 TRTC 房间的单路流。启动成功后，会返回一个 SdkAppid 维度唯一的任务 Id（TaskId）。您需要保存该 TaskId，后续需要依赖此 TaskId 更新和结束任务。可以参考文档： [功能说明](https://cloud.tencent.com/document/product/647/84721#b9a855f4-e38c-4616-9b07-fc44e0e8282a) 和 [常见问题](https://cloud.tencent.com/document/product/647/62620)\n\n注意：\n您可以在控制台开通旁路转推回调功能，对转推 CDN 状态的事件进行监控，回调请参考文档：[旁路转推回调说明](https://cloud.tencent.com/document/product/647/88552)  \n您发起混流转推任务时，可能会产生如下费用：  \nMCU 混流转码费用，请参考文档：[云端混流转码计费说明](https://cloud.tencent.com/document/product/647/49446)  \n转推非腾讯云 CDN 费用，请参考文档：[云端转推计费说明](https://cloud.tencent.com/document/product/647/82155)",
+      "document": "接口说明：  \n启动一个混流转推任务，将  TRTC 房间的多路音视频流混成一路音视频流，编码后推到直播 CDN 或者回推到 TRTC 房间。也支持不转码直接转推 TRTC 房间的单路流。启动成功后，会返回一个 SdkAppid 维度唯一的任务 Id（TaskId）。您需要保存该 TaskId，后续需要依赖此 TaskId 更新和结束任务。可以参考文档： [功能说明](https://cloud.tencent.com/document/product/647/84721#b9a855f4-e38c-4616-9b07-fc44e0e8282a) 和 [常见问题](https://cloud.tencent.com/document/product/647/62620)\n需要注意的是，TaskId调用时效性是30天，从成功启动转推并获得任务ID后开始计算，超时后无法调用更新和停止等接口，但是转推任务不会停止。最终任务会等所有参与混流转推的主播离开TRTC房间或切换成观众，并且超过MaxIdleTime时长后，自动停止。\n\n注意：\n您可以在控制台开通旁路转推回调功能，对转推 CDN 状态的事件进行监控，回调请参考文档：[旁路转推回调说明](https://cloud.tencent.com/document/product/647/88552)  \n您发起混流转推任务时，可能会产生如下费用：  \nMCU 混流转码费用，请参考文档：[云端混流转码计费说明](https://cloud.tencent.com/document/product/647/49446)  \n转推非腾讯云 CDN 费用，请参考文档：[云端转推计费说明](https://cloud.tencent.com/document/product/647/82155)",
       "input": "StartPublishCdnStreamRequest",
       "name": "启动转推任务",
       "output": "StartPublishCdnStreamResponse",
@@ -458,14 +493,14 @@
     "TextToSpeech": {
       "document": "语音合成接口",
       "input": "TextToSpeechRequest",
-      "name": "实时文本转语音",
+      "name": "文本转语音",
       "output": "TextToSpeechResponse",
       "status": "online"
     },
     "TextToSpeechSSE": {
       "document": "SSE流式文本转语音",
       "input": "TextToSpeechSSERequest",
-      "name": "实时SSE流式文本转语音",
+      "name": "流式文本转语音",
       "output": "TextToSpeechSSEResponse",
       "status": "online"
     },
@@ -809,6 +844,56 @@
       ],
       "usage": "in"
     },
+    "AlignmentItem": {
+      "document": "字幕对齐",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字幕对应的时间起点",
+          "example": "0",
+          "member": "uint64",
+          "name": "TimeBeginMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕对应的时间尾点",
+          "example": "760",
+          "member": "uint64",
+          "name": "TimeEndMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕对应的文本索引起点",
+          "example": "0",
+          "member": "uint64",
+          "name": "TextBegin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕对应的文本索引尾点",
+          "example": "2",
+          "member": "uint64",
+          "name": "TextEnd",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AmbientSound": {
       "document": "背景音设置，将在通话中添加环境音效，使体验更加逼真。目前支持以下选项：\ncoffee_shops: 咖啡店氛围，背景中有人聊天。\nbusy_office: 客服中心\nstreet_traffic: 户外街道\nevening_mountain: 户外山林",
       "members": [
@@ -884,9 +969,136 @@
           "name": "VadLevel",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否过滤脏词（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 2]，默认值为 0。\n0：不过滤脏词；1：过滤脏词；2：将脏词替换为 \" * \"。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FilterDirty",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否过滤语气词（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 2]，默认值为 0。\n0：不过滤语气词；1：部分过滤；2：严格过滤。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FilterModal",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否过滤句末的句号（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 1]，默认值为 0。\n0：不过滤句末的句号；1：过滤句末的句号。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FilterPunc",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
+    },
+    "AsyncTextToSpeechRequest": {
+      "document": "AsyncTextToSpeech请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要转语音的文字内容，最大允许50000字符，注意 1汉字=2字符",
+          "example": "你好",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文本转语音的声音配置",
+          "example": "无",
+          "member": "Voice",
+          "name": "Voice",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "TRTC的SdkAppId",
+          "example": "1600019222",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文本转语音的输出音频的格式",
+          "example": "无",
+          "member": "AudioFormat",
+          "name": "AudioFormat",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "TTS的模型，当前固定为：flow_01_turbo",
+          "example": "flow_01_turbo",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。",
+          "example": "无",
+          "member": "PronunciationDict",
+          "name": "PronunciationDict",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认为0，0表示不生成字幕，1表示生成字幕",
+          "example": "0",
+          "member": "uint64",
+          "name": "AlignmentMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要合成的语言（ISO 639-1），默认自动识别，支持的语言如下：  zh（中文） en（英文） yue（粤语） ja（日语） ko（韩语） ar（阿拉伯语） id（印尼语） th（泰语）",
+          "example": "zh",
+          "member": "string",
+          "name": "LanguageCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AsyncTextToSpeechResponse": {
+      "document": "AsyncTextToSpeech返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "3d5f26c1-**9*-*f***883e-b543337b8eab",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AudioEncode": {
       "document": "音频编码参数。",
@@ -981,7 +1193,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生成的音频格式\n\n- TextToSpeechSSE 流式接口\n\n 支持 pcm, 默认: pcm\n\n- TextToSpeech 非流式接口\n\n 支持 pcm,wav,mp3,  默认: pcm",
+          "document": "生成的音频格式\n\n- TextToSpeechSSE 流式接口\n\n 支持 pcm, 默认: pcm\n\n- TextToSpeech 非流式接口\n\n 支持 pcm,wav,mp3,  默认: pcm\n\n- AsyncTextToSpeech\n支持pcm,mp3, 默认：mp3",
           "example": "pcm",
           "member": "string",
           "name": "Format",
@@ -2421,6 +2633,73 @@
       ],
       "type": "object"
     },
+    "DescribeAsyncTextToSpeechRequest": {
+      "document": "DescribeAsyncTextToSpeech请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "86edb448-dc2f-4853-be31-8f05c7d3f6fe",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAsyncTextToSpeechResponse": {
+      "document": "DescribeAsyncTextToSpeech返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态\n- Processing，处理中\n- Success，任务成功\n- Failed，任务失败\n- Expired，任务过期",
+          "example": "Success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频下载url",
+          "example": "https://async-tts-1258344699.cos.ap-shanghai.myqcloud.com/86edb448-dc2f-4853-be31-8f05c7d3f6fe/result.mp3",
+          "member": "string",
+          "name": "AudioDownloadUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕下载url",
+          "example": "https://async-tts-1258344699.cos.ap-shanghai.myqcloud.com/86edb448-dc2f-4853-be31-8f05c7d3f6fe/subtitle.json",
+          "member": "string",
+          "name": "SubtitleDownloadUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频时长",
+          "example": "2360",
+          "member": "uint64",
+          "name": "TotalDurationMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCallDetailInfoRequest": {
       "document": "DescribeCallDetailInfo请求参数结构体",
       "members": [
@@ -3350,6 +3629,165 @@
       ],
       "type": "object"
     },
+    "DescribeTRTCAIRecognitionUsageRequest": {
+      "document": "DescribeTRTCAIRecognitionUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询开始时间，格式为YYYY-MM-DD HH:mm:ss。",
+          "example": "2026-04-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间，格式为YYYY-MM-DD HH:mm:ss。单次查询统计区间最多不能超过31天。",
+          "example": "2026-04-02 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用量类型列表。\n- conversation AI 实时对话\n- asr 语音转文本\n- translation 实时翻译\n- tts 实时语音合成",
+          "example": "[\"conversation\"]",
+          "member": "string",
+          "name": "AuType",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。",
+          "example": "1400763596",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCAIRecognitionUsageResponse": {
+      "document": "DescribeTRTCAIRecognitionUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用量类型列表",
+          "example": "[\"Conversation\"]",
+          "member": "string",
+          "name": "UsageKey",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用量列表",
+          "example": "无",
+          "member": "UsageList",
+          "name": "UsageList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总用量列表",
+          "example": "[0]",
+          "member": "float",
+          "name": "TotalUsage",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCDedicatedCloudAccUsageRequest": {
+      "document": "DescribeTRTCDedicatedCloudAccUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询开始时间，格式为YYYY-MM-DD HH:mm:ss。",
+          "example": "2026-04-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间，格式为YYYY-MM-DD HH:mm:ss。单次查询统计区间最多不能超过31天。",
+          "example": "2026-04-03 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。",
+          "example": "1400621940",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCDedicatedCloudAccUsageResponse": {
+      "document": "DescribeTRTCDedicatedCloudAccUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用量指标名列表",
+          "example": "[\"Time\"]",
+          "member": "string",
+          "name": "UsageKey",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用量明细列表",
+          "example": "无",
+          "member": "UsageList",
+          "name": "UsageList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "汇总用量列表",
+          "example": "[0]",
+          "member": "uint64",
+          "name": "TotalUsage",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTRTCMarketQualityDataRequest": {
       "document": "DescribeTRTCMarketQualityData请求参数结构体",
       "members": [
@@ -3669,6 +4107,99 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCSegmentModerationUsageRequest": {
+      "document": "DescribeTRTCSegmentModerationUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询开始时间，格式为YYYY-MM-DD HH:mm:ss。",
+          "example": "2026-04-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间，格式为YYYY-MM-DD HH:mm:ss。单次查询统计区间最多不能超过31天。",
+          "example": "2026-04-10 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体类型，枚举值：audio（音频）、picture（图片）",
+          "example": "audio",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用场景（业务类型），枚举值：0 = AI 内容理解（审核场景）、1 = 音视频切片（云端切片场景）",
+          "example": "0",
+          "member": "uint64",
+          "name": "Business",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。",
+          "example": "1400621940",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCSegmentModerationUsageResponse": {
+      "document": "DescribeTRTCSegmentModerationUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用量指标名列表",
+          "example": "[\"Audio\"]",
+          "member": "string",
+          "name": "UsageKey",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用量明细列表",
+          "example": "无",
+          "member": "UsageList",
+          "name": "UsageList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "汇总用量列表",
+          "example": "[0]",
+          "member": "uint64",
+          "name": "TotalUsage",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5958,7 +6489,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核4:音频流式审核 5:音频流式+视频截帧审核  默认值1 （流式审核需要供应商支持才生效）",
+          "document": "审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核  默认值1 ",
           "example": "1",
           "member": "uint64",
           "name": "ModerationType",
@@ -5976,7 +6507,7 @@
         },
         {
           "disabled": false,
-          "document": "音频切片时长，默认15s 示例值：15",
+          "document": "音频切片时长，默认15s 示例值：15, 范围15-60s",
           "example": "15",
           "member": "uint64",
           "name": "SliceAudio",
@@ -5985,7 +6516,7 @@
         },
         {
           "disabled": false,
-          "document": "视频截帧间隔时长，默认5s",
+          "document": "视频截帧间隔时长，默认5s, 范围1-60s",
           "example": "5",
           "member": "uint64",
           "name": "SliceVideo",
@@ -5994,7 +6525,7 @@
         },
         {
           "disabled": false,
-          "document": "供应商枚举，\ntianyu : 天御内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nace  : ACE内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nshumei : 数美审核（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nyidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）",
+          "document": "供应商枚举，\ntrtc : trtc内容理解（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\ntianyu : 天御内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nace  : ACE内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nshumei : 数美审核（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nyidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）",
           "example": "ace",
           "member": "string",
           "name": "ModerationSupplier",
@@ -6003,7 +6534,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方审核商送审需要配置信息",
+          "document": "第三方审核商送审需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化",
           "example": "无",
           "member": "ModerationSupplierParam",
           "name": "ModerationSupplierParam",
@@ -6012,7 +6543,7 @@
         },
         {
           "disabled": false,
-          "document": "是否保存文件  0不保存文件 1保存所有文件 2仅保存命中文件",
+          "document": "是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件",
           "example": "0",
           "member": "uint64",
           "name": "SaveModerationFile",
@@ -6605,6 +7136,34 @@
         }
       ],
       "usage": "in"
+    },
+    "PronunciationDict": {
+      "document": "多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要纠正发音的词语，前后空格自动去除。同一请求中若有重复词语，以最后一条为准。",
+          "example": "银行",
+          "member": "string",
+          "name": "Word",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标发音，支持以下格式：<br>① 带声调数字的拼音（1=阴平，2=阳平，3=上声，4=去声，5=轻声），如 yin2 hang2；<br>② 拼音连写（无空格），如 yin2hang2；<br>③ 文字+拼音混写，如 银hang2；<br>④ 直接文本替换，会将原始文本替换为目标文本",
+          "example": "yin2 hang2",
+          "member": "string",
+          "name": "Pronunciation",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "PublishCdnParams": {
       "document": "第三方CDN转推参数",
@@ -8018,7 +8577,7 @@
         {
           "disabled": false,
           "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。",
-          "example": "1400***000",
+          "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -8045,7 +8604,7 @@
         {
           "disabled": false,
           "document": "转推服务加入TRTC房间的机器人参数。",
-          "example": "{\"UserId\":\"trtc_user_agent\",\"UserSig\":\"eJw1zV8****pljzBb*IOTE_\",\"MaxIdleTime\":30}",
+          "example": "无",
           "member": "AgentParams",
           "name": "AgentParams",
           "required": true,
@@ -8053,7 +8612,7 @@
         },
         {
           "disabled": false,
-          "document": "是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。\n注：混流是必须转码，这个参数需设置为1。",
+          "document": "是否转码，0表示无需转码，1表示需要转码。\nWithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。\n注：\n1，混流是必须转码的，这个参数需设置为1。\n2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。",
           "example": "1",
           "member": "uint64",
           "name": "WithTranscoding",
@@ -8063,7 +8622,7 @@
         {
           "disabled": false,
           "document": "转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。",
-          "example": "{\"AudioEncode\":{\"SampleRate\":48000,\"Channel\":2,\"BitRate\":64,\"Codec\":0}}",
+          "example": "无",
           "member": "McuAudioParams",
           "name": "AudioParams",
           "required": false,
@@ -8072,7 +8631,7 @@
         {
           "disabled": false,
           "document": "转推流的视频编码参数，不填表示纯音频转推。",
-          "example": "{\"VideoEncode\":{\"Width\":64,\"Height\":64,\"Fps\":15,\"BitRate\":128,\"Gop\":2},\"LayoutParams\":{\"MixLayoutMode\":3}}",
+          "example": "无",
           "member": "McuVideoParams",
           "name": "VideoParams",
           "required": false,
@@ -8081,7 +8640,7 @@
         {
           "disabled": false,
           "document": "需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。",
-          "example": "{\"UserMediaStream\":{\"UserInfo\":{\"RoomId\":\"123456\",\"RoomIdType\":0,\"UserId\":\"trtc_user_id\"},\"StreamType\":0}}",
+          "example": "无",
           "member": "SingleSubscribeParams",
           "name": "SingleSubscribeParams",
           "required": false,
@@ -8090,7 +8649,7 @@
         {
           "disabled": false,
           "document": "转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。",
-          "example": "[{\"IsTencentCdn\":1,\"PublishCdnUrl\":\"rtmp://***&txTime=68639060\"}]",
+          "example": "无",
           "member": "McuPublishCdnParam",
           "name": "PublishCdnParams",
           "required": false,
@@ -8099,7 +8658,7 @@
         {
           "disabled": false,
           "document": "混流SEI参数",
-          "example": "{\"LayoutVolume\":{\"AppData\":\"***\",\"PayloadType\":120, \"Interval\":3000,\"FollowIdr\":1}}",
+          "example": "无",
           "member": "McuSeiParams",
           "name": "SeiParams",
           "required": false,
@@ -8108,7 +8667,7 @@
         {
           "disabled": false,
           "document": "回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。",
-          "example": "[{\"RoomId\":\"123456\",\"RoomIdType\":0,\"UserId\":\"trtc_user_fb\",\"UserSig\":\"eJw1jdEKgj***AEOjOFw_\"}]",
+          "example": "无",
           "member": "McuFeedBackRoomParams",
           "name": "FeedBackRoomParams",
           "required": false,
@@ -8117,7 +8676,7 @@
         {
           "disabled": false,
           "document": "转推录制参数，[参考文档](https://cloud.tencent.com/document/product/647/111748)。",
-          "example": "{\"UniRecord\":1,\"RecordKey\": \"test_recore_key_a\"}",
+          "example": "无",
           "member": "McuRecordParams",
           "name": "RecordParams",
           "required": false,
@@ -8198,7 +8757,7 @@
         },
         {
           "disabled": false,
-          "document": "源流URL【必填】。如果是视频流，分辨率请保持不变。",
+          "document": "源流URL【必填】。如果是视频流，分辨率请保持不变，视频流的最大分辨率限制1080p，最大帧率限制30fps。",
           "example": "https://a.b/test.mp4",
           "member": "string",
           "name": "StreamUrl",
@@ -8279,7 +8838,7 @@
         },
         {
           "disabled": false,
-          "document": "音量，取值范围[0, 100]，默认100，表示原音量。",
+          "document": "音量，取值范围[0, 200]，默认100，表示原音量。",
           "example": "90",
           "member": "uint64",
           "name": "Volume",
@@ -8303,6 +8862,15 @@
           "name": "Tempo",
           "required": false,
           "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "播放任务处于空闲状态的最大时长（秒）, 不填时任务会自适应销毁，可取[0, 600]，空闲状态超过设置的 IdleTimeout 后，该播放任务会自动销毁",
+          "example": "1",
+          "member": "int64",
+          "name": "IdleTimeout",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9146,6 +9714,24 @@
           "name": "Language",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。",
+          "example": "无",
+          "member": "PronunciationDict",
+          "name": "PronunciationDict",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认为0，0表示不生成字幕，1表示生成字幕",
+          "example": "0",
+          "member": "uint64",
+          "name": "AlignmentMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9161,6 +9747,26 @@
           "name": "Audio",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕对齐数据",
+          "example": "无",
+          "member": "AlignmentItem",
+          "name": "Alignments",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频时长",
+          "example": "760",
+          "member": "uint64",
+          "name": "TotalDurationMs",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -9237,6 +9843,24 @@
           "name": "Language",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。",
+          "example": "无",
+          "member": "PronunciationDict",
+          "name": "PronunciationDict",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认为0，0表示不生成字幕，1表示生成字幕",
+          "example": "0",
+          "member": "uint64",
+          "name": "AlignmentMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9329,7 +9953,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义通道：支持自定义信息，只可以填0-2， 0表示不开启自定义通道，1表示开启自定义数据，2表示开启自定义消息。不填默认不开启自定义通道。注意：填1自定义数据只对 SDK版本 >= 5.15.0生效。",
+          "document": "自定义数据模式： 0表示不开启自定义数据，1表示开启自定义数据。\n不填默认为0，表示不开启自定义数据。",
           "example": "1",
           "member": "uint64",
           "name": "SendCustomMode",
@@ -9574,7 +10198,7 @@
         {
           "disabled": false,
           "document": "唯一标识一个任务",
-          "example": "无",
+          "example": "v2_20260320_5kxNg4E1YPwVbIoKbf2hPbzno_kvwjs-H7iyc_ZcgeqJxHbQ-cKxpj2HQW3Hfg_cV-VPmE9RCdNBYnqOM3sjz6sL-Hw7X3Gm",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -9583,7 +10207,7 @@
         {
           "disabled": false,
           "document": "不填写则不进行更新，机器人的欢迎语",
-          "example": "无",
+          "example": "你好啊",
           "member": "string",
           "name": "WelcomeMessage",
           "required": false,
@@ -9592,7 +10216,7 @@
         {
           "disabled": false,
           "document": "不填写则不进行更新。智能打断模式，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "InterruptMode",
           "required": false,
@@ -9601,7 +10225,7 @@
         {
           "disabled": false,
           "document": "不填写则不进行更新。InterruptMode为0时使用，单位为毫秒，默认为500ms。表示服务端检测到持续InterruptSpeechDuration毫秒的人声则进行打断",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "InterruptSpeechDuration",
           "required": false,
@@ -9610,7 +10234,7 @@
         {
           "disabled": false,
           "document": "不填写则不进行更新，LLM配置，详情见StartAIConversation接口",
-          "example": "无",
+          "example": "{\\\"LLMType\\\": \\\"openai\\\", \\\"Model\\\": \\\"gpt-xxx\", \\\"APIKey\\\": \\\"xxxxxxxx\\\", \\\"APIUrl\\\": \\\"https://api.xxx.com/v1/chat/completions\\\\\", \\\"Streaming\\\": true}",
           "member": "string",
           "name": "LLMConfig",
           "required": false,
@@ -9619,7 +10243,7 @@
         {
           "disabled": false,
           "document": "不填写则不进行更新，TTS配置，详情见StartAIConversation接口",
-          "example": "无",
+          "example": "{\\\"TTSType\\\": \\\"flow\\\",\\\"VoiceId\\\": \\\"v-female-R2s4N9qJ\\\", \\\"Speed\\\": 1}",
           "member": "string",
           "name": "TTSConfig",
           "required": false,
@@ -9790,7 +10414,7 @@
         },
         {
           "disabled": false,
-          "document": "音量，取值范围[0, 100]，默认100，表示原音量。",
+          "document": "音量，取值范围[0, 200]，默认100，表示原音量。",
           "example": "90",
           "member": "uint64",
           "name": "Volume",
@@ -9911,6 +10535,32 @@
         }
       ],
       "type": "object"
+    },
+    "UsageList": {
+      "document": "用量列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间",
+          "example": "2026-04-01 00:00:00",
+          "member": "string",
+          "name": "TimeKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用量数值",
+          "example": "[0]",
+          "member": "float",
+          "name": "UsageValue",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UserInformation": {
       "document": "用户信息，包括用户进房时间，退房时间等",

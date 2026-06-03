@@ -43,11 +43,13 @@ def doDescribeRenewInstances(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeRenewInstancesRequest()
     model.from_json_string(json.dumps(args))
@@ -98,11 +100,13 @@ def doDescribeAllocationBillConditions(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAllocationBillConditionsRequest()
     model.from_json_string(json.dumps(args))
@@ -153,11 +157,13 @@ def doDeleteGatherRule(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DeleteGatherRuleRequest()
     model.from_json_string(json.dumps(args))
@@ -208,11 +214,13 @@ def doDescribeCostSummaryByResource(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeCostSummaryByResourceRequest()
     model.from_json_string(json.dumps(args))
@@ -263,11 +271,13 @@ def doDescribeBillList(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBillListRequest()
     model.from_json_string(json.dumps(args))
@@ -318,11 +328,13 @@ def doDescribeDealsByCond(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeDealsByCondRequest()
     model.from_json_string(json.dumps(args))
@@ -373,11 +385,13 @@ def doDescribeAllocationBillDetail(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAllocationBillDetailRequest()
     model.from_json_string(json.dumps(args))
@@ -428,11 +442,13 @@ def doDescribeAllocationSummaryByResource(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAllocationSummaryByResourceRequest()
     model.from_json_string(json.dumps(args))
@@ -483,11 +499,13 @@ def doDescribeAllocationRuleSummary(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAllocationRuleSummaryRequest()
     model.from_json_string(json.dumps(args))
@@ -538,11 +556,13 @@ def doDescribeBillResourceSummary(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBillResourceSummaryRequest()
     model.from_json_string(json.dumps(args))
@@ -593,11 +613,13 @@ def doDeleteAllocationUnit(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DeleteAllocationUnitRequest()
     model.from_json_string(json.dumps(args))
@@ -648,11 +670,13 @@ def doDescribeAllocateConditions(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAllocateConditionsRequest()
     model.from_json_string(json.dumps(args))
@@ -703,11 +727,13 @@ def doCreateBudget(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateBudgetRequest()
     model.from_json_string(json.dumps(args))
@@ -758,11 +784,13 @@ def doDescribeBillSummaryByPayMode(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBillSummaryByPayModeRequest()
     model.from_json_string(json.dumps(args))
@@ -813,11 +841,13 @@ def doDescribeAllocationOverview(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAllocationOverviewRequest()
     model.from_json_string(json.dumps(args))
@@ -868,11 +898,13 @@ def doDescribeDosageDetailList(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeDosageDetailListRequest()
     model.from_json_string(json.dumps(args))
@@ -923,11 +955,13 @@ def doCreateAllocationUnit(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateAllocationUnitRequest()
     model.from_json_string(json.dumps(args))
@@ -978,11 +1012,13 @@ def doCreateAllocationTag(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateAllocationTagRequest()
     model.from_json_string(json.dumps(args))
@@ -1033,11 +1069,13 @@ def doDeleteBudget(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DeleteBudgetRequest()
     model.from_json_string(json.dumps(args))
@@ -1088,11 +1126,13 @@ def doPayDeals(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.PayDealsRequest()
     model.from_json_string(json.dumps(args))
@@ -1143,11 +1183,13 @@ def doDescribeCostSummaryByProject(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeCostSummaryByProjectRequest()
     model.from_json_string(json.dumps(args))
@@ -1198,11 +1240,13 @@ def doDescribeVoucherInfo(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeVoucherInfoRequest()
     model.from_json_string(json.dumps(args))
@@ -1253,11 +1297,13 @@ def doDescribeBillResourceSummaryForOrganization(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBillResourceSummaryForOrganizationRequest()
     model.from_json_string(json.dumps(args))
@@ -1308,11 +1354,13 @@ def doDescribeBillDetail(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBillDetailRequest()
     model.from_json_string(json.dumps(args))
@@ -1363,11 +1411,13 @@ def doSetRenewal(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.SetRenewalRequest()
     model.from_json_string(json.dumps(args))
@@ -1418,11 +1468,13 @@ def doDescribeBillSummary(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBillSummaryRequest()
     model.from_json_string(json.dumps(args))
@@ -1473,11 +1525,13 @@ def doDeleteAllocationRule(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DeleteAllocationRuleRequest()
     model.from_json_string(json.dumps(args))
@@ -1528,11 +1582,13 @@ def doDescribeBudgetRemindRecordList(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBudgetRemindRecordListRequest()
     model.from_json_string(json.dumps(args))
@@ -1583,11 +1639,13 @@ def doDescribeAllocationRuleDetail(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAllocationRuleDetailRequest()
     model.from_json_string(json.dumps(args))
@@ -1638,11 +1696,13 @@ def doDescribeCostSummaryByRegion(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeCostSummaryByRegionRequest()
     model.from_json_string(json.dumps(args))
@@ -1693,11 +1753,13 @@ def doDescribeAllocationTrendByMonth(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAllocationTrendByMonthRequest()
     model.from_json_string(json.dumps(args))
@@ -1748,11 +1810,13 @@ def doDescribeBillDownloadUrl(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBillDownloadUrlRequest()
     model.from_json_string(json.dumps(args))
@@ -1803,11 +1867,13 @@ def doDescribeDosageCosDetailByDate(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeDosageCosDetailByDateRequest()
     model.from_json_string(json.dumps(args))
@@ -1858,11 +1924,13 @@ def doCreateGatherRule(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateGatherRuleRequest()
     model.from_json_string(json.dumps(args))
@@ -1913,11 +1981,13 @@ def doDescribeBillDetailForOrganization(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBillDetailForOrganizationRequest()
     model.from_json_string(json.dumps(args))
@@ -1968,11 +2038,13 @@ def doModifyBudget(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.ModifyBudgetRequest()
     model.from_json_string(json.dumps(args))
@@ -2023,11 +2095,13 @@ def doDescribeAccountBalance(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAccountBalanceRequest()
     model.from_json_string(json.dumps(args))
@@ -2078,11 +2152,13 @@ def doCreateInstance(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateInstanceRequest()
     model.from_json_string(json.dumps(args))
@@ -2133,11 +2209,13 @@ def doDescribeDosageDetailByDate(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeDosageDetailByDateRequest()
     model.from_json_string(json.dumps(args))
@@ -2188,11 +2266,13 @@ def doDescribeAllocationTree(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAllocationTreeRequest()
     model.from_json_string(json.dumps(args))
@@ -2243,11 +2323,13 @@ def doDescribeAllocationUnitDetail(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAllocationUnitDetailRequest()
     model.from_json_string(json.dumps(args))
@@ -2298,11 +2380,13 @@ def doDescribeBudget(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBudgetRequest()
     model.from_json_string(json.dumps(args))
@@ -2353,11 +2437,13 @@ def doDescribeBillAdjustInfo(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBillAdjustInfoRequest()
     model.from_json_string(json.dumps(args))
@@ -2408,11 +2494,13 @@ def doDescribeVoucherUsageDetails(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeVoucherUsageDetailsRequest()
     model.from_json_string(json.dumps(args))
@@ -2463,11 +2551,13 @@ def doDescribeBillSummaryByRegion(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBillSummaryByRegionRequest()
     model.from_json_string(json.dumps(args))
@@ -2518,11 +2608,13 @@ def doDescribeBillSummaryByProject(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBillSummaryByProjectRequest()
     model.from_json_string(json.dumps(args))
@@ -2573,11 +2665,13 @@ def doDescribeAllocationMonthOverview(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAllocationMonthOverviewRequest()
     model.from_json_string(json.dumps(args))
@@ -2628,11 +2722,13 @@ def doCreateAllocationRule(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateAllocationRuleRequest()
     model.from_json_string(json.dumps(args))
@@ -2683,11 +2779,13 @@ def doDescribeCostExplorerSummary(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeCostExplorerSummaryRequest()
     model.from_json_string(json.dumps(args))
@@ -2738,11 +2836,13 @@ def doDescribeBillSummaryForOrganization(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBillSummaryForOrganizationRequest()
     model.from_json_string(json.dumps(args))
@@ -2793,11 +2893,13 @@ def doDescribeGatherResource(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeGatherResourceRequest()
     model.from_json_string(json.dumps(args))
@@ -2848,11 +2950,13 @@ def doDescribeSavingPlanResourceInfo(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeSavingPlanResourceInfoRequest()
     model.from_json_string(json.dumps(args))
@@ -2903,11 +3007,13 @@ def doDescribeTagList(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeTagListRequest()
     model.from_json_string(json.dumps(args))
@@ -2958,11 +3064,13 @@ def doRenewInstance(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.RenewInstanceRequest()
     model.from_json_string(json.dumps(args))
@@ -3013,11 +3121,13 @@ def doDescribeCostSummaryByTag(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeCostSummaryByTagRequest()
     model.from_json_string(json.dumps(args))
@@ -3068,11 +3178,13 @@ def doModifyGatherRule(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.ModifyGatherRuleRequest()
     model.from_json_string(json.dumps(args))
@@ -3123,11 +3235,13 @@ def doDescribeBudgetOperationLog(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBudgetOperationLogRequest()
     model.from_json_string(json.dumps(args))
@@ -3178,11 +3292,13 @@ def doModifyAllocationUnit(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.ModifyAllocationUnitRequest()
     model.from_json_string(json.dumps(args))
@@ -3233,11 +3349,13 @@ def doDescribeAllocationSummaryByBusiness(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAllocationSummaryByBusinessRequest()
     model.from_json_string(json.dumps(args))
@@ -3288,11 +3406,13 @@ def doDescribeGatherRuleDetail(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeGatherRuleDetailRequest()
     model.from_json_string(json.dumps(args))
@@ -3343,11 +3463,13 @@ def doDescribeCostDetail(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeCostDetailRequest()
     model.from_json_string(json.dumps(args))
@@ -3398,11 +3520,13 @@ def doRefundInstance(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.RefundInstanceRequest()
     model.from_json_string(json.dumps(args))
@@ -3453,11 +3577,13 @@ def doDescribeCostSummaryByProduct(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeCostSummaryByProductRequest()
     model.from_json_string(json.dumps(args))
@@ -3508,11 +3634,13 @@ def doDescribeAllocationSummaryByItem(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAllocationSummaryByItemRequest()
     model.from_json_string(json.dumps(args))
@@ -3563,11 +3691,13 @@ def doDescribeBillSummaryByProduct(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBillSummaryByProductRequest()
     model.from_json_string(json.dumps(args))
@@ -3618,11 +3748,13 @@ def doModifyAllocationRule(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.ModifyAllocationRuleRequest()
     model.from_json_string(json.dumps(args))
@@ -3673,11 +3805,13 @@ def doDescribeBillSummaryByTag(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBillSummaryByTagRequest()
     model.from_json_string(json.dumps(args))
@@ -3728,11 +3862,13 @@ def doDeleteAllocationTag(args, parsed_globals):
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
     if g_param[OptionsDefine.Language]:
         profile.language = g_param[OptionsDefine.Language]
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DeleteAllocationTagRequest()
     model.from_json_string(json.dumps(args))
@@ -3897,7 +4033,7 @@ def parse_global_arg(parsed_globals):
             cred[OptionsDefine.RoleArn] = os.environ.get(OptionsDefine.ENV_ROLE_ARN)
             cred[OptionsDefine.RoleSessionName] = os.environ.get(OptionsDefine.ENV_ROLE_SESSION_NAME)
             cvm_role_flag = False
-    
+
     if cvm_role_flag:
         if "type" in cred and cred["type"] == "cvm-role":
             g_param[OptionsDefine.UseCVMRole.replace('-', '_')] = True
@@ -3915,6 +4051,9 @@ def parse_global_arg(parsed_globals):
                     g_param[param] = conf[OptionsDefine.SysParam][param]
                 elif param != OptionsDefine.Language:
                     raise ConfigurationError("%s is invalid" % param)
+            elif param in [OptionsDefine.RequestClient.replace('-', '_')]:
+                if param.replace('_', '-') in conf[OptionsDefine.SysParam]:
+                    g_param[param] = conf[OptionsDefine.SysParam][param.replace('_', '-')]
             elif param.replace('_', '-') in [OptionsDefine.RoleArn, OptionsDefine.RoleSessionName]:
                 if param.replace('_', '-') in cred:
                     g_param[param] = cred[param.replace('_', '-')]

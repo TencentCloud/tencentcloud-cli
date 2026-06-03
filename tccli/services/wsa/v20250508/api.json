@@ -20,7 +20,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "搜索词",
+          "document": "<p>搜索词</p>",
           "example": "今天北京的天气",
           "member": "string",
           "name": "Query",
@@ -29,7 +29,7 @@
         },
         {
           "disabled": false,
-          "document": "返回结果类型，0-自然检索结果(默认)，1-多模态VR结果，2-混合结果（多模态VR结果+自然检索结果）",
+          "document": "<p>返回结果类型，0-自然检索结果(默认)，1-多模态VR结果，2-混合结果（多模态VR结果+自然检索结果）</p>",
           "example": "2",
           "member": "int64",
           "name": "Mode",
@@ -38,7 +38,7 @@
         },
         {
           "disabled": false,
-          "document": "指定域名站内搜索（用于过滤自然检索结果）\n注意： mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效",
+          "document": "<p>指定域名站内搜索（用于过滤自然检索结果）<br>注意： mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效</p>",
           "example": "zhihu.com",
           "member": "string",
           "name": "Site",
@@ -47,7 +47,7 @@
         },
         {
           "disabled": false,
-          "document": "起始时间（用于过滤自然检索结果），精确到秒时间戳格式\n注意： mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效",
+          "document": "<p>起始时间（用于过滤自然检索结果），精确到秒时间戳格式<br>注意： mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效</p>",
           "example": "1745498501",
           "member": "int64",
           "name": "FromTime",
@@ -56,7 +56,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间（用于过滤自然检索结果），精确到秒时间戳格式\n注意：mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效",
+          "document": "<p>结束时间（用于过滤自然检索结果），精确到秒时间戳格式<br>注意：mode=1模式下，参数无效；mode=0模式下，对所有结果生效；mode=2模式下，对输出的自然结果生效</p>",
           "example": "1745498501",
           "member": "int64",
           "name": "ToTime",
@@ -65,7 +65,7 @@
         },
         {
           "disabled": false,
-          "document": "cnt=10/20/30/40/50，最多可支持返回50条搜索结果，**仅限尊享版使用**",
+          "document": "<p>cnt=10/20/30/40/50，最多可支持返回50条搜索结果，<strong>仅限尊享版使用</strong></p>",
           "example": "10",
           "member": "uint64",
           "name": "Cnt",
@@ -74,7 +74,7 @@
         },
         {
           "disabled": false,
-          "document": "Industry=gov/news/acad/finance，对应党政机关、权威媒体、学术（英文）、金融，**仅限尊享版使用**",
+          "document": "<p>Industry=gov/news/acad/finance，对应党政机关、权威媒体、学术（英文）、金融，<strong>仅限尊享版使用</strong></p>",
           "example": "news",
           "member": "string",
           "name": "Industry",
@@ -89,7 +89,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "原始查询语",
+          "document": "<p>原始查询语</p>",
           "example": "今天北京的天气",
           "member": "string",
           "name": "Query",
@@ -99,7 +99,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索结果页面详情，格式为json字符串。\ntitle：结果标题\ndate：内容发布时间\nurl：内容发布源url\npassage：标准摘要\ncontent：动态摘要 （尊享版字段）\nsite：网站名称，部分不知名站点结果可能为空\nscore：相关性得分，取值0～1，越靠近1表示越相关\nimages：图片列表\nfavicon：网站图标链接，部分不知名站点结果可能为空",
+          "document": "<p>搜索结果页面详情，格式为json字符串。<br>title：结果标题<br>date：内容发布时间<br>url：内容发布源url<br>passage：标准摘要<br>content：动态摘要 （尊享版字段）<br>site：网站名称，部分不知名站点结果可能为空<br>score：相关性得分，取值0～1，越靠近1表示越相关<br>images：图片列表<br>favicon：网站图标链接，部分不知名站点结果可能为空</p>",
           "example": "[\"{\\\"passage\\\":\\\"aaa\\\"}\", \"{\\\"passage\\\":\\\"bbb\\\"}\"]",
           "member": "string",
           "name": "Pages",
@@ -109,7 +109,7 @@
         },
         {
           "disabled": false,
-          "document": "用户版本：standard/premium/lite",
+          "document": "<p>用户版本：standard/premium/lite/flagship</p>",
           "example": "standard",
           "member": "string",
           "name": "Version",
@@ -119,7 +119,7 @@
         },
         {
           "disabled": false,
-          "document": "提示信息",
+          "document": "<p>提示信息</p>",
           "example": "hit black query",
           "member": "string",
           "name": "Msg",

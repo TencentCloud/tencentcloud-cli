@@ -258,6 +258,14 @@
         "title": "修改采样配置"
       }
     ],
+    "ModifyApmService": [
+      {
+        "document": "修改应用",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApmService\n<公共请求参数>\n\n{\n    \"ServiceID\": \"svc-SgUX9ueaj\",\n    \"ServiceDescription\": \"测试用的\",\n    \"Tags\": [\n        {\n            \"Key\": \"user\",\n            \"Value\": \"developer\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f4bd026-6c87-429f-b9c5-0dd5afd0af46\"\n    }\n}",
+        "title": "修改应用"
+      }
+    ],
     "ModifyGeneralApmApplicationConfig": [
       {
         "document": "客户希望可以通过Api批量修改应用的配置信息",

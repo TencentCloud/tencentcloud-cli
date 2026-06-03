@@ -120,6 +120,20 @@
         "title": "请求示例"
       }
     ],
+    "SendMultiGlobalSms": [
+      {
+        "document": "批量发送短信成功。",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendMultiGlobalSms\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006666\",\n    \"MultiSmsInfoSet\": [\n        {\n            \"PhoneNumber\": \"+60198***000\",\n            \"TemplateId\": \"1800308\",\n            \"TemplateParamSet\": [\n                \"190191\"\n            ],\n            \"SenderId\": \"Qsms\",\n            \"SessionContext\": \"outsid_1776313405_1001\"\n        },\n        {\n            \"PhoneNumber\": \"+60198***001\",\n            \"TemplateId\": \"1800308\",\n            \"TemplateParamSet\": [\n                \"190192\"\n            ],\n            \"SenderId\": \"Qsms\",\n            \"SessionContext\": \"outsid_1776313405_1002\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SendMultiStatusSet\": [\n            {\n                \"Code\": \"Ok\",\n                \"Fee\": 1,\n                \"IsoCode\": \"MY\",\n                \"Message\": \"send success\",\n                \"PhoneNumber\": \"+60198***000\",\n                \"SerialNo\": \"a84166ff-8c6c-41f7-923b-9fdd27fd0fe4\",\n                \"SessionContext\": \"outsid_1776313405_1001\"\n            },\n            {\n                \"Code\": \"Ok\",\n                \"Fee\": 1,\n                \"IsoCode\": \"MY\",\n                \"Message\": \"send success\",\n                \"PhoneNumber\": \"+60198***001\",\n                \"SerialNo\": \"72f1f018-a0c8-4101-976b-265f25b4c0a2\",\n                \"SessionContext\": \"outsid_1776313405_1002\"\n            }\n        ],\n        \"RequestId\": \"104cc55c-05f1-456c-8a0b-18cf25ef56a4\"\n    }\n}",
+        "title": "批量发送短信成功示例"
+      },
+      {
+        "document": "批量发送短信失败。",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendMultiGlobalSms\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006666\",\n    \"MultiSmsInfoSet\": [\n        {\n            \"PhoneNumber\": \"+60198***000\",\n            \"TemplateId\": \"1800308\",\n            \"SenderId\": \"Qsms\",\n            \"SessionContext\": \"outsid_1776313405_1001\"\n        },\n        {\n            \"PhoneNumber\": \"+60198***001\",\n            \"TemplateId\": \"1800308\",\n            \"SenderId\": \"Qsms\",\n            \"SessionContext\": \"outsid_1776313405_1002\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SendMultiStatusSet\": [\n            {\n                \"Code\": \"FailedOperation.TemplateIncorrectOrUnapproved\",\n                \"Fee\": 0,\n                \"IsoCode\": \"MY\",\n                \"Message\": \"template is not approved or request content does not match the approved template content\",\n                \"PhoneNumber\": \"+60198***000\",\n                \"SerialNo\": \"de61cf79-636e-4ad0-ac0b-dc29937999af\",\n                \"SessionContext\": \"outsid_1776313405_1001\"\n            },\n            {\n                \"Code\": \"FailedOperation.TemplateIncorrectOrUnapproved\",\n                \"Fee\": 0,\n                \"IsoCode\": \"MY\",\n                \"Message\": \"template is not approved or request content does not match the approved template content\",\n                \"PhoneNumber\": \"+60198***001\",\n                \"SerialNo\": \"0b8780c6-e889-4201-87fb-5e8e282b3b3e\",\n                \"SessionContext\": \"outsid_1776313405_1002\"\n            }\n        ],\n        \"RequestId\": \"4899adba-08e2-4350-9fee-ab37b7560c4c\"\n    }\n}",
+        "title": "批量发送短信失败示例"
+      }
+    ],
     "SendSms": [
       {
         "document": "发送短信成功。",

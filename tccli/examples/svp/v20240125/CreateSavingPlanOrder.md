@@ -1,4 +1,4 @@
-**Example 1: 节省计划下单**
+**Example 1: 节省计划下单实例**
 
 
 
@@ -6,23 +6,21 @@ Input:
 
 ```
 tccli svp CreateSavingPlanOrder --cli-unfold-argument  \
-    --RegionId 47 \
+    --PromiseUseAmount 100 \
     --ZoneId 470004 \
-    --PrePayType 1 \
-    --SpecifyEffectTime 2023-10-21 00:00:00 \
     --TimeSpan 1 \
-    --TimeUnit y \
+    --PrePayType 3 \
     --CommodityCode svp_common_CYq7cGNk3FaV \
-    --PromiseUseAmount 10000 \
-    --ClientToken sp-856f5555
+    --TimeUnit y \
+    --RegionId 47
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "BigDealId": "20231020400000764159521",
-        "RequestId": "7525ef6b-ac63-4fa6-9bd4-d8c3c8b96220"
+        "RequestId": "04e854d9-f4b2-439e-b111-1660fc3e8ff9",
+        "BigDealId": "20260318177135017340433"
     }
 }
 ```

@@ -7,10 +7,10 @@ Input:
 ```
 tccli apis CreateModelService --cli-unfold-argument  \
     --InstanceID ins-******** \
-    --Name deepseek \
-    --Description deepseek \
-    --PubPath /deepseek \
-    --TargetModels.0.ID mod-******** \
+    --Name testmodel \
+    --Description testmodel \
+    --PubPath /model \
+    --TargetModels.0.ID ins-******** \
     --TargetModels.0.Name deepseek \
     --TargetModels.0.Rank 10 \
     --PathMatchType prefix \
@@ -24,6 +24,7 @@ tccli apis CreateModelService --cli-unfold-argument  \
     --InvokeLimitConfig.SlidingWindowSize 1 \
     --InvokeLimitConfig.TimeWindow 20000 \
     --InvokeLimitConfig.TimeWindowInterval 1 \
+    --InvokeLimitConfig.Timeout 60 \
     --TokenLimitStatus False \
     --TokenLimitConfig.LimitRequestBody 10 \
     --TokenLimitConfig.LimitWindows.0.Interval 60 \
@@ -38,7 +39,11 @@ tccli apis CreateModelService --cli-unfold-argument  \
     --Timeout 60 \
     --PromptModerateStatus True \
     --PromptModerateConfig.Action intercept \
-    --PromptModerateConfig.InterceptMessage intercept
+    --PromptModerateConfig.InterceptMessage intercept \
+    --TargetSelect consistentHash \
+    --FindHostKeyMethod autoDetect \
+    --HostKeyHeaderName x-session-id \
+    --FallbackStatus False
 ```
 
 Output: 
@@ -46,9 +51,9 @@ Output:
 {
     "Response": {
         "Data": {
-            "ID": "mds-********"
+            "ID": "mds-572bf562"
         },
-        "RequestId": "19539a7c-9462-4cd2-9064-0edaec692f17"
+        "RequestId": "3766ec52-78e1-478a-a83d-686981c94a92"
     }
 }
 ```

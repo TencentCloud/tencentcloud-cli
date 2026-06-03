@@ -47,3 +47,33 @@ Output:
 }
 ```
 
+**Example 3: 音色克隆自定义属性**
+
+
+
+Input: 
+
+```
+tccli mps SyncDubbing --cli-unfold-argument  \
+    --AudioUrl https://ie-mps-1258344699.cos-internal.ap-nanjing.tencentcos.cn/common/lauriehuang/dubbing/test/leleqihang/AI_voice.mp4 \
+    --VoiceProfile.Name clone-test \
+    --VoiceProfile.Description 这是一个克隆音色 \
+    --VoiceProfile.Gender female \
+    --VoiceProfile.Age middle_aged \
+    --VoiceProfile.Labels 知性 \
+    --VoiceProfile.Scenes 教学
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ErrorCode": 0,
+        "ExtInfo": "null",
+        "Msg": "success",
+        "VoiceId": "v1_25JMFPakWxb29UltZPWDnhjH4ZiBC7oIixVjas4PyllVSYvI8Be2oPHtNgR3kSou9BM=",
+        "RequestId": "7accf8cc-8645-4fc7-b45f-1b0f24fccef5"
+    }
+}
+```
+

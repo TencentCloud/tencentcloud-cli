@@ -1203,6 +1203,75 @@
       ],
       "usage": "out"
     },
+    "CosOption": {
+      "document": "COS挂载信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件系统本地挂载路径。</p>",
+          "example": "/data/cos_mnt",
+          "member": "string",
+          "name": "LocalPath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>COS桶地址，可以在COS桶详情页查看。</p>",
+          "example": "cosn://my-bucket-1300242089/hpc-data/",
+          "member": "string",
+          "name": "RemotePath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>cosfs2挂载工具支持的参数。</p>",
+          "example": "-oallow_other",
+          "member": "string",
+          "name": "MountParamsOption",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "CosOptionOverview": {
+      "document": "COS存储选项概览信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件系统本地挂载路径。</p>",
+          "example": "/mnt/cos-test",
+          "member": "string",
+          "name": "LocalPath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>COS桶地址。</p>",
+          "example": "test-thpc-cos-1300242089.cos.ap-guangzhou.myqcloud.com",
+          "member": "string",
+          "name": "RemotePath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>COS挂载参数</p>",
+          "example": "{\"mount_params_option\": \"\"}",
+          "member": "string",
+          "name": "MountOption",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateClusterRequest": {
       "document": "CreateCluster请求参数结构体",
       "members": [
@@ -2847,7 +2916,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统本地挂载路径。",
+          "document": "<p>文件系统本地挂载路径。</p>",
           "example": "/data",
           "member": "string",
           "name": "LocalPath",
@@ -2856,8 +2925,8 @@
         },
         {
           "disabled": false,
-          "document": "文件系统远程挂载路径。",
-          "example": "/data/goosefs-fuse",
+          "document": "<p>文件系统远程挂载路径; 远端路径为GooseFS控制台看到的命名空间的url;命名空间文档参考https://cloud.tencent.com/document/product/1424/117877</p>",
+          "example": "/test-1251001001",
           "member": "string",
           "name": "RemotePath",
           "required": true,
@@ -2865,12 +2934,21 @@
         },
         {
           "disabled": false,
-          "document": "文件系统master的ip和端口。",
+          "document": "<p>文件系统master的ip和端口，此参数和FileSystemId互斥。</p>",
           "example": "[\"172.16.0.2:55533\",\"172.16.0.3:55533\",\"172.16.0.4:55533\"]",
           "member": "string",
           "name": "Masters",
-          "required": true,
+          "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>GooseFS的文件ID；此参数和Masters 互斥。</p>",
+          "example": "g_cvm_7yu01w7y",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3088,7 +3166,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业ID",
+          "document": "<p>作业ID</p>",
           "example": "job-xxx",
           "member": "string",
           "name": "JobId",
@@ -3098,7 +3176,7 @@
         },
         {
           "disabled": false,
-          "document": "作业名称",
+          "document": "<p>作业名称</p>",
           "example": "job-test",
           "member": "string",
           "name": "JobName",
@@ -3108,7 +3186,7 @@
         },
         {
           "disabled": false,
-          "document": "作业描述",
+          "document": "<p>作业描述</p>",
           "example": "job test",
           "member": "string",
           "name": "JobDescription",
@@ -3118,7 +3196,17 @@
         },
         {
           "disabled": false,
-          "document": "作业优先级",
+          "document": "<p>作业创建者</p>",
+          "example": "creator",
+          "member": "string",
+          "name": "Creator",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业优先级</p>",
           "example": "10",
           "member": "uint64",
           "name": "Priority",
@@ -3128,7 +3216,7 @@
         },
         {
           "disabled": false,
-          "document": "作业状态，包括CREATED, QUEING, STARTNG, RUNING, TERMINATING, TERMINATED, SUCCESS, \nFAILED\n",
+          "document": "<p>作业状态，包括CREATED, QUEING, STARTNG, RUNING, TERMINATING, TERMINATED, SUCCESS,<br>FAILED</p>",
           "example": "CREATED",
           "member": "string",
           "name": "JobState",
@@ -3138,7 +3226,7 @@
         },
         {
           "disabled": false,
-          "document": "作业所属集群ID",
+          "document": "<p>作业所属集群ID</p>",
           "example": "hpc-xxxx",
           "member": "string",
           "name": "ClusterId",
@@ -3148,7 +3236,7 @@
         },
         {
           "disabled": false,
-          "document": "作业所属队列名称",
+          "document": "<p>作业所属队列名称</p>",
           "example": "compute",
           "member": "string",
           "name": "QueueName",
@@ -3158,7 +3246,7 @@
         },
         {
           "disabled": false,
-          "document": "完成作业任务所需资源",
+          "document": "<p>完成作业任务所需资源</p>",
           "example": "计算节点: 3",
           "member": "string",
           "name": "OccupyResources",
@@ -3168,8 +3256,8 @@
         },
         {
           "disabled": false,
-          "document": "作业任务创建时间",
-          "example": "无",
+          "document": "<p>作业任务创建时间</p>",
+          "example": "2026-02-28T07:33:17Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -3178,8 +3266,8 @@
         },
         {
           "disabled": false,
-          "document": "作业任务结束时间",
-          "example": "无",
+          "document": "<p>作业任务结束时间</p>",
+          "example": "2026-02-28T07:47:46Z",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -4767,33 +4855,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群挂载CFS文件系统选项。",
+          "document": "<p>集群挂载CFS文件系统选项。</p>",
           "example": "无",
           "member": "CFSOption",
           "name": "CFSOptions",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
-          "document": "集群挂载GooseFS文件系统选项。",
+          "document": "<p>集群挂载GooseFS文件系统选项。</p>",
           "example": "无",
           "member": "GooseFSOption",
           "name": "GooseFSOptions",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
-          "document": "集群挂载GooseFSx文件系统选项。",
+          "document": "<p>集群挂载GooseFSx文件系统选项。</p>",
           "example": "无",
           "member": "GooseFSxOption",
           "name": "GooseFSxOptions",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群挂载COS文件系统选项。</p>",
+          "example": "无",
+          "member": "CosOption",
+          "name": "CosOptions",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -4803,31 +4897,41 @@
       "members": [
         {
           "disabled": false,
-          "document": "CFS存储选项概览信息列表。",
+          "document": "<p>CFS存储选项概览信息列表。</p>",
           "example": "无",
           "member": "CFSOptionOverview",
           "name": "CFSOptions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "GooseFS存储选项概览信息列表。",
+          "document": "<p>GooseFS存储选项概览信息列表。</p>",
           "example": "无",
           "member": "GooseFSOptionOverview",
           "name": "GooseFSOptions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "GooseFSx存储选项概览信息列表。",
+          "document": "<p>GooseFSx存储选项概览信息列表。</p>",
           "example": "无",
           "member": "GooseFSxOptionOverview",
           "name": "GooseFSxOptions",
-          "required": false,
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>COS存储选项概览信息列表。</p>",
+          "example": "无",
+          "member": "CosOptionOverview",
+          "name": "CosOptions",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

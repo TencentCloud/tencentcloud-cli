@@ -231,6 +231,20 @@
       "output": "CreateTRTCSignaturesWithRoomIdResponse",
       "status": "online"
     },
+    "CreateTWeSeeCallback": {
+      "document": "创建 TWeSee 回调目标",
+      "input": "CreateTWeSeeCallbackRequest",
+      "name": "创建 TWeSee 回调目标",
+      "output": "CreateTWeSeeCallbackResponse",
+      "status": "online"
+    },
+    "CreateTWeSeePostPaidService": {
+      "document": "开通 TWeSee 后付费服务",
+      "input": "CreateTWeSeePostPaidServiceRequest",
+      "name": "开通 TWeSee 后付费服务v2",
+      "output": "CreateTWeSeePostPaidServiceResponse",
+      "status": "online"
+    },
     "CreateTWeSeeRecognitionTask": {
       "document": "创建 TWeSee 语义理解任务",
       "input": "CreateTWeSeeRecognitionTaskRequest",
@@ -250,6 +264,13 @@
       "input": "CreateTWeSeeServiceRequest",
       "name": "开通 TWeSee 后付费服务",
       "output": "CreateTWeSeeServiceResponse",
+      "status": "online"
+    },
+    "CreateTWeSeeSubscription": {
+      "document": "开通 TWeSee 预付费订阅",
+      "input": "CreateTWeSeeSubscriptionRequest",
+      "name": "开通 TWeSee 预付费订阅",
+      "output": "CreateTWeSeeSubscriptionResponse",
       "status": "online"
     },
     "CreateTWeTalkAIBot": {
@@ -362,6 +383,13 @@
       "input": "DeleteStudioProductRequest",
       "name": "删除产品",
       "output": "DeleteStudioProductResponse",
+      "status": "online"
+    },
+    "DeleteTWeSeeCallback": {
+      "document": "删除 TWeSee 回调目标",
+      "input": "DeleteTWeSeeCallbackRequest",
+      "name": "删除 TWeSee 回调目标",
+      "output": "DeleteTWeSeeCallbackResponse",
       "status": "online"
     },
     "DeleteTWeTalkAIBot": {
@@ -693,6 +721,13 @@
       "output": "DescribeInstanceResponse",
       "status": "online"
     },
+    "DescribeLicenseOverview": {
+      "document": "查询实例概览详情。",
+      "input": "DescribeLicenseOverviewRequest",
+      "name": "获取实例激活码详情",
+      "output": "DescribeLicenseOverviewResponse",
+      "status": "online"
+    },
     "DescribeLoRaFrequency": {
       "document": "提供查询LoRa自定义频点详情的能力",
       "input": "DescribeLoRaFrequencyRequest",
@@ -777,6 +812,13 @@
       "output": "DescribeSubscribedTopicPolicyResponse",
       "status": "online"
     },
+    "DescribeTWeSeeCallback": {
+      "document": "查询 TWeSee 回调目标详情",
+      "input": "DescribeTWeSeeCallbackRequest",
+      "name": "查询 TWeSee 回调目标详情",
+      "output": "DescribeTWeSeeCallbackResponse",
+      "status": "online"
+    },
     "DescribeTWeSeeConfig": {
       "document": "拉取 TWeSee 配置",
       "input": "DescribeTWeSeeConfigRequest",
@@ -784,11 +826,39 @@
       "output": "DescribeTWeSeeConfigResponse",
       "status": "online"
     },
+    "DescribeTWeSeePostPaidService": {
+      "document": "查询 TWeSee 后付费服务",
+      "input": "DescribeTWeSeePostPaidServiceRequest",
+      "name": "查询 TWeSee 后付费服务",
+      "output": "DescribeTWeSeePostPaidServiceResponse",
+      "status": "online"
+    },
     "DescribeTWeSeeRecognitionTask": {
       "document": "查询 TWeSee 语义理解任务",
       "input": "DescribeTWeSeeRecognitionTaskRequest",
       "name": "查询 TWeSee 语义理解任务",
       "output": "DescribeTWeSeeRecognitionTaskResponse",
+      "status": "online"
+    },
+    "DescribeTWeSeeSubscription": {
+      "document": "查询 TWeSee 预付费订阅",
+      "input": "DescribeTWeSeeSubscriptionRequest",
+      "name": "查询 TWeSee 预付费订阅",
+      "output": "DescribeTWeSeeSubscriptionResponse",
+      "status": "online"
+    },
+    "DescribeTWeSeeTask": {
+      "document": "查询 TWeSee 任务详情",
+      "input": "DescribeTWeSeeTaskRequest",
+      "name": "查询 TWeSee 任务详情",
+      "output": "DescribeTWeSeeTaskResponse",
+      "status": "online"
+    },
+    "DescribeTWeSeeTaskStatistics": {
+      "document": "获取 TWeSee 任务统计数据",
+      "input": "DescribeTWeSeeTaskStatisticsRequest",
+      "name": "查询 TWeSee 任务统计数据",
+      "output": "DescribeTWeSeeTaskStatisticsResponse",
       "status": "online"
     },
     "DescribeTWeTalkAIBot": {
@@ -834,10 +904,17 @@
       "status": "online"
     },
     "DescribeVideoLicense": {
-      "document": "用于查询视频激活码统计概览",
+      "document": "DescribeLicenseOverView代替\n\n用于查询视频激活码统计概览",
       "input": "DescribeVideoLicenseRequest",
       "name": "查询视频激活码统计概览",
       "output": "DescribeVideoLicenseResponse",
+      "status": "deprecated"
+    },
+    "DestroyTWeSeeSubscription": {
+      "document": "销毁 TWeSee 预付费订阅",
+      "input": "DestroyTWeSeeSubscriptionRequest",
+      "name": "销毁 TWeSee 预付费订阅",
+      "output": "DestroyTWeSeeSubscriptionResponse",
       "status": "online"
     },
     "DirectBindDeviceInFamily": {
@@ -1036,6 +1113,20 @@
       "output": "InheritCloudStorageUserResponse",
       "status": "online"
     },
+    "InquireTWeSeeSubscriptionCreatePrice": {
+      "document": "查询 TWeSee 预付费新购价格",
+      "input": "InquireTWeSeeSubscriptionCreatePriceRequest",
+      "name": "查询 TWeSee 预付费新购价格",
+      "output": "InquireTWeSeeSubscriptionCreatePriceResponse",
+      "status": "online"
+    },
+    "InquireTWeSeeSubscriptionRenewPrice": {
+      "document": "查询 TWeSee 预付费续费价格",
+      "input": "InquireTWeSeeSubscriptionRenewPriceRequest",
+      "name": "查询 TWeSee 预付费续费价格",
+      "output": "InquireTWeSeeSubscriptionRenewPriceResponse",
+      "status": "online"
+    },
     "InvokeAISearchService": {
       "document": "视频语义搜索",
       "input": "InvokeAISearchServiceRequest",
@@ -1055,6 +1146,13 @@
       "input": "InvokeExternalSourceAIServiceTaskRequest",
       "name": "同步执行外部视频AI分析任务",
       "output": "InvokeExternalSourceAIServiceTaskResponse",
+      "status": "online"
+    },
+    "InvokeTWeSeeComprehension": {
+      "document": "调用 TWeSee 视觉理解算法",
+      "input": "InvokeTWeSeeComprehensionRequest",
+      "name": "调用 TWeSee 视觉理解算法",
+      "output": "InvokeTWeSeeComprehensionResponse",
       "status": "online"
     },
     "InvokeTWeSeeRecognitionTask": {
@@ -1104,6 +1202,20 @@
       "input": "ListProductOtaModulesRequest",
       "name": "获取产品OTA模块列表",
       "output": "ListProductOtaModulesResponse",
+      "status": "online"
+    },
+    "ListTWeSeeCallback": {
+      "document": "查询 TWeSee 回调目标列表",
+      "input": "ListTWeSeeCallbackRequest",
+      "name": "查询 TWeSee 回调目标列表",
+      "output": "ListTWeSeeCallbackResponse",
+      "status": "online"
+    },
+    "ListTWeSeeTasks": {
+      "document": "短摘要列表查询",
+      "input": "ListTWeSeeTasksRequest",
+      "name": "查询 TWeSee 任务列表",
+      "output": "ListTWeSeeTasksResponse",
       "status": "online"
     },
     "ListTopicPolicy": {
@@ -1211,11 +1323,32 @@
       "output": "ModifyStudioProductResponse",
       "status": "online"
     },
+    "ModifyTWeSeeCallback": {
+      "document": "修改 TWeSee 回调目标",
+      "input": "ModifyTWeSeeCallbackRequest",
+      "name": "修改 TWeSee 回调目标",
+      "output": "ModifyTWeSeeCallbackResponse",
+      "status": "online"
+    },
     "ModifyTWeSeeConfig": {
       "document": "修改 TWeSee 配置",
       "input": "ModifyTWeSeeConfigRequest",
       "name": "修改 TWeSee 配置",
       "output": "ModifyTWeSeeConfigResponse",
+      "status": "online"
+    },
+    "ModifyTWeSeeSubscription": {
+      "document": "修改 TWeSee 预付费订阅",
+      "input": "ModifyTWeSeeSubscriptionRequest",
+      "name": "修改 TWeSee 预付费订阅",
+      "output": "ModifyTWeSeeSubscriptionResponse",
+      "status": "online"
+    },
+    "ModifyTWeSeeSubscriptionRenewFlag": {
+      "document": "修改 TWeSee 预付费订阅续费标识",
+      "input": "ModifyTWeSeeSubscriptionRenewFlagRequest",
+      "name": "修改 TWeSee 预付费订阅续费标识",
+      "output": "ModifyTWeSeeSubscriptionRenewFlagResponse",
       "status": "online"
     },
     "ModifyTWeTalkAIBot": {
@@ -1302,6 +1435,13 @@
       "output": "RemoveUserByRoomIdFromTRTCResponse",
       "status": "online"
     },
+    "RenewTWeSeeSubscription": {
+      "document": "续费 TWeSee 预付费订阅",
+      "input": "RenewTWeSeeSubscriptionRequest",
+      "name": "续费 TWeSee 预付费订阅",
+      "output": "RenewTWeSeeSubscriptionResponse",
+      "status": "online"
+    },
     "ResetCloudStorage": {
       "document": "重置云存服务",
       "input": "ResetCloudStorageRequest",
@@ -1356,6 +1496,13 @@
       "input": "SearchTopicRuleRequest",
       "name": "搜索规则",
       "output": "SearchTopicRuleResponse",
+      "status": "online"
+    },
+    "TerminateTWeSeeSubscription": {
+      "document": "退订 TWeSee 预付费订阅",
+      "input": "TerminateTWeSeeSubscriptionRequest",
+      "name": "退订 TWeSee 预付费订阅",
+      "output": "TerminateTWeSeeSubscriptionResponse",
       "status": "online"
     },
     "TransferCloudStorage": {
@@ -4965,6 +5112,118 @@
       ],
       "type": "object"
     },
+    "CreateTWeSeeCallbackRequest": {
+      "document": "CreateTWeSeeCallback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回调类型。可选值：\\n- `http` HTTP 回调",
+          "example": "http",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回调 URL。要求 http 或 https 协议，仅支持 80 或 443 端口",
+          "example": "https://example.qq.com/twesee-callback",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回调签名 Token。最大长度 128",
+          "example": "your-token-here",
+          "member": "string",
+          "name": "CallbackToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTWeSeeCallbackResponse": {
+      "document": "CreateTWeSeeCallback返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回调目标 ID",
+          "example": "callback-iak6g98u",
+          "member": "string",
+          "name": "CallbackId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTWeSeePostPaidServiceRequest": {
+      "document": "CreateTWeSeePostPaidService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解\n- `IMG_COMP`：图片理解",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTWeSeePostPaidServiceResponse": {
+      "document": "CreateTWeSeePostPaidService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单 ID",
+          "example": "20260417*********427251",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源 ID",
+          "example": "twesee-753yd29x1u********g0we9",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单状态",
+          "example": "DELIVERED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTWeSeeRecognitionTaskRequest": {
       "document": "CreateTWeSeeRecognitionTask请求参数结构体",
       "members": [
@@ -5309,6 +5568,156 @@
     "CreateTWeSeeServiceResponse": {
       "document": "CreateTWeSeeService返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTWeSeeSubscriptionRequest": {
+      "document": "CreateTWeSeeSubscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev002",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "套餐规格。可选值：\n\n- `BASIC`：包年包月基础版（适用于视频理解）",
+          "example": "BASIC",
+          "member": "string",
+          "name": "ServiceTier",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅购买时长，单位：月，支持 1-60",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义订单 ID",
+          "example": "order-0012",
+          "member": "string",
+          "name": "CustomOrderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费标识。可选值：\n- `NOTIFY_AND_MANUAL_RENEW`：到期前通知并手动续费（默认）\n- `NOTIFY_AND_AUTO_RENEW`：到期前通知并自动续费\n- `DISABLE_NOTIFY_AND_MANUAL_RENEW`：不通知且手动续费",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTWeSeeSubscriptionResponse": {
+      "document": "CreateTWeSeeSubscription返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单 ID",
+          "example": "20260420*********550201",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单状态",
+          "example": "DELIVERED",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源 ID",
+          "example": "twesee-753yd29x30********jqww1",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原价",
+          "example": "2000",
+          "member": "string",
+          "name": "OriginalPrice",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折后价",
+          "example": "1200",
+          "member": "string",
+          "name": "DiscountPrice",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "币种",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6328,6 +6737,33 @@
     },
     "DeleteStudioProductResponse": {
       "document": "DeleteStudioProduct返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTWeSeeCallbackRequest": {
+      "document": "DeleteTWeSeeCallback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回调目标 ID，格式为 `callback-` + 8 位小写字母数字",
+          "example": "callback-iak6g98u",
+          "member": "string",
+          "name": "CallbackId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTWeSeeCallbackResponse": {
+      "document": "DeleteTWeSeeCallback返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10039,6 +10475,33 @@
       ],
       "type": "object"
     },
+    "DescribeLicenseOverviewRequest": {
+      "document": "DescribeLicenseOverview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-DGAFvpuVF7",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseOverviewResponse": {
+      "document": "DescribeLicenseOverview返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLoRaFrequencyRequest": {
       "document": "DescribeLoRaFrequency请求参数结构体",
       "members": [
@@ -10623,6 +11086,43 @@
       ],
       "type": "object"
     },
+    "DescribeTWeSeeCallbackRequest": {
+      "document": "DescribeTWeSeeCallback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回调目标 ID",
+          "example": "callback-iak6g98u",
+          "member": "string",
+          "name": "CallbackId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTWeSeeCallbackResponse": {
+      "document": "DescribeTWeSeeCallback返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回调目标详情",
+          "example": "无",
+          "member": "SeeCallbackInfo",
+          "name": "CallbackInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTWeSeeConfigRequest": {
       "document": "DescribeTWeSeeConfig请求参数结构体",
       "members": [
@@ -10727,6 +11227,53 @@
       ],
       "type": "object"
     },
+    "DescribeTWeSeePostPaidServiceRequest": {
+      "document": "DescribeTWeSeePostPaidService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解\n- `IMG_COMP`：图片理解",
+          "example": "IMG_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTWeSeePostPaidServiceResponse": {
+      "document": "DescribeTWeSeePostPaidService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "后付费资源 ID",
+          "example": "twesee-753yd29x2z********rdlaa",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源状态。可选值：\n- `NORMAL`：正常\n- `ISOLATED`：已隔离",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTWeSeeRecognitionTaskRequest": {
       "document": "DescribeTWeSeeRecognitionTask请求参数结构体",
       "members": [
@@ -10762,6 +11309,300 @@
           "name": "TaskInfo",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTWeSeeSubscriptionRequest": {
+      "document": "DescribeTWeSeeSubscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev002",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTWeSeeSubscriptionResponse": {
+      "document": "DescribeTWeSeeSubscription返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源 ID",
+          "example": "twesee-753yd29x30********jqww1",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐规格。可能取值：\n\n- `BASIC`：包年包月基础版（适用于视频理解）",
+          "example": "BASIC",
+          "member": "string",
+          "name": "ServiceTier",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到期时间，秒级时间戳",
+          "example": "1781897528",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启用状态，`true` 为开启，`false` 为关闭",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅状态。可能取值：\n\n- `NORMAL`：正常\n- `ISOLATED`：隔离",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视觉理解配置（适用于视频理解、图片理解）",
+          "example": "无",
+          "member": "SeeComprehensionConfig",
+          "name": "ComprehensionConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频语义浓缩配置（适用于视频语义浓缩）",
+          "example": "无",
+          "member": "SeeCompHighlightConfig",
+          "name": "CompHighlightConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云存事件 ID 过滤规则配置项",
+          "example": "无",
+          "member": "SeeEventIdFilterConfig",
+          "name": "EventIdFilterConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前周期基础能力总额度",
+          "example": "3000",
+          "member": "int64",
+          "name": "QuotaBasic",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前周期基础能力已用额度",
+          "example": "2",
+          "member": "int64",
+          "name": "QuotaUsedBasic",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前周期高级能力总额度",
+          "example": "0",
+          "member": "int64",
+          "name": "QuotaAdvanced",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前周期高级能力已用额度",
+          "example": "0",
+          "member": "int64",
+          "name": "QuotaUsedAdvanced",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "额度刷新时间",
+          "example": "1779219128",
+          "member": "int64",
+          "name": "QuotaRefreshTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTWeSeeTaskRequest": {
+      "document": "DescribeTWeSeeTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "comp-d57939bb-b155-5623-c7e7-1fb8dd0654dd",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTWeSeeTaskResponse": {
+      "document": "DescribeTWeSeeTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务信息",
+          "example": "无",
+          "member": "SeeTaskInfo",
+          "name": "TaskInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTWeSeeTaskStatisticsRequest": {
+      "document": "DescribeTWeSeeTaskStatistics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解\n- `IMG_COMP`：图片理解",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "套餐规格。可选值：\n\n- `POSTPAID`：后付费（适用于视频理解、图片理解）\n- `BASIC`：包年包月基础版（适用于视频理解）",
+          "example": "POSTPAID",
+          "member": "string",
+          "name": "ServiceTier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间 UNIX 时间戳，单位：秒",
+          "example": "1776621600",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间 UNIX 时间戳，单位：秒",
+          "example": "1776625200",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据点间隔，单位：秒；-1 表示汇总，只返回 1 个数据点",
+          "example": "3600",
+          "member": "int64",
+          "name": "Interval",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTWeSeeTaskStatisticsResponse": {
+      "document": "DescribeTWeSeeTaskStatistics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计数据",
+          "example": "无",
+          "member": "SeeStatItem",
+          "name": "StatData",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -11126,6 +11967,60 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyTWeSeeSubscriptionRequest": {
+      "document": "DestroyTWeSeeSubscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev002",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyTWeSeeSubscriptionResponse": {
+      "document": "DestroyTWeSeeSubscription返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -14389,6 +15284,174 @@
       ],
       "type": "object"
     },
+    "InquireTWeSeeSubscriptionCreatePriceRequest": {
+      "document": "InquireTWeSeeSubscriptionCreatePrice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "套餐规格。可选值：\n\n- `BASIC`：包年包月基础版（适用于视频理解）",
+          "example": "BASIC",
+          "member": "string",
+          "name": "ServiceTier",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅购买时长，单位：月，支持 1-60",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquireTWeSeeSubscriptionCreatePriceResponse": {
+      "document": "InquireTWeSeeSubscriptionCreatePrice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "原价",
+          "example": "2000",
+          "member": "string",
+          "name": "OriginalPrice",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折后价",
+          "example": "1200",
+          "member": "string",
+          "name": "DiscountPrice",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "币种",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquireTWeSeeSubscriptionRenewPriceRequest": {
+      "document": "InquireTWeSeeSubscriptionRenewPrice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev002",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费时长，单位：月，支持 1-60",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquireTWeSeeSubscriptionRenewPriceResponse": {
+      "document": "InquireTWeSeeSubscriptionRenewPrice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "原价",
+          "example": "2000",
+          "member": "string",
+          "name": "OriginalPrice",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折后价",
+          "example": "1200",
+          "member": "string",
+          "name": "DiscountPrice",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "币种",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InstanceDetail": {
       "document": "实例信息\n公共实例过期时间 0001-01-01T00:00:00Z，公共实例是永久有效",
       "members": [
@@ -14649,7 +15712,7 @@
         {
           "disabled": false,
           "document": "自然语言查询",
-          "example": "今天发生了什么?",
+          "example": "有人走过",
           "member": "string",
           "name": "Query",
           "required": true,
@@ -14744,6 +15807,15 @@
           "name": "VectorSearchTopK",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索结果的排序方式，可选值：\n\n- `CORRELATION`：按相关性（默认）\n- `TIME_ASC`：按时间升序\n- `TIME_DESC`：按时间降序",
+          "example": "CORRELATION",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14754,7 +15826,7 @@
         {
           "disabled": false,
           "document": "基于搜索结果的总结",
-          "example": "What happened on April 1st",
+          "example": "共1段视频：雨后路滑，浅色路人正小心行走。安全起见，请防滑慢行哦！",
           "member": "string",
           "name": "Summary",
           "output_required": false,
@@ -15019,6 +16091,128 @@
           "name": "TaskInfo",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InvokeTWeSeeComprehensionRequest": {
+      "document": "InvokeTWeSeeComprehension请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入视频 / 图片的 URL",
+          "example": "https://****-test-125*****22.cos.ap-guangzhou.myqcloud.com/********.jpg",
+          "member": "string",
+          "name": "InputURL",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解\n- `IMG_COMP`：图片理解",
+          "example": "IMG_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务元数据",
+          "example": "无",
+          "member": "SeeTaskMetadata",
+          "name": "Metadata",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视觉理解配置项",
+          "example": "无",
+          "member": "SeeComprehensionConfig",
+          "name": "ComprehensionConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "等待结果的超时时间（单位：秒）。填 0 表示无需等待结果。最大超时时长 25 秒，默认超时时长 20 秒。",
+          "example": "20",
+          "member": "int64",
+          "name": "WaitResultTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "回调目标 ID",
+          "example": "cb-n9sl1wur",
+          "member": "string",
+          "name": "CallbackId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InvokeTWeSeeComprehensionResponse": {
+      "document": "InvokeTWeSeeComprehension返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "comp-12e89917-c932-c27d-977f-bd16cc5c3b92",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态。可能取值：\n\n- `1`：失败\n- `2`：空结果\n- `3`：有效结果\n- `4`：处理中",
+          "example": "3",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视觉理解结果",
+          "example": "无",
+          "member": "SeeComprehensionResult",
+          "name": "ComprehensionResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "完成该任务所消耗的基础能力额度",
+          "example": "1",
+          "member": "int64",
+          "name": "CostBasic",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "完成该任务所消耗的高级能力额度",
+          "example": "0",
+          "member": "int64",
+          "name": "CostAdvanced",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -15428,12 +16622,21 @@
         },
         {
           "disabled": false,
-          "document": "返回的关键字最大数量，默认为5；最大不能超过10",
+          "document": "返回的关键词的最大数量，默认为5；最大不能超过10",
           "example": "5",
           "member": "uint64",
           "name": "KeywordsMaxNum",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回的关键词的语言类型，支持的类型有：en-US、zh-CN",
+          "example": "zh-CN",
+          "member": "string",
+          "name": "KeywordsLang",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15443,8 +16646,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "基于搜索结果的总结",
-          "example": "What happened on April 1st",
+          "document": "根据视频内容生成的关键词",
+          "example": "[\"人走在路边\"]",
           "member": "string",
           "name": "Keywords",
           "output_required": false,
@@ -16153,6 +17356,199 @@
           "name": "Modules",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTWeSeeCallbackRequest": {
+      "document": "ListTWeSeeCallback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页大小，范围 1-100",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，范围 0-10000",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTWeSeeCallbackResponse": {
+      "document": "ListTWeSeeCallback返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回调目标列表",
+          "example": "无",
+          "member": "SeeCallbackInfo",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已创建的回调目标总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTWeSeeTasksRequest": {
+      "document": "ListTWeSeeTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev002",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算法类目。可选值：\n- `COMPREHENSION`：视觉理解\n- `HIGHLIGHT`：视频浓缩",
+          "example": "COMPREHENSION",
+          "member": "string",
+          "name": "ServiceCategory",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页拉取数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页拉取偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型。\n\n当 ServiceCategory 为 `COMPREHENSION` 时，可选值包括：\n- `VID_COMP`：视频理解\n- `IMG_COMP`：图片理解\n- `CONT_PERSON_MOTIONLESS`：静姿检测\n\n当 ServiceCategory 为 `HIGHLIGHT` 时，可选值包括：\n- `COMP_HIGHLIGHT`：视频浓缩",
+          "example": "[\"VID_COMP\"]",
+          "member": "string",
+          "name": "ServiceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询任务时间范围的起始时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。",
+          "example": "1776621600000",
+          "member": "int64",
+          "name": "StartTimeMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询任务时间范围的结束时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。",
+          "example": "1776636000000",
+          "member": "int64",
+          "name": "EndTimeMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "要查询的任务的状态条件。不传则不按照状态过滤，可选值：\n\n- `1`：失败\n- `2`：空结果\n- `3`：有效结果",
+          "example": "3",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL",
+          "example": "1780022332",
+          "member": "int64",
+          "name": "FileURLExpireTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTWeSeeTasksResponse": {
+      "document": "ListTWeSeeTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务列表",
+          "example": "无",
+          "member": "SeeTaskInfo",
+          "name": "Tasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -17441,6 +18837,60 @@
       ],
       "type": "object"
     },
+    "ModifyTWeSeeCallbackRequest": {
+      "document": "ModifyTWeSeeCallback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回调目标 ID，格式为 `callback-` + 8 位小写字母数字",
+          "example": "callback-iak6g98u",
+          "member": "string",
+          "name": "CallbackId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回调 URL，需要可访问并通过 Echo 校验",
+          "example": "https://example.qq.com/twesee-callback?v=2",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回调类型。当前仅支持：`http`",
+          "example": "http",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回调签名 token，最大长度 128",
+          "example": "token-456",
+          "member": "string",
+          "name": "CallbackToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTWeSeeCallbackResponse": {
+      "document": "ModifyTWeSeeCallback返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyTWeSeeConfigRequest": {
       "document": "ModifyTWeSeeConfig请求参数结构体",
       "members": [
@@ -17530,6 +18980,159 @@
     },
     "ModifyTWeSeeConfigResponse": {
       "document": "ModifyTWeSeeConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTWeSeeSubscriptionRenewFlagRequest": {
+      "document": "ModifyTWeSeeSubscriptionRenewFlag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev002",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费标识。可选值：\n- `NOTIFY_AND_MANUAL_RENEW`：到期前通知并手动续费\n- `NOTIFY_AND_AUTO_RENEW`：到期前通知并自动续费\n- `DISABLE_NOTIFY_AND_MANUAL_RENEW`：不通知且手动续费",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTWeSeeSubscriptionRenewFlagResponse": {
+      "document": "ModifyTWeSeeSubscriptionRenewFlag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTWeSeeSubscriptionRequest": {
+      "document": "ModifyTWeSeeSubscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev002",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "功能开关。`true` 为开启，`false` 为关闭；不传表示不修改",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "视觉理解配置（适用于视频理解、图片理解），不传则不修改",
+          "example": "无",
+          "member": "SeeComprehensionConfig",
+          "name": "ComprehensionConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频语义浓缩配置（适用于视频语义浓缩），不传则不修改",
+          "example": "无",
+          "member": "SeeCompHighlightConfig",
+          "name": "CompHighlightConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "云存事件 ID 过滤规则配置，不传则不修改",
+          "example": "无",
+          "member": "SeeEventIdFilterConfig",
+          "name": "EventIdFilterConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTWeSeeSubscriptionResponse": {
+      "document": "ModifyTWeSeeSubscription返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -19392,6 +20995,138 @@
       ],
       "type": "object"
     },
+    "RenewTWeSeeSubscriptionRequest": {
+      "document": "RenewTWeSeeSubscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev002",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费时长，单位：月，支持 1-60",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义订单 ID",
+          "example": "order-0013",
+          "member": "string",
+          "name": "CustomOrderId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewTWeSeeSubscriptionResponse": {
+      "document": "RenewTWeSeeSubscription返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单 ID",
+          "example": "2026042**********584511",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单状态",
+          "example": "DELIVERED",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源 ID",
+          "example": "twesee-753yd29x30********jqww1",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原价",
+          "example": "2000",
+          "member": "string",
+          "name": "OriginalPrice",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折后价",
+          "example": "1200",
+          "member": "string",
+          "name": "DiscountPrice",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "币种",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResetCloudStorageAIServiceRequest": {
       "document": "ResetCloudStorageAIService请求参数结构体",
       "members": [
@@ -19863,6 +21598,332 @@
       ],
       "type": "object"
     },
+    "SeeCallbackInfo": {
+      "document": "TWeSee 回调目标信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回调目标 ID",
+          "example": "callback-iak6g98u",
+          "member": "string",
+          "name": "CallbackId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回调签名 token",
+          "example": "your-token-here",
+          "member": "string",
+          "name": "CallbackToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回调 URL",
+          "example": "https://example.qq.com/twesee-callback",
+          "member": "string",
+          "name": "CallbackUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间（秒级时间戳）",
+          "example": "1738827748",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回调类型",
+          "example": "http",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间（秒级时间戳）",
+          "example": "1738827789",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SeeCompHighlightConfig": {
+      "document": "TWeSee 视频语义浓缩配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否禁用视频浓缩",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableHighlight",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包含在浓缩结果中的目标类别。可选值：\n\n- `person`：人\n- `pet`：宠物\n- `vehicle`：车辆",
+          "example": "[\"pet\"]",
+          "member": "string",
+          "name": "DetectTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定是否返回浓缩视频的摘要文本",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSummary",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定返回的关键帧图像数量",
+          "example": "5",
+          "member": "int64",
+          "name": "KeyFramesNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SeeCompHighlightResult": {
+      "document": "TWeSee 视频语义浓缩结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "摘要文本",
+          "example": "",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SeeComprehensionConfig": {
+      "document": "TWeSee 视觉理解配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "拓展的目标及事件检测类别",
+          "example": "[\"baby\"]",
+          "member": "string",
+          "name": "DetectTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使该视频 / 图片录入搜索库，后续可进行搜索",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSearch",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主输出语言，可选值包括：\n- `zh` 中文（默认值）\n- `en` 英语\n- `ja` 日语\n- `ko` 韩文\n- `pt-BR` 葡萄牙语（巴西）\n- `th` 泰语\n- `ms` 马来语",
+          "example": "zh",
+          "member": "string",
+          "name": "OutputLang",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "次选输出语言，可选值包括：\n- `zh` 中文\n- `en` 英语\n- `ja` 日语\n- `ko` 韩文\n- `pt-BR` 葡萄牙语（巴西）\n- `th` 泰语\n- `ms` 马来语\n",
+          "example": "en",
+          "member": "string",
+          "name": "AlternativeOutputLang",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多摄像头布局定义。可选值包括：\n\n- 单摄（默认值）：`Single`\n\n- 双摄（纵向排列）- 全部画面：`Vertical,Num=2,Index=0;1`\n- 双摄（纵向排列）- 画面1：`Vertical,Num=2,Index=0`\n- 双摄（纵向排列）- 画面2：`Vertical,Num=2,Index=1`\n\n- 三摄（纵向排列）- 全部画面：`Vertical,Num=3,Index=0;1;2`\n- 三摄（纵向排列）- 画面1：`Vertical,Num=3,Index=0`\n- 三摄（纵向排列）- 画面2：`Vertical,Num=3,Index=1`\n- 三摄（纵向排列）- 画面3：`Vertical,Num=3,Index=2`\n- 三摄（纵向排列）- 画面1+2：`Vertical,Num=3,Index=0;1`\n- 三摄（纵向排列）- 画面1+3：`Vertical,Num=3,Index=0;2`\n- 三摄（纵向排列）- 画面2+3：`Vertical,Num=3,Index=1;2`",
+          "example": "Single",
+          "member": "string",
+          "name": "MultiCameraLayout",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大处理的输入视频时长，单位：秒（仅对视频输入生效）",
+          "example": "30",
+          "member": "int64",
+          "name": "MaxDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SeeComprehensionResult": {
+      "document": "TWeSee 视觉理解结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "识别到的目标类型与事件标签。可能取值：\n\n- `person`：人\n- `vehicle`：车辆\n- `dog`：狗\n- `cat`：猫\n- `fire`：火焰\n- `smoke`：烟雾\n- `package`：快递包裹\n- `license_plate`：车牌",
+          "example": "[\"cat\"]",
+          "member": "string",
+          "name": "DetectedClassifications",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "摘要文本",
+          "example": "一只猫坐在吉他盒里，旁边有只小鸟飞过",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "摘要文本（次选语言）",
+          "example": "A person in light-colored clothes walking on a wet and slippery roadside after the rain",
+          "member": "string",
+          "name": "AlternativeSummary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，可能取值：\n\n- `DownloadFailed`：下载视频/图片文件失败\n- `ReadFailed`：读取视频/图片文件失败",
+          "example": "DOWNLOAD_FAILED",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误消息",
+          "example": "Input file is not a video",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SeeDetectContinuousConfig": {
+      "document": "TWeSee 标签持续检测配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测标签。可选值：\n- `person_motionless`：人物静止",
+          "example": "person_motionless",
+          "member": "string",
+          "name": "DetectType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启用检测的按日周期起始时间分钟数。取值范围：0 ~ 1440",
+          "example": "0",
+          "member": "int64",
+          "name": "DailyStartTime",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启用检测的按日周期结束时间分钟数。取值范围：0 ~ 1440",
+          "example": "1440",
+          "member": "int64",
+          "name": "DailyEndTime",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检测间隔分钟数。取值范围：5 ~ 60。",
+          "example": "5",
+          "member": "int64",
+          "name": "Interval",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SeeDetectContinuousResult": {
+      "document": "TWeSee 标签持续检测结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测标签是否在当前区间内持续",
+          "example": "true",
+          "member": "bool",
+          "name": "IsContinuousInRange",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SeeEventIdFilterConfig": {
       "document": "TWeSee 处理云存事件 EventId 的过滤规则配置",
       "members": [
@@ -19886,6 +21947,280 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SeeStatItem": {
+      "document": "TWeSee 统计数据点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间",
+          "example": "2026-04-20 00:00:00",
+          "member": "string",
+          "name": "Time",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基础能力用量",
+          "example": "1",
+          "member": "int64",
+          "name": "CostBasic",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高级能力用量",
+          "example": "1",
+          "member": "int64",
+          "name": "CostAdvanced",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SeeTaskInfo": {
+      "document": "TWeSee 任务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "comp-aed98063-6574-867d-7e9e-a689e3aefbb5",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态。可能取值：\n\n- `1`：失败\n- `2`：空结果\n- `3`：有效结果\n- `4`：处理中",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务元数据",
+          "example": "无",
+          "member": "SeeTaskMetadata",
+          "name": "Metadata",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "算法类目。可能取值：\n\n- `COMPREHENSION`：视觉理解\n- `HIGHLIGHT`：视频浓缩",
+          "example": "COMPREHENSION",
+          "member": "string",
+          "name": "ServiceCategory",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "算法类型。可能取值：\n\n- `VID_COMP`：视频理解\n- `IMG_COMP`：图片理解\n- `COMP_HIGHLIGHT`：视频浓缩",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐规格。可能取值：\n\n- `POSTPAID`：后付费（适用于视频理解、图片理解）\n- `BASIC`：包年包月基础版（适用于视频理解）",
+          "example": "POSTPAID",
+          "member": "string",
+          "name": "ServiceTier",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视觉理解结果（适用于视频理解、图片理解）",
+          "example": "无",
+          "member": "SeeComprehensionResult",
+          "name": "ComprehensionResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频语义浓缩结果（适用于视频语义浓缩）",
+          "example": "无",
+          "member": "SeeCompHighlightResult",
+          "name": "CompHighlightResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签持续检测结果",
+          "example": "无",
+          "member": "SeeDetectContinuousResult",
+          "name": "DetectContinuousResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "完成该任务所消耗的基础能力额度",
+          "example": "1",
+          "member": "int64",
+          "name": "CostBasic",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "完成该任务所消耗的高级能力额度",
+          "example": "1",
+          "member": "int64",
+          "name": "CostAdvanced",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出文件名列表",
+          "example": "[\"output.mp4\"]",
+          "member": "string",
+          "name": "Files",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出文件详情列表",
+          "example": "无",
+          "member": "CloudStorageAIServiceTaskFileInfo",
+          "name": "FilesInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "1776619154",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后更新时间",
+          "example": "1776619157",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SeeTaskMetadata": {
+      "document": "TWeSee 任务元数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev002",
+          "member": "string",
+          "name": "DeviceName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件起始时间（毫秒级时间戳）",
+          "example": "1776629102000",
+          "member": "int64",
+          "name": "StartTimeMs",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件结束时间（毫秒级时间戳）",
+          "example": "1776629110000",
+          "member": "int64",
+          "name": "EndTimeMs",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义事件 ID",
+          "example": "_sys_id1_data",
+          "member": "string",
+          "name": "CustomId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -21423,6 +23758,100 @@
       ],
       "usage": "out"
     },
+    "TerminateTWeSeeSubscriptionRequest": {
+      "document": "TerminateTWeSeeSubscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev002",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateTWeSeeSubscriptionResponse": {
+      "document": "TerminateTWeSeeSubscription返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "退订订单 ID",
+          "example": "20260420*********539551",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "退订订单状态",
+          "example": "DELIVERED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "退款金额（退款为负数）",
+          "example": "-1160",
+          "member": "string",
+          "name": "Price",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "币种",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ThumbnailURLInfoList": {
       "document": "缩略图信息",
       "members": [
@@ -22619,6 +25048,17 @@
           "example": "无",
           "member": "VisionCustomDetectQuery",
           "name": "CustomDetectQueries",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签持续检测配置",
+          "example": "无",
+          "member": "SeeDetectContinuousConfig",
+          "name": "DetectContinuous",
           "output_required": false,
           "required": false,
           "type": "list",

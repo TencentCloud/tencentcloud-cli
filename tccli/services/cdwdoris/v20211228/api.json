@@ -872,6 +872,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务调度id",
+          "example": "311",
+          "member": "int64",
+          "name": "ScheduleId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -921,6 +932,199 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BackupScheduleInfo": {
+      "document": "备份、迁移任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "迁移类型：\n1-远端集群迁移；2-COS迁移",
+          "example": "1",
+          "member": "int64",
+          "name": "BackupType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前任务现存实例数",
+          "example": "3",
+          "member": "int64",
+          "name": "ExistCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos信息",
+          "example": "http://cos-xxx",
+          "member": "string",
+          "name": "CosSourceInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "doris信息",
+          "example": "dorisSource",
+          "member": "string",
+          "name": "DorisSourceInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "恢复类型",
+          "example": "2",
+          "member": "int64",
+          "name": "RestoreType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照保留策略",
+          "example": "无",
+          "member": "SnapshotRemainPolicy",
+          "name": "SnapshotRemainPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "远程备份地域",
+          "example": "ap-chongqing",
+          "member": "string",
+          "name": "DataRemoteRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否在宽限期内",
+          "example": "true",
+          "member": "bool",
+          "name": "IsWithinGracePeriod",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "宽限期（天数）",
+          "example": "10",
+          "member": "int64",
+          "name": "GracePeriod",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "宽限开始时间",
+          "example": "2025-11-10 21:26:31",
+          "member": "string",
+          "name": "GraceStartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管桶类型：standard-标准，多可用区-MAZ",
+          "example": "maz",
+          "member": "string",
+          "name": "BucketType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启安全锁：0-未开启，1-已开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableSecurityLock",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "cdwdoris-123",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名",
+          "example": "实例名",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态",
+          "example": "5",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态描述",
+          "example": "运行中",
+          "member": "string",
+          "name": "InstanceStatusDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶加密状态信息",
+          "example": "无",
+          "member": "BucketEncryptionInfo",
+          "name": "BucketEncryption",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -2733,7 +2937,7 @@
         {
           "disabled": false,
           "document": "地域列表",
-          "example": "[ ]",
+          "example": "无",
           "member": "RegionAreaInfo",
           "name": "Items",
           "output_required": true,
@@ -2758,6 +2962,16 @@
           "name": "AvailableWhiteListNames",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "隔离天数",
+          "example": "7",
+          "member": "int64",
+          "name": "IsolationDays",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -2850,7 +3064,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "\"cdwch-xxx\"",
           "member": "string",
           "name": "InstanceId",
@@ -2859,7 +3073,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型：\n0-不限制，或使用TypeFilters过滤；\n1-备份恢复（包括周期备份和一次性备份）；\n2-数据迁移（包括跨集群迁移和cos迁移）\t",
+          "document": "<p>任务类型：<br>0-不限制，或使用TypeFilters过滤；<br>1-备份恢复（包括周期备份和一次性备份）；<br>2-数据迁移（包括跨集群迁移和cos迁移）</p>",
           "example": "1",
           "member": "int64",
           "name": "ApplicationType",
@@ -2868,7 +3082,43 @@
         },
         {
           "disabled": false,
-          "document": "分页大小",
+          "document": "<p>任务类型过滤器</p>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "TypeFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态过滤器</p>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "StatusFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名称过滤器</p>",
+          "example": "\"jobname\"",
+          "member": "string",
+          "name": "ScheduleNameFilters",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按照快照生成时间排序，默认DESC：<br>ASC-升序<br>DESC-降序</p>",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页大小</p>",
           "example": "12",
           "member": "int64",
           "name": "PageSize",
@@ -2877,7 +3127,7 @@
         },
         {
           "disabled": false,
-          "document": "页号",
+          "document": "<p>页号</p>",
           "example": "10",
           "member": "int64",
           "name": "PageNum",
@@ -2886,7 +3136,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "\"2021-02-12\"",
           "member": "string",
           "name": "BeginTime",
@@ -2895,7 +3145,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "\"2021-02-12\"",
           "member": "string",
           "name": "EndTime",
@@ -2904,7 +3154,7 @@
         },
         {
           "disabled": false,
-          "document": "jobid的string类型",
+          "document": "<p>jobid的string类型</p>",
           "example": "str",
           "member": "string",
           "name": "JobIdFiltersStr",
@@ -2913,7 +3163,7 @@
         },
         {
           "disabled": false,
-          "document": "0-未加密；1-已加密",
+          "document": "<p>0-未加密；1-已加密</p>",
           "example": "[0]",
           "member": "int64",
           "name": "EncryptionFilters",
@@ -2928,7 +3178,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务列表",
+          "document": "<p>任务列表</p>",
           "example": "无",
           "member": "BackUpJobDisplay",
           "name": "BackUpJobs",
@@ -2938,7 +3188,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息",
+          "document": "<p>错误信息</p>",
           "example": "error",
           "member": "string",
           "name": "ErrorMsg",
@@ -2948,7 +3198,7 @@
         },
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -2958,7 +3208,7 @@
         },
         {
           "disabled": false,
-          "document": "当前时间",
+          "document": "<p>当前时间</p>",
           "example": "2025-11-11 17:41:18",
           "member": "string",
           "name": "CurrentTime",
@@ -2980,7 +3230,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型\n0-不限制，或使用TypeFilters过滤；\n1-备份恢复（包括周期备份和一次性备份）；\n2-数据迁移（包括跨集群迁移和cos迁移）",
+          "document": "<p>任务类型<br>0-不限制，或使用TypeFilters过滤；<br>1-备份恢复（包括周期备份和一次性备份）；<br>2-数据迁移（包括跨集群迁移和cos迁移）</p>",
           "example": "1",
           "member": "int64",
           "name": "ApplicationType",
@@ -2989,12 +3239,84 @@
         },
         {
           "disabled": false,
-          "document": "0-未加密；1-已加密",
+          "document": "<p>创建人过滤器</p>",
+          "example": "[\"14311\"]",
+          "member": "string",
+          "name": "UsersFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型过滤器。<br>0-周期；<br>1-一次性；<br>2-数据迁移(即3和4的合集)；<br>3-远端集群迁移；<br>4-COS迁移</p>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "TypeFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态过滤器</p>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "StatusFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序：<br>DESC-降序<br>ASC-升序</p>",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名过滤器</p>",
+          "example": "jobname",
+          "member": "string",
+          "name": "ScheduleNameFilters",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页大小</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>0-未加密；1-已加密</p>",
           "example": "[1]",
           "member": "int64",
           "name": "EncryptionFilters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度任务id过滤</p>",
+          "example": "312",
+          "member": "int64",
+          "name": "ScheduleId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3004,7 +3326,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前系统时间",
+          "document": "<p>备份是否开启</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "BackUpOpened",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份桶</p>",
+          "example": "bucketname",
+          "member": "string",
+          "name": "CosBucketName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份的状态</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "BackUpStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份、迁移任务信息</p>",
+          "example": "无",
+          "member": "BackupScheduleInfo",
+          "name": "BackupScheduleInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前系统时间</p>",
           "example": "\"2025-11-11 11:06:16\"",
           "member": "string",
           "name": "CurrentTime",
@@ -3014,7 +3376,7 @@
         },
         {
           "disabled": false,
-          "document": "桶加密状态信息",
+          "document": "<p>桶加密状态信息</p>",
           "example": "无",
           "member": "BucketEncryptionInfo",
           "name": "BucketEncryption",
@@ -3393,6 +3755,16 @@
           "name": "ExistingJarConfList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ipdb的文件大小 byte",
+          "example": "31311",
+          "member": "string",
+          "name": "IPDBFileSizeLimit",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5390,7 +5762,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "cdwdoris-xxx",
           "member": "string",
           "name": "InstanceId",
@@ -5405,7 +5777,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源组信息",
+          "document": "<p>资源组信息</p>",
           "example": "无",
           "member": "WorkloadGroupConfig",
           "name": "WorkloadGroups",
@@ -5415,7 +5787,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启资源组：开启-open、关闭-close",
+          "document": "<p>是否开启资源组：开启-open、关闭-close</p>",
           "example": "open",
           "member": "string",
           "name": "Status",
@@ -5425,12 +5797,22 @@
         },
         {
           "disabled": false,
-          "document": "错误信息",
+          "document": "<p>错误信息</p>",
           "example": "error message",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启监控，0：未开启，1：开启</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MonitorStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -6296,6 +6678,26 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "SyncerIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持sql convertor",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableSqlConv",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群时区，默认+08:00",
+          "example": "+08:00",
+          "member": "string",
+          "name": "TimeZone",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -9380,6 +9782,17 @@
           "example": "10",
           "member": "int64",
           "name": "RemainLatestNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "天数单位\n0：天\n1：季度\n2：年",
+          "example": "0",
+          "member": "int64",
+          "name": "RemainDaysUnit",
           "output_required": false,
           "required": false,
           "type": "int",

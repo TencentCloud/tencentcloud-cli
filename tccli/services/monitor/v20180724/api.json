@@ -21,6 +21,13 @@
       "output": "BindingPolicyTagResponse",
       "status": "online"
     },
+    "CheckAddressByPrometheus": {
+      "document": "检查用户地址联通性",
+      "input": "CheckAddressByPrometheusRequest",
+      "name": "检查用户地址联通性",
+      "output": "CheckAddressByPrometheusResponse",
+      "status": "online"
+    },
     "CleanGrafanaInstance": {
       "document": "强制销毁 Grafana 实例",
       "input": "CleanGrafanaInstanceRequest",
@@ -187,13 +194,6 @@
       "input": "CreateSSOAccountRequest",
       "name": "授权腾讯云用户",
       "output": "CreateSSOAccountResponse",
-      "status": "online"
-    },
-    "CreateServiceDiscovery": {
-      "document": "在腾讯云容器服务下创建 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
-      "input": "CreateServiceDiscoveryRequest",
-      "name": "创建服务发现",
-      "output": "CreateServiceDiscoveryResponse",
       "status": "online"
     },
     "DeleteAlarmNotices": {
@@ -644,6 +644,13 @@
       "output": "DescribePrometheusAlertPolicyResponse",
       "status": "online"
     },
+    "DescribePrometheusAlertmanagerConfig": {
+      "document": "获取 Prometheus Alertmanager 配置",
+      "input": "DescribePrometheusAlertmanagerConfigRequest",
+      "name": "获取 Prometheus Alertmanager 配置",
+      "output": "DescribePrometheusAlertmanagerConfigResponse",
+      "status": "online"
+    },
     "DescribePrometheusClusterAgents": {
       "document": "获取TMP实例关联集群列表",
       "input": "DescribePrometheusClusterAgentsRequest",
@@ -798,13 +805,6 @@
       "output": "DescribeSSOAccountResponse",
       "status": "online"
     },
-    "DescribeServiceDiscovery": {
-      "document": "列出在腾讯云容器服务下创建的 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
-      "input": "DescribeServiceDiscoveryRequest",
-      "name": "列出服务发现列表",
-      "output": "DescribeServiceDiscoveryResponse",
-      "status": "online"
-    },
     "DescribeStatisticData": {
       "document": "根据维度条件查询监控数据",
       "input": "DescribeStatisticDataRequest",
@@ -841,7 +841,7 @@
       "status": "online"
     },
     "ExportPrometheusReadOnlyDynamicAPI": {
-      "document": "Prometheus 内部动态 api 代理，仅内部使用",
+      "document": "Prometheus 内部只读动态 api 代理，支持以云api形式访问prometheus原生api\n支持以下api:\n\n| path | method | 用途 |\n| - | - | - |\n| /api/v1/query | GET, POST | 点查询 |\n| /api/v1/query_range | GET, POST |  范围查询 |\n| /api/v1/series | GET, POST | series列表查询 |\n| /api/v1/labels | GET, POST | label名查询 |\n| /api/v1/label/{label_name}/values | GET | label值查询 |\n| /api/v1/rules | GET | 告警，预聚合规则查询 |\n| /api/v1/user_limits | GET | prometheus实例限制查询 |\n| /alertmanager/api/v2/alerts/groups | GET | 当前告警信息查询 | \n| /alertmanager/api/v2/silences | GET | 告警静默查询 |\n| /alertmanager/api/v2/silence/{id} | GET | 告警静默详情查询 |",
       "input": "ExportPrometheusReadOnlyDynamicAPIRequest",
       "name": "Prometheus 内部只读 api 代理",
       "output": "ExportPrometheusReadOnlyDynamicAPIResponse",
@@ -994,11 +994,25 @@
       "output": "ModifyRemoteURLsResponse",
       "status": "online"
     },
+    "ReplacePrometheusAlertmanagerConfig": {
+      "document": "替换 Prometheus Alertmanager 配置",
+      "input": "ReplacePrometheusAlertmanagerConfigRequest",
+      "name": "更新 Prometheus Alertmanager 配置",
+      "output": "ReplacePrometheusAlertmanagerConfigResponse",
+      "status": "online"
+    },
     "ResumeGrafanaInstance": {
       "document": "本接口（ResumeGrafanaInstance）用于 Grafana 包年包月实例的停服续费，调用后按原版本续费一个月。仍在运行中的实例无法使用该接口进行续费。",
       "input": "ResumeGrafanaInstanceRequest",
       "name": "恢复 Grafana 实例",
       "output": "ResumeGrafanaInstanceResponse",
+      "status": "online"
+    },
+    "RoutePrometheusDynamicAPI": {
+      "document": "Prometheus 内部动态 api 代理，支持以云api形式访问prometheus原生api\n支持以下api:\n \n>! 读接口建议使用ExportPrometheusReadOnlyDynamicAPI调用，支持更长的查询时延与响应大小。同时便于权限管理\n\n| path | method | 用途 |\n| - | - | - |\n| /api/v1/query | GET, POST | 点查询 |\n| /api/v1/query_range | GET, POST |  范围查询 |\n| /api/v1/series | GET, POST | series列表查询 |\n| /api/v1/labels | GET, POST | label名查询 |\n| /api/v1/label/{label_name}/values | GET | label值查询 |\n| /api/v1/rules | GET | 告警，预聚合规则查询 |\n| /api/v1/user_limits | GET | prometheus实例限制查询 |\n| /alertmanager/api/v2/alerts/groups | GET | 当前告警信息查询 | \n| /alertmanager/api/v2/silences | GET, POST | 告警静默查询/创建/修改 |\n| /alertmanager/api/v2/silence/{id} | GET, DELETE | 告警静默详情查询/删除 |",
+      "input": "RoutePrometheusDynamicAPIRequest",
+      "name": "Prometheus 内部动态 api 代理",
+      "output": "RoutePrometheusDynamicAPIResponse",
       "status": "online"
     },
     "RunPrometheusInstance": {
@@ -1778,7 +1792,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警通知模板 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警通知模板 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "18565",
           "member": "string",
           "name": "Id",
@@ -1789,7 +1803,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警通知模板名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "默认通知",
           "member": "string",
           "name": "Name",
@@ -1800,7 +1814,7 @@
         },
         {
           "disabled": false,
-          "document": "上次修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>上次修改时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-11-16 13:56:56",
           "member": "string",
           "name": "UpdatedAt",
@@ -1811,7 +1825,7 @@
         },
         {
           "disabled": false,
-          "document": "上次修改人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>上次修改人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1500000688",
           "member": "string",
           "name": "UpdatedBy",
@@ -1822,7 +1836,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=全部通知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=全部通知</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL",
           "member": "string",
           "name": "NoticeType",
@@ -1833,7 +1847,7 @@
         },
         {
           "disabled": false,
-          "document": "用户通知列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户通知列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UserNotice",
           "name": "UserNotices",
@@ -1844,7 +1858,7 @@
         },
         {
           "disabled": false,
-          "document": "回调通知列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>回调通知列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "URLNotice",
           "name": "URLNotices",
@@ -1855,7 +1869,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是系统预设通知模板 0=否 1=是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否是系统预设通知模板 0=否 1=是</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "IsPreset",
@@ -1866,7 +1880,7 @@
         },
         {
           "disabled": false,
-          "document": "通知语言 zh-CN=中文 en-US=英文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>通知语言 zh-CN=中文 en-US=英文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zh-CN",
           "member": "string",
           "name": "NoticeLanguage",
@@ -1877,7 +1891,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知模板绑定的告警策略ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警通知模板绑定的告警策略ID列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"policy-sdsd\"]",
           "member": "string",
           "name": "PolicyIds",
@@ -1888,7 +1902,7 @@
         },
         {
           "disabled": false,
-          "document": "后台 amp consumer id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>后台 amp consumer id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Consumer-asfafasf",
           "member": "string",
           "name": "AMPConsumerId",
@@ -1899,7 +1913,7 @@
         },
         {
           "disabled": false,
-          "document": "推送cls渠道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>推送cls渠道</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CLSNotice",
           "name": "CLSNotices",
@@ -1910,7 +1924,7 @@
         },
         {
           "disabled": false,
-          "document": "通知模板绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>通知模板绑定的标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -1921,13 +1935,24 @@
         },
         {
           "disabled": false,
-          "document": "是否免登录，0-否，1-是",
+          "document": "<p>是否免登录，0-否，1-是</p>",
           "example": "1",
           "member": "int64",
           "name": "IsLoginFree",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IANA 时区名</p>",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "TimeZoneName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2883,7 +2908,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "必填。固定值\"monitor\"",
+          "document": "<p>必填。固定值&quot;monitor&quot;</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -2892,7 +2917,7 @@
         },
         {
           "disabled": false,
-          "document": "策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数",
+          "document": "<p>策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数</p>",
           "example": "111111",
           "member": "int64",
           "name": "GroupId",
@@ -2901,7 +2926,7 @@
         },
         {
           "disabled": false,
-          "document": "告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准",
+          "document": "<p>告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准</p>",
           "example": "policy-abc123",
           "member": "string",
           "name": "PolicyId",
@@ -2910,7 +2935,7 @@
         },
         {
           "disabled": false,
-          "document": "实例分组ID",
+          "document": "<p>实例分组ID</p>",
           "example": "0",
           "member": "int64",
           "name": "InstanceGroupId",
@@ -2919,7 +2944,7 @@
         },
         {
           "disabled": false,
-          "document": "需要绑定的对象维度信息，当为实例绑定渠道时，此处为必填信息",
+          "document": "<p>需要绑定的对象维度信息。当告警对象选择为实例绑定方式时，该参数为必填参数；当告警对象选择为标签绑定、实例分组方式时，该参数为选填参数。</p>",
           "example": "无",
           "member": "BindingPolicyObjectDimension",
           "name": "Dimensions",
@@ -2928,7 +2953,7 @@
         },
         {
           "disabled": false,
-          "document": "事件配置的告警",
+          "document": "<p>事件配置的告警</p>",
           "example": "\"{\\\"source\\\":[\\\"cvm.cloud.tencent\\\"]}\"",
           "member": "string",
           "name": "EbSubject",
@@ -2937,7 +2962,7 @@
         },
         {
           "disabled": false,
-          "document": "是否配置了事件告警",
+          "document": "<p>是否配置了事件告警</p>",
           "example": "1",
           "member": "int64",
           "name": "EbEventFlag",
@@ -3112,6 +3137,81 @@
         }
       ],
       "usage": "both"
+    },
+    "CheckAddressByPrometheusRequest": {
+      "document": "CheckAddressByPrometheus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "prom-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>探测地址</p>",
+          "example": "http://1.1.1.1:1111/test",
+          "member": "string",
+          "name": "Target",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>探测方式。tcp或http，默认是tcp</p>",
+          "example": "tcp",
+          "member": "string",
+          "name": "ProbeProtocol",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckAddressByPrometheusResponse": {
+      "document": "CheckAddressByPrometheus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实际探测的地址</p>",
+          "example": "1.1.1.1:1111",
+          "member": "string",
+          "name": "Target",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>探测是否成功</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Success",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>探测失败时返回错误信息</p>",
+          "example": "connnection timeout",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CleanGrafanaInstanceRequest": {
       "document": "CleanGrafanaInstance请求参数结构体",
@@ -3469,7 +3569,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模块名，这里填“monitor”",
+          "document": "<p>模块名，这里填“monitor”</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -3478,7 +3578,7 @@
         },
         {
           "disabled": false,
-          "document": "通知模板名称 60字符以内",
+          "document": "<p>通知模板名称 60字符以内</p>",
           "example": "默认通知模板",
           "member": "string",
           "name": "Name",
@@ -3487,7 +3587,7 @@
         },
         {
           "disabled": false,
-          "document": "通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知",
+          "document": "<p>通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知</p>",
           "example": "ALL",
           "member": "string",
           "name": "NoticeType",
@@ -3496,7 +3596,7 @@
         },
         {
           "disabled": false,
-          "document": "通知语言 zh-CN=中文 en-US=英文",
+          "document": "<p>通知语言 zh-CN=中文 en-US=英文</p>",
           "example": "zh-CN",
           "member": "string",
           "name": "NoticeLanguage",
@@ -3505,7 +3605,7 @@
         },
         {
           "disabled": false,
-          "document": "用户通知 最多5个",
+          "document": "<p>用户通知 最多5个</p>",
           "example": "无",
           "member": "UserNotice",
           "name": "UserNotices",
@@ -3514,7 +3614,7 @@
         },
         {
           "disabled": false,
-          "document": "回调通知 最多6个",
+          "document": "<p>回调通知 最多6个</p>",
           "example": "无",
           "member": "URLNotice",
           "name": "URLNotices",
@@ -3523,7 +3623,7 @@
         },
         {
           "disabled": false,
-          "document": "推送CLS日志服务的操作 最多1个",
+          "document": "<p>推送CLS日志服务的操作 最多1个</p>",
           "example": "无",
           "member": "CLSNotice",
           "name": "CLSNotices",
@@ -3532,7 +3632,7 @@
         },
         {
           "disabled": false,
-          "document": "模板绑定的标签",
+          "document": "<p>模板绑定的标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -3541,12 +3641,21 @@
         },
         {
           "disabled": false,
-          "document": "是否免登录，0-否，1-是",
+          "document": "<p>是否免登录，0-否，1-是</p>",
           "example": "0",
           "member": "int64",
           "name": "IsLoginFree",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IANA 时区名</p>",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "TimeZoneName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3556,7 +3665,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警通知模板ID",
+          "document": "<p>告警通知模板ID</p>",
           "example": "notice-abcdef",
           "member": "string",
           "name": "NoticeId",
@@ -4486,7 +4595,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
+          "document": "<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -4495,7 +4604,7 @@
         },
         {
           "disabled": false,
-          "document": "集成类型(接口DescribeGrafanaIntegrationOverviews返回的集成信息中的Code字段)",
+          "document": "<p>集成类型(接口DescribeGrafanaIntegrationOverviews返回的集成信息中的Code字段)</p>",
           "example": "grafana",
           "member": "string",
           "name": "Kind",
@@ -4504,7 +4613,7 @@
         },
         {
           "disabled": false,
-          "document": "集成配置",
+          "document": "<p>集成配置</p>",
           "example": "{\\\"kind\\\":\\\"tencent-cloud-kong\\\",\\\"spec\\\":{\\\"dataSourceSpec\\\":{\\\"name\\\":\\\"prometheus-kong\\\",\\\"url\\\":\\\"http://10.0.0.0:9090/\\\",\\\"user\\\":\\\"user\\\",\\\"password\\\":\\\"password\\\",\\\"labels\\\":{\\\"label\\\":\\\"test\\\"}},\\\"grafanaSpec\\\":{\\\"organizationIds\\\":[\\\"2\\\"]}}}",
           "member": "string",
           "name": "Content",
@@ -4519,7 +4628,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集成 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集成 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "integration-xxxxxxxx",
           "member": "string",
           "name": "IntegrationId",
@@ -5228,7 +5337,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名",
+          "document": "<p>实例名</p>",
           "example": "my-prom-instance",
           "member": "string",
           "name": "InstanceName",
@@ -5237,7 +5346,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC ID(可通过 vpc:DescribeVpcs 接口获取，与实例同地域)",
+          "document": "<p>VPC ID(可通过 vpc:DescribeVpcs 接口获取，与实例同地域)</p>",
           "example": "vpc-345xdef",
           "member": "string",
           "name": "VpcId",
@@ -5246,7 +5355,7 @@
         },
         {
           "disabled": false,
-          "document": "子网 ID(可通过 vpc:DescribeSubnets 接口获取)",
+          "document": "<p>子网 ID(可通过 vpc:DescribeSubnets 接口获取)</p>",
           "example": "subnet-axxersx",
           "member": "string",
           "name": "SubnetId",
@@ -5255,7 +5364,7 @@
         },
         {
           "disabled": false,
-          "document": "数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一",
+          "document": "<p>数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一</p>",
           "example": "30",
           "member": "int64",
           "name": "DataRetentionTime",
@@ -5264,7 +5373,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区(与子网同可用区)",
+          "document": "<p>可用区(与子网同可用区)</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -5273,7 +5382,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的标签",
+          "document": "<p>实例的标签</p>",
           "example": "无",
           "member": "PrometheusTag",
           "name": "TagSpecification",
@@ -5282,12 +5391,21 @@
         },
         {
           "disabled": false,
-          "document": "需要关联的 Grafana 实例",
+          "document": "<p>需要关联的 Grafana 实例</p>",
           "example": "grafana-xxxx",
           "member": "string",
           "name": "GrafanaInstanceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标识prom实例特殊属性</p><p>归档存储时长(天):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p>",
+          "example": "无",
+          "member": "PrometheusRuleKV",
+          "name": "InstanceAttributes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5297,7 +5415,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
+          "document": "<p>实例 ID</p>",
           "example": "prom-3xz2asxa",
           "member": "string",
           "name": "InstanceId",
@@ -5568,79 +5686,6 @@
           "name": "UserId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateServiceDiscoveryRequest": {
-      "document": "CreateServiceDiscovery请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "Prometheus 实例 ID",
-          "example": "prom-sdfk2342a",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<li>类型为TKE：对应集成的腾讯云容器服务集群 ID</li>",
-          "example": "cls-pwerf3k3",
-          "member": "string",
-          "name": "KubeClusterId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "用户 Kubernetes 集群类型：\n<li> 1 = 容器服务集群(TKE) </li>",
-          "example": "1",
-          "member": "int64",
-          "name": "KubeType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "服务发现类型，取值如下：\n<li> 1 = ServiceMonitor</li>\n<li> 2 = PodMonitor</li>\n<li> 3 = JobMonitor</li>",
-          "example": "1",
-          "member": "int64",
-          "name": "Type",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "服务发现配置信息，YAML 格式，[具体YAML参数内容请参考](https://cloud.tencent.com/document/product/1416/55995#service-monitor)",
-          "example": "yaml",
-          "member": "string",
-          "name": "Yaml",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateServiceDiscoveryResponse": {
-      "document": "CreateServiceDiscovery返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "创建成功之后，返回对应服务发现信息",
-          "example": "无",
-          "member": "ServiceDiscoveryItem",
-          "name": "ServiceDiscovery",
-          "output_required": true,
-          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -12422,6 +12467,43 @@
       ],
       "type": "object"
     },
+    "DescribePrometheusAlertmanagerConfigRequest": {
+      "document": "DescribePrometheusAlertmanagerConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Prometheus 实例 ID</p>",
+          "example": "prom-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusAlertmanagerConfigResponse": {
+      "document": "DescribePrometheusAlertmanagerConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Alertmanager 配置</p>",
+          "example": "无",
+          "member": "PrometheusAlertmanagerConfigV2",
+          "name": "AlertmanagerConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrometheusClusterAgentsRequest": {
       "document": "DescribePrometheusClusterAgents请求参数结构体",
       "members": [
@@ -13774,7 +13856,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Prometheus 实例 ID",
+          "document": "<p>Prometheus 实例 ID</p>",
           "example": "prom-sdf342",
           "member": "string",
           "name": "InstanceId",
@@ -13783,7 +13865,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为 20，最大值为 100",
+          "document": "<p>返回数量，默认为 20，最大值为 100</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -13792,7 +13874,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为 0",
+          "document": "<p>偏移量，默认为 0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -13801,7 +13883,7 @@
         },
         {
           "disabled": false,
-          "document": "规则 ID",
+          "document": "<p>规则 ID</p>",
           "example": "rrule-abc",
           "member": "string",
           "name": "RuleId",
@@ -13810,7 +13892,7 @@
         },
         {
           "disabled": false,
-          "document": "规则状态码，取值如下：\n<li>1=RuleDeleted</li>\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>",
+          "document": "<p>规则状态码，取值如下：</p><li>1=RuleDeleted</li><li>2=RuleEnabled</li><li>3=RuleDisabled</li>",
           "example": "2",
           "member": "int64",
           "name": "RuleState",
@@ -13819,7 +13901,7 @@
         },
         {
           "disabled": false,
-          "document": "规则名称",
+          "document": "<p>规则名称</p>",
           "example": "example",
           "member": "string",
           "name": "Name",
@@ -13834,7 +13916,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则组数量",
+          "document": "<p>规则组数量</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -13844,13 +13926,23 @@
         },
         {
           "disabled": false,
-          "document": "规则组详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则组详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RecordingRuleSet",
           "name": "RecordingRuleSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>预聚合规则数</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "TotalRuleCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14006,61 +14098,6 @@
           "member": "GrafanaAccountInfo",
           "name": "AccountSet",
           "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeServiceDiscoveryRequest": {
-      "document": "DescribeServiceDiscovery请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "Prometheus 实例 ID",
-          "example": "prom-abc",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<li>类型是 TKE，为对应的腾讯云容器服务集群 ID</li>",
-          "example": "cls-abc",
-          "member": "string",
-          "name": "KubeClusterId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "用户 Kubernetes 集群类型：\n<li> 1 = 容器服务集群(TKE) </li>",
-          "example": "1",
-          "member": "int64",
-          "name": "KubeType",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeServiceDiscoveryResponse": {
-      "document": "DescribeServiceDiscovery返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "返回服务发现列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ServiceDiscoveryItem",
-          "name": "ServiceDiscoverySet",
-          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -14576,12 +14613,77 @@
     },
     "ExportPrometheusReadOnlyDynamicAPIRequest": {
       "document": "ExportPrometheusReadOnlyDynamicAPI请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Prometheus 实例 ID</p>",
+          "example": "prom-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTP 方法名 GET/POST/PUT/DELETE 等</p>",
+          "example": "GET",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTP 路径（包括 query string）</p>",
+          "example": "/api/v1/query?query=up",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTP 请求体，任何数据</p>",
+          "example": "{\"key\": \"value\"}",
+          "member": "string",
+          "name": "RequestBody",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTP 请求头</p>",
+          "example": "无",
+          "member": "PrometheusStringKeyValuePair",
+          "name": "Headers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否请求自监控数据。自监控仅支持 /api/v1/query 与 /api/v1/query_range 接口。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfMonitor",
+          "required": false,
+          "type": "bool"
+        }
+      ],
       "type": "object"
     },
     "ExportPrometheusReadOnlyDynamicAPIResponse": {
       "document": "ExportPrometheusReadOnlyDynamicAPI返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>HTTP 响应数据</p>",
+          "example": "无",
+          "member": "PrometheusDynamicAPIResponseHTTP",
+          "name": "HTTP",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -16354,7 +16456,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模块名，这里填“monitor”",
+          "document": "<p>模块名，这里填“monitor”</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -16363,7 +16465,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知规则名称 60字符以内",
+          "document": "<p>告警通知规则名称 60字符以内</p>",
           "example": "默认通知模板",
           "member": "string",
           "name": "Name",
@@ -16372,7 +16474,7 @@
         },
         {
           "disabled": false,
-          "document": "通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知",
+          "document": "<p>通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知</p>",
           "example": "ALL",
           "member": "string",
           "name": "NoticeType",
@@ -16381,7 +16483,7 @@
         },
         {
           "disabled": false,
-          "document": "通知语言 zh-CN=中文 en-US=英文",
+          "document": "<p>通知语言 zh-CN=中文 en-US=英文</p>",
           "example": "zh-CN",
           "member": "string",
           "name": "NoticeLanguage",
@@ -16390,7 +16492,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知模板 ID",
+          "document": "<p>告警通知模板 ID</p>",
           "example": "notice-xxx",
           "member": "string",
           "name": "NoticeId",
@@ -16399,7 +16501,7 @@
         },
         {
           "disabled": false,
-          "document": "用户通知 最多5个",
+          "document": "<p>用户通知 最多5个</p>",
           "example": "无",
           "member": "UserNotice",
           "name": "UserNotices",
@@ -16408,7 +16510,7 @@
         },
         {
           "disabled": false,
-          "document": "回调通知 最多6个",
+          "document": "<p>回调通知 最多6个</p>",
           "example": "无",
           "member": "URLNotice",
           "name": "URLNotices",
@@ -16417,7 +16519,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知推送到CLS服务 最多1个",
+          "document": "<p>告警通知推送到CLS服务 最多1个</p>",
           "example": "无",
           "member": "CLSNotice",
           "name": "CLSNotices",
@@ -16426,7 +16528,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知模板绑定的告警策略ID列表",
+          "document": "<p>告警通知模板绑定的告警策略ID列表</p>",
           "example": "[\"policy-ssdd\"]",
           "member": "string",
           "name": "PolicyIds",
@@ -16435,12 +16537,21 @@
         },
         {
           "disabled": false,
-          "document": "是否免登录，0-否，1-是",
+          "document": "<p>是否免登录，0-否，1-是</p>",
           "example": "1",
           "member": "int64",
           "name": "IsLoginFree",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IANA 时区名</p>",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "TimeZoneName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -17452,7 +17563,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
+          "document": "<p>实例 ID</p>",
           "example": "prom-2rsas2",
           "member": "string",
           "name": "InstanceId",
@@ -17461,7 +17572,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "my-prom-gg",
           "member": "string",
           "name": "InstanceName",
@@ -17470,12 +17581,21 @@
         },
         {
           "disabled": false,
-          "document": "数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一",
+          "document": "<p>数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一</p>",
           "example": "15",
           "member": "int64",
           "name": "DataRetentionTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标识prom实例特殊属性</p><p>归档存储时长(天):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p>",
+          "example": "无",
+          "member": "PrometheusRuleKV",
+          "name": "InstanceAttributes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -18952,6 +19072,62 @@
       ],
       "usage": "both"
     },
+    "PrometheusAlertmanagerConfigInhibitRule": {
+      "document": "Prometheus Alertmanger 抑制规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Source 告警的标签匹配规则，比如 \"a=b\"、\"a!=c\" 等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"severity=\\\"warning\\\"\"]",
+          "member": "string",
+          "name": "SourceMatchers",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Target 告警的标签匹配规则，比如 \"a=b\"、\"a!=c\" 等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"severity=\\\"critical\\\"\"]",
+          "member": "string",
+          "name": "TargetMatchers",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Source 和 Target 告警都必须有的一组标签名，比如 alertname、cluster 等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"alertname\",\"cluster\"]",
+          "member": "string",
+          "name": "Equal",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PrometheusAlertmanagerConfigV2": {
+      "document": "Prometheus Alertmanger 可修改配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Prometheus Alertmanger 抑制规则组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusAlertmanagerConfigInhibitRule",
+          "name": "InhibitRules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "PrometheusClusterAgentBasic": {
       "document": "与腾讯云可观测平台融合托管 Prometheus 实例，关联集群基础信息",
       "members": [
@@ -19176,6 +19352,32 @@
       ],
       "usage": "both"
     },
+    "PrometheusDynamicAPIResponseHTTP": {
+      "document": "Prometheus 内部动态 api 代理响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HTTP 状态码",
+          "example": "",
+          "member": "int64",
+          "name": "StatusCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 响应体",
+          "example": "",
+          "member": "string",
+          "name": "ResponseBody",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PrometheusInstanceGrantInfo": {
       "document": "实例的授权信息",
       "members": [
@@ -19359,7 +19561,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "<p>实例ID。</p>",
           "example": "prom-123456",
           "member": "string",
           "name": "InstanceId",
@@ -19369,7 +19571,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称。",
+          "document": "<p>实例名称。</p>",
           "example": "测试实例",
           "member": "string",
           "name": "InstanceName",
@@ -19379,7 +19581,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费模式。取值范围：\n<ul>\n<li>2：包年包月</li>\n<li>3：按量</li>\n</ul>",
+          "document": "<p>实例计费模式。取值范围：</p><ul><li>2：包年包月</li><li>3：按量</li></ul>",
           "example": "2",
           "member": "int64",
           "name": "InstanceChargeType",
@@ -19389,7 +19591,7 @@
         },
         {
           "disabled": false,
-          "document": "地域 ID",
+          "document": "<p>地域 ID</p>",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
@@ -19399,7 +19601,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -19409,7 +19611,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC ID",
+          "document": "<p>VPC ID</p>",
           "example": "vpc-123456",
           "member": "string",
           "name": "VpcId",
@@ -19419,7 +19621,7 @@
         },
         {
           "disabled": false,
-          "document": "子网 ID",
+          "document": "<p>子网 ID</p>",
           "example": "subnet-123456",
           "member": "string",
           "name": "SubnetId",
@@ -19429,7 +19631,7 @@
         },
         {
           "disabled": false,
-          "document": "存储周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存储周期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "15",
           "member": "int64",
           "name": "DataRetentionTime",
@@ -19439,7 +19641,7 @@
         },
         {
           "disabled": false,
-          "document": "实例业务状态。取值范围：\n<ul>\n<li>1：正在创建</li>\n<li>2：运行中</li>\n<li>3：异常</li>\n<li>4：重建中</li>\n<li>5：销毁中</li>\n<li>6：已停服</li>\n<li>8：欠费停服中</li>\n<li>9：欠费已停服</li>\n</ul>",
+          "document": "<p>实例业务状态。取值范围：</p><ul><li>1：正在创建</li><li>2：运行中</li><li>3：异常</li><li>4：重建中</li><li>5：销毁中</li><li>6：已停服</li><li>8：欠费停服中</li><li>9：欠费已停服</li></ul>",
           "example": "2",
           "member": "int64",
           "name": "InstanceStatus",
@@ -19449,7 +19651,7 @@
         },
         {
           "disabled": false,
-          "document": "Grafana 面板 URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Grafana 面板 URL</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://url",
           "member": "string",
           "name": "GrafanaURL",
@@ -19459,7 +19661,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "CreatedAt",
@@ -19469,7 +19671,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启 Grafana\n<li>0：不开启</li>\n<li>1：开启</li>",
+          "document": "<p>是否开启 Grafana</p><li>0：不开启</li><li>1：开启</li>",
           "example": "1",
           "member": "int64",
           "name": "EnableGrafana",
@@ -19479,7 +19681,7 @@
         },
         {
           "disabled": false,
-          "document": "实例IPV4地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例IPV4地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "192.168.1.2",
           "member": "string",
           "name": "IPv4Address",
@@ -19489,7 +19691,7 @@
         },
         {
           "disabled": false,
-          "document": "实例关联的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例关联的标签列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrometheusTag",
           "name": "TagSpecification",
@@ -19499,7 +19701,7 @@
         },
         {
           "disabled": false,
-          "document": "购买的实例过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>购买的实例过期时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "ExpireTime",
@@ -19509,7 +19711,7 @@
         },
         {
           "disabled": false,
-          "document": "计费状态\n<ul>\n<li>1：正常</li>\n<li>2：过期</li>\n<li>3：销毁</li>\n<li>4：分配中</li>\n<li>5：分配失败</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计费状态</p><ul><li>1：正常</li><li>2：过期</li><li>3：销毁</li><li>4：分配中</li><li>5：分配失败</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "ChargeStatus",
@@ -19519,7 +19721,7 @@
         },
         {
           "disabled": false,
-          "document": "规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规格名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "基础1",
           "member": "string",
           "name": "SpecName",
@@ -19529,7 +19731,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记\n<ul>\n<li>0：不自动续费</li>\n<li>1：开启自动续费</li>\n<li>2：禁止自动续费</li>\n<li>-1：无效</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自动续费标记</p><ul><li>0：不自动续费</li><li>1：开启自动续费</li><li>2：禁止自动续费</li><li>-1：无效</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -19539,7 +19741,7 @@
         },
         {
           "disabled": false,
-          "document": "是否快过期\n<ul>\n<li>0：否</li>\n<li>1：快过期</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否快过期</p><ul><li>0：否</li><li>1：快过期</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "IsNearExpire",
@@ -19549,7 +19751,7 @@
         },
         {
           "disabled": false,
-          "document": "数据写入需要的 Token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据写入需要的 Token</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "token",
           "member": "string",
           "name": "AuthToken",
@@ -19559,7 +19761,7 @@
         },
         {
           "disabled": false,
-          "document": "Prometheus Remote Write 的地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Prometheus Remote Write 的地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://url",
           "member": "string",
           "name": "RemoteWrite",
@@ -19569,7 +19771,7 @@
         },
         {
           "disabled": false,
-          "document": "Prometheus HTTP Api 根地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Prometheus HTTP Api 根地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://url",
           "member": "string",
           "name": "ApiRootPath",
@@ -19579,7 +19781,7 @@
         },
         {
           "disabled": false,
-          "document": "Proxy 的地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Proxy 的地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.0.0.0:9090",
           "member": "string",
           "name": "ProxyAddress",
@@ -19589,7 +19791,7 @@
         },
         {
           "disabled": false,
-          "document": "Grafana 运行状态\n<ul>\n<li>1：正在创建</li>\n<li>2：运行中</li>\n<li>3：异常</li>\n<li>4：重启中</li>\n<li>5：销毁中</li>\n<li>6：已停机</li>\n<li>7：已删除</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Grafana 运行状态</p><ul><li>1：正在创建</li><li>2：运行中</li><li>3：异常</li><li>4：重启中</li><li>5：销毁中</li><li>6：已停机</li><li>7：已删除</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "GrafanaStatus",
@@ -19599,7 +19801,7 @@
         },
         {
           "disabled": false,
-          "document": "Grafana IP 白名单列表，使用英文分号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Grafana IP 白名单列表，使用英文分号分隔</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "192.168.1.2",
           "member": "string",
           "name": "GrafanaIpWhiteList",
@@ -19609,7 +19811,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的授权信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例的授权信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrometheusInstanceGrantInfo",
           "name": "Grant",
@@ -19619,7 +19821,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的 Grafana 实例 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的 Grafana 实例 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "grafana-xxxx",
           "member": "string",
           "name": "GrafanaInstanceId",
@@ -19629,7 +19831,7 @@
         },
         {
           "disabled": false,
-          "document": "告警规则限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警规则限制</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "150",
           "member": "int64",
           "name": "AlertRuleLimit",
@@ -19639,7 +19841,7 @@
         },
         {
           "disabled": false,
-          "document": "预聚合规则限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>预聚合规则限制</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "150",
           "member": "int64",
           "name": "RecordingRuleLimit",
@@ -19649,12 +19851,22 @@
         },
         {
           "disabled": false,
-          "document": "迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "MigrationType",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标识prom实例特殊属性</p><p>归档存储时长(天):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p><p>实例创建方式：<br>key: CreatedFrom<br>value: 0 - 来自prom控制台<br>1 - 来自tke集群详情页<br>2 - 来自新建集群页</p><p>免费试用到期时间:<br>key: FreeTrialExpireAt<br>value: RFC3339 格式时间字符串</p><p>关联的资源包ID:<br>key: ResourcePackageID<br>value: prompkg-xxxxx</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusRuleKV",
+          "name": "InstanceAttributes",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -20480,6 +20692,34 @@
       ],
       "usage": "out"
     },
+    "PrometheusStringKeyValuePair": {
+      "document": "Prometheus 通用字符串类型 kv",
+      "members": [
+        {
+          "disabled": false,
+          "document": "键",
+          "example": "",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值",
+          "example": "",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PrometheusTag": {
       "document": "Prometheus 托管服务标签",
       "members": [
@@ -21190,7 +21430,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "多写url",
+          "document": "<p>多写url</p>",
           "example": "http://172.30.0.9:9090/api/v1/prom/write",
           "member": "string",
           "name": "URL",
@@ -21201,7 +21441,7 @@
         },
         {
           "disabled": false,
-          "document": "RelabelConfig\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>RelabelConfig</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "- source_labels: [label]   target_label: label1",
           "member": "string",
           "name": "URLRelabelConfig",
@@ -21212,7 +21452,7 @@
         },
         {
           "disabled": false,
-          "document": "鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>鉴权</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BasicAuth",
           "name": "BasicAuth",
@@ -21223,7 +21463,7 @@
         },
         {
           "disabled": true,
-          "document": "最大block\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最大block</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "16MB",
           "member": "string",
           "name": "MaxBlockSize",
@@ -21234,7 +21474,7 @@
         },
         {
           "disabled": true,
-          "document": "Label\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Label</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"instance_id\": \"prom-xxxxx\"}]",
           "member": "string",
           "name": "Label",
@@ -21245,13 +21485,24 @@
         },
         {
           "disabled": false,
-          "document": "HTTP 额外添加的头\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>HTTP 额外添加的头</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RemoteWriteHeader",
           "name": "Headers",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据多写类型:<br>1- 只多写采集指标<br>2- 只多写预聚合指标<br>3- 同时多写采集和预聚合指标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RemoteWriteType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -21285,6 +21536,42 @@
       ],
       "usage": "both"
     },
+    "ReplacePrometheusAlertmanagerConfigRequest": {
+      "document": "ReplacePrometheusAlertmanagerConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Prometheus 实例 ID</p>",
+          "example": "prom-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Alertmanager 配置</p>",
+          "example": "无",
+          "member": "PrometheusAlertmanagerConfigV2",
+          "name": "AlertmanagerConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplacePrometheusAlertmanagerConfigResponse": {
+      "document": "ReplacePrometheusAlertmanagerConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResumeGrafanaInstanceRequest": {
       "document": "ResumeGrafanaInstance请求参数结构体",
       "members": [
@@ -21303,6 +21590,79 @@
     "ResumeGrafanaInstanceResponse": {
       "document": "ResumeGrafanaInstance返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RoutePrometheusDynamicAPIRequest": {
+      "document": "RoutePrometheusDynamicAPI请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Prometheus 实例 ID</p>",
+          "example": "prom-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTP 方法名 GET/POST/PUT/DELETE 等</p>",
+          "example": "GET",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTP 路径（包括 query string）</p>",
+          "example": "/api/v1/query?query=up",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTP 请求体，任何数据</p>",
+          "example": "{\"key\": \"value\"}",
+          "member": "string",
+          "name": "RequestBody",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTP 请求头</p>",
+          "example": "无",
+          "member": "PrometheusStringKeyValuePair",
+          "name": "Headers",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RoutePrometheusDynamicAPIResponse": {
+      "document": "RoutePrometheusDynamicAPI返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>HTTP 响应数据</p>",
+          "example": "无",
+          "member": "PrometheusDynamicAPIResponseHTTP",
+          "name": "HTTP",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -6,6 +6,41 @@
       "name": "查询智能导诊订单列表",
       "output": "DescribeIgOrderListResponse",
       "status": "online"
+    },
+    "GetLLMDiagnosisDrug": {
+      "document": "大模型问药拍药盒",
+      "input": "GetLLMDiagnosisDrugRequest",
+      "name": "大模型智能问药",
+      "output": "GetLLMDiagnosisDrugResponse",
+      "status": "online"
+    },
+    "GetLLMDiagnosisDrugChat": {
+      "document": "大模型问药问答",
+      "input": "GetLLMDiagnosisDrugChatRequest",
+      "name": "大模型问药问答",
+      "output": "GetLLMDiagnosisDrugChatResponse",
+      "status": "online"
+    },
+    "GetLLMDiagnosisHealth": {
+      "document": "大模型健康自诊",
+      "input": "GetLLMDiagnosisHealthRequest",
+      "name": "大模型症状自查",
+      "output": "GetLLMDiagnosisHealthResponse",
+      "status": "online"
+    },
+    "GetLLMReportInterpretation": {
+      "document": "大模型报告解读",
+      "input": "GetLLMReportInterpretationRequest",
+      "name": "大模型报告解读",
+      "output": "GetLLMReportInterpretationResponse",
+      "status": "online"
+    },
+    "QueryDrugInstructions": {
+      "document": "查询药品说明书",
+      "input": "QueryDrugInstructionsRequest",
+      "name": "查询药品说明书",
+      "output": "QueryDrugInstructionsResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -20,7 +55,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页码",
+          "document": "<p>页码</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -29,7 +64,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数目",
+          "document": "<p>每页数目</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -38,7 +73,7 @@
         },
         {
           "disabled": false,
-          "document": "产品类型",
+          "document": "<p>产品类型</p><p>枚举值：</p><ul><li>ig： 导诊</li><li>ipc： 预问诊</li></ul><p>默认值：ig</p>",
           "example": "ig",
           "member": "string",
           "name": "ProductType",
@@ -47,7 +82,7 @@
         },
         {
           "disabled": false,
-          "document": "订单状态",
+          "document": "<p>订单状态</p><p>枚举值：</p><ul><li>0： 无状态</li><li>1： 未激活</li><li>2： 使用中</li><li>3： 暂停使用</li><li>4： 已到期</li><li>5： 已删除</li><li>6： 已失效</li></ul><p>默认值：0</p>",
           "example": "1",
           "member": "int64",
           "name": "OrderStatus",
@@ -56,7 +91,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字",
+          "document": "<p>搜索关键字</p>",
           "example": "20210512936000413352781",
           "member": "string",
           "name": "KeyWord",
@@ -77,6 +112,1403 @@
         }
       ],
       "type": "object"
+    },
+    "DrugCardInfo": {
+      "document": "药品卡片信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "药品id",
+          "example": "09631734-336e-4790-84ff-02649a331458",
+          "member": "string",
+          "name": "DrugId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品名称",
+          "example": "阿莫西林胶囊",
+          "member": "string",
+          "name": "DrugName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "商品名称",
+          "example": "阿莫西林",
+          "member": "string",
+          "name": "TradeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规格",
+          "example": "0.25g*24粒",
+          "member": "string",
+          "name": "Specification",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产厂商",
+          "example": "XX制药有限公司",
+          "member": "string",
+          "name": "Manufacturer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否处方药，0:非处方药，1:处方药",
+          "example": "0",
+          "member": "int64",
+          "name": "DrugRxType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品说明书URL",
+          "example": "https://example.com/drug/doc",
+          "member": "string",
+          "name": "DocUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别来源，1:药品图片，2:用户输入",
+          "example": "1",
+          "member": "int64",
+          "name": "IdentifySource",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DrugInstructionInfo": {
+      "document": "药品说明书信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "药品id",
+          "example": "09631734-336e-4790-84ff-02649a331458",
+          "member": "string",
+          "name": "DrugId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品名称",
+          "example": "阿莫西林胶囊",
+          "member": "string",
+          "name": "DrugName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "商品名称",
+          "example": "阿莫西林",
+          "member": "string",
+          "name": "TradeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规格",
+          "example": "0.25g*24粒",
+          "member": "string",
+          "name": "Specification",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产企业",
+          "example": "XX制药有限公司",
+          "member": "string",
+          "name": "Manufacturer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用法用量",
+          "example": "口服，一次2粒，一日3次",
+          "member": "string",
+          "name": "DrugUsage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "适应症",
+          "example": "用于敏感菌所致的感染",
+          "member": "string",
+          "name": "Indication",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不良反应",
+          "example": "可能出现恶心、呕吐、腹泻等",
+          "member": "string",
+          "name": "AdverseReaction",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否处方药，0:非处方药，1:处方药",
+          "example": "0",
+          "member": "int64",
+          "name": "DrugRxType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品说明书URL",
+          "example": "https://example.com/drug/doc",
+          "member": "string",
+          "name": "DocUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GetLLMDiagnosisDrugChatRequest": {
+      "document": "GetLLMDiagnosisDrugChat请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合作方ID</p>",
+          "example": "10001",
+          "member": "string",
+          "name": "PartnerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合作方密钥</p>",
+          "example": "**************a36bbdd17960b3d70",
+          "member": "string",
+          "name": "PartnerSecret",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>医院应用ID</p>",
+          "example": "******38323",
+          "member": "string",
+          "name": "HospitalAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对话ID，由接入方生成，相同对话ID会保持相同的上下文，接入方根据业务场景使用相同或新建对话ID（建议使用UUID值）</p><p>入参限制：长度限制10-50</p>",
+          "example": "fc444da2-6438-4458-be12-69f5c28769a7",
+          "member": "string",
+          "name": "DialogueId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次问答用户输入的问题，（最大长度1000）</p>",
+          "example": "阿莫西林",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回类型：0:正常返回； 1:流式返回； 默认：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ResultType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词</p>",
+          "example": "你是一名专业药师助手，请根据用户输入回答。",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLLMDiagnosisDrugChatResponse": {
+      "document": "GetLLMDiagnosisDrugChat返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，0成功，非0失败</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "Success",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数据</p>",
+          "example": "无",
+          "member": "LLMDiagnosisDrugData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLLMDiagnosisDrugRequest": {
+      "document": "GetLLMDiagnosisDrug请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合作方ID</p>",
+          "example": "10001",
+          "member": "string",
+          "name": "PartnerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合作方密钥</p>",
+          "example": "**************a36bbdd17960b3d70",
+          "member": "string",
+          "name": "PartnerSecret",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>医院应用ID</p>",
+          "example": "******38323",
+          "member": "string",
+          "name": "HospitalAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对话ID，由接入方生成，相同对话ID会保持相同的上下文，接入方根据业务场景使用相同或新建对话ID（建议使用UUID值）</p><p>入参限制：长度限制10-50</p>",
+          "example": "fc444da2-6438-4458-be12-69f5c28769a7",
+          "member": "string",
+          "name": "DialogueId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次问答用户输入的问题，（最大长度1000，传了图片链接，此参数可为空）</p>",
+          "example": "识别图片中药品",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>药品图片链接</p>",
+          "example": "https://******.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回类型：0:正常返回； 1:流式返回； 默认：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ResultType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词</p>",
+          "example": "你是一名专业药师助手，请根据用户输入回答。",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLLMDiagnosisDrugResponse": {
+      "document": "GetLLMDiagnosisDrug返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，0成功，非0失败</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数据</p>",
+          "example": "无",
+          "member": "LLMDiagnosisDrugData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLLMDiagnosisHealthRequest": {
+      "document": "GetLLMDiagnosisHealth请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合作方ID</p>",
+          "example": "10001",
+          "member": "string",
+          "name": "PartnerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合作方密钥</p>",
+          "example": "**************a36bbdd17960b3d70",
+          "member": "string",
+          "name": "PartnerSecret",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>医院应用ID</p>",
+          "example": "******38323",
+          "member": "string",
+          "name": "HospitalAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对话ID，由接入方生成，相同对话ID会保持相同的上下文，接入方根据业务场景使用相同或新建对话ID（建议使用UUID值）</p><p>入参限制：长度限制10-50</p>",
+          "example": "fc444da2-6438-4458-be12-69f5c28769a7",
+          "member": "string",
+          "name": "DialogueId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次问答用户输入的问题，（最大长度1000）</p>",
+          "example": "头痛",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回类型：0:正常返回； 1:流式返回； 默认：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ResultType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>性别，0:未知，1:男，2:女</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Sex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>年龄，0:未知，最大值：120</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Age",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>追问轮数，-1:不追问；0:使用默认规则； 1-10:按指定轮数追问；（最大值10轮）； 默认：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "RoundNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否追问结构化结果，0：否，1：是；</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "OutputStructured",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLLMDiagnosisHealthResponse": {
+      "document": "GetLLMDiagnosisHealth返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，0成功，非0失败</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "Success",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LLMDiagnosisHealthData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLLMReportInterpretationRequest": {
+      "document": "GetLLMReportInterpretation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合作方ID</p>",
+          "example": "10001",
+          "member": "string",
+          "name": "PartnerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合作方密钥</p>",
+          "example": "**************a36bbdd17960b3d70",
+          "member": "string",
+          "name": "PartnerSecret",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入医院id</p>",
+          "example": "8******1",
+          "member": "string",
+          "name": "HospitalId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对话ID，由接入方生成，相同对话ID会保持相同的上下文，接入方根据业务场景使用相同或新建对话ID（建议使用UUID值）</p><p>入参限制：长度限制10-50</p>",
+          "example": "fc444da2-6438-4458-be12-69f5c28769a7",
+          "member": "string",
+          "name": "DialogueId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次问答用户输入的问题</p>",
+          "example": "帮我解读报告",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>报告文件信息</p>",
+          "example": "无",
+          "member": "ReportFileInfoReq",
+          "name": "ReportFileInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回类型：0:正常返回； 1:流式返回； 默认：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ResultType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>报告解读提示词</p>",
+          "example": "识别报告异常，给出医疗建议",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无报告问答提示词</p>",
+          "example": "识别报告异常，给出医疗建议",
+          "member": "string",
+          "name": "QaPrompt",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLLMReportInterpretationResponse": {
+      "document": "GetLLMReportInterpretation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，0成功，非0失败</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数据</p>",
+          "example": "无",
+          "member": "LLMReportInterpretationData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GuessQuestion": {
+      "document": "猜你想问信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "问题标题",
+          "example": "阿莫西林治疗什么",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HealthFollowUpQuestion": {
+      "document": "症状自查追问问题",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>追问类型</p>",
+          "example": "属性",
+          "member": "string",
+          "name": "PromptType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>追问选项列表</p>",
+          "example": "[\"刺痛\",\"胀痛\",\"钝痛\",\"其他\"]",
+          "member": "string",
+          "name": "Choices",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>追问题型，单选或多选</p>",
+          "example": "multiSelect",
+          "member": "string",
+          "name": "QuestionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>追问特殊类型，如部位题、时间题</p>",
+          "example": "time",
+          "member": "string",
+          "name": "SpecialType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>追问问题内容</p>",
+          "example": "腹痛性质符合哪种描述？",
+          "member": "string",
+          "name": "Question",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HighlightWordInfo": {
+      "document": "高亮词信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "高血压",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型 1:疾病，2:检验/检查，3:药品，4:科室，5:自定义配置",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跳转类型 h5:h5类型，mini_wx:微信小程序",
+          "example": "miniprogram",
+          "member": "string",
+          "name": "JumpType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跳转URL",
+          "example": "https://example.com/detail",
+          "member": "string",
+          "name": "JumpUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跳转小程序Appid",
+          "example": "wx12341234",
+          "member": "string",
+          "name": "JumpAppid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跳转小程序原始ID",
+          "example": "gh12341234",
+          "member": "string",
+          "name": "JumpOriginId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LLMDiagnosisDrugData": {
+      "document": "大模型问药返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>大模型返回问答内容</p>",
+          "example": "用药建议",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>大模型返回思考内容</p>",
+          "example": "根据用户描述",
+          "member": "string",
+          "name": "Think",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>序号，无业务含义，标识流式结果的序号</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Sort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流式输出结束标识，false:未结束，true:结束</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsFinish",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否命中敏感词，false:否，true:是；</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSensitive",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引用资料列表，流式输出方式，只在流式输出第一次返回；</p>",
+          "example": "无",
+          "member": "ReferResourceInfo",
+          "name": "ReferResourceItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>猜你想问列表，流式输出方式，只在流式结束输出结果；</p>",
+          "example": "无",
+          "member": "GuessQuestion",
+          "name": "GuessQuestions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高亮词列表，流式输出方式在流式过程中输出结果。</p>",
+          "example": "无",
+          "member": "HighlightWordInfo",
+          "name": "HighlightWords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>药品列表，流式输出方式，只在流式结束输出结果。</p>",
+          "example": "无",
+          "member": "StandardDrugCardInfo",
+          "name": "DrugList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LLMDiagnosisHealthData": {
+      "document": "大模型症状自查返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>大模型返回问答内容</p>",
+          "example": "阿莫西林的作用",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>大模型返回思考内容</p>",
+          "example": "根据xx内容",
+          "member": "string",
+          "name": "Think",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>序号，无业务含义，标识流式结果的序号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Sort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流式输出结束标识，false:未结束，true:结束</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsFinish",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否命中敏感词，false:否，true:是；</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSensitive",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果类型，0：正常结果，1：追问问题</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Kind",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险提示</p>",
+          "example": "存在较高风险，请您注意及时就医。",
+          "member": "string",
+          "name": "RiskReminder",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引用资料列表，流式输出方式，只在流式输出第一次返回；</p>",
+          "example": "无",
+          "member": "ReferResourceInfo",
+          "name": "ReferResourceItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>猜你想问列表，流式输出方式，只在流式结束输出结果；</p>",
+          "example": "无",
+          "member": "GuessQuestion",
+          "name": "GuessQuestions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高亮词列表，流式输出方式在流式过程中输出结果。</p>",
+          "example": "无",
+          "member": "HighlightWordInfo",
+          "name": "HighlightWords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>追问问题列表，流式输出方式，只在流式结束输出结果。只会在kind=1追问类型时有结果。</p>",
+          "example": "无",
+          "member": "HealthFollowUpQuestion",
+          "name": "FollowUpQuestions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>药品列表，流式输出方式，只在流式结束输出结果。</p>",
+          "example": "无",
+          "member": "StandardDrugCardInfo",
+          "name": "DrugList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LLMReportInterpretationData": {
+      "document": "大模型症状自查返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>大模型返回问答内容</p>",
+          "example": "分析报告内容",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>大模型返回思考内容</p>",
+          "example": "现在开始分析报告",
+          "member": "string",
+          "name": "Think",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>序号，无业务含义，标识流式结果的序号</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Sort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流式输出结束标识，false:未结束，true:结束</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsFinish",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否命中敏感词，false:否，true:是；</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSensitive",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持报告类型，false:否，true:是； 默认返回true，不支持的报告类型返回false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportFile",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回的报告列表，和传入报告文件顺序一致</p>",
+          "example": "无",
+          "member": "ReportFileInfoRsp",
+          "name": "ReportInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引用资料列表，流式输出方式，只在流式输出第一次返回；</p>",
+          "example": "无",
+          "member": "ReferResourceInfo",
+          "name": "ReferResourceItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>猜你想问列表，流式输出方式，只在流式结束输出结果；</p>",
+          "example": "无",
+          "member": "GuessQuestion",
+          "name": "GuessQuestions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高亮词列表，流式输出方式在流式过程中输出结果。</p>",
+          "example": "无",
+          "member": "HighlightWordInfo",
+          "name": "HighlightWords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryDrugInstructionsRequest": {
+      "document": "QueryDrugInstructions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合作方ID</p>",
+          "example": "1*******4",
+          "member": "string",
+          "name": "PartnerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合作方密钥</p>",
+          "example": "**************a36bbdd17960b3d70e",
+          "member": "string",
+          "name": "PartnerSecret",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>医院应用ID</p>",
+          "example": "******38323",
+          "member": "string",
+          "name": "HospitalAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次问答用户输入的问题，（最大长度1000）</p>",
+          "example": "阿莫西林分散片",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryDrugInstructionsResponse": {
+      "document": "QueryDrugInstructions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，0成功，非0失败</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数据</p>",
+          "example": "无",
+          "member": "StandardDrugInstructionInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReferResourceInfo": {
+      "document": "引用资料信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资料标题",
+          "example": "感冒的预防与治疗",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资料来源类型，1:问答库，2:文档，3:医典百科，4:临床指南，5:药品说明书",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资料详情链接",
+          "example": "https://example.com/article/123",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReportFileInfoReq": {
+      "document": "报告文件信息参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>报告文件链接</p>",
+          "example": "https://xxxx.jpg",
+          "member": "string",
+          "name": "ReportFileUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>报告文件类型，1:pdf，2:图片</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ReportFileType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>报告id</p>",
+          "example": "3b2dba586d144678a54d2d60810fc9e9",
+          "member": "string",
+          "name": "ReportId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ReportFileInfoRsp": {
+      "document": "报告文件信息返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>报告id</p>",
+          "example": "3b2dba586d144678a54d2d60810fc9e9",
+          "member": "string",
+          "name": "ReportId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否解析成功</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAnalysis",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>解析错误信息</p>",
+          "example": "格式错误",
+          "member": "string",
+          "name": "ErrInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StandardDrugCardInfo": {
+      "document": "标准药品卡片信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标准药品名",
+          "example": "药品信息",
+          "member": "string",
+          "name": "StandardDrugName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品列表",
+          "example": "无",
+          "member": "DrugCardInfo",
+          "name": "DrugInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StandardDrugInstructionInfo": {
+      "document": "药品说明书标准药品结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标准药品名",
+          "example": "药品信息",
+          "member": "string",
+          "name": "StandardDrugName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品列表",
+          "example": "无",
+          "member": "DrugInstructionInfo",
+          "name": "DrugInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

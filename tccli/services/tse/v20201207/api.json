@@ -1,5 +1,19 @@
 {
   "actions": {
+    "AddCloudNativeAPIGatewayConsumerGroupAuth": {
+      "document": "为资源（模型 API / MCP Server）添加消费者组授权。",
+      "input": "AddCloudNativeAPIGatewayConsumerGroupAuthRequest",
+      "name": "云原生网关添加消费者组授权",
+      "output": "AddCloudNativeAPIGatewayConsumerGroupAuthResponse",
+      "status": "online"
+    },
+    "AddCloudNativeAPIGatewayConsumerInGroup": {
+      "document": "将消费者添加到消费者组。",
+      "input": "AddCloudNativeAPIGatewayConsumerInGroupRequest",
+      "name": "云原生网关添加消费者到消费者组",
+      "output": "AddCloudNativeAPIGatewayConsumerInGroupResponse",
+      "status": "online"
+    },
     "BindAutoScalerResourceStrategyToGroups": {
       "document": "弹性伸缩策略批量绑定网关分组",
       "input": "BindAutoScalerResourceStrategyToGroupsRequest",
@@ -42,6 +56,34 @@
       "output": "CreateCloudNativeAPIGatewayCertificateResponse",
       "status": "online"
     },
+    "CreateCloudNativeAPIGatewayConsumer": {
+      "document": "创建消费者。",
+      "input": "CreateCloudNativeAPIGatewayConsumerRequest",
+      "name": "创建云原生网关消费者",
+      "output": "CreateCloudNativeAPIGatewayConsumerResponse",
+      "status": "online"
+    },
+    "CreateCloudNativeAPIGatewayConsumerGroup": {
+      "document": "创建消费者组。",
+      "input": "CreateCloudNativeAPIGatewayConsumerGroupRequest",
+      "name": "创建云原生网关消费者分组",
+      "output": "CreateCloudNativeAPIGatewayConsumerGroupResponse",
+      "status": "online"
+    },
+    "CreateCloudNativeAPIGatewayLLMModelAPI": {
+      "document": "创建 LLM 模型 API。",
+      "input": "CreateCloudNativeAPIGatewayLLMModelAPIRequest",
+      "name": "创建 AI 网关模型 API",
+      "output": "CreateCloudNativeAPIGatewayLLMModelAPIResponse",
+      "status": "online"
+    },
+    "CreateCloudNativeAPIGatewayLLMModelService": {
+      "document": "创建 LLM 模型服务。同一网关下 Name 唯一。",
+      "input": "CreateCloudNativeAPIGatewayLLMModelServiceRequest",
+      "name": "创建 LLM 模型服务",
+      "output": "CreateCloudNativeAPIGatewayLLMModelServiceResponse",
+      "status": "online"
+    },
     "CreateCloudNativeAPIGatewayPublicNetwork": {
       "document": "创建公网网络配置",
       "input": "CreateCloudNativeAPIGatewayPublicNetworkRequest",
@@ -61,6 +103,13 @@
       "input": "CreateCloudNativeAPIGatewayRouteRateLimitRequest",
       "name": "创建云原生网关限流插件(路由)",
       "output": "CreateCloudNativeAPIGatewayRouteRateLimitResponse",
+      "status": "online"
+    },
+    "CreateCloudNativeAPIGatewaySecretKey": {
+      "document": "创建消费者密钥。",
+      "input": "CreateCloudNativeAPIGatewaySecretKeyRequest",
+      "name": "创建云原生网关密钥",
+      "output": "CreateCloudNativeAPIGatewaySecretKeyResponse",
       "status": "online"
     },
     "CreateCloudNativeAPIGatewayService": {
@@ -210,11 +259,39 @@
       "output": "DeleteCloudNativeAPIGatewayCertificateResponse",
       "status": "online"
     },
+    "DeleteCloudNativeAPIGatewayConsumer": {
+      "document": "删除消费者（被绑定到消费者组/密钥时需先解绑）。",
+      "input": "DeleteCloudNativeAPIGatewayConsumerRequest",
+      "name": "删除云原生网关消费者",
+      "output": "DeleteCloudNativeAPIGatewayConsumerResponse",
+      "status": "online"
+    },
+    "DeleteCloudNativeAPIGatewayConsumerGroup": {
+      "document": "删除消费者组（被授权资源占用时返回 CheckItems）。",
+      "input": "DeleteCloudNativeAPIGatewayConsumerGroupRequest",
+      "name": "删除云原生网关消费者组",
+      "output": "DeleteCloudNativeAPIGatewayConsumerGroupResponse",
+      "status": "online"
+    },
     "DeleteCloudNativeAPIGatewayIPRestriction": {
       "document": "删除云原生网关访问控制",
       "input": "DeleteCloudNativeAPIGatewayIPRestrictionRequest",
       "name": "删除云原生网关访问控制",
       "output": "DeleteCloudNativeAPIGatewayIPRestrictionResponse",
+      "status": "online"
+    },
+    "DeleteCloudNativeAPIGatewayLLMModelAPI": {
+      "document": "删除 LLM 模型 API。",
+      "input": "DeleteCloudNativeAPIGatewayLLMModelAPIRequest",
+      "name": "删除 LLM 模型 API",
+      "output": "DeleteCloudNativeAPIGatewayLLMModelAPIResponse",
+      "status": "online"
+    },
+    "DeleteCloudNativeAPIGatewayLLMModelService": {
+      "document": "删除 LLM 模型服务（被模型 API 绑定时需先解绑）。",
+      "input": "DeleteCloudNativeAPIGatewayLLMModelServiceRequest",
+      "name": "删除 LLM 模型服务",
+      "output": "DeleteCloudNativeAPIGatewayLLMModelServiceResponse",
       "status": "online"
     },
     "DeleteCloudNativeAPIGatewayPublicNetwork": {
@@ -236,6 +313,13 @@
       "input": "DeleteCloudNativeAPIGatewayRouteRateLimitRequest",
       "name": "删除云原生网关的限流插件(路由)",
       "output": "DeleteCloudNativeAPIGatewayRouteRateLimitResponse",
+      "status": "online"
+    },
+    "DeleteCloudNativeAPIGatewaySecretKey": {
+      "document": "删除消费者密钥（被绑定时需先解绑）。",
+      "input": "DeleteCloudNativeAPIGatewaySecretKeyRequest",
+      "name": "删除云原生网关密钥",
+      "output": "DeleteCloudNativeAPIGatewaySecretKeyResponse",
       "status": "online"
     },
     "DeleteCloudNativeAPIGatewayService": {
@@ -406,6 +490,34 @@
       "output": "DescribeCloudNativeAPIGatewayConfigResponse",
       "status": "online"
     },
+    "DescribeCloudNativeAPIGatewayConsumer": {
+      "document": "查询消费者详情。",
+      "input": "DescribeCloudNativeAPIGatewayConsumerRequest",
+      "name": "查询云原生网关消费者详情",
+      "output": "DescribeCloudNativeAPIGatewayConsumerResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewayConsumerGroup": {
+      "document": "查询消费者组详情。",
+      "input": "DescribeCloudNativeAPIGatewayConsumerGroupRequest",
+      "name": "查询云原生网关消费者分组",
+      "output": "DescribeCloudNativeAPIGatewayConsumerGroupResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewayConsumerGroupList": {
+      "document": "查询消费者组列表。",
+      "input": "DescribeCloudNativeAPIGatewayConsumerGroupListRequest",
+      "name": "查询云原生网关消费者分组列表",
+      "output": "DescribeCloudNativeAPIGatewayConsumerGroupListResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewayConsumerList": {
+      "document": "查询消费者列表。",
+      "input": "DescribeCloudNativeAPIGatewayConsumerListRequest",
+      "name": "查询云原生网关消费者列表",
+      "output": "DescribeCloudNativeAPIGatewayConsumerListResponse",
+      "status": "online"
+    },
     "DescribeCloudNativeAPIGatewayIPRestriction": {
       "document": "查询云原生网关访问控制",
       "input": "DescribeCloudNativeAPIGatewayIPRestrictionRequest",
@@ -418,6 +530,34 @@
       "input": "DescribeCloudNativeAPIGatewayInfoByIpRequest",
       "name": "根据公网IP查询云原生网关实例信息",
       "output": "DescribeCloudNativeAPIGatewayInfoByIpResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewayLLMModelAPI": {
+      "document": "查询单个 LLM 模型 API 详情。",
+      "input": "DescribeCloudNativeAPIGatewayLLMModelAPIRequest",
+      "name": "查询单个LLM 模型 API",
+      "output": "DescribeCloudNativeAPIGatewayLLMModelAPIResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewayLLMModelAPIs": {
+      "document": "查询 LLM 模型 API 列表。",
+      "input": "DescribeCloudNativeAPIGatewayLLMModelAPIsRequest",
+      "name": "查询 LLM 模型 API 列表",
+      "output": "DescribeCloudNativeAPIGatewayLLMModelAPIsResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewayLLMModelService": {
+      "document": "查询单个 LLM 模型服务详情。",
+      "input": "DescribeCloudNativeAPIGatewayLLMModelServiceRequest",
+      "name": "查询单个 LLM 模型服务列表",
+      "output": "DescribeCloudNativeAPIGatewayLLMModelServiceResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewayLLMModelServices": {
+      "document": "查询 LLM 模型服务列表。",
+      "input": "DescribeCloudNativeAPIGatewayLLMModelServicesRequest",
+      "name": "查询 LLM 模型服务列表",
+      "output": "DescribeCloudNativeAPIGatewayLLMModelServicesResponse",
       "status": "online"
     },
     "DescribeCloudNativeAPIGatewayNodes": {
@@ -446,6 +586,27 @@
       "input": "DescribeCloudNativeAPIGatewayRoutesRequest",
       "name": "查询云原生网关路由列表",
       "output": "DescribeCloudNativeAPIGatewayRoutesResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewaySecretKey": {
+      "document": "查询密钥详情（SecretValue 字段会被掩码）。",
+      "input": "DescribeCloudNativeAPIGatewaySecretKeyRequest",
+      "name": "查询云原生网关密钥详情",
+      "output": "DescribeCloudNativeAPIGatewaySecretKeyResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewaySecretKeyList": {
+      "document": "查询密钥列表。",
+      "input": "DescribeCloudNativeAPIGatewaySecretKeyListRequest",
+      "name": "查询云原生网关密钥列表",
+      "output": "DescribeCloudNativeAPIGatewaySecretKeyListResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewaySecretKeyValue": {
+      "document": "查询密钥明文值（KMS 类型密钥不可获取）。",
+      "input": "DescribeCloudNativeAPIGatewaySecretKeyValueRequest",
+      "name": "查询云原生网关密钥值",
+      "output": "DescribeCloudNativeAPIGatewaySecretKeyValueResponse",
       "status": "online"
     },
     "DescribeCloudNativeAPIGatewayServiceRateLimit": {
@@ -721,6 +882,34 @@
       "output": "ModifyCloudNativeAPIGatewayCertificateResponse",
       "status": "online"
     },
+    "ModifyCloudNativeAPIGatewayConsumer": {
+      "document": "修改消费者。",
+      "input": "ModifyCloudNativeAPIGatewayConsumerRequest",
+      "name": "修改云原生网关消费者",
+      "output": "ModifyCloudNativeAPIGatewayConsumerResponse",
+      "status": "online"
+    },
+    "ModifyCloudNativeAPIGatewayConsumerGroup": {
+      "document": "修改消费者组。",
+      "input": "ModifyCloudNativeAPIGatewayConsumerGroupRequest",
+      "name": "修改云原生网关消费者组",
+      "output": "ModifyCloudNativeAPIGatewayConsumerGroupResponse",
+      "status": "online"
+    },
+    "ModifyCloudNativeAPIGatewayLLMModelAPI": {
+      "document": "修改 LLM 模型 API。",
+      "input": "ModifyCloudNativeAPIGatewayLLMModelAPIRequest",
+      "name": "修改 LLM 模型 API",
+      "output": "ModifyCloudNativeAPIGatewayLLMModelAPIResponse",
+      "status": "online"
+    },
+    "ModifyCloudNativeAPIGatewayLLMModelService": {
+      "document": "修改 LLM 模型服务。",
+      "input": "ModifyCloudNativeAPIGatewayLLMModelServiceRequest",
+      "name": "修改 LLM 模型服务",
+      "output": "ModifyCloudNativeAPIGatewayLLMModelServiceResponse",
+      "status": "online"
+    },
     "ModifyCloudNativeAPIGatewayRoute": {
       "document": "修改云原生网关路由",
       "input": "ModifyCloudNativeAPIGatewayRouteRequest",
@@ -733,6 +922,13 @@
       "input": "ModifyCloudNativeAPIGatewayRouteRateLimitRequest",
       "name": "修改云原生网关限流插件(路由)",
       "output": "ModifyCloudNativeAPIGatewayRouteRateLimitResponse",
+      "status": "online"
+    },
+    "ModifyCloudNativeAPIGatewaySecretKeyStatus": {
+      "document": "修改密钥启用状态。",
+      "input": "ModifyCloudNativeAPIGatewaySecretKeyStatusRequest",
+      "name": "修改云原生网关密钥状态",
+      "output": "ModifyCloudNativeAPIGatewaySecretKeyStatusResponse",
       "status": "online"
     },
     "ModifyCloudNativeAPIGatewayService": {
@@ -854,6 +1050,20 @@
       "output": "PublishConfigFilesResponse",
       "status": "online"
     },
+    "RemoveCloudNativeAPIGatewayConsumerGroupAuth": {
+      "document": "从资源（模型 API / MCP Server）移除消费者组授权。",
+      "input": "RemoveCloudNativeAPIGatewayConsumerGroupAuthRequest",
+      "name": "云原生网关移除消费者组授权",
+      "output": "RemoveCloudNativeAPIGatewayConsumerGroupAuthResponse",
+      "status": "online"
+    },
+    "RemoveCloudNativeAPIGatewayConsumerInGroup": {
+      "document": "将消费者从消费者组移除。",
+      "input": "RemoveCloudNativeAPIGatewayConsumerInGroupRequest",
+      "name": "云原生网关消费者组中移除消费者",
+      "output": "RemoveCloudNativeAPIGatewayConsumerInGroupResponse",
+      "status": "online"
+    },
     "RestartSREInstance": {
       "document": "重启微服务引擎实例",
       "input": "RestartSREInstanceRequest",
@@ -918,6 +1128,541 @@
     "serviceShortName": "tse"
   },
   "objects": {
+    "AIGWCrossServiceFallbackConfig": {
+      "document": "跨服务降级配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>触发条件</p><p>枚举值：</p><ul><li>ServiceUnavailable： 服务不可用</li><li>ConnectionTimeout： 连接超时</li><li>RateLimited： 限流</li></ul>",
+          "example": "[\"ServiceUnavailable\"]",
+          "member": "string",
+          "name": "TriggerConditions",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>fallback 服务链</p>",
+          "example": "无",
+          "member": "AIGWFallbackServiceItem",
+          "name": "FallbackServiceChain",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>额度降级触发配置</p>",
+          "example": "无",
+          "member": "AIGWLLMQuotaFallbackTrigger",
+          "name": "QuotaFallbackTrigger",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWCustomDesensitizeRule": {
+      "document": "AI 网关自定义脱敏规则（A 层 / B 层共用结构体，MaskFormat 含义随所属层不同）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自定义脱敏规则名称</p>",
+          "example": "gonghao",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义脱敏规则匹配正则</p>",
+          "example": "E\\d{6}",
+          "member": "string",
+          "name": "Pattern",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义脱敏规则掩码</p>",
+          "example": "[REDACTED_EMP]",
+          "member": "string",
+          "name": "MaskFormat",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义脱敏规则开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": true,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWFallbackServiceItem": {
+      "document": "降级服务元素",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型服务 Id</p>",
+          "example": "3dcaac5d48cc4d39a8ed79937fe720c6",
+          "member": "string",
+          "name": "ModelServiceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型服务名</p>",
+          "example": "mock-openai",
+          "member": "string",
+          "name": "ModelServiceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWForwardDesensitizeConfig": {
+      "document": "AI 网关 A 层转发脱敏配置（请求转发到 LLM 供应商前对 messages 替换为占位符）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>转发脱敏开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": true,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预定义规则类型</p><p>枚举值：</p><ul><li>Phone： 电话号码</li><li>IdCard： 身份证号</li><li>BankCard： 银行卡号</li><li>Email： 电子邮箱地址</li><li>IP： IP地址</li><li>Name： 姓名</li></ul>",
+          "example": "[\"Phone\"]",
+          "member": "string",
+          "name": "PredefinedRuleTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义脱敏规则</p>",
+          "example": "无",
+          "member": "AIGWCustomDesensitizeRule",
+          "name": "CustomRules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>掩码</p>",
+          "example": "[{类型名}]",
+          "member": "string",
+          "name": "PlaceholderFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>脱敏异常处理</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>Skip： 跳过</li></ul>",
+          "example": "Reject",
+          "member": "string",
+          "name": "OnFailure",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWIntentRoute": {
+      "document": "AI 网关意图路由配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>意图识别模型id</p>",
+          "example": "d6015302e11b4a1f83dd3adb88180716",
+          "member": "string",
+          "name": "IntentModelServiceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>置信度</p>",
+          "example": "0.75",
+          "member": "float",
+          "name": "ConfidenceThreshold",
+          "output_required": false,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认服务id</p>",
+          "example": "d6015302e11b4a1f83dd3adb88180716",
+          "member": "string",
+          "name": "DefaultModelServiceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则</p>",
+          "example": "无",
+          "member": "AIGWIntentRouteRule",
+          "name": "Rules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWIntentRouteRule": {
+      "document": "AI 网关意图路由规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>意图编码</p><p>枚举值：</p><ul><li>Coder： 代码编写</li><li>Math： 数学计算</li><li>Translation： 翻译</li><li>Flash： 快速问答</li><li>Complex： 复杂推理</li></ul>",
+          "example": "Coder",
+          "member": "string",
+          "name": "IntentCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型服务id</p>",
+          "example": "d6015302e11b4a1f83dd3adb88180716",
+          "member": "string",
+          "name": "ModelServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWKVMatch": {
+      "document": "路由匹配规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>键</p>",
+          "example": "k1",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>值</p>",
+          "example": "asdfad",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作类型</p>",
+          "example": "exact",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWLLMQuotaFallbackTrigger": {
+      "document": "云原生网关模型API 配额降级触发条件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>配额感知阈值百分比（RPM 与 TPM 共用）</p><p>取值范围：[0, 99]</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "ThresholdPercent",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检查维度策略</p><p>枚举值：</p><ul><li>AnyInsufficient：  RPM 或 TPM 任一不足即触发</li><li>AllInsufficient： RPM 和 TPM 同时不足才触发</li></ul>",
+          "example": "AnyInsufficient",
+          "member": "string",
+          "name": "CheckDimension",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWLLMQuotaLimit": {
+      "document": "云原生网关模型LLM配额限制信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>该模型服务每分钟请求数上限，0 表示该维度不限</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "RPMLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该模型服务每分钟 Token 数上限，0 表示该维度不限</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TPMLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWLatencyPriorityConfig": {
+      "document": "延迟优先路由配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>路由规则列表</p>",
+          "example": "无",
+          "member": "AIGWLatencyPriorityRouteRule",
+          "name": "Rules",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>延迟指标</p><p>枚举值：</p><ul><li>LLMLatency： LLM 延迟</li><li>NetworkLatency： 网络延迟</li></ul>",
+          "example": "LLMLatency",
+          "member": "string",
+          "name": "LatencyMetric",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由策略</p><p>枚举值：</p><ul><li>FastMode： 快速模式</li><li>BalanceMode： 均衡模式</li></ul>",
+          "example": "BalanceMode",
+          "member": "string",
+          "name": "RouteMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWLatencyPriorityRouteRule": {
+      "document": "AI 网关延迟优先路由模型服务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型服务id</p>",
+          "example": "4d3b21814ff540b6a1b3bc3c46a62793",
+          "member": "string",
+          "name": "ModelServiceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWLogConfig": {
+      "document": "AI 网关日志输出配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启请求 payload 记录日志</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRequestLogPayloads",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启响应 payload 记录日志</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableResponseLogPayloads",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志记录的请求body的最大字节数</p><p>取值范围：[512, 1048576]</p><p>EnableRequestLogPayloads 为true时必填</p>",
+          "example": "4096",
+          "member": "int64",
+          "name": "RequestLogPayloadMaxSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志记录的响应body的最大字节数</p><p>取值范围：[512, 1048576]</p><p>EnableResponseLogPayloads 为true时必填</p>",
+          "example": "32768",
+          "member": "int64",
+          "name": "ResponseLogPayloadMaxSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWLogDesensitizeConfig": {
+      "document": "AI 网关 B 层日志脱敏配置（写入 LLM Log 前对 payload 掩码）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志脱敏开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": true,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预定义规则类型</p><p>枚举值：</p><ul><li>Phone： 电话号码</li><li>IdCard： 身份证号</li><li>BankCard： 银行卡号</li><li>Email： 邮箱地址</li><li>IP： IP地址</li><li>Name： 姓名</li></ul>",
+          "example": "[\"Phone\"]",
+          "member": "string",
+          "name": "PredefinedRuleTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义脱敏规则</p>",
+          "example": "无",
+          "member": "AIGWCustomDesensitizeRule",
+          "name": "CustomRules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志脱敏范围</p><p>枚举值：</p><ul><li>Request： 请求</li><li>Response： 响应</li></ul>",
+          "example": "[\"Request\"]",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWTagFilter": {
+      "document": "AI网关标签过滤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>匹配策略</p><p>枚举值：</p><ul><li>AND： 并</li><li>OR： 或</li></ul>",
+          "example": "OR",
+          "member": "string",
+          "name": "MatchStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "[\"env:dev\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AccurateQpsThreshold": {
       "document": "云原生网关限流插件参数限流的精确Qps阈值",
       "members": [
@@ -945,6 +1690,115 @@
         }
       ],
       "usage": "both"
+    },
+    "AddCloudNativeAPIGatewayConsumerGroupAuthRequest": {
+      "document": "AddCloudNativeAPIGatewayConsumerGroupAuth请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关实例id</p>",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权资源类型。</p><p>枚举值：</p><ul><li>ModelAPI：模型 API</li><li>MCPServer：MCP Server</li></ul>",
+          "example": "ModelAPI",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对应资源的 ID。</p><ul><li>ResourceType=ModelAPI 时是模型 API ID</li><li>ResourceType=MCPServer 时是 MCP Server ID</li></ul>",
+          "example": "e3aa4fe271c24bb4aa7cca41db5a4e75",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组 ID 列表（每个 ID 以 cg- 开头），长度 1-10。</p>",
+          "example": "[\"cg-xxx\"]",
+          "member": "string",
+          "name": "ConsumerGroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCloudNativeAPIGatewayConsumerGroupAuthResponse": {
+      "document": "AddCloudNativeAPIGatewayConsumerGroupAuth返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCloudNativeAPIGatewayConsumerInGroupRequest": {
+      "document": "AddCloudNativeAPIGatewayConsumerInGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例id",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组 ID（以 cg- 开头）。</p>",
+          "example": "cg-xxx",
+          "member": "string",
+          "name": "ConsumerGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者 ID 列表，长度 1-10。</p>",
+          "example": "[\"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\"]",
+          "member": "string",
+          "name": "ConsumerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCloudNativeAPIGatewayConsumerInGroupResponse": {
+      "document": "AddCloudNativeAPIGatewayConsumerInGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否成功。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ApolloEnvParam": {
       "document": "Apollo 环境配置参数",
@@ -1060,6 +1914,7 @@
           "example": "EXACT",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1067,9 +1922,10 @@
         {
           "disabled": false,
           "document": "匹配值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "blue",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1080,6 +1936,7 @@
           "example": "TEXT",
           "member": "string",
           "name": "ValueType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1333,6 +2190,433 @@
         }
       ],
       "usage": "out"
+    },
+    "CNAPIGwConsumer": {
+      "document": "消费者结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>消费者 ID。</p>",
+          "example": "consumer-xxx",
+          "member": "string",
+          "name": "ConsumerId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名字</p>",
+          "example": "消费者名称",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2023-01-01 10:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间 yyyy-MM-dd hh:mm:ss</p>",
+          "example": "2023-01-01 10:00:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "消费者描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者分组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CNAPIGwConsumerGroup",
+          "name": "ConsumerGroups",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CNAPIGwConsumerGroup": {
+      "document": "消费者组结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组id",
+          "example": "cg-xxx",
+          "member": "string",
+          "name": "ConsumerGroupId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名字",
+          "example": "消费者组名称",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态Disable/Enable",
+          "example": "Enable",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "消费者组描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2023-01-01 10:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间 yyyy-MM-dd hh:mm:ss",
+          "example": "2023-01-01 10:00:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的消费者数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "BindCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CNAPIGwConsumerGroupList": {
+      "document": "分组列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者分组信息",
+          "example": "无",
+          "member": "CNAPIGwConsumerGroup",
+          "name": "ConsumerGroups",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CNAPIGwConsumerList": {
+      "document": "消费者列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CNAPIGwConsumer",
+          "name": "Consumers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CNAPIGwCreateCommonResult": {
+      "document": "创建资源通用结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Success",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应的id 值",
+          "example": "consumer-xxx",
+          "member": "string",
+          "name": "ID",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CNAPIGwSecretKey": {
+      "document": "密钥信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>密钥id</p>",
+          "example": "secret-xxx",
+          "member": "string",
+          "name": "SecretKeyId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥名字</p>",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥协议类型。</p>",
+          "example": "ApiKey",
+          "member": "string",
+          "name": "SecretType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>",
+          "example": "Enable",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥生成方式。</p><p>枚举值：</p><ul><li>System： 系统自动生成</li><li>Custom： 用户自定义</li><li>KMS： 使用 KMS 密钥</li></ul>",
+          "example": "KMS",
+          "member": "string",
+          "name": "GenerateType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥明文</p>",
+          "example": "value",
+          "member": "string",
+          "name": "SecretValue",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>KMS凭证名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "KmsKeyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>KMS凭证版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value",
+          "member": "string",
+          "name": "KmsKeyVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "密钥描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否可以绑定</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "CanBind",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2025-11-11 11:11:11",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p>",
+          "example": "2025-11-11 11:11:11",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "BindCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>",
+          "example": "Consumer",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CNAPIGwSecretKeyList": {
+      "document": "密钥列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥列表",
+          "example": "无",
+          "member": "CNAPIGwSecretKey",
+          "name": "SecretKeys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CanaryPriorityRule": {
       "document": "灰度规则 Priority - Rule",
@@ -1973,6 +3257,686 @@
         }
       ],
       "usage": "out"
+    },
+    "CloudNativeAPIGatewayLLMModelAPI": {
+      "document": "LLM 模型 API",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型 API ID。</p>",
+          "example": "9006154d-8770-xx",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2021-09-09 11:52:30",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p>",
+          "example": "2021-09-09 11:52:30",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI 网关 LLM 模型 API 的唯一标识名称，格式规则：2-50 字符，支持英文、数字、下划线。</p>",
+          "example": "openai_chat",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择业务场景,xa0 选项：Chat（聊天）。</p>",
+          "example": "Chat",
+          "member": "string",
+          "name": "SceneType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务场景对应的请求协议，选项：OpenAI（目前只支持 OpenAI）。</p>",
+          "example": "OpenAI",
+          "member": "string",
+          "name": "RequestProtocol",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由列表</p>",
+          "example": "无",
+          "member": "DefaultKongRoute",
+          "name": "RouteList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>为API设置统一的前缀，格式：以/开头，支持字母、数字、短横线。</p>",
+          "example": "/base/qq",
+          "member": "string",
+          "name": "BasePath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路径简化，<br>启用时：客户端请求路径 → 移除Base Path → 后端接收简洁路径<br>禁用时：客户端请求路径 → 完整传递给后端。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "StripPath",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 API 的相关描述。</p>",
+          "example": "大模型统一聊天 API",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型服务Id</p>",
+          "example": "8006154d-8770-xx",
+          "member": "string",
+          "name": "ModelServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型服务名称</p>",
+          "example": "openai 服务",
+          "member": "string",
+          "name": "ModelServiceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型服务路由策略（是指如何路由到模型服务）</p>",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelServiceRoute",
+          "name": "ModelServiceRoute",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "AIGWKVMatch",
+          "name": "MatchHeaders",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启跨服务fallback</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableCrossServiceFallback",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>跨服务fallback配置详情</p>",
+          "example": "无",
+          "member": "AIGWCrossServiceFallbackConfig",
+          "name": "CrossServiceFallbackConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否展示模型API</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DescribeCloudNativeAPIGatewayLLMModelAPI",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "无",
+          "member": "AIGWTagFilter",
+          "name": "TagFilter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志显示相关开关</p>",
+          "example": "无",
+          "member": "AIGWLogConfig",
+          "name": "LogConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志脱敏规则</p>",
+          "example": "无",
+          "member": "AIGWLogDesensitizeConfig",
+          "name": "LogDesensitizeConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>转发脱敏规则</p>",
+          "example": "无",
+          "member": "AIGWForwardDesensitizeConfig",
+          "name": "ForwardDesensitizeConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudNativeAPIGatewayLLMModelFallbackRule": {
+      "document": "LLM-单模型内降级规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备选模型，主模型不可用时将依次按顺序尝试。",
+          "example": "[\"gpt-5.1\",\"gpt-5-mini\"]",
+          "member": "string",
+          "name": "FallbackModels",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudNativeAPIGatewayLLMModelParamCheckInfo": {
+      "document": "LLM-模型参数检查信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "允许的模型列表。",
+          "example": "[\"gpt-5.1\",\"gpt-5-mini\"]",
+          "member": "string",
+          "name": "AllowModelList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型参数校验失败时的处理策略，选项：Return404（返回404）、FallBackToDefaultModel（使用默认模型降级）。",
+          "example": "Return404",
+          "member": "string",
+          "name": "ModelValidationFailureStrategy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudNativeAPIGatewayLLMModelService": {
+      "document": "LLM 模型服务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型服务 ID。</p>",
+          "example": "9006154d-8770-xx",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型服务名称。</p>",
+          "example": "openai-test",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "2021-09-09 11:52:30",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间。</p>",
+          "example": "2021-09-09 11:52:30",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型，目前只支持xa0LLMService。</p>",
+          "example": "LLMService",
+          "member": "string",
+          "name": "ServiceType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择模型提供商, 选项：OpenAI、Anthropic、Azure OpenAI、自定义HTTP。</p>",
+          "example": "OpenAI",
+          "member": "string",
+          "name": "ModelProvider",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>API协议标准，根据供应商动态变化：OpenAI→OpenAI/v1，Anthropic→Anthropic/v1等</p>",
+          "example": "OpenAI/v1",
+          "member": "string",
+          "name": "ModelProtocol",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义的模型请求 URL。</p>",
+          "example": "https://api.openai.com/v1",
+          "member": "string",
+          "name": "UpstreamURL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型选择方式，选项：Specify（指定模型）、PassThrough（透传请求模型）。</p>",
+          "example": "Specify",
+          "member": "string",
+          "name": "ModelSelector",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认模型，模型选择方式为 Specify 时必填。</p>",
+          "example": "gpt-4.1",
+          "member": "string",
+          "name": "DefaultModel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启模型降级，模型选择方式为 Specify 时必填。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableModelFallback",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可以配置备用模型规则，EnableSpecifyModelFallbackxa0为 true 时必填。</p>",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelFallbackRule",
+          "name": "ModelFallbackRule",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启模型参数校验，是否校验客户端传递的 model 参数,xa0模型选择方式为 PassThrough 时必填。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableModelParamCheck",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型检验信息，EnableModelParamCheckxa0为 true 时必填。</p>",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelParamCheckInfo",
+          "name": "ModelParamCheckRule",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述。</p>",
+          "example": "OpenAI 模型服务",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接超时时间</p><p>取值范围：[1, 3600000]</p><p>单位：毫秒</p><p>默认值：10000</p>",
+          "example": "10000",
+          "member": "int64",
+          "name": "ConnectTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>写入超时时间</p><p>取值范围：[1, 3600000]</p><p>单位：毫秒</p><p>默认值：60000</p>",
+          "example": "60000",
+          "member": "int64",
+          "name": "WriteTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>读取超时时间</p><p>取值范围：[1, 3600000]</p><p>单位：毫秒</p>",
+          "example": "60000",
+          "member": "int64",
+          "name": "ReadTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>重试次数</p><p>取值范围：[0, 5]</p><p>单位：次</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Retries",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路径拼接模式</p><p>枚举值：</p><ul><li>FixedPath： 固定路径</li><li>AutoConcat： 自动拼接</li></ul>",
+          "example": "FixedPath",
+          "member": "string",
+          "name": "UpstreamUrlMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>sni</p>",
+          "example": "generativelanguage.googleapis.com",
+          "member": "string",
+          "name": "SNI",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额限制</p>",
+          "example": "无",
+          "member": "AIGWLLMQuotaLimit",
+          "name": "QuotaLimit",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "[\"capability:code\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的模型服务秘钥</p>",
+          "example": "[\"sk-hjegh\"]",
+          "member": "string",
+          "name": "SecretKeyIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudNativeAPIGatewayLLMModelServiceRoute": {
+      "document": "模型服务路由配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>生效的路由算法类型：权重路由，模型名称路由、参数路由等Weighted/ModelName/Query (预留多个，暂时只能填写一个)</p>",
+          "example": "[\"ModelName\"]",
+          "member": "string",
+          "name": "SelectedTypes",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>权重路由配置，最多10个</p>",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy",
+          "name": "WeightedConfig",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称路由配置，最多10个</p>",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy",
+          "name": "ModelNameConfig",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>意图识别</p>",
+          "example": "无",
+          "member": "AIGWIntentRoute",
+          "name": "IntentRouteConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>延迟路由</p>",
+          "example": "无",
+          "member": "AIGWLatencyPriorityConfig",
+          "name": "LatencyPriorityConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy": {
+      "document": "模型服务模型名称路由策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型服务id</p>",
+          "example": "5b5b32f09bc24278a35541aa450cbbf3",
+          "member": "string",
+          "name": "ModelServiceId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>匹配模型服务</p>",
+          "example": "ge*n*",
+          "member": "string",
+          "name": "MatchModelName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>重写模型</p>",
+          "example": "gemini-2.5-flash",
+          "member": "string",
+          "name": "RewriteModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy": {
+      "document": "权重路由配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型服务id</p>",
+          "example": "5b5b32f09bc24278a35541aa450cbbf3",
+          "member": "string",
+          "name": "ModelServiceId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>权重值</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CloudNativeAPIGatewayNode": {
       "document": "云原生API网关节点信息。",
@@ -4140,6 +6104,525 @@
       ],
       "type": "object"
     },
+    "CreateCloudNativeAPIGatewayConsumerGroupRequest": {
+      "document": "CreateCloudNativeAPIGatewayConsumerGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例id",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组名称，最长 60 字符。同一网关下唯一。</p>",
+          "example": "consumer-group-1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>",
+          "example": "Enable",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组描述。最长 200 字符。</p>",
+          "example": "测试消费者组",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayConsumerGroupResponse": {
+      "document": "CreateCloudNativeAPIGatewayConsumerGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建结果。包含成功标识与新建资源 ID。</p>",
+          "example": "无",
+          "member": "CNAPIGwCreateCommonResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayConsumerRequest": {
+      "document": "CreateCloudNativeAPIGatewayConsumer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例id",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者名称，最长 60 字符。同一网关下唯一。</p>",
+          "example": "consumer-1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者描述。最长 200 字符。</p>",
+          "example": "测试消费者",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayConsumerResponse": {
+      "document": "CreateCloudNativeAPIGatewayConsumer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建结果。包含成功标识与新建资源 ID。</p>",
+          "example": "无",
+          "member": "CNAPIGwCreateCommonResult",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayLLMModelAPIRequest": {
+      "document": "CreateCloudNativeAPIGatewayLLMModelAPI请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关 id。</p>",
+          "example": "gateway-4eb46023",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 API 名称，最长 60 字符。同一网关下唯一。</p>",
+          "example": "openai_chat",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务场景。</p><p>枚举值：</p><ul><li>Chat：聊天</li><li>Image：图像（需要网关版本 ≥ 3.9.3）</li></ul>",
+          "example": "Chat",
+          "member": "string",
+          "name": "SceneType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求协议（小写）。当前仅支持：</p><ul><li>openai</li></ul>",
+          "example": "openai",
+          "member": "string",
+          "name": "RequestProtocol",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型服务 ID 列表，长度 1-10。</p><p>注：字段名建议改为 ModelServiceIds，当前保留用于兼容。</p>",
+          "example": "[\"d0742b86605340438a8018c658156622\"]",
+          "member": "string",
+          "name": "ListModelServiceId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由列表，至少 1 条。每条包含 Methods/Paths/Hosts 等 Kong 路由属性。</p>",
+          "example": "无",
+          "member": "DefaultKongRoute",
+          "name": "RouteList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>统一前缀路径（可选）。例如 /v1/openai。</p>",
+          "example": "/v1/openai",
+          "member": "string",
+          "name": "BasePath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 API 描述。最长 200 字符。</p>",
+          "example": "大模型统一聊天 API",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多模型服务路由策略。ListModelServiceId 多于 1 项时必填。</p>",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelServiceRoute",
+          "name": "ModelServiceRoute",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Header 路由匹配规则。当前仅支持 Operator=exact。</p>",
+          "example": "无",
+          "member": "AIGWKVMatch",
+          "name": "MatchHeaders",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用跨服务 Fallback。开启后需提供 CrossServiceFallbackConfig。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableCrossServiceFallback",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>跨服务 Fallback 配置。EnableCrossServiceFallback=true 时必填。</p>",
+          "example": "无",
+          "member": "AIGWCrossServiceFallbackConfig",
+          "name": "CrossServiceFallbackConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签过滤策略。需要网关版本 ≥ 3.9.4。</p>",
+          "example": "无",
+          "member": "AIGWTagFilter",
+          "name": "TagFilter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志输出配置（请求/响应 payload 落 LLM Log）。需要网关版本 ≥ 3.9.4。</p>",
+          "example": "无",
+          "member": "AIGWLogConfig",
+          "name": "LogConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayLLMModelAPIResponse": {
+      "document": "CreateCloudNativeAPIGatewayLLMModelAPI返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否成功。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 API ID，全局唯一标识。</p>",
+          "example": "9006154d-8770-xx",
+          "member": "string",
+          "name": "ModelAPIId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayLLMModelServiceRequest": {
+      "document": "CreateCloudNativeAPIGatewayLLMModelService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关 id。</p>",
+          "example": "gateway-4eb46023",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称，最长60个字符，支持中英文大小写、数字及分隔符（“-”、“_”)，不能以数字和分隔符开头，不能以分隔符结尾。</p>",
+          "example": "openai_test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型。目前仅支持 LLMService。</p><p>枚举值：</p><ul><li>LLMService： 大语言模型服务</li></ul>",
+          "example": "LLMService",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择模型提供商, 选项：OpenAI、Anthropic、Azure OpenAI等。</p>",
+          "example": "openai",
+          "member": "string",
+          "name": "ModelProvider",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>API协议标准，根据供应商动态变化：OpenAI→OpenAI/v1，Anthropic→Anthropic/v1等</p>",
+          "example": "OpenAI/V1",
+          "member": "string",
+          "name": "ModelProtocol",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型选择方式，选项：Specify（指定模型）、PassThrough（透传请求模型）。</p>",
+          "example": "Specify",
+          "member": "string",
+          "name": "ModelSelector",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>LLM 厂商颁发的认证信息 token 。</p>",
+          "example": "[\"secret-49cf8767264716\"]",
+          "member": "string",
+          "name": "SecretKeyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认模型，模型选择方式为 Specify 时必填。</p>",
+          "example": "gpt-5.1",
+          "member": "string",
+          "name": "DefaultModel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启模型降级，模型选择方式为 Specify 时必填。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableModelFallback",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可以配置备用模型规则，EnableSpecifyModelFallbackxa0为 true 时必填。</p>",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelFallbackRule",
+          "name": "ModelFallbackRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启模型参数校验，是否校验客户端传递的 model 参数,xa0模型选择方式为 PassThrough 时必填</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableModelParamCheck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型检验信息，EnableModelParamCheckxa0为 true 时必填。</p>",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelParamCheckInfo",
+          "name": "ModelParamCheckRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述。</p>",
+          "example": "OpenAI 模型服务",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务提供商自定义 url</p>",
+          "example": "https://api.hunyuan.cloud.tencent.com/v1/chat/completions",
+          "member": "string",
+          "name": "UpstreamURL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接超时时间</p><p>取值范围：[1, 3600000]</p><p>单位：毫秒</p><p>默认值：10000</p>",
+          "example": "10000",
+          "member": "int64",
+          "name": "ConnectTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>写入超时时间</p><p>取值范围：[1, 3600000]</p><p>单位：毫秒</p><p>默认值：60000</p>",
+          "example": "60000",
+          "member": "int64",
+          "name": "WriteTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>读取超时时间</p><p>取值范围：[1, 3600000]</p><p>单位：毫秒</p><p>默认值：60000</p>",
+          "example": "60000",
+          "member": "int64",
+          "name": "ReadTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>重试次数</p><p>取值范围：[0, 5]</p><p>单位：次</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Retries",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路径拼接模式</p><p>枚举值：</p><ul><li>FixedPath： 固定地址</li><li>AutoConcat： 自动拼接</li></ul>",
+          "example": "FixedPath",
+          "member": "string",
+          "name": "UpstreamUrlMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>sni</p>",
+          "example": "generativelanguage.googleapis.com",
+          "member": "string",
+          "name": "SNI",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型服务级别的配额上限（RPM/TPM）。需要网关版本 ≥ 3.9.4。</p>",
+          "example": "无",
+          "member": "AIGWLLMQuotaLimit",
+          "name": "QuotaLimit",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "[\"env:test\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayLLMModelServiceResponse": {
+      "document": "CreateCloudNativeAPIGatewayLLMModelService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否成功</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型服务 ID，全局唯一标识。</p>",
+          "example": "9006154d-8770-xx",
+          "member": "string",
+          "name": "ModelServiceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCloudNativeAPIGatewayPublicNetworkRequest": {
       "document": "CreateCloudNativeAPIGatewayPublicNetwork请求参数结构体",
       "members": [
@@ -4601,6 +7084,115 @@
     "CreateCloudNativeAPIGatewayRouteResponse": {
       "document": "CreateCloudNativeAPIGatewayRoute返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewaySecretKeyRequest": {
+      "document": "CreateCloudNativeAPIGatewaySecretKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥协议类型。</p><p>枚举值：</p><ul><li>ApiKey</li><li>Basic</li><li>Hmac</li><li>OAuth2</li><li>JWT</li></ul>",
+          "example": "ApiKey",
+          "member": "string",
+          "name": "SecretType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥名称，2-60 字符。</p>",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥生成方式。</p><p>枚举值：</p><ul><li>System：系统自动生成</li><li>Custom：用户自定义（需传 SecretValue）</li><li>KMS：使用 KMS 密钥（需传 KmsKeyName 与 KmsKeyVersion）</li></ul>",
+          "example": "KMS",
+          "member": "string",
+          "name": "GenerateType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer：消费者</li><li>ModelService：模型服务</li></ul>",
+          "example": "Consumer",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>KMS 密钥名称。GenerateType=KMS 时必填。</p>",
+          "example": "name",
+          "member": "string",
+          "name": "KmsKeyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>KMS 密钥版本。GenerateType=KMS 时必填。</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "KmsKeyVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥值，长度 8-256。GenerateType=Custom 时必填。</p>",
+          "example": "value",
+          "member": "string",
+          "name": "SecretValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥描述。最长 200 字符。</p>",
+          "example": "密钥描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewaySecretKeyResponse": {
+      "document": "CreateCloudNativeAPIGatewaySecretKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建结果。包含成功标识与新建资源 ID。</p>",
+          "example": "无",
+          "member": "CNAPIGwCreateCommonResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5921,6 +8513,56 @@
       ],
       "type": "object"
     },
+    "DefaultKongRoute": {
+      "document": "默认kong路由，目前只在 LLM 模型 API相 关接口使用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务名字</p>",
+          "example": "test-service",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>",
+          "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTP Method</p>",
+          "example": "[\"GET\"]",
+          "member": "string",
+          "name": "Methods",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Http Path</p>",
+          "example": "[\"/v1/users\"]",
+          "member": "string",
+          "name": "Paths",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DeleteAutoScalerResourceStrategyRequest": {
       "document": "DeleteAutoScalerResourceStrategy请求参数结构体",
       "members": [
@@ -6102,6 +8744,78 @@
       ],
       "type": "object"
     },
+    "DeleteCloudNativeAPIGatewayConsumerGroupRequest": {
+      "document": "DeleteCloudNativeAPIGatewayConsumerGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例id",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费者组ID",
+          "example": "cg-xxx",
+          "member": "string",
+          "name": "ConsumerGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayConsumerGroupResponse": {
+      "document": "DeleteCloudNativeAPIGatewayConsumerGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayConsumerRequest": {
+      "document": "DeleteCloudNativeAPIGatewayConsumer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例id",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费者ID",
+          "example": "50ec02a9-3e96-47b4-a275-22f402e15e21",
+          "member": "string",
+          "name": "ConsumerId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayConsumerResponse": {
+      "document": "DeleteCloudNativeAPIGatewayConsumer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCloudNativeAPIGatewayIPRestrictionRequest": {
       "document": "DeleteCloudNativeAPIGatewayIPRestriction请求参数结构体",
       "members": [
@@ -6138,6 +8852,98 @@
     "DeleteCloudNativeAPIGatewayIPRestrictionResponse": {
       "document": "DeleteCloudNativeAPIGatewayIPRestriction返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayLLMModelAPIRequest": {
+      "document": "DeleteCloudNativeAPIGatewayLLMModelAPI请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关 id。",
+          "example": "gateway-4eb46023",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型 API ID，全局唯一标识。",
+          "example": "9006154d-8770-xx",
+          "member": "string",
+          "name": "ModelAPIId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayLLMModelAPIResponse": {
+      "document": "DeleteCloudNativeAPIGatewayLLMModelAPI返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否成功。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayLLMModelServiceRequest": {
+      "document": "DeleteCloudNativeAPIGatewayLLMModelService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关 id。",
+          "example": "gateway-4eb46023",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型服务 ID，全局唯一标识。",
+          "example": "9006154d-8770-xx",
+          "member": "string",
+          "name": "ModelServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayLLMModelServiceResponse": {
+      "document": "DeleteCloudNativeAPIGatewayLLMModelService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否成功。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6335,6 +9141,42 @@
     },
     "DeleteCloudNativeAPIGatewayRouteResponse": {
       "document": "DeleteCloudNativeAPIGatewayRoute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewaySecretKeyRequest": {
+      "document": "DeleteCloudNativeAPIGatewaySecretKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-xx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密钥id",
+          "example": "secret-xxx",
+          "member": "string",
+          "name": "SecretKeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewaySecretKeyResponse": {
+      "document": "DeleteCloudNativeAPIGatewaySecretKey返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6782,7 +9624,7 @@
         {
           "disabled": false,
           "document": "泳道组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123345",
+          "example": "12732395",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -6815,7 +9657,7 @@
         {
           "disabled": false,
           "document": "泳道组描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123123",
+          "example": "lanegroup",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -7690,6 +10532,208 @@
       ],
       "usage": "out"
     },
+    "DescribeCloudNativeAPIGatewayConsumerGroupListRequest": {
+      "document": "DescribeCloudNativeAPIGatewayConsumerGroupList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关实例id</p>",
+          "example": "gateway-xx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页条数，范围 [1, 100]，默认 10。</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>起始位置，从 0 开始。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayConsumerGroupListResponse": {
+      "document": "DescribeCloudNativeAPIGatewayConsumerGroupList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分组列表</p>",
+          "example": "无",
+          "member": "CNAPIGwConsumerGroupList",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayConsumerGroupRequest": {
+      "document": "DescribeCloudNativeAPIGatewayConsumerGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关实例id</p>",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组ID</p>",
+          "example": "cg-xxx",
+          "member": "string",
+          "name": "ConsumerGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayConsumerGroupResponse": {
+      "document": "DescribeCloudNativeAPIGatewayConsumerGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>消费者组详情。</p>",
+          "example": "无",
+          "member": "CNAPIGwConsumerGroup",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayConsumerListRequest": {
+      "document": "DescribeCloudNativeAPIGatewayConsumerList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关实例id</p>",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页条数，范围 [1, 100]，默认 20。</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>起始位置，从 0 开始。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayConsumerListResponse": {
+      "document": "DescribeCloudNativeAPIGatewayConsumerList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>消费者列表</p>",
+          "example": "无",
+          "member": "CNAPIGwConsumerList",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayConsumerRequest": {
+      "document": "DescribeCloudNativeAPIGatewayConsumer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关实例id</p>",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者ID</p>",
+          "example": "consumer-xxx",
+          "member": "string",
+          "name": "ConsumerId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayConsumerResponse": {
+      "document": "DescribeCloudNativeAPIGatewayConsumer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>消费者详情</p>",
+          "example": "无",
+          "member": "CNAPIGwConsumer",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudNativeAPIGatewayIPRestrictionRequest": {
       "document": "DescribeCloudNativeAPIGatewayIPRestriction请求参数结构体",
       "members": [
@@ -7770,6 +10814,280 @@
           "member": "DescribeInstanceInfoByIpResult",
           "name": "Result",
           "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayLLMModelAPIRequest": {
+      "document": "DescribeCloudNativeAPIGatewayLLMModelAPI请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关 id。</p>",
+          "example": "gateway-4eb46023",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 API ID，全局唯一标识。</p>",
+          "example": "9006154d-8770-xx",
+          "member": "string",
+          "name": "ModelAPIId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayLLMModelAPIResponse": {
+      "document": "DescribeCloudNativeAPIGatewayLLMModelAPI返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型 API 信息。</p>",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelAPI",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayLLMModelAPIsRequest": {
+      "document": "DescribeCloudNativeAPIGatewayLLMModelAPIs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关 id。",
+          "example": "gateway-4eb46023",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页条数，范围 [1, 1000]，默认 10。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>起始位置，从 0 开始。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件。当前未启用具体字段。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模糊匹配模型 API 名称。</p>",
+          "example": "搜索关键词",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组 ID（以 cg- 开头），与 UseToBind 搭配使用。</p>",
+          "example": "cg-abc",
+          "member": "string",
+          "name": "ConsumerGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否用于绑定场景。true 时仅返回可被绑定到指定消费者组的模型 API。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "UseToBind",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayLLMModelAPIsResponse": {
+      "document": "DescribeCloudNativeAPIGatewayLLMModelAPIs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型 API 列表。",
+          "example": "无",
+          "member": "ListCloudNativeAPIGatewayLLMModelAPI",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayLLMModelServiceRequest": {
+      "document": "DescribeCloudNativeAPIGatewayLLMModelService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关 id。</p>",
+          "example": "gateway-4eb46023",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型服务 ID，全局唯一标识。</p>",
+          "example": "9006154d-8770-xx",
+          "member": "string",
+          "name": "ModelServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayLLMModelServiceResponse": {
+      "document": "DescribeCloudNativeAPIGatewayLLMModelService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型服务。</p>",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelService",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayLLMModelServicesRequest": {
+      "document": "DescribeCloudNativeAPIGatewayLLMModelServices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关 id。</p>",
+          "example": "gateway-4eb46023",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，默认为 10，最大值为 1000。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，默认为 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件，多个过滤条件之间是“与”的关系，支持 Name</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通过模型 API 筛选模型服务</p>",
+          "example": "4eb46023-xx",
+          "member": "string",
+          "name": "ModelAPIId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通过密匙查询绑定的模型服务</p>",
+          "example": "secret-xxx",
+          "member": "string",
+          "name": "SecretKeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索关键词，模糊匹配 name 和 description</p>",
+          "example": "关键词",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayLLMModelServicesResponse": {
+      "document": "DescribeCloudNativeAPIGatewayLLMModelServices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型服务列表。</p>",
+          "example": "无",
+          "member": "ListCloudNativeAPIGatewayLLMModelService",
+          "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8369,6 +11687,162 @@
           "name": "Result",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewaySecretKeyListRequest": {
+      "document": "DescribeCloudNativeAPIGatewaySecretKeyList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID</p>",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页条数，范围 [1, 100]，默认 10。</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>起始位置，从 0 开始。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥归属资源类型。UseToBind=true 时必填。</p><p>枚举值：</p><ul><li>Consumer：消费者</li><li>ModelService：模型服务</li></ul>",
+          "example": "ModelService",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewaySecretKeyListResponse": {
+      "document": "DescribeCloudNativeAPIGatewaySecretKeyList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>密钥列表</p>",
+          "example": "无",
+          "member": "CNAPIGwSecretKeyList",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewaySecretKeyRequest": {
+      "document": "DescribeCloudNativeAPIGatewaySecretKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID</p>",
+          "example": "gateway-xx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥id</p>",
+          "example": "secret-xx",
+          "member": "string",
+          "name": "SecretKeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewaySecretKeyResponse": {
+      "document": "DescribeCloudNativeAPIGatewaySecretKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>密钥详情。</p>",
+          "example": "无",
+          "member": "CNAPIGwSecretKey",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewaySecretKeyValueRequest": {
+      "document": "DescribeCloudNativeAPIGatewaySecretKeyValue请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "gateway-xx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密钥id",
+          "example": "secret-xx",
+          "member": "string",
+          "name": "SecretKeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewaySecretKeyValueResponse": {
+      "document": "DescribeCloudNativeAPIGatewaySecretKeyValue返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "密钥值",
+          "example": "value",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -9712,7 +13186,7 @@
         {
           "disabled": false,
           "document": "引擎实例ID",
-          "example": "ins-1231345",
+          "example": "ins-f72d4820",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -9739,7 +13213,7 @@
         {
           "disabled": false,
           "document": "泳道名称",
-          "example": "123123",
+          "example": "groupa",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -9748,7 +13222,7 @@
         {
           "disabled": false,
           "document": "泳道ID",
-          "example": "123123",
+          "example": "group-1x3f",
           "member": "string",
           "name": "GroupID",
           "required": false,
@@ -9772,7 +13246,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -10070,7 +13544,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "按照服务名过滤，精确匹配。",
+          "document": "<p>按照服务名过滤，精确匹配。</p>",
           "example": "Producer",
           "member": "string",
           "name": "Name",
@@ -10079,7 +13553,7 @@
         },
         {
           "disabled": false,
-          "document": "按照命名空间过滤，精确匹配。",
+          "document": "<p>按照命名空间过滤，精确匹配。</p>",
           "example": "Development",
           "member": "string",
           "name": "Namespace",
@@ -10088,7 +13562,7 @@
         },
         {
           "disabled": false,
-          "document": "使用元数据过滤，目前只支持一组元组数，若传了多条，只会使用第一条元数据过滤。",
+          "document": "<p>使用元数据过滤，目前只支持一组元组数，若传了多条，只会使用第一条元数据过滤。</p>",
           "example": "无",
           "member": "Metadata",
           "name": "Metadatas",
@@ -10097,7 +13571,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -10106,7 +13580,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -10115,7 +13589,7 @@
         },
         {
           "disabled": false,
-          "document": "tse 实例 id。",
+          "document": "<p>tse 实例 id。</p>",
           "example": "ins-df344df5",
           "member": "string",
           "name": "InstanceId",
@@ -10124,7 +13598,7 @@
         },
         {
           "disabled": false,
-          "document": "服务所属部门。",
+          "document": "<p>服务所属部门。</p>",
           "example": "市场部",
           "member": "string",
           "name": "Department",
@@ -10133,7 +13607,7 @@
         },
         {
           "disabled": false,
-          "document": "服务所属业务。",
+          "document": "<p>服务所属业务。</p>",
           "example": "采购业务",
           "member": "string",
           "name": "Business",
@@ -10142,7 +13616,7 @@
         },
         {
           "disabled": false,
-          "document": "服务中实例的ip，用来过滤服务。",
+          "document": "<p>服务中实例的ip，用来过滤服务。</p>",
           "example": "10.10.6.2",
           "member": "string",
           "name": "Host",
@@ -10151,7 +13625,7 @@
         },
         {
           "disabled": false,
-          "document": "是否只查询存在健康实例的服务",
+          "document": "<p>是否只查询存在健康实例的服务</p>",
           "example": "true",
           "member": "bool",
           "name": "OnlyExistHealthyInstance",
@@ -10160,7 +13634,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启同步到全局注册中心\t",
+          "document": "<p>是否开启同步到全局注册中心</p>",
           "example": "false",
           "member": "string",
           "name": "SyncToGlobalRegistry",
@@ -10169,12 +13643,21 @@
         },
         {
           "disabled": false,
-          "document": "过滤筛选条件",
+          "document": "<p>过滤筛选条件</p>",
           "example": "无",
           "member": "Filter",
           "name": "StatusFilter",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型</p><p>枚举值：</p><ul><li>0： 微服务（默认）</li><li>1： MCP Server</li><li>2： AI Agent</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10184,7 +13667,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务数总量。",
+          "document": "<p>服务数总量。</p>",
           "example": "15",
           "member": "uint64",
           "name": "TotalCount",
@@ -10194,7 +13677,7 @@
         },
         {
           "disabled": false,
-          "document": "服务信息详情。",
+          "document": "<p>服务信息详情。</p>",
           "example": "无",
           "member": "GovernanceService",
           "name": "Content",
@@ -12757,7 +16240,7 @@
         {
           "disabled": false,
           "document": "泳道组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123345",
+          "example": "a887255ebd1349b59b862fa3caeca2c4",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -12790,7 +16273,7 @@
         {
           "disabled": false,
           "document": "泳道组描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123123",
+          "example": "lanegroup",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -13276,7 +16759,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务名称。",
+          "document": "<p>服务名称。</p>",
           "example": "provider-demo",
           "member": "string",
           "name": "Name",
@@ -13286,7 +16769,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间名称。",
+          "document": "<p>命名空间名称。</p>",
           "example": "namespaceName",
           "member": "string",
           "name": "Namespace",
@@ -13296,7 +16779,7 @@
         },
         {
           "disabled": false,
-          "document": "元数据信息数组。",
+          "document": "<p>元数据信息数组。</p>",
           "example": "无",
           "member": "Metadata",
           "name": "Metadatas",
@@ -13306,7 +16789,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息。",
+          "document": "<p>描述信息。</p>",
           "example": "comment",
           "member": "string",
           "name": "Comment",
@@ -13316,7 +16799,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "CreateTime",
@@ -13326,7 +16809,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间。",
+          "document": "<p>修改时间。</p>",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "ModifyTime",
@@ -13336,7 +16819,7 @@
         },
         {
           "disabled": false,
-          "document": "服务所属部门。",
+          "document": "<p>服务所属部门。</p>",
           "example": "departmentName",
           "member": "string",
           "name": "Department",
@@ -13346,7 +16829,7 @@
         },
         {
           "disabled": false,
-          "document": "服务所属业务。",
+          "document": "<p>服务所属业务。</p>",
           "example": "businessName",
           "member": "string",
           "name": "Business",
@@ -13356,7 +16839,7 @@
         },
         {
           "disabled": false,
-          "document": "健康服务实例数",
+          "document": "<p>健康服务实例数</p>",
           "example": "1",
           "member": "uint64",
           "name": "HealthyInstanceCount",
@@ -13366,7 +16849,7 @@
         },
         {
           "disabled": false,
-          "document": "服务实例总数",
+          "document": "<p>服务实例总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalInstanceCount",
@@ -13376,7 +16859,7 @@
         },
         {
           "disabled": false,
-          "document": "服务ID",
+          "document": "<p>服务ID</p>",
           "example": "1",
           "member": "string",
           "name": "Id",
@@ -13386,7 +16869,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以编辑",
+          "document": "<p>是否可以编辑</p>",
           "example": "true",
           "member": "bool",
           "name": "Editable",
@@ -13396,7 +16879,7 @@
         },
         {
           "disabled": false,
-          "document": "可以编辑该资源的用户ID",
+          "document": "<p>可以编辑该资源的用户ID</p>",
           "example": "[\"usera\"]",
           "member": "string",
           "name": "UserIds",
@@ -13406,7 +16889,7 @@
         },
         {
           "disabled": false,
-          "document": "可以编辑该资源的用户组ID",
+          "document": "<p>可以编辑该资源的用户组ID</p>",
           "example": "[\"group-1\"]",
           "member": "string",
           "name": "GroupIds",
@@ -13416,7 +16899,7 @@
         },
         {
           "disabled": false,
-          "document": "移除可以编辑该资源的用户ID",
+          "document": "<p>移除可以编辑该资源的用户ID</p>",
           "example": "[\"usera\"]",
           "member": "string",
           "name": "RemoveUserIds",
@@ -13426,7 +16909,7 @@
         },
         {
           "disabled": false,
-          "document": "移除可以编辑该资源的用户组ID",
+          "document": "<p>移除可以编辑该资源的用户组ID</p>",
           "example": "[\"group-1\"]",
           "member": "string",
           "name": "RemoveGroupIds",
@@ -13436,7 +16919,7 @@
         },
         {
           "disabled": false,
-          "document": "该服务对哪些命名空间可见\t",
+          "document": "<p>该服务对哪些命名空间可见</p>",
           "example": "[ \"Namespace-2\"]",
           "member": "string",
           "name": "ExportTo",
@@ -13446,7 +16929,7 @@
         },
         {
           "disabled": false,
-          "document": "该服务信息摘要签名",
+          "document": "<p>该服务信息摘要签名</p>",
           "example": "hash",
           "member": "string",
           "name": "Revision",
@@ -13456,7 +16939,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启同步到全局注册中心",
+          "document": "<p>是否开启同步到全局注册中心</p>",
           "example": "false",
           "member": "bool",
           "name": "SyncToGlobalRegistry",
@@ -13466,7 +16949,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离实例数",
+          "document": "<p>隔离实例数</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsolateInstanceCount",
@@ -13476,10 +16959,20 @@
         },
         {
           "disabled": false,
-          "document": "服务健康状态",
+          "document": "<p>服务健康状态</p>",
           "example": "1",
           "member": "int64",
           "name": "ServiceStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型</p><p>枚举值：</p><ul><li>0： 微服务（默认）</li><li>1： MCP Server</li><li>2： AI Agent</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -13705,7 +17198,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务名。",
+          "document": "<p>服务名。</p>",
           "example": "Producer",
           "member": "string",
           "name": "Name",
@@ -13714,7 +17207,7 @@
         },
         {
           "disabled": false,
-          "document": "服务所属命名空间。",
+          "document": "<p>服务所属命名空间。</p>",
           "example": "Development",
           "member": "string",
           "name": "Namespace",
@@ -13723,7 +17216,7 @@
         },
         {
           "disabled": false,
-          "document": "服务描述信息。",
+          "document": "<p>服务描述信息。</p>",
           "example": "生产者服务。",
           "member": "string",
           "name": "Comment",
@@ -13732,7 +17225,7 @@
         },
         {
           "disabled": false,
-          "document": "服务元数据。",
+          "document": "<p>服务元数据。</p>",
           "example": "无",
           "member": "Metadata",
           "name": "Metadatas",
@@ -13741,7 +17234,7 @@
         },
         {
           "disabled": false,
-          "document": "服务所属部门。",
+          "document": "<p>服务所属部门。</p>",
           "example": "市场部",
           "member": "string",
           "name": "Department",
@@ -13750,7 +17243,7 @@
         },
         {
           "disabled": false,
-          "document": "服务所属业务。",
+          "document": "<p>服务所属业务。</p>",
           "example": "采购业务",
           "member": "string",
           "name": "Business",
@@ -13759,8 +17252,8 @@
         },
         {
           "disabled": false,
-          "document": "被添加进来可以操作此命名空间的用户ID列表",
-          "example": "[1,2,3]",
+          "document": "<p>被添加进来可以操作此命名空间的用户ID列表</p>",
+          "example": "[\"1\",\"2\",\"3\"]",
           "member": "string",
           "name": "UserIds",
           "required": false,
@@ -13768,8 +17261,8 @@
         },
         {
           "disabled": false,
-          "document": "被添加进来可以操作此命名空间的用户组ID列表",
-          "example": "[1,2,3]",
+          "document": "<p>被添加进来可以操作此命名空间的用户组ID列表</p>",
+          "example": "[\"1\",\"2\",\"3\"]",
           "member": "string",
           "name": "GroupIds",
           "required": false,
@@ -13777,8 +17270,8 @@
         },
         {
           "disabled": false,
-          "document": "从操作此命名空间的用户组ID列表被移除的ID列表",
-          "example": "[1,2,3]",
+          "document": "<p>从操作此命名空间的用户组ID列表被移除的ID列表</p>",
+          "example": "[\"1\",\"2\",\"3\"]",
           "member": "string",
           "name": "RemoveUserIds",
           "required": false,
@@ -13786,8 +17279,8 @@
         },
         {
           "disabled": false,
-          "document": "从可以操作此命名空间的用户组ID列表中被移除的ID列表",
-          "example": "[1,2,3]",
+          "document": "<p>从可以操作此命名空间的用户组ID列表中被移除的ID列表</p>",
+          "example": "[\"1\",\"2\",\"3\"]",
           "member": "string",
           "name": "RemoveGroupIds",
           "required": false,
@@ -13795,8 +17288,8 @@
         },
         {
           "disabled": false,
-          "document": "该服务对哪些命名空间可见",
-          "example": "[Namespace-1,Namespace-2]",
+          "document": "<p>该服务对哪些命名空间可见</p>",
+          "example": "[\"Namespace-1\",\"Namespace-2\"]",
           "member": "string",
           "name": "ExportTo",
           "required": false,
@@ -13804,12 +17297,21 @@
         },
         {
           "disabled": false,
-          "document": "是否开启同步到全局注册中心",
+          "document": "<p>是否开启同步到全局注册中心</p>",
           "example": "false",
           "member": "bool",
           "name": "SyncToGlobalRegistry",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型</p><p>枚举值：</p><ul><li>0： 微服务（默认）</li><li>1： MCP Server</li><li>2： AI Agent</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -15419,6 +18921,58 @@
       ],
       "usage": "both"
     },
+    "ListCloudNativeAPIGatewayLLMModelAPI": {
+      "document": "LLM 模型 API 列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI 网关模型 API 列表。",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelAPI",
+          "name": "DataList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListCloudNativeAPIGatewayLLMModelService": {
+      "document": "LLM 模型服务列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型服务数量。",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型服务列表。",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelService",
+          "name": "DataList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ListCloudNativeAPIGatewayResult": {
       "document": "获取云原生API网关实例列表响应结果。",
       "members": [
@@ -15841,6 +19395,458 @@
       ],
       "type": "object"
     },
+    "ModifyCloudNativeAPIGatewayConsumerGroupRequest": {
+      "document": "ModifyCloudNativeAPIGatewayConsumerGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例id",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组 ID（以 cg- 开头）。</p>",
+          "example": "cg-xxx",
+          "member": "string",
+          "name": "ConsumerGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组名称，最长 60 字符。</p>",
+          "example": "consumer-group-updated",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>",
+          "example": "Enable",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组描述。最长 200 字符。</p>",
+          "example": "更新后的描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayConsumerGroupResponse": {
+      "document": "ModifyCloudNativeAPIGatewayConsumerGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayConsumerRequest": {
+      "document": "ModifyCloudNativeAPIGatewayConsumer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例id",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者 ID。</p>",
+          "example": "50ec02a9-3e96-47b4-a275-22f402e15e21",
+          "member": "string",
+          "name": "ConsumerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者名称，最长 60 字符。</p>",
+          "example": "consumer-updated",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者描述。最长 200 字符。</p>",
+          "example": "更新后的描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayConsumerResponse": {
+      "document": "ModifyCloudNativeAPIGatewayConsumer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayLLMModelAPIRequest": {
+      "document": "ModifyCloudNativeAPIGatewayLLMModelAPI请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关 id。</p>",
+          "example": "gateway-4eb46023",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 API ID，全局唯一标识。</p>",
+          "example": "a1b2c3d4e5f6789012345678901234ab",
+          "member": "string",
+          "name": "ModelAPIId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 API 名称，最长 60 字符。</p>",
+          "example": "openai_chat",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>统一前缀路径（可选）。例如 /v1/openai。</p>",
+          "example": "/v1/openai",
+          "member": "string",
+          "name": "BasePath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 API 描述。最长 200 字符。</p>",
+          "example": "大模型统一聊天 API",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型服务 ID 列表，长度 1-10。</p>",
+          "example": "[\"d0742b86605340438a8018c658156622\"]",
+          "member": "string",
+          "name": "ListModelServiceId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多模型服务路由策略。ListModelServiceId 多于 1 项时必填。</p>",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelServiceRoute",
+          "name": "ModelServiceRoute",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Header 路由匹配规则。当前仅支持 Operator=exact。</p>",
+          "example": "无",
+          "member": "AIGWKVMatch",
+          "name": "MatchHeaders",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用跨服务 Fallback。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableCrossServiceFallback",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>跨服务 Fallback 配置。EnableCrossServiceFallback=true 时必填。</p>",
+          "example": "无",
+          "member": "AIGWCrossServiceFallbackConfig",
+          "name": "CrossServiceFallbackConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签过滤策略。需要网关版本 ≥ 3.9.4。</p>",
+          "example": "无",
+          "member": "AIGWTagFilter",
+          "name": "TagFilter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志输出配置。需要网关版本 ≥ 3.9.4。</p>",
+          "example": "无",
+          "member": "AIGWLogConfig",
+          "name": "LogConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayLLMModelAPIResponse": {
+      "document": "ModifyCloudNativeAPIGatewayLLMModelAPI返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否成功。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayLLMModelServiceRequest": {
+      "document": "ModifyCloudNativeAPIGatewayLLMModelService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关 id。</p>",
+          "example": "gateway-4eb46023",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型服务 ID，全局唯一标识。</p>",
+          "example": "9006154d-8770-xx",
+          "member": "string",
+          "name": "ModelServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改服务名称，长度2-50字符，支持中英文、数字、下划线。</p>",
+          "example": "openai_test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改默认模型，模型选择方式为 Specify 时必填。</p>",
+          "example": "gpt-5.1",
+          "member": "string",
+          "name": "DefaultModel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改模型选择方式，选项：Specify（指定模型）、PassThrough（透传请求模型）。</p>",
+          "example": "Specify",
+          "member": "string",
+          "name": "ModelSelector",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改开启模型降级，模型选择方式为 Specify 时必填。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableModelFallback",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改可以配置备用模型规则，EnableSpecifyModelFallback 为 true 时必填。</p>",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelFallbackRule",
+          "name": "ModelFallbackRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改开启模型参数校验，是否校验客户端传递的 model 参数, 模型选择方式为 PassThrough 时必填</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableModelParamCheck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改模型检验信息，EnableModelParamCheck 为 true 时必填。</p>",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelParamCheckInfo",
+          "name": "ModelParamCheckRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改描述。</p>",
+          "example": "OpenAI 模型服务",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改模型服务地址</p>",
+          "example": "https://api.hunyuan.cloud.tencent.com/v1/chat/completions",
+          "member": "string",
+          "name": "UpstreamURL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接超时时间</p><p>取值范围：[1, 3600000]</p><p>单位：毫秒</p><p>默认值：10000</p>",
+          "example": "10000",
+          "member": "int64",
+          "name": "ConnectTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>写入超时时间</p><p>取值范围：[1, 3600000]</p><p>单位：毫秒</p><p>默认值：60000</p>",
+          "example": "60000",
+          "member": "int64",
+          "name": "WriteTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>读取超时时间</p><p>取值范围：[1, 3600000]</p><p>单位：毫秒</p><p>默认值：60000</p>",
+          "example": "60000",
+          "member": "int64",
+          "name": "ReadTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>重试次数</p><p>取值范围：[0, 5]</p><p>单位：次</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Retries",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路径拼接模式</p><p>枚举值：</p><ul><li>FixedPath： 固定路径</li><li>AutoConcat： 自动拼接</li></ul>",
+          "example": "FixedPath",
+          "member": "string",
+          "name": "UpstreamUrlMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SNI</p>",
+          "example": "generativelanguage.googleapis.com",
+          "member": "string",
+          "name": "SNI",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型服务级别的配额上限（RPM/TPM）。需要网关版本 ≥ 3.9.4。</p>",
+          "example": "无",
+          "member": "AIGWLLMQuotaLimit",
+          "name": "QuotaLimit",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "[\"env:prod\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayLLMModelServiceResponse": {
+      "document": "ModifyCloudNativeAPIGatewayLLMModelService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否成功</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyCloudNativeAPIGatewayRequest": {
       "document": "ModifyCloudNativeAPIGateway请求参数结构体",
       "members": [
@@ -16128,6 +20134,51 @@
     },
     "ModifyCloudNativeAPIGatewayRouteResponse": {
       "document": "ModifyCloudNativeAPIGatewayRoute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewaySecretKeyStatusRequest": {
+      "document": "ModifyCloudNativeAPIGatewaySecretKeyStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID</p>",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>",
+          "example": "Enable",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥 ID（以 secret- 开头）。</p>",
+          "example": "secret-xxx",
+          "member": "string",
+          "name": "SecretKeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewaySecretKeyStatusResponse": {
+      "document": "ModifyCloudNativeAPIGatewaySecretKeyStatus返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17793,6 +21844,105 @@
         }
       ],
       "usage": "both"
+    },
+    "RemoveCloudNativeAPIGatewayConsumerGroupAuthRequest": {
+      "document": "RemoveCloudNativeAPIGatewayConsumerGroupAuth请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关实例id</p>",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权资源类型。</p><p>枚举值：</p><ul><li>ModelAPI：模型 API</li><li>MCPServer：MCP Server</li></ul>",
+          "example": "ModelAPI",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对应资源的 ID。</p><ul><li>ResourceType=ModelAPI 时是模型 API ID</li><li>ResourceType=MCPServer 时是 MCP Server ID</li></ul>",
+          "example": "e3aa4fe271c24bb4aa7cca41db5a4e75",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组 ID 列表（每个 ID 以 cg- 开头），长度 1-10。</p>",
+          "example": "[\"cg-xxx\"]",
+          "member": "string",
+          "name": "ConsumerGroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveCloudNativeAPIGatewayConsumerGroupAuthResponse": {
+      "document": "RemoveCloudNativeAPIGatewayConsumerGroupAuth返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveCloudNativeAPIGatewayConsumerInGroupRequest": {
+      "document": "RemoveCloudNativeAPIGatewayConsumerInGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例id",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组 ID（以 cg- 开头）。</p>",
+          "example": "cg-xxx",
+          "member": "string",
+          "name": "ConsumerGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者 ID 列表，长度 1-10。</p>",
+          "example": "[\"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\"]",
+          "member": "string",
+          "name": "ConsumerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveCloudNativeAPIGatewayConsumerInGroupResponse": {
+      "document": "RemoveCloudNativeAPIGatewayConsumerInGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RestartSREInstanceRequest": {
       "document": "RestartSREInstance请求参数结构体",

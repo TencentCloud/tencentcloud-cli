@@ -296,7 +296,7 @@
           "example": "eevnt-sx1",
           "member": "string",
           "name": "EventId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -314,6 +314,15 @@
           "example": "workload",
           "member": "string",
           "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>插件ID</p>",
+          "example": "plugin-Pe9Ka0mg",
+          "member": "string",
+          "name": "PluginId",
           "required": false,
           "type": "string"
         }

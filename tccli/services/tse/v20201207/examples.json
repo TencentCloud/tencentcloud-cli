@@ -1,5 +1,21 @@
 {
   "actions": {
+    "AddCloudNativeAPIGatewayConsumerGroupAuth": [
+      {
+        "document": "模型API给消费者分组授权",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCloudNativeAPIGatewayConsumerGroupAuth\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-1b59c523\",\n    \"ResourceType\": \"ModelAPI\",\n    \"ResourceId\": \"e3aa4fe271c24bb4aa7cca41db5a4e75\",\n    \"ConsumerGroupIds\": [\n        \"cg-d4fbcc88676d50\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45b34a9a-57f7-4c8d-8fb2-150256f637f1\"\n    }\n}",
+        "title": "模型API给消费者分组授权"
+      }
+    ],
+    "AddCloudNativeAPIGatewayConsumerInGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCloudNativeAPIGatewayConsumerInGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-4e588095\",\n    \"ConsumerGroupId\": \"cg-9a130aba0f747c\",\n    \"ConsumerIds\": [\n        \"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"828b6c28-24d2-4988-97d7-e12e4fa8acef\",\n        \"Result\": true\n    }\n}",
+        "title": "添加消费者到分组"
+      }
+    ],
     "BindAutoScalerResourceStrategyToGroups": [
       {
         "document": "",
@@ -48,6 +64,38 @@
         "title": "创建云原生网关证书"
       }
     ],
+    "CreateCloudNativeAPIGatewayConsumer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayConsumer\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"Name\": \"消费者\",\n    \"Description\": \"消费者描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3575b458-81a9-49ea-8a49-64432fe22ed0\",\n        \"Result\": {\n            \"ID\": \"consumer-6021c8b0\",\n            \"Success\": true\n        }\n    }\n}",
+        "title": "创建消费者"
+      }
+    ],
+    "CreateCloudNativeAPIGatewayConsumerGroup": [
+      {
+        "document": "创建消费者分组，默认开启",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayConsumerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"Name\": \"消费者组\",\n    \"Description\": \"消费者组1\",\n    \"Status\": \"Enable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3575b458-81a9-49ea-8a49-64432fe22ed0\",\n        \"Result\": {\n            \"ID\": \"cg-6021c8b0\",\n            \"Success\": true\n        }\n    }\n}",
+        "title": "创建消费者分组默认开启"
+      }
+    ],
+    "CreateCloudNativeAPIGatewayLLMModelAPI": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayLLMModelAPI\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-4eb46023\",\n    \"Name\": \"ModelAPI-Hunyuan\",\n    \"SceneType\": \"Chat\",\n    \"RequestProtocol\": \"OpenAI\",\n    \"ListModelServiceId\": [\n        \"1006154d-8770-xx\"\n    ],\n    \"RouteList\": [\n        {\n            \"Name\": \"base\",\n            \"Paths\": [\n                \"/v1/chat/completions\"\n            ]\n        }\n    ],\n    \"BasePath\": \"/qq\",\n    \"Description\": \"OpenAI协议LLM接口\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9b49623-c235-4839-b1d6-1f6f23ae8dcd\",\n        \"Result\": true,\n        \"ModelAPIId\": \"9006154d-8770-xx\"\n    }\n}",
+        "title": "创建 AI 网关模型 API"
+      }
+    ],
+    "CreateCloudNativeAPIGatewayLLMModelService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayLLMModelService\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-01f976d0\",\n    \"Name\": \"qwen\",\n    \"ServiceType\": \"LLMService\",\n    \"ModelProvider\": \"qwen\",\n    \"ModelProtocol\": \"OpenAI-Qwen\",\n    \"ModelSelector\": \"PassThrough\",\n    \"SecretKeyIds\": [\n        \"secret-de0acbccee344b\"\n    ],\n    \"EnableModelParamCheck\": false,\n    \"UpstreamURL\": \"https://dashscope.aliyuncs.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelServiceId\": \"843a043a19d445a8a27e5be0fd182a0c\",\n        \"Result\": true,\n        \"RequestId\": \"d7e3ffad-4d6d-42fd-b2f5-6c3c81f294a0\"\n    }\n}",
+        "title": "创建模型服务"
+      }
+    ],
     "CreateCloudNativeAPIGatewayPublicNetwork": [
       {
         "document": "创建公网网络配置",
@@ -70,6 +118,26 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayRouteRateLimit\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-9abf3b79\",\n    \"Id\": \"5836e46f-1653-4183-a76e-c361540d0831\",\n    \"LimitDetail\": {\n        \"Enabled\": true,\n        \"QpsThresholds\": [\n            {\n                \"Max\": 20,\n                \"Unit\": \"second\"\n            }\n        ],\n        \"LimitBy\": \"consumer\",\n        \"Policy\": \"local\",\n        \"RateLimitResponse\": {\n            \"HttpStatus\": 200\n        },\n        \"ResponseType\": \"text\",\n        \"HideClientHeaders\": true,\n        \"LineUpTime\": 1,\n        \"IsDelay\": true\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"552cae66-953b-490c-b2d7-4c7c8d1cbd05\"\n    }\n}",
         "title": "云原生网关创建限流插件(路由)"
+      }
+    ],
+    "CreateCloudNativeAPIGatewaySecretKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"SecretType\": \"ApiKey\",\n    \"Name\": \"测试KMS密钥\",\n    \"GenerateType\": \"KMS\",\n    \"ResourceType\": \"Consumer\",\n    \"KmsKeyName\": \"XX\",\n    \"KmsKeyVersion\": \"v1\",\n    \"Description\": \"测试密钥\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f6008b8-249c-4b5c-a5ea-09bedb2a5b3b\",\n        \"Result\": {\n            \"ID\": \"secret-30859974\",\n            \"Success\": true\n        }\n    }\n}",
+        "title": "创建KMS秘钥"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"SecretType\": \"ApiKey\",\n    \"Name\": \"测试系统密钥\",\n    \"GenerateType\": \"System\",\n    \"ResourceType\": \"Consumer\",\n    \"Description\": \"密钥\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0edc69d-f575-44da-ba7a-b40656fcf878\",\n        \"Result\": {\n            \"ID\": \"secret-152eb264\",\n            \"Success\": true\n        }\n    }\n}",
+        "title": "创建自动生成密钥"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"SecretType\": \"ApiKey\",\n    \"Name\": \"测试自定义密钥\",\n    \"GenerateType\": \"Custom\",\n    \"ResourceType\": \"Consumer\",\n    \"SecretValue\": \"sk-xxxxxxxx\",\n    \"Description\": \"测试密钥\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"173ebf7b-7beb-442d-bc4f-7a66eebd8264\",\n        \"Result\": {\n            \"ID\": \"secret-c3966447\",\n            \"Success\": true\n        }\n    }\n}",
+        "title": "创建自定义密钥"
       }
     ],
     "CreateCloudNativeAPIGatewayService": [
@@ -131,8 +199,8 @@
     "CreateGovernanceLaneGroups": [
       {
         "document": "创建泳道组",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGovernanceLaneGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"LaneGroups\": [\n        {\n            \"Name\": \"abc\",\n            \"ID\": \"abc\",\n            \"TrafficEntries\": [\n                {\n                    \"EntryType\": \"abc\",\n                    \"TSEGatewaySelector\": {\n                        \"GatewayId\": \"abc\",\n                        \"Services\": [\n                            \"abc\"\n                        ]\n                    },\n                    \"ServiceGatewaySelector\": {\n                        \"Namespace\": \"abc\",\n                        \"Service\": \"abc\",\n                        \"Labels\": [\n                            {\n                                \"Key\": \"abc\",\n                                \"Value\": \"abc\"\n                            }\n                        ]\n                    },\n                    \"ServiceSelector\": {\n                        \"Namespace\": \"abc\",\n                        \"Service\": \"abc\",\n                        \"Labels\": [\n                            {\n                                \"Key\": \"abc\",\n                                \"Value\": \"abc\"\n                            }\n                        ]\n                    }\n                }\n            ],\n            \"Destinations\": [\n                {\n                    \"Namespace\": \"abc\",\n                    \"Service\": \"abc\",\n                    \"Labels\": [\n                        {\n                            \"LabelKey\": \"abc\",\n                            \"LabelValue\": \"abc\",\n                            \"LabelType\": \"abc\",\n                            \"LabelValueType\": \"abc\"\n                        }\n                    ]\n                }\n            ],\n            \"Description\": \"abc\",\n            \"Rules\": [\n                {\n                    \"ID\": \"abc\",\n                    \"Name\": \"abc\",\n                    \"LaneGroup\": \"abc\",\n                    \"Enable\": true,\n                    \"TrafficLabels\": [\n                        {\n                            \"Type\": \"abc\",\n                            \"Key\": \"abc\",\n                            \"Value\": {\n                                \"Type\": \"abc\",\n                                \"Value\": \"abc\",\n                                \"ValueType\": \"abc\"\n                            }\n                        }\n                    ],\n                    \"TrafficMatchMode\": \"abc\",\n                    \"LaneMatchMode\": \"abc\",\n                    \"Description\": \"abc\",\n                    \"LaneLabelValue\": \"abc\",\n                    \"CreateTime\": \"abc\",\n                    \"EnableTime\": \"abc\",\n                    \"ModifyTime\": \"abc\",\n                    \"Priority\": 0,\n                    \"Revision\": \"abc\"\n                }\n            ],\n            \"Revision\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"ModifyTime\": \"abc\",\n            \"Consistency\": \"abc\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGovernanceLaneGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-17dhh123\",\n    \"LaneGroups\": [\n        {\n            \"Name\": \"sct\",\n            \"ID\": \"db33e953bfd7467abe34f40f23ca1ada\",\n            \"TrafficEntries\": [\n                {\n                    \"EntryType\": \"polarismesh.cn/gateway/spring-cloud-gateway\",\n                    \"TSEGatewaySelector\": {\n                        \"GatewayId\": \"15d28168fe894299b50d49b35193867c\",\n                        \"Services\": [\n                            \"blue\"\n                        ]\n                    },\n                    \"ServiceGatewaySelector\": {\n                        \"Namespace\": \"default1\",\n                        \"Service\": \"springcloudt\",\n                        \"Labels\": [\n                            {\n                                \"Key\": \"color\",\n                                \"Value\": \"blue\"\n                            }\n                        ]\n                    },\n                    \"ServiceSelector\": {\n                        \"Namespace\": \"default1\",\n                        \"Service\": \"springcloudt\",\n                        \"Labels\": [\n                            {\n                                \"Key\": \"color\",\n                                \"Value\": \"blue\"\n                            }\n                        ]\n                    }\n                }\n            ],\n            \"Destinations\": [\n                {\n                    \"Namespace\": \"polaris\",\n                    \"Service\": \"Polaris\",\n                    \"Labels\": [\n                        {\n                            \"LabelKey\": \"color\",\n                            \"LabelValue\": \"blue\",\n                            \"LabelType\": \"HEADER\",\n                            \"LabelValueType\": \"TEXT\"\n                        }\n                    ]\n                }\n            ],\n            \"Description\": \"lanegroup\",\n            \"Rules\": [\n                {\n                    \"ID\": \"15d28168fe8942sdd10d49b35193867c\",\n                    \"Name\": \"polaris\",\n                    \"LaneGroup\": \"polaris\",\n                    \"Enable\": true,\n                    \"TrafficLabels\": [\n                        {\n                            \"Type\": \"HEADER\",\n                            \"Key\": \"color\",\n                            \"Value\": {\n                                \"Type\": \"HEADER\",\n                                \"Value\": \"blue\",\n                                \"ValueType\": \"TEXT\"\n                            }\n                        }\n                    ],\n                    \"TrafficMatchMode\": \"sct\",\n                    \"LaneMatchMode\": \"PERMISSIVE\",\n                    \"Description\": \"lanegroup\",\n                    \"LaneLabelValue\": \"blue\",\n                    \"CreateTime\": \"2026-01-15 11:43:21\",\n                    \"EnableTime\": \"2026-01-15 11:43:21\",\n                    \"ModifyTime\": \"2026-01-15 11:43:21\",\n                    \"Priority\": 0,\n                    \"Revision\": \"a023fd6b2f1441158699177ad3a86213\"\n                }\n            ],\n            \"Revision\": \"a023fd6b2f1441158699177ad3a86213\",\n            \"CreateTime\": \"2026-01-15 11:43:21\",\n            \"ModifyTime\": \"2026-01-15 11:43:21\",\n            \"Consistency\": \"LaneCallerService\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"15d28168fe894299b50d49b35193867c\"\n    }\n}",
         "title": "创建泳道组"
       }
     ],
@@ -240,12 +308,44 @@
         "title": "删除云原生网关证书"
       }
     ],
+    "DeleteCloudNativeAPIGatewayConsumer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayConsumer\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ConsumerId\": \"50ec02a9-3e96-47b4-a275-22f402e15e21\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"33b25c73-4050-4a52-bc18-8586bd900fb5\"\n    }\n}",
+        "title": "删除消费者"
+      }
+    ],
+    "DeleteCloudNativeAPIGatewayConsumerGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayConsumerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ConsumerGroupId\": \"cg-6021c8b0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"905b39a5-5165-4d80-a338-1a1b63f28f34\"\n    }\n}",
+        "title": "删除消费者组"
+      }
+    ],
     "DeleteCloudNativeAPIGatewayIPRestriction": [
       {
         "document": "删除云原生网关访问控制",
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayServiceRateLimit\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-2f2e3c42\",\n    \"SourceType\": \"route\",\n    \"SourceId\": \"31f3bf99-f289-4b6e-8edc-5e09d9d8ce4e\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "删除云原生网关访问控制"
+      }
+    ],
+    "DeleteCloudNativeAPIGatewayLLMModelAPI": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayLLMModelAPI\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-04b00666\",\n    \"ModelAPIId\": \"9ab0f08a1bab42699c85839fda1461c1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"810f49bf-aad4-4380-9be3-7b90045f375c\",\n        \"Result\": true\n    }\n}",
+        "title": "删除 LLM 模型 API 信息"
+      }
+    ],
+    "DeleteCloudNativeAPIGatewayLLMModelService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayLLMModelService\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-04b00666\",\n    \"ModelServiceId\": \"03e9cb42c0944d98afcacd55066fa667\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bf341b99-089f-4a43-a705-957db92979da\",\n        \"Result\": true\n    }\n}",
+        "title": "删除 LLM 模型服务信息"
       }
     ],
     "DeleteCloudNativeAPIGatewayPublicNetwork": [
@@ -270,6 +370,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayRouteRateLimit\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-dde03767\",\n    \"Id\": \"2a212560-220a-46f6-b139-3238eb8ea041\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ffadafb6-545d-461c-ad8c-baa26c0f8955\"\n    }\n}",
         "title": "删除云原生网关限流插件(路由)"
+      }
+    ],
+    "DeleteCloudNativeAPIGatewaySecretKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"SecretKeyId\": \"secret-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"01dd9245-3f77-48d0-aac5-1cd5b9a524b0\"\n    }\n}",
+        "title": "删除密钥"
       }
     ],
     "DeleteCloudNativeAPIGatewayService": [
@@ -347,8 +455,8 @@
     "DeleteGovernanceLaneGroups": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGovernanceLaneGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"LaneGroups\": [\n        {\n            \"Name\": \"abc\",\n            \"ID\": \"abc\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGovernanceLaneGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-17dhh123\",\n    \"LaneGroups\": [\n        {\n            \"Name\": \"sct\",\n            \"ID\": \"db33e953bfd7467abe34f40f23ca1ada\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"db33e953bfd7467abe34f40f23ca1ada\"\n    }\n}",
         "title": "删除泳道组"
       }
     ],
@@ -464,6 +572,38 @@
         "title": "测试获取云原生API网关配置信息"
       }
     ],
+    "DescribeCloudNativeAPIGatewayConsumer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayConsumer\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ConsumerId\": \"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e6bfe546-a077-4935-905b-b97ba97fef2f\",\n        \"Result\": {\n            \"ConsumerGroups\": [\n                {\n                    \"ConsumerGroupId\": \"cg-5070cb47\",\n                    \"CreateTime\": \"2025-11-20 09:53:12\",\n                    \"Description\": \"分组描述\",\n                    \"ModifyTime\": \"2025-11-20 09:53:12\",\n                    \"Name\": \"分组3\",\n                    \"Status\": \"Enable\"\n                },\n                {\n                    \"ConsumerGroupId\": \"cg-6021c8b0\",\n                    \"CreateTime\": \"2025-11-19 16:55:08\",\n                    \"Description\": \"消费者分组描述\",\n                    \"ModifyTime\": \"2025-11-20 10:26:35\",\n                    \"Name\": \"消费者组\",\n                    \"Status\": \"Disable\"\n                }\n            ],\n            \"ConsumerId\": \"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\",\n            \"CreateTime\": \"2025-11-19 16:58:43\",\n            \"Description\": \"消费者1\",\n            \"ModifyTime\": \"2025-11-19 16:58:43\",\n            \"Name\": \"消费者1\"\n        }\n    }\n}",
+        "title": "查看详情"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayConsumerGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayConsumerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ConsumerGroupId\": \"cg-2cd91a00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0379d5e4-6a1e-4baf-bb92-6cd11cbe197a\",\n        \"Result\": {\n            \"ConsumerGroupId\": \"cg-2cd91a00\",\n            \"CreateTime\": \"2025-11-11 11:11:11\",\n            \"Description\": \"分组描述\",\n            \"ModifyTime\": \"2025-11-11 11:11:11\",\n            \"Name\": \"分组1\",\n            \"Status\": \"Enable\"\n        }\n    }\n}",
+        "title": "查询分组详情"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayConsumerGroupList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayConsumerGroupList\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c67671ec\",\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ConsumerGroups\": [\n                {\n                    \"BindCount\": 1,\n                    \"ConsumerGroupId\": \"cg-200bac0a61cd4c\",\n                    \"CreateTime\": \"2026-04-16 19:08:18\",\n                    \"Description\": \"Default consumer group created by the system\",\n                    \"ModifyTime\": \"2026-04-16 19:08:18\",\n                    \"Name\": \"default-consumer-group\",\n                    \"Status\": \"Enable\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"3dfde9ac-42a6-4982-9a58-d5b4f5b1b0d4\"\n    }\n}",
+        "title": "查询消费者分组列表"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayConsumerList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayConsumerList\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c67671ec\",\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Consumers\": [\n                {\n                    \"ConsumerId\": \"50240110-fe3e-4cab-bd99-b9f37d330c2f\",\n                    \"CreateTime\": \"2026-04-30 11:49:52\",\n                    \"Description\": \"\",\n                    \"ModifyTime\": \"2026-04-30 11:49:52\",\n                    \"Name\": \"**********\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"bdd74c6e-bd30-4583-a979-0f23477c825f\"\n    }\n}",
+        "title": "查询消费者列表"
+      }
+    ],
     "DescribeCloudNativeAPIGatewayIPRestriction": [
       {
         "document": "查询云原生网关访问控制",
@@ -478,6 +618,38 @@
         "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayInfoByIp\n<公共请求参数>\n\n{\n    \"PublicNetworkIP\": \"1.1.1.1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"GatewayId\": \"gateway-a1337ce3\",\n            \"GroupId\": \"group-a1337ce\"\n        },\n        \"RequestId\": \"86e4eecf-51a5-4dda-9cec-68650a9b8c3b\"\n    }\n}",
         "title": "根据公网ip查询云原生网关实例信息"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayLLMModelAPI": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMModelAPI\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-4eb46023\",\n    \"ModelAPIId\": \"a1b2c3d4e5f6789012345678901234ab\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Id\": \"a1b2c3d4e5f6789012345678901234ab\",\n            \"CreateTime\": \"2026-05-19T15:00:00+08:00\",\n            \"ModifyTime\": \"2026-05-19T15:00:00+08:00\",\n            \"Name\": \"openai_chat\",\n            \"SceneType\": \"Chat\",\n            \"RequestProtocol\": \"openai\",\n            \"RouteList\": [\n                {\n                    \"Name\": \"openai_chat_route_1\",\n                    \"Methods\": [\n                        \"POST\"\n                    ],\n                    \"Paths\": [\n                        \"/v1/chat/completions\"\n                    ]\n                }\n            ],\n            \"BasePath\": \"/v1/openai\",\n            \"StripPath\": false,\n            \"Description\": \"大模型统一聊天 API\",\n            \"ModelServiceId\": \"d0742b86605340438a8018c658156622\",\n            \"ModelServiceName\": \"openai_test\",\n            \"MatchHeaders\": [],\n            \"EnableCrossServiceFallback\": false\n        },\n        \"RequestId\": \"f1234567-89ab-cdef-0123-456789abcdef\"\n    }\n}",
+        "title": "查询单个 LLM 模型 API 信息"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayLLMModelAPIs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMModelAPIs\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-04b00666\",\n    \"Limit\": 10,\n    \"Offset\": null,\n    \"Filters\": [\n        {\n            \"Name\": \"Name\",\n            \"Values\": [\n                \"openai\"\n            ]\n        }\n    ],\n    \"Keyword\": \"openai\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"959caf3b-f74c-4cd1-9260-3b7713e55604\",\n        \"Result\": {\n            \"DataList\": [\n                {\n                    \"BasePath\": \"\",\n                    \"CreateTime\": \"2025-11-26 10:16:59\",\n                    \"Description\": \"OpenAI 格式模型 API\",\n                    \"Id\": \"9ab0f08a1bab42699c85839fda1461c1\",\n                    \"ModifyTime\": \"2025-11-26 10:16:59\",\n                    \"Name\": \"openai_chat_测试4\",\n                    \"RequestProtocol\": \"OpenAI\",\n                    \"RouteList\": [\n                        {\n                            \"Name\": \"base\",\n                            \"Paths\": [\n                                \"/v1/chat/completions\"\n                            ]\n                        }\n                    ],\n                    \"SceneType\": \"Chat\",\n                    \"StripPath\": false\n                },\n                {\n                    \"BasePath\": \"/base\",\n                    \"CreateTime\": \"2025-11-26 10:16:16\",\n                    \"Description\": \"OpenAI 格式模型 API\",\n                    \"Id\": \"769ebd672acb4640b0a35a31bd429de9\",\n                    \"ModifyTime\": \"2025-11-26 10:16:16\",\n                    \"Name\": \"openai_chat_测试3\",\n                    \"RequestProtocol\": \"OpenAI\",\n                    \"RouteList\": [\n                        {\n                            \"Name\": \"base\",\n                            \"Paths\": [\n                                \"/v1/chat/completions\"\n                            ]\n                        }\n                    ],\n                    \"SceneType\": \"Chat\",\n                    \"StripPath\": true\n                },\n                {\n                    \"BasePath\": \"\",\n                    \"CreateTime\": \"2025-11-26 10:15:18\",\n                    \"Description\": \"OpenAI 格式模型 API\",\n                    \"Id\": \"66ae5965beed4196966876a778c28995\",\n                    \"ModifyTime\": \"2025-11-26 10:15:18\",\n                    \"Name\": \"openai_chat_测试2\",\n                    \"RequestProtocol\": \"OpenAI\",\n                    \"RouteList\": [\n                        {\n                            \"Name\": \"base\",\n                            \"Paths\": [\n                                \"/v1/chat/completions\"\n                            ]\n                        }\n                    ],\n                    \"SceneType\": \"Chat\",\n                    \"StripPath\": false\n                },\n                {\n                    \"BasePath\": \"\",\n                    \"CreateTime\": \"2025-11-26 10:13:16\",\n                    \"Description\": \"OpenAI 格式模型 API\",\n                    \"Id\": \"b529dd8141ea4234a4c4d87930108f68\",\n                    \"ModifyTime\": \"2025-11-26 10:13:16\",\n                    \"Name\": \"openai_chat_测试\",\n                    \"RequestProtocol\": \"OpenAI\",\n                    \"RouteList\": [\n                        {\n                            \"Name\": \"base\",\n                            \"Paths\": [\n                                \"/v1/chat/completions\"\n                            ]\n                        }\n                    ],\n                    \"SceneType\": \"Chat\",\n                    \"StripPath\": false\n                }\n            ],\n            \"TotalCount\": 4\n        }\n    }\n}",
+        "title": "查询 LLM 模型 API 列表"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayLLMModelService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMModelService\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-4eb46023\",\n    \"ModelServiceId\": \"d0742b86605340438a8018c658156622\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Id\": \"d0742b86605340438a8018c658156622\",\n            \"Name\": \"openai_test\",\n            \"CreateTime\": \"2026-05-19T15:00:00+08:00\",\n            \"ModifyTime\": \"2026-05-19T15:00:00+08:00\",\n            \"ServiceType\": \"LLMService\",\n            \"ModelProvider\": \"openai\",\n            \"ModelProtocol\": \"OpenAI/V1\",\n            \"UpstreamURL\": \"\",\n            \"ModelSelector\": \"Specify\",\n            \"DefaultModel\": \"gpt-5.1\",\n            \"EnableModelFallback\": true,\n            \"ModelFallbackRule\": {\n                \"FallbackModels\": [\n                    \"gpt-5.2\",\n                    \"gpt-5-mini\"\n                ]\n            },\n            \"EnableModelParamCheck\": false,\n            \"Description\": \"OpenAI 模型服务\",\n            \"ConnectTimeout\": 10000,\n            \"WriteTimeout\": 60000,\n            \"ReadTimeout\": 60000,\n            \"Retries\": 0,\n            \"UpstreamUrlMode\": \"AutoConcat\",\n            \"SNI\": \"\"\n        },\n        \"RequestId\": \"bb67a5c6-44c2-4ad7-acb4-bffdd4aa68fe\"\n    }\n}",
+        "title": "查询单个 LLM 模型服务列表"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayLLMModelServices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMModelServices\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0703606b\",\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DataList\": [\n                {\n                    \"ConnectTimeout\": 10000,\n                    \"CreateTime\": \"2026-05-18 09:02:49\",\n                    \"Description\": \"\",\n                    \"EnableModelParamCheck\": false,\n                    \"Id\": \"d0742b86605340438a8018c658156622\",\n                    \"ModelProtocol\": \"OpenAI-Custom\",\n                    \"ModelProvider\": \"custom\",\n                    \"ModelSelector\": \"PassThrough\",\n                    \"ModifyTime\": \"2026-05-18 09:02:49\",\n                    \"Name\": \"custom\",\n                    \"ReadTimeout\": 60000,\n                    \"Retries\": 0,\n                    \"SNI\": \"generativelanguage.googleapis.com\",\n                    \"ServiceType\": \"LLMService\",\n                    \"UpstreamURL\": \"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent\",\n                    \"UpstreamUrlMode\": \"FixedPath\",\n                    \"WriteTimeout\": 60000\n                }\n            ],\n            \"TotalCount\": 2\n        },\n        \"RequestId\": \"faeffc01-bda7-4fec-8407-7d8198b0bda9\"\n    }\n}",
+        "title": "查询模型服务"
       }
     ],
     "DescribeCloudNativeAPIGatewayNodes": [
@@ -510,6 +682,30 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayRoutes\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-dde03767\",\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"ServiceName\": \"svc1\",\n    \"RouteName\": \"route1\",\n    \"Filters\": [\n        {\n            \"Key\": \"name\",\n            \"Value\": \"global\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d4dad8c0-7634-474a-ba7b-22e3e5b45911\",\n        \"Result\": {\n            \"RouteList\": [\n                {\n                    \"Name\": \"route1\",\n                    \"ID\": \"d751b7fa-afcb-479c-818b-d1957432b246\",\n                    \"Methods\": [\n                        \"GET\"\n                    ],\n                    \"Paths\": [\n                        \"/v1/users\"\n                    ],\n                    \"Hosts\": [\n                        \"tencent.com\"\n                    ],\n                    \"Protocols\": [\n                        \"http\",\n                        \"https\"\n                    ],\n                    \"PreserveHost\": false,\n                    \"ForceHttps\": false,\n                    \"HttpsRedirectStatusCode\": 426,\n                    \"StripPath\": true,\n                    \"CreatedTime\": \"2024-11-25 10:49:23\",\n                    \"DestinationPorts\": [],\n                    \"ServiceName\": \"svc1\",\n                    \"ServiceID\": \"67695fc9-6d40-4450-83b5-ea57baaaad6d\",\n                    \"Headers\": [\n                        {\n                            \"Key\": \"app\",\n                            \"Value\": \"learn\"\n                        }\n                    ]\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
         "title": "查询云原生网关路由列表"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewaySecretKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"SecretKeyId\": \"secret-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8edcd3b9-68fd-42a9-bba3-d38e17ee4777\",\n        \"Result\": {\n            \"BindCount\": 0,\n            \"CreateTime\": \"2025-11-19 10:39:44\",\n            \"Description\": \"密钥描述\",\n            \"GenerateType\": \"System\",\n            \"KmsKeyName\": \"\",\n            \"KmsKeyVersion\": \"\",\n            \"ModifyTime\": \"2025-11-19 16:04:39\",\n            \"Name\": \"密钥11\",\n            \"ResourceType\": \"Consumer\",\n            \"SecretKeyId\": \"secret-xxxx\",\n            \"SecretType\": \"ApiKey\",\n            \"SecretValue\": \"sk-****ptz\",\n            \"Status\": \"Enable\"\n        }\n    }\n}",
+        "title": "查询密钥详情"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewaySecretKeyList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewaySecretKeyList\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"ResourceType\": \"Consumer\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9b49623-c235-4839-b1d6-1f6f23ae8dcd\",\n        \"Result\": {\n            \"SecretKeys\": [\n                {\n                    \"BindCount\": 0,\n                    \"CreateTime\": \"2025-11-19 12:35:50\",\n                    \"Description\": \"密钥\",\n                    \"GenerateType\": \"System\",\n                    \"KmsKeyName\": \"\",\n                    \"KmsKeyVersion\": \"\",\n                    \"ModifyTime\": \"2025-11-19 12:35:50\",\n                    \"Name\": \"测试系统密钥\",\n                    \"ResourceType\": \"Consumer\",\n                    \"SecretKeyId\": \"secret-wefawwe\",\n                    \"SecretType\": \"ApiKey\",\n                    \"SecretValue\": \"sk-****wdk\",\n                    \"Status\": \"Enable\"\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
+        "title": "查询密钥列表"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewaySecretKeyValue": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewaySecretKeyValue\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"SecretKeyId\": \"secret-c75001b1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"07313ba2-08a8-4933-9cd6-00052ffdd79a\",\n        \"Result\": \"sk-xxxxxxxx\"\n    }\n}",
+        "title": "查询密钥值"
       }
     ],
     "DescribeCloudNativeAPIGatewayServiceRateLimit": [
@@ -641,8 +837,8 @@
     "DescribeGovernanceLaneGroups": [
       {
         "document": "查询泳道组列表",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGovernanceLaneGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Name\": \"abc\",\n    \"GroupID\": \"abc\",\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"LaneGroups\": [\n            {\n                \"Name\": \"abc\",\n                \"ID\": \"abc\",\n                \"TrafficEntries\": [\n                    {\n                        \"EntryType\": \"abc\",\n                        \"TSEGatewaySelector\": {\n                            \"GatewayId\": \"abc\",\n                            \"Services\": [\n                                \"abc\"\n                            ]\n                        },\n                        \"ServiceGatewaySelector\": {\n                            \"Namespace\": \"abc\",\n                            \"Service\": \"abc\",\n                            \"Labels\": [\n                                {\n                                    \"Key\": \"abc\",\n                                    \"Value\": \"abc\"\n                                }\n                            ]\n                        },\n                        \"ServiceSelector\": {\n                            \"Namespace\": \"abc\",\n                            \"Service\": \"abc\",\n                            \"Labels\": [\n                                {\n                                    \"Key\": \"abc\",\n                                    \"Value\": \"abc\"\n                                }\n                            ]\n                        }\n                    }\n                ],\n                \"Destinations\": [\n                    {\n                        \"Namespace\": \"abc\",\n                        \"Service\": \"abc\",\n                        \"Labels\": [\n                            {\n                                \"LabelKey\": \"abc\",\n                                \"LabelValue\": \"abc\",\n                                \"LabelType\": \"abc\",\n                                \"LabelValueType\": \"abc\"\n                            }\n                        ]\n                    }\n                ],\n                \"Description\": \"abc\",\n                \"Rules\": [\n                    {\n                        \"ID\": \"abc\",\n                        \"Name\": \"abc\",\n                        \"LaneGroup\": \"abc\",\n                        \"Enable\": true,\n                        \"TrafficLabels\": [\n                            {\n                                \"Type\": \"abc\",\n                                \"Key\": \"abc\",\n                                \"Value\": {\n                                    \"Type\": \"abc\",\n                                    \"Value\": \"abc\",\n                                    \"ValueType\": \"abc\"\n                                }\n                            }\n                        ],\n                        \"TrafficMatchMode\": \"abc\",\n                        \"LaneMatchMode\": \"abc\",\n                        \"Description\": \"abc\",\n                        \"LaneLabelValue\": \"abc\",\n                        \"CreateTime\": \"abc\",\n                        \"EnableTime\": \"abc\",\n                        \"ModifyTime\": \"abc\",\n                        \"Priority\": 0,\n                        \"Revision\": \"abc\"\n                    }\n                ],\n                \"Revision\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"ModifyTime\": \"abc\",\n                \"Consistency\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGovernanceLaneGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-f72d4820\",\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"LaneGroups\": [\n            {\n                \"CreateTime\": \"2026-01-13 18:04:50\",\n                \"Destinations\": [\n                    {\n                        \"Namespace\": \"default\",\n                        \"Service\": \"LaneCallerService\"\n                    }\n                ],\n                \"ID\": \"db33e953bfd7467abe34f40f23ca1ada\",\n                \"ModifyTime\": \"2026-01-15 11:43:21\",\n                \"Name\": \"sct\",\n                \"Revision\": \"4d6b31038976413b999b1c3117875b6d\",\n                \"Rules\": [\n                    {\n                        \"CreateTime\": \"2026-01-14 11:23:47\",\n                        \"Description\": \"blue\",\n                        \"Enable\": true,\n                        \"EnableTime\": \"2026-01-15 11:41:17\",\n                        \"ID\": \"15d28168fe894299b50d49b35193867c\",\n                        \"LaneGroup\": \"sct\",\n                        \"LaneLabelValue\": \"blue\",\n                        \"LaneMatchMode\": \"PERMISSIVE\",\n                        \"ModifyTime\": \"2026-01-15 11:43:21\",\n                        \"Name\": \"blue\",\n                        \"Priority\": 0,\n                        \"Revision\": \"a023fd6b2f1441158699177ad3a86213\",\n                        \"TrafficGray\": {\n                            \"Curvature\": 0,\n                            \"IntervalSecond\": 0,\n                            \"Mode\": \"PERCENTAGE\",\n                            \"Percent\": 100\n                        },\n                        \"TrafficLabels\": [\n                            {\n                                \"Key\": \"color\",\n                                \"Type\": \"HEADER\",\n                                \"Value\": {\n                                    \"Type\": \"EXACT\",\n                                    \"Value\": \"blue\",\n                                    \"ValueType\": \"TEXT\"\n                                }\n                            }\n                        ],\n                        \"TrafficMatchMode\": \"AND\"\n                    }\n                ],\n                \"TrafficEntries\": [\n                    {\n                        \"EntryType\": \"polarismesh.cn/gateway/spring-cloud-gateway\",\n                        \"ServiceGatewaySelector\": {\n                            \"Namespace\": \"default\",\n                            \"Service\": \"LaneRouterGatewayService\"\n                        }\n                    }\n                ]\n            }\n        ],\n        \"Total\": 3,\n        \"RequestId\": \"de77ec4e-e69f-459e-9c07-13b32b207bcc\"\n    }\n}",
         "title": "查询泳道组列表"
       }
     ],
@@ -830,6 +1026,38 @@
         "title": "更新云原生网关证书"
       }
     ],
+    "ModifyCloudNativeAPIGatewayConsumer": [
+      {
+        "document": "修改消费者信息",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayConsumer\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-e0e9a565\",\n    \"ConsumerId\": \"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\",\n    \"Name\": \"消费者1\",\n    \"Description\": \"消费者描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d793cfa-f682-47f8-b92d-0cb656c75c42\"\n    }\n}",
+        "title": "修改消费者信息"
+      }
+    ],
+    "ModifyCloudNativeAPIGatewayConsumerGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayConsumerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ConsumerGroupId\": \"cg-6021c8b0\",\n    \"Name\": \"消费者组\",\n    \"Description\": \"消费者分组描述\",\n    \"Status\": \"Disable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"905b39a5-5165-4d80-a338-1a1b63f28f34\"\n    }\n}",
+        "title": "修改消费者分组"
+      }
+    ],
+    "ModifyCloudNativeAPIGatewayLLMModelAPI": [
+      {
+        "document": "修改模型 API",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayLLMModelAPI\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-2abb07bf\",\n    \"ModelAPIId\": \"323e58bceacf4128823c60c93bbe9ca1\",\n    \"Name\": \"test1\",\n    \"BasePath\": \"/test1\",\n    \"Description\": \"\",\n    \"MatchHeaders\": [],\n    \"EnableCrossServiceFallback\": true,\n    \"CrossServiceFallbackConfig\": {\n        \"TriggerConditions\": [\n            \"ServiceUnavailable\"\n        ],\n        \"FallbackServiceChain\": [\n            {\n                \"ModelServiceId\": \"3dcaac5d48cc4d39a8ed79937fe720c6\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"9b9acb5f-9230-4a4b-abcb-180211952df0\"\n    }\n}",
+        "title": "修改模型 API"
+      }
+    ],
+    "ModifyCloudNativeAPIGatewayLLMModelService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayLLMModelService\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-01f976d0\",\n    \"ModelServiceId\": \"843a043a19d445a8a27e5be0fd182a0c\",\n    \"Name\": \"qwen\",\n    \"ModelSelector\": \"PassThrough\",\n    \"EnableModelParamCheck\": false,\n    \"Description\": \"\",\n    \"UpstreamURL\": \"https://dashscope.aliyuncs.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"ec1c252b-1306-42d5-9ad1-368f76aade3f\"\n    }\n}",
+        "title": "修改模型服务"
+      }
+    ],
     "ModifyCloudNativeAPIGatewayRoute": [
       {
         "document": "修改云原生网关路由",
@@ -844,6 +1072,20 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayRouteRateLimit\n<公共请求参数>\n\n{\n    \"Id\": \"2a212560-220a-46f6-b139-3238eb8ea041\",\n    \"GatewayId\": \"gateway-dde037x1\",\n    \"LimitDetail\": {\n        \"Enabled\": true,\n        \"QpsThresholds\": [\n            {\n                \"Unit\": \"second\",\n                \"Max\": 10\n            }\n        ],\n        \"Path\": \"/v1/users\",\n        \"Header\": \"X-Api-Version\",\n        \"LimitBy\": \"header\",\n        \"ExternalRedis\": {\n            \"RedisHost\": \"192.168.2.162\",\n            \"RedisPassword\": \"tse@tencent\",\n            \"RedisPort\": 6379,\n            \"RedisTimeout\": 10\n        },\n        \"Policy\": \"redis\",\n        \"RateLimitResponse\": {\n            \"Body\": \"too many requests\",\n            \"Headers\": [\n                {\n                    \"Key\": \"app\",\n                    \"Value\": \"kong\"\n                }\n            ],\n            \"HttpStatus\": 429\n        },\n        \"RateLimitResponseUrl\": \"http://192.168.2.165/downgrade\",\n        \"ResponseType\": \"default\",\n        \"HideClientHeaders\": true,\n        \"IsDelay\": true,\n        \"LineUpTime\": 10\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ffadafb6-545d-461c-ad8c-baa26c0f8955\"\n    }\n}",
         "title": "修改云原生网关限流插件(路由)"
+      }
+    ],
+    "ModifyCloudNativeAPIGatewaySecretKeyStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewaySecretKeyStatus\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"Status\": \"Enable\",\n    \"SecretKeyId\": \"secret-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b877a25a-207b-47b2-ad4b-1ad1d0345971\"\n    }\n}",
+        "title": "启用密钥"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewaySecretKeyStatus\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"Status\": \"Disable\",\n    \"SecretKeyId\": \"secret-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b877a25a-207b-47b2-ad4b-1ad1d0345971\"\n    }\n}",
+        "title": "禁用密钥"
       }
     ],
     "ModifyCloudNativeAPIGatewayService": [
@@ -905,8 +1147,8 @@
     "ModifyGovernanceLaneGroups": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGovernanceLaneGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"LaneGroups\": [\n        {\n            \"Name\": \"abc\",\n            \"ID\": \"abc\",\n            \"TrafficEntries\": [\n                {\n                    \"EntryType\": \"abc\",\n                    \"TSEGatewaySelector\": {\n                        \"GatewayId\": \"abc\",\n                        \"Services\": [\n                            \"abc\"\n                        ]\n                    },\n                    \"ServiceGatewaySelector\": {\n                        \"Namespace\": \"abc\",\n                        \"Service\": \"abc\",\n                        \"Labels\": [\n                            {\n                                \"Key\": \"abc\",\n                                \"Value\": \"abc\"\n                            }\n                        ]\n                    },\n                    \"ServiceSelector\": {\n                        \"Namespace\": \"abc\",\n                        \"Service\": \"abc\",\n                        \"Labels\": [\n                            {\n                                \"Key\": \"abc\",\n                                \"Value\": \"abc\"\n                            }\n                        ]\n                    }\n                }\n            ],\n            \"Destinations\": [\n                {\n                    \"Namespace\": \"abc\",\n                    \"Service\": \"abc\",\n                    \"Labels\": [\n                        {\n                            \"LabelKey\": \"abc\",\n                            \"LabelValue\": \"abc\",\n                            \"LabelType\": \"abc\",\n                            \"LabelValueType\": \"abc\"\n                        }\n                    ]\n                }\n            ],\n            \"Description\": \"abc\",\n            \"Rules\": [\n                {\n                    \"ID\": \"abc\",\n                    \"Name\": \"abc\",\n                    \"LaneGroup\": \"abc\",\n                    \"Enable\": true,\n                    \"TrafficLabels\": [\n                        {\n                            \"Type\": \"abc\",\n                            \"Key\": \"abc\",\n                            \"Value\": {\n                                \"Type\": \"abc\",\n                                \"Value\": \"abc\",\n                                \"ValueType\": \"abc\"\n                            }\n                        }\n                    ],\n                    \"TrafficMatchMode\": \"abc\",\n                    \"LaneMatchMode\": \"abc\",\n                    \"Description\": \"abc\",\n                    \"LaneLabelValue\": \"abc\",\n                    \"CreateTime\": \"abc\",\n                    \"EnableTime\": \"abc\",\n                    \"ModifyTime\": \"abc\",\n                    \"Priority\": 0,\n                    \"Revision\": \"abc\"\n                }\n            ],\n            \"Revision\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"ModifyTime\": \"abc\",\n            \"Consistency\": \"abc\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGovernanceLaneGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-17dhh123\",\n    \"LaneGroups\": [\n        {\n            \"Name\": \"sct\",\n            \"ID\": \"db33e953bfd7467abe34f40f23ca1ada\",\n            \"TrafficEntries\": [\n                {\n                    \"EntryType\": \"polarismesh.cn/gateway/spring-cloud-gateway\",\n                    \"TSEGatewaySelector\": {\n                        \"GatewayId\": \"15d28168fe894299b50d49b35193867c\",\n                        \"Services\": [\n                            \"blue\"\n                        ]\n                    },\n                    \"ServiceGatewaySelector\": {\n                        \"Namespace\": \"default1\",\n                        \"Service\": \"springcloudt\",\n                        \"Labels\": [\n                            {\n                                \"Key\": \"color\",\n                                \"Value\": \"blue\"\n                            }\n                        ]\n                    },\n                    \"ServiceSelector\": {\n                        \"Namespace\": \"default1\",\n                        \"Service\": \"springcloudt\",\n                        \"Labels\": [\n                            {\n                                \"Key\": \"color\",\n                                \"Value\": \"blue\"\n                            }\n                        ]\n                    }\n                }\n            ],\n            \"Destinations\": [\n                {\n                    \"Namespace\": \"polaris\",\n                    \"Service\": \"Polaris\",\n                    \"Labels\": [\n                        {\n                            \"LabelKey\": \"color\",\n                            \"LabelValue\": \"blue\",\n                            \"LabelType\": \"HEADER\",\n                            \"LabelValueType\": \"TEXT\"\n                        }\n                    ]\n                }\n            ],\n            \"Description\": \"lanegroup\",\n            \"Rules\": [\n                {\n                    \"ID\": \"15d28168fe8942sdd10d49b35193867c\",\n                    \"Name\": \"polaris\",\n                    \"LaneGroup\": \"polaris\",\n                    \"Enable\": true,\n                    \"TrafficLabels\": [\n                        {\n                            \"Type\": \"HEADER\",\n                            \"Key\": \"color\",\n                            \"Value\": {\n                                \"Type\": \"HEADER\",\n                                \"Value\": \"blue\",\n                                \"ValueType\": \"TEXT\"\n                            }\n                        }\n                    ],\n                    \"TrafficMatchMode\": \"sct\",\n                    \"LaneMatchMode\": \"PERMISSIVE\",\n                    \"Description\": \"lanegroup\",\n                    \"LaneLabelValue\": \"blue\",\n                    \"CreateTime\": \"2026-01-15 11:43:21\",\n                    \"EnableTime\": \"2026-01-15 11:43:21\",\n                    \"ModifyTime\": \"2026-01-15 11:43:21\",\n                    \"Priority\": 0,\n                    \"Revision\": \"a023fd6b2f1441158699177ad3a86213\"\n                }\n            ],\n            \"Revision\": \"a023fd6b2f1441158699177ad3a86213\",\n            \"CreateTime\": \"2026-01-15 11:43:21\",\n            \"ModifyTime\": \"2026-01-15 11:43:21\",\n            \"Consistency\": \"LaneCallerService\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"15d28168fe894299b50d49b35193867c\"\n    }\n}",
         "title": "修改泳道组"
       }
     ],
@@ -980,6 +1222,22 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishConfigFiles\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-fd191a86\",\n    \"ConfigFileReleases\": {\n        \"Name\": \"ConfigFileReleases test\",\n        \"Namespace\": \"Polaris\",\n        \"Group\": \"group-test-jayhjxu\",\n        \"FileName\": \"config-file-test\",\n        \"Content\": \"I want you to act as a linux terminal. I will type commands and you will reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. \",\n        \"Comment\": \"test for 1\",\n        \"Version\": 12\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"asdf\"\n    }\n}",
         "title": "发布配置文件"
+      }
+    ],
+    "RemoveCloudNativeAPIGatewayConsumerGroupAuth": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveCloudNativeAPIGatewayConsumerGroupAuth\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-1b59c523\",\n    \"ResourceType\": \"ModelAPI\",\n    \"ResourceId\": \"e3aa4fe271c24bb4aa7cca41db5a4e75\",\n    \"ConsumerGroupIds\": [\n        \"cg-d4fbcc88676d50\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2eb7e299-cd5c-4aaf-bbb2-b02ca61a5d49\"\n    }\n}",
+        "title": "从模型API里解除分组授权"
+      }
+    ],
+    "RemoveCloudNativeAPIGatewayConsumerInGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveCloudNativeAPIGatewayConsumerInGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ConsumerGroupId\": \"cg-6021c8b0\",\n    \"ConsumerIds\": [\n        \"consumer-d6cdf6af\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14e46e9e-fa3d-4bdc-86bc-b73a8a69239c\"\n    }\n}",
+        "title": "从消费者组里移除消费者"
       }
     ],
     "RestartSREInstance": [

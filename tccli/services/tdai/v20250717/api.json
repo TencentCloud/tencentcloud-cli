@@ -21,6 +21,13 @@
       "output": "CreateChatCompletionResponse",
       "status": "online"
     },
+    "CreateMemoryPlusSpace": {
+      "document": "本接口（CreateMemoryPlusSpace）用于创建正式版 Memory 实例。",
+      "input": "CreateMemoryPlusSpaceRequest",
+      "name": "创建正式版 Memory 实例",
+      "output": "CreateMemoryPlusSpaceResponse",
+      "status": "online"
+    },
     "DescribeAgentDutyTaskDetail": {
       "document": "查询智能体值守任务详情",
       "input": "DescribeAgentDutyTaskDetailRequest",
@@ -70,6 +77,27 @@
       "output": "DescribeChatsResponse",
       "status": "online"
     },
+    "DescribeMemoryPlusRecord": {
+      "document": "本接口（DescribeMemoryPlusRecord）用于查询 Memory 实例的记忆数据。",
+      "input": "DescribeMemoryPlusRecordRequest",
+      "name": "查询正式版 Memory 实例记忆数据",
+      "output": "DescribeMemoryPlusRecordResponse",
+      "status": "online"
+    },
+    "DescribeMemoryPlusSpace": {
+      "document": "本接口（DescribeMemoryPlusSpace）用于查询 Memory 正式版实例详情。",
+      "input": "DescribeMemoryPlusSpaceRequest",
+      "name": "查询正式版 Memory 服务详情",
+      "output": "DescribeMemoryPlusSpaceResponse",
+      "status": "online"
+    },
+    "DescribeMemoryPlusSpaces": {
+      "document": "本接口（DescribeMemoryPlusSpaces）用于查询 Memory正式版实例列表。",
+      "input": "DescribeMemoryPlusSpacesRequest",
+      "name": "查询正式版 Memory 实例列表",
+      "output": "DescribeMemoryPlusSpacesResponse",
+      "status": "online"
+    },
     "DescribeReportUrl": {
       "document": "智能体报告地址生成并下载",
       "input": "DescribeReportUrlRequest",
@@ -77,11 +105,32 @@
       "output": "DescribeReportUrlResponse",
       "status": "online"
     },
+    "DescribeServiceAccessKey": {
+      "document": "本接口（DescribeServiceAccessKey）用于查询服务访问密钥。",
+      "input": "DescribeServiceAccessKeyRequest",
+      "name": "查询服务访问密钥",
+      "output": "DescribeServiceAccessKeyResponse",
+      "status": "online"
+    },
+    "DestroyMemoryPlusSpace": {
+      "document": "本接口（DestroyMemoryPlusSpace）用于从回收站彻底销毁 Memory 实例。",
+      "input": "DestroyMemoryPlusSpaceRequest",
+      "name": "销毁正式版 Memory 实例",
+      "output": "DestroyMemoryPlusSpaceResponse",
+      "status": "online"
+    },
     "IsolateAgentInstance": {
       "document": "本接口（IsolateAgentInstance）用于隔离智能体实例，通常在用户需要隔离智能体实例时使用。",
       "input": "IsolateAgentInstanceRequest",
       "name": "隔离Agent实例",
       "output": "IsolateAgentInstanceResponse",
+      "status": "online"
+    },
+    "IsolateMemoryPlusSpace": {
+      "document": "本接口（IsolateMemoryPlusSpace）用于将正式版 Memory 实例放入回收站隔离。",
+      "input": "IsolateMemoryPlusSpaceRequest",
+      "name": "将 Memory 实例放入回收站",
+      "output": "IsolateMemoryPlusSpaceResponse",
       "status": "online"
     },
     "ModifyAgentInstanceParameters": {
@@ -98,6 +147,13 @@
       "output": "ModifyChatTitleResponse",
       "status": "online"
     },
+    "ModifyMemoryPlusSpace": {
+      "document": "本接口（ModifyMemoryPlusSpace）用于修改正式版 Memory 实例，可修改实例名称与描述。",
+      "input": "ModifyMemoryPlusSpaceRequest",
+      "name": "修改正式版 Memory 实例",
+      "output": "ModifyMemoryPlusSpaceResponse",
+      "status": "online"
+    },
     "PauseAgentWork": {
       "document": "本接口（PauseAgentWork）用于暂停智能体实例的值守任务，通常在用户需要暂停时使用。",
       "input": "PauseAgentWorkRequest",
@@ -110,6 +166,13 @@
       "input": "RecoverAgentInstanceRequest",
       "name": "解隔离Agent实例",
       "output": "RecoverAgentInstanceResponse",
+      "status": "online"
+    },
+    "RecoverMemoryPlusSpace": {
+      "document": "本接口（RecoverMemoryPlusSpace）用于从回收站恢复 Memory 实例。",
+      "input": "RecoverMemoryPlusSpaceRequest",
+      "name": "从回收站中恢复正式版 Memory 实例",
+      "output": "RecoverMemoryPlusSpaceResponse",
       "status": "online"
     },
     "RemoveChat": {
@@ -136,7 +199,7 @@
   },
   "metadata": {
     "apiVersion": "2025-07-17",
-    "api_brief": "腾讯云数据库 AI 服务相关API接口主要提供数据库智能体实例的管控操作。",
+    "api_brief": "腾讯云数据库 AI 服务相关 API 接口主要提供 DatabaseClaw 实例的管控操作。",
     "serviceNameCN": "腾讯云数据库 AI 服务",
     "serviceShortName": "tdai"
   },
@@ -360,7 +423,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "智能体实例ID",
+          "document": "<p>智能体实例ID</p>",
           "example": "agentins-efbt5y3h",
           "member": "string",
           "name": "InstanceId",
@@ -371,7 +434,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体实例名称",
+          "document": "<p>智能体实例名称</p>",
           "example": "风险SQL治理Agent实例",
           "member": "string",
           "name": "InstanceName",
@@ -382,7 +445,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体ID",
+          "document": "<p>智能体ID</p>",
           "example": "agt-xpcn2t3e",
           "member": "string",
           "name": "AgentId",
@@ -393,7 +456,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体名称",
+          "document": "<p>智能体名称</p>",
           "example": "风险SQL治理智能体",
           "member": "string",
           "name": "AgentName",
@@ -404,7 +467,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体类型",
+          "document": "<p>智能体类型</p>",
           "example": "aid",
           "member": "string",
           "name": "AgentInternalName",
@@ -415,7 +478,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体服务模式",
+          "document": "<p>智能体服务模式</p>",
           "example": "service",
           "member": "string",
           "name": "AgentType",
@@ -426,7 +489,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体版本",
+          "document": "<p>智能体版本</p>",
           "example": "v1.0.0.0",
           "member": "string",
           "name": "AgentVersion",
@@ -437,7 +500,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体实例状态",
+          "document": "<p>智能体实例状态</p>",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -448,7 +511,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体实例参数列表",
+          "document": "<p>智能体实例参数列表</p>",
           "example": "无",
           "member": "Parameter",
           "name": "Parameters",
@@ -459,7 +522,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2025-07-15 16:06:10",
           "member": "string",
           "name": "CreateTime",
@@ -470,7 +533,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间",
+          "document": "<p>修改时间</p>",
           "example": "2025-07-15 16:06:10",
           "member": "string",
           "name": "UpdateTime",
@@ -481,13 +544,101 @@
         },
         {
           "disabled": false,
-          "document": "资源绑定Tag列表",
+          "document": "<p>资源绑定Tag列表</p>",
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署位置,intranet-共享版，userVpc-专享版</p>",
+          "example": "intranet",
+          "member": "string",
+          "name": "DeployPlace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的告警策略ID。</p>",
+          "example": "[\"Policy-zxas32qq\"]",
+          "member": "string",
+          "name": "PolicyIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "ClawConfigInfo",
+          "name": "ClawConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "database_claw",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "[\"view\"]",
+          "member": "string",
+          "name": "AllowedActions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "2026-04-13 14:39:00",
+          "member": "string",
+          "name": "LastActiveTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "newnewDescription",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>发货进度详情</p>",
+          "example": "无",
+          "member": "CreatingProgress",
+          "name": "CreatingProgress",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -645,6 +796,84 @@
       ],
       "usage": "out"
     },
+    "ClawConfigInfo": {
+      "document": "databaseClaw实例配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "[\"postgresql\"]",
+          "member": "string",
+          "name": "DbTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "ClawDeployInfo",
+          "name": "Deploy",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ClawDeployInfo": {
+      "document": "databaseClaw实例部署详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "vpc-iar32aw9",
+          "member": "string",
+          "name": "UserVpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "subnet-pjbev7x8",
+          "member": "string",
+          "name": "UserSubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "UserVpcRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CodeRepo": {
       "document": "仓库信息",
       "members": [
@@ -789,6 +1018,51 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "database_claw",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "Skills",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SoulId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "\"desc\"",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -830,7 +1104,34 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否隐藏",
+          "document": "<p>输入内容</p>",
+          "example": "请介绍一下你自己",
+          "member": "string",
+          "name": "InputContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "agentins-ctee3glp",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对话窗口ID，空值表示新的会话</p>",
+          "example": "key-new-chat",
+          "member": "string",
+          "name": "ChatId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否隐藏</p>",
           "example": "false",
           "member": "bool",
           "name": "IsHidden",
@@ -839,7 +1140,7 @@
         },
         {
           "disabled": false,
-          "document": "是否隐藏会话",
+          "document": "<p>是否隐藏会话</p>",
           "example": "false",
           "member": "bool",
           "name": "IsChatHidden",
@@ -976,6 +1277,170 @@
         }
       ],
       "type": "object"
+    },
+    "CreateMemoryPlusSpaceRequest": {
+      "document": "CreateMemoryPlusSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的自定义名称，用于唯一标识和管理实例。支持 60 个字符内的中英文、数字、中划线（-）及下划线（_）。</p>",
+          "example": "name2",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>emory 实例的简要描述，包括使用场景、用途或背景信息，便于日常运维识别。长度限制为 0-200 个字符。</p>",
+          "example": "description2",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>以键值对（Key-Value）形式为 Memory 实例绑定的标签，用于项目管理、成本分摊、环境隔离等场景。</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次批量创建 Memory 实例的数量。取值范围为 1-50。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMemoryPlusSpaceResponse": {
+      "document": "CreateMemoryPlusSpace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID 列表。</p>",
+          "example": "[\"mem-hn46****\"]",
+          "member": "string",
+          "name": "SpaceIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatingProgress": {
+      "document": "发货步骤描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总步骤数</p>",
+          "example": "6",
+          "member": "int64",
+          "name": "TotalSteps",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前步骤</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "CurrentStep",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>步骤详情</p>",
+          "example": "无",
+          "member": "CreatingStepInfo",
+          "name": "Steps",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreatingStepInfo": {
+      "document": "发货步骤详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>步骤名称</p>",
+          "example": "CreateTKECluster",
+          "member": "string",
+          "name": "StepName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>步骤描述</p>",
+          "example": "创建TKE集群",
+          "member": "string",
+          "name": "StepDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>步骤状态</p>",
+          "example": "done",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>完成时间</p>",
+          "example": "2026-05-06 20:13:06",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息描述</p>",
+          "example": "QueryAddInstances: CVM instance ins-1flbim5k failed",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DescribeAgentDutyTaskDetailRequest": {
       "document": "DescribeAgentDutyTaskDetail请求参数结构体",
@@ -1184,7 +1649,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID，为空时查询所有，如果填写则会根据InstanceId筛选",
+          "document": "<p>实例ID，为空时查询所有，如果填写则会根据InstanceId筛选</p>",
           "example": "agentins-efbt5y3h",
           "member": "string",
           "name": "InstanceId",
@@ -1193,7 +1658,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名，为空时查询所有，如果填写则会根据InstanceName筛选",
+          "document": "<p>实例名，为空时查询所有，如果填写则会根据InstanceName筛选</p>",
           "example": "风险SQL治理Agent实例",
           "member": "string",
           "name": "InstanceName",
@@ -1202,7 +1667,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体ID，为空时查询所有，如果填写则会根据AgentId筛选",
+          "document": "<p>智能体ID，为空时查询所有，如果填写则会根据AgentId筛选</p>",
           "example": "agt-xpcn2t3e",
           "member": "string",
           "name": "AgentId",
@@ -1211,7 +1676,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体名称，为空时查询所有，如果填写则会根据AgentName筛选",
+          "document": "<p>智能体名称，为空时查询所有，如果填写则会根据AgentName筛选</p>",
           "example": "风险SQL治理Agent智能体",
           "member": "string",
           "name": "AgentName",
@@ -1220,7 +1685,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体类型，为空时查询所有，如果填写则会根据AgentName筛选",
+          "document": "<p>智能体类型，为空时查询所有，如果填写则会根据AgentName筛选</p>",
           "example": "aid",
           "member": "string",
           "name": "AgentInternalName",
@@ -1229,7 +1694,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体实例状态，为空时查询所有，如果填写则会根据Status筛选",
+          "document": "<p>智能体实例状态，为空时查询所有，如果填写则会根据Status筛选</p>",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -1238,12 +1703,21 @@
         },
         {
           "disabled": false,
-          "document": "标签过滤信息",
+          "document": "<p>标签过滤信息</p>",
           "example": "无",
           "member": "TagFilter",
           "name": "TagFilter",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例类型</p>",
+          "example": "database_claw",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1263,10 +1737,20 @@
         },
         {
           "disabled": false,
-          "document": "智能体实例列表",
+          "document": "<p>智能体实例列表</p>",
           "example": "无",
           "member": "AgentInstance",
           "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "StatusItem",
+          "name": "StatusCounts",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -1589,6 +2073,443 @@
       ],
       "type": "object"
     },
+    "DescribeMemoryPlusRecordRequest": {
+      "document": "DescribeMemoryPlusRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询的 Memory 实例 ID。</p>",
+          "example": "mem-1lpq****",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询列表的起始位置（偏移量）。用于分页查询，指明从符合条件的第几条数据开始返回。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次查询返回的记录数量上限（分页大小）。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询的记忆类型。</p><ul><li>conversation：L0 原始对话。</li><li>memory：L1 原子记忆。</li><li>scene：L2 场景记忆。</li><li>persona：L3 个性化画像。</li><li>memory/persona：L1 原子记忆-画像型。</li><li>memory/episodic：L1 原子记忆-事件型。</li><li>memory/instruction：L1 原子记忆-指令型。</li></ul>",
+          "example": "conversation",
+          "member": "string",
+          "name": "RecordType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定返回记录中的特定字段。</p>",
+          "example": "[\"recorded_at_ms\"]",
+          "member": "string",
+          "name": "Output",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件，当前仅支持 <strong>RecordType</strong> 为 <strong>conversation</strong> 的 <strong>session_id</strong> 过滤。</p>",
+          "example": "无",
+          "member": "VDBFieldMap",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询结果列表的排序规则。</p><ul><li>ASC：升序。</li><li>DESC：降序。</li></ul>",
+          "example": "ASC",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询时间范围的起始时间点。</p>",
+          "example": "2026-05-15 17:55:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询时间范围的结束时间点。</p>",
+          "example": "2026-05-15 18:55:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMemoryPlusRecordResponse": {
+      "document": "DescribeMemoryPlusRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询结果总数量。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询的记忆数据。</p>",
+          "example": "无",
+          "member": "VDBDocument",
+          "name": "Documents",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMemoryPlusSpaceRequest": {
+      "document": "DescribeMemoryPlusSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定查询的 Memory 实例 ID。</p>",
+          "example": "mem-asy2****",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMemoryPlusSpaceResponse": {
+      "document": "DescribeMemoryPlusSpace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例 ID。</p>",
+          "example": "mem-asy2****",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的自定义名称。</p>",
+          "example": "批量测试-38",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的简要描述，包括使用场景、用途或背景信息，便于日常运维识别。</p>",
+          "example": "描述1",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>腾讯云账号的 APPID。</p>",
+          "example": "1300257648",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memroy 实例所属地域。</p>",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的标签信息。</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例当前运行状态。</p><ul><li>1：运行中。</li><li>2：创建中。</li><li>3：销毁中。</li><li>4：已销毁。</li><li>5：隔离中。</li><li>6：已隔离。</li><li>7：恢复中。</li></ul>",
+          "example": "6",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例计费模式。</p><ul><li>-1：免费体验。</li><li>0：包年包月。</li><li>1：按量计费。</li></ul>",
+          "example": "-1",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 版本信息：v1。</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 当前已写入的记忆条数。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "MemoryUsage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例记忆条数配额上限。</p>",
+          "example": "50000",
+          "member": "int64",
+          "name": "MemoryLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例当前 Credit 的使用数量。</p>",
+          "example": "0",
+          "member": "float",
+          "name": "CreditUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例 Credit 的最大使用数量。</p>",
+          "example": "1000",
+          "member": "float",
+          "name": "CreditLimit",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的内网访问地址。</p>",
+          "example": "https://tdai.apigateway.cd.test.polaris",
+          "member": "string",
+          "name": "AccessUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的外网访问地址。</p>",
+          "example": "https://tdai.apigateway.cd.test.polaris",
+          "member": "string",
+          "name": "WanAccessUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的创建时间。</p>",
+          "example": "2026-05-20T11:53:20+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的到期时间。</p>",
+          "example": "2026-08-15T23:59:59+08:00",
+          "member": "datetime_iso",
+          "name": "ExpiredAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的隔离时间。</p>",
+          "example": "2026-05-21T16:05:24+08:00",
+          "member": "datetime_iso",
+          "name": "IsolatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>到期销毁时间</p>",
+          "example": "2026-05-28T16:05:24+08:00",
+          "member": "datetime_iso",
+          "name": "DestroyAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMemoryPlusSpacesRequest": {
+      "document": "DescribeMemoryPlusSpaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询列表的起始位置（偏移量）。用于分页查询，指明从符合条件的第几条数据开始返回。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次查询返回的记录数量上限（分页大小）。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询实例名称或者实例id</p>",
+          "example": "[\"搜素名称\"]",
+          "member": "string",
+          "name": "SearchKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态</p><p>枚举值：</p><ul><li>1： 运行中</li><li>2： 创建中</li><li>3： 删除中</li><li>4： 已删除</li><li>5： 隔离中</li><li>6： 已隔离（进入回收站）</li><li>7： 恢复中（从回收站恢复）</li></ul>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源标签</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段</p>",
+          "example": "CreatedAt",
+          "member": "string",
+          "name": "Orderby",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方向</p><p>枚举值：</p><ul><li>ASC： 升序</li><li>DESC： 降序</li></ul>",
+          "example": "ASC",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMemoryPlusSpacesResponse": {
+      "document": "DescribeMemoryPlusSpaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询结果总数量。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例列表信息</p>",
+          "example": "无",
+          "member": "MemoryPlusInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeReportUrlRequest": {
       "document": "DescribeReportUrl请求参数结构体",
       "members": [],
@@ -1607,6 +2528,70 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceAccessKeyRequest": {
+      "document": "DescribeServiceAccessKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定 Memroy 实例 ID。</p>",
+          "example": "tdai-dps-312dfs",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceAccessKeyResponse": {
+      "document": "DescribeServiceAccessKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>访问密钥。</p>",
+          "example": "vdsafdsafsda",
+          "member": "string",
+          "name": "AuthKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyMemoryPlusSpaceRequest": {
+      "document": "DestroyMemoryPlusSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定需要销毁的 Memory 实例 ID 列表。</p>",
+          "example": "[\"mem-hn46****\"]",
+          "member": "string",
+          "name": "SpaceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyMemoryPlusSpaceResponse": {
+      "document": "DestroyMemoryPlusSpace返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1739,6 +2724,171 @@
       ],
       "type": "object"
     },
+    "IsolateMemoryPlusSpaceRequest": {
+      "document": "IsolateMemoryPlusSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定需要放入回收站的 Memory 实例 ID 列表。</p>",
+          "example": "[\"mem-hn46****\"]",
+          "member": "string",
+          "name": "SpaceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateMemoryPlusSpaceResponse": {
+      "document": "IsolateMemoryPlusSpace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MemoryPlusInfo": {
+      "document": "Memory正式版实例列表元素信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "mem-ins-mft8g8st",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "fdsfadsafdsf",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "description",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>记忆条数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "MemoryUsage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当月积分数</p>",
+          "example": "44.062",
+          "member": "float",
+          "name": "CreditUsage",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源标签</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-05-14T16:43:58+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>隔离时间</p>",
+          "example": "2026-05-18T11:51:19+08:00",
+          "member": "datetime_iso",
+          "name": "IsolatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>到期时间</p>",
+          "example": "2026-08-15T23:59:59+08:00",
+          "member": "datetime_iso",
+          "name": "ExpiredAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>到期销毁时间</p>",
+          "example": "2026-05-28T16:05:24+08:00",
+          "member": "datetime_iso",
+          "name": "DestroyAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ModifyAgentInstanceParametersRequest": {
       "document": "ModifyAgentInstanceParameters请求参数结构体",
       "members": [
@@ -1828,6 +2978,51 @@
     },
     "ModifyChatTitleResponse": {
       "document": "ModifyChatTitle返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMemoryPlusSpaceRequest": {
+      "document": "ModifyMemoryPlusSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定需要修改的 Memory 实例 ID。</p>",
+          "example": "mem-bsjw****",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定修改后的实例名称。支持 60 个字符内 的中英文、数字、中划线（-）及下划线（_）。</p>",
+          "example": "测试111",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定修改后的实例描述。最多支持 200 个字符。</p>",
+          "example": "描述1111",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMemoryPlusSpaceResponse": {
+      "document": "ModifyMemoryPlusSpace返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1940,6 +3135,33 @@
       ],
       "type": "object"
     },
+    "RecoverMemoryPlusSpaceRequest": {
+      "document": "RecoverMemoryPlusSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定需要恢复的 Memory 实例 ID 列表。</p>",
+          "example": "[\"mem-8z4o****\"]",
+          "member": "string",
+          "name": "SpaceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RecoverMemoryPlusSpaceResponse": {
+      "document": "RecoverMemoryPlusSpace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RemoveChatRequest": {
       "document": "RemoveChat请求参数结构体",
       "members": [
@@ -1975,6 +3197,34 @@
         }
       ],
       "type": "object"
+    },
+    "ResourceTag": {
+      "document": "资源tag",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "tagkey",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "tagvalue",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SqlAgentParameter": {
       "document": "风险SQL智能体参数",
@@ -2049,6 +3299,34 @@
         }
       ],
       "type": "object"
+    },
+    "StatusItem": {
+      "document": "实例状态描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "creating",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TagFilter": {
       "document": "通过标签对资源进行过滤",
@@ -2220,6 +3498,84 @@
         }
       ],
       "usage": "out"
+    },
+    "VDBDocument": {
+      "document": "vdb数据库文档结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>vdb document数据id</p>",
+          "example": "profile:v1:1c7336830c19807078c557cb9484c95f448d338906a395ef71e7ee86e9d55867",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>vdb document数据标量字段</p>",
+          "example": "无",
+          "member": "VDBFieldMap",
+          "name": "Fields",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VDBFieldMap": {
+      "document": "vdb数据库文档中键值结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>vdb document字段名</p>",
+          "example": "created_at_ms",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>vdb document字段值</p>",
+          "example": "1776064058717",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>vdb document字段类型</p>",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段描述</p>",
+          "example": "文件名",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

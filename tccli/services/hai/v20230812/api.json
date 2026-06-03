@@ -169,7 +169,7 @@
       "status": "online"
     },
     "UpdateServiceConfigs": {
-      "document": "本接口(UpdateServiceConfigs)用于更新服务配置",
+      "document": "本接口(UpdateServiceConfigs)用于更新服务配置。",
       "input": "UpdateServiceConfigsRequest",
       "name": "更新服务配置",
       "output": "UpdateServiceConfigsResponse",
@@ -423,7 +423,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源类型及数量",
+          "document": "<p>资源类型及数量</p>",
           "example": "无",
           "member": "ComputeResource",
           "name": "ComputeResources",
@@ -432,7 +432,7 @@
         },
         {
           "disabled": false,
-          "document": "副本数",
+          "document": "<p>副本数</p>",
           "example": "3",
           "member": "int64",
           "name": "Replicas",
@@ -471,7 +471,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像相关信息",
+          "document": "<p>镜像相关信息</p>",
           "example": "无",
           "member": "ImageInfo",
           "name": "Image",
@@ -482,7 +482,7 @@
         },
         {
           "disabled": false,
-          "document": "服务监听端口",
+          "document": "<p>服务监听端口</p>",
           "example": "30000",
           "member": "string",
           "name": "Port",
@@ -493,7 +493,7 @@
         },
         {
           "disabled": false,
-          "document": "启动命令",
+          "document": "<p>启动命令</p>",
           "example": "[\"echo \\\"Hello, World!\\\"\"]",
           "member": "string",
           "name": "Scripts",
@@ -504,7 +504,7 @@
         },
         {
           "disabled": false,
-          "document": "环境变量列表",
+          "document": "<p>环境变量列表</p>",
           "example": "无",
           "member": "EnvParam",
           "name": "Envs",
@@ -515,13 +515,24 @@
         },
         {
           "disabled": false,
-          "document": "存储挂载配置",
+          "document": "<p>存储挂载配置</p>",
           "example": "无",
           "member": "StorageInfo",
           "name": "Storages",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>探针信息</p>",
+          "example": "无",
+          "member": "ProbeInfo",
+          "name": "Probe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -587,7 +598,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模版ID",
+          "document": "<p>模版ID</p>",
           "example": "tpl-gxbn79mi",
           "member": "string",
           "name": "TemplateId",
@@ -596,7 +607,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名称",
+          "document": "<p>服务名称</p>",
           "example": "Qwen3-235B-A22B",
           "member": "string",
           "name": "ServiceName",
@@ -605,7 +616,7 @@
         },
         {
           "disabled": false,
-          "document": "副本数",
+          "document": "<p>副本数</p>",
           "example": "1",
           "member": "int64",
           "name": "Replicas",
@@ -614,7 +625,7 @@
         },
         {
           "disabled": false,
-          "document": "付费方式，POSTPAID_BY_HOUR按量后付费",
+          "document": "<p>付费方式，POSTPAID_BY_HOUR按量后付费</p>",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ServiceChargeType",
@@ -623,7 +634,7 @@
         },
         {
           "disabled": false,
-          "document": "描述了服务的超参数配置",
+          "document": "<p>描述了服务的超参数配置</p>",
           "example": "无",
           "member": "HyperParam",
           "name": "HyperParam",
@@ -632,12 +643,21 @@
         },
         {
           "disabled": false,
-          "document": "网络设置",
+          "document": "<p>网络设置</p>",
           "example": "无",
           "member": "NetworkSetting",
           "name": "NetworkSetting",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理服务安全类型</p><p>枚举值：</p><ul><li>STANDARD： 标准推理服务</li><li>CONFIDENTIAL： 可信推理服务</li></ul>",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "SecurityType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -647,7 +667,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务ID",
+          "document": "<p>服务ID</p>",
           "example": "svc-rwyu5sv2",
           "member": "string",
           "name": "ServiceId",
@@ -824,7 +844,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "容器配置",
+          "document": "<p>容器配置</p>",
           "example": "无",
           "member": "ContainerInfo",
           "name": "Container",
@@ -835,7 +855,7 @@
         },
         {
           "disabled": false,
-          "document": "容器数量",
+          "document": "<p>容器数量</p>",
           "example": "2",
           "member": "int64",
           "name": "ContainerCount",
@@ -1434,8 +1454,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务列表",
-          "example": "[\"svc-dde3hd4i\"]",
+          "document": "<p>服务列表</p>",
+          "example": "[\"svc-bx0xe65y\"]",
           "member": "string",
           "name": "ServiceIds",
           "required": false,
@@ -1443,8 +1463,8 @@
         },
         {
           "disabled": false,
-          "document": "分页大小",
-          "example": "1",
+          "document": "<p>分页大小</p>",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1452,8 +1472,8 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
-          "example": "0",
+          "document": "<p>偏移量</p>",
+          "example": "20",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1467,8 +1487,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
-          "example": "1",
+          "document": "<p>总数</p>",
+          "example": "38",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -1477,7 +1497,7 @@
         },
         {
           "disabled": false,
-          "document": "服务列表",
+          "document": "<p>服务列表</p>",
           "example": "无",
           "member": "ServiceDetail",
           "name": "ServiceInfoSet",
@@ -1563,6 +1583,34 @@
       ],
       "usage": "both"
     },
+    "HttpConfig": {
+      "document": "http配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定健康检查的URL路径</p>",
+          "example": "/health",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定健康检查的端口</p>",
+          "example": "30000",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "HyperParam": {
       "document": "描述了服务的超参数配置",
       "members": [
@@ -1585,10 +1633,32 @@
       "members": [
         {
           "disabled": false,
-          "document": "tcr仓库地址",
+          "document": "<p>tcr仓库地址</p>",
           "example": "hai-beijing.tencentcloudcr.com/ai/vllm:v0.11.2",
           "member": "string",
           "name": "ImageRegistryUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库用户名</p>",
+          "example": "10*03*751422",
+          "member": "string",
+          "name": "ImageRegistryUsername",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库密码</p>",
+          "example": "eyJhbGciOiJSUzI1NiIsI",
+          "member": "string",
+          "name": "ImageRegistryPassword",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -2161,7 +2231,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型名称",
+          "document": "<p>模型名称</p>",
           "example": "DeepSeek-V3.2-Channel-INT8",
           "member": "string",
           "name": "ModelName",
@@ -2171,7 +2241,7 @@
         },
         {
           "disabled": false,
-          "document": "模型ID",
+          "document": "<p>模型ID</p>",
           "example": "mdl-s1cop2oq",
           "member": "string",
           "name": "ModelId",
@@ -2181,7 +2251,7 @@
         },
         {
           "disabled": false,
-          "document": "应用描述\t",
+          "document": "<p>应用描述</p>",
           "example": "DeepSeek-V3.2-Channel-INT8量化版本",
           "member": "string",
           "name": "Description",
@@ -2191,7 +2261,7 @@
         },
         {
           "disabled": false,
-          "document": "官方社区链接\t",
+          "document": "<p>官方社区链接</p>",
           "example": "https://tairos.tencent.com/docs",
           "member": "string",
           "name": "CommunityUrl",
@@ -2201,7 +2271,7 @@
         },
         {
           "disabled": false,
-          "document": "最佳实践链接",
+          "document": "<p>最佳实践链接</p>",
           "example": "https://tairos.tencent.com/docs",
           "member": "string",
           "name": "GuideUrl",
@@ -2211,7 +2281,7 @@
         },
         {
           "disabled": false,
-          "document": "模型状态",
+          "document": "<p>模型状态</p>",
           "example": "ONLINE",
           "member": "string",
           "name": "ModelState",
@@ -2221,7 +2291,7 @@
         },
         {
           "disabled": false,
-          "document": "应用对应的标签，如机器学习",
+          "document": "<p>应用对应的标签，如机器学习</p>",
           "example": "[\"大语言模型\"]",
           "member": "string",
           "name": "Tags",
@@ -2231,7 +2301,7 @@
         },
         {
           "disabled": false,
-          "document": "配置环境",
+          "document": "<p>配置环境</p>",
           "example": "CentOS 5.4 64位; nvidia 535.216.01| cuda12.2 | LLM",
           "member": "string",
           "name": "ConfigEnvironment",
@@ -2488,6 +2558,117 @@
         }
       ],
       "usage": "out"
+    },
+    "ProbeConfig": {
+      "document": "探针配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>HTTP GET请求进行健康检查</p>",
+          "example": "无",
+          "member": "HttpConfig",
+          "name": "HttpGet",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器启动后，等待多少秒开始第一次探测</p>",
+          "example": "60",
+          "member": "int64",
+          "name": "InitialDelaySeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每次执行探测的间隔时间（秒）</p>",
+          "example": "35",
+          "member": "int64",
+          "name": "PeriodSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每次探测等待响应的超时时间（秒）</p>",
+          "example": "35",
+          "member": "int64",
+          "name": "TimeoutSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>探测失败后，最小连续成功次数才被认为成功</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SuccessThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>探测失败后，Kubernetes的重试次数</p>",
+          "example": "400",
+          "member": "int64",
+          "name": "FailureThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProbeInfo": {
+      "document": "探针信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存活探针</p>",
+          "example": "无",
+          "member": "ProbeConfig",
+          "name": "LivenessProbe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>就绪探针</p>",
+          "example": "无",
+          "member": "ProbeConfig",
+          "name": "ReadinessProbe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>启动探针</p>",
+          "example": "无",
+          "member": "ProbeConfig",
+          "name": "StartupProbe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RegionInfo": {
       "document": "地域列表",
@@ -2847,6 +3028,36 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "SecurityType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "ComputeDetail",
+          "name": "RoleComputeSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "uint64",
+          "name": "TargetReplicas",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3115,6 +3326,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "ComputeDetail",
+          "name": "RoleComputeSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3160,7 +3381,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务ID",
+          "document": "<p>服务ID</p>",
           "example": "svc-3m6xrkjj",
           "member": "string",
           "name": "ServiceId",
@@ -3169,12 +3390,21 @@
         },
         {
           "disabled": false,
-          "document": "期望副本数",
+          "document": "<p>期望副本数</p>",
           "example": "2",
           "member": "int64",
           "name": "TargetReplicas",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>启动参数、环境变量等参数</p>",
+          "example": "无",
+          "member": "DeploymentConfig",
+          "name": "DeploymentConfigs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

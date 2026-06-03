@@ -6,17 +6,18 @@ Input:
 
 ```
 tccli tdmq CreateRabbitMQUser --cli-unfold-argument  \
-    --InstanceId amqp-2ppxx4rq \
-    --User test_user \
-    --Password abc123._
+    --InstanceId amqp-7jwe5pr5 \
+    --User grace \
+    --Password abcABC123 \
+    --EnableCamAuth True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0",
-        "User": "test_user"
+        "User": "grace",
+        "RequestId": "83a4c4d3-43d9-456a-bf80-c8a5aa27c26a"
     }
 }
 ```

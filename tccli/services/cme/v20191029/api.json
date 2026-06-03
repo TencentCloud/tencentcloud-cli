@@ -49,6 +49,13 @@
       "output": "CreateVideoEncodingPresetResponse",
       "status": "online"
     },
+    "DeleteAccount": {
+      "document": "删除平台归属的账户。",
+      "input": "DeleteAccountRequest",
+      "name": "删除账号",
+      "output": "DeleteAccountResponse",
+      "status": "online"
+    },
     "DeleteClass": {
       "document": "删除分类信息，删除时检验下述限制：\n<li>分类路径必须存在；</li>\n<li>分类下没有绑定素材。</li>",
       "input": "DeleteClassRequest",
@@ -231,6 +238,13 @@
       "output": "FlattenListMediaResponse",
       "status": "online"
     },
+    "ForbidAccount": {
+      "document": "禁用账号。",
+      "input": "ForbidAccountRequest",
+      "name": "禁用账户",
+      "output": "ForbidAccountResponse",
+      "status": "online"
+    },
     "GenerateVideoSegmentationSchemeByAi": {
       "document": "<li>发起视频智能拆条任务，支持智能生成和平精英集锦、王者荣耀集锦、足球集锦、篮球集锦 、人物集锦、新闻拆条等任务。</li>\n<li>和平精英集锦和王者荣耀集锦根据击杀场景进行拆条，足球集锦和篮球集锦根据进球场景进行拆条，人物集锦根据人物人脸特征进行拆条，新闻拆条根据导播进行拆条。</li>\n<li>【本接口内测中，暂不建议使用】</li>",
       "input": "GenerateVideoSegmentationSchemeByAiRequest",
@@ -253,7 +267,7 @@
       "status": "online"
     },
     "HandleStreamConnectProject": {
-      "document": "<font color=red>本接口废弃，可创建媒体转推项目替代，操作媒体转推项目可使用 <b>[HandleMediaCastProject 接口](/document/product/1156/87841) </b>实现。</font>\n\n### 操作类型<a id=\"Operation\"></a>\n- `AddInput`（添加输入源），包括：\n\t- 添加直播拉流输入源，参见 [示例1](#.E7.A4.BA.E4.BE.8B1-.E6.B7.BB.E5.8A.A0.E7.9B.B4.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90)；\n\t- 添加直播推流输入源，参见 [示例2](#.E7.A4.BA.E4.BE.8B2-.E6.B7.BB.E5.8A.A0.E7.9B.B4.E6.92.AD.E6.8E.A8.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90)；\n\t- 添加点播拉流输入源，参见 [示例3](#.E7.A4.BA.E4.BE.8B3-.E6.B7.BB.E5.8A.A0.E7.82.B9.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90.E4.B8.94.E5.BE.AA.E7.8E.AF.E6.92.AD.E6.94.BE)、[示例4](#.E7.A4.BA.E4.BE.8B4-.E6.B7.BB.E5.8A.A0.E7.82.B9.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90.E4.B8.94.E5.8D.95.E6.AC.A1.E6.92.AD.E6.94.BE)；\n- `DeleteInput`（删除输入源），参见 [示例5](#.E7.A4.BA.E4.BE.8B5-.E5.88.A0.E9.99.A4.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `ModifyInput`（修改输入源），参见 [示例6](#.E7.A4.BA.E4.BE.8B6-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `AddOutput`（ 添加输出源），参见 [示例7](#.E7.A4.BA.E4.BE.8B7-.E6.B7.BB.E5.8A.A0.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `DeleteOutput`（删除输出源），参见 [示例8](#.E7.A4.BA.E4.BE.8B8-.E5.88.A0.E9.99.A4.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `ModifyOutput`（修改输出源），参见 [示例9](#.E7.A4.BA.E4.BE.8B9-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `Start`（开启转推），参见 [示例10](#.E7.A4.BA.E4.BE.8B10-.E5.BC.80.E5.90.AF.E4.BA.91.E8.BD.AC.E6.8E.A8)；\n- `Stop`（停止转推），参见 [示例11](#.E7.A4.BA.E4.BE.8B11-.E5.81.9C.E6.AD.A2.E4.BA.91.E8.BD.AC.E6.8E.A8)；\n- `SwitchInput`（切换输入源），参见 [示例12](#.E7.A4.BA.E4.BE.8B12-.E5.88.87.E6.8D.A2.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `ModifyCurrentStopTime`（修改当前计划结束时间），参见 [示例13](#.E7.A4.BA.E4.BE.8B13-.E4.BF.AE.E6.94.B9.E8.BD.AC.E6.8E.A8.E7.BB.93.E6.9D.9F.E6.97.B6.E9.97.B4);\n- `DescribeInputPlayInfo`（查询播放进度），参见 [示例14](#.E7.A4.BA.E4.BE.8B14-.E6.9F.A5.E8.AF.A2.E7.82.B9.E6.92.AD.E8.BE.93.E5.85.A5.E6.BA.90.E6.92.AD.E6.94.BE.E8.BF.9B.E5.BA.A6)。",
+      "document": "<font color=red>本接口废弃，可创建媒体转推项目替代，操作媒体转推项目可使用 <b>[HandleMediaCastProject 接口](/document/product/1156/87841) </b>实现。</font>\n\n### 操作类型<a id=\"Operation\"></a>\n- `AddInput`（添加输入源），包括：\n\t- 添加直播拉流输入源，参见 [示例1](#.E7.A4.BA.E4.BE.8B1-.E4.BF.AE.E6.94.B9.E8.BD.AC.E6.8E.A8.E7.BB.93.E6.9D.9F.E6.97.B6.E9.97.B4)；\n\t- 添加直播推流输入源，参见 [示例2](#.E7.A4.BA.E4.BE.8B2-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.85.A5.E6.BA.90)；\n\t- 添加点播拉流输入源，参见 [示例3](#.E7.A4.BA.E4.BE.8B3-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.87.BA.E6.BA.90)、[示例4](#.E7.A4.BA.E4.BE.8B4-.E5.81.9C.E6.AD.A2.E4.BA.91.E8.BD.AC.E6.8E.A8)；\n- `DeleteInput`（删除输入源），参见 [示例5](#.E7.A4.BA.E4.BE.8B5-.E5.88.87.E6.8D.A2.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `ModifyInput`（修改输入源），参见 [示例6](#.E7.A4.BA.E4.BE.8B6-.E5.88.A0.E9.99.A4.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `AddOutput`（ 添加输出源），参见 [示例7](#.E7.A4.BA.E4.BE.8B7-.E5.88.A0.E9.99.A4.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `DeleteOutput`（删除输出源），参见 [示例8](#.E7.A4.BA.E4.BE.8B8-.E5.BC.80.E5.90.AF.E4.BA.91.E8.BD.AC.E6.8E.A8)；\n- `ModifyOutput`（修改输出源），参见 [示例9](#.E7.A4.BA.E4.BE.8B9-.E6.9F.A5.E8.AF.A2.E7.82.B9.E6.92.AD.E8.BE.93.E5.85.A5.E6.BA.90.E6.92.AD.E6.94.BE.E8.BF.9B.E5.BA.A6)；\n- `Start`（开启转推），参见 [示例10](#.E7.A4.BA.E4.BE.8B10-.E6.B7.BB.E5.8A.A0.E7.82.B9.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90.E4.B8.94.E5.8D.95.E6.AC.A1.E6.92.AD.E6.94.BE)；\n- `Stop`（停止转推），参见 [示例11](#.E7.A4.BA.E4.BE.8B11-.E6.B7.BB.E5.8A.A0.E7.82.B9.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90.E4.B8.94.E5.BE.AA.E7.8E.AF.E6.92.AD.E6.94.BE)；\n- `SwitchInput`（切换输入源），参见 [示例12](#.E7.A4.BA.E4.BE.8B12-.E6.B7.BB.E5.8A.A0.E7.9B.B4.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `ModifyCurrentStopTime`（修改当前计划结束时间），参见 [示例13](#.E7.A4.BA.E4.BE.8B13-.E6.B7.BB.E5.8A.A0.E7.9B.B4.E6.92.AD.E6.8E.A8.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90);\n- `DescribeInputPlayInfo`（查询播放进度），参见 [示例14](#.E7.A4.BA.E4.BE.8B14-.E6.B7.BB.E5.8A.A0.E8.BE.93.E5.87.BA.E6.BA.90)。",
       "input": "HandleStreamConnectProjectRequest",
       "name": "操作云转推项目 (废弃)",
       "output": "HandleStreamConnectProjectResponse",
@@ -363,41 +377,51 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户 Id。",
+          "document": "<p>用户 Id。</p>",
           "example": "1000000001",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户手机号码。",
+          "document": "<p>用户手机号码。</p>",
           "example": "15515555055",
           "member": "string",
           "name": "Phone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户昵称。",
+          "document": "<p>用户昵称。</p>",
           "example": "Nick",
           "member": "string",
           "name": "Nick",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "账号状态，取值：\n<li>Normal：有效；</li>\n<li>Stopped：无效。</li>",
+          "document": "<p>账号状态，取值：</p><li>Normal：有效；</li><li>Stopped：无效。</li>",
           "example": "Normal",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账户的创建时间。</p><p>参数格式：使用 ISO 日期格式。</p>",
+          "example": "2018-10-01T18:00:00+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1465,6 +1489,51 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccountRequest": {
+      "document": "DeleteAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>平台 Id，指定访问的平台。关于平台概念，请参见文档 <a href=\"https://cloud.tencent.com/document/product/1156/43767\">平台</a>。</p>",
+          "example": "15****6788",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户标识 。</p>",
+          "example": "7b3a5***********************ce76a905",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作者。如不填，默认为 <code>cmeid_system</code>，表示平台管理员操作，可以操作任意账户。如果指定操作者，则操作者必须为账户所有者。</p>",
+          "example": "7b*****e-3***-**9************e76a905",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccountResponse": {
+      "document": "DeleteAccount返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3659,6 +3728,51 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ForbidAccountRequest": {
+      "document": "ForbidAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>平台 Id，指定访问的平台。关于平台概念，请参见文档 <a href=\"https://cloud.tencent.com/document/product/1156/43767\">平台</a>。</p>",
+          "example": "1500006788",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户标识 。</p>",
+          "example": "dd00afa4-2c13-414e-b0a2-ca6627aa20cf",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作者。如不填，默认为 <code>cmeid_system</code>，表示平台管理员操作，可以操作任意账户。如果指定操作者，则操作者必须为账户所有者。</p>",
+          "example": "aad96************************aff94a3",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ForbidAccountResponse": {
+      "document": "ForbidAccount返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

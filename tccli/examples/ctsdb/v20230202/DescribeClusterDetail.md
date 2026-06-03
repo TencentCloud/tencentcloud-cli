@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli ctsdb DescribeClusterDetail --cli-unfold-argument ```
+tccli ctsdb DescribeClusterDetail --cli-unfold-argument  \
+    --ClusterID ctsdbi-p39mhwnt
+```
 
 Output: 
 ```

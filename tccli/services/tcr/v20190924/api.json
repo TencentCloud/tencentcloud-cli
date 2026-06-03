@@ -1455,7 +1455,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "企业版实例名称",
+          "document": "<p>企业版实例名称</p>",
           "example": "tcr-test",
           "member": "string",
           "name": "RegistryName",
@@ -1464,7 +1464,7 @@
         },
         {
           "disabled": false,
-          "document": "企业版实例类型（basic 基础版；standard 标准版；premium 高级版）",
+          "document": "<p>企业版实例类型（basic 基础版；standard 标准版；premium 高级版）</p>",
           "example": "basic",
           "member": "string",
           "name": "RegistryType",
@@ -1473,8 +1473,8 @@
         },
         {
           "disabled": false,
-          "document": "云标签描述",
-          "example": "test",
+          "document": "<p>云标签描述</p>",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -1482,7 +1482,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费类型，0表示按量计费，1表示预付费，默认为按量计费",
+          "document": "<p>实例计费类型，0表示按量计费，1表示预付费，默认为按量计费</p>",
           "example": "1",
           "member": "int64",
           "name": "RegistryChargeType",
@@ -1491,8 +1491,8 @@
         },
         {
           "disabled": false,
-          "document": "预付费自动续费标识和购买时长",
-          "example": "1 ",
+          "document": "<p>预付费自动续费标识和购买时长</p>",
+          "example": "无",
           "member": "RegistryChargePrepaid",
           "name": "RegistryChargePrepaid",
           "required": false,
@@ -1500,7 +1500,7 @@
         },
         {
           "disabled": false,
-          "document": "是否同步TCR云标签至生成的COS Bucket",
+          "document": "<p>是否同步TCR云标签至生成的COS Bucket</p>",
           "example": "false",
           "member": "bool",
           "name": "SyncTag",
@@ -1509,7 +1509,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启Cos桶多AZ特性",
+          "document": "<p>是否开启Cos桶多AZ特性</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableCosMAZ",
@@ -1518,10 +1518,19 @@
         },
         {
           "disabled": false,
-          "document": "是否开启实例删除保护",
+          "document": "<p>是否开启实例删除保护</p>",
           "example": "true",
           "member": "bool",
           "name": "DeletionProtection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启cos桶多版本控制</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableCosVersioning",
           "required": false,
           "type": "bool"
         }
@@ -1533,10 +1542,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "企业版实例Id",
+          "document": "<p>企业版实例Id</p>",
           "example": "tcr-123456",
           "member": "string",
           "name": "RegistryId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8389,6 +8399,26 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>cos桶是否开启多AZ特性</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableCosMAZ",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>cos桶是否开启版本控制</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableCosVersioning",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

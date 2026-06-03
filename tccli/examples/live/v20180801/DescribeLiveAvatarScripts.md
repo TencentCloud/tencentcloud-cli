@@ -1,4 +1,4 @@
-**Example 1: 请求示例**
+**Example 1: 请求一个正在处理中的话术**
 
 
 
@@ -18,6 +18,7 @@ Output:
                 "Title": "title",
                 "Content": "hello",
                 "CreateTime": "2025-07-02T07:19:08Z",
+                "ProductId": "1002",
                 "ScriptId": "100",
                 "Duration": 0,
                 "Status": "PENDING",

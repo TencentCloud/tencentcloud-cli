@@ -354,6 +354,28 @@
         "title": "成功示例 "
       }
     ],
+    "CreateTWeSeeCallback": [
+      {
+        "document": "创建 HTTP 回调目标",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeCallback\n<公共请求参数>\n\n{\n    \"Type\": \"http\",\n    \"CallbackUrl\": \"https://example.qq.com/twesee-callback\",\n    \"CallbackToken\": \"your-token-here\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CallbackId\": \"callback-iak6g98u\",\n        \"RequestId\": \"f81b1003-d7e9-4899-9f72-4c6d4f6b4f78\"\n    }\n}",
+        "title": "创建 TWeSee 回调目标"
+      }
+    ],
+    "CreateTWeSeePostPaidService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeePostPaidService\n<公共请求参数>\n\n{\n    \"ServiceType\": \"VID_COMP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OrderId\": \"20260417*********427251\",\n        \"ResourceId\": \"twesee-753yd29x1u********g0we9\",\n        \"Status\": \"DELIVERED\",\n        \"RequestId\": \"f05a6c5a-cf05-4781-a106-ca74957f6580\"\n    }\n}",
+        "title": "开通 TWeSee 视频理解后付费"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeePostPaidService\n<公共请求参数>\n\n{\n    \"ServiceType\": \"IMG_COMP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OrderId\": \"20260420********4271701\",\n        \"ResourceId\": \"twesee-753yd29x2z********rdlaa\",\n        \"Status\": \"DELIVERED\",\n        \"RequestId\": \"2f542310-6c2e-4a65-86a9-f8dbf02cbc87\"\n    }\n}",
+        "title": "开通 TWeSee 图片理解后付费"
+      }
+    ],
     "CreateTWeSeeRecognitionTask": [
       {
         "document": "",
@@ -412,6 +434,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeService\n<公共请求参数>\n\n{\n    \"Service\": \"VideoSummary\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"21d73508-3a88-41c7-927c-3952301b67c0\"\n    }\n}",
         "title": "开通 TWeSee 视频摘要"
+      }
+    ],
+    "CreateTWeSeeSubscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"Period\": 1,\n    \"ServiceTier\": \"BASIC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Currency\": \"CNY\",\n        \"DiscountPrice\": \"1200\",\n        \"OrderId\": \"20260420*********550201\",\n        \"OriginalPrice\": \"2000\",\n        \"ResourceId\": \"twesee-753yd29x30********jqww1\",\n        \"Status\": \"DELIVERED\",\n        \"RequestId\": \"6f7647ba-757c-439c-8781-c187b5a561f3\"\n    }\n}",
+        "title": "开通 TWeSee 视频理解基础版"
       }
     ],
     "CreateTWeTalkAIBot": [
@@ -576,6 +606,14 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=DeleteStudioProduct\n&ProductId=AVBRC1R7QS\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"98f624d5-922b-4b59-ba14-c498f79eee0e\"\n    }\n}",
         "title": "删除产品"
+      }
+    ],
+    "DeleteTWeSeeCallback": [
+      {
+        "document": "删除指定回调目标",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeSeeCallback\n<公共请求参数>\n\n{\n    \"CallbackId\": \"callback-iak6g98u\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c190696-3fd7-43c6-bb8b-5f484d07b0cf\"\n    }\n}",
+        "title": "删除 TWeSee 回调目标"
       }
     ],
     "DeleteTWeTalkAIBot": [
@@ -960,6 +998,14 @@
         "title": "实例详情"
       }
     ],
+    "DescribeLicenseOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicenseOverview\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-DGAFvpuVF7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c383b1f6-4666-47fe-9a3d-c1741d7b5f22\"\n    }\n}",
+        "title": "获取激活码概览"
+      }
+    ],
     "DescribeLoRaFrequency": [
       {
         "document": "获取LoRa自定义频点详情",
@@ -1056,6 +1102,14 @@
         "title": "获取设备已订阅Topic列表"
       }
     ],
+    "DescribeTWeSeeCallback": [
+      {
+        "document": "查询指定回调目标详情",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeeCallback\n<公共请求参数>\n\n{\n    \"CallbackId\": \"callback-iak6g98u\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CallbackInfo\": {\n            \"CallbackId\": \"callback-iak6g98u\",\n            \"Type\": \"http\",\n            \"CallbackUrl\": \"https://example.qq.com/twesee-callback\",\n            \"CallbackToken\": \"your-token-here\",\n            \"CreateTime\": 1738827748,\n            \"UpdateTime\": 1738827789\n        },\n        \"RequestId\": \"72f3139f-21a8-4f20-8f7d-f5f95022b9eb\"\n    }\n}",
+        "title": "查询 TWeSee 回调目标详情"
+      }
+    ],
     "DescribeTWeSeeConfig": [
       {
         "document": "查询 TWeSee 配置",
@@ -1064,12 +1118,56 @@
         "title": "查询 TWeSee 配置"
       }
     ],
+    "DescribeTWeSeePostPaidService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeePostPaidService\n<公共请求参数>\n\n{\n    \"ServiceType\": \"IMG_COMP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceId\": \"twesee-753yd29x2z********rdlaa\",\n        \"Status\": \"NORMAL\",\n        \"RequestId\": \"f8c3d6d1-5c9f-4f2d-b83d-82385a734a5e\"\n    }\n}",
+        "title": "查询 TWeSee 图片理解后付费服务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeePostPaidService\n<公共请求参数>\n\n{\n    \"ServiceType\": \"VID_COMP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceId\": \"twesee-753yd29x1u********g0we9\",\n        \"Status\": \"NORMAL\",\n        \"RequestId\": \"dea01d1e-53bd-4900-b25e-bf764b94b11b\"\n    }\n}",
+        "title": "查询 TWeSee 视频理解后付费服务"
+      }
+    ],
     "DescribeTWeSeeRecognitionTask": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"01985f3b-1781-75e6-aed5-d6510855f086\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8632226-fe3c-4f70-86d9-eb995cefeae8\",\n        \"TaskInfo\": {\n            \"ChannelId\": 0,\n            \"CreateTime\": 1753944365,\n            \"DeviceName\": \"dev002\",\n            \"EndTime\": 1753944365,\n            \"EndTimeMs\": 1753944365774,\n            \"Files\": [],\n            \"FilesInfo\": [],\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"Result\": {\n                \"DetectedClassifications\": [\n                    \"person\",\n                    \"vehicle\"\n                ],\n                \"Status\": 3,\n                \"Summary\": \"一穿蓝上衣的人驾驶蓝卡车在道路上行驶。\"\n            },\n            \"StartTime\": 1753944364,\n            \"StartTimeMs\": 1753944364774,\n            \"Status\": 3,\n            \"TaskId\": \"01985f3b-1781-75e6-aed5-d6510855f086\",\n            \"UpdateTime\": 1753944368\n        }\n    }\n}",
         "title": "查询 TWeSee 语义理解任务"
+      }
+    ],
+    "DescribeTWeSeeSubscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ChannelId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ComprehensionConfig\": {\n            \"AlternativeOutputLang\": \"en\",\n            \"DetectTypes\": [\n                \"person_climbing_fence\"\n            ],\n            \"EnableSearch\": true,\n            \"MultiCameraLayout\": \"Vertical,Num=2,Index=0;1\",\n            \"OutputLang\": \"zh\"\n        },\n        \"Enabled\": true,\n        \"EventIdFilterConfig\": {\n            \"IncludeOnly\": [\n                \"_sys_id1_data\"\n            ]\n        },\n        \"ExpireTime\": 1781897528,\n        \"QuotaBasic\": 3000,\n        \"QuotaRefreshTime\": 1779219128,\n        \"QuotaUsedBasic\": 2,\n        \"ResourceId\": \"twesee-753yd29x30********jqww1\",\n        \"ServiceTier\": \"BASIC\",\n        \"Status\": \"NORMAL\",\n        \"RequestId\": \"a94ccccd-a34e-4daa-97fe-fed5a0c2f1c0\"\n    }\n}",
+        "title": "查询 TWeSee 视频理解订阅"
+      }
+    ],
+    "DescribeTWeSeeTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeeTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"comp-d57939bb-b155-5623-c7e7-1fb8dd0654dd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskInfo\": {\n            \"ComprehensionResult\": {\n                \"AlternativeSummary\": \"A person in white pants and a white shirt walks on a wet sidewalk.\",\n                \"DetectedClassifications\": [\n                    \"person\"\n                ],\n                \"Summary\": \"穿白色衣裤的人在湿滑的人行道上行走\"\n            },\n            \"CostAdvanced\": 0,\n            \"CostBasic\": 2,\n            \"CreateTime\": 1776629116,\n            \"Files\": [],\n            \"FilesInfo\": [],\n            \"Metadata\": {\n                \"ChannelId\": 0,\n                \"CustomId\": \"_sys_id1_data\",\n                \"DeviceName\": \"dev002\",\n                \"EndTimeMs\": 1776629110000,\n                \"ProductId\": \"4AHMY9X89Y\",\n                \"StartTimeMs\": 1776629102000\n            },\n            \"ServiceCategory\": \"COMPREHENSION\",\n            \"ServiceTier\": \"BASIC\",\n            \"ServiceType\": \"VID_COMP\",\n            \"Status\": 3,\n            \"TaskId\": \"comp-d57939bb-b155-5623-c7e7-1fb8dd0654dd\",\n            \"UpdateTime\": 1776629119\n        },\n        \"RequestId\": \"1d84d34c-ad3d-44bc-86f0-cf62340d5e56\"\n    }\n}",
+        "title": "查询 TWeSee 视觉理解任务详情"
+      }
+    ],
+    "DescribeTWeSeeTaskStatistics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeeTaskStatistics\n<公共请求参数>\n\n{\n    \"ServiceType\": \"VID_COMP\",\n    \"ServiceTier\": \"POSTPAID\",\n    \"StartTime\": 1776621600,\n    \"EndTime\": 1776625200,\n    \"Interval\": 3600\n}",
+        "output": "{\n    \"Response\": {\n        \"StatData\": [\n            {\n                \"CostAdvanced\": 1,\n                \"CostBasic\": 2,\n                \"Count\": 2,\n                \"Time\": \"2026-04-20 02:00:00\"\n            }\n        ],\n        \"RequestId\": \"1748dfa6-9e11-4ec7-a782-4393d58665e2\"\n    }\n}",
+        "title": "查询视频理解后付费用量曲线"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeeTaskStatistics\n<公共请求参数>\n\n{\n    \"ServiceType\": \"VID_COMP\",\n    \"ServiceTier\": \"BASIC\",\n    \"StartTime\": 1776621600,\n    \"EndTime\": 1776625200,\n    \"Interval\": 3600\n}",
+        "output": "{\n    \"Response\": {\n        \"StatData\": [\n            {\n                \"CostAdvanced\": 0,\n                \"CostBasic\": 0,\n                \"Count\": 0,\n                \"Time\": \"2026-04-20 02:00:00\"\n            }\n        ],\n        \"RequestId\": \"72161955-e6b9-4f31-8e2f-f54980fae9d5\"\n    }\n}",
+        "title": "查询视频理解包年包月基础版用量曲线"
       }
     ],
     "DescribeTWeTalkAIBot": [
@@ -1126,6 +1224,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoLicense\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-R4rvgd\"\n}",
         "output": "{\n    \"Response\": {\n        \"License\": [\n            {\n                \"ExpiresSoonCount\": 0,\n                \"TotalCount\": 0,\n                \"Type\": \"0_5_mbps\",\n                \"UsedCount\": 0\n            },\n            {\n                \"ExpiresSoonCount\": 0,\n                \"TotalCount\": 0,\n                \"Type\": \"1_mbps\",\n                \"UsedCount\": 0\n            },\n            {\n                \"ExpiresSoonCount\": 0,\n                \"TotalCount\": 0,\n                \"Type\": \"1_5_mbps\",\n                \"UsedCount\": 0\n            },\n            {\n                \"ExpiresSoonCount\": 0,\n                \"TotalCount\": 0,\n                \"Type\": \"2_mbps\",\n                \"UsedCount\": 0\n            }\n        ],\n        \"RequestId\": \"65ca8e0a-422a-4a7a-94bc-041ecd7abaf0\"\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "DestroyTWeSeeSubscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"221fe98e-3a0b-4b55-8336-0af0a97debc4\"\n    }\n}",
+        "title": "销毁 TWeSee 视频理解订阅"
       }
     ],
     "DirectBindDeviceInFamily": [
@@ -1358,12 +1464,40 @@
         "title": "继承云存用户"
       }
     ],
+    "InquireTWeSeeSubscriptionCreatePrice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquireTWeSeeSubscriptionCreatePrice\n<公共请求参数>\n\n{\n    \"ServiceType\": \"VID_COMP\",\n    \"ServiceTier\": \"BASIC\",\n    \"Period\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Currency\": \"CNY\",\n        \"DiscountPrice\": \"1200\",\n        \"OriginalPrice\": \"2000\",\n        \"RequestId\": \"bb29e90b-c495-42a5-9184-378d42abfe4f\"\n    }\n}",
+        "title": "查询开通 1 个月视频理解的价格"
+      }
+    ],
+    "InquireTWeSeeSubscriptionRenewPrice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquireTWeSeeSubscriptionRenewPrice\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"Period\": 1,\n    \"ChannelId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Currency\": \"CNY\",\n        \"DiscountPrice\": \"1200\",\n        \"OriginalPrice\": \"2000\",\n        \"RequestId\": \"6010f2e8-e5e0-4b85-b0d0-cf0a7c068a2b\"\n    }\n}",
+        "title": "查询续费 1 个月视频理解的价格"
+      }
+    ],
     "InvokeAISearchService": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeAISearchService\n\n{\n    \"ProductId\": \"MVTYMD8YCD\",\n    \"DeviceName\": \"dev001\",\n    \"Query\": \"What happened on April 1st\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\",\n        \"Summary\": \"Nine videos captured various scenes on April 1st, showcasing pets eating and playing, a peaceful baby interaction, a resting child, and diligent workers like cleaners and delivery men, all without any safety concerns.\",\n        \"Targets\": [\n            {\n                \"ProductId\": \"MVTYMD8YCD\",\n                \"DeviceName\": \"dev001\",\n                \"StartTimeMs\": 1743456533000,\n                \"EndTimeMs\": 1743456543000,\n                \"EventId\": \"alarm\",\n                \"Summary\": \"Two cats and a dog eating\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeAISearchService\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev20260428a\",\n    \"Query\": \"有人走过\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Summary\": \"共1段视频：雨后路滑，浅色路人正小心行走。安全起见，请防滑慢行哦！\",\n        \"Targets\": [\n            {\n                \"ChannelId\": 0,\n                \"DeviceName\": \"dev20260428a\",\n                \"EndTimeMs\": 1777357077918,\n                \"EventId\": \"_sys_id1_data\",\n                \"Id\": \"019dd2bc-baa9-70ff-acd3-b7e88473c32d_1\",\n                \"ProductId\": \"4AHMY9X89Y\",\n                \"StartTimeMs\": 1777357076918,\n                \"Summary\": \"穿浅色衣物的人在雨后湿滑的路边行走\",\n                \"Thumbnail\": \"/700000975417/4AHMY9X89Y/dev20260428a/events/1777357076.jpg\"\n            }\n        ],\n        \"VideoURL\": \"https://1259367869.vod2.myqcloud.com/timeshift/live/dev20260428a/timeshift.m3u8\",\n        \"RequestId\": \"5485cc1a-5c7a-4d86-98f9-da7bba179f6c\"\n    }\n}",
         "title": "视频语义搜索"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeAISearchService\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev20260428en\",\n    \"Query\": \"person walking\",\n    \"SummaryLang\": \"en-US\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Summary\": \"1 video shows a person walking safely on a wet sidewalk after rain. Stay cautious on slippery paths!\",\n        \"Targets\": [\n            {\n                \"ChannelId\": 0,\n                \"DeviceName\": \"dev20260428en\",\n                \"EndTimeMs\": 1777356974727,\n                \"EventId\": \"\",\n                \"Id\": \"019dd2bb-273c-7a95-bf08-8da22f56f415_1\",\n                \"ProductId\": \"4AHMY9X89Y\",\n                \"StartTimeMs\": 1777356973727,\n                \"Summary\": \"A person in light-colored clothes walking on a wet and slippery roadside after the rain\",\n                \"Thumbnail\": \"/700000975417/4AHMY9X89Y/dev20260428en/events/1777356973.jpg\"\n            }\n        ],\n        \"VideoURL\": \"https://1259367869.vod2.myqcloud.com/timeshift/live/dev20260428en/timeshift.m3u8\",\n        \"RequestId\": \"b91d707d-bb24-40e8-8887-1984a58de77a\"\n    }\n}",
+        "title": "视频语义搜索（英文）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeAISearchService\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev20260426\",\n    \"Query\": \"今天的视频\",\n    \"Order\": \"TIME_ASC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Summary\": \"共2段视频：雨后湿滑路面行人慢行，蓝色货车弯道行驶。雨天路滑，请注意交通安全哦！\",\n        \"Targets\": [\n            {\n                \"ChannelId\": 0,\n                \"DeviceName\": \"dev20260426\",\n                \"EndTimeMs\": 1777212005402,\n                \"EventId\": \"\",\n                \"Id\": \"019dca17-1c33-7650-8294-bb99e524059b_1\",\n                \"ProductId\": \"4AHMY9X89Y\",\n                \"StartTimeMs\": 1777212005402,\n                \"Summary\": \"穿浅色衣物的人在雨后湿滑的路边行走\",\n                \"Thumbnail\": \"/700000975417/4AHMY9X89Y/dev20260426/events/1777212005.jpg\"\n            }\n        ],\n        \"VideoURL\": \"https://1259367869.vod2.myqcloud.com/timeshift/live/dev20260426/timeshift.m3u8\",\n        \"RequestId\": \"6e9d71e1-b778-415d-a276-59de83ecab97\"\n    }\n}",
+        "title": "视频语义搜索（结果按时间升序排序）"
       }
     ],
     "InvokeCloudStorageAIServiceTask": [
@@ -1392,6 +1526,26 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeExternalSourceAIServiceTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"TQBDY6RPI9\",\n    \"ServiceType\": \"Highlight\",\n    \"VideoURLs\": [\n        \"https://example.com/video.mp4\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8b490930-d119-4ee2-963c-c58973a1ebe6\",\n        \"Completed\": false,\n        \"TaskId\": \"c31aa4f2-08c9-4088-9603-186d7311fdd8\",\n        \"TaskInfo\": {\n            \"ChannelId\": 0,\n            \"CreateTime\": 1714240802,\n            \"DeviceName\": \"dev001\",\n            \"EndTime\": 1714233600,\n            \"Files\": [],\n            \"ProductId\": \"TSLFHRWDSD\",\n            \"Result\": \"\",\n            \"ServiceType\": \"Highlight\",\n            \"StartTime\": 1714147200,\n            \"Status\": 4,\n            \"TaskId\": \"c31aa4f2-08c9-4088-9603-186d7311fdd8\",\n            \"UpdateTime\": 1714240802\n        }\n    }\n}",
         "title": "创建外部视频 AI 分析任务（超时未完成，转异步）"
+      }
+    ],
+    "InvokeTWeSeeComprehension": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeTWeSeeComprehension\n<公共请求参数>\n\n{\n    \"InputURL\": \"https://****-test-125*****22.cos.ap-guangzhou.myqcloud.com/********.jpg\",\n    \"ServiceType\": \"IMG_COMP\",\n    \"WaitResultTimeout\": 20,\n    \"CallbackId\": \"cb-n9sl1wur\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ComprehensionResult\": {\n            \"DetectedClassifications\": [\n                \"cat\"\n            ],\n            \"Summary\": \"一只猫坐在吉他盒里，旁边有只小鸟飞过\"\n        },\n        \"CostAdvanced\": 0,\n        \"CostBasic\": 1,\n        \"Status\": 3,\n        \"TaskId\": \"comp-12e89917-c932-c27d-977f-bd16cc5c3b92\",\n        \"RequestId\": \"2063f9bf-ecad-499c-8f03-220c911385e9\"\n    }\n}",
+        "title": "调用 TWeSee 图片理解算法"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeTWeSeeComprehension\n<公共请求参数>\n\n{\n    \"InputURL\": \"https://*********-125*******.cos.ap-guangzhou.tencentcos.cn/*******.mp4\",\n    \"ServiceType\": \"VID_COMP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ComprehensionResult\": {\n            \"DetectedClassifications\": [\n                \"person\"\n            ],\n            \"Summary\": \"穿浅色衣物的人在湿滑路边行走\"\n        },\n        \"CostAdvanced\": 0,\n        \"CostBasic\": 1,\n        \"Status\": 3,\n        \"TaskId\": \"comp-8c47f42e-c9fd-3e6a-a0c5-64da344c013d\",\n        \"RequestId\": \"2d126014-5991-490d-8f4a-75991ad5871e\"\n    }\n}",
+        "title": "调用 TWeSee 视频理解算法"
+      },
+      {
+        "document": "对该视频生效视频搜索高级功能",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeTWeSeeComprehension\n<公共请求参数>\n\n{\n    \"InputURL\": \"https://kero-test-1255707222.cos.ap-guangzhou.tencentcos.cn/jiwei/4.mp4\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ComprehensionConfig\": {\n        \"EnableSearch\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ComprehensionResult\": {\n            \"DetectedClassifications\": [\n                \"person\"\n            ],\n            \"Summary\": \"穿浅色衣物的人在雨后湿滑的路边行走\"\n        },\n        \"CostAdvanced\": 1,\n        \"CostBasic\": 1,\n        \"Status\": 3,\n        \"TaskId\": \"comp-c01e4d7f-2bf5-3e6e-e865-bc495b954b23\",\n        \"RequestId\": \"296e405d-fe5f-4ed0-a2c4-f34fd70f4ab2\"\n    }\n}",
+        "title": "调用 TWeSee 视频理解算法（含高级功能）"
       }
     ],
     "InvokeTWeSeeRecognitionTask": [
@@ -1455,9 +1609,15 @@
     "InvokeVideosKeywordsAnalyzer": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeAISearchService\n\n{\n    \"ProductId\": \"MVTYMD8YCD\",\n    \"DeviceName\": \"dev001\",\n    \"StartTimeMs\": 1750158420000,\n    \"EndTimeMs\": 1750169220000\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\",\n        \"Keywords\": [\n            \"key1\",\n            \"key2\"\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeVideosKeywordsAnalyzer\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev20260426\",\n    \"StartTimeMs\": 1777211099723,\n    \"EndTimeMs\": 1777212099723\n}",
+        "output": "{\n    \"Response\": {\n        \"Keywords\": [\n            \"人在行走\"\n        ],\n        \"RequestId\": \"e099a05d-0dd9-4253-9d68-b0ed6eaf6bb2\"\n    }\n}",
         "title": "获取某个时间段的视频内容关键字"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeVideosKeywordsAnalyzer\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev20260428\",\n    \"StartTimeMs\": 1777305600000,\n    \"EndTimeMs\": 1777391999000,\n    \"KeywordsLang\": \"en-US\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Keywords\": [\n            \"穿浅色衣物的人在行走\"\n        ],\n        \"RequestId\": \"b7509c52-2a5e-44ea-b97d-0e471b77b3f7\"\n    }\n}",
+        "title": "获取某个时间段的视频内容关键字（指定语言）"
       }
     ],
     "ListEventHistory": [
@@ -1490,6 +1650,28 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListProductOtaModules\n<公共请求参数>\n\n{\n    \"ProductID\": \"8Q7X2QKV59\"\n}",
         "output": "{\n    \"Response\": {\n        \"Modules\": [\n            {\n                \"CreateTime\": 1753261941,\n                \"FwType\": \"default\",\n                \"IsBuildIn\": true,\n                \"Name\": \"\",\n                \"ProductID\": \"8Q7X2QKV59\",\n                \"ProductName\": \"ota测试\",\n                \"Remark\": \"\"\n            },\n            {\n                \"CreateTime\": 1756953617,\n                \"FwType\": \"bms\",\n                \"IsBuildIn\": false,\n                \"Name\": \"\",\n                \"ProductID\": \"8Q7X2QKV59\",\n                \"ProductName\": \"ota测试\",\n                \"Remark\": \"\"\n            }\n        ],\n        \"RequestId\": \"2face868-8e90-4a42-98f9-54810ef3f1f8\"\n    }\n}",
         "title": "获取产品OTA模块列表"
+      }
+    ],
+    "ListTWeSeeCallback": [
+      {
+        "document": "分页查询回调目标列表",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTWeSeeCallback\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"List\": [\n            {\n                \"CallbackId\": \"callback-iak6g98u\",\n                \"Type\": \"http\",\n                \"CallbackUrl\": \"https://example.qq.com/twesee-callback\",\n                \"CallbackToken\": \"your-token-here\",\n                \"CreateTime\": 1738827748,\n                \"UpdateTime\": 1738827789\n            }\n        ],\n        \"RequestId\": \"72f3139f-21a8-4f20-8f7d-f5f95022b9eb\"\n    }\n}",
+        "title": "查询 TWeSee 回调目标列表"
+      }
+    ],
+    "ListTWeSeeTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTWeSeeTasks\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceCategory\": \"COMPREHENSION\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"ComprehensionResult\": {\n                    \"AlternativeSummary\": \"A person in white pants and a white shirt walks on a wet sidewalk.\",\n                    \"DetectedClassifications\": [\n                        \"person\"\n                    ],\n                    \"Summary\": \"穿白色衣裤的人在湿滑的人行道上行走\"\n                },\n                \"CostAdvanced\": 0,\n                \"CostBasic\": 2,\n                \"CreateTime\": 1776629116,\n                \"Files\": [],\n                \"FilesInfo\": [],\n                \"Metadata\": {\n                    \"ChannelId\": 0,\n                    \"CustomId\": \"_sys_id1_data\",\n                    \"DeviceName\": \"dev002\",\n                    \"EndTimeMs\": 1776629110000,\n                    \"ProductId\": \"4AHMY9X89Y\",\n                    \"StartTimeMs\": 1776629102000\n                },\n                \"ServiceCategory\": \"COMPREHENSION\",\n                \"ServiceTier\": \"BASIC\",\n                \"ServiceType\": \"VID_COMP\",\n                \"Status\": 3,\n                \"TaskId\": \"comp-d57939bb-b155-5623-c7e7-1fb8dd0654dd\",\n                \"UpdateTime\": 1776629119\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"ecdb8ebc-b257-43f0-af93-105b0cfa94c0\"\n    }\n}",
+        "title": "查询 TWeSee 视觉理解任务列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTWeSeeTasks\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceCategory\": \"COMPREHENSION\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"StartTimeMs\": 1776621600000,\n    \"EndTimeMs\": 1776636000000,\n    \"Status\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"ComprehensionResult\": {\n                    \"AlternativeSummary\": \"A person in white pants and a white shirt walks on a wet sidewalk.\",\n                    \"DetectedClassifications\": [\n                        \"person\"\n                    ],\n                    \"Summary\": \"穿白色衣裤的人在湿滑的人行道上行走\"\n                },\n                \"CostAdvanced\": 0,\n                \"CostBasic\": 2,\n                \"CreateTime\": 1776629116,\n                \"Files\": [],\n                \"FilesInfo\": [],\n                \"Metadata\": {\n                    \"ChannelId\": 0,\n                    \"CustomId\": \"_sys_id1_data\",\n                    \"DeviceName\": \"dev002\",\n                    \"EndTimeMs\": 1776629110000,\n                    \"ProductId\": \"4AHMY9X89Y\",\n                    \"StartTimeMs\": 1776629102000\n                },\n                \"ServiceCategory\": \"COMPREHENSION\",\n                \"ServiceTier\": \"BASIC\",\n                \"ServiceType\": \"VID_COMP\",\n                \"Status\": 3,\n                \"TaskId\": \"comp-d57939bb-b155-5623-c7e7-1fb8dd0654dd\",\n                \"UpdateTime\": 1776629119\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"5e24e488-7948-4ff6-9bd1-76eb3a0cd112\"\n    }\n}",
+        "title": "查询 TWeSee 视觉理解任务列表（有时间范围和状态条件）"
       }
     ],
     "ListTopicPolicy": [
@@ -1618,6 +1800,14 @@
         "title": "修改产品示例"
       }
     ],
+    "ModifyTWeSeeCallback": [
+      {
+        "document": "修改指定回调目标",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeCallback\n<公共请求参数>\n\n{\n    \"CallbackId\": \"callback-iak6g98u\",\n    \"Type\": \"http\",\n    \"CallbackUrl\": \"https://example.qq.com/twesee-callback?v=2\",\n    \"CallbackToken\": \"token-456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"07e32598-feb4-45ee-b0bf-fcc67ef0ec1a\"\n    }\n}",
+        "title": "修改 TWeSee 回调目标"
+      }
+    ],
     "ModifyTWeSeeConfig": [
       {
         "document": "已接入 IoT 云存的设备开启 TWeSee 摘要与搜索能力",
@@ -1636,6 +1826,46 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev001\",\n    \"EnableSummary\": true,\n    \"EnableSearch\": true,\n    \"SummaryConfig\": {\n        \"DetectTypes\": [\n            \"baby_crying\"\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbdcb8c-d8cb-4f9d-a491-ff0dd3bb53b6\"\n    }\n}",
         "title": "对指定设备开启 TWeSee 摘要能力并添加更多的检测标签"
+      }
+    ],
+    "ModifyTWeSeeSubscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ChannelId\": 0,\n    \"EventIdFilterConfig\": {\n        \"IncludeOnly\": [\n            \"_sys_id1_data\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e53525ed-e1c1-4748-81fa-513e89fa55c8\"\n    }\n}",
+        "title": "设置云存事件 ID 过滤规则"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ChannelId\": 0,\n    \"ComprehensionConfig\": {\n        \"OutputLang\": \"zh\",\n        \"AlternativeOutputLang\": \"en\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6d53e3e-15c5-4a56-8331-d3b680c12220\"\n    }\n}",
+        "title": "设置输出语言"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ChannelId\": 0,\n    \"ComprehensionConfig\": {\n        \"EnableSearch\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f0e601e-cbac-4e5c-8443-e3c1478ec5a2\"\n    }\n}",
+        "title": "设置启用视频搜索高级功能"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ChannelId\": 0,\n    \"ComprehensionConfig\": {\n        \"DetectTypes\": [\n            \"person_climbing_fence\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b32234f-60bb-48dc-9791-2fffc690b035\"\n    }\n}",
+        "title": "设置需检测的事件标签"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ChannelId\": 0,\n    \"ComprehensionConfig\": {\n        \"MultiCameraLayout\": \"Vertical,Num=2,Index=0;1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5f73ced5-7059-4698-ba18-3d1683f1e06a\"\n    }\n}",
+        "title": "设置多摄布局"
+      }
+    ],
+    "ModifyTWeSeeSubscriptionRenewFlag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeSubscriptionRenewFlag\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"RenewFlag\": \"DISABLE_NOTIFY_AND_MANUAL_RENEW\",\n    \"ChannelId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"95256487-cfff-4661-a7d7-b30887731dd2\"\n    }\n}",
+        "title": "设置不通知且手动续费"
       }
     ],
     "ModifyTWeTalkAIBot": [
@@ -1740,6 +1970,14 @@
         "title": "成功示例"
       }
     ],
+    "RenewTWeSeeSubscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"Period\": 1,\n    \"ChannelId\": 0,\n    \"CustomOrderId\": \"order-0013\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Currency\": \"CNY\",\n        \"DiscountPrice\": \"1200\",\n        \"OrderId\": \"2026042**********584511\",\n        \"OriginalPrice\": \"2000\",\n        \"ResourceId\": \"twesee-753yd29x30********jqww1\",\n        \"Status\": \"DELIVERED\",\n        \"RequestId\": \"0d350a07-0fc9-455c-98c8-0946d721dc1a\"\n    }\n}",
+        "title": "续费 TWeSee 视频理解订阅"
+      }
+    ],
     "ResetCloudStorage": [
       {
         "document": "",
@@ -1814,6 +2052,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\",\n        \"Rules\": [\n            {\n                \"RuleName\": \"test_create\",\n                \"Description\": \"规则信息\",\n                \"CreatedAt\": 1599017883,\n                \"RuleDisabled\": true\n            }\n        ],\n        \"TotalCnt\": 1\n    }\n}",
         "title": "搜索规则"
+      }
+    ],
+    "TerminateTWeSeeSubscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Currency\": \"CNY\",\n        \"OrderId\": \"20260420*********539551\",\n        \"Price\": \"-1160\",\n        \"Status\": \"DELIVERED\",\n        \"RequestId\": \"5487cca6-bd04-4a1c-87df-930894b774e0\"\n    }\n}",
+        "title": "退订 TWeSee 视频理解订阅"
       }
     ],
     "TransferCloudStorage": [

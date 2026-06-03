@@ -32,7 +32,7 @@
   "metadata": {
     "apiVersion": "2024-10-24",
     "api_brief": "提供了通过API进行管控元数据（Catalog、Schema、Table、Volume）以及提供资源管控能力和用户行为操作管控能力（收藏、浏览）",
-    "serviceNameCN": "统一Catalog服务",
+    "serviceNameCN": "多模态智能数据湖 TCLake",
     "serviceShortName": "tccatalog"
   },
   "objects": {

@@ -119,6 +119,13 @@
       "output": "CreateRocketMQGroupV2Response",
       "status": "online"
     },
+    "CreateRocketMQMigrationTask": {
+      "document": "创建RocketMQ元数据迁移任务，用于批量创建主题和消费组数据",
+      "input": "CreateRocketMQMigrationTaskRequest",
+      "name": "创建RocketMQ元数据迁移任务",
+      "output": "CreateRocketMQMigrationTaskResponse",
+      "status": "online"
+    },
     "CreateRocketMQNamespace": {
       "document": "创建 RocketMQ 命名空间。\n当前 API 适用集群：4.x 虚拟集群和 4.x 专享集群，其他集群类型均不支持该功能。",
       "input": "CreateRocketMQNamespaceRequest",
@@ -131,6 +138,13 @@
       "input": "CreateRocketMQRoleRequest",
       "name": "创建 RocketMQ 角色",
       "output": "CreateRocketMQRoleResponse",
+      "status": "online"
+    },
+    "CreateRocketMQRouterRule": {
+      "document": "创建RocketMQ Router规则",
+      "input": "CreateRocketMQRouterRuleRequest",
+      "name": "创建RocketMQ Router规则",
+      "output": "CreateRocketMQRouterRuleResponse",
       "status": "online"
     },
     "CreateRocketMQTopic": {
@@ -3529,7 +3543,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "多可用区部署选择三个可用区，示例[200002,200003,200004]\n\n单可用区部署选择一个可用区，示例[200002]",
+          "document": "<p>多可用区部署选择三个可用区，示例[200002,200003,200004]<br>单可用区部署选择一个可用区，示例[200002]</p><p>当选择PULSAR.P2.MINI1 时只支持两个可用区，其他支持三个可用区</p>",
           "example": "[200002,200003,200004]",
           "member": "int64",
           "name": "ZoneIds",
@@ -3538,7 +3552,7 @@
         },
         {
           "disabled": false,
-          "document": "集群规格代号\n参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)",
+          "document": "<p>集群规格代号<br>参考 <a href=\"https://cloud.tencent.com/document/product/1179/83705\">专业集群规格</a></p>",
           "example": "PULSAR.P1.MINI2",
           "member": "string",
           "name": "ProductName",
@@ -3547,7 +3561,7 @@
         },
         {
           "disabled": false,
-          "document": "1: true，开启自动按月续费\n\n0: false，关闭自动按月续费",
+          "document": "<p>1: true，开启自动按月续费</p><p>0: false，关闭自动按月续费</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -3556,7 +3570,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长，取值范围：1～50",
+          "document": "<p>购买时长，取值范围：1～50</p>",
           "example": "3",
           "member": "int64",
           "name": "TimeSpan",
@@ -3565,7 +3579,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。",
+          "document": "<p>集群名称不能为空，支持数字、字母、中文以及符号 “-_=:.”，长度不超过64个字符</p>",
           "example": "default",
           "member": "string",
           "name": "ClusterName",
@@ -3574,7 +3588,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动选择代金券 1是 0否 默认为0",
+          "document": "<p>是否自动选择代金券 1是 0否 默认为0</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoVoucher",
@@ -3583,7 +3597,7 @@
         },
         {
           "disabled": false,
-          "document": "存储规格\n参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)",
+          "document": "<p>存储规格<br>参考 <a href=\"https://cloud.tencent.com/document/product/1179/83705\">专业集群规格</a></p>",
           "example": "200",
           "member": "int64",
           "name": "StorageSize",
@@ -3592,7 +3606,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc网络标签",
+          "document": "<p>vpc网络标签</p>",
           "example": "无",
           "member": "VpcInfo",
           "name": "Vpc",
@@ -3601,12 +3615,21 @@
         },
         {
           "disabled": false,
-          "document": "集群的标签列表(已废弃)",
+          "document": "<p>集群的标签列表(已废弃)</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群版本信息</p>",
+          "example": "不传 默认是 2.9.2，\u000b可以指定 2.9.2 或者 3.0.0",
+          "member": "string",
+          "name": "InstanceVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3616,7 +3639,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子订单号",
+          "document": "<p>子订单号</p>",
           "example": "20231020394041338776131",
           "member": "string",
           "name": "DealName",
@@ -3626,7 +3649,7 @@
         },
         {
           "disabled": false,
-          "document": "订单号",
+          "document": "<p>订单号</p>",
           "example": "20231020394041338776121",
           "member": "string",
           "name": "BigDealId",
@@ -3636,7 +3659,7 @@
         },
         {
           "disabled": false,
-          "document": "集群Id",
+          "document": "<p>集群Id</p>",
           "example": "pulsar-8x3jzjxxgzvg",
           "member": "string",
           "name": "ClusterId",
@@ -3646,7 +3669,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "default",
           "member": "string",
           "name": "ClusterName",
@@ -3770,7 +3793,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。",
+          "document": "<p>实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href=\"https://console.cloud.tencent.com/trabbitmq/cluster?rid=1\">TDMQ RabbitMQ 控制台</a>查询。</p>",
           "example": "amqp-2ppxx4rq",
           "member": "string",
           "name": "InstanceId",
@@ -3779,7 +3802,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名，登录时使用",
+          "document": "<p>用户名，登录时使用</p>",
           "example": "test_user",
           "member": "string",
           "name": "User",
@@ -3788,7 +3811,7 @@
         },
         {
           "disabled": false,
-          "document": "密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&*_=|{}[]:;',.?/】中的两项",
+          "document": "<p>密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&amp;*_=|{}[]:;&#39;,.?/】中的两项</p>",
           "example": "abc123._",
           "member": "string",
           "name": "Password",
@@ -3797,7 +3820,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "hello",
           "member": "string",
           "name": "Description",
@@ -3806,8 +3829,8 @@
         },
         {
           "disabled": false,
-          "document": "用户标签，用于决定改用户访问RabbitMQ Management的权限范围\nmanagement：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户",
-          "example": "monitoring",
+          "document": "<p>用户标签，用于决定改用户访问RabbitMQ Management的权限范围<br>management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户</p>",
+          "example": "[\"monitoring\"]",
           "member": "string",
           "name": "Tags",
           "required": false,
@@ -3815,7 +3838,7 @@
         },
         {
           "disabled": false,
-          "document": "该用户的最大连接数，不填写则不限制",
+          "document": "<p>该用户的最大连接数，不填写则不限制</p>",
           "example": "1000",
           "member": "int64",
           "name": "MaxConnections",
@@ -3824,12 +3847,21 @@
         },
         {
           "disabled": false,
-          "document": "该用户的最大channel数，不填写则不限制",
+          "document": "<p>该用户的最大channel数，不填写则不限制</p>",
           "example": "2000",
           "member": "int64",
           "name": "MaxChannels",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启cam验证</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableCamAuth",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3839,7 +3871,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户名，登录时使用",
+          "document": "<p>用户名，登录时使用</p>",
           "example": "test_user",
           "member": "string",
           "name": "User",
@@ -4427,6 +4459,78 @@
       ],
       "type": "object"
     },
+    "CreateRocketMQMigrationTaskRequest": {
+      "document": "CreateRocketMQMigrationTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "rocketmq-9npap34p9pa4",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型：<br>0，集群迁移<br>1，导入到指定命名空间</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待导入的主题列表</p>",
+          "example": "无",
+          "member": "RocketMQTopicConfig",
+          "name": "Topics",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待导入的消费组列表</p>",
+          "example": "无",
+          "member": "RocketMQGroupConfig",
+          "name": "Groups",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待导入的角色列表</p>",
+          "example": "无",
+          "member": "RocketMQRoleConfig",
+          "name": "Roles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定导入的命名空间</p>",
+          "example": "test_ns",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQMigrationTaskResponse": {
+      "document": "CreateRocketMQMigrationTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRocketMQNamespaceRequest": {
       "document": "CreateRocketMQNamespace请求参数结构体",
       "members": [
@@ -4592,6 +4696,51 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQRouterRuleRequest": {
+      "document": "CreateRocketMQRouterRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>true: 立即启动任务<br>false: 创建任务后不立即启动，可以在控制台操作启动</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "StartNow",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则数据结构</p>",
+          "example": "无",
+          "member": "RocketMQRouterRuleInfo",
+          "name": "Rule",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据同步类型。<br>Topic：按照topic维度同步</p>",
+          "example": "Topic",
+          "member": "string",
+          "name": "SyncType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQRouterRuleResponse": {
+      "document": "CreateRocketMQRouterRule返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -14187,7 +14336,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。",
+          "document": "<p>实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href=\"https://console.cloud.tencent.com/trabbitmq/cluster?rid=1\">TDMQ RabbitMQ 控制台</a>查询。</p>",
           "example": "amqp-2ppxx4rq",
           "member": "string",
           "name": "InstanceId",
@@ -14196,7 +14345,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名，形如rabbitmq。有效的 User 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。当前不支持修改admin的密码。",
+          "document": "<p>用户名，形如rabbitmq。有效的 User 名称可通过登录 <a href=\"https://console.cloud.tencent.com/trabbitmq/cluster?rid=1\">TDMQ RabbitMQ 控制台</a>查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。当前不支持修改admin的密码。</p>",
           "example": "admin",
           "member": "string",
           "name": "User",
@@ -14205,7 +14354,7 @@
         },
         {
           "disabled": false,
-          "document": "密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&*_=|{}[]:;',.?/】中的两项",
+          "document": "<p>密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&amp;*_=|{}[]:;&#39;,.?/】中的两项</p>",
           "example": "abc123._",
           "member": "string",
           "name": "Password",
@@ -14214,7 +14363,7 @@
         },
         {
           "disabled": false,
-          "document": "描述，不传则不修改",
+          "document": "<p>描述，不传则不修改</p>",
           "example": "production",
           "member": "string",
           "name": "Description",
@@ -14223,8 +14372,8 @@
         },
         {
           "disabled": false,
-          "document": "用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围\nmanagement：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户",
-          "example": "monitoring",
+          "document": "<p>用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围<br>management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户</p>",
+          "example": "[\"monitoring\"]",
           "member": "string",
           "name": "Tags",
           "required": false,
@@ -14232,7 +14381,7 @@
         },
         {
           "disabled": false,
-          "document": "该用户的最大连接数，不传则不修改",
+          "document": "<p>该用户的最大连接数，不传则不修改</p>",
           "example": "1000",
           "member": "int64",
           "name": "MaxConnections",
@@ -14241,12 +14390,21 @@
         },
         {
           "disabled": false,
-          "document": "该用户的最大channel数，不传则不修改",
+          "document": "<p>该用户的最大channel数，不传则不修改</p>",
           "example": "2000",
           "member": "int64",
           "name": "MaxChannels",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启cam验证</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableCamAuth",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -16558,7 +16716,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群公网接入地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群公网接入地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "101.10.10.101:5672",
           "member": "string",
           "name": "PublicAccessEndpoint",
@@ -16568,7 +16726,7 @@
         },
         {
           "disabled": false,
-          "document": "集群控制台访问地址",
+          "document": "<p>集群 Web 控制台公网访问地址</p>",
           "example": "https://amqp-xx.com",
           "member": "string",
           "name": "WebConsoleEndpoint",
@@ -16578,7 +16736,7 @@
         },
         {
           "disabled": false,
-          "document": "集群控制台登录用户名",
+          "document": "<p>集群 Web 控制台登录用户名</p>",
           "example": "username",
           "member": "string",
           "name": "WebConsoleUsername",
@@ -16588,7 +16746,7 @@
         },
         {
           "disabled": false,
-          "document": "集群控制台登录密码",
+          "document": "<p>集群 Web 控制台登录密码</p>",
           "example": "56A1S61651fd56a1",
           "member": "string",
           "name": "WebConsolePassword",
@@ -16598,7 +16756,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃",
+          "document": "<p>已废弃</p>",
           "example": "true",
           "member": "bool",
           "name": "PublicAccessEndpointStatus",
@@ -16608,7 +16766,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃",
+          "document": "<p>已废弃</p>",
           "example": "true",
           "member": "bool",
           "name": "PublicControlConsoleSwitchStatus",
@@ -16618,7 +16776,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃",
+          "document": "<p>已废弃</p>",
           "example": "true",
           "member": "bool",
           "name": "VpcControlConsoleSwitchStatus",
@@ -16628,7 +16786,7 @@
         },
         {
           "disabled": false,
-          "document": "Vpc管控台访问地址，示例值，http://1.1.1.1:15672",
+          "document": "<p>Web 管控台 VPC 访问地址</p>",
           "example": "http://1.1.1.1:15672",
           "member": "string",
           "name": "VpcWebConsoleEndpoint",
@@ -16638,7 +16796,7 @@
         },
         {
           "disabled": false,
-          "document": "公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING",
+          "document": "<p>Web 控制台公网访问开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>",
           "example": "OFF/ON/CREATING/DELETING",
           "member": "string",
           "name": "PublicWebConsoleSwitchStatus",
@@ -16648,7 +16806,7 @@
         },
         {
           "disabled": false,
-          "document": "Vpc管控台开关状态，示例值，\nOFF/ON/CREATING/DELETING",
+          "document": "<p>Web 控制台 VPC 访问开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>",
           "example": "OFF/ON/CREATING/DELETING",
           "member": "string",
           "name": "VpcWebConsoleSwitchStatus",
@@ -16658,7 +16816,7 @@
         },
         {
           "disabled": false,
-          "document": "公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING",
+          "document": "<p>公网接入点开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>",
           "example": "OFF/ON/CREATING/DELETING",
           "member": "string",
           "name": "PublicDataStreamStatus",
@@ -16668,7 +16826,7 @@
         },
         {
           "disabled": false,
-          "document": "Prometheus信息",
+          "document": "<p>Prometheus信息</p>",
           "example": "无",
           "member": "PrometheusEndpointInfo",
           "name": "PrometheusEndpointInfo",
@@ -16678,7 +16836,7 @@
         },
         {
           "disabled": false,
-          "document": "公网域名接入点",
+          "document": "<p>公网域名接入点</p>",
           "example": "http://amqp-test.dashboard.rabbitmq.cq.public.tencenttdmq.com:15672/",
           "member": "string",
           "name": "WebConsoleDomainEndpoint",
@@ -16688,7 +16846,7 @@
         },
         {
           "disabled": false,
-          "document": "控制面所使用的VPC信息",
+          "document": "<p>控制面所使用的VPC信息</p>",
           "example": "无",
           "member": "VpcEndpointInfo",
           "name": "ControlPlaneEndpointInfo",
@@ -16698,7 +16856,7 @@
         },
         {
           "disabled": false,
-          "document": "TLS加密的数据流公网接入点",
+          "document": "<p>TLS加密的数据流公网接入点</p>",
           "example": "amqps://amqp-xxx.amqp.tencenttdmq.com:5672",
           "member": "string",
           "name": "PublicTlsAccessEndpoint",
@@ -16708,7 +16866,7 @@
         },
         {
           "disabled": false,
-          "document": "公网IP是否复用",
+          "document": "<p>公网IP是否复用</p>",
           "example": "true",
           "member": "bool",
           "name": "PublicIpReused",
@@ -16718,7 +16876,7 @@
         },
         {
           "disabled": false,
-          "document": "公网控制台接入点操作的错误信息",
+          "document": "<p>Web 控制台公网访问操作的错误信息</p>",
           "example": "Qcloud Exception:modifyLoadBalancerConfig action failed",
           "member": "string",
           "name": "PublicWebConsoleErrorMessage",
@@ -16728,7 +16886,7 @@
         },
         {
           "disabled": false,
-          "document": "内网控制台接入点操作的错误信息",
+          "document": "<p>Web 控制台 VPC 访问操作的错误信息</p>",
           "example": "Conflict:vpc ip '127.0.0.1' is used",
           "member": "string",
           "name": "VpcWebConsoleErrorMessage",
@@ -16738,10 +16896,20 @@
         },
         {
           "disabled": false,
-          "document": "公网接入点操作的错误信息",
+          "document": "<p>公网接入点操作的错误信息</p>",
           "example": "Qcloud Exception:modifyLoadBalancerConfig action failed",
           "member": "string",
           "name": "PublicDataStreamErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网Stream接入点</p>",
+          "example": "rabbitmq-stream://amqp-axrwrazp-gz-public-d.amqp.tencenttdmq.com:5552",
+          "member": "string",
+          "name": "PublicStreamAccessEndpoint",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -17772,7 +17940,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。",
+          "document": "<p>实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href=\"https://console.cloud.tencent.com/trabbitmq/cluster?rid=1\">TDMQ RabbitMQ 控制台</a>查询。</p>",
           "example": "amqp-2ppxx4rq",
           "member": "string",
           "name": "InstanceId",
@@ -17782,7 +17950,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名，登录时使用",
+          "document": "<p>用户名，登录时使用</p>",
           "example": "test_user",
           "member": "string",
           "name": "User",
@@ -17792,7 +17960,7 @@
         },
         {
           "disabled": false,
-          "document": "密码，登录时使用",
+          "document": "<p>密码，登录时使用</p>",
           "example": "abc123",
           "member": "string",
           "name": "Password",
@@ -17802,7 +17970,7 @@
         },
         {
           "disabled": false,
-          "document": "用户描述",
+          "document": "<p>用户描述</p>",
           "example": "测试账号",
           "member": "string",
           "name": "Description",
@@ -17812,8 +17980,8 @@
         },
         {
           "disabled": false,
-          "document": "用户标签，用于决定改用户访问RabbitMQ Management的权限范围",
-          "example": "monitoring",
+          "document": "<p>用户标签，用于决定改用户访问RabbitMQ Management的权限范围</p>",
+          "example": "[\"management\"]",
           "member": "string",
           "name": "Tags",
           "output_required": true,
@@ -17822,7 +17990,7 @@
         },
         {
           "disabled": false,
-          "document": "用户创建时间",
+          "document": "<p>用户创建时间</p>",
           "example": "2022-11-11 11:11:11",
           "member": "string",
           "name": "CreateTime",
@@ -17832,7 +18000,7 @@
         },
         {
           "disabled": false,
-          "document": "用户最后修改时间",
+          "document": "<p>用户最后修改时间</p>",
           "example": "2022-11-11 11:11:11",
           "member": "string",
           "name": "ModifyTime",
@@ -17842,7 +18010,7 @@
         },
         {
           "disabled": false,
-          "document": "用户类型，System：系统创建，User：用户创建",
+          "document": "<p>用户类型，System：系统创建，User：用户创建</p>",
           "example": "System",
           "member": "string",
           "name": "Type",
@@ -17852,7 +18020,7 @@
         },
         {
           "disabled": false,
-          "document": "单个用户最大可用连接数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单个用户最大可用连接数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
           "name": "MaxConnections",
@@ -17862,7 +18030,7 @@
         },
         {
           "disabled": false,
-          "document": "单个用户最大可用通道数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单个用户最大可用通道数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
           "name": "MaxChannels",
@@ -17872,7 +18040,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间时间戳",
+          "document": "<p>创建时间时间戳</p>",
           "example": "1736845619365",
           "member": "uint64",
           "name": "CreateTs",
@@ -17882,13 +18050,33 @@
         },
         {
           "disabled": false,
-          "document": "修改时间时间戳",
+          "document": "<p>修改时间时间戳</p>",
           "example": "1743481475296",
           "member": "uint64",
           "name": "ModifyTs",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启cam验证</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "CamAuthEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>cam凭据名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sadfsdfui",
+          "member": "string",
+          "name": "CamCredentialName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -17919,12 +18107,48 @@
       ],
       "usage": "out"
     },
+    "RabbitMQVHostBaseQuota": {
+      "document": "RabbitMQ 虚拟主机基础配额信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "单个 vhost 下允许的最大连接数",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxConnectionPerVhost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单个 vhost 下允许的最大交换机数",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxExchangePerVhost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单个 vhost 下允许的最大队列数",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxQueuePerVhost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RabbitMQVipInstance": {
       "document": "RabbitMQ 托管版实例信息",
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
+          "document": "<p>实例 ID</p>",
           "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
@@ -17934,7 +18158,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "prod_rabbitmq",
           "member": "string",
           "name": "InstanceName",
@@ -17944,7 +18168,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本",
+          "document": "<p>实例版本</p>",
           "example": "3.11.8",
           "member": "string",
           "name": "InstanceVersion",
@@ -17954,7 +18178,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败",
+          "document": "<p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败</p>",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -17964,7 +18188,7 @@
         },
         {
           "disabled": false,
-          "document": "节点数量",
+          "document": "<p>节点数量</p>",
           "example": "5",
           "member": "uint64",
           "name": "NodeCount",
@@ -17974,7 +18198,7 @@
         },
         {
           "disabled": false,
-          "document": "实例配置规格名称",
+          "document": "<p>实例配置规格名称</p>",
           "example": "基础型",
           "member": "string",
           "name": "ConfigDisplay",
@@ -17984,7 +18208,7 @@
         },
         {
           "disabled": false,
-          "document": "峰值TPS",
+          "document": "<p>峰值TPS</p>",
           "example": "10000",
           "member": "uint64",
           "name": "MaxTps",
@@ -17994,7 +18218,7 @@
         },
         {
           "disabled": false,
-          "document": "峰值带宽，Mbps为单位",
+          "document": "<p>峰值带宽，Mbps为单位</p>",
           "example": "1200",
           "member": "uint64",
           "name": "MaxBandWidth",
@@ -18004,7 +18228,7 @@
         },
         {
           "disabled": false,
-          "document": "存储容量，GB为单位",
+          "document": "<p>存储容量，GB为单位</p>",
           "example": "100",
           "member": "uint64",
           "name": "MaxStorage",
@@ -18014,7 +18238,7 @@
         },
         {
           "disabled": false,
-          "document": "实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳",
+          "document": "<p>实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳</p>",
           "example": "1666257531143",
           "member": "uint64",
           "name": "ExpireTime",
@@ -18024,7 +18248,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)",
+          "document": "<p>自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>",
           "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
@@ -18034,7 +18258,7 @@
         },
         {
           "disabled": false,
-          "document": "1 表示预付费，0 表示后付费",
+          "document": "<p>1 表示预付费，0 表示后付费</p>",
           "example": "0",
           "member": "uint64",
           "name": "PayMode",
@@ -18044,7 +18268,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息",
+          "document": "<p>备注信息</p>",
           "example": "生产使用集群",
           "member": "string",
           "name": "Remark",
@@ -18054,7 +18278,7 @@
         },
         {
           "disabled": false,
-          "document": "集群的节点规格，对应的规格标识：\n2C8G：rabbit-vip-profession-2c8g\n4C16G：rabbit-vip-profession-4c16g\n8C32G：rabbit-vip-profession-8c32g\n16C32G：rabbit-vip-basic-4\n16C64G：rabbit-vip-profession-16c64g\n2C4G：rabbit-vip-basic-5\n4C8G：rabbit-vip-basic-1\n8C16G（已售罄）：rabbit-vip-basic-2\n不传默认为 4C8G：rabbit-vip-basic-1",
+          "document": "<p>集群的节点规格，对应的规格标识：<br>2C8G：rabbit-vip-profession-2c8g<br>4C16G：rabbit-vip-profession-4c16g<br>8C32G：rabbit-vip-profession-8c32g<br>16C32G：rabbit-vip-basic-4<br>16C64G：rabbit-vip-profession-16c64g<br>2C4G：rabbit-vip-basic-5<br>4C8G：rabbit-vip-basic-1<br>8C16G（已售罄）：rabbit-vip-basic-2<br>不传默认为 4C8G：rabbit-vip-basic-1</p>",
           "example": "rabbit-vip-basic-1",
           "member": "string",
           "name": "SpecName",
@@ -18064,7 +18288,7 @@
         },
         {
           "disabled": false,
-          "document": "集群异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群异常信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "节点[rabbit@rabbitmq-broker-2.rabbitmq-broker-internal.amqp-jero744g.svc.cluster.local]连接异常",
           "member": "string",
           "name": "ExceptionInformation",
@@ -18074,7 +18298,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败\n为了和计费区分开，额外开启一个状态位，用于显示。",
+          "document": "<p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败<br>为了和计费区分开，额外开启一个状态位，用于显示。</p>",
           "example": "0",
           "member": "int64",
           "name": "ClusterStatus",
@@ -18084,7 +18308,7 @@
         },
         {
           "disabled": false,
-          "document": "公网接入点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>公网接入点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "amqp://127.0.0.1:5672",
           "member": "string",
           "name": "PublicAccessEndpoint",
@@ -18094,7 +18318,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC 接入点列表",
+          "document": "<p>VPC 接入点列表</p>",
           "example": "无",
           "member": "VpcEndpointInfo",
           "name": "Vpcs",
@@ -18104,7 +18328,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，毫秒为单位。unix 时间戳",
+          "document": "<p>创建时间，毫秒为单位。unix 时间戳</p>",
           "example": "1666257531143",
           "member": "uint64",
           "name": "CreateTime",
@@ -18114,7 +18338,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，0 托管版、1 Serverless 版",
+          "document": "<p>实例类型</p><p>枚举值：</p><ul><li>0： 托管版实例</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "InstanceType",
@@ -18124,7 +18348,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离时间，毫秒为单位。unix 时间戳",
+          "document": "<p>隔离时间，毫秒为单位。unix 时间戳</p>",
           "example": "1666257531143",
           "member": "uint64",
           "name": "IsolatedTime",
@@ -18134,7 +18358,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已开启删除保护",
+          "document": "<p>是否已开启删除保护</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableDeletionProtection",
@@ -18144,12 +18368,22 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公有数据流Stream接入点</p>",
+          "example": "rabbitmq-stream://amqp-axrwrazp-gz-public-d.amqp.tencenttdmq.com:5552",
+          "member": "string",
+          "name": "PublicStreamAccessEndpoint",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -18306,6 +18540,16 @@
           "name": "ModifyTs",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基础配额信息",
+          "example": "{\"maxConnectionsPerVHost\":1000}",
+          "member": "RabbitMQVHostBaseQuota",
+          "name": "Quota",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -20176,6 +20420,189 @@
       ],
       "usage": "out"
     },
+    "RocketMQRoleConfig": {
+      "document": "RocketMQ角色配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色名，对应SecretKey",
+          "example": "test_role",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "accessKey",
+          "example": "akTd0eozCSH78BYp1E",
+          "member": "string",
+          "name": "RoleToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "test_ns",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色权限",
+          "example": "[   \"produce\",   \"consume\" ]",
+          "member": "string",
+          "name": "Permissions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "remark info",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）",
+          "example": "Cluster",
+          "member": "string",
+          "name": "PermType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Topic和Group维度权限配置",
+          "example": "无",
+          "member": "DetailedRolePerm",
+          "name": "DetailedRolePerms",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "RocketMQRouterRuleInfo": {
+      "document": "rocketmq router规则基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>源类型。<br>OPEN_SOURCE_ROCKETMQ：开源rocketmq<br>ALI_ROCKETMQ：阿里云rocketmq<br>TENCENT_ROCKETMQ：腾讯云rocketmq<br>TENCENT_MQTT：腾讯云MQTT<br>ALI_MNS：阿里云mns</p>",
+          "example": "TENCENT_MQTT",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标类型。<br>枚举和SourceType字段一样</p>",
+          "example": "TENCENT_MQTT",
+          "member": "string",
+          "name": "TargetType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则备注，创建后任务后可以修改</p>",
+          "example": "test-cluster-copy",
+          "member": "string",
+          "name": "RemarkName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>阿里云rocketmq源信息</p>",
+          "example": "无",
+          "member": "RouterRocketMQSource",
+          "name": "AliRocketMQSource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>阿里云rocketmq目标信息</p>",
+          "example": "无",
+          "member": "RouterRocketMQTarget",
+          "name": "AliRocketMQTarget",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>阿里云mns源信息</p>",
+          "example": "无",
+          "member": "RouterMessageServiceSource",
+          "name": "AliMessageServiceSource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>阿里云mns目标信息</p>",
+          "example": "无",
+          "member": "RouterMessageServiceTarget",
+          "name": "AliMessageServiceTarget",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>腾讯云rocketmq源信息</p>",
+          "example": "无",
+          "member": "RouterTencentRocketMQSource",
+          "name": "TenRocketMQSource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>腾讯云rocketmq目标信息</p>",
+          "example": "无",
+          "member": "RouterTencentRocketMQTarget",
+          "name": "TenRocketMQTarget",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务别名</p>",
+          "example": "mqtt-data-copy",
+          "member": "string",
+          "name": "AliasName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>腾讯云 MQTT 源集群信息</p>",
+          "example": "无",
+          "member": "RouterTencentMQTTSource",
+          "name": "TenMQTTSource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>腾讯云 MQTT 目标集群信息</p>",
+          "example": "无",
+          "member": "RouterTencentMQTTTarget",
+          "name": "TenMQTTTarget",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
     "RocketMQSubscription": {
       "document": "RocketMQ消费组订阅信息",
       "members": [
@@ -20756,7 +21183,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色名称。",
+          "document": "<p>角色名称。</p>",
           "example": "test_role_name",
           "member": "string",
           "name": "RoleName",
@@ -20766,7 +21193,7 @@
         },
         {
           "disabled": false,
-          "document": "角色token值。",
+          "document": "<p>角色token值。</p>",
           "example": "eyJrZXlJZCI6InN1bmdvxxxxx0X3JvbGVfMyJ9.dbHR8m6gc4L4vZUrodhW_O9bDulZQ6lraNswNLtcUcY",
           "member": "string",
           "name": "Token",
@@ -20776,7 +21203,7 @@
         },
         {
           "disabled": false,
-          "document": "备注说明。",
+          "document": "<p>备注说明。</p>",
           "example": "测试账号",
           "member": "string",
           "name": "Remark",
@@ -20786,7 +21213,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2020-09-22 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
@@ -20796,7 +21223,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间。",
+          "document": "<p>更新时间。</p>",
           "example": "2020-09-22 00:00:00",
           "member": "datetime",
           "name": "UpdateTime",
@@ -20806,16 +21233,809 @@
         },
         {
           "disabled": false,
-          "document": "授权类型（Cluster：集群；TopicAndGroup：主题或消费组）",
+          "document": "<p>授权类型（Cluster：集群；TopicAndGroup：主题或消费组）</p>",
           "example": "Cluster",
           "member": "string",
           "name": "PermType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色类型</p><p>枚举值：</p><ul><li>Temporary： 轮转密钥</li><li>Permanent： 永久密钥</li></ul>",
+          "example": "`Temporary`：轮转密钥；`Permanent`：永久密钥",
+          "member": "string",
+          "name": "TokenType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SSM 唯一 ID</p>",
+          "example": "aasdsa",
+          "member": "string",
+          "name": "SecretName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>轮转周期</p><p>单位：天</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "RotateFreq",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "RouterMessageServiceSource": {
+      "document": "rocketmq router mns 源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>access key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "accesskey-text",
+          "member": "string",
+          "name": "AccessKey",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>mns接入点。<br>需要和router内网联通，一般是公网接入点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://endpoint-url",
+          "member": "string",
+          "name": "Endpoint",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>mns queue名字。<br>可以在https://mns.console.aliyun.com/region/cn-shenzhen/queues 看到</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "queue-01",
+          "member": "string",
+          "name": "Queue",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>secret key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "secretkey-text",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动解码mns body。<br>ON：自动解码，复制后的消息内容为解码后的明文。<br>OFF：不用解码，保持Mns消息体原始状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ON",
+          "member": "string",
+          "name": "EnableDecodeBody",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>mns消费并发数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "SourceConsumeConcurrentThreadCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤时间戳，毫秒级时间戳</p>",
+          "example": "1778227792069",
+          "member": "int64",
+          "name": "FilterFromTimestampMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RouterMessageServiceTarget": {
+      "document": "rocketmq router mns 目标信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>access key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "accesskey-text",
+          "member": "string",
+          "name": "AccessKey",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>mns接入点，需要和router内网联通，一般是公网接入点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://endpoint-url",
+          "member": "string",
+          "name": "Endpoint",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>secret key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "secretkey-text",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>mns queue名字。可以在https://mns.console.aliyun.com/region/cn-shenzhen/queues 看到</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "queue-dev",
+          "member": "string",
+          "name": "Queue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否用base64编码发送mns消息。<br> ON：发送base64编码的消息体到mns</p><p>OFF：将原始消息体发送到mns</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ON",
+          "member": "string",
+          "name": "SendWithBase64",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>发送mns的并发数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "TargetProduceConcurrentThreadCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>topic名字。可以在https://mns.console.aliyun.com/region/cn-shenzhen/topics 看到</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "order-topic",
+          "member": "string",
+          "name": "Topic",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RouterRocketMQSource": {
+      "document": "rocketmq router的rocketmq源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>access key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "accesskey-text",
+          "member": "string",
+          "name": "AccessKey",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤表达式, 参考：https://github.com/apache/rocketmq/blob/develop/common/src/main/java/org/apache/rocketmq/common/filter/ExpressionType.java</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
+          "member": "string",
+          "name": "FilterExpression",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤时间，毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1778227792069",
+          "member": "int64",
+          "name": "FilterFromTimestampMs",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤类型，参考：https://github.com/apache/rocketmq/blob/develop/common/src/main/java/org/apache/rocketmq/common/filter/ExpressionType.java</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TAG",
+          "member": "string",
+          "name": "FilterType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组名。会使用该消费者来消费消息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "consume-group-dev",
+          "member": "string",
+          "name": "Group",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>namesrv地址列表，也可以是云厂商提供的接入点信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.12.95.36:9876",
+          "member": "string",
+          "name": "NameServerAddressList",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>secret key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "secretkey-text",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>topic名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic-dev",
+          "member": "string",
+          "name": "Topic",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>4.X的命名空间，没有使用则留空，5.X也留空。<br> naemspace 需要包含MQ_INST那部分. 比如：MQ_INST_rocketmxxx57d53rnn5_tiger_namespace</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者并发数，0 ～ 100</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "SourceConsumeConcurrentThreadCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RouterRocketMQTarget": {
+      "document": "rocketmq router任务的目标信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>access key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "accesskey-text",
+          "member": "string",
+          "name": "AccessKey",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>namesrv地址列表，也可以是云厂商提供的接入点信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.13.26.24:9876",
+          "member": "string",
+          "name": "NameServerAddressList",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>secret key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "secretkey-text",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>topic名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic-dev",
+          "member": "string",
+          "name": "Topic",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>4.X的命名空间，没有使用则留空，5.X也留空。 naemspace 需要包含MQ_INST那部分. 比如：MQ_INST_rocketmqka57d53rnn5_tiger_namespace</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>生产者并发数，可以不用填，可以在规则创建后修改</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "TargetProduceConcurrentThreadCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RouterTencentMQTTSource": {
+      "document": "待复制的 MQTT 源集群信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MQTT 集群ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mqtt-demo123",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>主题名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic_test",
+          "member": "string",
+          "name": "Topic",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "SourceRegion",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "admin",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户密码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-qwe",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者并发数，0 ～ 100</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "SourceConsumeConcurrentThreadCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤时间，毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1778228294045",
+          "member": "int64",
+          "name": "FilterFromTimestampMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>MQTT集群接入点信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mqtt-47a342b2z-qy-internal.mqtt.tencenttdmq.com:1883",
+          "member": "string",
+          "name": "Endpoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RouterTencentMQTTTarget": {
+      "document": "MQTT 目标集群信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MQTT 集群ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mqtt-demo123",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>主题名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic_test",
+          "member": "string",
+          "name": "Topic",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "SourceRegion",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "admin",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户密码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text-password",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者并发数，0 ～ 100</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "TargetProduceConcurrentThreadCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤时间，毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1778228115046",
+          "member": "int64",
+          "name": "FilterFromTimestampMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>MQTT集群接入点信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mqtt-47jsu8b2z-qy-internal.mqtt.tencenttdmq.com:1883",
+          "member": "string",
+          "name": "Endpoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RouterTencentRocketMQSource": {
+      "document": "rocketmq router腾讯云源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤表达式, 参考：https://github.com/apache/rocketmq/blob/develop/common/src/main/java/org/apache/rocketmq/common/filter/ExpressionType.java</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
+          "member": "string",
+          "name": "FilterExpression",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤时间，毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1778227331069",
+          "member": "int64",
+          "name": "FilterFromTimestampMs",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤类型</p><p>枚举值：</p><ul><li>SQL92： 按SQL92表达式过滤</li><li>TAG： 按TAG表达式过滤</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TAG",
+          "member": "string",
+          "name": "FilterType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>topic名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "order-topic",
+          "member": "string",
+          "name": "Topic",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>rocketmq实例id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rocketmq-iweu89234j",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>4.X的命名空间，没有使用则留空，5.X也留空。 naemspace 需要包含MQ_INST那部分. 比如：MQ_INST_rocketmqka57d53rnn5_tiger_namespace</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者并发数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "SourceConsumeConcurrentThreadCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>源地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "SourceRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择TDMQ RocketMQ时，选择一个角色来完成数据同步</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "admin-role1",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择腾讯云版RockeMQ类型后，RoleName对应的AssessKey值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "accesskey-text",
+          "member": "string",
+          "name": "AccessKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择腾讯云版RockeMQ类型后，RoleName对应的SecretKey值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "secretkey-text",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RouterTencentRocketMQTarget": {
+      "document": "rocketmq router腾讯云目标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>topic名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic-order",
+          "member": "string",
+          "name": "Topic",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>rocketmq实例id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rmq-ksud723m",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>4.X的命名空间，没有使用则留空，5.X也留空。 naemspace 需要包含MQ_INST那部分. 比如：MQ_INST_rocket2mq3ka57d53rnn5_tiger_namespace</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者并发数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "TargetProduceConcurrentThreadCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标region</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "TargetRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择TDMQ RocketMQ时，选择一个角色来完成数据同步</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "admin-role",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择腾讯云版RockeMQ类型后，RoleName对应的AssessKey值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "accesskey-text",
+          "member": "string",
+          "name": "AccessKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择腾讯云版RockeMQ类型后，RoleName对应的SecretKey值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "secretkey-text",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SecurityPolicy": {
       "document": "安全策略",
@@ -22403,7 +23623,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "vpc的id",
+          "document": "<p>vpc的id</p>",
           "example": "vpc-xxxx",
           "member": "string",
           "name": "VpcId",
@@ -22414,7 +23634,7 @@
         },
         {
           "disabled": false,
-          "document": "子网id",
+          "document": "<p>子网id</p>",
           "example": "subnet-xxx",
           "member": "string",
           "name": "SubnetId",
@@ -22425,7 +23645,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc接入点信息",
+          "document": "<p>vpc接入点信息</p>",
           "example": "ip:port",
           "member": "string",
           "name": "VpcEndpoint",
@@ -22436,7 +23656,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc接入点状态 OFF/ON/CREATING/DELETING",
+          "document": "<p>vpc接入点状态 OFF/ON/CREATING/DELETING</p>",
           "example": "OFF/ON/CREATING/DELETING",
           "member": "string",
           "name": "VpcDataStreamEndpointStatus",
@@ -22447,7 +23667,7 @@
         },
         {
           "disabled": false,
-          "document": "TLS加密的数据流接入点",
+          "document": "<p>TLS加密的数据流接入点</p>",
           "example": "amqps://amqp-xxx.amqp.tencenttdmq.com:5671",
           "member": "string",
           "name": "VpcTlsEndpoint",
@@ -22458,10 +23678,32 @@
         },
         {
           "disabled": false,
-          "document": "VPC 接入点操作失败的错误信息",
+          "document": "<p>VPC 接入点操作失败的错误信息</p>",
           "example": "Conflict:vpc ip '127.0.0.1' is used",
           "member": "string",
           "name": "VpcErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入点ID</p>",
+          "example": "210940",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>vpc Stream接入点</p>",
+          "example": "rabbitmq-stream://amqp-q4km75j8-cd-3ov618b4-dnbdbnmt-d.amqp.tencenttdmq.com:5552",
+          "member": "string",
+          "name": "VpcStreamEndpoint",
           "output_required": false,
           "required": false,
           "type": "string",

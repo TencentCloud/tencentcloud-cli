@@ -6,103 +6,75 @@ Input:
 
 ```
 tccli tse DescribeGovernanceLaneGroups --cli-unfold-argument  \
-    --InstanceId abc \
-    --Name abc \
-    --GroupID abc \
-    --Offset 0 \
-    --Limit 0
+    --InstanceId ins-f72d4820 \
+    --Offset 1 \
+    --Limit 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Total": 0,
         "LaneGroups": [
             {
-                "Name": "abc",
-                "ID": "abc",
-                "TrafficEntries": [
-                    {
-                        "EntryType": "abc",
-                        "TSEGatewaySelector": {
-                            "GatewayId": "abc",
-                            "Services": [
-                                "abc"
-                            ]
-                        },
-                        "ServiceGatewaySelector": {
-                            "Namespace": "abc",
-                            "Service": "abc",
-                            "Labels": [
-                                {
-                                    "Key": "abc",
-                                    "Value": "abc"
-                                }
-                            ]
-                        },
-                        "ServiceSelector": {
-                            "Namespace": "abc",
-                            "Service": "abc",
-                            "Labels": [
-                                {
-                                    "Key": "abc",
-                                    "Value": "abc"
-                                }
-                            ]
-                        }
-                    }
-                ],
+                "CreateTime": "2026-01-13 18:04:50",
                 "Destinations": [
                     {
-                        "Namespace": "abc",
-                        "Service": "abc",
-                        "Labels": [
-                            {
-                                "LabelKey": "abc",
-                                "LabelValue": "abc",
-                                "LabelType": "abc",
-                                "LabelValueType": "abc"
-                            }
-                        ]
+                        "Namespace": "default",
+                        "Service": "LaneCallerService"
                     }
                 ],
-                "Description": "abc",
+                "ID": "db33e953bfd7467abe34f40f23ca1ada",
+                "ModifyTime": "2026-01-15 11:43:21",
+                "Name": "sct",
+                "Revision": "4d6b31038976413b999b1c3117875b6d",
                 "Rules": [
                     {
-                        "ID": "abc",
-                        "Name": "abc",
-                        "LaneGroup": "abc",
+                        "CreateTime": "2026-01-14 11:23:47",
+                        "Description": "blue",
                         "Enable": true,
+                        "EnableTime": "2026-01-15 11:41:17",
+                        "ID": "15d28168fe894299b50d49b35193867c",
+                        "LaneGroup": "sct",
+                        "LaneLabelValue": "blue",
+                        "LaneMatchMode": "PERMISSIVE",
+                        "ModifyTime": "2026-01-15 11:43:21",
+                        "Name": "blue",
+                        "Priority": 0,
+                        "Revision": "a023fd6b2f1441158699177ad3a86213",
+                        "TrafficGray": {
+                            "Curvature": 0,
+                            "IntervalSecond": 0,
+                            "Mode": "PERCENTAGE",
+                            "Percent": 100
+                        },
                         "TrafficLabels": [
                             {
-                                "Type": "abc",
-                                "Key": "abc",
+                                "Key": "color",
+                                "Type": "HEADER",
                                 "Value": {
-                                    "Type": "abc",
-                                    "Value": "abc",
-                                    "ValueType": "abc"
+                                    "Type": "EXACT",
+                                    "Value": "blue",
+                                    "ValueType": "TEXT"
                                 }
                             }
                         ],
-                        "TrafficMatchMode": "abc",
-                        "LaneMatchMode": "abc",
-                        "Description": "abc",
-                        "LaneLabelValue": "abc",
-                        "CreateTime": "abc",
-                        "EnableTime": "abc",
-                        "ModifyTime": "abc",
-                        "Priority": 0,
-                        "Revision": "abc"
+                        "TrafficMatchMode": "AND"
                     }
                 ],
-                "Revision": "abc",
-                "CreateTime": "abc",
-                "ModifyTime": "abc",
-                "Consistency": "abc"
+                "TrafficEntries": [
+                    {
+                        "EntryType": "polarismesh.cn/gateway/spring-cloud-gateway",
+                        "ServiceGatewaySelector": {
+                            "Namespace": "default",
+                            "Service": "LaneRouterGatewayService"
+                        }
+                    }
+                ]
             }
         ],
-        "RequestId": "abc"
+        "Total": 3,
+        "RequestId": "de77ec4e-e69f-459e-9c07-13b32b207bcc"
     }
 }
 ```

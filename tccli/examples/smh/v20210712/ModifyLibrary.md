@@ -8,8 +8,8 @@ Input:
 tccli smh ModifyLibrary --cli-unfold-argument  \
     --Remark 新备注 \
     --LibraryId smh1jjexrwwoa9ok \
-    --LibraryExtension.EnableFileHistory true \
-    --LibraryExtension.UseRecycleBin true \
+    --LibraryExtension.EnableFileHistory True \
+    --LibraryExtension.UseRecycleBin True \
     --Name 新名字
 ```
 

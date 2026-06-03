@@ -5435,7 +5435,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件发生的房间号。",
+          "document": "<p>事件发生的房间号。</p>",
           "example": "3461739",
           "member": "uint64",
           "name": "RoomId",
@@ -5445,7 +5445,7 @@
         },
         {
           "disabled": false,
-          "document": "事件发生的用户。",
+          "document": "<p>事件发生的用户。</p>",
           "example": "user_123",
           "member": "string",
           "name": "UserId",
@@ -5455,7 +5455,7 @@
         },
         {
           "disabled": false,
-          "document": "用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.",
+          "document": "<p>用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.</p>",
           "example": "5",
           "member": "uint64",
           "name": "Device",
@@ -5465,7 +5465,7 @@
         },
         {
           "disabled": false,
-          "document": "录制时长。单位：秒",
+          "document": "<p>录制时长。单位：秒</p>",
           "example": "5",
           "member": "uint64",
           "name": "Duration",
@@ -5475,7 +5475,7 @@
         },
         {
           "disabled": false,
-          "document": "录制文件大小",
+          "document": "<p>录制文件大小</p>",
           "example": "12334",
           "member": "uint64",
           "name": "RecordSize",
@@ -5485,7 +5485,7 @@
         },
         {
           "disabled": false,
-          "document": "录制url",
+          "document": "<p>录制url</p>",
           "example": "https://url/f0.mp4",
           "member": "string",
           "name": "RecordUrl",
@@ -5495,10 +5495,20 @@
         },
         {
           "disabled": false,
-          "document": "MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）",
+          "document": "<p>MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）</p>",
           "example": "4",
           "member": "uint64",
           "name": "Reason",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色</p><p>枚举值：</p><ul><li>0： 学生</li><li>1： 老师</li><li>2： 助教</li><li>3： 巡课/督导</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Role",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -8399,7 +8409,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自定义内容。",
+          "document": "<p>自定义内容。</p>",
           "example": "无",
           "member": "AppCustomContent",
           "name": "CustomContent",
@@ -8408,7 +8418,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID。",
+          "document": "<p>应用ID。</p>",
           "example": "1234657",
           "member": "uint64",
           "name": "SdkAppId",

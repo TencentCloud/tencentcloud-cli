@@ -25,7 +25,7 @@ Output:
             "ModifyTime": "2025-09-03 00:11:03",
             "ModifyUser": "100028579606",
             "Name": "mysql_2",
-            "ProdConProperties": "{\"newType\":1,\"connectType\":\"public\",\"ip\":\"1.1.1.1\",\"type\":\"MYSQL\",\"authorityType\":\"true\",\"deployType\":\"CONNSTR_CVMDB\",\"url\":\"jdbc:mysql://1.1.1.1:1111/database\",\"password\":\"********\",\"vpcTenantId\":\"1315051789\",\"port\":\"1111\",\"regionAbbr\":\"gz\",\"vpcId\":\"vpc-ds5rpnxh\",\"passwordEncrypt\":\"e3e5315db835fc7f7c70896fa3553d81\",\"region\":\"ap-guangzhou\",\"db\":\"database\",\"username\":\"aaaa\"}",
+            "ProdConProperties": "{\"newType\":1,\"connectType\":\"public\",\"ip\":\"1.1.1.1\",\"type\":\"MYSQL\",\"authorityType\":\"true\",\"deployType\":\"CONNSTR_CVMDB\",\"url\":\"jdbc:mysql://1.1.1.1:1111/database\",\"password\":\"********\",\"vpcTenantId\":\"1315051789\",\"port\":\"1111\",\"regionAbbr\":\"gz\",\"vpcId\":\"vpc-ds5rpnxh\",\"passwordEncrypt\":\"********************************\",\"regi**\":\"ap-guangzhou\",\"db\":\"database\",\"username\":\"aaaa\"}",
             "ProjectId": "1460947878944567296",
             "ProjectName": "[us_dev]",
             "Type": "MYSQL"

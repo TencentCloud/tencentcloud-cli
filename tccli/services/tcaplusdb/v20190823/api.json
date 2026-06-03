@@ -1442,8 +1442,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群数据描述语言类型，如：`PROTO`，`TDR`或`MIX`",
-          "example": "TDR",
+          "document": "<p>集群数据描述语言类型，统一填<code>MIX</code></p><p>枚举值：</p><ul><li>MIX： 同时支持<code>PROTO</code>，<code>TDR</code>表</li></ul>",
+          "example": "MIX",
           "member": "string",
           "name": "IdlType",
           "required": true,
@@ -1451,7 +1451,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称，可使用中文或英文字符，最大长度32个字符",
+          "document": "<p>集群名称，可使用中文或英文字符，最大长度32个字符</p>",
           "example": "gz测试TDR",
           "member": "string",
           "name": "ClusterName",
@@ -1460,7 +1460,7 @@
         },
         {
           "disabled": false,
-          "document": "集群所绑定的私有网络实例ID，形如：vpc-f49l6u0z",
+          "document": "<p>集群所绑定的私有网络实例ID，形如：vpc-f49l6u0z</p>",
           "example": "vpc-kppg4pm1",
           "member": "string",
           "name": "VpcId",
@@ -1469,7 +1469,7 @@
         },
         {
           "disabled": false,
-          "document": "集群所绑定的子网实例ID，形如：subnet-pxir56ns",
+          "document": "<p>集群所绑定的子网实例ID，形如：subnet-pxir56ns</p>",
           "example": "subnet-3sww53pa",
           "member": "string",
           "name": "SubnetId",
@@ -1478,7 +1478,7 @@
         },
         {
           "disabled": false,
-          "document": "集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母",
+          "document": "<p>集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母</p>",
           "example": "84ea4cbf06573ED",
           "member": "string",
           "name": "Password",
@@ -1487,7 +1487,7 @@
         },
         {
           "disabled": false,
-          "document": "集群标签列表",
+          "document": "<p>集群标签列表</p>",
           "example": "无",
           "member": "TagInfoUnit",
           "name": "ResourceTags",
@@ -1496,7 +1496,7 @@
         },
         {
           "disabled": false,
-          "document": "集群是否开启IPv6功能",
+          "document": "<p>集群是否开启IPv6功能</p>",
           "example": "0",
           "member": "int64",
           "name": "Ipv6Enable",
@@ -1505,7 +1505,7 @@
         },
         {
           "disabled": false,
-          "document": "独占集群占用的svr机器",
+          "document": "<p>独占集群占用的svr机器</p>",
           "example": "无",
           "member": "MachineInfo",
           "name": "ServerList",
@@ -1514,7 +1514,7 @@
         },
         {
           "disabled": false,
-          "document": "独占集群占用的proxy机器",
+          "document": "<p>独占集群占用的proxy机器</p>",
           "example": "无",
           "member": "MachineInfo",
           "name": "ProxyList",
@@ -1523,7 +1523,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型1共享2独占",
+          "document": "<p>集群类型1共享2独占</p>",
           "example": "1",
           "member": "int64",
           "name": "ClusterType",
@@ -1532,7 +1532,7 @@
         },
         {
           "disabled": false,
-          "document": "密码认证类型，0 静态认证， 1 签名认证",
+          "document": "<p>密码认证类型，0 静态认证， 1 签名认证</p>",
           "example": "1",
           "member": "int64",
           "name": "AuthType",
@@ -1547,7 +1547,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "6179109757",
           "member": "string",
           "name": "ClusterId",

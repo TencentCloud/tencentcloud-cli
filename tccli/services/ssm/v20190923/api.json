@@ -181,7 +181,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。",
+          "document": "<p>凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。</p>",
           "example": "test2-db-secret",
           "member": "string",
           "name": "SecretName",
@@ -190,7 +190,7 @@
         },
         {
           "disabled": false,
-          "document": "用户账号名前缀，由用户自行指定，长度限定在8个字符以内，\n可选字符集包括：\n数字字符：[0, 9]，\n小写字符：[a, z]，\n大写字符：[A, Z]，\n特殊字符(全英文符号)：下划线(_)，\n前缀必须以大写或小写字母开头。",
+          "document": "<p>用户账号名前缀，由用户自行指定，长度限定在8个字符以内，<br>可选字符集包括：<br>数字字符：[0, 9]，<br>小写字符：[a, z]，<br>大写字符：[A, Z]，<br>特殊字符(全英文符号)：下划线(_)，<br>前缀必须以大写或小写字母开头。</p>",
           "example": "test_prefix",
           "member": "string",
           "name": "UserNamePrefix",
@@ -199,7 +199,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据所绑定的云产品名称，如Mysql，可以通过DescribeSupportedProducts接口获取所支持的云产品名称。",
+          "document": "<p>凭据所绑定的云产品名称，如Mysql，可以通过DescribeSupportedProducts接口获取所支持的云产品名称。</p>",
           "example": "Mysql",
           "member": "string",
           "name": "ProductName",
@@ -208,7 +208,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品实例ID。",
+          "document": "<p>云产品实例ID。</p>",
           "example": "cdb-n4j3y33j",
           "member": "string",
           "name": "InstanceID",
@@ -217,7 +217,7 @@
         },
         {
           "disabled": false,
-          "document": "账号的域名，IP形式，支持填入%。",
+          "document": "<p>账号的域名，IP形式，支持填入%。</p>",
           "example": "[\"%\",\"192.168.0.%\"]",
           "member": "string",
           "name": "Domains",
@@ -226,7 +226,7 @@
         },
         {
           "disabled": false,
-          "document": "将凭据与云产品实例绑定时，需要授予的权限列表。",
+          "document": "<p>将凭据与云产品实例绑定时，需要授予的权限列表。</p>",
           "example": "无",
           "member": "ProductPrivilegeUnit",
           "name": "PrivilegesList",
@@ -235,7 +235,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息，用于详细描述用途等，最大支持2048字节。",
+          "document": "<p>描述信息，用于详细描述用途等，最大支持2048字节。</p>",
           "example": "测试数据库凭据创建",
           "member": "string",
           "name": "Description",
@@ -244,7 +244,7 @@
         },
         {
           "disabled": false,
-          "document": "指定对凭据进行加密的KMS CMK。\n如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。\n您也可以指定在同region 下自行创建的KMS CMK进行加密。",
+          "document": "<p>指定对凭据进行加密的KMS CMK。<br>如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。<br>您也可以指定在同region 下自行创建的KMS CMK进行加密。</p>",
           "example": "6abd1fdb-86d4-11ef-b72d-52540089bc41",
           "member": "string",
           "name": "KmsKeyId",
@@ -253,7 +253,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表。",
+          "document": "<p>标签列表。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -262,7 +262,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义的开始轮转时间，格式：2006-01-02 15:04:05。\n当EnableRotation为True时，此参数必填。",
+          "document": "<p>用户自定义的开始轮转时间，格式：2006-01-02 15:04:05。<br>当EnableRotation为True时，此参数必填。</p>",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "RotationBeginTime",
@@ -271,7 +271,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启轮转\nTrue -- 开启\nFalse -- 不开启\n如果不指定，默认为False。",
+          "document": "<p>是否开启轮转<br>True -- 开启<br>False -- 不开启<br>如果不指定，默认为False。</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableRotation",
@@ -280,7 +280,7 @@
         },
         {
           "disabled": false,
-          "document": "轮转周期，以天为单位，默认为1天。",
+          "document": "<p>轮转周期，以天为单位，默认为1天。</p>",
           "example": "1",
           "member": "int64",
           "name": "RotationFrequency",
@@ -289,7 +289,7 @@
         },
         {
           "disabled": false,
-          "document": "KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。",
+          "document": "<p>KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。</p>",
           "example": "cls-hsm-wiwmm3np",
           "member": "string",
           "name": "KmsHsmClusterId",
@@ -298,12 +298,30 @@
         },
         {
           "disabled": false,
-          "document": "账户备注",
+          "document": "<p>账户备注</p>",
           "example": "托管账户",
           "member": "string",
           "name": "AccountRemark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库账号类型，目前仅在创建sqlserver凭据场景会使用到，仅支持L3</p><p>枚举值：</p><ul><li>L3： 普通权限账号</li></ul>",
+          "example": "L3",
+          "member": "string",
+          "name": "AccountType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥</li><li>1： 软件密钥</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "EncryptType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -313,7 +331,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建的凭据名称。",
+          "document": "<p>创建的凭据名称。</p>",
           "example": "test2-db-secret",
           "member": "string",
           "name": "SecretName",
@@ -323,7 +341,7 @@
         },
         {
           "disabled": false,
-          "document": "标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误。",
+          "document": "<p>标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误。</p>",
           "example": "0",
           "member": "uint64",
           "name": "TagCode",
@@ -333,7 +351,7 @@
         },
         {
           "disabled": false,
-          "document": "标签操作的返回信息。",
+          "document": "<p>标签操作的返回信息。</p>",
           "example": "no tags to save",
           "member": "string",
           "name": "TagMsg",
@@ -343,7 +361,7 @@
         },
         {
           "disabled": false,
-          "document": "创建云产品凭据异步任务ID号。",
+          "document": "<p>创建云产品凭据异步任务ID号。</p>",
           "example": "43414",
           "member": "int64",
           "name": "FlowID",
@@ -365,7 +383,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。",
+          "document": "<p>凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。</p>",
           "example": "test2-sshkey-secret",
           "member": "string",
           "name": "SecretName",
@@ -374,7 +392,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥对创建后所属的项目ID。",
+          "document": "<p>密钥对创建后所属的项目ID。</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -383,7 +401,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息，用于详细描述用途等，最大支持2048字节。",
+          "document": "<p>描述信息，用于详细描述用途等，最大支持2048字节。</p>",
           "example": "描述信息",
           "member": "string",
           "name": "Description",
@@ -392,7 +410,7 @@
         },
         {
           "disabled": false,
-          "document": "指定对凭据进行加密的KMS CMK。\n如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。\n您也可以指定在同region 下自行创建的KMS CMK进行加密。",
+          "document": "<p>指定对凭据进行加密的KMS CMK。<br>如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。<br>您也可以指定在同region 下自行创建的KMS CMK进行加密。</p>",
           "example": "6abd1fdb-86d4-11ef-b72d-52540089bc41",
           "member": "string",
           "name": "KmsKeyId",
@@ -401,8 +419,8 @@
         },
         {
           "disabled": false,
-          "document": "标签列表。",
-          "example": "[{\"TagKey\":\"env\",\"TagValue\":\"dev\"}]",
+          "document": "<p>标签列表。</p>",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -410,7 +428,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义输入的SSH密钥对的名称，可由数字，字母和下划线组成，只能以数字和字母开头，长度不超过25个字符。",
+          "document": "<p>用户自定义输入的SSH密钥对的名称，可由数字，字母和下划线组成，只能以数字和字母开头，长度不超过25个字符。</p>",
           "example": "test2_key",
           "member": "string",
           "name": "SSHKeyName",
@@ -419,12 +437,21 @@
         },
         {
           "disabled": false,
-          "document": "KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。",
+          "document": "<p>KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。</p>",
           "example": "cls-hsm-wiwmm3np",
           "member": "string",
           "name": "KmsHsmClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥</li><li>1： 软件密钥</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "EncryptType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -434,7 +461,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建的凭据名称。",
+          "document": "<p>创建的凭据名称。</p>",
           "example": "test2-sshkey-secret",
           "member": "string",
           "name": "SecretName",
@@ -444,7 +471,7 @@
         },
         {
           "disabled": false,
-          "document": "创建的SSH密钥ID。",
+          "document": "<p>创建的SSH密钥ID。</p>",
           "example": "skey-e0vbh2ts",
           "member": "string",
           "name": "SSHKeyID",
@@ -454,7 +481,7 @@
         },
         {
           "disabled": false,
-          "document": "创建的SSH密钥名称。",
+          "document": "<p>创建的SSH密钥名称。</p>",
           "example": "test2_key",
           "member": "string",
           "name": "SSHKeyName",
@@ -464,7 +491,7 @@
         },
         {
           "disabled": false,
-          "document": "标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误",
+          "document": "<p>标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误</p>",
           "example": "0",
           "member": "uint64",
           "name": "TagCode",
@@ -474,7 +501,7 @@
         },
         {
           "disabled": false,
-          "document": "标签操作的返回信息。",
+          "document": "<p>标签操作的返回信息。</p>",
           "example": "ok",
           "member": "string",
           "name": "TagMsg",
@@ -496,7 +523,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。一旦创建不可修改。",
+          "document": "<p>凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。一旦创建不可修改。</p>",
           "example": "test_secret",
           "member": "string",
           "name": "SecretName",
@@ -505,7 +532,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。",
+          "document": "<p>凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。</p>",
           "example": "v1.0",
           "member": "string",
           "name": "VersionId",
@@ -514,7 +541,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息，用于详细描述用途等，最大支持2048字节。",
+          "document": "<p>描述信息，用于详细描述用途等，最大支持2048字节。</p>",
           "example": "test create secret",
           "member": "string",
           "name": "Description",
@@ -523,7 +550,7 @@
         },
         {
           "disabled": false,
-          "document": "指定对凭据进行加密的KMS CMK。如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。您也可以指定在同region 下自行创建的KMS CMK进行加密。",
+          "document": "<p>指定对凭据进行加密的KMS CMK。如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。您也可以指定在同region 下自行创建的KMS CMK进行加密。</p>",
           "example": "6abd1fdb-86d4-11ef-b72d-52540089bc41",
           "member": "string",
           "name": "KmsKeyId",
@@ -532,7 +559,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据类型，默认为0自定义凭据。",
+          "document": "<p>凭据类型，默认为0自定义凭据。</p>",
           "example": "0",
           "member": "uint64",
           "name": "SecretType",
@@ -541,7 +568,7 @@
         },
         {
           "disabled": false,
-          "document": "二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。",
+          "document": "<p>二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。</p>",
           "example": "5Yet5o2udmFsdWUyCg==",
           "member": "string",
           "name": "SecretBinary",
@@ -550,7 +577,7 @@
         },
         {
           "disabled": false,
-          "document": "文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。",
+          "document": "<p>文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。</p>",
           "example": "lzc-env",
           "member": "string",
           "name": "SecretString",
@@ -559,7 +586,7 @@
         },
         {
           "disabled": false,
-          "document": "JSON 格式字符串，用于指定特定凭据类型的额外配置。",
+          "document": "<p>JSON 格式字符串，用于指定特定凭据类型的额外配置。</p>",
           "example": "key1",
           "member": "string",
           "name": "AdditionalConfig",
@@ -568,8 +595,8 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
-          "example": "[{\"TagKey\":\"env\",\"TagValue\":\"dev\"}]",
+          "document": "<p>标签列表</p>",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -577,12 +604,21 @@
         },
         {
           "disabled": false,
-          "document": "KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。",
+          "document": "<p>KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。</p>",
           "example": "cls-hsm-wiwmm3np",
           "member": "string",
           "name": "KmsHsmClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "EncryptType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -592,7 +628,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新创建的凭据名称。",
+          "document": "<p>新创建的凭据名称。</p>",
           "example": "test2_secret",
           "member": "string",
           "name": "SecretName",
@@ -602,7 +638,7 @@
         },
         {
           "disabled": false,
-          "document": "新创建的凭据版本。",
+          "document": "<p>新创建的凭据版本。</p>",
           "example": "v2.0",
           "member": "string",
           "name": "VersionId",
@@ -612,7 +648,7 @@
         },
         {
           "disabled": false,
-          "document": "标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误",
+          "document": "<p>标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误</p>",
           "example": "0",
           "member": "uint64",
           "name": "TagCode",
@@ -622,7 +658,7 @@
         },
         {
           "disabled": false,
-          "document": "标签操作的返回信息",
+          "document": "<p>标签操作的返回信息</p>",
           "example": "ok",
           "member": "string",
           "name": "TagMsg",
@@ -926,7 +962,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定需要获取凭据详细信息的凭据名称。",
+          "document": "<p>指定需要获取凭据详细信息的凭据名称。</p>",
           "example": "lzctest",
           "member": "string",
           "name": "SecretName",
@@ -941,7 +977,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "凭据名称。",
+          "document": "<p>凭据名称。</p>",
           "example": "lzctest",
           "member": "string",
           "name": "SecretName",
@@ -951,7 +987,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据描述信息。",
+          "document": "<p>凭据描述信息。</p>",
           "example": "description",
           "member": "string",
           "name": "Description",
@@ -961,7 +997,7 @@
         },
         {
           "disabled": false,
-          "document": "用于加密的KMS CMK ID。",
+          "document": "<p>用于加密的KMS CMK ID。</p>",
           "example": "13437ab9-e002-11e9-9936-5254006d0810",
           "member": "string",
           "name": "KmsKeyId",
@@ -971,7 +1007,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者UIN。",
+          "document": "<p>创建者UIN。</p>",
           "example": "3350000000",
           "member": "uint64",
           "name": "CreateUin",
@@ -981,7 +1017,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据状态：Enabled、Disabled、PendingDelete, Creating, Failed。",
+          "document": "<p>凭据状态：Enabled、Disabled、PendingDelete, Creating, Failed。</p>",
           "example": "Disabled",
           "member": "string",
           "name": "Status",
@@ -991,7 +1027,7 @@
         },
         {
           "disabled": false,
-          "document": "删除日期，uinx 时间戳，非计划删除状态的凭据为0。",
+          "document": "<p>删除日期，uinx 时间戳，非计划删除状态的凭据为0。</p>",
           "example": "1",
           "member": "uint64",
           "name": "DeleteTime",
@@ -1001,7 +1037,7 @@
         },
         {
           "disabled": false,
-          "document": "创建日期。",
+          "document": "<p>创建日期。</p>",
           "example": "1574160561",
           "member": "uint64",
           "name": "CreateTime",
@@ -1011,7 +1047,7 @@
         },
         {
           "disabled": false,
-          "document": "0 --  用户自定义凭据类型；1 -- 数据库凭据类型；2 -- SSH密钥对凭据类型；3 -- 云API密钥（AKSK）凭据类型（使用此功能需要联系云助手单独开启白名单）；4 -- Redis类型凭据。",
+          "document": "<p>0 --  用户自定义凭据类型；1 -- 数据库凭据类型；2 -- SSH密钥对凭据类型；3 -- 云API密钥（AKSK）凭据类型（使用此功能需要联系云助手单独开启白名单）；4 -- Redis类型凭据。</p>",
           "example": "1",
           "member": "int64",
           "name": "SecretType",
@@ -1021,7 +1057,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品名称。",
+          "document": "<p>云产品名称。</p>",
           "example": "Mysql",
           "member": "string",
           "name": "ProductName",
@@ -1031,7 +1067,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品实例ID。",
+          "document": "<p>云产品实例ID。</p>",
           "example": "cdb-n4j3y33j",
           "member": "string",
           "name": "ResourceID",
@@ -1041,8 +1077,8 @@
         },
         {
           "disabled": false,
-          "document": "是否开启轮转：True -- 开启轮转；False -- 关闭轮转。",
-          "example": "True",
+          "document": "<p>是否开启轮转：True -- 开启轮转；False -- 关闭轮转。</p>",
+          "example": "true",
           "member": "bool",
           "name": "RotationStatus",
           "output_required": true,
@@ -1051,7 +1087,7 @@
         },
         {
           "disabled": false,
-          "document": "轮转周期，默认以天为单位。",
+          "document": "<p>轮转周期，默认以天为单位。</p>",
           "example": "1",
           "member": "int64",
           "name": "RotationFrequency",
@@ -1061,7 +1097,7 @@
         },
         {
           "disabled": false,
-          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。",
+          "document": "<p>当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。</p>",
           "example": "resource_name",
           "member": "string",
           "name": "ResourceName",
@@ -1071,7 +1107,7 @@
         },
         {
           "disabled": false,
-          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。",
+          "document": "<p>当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectID",
@@ -1081,7 +1117,7 @@
         },
         {
           "disabled": false,
-          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。",
+          "document": "<p>当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。</p>",
           "example": "[\"cvm-test\"]",
           "member": "string",
           "name": "AssociatedInstanceIDs",
@@ -1091,7 +1127,7 @@
         },
         {
           "disabled": false,
-          "document": "当凭据类型为云API密钥对凭据时，此字段有效，用于表示此云API密钥对所属的用户UIN。",
+          "document": "<p>当凭据类型为云API密钥对凭据时，此字段有效，用于表示此云API密钥对所属的用户UIN。</p>",
           "example": "700001224420",
           "member": "uint64",
           "name": "TargetUin",
@@ -1101,12 +1137,32 @@
         },
         {
           "disabled": false,
-          "document": "凭据额外配置",
+          "document": "<p>凭据额外配置</p>",
           "example": "{\"key1\":\"value1\"}",
           "member": "string",
           "name": "AdditionalConfig",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "EncryptType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据更新状态</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EncryptSwitching",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -1597,7 +1653,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询列表的起始位置，以0开始，不设置默认为0。",
+          "document": "<p>查询列表的起始位置，以0开始，不设置默认为0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1606,7 +1662,7 @@
         },
         {
           "disabled": false,
-          "document": "单次查询返回的最大数量，0或不设置则使用默认值 20。",
+          "document": "<p>单次查询返回的最大数量，0或不设置则使用默认值 20。</p>",
           "example": "2",
           "member": "uint64",
           "name": "Limit",
@@ -1615,7 +1671,7 @@
         },
         {
           "disabled": false,
-          "document": "根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。",
+          "document": "<p>根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。</p>",
           "example": "1",
           "member": "uint64",
           "name": "OrderType",
@@ -1624,7 +1680,7 @@
         },
         {
           "disabled": false,
-          "document": "根据凭据状态进行过滤。\n默认为0表示查询全部。\n1 --  表示查询Enabled 凭据列表。\n2 --  表示查询Disabled 凭据列表。\n3 --  表示查询PendingDelete 凭据列表。\n4 --  表示PendingCreate。\n5 --  表示CreateFailed。\n其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效",
+          "document": "<p>根据凭据状态进行过滤。<br>默认为0表示查询全部。<br>1 --  表示查询Enabled 凭据列表。<br>2 --  表示查询Disabled 凭据列表。<br>3 --  表示查询PendingDelete 凭据列表。<br>4 --  表示PendingCreate。<br>5 --  表示CreateFailed。<br>其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效</p>",
           "example": "1",
           "member": "uint64",
           "name": "State",
@@ -1633,7 +1689,7 @@
         },
         {
           "disabled": false,
-          "document": "根据凭据名称进行过滤，为空表示不过滤。",
+          "document": "<p>根据凭据名称进行过滤，为空表示不过滤。</p>",
           "example": "testName",
           "member": "string",
           "name": "SearchSecretName",
@@ -1642,8 +1698,8 @@
         },
         {
           "disabled": false,
-          "document": "标签过滤条件。",
-          "example": "[{\"TagKey\":\"env\",\"TagValue\":[\"dev\"]}]",
+          "document": "<p>标签过滤条件。</p>",
+          "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
@@ -1651,7 +1707,7 @@
         },
         {
           "disabled": false,
-          "document": "0  -- 表示用户自定义凭据，默认为0。\n1  -- 表示用户云产品凭据。\n2 -- 表示SSH密钥对凭据。\n3 -- 表示云API密钥对凭据。",
+          "document": "<p>0  -- 表示用户自定义凭据，默认为0。<br>1  -- 表示用户云产品凭据。<br>2 -- 表示SSH密钥对凭据。<br>3 -- 表示云API密钥对凭据。</p>",
           "example": "1",
           "member": "uint64",
           "name": "SecretType",
@@ -1660,12 +1716,21 @@
         },
         {
           "disabled": false,
-          "document": "此参数仅在SecretType参数值为1时生效，\n当SecretType值为1时：\n如果ProductName值为空，则表示查询所有类型的云产品凭据；\n如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；\n如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；\n支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。",
+          "document": "<p>此参数仅在SecretType参数值为1时生效，<br>当SecretType值为1时：<br>如果ProductName值为空，则表示查询所有类型的云产品凭据；<br>如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；<br>如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；<br>支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。</p>",
           "example": "Mysql",
           "member": "string",
           "name": "ProductName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "EncryptType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1675,7 +1740,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "根据State和SearchSecretName 筛选的凭据总数。",
+          "document": "<p>根据State和SearchSecretName 筛选的凭据总数。</p>",
           "example": "8",
           "member": "uint64",
           "name": "TotalCount",
@@ -1685,8 +1750,8 @@
         },
         {
           "disabled": false,
-          "document": "返回凭据信息列表。",
-          "example": "[       {         \"AssociatedInstanceIDs\": null,         \"CreateTime\": 1724816350,         \"CreateUin\": 700001028674,         \"DeleteTime\": 0,         \"Description\": \"Weijiali_test_80008\",         \"KmsKeyId\": \"9e46705b-8a1f-11ec-b941-5254008ad78d\",         \"KmsKeyType\": \"DEFAULT\",         \"NextRotationTime\": 1732796420,         \"ProductName\": \"Mysql\",         \"ProjectID\": 0,         \"ResourceID\": \"cdb-mrhoqymb\",         \"ResourceName\": \"\",         \"RotationBeginTime\": \"2024-08-30 20:20:20\",         \"RotationFrequency\": 30,         \"RotationStatus\": 1,         \"SecretName\": \"weijiali_test_00009\",         \"SecretType\": 1,         \"Status\": \"Enabled\",         \"TargetUin\": 0       },       {         \"AssociatedInstanceIDs\": null,         \"CreateTime\": 1728713584,         \"CreateUin\": 700001028674,         \"DeleteTime\": 0,         \"Description\": \"yajiada_test_01\",         \"KmsKeyId\": \"9e46705b-8a1f-11ec-b941-5254008ad78d\",         \"KmsKeyType\": \"DEFAULT\",         \"NextRotationTime\": 1731305122,         \"ProductName\": \"Mysql\",         \"ProjectID\": 0,         \"ResourceID\": \"cdb-j6amb083\",         \"ResourceName\": \"\",         \"RotationBeginTime\": \"2024-10-12 14:05:22\",         \"RotationFrequency\": 30,         \"RotationStatus\": 1,         \"SecretName\": \"yajiada_test_01\",         \"SecretType\": 1,         \"Status\": \"Enabled\",         \"TargetUin\": 0       }     ]",
+          "document": "<p>返回凭据信息列表。</p>",
+          "example": "无",
           "member": "SecretMetadata",
           "name": "SecretMetadatas",
           "output_required": true,
@@ -1969,7 +2034,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "凭据名称",
+          "document": "<p>凭据名称</p>",
           "example": "testName",
           "member": "string",
           "name": "SecretName",
@@ -1979,7 +2044,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据的描述信息",
+          "document": "<p>凭据的描述信息</p>",
           "example": "The  description of Secret",
           "member": "string",
           "name": "Description",
@@ -1989,7 +2054,7 @@
         },
         {
           "disabled": false,
-          "document": "用于加密凭据的KMS KeyId",
+          "document": "<p>用于加密凭据的KMS KeyId</p>",
           "example": "6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
           "name": "KmsKeyId",
@@ -1999,7 +2064,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者UIN",
+          "document": "<p>创建者UIN</p>",
           "example": "12345111",
           "member": "uint64",
           "name": "CreateUin",
@@ -2009,7 +2074,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据状态：Enabled、Disabled、PendingDelete、Creating、Failed",
+          "document": "<p>凭据状态：Enabled、Disabled、PendingDelete、Creating、Failed</p>",
           "example": "Initializing",
           "member": "string",
           "name": "Status",
@@ -2019,7 +2084,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据删除日期，对于status为PendingDelete 的有效，unix时间戳",
+          "document": "<p>凭据删除日期，对于status为PendingDelete 的有效，unix时间戳</p>",
           "example": "1574160561",
           "member": "uint64",
           "name": "DeleteTime",
@@ -2029,7 +2094,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据创建时间，unix时间戳",
+          "document": "<p>凭据创建时间，unix时间戳</p>",
           "example": "1574160561",
           "member": "uint64",
           "name": "CreateTime",
@@ -2039,7 +2104,7 @@
         },
         {
           "disabled": false,
-          "document": "用于加密凭据的KMS CMK类型，DEFAULT 表示SecretsManager 创建的默认密钥， CUSTOMER 表示用户指定的密钥",
+          "document": "<p>用于加密凭据的KMS CMK类型，DEFAULT 表示SecretsManager 创建的默认密钥， CUSTOMER 表示用户指定的密钥</p>",
           "example": "DEFAULT",
           "member": "string",
           "name": "KmsKeyType",
@@ -2049,8 +2114,8 @@
         },
         {
           "disabled": false,
-          "document": "1:--开启轮转；0--禁止轮转",
-          "example": "Enabled",
+          "document": "<p>1:--开启轮转；0--禁止轮转</p>",
+          "example": "1",
           "member": "int64",
           "name": "RotationStatus",
           "output_required": true,
@@ -2059,7 +2124,7 @@
         },
         {
           "disabled": false,
-          "document": "下一次轮转开始时间，uinx 时间戳",
+          "document": "<p>下一次轮转开始时间，uinx 时间戳</p>",
           "example": "1574160561",
           "member": "uint64",
           "name": "NextRotationTime",
@@ -2069,8 +2134,8 @@
         },
         {
           "disabled": false,
-          "document": "0 -- 用户自定义凭据；\n1 -- 云产品凭据；\n2 -- SSH密钥对凭据；\n3 -- 云API密钥对凭据；\n4 -- Redis类型凭据；",
-          "example": "CloudProduct",
+          "document": "<p>0 -- 用户自定义凭据；<br>1 -- 云产品凭据；<br>2 -- SSH密钥对凭据；<br>3 -- 云API密钥对凭据；<br>4 -- Redis类型凭据；</p>",
+          "example": "1",
           "member": "int64",
           "name": "SecretType",
           "output_required": true,
@@ -2079,7 +2144,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品名称，仅在SecretType为1，即凭据类型为云产品凭据时生效",
+          "document": "<p>云产品名称，仅在SecretType为1，即凭据类型为云产品凭据时生效</p>",
           "example": "MYSQL",
           "member": "string",
           "name": "ProductName",
@@ -2089,7 +2154,7 @@
         },
         {
           "disabled": false,
-          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。",
+          "document": "<p>当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。</p>",
           "example": "ResourceName",
           "member": "string",
           "name": "ResourceName",
@@ -2099,7 +2164,7 @@
         },
         {
           "disabled": false,
-          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。",
+          "document": "<p>当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectID",
@@ -2109,7 +2174,7 @@
         },
         {
           "disabled": false,
-          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。",
+          "document": "<p>当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。</p>",
           "example": "[\"cmv-test\"]",
           "member": "string",
           "name": "AssociatedInstanceIDs",
@@ -2119,7 +2184,7 @@
         },
         {
           "disabled": false,
-          "document": "当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。",
+          "document": "<p>当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。</p>",
           "example": "12345111",
           "member": "uint64",
           "name": "TargetUin",
@@ -2129,7 +2194,7 @@
         },
         {
           "disabled": false,
-          "document": "轮转的频率，以天作为单位，在轮转开启状态下生效。",
+          "document": "<p>轮转的频率，以天作为单位，在轮转开启状态下生效。</p>",
           "example": "7",
           "member": "int64",
           "name": "RotationFrequency",
@@ -2139,7 +2204,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品凭据对应的云产品实例 ID 号。",
+          "document": "<p>云产品凭据对应的云产品实例 ID 号。</p>",
           "example": "skey-a1b2c3d4",
           "member": "string",
           "name": "ResourceID",
@@ -2149,12 +2214,32 @@
         },
         {
           "disabled": false,
-          "document": "用户指定的轮转开始时间。",
+          "document": "<p>用户指定的轮转开始时间。</p>",
           "example": "2022-12-28 15:07:11",
           "member": "string",
           "name": "RotationBeginTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "EncryptType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据密钥加密切换中</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EncryptSwitching",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

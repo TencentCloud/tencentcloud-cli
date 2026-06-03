@@ -368,6 +368,14 @@
         "title": "查询用户组详情"
       }
     ],
+    "GetPasswordRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPasswordRules\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"UpdateTime\": \"2020-01-29 15:18:37\",\n        \"Modifier\": \"20548499\",\n        \"Rules\": {\n            \"MinimumLength\": 9,\n            \"MustContain\": \"A\",\n            \"ForcePasswordChange\": 1,\n            \"ReusePasswordLimit\": 2,\n            \"RetryPasswordLimit\": 0\n        },\n        \"RequestId\": \"044c0502-6975-44c2-8342-8160eb666ab0\"\n    }\n}",
+        "title": "查看密码规则"
+      }
+    ],
     "GetPolicy": [
       {
         "document": "查看策略详情",
@@ -682,6 +690,14 @@
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOIDCConfig\n<公共请求参数>\n\n{\n    \"IdentityKey\": \"ewogICAgImtleXMiOiBbCiAgICAgICAgewogIC************klJbUpsLV9jenYyT0kiCiAgICAgICAgfQogICAgXQp9\",\n    \"IdentityUrl\": \"https://test.qq.cn/\",\n    \"Name\": \"test-oidc\",\n    \"ClientId\": [\n        \"61adcf0*****9546\"\n    ],\n    \"Description\": \"Desc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"59b8efa4-cdd3-46dd-b9e7-0925aa1bee74\"\n    }\n}",
         "title": "修改角色OIDC配置"
+      }
+    ],
+    "UpdatePasswordRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePasswordRules\n<公共请求参数>\n\n{\n    \"Rules\": {\n        \"ReusePasswordLimit\": 0,\n        \"RetryPasswordLimit\": 0,\n        \"MustContain\": \"A\",\n        \"ForcePasswordChange\": 0,\n        \"MinimumLength\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20ef9ac7-498c-40f8-814c-7ac71cf8b81f\"\n    }\n}",
+        "title": "更新密码规则"
       }
     ],
     "UpdatePolicy": [

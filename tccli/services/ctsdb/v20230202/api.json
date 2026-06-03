@@ -616,7 +616,17 @@
     },
     "DescribeClusterDetailRequest": {
       "document": "DescribeClusterDetail请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ctsdbi-ktbdtl19",
+          "member": "string",
+          "name": "ClusterID",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeClusterDetailResponse": {

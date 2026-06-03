@@ -667,7 +667,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "企业名称",
+          "document": "<p>企业名称</p>",
           "example": "腾讯科技",
           "member": "string",
           "name": "Name",
@@ -676,7 +676,7 @@
         },
         {
           "disabled": false,
-          "document": "资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息",
+          "document": "<p>资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息</p>",
           "example": "资产收集,漏洞信息",
           "member": "string",
           "name": "ScanType",
@@ -685,7 +685,7 @@
         },
         {
           "disabled": false,
-          "document": "百分比取值范围为30-100",
+          "document": "<p>百分比取值范围为30-100</p>",
           "example": "50",
           "member": "int64",
           "name": "Percent",
@@ -694,7 +694,7 @@
         },
         {
           "disabled": false,
-          "document": "周期测绘时间",
+          "document": "<p>周期测绘时间</p>",
           "example": "每日#0 0 * * * *",
           "member": "string",
           "name": "ScanCron",
@@ -703,7 +703,7 @@
         },
         {
           "disabled": false,
-          "document": "是否立即启动",
+          "document": "<p>是否立即启动</p>",
           "example": "false",
           "member": "bool",
           "name": "IsScanNow",
@@ -712,7 +712,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用周期测绘",
+          "document": "<p>是否启用周期测绘</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableCron",
@@ -721,7 +721,7 @@
         },
         {
           "disabled": false,
-          "document": "是否扫描子公司",
+          "document": "<p>是否扫描子公司</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableScanSubEnterprise",
@@ -730,7 +730,7 @@
         },
         {
           "disabled": false,
-          "document": "是否授权",
+          "document": "<p>是否授权</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableAuth",
@@ -739,7 +739,7 @@
         },
         {
           "disabled": false,
-          "document": "授权开始时间",
+          "document": "<p>授权开始时间</p>",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "AuthStartAt",
@@ -748,7 +748,7 @@
         },
         {
           "disabled": false,
-          "document": "授权结束时间",
+          "document": "<p>授权结束时间</p>",
           "example": "2025-01-01 00:00:00",
           "member": "string",
           "name": "AuthEndAt",
@@ -757,7 +757,7 @@
         },
         {
           "disabled": false,
-          "document": "授权文件id",
+          "document": "<p>授权文件id</p>",
           "example": "d4621xxx",
           "member": "string",
           "name": "AuthFile",
@@ -766,7 +766,7 @@
         },
         {
           "disabled": false,
-          "document": "测绘时间配置项，采用json字符串格式",
+          "document": "<p>测绘时间配置项，采用json字符串格式</p>",
           "example": "{\\\"Monday\\\":{\\\"0\\\":true},\\\"Tuesday\\\":{\\\"1\\\":true},\\\"Wednesday\\\":{\\\"2\\\":true},\\\"Thursday\\\":{\\\"3\\\":true},\\\"Friday\\\":{\\\"4\\\":true},\\\"Saturday\\\":{\\\"5\\\":true},\\\"Sunday\\\":{\\\"23\\\":true}}",
           "member": "string",
           "name": "ScanTime",
@@ -775,7 +775,7 @@
         },
         {
           "disabled": false,
-          "document": "企业相关的关键字",
+          "document": "<p>企业相关的关键字</p>",
           "example": "腾讯",
           "member": "string",
           "name": "Keywords",
@@ -784,7 +784,7 @@
         },
         {
           "disabled": false,
-          "document": "图标",
+          "document": "<p>图标</p>",
           "example": "d4621xxx",
           "member": "string",
           "name": "Icon",
@@ -793,7 +793,7 @@
         },
         {
           "disabled": false,
-          "document": "并发设置",
+          "document": "<p>并发设置</p>",
           "example": "50",
           "member": "int64",
           "name": "Qps",
@@ -802,7 +802,7 @@
         },
         {
           "disabled": false,
-          "document": "限制子公司层级，-1表示不限制",
+          "document": "<p>限制子公司层级，-1表示不限制</p>",
           "example": "1",
           "member": "int64",
           "name": "SubCompanyLevel",
@@ -811,12 +811,48 @@
         },
         {
           "disabled": false,
-          "document": "是否以企业名称为起点做完整扫描(包含手动上传),如只想扫描特定的某几个域名，则传false。",
+          "document": "<p>是否以企业名称为起点做完整扫描(包含手动上传),如只想扫描特定的某几个域名，则传false。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsIncludeFullScan",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>端口扫描 QPS，默认 100，下限 10，保守值 200，上限 5000</p><p>默认值：100</p>",
+          "example": "101",
+          "member": "int64",
+          "name": "PortScanQps",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单 IP 任务并发数，默认 1，下限 1，保守值 3，上限 10</p><p>默认值：1</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "SingleIPTaskLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任一速率超过保守值时必须为 true，否则参数错误</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HighRiskAck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知情同意勾选清单，用于审计回放</p>",
+          "example": "[\"ack_v1_understand_risk\"]",
+          "member": "string",
+          "name": "ScanRateAckChecklist",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1192,7 +1228,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "企业ID",
+          "document": "<p>企业ID</p>",
           "example": "1001",
           "member": "int64",
           "name": "CustomerId",
@@ -1201,7 +1237,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型：即时任务",
+          "document": "<p>任务类型：即时任务</p>",
           "example": "即时任务",
           "member": "string",
           "name": "TaskType",
@@ -1210,7 +1246,7 @@
         },
         {
           "disabled": false,
-          "document": "资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息",
+          "document": "<p>资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息</p>",
           "example": "资产收集,漏洞信息",
           "member": "string",
           "name": "ScanType",
@@ -1219,7 +1255,7 @@
         },
         {
           "disabled": false,
-          "document": "qps设置",
+          "document": "<p>qps设置</p>",
           "example": "30",
           "member": "int64",
           "name": "Qps",
@@ -1228,12 +1264,48 @@
         },
         {
           "disabled": false,
-          "document": "是否包含完整扫描",
+          "document": "<p>是否包含完整扫描</p>",
           "example": "true",
           "member": "bool",
           "name": "IsIncludeFullScan",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>端口扫描 QPS，默认 100，下限 10，保守值 200，上限 5000</p><p>默认值：100</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "PortScanQps",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单 IP 任务并发数，默认 1，下限 1，保守值 3，上限 10</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SingleIPTaskLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任一速率超过保守值时必须为 true，否则参数错误</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HighRiskAck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知情同意勾选清单，用于审计回放</p>",
+          "example": "[\"ack_v1_understand_risk\"]",
+          "member": "string",
+          "name": "ScanRateAckChecklist",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1243,7 +1315,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务Id",
+          "document": "<p>任务Id</p>",
           "example": "1001",
           "member": "int64",
           "name": "Id",
@@ -1546,7 +1618,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "企业Id",
+          "document": "<p>企业Id</p>",
           "example": "1",
           "member": "int64",
           "name": "CustomerId",
@@ -1555,7 +1627,7 @@
         },
         {
           "disabled": false,
-          "document": "子域名",
+          "document": "<p>子域名</p>",
           "example": "doc.test.com",
           "member": "string",
           "name": "SubDomain",
@@ -1564,7 +1636,7 @@
         },
         {
           "disabled": false,
-          "document": "Ip",
+          "document": "<p>Ip</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -1573,7 +1645,7 @@
         },
         {
           "disabled": false,
-          "document": "国家",
+          "document": "<p>国家</p>",
           "example": "中国",
           "member": "string",
           "name": "Country",
@@ -1582,7 +1654,7 @@
         },
         {
           "disabled": false,
-          "document": "省",
+          "document": "<p>省</p>",
           "example": "广东",
           "member": "string",
           "name": "Province",
@@ -1591,7 +1663,7 @@
         },
         {
           "disabled": false,
-          "document": "城市",
+          "document": "<p>城市</p>",
           "example": "深圳",
           "member": "string",
           "name": "City",
@@ -1600,7 +1672,7 @@
         },
         {
           "disabled": false,
-          "document": "Isp",
+          "document": "<p>Isp</p>",
           "example": "电信",
           "member": "string",
           "name": "Isp",
@@ -1609,10 +1681,28 @@
         },
         {
           "disabled": false,
-          "document": "子公司",
+          "document": "<p>子公司</p>",
           "example": "6512bd43d9caa6e02c990b0a82652dca",
           "member": "string",
           "name": "EnterpriseUid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>DNS解析类型。A、AAAA、CNAME等</p>",
+          "example": "A",
+          "member": "string",
+          "name": "DnsType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>DNS解析值。域名或者ip</p>",
+          "example": "6.6.6.6",
+          "member": "string",
+          "name": "DnsValue",
           "required": false,
           "type": "string"
         }
@@ -1624,7 +1714,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Id",
+          "document": "<p>Id</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -1964,7 +2054,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "企业ID",
+          "document": "<p>企业ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -1974,7 +2064,7 @@
         },
         {
           "disabled": false,
-          "document": "企业名称",
+          "document": "<p>企业名称</p>",
           "example": "腾讯科技",
           "member": "string",
           "name": "Name",
@@ -1984,7 +2074,7 @@
         },
         {
           "disabled": false,
-          "document": "股权占比",
+          "document": "<p>股权占比</p>",
           "example": "100",
           "member": "int64",
           "name": "Percent",
@@ -1994,7 +2084,7 @@
         },
         {
           "disabled": false,
-          "document": "资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息",
+          "document": "<p>资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息</p>",
           "example": "资产收集",
           "member": "string",
           "name": "ScanType",
@@ -2004,7 +2094,7 @@
         },
         {
           "disabled": false,
-          "document": "创建账号",
+          "document": "<p>创建账号</p>",
           "example": "100000",
           "member": "string",
           "name": "Creator",
@@ -2014,7 +2104,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云客户AppId",
+          "document": "<p>腾讯云客户AppId</p>",
           "example": "125",
           "member": "int64",
           "name": "AppId",
@@ -2024,7 +2114,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云客户Uin",
+          "document": "<p>腾讯云客户Uin</p>",
           "example": "10000",
           "member": "string",
           "name": "Uin",
@@ -2034,7 +2124,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "CreateAt",
@@ -2044,7 +2134,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "UpdateAt",
@@ -2054,7 +2144,7 @@
         },
         {
           "disabled": false,
-          "document": "周期测绘时间",
+          "document": "<p>周期测绘时间</p>",
           "example": "每小时#0 0 * * * *",
           "member": "string",
           "name": "ScanCron",
@@ -2064,7 +2154,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用周期测绘",
+          "document": "<p>是否启用周期测绘</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableCron",
@@ -2074,7 +2164,7 @@
         },
         {
           "disabled": false,
-          "document": "是否扫描子公司",
+          "document": "<p>是否扫描子公司</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableScanSubEnterprise",
@@ -2084,7 +2174,7 @@
         },
         {
           "disabled": false,
-          "document": "是否授权",
+          "document": "<p>是否授权</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableAuth",
@@ -2094,7 +2184,7 @@
         },
         {
           "disabled": false,
-          "document": "授权开始时间",
+          "document": "<p>授权开始时间</p>",
           "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "AuthStartAt",
@@ -2104,7 +2194,7 @@
         },
         {
           "disabled": false,
-          "document": "授权结束时间",
+          "document": "<p>授权结束时间</p>",
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "AuthEndAt",
@@ -2114,7 +2204,7 @@
         },
         {
           "disabled": false,
-          "document": "授权文件id",
+          "document": "<p>授权文件id</p>",
           "example": "5841c36f1b194857f5e416486e4bf1d3",
           "member": "string",
           "name": "AuthFile",
@@ -2124,7 +2214,7 @@
         },
         {
           "disabled": false,
-          "document": "测绘时间配置项",
+          "document": "<p>测绘时间配置项</p>",
           "example": "{\\\"Monday\\\":{\\\"0\\\":true,\\\"9\\\":true}}",
           "member": "string",
           "name": "ScanTime",
@@ -2134,7 +2224,7 @@
         },
         {
           "disabled": false,
-          "document": "图标",
+          "document": "<p>图标</p>",
           "example": "5841c36f1b194857f5e416486e4bf1d3",
           "member": "string",
           "name": "Icon",
@@ -2144,7 +2234,7 @@
         },
         {
           "disabled": false,
-          "document": "关键字",
+          "document": "<p>关键字</p>",
           "example": "腾讯",
           "member": "string",
           "name": "Keywords",
@@ -2154,7 +2244,7 @@
         },
         {
           "disabled": false,
-          "document": "Qps设置，10-500，默认100",
+          "document": "<p>Qps设置，10-500，默认100</p>",
           "example": "10",
           "member": "int64",
           "name": "Qps",
@@ -2164,7 +2254,7 @@
         },
         {
           "disabled": false,
-          "document": "子公司拓展层次",
+          "document": "<p>子公司拓展层次</p>",
           "example": "1",
           "member": "int64",
           "name": "SubCompanyLevel",
@@ -2174,7 +2264,7 @@
         },
         {
           "disabled": false,
-          "document": "是否包含完整扫描\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否包含完整扫描</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsIncludeFullScan",
@@ -2184,12 +2274,32 @@
         },
         {
           "disabled": false,
-          "document": "是否识别集团成员",
+          "document": "<p>是否识别集团成员</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableGroupMemberDiscovered",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单 IP 任务并发数，默认 1，下限 1，保守值 3，上限 10</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SingleIPTaskLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>端口扫描 QPS，默认 100，下限 10，保守值 200，上限 5000</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "PortScanQps",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -7123,7 +7233,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID",
+          "document": "<p>主键ID</p>",
           "example": "100",
           "member": "int64",
           "name": "Id",
@@ -7133,7 +7243,7 @@
         },
         {
           "disabled": false,
-          "document": "公共字段",
+          "document": "<p>公共字段</p>",
           "example": "无",
           "member": "DisplayToolCommon",
           "name": "DisplayToolCommon",
@@ -7143,7 +7253,7 @@
         },
         {
           "disabled": false,
-          "document": "Url",
+          "document": "<p>Url</p>",
           "example": "https://qq.com/v1/api",
           "member": "string",
           "name": "Url",
@@ -7153,7 +7263,7 @@
         },
         {
           "disabled": false,
-          "document": "Host地址",
+          "document": "<p>Host地址</p>",
           "example": "https://qq.com",
           "member": "string",
           "name": "Host",
@@ -7163,7 +7273,7 @@
         },
         {
           "disabled": false,
-          "document": "Path路径",
+          "document": "<p>Path路径</p>",
           "example": "/v1/api",
           "member": "string",
           "name": "Path",
@@ -7173,7 +7283,7 @@
         },
         {
           "disabled": false,
-          "document": "方法：POST、GET、DELETE等",
+          "document": "<p>方法：POST、GET、DELETE等</p>",
           "example": "POST",
           "member": "string",
           "name": "Method",
@@ -7183,7 +7293,7 @@
         },
         {
           "disabled": false,
-          "document": "修复状态：unrepaired:未修复，repaired:已修复, ignore:已忽略,checking:复测中",
+          "document": "<p>修复状态：unrepaired:未修复，repaired:已修复, ignore:已忽略,checking:复测中</p>",
           "example": "unrepaired",
           "member": "string",
           "name": "Status",
@@ -7193,7 +7303,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -7203,7 +7313,7 @@
         },
         {
           "disabled": false,
-          "document": "请求体",
+          "document": "<p>请求体</p>",
           "example": "{\"domain\":\"qq.com\"}",
           "member": "string",
           "name": "Request",
@@ -7213,7 +7323,7 @@
         },
         {
           "disabled": false,
-          "document": "响应体",
+          "document": "<p>响应体</p>",
           "example": "{\"code\":200,\"data\":[]}",
           "member": "string",
           "name": "Response",
@@ -7223,12 +7333,22 @@
         },
         {
           "disabled": false,
-          "document": "是否风险API",
+          "document": "<p>是否风险API</p>",
           "example": "false",
           "member": "bool",
           "name": "IsRiskAPI",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AggregationCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -7501,7 +7621,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键Id",
+          "document": "<p>主键Id</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -7511,7 +7631,7 @@
         },
         {
           "disabled": false,
-          "document": "地址",
+          "document": "<p>地址</p>",
           "example": "http://test.com/a.html",
           "member": "string",
           "name": "Url",
@@ -7521,7 +7641,7 @@
         },
         {
           "disabled": false,
-          "document": "站点标题",
+          "document": "<p>站点标题</p>",
           "example": "FastAPI - Swagger UI",
           "member": "string",
           "name": "Title",
@@ -7531,7 +7651,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -7541,7 +7661,7 @@
         },
         {
           "disabled": false,
-          "document": "响应长度",
+          "document": "<p>响应长度</p>",
           "example": "100",
           "member": "int64",
           "name": "ContentLength",
@@ -7551,7 +7671,7 @@
         },
         {
           "disabled": false,
-          "document": "公共字段",
+          "document": "<p>公共字段</p>",
           "example": "无",
           "member": "DisplayToolCommon",
           "name": "DisplayToolCommon",
@@ -7561,7 +7681,7 @@
         },
         {
           "disabled": false,
-          "document": "Ip数据",
+          "document": "<p>Ip数据</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -7571,7 +7691,7 @@
         },
         {
           "disabled": false,
-          "document": "AI评分",
+          "document": "<p>AI评分</p>",
           "example": "60",
           "member": "int64",
           "name": "AIRating",
@@ -7581,7 +7701,7 @@
         },
         {
           "disabled": false,
-          "document": "AI分析",
+          "document": "<p>AI分析</p>",
           "example": "分析结果正常",
           "member": "string",
           "name": "AIAnalysis",
@@ -7591,7 +7711,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级: 1-低危, 2-中危, 3-高危, 4-危级, 5-误报",
+          "document": "<p>风险等级: 1-低危, 2-中危, 3-高危, 4-危级, 5-误报</p>",
           "example": "1",
           "member": "int64",
           "name": "RiskLevel",
@@ -7601,7 +7721,7 @@
         },
         {
           "disabled": false,
-          "document": "建议",
+          "document": "<p>建议</p>",
           "example": "无建议",
           "member": "string",
           "name": "Suggestion",
@@ -7611,7 +7731,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为云资产",
+          "document": "<p>是否为云资产</p>",
           "example": "1",
           "member": "int64",
           "name": "IsCloudAsset",
@@ -7621,10 +7741,20 @@
         },
         {
           "disabled": false,
-          "document": "云资产状态，-1为下线",
+          "document": "<p>云资产状态，-1为下线</p>",
           "example": "0",
           "member": "int64",
           "name": "CloudAssetStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AggregationCount",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -7703,7 +7833,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID",
+          "document": "<p>主键ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -7713,7 +7843,7 @@
         },
         {
           "disabled": false,
-          "document": "主域名",
+          "document": "<p>主域名</p>",
           "example": "qq.com",
           "member": "string",
           "name": "Domain",
@@ -7723,7 +7853,7 @@
         },
         {
           "disabled": false,
-          "document": "ICP",
+          "document": "<p>ICP</p>",
           "example": "粤ICP备1900xx号",
           "member": "string",
           "name": "ICP",
@@ -7733,7 +7863,7 @@
         },
         {
           "disabled": false,
-          "document": "注册时间",
+          "document": "<p>注册时间</p>",
           "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "RegisteredTime",
@@ -7743,7 +7873,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "<p>过期时间</p>",
           "example": "2099-01-01 00:00:00",
           "member": "string",
           "name": "ExpiredTime",
@@ -7753,7 +7883,7 @@
         },
         {
           "disabled": false,
-          "document": "公司",
+          "document": "<p>公司</p>",
           "example": "腾讯科技",
           "member": "string",
           "name": "Company",
@@ -7763,7 +7893,7 @@
         },
         {
           "disabled": false,
-          "document": "公共字段",
+          "document": "<p>公共字段</p>",
           "example": "无",
           "member": "DisplayToolCommon",
           "name": "DisplayToolCommon",
@@ -7773,7 +7903,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为云资产",
+          "document": "<p>是否为云资产</p>",
           "example": "1",
           "member": "int64",
           "name": "IsCloudAsset",
@@ -7783,7 +7913,7 @@
         },
         {
           "disabled": false,
-          "document": "云资产状态，-1为下线",
+          "document": "<p>云资产状态，-1为下线</p>",
           "example": "0",
           "member": "int64",
           "name": "CloudAssetStatus",
@@ -8405,7 +8535,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID",
+          "document": "<p>主键ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -8415,7 +8545,7 @@
         },
         {
           "disabled": false,
-          "document": "公共字段",
+          "document": "<p>公共字段</p>",
           "example": "无",
           "member": "DisplayToolCommon",
           "name": "DisplayToolCommon",
@@ -8425,7 +8555,7 @@
         },
         {
           "disabled": false,
-          "document": "Url",
+          "document": "<p>Url</p>",
           "example": "http://test.com/xx.html",
           "member": "string",
           "name": "Url",
@@ -8435,7 +8565,7 @@
         },
         {
           "disabled": false,
-          "document": "标题",
+          "document": "<p>标题</p>",
           "example": "暴露面管理",
           "member": "string",
           "name": "Title",
@@ -8445,7 +8575,7 @@
         },
         {
           "disabled": false,
-          "document": "报文长度",
+          "document": "<p>报文长度</p>",
           "example": "100",
           "member": "int64",
           "name": "ContentLength",
@@ -8455,7 +8585,7 @@
         },
         {
           "disabled": false,
-          "document": "报文内容",
+          "document": "<p>报文内容</p>",
           "example": "<html>...</html>",
           "member": "string",
           "name": "Content",
@@ -8465,7 +8595,7 @@
         },
         {
           "disabled": false,
-          "document": "截图缩略图URL",
+          "document": "<p>截图缩略图URL</p>",
           "example": "http://test.com/xx.png",
           "member": "string",
           "name": "ScreenshotThumbUrl",
@@ -8475,7 +8605,7 @@
         },
         {
           "disabled": false,
-          "document": "截图URL",
+          "document": "<p>截图URL</p>",
           "example": "http://test.com/xx.png",
           "member": "string",
           "name": "ScreenshotUrl",
@@ -8485,7 +8615,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -8495,7 +8625,7 @@
         },
         {
           "disabled": false,
-          "document": "Api地址",
+          "document": "<p>Api地址</p>",
           "example": "http://a.com",
           "member": "string",
           "name": "Api",
@@ -8505,7 +8635,7 @@
         },
         {
           "disabled": false,
-          "document": "解析的IP",
+          "document": "<p>解析的IP</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -8515,7 +8645,7 @@
         },
         {
           "disabled": false,
-          "document": "证书信息",
+          "document": "<p>证书信息</p>",
           "example": "{\\\"cipher\\\": \\\"TLS_AES_256_GCM_SHA384\\\"}",
           "member": "string",
           "name": "Ssl",
@@ -8525,7 +8655,7 @@
         },
         {
           "disabled": false,
-          "document": "ssl证书过期时间",
+          "document": "<p>ssl证书过期时间</p>",
           "example": "2024-05-29T02:50:09Z",
           "member": "string",
           "name": "SslExpiredTime",
@@ -8535,7 +8665,7 @@
         },
         {
           "disabled": false,
-          "document": "资产是否发生变动\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资产是否发生变动</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsChange",
@@ -8545,7 +8675,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为云资产：0-非云资产 1-是云资产",
+          "document": "<p>是否为云资产：0-非云资产 1-是云资产</p>",
           "example": "1",
           "member": "int64",
           "name": "IsCloudAsset",
@@ -8555,7 +8685,7 @@
         },
         {
           "disabled": false,
-          "document": "云资产是否下线：-1-已下线 0-正常",
+          "document": "<p>云资产是否下线：-1-已下线 0-正常</p>",
           "example": "0",
           "member": "int64",
           "name": "CloudAssetStatus",
@@ -8565,7 +8695,7 @@
         },
         {
           "disabled": false,
-          "document": "可用率（百分比）",
+          "document": "<p>可用率（百分比）</p>",
           "example": "0",
           "member": "int64",
           "name": "AvailabilityRate",
@@ -8575,7 +8705,7 @@
         },
         {
           "disabled": false,
-          "document": "可用状态 1:异常 0:正常",
+          "document": "<p>可用状态 1:异常 0:正常</p>",
           "example": "0",
           "member": "int64",
           "name": "AvailabilityState",
@@ -8585,7 +8715,7 @@
         },
         {
           "disabled": false,
-          "document": "平均响应时间：单位ms",
+          "document": "<p>平均响应时间：单位ms</p>",
           "example": "0",
           "member": "int64",
           "name": "ResponseTime",
@@ -8595,10 +8725,20 @@
         },
         {
           "disabled": false,
-          "document": "域名解析状态 1:异常 0:正常",
+          "document": "<p>域名解析状态 1:异常 0:正常</p>",
           "example": "0",
           "member": "int64",
           "name": "AnalysisState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AggregationCount",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9184,7 +9324,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID",
+          "document": "<p>主键ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -9194,7 +9334,7 @@
         },
         {
           "disabled": false,
-          "document": "公共字段",
+          "document": "<p>公共字段</p>",
           "example": "无",
           "member": "DisplayToolCommon",
           "name": "DisplayToolCommon",
@@ -9204,7 +9344,7 @@
         },
         {
           "disabled": false,
-          "document": "Url",
+          "document": "<p>Url</p>",
           "example": "http://test.com/a.html",
           "member": "string",
           "name": "Url",
@@ -9214,7 +9354,7 @@
         },
         {
           "disabled": false,
-          "document": "标题",
+          "document": "<p>标题</p>",
           "example": "暴露面管理",
           "member": "string",
           "name": "Title",
@@ -9224,7 +9364,7 @@
         },
         {
           "disabled": false,
-          "document": "Icon",
+          "document": "<p>Icon</p>",
           "example": "http://test.com/xx.ico",
           "member": "string",
           "name": "Icon",
@@ -9234,7 +9374,7 @@
         },
         {
           "disabled": false,
-          "document": "缩略图",
+          "document": "<p>缩略图</p>",
           "example": "http://test.com/xx.png",
           "member": "string",
           "name": "Screenshot",
@@ -9244,7 +9384,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -9254,7 +9394,7 @@
         },
         {
           "disabled": false,
-          "document": "后台Host",
+          "document": "<p>后台Host</p>",
           "example": "test.com",
           "member": "string",
           "name": "Host",
@@ -9264,7 +9404,7 @@
         },
         {
           "disabled": false,
-          "document": "状态：not_converged:未收敛, converged:已收敛, ignore:已忽略\n",
+          "document": "<p>状态：not_converged:未收敛, converged:已收敛, ignore:已忽略</p>",
           "example": "not_converged",
           "member": "string",
           "name": "Status",
@@ -9274,7 +9414,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为云资产：0-非云资产 1-是云资产",
+          "document": "<p>是否为云资产：0-非云资产 1-是云资产</p>",
           "example": "1",
           "member": "int64",
           "name": "IsCloudAsset",
@@ -9284,10 +9424,20 @@
         },
         {
           "disabled": false,
-          "document": "云资产是否下线：-1-已下线 0-正常",
+          "document": "<p>云资产是否下线：-1-已下线 0-正常</p>",
           "example": "0",
           "member": "int64",
           "name": "CloudAssetStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AggregationCount",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9376,7 +9526,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID",
+          "document": "<p>主键ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -9386,7 +9536,7 @@
         },
         {
           "disabled": false,
-          "document": "公共字段",
+          "document": "<p>公共字段</p>",
           "example": "无",
           "member": "DisplayToolCommon",
           "name": "DisplayToolCommon",
@@ -9396,7 +9546,7 @@
         },
         {
           "disabled": false,
-          "document": "IP或域名地址",
+          "document": "<p>IP或域名地址</p>",
           "example": "test.com",
           "member": "string",
           "name": "Asset",
@@ -9406,7 +9556,7 @@
         },
         {
           "disabled": false,
-          "document": "解析的IP",
+          "document": "<p>解析的IP</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -9416,7 +9566,7 @@
         },
         {
           "disabled": false,
-          "document": "端口",
+          "document": "<p>端口</p>",
           "example": "22",
           "member": "int64",
           "name": "Port",
@@ -9426,7 +9576,7 @@
         },
         {
           "disabled": false,
-          "document": "是否高危",
+          "document": "<p>是否高危</p>",
           "example": "false",
           "member": "bool",
           "name": "IsHighRisk",
@@ -9436,7 +9586,7 @@
         },
         {
           "disabled": false,
-          "document": "组件名称",
+          "document": "<p>组件名称</p>",
           "example": "OpenSSH 8.0",
           "member": "string",
           "name": "App",
@@ -9446,7 +9596,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名称",
+          "document": "<p>服务名称</p>",
           "example": "ssh",
           "member": "string",
           "name": "Service",
@@ -9456,7 +9606,7 @@
         },
         {
           "disabled": false,
-          "document": "端口响应详情",
+          "document": "<p>端口响应详情</p>",
           "example": "U1NILTIuMC1PcGVuU1NIXzguMA0K",
           "member": "string",
           "name": "Banner",
@@ -9466,7 +9616,7 @@
         },
         {
           "disabled": false,
-          "document": "上次检测时间",
+          "document": "<p>上次检测时间</p>",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "LastCheckTime",
@@ -9476,7 +9626,7 @@
         },
         {
           "disabled": false,
-          "document": "状态，close:连接超时，端口可能已关闭，open:端口开放, checking:复测中, ignore:已忽略",
+          "document": "<p>状态，close:连接超时，端口可能已关闭，open:端口开放, checking:复测中, ignore:已忽略</p>",
           "example": "open",
           "member": "string",
           "name": "Status",
@@ -9486,7 +9636,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为云资产：0-非云资产 1-是云资产",
+          "document": "<p>是否为云资产：0-非云资产 1-是云资产</p>",
           "example": "1",
           "member": "int64",
           "name": "IsCloudAsset",
@@ -9496,7 +9646,7 @@
         },
         {
           "disabled": false,
-          "document": "云资产是否下线：-1-已下线 0-正常",
+          "document": "<p>云资产是否下线：-1-已下线 0-正常</p>",
           "example": "0",
           "member": "int64",
           "name": "CloudAssetStatus",
@@ -9506,10 +9656,20 @@
         },
         {
           "disabled": false,
-          "document": "域名解析状态 1:异常 0:正常",
+          "document": "<p>域名解析状态 1:异常 0:正常</p>",
           "example": "0",
           "member": "int64",
           "name": "AnalysisState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AggregationCount",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9608,7 +9768,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键Id",
+          "document": "<p>主键Id</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -9618,7 +9778,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "<p>类型</p>",
           "example": "邮箱地址",
           "member": "string",
           "name": "Type",
@@ -9628,7 +9788,7 @@
         },
         {
           "disabled": false,
-          "document": "来源",
+          "document": "<p>来源</p>",
           "example": "http://test.com/a.html",
           "member": "string",
           "name": "Source",
@@ -9638,7 +9798,7 @@
         },
         {
           "disabled": false,
-          "document": "值",
+          "document": "<p>值</p>",
           "example": "test@qq.com",
           "member": "string",
           "name": "Value",
@@ -9648,7 +9808,7 @@
         },
         {
           "disabled": false,
-          "document": "公共字段",
+          "document": "<p>公共字段</p>",
           "example": "无",
           "member": "DisplayToolCommon",
           "name": "DisplayToolCommon",
@@ -9658,7 +9818,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为云资产：0-非云资产 1-是云资产",
+          "document": "<p>是否为云资产：0-非云资产 1-是云资产</p>",
           "example": "1",
           "member": "int64",
           "name": "IsCloudAsset",
@@ -9668,10 +9828,20 @@
         },
         {
           "disabled": false,
-          "document": "云资产是否下线：-1-已下线 0-正常",
+          "document": "<p>云资产是否下线：-1-已下线 0-正常</p>",
           "example": "0",
           "member": "int64",
           "name": "CloudAssetStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AggregationCount",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9684,7 +9854,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID",
+          "document": "<p>主键ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -9694,7 +9864,7 @@
         },
         {
           "disabled": false,
-          "document": "子域名",
+          "document": "<p>子域名</p>",
           "example": "test.qq.com",
           "member": "string",
           "name": "SubDomain",
@@ -9704,7 +9874,7 @@
         },
         {
           "disabled": false,
-          "document": "Ip",
+          "document": "<p>Ip</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -9714,7 +9884,7 @@
         },
         {
           "disabled": false,
-          "document": "国家",
+          "document": "<p>国家</p>",
           "example": "中国",
           "member": "string",
           "name": "Country",
@@ -9724,7 +9894,7 @@
         },
         {
           "disabled": false,
-          "document": "省份",
+          "document": "<p>省份</p>",
           "example": "广东",
           "member": "string",
           "name": "Province",
@@ -9734,7 +9904,7 @@
         },
         {
           "disabled": false,
-          "document": "城市",
+          "document": "<p>城市</p>",
           "example": "深圳",
           "member": "string",
           "name": "City",
@@ -9744,7 +9914,7 @@
         },
         {
           "disabled": false,
-          "document": "互联网服务提供商",
+          "document": "<p>互联网服务提供商</p>",
           "example": "中国电信",
           "member": "string",
           "name": "Isp",
@@ -9754,7 +9924,7 @@
         },
         {
           "disabled": false,
-          "document": "公共字段",
+          "document": "<p>公共字段</p>",
           "example": "无",
           "member": "DisplayToolCommon",
           "name": "DisplayToolCommon",
@@ -9764,7 +9934,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为云资产：0-非云资产 1-是云资产",
+          "document": "<p>是否为云资产：0-非云资产 1-是云资产</p>",
           "example": "1",
           "member": "int64",
           "name": "IsCloudAsset",
@@ -9774,7 +9944,7 @@
         },
         {
           "disabled": false,
-          "document": "云资产是否下线：-1-已下线 0-正常",
+          "document": "<p>云资产是否下线：-1-已下线 0-正常</p>",
           "example": "0",
           "member": "int64",
           "name": "CloudAssetStatus",
@@ -9784,7 +9954,7 @@
         },
         {
           "disabled": false,
-          "document": "可用率（百分比）",
+          "document": "<p>可用率（百分比）</p>",
           "example": "0",
           "member": "int64",
           "name": "AvailabilityRate",
@@ -9794,7 +9964,7 @@
         },
         {
           "disabled": false,
-          "document": "可用状态 1:异常 0:正常",
+          "document": "<p>可用状态 1:异常 0:正常</p>",
           "example": "0",
           "member": "int64",
           "name": "AvailabilityState",
@@ -9804,7 +9974,7 @@
         },
         {
           "disabled": false,
-          "document": "域名解析状态 1:异常 0:正常",
+          "document": "<p>域名解析状态 1:异常 0:正常</p>",
           "example": "0",
           "member": "int64",
           "name": "AnalysisState",
@@ -9814,7 +9984,7 @@
         },
         {
           "disabled": false,
-          "document": "平均时延：单位ms",
+          "document": "<p>平均时延：单位ms</p>",
           "example": "0",
           "member": "int64",
           "name": "AverageDelay",
@@ -9824,10 +9994,40 @@
         },
         {
           "disabled": false,
-          "document": "丢包率（百分比）",
+          "document": "<p>丢包率（百分比）</p>",
           "example": "0",
           "member": "int64",
           "name": "LossRate",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>DNS解析类型</p><p>A、AAAA、MX、CNAME、NX</p>",
+          "example": "A",
+          "member": "string",
+          "name": "DnsType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>DNS解析值</p>",
+          "example": "8.8.8.8",
+          "member": "string",
+          "name": "DnsValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AggregationCount",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9840,7 +10040,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID",
+          "document": "<p>主键ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -9850,7 +10050,7 @@
         },
         {
           "disabled": false,
-          "document": "公共字段",
+          "document": "<p>公共字段</p>",
           "example": "无",
           "member": "DisplayToolCommon",
           "name": "DisplayToolCommon",
@@ -9860,7 +10060,7 @@
         },
         {
           "disabled": false,
-          "document": "Url",
+          "document": "<p>Url</p>",
           "example": "http://test.com/a.html",
           "member": "string",
           "name": "Url",
@@ -9870,7 +10070,7 @@
         },
         {
           "disabled": false,
-          "document": "标题",
+          "document": "<p>标题</p>",
           "example": "暴露面管理",
           "member": "string",
           "name": "Title",
@@ -9880,7 +10080,7 @@
         },
         {
           "disabled": false,
-          "document": "报文长度",
+          "document": "<p>报文长度</p>",
           "example": "100",
           "member": "int64",
           "name": "ContentLength",
@@ -9890,7 +10090,7 @@
         },
         {
           "disabled": false,
-          "document": "报文内容",
+          "document": "<p>报文内容</p>",
           "example": "暴露面管理",
           "member": "string",
           "name": "Content",
@@ -9900,7 +10100,7 @@
         },
         {
           "disabled": false,
-          "document": "截图缩略图URL",
+          "document": "<p>截图缩略图URL</p>",
           "example": "http://test.com/xx.png",
           "member": "string",
           "name": "ScreenshotThumbUrl",
@@ -9910,7 +10110,7 @@
         },
         {
           "disabled": false,
-          "document": "截图URL",
+          "document": "<p>截图URL</p>",
           "example": "http://test.com/xx.png",
           "member": "string",
           "name": "ScreenshotUrl",
@@ -9920,7 +10120,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -9930,7 +10130,7 @@
         },
         {
           "disabled": false,
-          "document": "Api",
+          "document": "<p>Api</p>",
           "example": "http://test.com/a.html",
           "member": "string",
           "name": "Api",
@@ -9940,7 +10140,7 @@
         },
         {
           "disabled": false,
-          "document": "解析的IP",
+          "document": "<p>解析的IP</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -9950,7 +10150,7 @@
         },
         {
           "disabled": false,
-          "document": "证书信息",
+          "document": "<p>证书信息</p>",
           "example": "{\\\"cipher\\\": \\\"TLS_AES_256_GCM_SHA384\\\"}",
           "member": "string",
           "name": "Ssl",
@@ -9960,7 +10160,7 @@
         },
         {
           "disabled": false,
-          "document": "ssl证书过期时间",
+          "document": "<p>ssl证书过期时间</p>",
           "example": "2026-03-30T12:03:50Z",
           "member": "string",
           "name": "SslExpiredTime",
@@ -9970,7 +10170,7 @@
         },
         {
           "disabled": false,
-          "document": "来源类型",
+          "document": "<p>来源类型</p>",
           "example": "F-icon",
           "member": "string",
           "name": "SourceType",
@@ -9980,7 +10180,7 @@
         },
         {
           "disabled": false,
-          "document": "来源值",
+          "document": "<p>来源值</p>",
           "example": "icon",
           "member": "string",
           "name": "SourceValue",
@@ -9990,7 +10190,7 @@
         },
         {
           "disabled": false,
-          "document": "是否信任",
+          "document": "<p>是否信任</p>",
           "example": "true",
           "member": "bool",
           "name": "Trusted",
@@ -10000,7 +10200,7 @@
         },
         {
           "disabled": false,
-          "document": "所属者",
+          "document": "<p>所属者</p>",
           "example": "tester",
           "member": "string",
           "name": "Owner",
@@ -10010,12 +10210,22 @@
         },
         {
           "disabled": false,
-          "document": "根域名",
+          "document": "<p>根域名</p>",
           "example": "test.com",
           "member": "string",
           "name": "RootDomain",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AggregationCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -10026,7 +10236,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子公司ID",
+          "document": "<p>子公司ID</p>",
           "example": "2664c3d2bcf233f2052ba78177394415",
           "member": "string",
           "name": "EnterpriseUid",
@@ -10036,7 +10246,7 @@
         },
         {
           "disabled": false,
-          "document": "子公司名称",
+          "document": "<p>子公司名称</p>",
           "example": "暴露面管理",
           "member": "string",
           "name": "EnterpriseName",
@@ -10046,7 +10256,7 @@
         },
         {
           "disabled": false,
-          "document": "主任务ID",
+          "document": "<p>主任务ID</p>",
           "example": "1",
           "member": "int64",
           "name": "JobId",
@@ -10056,7 +10266,7 @@
         },
         {
           "disabled": false,
-          "document": "单任务ID",
+          "document": "<p>单任务ID</p>",
           "example": "1",
           "member": "int64",
           "name": "JobStageId",
@@ -10066,7 +10276,7 @@
         },
         {
           "disabled": false,
-          "document": "是否忽略",
+          "document": "<p>是否忽略</p>",
           "example": "false",
           "member": "bool",
           "name": "Ignored",
@@ -10076,7 +10286,7 @@
         },
         {
           "disabled": false,
-          "document": "子任务ID",
+          "document": "<p>子任务ID</p>",
           "example": "1",
           "member": "int64",
           "name": "JobRecordId",
@@ -10086,7 +10296,7 @@
         },
         {
           "disabled": false,
-          "document": "企业ID",
+          "document": "<p>企业ID</p>",
           "example": "100",
           "member": "int64",
           "name": "CustomerId",
@@ -10096,7 +10306,7 @@
         },
         {
           "disabled": false,
-          "document": "企业名称",
+          "document": "<p>企业名称</p>",
           "example": "腾讯",
           "member": "string",
           "name": "CustomerName",
@@ -10106,7 +10316,7 @@
         },
         {
           "disabled": false,
-          "document": "详情",
+          "document": "<p>详情</p>",
           "example": "测试数据",
           "member": "string",
           "name": "Detail",
@@ -10116,7 +10326,7 @@
         },
         {
           "disabled": false,
-          "document": "Md5值",
+          "document": "<p>Md5值</p>",
           "example": "145314895749100ae8306079519b3393",
           "member": "string",
           "name": "Md5",
@@ -10126,7 +10336,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "CreateAt",
@@ -10136,7 +10346,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "UpdateAt",
@@ -10146,12 +10356,22 @@
         },
         {
           "disabled": false,
-          "document": "标签列表，json格式：{\\\"tag1\\\":[\\\"责任人xxx\\\"],\\\"tag2\\\":[\\\"测试站\\\"]}",
+          "document": "<p>标签列表，json格式：{\"tag1\":[\"责任人xxx\"],\"tag2\":[\"测试站\"]}</p>",
           "example": "{\\\"tag1\\\":[\\\"责任人xxx\\\"],\\\"tag2\\\":[\\\"测试站\\\"]}",
           "member": "string",
           "name": "Labels",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>演示模式是否明文展示</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "IsPlainTextInDemo",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -10886,7 +11106,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "企业名称",
+          "document": "<p>企业名称</p>",
           "example": "腾讯科技",
           "member": "string",
           "name": "Name",
@@ -10895,7 +11115,7 @@
         },
         {
           "disabled": false,
-          "document": "百分比取值范围为30-100",
+          "document": "<p>百分比取值范围为30-100</p>",
           "example": "50",
           "member": "int64",
           "name": "Percent",
@@ -10904,7 +11124,7 @@
         },
         {
           "disabled": false,
-          "document": "资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息",
+          "document": "<p>资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息</p>",
           "example": "资产收集,漏洞信息",
           "member": "string",
           "name": "ScanType",
@@ -10913,7 +11133,7 @@
         },
         {
           "disabled": false,
-          "document": "企业ID",
+          "document": "<p>企业ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -10922,8 +11142,8 @@
         },
         {
           "disabled": false,
-          "document": "周期测绘时间",
-          "example": "每日#0 0 * * * ",
+          "document": "<p>周期测绘时间</p>",
+          "example": "每日#0 0 * * *",
           "member": "string",
           "name": "ScanCron",
           "required": false,
@@ -10931,7 +11151,7 @@
         },
         {
           "disabled": false,
-          "document": "是否立即启动",
+          "document": "<p>是否立即启动</p>",
           "example": "false",
           "member": "bool",
           "name": "IsScanNow",
@@ -10940,7 +11160,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用周期测绘",
+          "document": "<p>是否启用周期测绘</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableCron",
@@ -10949,7 +11169,7 @@
         },
         {
           "disabled": false,
-          "document": "是否扫描子公司",
+          "document": "<p>是否扫描子公司</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableScanSubEnterprise",
@@ -10958,7 +11178,7 @@
         },
         {
           "disabled": false,
-          "document": "是否授权",
+          "document": "<p>是否授权</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableAuth",
@@ -10967,7 +11187,7 @@
         },
         {
           "disabled": false,
-          "document": "授权开始时间",
+          "document": "<p>授权开始时间</p>",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "AuthStartAt",
@@ -10976,7 +11196,7 @@
         },
         {
           "disabled": false,
-          "document": "授权结束时间",
+          "document": "<p>授权结束时间</p>",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "AuthEndAt",
@@ -10985,7 +11205,7 @@
         },
         {
           "disabled": false,
-          "document": "授权文件id",
+          "document": "<p>授权文件id</p>",
           "example": "0cf85f4d362c10027acc6046035417fa",
           "member": "string",
           "name": "AuthFile",
@@ -10994,7 +11214,7 @@
         },
         {
           "disabled": false,
-          "document": "测绘时间配置项，采用json字符串格式",
+          "document": "<p>测绘时间配置项，采用json字符串格式</p>",
           "example": "{\\\"Monday\\\":{\\\"0\\\":true},\\\"Tuesday\\\":{\\\"1\\\":true},\\\"Wednesday\\\":{\\\"2\\\":true},\\\"Thursday\\\":{\\\"3\\\":true},\\\"Friday\\\":{\\\"4\\\":true},\\\"Saturday\\\":{\\\"5\\\":true},\\\"Sunday\\\":{\\\"23\\\":true}}",
           "member": "string",
           "name": "ScanTime",
@@ -11003,7 +11223,7 @@
         },
         {
           "disabled": false,
-          "document": "企业图标",
+          "document": "<p>企业图标</p>",
           "example": "0cf85f4d362c10027acc6046035417fa",
           "member": "string",
           "name": "Icon",
@@ -11012,7 +11232,7 @@
         },
         {
           "disabled": false,
-          "document": "并发",
+          "document": "<p>并发</p>",
           "example": "10",
           "member": "int64",
           "name": "Qps",
@@ -11021,7 +11241,7 @@
         },
         {
           "disabled": false,
-          "document": "子公司拓展层次",
+          "document": "<p>子公司拓展层次</p>",
           "example": "0",
           "member": "int64",
           "name": "SubCompanyLevel",
@@ -11030,12 +11250,48 @@
         },
         {
           "disabled": false,
-          "document": "是否包含完整的扫描",
+          "document": "<p>是否包含完整的扫描</p>",
           "example": "false",
           "member": "bool",
           "name": "IsIncludeFullScan",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>端口扫描 QPS，默认 100，下限 10，保守值 200，上限 5000</p><p>默认值：100</p>",
+          "example": "101",
+          "member": "int64",
+          "name": "PortScanQps",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单 IP 任务并发数，默认 1，下限 1，保守值 3，上限 10</p><p>默认值：1</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "SingleIPTaskLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任一速率超过保守值时必须为 true，否则参数错误</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HighRiskAck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知情同意勾选清单，用于审计回放</p>",
+          "example": "[\"ack_v1_understand_risk\"]",
+          "member": "string",
+          "name": "ScanRateAckChecklist",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -11045,7 +11301,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "企业ID",
+          "document": "<p>企业ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",

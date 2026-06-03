@@ -171,8 +171,8 @@
     "CreateOrganizationMember": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationMember\n<公共请求参数>\n\n{\n    \"Remark\": \"create member\",\n    \"Name\": \"member_name\",\n    \"NodeId\": 1001,\n    \"AccountName\": \"member_name\",\n    \"PermissionIds\": [\n        1,\n        2\n    ],\n    \"PolicyType\": \"Finical\",\n    \"IdentityRoleID\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Uin\": 111111111111,\n        \"RequestId\": \"1a556fac-cd38-4732-86ef-6283d6abddd7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationMember\n<公共请求参数>\n\n{\n    \"Name\": \"member_name\",\n    \"PolicyType\": \"Financial\",\n    \"PermissionIds\": [\n        1,\n        2\n    ],\n    \"NodeId\": 100000000001,\n    \"AccountName\": \"member_name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Uin\": 111111111111,\n        \"RequestId\": \"baf86769-f4d5-47bd-8efc-3644add42458\"\n    }\n}",
         "title": "创建组织成员"
       }
     ],
@@ -624,6 +624,14 @@
         "title": "查询用户组信息"
       }
     ],
+    "GetIPWhitelist": [
+      {
+        "document": "GetIPWhitelist",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetIPWhitelist\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-dh5i84h***\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IpWhitelist\": [\n            \"88.88.88.88\",\n            \"11.179.212.0\",\n            \"21.36.103.0\",\n            \"8.8.9.9\",\n            \"8.8.8.99\"\n        ],\n        \"RequestId\": \"c3142b5b-6963-40bd-a97e-5ec0fa15fa24\"\n    }\n}",
+        "title": "GetIPWhitelist"
+      }
+    ],
     "GetProvisioningTaskStatus": [
       {
         "document": "查询用户同步异步任务的状态",
@@ -942,6 +950,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-s8shs8bd***\",\n    \"GroupId\": \"g-s8dhdn3\",\n    \"NewGroupName\": \"testGroup\",\n    \"NewDescription\": \"this is group.\"\n}",
         "output": "{\n    \"Response\": {\n        \"GroupInfo\": {\n            \"GroupName\": \"testGroup\",\n            \"Description\": \"this is group\",\n            \"CreateTime\": \"2024-01-01 12:12:12\",\n            \"GroupType\": \"Manual\",\n            \"UpdateTime\": \"2024-01-01 12:12:12\",\n            \"GroupId\": \"g-w8hd8n***\",\n            \"MemberCount\": 20\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
         "title": "修改用户组信息"
+      }
+    ],
+    "UpdateIPWhitelist": [
+      {
+        "document": "UpdateIPWhitelist",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIPWhitelist\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-dh5i84h4u***\",\n    \"IpWhitelist\": [\n        \"21.36.103.0/8\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd8b40f8-ddcf-4e31-bb71-4a1738f91934\",\n        \"Success\": true\n    }\n}",
+        "title": "UpdateIPWhitelist"
       }
     ],
     "UpdateOrganizationIdentity": [

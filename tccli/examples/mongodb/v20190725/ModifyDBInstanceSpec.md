@@ -1,27 +1,4 @@
-**Example 1: 调整云数据库实例配置**
-
-调整云数据库实例配置
-
-Input: 
-
-```
-tccli mongodb ModifyDBInstanceSpec --cli-unfold-argument  \
-    --InstanceId cmgo-p8vn**** \
-    --Volume 250 \
-    --Memory 4
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "d88095e5-50e8-4245-a0cf-993a536f9b20",
-        "DealId": "7142863"
-    }
-}
-```
-
-**Example 2: 删除 mongodb 云数据库实例从节点**
+**Example 1: 删除 mongodb 云数据库实例从节点**
 
 广州二区和三区共删除2个从节点，最终节点数量变更为3
 
@@ -54,7 +31,7 @@ Output:
 }
 ```
 
-**Example 3: 新增 mongodb 云数据库实例从节点**
+**Example 2: 新增 mongodb 云数据库实例从节点**
 
 广州二区和三区共新增2个从节点，最终节点数量变更为5
 
@@ -81,6 +58,29 @@ Output:
     "Response": {
         "DealId": "7142863",
         "RequestId": "d88095e5-50e8-4245-a0cf-993a536f9b20"
+    }
+}
+```
+
+**Example 3: 调整云数据库实例配置**
+
+调整云数据库实例配置
+
+Input: 
+
+```
+tccli mongodb ModifyDBInstanceSpec --cli-unfold-argument  \
+    --InstanceId cmgo-p8vn**** \
+    --Volume 250 \
+    --Memory 4
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "d88095e5-50e8-4245-a0cf-993a536f9b20",
+        "DealId": "7142863"
     }
 }
 ```

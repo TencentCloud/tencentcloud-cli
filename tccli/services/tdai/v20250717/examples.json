@@ -13,15 +13,23 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentInstance\n<公共请求参数>\n\n{\n    \"AgentId\": \"agt-xpcn2t3e\",\n    \"AgentVersion\": \"v1.0.0.0\",\n    \"InstanceName\": \"agentins-efbt5y3h\",\n    \"Parameters\": [\n        {\n            \"Key\": \"git_branch\",\n            \"Value\": \"master\",\n            \"ValueType\": \"string\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"InstanceId\": \"agentins-efbt5y3h\",\n        \"InstanceName\": \"agentins-efbt5y3h\"\n    }\n}",
-        "title": "创建智能体实例"
+        "title": "创建databaseClaw实例"
       }
     ],
     "CreateChatCompletion": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChatCompletion\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChatCompletion\n<公共请求参数>\n\n{\n    \"InputContent\": \"hello\",\n    \"InstanceId\": \"agentins-f1a2k3e4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"58e4fd58-6d47-5418-17ab-ce5bab7e5318\"\n    }\n}",
         "title": "创建会话示例"
+      }
+    ],
+    "CreateMemoryPlusSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMemoryPlusSpace\n<公共请求参数>\n\n{\n    \"Name\": \"name2\",\n    \"Description\": \"description2\",\n    \"GoodsNum\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"SpaceIds\": [\n            \"mem-hn46****\"\n        ],\n        \"RequestId\": \"f8984e85-c84d-4b84-a481-af3ca3dd212f\"\n    }\n}",
+        "title": "创建 Memory 实例"
       }
     ],
     "DescribeAgentDutyTaskDetail": [
@@ -80,6 +88,30 @@
         "title": "查询智能体历史会话列表"
       }
     ],
+    "DescribeMemoryPlusRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMemoryPlusRecord\n<公共请求参数>\n\n{\n    \"SpaceId\": \"mem-1lpq****\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"RecordType\": \"conversation\",\n    \"Filters\": [\n        {\n            \"Name\": \"session_id\",\n            \"Value\": \"barad-1779350361-131\"\n        }\n    ],\n    \"OrderDirection\": \"ASC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Documents\": [\n            {\n                \"Fields\": [\n                    {\n                        \"Description\": \"时间戳\",\n                        \"Name\": \"timestamp\",\n                        \"Type\": \"json.Number\",\n                        \"Value\": \"1779350361451\"\n                    }\n                ],\n                \"Id\": \"msg-cb5bede3****\"\n            }\n        ],\n        \"TotalCount\": 20,\n        \"RequestId\": \"4dfebdaf-c04c-4bcf-9a62-0fbb48879987\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeMemoryPlusSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMemoryPlusSpace\n<公共请求参数>\n\n{\n    \"SpaceId\": \"mem-asy2****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessUrl\": \"https://tdai.apigateway.cd.test.polaris\",\n        \"AppId\": 1300257648,\n        \"CreatedAt\": \"2026-05-20T11:53:20+08:00\",\n        \"CreditLimit\": 1000,\n        \"CreditUsage\": 0,\n        \"Description\": \"\",\n        \"DestroyAt\": \"2026-05-28T16:05:24+08:00\",\n        \"ExpiredAt\": \"2026-08-15T23:59:59+08:00\",\n        \"IsolatedAt\": \"2026-05-21T16:05:24+08:00\",\n        \"MemoryLimit\": 50000,\n        \"MemoryUsage\": 0,\n        \"Name\": \"批量测试-38\",\n        \"PayMode\": -1,\n        \"Region\": \"ap-chengdu\",\n        \"ResourceTags\": [],\n        \"SpaceId\": \"mem-asy2****\",\n        \"Status\": 6,\n        \"Version\": \"v1\",\n        \"WanAccessUrl\": \"https://tdai.apigateway.cd.test.polaris\",\n        \"RequestId\": \"067b2634-c91f-48d7-a6c0-a4edd5a0ad2e\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeMemoryPlusSpaces": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMemoryPlusSpaces\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreatedAt\": \"2026-05-14T10:34:01+08:00\",\n                \"CreditUsage\": 0,\n                \"MemoryUsage\": 0,\n                \"Name\": \"name3\",\n                \"Region\": \"ap-chengdu\",\n                \"ResourceTags\": null,\n                \"SpaceId\": \"mem-8z4o2g9v\",\n                \"Status\": 1\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"d08df123-f124-4de3-9587-9ce2f915bdb5\"\n    }\n}",
+        "title": "成功查询实例列表"
+      }
+    ],
     "DescribeReportUrl": [
       {
         "document": "",
@@ -88,12 +120,36 @@
         "title": "某个子步骤的结果作为报告输出"
       }
     ],
+    "DescribeServiceAccessKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceAccessKey\n<公共请求参数>\n\n{\n    \"ServiceId\": \"tdai-dps-8ynwub6x\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthKey\": \"********************************************\",\n        \"RequestId\": \"a8786e2d-c831-4443-a7b1-b53ec4880e74\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DestroyMemoryPlusSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyMemoryPlusSpace\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"mem-hn46****\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba56fc77-f742-4a54-8df8-0f717951b65c\"\n    }\n}",
+        "title": "成功删除单个实例"
+      }
+    ],
     "IsolateAgentInstance": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateAgentInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-efbt5y3h\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a070f1a2-7538-5318-c843-6b47607aa78c\"\n    }\n}",
         "title": "隔离智能体实例"
+      }
+    ],
+    "IsolateMemoryPlusSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateMemoryPlusSpace\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"mem-hn46****\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dcff65d8-7e16-4ded-97c0-0f1c6644f40a\"\n    }\n}",
+        "title": "成功将单个实例放入回收站"
       }
     ],
     "ModifyAgentInstanceParameters": [
@@ -112,6 +168,14 @@
         "title": "修改实例某一次会话的标题"
       }
     ],
+    "ModifyMemoryPlusSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMemoryPlusSpace\n<公共请求参数>\n\n{\n    \"SpaceId\": \"mem-bsjw****\",\n    \"Name\": \"测试111\",\n    \"Description\": \"描述1111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"52ef7fd5-3cdd-4fe9-b219-8ff958ae01eb\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "PauseAgentWork": [
       {
         "document": "",
@@ -126,6 +190,14 @@
         "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecoverAgentInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-efbt5y3h\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a070f1a2-7538-5318-c843-6b47607aa78c\"\n    }\n}",
         "title": "解隔离智能体实例"
+      }
+    ],
+    "RecoverMemoryPlusSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecoverMemoryPlusSpace\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"mem-8z4o****\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b856ae25-2e49-4a2e-887a-c838244b008f\"\n    }\n}",
+        "title": "将单个实例从回收站中恢复"
       }
     ],
     "RemoveChat": [

@@ -35,13 +35,6 @@
       "output": "BizLicenseOCRResponse",
       "status": "online"
     },
-    "BusInvoiceOCR": {
-      "document": "<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/90802\">通用票据识别（高级版）</a>。</b>\n本接口支持识别公路汽车客票关键字段的识别，包括发票代码、发票号码、日期、票价、始发地、目的地、姓名、时间、发票消费类型、身份证号、省、市、开票日期、乘车地点、检票口、客票类型、车型、座位号、车次等。\n\n默认接口请求频率限制：5次/秒。",
-      "input": "BusInvoiceOCRRequest",
-      "name": "汽车票识别",
-      "output": "BusInvoiceOCRResponse",
-      "status": "online"
-    },
     "BusinessCardOCR": {
       "document": "本接口支持中英文名片各字段的自动定位与识别，包含姓名、电话、手机号、邮箱、公司、部门、职位、网址、地址、QQ、微信、MSN等。\n\n默认接口请求频率限制：10次/秒。",
       "input": "BusinessCardOCRRequest",
@@ -98,13 +91,6 @@
       "output": "DriverLicenseOCRResponse",
       "status": "online"
     },
-    "DutyPaidProofOCR": {
-      "document": "<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/90802\">通用票据识别（高级版）</a>。</b>\n本接口支持对完税证明的税号、纳税人识别号、纳税人名称、金额合计大写、金额合计小写、填发日期、税务机关、填票人等关键字段的识别。\n\n默认接口请求频率限制：5次/秒。",
-      "input": "DutyPaidProofOCRRequest",
-      "name": "完税证明识别",
-      "output": "DutyPaidProofOCRResponse",
-      "status": "online"
-    },
     "EduPaperOCR": {
       "document": "本接口支持数学试题内容的识别和结构化输出，包括通用文本解析和小学/初中/高中数学公式解析能力（包括91种题型，180种符号），公式返回格式为 Latex 格式文本。\n\n默认接口请求频率限制：5次/秒。",
       "input": "EduPaperOCRRequest",
@@ -134,7 +120,7 @@
       "status": "online"
     },
     "ExtractDocAgent": {
-      "document": "模型参数更小，速度更快。推荐场景：实时性要求高（30s以内）并且样本输入输出token2000以内，建议用实时模型。【备注：1.固定价格不限抽取字段数，2.自适应价格抽取字段大于10记两次费用，小于等于10记一次费用】",
+      "document": "模型参数更小，速度更快。推荐场景：实时性要求高（30s以内）并且样本输入输出token2000以内，建议用实时模型。【备注：1.固定价格不限抽取字段数，2.自适应价格抽取字段大于10记两次费用，小于等于10记一次费用】\n\n默认接口请求频率限制：5次/秒。",
       "input": "ExtractDocAgentRequest",
       "name": "实时文档抽取Agent",
       "output": "ExtractDocAgentResponse",
@@ -159,20 +145,6 @@
       "input": "ExtractDocMultiProRequest",
       "name": "文档抽取（多模态Pro版）",
       "output": "ExtractDocMultiProResponse",
-      "status": "online"
-    },
-    "FinanBillOCR": {
-      "document": "<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/90802\">通用票据识别（高级版）</a>。</b>\n本接口支持常见银行票据的自动分类和识别。整单识别包括支票（含现金支票、普通支票、转账支票），承兑汇票（含银行承兑汇票、商业承兑汇票）以及进账单等，适用于中国人民银行印发的 2010 版银行票据凭证版式（银发[2010]299 号）。\n\n默认接口请求频率限制：5次/秒。",
-      "input": "FinanBillOCRRequest",
-      "name": "金融票据整单识别",
-      "output": "FinanBillOCRResponse",
-      "status": "online"
-    },
-    "FinanBillSliceOCR": {
-      "document": "<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/90802\">通用票据识别（高级版）</a>。</b>\n本接口支持常见银行票据的自动分类和识别。切片识别包括金融行业常见票据的重要切片字段识别，包括金额、账号、日期、凭证号码等。（金融票据切片：金融票据中待识别字段及其周围局部区域的裁剪图像。）\n\n默认接口请求频率限制：5次/秒。",
-      "input": "FinanBillSliceOCRRequest",
-      "name": "金融票据切片识别",
-      "output": "FinanBillSliceOCRResponse",
       "status": "online"
     },
     "FlightInvoiceOCR": {
@@ -280,13 +252,6 @@
       "output": "InsuranceBillOCRResponse",
       "status": "online"
     },
-    "InvoiceGeneralOCR": {
-      "document": "<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/90802\">通用票据识别（高级版）</a>。</b>\n本接口支持对通用机打发票的发票代码、发票号码、日期、合计金额(小写)、合计金额(大写)、购买方识别号、销售方识别号、校验码、购买方名称、销售方名称、时间、种类、发票消费类型、省、市、是否有公司印章、发票名称、购买方地址、电话、销售方地址、电话、购买方开户行及账号、销售方开户行及账号、经办人取票用户、经办人支付信息、经办人商户号、经办人订单号、货物或应税劳务、服务名称、数量、单价、税率、税额、金额、单位、规格型号、合计税额、合计金额、备注、收款人、复核、开票人、密码区、行业分类等字段的识别。\n\n默认接口请求频率限制：5次/秒。",
-      "input": "InvoiceGeneralOCRRequest",
-      "name": "通用机打发票识别",
-      "output": "InvoiceGeneralOCRResponse",
-      "status": "online"
-    },
     "LicensePlateOCR": {
       "document": "本接口支持对中国大陆机动车车牌的自动定位和识别，返回地域编号和车牌号码与车牌颜色信息。\n\n默认接口请求频率限制：10次/秒。",
       "input": "LicensePlateOCRRequest",
@@ -371,11 +336,11 @@
       "output": "QuestionSplitOCRResponse",
       "status": "online"
     },
-    "QuotaInvoiceOCR": {
-      "document": "<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/90802\">通用票据识别（高级版）</a>。</b>\n本接口支持定额发票的发票号码、发票代码、金额(大小写)、发票消费类型、地区及是否有公司印章等关键字段的识别。\n\n默认接口请求频率限制：5次/秒。",
-      "input": "QuotaInvoiceOCRRequest",
-      "name": "定额发票识别",
-      "output": "QuotaInvoiceOCRResponse",
+    "RecognizeAgent": {
+      "document": "支持对输入图的内容进行判断、分类以及总结；支持用户对通用文字识别输出结构进行自定义。",
+      "input": "RecognizeAgentRequest",
+      "name": "通用文字识别Agent",
+      "output": "RecognizeAgentResponse",
       "status": "online"
     },
     "RecognizeContainerOCR": {
@@ -425,13 +390,6 @@
       "input": "RecognizeMedicalInvoiceOCRRequest",
       "name": "医疗票据识别",
       "output": "RecognizeMedicalInvoiceOCRResponse",
-      "status": "online"
-    },
-    "RecognizeOnlineTaxiItineraryOCR": {
-      "document": "本接口支持网约车行程单关键字段的识别，包括行程起止日期、上车时间、起点、终点、里程、金额等字段。\n\n默认接口请求频率限制：20次/秒。",
-      "input": "RecognizeOnlineTaxiItineraryOCRRequest",
-      "name": "网约车行程单识别",
-      "output": "RecognizeOnlineTaxiItineraryOCRResponse",
       "status": "online"
     },
     "RecognizeStoreName": {
@@ -504,13 +462,6 @@
       "output": "SealOCRResponse",
       "status": "online"
     },
-    "ShipInvoiceOCR": {
-      "document": "<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/90802\">通用票据识别（高级版）</a>。</b>\n本接口支持识别轮船票的发票代码、发票号码、日期、姓名、票价、始发地、目的地、姓名、时间、发票消费类型、省、市、币种字段。\n\n默认接口请求频率限制：5次/秒。",
-      "input": "ShipInvoiceOCRRequest",
-      "name": "轮船票识别",
-      "output": "ShipInvoiceOCRResponse",
-      "status": "online"
-    },
     "SmartStructuralOCR": {
       "document": "本接口支持识别并提取各类证照、票据、表单、合同等结构化场景的字段信息。无需任何配置，灵活高效。适用于各类结构化信息录入场景。\n\n默认接口请求频率限制：5次/秒。",
       "input": "SmartStructuralOCRRequest",
@@ -546,25 +497,11 @@
       "output": "TableOCRResponse",
       "status": "online"
     },
-    "TaxiInvoiceOCR": {
-      "document": "本接口支持出租车发票关键字段的识别，包括发票号码、发票代码、金额、日期、上下车时间、里程、车牌号、发票类型及所属地区等字段。\n\n默认接口请求频率限制：5次/秒。",
-      "input": "TaxiInvoiceOCRRequest",
-      "name": "出租车发票识别",
-      "output": "TaxiInvoiceOCRResponse",
-      "status": "online"
-    },
     "TextDetect": {
       "document": "本接口通过检测图片中的文字信息特征，快速判断图片中有无文字并返回判断结果，帮助用户过滤无文字的图片。\n\n默认接口请求频率限制：5次/秒。",
       "input": "TextDetectRequest",
       "name": "快速文本检测",
       "output": "TextDetectResponse",
-      "status": "online"
-    },
-    "TollInvoiceOCR": {
-      "document": "<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/90802\">通用票据识别（高级版）</a>。</b>\n本接口支持过路过桥费发票关键字段的识别，包括发票代码、发票号码、日期、金额、入口、出口、时间、发票消费类型、高速标志等。\n\n默认接口请求频率限制：5次/秒。",
-      "input": "TollInvoiceOCRRequest",
-      "name": "过路过桥费发票识别",
-      "output": "TollInvoiceOCRResponse",
       "status": "online"
     },
     "TrainTicketOCR": {
@@ -586,13 +523,6 @@
       "input": "VatInvoiceVerifyNewRequest",
       "name": "增值税发票核验（新版）",
       "output": "VatInvoiceVerifyNewResponse",
-      "status": "online"
-    },
-    "VatRollInvoiceOCR": {
-      "document": "<b>此接口不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/90802\">通用票据识别（高级版）</a>。</b>\n本接口支持对增值税发票（卷票）关键字段的识别，包括的发票代码、合计金额(小写)、合计金额(大写)、开票日期、发票号码、购买方识别号、销售方识别号、校验码、销售方名称、购买方名称、发票消费类型、省、市、是否有公司印章、单价、金额、数量、服务类型、品名、种类等。\n\n默认接口请求频率限制：5次/秒。",
-      "input": "VatRollInvoiceOCRRequest",
-      "name": "增值税发票（卷票）识别",
-      "output": "VatRollInvoiceOCRResponse",
       "status": "online"
     },
     "VehicleLicenseOCR": {
@@ -621,6 +551,13 @@
       "input": "VerifyOfdVatInvoiceOCRRequest",
       "name": "OFD发票识别",
       "output": "VerifyOfdVatInvoiceOCRResponse",
+      "status": "online"
+    },
+    "VerifyScenePhoto": {
+      "document": "提供针对特定场景（如商户门头照、车牌等）图片的PS篡改、AIGC合成、图片质量检测能力，可应用于业务流程中对特定场景图片真实性、有效性校验的场景。",
+      "input": "VerifyScenePhotoRequest",
+      "name": "场景鉴伪（大模型版）",
+      "output": "VerifyScenePhotoResponse",
       "status": "online"
     },
     "VinOCR": {
@@ -2346,116 +2283,6 @@
       ],
       "usage": "out"
     },
-    "BusInvoiceInfo": {
-      "document": "汽车票字段信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "识别出的字段名称(关键字)，支持以下字段：\n发票代码、发票号码、日期、票价、始发地、目的地、姓名、时间、发票消费类型、身份证号、省、市、开票日期、乘车地点、检票口、客票类型、车型、座位号、车次。",
-          "example": "发票代码",
-          "member": "string",
-          "name": "Name",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
-          "example": "153001720011",
-          "member": "string",
-          "name": "Value",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "文本行在旋转纠正之后的图像中的像素坐标。",
-          "example": "无",
-          "member": "Rect",
-          "name": "Rect",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "BusInvoiceOCRRequest": {
-      "document": "BusInvoiceOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
-          "example": "true",
-          "member": "bool",
-          "name": "IsPdf",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
-          "example": "0",
-          "member": "int64",
-          "name": "PdfPageNumber",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "BusInvoiceOCRResponse": {
-      "document": "BusInvoiceOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "汽车票识别结果，具体内容请点击左侧链接。",
-          "example": "无",
-          "member": "BusInvoiceInfo",
-          "name": "BusInvoiceInfos",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
-          "example": "358.0",
-          "member": "float",
-          "name": "Angle",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "BusinessCardInfo": {
       "document": "名片识别结果",
       "members": [
@@ -2945,7 +2772,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "<p>图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -2954,10 +2781,28 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "<p>图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/docume",
           "member": "string",
           "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否输出具体场景标签。注：开启后耗时会增加。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "SceneType",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入商户名称，辅助判断具体场景标签。注：仅SceneType配置为true时支持。</p>",
+          "example": "商户名称",
+          "member": "string",
+          "name": "StoreInfo",
           "required": false,
           "type": "string"
         }
@@ -2969,12 +2814,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "门头照标签",
-          "example": "标准门头照",
+          "document": "<p>门头照标签</p>",
+          "example": "[\"标准门头照\"]",
           "member": "string",
           "name": "StoreLabel",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>具体场景标签，输出3个最匹配的场景， 注：仅SceneType配置为true时支持。</p>",
+          "example": "快餐店（mcc数字）、各类服装及饰物店（mcc数字）、五金商店（mcc数字）",
+          "member": "string",
+          "name": "SceneType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -3072,7 +2927,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "横坐标",
+          "document": "<p>横坐标。</p>",
           "example": "480",
           "member": "int64",
           "name": "X",
@@ -3082,12 +2937,58 @@
         },
         {
           "disabled": false,
-          "document": "纵坐标",
+          "document": "<p>纵坐标。</p>",
           "example": "640",
           "member": "int64",
           "name": "Y",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CoordList": {
+      "document": "坐标数组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>左上角坐标。</p>",
+          "example": "无",
+          "member": "Coord",
+          "name": "TopLeft",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>右上角坐标。</p>",
+          "example": "无",
+          "member": "Coord",
+          "name": "TopRight",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>左下角坐标。</p>",
+          "example": "无",
+          "member": "Coord",
+          "name": "BottomLeft",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>右下角坐标。</p>",
+          "example": "无",
+          "member": "Coord",
+          "name": "BottomRight",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -3543,7 +3444,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "置信度 0 ~100",
+          "document": "<p>置信度 0 ~100。</p>",
           "example": "100",
           "member": "int64",
           "name": "Confidence",
@@ -3553,7 +3454,7 @@
         },
         {
           "disabled": false,
-          "document": "候选字Character",
+          "document": "<p>候选字Character。</p>",
           "example": "字",
           "member": "string",
           "name": "Character",
@@ -3818,116 +3719,6 @@
           "name": "DriverLicenseType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DutyPaidProofInfo": {
-      "document": "识别出的字段",
-      "members": [
-        {
-          "disabled": false,
-          "document": "识别出的字段名称(关键字)，支持以下字段：\n税号 、纳税人识别号 、纳税人名称 、金额合计大写 、金额合计小写 、填发日期 、税务机关 、填票人。",
-          "example": "纳税人识别号",
-          "member": "string",
-          "name": "Name",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
-          "example": "440524100000",
-          "member": "string",
-          "name": "Value",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "文本行在旋转纠正之后的图像中的像素坐标。",
-          "example": "无",
-          "member": "Rect",
-          "name": "Rect",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "DutyPaidProofOCRRequest": {
-      "document": "DutyPaidProofOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
-          "example": "true",
-          "member": "bool",
-          "name": "IsPdf",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
-          "example": "0",
-          "member": "int64",
-          "name": "PdfPageNumber",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DutyPaidProofOCRResponse": {
-      "document": "DutyPaidProofOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "完税证明识别结果，具体内容请点击左侧链接。",
-          "example": "无",
-          "member": "DutyPaidProofInfo",
-          "name": "DutyPaidProofInfos",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
-          "example": "0.0",
-          "member": "float",
-          "name": "Angle",
-          "output_required": true,
-          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -6097,149 +5888,71 @@
       ],
       "type": "object"
     },
-    "FinanBillInfo": {
-      "document": "金融票据整单识别单个字段的内容",
+    "FieldsInfo": {
+      "document": "用于展示抽取出的信息",
       "members": [
         {
           "disabled": false,
-          "document": "识别出的字段名称(关键字)，支持以下字段：\n【进账单】\n日期、出票全称、出票账号、出票开户行、收款人全称、收款人账号、收款开户行、大写金额、小写金额、票据种类、票据张数、票据号码；\n【支票】\n开户银行、支票种类、凭证号码2、日期、大写金额、小写金额、付款行编号、密码、凭证号码1；\n【银行承兑汇票】或【商业承兑汇票】\n出票日期、行号1、行号2、出票人全称、出票人账号、付款行全称、收款人全称、收款人账号、收款人开户行、出票金额大写、出票金额小写、汇票到期日、付款行行号、付款行地址。",
-          "example": "票据号码",
+          "document": "<p>用户自定义的提取字段名。</p>",
+          "example": "出生年月日",
           "member": "string",
-          "name": "Name",
-          "output_required": true,
+          "name": "KeyName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
-          "example": "48000102",
+          "document": "<p>用户自定义的提取字段名的提示词。</p>",
+          "example": "如，2026年1月",
           "member": "string",
-          "name": "Value",
-          "output_required": true,
+          "name": "KeyPrompt",
+          "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>出参字段对应的值。</p><p>注意：此字段可能返回 null，表示取不到有效值。</p>",
+          "example": "王臣",
+          "member": "string",
+          "name": "KeyValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>出参类型。</p><p>注：与入参对应同个值。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "KeyType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文本行坐标，以四个顶点坐标表示。</p><p>注：仅当入参EnableCoord不为null时生效，默认是false。</p>",
+          "example": "无",
+          "member": "CoordList",
+          "name": "Polygon",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>嵌套FieldsInfo结构，仅当KeyType=1时有效。</p>",
+          "example": "无",
+          "member": "SubItemGroup",
+          "name": "SubItems",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
       "usage": "out"
-    },
-    "FinanBillOCRRequest": {
-      "document": "FinanBillOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "FinanBillOCRResponse": {
-      "document": "FinanBillOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "金融票据整单识别结果，具体内容请点击左侧链接。",
-          "example": "无",
-          "member": "FinanBillInfo",
-          "name": "FinanBillInfos",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "FinanBillSliceInfo": {
-      "document": "金融票据切片识别单个字段的内容",
-      "members": [
-        {
-          "disabled": false,
-          "document": "识别出的字段名称(关键字)，支持以下字段：\n大写金额、小写金额、账号、票号1、票号2、收款人、大写日期、同城交换号、地址-省份、地址-城市、付款行全称、支票密码、支票用途。",
-          "example": "票号1",
-          "member": "string",
-          "name": "Name",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
-          "example": "31300051",
-          "member": "string",
-          "name": "Value",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "FinanBillSliceOCRRequest": {
-      "document": "FinanBillSliceOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "FinanBillSliceOCRResponse": {
-      "document": "FinanBillSliceOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "金融票据切片识别结果，具体内容请点击左侧链接。",
-          "example": "无",
-          "member": "FinanBillSliceInfo",
-          "name": "FinanBillSliceInfos",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "FinancialBill": {
       "document": "财务票据查验返回结果",
@@ -7059,6 +6772,15 @@
           "example": "OCR",
           "member": "string",
           "name": "ConfigID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要识别的文字类型，默认识别全部类型的文字。 0：自动识别全部类型文字 1：仅识别手写体文字 2：仅识别印刷体文字</p><p>当config id=OCR 且 iswords 是false 时 才生效</p>",
+          "example": "0",
+          "member": "string",
+          "name": "WordsType",
           "required": false,
           "type": "string"
         }
@@ -8034,7 +7756,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "<p>图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -8043,7 +7765,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "<p>图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/HmtResidentPermitOCR/HmtResidentPermitOCR1.png",
           "member": "string",
           "name": "ImageUrl",
@@ -8052,7 +7774,7 @@
         },
         {
           "disabled": false,
-          "document": "FRONT：有照片的一面（人像面），\nBACK：无照片的一面（国徽面），\n该参数如果不填或填错，将为您自动判断正反面。",
+          "document": "<p>FRONT：有照片的一面（人像面），<br>BACK：无照片的一面（国徽面），<br>该参数如果不填或填错，将为您自动判断正反面。</p>",
           "example": "FRONT",
           "member": "string",
           "name": "CardSide",
@@ -8061,7 +7783,7 @@
         },
         {
           "disabled": false,
-          "document": "是否返回头像和位置坐标",
+          "document": "<p>是否返回头像和位置坐标</p>",
           "example": "false",
           "member": "bool",
           "name": "CropPortrait",
@@ -8076,7 +7798,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "证件姓名",
+          "document": "<p>证件姓名</p>",
           "example": "李优优",
           "member": "string",
           "name": "Name",
@@ -8086,7 +7808,7 @@
         },
         {
           "disabled": false,
-          "document": "性别",
+          "document": "<p>性别</p>",
           "example": "女",
           "member": "string",
           "name": "Sex",
@@ -8096,7 +7818,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期",
+          "document": "<p>出生日期</p>",
           "example": "1997/6/2",
           "member": "string",
           "name": "Birth",
@@ -8106,7 +7828,7 @@
         },
         {
           "disabled": false,
-          "document": "地址",
+          "document": "<p>地址</p>",
           "example": "上海市徐汇区古美路1528号A1栋腾讯优图1号",
           "member": "string",
           "name": "Address",
@@ -8116,7 +7838,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证号",
+          "document": "<p>身份证号</p>",
           "example": "830000199706020042",
           "member": "string",
           "name": "IdCardNo",
@@ -8126,7 +7848,7 @@
         },
         {
           "disabled": false,
-          "document": "0-正面\n1-反面",
+          "document": "<p>0-正面<br>1-反面</p>",
           "example": "0",
           "member": "int64",
           "name": "CardType",
@@ -8136,7 +7858,7 @@
         },
         {
           "disabled": false,
-          "document": "证件有效期限",
+          "document": "<p>证件有效期限</p>",
           "example": "2018.09.06-2023.09.06",
           "member": "string",
           "name": "ValidDate",
@@ -8146,7 +7868,7 @@
         },
         {
           "disabled": false,
-          "document": "签发机关",
+          "document": "<p>签发机关</p>",
           "example": "合肥市公安局高新分局",
           "member": "string",
           "name": "Authority",
@@ -8156,7 +7878,7 @@
         },
         {
           "disabled": false,
-          "document": "签发次数",
+          "document": "<p>签发次数</p>",
           "example": "0",
           "member": "string",
           "name": "VisaNum",
@@ -8166,7 +7888,7 @@
         },
         {
           "disabled": false,
-          "document": "通行证号码",
+          "document": "<p>通行证号码</p>",
           "example": "0",
           "member": "string",
           "name": "PassNo",
@@ -8176,7 +7898,7 @@
         },
         {
           "disabled": false,
-          "document": "头像和坐标信息",
+          "document": "<p>头像和坐标信息</p>",
           "example": "无",
           "member": "PortraitImageInfo",
           "name": "PortraitImageInfo",
@@ -9023,116 +8745,6 @@
       ],
       "usage": "out"
     },
-    "InvoiceGeneralInfo": {
-      "document": "通用机打发票信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "识别出的字段名称(关键字)，支持以下字段识别（注：下划线表示一个字段）：\n发票代码、发票号码、日期、合计金额(小写)、合计金额(大写)、购买方识别号、销售方识别号、校验码、购买方名称、销售方名称、时间、种类、发票消费类型、省、市、是否有公司印章、发票名称、<span style=\"text-decoration:underline\">购买方地址、电话</span>、<span style=\"text-decoration:underline\">销售方地址、电话</span>、购买方开户行及账号、销售方开户行及账号、经办人取票用户、经办人支付信息、经办人商户号、经办人订单号、<span style=\"text-decoration:underline\">货物或应税劳务、服务名称</span>、数量、单价、税率、税额、金额、单位、规格型号、合计税额、合计金额、备注、收款人、复核、开票人、密码区、行业分类",
-          "example": "发票代码",
-          "member": "string",
-          "name": "Name",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
-          "example": "1440310000",
-          "member": "string",
-          "name": "Value",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "文本行在旋转纠正之后的图像中的像素坐标。",
-          "example": "无",
-          "member": "Rect",
-          "name": "Rect",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "InvoiceGeneralOCRRequest": {
-      "document": "InvoiceGeneralOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
-          "example": "false",
-          "member": "bool",
-          "name": "IsPdf",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
-          "example": "0",
-          "member": "int64",
-          "name": "PdfPageNumber",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "InvoiceGeneralOCRResponse": {
-      "document": "InvoiceGeneralOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "通用机打发票识别结果，具体内容请点击左侧链接。",
-          "example": "无",
-          "member": "InvoiceGeneralInfo",
-          "name": "InvoiceGeneralInfos",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
-          "example": "0.0",
-          "member": "float",
-          "name": "Angle",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "InvoiceItem": {
       "document": "混贴票据单张发票识别信息",
       "members": [
@@ -9320,7 +8932,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "左上角x",
+          "document": "<p>左上角x。</p>",
           "example": "537",
           "member": "int64",
           "name": "X",
@@ -9330,7 +8942,7 @@
         },
         {
           "disabled": false,
-          "document": "左上角y",
+          "document": "<p>左上角y。</p>",
           "example": "335",
           "member": "int64",
           "name": "Y",
@@ -9340,7 +8952,7 @@
         },
         {
           "disabled": false,
-          "document": "宽width",
+          "document": "<p>宽width。</p>",
           "example": "169",
           "member": "int64",
           "name": "Width",
@@ -9350,7 +8962,7 @@
         },
         {
           "disabled": false,
-          "document": "高height",
+          "document": "<p>高height。</p>",
           "example": "63",
           "member": "int64",
           "name": "Height",
@@ -9644,6 +9256,52 @@
           "member": "ItemInfo",
           "name": "Lines",
           "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListInfo": {
+      "document": "用于展示结构化提取出的结果与输入给模型的提示词和模型的输出",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理任务的完整提示词。注：仅当QueryType=1/2/3时有效，否则返回为null。</p>",
+          "example": "根据图片内容，判断这张图是不是增值税发票？只回答 是 / 否",
+          "member": "string",
+          "name": "QueryInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据QueryType对应任务的返回内容。注：仅当QueryType=1/2/3时有效，其他情况为null。</p>",
+          "example": "均不符合",
+          "member": "string",
+          "name": "Answer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结构化提取结果。注：仅当QueryType=4时有效，否则返回null。</p>",
+          "example": "无",
+          "member": "FieldsInfo",
+          "name": "ExtractFields",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测到的文本信息，包括内容、坐标以及旋转纠正后的坐标等，具体内容请参见 TextDetection。注：仅当QueryType=0时TextDetections不为空，否则返回null。</p>",
+          "example": "无",
+          "member": "TextDetection",
+          "name": "TextDetections",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         }
@@ -10419,7 +10077,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "<p>图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -10428,7 +10086,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "<p>图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/MainlandPermitOCR/MainlandPermitOCR1.png",
           "member": "string",
           "name": "ImageUrl",
@@ -10437,7 +10095,7 @@
         },
         {
           "disabled": false,
-          "document": "是否返回头像。默认不返回。",
+          "document": "<p>是否返回头像。默认不返回。</p>",
           "example": "false",
           "member": "bool",
           "name": "RetProfile",
@@ -10446,7 +10104,7 @@
         },
         {
           "disabled": false,
-          "document": "图片正反面\nFRONT：正面\nBACK：反面 （仅支持来往内地通行证反面识别，不支持港澳台通行证反面识别）\n默认为FRONT",
+          "document": "<p>图片正反面<br>FRONT：正面<br>BACK：反面 （仅支持来往内地通行证反面识别，不支持港澳台通行证反面识别）<br>默认为FRONT</p>",
           "example": "FRONT",
           "member": "string",
           "name": "CardSide",
@@ -10461,7 +10119,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "中文姓名",
+          "document": "<p>中文姓名</p>",
           "example": "李明",
           "member": "string",
           "name": "Name",
@@ -10471,7 +10129,7 @@
         },
         {
           "disabled": false,
-          "document": "英文姓名",
+          "document": "<p>英文姓名</p>",
           "example": "LIMING",
           "member": "string",
           "name": "EnglishName",
@@ -10481,7 +10139,7 @@
         },
         {
           "disabled": false,
-          "document": "性别",
+          "document": "<p>性别</p>",
           "example": "男",
           "member": "string",
           "name": "Sex",
@@ -10491,7 +10149,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期",
+          "document": "<p>出生日期</p>",
           "example": "1981.08.03",
           "member": "string",
           "name": "Birthday",
@@ -10501,7 +10159,7 @@
         },
         {
           "disabled": false,
-          "document": "签发机关",
+          "document": "<p>签发机关</p>",
           "example": "公安部出入境管理局",
           "member": "string",
           "name": "IssueAuthority",
@@ -10511,7 +10169,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期限",
+          "document": "<p>有效期限</p>",
           "example": "2018.10.09-2028.10.08",
           "member": "string",
           "name": "ValidDate",
@@ -10521,7 +10179,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号",
+          "document": "<p>证件号</p>",
           "example": "C00000000",
           "member": "string",
           "name": "Number",
@@ -10531,7 +10189,7 @@
         },
         {
           "disabled": false,
-          "document": "签发地点",
+          "document": "<p>签发地点</p>",
           "example": "广东",
           "member": "string",
           "name": "IssueAddress",
@@ -10541,7 +10199,7 @@
         },
         {
           "disabled": false,
-          "document": "签发次数",
+          "document": "<p>签发次数</p>",
           "example": "02",
           "member": "string",
           "name": "IssueNumber",
@@ -10551,7 +10209,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。",
+          "document": "<p>证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。</p>",
           "example": "台湾居民来往大陆通行证",
           "member": "string",
           "name": "Type",
@@ -10561,7 +10219,7 @@
         },
         {
           "disabled": false,
-          "document": "RetProfile为True时返回头像字段， Base64编码",
+          "document": "<p>RetProfile为True时返回头像字段， Base64编码</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "Profile",
@@ -10571,7 +10229,7 @@
         },
         {
           "disabled": false,
-          "document": "国籍",
+          "document": "<p>国籍</p>",
           "example": "中国",
           "member": "string",
           "name": "Nationality",
@@ -10581,7 +10239,7 @@
         },
         {
           "disabled": false,
-          "document": "背面字段信息",
+          "document": "<p>背面字段信息</p>",
           "example": "无",
           "member": "MainlandTravelPermitBackInfos",
           "name": "MainlandTravelPermitBackInfos",
@@ -10732,7 +10390,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "题目的题干信息 \n\n",
+          "document": "<p>题目的题干信息</p>",
           "example": "1+1=?",
           "member": "string",
           "name": "MarkItemTitle",
@@ -10743,7 +10401,7 @@
         },
         {
           "disabled": false,
-          "document": "批改答案列表（每个小题存在多个答案，比如多个填空区域答案，循序按照从左到右，从上到下排列）",
+          "document": "<p>批改答案列表（每个小题存在多个答案，比如多个填空区域答案，循序按照从左到右，从上到下排列）</p>",
           "example": "无",
           "member": "AnswerInfo",
           "name": "AnswerInfos",
@@ -10754,13 +10412,46 @@
         },
         {
           "disabled": false,
-          "document": "嵌套题目结构（如果有多层嵌套则会返回子题信息，如果没有嵌套题目则返回空）",
+          "document": "<p>嵌套题目结构（如果有多层嵌套则会返回子题信息，如果没有嵌套题目则返回空）</p>",
           "example": "无",
           "member": "MarkInfo",
           "name": "MarkInfos",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>题干坐标</p><p>单位：px</p>",
+          "example": "[1, 2, 3, 4, 5, 6, 7, 8]",
+          "member": "int64",
+          "name": "QuestionPositions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>题干插图坐标列表，每个元素包含一张插图的4个角点坐标</p>",
+          "example": "无",
+          "member": "Positions",
+          "name": "QuestionImagePositions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>题目级正确答案（步骤批改时使用，包含完整解题步骤）</p>",
+          "example": "1 + 1 = 2",
+          "member": "string",
+          "name": "RightAnswer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -12701,8 +12392,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "无",
+          "document": "<p>图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -12710,8 +12401,8 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://xx/a.jpg ",
+          "document": "<p>图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/PermitOCR/PermitOCR1.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -12719,7 +12410,7 @@
         },
         {
           "disabled": false,
-          "document": "是否返回头像照片，默认为 false",
+          "document": "<p>是否返回头像照片，默认为 false</p>",
           "example": "false",
           "member": "bool",
           "name": "CropPortrait",
@@ -12734,7 +12425,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "姓名",
+          "document": "<p>姓名</p>",
           "example": "李明",
           "member": "string",
           "name": "Name",
@@ -12744,7 +12435,7 @@
         },
         {
           "disabled": false,
-          "document": "英文姓名",
+          "document": "<p>英文姓名</p>",
           "example": "LIMING",
           "member": "string",
           "name": "EnglishName",
@@ -12754,7 +12445,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号",
+          "document": "<p>证件号</p>",
           "example": "C00000000",
           "member": "string",
           "name": "Number",
@@ -12764,7 +12455,7 @@
         },
         {
           "disabled": false,
-          "document": "性别",
+          "document": "<p>性别</p>",
           "example": "男",
           "member": "string",
           "name": "Sex",
@@ -12774,7 +12465,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期限",
+          "document": "<p>有效期限</p>",
           "example": "2018.10.09-2028.10.08",
           "member": "string",
           "name": "ValidDate",
@@ -12784,7 +12475,7 @@
         },
         {
           "disabled": false,
-          "document": "签发机关",
+          "document": "<p>签发机关</p>",
           "example": "公安部出入境管理局",
           "member": "string",
           "name": "IssueAuthority",
@@ -12794,7 +12485,7 @@
         },
         {
           "disabled": false,
-          "document": "签发地点",
+          "document": "<p>签发地点</p>",
           "example": "广东",
           "member": "string",
           "name": "IssueAddress",
@@ -12804,7 +12495,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期",
+          "document": "<p>出生日期</p>",
           "example": "1981.08.03",
           "member": "string",
           "name": "Birthday",
@@ -12814,8 +12505,8 @@
         },
         {
           "disabled": false,
-          "document": "头像照片的base64",
-          "example": "无",
+          "document": "<p>头像照片的base64</p>",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "PortraitImage",
           "output_required": false,
@@ -12824,7 +12515,7 @@
         },
         {
           "disabled": false,
-          "document": "返回类型",
+          "document": "<p>返回类型</p>",
           "example": "往来港澳通行证",
           "member": "string",
           "name": "Type",
@@ -13614,140 +13305,6 @@
       ],
       "usage": "out"
     },
-    "QuotaInvoiceOCRRequest": {
-      "document": "QuotaInvoiceOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
-          "example": "true",
-          "member": "bool",
-          "name": "IsPdf",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
-          "example": "0",
-          "member": "int64",
-          "name": "PdfPageNumber",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "QuotaInvoiceOCRResponse": {
-      "document": "QuotaInvoiceOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "发票号码",
-          "example": "04947858",
-          "member": "string",
-          "name": "InvoiceNum",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "发票代码",
-          "example": "131001864304",
-          "member": "string",
-          "name": "InvoiceCode",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "大写金额",
-          "example": "伍元",
-          "member": "string",
-          "name": "Rate",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "小写金额",
-          "example": "5.00",
-          "member": "string",
-          "name": "RateNum",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "发票消费类型",
-          "example": "交通",
-          "member": "string",
-          "name": "InvoiceType",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "省\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "广东省",
-          "member": "string",
-          "name": "Province",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "市\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "深圳市",
-          "member": "string",
-          "name": "City",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "是否有公司印章（1有 0无 空为识别不出）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "string",
-          "name": "HasStamp",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "RailwayTicketInfo": {
       "document": "铁路电子客票信息",
       "members": [
@@ -14003,6 +13560,116 @@
         }
       ],
       "usage": "out"
+    },
+    "RecognizeAgentRequest": {
+      "document": "RecognizeAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片/PDF的 Base64 值。要求图片经Base64编码后不超过 10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需识别的PDF页码。仅支持PDF单页识别，当上传文件为PDF时有效。</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型选择。</p><p>枚举值：</p><ul><li>0： 推理模型。</li><li>1： 识别、推理模型。</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SelectModel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型。</p><p>枚举值：</p><ul><li><p>0： 全文识别。识别且输出全文内容。</p></li><li><p>1： 判断。判断输入图的内容是否为Query中的内容，返回结果为是或否。如Query:&quot;增值税发票&quot;，该任务类型下，将判断输入图是否为增值税发票，返回&quot;是&quot;或&quot;否&quot;。</p></li><li><p>2： 分类。判断输入图属于Query中具体哪个分类项。如Query:[&quot;营业执照&quot;,&quot;合同&quot;,&quot;票据&quot;]，在该任务类型下，将判断输入图是否属于&quot;营业执照&quot;、&quot;合同&quot;、&quot;票据&quot;，返回&quot;营业执照&quot;/&quot;合同&quot;/&quot;票据&quot;或&quot;均不符合&quot;。</p></li><li><p>3： 总结提炼。总结输入图与Query相关的内容。如Query:&quot;工作经历&quot;，在该任务类型下，将输出输入图中和&quot;工作经历&quot;相关的内容，或&quot;无相关内容&quot;。</p></li><li><p>4： 信息提取。按照自定义字段提取Key-Value，且支持多层级提取，详见入参SchemaItems说明。入参可参考下面的接口示例QueryType=4场景</p></li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "QueryType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义提取字段的结构，详见SchemaList结构。仅当QueryType=4时生效。</p><p>注：.N表示数组型参数。</p>",
+          "example": "无",
+          "member": "SchemaList",
+          "name": "SchemaItems",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理任务的提示词。与QueryType搭配使用，具体说明见QueryType描述。1）仅当QueryType=1/2/3时生效，且QueryType=1/3时，长度必须为1；2）QueryType=2，Query长度必须符合2≤x≤5。</p><p>注：.N表示数组型参数。</p>",
+          "example": "[\"增值税专用发票\"]",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要返回坐标。</p><p>默认值：false</p><p>注：仅对QueryType=4时生效，且坐标位置为 Response.ExtractFields.Polygon。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableCoord",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeAgentResponse": {
+      "document": "RecognizeAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回内容。详见ListInfo。</p>",
+          "example": "无",
+          "member": "ListInfo",
+          "name": "Response",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。</p>",
+          "example": "0",
+          "member": "float",
+          "name": "Angle",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RecognizeContainerOCRRequest": {
       "document": "RecognizeContainerOCR请求参数结构体",
@@ -14989,70 +14656,6 @@
           "name": "Angle",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RecognizeOnlineTaxiItineraryOCRRequest": {
-      "document": "RecognizeOnlineTaxiItineraryOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
-          "example": "true",
-          "member": "bool",
-          "name": "IsPdf",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
-          "example": "1",
-          "member": "uint64",
-          "name": "PdfPageNumber",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "RecognizeOnlineTaxiItineraryOCRResponse": {
-      "document": "RecognizeOnlineTaxiItineraryOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "网约车行程单识别结果，具体内容请点击左侧链接。",
-          "example": "无",
-          "member": "OnlineTaxiItineraryInfo",
-          "name": "OnlineTaxiItineraryInfos",
-          "output_required": true,
-          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -16675,6 +16278,84 @@
       ],
       "usage": "out"
     },
+    "SceneWarnInfo": {
+      "document": "用于风险提示和表示不同场景下的风险程度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否存在该提示</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsWarn",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险程度（0-1）</p>",
+          "example": "0.9999968",
+          "member": "float",
+          "name": "RiskConfidence",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示位置四点坐标，仅部分提示类型支持返回提示位置坐标</p>",
+          "example": "无",
+          "member": "Polygon",
+          "name": "Polygon",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SchemaList": {
+      "document": "描述用户提供的出参结构的模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自定义需提取的字段名称。注：若需提取多个字段，可定义多个KeyName。</p>",
+          "example": "出生年月",
+          "member": "string",
+          "name": "KeyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段类型。</p><p>枚举值：</p><ul><li>0： 表示KeyName为简单字段（如姓名、性别等）。</li><li>1： 表示KeyName为数组对象（如工作经历、教育经历列表）。</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "KeyType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>补充提取字段的描述。</p>",
+          "example": "如，2026年1月",
+          "member": "string",
+          "name": "KeyPrompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>嵌套SchemaList结构，最多支持嵌套三层。注：仅当KeyType=1时生效。</p>",
+          "example": "无",
+          "member": "SchemaList",
+          "name": "SubItems",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "SealInfo": {
       "document": "印章信息",
       "members": [
@@ -16814,116 +16495,6 @@
           "name": "SealShape",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ShipInvoiceInfo": {
-      "document": "轮船票字段信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "识别出的字段名称(关键字)，支持以下字段：\n发票代码、发票号码、日期、票价、始发地、目的地、姓名、时间、发票消费类型、省、市、币种。",
-          "example": "发票代码",
-          "member": "string",
-          "name": "Name",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
-          "example": "144041570120",
-          "member": "string",
-          "name": "Value",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "文本行在旋转纠正之后的图像中的像素坐标。",
-          "example": "无",
-          "member": "Rect",
-          "name": "Rect",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "ShipInvoiceOCRRequest": {
-      "document": "ShipInvoiceOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
-          "example": "true",
-          "member": "bool",
-          "name": "IsPdf",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
-          "example": "0",
-          "member": "int64",
-          "name": "PdfPageNumber",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "ShipInvoiceOCRResponse": {
-      "document": "ShipInvoiceOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "轮船票识别结果，具体内容请点击左侧链接。",
-          "example": "无",
-          "member": "ShipInvoiceInfo",
-          "name": "ShipInvoiceInfos",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
-          "example": "351.0",
-          "member": "float",
-          "name": "Angle",
-          "output_required": true,
-          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -17713,12 +17284,28 @@
       ],
       "usage": "out"
     },
+    "SubItemGroup": {
+      "document": "用于分层展示抽取出的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>子结构嵌套FieldsInfo结构</p>",
+          "example": "无",
+          "member": "FieldsInfo",
+          "name": "Groups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SubmitExtractDocAgentJobRequest": {
       "document": "SubmitExtractDocAgentJob请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "<p>图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -17727,7 +17314,7 @@
         },
         {
           "disabled": false,
-          "document": "图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "<p>图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -17736,7 +17323,7 @@
         },
         {
           "disabled": true,
-          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前5页。",
+          "document": "<p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前5页。</p>",
           "example": "1",
           "member": "int64",
           "name": "PdfPageNumber",
@@ -17745,7 +17332,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义抽取需要的字段名称、字段类型、字段提示词。",
+          "document": "<p>自定义抽取需要的字段名称、字段类型、字段提示词。</p>",
           "example": "无",
           "member": "ItemNames",
           "name": "ItemNames",
@@ -17754,7 +17341,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要返回坐标，默认false。",
+          "document": "<p>是否需要返回坐标，默认false。</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableCoord",
@@ -17763,7 +17350,7 @@
         },
         {
           "disabled": false,
-          "document": "起始页",
+          "document": "<p>起始页</p>",
           "example": "1",
           "member": "uint64",
           "name": "FileStartPageNumber",
@@ -17772,12 +17359,21 @@
         },
         {
           "disabled": false,
-          "document": "结束页",
+          "document": "<p>结束页</p>",
           "example": "1",
           "member": "uint64",
           "name": "FileEndPageNumber",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>model_hunyuan:选择混元底座视觉大模型精调抽取任务  model_youtu：选择优图底座多模态大模型精调抽取任务</p>",
+          "example": "model_hunyuan",
+          "member": "string",
+          "name": "ModelConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -17787,7 +17383,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务唯一ID。由服务端生成。",
+          "document": "<p>任务唯一ID。由服务端生成。</p>",
           "example": "1334797167793684480",
           "member": "string",
           "name": "JobId",
@@ -17873,7 +17469,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。  示例值：/9j/4AAQSkZJRg.....s97n//2Q==",
+          "document": "<p>图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。  示例值：/9j/4AAQSkZJRg.....s97n//2Q==</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -17882,7 +17478,7 @@
         },
         {
           "disabled": false,
-          "document": "图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。  示例值：https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg",
+          "document": "<p>图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。  示例值：https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -17891,7 +17487,7 @@
         },
         {
           "disabled": false,
-          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，默认值为1。",
+          "document": "<p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，默认值为1。</p>",
           "example": "1",
           "member": "int64",
           "name": "PdfPageNumber",
@@ -17900,7 +17496,7 @@
         },
         {
           "disabled": true,
-          "document": "表示整张试卷批改需要先切题，默认为false",
+          "document": "<p>表示整张试卷批改需要先切题，默认为false</p>",
           "example": "false",
           "member": "bool",
           "name": "BoolSingleQuestion",
@@ -17909,7 +17505,7 @@
         },
         {
           "disabled": true,
-          "document": "默认false 表示关闭深度思考  true 表示打开深度思考，更深层次推理分析，速度更慢",
+          "document": "<p>默认false 表示关闭深度思考  true 表示打开深度思考，更深层次推理分析，速度更慢</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableDeepThink",
@@ -17918,7 +17514,7 @@
         },
         {
           "disabled": false,
-          "document": "题目信息输出配置，当key对应为true表示开启配置开关。     当key为KnowledgePoints value为true 表示输出每道题结构信息中输出知识点内容；当key为TrueAnswer  value为true 表示输出每道题的正确答案 ；当key为ReturnAnswerPosition  value为false表示不输出手写答案坐标（降低处理耗时，按需输出）； 设置方式参考  {\"KnowledgePoints\":true,\"TrueAnswer\":true}",
+          "document": "<p>题目信息输出配置，当key对应为true表示开启配置开关。</p><p>当key为KnowledgePoints value为true 表示输出每道题结构信息中输出知识点内容；<br>当key为TrueAnswer  value为true 表示输出每道题的正确答案 ；<br>当key为StepCorrection  value为true表示启用步骤级批改；</p><p> 设置方式参考  {&quot;KnowledgePoints&quot;:true,&quot;TrueAnswer&quot;:true}</p><p>参数格式：{&quot;KnowledgePoints&quot;:true,&quot;TrueAnswer&quot;:true}</p>",
           "example": "{\"KnowledgePoints\":true, \"TrueAnswer\": true}",
           "member": "string",
           "name": "QuestionConfigMap",
@@ -17927,12 +17523,30 @@
         },
         {
           "disabled": false,
-          "document": "仅有单题有效，如果切题有多题则不生效，单题批改的时候作为参考答案输入到批改模型中",
+          "document": "<p>仅有单题有效，如果切题有多题则不生效，单题批改的时候作为参考答案输入到批改模型中</p>",
           "example": "D",
           "member": "string",
           "name": "ReferenceAnswer",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片/PDF的 Base64 列表值，最多三张。每张图片要求参考ImageBase64  1. 如果ImageBase64List或者ImageUrlList 都没值则取ImageBase64 或者ImageUrl  2.如果ImageBase64List或者ImageUrlList 有一个值，则不取ImageBase64 或者ImageUrl值，优先去list  3.如果ImageBase64List或者ImageUrlList 都有值，则取ImageUrlList</p>",
+          "example": "[     \"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==\",     \"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPj/HwADBwIAMCbHYQAAAABJRU5ErkJggg==\"   ]",
+          "member": "string",
+          "name": "ImageBase64List",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片/PDF的 Url 地址Base64 列表值，最多三张。每张图片要求参考ImageUrl。  图片生效规则同ImageBase64List</p>",
+          "example": "[     \"https://example.com/image1.jpg\",     \"https://example.com/image2.png\"   ]",
+          "member": "string",
+          "name": "ImageUrlList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -17942,7 +17556,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务唯一ID。由服务端生成.",
+          "document": "<p>任务唯一ID。由服务端生成.</p>",
           "example": "1334797167793684480",
           "member": "string",
           "name": "JobId",
@@ -17952,7 +17566,7 @@
         },
         {
           "disabled": false,
-          "document": "切题题目边框坐标列表 （如果BoolSingleQuestion为true则返回空）",
+          "document": "<p>切题题目边框坐标列表 （如果BoolSingleQuestion为true则返回空）</p>",
           "example": "无",
           "member": "QuestionInfo",
           "name": "QuestionInfo",
@@ -17962,7 +17576,7 @@
         },
         {
           "disabled": false,
-          "document": "题目切题数量，作为计费题目数总量",
+          "document": "<p>题目切题数量，作为计费题目数总量</p>",
           "example": "2",
           "member": "string",
           "name": "QuestionCount",
@@ -18360,180 +17974,6 @@
         }
       ],
       "usage": "out"
-    },
-    "TaxiInvoiceOCRRequest": {
-      "document": "TaxiInvoiceOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
-          "example": "true",
-          "member": "bool",
-          "name": "IsPdf",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
-          "example": "0",
-          "member": "int64",
-          "name": "PdfPageNumber",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "TaxiInvoiceOCRResponse": {
-      "document": "TaxiInvoiceOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "发票号码",
-          "example": "15326798",
-          "member": "string",
-          "name": "InvoiceNum",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "发票代码",
-          "example": "134031321361",
-          "member": "string",
-          "name": "InvoiceCode",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日期",
-          "example": "2018年05月17日",
-          "member": "string",
-          "name": "Date",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "金额",
-          "example": "19.00",
-          "member": "string",
-          "name": "Fare",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "上车时间",
-          "example": "16:09",
-          "member": "string",
-          "name": "GetOnTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "下车时间",
-          "example": "16:32",
-          "member": "string",
-          "name": "GetOffTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "里程",
-          "example": "9.37",
-          "member": "string",
-          "name": "Distance",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "发票所在地",
-          "example": "安徽省蚌埠市",
-          "member": "string",
-          "name": "Location",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "车牌号",
-          "example": "C-82851",
-          "member": "string",
-          "name": "PlateNumber",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "发票消费类型",
-          "example": "交通",
-          "member": "string",
-          "name": "InvoiceType",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "省\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "安徽省",
-          "member": "string",
-          "name": "Province",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "市\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "蚌埠市",
-          "member": "string",
-          "name": "City",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "TaxiTicket": {
       "document": "出租车发票",
@@ -18974,7 +18414,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>识别出的文本行内容</p>",
+          "document": "<p>识别出的文本行内容。</p>",
           "example": "轻断食:正在横扫全球的瘦身革命",
           "member": "string",
           "name": "DetectedText",
@@ -18984,7 +18424,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>置信度 0 ~100</p>",
+          "document": "<p>置信度 0 ~100。</p>",
           "example": "0",
           "member": "int64",
           "name": "Confidence",
@@ -18994,7 +18434,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文本行坐标，以四个顶点坐标表示</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文本行坐标，以四个顶点坐标表示。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Coord",
           "name": "Polygon",
@@ -19004,7 +18444,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>此字段为扩展字段。<br>GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。</p>",
+          "document": "<p>此字段为扩展字段。GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。</p>",
           "example": "{\"Parag\":{\"ParagNo\":2}}",
           "member": "string",
           "name": "AdvancedInfo",
@@ -19014,7 +18454,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）</p>",
+          "document": "<p>文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）。</p>",
           "example": "无",
           "member": "ItemCoord",
           "name": "ItemPolygon",
@@ -19024,7 +18464,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR</p>",
+          "document": "<p>识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR。</p>",
           "example": "无",
           "member": "DetectedWords",
           "name": "Words",
@@ -19034,7 +18474,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR</p>",
+          "document": "<p>单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR。</p>",
           "example": "无",
           "member": "DetectedWordCoordPoint",
           "name": "WordCoordPoint",
@@ -19044,7 +18484,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>语种信息。zh:中文; en:英文; th:泰语; id:印尼语; ja:日语; ko:韩语; es:西班牙语; fr:法语; de:德语; pt:葡萄牙语; vi:越南语; ms:马来语; ru:俄语; it:意大利语; nl:荷兰语; sv:瑞典语; fi:芬兰语; no:挪威语; hu:匈牙利语; ar:阿拉伯语; hi:印地语</p>",
+          "document": "<p>语种信息。注：仅ConfigID配置为MulOCR时支持。zh:中文; en:英文; tha:泰语; may:印尼语; jap:日语; kor:韩语; spa:西班牙语; fre:法语; ger:德语; por:葡萄牙语; vie:越南语; may:马来语; rus:俄语; ita:意大利语; hol:荷兰语; swe:瑞典语; fin:芬兰语; nor:挪威语; hun:匈牙利语; ara:阿拉伯语; hi:印地语。</p>",
           "example": "zh",
           "member": "string",
           "name": "Language",
@@ -19996,116 +19436,6 @@
         }
       ],
       "usage": "out"
-    },
-    "TollInvoiceInfo": {
-      "document": "过路过桥费字段信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "识别出的字段名称（关键字）。支持以下字段的识别：\n发票代码、发票号码、日期、金额、入口、出口、时间、发票消费类型、高速标志。",
-          "example": "发票代码",
-          "member": "string",
-          "name": "Name",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
-          "example": "144700221",
-          "member": "string",
-          "name": "Value",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "文本行在旋转纠正之后的图像中的像素坐标。",
-          "example": "无",
-          "member": "Rect",
-          "name": "Rect",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "TollInvoiceOCRRequest": {
-      "document": "TollInvoiceOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
-          "example": "true",
-          "member": "bool",
-          "name": "IsPdf",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
-          "example": "0",
-          "member": "int64",
-          "name": "PdfPageNumber",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "TollInvoiceOCRResponse": {
-      "document": "TollInvoiceOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "过路过桥费发票识别结果，具体内容请点击左侧链接。",
-          "example": "无",
-          "member": "TollInvoiceInfo",
-          "name": "TollInvoiceInfos",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
-          "example": "0.0",
-          "member": "float",
-          "name": "Angle",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "TrainTicket": {
       "document": "火车票",
@@ -23511,116 +22841,6 @@
       ],
       "type": "object"
     },
-    "VatRollInvoiceInfo": {
-      "document": "增值税发票卷票信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "识别出的字段名称(关键字)，支持以下字段：\n发票代码、合计金额(小写)、合计金额(大写)、开票日期、发票号码、购买方识别号、销售方识别号、校验码、销售方名称、购买方名称、发票消费类型、省、市、是否有公司印章、单价、金额、数量、服务类型、品名、种类。",
-          "example": "发票代码",
-          "member": "string",
-          "name": "Name",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
-          "example": "033000101",
-          "member": "string",
-          "name": "Value",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "文本行在旋转纠正之后的图像中的像素坐标。",
-          "example": "无",
-          "member": "Rect",
-          "name": "Rect",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "VatRollInvoiceOCRRequest": {
-      "document": "VatRollInvoiceOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
-          "example": "true",
-          "member": "bool",
-          "name": "IsPdf",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
-          "example": "0",
-          "member": "int64",
-          "name": "PdfPageNumber",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "VatRollInvoiceOCRResponse": {
-      "document": "VatRollInvoiceOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "增值税发票（卷票）识别结果，具体内容请点击左侧链接。",
-          "example": "无",
-          "member": "VatRollInvoiceInfo",
-          "name": "VatRollInvoiceInfos",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
-          "example": "0.0",
-          "member": "float",
-          "name": "Angle",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "VatRollItem": {
       "document": "增值税普通发票（卷票）条目",
       "members": [
@@ -24415,6 +23635,111 @@
           "example": "重庆增值税电子普通发票",
           "member": "string",
           "name": "InvoiceTitle",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyScenePhotoRequest": {
+      "document": "VerifyScenePhoto请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>场景类型参数，如果场景无法细分请选用该大类的第一个子类，目前支持以下类型：<br><strong>经营场所照</strong><br>0101 门头照<br>0102 店内照<br>0103 流动经营照</p>",
+          "example": "0101",
+          "member": "string",
+          "name": "Scene",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片的 Url 地址。要求图片经Base64编码后不超过 10M。</p>",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/RecognizeGeneralCardWarn/RecognizeGeneralCardWarn2.png",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片的 Base64 值。要求图片经Base64编码后不超过 10M。</p>",
+          "example": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUkAAABICAYAAAB7oQe5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAgAElEQVR4nKy9x7NlS3be90uz3fHX1C37vEN3P7SBI5oDiiIRoQHFgaCBQqGQMOJ",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyScenePhotoResponse": {
+      "document": "VerifyScenePhoto返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>区域篡改提示</p>",
+          "example": "无",
+          "member": "SceneWarnInfo",
+          "name": "Tamper",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AIGC合成提示</p>",
+          "example": "无",
+          "member": "SceneWarnInfo",
+          "name": "Synthesis",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>屏幕翻拍提示</p>",
+          "example": "无",
+          "member": "SceneWarnInfo",
+          "name": "RemakeScreen",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图提示</p>",
+          "example": "无",
+          "member": "SceneWarnInfo",
+          "name": "Screenshot",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文字水印提示</p>",
+          "example": "无",
+          "member": "SceneWarnInfo",
+          "name": "TextWatermark",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>水印内容，当未检测到文字水印时不返回，返回多组水印时以 | 分隔。</p>",
+          "example": "仅用于办理商户注册，他用无效。",
+          "member": "string",
+          "name": "WatermarkContent",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

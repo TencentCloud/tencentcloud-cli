@@ -1,6 +1,6 @@
-**Example 1: 删除Datahub连接源**
+**Example 1: 删除连接器连接**
 
-
+删除连接器连接
 
 Input: 
 

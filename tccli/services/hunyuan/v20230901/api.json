@@ -199,7 +199,7 @@
   },
   "metadata": {
     "apiVersion": "2023-09-01",
-    "api_brief": "## 概述\n腾讯混元大模型（Tencent HY）由腾讯公司全链路自研，在高质量内容创作、数理逻辑、代码生成和多轮对话上性能表现卓越，处于业界领先水平。混元 API 支持 AI 搜索联网插件，通过整合腾讯优质的内容生态，提供强大的时新、深度内容获取和 AI 问答能力。\n腾讯混元大模型支持的所有接口信息，请参见 [API 概览](https://cloud.tencent.com/document/product/1729/101848)。",
+    "api_brief": "腾讯混元大模型（Tencent HY）是由腾讯公司全链路自研的通用与多模态大模型家族，覆盖文本、图像、视频、3D等模态，面向内容生产、知识问答、业务自动化等场景提供企业级服务。",
     "serviceNameCN": "腾讯混元大模型",
     "serviceShortName": "hunyuan"
   },

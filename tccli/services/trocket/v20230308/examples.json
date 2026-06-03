@@ -24,6 +24,14 @@
         "title": "正常响应"
       }
     ],
+    "CreateMigrationTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMigrationTask\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-xxxx\",\n    \"Type\": 1,\n    \"Topics\": [],\n    \"Groups\": [\n        {\n            \"InstanceId\": \"\",\n            \"ConsumerGroup\": \"iegt2i\",\n            \"ConsumeEnable\": true,\n            \"ConsumeMessageOrderly\": true,\n            \"MaxRetryTimes\": 8,\n            \"Remark\": \"\"\n        },\n        {\n            \"InstanceId\": \"\",\n            \"ConsumerGroup\": \"iegt1i\",\n            \"ConsumeEnable\": true,\n            \"ConsumeMessageOrderly\": true,\n            \"MaxRetryTimes\": 16,\n            \"Remark\": \"IEGT for Import Export Group Test\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx\"\n    }\n}",
+        "title": "创建成功"
+      }
+    ],
     "CreateRole": [
       {
         "document": "添加角色",

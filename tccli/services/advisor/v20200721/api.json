@@ -24,7 +24,7 @@
   },
   "metadata": {
     "apiVersion": "2020-07-21",
-    "api_brief": "1",
+    "api_brief": "介绍如何使用API对智能顾问进行操作，包括风险巡检、授权等。",
     "serviceNameCN": "智能顾问",
     "serviceShortName": "advisor"
   },

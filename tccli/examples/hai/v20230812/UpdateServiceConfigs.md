@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli hai UpdateServiceConfigs --cli-unfold-argument  \
-    --ServiceId svc-3m6xrkjj \
-    --TargetReplicas 2
+    --ServiceId svc-8ube2pe8 \
+    --TargetReplicas 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "bea1c2c8-b839-42d2-9458-4c3a2cffac4b"
+        "RequestId": "ea34aa19-8d01-4e7e-85fa-b50c6b7f0614"
     }
 }
 ```

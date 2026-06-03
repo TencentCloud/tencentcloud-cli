@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tse DeleteGovernanceLaneGroups --cli-unfold-argument  \
-    --InstanceId abc \
-    --LaneGroups.0.Name abc \
-    --LaneGroups.0.ID abc
+    --InstanceId ins-17dhh123 \
+    --LaneGroups.0.Name sct \
+    --LaneGroups.0.ID db33e953bfd7467abe34f40f23ca1ada
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "abc"
+        "RequestId": "db33e953bfd7467abe34f40f23ca1ada"
     }
 }
 ```

@@ -82,10 +82,10 @@
     ],
     "CreateAutoCalloutTask": [
       {
-        "document": "创建任务",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoCalloutTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400123455,\n    \"NotBefore\": 1642500621,\n    \"Callees\": [\n        \"008613012345678\"\n    ],\n    \"Callers\": [\n        \"008602012345678\"\n    ],\n    \"IvrId\": 8\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": 1,\n        \"RequestId\": \"a561d5e7-2680-481f-b86e-a9ad7316f4d5\"\n    }\n}",
-        "title": "创建任务"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoCalloutTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1500098925,\n    \"NotBefore\": 1777641412,\n    \"Callees\": [\n        \"008613675881491\"\n    ],\n    \"Callers\": [\n        \"0086075533614747\"\n    ],\n    \"Name\": \"dinoggagagag\",\n    \"TimeZone\": \"Asia/Shanghai\",\n    \"AIAgentId\": 973,\n    \"TriggerStrategy\": [\n        {\n            \"InterfaceConfig\": {\n                \"Url\": \"https://webhook.site/8f9aa946-3190-4107-b175-38914e8aa6f6\",\n                \"HeaderParams\": [\n                    {\n                        \"Key\": \"taskid\",\n                        \"Value\": \"{taskId}\"\n                    }\n                ],\n                \"Params\": [\n                    {\n                        \"Key\": \"callStatus\",\n                        \"Value\": \"{callStatus}\"\n                    }\n                ],\n                \"Async\": false\n            },\n            \"HangupTypes\": [\n                \"202\",\n                \"203\",\n                \"206\"\n            ],\n            \"CallTags\": [\n                {\n                    \"TagName\": \"test123\",\n                    \"TagValue\": \"345\"\n                }\n            ],\n            \"TriggerMode\": \"ALWAYS_ON_MATCH\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec683719-4460-4686-b976-a6dd64e4accb\",\n        \"TaskId\": 17110\n    }\n}",
+        "title": "TriggerStrategy 调用示例"
       }
     ],
     "CreateCCCSkillGroup": [
@@ -230,6 +230,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAICall\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"SessionId\": \"adcf61b8-dbb9-4c20-87bf-c0744c04bade\",\n    \"StartTime\": 1737350008,\n    \"EndTime\": 1737356008\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"ResultList\": [\n            {\n                \"InfoType\": \"Boolean\",\n                \"InfoName\": \"兴趣\",\n                \"InfoContent\": \"用户是否对产品感兴趣\",\n                \"Result\": {\n                    \"Text\": \"\",\n                    \"Chosen\": [],\n                    \"Boolean\": true,\n                    \"Number\": 0\n                }\n            }\n        ]\n    }\n}",
         "title": "查询 AI 通话内容提取结果示例"
+      }
+    ],
+    "DescribeAICallInteractionRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAICallInteractionRecords\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1500098925,\n    \"SessionId\": \"ac0726e8-018b-4f9d-9d15-004a4c349cd5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InteractionEventList\": [\n            {\n                \"Messages\": [\n                    {\n                        \"AISpeak\": {\n                            \"CanBeInterrupted\": true,\n                            \"LatencyMetrics\": {\n                                \"AsrLatency\": -1,\n                                \"LLMFirstTokenLatency\": 29,\n                                \"TTSLatency\": 295,\n                                \"TotalLatency\": 329\n                            },\n                            \"SpokenText\": \"xiaopan为您服务，售前请说 123，售后请说 456\",\n                            \"SpokenType\": \"Script\"\n                        },\n                        \"Timestamp\": 1774931367634\n                    }\n                ],\n                \"Paths\": [\n                    {\n                        \"NodeName\": \"对话 1\",\n                        \"NodeType\": \"DIALOGUE\",\n                        \"Timestamp\": 1774931367607\n                    }\n                ],\n                \"RoundId\": \"6418f9b0-fbbc-4063-8b6f-ec11f7599c14\",\n                \"RoundIndex\": 1\n            }\n        ],\n        \"RequestId\": \"bb532c51-cfa4-41f3-a9e9-bd8506ec26f1\"\n    }\n}",
+        "title": "获取指定会话的会话交互结果"
       }
     ],
     "DescribeAILatency": [

@@ -1,14 +1,15 @@
 **Example 1: 查询工作流异步运行实例的列表**
 
-已经通过CreateWorkflowRun接口创建了多个异步运行实例，调用本接口来查询列表。
+查询工作流异步运行实例的列表
 
 Input: 
 
 ```
 tccli lke ListWorkflowRuns --cli-unfold-argument  \
-    --AppBizId 1854548189164339200 \
+    --AppBizId 2029461666234922753 \
+    --PageSize 20 \
     --Page 1 \
-    --PageSize 10
+    --Query bnis908spzb4
 ```
 
 Output: 
@@ -18,19 +19,20 @@ Output:
         "Total": 1,
         "WorkflowRuns": [
             {
-                "RunEnv": 1,
-                "AppBizId": "1854548189164339200",
-                "WorkflowRunId": "run-id-123",
-                "WorkflowId": "workflow-id-456",
-                "State": 4,
+                "AppBizId": "2029461666234922753",
+                "CreateTime": "1772751757725",
+                "EndTime": "1772751765933",
                 "FailMessage": "",
-                "TotalTokens": 100,
-                "StartTime": "1672531200000",
-                "EndTime": "1672531300000",
-                "CreateTime": "1672531100000"
+                "Name": "异步工作流",
+                "RunEnv": 0,
+                "StartTime": "1772751758509",
+                "State": 2,
+                "TotalTokens": 436,
+                "WorkflowId": "0e3510a6-1855-4dc2-9065-996a510a543c",
+                "WorkflowRunId": "wfr-bnis908spzb4"
             }
         ],
-        "RequestId": "925208e7-46fa-43b3-a429-ddcbccad24f6"
+        "RequestId": "109d44bc-937f-4ea5-9e99-b7480161efee"
     }
 }
 ```

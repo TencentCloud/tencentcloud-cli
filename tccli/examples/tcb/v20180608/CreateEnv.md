@@ -27,3 +27,30 @@ Output:
 }
 ```
 
+**Example 2: 创建环境，并指定外部存储源**
+
+创建环境时，使用外部数据源(如：腾讯云COS)作为云开发-云存储的存储介质。此时云开发环境不再自动分配cos桶。
+
+Input: 
+
+```
+tccli tcb CreateEnv --cli-unfold-argument  \
+    --Alias ext-storage-v2 \
+    --PackageId baas_personal \
+    --Resources storage \
+    --ExternalStorage.Enabled True \
+    --ExternalStorage.BucketName t-1257619089 \
+    --ExternalStorage.Region ap-shanghai \
+    --ExternalStorage.BasePath ext-storage-v1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "EnvId": "ext-storage-v2-6gpiuka85aac3005",
+        "RequestId": "f90946f2-dcd3-4834-be98-ddb533378664"
+    }
+}
+```
+

@@ -14,6 +14,13 @@
       "output": "AddAggregateConfigRuleResponse",
       "status": "online"
     },
+    "AddAlarmPolicy": {
+      "document": "新增告警监控规则",
+      "input": "AddAlarmPolicyRequest",
+      "name": "新建告警",
+      "output": "AddAlarmPolicyResponse",
+      "status": "online"
+    },
     "AddCompliancePack": {
       "document": "新建合规包",
       "input": "AddCompliancePackRequest",
@@ -75,6 +82,13 @@
       "input": "DeleteAggregateConfigRuleRequest",
       "name": "账号组删除规则",
       "output": "DeleteAggregateConfigRuleResponse",
+      "status": "online"
+    },
+    "DeleteAlarmPolicy": {
+      "document": "删除告警规则",
+      "input": "DeleteAlarmPolicyRequest",
+      "name": "删除告警",
+      "output": "DeleteAlarmPolicyResponse",
       "status": "online"
     },
     "DeleteCompliancePack": {
@@ -231,6 +245,13 @@
       "output": "ListAggregatorsResponse",
       "status": "online"
     },
+    "ListAlarmPolicy": {
+      "document": "告警规则列表",
+      "input": "ListAlarmPolicyRequest",
+      "name": "告警策略列表",
+      "output": "ListAlarmPolicyResponse",
+      "status": "online"
+    },
     "ListCompliancePacks": {
       "document": "获取合规包列表",
       "input": "ListCompliancePacksRequest",
@@ -369,6 +390,13 @@
       "input": "UpdateAggregateConfigRuleRequest",
       "name": "账号组编辑规则",
       "output": "UpdateAggregateConfigRuleResponse",
+      "status": "online"
+    },
+    "UpdateAlarmPolicy": {
+      "document": "更新告警规则",
+      "input": "UpdateAlarmPolicyRequest",
+      "name": "更新告警",
+      "output": "UpdateAlarmPolicyResponse",
       "status": "online"
     },
     "UpdateCompliancePack": {
@@ -620,6 +648,115 @@
       ],
       "type": "object"
     },
+    "AddAlarmPolicyRequest": {
+      "document": "AddAlarmPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>告警策略名</p>",
+          "example": "规则告警",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件类型 1：资源不合规事件</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件范围  1：当前账号  2：多账号</p>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "EventScope",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险等级 1：高风险  2：中风险 3：低风险</p>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知时间段</p>",
+          "example": "00:00:00~12:12:12",
+          "member": "string",
+          "name": "NoticeTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知机制</p>",
+          "example": "实时发送",
+          "member": "string",
+          "name": "NotificationMechanism",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态 1：启用 2：停用</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知周期</p>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "NoticePeriod",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略描述</p>",
+          "example": "告警描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddAlarmPolicyResponse": {
+      "document": "AddAlarmPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>告警策略唯一id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AlarmPolicyId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddCompliancePackRequest": {
       "document": "AddCompliancePack请求参数结构体",
       "members": [
@@ -689,7 +826,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则模板标识，预设规则模板为Identifier, 自定义规则为云函数arn（region:functionName）",
+          "document": "<p>规则模板标识，预设规则模板为Identifier, 自定义规则为云函数arn（region:functionName）</p>",
           "example": "1",
           "member": "string",
           "name": "Identifier",
@@ -698,7 +835,7 @@
         },
         {
           "disabled": false,
-          "document": "规则模板类型，SYSTEM, CUSTOMIZE",
+          "document": "<p>规则模板类型，SYSTEM, CUSTOMIZE</p>",
           "example": "SYSTEM",
           "member": "string",
           "name": "IdentifierType",
@@ -707,7 +844,7 @@
         },
         {
           "disabled": false,
-          "document": "规则名称",
+          "document": "<p>规则名称</p>",
           "example": "规则1",
           "member": "string",
           "name": "RuleName",
@@ -716,8 +853,8 @@
         },
         {
           "disabled": false,
-          "document": "规则支持的资源",
-          "example": "[\"\"]",
+          "document": "<p>规则支持的资源</p>",
+          "example": "[ \"QCS::CAM::User\" ]",
           "member": "string",
           "name": "ResourceType",
           "required": true,
@@ -725,8 +862,8 @@
         },
         {
           "disabled": false,
-          "document": "触发类型，最多支持两种",
-          "example": "1",
+          "document": "<p>触发类型，最多支持两种</p>",
+          "example": "无",
           "member": "TriggerType",
           "name": "TriggerType",
           "required": true,
@@ -734,7 +871,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级\n1：高风险。\n2：中风险。\n3：低风险。",
+          "document": "<p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>",
           "example": "2",
           "member": "uint64",
           "name": "RiskLevel",
@@ -743,7 +880,7 @@
         },
         {
           "disabled": false,
-          "document": "入参",
+          "document": "<p>入参</p>",
           "example": "无",
           "member": "InputParameter",
           "name": "InputParameter",
@@ -752,7 +889,7 @@
         },
         {
           "disabled": false,
-          "document": "规则描述。长度范围0~1024字符",
+          "document": "<p>规则描述。长度范围0~1024字符</p>",
           "example": "RAM用户开启MFA，视为“合规”。",
           "member": "string",
           "name": "Description",
@@ -761,8 +898,8 @@
         },
         {
           "disabled": false,
-          "document": "规则评估地域范围，规则仅对指定地域中的资源生效。\n支持的地域范围config:ListResourceRegions返回的地域",
-          "example": "无",
+          "document": "<p>规则评估地域范围，规则仅对指定地域中的资源生效。<br>支持的地域范围config:ListResourceRegions返回的地域</p>",
+          "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "RegionsScope",
           "required": false,
@@ -770,7 +907,7 @@
         },
         {
           "disabled": false,
-          "document": "规则评估标签范围，规则仅对绑定指定标签的资源生效。",
+          "document": "<p>规则评估标签范围，规则仅对绑定指定标签的资源生效。</p>",
           "example": "无",
           "member": "Tag",
           "name": "TagsScope",
@@ -779,8 +916,8 @@
         },
         {
           "disabled": false,
-          "document": "规则对指定资源ID无效，即不对该资源执行评估。",
-          "example": "无",
+          "document": "<p>规则对指定资源ID无效，即不对该资源执行评估。</p>",
+          "example": "[\"1001\"]",
           "member": "string",
           "name": "ExcludeResourceIdsScope",
           "required": false,
@@ -792,6 +929,16 @@
     "AddConfigRuleResponse": {
       "document": "AddConfigRule返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则ID</p>",
+          "example": "cr-3xhsd76j603v0a8ma0i73",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -958,7 +1105,7 @@
       "usage": "out"
     },
     "AggregateResourceInfo": {
-      "document": "资源列列表信息",
+      "document": "资源列表信息",
       "members": [
         {
           "disabled": false,
@@ -1201,6 +1348,122 @@
           "name": "MemberName",
           "output_required": true,
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AlarmPolicyRsp": {
+      "document": "告警策略列表单个记录结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警策略唯一标识id",
+          "example": "",
+          "member": "uint64",
+          "name": "AlarmPolicyId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "策略名称",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件类型",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1：当前账号  2：多账号",
+          "example": "1",
+          "member": "int64",
+          "name": "EventScope",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1：高风险  2：中风险 3：低风险",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskLevel",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知周期，1-7数字分别代表周一至周日",
+          "example": "1",
+          "member": "int64",
+          "name": "NoticePeriod",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知时间段",
+          "example": "00:00:00-12:12:12",
+          "member": "string",
+          "name": "NoticeTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知机制",
+          "example": "实时发送",
+          "member": "string",
+          "name": "NotificationMechanism",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略状态 1：启动  2：停止",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1468,7 +1731,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则名称",
+          "document": "<p>规则名称</p>",
           "example": "CAM访问管理子用户必须关联用户组",
           "member": "string",
           "name": "RuleName",
@@ -1478,7 +1741,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级",
+          "document": "<p>风险等级</p>",
           "example": "1",
           "member": "uint64",
           "name": "RiskLevel",
@@ -1488,7 +1751,7 @@
         },
         {
           "disabled": false,
-          "document": "入参",
+          "document": "<p>入参</p>",
           "example": "无",
           "member": "InputParameter",
           "name": "InputParameter",
@@ -1498,7 +1761,7 @@
         },
         {
           "disabled": false,
-          "document": "规则身份标识",
+          "document": "<p>规则身份标识</p>",
           "example": "cam-user-group-bound",
           "member": "string",
           "name": "Identifier",
@@ -1508,8 +1771,8 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "帐号访问管理中用户至少关联一个用户组，则符合规则。",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "账号访问管理中用户至少关联一个用户组，则符合规则。",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1518,7 +1781,7 @@
         },
         {
           "disabled": false,
-          "document": "预设规则身份标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>预设规则身份标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cam-user-group-bound",
           "member": "string",
           "name": "ManagedRuleIdentifier",
@@ -1528,7 +1791,7 @@
         },
         {
           "disabled": false,
-          "document": "规则ID",
+          "document": "<p>规则ID</p>",
           "example": "cr-13vkg9c31dixgabkepxe",
           "member": "string",
           "name": "ConfigRuleId",
@@ -1538,7 +1801,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>合规包ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cp-xzfz0vu007feuhwi8auv",
           "member": "string",
           "name": "CompliancePackId",
@@ -1689,7 +1952,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合规包状态",
+          "document": "<p>合规包状态</p>",
           "example": "ACTIVE",
           "member": "string",
           "name": "Status",
@@ -1699,7 +1962,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包ID",
+          "document": "<p>合规包ID</p>",
           "example": "cp-fc507gbwtks141giu8p2",
           "member": "string",
           "name": "CompliancePackId",
@@ -1709,8 +1972,8 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "帐号访问管理中用户至少关联一个用户组，则符合规则。",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "账号访问管理中用户至少关联一个用户组，则符合规则。",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -1719,7 +1982,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包名称",
+          "document": "<p>合规包名称</p>",
           "example": "安全合规包",
           "member": "string",
           "name": "CompliancePackName",
@@ -1729,7 +1992,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级",
+          "document": "<p>风险等级</p>",
           "example": "1",
           "member": "uint64",
           "name": "RiskLevel",
@@ -1739,7 +2002,7 @@
         },
         {
           "disabled": false,
-          "document": "评估结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>评估结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NON_COMPLIANT",
           "member": "string",
           "name": "ComplianceResult",
@@ -1749,7 +2012,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2022-11-16 14:11:48",
           "member": "string",
           "name": "CreateTime",
@@ -1759,8 +2022,8 @@
         },
         {
           "disabled": false,
-          "document": "不合规规则名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "document": "<p>不合规规则名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cam实践\"]",
           "member": "string",
           "name": "NoCompliantNames",
           "required": true,
@@ -1769,7 +2032,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包规则数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>合规包规则数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
           "name": "RuleCount",
@@ -2329,6 +2592,33 @@
     },
     "DeleteAggregateConfigRuleResponse": {
       "document": "DeleteAggregateConfigRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAlarmPolicyRequest": {
+      "document": "DeleteAlarmPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警策略id",
+          "example": "18",
+          "member": "uint64",
+          "name": "AlarmPolicyId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAlarmPolicyResponse": {
+      "document": "DeleteAlarmPolicy返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3355,7 +3645,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合规包ID",
+          "document": "<p>合规包ID</p>",
           "example": "cp-wn7attowki",
           "member": "string",
           "name": "CompliancePackId",
@@ -3370,7 +3660,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合规包ID",
+          "document": "<p>合规包ID</p>",
           "example": "cp-wn7attowki",
           "member": "string",
           "name": "CompliancePackId",
@@ -3380,8 +3670,8 @@
         },
         {
           "disabled": false,
-          "document": "合规包名称",
-          "example": "网络及数据安全最佳实践",
+          "document": "<p>合规包名称</p>",
+          "example": "PCI-DSS数据安全标准合规包",
           "member": "string",
           "name": "CompliancePackName",
           "output_required": true,
@@ -3390,7 +3680,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包描述",
+          "document": "<p>合规包描述</p>",
           "example": "从网络架构和数据安全等方面进行全面检测，以确保系统和数据进行了合理的设置和保护，有效减少网络和数据泄漏的风险。参考CIS Benchmarks文件要求。",
           "member": "string",
           "name": "Description",
@@ -3400,7 +3690,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级",
+          "document": "<p>风险等级</p>",
           "example": "1",
           "member": "uint64",
           "name": "RiskLevel",
@@ -3410,7 +3700,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包规则列表",
+          "document": "<p>合规包规则列表</p>",
           "example": "无",
           "member": "CompliancePackRuleForManage",
           "name": "ConfigRules",
@@ -3868,7 +4158,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量",
+          "document": "<p>数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -3877,7 +4167,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -3886,7 +4176,7 @@
         },
         {
           "disabled": false,
-          "document": "账号组ID",
+          "document": "<p>账号组ID</p>",
           "example": "ca-sdfs7734h24",
           "member": "string",
           "name": "AccountGroupId",
@@ -3895,7 +4185,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包名称",
+          "document": "<p>合规包名称</p>",
           "example": "1",
           "member": "string",
           "name": "CompliancePackName",
@@ -3904,7 +4194,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级\n1：高风险。\n2：中风险。\n3：低风险。",
+          "document": "<p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>",
           "example": "[1,2]",
           "member": "uint64",
           "name": "RiskLevel",
@@ -3913,7 +4203,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包状态 ACTIVE、NO_ACTIVE",
+          "document": "<p>合规包状态 ACTIVE、NO_ACTIVE</p>",
           "example": "ACTICE",
           "member": "string",
           "name": "Status",
@@ -3922,8 +4212,8 @@
         },
         {
           "disabled": false,
-          "document": "评估状态合规： 'COMPLIANT'\n不合规： 'NON_COMPLIANT'",
-          "example": "COMPLIANT",
+          "document": "<p>评估状态合规： &#39;COMPLIANT&#39;<br>不合规： &#39;NON_COMPLIANT&#39;</p>",
+          "example": "[\"COMPLIANT\"]",
           "member": "string",
           "name": "ComplianceResult",
           "required": false,
@@ -3931,10 +4221,19 @@
         },
         {
           "disabled": false,
-          "document": "排序类型, 倒序：desc，顺序：asc",
+          "document": "<p>排序类型, 倒序：desc，顺序：asc</p>",
           "example": "desc",
           "member": "string",
           "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>包含合规包结果定义</p><p>枚举值：</p><ul><li>NO： 不包含</li></ul><p>默认值：空</p><p>此字段为新增，因此不传或者传了YES都会默认返回包含合规结果数据，其他枚举值后面视情况丰富</p>",
+          "example": "NO",
+          "member": "string",
+          "name": "IncludeCompliancePackRuleResult",
           "required": false,
           "type": "string"
         }
@@ -3946,19 +4245,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "4",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "详情",
+          "document": "<p>详情</p>",
           "example": "无",
           "member": "ConfigCompliancePack",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4334,6 +4635,62 @@
           "example": "无",
           "member": "Aggregator",
           "name": "Items",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAlarmPolicyRequest": {
+      "document": "ListAlarmPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页展示数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAlarmPolicyResponse": {
+      "document": "ListAlarmPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回记录的数量</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警策略返回值</p>",
+          "example": "无",
+          "member": "AlarmPolicyRsp",
+          "name": "AlarmPolicyList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5257,7 +5614,7 @@
       "usage": "out"
     },
     "ResourceListInfo": {
-      "document": "资源列列表信息",
+      "document": "资源列表信息",
       "members": [
         {
           "disabled": false,
@@ -5601,141 +5958,141 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cam-user-group-bound",
           "member": "string",
           "name": "Identifier",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "规则名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CAM访问管理子用户必须关联用户组",
           "member": "string",
           "name": "RuleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "规则参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InputParameterForManage",
           "name": "InputParameter",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "规则触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则触发条件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SourceConditionForManage",
           "name": "SourceCondition",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "支持的资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[   \"QCS::CAM::User\" ]",
+          "document": "<p>支持的资源类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"QCS::SCF::Namespace\"]",
           "member": "string",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[   \"用户\",   \"用户组\" ]",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "风险等级，1，2，3\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>风险等级，1，2，3</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RiskLevel",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "对应的函数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "document": "<p>对应的函数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "function_1",
           "member": "string",
           "name": "ServiceFunction",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-09-01 12:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-09-01 12:00:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "触发类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[   \"ScheduledNotification\" ]",
+          "document": "<p>触发类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ScheduledNotification\"]",
           "member": "string",
           "name": "TriggerType",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "帐号访问管理中用户至少关联一个用户组，则符合规则。",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "账号访问管理中用户至少关联一个用户组，则符合规则。",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "使用次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>使用次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
           "name": "ReferenceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "规则类型",
+          "document": "<p>规则类型</p>",
           "example": "SYSTEM",
           "member": "string",
           "name": "IdentifierType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6103,6 +6460,105 @@
     },
     "UpdateAggregateConfigRuleResponse": {
       "document": "UpdateAggregateConfigRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAlarmPolicyRequest": {
+      "document": "UpdateAlarmPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警策略id",
+          "example": "123",
+          "member": "uint64",
+          "name": "AlarmPolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "告警策略名",
+          "example": "u544au8b66u89c4u5219",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件范围  1：当前账号  2：多账号",
+          "example": "[1]",
+          "member": "int64",
+          "name": "EventScope",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "风险等级 1：高风险  2：中风险 3：低风险",
+          "example": "[1]",
+          "member": "int64",
+          "name": "RiskLevel",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "通知时间段",
+          "example": "09:30:00~23:30:00",
+          "member": "string",
+          "name": "NoticeTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通知机制",
+          "example": "u5b9eu65f6u53d1u9001",
+          "member": "string",
+          "name": "NotificationMechanism",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态 1：启用 2：停用",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "通知周期,1-7数字分别代表周一到周日",
+          "example": "[1]",
+          "member": "int64",
+          "name": "NoticePeriod",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "策略描述",
+          "example": "u5bf9u4e0du5408u89c4u89c4u5219u8fdbu884cu544au8b66",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAlarmPolicyResponse": {
+      "document": "UpdateAlarmPolicy返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

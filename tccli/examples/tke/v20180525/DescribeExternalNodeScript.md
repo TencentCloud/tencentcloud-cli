@@ -1,25 +1,23 @@
-**Example 1: 查看第三方节点列表**
+**Example 1: 获取注册节点初始化脚本**
 
-
+获取注册节点初始化脚本
 
 Input: 
 
 ```
 tccli tke DescribeExternalNodeScript --cli-unfold-argument  \
-    --ClusterId cls-lm91rql0 \
-    --NodePoolId np-0nwzqj10 \
-    --Interface eth0 \
-    --Name node1
+    --ClusterId cls-2isgxkje \
+    --NodePoolId np-bnd1ybd4
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "48849133-f394-4c4c-9891-f013e209c025",
-        "Link": "https://tke-edge-1253687700.cos.ap-guangzhou.myqcloud.com/user-pkgs%2Fcls-19zn81yu3321337994100018114712ap-guangzhou%2Fadd2tkectl?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDTeaJo55GyQgvzojguuSl24qNey3wa7NN%26q-sign-time%3D1618561008%3B1618564608%26q-key-time%3D1618561008%3B1618564608%26q-header-list%3Dx-cos-token%26q-url-param-list%3D%26q-signature%3D7994096869abf8492c0c6cbc68f93701bab7ac4f",
-        "Token": "UAkOh6wCxzr8M8zf",
-        "Command": "wget --header=\"x-cos-token:UAkOh6wCxzr8M8zf\" https://tke-edge-1253687700.cos.ap-guangzhou.myqcloud.com/user-pkgs%2Fcls-19zn81yu3321337994100018114712ap-guangzhou%2Fadd2tkectl?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDTeaJo55GyQgvzojguuSl24qNey3wa7NN%26q-sign-time%3D1618561008%3B1618564608%26q-key-time%3D1618561008%3B1618564608%26q-header-list%3Dx-cos-token%26q-url-param-list%3D%26q-signature%3D7994096869abf8492c0c6cbc68f93701bab7ac4f -O add2tkectl && chmod +x add2tkectl"
+        "Command": "wget --header=\"x-cos-token:tokenvalue\" 'http://example.cos.ap-guangzhou.myqcloud.com/user-pkgs%2Fcls-2isgxkje700000446531700000446531gz%2Fadd2tkectl?q-sign-algorithm=sha1&q-ak=xxxxx&q-sign-time=1773902065%3B1773905665&q-key-time=1773902065%3B1773905665&q-header-list=host%3Bx-cos-token&q-url-param-list=&q-signature=92db17c604be5987fc41524be89f9247afb34aee' -O add2tkectl-cls-2isgxkje-np-bnd1ybd4 && chmod +x add2tkectl-cls-2isgxkje-np-bnd1ybd4",
+        "Link": "https://example.cos.ap-guangzhou.myqcloud.com/user-pkgs%2Fcls-2isgxkje700000446531700000446531gz%2Fadd2tkectl?q-sign-algorithm=sha1&q-ak=xxxx&q-sign-time=1773902065%3B1773905665&q-key-time=1773902065%3B1773905665&q-header-list=host%3Bx-cos-token&q-url-param-list=&q-signature=92db17c604be5987fc41524be89f9247afb34aee",
+        "Token": "tokenvalue",
+        "RequestId": "7b4dae36-4a1a-4583-9317-419851aef6b4"
     }
 }
 ```

@@ -89,8 +89,8 @@
     "CreateRabbitMQUser": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-2ppxx4rq\",\n    \"User\": \"test_user\",\n    \"Password\": \"abc123._\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"User\": \"test_user\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-7jwe5pr5\",\n    \"User\": \"grace\",\n    \"Password\": \"abcABC123\",\n    \"EnableCamAuth\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"User\": \"grace\",\n        \"RequestId\": \"83a4c4d3-43d9-456a-bf80-c8a5aa27c26a\"\n    }\n}",
         "title": "创建RabbitMQ用户"
       }
     ],
@@ -142,6 +142,14 @@
         "title": "创建消费组"
       }
     ],
+    "CreateRocketMQMigrationTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRocketMQMigrationTask\n<公共请求参数>\n\n{\n    \"Namespace\": \"test_ns\",\n    \"Topics\": [\n        {\n            \"Namespace\": \"test_ns\",\n            \"Remark\": \"test topic info.\",\n            \"Type\": \"Normal\",\n            \"TopicName\": \"test_topic\",\n            \"Partitions\": \"2\"\n        }\n    ],\n    \"ClusterId\": \"rocketmq-9npap34p9pa4\",\n    \"Type\": \"0\",\n    \"Groups\": [\n        {\n            \"ConsumeBroadcastEnable\": \"true\",\n            \"GroupName\": \"test_group\",\n            \"Remark\": \"test group info.\",\n            \"Namespace\": \"test_ns\",\n            \"ConsumeEnable\": \"true\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0484ec00-1ae3-4dec-872d-279d3ab83346\"\n    }\n}",
+        "title": "添加迁移任务"
+      }
+    ],
     "CreateRocketMQNamespace": [
       {
         "document": "创建命名空间",
@@ -156,6 +164,14 @@
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRocketMQRole\n<公共请求参数>\n\n{\n    \"RoleName\": \"test_role_name\",\n    \"Remark\": \"测试角色\",\n    \"ClusterId\": \"rocketmq-2p9vx3ax9jxg\"\n}",
         "output": "{\n    \"Response\": {\n        \"RoleName\": \"test_role_name\",\n        \"Token\": \"eyJrZXlJZCI6InN1bmdvxxxxx0X3JvbGVfMyJ9.dbHR8m6gc4L4vZUrodhW_O9bDulZQ6lraNswNLtcUcY\",\n        \"Remark\": \"测试角色\",\n        \"RequestId\": \"23ca1a58-0388-4d2d-8465-653a53addda7\"\n    }\n}",
         "title": "创建角色"
+      }
+    ],
+    "CreateRocketMQRouterRule": [
+      {
+        "document": "创建从MQTT到RocketMQ集群的Topic数据复制任务",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRocketMQRouterRule\n<公共请求参数>\n\n{\n    \"StartNow\": true,\n    \"Rule\": {\n        \"SourceType\": \"TENCENT_MQTT\",\n        \"TargetType\": \"TENCENT_ROCKETMQ\",\n        \"RemarkName\": \"test-rmq-mqtt-sync\",\n        \"TenRocketMQTarget\": {\n            \"Topic\": \"true\",\n            \"ClusterId\": \"rmq-16vjxq59j2\",\n            \"TargetRegion\": \"ap-chengdu\",\n            \"RoleName\": \"test_ben\",\n            \"AccessKey\": \"testak16vcb04be9d04\",\n            \"SecretKey\": \"testskca1f0368ee4\"\n        },\n        \"TenMQTTSource\": {\n            \"ClusterId\": \"mqtt-embkr9ar\",\n            \"Topic\": \"mqtt-topic-6\",\n            \"SourceRegion\": \"ap-chengdu\",\n            \"UserName\": \"dev-user\",\n            \"Password\": \"123qweASD123\",\n            \"Endpoint\": \"mqtt-embkr9ar-gz-internal.mqtt.tencenttdmq.com:1883\"\n        }\n    },\n    \"SyncType\": \"Topic\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46d960fa-5761-41ae-b908-4d023c7d3511\"\n    }\n}",
+        "title": "创建从MQTT到RocketMQ集群的Topic数据复制任务"
       }
     ],
     "CreateRocketMQTopic": [

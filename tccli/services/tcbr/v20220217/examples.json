@@ -172,6 +172,22 @@
         "title": "搜索CLS日志"
       }
     ],
+    "StartVersionInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartVersionInstance\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-sdsdf\",\n    \"ServerName\": \"test-fisher-manual\",\n    \"VersionName\": \"test-fisher-manual-003\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sdfsdfdsfsdf\",\n        \"InstanceName\": \"test-fisher-manual-003-sdfsd\"\n    }\n}",
+        "title": "StartVersionInstance"
+      }
+    ],
+    "StopVersionInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopVersionInstance\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-sdsdf\",\n    \"ServerName\": \"test-fisher-manual\",\n    \"InstanceName\": \"test-fisher-manual-003-sddf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sdfsdfdsfsdf\"\n    }\n}",
+        "title": "StopVersionInstance"
+      }
+    ],
     "SubmitServerRollback": [
       {
         "document": "",

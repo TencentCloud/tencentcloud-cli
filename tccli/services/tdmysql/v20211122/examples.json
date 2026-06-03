@@ -8,6 +8,22 @@
         "title": "批量隔离实例"
       }
     ],
+    "CreateCloneInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloneInstance\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-chengdu-1\",\n    \"VpcId\": \"vpc-jksnni36\",\n    \"SubnetId\": \"subnet-dz7wfk4r\",\n    \"SpecCode\": \"1c2g\",\n    \"Disk\": 20,\n    \"StorageNodeNum\": 3,\n    \"InstanceId\": \"tdsql3-2a6b33ef\",\n    \"BackupName\": \"/tdsql3_ap_chengdu/251231015/tdsql3-2a6b33ef/automatic/physical/full-backup/2026-04-22/1776859363/tdstore-data\",\n    \"StorageNodeCpu\": 1,\n    \"StorageNodeMem\": 2,\n    \"CreateVersion\": \"21.2.5\",\n    \"InstanceType\": \"hybrid\",\n    \"StorageType\": \"CLOUD_HSSD\",\n    \"Zones\": [\n        \"ap-chengdu-1\"\n    ],\n    \"InstanceMode\": \"enhanced\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 4295036956,\n        \"InstanceId\": \"tdsql3-ba6b4cbc\",\n        \"RequestId\": \"f23a4c9f-39d1-489f-839f-bab199c2d37e\"\n    }\n}",
+        "title": "加强型实例创建克隆"
+      }
+    ],
+    "CreateDBInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstances\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-chengdu-2\",\n    \"VpcId\": \"vpc-jksnni36\",\n    \"SubnetId\": \"subnet-dz7wfk4r\",\n    \"SpecCode\": \"1c2g\",\n    \"Disk\": 30,\n    \"StorageNodeNum\": 3,\n    \"Replications\": 3,\n    \"InstanceCount\": 1,\n    \"CreateVersion\": \"21.2.3\",\n    \"InitParams\": [\n        {\n            \"Param\": \"character_set_server\",\n            \"Value\": \"utf8mb4\"\n        }\n    ],\n    \"StorageNodeCpu\": 1,\n    \"StorageNodeMem\": 2,\n    \"Zones\": [\n        \"ap-chengdu-2\"\n    ],\n    \"InstanceType\": \"hybrid\",\n    \"StorageType\": \"CLOUD_HSSD\",\n    \"InstanceMode\": \"enhanced\",\n    \"SQLMode\": \"MySQL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 4294998382,\n        \"InstanceIds\": [\n            \"tdsql3-ac67c142\"\n        ],\n        \"RequestId\": \"b3e61005-1e6d-48a2-b5af-de6c4f19dd01\"\n    }\n}",
+        "title": "创建实例"
+      }
+    ],
     "CreateDBSBackup": [
       {
         "document": "手工创建一个备份集",
@@ -24,6 +40,22 @@
         "title": "删除备份集"
       }
     ],
+    "DescribeDBInstanceDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-a5952a76\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AZMode\": 1,\n        \"AnalysisInstanceInfo\": {\n            \"ReplicasNum\": 0\n        },\n        \"AnalysisMode\": \"\",\n        \"AnalysisRelationInfos\": [],\n        \"BinlogStatus\": 0,\n        \"BinlogType\": \"\",\n        \"CharSet\": \"utf8mb4\",\n        \"ColumnarNodeCpu\": 0,\n        \"ColumnarNodeDisk\": 0,\n        \"ColumnarNodeMem\": 0,\n        \"ColumnarNodeNum\": 0,\n        \"ColumnarNodeSpecCode\": \"\",\n        \"ColumnarNodeStorageType\": \"\",\n        \"ColumnarVip\": \"\",\n        \"ColumnarVport\": 0,\n        \"CreateTime\": \"2026-04-20 21:18:35\",\n        \"CreateVersion\": \"21.6.2.0.permanent.1192.ssl\",\n        \"Disk\": 100,\n        \"DiskUsage\": 19,\n        \"DumperVip\": \"\",\n        \"DumperVport\": 0,\n        \"ExpireAt\": \"0001-01-01 00:00:00\",\n        \"FullReplications\": 3,\n        \"InitParams\": [\n            {\n                \"Param\": \"lower_case_table_names\",\n                \"Value\": \"1\"\n            }\n        ],\n        \"InstanceCategory\": 0,\n        \"InstanceId\": \"tdsql3-446540ae\",\n        \"InstanceMode\": \"normal\",\n        \"InstanceName\": \"test003\",\n        \"InstanceType\": \"hybrid\",\n        \"IsSupportColumnar\": true,\n        \"IsSwitchFullReplicationsEnable\": false,\n        \"IsolatedAt\": \"0001-01-01 00:00:00\",\n        \"MaintenanceWindow\": {\n            \"Duration\": 3600,\n            \"StartTime\": 10800,\n            \"WeekDays\": [\n                \"Monday\"\n            ]\n        },\n        \"Node\": [\n            {\n                \"BinlogInfo\": [],\n                \"Cpu\": 1,\n                \"DataDisk\": 100,\n                \"Host\": \"\",\n                \"IP\": \"10.0.70.65\",\n                \"Mem\": 2,\n                \"NodeId\": \"node-tdsql3-446540ae-001\",\n                \"Port\": 6008,\n                \"Type\": \"hybridnode\",\n                \"Zone\": \"ap-guangzhou-7\"\n            }\n        ],\n        \"PayMode\": \"postPay\",\n        \"Region\": \"ap-guangzhou\",\n        \"RenewFlag\": 0,\n        \"Replications\": 3,\n        \"ResourceTags\": [],\n        \"SQLMode\": \"MySQL\",\n        \"SpecCode\": \"1c2g\",\n        \"StandbyFlag\": 1,\n        \"Status\": \"running\",\n        \"StatusDesc\": \"运行中\",\n        \"StorageNodeCpu\": 1,\n        \"StorageNodeMem\": 2,\n        \"StorageNodeNum\": 3,\n        \"StorageType\": \"CLOUD_HSSD\",\n        \"SubnetId\": \"subnet-30tyayxk\",\n        \"TemplateId\": \"\",\n        \"TemplateName\": \"\",\n        \"TimingModifyInstanceFlag\": 1,\n        \"UpdateTime\": \"2026-04-23 12:13:32\",\n        \"Vip\": \"10.31.16.52\",\n        \"VpcId\": \"vpc-o7ssr1vx\",\n        \"Vport\": 3306,\n        \"Zone\": \"ap-guangzhou-7\",\n        \"Zones\": [\n            \"ap-guangzhou-7\"\n        ],\n        \"RequestId\": \"27f36bdc-e23b-4b75-aa7c-4a4da0e836c4\"\n    }\n}",
+        "title": "查询实例详情"
+      }
+    ],
+    "DescribeDBInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstances\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"creating\",\n                \"running\"\n            ]\n        },\n        {\n            \"Name\": \"VpcId\",\n            \"Values\": [\n                \"vpc-asdfifff\"\n            ]\n        }\n    ],\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"ComputeNodeNum\": 2,\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-1\",\n                \"CreateVersion\": \"RELEASE_R080D001\",\n                \"InitParams\": [\n                    {\n                        \"Value\": \"lower_case_table_names\",\n                        \"Param\": \"0\"\n                    }\n                ],\n                \"Status\": \"running\",\n                \"StatusDesc\": \"运行中\",\n                \"InstanceId\": \"tdsql3-f3475547\",\n                \"StorageNodeNum\": 3,\n                \"ResourceTags\": [\n                    {\n                        \"TagKey\": \"tag-key\",\n                        \"TagValue\": \"tag-value\"\n                    }\n                ],\n                \"InstanceName\": \"tdsql3-f3475547\",\n                \"Cpu\": 4,\n                \"VpcId\": \"vpc-o7ssr1vx\",\n                \"Mem\": 8,\n                \"Vip\": \"172.16.113.202\",\n                \"SubnetId\": \"subnet-s21doiba\",\n                \"Vport\": 6008,\n                \"Disk\": 200,\n                \"CreateTime\": \"2006-01-02 15:04:05\"\n            }\n        ],\n        \"RequestId\": \"a93d2900-ef72-11eb-ab93-0716f253da76\",\n        \"TotalCount\": 100\n    }\n}",
+        "title": "查询实例列表"
+      }
+    ],
     "DescribeDBParameters": [
       {
         "document": "",
@@ -32,12 +64,52 @@
         "title": "获取数据库当前参数"
       }
     ],
+    "DescribeDBSArchiveLogs": [
+      {
+        "document": "查询实例归档日志列表信息",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBSArchiveLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-000d02ac\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"ArchiveLogId\": 7365,\n                \"BackupDuration\": 59610,\n                \"BackupStatus\": \"success\",\n                \"EndTime\": \"2025-07-31 16:02:34\",\n                \"ErrorMessage\": \"\",\n                \"ExpiredTime\": \"2025-08-07 16:02:34\",\n                \"FileName\": \"2025-07-31\",\n                \"FileSize\": 397689856,\n                \"InstanceId\": \"tdsql3-000d02ac\",\n                \"StartTime\": \"2025-07-30 23:42:34\"\n            }\n        ],\n        \"RequestId\": \"e8f0457c-f287-45a0-b45f-a5be3ef7a30b\",\n        \"TotalCount\": 8\n    }\n}",
+        "title": "查询实例归档日志列表"
+      }
+    ],
     "DescribeDBSAvailableRecoveryTime": [
       {
         "document": "可恢复时间查询",
         "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBSAvailableRecoveryTime\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-3f17e49d\"\n}",
         "output": "{\n    \"Response\": {\n        \"EndTime\": \"2026-03-26 20:12:29\",\n        \"Intervals\": [\n            {\n                \"EndTime\": \"2026-03-26 20:12:29\",\n                \"MajorVersion\": \"\",\n                \"MinorVersion\": \"\",\n                \"StartTime\": \"2026-03-23 22:14:09\"\n            }\n        ],\n        \"StartTime\": \"2026-03-23 22:14:09\",\n        \"RequestId\": \"2c15b222-d578-4173-a2fb-fb4843a9983e\"\n    }\n}",
         "title": "可恢复时间查询"
+      }
+    ],
+    "DescribeDBSBackupPolicy": [
+      {
+        "document": "查询实例备份策略信息",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBSBackupPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-3f17e49d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"BackupEndTime\": \"04:00\",\n                \"BackupMethod\": \"physical\",\n                \"BackupStartTime\": \"00:00\",\n                \"DBType\": \"tdstore\",\n                \"DBVersion\": \"21.6.1\",\n                \"EnableFull\": 1,\n                \"EnableLog\": 1,\n                \"ExpectedNextBackupPeriod\": \"2026-03-27 00:00:00 ~ 2026-03-27 04:00:00\",\n                \"FullRetentionPeriod\": 7,\n                \"ID\": 3260,\n                \"InstanceId\": \"tdsql3-3f17e49d\",\n                \"LogRetentionPeriod\": 7,\n                \"PeriodTime\": \"0,1,2,3,4,5,6\",\n                \"PeriodType\": 0,\n                \"Region\": \"ap-chengdu\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"ae01ddd4-36fd-44af-a71c-7f786f01e6c7\"\n    }\n}",
+        "title": "查询实例备份策略信息"
+      }
+    ],
+    "DescribeDBSBackupSets": [
+      {
+        "document": "查询备份集列表",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBSBackupSets\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-3f17e49d\",\n    \"EndTime\": \"2026-03-27 10:00:00\",\n    \"FilterBy\": {\n        \"BackupMethod\": \"physical,snapshot\",\n        \"BackupStatus\": \"running,success\",\n        \"BackupType\": \"full\",\n        \"ManualBackup\": \"0,1\"\n    },\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"OrderType\": \"DESC\",\n    \"StartTime\": \"2026-03-23 10:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"BackupDuration\": 75,\n                \"BackupMethod\": \"physical\",\n                \"BackupName\": \"tdsql3-3f17e49d_20260327000013\",\n                \"BackupProgress\": 100,\n                \"BackupSetId\": 73180813688075,\n                \"BackupStatus\": \"success\",\n                \"BackupType\": \"full\",\n                \"DBVersion\": \"21.6.1\",\n                \"EndTime\": \"2026-03-27 00:01:28\",\n                \"EndTrxTime\": \"2026-03-27 00:00:49\",\n                \"ErrorMessage\": \"\",\n                \"ExpiredTime\": \"2026-04-03 00:01:28\",\n                \"FileName\": \"tdstore-data\",\n                \"FileSize\": 9437184,\n                \"InstanceId\": \"tdsql3-3f17e49d\",\n                \"ManualBackup\": 0,\n                \"StartTime\": \"2026-03-27 00:00:13\"\n            }\n        ],\n        \"TotalCount\": 5,\n        \"RequestId\": \"66a71db2-18c5-445e-a28b-39ab02c1774e\"\n    }\n}",
+        "title": "查询备份集列表"
+      }
+    ],
+    "DescribeDBSBackupStatistics": [
+      {
+        "document": "备份概览统计",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBSBackupStatistics\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-3f17e49d\",\n    \"EndTime\": \"2026-03-26 20:10:00\",\n    \"StartTime\": \"2026-03-20 10:10:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupMethodStatistics\": {\n            \"AutoBackupSize\": 37748736,\n            \"AverageSizePerDay\": 18874368,\n            \"ManualBackupSize\": 0,\n            \"TotalSize\": 37748736\n        },\n        \"BackupStatistics\": {\n            \"AverageSizePerDay\": 50508288,\n            \"DataBackupSize\": 37748736,\n            \"LogBackupSize\": 63267840,\n            \"TotalCount\": 8,\n            \"TotalSize\": 101016576\n        },\n        \"DataBackupStatistics\": {\n            \"AutoBackupCount\": 0,\n            \"AutoBackupSize\": 0,\n            \"AverageSizePerBackup\": 9437184,\n            \"AverageSizePerDay\": 18874368,\n            \"ManualBackupCount\": 0,\n            \"ManualBackupSize\": 0,\n            \"TotalCount\": 4,\n            \"TotalSize\": 37748736\n        },\n        \"LogBackupStatistics\": {\n            \"AverageSizePerBackup\": 15816960,\n            \"AverageSizePerDay\": 31633920,\n            \"TotalCount\": 4,\n            \"TotalSize\": 63267840\n        },\n        \"RequestId\": \"35fc7900-6809-4168-916e-e42be89c02cb\"\n    }\n}",
+        "title": "备份概览统计"
+      }
+    ],
+    "DescribeDBSBackupStatisticsDetail": [
+      {
+        "document": "查询备份集统计详情",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBSBackupStatisticsDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-3f17e49d\",\n    \"EndTime\": \"2026-03-23 22:00:00\",\n    \"StartTime\": \"2026-03-23 00:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupMethodStatistics\": {\n            \"AutoBackupSize\": [\n                9437184\n            ],\n            \"ManualBackupSize\": [\n                0\n            ]\n        },\n        \"BackupTime\": [\n            \"2026-03-23\"\n        ],\n        \"BackupTypeStatistics\": {\n            \"DataBackupSize\": [\n                9437184\n            ],\n            \"LogBackupSize\": [\n                2332672\n            ]\n        },\n        \"RequestId\": \"712340ca-ab30-4acb-a784-38473a2c57f0\"\n    }\n}",
+        "title": "查询备份集统计详情"
       }
     ],
     "DescribeDBSCloneInstances": [
@@ -64,6 +136,26 @@
         "title": "1"
       }
     ],
+    "DescribeDatabases": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"InstanceId\": \"“tdsql3-01d1c3ed”\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Databases\": [\n            {\n                \"DbName\": \"mysql\"\n            }\n        ],\n        \"InstanceId\": \"tdsql3-01d1c3ed\",\n        \"RequestId\": \"9b5e5e4a-30f2-46f8-91ee-788495d1e21f\"\n    }\n}",
+        "title": "1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-jko12hds\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Databases\": [],\n        \"InstanceId\": \"tdsql3-jko12hds\",\n        \"RequestId\": \"2efb7186-2e29-46d1-9bc7-05dc2b8240bf\"\n    }\n}",
+        "title": "123"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-5baee8df\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Databases\": [\n            {\n                \"DbName\": \"information_schema\"\n            },\n            {\n                \"DbName\": \"mysql\"\n            },\n            {\n                \"DbName\": \"performance_schema\"\n            },\n            {\n                \"DbName\": \"sys\"\n            }\n        ],\n        \"InstanceId\": \"tdsql3-42f40429 \",\n        \"RequestId\": \"545457454fdasda\"\n    }\n}",
+        "title": "查询云数据库实例上的数据库列表"
+      }
+    ],
     "DescribeFlow": [
       {
         "document": "查询flow",
@@ -72,12 +164,76 @@
         "title": "查询flow状态"
       }
     ],
+    "DescribeSaleInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSaleInfo\n<公共请求参数>\n\n{\n    \"InstanceType\": \"serverless\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RegionList\": [\n            {\n                \"AvailableZoneNum\": 3,\n                \"Enable\": 1,\n                \"IsSupportServerless\": true,\n                \"IsSupportedLogReplica\": true,\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"å¹¿å·ž\",\n                \"ZoneGroup\": [\n                    {\n                        \"AvailableDiskTypes\": [],\n                        \"IsSupportServerless\": true,\n                        \"SupportTypes\": [\n                            \"0\"\n                        ],\n                        \"ZoneNum\": 1,\n                        \"Zones\": [\n                            \"ap-guangzhou-7\"\n                        ]\n                    }\n                ],\n                \"ZoneList\": [\n                    {\n                        \"AvailableDiskTypes\": [],\n                        \"Enable\": 1,\n                        \"IsDefaultMaster\": 0,\n                        \"IsSupportServerless\": true,\n                        \"SupportTypes\": [\n                            \"0\"\n                        ],\n                        \"Zone\": \"ap-guangzhou-7\",\n                        \"ZoneName\": \"å¹¿å·žä¸ƒåŒº\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"cc7f4880-5ed6-4daa-a45f-df2a5780d573\"\n    }\n}",
+        "title": "返回售卖地域"
+      }
+    ],
+    "DescribeSpecs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpecs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"HybridNodeSpecs\": [\n            {\n                \"SpecCode\": \"1c2g\",\n                \"StorageNodeCpu\": 1,\n                \"StorageNodeMaxDisk\": 500,\n                \"StorageNodeMaxNum\": 18,\n                \"StorageNodeMem\": 2,\n                \"StorageNodeMinDisk\": 20,\n                \"StorageNodeMinNum\": 3,\n                \"StorageType\": \"CLOUD_HSSD\"\n            },\n            {\n                \"SpecCode\": \"2c4g\",\n                \"StorageNodeCpu\": 2,\n                \"StorageNodeMaxDisk\": 500,\n                \"StorageNodeMaxNum\": 18,\n                \"StorageNodeMem\": 4,\n                \"StorageNodeMinDisk\": 20,\n                \"StorageNodeMinNum\": 3,\n                \"StorageType\": \"CLOUD_HSSD\"\n            },\n            {\n                \"SpecCode\": \"4c8g\",\n                \"StorageNodeCpu\": 4,\n                \"StorageNodeMaxDisk\": 500,\n                \"StorageNodeMaxNum\": 18,\n                \"StorageNodeMem\": 8,\n                \"StorageNodeMinDisk\": 20,\n                \"StorageNodeMinNum\": 3,\n                \"StorageType\": \"CLOUD_HSSD\"\n            }\n        ],\n        \"RequestId\": \"f2bed855-af44-46c8-bd47-e84fd52e5b16\"\n    }\n}",
+        "title": "对等架构返回"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpecs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"HybridNodeSpecs\": [\n            {\n                \"StorageNodeMaxDisk\": 0,\n                \"StorageNodeMinNum\": 0,\n                \"StorageNodeMinDisk\": 0,\n                \"SpecCode\": \"1c2g\",\n                \"StorageNodeCpu\": 0,\n                \"StorageNodeMem\": 0,\n                \"StorageNodeMaxNum\": 0,\n                \"StorageType\": \"CLOUD_HSSD\"\n            }\n        ],\n        \"RequestId\": \"f2bed855-af44-46c8-bd47-e84fd52e5b16\"\n    }\n}",
+        "title": "查询机型规格信息"
+      }
+    ],
+    "DescribeUserPrivileges": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserPrivileges\n<公共请求参数>\n\n{\n    \"UserName\": \"qt4s_test\",\n    \"InstanceId\": \"tdsql3-0b2f04e0\",\n    \"Object\": \"sbtest10\",\n    \"Host\": \"%\",\n    \"DbName\": \"test\",\n    \"ObjectType\": \"table\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Privileges\": [],\n        \"RequestId\": \"40b596e8-0b33-48ce-bd61-a2a5891a0920\"\n    }\n}",
+        "title": "1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserPrivileges\n<公共请求参数>\n\n{\n    \"UserName\": \"字符串\",\n    \"InstanceId\": \"tdsql3-267841d2\",\n    \"Object\": \"字符串\",\n    \"ColName\": \"字符串\",\n    \"Host\": \"%\",\n    \"DbName\": \"字符串\",\n    \"ObjectType\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Privileges\": [],\n        \"RequestId\": \"cae0499f-194e-4fec-a46a-9c42eaaeb753\"\n    }\n}",
+        "title": "123"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserPrivileges\n<公共请求参数>\n\n{\n    \"UserName\": \"字符串\",\n    \"InstanceId\": \"tdsql3-267841d2\",\n    \"Object\": \"字符串\",\n    \"ColName\": \"字符串\",\n    \"Host\": \"%\",\n    \"DbName\": \"字符串\",\n    \"ObjectType\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Privileges\": [],\n        \"RequestId\": \"7ac86126-4006-43aa-9dad-267e2f5ff0d8\"\n    }\n}",
+        "title": "321"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserPrivileges\n<公共请求参数>\n\n{\n    \"UserName\": \"qt4s_test\",\n    \"InstanceId\": \"tdsql3-789a2481\",\n    \"Host\": \"%\",\n    \"DbName\": \"test\",\n    \"ObjectType\": \"table\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Privileges\": null,\n        \"RequestId\": \"949d8d5e-3622-4a81-9c47-7af93613eeb5\"\n    }\n}",
+        "title": "null"
+      }
+    ],
+    "DescribeUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-d8fffc3c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Users\": [\n            {\n                \"UserName\": \"test_user\",\n                \"Description\": \"test\",\n                \"Host\": \"%\",\n                \"CreateTime\": \"2006-01-02 15:04:05\",\n                \"UpdateTime\": \"2006-01-02 15:04:05\"\n            }\n        ],\n        \"RequestId\": \"a93d2900-ef72-11eb-ab93-0716f253da76\"\n    }\n}",
+        "title": "查询用户列表"
+      }
+    ],
     "DestroyInstances": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"tdsql3-d8fffc3c\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"SuccessInstanceIds\": [\n            \"tdsql3-d8fffc3c\",\n            \"tdsql3-d8fffc4s\"\n        ],\n        \"FailedInstanceIds\": [\n            \"tdsql3-d8fffc4s\"\n        ],\n        \"RequestId\": \"a93d2900-ef72-11eb-ab93-0716f253da76\"\n    }\n}",
         "title": "批量隔离实例"
+      }
+    ],
+    "ExpandInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExpandInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-ecab00ac\",\n    \"StorageNodeNum\": 4,\n    \"Zones\": [\n        \"ap-chengdu-1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 4295036759,\n        \"RequestId\": \"5b104d05-7e16-4869-87fe-dbd2e8f30b70\"\n    }\n}",
+        "title": "双副本扩容节点"
       }
     ],
     "IsolateDBInstance": [
@@ -134,6 +290,30 @@
         "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceName\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-e732378b\",\n    \"InstanceName\": \"new-instance-name\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9ddd5d0-ef72-11eb-ab93-0716f253da76\"\n    }\n}",
         "title": "修改实例名称"
+      }
+    ],
+    "ModifyUserPrivileges": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserPrivileges\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-0b2f04e0\",\n    \"Users\": [\n        {\n            \"UserName\": \"mysql.sys\",\n            \"Host\": \"localhost\"\n        }\n    ],\n    \"GlobalPrivileges\": [\n        \"SELECT\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c2c4b96-5807-4c63-b55c-78a93937d111\"\n    }\n}",
+        "title": "1"
+      }
+    ],
+    "RestartDBInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartDBInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"tdsql3-bcedf765\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 4295036740,\n        \"RequestId\": \"6ebdb0db-fb1c-417b-b865-f98a58398615\"\n    }\n}",
+        "title": "重启实例"
+      }
+    ],
+    "UpgradeInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-bcedf765\",\n    \"SpecCode\": \"1c2g\",\n    \"Disk\": 20,\n    \"StorageNodeCpu\": 1,\n    \"StorageNodeMem\": 2,\n    \"StorageType\": \"CLOUD_TCS\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 4295036957,\n        \"RequestId\": \"c2341b01-296a-4fd3-9f5c-009c0f232d09\"\n    }\n}",
+        "title": "加强型实例纵向变配"
       }
     ]
   },

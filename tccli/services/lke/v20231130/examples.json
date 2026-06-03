@@ -26,10 +26,10 @@
     ],
     "CreateApp": [
       {
-        "document": "创建应用",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApp\n<公共请求参数>\n\n{\n    \"AppType\": \"knowledge_qa\",\n    \"BaseConfig\": {\n        \"Name\": \"知识问答\",\n        \"Avatar\": \"头像\",\n        \"Desc\": \"第一个应用\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"AppBizId\": \"198848848484848\",\n        \"RequestId\": \"dwec-adsdsdsd-sfsfdsfsf\"\n    }\n}",
-        "title": "创建应用"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApp\n<公共请求参数>\n\n{\n    \"AppType\": \"knowledge_qa\",\n    \"BaseConfig\": {\n        \"Name\": \"我的智能体应用\",\n        \"Avatar\": \"https://cdn.xiaowei.qq.com/static/adp/app-default-avatar.png\",\n        \"Desc\": \"应用描述信息\"\n    },\n    \"Pattern\": \"ClawAgent\",\n    \"AgentType\": \"dialogue\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppBizId\": \"2049767047020830336\",\n        \"IsCustomList\": false,\n        \"RequestId\": \"7c04aa7f-45ce-41fc-91a9-0743aa65104d\"\n    }\n}",
+        "title": "CreateApp"
       }
     ],
     "CreateAttributeLabel": [
@@ -82,10 +82,10 @@
     ],
     "CreateSharedKnowledge": [
       {
-        "document": "创建共享知识库",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSharedKnowledge\n<公共请求参数>\n\n{\n    \"KnowledgeName\": \"共享知识库1\",\n    \"KnowledgeDescription\": \"计算机基础理论知识库\",\n    \"EmbeddingModel\": \"general-text-embedding-v2.7\"\n}",
-        "output": "{\n    \"Response\": {\n        \"KnowledgeBizId\": \"1908652910168703294\",\n        \"RequestId\": \"798dbcd5-80e1-277d-aeb7-0018abab7686\"\n    }\n}",
-        "title": "创建共享知识库"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSharedKnowledge\n<公共请求参数>\n\n{\n    \"KnowledgeName\": \"test-0423\",\n    \"KnowledgeType\": 0,\n    \"EsConfig\": {\n        \"StorageType\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"KnowledgeBizId\": \"2047150542445725376\",\n        \"RequestId\": \"ae90730a-57cd-4668-bdec-2389880ad12c\"\n    }\n}",
+        "title": "正常请求"
       }
     ],
     "CreateVar": [
@@ -554,6 +554,12 @@
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AttrLabels\": [],\n                \"AttrRange\": 1,\n                \"CosUrl\": \"/corp/137/doc/jkadslfjalkdfjaklsdfla.docx\",\n                \"DocBizId\": \"1729099536210460672\",\n                \"DocCharSize\": \"5\",\n                \"FileName\": \"jkadslfjalkdfjaklsdfla.docx\",\n                \"NewName\": \"\",\n                \"FileType\": \"docx\",\n                \"IsAllowDelete\": true,\n                \"IsAllowEdit\": true,\n                \"IsAllowRefer\": true,\n                \"IsAllowRestart\": true,\n                \"IsCreatedQa\": true,\n                \"IsCreatingQa\": false,\n                \"IsDeleted\": false,\n                \"IsDeletedQa\": false,\n                \"IsRefer\": false,\n                \"QaNum\": 2,\n                \"Reason\": \"生成问答成功\",\n                \"Source\": 1,\n                \"SourceDesc\": \"网页导入\",\n                \"Status\": 12,\n                \"StatusDesc\": \"导入成功\",\n                \"WebUrl\": \"\",\n                \"ReferUrlType\": 0,\n                \"UpdateTime\": \"1701425246\"\n            }\n        ],\n        \"RequestId\": \"5526c65b-308d-4e84-b6b3-6b21d5c106b2\",\n        \"Total\": \"1\"\n    }\n}",
         "title": "文档列表"
+      },
+      {
+        "document": "更新时间",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"2046432781641786304\",\n    \"PageNumber\": 1,\n    \"PageSize\": 15,\n    \"Query\": \"t\",\n    \"Status\": [\n        10\n    ],\n    \"QueryType\": \"filename\",\n    \"CateBizId\": \"0\",\n    \"UpdateTime\": {\n        \"Start\": \"2026-04-15 00:00:00\",\n        \"End\": \"2026-04-29 23:59:59\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AttrLabels\": [\n                    {\n                        \"AttrBizId\": \"2047229851896103040\",\n                        \"AttrKey\": \"lsOOuJiJ\",\n                        \"AttrName\": \"朝代\",\n                        \"Labels\": [\n                            {\n                                \"LabelBizId\": \"2047229851900297344\",\n                                \"LabelName\": \"21世纪\"\n                            }\n                        ],\n                        \"Source\": 1\n                    }\n                ],\n                \"AttrRange\": 2,\n                \"AttributeFlags\": [],\n                \"CateBizId\": \"2047572762068238464\",\n                \"CosUrl\": \"/corp/1747547736762744832/2046432781641786304/doc/GcpdluVjCRFkyiCkoKEX-2046433768792204096.txt\",\n                \"CreateTime\": \"1776742812\",\n                \"CustomerKnowledgeId\": \"\",\n                \"DocBizId\": \"2046433795425184512\",\n                \"DocCharSize\": \"5281062\",\n                \"DocSize\": \"11027751\",\n                \"EnableScope\": 4,\n                \"ExpireEnd\": \"0\",\n                \"ExpireStart\": \"1776742811\",\n                \"FileName\": \"绝世唐门.txt\",\n                \"FileType\": \"txt\",\n                \"IsAllowDelete\": true,\n                \"IsAllowEdit\": true,\n                \"IsAllowRefer\": true,\n                \"IsAllowRestart\": true,\n                \"IsAllowRetry\": false,\n                \"IsCreatedQa\": false,\n                \"IsCreatingQa\": false,\n                \"IsDeleted\": false,\n                \"IsDeletedQa\": false,\n                \"IsDisabled\": false,\n                \"IsRefer\": false,\n                \"NewName\": \"\",\n                \"Processing\": [],\n                \"QaNum\": 0,\n                \"Reason\": \"\",\n                \"ReferUrlType\": 0,\n                \"Source\": 0,\n                \"SourceDesc\": \"KeySourceFileImport\",\n                \"StaffName\": \"coco测试11\",\n                \"Status\": 10,\n                \"StatusDesc\": \"导入完成\",\n                \"UpdateTime\": \"1777260664\",\n                \"WebUrl\": \"\"\n            }\n        ],\n        \"Total\": \"2\",\n        \"RequestId\": \"64291550-b4c9-46d8-bd8d-56cb52ce1421\"\n    }\n}",
+        "title": "更新时间"
       }
     ],
     "ListDocCate": [
@@ -573,6 +579,12 @@
       }
     ],
     "ListQA": [
+      {
+        "document": "时间范围",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListQA\n<公共请求参数>\n\n{\n    \"BotBizId\": \"2046432781641786304\",\n    \"PageNumber\": 1,\n    \"PageSize\": 15,\n    \"Query\": \"三\",\n    \"AcceptStatus\": [\n        2\n    ],\n    \"ReleaseStatus\": [\n        2\n    ],\n    \"Source\": 3,\n    \"CateBizId\": \"0\",\n    \"QueryType\": \"filename\",\n    \"CreateTime\": {\n        \"Start\": \"2026-04-08 00:00:00\",\n        \"End\": \"2026-04-29 23:59:59\"\n    },\n    \"UpdateTime\": {\n        \"Start\": \"2026-04-08 00:00:00\",\n        \"End\": \"2026-05-26 23:59:59\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AcceptedTotal\": \"2\",\n        \"List\": [\n            {\n                \"Answer\": \"18岁\",\n                \"AttrLabels\": [],\n                \"AttrRange\": 1,\n                \"CreateTime\": \"1776742889\",\n                \"DocBizId\": \"0\",\n                \"DocEnableScope\": 4,\n                \"EnableScope\": 4,\n                \"ExpireEnd\": \"0\",\n                \"ExpireStart\": \"1776742888\",\n                \"FileName\": \"\",\n                \"FileType\": \"\",\n                \"IsAllowAccept\": false,\n                \"IsAllowDelete\": true,\n                \"IsAllowEdit\": true,\n                \"IsDisabled\": false,\n                \"QaBizId\": \"2046434115400161472\",\n                \"QaCharSize\": \"8\",\n                \"QaSize\": \"20\",\n                \"Question\": \"张三多少岁\",\n                \"SimilarQuestionNum\": 0,\n                \"SimilarQuestionTips\": \"\",\n                \"Source\": 3,\n                \"SourceDesc\": \"手动录入\",\n                \"StaffName\": \"coco测试11\",\n                \"Status\": 2,\n                \"StatusDesc\": \"导入完成\",\n                \"UpdateTime\": \"1777260650\"\n            }\n        ],\n        \"NotAcceptedTotal\": \"0\",\n        \"PageNumber\": 1,\n        \"Total\": \"2\",\n        \"WaitVerifyTotal\": \"0\",\n        \"RequestId\": \"1b528e88-79b9-40b6-bf49-03c0399aead6\"\n    }\n}",
+        "title": "时间范围"
+      },
       {
         "document": "获取问答列表",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListQA\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"PageNumber\": 1,\n    \"PageSize\": 50,\n    \"QaBizIds\": [\n        \"162734\",\n        \"162779\"\n    ]\n}",
@@ -598,10 +610,10 @@
     ],
     "ListRejectedQuestion": [
       {
-        "document": "获取拒答问题列表",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRejectedQuestion\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1995331832265990976\",\n    \"Query\": \"价\",\n    \"PageNumber\": 1,\n    \"PageSize\": 15\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"IsAllowDelete\": true,\n                \"IsAllowEdit\": true,\n                \"Operator\": \"coco测试11\",\n                \"Question\": \"内部员工价是多少？\",\n                \"RejectedBizId\": \"2001120585035292864\",\n                \"Status\": 3,\n                \"StatusDesc\": \"已发布\",\n                \"UpdateTime\": \"1765939321\"\n            },\n            {\n                \"IsAllowDelete\": true,\n                \"IsAllowEdit\": true,\n                \"Operator\": \"coco测试11\",\n                \"Question\": \"你们的价格能比拼多多便宜么?\",\n                \"RejectedBizId\": \"2001120437290934464\",\n                \"Status\": 3,\n                \"StatusDesc\": \"已发布\",\n                \"UpdateTime\": \"1765939321\"\n            },\n            {\n                \"IsAllowDelete\": true,\n                \"IsAllowEdit\": true,\n                \"Operator\": \"coco测试11\",\n                \"Question\": \"能告诉我进货价是多少么?\",\n                \"RejectedBizId\": \"2001120335801360576\",\n                \"Status\": 3,\n                \"StatusDesc\": \"已发布\",\n                \"UpdateTime\": \"1765939321\"\n            }\n        ],\n        \"RequestId\": \"6dd9b41d-9b7d-4b5b-a968-5ddfba77f3a7\",\n        \"Total\": \"3\"\n    }\n}",
-        "title": "获取拒答问题列表"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRejectedQuestion\n<公共请求参数>\n\n{\n    \"BotBizId\": \"2003116222155701696\",\n    \"Query\": \"\",\n    \"PageNumber\": 1,\n    \"PageSize\": 15\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"f5868e30-fb21-47ca-88d3-da240a5cbebf\",\n        \"Total\": \"0\"\n    }\n}",
+        "title": "ListRejectedQuestion"
       }
     ],
     "ListRejectedQuestionPreview": [
@@ -678,9 +690,9 @@
     ],
     "ListWorkflowRuns": [
       {
-        "document": "已经通过CreateWorkflowRun接口创建了多个异步运行实例，调用本接口来查询列表。",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListWorkflowRuns\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1854548189164339200\",\n    \"Page\": 1,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"WorkflowRuns\": [\n            {\n                \"RunEnv\": 1,\n                \"AppBizId\": \"1854548189164339200\",\n                \"WorkflowRunId\": \"run-id-123\",\n                \"WorkflowId\": \"workflow-id-456\",\n                \"State\": 4,\n                \"FailMessage\": \"\",\n                \"TotalTokens\": 100,\n                \"StartTime\": \"1672531200000\",\n                \"EndTime\": \"1672531300000\",\n                \"CreateTime\": \"1672531100000\"\n            }\n        ],\n        \"RequestId\": \"925208e7-46fa-43b3-a429-ddcbccad24f6\"\n    }\n}",
+        "document": "查询工作流异步运行实例的列表",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListWorkflowRuns\n<公共请求参数>\n\n{\n    \"AppBizId\": \"2029461666234922753\",\n    \"PageSize\": 20,\n    \"Page\": 1,\n    \"Query\": \"bnis908spzb4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"WorkflowRuns\": [\n            {\n                \"AppBizId\": \"2029461666234922753\",\n                \"CreateTime\": \"1772751757725\",\n                \"EndTime\": \"1772751765933\",\n                \"FailMessage\": \"\",\n                \"Name\": \"异步工作流\",\n                \"RunEnv\": 0,\n                \"StartTime\": \"1772751758509\",\n                \"State\": 2,\n                \"TotalTokens\": 436,\n                \"WorkflowId\": \"0e3510a6-1855-4dc2-9065-996a510a543c\",\n                \"WorkflowRunId\": \"wfr-bnis908spzb4\"\n            }\n        ],\n        \"RequestId\": \"109d44bc-937f-4ea5-9e99-b7480161efee\"\n    }\n}",
         "title": "查询工作流异步运行实例的列表"
       }
     ],
@@ -807,9 +819,9 @@
     "SaveDoc": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"FileName\": \"测试.docx\",\n    \"FileType\": \"docx\",\n    \"CosUrl\": \"/corp/23432432/233432/doc/zeSOHIBjwcWoEmlMMXOp-1796022574489010176.docx\",\n    \"ETag\": \"\\\"58e88ad7665f11c4f66eba0eada383a5\\\"\",\n    \"CosHash\": \"xxxxxxxxx\",\n    \"Size\": \"643000\",\n    \"Source\": 0,\n    \"WebUrl\": \"\",\n    \"AttrRange\": 1,\n    \"AttrLabels\": [],\n    \"ReferUrlType\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"DocBizId\": \"1694921462777761792\",\n        \"ErrorMsg\": \"\",\n        \"ErrorLink\": \"\",\n        \"ErrorLinkText\": \"\",\n        \"RequestId\": \"e3338103-3165-49c0-b218-245be865cca5\"\n    }\n}",
-        "title": "知识库文档录入"
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"2055111415718175360\",\n    \"FileName\": \"2024年-1-3-1.pdf\",\n    \"FileType\": \"pdf\",\n    \"CosUrl\": \"/corp/1747547736762744832/2055111415718175360/doc/OhcIrHUSClPEVusVlBjK-2057085760865765120.pdf\",\n    \"ETag\": \"\\\"4d81367c7a76d03cb3ef4d76630d0eae\\\"\",\n    \"CosHash\": \"4395436907549135836\",\n    \"Size\": \"499476\",\n    \"AttrRange\": 1,\n    \"Source\": 0,\n    \"WebUrl\": \"\",\n    \"AttrLabels\": [],\n    \"ReferUrlType\": 0,\n    \"ExpireStart\": \"1779282442\",\n    \"IsRefer\": false,\n    \"Opt\": 2,\n    \"CateBizId\": \"0\",\n    \"IsDownload\": false,\n    \"SplitRule\": \"{\\\"split_config_new\\\":{\\\"table_style\\\":\\\"md\\\",\\\"rm_spec_symbol\\\":1}}\",\n    \"EnableScope\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"DocBizId\": \"2057086103297555520\",\n        \"DuplicateFileCheckType\": 0,\n        \"ErrorLink\": \"\",\n        \"ErrorLinkText\": \"\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"343679e1-8ed7-4e4e-ac91-c6a1c14428b6\"\n    }\n}",
+        "title": "SaveDoc"
       }
     ],
     "StopDocParse": [

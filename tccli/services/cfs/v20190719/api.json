@@ -63,6 +63,13 @@
       "output": "CreateDataFlowResponse",
       "status": "online"
     },
+    "CreateDataRetrieval": {
+      "document": "创建数据检索",
+      "input": "CreateDataRetrievalRequest",
+      "name": "创建数据检索",
+      "output": "CreateDataRetrievalResponse",
+      "status": "online"
+    },
     "CreateLifecycleDataTask": {
       "document": "支持主动沉降/预热接口",
       "input": "CreateLifecycleDataTaskRequest",
@@ -131,6 +138,13 @@
       "input": "DeleteDataFlowRequest",
       "name": "删除数据流动",
       "output": "DeleteDataFlowResponse",
+      "status": "online"
+    },
+    "DeleteDataRetrieval": {
+      "document": "删除数据检索。\n\n删除指定的数据检索配置，不允许在存在关联任务时删除。调用接口后，若通过 DescribeDataRetrieval 接口查询不到对应的数据检索，则表示删除成功。",
+      "input": "DeleteDataRetrievalRequest",
+      "name": "删除数据检索",
+      "output": "DeleteDataRetrievalResponse",
       "status": "online"
     },
     "DeleteLifecyclePolicy": {
@@ -231,6 +245,20 @@
       "output": "DescribeDataFlowResponse",
       "status": "online"
     },
+    "DescribeDataRetrieval": {
+      "document": "查询数据检索。\n\n查询数据检索列表，支持按文件系统 ID、数据检索 ID、名称等条件筛选。",
+      "input": "DescribeDataRetrievalRequest",
+      "name": "查询数据检索",
+      "output": "DescribeDataRetrievalResponse",
+      "status": "online"
+    },
+    "DescribeDataRetrievalTask": {
+      "document": "查询数据检索任务",
+      "input": "DescribeDataRetrievalTaskRequest",
+      "name": "查询数据检索任务",
+      "output": "DescribeDataRetrievalTaskResponse",
+      "status": "online"
+    },
     "DescribeLifecycleDataTask": {
       "document": "查询生命周期任务的接口。仅支持查询最近三个月内的任务数据。",
       "input": "DescribeLifecycleDataTaskRequest",
@@ -287,6 +315,13 @@
       "output": "ModifyDataFlowResponse",
       "status": "online"
     },
+    "ModifyDataRetrieval": {
+      "document": "修改数据检索",
+      "input": "ModifyDataRetrievalRequest",
+      "name": "修改数据检索",
+      "output": "ModifyDataRetrievalResponse",
+      "status": "online"
+    },
     "ModifyFileSystemAutoScaleUpRule": {
       "document": "用来设置文件系统扩容策略，该接口只支持turbo文件系统",
       "input": "ModifyFileSystemAutoScaleUpRuleRequest",
@@ -299,6 +334,20 @@
       "input": "ModifyLifecyclePolicyRequest",
       "name": "更新生命周期策略",
       "output": "ModifyLifecyclePolicyResponse",
+      "status": "online"
+    },
+    "OverrideCfsRules": {
+      "document": "本接口（OverrideCfsRules）用于批量覆盖式创建权限组规则。",
+      "input": "OverrideCfsRulesRequest",
+      "name": "批量覆盖式创建权限组规则",
+      "output": "OverrideCfsRulesResponse",
+      "status": "online"
+    },
+    "RunDataRetrievalTask": {
+      "document": "执行数据检索任务。\n\n手动触发指定数据检索的执行，创建一个新的数据检索任务。单个文件系统同时执行的任务数不超过 20 个。",
+      "input": "RunDataRetrievalTaskRequest",
+      "name": "执行数据检索任务",
+      "output": "RunDataRetrievalTaskResponse",
       "status": "online"
     },
     "ScaleUpFileSystem": {
@@ -1795,6 +1844,97 @@
       ],
       "type": "object"
     },
+    "CreateDataRetrievalRequest": {
+      "document": "CreateDataRetrieval请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件系统实例 ID，通过查询文件系统 DescribeCfsFileSystems 获取 示例值：cfs-xxxxxx</p>",
+          "example": "cfs-4e5e76ff8",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据检索名称 示例值：DataDive</p>",
+          "example": "default",
+          "member": "string",
+          "name": "DataRetrievalName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>聚合检索条件 示例值：from entries|where size &gt;4096</p>",
+          "example": "WHERE size > 1048576 AND type == \"file\"",
+          "member": "string",
+          "name": "CompoundCondition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>列表检索条件</p>",
+          "example": "from entries|where size >4096",
+          "member": "string",
+          "name": "QueryCondition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据检索按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照；例如1 代表1号；与DayOfWeek二选一 示例值：1</p>",
+          "example": "1",
+          "member": "string",
+          "name": "DayOfMonth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据检索重复日期，星期一到星期日。 1代表星期一、7代表星期天，与DayOfMonth，二选一 示例值：2,3</p>",
+          "example": "3,4",
+          "member": "string",
+          "name": "DayOfWeek",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>重复时间点,0-23，小时 示例值：1,3,5</p>",
+          "example": "12,13",
+          "member": "string",
+          "name": "Hour",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataRetrievalResponse": {
+      "document": "CreateDataRetrieval返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据检索ID示例值：dataretrieval-123456</p>",
+          "example": "dataretrieval-1234bdbc",
+          "member": "string",
+          "name": "DataRetrievalId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateLifecycleDataTaskRequest": {
       "document": "CreateLifecycleDataTask请求参数结构体",
       "members": [
@@ -2297,6 +2437,260 @@
       ],
       "usage": "out"
     },
+    "DataRetrievalInfo": {
+      "document": "数据检索信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据检索策略名称</p>",
+          "example": "txt",
+          "member": "string",
+          "name": "DataRetrievalName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>迁移任务id<br>示例值：migrate-001</p>",
+          "example": "dataretrieval-72986e77",
+          "member": "string",
+          "name": "DataRetrievalId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件系统实例 ID，通过查询文件系统 DescribeCfsFileSystems </p><p>获取示例值：cfs-xxxxxx</p>",
+          "example": "cfs-4e5e76ff8",
+          "member": "string",
+          "name": "FileSystemId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>聚合检索条件</p>",
+          "example": "from entries |where path like \"*.txt\" OR path like \"/cfs/*\" |stats totalsize=sum(size)/1024,filenum=count(path) where type==\"file\",dirnum=count(path) where type==\"directory\"",
+          "member": "string",
+          "name": "CompoundCondition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间<br>示例值：2023-01-09 15:03:57</p>",
+          "example": "2026-04-03 14:30:19",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据检索重复日期，星期一到星期日。 1代表星期一、7代表星期天，与DayOfMonth，二选一</p>",
+          "example": "1,2",
+          "member": "string",
+          "name": "DayOfWeek",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据检索按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照；例如1 代表1号；与DayOfWeek二选一</p>",
+          "example": "1,2",
+          "member": "string",
+          "name": "DayOfMonth",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>重复时间点,0-23，小时</p>",
+          "example": "1",
+          "member": "string",
+          "name": "Hour",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列表检索条件</p>",
+          "example": "from entries|where size &gt;4096",
+          "member": "string",
+          "name": "QueryCondition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p><p>参数格式：2023-01-10 15:03:57</p>",
+          "example": "2026-04-21 12:07:32",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DataRetrievalTaskInfo": {
+      "document": "数据检索任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据检索任务ID<br>示例值：dataretrievaltask-123456</p>",
+          "example": "dataretrievaltask-8abcf366",
+          "member": "string",
+          "name": "DataRetrievalTaskID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>迁移任务id<br>示例值：migrate-001</p>",
+          "example": "dataretrieval-863022b0",
+          "member": "string",
+          "name": "DataRetrievalId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件系统实例 ID，通过查询文件系统 DescribeCfsFileSystems 获取示例值：cfs-xxxxxx</p>",
+          "example": "cfs-4e5e76ff8",
+          "member": "string",
+          "name": "FileSystemId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>聚合检索条件<br>示例值：from entries|where size &gt;4096</p>",
+          "example": "from entries |where size >= 1048576 AND size < 10240 |stats totalsize=sum(size)/1024,filenum=count(path) where type==\"file\",dirnum=count(path) where type==\"directory\"",
+          "member": "string",
+          "name": "CompoundCondition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列表检索条件</p>",
+          "example": "size:>=1048576 AND size:<10240",
+          "member": "string",
+          "name": "QueryCondition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间<br>示例值：2023-01-09 15:03:57</p>",
+          "example": "2026-04-03 14:24:19",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态<br>已完成：completed<br>排队中：waiting<br>进行中：running<br>失败：failed</p>",
+          "example": "succeed",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件数量<br>示例：1000</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "FileNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目录数量<br>示例：1000</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "DirNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总文件大小，单位KiB<br>示例：1024</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Size",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件清单下载地址<br>示例值：https://xx-12345.cos.ap-shanghai.myqcloud.com/list.csv</p>",
+          "example": "https://ap-guangzhou-251236674.cos.ap-guangzhou.myqcloud.com/dataretrievaltask-8abcf366_list.tar.gz?q-sign-time=1775197494%3B1775802354&q-sign-algorithm",
+          "member": "string",
+          "name": "FileList",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检索错误提示。默认：Null，当Status为failed时，将提示信息展示给用户。</p>",
+          "example": "File system cfs-435b81436 is not available, task failed directly",
+          "member": "string",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DeleteAutoSnapshotPolicyRequest": {
       "document": "DeleteAutoSnapshotPolicy请求参数结构体",
       "members": [
@@ -2536,6 +2930,33 @@
     },
     "DeleteDataFlowResponse": {
       "document": "DeleteDataFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDataRetrievalRequest": {
+      "document": "DeleteDataRetrieval请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据检索 ID。可通过 DescribeDataRetrieval 接口获取。</p>",
+          "example": "dataretrieval-20507000",
+          "member": "string",
+          "name": "DataRetrievalId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDataRetrievalResponse": {
+      "document": "DeleteDataRetrieval返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3294,6 +3715,163 @@
           "example": "无",
           "member": "DataFlowInfo",
           "name": "DataFlows",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataRetrievalRequest": {
+      "document": "DescribeDataRetrieval请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量，默认值为 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页单页限制数目，默认值为 20，最大值为 100。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件列表。支持的过滤字段：FileSystemId（文件系统 ID）、DataRetrievalId（数据检索 ID）、Name（数据检索名称，支持模糊搜索）。最多支持 10 个。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataRetrievalResponse": {
+      "document": "DescribeDataRetrieval返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据检索总数。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据检索策略的详细信息</p>",
+          "example": "无",
+          "member": "DataRetrievalInfo",
+          "name": "DataRetrievals",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataRetrievalTaskRequest": {
+      "document": "DescribeDataRetrievalTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>开始时间。须早于 EndTime ，仅支持查询最近3个月内的任务数据</p><p>参数格式：2024-11-19 10:15:37</p>",
+          "example": "2026-03-11 11:50:42",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间。须晚于 StartTime ，仅支持查询最近3个月内的任务数据。</p><p>参数格式：2024-10-  19 10:15:37</p>",
+          "example": "2026-03-12 11:50:42",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据检索ID示例值：dataretrieval-123456</p>",
+          "example": "dataretrieval-589fa03c",
+          "member": "string",
+          "name": "DataRetrievalId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页的偏移量，默认值为0。 示例值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页单页限制数目，默认值为20，最大值100。 示例值：20</p>",
+          "example": "8",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>DataRetrievalTaskID按照【数据检索任务id】进行过滤。类型：String</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataRetrievalTaskResponse": {
+      "document": "DescribeDataRetrievalTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据检索任务总量 示例值：0</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检索任务详情</p>",
+          "example": "无",
+          "member": "DataRetrievalTaskInfo",
+          "name": "DataRetrievalTasks",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -4313,6 +4891,52 @@
       ],
       "usage": "in"
     },
+    "InputPermissionGroupRules": {
+      "document": "入参权限组规则列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "允许访问的客户端IP",
+          "example": "",
+          "member": "string",
+          "name": "AuthClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "读写权限, ro为只读，rw为读写",
+          "example": "",
+          "member": "string",
+          "name": "RWPermission",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户权限。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。",
+          "example": "",
+          "member": "string",
+          "name": "UserPermission",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则优先级，1-100。 其中 1 为最高，100为最低",
+          "example": "",
+          "member": "uint64",
+          "name": "Priority",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "LifecycleDataTaskInfo": {
       "document": "生命周期任务",
       "members": [
@@ -5084,6 +5708,87 @@
       ],
       "type": "object"
     },
+    "ModifyDataRetrievalRequest": {
+      "document": "ModifyDataRetrieval请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据检索ID示例值：dataretrieval-123456</p>",
+          "example": "dataretrieval-72986e77",
+          "member": "string",
+          "name": "DataRetrievalId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据检索名称示例值：DataDive</p>",
+          "example": "default-rule",
+          "member": "string",
+          "name": "DataRetrievalName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>聚合检索条件 示例值：from entries|where size &gt;4096</p>",
+          "example": "from entries|where size >4096",
+          "member": "string",
+          "name": "CompoundCondition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>列表检索条件</p>",
+          "example": "path:/cfs/abc/* AND type:file AND size:>0",
+          "member": "string",
+          "name": "QueryCondition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据检索按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照；例如1 代表1号；与DayOfWeek二选一</p>",
+          "example": "1",
+          "member": "string",
+          "name": "DayOfMonth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据检索重复日期，星期一到星期日。 1代表星期一、7代表星期天，与DayOfMonth，二选一</p>",
+          "example": "1",
+          "member": "string",
+          "name": "DayOfWeek",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>重复时间点,0-23，小时</p>",
+          "example": "12",
+          "member": "string",
+          "name": "Hour",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDataRetrievalResponse": {
+      "document": "ModifyDataRetrieval返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyFileSystemAutoScaleUpRuleRequest": {
       "document": "ModifyFileSystemAutoScaleUpRule请求参数结构体",
       "members": [
@@ -5359,6 +6064,52 @@
       ],
       "usage": "out"
     },
+    "OverrideCfsRulesRequest": {
+      "document": "OverrideCfsRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限组 ID",
+          "example": "pgroup-12345",
+          "member": "string",
+          "name": "PermissionGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限组规则列表",
+          "example": "无",
+          "member": "InputPermissionGroupRules",
+          "name": "RuleList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "OverrideCfsRulesResponse": {
+      "document": "OverrideCfsRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限组规则列表",
+          "example": "无",
+          "member": "PGroupRuleInfo",
+          "name": "RuleList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PGroup": {
       "document": "文件系统绑定权限组信息",
       "members": [
@@ -5535,6 +6286,33 @@
         }
       ],
       "usage": "both"
+    },
+    "RunDataRetrievalTaskRequest": {
+      "document": "RunDataRetrievalTask请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RunDataRetrievalTaskResponse": {
+      "document": "RunDataRetrievalTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据检索任务 ID。</p>",
+          "example": "dataretrievaltask-cc2f42e4",
+          "member": "string",
+          "name": "DataRetrievalTaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ScaleUpFileSystemRequest": {
       "document": "ScaleUpFileSystem请求参数结构体",

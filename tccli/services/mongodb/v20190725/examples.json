@@ -96,6 +96,14 @@
         "title": "删除审计日志文件"
       }
     ],
+    "DeleteDBBackups": [
+      {
+        "document": "删除全量备份",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDBBackups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-51l0dj35\",\n    \"BackupIds\": [\n        39983\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ab09c94-b2fc-4053-9115-ccc178e56000\"\n    }\n}",
+        "title": "删除全量备份"
+      }
+    ],
     "DeleteLogDownloadTask": [
       {
         "document": "删除日志下载任务",
@@ -294,6 +302,14 @@
         "title": "查询日志"
       }
     ],
+    "DescribePasswordRotation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePasswordRotation\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"930afb21-78c2-4abc-ad18-9432ec144df5\"\n    }\n}",
+        "title": "查询账号轮转信息"
+      }
+    ],
     "DescribeSRVConnectionDomain": [
       {
         "document": "",
@@ -358,6 +374,14 @@
         "title": "删除参数模板"
       }
     ],
+    "EnablePasswordRotation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnablePasswordRotation\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ab09c94-b2fc-4053-9115-ccc178e56000\"\n    }\n}",
+        "title": "开启密码轮转"
+      }
+    ],
     "EnableSRVConnectionUrl": [
       {
         "document": "开启成功，返回任务 ID。",
@@ -378,6 +402,14 @@
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableTransparentDataEncryption\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-igjy****\",\n    \"KmsRegion\": \"ap-guangzhou\",\n    \"KeyId\": \"AKID********************************\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 17316505316,\n        \"RequestId\": \"a8dce7a4-d488-49c9-8d24-33cf623f5992\"\n    }\n}",
         "title": "开启实例数据透明加密"
+      }
+    ],
+    "EnableWanService": [
+      {
+        "document": "实例未开启外网访问，请求该接口开启外网访问。",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableWanService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-qwla****\",\n    \"LoadBalancerId\": \"lb-94d6****\",\n    \"NodeList\": [\n        {\n            \"VipVport\": \"10.0.30.*:27017\",\n            \"ListenerPort\": \"10001\"\n        },\n        {\n            \"VipVport\": \"10.0.30.*:27017\",\n            \"ListenerPort\": \"10002\"\n        },\n        {\n            \"VipVport\": \"10.0.30.1*:27017\",\n            \"ListenerPort\": \"10003\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 174548484400,\n        \"RequestId\": \"ce73f291-7ffd-4390-9434-7c****12sa1b0\"\n    }\n}",
+        "title": "开启实例的外网访问地址。"
       }
     ],
     "FlashBackDBInstance": [
@@ -452,6 +484,14 @@
         "title": "更改审计服务配置"
       }
     ],
+    "ModifyBackupExpireTime": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupExpireTime\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-********\",\n    \"ExpireTime\": \"2026-06-06 04:02:00\",\n    \"BackupIds\": [\n        11123430\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedBackups\": [\n            21123430\n        ],\n        \"RequestId\": \"35a28e4e-a5bf-441a-8729-b63442bd5cf2\"\n    }\n}",
+        "title": "修改备份过期时间"
+      }
+    ],
     "ModifyDBInstanceNetworkAddress": [
       {
         "document": "修改云数据库实例的VIP信息",
@@ -478,12 +518,6 @@
     ],
     "ModifyDBInstanceSpec": [
       {
-        "document": "调整云数据库实例配置",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSpec\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-p8vn****\",\n    \"Volume\": 250,\n    \"Memory\": 4\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d88095e5-50e8-4245-a0cf-993a536f9b20\",\n        \"DealId\": \"7142863\"\n    }\n}",
-        "title": "调整云数据库实例配置"
-      },
-      {
         "document": "广州二区和三区共删除2个从节点，最终节点数量变更为3",
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSpec\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-abcdef\",\n    \"Memory\": 4,\n    \"Volume\": 100,\n    \"OplogSize\": 30,\n    \"NodeNum\": 3,\n    \"ReplicateSetNum\": 1,\n    \"InMaintenance\": 1,\n    \"RemoveNodeList\": [\n        {\n            \"NodeName\": \"cmgo-3iecwbfx_0-node0\",\n            \"Role\": \"SECONDARY\",\n            \"Zone\": \"ap-guangzhou-2\"\n        },\n        {\n            \"NodeName\": \"cmgo-3iecwbfx_0-node1\",\n            \"Role\": \"SECONDARY\",\n            \"Zone\": \"ap-guangzhou-3\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"DealId\": \"7142863\",\n        \"RequestId\": \"d88095e5-50e8-4245-a0cf-993a536f9b20\"\n    }\n}",
@@ -494,6 +528,12 @@
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSpec\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-p8vn****\",\n    \"Memory\": 4,\n    \"Volume\": 100,\n    \"OplogSize\": 30,\n    \"NodeNum\": 5,\n    \"ReplicateSetNum\": 1,\n    \"InMaintenance\": 1,\n    \"AddNodeList\": [\n        {\n            \"Role\": \"SECONDARY\",\n            \"Zone\": \"ap-guangzhou-2\"\n        },\n        {\n            \"Role\": \"SECONDARY\",\n            \"Zone\": \"ap-guangzhou-3\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"DealId\": \"7142863\",\n        \"RequestId\": \"d88095e5-50e8-4245-a0cf-993a536f9b20\"\n    }\n}",
         "title": "新增 mongodb 云数据库实例从节点"
+      },
+      {
+        "document": "调整云数据库实例配置",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSpec\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-p8vn****\",\n    \"Volume\": 250,\n    \"Memory\": 4\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d88095e5-50e8-4245-a0cf-993a536f9b20\",\n        \"DealId\": \"7142863\"\n    }\n}",
+        "title": "调整云数据库实例配置"
       }
     ],
     "ModifyInstanceAz": [
@@ -566,6 +606,14 @@
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartNodes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-pvwp23v1\",\n    \"NodeIds\": [\n        \"cmgo-pvwp23v1_0-node-slave0\",\n        \"cmgo-pvwp23v1_0-node-slave1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2efcf780-9970-11ec-8975-6bc44e3bfad7\",\n        \"FlowId\": 19677\n    }\n}",
         "title": "重启Mongod节点"
+      }
+    ],
+    "RestoreDBInstance": [
+      {
+        "document": "回档数据库实例到指定时间点",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestoreDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-o59c****\",\n    \"RestoreTime\": \"2026-03-16 17:45:24\",\n    \"Databases\": [\n        {\n            \"Db\": \"testdb\",\n            \"Collections\": [\n                {\n                    \"OldCollection\": \"users\",\n                    \"NewCollection\": \"users_bak0316174524\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 100000068,\n        \"RequestId\": \"653add02-24bc-4e00-ac03-45078117895b\"\n    }\n}",
+        "title": "回档实例"
       }
     ],
     "SetAccountUserPrivilege": [

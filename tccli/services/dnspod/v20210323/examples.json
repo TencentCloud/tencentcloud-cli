@@ -724,6 +724,14 @@
         "title": "批量修改记录"
       }
     ],
+    "ModifyRecordBatchV3": [
+      {
+        "document": "批量修改记录",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecordBatchV3\n<公共请求参数>\n\n{\n    \"ModifyRecordList\": [\n        {\n            \"RecordId\": 16415220,\n            \"RecordLine\": \"电信\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": 20000060,\n        \"RequestId\": \"0dc0f993-244f-4c38-9311-fa333e216c01\"\n    }\n}",
+        "title": "批量修改记录"
+      }
+    ],
     "ModifyRecordFields": [
       {
         "document": " ",

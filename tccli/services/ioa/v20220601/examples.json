@@ -1,5 +1,29 @@
 {
   "actions": {
+    "BindBusinessResourceConnectorGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindBusinessResourceConnectorGroup\n<公共请求参数>\n\n{\n    \"ServiceId\": 981,\n    \"ConnectorGroupId\": \"ccbiulcd58kci8p7jk00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"63c2ccb8-a88b-4084-8db9-804ffecfa911\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "CreateBusinessResource": [
+      {
+        "document": "测试用例",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBusinessResource\n<公共请求参数>\n\n{\n    \"AreaId\": 3684,\n    \"Protocol\": 1,\n    \"ServiceName\": \"test资源\",\n    \"ServiceType\": \"domain\",\n    \"ServicePort\": \"8080\",\n    \"Levels\": 12312,\n    \"ServiceAddress\": \"*.12312.com\",\n    \"DirectConn\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ServiceId\": 4391\n        },\n        \"RequestId\": \"20a21cd8-cbc5-4d70-a14d-9c6aafcbd8ab\"\n    }\n}",
+        "title": "创建业务资源测试用例"
+      }
+    ],
+    "CreateCompanyDirectoryConfig": [
+      {
+        "document": "示例是以微软 AAD 配置参考，强烈建议接口调用时，Scene填QuickStart，会自动生成一些兼容配置，Config为JSON 字符串，不同类型配置是不一致的。返回值的Id表示目录Id，非常重要，后续查询编辑都要用到此Id",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCompanyDirectoryConfig\n<公共请求参数>\n\n{\n    \"Type\": \"MicrosoftEntraID\",\n    \"Name\": \"AAD配置测试\",\n    \"Config\": \"{\\\"azure_tenant_id\\\":\\\"目录（租户）ID，必填\\\",\\\"client_id\\\":\\\"应用程序(客户端) ID，必填\\\",\\\"client_secret\\\":\\\"客户端密码值，必填\\\",\\\"cloud_type\\\":\\\"版本类型,必填，可选值为 Global 是国际版, 21Vianet 是中国版\\\"}\",\n    \"SyncEnable\": true,\n    \"SyncPolicy\": \"\",\n    \"SyncPolicyParams\": \"\",\n    \"CreateAuthConfig\": true,\n    \"DisplayOnLoginPage\": true,\n    \"Scene\": \"QuickStart\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AuthConfigId\": 121773,\n            \"AuthMethods\": [\n                \"SSO认证\"\n            ],\n            \"AuthPolicyId\": 39217,\n            \"AuthSourceId\": \"ioa-union-260092225bqX2szz6RRUDUxaRN5EdoA\",\n            \"AuthSupportPlatforms\": [\n                \"PC\"\n            ],\n            \"CreateAuthConfig\": true,\n            \"Id\": 278390,\n            \"IdentifySourceId\": \"ioa-union-260092225bqX2szz6RRUDUxaRN5EdoA\",\n            \"Name\": \"AAD配置测试\"\n        },\n        \"RequestId\": \"a7246c21-50d0-4893-bc9e-80f24dc9e916\"\n    }\n}",
+        "title": "创建企业目录配置示例"
+      }
+    ],
     "CreateDLPFileDetectTask": [
       {
         "document": "直接指定节点鉴定文件",
@@ -64,6 +88,14 @@
         "title": "测试"
       }
     ],
+    "DeleteDeviceVirtualGroup": [
+      {
+        "document": "删除终端自定义分组",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeviceVirtualGroup\n<公共请求参数>\n\n{\n    \"DomainInstanceId\": \"3\",\n    \"DeviceVirtualGroupId\": 11,\n    \"OsType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c870bad-ac85-4f20-a9d1-84721fb738dd\"\n    }\n}",
+        "title": "删除终端自定义分组"
+      }
+    ],
     "DescribeAccountGroups": [
       {
         "document": "",
@@ -102,6 +134,22 @@
         "title": "测试查询"
       }
     ],
+    "DescribeBusinessResources": [
+      {
+        "document": "Path : /capi/GatewayResource/DescribeBusinessResources",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBusinessResources\n<公共请求参数>\n\n{\n    \"AreaId\": 108,\n    \"ServiceName\": \"名称\",\n    \"Keywords\": \"资源\",\n    \"StartTime\": \"2002-01-02 15:04:05\",\n    \"EndTime\": \"2022-07-02 15:04:05\",\n    \"Condition\": {\n        \"Sort\": {\n            \"Field\": \"Level\",\n            \"Order\": \"desc\"\n        },\n        \"PageNum\": 0,\n        \"PageSize\": 10\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Levels\": 5000,\n                    \"SmartGateNames\": \"网关名称\",\n                    \"CreateTime\": \"2022-07-21 10:24:43\",\n                    \"DetectState\": 1,\n                    \"DetectInfo\": \"[]\",\n                    \"DetectTime\": \"2022-07-21 10:24:43\",\n                    \"AreaId\": 108,\n                    \"ServiceId\": 62,\n                    \"ServiceName\": \"资源名称\",\n                    \"ServiceType\": \"domain\",\n                    \"ServiceAddress\": \"*.baidu.com\",\n                    \"DirectConn\": 0,\n                    \"ServicePort\": \"all\",\n                    \"UpdateTime\": \"2022-07-21 10:24:43\",\n                    \"Remark\": \"\",\n                    \"SmartGateIds\": [\n                        1\n                    ],\n                    \"Protocol\": 2\n                }\n            ]\n        },\n        \"RequestId\": \"1658370329.784533\"\n    }\n}",
+        "title": "获取业务资源"
+      }
+    ],
+    "DescribeCompanyDirectoryConfig": [
+      {
+        "document": "Config为目录生成后的完整配置，敏感字段会被直接脱敏返回",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCompanyDirectoryConfig\n<公共请求参数>\n\n{\n    \"Id\": 278390\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Config\": \"{\\\"attribute_map\\\":{\\\"avatar\\\":\\\"-\\\",\\\"email\\\":\\\"mail\\\",\\\"extended_id\\\":\\\"-\\\",\\\"name\\\":\\\"displayName\\\",\\\"phone\\\":\\\"mobilePhone\\\",\\\"user_id\\\":\\\"userPrincipalName\\\"},\\\"azure_tenant_id\\\":\\\"目录（租户）ID，必填\\\",\\\"client_id\\\":\\\"应用程序(客户端) ID，必填\\\",\\\"client_secret\\\":\\\"******\\\",\\\"cloud_type\\\":\\\"版本类型,必填，可选值为 Global 是国际版, 21Vianet 是中国版\\\",\\\"extended_attributes\\\":[],\\\"group_ids\\\":\\\"\\\",\\\"sensitive_fields\\\":[\\\"client_secret\\\"],\\\"status_attribute\\\":{\\\"type\\\":\\\"none\\\"}}\",\n            \"CreateAuthConfig\": true,\n            \"Description\": \"\",\n            \"DisplayOnLoginPage\": true,\n            \"Id\": 278390,\n            \"Name\": \"AAD配置测试\",\n            \"SourceId\": \"ioa-union-260092225bqX2szz6RRUDUxaRN5EdoA\",\n            \"SyncEnable\": true,\n            \"SyncPolicy\": \"4hours\",\n            \"SyncPolicyParams\": \"{\\\"week\\\":\\\"SAT\\\",\\\"hour\\\":\\\"02\\\",\\\"minute\\\":\\\"30\\\"}\",\n            \"Type\": \"MicrosoftEntraID\"\n        },\n        \"RequestId\": \"ed8ce64f-ecd5-46b4-a47c-9bdc394e3db3\"\n    }\n}",
+        "title": "获取企业目录配置详情"
+      }
+    ],
     "DescribeDLPEdgeNodeGroups": [
       {
         "document": "",
@@ -128,7 +176,7 @@
       {
         "document": "查询检测结果，结果成功",
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDLPFileDetectResult\n<公共请求参数>\n\n{\n    \"QueryID\": \"81f73e3b-f42e-4c15-8ef5-2ca670e9446b\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DetectResult\": \"{\\\"Path\\\":\\\"/data/services/pcmgr_enterprise/data/tmp/dlp_file/e8bcc9bb7ef5765cb7ce79831ede2039/YOGA%20BOOK%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97.pdf\\\",\\\"Type\\\":\\\".pdf\\\",\\\"Size\\\":802831,\\\"State\\\":2,\\\"Md5\\\":\\\"e8bcc9bb7ef5765cb7ce79831ede2039\\\",\\\"Result\\\":{\\\"FileName\\\":\\\"YOGA%20BOOK%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97.pdf\\\",\\\"FileContent\\\":\\\"{\\\\\\\"FileAbstract\\\\\\\":\\\\\\\"YOGA BOOK with Windows®\\\\\\\\n用户指南\\\\\\\\nLenovo YB1-X91F\\\\\\\\nLenovo YB1-X91L\\\\\\\\nLenovo YB1-X91X\\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n入门指南\\\\\\\\n在使用本用户指南及其支持的产品之\\\\\\\"}\\\",\\\"HitRuleId\\\":[\\\"364313\\\"],\\\"HitRuleCategoryId\\\":[\\\"29198\\\"],\\\"HitLevel\\\":[\\\"S2\\\"],\\\"HitRuleDesc\\\":\\\"364313(通讯信息)\\\",\\\"HitContent\\\":\\\"[{\\\\\\\"RuleId\\\\\\\":\\\\\\\"364313\\\\\\\",\\\\\\\"Hits\\\\\\\":[{\\\\\\\"LibraryId\\\\\\\":\\\\\\\"5148\\\\\\\",\\\\\\\"Attribute\\\\\\\":\\\\\\\"doc.Content\\\\\\\",\\\\\\\"String\\\\\\\":\\\\\\\"电话\\\\\\\",\\\\\\\"Content\\\\\\\":\\\\\\\" Internet  \\\\\\\\u003e  移动电话。\\\\\\\\n2. 点按移动网络的名称。\\\\\\\\n\\\\\\\"},{\\\\\\\"LibraryId\\\\\\\":\\\\\\\"5347\\\\\\\",\\\\\\\"Attribute\\\\\\\":\\\\\\\"doc.Content\\\\\\\",\\\\\\\"String\\\\\\\":\\\\\\\"邮箱\\\\\\\",\\\\\\\"Content\\\\\\\":\\\\\\\"有电子邮件帐户，可直接登录到电子邮箱。如果没有，您需要创建一个电子邮\\\\\\\"},{\\\\\\\"LibraryId\\\\\\\":\\\\\\\"5305\\\\\\\",\\\\\\\"Attribute\\\\\\\":\\\\\\\"doc.Content\\\\\\\",\\\\\\\"String\\\\\\\":\\\\\\\"地址\\\\\\\",\\\\\\\"Content\\\\\\\":\\\\\\\"名称，输入连接名称、服务器名称或地址、用户名和密码，然后点按保存以连\\\\\\\"},{\\\\\\\"LibraryId\\\\\\\":\\\\\\\"45\\\\\\\",\\\\\\\"Attribute\\\\\\\":\\\\\\\"doc.Type\\\\\\\",\\\\\\\"String\\\\\\\":\\\\\\\".pdf\\\\\\\",\\\\\\\"Content\\\\\\\":\\\\\\\".pdf\\\\\\\"}]}]\\\"},\\\"EngineConfigVersion\\\":\\\"1744627119\\\"}\",\n            \"FileMd5\": \"e8bcc9bb7ef5765cb7ce79831ede2039\",\n            \"FileName\": \"YOGA BOOK用户指南.pdf\",\n            \"Status\": \"检测成功\"\n        },\n        \"RequestId\": \"5bc117a2-410a-42f9-98ea-e54b4f275f8c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DetectResult\": \"{\\\"Path\\\":\\\"/data/services/pcmgr_enterprise/data/tmp/dlp_file/e8bcc9bb7ef5765cb7ce79831ede2039/YOGA%20BOOK%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97.pdf\\\",\\\"Type\\\":\\\".pdf\\\",\\\"Size\\\":802831,\\\"State\\\":2,\\\"Md5\\\":\\\"e8bcc9bb7ef5765cb7ce79831ede2039\\\",\\\"Result\\\":{\\\"FileName\\\":\\\"YOGA%20BOOK%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97.pdf\\\",\\\"FileContent\\\":\\\"{\\\\\\\"FileAbstract\\\\\\\":\\\\\\\"YOGA BOOK with Windows®\\\\\\\\n用户指南\\\\\\\\nLenovo YB1-X91F\\\\\\\\nLenovo YB1-X91L\\\\\\\\nLenovo YB1-X91X\\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n入门指南\\\\\\\\n在使用本用户指南及其支持的产品之\\\\\\\"}\\\",\\\"HitRuleId\\\":[\\\"364313\\\"],\\\"HitRuleCategoryId\\\":[\\\"29198\\\"],\\\"HitLevel\\\":[\\\"S2\\\"],\\\"HitRuleDesc\\\":\\\"364313(通讯信息)\\\",\\\"HitContent\\\":\\\"[{\\\\\\\"RuleId\\\\\\\":\\\\\\\"364313\\\\\\\",\\\\\\\"Hits\\\\\\\":[{\\\\\\\"LibraryId\\\\\\\":\\\\\\\"5148\\\\\\\",\\\\\\\"Attribute\\\\\\\":\\\\\\\"doc.Content\\\\\\\",\\\\\\\"String\\\\\\\":\\\\\\\"电话\\\\\\\",\\\\\\\"Content\\\\\\\":\\\\\\\" Internet  \\\\\\\\u003e  移动电话。\\\\\\\\n2. 点按移动网络的名称。\\\\\\\\n\\\\\\\"},{\\\\\\\"LibraryId\\\\\\\":\\\\\\\"5347\\\\\\\",\\\\\\\"Attribute\\\\\\\":\\\\\\\"doc.Content\\\\\\\",\\\\\\\"String\\\\\\\":\\\\\\\"邮箱\\\\\\\",\\\\\\\"Content\\\\\\\":\\\\\\\"有电子邮件账户，可直接登录到电子邮箱。如果没有，您需要创建一个电子邮\\\\\\\"},{\\\\\\\"LibraryId\\\\\\\":\\\\\\\"5305\\\\\\\",\\\\\\\"Attribute\\\\\\\":\\\\\\\"doc.Content\\\\\\\",\\\\\\\"String\\\\\\\":\\\\\\\"地址\\\\\\\",\\\\\\\"Content\\\\\\\":\\\\\\\"名称，输入连接名称、服务器名称或地址、用户名和密码，然后点按保存以连\\\\\\\"},{\\\\\\\"LibraryId\\\\\\\":\\\\\\\"45\\\\\\\",\\\\\\\"Attribute\\\\\\\":\\\\\\\"doc.Type\\\\\\\",\\\\\\\"String\\\\\\\":\\\\\\\".pdf\\\\\\\",\\\\\\\"Content\\\\\\\":\\\\\\\".pdf\\\\\\\"}]}]\\\"},\\\"EngineConfigVersion\\\":\\\"1744627119\\\"}\",\n            \"FileMd5\": \"e8bcc9bb7ef5765cb7ce79831ede2039\",\n            \"FileName\": \"YOGA BOOK用户指南.pdf\",\n            \"Status\": \"检测成功\"\n        },\n        \"RequestId\": \"5bc117a2-410a-42f9-98ea-e54b4f275f8c\"\n    }\n}",
         "title": "检测成功示例"
       }
     ],
@@ -212,12 +260,44 @@
         "title": "获取设备列表详情"
       }
     ],
+    "DescribeDirectAccountGroupResources": [
+      {
+        "document": "查询分组直接授权的资源",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDirectAccountGroupResources\n<公共请求参数>\n\n{\n    \"AccountGroupId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AreaId\": 1,\n                    \"Description\": \"abc\",\n                    \"ResourceType\": 1,\n                    \"ResourceId\": 1,\n                    \"FromSourceId\": 1,\n                    \"IsInherited\": true,\n                    \"ExpireTime\": 0,\n                    \"NamePath\": \"abc\",\n                    \"AccessType\": 0,\n                    \"ResourceName\": \"abc\",\n                    \"IsInheritedSwitch\": 1,\n                    \"Id\": 1,\n                    \"AreaName\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询分组直接授权的资源"
+      }
+    ],
     "DescribeLocalAccounts": [
       {
         "document": "查询指定分组下，账号名包含“san47”的账号信息",
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLocalAccounts\n<公共请求参数>\n\n{\n    \"Condition\": {\n        \"Filters\": [\n            {\n                \"Field\": \"UserId\",\n                \"Operator\": \"like\",\n                \"Values\": [\n                    \"san47\"\n                ]\n            }\n        ]\n    },\n    \"AccountGroupId\": 8205,\n    \"ShowFlag\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AccountGroups\": [],\n                    \"AccountId\": 845,\n                    \"ActiveStatus\": 0,\n                    \"ExtraInfo\": \"{\\\"salt\\\": \\\"5b52ea107e85a7b46d2c1b15a5faf722\\\", \\\"seat\\\": \\\"\\\", \\\"email\\\": \\\"\\\", \\\"phone\\\": \\\"\\\", \\\"is_new\\\": 0, \\\"id_card\\\": \\\"\\\", \\\"user_id\\\": \\\"zhangsan471\\\", \\\"password\\\": \\\"82a4c5b9e0e8bc57208e27ca08d090739ca02725b3bc9a282a8a95925e484cd6\\\", \\\"position\\\": \\\"测试248\\\", \\\"user_name\\\": \\\"zhangsan\\\", \\\"online_num\\\": 0, \\\"valid_time\\\": \\\"2030-10-10 00:00:00\\\", \\\"gesture_pwd\\\": \\\"\\\", \\\"is_modified\\\": 0, \\\"miniIAM_guid\\\": \\\"\\\", \\\"is_online_num\\\": 0, \\\"is_valid_time\\\": 1, \\\"valid_time_int\\\": 1917792000, \\\"iam_disable_account\\\": 0, \\\"ioa_disable_account\\\": 0}\",\n                    \"GroupId\": 8205,\n                    \"GroupName\": \"研发部\",\n                    \"Id\": 845,\n                    \"Itime\": \"2024-08-02 14:46:11\",\n                    \"LoginTime\": \"2024-08-03 15:06:09\",\n                    \"LogoutTime\": \"2024-08-03 18:01:09\",\n                    \"MobileBindNum\": 0,\n                    \"NamePath\": \"全网账户.自建目录.研发部\",\n                    \"OnlineStatus\": 0,\n                    \"PcBindNum\": 0,\n                    \"RiskLevel\": \"low\",\n                    \"Source\": 0,\n                    \"Status\": 1,\n                    \"UserId\": \"zhangsan471\",\n                    \"UserName\": \"zhangsan\",\n                    \"Utime\": \"2024-08-03 15:08:21\"\n                },\n                {\n                    \"AccountGroups\": [],\n                    \"AccountId\": 844,\n                    \"ActiveStatus\": 0,\n                    \"ExtraInfo\": \"{\\\"salt\\\": \\\"2d6cfa9479b615ce807305f727f55757\\\", \\\"seat\\\": \\\"\\\", \\\"email\\\": \\\"\\\", \\\"phone\\\": \\\"\\\", \\\"is_new\\\": 0, \\\"id_card\\\": \\\"\\\", \\\"user_id\\\": \\\"zhangsan470\\\", \\\"password\\\": \\\"608f9eac835f474f8e8eb43d3e4f9fbe675f467f25765655aa42926258a7c963\\\", \\\"position\\\": \\\"测试247\\\", \\\"user_name\\\": \\\"zhangsan\\\", \\\"online_num\\\": 0, \\\"valid_time\\\": \\\"2030-10-10\\\", \\\"gesture_pwd\\\": \\\"\\\", \\\"is_modified\\\": 0, \\\"miniIAM_guid\\\": \\\"\\\", \\\"is_online_num\\\": 0, \\\"is_valid_time\\\": 1, \\\"valid_time_int\\\": 1917792000, \\\"iam_disable_account\\\": 0, \\\"ioa_disable_account\\\": 0}\",\n                    \"GroupId\": 8205,\n                    \"GroupName\": \"研发部\",\n                    \"Id\": 844,\n                    \"Itime\": \"2024-08-02 14:46:11\",\n                    \"LoginTime\": \"2024-09-03 06:56:09\",\n                    \"LogoutTime\": \"2024-09-03 15:06:07\",\n                    \"MobileBindNum\": 0,\n                    \"NamePath\": \"全网账户.自建目录.研发部\",\n                    \"OnlineStatus\": 0,\n                    \"PcBindNum\": 0,\n                    \"RiskLevel\": \"low\",\n                    \"Source\": 0,\n                    \"Status\": 1,\n                    \"UserId\": \"zhangsan470\",\n                    \"UserName\": \"zhangsan\",\n                    \"Utime\": \"2024-08-02 14:46:11\"\n                }\n            ],\n            \"Page\": {\n                \"PageCount\": 1,\n                \"PageNum\": 1,\n                \"PageSize\": 10,\n                \"Total\": 2\n            }\n        },\n        \"RequestId\": \"ed2c6d00-8880-4a2a-8d6d-e89587dc5a21\"\n    }\n}",
         "title": "根据账号模糊查询"
+      }
+    ],
+    "DescribeResourceGrantedAccountGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGrantedAccountGroups\n<公共请求参数>\n\n{\n    \"ResourceId\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AccountCount\": 3,\n                    \"AccountGroupId\": 96,\n                    \"ExpireTime\": 0,\n                    \"IdPathArray\": [\n                        2\n                    ],\n                    \"Name\": \"旧版-自建-勿删\",\n                    \"NamePathArray\": [\n                        \"全网账户\"\n                    ],\n                    \"RelationId\": 12\n                }\n            ]\n        },\n        \"RequestId\": \"41dc529a-e6d1-434c-9e30-9de07a42097e\"\n    }\n}",
+        "title": "查询授权的账号分组"
+      }
+    ],
+    "DescribeResourceGrantedAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGrantedAccounts\n<公共请求参数>\n\n{\n    \"ResourceId\": 7\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AccountId\": 5101,\n                    \"ExpireTime\": 1,\n                    \"GroupId\": 2571,\n                    \"GroupIdPathArray\": [\n                        2\n                    ],\n                    \"GroupNamePathArray\": [\n                        \"全网账户\"\n                    ],\n                    \"MenuId\": 2571,\n                    \"RelationId\": 23,\n                    \"UserId\": \"lshawn\",\n                    \"UserName\": \"lshawn\"\n                }\n            ]\n        },\n        \"RequestId\": \"16fb06f0-6619-4594-b5bd-1f330be83a37\"\n    }\n}",
+        "title": "查询直接授权的账号"
+      }
+    ],
+    "DescribeResourceGrantedVirtualGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGrantedVirtualGroups\n<公共请求参数>\n\n{\n    \"ResourceId\": 7,\n    \"ResourceType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AccountCount\": 0,\n                    \"Description\": \"\",\n                    \"ExpireTime\": 0,\n                    \"Name\": \"正编\",\n                    \"RelationId\": 27,\n                    \"VirtualGroupId\": 126\n                }\n            ]\n        },\n        \"RequestId\": \"cde84834-df28-4aac-9251-9f1941a730c5\"\n    }\n}",
+        "title": "查询授权的自定义分组"
       }
     ],
     "DescribeRootAccountGroup": [
@@ -272,6 +352,54 @@
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportSoftwareInformationList\n<公共请求参数>\n\n{\n    \"Mid\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DownloadURL\": \"http://xxx\",\n            \"TaskId\": 0\n        },\n        \"RequestId\": \"e36ff231-6bbc-475d-9e26-dd0d59260b55\"\n    }\n}",
         "title": "测试下载"
+      }
+    ],
+    "GrantResourcesByAccountGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GrantResourcesByAccountGroups\n<公共请求参数>\n\n{\n    \"Operations\": [\n        {\n            \"OperationType\": 1,\n            \"ResourceId\": 1,\n            \"ResourceType\": 2,\n            \"ExpireTime\": 1,\n            \"AccountGroupId\": 2571\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c392af65-c12c-4fd0-b97e-1138dffbbbfd\"\n    }\n}",
+        "title": "给资源授权某个分组"
+      }
+    ],
+    "GrantResourcesByAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GrantResourcesByAccounts\n<公共请求参数>\n\n{\n    \"Operations\": [\n        {\n            \"OperationType\": 1,\n            \"ResourceId\": 7,\n            \"ResourceType\": 1,\n            \"ExpireTime\": 1,\n            \"AccountUserId\": \"lshawn\",\n            \"MenuId\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72c8b455-b4ac-4604-bd73-844a9c70ba2e\"\n    }\n}",
+        "title": "给特殊的资源授权给某个账号"
+      }
+    ],
+    "GrantResourcesByVirtualGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GrantResourcesByVirtualGroups\n<公共请求参数>\n\n{\n    \"Operations\": [\n        {\n            \"OperationType\": 1,\n            \"ResourceId\": 7,\n            \"ResourceType\": 1,\n            \"ExpireTime\": 0,\n            \"VirtualAccountGroupId\": 544\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"16979b9c-08f5-48bf-95e5-ac143dacb3ae\"\n    }\n}",
+        "title": "增加授权"
+      }
+    ],
+    "ModifyBusinessResource": [
+      {
+        "document": "",
+        "input": "Path : /capi/GatewayResource/ModifyBusinessResource\n\n<body>\n{\n    \"AreaId\":156,\n    \"DirectConn\":0,\n    \"Protocol\":2,\n    \"Levels\":5000,\n    \"ServiceType\":\"domain\",\n    \"SmartGates\":[\n        186\n    ],\n    \"ServiceName\":\"资源名称\",\n    \"ServiceAddress\":\"*tencent1658370342.com\",\n    \"ServiceId\":112,\n    \"ServicePort\":\"all\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1658370416.5806396\"\n    }\n}",
+        "title": "修改业务资源"
+      }
+    ],
+    "ModifyCompanyDirectoryConfig": [
+      {
+        "document": "先通过DescribeCompanyDirectoryConfig 获取配置数据后，在修改数据调用此接口请求变更",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCompanyDirectoryConfig\n<公共请求参数>\n\n{\n    \"Type\": \"MicrosoftEntraID\",\n    \"Name\": \"AAD配置测试2\",\n    \"Config\": \"{\\\"attribute_map\\\":{\\\"avatar\\\":\\\"-\\\",\\\"email\\\":\\\"mail\\\",\\\"extended_id\\\":\\\"-\\\",\\\"name\\\":\\\"displayName\\\",\\\"phone\\\":\\\"mobilePhone\\\",\\\"user_id\\\":\\\"userPrincipalName\\\"},\\\"azure_tenant_id\\\":\\\"目录（租户）ID，必填\\\",\\\"client_id\\\":\\\"应用程序(客户端) ID，必填\\\",\\\"client_secret\\\":\\\"******\\\",\\\"cloud_type\\\":\\\"版本类型,必填，可选值为 Global 是国际版, 21Vianet 是中国版\\\",\\\"extended_attributes\\\":[],\\\"group_ids\\\":\\\"\\\",\\\"sensitive_fields\\\":[\\\"client_secret\\\"],\\\"status_attribute\\\":{\\\"type\\\":\\\"none\\\"}}\",\n    \"SyncEnable\": true,\n    \"SyncPolicy\": \"4hours\",\n    \"SyncPolicyParams\": \"{\\\"week\\\":\\\"SAT\\\",\\\"hour\\\":\\\"02\\\",\\\"minute\\\":\\\"30\\\"}\",\n    \"CreateAuthConfig\": true,\n    \"DisplayOnLoginPage\": true,\n    \"Id\": 278390\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AuthConfigId\": 0,\n            \"AuthMethods\": [],\n            \"AuthPolicyId\": 0,\n            \"AuthSourceId\": \"\",\n            \"AuthSupportPlatforms\": [],\n            \"CreateAuthConfig\": true,\n            \"Id\": 278390,\n            \"IdentifySourceId\": \"ioa-union-260092225bqX2szz6RRUDUxaRN5EdoA\",\n            \"Name\": \"AAD配置测试2\"\n        },\n        \"RequestId\": \"91d4f838-654f-4f6e-b265-b012b81b4614\"\n    }\n}",
+        "title": "更新目录配置示例"
+      }
+    ],
+    "ModifyDeviceTrustStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceTrustStatus\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"DeviceIDList\": [\n        \"9AD917AB73CBEC5FEF0B1877414C0208693683FA\"\n    ],\n    \"BlackStatusDeadline\": 1000000,\n    \"UpdateFlags\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e5c06a80-7e52-4fb7-81e6-3dbbbfde98f7\"\n    }\n}",
+        "title": "将设备禁用NGN访问"
       }
     ],
     "ModifyVirtualDeviceGroups": [

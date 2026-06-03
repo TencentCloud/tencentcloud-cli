@@ -7,6 +7,20 @@
       "output": "Convert3DFormatResponse",
       "status": "online"
     },
+    "DescribeAutoRiggingJob": {
+      "document": "3D模型绑骨蒙皮接口，基于混元大模型，根据输入的人物或动物模型进行绑骨蒙皮，输出带骨骼信息的3D模型。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "DescribeAutoRiggingJobRequest",
+      "name": "查询绑骨蒙皮任务",
+      "output": "DescribeAutoRiggingJobResponse",
+      "status": "online"
+    },
+    "DescribeHunyuanTo3DMotionJob": {
+      "document": "查询组件生成任务。",
+      "input": "DescribeHunyuanTo3DMotionJobRequest",
+      "name": "查询文生动作任务",
+      "output": "DescribeHunyuanTo3DMotionJobResponse",
+      "status": "online"
+    },
     "DescribeHunyuanTo3DUVJob": {
       "document": "查询组件拆分任务。",
       "input": "DescribeHunyuanTo3DUVJobRequest",
@@ -56,11 +70,25 @@
       "output": "QueryHunyuanTo3DRapidJobResponse",
       "status": "online"
     },
+    "SubmitAutoRiggingJob": {
+      "document": "3D模型绑骨蒙皮接口，基于混元大模型，根据输入的人物或动物模型进行绑骨蒙皮，输出带骨骼信息的3D模型。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "SubmitAutoRiggingJobRequest",
+      "name": "提交绑骨蒙皮任务",
+      "output": "SubmitAutoRiggingJobResponse",
+      "status": "online"
+    },
     "SubmitHunyuan3DPartJob": {
       "document": "输入3D模型文件后，根据模型结构自动进行组件识别生成。",
       "input": "SubmitHunyuan3DPartJobRequest",
       "name": "提交组件生成任务",
       "output": "SubmitHunyuan3DPartJobResponse",
+      "status": "online"
+    },
+    "SubmitHunyuanTo3DMotionJob": {
+      "document": "输入文本后，可根据文本描述生成对应的 3D人物 动作数据，输出带动画数据的FBX文件。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "SubmitHunyuanTo3DMotionJobRequest",
+      "name": "提交文生动作任务",
+      "output": "SubmitHunyuanTo3DMotionJobResponse",
       "status": "online"
     },
     "SubmitHunyuanTo3DProJob": {
@@ -148,6 +176,140 @@
           "name": "ResultFile3D",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoRiggingJobRequest": {
+      "document": "DescribeAutoRiggingJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID。</p>",
+          "example": "1445334238810423296",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoRiggingJobResponse": {
+      "document": "DescribeAutoRiggingJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功 示例值：RUN。</p>",
+          "example": "DONE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码。</p>",
+          "example": "FailedOperation.ServerError",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息。</p>",
+          "example": "算法服务异常",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成文件的URL地址，有效期1天。</p>",
+          "example": "无",
+          "member": "File3D",
+          "name": "ResultFile3Ds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHunyuanTo3DMotionJobRequest": {
+      "document": "DescribeHunyuanTo3DMotionJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID。</p>",
+          "example": "1439092349727752192",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHunyuanTo3DMotionJobResponse": {
+      "document": "DescribeHunyuanTo3DMotionJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功 示例值：RUN。</p>",
+          "example": "DONE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码。</p>",
+          "example": "FailedOperation.InnerError",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息。</p>",
+          "example": "服务内部错误，请重试。",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成文件的URL地址，有效期1天。</p>",
+          "example": "无",
+          "member": "File3D",
+          "name": "ResultFile3Ds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -739,6 +901,52 @@
       ],
       "type": "object"
     },
+    "SubmitAutoRiggingJobRequest": {
+      "document": "SubmitAutoRiggingJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>人形角色需采用标准姿态（A Pose 或 T Pose），尽量保持无动作状态。<br>模型中不应包含人体以外的组件（如武器、坐骑、翅膀等），避免松散衣物、配饰及复杂发型。<br>非人形角色建议上传二足、四足、鸟类等单一生命体模型，姿态应尽量简洁，无夸张或复杂动作，且不支持动作模版生成。3D模型文件必选其一，参考值：<br>FBX：3D模型文件，格式为FBX，文件大小不超过60Mb；<br>GLB：3D模型文件，格式为GLB，文件大小不超过60Mb；</p>",
+          "example": "无",
+          "member": "InputFile3D",
+          "name": "File3D",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预设动作类型，参考值：</p><ol><li>回旋踢  </li><li>左勾拳  </li><li>蓄力攻击  </li><li>蓄力出拳  </li><li>二连击打  </li><li>二连击打-2  </li><li>后撤  </li><li>受击  </li><li>受击-2  </li><li>受击-3  </li><li>受击倒地-1  </li><li>受击倒地-2  </li><li>落地  </li><li>沮丧  </li><li>割喉  </li><li>刺拳  </li><li>连续击打  </li><li>踢腿  </li><li>侧踢  </li><li>打太极  </li><li>后空翻  </li><li>蹲姿转体  </li><li>走路-1  </li><li>走路-2  </li><li>走路-3  </li><li>待机-1  </li><li>待机-2  </li><li>街舞  </li><li>扭扭舞  </li><li>左转弯  </li><li>右转弯  </li><li>慢跑  </li><li>慢跑-2  </li><li>奔跑  </li><li>冲刺跑-1  </li><li>冲刺跑-2  </li><li>冲刺跑-3  </li><li>原地跳-1  </li><li>滑铲  </li><li>向前大跳  </li><li>向前大跳-2  </li><li>跨越  </li><li>恐吓  </li><li>向前跌倒  </li><li>右转  </li><li>原地跳-2  </li><li>转身  </li><li>发送冲击波</li></ol>",
+          "example": "1",
+          "member": "int64",
+          "name": "MotionType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitAutoRiggingJobResponse": {
+      "document": "SubmitAutoRiggingJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID（有效期24小时）</p>",
+          "example": "1445334238810423296",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SubmitHunyuan3DPartJobRequest": {
       "document": "SubmitHunyuan3DPartJob请求参数结构体",
       "members": [
@@ -770,6 +978,97 @@
           "disabled": false,
           "document": "<p>任务ID。</p>",
           "example": "1384898587778465792",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitHunyuanTo3DMotionJobRequest": {
+      "document": "SubmitHunyuanTo3DMotionJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入文本prompt，限定最大字符为128。</p>",
+          "example": "A person walks forward",
+          "member": "string",
+          "name": "Prompt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称：HY-Motion-1.0，默认HY-Motion-1.0。</p>",
+          "example": "HY-Motion-1.0",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需重定向的模型地址，只能支持混元生3D动画生成的模型（动画模板的接口）</p>",
+          "example": "无",
+          "member": "InputFile3D",
+          "name": "RetargetFile",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成动画的时长，默认5，范围：1-12（单位s）</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "Duration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认true，返回的fbx是否带蒙皮mesh</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableMesh",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启prompt扩写，开启后将补充完善输入的prompt。<br>默认false。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRewrite",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启时长自动匹配，开启后将自动根据prompt匹配适合时长的动作数据<br>默认false。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableDurationEst",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitHunyuanTo3DMotionJobResponse": {
+      "document": "SubmitHunyuanTo3DMotionJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID（有效期24小时）</p>",
+          "example": "1440974607266955264",
           "member": "string",
           "name": "JobId",
           "output_required": false,

@@ -220,7 +220,7 @@
   },
   "metadata": {
     "apiVersion": "2020-09-15",
-    "api_brief": "腾讯云数据仓库 TCHouse-C（ Tencent Cloud TCHouse-C ）是基于开源 OLAP 引擎 ClickHouse 打造的企业级云数据仓库服务，仅需几分钟即可快速搭建起 PB 级实时数据仓库，实现对海量数据的极速实时分析。TChouse-C API 为用户提供便捷的 ClickHouse 集群部署、软件安装、配置修改、监控告警、弹性伸缩等功能，为企业及用户提供安全稳定的大数据处理解决方案。",
+    "api_brief": "腾讯云数据仓库 TCHouse-C（Tencent Cloud TCHouse-C）是基于开源 OLAP 引擎 ClickHouse 打造的企业级云数据仓库服务，仅需几分钟即可快速搭建起 PB 级实时数据仓库，实现对海量数据的极速实时分析。TCHouse-C 内核与开源版 ClickHouse 高度兼容，大幅增强了产品稳定性、安全性和运维便捷性，使您无需关注底层基础设施、专注于数据价值的提升。TCHouse-C 提供丰富的 OpenAPI 接口，帮助您通过编程方式实现对集群的全生命周期管理，包括集群创建、配置变更、用户权限管理、备份恢复以及运维监控等操作。\n\n本章节介绍的 TCHouse-C API 接口均为 API 3.0 接口。您可以调用 API 对腾讯云 TCHouse-C 进行操作，例如创建集群、修改配置、管理用户权限、查询实例状态及处理备份任务。TCHouse-C 支持的所有接口信息，请参见 [API 概览](https://cloud.tencent.com/document/product/1299/83439)。\n\n## 术语表\n\nTCHouse-C API 接口的常见术语如下表所示：\n\n| 术语                | 描述                                                         |\n| ------------------- | ------------------------------------------------------------ |\n| **集群（Cluster）** | TCHouse-C 的基本管理单元，由多个节点组成，提供数据存储和分析能力。 |\n| **节点（Node）**    | 集群中的单个服务器，承担数据存储或计算任务。                 |\n| **规格（Spec）**    | 节点的硬件配置，包括 CPU、内存、磁盘类型及大小。             |\n\n## 使用限制\n\n对于具体的接口参数限制，请参考各接口文档中的参数说明。\n\n## API 快速入门\n\n您可以使用 API Explorer 工具在线调用 API。本文以**创建集群基础操作**为例，通过 API Explorer 工具调用 API 接口的步骤如下：\n\n1. 进入 [API Explorer](https://console.cloud.tencent.com/api/explorer) 工具页面。更多 API Explorer 工具使用信息，请参见 [使用 API Explorer](https://cloud.tencent.com/document/product/1278/46697)。\n2. 调用 [CreateInstanceNew](https://cloud.tencent.com/document/product/1299/83439)，创建 TCHouse-C 集群。\n3. 调用 [DescribeInstanceState](https://cloud.tencent.com/document/product/1299/83439)，查询集群创建状态。\n4. 调用 [DescribeInstance](https://cloud.tencent.com/document/product/1299/83439)，查询集群详细信息。\n5. 调用 [ModifyClusterConfigs](https://cloud.tencent.com/document/product/1299/83439)，修改集群配置。\n6. 调用 [ScaleOutInstance](https://cloud.tencent.com/document/product/1299/83439)，水平调整实例节点。",
     "serviceNameCN": "腾讯云数据仓库TCHouse-C",
     "serviceShortName": "cdwch"
   },
@@ -1836,7 +1836,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "cdwch-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -1845,7 +1845,7 @@
         },
         {
           "disabled": false,
-          "document": "api接口名称,GetClusters:获取集群cluster列表\nGetSystemUsers:获取系统用户列表\nCheckNodeCluster: 检查节点是否隶属一个cluster\nGetClusterDatabases: 获取一个cluster下的数据库列表\nGetClusterTables: 获取一个cluster下的数据库表列表\nGetPrivilegeUsers: 获取授权的用户列表\nGET_USER_CLUSTER_PRIVILEGES:获取用户cluster下的权限   \nGetUserClusterNewPrivileges:获取用户cluster下的权限 (新版）\nRevokeClusterUser:解绑cluster用户\nDeleteSystemUser:删除系统用户 —— 必须所有cluster先解绑\nGetUserOptionMessages:获取用户配置备注信息\nGET_USER_CONFIGS:获取用户配置列表  QUOTA、PROFILE、POLICY",
+          "document": "<p>api接口名称,GetClusters:获取集群cluster列表<br>GetSystemUsers:获取系统用户列表<br>CheckNodeCluster: 检查节点是否隶属一个cluster<br>GetClusterDatabases: 获取一个cluster下的数据库列表<br>GetClusterTables: 获取一个cluster下的数据库表列表<br>GetPrivilegeUsers: 获取授权的用户列表<br>GET_USER_CLUSTER_PRIVILEGES:获取用户cluster下的权限<br>GetUserClusterNewPrivileges:获取用户cluster下的权限 (新版）<br>RevokeClusterUser:解绑cluster用户<br>DeleteSystemUser:删除系统用户 —— 必须所有cluster先解绑<br>GetUserOptionMessages:获取用户配置备注信息<br>GET_USER_CONFIGS:获取用户配置列表  QUOTA、PROFILE、POLICY</p>",
           "example": "GetClusters",
           "member": "string",
           "name": "ApiType",
@@ -1854,8 +1854,8 @@
         },
         {
           "disabled": false,
-          "document": "集群名称，当ApiType取值为GET_SYSTEM_USERS，GET_PRIVILEGE_USERS，GET_CLUSTER_DATABASES，GET_CLUSTER_TABLES 时，此参数必填",
-          "example": "default",
+          "document": "<p>clickhouse逻辑集群名称，可通过连接集群执行 <code>SHOW CLUSTERS</code> 查询获得。当 ApiType 取值为 GET_SYSTEM_USERS、GET_PRIVILEGE_USERS、GET_CLUSTER_DATABASES或GET_CLUSTER_TABLES 时，本参数必填。</p>",
+          "example": "default_cluster",
           "member": "string",
           "name": "Cluster",
           "required": false,
@@ -1863,7 +1863,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名称，api与user相关的必填",
+          "document": "<p>用户名称，api与user相关的必填</p>",
           "example": "user1",
           "member": "string",
           "name": "UserName",
@@ -1872,7 +1872,7 @@
         },
         {
           "disabled": false,
-          "document": "账户的类型",
+          "document": "<p>账户的类型</p>",
           "example": "XML",
           "member": "string",
           "name": "UserType",
@@ -1887,7 +1887,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的查询数据，大部分情况是list，也可能是bool",
+          "document": "<p>返回的查询数据，大部分情况是list，也可能是bool</p>",
           "example": "[{\"InstanceId\":\"cdwch-xxxxxxxx\",\"UserName\":\"test_user\",\"Describe\":\"\",\"Type\":\"RBAC\",\"Cluster\":\"default_cluster\"}]",
           "member": "string",
           "name": "ReturnData",
@@ -3125,6 +3125,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否生效</p>",
+          "example": "false",
+          "member": "string",
+          "name": "ConfigEffective",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3198,7 +3209,7 @@
       "usage": "both"
     },
     "InstanceInfo": {
-      "document": "实例描述信息",
+      "document": "实例的描述信息",
       "members": [
         {
           "disabled": false,
@@ -3769,6 +3780,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例是否开启HTTPS</p><p>枚举值：</p><ul><li>true： 已开启HTTPS</li><li>false： 未开启HTTPS</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "HttpsEnabled",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4243,7 +4264,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "cdwch-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -4252,8 +4273,8 @@
         },
         {
           "disabled": false,
-          "document": "cluster名称",
-          "example": "cdwch-xxxx",
+          "document": "<p>clickhouse逻辑集群名称，可通过连接集群执行 <code>SHOW CLUSTERS</code> 查询获得</p>",
+          "example": "default_cluster",
           "member": "string",
           "name": "Cluster",
           "required": true,
@@ -4261,8 +4282,8 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
-          "example": "cdwch-xxxx",
+          "document": "<p>用户名</p>",
+          "example": "test_user",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -4270,7 +4291,7 @@
         },
         {
           "disabled": false,
-          "document": "是否所有数据库表",
+          "document": "<p>是否所有数据库表</p>",
           "example": "false",
           "member": "bool",
           "name": "AllDatabase",
@@ -4279,8 +4300,8 @@
         },
         {
           "disabled": false,
-          "document": "全局权限",
-          "example": "数组",
+          "document": "<p>全局权限</p>",
+          "example": "[\"SELECT\",\"INSERT_ALL\",\"ALTER\"]",
           "member": "string",
           "name": "GlobalPrivileges",
           "required": false,
@@ -4288,8 +4309,8 @@
         },
         {
           "disabled": false,
-          "document": "数据库表权限",
-          "example": "数组",
+          "document": "<p>数据库表权限</p>",
+          "example": "无",
           "member": "DatabasePrivilegeInfo",
           "name": "DatabasePrivilegeList",
           "required": false,

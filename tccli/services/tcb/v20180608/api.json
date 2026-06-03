@@ -7,6 +7,27 @@
       "output": "AddProviderResponse",
       "status": "online"
     },
+    "AllocateEnv": {
+      "document": "从环境池里立即取出1个环境",
+      "input": "AllocateEnvRequest",
+      "name": "从环境池分配环境",
+      "output": "AllocateEnvResponse",
+      "status": "online"
+    },
+    "AssumeRoleForAllocatedEnv": {
+      "document": "白名单接口，申请Tcb角色临时凭证",
+      "input": "AssumeRoleForAllocatedEnvRequest",
+      "name": "为环境池里的环境申请角色临时凭证",
+      "output": "AssumeRoleForAllocatedEnvResponse",
+      "status": "online"
+    },
+    "BindStorageSource": {
+      "document": "为云存储绑定外部云存储源。\n将一个用户自有的 COS桶 作为外部存储源绑定到指定云开发环境的云存储。绑定后，该环境的云存储文件操作将指向此桶，通过 BasePath 路径前缀实现与其他环境的数据隔离。\n每个环境仅允许绑定 1 个外部云存储源。",
+      "input": "BindStorageSourceRequest",
+      "name": "云存储绑定外部存储源",
+      "output": "BindStorageSourceResponse",
+      "status": "online"
+    },
     "CheckTcbService": {
       "document": "检查是否开通Tcb服务",
       "input": "CheckTcbServiceRequest",
@@ -14,8 +35,15 @@
       "output": "CheckTcbServiceResponse",
       "status": "online"
     },
+    "CreateAIModel": {
+      "document": "创建 AI 模型配置分组。云开发标准版及以上套餐才可使用\n\n支持自定义类型（custom）：用户自行提供模型服务地址（baseUrl）和访问密钥，分组名可自由命名，适用于接入第三方或自建模型服务。\n\n注意：内置类型（builtin）分组由云开发平台统一创建和管理，不支持通过此接口创建。如需修改内置分组的模型列表或启用状态，请使用 [UpdateAIModel](https://cloud.tencent.com/document/product/876/131316) 接口。\n\n创建成功后，可通过 [DescribeAIModels](https://cloud.tencent.com/document/product/876/131318) 接口查询分组信息，并在云开发 AI+ 功能中使用所配置的模型。",
+      "input": "CreateAIModelRequest",
+      "name": "创建AI模型",
+      "output": "CreateAIModelResponse",
+      "status": "online"
+    },
     "CreateApiKey": {
-      "document": "创建云开发平台的API Key。在指定云开发环境下创建一个 API Key 访问凭证。支持两种类型：api_key（服务端管理员访问凭证，以管理员身份签发，可设置有效期，不设置有效期则永不过期，单个环境最多创建 5 个）和 publish_key（前端匿名访问凭证，固定有效期，每个环境仅保留一个）。创建成功后将返回 API Key 明文 Token，该值仅在创建时返回一次，请妥善保存。需要管理员权限。",
+      "document": "创建云开发平台的API Key。在指定云开发环境下创建一个 API Key 访问凭证。支持两种类型：api_key（服务端管理员访问凭证，以管理员身份签发，可设置有效期，不设置有效期则永不过期，单个环境最多创建 5 个）和 publish_key（前端匿名访问凭证，固定有效期，每个环境仅保留一个）。创建成功后将返回 API Key 明文 Token，该值仅在创建时返回一次，请妥善保存。需要管理员权限。\n权限范围与注意事项：\n - api_key 是以\"管理员身份\"签发的访问凭证，持有该 Token 即拥有腾讯云云开发数据流（含数据库、云函数、云存储、托管等）资源的完整访问与操作权限。该凭证不区分子资源粒度，一旦泄露等同于环境管理员权限被泄露，请按\"高敏感凭证\"管理： 仅用于服务端调用、严禁下发到前端/客户端、严禁写入代码仓库或日志、定期轮换并回收闲置凭证。\n - 在为子账号 / 协作者 / RAM 子用户授权该接口权限时，须先评估该子账号是否有资格获得该环境的管理员级数据流权限，能创建 api_key ≈ 能拥有环境管理员权限。",
       "input": "CreateApiKeyRequest",
       "name": "创建云开发平台的API Key",
       "output": "CreateApiKeyResponse",
@@ -35,6 +63,13 @@
       "output": "CreateBillDealResponse",
       "status": "online"
     },
+    "CreateCustomLoginKey": {
+      "document": "创建自定义登录密钥。在指定云开发环境下生成一对 RSA 1024 位非对称密钥对，系统仅存储公钥，私钥仅在创建时返回一次且不可恢复，请妥善保存。创建新密钥后，该环境下原有未设置过期时间的旧密钥将被自动标记为 2 小时后过期，请确保客户端及时更新密钥配置。\n返回的 KeyID 和 PrivateKey 需与环境 ID 一起组装为 JSON 配置文件，供客户端 Admin SDK 初始化时使用，文件格式如下：\n{\n  \"private_key_id\": \"<返回的 KeyID>\",\n  \"private_key\": \"<返回的 PrivateKey>\",\n  \"env_id\": \"<请求时传入的 EnvId>\"\n}",
+      "input": "CreateCustomLoginKeyRequest",
+      "name": "自定义登录密钥生成",
+      "output": "CreateCustomLoginKeyResponse",
+      "status": "online"
+    },
     "CreateEnv": {
       "document": "本接口用于购买云开发环境。\n该接口会自动下单并支付，会在腾讯云账户中扣除余额（余额不足会下单失败）。\n该接口支持自动扣除代金券（AutoVoucher=true时），符合条件的代金券会被自动扣除。\n环境下单成功之后会返回EnvId。EnvId是全局唯一表示。\n环境发货是异步行为，后续可以通过接口 [DescribeEnvs ](https://cloud.tencent.com/document/product/876/34820) 查询环境状态和各项资源信息；通过 [DescribeBillingInfo](https://cloud.tencent.com/document/product/876/94390) 查询环境套餐信息，包括 到期时间、当前套餐等。",
       "input": "CreateEnvRequest",
@@ -50,7 +85,7 @@
       "status": "online"
     },
     "CreateHTTPServiceRoute": {
-      "document": "本接口CreateHTTPServiceRoute用于创建HTTP访问服务路由。如果不传Domain.Routes，仅创建域名信息。首次创建域名后需要调用DescribeHTTPServiceRoute查询域名状态，如果状态是PROCESSING，需要轮询查询域名状态直到SUCCESS或者FAIL。如果状态是FAIL，可以删除后重新创建。创建成功后域名可能无法访问，原因是异步下发的路由，可通过http或者https探测路由是否下发，如果http访问返回404或者https访问握手失败，可等待一会再试，直到访问正常。",
+      "document": "本接口CreateHTTPServiceRoute用于创建HTTP访问服务路由。如果不传Domain.Routes，仅创建域名信息。首次创建域名后需要调用DescribeHTTPServiceRoute查询域名状态，如果状态是PROCESSING，需要轮询查询域名状态直到SUCCESS或者FAIL。如果状态是FAIL，可以删除后重新创建。创建成功后域名可能无法访问，原因是异步下发的路由，可通过http或者https探测路由是否下发，如果http访问返回404或者https访问握手失败，可等待一会再试，直到访问正常。此外HTTP访问服务提供了默认域名，通过DescribeHTTPServiceRoute接口可直接获取默认域名。",
       "input": "CreateHTTPServiceRouteRequest",
       "name": "创建HTTP访问服务路由",
       "output": "CreateHTTPServiceRouteResponse",
@@ -96,6 +131,13 @@
       "input": "CreateVmInstanceRequest",
       "name": "创建服务器实例",
       "output": "CreateVmInstanceResponse",
+      "status": "online"
+    },
+    "DeleteAIModel": {
+      "document": "删除 AI 模型配置分组，支持批量删除。内置分组无法删除。分组删除后，该分组下的所有模型配置将同步移除，针对该分组模型的请求将会失败，请在删除前确认业务侧已停止对该分组的调用。\n\n注意：\n此操作不可逆，删除后数据无法恢复，请谨慎操作。\n\n删除前建议通过 [DescribeAIModelList]() 接口确认分组当前状态。",
+      "input": "DeleteAIModelRequest",
+      "name": "删除AI模型",
+      "output": "DeleteAIModelResponse",
       "status": "online"
     },
     "DeleteApiKey": {
@@ -147,6 +189,13 @@
       "output": "DeleteVmInstanceResponse",
       "status": "online"
     },
+    "DescribeAIModels": {
+      "document": "查询指定云开发环境下已配置的 AI 模型分组列表。返回结果包含该环境下所有类型的模型分组（自定义类型 custom、内置类型 builtin），以及各分组下的模型列表、服务地址、启用状态等配置信息。\n\n通常在以下场景中使用：\n\n控制台展示：在云开发控制台 AI+ 功能 → 模型管理页面，展示当前环境已配置的模型分组列表。\n\n模型管理：在调用 [UpdateAIModel]() 或 [DeleteAIModel]() 接口前，通过本接口查询当前分组配置。\n\n业务集成：开发者查询可用模型列表，用于选择合适的模型接入 AI+ 功能。",
+      "input": "DescribeAIModelsRequest",
+      "name": "查询AI模型列表",
+      "output": "DescribeAIModelsResponse",
+      "status": "online"
+    },
     "DescribeApiKeyList": {
       "document": "查询 API Key 列表。分页查询指定云开发环境下的 API Key 访问凭证列表。支持按类型过滤（api_key 或 publish_key）。未指定类型时，默认仅返回 api_key 类型的记录。列表查询中 api_key 类型的令牌值将进行脱敏处理（仅保留前后各 6 位字符）；publish_key 类型始终返回完整明文。接口需要管理员权限。",
       "input": "DescribeApiKeyListRequest",
@@ -169,7 +218,7 @@
       "status": "online"
     },
     "DescribeBillingInfo": {
-      "document": "获取计费相关信息",
+      "document": "获取云开发环境的计费相关信息。\n包括环境的 状态、当前套餐、购买时间、到期时间 等。",
       "input": "DescribeBillingInfoRequest",
       "name": "获取计费相关信息",
       "output": "DescribeBillingInfoResponse",
@@ -246,7 +295,7 @@
       "status": "online"
     },
     "DescribeHTTPServiceRoute": {
-      "document": "本接口DescribeHTTPServiceRoute用于查询环境下HTTP访问服务路由信息。可通过Filters过滤。如果不存在不会返回错误。",
+      "document": "本接口DescribeHTTPServiceRoute用于查询环境下HTTP访问服务路由信息。可通过Filters过滤。如果不存在不会返回错误。HTTP访问服务提供了默认域名，通过本接口可直接获取默认域名。",
       "input": "DescribeHTTPServiceRouteRequest",
       "name": "查询HTTP访问服务路由信息",
       "output": "DescribeHTTPServiceRouteResponse",
@@ -266,6 +315,13 @@
       "output": "DescribeLoginConfigResponse",
       "status": "online"
     },
+    "DescribeManagedAIModelList": {
+      "document": "查询云开发平台支持的托管类型 AI 模型列表。\n\n托管类型模型由云开发平台统一接入和管理，用户无需自行配置模型服务地址和访问密钥，开通后即可直接使用。返回结果按模型分组（Group）组织，包含各模型的规格参数（ModelSpec）和计费信息（ModelChargingInfo）。\n\n通常在以下场景中使用：\n\n开通托管模型前：通过本接口查询平台支持的托管模型及其规格，结合 [UpdateAIModel](https://cloud.tencent.com/document/product/876/131316) 接口完成模型配置。",
+      "input": "DescribeManagedAIModelListRequest",
+      "name": "查询托管类型AI模型列表",
+      "output": "DescribeManagedAIModelListResponse",
+      "status": "online"
+    },
     "DescribeMySQLClusterDetail": {
       "document": "本接口（DescribeMySQLClusterDetail）查询Mysql集群信息。\n\n调用该接口前需要先查询Mysql是否开通，可通过 [DescribeCreateMySQLResult ](https://cloud.tencent.com/document/api/876/128185) 查询，只有已开通的才能查到集群信息，Mysql开通成功后，可通过接口设置数据库账号相关功能包括但不限于【创建账号、删除账号、查询可授权权限列表、查询账号已有权限、修改主机、修改配置、修改账号库表权限】、集群操作相关【查询集群参数、修改集群参数】，连接设置相关【关闭外网、开通外网、查询集群信息】，备份回档相关【创建手动回档、删除手动回档、修改自动备份配置信息、查询备份文件列表、集群回档、查询任务列表、获取table列表、获取集群数据库列表、查询备份下载地址】，相关功能接口文档：[TDSQL-C MySQL API文档](https://cloud.tencent.com/document/product/1003/48106)，可以通过 [RunSql](https://cloud.tencent.com/document/api/876/127880) 接口来执行 MySql 命令，比如创建表格、插入数据、删除表格等 MySql 命令。",
       "input": "DescribeMySQLClusterDetailRequest",
@@ -280,11 +336,25 @@
       "output": "DescribeMySQLTaskStatusResponse",
       "status": "online"
     },
+    "DescribePGUserMigration": {
+      "document": "本接口（DescribePGUserMigration）用于查询目标环境指定 migration 详情。",
+      "input": "DescribePGUserMigrationRequest",
+      "name": "查看指定环境单条 migration 详情",
+      "output": "DescribePGUserMigrationResponse",
+      "status": "online"
+    },
     "DescribeQuotaData": {
       "document": "查询指定指标的配额使用量",
       "input": "DescribeQuotaDataRequest",
       "name": "查询环境的配额使用量",
       "output": "DescribeQuotaDataResponse",
+      "status": "online"
+    },
+    "DescribeResourcePermission": {
+      "document": "查询资源基础权限。\n\n查询云函数、云存储和数据库表的基础权限配置。支持单个资源查询和批量查询。",
+      "input": "DescribeResourcePermissionRequest",
+      "name": "查询资源基础权限",
+      "output": "DescribeResourcePermissionResponse",
       "status": "online"
     },
     "DescribeSafeRule": {
@@ -357,11 +427,11 @@
       "output": "DestroyStaticStoreResponse",
       "status": "online"
     },
-    "EditAuthConfig": {
-      "document": "修改登录配置",
-      "input": "EditAuthConfigRequest",
-      "name": "编辑登录配置",
-      "output": "EditAuthConfigResponse",
+    "ExecutePGSql": {
+      "document": "在Postgres数据库上执行SQL",
+      "input": "ExecutePGSqlRequest",
+      "name": "在PostgreSQL数据库上执行SQL查询",
+      "output": "ExecutePGSqlResponse",
       "status": "online"
     },
     "GetProviders": {
@@ -376,6 +446,13 @@
       "input": "InquireVmPriceRequest",
       "name": "查询云服务器价格",
       "output": "InquireVmPriceResponse",
+      "status": "online"
+    },
+    "ListPGUserMigrations": {
+      "document": "本接口（ListPGUserMigrations）用于查询目标环境已应用的用户 migration 列表。",
+      "input": "ListPGUserMigrationsRequest",
+      "name": "查询目标环境已应用的 Migration",
+      "output": "ListPGUserMigrationsResponse",
       "status": "online"
     },
     "ListTables": {
@@ -421,7 +498,7 @@
       "status": "online"
     },
     "ModifyHTTPServiceRoute": {
-      "document": "本接口ModifyHTTPServiceRoute用于修改HTTP访问服务路由。支持增量修改，对应字段不传参数表示不需要修改",
+      "document": "本接口ModifyHTTPServiceRoute用于修改HTTP访问服务路由。支持增量修改，对应字段不传参数则不修改",
       "input": "ModifyHTTPServiceRouteRequest",
       "name": "修改HTTP访问服务路由",
       "output": "ModifyHTTPServiceRouteResponse",
@@ -441,11 +518,25 @@
       "output": "ModifyProviderResponse",
       "status": "online"
     },
+    "ModifyResourcePermission": {
+      "document": "修改资源基础权限。\n\n修改云函数、云存储和数据库表的基础权限配置。支持预定义权限级别和自定义安全规则两种方式配置资源访问权限。",
+      "input": "ModifyResourcePermissionRequest",
+      "name": "修改资源基础权限",
+      "output": "ModifyResourcePermissionResponse",
+      "status": "online"
+    },
     "ModifySafeRule": {
       "document": "设置数据库安全规则。\n安全规则，用于控制C端用户的访问权限。详见 [安全规则介绍 ](https://cloud.tencent.com/document/product/876/123478)。",
       "input": "ModifySafeRuleRequest",
       "name": "设置数据库安全规则",
       "output": "ModifySafeRuleResponse",
+      "status": "online"
+    },
+    "ModifyStorageSource": {
+      "document": "修改指定云开发环境已绑定的外部云存储源配置。\n修改之后，大约3~5分钟生效。\n\n注意⚠️\n本接口仅更新存储源绑定关系，不会迁移您的数据。",
+      "input": "ModifyStorageSourceRequest",
+      "name": "更新云存储外部数据源",
+      "output": "ModifyStorageSourceResponse",
       "status": "online"
     },
     "ModifyUser": {
@@ -455,11 +546,25 @@
       "output": "ModifyUserResponse",
       "status": "online"
     },
-    "ReinstateEnv": {
-      "document": "针对已隔离的免费环境，可以通过本接口将其恢复访问。",
-      "input": "ReinstateEnvRequest",
-      "name": "恢复环境，解除隔离状态",
-      "output": "ReinstateEnvResponse",
+    "PreviewPGUserMigrations": {
+      "document": "本接口（PreviewPGUserMigrations）用于预览SQL migrations 在远端的执行计划，不实际执行SQL。",
+      "input": "PreviewPGUserMigrationsRequest",
+      "name": "预览SQL migrations 在远端的执行计划，不实际执行 SQL",
+      "output": "PreviewPGUserMigrationsResponse",
+      "status": "online"
+    },
+    "PushPGUserMigrations": {
+      "document": "本接口（PushPGUserMigrations）用于批量应用Migrations。",
+      "input": "PushPGUserMigrationsRequest",
+      "name": "批量应用 Migrations",
+      "output": "PushPGUserMigrationsResponse",
+      "status": "online"
+    },
+    "ReleaseEnv": {
+      "document": "从环境池里立即取出1个环境",
+      "input": "ReleaseEnvRequest",
+      "name": "释放从环境池里分配的环境",
+      "output": "ReleaseEnvResponse",
       "status": "online"
     },
     "RenewEnv": {
@@ -467,6 +572,20 @@
       "input": "RenewEnvRequest",
       "name": "续费云开发环境",
       "output": "RenewEnvResponse",
+      "status": "online"
+    },
+    "RepairPGUserMigrationHistory": {
+      "document": "本接口（RepairPGUserMigrationHistory）用于受控修复 history，只修改 user_schema_migrations，不执行 SQL。",
+      "input": "RepairPGUserMigrationHistoryRequest",
+      "name": "修复Migration History",
+      "output": "RepairPGUserMigrationHistoryResponse",
+      "status": "online"
+    },
+    "RollbackPGUserMigrations": {
+      "document": "本接口（RollbackPGUserMigrations）用于按最近 N 条已应用 migration 倒序执行 rollback。",
+      "input": "RollbackPGUserMigrationsRequest",
+      "name": "回滚 Migration",
+      "output": "RollbackPGUserMigrationsResponse",
       "status": "online"
     },
     "RunCommands": {
@@ -490,6 +609,20 @@
       "output": "SearchClsLogResponse",
       "status": "online"
     },
+    "UnbindStorageSource": {
+      "document": "从指定云开发环境中解绑已绑定的外部云存储源。解绑后，该环境将不再关联外部 存储源，云存储功能恢复为未绑定状态。\n解绑操作仅移除 CloudBase 侧的绑定关系，不会删除桶本身及桶内数据，桶仍由用户自行管理。\n\n注意⚠️\n解绑之后，会导致云存储不可用，请谨慎操作。",
+      "input": "UnbindStorageSourceRequest",
+      "name": "解绑云存储外部云存储源",
+      "output": "UnbindStorageSourceResponse",
+      "status": "online"
+    },
+    "UpdateAIModel": {
+      "document": "更新 AI 模型配置分组。支持修改分组的模型列表、服务地址、访问密钥、备注及启用状态。\n\n不同分组类型支持的更新操作如下：\n自定义类型（custom）：可更新模型服务地址（BaseUrl）、访问密钥（Secret）、模型列表及分组备注。\n内置类型（builtin）：默认由云开发平台统一管理服务地址和密钥。若同时传入自定义 BaseURL 和 Secret，该分组将自动转换为自定义类型（custom），后续使用用户自行提供的服务地址和访问密钥，平台不再托管其凭证。\n\n分组类型转换说明:\n调用本接口时，可通过传入 BaseURL 与 Secret 参数触发分组类型的自动转换，规则如下：\n(1) builtin → custom（内置转自定义）\n当分组当前类型（Type）为 builtin 时，若请求中同时传入有效的 BaseURL（非 http://default.tcb）和 Secret，系统将自动将该分组转换为自定义类型（Type = custom）。转换后，平台不再托管该分组的服务地址和访问密钥，后续将使用用户自行提供的 BaseUrl 与 Secret 对模型服务发起请求。\n\n(2) custom → builtin（自定义恢复内置托管）\n仅当分组的原始类型（OriginType）为 builtin 时，支持将分组恢复为内置托管类型。将 BaseUrl 传入固定值 http://default.tcb，且不传入 Secret，系统将自动将该分组转换回内置托管类型（Type = builtin），平台重新接管其服务地址和访问密钥。\n若 OriginType 为 CUSTOM（即用户通过 [CreateAIModel](https://cloud.tencent.com/document/product/876/131320) 接口自行创建的自定义分组），不支持恢复为内置托管类型。\n\n更新成功后，可通过 [DescribeAIModels](https://cloud.tencent.com/document/product/876/131318) 接口查询最新分组配置。",
+      "input": "UpdateAIModelRequest",
+      "name": "更新AI模型",
+      "output": "UpdateAIModelResponse",
+      "status": "online"
+    },
     "UpdateTable": {
       "document": "本接口(UpdateTable)用于修改文档型数据库表信息，当前可以支持创建和删除索引。",
       "input": "UpdateTableRequest",
@@ -505,6 +638,201 @@
     "serviceShortName": "tcb"
   },
   "objects": {
+    "AIModel": {
+      "document": "AI 模型信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型名",
+          "example": "huanyuan-v1",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启MCP",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableMCP",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIModelGroup": {
+      "document": "AI 模型信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型分组</p><p>枚举值：</p><ul><li>hunyuan-exp： 内置 hunyuan 分组，Models 中包含混元生文模型</li><li>hunyuan-image： 内置 hunyuan 分组，Models 中包含混元生图模型</li><li>deepseek： 内置 deepseek 分组，Models 中包含Deepseek生文模型</li><li>cloudbase： 内置 cloudbase 分组，Models 中包含云开发提供的模型，支持的所有模型可从 DescribeManagedAIModelList 获取</li><li>custom-xxxx： 自定义模型分组，Models 中包含用户自行配置的模型</li></ul>",
+          "example": "hunyuan-exp",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AIModel",
+          "name": "Models",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类型</p><p>枚举值：</p><ul><li>builtin： 内置模型分组类别</li><li>custom： 用户自定义模型分组类别</li></ul>",
+          "example": "builtin",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始模型类型</p><p>枚举值：</p><ul><li>builtin： 内置模型类型</li><li>custom： 用户自定义模型类型</li></ul>",
+          "example": "builtin",
+          "member": "string",
+          "name": "OriginType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "测试模型",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型地址</p>",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "BaseUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型状态, 1: 开启, 2: 关闭</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型密钥</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AIModelSecret",
+          "name": "Secret",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-04-27T11:57:19+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-04-27T20:13:07+08:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AIModelSecret": {
+      "document": "AI模型密钥信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "密钥来源",
+          "example": "custom",
+          "member": "string",
+          "name": "SecretSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥ID, 和SecretKey一一对应",
+          "example": "DSDHJKF3JKDSA3",
+          "member": "string",
+          "name": "SecretId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥Key, 和SecretId一一对应",
+          "example": "DSAHJK35DASLKM",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ApiKey,SecretKey和ApiKey二选一",
+          "example": "GFNFSD4JKLFDS4",
+          "member": "string",
+          "name": "ApiKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AddProviderRequest": {
       "document": "AddProvider请求参数结构体",
       "members": [
@@ -640,6 +968,62 @@
       ],
       "type": "object"
     },
+    "AllocateEnvRequest": {
+      "document": "AllocateEnv请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分配请求ID，会按这个值做幂等</p><p>入参限制：长度不超过64</p>",
+          "example": "m****************3",
+          "member": "string",
+          "name": "AllocateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户平台的应用标识，如果没有则不传</p>",
+          "example": "appid*********",
+          "member": "string",
+          "name": "ExternalAppId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AllocateEnvResponse": {
+      "document": "AllocateEnv返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "******-d8gx4e0pr5de21d1c",
+          "member": "string",
+          "name": "EnvId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回显    客户平台的应用标识，如果没有则不传</p>",
+          "example": "appid*********",
+          "member": "string",
+          "name": "ExternalAppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ApiKeyToken": {
       "document": "API Key 访问凭证信息。描述云开发环境下 API Key 的完整信息，包括标识符、名称、令牌值、创建时间和过期时间。支持两种类型：api_key（服务端管理员访问凭证，用于服务端接口调用的身份认证，可设置有效期，单个环境最多 5 个）和 publish_key（前端匿名访问凭证，固定有效期，每个环境仅保留一个）。注意：令牌值（ApiKey 字段）仅在创建时返回完整明文，列表查询时将进行脱敏处理。",
       "members": [
@@ -700,6 +1084,83 @@
         }
       ],
       "usage": "both"
+    },
+    "AssumeRoleForAllocatedEnvRequest": {
+      "document": "AssumeRoleForAllocatedEnv请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "mpdemo-d6ga2156e93c0228c",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssumeRoleForAllocatedEnvResponse": {
+      "document": "AssumeRoleForAllocatedEnv返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>SecretId</p>",
+          "example": "AKI*****************************************************************",
+          "member": "string",
+          "name": "SecretId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SecretKey</p>",
+          "example": "V4m*****************************************",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Token值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "A6ABa1wqZnAFi95JuQ7BIgWqU8Im5YPa283df148910f67e4cb0789f5783133b4zHqyBHG",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1778249652",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否从缓存中加载。标明该值是否实时从sts服务获取，还是从缓存中获取。调用方可不关心</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCache",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AuthDomain": {
       "document": "合法域名",
@@ -913,6 +1374,42 @@
       ],
       "usage": "both"
     },
+    "BindStorageSourceRequest": {
+      "document": "BindStorageSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "cloudbase-0gx36sm8ddc58be0",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储源",
+          "example": "无",
+          "member": "ExternalStorage",
+          "name": "StorageConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "BindStorageSourceResponse": {
+      "document": "BindStorageSource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CheckTcbServiceRequest": {
       "document": "CheckTcbService请求参数结构体",
       "members": [],
@@ -1101,6 +1598,97 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateAIModelRequest": {
+      "document": "CreateAIModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境id</p>",
+          "example": "envid-dhjkashdjka",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分组名</p><p>入参限制：不允许以 cloudbase 为前缀</p>",
+          "example": "custom-kimi",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型服务地址</p>",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "BaseUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名列表</p>",
+          "example": "无",
+          "member": "AIModel",
+          "name": "Models",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分组备注</p>",
+          "example": "cloudbase",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型状态,  1: 开启, 2: 关闭</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型密钥</p>",
+          "example": "无",
+          "member": "AIModelSecret",
+          "name": "Secret",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAIModelResponse": {
+      "document": "CreateAIModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateApiKeyRequest": {
       "document": "CreateApiKey请求参数结构体",
@@ -1404,12 +1992,59 @@
       ],
       "type": "object"
     },
+    "CreateCustomLoginKeyRequest": {
+      "document": "CreateCustomLoginKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境id",
+          "example": "xxx",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomLoginKeyResponse": {
+      "document": "CreateCustomLoginKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义登录的 RSA 私钥（1024 位），PEM 编码格式（PKCS#1）。调用方需使用该私钥对包含用户身份信息的 JSON 数据进行 JWS 签名，生成 JWT Token 后传入自定义登录接口完成身份认证。出于安全考虑，系统仅存储公钥，私钥仅在创建时返回一次且无法恢复，请妥善保存。创建新密钥后，该环境下原有未设置过期时间的旧密钥将被自动标记为 2 小时后过期",
+          "example": "xxx",
+          "member": "string",
+          "name": "PrivateKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥对的唯一标识符（UUID 格式），由系统自动生成。在自定义登录时，需将该 KeyID 拼接到 ProviderToken 参数中（格式：{KeyID}/{algorithm}/{signedJWT}），服务端通过 KeyID 查找对应的公钥以验证签名",
+          "example": "xxx",
+          "member": "string",
+          "name": "KeyID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateEnvRequest": {
       "document": "CreateEnv请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "环境别名。\n\n### 格式要求\n- 可选字符： 小写字母(a~z)、数字、减号(-)\n- 不能以 减号(-) 开头或结尾\n- 不能有连个连续的 减号(-)\n- 长度不超过20位\n示例值：cloud",
+          "document": "<p>环境别名。</p><h3 id=\".E6.A0.BC.E5.BC.8F.E8.A6.81.E6.B1.82\">格式要求</h3><ul><li>可选字符： 小写字母(a~z)、数字、减号(-)</li><li>不能以 减号(-) 开头或结尾</li><li>不能有连个连续的 减号(-)</li><li>长度不超过20位<br>示例值：cloud</li></ul>",
           "example": "cloudbase",
           "member": "string",
           "name": "Alias",
@@ -1418,7 +2053,7 @@
         },
         {
           "disabled": false,
-          "document": "云开发环境套餐Id。\n对于云开发环境套餐，可通过 [DescribeBaasPackageList](https://cloud.tencent.com/document/product/876/78167) 接口获取，对应其出参的PackageName。",
+          "document": "<p>云开发环境套餐Id。<br>对于云开发环境套餐，可通过 <a href=\"https://cloud.tencent.com/document/product/876/78167\">DescribeBaasPackageList</a> 接口获取，对应其出参的PackageName。</p>",
           "example": "baas_personal",
           "member": "string",
           "name": "PackageId",
@@ -1427,7 +2062,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型。代表新购环境时需要发货哪些资源。\n可取值以及含义：\n- flexdb : 表示文档型数据库\n- storage : 表示云存储\n- function : 表示云函数\n\n**该字段不可为空**",
+          "document": "<p>资源类型。代表新购环境时需要发货哪些资源。<br>可取值以及含义：</p><ul><li>flexdb : 表示文档型数据库</li><li>storage : 表示云存储</li><li>function : 表示云函数</li><li>postgresql：表示postgresql数据库</li></ul><p><strong>该字段不可为空</strong></p>",
           "example": "[\"flexdb\"]",
           "member": "string",
           "name": "Resources",
@@ -1436,7 +2071,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24。\n默认值为1，即1个月。",
+          "document": "<p>购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24。<br>默认值为1，即1个月。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Period",
@@ -1445,7 +2080,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动选择代金券支付。",
+          "document": "<p>是否自动选择代金券支付。</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoVoucher",
@@ -1454,7 +2089,7 @@
         },
         {
           "disabled": false,
-          "document": "环境标签。\n可取值通过接口 [tag:DescribeTags](https://cloud.tencent.com/document/product/651/35316) 可获取到。\n不传或为空则默认不打任何标签。",
+          "document": "<p>环境标签。<br>可取值通过接口 <a href=\"https://cloud.tencent.com/document/product/651/35316\">tag:DescribeTags</a> 可获取到。<br>不传或为空则默认不打任何标签。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -1463,10 +2098,28 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。取值范围：\n- NOTIFY_AND_AUTO_RENEW：通知过期且自动续费\n- NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费（需要手动续费，可通过接口 [RenewEnv](https://cloud.tencent.com/document/product/876/128590) 来续费）\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。\n若该参数指定为NOTIFY_AND_AUTO_RENEW（即：自动续费），在账户余额充足的情况下，实例到期后将按月自动续费；但如果账户余额不足，将无法自动续费。请留意腾讯云短信和邮件通知。",
+          "document": "<p>自动续费标识。取值范围：</p><ul><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费（需要手动续费，可通过接口 <a href=\"https://cloud.tencent.com/document/product/876/128590\">RenewEnv</a> 来续费）</li></ul><p>默认取值：NOTIFY_AND_MANUAL_RENEW。<br>若该参数指定为NOTIFY_AND_AUTO_RENEW（即：自动续费），在账户余额充足的情况下，实例到期后将按月自动续费；但如果账户余额不足，将无法自动续费。请留意腾讯云短信和邮件通知。</p>",
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>云存储外部存储源。<br>表示该环境下不再自动分配云存储cos桶，而是由指定的bucket作为该环境的云存储介质。</p><p>仅当 Resources 中包含storage时有效。</p>",
+          "example": "无",
+          "member": "ExternalStorage",
+          "name": "ExternalStorage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启或关闭 超限转按量。 可取值： TRUE/FALSE （字符串类型） 非法制、不传、为空 则不变更该字段。</p>",
+          "example": "TRUE",
+          "member": "string",
+          "name": "EnableOverrun",
           "required": false,
           "type": "string"
         }
@@ -1514,7 +2167,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自动生成的环境ID",
+          "document": "<p>自动生成的环境ID</p>",
           "example": "cloudbase-7g0gd9j012a86ed6",
           "member": "string",
           "name": "EnvId",
@@ -2218,6 +2871,52 @@
       ],
       "usage": "in"
     },
+    "DeleteAIModelRequest": {
+      "document": "DeleteAIModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境id</p>",
+          "example": "envid-dhjkashdjka",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分组名列表</p>",
+          "example": "[\"tencent-huanyuan\"]",
+          "member": "string",
+          "name": "GroupNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAIModelResponse": {
+      "document": "DeleteAIModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>成功删除数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteApiKeyRequest": {
       "document": "DeleteApiKey请求参数结构体",
       "members": [
@@ -2543,6 +3242,43 @@
       ],
       "type": "object"
     },
+    "DescribeAIModelsRequest": {
+      "document": "DescribeAIModels请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境id",
+          "example": "envid-dhjkashdjka",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIModelsResponse": {
+      "document": "DescribeAIModels返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AIModelGroup",
+          "name": "AIModels",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeApiKeyListRequest": {
       "document": "DescribeApiKeyList请求参数结构体",
       "members": [
@@ -2759,12 +3495,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境ID",
+          "document": "<p>环境ID</p>",
           "example": "env-xxyyzzaa",
           "member": "string",
           "name": "EnvId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境列表，当环境列表不为空时，查询的环境以该参数为准</p>",
+          "example": "[\"stress10new0060000zd-d1a82f617e3\"]",
+          "member": "string",
+          "name": "EnvIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页条数（用于拉取列表时分页）</p>",
+          "example": "1000",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2774,12 +3537,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境计费信息列表",
+          "document": "<p>环境计费信息列表</p>",
           "example": "无",
           "member": "EnvBillingInfoItem",
           "name": "EnvBillingInfoList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总个数</p>",
+          "example": "1000",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -3542,7 +4315,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境ID",
+          "document": "<p>环境ID</p>",
           "example": "lotestapi100004",
           "member": "string",
           "name": "EnvId",
@@ -3551,7 +4324,7 @@
         },
         {
           "disabled": false,
-          "document": "<h4>文档型数据库相关指标</h4>\n<li> DbRead: 数据库读请求数 </li>\n<li> DbWrite: 数据库写请求数 </li>\n<li> DbCostTime10ms: 数据库耗时在10ms-50ms请求数 </li>\n<li> DbCostTime50ms: 数据库耗时在50ms-100ms请求数 </li>\n<li> DbCostTime100ms: 数据库耗时在100ms以上请求数 </li>\n<li> DbSizepkg: 数据库容量，单位MB </li>\n\n<h4>SQL型数据库相关指标</h4>\n<li> MysqlStorageUsage: 关系型数据库容量，单位MB </li>\n<li> MysqlCCU: CCU </li>\n<li> MysqlCpuUsageRate:CPU利用率 </li>\n<li> MysqlDbConnections:数据库连接数 </li>\n<li> MysqlMemoryUse: 内存使用量，单位MB </li>\n<li> MysqlSlowQueries:慢查询数 </li>\n<li> MysqlTps: 提交数 </li>\n<li> MysqlQps: QPS </li>\n\n<h4>云函数相关指标</h4>\n<li> FunctionCU: 资源用量</li>\n<li> FunctionInvocation: 调用次数 </li>\n<li> FunctionFlux: 外网出流量, 单位千字节(KB) </li>\n<li> FunctionThrottle: 受限次数 </li>\n<li> FunctionConcurrentExecutions: 并发执行个数</li>\n<li> FunctionTimeout: 函数执行超时次数</li>\n<li> FunctionGBs: 资源用量, 单位Mb*Ms </li>\n<li> FunctionError: 云错误次数 </li>\n<li> FunctionDuration: 运行时间, 单位毫秒 </li>\n<li> FunctionConcurrencyMemoryMB: 并发执行内存量 </li>\n<li>FunctionMemOverFlow：内存超限次数</li>\n<li> FunctionIdleProvisioned: 预置并发闲置量 </li>\n<li> FunctionProvisionedConcurrency: 预置并发个数 </li>\n\n<h4>云托管相关指标</h4>\n<li>TkeRspTimeService ： 响应时间，单位毫秒</li>\n<li>TkeCpuUsedService ： CPU使用量</li>\n<li>TkeMemUsedService ： 内存使用量</li>\n<li>TkeQPSService ： QPS</li>\n<li>TkePodNumService ： 实例个数</li>\n<li>TkeHttpServiceNatPkg ： 外网出流量，单位byte</li>\n<li>TkeCUUsedService ： 内存使用量(CU单位)</li>\n<li>TkeInvokeNumService ： 调用量</li>\n<li>TkeHttpErrorService ： 错误响应（404、500等）</li>\n\n<h4>静态网站托管相关指标</h4>\n<li>StaticFsFluxPkg：流量，单位byte</li>\n<li>StaticFsSizePkg：存储容量，单位MB</li>\n\n<h4>身份认证相关指标</h4>\n<li>AuthInvocationNumPkg：调用次数</li>\n\n<h4>API调用相关指标</h4>\n<li>GwCloudDevelopmentSecureCallsInvocation：云开发API调用次数</li>\n<li>GwWXInvocation：小程序API调用次数</li>\n\n<h4>HTTP网关相关指标</h4>\n<li>GwCloudDevelopmentStandardCallsInvocation：HTTP调用次数</li>\n\n<h4>大模型相关指标</h4>\n<li>AIPromptTokenNumPkg：输入Token</li>\n<li>AICompletionTokenNumPkg：输出Token</li>\n<li>AITotalTokenNumPkg：总Token</li>\n\n<h4>知识库相关指标</h4>\n<li>KnowledgeBaseCapacity：容量，单位bytes</li>\n\n\n<h4>用户登录相关指标</h4>\n<li>DayActiveLoginAnonymousUser：匿名用户登陆日活</li>\n<li>DayActiveLoginAllUser ： 全部用户登陆日活</li>\n<li>DayActiveLoginExternalUser ： 外部用户登陆日活</li>\n<li>DayActiveLoginInternalUser ： 内部用户登陆日活</li>",
+          "document": "<h4>文档型数据库相关指标</h4><li> DbRead: 数据库读请求数 </li><li> DbWrite: 数据库写请求数 </li><li> DbCostTime10ms: 数据库耗时在10ms-50ms请求数 </li><li> DbCostTime50ms: 数据库耗时在50ms-100ms请求数 </li><li> DbCostTime100ms: 数据库耗时在100ms以上请求数 </li><li> DbSizepkg: 数据库容量，单位MB </li><h4>SQL型数据库相关指标</h4><li> MysqlStorageUsage: 关系型数据库容量，单位MB </li><li> MysqlCCU: CCU </li><li> MysqlCpuUsageRate:CPU利用率 </li><li> MysqlDbConnections:数据库连接数 </li><li> MysqlMemoryUse: 内存使用量，单位MB </li><li> MysqlSlowQueries:慢查询数 </li><li> MysqlTps: 提交数 </li><li> MysqlQps: QPS </li><h4>云函数相关指标</h4><li> FunctionCU: 资源用量</li><li> FunctionInvocation: 调用次数 </li><li> FunctionFlux: 外网出流量, 单位千字节(KB) </li><li> FunctionThrottle: 受限次数 </li><li> FunctionConcurrentExecutions: 并发执行个数</li><li> FunctionTimeout: 函数执行超时次数</li><li> FunctionGBs: 资源用量, 单位Mb*Ms </li><li> FunctionError: 云错误次数 </li><li> FunctionDuration: 运行时间, 单位毫秒 </li><li> FunctionConcurrencyMemoryMB: 并发执行内存量 </li><li>FunctionMemOverFlow：内存超限次数</li><li> FunctionIdleProvisioned: 预置并发闲置量 </li><li> FunctionProvisionedConcurrency: 预置并发个数 </li><h4>云托管相关指标</h4><li>TkeRspTimeService ： 响应时间，单位毫秒</li><li>TkeCpuUsedService ： CPU使用量</li><li>TkeMemUsedService ： 内存使用量</li><li>TkeQPSService ： QPS</li><li>TkePodNumService ： 实例个数</li><li>TkeHttpServiceNatPkg ： 外网出流量，单位byte</li><li>TkeCUUsedService ： 内存使用量(CU单位)</li><li>TkeInvokeNumService ： 调用量</li><li>TkeHttpErrorService ： 错误响应（404、500等）</li><h4>静态网站托管相关指标</h4><li>StaticFsFluxPkg：流量，单位byte</li><li>StaticFsSizePkg：存储容量，单位MB</li><h4>身份认证相关指标</h4><li>AuthInvocationNumPkg：调用次数</li><h4>API调用相关指标</h4><li>GwCloudDevelopmentSecureCallsInvocation：云开发API调用次数</li><li>GwWXInvocation：小程序API调用次数</li><h4>HTTP网关相关指标</h4><li>GwCloudDevelopmentStandardCallsInvocation：HTTP调用次数</li><h4>大模型相关指标</h4><li>AIPromptTokenNumPkg：输入Token</li><li>AICompletionTokenNumPkg：输出Token</li><li>AITotalTokenNumPkg：总Token</li><h4>知识库相关指标</h4><li>KnowledgeBaseCapacity：容量，单位bytes</li><h4>用户登录相关指标</h4><li>DayActiveLoginAnonymousUser：匿名用户登录日活</li><li>DayActiveLoginAllUser ： 全部用户登录日活</li><li>DayActiveLoginExternalUser ： 外部用户登录日活</li><li>DayActiveLoginInternalUser ： 内部用户登录日活</li><h4>环境QPS相关指标</h4><li>EnvQPSAll：环境总QPS</li><h4>数据库连接器相关指标</h4><li> MongoConnectorRead: 数据库连接器读请求数 </li><li> MongoConnectorWrite: 数据库连接器写请求数 </li><li> MongoConnectorCostTime10ms: 数据库连接器耗时在10ms-50ms请求数 </li><li> MongoConnectorCostTime50ms: 数据库连接器耗时在50ms-100ms请求数 </li><li> MongoConnectorCostTime100ms: 数据库连接器耗时在100ms以上请求数 </li><li> MongoConnectorInvokeNum: 数据库连接器调用次数</li>",
           "example": "DbSizepkg",
           "member": "string",
           "name": "MetricName",
@@ -3560,7 +4333,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟)",
+          "document": "<p>开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟)</p>",
           "example": "2019-04-02 09:00:00",
           "member": "string",
           "name": "StartTime",
@@ -3569,7 +4342,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)",
+          "document": "<p>结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)</p>",
           "example": "2019-04-04 19:00:00",
           "member": "string",
           "name": "EndTime",
@@ -3578,7 +4351,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID, 目前仅对文档型数据库、云函数、云托管相关的指标有意义。\n如果想查询某个具体云函数/具体数据库集合的指标，则需传入对应的云函数名称/集合名称；如果只想查询整个namespace的指标, 则留空或不传。\n云托管相关指标的查询，必须传入云托管服务名称。",
+          "document": "<p>资源ID, 目前仅对文档型数据库、云函数、云托管、数据库连接器相关的指标有意义。<br>如果想查询某个具体云函数/具体数据库集合的指标，则需传入对应的云函数名称/集合名称；如果只想查询整个namespace的指标, 则留空或不传。<br>云托管相关指标的查询，必须传入云托管服务名称。<br>数据库连接器相关指标的查询，必须传入数据库连接器实例id</p>",
           "example": "ibot-agent1",
           "member": "string",
           "name": "ResourceID",
@@ -3587,7 +4360,7 @@
         },
         {
           "disabled": false,
-          "document": "微信AppId，微信必传",
+          "document": "<p>微信AppId，微信必传</p>",
           "example": "wxappid",
           "member": "string",
           "name": "WxAppId",
@@ -3596,7 +4369,7 @@
         },
         {
           "disabled": false,
-          "document": "子资源信息。\n查询云托管相关指标的具体版本的监控数据，需传入。",
+          "document": "<p>子资源信息。<br>查询云托管相关指标的具体版本的监控数据，需传入。</p>",
           "example": "deepseek",
           "member": "string",
           "name": "SubresourceID",
@@ -3605,7 +4378,7 @@
         },
         {
           "disabled": false,
-          "document": "网关路由",
+          "document": "<p>网关路由</p>",
           "example": "resource",
           "member": "string",
           "name": "ThirdResource",
@@ -3614,7 +4387,7 @@
         },
         {
           "disabled": false,
-          "document": "统计周期(单位秒)，非必传，传入时仅支持传入300，3600，86400。不传采用默认以下默认规则：当时间区间为1天内, 统计周期为300；当时间区间选择为1天以上, 15天以下, 统计周期为3600； 当时间区间选择为15天以上, 180天以下, 统计周期为86400。\n如果传入period，需遵循以下规则。EndTime-StartTime的时间范围不超过1 天，Period可以取300或3600；EndTime-StartTime的时间范围满足超过1天且不超过3 天，Period可以取300或3600或86400；EndTime-StartTime的时间范围超过3天时，Period可以取3600或86400。",
+          "document": "<p>统计周期(单位秒)，非必传，传入时仅支持传入300，3600，86400。不传采用默认以下默认规则：当时间区间为1天内, 统计周期为300；当时间区间选择为1天以上, 15天以下, 统计周期为3600； 当时间区间选择为15天以上, 180天以下, 统计周期为86400。<br>如果传入period，需遵循以下规则。EndTime-StartTime的时间范围不超过1 天，Period可以取300或3600；EndTime-StartTime的时间范围满足超过1天且不超过3 天，Period可以取300或3600或86400；EndTime-StartTime的时间范围超过3天时，Period可以取3600或86400。</p>",
           "example": "300",
           "member": "uint64",
           "name": "Period",
@@ -3629,7 +4402,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间, 会根据数据的统计周期进行取整",
+          "document": "<p>开始时间, 会根据数据的统计周期进行取整</p>",
           "example": "2019-04-02 09:00:00",
           "member": "string",
           "name": "StartTime",
@@ -3639,7 +4412,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间, 会根据数据的统计周期进行取整",
+          "document": "<p>结束时间, 会根据数据的统计周期进行取整</p>",
           "example": "2019-04-04 19:00:00",
           "member": "string",
           "name": "EndTime",
@@ -3649,7 +4422,7 @@
         },
         {
           "disabled": false,
-          "document": "指标名",
+          "document": "<p>指标名</p>",
           "example": "DbSizepkg",
           "member": "string",
           "name": "MetricName",
@@ -3659,7 +4432,7 @@
         },
         {
           "disabled": false,
-          "document": "统计周期(单位秒), 当时间区间为1天内, 统计周期为5分钟; 当时间区间选择为1天以上, 15天以下, 统计周期为1小时; 当时间区间选择为15天以上, 180天以下, 统计周期为1天",
+          "document": "<p>统计周期(单位秒), 当时间区间为1天内, 统计周期为5分钟; 当时间区间选择为1天以上, 15天以下, 统计周期为1小时; 当时间区间选择为15天以上, 180天以下, 统计周期为1天</p>",
           "example": "3600",
           "member": "uint64",
           "name": "Period",
@@ -3669,7 +4442,7 @@
         },
         {
           "disabled": false,
-          "document": "有效的监控数据, 每个有效监控数据的上报时间可以从时间数组中的对应位置上获取到",
+          "document": "<p>有效的监控数据, 每个有效监控数据的上报时间可以从时间数组中的对应位置上获取到</p>",
           "example": "[20,100,180,240,260]",
           "member": "int64",
           "name": "Values",
@@ -3679,7 +4452,7 @@
         },
         {
           "disabled": false,
-          "document": "各数据点的时间戳数组（Unix 时间戳，秒级），与  ⁠Values⁠  一一对应",
+          "document": "<p>各数据点的时间戳数组（Unix 时间戳，秒级），与  ⁠Values⁠  一一对应</p>",
           "example": "[1554894000,1554894300,1554894600,1554894900,1554895200]",
           "member": "int64",
           "name": "Time",
@@ -3689,7 +4462,7 @@
         },
         {
           "disabled": false,
-          "document": "有效的监控数据, 每个有效监控数据的上报时间可以从时间数组中的对应位置上获取到",
+          "document": "<p>有效的监控数据, 每个有效监控数据的上报时间可以从时间数组中的对应位置上获取到</p>",
           "example": "[20.0,100.0,180.0,240.0,260.0]",
           "member": "float",
           "name": "NewValues",
@@ -3699,7 +4472,7 @@
         },
         {
           "disabled": false,
-          "document": " 聚合方式， ⁠\"last\"⁠  表示取时间段内最后一个值，“max”表示取时间段内最大值，“avg”表示取时间段内的平均值",
+          "document": "<p>聚合方式， ⁠&quot;last&quot;⁠  表示取时间段内最后一个值，“max”表示取时间段内最大值，“avg”表示取时间段内的平均值</p>",
           "example": "max",
           "member": "string",
           "name": "Statistics",
@@ -3971,7 +4744,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境ID，如果传了这个参数则只返回该环境的相关信息",
+          "document": "<p>环境ID，如果传了这个参数则只返回该环境的相关信息</p>",
           "example": "yourenvid-2fb346",
           "member": "string",
           "name": "EnvId",
@@ -3980,7 +4753,7 @@
         },
         {
           "disabled": false,
-          "document": "指定Channels字段为可见渠道列表或不可见渠道列表\n如只想获取渠道A的环境 就填写IsVisible= true,Channels = [\"A\"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [\"A\"]",
+          "document": "<p>指定Channels字段为可见渠道列表或不可见渠道列表<br>如只想获取渠道A的环境 就填写IsVisible= true,Channels = [&quot;A&quot;], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [&quot;A&quot;]</p>",
           "example": "true",
           "member": "bool",
           "name": "IsVisible",
@@ -3989,8 +4762,8 @@
         },
         {
           "disabled": false,
-          "document": "渠道列表，代表可见或不可见渠道由IsVisible参数指定",
-          "example": "[ide,qc_console]",
+          "document": "<p>渠道列表，代表可见或不可见渠道由IsVisible参数指定</p>",
+          "example": "[\"ide\",\"qc_console\"]",
           "member": "string",
           "name": "Channels",
           "required": false,
@@ -3998,7 +4771,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数，单页限制个数",
+          "document": "<p>分页参数，单页限制个数</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -4007,7 +4780,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数，偏移量",
+          "document": "<p>分页参数，偏移量</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4022,7 +4795,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境信息列表",
+          "document": "<p>环境信息列表</p>",
           "example": "无",
           "member": "EnvInfo",
           "name": "EnvList",
@@ -4032,7 +4805,7 @@
         },
         {
           "disabled": false,
-          "document": "环境个数",
+          "document": "<p>环境个数</p>",
           "example": "1",
           "member": "int64",
           "name": "Total",
@@ -4339,6 +5112,43 @@
       ],
       "type": "object"
     },
+    "DescribeManagedAIModelListRequest": {
+      "document": "DescribeManagedAIModelList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境id</p>",
+          "example": "free-********-7g5aa8xnfd5428b4",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeManagedAIModelListResponse": {
+      "document": "DescribeManagedAIModelList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>托管模型列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ManagedAIModelGroup",
+          "name": "ManagedAIModelList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMySQLClusterDetailRequest": {
       "document": "DescribeMySQLClusterDetail请求参数结构体",
       "members": [
@@ -4431,6 +5241,142 @@
       ],
       "type": "object"
     },
+    "DescribePGUserMigrationRequest": {
+      "document": "DescribePGUserMigration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云开发环境ID</p>",
+          "example": "pg-ethan06-d9gzgavrt1f14772b",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本号</p><p>参数格式：14位时间格式</p><p>入参限制：纯数字</p>",
+          "example": "20260526000000",
+          "member": "string",
+          "name": "MigrationVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePGUserMigrationResponse": {
+      "document": "DescribePGUserMigration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>版本号</p><p>参数格式：纯数字，14位时间格式</p>",
+          "example": "20260526000000",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本名</p><p>参数格式：只允许小写字母和下划线</p>",
+          "example": "test_init",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>要执行的migration sql 语句</p>",
+          "example": "CREATE TABLE IF NOT EXISTS public.test ( version BIGINT PRIMARY KEY, name TEXT NOT NULL);",
+          "member": "string",
+          "name": "Query",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回滚的sql 语句</p>",
+          "example": "DROP TABLE IF EXISTS public.test;",
+          "member": "string",
+          "name": "Rollback",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration query 语句的checksum值</p><p>由服务端自动生成，同版本 checksum 不一致会拒绝执行</p>",
+          "example": "eeaf0dd9391ba7829bd12b47482fab4a0e031a040f00cfb6eafc5c23b9fcf791",
+          "member": "string",
+          "name": "Checksum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于标记调用来源</p>",
+          "example": "repair",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于标记该条migration由谁创建，目前默认调用的用户uin</p>",
+          "example": "100019231666",
+          "member": "string",
+          "name": "CreatedBy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该migration创建时间</p>",
+          "example": "2026-05-26T11:34:19+08:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该migration应用时间</p>",
+          "example": "2026-05-26T11:34:19+08:00",
+          "member": "string",
+          "name": "AppliedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该migration执行耗时</p><p>单位：毫秒</p>",
+          "example": "153",
+          "member": "int64",
+          "name": "DurationMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeQuotaDataRequest": {
       "document": "DescribeQuotaData请求参数结构体",
       "members": [
@@ -4505,6 +5451,87 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeResourcePermissionRequest": {
+      "document": "DescribeResourcePermission请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境 ID",
+          "example": "**test-1gahsf0*********",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型：`function`-云函数、`storage`-云存储、`table`-SQL型数据库表、`collection`-文档型数据库表 `<br>`示例值：`table`。",
+          "example": "table",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源标识列表。云函数不传或传空数组、云存储传存储桶名、数据库表传表名，不能超过100条。",
+          "example": "[\"users\"]",
+          "member": "string",
+          "name": "Resources",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePermissionResponse": {
+      "document": "DescribeResourcePermission返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询资源权限返回结果",
+          "example": "无",
+          "member": "DescribeResourcePermissionResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePermissionResult": {
+      "document": "查询资源权限返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询到的资源总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源权限列表",
+          "example": "无",
+          "member": "ResourcePermission",
+          "name": "PermissionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DescribeSafeRuleRequest": {
       "document": "DescribeSafeRule请求参数结构体",
@@ -5152,66 +6179,12 @@
       ],
       "usage": "in"
     },
-    "EditAuthConfigRequest": {
-      "document": "EditAuthConfig请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境id",
-          "example": "lowcode-xxx",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "手机号登录配置 \"TRUE\",  \"FALSE\", \"LOGIN_ONLY\"",
-          "example": "\"TRUE\"",
-          "member": "string",
-          "name": "PhoneNumberLogin",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "匿名登录配置 \"TRUE\",  \"FALSE\"",
-          "example": "\"TRUE\"",
-          "member": "string",
-          "name": "AnonymousLogin",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "用户名密码登录配置 \"TRUE\",  \"FALSE\"",
-          "example": "\"TRUE\"",
-          "member": "string",
-          "name": "UsernameLogin",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "EditAuthConfigResponse": {
-      "document": "EditAuthConfig返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "EmailProviderConfig": {
       "document": "邮箱登录配置",
       "members": [
         {
           "disabled": false,
-          "document": "smtp配置",
+          "document": "<p>smtp配置</p>",
           "example": "无",
           "member": "EmailSmtpConfig",
           "name": "SmtpConfig",
@@ -5222,7 +6195,7 @@
         },
         {
           "disabled": false,
-          "document": "可选：TRUE，FALSE，如果On为TRUE，则表示采用默认代发。",
+          "document": "<p>可选：TRUE，FALSE，如果On为TRUE，则表示采用默认代发。</p>",
           "example": "TRUE",
           "member": "string",
           "name": "On",
@@ -5230,6 +6203,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>邮件模板配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EmailTemplateConfig",
+          "name": "TemplateConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5306,12 +6290,40 @@
       ],
       "usage": "both"
     },
+    "EmailTemplateConfig": {
+      "document": "邮件模板配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>注册登录模板</p><p>入参限制：模板中必须包含{{.VerificationCode}}变量，用于邮件中验证码的展示，可选变量有{{.Usage}}、{{.ExpireMinutes}}、{{.Email}}。邮件模板中禁止包含 script、javascript、onclick、onload、iframe、link 标签及 CSS expression、CSS url() 等</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LocalizedTemplate",
+          "name": "RegisterSignIn",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认模板</p><p>入参限制：模板中必须包含{{.VerificationCode}}变量，用于邮件中验证码的展示，可选变量有{{.Usage}}、{{.ExpireMinutes}}、{{.Email}}。邮件模板中禁止包含 script、javascript、onclick、onload、iframe、link 标签及 CSS expression、CSS url() 等</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LocalizedTemplate",
+          "name": "DefaultTpl",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "EnvBillingInfoItem": {
       "document": "环境计费信息",
       "members": [
         {
           "disabled": false,
-          "document": "环境ID",
+          "document": "<p>环境ID</p>",
           "example": "env-xxxxxx",
           "member": "string",
           "name": "EnvId",
@@ -5321,7 +6333,7 @@
         },
         {
           "disabled": false,
-          "document": "tcb产品套餐ID，参考DescribePackages接口的返回值。",
+          "document": "<p>tcb产品套餐ID，参考DescribePackages接口的返回值。</p>",
           "example": "baas_personal",
           "member": "string",
           "name": "PackageId",
@@ -5331,7 +6343,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记",
+          "document": "<p>自动续费标记</p>",
           "example": "true",
           "member": "bool",
           "name": "IsAutoRenew",
@@ -5341,7 +6353,7 @@
         },
         {
           "disabled": false,
-          "document": "状态。包含以下取值：\n<li> 空字符串：初始化中</li>\n<li> NORMAL：正常</li>\n<li> ISOLATE：隔离</li>",
+          "document": "<p>状态。包含以下取值：</p><li> 空字符串：初始化中</li><li> NORMAL：正常</li><li> ISOLATE：隔离</li>",
           "example": "NORMAL",
           "member": "string",
           "name": "Status",
@@ -5351,7 +6363,7 @@
         },
         {
           "disabled": false,
-          "document": "支付方式。包含以下取值：\n<li> PREPAYMENT：预付费</li>\n<li> POSTPAID：后付费</li>",
+          "document": "<p>支付方式。包含以下取值：</p><li> PREPAYMENT：预付费</li><li> POSTPAID：后付费</li>",
           "example": "PREPAYMENT",
           "member": "string",
           "name": "PayMode",
@@ -5361,7 +6373,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离时间，最近一次隔离的时间",
+          "document": "<p>隔离时间，最近一次隔离的时间</p>",
           "example": "2022-01-01 12:34:56",
           "member": "string",
           "name": "IsolatedTime",
@@ -5371,7 +6383,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间，套餐即将到期的时间",
+          "document": "<p>过期时间，套餐即将到期的时间</p>",
           "example": "2022-01-01 12:34:56",
           "member": "string",
           "name": "ExpireTime",
@@ -5381,7 +6393,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，第一次接入计费方案的时间。",
+          "document": "<p>创建时间，第一次接入计费方案的时间。</p>",
           "example": "2022-01-01 12:34:56",
           "member": "string",
           "name": "CreateTime",
@@ -5391,7 +6403,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间，计费信息最近一次更新的时间。",
+          "document": "<p>更新时间，计费信息最近一次更新的时间。</p>",
           "example": "2022-01-01 12:34:56",
           "member": "string",
           "name": "UpdateTime",
@@ -5401,7 +6413,7 @@
         },
         {
           "disabled": false,
-          "document": "true表示从未升级过付费版。",
+          "document": "<p>true表示从未升级过付费版。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAlwaysFree",
@@ -5411,7 +6423,7 @@
         },
         {
           "disabled": false,
-          "document": "付费渠道。\n<li> miniapp：小程序</li>\n<li> qcloud：腾讯云</li>",
+          "document": "<p>付费渠道。</p><li> miniapp：小程序</li><li> qcloud：腾讯云</li>",
           "example": "miniapp",
           "member": "string",
           "name": "PaymentChannel",
@@ -5421,7 +6433,7 @@
         },
         {
           "disabled": false,
-          "document": "最新的订单信息",
+          "document": "<p>最新的订单信息</p>",
           "example": "无",
           "member": "OrderInfo",
           "name": "OrderInfo",
@@ -5431,7 +6443,7 @@
         },
         {
           "disabled": false,
-          "document": "免费配额信息。",
+          "document": "<p>免费配额信息。</p>",
           "example": "basic",
           "member": "string",
           "name": "FreeQuota",
@@ -5441,7 +6453,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启 `超过套餐额度部分转按量付费`",
+          "document": "<p>是否开启 <code>超过套餐额度部分转按量付费</code></p>",
           "example": "false",
           "member": "bool",
           "name": "EnableOverrun",
@@ -5451,7 +6463,7 @@
         },
         {
           "disabled": false,
-          "document": "环境套餐类型",
+          "document": "<p>环境套餐类型</p>",
           "example": "baas",
           "member": "string",
           "name": "ExtPackageType",
@@ -5461,7 +6473,7 @@
         },
         {
           "disabled": false,
-          "document": "是否付费期环境，可取值：yes/no。",
+          "document": "<p>是否付费期环境，可取值：yes/no。</p>",
           "example": "yes",
           "member": "string",
           "name": "EnvCharged",
@@ -5471,7 +6483,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已激活，可取值：yes/no。",
+          "document": "<p>是否已激活，可取值：yes/no。</p>",
           "example": "yes",
           "member": "string",
           "name": "EnvActivated",
@@ -5487,7 +6499,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "账户下该环境唯一标识",
+          "document": "<p>账户下该环境唯一标识</p>",
           "example": "tcb-xxx",
           "member": "string",
           "name": "EnvId",
@@ -5497,7 +6509,7 @@
         },
         {
           "disabled": false,
-          "document": "环境来源。包含以下取值：\n<li>miniapp：微信小程序</li>\n<li>qcloud ：腾讯云</li>",
+          "document": "<p>环境来源。包含以下取值：</p><li>miniapp：微信小程序</li><li>qcloud ：腾讯云</li>",
           "example": "qcloud",
           "member": "string",
           "name": "Source",
@@ -5507,7 +6519,7 @@
         },
         {
           "disabled": false,
-          "document": "环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符",
+          "document": "<p>环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符</p>",
           "example": "tcb",
           "member": "string",
           "name": "Alias",
@@ -5517,7 +6529,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2021-04-26",
           "member": "datetime",
           "name": "CreateTime",
@@ -5527,7 +6539,7 @@
         },
         {
           "disabled": false,
-          "document": "最后修改时间",
+          "document": "<p>最后修改时间</p>",
           "example": "2021-04-26",
           "member": "datetime",
           "name": "UpdateTime",
@@ -5537,7 +6549,7 @@
         },
         {
           "disabled": false,
-          "document": "环境状态。包含以下取值：\n<li>NORMAL：正常可用</li>\n<li>UNAVAILABLE：服务不可用，可能是尚未初始化或者初始化过程中</li>",
+          "document": "<p>环境状态。包含以下取值：</p><li>NORMAL：正常可用</li><li>UNAVAILABLE：服务不可用，可能是尚未初始化或者初始化过程中</li>",
           "example": "NORMAL",
           "member": "string",
           "name": "Status",
@@ -5547,7 +6559,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库列表",
+          "document": "<p>数据库列表</p>",
           "example": "无",
           "member": "DatabasesInfo",
           "name": "Databases",
@@ -5557,7 +6569,7 @@
         },
         {
           "disabled": false,
-          "document": "存储列表",
+          "document": "<p>存储列表</p>",
           "example": "无",
           "member": "StorageInfo",
           "name": "Storages",
@@ -5567,7 +6579,7 @@
         },
         {
           "disabled": false,
-          "document": "函数列表",
+          "document": "<p>函数列表</p>",
           "example": "无",
           "member": "FunctionInfo",
           "name": "Functions",
@@ -5577,7 +6589,7 @@
         },
         {
           "disabled": false,
-          "document": "tcb产品套餐ID，参考DescribePackages接口的返回值。",
+          "document": "<p>tcb产品套餐ID，参考DescribePackages接口的返回值。</p>",
           "example": "basic1",
           "member": "string",
           "name": "PackageId",
@@ -5587,7 +6599,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐中文名称，参考DescribePackages接口的返回值。",
+          "document": "<p>套餐中文名称，参考DescribePackages接口的返回值。</p>",
           "example": "基础版1",
           "member": "string",
           "name": "PackageName",
@@ -5597,7 +6609,7 @@
         },
         {
           "disabled": false,
-          "document": "云日志服务列表",
+          "document": "<p>云日志服务列表</p>",
           "example": "无",
           "member": "LogServiceInfo",
           "name": "LogServices",
@@ -5607,7 +6619,7 @@
         },
         {
           "disabled": false,
-          "document": "静态资源信息",
+          "document": "<p>静态资源信息</p>",
           "example": "无",
           "member": "StaticStorageInfo",
           "name": "StaticStorages",
@@ -5617,7 +6629,7 @@
         },
         {
           "disabled": false,
-          "document": "是否到期自动降为免费版",
+          "document": "<p>是否到期自动降为免费版</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAutoDegrade",
@@ -5627,7 +6639,7 @@
         },
         {
           "disabled": false,
-          "document": "环境渠道",
+          "document": "<p>环境渠道</p>",
           "example": "qc_console",
           "member": "string",
           "name": "EnvChannel",
@@ -5637,7 +6649,7 @@
         },
         {
           "disabled": false,
-          "document": "支付方式。包含以下取值：\n<li> prepayment：预付费</li>\n<li> postpaid：后付费</li>",
+          "document": "<p>支付方式。包含以下取值：</p><li> prepayment：预付费</li><li> postpaid：后付费</li>",
           "example": "postpaid",
           "member": "string",
           "name": "PayMode",
@@ -5647,7 +6659,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为默认环境",
+          "document": "<p>是否为默认环境</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDefault",
@@ -5657,7 +6669,7 @@
         },
         {
           "disabled": false,
-          "document": "环境所属地域",
+          "document": "<p>环境所属地域</p>",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
@@ -5667,7 +6679,7 @@
         },
         {
           "disabled": false,
-          "document": "环境标签列表",
+          "document": "<p>环境标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -5677,7 +6689,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义日志服务",
+          "document": "<p>自定义日志服务</p>",
           "example": "无",
           "member": "ClsInfo",
           "name": "CustomLogServices",
@@ -5687,7 +6699,7 @@
         },
         {
           "disabled": false,
-          "document": "环境类型：baas, run, hoting, weda",
+          "document": "<p>环境类型：baas, run, hoting, weda</p>",
           "example": "baas",
           "member": "string",
           "name": "EnvType",
@@ -5697,7 +6709,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是dau新套餐",
+          "document": "<p>是否是dau新套餐</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDauPackage",
@@ -5707,7 +6719,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐类型:空\\baas\\tcbr",
+          "document": "<p>套餐类型:空\\baas\\tcbr</p>",
           "example": "baas",
           "member": "string",
           "name": "PackageType",
@@ -5717,7 +6729,7 @@
         },
         {
           "disabled": false,
-          "document": "架构类型",
+          "document": "<p>架构类型</p>",
           "example": "multi_tenant ｜ stand_alone_cluster",
           "member": "string",
           "name": "ArchitectureType",
@@ -5727,16 +6739,121 @@
         },
         {
           "disabled": false,
-          "document": "回收标志，默认为空",
+          "document": "<p>回收标志，默认为空</p>",
           "example": "recycle | \"\"",
           "member": "string",
           "name": "Recycle",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境meta信息列表</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Meta",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>pg信息</p>",
+          "example": "无",
+          "member": "PostgreSQLInfo",
+          "name": "PostgreSQL",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "ExecutePGSqlRequest": {
+      "document": "ExecutePGSql请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云开发环境ID</p>",
+          "example": "pg-mikejliu-0g9cqmar358527a9",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要执行的SQL语句</p>",
+          "example": "select column_name FROM information_schema.columns WHERE table_schema = 'public'   AND table_name = 'test_products'",
+          "member": "string",
+          "name": "Sql",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定 role 执行 SQL</p>",
+          "example": "cloudbase_********",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecutePGSqlResponse": {
+      "document": "ExecutePGSql返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>影响行数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AffectedRows",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段名列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"column_name\"]",
+          "member": "string",
+          "name": "Columns",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据行。每一行数据都是一个JSON串，将JSON进行反序列化将得到了每列的值。值可能是 null 或者 字符串，如果是 null 说明该列的值为 &lt;null&gt;，如果是字符串则为该列的值的字符串表示形式。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"[\\\"id\\\"]\"]",
+          "member": "string",
+          "name": "Rows",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL执行耗时</p><p>单位：毫秒</p>",
+          "example": "58",
+          "member": "int64",
+          "name": "ExecutionTimeMs",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ExternalStorage": {
       "document": "外部存储。\n标识该存储介质，并非由云开发CloudBase创建，而是绑定的其他存储介质。\n目前仅支持 [腾讯云-对象存储](https://cloud.tencent.com/document/product/436)。",
@@ -6120,6 +7237,16 @@
         },
         {
           "disabled": false,
+          "document": "扩展字段，内部包含headers处理等",
+          "example": "无",
+          "member": "HTTPServiceExtension",
+          "name": "Extension",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "域名创建时间",
           "example": "2026-03-13T10:03:25+08:00",
           "member": "datetime_iso",
@@ -6146,8 +7273,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名。全局唯一。如果域名在其他环境下占用或者腾讯云CDN占用，可能会导致创建失败",
-          "example": "xxx.woyaodaguaishou.cn",
+          "document": "<p>域名。全局唯一。如果域名在其他环境下占用或者腾讯云CDN占用，可能会导致创建失败</p>",
+          "example": "xxx.***************.cn",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -6155,7 +7282,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）",
+          "document": "<p>绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）</p>",
           "example": "DIRECT",
           "member": "string",
           "name": "AccessType",
@@ -6164,8 +7291,8 @@
         },
         {
           "disabled": false,
-          "document": "证书ID。当前账户下SSL平台的证书ID",
-          "example": "VFw9N3uC",
+          "document": "<p>证书ID。当前账户下SSL平台的证书ID</p>",
+          "example": "VFw*****",
           "member": "string",
           "name": "CertId",
           "required": false,
@@ -6173,7 +7300,7 @@
         },
         {
           "disabled": false,
-          "document": "协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向",
+          "document": "<p>协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向</p>",
           "example": "HTTP_AND_HTTPS",
           "member": "string",
           "name": "Protocol",
@@ -6182,7 +7309,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义CNAME。对应AccessType: Custom",
+          "document": "<p>自定义CNAME。对应AccessType: Custom</p>",
           "example": "cdn.xxx.***************.cn",
           "member": "string",
           "name": "CustomCname",
@@ -6191,7 +7318,7 @@
         },
         {
           "disabled": false,
-          "document": "域名开启状态，不传默认开启",
+          "document": "<p>域名开启状态，不传默认开启</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -6200,15 +7327,130 @@
         },
         {
           "disabled": false,
-          "document": "创建/修改的HTTP访问服务路由列表。如果不传，仅创建或修改域名信息。列表最大支持传入20个",
+          "document": "<p>创建/修改的HTTP访问服务路由列表。如果不传，仅创建或修改域名信息。列表最大支持传入20个</p>",
           "example": "无",
           "member": "HTTPServiceRouteParam",
           "name": "Routes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展字段，内部包含headers处理等</p>",
+          "example": "无",
+          "member": "HTTPServiceExtension",
+          "name": "Extension",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
+    },
+    "HTTPServiceExtension": {
+      "document": "HTTP访问服务路由扩展字段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "添加请求头列表",
+          "example": "无",
+          "member": "HTTPServiceHeadersHandler",
+          "name": "HeadersHandler",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HTTPServiceHeaderToAdd": {
+      "document": "HTTP访问服务路由添加header",
+      "members": [
+        {
+          "disabled": false,
+          "document": "添加头部的key",
+          "example": "X-Custom-Header",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "添加头部的值",
+          "example": "custom-value",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "添加头部的处理行为。默认：OVERWRITE_IF_EXISTS_OR_ADD。APPEND_IF_EXISTS_OR_ADD: 已存在时追加值，不存在时添加，ADD_IF_ABSENT:  仅在 header 不存在时添加，已存在时不做任何操作，OVERWRITE_IF_EXISTS_OR_ADD: 已存在时覆盖值，不存在时添加（默认值），OVERWRITE_IF_EXISTS: 仅在 header 已存在时覆盖值，不存在时不做任何操作",
+          "example": "OVERWRITE_IF_EXISTS_OR_ADD",
+          "member": "string",
+          "name": "Action",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HTTPServiceHeadersHandler": {
+      "document": "HTTP访问服务路由headers处理",
+      "members": [
+        {
+          "disabled": false,
+          "document": "添加请求头列表",
+          "example": "无",
+          "member": "HTTPServiceHeaderToAdd",
+          "name": "RequestHeadersToAdd",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除请求头列表",
+          "example": "[\"X-Remove-Me\"]",
+          "member": "string",
+          "name": "RequestHeadersToRemove",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "添加返回头列表",
+          "example": "无",
+          "member": "HTTPServiceHeaderToAdd",
+          "name": "ResponseHeadersToAdd",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除返回头列表",
+          "example": "[\"X-Resp-Remove\"]",
+          "member": "string",
+          "name": "ResponseHeadersToRemove",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "HTTPServicePathRewrite": {
       "document": "HTTP访问服务路径重写配置",
@@ -6350,6 +7592,16 @@
         },
         {
           "disabled": false,
+          "document": "扩展字段，内部包含headers处理等",
+          "example": "无",
+          "member": "HTTPServiceExtension",
+          "name": "Extension",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "路由创建时间",
           "example": "2026-03-13T10:03:26+08:00",
           "member": "datetime_iso",
@@ -6454,6 +7706,15 @@
           "name": "Enable",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "扩展字段，内部包含headers处理等",
+          "example": "无",
+          "member": "HTTPServiceExtension",
+          "name": "Extension",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -6755,6 +8016,81 @@
       ],
       "usage": "both"
     },
+    "ListPGUserMigrationsRequest": {
+      "document": "ListPGUserMigrations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云开发环境ID</p>",
+          "example": "pg-ethan06-d9gzgavrt1f14772b",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询条数</p><p>取值范围：[1, 500]</p><p>默认值：100</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPGUserMigrationsResponse": {
+      "document": "ListPGUserMigrations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已应用最新版本号</p><p>参数格式：纯数字，14位时间格式</p>",
+          "example": "20260526000000",
+          "member": "string",
+          "name": "LatestVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已应用migration列表</p>",
+          "example": "无",
+          "member": "MigrationSummary",
+          "name": "Migrations",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListTablesRequest": {
       "document": "ListTables请求参数结构体",
       "members": [
@@ -6887,6 +8223,34 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LocalizedTemplate": {
+      "document": "多语言模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>中文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "<html><body><h1>验证码</h1><p>您的验证码是: {{.VerificationCode}}</p><p>5分钟内有效</p></body></html>",
+          "member": "string",
+          "name": "ZhCN",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>英文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "<html><body><h1>VerificationCode</h1><p>Your VerificationCode Is: {{.VerificationCode}}</p><p>expire in 5 min</p></body></html>",
+          "member": "string",
+          "name": "EnUS",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7119,6 +8483,190 @@
       ],
       "usage": "both"
     },
+    "ManagedAIModel": {
+      "document": "托管型AI 模型信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名</p>",
+          "example": "hy3-preview",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启MCP</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableMCP",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型规格</p>",
+          "example": "无",
+          "member": "ManagedAIModelSpec",
+          "name": "ModelSpec",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型计费信息</p>",
+          "example": "无",
+          "member": "ManagedAIModelChargingInfo",
+          "name": "ModelChargingInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ManagedAIModelChargingInfo": {
+      "document": "托管 AI 模型计费信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>计费类型</p><p>枚举值：</p><ul><li>Uniform： 固定计费</li><li>Tiered： 分段计费</li></ul>",
+          "example": "Uniform",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分组名称</p>",
+          "example": "0-16k",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入 Token 价格</p>",
+          "example": "1.2",
+          "member": "string",
+          "name": "InputPrice",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出 Token 价格</p>",
+          "example": "4",
+          "member": "string",
+          "name": "OutputPrice",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中缓存价格</p>",
+          "example": "0.4",
+          "member": "string",
+          "name": "CachePrice",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费单位</p>",
+          "example": "千tokens",
+          "member": "string",
+          "name": "InputOutputUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ManagedAIModelGroup": {
+      "document": "云开发内置 AI 模型信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型分组</p>",
+          "example": "cloudbase",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ManagedAIModel",
+          "name": "Models",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "腾讯云开发",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ManagedAIModelSpec": {
+      "document": "托管 AI 模型参数规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>最大输入 Token</p>",
+          "example": "192k",
+          "member": "string",
+          "name": "MaxInputToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大输出 Token</p>",
+          "example": "32k",
+          "member": "string",
+          "name": "MaxOutputToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上下文长度</p>",
+          "example": "128k",
+          "member": "string",
+          "name": "ContextLength",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MessageLocalized": {
       "document": "多语言文字，在 Locale 中 展示的 Message",
       "members": [
@@ -7239,6 +8787,256 @@
         }
       ],
       "usage": "in"
+    },
+    "MigrationConflict": {
+      "document": "migration 执行计划冲突项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>migration 版本号</p><p>参数格式：纯数字，14位时间格式</p>",
+          "example": "20260526000000",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration 版本名</p><p>参数格式：仅允许小写字母和下划线</p>",
+          "example": "test_init",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库已应用migration的版本名</p><p>参数格式：仅允许小写字母和下划线</p>",
+          "example": "test_init",
+          "member": "string",
+          "name": "RemoteName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次sql计算出来的checksum</p>",
+          "example": "73d9e386409264d3e7291e093d347f4019b80a94540e58f4149511881cfd3e5f",
+          "member": "string",
+          "name": "LocalChecksum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已应用的migration，数据库存储的checksum</p>",
+          "example": "eeaf0dd9391ba7829bd12b47482fab4a0e031a040f00cfb6eafc5c23b9fcf791",
+          "member": "string",
+          "name": "RemoteChecksum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>归入该分组的原因</p>",
+          "example": "checksum_mismatch",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>冲突信息</p>",
+          "example": "migration 20260526000000 has already been applied with different checksum",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MigrationInput": {
+      "document": "结构化 SQL migration 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>migration 版本号</p><p>参数格式：纯数字，14位时间格式</p>",
+          "example": "20260526000000",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration 版本名</p><p>入参限制：仅允许小写字母和下划线</p>",
+          "example": "test_init",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration 应用 sql 语句</p>",
+          "example": "CREATE TABLE IF NOT EXISTS public.test ( version BIGINT PRIMARY KEY, name TEXT NOT NULL);",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration 回滚 sql 语句</p>",
+          "example": "DROP TABLE IF EXISTS public.test;",
+          "member": "string",
+          "name": "Rollback",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "MigrationPlanItem": {
+      "document": "migration 执行计划",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>migration 版本号</p><p>参数格式：纯数字，14位时间格式</p>",
+          "example": "20260526000000",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration 版本名</p><p>参数格式：仅允许小写字母和下划线</p>",
+          "example": "test_init",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration query sql checksum</p><p>服务端自动生成，同版本不同checksum会拒绝执行</p>",
+          "example": "eeaf0dd9391ba7829bd12b47482fab4a0e031a040f00cfb6eafc5c23b9fcf791",
+          "member": "string",
+          "name": "Checksum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>applied： 已应用</li><li>pending： 待执行</li></ul>",
+          "example": "applied",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标记请求来源</p>",
+          "example": "cli",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>被归入该分组的原因，比如not_applied、checksum_matched</p>",
+          "example": "checksum_matched",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MigrationSummary": {
+      "document": "migration 列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>migration 版本号</p><p>参数格式：纯数字，14位时间格式</p>",
+          "example": "20260526000000",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration 版本名</p><p>参数格式：仅允许小写字母和下划线</p>",
+          "example": "test_init",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration query sql 语句checksum</p><p>服务端自动生成，同版本不同checksum会拒绝执行</p>",
+          "example": "eeaf0dd9391ba7829bd12b47482fab4a0e031a040f00cfb6eafc5c23b9fcf791",
+          "member": "string",
+          "name": "Checksum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用时间</p>",
+          "example": "2026-05-26T11:34:19+08:00",
+          "member": "string",
+          "name": "AppliedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求来源</p>",
+          "example": "cloudapi",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration 创建时间</p>",
+          "example": "100019231666",
+          "member": "string",
+          "name": "CreatedBy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ModifyClientRequest": {
       "document": "ModifyClient请求参数结构体",
@@ -7735,6 +9533,95 @@
       ],
       "type": "object"
     },
+    "ModifyResourcePermissionRequest": {
+      "document": "ModifyResourcePermission请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境 ID",
+          "example": "**test-1gahsf0*********",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型：`function`-云函数、`storage`-云存储、`table`-SQL型数据库表、`collection`-文档型数据库表。",
+          "example": "table",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限级别。可选值：- SQL型数据库表：`READONLY`-读取全部数据，修改本人数据；`PRIVATE`-读取和修改本人数据；`ADMINWRITE`-读取全部数据，不可修改数据；`ADMINONLY`-无权限 。- 文档型数据库表：`READONLY`-读取全部数据，修改本人数据；`PRIVATE`-读取和修改本人数据；`ADMINWRITE`-读取全部数据，不可修改数据；`ADMINONLY`-无权限；`CUSTOM`-自定义安全规则 。- 云函数：`CUSTOM`-自定义安全规则 。- 云存储（权限标签）：`READONLY`-所有用户可读，仅创建者和管理员可写；`PRIVATE`-仅创建者及管理员可读写；`ADMINWRITE`-所有用户可读，仅管理员可写；`ADMINONLY`-仅管理员可读写；`CUSTOM`-自定义安全规则。",
+          "example": "READONLY",
+          "member": "string",
+          "name": "Permission",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源标识。云函数可不传、云存储传存储桶名、数据库表传表名。",
+          "example": "users",
+          "member": "string",
+          "name": "Resource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义安全规则配置，当Permission为 `CUSTOM`时必传。JSON字符串格式的规则表达式。配置参考：[云函数安全规则](https://docs.cloudbase.net/cloud-function/security-rules)、[云存储安全规则](https://docs.cloudbase.net/storage/security-rules)、[文档型数据库安全规则](https://docs.cloudbase.net/database/security-rules)。",
+          "example": "{\"read\":\"doc._openid == auth.uid\",\"write\":\"doc._openid == auth.uid\"}",
+          "member": "string",
+          "name": "SecurityRule",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourcePermissionResponse": {
+      "document": "ModifyResourcePermission返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改结果",
+          "example": "无",
+          "member": "ModifyResourcePermissionResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourcePermissionResult": {
+      "document": "修改资源基础权限结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Success",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifySafeRuleRequest": {
       "document": "ModifySafeRule请求参数结构体",
       "members": [
@@ -7779,6 +9666,42 @@
     },
     "ModifySafeRuleResponse": {
       "document": "ModifySafeRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStorageSourceRequest": {
+      "document": "ModifyStorageSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "cloudbase-0gx36sm8ddc58be0",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储源",
+          "example": "无",
+          "member": "ExternalStorage",
+          "name": "StorageConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStorageSourceResponse": {
+      "document": "ModifyStorageSource返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8340,6 +10263,152 @@
       ],
       "usage": "in"
     },
+    "PostgreSQLInfo": {
+      "document": "PostgreSQL资源信息结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据库名称</p>",
+          "example": "postgres",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "postgres-176pdmhs",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库引擎版本</p>",
+          "example": "17.6",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PreviewPGUserMigrationsRequest": {
+      "document": "PreviewPGUserMigrations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云开发环境ID</p>",
+          "example": "pg-ethan06-d9gzgavrt1f14772b",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预览要执行的migration 列表</p>",
+          "example": "无",
+          "member": "MigrationInput",
+          "name": "Migrations",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标记请求来源</p>",
+          "example": "cli",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PreviewPGUserMigrationsResponse": {
+      "document": "PreviewPGUserMigrations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>将要执行的migration列表</p>",
+          "example": "无",
+          "member": "MigrationPlanItem",
+          "name": "Pending",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已经应用的migration列表</p>",
+          "example": "无",
+          "member": "MigrationPlanItem",
+          "name": "Applied",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本相同但 checksum 不一致冲突的migration列表</p>",
+          "example": "无",
+          "member": "MigrationConflict",
+          "name": "Conflicts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否可直接执行；当前仅表示没有 checksum 冲突</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Executable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Provider": {
       "document": "身份源配置信息。描述云开发环境下用户登录身份源的完整配置，定义了用户通过何种方式进入系统并完成身份认证。支持多种类型：包括标准协议身份源（OAuth 2.0、OIDC、SAML 2.0）、内置身份源（邮箱登录、自定义登录）以及通过插件机制扩展的身份源（如 CAS）。每个身份源包含认证配置、启用状态、用户自动注册策略、信息透传模式等核心属性，是登录认证流程的核心数据结构。",
       "members": [
@@ -8881,23 +10950,105 @@
       ],
       "usage": "both"
     },
-    "ReinstateEnvRequest": {
-      "document": "ReinstateEnv请求参数结构体",
+    "PushPGUserMigrationsRequest": {
+      "document": "PushPGUserMigrations请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "环境ID",
-          "example": "env-xxyyzzaa",
+          "document": "<p>云开发环境ID</p>",
+          "example": "pg-ethan06-d9gzgavrt1f14772b",
           "member": "string",
           "name": "EnvId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结构化 SQL migration 列表；每项包含 Query SQL 内容</p>",
+          "example": "无",
+          "member": "MigrationInput",
+          "name": "Migrations",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>等待获取数据库锁的最长时间</p><p>单位：毫秒</p><p>默认值：5000</p>",
+          "example": "5000",
+          "member": "int64",
+          "name": "LockTimeoutMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单条 SQL 执行最长时间，超过后由 PostgreSQL 取消该语句</p><p>单位：毫秒</p><p>默认值：300000</p>",
+          "example": "300000",
+          "member": "int64",
+          "name": "StatementTimeoutMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标记请求来源</p>",
+          "example": "cloudapi",
+          "member": "string",
+          "name": "Source",
+          "required": false,
           "type": "string"
         }
       ],
       "type": "object"
     },
-    "ReinstateEnvResponse": {
-      "document": "ReinstateEnv返回参数结构体",
+    "PushPGUserMigrationsResponse": {
+      "document": "PushPGUserMigrations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p><p>可通过DescribeTaskResult 接口查询进度</p>",
+          "example": "task-1ef06db7",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseEnvRequest": {
+      "document": "ReleaseEnv请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "*******d2g0eh0ey8e8c1001",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分配请求ID</p>",
+          "example": "all******",
+          "member": "string",
+          "name": "AllocateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseEnvResponse": {
+      "document": "ReleaseEnv返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8944,6 +11095,231 @@
     "RenewEnvResponse": {
       "document": "RenewEnv返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RepairPGUserMigrationHistoryRequest": {
+      "document": "RepairPGUserMigrationHistory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云开发环境ID</p>",
+          "example": "pg-ethan06-d9gzgavrt1f14772b",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration版本</p><p>参数格式：14位时间格式</p><p>入参限制：纯数字</p>",
+          "example": "20260526000000",
+          "member": "string",
+          "name": "MigrationVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>migration 版本名</p><p>入参限制：限制小写字母和下划线</p>",
+          "example": "test_init",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>applied： 已应用</li><li>reverted： 表示删除 history 记录</li></ul>",
+          "example": "applied",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修复原因</p>",
+          "example": "手动执行",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>applied的时候填写，记录应用的sql语句</p>",
+          "example": "CREATE TABLE IF NOT EXISTS public.test ( version BIGINT PRIMARY KEY, name TEXT NOT NULL);",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RepairPGUserMigrationHistoryResponse": {
+      "document": "RepairPGUserMigrationHistory返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResourcePermission": {
+      "document": "资源权限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型。",
+          "example": "table",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源标识",
+          "example": "org",
+          "member": "string",
+          "name": "Resource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限级别。取值：READONLY、PRIVATE、ADMINWRITE、ADMINONLY、CUSTOM。",
+          "example": "ADMINONLY",
+          "member": "string",
+          "name": "Permission",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义安全规则配置，当 Permission 为 CUSTOM 时返回。",
+          "example": "{\n    \"*\": {\n        \"invoke\": true    }\n}",
+          "member": "string",
+          "name": "SecurityRule",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RollbackPGUserMigrationsRequest": {
+      "document": "RollbackPGUserMigrations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云开发环境ID</p>",
+          "example": "pg-ethan06-d9gzgavrt1f14772b",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要回滚的条数</p><p>按照逆序回滚最近N条migration</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "LastN",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>等待获取数据库锁的最长时间</p><p>单位：毫秒</p><p>默认值：5000</p>",
+          "example": "5000",
+          "member": "int64",
+          "name": "LockTimeoutMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单条 SQL 执行最长时间，超过后由 PostgreSQL 取消该语句</p><p>单位：毫秒</p><p>默认值：300000</p>",
+          "example": "300000",
+          "member": "int64",
+          "name": "StatementTimeoutMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标记API调用来源</p>",
+          "example": "cli",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollbackPGUserMigrationsResponse": {
+      "document": "RollbackPGUserMigrations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p><p>可通过DescribeTaskResult 接口查询进度</p>",
+          "example": "task-d9fd1d51",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已成功回滚并删除 history 的 migration</p>",
+          "example": "无",
+          "member": "MigrationSummary",
+          "name": "RolledBack",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>未提供 Rollback SQL、视为成功并删除 history 的 migration</p>",
+          "example": "无",
+          "member": "MigrationSummary",
+          "name": "SkippedRollbackSql",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行 Rollback SQL 失败的 migration，可为空</p>",
+          "example": "无",
+          "member": "MigrationSummary",
+          "name": "Failed",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -9101,6 +11477,128 @@
       ],
       "type": "object"
     },
+    "SMSProviderTemplateConfig": {
+      "document": "自定义短信服务商模板配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>短信服务商类型</p><p>枚举值：</p><ul><li>TENCENT_CN： 腾讯云国内短信</li><li>TENCENT_INTL： 腾讯云国际短信</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TENCENT_CN",
+          "member": "string",
+          "name": "Vendor",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>短信服务商侧申请并审核通过的模板ID。</p><ul><li>腾讯云短信模板ID可前往 <a href=\"https://console.cloud.tencent.com/smsv2/csms-template\">腾讯云国内短信</a> 或 <a href=\"https://console.cloud.tencent.com/smsv2/isms-template\">国际/港澳台短信</a> 的正文模板管理查看，若向境外手机号发送短信，仅支持使用国际/港澳台短信模板。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>短信服务商侧为应用分配的ID，按照服务商文档和要求需要此参数的，填写该参数。</p><ul><li>腾讯云国内短信和国际短信此参数必填，可以在<a href=\"https://console.cloud.tencent.com/smsv2/app-manage\">短信控制台</a>的应用列表中查看对应的应用id。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SdkAppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>短信服务商侧申请并审核通过的签名，按照服务商的文档和要求填写。</p><ul><li>腾讯云短信服务商，签名信息可前往 <a href=\"https://console.cloud.tencent.com/smsv2/csms-sign\">国内短信</a> 或 <a href=\"https://console.cloud.tencent.com/smsv2/isms-sign\">国际/港澳台短信</a> 的签名管理查看。<br> 注意：<ol><li>发送国内短信该参数必填，且需填写签名内容而非签名ID。</li><li>发送国际/港澳台短信该参数非必填。</li></ol></li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "签名",
+          "member": "string",
+          "name": "SignName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用短信服务商发送短信接口的调用秘钥对应的ID。</p><ul><li>调用api秘钥会保存在云开发平台控制台—扩展功能—授权管理中，如果对于短信调用的api秘钥有删除需求，可在此处进行删除，删除后，短信将无法正常发送。</li><li>腾讯云的调用api秘钥在腾讯云控制台获取，建议使用子账号的秘钥ID，并且按照最小权限配置。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SecretId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用短信服务商发送短信接口的调用api秘钥对应的秘钥Key。</p><ul><li>腾讯云的调用api秘钥在腾讯云控制台获取，建议使用子账号的秘钥ID, 并且按照最小权限配置。平台对于调用api秘钥key是加密存储的，不会明文存储。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>短信服务商侧自定义短信发送的senderID，按照服务商文档和要求传参。</p><ul><li>仅国际化场景使用。部分国家/运营商支持自定义 Sender ID替代默认主叫号码。国内站点忽略此字段。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SenderId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当短信自定义模板含多个占位符时，平台只负责生成验证码值，其余占位符由调用方在此提供。</p><ul><li>无需提供验证码对应的占位的值，验证码由云开发平台侧生成。</li><li>如果是命名占位的服务商的短信模板，这里的参数按照需要对应的占位的key和value，会按照对应的key和value在发送短信时，填充到模板中。</li><li>如果是序号占位的服务商的短信模板，这里的参数不需要key, 只需要填写对应的value, 会按照填写的顺序依次填充到模板中。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SMSTemplateParams",
+          "name": "TemplateExtendParam",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SMSTemplateParams": {
+      "document": "自定义短信模板中的自定义参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>短信模板的自定义参数的key。如果短信厂商的自定义参数按照命名占位的，才需要此参数；如果按照序号占位的， 不需要此参数。</p><p>腾讯云短信是按照序号占位的，不需要此参数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "extendKey",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>短信模板的自定义参数对应的value</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "extendValue",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SearchClsLogRequest": {
       "document": "SearchClsLog请求参数结构体",
       "members": [
@@ -9206,7 +11704,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "静态CDN域名",
+          "document": "<p>静态CDN域名</p>",
           "example": "cloudbase.cloudbaseapp.com",
           "member": "string",
           "name": "StaticDomain",
@@ -9216,7 +11714,7 @@
         },
         {
           "disabled": false,
-          "document": "静态CDN默认文件夹，当前为根目录",
+          "document": "<p>静态CDN默认文件夹，当前为根目录</p>",
           "example": "\"/\"",
           "member": "string",
           "name": "DefaultDirName",
@@ -9226,7 +11724,7 @@
         },
         {
           "disabled": false,
-          "document": "资源状态(process/online/offline/init)",
+          "document": "<p>资源状态(process/online/offline/init)</p>",
           "example": "online",
           "member": "string",
           "name": "Status",
@@ -9236,7 +11734,7 @@
         },
         {
           "disabled": false,
-          "document": "cos所属区域",
+          "document": "<p>cos所属区域</p>",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
@@ -9246,12 +11744,32 @@
         },
         {
           "disabled": false,
-          "document": "bucket信息",
+          "document": "<p>bucket信息</p>",
           "example": "my-bucket-name-appid",
           "member": "string",
           "name": "Bucket",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>到期时间（秒级时间戳）</p>",
+          "example": "12745980357",
+          "member": "int64",
+          "name": "AccessExpire",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外部存储。</p>",
+          "example": "无",
+          "member": "ExternalStorage",
+          "name": "ExternalStorage",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -9328,7 +11846,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源所属地域。\n当前支持ap-shanghai",
+          "document": "<p>资源所属地域。<br>当前支持ap-shanghai</p>",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
@@ -9338,7 +11856,7 @@
         },
         {
           "disabled": false,
-          "document": "桶名，存储资源的唯一标识",
+          "document": "<p>桶名，存储资源的唯一标识</p>",
           "example": "my-bucket-name-appid",
           "member": "string",
           "name": "Bucket",
@@ -9348,7 +11866,7 @@
         },
         {
           "disabled": false,
-          "document": "cdn 域名",
+          "document": "<p>cdn 域名</p>",
           "example": "cloudbase.tencentcloud.com",
           "member": "string",
           "name": "CdnDomain",
@@ -9358,12 +11876,22 @@
         },
         {
           "disabled": false,
-          "document": "资源所属用户的腾讯云appId",
+          "document": "<p>资源所属用户的腾讯云appId</p>",
           "example": "1265124512",
           "member": "string",
           "name": "AppId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外部存储介质相关信息。</p>",
+          "example": "无",
+          "member": "ExternalStorage",
+          "name": "ExternalStorage",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -9489,6 +12017,124 @@
         }
       ],
       "usage": "both"
+    },
+    "UnbindStorageSourceRequest": {
+      "document": "UnbindStorageSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "cloudbase-0gx36sm8ddc58be0",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindStorageSourceResponse": {
+      "document": "UnbindStorageSource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAIModelRequest": {
+      "document": "UpdateAIModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境id</p>",
+          "example": "envid-dhjkashdjka",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分组名</p>",
+          "example": "tencent-huanyuan",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型地址</p><p>枚举值：</p><ul><li>http://default.tcb： 默认模型地址，custom模型切换为builtin模型时使用</li></ul>",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "BaseUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名列表</p><p>Models 列表更新采用全量替换</p>",
+          "example": "无",
+          "member": "AIModel",
+          "name": "Models",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "正式模型",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型状态, 1: 开启, 2: 关闭</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型密钥</p>",
+          "example": "无",
+          "member": "AIModelSecret",
+          "name": "Secret",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAIModelResponse": {
+      "document": "UpdateAIModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>更新数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateTableRequest": {
       "document": "UpdateTable请求参数结构体",
@@ -9838,11 +12484,11 @@
       "usage": "out"
     },
     "VerificationConfig": {
-      "document": "登录短信验证码发送配置。用于管理登录时使用的短信验证码发送的通道相关设置，目前提供云开发默认短信包和客户自定义短信包，推荐使用云开发默认短信包。\n如果使用自定义APIs发送短信，方法命名规则\n方法名称：发送验证码\n方法标识：SendVerificationCode\n入参\nMobile：字符串（手机号，如：“+86 + 手机号”）\nVerificationCode：字符串（验证码，如：“123456”）\n返回值\nErrorCode：int（0 表示成功，非 0 表示失败）\nErrorMessage：字符串（ErrorCode 非 0 时，返回错误信息）",
+      "document": "登录短信验证码发送配置。用于管理登录时使用的短信验证码发送的通道相关设置，目前提供云开发默认短信包和客户自定义短信包，自定义短信包可以通过自定义apis或者自定义短信模板的方式接入，推荐使用云开发默认短信包，方便快捷。\n- 如果使用自定义APIs发送短信，方法命名规则\n方法名称：发送验证码\n方法标识：SendVerificationCode\n入参\nMobile：字符串（手机号，如：“+86 + 手机号”）\nVerificationCode：字符串（验证码，如：“123456”）\n返回值\nErrorCode：int（0 表示成功，非 0 表示失败）\nErrorMessage：字符串（ErrorCode 非 0 时，返回错误信息）\n- 如果使用自定义短信模板发送短信时，需要按照对应的短信服务商的要求，申请并审核通过对应的短信模板后，在云开发平台配置自定义短信模板，云开发平台对于短信模板不会做其他操作和限制，只做短信发送的逻辑，其他的操作限制都由短信服务商自身提供。",
       "members": [
         {
           "disabled": false,
-          "document": "短信验证码发送通道类型。取值范围：\ndefault：使用默认云开发短信包发送短信。\napis：使用云开发自定义 APIs 作为短信发送通道，需配合 Name 和 Method 参数使用。\n不传则不修改当前配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>短信验证码发送通道类型。</p><p>枚举值：</p><ul><li>default： 使用默认云开发短信包发送短信</li><li>apis： 使用云开发自定义 APIs 作为短信发送通道，需配合 Name 和 Method 参数使用。不传则不修改当前配置。</li><li>template： 自定义短信模板配置，需要配置TemplateProvider</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "apis",
           "member": "string",
           "name": "Type",
@@ -9853,7 +12499,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义 APIs 数据源唯一标识，当 Type 为 apis 时必填。用于定位微搭 APIs 中对应的数据源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义 APIs 数据源唯一标识，当 Type 为 apis 时必填。用于定位微搭 APIs 中对应的数据源。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "method_53978f9f96a35",
           "member": "string",
           "name": "Name",
@@ -9864,7 +12510,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义 APIs 方法名，当 Type 为 apis 时必填。指定微搭 APIs 中用于发送验证码的方法。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义 APIs 方法名，当 Type 为 apis 时必填。指定微搭 APIs 中用于发送验证码的方法。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SendVerificationCode",
           "member": "string",
           "name": "Method",
@@ -9875,13 +12521,24 @@
         },
         {
           "disabled": false,
-          "document": "单个手机号每日短信发送上限。默认值为 30，传 -1 表示不限制，如果设置为不限制，需要注意恶意攻击，导致短信套餐用量计费问题。仅支持正整数或 -1。不传则不修改当前配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单个手机号每日短信发送上限。默认值为 30，传 -1 表示不限制，如果设置为不限制，需要注意恶意攻击，导致短信套餐用量计费问题。仅支持正整数或 -1。不传则不修改当前配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "int64",
           "name": "SmsDayLimit",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义短信服务商模板配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SMSProviderTemplateConfig",
+          "name": "TemplateProvider",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

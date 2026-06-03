@@ -24,6 +24,14 @@
         "title": "关闭数据库账号的cam验证"
       }
     ],
+    "CloseAuditService": [
+      {
+        "document": "关闭审计日志",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseAuditService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"postgres-nqg1hcnj\",\n    \"Product\": \"postgres\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"97e71166-704f-4ef1-8b7e-e84edfe99532\"\n    }\n}",
+        "title": "关闭审计日志"
+      }
+    ],
     "CloseDBExtranetAccess": [
       {
         "document": "关闭实例postgres-apzvwncr外网。",
@@ -44,6 +52,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccount\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5cz25tr5\",\n    \"UserName\": \"user_Super\",\n    \"Password\": \"Test_password1\",\n    \"Type\": \"tencentDBSuper\",\n    \"Remark\": \"超级用户\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fad9ac43-c906-4494-bbb5-88d154d2829c\"\n    }\n}",
         "title": "创建数据库超级账号"
+      }
+    ],
+    "CreateAuditLogFile": [
+      {
+        "document": "创建审计日志文件",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditLogFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"postgres-nqg1hcnj\",\n    \"StartTime\": \"2026-03-25 00:00:00\",\n    \"EndTime\": \"2026-03-25 01:00:00\",\n    \"Product\": \"postgres\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"56707f2b-f311-4448-97bf-8c6323072aef\"\n    }\n}",
+        "title": "创建审计日志文件"
       }
     ],
     "CreateBackupPlan": [
@@ -150,6 +166,14 @@
         "title": "删除数据库账号"
       }
     ],
+    "DeleteAuditLogFile": [
+      {
+        "document": "删除审计日志文件",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuditLogFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"postgres-nqg1hcnj\",\n    \"Product\": \"postgres\",\n    \"FileName\": \"1253431691_postgres-nqg1hcnj_1774420264_151841011.csv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21d1eaaa-32cc-46ee-8568-eef4f615d559\"\n    }\n}",
+        "title": "删除审计日志文件"
+      }
+    ],
     "DeleteBackupPlan": [
       {
         "document": "",
@@ -240,6 +264,30 @@
         "title": "获取实例postgres-hpe52jnz的账户列表"
       }
     ],
+    "DescribeAuditInstanceList": [
+      {
+        "document": "查询审计实例列表",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditInstanceList\n<公共请求参数>\n\n{\n    \"Product\": \"postgres\",\n    \"AuditSwitch\": 0,\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"60b1c1b9-dd93-46d0-b4de-83af5d5d00c5\"\n    }\n}",
+        "title": "查询审计实例列表"
+      }
+    ],
+    "DescribeAuditLogFiles": [
+      {
+        "document": "查询审计日志文件",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLogFiles\n<公共请求参数>\n\n{\n    \"InstanceId\": \"postgres-nqg1hcnj\",\n    \"Product\": \"postgres\",\n    \"FileName\": \"postgres-2pxzpfux_20260325-113149_to_20260325-143149_1774420313536.tar.gz\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"c992db09-0146-4313-9473-531783e280bb\"\n    }\n}",
+        "title": "查询审计日志文件"
+      }
+    ],
+    "DescribeAuditLogs": [
+      {
+        "document": "查询日志",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"postgres-loe5jryf\",\n    \"StartTime\": \"2026-04-15 22:42:59\",\n    \"EndTime\": \"2026-04-15 23:42:59\",\n    \"Limit\": 1,\n    \"Product\": \"postgres\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"49ad95cb-26ed-451a-94ea-7b0f06c1817a\"\n    }\n}",
+        "title": "查询日志"
+      }
+    ],
     "DescribeAvailableRecoveryTime": [
       {
         "document": "",
@@ -328,10 +376,10 @@
     ],
     "DescribeDBErrlogs": [
       {
-        "document": "获取指定时间范围内实例的错误日志。",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBErrlogs\n<公共请求参数>\n\n{\n    \"EndTime\": \"2018-06-11 17:06:38\",\n    \"DBInstanceId\": \"postgres-apzvwncr\",\n    \"StartTime\": \"2018-06-10 17:06:38\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"RequestId\": \"061bdcc0-6845-431a-a85e-ff591a352760\",\n        \"Details\": [\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:22:52\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:22:52\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:09\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:10\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:10\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:11\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:11\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:29\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"root\",\n                \"ErrTime\": \"2018-06-22 15:25:01\",\n                \"ErrMsg\": \"ERROR:  canceling autovacuum task CONTEXT:  automatic analyze of table \\\"dee.public.orders\\\" \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"root\",\n                \"ErrTime\": \"2018-06-22 15:25:10\",\n                \"ErrMsg\": \"ERROR:  canceling autovacuum task CONTEXT:  automatic analyze of table \\\"dee.public.partsupp\\\" \",\n                \"Database\": \"dee\"\n            }\n        ]\n    }\n}",
-        "title": "获取错误日志"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBErrlogs\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-nykju5pj\",\n    \"StartTime\": \"2026-04-15 17:54:50\",\n    \"EndTime\": \"2026-04-17 17:54:50\",\n    \"LogFilters\": [\n        {\n            \"Type\": \"ApplicationName\",\n            \"Compare\": \"INC\",\n            \"Value\": [\n                \"slow_log_test\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"ApplicationName\": \"slow_log_test\",\n                \"ClientAddr\": \"10.15.255.3:59834\",\n                \"Database\": \"postgres\",\n                \"ErrMsg\": \"canceling statement due to user request,,,,0,,SET application_name='slow_log_test'; select pg_sleep(3);\",\n                \"ErrTime\": \"2026-04-17 11:00:38\",\n                \"ProcessId\": 58892,\n                \"SessionId\": \"69e1a253.e60c\",\n                \"SessionStartTime\": \"2026-04-17 11:00:35\",\n                \"SqlStateCode\": \"57014\",\n                \"UserName\": \"root\",\n                \"VirtualTransactionId\": \"1125/307\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fd225dcd-1f80-4db7-bd28-577a498631a7\"\n    }\n}",
+        "title": "查询错误日志"
       }
     ],
     "DescribeDBInstanceAttribute": [
@@ -686,6 +734,14 @@
         "title": "修改账号备注"
       }
     ],
+    "ModifyAuditService": [
+      {
+        "document": "修改审计",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuditService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"postgres-nqg1hcnj\",\n    \"LogExpireDay\": 7,\n    \"HotLogExpireDay\": 7,\n    \"AuditType\": \"complex\",\n    \"Product\": \"postgres\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ddc6e275-dac8-42d3-a64d-b51c01e0d6e1\"\n    }\n}",
+        "title": "修改审计"
+      }
+    ],
     "ModifyBackupDownloadRestriction": [
       {
         "document": " 修改备份下载限制",
@@ -894,6 +950,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenAccountCAM\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-r95q23pn\",\n    \"UserName\": \"root\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c5791ea-6345-48d8-8f2e-fc637ad32543\"\n    }\n}",
         "title": "为数据库账号开启CAM验证"
+      }
+    ],
+    "OpenAuditService": [
+      {
+        "document": "开启审计日志",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenAuditService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"postgres-nqg1hcnj\",\n    \"LogExpireDay\": 7,\n    \"HotLogExpireDay\": 7,\n    \"AuditType\": \"complex\",\n    \"Product\": \"postgres\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3fcc8953-2d5e-4f76-9fcc-84272af76d89\"\n    }\n}",
+        "title": "开启审计日志"
       }
     ],
     "OpenDBExtranetAccess": [

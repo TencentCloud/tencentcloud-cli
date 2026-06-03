@@ -1,6 +1,6 @@
-**Example 1: 查看开启第三方节点池配置信息**
+**Example 1: 查看开启注册节点池配置信息**
 
-
+查看开启注册节点池配置信息
 
 Input: 
 
@@ -15,7 +15,7 @@ Output:
     "Response": {
         "RequestId": "4c6c63c7-b23e-4896-bf3b-6bc44d",
         "ClusterCIDR": "172.22.0.0/16",
-        "NetworkType": "CiliumVXLan",
+        "NetworkType": "CiliumOverlay",
         "SubnetId": "subnet-e55paxnt",
         "Enabled": true,
         "AS": "1001",

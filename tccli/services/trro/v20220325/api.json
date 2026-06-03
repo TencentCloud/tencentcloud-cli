@@ -896,12 +896,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "会话ID",
-          "example": "f3glr49ry0i0xlm7",
+          "document": "<p>会话ID</p>",
+          "example": "c52cc0cc-3663-467b-a6d1-2f01d20ad7ae-1",
           "member": "string",
           "name": "SessionId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询指标开始时间</p><p>单位：秒</p>",
+          "example": "1731399569",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询指标结束时间</p><p>单位：秒</p>",
+          "example": "1731399627",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -911,7 +929,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "按设备区分的会话详细数据",
+          "document": "<p>按设备区分的会话详细数据</p>",
           "example": "无",
           "member": "SessionDeviceDetail",
           "name": "Details",
@@ -3086,7 +3104,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备类型：field或remote",
+          "document": "<p>设备类型：field或remote</p>",
           "example": "remote",
           "member": "string",
           "name": "DeviceType",
@@ -3096,7 +3114,7 @@
         },
         {
           "disabled": false,
-          "document": "起始点位时间，单位：秒",
+          "document": "<p>起始点位时间，单位：秒</p>",
           "example": "1650000000",
           "member": "uint64",
           "name": "StartTime",
@@ -3106,7 +3124,7 @@
         },
         {
           "disabled": false,
-          "document": "结束点位时间，单位：秒",
+          "document": "<p>结束点位时间，单位：秒</p>",
           "example": "1650000100",
           "member": "uint64",
           "name": "EndTime",
@@ -3116,7 +3134,7 @@
         },
         {
           "disabled": false,
-          "document": "会话ID",
+          "document": "<p>会话ID</p>",
           "example": "0a6b3e53-9307-4358-a5b6-76e3e4d027da-1",
           "member": "string",
           "name": "SessionId",
@@ -3126,7 +3144,7 @@
         },
         {
           "disabled": false,
-          "document": "码率，单位：kbps",
+          "document": "<p>码率，单位：kbps</p>",
           "example": "[10,20,30]",
           "member": "int64",
           "name": "Rate",
@@ -3136,7 +3154,7 @@
         },
         {
           "disabled": false,
-          "document": "帧率",
+          "document": "<p>帧率</p>",
           "example": "[10,20,30]",
           "member": "int64",
           "name": "Fps",
@@ -3146,7 +3164,7 @@
         },
         {
           "disabled": false,
-          "document": "丢包率，单位：%",
+          "document": "<p>丢包率，单位：%</p>",
           "example": "[10,20,30]",
           "member": "float",
           "name": "Lost",
@@ -3156,7 +3174,7 @@
         },
         {
           "disabled": false,
-          "document": "网络时延，单位：ms",
+          "document": "<p>网络时延，单位：ms</p>",
           "example": "[10,20,30]",
           "member": "int64",
           "name": "NetworkLatency",
@@ -3166,7 +3184,7 @@
         },
         {
           "disabled": false,
-          "document": "视频时延，单位：ms",
+          "document": "<p>视频时延，单位：ms</p>",
           "example": "[10,20,30]",
           "member": "int64",
           "name": "VideoLatency",
@@ -3176,7 +3194,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU使用率，单位：%",
+          "document": "<p>CPU使用率，单位：%</p>",
           "example": "[10,20,30]",
           "member": "float",
           "name": "CpuUsed",
@@ -3186,7 +3204,7 @@
         },
         {
           "disabled": false,
-          "document": "内存使用率，单位：%",
+          "document": "<p>内存使用率，单位：%</p>",
           "example": "[10,20,30]",
           "member": "float",
           "name": "MemUsed",
@@ -3196,7 +3214,7 @@
         },
         {
           "disabled": false,
-          "document": "时间偏移量，单位：秒",
+          "document": "<p>时间偏移量，单位：秒</p>",
           "example": "[0,2,4,6,8,10]",
           "member": "uint64",
           "name": "TimeOffset",
@@ -3206,7 +3224,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "m82k5408n675phvb",
           "member": "string",
           "name": "ProjectId",
@@ -3216,7 +3234,7 @@
         },
         {
           "disabled": false,
-          "document": "设备ID",
+          "document": "<p>设备ID</p>",
           "example": "dev1",
           "member": "string",
           "name": "DeviceId",
@@ -3226,7 +3244,7 @@
         },
         {
           "disabled": false,
-          "document": "sdk版本",
+          "document": "<p>sdk版本</p>",
           "example": "1.4.7",
           "member": "string",
           "name": "Ver",
@@ -3236,7 +3254,7 @@
         },
         {
           "disabled": false,
-          "document": "模式(p2p/server)",
+          "document": "<p>模式(p2p/server)</p>",
           "example": "server",
           "member": "string",
           "name": "SdkMode",
@@ -3246,7 +3264,7 @@
         },
         {
           "disabled": false,
-          "document": "解码耗时，单位：ms",
+          "document": "<p>解码耗时，单位：ms</p>",
           "example": "[20,20,30]",
           "member": "int64",
           "name": "DecodeCost",
@@ -3256,7 +3274,7 @@
         },
         {
           "disabled": true,
-          "document": "【已废弃，使用RenderCost】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>【已废弃，使用RenderCost】</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[20,20,30]",
           "member": "int64",
           "name": "RenderConst",
@@ -3266,7 +3284,7 @@
         },
         {
           "disabled": false,
-          "document": "卡顿k100",
+          "document": "<p>卡顿k100</p>",
           "example": "[20.12,20.25,30.16]",
           "member": "float",
           "name": "K100",
@@ -3276,7 +3294,7 @@
         },
         {
           "disabled": false,
-          "document": "卡顿k150",
+          "document": "<p>卡顿k150</p>",
           "example": "[20.12,20.25,30.16]",
           "member": "float",
           "name": "K150",
@@ -3286,7 +3304,7 @@
         },
         {
           "disabled": false,
-          "document": "nack请求数",
+          "document": "<p>nack请求数</p>",
           "example": "[0,0,0]",
           "member": "int64",
           "name": "NACK",
@@ -3296,8 +3314,8 @@
         },
         {
           "disabled": false,
-          "document": "服务端调控码率,单位：kbps",
-          "example": "3000",
+          "document": "<p>服务端调控码率,单位：kbps</p>",
+          "example": "[2000]",
           "member": "int64",
           "name": "BitRateEstimate",
           "output_required": false,
@@ -3306,7 +3324,7 @@
         },
         {
           "disabled": false,
-          "document": "宽度",
+          "document": "<p>宽度</p>",
           "example": "1280",
           "member": "int64",
           "name": "Width",
@@ -3316,7 +3334,7 @@
         },
         {
           "disabled": false,
-          "document": "高度",
+          "document": "<p>高度</p>",
           "example": "720",
           "member": "int64",
           "name": "Height",
@@ -3326,8 +3344,8 @@
         },
         {
           "disabled": false,
-          "document": "编码耗时，单位：ms",
-          "example": "[20.12,20.25,30.16]",
+          "document": "<p>编码耗时，单位：ms</p>",
+          "example": "[20,12,20,25,30,16]",
           "member": "int64",
           "name": "EncodeCost",
           "output_required": false,
@@ -3336,8 +3354,8 @@
         },
         {
           "disabled": false,
-          "document": "采集耗时，单位：ms",
-          "example": "[20.12,20.25,30.16]",
+          "document": "<p>采集耗时，单位：ms</p>",
+          "example": "[20,12,20,25,30,16]",
           "member": "int64",
           "name": "CaptureCost",
           "output_required": false,
@@ -3346,7 +3364,7 @@
         },
         {
           "disabled": false,
-          "document": "渲染耗时，单位：ms",
+          "document": "<p>渲染耗时，单位：ms</p>",
           "example": "[20,20,30]",
           "member": "int64",
           "name": "RenderCost",
@@ -3356,7 +3374,7 @@
         },
         {
           "disabled": false,
-          "document": "配置宽度",
+          "document": "<p>配置宽度</p>",
           "example": "1280",
           "member": "int64",
           "name": "ConfigWidth",
@@ -3366,7 +3384,7 @@
         },
         {
           "disabled": false,
-          "document": "配置高度",
+          "document": "<p>配置高度</p>",
           "example": "720",
           "member": "int64",
           "name": "ConfigHeight",
@@ -3376,8 +3394,8 @@
         },
         {
           "disabled": false,
-          "document": "平均帧间隔",
-          "example": "[20.12,20.25,30.16]",
+          "document": "<p>平均帧间隔</p>",
+          "example": "[20,12,20,25,30,16]",
           "member": "int64",
           "name": "FrameDelta",
           "output_required": false,
@@ -3386,8 +3404,8 @@
         },
         {
           "disabled": false,
-          "document": "最大帧间隔",
-          "example": "[20.12,20.25,30.16]",
+          "document": "<p>最大帧间隔</p>",
+          "example": "[20,12,20,25,30,16]",
           "member": "int64",
           "name": "MaxFrameDelta",
           "output_required": false,
@@ -3396,8 +3414,8 @@
         },
         {
           "disabled": false,
-          "document": "总码率评估,单位：kbps",
-          "example": "[20.12,20.25,30.16]",
+          "document": "<p>总码率评估,单位：kbps</p>",
+          "example": "[20,12,20,25,30,16]",
           "member": "int64",
           "name": "TotalBitrateEstimate",
           "output_required": false,
@@ -3406,8 +3424,8 @@
         },
         {
           "disabled": false,
-          "document": "帧间隔大于100ms的卡顿时长",
-          "example": "[20.12,20.25,30.16]",
+          "document": "<p>帧间隔大于100ms的卡顿时长</p>",
+          "example": "[20,12,20,25,30,16]",
           "member": "int64",
           "name": "Lag100Duration",
           "output_required": false,
@@ -3416,8 +3434,8 @@
         },
         {
           "disabled": false,
-          "document": "帧间隔大于150ms的卡顿时长",
-          "example": "[20.12,20.25,30.16]",
+          "document": "<p>帧间隔大于150ms的卡顿时长</p>",
+          "example": "[20,12,20,25,30,16]",
           "member": "int64",
           "name": "Lag150Duration",
           "output_required": false,
@@ -3426,7 +3444,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启多网：0 单网，1 多网",
+          "document": "<p>是否开启多网：0 单网，1 多网</p>",
           "example": "0",
           "member": "int64",
           "name": "MultiMode",
@@ -3436,10 +3454,20 @@
         },
         {
           "disabled": false,
-          "document": "多网卡信息",
-          "example": "[{\"NetId\": 0, \"NetIp\": \"192.168.12.4\",\"Rtt\": [132,126],\"Lost\": [0,0],\"SendBps\": [300,847],\"RecvBps\": [202,75]},{\"NetId\": 1,\"NetIp\": \"192.168.21.2\",                         \"Rtt\": [0,0],\"Lost\": [0,1],\"SendBps\": [7,2],\"RecvBps\": [0,10]}]",
+          "document": "<p>多网卡信息</p>",
+          "example": "无",
           "member": "MultiNet",
           "name": "MultiNet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>现场设备和远端设备消息通道往返延迟</p><p>单位：毫秒ms</p>",
+          "example": "[45,49,50]",
+          "member": "int64",
+          "name": "ControlLatency",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false

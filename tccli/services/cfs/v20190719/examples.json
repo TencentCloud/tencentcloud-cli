@@ -72,6 +72,14 @@
         "title": "创建数据流动"
       }
     ],
+    "CreateDataRetrieval": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataRetrieval\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-4e5e76ff8\",\n    \"DataRetrievalName\": \"default\",\n    \"DayOfWeek\": \"3,4\",\n    \"Hour\": \"12,13\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataRetrievalId\": \"dataretrieval-1234bdbc\",\n        \"RequestId\": \"b3df3eb8-cd14-4c0a-8b8d-11a7ad082b40\"\n    }\n}",
+        "title": "创建数据检索策略"
+      }
+    ],
     "CreateLifecycleDataTask": [
       {
         "document": "",
@@ -150,6 +158,14 @@
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataFlow\n<公共请求参数>\n\n{\n    \"DataFlowId\": \"cfs-dataflow-4f827203\",\n    \"FileSystemId\": \"cfs-44d53b63e\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ea860fd-e946-41a5-9c7e-72337d5084dc\"\n    }\n}",
         "title": "删除数据流动"
+      }
+    ],
+    "DeleteDataRetrieval": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataRetrieval\n<公共请求参数>\n\n{\n    \"DataRetrievalId\": \"dataretrieval-20507000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f28168c8-8560-4e8b-8844-746cc501826f\"\n    }\n}",
+        "title": "删除数据检索策略"
       }
     ],
     "DeleteLifecyclePolicy": [
@@ -264,6 +280,22 @@
         "title": "查询数据流动"
       }
     ],
+    "DescribeDataRetrieval": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataRetrieval\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"DataRetrievals\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"c2ccc267-f806-45fd-9676-eb0c54d0f69f\"\n    }\n}",
+        "title": "查询数据检索"
+      }
+    ],
+    "DescribeDataRetrievalTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataRetrievalTask\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-03-11 11:50:42\",\n    \"EndTime\": \"2026-03-12 11:50:42\",\n    \"DataRetrievalId\": \"dataretrieval-589fa03c\",\n    \"Offset\": 0,\n    \"Limit\": 8\n}",
+        "output": "{\n    \"Response\": {\n        \"DataRetrievalTasks\": [\n            {\n                \"CompoundCondition\": \"from entries|where size &gt;4096\",\n                \"CreateTime\": \"2026-03-12 11:05:15\",\n                \"DataRetrievalId\": \"dataretrieval-589fa03c\",\n                \"DataRetrievalTaskID\": \"dataretrievaltask-d54f5d2c\",\n                \"DirNum\": 0,\n                \"FileList\": \"\",\n                \"FileNum\": 0,\n                \"FileSystemId\": \"cfs-44b3b2f23\",\n                \"QueryCondition\": \"from entries|where size &gt;4096\",\n                \"Size\": 0,\n                \"State\": \"waiting\"\n            }\n        ],\n        \"TotalCount\": 20,\n        \"RequestId\": \"6cf33841-7379-4801-9c6b-d55be465680f\"\n    }\n}",
+        "title": "查询数据检索任务"
+      }
+    ],
     "DescribeLifecycleDataTask": [
       {
         "document": "",
@@ -328,6 +360,14 @@
         "title": "修复数据流动相关参数"
       }
     ],
+    "ModifyDataRetrieval": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDataRetrieval\n<公共请求参数>\n\n{\n    \"DataRetrievalId\": \"dataretrieval-72986e77\",\n    \"DataRetrievalName\": \"default-rule\",\n    \"CompoundCondition\": \"from entries|where size >4096\",\n    \"QueryCondition\": \"path:/cfs/abc/* AND type:file AND size:>0\",\n    \"DayOfMonth\": \"1\",\n    \"Hour\": \"12\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bebba10a-eb1f-492b-8a64-468ed48394f5\"\n    }\n}",
+        "title": "修改数据检索策略"
+      }
+    ],
     "ModifyFileSystemAutoScaleUpRule": [
       {
         "document": "更新文件系统自动扩容策略",
@@ -342,6 +382,22 @@
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLifecyclePolicy\n<公共请求参数>\n\n{\n    \"LifecyclePolicyName\": \"mypolicy-abc\",\n    \"LifecycleRules\": [\n        {\n            \"StorageType\": \"InfrequentAccess\",\n            \"Interval\": \"DEFAULT_ATIME_14\",\n            \"FileType\": \"All\",\n            \"Action\": \"Archive\",\n            \"FileMaxSize\": \"1G\",\n            \"FileMinSize\": \"1M\"\n        }\n    ],\n    \"LifecyclePolicyID\": \"policy-4cqyxcma\"\n}",
         "output": "{\n    \"Response\": {\n        \"LifecyclePolicyID\": \"policy-4cqyxcma\",\n        \"RequestId\": \"\"\n    }\n}",
         "title": "更新生命周期管理策略"
+      }
+    ],
+    "OverrideCfsRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OverrideCfsRules\n<公共请求参数>\n\n{\n    \"PermissionGroupId\": \"pgroup-12345\",\n    \"RuleList\": [\n        {\n            \"RWPermission\": \"rw\",\n            \"AuthClientIp\": \"10.1.1.10\",\n            \"UserPermission\": \"root_squash\",\n            \"Priority\": \"9\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"RuleList\": [\n            {\n                \"RuleId\": \"rule-12345\",\n                \"AuthClientIp\": \"10.1.1.100\",\n                \"RWPermission\": \"rw\",\n                \"UserPermission\": \"root_squash\",\n                \"Priority\": 7\n            }\n        ]\n    }\n}",
+        "title": "批量创建权限组规则"
+      }
+    ],
+    "RunDataRetrievalTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunDataRetrievalTask\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"DataRetrievalTaskId\": \"dataretrievaltask-cc2f42e4\",\n        \"RequestId\": \"3d6c5cf3-63b1-4e26-94d0-ef48dac81fdc\"\n    }\n}",
+        "title": "启动数据检索任务"
       }
     ],
     "ScaleUpFileSystem": [

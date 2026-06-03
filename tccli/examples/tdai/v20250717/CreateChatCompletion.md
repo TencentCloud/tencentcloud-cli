@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli tdai CreateChatCompletion --cli-unfold-argument ```
+tccli tdai CreateChatCompletion --cli-unfold-argument  \
+    --InputContent hello \
+    --InstanceId agentins-f1a2k3e4
+```
 
 Output: 
 ```

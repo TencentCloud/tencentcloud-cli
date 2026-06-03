@@ -581,6 +581,13 @@
       "output": "ModifyRecordBatchResponse",
       "status": "online"
     },
+    "ModifyRecordBatchV3": {
+      "document": "批量修改记录",
+      "input": "ModifyRecordBatchV3Request",
+      "name": "批量修改记录V3",
+      "output": "ModifyRecordBatchV3Response",
+      "status": "online"
+    },
     "ModifyRecordFields": {
       "document": "修改记录可选字段",
       "input": "ModifyRecordFieldsRequest",
@@ -2396,7 +2403,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
@@ -2405,7 +2412,7 @@
         },
         {
           "disabled": false,
-          "document": "记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。",
+          "document": "<p>记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。</p>",
           "example": "A",
           "member": "string",
           "name": "RecordType",
@@ -2414,7 +2421,7 @@
         },
         {
           "disabled": false,
-          "document": "记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，中文，比如：默认。",
+          "document": "<p>记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，中文，比如：默认。</p>",
           "example": "默认",
           "member": "string",
           "name": "RecordLine",
@@ -2423,7 +2430,7 @@
         },
         {
           "disabled": false,
-          "document": "记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。",
+          "document": "<p>记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。</p>",
           "example": "200.200.200.200",
           "member": "string",
           "name": "Value",
@@ -2432,7 +2439,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "document": "<p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。</p>",
           "example": "1923",
           "member": "uint64",
           "name": "DomainId",
@@ -2441,7 +2448,7 @@
         },
         {
           "disabled": false,
-          "document": "主机记录，如 www，如果不传，默认为 @。",
+          "document": "<p>主机记录，如 www，如果不传，默认为 @。</p>",
           "example": "admin",
           "member": "string",
           "name": "SubDomain",
@@ -2450,7 +2457,7 @@
         },
         {
           "disabled": false,
-          "document": "线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。",
+          "document": "<p>线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。</p>",
           "example": "10=1",
           "member": "string",
           "name": "RecordLineId",
@@ -2459,7 +2466,7 @@
         },
         {
           "disabled": false,
-          "document": "MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。",
+          "document": "<p>MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围0-65535。</p><p>取值范围：[0, 65535]</p>",
           "example": "10",
           "member": "uint64",
           "name": "MX",
@@ -2468,7 +2475,7 @@
         },
         {
           "disabled": false,
-          "document": "TTL，范围1-604800，不同套餐域名最小值不同。",
+          "document": "<p>TTL，范围1-604800，不同套餐域名最小值不同。</p>",
           "example": "600",
           "member": "uint64",
           "name": "TTL",
@@ -2477,7 +2484,7 @@
         },
         {
           "disabled": false,
-          "document": "权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。",
+          "document": "<p>权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Weight",
@@ -2486,7 +2493,7 @@
         },
         {
           "disabled": false,
-          "document": "记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。",
+          "document": "<p>记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。</p>",
           "example": "ENABLE",
           "member": "string",
           "name": "Status",
@@ -2495,7 +2502,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "官网主页",
           "member": "string",
           "name": "Remark",
@@ -2504,7 +2511,7 @@
         },
         {
           "disabled": false,
-          "document": "开启DNSSEC时，强制添加CNAME/URL记录",
+          "document": "<p>开启DNSSEC时，强制添加CNAME/URL记录</p>",
           "example": "force",
           "member": "string",
           "name": "DnssecConflictMode",
@@ -2513,7 +2520,7 @@
         },
         {
           "disabled": false,
-          "document": "记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。",
+          "document": "<p>记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/api/1427/83225\">DescribeRecordGroupList</a></p>",
           "example": "54543",
           "member": "uint64",
           "name": "GroupId",
@@ -2528,7 +2535,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "记录ID",
+          "document": "<p>记录ID</p>",
           "example": "162",
           "member": "uint64",
           "name": "RecordId",
@@ -8856,7 +8863,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。",
+          "document": "<p>记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/api/1427/56166\">DescribeRecordList</a></p>",
           "example": "[15736895]",
           "member": "uint64",
           "name": "RecordIdList",
@@ -8865,7 +8872,7 @@
         },
         {
           "disabled": false,
-          "document": "要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。",
+          "document": "<p>要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。</p>",
           "example": "record_type",
           "member": "string",
           "name": "Change",
@@ -8874,7 +8881,7 @@
         },
         {
           "disabled": false,
-          "document": "修改为，具体依赖 change 字段，必填参数。",
+          "document": "<p>修改为，具体依赖 change 字段，必填参数。</p>",
           "example": "MX",
           "member": "string",
           "name": "ChangeTo",
@@ -8883,7 +8890,7 @@
         },
         {
           "disabled": false,
-          "document": "要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。",
+          "document": "<p>要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。</p>",
           "example": "mail.dnspod.cn",
           "member": "string",
           "name": "Value",
@@ -8892,7 +8899,7 @@
         },
         {
           "disabled": false,
-          "document": "MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。",
+          "document": "<p>MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围0-65535。</p>",
           "example": "5",
           "member": "string",
           "name": "MX",
@@ -8907,7 +8914,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量任务ID",
+          "document": "<p>批量任务ID</p>",
           "example": "1808535",
           "member": "uint64",
           "name": "JobId",
@@ -8917,12 +8924,49 @@
         },
         {
           "disabled": false,
-          "document": "见ModifyRecordBatchDetail",
+          "document": "<p>见ModifyRecordBatchDetail</p>",
           "example": "无",
           "member": "ModifyRecordBatchDetail",
           "name": "DetailList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRecordBatchV3Request": {
+      "document": "ModifyRecordBatchV3请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要修改的记录列表",
+          "example": "无",
+          "member": "ModifyRecordItem",
+          "name": "ModifyRecordList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRecordBatchV3Response": {
+      "document": "ModifyRecordBatchV3返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量任务ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "JobId",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -9062,6 +9106,102 @@
       ],
       "type": "object"
     },
+    "ModifyRecordItem": {
+      "document": "批量修改记录入参，指定修改的记录ID和记录内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录 ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "RecordId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "主机记录",
+          "example": "www",
+          "member": "string",
+          "name": "SubDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录类型",
+          "example": "A",
+          "member": "string",
+          "name": "RecordType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录线路",
+          "example": "默认",
+          "member": "string",
+          "name": "RecordLine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录值",
+          "example": "119.29.29.29",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "解析记录状态 1：开启 0：暂停",
+          "example": "1",
+          "member": "string",
+          "name": "Enabled",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权重",
+          "example": "20",
+          "member": "uint64",
+          "name": "Weight",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "MX优先级",
+          "example": "5",
+          "member": "uint64",
+          "name": "MX",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "TTL缓存时间",
+          "example": "600",
+          "member": "uint64",
+          "name": "TTL",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "ModifyRecordRemarkRequest": {
       "document": "ModifyRecordRemark请求参数结构体",
       "members": [
@@ -9121,7 +9261,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
@@ -9130,7 +9270,7 @@
         },
         {
           "disabled": false,
-          "document": "记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。",
+          "document": "<p>记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。</p>",
           "example": "A",
           "member": "string",
           "name": "RecordType",
@@ -9139,7 +9279,7 @@
         },
         {
           "disabled": false,
-          "document": "记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息。比如：默认。",
+          "document": "<p>记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息。比如：默认。</p>",
           "example": "默认",
           "member": "string",
           "name": "RecordLine",
@@ -9148,7 +9288,7 @@
         },
         {
           "disabled": false,
-          "document": "记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。",
+          "document": "<p>记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。</p>",
           "example": "200.200.200.200",
           "member": "string",
           "name": "Value",
@@ -9157,7 +9297,7 @@
         },
         {
           "disabled": false,
-          "document": "记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId",
+          "document": "<p>记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId</p>",
           "example": "162",
           "member": "uint64",
           "name": "RecordId",
@@ -9166,7 +9306,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
+          "document": "<p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>",
           "example": "1923",
           "member": "uint64",
           "name": "DomainId",
@@ -9175,7 +9315,7 @@
         },
         {
           "disabled": false,
-          "document": "主机记录，如 www，如果不传，默认为 @。",
+          "document": "<p>主机记录，如 www，如果不传，默认为 @。</p>",
           "example": "admin",
           "member": "string",
           "name": "SubDomain",
@@ -9184,7 +9324,7 @@
         },
         {
           "disabled": false,
-          "document": "线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。",
+          "document": "<p>线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。</p>",
           "example": "10=1",
           "member": "string",
           "name": "RecordLineId",
@@ -9193,7 +9333,7 @@
         },
         {
           "disabled": false,
-          "document": "MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。",
+          "document": "<p>MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围0-65535。</p><p>取值范围：[0, 65535]</p>",
           "example": "10",
           "member": "uint64",
           "name": "MX",
@@ -9202,7 +9342,7 @@
         },
         {
           "disabled": false,
-          "document": "TTL，范围1-604800，不同等级域名最小值不同。",
+          "document": "<p>TTL，范围1-604800，不同等级域名最小值不同。</p>",
           "example": "600",
           "member": "uint64",
           "name": "TTL",
@@ -9211,7 +9351,7 @@
         },
         {
           "disabled": false,
-          "document": "权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。",
+          "document": "<p>权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Weight",
@@ -9220,7 +9360,7 @@
         },
         {
           "disabled": false,
-          "document": "记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。",
+          "document": "<p>记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。</p>",
           "example": "ENABLE",
           "member": "string",
           "name": "Status",
@@ -9229,7 +9369,7 @@
         },
         {
           "disabled": false,
-          "document": "记录的备注信息。传空删除备注。",
+          "document": "<p>记录的备注信息。传空删除备注。</p>",
           "example": "这是备注",
           "member": "string",
           "name": "Remark",
@@ -9238,7 +9378,7 @@
         },
         {
           "disabled": false,
-          "document": "开启DNSSEC时，强制将其它记录修改为CNAME/URL记录",
+          "document": "<p>开启DNSSEC时，强制将其它记录修改为CNAME/URL记录</p>",
           "example": "force",
           "member": "string",
           "name": "DnssecConflictMode",
@@ -9253,7 +9393,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "记录ID",
+          "document": "<p>记录ID</p>",
           "example": "162",
           "member": "uint64",
           "name": "RecordId",

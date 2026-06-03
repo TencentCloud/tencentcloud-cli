@@ -7,6 +7,20 @@
       "output": "CancelIsolateDBInstancesResponse",
       "status": "online"
     },
+    "CreateCloneInstance": {
+      "document": "本接口（CreateCloneInstance）提供创建克隆实例功能",
+      "input": "CreateCloneInstanceRequest",
+      "name": "创建克隆实例",
+      "output": "CreateCloneInstanceResponse",
+      "status": "online"
+    },
+    "CreateDBInstances": {
+      "document": "本接口（CreateDBInstances）提供批量创建实例功能",
+      "input": "CreateDBInstancesRequest",
+      "name": "批量创建实例",
+      "output": "CreateDBInstancesResponse",
+      "status": "online"
+    },
     "CreateDBSBackup": {
       "document": "创建实例手工备份  CreateDBSBackup",
       "input": "CreateDBSBackupRequest",
@@ -21,6 +35,20 @@
       "output": "DeleteDBSBackupSetsResponse",
       "status": "online"
     },
+    "DescribeDBInstanceDetail": {
+      "document": "本接口（DescribeDBInstanceDetail）提供查询实例详情功能",
+      "input": "DescribeDBInstanceDetailRequest",
+      "name": "查询实例详情",
+      "output": "DescribeDBInstanceDetailResponse",
+      "status": "online"
+    },
+    "DescribeDBInstances": {
+      "document": "本接口（DescribeDBInstances）提供查询实例列表功能",
+      "input": "DescribeDBInstancesRequest",
+      "name": "查询实例列表",
+      "output": "DescribeDBInstancesResponse",
+      "status": "online"
+    },
     "DescribeDBParameters": {
       "document": "本接口（DescribeDBParameters）用于获取实例的当前参数设置。",
       "input": "DescribeDBParametersRequest",
@@ -28,11 +56,46 @@
       "output": "DescribeDBParametersResponse",
       "status": "online"
     },
+    "DescribeDBSArchiveLogs": {
+      "document": "查询实例归档日志列表 DescribeDBSArchiveLogs",
+      "input": "DescribeDBSArchiveLogsRequest",
+      "name": "查询实例归档日志列表",
+      "output": "DescribeDBSArchiveLogsResponse",
+      "status": "online"
+    },
     "DescribeDBSAvailableRecoveryTime": {
       "document": "获取可恢复时间 DescribeDBSAvailableRecoveryTime",
       "input": "DescribeDBSAvailableRecoveryTimeRequest",
       "name": "获取可恢复时间",
       "output": "DescribeDBSAvailableRecoveryTimeResponse",
+      "status": "online"
+    },
+    "DescribeDBSBackupPolicy": {
+      "document": "查询实例备份策略 DescribeDBSBackupPolicy",
+      "input": "DescribeDBSBackupPolicyRequest",
+      "name": "查询实例备份策略",
+      "output": "DescribeDBSBackupPolicyResponse",
+      "status": "online"
+    },
+    "DescribeDBSBackupSets": {
+      "document": "查询实例备份集信息 DescribeDBSBackupSets",
+      "input": "DescribeDBSBackupSetsRequest",
+      "name": "查询实例备份集信息",
+      "output": "DescribeDBSBackupSetsResponse",
+      "status": "online"
+    },
+    "DescribeDBSBackupStatistics": {
+      "document": "查询实例备份空间概览 DescribeDBSBackupStatistics",
+      "input": "DescribeDBSBackupStatisticsRequest",
+      "name": "查询实例备份空间概览",
+      "output": "DescribeDBSBackupStatisticsResponse",
+      "status": "online"
+    },
+    "DescribeDBSBackupStatisticsDetail": {
+      "document": "查询备份集统计详情 DescribeDBSBackupStatisticsDetail",
+      "input": "DescribeDBSBackupStatisticsDetailRequest",
+      "name": "查询备份集统计详情",
+      "output": "DescribeDBSBackupStatisticsDetailResponse",
       "status": "online"
     },
     "DescribeDBSCloneInstances": {
@@ -56,6 +119,13 @@
       "output": "DescribeDatabaseObjectsResponse",
       "status": "online"
     },
+    "DescribeDatabases": {
+      "document": "本接口（DescribeDatabases）用于查询云数据库实例的数据库列表。",
+      "input": "DescribeDatabasesRequest",
+      "name": "查询数据库列表",
+      "output": "DescribeDatabasesResponse",
+      "status": "online"
+    },
     "DescribeFlow": {
       "document": "本接口（DescribeFlow）用于查询异步任务流程状态",
       "input": "DescribeFlowRequest",
@@ -63,11 +133,46 @@
       "output": "DescribeFlowResponse",
       "status": "online"
     },
+    "DescribeSaleInfo": {
+      "document": "本接口（DescribeSaleInfo）提供查询可用售卖地域功能",
+      "input": "DescribeSaleInfoRequest",
+      "name": "查询可用售卖地域",
+      "output": "DescribeSaleInfoResponse",
+      "status": "online"
+    },
+    "DescribeSpecs": {
+      "document": "本接口（DescribeSpecs）提供查询售卖规格功能",
+      "input": "DescribeSpecsRequest",
+      "name": "查询售卖组件规格",
+      "output": "DescribeSpecsResponse",
+      "status": "online"
+    },
+    "DescribeUserPrivileges": {
+      "document": "本接口（DescribeUserPrivileges）提供查询用户的权限功能",
+      "input": "DescribeUserPrivilegesRequest",
+      "name": "查询用户权限",
+      "output": "DescribeUserPrivilegesResponse",
+      "status": "online"
+    },
+    "DescribeUsers": {
+      "document": "本接口（DescribeUsers）提供查询用户列表功能",
+      "input": "DescribeUsersRequest",
+      "name": "查询用户列表",
+      "output": "DescribeUsersResponse",
+      "status": "online"
+    },
     "DestroyInstances": {
       "document": "本接口（DestroyInstances）提供批量销毁实例功能",
       "input": "DestroyInstancesRequest",
       "name": "批量销毁实例",
       "output": "DestroyInstancesResponse",
+      "status": "online"
+    },
+    "ExpandInstance": {
+      "document": "本接口（ExpandInstance）提供横向扩容实例功能",
+      "input": "ExpandInstanceRequest",
+      "name": "横向扩容实例",
+      "output": "ExpandInstanceResponse",
       "status": "online"
     },
     "IsolateDBInstance": {
@@ -118,6 +223,27 @@
       "name": "修改实例名称",
       "output": "ModifyInstanceNameResponse",
       "status": "online"
+    },
+    "ModifyUserPrivileges": {
+      "document": "本接口(ModifyPrivileges)修改用户权限",
+      "input": "ModifyUserPrivilegesRequest",
+      "name": "修改用户权限",
+      "output": "ModifyUserPrivilegesResponse",
+      "status": "online"
+    },
+    "RestartDBInstances": {
+      "document": "本接口（RestartDBInstances）用于重启数据库实例",
+      "input": "RestartDBInstancesRequest",
+      "name": "重启实例",
+      "output": "RestartDBInstancesResponse",
+      "status": "online"
+    },
+    "UpgradeInstance": {
+      "document": "本接口（UpgradeInstance）提供纵向扩容实例功能",
+      "input": "UpgradeInstanceRequest",
+      "name": "纵向扩容实例",
+      "output": "UpgradeInstanceResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -127,6 +253,78 @@
     "serviceShortName": "tdmysql"
   },
   "objects": {
+    "AnalysisInstanceInfo": {
+      "document": "分析引擎实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>副本数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ReplicasNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AnalysisRelationInfo": {
+      "document": "分析引擎关联关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>源实例Id</p>",
+          "example": "tdsql-12345678",
+          "member": "string",
+          "name": "PrimaryInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析引擎实例Id</p>",
+          "example": "tdsql-87654321",
+          "member": "string",
+          "name": "AnalysisInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析引擎关系状态</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>running： 运行中</li><li>destroyed： 已销毁</li></ul>",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-01-15 10:30:00",
+          "member": "string",
+          "name": "CreateAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-05-06 12:00:00",
+          "member": "string",
+          "name": "UpdateAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ArchiveLogInterval": {
       "document": "可恢复时间区间",
       "members": [
@@ -176,6 +374,222 @@
         }
       ],
       "usage": "both"
+    },
+    "ArchiveLogModel": {
+      "document": "归档日志对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "归档日志ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ArchiveLogId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份耗时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "BackupDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份集状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpiredTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份集文件大小，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FileSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AutoScalingConfig": {
+      "document": "serverless实例的ccu范围",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ccu最小值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "RangeMin",
+          "output_required": false,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>ccu最大值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16",
+          "member": "float",
+          "name": "RangeMax",
+          "output_required": false,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BackupMethodStatisticsModel": {
+      "document": "备份方式统计对象-提供给备份空间统计接口",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自动备份大小，单位Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "37748736",
+          "member": "int64",
+          "name": "AutoBackupSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总备份每天平均大小，单位Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "18874368",
+          "member": "int64",
+          "name": "AverageSizePerDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>手动备份大小，单位Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ManualBackupSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总备份大小，单位Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "37748736",
+          "member": "int64",
+          "name": "TotalSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BackupMethodStatisticsOutPut": {
+      "document": "备份方式统计对象，提供给 备份集统计详情 接口",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自动备份大小，单位Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[9437184]",
+          "member": "int64",
+          "name": "AutoBackupSize",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>手动备份大小，单位Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0]",
+          "member": "int64",
+          "name": "ManualBackupSize",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "BackupPolicyModelInput": {
       "document": "修改备份策略对象",
@@ -272,6 +686,523 @@
         }
       ],
       "usage": "in"
+    },
+    "BackupPolicyModelOutPut": {
+      "document": "备份策略对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>备份结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "04:00",
+          "member": "string",
+          "name": "BackupEndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份方式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "physical",
+          "member": "string",
+          "name": "BackupMethod",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "00:00",
+          "member": "string",
+          "name": "BackupStartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tdstore",
+          "member": "string",
+          "name": "DBType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "21.6.1",
+          "member": "string",
+          "name": "DBVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启全量备份</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableFull",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启日志备份</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableLog",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>预计下次备份时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-03-27 00:00:00 ~ 2026-03-27 04:00:00",
+          "member": "string",
+          "name": "ExpectedNextBackupPeriod",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>全备保留时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "int64",
+          "name": "FullRetentionPeriod",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3260",
+          "member": "int64",
+          "name": "ID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tdsql3-3f17e49d",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志保留天数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "int64",
+          "name": "LogRetentionPeriod",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>一周的哪几天进行备份</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0,1,2,3,4,5,6",
+          "member": "string",
+          "name": "PeriodTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份周期类型  0:Weekly</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PeriodType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BackupSetModel": {
+      "document": "备份集对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份集耗时，单位 sec\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "BackupDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupMethod",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份备注名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份集进度百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "BackupProgress",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "BackupSetId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份集状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份集类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DBVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事务commit结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTrxTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpiredTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份集文件大小，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FileSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份触发，0 - autobackup, 1 - manual\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ManualBackup",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BackupSetsReqFilter": {
+      "document": "备份集查询的filter",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>备份方式,多个值用逗号隔开</p><p>枚举值：</p><ul><li>physical： 物理备份</li><li>snapshot： 快照备份</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "physical,snapshot",
+          "member": "string",
+          "name": "BackupMethod",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份状态，多个值用逗号隔开，含义说明：等待调度pending， 运行中 running, 成功success,失败 failed</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running,success",
+          "member": "string",
+          "name": "BackupStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份类型，多个值用逗号隔开，含义说明：全量备份 full</p><p>枚举值：</p><ul><li>full： 全量备份</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "full",
+          "member": "string",
+          "name": "BackupType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份触发方式</p><p>枚举值：</p><ul><li>0： 自动备份</li><li>1： 手工备份</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0,1",
+          "member": "string",
+          "name": "ManualBackup",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BackupStatisticsModel": {
+      "document": "备份统计对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总备份每天平均大小,单位Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50508288",
+          "member": "int64",
+          "name": "AverageSizePerDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据备份大小，单位Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "37748736",
+          "member": "int64",
+          "name": "DataBackupSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志备份大小，单位Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "63267840",
+          "member": "int64",
+          "name": "LogBackupSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总备份集个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总备份大小，单位Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "101016576",
+          "member": "int64",
+          "name": "TotalSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BackupTypeStatisticsModel": {
+      "document": "备份方式统计对象，提供给 备份集统计详情 接口",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据备份大小，单位Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[9437184]",
+          "member": "int64",
+          "name": "DataBackupSize",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志备份大小，单位Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[2332672]",
+          "member": "int64",
+          "name": "LogBackupSize",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BinlogInfo": {
+      "document": "用于展示该节点的 Binlog 信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志服务的唯一 ID",
+          "example": "29384942324547636",
+          "member": "string",
+          "name": "Sid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志服务的类型",
+          "example": "mysql",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例的唯一 ID",
+          "example": "tdsql3-5f8220ae",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CancelIsolateDBInstancesRequest": {
       "document": "CancelIsolateDBInstances请求参数结构体",
@@ -492,6 +1423,532 @@
       ],
       "usage": "out"
     },
+    "CreateCloneInstanceRequest": {
+      "document": "CreateCloneInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建实例区域</p>",
+          "example": "\"ap-guangzhou-1\"",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>字符型vpcid</p>",
+          "example": "“vpc-o7ssr1vx”",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>字符型subnetid</p>",
+          "example": "\"subnet-s21doiba\"",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买规格</p>",
+          "example": "\"mini\"",
+          "member": "string",
+          "name": "SpecCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点磁盘容量，单位GB</p>",
+          "example": "200",
+          "member": "int64",
+          "name": "Disk",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点数量</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "StorageNodeNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>源实例id</p>",
+          "example": "\"tdsql3-e234db15\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称，要求长度1-60，允许包含中文、英文大小写、数字、-、_</p>",
+          "example": "\"my-instance\"",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签键值对数组</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份回档名称</p>",
+          "example": "/tdsql3-e234db15/backup",
+          "member": "string",
+          "name": "BackupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点CPU核数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "StorageNodeCpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点内存大小</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "StorageNodeMem",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建版本</p>",
+          "example": "\"0.0.1\"",
+          "member": "string",
+          "name": "CreateVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建端口号</p>",
+          "example": "3306",
+          "member": "int64",
+          "name": "Vport",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>恢复时间点</p>",
+          "example": "\"2022-03-01 20:09:23\"",
+          "member": "string",
+          "name": "RecoverTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例架构类型，separate:分离架构；hybrid:对等架构</p>",
+          "example": "\"hybrid\"",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘类型，CLOUD_HSSD增强型SSD,CLOUD_TCS本地SSD盘</p>",
+          "example": "\"CLOUD_TCS\"",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多可用区列表，Zones[0]表示主可用区</p>",
+          "example": "[\"ap-chengdu-1\"]",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>全能型副本数</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "FullReplications",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例模式，normal：标准型；enhanced:加强型</p>",
+          "example": "enhanced",
+          "member": "string",
+          "name": "InstanceMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloneInstanceResponse": {
+      "document": "CreateCloneInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>克隆实例ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"tdsql3-267841d2\"",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "23",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBInstancesRequest": {
+      "document": "CreateDBInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建实例区域</p>",
+          "example": "\"ap-guangzhou-1\"",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>字符型vpcid</p>",
+          "example": "“vpc-o7ssr1vx”",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>字符型subnetid</p>",
+          "example": "\"subnet-s21doiba\"",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买规格</p>",
+          "example": "\"mini\"",
+          "member": "string",
+          "name": "SpecCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点磁盘容量，单位GB</p>",
+          "example": "200",
+          "member": "int64",
+          "name": "Disk",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点数量</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "StorageNodeNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点副本数量，最大为5，要求为奇数</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Replications",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建实例个数，上限为10</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>全能型副本数量</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "FullReplications",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建实例版本，默认使用当前最新版本</p>",
+          "example": "\"0.0.1\"",
+          "member": "string",
+          "name": "CreateVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称，要求长度1-60，允许包含中文、英文大小写、数字、-、_</p>",
+          "example": "\"my-instance\"",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签键值对数组</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>初始化实例参数。比如：<br>character_set_server（字符集，默认为utf8），<br>lower_case_table_names（表名大小写敏感，0 - 敏感；1-不敏感，默认为0）</p>",
+          "example": "无",
+          "member": "InstanceParam",
+          "name": "InitParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间单位，m：月</p>",
+          "example": "\"m\"",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商品的时间大小</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点CPU核数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "StorageNodeCpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点内存大小</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "StorageNodeMem",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费模式，0表示按需计费/后付费，1表示预付费</p>",
+          "example": "0",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>管控节点数量</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "MCNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义端口</p>",
+          "example": "3306",
+          "member": "int64",
+          "name": "Vport",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多AZ可用区列表</p>",
+          "example": "[\"ap-chengdu-2\"]",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用优惠卷</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>优惠卷列表</p>",
+          "example": "[\"free50\"]",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例架构类型，separate:分离架构；hybrid:对等架构</p>",
+          "example": "\"hybrid\"",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘类型,CLOUD_HSSD增强型SSD,CLOUD_TCS本地SSD盘</p>",
+          "example": "\"CLOUD_HSSD\"",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AZ模式，1:单AZ，2:多AZ非主AZ，3:多AZ主AZ</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "AZMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例模式</p>",
+          "example": "normal",
+          "member": "string",
+          "name": "InstanceMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数模板id</p>",
+          "example": "template-write-21.6.1",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>兼容模式，enum:MySQL,HBase</p>",
+          "example": "MySQL",
+          "member": "string",
+          "name": "SQLMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>svls实例的ccu变配配置</p>",
+          "example": "无",
+          "member": "AutoScalingConfig",
+          "name": "AutoScaleConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBInstancesResponse": {
+      "document": "CreateDBInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "[\"tdsql3-267841d2\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "23",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDBSBackupRequest": {
       "document": "CreateDBSBackup请求参数结构体",
       "members": [
@@ -592,6 +2049,108 @@
       ],
       "usage": "in"
     },
+    "DataBackupStatisticsModel": {
+      "document": "数据备份统计对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自动备份个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoBackupCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动备份大小，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "AutoBackupSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "平均每个备份大小,单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "AverageSizePerBackup",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "平均每天备份大小,单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AverageSizePerDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "手工备份个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ManualBackupCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "手工备份大小，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "ManualBackupSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据备份个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据备份大小，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "TotalSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Database": {
+      "document": "数据库信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "tdsql3-42f40429",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DatabaseFunction": {
       "document": "数据库函数信息",
       "members": [
@@ -607,6 +2166,32 @@
         }
       ],
       "usage": "out"
+    },
+    "DatabasePrivileges": {
+      "document": "Database级别权限列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "database名",
+          "example": "msyql.user",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限列表",
+          "example": "{\"SELECT\",\"DROP”}",
+          "member": "string",
+          "name": "Privileges",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "DatabaseProcedure": {
       "document": "数据库存储过程信息",
@@ -722,6 +2307,688 @@
       ],
       "type": "object"
     },
+    "DescribeDBInstanceDetailRequest": {
+      "document": "DescribeDBInstanceDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "\"tdsql3-xxx\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceDetailResponse": {
+      "document": "DescribeDBInstanceDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "\"实例名称\"",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>区域</p>",
+          "example": "\"ap-guangzhou-1\"",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字符型vpcid</p>",
+          "example": "\"vpc-o7ssr1vx\"",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字符型subnetid</p>",
+          "example": "\"subnet-s21doiba\"",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建实例版本</p>",
+          "example": "\"R080D001\"",
+          "member": "string",
+          "name": "CreateVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网IP</p>",
+          "example": "\"172.16.113.202\"",
+          "member": "string",
+          "name": "Vip",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网端口</p>",
+          "example": "3306",
+          "member": "int64",
+          "name": "Vport",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态</p>",
+          "example": "\"running\"",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点磁盘容量，单位GB</p>",
+          "example": "200",
+          "member": "int64",
+          "name": "Disk",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点数量</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "StorageNodeNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>初始化实例参数</p>",
+          "example": "无",
+          "member": "InstanceParam",
+          "name": "InitParams",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例标签信息</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "\"2006-01-02 15:04:05\"",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "\"2006-01-02 15:04:05\"",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点副本数量</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Replications",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全能型副本数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "FullReplications",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字符集</p>",
+          "example": "\"utf8\"",
+          "member": "string",
+          "name": "CharSet",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点信息</p>",
+          "example": "无",
+          "member": "NodeInfo",
+          "name": "Node",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例所属地域</p>",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例规格</p>",
+          "example": "\"mini\"",
+          "member": "string",
+          "name": "SpecCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "\"tdsql3-xxx\"",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态中文描述</p>",
+          "example": "\"运行中\"",
+          "member": "string",
+          "name": "StatusDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点CPU核数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "StorageNodeCpu",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点内存大小</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "StorageNodeMem",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>续费标志</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "RenewFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费模式，0后付费，1预付费</p>",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2006-01-02 15:04:05\"",
+          "member": "string",
+          "name": "ExpireAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>隔离时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2006-01-02 15:04:05\"",
+          "member": "string",
+          "name": "IsolatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例架构类型，separate:分离架构；hybrid:对等架构</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"hybrid\"",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘类型，CLOUD_HSSD增强型SSD,CLOUD_TCS本地SSD盘</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_HSSD",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例节点可用区列表。Zones[0]表示主可用区</p>",
+          "example": "[\"az1\"]",
+          "member": "string",
+          "name": "Zones",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大节点磁盘使用量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "DiskUsage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>binlog是否开启</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "BinlogStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>az模式，1: 单AZ 2: 多AZ非主AZ模式 3: 多AZ主AZ模式</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "AZMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>灾备标志位，1: 无灾备关系；2: 灾备主实例；3: 灾备备实例</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "StandbyFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>cdc节点类型</p>",
+          "example": "dumper/kafka",
+          "member": "string",
+          "name": "BinlogType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>1表示支持，0表示不支持</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TimingModifyInstanceFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列存节点cpu核数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ColumnarNodeCpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列存节点mem内存大小</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "ColumnarNodeMem",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列存节点个数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ColumnarNodeNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列存节点磁盘大小</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ColumnarNodeDisk",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列存节点磁盘类型</p>",
+          "example": "CLOUD_HSSD",
+          "member": "string",
+          "name": "ColumnarNodeStorageType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列存节点规格</p>",
+          "example": "1c2g",
+          "member": "string",
+          "name": "ColumnarNodeSpecCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列存 vip</p>",
+          "example": "10.2.3.45",
+          "member": "string",
+          "name": "ColumnarVip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列存 vport</p>",
+          "example": "6028",
+          "member": "int64",
+          "name": "ColumnarVport",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例是否支持列存</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportColumnar",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例类型</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceCategory",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>兼容模式</p>",
+          "example": "mysql",
+          "member": "string",
+          "name": "SQLMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持修改全能型副本数量</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSwitchFullReplicationsEnable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例类型</p>",
+          "example": "enhanced",
+          "member": "string",
+          "name": "InstanceMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>dumper vip</p>",
+          "example": "10.0.3.13",
+          "member": "string",
+          "name": "DumperVip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>dumper vport</p>",
+          "example": "3307",
+          "member": "int64",
+          "name": "DumperVport",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>svls实例的ccu变配范围</p>",
+          "example": "无",
+          "member": "AutoScalingConfig",
+          "name": "AutoScaleConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数模板id</p>",
+          "example": "template-write",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数模板名称</p>",
+          "example": "高吞吐写入模版",
+          "member": "string",
+          "name": "TemplateName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例分析引擎模式</p><p>枚举值：</p><ul><li>libra： LibraDB分析引擎实例</li></ul>",
+          "example": "libra",
+          "member": "string",
+          "name": "AnalysisMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析引擎实例关系</p>",
+          "example": "无",
+          "member": "AnalysisRelationInfo",
+          "name": "AnalysisRelationInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析引擎实例信息</p><p>Cpu、Memory、Disk复用顶层字段</p>",
+          "example": "无",
+          "member": "AnalysisInstanceInfo",
+          "name": "AnalysisInstanceInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>维护窗口配置</p>",
+          "example": "无",
+          "member": "MaintenanceWindowInfo",
+          "name": "MaintenanceWindow",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstancesRequest": {
+      "document": "DescribeDBInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤参数",
+          "example": "无",
+          "member": "InstanceFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "最大返回个数，默认为20，上限为100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，取Limit整数倍",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstancesResponse": {
+      "document": "DescribeDBInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回实例列表信息",
+          "example": "无",
+          "member": "InstanceInfo",
+          "name": "Instances",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "满足条件总数量",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBParametersRequest": {
       "document": "DescribeDBParameters请求参数结构体",
       "members": [
@@ -769,6 +3036,125 @@
       ],
       "type": "object"
     },
+    "DescribeDBSArchiveLogsRequest": {
+      "document": "DescribeDBSArchiveLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "tdsql3-000d02ac",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志记录ID</p>",
+          "example": "7365",
+          "member": "int64",
+          "name": "ArchiveLogId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "2025-07-30 20:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份状态：pending,running,success,failed</p>",
+          "example": "success",
+          "member": "string",
+          "name": "FilterStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>条数限制</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段，枚举：StartTime,EndTime,ExpiredTime,FileSize,BackupDuration</p>",
+          "example": "StartTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方式：ASC：顺序, DESC：倒序</p>",
+          "example": "ASC",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>",
+          "example": "2025-07-30 20:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSArchiveLogsResponse": {
+      "document": "DescribeDBSArchiveLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>归档日志列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ArchiveLogModel",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBSAvailableRecoveryTimeRequest": {
       "document": "DescribeDBSAvailableRecoveryTime请求参数结构体",
       "members": [
@@ -780,15 +3166,6 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>备份集ID,值来自 DescribeDBSBackupSets 接口返回</p>",
-          "example": "0",
-          "member": "int64",
-          "name": "BackupSetId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -824,6 +3201,332 @@
           "name": "StartTime",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSBackupPolicyRequest": {
+      "document": "DescribeDBSBackupPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "tdsql3-3f17e49d",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSBackupPolicyResponse": {
+      "document": "DescribeDBSBackupPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>备份策略列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackupPolicyModelOutPut",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSBackupSetsRequest": {
+      "document": "DescribeDBSBackupSets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "tdsql3-3f17e49d",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例备份集ID</p>",
+          "example": "654434242",
+          "member": "int64",
+          "name": "BackupSetId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "2026-03-27 10:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "BackupSetsReqFilter",
+          "name": "FilterBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次查询数量[0,200]</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次查询偏移[0,INF]</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>StartTime,EndTime,ExpiredTime,BackupSetId,BackupDuration</p>",
+          "example": "StartTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>ASC,DESC</p>",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>",
+          "example": "2026-03-23 10:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSBackupSetsResponse": {
+      "document": "DescribeDBSBackupSets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>备份集列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackupSetModel",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSBackupStatisticsDetailRequest": {
+      "document": "DescribeDBSBackupStatisticsDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "tdsql3-3f17e49d",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "2026-03-27 10:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>",
+          "example": "2026-03-23 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSBackupStatisticsDetailResponse": {
+      "document": "DescribeDBSBackupStatisticsDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>按备份方式统计</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackupMethodStatisticsOutPut",
+          "name": "BackupMethodStatistics",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"2024-11-25\"]",
+          "member": "string",
+          "name": "BackupTime",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>按备份数据类型统计</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackupTypeStatisticsModel",
+          "name": "BackupTypeStatistics",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSBackupStatisticsRequest": {
+      "document": "DescribeDBSBackupStatistics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "tdsql3-f31c034x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "2026-03-26 20:10:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>",
+          "example": "2026-03-20 10:10:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSBackupStatisticsResponse": {
+      "document": "DescribeDBSBackupStatistics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>备份方式统计</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackupMethodStatisticsModel",
+          "name": "BackupMethodStatistics",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总备份集统计</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackupStatisticsModel",
+          "name": "BackupStatistics",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据备份统计</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataBackupStatisticsModel",
+          "name": "DataBackupStatistics",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志备份统计</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogBackupStatisticsModel",
+          "name": "LogBackupStatistics",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -1016,7 +3719,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，形如：tdsql3-42f40429.",
+          "document": "<p>实例 ID，形如：tdsql3-42f40429.</p>",
           "example": "tdsql3-42f40429",
           "member": "string",
           "name": "InstanceId",
@@ -1025,11 +3728,38 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称，通过 DescribeDatabases 接口获取。",
+          "document": "<p>数据库名称，通过 DescribeDatabases 接口获取。</p>",
           "example": "mysql",
           "member": "string",
           "name": "DbName",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页索引</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据表名称匹配表达式</p>",
+          "example": "tpc",
+          "member": "string",
+          "name": "TableRegexp",
+          "required": false,
           "type": "string"
         }
       ],
@@ -1040,63 +3770,147 @@
       "members": [
         {
           "disabled": false,
-          "document": "透传入参。",
+          "document": "<p>透传入参。</p>",
+          "example": "tdsql3-42f40429",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名称。</p>",
+          "example": "mysql",
+          "member": "string",
+          "name": "DbName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>表列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DatabaseTable",
+          "name": "Tables",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>视图列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DatabaseView",
+          "name": "Views",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储过程列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DatabaseProcedure",
+          "name": "Procs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DatabaseFunction",
+          "name": "Funcs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabasesRequest": {
+      "document": "DescribeDatabases请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID，形如：tdsql3-ow7t8lmc。</p>",
           "example": "tdsql3-42f40429",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "数据库名称。",
-          "example": "mysql",
+          "document": "<p>分页索引</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名称匹配表达式</p>",
+          "example": "tpc",
           "member": "string",
-          "name": "DbName",
-          "required": true,
+          "name": "DatabaseRegexp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabasesResponse": {
+      "document": "DescribeDatabases返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>透传实例ID</p>",
+          "example": "tdsql3-42f40429",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "user",
-          "member": "DatabaseTable",
-          "name": "Tables",
-          "required": true,
+          "document": "<p>该实例上的数据库列表。</p>",
+          "example": "无",
+          "member": "Database",
+          "name": "Databases",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "视图列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "DatabaseView",
-          "name": "Views",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "存储过程列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "DatabaseProcedure",
-          "name": "Procs",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "函数列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "DatabaseFunction",
-          "name": "Funcs",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
+          "document": "<p>总数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1115,6 +3929,463 @@
     "DescribeFlowResponse": {
       "document": "DescribeFlow返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSaleInfoRequest": {
+      "document": "DescribeSaleInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>灾备主实例地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "SrcRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id</p><p>传入此参数表示返回这个实例所在的地域可用区的售卖信息</p>",
+          "example": "tdsql3-ko3az9kk",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定支持某种类型实例的 sale 信息</p><p>枚举值：</p><ul><li>serverless： 返回支持 serverless 型实例的所有 region</li></ul><p>默认值：无</p><p>当前仅支持指定 serverless，传入其他信息或者不传则默认返回所有售卖地域信息</p>",
+          "example": "serverless",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSaleInfoResponse": {
+      "document": "DescribeSaleInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回可售卖region信息</p>",
+          "example": "无",
+          "member": "DescribeSaleRegionInfo",
+          "name": "RegionList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSaleRegionInfo": {
+      "document": "查询售卖接口，region信息返回类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Region英文字符串</p>",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>售卖Zone列表</p>",
+          "example": "无",
+          "member": "DescribeSaleZonesInfo",
+          "name": "ZoneList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Region中文字符串</p>",
+          "example": "“广州”",
+          "member": "string",
+          "name": "RegionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否售卖。1:售卖，0不售卖</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Enable",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>多可用可选数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "AvailableZoneNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许使用日志副本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportedLogReplica",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区组合</p>",
+          "example": "无",
+          "member": "DescribeSaleZonesGroup",
+          "name": "ZoneGroup",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持serverless</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportServerless",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeSaleZonesGroup": {
+      "document": "查询售卖地域，提供推荐的可用区组合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>可用区数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "ZoneNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区组合</p>",
+          "example": "[\"ap-guangzhou-4\", \"ap-guangzhou-4\"]",
+          "member": "string",
+          "name": "Zones",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持的类型</p>",
+          "example": "[\"0\"]",
+          "member": "string",
+          "name": "SupportTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持的磁盘类型</p><p>枚举值：</p><ul><li>CLOUD_TCS： 本地盘</li><li>CLOUD_HSSD： 增强型云盘</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"CLOUD_TCS\",\"CLOUD_HSSD\"]",
+          "member": "string",
+          "name": "AvailableDiskTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持serverless</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportServerless",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeSaleZonesInfo": {
+      "document": "查询售卖接口，zone信息返回类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Zone英文字符串</p>",
+          "example": "\"ap-guangzhou-1\"",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Zone中文字符串</p>",
+          "example": "\"广州一区\"",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否售卖，1：售卖；0：不售卖</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Enable",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是默认主可用区,0不是，1是</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsDefaultMaster",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区可选磁盘类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"hssd\"]",
+          "member": "string",
+          "name": "AvailableDiskTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是独享可用区</p>",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "SupportTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持serverless</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportServerless",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeSpecsRequest": {
+      "document": "DescribeSpecs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全能型副本数，当前支持范围：1-3，默认为3</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "FullReplications",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>独享实例</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsExclusiveInstance",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpecsResponse": {
+      "document": "DescribeSpecs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>对等节点售卖规格列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StorageNodeSpec",
+          "name": "HybridNodeSpecs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>svls节点售卖规格列表</p>",
+          "example": "无",
+          "member": "ServerlessCcu",
+          "name": "ServerlessCcuSpec",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserPrivilegesRequest": {
+      "document": "DescribeUserPrivileges请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，形如：tdsql3-5baee8df。",
+          "example": "tdsql3-5baee8df",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户允许的访问 host，用户名+host唯一确定一个账号。",
+          "example": "localhost",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户名。",
+          "example": "mysql.sys",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名。如果为 \\*，表示查询全局权限（即 \\*.\\*），此时忽略 Type 和 Object 参数",
+          "example": "sys",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "具体的 Type 的名称，例如 Type 为 table 时就是具体的表名。DbName 和 Type 都为具体名称，则 Object 表示具体对象名，不能为 \\* 或者为空",
+          "example": "sys_config",
+          "member": "string",
+          "name": "Object",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "类型,可以填入 table 、 view 、 proc 、 func 和 \\*。当 DbName 为具体数据库名，Type为 \\* 时，表示查询该数据库权限（即db.\\*），此时忽略 Object 参数",
+          "example": "table",
+          "member": "string",
+          "name": "ObjectType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当 Type=table 时，ColName 为 \\* 表示查询表的权限，如果为具体字段名，表示查询对应字段的权限",
+          "example": "123",
+          "member": "string",
+          "name": "ColName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserPrivilegesResponse": {
+      "document": "DescribeUserPrivileges返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"SELECT\"}",
+          "member": "string",
+          "name": "Privileges",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsersRequest": {
+      "document": "DescribeUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "\"tdsql3-d8fffc3c\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsersResponse": {
+      "document": "DescribeUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户列表",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Users",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1171,6 +4442,1058 @@
       ],
       "type": "object"
     },
+    "ExpandInstanceRequest": {
+      "document": "ExpandInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "\"tdsql3-e234db15\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点扩容至多少个节点，如果没有变化，传当前节点数</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "StorageNodeNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区列表</p>",
+          "example": "[\"ap-gaungzhou1\",\"ap-guangzhou-2\"]",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>az模式，1: 单AZ 2: 多AZ非主AZ模式 3: 多AZ主AZ模式</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "AZMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AZMode传3时，表示主AZ</p>",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "PrimaryAZ",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>全能型副本数，取值范围包括1-3</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "FullReplications",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ExpandInstanceResponse": {
+      "document": "ExpandInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>异步任务ID，根据此ID可以调用查询任务接口获取任务状态</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InstanceFilter": {
+      "document": "实例列表过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤key，支持InstanceId、VpcId、SubnetId、Vip、Vport、Status、InstanceName、TagKey",
+          "example": "\"InstanceId\"",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过滤value",
+          "example": "[\"tdsql3-d8fffc3c\"]",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "InstanceInfo": {
+      "document": "实例信息类型",
+      "members": [
+        {
+          "disabled": true,
+          "document": "<p>计算节点数量</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "ComputeNodeNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>区域</p>",
+          "example": "\"ap-guangzhou-1\"",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建实例版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"0.0.1\"",
+          "member": "string",
+          "name": "CreateVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>初始化实例参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceParam",
+          "name": "InitParams",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态：creating、created、initializing、running、modifying、isolating、isolated、destroying、destroyed</p>",
+          "example": "\"running\"",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "\"tdsql3-081bfb97\"",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点数量</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "StorageNodeNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例标签信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"实例名称\"",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "<p>计算节点cpu核数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字符型vpcid</p>",
+          "example": "\"vpc-o7ssr1vx\"",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "<p>计算节点mem，单位GB</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "Mem",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网IP</p>",
+          "example": "\"172.16.113.202\"",
+          "member": "string",
+          "name": "Vip",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字符型subnetid</p>",
+          "example": "\"subnet-s21doiba\"",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网端口</p>",
+          "example": "3306",
+          "member": "int64",
+          "name": "Vport",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点磁盘容量，单位GB</p>",
+          "example": "200",
+          "member": "int64",
+          "name": "Disk",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例创建时间</p>",
+          "example": "\"2006-01-02 15:04:05\"",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例所属地域</p>",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态中文描述</p>",
+          "example": "\"运行中\"",
+          "member": "string",
+          "name": "StatusDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "<p>管控节点CPU核数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MCCpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "<p>管控节点CPU大小</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "MCMem",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "<p>计算节点CPU核数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ComputerNodeCpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "<p>计算节点内存大小</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "ComputerNodeMem",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点CPU核数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "StorageNodeCpu",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点内存大小</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "StorageNodeMem",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "<p>管控节点数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "MCNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>续费标志</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RenewFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费模式，0按量付费；1包年包月</p>",
+          "example": "0",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户标签，inner：内部用户；external：外部用户</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "inner",
+          "member": "string",
+          "name": "AccountTag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例架构类型，separate:分离架构；hyper:对等架构</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hyper",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘类型，CLOUD_HSSD增强型SSD,CLOUD_TCS本地SSD盘</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_HSSD",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>&quot;0000-00-00 00:00:00&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"0000-00-00 00:00:00\"",
+          "member": "string",
+          "name": "DestroyedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>&quot;0000-00-00 00:00:00&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"0000-00-00 00:00:00\"",
+          "member": "string",
+          "name": "ExpireAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>&quot;0000-00-00 00:00:00&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"0000-00-00 00:00:00\"",
+          "member": "string",
+          "name": "IsolatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>&quot;0000-00-00 00:00:00&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"0000-00-00 00:00:00\"",
+          "member": "string",
+          "name": "IsolatedFrom",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Replications",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>全能型副本数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "FullReplications",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"111111\"",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"111111\"",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>AZ信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ap-guangzhou-1\",\"ap-guangzhou-2\"]",
+          "member": "string",
+          "name": "Zones",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例节点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceNode",
+          "name": "Nodes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>binlog是否打开</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "BinlogStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "<p>cdc节点核数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CdcNodeCpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "<p>cdc节点内存大小</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "CdcNodeMem",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "<p>cdc节点数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CdcNodeNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>az模式，1: 单AZ 2: 多AZ非主AZ模式 3: 多AZ主AZ模式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "AZMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>灾备标志位，1: 无灾备关系；2: 灾备主实例；3: 灾备备实例</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "StandbyFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接的备实例数量（仅当 StandbyFlag == 2 时有效）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "StandbySecondaryNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>列存节点 cpu 核数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ColumnarNodeCpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列存节点内存大小</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "ColumnarNodeMem",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列存节点数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ColumnarNodeNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列存节点磁盘容量，单位GB</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "ColumnarNodeDisk",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列存节点磁盘类型</p>",
+          "example": "CLOUD_HSSD",
+          "member": "string",
+          "name": "ColumnarNodeStorageType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>独享标志位，1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceCategory",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>dbdc-xxxxx</p>",
+          "example": "独享集群id",
+          "member": "string",
+          "name": "ExclusiveClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>兼容模式</p>",
+          "example": "MySQL",
+          "member": "string",
+          "name": "SQLMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例模式</p>",
+          "example": "normal",
+          "member": "string",
+          "name": "InstanceMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "<p>实例发货平台</p>",
+          "example": "cls-ic9rjblf",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动扩容配置</p>",
+          "example": "无",
+          "member": "AutoScalingConfig",
+          "name": "AutoScaleConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析引擎模式</p><p>枚举值：</p><ul><li>libra： LibraDB分析引擎模式</li></ul>",
+          "example": "libra",
+          "member": "string",
+          "name": "AnalysisMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析引擎关系信息</p>",
+          "example": "无",
+          "member": "AnalysisRelationInfo",
+          "name": "AnalysisRelationInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceNode": {
+      "document": "节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Node Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例Ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例EniIp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EniIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例Port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例SpecCode\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SpecCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例NodeName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例Cpu\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例Mem\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Mem",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例Disk\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Disk",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例LocalDNS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LocalDNS",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例Region\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例日志盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "LogDisk",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例数据盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DataDisk",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例ZoneID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ZoneID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例SpecName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SpecName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例Replicas\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Replicas",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例Shards\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Shards",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例数据副本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DataReplicas",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例初始化参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Params",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储介质, CLOUD_PREMIUM:高性能云盘，CLOUD_SSD: SSD 云盘，CLOUD_HSSD: HSSD 云盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "InstanceParam": {
+      "document": "初始化实例参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置参数key",
+          "example": "\"lower_case_table_names\"",
+          "member": "string",
+          "name": "Param",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置参数value",
+          "example": "“0”",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "IsolateDBInstanceRequest": {
       "document": "IsolateDBInstance请求参数结构体",
       "members": [
@@ -1195,7 +5518,7 @@
           "example": "\"tdsql3-d8fffc3c\"",
           "member": "string",
           "name": "SuccessInstanceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1205,7 +5528,7 @@
           "example": "\"tdsql3-d8fffc4s\"",
           "member": "string",
           "name": "FailedInstanceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1217,6 +5540,91 @@
         }
       ],
       "type": "object"
+    },
+    "LogBackupStatisticsModel": {
+      "document": "日志备份统计对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>平均每个日志备份大小,单位Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15816960",
+          "member": "int64",
+          "name": "AverageSizePerBackup",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>平均每天日志备份大小,单位Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "31633920",
+          "member": "int64",
+          "name": "AverageSizePerDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志备份个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志备份大小，单位Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "63267840",
+          "member": "int64",
+          "name": "TotalSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MaintenanceWindowInfo": {
+      "document": "维护窗口配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "WeekDays",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ModifyAutoRenewFlagRequest": {
       "document": "ModifyAutoRenewFlag请求参数结构体",
@@ -1493,6 +5901,175 @@
       ],
       "type": "object"
     },
+    "ModifyUserPrivilegesRequest": {
+      "document": "ModifyUserPrivileges请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，形如：tdsql3-5baee8df。",
+          "example": "tdsql3-5baee8df",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户名和主机信息",
+          "example": "无",
+          "member": "User",
+          "name": "Users",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "全局权限",
+          "example": "无",
+          "member": "string",
+          "name": "GlobalPrivileges",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Database级别权限",
+          "example": "无",
+          "member": "DatabasePrivileges",
+          "name": "DatabasePrivileges",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Table级别权限",
+          "example": "无",
+          "member": "TablePrivileges",
+          "name": "TablePrivileges",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserPrivilegesResponse": {
+      "document": "ModifyUserPrivileges返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NodeInfo": {
+      "document": "节点信息类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点IP信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"9.166.11.37\"",
+          "member": "string",
+          "name": "IP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点类型，如sqlengine，tdstore，mc</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"sqlengine\"",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点唯一标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"tdsql3-e234db15-sqlengine-0\"",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点端口信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3306",
+          "member": "int64",
+          "name": "Port",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点所属可用区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-4",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点所属机器ip</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点日志服务信息</p>",
+          "example": "无",
+          "member": "BinlogInfo",
+          "name": "BinlogInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点cpu个数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点mem大小</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Mem",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点磁盘大小</p>",
+          "example": "28",
+          "member": "int64",
+          "name": "DataDisk",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ParamConstraint": {
       "document": "参数约束",
       "members": [
@@ -1625,6 +6202,78 @@
       ],
       "usage": "out"
     },
+    "ResourceTag": {
+      "document": "tag参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键key",
+          "example": "\"tag-key\"",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值value",
+          "example": "\"tag-value\"",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RestartDBInstancesRequest": {
+      "document": "RestartDBInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>需要重启的实例ID的数组</p>",
+          "example": "[\"tdsql3-fdpjf5zh\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>重启时间，不传表示立即重启</p>",
+          "example": "2021-04-20 15:00:00",
+          "member": "string",
+          "name": "RestartTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartDBInstancesResponse": {
+      "document": "RestartDBInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>异步任务id</p>",
+          "example": "4295036740",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SecurityGroup": {
       "document": "安全组详情",
       "members": [
@@ -1740,6 +6389,348 @@
           "example": "无",
           "member": "string",
           "name": "IpProtocol",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ServerlessCcu": {
+      "document": "serverless实例的ccu规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ccu最小值</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MinCcu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ccu最大值范围</p>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "MaxCcu",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StorageNodeSpec": {
+      "document": "存储节点规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规格码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"mini\"",
+          "member": "string",
+          "name": "SpecCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点CPU核数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "StorageNodeCpu",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点内存大小</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "StorageNodeMem",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点最大数量</p>",
+          "example": "16",
+          "member": "int64",
+          "name": "StorageNodeMaxNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点磁盘大小上限</p>",
+          "example": "1000",
+          "member": "int64",
+          "name": "StorageNodeMaxDisk",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点最小数量</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "StorageNodeMinNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点磁盘大小下限</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "StorageNodeMinDisk",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘类型，CLOUD_HSSD增强型SSD,CLOUD_TCS本地SSD盘</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"CLOUD_HSSD\"",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点默认磁盘大小，用于前端展示</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "StorageNodeDefaultDisk",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>规格支持计费模式列表</p>",
+          "example": "[\"normal\"]",
+          "member": "string",
+          "name": "InstanceMode",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘类型CLOUD_DISK：云盘LOCAL_DISK：本地盘</p>",
+          "example": "CLOUD_DISK",
+          "member": "string",
+          "name": "DiskTypeCategory",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TablePrivileges": {
+      "document": "表级别权限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DATABASE名",
+          "example": "mysql.user",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表名",
+          "example": "mssql_user",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限列表",
+          "example": "{\"SELECT\",\"DROP\"}",
+          "member": "string",
+          "name": "Privileges",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UpgradeInstanceRequest": {
+      "document": "UpgradeInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "\"tdsql3-d8fffc3c\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例规格码</p>",
+          "example": "1c2g",
+          "member": "string",
+          "name": "SpecCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点磁盘容量，单位GB</p>",
+          "example": "500",
+          "member": "int64",
+          "name": "Disk",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点CPU核数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "StorageNodeCpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点内存大小</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "StorageNodeMem",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘类型，需要修改磁盘类型时传</p>",
+          "example": "\"CLOUD_TCS\"",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeInstanceResponse": {
+      "document": "UpgradeInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "4295036957",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "User": {
+      "document": "数据库账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "sys",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机",
+          "example": "%",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UserInfo": {
+      "document": "用户信息类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "\"test_user\"",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机IP，IP段以%结尾，表示允许该IP段的所有IP",
+          "example": "\"%\"",
+          "member": "string",
+          "name": "Host",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "\"2006-01-02 15:04:05\"",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "\"2006-01-02 15:04:05\"",
+          "member": "string",
+          "name": "UpdateTime",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false

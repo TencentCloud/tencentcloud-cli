@@ -432,7 +432,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点池伸缩配置",
+          "document": "<p>节点池伸缩配置</p>",
           "example": "无",
           "member": "MachineSetScaling",
           "name": "Scaling",
@@ -441,7 +441,7 @@
         },
         {
           "disabled": false,
-          "document": "子网列表",
+          "document": "<p>子网列表</p>",
           "example": "[\"subnet-4h43fuxj\"]",
           "member": "string",
           "name": "SubnetIds",
@@ -450,7 +450,7 @@
         },
         {
           "disabled": false,
-          "document": "节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；",
+          "document": "<p>节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；</p>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -459,7 +459,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘配置",
+          "document": "<p>系统盘配置</p>",
           "example": "无",
           "member": "Disk",
           "name": "SystemDisk",
@@ -468,7 +468,7 @@
         },
         {
           "disabled": false,
-          "document": "机型列表",
+          "document": "<p>机型列表</p>",
           "example": "[\"S2.SMALL2\"]",
           "member": "string",
           "name": "InstanceTypes",
@@ -477,7 +477,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组列表",
+          "document": "<p>安全组列表</p>",
           "example": "[\"sg-4h43fuxj\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -486,7 +486,7 @@
         },
         {
           "disabled": false,
-          "document": "自动升级配置",
+          "document": "<p>自动升级配置</p>",
           "example": "无",
           "member": "MachineUpgradeSettings",
           "name": "UpgradeSettings",
@@ -495,7 +495,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自愈能力",
+          "document": "<p>是否开启自愈能力</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoRepair",
@@ -504,7 +504,7 @@
         },
         {
           "disabled": false,
-          "document": "包年包月机型计费配置",
+          "document": "<p>包年包月机型计费配置</p>",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
@@ -513,7 +513,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池 Management 参数设置",
+          "document": "<p>节点池 Management 参数设置</p>",
           "example": "无",
           "member": "ManagementConfig",
           "name": "Management",
@@ -522,7 +522,7 @@
         },
         {
           "disabled": false,
-          "document": "故障自愈规则名称",
+          "document": "<p>故障自愈规则名称</p>",
           "example": "policy1",
           "member": "string",
           "name": "HealthCheckPolicyName",
@@ -531,7 +531,7 @@
         },
         {
           "disabled": false,
-          "document": "原生节点池hostName模式串",
+          "document": "<p>原生节点池hostName模式串</p>",
           "example": "aaa{R:3}",
           "member": "string",
           "name": "HostNamePattern",
@@ -540,7 +540,7 @@
         },
         {
           "disabled": false,
-          "document": "kubelet 自定义参数",
+          "document": "<p>kubelet 自定义参数</p>",
           "example": "[\"kube-api-qps=50\"]",
           "member": "string",
           "name": "KubeletArgs",
@@ -549,7 +549,7 @@
         },
         {
           "disabled": false,
-          "document": "预定义脚本",
+          "document": "<p>预定义脚本</p>",
           "example": "无",
           "member": "LifecycleConfig",
           "name": "Lifecycle",
@@ -558,7 +558,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时根目录",
+          "document": "<p>运行时根目录</p>",
           "example": "/var/lib/docker",
           "member": "string",
           "name": "RuntimeRootDir",
@@ -567,7 +567,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启弹性伸缩",
+          "document": "<p>是否开启弹性伸缩</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableAutoscaling",
@@ -576,7 +576,7 @@
         },
         {
           "disabled": false,
-          "document": "期望节点数",
+          "document": "<p>期望节点数</p>",
           "example": "10",
           "member": "int64",
           "name": "Replicas",
@@ -585,7 +585,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽设置",
+          "document": "<p>公网带宽设置</p>",
           "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
@@ -594,7 +594,7 @@
         },
         {
           "disabled": false,
-          "document": "原生节点池数据盘列表",
+          "document": "<p>原生节点池数据盘列表</p>",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
@@ -603,7 +603,7 @@
         },
         {
           "disabled": false,
-          "document": "qgpu开关",
+          "document": "<p>qgpu开关</p>",
           "example": "true",
           "member": "bool",
           "name": "QGPUEnable",
@@ -612,7 +612,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池ssh公钥id数组",
+          "document": "<p>节点池ssh公钥id数组</p>",
           "example": "[\"sky-6esd9xe\",\"sky-shjixw8\"]",
           "member": "string",
           "name": "KeyIds",
@@ -621,7 +621,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池类型",
+          "document": "<p>节点池类型</p>",
           "example": "NativeCVM或者Native",
           "member": "string",
           "name": "MachineType",
@@ -630,7 +630,7 @@
         },
         {
           "disabled": false,
-          "document": "原生节点池安装节点自动化助手开关",
+          "document": "<p>原生节点池安装节点自动化助手开关</p>",
           "example": "false",
           "member": "bool",
           "name": "AutomationService",
@@ -639,7 +639,7 @@
         },
         {
           "disabled": false,
-          "document": "原生节点池密码",
+          "document": "<p>原生节点池密码</p>",
           "example": "Paas@123",
           "member": "string",
           "name": "Password",
@@ -1056,6 +1056,15 @@
           "name": "SortBy",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回节点云标签",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedTags",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1086,7 +1095,7 @@
         {
           "disabled": false,
           "document": "错误信息集合",
-          "example": "eks not support",
+          "example": "[\"fill cvm tags failed: describe cvm instances for tags failed: [TencentCloudSDKError] Code=AuthFailure, Message=CAM鉴权失败...\"]",
           "member": "string",
           "name": "Errors",
           "output_required": true,
@@ -2832,7 +2841,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群 ID",
+          "document": "<p>集群 ID</p>",
           "example": "cls-52mrjmcy",
           "member": "string",
           "name": "ClusterId",
@@ -2841,7 +2850,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名列表",
+          "document": "<p>节点名列表</p>",
           "example": "[\"np-6tpr9q6e-2gt8l\"]",
           "member": "string",
           "name": "MachineNames",
@@ -2850,7 +2859,7 @@
         },
         {
           "disabled": false,
-          "document": "machine的display name",
+          "document": "<p>machine的display name</p>",
           "example": "tke-np-6tpr9q6e-1",
           "member": "string",
           "name": "DisplayName",
@@ -2859,7 +2868,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘的信息",
+          "document": "<p>系统盘的信息</p>",
           "example": "无",
           "member": "Disk",
           "name": "SystemDisk",
@@ -2868,7 +2877,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组列表",
+          "document": "<p>安全组列表</p>",
           "example": "[\"sg-4h43fuxj\"]",
           "member": "string",
           "name": "SecurityGroupIDs",
@@ -2877,7 +2886,7 @@
         },
         {
           "disabled": false,
-          "document": "节点预付费信息",
+          "document": "<p>节点预付费信息</p>",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
@@ -3048,7 +3057,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点名称",
+          "document": "<p>节点名称</p>",
           "example": "np-4h43fuxj-7j9rt",
           "member": "string",
           "name": "MachineName",
@@ -3058,7 +3067,7 @@
         },
         {
           "disabled": false,
-          "document": "Machine 状态",
+          "document": "<p>Machine 状态</p>",
           "example": "Running",
           "member": "string",
           "name": "MachineState",
@@ -3068,7 +3077,7 @@
         },
         {
           "disabled": false,
-          "document": "Machine 所在可用区",
+          "document": "<p>Machine 所在可用区</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -3078,7 +3087,7 @@
         },
         {
           "disabled": false,
-          "document": "节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；",
+          "document": "<p>节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；</p>",
           "example": "PrepaidChargeType",
           "member": "string",
           "name": "InstanceChargeType",
@@ -3088,7 +3097,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2022-05-20 10:03:19",
           "member": "string",
           "name": "CreatedAt",
@@ -3098,7 +3107,7 @@
         },
         {
           "disabled": false,
-          "document": "Machine 登录状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Machine 登录状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Opened",
           "member": "string",
           "name": "LoginStatus",
@@ -3108,7 +3117,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启缩容保护\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启缩容保护</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "IsProtectedFromScaleIn",
@@ -3118,7 +3127,7 @@
         },
         {
           "disabled": false,
-          "document": "Machine 名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Machine 名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testmachine",
           "member": "string",
           "name": "DisplayName",
@@ -3128,7 +3137,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU核数，单位：核",
+          "document": "<p>CPU核数，单位：核</p>",
           "example": "1",
           "member": "uint64",
           "name": "CPU",
@@ -3138,7 +3147,7 @@
         },
         {
           "disabled": false,
-          "document": "GPU核数，单位：核\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>GPU核数，单位：核</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "GPU",
@@ -3148,7 +3157,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识",
+          "document": "<p>自动续费标识</p>",
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -3158,7 +3167,7 @@
         },
         {
           "disabled": false,
-          "document": "节点计费模式",
+          "document": "<p>节点计费模式</p>",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "PayMode",
@@ -3168,7 +3177,7 @@
         },
         {
           "disabled": false,
-          "document": "节点内存容量，单位：`GB`",
+          "document": "<p>节点内存容量，单位：<code>GB</code></p>",
           "example": "50",
           "member": "uint64",
           "name": "Memory",
@@ -3178,7 +3187,7 @@
         },
         {
           "disabled": false,
-          "document": "节点系统盘配置信息",
+          "document": "<p>节点系统盘配置信息</p>",
           "example": "无",
           "member": "Disk",
           "name": "SystemDisk",
@@ -3188,7 +3197,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽相关信息设置",
+          "document": "<p>公网带宽相关信息设置</p>",
           "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
@@ -3198,7 +3207,7 @@
         },
         {
           "disabled": false,
-          "document": "机型所属机型族",
+          "document": "<p>机型所属机型族</p>",
           "example": "S2",
           "member": "string",
           "name": "InstanceFamily",
@@ -3208,7 +3217,7 @@
         },
         {
           "disabled": false,
-          "document": "节点内网 IP",
+          "document": "<p>节点内网 IP</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "LanIp",
@@ -3218,7 +3227,7 @@
         },
         {
           "disabled": false,
-          "document": "机型",
+          "document": "<p>机型</p>",
           "example": "S2.SMALL2",
           "member": "string",
           "name": "InstanceType",
@@ -3228,7 +3237,7 @@
         },
         {
           "disabled": false,
-          "document": "包年包月节点计费过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>包年包月节点计费过期时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-03-01 20:28:52",
           "member": "string",
           "name": "ExpiredTime",
@@ -3238,7 +3247,7 @@
         },
         {
           "disabled": false,
-          "document": "节点外网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点外网 IP</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1.1.1",
           "member": "string",
           "name": "WanIp",
@@ -3248,7 +3257,7 @@
         },
         {
           "disabled": false,
-          "document": "节点密钥 ID 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点密钥 ID 列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"key-l6gtb5p0\"]",
           "member": "string",
           "name": "KeyIds",
@@ -3258,7 +3267,7 @@
         },
         {
           "disabled": false,
-          "document": "节点GPU相关配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点GPU相关配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GPUParams",
           "name": "GPUParams",
@@ -3268,7 +3277,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据盘列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
@@ -3278,8 +3287,8 @@
         },
         {
           "disabled": false,
-          "document": "安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[sg-4h43fuxjx]",
+          "document": "<p>安全组列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sg-4h43fuxjx\"]",
           "member": "string",
           "name": "SecurityGroupIDs",
           "output_required": true,
@@ -3288,7 +3297,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC 唯一 ID",
+          "document": "<p>VPC 唯一 ID</p>",
           "example": "vpc-4h43fuxj",
           "member": "string",
           "name": "VpcId",
@@ -3298,7 +3307,7 @@
         },
         {
           "disabled": false,
-          "document": "子网唯一 ID",
+          "document": "<p>子网唯一 ID</p>",
           "example": "subnet-4h43fuxj",
           "member": "string",
           "name": "SubnetId",
@@ -3308,7 +3317,7 @@
         },
         {
           "disabled": false,
-          "document": "OS的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OS的名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TencentOS Server 3.1 (Final)",
           "member": "string",
           "name": "OsImage",
@@ -3318,7 +3327,7 @@
         },
         {
           "disabled": false,
-          "document": "**原生节点的 Machine 类型**\n\n- Native 表示 CXM 类型的原生节点\n- NativeCVM 表示 CVM 类型的原生节点",
+          "document": "<p><strong>原生节点的 Machine 类型</strong></p><ul><li>Native 表示 CXM 类型的原生节点</li><li>NativeCVM 表示 CVM 类型的原生节点</li></ul>",
           "example": "Native, NativeCVM",
           "member": "string",
           "name": "MachineType",
@@ -3328,12 +3337,22 @@
         },
         {
           "disabled": false,
-          "document": "**原生节点对应的实例 ID**\n\n- ins-q47ofw6 表示这个实例是一个 CVM 的实例\n- eks-f8mvyaep 表示这个实例是一个 CXM 的实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p><strong>原生节点对应的实例 ID</strong></p><ul><li>ins-q47ofw6 表示这个实例是一个 CVM 的实例</li><li>eks-f8mvyaep 表示这个实例是一个 CXM 的实例</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-q47ofw6r, eks-f8mvyaep",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>原生节点云标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -3344,7 +3363,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩配置",
+          "document": "<p>伸缩配置</p>",
           "example": "无",
           "member": "MachineSetScaling",
           "name": "Scaling",
@@ -3354,7 +3373,7 @@
         },
         {
           "disabled": false,
-          "document": "子网列表",
+          "document": "<p>子网列表</p>",
           "example": "[\"subnet-4h43fuxj\"]",
           "member": "string",
           "name": "SubnetIds",
@@ -3364,7 +3383,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>安全组列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"sg-4h43fuxj\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -3374,7 +3393,7 @@
         },
         {
           "disabled": false,
-          "document": "自动升级配置",
+          "document": "<p>自动升级配置</p>",
           "example": "无",
           "member": "MachineUpgradeSettings",
           "name": "UpgradeSettings",
@@ -3384,7 +3403,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自愈能力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启自愈能力</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "AutoRepair",
@@ -3394,7 +3413,7 @@
         },
         {
           "disabled": false,
-          "document": "节点计费类型",
+          "document": "<p>节点计费类型</p>",
           "example": "PrepaidChargeType",
           "member": "string",
           "name": "InstanceChargeType",
@@ -3404,7 +3423,7 @@
         },
         {
           "disabled": false,
-          "document": "包年包月机型计费配置",
+          "document": "<p>包年包月机型计费配置</p>",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
@@ -3414,7 +3433,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘配置",
+          "document": "<p>系统盘配置</p>",
           "example": "无",
           "member": "Disk",
           "name": "SystemDisk",
@@ -3424,7 +3443,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥 ID 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>密钥 ID 列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"key-l6gtb5p0\"]",
           "member": "string",
           "name": "KeyIds",
@@ -3434,7 +3453,7 @@
         },
         {
           "disabled": false,
-          "document": "Machine 系统配置",
+          "document": "<p>Machine 系统配置</p>",
           "example": "无",
           "member": "ManagementConfig",
           "name": "Management",
@@ -3444,7 +3463,7 @@
         },
         {
           "disabled": false,
-          "document": "故障自愈规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>故障自愈规则名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "policy1",
           "member": "string",
           "name": "HealthCheckPolicyName",
@@ -3454,7 +3473,7 @@
         },
         {
           "disabled": false,
-          "document": "原生节点池hostName模式串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>原生节点池hostName模式串</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aaa{R:3}",
           "member": "string",
           "name": "HostNamePattern",
@@ -3464,7 +3483,7 @@
         },
         {
           "disabled": false,
-          "document": "kubelet 自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>kubelet 自定义参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"kube-api-qps=50\"]",
           "member": "string",
           "name": "KubeletArgs",
@@ -3474,7 +3493,7 @@
         },
         {
           "disabled": false,
-          "document": "预定义脚本",
+          "document": "<p>预定义脚本</p>",
           "example": "无",
           "member": "LifecycleConfig",
           "name": "Lifecycle",
@@ -3484,7 +3503,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时根目录",
+          "document": "<p>运行时根目录</p>",
           "example": "/var/lib/docker",
           "member": "string",
           "name": "RuntimeRootDir",
@@ -3494,7 +3513,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启弹性伸缩",
+          "document": "<p>是否开启弹性伸缩</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableAutoscaling",
@@ -3504,8 +3523,8 @@
         },
         {
           "disabled": false,
-          "document": "机型列表",
-          "example": "S2.4XLARGE48",
+          "document": "<p>机型列表</p>",
+          "example": "[\"S2.4XLARGE48\"]",
           "member": "string",
           "name": "InstanceTypes",
           "output_required": true,
@@ -3514,7 +3533,7 @@
         },
         {
           "disabled": false,
-          "document": "期望节点数",
+          "document": "<p>期望节点数</p>",
           "example": "10",
           "member": "int64",
           "name": "Replicas",
@@ -3524,7 +3543,7 @@
         },
         {
           "disabled": false,
-          "document": "就绪 Machine 个数",
+          "document": "<p>就绪 Machine 个数</p>",
           "example": "5",
           "member": "int64",
           "name": "ReadyReplicas",
@@ -3534,7 +3553,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽设置",
+          "document": "<p>公网带宽设置</p>",
           "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
@@ -3544,7 +3563,7 @@
         },
         {
           "disabled": false,
-          "document": "原生节点池数据盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>原生节点池数据盘</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
@@ -3554,7 +3573,7 @@
         },
         {
           "disabled": false,
-          "document": "原生节点机型 Native, NativeCVM",
+          "document": "<p>原生节点机型 Native, NativeCVM</p>",
           "example": "Native",
           "member": "string",
           "name": "MachineType",
@@ -3808,7 +3827,7 @@
         {
           "disabled": false,
           "document": "节点配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"MountTarget\":\"\",\"DataDiskPartition\":null,\"DockerGraphPath\":\"\",",
+          "example": "无",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
           "output_required": true,
@@ -3823,6 +3842,16 @@
           "name": "AutoscalingGroupId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "普通节点云标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -4300,6 +4329,36 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "eklet-4h43fuxj",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包销时长",
+          "example": "5y",
+          "member": "string",
+          "name": "Duration",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预付费资源ID",
+          "example": "kn-79sn38nq",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4430,7 +4489,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩配置",
+          "document": "<p>伸缩配置</p>",
           "example": "无",
           "member": "MachineSetScaling",
           "name": "Scaling",
@@ -4439,7 +4498,7 @@
         },
         {
           "disabled": false,
-          "document": "子网列表",
+          "document": "<p>子网列表</p>",
           "example": "[\"subnet-4h43fuxj\"]",
           "member": "string",
           "name": "SubnetIds",
@@ -4448,7 +4507,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组列表",
+          "document": "<p>安全组列表</p>",
           "example": "[\"sg-4h43fuxj\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -4457,7 +4516,7 @@
         },
         {
           "disabled": false,
-          "document": "自动升级配置",
+          "document": "<p>自动升级配置</p>",
           "example": "无",
           "member": "MachineUpgradeSettings",
           "name": "UpgradeSettings",
@@ -4466,7 +4525,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自愈能力",
+          "document": "<p>是否开启自愈能力</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoRepair",
@@ -4475,7 +4534,7 @@
         },
         {
           "disabled": false,
-          "document": "节点计费类型变更\n当前仅支持按量计费转包年包月：\n- PREPAID\n",
+          "document": "<p>计费类型</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 目标计费类型为按量计费</li><li>PREPAID： 目标计费类型为包年包月计费</li></ul>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -4484,7 +4543,7 @@
         },
         {
           "disabled": false,
-          "document": "包年包月机型计费配置",
+          "document": "<p>包年包月机型计费配置</p>",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
@@ -4493,7 +4552,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘配置",
+          "document": "<p>系统盘配置</p>",
           "example": "无",
           "member": "Disk",
           "name": "SystemDisk",
@@ -4502,7 +4561,7 @@
         },
         {
           "disabled": false,
-          "document": "Machine 系统配置",
+          "document": "<p>Machine 系统配置</p>",
           "example": "无",
           "member": "ManagementConfig",
           "name": "Management",
@@ -4511,7 +4570,7 @@
         },
         {
           "disabled": false,
-          "document": "故障自愈规则名称",
+          "document": "<p>故障自愈规则名称</p>",
           "example": "policy1",
           "member": "string",
           "name": "HealthCheckPolicyName",
@@ -4520,7 +4579,7 @@
         },
         {
           "disabled": false,
-          "document": "原生节点池hostName模式串",
+          "document": "<p>原生节点池hostName模式串</p>",
           "example": "aaa{R:3}",
           "member": "string",
           "name": "HostNamePattern",
@@ -4529,7 +4588,7 @@
         },
         {
           "disabled": false,
-          "document": "kubelet 自定义参数",
+          "document": "<p>kubelet 自定义参数</p>",
           "example": "[\"kube-api-qps=50\"]",
           "member": "string",
           "name": "KubeletArgs",
@@ -4538,7 +4597,7 @@
         },
         {
           "disabled": false,
-          "document": "预定义脚本",
+          "document": "<p>预定义脚本</p>",
           "example": "无",
           "member": "LifecycleConfig",
           "name": "Lifecycle",
@@ -4547,7 +4606,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时根目录",
+          "document": "<p>运行时根目录</p>",
           "example": "/var/lib/docker",
           "member": "string",
           "name": "RuntimeRootDir",
@@ -4556,7 +4615,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启弹性伸缩",
+          "document": "<p>是否开启弹性伸缩</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableAutoscaling",
@@ -4565,7 +4624,7 @@
         },
         {
           "disabled": false,
-          "document": "机型列表",
+          "document": "<p>机型列表</p>",
           "example": "[\"S2.4XLARGE48\"]",
           "member": "string",
           "name": "InstanceTypes",
@@ -4574,7 +4633,7 @@
         },
         {
           "disabled": false,
-          "document": "期望节点数",
+          "document": "<p>期望节点数</p>",
           "example": "10",
           "member": "int64",
           "name": "Replicas",
@@ -4583,7 +4642,7 @@
         },
         {
           "disabled": false,
-          "document": "是否更新存量节点MetaData(包括： metadata、annotation、label)",
+          "document": "<p>是否更新存量节点MetaData(包括： metadata、annotation、label)</p>",
           "example": "false",
           "member": "bool",
           "name": "UpdateExistedNode",
@@ -4592,7 +4651,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘列表",
+          "document": "<p>数据盘列表</p>",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
@@ -4601,7 +4660,7 @@
         },
         {
           "disabled": false,
-          "document": "节点management参数存量更新开关，有enable（打开）、disable（关闭）两个状态可选\n\nmanagement包括：nameserver、host、kubelet、kernel参数",
+          "document": "<p>节点management参数存量更新开关，有enable（打开）、disable（关闭）两个状态可选</p><p>management包括：nameserver、host、kubelet、kernel参数</p>",
           "example": "disable",
           "member": "string",
           "name": "UpdateMachineManagement",
@@ -4610,7 +4669,7 @@
         },
         {
           "disabled": false,
-          "document": "ssh公钥id数组",
+          "document": "<p>ssh公钥id数组</p>",
           "example": "[\"sky-l6gtb5p0\",\"sky-l6gtb5p1\"]",
           "member": "string",
           "name": "KeyIds",
@@ -4619,7 +4678,7 @@
         },
         {
           "disabled": false,
-          "document": "节点移出策略，有Random（随机）、Newest（优先移出最新实例）、Oldest（优先移出最旧实例）三种可选，默认是Newest",
+          "document": "<p>节点移出策略，有Random（随机）、Newest（优先移出最新实例）、Oldest（优先移出最旧实例）三种可选，默认是Newest</p>",
           "example": "Newest",
           "member": "string",
           "name": "DeletePolicy",
@@ -4628,7 +4687,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池 GPU 配置",
+          "document": "<p>节点池 GPU 配置</p>",
           "example": "无",
           "member": "GPUConfig",
           "name": "GPUConfigs",
@@ -4637,7 +4696,7 @@
         },
         {
           "disabled": false,
-          "document": "原生节点池安装自动化助手开关状态",
+          "document": "<p>原生节点池安装自动化助手开关状态</p>",
           "example": "true",
           "member": "bool",
           "name": "AutomationService",
@@ -4646,7 +4705,7 @@
         },
         {
           "disabled": false,
-          "document": "原生节点池密码",
+          "document": "<p>原生节点池密码</p>",
           "example": "Paas@123",
           "member": "string",
           "name": "Password",

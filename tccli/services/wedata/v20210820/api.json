@@ -2045,11 +2045,11 @@
       "status": "online"
     },
     "SubmitWorkflow": {
-      "document": "提交工作流。本接口已废弃，请使用接口BatchCreateTaskVersionAsync。",
+      "document": "接口已经废弃，调用会产生脏数据\n\n提交工作流。本接口已废弃，请使用接口BatchCreateTaskVersionAsync。",
       "input": "SubmitWorkflowRequest",
       "name": "提交工作流（废弃）",
       "output": "SubmitWorkflowResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "SuspendIntegrationTask": {
       "document": "暂停集成任务",
@@ -2152,7 +2152,7 @@
   },
   "metadata": {
     "apiVersion": "2021-08-20",
-    "api_brief": "欢迎使用数据开发治理平台 WeData。\n数据开发治理平台 WeData（以下简称 WeData） 是腾讯云推出的一站式数据开发治理平台，融合了包含数据集成 DataInLong、数据开发 DataStudio 的全链路 DataOps 数据开发能力，以及数据地图、数据质量、数据安全等一系列数据开发与治理能力，帮助企业在数据构建和应用的过程中实现降本增效，数据价值最大化。\nWeData将自身基础的能力以API的方式对外开放，方便企业进行定制开发或企业内部系统进行对接打通，详情请参考API概览。\n\n",
+    "api_brief": "欢迎使用数据开发治理平台 WeData。\n数据开发治理平台 WeData（以下简称 WeData） 是腾讯云推出的一站式数据开发治理平台，融合了包含数据集成 DataInLong、数据开发 DataStudio 的全链路 DataOps 数据开发能力，以及数据地图、数据质量、数据安全等一系列数据开发与治理能力，帮助企业在数据构建和应用的过程中实现降本增效，数据价值最大化。\nWeData将自身基础的能力以API的方式对外开放，方便企业进行定制开发或企业内部系统进行对接打通，详情请参考API概览。",
     "serviceNameCN": "数据开发治理平台 WeData",
     "serviceShortName": "wedata"
   },
@@ -6939,7 +6939,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作Id</p><p>可使用JobId字段通过ListBatchDetail接口 查询异步操作结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "JobId",
@@ -9038,7 +9038,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "\"20220506145218687\"",
           "member": "string",
           "name": "TaskId",
@@ -9047,7 +9047,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id",
+          "document": "<p>项目id</p>",
           "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
@@ -9056,7 +9056,7 @@
         },
         {
           "disabled": false,
-          "document": "0.仅提交，1.立即启动，2.停止线上作业，丢弃作业状态数据，重新启动运行，3.暂停线上作业，保留作业状态数据，继续运行，4.保留作业状态数据，继续运行",
+          "document": "<p>0.仅提交，1.立即启动，2.停止线上作业，丢弃作业状态数据，重新启动运行，3.暂停线上作业，保留作业状态数据，继续运行，4.保留作业状态数据，继续运行</p>",
           "example": "0",
           "member": "int64",
           "name": "CommitType",
@@ -9065,7 +9065,7 @@
         },
         {
           "disabled": false,
-          "document": "实时任务 201   离线任务 202  默认实时任务",
+          "document": "<p>实时任务 201   离线任务 202  默认实时任务</p>",
           "example": "201",
           "member": "uint64",
           "name": "TaskType",
@@ -9074,8 +9074,8 @@
         },
         {
           "disabled": false,
-          "document": "额外参数",
-          "example": "[{\"Name\":\"a\",\"Value\":\"1\"}]",
+          "document": "<p>额外参数</p>",
+          "example": "无",
           "member": "RecordField",
           "name": "ExtConfig",
           "required": false,
@@ -9083,7 +9083,7 @@
         },
         {
           "disabled": false,
-          "document": "提交版本描述",
+          "document": "<p>提交版本描述</p>",
           "example": "\"1\"",
           "member": "string",
           "name": "VersionDesc",
@@ -9092,7 +9092,7 @@
         },
         {
           "disabled": false,
-          "document": "提交版本号",
+          "document": "<p>提交版本号</p>",
           "example": "1",
           "member": "int64",
           "name": "InstanceVersion",
@@ -9101,12 +9101,21 @@
         },
         {
           "disabled": false,
-          "document": "前端操作类型描述",
+          "document": "<p>前端操作类型描述</p>",
           "example": "12312",
           "member": "string",
           "name": "EventDesc",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提交时任务状态</p><p>枚举值：</p><ul><li>3： 运行中</li></ul>",
+          "example": "3",
+          "member": "int64",
+          "name": "CurrentStatus",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9116,7 +9125,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作成功与否标识",
+          "document": "<p>操作成功与否标识</p>",
           "example": "true",
           "member": "bool",
           "name": "Data",
@@ -9126,8 +9135,8 @@
         },
         {
           "disabled": false,
-          "document": "数据结构\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"TaskApproveId\":\"123\"}",
+          "document": "<p>数据结构</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CommitTaskDataDto",
           "name": "DataDto",
           "output_required": false,
@@ -12010,7 +12019,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "无",
           "member": "BatchCreateTaskVersionDTO",
           "name": "Task",
@@ -12019,7 +12028,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要校验父任务已经提交到调度",
+          "document": "<p>是否需要校验父任务已经提交到调度</p>",
           "example": "true",
           "member": "bool",
           "name": "NeedCheckParentSubmitted",
@@ -12028,7 +12037,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动运行",
+          "document": "<p>是否自动运行</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoRun",
@@ -12037,7 +12046,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "202305161999999999",
           "member": "string",
           "name": "ProjectId",
@@ -12055,7 +12064,7 @@
         },
         {
           "disabled": false,
-          "document": "告警方式:email-邮件;sms-短信;wecom-企业微信",
+          "document": "<p>告警方式:email-邮件;sms-短信;wecom-企业微信</p>",
           "example": "email",
           "member": "string",
           "name": "AlarmWays",
@@ -12064,7 +12073,7 @@
         },
         {
           "disabled": false,
-          "document": "告警对象:1-项目管理员，2-任务责任人",
+          "document": "<p>告警对象:1-项目管理员，2-任务责任人</p>",
           "example": "1",
           "member": "string",
           "name": "AlarmRecipientTypes",
@@ -12073,7 +12082,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要校验循环依赖，默认为 true，如果使用了 CheckTaskCycleLink 和 CheckTaskCycleConfiguration 两个接口校验成功可以传 false，后台服务器不再做校验",
+          "document": "<p>是否需要校验循环依赖，默认为 true，如果使用了 CheckTaskCycleLink 和 CheckTaskCycleConfiguration 两个接口校验成功可以传 false，后台服务器不再做校验</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableCheckTaskCycleLink",
@@ -12082,7 +12091,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要补录中间实例",
+          "document": "<p>是否需要补录中间实例</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableMakeUp",
@@ -12091,12 +12100,21 @@
         },
         {
           "disabled": false,
-          "document": "指定审批人列表",
+          "document": "<p>指定审批人列表</p>",
           "example": "[\"23153\",\"23213\"]",
           "member": "string",
           "name": "AssignApprovalList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>MAKEUP:补录缺失的实例;FORCE_SUCCESS:将缺失的实例置成功;SKIP:不处理，忽略缺失的实例</p>",
+          "example": "MAKEUP",
+          "member": "string",
+          "name": "MissingInstanceStrategy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12106,7 +12124,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "v1",
           "member": "string",
           "name": "Data",
@@ -14115,7 +14133,7 @@
           "example": "0",
           "member": "uint64",
           "name": "PageNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14125,7 +14143,7 @@
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14135,7 +14153,7 @@
           "example": "无",
           "member": "DataSourceInfo",
           "name": "Rows",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -14145,7 +14163,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14155,8 +14173,18 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalPageNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“ijn”",
+          "member": "string",
+          "name": "SnapshotId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -14768,7 +14796,7 @@
         {
           "disabled": false,
           "document": "分页页码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "output_required": false,
@@ -14778,7 +14806,7 @@
         {
           "disabled": false,
           "document": "分页大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageSize",
           "output_required": false,
@@ -14788,7 +14816,7 @@
         {
           "disabled": false,
           "document": "总个数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
@@ -14798,7 +14826,7 @@
         {
           "disabled": false,
           "document": "总分页页码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalPageNumber",
           "output_required": false,
@@ -14813,6 +14841,16 @@
           "name": "Rows",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页快照id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "adhhs",
+          "member": "string",
+          "name": "SnapshotId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -14849,8 +14887,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "若数据源列表为绑定数据库，则为db名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Default",
+          "document": "<p>若数据源列表为绑定数据库，则为db名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"wedata\"]",
           "member": "string",
           "name": "DatabaseNames",
           "output_required": true,
@@ -14859,7 +14897,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据源描述信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Desc",
           "member": "string",
           "name": "Description",
@@ -14869,7 +14907,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源ID",
+          "document": "<p>数据源ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "ID",
@@ -14879,7 +14917,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源引擎的实例ID，如CDB实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据源引擎的实例ID，如CDB实例ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "uuid",
           "member": "string",
           "name": "Instance",
@@ -14889,8 +14927,8 @@
         },
         {
           "disabled": false,
-          "document": "数据源名称，在相同SpaceName下，数据源名称不能为空",
-          "example": "test",
+          "document": "<p>数据源名称，在相同SpaceName下，数据源名称不能为空</p>",
+          "example": "mysql",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -14899,7 +14937,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源引擎所属区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据源引擎所属区域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "beijing",
           "member": "string",
           "name": "Region",
@@ -14909,7 +14947,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源类型:枚举值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据源类型:枚举值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MYSQL",
           "member": "string",
           "name": "Type",
@@ -14919,7 +14957,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源所属的集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据源所属的集群id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "ClusterId",
@@ -14929,8 +14967,8 @@
         },
         {
           "disabled": false,
-          "document": "数据源版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>数据源版本信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2\"",
           "member": "string",
           "name": "Version",
           "output_required": true,
@@ -14939,8 +14977,8 @@
         },
         {
           "disabled": false,
-          "document": "数据源附带参数信息Params json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>数据源附带参数信息Params json字符串</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"params\"",
           "member": "string",
           "name": "ParamsString",
           "output_required": false,
@@ -14949,10 +14987,30 @@
         },
         {
           "disabled": false,
-          "document": "区分数据源类型自定义源还是系统源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>区分数据源类型自定义源还是系统源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DB",
           "member": "string",
           "name": "Category",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据实例ip</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11.158.31.139",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据实例port</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12206",
+          "member": "string",
+          "name": "Port",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -18567,7 +18625,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页码",
+          "document": "<p>页码</p>",
           "example": "0",
           "member": "uint64",
           "name": "PageNumber",
@@ -18576,7 +18634,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量",
+          "document": "<p>返回数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
@@ -18585,7 +18643,7 @@
         },
         {
           "disabled": false,
-          "document": "排序配置",
+          "document": "<p>排序配置</p>",
           "example": "无",
           "member": "OrderField",
           "name": "OrderFields",
@@ -18594,7 +18652,7 @@
         },
         {
           "disabled": false,
-          "document": "可选过滤条件，Filter可选配置(参考): \"Name\": { \"type\": \"string\", \"description\": \"数据源名称\" }, \"Type\": { \"type\": \"string\", \"description\": \"类型\" }, \"ClusterId\": { \"type\": \"string\", \"description\": \"集群id\" }, \"CategoryId\": { \"type\": \"string\", \"description\": \"分类，项目或空间id\" }",
+          "document": "<p>可选过滤条件，Filter可选配置(参考): &quot;Name&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;数据源名称&quot; }, &quot;Type&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;类型&quot; }, &quot;ClusterId&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;集群id&quot; }, &quot;CategoryId&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;分类，项目或空间id&quot; }</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -18609,7 +18667,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据源列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataSourceInfoPage",
           "name": "Data",
@@ -20733,7 +20791,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "\"1485413914375667\"",
           "member": "string",
           "name": "ProjectId",
@@ -20742,7 +20800,7 @@
         },
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "\"20210602165654425\"",
           "member": "string",
           "name": "TaskId",
@@ -20751,7 +20809,7 @@
         },
         {
           "disabled": false,
-          "document": "数据时间",
+          "document": "<p>数据时间</p>",
           "example": "\"2021-06-02 00:00:00\"",
           "member": "string",
           "name": "CurRunDate",
@@ -20760,7 +20818,7 @@
         },
         {
           "disabled": false,
-          "document": "日志级别，Info/Debug/Warn/Error/All",
+          "document": "<p>日志级别，Info/Debug/Warn/Error/All</p>",
           "example": "info",
           "member": "string",
           "name": "LogLevelType",
@@ -20769,7 +20827,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型,Log/Code",
+          "document": "<p>文件类型,Log/Code</p>",
           "example": "Log",
           "member": "string",
           "name": "ExecutionFileType",
@@ -20778,7 +20836,7 @@
         },
         {
           "disabled": false,
-          "document": "统一执行平台执行id, 注意: ExecutionJobId 跟 \"BrokerIp+OriginFileName\" 必须有一个不为空",
+          "document": "<p>统一执行平台执行id, 注意: ExecutionJobId 跟 &quot;BrokerIp+OriginFileName&quot; 必须有一个不为空</p>",
           "example": "10001",
           "member": "string",
           "name": "ExecutionJobId",
@@ -20787,7 +20845,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器Ip, 注意: \"BrokerIp+OriginFileName\"跟ExecutionJobId必须有一个不为空",
+          "document": "<p>服务器Ip, 注意: &quot;BrokerIp+OriginFileName&quot;跟ExecutionJobId必须有一个不为空</p>",
           "example": "\"172.16.16.16\"",
           "member": "string",
           "name": "BrokerIp",
@@ -20796,7 +20854,7 @@
         },
         {
           "disabled": false,
-          "document": "文件Name, 注意: \"BrokerIp+OriginFileName\"跟ExecutionJobId必须有一个不为空",
+          "document": "<p>文件Name, 注意: &quot;BrokerIp+OriginFileName&quot;跟ExecutionJobId必须有一个不为空</p>",
           "example": "\"20210602000000-9-all-log-0.20210602222614.log\"",
           "member": "string",
           "name": "OriginFileName",
@@ -20805,7 +20863,7 @@
         },
         {
           "disabled": false,
-          "document": "起始行",
+          "document": "<p>起始行</p>",
           "example": "1",
           "member": "int64",
           "name": "StartCount",
@@ -20814,7 +20872,7 @@
         },
         {
           "disabled": false,
-          "document": "每次查询行数",
+          "document": "<p>每次查询行数</p>",
           "example": "10000",
           "member": "int64",
           "name": "LineCount",
@@ -20823,7 +20881,7 @@
         },
         {
           "disabled": false,
-          "document": "查询日志扩展信息,通过统一执行平台接口分页查询日志时需要带上,第一页时为null",
+          "document": "<p>查询日志扩展信息,通过统一执行平台接口分页查询日志时需要带上,第一页时为null</p>",
           "example": "{\"\"}",
           "member": "string",
           "name": "ExtInfo",
@@ -20841,7 +20899,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期为基础数据进行日志匹配",
+          "document": "<p>生命周期为基础数据进行日志匹配</p>",
           "example": "无",
           "member": "InstanceLifeDetailDto",
           "name": "InstanceLifeDetailDtoList",
@@ -20850,7 +20908,7 @@
         },
         {
           "disabled": false,
-          "document": "当前生命周期",
+          "document": "<p>当前生命周期</p>",
           "example": "0",
           "member": "int64",
           "name": "CurrentLifeRound",
@@ -20859,7 +20917,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期总数",
+          "document": "<p>生命周期总数</p>",
           "example": "10",
           "member": "int64",
           "name": "MaxLifeRound",
@@ -20868,7 +20926,7 @@
         },
         {
           "disabled": false,
-          "document": "当前生命周期重试次数",
+          "document": "<p>当前生命周期重试次数</p>",
           "example": "1",
           "member": "int64",
           "name": "Tries",
@@ -20877,7 +20935,7 @@
         },
         {
           "disabled": false,
-          "document": "动态加载日志",
+          "document": "<p>动态加载日志</p>",
           "example": "true",
           "member": "bool",
           "name": "Dynamic",
@@ -20892,7 +20950,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InstanceLogInfoOpsDto",
           "name": "Data",
@@ -20914,7 +20972,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "\"1485413914375667\"",
           "member": "string",
           "name": "ProjectId",
@@ -20923,7 +20981,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "\"19920226154637701\"",
           "member": "string",
           "name": "TaskId",
@@ -20932,7 +20990,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数据时间",
+          "document": "<p>实例数据时间</p>",
           "example": "\"2024-04-09 00:00:00\"",
           "member": "string",
           "name": "CurRunDate",
@@ -20950,7 +21008,7 @@
         },
         {
           "disabled": false,
-          "document": "执行机IP",
+          "document": "<p>执行机IP</p>",
           "example": "\"172.16.1.119\"",
           "member": "string",
           "name": "BrokerIp",
@@ -20959,7 +21017,7 @@
         },
         {
           "disabled": false,
-          "document": "日志文件名",
+          "document": "<p>日志文件名</p>",
           "example": "\"20230309190426-9-all-log-0.20230309190612.log\"",
           "member": "string",
           "name": "OriginFileName",
@@ -20968,7 +21026,7 @@
         },
         {
           "disabled": false,
-          "document": "执行平台下发执行id",
+          "document": "<p>执行平台下发执行id</p>",
           "example": "10001",
           "member": "string",
           "name": "ExecutionJobId",
@@ -20977,7 +21035,7 @@
         },
         {
           "disabled": false,
-          "document": "日志级别，Info/Debug/Warn/Error/All",
+          "document": "<p>日志级别，Info/Debug/Warn/Error/All</p>",
           "example": "info",
           "member": "string",
           "name": "LogLevelType",
@@ -20986,7 +21044,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型,Log/Code",
+          "document": "<p>文件类型,Log/Code</p>",
           "example": "Log",
           "member": "string",
           "name": "ExecutionFileType",
@@ -20995,7 +21053,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用",
+          "document": "<p>生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用</p>",
           "example": "无",
           "member": "InstanceLifeDetailDto",
           "name": "InstanceLifeDetailDtoList",
@@ -21004,7 +21062,7 @@
         },
         {
           "disabled": false,
-          "document": "当前生命周期数",
+          "document": "<p>当前生命周期数</p>",
           "example": "1",
           "member": "int64",
           "name": "CurrentLifeRound",
@@ -21013,7 +21071,7 @@
         },
         {
           "disabled": false,
-          "document": "最大生命周期数",
+          "document": "<p>最大生命周期数</p>",
           "example": "10",
           "member": "int64",
           "name": "MaxLifeRound",
@@ -21022,7 +21080,7 @@
         },
         {
           "disabled": false,
-          "document": "当前生命周期重试次数",
+          "document": "<p>当前生命周期重试次数</p>",
           "example": "1",
           "member": "int64",
           "name": "Tries",
@@ -21031,7 +21089,7 @@
         },
         {
           "disabled": false,
-          "document": "动态获取日志信息标识",
+          "document": "<p>动态获取日志信息标识</p>",
           "example": "true",
           "member": "bool",
           "name": "Dynamic",
@@ -21046,7 +21104,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "下载文件详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>下载文件详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InstanceDownloadLogInfo",
           "name": "Data",
@@ -28299,7 +28357,7 @@
         {
           "disabled": false,
           "document": "请求来源，WEB 前端；CLIENT 客户端",
-          "example": "无",
+          "example": "Web",
           "member": "string",
           "name": "RequestFromSource",
           "required": false,
@@ -28323,7 +28381,7 @@
         {
           "disabled": false,
           "document": "请求来源，WEB 前端；CLIENT 客户端\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Web",
           "member": "string",
           "name": "RequestFromSource",
           "output_required": false,
@@ -32117,8 +32175,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "document": "<p>任务id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20260408150048612",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -32128,8 +32186,8 @@
         },
         {
           "disabled": false,
-          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "测试",
+          "document": "<p>任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "task_260408_150040",
           "member": "string",
           "name": "TaskName",
           "output_required": true,
@@ -32139,8 +32197,8 @@
         },
         {
           "disabled": false,
-          "document": "工作流id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "433",
+          "document": "<p>工作流id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9cbf9946-660b-4f9e-83e5-1621b641c88c",
           "member": "string",
           "name": "WorkflowId",
           "output_required": true,
@@ -32150,8 +32208,8 @@
         },
         {
           "disabled": false,
-          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "工作流",
+          "document": "<p>工作流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wf_260408_145840",
           "member": "string",
           "name": "WorkflowName",
           "output_required": true,
@@ -32161,7 +32219,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "32",
           "member": "int64",
           "name": "TaskTypeId",
@@ -32172,7 +32230,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DLC",
           "member": "string",
           "name": "TaskType",
@@ -32183,8 +32241,8 @@
         },
         {
           "disabled": false,
-          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "765",
+          "document": "<p>项目id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3197263226677186560",
           "member": "string",
           "name": "ProjectId",
           "output_required": true,
@@ -32194,10 +32252,21 @@
         },
         {
           "disabled": false,
-          "document": "任务周期类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务周期类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "HOUR_CYCLE",
           "member": "string",
           "name": "CycleType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "event_01",
+          "member": "string",
+          "name": "EventName",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -34301,8 +34370,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目id",
-          "example": "无",
+          "document": "<p>项目id</p>",
+          "example": "13579",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -34310,8 +34379,8 @@
         },
         {
           "disabled": false,
-          "document": "请求域名",
-          "example": "无",
+          "document": "<p>请求域名</p>",
+          "example": "*",
           "member": "string",
           "name": "OriginDomain",
           "required": true,
@@ -34319,8 +34388,8 @@
         },
         {
           "disabled": false,
-          "document": "是否需要跨域",
-          "example": "无",
+          "document": "<p>是否需要跨域</p>",
+          "example": "true",
           "member": "bool",
           "name": "CrossFlag",
           "required": true,
@@ -34328,8 +34397,8 @@
         },
         {
           "disabled": false,
-          "document": "桶名",
-          "example": "无",
+          "document": "<p>桶名</p>",
+          "example": "acf",
           "member": "string",
           "name": "BucketName",
           "required": false,
@@ -34337,8 +34406,8 @@
         },
         {
           "disabled": false,
-          "document": "远程地址",
-          "example": "无",
+          "document": "<p>远程地址</p>",
+          "example": "*",
           "member": "string",
           "name": "RemotePath",
           "required": false,
@@ -34346,8 +34415,8 @@
         },
         {
           "disabled": false,
-          "document": "地域",
-          "example": "无",
+          "document": "<p>地域</p>",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "RemoteRegion",
           "required": false,
@@ -34361,8 +34430,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "cos地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>cos地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -34371,7 +34440,7 @@
         },
         {
           "disabled": false,
-          "document": "Token信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Token信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CosTokenResponse",
           "name": "Token",
@@ -34381,8 +34450,8 @@
         },
         {
           "disabled": false,
-          "document": "桶名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>桶名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dev-12345",
           "member": "string",
           "name": "Bucket",
           "output_required": true,
@@ -34391,8 +34460,8 @@
         },
         {
           "disabled": false,
-          "document": "终止点（针对私有云环境）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>终止点（针对私有云环境）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
           "member": "string",
           "name": "EndPoint",
           "output_required": true,
@@ -34912,8 +34981,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目编号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1111",
+          "document": "<p>项目编号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3178765294825680384",
           "member": "string",
           "name": "ProjectId",
           "output_required": false,
@@ -34922,8 +34991,8 @@
         },
         {
           "disabled": false,
-          "document": "任务编号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1111",
+          "document": "<p>任务编号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20260523172811726",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
@@ -34932,7 +35001,7 @@
         },
         {
           "disabled": false,
-          "document": "页内尺寸\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>页内尺寸</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8192",
           "member": "int64",
           "name": "PageSize",
@@ -34942,7 +35011,7 @@
         },
         {
           "disabled": false,
-          "document": "页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>页码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "PageNum",
@@ -34952,7 +35021,7 @@
         },
         {
           "disabled": false,
-          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总页数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "PageTotal",
@@ -34962,8 +35031,8 @@
         },
         {
           "disabled": false,
-          "document": "分页内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "aaaa",
+          "document": "<p>分页内容</p><p>分页拉取全部代码内容后，先拼接，再Base64解码获取完整脚本内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c2VsZWN0IDE=",
           "member": "string",
           "name": "Base64ScriptContent",
           "output_required": false,
@@ -39397,7 +39466,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "<p>任务名称</p>",
           "example": "testtaskname",
           "member": "string",
           "name": "TaskName",
@@ -39408,7 +39477,7 @@
         },
         {
           "disabled": false,
-          "document": "任务描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testdesc",
           "member": "string",
           "name": "Description",
@@ -39419,7 +39488,7 @@
         },
         {
           "disabled": false,
-          "document": "同步类型1.解决方案(整库迁移),2.单表同步",
+          "document": "<p>同步类型1.解决方案(整库迁移),2.单表同步</p>",
           "example": "2",
           "member": "int64",
           "name": "SyncType",
@@ -39430,7 +39499,7 @@
         },
         {
           "disabled": false,
-          "document": "201.实时,202.离线",
+          "document": "<p>201.实时,202.离线</p>",
           "example": "201",
           "member": "int64",
           "name": "TaskType",
@@ -39441,7 +39510,7 @@
         },
         {
           "disabled": false,
-          "document": "任务所属工作流id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务所属工作流id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "流id",
           "member": "string",
           "name": "WorkflowId",
@@ -39452,7 +39521,7 @@
         },
         {
           "disabled": false,
-          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "n11a6d01c-0ec6-4efc-bd14-97a921d01d3f",
           "member": "string",
           "name": "TaskId",
@@ -39463,7 +39532,7 @@
         },
         {
           "disabled": false,
-          "document": "任务调度id(oceanus or us等作业id)，非填项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务调度id(oceanus or us等作业id)，非填项</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cql-hjlx38yl",
           "member": "string",
           "name": "ScheduleTaskId",
@@ -39474,7 +39543,7 @@
         },
         {
           "disabled": false,
-          "document": "inlong任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>inlong任务id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "a5d814828-452c-46f6-b128-19c1a3249bf0",
           "member": "string",
           "name": "TaskGroupId",
@@ -39485,7 +39554,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>项目id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
@@ -39496,7 +39565,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人uin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100022187073",
           "member": "string",
           "name": "CreatorUin",
@@ -39507,7 +39576,7 @@
         },
         {
           "disabled": false,
-          "document": "操作人uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作人uin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100022187073",
           "member": "string",
           "name": "OperatorUin",
@@ -39518,7 +39587,7 @@
         },
         {
           "disabled": false,
-          "document": "owner uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>owner uin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100022187073",
           "member": "string",
           "name": "OwnerUin",
@@ -39529,7 +39598,7 @@
         },
         {
           "disabled": false,
-          "document": "应用id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1257305888",
           "member": "string",
           "name": "AppId",
@@ -39540,7 +39609,7 @@
         },
         {
           "disabled": false,
-          "document": "0:新建(任务开发态默认状态)|1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>0:新建(任务开发态默认状态)|1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -39551,7 +39620,7 @@
         },
         {
           "disabled": false,
-          "document": "节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IntegrationNodeInfo",
           "name": "Nodes",
@@ -39562,7 +39631,7 @@
         },
         {
           "disabled": false,
-          "document": "执行资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行资源id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20220331190555092303",
           "member": "string",
           "name": "ExecutorId",
@@ -39573,7 +39642,7 @@
         },
         {
           "disabled": false,
-          "document": "任务配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务配置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RecordField",
           "name": "Config",
@@ -39584,7 +39653,7 @@
         },
         {
           "disabled": false,
-          "document": "任务扩展配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务扩展配置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RecordField",
           "name": "ExtConfig",
@@ -39595,7 +39664,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行context信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务执行context信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RecordField",
           "name": "ExecuteContext",
@@ -39606,7 +39675,7 @@
         },
         {
           "disabled": false,
-          "document": "节点映射\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点映射</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IntegrationNodeMapping",
           "name": "Mappings",
@@ -39617,7 +39686,7 @@
         },
         {
           "disabled": false,
-          "document": "任务配置模式，0:画布 1:表单 3:脚本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务配置模式，0:画布 1:表单 3:脚本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
           "name": "TaskMode",
@@ -39628,7 +39697,7 @@
         },
         {
           "disabled": false,
-          "document": "责任人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>责任人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100028625403",
           "member": "string",
           "name": "Incharge",
@@ -39639,7 +39708,7 @@
         },
         {
           "disabled": false,
-          "document": "离线新增参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>离线新增参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OfflineTaskAddParam",
           "name": "OfflineTaskAddEntity",
@@ -39650,7 +39719,7 @@
         },
         {
           "disabled": false,
-          "document": "group name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>group name</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "资源组01",
           "member": "string",
           "name": "ExecutorGroupName",
@@ -39661,7 +39730,7 @@
         },
         {
           "disabled": false,
-          "document": "inlong manager url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>inlong manager url</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "172.16.64.68:8083",
           "member": "string",
           "name": "InLongManagerUrl",
@@ -39672,7 +39741,7 @@
         },
         {
           "disabled": false,
-          "document": "stream id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>stream id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f8317843e-68f9-4373-914f-241d7200a9a4",
           "member": "string",
           "name": "InLongStreamId",
@@ -39683,7 +39752,7 @@
         },
         {
           "disabled": false,
-          "document": "version\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>version</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "v17",
           "member": "string",
           "name": "InLongManagerVersion",
@@ -39694,7 +39763,7 @@
         },
         {
           "disabled": false,
-          "document": "inlong dataproxy url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>inlong dataproxy url</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"172.16.64.68:8086\"]",
           "member": "string",
           "name": "DataProxyUrl",
@@ -39705,7 +39774,7 @@
         },
         {
           "disabled": false,
-          "document": "任务版本是否已提交运维\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务版本是否已提交运维</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "Submit",
@@ -39716,7 +39785,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MYSQL",
           "member": "string",
           "name": "InputDatasourceType",
@@ -39727,7 +39796,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DLC",
           "member": "string",
           "name": "OutputDatasourceType",
@@ -39738,7 +39807,7 @@
         },
         {
           "disabled": false,
-          "document": "读取条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>读取条数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
           "name": "NumRecordsIn",
@@ -39749,7 +39818,7 @@
         },
         {
           "disabled": false,
-          "document": "写入条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>写入条数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
           "name": "NumRecordsOut",
@@ -39760,7 +39829,7 @@
         },
         {
           "disabled": false,
-          "document": "读取延迟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>读取延迟</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5.0",
           "member": "float",
           "name": "ReaderDelay",
@@ -39771,7 +39840,7 @@
         },
         {
           "disabled": false,
-          "document": "重启次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重启次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "NumRestarts",
@@ -39782,7 +39851,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-05-07 10:13:21",
           "member": "string",
           "name": "CreateTime",
@@ -39793,7 +39862,7 @@
         },
         {
           "disabled": false,
-          "document": "任务更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-05-07 10:13:21",
           "member": "string",
           "name": "UpdateTime",
@@ -39804,7 +39873,7 @@
         },
         {
           "disabled": false,
-          "document": "任务最后一次运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务最后一次运行时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-05-07 10:13:21",
           "member": "string",
           "name": "LastRunTime",
@@ -39815,7 +39884,7 @@
         },
         {
           "disabled": false,
-          "document": "任务停止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务停止时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-05-07 10:13:21",
           "member": "string",
           "name": "StopTime",
@@ -39826,7 +39895,7 @@
         },
         {
           "disabled": false,
-          "document": "作业是否已提交\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业是否已提交</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "HasVersion",
@@ -39837,7 +39906,7 @@
         },
         {
           "disabled": false,
-          "document": "任务是否被锁定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务是否被锁定</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "Locked",
@@ -39848,7 +39917,7 @@
         },
         {
           "disabled": false,
-          "document": "任务锁定人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务锁定人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100022187073",
           "member": "string",
           "name": "Locker",
@@ -39859,7 +39928,7 @@
         },
         {
           "disabled": false,
-          "document": "耗费资源量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>耗费资源量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2.0",
           "member": "float",
           "name": "RunningCu",
@@ -39870,7 +39939,7 @@
         },
         {
           "disabled": false,
-          "document": "该任务关联的告警规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>该任务关联的告警规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"769\",\"1768\"]",
           "member": "string",
           "name": "TaskAlarmRegularList",
@@ -39881,7 +39950,7 @@
         },
         {
           "disabled": false,
-          "document": "实时任务资源分层情况： 0：进行中,1：成功 ,2：失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实时任务资源分层情况： 0：进行中,1：成功 ,2：失败</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "SwitchResource",
@@ -39892,7 +39961,7 @@
         },
         {
           "disabled": false,
-          "document": "实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ReadPhase",
@@ -39903,7 +39972,7 @@
         },
         {
           "disabled": false,
-          "document": "实时任务版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实时任务版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12",
           "member": "int64",
           "name": "InstanceVersion",
@@ -39914,7 +39983,7 @@
         },
         {
           "disabled": false,
-          "document": "离线任务导入到编排空间的任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>离线任务导入到编排空间的任务id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20230112170349643",
           "member": "string",
           "name": "ArrangeSpaceTaskId",
@@ -39925,7 +39994,7 @@
         },
         {
           "disabled": false,
-          "document": "离线任务状态区分1.未提交2.已提交3.已导出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>离线任务状态区分1.未提交2.已提交3.已导出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "OfflineTaskStatus",
@@ -39936,7 +40005,7 @@
         },
         {
           "disabled": false,
-          "document": "导入到编排空间配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>导入到编排空间配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskImportInfo",
           "name": "TaskImportInfo",
@@ -39947,7 +40016,7 @@
         },
         {
           "disabled": false,
-          "document": "业务延迟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>业务延迟</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
           "name": "BusinessLatency",
@@ -39958,7 +40027,7 @@
         },
         {
           "disabled": false,
-          "document": "当前同步位点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前同步位点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "170000010000",
           "member": "int64",
           "name": "CurrentSyncPosition",
@@ -39969,7 +40038,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IntegrationTag",
           "name": "TagList",
@@ -39980,7 +40049,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "error message",
           "member": "string",
           "name": "ErrorMessage",
@@ -39991,7 +40060,7 @@
         },
         {
           "disabled": false,
-          "document": "任务子状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务子状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TaskSubType",
@@ -40002,7 +40071,7 @@
         },
         {
           "disabled": false,
-          "document": "是否存在SavePoint, 0-存在, 1-不存在, null 为未知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否存在SavePoint, 0-存在, 1-不存在, null 为未知</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "NotExistsCheckPoint",
@@ -40013,7 +40082,7 @@
         },
         {
           "disabled": false,
-          "document": "savepiontPath\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>savepiontPath</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sv-199",
           "member": "string",
           "name": "SavePointId",
@@ -40024,13 +40093,24 @@
         },
         {
           "disabled": false,
-          "document": "savepiontId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>savepiontId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cos://k",
           "member": "string",
           "name": "SavePointPath",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次操作信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LastOperateInfo",
+          "name": "LastOperateInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -40505,6 +40585,67 @@
           "example": "label",
           "member": "string",
           "name": "LabelValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LastOperateInfo": {
+      "document": "最近一次的操作信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务事件</p>",
+          "example": "",
+          "member": "string",
+          "name": "TaskEvent",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作ID</p>",
+          "example": "",
+          "member": "string",
+          "name": "OperateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "UpdatedTime",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -47419,8 +47560,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>唯一标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "14773",
           "member": "int64",
           "name": "Id",
           "output_required": true,
@@ -47430,8 +47571,8 @@
         },
         {
           "disabled": false,
-          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>任务id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20250814105559473",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -47441,8 +47582,8 @@
         },
         {
           "disabled": false,
-          "document": "参数名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>参数名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aewqe",
           "member": "string",
           "name": "ParamKey",
           "output_required": true,
@@ -47452,8 +47593,8 @@
         },
         {
           "disabled": false,
-          "document": "参数描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>参数描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dsds",
           "member": "string",
           "name": "ParamDesc",
           "output_required": true,
@@ -47463,8 +47604,8 @@
         },
         {
           "disabled": false,
-          "document": "参数定义\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>参数定义</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dsds",
           "member": "string",
           "name": "ParamDefine",
           "output_required": true,
@@ -47474,8 +47615,8 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-04-11 11:03:02",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -47485,8 +47626,8 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-04-11 11:03:02",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -47496,8 +47637,8 @@
         },
         {
           "disabled": false,
-          "document": "任务名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>任务名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wdada",
           "member": "string",
           "name": "TaskName",
           "output_required": true,
@@ -47507,8 +47648,8 @@
         },
         {
           "disabled": false,
-          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>项目id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "19377487728365568",
           "member": "string",
           "name": "ProjectId",
           "output_required": true,
@@ -47518,8 +47659,8 @@
         },
         {
           "disabled": false,
-          "document": "项目名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>项目名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "auto_project_wedata",
           "member": "string",
           "name": "ProjectName",
           "output_required": true,
@@ -50197,7 +50338,7 @@
         {
           "disabled": false,
           "document": "请求来源，WEB 前端；CLIENT 客户端\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Web",
           "member": "string",
           "name": "RequestFromSource",
           "output_required": false,
@@ -57453,7 +57594,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色id",
+          "document": "<p>角色id</p>",
           "example": "1",
           "member": "string",
           "name": "RoleId",
@@ -57463,7 +57604,7 @@
         },
         {
           "disabled": false,
-          "document": "角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>角色名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Name",
           "member": "string",
           "name": "Name",
@@ -57473,7 +57614,7 @@
         },
         {
           "disabled": false,
-          "document": "角色昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>角色昵称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Name",
           "member": "string",
           "name": "NameCn",
@@ -57483,8 +57624,8 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "描述",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "读写",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -57493,8 +57634,8 @@
         },
         {
           "disabled": false,
-          "document": "角色权限\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "<p>角色权限</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RolePrivilege",
           "name": "Privileges",
           "output_required": true,
@@ -57503,8 +57644,8 @@
         },
         {
           "disabled": false,
-          "document": "方法路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "<p>方法路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"abe\"]",
           "member": "string",
           "name": "MethodPaths",
           "output_required": true,
@@ -57513,8 +57654,8 @@
         },
         {
           "disabled": false,
-          "document": "角色类型, 分为System,Tenant,Project,Commercial\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>角色类型, 分为System,Tenant,Project,Commercial</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Custom",
           "member": "string",
           "name": "RoleType",
           "output_required": true,
@@ -57523,8 +57664,8 @@
         },
         {
           "disabled": false,
-          "document": "是否系统默认\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>是否系统默认</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "SystemInit",
           "output_required": true,
@@ -57533,11 +57674,31 @@
         },
         {
           "disabled": false,
-          "document": "自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>自定义参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“12”",
           "member": "string",
           "name": "Params",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1652252787000",
+          "member": "string",
+          "name": "CreateTimeStr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zhangshan",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -61195,7 +61356,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20250805162153115",
           "member": "string",
           "name": "TaskId",
@@ -61206,7 +61367,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟任务标记\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>虚拟任务标记</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6c199238-5641-4fba-9bf2-91e2d2b0b471",
           "member": "string",
           "name": "VirtualTaskId",
@@ -61217,7 +61378,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟任务标记\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>虚拟任务标记</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "VirtualFlag",
@@ -61228,7 +61389,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "wedatatest",
           "member": "string",
           "name": "TaskName",
@@ -61239,7 +61400,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "e4044365-f76a-42ad-a644-7783ea60f7b4",
           "member": "string",
           "name": "WorkflowId",
@@ -61250,7 +61411,7 @@
         },
         {
           "disabled": false,
-          "document": "真实工作流id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>真实工作流id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "e4044365-f76a-42ad-a644-7783ea60f7b4",
           "member": "string",
           "name": "RealWorkflowId",
@@ -61261,7 +61422,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "workflowName",
           "member": "string",
           "name": "WorkflowName",
@@ -61272,7 +61433,7 @@
         },
         {
           "disabled": false,
-          "document": "文件夹id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件夹id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "e6d7bba7-c4dd-4fce-8ce1-bb0836c7794b",
           "member": "string",
           "name": "FolderId",
@@ -61283,7 +61444,7 @@
         },
         {
           "disabled": false,
-          "document": "文件夹名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件夹名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "folder",
           "member": "string",
           "name": "FolderName",
@@ -61294,7 +61455,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-07-31 21:11:24",
           "member": "string",
           "name": "CreateTime",
@@ -61305,7 +61466,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-07-31 21:11:24",
           "member": "string",
           "name": "LastUpdate",
@@ -61316,7 +61477,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>任务状态，取值范围：</p>\n<ul>\n<li>N 新建</li>\n<li>Y 运行</li>\n<li>F 停止</li>\n<li>O 冻结</li>\n<li>T 停止中</li>\n<li>INVALID 已失效</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务状态，取值范围：</p><ul><li>N 新建</li><li>Y 运行</li><li>F 停止</li><li>O 冻结</li><li>T 停止中</li><li>INVALID 已失效</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "N",
           "member": "string",
           "name": "Status",
@@ -61327,7 +61488,7 @@
         },
         {
           "disabled": false,
-          "document": "责任人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>责任人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "user1",
           "member": "string",
           "name": "InCharge",
@@ -61338,7 +61499,7 @@
         },
         {
           "disabled": false,
-          "document": "责任人用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>责任人用户id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100028578763",
           "member": "string",
           "name": "InChargeId",
@@ -61349,7 +61510,7 @@
         },
         {
           "disabled": false,
-          "document": "生效日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>生效日期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-07-31 21:11:24",
           "member": "string",
           "name": "StartTime",
@@ -61360,7 +61521,7 @@
         },
         {
           "disabled": false,
-          "document": "结束日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>结束日期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-07-31 21:11:24",
           "member": "string",
           "name": "EndTime",
@@ -61371,7 +61532,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间左闭区间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行时间左闭区间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "01:11:24",
           "member": "string",
           "name": "ExecutionStartTime",
@@ -61382,7 +61543,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间右闭区间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行时间右闭区间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "21:11:24",
           "member": "string",
           "name": "ExecutionEndTime",
@@ -61393,7 +61554,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>项目id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1460726726769418240",
           "member": "string",
           "name": "ProjectId",
@@ -61404,7 +61565,7 @@
         },
         {
           "disabled": false,
-          "document": "项目标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>项目标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ident",
           "member": "string",
           "name": "ProjectIdent",
@@ -61415,7 +61576,7 @@
         },
         {
           "disabled": false,
-          "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>项目名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "项目1",
           "member": "string",
           "name": "ProjectName",
@@ -61426,7 +61587,7 @@
         },
         {
           "disabled": false,
-          "document": "周期类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>周期类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "D",
           "member": "string",
           "name": "CycleType",
@@ -61437,7 +61598,7 @@
         },
         {
           "disabled": false,
-          "document": "步长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>步长</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "CycleStep",
@@ -61448,7 +61609,7 @@
         },
         {
           "disabled": false,
-          "document": "对于crontab类型调度配置其为用户输入 对于周期类型调度配置其为系统计算\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>对于crontab类型调度配置其为用户输入 对于周期类型调度配置其为系统计算</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0 0 0 0 1 0",
           "member": "string",
           "name": "CrontabExpression",
@@ -61459,7 +61620,7 @@
         },
         {
           "disabled": false,
-          "document": "延时调度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>延时调度</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "120",
           "member": "int64",
           "name": "DelayTime",
@@ -61470,7 +61631,7 @@
         },
         {
           "disabled": false,
-          "document": "延时执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>延时执行时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "120",
           "member": "int64",
           "name": "StartupTime",
@@ -61481,7 +61642,7 @@
         },
         {
           "disabled": false,
-          "document": "重试等待时间,单位分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重试等待时间,单位分钟</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RetryWait",
@@ -61492,7 +61653,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可重试\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否可重试</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Retriable",
@@ -61503,7 +61664,7 @@
         },
         {
           "disabled": false,
-          "document": "调度扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>调度扩展信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "submit",
           "member": "string",
           "name": "TaskAction",
@@ -61514,7 +61675,7 @@
         },
         {
           "disabled": false,
-          "document": "运行次数限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行次数限制</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TryLimit",
@@ -61525,7 +61686,7 @@
         },
         {
           "disabled": false,
-          "document": "运行优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行优先级</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
           "name": "RunPriority",
@@ -61536,7 +61697,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskTypeDsVO",
           "name": "TaskType",
@@ -61547,7 +61708,7 @@
         },
         {
           "disabled": false,
-          "document": "指定的运行节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>指定的运行节点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1",
           "member": "string",
           "name": "BrokerIp",
@@ -61558,7 +61719,7 @@
         },
         {
           "disabled": false,
-          "document": "集群name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群name</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cdfr",
           "member": "string",
           "name": "ClusterId",
@@ -61569,7 +61730,7 @@
         },
         {
           "disabled": false,
-          "document": "最小数据时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最小数据时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "00:00:00",
           "member": "string",
           "name": "MinDateTime",
@@ -61580,7 +61741,7 @@
         },
         {
           "disabled": false,
-          "document": "最大数据时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最大数据时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "00:00:00",
           "member": "string",
           "name": "MaxDateTime",
@@ -61591,7 +61752,7 @@
         },
         {
           "disabled": false,
-          "document": "运行耗时超时时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行耗时超时时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "ExecutionTTL",
@@ -61602,7 +61763,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自身依赖 是1 否2 并行3\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否自身依赖 是1 否2 并行3</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "serial",
           "member": "string",
           "name": "SelfDepend",
@@ -61613,7 +61774,7 @@
         },
         {
           "disabled": false,
-          "document": "LeftCoordinate坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>LeftCoordinate坐标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "542.0",
           "member": "float",
           "name": "LeftCoordinate",
@@ -61624,7 +61785,7 @@
         },
         {
           "disabled": false,
-          "document": "TopCoordinate坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>TopCoordinate坐标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "432.0",
           "member": "float",
           "name": "TopCoordinate",
@@ -61635,7 +61796,7 @@
         },
         {
           "disabled": false,
-          "document": "TaskExt信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>TaskExt信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskExtDsVO",
           "name": "TaskExt",
@@ -61646,7 +61807,7 @@
         },
         {
           "disabled": false,
-          "document": "taskExt 导入导出json使用 private Map  properties;\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>taskExt 导入导出json使用 private Map  properties;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"taskId\":\"20250142892\"}",
           "member": "string",
           "name": "Properties",
@@ -61657,7 +61818,7 @@
         },
         {
           "disabled": false,
-          "document": "任务备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务备注</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注信息",
           "member": "string",
           "name": "Notes",
@@ -61668,7 +61829,7 @@
         },
         {
           "disabled": false,
-          "document": "实例生成策略 T+1 表示当前周期生成上一周期数据时间任务实例 默认T+1 T+0 表示当前周期生成当前周期数据时间任务实例 T-1\n     * 表示当前周期生成下一周期数据时间任务实例\n     *\n     * service不做默认策略处理, 下沉到数据初始化默认T+1, service涉及到多个更新task的路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例生成策略 T+1 表示当前周期生成上一周期数据时间任务实例 默认T+1 T+0 表示当前周期生成当前周期数据时间任务实例 T-1</p><pre><code> * 表示当前周期生成下一周期数据时间任务实例 * * service不做默认策略处理, 下沉到数据初始化默认T+1, service涉及到多个更新task的路径</code></pre>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "T_PLUS_0",
           "member": "string",
           "name": "InstanceInitStrategy",
@@ -61679,7 +61840,7 @@
         },
         {
           "disabled": false,
-          "document": "资源池队列名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源池队列名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "auto",
           "member": "string",
           "name": "YarnQueue",
@@ -61690,7 +61851,7 @@
         },
         {
           "disabled": false,
-          "document": "任务告警信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务告警信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AlarmDsVO",
           "name": "Alarms",
@@ -61701,7 +61862,7 @@
         },
         {
           "disabled": false,
-          "document": "alarmDTO 导入导出json使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>alarmDTO 导入导出json使用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{{\"taskId\":\"20250142892\"}",
           "member": "string",
           "name": "Alarm",
@@ -61712,7 +61873,7 @@
         },
         {
           "disabled": false,
-          "document": "任务脚本是否发生变化\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务脚本是否发生变化</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "ScriptChange",
@@ -61723,7 +61884,7 @@
         },
         {
           "disabled": false,
-          "document": "任务版本是否已提交\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务版本是否已提交</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "Submit",
@@ -61734,7 +61895,7 @@
         },
         {
           "disabled": false,
-          "document": "最新调度计划变更时间 仅生产态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最新调度计划变更时间 仅生产态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-08-01 06:43:08",
           "member": "string",
           "name": "LastSchedulerCommitTime",
@@ -61745,7 +61906,7 @@
         },
         {
           "disabled": false,
-          "document": "仅生产态存储于生产态序列化任务信息, 减少base CPU重复密集计算\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>仅生产态存储于生产态序列化任务信息, 减少base CPU重复密集计算</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "任务序列化信息",
           "member": "string",
           "name": "NormalizedJobStartTime",
@@ -61756,7 +61917,7 @@
         },
         {
           "disabled": false,
-          "document": "启动暂停的任务时，选择不补录中间实例，通过此字段来标识从哪个时间开始生成实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>启动暂停的任务时，选择不补录中间实例，通过此字段来标识从哪个时间开始生成实例</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-07-31 21:10:08",
           "member": "string",
           "name": "RecoverFreezeStartTime",
@@ -61767,7 +61928,7 @@
         },
         {
           "disabled": false,
-          "document": "源数据源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>源数据源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3478",
           "member": "string",
           "name": "SourceServer",
@@ -61778,7 +61939,7 @@
         },
         {
           "disabled": false,
-          "document": "目标数据源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标数据源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6216",
           "member": "string",
           "name": "TargetServer",
@@ -61789,7 +61950,7 @@
         },
         {
           "disabled": false,
-          "document": "父子节点树\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>父子节点树</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskDsDTO",
           "name": "Tasks",
@@ -61800,7 +61961,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建者</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "user",
           "member": "string",
           "name": "Creater",
@@ -61811,7 +61972,7 @@
         },
         {
           "disabled": false,
-          "document": "分支，依赖关系，and/or, 默认and\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分支，依赖关系，and/or, 默认and</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "and",
           "member": "string",
           "name": "DependencyRel",
@@ -61822,7 +61983,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持工作流依赖 yes / no 默认 no\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否支持工作流依赖 yes / no 默认 no</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "no",
           "member": "string",
           "name": "DependencyWorkflow",
@@ -61833,7 +61994,7 @@
         },
         {
           "disabled": false,
-          "document": "支持事件监听器配置导入导出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>支持事件监听器配置导入导出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"taskId\":\"20250142892\"}",
           "member": "string",
           "name": "EventListenerConfig",
@@ -61844,7 +62005,7 @@
         },
         {
           "disabled": false,
-          "document": "支持事件触发器配置导入导出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>支持事件触发器配置导入导出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"taskId\":\"20250142892\"}",
           "member": "string",
           "name": "EventPublisherConfig",
@@ -61855,7 +62016,7 @@
         },
         {
           "disabled": false,
-          "document": "依赖配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>依赖配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DependencyConfigDsDTO",
           "name": "DependencyConfigList",
@@ -61866,7 +62027,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>任务状态，取值范围：</p>\n<ul>\n<li>N 新建</li>\n<li>Y 运行</li>\n<li>F 停止</li>\n<li>O 冻结</li>\n<li>T 停止中</li>\n<li>INVALID 已失效</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务状态，取值范围：</p><ul><li>N 新建</li><li>Y 运行</li><li>F 停止</li><li>O 冻结</li><li>T 停止中</li><li>INVALID 已失效</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "N",
           "member": "string",
           "name": "VirtualTaskStatus",
@@ -61877,7 +62038,7 @@
         },
         {
           "disabled": false,
-          "document": "回收站还原提示语\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>回收站还原提示语</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "任务已回收",
           "member": "string",
           "name": "RecycleTips",
@@ -61888,7 +62049,7 @@
         },
         {
           "disabled": false,
-          "document": "回收站所属用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>回收站所属用户</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100028538763",
           "member": "string",
           "name": "RecycleUser",
@@ -61899,7 +62060,7 @@
         },
         {
           "disabled": false,
-          "document": "新增 或 修改\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>新增 或 修改</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "New",
           "member": "string",
           "name": "NewOrUpdate",
@@ -61910,7 +62071,7 @@
         },
         {
           "disabled": false,
-          "document": "任务上游依赖信息 用于发布管理导入导出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务上游依赖信息 用于发布管理导入导出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ParameterTaskDsDto",
           "name": "Params",
@@ -61921,7 +62082,7 @@
         },
         {
           "disabled": false,
-          "document": "任务上游依赖信息 用于发布管理导入导出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务上游依赖信息 用于发布管理导入导出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskLinkDsDTO",
           "name": "TaskLinkInfo",
@@ -61932,7 +62093,7 @@
         },
         {
           "disabled": false,
-          "document": "导入结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>导入结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "ImportResult",
@@ -61943,7 +62104,7 @@
         },
         {
           "disabled": false,
-          "document": "导入失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>导入失败原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "错误信息",
           "member": "string",
           "name": "ImportErrMsg",
@@ -61954,7 +62115,7 @@
         },
         {
           "disabled": false,
-          "document": "任务内容 全部内容 配置内容 资源内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务内容 全部内容 配置内容 资源内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "select",
           "member": "string",
           "name": "ContentType",
@@ -61965,7 +62126,7 @@
         },
         {
           "disabled": false,
-          "document": "是否导入提交运行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否导入提交运行</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "TaskAutoSubmit",
@@ -61976,7 +62137,7 @@
         },
         {
           "disabled": false,
-          "document": "上层产品 数据质量 / 数据开发 / ...\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>上层产品 数据质量 / 数据开发 / ...</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dev",
           "member": "string",
           "name": "ProductName",
@@ -61987,7 +62148,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者帐号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建者账号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "101028578763",
           "member": "string",
           "name": "OwnId",
@@ -61998,7 +62159,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子账号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100228578763",
           "member": "string",
           "name": "UserId",
@@ -62009,7 +62170,7 @@
         },
         {
           "disabled": false,
-          "document": "租户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>租户id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1315051782",
           "member": "string",
           "name": "TenantId",
@@ -62020,7 +62181,7 @@
         },
         {
           "disabled": false,
-          "document": "最后修改的人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最后修改的人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "user2",
           "member": "string",
           "name": "UpdateUser",
@@ -62031,7 +62192,7 @@
         },
         {
           "disabled": false,
-          "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最后修改时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-07-31 21:10:12",
           "member": "string",
           "name": "UpdateTime",
@@ -62042,7 +62203,7 @@
         },
         {
           "disabled": false,
-          "document": "最后修改的人的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最后修改的人的ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100028578763",
           "member": "string",
           "name": "UpdateUserId",
@@ -62053,7 +62214,7 @@
         },
         {
           "disabled": false,
-          "document": "调度计划\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>调度计划</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025年07月31日 21:10:08执行",
           "member": "string",
           "name": "SchedulerDesc",
@@ -62064,7 +62225,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20230704114445477037",
           "member": "string",
           "name": "ResourceGroup",
@@ -62075,7 +62236,7 @@
         },
         {
           "disabled": false,
-          "document": "版本提交说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>版本提交说明</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "V1",
           "member": "string",
           "name": "VersionDesc",
@@ -62086,7 +62247,7 @@
         },
         {
           "disabled": false,
-          "document": "编排-删除添加的链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>编排-删除添加的链接</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6c199238-5641-4fba-9bf2-91e2d2b0b471",
           "member": "string",
           "name": "LinkId",
@@ -62097,7 +62258,7 @@
         },
         {
           "disabled": false,
-          "document": "脚本引用关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>脚本引用关系</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6c199238-5641-4fba-9bf2-91e2d2b0b471",
           "member": "string",
           "name": "UserFileId",
@@ -62108,7 +62269,7 @@
         },
         {
           "disabled": false,
-          "document": "来源数据源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>来源数据源ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3415",
           "member": "string",
           "name": "SourceServiceId",
@@ -62119,7 +62280,7 @@
         },
         {
           "disabled": false,
-          "document": "来源数据源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>来源数据源类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mysql",
           "member": "string",
           "name": "SourceServiceType",
@@ -62130,7 +62291,7 @@
         },
         {
           "disabled": false,
-          "document": "去向数据源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>去向数据源ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4521",
           "member": "string",
           "name": "TargetServiceId",
@@ -62141,7 +62302,7 @@
         },
         {
           "disabled": false,
-          "document": "去向数据源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>去向数据源类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Hive",
           "member": "string",
           "name": "TargetServiceType",
@@ -62152,7 +62313,7 @@
         },
         {
           "disabled": false,
-          "document": "输入参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输入参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ParameterTaskInDsDto",
           "name": "ParamInList",
@@ -62163,7 +62324,7 @@
         },
         {
           "disabled": false,
-          "document": "输出参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ParameterTaskOutDsDto",
           "name": "ParamOutList",
@@ -62174,7 +62335,7 @@
         },
         {
           "disabled": false,
-          "document": "任务文件夹id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务文件夹id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6c199238-5641-4fba-9bf2-91e2d2b0b471",
           "member": "string",
           "name": "TaskFolderId",
@@ -62185,7 +62346,7 @@
         },
         {
           "disabled": false,
-          "document": "最大尝试次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最大尝试次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "MaxRetryAttempts",
@@ -62196,7 +62357,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源组名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "groupName",
           "member": "string",
           "name": "ResourceGroupName",
@@ -62207,7 +62368,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "service",
           "member": "string",
           "name": "SourceServiceName",
@@ -62218,7 +62379,7 @@
         },
         {
           "disabled": false,
-          "document": "任务产出登记\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务产出登记</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskDataRegistryDTO",
           "name": "TaskRegisterOutputTable",
@@ -62229,7 +62390,7 @@
         },
         {
           "disabled": false,
-          "document": "循环依赖配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>循环依赖配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskCycleLinkDTO",
           "name": "CycleDependencyConfigList",
@@ -62240,7 +62401,7 @@
         },
         {
           "disabled": false,
-          "document": "特殊警告信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>特殊警告信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "错误信息",
           "member": "string",
           "name": "Warning",
@@ -62251,7 +62412,7 @@
         },
         {
           "disabled": false,
-          "document": "0 正常调度 1 空跑调度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>0 正常调度 1 空跑调度</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ScheduleRunType",
@@ -62262,7 +62423,7 @@
         },
         {
           "disabled": false,
-          "document": "0 并发度达到上限时，本次排队等待 1 并发度达到上限时，本次不执行，直接kill\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>0 并发度达到上限时，本次排队等待 1 并发度达到上限时，本次不执行，直接kill</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ConcurrentStrategy",
@@ -62273,7 +62434,7 @@
         },
         {
           "disabled": false,
-          "document": "UTC+8;UDC-8\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>UTC+8;UDC-8</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "UTC+8",
           "member": "string",
           "name": "ScheduleTimeZone",
@@ -62284,7 +62445,7 @@
         },
         {
           "disabled": false,
-          "document": "引用的代码模版id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>引用的代码模版id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20250731210848987",
           "member": "string",
           "name": "TemplateId",
@@ -62295,7 +62456,7 @@
         },
         {
           "disabled": false,
-          "document": "允许重跑类 ALL 无论实例成功或者失败，都允许重跑 FAILURE 只有失败的实例允许重跑，成功的实例不允许重跑 NONE 无论成功或者失败，都不允许重跑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>允许重跑类 ALL 无论实例成功或者失败，都允许重跑 FAILURE 只有失败的实例允许重跑，成功的实例不允许重跑 NONE 无论成功或者失败，都不允许重跑</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL",
           "member": "string",
           "name": "AllowRedoType",
@@ -62306,7 +62467,7 @@
         },
         {
           "disabled": false,
-          "document": "BundleId\nCI/CD工程生成的bundle唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>BundleId<br>CI/CD工程生成的bundle唯一标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6c199238-5641-4fba-9bf2-91e2d2b0b471",
           "member": "string",
           "name": "BundleId",
@@ -62317,7 +62478,7 @@
         },
         {
           "disabled": false,
-          "document": "bundle信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>bundle信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bundle名称与路径信息",
           "member": "string",
           "name": "BundleInfo",
@@ -62328,7 +62489,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许下游依赖 0 不允许 1 允许\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否允许下游依赖 0 不允许 1 允许</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "AllowDownstreamDependency",
@@ -62339,13 +62500,24 @@
         },
         {
           "disabled": false,
-          "document": "- 任务依赖运行条件，默认为ALL_SUCCESS，暂时只支持工作流调度项目下配置\n- ALL_SUCCESS： 全部成功：所有上游依赖任务都达到终态时，进行依赖判断，如果上游全部都成功，则依赖判断成功，否则如果上游有一个跳过运行，则标记为跳过运行，其余情况标记为上游失败\n- ALL_FAILED：全部失败：所有上游依赖任务都达到终态时，进行依赖判断，如果上游状态都是失败或者上游失败，则依赖判断成功，否则就标记为跳过运行\n- ALL_DONE：全部完成：所有上游依赖任务都达到终态时，进行依赖判断，直接是依赖判断成功\n- ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行\n- ALL_SKIPPED：上游全部都跳过: 所有上游依赖任务都达到终态时，进行依赖判断，所有的上游都是跳过状态才算依赖判断成功，否则当前节点就是跳过运行\n- ONE_FAILED：至少一个失败: 上游只要有一个失败了，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有失败，则跳过运行\n- ONE_SUCCESS：至少一个成功：上游只要有一个成功，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有成功，则跳过运行\n- ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游\n- NONE_FAILED：上游全部完成，没有失败: 所有上游依赖任务都达到终态时，进行依赖判断，如果上游都是成功或者跳过运行，则依赖判断成功，否则标记为上游失败\n- ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行\n- NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\n- ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<ul><li>任务依赖运行条件，默认为ALL_SUCCESS，暂时只支持工作流调度项目下配置</li><li>ALL_SUCCESS： 全部成功：所有上游依赖任务都达到终态时，进行依赖判断，如果上游全部都成功，则依赖判断成功，否则如果上游有一个跳过运行，则标记为跳过运行，其余情况标记为上游失败</li><li>ALL_FAILED：全部失败：所有上游依赖任务都达到终态时，进行依赖判断，如果上游状态都是失败或者上游失败，则依赖判断成功，否则就标记为跳过运行</li><li>ALL_DONE：全部完成：所有上游依赖任务都达到终态时，进行依赖判断，直接是依赖判断成功</li><li>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行</li><li>ALL_SKIPPED：上游全部都跳过: 所有上游依赖任务都达到终态时，进行依赖判断，所有的上游都是跳过状态才算依赖判断成功，否则当前节点就是跳过运行</li><li>ONE_FAILED：至少一个失败: 上游只要有一个失败了，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有失败，则跳过运行</li><li>ONE_SUCCESS：至少一个成功：上游只要有一个成功，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有成功，则跳过运行</li><li>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游</li><li>NONE_FAILED：上游全部完成，没有失败: 所有上游依赖任务都达到终态时，进行依赖判断，如果上游都是成功或者跳过运行，则依赖判断成功，否则标记为上游失败</li><li>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行</li><li>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL_FAILED",
           "member": "string",
           "name": "DependencyTriggerPolicy",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务最后更新时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1774614599000",
+          "member": "uint64",
+          "name": "LastUpdateTimestamp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -66018,12 +66190,12 @@
       "usage": "out"
     },
     "TestRunningRecord": {
-      "document": "编排空间试运行记录",
+      "document": "编排空间试运行记录\n查询执行日志 可调用DownloadLogByLine接口",
       "members": [
         {
           "disabled": false,
-          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-09-09T15:35:27",
           "member": "string",
           "name": "StartTime",
           "output_required": false,
@@ -66033,8 +66205,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-09-09T15:36:03",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -66044,8 +66216,8 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-09-09T15:37:15",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
@@ -66055,8 +66227,8 @@
         },
         {
           "disabled": false,
-          "document": "试运行记录id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>试运行记录id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10672",
           "member": "int64",
           "name": "RecordId",
           "output_required": false,
@@ -66066,8 +66238,8 @@
         },
         {
           "disabled": false,
-          "document": "开发侧提交的jobid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>开发侧提交的jobid</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9280",
           "member": "int64",
           "name": "JobId",
           "output_required": false,
@@ -66077,8 +66249,8 @@
         },
         {
           "disabled": false,
-          "document": "执行平台jobid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>执行平台jobid</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6820250909153523040_2025-09-09T15:35:20+08:00",
           "member": "string",
           "name": "ExecutionJobId",
           "output_required": false,
@@ -66088,8 +66260,8 @@
         },
         {
           "disabled": false,
-          "document": "试运行记录名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>试运行记录名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20250909-1535",
           "member": "string",
           "name": "RecordName",
           "output_required": false,
@@ -66099,8 +66271,8 @@
         },
         {
           "disabled": false,
-          "document": "脚本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>脚本内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "show DATABASES;\nuse test_database;\nshow tables;",
           "member": "string",
           "name": "ScriptContent",
           "output_required": false,
@@ -66110,8 +66282,8 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -66121,8 +66293,8 @@
         },
         {
           "disabled": false,
-          "document": "耗时\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>耗时</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "36",
           "member": "int64",
           "name": "TimeCost",
           "output_required": false,
@@ -66132,8 +66304,8 @@
         },
         {
           "disabled": false,
-          "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>用户uin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100043952927",
           "member": "string",
           "name": "UserUin",
           "output_required": false,
@@ -66143,8 +66315,8 @@
         },
         {
           "disabled": false,
-          "document": "主账户uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>主账户uin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100028448903",
           "member": "string",
           "name": "OwnerUin",
           "output_required": false,
@@ -66154,7 +66326,7 @@
         },
         {
           "disabled": false,
-          "document": "子记录信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子记录信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TestRunningSubRecord",
           "name": "SubRecordList",
@@ -66165,8 +66337,8 @@
         },
         {
           "disabled": false,
-          "document": "结果或日志地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>结果或日志地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-nanjing",
           "member": "string",
           "name": "Region",
           "output_required": false,
@@ -66176,8 +66348,8 @@
         },
         {
           "disabled": false,
-          "document": "结果或日志桶名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>结果或日志桶名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wedata-fusion-dev-1257305158",
           "member": "string",
           "name": "BucketName",
           "output_required": false,
@@ -66187,13 +66359,24 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "资源耗尽",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>脚本内容是否被截断</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ScriptContentTruncated",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -66204,8 +66387,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "开发时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>开发时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-09-09T15:35:30",
           "member": "string",
           "name": "StartTime",
           "output_required": false,
@@ -66215,8 +66398,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-09-09T15:37:10",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -66226,8 +66409,8 @@
         },
         {
           "disabled": false,
-          "document": "执行平台执行id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>执行平台执行id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6820250909153523040_2025-09-09T15:35:20+08:00",
           "member": "string",
           "name": "ExecutionJobId",
           "output_required": false,
@@ -66237,8 +66420,8 @@
         },
         {
           "disabled": false,
-          "document": "执行平台子执行jobid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>执行平台子执行jobid</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6820250909153523040_0",
           "member": "string",
           "name": "ExecutionSubJobId",
           "output_required": false,
@@ -66248,8 +66431,8 @@
         },
         {
           "disabled": false,
-          "document": "开发侧提交的jobid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>开发侧提交的jobid</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "457",
           "member": "string",
           "name": "JobId",
           "output_required": false,
@@ -66259,8 +66442,8 @@
         },
         {
           "disabled": false,
-          "document": "子记录id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>子记录id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5088",
           "member": "int64",
           "name": "DetailId",
           "output_required": false,
@@ -66270,8 +66453,8 @@
         },
         {
           "disabled": false,
-          "document": "试运行记录id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>试运行记录id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10672",
           "member": "int64",
           "name": "RecordId",
           "output_required": false,
@@ -66281,8 +66464,8 @@
         },
         {
           "disabled": false,
-          "document": "脚本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>脚本内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "show DATABASES",
           "member": "string",
           "name": "ScriptContent",
           "output_required": false,
@@ -66292,8 +66475,8 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FAILED",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -66303,8 +66486,8 @@
         },
         {
           "disabled": false,
-          "document": "耗时\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>耗时</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
           "member": "int64",
           "name": "TimeCost",
           "output_required": false,
@@ -66314,8 +66497,8 @@
         },
         {
           "disabled": false,
-          "document": "结果总行数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>结果总行数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "ResultTotalCount",
           "output_required": false,
@@ -66325,8 +66508,8 @@
         },
         {
           "disabled": false,
-          "document": "预览结果行数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>预览结果行数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "ResultPreviewCount",
           "output_required": false,
@@ -66336,8 +66519,8 @@
         },
         {
           "disabled": false,
-          "document": "结果文件路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>结果文件路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xFlowJob/schedule_space/log/1464962169590902784/32/6820250909153523040_0/result.log",
           "member": "string",
           "name": "ResultFilePath",
           "output_required": false,
@@ -66347,8 +66530,8 @@
         },
         {
           "disabled": false,
-          "document": "预览结果文件路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>预览结果文件路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xFlowJob/schedule_space/log/1464962169590902784/32/6820250909153523040_0/result.log",
           "member": "string",
           "name": "ResultPreviewFilePath",
           "output_required": false,
@@ -66358,8 +66541,8 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-09-09T15:35:25",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
@@ -66369,8 +66552,8 @@
         },
         {
           "disabled": false,
-          "document": "序号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>序号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "Sequence",
           "output_required": false,
@@ -66380,8 +66563,8 @@
         },
         {
           "disabled": false,
-          "document": "日志路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>日志路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xFlowJob/schedule_space/log/1464962169590902784/32/6820250909153523040_0/all.log",
           "member": "string",
           "name": "LogFilePath",
           "output_required": false,
@@ -66391,13 +66574,35 @@
         },
         {
           "disabled": false,
-          "document": "是否包含子结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>是否包含子结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "HasSubResultSet",
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>脚本内容是否被截断</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ScriptContentTruncated",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果集表字符信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xFlowJob/schedule_space/log/1464962169590902784/32/6820250909153523040_0/schema.csv",
+          "member": "string",
+          "name": "SchemaInfoFilePath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -7,6 +7,46 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bea70601-4f99-4462-86ef-cddaae67bca0\"\n    }\n}",
         "title": "查询智能导诊订单列表"
       }
+    ],
+    "GetLLMDiagnosisDrug": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ig.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetLLMDiagnosisDrug\n<公共请求参数>\n\n{\n    \"PartnerId\": \"1*******4\",\n    \"PartnerSecret\": \"**************a36bbdd17960b3d70e\",\n    \"HospitalAppId\": \"******38323\",\n    \"DialogueId\": \"74836139-f2ca-4aba-b7de-47705aefafbd\",\n    \"Message\": \"识别图片中药品\",\n    \"ImageUrl\": \"https://******.jpg\",\n    \"ResultType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 0,\n        \"Message\": \"success\",\n        \"RequestId\": \"0766ff4a-3eda-434c-a749-f13a93658f44\",\n        \"Data\": {\n            \"Content\": \"【阿莫西林】是一款【β-内酰胺类抗生素（青霉素类）】，主要用于***\",\n            \"Think\": \"\",\n            \"Sort\": 0,\n            \"IsFinish\": true,\n            \"IsSensitive\": false,\n            \"GuessQuestions\": [\n                {\n                    \"Title\": \"阿莫西林和头孢有什么区别？  \"\n                },\n                {\n                    \"Title\": \"服用阿莫西林会过敏吗？  \"\n                },\n                {\n                    \"Title\": \"阿莫西林饭前吃还是饭后吃？\"\n                }\n            ],\n            \"HighlightWords\": []\n        }\n    }\n}",
+        "title": "药品图片测试"
+      }
+    ],
+    "GetLLMDiagnosisDrugChat": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ig.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetLLMDiagnosisDrugChat\n<公共请求参数>\n\n{\n    \"PartnerId\": \"1*******4\",\n    \"PartnerSecret\": \"**************a36bbdd17960b3d70e\",\n    \"HospitalAppId\": \"******38323\",\n    \"DialogueId\": \"74836139-f2ca-4aba-b7de-47705aefafbd\",\n    \"Message\": \"阿莫西林的适应症\",\n    \"ResultType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 0,\n        \"Message\": \"success\",\n        \"RequestId\": \"0766ff4a-3eda-434c-a749-f13a93658f44\",\n        \"Data\": {\n            \"Content\": \"【阿莫西林】是一款【β-内酰胺类抗生素（青霉素类）】，主要用于***\",\n            \"Think\": \"\",\n            \"Sort\": 0,\n            \"IsFinish\": true,\n            \"IsSensitive\": false,\n            \"GuessQuestions\": [\n                {\n                    \"Title\": \"阿莫西林和头孢有什么区别？  \"\n                },\n                {\n                    \"Title\": \"服用阿莫西林会过敏吗？  \"\n                },\n                {\n                    \"Title\": \"阿莫西林饭前吃还是饭后吃？\"\n                }\n            ],\n            \"HighlightWords\": []\n        }\n    }\n}",
+        "title": "问药测试"
+      }
+    ],
+    "GetLLMDiagnosisHealth": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ig.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetLLMDiagnosisHealth\n<公共请求参数>\n\n{\n    \"PartnerId\": \"1*******4\",\n    \"PartnerSecret\": \"**************a36bbdd17960b3d70e\",\n    \"HospitalAppId\": \"******38323\",\n    \"DialogueId\": \"74836139-f2ca-4aba-b7de-47705aefafbd\",\n    \"Message\": \"有点头痛\",\n    \"ResultType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 0,\n        \"Message\": \"success\",\n        \"RequestId\": \"0766ff4a-3eda-434c-a749-f13a93658f44\",\n        \"Data\": {\n            \"Content\": \"头痛多久了\",\n            \"Think\": \"\",\n            \"Sort\": 0,\n            \"IsFinish\": true,\n            \"IsSensitive\": false,\n            \"GuessQuestions\": [],\n            \"HighlightWords\": []\n        }\n    }\n}",
+        "title": "症状自查测试"
+      }
+    ],
+    "GetLLMReportInterpretation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ig.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetLLMReportInterpretation\n<公共请求参数>\n\n{\n    \"PartnerId\": \"1*******4\",\n    \"PartnerSecret\": \"**************a36bbdd17960b3d70e\",\n    \"HospitalId\": \"******38323\",\n    \"DialogueId\": \"74836139-f2ca-4aba-b7de-47705aefafbd\",\n    \"Message\": \"帮我解读报告\",\n    \"ReportFileInfos\": [\n        {\n            \"ReportFileUrl\": \"https://xxxx.pdf\",\n            \"ReportFileType\": 1\n        }\n    ],\n    \"ResultType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 0,\n        \"Message\": \"success\",\n        \"RequestId\": \"86fa7487-732f-4760-82fc-51427e84a545\",\n        \"Data\": {\n            \"Content\": \"根据您的健康报告内容，xxxxxx\",\n            \"Think\": \"\",\n            \"Sort\": 0,\n            \"IsFinish\": true,\n            \"IsSensitive\": false,\n            \"IsSupportFile\": true,\n            \"ReportInfos\": [\n                {\n                    \"ReportId\": \"1\",\n                    \"IsAnalysis\": true,\n                    \"ErrInfo\": \"\"\n                }\n            ],\n            \"GuessQuestions\": [\n                {\n                    \"Title\": \"我的报告多久能出来\"\n                },\n                {\n                    \"Title\": \"我的报告在哪查询\"\n                },\n                {\n                    \"Title\": \"我的报告怎么打印\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "报告解读测试"
+      }
+    ],
+    "QueryDrugInstructions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ig.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDrugInstructions\n<公共请求参数>\n\n{\n    \"PartnerId\": \"1*******4\",\n    \"PartnerSecret\": \"**************a36bbdd17960b3d70e\",\n    \"HospitalAppId\": \"******38323\",\n    \"Message\": \"阿莫西林分散片\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 0,\n        \"Data\": [\n            {\n                \"DrugInfos\": [\n                    {\n                        \"AdverseReaction\": \"\",\n                        \"DocUrl\": \"https://dev-guidetaro.wecity.qq.com/guide-*lm/drugDetail?drugHashId=00*45c1ca6695ca2d4679f60a4f4cea929390eb3&channel=llmApi&appid=ky800038323&configure=drug\",\n                        \"DrugId\": \"00045c1ca*695c*2d4679f60a4f4cea929390eb3\",\n                        \"DrugName\": \"阿莫西林分散片\",\n                        \"DrugRxType\": 1,\n                        \"DrugUsage\": \"\",\n                        \"Indication\": \"\",\n                        \"Manufacturer\": \"石药集团中诺药业(石家庄)有限公司\",\n                        \"Specification\": \"500mg*6片\",\n                        \"TradeName\": \"\"\n                    }\n                ],\n                \"StandardDrugName\": \"药品信息\"\n            }\n        ],\n        \"Message\": \"success\",\n        \"RequestId\": \"2fb04389-9d51-4f67-a57d-362b03d57963\"\n    }\n}",
+        "title": "药品查询"
+      }
     ]
   },
   "version": "1.0"

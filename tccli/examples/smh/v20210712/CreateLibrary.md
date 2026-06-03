@@ -6,17 +6,18 @@ Input:
 
 ```
 tccli smh CreateLibrary --cli-unfold-argument  \
-    --Name 名称 \
-    --Remark 备注 \
-    --LibraryExtension.IsFileLibrary true
+    --Name 测试媒体库 \
+    --LibraryExtension.IsFileLibrary True \
+    --LibraryExtension.IsMultiSpace True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "LibraryId": "smh0q8nrvsg7t6y6",
-        "RequestId": "1586674e-e04c-4315-943a-c282b5f8ed6b"
+        "AccessDomain": "smh3etdq8gpi2201.api.tencentmsh.cn",
+        "LibraryId": "smh3etdq8gpi2201",
+        "RequestId": "5cc1bd23-8ff1-4f7a-86f9-640c97266c15"
     }
 }
 ```
