@@ -25,6 +25,7 @@ dependencies = [
     "jmespath>=0.10.0",
     "six>=1.16.0",
     "tencentcloud-sdk-python>=3.1.104",
+    "cos-python-sdk-v5>=1.9.0",
 ]
 
 [project.urls]
