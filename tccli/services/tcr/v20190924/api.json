@@ -7231,7 +7231,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "tcr-abc123",
           "member": "string",
           "name": "RegistryId",
@@ -7240,7 +7240,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的规格,\n基础版：basic\n标准版：standard\n高级版：premium",
+          "document": "<p>实例的规格,<br>基础版：basic<br>标准版：standard<br>高级版：premium</p>",
           "example": "premium",
           "member": "string",
           "name": "RegistryType",
@@ -7249,10 +7249,19 @@
         },
         {
           "disabled": false,
-          "document": "实例删除保护，false为关闭",
+          "document": "<p>实例删除保护，false为关闭</p>",
           "example": "false",
           "member": "bool",
           "name": "DeletionProtection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例是否开启多版本控制，false为关闭</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableCosVersioning",
           "required": false,
           "type": "bool"
         }

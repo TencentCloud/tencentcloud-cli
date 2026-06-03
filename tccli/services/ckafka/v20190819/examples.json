@@ -130,6 +130,30 @@
         "title": "创建一个预付费专业版实例"
       }
     ],
+    "CreateMetaAndDataSyncDatahubTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMetaAndDataSyncDatahubTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"CreateMetaAndDataSyncDatahubTask\",\n    \"SourceResourceId\": \"resource-y9n3a2n6\",\n    \"TargetResourceId\": \"resource-y9n33bb6\",\n    \"OffsetType\": \"latest\",\n    \"TopicList\": [\n        \"bbbb14\"\n    ],\n    \"Prefix\": \"topic1\",\n    \"Separator\": \".\",\n    \"Description\": \"task1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DatahubId\": \"mock-data-hub-id\",\n            \"TaskId\": \"task-y9jb79mn\"\n        },\n        \"RequestId\": \"d928539a-f1c8-45c6-ba2c-0bcecfa6e431\"\n    }\n}",
+        "title": "创建连接器-元数据、消息同步任务"
+      }
+    ],
+    "CreateMetaDataAndOffsetSyncDatahubTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMetaDataAndOffsetSyncDatahubTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"MetaDataAndOffsetSyncDatahubTask\",\n    \"SourceResourceId\": \"resource-y9n3a2n6\",\n    \"TargetResourceId\": \"resource-y9n33bb6\",\n    \"Description\": \"taskDescription\",\n    \"OffsetType\": \"latest\",\n    \"TopicList\": [\n        \"bbbb14\"\n    ],\n    \"Prefix\": \"topic1\",\n    \"Separator\": \".\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DatahubId\": \"mock-data-hub-id\",\n            \"TaskId\": \"task-y9jb7mq4\"\n        },\n        \"RequestId\": \"57934d4b-bed1-47ee-9b0d-4f913ba29bc3\"\n    }\n}",
+        "title": "创建连接器任务-元数据、消息数据、位点同步"
+      }
+    ],
+    "CreateMetaSyncDatahubTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMetaSyncDatahubTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"CreateMetaSyncDatahubTask\",\n    \"SourceResourceId\": \"resource-y9n9pr46\",\n    \"TargetResourceId\": \"resource-y9n947b6\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"创建人\",\n            \"TagValue\": \"王蕊\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DatahubId\": \"mock-data-hub-id\",\n            \"TaskId\": \"task-y9jb22m4\"\n        },\n        \"RequestId\": \"91eb38c2-9487-489e-9562-25a32d4fb8e7\"\n    }\n}",
+        "title": "创建连接器-元数据同步任务"
+      }
+    ],
     "CreatePartition": [
       {
         "document": "",
@@ -601,7 +625,7 @@
     "FetchLatestDatahubMessageList": [
       {
         "document": "",
-        "input": "https://ckafka.tencentcloudapi.com/?Action=FetchLatestDatahubMessageList\n&Name=sourceName\n&Partition=1\n&Offset=1\n&MessageCount=20\n&<公共请求参数>",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=FetchLatestDatahubMessageList\n&Name=topic-test\n&Partition=0\n&Offset=0\n&MessageCount=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"Topic\": \"topic-test\",\n                \"Partition\": 0,\n                \"Offset\": 0,\n                \"Key\": \"key\",\n                \"Value\": \"value\",\n                \"Timestamp\": 0,\n                \"Headers\": \"head\"\n            }\n        ],\n        \"RequestId\": \"84770b4b-df34-4ccf-8e22-41d3b1d0fe0d\"\n    }\n}",
         "title": "根据offset查询消息"
       }

@@ -5357,6 +5357,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型</p>",
+          "example": "cos_bucket",
+          "member": "string",
+          "name": "AssetTypeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -16187,7 +16197,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤内容",
+          "document": "<p>过滤内容</p>",
           "example": "无",
           "member": "Filters",
           "name": "Filters",
@@ -16196,7 +16206,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小",
+          "document": "<p>分页大小</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -16205,7 +16215,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -16214,7 +16224,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型",
+          "document": "<p>排序类型</p>",
           "example": "desc",
           "member": "string",
           "name": "Order",
@@ -16223,7 +16233,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p>",
           "example": "update_time",
           "member": "string",
           "name": "By",
@@ -16238,7 +16248,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检查视角下风险数量",
+          "document": "<p>检查视角下风险数量</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -16248,7 +16258,7 @@
         },
         {
           "disabled": false,
-          "document": "检查视角下风险列表",
+          "document": "<p>检查视角下风险列表</p>",
           "example": "无",
           "member": "CheckViewRiskItem",
           "name": "CheckViewRiskList",
@@ -16258,7 +16268,7 @@
         },
         {
           "disabled": false,
-          "document": "检查视角下cspm规范标签列表",
+          "document": "<p>检查视角下cspm规范标签列表</p>",
           "example": "无",
           "member": "StandardItem",
           "name": "StandardNameList",
@@ -16268,10 +16278,20 @@
         },
         {
           "disabled": false,
-          "document": "资产类型集合",
+          "document": "<p>资产类型集合</p>",
           "example": "无",
           "member": "AttributeOptionSet",
           "name": "AssetTypeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云厂商类型集合</p>",
+          "example": "无",
+          "member": "AttributeOptionSet",
+          "name": "ProviderList",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -24184,7 +24204,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "风险规则ID",
+          "document": "<p>风险规则ID</p>",
           "example": "tc_001",
           "member": "string",
           "name": "RiskRuleId",
@@ -24199,7 +24219,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "风险规则ID",
+          "document": "<p>风险规则ID</p>",
           "example": "tc_001",
           "member": "string",
           "name": "RiskRuleId",
@@ -24209,7 +24229,7 @@
         },
         {
           "disabled": false,
-          "document": "云厂商",
+          "document": "<p>云厂商</p>",
           "example": "tencent",
           "member": "string",
           "name": "Provider",
@@ -24219,7 +24239,7 @@
         },
         {
           "disabled": false,
-          "document": "风险名称",
+          "document": "<p>风险名称</p>",
           "example": "子账号未开启操作保护",
           "member": "string",
           "name": "RiskName",
@@ -24229,7 +24249,7 @@
         },
         {
           "disabled": false,
-          "document": "风险危害",
+          "document": "<p>风险危害</p>",
           "example": "云上多种产品都有管理后台功能且具有对公网开放能力，管理后台对外开放后容易存在口令被爆破/被入侵风险，可导致重要数据泄露，服务器遭受入侵等严重后果。",
           "member": "string",
           "name": "RiskInfluence",
@@ -24239,11 +24259,21 @@
         },
         {
           "disabled": false,
-          "document": "修复指引",
+          "document": "<p>修复指引</p>",
           "example": "如无开放必要，请关闭管理后台。登录云官网控制台",
           "member": "string",
           "name": "RiskFixAdvice",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型</p>",
+          "example": "cos_bucket",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -36037,6 +36067,16 @@
           "name": "AppID",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型</p>",
+          "example": "cam_user",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

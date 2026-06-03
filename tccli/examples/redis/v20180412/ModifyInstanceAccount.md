@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli redis ModifyInstanceAccount --cli-unfold-argument  \
-    --InstanceId crs-******** \
-    --AccountName test_account
+    --InstanceId crs-azaq**** \
+    --AccountName *e******test
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TaskId": 123456,
-        "RequestId": "0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db"
+        "TaskId": 2031373742,
+        "RequestId": "7575fa3d-bb9f-4cc0-a050-4e4e33ed5bb3"
     }
 }
 ```

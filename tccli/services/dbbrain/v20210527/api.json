@@ -11493,32 +11493,42 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问来源。",
+          "document": "<p>访问来源。</p>",
           "example": "\"127.0.0.1\"",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前访问来源活跃连接数",
+          "document": "<p>当前访问来源活跃连接数</p>",
           "example": "\"1\"",
           "member": "string",
           "name": "ActiveConn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前访问来源总连接数",
+          "document": "<p>当前访问来源总连接数</p>",
           "example": "1",
           "member": "int64",
           "name": "AllConn",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为内网ip</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsInternalIp",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

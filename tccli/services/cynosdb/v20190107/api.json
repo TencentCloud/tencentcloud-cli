@@ -7611,7 +7611,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群 ID。",
+          "document": "<p>集群 ID。</p>",
           "example": "cynosdbmysql-xxxxxxx",
           "member": "string",
           "name": "ClusterId",
@@ -7620,7 +7620,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID，默认与集群私有网络 ID 保持一致。",
+          "document": "<p>私有网络 ID。</p>",
           "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqueVpcId",
@@ -7629,7 +7629,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络子网 ID，默认与集群子网 ID 保持一致。",
+          "document": "<p>私有网络子网 ID。</p>",
           "example": "subnet-b5v6id11",
           "member": "string",
           "name": "UniqueSubnetId",
@@ -7638,7 +7638,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池类型：SessionConnectionPool（会话级别连接池）。",
+          "document": "<p>连接池类型：SessionConnectionPool（会话级别连接池）。</p>",
           "example": "SessionConnectionPool",
           "member": "string",
           "name": "ConnectionPoolType",
@@ -7647,7 +7647,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启连接池。\nyes：表示开启。\nno：表示不开启。",
+          "document": "<p>是否开启连接池。<br>yes：表示开启。<br>no：表示不开启。</p>",
           "example": "yes",
           "member": "string",
           "name": "OpenConnectionPool",
@@ -7656,7 +7656,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池阈值：单位（秒），可选范围：0 - 300秒。",
+          "document": "<p>连接池阈值：单位（秒），可选范围：0 - 300秒。</p>",
           "example": "0",
           "member": "int64",
           "name": "ConnectionPoolTimeOut",
@@ -7665,7 +7665,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的安全组 ID 数组。",
+          "document": "<p>绑定的安全组 ID 数组。</p>",
           "example": "[\"sg-asdqwe\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -7674,7 +7674,7 @@
         },
         {
           "disabled": false,
-          "document": "描述说明。",
+          "document": "<p>描述说明。</p>",
           "example": "代理1",
           "member": "string",
           "name": "Description",
@@ -7683,7 +7683,7 @@
         },
         {
           "disabled": false,
-          "document": "想要绑定的 vip 信息，需与 UniqueVpcId 对应。",
+          "document": "<p>想要绑定的 vip 信息，需与 UniqueVpcId 对应。</p>",
           "example": "192.168.0.0",
           "member": "string",
           "name": "Vip",
@@ -7692,7 +7692,7 @@
         },
         {
           "disabled": false,
-          "document": "权重模式：\nsystem：系统分配。\ncustom：自定义。",
+          "document": "<p>权重模式：<br>system：系统分配。<br>custom：自定义。</p>",
           "example": "system",
           "member": "string",
           "name": "WeightMode",
@@ -7701,7 +7701,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动添加只读实例。\nyes：表示自动添加只读实例。\nno：表示不自动添加只读实例。",
+          "document": "<p>是否自动添加只读实例。<br>yes：表示自动添加只读实例。<br>no：表示不自动添加只读实例。</p>",
           "example": "yes",
           "member": "string",
           "name": "AutoAddRo",
@@ -7710,7 +7710,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启故障转移。\nyes：表示开启，开启后，当数据库代理出现故障时，连接地址将会路由到主实例。\nno：表示不开启。\n说明：\n仅当 RwType 参数值为 READWRITE 时，才支持设置此项。",
+          "document": "<p>是否开启故障转移。<br>yes：表示开启，开启后，当数据库代理出现故障时，连接地址将会路由到主实例。<br>no：表示不开启。<br>说明：<br>仅当 RwType 参数值为 READWRITE 时，才支持设置此项。</p>",
           "example": "yes",
           "member": "string",
           "name": "FailOver",
@@ -7719,7 +7719,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性类型：\neventual：最终一致性。\nglobal：全局一致性。\nsession：会话一致性。\n说明：\n仅当 RwType 参数值为 READWRITE 时，才支持设置此项。",
+          "document": "<p>一致性类型：<br>eventual：最终一致性。<br>global：全局一致性。<br>session：会话一致性。<br>说明：<br>仅当 RwType 参数值为 READWRITE 时，才支持设置此项。</p>",
           "example": "session",
           "member": "string",
           "name": "ConsistencyType",
@@ -7728,7 +7728,7 @@
         },
         {
           "disabled": false,
-          "document": "读写属性：\nREADWRITE：表示读写分离。当此参数值为 READWRITE 时，才支持设置 FailOver、ConsistencyType 参数。\nREADONLY：表示只读。",
+          "document": "<p>读写属性：<br>READWRITE：表示读写分离。当此参数值为 READWRITE 时，才支持设置 FailOver、ConsistencyType 参数。<br>READONLY：表示只读。</p>",
           "example": "READONLY",
           "member": "string",
           "name": "RwType",
@@ -7737,7 +7737,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性超时时间。取值范围：0 ~ 1000000（微秒）。设置为0时，表示若只读实例出现延迟导致一致性策略不满足时，请求将一直等待。",
+          "document": "<p>一致性超时时间。取值范围：0 ~ 1000000（微秒）。设置为0时，表示若只读实例出现延迟导致一致性策略不满足时，请求将一直等待。</p>",
           "example": "1000",
           "member": "int64",
           "name": "ConsistencyTimeOut",
@@ -7746,7 +7746,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启事务拆分。开启后，在一个事务中拆分读和写到不同的实例上去执行。",
+          "document": "<p>是否开启事务拆分。开启后，在一个事务中拆分读和写到不同的实例上去执行。</p>",
           "example": "true",
           "member": "bool",
           "name": "TransSplit",
@@ -7755,7 +7755,7 @@
         },
         {
           "disabled": false,
-          "document": "接入模式：\nnearby：就近访问。\nbalance：均衡分配。",
+          "document": "<p>接入模式：<br>nearby：就近访问。<br>balance：均衡分配。</p>",
           "example": "balance",
           "member": "string",
           "name": "AccessMode",
@@ -7764,7 +7764,7 @@
         },
         {
           "disabled": false,
-          "document": "实例权重。",
+          "document": "<p>实例权重。</p>",
           "example": "无",
           "member": "ProxyInstanceWeight",
           "name": "InstanceWeights",
@@ -7779,7 +7779,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步流程 ID。",
+          "document": "<p>异步流程 ID。</p>",
           "example": "147189",
           "member": "int64",
           "name": "FlowId",
@@ -7789,7 +7789,7 @@
         },
         {
           "disabled": false,
-          "document": "异步任务 ID。",
+          "document": "<p>异步任务 ID。</p>",
           "example": "276387",
           "member": "int64",
           "name": "TaskId",
@@ -7799,7 +7799,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理组 ID。",
+          "document": "<p>数据库代理组 ID。</p>",
           "example": "cynosdbmysql-proxy-lti34611",
           "member": "string",
           "name": "ProxyGroupId",
@@ -25631,7 +25631,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID，例如cynosdbmysql-asd123",
+          "document": "<p>集群ID，例如cynosdbmysql-asd123</p>",
           "example": "cynosdbmysql-j8zw5111",
           "member": "string",
           "name": "ClusterId",
@@ -25640,7 +25640,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理组ID，例如cynosdbmysql-proxy-qwe123",
+          "document": "<p>数据库代理组ID，例如cynosdbmysql-proxy-qwe123</p>",
           "example": "cynosdbmysql-proxy-5mwoh111",
           "member": "string",
           "name": "ProxyGroupId",
@@ -25649,7 +25649,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性类型；“eventual\"-最终一致性, \"session\"-会话一致性, \"global\"-全局一致性",
+          "document": "<p>一致性类型；“eventual&quot;-最终一致性, &quot;session&quot;-会话一致性, &quot;global&quot;-全局一致性</p>",
           "example": "session",
           "member": "string",
           "name": "ConsistencyType",
@@ -25658,7 +25658,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性超时时间。\n取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。",
+          "document": "<p>一致性超时时间。<br>取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>",
           "example": "100",
           "member": "string",
           "name": "ConsistencyTimeOut",
@@ -25667,7 +25667,7 @@
         },
         {
           "disabled": false,
-          "document": "读写权重分配模式；系统自动分配：\"system\"， 自定义：\"custom\"",
+          "document": "<p>读写权重分配模式；系统自动分配：&quot;system&quot;， 自定义：&quot;custom&quot;</p>",
           "example": "custom",
           "member": "string",
           "name": "WeightMode",
@@ -25676,7 +25676,7 @@
         },
         {
           "disabled": false,
-          "document": "实例只读权重。\n",
+          "document": "<p>实例只读权重。</p>",
           "example": "无",
           "member": "ProxyInstanceWeight",
           "name": "InstanceWeights",
@@ -25685,7 +25685,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值：\"yes\" , \"no\"",
+          "document": "<p>是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值：&quot;yes&quot; , &quot;no&quot;</p>",
           "example": "yes",
           "member": "string",
           "name": "FailOver",
@@ -25694,7 +25694,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动添加只读实例，取值：\"yes\" , \"no\"",
+          "document": "<p>是否自动添加只读实例，取值：&quot;yes&quot; , &quot;no&quot;</p>",
           "example": "yes",
           "member": "string",
           "name": "AutoAddRo",
@@ -25703,7 +25703,7 @@
         },
         {
           "disabled": false,
-          "document": "是否打开读写分离。\n该参数已废弃，请通过RwType设置读写属性。",
+          "document": "<p>是否打开读写分离。<br>该参数已废弃，请通过RwType设置读写属性。</p>",
           "example": "no",
           "member": "string",
           "name": "OpenRw",
@@ -25712,7 +25712,7 @@
         },
         {
           "disabled": false,
-          "document": "读写类型：\nREADWRITE,READONLY",
+          "document": "<p>读写类型：<br>READWRITE,READONLY</p>",
           "example": "READONLY",
           "member": "string",
           "name": "RwType",
@@ -25721,7 +25721,7 @@
         },
         {
           "disabled": false,
-          "document": "事务拆分。\n在一个事务中拆分读和写到不同的实例上去执行。",
+          "document": "<p>事务拆分。<br>在一个事务中拆分读和写到不同的实例上去执行。</p>",
           "example": "true",
           "member": "bool",
           "name": "TransSplit",
@@ -25730,7 +25730,7 @@
         },
         {
           "disabled": false,
-          "document": "连接模式：\nnearby,balance",
+          "document": "<p>连接模式：<br>nearby,balance</p>",
           "example": "nearby",
           "member": "string",
           "name": "AccessMode",
@@ -25739,7 +25739,7 @@
         },
         {
           "disabled": false,
-          "document": "是否打开连接池：\nyes,no",
+          "document": "<p>是否打开连接池：<br>yes,no</p>",
           "example": "yes",
           "member": "string",
           "name": "OpenConnectionPool",
@@ -25748,7 +25748,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池类型：\nSessionConnectionPool",
+          "document": "<p>连接池类型：<br>SessionConnectionPool</p>",
           "example": "SessionConnectionPool",
           "member": "string",
           "name": "ConnectionPoolType",
@@ -25757,7 +25757,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池时间。\n可选范围:0~300（秒）",
+          "document": "<p>连接池时间。<br>可选范围:0~300（秒）</p>",
           "example": "100",
           "member": "int64",
           "name": "ConnectionPoolTimeOut",
@@ -25766,7 +25766,7 @@
         },
         {
           "disabled": false,
-          "document": "是否将libra节点当作普通RO节点",
+          "document": "<p>是否将libra节点当作普通RO节点</p>",
           "example": "false",
           "member": "bool",
           "name": "ApNodeAsRoNode",
@@ -25775,7 +25775,7 @@
         },
         {
           "disabled": false,
-          "document": "libra节点故障，是否转发给其他节点",
+          "document": "<p>libra节点故障，是否转发给其他节点</p>",
           "example": "false",
           "member": "bool",
           "name": "ApQueryToOtherNode",
@@ -25790,7 +25790,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步FlowId",
+          "document": "<p>异步FlowId</p>",
           "example": "147286",
           "member": "int64",
           "name": "FlowId",
@@ -25800,7 +25800,7 @@
         },
         {
           "disabled": false,
-          "document": "异步任务ID",
+          "document": "<p>异步任务ID</p>",
           "example": "148762",
           "member": "int64",
           "name": "TaskId",
@@ -28791,7 +28791,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一致性类型 eventual-最终一致性,global-全局一致性,session-会话一致性",
+          "document": "<p>一致性类型 eventual-最终一致性,global-全局一致性,session-会话一致性</p>",
           "example": "eventual",
           "member": "string",
           "name": "ConsistencyType",
@@ -28802,7 +28802,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性超时时间",
+          "document": "<p>一致性超时时间</p>",
           "example": "0",
           "member": "int64",
           "name": "ConsistencyTimeOut",
@@ -28813,7 +28813,7 @@
         },
         {
           "disabled": false,
-          "document": "权重模式 system-系统分配，custom-自定义",
+          "document": "<p>权重模式 system-系统分配，custom-自定义</p>",
           "example": "system",
           "member": "string",
           "name": "WeightMode",
@@ -28824,7 +28824,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启故障转移",
+          "document": "<p>是否开启故障转移</p>",
           "example": "no",
           "member": "string",
           "name": "FailOver",
@@ -28835,7 +28835,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动添加只读实例，yes-是，no-不自动添加",
+          "document": "<p>是否自动添加只读实例，yes-是，no-不自动添加</p>",
           "example": "no",
           "member": "string",
           "name": "AutoAddRo",
@@ -28846,7 +28846,7 @@
         },
         {
           "disabled": false,
-          "document": "实例权重数组",
+          "document": "<p>实例权重数组</p>",
           "example": "无",
           "member": "ProxyInstanceWeight",
           "name": "InstanceWeights",
@@ -28857,7 +28857,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开通读写节点，yse-是，no-否",
+          "document": "<p>是否开通读写节点，yse-是，no-否</p>",
           "example": "yes",
           "member": "string",
           "name": "OpenRw",
@@ -28868,7 +28868,7 @@
         },
         {
           "disabled": false,
-          "document": "读写属性，可选值：READWRITE,READONLY",
+          "document": "<p>读写属性，可选值：READWRITE,READONLY</p>",
           "example": "READONLY",
           "member": "string",
           "name": "RwType",
@@ -28879,7 +28879,7 @@
         },
         {
           "disabled": false,
-          "document": "事务拆分",
+          "document": "<p>事务拆分</p>",
           "example": "false",
           "member": "bool",
           "name": "TransSplit",
@@ -28890,7 +28890,7 @@
         },
         {
           "disabled": false,
-          "document": "连接模式，可选值：balance，nearby",
+          "document": "<p>连接模式，可选值：balance，nearby</p>",
           "example": "balance",
           "member": "string",
           "name": "AccessMode",
@@ -28901,7 +28901,7 @@
         },
         {
           "disabled": false,
-          "document": "是否将libra节点当作普通RO节点",
+          "document": "<p>是否将libra节点当作普通RO节点</p>",
           "example": "false",
           "member": "bool",
           "name": "ApNodeAsRoNode",
@@ -28912,7 +28912,7 @@
         },
         {
           "disabled": false,
-          "document": "libra节点故障，是否转发给其他节点",
+          "document": "<p>libra节点故障，是否转发给其他节点</p>",
           "example": "false",
           "member": "bool",
           "name": "ApQueryToOtherNode",

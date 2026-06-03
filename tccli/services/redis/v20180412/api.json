@@ -2126,8 +2126,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
-          "example": "crs-5a4py64p",
+          "document": "<p>实例 ID，请登录<a href=\"https://console.cloud.tencent.com/redis\">Redis控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "crs-5a4p****",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2135,7 +2135,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义的访问数据库的账号名称。\n- 仅由字母、数字、下划线、中划线组成。\n- 长度不能大于32位。",
+          "document": "<p>自定义的访问数据库的账号名称。</p><ul><li>仅由字母、数字、下划线、中划线组成。</li><li>长度不能大于32位。</li></ul>",
           "example": "username_01",
           "member": "string",
           "name": "AccountName",
@@ -2144,8 +2144,8 @@
         },
         {
           "disabled": false,
-          "document": "设置自定义账号的密码。密码复杂度要求如下：\n- 字符个数为[8,64]。\n- 至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的两种。\n- 不能以\"/\"开头。\n",
-          "example": "1234567aA",
+          "document": "<p>设置自定义账号的密码。密码复杂度要求如下：</p><ul><li>字符个数为[8,64]。</li><li>至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&amp;*-+=_|{}[]:;&lt;&gt;,.?/ 中的两种。</li><li>不能以&quot;/&quot;开头。</li></ul>",
+          "example": "12345****",
           "member": "string",
           "name": "AccountPassword",
           "required": true,
@@ -2153,7 +2153,7 @@
         },
         {
           "disabled": false,
-          "document": "指定账号的读请求路由分发至主节点或副本节点。未开启副本只读，不支持选择副本节点。\n- master：主节点\n- replication：副本节点",
+          "document": "<p>指定账号的读请求路由分发至主节点或副本节点。未开启副本只读，不支持选择副本节点。</p><ul><li>master：主节点</li><li>replication：副本节点</li></ul>",
           "example": "[\"master\"]",
           "member": "string",
           "name": "ReadonlyPolicy",
@@ -2162,7 +2162,7 @@
         },
         {
           "disabled": false,
-          "document": "账户读写权限，支持选择只读与读写权限。\n- r：只读。\n- rw: 读写。",
+          "document": "<p>账户读写权限，支持选择只读与读写权限。</p><ul><li>r：只读。</li><li>rw: 读写。</li></ul>",
           "example": "rw",
           "member": "string",
           "name": "Privilege",
@@ -2171,7 +2171,7 @@
         },
         {
           "disabled": false,
-          "document": "账号备注描述信息，长度为[0,64] 字节，支持中文。",
+          "document": "<p>账号备注描述信息，长度为[0,64] 字节，支持中文。</p>",
           "example": "\"生产账号\"",
           "member": "string",
           "name": "Remark",
@@ -2180,7 +2180,7 @@
         },
         {
           "disabled": false,
-          "document": "是否加密密码",
+          "document": "<p>是否启用密码加密传输。</p><ul><li>true：加密。</li><li>false：不加密（默认值）。</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "EncryptPassword",
@@ -2195,7 +2195,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID。",
+          "document": "<p>任务ID。</p>",
           "example": "29600111",
           "member": "int64",
           "name": "TaskId",
@@ -2272,7 +2272,7 @@
         {
           "disabled": false,
           "document": "<p>访问实例的密码。</p><ul><li>当输入参数<strong>NoAuth</strong>为<strong>true</strong>时，指设置实例为免密码访问，Password可不用配置，否则Password为必填参数。</li><li>当实例类型<strong>TypeId</strong>为Redis 2.8 内存版标准架构、Redis 4.0、5.0、6.2、7.0内存版标准架构或集群架构时，其密码复杂度要求为：8-64个字符，至少包含小写字母、大写字母、数字和字符()`~!@#$%^&amp;*-+=_|{}[]:;&lt;&gt;,.?/ 中的2种，不能以&quot;/&quot;开头。</li><li>当实例类型<strong>TypeId</strong>为CKV 3.2 内存版标准架构或集群架构时，其密码复杂度为：8-30个字符，必须包含字母和数字，且不包含其他字符。</li></ul>",
-          "example": "260945MyP@ssword",
+          "example": "**0***MyP*ssword",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -2281,7 +2281,7 @@
         {
           "disabled": false,
           "document": "<p>私有网络ID。如果不配置该参数则默认选择基础网络。请登录 <a href=\"https://console.cloud.tencent.com/vpc\">私有网络</a>控制台查询具体的ID。</p>",
-          "example": "vpc-pxyzim13",
+          "example": "vpc-pxyz****",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -2451,7 +2451,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否加密密码</p>",
+          "document": "<p>是否启用密码加密传输。</p><ul><li>true：加密。</li><li>false：不加密（默认值）。</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "EncryptPassword",
@@ -8883,7 +8883,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名称。",
+          "document": "<p>实例名称。</p>",
           "example": "生产-***实例",
           "member": "string",
           "name": "InstanceName",
@@ -8893,7 +8893,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "<p>实例 ID。</p>",
           "example": "crs-7asi9***",
           "member": "string",
           "name": "InstanceId",
@@ -8903,7 +8903,7 @@
         },
         {
           "disabled": false,
-          "document": "用户AppId。AppId是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 AppId。\n",
+          "document": "<p>用户AppId。AppId是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 AppId。</p>",
           "example": "13103214145",
           "member": "int64",
           "name": "Appid",
@@ -8913,7 +8913,7 @@
         },
         {
           "disabled": false,
-          "document": "项目 ID。",
+          "document": "<p>项目 ID。</p>",
           "example": "12",
           "member": "int64",
           "name": "ProjectId",
@@ -8923,7 +8923,7 @@
         },
         {
           "disabled": false,
-          "document": "地域 ID。<ul><li>1：广州。</li><li>4：上海。</li><li>5：中国香港。</li><li>7：上海金融。</li> <li>8：北京。</li> <li>9：新加坡。</li> <li>11：深圳金融。</li> <li>15：美西（硅谷）。</li><li>16：成都。</li><li>17：法兰克福。</li><li>18：首尔。</li><li>19：重庆。</li><li>22：美东（弗吉尼亚）。</li><li>23：曼谷。</li><li>25：东京。</li></ul>",
+          "document": "<p>地域 ID。<ul><li>1：广州。</li><li>4：上海。</li><li>5：中国香港。</li><li>7：上海金融。</li> <li>8：北京。</li> <li>9：新加坡。</li> <li>11：深圳金融。</li> <li>15：美西（硅谷）。</li><li>16：成都。</li><li>17：法兰克福。</li><li>18：首尔。</li><li>19：重庆。</li><li>22：美东（弗吉尼亚）。</li><li>23：曼谷。</li><li>25：东京。</li></ul></p>",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
@@ -8933,7 +8933,7 @@
         },
         {
           "disabled": false,
-          "document": "区域 ID。",
+          "document": "<p>区域 ID。</p>",
           "example": "100001",
           "member": "int64",
           "name": "ZoneId",
@@ -8943,7 +8943,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc网络 ID，例如75101。",
+          "document": "<p>vpc网络 ID，例如75101。</p>",
           "example": "1",
           "member": "int64",
           "name": "VpcId",
@@ -8953,7 +8953,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc网络下子网ID，如：46315。",
+          "document": "<p>vpc网络下子网ID，如：46315。</p>",
           "example": "10",
           "member": "int64",
           "name": "SubnetId",
@@ -8963,7 +8963,7 @@
         },
         {
           "disabled": false,
-          "document": "实例当前状态。<ul><li>0：待初始化。</li><li>1：实例在流程中。</li><li>2：实例运行中。</li><li>-2：实例已隔离。</li><li>-3：实例待删除。</li></ul>",
+          "document": "<p>实例当前状态。<ul><li>0：待初始化。</li><li>1：实例在流程中。</li><li>2：实例运行中。</li><li>-2：实例已隔离。</li><li>-3：实例待删除。</li></ul></p>",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -8973,7 +8973,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 VIP。",
+          "document": "<p>实例 VIP。</p>",
           "example": "10.20.3.1",
           "member": "string",
           "name": "WanIp",
@@ -8983,7 +8983,7 @@
         },
         {
           "disabled": false,
-          "document": "实例端口号。",
+          "document": "<p>实例端口号。</p>",
           "example": "6379",
           "member": "int64",
           "name": "Port",
@@ -8993,7 +8993,7 @@
         },
         {
           "disabled": false,
-          "document": "实例创建时间。格式如：2020-01-15 10:20:00。",
+          "document": "<p>实例创建时间。格式如：2020-01-15 10:20:00。</p>",
           "example": "2020-01-15 10:20:00",
           "member": "string",
           "name": "Createtime",
@@ -9003,7 +9003,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存容量大小。单位：MB，1MB=1024KB。",
+          "document": "<p>实例内存容量大小。单位：MB，1MB=1024KB。</p>",
           "example": "1451.0",
           "member": "float",
           "name": "Size",
@@ -9013,7 +9013,7 @@
         },
         {
           "disabled": true,
-          "document": "该字段已废弃。请使用腾讯云可观测平台API 接口 [GetMonitorData](https://cloud.tencent.com/document/product/248/31014) 获取实例已使用的内存容量。",
+          "document": "<p>该字段已废弃。请使用腾讯云可观测平台API 接口 <a href=\"https://cloud.tencent.com/document/product/248/31014\">GetMonitorData</a> 获取实例已使用的内存容量。</p>",
           "example": "0.0",
           "member": "float",
           "name": "SizeUsed",
@@ -9023,7 +9023,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型。\n- 2：Redis 2.8 内存版（标准架构）。\n- 3：CKV 3.2 内存版（标准架构）。\n- 4：CKV 3.2 内存版（集群架构）。\n- 5：Redis 2.8 内存版（单机）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。\n- 200:Memcached 1.6 内存版（集群架构）。",
+          "document": "<p>实例类型。</p><p>枚举值：</p><ul><li>2： Redis 2.8 内存版（标准架构）。</li><li>3： CKV 3.2 内存版（标准架构）。</li><li>4： CKV 3.2 内存版（集群架构）。</li><li>5： Redis 2.8 内存版（单机）。</li><li>6： Redis 4.0 内存版（标准架构）。</li><li>7： Redis 4.0 内存版（集群架构）。</li><li>8： Redis 5.0 内存版（标准架构）。</li><li>9： Redis 5.0 内存版（集群架构）。</li><li>15： Redis 6.2 内存版（标准架构）。</li><li>16： Redis 6.2 内存版（集群架构）。</li><li>17： Redis 7.0 内存版（标准架构）。</li><li>18： Redis 7.0 内存版（集群架构）。</li><li>19： Valkey 8.0 内存版（标准架构）。</li><li>20： Valkey 8.0 内存版（集群架构）。</li><li>200： Memcached 1.6 内存版（集群架构）。</li></ul>",
           "example": "7",
           "member": "int64",
           "name": "Type",
@@ -9033,7 +9033,7 @@
         },
         {
           "disabled": false,
-          "document": "实例是否设置自动续费标识。<ul><li>1：设置自动续费。</li><li>0：未设置自动续费。</li></ul>",
+          "document": "<p>实例是否设置自动续费标识。<ul><li>1：设置自动续费。</li><li>0：未设置自动续费。</li></ul></p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -9043,7 +9043,7 @@
         },
         {
           "disabled": false,
-          "document": "包年包月计费实例到期的时间。",
+          "document": "<p>包年包月计费实例到期的时间。</p>",
           "example": "2020-02-15 10:20:00",
           "member": "string",
           "name": "DeadlineTime",
@@ -9053,7 +9053,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎：社区版Redis、腾讯云CKV。",
+          "document": "<p>引擎：社区版Redis、腾讯云CKV。</p>",
           "example": "社区版Redis",
           "member": "string",
           "name": "Engine",
@@ -9063,7 +9063,7 @@
         },
         {
           "disabled": false,
-          "document": "产品类型。<ul><li>standalone：标准版。</li><li>cluster ：集群版。</li></ul>",
+          "document": "<p>产品类型。<ul><li>standalone：标准版。</li><li>cluster ：集群版。</li></ul></p>",
           "example": "cluster",
           "member": "string",
           "name": "ProductType",
@@ -9073,7 +9073,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc网络id，例如vpc-fk33jsf43kgv。",
+          "document": "<p>vpc网络id，例如vpc-fk33jsf43kgv。</p>",
           "example": "vpc-fk33jsf43kgv",
           "member": "string",
           "name": "UniqVpcId",
@@ -9083,7 +9083,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc网络下子网id，例如：subnet-fd3j6l35mm0。",
+          "document": "<p>vpc网络下子网id，例如：subnet-fd3j6l35mm0。</p>",
           "example": "subnet-fd3j6l35mm0",
           "member": "string",
           "name": "UniqSubnetId",
@@ -9093,7 +9093,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul>",
+          "document": "<p>计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul></p>",
           "example": "1",
           "member": "int64",
           "name": "BillingMode",
@@ -9103,7 +9103,7 @@
         },
         {
           "disabled": false,
-          "document": "实例运行状态描述：如”实例运行中“。",
+          "document": "<p>实例运行状态描述：如”实例运行中“。</p>",
           "example": "实例运行中",
           "member": "string",
           "name": "InstanceTitle",
@@ -9113,7 +9113,7 @@
         },
         {
           "disabled": false,
-          "document": "已隔离实例默认下线时间。按量计费实例隔离后默认两小时后下线，包年包月默认7天后下线。格式如：2020-02-15 10:20:00。",
+          "document": "<p>已隔离实例默认下线时间。按量计费实例隔离后默认两小时后下线，包年包月默认7天后下线。格式如：2020-02-15 10:20:00。</p>",
           "example": "2020-02-15 10:20:00",
           "member": "string",
           "name": "OfflineTime",
@@ -9123,7 +9123,7 @@
         },
         {
           "disabled": false,
-          "document": "流程中的实例返回的子状态。\n- 0：磁盘读写状态。\n- 1：磁盘超限只读状态。",
+          "document": "<p>流程中的实例返回的子状态。</p><ul><li>0：磁盘读写状态。</li><li>1：磁盘超限只读状态。</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "SubStatus",
@@ -9133,7 +9133,7 @@
         },
         {
           "disabled": false,
-          "document": "反亲和性标签。",
+          "document": "<p>反亲和性标签。</p>",
           "example": "[\"tag1\"]",
           "member": "string",
           "name": "Tags",
@@ -9143,7 +9143,7 @@
         },
         {
           "disabled": false,
-          "document": "实例节点信息。",
+          "document": "<p>实例节点信息。</p>",
           "example": "无",
           "member": "InstanceNode",
           "name": "InstanceNode",
@@ -9153,7 +9153,7 @@
         },
         {
           "disabled": false,
-          "document": "分片大小。",
+          "document": "<p>分片大小。</p>",
           "example": "4096",
           "member": "int64",
           "name": "RedisShardSize",
@@ -9163,7 +9163,7 @@
         },
         {
           "disabled": false,
-          "document": "分片数量。",
+          "document": "<p>分片数量。</p>",
           "example": "3",
           "member": "int64",
           "name": "RedisShardNum",
@@ -9173,7 +9173,7 @@
         },
         {
           "disabled": false,
-          "document": "副本数量。",
+          "document": "<p>副本数量。</p>",
           "example": "1",
           "member": "int64",
           "name": "RedisReplicasNum",
@@ -9183,7 +9183,7 @@
         },
         {
           "disabled": false,
-          "document": "计费 ID。",
+          "document": "<p>计费 ID。</p>",
           "example": "114",
           "member": "int64",
           "name": "PriceId",
@@ -9193,7 +9193,7 @@
         },
         {
           "disabled": false,
-          "document": "实例隔离开始的时间。",
+          "document": "<p>实例隔离开始的时间。</p>",
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "CloseTime",
@@ -9203,7 +9203,7 @@
         },
         {
           "disabled": false,
-          "document": "从节点读取权重。\n- 0：表示关闭副本只读。\n- 100：表示开启副本只读。",
+          "document": "<p>从节点读取权重。</p><ul><li>0：表示关闭副本只读。</li><li>100：表示开启副本只读。</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "SlaveReadWeight",
@@ -9213,7 +9213,7 @@
         },
         {
           "disabled": false,
-          "document": "实例关联的标签信息。",
+          "document": "<p>实例关联的标签信息。</p>",
           "example": "无",
           "member": "InstanceTagInfo",
           "name": "InstanceTags",
@@ -9223,7 +9223,7 @@
         },
         {
           "disabled": false,
-          "document": "项目名称。",
+          "document": "<p>项目名称。</p>",
           "example": "project",
           "member": "string",
           "name": "ProjectName",
@@ -9233,7 +9233,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为免密实例。<ul><li>true：免密实例。</li><li>false：非免密实例。</li></ul>",
+          "document": "<p>是否为免密实例。<ul><li>true：免密实例。</li><li>false：非免密实例。</li></ul></p>",
           "example": "true",
           "member": "bool",
           "name": "NoAuth",
@@ -9243,7 +9243,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端连接数。",
+          "document": "<p>客户端连接数。</p>",
           "example": "30000",
           "member": "int64",
           "name": "ClientLimit",
@@ -9253,7 +9253,7 @@
         },
         {
           "disabled": false,
-          "document": "DTS状态（内部参数，用户可忽略）。",
+          "document": "<p>DTS状态（内部参数，用户可忽略）。</p>",
           "example": "0",
           "member": "int64",
           "name": "DtsStatus",
@@ -9263,7 +9263,7 @@
         },
         {
           "disabled": false,
-          "document": "分片带宽上限，单位MB。",
+          "document": "<p>分片带宽上限，单位MB。</p>",
           "example": "1800",
           "member": "int64",
           "name": "NetLimit",
@@ -9273,7 +9273,7 @@
         },
         {
           "disabled": false,
-          "document": "免密实例标识（内部参数，用户可忽略）。",
+          "document": "<p>免密实例标识（内部参数，用户可忽略）。</p>",
           "example": "0",
           "member": "int64",
           "name": "PasswordFree",
@@ -9283,7 +9283,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。",
+          "document": "<p>该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。</p>",
           "example": "1",
           "member": "string",
           "name": "Vip6",
@@ -9293,7 +9293,7 @@
         },
         {
           "disabled": false,
-          "document": "内部参数，用户可忽略。",
+          "document": "<p>内部参数，用户可忽略。</p>",
           "example": "1",
           "member": "string",
           "name": "IPv6",
@@ -9303,7 +9303,7 @@
         },
         {
           "disabled": false,
-          "document": "实例只读标识（内部参数，用户可忽略）。",
+          "document": "<p>实例只读标识（内部参数，用户可忽略）。</p>",
           "example": "0",
           "member": "int64",
           "name": "ReadOnly",
@@ -9313,7 +9313,7 @@
         },
         {
           "disabled": false,
-          "document": "内部参数，用户可忽略。",
+          "document": "<p>内部参数，用户可忽略。</p>",
           "example": "1",
           "member": "string",
           "name": "RemainBandwidthDuration",
@@ -9323,7 +9323,7 @@
         },
         {
           "disabled": false,
-          "document": "Redis实例请忽略该参数。",
+          "document": "<p>Redis实例请忽略该参数。</p>",
           "example": "400",
           "member": "int64",
           "name": "DiskSize",
@@ -9333,7 +9333,7 @@
         },
         {
           "disabled": false,
-          "document": "监控版本。<ul><li>1m：1分钟粒度监控。目前该监控粒度已下线，具体信息，请参见[云数据库 Redis 1分钟粒度下线公告](https://cloud.tencent.com/document/product/239/80653)。</li><li>5s：5秒粒度监控。</li></ul>",
+          "document": "<p>监控版本。<ul><li>1m：1分钟粒度监控。目前该监控粒度已下线，具体信息，请参见<a href=\"https://cloud.tencent.com/document/product/239/80653\">云数据库 Redis 1分钟粒度下线公告</a>。</li><li>5s：5秒粒度监控。</li></ul></p>",
           "example": "5s",
           "member": "string",
           "name": "MonitorVersion",
@@ -9343,7 +9343,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端最大连接数可设置的最小值。",
+          "document": "<p>客户端最大连接数可设置的最小值。</p>",
           "example": "1000",
           "member": "int64",
           "name": "ClientLimitMin",
@@ -9353,7 +9353,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端最大连接数可设置的最大值。",
+          "document": "<p>客户端最大连接数可设置的最大值。</p>",
           "example": "10000",
           "member": "int64",
           "name": "ClientLimitMax",
@@ -9363,7 +9363,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的节点详细信息。\n只有多可用区实例会返回。",
+          "document": "<p>实例的节点详细信息。<br>只有多可用区实例会返回。</p>",
           "example": "无",
           "member": "RedisNodeInfo",
           "name": "NodeSet",
@@ -9373,7 +9373,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在的地域信息，比如ap-guangzhou。",
+          "document": "<p>实例所在的地域信息，比如ap-guangzhou。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -9383,7 +9383,7 @@
         },
         {
           "disabled": false,
-          "document": "外网地址。",
+          "document": "<p>外网地址。</p>",
           "example": "gz-crs-xxx.sql.tencentcdb.com",
           "member": "string",
           "name": "WanAddress",
@@ -9393,7 +9393,7 @@
         },
         {
           "disabled": false,
-          "document": "北极星服务地址，内部使用。",
+          "document": "<p>北极星服务地址，内部使用。</p>",
           "example": "txcloud-paas-crs-xxx",
           "member": "string",
           "name": "PolarisServer",
@@ -9403,7 +9403,7 @@
         },
         {
           "disabled": false,
-          "document": "CDC Redis集群ID。",
+          "document": "<p>CDC Redis集群ID。</p>",
           "example": "crs-cluster-m1sy****",
           "member": "string",
           "name": "RedisClusterId",
@@ -9413,7 +9413,7 @@
         },
         {
           "disabled": false,
-          "document": "CDC 集群ID。",
+          "document": "<p>CDC 集群ID。</p>",
           "example": "cluster-3x6j****",
           "member": "string",
           "name": "DedicatedClusterId",
@@ -9423,7 +9423,7 @@
         },
         {
           "disabled": false,
-          "document": "产品版本。<ul><li>local：本地盘。</li><li>cloud：云盘版。</li><li>cdc：CDC 集群版本。</li></ul>",
+          "document": "<p>产品版本。<ul><li>local：本地盘。</li><li>cloud：云盘版。</li><li>cdc：CDC 集群版本。</li></ul></p>",
           "example": "cloud",
           "member": "string",
           "name": "ProductVersion",
@@ -9433,7 +9433,7 @@
         },
         {
           "disabled": false,
-          "document": "实例当前Proxy版本。",
+          "document": "<p>实例当前Proxy版本。</p>",
           "example": "5.5.0",
           "member": "string",
           "name": "CurrentProxyVersion",
@@ -9443,7 +9443,7 @@
         },
         {
           "disabled": false,
-          "document": "实例当前Cache小版本。如果实例加入全球复制组，显示全球复制的内核版本。",
+          "document": "<p>实例当前Cache小版本。如果实例加入全球复制组，显示全球复制的内核版本。</p>",
           "example": "4.3.0",
           "member": "string",
           "name": "CurrentRedisVersion",
@@ -9453,7 +9453,7 @@
         },
         {
           "disabled": false,
-          "document": "实例可升级Proxy版本。",
+          "document": "<p>实例可升级Proxy版本。</p>",
           "example": "5.6.0",
           "member": "string",
           "name": "UpgradeProxyVersion",
@@ -9463,7 +9463,7 @@
         },
         {
           "disabled": false,
-          "document": "实例可升级Cache小版本。",
+          "document": "<p>实例可升级Cache小版本。</p>",
           "example": "6.0.0",
           "member": "string",
           "name": "UpgradeRedisVersion",
@@ -9473,7 +9473,7 @@
         },
         {
           "disabled": false,
-          "document": "备份模式：- SecondLevelBackup   秒级备份- NormalLevelBackup    普通备份",
+          "document": "<p>备份模式。</p><ul><li>SecondLevelBackup：秒级备份。</li><li>NormalLevelBackup：普通备份。</li></ul>",
           "example": "SecondLevelBackup",
           "member": "string",
           "name": "BackupMode",
@@ -9483,7 +9483,7 @@
         },
         {
           "disabled": false,
-          "document": "删除保护开关，0关闭，1开启",
+          "document": "<p>实例销毁保护开关。</p><ul><li>0：关闭。</li><li>1：开启。</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "DeleteProtectionSwitch",
@@ -10675,8 +10675,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
-          "example": "crs-5a4py64p",
+          "document": "<p>实例 ID，请登录<a href=\"https://console.cloud.tencent.com/redis/instance/list\">Redis控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "crs-5a4p****",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10684,7 +10684,7 @@
         },
         {
           "disabled": false,
-          "document": "指定需修改的账号。\n- root：指在创建 Redis 数据库实例时自动生成的账号。用户无法修改其读写权限，仅可修改其请求路由策略。\n- 自定义的账号：用户在实例创建成功后手动创建的账号。用户可以随时修改其读写权限与请求路由策略。",
+          "document": "<p>指定需修改的账号。</p><ul><li>root：指在创建 Redis 数据库实例时自动生成的账号。用户无法修改其读写权限，仅可修改其请求路由策略。</li><li>自定义的账号：用户在实例创建成功后手动创建的账号。用户可以随时修改其读写权限与请求路由策略。</li></ul>",
           "example": "example_name",
           "member": "string",
           "name": "AccountName",
@@ -10693,7 +10693,7 @@
         },
         {
           "disabled": false,
-          "document": "指定所修改账号访问的密码。",
+          "document": "<p>指定所修改账号访问的密码。</p>",
           "example": "redis***",
           "member": "string",
           "name": "AccountPassword",
@@ -10702,7 +10702,7 @@
         },
         {
           "disabled": false,
-          "document": "账号描述信息",
+          "document": "<p>账号描述信息</p>",
           "example": "some account instruction",
           "member": "string",
           "name": "Remark",
@@ -10711,8 +10711,8 @@
         },
         {
           "disabled": false,
-          "document": "指定所修改账号读写请求路由的策略。\n- master：表示读写请求路由至主节点。\n- replication：表示读写请求路由至从节点。",
-          "example": "master",
+          "document": "<p>指定所修改账号读写请求路由的策略。</p><ul><li>master：表示读写请求路由至主节点。</li><li>replication：表示读写请求路由至从节点。</li></ul>",
+          "example": "[\"master\"]",
           "member": "string",
           "name": "ReadonlyPolicy",
           "required": false,
@@ -10720,7 +10720,7 @@
         },
         {
           "disabled": false,
-          "document": "指定所修改账号的读写权限。\n- r：只读。\n- w：只写。\n- rw：读写。",
+          "document": "<p>指定所修改账号的读写权限。</p><ul><li>r：只读。</li><li>w：只写。</li><li>rw：读写。</li></ul>",
           "example": "rw",
           "member": "string",
           "name": "Privilege",
@@ -10729,7 +10729,7 @@
         },
         {
           "disabled": false,
-          "document": "指定是否将默认账号（root）设置为免密账号。自定义账号不支持免密访问。\n- true：默认账号（root）设置为免密账号。\n- false：默认账号（root）不设置为免密账号。",
+          "document": "<p>指定是否将默认账号（root）设置为免密账号。自定义账号不支持免密访问。</p><ul><li>true：默认账号（root）设置为免密账号。</li><li>false：默认账号（root）不设置为免密账号。</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "NoAuth",
@@ -10738,7 +10738,7 @@
         },
         {
           "disabled": false,
-          "document": "指定所修改的账号是否加密密码",
+          "document": "<p>是否启用密码加密传输。</p><ul><li>true：加密。</li><li>false：不加密（默认值）。</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "EncryptPassword",
@@ -10753,7 +10753,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID。",
+          "document": "<p>任务ID。</p>",
           "example": "11011",
           "member": "int64",
           "name": "TaskId",
