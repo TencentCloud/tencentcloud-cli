@@ -585,7 +585,7 @@
       "usage": "in"
     },
     "InputCryptoManageMarketingRisk": {
-      "document": "全栈式风控引擎入参",
+      "document": "风险识别RCE入参",
       "members": [
         {
           "disabled": false,

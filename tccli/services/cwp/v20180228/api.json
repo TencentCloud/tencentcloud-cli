@@ -46031,7 +46031,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主机名称。",
+          "document": "<p>主机名称。</p>",
           "example": "stone",
           "member": "string",
           "name": "MachineName",
@@ -46041,7 +46041,7 @@
         },
         {
           "disabled": false,
-          "document": "主机系统。",
+          "document": "<p>主机系统。</p>",
           "example": "centos",
           "member": "string",
           "name": "MachineOs",
@@ -46051,7 +46051,7 @@
         },
         {
           "disabled": false,
-          "document": "主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li>\t",
+          "document": "<p>主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li></p>",
           "example": "ONLINE",
           "member": "string",
           "name": "MachineStatus",
@@ -46061,7 +46061,7 @@
         },
         {
           "disabled": false,
-          "document": "ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装",
+          "document": "<p>ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装</p>",
           "example": "ONLINE",
           "member": "string",
           "name": "AgentStatus",
@@ -46071,7 +46071,7 @@
         },
         {
           "disabled": false,
-          "document": "RUNNING 运行中; STOPED 已关机; EXPIRED 待回收\t",
+          "document": "<p>RUNNING 运行中; STOPED 已关机; EXPIRED 待回收</p>",
           "example": "RUNNING",
           "member": "string",
           "name": "InstanceStatus",
@@ -46081,7 +46081,7 @@
         },
         {
           "disabled": false,
-          "document": "主机安全Uuid，若客户端长时间不在线将返回空字符。",
+          "document": "<p>主机安全Uuid，若客户端长时间不在线将返回空字符。</p>",
           "example": "8c09e1b1-5611-45b3-9c02-737996011b81",
           "member": "string",
           "name": "Uuid",
@@ -46091,7 +46091,7 @@
         },
         {
           "disabled": false,
-          "document": "CVM或BM机器唯一Uuid。",
+          "document": "<p>CVM或BM机器唯一Uuid。</p>",
           "example": "8c09e1b1-5611-45b3-9c02-737996011b81",
           "member": "string",
           "name": "Quuid",
@@ -46101,7 +46101,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞数。",
+          "document": "<p>漏洞数。</p>",
           "example": "2",
           "member": "int64",
           "name": "VulNum",
@@ -46111,7 +46111,7 @@
         },
         {
           "disabled": false,
-          "document": "主机IP。",
+          "document": "<p>主机IP。</p>",
           "example": "10.0.0.2",
           "member": "string",
           "name": "MachineIp",
@@ -46121,7 +46121,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是专业版。\n<li>true： 是</li>\n<li>false：否</li>",
+          "document": "<p>是否是专业版。</p><li>true： 是</li><li>false：否</li>",
           "example": "false",
           "member": "bool",
           "name": "IsProVersion",
@@ -46131,7 +46131,7 @@
         },
         {
           "disabled": false,
-          "document": "主机外网IP。",
+          "document": "<p>主机外网IP。</p>",
           "example": "114.11.12.13",
           "member": "string",
           "name": "MachineWanIp",
@@ -46141,7 +46141,7 @@
         },
         {
           "disabled": false,
-          "document": "主机状态。\n<li>POSTPAY: 表示后付费，即按量计费  </li>\n<li>PREPAY: 表示预付费，即包年包月</li>",
+          "document": "<p>主机状态。</p><li>POSTPAY: 表示后付费，即按量计费  </li><li>PREPAY: 表示预付费，即包年包月</li>",
           "example": "PREPAY",
           "member": "string",
           "name": "PayMode",
@@ -46151,7 +46151,7 @@
         },
         {
           "disabled": false,
-          "document": "木马数。",
+          "document": "<p>木马数。</p>",
           "example": "1",
           "member": "int64",
           "name": "MalwareNum",
@@ -46161,8 +46161,8 @@
         },
         {
           "disabled": false,
-          "document": "标签信息",
-          "example": "[{\"Rid\":0,\"Name\":\"tag-01\",\"TagId\":1}]",
+          "document": "<p>标签信息</p>",
+          "example": "无",
           "member": "MachineTag",
           "name": "Tag",
           "output_required": true,
@@ -46171,7 +46171,7 @@
         },
         {
           "disabled": false,
-          "document": "基线风险数。",
+          "document": "<p>基线风险数。</p>",
           "example": "2",
           "member": "int64",
           "name": "BaselineNum",
@@ -46181,7 +46181,7 @@
         },
         {
           "disabled": false,
-          "document": "网络风险数。",
+          "document": "<p>网络风险数。</p>",
           "example": "2",
           "member": "int64",
           "name": "CyberAttackNum",
@@ -46191,7 +46191,7 @@
         },
         {
           "disabled": false,
-          "document": "风险状态。\n<li>SAFE：安全</li>\n<li>RISK：风险</li>\n<li>UNKNOWN：未知</li>",
+          "document": "<p>风险状态。</p><li>SAFE：安全</li><li>RISK：风险</li><li>UNKNOWN：未知</li>",
           "example": "RISK",
           "member": "string",
           "name": "SecurityStatus",
@@ -46201,7 +46201,7 @@
         },
         {
           "disabled": false,
-          "document": "入侵事件数",
+          "document": "<p>入侵事件数</p>",
           "example": "1",
           "member": "int64",
           "name": "InvasionNum",
@@ -46211,8 +46211,8 @@
         },
         {
           "disabled": false,
-          "document": "地域信息",
-          "example": "{\"RegionCode\":\"gz\",\"Region\":\"ap-guangzhuo\",\"RegionId\":1,\"RegionName\":\"广州\",\"RegionNameEn\":\"chine guangzhou\"}",
+          "document": "<p>地域信息</p>",
+          "example": "无",
           "member": "RegionInfo",
           "name": "RegionInfo",
           "output_required": true,
@@ -46221,7 +46221,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态 TERMINATED_PRO_VERSION 已销毁",
+          "document": "<p>实例状态 TERMINATED_PRO_VERSION 已销毁</p>",
           "example": "TERMINATED_PRO_VERSION",
           "member": "string",
           "name": "InstanceState",
@@ -46231,7 +46231,7 @@
         },
         {
           "disabled": false,
-          "document": "防篡改 授权状态 1 授权 0 未授权",
+          "document": "<p>防篡改 授权状态 1 授权 0 未授权</p>",
           "example": "1",
           "member": "uint64",
           "name": "LicenseStatus",
@@ -46241,7 +46241,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1",
           "member": "int64",
           "name": "ProjectId",
@@ -46251,7 +46251,7 @@
         },
         {
           "disabled": false,
-          "document": "是否有资产扫描接口，0无，1有",
+          "document": "<p>是否有资产扫描接口，0无，1有</p>",
           "example": "1",
           "member": "uint64",
           "name": "HasAssetScan",
@@ -46261,7 +46261,7 @@
         },
         {
           "disabled": false,
-          "document": "机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区",
+          "document": "<p>机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区</p>",
           "example": "CVM",
           "member": "string",
           "name": "MachineType",
@@ -46271,7 +46271,7 @@
         },
         {
           "disabled": false,
-          "document": "内核版本",
+          "document": "<p>内核版本</p>",
           "example": "3.10.0-1127.19.1.el7.x86_64",
           "member": "string",
           "name": "KernelVersion",
@@ -46281,7 +46281,7 @@
         },
         {
           "disabled": false,
-          "document": "防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版",
+          "document": "<p>防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版</p>",
           "example": "BASIC_VERSION",
           "member": "string",
           "name": "ProtectType",
@@ -46291,8 +46291,8 @@
         },
         {
           "disabled": false,
-          "document": "云标签信息",
-          "example": "[{\"TagKey\":\"tagKey\",\"TagValue\":\"tagValue\"}]",
+          "document": "<p>云标签信息</p>",
+          "example": "无",
           "member": "Tags",
           "name": "CloudTags",
           "output_required": true,
@@ -46301,7 +46301,7 @@
         },
         {
           "disabled": false,
-          "document": "是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机",
+          "document": "<p>是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsAddedOnTheFifteen",
@@ -46311,7 +46311,7 @@
         },
         {
           "disabled": false,
-          "document": "主机ip列表",
+          "document": "<p>主机ip列表</p>",
           "example": "1.1.1.1,2.2.2.2",
           "member": "string",
           "name": "IpList",
@@ -46321,7 +46321,7 @@
         },
         {
           "disabled": false,
-          "document": "所属网络",
+          "document": "<p>所属网络</p>",
           "example": "vpc-sda",
           "member": "string",
           "name": "VpcId",
@@ -46331,8 +46331,8 @@
         },
         {
           "disabled": false,
-          "document": "附加信息",
-          "example": "{\"WanIP\":\"1.1.1.1\",\"PrivateIP\":\"1.1.1.1\",\"NetworkType\":1,\"NetworkName\":\"vpc-id\",\"InstanceID\":\"ins-id\",\"HostName\":\"hn\"}",
+          "document": "<p>附加信息</p>",
+          "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
           "output_required": false,
@@ -46341,7 +46341,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-sad143",
           "member": "string",
           "name": "InstanceId",
@@ -46351,7 +46351,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息",
+          "document": "<p>备注信息</p>",
           "example": "remark",
           "member": "string",
           "name": "Remark",
@@ -46361,10 +46361,30 @@
         },
         {
           "disabled": false,
-          "document": "主机安全agent版本",
+          "document": "<p>主机安全agent版本</p>",
           "example": "2.0.1.1",
           "member": "string",
           "name": "AgentVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机器对应APPID</p>",
+          "example": "260146618",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全中心付费版本</p>",
+          "example": "BASIC_VERSION",
+          "member": "string",
+          "name": "CSIPProtectType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

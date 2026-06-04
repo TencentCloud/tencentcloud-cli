@@ -5221,7 +5221,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "document": "<p>实例 ID。可通过 <a href=\"https://cloud.tencent.com/document/api/1130/57798\">DescribeDiagDBInstances</a> 接口获取。<strong>其中 dcdb(即TDSQL MySQL) 的查询入参InstanceId特殊，需要使用 ClusterId + &amp; + InstanceId 来组合代替， 如：<code>tdsqlshard-s1230&amp;shard-abcd</code></strong></p>",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -5230,7 +5230,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的ID，用于筛选线程列表。",
+          "document": "<p>线程的ID，用于筛选线程列表。</p>",
           "example": "20",
           "member": "uint64",
           "name": "ID",
@@ -5239,7 +5239,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的操作账号名，用于筛选线程列表。",
+          "document": "<p>线程的操作账号名，用于筛选线程列表。</p>",
           "example": "root",
           "member": "string",
           "name": "User",
@@ -5248,7 +5248,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的操作主机地址，用于筛选线程列表。",
+          "document": "<p>线程的操作主机地址，用于筛选线程列表。</p>",
           "example": "127.0.0.1:41528",
           "member": "string",
           "name": "Host",
@@ -5257,7 +5257,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的操作数据库，用于筛选线程列表。",
+          "document": "<p>线程的操作数据库，用于筛选线程列表。</p>",
           "example": "demo_db",
           "member": "string",
           "name": "DB",
@@ -5266,7 +5266,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的操作状态。包含以下枚举值：Sending data​-线程正在处理查询结果， ​Sorting result​-线程正在对查询结果进行排序​，Creating tmp table​-线程正在创建临时表，Altering table​-线程正在执行表结构变更，Updating-线程执行更新中。",
+          "document": "<p>线程的操作状态。包含以下枚举值：Sending data​-线程正在处理查询结果， ​Sorting result​-线程正在对查询结果进行排序​，Creating tmp table​-线程正在创建临时表，Altering table​-线程正在执行表结构变更，Updating-线程执行更新中。</p>",
           "example": "Updating",
           "member": "string",
           "name": "State",
@@ -5275,7 +5275,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的执行类型。包含以下枚举值：Sleep-线程处于空闲状态，Query-线程正在执行一个查询，Connect-从服务器连接到主服务器，Execute-线程正在执行预处理语句。",
+          "document": "<p>线程的执行类型。包含以下枚举值：Sleep-线程处于空闲状态，Query-线程正在执行一个查询，Connect-从服务器连接到主服务器，Execute-线程正在执行预处理语句。</p>",
           "example": "Execute",
           "member": "string",
           "name": "Command",
@@ -5284,7 +5284,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。",
+          "document": "<p>线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Time",
@@ -5293,7 +5293,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的操作语句，用于筛选线程列表。",
+          "document": "<p>线程的操作语句，用于筛选线程列表。</p>",
           "example": "DELETE FROM `test` WHERE time<=1",
           "member": "string",
           "name": "Info",
@@ -5302,7 +5302,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认20。",
+          "document": "<p>返回数量，默认20。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -5311,7 +5311,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"mariadb\"-mariadb;\"cynosdb\"-TDSQL-C for MySQL ;\"dcdb\"-TDSQL MySQL 默认为\"mysql\"。\n\n",
+          "document": "<p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;mariadb&quot;-mariadb;&quot;cynosdb&quot;-TDSQL-C for MySQL ;&quot;dcdb&quot;-TDSQL MySQL 默认为&quot;mysql&quot;。</p>",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -5320,7 +5320,7 @@
         },
         {
           "disabled": false,
-          "document": "会话统计的维度信息,可以多个维度。",
+          "document": "<p>会话统计的维度信息,可以多个维度。</p>",
           "example": "无",
           "member": "StatDimension",
           "name": "StatDimensions",
@@ -5335,7 +5335,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实时线程列表。",
+          "document": "<p>实时线程列表。</p>",
           "example": "无",
           "member": "MySqlProcess",
           "name": "ProcessList",
@@ -5345,7 +5345,7 @@
         },
         {
           "disabled": false,
-          "document": "sql会话统计信息。如果请求参数中包含StatDimensions，该参数则可能返回，否则不返回。",
+          "document": "<p>sql会话统计信息。如果请求参数中包含StatDimensions，该参数则可能返回，否则不返回。</p>",
           "example": "无",
           "member": "StatisticInfo",
           "name": "Statistics",

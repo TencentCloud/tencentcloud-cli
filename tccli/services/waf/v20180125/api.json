@@ -31607,7 +31607,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性qps默认值",
+          "document": "<p>弹性qps默认值</p>",
           "example": "3333",
           "member": "uint64",
           "name": "ElasticBillingDefault",
@@ -31617,7 +31617,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性qps最小值",
+          "document": "<p>弹性qps最小值</p>",
           "example": "100",
           "member": "uint64",
           "name": "ElasticBillingMin",
@@ -31627,7 +31627,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性qps最大值",
+          "document": "<p>弹性qps最大值</p>",
           "example": "100000",
           "member": "uint64",
           "name": "ElasticBillingMax",
@@ -31637,7 +31637,7 @@
         },
         {
           "disabled": false,
-          "document": "业务扩展包最大qps",
+          "document": "<p>业务扩展包最大qps</p>",
           "example": "10000",
           "member": "uint64",
           "name": "QPSExtendMax",
@@ -31647,12 +31647,22 @@
         },
         {
           "disabled": false,
-          "document": "境外业务扩展包最大qps",
+          "document": "<p>境外业务扩展包最大qps</p>",
           "example": "10000",
           "member": "uint64",
           "name": "QPSExtendIntlMax",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预付费/后付费QPS扩容比</p>",
+          "example": "1.0",
+          "member": "float",
+          "name": "ElasticPrepaidRatio",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],
