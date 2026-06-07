@@ -1,4 +1,4 @@
-**Example 1: 文生音效**
+**Example 1: 创作音乐**
 
 
 
@@ -6,19 +6,22 @@ Input:
 
 ```
 tccli vod CreateAigcAudioTask --cli-unfold-argument  \
-    --ModelName Kling \
-    --SceneType sfx \
-    --Prompt 春节庆祝时的烟花声 \
+    --SubAppId 251441341 \
+    --ModelName MiniMaxMusic \
+    --ModelVersion 2.0 \
+    --SceneType music \
+    --Prompt 一首欢乐的歌 \
     --OutputConfig.StorageMode Temporary \
-    --OutputConfig.Duration 6
+    --OutputConfig.OutputAudioFormat mp3 \
+    --AdditionalParameters {"lyrics": "大海啊，全是水，骏马啊，四条腿,***************"}
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TaskId": "251441341-AigcAudioTask-f3259ddeb615203726d73c03da05d9fft",
-        "RequestId": "4794b445-abc7-46c6-9e74-b30429f3a2c6"
+        "TaskId": "251441341-AigcAudioTask-ed886585de73592fca966e81b6bc2d20t",
+        "RequestId": "a9a9e323-d543-4bd3-b638-5853763e90c7"
     }
 }
 ```

@@ -32875,7 +32875,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群Id",
+          "document": "<p>集群Id</p>",
           "example": "cynosdbmysql-hr7oi711",
           "member": "string",
           "name": "ClusterId",
@@ -32884,7 +32884,7 @@
         },
         {
           "disabled": false,
-          "document": "当前可用区",
+          "document": "<p>当前可用区</p>",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "OldZone",
@@ -32893,7 +32893,7 @@
         },
         {
           "disabled": false,
-          "document": "要切换到的可用区",
+          "document": "<p>要切换到的可用区</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "NewZone",
@@ -32902,7 +32902,7 @@
         },
         {
           "disabled": false,
-          "document": "维护期间执行-yes,立即执行-no",
+          "document": "<p>维护期间执行-yes,立即执行-no</p>",
           "example": "no",
           "member": "string",
           "name": "IsInMaintainPeriod",
@@ -32917,7 +32917,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步FlowId",
+          "document": "<p>任务id</p>",
+          "example": "183415",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步FlowId</p>",
           "example": "1473274",
           "member": "int64",
           "name": "FlowId",

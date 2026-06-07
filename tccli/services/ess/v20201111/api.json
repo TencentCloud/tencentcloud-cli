@@ -274,7 +274,7 @@
       "status": "online"
     },
     "CreateFlowReminds": {
-      "document": "指定需要批量催办的签署流程ID，批量催办合同，最多100个。需要符合以下条件的合同才可被催办：\n\n1. 发起合同时，**签署人的NotifyType需设置为sms**\n2. 合同中当前状态为 **待签署** 的签署人是催办的对象\n3. **每个合同的每个签署方只能催办一次**\n\n**催办的效果**: 对方会收到如下的短信通知\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/3caf94b7f540fa5736270d38528d3a7b.png)\n\n注：`合同催办是白名单功能，请联系客户经理申请开白后使用`",
+      "document": "指定需要批量催办的签署流程ID，批量催办合同，最多100个\n##### 需要符合以下条件的合同才可被催办：\n<ol>\n<li>发起合同时，**设置了签署人通知类型：SMS,EMAIL,ALL**</li>\n<li>合同中当前状态为 **待签署** 的签署人是催办的对象</li>\n<li>**每个合同的每个签署方最多3次*</li>\n</ol>\n\n##### 催办的规则和效果：\n###### 规则\n\n- 指定RemindTypes，会触发符合签署人NotifyType的通知类型\n    -  这里EMAIL类型例外，如果指定了RemindEmailInfos，那么就会按照指定的email来通知，不管签署人NotifyType是否设置了EMAIL通知类型\n        - 如果指定了RemindEmailInfos，那么就会按照指定的email来通知\n- 若未指定RemindTypes，则按照发起合同时设置的签署人原始通知类型处理\n\n###### 效果\n\n\n<li>对方会收到如下的短信通知</li>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/3caf94b7f540fa5736270d38528d3a7b.png)\n\n<li>对方会收到如下的邮件通知</li>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/0841ccbd8db9747760b17914dcc166c6.png)\n\n注：`合同催办是白名单功能，请联系客户经理申请开白后使用`",
       "input": "CreateFlowRemindsRequest",
       "name": "合同催办",
       "output": "CreateFlowRemindsResponse",
@@ -8787,7 +8787,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n支持填入集团子公司经办人 userId 代发合同。\n\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "document": "<p>执行本接口操作的员工信息。使用此接口时，必须填写userId。<br>支持填入集团子公司经办人 userId 代发合同。</p><p>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -8796,7 +8796,7 @@
         },
         {
           "disabled": false,
-          "document": "请指定需执行批量签署的流程ID，数量范围为1-100。您可登录腾讯电子签控制台，浏览 \"合同\"->\"合同中心\" 以查阅某一合同的FlowId（在页面中显示为合同ID）。用户将利用链接对这些合同实施批量操作。  注：生成动态签署方领取时此参数必传。 ",
+          "document": "<p>请指定需执行批量签署的流程ID，数量范围为1-100。您可登录腾讯电子签控制台，浏览 &quot;合同&quot;-&gt;&quot;合同中心&quot; 以查阅某一合同的FlowId（在页面中显示为合同ID）。用户将利用链接对这些合同实施批量操作。  注：生成动态签署方领取时此参数必传。</p>",
           "example": "[\"yDxZtUyKQD2JuqUuO4zjERYG3XNeEJXw\"]",
           "member": "string",
           "name": "FlowIds",
@@ -8805,7 +8805,7 @@
         },
         {
           "disabled": false,
-          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "document": "<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -8814,7 +8814,7 @@
         },
         {
           "disabled": false,
-          "document": "员工在腾讯电子签平台的独特身份标识，为32位字符串。\n您可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查阅某位员工的UserId（在页面中显示为用户ID）。\nUserId必须是传入合同（FlowId）中的签署人。\n\n<ul>\n<li>1. 若UserId为空，Name和Mobile 必须提供。</li>\n<li>2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。</li>\n</ul>",
+          "document": "<p>员工在腾讯电子签平台的独特身份标识，为32位字符串。<br>您可登录腾讯电子签控制台，在 &quot;更多能力&quot;-&gt;&quot;组织管理&quot; 中查阅某位员工的UserId（在页面中显示为用户ID）。<br>UserId必须是传入合同（FlowId）中的签署人。</p><ul><li>1. 若UserId为空，Name和Mobile 必须提供。</li><li>2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。</li></ul>",
           "example": "yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84",
           "member": "string",
           "name": "UserId",
@@ -8823,7 +8823,7 @@
         },
         {
           "disabled": false,
-          "document": "员工姓名，必须与手机号码一起使用。\n如果UserId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。",
+          "document": "<p>员工姓名，必须与手机号码一起使用。<br>如果UserId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。</p>",
           "example": "张三",
           "member": "string",
           "name": "Name",
@@ -8832,7 +8832,7 @@
         },
         {
           "disabled": false,
-          "document": "员工手机号，必须与姓名一起使用。\n 如果UserId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。",
+          "document": "<p>员工手机号，必须与姓名一起使用。<br> 如果UserId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。</p>",
           "example": "187****7192",
           "member": "string",
           "name": "Mobile",
@@ -8841,7 +8841,7 @@
         },
         {
           "disabled": false,
-          "document": "为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。您可以通过查询合同接口（DescribeFlowInfo）查询此参数。若传了此参数，则可以不传 UserId, Name, Mobile等参数  注：生成动态签署方领取时此参数必传。",
+          "document": "<p>为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。您可以通过查询合同接口（DescribeFlowInfo）查询此参数。若传了此参数，则可以不传 UserId, Name, Mobile等参数  注：生成动态签署方领取时此参数必传。</p>",
           "example": "[\"yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E\"]",
           "member": "string",
           "name": "RecipientIds",
@@ -8850,7 +8850,7 @@
         },
         {
           "disabled": false,
-          "document": "合同组Id，传入此参数则可以不传FlowIds",
+          "document": "<p>合同组Id，传入此参数则可以不传FlowIds</p>",
           "example": "yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E",
           "member": "string",
           "name": "FlowGroupId",
@@ -8859,7 +8859,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`",
+          "document": "<p>是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul></p>",
           "example": "false",
           "member": "bool",
           "name": "CanBatchReject",
@@ -8868,7 +8868,7 @@
         },
         {
           "disabled": false,
-          "document": "动态签署方领取链接配置。",
+          "document": "<p>动态签署方领取链接配置。</p>",
           "example": "无",
           "member": "DynamicSignOption",
           "name": "DynamicSignOption",
@@ -8883,7 +8883,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。",
+          "document": "<p>批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。</p>",
           "example": "https://essurl.cn/bR8**HA",
           "member": "string",
           "name": "SignUrl",
@@ -8893,7 +8893,7 @@
         },
         {
           "disabled": false,
-          "document": "链接过期截止时间，格式为Unix标准时间戳（秒），默认为7天后截止。",
+          "document": "<p>链接过期截止时间，格式为Unix标准时间戳（秒），默认为7天后截止。</p>",
           "example": "1736478119",
           "member": "int64",
           "name": "ExpiredTime",

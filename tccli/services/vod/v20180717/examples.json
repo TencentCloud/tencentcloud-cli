@@ -133,9 +133,9 @@
     "CreateAigcAudioTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAigcAudioTask\n<公共请求参数>\n\n{\n    \"ModelName\": \"Kling\",\n    \"SceneType\": \"sfx\",\n    \"Prompt\": \"春节庆祝时的烟花声\",\n    \"OutputConfig\": {\n        \"StorageMode\": \"Temporary\",\n        \"Duration\": 6\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"251441341-AigcAudioTask-f3259ddeb615203726d73c03da05d9fft\",\n        \"RequestId\": \"4794b445-abc7-46c6-9e74-b30429f3a2c6\"\n    }\n}",
-        "title": "文生音效"
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAigcAudioTask\n<公共请求参数>\n\n{\n    \"SubAppId\": 251441341,\n    \"ModelName\": \"MiniMaxMusic\",\n    \"ModelVersion\": \"2.0\",\n    \"SceneType\": \"music\",\n    \"Prompt\": \"一首欢乐的歌\",\n    \"OutputConfig\": {\n        \"StorageMode\": \"Temporary\",\n        \"OutputAudioFormat\": \"mp3\"\n    },\n    \"AdditionalParameters\": \"{\\\"lyrics\\\": \\\"大海啊，全是水，骏马啊，四条腿,***************\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"251441341-AigcAudioTask-ed886585de73592fca966e81b6bc2d20t\",\n        \"RequestId\": \"a9a9e323-d543-4bd3-b638-5853763e90c7\"\n    }\n}",
+        "title": "创作音乐"
       }
     ],
     "CreateAigcCustomElement": [

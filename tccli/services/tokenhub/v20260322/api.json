@@ -35,6 +35,13 @@
       "output": "DescribeApiKeyListResponse",
       "status": "online"
     },
+    "DescribeModelList": {
+      "document": "查询模型列表。\n\n支持按模型 ID、模型名称、模型能力等条件筛选，支持分页和排序。",
+      "input": "DescribeModelListRequest",
+      "name": "查询模型列表",
+      "output": "DescribeModelListResponse",
+      "status": "online"
+    },
     "DescribeTokenPlan": {
       "document": "查询 TokenPlan 套餐详情。\n\n返回套餐基本信息及额度中心主额度包余量。",
       "input": "DescribeTokenPlanRequest",
@@ -846,6 +853,23 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelListRequest": {
+      "document": "DescribeModelList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeModelListResponse": {
+      "document": "DescribeModelList返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

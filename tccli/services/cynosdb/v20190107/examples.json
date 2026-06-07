@@ -1801,8 +1801,8 @@
     "SwitchClusterZone": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchClusterZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-asd\",\n    \"OldZone\": \"ap-guangzhou-2\",\n    \"NewZone\": \"ap-guangzhou-3\",\n    \"IsInMaintainPeriod\": \"yes\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": 123,\n        \"RequestId\": \"128046\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchClusterZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-8f0sh2nj\",\n    \"OldZone\": \"ap-guangzhou-3\",\n    \"NewZone\": \"ap-guangzhou-5\",\n    \"IsInMaintainPeriod\": \"no\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 88529647,\n        \"TaskId\": 183430,\n        \"RequestId\": \"61e043aa-4b66-4021-a3cb-7b31df93def7\"\n    }\n}",
         "title": "主备可用区切换"
       }
     ],

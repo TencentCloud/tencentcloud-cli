@@ -40,6 +40,14 @@
         "title": "查询 API 密钥列表。"
       }
     ],
+    "DescribeModelList": [
+      {
+        "document": "查询模型列表，支持按模型 ID、模型名称、模型能力等条件筛选，支持分页和排序。",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"319fc5ca-3fed-44a4-9a71-36bd0f6899fc\"\n    }\n}",
+        "title": "DescribeModelList"
+      }
+    ],
     "DescribeTokenPlan": [
       {
         "document": "测试查询 TokenPlan 套餐详情",

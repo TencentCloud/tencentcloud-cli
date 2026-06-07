@@ -25,7 +25,35 @@ Output:
 }
 ```
 
-**Example 2: 创建企业动态签署领取链接，并且预设企业OpenId**
+**Example 2: 创建企业动态签署领取链接，并且指定要全部领取签署**
+
+发起合同指定B端企业员工为动态签署方，通过此接口获取动态领取链接，指定要求全部合同领取进行签署。
+
+Input: 
+
+```
+tccli essbasic ChannelCreateOrganizationBatchSignUrl --cli-unfold-argument  \
+    --Agent.AppId yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2 \
+    --Agent.ProxyOrganizationOpenId ess_open_organization_1 \
+    --Agent.ProxyOperator.OpenId kevinlcheng \
+    --FlowIds yDtK2UUckpfmgingU1UyHCZxCSSvzgqj \
+    --RecipientIds yDtK2UUckpfmgindUyHCZxCEZrJgOW8c \
+    --DynamicSignOption.DynamicReceiveType 1 \
+    --CanBatchReject True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ExpiredTime": 1767668544,
+        "SignUrl": "https://embed.qian.tencent.com/contract-batchsign?embed=1&expiredOn=1767668544&code=yDtKzUUjfirlg0UELHh8vSRBXpQy0eNn&shortKey=yDtKzURSnZttci5qlP81&channel=PROXYCHANNEL",
+        "RequestId": "d21351b2-9733-4cf4-bc41-df22795ac73e"
+    }
+}
+```
+
+**Example 3: 创建企业动态签署领取链接，并且预设企业OpenId**
 
 发起合同指定B端企业员工为动态签署方，通过此接口获取动态领取链接。预设企业OpenId，要求只能由对应企业员工点击领取链接进行领取。
 
@@ -53,7 +81,7 @@ Output:
 }
 ```
 
-**Example 3: 创建合同组签署链接**
+**Example 4: 创建合同组签署链接**
 
 
 
@@ -80,7 +108,7 @@ Output:
 }
 ```
 
-**Example 4: 创建签署链接**
+**Example 5: 创建签署链接**
 
 待签署的合同
 
@@ -103,34 +131,6 @@ Output:
         "SignUrl": "https://embed.test.qian.tencent.cn/console/?channel=PROXYCHANNEL&expiredTime=1695805069&code=xxxxx&menuStatus=ENABLE&token=xxxx",
         "ExpiredTime": 0,
         "RequestId": "s1695804769054178191"
-    }
-}
-```
-
-**Example 5: 创建企业动态签署领取链接，并且指定要全部领取签署**
-
-发起合同指定B端企业员工为动态签署方，通过此接口获取动态领取链接，指定要求全部合同领取进行签署。
-
-Input: 
-
-```
-tccli essbasic ChannelCreateOrganizationBatchSignUrl --cli-unfold-argument  \
-    --Agent.AppId yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2 \
-    --Agent.ProxyOrganizationOpenId ess_open_organization_1 \
-    --Agent.ProxyOperator.OpenId kevinlcheng \
-    --FlowIds yDtK2UUckpfmgingU1UyHCZxCSSvzgqj \
-    --RecipientIds yDtK2UUckpfmgindUyHCZxCEZrJgOW8c \
-    --DynamicSignOption.DynamicReceiveType 1 \
-    --CanBatchReject True
-```
-
-Output: 
-```
-{
-    "Response": {
-        "ExpiredTime": 1767668544,
-        "SignUrl": "https://embed.qian.tencent.com/contract-batchsign?embed=1&expiredOn=1767668544&code=yDtKzUUjfirlg0UELHh8vSRBXpQy0eNn&shortKey=yDtKzURSnZttci5qlP81&channel=PROXYCHANNEL",
-        "RequestId": "d21351b2-9733-4cf4-bc41-df22795ac73e"
     }
 }
 ```

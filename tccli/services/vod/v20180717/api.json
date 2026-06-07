@@ -13728,6 +13728,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</p>",
+          "example": "251441341",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "<p>模型名称。</p>",
           "example": "Kling",
           "member": "string",
@@ -13746,7 +13755,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>指定场景，目前支持sfx（音效）。</p>",
+          "document": "<p>指定场景，目前支持sfx（音效）、music（音乐）。</p>",
           "example": "sfx",
           "member": "string",
           "name": "SceneType",
@@ -13807,7 +13816,7 @@
         {
           "disabled": false,
           "document": "<p>任务创建成功后，返回的任务ID。<br>调用查询接口，轮询获取任务进度及生成结果。</p>",
-          "example": "251441341-AigcAudioTask-f3259ddeb615203726d73c03da05d9fft",
+          "example": "251441341-AigcAudioTask-ed886585de73592fca966e81b6bc2d20t",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
@@ -19621,6 +19630,15 @@
           "name": "APIKey",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>API Key</p>",
+          "example": "[\"abcxxx\"]",
+          "member": "string",
+          "name": "APIKeys",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

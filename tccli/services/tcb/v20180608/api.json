@@ -5805,7 +5805,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境id",
+          "document": "<p>环境id</p>",
           "example": "test_envId",
           "member": "string",
           "name": "EnvId",
@@ -5814,7 +5814,7 @@
         },
         {
           "disabled": false,
-          "document": "页码，从1开始，默认1",
+          "document": "<p>页码，从1开始，默认1</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNo",
@@ -5823,7 +5823,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量，默认20，最大100",
+          "document": "<p>每页数量，默认20，最大100</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -5832,7 +5832,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名，模糊查询",
+          "document": "<p>用户名，模糊查询</p>",
           "example": "zhang",
           "member": "string",
           "name": "Name",
@@ -5841,7 +5841,7 @@
         },
         {
           "disabled": false,
-          "document": "用户昵称，模糊查询",
+          "document": "<p>用户昵称，模糊查询</p>",
           "example": "张",
           "member": "string",
           "name": "NickName",
@@ -5850,7 +5850,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号，模糊查询",
+          "document": "<p>手机号，模糊查询</p>",
           "example": "13900139000",
           "member": "string",
           "name": "Phone",
@@ -5859,12 +5859,21 @@
         },
         {
           "disabled": false,
-          "document": "邮箱，模糊查询",
+          "document": "<p>邮箱，模糊查询</p>",
           "example": "zhangsan@example.com",
           "member": "string",
           "name": "Email",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户id列表，根据id过滤用户</p>",
+          "example": "[\"1001\"]",
+          "member": "string",
+          "name": "UidList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5900,7 +5909,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果返回",
+          "document": "<p>结果返回</p>",
           "example": "无",
           "member": "DescribeUserListResp",
           "name": "Data",

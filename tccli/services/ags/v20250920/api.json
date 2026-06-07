@@ -1623,7 +1623,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "cpu 资源量",
+          "document": "<p>cpu 资源量</p>",
           "example": "500m",
           "member": "string",
           "name": "CPU",
@@ -1634,7 +1634,7 @@
         },
         {
           "disabled": false,
-          "document": "内存资源量",
+          "document": "<p>内存资源量</p>",
           "example": "1Gi",
           "member": "string",
           "name": "Memory",

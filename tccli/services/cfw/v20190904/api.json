@@ -2225,7 +2225,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙实例id",
+          "document": "<p>防火墙实例id</p>",
           "example": "cfwnat-id",
           "member": "string",
           "name": "CfwInsId",
@@ -2235,7 +2235,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙类型，nat：nat防火墙；ew：vpc间防火墙",
+          "document": "<p>防火墙类型，nat：nat防火墙；ew：vpc间防火墙</p>",
           "example": "nat",
           "member": "string",
           "name": "FwType",
@@ -2245,7 +2245,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属地域",
+          "document": "<p>实例所属地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -2255,7 +2255,7 @@
         },
         {
           "disabled": false,
-          "document": "实例运行状态，Running：正常运行；BypassAutoFix：bypass修复；Updating：升级中；Expand：扩容中；BypassManual：手动触发bypass中；BypassAuto：自动触发bypass中",
+          "document": "<p>实例运行状态，Running：正常运行；BypassAutoFix：bypass修复；Updating：升级中；Expand：扩容中；BypassManual：手动触发bypass中；BypassAuto：自动触发bypass中；BypassTcDrop：丢包触发bypass中</p><p>枚举值：</p><ul><li>Running： 正常运行</li><li>BypassAutoFix： 自动bypass已修复</li><li>Updating： 实例升级中</li><li>Expand： 实例扩容中</li><li>BypassManual： 手动触发bypass中</li><li>BypassAuto： 自动触发bypass中</li><li>BypassTcDrop： 丢包触发bypass中</li></ul>",
           "example": "Running",
           "member": "string",
           "name": "Status",
@@ -2265,7 +2265,7 @@
         },
         {
           "disabled": false,
-          "document": "事件时间",
+          "document": "<p>事件时间</p>",
           "example": "2024-11-11 11:22:22",
           "member": "string",
           "name": "EventTime",
@@ -2275,7 +2275,7 @@
         },
         {
           "disabled": false,
-          "document": "恢复时间",
+          "document": "<p>恢复时间</p>",
           "example": "2024-11-11 11:22:22",
           "member": "string",
           "name": "RecoverTime",
@@ -2285,7 +2285,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "cfwname",
           "member": "string",
           "name": "CfwInsName",
@@ -2295,7 +2295,7 @@
         },
         {
           "disabled": false,
-          "document": "Normal: 正常模式\nOnlyRoute: 透明模式",
+          "document": "<p>Normal: 正常模式<br>OnlyRoute: 透明模式</p>",
           "example": "Normal",
           "member": "string",
           "name": "TrafficMode",
@@ -3687,7 +3687,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问源示例： net：IP/CIDR(192.168.0.2)",
+          "document": "<p>访问源示例： net：IP/CIDR(192.168.0.2)</p>",
           "example": "192.168.0.2",
           "member": "string",
           "name": "SourceContent",
@@ -3696,7 +3696,7 @@
         },
         {
           "disabled": false,
-          "document": "访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag",
+          "document": "<p>访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag</p>",
           "example": "ip",
           "member": "string",
           "name": "SourceType",
@@ -3705,7 +3705,7 @@
         },
         {
           "disabled": false,
-          "document": "访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com",
+          "document": "<p>访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com</p>",
           "example": "*.qq.com",
           "member": "string",
           "name": "TargetContent",
@@ -3714,7 +3714,7 @@
         },
         {
           "disabled": false,
-          "document": "访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location",
+          "document": "<p>访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location</p>",
           "example": "domain",
           "member": "string",
           "name": "TargetType",
@@ -3723,7 +3723,7 @@
         },
         {
           "disabled": false,
-          "document": "协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS",
+          "document": "<p>协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS</p>",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -3732,7 +3732,7 @@
         },
         {
           "disabled": false,
-          "document": "访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察",
+          "document": "<p>访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察</p>",
           "example": "accept",
           "member": "string",
           "name": "RuleAction",
@@ -3741,7 +3741,7 @@
         },
         {
           "disabled": false,
-          "document": "访问控制策略的端口。取值： -1/-1：全部端口 80：80端口",
+          "document": "<p>访问控制策略的端口。取值： -1/-1：全部端口 80：80端口</p>",
           "example": "-1/-1",
           "member": "string",
           "name": "Port",
@@ -3750,7 +3750,7 @@
         },
         {
           "disabled": false,
-          "document": "规则方向：1，入站；0，出站",
+          "document": "<p>规则方向：1，入站；0，出站</p>",
           "example": "0",
           "member": "uint64",
           "name": "Direction",
@@ -3759,7 +3759,7 @@
         },
         {
           "disabled": false,
-          "document": "规则序号",
+          "document": "<p>规则序号</p>",
           "example": "1",
           "member": "int64",
           "name": "OrderIndex",
@@ -3768,7 +3768,7 @@
         },
         {
           "disabled": false,
-          "document": "规则状态，true表示启用，false表示禁用",
+          "document": "<p>规则状态，true表示启用，false表示禁用</p>",
           "example": "true",
           "member": "string",
           "name": "Enable",
@@ -3777,7 +3777,7 @@
         },
         {
           "disabled": false,
-          "document": "规则对应的唯一id，创建规则时无需填写",
+          "document": "<p>规则对应的唯一id，创建规则AddNatAcRule时无需填写；修改规则ModifyNatAcRule时必须填写</p><p>创建规则AddNatAcRule时无需填写；修改规则ModifyNatAcRule时必须填写</p>",
           "example": "8888",
           "member": "int64",
           "name": "Uuid",
@@ -3786,7 +3786,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "自定义描述",
           "member": "string",
           "name": "Description",
@@ -3795,7 +3795,7 @@
         },
         {
           "disabled": false,
-          "document": "端口协议组ID",
+          "document": "<p>端口协议组ID</p>",
           "example": "pp-1q2w3e4r",
           "member": "string",
           "name": "ParamTemplateId",
@@ -3804,7 +3804,7 @@
         },
         {
           "disabled": false,
-          "document": "内部id",
+          "document": "<p>内部id</p>",
           "example": "8888",
           "member": "int64",
           "name": "InternalUuid",
@@ -3813,7 +3813,7 @@
         },
         {
           "disabled": false,
-          "document": "规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度",
+          "document": "<p>规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Scope",

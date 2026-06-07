@@ -292,14 +292,6 @@
         "title": "中英文手写"
       }
     ],
-    "HmtResidentPermitOCR": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HmtResidentPermitOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/HmtResidentPermitOCR/HmtResidentPermitOCR2.png\",\n    \"CardSide\": \"FRONT\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Address\": \"合肥市高新区望江西路800号腾讯优图D7栋6号\",\n        \"Authority\": \"\",\n        \"Birth\": \"1985/2/1\",\n        \"CardType\": 0,\n        \"IdCardNo\": \"820000198502010022\",\n        \"Name\": \"蓝图图\",\n        \"PassNo\": \"\",\n        \"PortraitImageInfo\": {\n            \"ImageCoordinates\": {\n                \"X\": 0,\n                \"Y\": 0,\n                \"Width\": 0,\n                \"Height\": 0\n            },\n            \"PortraitImage\": \"\"\n        },\n        \"RequestId\": \"4685e626-f6ea-4ad8-a099-13933ea4bca9\",\n        \"Sex\": \"女\",\n        \"ValidDate\": \"\",\n        \"VisaNum\": \"0\"\n    }\n}",
-        "title": "HmtResidentPermitOCR调用"
-      }
-    ],
     "IDCardOCR": [
       {
         "document": "临时身份证告警调用示例 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)",
