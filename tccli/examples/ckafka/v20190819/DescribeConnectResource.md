@@ -1,6 +1,6 @@
-**Example 1: 查询Datahub连接源**
+**Example 1: 查询连接器连接详情**
 
-
+查询连接器连接详情
 
 Input: 
 

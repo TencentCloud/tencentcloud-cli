@@ -66,7 +66,7 @@
 | chdfs | [云 HDFS](http://document.tencentcloudapi.woa.com/document/product/1105) | [查看](http://document.tencentcloudapi.woa.com/document/product/1105/51168) | 2025-08-15 01:23:04 |
 | ciam | [账号风控平台](http://document.tencentcloudapi.woa.com/document/product/1441) | [查看](http://document.tencentcloudapi.woa.com/document/product/1683/79631) | 2026-05-18 01:13:40 |
 | cii | [智能保险助手](http://document.tencentcloudapi.woa.com/document/product/1368) | [查看](http://document.tencentcloudapi.woa.com/document/product/1368/56863) | 2024-03-20 01:11:32 |
-| ckafka | [消息队列 CKafka 版](http://document.tencentcloudapi.woa.com/document/product/597) | [查看](http://document.tencentcloudapi.woa.com/document/product/597/40830) | 2025-09-11 01:13:02 |
+| ckafka | [消息队列 CKafka 版](http://document.tencentcloudapi.woa.com/document/product/597) | [查看](http://document.tencentcloudapi.woa.com/document/product/597/40830) | 2026-06-08 16:47:42 |
 | clb | [负载均衡](http://document.tencentcloudapi.woa.com/document/product/214) | [查看](http://document.tencentcloudapi.woa.com/document/product/214/83876) | 2026-01-26 01:22:31 |
 | cloudapp | [云应用](http://document.tencentcloudapi.woa.com/document/product/1689) | [查看](http://document.tencentcloudapi.woa.com/document/product/1767/84253) | 2026-02-03 01:21:41 |
 | cloudaudit | [操作审计](http://document.tencentcloudapi.woa.com/document/product/629) | [查看](http://document.tencentcloudapi.woa.com/document/product/629/35339) | 2026-01-28 01:22:37 |

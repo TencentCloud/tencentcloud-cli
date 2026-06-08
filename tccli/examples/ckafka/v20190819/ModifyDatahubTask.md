@@ -1,6 +1,6 @@
-**Example 1: 修改Datahub任务**
+**Example 1: 修改连接器任务**
 
-
+修改连接器任务
 
 Input: 
 

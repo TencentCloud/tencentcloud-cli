@@ -20,7 +20,7 @@
       {
         "document": "批量设置Groups 消费分组offset",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchModifyGroupOffsets\n<公共请求参数>\n\n{\n    \"GroupName\": \"group-test\",\n    \"TopicName\": [\n        \"topic-abc\"\n    ],\n    \"InstanceId\": \"ckafka-test\",\n    \"Partitions\": [\n        {\n            \"Partition\": 0,\n            \"Offset\": 0\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"OK\",\n            \"ReturnMessage\": \"success\",\n            \"Data\": {\n                \"FlowId\": 0,\n                \"RouteDTO\": {\n                    \"RouteId\": 0\n                }\n            }\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"OK\",\n            \"ReturnMessage\": \"success\",\n            \"Data\": {\n                \"FlowId\": 0,\n                \"RouteDTO\": {\n                    \"RouteId\": 0\n                }\n            }\n        },\n        \"RequestId\": \"test-requestId\"\n    }\n}",
         "title": "批量设置Groups 消费分组offset"
       }
     ],
@@ -90,16 +90,16 @@
     ],
     "CreateConnectResource": [
       {
-        "document": "创建Datahub连接源(ES)",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectResource\n<公共请求参数>\n\n{\n    \"Description\": \"your description\",\n    \"EsConnectParam\": {\n        \"UserName\": \"elastic\",\n        \"Resource\": \"es-test\",\n        \"Password\": \"yourpassword\",\n        \"Port\": 9200,\n        \"ServiceVip\": \"10.0.0.1\",\n        \"UniqVpcId\": \"vpc-test\",\n        \"SelfBuilt\": false\n    },\n    \"ResourceName\": \"yourresourcename\",\n    \"Type\": \"ES\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"resource-test\"\n        },\n        \"RequestId\": \"9e6d209b-69fd-4a00-b064-75131aa0a0f8\"\n    }\n}",
-        "title": "创建Datahub连接源(ES)"
-      },
-      {
         "document": "创建Datahub连接源(DTS)",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectResource\n<公共请求参数>\n\n{\n    \"Description\": \"your description\",\n    \"DtsConnectParam\": {\n        \"UserName\": \"root\",\n        \"Resource\": \"dts-test\",\n        \"Topic\": \"topic\",\n        \"GroupId\": \"group\",\n        \"Password\": \"yourpassword\",\n        \"Port\": 0\n    },\n    \"ResourceName\": \"resourcename\",\n    \"Type\": \"DTS\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"resource-test\"\n        },\n        \"RequestId\": \"9e6d209b-69fd-4a00-b064-75131aa0a0f8\"\n    }\n}",
         "title": "创建Datahub连接源(DTS)"
+      },
+      {
+        "document": "创建连接器连接源(ES)",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectResource\n<公共请求参数>\n\n{\n    \"Description\": \"your description\",\n    \"EsConnectParam\": {\n        \"UserName\": \"elastic\",\n        \"Resource\": \"es-test\",\n        \"Password\": \"yourpassword\",\n        \"Port\": 9200,\n        \"ServiceVip\": \"10.0.0.1\",\n        \"UniqVpcId\": \"vpc-test\",\n        \"SelfBuilt\": false\n    },\n    \"ResourceName\": \"yourresourcename\",\n    \"Type\": \"ES\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"resource-test\"\n        },\n        \"RequestId\": \"9e6d209b-69fd-4a00-b064-75131aa0a0f8\"\n    }\n}",
+        "title": "创建连接器连接源(ES)"
       }
     ],
     "CreateConsumer": [
@@ -112,10 +112,10 @@
     ],
     "CreateDatahubTask": [
       {
-        "document": "SINK任务",
+        "document": "创建连接器任务",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatahubTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"MyTaskName\",\n    \"TaskType\": \"SINK\",\n    \"SourceResource\": {\n        \"Type\": \"KAFKA\",\n        \"KafkaParam\": {\n            \"SelfBuilt\": false,\n            \"Resource\": \"ckafka-7kd5rzza\",\n            \"Topic\": \"topic-test\",\n            \"OffsetType\": \"timestamp\",\n            \"StartTime\": 1635339533\n        }\n    },\n    \"TargetResource\": {\n        \"Type\": \"EB\",\n        \"EventBusParam\": {\n            \"Type\": \"COS\",\n            \"SelfBuilt\": false,\n            \"Resource\": \"target-resource\",\n            \"Namespace\": \"default\",\n            \"FunctionName\": \"ckafka-7kd5rzza_topic-0cus2p9z_task_1633501781881_schedule\",\n            \"Qualifier\": \"$LATEST\"\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": \"task-y9799wbn\",\n            \"DatahubId\": \"datahub-y9799wbn\"\n        },\n        \"RequestId\": \"84770b4b-df34-4ccf-8e22-41d3b1d0fe0d\"\n    }\n}",
-        "title": "创建SINK任务"
+        "title": "创建连接器任务"
       },
       {
         "document": "",
@@ -133,23 +133,41 @@
     "CreateDatahubTopic": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatahubTopic\n<公共请求参数>\n\n{\n    \"Name\": \"12345-test\",\n    \"PartitionNum\": \"1\",\n    \"RetentionMs\": \"3600000\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatahubTopic\n<公共请求参数>\n\n{\n    \"Name\": \"12345-test\",\n    \"PartitionNum\": 1,\n    \"RetentionMs\": 3600000\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TopicName\": \"mytopic\",\n            \"TopicId\": \"topic-test\"\n        },\n        \"RequestId\": \"84770b4b-df34-4ccf-8e22-41d3b1d0fe0d\"\n    }\n}",
         "title": "创建主题"
       }
     ],
     "CreateInstancePre": [
       {
-        "document": "创建硬盘大小 200GB，峰值带宽 20MB/s 的专业版预付费实例",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstancePre\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test55\",\n    \"VpcId\": \"vpc-rmcgxxxx\",\n    \"SubnetId\": \"subnet-mnzcxxxx\",\n    \"ZoneId\": 450001,\n    \"Period\": \"1m\",\n    \"RenewFlag\": 0,\n    \"InstanceType\": 1,\n    \"KafkaVersion\": \"2.4.1\",\n    \"SpecificationsType\": \"profession\",\n    \"DiskSize\": 200,\n    \"BandWidth\": 20,\n    \"Partition\": 400,\n    \"DiskType\": \"CLOUD_BASIC\",\n    \"PublicNetworkMonthly\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"323c3bbe-db79-48c3-9b76-63aacd65b169\",\n        \"Result\": {\n            \"Data\": {\n                \"DealNameInstanceIdMapping\": [\n                    {\n                        \"DealName\": \"20230608002033899990000\",\n                        \"InstanceIdList\": [\n                            \"ckafka-mom5xxxx\"\n                        ]\n                    }\n                ],\n                \"DealNames\": [\n                    \"2023060800203389990000\"\n                ],\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-mom5xxxx\"\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        }\n    }\n}",
-        "title": "创建预付费实例"
-      },
+        "document": "创建一个预付费专业版实例",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstancePre\n<公共请求参数>\n\n{\n    \"InstanceName\": \"ckafka测试\",\n    \"VpcId\": \"vpc-rmcgxxxx\",\n    \"SubnetId\": \"subnet-mnzcxxxx\",\n    \"ZoneId\": 450001,\n    \"Period\": \"1m\",\n    \"RenewFlag\": 0,\n    \"InstanceType\": 1,\n    \"KafkaVersion\": \"2.4.1\",\n    \"SpecificationsType\": \"profession\",\n    \"DiskSize\": 200,\n    \"BandWidth\": 20,\n    \"Partition\": 400,\n    \"DiskType\": \"CLOUD_BASIC\",\n    \"PublicNetworkMonthly\": 0,\n    \"CustomSSLCertId\": \"TPNd2oBB\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Data\": {\n                \"DealNameInstanceIdMapping\": [\n                    {\n                        \"DealName\": \"20251204581021815942281\",\n                        \"InstanceIdList\": [\n                            \"ckafka-ma4ab5n5\"\n                        ]\n                    }\n                ],\n                \"DealNames\": [\n                    \"20251204581021815942281\"\n                ],\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-ma4ab5n5\"\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok\"\n        },\n        \"RequestId\": \"8c8050a7-ea8d-44f1-a00e-c09cd673afa3\"\n    }\n}",
+        "title": "创建一个预付费专业版实例"
+      }
+    ],
+    "CreateMetaAndDataSyncDatahubTask": [
       {
-        "document": "创建预付费标准版实例，规格为入门型(general) ，周期为一个月",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstancePre\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test57\",\n    \"VpcId\": \"vpc-rmcgxxxx\",\n    \"SubnetId\": \"subnet-mnzcxxxx\",\n    \"ZoneId\": 450001,\n    \"Period\": \"1m\",\n    \"RenewFlag\": 2,\n    \"InstanceType\": 1,\n    \"KafkaVersion\": \"2.4.1\",\n    \"SpecificationsType\": \"standard\",\n    \"DiskSize\": 200,\n    \"BandWidth\": 20,\n    \"Partition\": 400\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2050ebf8-e255-4b90-ba0c-2fe8465e821a\",\n        \"Result\": {\n            \"Data\": {\n                \"DealNameInstanceIdMapping\": [\n                    {\n                        \"DealName\": \"20230608002033922780000\",\n                        \"InstanceIdList\": [\n                            \"ckafka-bz4dxxxx\"\n                        ]\n                    }\n                ],\n                \"DealNames\": [\n                    \"20230608002033922780000\"\n                ],\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-bz4dxxxx\"\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        }\n    }\n}",
-        "title": "创建预付费标准版实例"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMetaAndDataSyncDatahubTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"CreateMetaAndDataSyncDatahubTask\",\n    \"SourceResourceId\": \"resource-y9n3a2n6\",\n    \"TargetResourceId\": \"resource-y9n33bb6\",\n    \"OffsetType\": \"latest\",\n    \"TopicList\": [\n        \"bbbb14\"\n    ],\n    \"Prefix\": \"topic1\",\n    \"Separator\": \".\",\n    \"Description\": \"task1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DatahubId\": \"mock-data-hub-id\",\n            \"TaskId\": \"task-y9jb79mn\"\n        },\n        \"RequestId\": \"d928539a-f1c8-45c6-ba2c-0bcecfa6e431\"\n    }\n}",
+        "title": "创建连接器-元数据、消息同步任务"
+      }
+    ],
+    "CreateMetaDataAndOffsetSyncDatahubTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMetaDataAndOffsetSyncDatahubTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"MetaDataAndOffsetSyncDatahubTask\",\n    \"SourceResourceId\": \"resource-y9n3a2n6\",\n    \"TargetResourceId\": \"resource-y9n33bb6\",\n    \"Description\": \"taskDescription\",\n    \"OffsetType\": \"latest\",\n    \"TopicList\": [\n        \"bbbb14\"\n    ],\n    \"Prefix\": \"topic1\",\n    \"Separator\": \".\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DatahubId\": \"mock-data-hub-id\",\n            \"TaskId\": \"task-y9jb7mq4\"\n        },\n        \"RequestId\": \"57934d4b-bed1-47ee-9b0d-4f913ba29bc3\"\n    }\n}",
+        "title": "创建连接器任务-元数据、消息数据、位点同步"
+      }
+    ],
+    "CreateMetaSyncDatahubTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMetaSyncDatahubTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"CreateMetaSyncDatahubTask\",\n    \"SourceResourceId\": \"resource-y9n9pr46\",\n    \"TargetResourceId\": \"resource-y9n947b6\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"创建人\",\n            \"TagValue\": \"王蕊\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DatahubId\": \"mock-data-hub-id\",\n            \"TaskId\": \"task-y9jb22m4\"\n        },\n        \"RequestId\": \"91eb38c2-9487-489e-9562-25a32d4fb8e7\"\n    }\n}",
+        "title": "创建连接器-元数据同步任务"
       }
     ],
     "CreatePartition": [
@@ -163,21 +181,21 @@
     "CreatePostPaidInstance": [
       {
         "document": "创建硬盘大小 200GB，峰值带宽 20MB/s 的专业版后付费实例",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostPaidInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test55\",\n    \"VpcId\": \"vpc-rmcgxxxx\",\n    \"SubnetId\": \"subnet-mnzcxxxx\",\n    \"ZoneId\": 450001,\n    \"InstanceType\": 1,\n    \"KafkaVersion\": \"2.4.2\",\n    \"SpecificationsType\": \"profession\",\n    \"DiskSize\": 200,\n    \"BandWidth\": 20,\n    \"Partition\": 400,\n    \"DiskType\": \"CLOUD_BASIC\",\n    \"PublicNetworkMonthly\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostPaidInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test55\",\n    \"VpcId\": \"vpc-rmcgxxxx\",\n    \"SubnetId\": \"subnet-mnzcxxxx\",\n    \"ZoneId\": 450001,\n    \"InstanceType\": 1,\n    \"KafkaVersion\": \"2.4.2\",\n    \"SpecificationsType\": \"profession\",\n    \"DiskSize\": 200,\n    \"BandWidth\": 20,\n    \"Partition\": 400,\n    \"DiskType\": \"CLOUD_BASIC\",\n    \"PublicNetworkMonthly\": 0,\n    \"CustomSSLCertId\": \"TPNd2oBB\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"323c3bbe-db79-48c3-9b76-63aacd65b169\",\n        \"Result\": {\n            \"Data\": {\n                \"DealNameInstanceIdMapping\": [\n                    {\n                        \"DealName\": \"20230608002033899990000\",\n                        \"InstanceIdList\": [\n                            \"ckafka-mom5xxxx\"\n                        ]\n                    }\n                ],\n                \"DealNames\": [\n                    \"2023060800203389990000\"\n                ],\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-mom5xxxx\"\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        }\n    }\n}",
         "title": "创建后付费专业版实例"
-      },
-      {
-        "document": "同时创建三个后付费专业版实例",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostPaidInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test58\",\n    \"VpcId\": \"vpc-rmcg5cpf\",\n    \"SubnetId\": \"subnet-mnzcs7gk\",\n    \"KafkaVersion\": \"2.4.2\",\n    \"SpecificationsType\": \"profession\",\n    \"BandWidth\": 20,\n    \"DiskSize\": 200,\n    \"Partition\": 400,\n    \"TopicNum\": 200,\n    \"ZoneId\": 450001,\n    \"InstanceNum\": 3,\n    \"PublicNetworkMonthly\": 12\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cda79237-6424-482a-b2d2-97d4853b33b4\",\n        \"Result\": {\n            \"Data\": {\n                \"DealNameInstanceIdMapping\": [\n                    {\n                        \"DealName\": \"20230608002033915320000\",\n                        \"InstanceIdList\": [\n                            \"ckafka-bz4dxxxx\",\n                            \"ckafka-o9gdxxxx\",\n                            \"ckafka-aj5gxxxx\"\n                        ]\n                    }\n                ],\n                \"DealNames\": [\n                    \"20230608002033915320000\"\n                ],\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-bz4dxxxx\"\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        }\n    }\n}",
-        "title": "批量创建后付费专业版实例"
       },
       {
         "document": "创建一个三可用区的专业版实例",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostPaidInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test55\",\n    \"VpcId\": \"vpc-rmcgxxxx\",\n    \"SubnetId\": \"subnet-mnzcxxxx\",\n    \"ZoneId\": 450001,\n    \"InstanceType\": 1,\n    \"KafkaVersion\": \"2.4.2\",\n    \"SpecificationsType\": \"profession\",\n    \"DiskSize\": 200,\n    \"BandWidth\": 20,\n    \"Partition\": 400,\n    \"DiskType\": \"CLOUD_BASIC\",\n    \"PublicNetworkMonthly\": 0,\n    \"MultiZoneFlag\": true,\n    \"ZoneIds\": [\n        450001,\n        450002,\n        450003\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"323c3bbe-db79-48c3-9b76-63aacd65b169\",\n        \"Result\": {\n            \"Data\": {\n                \"DealNameInstanceIdMapping\": [\n                    {\n                        \"DealName\": \"20230608002033899990000\",\n                        \"InstanceIdList\": [\n                            \"ckafka-mom5xxxx\"\n                        ]\n                    }\n                ],\n                \"DealNames\": [\n                    \"2023060800203389990000\"\n                ],\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-mom5xxxx\"\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        }\n    }\n}",
         "title": "创建后付费多可用区专业版实例"
+      },
+      {
+        "document": "同时创建三个后付费专业版实例",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostPaidInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test58\",\n    \"VpcId\": \"vpc-rmcg5cpf\",\n    \"SubnetId\": \"subnet-mnzcs7gk\",\n    \"KafkaVersion\": \"2.4.2\",\n    \"SpecificationsType\": \"profession\",\n    \"BandWidth\": 20,\n    \"DiskSize\": 200,\n    \"Partition\": 400,\n    \"TopicNum\": 200,\n    \"ZoneId\": 450001,\n    \"InstanceNum\": 3,\n    \"PublicNetworkMonthly\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cda79237-6424-482a-b2d2-97d4853b33b4\",\n        \"Result\": {\n            \"Data\": {\n                \"DealNameInstanceIdMapping\": [\n                    {\n                        \"DealName\": \"20230608002033915320000\",\n                        \"InstanceIdList\": [\n                            \"ckafka-bz4dxxxx\",\n                            \"ckafka-o9gdxxxx\",\n                            \"ckafka-aj5gxxxx\"\n                        ]\n                    }\n                ],\n                \"DealNames\": [\n                    \"20230608002033915320000\"\n                ],\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-bz4dxxxx\"\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        }\n    }\n}",
+        "title": "批量创建后付费专业版实例"
       }
     ],
     "CreatePrometheus": [
@@ -191,7 +209,7 @@
     "CreateRoute": [
       {
         "document": "",
-        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateRoute\n&InstanceId=ckafka-test\n&VipType=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoute\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-test\",\n    \"VipType\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"success\",\n            \"Data\": {\n                \"FlowId\": 111,\n                \"RouteDTO\": {\n                    \"RouteId\": 132321\n                }\n            }\n        },\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\"\n    }\n}",
         "title": "成功请求"
       }
@@ -262,18 +280,18 @@
     ],
     "DeleteConnectResource": [
       {
-        "document": "",
+        "document": "删除连接器连接",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConnectResource\n<公共请求参数>\n\n{\n    \"ResourceId\": \"reource-test\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"reource-test\"\n        },\n        \"RequestId\": \"84770b4b-df34-4ccf-8e22-41d3b1d0fe0d\"\n    }\n}",
-        "title": "删除Datahub连接源"
+        "title": "删除连接器连接"
       }
     ],
     "DeleteDatahubTask": [
       {
-        "document": "",
+        "document": "删除连接器任务",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDatahubTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"task-y9799wbn\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": \"task-y9799wbn\"\n        },\n        \"RequestId\": \"84770b4b-df34-4ccf-8e22-41d3b1d0fe0d\"\n    }\n}",
-        "title": "删除Datahub任务"
+        "title": "删除连接器任务"
       }
     ],
     "DeleteDatahubTopic": [
@@ -290,6 +308,14 @@
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-6er88krk\",\n    \"Group\": \"grouptest\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"group delete success\",\n            \"Data\": null\n        },\n        \"RequestId\": \"7118b7f95-43de-4d27-8sdadsa-dsadsadsa\"\n    }\n}",
         "title": "删除消费组实例"
+      }
+    ],
+    "DeleteGroupSubscribeTopic": [
+      {
+        "document": "删除不需要订阅的topic",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGroupSubscribeTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-inbijinh\",\n    \"Group\": \"consuemr\",\n    \"Topic\": \"topicName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"abc\",\n            \"ReturnMessage\": \"abc\",\n            \"Data\": {\n                \"FlowId\": 0,\n                \"RouteDTO\": {\n                    \"RouteId\": 0\n                }\n            }\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除消费分组订阅的主题"
       }
     ],
     "DeleteInstancePost": [
@@ -332,14 +358,6 @@
         "title": "删除主题"
       }
     ],
-    "DeleteTopicIpWhiteList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTopicIpWhiteList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-test\",\n    \"TopicName\": \"topic-abc\",\n    \"IpWhiteList\": [\n        \"10.1.1.4\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply success]\",\n            \"Data\": {\n                \"FlowId\": 0\n            }\n        },\n        \"RequestId\": \"b800c966-083a-40f5-8d54-44f40c6b364f\"\n    }\n}",
-        "title": "删除主题IP白名单"
-      }
-    ],
     "DeleteUser": [
       {
         "document": "",
@@ -356,20 +374,20 @@
         "title": "枚举ACL"
       }
     ],
+    "DescribeAccessPolicy": [
+      {
+        "document": "查看实例公网IP白名单配置",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-ay3z77qe\",\n    \"RouteId\": 137946\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"IpWhitelist\": [\n                {\n                    \"CidrBlock\": \"127.0.0.1\",\n                    \"PolicyDescription\": \"test-description\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"01fbfd54-f0ec-4bbf-ba21-211a845bfa3b\"\n    }\n}",
+        "title": "查看实例公网IP白名单配置"
+      }
+    ],
     "DescribeAclRule": [
       {
         "document": "",
         "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeAclRule\n&InstanceId=ckafka-test\n&RuleName=deny-all\n&PatternType=PREFIXED\n&IsSimplified=false\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"AclRuleList\": [\n                {\n                    \"RuleName\": \"deny-all\",\n                    \"InstanceId\": \"ckafka-abc\",\n                    \"PatternType\": \"PRESET\",\n                    \"Pattern\": \"topic123\",\n                    \"ResourceType\": \"Topic\",\n                    \"AclList\": \"[{\\\"host\\\":\\\"*\\\",\\\"operation\\\":\\\"Read\\\",\\\"permissionType\\\":\\\"Allow\\\",\\\"principal\\\":\\\"User:*\\\"}]\",\n                    \"CreateTimeStamp\": \"Thu Jun 06 13:07:13 CST 2024\",\n                    \"IsApplied\": 0,\n                    \"UpdateTimeStamp\": \"Thu Jun 06 13:07:13 CST 2024\",\n                    \"Comment\": \"\",\n                    \"TopicName\": \"\",\n                    \"TopicCount\": 0,\n                    \"PatternTypeTitle\": \"预设策略\"\n                }\n            ]\n        },\n        \"RequestId\": \"62d589e0-53d5-47e0-95ff-237c48b8fb77\"\n    }\n}",
         "title": "枚举ACL"
-      }
-    ],
-    "DescribeAppInfo": [
-      {
-        "document": "",
-        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeAppInfo\r\n&Limit=10\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 11,\n            \"AppIdList\": [\n                1251000011,\n                1255426940,\n                251000873,\n                251000691,\n                251006545,\n                1251762227,\n                1256134262,\n                251006131,\n                1251006288,\n                1251006373\n            ]\n        },\n        \"RequestId\": \"8d7551b2-651e-4f47-80bc-13a478fda732\"\n    }\n}",
-        "title": "查询用户列表"
       }
     ],
     "DescribeAsyncResult": [
@@ -388,6 +406,14 @@
         "title": "查看关机结果"
       }
     ],
+    "DescribeCkafkaVersion": [
+      {
+        "document": "查询实例版本信息",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCkafkaVersion\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-bqwlyrg8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"LatestBrokerVersion\": [\n                {\n                    \"KafkaVersion\": \"0.10.2\",\n                    \"BrokerVersion\": \"v0.10.2.1_r1.2.11\"\n                },\n                {\n                    \"KafkaVersion\": \"3.2.3\",\n                    \"BrokerVersion\": \"v3.2.3_r1.0.7\"\n                },\n                {\n                    \"KafkaVersion\": \"2.8.1\",\n                    \"BrokerVersion\": \"v2.8.1_r1.1.6\"\n                },\n                {\n                    \"KafkaVersion\": \"2.4.1\",\n                    \"BrokerVersion\": \"v2.4.2_r1.2.4\"\n                },\n                {\n                    \"KafkaVersion\": \"1.1.1\",\n                    \"BrokerVersion\": \"v1.1.1_r1.1.14\"\n                }\n            ],\n            \"KafkaVersion\": \"1.1.1\",\n            \"CurBrokerVersion\": \"1.1.1_1.0.9\"\n        },\n        \"RequestId\": \"d173b4fb-c6d0-4507-a822-b6f277fc4016\"\n    }\n}",
+        "title": "查询实例版本信息"
+      }
+    ],
     "DescribeCkafkaZone": [
       {
         "document": "",
@@ -398,25 +424,25 @@
     ],
     "DescribeConnectResource": [
       {
-        "document": "",
+        "document": "查询连接器连接详情",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConnectResource\n<公共请求参数>\n\n{\n    \"ResourceId\": \"reource-test\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"resource-y9v8e3bl\",\n            \"ResourceName\": \"mytest\",\n            \"Type\": \"KAFKA\",\n            \"Description\": \"\",\n            \"MongoDBConnectParam\": null,\n            \"EsConnectParam\": null,\n            \"ClickHouseConnectParam\": null,\n            \"DtsConnectParam\": null,\n            \"MySQLConnectParam\": null,\n            \"MqttConnectParam\": null,\n            \"PostgreSQLConnectParam\": null,\n            \"MariaDBConnectParam\": null,\n            \"SQLServerConnectParam\": null,\n            \"CtsdbConnectParam\": null,\n            \"DorisConnectParam\": null,\n            \"KafkaConnectParam\": {\n                \"Region\": \"ap-guangzhou\",\n                \"BrokerAddress\": \"11.135.14.76:8568\",\n                \"SelfBuilt\": false,\n                \"Resource\": \"ckafka-wdvgwwx2\",\n                \"IsUpdate\": null\n            },\n            \"Status\": 1,\n            \"CreateTime\": \"2024-12-04 16:21:08\",\n            \"ErrorMessage\": \"RUNNING\",\n            \"CurrentStep\": \"FINISH\",\n            \"StepList\": [\n                \"WAIT_CREATE_PRIVATELINK\",\n                \"WAIT_CONNECT_PORT\",\n                \"WAIT_CONNECT_RESOURCE\"\n            ]\n        },\n        \"RequestId\": \"4cd38c99-9e9a-4a2d-8641-fa7c4015f764\"\n    }\n}",
-        "title": "查询Datahub连接源"
+        "title": "查询连接器连接详情"
       }
     ],
     "DescribeConnectResources": [
       {
-        "document": "查询Datahub连接源列表",
+        "document": "查询连接器连接列表",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConnectResources\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Type\": \"KAFKA\",\n    \"SearchWord\": \"mytest\",\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"ConnectResourceList\": [\n                {\n                    \"ResourceId\": \"resource-y9v8e3bl\",\n                    \"ResourceName\": \"mytest\",\n                    \"Description\": \"\",\n                    \"Status\": 1,\n                    \"CreateTime\": \"2024-12-04 16:21:08\",\n                    \"ErrorMessage\": \"RUNNING\",\n                    \"CurrentStep\": \"FINISH\",\n                    \"DatahubTaskCount\": 0,\n                    \"TaskProgress\": 36,\n                    \"StepList\": [\n                        \"WAIT_CREATE_PRIVATELINK\",\n                        \"WAIT_CONNECT_PORT\",\n                        \"WAIT_CONNECT_RESOURCE\"\n                    ],\n                    \"Type\": \"KAFKA\",\n                    \"MongoDBConnectParam\": null,\n                    \"EsConnectParam\": null,\n                    \"ClickHouseConnectParam\": null,\n                    \"DtsConnectParam\": null,\n                    \"MySQLConnectParam\": null,\n                    \"MqttConnectParam\": null,\n                    \"PostgreSQLConnectParam\": null,\n                    \"MariaDBConnectParam\": null,\n                    \"SQLServerConnectParam\": null,\n                    \"CtsdbConnectParam\": null,\n                    \"DorisConnectParam\": null,\n                    \"KafkaConnectParam\": {\n                        \"Region\": \"ap-guangzhou\",\n                        \"BrokerAddress\": \"11.135.14.76:8568\",\n                        \"SelfBuilt\": false,\n                        \"Resource\": \"ckafka-wdvgwwx2\",\n                        \"IsUpdate\": null\n                    }\n                }\n            ]\n        },\n        \"RequestId\": \"21de50a2-3626-4194-a60b-0741e396f368\"\n    }\n}",
-        "title": "查询Datahub连接源列表"
+        "title": "查询连接器连接列表"
       }
     ],
     "DescribeConsumerGroup": [
       {
         "document": " ",
         "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeConsumerGroup\n&InstanceId=ckafka-test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"TopicList\": [\n                {\n                    \"TopicId\": \"topic-test\",\n                    \"TopicName\": \"topic-test\"\n                }\n            ],\n            \"GroupList\": [\n                {\n                    \"ConsumerGroupName\": \"group-test\",\n                    \"SubscribedInfo\": [\n                        {\n                            \"TopicId\": \"topic-test\",\n                            \"TopicName\": \"topic-test\",\n                            \"Partition\": [\n                                0,\n                                1,\n                                2\n                            ],\n                            \"PartitionOffset\": [\n                                {\n                                    \"Partition\": \"0\",\n                                    \"Offset\": 966186803\n                                },\n                                {\n                                    \"Partition\": \"1\",\n                                    \"Offset\": 968552882\n                                },\n                                {\n                                    \"Partition\": \"2\",\n                                    \"Offset\": 957792934\n                                }\n                            ]\n                        }\n                    ]\n                }\n            ],\n            \"TotalPartition\": 3,\n            \"PartitionListForMonitor\": [],\n            \"TotalTopic\": 1,\n            \"TopicListForMonitor\": [\n                {\n                    \"TopicId\": \"topic-test\",\n                    \"TopicName\": \"topic-test\"\n                }\n            ],\n            \"GroupListForMonitor\": [\n                {\n                    \"GroupName\": \"group-test\"\n                }\n            ]\n        },\n        \"RequestId\": \"d173b4fb-c6d0-4507-a822-b6f277fc4016\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e59b15f1-8c26-4f28-8d7a-31fdbb5d2e90\",\n        \"Result\": {\n            \"GroupList\": [\n                {\n                    \"ConsumerGroupName\": \"hh\",\n                    \"SubscribedInfo\": [\n                        {\n                            \"Partition\": [\n                                0,\n                                1,\n                                2\n                            ],\n                            \"PartitionOffset\": [\n                                {\n                                    \"Offset\": 3395,\n                                    \"Partition\": \"0\"\n                                },\n                                {\n                                    \"Offset\": 3269,\n                                    \"Partition\": \"1\"\n                                },\n                                {\n                                    \"Offset\": 3336,\n                                    \"Partition\": \"2\"\n                                }\n                            ],\n                            \"TopicId\": \"topic-brany0f0\",\n                            \"TopicName\": \"dev\"\n                        },\n                        {\n                            \"Partition\": [\n                                0,\n                                1,\n                                2\n                            ],\n                            \"PartitionOffset\": [\n                                {\n                                    \"Offset\": 2110,\n                                    \"Partition\": \"0\"\n                                },\n                                {\n                                    \"Offset\": 2239,\n                                    \"Partition\": \"1\"\n                                },\n                                {\n                                    \"Offset\": 2197,\n                                    \"Partition\": \"2\"\n                                }\n                            ],\n                            \"TopicId\": \"topic-4f78nggi\",\n                            \"TopicName\": \"te\"\n                        }\n                    ]\n                },\n                {\n                    \"ConsumerGroupName\": \"tes\",\n                    \"SubscribedInfo\": [\n                        {\n                            \"Partition\": [\n                                0,\n                                1,\n                                2\n                            ],\n                            \"PartitionOffset\": [\n                                {\n                                    \"Offset\": 3395,\n                                    \"Partition\": \"0\"\n                                },\n                                {\n                                    \"Offset\": 3269,\n                                    \"Partition\": \"1\"\n                                },\n                                {\n                                    \"Offset\": 3336,\n                                    \"Partition\": \"2\"\n                                }\n                            ],\n                            \"TopicId\": \"topic-brany0f0\",\n                            \"TopicName\": \"dev\"\n                        },\n                        {\n                            \"Partition\": [\n                                0,\n                                1,\n                                2\n                            ],\n                            \"PartitionOffset\": [\n                                {\n                                    \"Offset\": 1409,\n                                    \"Partition\": \"0\"\n                                },\n                                {\n                                    \"Offset\": 1474,\n                                    \"Partition\": \"1\"\n                                },\n                                {\n                                    \"Offset\": 1453,\n                                    \"Partition\": \"2\"\n                                }\n                            ],\n                            \"TopicId\": \"topic-4f78nggi\",\n                            \"TopicName\": \"te\"\n                        }\n                    ]\n                },\n                {\n                    \"ConsumerGroupName\": \"vv\",\n                    \"SubscribedInfo\": [\n                        {\n                            \"Partition\": [\n                                0,\n                                1,\n                                2\n                            ],\n                            \"PartitionOffset\": [\n                                {\n                                    \"Offset\": 3395,\n                                    \"Partition\": \"0\"\n                                },\n                                {\n                                    \"Offset\": 3269,\n                                    \"Partition\": \"1\"\n                                },\n                                {\n                                    \"Offset\": 3336,\n                                    \"Partition\": \"2\"\n                                }\n                            ],\n                            \"TopicId\": \"topic-brany0f0\",\n                            \"TopicName\": \"dev\"\n                        }\n                    ]\n                }\n            ],\n            \"GroupListForMonitor\": [\n                {\n                    \"GroupName\": \"hh\"\n                },\n                {\n                    \"GroupName\": \"tes\"\n                },\n                {\n                    \"GroupName\": \"vv\"\n                }\n            ],\n            \"PartitionListForMonitor\": [],\n            \"TopicList\": [\n                {\n                    \"TopicId\": \"topic-brany0f0\",\n                    \"TopicName\": \"dev\"\n                },\n                {\n                    \"TopicId\": \"topic-4f78nggi\",\n                    \"TopicName\": \"te\"\n                }\n            ],\n            \"TopicListForMonitor\": [\n                {\n                    \"TopicId\": \"topic-brany0f0\",\n                    \"TopicName\": \"dev\"\n                },\n                {\n                    \"TopicId\": \"topic-4f78nggi\",\n                    \"TopicName\": \"te\"\n                }\n            ],\n            \"TotalCount\": 3,\n            \"TotalPartition\": 0,\n            \"TotalTopic\": 2\n        }\n    }\n}",
         "title": "列出消费分组"
       }
     ],
@@ -438,18 +464,18 @@
     ],
     "DescribeDatahubTask": [
       {
-        "document": "",
+        "document": "查询连接器任务详情",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatahubTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"task-test\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Connections\": [],\n            \"TransformParam\": null,\n            \"SchemaId\": \"\",\n            \"SchemaName\": \"\",\n            \"TransformsParam\": null,\n            \"TaskName\": \"mytask\",\n            \"TaskType\": \"SOURCE\",\n            \"SourceResource\": {\n                \"Type\": \"HTTP\",\n                \"KafkaParam\": null,\n                \"EventBusParam\": null,\n                \"MongoDBParam\": null,\n                \"TdwParam\": null,\n                \"EsParam\": null,\n                \"DtsParam\": null,\n                \"ClickHouseParam\": null,\n                \"ClsParam\": null,\n                \"CosParam\": null,\n                \"MySQLParam\": null,\n                \"MqttParam\": null,\n                \"PostgreSQLParam\": null,\n                \"MariaDBParam\": null,\n                \"SQLServerParam\": null,\n                \"CtsdbParam\": null,\n                \"TopicParam\": null,\n                \"ScfParam\": null\n            },\n            \"TargetResource\": {\n                \"Type\": \"KAFKA\",\n                \"KafkaParam\": {\n                    \"Topic\": \"topic-1\",\n                    \"OffsetType\": null,\n                    \"StartTime\": null,\n                    \"ResourceName\": \"test-public-network\",\n                    \"ZoneId\": 100006,\n                    \"TopicId\": \"topic-byp7lpy2\",\n                    \"PartitionNum\": 3,\n                    \"EnableToleration\": null,\n                    \"QpsLimit\": 2000,\n                    \"UseTableMapping\": false,\n                    \"TableMappings\": null,\n                    \"CompressionType\": \"none\",\n                    \"UseAutoCreateTopic\": false,\n                    \"MsgMultiple\": 1,\n                    \"ConnectorSyncType\": \"\",\n                    \"KeepPartition\": false,\n                    \"SelfBuilt\": false,\n                    \"Resource\": \"ckafka-wdvgwwx2\"\n                },\n                \"EventBusParam\": null,\n                \"MongoDBParam\": null,\n                \"TdwParam\": null,\n                \"EsParam\": null,\n                \"DtsParam\": null,\n                \"ClickHouseParam\": null,\n                \"ClsParam\": null,\n                \"CosParam\": null,\n                \"MySQLParam\": null,\n                \"MqttParam\": null,\n                \"PostgreSQLParam\": null,\n                \"MariaDBParam\": null,\n                \"SQLServerParam\": null,\n                \"CtsdbParam\": null,\n                \"TopicParam\": null,\n                \"ScfParam\": null\n            },\n            \"TaskId\": \"task-y9799wbn\",\n            \"DatahubId\": \"datahub-y9799wbn\",\n            \"Status\": 1,\n            \"CreateTime\": \"2024-12-04 16:22:23\",\n            \"ErrorMessage\": \"运行中\",\n            \"Tags\": []\n        },\n        \"RequestId\": \"5d584c1c-c41b-4fe1-9d10-b465c586e33e\"\n    }\n}",
-        "title": "查询Datahub任务信息"
+        "title": "查询连接器任务详情"
       }
     ],
     "DescribeDatahubTasks": [
       {
-        "document": "",
+        "document": "查询连接器任务列表",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatahubTasks\n<公共请求参数>\n\n{\n    \"TaskType\": \"SOURCE\",\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"TaskList\": [\n                {\n                    \"TaskName\": \"mytask\",\n                    \"TaskType\": \"SOURCE\",\n                    \"SourceResource\": {\n                        \"Type\": \"HTTP\",\n                        \"KafkaParam\": null,\n                        \"EventBusParam\": null,\n                        \"MongoDBParam\": null,\n                        \"TdwParam\": null,\n                        \"EsParam\": null,\n                        \"DtsParam\": null,\n                        \"ClickHouseParam\": null,\n                        \"ClsParam\": null,\n                        \"CosParam\": null,\n                        \"MySQLParam\": null,\n                        \"MqttParam\": null,\n                        \"PostgreSQLParam\": null,\n                        \"MariaDBParam\": null,\n                        \"SQLServerParam\": null,\n                        \"CtsdbParam\": null,\n                        \"TopicParam\": null,\n                        \"ScfParam\": null\n                    },\n                    \"TargetResource\": {\n                        \"Type\": \"KAFKA\",\n                        \"KafkaParam\": {\n                            \"Topic\": \"topic-1\",\n                            \"OffsetType\": null,\n                            \"StartTime\": null,\n                            \"ResourceName\": \"test-public-network\",\n                            \"ZoneId\": 100006,\n                            \"TopicId\": null,\n                            \"PartitionNum\": null,\n                            \"EnableToleration\": null,\n                            \"QpsLimit\": 2000,\n                            \"UseTableMapping\": false,\n                            \"TableMappings\": null,\n                            \"CompressionType\": \"none\",\n                            \"UseAutoCreateTopic\": false,\n                            \"MsgMultiple\": 1,\n                            \"ConnectorSyncType\": \"\",\n                            \"KeepPartition\": false,\n                            \"SelfBuilt\": false,\n                            \"Resource\": \"ckafka-wdvgwwx2\"\n                        },\n                        \"EventBusParam\": null,\n                        \"MongoDBParam\": null,\n                        \"TdwParam\": null,\n                        \"EsParam\": null,\n                        \"DtsParam\": null,\n                        \"ClickHouseParam\": null,\n                        \"ClsParam\": null,\n                        \"CosParam\": null,\n                        \"MySQLParam\": null,\n                        \"MqttParam\": null,\n                        \"PostgreSQLParam\": null,\n                        \"MariaDBParam\": null,\n                        \"SQLServerParam\": null,\n                        \"CtsdbParam\": null,\n                        \"TopicParam\": null,\n                        \"ScfParam\": null\n                    },\n                    \"TaskId\": \"task-y9799wbn\",\n                    \"DatahubId\": \"datahub-y9799wbn\",\n                    \"Status\": 1,\n                    \"CreateTime\": \"2024-12-04 16:22:23\",\n                    \"ErrorMessage\": \"运行中\",\n                    \"TaskProgress\": 36,\n                    \"TaskCurrentStep\": \"FINISH\",\n                    \"StepList\": []\n                }\n            ]\n        },\n        \"RequestId\": \"08e8fe64-062f-4e15-88fd-aecdf848bf3e\"\n    }\n}",
-        "title": "查询Datahub任务列表"
+        "title": "查询连接器任务列表"
       }
     ],
     "DescribeDatahubTopic": [
@@ -516,6 +542,14 @@
         "title": "获取实例列表详情"
       }
     ],
+    "DescribeModifyType": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModifyType\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-6er88krk\",\n    \"BandWidth\": 320,\n    \"DiskSize\": 1000,\n    \"DiskType\": \"CLOUD_PREMIUM\",\n    \"Partition\": 1200,\n    \"Topic\": 120,\n    \"Type\": \"sp_ckafka_profession\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ModifyType\": 1,\n            \"MigrateFlag\": true\n        },\n        \"RequestId\": \"7118b7f95-43de-4d27-8sdadsa-9999999a\"\n    }\n}",
+        "title": "查询实例变配类型示例"
+      }
+    ],
     "DescribePrometheus": [
       {
         "document": "",
@@ -530,6 +564,22 @@
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegion\n<公共请求参数>\n\n{\n    \"Business\": \"ckafka\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b44eaee-3807-482d-a589-9f0126615d9d\",\n        \"Result\": [\n            {\n                \"AreaName\": \"华南地区\",\n                \"Ipv6\": 0,\n                \"MultiZone\": 1,\n                \"RegionCode\": \"gz\",\n                \"RegionCodeV3\": \"ap-guangzhou\",\n                \"RegionId\": 1,\n                \"RegionName\": \"广州\",\n                \"Support\": \"profession,serverless\"\n            }\n        ]\n    }\n}",
         "title": "枚举地域"
+      }
+    ],
+    "DescribeRoleTokenPwdRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoleTokenPwdRules\n<公共请求参数>\n\n{\n    \"InstanceType\": \"ckafka\",\n    \"UserResourceId\": \"ckafka-*****xx\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceAccount\": \"ckafka#****User\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequiredLength\": 32,\n        \"Rules\": [\n            {\n                \"CharacterType\": \"numbers\",\n                \"Choices\": \"1234567890\",\n                \"MinimumLength\": 4,\n                \"MustStart\": false\n            }\n        ],\n        \"RequestId\": \"dde117e6-29d2-4147-89e3-4d9633b4195f\"\n    }\n}",
+        "title": "查询密码复杂度规则"
+      }
+    ],
+    "DescribeRoleTokenResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoleTokenResource\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"ckafka-*****r87\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceAccount\": \"ckafka-*****r87#**ler\",\n    \"InstanceType\": \"ckafka\",\n    \"AccountHost\": \"%\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnabledRotate\": false,\n        \"RequestId\": \"b918268b-7624-4a8c-891f-a0a58eb0efb5\"\n    }\n}",
+        "title": "查询实例轮转状态"
       }
     ],
     "DescribeRollbackAsyncRequestResult": [
@@ -567,7 +617,7 @@
     "DescribeTopic": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-xxooa0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-xxooa0\",\n    \"Limit\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TopicList\": [\n                {\n                    \"TopicId\": \"inter-topic-8sj6wxwi\",\n                    \"TopicName\": \"test1\",\n                    \"Note\": \"\"\n                },\n                {\n                    \"TopicId\": \"inter-topic-844bkmry\",\n                    \"TopicName\": \"test10\",\n                    \"Note\": \"\"\n                }\n            ],\n            \"TotalCount\": 12\n        },\n        \"RequestId\": \"8d7551b2-651e-4f47-80bc-13a478fda732\"\n    }\n}",
         "title": "获取某个实例下的主题列表"
       }
@@ -586,14 +636,6 @@
         "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeTopicDetail\n&InstanceId=ckafka-xxooa0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"071db315-27d5-4a7c-8bb3-e05c23e7a69c\",\n        \"Result\": {\n            \"TopicList\": [\n                {\n                    \"Config\": {\n                        \"CleanUpPolicy\": \"delete\",\n                        \"LogMsgTimestampType\": null,\n                        \"MaxMessageBytes\": 8388608,\n                        \"MinInsyncReplicas\": 1,\n                        \"Retention\": 259200000,\n                        \"RetentionBytes\": null,\n                        \"SegmentBytes\": null,\n                        \"SegmentMs\": null,\n                        \"UncleanLeaderElectionEnable\": 1\n                    },\n                    \"CreateTime\": 1716452124,\n                    \"EnableWhiteList\": false,\n                    \"ForwardCosBucket\": \"\",\n                    \"ForwardInterval\": 0,\n                    \"ForwardStatus\": 1,\n                    \"IpWhiteListCount\": 0,\n                    \"Note\": \"\",\n                    \"PartitionNum\": 10,\n                    \"ReplicaNum\": 2,\n                    \"RetentionTimeConfig\": {\n                        \"Current\": 4320,\n                        \"Expect\": 4320,\n                        \"ModTimeStamp\": 1716452125000\n                    },\n                    \"Status\": 0,\n                    \"Tags\": null,\n                    \"TopicId\": \"topic-4mi2t5w2\",\n                    \"TopicName\": \"yourname\"\n                },\n                {\n                    \"Config\": {\n                        \"CleanUpPolicy\": \"delete\",\n                        \"LogMsgTimestampType\": null,\n                        \"MaxMessageBytes\": 8388608,\n                        \"MinInsyncReplicas\": 1,\n                        \"Retention\": 86400000,\n                        \"RetentionBytes\": null,\n                        \"SegmentBytes\": null,\n                        \"SegmentMs\": null,\n                        \"UncleanLeaderElectionEnable\": 1\n                    },\n                    \"CreateTime\": 1720525148,\n                    \"EnableWhiteList\": false,\n                    \"ForwardCosBucket\": \"\",\n                    \"ForwardInterval\": 0,\n                    \"ForwardStatus\": 1,\n                    \"IpWhiteListCount\": 0,\n                    \"Note\": \"\",\n                    \"PartitionNum\": 1,\n                    \"ReplicaNum\": 2,\n                    \"RetentionTimeConfig\": {\n                        \"Current\": 1440,\n                        \"Expect\": 1440,\n                        \"ModTimeStamp\": 1720525149000\n                    },\n                    \"Status\": 0,\n                    \"Tags\": null,\n                    \"TopicId\": \"topic-24gugwns\",\n                    \"TopicName\": \"test-shilinlu\"\n                }\n            ],\n            \"TotalCount\": 2\n        }\n    }\n}",
         "title": "获取实例列表详情"
-      }
-    ],
-    "DescribeTopicDiskUsage": [
-      {
-        "document": "获取磁盘占用量接口",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopicDiskUsage\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-xxxasa\",\n    \"TopicName\": \"topicNamed\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cxxxx\",\n        \"Result\": {\n            \"TopicName\": \"TopicNameds\",\n            \"TopicId\": \"topic-42n12uin4it\",\n            \"DiskUsage\": 10239055\n        }\n    }\n}",
-        "title": "DescribeTopicDiskUsage"
       }
     ],
     "DescribeTopicFlowRanking": [
@@ -623,7 +665,7 @@
     "DescribeTopicSyncReplica": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopicSyncReplica\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-test\",\n    \"TopicName\": \"topic-test\",\n    \"Offset\": 1,\n    \"Limit\": 0,\n    \"OutOfSyncReplicaOnly\": true\n}",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopicSyncReplica\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-test\",\n    \"TopicName\": \"topic-test\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"OutOfSyncReplicaOnly\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3faffeb7-6e6b-4689-8a00-4d5e5f9e9f22\",\n        \"Result\": {\n            \"TopicInSyncReplicaList\": [\n                {\n                    \"BeginOffset\": 0,\n                    \"EndOffset\": 0,\n                    \"InSyncReplica\": \"150032,150033\",\n                    \"Leader\": 150032,\n                    \"MessageCount\": 0,\n                    \"OutOfSyncReplica\": \"\",\n                    \"Partition\": \"partition-0\",\n                    \"Replica\": \"150032,150033\"\n                },\n                {\n                    \"BeginOffset\": 1,\n                    \"EndOffset\": 3,\n                    \"InSyncReplica\": \"150033,150034\",\n                    \"Leader\": 150033,\n                    \"MessageCount\": 2,\n                    \"OutOfSyncReplica\": \"\",\n                    \"Partition\": \"partition-1\",\n                    \"Replica\": \"150033,150034\"\n                },\n                {\n                    \"BeginOffset\": 0,\n                    \"EndOffset\": 0,\n                    \"InSyncReplica\": \"150034,150035\",\n                    \"Leader\": 150034,\n                    \"MessageCount\": 0,\n                    \"OutOfSyncReplica\": \"\",\n                    \"Partition\": \"partition-2\",\n                    \"Replica\": \"150034,150035\"\n                },\n                {\n                    \"BeginOffset\": 0,\n                    \"EndOffset\": 0,\n                    \"InSyncReplica\": \"150035,150032\",\n                    \"Leader\": 150035,\n                    \"MessageCount\": 0,\n                    \"OutOfSyncReplica\": \"\",\n                    \"Partition\": \"partition-3\",\n                    \"Replica\": \"150035,150032\"\n                },\n                {\n                    \"BeginOffset\": 0,\n                    \"EndOffset\": 0,\n                    \"InSyncReplica\": \"150032,150033\",\n                    \"Leader\": 150032,\n                    \"MessageCount\": 0,\n                    \"OutOfSyncReplica\": \"\",\n                    \"Partition\": \"partition-4\",\n                    \"Replica\": \"150032,150033\"\n                },\n                {\n                    \"BeginOffset\": 0,\n                    \"EndOffset\": 0,\n                    \"InSyncReplica\": \"150033,150034\",\n                    \"Leader\": 150033,\n                    \"MessageCount\": 0,\n                    \"OutOfSyncReplica\": \"\",\n                    \"Partition\": \"partition-5\",\n                    \"Replica\": \"150033,150034\"\n                },\n                {\n                    \"BeginOffset\": 0,\n                    \"EndOffset\": 0,\n                    \"InSyncReplica\": \"150034,150035\",\n                    \"Leader\": 150034,\n                    \"MessageCount\": 0,\n                    \"OutOfSyncReplica\": \"\",\n                    \"Partition\": \"partition-6\",\n                    \"Replica\": \"150034,150035\"\n                },\n                {\n                    \"BeginOffset\": 0,\n                    \"EndOffset\": 0,\n                    \"InSyncReplica\": \"150035,150032\",\n                    \"Leader\": 150035,\n                    \"MessageCount\": 0,\n                    \"OutOfSyncReplica\": \"\",\n                    \"Partition\": \"partition-7\",\n                    \"Replica\": \"150035,150032\"\n                },\n                {\n                    \"BeginOffset\": 0,\n                    \"EndOffset\": 0,\n                    \"InSyncReplica\": \"150032,150033\",\n                    \"Leader\": 150032,\n                    \"MessageCount\": 0,\n                    \"OutOfSyncReplica\": \"\",\n                    \"Partition\": \"partition-8\",\n                    \"Replica\": \"150032,150033\"\n                },\n                {\n                    \"BeginOffset\": 0,\n                    \"EndOffset\": 0,\n                    \"InSyncReplica\": \"150033,150034\",\n                    \"Leader\": 150033,\n                    \"MessageCount\": 0,\n                    \"OutOfSyncReplica\": \"\",\n                    \"Partition\": \"partition-9\",\n                    \"Replica\": \"150033,150034\"\n                }\n            ],\n            \"TotalCount\": 10\n        }\n    }\n}",
         "title": "Topic 未同步详情"
       }
@@ -663,7 +705,7 @@
     "FetchLatestDatahubMessageList": [
       {
         "document": "",
-        "input": "https://ckafka.tencentcloudapi.com/?Action=FetchLatestDatahubMessageList\n&Name=sourceName\n&Partition=1\n&Offset=1\n&MessageCount=20\n&<公共请求参数>",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=FetchLatestDatahubMessageList\n&Name=topic-test\n&Partition=0\n&Offset=0\n&MessageCount=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"Topic\": \"topic-test\",\n                \"Partition\": 0,\n                \"Offset\": 0,\n                \"Key\": \"key\",\n                \"Value\": \"value\",\n                \"Timestamp\": 0,\n                \"Headers\": \"head\"\n            }\n        ],\n        \"RequestId\": \"84770b4b-df34-4ccf-8e22-41d3b1d0fe0d\"\n    }\n}",
         "title": "根据offset查询消息"
       }
@@ -716,6 +758,14 @@
         "title": "实例缩容"
       }
     ],
+    "ModifyAccessPolicy": [
+      {
+        "document": "修改实例公网IP白名单配置",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccessPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-ay3z77qe\",\n    \"RouteId\": 137946,\n    \"IpWhitelist\": [\n        {\n            \"CidrBlock\": \"127.0.0.1\",\n            \"PolicyDescription\": \"test-description\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"Succeed\",\n        \"RequestId\": \"0ca44380-3c17-4755-9564-f48de2e01760\"\n    }\n}",
+        "title": "修改实例公网IP白名单配置"
+      }
+    ],
     "ModifyAclRule": [
       {
         "document": "修改ACL规则示范",
@@ -726,24 +776,24 @@
     ],
     "ModifyConnectResource": [
       {
-        "document": "编辑Datahub连接源",
+        "document": "编辑连接器连接",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConnectResource\n<公共请求参数>\n\n{\n    \"Description\": \"yourdescription\",\n    \"DtsConnectParam\": {\n        \"UserName\": \"user\",\n        \"Resource\": \"resource\",\n        \"GroupId\": \"groupid\",\n        \"Password\": \"yourpassword\",\n        \"Topic\": \"topic-test\",\n        \"Port\": 0\n    },\n    \"ResourceName\": \"resource-name\",\n    \"ResourceId\": \"reource-test\",\n    \"Type\": \"DTS\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"resource-test\"\n        },\n        \"RequestId\": \"84770b4b-df34-4ccf-8e22-41d3b1d0fe0d\"\n    }\n}",
-        "title": "编辑Datahub连接源"
+        "title": "编辑连接器连接"
       }
     ],
     "ModifyDatahubTask": [
       {
-        "document": "",
+        "document": "修改连接器任务",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDatahubTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"task-test\",\n    \"TaskName\": \"taskname\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": \"task-tes\"\n        },\n        \"RequestId\": \"84770b4b-df34-4ccf-8e22-41d3b1d0fe0\"\n    }\n}",
-        "title": "修改Datahub任务"
+        "title": "修改连接器任务"
       }
     ],
     "ModifyDatahubTopic": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDatahubTopic\n<公共请求参数>\n\n{\n    \"Note\": \"yournote\",\n    \"Name\": \"yourname\",\n    \"RetentionMs\": \"3600000\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDatahubTopic\n<公共请求参数>\n\n{\n    \"Note\": \"note-test\",\n    \"Name\": \"appId-test\",\n    \"RetentionMs\": 3600000\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok\",\n            \"Data\": {\n                \"FlowId\": 0,\n                \"RouteDTO\": {\n                    \"RouteId\": 0\n                }\n            }\n        },\n        \"RequestId\": \"84770b4b-df34-4ccf-8e22-41d3b1d0fe0d\"\n    }\n}",
         "title": "设置主题属性"
       }
@@ -751,14 +801,14 @@
     "ModifyGroupOffsets": [
       {
         "document": "",
-        "input": "https://ckafka.tencentcloudapi.com/?Action=ModifyGroupOffsets\n&InstanceId=ckafka-test\n&Group=\"group\"\n&Strategy=1\n&<公共请求参数>",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=ModifyGroupOffsets\n&InstanceId=ckafka-test\n&Group=\"group\"\n&Topics.0=topic-test\n&Strategy=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"SUCCESS\",\n            \"Data\": {\n                \"FlowId\": 0\n            }\n        },\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\"\n    }\n}",
         "title": "设置Groups 消费分组offset"
       }
     ],
     "ModifyInstanceAttributes": [
       {
-        "document": " ",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceAttributes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-test\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok\",\n            \"Data\": {\n                \"FlowId\": 0,\n                \"RouteDTO\": {\n                    \"RouteId\": 0\n                }\n            }\n        },\n        \"RequestId\": \"84770b4b-df34-4ccf-8e22-41d3b1d0fe0d\"\n    }\n}",
         "title": "设置实例属性"
@@ -796,12 +846,44 @@
         "title": "设置主题属性"
       }
     ],
+    "PauseDatahubTask": [
+      {
+        "document": "暂停连接器任务",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PauseDatahubTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"task-qy9n446n\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": \"task-task-qy9n446n\"\n        },\n        \"RequestId\": \"e8042aea-b1b6-4d20-9626-9be4f3d9f69c\"\n    }\n}",
+        "title": "暂停连接器任务"
+      }
+    ],
     "RenewCkafkaInstance": [
       {
         "document": "续费实例",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquireCkafkaPrice\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-xxx\",\n    \"TimeSpan\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"BigDealId\": \"2023020103xxxx\",\n            \"DealName\": \"2023020103xxxx\"\n        },\n        \"RequestId\": \"f47ac10b-58cc-4372-a567-0e02b2c3d479\"\n    }\n}",
         "title": "续费实例"
+      }
+    ],
+    "ResetInstancePassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetInstancePassword\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"ckafka-****a**d\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceAccount\": \"ckafka-***raa9d#r***r\",\n    \"Password\": \"****************\",\n    \"AccountHost\": \"%\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResetTimestamp\": 1774597792999,\n        \"TimeCost\": 1763,\n        \"RequestId\": \"e9458f22-c4b9-4bf6-b41e-67cfc0711b88\"\n    }\n}",
+        "title": "重置密码"
+      }
+    ],
+    "RestartDatahubTask": [
+      {
+        "document": "重启连接器任务",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartDatahubTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"task-qy9e9b6n\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": \"task-qy9e9b6n\"\n        },\n        \"RequestId\": \"e8042aea-b1b6-4d20-9626-9be4f3d9f69c\"\n    }\n}",
+        "title": "重启连接器任务"
+      }
+    ],
+    "ResumeDatahubTask": [
+      {
+        "document": "恢复连接器任务",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeDatahubTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"task-qy9z246n\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": \"task-qy9z246n\"\n        },\n        \"RequestId\": \"e8042aea-b1b6-4d20-9626-9be4f3d9f69c\"\n    }\n}",
+        "title": "恢复连接器任务"
       }
     ],
     "SendMessage": [
@@ -818,6 +900,14 @@
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendMessageByTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-test\",\n    \"TopicName\": \"topic-test\",\n    \"Message\": \"message-test\",\n    \"Key\": \"key-test\",\n    \"Partition\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"success\",\n            \"Data\": {\n                \"FlowId\": 0,\n                \"RouteDTO\": {\n                    \"RouteId\": 0\n                }\n            }\n        },\n        \"RequestId\": \"d173b4fb-c6d0-4507-a822-b6f277fc4016\"\n    }\n}",
         "title": "发送消息"
+      }
+    ],
+    "UpgradeBrokerVersion": [
+      {
+        "document": "broker版本升级",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeBrokerVersion\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-test\",\n    \"Type\": 1,\n    \"SourceVersion\": \"v2.8.1_r1.1.7\",\n    \"TargetVersion\": \"v2.8.1_r1.1.8\",\n    \"DelayTimeStamp\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"success\",\n            \"Data\": {\n                \"FlowId\": 0,\n                \"RouteDTO\": {\n                    \"RouteId\": 0\n                }\n            }\n        },\n        \"RequestId\": \"2412412412asfdsafasdsfd\"\n    }\n}",
+        "title": "broker版本升级"
       }
     ]
   },

@@ -1,6 +1,6 @@
-**Example 1: 删除Datahub任务**
+**Example 1: 删除连接器任务**
 
-
+删除连接器任务
 
 Input: 
 

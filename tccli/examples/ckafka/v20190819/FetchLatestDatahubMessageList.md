@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ckafka FetchLatestDatahubMessageList --cli-unfold-argument  \
-    --Name sourceName \
-    --Partition 1 \
-    --Offset 1 \
+    --Name topic-test \
+    --Partition 0 \
+    --Offset 0 \
     --MessageCount 20
 ```
 

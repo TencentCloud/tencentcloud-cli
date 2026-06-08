@@ -1,6 +1,6 @@
-**Example 1: 查询Datahub任务列表**
+**Example 1: 查询连接器任务列表**
 
-
+查询连接器任务列表
 
 Input: 
 
