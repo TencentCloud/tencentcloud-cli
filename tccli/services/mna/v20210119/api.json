@@ -4807,7 +4807,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单编号唯一标识符",
+          "document": "<p>订单编号唯一标识符</p>",
           "example": "100003848",
           "member": "string",
           "name": "OrderId",
@@ -4816,7 +4816,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id",
+          "document": "<p>项目id</p>",
           "example": "4002428",
           "member": "string",
           "name": "ProjectId",
@@ -4825,7 +4825,7 @@
         },
         {
           "disabled": false,
-          "document": "用量类型",
+          "document": "<p>用量类型</p>",
           "example": "pack_1",
           "member": "string",
           "name": "PackageType",
@@ -4834,7 +4834,7 @@
         },
         {
           "disabled": false,
-          "document": "上报月份，默认当前月",
+          "document": "<p>上报月份，默认当前月</p>",
           "example": "2025-08",
           "member": "string",
           "name": "ReportMonth",
@@ -4849,7 +4849,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单信息",
+          "document": "<p>订单信息</p>",
           "example": "无",
           "member": "OrderInfo",
           "name": "OrderInfo",

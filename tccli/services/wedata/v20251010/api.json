@@ -28578,6 +28578,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规格配置</p>",
+          "example": "无",
+          "member": "ExecAdminComputeResourceConfig",
+          "name": "ResourceConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -32222,7 +32233,17 @@
     },
     "GetChatBiDataQueryFeedbackTypesRequest": {
       "document": "GetChatBiDataQueryFeedbackTypes请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间id</p>",
+          "example": "17678671667189298",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "GetChatBiDataQueryFeedbackTypesResp": {
@@ -32247,7 +32268,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据",
+          "document": "<p>数据</p>",
           "example": "无",
           "member": "GetChatBiDataQueryFeedbackTypesResp",
           "name": "Data",
@@ -37131,6 +37152,15 @@
           "name": "ReturnAllSubJobs",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间id</p>",
+          "example": "123123123",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -37235,6 +37265,17 @@
           "output_required": false,
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎作业id</p>",
+          "example": "rayjob-20260521103031-r2ap",
+          "member": "string",
+          "name": "EngineJobId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -77985,6 +78026,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎的任务id</p>",
+          "example": "rayjob-20260521103031-r2ap",
+          "member": "string",
+          "name": "EngineJobId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -80159,7 +80211,7 @@
       "usage": "both"
     },
     "TaskType": {
-      "document": "### `TaskTypePropertyList` 中 `TaskTypeProperty` 针对不同任务类型需要填写不同的 key 和 value；\n\n### 1. NOTEBOOK 任务类型\n\n#### 属性配置\n\n| 属性键       | 属性名称          | 描述                               | UI类型                | 是否必需                |\n| ------------ | ----------------- | ---------------------------------- | --------------------- | ----------------------- |\n| Source       | 来源              | 可填2或5,来源 2:GIT, 5:工作空间    | TASK_SOURCE_SELECT    | 是                      |\n| NotebookPath | Notebook 相对路径 | Source为5时，需从（ListFiles）获取 | WORKSPACE_FILE_SELECT | Source 为 2、5 时，必填 |\n\n### 2. DATA_INTEGRATION 任务类型\n\n#### 属性配置\n\n| 属性键                | 属性名称             | 描述                                 | UI类型                  | 是否必需 |\n| --------------------- | -------------------- | ------------------------------------ | ----------------------- | -------- |\n| Source                | 来源                 | 必填:4,表示来源为COS                 | INPUT                   | 是       |\n| TemplatePath          | 数据接入任务配置路径 | 需从（ListIntegrationTasks）接口获取 | INPUT                   | 是       |\n| DataIntegrationTaskId | 数据接入任务ID       | 需从（ListIntegrationTasks）接口获取 | DATA_INTEGRATION_SELECT | 是       |\n\n### 3. RUN_WORKFLOW 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称   | 描述                          | UI类型          | 是否必需 |\n| ---------- | ---------- | ----------------------------- | --------------- | -------- |\n| WorkflowId | 选择工作流 | 需从（ListWorkflows）接口获取 | WORKFLOW_SELECT | 是       |\n\n### 4. SQL 任务类型\n\n#### 属性配置\n\n| 属性键          | 属性名称    | 描述                                              | UI类型             | 是否必需             |\n| --------------- | ----------- | ------------------------------------------------- | ------------------ | -------------------- |\n| Source          | 来源        | 可填2或5,来源 2:GIT, 5:工作空间                   | TASK_SOURCE_SELECT | 是                   |\n| SqlPath         | SQL脚本路径 | SQL脚本路径                                       | SQL_FILE_SELECT    | Source 为 2 时，必填 |\n| CodeFileName    | 文件名称    | Source为5时，需从（ListReleasedCodeFile）接口获取 | INPUT              | 否                   |\n| CodeFileId      | 文件ID      | Source为5时，需从（ListReleasedCodeFile）接口获取 | INPUT              | Source 为 5 时，必填 |\n| CodeFileVersion | 文件版本    | Source为5时，需从（ListReleasedCodeFile）接口获取 | INPUT              | 否                   |\n\n### 5. Python File 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称       | 描述                                   | UI类型                | 是否必需 |\n| ---------- | -------------- | -------------------------------------- | --------------------- | -------- |\n| Source     | 来源           | 可填2或5,来源 2:GIT, 5:工作空间        | TASK_SOURCE_SELECT    | 是       |\n| SourcePath | Python脚本路径 | Source为5时，需从（ListFiles）接口获取 | WORKSPACE_FILE_SELECT | 是       |\n\n### 6.质量监控 任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称         | 描述                                          | UI类型              | 是否必需 |\n| -------------- | ---------------- | --------------------------------------------- | ------------------- | -------- |\n| Source         | 来源             | 必填:4,表示来源为COS                          | INPUT               | 是       |\n| TemplatePath   | 质量监控配置路径 | 需从(ListDataQualityTasksForWorkflow)接口获取 | INPUT               | 是       |\n| SourceUniqueId | 质量监控ID       | 需从(ListDataQualityTasksForWorkflow)接口获取 | DATA_QUALITY_SELECT | 是       |\n| ExecutionType  | 执行类型         | 必填:SQL                                      | INPUT               | 是       |\n| AfterAspect    | 质量任务后置切面 | 需从(ListDataQualityTasksForWorkflow)接口获取 | INPUT               | 否       |\n| BeforeAspect   | 质量任务前置切面 | 需从(ListDataQualityTasksForWorkflow)接口获取 | INPUT               | 否       |\n\n\n### 7.IF_ELSE 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称 | 描述            | UI类型 | 是否必需 |\n| ---------- | -------- | --------------- | ------ | -------- |\n| Conditions | 条件列表 | IF-ELSE条件配置 | INPUT  | 是       |\n\n### 8.FOR_EACH 任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称     | 描述                               | UI类型 | 是否必需 |\n| -------------- | ------------ | ---------------------------------- | ------ | -------- |\n| MaxConcurrency | 最大并发数   | 最大并发数，默认为1                | INPUT  | 是       |\n| MaxIterations  | 最大迭代次数 | 最大迭代次数，默认1000             | INPUT  | 是       |\n| LoopDataArray  | 循环参数     | JSON格式的数组，或 {{}} 包裹的变量 | INPUT  | 是       |",
+      "document": "### `TaskTypePropertyList` 中 `TaskTypeProperty` 针对不同任务类型需要填写不同的 key 和 value；\n\n### 1. NOTEBOOK 任务类型\n\n#### 属性配置\n\n| 属性键       | 属性名称          | 描述                               | UI类型                | 是否必需                |\n| ------------ | ----------------- | ---------------------------------- | --------------------- | ----------------------- |\n| Source       | 来源              | 可填2或5,来源 2:GIT, 5:工作空间    | TASK_SOURCE_SELECT    | 是                      |\n| NotebookPath | Notebook 相对路径 | Source为5时，需从（ListFiles）获取 | WORKSPACE_FILE_SELECT | Source 为 2、5 时，必填 |\n\n### 2. DATA_INTEGRATION 任务类型\n\n#### 属性配置\n\n| 属性键                | 属性名称             | 描述                                 | UI类型                  | 是否必需 |\n| --------------------- | -------------------- | ------------------------------------ | ----------------------- | -------- |\n| Source                | 来源                 | 必填:4,表示来源为COS                 | INPUT                   | 是       |\n| TemplatePath          | 数据接入任务配置路径 | 需从（ListIntegrationTasks）接口获取 | INPUT                   | 是       |\n| DataIntegrationTaskId | 数据接入任务ID       | 需从（ListIntegrationTasks）接口获取 | DATA_INTEGRATION_SELECT | 是       |\n\n### 3. RUN_WORKFLOW 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称   | 描述                          | UI类型          | 是否必需 |\n| ---------- | ---------- | ----------------------------- | --------------- | -------- |\n| WorkflowId | 选择工作流 | 需从（ListWorkflows）接口获取 | WORKFLOW_SELECT | 是       |\n\n### 4. SQL 任务类型\n\n#### 属性配置\n\n| 属性键          | 属性名称    | 描述                                              | UI类型             | 是否必需             |\n| --------------- | ----------- | ------------------------------------------------- | ------------------ | -------------------- |\n| Source          | 来源        | 可填2或5,来源 2:GIT, 5:工作空间                   | TASK_SOURCE_SELECT | 是                   |\n| SqlPath         | SQL脚本路径 | SQL脚本路径                                       | SQL_FILE_SELECT    | Source 为 2 时，必填 |\n| CodeFileName    | 文件名称    | Source为5时，需从（ListReleasedCodeFile）接口获取 | INPUT              | 否                   |\n| CodeFileId      | 文件ID      | Source为5时，需从（ListReleasedCodeFile）接口获取 | INPUT              | Source 为 5 时，必填 |\n| CodeFileVersion | 文件版本    | Source为5时，需从（ListReleasedCodeFile）接口获取 | INPUT              | 否                   |\n\n### 5. Python File 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称       | 描述                                   | UI类型                | 是否必需 |\n| ---------- | -------------- | -------------------------------------- | --------------------- | -------- |\n| Source     | 来源           | 可填2或5,来源 2:GIT, 5:工作空间        | TASK_SOURCE_SELECT    | 是       |\n| SourcePath | Python脚本路径 | Source为5时，需从（ListFiles）接口获取 | WORKSPACE_FILE_SELECT | 是       |\n\n### 6.质量监控 任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称         | 描述                                          | UI类型              | 是否必需 |\n| -------------- | ---------------- | --------------------------------------------- | ------------------- | -------- |\n| Source         | 来源             | 必填:4,表示来源为COS                          | INPUT               | 是       |\n| TemplatePath   | 质量监控配置路径 | 需从(ListDataQualityTasksForWorkflow)接口获取 | INPUT               | 是       |\n| SourceUniqueId | 质量监控ID       | 需从(ListDataQualityTasksForWorkflow)接口获取 | DATA_QUALITY_SELECT | 是       |\n| ExecutionType  | 执行类型         | 必填:SQL                                      | INPUT               | 是       |\n| AfterAspect    | 质量任务后置切面 | 需从(ListDataQualityTasksForWorkflow)接口获取 | INPUT               | 否       |\n| BeforeAspect   | 质量任务前置切面 | 需从(ListDataQualityTasksForWorkflow)接口获取 | INPUT               | 否       |\n\n\n### 7.IF_ELSE 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称 | 描述            | UI类型 | 是否必需 |\n| ---------- | -------- | --------------- | ------ | -------- |\n| Conditions | 条件列表 | IF-ELSE条件配置 | INPUT  | 是       |\n\n### 8.FOR_EACH 任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称     | 描述                               | UI类型 | 是否必需 |\n| -------------- | ------------ | ---------------------------------- | ------ | -------- |\n| MaxConcurrency | 最大并发数   | 最大并发数，默认为1                | INPUT  | 是       |\n| MaxIterations  | 最大迭代次数 | 最大迭代次数，默认1000             | INPUT  | 是       |\n| LoopDataArray  | 循环参数     | JSON格式的数组，或 {{}} 包裹的变量 | INPUT  | 是       |\n\n### 9.Ray作业 任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称     | 描述                               | UI类型 | 是否必需 |\n| -------------- | ------------ | ---------------------------------- | ------ | -------- |\n| Entrypoint | 入口指令   | 入口指令 | INPUT  | 是       |\n| JobPackage  | 任务来源文件COS地址     | 任务来源文件上传COS后地址 | UPLOAD_ZIP  | 是       |\n| JobPackageName  | 任务来源本地文件名     | 任务来源本地文件名 | HIDDEN  | 是       |\n| JobConfig  | 任务配置 | 如存储配置 + 计算环境。传值请参考前端页面保存Ray作业任务时调用UpdateWorkflow。Image请调用DLC接口ListImages接口Url字段获取 | INPUT  | 是       |",
       "members": [
         {
           "disabled": false,

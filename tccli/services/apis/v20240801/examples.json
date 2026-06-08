@@ -88,6 +88,14 @@
         "title": "创建app的secretKey"
       }
     ],
+    "CreateAgentAppServices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentAppServices\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-222fd0da\",\n    \"ID\": \"aga-cc2448c0\",\n    \"Services\": [\n        {\n            \"ID\": \"svr-17244a65\",\n            \"InvokeLimitConfigStatus\": false,\n            \"InvokeLimitConfig\": {\n                \"Type\": \"tokenBucket\",\n                \"TokenBucketMaxNum\": 100,\n                \"TokenBucketRate\": 6,\n                \"FunnelMaxNum\": 122,\n                \"FunnelRate\": 122,\n                \"SlidingWindowMaxNum\": 1212,\n                \"SlidingWindowSize\": 12,\n                \"TimeWindow\": 12,\n                \"TimeWindowInterval\": 12,\n                \"Timeout\": 212\n            },\n            \"NeedAuth\": true,\n            \"AgentCredentialID\": \"agc-aca72fd4\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"aga-cc2448c0\"\n        },\n        \"RequestId\": \"fb28b7e3-0b0a-4303-9ac9-29dbbaef7b7f\"\n    }\n}",
+        "title": "关联应用与服务"
+      }
+    ],
     "CreateAgentCredential": [
       {
         "document": "创建Credential",
@@ -192,6 +200,14 @@
         "title": "删除app的secretKey"
       }
     ],
+    "DeleteAgentAppServices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAgentAppServices\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-222fd0da\",\n    \"ID\": \"aga-a502f357\",\n    \"ServiceIDs\": [\n        \"svr-17244a65\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"aga-a502f357\"\n        },\n        \"RequestId\": \"e109a9fb-00c2-487c-8178-98d9c58b7628\"\n    }\n}",
+        "title": "应用服务解绑"
+      }
+    ],
     "DeleteAgentCredential": [
       {
         "document": "删除Credential",
@@ -286,6 +302,14 @@
         "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentAppModelServices\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"InstanceID\": \"ins-a7af1980\",\n    \"AgentAppIDs\": [\n        \"aga-41d42939\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"InvokeLimitConfig\": {\n                        \"FunnelMaxNum\": 0,\n                        \"FunnelRate\": 0,\n                        \"SlidingWindowMaxNum\": 0,\n                        \"SlidingWindowSize\": 0,\n                        \"TimeWindow\": 0,\n                        \"TimeWindowInterval\": 0,\n                        \"TokenBucketMaxNum\": 0,\n                        \"TokenBucketRate\": 0,\n                        \"Type\": \"\"\n                    },\n                    \"InvokeLimitConfigStatus\": false,\n                    \"ModelServiceVO\": {\n                        \"AppID\": 1300273807,\n                        \"CreateTime\": \"2026-02-03T11:22:25.627Z\",\n                        \"Description\": \"deepseek\",\n                        \"ID\": \"mds-ea8d96c6\",\n                        \"InstanceID\": \"ins-a7af1980\",\n                        \"InvokeLimitConfig\": {\n                            \"FunnelMaxNum\": 0,\n                            \"FunnelRate\": 0,\n                            \"SlidingWindowMaxNum\": 0,\n                            \"SlidingWindowSize\": 0,\n                            \"TimeWindow\": 0,\n                            \"TimeWindowInterval\": 0,\n                            \"TokenBucketMaxNum\": 0,\n                            \"TokenBucketRate\": 0,\n                            \"Type\": \"\"\n                        },\n                        \"InvokeLimitConfigStatus\": false,\n                        \"IpBlackList\": [],\n                        \"IpBlackStatus\": false,\n                        \"IpWhiteList\": [],\n                        \"IpWhiteStatus\": false,\n                        \"LastUpdateTime\": \"2026-02-04T06:37:38.601Z\",\n                        \"ModelNames\": [\n                            \"deepseek-r1\"\n                        ],\n                        \"Name\": \"deepseek\",\n                        \"PathMatchType\": \"prefix\",\n                        \"PluginConfigs\": [],\n                        \"PubPath\": \"/v1\",\n                        \"RelateAgentAppNum\": 0,\n                        \"Status\": \"disabled\",\n                        \"Timeout\": 10,\n                        \"TmsConfig\": {\n                            \"Action\": \"\",\n                            \"BizType\": \"\",\n                            \"InterceptMessage\": \"\",\n                            \"MergeCount\": 0,\n                            \"Mode\": \"\",\n                            \"Scope\": null\n                        },\n                        \"TmsStatus\": false,\n                        \"TokenLimitConfig\": {\n                            \"LimitRequestBody\": 0,\n                            \"LimitWindows\": []\n                        },\n                        \"TokenLimitStatus\": false,\n                        \"Uin\": \"700001136234\"\n                    },\n                    \"RelateTime\": \"2026-02-04T07:17:10.116Z\",\n                    \"TokenLimitConfig\": {\n                        \"LimitRequestBody\": 0,\n                        \"LimitWindows\": []\n                    },\n                    \"TokenLimitStatus\": false\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"44bd5c9a-9da8-401e-a462-d0e6b44c5271\"\n    }\n}",
         "title": "查询应用关联的模型服务"
+      }
+    ],
+    "DescribeAgentAppServices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentAppServices\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-222fd0da\",\n    \"Limit\": 10,\n    \"IDs\": [\n        \"aga-cc2448c0-svr-17244a65\"\n    ],\n    \"AgentAppIDs\": [\n        \"aga-cc2448c0\"\n    ],\n    \"ServiceIDs\": [\n        \"svr-17244a65\"\n    ],\n    \"Keyword\": \"43343\",\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [],\n            \"Total\": 0\n        },\n        \"RequestId\": \"793c8738-5922-4ef2-92ca-dc93bd0b6cf3\"\n    }\n}",
+        "title": "应用服务关联列表查询"
       }
     ],
     "DescribeAgentApps": [
@@ -390,6 +414,14 @@
         "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModels\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-a7af1980\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"IDs\": [\n        \"010101\"\n    ],\n    \"NotIDs\": [\n        \"0202020\"\n    ],\n    \"CredentialID\": \"0303030\",\n    \"Keyword\": \"hehe\",\n    \"Sort\": {\n        \"CreateTime\": 1,\n        \"LastUpdateTime\": 1,\n        \"Name\": -1\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [],\n            \"Total\": 0\n        },\n        \"RequestId\": \"dc855e1e-41fd-4a12-9c19-4fdab33e96e3\"\n    }\n}",
         "title": "查询模型列表"
+      }
+    ],
+    "DescribeService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLabel\n<公共请求参数>\n\n{\n    \"InstanceID\": \"\",\n    \"ID\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "title": "查询服务详情"
       }
     ],
     "DescribeServices": [
@@ -518,6 +550,14 @@
         "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelService\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-********\",\n    \"ID\": \"mds-********\",\n    \"Name\": \"deepseek\",\n    \"Description\": \"deepseek\",\n    \"TargetModels\": [\n        {\n            \"ID\": \"mod-78bd8b5e\",\n            \"Name\": \"deepseek\",\n            \"Rank\": 10\n        }\n    ],\n    \"InvokeLimitConfigStatus\": false,\n    \"InvokeLimitConfig\": {\n        \"Type\": \"tokenBucket\",\n        \"TokenBucketMaxNum\": 20000,\n        \"TokenBucketRate\": 1,\n        \"FunnelMaxNum\": 20000,\n        \"FunnelRate\": 1,\n        \"SlidingWindowMaxNum\": 20000,\n        \"SlidingWindowSize\": 1,\n        \"TimeWindow\": 20000,\n        \"TimeWindowInterval\": 1\n    },\n    \"TokenLimitStatus\": false,\n    \"TokenLimitConfig\": {\n        \"LimitRequestBody\": 10,\n        \"LimitWindows\": [\n            {\n                \"Interval\": 60,\n                \"Limit\": 100\n            }\n        ]\n    },\n    \"TmsStatus\": false,\n    \"TmsConfig\": {\n        \"Scope\": [],\n        \"Mode\": \"\",\n        \"Action\": \"\",\n        \"MergeCount\": 0,\n        \"BizType\": \"\",\n        \"InterceptMessage\": \"\"\n    },\n    \"IpWhiteStatus\": false,\n    \"IpWhiteList\": [],\n    \"IpBlackStatus\": false,\n    \"IpBlackList\": [],\n    \"PluginConfigs\": [],\n    \"Timeout\": 60,\n    \"PromptModerateStatus\": false,\n    \"PromptModerateConfig\": {\n        \"Action\": \"watch\",\n        \"InterceptMessage\": \"\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mds-********\"\n        },\n        \"RequestId\": \"ebd06dc9-30ae-4f30-84eb-a1ed61d7a098\"\n    }\n}",
         "title": "ModifyModelService"
+      }
+    ],
+    "ModifyService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyService\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-a7af1980\",\n    \"Name\": \"copyofcopyofcopyofbbb\",\n    \"PaasID\": \"app-be27914b\",\n    \"Description\": \"test desc\",\n    \"LabelIDs\": [],\n    \"CategoryIDs\": [],\n    \"AuthType\": \"none\",\n    \"SignType\": \"sha256\",\n    \"LoginTypes\": [],\n    \"TargetSelect\": \"random\",\n    \"PubPath\": \"/bbb\",\n    \"RequestMethod\": \"any\",\n    \"HttpProtocolType\": \"http\",\n    \"CheckTargetCertsError\": false,\n    \"HttpProtocolVersion\": \"1.1\",\n    \"Versions\": [],\n    \"TargetPath\": \"/\",\n    \"RequestParamsValidatorStatus\": false,\n    \"RequestParamsValidatorJsonInfoT\": \"{\\\"Body\\\":{\\\"Type\\\":\\\"object\\\"},\\\"Query\\\":{\\\"Type\\\":\\\"object\\\"},\\\"Header\\\":{\\\"Type\\\":\\\"object\\\"}}\",\n    \"ResponseParamsValidatorStatus\": false,\n    \"ResponseParamsValidatorJsonInfoT\": \"{\\\"Body\\\":{\\\"Type\\\":\\\"object\\\"},\\\"Query\\\":{\\\"Type\\\":\\\"object\\\"},\\\"Header\\\":{\\\"Type\\\":\\\"object\\\"}}\",\n    \"InvokeLimitConfigStatus\": false,\n    \"InvokeLimitConfig\": {\n        \"Type\": \"tokenBucket\",\n        \"TokenBucketMaxNum\": 20000,\n        \"TokenBucketRate\": 1,\n        \"FunnelMaxNum\": 20000,\n        \"FunnelRate\": 1,\n        \"SlidingWindowMaxNum\": 20000,\n        \"SlidingWindowSize\": 1,\n        \"TimeWindow\": 20000,\n        \"TimeWindowInterval\": 1\n    },\n    \"HealthCheckStatus\": false,\n    \"HealthCheckConfig\": {\n        \"HealthCheckPath\": \"\",\n        \"ValidHealthCheckStatusCode\": [\n            200\n        ],\n        \"HealthCheckTimeout\": 0\n    },\n    \"SourceTypeStatus\": false,\n    \"SourceTypeConfig\": {\n        \"ReqSourceType\": \"\",\n        \"ReqTargetType\": \"\",\n        \"ResSourceType\": \"\",\n        \"ResTargetType\": \"\"\n    },\n    \"IpWhiteStatus\": false,\n    \"IpWhiteList\": [],\n    \"IpBlackStatus\": false,\n    \"IpBlackList\": [],\n    \"PluginConfigs\": [],\n    \"ID\": \"svr-b9027f2d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9ed80fd-bdc8-428b-977a-32c7f0a0ca0c\"\n    }\n}",
+        "title": "修改服务"
       }
     ]
   },

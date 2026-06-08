@@ -6,18 +6,19 @@ Input:
 
 ```
 tccli cynosdb SwitchClusterZone --cli-unfold-argument  \
-    --ClusterId cynosdbmysql-asd \
-    --OldZone ap-guangzhou-2 \
-    --NewZone ap-guangzhou-3 \
-    --IsInMaintainPeriod yes
+    --ClusterId cynosdbmysql-8f0sh2nj \
+    --OldZone ap-guangzhou-3 \
+    --NewZone ap-guangzhou-5 \
+    --IsInMaintainPeriod no
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FlowId": 123,
-        "RequestId": "128046"
+        "FlowId": 88529647,
+        "TaskId": 183430,
+        "RequestId": "61e043aa-4b66-4021-a3cb-7b31df93def7"
     }
 }
 ```

@@ -728,6 +728,15 @@
           "name": "RetryLimit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启卡证识别单角度多图鉴伪能力</p><p>默认值：false</p><p>true-开启；false-关闭；</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableForgeryDetectionImages",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9310,8 +9319,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份验证或 OCR 过程是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>身份验证或 OCR 过程是否成功。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "IsPass",
           "output_required": false,
@@ -9320,8 +9329,8 @@
         },
         {
           "disabled": false,
-          "document": "身份证件图像的Base64\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>身份证件图像的Base64</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQS*******",
           "member": "string",
           "name": "CardImageBase64",
           "output_required": false,
@@ -9330,7 +9339,7 @@
         },
         {
           "disabled": true,
-          "document": "身份证件识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份证件识别结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CardInfo",
           "name": "CardInfo",
@@ -9340,7 +9349,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证件识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份证件识别结果（当 CheckMode 取值为 4 时，返回 OriginalCardInfo 字段；其余场景均返回当前字段）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NormalCardInfo",
           "name": "NormalCardInfo",
@@ -9350,8 +9359,8 @@
         },
         {
           "disabled": false,
-          "document": "请求id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>请求id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "946d***5e333d",
           "member": "string",
           "name": "RequestId",
           "output_required": false,
@@ -9360,7 +9369,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证件切边裁剪图像的Base64\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份证件切边裁剪图像的Base64</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CardCutImageBase64",
@@ -9370,7 +9379,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证件反面切边裁剪图像的Base64\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份证件反面切边裁剪图像的Base64</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CardBackCutImageBase64",
@@ -9380,8 +9389,8 @@
         },
         {
           "disabled": false,
-          "document": "告警码如下：\n-9101：证件边框不完整告警 \n-9102：证件复印件告警 \n-9103：证件翻拍告警 \n-9107：证件反光告警 \n-9108：证件模糊告警 \n-9109：告警能力未开通\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>告警码</p><p>枚举值：</p><ul><li>-9101： 证件边框不完整告警</li><li>-9102： 证件复印件告警</li><li>-9103： 证件翻拍告警</li><li>-9104： 证件PS告警</li><li>-9107： 证件反光告警</li><li>-9108： 证件模糊告警</li><li>-9109： 告警能力未开通</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[ -9101]",
           "member": "int64",
           "name": "WarnCardInfos",
           "output_required": false,
@@ -9390,8 +9399,8 @@
         },
         {
           "disabled": false,
-          "document": "原始证件识别信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>原始证件识别信息（当 CheckMode 取值为 4 时，会返回当前字段）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\\\"CnName\\\":\\\"李**\\\",\\\"EnName\\\":\\\"LEE**\\\",\\\"WarnCardInfos\\\":[-9101,-9104],\\\"RequestId\\\":\\\"946d***5e333d\\\"}",
           "member": "string",
           "name": "OriginalCardInfo",
           "output_required": false,

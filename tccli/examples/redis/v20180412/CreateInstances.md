@@ -1,35 +1,44 @@
-**Example 1: 示例1**
+**Example 1: 创建实例请求**
 
-创建7.0集群版实例
+
 
 Input: 
 
 ```
 tccli redis CreateInstances --cli-unfold-argument  \
     --TypeId 18 \
-    --MemSize 2048 \
+    --MemSize 1024 \
     --GoodsNum 1 \
     --Period 1 \
-    --BillingMode 1 \
+    --BillingMode 0 \
     --ZoneId 100002 \
-    --Password Test123456 \
-    --VpcId vpc-9uaohp0t \
-    --SubnetId subnet-f7jqw3is \
-    --SecurityGroupIdList sg-1kod56y5 \
-    --RedisShardNum 1 \
+    --Password ******MyP*ssword \
+    --VpcId vpc-pxyz**** \
+    --SubnetId subnet-26qr**** \
+    --RedisShardNum 3 \
     --RedisReplicasNum 1 \
-    --InstanceName 123333
+    --NodeSet.0.NodeId 675 \
+    --NodeSet.0.NodeType 0 \
+    --NodeSet.0.ZoneId 100002 \
+    --NodeSet.0.ZoneName ap-guangzhou-2 \
+    --NodeSet.1.NodeId 676 \
+    --NodeSet.1.NodeType 1 \
+    --NodeSet.1.ZoneId 100003 \
+    --NodeSet.1.ZoneName ap-guangzhou-3 \
+    --ResourceTags.0.TagKey None \
+    --ResourceTags.0.TagValue None \
+    --DryRun False
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DealName": "20260407296022526727811",
+        "DealId": "20250825297021530591847",
+        "RequestId": "e546784b-709c-401d-aba6-73037eb4e522",
         "InstanceIds": [
-            "crs-lqz7y86j"
-        ],
-        "RequestId": "cb2278fb-abaf-4311-b23b-194363422ef3"
+            "crs-bzss****"
+        ]
     }
 }
 ```

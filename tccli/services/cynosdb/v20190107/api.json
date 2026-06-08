@@ -1822,6 +1822,23 @@
       ],
       "usage": "out"
     },
+    "AIOptimizerTaskData": {
+      "document": "AI 优化器任务数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板ID</p>",
+          "example": "tpch1g:45afb52668a29314bbc68ec8803ef917416c271ce57521402d8da6af761d8497",
+          "member": "string",
+          "name": "TemplateID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Ability": {
       "document": "集群支持的功能",
       "members": [
@@ -4496,7 +4513,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "0",
           "member": "int64",
           "name": "ID",
@@ -4506,7 +4523,7 @@
         },
         {
           "disabled": false,
-          "document": "用户appid",
+          "document": "<p>用户appid</p>",
           "example": "1334748",
           "member": "int64",
           "name": "AppId",
@@ -4516,7 +4533,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "cynosdbmysql-j9i41hfv",
           "member": "string",
           "name": "ClusterId",
@@ -4526,7 +4543,7 @@
         },
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -4536,7 +4553,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间",
+          "document": "<p>任务创建时间</p>",
           "example": "2004-05-03T17:30:08+08:00",
           "member": "string",
           "name": "CreateTime",
@@ -4546,7 +4563,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟执行时间",
+          "document": "<p>延迟执行时间</p>",
           "example": "2004-05-03T17:30:08+08:00",
           "member": "string",
           "name": "DelayTime",
@@ -4556,7 +4573,7 @@
         },
         {
           "disabled": false,
-          "document": "任务失败信息",
+          "document": "<p>任务失败信息</p>",
           "example": "error",
           "member": "string",
           "name": "ErrMsg",
@@ -4566,7 +4583,7 @@
         },
         {
           "disabled": false,
-          "document": "异步任务流id",
+          "document": "<p>异步任务流id</p>",
           "example": "1",
           "member": "int64",
           "name": "FlowId",
@@ -4576,7 +4593,7 @@
         },
         {
           "disabled": false,
-          "document": "任务输入信息",
+          "document": "<p>任务输入信息</p>",
           "example": "{\"uin\":\"7043509\"}",
           "member": "string",
           "name": "Input",
@@ -4586,7 +4603,7 @@
         },
         {
           "disabled": true,
-          "document": "实例组id",
+          "document": "<p>实例组id</p>",
           "example": "cynosdbmysql-grp-xx",
           "member": "string",
           "name": "InstanceGrpId",
@@ -4596,7 +4613,7 @@
         },
         {
           "disabled": false,
-          "document": "实例组id",
+          "document": "<p>实例组id</p>",
           "example": "cynosdbmysql-grp-xx",
           "member": "string",
           "name": "InstanceGroupId",
@@ -4606,7 +4623,7 @@
         },
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "cynosmysql-ins-xx",
           "member": "string",
           "name": "InstanceId",
@@ -4616,7 +4633,7 @@
         },
         {
           "disabled": false,
-          "document": "任务操作对象id",
+          "document": "<p>任务操作对象id</p>",
           "example": "cynosmysql-ins-xx",
           "member": "string",
           "name": "ObjectId",
@@ -4626,7 +4643,7 @@
         },
         {
           "disabled": false,
-          "document": "任务操作对象类型",
+          "document": "<p>任务操作对象类型</p>",
           "example": "cluster",
           "member": "string",
           "name": "ObjectType",
@@ -4636,7 +4653,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者uin",
+          "document": "<p>操作者uin</p>",
           "example": "1",
           "member": "string",
           "name": "Operator",
@@ -4646,7 +4663,7 @@
         },
         {
           "disabled": false,
-          "document": "任务输出信息",
+          "document": "<p>任务输出信息</p>",
           "example": "1",
           "member": "string",
           "name": "Output",
@@ -4656,7 +4673,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态",
+          "document": "<p>任务状态</p>",
           "example": "success",
           "member": "string",
           "name": "Status",
@@ -4666,7 +4683,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型",
+          "document": "<p>任务类型</p>",
           "example": "taskCreateCluster",
           "member": "string",
           "name": "TaskType",
@@ -4676,7 +4693,7 @@
         },
         {
           "disabled": false,
-          "document": "触发本任务的父任务ID",
+          "document": "<p>触发本任务的父任务ID</p>",
           "example": "0",
           "member": "int64",
           "name": "TriggerTaskId",
@@ -4686,7 +4703,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2004-05-03T17:30:08+08:00",
           "member": "string",
           "name": "UpdateTime",
@@ -4696,7 +4713,7 @@
         },
         {
           "disabled": false,
-          "document": "任务开始时间",
+          "document": "<p>任务开始时间</p>",
           "example": "2004-05-03T17:30:08+08:00",
           "member": "string",
           "name": "StartTime",
@@ -4706,7 +4723,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结束时间",
+          "document": "<p>任务结束时间</p>",
           "example": "2004-05-03T17:30:08+08:00",
           "member": "string",
           "name": "EndTime",
@@ -4716,7 +4733,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "cynosdbmysql-j9i41hfv",
           "member": "string",
           "name": "ClusterName",
@@ -4726,7 +4743,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "cynosdbmysql-ins-4vdtei33",
           "member": "string",
           "name": "InstanceName",
@@ -4736,7 +4753,7 @@
         },
         {
           "disabled": false,
-          "document": "任务进度",
+          "document": "<p>任务进度</p>",
           "example": "100",
           "member": "int64",
           "name": "Process",
@@ -4746,7 +4763,7 @@
         },
         {
           "disabled": true,
-          "document": "修改参数任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>修改参数任务信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ModifyParamsData",
           "name": "ModifyParamsData",
@@ -4756,7 +4773,7 @@
         },
         {
           "disabled": false,
-          "document": "创建集群任务信息",
+          "document": "<p>创建集群任务信息</p>",
           "example": "无",
           "member": "CreateClustersData",
           "name": "CreateClustersData",
@@ -4766,7 +4783,7 @@
         },
         {
           "disabled": false,
-          "document": "集群回档任务信息",
+          "document": "<p>集群回档任务信息</p>",
           "example": "无",
           "member": "RollbackData",
           "name": "RollbackData",
@@ -4776,7 +4793,7 @@
         },
         {
           "disabled": false,
-          "document": "实例变配任务信息",
+          "document": "<p>实例变配任务信息</p>",
           "example": "无",
           "member": "ModifyInstanceData",
           "name": "ModifyInstanceData",
@@ -4786,7 +4803,7 @@
         },
         {
           "disabled": false,
-          "document": "手动备份任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>手动备份任务信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ManualBackupData",
           "name": "ManualBackupData",
@@ -4796,7 +4813,7 @@
         },
         {
           "disabled": false,
-          "document": "修改内核版本任务信息",
+          "document": "<p>修改内核版本任务信息</p>",
           "example": "无",
           "member": "ModifyDbVersionData",
           "name": "ModifyDbVersionData",
@@ -4806,7 +4823,7 @@
         },
         {
           "disabled": false,
-          "document": "集群可用区信息",
+          "document": "<p>集群可用区信息</p>",
           "example": "无",
           "member": "ClusterSlaveData",
           "name": "ClusterSlaveData",
@@ -4816,7 +4833,7 @@
         },
         {
           "disabled": false,
-          "document": "转换集群日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>转换集群日志</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SwitchClusterLogBin",
           "name": "SwitchClusterLogBin",
@@ -4826,7 +4843,7 @@
         },
         {
           "disabled": false,
-          "document": "修改实例参数数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>修改实例参数数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BizTaskModifyParamsData",
           "name": "ModifyInstanceParamsData",
@@ -4836,7 +4853,7 @@
         },
         {
           "disabled": false,
-          "document": "维护时间",
+          "document": "<p>维护时间</p>",
           "example": "无",
           "member": "TaskMaintainInfo",
           "name": "TaskMaintainInfo",
@@ -4846,7 +4863,7 @@
         },
         {
           "disabled": false,
-          "document": "实例日志投递信息\n",
+          "document": "<p>实例日志投递信息</p>",
           "example": "无",
           "member": "InstanceCLSDeliveryInfo",
           "name": "InstanceCLSDeliveryInfos",
@@ -4856,7 +4873,7 @@
         },
         {
           "disabled": false,
-          "document": "任务进度信息",
+          "document": "<p>任务进度信息</p>",
           "example": "无",
           "member": "TaskProgressInfo",
           "name": "TaskProgressInfo",
@@ -4866,7 +4883,7 @@
         },
         {
           "disabled": false,
-          "document": "全球数据库网络任务",
+          "document": "<p>全球数据库网络任务</p>",
           "example": "无",
           "member": "GdnTaskInfo",
           "name": "GdnTaskInfo",
@@ -4876,7 +4893,7 @@
         },
         {
           "disabled": false,
-          "document": "保险箱id",
+          "document": "<p>保险箱id</p>",
           "example": "vault-08535e43-40d0-4982-bbe8-9d15722f234f",
           "member": "string",
           "name": "VaultId",
@@ -4886,12 +4903,22 @@
         },
         {
           "disabled": false,
-          "document": "保险箱名称",
+          "document": "<p>保险箱名称</p>",
           "example": "vaults_1769683193_5oDpM",
           "member": "string",
           "name": "VaultName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI优化器任务信息</p>",
+          "example": "无",
+          "member": "AIOptimizerTaskData",
+          "name": "AIOptimizerTaskData",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -8073,7 +8100,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群 ID。",
+          "document": "<p>集群 ID。</p>",
           "example": "cynosdbmysql-xxxxxxx",
           "member": "string",
           "name": "ClusterId",
@@ -8082,7 +8109,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID，默认与集群私有网络 ID 保持一致。",
+          "document": "<p>私有网络 ID。</p>",
           "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqueVpcId",
@@ -8091,7 +8118,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络子网 ID，默认与集群子网 ID 保持一致。",
+          "document": "<p>私有网络子网 ID。</p>",
           "example": "subnet-b5v6id11",
           "member": "string",
           "name": "UniqueSubnetId",
@@ -8100,7 +8127,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池类型：SessionConnectionPool（会话级别连接池）。",
+          "document": "<p>连接池类型：SessionConnectionPool（会话级别连接池）。</p>",
           "example": "SessionConnectionPool",
           "member": "string",
           "name": "ConnectionPoolType",
@@ -8109,7 +8136,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启连接池。\nyes：表示开启。\nno：表示不开启。",
+          "document": "<p>是否开启连接池。<br>yes：表示开启。<br>no：表示不开启。</p>",
           "example": "yes",
           "member": "string",
           "name": "OpenConnectionPool",
@@ -8118,7 +8145,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池阈值：单位（秒），可选范围：0 - 300秒。",
+          "document": "<p>连接池阈值：单位（秒），可选范围：0 - 300秒。</p>",
           "example": "0",
           "member": "int64",
           "name": "ConnectionPoolTimeOut",
@@ -8127,7 +8154,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的安全组 ID 数组。",
+          "document": "<p>绑定的安全组 ID 数组。</p>",
           "example": "[\"sg-asdqwe\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -8136,7 +8163,7 @@
         },
         {
           "disabled": false,
-          "document": "描述说明。",
+          "document": "<p>描述说明。</p>",
           "example": "代理1",
           "member": "string",
           "name": "Description",
@@ -8145,7 +8172,7 @@
         },
         {
           "disabled": false,
-          "document": "想要绑定的 vip 信息，需与 UniqueVpcId 对应。",
+          "document": "<p>想要绑定的 vip 信息，需与 UniqueVpcId 对应。</p>",
           "example": "192.168.0.0",
           "member": "string",
           "name": "Vip",
@@ -8154,7 +8181,7 @@
         },
         {
           "disabled": false,
-          "document": "权重模式：\nsystem：系统分配。\ncustom：自定义。",
+          "document": "<p>权重模式：<br>system：系统分配。<br>custom：自定义。</p>",
           "example": "system",
           "member": "string",
           "name": "WeightMode",
@@ -8163,7 +8190,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动添加只读实例。\nyes：表示自动添加只读实例。\nno：表示不自动添加只读实例。",
+          "document": "<p>是否自动添加只读实例。<br>yes：表示自动添加只读实例。<br>no：表示不自动添加只读实例。</p>",
           "example": "yes",
           "member": "string",
           "name": "AutoAddRo",
@@ -8172,7 +8199,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启故障转移。\nyes：表示开启，开启后，当数据库代理出现故障时，连接地址将会路由到主实例。\nno：表示不开启。\n说明：\n仅当 RwType 参数值为 READWRITE 时，才支持设置此项。",
+          "document": "<p>是否开启故障转移。<br>yes：表示开启，开启后，当数据库代理出现故障时，连接地址将会路由到主实例。<br>no：表示不开启。<br>说明：<br>仅当 RwType 参数值为 READWRITE 时，才支持设置此项。</p>",
           "example": "yes",
           "member": "string",
           "name": "FailOver",
@@ -8181,7 +8208,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性类型：\neventual：最终一致性。\nglobal：全局一致性。\nsession：会话一致性。\n说明：\n仅当 RwType 参数值为 READWRITE 时，才支持设置此项。",
+          "document": "<p>一致性类型：<br>eventual：最终一致性。<br>global：全局一致性。<br>session：会话一致性。<br>说明：<br>仅当 RwType 参数值为 READWRITE 时，才支持设置此项。</p>",
           "example": "session",
           "member": "string",
           "name": "ConsistencyType",
@@ -8190,7 +8217,7 @@
         },
         {
           "disabled": false,
-          "document": "读写属性：\nREADWRITE：表示读写分离。当此参数值为 READWRITE 时，才支持设置 FailOver、ConsistencyType 参数。\nREADONLY：表示只读。",
+          "document": "<p>读写属性：<br>READWRITE：表示读写分离。当此参数值为 READWRITE 时，才支持设置 FailOver、ConsistencyType 参数。<br>READONLY：表示只读。</p>",
           "example": "READONLY",
           "member": "string",
           "name": "RwType",
@@ -8199,7 +8226,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性超时时间。取值范围：0 ~ 1000000（微秒）。设置为0时，表示若只读实例出现延迟导致一致性策略不满足时，请求将一直等待。",
+          "document": "<p>一致性超时时间。取值范围：0 ~ 1000000（微秒）。设置为0时，表示若只读实例出现延迟导致一致性策略不满足时，请求将一直等待。</p>",
           "example": "1000",
           "member": "int64",
           "name": "ConsistencyTimeOut",
@@ -8208,7 +8235,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启事务拆分。开启后，在一个事务中拆分读和写到不同的实例上去执行。",
+          "document": "<p>是否开启事务拆分。开启后，在一个事务中拆分读和写到不同的实例上去执行。</p>",
           "example": "true",
           "member": "bool",
           "name": "TransSplit",
@@ -8217,7 +8244,7 @@
         },
         {
           "disabled": false,
-          "document": "接入模式：\nnearby：就近访问。\nbalance：均衡分配。",
+          "document": "<p>接入模式：<br>nearby：就近访问。<br>balance：均衡分配。</p>",
           "example": "balance",
           "member": "string",
           "name": "AccessMode",
@@ -8226,7 +8253,7 @@
         },
         {
           "disabled": false,
-          "document": "实例权重。",
+          "document": "<p>实例权重。</p>",
           "example": "无",
           "member": "ProxyInstanceWeight",
           "name": "InstanceWeights",
@@ -8241,7 +8268,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步流程 ID。",
+          "document": "<p>异步流程 ID。</p>",
           "example": "147189",
           "member": "int64",
           "name": "FlowId",
@@ -8251,7 +8278,7 @@
         },
         {
           "disabled": false,
-          "document": "异步任务 ID。",
+          "document": "<p>异步任务 ID。</p>",
           "example": "276387",
           "member": "int64",
           "name": "TaskId",
@@ -8261,7 +8288,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理组 ID。",
+          "document": "<p>数据库代理组 ID。</p>",
           "example": "cynosdbmysql-proxy-lti34611",
           "member": "string",
           "name": "ProxyGroupId",
@@ -27250,7 +27277,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID，例如cynosdbmysql-asd123",
+          "document": "<p>集群ID，例如cynosdbmysql-asd123</p>",
           "example": "cynosdbmysql-j8zw5111",
           "member": "string",
           "name": "ClusterId",
@@ -27259,7 +27286,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理组ID，例如cynosdbmysql-proxy-qwe123",
+          "document": "<p>数据库代理组ID，例如cynosdbmysql-proxy-qwe123</p>",
           "example": "cynosdbmysql-proxy-5mwoh111",
           "member": "string",
           "name": "ProxyGroupId",
@@ -27268,7 +27295,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性类型；“eventual\"-最终一致性, \"session\"-会话一致性, \"global\"-全局一致性",
+          "document": "<p>一致性类型；“eventual&quot;-最终一致性, &quot;session&quot;-会话一致性, &quot;global&quot;-全局一致性</p>",
           "example": "session",
           "member": "string",
           "name": "ConsistencyType",
@@ -27277,7 +27304,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性超时时间。\n取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。",
+          "document": "<p>一致性超时时间。<br>取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>",
           "example": "100",
           "member": "string",
           "name": "ConsistencyTimeOut",
@@ -27286,7 +27313,7 @@
         },
         {
           "disabled": false,
-          "document": "读写权重分配模式；系统自动分配：\"system\"， 自定义：\"custom\"",
+          "document": "<p>读写权重分配模式；系统自动分配：&quot;system&quot;， 自定义：&quot;custom&quot;</p>",
           "example": "custom",
           "member": "string",
           "name": "WeightMode",
@@ -27295,7 +27322,7 @@
         },
         {
           "disabled": false,
-          "document": "实例只读权重。\n",
+          "document": "<p>实例只读权重。</p>",
           "example": "无",
           "member": "ProxyInstanceWeight",
           "name": "InstanceWeights",
@@ -27304,7 +27331,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值：\"yes\" , \"no\"",
+          "document": "<p>是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值：&quot;yes&quot; , &quot;no&quot;</p>",
           "example": "yes",
           "member": "string",
           "name": "FailOver",
@@ -27313,7 +27340,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动添加只读实例，取值：\"yes\" , \"no\"",
+          "document": "<p>是否自动添加只读实例，取值：&quot;yes&quot; , &quot;no&quot;</p>",
           "example": "yes",
           "member": "string",
           "name": "AutoAddRo",
@@ -27322,7 +27349,7 @@
         },
         {
           "disabled": false,
-          "document": "是否打开读写分离。\n该参数已废弃，请通过RwType设置读写属性。",
+          "document": "<p>是否打开读写分离。<br>该参数已废弃，请通过RwType设置读写属性。</p>",
           "example": "no",
           "member": "string",
           "name": "OpenRw",
@@ -27331,7 +27358,7 @@
         },
         {
           "disabled": false,
-          "document": "读写类型：\nREADWRITE,READONLY",
+          "document": "<p>读写类型：<br>READWRITE,READONLY</p>",
           "example": "READONLY",
           "member": "string",
           "name": "RwType",
@@ -27340,7 +27367,7 @@
         },
         {
           "disabled": false,
-          "document": "事务拆分。\n在一个事务中拆分读和写到不同的实例上去执行。",
+          "document": "<p>事务拆分。<br>在一个事务中拆分读和写到不同的实例上去执行。</p>",
           "example": "true",
           "member": "bool",
           "name": "TransSplit",
@@ -27349,7 +27376,7 @@
         },
         {
           "disabled": false,
-          "document": "连接模式：\nnearby,balance",
+          "document": "<p>连接模式：<br>nearby,balance</p>",
           "example": "nearby",
           "member": "string",
           "name": "AccessMode",
@@ -27358,7 +27385,7 @@
         },
         {
           "disabled": false,
-          "document": "是否打开连接池：\nyes,no",
+          "document": "<p>是否打开连接池：<br>yes,no</p>",
           "example": "yes",
           "member": "string",
           "name": "OpenConnectionPool",
@@ -27367,7 +27394,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池类型：\nSessionConnectionPool",
+          "document": "<p>连接池类型：<br>SessionConnectionPool</p>",
           "example": "SessionConnectionPool",
           "member": "string",
           "name": "ConnectionPoolType",
@@ -27376,7 +27403,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池时间。\n可选范围:0~300（秒）",
+          "document": "<p>连接池时间。<br>可选范围:0~300（秒）</p>",
           "example": "100",
           "member": "int64",
           "name": "ConnectionPoolTimeOut",
@@ -27385,7 +27412,7 @@
         },
         {
           "disabled": false,
-          "document": "是否将libra节点当作普通RO节点",
+          "document": "<p>是否将libra节点当作普通RO节点</p>",
           "example": "false",
           "member": "bool",
           "name": "ApNodeAsRoNode",
@@ -27394,7 +27421,7 @@
         },
         {
           "disabled": false,
-          "document": "libra节点故障，是否转发给其他节点",
+          "document": "<p>libra节点故障，是否转发给其他节点</p>",
           "example": "false",
           "member": "bool",
           "name": "ApQueryToOtherNode",
@@ -27409,7 +27436,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步FlowId",
+          "document": "<p>异步FlowId</p>",
           "example": "147286",
           "member": "int64",
           "name": "FlowId",
@@ -27419,7 +27446,7 @@
         },
         {
           "disabled": false,
-          "document": "异步任务ID",
+          "document": "<p>异步任务ID</p>",
           "example": "148762",
           "member": "int64",
           "name": "TaskId",
@@ -30492,7 +30519,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一致性类型 eventual-最终一致性,global-全局一致性,session-会话一致性",
+          "document": "<p>一致性类型 eventual-最终一致性,global-全局一致性,session-会话一致性</p>",
           "example": "eventual",
           "member": "string",
           "name": "ConsistencyType",
@@ -30503,7 +30530,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性超时时间",
+          "document": "<p>一致性超时时间</p>",
           "example": "0",
           "member": "int64",
           "name": "ConsistencyTimeOut",
@@ -30514,7 +30541,7 @@
         },
         {
           "disabled": false,
-          "document": "权重模式 system-系统分配，custom-自定义",
+          "document": "<p>权重模式 system-系统分配，custom-自定义</p>",
           "example": "system",
           "member": "string",
           "name": "WeightMode",
@@ -30525,7 +30552,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启故障转移",
+          "document": "<p>是否开启故障转移</p>",
           "example": "no",
           "member": "string",
           "name": "FailOver",
@@ -30536,7 +30563,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动添加只读实例，yes-是，no-不自动添加",
+          "document": "<p>是否自动添加只读实例，yes-是，no-不自动添加</p>",
           "example": "no",
           "member": "string",
           "name": "AutoAddRo",
@@ -30547,7 +30574,7 @@
         },
         {
           "disabled": false,
-          "document": "实例权重数组",
+          "document": "<p>实例权重数组</p>",
           "example": "无",
           "member": "ProxyInstanceWeight",
           "name": "InstanceWeights",
@@ -30558,7 +30585,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开通读写节点，yse-是，no-否",
+          "document": "<p>是否开通读写节点，yse-是，no-否</p>",
           "example": "yes",
           "member": "string",
           "name": "OpenRw",
@@ -30569,7 +30596,7 @@
         },
         {
           "disabled": false,
-          "document": "读写属性，可选值：READWRITE,READONLY",
+          "document": "<p>读写属性，可选值：READWRITE,READONLY</p>",
           "example": "READONLY",
           "member": "string",
           "name": "RwType",
@@ -30580,7 +30607,7 @@
         },
         {
           "disabled": false,
-          "document": "事务拆分",
+          "document": "<p>事务拆分</p>",
           "example": "false",
           "member": "bool",
           "name": "TransSplit",
@@ -30591,7 +30618,7 @@
         },
         {
           "disabled": false,
-          "document": "连接模式，可选值：balance，nearby",
+          "document": "<p>连接模式，可选值：balance，nearby</p>",
           "example": "balance",
           "member": "string",
           "name": "AccessMode",
@@ -30602,7 +30629,7 @@
         },
         {
           "disabled": false,
-          "document": "是否将libra节点当作普通RO节点",
+          "document": "<p>是否将libra节点当作普通RO节点</p>",
           "example": "false",
           "member": "bool",
           "name": "ApNodeAsRoNode",
@@ -30613,7 +30640,7 @@
         },
         {
           "disabled": false,
-          "document": "libra节点故障，是否转发给其他节点",
+          "document": "<p>libra节点故障，是否转发给其他节点</p>",
           "example": "false",
           "member": "bool",
           "name": "ApQueryToOtherNode",
@@ -35490,7 +35517,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群Id",
+          "document": "<p>集群Id</p>",
           "example": "cynosdbmysql-hr7oi711",
           "member": "string",
           "name": "ClusterId",
@@ -35499,7 +35526,7 @@
         },
         {
           "disabled": false,
-          "document": "当前可用区",
+          "document": "<p>当前可用区</p>",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "OldZone",
@@ -35508,7 +35535,7 @@
         },
         {
           "disabled": false,
-          "document": "要切换到的可用区",
+          "document": "<p>要切换到的可用区</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "NewZone",
@@ -35517,7 +35544,7 @@
         },
         {
           "disabled": false,
-          "document": "维护期间执行-yes,立即执行-no",
+          "document": "<p>维护期间执行-yes,立即执行-no</p>",
           "example": "no",
           "member": "string",
           "name": "IsInMaintainPeriod",
@@ -35532,7 +35559,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步FlowId",
+          "document": "<p>任务id</p>",
+          "example": "183415",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步FlowId</p>",
           "example": "1473274",
           "member": "int64",
           "name": "FlowId",

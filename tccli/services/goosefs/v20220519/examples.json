@@ -350,6 +350,14 @@
         "title": "查询数据流动带宽"
       }
     ],
+    "ReplaceDisasterECNode": [
+      {
+        "document": "用于更换EC集群中的故障节点",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceDisasterECNode\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c73-6s184jpn\",\n    \"OwnerUin\": 3472213910,\n    \"ECRecoverGroupId\": \"x_c73_6s184jpn_ec_rg_002\",\n    \"TargetNodeId\": \"x-c73-6s184jpn-owner-nsd-rg-002-002\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e49bd11-27eb-452f-9a06-e3d059cce676\"\n    }\n}",
+        "title": "更换EC集群里面的故障节点"
+      }
+    ],
     "SharedVersionImage": [
       {
         "document": "示例",

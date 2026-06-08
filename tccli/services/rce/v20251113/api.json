@@ -502,6 +502,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图灵盾原始标签，对外需要rce侧开白名单</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[100,101]",
+          "member": "int64",
+          "name": "RiskTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -588,6 +598,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图灵盾原始标签，对外需要rce侧开白名单</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[100,101]",
+          "member": "int64",
+          "name": "RiskTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

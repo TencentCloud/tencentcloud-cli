@@ -7056,7 +7056,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "空间 ID。",
+          "document": "<p>空间 ID。</p>",
           "example": "z-3ds73bs****",
           "member": "string",
           "name": "ZoneId",
@@ -7065,7 +7065,7 @@
         },
         {
           "disabled": false,
-          "document": "查询返回结果下一页的令牌。首次调用 API 不需要NextToken。  当您首次调用 API 时，如果返回数据总条数超过MaxResults限制，数据会被截断，只返回MaxResults条数据，同时，返回参数IsTruncated为true，返回一个NextToken。您可以使用上一次返回的NextToken继续调用 API，其他请求参数保持不变，查询被截断的数据。您可以按此方法多次查询，直到IsTruncated为false，表示全部数据查询完毕。",
+          "document": "<p>查询返回结果下一页的令牌。首次调用 API 不需要NextToken。  当您首次调用 API 时，如果返回数据总条数超过MaxResults限制，数据会被截断，只返回MaxResults条数据，同时，返回参数IsTruncated为true，返回一个NextToken。您可以使用上一次返回的NextToken继续调用 API，其他请求参数保持不变，查询被截断的数据。您可以按此方法多次查询，直到IsTruncated为false，表示全部数据查询完毕。</p>",
           "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
           "member": "string",
           "name": "NextToken",
@@ -7074,7 +7074,7 @@
         },
         {
           "disabled": false,
-          "document": "每页的最大数据条数。  取值范围：1~100。  默认值：10。",
+          "document": "<p>每页的最大数据条数。  取值范围：1~100。  默认值：10。</p>",
           "example": "20",
           "member": "int64",
           "name": "MaxResults",
@@ -7083,7 +7083,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。  格式：<Attribute> <Operator> <Value>，不区分大小写。目前，<Attribute>只支持GroupName，<Operator>只支持eq（Equals）和sw（Start With）。  示例：Filter = \"GroupName sw test\"，表示查询名称以 test 开头的全部用户组。Filter = \"GroupName eq testgroup\"，表示查询名称为 testgroup 的用户组。",
+          "document": "<p>过滤条件，用户组名称</p>",
           "example": "GroupName eq testGroup",
           "member": "string",
           "name": "Filter",
@@ -7092,7 +7092,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组的类型  Manual：手动创建，Synchronized：外部导入。",
+          "document": "<p>用户组的类型  Manual：手动创建，Synchronized：外部导入。</p>",
           "example": "Manual",
           "member": "string",
           "name": "GroupType",
@@ -7101,7 +7101,7 @@
         },
         {
           "disabled": false,
-          "document": "筛选的用户，该用户关联的用户组会返回IsSelected=1",
+          "document": "<p>筛选的用户，该用户关联的用户组会返回IsSelected=1</p>",
           "example": "[\"u-dnjw8dndjde\",\"u-dniwsnsas\"]",
           "member": "string",
           "name": "FilterUsers",
@@ -7110,7 +7110,7 @@
         },
         {
           "disabled": false,
-          "document": "排序的字段，目前只支持CreateTime，默认是CreateTime字段",
+          "document": "<p>排序的字段，目前只支持CreateTime，默认是CreateTime字段</p>",
           "example": "CreateTime",
           "member": "string",
           "name": "SortField",
@@ -7119,7 +7119,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型：Desc 倒序 Asc  正序，需要您和SortField一起设置",
+          "document": "<p>排序类型：Desc 倒序 Asc  正序，需要您和SortField一起设置</p>",
           "example": "Desc",
           "member": "string",
           "name": "SortType",
@@ -7128,7 +7128,7 @@
         },
         {
           "disabled": false,
-          "document": "翻页offset. 不要与NextToken同时使用，优先使用NextToken",
+          "document": "<p>翻页offset. 不要与NextToken同时使用，优先使用NextToken</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -7143,7 +7143,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。",
+          "document": "<p>查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。</p>",
           "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
           "member": "string",
           "name": "NextToken",
@@ -7153,7 +7153,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组列表。",
+          "document": "<p>用户组列表。</p>",
           "example": "无",
           "member": "GroupInfo",
           "name": "Groups",
@@ -7163,7 +7163,7 @@
         },
         {
           "disabled": false,
-          "document": "每页的最大数据条数。",
+          "document": "<p>每页的最大数据条数。</p>",
           "example": "10",
           "member": "int64",
           "name": "MaxResults",
@@ -7173,7 +7173,7 @@
         },
         {
           "disabled": false,
-          "document": "符合请求参数条件的数据总条数。",
+          "document": "<p>符合请求参数条件的数据总条数。</p>",
           "example": "20",
           "member": "int64",
           "name": "TotalCounts",
@@ -7183,7 +7183,7 @@
         },
         {
           "disabled": false,
-          "document": "返回结果是否被截断。取值：  true：已截断。 false：未截断。",
+          "document": "<p>返回结果是否被截断。取值：  true：已截断。 false：未截断。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsTruncated",

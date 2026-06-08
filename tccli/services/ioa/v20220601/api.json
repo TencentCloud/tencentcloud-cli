@@ -1317,7 +1317,7 @@
       "status": "online"
     },
     "DescribeDirectAccountGroupResources": {
-      "document": "列表账户组直接关联的资源，私有化调用path为：capi/Assets/DescribeDirectAccountGroupResources",
+      "document": "列表账户组直接关联的资源，私有化调用path为：capi/NGN/DescribeDirectAccountGroupResources",
       "input": "DescribeDirectAccountGroupResourcesRequest",
       "name": "列表账户组直接关联的资源",
       "output": "DescribeDirectAccountGroupResourcesResponse",
@@ -2404,7 +2404,7 @@
     "GrantResourcesByAccountGroups": {
       "document": "添加资源授权到账号组",
       "input": "GrantResourcesByAccountGroupsRequest",
-      "name": "按照账户分组组授权资源",
+      "name": "按照账户分组授权资源",
       "output": "GrantResourcesByAccountGroupsResponse",
       "status": "online"
     },
@@ -18837,6 +18837,7 @@
           "example": "无",
           "member": "DescribeAccountResourcesData",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -23134,8 +23135,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
           "member": "int64",
           "name": "Total",
           "required": false,
@@ -23144,8 +23145,8 @@
         },
         {
           "disabled": false,
-          "document": "日志详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>日志详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[   \"{\\\"@timestamp\\\":\\\"2026-05-08T17:24:09+08:00\\\",\\\"Body\\\":{\\\"AuthType\\\":\\\"授权回收\\\",\\\"Mid\\\":\\\"D5BFDDA5B95D4354B43ECDC8B00D18B969FC46C1\\\",\\\"Modules\\\":[{\\\"ModuleName\\\":\\\"Win7遁甲\\\"}]},\\\"TenantId\\\":\\\"251437404\\\"}\" ]",
           "member": "string",
           "name": "Data",
           "required": false,
@@ -23329,6 +23330,15 @@
           "name": "EndTime",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -24477,8 +24487,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间",
-          "example": "无",
+          "document": "<p>开始时间</p>",
+          "example": "1777305600",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -24486,8 +24496,8 @@
         },
         {
           "disabled": false,
-          "document": "日志ID UserLogin-用户登录日志 IAMLogin-IAM登录日志 NGNAccess-终端访问日志 Access-代理访问日志 NGNTicket-NGN小票日志 DynamicAccess-动态访问日志",
-          "example": "无",
+          "document": "<p>日志ID UserLogin-用户登录日志 IAMLogin-IAM登录日志 NGNAccess-终端访问日志 Access-代理访问日志 NGNTicket-NGN小票日志 DynamicAccess-动态访问日志</p>",
+          "example": "LicenseAuth",
           "member": "string",
           "name": "LogId",
           "required": true,
@@ -24495,8 +24505,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
-          "example": "无",
+          "document": "<p>结束时间</p>",
+          "example": "1777391999",
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -24504,8 +24514,8 @@
         },
         {
           "disabled": false,
-          "document": "统计去重字段",
-          "example": "无",
+          "document": "<p>统计去重字段</p>",
+          "example": "TenantId",
           "member": "string",
           "name": "Field",
           "required": false,
@@ -24513,8 +24523,8 @@
         },
         {
           "disabled": false,
-          "document": "用户分组",
-          "example": "无",
+          "document": "<p>用户分组</p>",
+          "example": "0",
           "member": "int64",
           "name": "Department",
           "required": false,
@@ -24522,8 +24532,8 @@
         },
         {
           "disabled": false,
-          "document": "统计步长",
-          "example": "无",
+          "document": "<p>统计步长</p>",
+          "example": "day",
           "member": "string",
           "name": "Step",
           "required": false,
@@ -24531,8 +24541,8 @@
         },
         {
           "disabled": false,
-          "document": "终端分组",
-          "example": "无",
+          "document": "<p>终端分组</p>",
+          "example": "0",
           "member": "int64",
           "name": "EndpointGroup",
           "required": false,
@@ -24540,7 +24550,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件",
+          "document": "<p>过滤条件</p>",
           "example": "无",
           "member": "LogFilter",
           "name": "Filters",
@@ -24549,8 +24559,8 @@
         },
         {
           "disabled": false,
-          "document": "终端类型",
-          "example": "无",
+          "document": "<p>终端类型</p>",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
           "required": false,
@@ -24564,7 +24574,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>返回数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeLogHistogramsData",
           "name": "Data",
@@ -27248,11 +27258,11 @@
       "usage": "out"
     },
     "DescribeResourceGrantedAccountGroupsData": {
-      "document": "DescribeResourceGrantedAccountsData",
+      "document": "账号分组授权信息",
       "members": [
         {
           "disabled": false,
-          "document": " ",
+          "document": "<p>授权信息</p>",
           "example": "无",
           "member": "GrantedAccountGroupItem",
           "name": "Items",
@@ -27262,7 +27272,7 @@
         },
         {
           "disabled": false,
-          "document": " ",
+          "document": "<p>分页信息</p>",
           "example": "无",
           "member": "Paging",
           "name": "Page",
@@ -27333,7 +27343,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -27343,7 +27353,7 @@
         },
         {
           "disabled": false,
-          "document": " ",
+          "document": "<p>授权信息</p>",
           "example": "无",
           "member": "GrantedAccountItem",
           "name": "Items",
@@ -27353,7 +27363,7 @@
         },
         {
           "disabled": false,
-          "document": " ",
+          "document": "<p>分页信息</p>",
           "example": "无",
           "member": "Paging",
           "name": "Page",
@@ -27424,7 +27434,7 @@
       "members": [
         {
           "disabled": false,
-          "document": " ",
+          "document": "<p>授权信息</p>",
           "example": "无",
           "member": "GrantedVirtualGroupItem",
           "name": "Items",
@@ -27434,7 +27444,7 @@
         },
         {
           "disabled": false,
-          "document": " ",
+          "document": "<p>分页信息</p>",
           "example": "无",
           "member": "Paging",
           "name": "Page",
@@ -36879,7 +36889,7 @@
       "members": [
         {
           "disabled": false,
-          "document": " ",
+          "document": "<p>授权操作信息</p>",
           "example": "无",
           "member": "GrantResourcesByAccountGroupsData",
           "name": "Data",
@@ -38753,7 +38763,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "增值日志存储值，单位GB(公有云)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>增购日志存储空间</p><p>单位：GB</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "uint64",
           "name": "InquireNum",
@@ -38887,8 +38897,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤字段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>过滤字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TenantId",
           "member": "string",
           "name": "Field",
           "output_required": false,
@@ -38898,8 +38908,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤方式 eq:等于,like:模糊等于\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>过滤方式 eq:等于,like:模糊等于</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eq",
           "member": "string",
           "name": "Operator",
           "output_required": false,
@@ -38909,8 +38919,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>过滤值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"251437404\"]",
           "member": "string",
           "name": "Values",
           "output_required": false,
@@ -38920,8 +38930,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>过滤描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "租户ID",
           "member": "string",
           "name": "Describe",
           "output_required": false,

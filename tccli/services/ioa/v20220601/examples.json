@@ -2245,8 +2245,8 @@
     "DescribeLogHistograms": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogHistograms\n<公共请求参数>\n\n{\n    \"StartTime\": 0,\n    \"Field\": \"abc\",\n    \"LogId\": \"abc\",\n    \"Department\": 0,\n    \"Step\": \"abc\",\n    \"EndpointGroup\": 0,\n    \"Filters\": [\n        {\n            \"Field\": \"abc\",\n            \"Operator\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"Describe\": \"abc\"\n        }\n    ],\n    \"OsType\": 0,\n    \"EndTime\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Total\": 0,\n            \"Data\": [\n                {\n                    \"Timestamp\": 0,\n                    \"Value\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogHistograms\n<公共请求参数>\n\n{\n    \"StartTime\": 1777305600,\n    \"LogId\": \"LicenseAuth\",\n    \"Step\": \"day\",\n    \"Filters\": [\n        {\n            \"Field\": \"TenantId\",\n            \"Operator\": \"eq\",\n            \"Values\": [\n                \"251437404\"\n            ],\n            \"Describe\": \"租户ID\"\n        }\n    ],\n    \"EndTime\": 1777391999\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Data\": [\n                {\n                    \"Timestamp\": 1777305600,\n                    \"Value\": 5\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"c5848f1b-da8b-458e-a25b-4a891225aaa8\"\n    }\n}",
         "title": "示例1"
       }
     ],

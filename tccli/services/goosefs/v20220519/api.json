@@ -301,6 +301,13 @@
       "output": "QueryDataRepositoryBandwidthResponse",
       "status": "online"
     },
+    "ReplaceDisasterECNode": {
+      "document": "替换故障的EC节点",
+      "input": "ReplaceDisasterECNodeRequest",
+      "name": "替换故障的EC节点",
+      "output": "ReplaceDisasterECNodeResponse",
+      "status": "online"
+    },
     "SharedVersionImage": {
       "document": "镜像管理-共享镜像",
       "input": "SharedVersionImageRequest",
@@ -3002,7 +3009,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群节点列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GooseFSNodeAttribute",
           "name": "GooseFSNodeList",
@@ -3012,7 +3019,7 @@
         },
         {
           "disabled": false,
-          "document": "是否高可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群是否高可用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "是",
           "member": "string",
           "name": "ClusterHighAvailability",
@@ -3022,7 +3029,7 @@
         },
         {
           "disabled": false,
-          "document": "独立集群：INDEPENDENT_CLUSTER｜全托管集群：FULLY_MANAGED_CLUSTER｜半托管集群：SEMI_MANAGED_CLUSTER\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>独立集群：INDEPENDENT_CLUSTER｜全托管集群：FULLY_MANAGED_CLUSTER｜半托管集群：SEMI_MANAGED_CLUSTER</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "INDEPENDENT_CLUSTER",
           "member": "string",
           "name": "ClusterDeployType",
@@ -3032,8 +3039,8 @@
         },
         {
           "disabled": false,
-          "document": "TKE集群id：cls-h8324un0\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>TKE集群id：cls-h8324un0</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-h8324un0",
           "member": "string",
           "name": "TkeClusterId",
           "output_required": true,
@@ -3042,8 +3049,8 @@
         },
         {
           "disabled": false,
-          "document": "集群实例类型：CVM/TKE\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>集群实例类型：CVM/TKE</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CVM/TKE",
           "member": "string",
           "name": "InstanceType",
           "output_required": true,
@@ -3052,8 +3059,8 @@
         },
         {
           "disabled": false,
-          "document": "12\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>12</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
           "member": "int64",
           "name": "ClientNumber",
           "output_required": true,
@@ -3062,8 +3069,8 @@
         },
         {
           "disabled": false,
-          "document": "true表示开启鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>true表示开启鉴权</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "GooseFSCloudAuth",
           "output_required": true,
@@ -3072,8 +3079,8 @@
         },
         {
           "disabled": false,
-          "document": "集群版本号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>集群版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GooseFS-1.4.8.5",
           "member": "string",
           "name": "SoftVersion",
           "output_required": false,
@@ -3082,8 +3089,8 @@
         },
         {
           "disabled": false,
-          "document": "是否上报云监控，上报后，才展示云监控页面\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>是否上报云监控，上报后，才展示云监控页面</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "CloudMonitorReported",
           "output_required": false,
@@ -3092,8 +3099,8 @@
         },
         {
           "disabled": false,
-          "document": "Emr集群id：emr-h8324un0\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>Emr集群id：emr-h8324un0</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emr-h8324un0",
           "member": "string",
           "name": "EmrClusterId",
           "output_required": false,
@@ -3102,8 +3109,8 @@
         },
         {
           "disabled": false,
-          "document": "数据存储容量，随 Worker 数和Worker缓存容量配置大小变更\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>数据存储容量，随 Worker 数和Worker缓存容量配置大小变更</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
           "member": "uint64",
           "name": "DataCapacity",
           "output_required": false,
@@ -3112,8 +3119,8 @@
         },
         {
           "disabled": false,
-          "document": "客户端 Fuse 版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>客户端 Fuse 版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Fuse",
           "member": "string",
           "name": "ClientFuseVersion",
           "output_required": false,
@@ -3122,13 +3129,93 @@
         },
         {
           "disabled": false,
-          "document": "托管 Master 的配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>托管 Master 的配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ManagedMasterConfig",
           "name": "ManagedMasterConfig",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>托管 Worker 的配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ManagedWorkerConfig",
+          "name": "ManagedWorkerConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步写worker节点配置</p>",
+          "example": "无",
+          "member": "ManagedAsyncWriteWorkerConfig",
+          "name": "ManagedAsyncWriteWorkerConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "<p>集群是否关闭内部告警, 1:关闭,0:开启</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCloseMonitorAlerts",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群机器类型</p>",
+          "example": "PHYSICAL、CVM",
+          "member": "string",
+          "name": "MachineType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Master节点机器类型</p>",
+          "example": "MasterModel",
+          "member": "string",
+          "name": "MasterModel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Worker节点机器类型</p>",
+          "example": "WorkerModel",
+          "member": "string",
+          "name": "WorkerModel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Master节点Rpc地址</p>",
+          "example": "[\"ip:port\"]",
+          "member": "string",
+          "name": "MasterRPCAddress",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否降级</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ClusterDowngrade",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3138,103 +3225,113 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点的vpc内IP",
-          "example": "xxxxxxx",
+          "document": "<p>节点的vpc内IP</p>",
+          "example": "10.26.32.1",
           "member": "string",
           "name": "NodeIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例id",
-          "example": "xxxxx",
+          "document": "<p>实例id</p>",
+          "example": "ins-abds",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例类型，CVM/EMR/TKE",
+          "document": "<p>实例类型，CVM/EMR/TKE</p>",
           "example": "CVM",
           "member": "string",
           "name": "InstanceType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点类型：Master/Worker/Client",
+          "document": "<p>节点类型：Master/Worker/Client/AsyncWriteWorker</p>",
           "example": "Master",
           "member": "string",
           "name": "NodeType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点加入时间",
-          "example": "1661950860",
+          "document": "<p>节点加入时间</p>",
+          "example": "2012-01-01T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点状态更新时间",
-          "example": "1661950861",
+          "document": "<p>节点状态更新时间</p>",
+          "example": "2012-01-01T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "ModifyTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点状态，Init/Success/Failed，节点初始化状态",
+          "document": "<p>节点状态，Init/Success/Failed，节点初始化状态</p>",
           "example": "Init",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点跨租户网卡ID",
-          "example": "xxxxx",
+          "document": "<p>节点跨租户网卡ID</p>",
+          "example": "nic-absc",
           "member": "string",
           "name": "NetworkId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点上的服务状态",
+          "document": "<p>节点上的服务状态</p>",
           "example": "无",
           "member": "GooseFSNodeServiceAttribute",
           "name": "Services",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点所属集群分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>节点所属集群分组ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"test\"",
           "member": "string",
           "name": "GroupId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Owner节点本身的ip</p>",
+          "example": "跨租户网卡Ip",
+          "member": "string",
+          "name": "SecondNodeIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3918,6 +4015,45 @@
       ],
       "usage": "in"
     },
+    "ManagedAsyncWriteWorkerConfig": {
+      "document": "用于全托管模式下异步写配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全托管异步写机器类型</p>",
+          "example": "ASYNC.10",
+          "member": "string",
+          "name": "MachineType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步写容量</p>",
+          "example": "6144",
+          "member": "int64",
+          "name": "Capacity",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>副本数量</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "ReplicaNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ManagedMasterConfig": {
       "document": "托管 Master 的配置信息",
       "members": [
@@ -3929,6 +4065,45 @@
           "name": "MachineType",
           "output_required": false,
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ManagedWorkerConfig": {
+      "document": "全托管 Worker 的相关参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Capacity",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "机型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MachineType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkerNodeType",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -4389,6 +4564,60 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceDisasterECNodeRequest": {
+      "document": "ReplaceDisasterECNode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件系统ID</p>",
+          "example": "x-c73-6s184jpn",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件系统所属的OwnerUin</p>",
+          "example": "3472213910",
+          "member": "uint64",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>EC Recover Group的ID</p>",
+          "example": "x_c73_6s184jpn_ec_rg_002",
+          "member": "string",
+          "name": "ECRecoverGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待替换的节点ID</p>",
+          "example": "x-c73-6s184jpn-owner-nsd-rg-002-002",
+          "member": "string",
+          "name": "TargetNodeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceDisasterECNodeResponse": {
+      "document": "ReplaceDisasterECNode返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

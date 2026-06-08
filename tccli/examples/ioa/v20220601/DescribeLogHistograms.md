@@ -6,18 +6,14 @@ Input:
 
 ```
 tccli ioa DescribeLogHistograms --cli-unfold-argument  \
-    --StartTime 0 \
-    --Field abc \
-    --LogId abc \
-    --Department 0 \
-    --Step abc \
-    --EndpointGroup 0 \
-    --Filters.0.Field abc \
-    --Filters.0.Operator abc \
-    --Filters.0.Values abc \
-    --Filters.0.Describe abc \
-    --OsType 0 \
-    --EndTime 0
+    --StartTime 1777305600 \
+    --LogId LicenseAuth \
+    --Step day \
+    --Filters.0.Field TenantId \
+    --Filters.0.Operator eq \
+    --Filters.0.Values 251437404 \
+    --Filters.0.Describe 租户ID \
+    --EndTime 1777391999
 ```
 
 Output: 
@@ -25,15 +21,15 @@ Output:
 {
     "Response": {
         "Data": {
-            "Total": 0,
             "Data": [
                 {
-                    "Timestamp": 0,
-                    "Value": 0
+                    "Timestamp": 1777305600,
+                    "Value": 5
                 }
-            ]
+            ],
+            "Total": 1
         },
-        "RequestId": "abc"
+        "RequestId": "c5848f1b-da8b-458e-a25b-4a891225aaa8"
     }
 }
 ```

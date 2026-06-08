@@ -40,6 +40,14 @@
         "title": "查询 API 密钥列表。"
       }
     ],
+    "DescribeModelList": [
+      {
+        "document": "查询模型列表，支持按模型 ID、模型名称、模型能力等条件筛选，支持分页和排序。",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"319fc5ca-3fed-44a4-9a71-36bd0f6899fc\"\n    }\n}",
+        "title": "DescribeModelList"
+      }
+    ],
     "DescribeTokenPlan": [
       {
         "document": "测试查询 TokenPlan 套餐详情",
@@ -75,8 +83,8 @@
     "DescribeTokenPlanApiKeyUsageDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTokenPlanApiKeyUsageDetail\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"409be278-ce7c-4362-93a5-62391cdf4256\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTokenPlanApiKeyUsageDetail\n<公共请求参数>\n\n{\n    \"TeamId\": \"team-123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Context\": \"\",\n        \"List\": [\n            {\n                \"CacheToken\": 0,\n                \"OutputToken\": 39,\n                \"ApiKeyId\": \"ak-tp-20260408-123456\",\n                \"RequestTime\": \"2026-04-10T14:24:45Z\",\n                \"ModelName\": \"auto\",\n                \"Uin\": \"123456\",\n                \"RequestId\": \"451d5d39-9ed9-46f8-8dce-df582c3b2d0e\",\n                \"InputToken\": 66,\n                \"TotalToken\": 105\n            }\n        ],\n        \"ListOver\": true,\n        \"RequestId\": \"409be278-ce7c-4362-93a5-62391cdf4256\"\n    }\n}",
         "title": "DescribeTokenPlanApiKeyUsageDetail"
       }
     ],

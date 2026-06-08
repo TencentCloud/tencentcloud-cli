@@ -273,6 +273,13 @@
       "output": "DescribeDBSpaceStatusResponse",
       "status": "online"
     },
+    "DescribeDatabaseAutonomyStatus": {
+      "document": "查询数据库自治功能的开关状态。当前支持 MongoDB 的索引推荐（AutoIndexAdvice）功能状态查询。",
+      "input": "DescribeDatabaseAutonomyStatusRequest",
+      "name": "查询数据库自治功能状态",
+      "output": "DescribeDatabaseAutonomyStatusResponse",
+      "status": "online"
+    },
     "DescribeDiagDBInstances": {
       "document": "获取实例信息列表。Region统一选择广州。",
       "input": "DescribeDiagDBInstancesRequest",
@@ -600,6 +607,13 @@
       "input": "UpdateAgentSwitchRequest",
       "name": "更新Agent状态",
       "output": "UpdateAgentSwitchResponse",
+      "status": "online"
+    },
+    "UpdateDatabaseAutonomyStatus": {
+      "document": "设置数据库自治功能的开关状态。当前支持 MongoDB 的索引推荐（AutoIndexAdvice）功能的开启或关闭。",
+      "input": "UpdateDatabaseAutonomyStatusRequest",
+      "name": "设置数据库自治功能状态",
+      "output": "UpdateDatabaseAutonomyStatusResponse",
       "status": "online"
     },
     "UpdateMonitorSwitch": {
@@ -4616,6 +4630,61 @@
       ],
       "type": "object"
     },
+    "DescribeDatabaseAutonomyStatusRequest": {
+      "document": "DescribeDatabaseAutonomyStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID。</p>",
+          "example": "cmgo-kuaetxyl",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务产品类型。取值：mongodb（云数据库 MongoDB）。</p>",
+          "example": "mongodb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自治功能类型。取值：AutoIndexAdvice（索引推荐）。</p>",
+          "example": "AutoIndexAdvice",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseAutonomyStatusResponse": {
+      "document": "DescribeDatabaseAutonomyStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自治功能开关状态。取值：0（关闭）、1（开启）。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDiagDBInstancesRequest": {
       "document": "DescribeDiagDBInstances请求参数结构体",
       "members": [
@@ -5357,7 +5426,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "document": "<p>实例 ID。可通过 <a href=\"https://cloud.tencent.com/document/api/1130/57798\">DescribeDiagDBInstances</a> 接口获取。<strong>其中 dcdb(即TDSQL MySQL) 的查询入参InstanceId特殊，需要使用 ClusterId + &amp; + InstanceId 来组合代替， 如：<code>tdsqlshard-s1230&amp;shard-abcd</code></strong></p>",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -5366,7 +5435,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的ID，用于筛选线程列表。",
+          "document": "<p>线程的ID，用于筛选线程列表。</p>",
           "example": "20",
           "member": "uint64",
           "name": "ID",
@@ -5375,7 +5444,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的操作账号名，用于筛选线程列表。",
+          "document": "<p>线程的操作账号名，用于筛选线程列表。</p>",
           "example": "root",
           "member": "string",
           "name": "User",
@@ -5384,7 +5453,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的操作主机地址，用于筛选线程列表。",
+          "document": "<p>线程的操作主机地址，用于筛选线程列表。</p>",
           "example": "127.0.0.1:41528",
           "member": "string",
           "name": "Host",
@@ -5393,7 +5462,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的操作数据库，用于筛选线程列表。",
+          "document": "<p>线程的操作数据库，用于筛选线程列表。</p>",
           "example": "demo_db",
           "member": "string",
           "name": "DB",
@@ -5402,7 +5471,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的操作状态。包含以下枚举值：Sending data​-线程正在处理查询结果， ​Sorting result​-线程正在对查询结果进行排序​，Creating tmp table​-线程正在创建临时表，Altering table​-线程正在执行表结构变更，Updating-线程执行更新中。",
+          "document": "<p>线程的操作状态。包含以下枚举值：Sending data​-线程正在处理查询结果， ​Sorting result​-线程正在对查询结果进行排序​，Creating tmp table​-线程正在创建临时表，Altering table​-线程正在执行表结构变更，Updating-线程执行更新中。</p>",
           "example": "Updating",
           "member": "string",
           "name": "State",
@@ -5411,7 +5480,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的执行类型。包含以下枚举值：Sleep-线程处于空闲状态，Query-线程正在执行一个查询，Connect-从服务器连接到主服务器，Execute-线程正在执行预处理语句。",
+          "document": "<p>线程的执行类型。包含以下枚举值：Sleep-线程处于空闲状态，Query-线程正在执行一个查询，Connect-从服务器连接到主服务器，Execute-线程正在执行预处理语句。</p>",
           "example": "Execute",
           "member": "string",
           "name": "Command",
@@ -5420,7 +5489,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。",
+          "document": "<p>线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Time",
@@ -5429,7 +5498,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的操作语句，用于筛选线程列表。",
+          "document": "<p>线程的操作语句，用于筛选线程列表。</p>",
           "example": "DELETE FROM `test` WHERE time<=1",
           "member": "string",
           "name": "Info",
@@ -5438,7 +5507,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认20。",
+          "document": "<p>返回数量，默认20。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -5447,7 +5516,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"mariadb\"-mariadb;\"cynosdb\"-TDSQL-C for MySQL ;\"dcdb\"-TDSQL MySQL 默认为\"mysql\"。\n\n",
+          "document": "<p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;mariadb&quot;-mariadb;&quot;cynosdb&quot;-TDSQL-C for MySQL ;&quot;dcdb&quot;-TDSQL MySQL 默认为&quot;mysql&quot;。</p>",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -5456,7 +5525,7 @@
         },
         {
           "disabled": false,
-          "document": "会话统计的维度信息,可以多个维度。",
+          "document": "<p>会话统计的维度信息,可以多个维度。</p>",
           "example": "无",
           "member": "StatDimension",
           "name": "StatDimensions",
@@ -5471,7 +5540,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实时线程列表。",
+          "document": "<p>实时线程列表。</p>",
           "example": "无",
           "member": "MySqlProcess",
           "name": "ProcessList",
@@ -5481,7 +5550,7 @@
         },
         {
           "disabled": false,
-          "document": "sql会话统计信息。如果请求参数中包含StatDimensions，该参数则可能返回，否则不返回。",
+          "document": "<p>sql会话统计信息。如果请求参数中包含StatDimensions，该参数则可能返回，否则不返回。</p>",
           "example": "无",
           "member": "StatisticInfo",
           "name": "Statistics",
@@ -11748,32 +11817,42 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问来源。",
+          "document": "<p>访问来源。</p>",
           "example": "\"127.0.0.1\"",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前访问来源活跃连接数",
+          "document": "<p>当前访问来源活跃连接数</p>",
           "example": "\"1\"",
           "member": "string",
           "name": "ActiveConn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前访问来源总连接数",
+          "document": "<p>当前访问来源总连接数</p>",
           "example": "1",
           "member": "int64",
           "name": "AllConn",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为内网ip</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsInternalIp",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -12943,6 +13022,70 @@
     "UpdateAgentSwitchResponse": {
       "document": "UpdateAgentSwitch返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDatabaseAutonomyStatusRequest": {
+      "document": "UpdateDatabaseAutonomyStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID。</p>",
+          "example": "cmgo-kuaetxyl",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务产品类型。取值：mongodb（云数据库 MongoDB）。</p>",
+          "example": "mongodb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自治功能类型。取值：AutoIndexAdvice（索引推荐）。</p>",
+          "example": "AutoIndexAdvice",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开关状态。取值：0（关闭）、1（开启）。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDatabaseAutonomyStatusResponse": {
+      "document": "UpdateDatabaseAutonomyStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作结果状态。取值：1（操作成功）。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
