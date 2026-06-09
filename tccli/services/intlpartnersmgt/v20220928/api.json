@@ -5995,7 +5995,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "经销商姓名",
+          "document": "<p>经销商姓名</p>",
           "example": "名字",
           "member": "string",
           "name": "AgentName",
@@ -6005,7 +6005,7 @@
         },
         {
           "disabled": false,
-          "document": "经销商角色类型：1:经销商 2:总经销商 3:二级经销商",
+          "document": "<p>经销商角色类型：1:经销商 2:总经销商 3:二级经销商</p>",
           "example": "20000",
           "member": "int64",
           "name": "AccountType",
@@ -6015,7 +6015,7 @@
         },
         {
           "disabled": false,
-          "document": "总额度",
+          "document": "<p>总额度</p>",
           "example": "10",
           "member": "float",
           "name": "TotalQuota",
@@ -6025,7 +6025,7 @@
         },
         {
           "disabled": false,
-          "document": "剩余额度",
+          "document": "<p>剩余额度</p>",
           "example": "10",
           "member": "float",
           "name": "RemainingQuota",
@@ -6035,11 +6035,21 @@
         },
         {
           "disabled": false,
-          "document": "已发放的代金券数量",
+          "document": "<p>已发放的代金券数量</p>",
           "example": "1",
           "member": "int64",
           "name": "IssuedNum",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>poc代金券有限抵扣开关 1开启0关闭</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PocVoucherDeductPriority",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },

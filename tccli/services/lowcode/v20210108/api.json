@@ -78,11 +78,11 @@
       "status": "online"
     },
     "DescribeFoldProcessBasicInfos": {
-      "document": "查询流程折叠基础信息列表",
+      "document": "这些接口的产品功能下线，接口已无调用量\n\n查询流程折叠基础信息列表",
       "input": "DescribeFoldProcessBasicInfosRequest",
       "name": "查询流程折叠基础信息列表",
       "output": "DescribeFoldProcessBasicInfosResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeKnowledgeDocumentSetDetail": {
       "document": "获取知识库下文档详情",

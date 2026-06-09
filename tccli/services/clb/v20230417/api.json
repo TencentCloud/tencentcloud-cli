@@ -1044,6 +1044,15 @@
           "name": "SetIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区亲和信息</p>",
+          "example": "无",
+          "member": "AvailableZoneAffinityInfo",
+          "name": "AvailableZoneAffinityInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

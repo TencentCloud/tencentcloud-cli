@@ -266,6 +266,14 @@
         "title": "测试环境真实示例"
       }
     ],
+    "CreateOnCallForm": [
+      {
+        "document": "创建值班表",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOnCallForm\n<公共请求参数>\n\n{\n    \"Module\": \"abc\",\n    \"OnCallFormName\": \"abc\",\n    \"OnCallFormDesc\": \"abc\",\n    \"StaffInfos\": [\n        {\n            \"StaffIDs\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"RotationType\": \"abc\",\n    \"ShiftTime\": \"abc\",\n    \"EffectiveStartTime\": 0,\n    \"EffectiveEndTime\": 0,\n    \"TimeZone\": 0,\n    \"CoverStaffInfos\": [\n        {\n            \"CoverStaffIDs\": [\n                \"abc\"\n            ],\n            \"CoverStartTime\": 0,\n            \"CoverEndTime\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"OnCallFormID\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建值班表"
+      }
+    ],
     "CreatePolicyGroup": [
       {
         "document": "",
@@ -454,6 +462,14 @@
         "title": "测试环境真实示例"
       }
     ],
+    "DeleteOnCallForms": [
+      {
+        "document": "删除值班表",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOnCallForms\n<公共请求参数>\n\n{\n    \"Module\": \"abc\",\n    \"OnCallFormIDs\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedOnCallFormIDs\": [\n            \"abc\"\n        ],\n        \"SuccessOnCallFormIDs\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除值班表"
+      }
+    ],
     "DeletePolicyGroup": [
       {
         "document": "",
@@ -473,7 +489,7 @@
     "DeletePrometheusAlertPolicy": [
       {
         "document": "删除Prometheus告警规则",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrometheusAlertPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-kjshgr\",\n    \"AlertIds\": [\n        \"alert-jsbgvr\"\n    ],\n    \"Names\": [\n        \"test\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrometheusAlertPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-kjshgr\",\n    \"AlertIds\": [\n        \"alert-jsbgvr\"\n    ],\n    \"Names\": [\n        \"CPUUsage\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除Prometheus告警规则"
       }
@@ -860,6 +876,22 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotificationSettings\n<公共请求参数>\n\n{\n    \"MonitorType\": \"MT_CLS\",\n    \"PageParams\": {\n        \"PerPage\": 10,\n        \"PageNo\": 1\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"PageResult\": {\n            \"CurrentPageNo\": 1,\n            \"IsEnd\": true,\n            \"TotalCount\": 1,\n            \"TotalPage\": 1\n        },\n        \"RequestId\": \"91e283df-c1c2-435d-a766-62a0455b57bf\",\n        \"Settings\": [\n            {\n                \"EscalationRules\": [\n                    {\n                        \"AfterLastPartSeconds\": 3000,\n                        \"CheckPoints\": [],\n                        \"Notices\": [\n                            {\n                                \"ContentTmplId\": \"tmpl-erictest11\",\n                                \"Levels\": [\n                                    \"None\"\n                                ],\n                                \"NoticeId\": \"notice-erictest11\"\n                            },\n                            {\n                                \"ContentTmplId\": \"tmpl-erictest12\",\n                                \"Levels\": [\n                                    \"None\"\n                                ],\n                                \"NoticeId\": \"notice-erictest12\"\n                            }\n                        ],\n                        \"PartSeqNum\": 1\n                    },\n                    {\n                        \"AfterLastPartSeconds\": 5000,\n                        \"CheckPoints\": [],\n                        \"Notices\": [\n                            {\n                                \"ContentTmplId\": \"tmpl-erictest21\",\n                                \"Levels\": [\n                                    \"None\"\n                                ],\n                                \"NoticeId\": \"notice-erictest21\"\n                            }\n                        ],\n                        \"PartSeqNum\": 2\n                    }\n                ],\n                \"Frequency\": 0,\n                \"HasEscalation\": true,\n                \"MatchById\": \"policy-erictest2\",\n                \"MatchParams\": \"\",\n                \"MatchType\": \"PolicyOneOnOne\",\n                \"MonitorType\": \"\",\n                \"Notices\": [],\n                \"SettingId\": \"ntfs-3c5yw37f4oopcb9n\"\n            }\n        ]\n    }\n}",
         "title": "测试环境真实示例"
+      }
+    ],
+    "DescribeOnCallForm": [
+      {
+        "document": "查询值班表详情\n\n",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOnCallForm\n<公共请求参数>\n\n{\n    \"Module\": \"abc\",\n    \"OnCallFormID\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OnCallForm\": {\n            \"OnCallFormID\": \"abc\",\n            \"OnCallFormName\": \"abc\",\n            \"OnCallFormDesc\": \"abc\",\n            \"StaffInfos\": [\n                {\n                    \"StaffIDs\": [\n                        \"abc\"\n                    ]\n                }\n            ],\n            \"RotationType\": \"abc\",\n            \"ShiftTime\": \"abc\",\n            \"EffectiveStartTime\": 0,\n            \"EffectiveEndTime\": 0,\n            \"TimeZone\": 0,\n            \"CoverStaffInfos\": [\n                {\n                    \"CoverStaffIDs\": [\n                        \"abc\"\n                    ],\n                    \"CoverStartTime\": 0,\n                    \"CoverEndTime\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询值班表详情"
+      }
+    ],
+    "DescribeOnCallForms": [
+      {
+        "document": "查询值班列表",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOnCallForms\n<公共请求参数>\n\n{\n    \"Module\": \"abc\",\n    \"OnCallFormStaffIDs\": [\n        \"abc\"\n    ],\n    \"RotationType\": \"abc\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"Order\": \"abc\",\n    \"OnCallFormName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OnCallForms\": [\n            {\n                \"OnCallFormID\": \"abc\",\n                \"OnCallFormName\": \"abc\",\n                \"OnCallFormDesc\": \"abc\",\n                \"RotationType\": \"abc\",\n                \"ShiftTime\": \"abc\",\n                \"EffectiveStartTime\": 0,\n                \"EffectiveEndTime\": 0,\n                \"TimeZone\": 0,\n                \"CurrOnCallStaffs\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询值班列表"
       }
     ],
     "DescribePhoneAlarmFlowTotalCount": [
@@ -1652,6 +1684,14 @@
         "title": "更新 Grafana 白名单"
       }
     ],
+    "UpdateOnCallForm": [
+      {
+        "document": "修改值班表\n\n",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOnCallForm\n<公共请求参数>\n\n{\n    \"Module\": \"abc\",\n    \"OnCallFormID\": \"abc\",\n    \"OnCallFormName\": \"abc\",\n    \"OnCallFormDesc\": \"abc\",\n    \"StaffInfos\": [\n        {\n            \"StaffIDs\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"RotationType\": \"abc\",\n    \"ShiftTime\": \"abc\",\n    \"EffectiveStartTime\": 0,\n    \"EffectiveEndTime\": 0,\n    \"TimeZone\": 0,\n    \"CoverStaffInfos\": [\n        {\n            \"CoverStaffIDs\": [\n                \"abc\"\n            ],\n            \"CoverStartTime\": 0,\n            \"CoverEndTime\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"OnCallFormID\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改值班表"
+      }
+    ],
     "UpdatePrometheusAgentStatus": [
       {
         "document": "",
@@ -1687,7 +1727,7 @@
     "UpdateRecordingRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRecordingRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-xrwerwe\",\n    \"RuleState\": 2,\n    \"Group\": \"LS0tDQpuYW1lOiBleGFtcGxlDQpydWxlczoNCiAgLSByZWNvcmQ6IGpvYjpodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHM6c3VtDQogICAgZXhwcjogc3VtIGJ5IChqb2IpIChodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHMp\",\n    \"Name\": \"test\",\n    \"RuleId\": \"rrule-m74lrt6g\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRecordingRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-xrwerwe\",\n    \"RuleState\": 2,\n    \"Group\": \"LS0tDQpuYW1lOiBleGFtcGxlDQpydWxlczoNCiAgLSByZWNvcmQ6IGpvYjpodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHM6c3VtDQogICAgZXhwcjogc3VtIGJ5IChqb2IpIChodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHMp\",\n    \"Name\": \"ingress\",\n    \"RuleId\": \"rrule-m74lrt6g\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1z5ph-pcsxjbfy1y56525v5q-w5brnte\",\n        \"RuleId\": \"rrule-m74lrt6g\"\n    }\n}",
         "title": "更新预聚合规则"
       }

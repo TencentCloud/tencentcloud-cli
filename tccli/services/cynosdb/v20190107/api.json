@@ -8259,6 +8259,15 @@
           "name": "InstanceWeights",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>负载均衡模式</p><p>枚举值：</p><ul><li>static： 静态负载</li><li>dynamic： 动态负载</li></ul>",
+          "example": "static",
+          "member": "string",
+          "name": "LoadBalanceMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -27427,6 +27436,15 @@
           "name": "ApQueryToOtherNode",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>负载均衡模式</p><p>枚举值：</p><ul><li>static： 静态负载</li><li>dynamic： 动态负载</li></ul>",
+          "example": "static",
+          "member": "string",
+          "name": "LoadBalanceMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -30647,6 +30665,17 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动负载</p><p>枚举值：</p><ul><li>static： 静态负载</li><li>dynamic： 动态负载</li></ul>",
+          "example": "static",
+          "member": "string",
+          "name": "LoadBalanceMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

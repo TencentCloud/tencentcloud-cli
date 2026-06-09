@@ -12,10 +12,10 @@ tccli ga2 CreateForwardingRule --cli-unfold-argument  \
     --RuleConditions.0.RuleConditionType Path \
     --RuleConditions.0.RuleConditionValue /a \
     --RuleActions.0.RuleActionType Drop \
-    --OriginHeaders.0.Key key-123 \
-    --OriginHeaders.0.Value value-123 \
+    --OriginHeaders.0.Key key-key \
+    --OriginHeaders.0.Value value-value \
     --EnableOriginSni True \
-    --OriginSni 123 \
+    --OriginSni testsni \
     --OriginHost www.bbb.com
 ```
 

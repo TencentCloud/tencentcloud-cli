@@ -98,6 +98,27 @@
       "output": "DescribeAccelerateRegionsResponse",
       "status": "online"
     },
+    "DescribeAcceleratorGawanPathDetail": {
+      "document": "根据加速器唯一ID（UniqAcceleratorId），聚合查询该加速器对应的GAWAN通路详情。包含正向/反向 PathSet、Path 列表、Edge 列表，以及每条 Edge 两端集群的区域、云类型与 GAWAN IP（ForwardIp、PublicIp、HostIp、InstanceId）等完整信息。",
+      "input": "DescribeAcceleratorGawanPathDetailRequest",
+      "name": "查询加速器GAWAN通路详情",
+      "output": "DescribeAcceleratorGawanPathDetailResponse",
+      "status": "online"
+    },
+    "DescribeAcceleratorResourceDetail": {
+      "document": "根据加速器唯一ID（GlobalAcceleratorId），聚合查询加速器对应的全部资源详情。包括加速器关联的 EIP 列表、上车点（IngressNodeList）和下车点（EgressNodeList）信息，以及每个节点的 gaproxy 端口、监听器、上游、转发IP、集群、云类型、宿主机实例等完整资源关系。",
+      "input": "DescribeAcceleratorResourceDetailRequest",
+      "name": "查询加速器资源详情",
+      "output": "DescribeAcceleratorResourceDetailResponse",
+      "status": "online"
+    },
+    "DescribeClbVipInstances": {
+      "document": "查询跨境账单",
+      "input": "DescribeClbVipInstancesRequest",
+      "name": "CLB的VIP查询对应实例和客户信息",
+      "output": "DescribeClbVipInstancesResponse",
+      "status": "online"
+    },
     "DescribeCrossBorderSettlement": {
       "document": "查询跨境账单",
       "input": "DescribeCrossBorderSettlementRequest",
@@ -280,6 +301,34 @@
       ],
       "usage": "both"
     },
+    "AcceleratorGawanPathDetail": {
+      "document": "加速器GAWAN通路详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "加速器唯一ID，长度：1-32",
+          "example": "ga-7hktcqoe",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GAWAN通路列表，按 UserPathPolicy 维度返回",
+          "example": "无",
+          "member": "GAWANPathList",
+          "name": "GawanPathList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AcceleratorRegionSet": {
       "document": "可加速地域信息",
       "members": [
@@ -355,6 +404,56 @@
         }
       ],
       "usage": "out"
+    },
+    "AcceleratorResourceDetail": {
+      "document": "加速器资源详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "加速器唯一ID，长度：1-32",
+          "example": "ga-7hktcqoe",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加速器关联的EIP列表",
+          "example": "无",
+          "member": "EipList",
+          "name": "EipList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上车点节点列表（加速区域侧的接入节点）",
+          "example": "无",
+          "member": "Node",
+          "name": "IngressNodeList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下车点节点列表（终端节点组侧的回源节点），结构与 IngressNodeList 完全一致",
+          "example": "无",
+          "member": "Node",
+          "name": "EgressNodeList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CreateAccelerateAreasRequest": {
       "document": "CreateAccelerateAreas请求参数结构体",
@@ -546,7 +645,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全球加速实例ID。",
+          "document": "<p>全球加速实例ID。</p>",
           "example": "ga-ask56kjh",
           "member": "string",
           "name": "GlobalAcceleratorId",
@@ -555,7 +654,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器ID。",
+          "document": "<p>监听器ID。</p>",
           "example": "lsr-kzjzfs7n",
           "member": "string",
           "name": "ListenerId",
@@ -564,7 +663,7 @@
         },
         {
           "disabled": false,
-          "document": "策略ID。",
+          "document": "<p>策略ID。</p>",
           "example": "dm-dz058e4q",
           "member": "string",
           "name": "ForwardingPolicyId",
@@ -573,7 +672,7 @@
         },
         {
           "disabled": false,
-          "document": "七层转发规则条件信息。",
+          "document": "<p>七层转发规则条件信息。</p>",
           "example": "无",
           "member": "RuleCondition",
           "name": "RuleConditions",
@@ -582,7 +681,7 @@
         },
         {
           "disabled": false,
-          "document": "七层转发规则行为信息。",
+          "document": "<p>七层转发规则行为信息。</p>",
           "example": "无",
           "member": "RuleAction",
           "name": "RuleActions",
@@ -591,7 +690,7 @@
         },
         {
           "disabled": false,
-          "document": "回源Header信息。",
+          "document": "<p>回源Header信息。</p>",
           "example": "无",
           "member": "OriginHeader",
           "name": "OriginHeaders",
@@ -600,8 +699,8 @@
         },
         {
           "disabled": false,
-          "document": "是否开启回源sni。",
-          "example": "True",
+          "document": "<p>是否开启回源sni。</p>",
+          "example": "true",
           "member": "bool",
           "name": "EnableOriginSni",
           "required": false,
@@ -609,8 +708,8 @@
         },
         {
           "disabled": false,
-          "document": "回源sni。",
-          "example": "无",
+          "document": "<p>回源sni。</p>",
+          "example": "/sfsed",
           "member": "string",
           "name": "OriginSni",
           "required": false,
@@ -618,12 +717,30 @@
         },
         {
           "disabled": false,
-          "document": "回源host。",
-          "example": "无",
+          "document": "<p>回源host。</p>",
+          "example": "www.ddd.com",
           "member": "string",
           "name": "OriginHost",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>源站响应头</p>",
+          "example": "无",
+          "member": "ResponseHeaders",
+          "name": "ResponseHeaders",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除源站响应头</p>",
+          "example": "无",
+          "member": "HideResponseHeaders",
+          "name": "HideResponseHeaders",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -633,7 +750,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务ID。",
+          "document": "<p>异步任务ID。</p>",
           "example": "e1326769-29a9-43d5-8fbb-6af2e7165328",
           "member": "string",
           "name": "TaskId",
@@ -643,7 +760,7 @@
         },
         {
           "disabled": false,
-          "document": "七层转发规则ID。",
+          "document": "<p>七层转发规则ID。</p>",
           "example": "rule-kfn3oc78",
           "member": "string",
           "name": "ForwardingRuleId",
@@ -898,6 +1015,15 @@
           "name": "SniRouteFlag",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTPS监听器支持选择版本</p><p>枚举值：</p><ul><li>HTTP/1.1： HTTP/1.1</li><li>HTTP/2： HTTP/2</li></ul>",
+          "example": "HTTP/2",
+          "member": "string",
+          "name": "HttpVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1316,6 +1442,117 @@
           "example": "无",
           "member": "AcceleratorRegionSet",
           "name": "AcceleratorRegionSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAcceleratorGawanPathDetailRequest": {
+      "document": "DescribeAcceleratorGawanPathDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>加速器唯一ID，支持单个字符串或字符串数组形式，长度：1-32</p>",
+          "example": "ga-h1dwqipu",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAcceleratorGawanPathDetailResponse": {
+      "document": "DescribeAcceleratorGawanPathDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>加速器GAWAN通路详情列表</p>",
+          "example": "无",
+          "member": "AcceleratorGawanPathDetail",
+          "name": "AcceleratorGawanPathDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAcceleratorResourceDetailRequest": {
+      "document": "DescribeAcceleratorResourceDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>加速器唯一ID，支持单个字符串或字符串数组形式</p>",
+          "example": "ga-8sreohed",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAcceleratorResourceDetailResponse": {
+      "document": "DescribeAcceleratorResourceDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>加速器资源详情列表</p>",
+          "example": "无",
+          "member": "AcceleratorResourceDetail",
+          "name": "AcceleratorResourceDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClbVipInstancesRequest": {
+      "document": "DescribeClbVipInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>CLB的VIP地址</p>",
+          "example": "3.1.2.192",
+          "member": "string",
+          "name": "IpAddress",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClbVipInstancesResponse": {
+      "document": "DescribeClbVipInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例对象集合。</p>",
+          "example": "无",
+          "member": "Instance",
+          "name": "InstanceSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1800,6 +2037,194 @@
       ],
       "type": "object"
     },
+    "Edge": {
+      "document": "Edge 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Edge 唯一ID，长度：1-32</p>",
+          "example": "e-abc12345",
+          "member": "string",
+          "name": "EdgeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Edge类型，1：境内；2：海外；3：私网跨境；4：公网跨境</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "EdgeType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本端集群唯一ID，长度：1-32</p>",
+          "example": "cls-abc12345",
+          "member": "string",
+          "name": "LocalClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本端集群名称，长度：0-128</p>",
+          "example": "cluster-gz-1",
+          "member": "string",
+          "name": "LocalClusterName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本端地域，长度：1-32</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "LocalRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本端集群所在 VPC 的云类型，长度：0-32</p>",
+          "example": "tencent",
+          "member": "string",
+          "name": "LocalCloudType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本端 GAWAN IP 列表（按 (ClusterId, PlaneId) 过滤）</p>",
+          "example": "无",
+          "member": "GawanIp",
+          "name": "LocalGawanIpList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对端集群ID，范围：0-9223372036854775807</p>",
+          "example": "gapclu-hfepqq35",
+          "member": "string",
+          "name": "RemoteClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对端集群名称，长度：0-128</p>",
+          "example": "cluster-sh-1",
+          "member": "string",
+          "name": "RemoteClusterName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对端地域，长度：1-32</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "RemoteRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对端集群所在 VPC 的云类型，长度：0-32</p>",
+          "example": "tencent",
+          "member": "string",
+          "name": "RemoteCloudType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对端 GAWAN IP 列表</p>",
+          "example": "无",
+          "member": "GawanIp",
+          "name": "RemoteGawanIpList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EipList": {
+      "document": "加速器关联的EIP信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EIP公网IP地址",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "EIP唯一ID，长度：1-32",
+          "example": "eip-abc12345",
+          "member": "string",
+          "name": "EipId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "EIP所在地域，长度：1-32",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "EIP绑定的负载均衡ID，长度：0-32",
+          "example": "lb-abc12345",
+          "member": "string",
+          "name": "LbId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "EndpointConfigurations": {
       "document": "终端节点配置",
       "members": [
@@ -2048,6 +2473,15 @@
           "example": "tls_policy_1.0-2",
           "member": "string",
           "name": "CipherPolicyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTPS回源协议支持选择[&#39;HTTP/1.1&#39;, &#39;HTTP/2&#39;]</p><p>枚举值：</p><ul><li>HTTP/1.1： 版本HTTP/1.1</li><li>HTTP/2： 版本HTTP/2</li></ul>",
+          "example": "HTTP/2",
+          "member": "string",
+          "name": "HttpVersion",
           "required": false,
           "type": "string"
         }
@@ -2336,6 +2770,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅HTTPS回源协议支持选择[&#39;HTTP/1.1&#39;, &#39;HTTP/2&#39;]</p><p>枚举值：</p><ul><li>HTTP/1.1： 版本HTTP/1.1</li><li>HTTP/2： 版本HTTP/2</li></ul>",
+          "example": "HTTP/2",
+          "member": "string",
+          "name": "HttpVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2526,6 +2970,272 @@
       ],
       "usage": "out"
     },
+    "GAWANPathList": {
+      "document": "GAWAN通路信息，按 UserPathPolicy 维度返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>源端地域，长度：1-32</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "SrcRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目的端地域，长度：1-32</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "DstRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>正向 PathSet 信息，可选字段（Policy.ForwardPathSetId&gt;0 时返回）</p>",
+          "example": "无",
+          "member": "PathSet",
+          "name": "ForwardPathSet",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>反向 PathSet 信息，结构与 ForwardPathSet 完全一致（Policy.ReversePathSetId&gt;0 时返回）</p>",
+          "example": "无",
+          "member": "PathSet",
+          "name": "ReversePathSet",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GaproxyListenerIpDetail": {
+      "document": "gaproxy监听IP详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转发IP（GAWAN内部转发IP）",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "ForwardIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网IP",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "宿主机IP",
+          "example": "172.16.0.1",
+          "member": "string",
+          "name": "HostIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "宿主机实例ID（来自 GaproxyHost.InstanceId），长度：0-32",
+          "example": "ins-abc12345",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听端口，范围：0-65535",
+          "example": "80",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GaproxyUpstream": {
+      "document": "gaproxy上游信息（关联的转发动作及上游服务器明细）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源站地域，长度：1-32",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "OriginRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "gaproxy server 唯一ID，长度：0-32",
+          "example": "gps-abc12345",
+          "member": "string",
+          "name": "GaproxyServerId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "gaproxy location 路径，长度：0-256",
+          "example": "/",
+          "member": "string",
+          "name": "GaproxyLocation",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "gaproxy location 唯一ID，长度：0-32",
+          "example": "gploc-abc12345",
+          "member": "string",
+          "name": "GaproxyLocationId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "gaproxy upstream 唯一ID，长度：0-32",
+          "example": "gpu-abc12345",
+          "member": "string",
+          "name": "GaproxyUpstreamId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点组唯一ID（仅下车点关联时有值），长度：0-32",
+          "example": "epg-abc12345",
+          "member": "string",
+          "name": "EndpointGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "gaproxy action 唯一ID，长度：0-32",
+          "example": "gpa-abc12345",
+          "member": "string",
+          "name": "GaproxyActionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上游服务器列表，格式：address:port",
+          "example": "[\"10.0.1.1:8080\"]",
+          "member": "string",
+          "name": "UpstreamServerList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代理回源绑定IP详情列表",
+          "example": "无",
+          "member": "ProxyBindIpDetail",
+          "name": "ProxyBindIpDetailList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GawanIp": {
+      "document": "GAWAN IP 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转发IP（GAWAN内部转发IP）",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "ForwardIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网IP",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "宿主机IP",
+          "example": "172.16.0.1",
+          "member": "string",
+          "name": "HostIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "宿主机实例ID（来自 GaproxyHost.InstanceId）",
+          "example": "ins-abc12345",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GlobalAcceleratorSet": {
       "document": "全球加速实例信息",
       "members": [
@@ -2657,6 +3367,100 @@
           "name": "TagSet",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HideResponseHeaders": {
+      "document": "隐藏Header",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>key</p>",
+          "example": "key-2",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>value</p>",
+          "example": "value-2",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Instance": {
+      "document": "全球加速实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全球加速实例ID。</p>",
+          "example": "ga-dz05w9ef",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户UIN。</p>",
+          "example": "2522494550",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户APPID。</p>",
+          "example": "1253392483",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地址。</p>",
+          "example": "18.142.126.15",
+          "member": "string",
+          "name": "IpAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群唯一ID。</p>",
+          "example": "gapclu-6fqmu5b4",
+          "member": "string",
+          "name": "UniqClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群名称</p>",
+          "example": "ap-guangzhou_pre_site-1",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3161,6 +3965,15 @@
           "name": "CipherPolicyId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅HTTPS回源协议支持选择[&#39;HTTP/1.1&#39;, &#39;HTTP/2&#39;]</p><p>枚举值：</p><ul><li>HTTP/1.1： 版本HTTP/1.1</li><li>HTTP/2： 版本HTTP/2</li></ul>",
+          "example": "HTTP/2",
+          "member": "string",
+          "name": "HttpVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3256,7 +4069,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全球加速实例ID。",
+          "document": "<p>全球加速实例ID。</p>",
           "example": "ga-ask56kjh",
           "member": "string",
           "name": "GlobalAcceleratorId",
@@ -3265,7 +4078,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器ID。",
+          "document": "<p>监听器ID。</p>",
           "example": "lsr-kzjzfs7n",
           "member": "string",
           "name": "ListenerId",
@@ -3274,7 +4087,7 @@
         },
         {
           "disabled": false,
-          "document": "策略ID。",
+          "document": "<p>策略ID。</p>",
           "example": "dm-dz058e4q",
           "member": "string",
           "name": "ForwardingPolicyId",
@@ -3283,7 +4096,7 @@
         },
         {
           "disabled": false,
-          "document": "七层转发规则ID。",
+          "document": "<p>七层转发规则ID。</p>",
           "example": "rule-ioi42kxy",
           "member": "string",
           "name": "ForwardingRuleId",
@@ -3292,7 +4105,7 @@
         },
         {
           "disabled": false,
-          "document": "七层转发规则条件信息。",
+          "document": "<p>七层转发规则条件信息。</p>",
           "example": "无",
           "member": "RuleCondition",
           "name": "RuleConditions",
@@ -3301,7 +4114,7 @@
         },
         {
           "disabled": false,
-          "document": "七层转发规则行为信息。",
+          "document": "<p>七层转发规则行为信息。</p>",
           "example": "无",
           "member": "RuleAction",
           "name": "RuleActions",
@@ -3310,7 +4123,7 @@
         },
         {
           "disabled": false,
-          "document": "回源Header信息。",
+          "document": "<p>回源Header信息。</p>",
           "example": "无",
           "member": "OriginHeader",
           "name": "OriginHeaders",
@@ -3319,7 +4132,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启回源sni。",
+          "document": "<p>是否开启回源sni。</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableOriginSni",
@@ -3328,7 +4141,7 @@
         },
         {
           "disabled": false,
-          "document": "回源sni。",
+          "document": "<p>回源sni。</p>",
           "example": "hjk136",
           "member": "string",
           "name": "OriginSni",
@@ -3337,12 +4150,30 @@
         },
         {
           "disabled": false,
-          "document": "回源host。",
+          "document": "<p>回源host。</p>",
           "example": "www.aaa.com",
           "member": "string",
           "name": "OriginHost",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>源站响应头</p>",
+          "example": "无",
+          "member": "ResponseHeaders",
+          "name": "ResponseHeaders",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除源站响应头</p>",
+          "example": "无",
+          "member": "HideResponseHeaders",
+          "name": "HideResponseHeaders",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3352,7 +4183,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务ID。",
+          "document": "<p>异步任务ID。</p>",
           "example": "e1326769-29a9-43d5-8fbb-6af2e7165328",
           "member": "string",
           "name": "TaskId",
@@ -3596,6 +4427,155 @@
       ],
       "type": "object"
     },
+    "Node": {
+      "document": "节点信息（上车点/下车点）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "gaproxy端口所在地域，长度：1-32",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器唯一ID，长度：1-32",
+          "example": "lis-abc12345",
+          "member": "string",
+          "name": "ListenerId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器端口，范围：0-65535",
+          "example": "80",
+          "member": "uint64",
+          "name": "ListenerPort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器协议，可选值：TCP/UDP/HTTP/HTTPS",
+          "example": "TCP",
+          "member": "string",
+          "name": "ListenerProtocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "gaproxy端口协议，可选值：TCP/UDP/HTTP/HTTPS",
+          "example": "TCP",
+          "member": "string",
+          "name": "GaproxyProtocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "gaproxy端口唯一ID，长度：1-32",
+          "example": "gpp-abc12345",
+          "member": "string",
+          "name": "GaproxyPortId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群唯一ID，长度：1-32",
+          "example": "cls-abc12345",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称，长度：0-128",
+          "example": "cluster-gz-1",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群所在地域，长度：1-32",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ClusterRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群所在VPC的云类型，长度：0-32",
+          "example": "tencent",
+          "member": "string",
+          "name": "CloudType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "gaproxy监听IP+端口字符串列表，格式：ip:port",
+          "example": "[\"1.2.3.4:80\"]",
+          "member": "string",
+          "name": "GaproxyListenerIpList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "gaproxy监听IP详情列表",
+          "example": "无",
+          "member": "GaproxyListenerIpDetail",
+          "name": "GaproxyListenerIpDetailList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "gaproxy上游列表（关联的转发动作及上游服务器明细）",
+          "example": "无",
+          "member": "GaproxyUpstream",
+          "name": "GaproxyUpstreamList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "OriginHeader": {
       "document": "回源Header信息",
       "members": [
@@ -3620,6 +4600,95 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Path": {
+      "document": "Path 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Path 唯一ID，长度：1-32",
+          "example": "p-abc12345",
+          "member": "string",
+          "name": "PathId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平面ID，范围：0-2147483647",
+          "example": "1",
+          "member": "uint64",
+          "name": "PlaneId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平面类型，1：gaproxy类型；2：public类型(公网/wan1平面)；3：gawan类型",
+          "example": "3",
+          "member": "uint64",
+          "name": "PlaneType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨境类型，1：非跨境；2：私网跨境；3：公网跨境",
+          "example": "1",
+          "member": "uint64",
+          "name": "CrossBorderType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该 Path 包含的 Edge 列表",
+          "example": "无",
+          "member": "Edge",
+          "name": "EdgeList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PathSet": {
+      "document": "PathSet 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "PathSet 唯一ID，长度：1-32",
+          "example": "ps-abc12345",
+          "member": "string",
+          "name": "PathSetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Path 列表",
+          "example": "无",
+          "member": "Path",
+          "name": "PathList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3676,6 +4745,84 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ProxyBindIpDetail": {
+      "document": "代理回源绑定IP详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转发IP",
+          "example": "10.0.2.1",
+          "member": "string",
+          "name": "ForwardIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网IP",
+          "example": "5.6.7.8",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "宿主机IP",
+          "example": "172.16.2.1",
+          "member": "string",
+          "name": "HostIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "宿主机实例ID，长度：0-32",
+          "example": "ins-def67890",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ResponseHeaders": {
+      "document": "响应Header",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>key</p>",
+          "example": "key-1",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>value</p>",
+          "example": "value-1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

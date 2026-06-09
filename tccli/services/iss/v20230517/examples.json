@@ -1,19 +1,5 @@
 {
   "actions": {
-    "AddAITask": [
-      {
-        "document": "包含无效的通道ID",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAITask\n<公共请求参数>\n\n{\n    \"Name\": \"ai-task\",\n    \"Desc\": \"宠物识别\",\n    \"ChannelList\": [\n        \"**********************\"\n    ],\n    \"CallbackUrl\": \"http://*******\",\n    \"Templates\": [\n        {\n            \"Tag\": \"AI\",\n            \"AIConfig\": {\n                \"DetectType\": \"Pet\",\n                \"TimeInterval\": 10,\n                \"OperTimeSlot\": [\n                    {\n                        \"Start\": \"10:00:00\",\n                        \"End\": \"20:00:00\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.ContainInvalidChannelId\",\n            \"Message\": \"包含无效的通道ID\"\n        },\n        \"RequestId\": \"d380c0bc-2be1-4620-bf39-9d4d4f512060\"\n    }\n}",
-        "title": "失败示例"
-      },
-      {
-        "document": "无",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAITask\n<公共请求参数>\n\n{\n    \"Name\": \"ai-task\",\n    \"Desc\": \"宠物识别\",\n    \"ChannelList\": [\n        \"97308958-6122-4188-8c78-d5ff8010bdf7\"\n    ],\n    \"CallbackUrl\": \"http://**********\",\n    \"Templates\": [\n        {\n            \"Tag\": \"AI\",\n            \"AIConfig\": {\n                \"DetectType\": \"Pet\",\n                \"TimeInterval\": 10,\n                \"OperTimeSlot\": [\n                    {\n                        \"Start\": \"10:00:00\",\n                        \"End\": \"20:00:00\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CallbackUrl\": \"http://**********\",\n            \"ChannelList\": [\n                \"**********************\"\n            ],\n            \"CreatedTime\": \"2023-06-15 15:50:47\",\n            \"Desc\": \"宠物识别\",\n            \"Name\": \"ai-task\",\n            \"Status\": \"off\",\n            \"TaskId\": \"at**********************8\",\n            \"Templates\": [\n                {\n                    \"AIConfig\": {\n                        \"DetectType\": \"Pet\",\n                        \"OperTimeSlot\": [\n                            {\n                                \"End\": \"20:00:00\",\n                                \"Start\": \"10:00:00\"\n                            }\n                        ],\n                        \"TimeInterval\": 10\n                    },\n                    \"Tag\": \"AI\"\n                }\n            ],\n            \"UpdatedTime\": \"2023-06-15 15:50:47\"\n        },\n        \"RequestId\": \"4ea417f6-da0e-4211-9b97-6408070b9851\"\n    }\n}",
-        "title": "成功示例"
-      }
-    ],
     "AddOrganization": [
       {
         "document": " ",
@@ -194,20 +180,6 @@
         "title": "成功"
       }
     ],
-    "DeleteAITask": [
-      {
-        "document": "AI任务不存在",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAITask\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.AITaskNotExisted\",\n            \"Message\": \"AI任务不存在\"\n        },\n        \"RequestId\": \"3eb1421c-36cf-420d-8f4b-cce8f68168af\"\n    }\n}",
-        "title": "失败示例"
-      },
-      {
-        "document": "无",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAITask\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************8\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e7c7cfd4-0866-468d-a165-c9ec5837fb28\"\n    }\n}",
-        "title": "成功示例"
-      }
-    ],
     "DeleteDomain": [
       {
         "document": " ",
@@ -298,34 +270,6 @@
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound\",\n            \"Message\": \"该资源不存在\"\n        },\n        \"RequestId\": \"8f530b9c-dae9-49e7-b30a-403c9a9a2437\"\n    }\n}",
         "title": "设备不存在"
-      }
-    ],
-    "DescribeAITask": [
-      {
-        "document": "AI任务不存在",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAITask\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.AITaskNotExisted\",\n            \"Message\": \"AI任务不存在\"\n        },\n        \"RequestId\": \"da8025b4-81ee-45ac-b834-b7c0b1665c88\"\n    }\n}",
-        "title": "失败示例"
-      },
-      {
-        "document": "无",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAITask\n<公共请求参数>\n\n{\n    \"TaskId\": \"atc**********************8\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CallbackUrl\": \"http://*******\",\n            \"ChannelList\": [\n                \"**********************\"\n            ],\n            \"CreatedTime\": \"2023-06-15 15:50:47\",\n            \"Desc\": \"宠物识别\",\n            \"Name\": \"ai-task\",\n            \"Status\": \"off\",\n            \"TaskId\": \"at**********************8\",\n            \"Templates\": [\n                {\n                    \"AIConfig\": {\n                        \"DetectType\": \"Pet\",\n                        \"OperTimeSlot\": [\n                            {\n                                \"End\": \"20:00:00\",\n                                \"Start\": \"10:00:00\"\n                            }\n                        ],\n                        \"TimeInterval\": 10\n                    },\n                    \"Tag\": \"AI\"\n                }\n            ],\n            \"UpdatedTime\": \"2023-06-15 15:50:47\"\n        },\n        \"RequestId\": \"971360c6-adf5-4845-9202-fd43f13ae0ba\"\n    }\n}",
-        "title": "成功示例"
-      }
-    ],
-    "DescribeAITaskResult": [
-      {
-        "document": "AI任务不存在",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAITaskResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************1\",\n    \"ChannelId\": \"**********************\",\n    \"DetectType\": \"Pet\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.AITaskNotExisted\",\n            \"Message\": \"AI任务不存在\"\n        },\n        \"RequestId\": \"1bd31583-6bd4-486c-8ae3-1844cf4e6d1e\"\n    }\n}",
-        "title": "失败示例"
-      },
-      {
-        "document": "无",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAITaskResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************8\",\n    \"ChannelId\": \"**********************\",\n    \"DetectType\": \"Pet\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AIResultCount\": 1,\n            \"AIResults\": {\n                \"Body\": null,\n                \"Car\": null,\n                \"ChefCloth\": null,\n                \"ChefHat\": null,\n                \"FaceMask\": null,\n                \"Pet\": [\n                    {\n                        \"PetInfo\": [\n                            {\n                                \"Location\": {\n                                    \"Height\": 854,\n                                    \"Width\": 1142,\n                                    \"X\": 567,\n                                    \"Y\": 87\n                                },\n                                \"Name\": \"dog\",\n                                \"Score\": 91\n                            }\n                        ],\n                        \"Time\": \"0.000000\",\n                        \"Url\": \"https://****************************************************\"\n                    }\n                ],\n                \"PhoneCall\": null,\n                \"Smoking\": null\n            },\n            \"TaskId\": \"at**********************8\"\n        },\n        \"RequestId\": \"45e68b99-dec9-46f4-81e7-bc4a3c768536\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "成功示例"
       }
     ],
     "DescribeCNAME": [
@@ -584,20 +528,6 @@
         "title": "获取云录像下载URL和实际下载的录像时间"
       }
     ],
-    "ListAITasks": [
-      {
-        "document": "无效的分页大小",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAITasks\n<公共请求参数>\n\n{\n    \"IsContainChannelList\": true,\n    \"IsContainTemplate\": true,\n    \"PageNumber\": 1,\n    \"PageSize\": 201\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidPageSize\",\n            \"Message\": \"无效的分页大小\"\n        },\n        \"RequestId\": \"f334da88-758f-43de-a0ae-f736c9c905ff\"\n    }\n}",
-        "title": "失败示例"
-      },
-      {
-        "document": "无",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAITasks\n<公共请求参数>\n\n{\n    \"IsContainChannelList\": true,\n    \"IsContainTemplate\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"CallbackUrl\": \"http://********\",\n                    \"ChannelList\": [\n                        \"**********************\"\n                    ],\n                    \"CreatedTime\": \"2023-06-07 00:35:36\",\n                    \"Desc\": \"AI任务描述\",\n                    \"Name\": \"ai-task\",\n                    \"Status\": \"off\",\n                    \"TaskId\": \"at**********************8\",\n                    \"Templates\": [\n                        {\n                            \"AIConfig\": {\n                                \"DetectType\": \"Pet\",\n                                \"OperTimeSlot\": [\n                                    {\n                                        \"End\": \"20:00:00\",\n                                        \"Start\": \"10:00:00\"\n                                    }\n                                ],\n                                \"TimeInterval\": 10\n                            },\n                            \"Tag\": \"AI\"\n                        }\n                    ],\n                    \"UpdatedTime\": \"2023-06-07 00:35:36\"\n                }\n            ]\n        },\n        \"RequestId\": \"a9227772-9f97-4ec8-88bd-a1991b1363d4\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "成功示例"
-      }
-    ],
     "ListDeviceSnapshots": [
       {
         "document": "",
@@ -830,34 +760,6 @@
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetForbidPlayChannels\n<公共请求参数>\n\n{\n    \"UserId\": \"10********02\",\n    \"Channels\": [\n        {\n            \"ChannelId\": \"0001a415-****-****-****-b13cfb96c778\",\n            \"Enable\": true\n        },\n        {\n            \"ChannelId\": \"00037e5f-****-****-****-f30b13a86b02\",\n            \"Enable\": false\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fba7981b-d6a4-4177-b11d-e53a6110e4cd\"\n    }\n}",
         "title": "通道禁播使能"
-      }
-    ],
-    "UpdateAITask": [
-      {
-        "document": "AI任务不存在",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAITask\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************1\",\n    \"Desc\": \"宠物\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.AITaskNotExisted\",\n            \"Message\": \"AI任务不存在\"\n        },\n        \"RequestId\": \"7954b883-9141-4635-b116-4be839cfd810\"\n    }\n}",
-        "title": "失败示例"
-      },
-      {
-        "document": "无",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAITask\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************8\",\n    \"Desc\": \"宠物\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CallbackUrl\": \"http://********\",\n            \"ChannelList\": [\n                \"**********************\"\n            ],\n            \"CreatedTime\": \"2023-06-15 16:21:34\",\n            \"Desc\": \"宠物\",\n            \"Name\": \"ai-task\",\n            \"Status\": \"off\",\n            \"TaskId\": \"at**********************8\",\n            \"Templates\": [\n                {\n                    \"AIConfig\": {\n                        \"DetectType\": \"Pet\",\n                        \"OperTimeSlot\": [\n                            {\n                                \"End\": \"20:00:00\",\n                                \"Start\": \"10:00:00\"\n                            }\n                        ],\n                        \"TimeInterval\": 10\n                    },\n                    \"Tag\": \"AI\"\n                }\n            ],\n            \"UpdatedTime\": \"2023-06-15 16:21:34\"\n        },\n        \"RequestId\": \"b78d57bf-7742-4048-80c1-11709aaf14bf\"\n    }\n}",
-        "title": "成功示例"
-      }
-    ],
-    "UpdateAITaskStatus": [
-      {
-        "document": "AI任务不存在",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAITaskStatus\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************1\",\n    \"Status\": \"on\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.AITaskNotExisted\",\n            \"Message\": \"AI任务不存在\"\n        },\n        \"RequestId\": \"52909083-c1eb-4103-a49e-f6d7d078b70b\"\n    }\n}",
-        "title": "失败示例"
-      },
-      {
-        "document": "无",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAITaskStatus\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************8\",\n    \"Status\": \"on\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"38686c50-9777-4588-b7b9-c79a216cfe89\"\n    }\n}",
-        "title": "成功示例"
       }
     ],
     "UpdateDeviceOrganization": [

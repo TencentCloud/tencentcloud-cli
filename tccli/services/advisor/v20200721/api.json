@@ -794,7 +794,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "excel下载结果的唯一id，由DownloadReportFileAsync接口生成。",
+          "document": "<p>excel下载结果的唯一id，由DownloadReportFileAsync接口生成。</p>",
           "example": "-1#Group#0f7c2fac-20ee-4da9-8e71-944577bf7616",
           "member": "string",
           "name": "ResultId",
@@ -809,7 +809,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "存储扫描结果的Cos链接。",
+          "document": "<p>存储扫描结果的Cos链接。</p>",
           "example": "http://unchuguo-1259649581.cos.ap-nanjing.myqcloud.com",
           "member": "string",
           "name": "CosUrl",
@@ -819,7 +819,7 @@
         },
         {
           "disabled": false,
-          "document": "生成Excel任务执行情况: init：初始化，running：进行中，success：成功，fail：失败。",
+          "document": "<p>生成Excel任务执行情况: init：初始化，running：进行中，success：成功，fail：失败。</p>",
           "example": "success",
           "member": "string",
           "name": "TaskStatus",
@@ -829,7 +829,7 @@
         },
         {
           "disabled": false,
-          "document": "存储扫描结果pdf的Cos链接。",
+          "document": "<p>存储扫描结果pdf的Cos链接。</p>",
           "example": "http://unchuguo-1259649581.cos.ap-nanjing.myqcloud.com",
           "member": "string",
           "name": "CosUrlPdf",
