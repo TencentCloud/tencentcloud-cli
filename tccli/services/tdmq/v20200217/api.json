@@ -19286,7 +19286,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群Id。",
+          "document": "<p>集群Id。</p>",
           "example": "1000",
           "member": "string",
           "name": "ClusterId",
@@ -19296,7 +19296,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称。",
+          "document": "<p>集群名称。</p>",
           "example": "pulsar-mw4qmgaq298g",
           "member": "string",
           "name": "ClusterName",
@@ -19306,7 +19306,7 @@
         },
         {
           "disabled": false,
-          "document": "说明信息。",
+          "document": "<p>说明信息。</p>",
           "example": "devRemark",
           "member": "string",
           "name": "Remark",
@@ -19316,7 +19316,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2021-04-21 19:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -19326,7 +19326,7 @@
         },
         {
           "disabled": false,
-          "document": "集群状态，0:创建中，1:正常，2:隔离",
+          "document": "<p>集群状态，0:创建中，1:正常，2:隔离</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -19336,7 +19336,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版本",
+          "document": "<p>集群版本</p>",
           "example": "2.5.1",
           "member": "string",
           "name": "Version",
@@ -19346,7 +19346,7 @@
         },
         {
           "disabled": false,
-          "document": "节点分布情况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点分布情况</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InstanceNodeDistribution",
           "name": "NodeDistribution",
@@ -19356,7 +19356,7 @@
         },
         {
           "disabled": false,
-          "document": "最大储存容量，单位：MB",
+          "document": "<p>最大储存容量，单位：MB</p>",
           "example": "1000",
           "member": "uint64",
           "name": "MaxStorage",
@@ -19366,7 +19366,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以修改路由\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否可以修改路由</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "CanEditRoute",
@@ -19376,7 +19376,7 @@
         },
         {
           "disabled": false,
-          "document": "是否容灾集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否容灾集群</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "IsBackupTargetInstance",
@@ -19386,7 +19386,7 @@
         },
         {
           "disabled": false,
-          "document": "代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PULSAR.P1/PULSAR.P2",
           "member": "string",
           "name": "BillingLabelVersion",
@@ -19396,7 +19396,7 @@
         },
         {
           "disabled": false,
-          "document": "实例到期时间戳，毫秒级精度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例到期时间戳，毫秒级精度。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1725165113283",
           "member": "int64",
           "name": "ExpireTime",
@@ -19406,7 +19406,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自动创建主题\ntrue就是开启了，false是关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启自动创建主题<br>true就是开启了，false是关闭</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "AutoCreateTopicStatus",
@@ -19416,7 +19416,7 @@
         },
         {
           "disabled": false,
-          "document": "自动创建主题的默认分区数，如果没开启就是0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自动创建主题的默认分区数，如果没开启就是0</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "DefaultPartitionNumber",
@@ -19426,7 +19426,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义的租户别名，如果没有，会复用专业集群 ID\n",
+          "document": "<p>用户自定义的租户别名，如果没有，会复用专业集群 ID</p>",
           "example": "pulsar-mw4qmgaq298g",
           "member": "string",
           "name": "Tenant",
@@ -19436,10 +19436,30 @@
         },
         {
           "disabled": false,
-          "document": "删除保护开关标识",
+          "document": "<p>删除保护开关标识</p>",
           "example": "0",
           "member": "int64",
           "name": "DeleteProtection",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启弹性tps</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ElasticTpsEnabled",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启数据加密</p><p>枚举值：</p><ul><li>0： 关闭数据加密</li><li>1： 开启数据加密</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "EncryptionStatus",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -19452,7 +19472,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群规格名称",
+          "document": "<p>集群规格名称</p>",
           "example": "标准型",
           "member": "string",
           "name": "SpecName",
@@ -19462,7 +19482,7 @@
         },
         {
           "disabled": false,
-          "document": "峰值tps",
+          "document": "<p>峰值tps</p>",
           "example": "5000",
           "member": "uint64",
           "name": "MaxTps",
@@ -19472,7 +19492,7 @@
         },
         {
           "disabled": false,
-          "document": "峰值带宽。单位：mbps",
+          "document": "<p>峰值带宽。单位：mbps</p>",
           "example": "50",
           "member": "uint64",
           "name": "MaxBandWidth",
@@ -19482,7 +19502,7 @@
         },
         {
           "disabled": false,
-          "document": "最大命名空间个数",
+          "document": "<p>最大命名空间个数</p>",
           "example": "50",
           "member": "uint64",
           "name": "MaxNamespaces",
@@ -19492,7 +19512,7 @@
         },
         {
           "disabled": false,
-          "document": "可以创建的最大主题数",
+          "document": "<p>可以创建的最大主题数</p>",
           "example": "4000",
           "member": "uint64",
           "name": "MaxTopics",
@@ -19502,7 +19522,7 @@
         },
         {
           "disabled": false,
-          "document": "规格外弹性TPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规格外弹性TPS</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2000",
           "member": "uint64",
           "name": "ScalableTps",
@@ -19512,7 +19532,7 @@
         },
         {
           "disabled": false,
-          "document": "32或者128\n当前集群topic的最大分区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>32或者128<br>当前集群topic的最大分区数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "32",
           "member": "uint64",
           "name": "MaxPartitions",
@@ -19522,7 +19542,7 @@
         },
         {
           "disabled": false,
-          "document": "最大延迟消息数量。0代表没有限制\t",
+          "document": "<p>最大延迟消息数量。0代表没有限制</p>",
           "example": "2000000",
           "member": "int64",
           "name": "MaxDelayedMessages",
@@ -19532,7 +19552,7 @@
         },
         {
           "disabled": false,
-          "document": "可以创建的最大主题分区数",
+          "document": "<p>可以创建的最大主题分区数</p>",
           "example": "1",
           "member": "int64",
           "name": "MaxTopicsPartitioned",
@@ -19542,7 +19562,7 @@
         },
         {
           "disabled": false,
-          "document": "单broker最大链接数",
+          "document": "<p>单broker最大链接数</p>",
           "example": "1",
           "member": "int64",
           "name": "BrokerMaxConnections",
@@ -19552,7 +19572,7 @@
         },
         {
           "disabled": false,
-          "document": "单IP最大链接数",
+          "document": "<p>单IP最大链接数</p>",
           "example": "1",
           "member": "int64",
           "name": "BrokerMaxConnectionsPerIp",
@@ -19562,10 +19582,20 @@
         },
         {
           "disabled": false,
-          "document": "弹性存储集群最大存储规格；固定存储该值为0",
+          "document": "<p>弹性存储集群最大存储规格；固定存储该值为0</p>",
           "example": "1",
           "member": "int64",
           "name": "MaximumElasticStorage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前集群可使用的全量TPS，包括弹性TPS</p>",
+          "example": "2000",
+          "member": "int64",
+          "name": "TotalTps",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -25767,7 +25797,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -25777,7 +25807,7 @@
           "example": "无",
           "member": "SaleZone",
           "name": "Zones",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -25787,7 +25817,7 @@
           "example": "100",
           "member": "uint64",
           "name": "MaxStorage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -25797,7 +25827,7 @@
           "example": "10000",
           "member": "uint64",
           "name": "MinStorage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -25807,7 +25837,7 @@
           "example": "true",
           "member": "bool",
           "name": "Available",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         }
@@ -25819,23 +25849,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区ID",
+          "document": "<p>可用区ID</p>",
           "example": "100001",
           "member": "uint64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该可用区可售商品配置",
+          "document": "<p>该可用区可售商品配置</p>",
           "example": "无",
           "member": "SaleZoneProduct",
           "name": "Products",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为推荐可用区，true=推荐，购买页优先展示</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Recommend",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -25849,7 +25889,7 @@
           "example": "basic_1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25859,7 +25899,7 @@
           "example": "20",
           "member": "uint64",
           "name": "MaxNodes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -25869,7 +25909,7 @@
           "example": "10",
           "member": "uint64",
           "name": "MinNodes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -25879,7 +25919,7 @@
           "example": "false",
           "member": "bool",
           "name": "SoldOut",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -25889,7 +25929,7 @@
           "example": "2",
           "member": "int64",
           "name": "SingleMinNodes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -25899,7 +25939,7 @@
           "example": "10",
           "member": "int64",
           "name": "SingleMaxNodes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }

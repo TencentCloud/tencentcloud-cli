@@ -168,6 +168,22 @@
         "title": "查看七层转发规则"
       }
     ],
+    "DescribeGlobalAcceleratorAclPolicies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalAcceleratorAclPolicies\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GlobalAcceleratorAclPolicySet\": [\n            {\n                \"DefaultAction\": \"ACCEPT\",\n                \"GlobalAcceleratorAclPolicyId\": \"sp-00000msz\",\n                \"Status\": \"OPEN\"\n            }\n        ],\n        \"RequestId\": \"72b61d0e-a0c8-4db9-b069-6a85b80cea9d\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查看访问控制策略"
+      }
+    ],
+    "DescribeGlobalAcceleratorAclRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalAcceleratorAclRules\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorAclPolicyId\": \"sp-dz058gbb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GlobalAcceleratorAclRuleSet\": [\n            {\n                \"Policy\": \"ACCEPT\",\n                \"Description\": \"desc\",\n                \"GlobalAcceleratorAclRuleId\": \"sr-00000msx\",\n                \"GlobalAcceleratorPolicyId\": \"sp-dz058gbb\",\n                \"Port\": \"22\",\n                \"Protocol\": \"UDP\",\n                \"SourceCidrBlock\": \"10.0.0.0/16\"\n            },\n            {\n                \"Policy\": \"ACCEPT\",\n                \"Description\": \"\",\n                \"GlobalAcceleratorAclRuleId\": \"sr-dz058gb9\",\n                \"GlobalAcceleratorPolicyId\": \"sp-dz058gbb\",\n                \"Port\": \"21\",\n                \"Protocol\": \"TCP\",\n                \"SourceCidrBlock\": \"11.0.0.0/16\"\n            },\n            {\n                \"Policy\": \"ACCEPT\",\n                \"Description\": \"desc\",\n                \"GlobalAcceleratorAclRuleId\": \"sr-io46vtld\",\n                \"GlobalAcceleratorPolicyId\": \"sp-dz058gbb\",\n                \"Port\": \"21\",\n                \"Protocol\": \"TCP\",\n                \"SourceCidrBlock\": \"11.0.0.0/16\"\n            }\n        ],\n        \"RequestId\": \"9f9b10e7-8036-47b7-a5d6-9a43cb758021\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "查看ACL规则"
+      }
+    ],
     "DescribeGlobalAccelerators": [
       {
         "document": "",

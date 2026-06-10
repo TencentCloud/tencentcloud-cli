@@ -31674,63 +31674,66 @@
       "members": [
         {
           "disabled": false,
-          "document": "租户appid",
-          "example": " 1251707795",
+          "document": "<p>租户appid</p>",
+          "example": "1251707795",
           "member": "uint64",
           "name": "AppId",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
-          "document": "租户主账号uin",
-          "example": " 100023202157",
+          "document": "<p>租户主账号uin</p>",
+          "example": "100023202157",
           "member": "string",
           "name": "Uin",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "租户vpcid",
-          "example": " vpc-xxx",
+          "document": "<p>租户vpcid</p>",
+          "example": "vpc-qahabi6l",
           "member": "string",
           "name": "UniqVpcId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "租户子网ID",
-          "example": " subnet-xxx",
+          "document": "<p>租户子网ID</p>",
+          "example": "subnet-oiqqt70s",
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "集群内单节点最大网卡限额",
-          "example": " 1",
+          "document": "<p>集群内单节点最大网卡限额</p>",
+          "example": "1",
           "member": "int64",
           "name": "ENILimit",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
-          "document": "跨租户网卡所要使用的网卡名称，与独占网卡模式共存时必填",
+          "document": "<p>跨租户网卡所要使用的网卡名称，与独占网卡模式共存时必填</p>",
           "example": "eth1",
           "member": "string",
           "name": "IfName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>跨租户网卡功能使用方的业务简称</p>",
+          "example": "tke",
+          "member": "string",
+          "name": "Business",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

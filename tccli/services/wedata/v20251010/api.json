@@ -40134,7 +40134,17 @@
     },
     "GetUserHintStatusRequest": {
       "document": "GetUserHintStatus请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID</p>",
+          "example": "12",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "GetUserHintStatusResponse": {
@@ -40142,7 +40152,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否进行hint提示的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否进行hint提示的状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UserHintStatus",
           "name": "Data",

@@ -18857,10 +18857,19 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群级别</p>",
+          "example": "L1",
+          "member": "string",
+          "name": "ClusterLevel",
           "required": false,
           "type": "string"
         }
@@ -18872,7 +18881,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Serverless实例可选规格",
+          "document": "<p>Serverless实例可选规格</p>",
           "example": "无",
           "member": "ServerlessSpec",
           "name": "Specs",

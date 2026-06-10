@@ -2532,7 +2532,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据集名称，不超过60个字符，仅支持中英文、数字、下划线\"_\"、短横\"-\"，只能以中英文、数字开头",
+          "document": "<p>数据集名称，不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>",
           "example": "Voc2017",
           "member": "string",
           "name": "DatasetName",
@@ -2541,8 +2541,17 @@
         },
         {
           "disabled": false,
-          "document": "数据集类型:\nTYPE_DATASET_TEXT，文本\nTYPE_DATASET_IMAGE，图片\nTYPE_DATASET_TABLE，表格\nTYPE_DATASET_OTHER，其他",
-          "example": "TYPE_DATASET_TEXT",
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据集类型</p><p>枚举值：</p><ul><li>TYPE_DATASET_IMAGE： 图片</li><li>TYPE_DATASET_LLM： 大模型</li><li>TYPE_DATASET_TABLE： 表格</li><li>TYPE_DATASET_OTHER： 其他</li></ul>",
+          "example": "TYPE_DATASET_IMAGE",
           "member": "string",
           "name": "DatasetType",
           "required": false,
@@ -2550,7 +2559,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源cos路径",
+          "document": "<p>数据源cos路径</p>",
           "example": "无",
           "member": "CosPathInfo",
           "name": "StorageDataPath",
@@ -2559,7 +2568,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集标签cos存储路径",
+          "document": "<p>数据集标签cos存储路径</p>",
           "example": "无",
           "member": "CosPathInfo",
           "name": "StorageLabelPath",
@@ -2568,7 +2577,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集标签",
+          "document": "<p>数据集标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "DatasetTags",
@@ -2577,7 +2586,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集标注状态:\nSTATUS_NON_ANNOTATED，未标注\nSTATUS_ANNOTATED，已标注",
+          "document": "<p>数据集标注状态</p><p>枚举值：</p><ul><li>STATUS_NON_ANNOTATED： 未标注</li><li>STATUS_ANNOTATED： 已标注</li></ul>",
           "example": "STATUS_ANNOTATED",
           "member": "string",
           "name": "AnnotationStatus",
@@ -2586,7 +2595,7 @@
         },
         {
           "disabled": false,
-          "document": "标注类型:\nANNOTATION_TYPE_CLASSIFICATION，图片分类\nANNOTATION_TYPE_DETECTION，目标检测\nANNOTATION_TYPE_SEGMENTATION，图片分割\nANNOTATION_TYPE_TRACKING，目标跟踪\nANNOTATION_TYPE_OCR，OCR\nANNOTATION_TYPE_TEXT_CLASSIFICATION，文本分类",
+          "document": "<p>标注类型</p><p>枚举值：</p><ul><li>ANNOTATION_TYPE_CLASSIFICATION： 图片分类</li><li>ANNOTATION_TYPE_DETECTION： 目标检测</li><li>ANNOTATION_TYPE_SEGMENTATION： 图片分割</li><li>ANNOTATION_TYPE_TRACKING： 目标跟踪</li><li>ANNOTATION_TYPE_OCR： OCR</li></ul>",
           "example": "ANNOTATION_TYPE_DETECTION",
           "member": "string",
           "name": "AnnotationType",
@@ -2595,8 +2604,8 @@
         },
         {
           "disabled": false,
-          "document": "标注格式:\nANNOTATION_FORMAT_TI，TI平台格式\nANNOTATION_FORMAT_PASCAL，Pascal Voc\nANNOTATION_FORMAT_COCO，COCO\nANNOTATION_FORMAT_FILE，文件目录结构\nANNOTATION_FORMAT_TEXT_TI，文本类型TI平台格式\nANNOTATION_FORMAT_TXT，文本类型TXT格式\nANNOTATION_FORMAT_CSV，文本类型CSV格式\nANNOTATION_FORMAT_JSON，文本类型JSON格式",
-          "example": "VOC",
+          "document": "<p>标注格式</p><p>枚举值：</p><ul><li>ANNOTATION_FORMAT_TI： TI-ONE平台格式</li><li>ANNOTATION_FORMAT_PASCAL： Pascal Voc格式</li><li>ANNOTATION_FORMAT_COCO： COCO格式</li><li>ANNOTATION_FORMAT_FILE： 文件目录结构</li></ul>",
+          "example": "ANNOTATION_FORMAT_TI",
           "member": "string",
           "name": "AnnotationFormat",
           "required": false,
@@ -2604,7 +2613,7 @@
         },
         {
           "disabled": false,
-          "document": "表头信息",
+          "document": "<p>表头信息</p>",
           "example": "无",
           "member": "SchemaInfo",
           "name": "SchemaInfos",
@@ -2613,7 +2622,7 @@
         },
         {
           "disabled": false,
-          "document": "数据是否存在表头",
+          "document": "<p>数据是否存在表头</p>",
           "example": "true",
           "member": "bool",
           "name": "IsSchemaExisted",
@@ -2622,7 +2631,7 @@
         },
         {
           "disabled": false,
-          "document": "导入文件粒度\nTYPE_TEXT_LINE，按行\nTYPE_TEXT_FILE，按文件",
+          "document": "<p>导入文件粒度</p><p>枚举值：</p><ul><li>TYPE_TEXT_LINE： 按行</li><li>TYPE_TEXT_FILE： 按文件</li></ul>",
           "example": "TYPE_TEXT_LINE",
           "member": "string",
           "name": "ContentType",
@@ -2631,7 +2640,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集建模一级类别。LLM,CV,STRUCTURE,OTHER",
+          "document": "<p>数据集建模一级类别</p><p>枚举值：</p><ul><li>LLM： 大模型建模</li><li>CV： 传统CV建模</li><li>STRUCTURE： 大数据建模</li><li>OTHER： 其它</li></ul>",
           "example": "LLM",
           "member": "string",
           "name": "DatasetScene",
@@ -2640,7 +2649,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集标签。",
+          "document": "<p>数据集标签。</p>",
           "example": "[\"string\"]",
           "member": "string",
           "name": "SceneTags",
@@ -2649,7 +2658,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集CFS配置。仅支持LLM场景",
+          "document": "<p>数据集CFS配置。仅支持LLM场景</p>",
           "example": "无",
           "member": "CFSConfig",
           "name": "CFSConfig",
@@ -2664,7 +2673,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据集ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rodftu04veo",
           "member": "string",
           "name": "DatasetId",
@@ -7659,6 +7668,15 @@
           "member": "string",
           "name": "Service",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
           "type": "string"
         },
         {

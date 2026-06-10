@@ -3500,18 +3500,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签来源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "uint64",
-          "name": "Source",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "标签ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "示例值",
           "member": "string",
           "name": "AttrBizId",
           "output_required": false,
@@ -3521,7 +3511,7 @@
         {
           "disabled": false,
           "document": "标签标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "示例值",
           "member": "string",
           "name": "AttrKey",
           "output_required": false,
@@ -3531,7 +3521,7 @@
         {
           "disabled": false,
           "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "示例值",
           "member": "string",
           "name": "AttrName",
           "output_required": false,
@@ -3546,6 +3536,16 @@
           "name": "Labels",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Source",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -13673,7 +13673,7 @@
         {
           "disabled": false,
           "document": "标签ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "示例值",
           "member": "string",
           "name": "LabelBizId",
           "output_required": false,
@@ -13683,7 +13683,7 @@
         {
           "disabled": false,
           "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "示例值",
           "member": "string",
           "name": "LabelName",
           "output_required": false,
@@ -14729,6 +14729,15 @@
           "name": "UpdateTime",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档来源</p><p>枚举值：</p><ul><li>0： 本地导入</li><li>1： 网页导入</li><li>2： 腾讯文档</li><li>3： 用户cos</li><li>20： iwiki</li><li>21： tapd</li></ul>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Source",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -22386,10 +22395,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>开始时间</p><p>参数格式：YYYY-MM-DDThh:mm:ssZ</p>",
-          "example": "2026-04-22T00:00:00+08:00",
+          "document": "<p>结束时间</p><p>参数格式：YYYY-MM-DDThh:mm:ssZ</p>",
+          "example": "2026-05-19T23:59:59+08:00",
           "member": "string",
-          "name": "Start",
+          "name": "End",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -22397,10 +22406,10 @@
         },
         {
           "disabled": false,
-          "document": "<p>结束时间</p><p>参数格式：YYYY-MM-DDThh:mm:ssZ</p>",
-          "example": "2026-05-19T23:59:59+08:00",
+          "document": "<p>开始时间</p><p>参数格式：YYYY-MM-DDThh:mm:ssZ</p>",
+          "example": "2026-04-22T00:00:00+08:00",
           "member": "string",
-          "name": "End",
+          "name": "Start",
           "output_required": false,
           "required": false,
           "type": "string",

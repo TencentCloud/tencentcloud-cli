@@ -8822,7 +8822,17 @@
     },
     "DescribeZonesRequest": {
       "document": "DescribeZones请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例存储类型，根据磁盘类型返回支持的可用区</p><p>枚举值：</p><ul><li>PHYSICAL_LOCAL_SSD： 物理机本地ssd硬盘</li><li>CLOUD_PREMIUM： 高性能云硬盘</li><li>CLOUD_SSD： ssd云硬盘</li><li>CLOUD_HSSD： 增强型ssd云硬盘</li></ul><p>默认值：PHYSICAL_LOCAL_SSD</p>",
+          "example": "PHYSICAL_LOCAL_SSD",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeZonesResponse": {
@@ -8830,7 +8840,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的结果数量。",
+          "document": "<p>返回的结果数量。</p>",
           "example": "3",
           "member": "int64",
           "name": "TotalCount",
@@ -8840,7 +8850,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区信息集合。",
+          "document": "<p>可用区信息集合。</p>",
           "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneSet",

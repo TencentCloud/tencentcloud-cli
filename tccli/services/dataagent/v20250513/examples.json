@@ -19,7 +19,7 @@
     "ChatAI": [
       {
         "document": "DataAgent问答",
-        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatAI\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-hLhMpd0H\",\n    \"SessionId\": \"cabb4c9c-4c4f-45c9-94fc-b3061e503176\",\n    \"Model\": \"hunyuan\",\n    \"Question\": \"what are you doing ?\",\n    \"DeepThinking\": true,\n    \"Context\": \"{\\\"KnowledgeBases\\\":[{\\\"KnowledgeBaseId\\\":\\\"klbase-kSnxNtvrXI\\\",\\\"FileIds\\\":[],\\\"Databases\\\":[{\\\"MCP\\\":{\\\"DataSourceId\\\":\\\"datasource_tchoused_example\\\"},\\\"DbTables\\\":[]}]}],\\\"WhiteList\\\":[]}\"\n}",
+        "input": "POST / HTTP/1.1\nHost: dataagent.ai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatAI\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-hLhMpd0H\",\n    \"SessionId\": \"cabb4c9c-4c4f-45c9-94fc-b3061e503176\",\n    \"Model\": \"hunyuan\",\n    \"Question\": \"what are you doing ?\",\n    \"DeepThinking\": true,\n    \"Context\": \"{\\\"KnowledgeBases\\\":[{\\\"KnowledgeBaseId\\\":\\\"klbase-kSnxNtvrXI\\\",\\\"FileIds\\\":[],\\\"Databases\\\":[{\\\"MCP\\\":{\\\"DataSourceId\\\":\\\"datasource_tchoused_example\\\"},\\\"DbTables\\\":[]}]}],\\\"WhiteList\\\":[]}\"\n}",
         "output": "{\n  \"v\": \"I'm here and ready to assist you with any data-related questions or tasks you might have!\"\n}",
         "title": "DataAgent问答"
       }
