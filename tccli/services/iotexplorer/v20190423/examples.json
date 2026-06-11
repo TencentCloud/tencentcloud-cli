@@ -250,6 +250,14 @@
         "title": "创建设备通道示例"
       }
     ],
+    "CreateDevicePublishSDPAnswer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDevicePublishSDPAnswer\n<公共请求参数>\n\n{\n    \"ProductId\": \"NKG9ORH8VF\",\n    \"DeviceName\": \"nandy_dev_trtc3\",\n    \"SDPOffer\": \"v=0\\\\r\\\\no=- 1234567890 2 IN IP4 127.0.0.1\\\\r\\\\ns=-\\\\r\\\\nt=0 0\\\\r\\\\na=group:BUNDLE 0\\\\r\\\\na=msid-semantic: WMS\\\\r\\\\nm=audio 9 UDP/TLS/RTP/SAVPF 111\\\\r\\\\nc=IN IP4 0.0.0.0\\\\r\\\\na=rtcp:9 IN IP4 0.0.0.0\\\\r\\\\na=ice-ufrag:abcd\\\\r\\\\na=ice-pwd:efghijklmnop\\\\r\\\\na=fingerprint:sha-256 00:11:22:33:44:55:66:77:88:99:AA:BB:CC:DD:EE:FF:00:11:22:33:44:55:66:77:88:99:AA:BB:CC:DD:EE:FF\\\\r\\\\na=setup:actpass\\\\r\\\\na=mid:0\\\\r\\\\na=sendrecv\\\\r\\\\na=rtcp-mux\\\\r\\\\na=\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SDPAnswer\": \"v=0\\r\\no=- 0 0 IN IP4 127.0.0.1\\r\\ns=mock\\r\\nt=0 0\\r\\n\",\n        \"RequestId\": \"6f1c2470-d805-4270-9494-597182d6cf72\"\n    }\n}",
+        "title": "测试创建设备推流SDP请求"
+      }
+    ],
     "CreateDeviceSDPAnswer": [
       {
         "document": "",
@@ -534,6 +542,14 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=DeleteDevice\n&ProductId=KO9JAFB9W5\n&DeviceName=dev\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ResultCode\": \"fail\",\n        \"ResultMessage\": \"device has binded family\",\n        \"RequestId\": \"3edc-7ujm-89jfa\"\n    }\n}",
         "title": "删除设备"
+      }
+    ],
+    "DeleteDeviceSDP": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeviceSDP\n<公共请求参数>\n\n{\n    \"ProductId\": \"NKG9ORH8VF\",\n    \"DeviceName\": \"nandy_dev_trtc3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ccb9d872-309f-4c20-aa8b-f215461627ed\"\n    }\n}",
+        "title": "测试删除设备SDP请求"
       }
     ],
     "DeleteDevices": [

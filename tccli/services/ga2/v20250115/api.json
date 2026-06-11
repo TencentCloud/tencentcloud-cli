@@ -546,7 +546,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全球加速实例ID。",
+          "document": "<p>全球加速实例ID。</p>",
           "example": "ga-ask56kjh",
           "member": "string",
           "name": "GlobalAcceleratorId",
@@ -555,7 +555,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器ID。",
+          "document": "<p>监听器ID。</p>",
           "example": "lsr-kzjzfs7n",
           "member": "string",
           "name": "ListenerId",
@@ -564,7 +564,7 @@
         },
         {
           "disabled": false,
-          "document": "策略ID。",
+          "document": "<p>策略ID。</p>",
           "example": "dm-dz058e4q",
           "member": "string",
           "name": "ForwardingPolicyId",
@@ -573,7 +573,7 @@
         },
         {
           "disabled": false,
-          "document": "七层转发规则条件信息。",
+          "document": "<p>七层转发规则条件信息。</p>",
           "example": "无",
           "member": "RuleCondition",
           "name": "RuleConditions",
@@ -582,7 +582,7 @@
         },
         {
           "disabled": false,
-          "document": "七层转发规则行为信息。",
+          "document": "<p>七层转发规则行为信息。</p>",
           "example": "无",
           "member": "RuleAction",
           "name": "RuleActions",
@@ -591,7 +591,7 @@
         },
         {
           "disabled": false,
-          "document": "回源Header信息。",
+          "document": "<p>回源Header信息。</p>",
           "example": "无",
           "member": "OriginHeader",
           "name": "OriginHeaders",
@@ -600,8 +600,8 @@
         },
         {
           "disabled": false,
-          "document": "是否开启回源sni。",
-          "example": "True",
+          "document": "<p>是否开启回源sni。</p>",
+          "example": "true",
           "member": "bool",
           "name": "EnableOriginSni",
           "required": false,
@@ -609,8 +609,8 @@
         },
         {
           "disabled": false,
-          "document": "回源sni。",
-          "example": "无",
+          "document": "<p>回源sni。</p>",
+          "example": "/sfsed",
           "member": "string",
           "name": "OriginSni",
           "required": false,
@@ -618,12 +618,30 @@
         },
         {
           "disabled": false,
-          "document": "回源host。",
-          "example": "无",
+          "document": "<p>回源host。</p>",
+          "example": "www.ddd.com",
           "member": "string",
           "name": "OriginHost",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>源站响应头</p>",
+          "example": "无",
+          "member": "ResponseHeaders",
+          "name": "ResponseHeaders",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除源站响应头</p>",
+          "example": "无",
+          "member": "HideResponseHeaders",
+          "name": "HideResponseHeaders",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -633,7 +651,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务ID。",
+          "document": "<p>异步任务ID。</p>",
           "example": "e1326769-29a9-43d5-8fbb-6af2e7165328",
           "member": "string",
           "name": "TaskId",
@@ -643,7 +661,7 @@
         },
         {
           "disabled": false,
-          "document": "七层转发规则ID。",
+          "document": "<p>七层转发规则ID。</p>",
           "example": "rule-kfn3oc78",
           "member": "string",
           "name": "ForwardingRuleId",
@@ -889,6 +907,15 @@
           "name": "ClientCaCertificates",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTPS监听器支持选择版本</p><p>枚举值：</p><ul><li>HTTP/1.1： HTTP/1.1</li><li>HTTP/2： HTTP/2</li></ul>",
+          "example": "HTTP/2",
+          "member": "string",
+          "name": "HttpVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2041,6 +2068,15 @@
           "name": "CipherPolicyId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTPS回源协议支持选择[&#39;HTTP/1.1&#39;, &#39;HTTP/2&#39;]</p><p>枚举值：</p><ul><li>HTTP/1.1： 版本HTTP/1.1</li><li>HTTP/2： 版本HTTP/2</li></ul>",
+          "example": "HTTP/2",
+          "member": "string",
+          "name": "HttpVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2324,6 +2360,16 @@
           "example": "tls_policy_1.1-2",
           "member": "string",
           "name": "CipherPolicyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅HTTPS回源协议支持选择[&#39;HTTP/1.1&#39;, &#39;HTTP/2&#39;]</p><p>枚举值：</p><ul><li>HTTP/1.1： 版本HTTP/1.1</li><li>HTTP/2： 版本HTTP/2</li></ul>",
+          "example": "HTTP/2",
+          "member": "string",
+          "name": "HttpVersion",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2652,6 +2698,34 @@
         }
       ],
       "usage": "out"
+    },
+    "HideResponseHeaders": {
+      "document": "隐藏Header",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>key</p>",
+          "example": "key-2",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>value</p>",
+          "example": "value-2",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "IpAddressInfoSet": {
       "document": "加速地域公网IP信息",
@@ -3152,6 +3226,15 @@
           "name": "CipherPolicyId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅HTTPS回源协议支持选择[&#39;HTTP/1.1&#39;, &#39;HTTP/2&#39;]</p><p>枚举值：</p><ul><li>HTTP/1.1： 版本HTTP/1.1</li><li>HTTP/2： 版本HTTP/2</li></ul>",
+          "example": "HTTP/2",
+          "member": "string",
+          "name": "HttpVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3247,7 +3330,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全球加速实例ID。",
+          "document": "<p>全球加速实例ID。</p>",
           "example": "ga-ask56kjh",
           "member": "string",
           "name": "GlobalAcceleratorId",
@@ -3256,7 +3339,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器ID。",
+          "document": "<p>监听器ID。</p>",
           "example": "lsr-kzjzfs7n",
           "member": "string",
           "name": "ListenerId",
@@ -3265,7 +3348,7 @@
         },
         {
           "disabled": false,
-          "document": "策略ID。",
+          "document": "<p>策略ID。</p>",
           "example": "dm-dz058e4q",
           "member": "string",
           "name": "ForwardingPolicyId",
@@ -3274,7 +3357,7 @@
         },
         {
           "disabled": false,
-          "document": "七层转发规则ID。",
+          "document": "<p>七层转发规则ID。</p>",
           "example": "rule-ioi42kxy",
           "member": "string",
           "name": "ForwardingRuleId",
@@ -3283,7 +3366,7 @@
         },
         {
           "disabled": false,
-          "document": "七层转发规则条件信息。",
+          "document": "<p>七层转发规则条件信息。</p>",
           "example": "无",
           "member": "RuleCondition",
           "name": "RuleConditions",
@@ -3292,7 +3375,7 @@
         },
         {
           "disabled": false,
-          "document": "七层转发规则行为信息。",
+          "document": "<p>七层转发规则行为信息。</p>",
           "example": "无",
           "member": "RuleAction",
           "name": "RuleActions",
@@ -3301,7 +3384,7 @@
         },
         {
           "disabled": false,
-          "document": "回源Header信息。",
+          "document": "<p>回源Header信息。</p>",
           "example": "无",
           "member": "OriginHeader",
           "name": "OriginHeaders",
@@ -3310,7 +3393,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启回源sni。",
+          "document": "<p>是否开启回源sni。</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableOriginSni",
@@ -3319,7 +3402,7 @@
         },
         {
           "disabled": false,
-          "document": "回源sni。",
+          "document": "<p>回源sni。</p>",
           "example": "hjk136",
           "member": "string",
           "name": "OriginSni",
@@ -3328,12 +3411,30 @@
         },
         {
           "disabled": false,
-          "document": "回源host。",
+          "document": "<p>回源host。</p>",
           "example": "www.aaa.com",
           "member": "string",
           "name": "OriginHost",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>源站响应头</p>",
+          "example": "无",
+          "member": "ResponseHeaders",
+          "name": "ResponseHeaders",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除源站响应头</p>",
+          "example": "无",
+          "member": "HideResponseHeaders",
+          "name": "HideResponseHeaders",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3343,7 +3444,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务ID。",
+          "document": "<p>异步任务ID。</p>",
           "example": "e1326769-29a9-43d5-8fbb-6af2e7165328",
           "member": "string",
           "name": "TaskId",
@@ -3667,6 +3768,34 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ResponseHeaders": {
+      "document": "响应Header",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>key</p>",
+          "example": "key-1",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>value</p>",
+          "example": "value-1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

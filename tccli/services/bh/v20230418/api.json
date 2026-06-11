@@ -1645,7 +1645,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用资产id",
+          "document": "<p>应用资产id</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -1655,7 +1655,7 @@
         },
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "ext-asset",
           "member": "string",
           "name": "InstanceId",
@@ -1665,7 +1665,7 @@
         },
         {
           "disabled": false,
-          "document": "资产名称",
+          "document": "<p>资产名称</p>",
           "example": "运维web应用",
           "member": "string",
           "name": "Name",
@@ -1675,7 +1675,7 @@
         },
         {
           "disabled": false,
-          "document": "应用服务器id",
+          "document": "<p>应用服务器id</p>",
           "example": "1",
           "member": "uint64",
           "name": "DeviceId",
@@ -1685,7 +1685,7 @@
         },
         {
           "disabled": false,
-          "document": "应用服务器账号id",
+          "document": "<p>应用服务器账号id</p>",
           "example": "1",
           "member": "uint64",
           "name": "DeviceAccountId",
@@ -1695,7 +1695,7 @@
         },
         {
           "disabled": false,
-          "document": "应用资产类型。1-web应用",
+          "document": "<p>应用资产类型。1-web应用</p>",
           "example": "1",
           "member": "uint64",
           "name": "Kind",
@@ -1705,7 +1705,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端工具路径",
+          "document": "<p>客户端工具路径</p>",
           "example": "C:\\Chrome\\chrome.exe",
           "member": "string",
           "name": "ClientAppPath",
@@ -1715,7 +1715,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端工具类型",
+          "document": "<p>客户端工具类型</p>",
           "example": "chrome",
           "member": "string",
           "name": "ClientAppKind",
@@ -1725,7 +1725,7 @@
         },
         {
           "disabled": false,
-          "document": "应用资产url",
+          "document": "<p>应用资产url</p>",
           "example": "https://www.bhasset.com",
           "member": "string",
           "name": "Url",
@@ -1735,7 +1735,7 @@
         },
         {
           "disabled": false,
-          "document": "托管状态。0-未托管，1-已托管",
+          "document": "<p>托管状态</p><p>枚举值：</p><ul><li>0： 未托管</li><li>1： 已托管</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "BindStatus",
@@ -1745,7 +1745,7 @@
         },
         {
           "disabled": false,
-          "document": "应用服务器实例id",
+          "document": "<p>应用服务器实例id</p>",
           "example": "ins-1a2b3c",
           "member": "string",
           "name": "DeviceInstanceId",
@@ -1755,7 +1755,7 @@
         },
         {
           "disabled": false,
-          "document": "应用服务器名称",
+          "document": "<p>应用服务器名称</p>",
           "example": "运维主机",
           "member": "string",
           "name": "DeviceName",
@@ -1765,7 +1765,7 @@
         },
         {
           "disabled": false,
-          "document": "应用服务器账号名称",
+          "document": "<p>应用服务器账号名称</p>",
           "example": "admin",
           "member": "string",
           "name": "DeviceAccountName",
@@ -1775,7 +1775,7 @@
         },
         {
           "disabled": false,
-          "document": "堡垒机实例id",
+          "document": "<p>堡垒机实例id</p>",
           "example": "bh-saas-1a2v3s",
           "member": "string",
           "name": "ResourceId",
@@ -1785,8 +1785,8 @@
         },
         {
           "disabled": false,
-          "document": "堡垒机实例信息",
-          "example": "{\"ResourceId\":\"bh-saas-1a2v3s\"}",
+          "document": "<p>堡垒机实例信息</p>",
+          "example": "无",
           "member": "Resource",
           "name": "Resource",
           "output_required": false,
@@ -1795,7 +1795,7 @@
         },
         {
           "disabled": false,
-          "document": "网络域id",
+          "document": "<p>网络域id</p>",
           "example": "net-default",
           "member": "string",
           "name": "DomainId",
@@ -1805,7 +1805,7 @@
         },
         {
           "disabled": false,
-          "document": "网络域名称",
+          "document": "<p>网络域名称</p>",
           "example": "default network domain",
           "member": "string",
           "name": "DomainName",
@@ -1815,8 +1815,8 @@
         },
         {
           "disabled": false,
-          "document": "资产组信息",
-          "example": "[{\"Id\":1,\"Name\":\"运维组\"}]",
+          "document": "<p>资产组信息</p>",
+          "example": "无",
           "member": "Group",
           "name": "GroupSet",
           "output_required": false,
@@ -1825,12 +1825,102 @@
         },
         {
           "disabled": false,
-          "document": "资产所属部门",
-          "example": "{\"id\":1,\"Name\":\"运维部门\"}\t",
+          "document": "<p>资产所属部门</p>",
+          "example": "无",
           "member": "Department",
           "name": "Department",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号数量</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "AccountCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>代填类型</p><p>枚举值：</p><ul><li>0： 不支持代填</li><li>1： 元素定位代填</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AgentInputType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动提交</p><p>枚举值：</p><ul><li>0： 不自动提交</li><li>1： 自动提交</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AgentInputSubmit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名输入框选择器类型</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>",
+          "example": "name",
+          "member": "string",
+          "name": "UserNameType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名输入框选择器属性</p>",
+          "example": "username",
+          "member": "string",
+          "name": "UserNameValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密码输入框选择器类型</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>",
+          "example": "name",
+          "member": "string",
+          "name": "PasswordType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密码输入框选择器属性</p>",
+          "example": "password",
+          "member": "string",
+          "name": "PasswordValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>提交按钮选择器类型，为空表示不支持自动提交</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>",
+          "example": "name",
+          "member": "string",
+          "name": "SubmitType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>提交按钮选择器属性值</p>",
+          "example": "submit",
+          "member": "string",
+          "name": "SubmitValue",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

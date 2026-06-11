@@ -140,8 +140,15 @@
       "output": "CreateDeviceChannelResponse",
       "status": "online"
     },
+    "CreateDevicePublishSDPAnswer": {
+      "document": "创建设备推流SDP应答，此接口调用前需要先调用CreateDeviceSDPAnswer接口以保证设备处于拉流状态，接口返回是另外一路webrtc推流SDP信息，可以用来进行标准的WHIP推流",
+      "input": "CreateDevicePublishSDPAnswerRequest",
+      "name": "创建设备推流SDP应答",
+      "output": "CreateDevicePublishSDPAnswerResponse",
+      "status": "online"
+    },
     "CreateDeviceSDPAnswer": {
-      "document": "创建设备SDP应答",
+      "document": "创建设备SDP应答，调用此接口后，后台会对传入参数的设备进行拉流，并返回webrtc answer SDP返回，可以进行WHEP协议拉流。",
       "input": "CreateDeviceSDPAnswerRequest",
       "name": "创建设备SDP应答",
       "output": "CreateDeviceSDPAnswerResponse",
@@ -320,6 +327,13 @@
       "input": "DeleteDeviceRequest",
       "name": "删除设备",
       "output": "DeleteDeviceResponse",
+      "status": "online"
+    },
+    "DeleteDeviceSDP": {
+      "document": "删除设备SDP应答，此接口调用是手动结束设备后台推拉流信息，快速响应挂断需求。",
+      "input": "DeleteDeviceSDPRequest",
+      "name": "删除设备SDP请求",
+      "output": "DeleteDeviceSDPResponse",
       "status": "online"
     },
     "DeleteDevices": {
@@ -4010,6 +4024,61 @@
       ],
       "type": "object"
     },
+    "CreateDevicePublishSDPAnswerRequest": {
+      "document": "CreateDevicePublishSDPAnswer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "NKG9ORH8VF",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "nandy_dev_trtc3",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SDP提议",
+          "example": "v=0\\r\\no=...",
+          "member": "string",
+          "name": "SDPOffer",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDevicePublishSDPAnswerResponse": {
+      "document": "CreateDevicePublishSDPAnswer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SDP应答",
+          "example": "v=0\r\no=- 0 0 IN IP4 127.0.0.1\r\ns=mock\r\nt=0 0",
+          "member": "string",
+          "name": "SDPAnswer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDeviceRequest": {
       "document": "CreateDevice请求参数结构体",
       "members": [
@@ -4138,6 +4207,15 @@
           "member": "string",
           "name": "SDPOffer",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户自定义拉流标识",
+          "example": "tag-test",
+          "member": "string",
+          "name": "RequesterTag",
+          "required": false,
           "type": "string"
         }
       ],
@@ -6448,6 +6526,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceSDPRequest": {
+      "document": "DeleteDeviceSDP请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "NKG9ORH8VF",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "nandy_dev_trtc3",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceSDPResponse": {
+      "document": "DeleteDeviceSDP返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

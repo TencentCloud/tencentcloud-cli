@@ -322,7 +322,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "会话ID",
+          "document": "<p>会话ID</p>",
           "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8",
           "member": "string",
           "name": "SessionId",
@@ -331,7 +331,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
@@ -340,7 +340,7 @@
         },
         {
           "disabled": false,
-          "document": "问题内容",
+          "document": "<p>问题内容</p>",
           "example": "what are you doing ?",
           "member": "string",
           "name": "Question",
@@ -349,7 +349,7 @@
         },
         {
           "disabled": false,
-          "document": "上下文",
+          "document": "<p>上下文</p>",
           "example": "{\\\"KnowledgeBases\\\":[{\\\"KnowledgeBaseId\\\":\\\"klbase-kSnxNtvrXI\\\",\\\"FileIds\\\":[],\\\"Databases\\\":[{\\\"MCP\\\":{\\\"DataSourceId\\\":\\\"datasource_tchoused_example\\\"},\\\"DbTables\\\":[]}]}],\\\"WhiteList\\\":[]}",
           "member": "string",
           "name": "Context",
@@ -358,7 +358,7 @@
         },
         {
           "disabled": false,
-          "document": "模型",
+          "document": "<p>模型</p>",
           "example": "deepseek",
           "member": "string",
           "name": "Model",
@@ -367,7 +367,7 @@
         },
         {
           "disabled": false,
-          "document": "是否深度思考",
+          "document": "<p>是否深度思考</p>",
           "example": "false",
           "member": "bool",
           "name": "DeepThinking",
@@ -376,7 +376,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源id",
+          "document": "<p>数据源id</p>",
           "example": "[\"cdb-8zau2hln\",\"cdwdoris-1yxlfzhj\"]",
           "member": "string",
           "name": "DataSourceIds",
@@ -385,7 +385,7 @@
         },
         {
           "disabled": false,
-          "document": "agent类型",
+          "document": "<p>agent类型</p>",
           "example": "Analysis",
           "member": "string",
           "name": "AgentType",
@@ -394,7 +394,7 @@
         },
         {
           "disabled": false,
-          "document": "需要重新生成答案的记录ID",
+          "document": "<p>需要重新生成答案的记录ID</p>",
           "example": "e5b6a2e4-3b9b-4d41",
           "member": "string",
           "name": "OldRecordId",
@@ -403,7 +403,7 @@
         },
         {
           "disabled": false,
-          "document": "知识库id列表",
+          "document": "<p>知识库id列表</p>",
           "example": "[\"id1\",\"id2\"]",
           "member": "string",
           "name": "KnowledgeBaseIds",
@@ -430,7 +430,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "切片ID",
+          "document": "<p>切片ID</p>",
           "example": "sdjfi",
           "member": "string",
           "name": "Id",
@@ -441,7 +441,7 @@
         },
         {
           "disabled": false,
-          "document": "切片内容",
+          "document": "<p>切片内容</p>",
           "example": "content",
           "member": "string",
           "name": "Content",
@@ -452,7 +452,7 @@
         },
         {
           "disabled": false,
-          "document": "切片的字数",
+          "document": "<p>切片的字数</p>",
           "example": "10",
           "member": "int64",
           "name": "Size",
@@ -463,13 +463,24 @@
         },
         {
           "disabled": false,
-          "document": "切片概要",
+          "document": "<p>切片概要</p>",
           "example": "summary",
           "member": "string",
           "name": "Summary",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分段类型</p><p>枚举值：</p><ul><li>0： 自动分段</li><li>1： 新建分段</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ChunkSource",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -908,6 +919,17 @@
           "example": "2025-12-23 18:23:32",
           "member": "string",
           "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2025-12-23 18:23:32",
+          "member": "string",
+          "name": "UpdateTime",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -1474,6 +1496,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启表格结构化提取</p><p>枚举值：</p><ul><li>0： 不开启表格提取</li><li>1： 开启表格提取</li></ul><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableExtractDb",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1577,7 +1610,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
@@ -1586,7 +1619,7 @@
         },
         {
           "disabled": false,
-          "document": "文件ID",
+          "document": "<p>文件ID</p>",
           "example": "3fd5442a-2764-4f3d-a589-5399ce087284",
           "member": "string",
           "name": "FileId",
@@ -1595,7 +1628,7 @@
         },
         {
           "disabled": false,
-          "document": "切片ID",
+          "document": "<p>切片ID</p>",
           "example": "4c49fb67-38c7-4dea-b61c-bb545c9cac67",
           "member": "string",
           "name": "ChunkId",
@@ -1604,7 +1637,7 @@
         },
         {
           "disabled": false,
-          "document": "编辑后的文本",
+          "document": "<p>编辑后的文本</p>",
           "example": "this is  my test. hello world",
           "member": "string",
           "name": "Content",
@@ -1613,7 +1646,16 @@
         },
         {
           "disabled": false,
-          "document": "知识库id",
+          "document": "<p>分段概要</p>",
+          "example": "this is chunk content summary",
+          "member": "string",
+          "name": "Summary",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库id</p>",
           "example": "kbase-fsdfs",
           "member": "string",
           "name": "KnowledgeBaseId",
@@ -1803,7 +1845,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "表示第一页",
+          "document": "<p>表示第一页</p>",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -1812,7 +1854,7 @@
         },
         {
           "disabled": false,
-          "document": "默认一页展示 10 条",
+          "document": "<p>默认一页展示 10 条</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -1821,7 +1863,7 @@
         },
         {
           "disabled": false,
-          "document": "知识库id",
+          "document": "<p>知识库id</p>",
           "example": "kbase-fdsfs",
           "member": "string",
           "name": "KnowledgeBaseId",
@@ -1836,7 +1878,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "100",
           "member": "int64",
           "name": "Total",
@@ -1846,7 +1888,27 @@
         },
         {
           "disabled": false,
-          "document": "分片信息",
+          "document": "<p>文档的自动分段数</p>",
+          "example": "99",
+          "member": "int64",
+          "name": "AutoTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档的手动新建分段数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ManualTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分片信息</p>",
           "example": "无",
           "member": "Chunk",
           "name": "Chunks",

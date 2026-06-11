@@ -7291,7 +7291,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）</p>",
+          "document": "<p>绑定类型</p><p>枚举值：</p><ul><li>DIRECT： 直连到HTTP访问服务</li><li>CDN： 接入云开发CDN</li><li>CUSTOM： 自定义接入类型（CDN、EO、WAF等接入）</li></ul><p>默认值：DIRECT</p>",
           "example": "DIRECT",
           "member": "string",
           "name": "AccessType",
@@ -7300,7 +7300,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>证书ID。当前账户下SSL平台的证书ID</p>",
+          "document": "<p>证书ID。当前账户下SSL平台的证书ID，无证书无法使用https访问</p>",
           "example": "VFw*****",
           "member": "string",
           "name": "CertId",
@@ -7309,7 +7309,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向</p>",
+          "document": "<p>协议类型</p><p>枚举值：</p><ul><li>HTTP： 仅开启http</li><li>HTTPS： 仅开启https</li><li>HTTP_AND_HTTPS： 同时开启http和https，默认</li><li>HTTP_TO_HTTPS： http重定向成https，需配置证书</li><li>HTTPS_TO_HTTP： https重定向成http，需配置证书</li></ul><p>默认值：HTTP_AND_HTTPS</p>",
           "example": "HTTP_AND_HTTPS",
           "member": "string",
           "name": "Protocol",
@@ -7483,7 +7483,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "客户端维度限频标识。限制当前资源被单个客户端调用的频率，客户端标识支持 用户ID（UserID） 或 客户端 IP（ClientIP）。UserID 包括 云开发用户 ID 或 微信 openid，如果请求无 UserID 信息，则不会限制。",
+          "document": "<p>客户端维度限频标识。限制当前资源被单个客户端调用的频率，客户端标识支持 用户ID（UserID） 或 客户端 IP（ClientIP）。UserID 包括 云开发用户 ID 或 微信 openid，如果请求无 UserID 信息，则不会限制。</p><p>枚举值：</p><ul><li>UserID： 云开发用户 ID 或 微信 openid</li><li>ClientIP： 客户端ip</li></ul>",
           "example": "UserID",
           "member": "string",
           "name": "LimitBy",
@@ -7494,7 +7494,7 @@
         },
         {
           "disabled": false,
-          "document": "限制QPS值，每秒请求次数",
+          "document": "<p>限制QPS值，每秒请求次数</p>",
           "example": "10",
           "member": "int64",
           "name": "LimitValue",
@@ -7637,7 +7637,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "路径",
+          "document": "<p>路径</p>",
           "example": "/api/v1",
           "member": "string",
           "name": "Path",
@@ -7646,7 +7646,7 @@
         },
         {
           "disabled": false,
-          "document": "上游服务类型。创建时必填，修改时可选填。SCF: 云函数，CBR: 云托管，STATIC_STORE: 静态托管，WEB_SCF: WEB云函数，LH: Lighthouse",
+          "document": "<p>上游服务类型。创建时必填，修改时可选填</p><p>枚举值：</p><ul><li>SCF： 云函数</li><li>CBR： 云托管</li><li>STATIC_STORE： 静态托管</li><li>WEB_SCF： web云函数</li><li>LH： Lighthouse</li></ul>",
           "example": "CBR",
           "member": "string",
           "name": "UpstreamResourceType",
@@ -7655,7 +7655,7 @@
         },
         {
           "disabled": false,
-          "document": "上游服务名。创建时必填，修改时可选填",
+          "document": "<p>上游服务名。创建时必填，修改时可选填</p>",
           "example": "my-service",
           "member": "string",
           "name": "UpstreamResourceName",
@@ -7664,7 +7664,7 @@
         },
         {
           "disabled": false,
-          "document": "路径重写",
+          "document": "<p>路径重写</p>",
           "example": "无",
           "member": "HTTPServicePathRewrite",
           "name": "PathRewrite",
@@ -7673,7 +7673,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启安全域名。默认开启",
+          "document": "<p>是否开启安全域名。默认开启</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableSafeDomain",
@@ -7682,7 +7682,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启身份认证。默认关闭",
+          "document": "<p>是否开启身份认证。默认关闭</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableAuth",
@@ -7691,7 +7691,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启路径透传。默认关闭",
+          "document": "<p>是否开启路径透传。默认关闭</p>",
           "example": "true",
           "member": "bool",
           "name": "EnablePathTransmission",
@@ -7700,7 +7700,7 @@
         },
         {
           "disabled": false,
-          "document": "QPS限频策略",
+          "document": "<p>QPS限频策略</p>",
           "example": "无",
           "member": "HTTPServiceRouteQPSPolicy",
           "name": "QPSPolicy",
@@ -7709,7 +7709,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启路由",
+          "document": "<p>是否开启路由</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -7718,7 +7718,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展字段，内部包含headers处理等",
+          "document": "<p>扩展字段，内部包含headers处理等</p>",
           "example": "无",
           "member": "HTTPServiceExtension",
           "name": "Extension",

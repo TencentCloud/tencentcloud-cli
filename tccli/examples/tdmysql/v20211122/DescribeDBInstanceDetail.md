@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmysql DescribeDBInstanceDetail --cli-unfold-argument  \
-    --InstanceId tdsql3-a5952a76
+    --InstanceId tdsql3-5ff6a8b8
 ```
 
 Output: 
@@ -30,53 +30,46 @@ Output:
         "ColumnarNodeStorageType": "",
         "ColumnarVip": "",
         "ColumnarVport": 0,
-        "CreateTime": "2026-04-20 21:18:35",
-        "CreateVersion": "21.6.2.0.permanent.1192.ssl",
-        "Disk": 100,
-        "DiskUsage": 19,
+        "CreateTime": "2026-05-29 15:31:08",
+        "CreateVersion": "21.2.7.0",
+        "Disk": 20,
+        "DiskUsage": 11,
         "DumperVip": "",
         "DumperVport": 0,
         "ExpireAt": "0001-01-01 00:00:00",
-        "FullReplications": 3,
+        "FullReplications": 1,
         "InitParams": [
             {
-                "Param": "lower_case_table_names",
-                "Value": "1"
+                "Param": "character_set_server",
+                "Value": "utf8mb4"
             }
         ],
-        "InstanceCategory": 0,
-        "InstanceId": "tdsql3-446540ae",
-        "InstanceMode": "normal",
-        "InstanceName": "test003",
+        "InstanceCategory": 4,
+        "InstanceId": "tdsql3-5ff6a8b8",
+        "InstanceMode": "enhanced",
+        "InstanceName": "21270",
         "InstanceType": "hybrid",
-        "IsSupportColumnar": true,
+        "IsSupportColumnar": false,
         "IsSwitchFullReplicationsEnable": false,
         "IsolatedAt": "0001-01-01 00:00:00",
-        "MaintenanceWindow": {
-            "Duration": 3600,
-            "StartTime": 10800,
-            "WeekDays": [
-                "Monday"
-            ]
-        },
         "Node": [
             {
                 "BinlogInfo": [],
                 "Cpu": 1,
-                "DataDisk": 100,
+                "DataDisk": 20,
                 "Host": "",
-                "IP": "10.0.70.65",
+                "IP": "21.0.204.79",
                 "Mem": 2,
-                "NodeId": "node-tdsql3-446540ae-001",
+                "NodeId": "node-tdsql3-5ff6a8b8-001",
                 "Port": 6008,
                 "Type": "hybridnode",
-                "Zone": "ap-guangzhou-7"
+                "Zone": "ap-chengdu-1"
             }
         ],
         "PayMode": "postPay",
-        "Region": "ap-guangzhou",
+        "Region": "ap-chengdu",
         "RenewFlag": 0,
-        "Replications": 3,
+        "Replications": 1,
         "ResourceTags": [],
         "SQLMode": "MySQL",
         "SpecCode": "1c2g",
@@ -85,21 +78,21 @@ Output:
         "StatusDesc": "运行中",
         "StorageNodeCpu": 1,
         "StorageNodeMem": 2,
-        "StorageNodeNum": 3,
+        "StorageNodeNum": 1,
         "StorageType": "CLOUD_HSSD",
-        "SubnetId": "subnet-30tyayxk",
+        "SubnetId": "subnet-dz7wfk4r",
         "TemplateId": "",
         "TemplateName": "",
         "TimingModifyInstanceFlag": 1,
-        "UpdateTime": "2026-04-23 12:13:32",
-        "Vip": "10.31.16.52",
-        "VpcId": "vpc-o7ssr1vx",
+        "UpdateTime": "2026-05-29 15:44:11",
+        "Vip": "192.168.1.106",
+        "VpcId": "vpc-jksnni36",
         "Vport": 3306,
-        "Zone": "ap-guangzhou-7",
+        "Zone": "ap-chengdu-1",
         "Zones": [
-            "ap-guangzhou-7"
+            "ap-chengdu-1"
         ],
-        "RequestId": "27f36bdc-e23b-4b75-aa7c-4a4da0e836c4"
+        "RequestId": "e66bd67d-5e7c-4c57-8630-c926c55b6efb"
     }
 }
 ```

@@ -152,6 +152,30 @@
         "title": "创建Dspm白名单策略"
       }
     ],
+    "CreateIaCAccessToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIaCAccessToken\n<公共请求参数>\n\n{\n    \"Name\": \"github-xcss\",\n    \"Period\": 60\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"089096bd-488f-4786-acf5-33fe0d66bcb2\",\n        \"RequestId\": \"ba908b3c-dde6-405b-927c-9b6f6a80461f\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "CreateIaCFileExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIaCFileExportJob\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Limit\": 1000000,\n        \"Offset\": 0,\n        \"Filters\": [\n            {\n                \"Name\": \"Status\",\n                \"Values\": [\n                    \"3\"\n                ],\n                \"OperatorType\": 7\n            }\n        ],\n        \"StartTime\": \"2026-04-01T00:00:00+08:00\",\n        \"EndTime\": \"2026-04-07T23:59:59+08:00\"\n    },\n    \"MemberId\": [\n        \"mem-a6df317cb6a8c424\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"0129d37d-4f23-4657-a09b-312313b88dad\",\n        \"RequestId\": \"ca090e80-d2e8-4b0d-abff-8d75406a7c93\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "CreateIaCFileReScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIaCFileReScanTask\n<公共请求参数>\n\n{\n    \"Id\": 8122,\n    \"MemberId\": [\n        \"mem-a6df317cb6a8c424\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"784fe8a4-b479-46a6-80ff-568a54aeb011\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "CreateRiskCenterScanTask": [
       {
         "document": "创建风险中心扫描任务",
@@ -246,6 +270,22 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmWhitelistStrategy\n<公共请求参数>\n\n{\n    \"WhitelistStrategyId\": [\n        \"rule-c2thbt00\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
         "title": "删除Dspm白名单策略"
+      }
+    ],
+    "DeleteIaCAccessToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIaCAccessToken\n<公共请求参数>\n\n{\n    \"Id\": [\n        10001\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f634ff02-086f-4bda-b1fc-33c8678dcb9d\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DeleteIaCFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIaCFile\n<公共请求参数>\n\n{\n    \"Id\": [\n        8151\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"52855a90-ad1e-4556-b864-724d932ecbc3\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "DeleteRiskScanTask": [
@@ -1086,6 +1126,38 @@
         "title": "查询云边界分析-暴露路径下主机节点的高危基线风险列表"
       }
     ],
+    "DescribeIaCFileList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIaCFileList\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Limit\": 10,\n        \"Offset\": 0,\n        \"StartTime\": \"2026-03-27 00:00:00\",\n        \"EndTime\": \"2026-04-02 23:59:59\"\n    },\n    \"MemberId\": [\n        \"mem-a6df317cb6a8c424\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AppId\": 260083796,\n                \"CICDName\": \"哈哈\",\n                \"FailType\": 0,\n                \"FileId\": \"iac-cicd-8146\",\n                \"FileName\": \"http-sw-app398.yaml\",\n                \"FilePath\": \"/home/test/http-sw-app398.yaml\",\n                \"FileType\": 3,\n                \"Id\": 8146,\n                \"RiskLevelCnt\": [\n                    {\n                        \"Key\": 1,\n                        \"Value\": 37\n                    }\n                ],\n                \"RiskTotalCnt\": 63,\n                \"ScanTime\": \"2026-04-02 11:27:31\",\n                \"Status\": 2\n            }\n        ],\n        \"TotalCount\": 1520,\n        \"RequestId\": \"4ced92d7-7801-4e4f-a39b-b9d28284509a\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeIaCFileOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIaCFileOverview\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-04-01T00:00:00+08:00\",\n    \"EndTime\": \"2026-04-07T23:59:59+08:00\",\n    \"MemberId\": [\n        \"mem-a6df317cb6a8c424\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RiskFile\": [\n            {\n                \"Key\": 3,\n                \"Value\": 90\n            }\n        ],\n        \"TotalFile\": 92,\n        \"RequestId\": \"f7617bd3-6c2d-4ef2-8351-e4a2cd3c63d9\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeIaCFileReport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIaCFileReport\n<公共请求参数>\n\n{\n    \"AssetId\": 8130,\n    \"MemberId\": [\n        \"mem-a6df317cb6a8c424\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"File\": \"apiVersion: v1\\nkind: Service\\nmetadata:\\n  name: ai-inference-svc\\n  namespace: ai-platform\\n  labels:\\n    app: ai-inference\\nspec:\\n  type: NodePort\\n  selector:\\n    app: ai-inference\\n  ports:\\n    - name: http\\n      port: 8080\\n      targetPort: 8080\\n      nodePort: 30080\\n    - name: metrics\\n      port: 9090\\n      targetPort: 9090\\n      nodePort: 30090\\n\",\n        \"Risks\": [\n            {\n                \"Description\": \"Service 不应使用 NodePort 类型。NodePort 会在每个节点的 IP 上暴露服务的静态端口，这可能带来安全风险，因为它绕过了负载均衡器的安全控制，直接将服务暴露在节点网络上。\",\n                \"Level\": 0,\n                \"Line\": 9,\n                \"RuleName\": \"K8s Service 应避免使用 NodePort 类型\",\n                \"Suggestion\": \"将 Service 类型改为 ClusterIP 或 LoadBalancer，避免直接暴露节点端口。\"\n            }\n        ],\n        \"ScanTime\": \"2026-04-01T07:23:22Z\",\n        \"Status\": 2,\n        \"RequestId\": \"6f25933a-914d-46d6-af68-37763a102b26\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeIaCTokenList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIaCTokenList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-a6df317cb6a8c424\"\n    ],\n    \"Filter\": {\n        \"Limit\": 10,\n        \"Offset\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AppId\": 260082268,\n                \"FileCnt\": 1004,\n                \"Id\": 10036,\n                \"LastScanStatus\": \"SCAN_ERR\",\n                \"LastScanTime\": \"2026-04-07T08:00:28Z\",\n                \"Name\": \"zunlong\",\n                \"Period\": 60,\n                \"Token\": \"73d2721f-1152-4300-a4a4-a206f7ce8841\"\n            }\n        ],\n        \"TotalCount\": 27,\n        \"RequestId\": \"8eeceeb1-a62d-4a5f-911d-03be746b2bc3\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DescribeIpInvokeRecord": [
       {
         "document": "",
@@ -1652,6 +1724,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmWhitelistStrategy\n<公共请求参数>\n\n{\n    \"WhitelistStrategyId\": \"d13d396a-d798-4229-899f-023da9230532\",\n    \"Rule\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
         "title": "修改Dspm白名单策略"
+      }
+    ],
+    "ModifyIaCTokenPeriod": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIaCTokenPeriod\n<公共请求参数>\n\n{\n    \"Id\": 10038,\n    \"Period\": 90\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4ba4c24-b268-4f52-a38b-e20b4dcbfe9f\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "ModifyOrganizationAccountStatus": [

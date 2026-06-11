@@ -4471,6 +4471,15 @@
         },
         {
           "disabled": false,
+          "document": "blocklist 封禁列表 whitelist 白名单列表",
+          "example": "blocklist",
+          "member": "string",
+          "name": "ShowType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "规则列表",
           "example": "[{\"Ioc\":\"100.12.31.2\",\"RuleType\":2}]",
           "member": "BanAndAllowRuleDel",
@@ -4486,15 +4495,6 @@
           "name": "RuleType",
           "required": false,
           "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "blocklist 封禁列表 whitelist 白名单列表",
-          "example": "blocklist",
-          "member": "string",
-          "name": "ShowType",
-          "required": false,
-          "type": "string"
         }
       ],
       "type": "object"
@@ -7309,7 +7309,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每页条数",
+          "document": "<p>每页条数</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -7318,7 +7318,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移值",
+          "document": "<p>偏移值</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -7327,8 +7327,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件组合",
-          "example": "[{\"Name\":\"FwGroupName\",\"Values\":[\"andy\"],\"OperatorType\":9}]",
+          "document": "<p>过滤条件组合</p>",
+          "example": "无",
           "member": "CommonFilter",
           "name": "Filters",
           "required": false,
@@ -7336,7 +7336,7 @@
         },
         {
           "disabled": false,
-          "document": "检索的起始时间，可不传",
+          "document": "<p>检索的起始时间，可不传</p>",
           "example": "2022-07-27 16:00:00",
           "member": "string",
           "name": "StartTime",
@@ -7345,7 +7345,7 @@
         },
         {
           "disabled": false,
-          "document": "检索的截止时间，可不传",
+          "document": "<p>检索的截止时间，可不传</p>",
           "example": "2022-07-27 16:00:00",
           "member": "string",
           "name": "EndTime",
@@ -7354,7 +7354,7 @@
         },
         {
           "disabled": false,
-          "document": "desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值",
+          "document": "<p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>",
           "example": "desc",
           "member": "string",
           "name": "Order",
@@ -7363,7 +7363,7 @@
         },
         {
           "disabled": false,
-          "document": "排序所用到的字段",
+          "document": "<p>排序所用到的字段</p>",
           "example": "FwGroupId",
           "member": "string",
           "name": "By",
@@ -7378,8 +7378,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙(组)详细信息",
-          "example": "[{\"FwGroupId\":\"cfwg-48b0ce59\",\"FwGroupName\":\"[autotest][勿删]自动化测试\",\"Mode\":1,\"SwitchMode\":1,\"FwVpcCidr\":\"\",\"Status\":0,\"CdcId\":\"\",\"CdcName\":\"\",\"CrossUserMode\":\"0\",\"FwSwitchNum\":1,\"RegionLst\":[\"ap-shanghai\"],\"FwInstanceLst\":[{\"FwGroupId\":\"cfwg-48b0ce59\",\"FwInsName\":\"[autotest]【勿动】自动化测试-上海\",\"FwInsId\":\"cfwew-091fafd3\",\"FwMode\":1,\"CcnId\":[\"ccn-2stwf6cr\"],\"CcnName\":[\"[autotest][勿删]自动化测试\"],\"PeerConnectionId\":null,\"PeerConnectionName\":null,\"FwCvmLst\":[{\"FwInsId\":\"cfwew-091fafd3\",\"Region\":\"ap-shanghai\",\"RegionZh\":\"上海\",\"RegionDetail\":\"华东地区\",\"ZoneZh\":\"上海二区\",\"ZoneZhBack\":\"上海二区\",\"BandWidth\":1024}],\"JoinInsLst\":[{\"JoinType\":\"VPC\",\"Num\":2}],\"JoinInsIdLst\":[\"vpc-msa9dvac\",\"vpc-q9h93ip4\"],\"FwGateway\":[{\"GatewayId\":\"havip-0zv7jxun\",\"VpcId\":\"vpc-eo9n3mq2\",\"IpAddress\":\"10.183.0.4\"}],\"JoinInsNum\":2,\"FwSwitchNum\":1,\"Status\":0,\"Time\":\"2023-09-0712:55:14\",\"Width\":1024,\"UserVpcWidth\":11264,\"RuleUsed\":56,\"RuleMax\":20000,\"FlowMax\":29322,\"EngineVersion\":\"cfw_v4.0.2.1050\",\"UpdateEnable\":1,\"TrafficMode\":\"Normal\"}]}]",
+          "document": "<p>防火墙(组)详细信息</p>",
+          "example": "无",
           "member": "VpcFwGroupInfo",
           "name": "VpcFwGroupLst",
           "output_required": false,
@@ -7388,7 +7388,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙(组)个数",
+          "document": "<p>防火墙(组)个数</p>",
           "example": "1",
           "member": "int64",
           "name": "Total",
@@ -10875,7 +10875,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "nat：nat防火墙，ew：东西向防火墙",
+          "document": "<p>nat：nat防火墙，ew：东西向防火墙</p>",
           "example": "nat",
           "member": "string",
           "name": "FwType",
@@ -10884,7 +10884,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽值",
+          "document": "<p>带宽值</p>",
           "example": "200",
           "member": "uint64",
           "name": "Width",
@@ -10893,7 +10893,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙实例id",
+          "document": "<p>防火墙实例id</p>",
           "example": "cfwnat-d2afc817",
           "member": "string",
           "name": "CfwInstance",
@@ -10902,7 +10902,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性开关 1打开 0 关闭",
+          "document": "<p>弹性开关 1打开 0 关闭</p>",
           "example": "1",
           "member": "int64",
           "name": "ElasticSwitch",
@@ -10911,7 +10911,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性带宽上限，单位Mbps",
+          "document": "<p>弹性带宽上限，单位Mbps</p>",
           "example": "100",
           "member": "int64",
           "name": "ElasticBandwidth",
@@ -10920,12 +10920,21 @@
         },
         {
           "disabled": false,
-          "document": "按量计费标签",
-          "example": "[ \t{ \t\t\"TagKey\": \"adbdacEvSAD\", \t\t\"TagValue\": \"FKDxUDFdacEvSAD\" \t} ]",
+          "document": "<p>按量计费标签</p>",
+          "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ElasticTrafficSwitch",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -14693,7 +14702,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "nat实例id",
+          "document": "<p>nat实例id</p>",
           "example": "cfwnat-4fb07125",
           "member": "string",
           "name": "NatinsId",
@@ -14703,7 +14712,7 @@
         },
         {
           "disabled": false,
-          "document": "nat实例名称",
+          "document": "<p>nat实例名称</p>",
           "example": "实例1",
           "member": "string",
           "name": "NatinsName",
@@ -14713,7 +14722,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在地域",
+          "document": "<p>实例所在地域</p>",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
@@ -14723,7 +14732,7 @@
         },
         {
           "disabled": false,
-          "document": "0: 新增模式，1:接入模式",
+          "document": "<p>0: 新增模式，1:接入模式</p>",
           "example": "0",
           "member": "int64",
           "name": "FwMode",
@@ -14733,7 +14742,7 @@
         },
         {
           "disabled": false,
-          "document": "实例带宽大小 Mbps",
+          "document": "<p>实例带宽大小 Mbps</p>",
           "example": "20",
           "member": "int64",
           "name": "BandWidth",
@@ -14743,7 +14752,7 @@
         },
         {
           "disabled": false,
-          "document": "入向带宽峰值 bps",
+          "document": "<p>入向带宽峰值 bps</p>",
           "example": "200",
           "member": "int64",
           "name": "InFlowMax",
@@ -14753,7 +14762,7 @@
         },
         {
           "disabled": false,
-          "document": "出向带宽峰值 bps",
+          "document": "<p>出向带宽峰值 bps</p>",
           "example": "231",
           "member": "uint64",
           "name": "OutFlowMax",
@@ -14763,7 +14772,7 @@
         },
         {
           "disabled": false,
-          "document": "地域中文信息",
+          "document": "<p>地域中文信息</p>",
           "example": "广州",
           "member": "string",
           "name": "RegionZh",
@@ -14773,7 +14782,7 @@
         },
         {
           "disabled": false,
-          "document": "公网ip数组",
+          "document": "<p>公网ip数组</p>",
           "example": "[\"106.55.4.81\"]",
           "member": "string",
           "name": "EipAddress",
@@ -14783,7 +14792,7 @@
         },
         {
           "disabled": false,
-          "document": "内外使用ip数组",
+          "document": "<p>内外使用ip数组</p>",
           "example": "[\"10.255.1.20\"]",
           "member": "string",
           "name": "VpcIp",
@@ -14793,7 +14802,7 @@
         },
         {
           "disabled": false,
-          "document": "实例关联子网数组",
+          "document": "<p>实例关联子网数组</p>",
           "example": "[\"subnet-0fl56e31\"]",
           "member": "string",
           "name": "Subnets",
@@ -14803,7 +14812,7 @@
         },
         {
           "disabled": false,
-          "document": "0 :正常 1：正在初始化",
+          "document": "<p>0 :正常 1：正在初始化</p>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -14813,7 +14822,7 @@
         },
         {
           "disabled": false,
-          "document": "地域区域信息",
+          "document": "<p>地域区域信息</p>",
           "example": "华南地区",
           "member": "string",
           "name": "RegionDetail",
@@ -14823,7 +14832,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在可用区",
+          "document": "<p>实例所在可用区</p>",
           "example": "广州六区",
           "member": "string",
           "name": "ZoneZh",
@@ -14833,7 +14842,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在可用区",
+          "document": "<p>实例所在可用区</p>",
           "example": "广州七区",
           "member": "string",
           "name": "ZoneZhBak",
@@ -14843,7 +14852,7 @@
         },
         {
           "disabled": false,
-          "document": "已使用规则数",
+          "document": "<p>已使用规则数</p>",
           "example": "100",
           "member": "uint64",
           "name": "RuleUsed",
@@ -14853,7 +14862,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的规则限制最大规格数",
+          "document": "<p>实例的规则限制最大规格数</p>",
           "example": "5000",
           "member": "uint64",
           "name": "RuleMax",
@@ -14863,7 +14872,7 @@
         },
         {
           "disabled": false,
-          "document": "实例引擎版本",
+          "document": "<p>实例引擎版本</p>",
           "example": "cfw_3.7.0.888",
           "member": "string",
           "name": "EngineVersion",
@@ -14873,7 +14882,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎是否可升级：0，不可升级；1，可升级",
+          "document": "<p>引擎是否可升级：0，不可升级；1，可升级</p>",
           "example": "0",
           "member": "int64",
           "name": "UpdateEnable",
@@ -14883,7 +14892,7 @@
         },
         {
           "disabled": false,
-          "document": "是的需要升级引擎 支持 nat拨测 1需要 0不需要",
+          "document": "<p>是的需要升级引擎 支持 nat拨测 1需要 0不需要</p>",
           "example": "1",
           "member": "int64",
           "name": "NeedProbeEngineUpdate",
@@ -14893,7 +14902,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎运行模式，Normal:正常, OnlyRoute:透明模式",
+          "document": "<p>引擎运行模式，Normal:正常, OnlyRoute:透明模式</p>",
           "example": "Normal",
           "member": "string",
           "name": "TrafficMode",
@@ -14903,7 +14912,7 @@
         },
         {
           "disabled": false,
-          "document": "实例主所在可用区",
+          "document": "<p>实例主所在可用区</p>",
           "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
@@ -14913,7 +14922,7 @@
         },
         {
           "disabled": false,
-          "document": "实例备所在可用区",
+          "document": "<p>实例备所在可用区</p>",
           "example": "ap-guangzhou-7",
           "member": "string",
           "name": "ZoneBak",
@@ -14923,7 +14932,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎预约升级时间",
+          "document": "<p>引擎预约升级时间</p>",
           "example": "2021-12-09 11:56:58",
           "member": "string",
           "name": "ReserveTime",
@@ -14933,7 +14942,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎预约升级版本",
+          "document": "<p>引擎预约升级版本</p>",
           "example": "cfw_3.8.0.888",
           "member": "string",
           "name": "ReserveVersion",
@@ -14943,7 +14952,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎预约升级版本状态 stable:稳定版；previewed:预览版",
+          "document": "<p>引擎预约升级版本状态 stable:稳定版；previewed:预览版</p>",
           "example": "stable",
           "member": "string",
           "name": "ReserveVersionState",
@@ -14953,7 +14962,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性开关\n1 打开\n0 关闭",
+          "document": "<p>弹性开关<br>1 打开<br>0 关闭</p>",
           "example": "0",
           "member": "int64",
           "name": "ElasticSwitch",
@@ -14963,7 +14972,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性带宽，单位Mbps",
+          "document": "<p>弹性带宽，单位Mbps</p>",
           "example": "100",
           "member": "int64",
           "name": "ElasticBandwidth",
@@ -14973,10 +14982,20 @@
         },
         {
           "disabled": false,
-          "document": "是否首次开通按量付费\n1 是\n0 不是",
+          "document": "<p>是否首次开通按量付费<br>1 是<br>0 不是</p>",
           "example": "1",
           "member": "int64",
           "name": "IsFirstAfterPay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>按流量弹性开关</p><p>默认值：0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ElasticTrafficSwitch",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -17177,7 +17196,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -17188,7 +17207,7 @@
         },
         {
           "disabled": false,
-          "document": "分配带宽值 单位Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分配带宽值 单位Mbps</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
           "name": "Width",
@@ -17199,7 +17218,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>弹性开关</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
           "name": "ElasticSwitch",
@@ -17210,7 +17229,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性带宽上限，单位Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>弹性带宽上限，单位Mbps</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1024",
           "member": "int64",
           "name": "ElasticBandwidth",
@@ -17221,7 +17240,7 @@
         },
         {
           "disabled": false,
-          "document": "七天入向峰值带宽，单位bps",
+          "document": "<p>七天入向峰值带宽，单位bps</p>",
           "example": "1000",
           "member": "int64",
           "name": "InFlowMax",
@@ -17232,10 +17251,21 @@
         },
         {
           "disabled": false,
-          "document": "七天出向峰值带宽，单位bps",
+          "document": "<p>七天出向峰值带宽，单位bps</p>",
           "example": "1000",
           "member": "int64",
           "name": "OutFlowMax",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>边界按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ElasticTrafficSwitch",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -18622,7 +18652,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC防火墙实例名称",
+          "document": "<p>VPC防火墙实例名称</p>",
           "example": "防火墙名称",
           "member": "string",
           "name": "FwInsName",
@@ -18633,7 +18663,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC防火墙实例ID",
+          "document": "<p>VPC防火墙实例ID</p>",
           "example": "cfwew-de1a3a1a",
           "member": "string",
           "name": "FwInsId",
@@ -18644,7 +18674,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙",
+          "document": "<p>VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙</p>",
           "example": "1",
           "member": "int64",
           "name": "FwMode",
@@ -18655,7 +18685,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC防火墙接入网络实例个数",
+          "document": "<p>VPC防火墙接入网络实例个数</p>",
           "example": "8",
           "member": "int64",
           "name": "JoinInsNum",
@@ -18666,7 +18696,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC防火墙开关个数",
+          "document": "<p>VPC防火墙开关个数</p>",
           "example": "8",
           "member": "int64",
           "name": "FwSwitchNum",
@@ -18677,7 +18707,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中",
+          "document": "<p>VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中</p>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -18688,7 +18718,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC防火墙创建时间",
+          "document": "<p>VPC防火墙创建时间</p>",
           "example": "2021-12-09 11:56:58",
           "member": "string",
           "name": "Time",
@@ -18699,7 +18729,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC 相关云联网ID列表",
+          "document": "<p>VPC 相关云联网ID列表</p>",
           "example": "[\"ccn-58cqznrf\"]",
           "member": "string",
           "name": "CcnId",
@@ -18710,7 +18740,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC 相关云联网名称列表",
+          "document": "<p>VPC 相关云联网名称列表</p>",
           "example": "[\"云联网ccn防火墙开发--勿删\"]",
           "member": "string",
           "name": "CcnName",
@@ -18721,7 +18751,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC 相关对等连接ID列表",
+          "document": "<p>VPC 相关对等连接ID列表</p>",
           "example": "[\"pcx-985becc\"]",
           "member": "string",
           "name": "PeerConnectionId",
@@ -18732,7 +18762,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC 相关对等连接名称列表",
+          "document": "<p>VPC 相关对等连接名称列表</p>",
           "example": "[\"跨vpc连接\"]",
           "member": "string",
           "name": "PeerConnectionName",
@@ -18743,8 +18773,8 @@
         },
         {
           "disabled": false,
-          "document": "VPC防火墙CVM的列表",
-          "example": "[{\"FwInsId\":\"cfwew-75066e5a\",\"Region\":\"ap-chongqing\",\"RegionZh\":\"重庆\",\"BandWidth\":50},{\"FwInsId\":\"cfwew-75066e5a\",\"Region\":\"ap-chengdu\",\"RegionZh\":\"成都\",\"BandWidth\":50}]",
+          "document": "<p>VPC防火墙CVM的列表</p>",
+          "example": "无",
           "member": "VpcFwCvmInsInfo",
           "name": "FwCvmLst",
           "output_required": false,
@@ -18754,8 +18784,8 @@
         },
         {
           "disabled": false,
-          "document": "VPC防火墙接入网络实例类型列表",
-          "example": "[{\"JoinType\":\"VPC\",\"Num\":5},{\"JoinType\":\"DIRECTCONNECT\",\"Num\":1},{\"JoinType\":\"VPNGW\",\"Num\":1}]",
+          "document": "<p>VPC防火墙接入网络实例类型列表</p>",
+          "example": "无",
           "member": "VpcFwJoinInstanceType",
           "name": "JoinInsLst",
           "output_required": false,
@@ -18765,8 +18795,8 @@
         },
         {
           "disabled": false,
-          "document": "防火墙网关信息",
-          "example": "[{\"GatewayId\":\"havip-0zv7jxun\",\"VpcId\":\"vpc-eo9n3mq2\",\"IpAddress\":\"10.183.0.4\"}]",
+          "document": "<p>防火墙网关信息</p>",
+          "example": "无",
           "member": "FwGateway",
           "name": "FwGateway",
           "output_required": false,
@@ -18776,7 +18806,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙(组)ID",
+          "document": "<p>防火墙(组)ID</p>",
           "example": "cfwg-8f4cd56c",
           "member": "string",
           "name": "FwGroupId",
@@ -18787,7 +18817,7 @@
         },
         {
           "disabled": false,
-          "document": "已使用规则数",
+          "document": "<p>已使用规则数</p>",
           "example": "10",
           "member": "int64",
           "name": "RuleUsed",
@@ -18798,7 +18828,7 @@
         },
         {
           "disabled": false,
-          "document": "最大规则数",
+          "document": "<p>最大规则数</p>",
           "example": "5000",
           "member": "int64",
           "name": "RuleMax",
@@ -18809,7 +18839,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙实例带宽",
+          "document": "<p>防火墙实例带宽</p>",
           "example": "1024",
           "member": "int64",
           "name": "Width",
@@ -18820,7 +18850,7 @@
         },
         {
           "disabled": false,
-          "document": "用户VPC墙总带宽",
+          "document": "<p>用户VPC墙总带宽</p>",
           "example": "5000",
           "member": "int64",
           "name": "UserVpcWidth",
@@ -18831,7 +18861,7 @@
         },
         {
           "disabled": false,
-          "document": "接入的vpc列表",
+          "document": "<p>接入的vpc列表</p>",
           "example": "[\"vpc-1515151\"]",
           "member": "string",
           "name": "JoinInsIdLst",
@@ -18842,7 +18872,7 @@
         },
         {
           "disabled": false,
-          "document": "内网间峰值带宽 (单位 bps )",
+          "document": "<p>内网间峰值带宽 (单位 bps )</p>",
           "example": "1000",
           "member": "int64",
           "name": "FlowMax",
@@ -18853,7 +18883,7 @@
         },
         {
           "disabled": false,
-          "document": "实例引擎版本",
+          "document": "<p>实例引擎版本</p>",
           "example": "cfw_3.7.0.888",
           "member": "string",
           "name": "EngineVersion",
@@ -18864,7 +18894,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎是否可升级：0，不可升级；1，可升级",
+          "document": "<p>引擎是否可升级：0，不可升级；1，可升级</p>",
           "example": "0",
           "member": "int64",
           "name": "UpdateEnable",
@@ -18875,7 +18905,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎运行模式，Normal:正常, OnlyRoute:透明模式",
+          "document": "<p>引擎运行模式，Normal:正常, OnlyRoute:透明模式</p>",
           "example": "Normal",
           "member": "string",
           "name": "TrafficMode",
@@ -18886,7 +18916,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎预约升级时间",
+          "document": "<p>引擎预约升级时间</p>",
           "example": "2021-12-09 11:56:58",
           "member": "string",
           "name": "ReserveTime",
@@ -18897,7 +18927,7 @@
         },
         {
           "disabled": false,
-          "document": "预约引擎升级版本",
+          "document": "<p>预约引擎升级版本</p>",
           "example": "cfw_3.8.0.888",
           "member": "string",
           "name": "ReserveVersion",
@@ -18908,7 +18938,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎预约升级版本状态",
+          "document": "<p>引擎预约升级版本状态</p>",
           "example": "stable",
           "member": "string",
           "name": "ReserveVersionState",
@@ -18919,7 +18949,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性开关 1打开 0关闭",
+          "document": "<p>弹性开关 1打开 0关闭</p>",
           "example": "1",
           "member": "int64",
           "name": "ElasticSwitch",
@@ -18930,7 +18960,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性带宽，单位Mbps",
+          "document": "<p>弹性带宽，单位Mbps</p>",
           "example": "100",
           "member": "int64",
           "name": "ElasticBandwidth",
@@ -18941,10 +18971,21 @@
         },
         {
           "disabled": false,
-          "document": "是否首次开通按量付费\n1 是\n0 不是",
+          "document": "<p>是否首次开通按量付费<br>1 是<br>0 不是</p>",
           "example": "1",
           "member": "int64",
           "name": "IsFirstAfterPay",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ElasticTrafficSwitch",
           "output_required": false,
           "required": false,
           "type": "int",

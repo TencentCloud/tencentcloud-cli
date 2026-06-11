@@ -468,6 +468,22 @@
         "title": "API资产列表"
       }
     ],
+    "DescribeApiSecEventDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiSecEventDetail\n<公共请求参数>\n\n{\n    \"Domain\": \"*************.testwaf.com\",\n    \"EventId\": \"api_k********c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AttackSource\": [\n            {\n                \"AttackCount\": 22,\n                \"AttackDetail\": null,\n                \"BotLabel\": \"\",\n                \"City\": \"\",\n                \"EventCount\": 12,\n                \"EventLevel\": \"300\",\n                \"MissPassword\": \"\",\n                \"MissUserName\": \"\",\n                \"SrcIp\": \"9.******.21\",\n                \"StartTime\": 1777110120,\n                \"Timestamp\": 1777110180\n            }\n        ],\n        \"ChangeHistory\": [\n            {\n                \"Mode\": \"2\",\n                \"Remark\": \"\",\n                \"Timestamp\": 1777110298,\n                \"UserName\": \"wa********1**6****m\"\n            }\n        ],\n        \"Description\": \"\",\n        \"EventInfo\": {\n            \"ApiName\": \"/anything/sens\",\n            \"Domain\": \"*************.testwaf.com\",\n            \"EventId\": \"api_k********c\",\n            \"EventType\": \"响应敏感数据信息量(去重次数)\",\n            \"Level\": \"300\",\n            \"Method\": \"POST\",\n            \"Mode\": \"2\",\n            \"Source\": \"custom\",\n            \"StartTime\": 1777110217,\n            \"UpdateTime\": 1777110298\n        },\n        \"RequestId\": \"b402400d-ec6c-4892-af44-7acb06a8df91\"\n    }\n}",
+        "title": "查询API安全事件详情"
+      }
+    ],
+    "DescribeApiSecEventList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiSecEventList\n<公共请求参数>\n\n{\n    \"Domain\": \"qcloudwaf.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd63d5b2-9d4e-46db-8cfd-b1c448cc8e47\",\n        \"Data\": [\n            {\n                \"EventId\": \"api_asfa\",\n                \"EventType\": \"\",\n                \"Domain\": \"hzh.qcloud.com\",\n                \"Mode\": \"1\",\n                \"StartTime\": 0,\n                \"UpdateTime\": 0,\n                \"ApiName\": \"/api\",\n                \"Level\": \"400\",\n                \"Method\": \"\"\n            }\n        ],\n        \"Total\": 213\n    }\n}",
+        "title": "api安全事件列表"
+      }
+    ],
     "DescribeApiSecSensitiveRuleList": [
       {
         "document": "获取指定类型的API安全相关规则",

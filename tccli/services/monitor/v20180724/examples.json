@@ -258,6 +258,14 @@
         "title": "创建 Grafana 告警通道"
       }
     ],
+    "CreateOnCallForm": [
+      {
+        "document": "创建值班表",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOnCallForm\n<公共请求参数>\n\n{\n    \"Module\": \"abc\",\n    \"OnCallFormName\": \"abc\",\n    \"OnCallFormDesc\": \"abc\",\n    \"StaffInfos\": [\n        {\n            \"StaffIDs\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"RotationType\": \"abc\",\n    \"ShiftTime\": \"abc\",\n    \"EffectiveStartTime\": 0,\n    \"EffectiveEndTime\": 0,\n    \"TimeZone\": 0,\n    \"CoverStaffInfos\": [\n        {\n            \"CoverStaffIDs\": [\n                \"abc\"\n            ],\n            \"CoverStartTime\": 0,\n            \"CoverEndTime\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"OnCallFormID\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建值班表"
+      }
+    ],
     "CreatePolicyGroup": [
       {
         "document": "",
@@ -438,6 +446,14 @@
         "title": "删除 Grafana 告警通道"
       }
     ],
+    "DeleteOnCallForms": [
+      {
+        "document": "删除值班表",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOnCallForms\n<公共请求参数>\n\n{\n    \"Module\": \"abc\",\n    \"OnCallFormIDs\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedOnCallFormIDs\": [\n            \"abc\"\n        ],\n        \"SuccessOnCallFormIDs\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除值班表"
+      }
+    ],
     "DeletePolicyGroup": [
       {
         "document": "",
@@ -457,7 +473,7 @@
     "DeletePrometheusAlertPolicy": [
       {
         "document": "删除Prometheus告警规则",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrometheusAlertPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-kjshgr\",\n    \"AlertIds\": [\n        \"alert-jsbgvr\"\n    ],\n    \"Names\": [\n        \"test\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrometheusAlertPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-kjshgr\",\n    \"AlertIds\": [\n        \"alert-jsbgvr\"\n    ],\n    \"Names\": [\n        \"CPUUsage\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除Prometheus告警规则"
       }
@@ -812,6 +828,22 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotificationContentTemplateSupports\n<公共请求参数>\n\n{\n    \"MonitorType\": \"MT_QCE\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f48fd53-422b-469e-b467-bb5631f14656\",\n        \"Support\": {\n            \"Functions\": null,\n            \"MonitorType\": \"MT_QCE\",\n            \"Variables\": [\n                {\n                    \"Desc\": \"账号appid\",\n                    \"Example\": \"123000456\",\n                    \"Name\": \"{{.app_id}}\"\n                },\n                {\n                    \"Desc\": \"控制台链接\",\n                    \"Example\": \"腾讯云可观测平台告警详情页面链接\",\n                    \"Name\": \"{{.console_link}}\"\n                },\n                {\n                    \"Desc\": \"告警内容\",\n                    \"Example\": \"CPU利用率 > 0%\",\n                    \"Name\": \"{{.content}}\"\n                },\n                {\n                    \"Desc\": \"当前等级（格式化）\",\n                    \"Example\": \"提示 警告 严重\",\n                    \"Name\": \"{{.current_level_fmt}}\"\n                },\n                {\n                    \"Desc\": \"当前等级\",\n                    \"Example\": \"None Note Warn Serious\",\n                    \"Name\": \"{{.current_level}}\"\n                },\n                {\n                    \"Desc\": \"当前数据\",\n                    \"Example\": \"95.6% (CPU利用率)\",\n                    \"Name\": \"{{.current_value_content}}\"\n                },\n                {\n                    \"Desc\": \"持续时长（格式化）\",\n                    \"Example\": \"5h4m3s\",\n                    \"Name\": \"{{.duration_fmt}}\"\n                },\n                {\n                    \"Desc\": \"持续时长 秒\",\n                    \"Example\": \"1000\",\n                    \"Name\": \"{{.duration}}\"\n                },\n                {\n                    \"Desc\": \"首次触发时间（格式化）\",\n                    \"Example\": \"2024-07-09 14:35:00 (UTC+08:00)\",\n                    \"Name\": \"{{.first_trigger_time_fmt}}\"\n                },\n                {\n                    \"Desc\": \"首次触发时间 秒\",\n                    \"Example\": \"1732867259\",\n                    \"Name\": \"{{.first_trigger_time}}\"\n                },\n                {\n                    \"Desc\": \"上一次等级（格式化）\",\n                    \"Example\": \"提示 警告 严重\",\n                    \"Name\": \"{{.last_level_fmt}}\"\n                },\n                {\n                    \"Desc\": \"上一次等级\",\n                    \"Example\": \"None Note Warn Serious\",\n                    \"Name\": \"{{.last_level}}\"\n                },\n                {\n                    \"Desc\": \"小程序链接\",\n                    \"Example\": \"腾讯云助手小程序云监控告警详情页面链接\",\n                    \"Name\": \"{{.miniprogram_link}}\"\n                },\n                {\n                    \"Desc\": \"告警对象\",\n                    \"Example\": \"10.0.0.1 (内) | ins-123456 | as-tke-np-abc\",\n                    \"Name\": \"{{.object}}\"\n                },\n                {\n                    \"Desc\": \"告警策略ID\",\n                    \"Example\": \"policy-abc123\",\n                    \"Name\": \"{{.policy_id}}\"\n                },\n                {\n                    \"Desc\": \"告警策略名称\",\n                    \"Example\": \"腾讯云监控告警\",\n                    \"Name\": \"{{.policy_name}}\"\n                },\n                {\n                    \"Desc\": \"项目名称\",\n                    \"Example\": \"默认\",\n                    \"Name\": \"{{.project_name}}\"\n                },\n                {\n                    \"Desc\": \"告警恢复时间（格式化）\",\n                    \"Example\": \"2024-07-09 14:35:00 (UTC+08:00)\",\n                    \"Name\": \"{{.recovery_time_fmt}}\"\n                },\n                {\n                    \"Desc\": \"告警恢复时间 秒\",\n                    \"Example\": \"1732867259\",\n                    \"Name\": \"{{.recovery_time}}\"\n                },\n                {\n                    \"Desc\": \"地域（格式化）\",\n                    \"Example\": \"广州\",\n                    \"Name\": \"{{.region_fmt}}\"\n                },\n                {\n                    \"Desc\": \"地域\",\n                    \"Example\": \"ap-guangzhou\",\n                    \"Name\": \"{{.region}}\"\n                },\n                {\n                    \"Desc\": \"云产品名称-策略类型\",\n                    \"Example\": \"云服务器-基础监控\",\n                    \"Name\": \"{{.server_name}}\"\n                },\n                {\n                    \"Desc\": \"告警状态（格式化）\",\n                    \"Example\": \"触发 恢复\",\n                    \"Name\": \"{{.status_fmt}}\"\n                },\n                {\n                    \"Desc\": \"告警状态和等级展示（格式化）\",\n                    \"Example\": \"触发 持续 恢复 升级 降级\",\n                    \"Name\": \"{{.status_level_fmt}}\"\n                },\n                {\n                    \"Desc\": \"告警状态\",\n                    \"Example\": \"Trigger Recovery\",\n                    \"Name\": \"{{.status}}\"\n                },\n                {\n                    \"Desc\": \"资源标签（格式化）\",\n                    \"Example\": \"(业务部门:云监控)(功能:告警)\",\n                    \"Name\": \"{{.tag_fmt}}\"\n                },\n                {\n                    \"Desc\": \"告警策略提示\",\n                    \"Example\": \"告警说明：基础CPU使用率是从母机采集到的数据。\",\n                    \"Name\": \"{{.tooltip_text}}\"\n                },\n                {\n                    \"Desc\": \"当前触发时间（格式化）\",\n                    \"Example\": \"2024-07-09 14:35:00 (UTC+08:00)\",\n                    \"Name\": \"{{.trigger_time_fmt}}\"\n                },\n                {\n                    \"Desc\": \"当前触发时间 秒\",\n                    \"Example\": \"1732867259\",\n                    \"Name\": \"{{.trigger_time}}\"\n                }\n            ]\n        }\n    }\n}",
         "title": "测试环境真实示例"
+      }
+    ],
+    "DescribeOnCallForm": [
+      {
+        "document": "查询值班表详情\n\n",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOnCallForm\n<公共请求参数>\n\n{\n    \"Module\": \"abc\",\n    \"OnCallFormID\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OnCallForm\": {\n            \"OnCallFormID\": \"abc\",\n            \"OnCallFormName\": \"abc\",\n            \"OnCallFormDesc\": \"abc\",\n            \"StaffInfos\": [\n                {\n                    \"StaffIDs\": [\n                        \"abc\"\n                    ]\n                }\n            ],\n            \"RotationType\": \"abc\",\n            \"ShiftTime\": \"abc\",\n            \"EffectiveStartTime\": 0,\n            \"EffectiveEndTime\": 0,\n            \"TimeZone\": 0,\n            \"CoverStaffInfos\": [\n                {\n                    \"CoverStaffIDs\": [\n                        \"abc\"\n                    ],\n                    \"CoverStartTime\": 0,\n                    \"CoverEndTime\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询值班表详情"
+      }
+    ],
+    "DescribeOnCallForms": [
+      {
+        "document": "查询值班列表",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOnCallForms\n<公共请求参数>\n\n{\n    \"Module\": \"abc\",\n    \"OnCallFormStaffIDs\": [\n        \"abc\"\n    ],\n    \"RotationType\": \"abc\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"Order\": \"abc\",\n    \"OnCallFormName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OnCallForms\": [\n            {\n                \"OnCallFormID\": \"abc\",\n                \"OnCallFormName\": \"abc\",\n                \"OnCallFormDesc\": \"abc\",\n                \"RotationType\": \"abc\",\n                \"ShiftTime\": \"abc\",\n                \"EffectiveStartTime\": 0,\n                \"EffectiveEndTime\": 0,\n                \"TimeZone\": 0,\n                \"CurrOnCallStaffs\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询值班列表"
       }
     ],
     "DescribePhoneAlarmFlowTotalCount": [
@@ -1550,6 +1582,14 @@
         "title": "更新 Grafana 白名单"
       }
     ],
+    "UpdateOnCallForm": [
+      {
+        "document": "修改值班表\n\n",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOnCallForm\n<公共请求参数>\n\n{\n    \"Module\": \"abc\",\n    \"OnCallFormID\": \"abc\",\n    \"OnCallFormName\": \"abc\",\n    \"OnCallFormDesc\": \"abc\",\n    \"StaffInfos\": [\n        {\n            \"StaffIDs\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"RotationType\": \"abc\",\n    \"ShiftTime\": \"abc\",\n    \"EffectiveStartTime\": 0,\n    \"EffectiveEndTime\": 0,\n    \"TimeZone\": 0,\n    \"CoverStaffInfos\": [\n        {\n            \"CoverStaffIDs\": [\n                \"abc\"\n            ],\n            \"CoverStartTime\": 0,\n            \"CoverEndTime\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"OnCallFormID\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改值班表"
+      }
+    ],
     "UpdatePrometheusAgentStatus": [
       {
         "document": "",
@@ -1585,7 +1625,7 @@
     "UpdateRecordingRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRecordingRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-xrwerwe\",\n    \"RuleState\": 2,\n    \"Group\": \"LS0tDQpuYW1lOiBleGFtcGxlDQpydWxlczoNCiAgLSByZWNvcmQ6IGpvYjpodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHM6c3VtDQogICAgZXhwcjogc3VtIGJ5IChqb2IpIChodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHMp\",\n    \"Name\": \"test\",\n    \"RuleId\": \"rrule-m74lrt6g\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRecordingRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-xrwerwe\",\n    \"RuleState\": 2,\n    \"Group\": \"LS0tDQpuYW1lOiBleGFtcGxlDQpydWxlczoNCiAgLSByZWNvcmQ6IGpvYjpodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHM6c3VtDQogICAgZXhwcjogc3VtIGJ5IChqb2IpIChodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHMp\",\n    \"Name\": \"ingress\",\n    \"RuleId\": \"rrule-m74lrt6g\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1z5ph-pcsxjbfy1y56525v5q-w5brnte\",\n        \"RuleId\": \"rrule-m74lrt6g\"\n    }\n}",
         "title": "更新预聚合规则"
       }

@@ -576,6 +576,14 @@
         "title": "开通审计服务"
       }
     ],
+    "PromoteDBInstanceToActive": [
+      {
+        "document": "灾备实例转正",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstances\n<公共请求参数>\n\n{\n    \"MasterId\": \"cmgo-ggh7rpz5\",\n    \"InstanceId\": \"cmgo-a7bb6vd7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"230c9c0e-a56f-4639-81ee-3cb46905c087\",\n        \"FlowId\": 10001\n    }\n}",
+        "title": "灾备实例转正"
+      }
+    ],
     "RenameInstance": [
       {
         "document": "",

@@ -133,6 +133,27 @@
       "output": "CreateDspmWhitelistStrategyResponse",
       "status": "online"
     },
+    "CreateIaCAccessToken": {
+      "document": "创建IaC检测接入Token",
+      "input": "CreateIaCAccessTokenRequest",
+      "name": "创建IaC检测接入Token",
+      "output": "CreateIaCAccessTokenResponse",
+      "status": "online"
+    },
+    "CreateIaCFileExportJob": {
+      "document": "创建IaC检测文件导出任务",
+      "input": "CreateIaCFileExportJobRequest",
+      "name": "创建IaC检测文件导出任务",
+      "output": "CreateIaCFileExportJobResponse",
+      "status": "online"
+    },
+    "CreateIaCFileReScanTask": {
+      "document": "创建IaC检测文件重新扫描任务",
+      "input": "CreateIaCFileReScanTaskRequest",
+      "name": "创建IaC检测文件重新扫描任务",
+      "output": "CreateIaCFileReScanTaskResponse",
+      "status": "online"
+    },
     "CreateRiskCenterScanTask": {
       "document": "创建风险中心扫描任务",
       "input": "CreateRiskCenterScanTaskRequest",
@@ -215,6 +236,20 @@
       "input": "DeleteDspmWhitelistStrategyRequest",
       "name": "删除Dspm白名单策略",
       "output": "DeleteDspmWhitelistStrategyResponse",
+      "status": "online"
+    },
+    "DeleteIaCAccessToken": {
+      "document": "删除IaC检测接入Token",
+      "input": "DeleteIaCAccessTokenRequest",
+      "name": "删除IaC检测接入Token",
+      "output": "DeleteIaCAccessTokenResponse",
+      "status": "online"
+    },
+    "DeleteIaCFile": {
+      "document": "删除IaC检测文件",
+      "input": "DeleteIaCFileRequest",
+      "name": "删除IaC检测文件",
+      "output": "DeleteIaCFileResponse",
       "status": "online"
     },
     "DeleteRiskScanTask": {
@@ -945,6 +980,34 @@
       "output": "DescribeHighBaseLineRiskListResponse",
       "status": "online"
     },
+    "DescribeIaCFileList": {
+      "document": "获取IaC检测文件列表",
+      "input": "DescribeIaCFileListRequest",
+      "name": "获取IaC检测文件列表",
+      "output": "DescribeIaCFileListResponse",
+      "status": "online"
+    },
+    "DescribeIaCFileOverview": {
+      "document": "获取IaC检测文件概览",
+      "input": "DescribeIaCFileOverviewRequest",
+      "name": "获取IaC检测文件概览",
+      "output": "DescribeIaCFileOverviewResponse",
+      "status": "online"
+    },
+    "DescribeIaCFileReport": {
+      "document": "获取IaC检测文件报告",
+      "input": "DescribeIaCFileReportRequest",
+      "name": "获取IaC检测文件报告",
+      "output": "DescribeIaCFileReportResponse",
+      "status": "online"
+    },
+    "DescribeIaCTokenList": {
+      "document": "获取IaC检测接入Token列表",
+      "input": "DescribeIaCTokenListRequest",
+      "name": "获取IaC检测接入Token列表",
+      "output": "DescribeIaCTokenListResponse",
+      "status": "online"
+    },
     "DescribeIpInvokeRecord": {
       "document": "对象存储异常检测调用记录信息",
       "input": "DescribeIpInvokeRecordRequest",
@@ -1421,6 +1484,13 @@
       "output": "ModifyDspmWhitelistStrategyResponse",
       "status": "online"
     },
+    "ModifyIaCTokenPeriod": {
+      "document": "修改IaC检测接入Token存储周期",
+      "input": "ModifyIaCTokenPeriodRequest",
+      "name": "修改IaC检测接入Token存储周期",
+      "output": "ModifyIaCTokenPeriodResponse",
+      "status": "online"
+    },
     "ModifyOrganizationAccountStatus": {
       "document": "修改集团账号状态",
       "input": "ModifyOrganizationAccountStatusRequest",
@@ -1774,7 +1844,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警名称",
+          "document": "<p>告警名称</p>",
           "example": "根账号进行AKSK调用",
           "member": "string",
           "name": "Name",
@@ -1784,7 +1854,7 @@
         },
         {
           "disabled": false,
-          "document": "告警等级\n0-无效 1-提示 2-低危 3-中危 4-高危 5-严重",
+          "document": "<p>告警等级<br>0-无效 1-提示 2-低危 3-中危 4-高危 5-严重</p>",
           "example": "1",
           "member": "int64",
           "name": "Level",
@@ -1794,7 +1864,7 @@
         },
         {
           "disabled": false,
-          "document": "告警记录ID",
+          "document": "<p>告警记录ID</p>",
           "example": "10001",
           "member": "int64",
           "name": "ID",
@@ -1804,7 +1874,7 @@
         },
         {
           "disabled": false,
-          "document": "告警规则ID",
+          "document": "<p>告警规则ID</p>",
           "example": "103001",
           "member": "int64",
           "name": "AlarmRuleID",
@@ -1814,7 +1884,7 @@
         },
         {
           "disabled": false,
-          "document": "告警类型\n0 异常调用\n1 泄漏监测",
+          "document": "<p>告警类型<br>0 异常调用<br>1 泄漏监测</p>",
           "example": "0",
           "member": "int64",
           "name": "AlarmType",
@@ -1824,7 +1894,7 @@
         },
         {
           "disabled": false,
-          "document": "访问密钥",
+          "document": "<p>访问密钥</p>",
           "example": "AKID********",
           "member": "string",
           "name": "AccessKey",
@@ -1834,7 +1904,7 @@
         },
         {
           "disabled": false,
-          "document": "访问密钥ID",
+          "document": "<p>访问密钥ID</p>",
           "example": "100002",
           "member": "uint64",
           "name": "AccessKeyID",
@@ -1844,7 +1914,7 @@
         },
         {
           "disabled": false,
-          "document": "访问密钥备注",
+          "document": "<p>访问密钥备注</p>",
           "example": "产研AK",
           "member": "string",
           "name": "AccessKeyRemark",
@@ -1854,7 +1924,7 @@
         },
         {
           "disabled": false,
-          "document": "最后告警时间",
+          "document": "<p>最后告警时间</p>",
           "example": "2025-01-20 19:10:24",
           "member": "string",
           "name": "LastAlarmTime",
@@ -1864,7 +1934,7 @@
         },
         {
           "disabled": false,
-          "document": "告警状态\n0-未处理 1-已处理 2-已忽略",
+          "document": "<p>告警状态<br>0-未处理 1-已处理 2-已忽略</p>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -1874,7 +1944,7 @@
         },
         {
           "disabled": false,
-          "document": "聚合日期",
+          "document": "<p>聚合日期</p>",
           "example": "2025-01-20",
           "member": "string",
           "name": "Date",
@@ -1884,7 +1954,7 @@
         },
         {
           "disabled": false,
-          "document": "告警标签",
+          "document": "<p>告警标签</p>",
           "example": "[\"主账号AK\",\"权限过高\"]",
           "member": "string",
           "name": "Tag",
@@ -1894,7 +1964,7 @@
         },
         {
           "disabled": false,
-          "document": "所属主账号Uin",
+          "document": "<p>所属主账号Uin</p>",
           "example": "1000****91",
           "member": "string",
           "name": "Uin",
@@ -1904,7 +1974,7 @@
         },
         {
           "disabled": false,
-          "document": "所属主账号昵称",
+          "document": "<p>所属主账号昵称</p>",
           "example": "生生乌龙",
           "member": "string",
           "name": "Nickname",
@@ -1914,7 +1984,7 @@
         },
         {
           "disabled": false,
-          "document": "所属子账号Uin",
+          "document": "<p>所属子账号Uin</p>",
           "example": "1000****91",
           "member": "string",
           "name": "SubUin",
@@ -1924,7 +1994,7 @@
         },
         {
           "disabled": false,
-          "document": "所属子账号昵称",
+          "document": "<p>所属子账号昵称</p>",
           "example": "生生乌龙",
           "member": "string",
           "name": "SubNickname",
@@ -1934,7 +2004,7 @@
         },
         {
           "disabled": false,
-          "document": "账号类型\n0 主账号AK 1 子账号AK 2 临时密钥",
+          "document": "<p>账号类型<br>0 主账号AK 1 子账号AK 2 临时密钥</p>",
           "example": "0",
           "member": "int64",
           "name": "Type",
@@ -1944,7 +2014,7 @@
         },
         {
           "disabled": false,
-          "document": "所属appid",
+          "document": "<p>所属appid</p>",
           "example": "1234567",
           "member": "int64",
           "name": "AppID",
@@ -1954,7 +2024,7 @@
         },
         {
           "disabled": false,
-          "document": "泄漏证据",
+          "document": "<p>泄漏证据</p>",
           "example": "[\"url1\",\"url2\"]",
           "member": "string",
           "name": "LeakEvidence",
@@ -1964,7 +2034,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持编辑信任账号",
+          "document": "<p>是否支持编辑信任账号</p>",
           "example": "false",
           "member": "bool",
           "name": "IsSupportEditWhiteAccount",
@@ -1974,7 +2044,7 @@
         },
         {
           "disabled": false,
-          "document": "告警证据",
+          "document": "<p>告警证据</p>",
           "example": "\"{   \"Type\": \"Login\",   \"Login\": [     {       \"LoginTime\": \"2025-08-27T20:21:19Z\",       \"Ip\": \"192.168.1.1\",       \"Country\": 86,       \"Province\": 44,       \"City\": 1     }]}\"",
           "member": "string",
           "name": "Evidence",
@@ -1984,7 +2054,7 @@
         },
         {
           "disabled": false,
-          "document": "告警规则标识",
+          "document": "<p>告警规则标识</p>",
           "example": "AbnormalLogin",
           "member": "string",
           "name": "RuleKey",
@@ -1994,7 +2064,7 @@
         },
         {
           "disabled": false,
-          "document": "云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云",
+          "document": "<p>云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云</p>",
           "example": "0",
           "member": "int64",
           "name": "CloudType",
@@ -2004,7 +2074,7 @@
         },
         {
           "disabled": false,
-          "document": "告警AI分析状态\n-1 分析失败\n0 未分析\n1 分析中\n2 分析成功，真实告警\n3 分析成功，可疑告警",
+          "document": "<p>告警AI分析状态<br>-1 分析失败<br>0 未分析<br>1 分析中<br>2 分析成功，真实告警<br>3 分析成功，可疑告警</p>",
           "example": "0",
           "member": "int64",
           "name": "AIStatus",
@@ -2014,7 +2084,7 @@
         },
         {
           "disabled": false,
-          "document": "首次告警时间戳（秒级）",
+          "document": "<p>首次告警时间戳（秒级）</p>",
           "example": "1766651394",
           "member": "int64",
           "name": "FirstAlarmTimestamp",
@@ -2024,12 +2094,22 @@
         },
         {
           "disabled": false,
-          "document": "最后告警时间戳（秒级）",
+          "document": "<p>最后告警时间戳（秒级）</p>",
           "example": "1766651394",
           "member": "int64",
           "name": "LastAlarmTimestamp",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ai分析失败描述，未失败为空字符串</p>",
+          "example": "AI分析任务创建失败",
+          "member": "string",
+          "name": "AIFailedReason",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -7782,6 +7862,100 @@
       ],
       "usage": "out"
     },
+    "CICDToken": {
+      "document": "CI/CD接入Token",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ID</p>",
+          "example": "10021",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>appid</p>",
+          "example": "260082268",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CI/CD名称</p>",
+          "example": "github-dockerfile",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于接入的Token</p>",
+          "example": "638c321e-10f6-4577-a190-633fb6ed9641",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描结果存储时长</p>",
+          "example": "60",
+          "member": "uint64",
+          "name": "Period",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已扫描文件</p>",
+          "example": "15",
+          "member": "uint64",
+          "name": "FileCnt",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近扫描状态</p>",
+          "example": "SCAN_ERR",
+          "member": "string",
+          "name": "LastScanStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近扫描时间</p>",
+          "example": "2026-03-26T06:38:35Z",
+          "member": "string",
+          "name": "LastScanTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CVMAssetVO": {
       "document": "主机资产信息\n\n主机防护状态枚举，左边是常量，右边是显示\n0：未安装\n1：基础版防护中\n2：普惠版防护中\n3：专业版防护中\n4：旗舰版防护中\n5：已离线\n6：已关机",
       "members": [
@@ -13093,6 +13267,134 @@
       ],
       "type": "object"
     },
+    "CreateIaCAccessTokenRequest": {
+      "document": "CreateIaCAccessToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>CI/CD名称</p>",
+          "example": "github-xcss",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描结果存储时长(30/60/90/120/150/180天)</p>",
+          "example": "60",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIaCAccessTokenResponse": {
+      "document": "CreateIaCAccessToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接入Token</p>",
+          "example": "089096bd-488f-4786-acf5-33fe0d66bcb2",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIaCFileExportJobRequest": {
+      "document": "CreateIaCFileExportJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-a6df317cb6a8c424\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIaCFileExportJobResponse": {
+      "document": "CreateIaCFileExportJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "0129d37d-4f23-4657-a09b-312313b88dad",
+          "member": "string",
+          "name": "JobID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIaCFileReScanTaskRequest": {
+      "document": "CreateIaCFileReScanTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件ID</p>",
+          "example": "8122",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-a6df317cb6a8c424\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIaCFileReScanTaskResponse": {
+      "document": "CreateIaCFileReScanTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRiskCenterScanTaskRequest": {
       "document": "CreateRiskCenterScanTask请求参数结构体",
       "members": [
@@ -14383,6 +14685,60 @@
     },
     "DeleteDspmWhitelistStrategyResponse": {
       "document": "DeleteDspmWhitelistStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIaCAccessTokenRequest": {
+      "document": "DeleteIaCAccessToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>删除ID列表</p>",
+          "example": "[10001]",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIaCAccessTokenResponse": {
+      "document": "DeleteIaCAccessToken返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIaCFileRequest": {
+      "document": "DeleteIaCFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>删除ID列表</p>",
+          "example": "[8151]",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIaCFileResponse": {
+      "document": "DeleteIaCFile返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -22064,6 +22420,259 @@
           "name": "HighBaseLineRiskList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIaCFileListRequest": {
+      "document": "DescribeIaCFileList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-a6df317cb6a8c424\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIaCFileListResponse": {
+      "document": "DescribeIaCFileList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>列表</p>",
+          "example": "无",
+          "member": "IaCFile",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1520",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIaCFileOverviewRequest": {
+      "document": "DescribeIaCFileOverview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>",
+          "example": "2026-04-01T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "2026-04-07T23:59:59+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-a6df317cb6a8c424\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIaCFileOverviewResponse": {
+      "document": "DescribeIaCFileOverview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件数量</p>",
+          "example": "92",
+          "member": "uint64",
+          "name": "TotalFile",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险文件数量(1:Dockerfile,2:Terraform,3:KubernetesYaml)</p>",
+          "example": "无",
+          "member": "KeyValueInt",
+          "name": "RiskFile",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIaCFileReportRequest": {
+      "document": "DescribeIaCFileReport请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资产ID</p>",
+          "example": "8130",
+          "member": "uint64",
+          "name": "AssetId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-a6df317cb6a8c424\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIaCFileReportResponse": {
+      "document": "DescribeIaCFileReport返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>检测文件</p>",
+          "example": "apiVersionrt: 30090",
+          "member": "string",
+          "name": "File",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测状态(0:待扫描,1:检测中,2:已完成,3:检测异常)</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测时间</p>",
+          "example": "2026-04-01T07:23:22Z",
+          "member": "datetime_iso",
+          "name": "ScanTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险列表</p>",
+          "example": "无",
+          "member": "IaCFileRisk",
+          "name": "Risks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIaCTokenListRequest": {
+      "document": "DescribeIaCTokenList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-a6df317cb6a8c424\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIaCTokenListResponse": {
+      "document": "DescribeIaCTokenList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>列表</p>",
+          "example": "无",
+          "member": "CICDToken",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "27",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -32317,6 +32926,205 @@
       ],
       "usage": "both"
     },
+    "IaCFile": {
+      "document": "IaC检测文件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ID</p>",
+          "example": "8146",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>appid</p>",
+          "example": "260083796",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件ID</p>",
+          "example": "iac-cicd-8146",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件名称</p>",
+          "example": "http-sw-app398.yaml",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CI/CD名称</p>",
+          "example": "jenkins-yancyw",
+          "member": "string",
+          "name": "CICDName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件路径</p>",
+          "example": "/home/test/http-sw-app398.yaml",
+          "member": "string",
+          "name": "FilePath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件类型(1:Dockerfile,2:Terraform,3:KubernetesYaml)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "FileType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险总计数量</p>",
+          "example": "63",
+          "member": "uint64",
+          "name": "RiskTotalCnt",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险等级数量(0:低危,1:中危,2:高危,3:严重)</p>",
+          "example": "无",
+          "member": "KeyValueInt",
+          "name": "RiskLevelCnt",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描时间</p>",
+          "example": "2026-04-03 10:50:50",
+          "member": "string",
+          "name": "ScanTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测状态(0:待扫描,1:检测中,2:已完成,3:检测异常)</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描失败类型(0:无失败, 1:检测超时, 2:文件格式解析失败, 3:检测失败)</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "FailType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IaCFileRisk": {
+      "document": "IaC检测文件风险",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>风险等级(0:低危,1:中危,2:高危,3:严重)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Level",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险所在行数</p>",
+          "example": "9",
+          "member": "uint64",
+          "name": "Line",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则名称</p>",
+          "example": "K8s Service 应避免使用 NodePort 类型",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问题描述</p>",
+          "example": "Service 不应使用 NodePort 类型。NodePort 会在每个节点的 IP 上暴露服务的静态端口，这可能带来安全风险，因为它绕过了负载均衡器的安全控制，直接将服务暴露在节点网络上。",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修复建议</p>",
+          "example": "将 Service 类型改为 ClusterIP 或 LoadBalancer，避免直接暴露节点端口。",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "InquireInfo": {
       "document": "计费项信息",
       "members": [
@@ -32788,6 +33596,34 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KeyValueInt": {
+      "document": "键值对（整数）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>键</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>值</p>",
+          "example": "90",
+          "member": "int64",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -33765,6 +34601,42 @@
     },
     "ModifyDspmWhitelistStrategyResponse": {
       "document": "ModifyDspmWhitelistStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIaCTokenPeriodRequest": {
+      "document": "ModifyIaCTokenPeriod请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ID</p>",
+          "example": "10038",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描结果存储周期</p>",
+          "example": "90",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIaCTokenPeriodResponse": {
+      "document": "ModifyIaCTokenPeriod返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -38219,7 +39091,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID，无业务意义仅作为唯一键",
+          "document": "<p>主键ID，无业务意义仅作为唯一键</p>",
           "example": "601606",
           "member": "int64",
           "name": "ID",
@@ -38229,7 +39101,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号Appid",
+          "document": "<p>子账号Appid</p>",
           "example": "1325**26086",
           "member": "string",
           "name": "AppID",
@@ -38239,7 +39111,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号UIn",
+          "document": "<p>子账号UIn</p>",
           "example": "10001**271828",
           "member": "string",
           "name": "Uin",
@@ -38249,7 +39121,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号名称",
+          "document": "<p>子账号名称</p>",
           "example": "张三",
           "member": "string",
           "name": "NickName",
@@ -38259,7 +39131,7 @@
         },
         {
           "disabled": false,
-          "document": "主账号Appid",
+          "document": "<p>主账号Appid</p>",
           "example": "132586**086",
           "member": "string",
           "name": "OwnerAppID",
@@ -38269,7 +39141,7 @@
         },
         {
           "disabled": false,
-          "document": "主账号Uin",
+          "document": "<p>主账号Uin</p>",
           "example": "10002**271828",
           "member": "string",
           "name": "OwnerUin",
@@ -38279,7 +39151,7 @@
         },
         {
           "disabled": false,
-          "document": "主账号名称",
+          "document": "<p>主账号名称</p>",
           "example": "张三的老板",
           "member": "string",
           "name": "OwnerNickName",
@@ -38289,7 +39161,7 @@
         },
         {
           "disabled": false,
-          "document": "所属主账号memberId信息",
+          "document": "<p>所属主账号memberId信息</p>",
           "example": "mem-abx0gds1",
           "member": "string",
           "name": "OwnerMemberID",
@@ -38299,7 +39171,7 @@
         },
         {
           "disabled": false,
-          "document": "账户类型，0为腾讯云账户，1为AWS账户",
+          "document": "<p>账户类型，0为腾讯云账户，1为AWS账户</p>",
           "example": "0",
           "member": "int64",
           "name": "CloudType",
@@ -38309,7 +39181,7 @@
         },
         {
           "disabled": false,
-          "document": "可访问服务数量",
+          "document": "<p>可访问服务数量</p>",
           "example": "20",
           "member": "int64",
           "name": "ServiceCount",
@@ -38319,7 +39191,7 @@
         },
         {
           "disabled": false,
-          "document": "可访问接口数量",
+          "document": "<p>可访问接口数量</p>",
           "example": "100",
           "member": "int64",
           "name": "InterfaceCount",
@@ -38329,7 +39201,7 @@
         },
         {
           "disabled": false,
-          "document": "可访问资源数量",
+          "document": "<p>可访问资源数量</p>",
           "example": "2122",
           "member": "int64",
           "name": "AssetCount",
@@ -38339,7 +39211,7 @@
         },
         {
           "disabled": false,
-          "document": "访问/行为日志数量",
+          "document": "<p>访问/行为日志数量</p>",
           "example": "10259",
           "member": "int64",
           "name": "LogCount",
@@ -38349,7 +39221,7 @@
         },
         {
           "disabled": false,
-          "document": "权限配置风险",
+          "document": "<p>权限配置风险</p>",
           "example": "5",
           "member": "int64",
           "name": "ConfigRiskCount",
@@ -38359,7 +39231,7 @@
         },
         {
           "disabled": false,
-          "document": "危险行为告警",
+          "document": "<p>危险行为告警</p>",
           "example": "3",
           "member": "int64",
           "name": "ActionRiskCount",
@@ -38369,7 +39241,7 @@
         },
         {
           "disabled": false,
-          "document": "是否接入操作审计日志",
+          "document": "<p>是否接入操作审计日志</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAccessCloudAudit",
@@ -38379,7 +39251,7 @@
         },
         {
           "disabled": false,
-          "document": "是否配置风险的安全体检",
+          "document": "<p>是否配置风险的安全体检</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAccessCheck",
@@ -38389,12 +39261,22 @@
         },
         {
           "disabled": false,
-          "document": "是否配置用户行为管理策略",
+          "document": "<p>是否配置用户行为管理策略</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAccessUeba",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（Unix时间戳）</p>",
+          "example": "1780911178",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

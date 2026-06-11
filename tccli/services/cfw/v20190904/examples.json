@@ -722,16 +722,10 @@
     ],
     "ExpandCfwVertical": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExpandCfwVertical\n<公共请求参数>\n\n{\n    \"FwType\": \"nat\",\n    \"Width\": 200,\n    \"CfwInstance\": \"cfwnat-d2afc817\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "防火墙垂直扩容"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExpandCfwVertical\n<公共请求参数>\n\n{\n    \"FwType\": \"nat\",\n    \"Width\": 200,\n    \"CfwInstance\": \"cfwnat-d2afc817\",\n    \"ElasticSwitch\": 1,\n    \"ElasticBandwidth\": 220\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "防火墙规格调整开启弹性计费"
+        "document": "扩容实例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExpandCfwVertical\n<公共请求参数>\n\n{\n    \"FwType\": \"nat\",\n    \"Width\": 121,\n    \"CfwInstance\": \"cfwnat-e366d270\",\n    \"ElasticSwitch\": 1,\n    \"ElasticBandwidth\": 290,\n    \"Tags\": [\n        {\n            \"TagKey\": null,\n            \"TagValue\": null\n        }\n    ],\n    \"ElasticTrafficSwitch\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8fcb913a-80ee-4ace-bf11-7c5a0592be7e\"\n    }\n}",
+        "title": "扩容实例"
       }
     ],
     "ModifyAcRule": [

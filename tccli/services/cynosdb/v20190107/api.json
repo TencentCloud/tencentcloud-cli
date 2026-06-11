@@ -7770,6 +7770,15 @@
           "name": "InstanceWeights",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>负载均衡模式</p><p>枚举值：</p><ul><li>static： 静态负载</li><li>dynamic： 动态负载</li></ul>",
+          "example": "static",
+          "member": "string",
+          "name": "LoadBalanceMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -17793,10 +17802,19 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群级别</p>",
+          "example": "L1",
+          "member": "string",
+          "name": "ClusterLevel",
           "required": false,
           "type": "string"
         }
@@ -17808,7 +17826,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Serverless实例可选规格",
+          "document": "<p>Serverless实例可选规格</p>",
           "example": "无",
           "member": "ServerlessSpec",
           "name": "Specs",
@@ -25781,6 +25799,15 @@
           "name": "ApQueryToOtherNode",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>负载均衡模式</p><p>枚举值：</p><ul><li>static： 静态负载</li><li>dynamic： 动态负载</li></ul>",
+          "example": "static",
+          "member": "string",
+          "name": "LoadBalanceMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -28919,6 +28946,17 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动负载</p><p>枚举值：</p><ul><li>static： 静态负载</li><li>dynamic： 动态负载</li></ul>",
+          "example": "static",
+          "member": "string",
+          "name": "LoadBalanceMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

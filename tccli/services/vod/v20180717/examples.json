@@ -844,6 +844,14 @@
         "title": "获取人脸信息"
       }
     ],
+    "DescribeAigcFaceInfoAsync": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAigcFaceInfoAsync\n<公共请求参数>\n\n{\n    \"SubAppId\": 250000002,\n    \"FileInfos\": [\n        {\n            \"Type\": \"Url\",\n            \"Url\": \"https://150******************************************************************************************20.mp4\"\n        }\n    ],\n    \"SessionId\": \"my*******Id1\",\n    \"SessionContext\": \"my*******Context\",\n    \"TasksPriority\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"251007502-DescribeAigcFaceInfoAsync-d5a02998082d0a58cecd7e69165b5245t\",\n        \"RequestId\": \"fc945039-2d72-4591-9ce7-780856bc4e24\"\n    }\n}",
+        "title": "异步获取 AIGC 人脸信息"
+      }
+    ],
     "DescribeAigcUsageData": [
       {
         "document": "",

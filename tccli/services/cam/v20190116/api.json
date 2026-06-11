@@ -2833,7 +2833,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页码，从1开始",
+          "document": "<p>页码，从1开始</p>",
           "example": "1",
           "member": "uint64",
           "name": "Page",
@@ -2842,7 +2842,7 @@
         },
         {
           "disabled": false,
-          "document": "每页行数，不能大于200",
+          "document": "<p>每页行数，不能大于200</p>",
           "example": "5",
           "member": "uint64",
           "name": "Rp",
@@ -2851,8 +2851,8 @@
         },
         {
           "disabled": false,
-          "document": "标签筛选",
-          "example": "[{\"Key\":\"管理人员\",\"Value\":\"运营主管\"}]",
+          "document": "<p>标签筛选</p>",
+          "example": "无",
           "member": "RoleTags",
           "name": "Tags",
           "required": false,
@@ -2866,7 +2866,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色详情列表。",
+          "document": "<p>角色详情列表。</p>",
           "example": "无",
           "member": "RoleInfo",
           "name": "List",
@@ -2876,7 +2876,7 @@
         },
         {
           "disabled": false,
-          "document": "角色总数",
+          "document": "<p>角色总数</p>",
           "example": "14",
           "member": "uint64",
           "name": "TotalNum",

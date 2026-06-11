@@ -1,45 +1,26 @@
-**Example 1: 防火墙垂直扩容**
+**Example 1: 扩容实例**
 
-
-
-Input: 
-
-```
-tccli cfw ExpandCfwVertical --cli-unfold-argument  \
-    --FwType nat \
-    --Width 200 \
-    --CfwInstance cfwnat-d2afc817
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
-    }
-}
-```
-
-**Example 2: 防火墙规格调整开启弹性计费**
-
-
+扩容实例
 
 Input: 
 
 ```
 tccli cfw ExpandCfwVertical --cli-unfold-argument  \
     --FwType nat \
-    --Width 200 \
-    --CfwInstance cfwnat-d2afc817 \
+    --Width 121 \
+    --CfwInstance cfwnat-e366d270 \
     --ElasticSwitch 1 \
-    --ElasticBandwidth 220
+    --ElasticBandwidth 290 \
+    --Tags.0.TagKey None \
+    --Tags.0.TagValue None \
+    --ElasticTrafficSwitch 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "RequestId": "8fcb913a-80ee-4ace-bf11-7c5a0592be7e"
     }
 }
 ```

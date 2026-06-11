@@ -6349,7 +6349,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>签署方经办人的证件类型，支持以下类型</p><ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li><li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li><li>OTHER_CARD_TYPE : 其他证件</li></ul><p>注: <code>其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。</code></p>",
+          "document": "<p>签署方经办人的证件类型，支持以下类型</p><ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li><li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>",
           "example": "ID_CARD",
           "member": "string",
           "name": "ApproverIdCardType",
@@ -10573,7 +10573,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。\n",
+          "document": "<p>签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。</p>",
           "example": "yDRS4UUgygqdcj51UuO4zjEyWTmzsIAR",
           "member": "string",
           "name": "RecipientId",
@@ -10582,7 +10582,7 @@
         },
         {
           "disabled": false,
-          "document": "指定企业经办签署人OpenId\n\n注: `签署人OpenId未实名时，需要传入签署人姓名以及手机号码。`",
+          "document": "<p>指定企业经办签署人OpenId</p><p>注: <code>签署人OpenId未实名时，需要传入签署人姓名以及手机号码。</code></p>",
           "example": "n9527",
           "member": "string",
           "name": "OpenId",
@@ -10591,7 +10591,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人姓名",
+          "document": "<p>签署人姓名</p>",
           "example": "张三",
           "member": "string",
           "name": "ApproverName",
@@ -10600,7 +10600,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人手机号码",
+          "document": "<p>签署人手机号码</p>",
           "example": "18888888888",
           "member": "string",
           "name": "ApproverMobile",
@@ -10609,7 +10609,7 @@
         },
         {
           "disabled": false,
-          "document": "企业名称",
+          "document": "<p>企业名称</p>",
           "example": "张三示例公司",
           "member": "string",
           "name": "OrganizationName",
@@ -10618,7 +10618,7 @@
         },
         {
           "disabled": false,
-          "document": "企业OpenId",
+          "document": "<p>企业OpenId</p>",
           "example": "org_dianziqian",
           "member": "string",
           "name": "OrganizationOpenId",
@@ -10627,7 +10627,7 @@
         },
         {
           "disabled": false,
-          "document": "签署企业非渠道子客，默认为false，即表示同一渠道下的企业；如果为true，则目前表示接收方企业为SaaS企业, 为渠道子客时，OrganizationOpenId 必传",
+          "document": "<p>签署企业非渠道子客，默认为false，即表示同一渠道下的企业；如果为true，则目前表示接收方企业为SaaS企业, 为渠道子客时，OrganizationOpenId 必传</p>",
           "example": "false",
           "member": "bool",
           "name": "NotChannelOrganization",
@@ -10636,7 +10636,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD 中国大陆居民身份证</li>\n<li>HONGKONG_AND_MACAO 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN 中国港澳台居民居住证(格式同中国大陆居民身份证)</li>\n<li>OTHER_CARD_TYPE 其他证件</li></ul>\n\n注: `1.其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`\n`2.补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
+          "document": "<p>签署方经办人的证件类型，支持以下类型</p><ul><li>ID_CARD 中国大陆居民身份证</li><li>HONGKONG_AND_MACAO 中国港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul><p>注:补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。</p>",
           "example": "ID_CARD",
           "member": "string",
           "name": "ApproverIdCardType",
@@ -10645,7 +10645,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
+          "document": "<p>签署方经办人的证件号码，应符合以下规则</p><ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li><li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li><li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul><p>注：<code>补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。</code></p>",
           "example": "620000198802020000",
           "member": "string",
           "name": "ApproverIdCardNumber",
@@ -10654,7 +10654,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程ID\n- 补充合同组子合同动态签署人时必传。\n- 补充正常合同，请阅读：<a href=\"https://qian.tencent.com/developers/partnerApis/flows/ChannelCreateFlowApprovers/\" target=\"_blank\">补充签署人接口</a>接口使用说明",
+          "document": "<p>合同流程ID</p><ul><li>补充合同组子合同动态签署人时必传。</li><li>补充正常合同，请阅读：<a href=\"https://qian.tencent.com/developers/partnerApis/flows/ChannelCreateFlowApprovers/\" target=\"_blank\">补充签署人接口</a>接口使用说明</li></ul>",
           "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "FlowId",
@@ -10940,7 +10940,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>签署方经办人的证件类型，支持以下类型</p><ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li><li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li><li>OTHER_CARD_TYPE : 其他证件</li></ul><p>注: <code>其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。</code></p>",
+          "document": "<p>签署方经办人的证件类型，支持以下类型</p><ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li><li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",

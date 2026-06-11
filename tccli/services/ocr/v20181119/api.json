@@ -10282,6 +10282,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>学科（如语文、数学、英语）</p>",
+          "example": "数学",
+          "member": "string",
+          "name": "Subject",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>题型（如选择题、填空题、计算题、应用题、判断题、作文题）</p>",
+          "example": "选择题",
+          "member": "string",
+          "name": "QuestionType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

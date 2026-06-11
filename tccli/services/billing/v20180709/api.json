@@ -385,6 +385,13 @@
       "output": "DescribeGatherRuleDetailResponse",
       "status": "online"
     },
+    "DescribeOrgMemberAccountBalance": {
+      "document": "批量查询成员可用余额信息",
+      "input": "DescribeOrgMemberAccountBalanceRequest",
+      "name": "批量查询集团成员账户余额",
+      "output": "DescribeOrgMemberAccountBalanceResponse",
+      "status": "online"
+    },
     "DescribeRenewInstances": {
       "document": "注意事项：\n1、本接口支持查询已接入续费管理页的包年包月实例，包括运行中、已隔离（部分产品不支持）\n2、子用户使用该接口时，应具备QcloudFinanceRenewManageFullAccess权限策略。",
       "input": "DescribeRenewInstancesRequest",
@@ -15896,6 +15903,187 @@
           "name": "RuleDetail",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrgMemberAccountBalanceData": {
+      "document": "DescribeOrgMemberAccountBalanceData",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>成员账号Uin</p>",
+          "example": "100049260339",
+          "member": "string",
+          "name": "MemberUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>成员名称</p>",
+          "example": "test_1118",
+          "member": "string",
+          "name": "MemberName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为信用账户</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCreditAccount",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前真实可用余额</p><p>单位：分</p>",
+          "example": "1061",
+          "member": "float",
+          "name": "RealBalance",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>现金账户余额</p><p>单位：分</p>",
+          "example": "1061",
+          "member": "float",
+          "name": "CashAccountBalance",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>信用额度</p><p>单位：分</p><p>信用额度 = 基础信用额度 + 临时信用额度</p>",
+          "example": "0",
+          "member": "float",
+          "name": "CreditAmount",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>临时信用额度</p><p>单位：分</p>",
+          "example": "0",
+          "member": "float",
+          "name": "TempCredit",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>基础信用额度</p><p>单位：分</p>",
+          "example": "0",
+          "member": "float",
+          "name": "BasicCreditAmount",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>欠费金额</p><p>单位：分</p>",
+          "example": "0",
+          "member": "float",
+          "name": "OweAmount",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeOrgMemberAccountBalanceRequest": {
+      "document": "DescribeOrgMemberAccountBalance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码</p><p>默认值：1</p><p>取值范围≥1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单页大小</p><p>取值范围：[1, 10]</p><p>默认值：10</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>成员uin列表</p><p>入参限制：元素必须为纯数字字符串，并且元素个数不能大于10</p><p>为空时返回当前组织内所有成员的账户余额信息，不为空时返回指定成员的账户余额信息</p>",
+          "example": "[\"700001941608\"]",
+          "member": "string",
+          "name": "MemberUins",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrgMemberAccountBalanceResponse": {
+      "document": "DescribeOrgMemberAccountBalance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>成员账户余额列表</p>",
+          "example": "无",
+          "member": "DescribeOrgMemberAccountBalanceData",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总记录数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前页实际返回数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前页码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

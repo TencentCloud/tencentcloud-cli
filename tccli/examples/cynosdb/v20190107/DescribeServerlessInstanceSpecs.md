@@ -24,7 +24,7 @@ Output:
                 "MaxStorageSize": 1000,
                 "MinCpu": 0.25,
                 "StockCount": 0,
-                "MaxCpu": 0.0,
+                "MaxCpu": 0,
                 "HasStock": true,
                 "IsDefault": 0
             },
@@ -32,7 +32,7 @@ Output:
                 "MaxStorageSize": 5000,
                 "MinCpu": 0.25,
                 "StockCount": 0,
-                "MaxCpu": 0.0,
+                "MaxCpu": 0,
                 "HasStock": true,
                 "IsDefault": 0
             },
@@ -40,7 +40,7 @@ Output:
                 "MaxStorageSize": 10000,
                 "MinCpu": 0.25,
                 "StockCount": 0,
-                "MaxCpu": 0.0,
+                "MaxCpu": 0,
                 "HasStock": true,
                 "IsDefault": 0
             },
@@ -48,7 +48,7 @@ Output:
                 "MaxStorageSize": 1000,
                 "MinCpu": 0.5,
                 "StockCount": 0,
-                "MaxCpu": 0.0,
+                "MaxCpu": 0,
                 "HasStock": true,
                 "IsDefault": 0
             },
@@ -56,7 +56,7 @@ Output:
                 "MaxStorageSize": 5000,
                 "MinCpu": 0.5,
                 "StockCount": 0,
-                "MaxCpu": 0.0,
+                "MaxCpu": 0,
                 "HasStock": true,
                 "IsDefault": 1
             },
@@ -64,31 +64,31 @@ Output:
                 "MaxStorageSize": 10000,
                 "MinCpu": 0.5,
                 "StockCount": 0,
-                "MaxCpu": 0.0,
+                "MaxCpu": 0,
                 "HasStock": true,
                 "IsDefault": 0
             },
             {
                 "MaxStorageSize": 5000,
-                "MinCpu": 0.0,
+                "MinCpu": 0,
                 "StockCount": 0,
-                "MaxCpu": 0.0,
+                "MaxCpu": 0,
                 "HasStock": true,
                 "IsDefault": 0
             },
             {
                 "MaxStorageSize": 10000,
-                "MinCpu": 0.0,
+                "MinCpu": 0,
                 "StockCount": 0,
-                "MaxCpu": 0.0,
+                "MaxCpu": 0,
                 "HasStock": true,
                 "IsDefault": 0
             },
             {
                 "MaxStorageSize": 10000,
-                "MinCpu": 0.0,
+                "MinCpu": 0,
                 "StockCount": 0,
-                "MaxCpu": 0.0,
+                "MaxCpu": 0,
                 "HasStock": true,
                 "IsDefault": 0
             }

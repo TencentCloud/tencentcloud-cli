@@ -575,11 +575,11 @@
       "status": "online"
     },
     "DescribeAvailableTKEEdgeVersion": {
-      "document": "边缘计算支持版本和k8s版本",
+      "document": "edge-dashboard 接口，当前edge产品已完成下线周知，同时edge-dashboard功能已经全部转移至edge-gw，申请将edge-dashboard所有接口先下线\n\n边缘计算支持版本和k8s版本",
       "input": "DescribeAvailableTKEEdgeVersionRequest",
       "name": "边缘计算支持的k8s版本",
       "output": "DescribeAvailableTKEEdgeVersionResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeBackupStorageLocations": {
       "document": "查询备份仓库信息",
@@ -862,11 +862,11 @@
       "status": "online"
     },
     "DescribeEdgeAvailableExtraArgs": {
-      "document": "查询边缘容器集群可用的自定义参数",
+      "document": "edge-dashboard 接口，当前edge产品已完成下线周知，同时edge-dashboard功能已经全部转移至edge-gw，申请将edge-dashboard所有接口先下线\n\n查询边缘容器集群可用的自定义参数",
       "input": "DescribeEdgeAvailableExtraArgsRequest",
       "name": "查询边缘容器集群可用的自定义参数",
       "output": "DescribeEdgeAvailableExtraArgsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeCVMInstances": {
       "document": "获取边缘容器CVM实例相关信息",
@@ -1261,18 +1261,18 @@
       "status": "online"
     },
     "DescribeTKEEdgeExternalKubeconfig": {
-      "document": "获取边缘计算外部访问的kubeconfig",
+      "document": "edge-dashboard 接口，当前edge产品已完成下线周知，同时edge-dashboard功能已经全部转移至edge-gw，申请将edge-dashboard所有接口先下线\n\n获取边缘计算外部访问的kubeconfig",
       "input": "DescribeTKEEdgeExternalKubeconfigRequest",
       "name": "获取边缘计算外部访问的kubeconfig",
       "output": "DescribeTKEEdgeExternalKubeconfigResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeTKEEdgeScript": {
-      "document": "获取边缘脚本链接，此接口用于添加第三方节点，通过下载脚本从而将节点添加到边缘集群。",
+      "document": "edge-dashboard 接口，当前edge产品已完成下线周知，同时edge-dashboard功能已经全部转移至edge-gw，申请将edge-dashboard所有接口先下线\n\n获取边缘脚本链接，此接口用于添加第三方节点，通过下载脚本从而将节点添加到边缘集群。",
       "input": "DescribeTKEEdgeScriptRequest",
       "name": "获取边缘脚本链接",
       "output": "DescribeTKEEdgeScriptResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeTasks": {
       "document": "查询任务相关信息，只会查询对应任务类型的最新的一条任务状态",
@@ -19051,6 +19051,17 @@
           "example": "false",
           "member": "bool",
           "name": "NodeCacheCapable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>extender 是否可忽略</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Ignorable",
           "output_required": false,
           "required": false,
           "type": "bool",

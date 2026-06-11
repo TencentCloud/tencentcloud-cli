@@ -483,6 +483,13 @@
       "output": "OpenAuditServiceResponse",
       "status": "online"
     },
+    "PromoteDBInstanceToActive": {
+      "document": "本接口（PromoteDBInstanceToActive）用于灾备实例转正",
+      "input": "PromoteDBInstanceToActiveRequest",
+      "name": "灾备实例转正",
+      "output": "PromoteDBInstanceToActiveResponse",
+      "status": "online"
+    },
     "RenameInstance": {
       "document": "本接口(RenameInstance)用于修改云数据库实例的名称。",
       "input": "RenameInstanceRequest",
@@ -8573,6 +8580,52 @@
       ],
       "usage": "both"
     },
+    "PromoteDBInstanceToActiveRequest": {
+      "document": "PromoteDBInstanceToActive请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "灾备实例id",
+          "example": "cmgo-a7bb6vd7",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主实例id",
+          "example": "cmgo-ggh7rpz5",
+          "member": "string",
+          "name": "MasterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PromoteDBInstanceToActiveResponse": {
+      "document": "PromoteDBInstanceToActive返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "10001",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RemoveNodeList": {
       "document": "修改实例节点详情。",
       "members": [
@@ -9328,7 +9381,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定实例ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。\n",
+          "document": "<p>指定实例ID。例如：cmgo-p8vn****。请登录 <a href=\"https://console.cloud.tencent.com/mongodb\">MongoDB 控制台</a>在实例列表复制实例 ID。</p>",
           "example": "cmgo-7pjedvz7",
           "member": "string",
           "name": "InstanceId",
@@ -9337,8 +9390,8 @@
         },
         {
           "disabled": false,
-          "document": "维护时间窗开始时间。取值范围为\"00:00-23:00\"的任意整点或半点，如00:00或00:30。",
-          "example": "\"04:00\"",
+          "document": "<p>维护时间窗开始时间。取值范围为&quot;00:00-23:00&quot;的任意整点或半点，如00:00或00:30。</p>",
+          "example": "04:00",
           "member": "string",
           "name": "MaintenanceStart",
           "required": true,
@@ -9346,11 +9399,20 @@
         },
         {
           "disabled": false,
-          "document": "维护时间窗结束时间。\n- 取值范围为\"00:00-23:00\"的任意整点或半点，维护时间持续时长最小为30分钟，最大为3小时。\n- 结束时间务必是基于开始时间向后的时间。",
-          "example": "\"05:00\"",
+          "document": "<p>维护时间窗结束时间。</p><ul><li>取值范围为&quot;00:00-23:00&quot;的任意整点或半点，维护时间持续时长最小为30分钟，最大为3小时。</li><li>结束时间务必是基于开始时间向后的时间。</li></ul>",
+          "example": "05:00",
           "member": "string",
           "name": "MaintenanceEnd",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定每周内维护时间窗口的具体日期。  格式：请输入 1-7 之间的数字代表周一到周日（例如：1 代表周一），多个日期请用英文逗号 , 分隔。 示例：输入 1,3,5 表示维护窗口周期在每周的周一、周三、周五。 默认值：不设置，则默认为全周期 (1,2,3,4,5,6,7)。</p>",
+          "example": "1,2,3,4,5,6,7",
+          "member": "string",
+          "name": "MaintenanceDays",
+          "required": false,
           "type": "string"
         }
       ],

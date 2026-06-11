@@ -2134,7 +2134,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)",
+          "document": "<p>源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)tdsqlmysql,keewidb,tdstore</p><p>枚举值：</p><ul><li>mysql： MySQL数据库</li></ul>",
           "example": "mysql",
           "member": "string",
           "name": "SrcDatabaseType",
@@ -2143,7 +2143,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)",
+          "document": "<p>目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)tdsqlmysql,keewidb,tdstore,tendis</p><p>枚举值：</p><ul><li>mysql： MySQL数据库</li></ul>",
           "example": "mysql",
           "member": "string",
           "name": "DstDatabaseType",
@@ -2152,7 +2152,7 @@
         },
         {
           "disabled": false,
-          "document": "源实例地域，如：ap-guangzhou",
+          "document": "<p>源实例地域，如：ap-guangzhou</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "SrcRegion",
@@ -2161,7 +2161,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例地域，如：ap-guangzhou。注意，目标地域必须和API请求地域保持一致。",
+          "document": "<p>目标实例地域，如：ap-guangzhou。注意，目标地域必须和API请求地域保持一致。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "DstRegion",
@@ -2170,7 +2170,7 @@
         },
         {
           "disabled": false,
-          "document": "实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考[计费概述](https://cloud.tencent.com/document/product/571/18736)",
+          "document": "<p>实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考<a href=\"https://cloud.tencent.com/document/product/571/18736\">计费概述</a></p>",
           "example": "large",
           "member": "string",
           "name": "InstanceClass",
@@ -2179,7 +2179,7 @@
         },
         {
           "disabled": false,
-          "document": "购买数量，范围为[1,15]，默认为1",
+          "document": "<p>购买数量，范围为[1,15]，默认为1</p>",
           "example": "1",
           "member": "uint64",
           "name": "Count",
@@ -2188,7 +2188,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移服务名称，最大长度128",
+          "document": "<p>迁移服务名称，最大长度128</p>",
           "example": "migrate_test",
           "member": "string",
           "name": "JobName",
@@ -2197,7 +2197,7 @@
         },
         {
           "disabled": false,
-          "document": "标签信息",
+          "document": "<p>标签信息</p>",
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
@@ -2212,7 +2212,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "下单成功随机生成的迁移任务id列表，形如：dts-c1f6rs21\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>下单成功随机生成的迁移任务id列表，形如：dts-c1f6rs21</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"dts-amm1jw5q\"]",
           "member": "string",
           "name": "JobIds",

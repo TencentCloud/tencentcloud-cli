@@ -20,6 +20,7 @@ Output:
             "RuleId": "6045899634b9a9000c4ae5bb",
             "IsEnable": true,
             "IsDefault": false,
+            "IsGlobal": false,
             "RuleName": "kkkkk",
             "ChildRules": [
                 {
@@ -98,6 +99,7 @@ Output:
             "RuleId": "60484042d620f3f9012c521e",
             "IsEnable": true,
             "IsDefault": true,
+            "IsGlobal": false,
             "RuleName": "kkkkk",
             "ChildRules": [],
             "SystemChildRules": [
@@ -152,6 +154,7 @@ Output:
             "RuleId": "6045899634b9a9000c4ae5bb",
             "IsEnable": true,
             "IsDefault": false,
+            "IsGlobal": false,
             "RuleName": "kkkkk",
             "ChildRules": [
                 {
@@ -230,6 +233,7 @@ Output:
             "RuleId": "60484042d620f3f9012c521e",
             "IsEnable": true,
             "IsDefault": true,
+            "IsGlobal": false,
             "RuleName": "kkkkk",
             "ChildRules": [],
             "SystemChildRules": [
