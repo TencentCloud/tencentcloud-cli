@@ -1350,7 +1350,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "<p>实例ID。</p>",
           "example": "vdb-77qt0r46",
           "member": "string",
           "name": "InstanceId",
@@ -1360,7 +1360,7 @@
         },
         {
           "disabled": false,
-          "document": "实例自定义名称。",
+          "document": "<p>实例自定义名称。</p>",
           "example": "vdb_test",
           "member": "string",
           "name": "Name",
@@ -1370,7 +1370,7 @@
         },
         {
           "disabled": false,
-          "document": "用户APPID。",
+          "document": "<p>用户APPID。</p>",
           "example": "251223614",
           "member": "uint64",
           "name": "AppId",
@@ -1380,7 +1380,7 @@
         },
         {
           "disabled": false,
-          "document": "地域。",
+          "document": "<p>地域。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -1390,7 +1390,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区。",
+          "document": "<p>可用区。</p>",
           "example": "160002",
           "member": "string",
           "name": "Zone",
@@ -1400,7 +1400,7 @@
         },
         {
           "disabled": false,
-          "document": "产品。",
+          "document": "<p>产品。</p>",
           "example": "vdb",
           "member": "string",
           "name": "Product",
@@ -1410,8 +1410,8 @@
         },
         {
           "disabled": false,
-          "document": "网络信息。",
-          "example": "[                     {                         \"Port\": 8100,                         \"SubnetId\": \"subnet-02bwnv4i\",                         \"Vip\": \"10.0.7.132\",                         \"VpcId\": \"vpc-kddx224l\"                     }                 ]",
+          "document": "<p>网络信息。</p>",
+          "example": "无",
           "member": "Network",
           "name": "Networks",
           "output_required": false,
@@ -1420,7 +1420,7 @@
         },
         {
           "disabled": false,
-          "document": "分片信息。",
+          "document": "<p>分片信息。</p>",
           "example": "1",
           "member": "uint64",
           "name": "ShardNum",
@@ -1430,7 +1430,7 @@
         },
         {
           "disabled": false,
-          "document": "副本数。",
+          "document": "<p>副本数。</p>",
           "example": "1",
           "member": "uint64",
           "name": "ReplicaNum",
@@ -1440,7 +1440,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU.",
+          "document": "<p>CPU.</p>",
           "example": "1",
           "member": "float",
           "name": "Cpu",
@@ -1450,7 +1450,7 @@
         },
         {
           "disabled": false,
-          "document": "内存。",
+          "document": "<p>内存。</p>",
           "example": "8",
           "member": "float",
           "name": "Memory",
@@ -1460,7 +1460,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘。",
+          "document": "<p>磁盘。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Disk",
@@ -1470,8 +1470,8 @@
         },
         {
           "disabled": true,
-          "document": "健康得分。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>健康得分。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "float",
           "name": "HealthScore",
           "output_required": false,
@@ -1480,8 +1480,8 @@
         },
         {
           "disabled": true,
-          "document": "异常告警。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>异常告警。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Warning",
           "output_required": false,
@@ -1490,8 +1490,8 @@
         },
         {
           "disabled": true,
-          "document": "所属项目。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>所属项目。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vdb",
           "member": "string",
           "name": "Project",
           "output_required": false,
@@ -1500,8 +1500,8 @@
         },
         {
           "disabled": false,
-          "document": "所属标签。",
-          "example": "[{\"TagKey\":\"key\",\"TagValue\":\"value\"}]",
+          "document": "<p>所属标签。</p>",
+          "example": "无",
           "member": "Tag",
           "name": "ResourceTags",
           "output_required": false,
@@ -1510,7 +1510,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2023-07-06",
           "member": "string",
           "name": "CreatedAt",
@@ -1520,7 +1520,7 @@
         },
         {
           "disabled": false,
-          "document": "资源状态。",
+          "document": "<p>资源状态。</p>",
           "example": "online",
           "member": "string",
           "name": "Status",
@@ -1530,7 +1530,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎名称。",
+          "document": "<p>引擎名称。</p>",
           "example": "5.0",
           "member": "string",
           "name": "EngineName",
@@ -1540,7 +1540,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎版本。",
+          "document": "<p>引擎版本。</p>",
           "example": "v1.6.0",
           "member": "string",
           "name": "EngineVersion",
@@ -1550,7 +1550,7 @@
         },
         {
           "disabled": false,
-          "document": "api版本",
+          "document": "<p>api版本</p>",
           "example": "v2.0",
           "member": "string",
           "name": "ApiVersion",
@@ -1560,7 +1560,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式。",
+          "document": "<p>计费模式。</p>",
           "example": "2",
           "member": "int64",
           "name": "PayMode",
@@ -1570,7 +1570,7 @@
         },
         {
           "disabled": false,
-          "document": "差异化扩展信息, json格式。",
+          "document": "<p>差异化扩展信息, json格式。</p>",
           "example": "\"{\\\"Port\\\": \\\"80\\\"}\"",
           "member": "string",
           "name": "Extend",
@@ -1580,7 +1580,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间。",
+          "document": "<p>过期时间。</p>",
           "example": "2023-08-07",
           "member": "string",
           "name": "ExpiredAt",
@@ -1590,7 +1590,7 @@
         },
         {
           "disabled": false,
-          "document": "是否不过期(永久)。",
+          "document": "<p>是否不过期(永久)。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsNoExpired",
@@ -1600,7 +1600,7 @@
         },
         {
           "disabled": false,
-          "document": "产品版本，0-标准版，1-容量增强版",
+          "document": "<p>产品版本，0-标准版，1-容量增强版</p>",
           "example": "0",
           "member": "int64",
           "name": "ProductType",
@@ -1610,7 +1610,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型",
+          "document": "<p>实例类型</p>",
           "example": "single",
           "member": "string",
           "name": "InstanceType",
@@ -1620,7 +1620,7 @@
         },
         {
           "disabled": false,
-          "document": "节点类型",
+          "document": "<p>节点类型</p>",
           "example": "计算型",
           "member": "string",
           "name": "NodeType",
@@ -1630,7 +1630,7 @@
         },
         {
           "disabled": false,
-          "document": "外网地址。",
+          "document": "<p>外网地址。</p>",
           "example": "lb-5mk****-wid8362zluyvekp4.clb.ap-guangzhou.testclb.com:8100",
           "member": "string",
           "name": "WanAddress",
@@ -1640,7 +1640,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离时间",
+          "document": "<p>隔离时间</p>",
           "example": "2024-09-12",
           "member": "string",
           "name": "IsolateAt",
@@ -1650,7 +1650,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.",
+          "document": "<p>是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRenew",
@@ -1660,7 +1660,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中",
+          "document": "<p>任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中</p>",
           "example": "0",
           "member": "int64",
           "name": "TaskStatus",
@@ -1670,12 +1670,32 @@
         },
         {
           "disabled": false,
-          "document": "绑定的安全组id",
+          "document": "<p>绑定的安全组id</p>",
           "example": "[\"sg-hduehhu\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可升级版本号</p>",
+          "example": "v3.1.1",
+          "member": "string",
+          "name": "UpgradeVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为内部实例</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsInternal",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -1794,7 +1814,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VpcId(VPC网络下有效)",
+          "document": "<p>VpcId(VPC网络下有效)</p>",
           "example": "vpc-hu6khgap",
           "member": "string",
           "name": "VpcId",
@@ -1804,7 +1824,7 @@
         },
         {
           "disabled": false,
-          "document": "子网Id(VPC网络下有效)。",
+          "document": "<p>子网Id(VPC网络下有效)。</p>",
           "example": "subnet-6mt7lir6",
           "member": "string",
           "name": "SubnetId",
@@ -1814,7 +1834,7 @@
         },
         {
           "disabled": false,
-          "document": "内网访问IP。",
+          "document": "<p>内网访问IP。</p>",
           "example": "10.1.1.2",
           "member": "string",
           "name": "Vip",
@@ -1824,7 +1844,7 @@
         },
         {
           "disabled": false,
-          "document": "内网访问Port。",
+          "document": "<p>内网访问Port。</p>",
           "example": "80",
           "member": "int64",
           "name": "Port",
@@ -1834,7 +1854,7 @@
         },
         {
           "disabled": false,
-          "document": "旧 ip 保留时长，单位天",
+          "document": "<p>旧 ip 保留时长，单位天</p>",
           "example": "1",
           "member": "int64",
           "name": "PreserveDuration",
@@ -1844,12 +1864,22 @@
         },
         {
           "disabled": false,
-          "document": "旧 ip 到期时间",
+          "document": "<p>旧 ip 到期时间</p>",
           "example": "2024 10-30 12:00:00",
           "member": "string",
           "name": "ExpireTime",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是ssl网络</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSSL",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli cbs DescribeRemoteDisksDeniedActions --cli-unfold-argument ```
+tccli cbs DescribeRemoteDisksDeniedActions --cli-unfold-argument  \
+    --RemoteDiskIds rdisk-b1f7xvod
+```
 
 Output: 
 ```

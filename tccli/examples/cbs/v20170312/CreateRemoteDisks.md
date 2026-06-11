@@ -5,7 +5,15 @@
 Input: 
 
 ```
-tccli cbs CreateRemoteDisks --cli-unfold-argument ```
+tccli cbs CreateRemoteDisks --cli-unfold-argument  \
+    --InstanceId ins-23kmz0bd \
+    --DiskSize 2000 \
+    --DiskChargeType PREPAID \
+    --Placement.Zone ap-qingyuan-1 \
+    --DiskCount 1 \
+    --DiskName helloworld \
+    --DiskChargePrepaid.Period 1
+```
 
 Output: 
 ```

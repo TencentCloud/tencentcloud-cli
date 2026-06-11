@@ -7378,6 +7378,45 @@
       ],
       "usage": "in"
     },
+    "AiTryOnConfig": {
+      "document": "AI换装配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>换装模型。</p><p>枚举值：</p><ul><li>WAND-tryon-1.0-lite： 轻量档，速度优先。</li><li>WAND-tryon-1.0-flash： 均衡档，兼顾效果与时延。</li><li>WAND-tryon-1.0-pro： 高质量档，效果优先。</li></ul>",
+          "example": "WAND-tryon-1.0-lite",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入需要更换的衣物图片列表。支持1-4张图片。</p>",
+          "example": "无",
+          "member": "SceneAigcImageTaskInputFileInfo",
+          "name": "ClothesFileInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>换装指令Prompt。</p>",
+          "example": "纽扣扣起来。",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AigcAdvancedCustomElementInfo": {
       "document": "AIGC 高级自定义主体信息",
       "members": [
@@ -8171,8 +8210,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>AI生图场景类型，可选值：</p><ul><li>change_clothes：常规场景换衣。</li><li>change_clothes_under：特殊场景换衣。</li><li>change_clothes_top_wear：上半身换衣。</li><li>change_clothes_bottom_wear：下半身换衣。</li><li>change_clothes_full_wear：全身换衣。</li><li>product_image：AI生商品图。</li><li>outpainting: AI扩图。</li></ul>",
-          "example": "change_clothes",
+          "document": "<p>AI生图场景类型，可选值：</p><ul><li><code>ai_try_on</code>：AI 换装。</li><li><code>product_image</code>：AI 生商品图。</li><li><code>outpainting</code>: AI 扩图。</li></ul><p>下列 <code>Type</code> 已废弃，后续不再更新：</p><ul><li><code>change_clothes</code></li><li><code>change_clothes_under</code></li><li><code>change_clothes_top_wear</code></li><li><code>change_clothes_bottom_wear</code></li><li><code>change_clothes_full_wear</code></li></ul>",
+          "example": "ai_try_on",
           "member": "string",
           "name": "Type",
           "output_required": false,
@@ -8182,7 +8221,18 @@
         },
         {
           "disabled": false,
-          "document": "<p>当 Type 下列类型时，则该项为必填，表示AI 换衣生图配置参数：</p><ul><li>change_clothes</li><li>change_clothes_under</li><li>change_clothes_full_wear</li><li>change_clothes_top_wear</li><li>change_clothes_bottom_wear</li></ul>",
+          "document": "<p>当 Type 为 ai_try_on 时必填，表示 AI 换装配置参数。</p>",
+          "example": "无",
+          "member": "AiTryOnConfig",
+          "name": "AiTryOnConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p><strong>已废弃，请使用AiTryOnConfig。</strong>当 Type 下列类型时，则该项为必填，表示AI 换衣生图配置参数：</p><ul><li>change_clothes</li><li>change_clothes_under</li></ul>",
           "example": "无",
           "member": "ChangeClothesConfig",
           "name": "ChangeClothesConfig",
@@ -8193,7 +8243,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>当 Type 为 product_image 时有效，表示AI 生商品图配置参数。</p>",
+          "document": "<p>当 Type 为 product_image 时必填，表示AI 生商品图配置参数。</p>",
           "example": "无",
           "member": "ProductImageConfig",
           "name": "ProductImageConfig",
@@ -29742,7 +29792,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "推流直播码。",
+          "document": "<p>推流直播码。</p>",
           "example": "record-stream",
           "member": "string",
           "name": "StreamId",
@@ -29751,7 +29801,7 @@
         },
         {
           "disabled": false,
-          "document": "流剪辑的开始时间，格式参照 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "<p>流剪辑的开始时间，格式参照 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式说明</a>。</p>",
           "example": "2018-09-20T10:00:00Z",
           "member": "string",
           "name": "StartTime",
@@ -29760,7 +29810,7 @@
         },
         {
           "disabled": false,
-          "document": "流剪辑的结束时间，格式参照 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "<p>流剪辑的结束时间，格式参照 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式说明</a>。</p>",
           "example": "2018-09-20T11:00:00Z",
           "member": "string",
           "name": "EndTime",
@@ -29769,7 +29819,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -29778,7 +29828,7 @@
         },
         {
           "disabled": false,
-          "document": "是否固化。0 不固化，1 固化。默认不固化。",
+          "document": "<p>是否固化。0 不固化，1 固化。默认不固化。</p>",
           "example": "1",
           "member": "int64",
           "name": "IsPersistence",
@@ -29787,7 +29837,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化后的视频存储过期时间。格式参照 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。仅 IsPersistence 为 1 时有效，默认剪辑固化的视频永不过期。",
+          "document": "<p>剪辑固化后的视频存储过期时间。格式参照 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式</a>。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。仅 IsPersistence 为 1 时有效，默认剪辑固化的视频永不过期。</p>",
           "example": "2023-08-01T10:00:00Z",
           "member": "string",
           "name": "ExpireTime",
@@ -29796,7 +29846,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化后的视频点播任务流处理，详见[上传指定任务流](https://cloud.tencent.com/document/product/266/9759)。仅 IsPersistence 为 1 时有效。",
+          "document": "<p>剪辑固化后的视频点播任务流处理，详见<a href=\"https://cloud.tencent.com/document/product/266/9759\">上传指定任务流</a>。仅 IsPersistence 为 1 时有效。</p>",
           "example": "LongVideoPreset",
           "member": "string",
           "name": "Procedure",
@@ -29805,7 +29855,7 @@
         },
         {
           "disabled": false,
-          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>\n仅 IsPersistence 为 1 时有效。",
+          "document": "<p>分类ID，用于对媒体进行分类管理，可通过 <a href=\"/document/product/266/31772\">创建分类</a> 接口，创建分类，获得分类 ID。</p><li>默认值：0，表示其他分类。</li>仅 IsPersistence 为 1 时有效。",
           "example": "0",
           "member": "int64",
           "name": "ClassId",
@@ -29814,7 +29864,7 @@
         },
         {
           "disabled": false,
-          "document": "来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。仅 IsPersistence 为 1 时有效。",
+          "document": "<p>来源上下文，用于透传用户请求信息，<a href=\"/document/product/266/7830\">上传完成回调</a> 将返回该字段值，最长 250 个字符。仅 IsPersistence 为 1 时有效。</p>",
           "example": "custom information for NewFileUpload",
           "member": "string",
           "name": "SourceContext",
@@ -29823,7 +29873,7 @@
         },
         {
           "disabled": false,
-          "document": "会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。仅 IsPersistence 为 1 时有效。",
+          "document": "<p>会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，<a href=\"/document/product/266/9636\">任务流状态变更回调</a> 将返回该字段值，最长 1000 个字符。仅 IsPersistence 为 1 时有效。</p>",
           "example": "custom information for ProcedureStateChanged",
           "member": "string",
           "name": "SessionContext",
@@ -29832,7 +29882,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要返回剪辑后的视频元信息。0 不需要，1 需要。默认不需要。",
+          "document": "<p>是否需要返回剪辑后的视频元信息。0 不需要，1 需要。默认不需要。</p>",
           "example": "0",
           "member": "uint64",
           "name": "MetaDataRequired",
@@ -29841,7 +29891,7 @@
         },
         {
           "disabled": false,
-          "document": "云点播中添加的用于时移播放的域名，必须在云直播已经[关联录制模板和开通时移服务](https://cloud.tencent.com/document/product/266/52220#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E5.85.B3.E8.81.94.E5.BD.95.E5.88.B6.E6.A8.A1.E6.9D.BF.3Ca-id.3D.22step3.22.3E.3C.2Fa.3E)。**如果本接口的首次调用时间在 2021-01-01T00:00:00Z 之后，则此字段为必选字段。**",
+          "document": "<p>云点播中添加的用于时移播放的域名，必须在云直播已经<a href=\"https://cloud.tencent.com/document/product/266/52220#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E5.85.B3.E8.81.94.E5.BD.95.E5.88.B6.E6.A8.A1.E6.9D.BF.3Ca-id.3D.22step3.22.3E.3C.2Fa.3E\">关联录制模板和开通时移服务</a>。<strong>如果本接口的首次调用时间在 2021-01-01T00:00:00Z 之后，则此字段为必选字段。</strong></p>",
           "example": "myexample2.com",
           "member": "string",
           "name": "Host",
@@ -29850,7 +29900,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑的直播流信息：\n<li>默认剪辑直播原始流。</li>\n<li>当StreamInfo中指定的Type为Transcoding，则剪辑TemplateId对应的直播转码流。</li>",
+          "document": "<p>剪辑的直播流信息：</p><li>默认剪辑直播原始流。</li><li>当StreamInfo中指定的Type为Transcoding，则剪辑TemplateId对应的直播转码流。</li>",
           "example": "无",
           "member": "LiveRealTimeClipStreamInfo",
           "name": "StreamInfo",
@@ -29859,7 +29909,7 @@
         },
         {
           "disabled": false,
-          "document": "系统保留字段，请勿填写。",
+          "document": "<p>系统保留字段，请勿填写。</p>",
           "example": "custom information for ExtInfo",
           "member": "string",
           "name": "ExtInfo",
@@ -29874,7 +29924,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "剪辑后的视频播放 URL。",
+          "document": "<p>剪辑后的视频播放 URL。</p>",
           "example": "http://video.com/playlist.m3u8",
           "member": "string",
           "name": "Url",
@@ -29884,7 +29934,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化后的视频的媒体文件的唯一标识。",
+          "document": "<p>剪辑固化后的视频的媒体文件的唯一标识。</p>",
           "example": "24820810452260000",
           "member": "string",
           "name": "FileId",
@@ -29894,7 +29944,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化后的视频任务流 ID。",
+          "document": "<p>剪辑固化后的视频任务流 ID。</p>",
           "example": "125******04-procedurev2-870b****************btt2",
           "member": "string",
           "name": "VodTaskId",
@@ -29904,7 +29954,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑后的视频元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>剪辑后的视频元信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
@@ -29914,7 +29964,7 @@
         },
         {
           "disabled": false,
-          "document": "<span id=\"p_segmentset\">剪辑后的视频片段信息。</span>",
+          "document": "<p><span id=\"p_segmentset\">剪辑后的视频片段信息。</span></p>",
           "example": "无",
           "member": "LiveRealTimeClipMediaSegmentInfo",
           "name": "SegmentSet",
@@ -41577,7 +41627,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要拉取的媒体 URL，暂不支持拉取 Dash 格式（可以支持 HLS）。\n支持的扩展名详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。请确保媒体 URL 可以访问。",
+          "document": "<p>要拉取的媒体 URL，暂不支持拉取 Dash 格式（可以支持 HLS）。<br>支持的扩展名详见<a href=\"https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B\">媒体类型</a>。请确保媒体 URL 可以访问。</p>",
           "example": "http://www.abc.com/abc.mp4",
           "member": "string",
           "name": "MediaUrl",
@@ -41586,7 +41636,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体文件类型（扩展名），支持的类型详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。\n如果 MediaType 不填或取值为空字符串，将根据 MediaUrl 自动获取文件类型。",
+          "document": "<p>媒体文件类型（扩展名），支持的类型详见<a href=\"https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B\">媒体类型</a>。<br>如果 MediaType 不填或取值为空字符串，将根据 MediaUrl 自动获取文件类型。</p>",
           "example": "mp4",
           "member": "string",
           "name": "MediaType",
@@ -41595,7 +41645,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "220000",
           "member": "uint64",
           "name": "SubAppId",
@@ -41604,7 +41654,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体名称。",
+          "document": "<p>媒体名称。</p>",
           "example": "media.mp4",
           "member": "string",
           "name": "MediaName",
@@ -41613,7 +41663,7 @@
         },
         {
           "disabled": false,
-          "document": "要拉取的视频封面 URL。支持的文件格式：gif、jpeg（jpg）、png。",
+          "document": "<p>要拉取的视频封面 URL。支持的文件格式：gif、jpeg（jpg）、png。</p>",
           "example": "xxx/cover.jpg",
           "member": "string",
           "name": "CoverUrl",
@@ -41622,7 +41672,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体后续任务操作，详见[上传指定任务流](https://cloud.tencent.com/document/product/266/9759)。",
+          "document": "<p>媒体后续任务操作，详见<a href=\"https://cloud.tencent.com/document/product/266/9759\">上传指定任务流</a>。</p>",
           "example": "MyProcedure",
           "member": "string",
           "name": "Procedure",
@@ -41631,7 +41681,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "<p>媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式说明</a>。</p>",
           "example": "2020-09-07T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "ExpireTime",
@@ -41640,7 +41690,7 @@
         },
         {
           "disabled": false,
-          "document": "指定上传园区，仅适用于对上传地域有特殊需求的用户：\n<li>不填默认上传至您的[默认地域](https://cloud.tencent.com/document/product/266/14059?from=11329#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)。</li>\n<li>若指定上传园区，请先确认[上传存储设置](https://cloud.tencent.com/document/product/266/14059?from=11329#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)已经开启相应的存储地域。</li>",
+          "document": "<p>指定上传园区，仅适用于对上传地域有特殊需求的用户：</p><li>不填默认上传至您的[默认地域](https://cloud.tencent.com/document/product/266/14059?from=11329#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)。</li><li>若指定上传园区，请先确认[上传存储设置](https://cloud.tencent.com/document/product/266/14059?from=11329#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)已经开启相应的存储地域。</li>",
           "example": "ap-beijing",
           "member": "string",
           "name": "StorageRegion",
@@ -41649,7 +41699,7 @@
         },
         {
           "disabled": false,
-          "document": "分类ID，用于对媒体进行分类管理，可通过[创建分类](https://cloud.tencent.com/document/product/266/7812)接口，创建分类，获得分类 ID。",
+          "document": "<p>分类ID，用于对媒体进行分类管理，可通过<a href=\"https://cloud.tencent.com/document/product/266/31772\">创建分类</a>接口，创建分类，获得分类 ID。</p>",
           "example": "1",
           "member": "int64",
           "name": "ClassId",
@@ -41658,7 +41708,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "document": "<p>任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "TasksPriority",
@@ -41667,7 +41717,7 @@
         },
         {
           "disabled": false,
-          "document": "来源上下文，用于透传用户请求信息，当指定 Procedure 任务后，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "document": "<p>来源上下文，用于透传用户请求信息，当指定 Procedure 任务后，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>",
           "example": "custom information for ProcedureStateChanged",
           "member": "string",
           "name": "SessionContext",
@@ -41676,7 +41726,7 @@
         },
         {
           "disabled": false,
-          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "document": "<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>",
           "example": "custom_session_id",
           "member": "string",
           "name": "SessionId",
@@ -41685,7 +41735,7 @@
         },
         {
           "disabled": false,
-          "document": "保留字段，特殊用途时使用。",
+          "document": "<p>保留字段，特殊用途时使用。</p>",
           "example": "ExtInfo1",
           "member": "string",
           "name": "ExtInfo",
@@ -41694,7 +41744,7 @@
         },
         {
           "disabled": false,
-          "document": "来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。",
+          "document": "<p>来源上下文，用于透传用户请求信息，<a href=\"/document/product/266/7830\">上传完成回调</a> 将返回该字段值，最长 250 个字符。</p>",
           "example": "custom information for NewFileUpload",
           "member": "string",
           "name": "SourceContext",
@@ -41703,7 +41753,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体存储路径，以/开头。\n只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以指定存储路径。",
+          "document": "<p>媒体存储路径，以/开头。<br>只有<a href=\"https://cloud.tencent.com/document/product/266/126825\">FileID + Path 模式</a>的子应用可以指定存储路径。</p>",
           "example": "/dir1/a.mp4",
           "member": "string",
           "name": "MediaStoragePath",
@@ -41718,7 +41768,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "拉取上传视频的任务 ID，可以通过该 ID 查询拉取上传任务的状态。",
+          "document": "<p>拉取上传视频的任务 ID，可以通过该 ID 查询拉取上传任务的状态。</p>",
           "example": "125xxxxxx07-pull-893dc41e6fdc22dcf24aa6e9c61cp94",
           "member": "string",
           "name": "TaskId",
@@ -46160,7 +46210,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>输出图片编码格式参数。<strong>仅AI换衣场景有效。</strong></p>",
+          "document": "<p>输出图片编码格式参数。</p>",
           "example": "无",
           "member": "ImageSceneAigcEncodeConfig",
           "name": "EncodeConfig",
@@ -46193,7 +46243,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>输出分辨率。仅change_clothes、change_clothes_under场景有效。可选值：1K、2K、4K。</p>",
+          "document": "<p>输出分辨率。仅<code>ai_try_on</code>场景有效。可选值：1K、2K、4K。</p>",
           "example": "2K",
           "member": "string",
           "name": "Resolution",
@@ -47472,7 +47522,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要裁剪的腾讯云点播 HLS 视频 URL。",
+          "document": "<p>需要裁剪的腾讯云点播 HLS 视频 URL。</p>",
           "example": "http://example.com/xxxxx/aaaaaa/hhh.m3u8",
           "member": "string",
           "name": "Url",
@@ -47481,7 +47531,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -47490,7 +47540,7 @@
         },
         {
           "disabled": false,
-          "document": "裁剪的开始偏移时间，单位秒。默认 0，即从视频开头开始裁剪。负数表示距离视频结束多少秒开始裁剪。例如 -10 表示从倒数第 10 秒开始裁剪。",
+          "document": "<p>裁剪的开始偏移时间，单位秒。默认 0，即从视频开头开始裁剪。负数表示距离视频结束多少秒开始裁剪。例如 -10 表示从倒数第 10 秒开始裁剪。</p>",
           "example": "2.1",
           "member": "float",
           "name": "StartTimeOffset",
@@ -47499,7 +47549,7 @@
         },
         {
           "disabled": false,
-          "document": "裁剪的结束偏移时间，单位秒。默认 0，即裁剪到视频尾部。负数表示距离视频结束多少秒结束裁剪。例如 -10 表示到倒数第 10 秒结束裁剪。",
+          "document": "<p>裁剪的结束偏移时间，单位秒。默认 0，即裁剪到视频尾部。负数表示距离视频结束多少秒结束裁剪。例如 -10 表示到倒数第 10 秒结束裁剪。</p>",
           "example": "10.5",
           "member": "float",
           "name": "EndTimeOffset",
@@ -47508,7 +47558,7 @@
         },
         {
           "disabled": false,
-          "document": "是否固化。0 不固化，1 固化。默认不固化。",
+          "document": "<p>是否固化。0 不固化，1 固化。默认不固化。</p>",
           "example": "0",
           "member": "int64",
           "name": "IsPersistence",
@@ -47517,7 +47567,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化后的视频存储过期时间。格式参照 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。仅 IsPersistence 为 1 时有效，默认剪辑固化的视频永不过期。",
+          "document": "<p>剪辑固化后的视频存储过期时间。格式参照 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式</a>。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。仅 IsPersistence 为 1 时有效，默认剪辑固化的视频永不过期。</p>",
           "example": "2020-09-09T23:59:59+08:00",
           "member": "string",
           "name": "ExpireTime",
@@ -47526,7 +47576,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化后的视频点播任务流处理，详见[上传指定任务流](https://cloud.tencent.com/document/product/266/9759)。仅 IsPersistence 为 1 时有效。",
+          "document": "<p>剪辑固化后的视频点播任务流处理，详见<a href=\"https://cloud.tencent.com/document/product/266/9759\">上传指定任务流</a>。仅 IsPersistence 为 1 时有效。</p>",
           "example": "LongVideoPreset",
           "member": "string",
           "name": "Procedure",
@@ -47535,7 +47585,7 @@
         },
         {
           "disabled": false,
-          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>\n仅 IsPersistence 为 1 时有效。",
+          "document": "<p>分类ID，用于对媒体进行分类管理，可通过 <a href=\"/document/product/266/31772\">创建分类</a> 接口，创建分类，获得分类 ID。</p><li>默认值：0，表示其他分类。</li>仅 IsPersistence 为 1 时有效。",
           "example": "1",
           "member": "int64",
           "name": "ClassId",
@@ -47544,7 +47594,7 @@
         },
         {
           "disabled": false,
-          "document": "来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。仅 IsPersistence 为 1 时有效。",
+          "document": "<p>来源上下文，用于透传用户请求信息，<a href=\"/document/product/266/7830\">上传完成回调</a> 将返回该字段值，最长 250 个字符。仅 IsPersistence 为 1 时有效。</p>",
           "example": "rtmp://86094.livepush****_mix_file",
           "member": "string",
           "name": "SourceContext",
@@ -47553,7 +47603,7 @@
         },
         {
           "disabled": false,
-          "document": "会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。仅 IsPersistence 为 1 时有效。",
+          "document": "<p>会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，<a href=\"/document/product/266/9636\">任务流状态变更回调</a> 将返回该字段值，最长 1000 个字符。仅 IsPersistence 为 1 时有效。</p>",
           "example": "sessioncontext",
           "member": "string",
           "name": "SessionContext",
@@ -47562,7 +47612,7 @@
         },
         {
           "disabled": true,
-          "document": "该字段已废弃。",
+          "document": "<p>该字段已废弃。</p>",
           "example": "Rough",
           "member": "string",
           "name": "Precision",
@@ -47571,7 +47621,7 @@
         },
         {
           "disabled": false,
-          "document": "输出视频类型，取值有：<li>hls: 输出 hls 文件。</li>默认取值 hls。",
+          "document": "<p>输出视频类型，取值有：<li>hls: 输出 hls 文件。</li>默认取值 hls。</p>",
           "example": "hls",
           "member": "string",
           "name": "OutputMediaType",
@@ -47580,7 +47630,7 @@
         },
         {
           "disabled": false,
-          "document": "保留字段，特殊用途时使用。 示例值：\"\"",
+          "document": "<p>保留字段，特殊用途时使用。 示例值：&quot;&quot;</p>",
           "example": "extinfo",
           "member": "string",
           "name": "ExtInfo",
@@ -47595,7 +47645,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "裁剪后的视频地址。",
+          "document": "<p>裁剪后的视频地址。</p>",
           "example": "http://example.com/xxxxx/aaaaaa/10_50.m3u8",
           "member": "string",
           "name": "Url",
@@ -47605,7 +47655,7 @@
         },
         {
           "disabled": false,
-          "document": "裁剪后的视频元信息。目前`Size`，`Rotate`，`VideoDuration`，`AudioDuration` 几个字段暂时缺省，没有真实数据。",
+          "document": "<p>裁剪后的视频元信息。目前<code>Size</code>，<code>Rotate</code>，<code>VideoDuration</code>，<code>AudioDuration</code> 几个字段暂时缺省，没有真实数据。</p>",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
@@ -47615,7 +47665,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化后的视频的媒体文件的唯一标识。",
+          "document": "<p>剪辑固化后的视频的媒体文件的唯一标识。</p>",
           "example": "5285485487985271487",
           "member": "string",
           "name": "FileId",
@@ -47625,7 +47675,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化后的视频任务流 ID。",
+          "document": "<p>剪辑固化后的视频任务流 ID。</p>",
           "example": "123-taskid-51rqr",
           "member": "string",
           "name": "TaskId",

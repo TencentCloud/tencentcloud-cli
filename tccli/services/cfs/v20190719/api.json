@@ -1940,7 +1940,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统唯一 ID",
+          "document": "<p>文件系统唯一 ID</p>",
           "example": "cfs-4agcdretg",
           "member": "string",
           "name": "FileSystemId",
@@ -1949,7 +1949,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期任务类型；archive：沉降；restore：预热；release：数据释放；metaload：元数据加载",
+          "document": "<p>生命周期任务类型；archive：沉降；restore：预热；release：数据释放；metaload：元数据加载</p>",
           "example": "archive",
           "member": "string",
           "name": "Type",
@@ -1958,16 +1958,7 @@
         },
         {
           "disabled": false,
-          "document": "需要沉降的路径或文件，仅支持传入1个路径，不允许为空。",
-          "example": "/cfs/data",
-          "member": "string",
-          "name": "TaskPath",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务名称",
+          "document": "<p>任务名称</p>",
           "example": "dataarchive",
           "member": "string",
           "name": "TaskName",
@@ -1976,7 +1967,16 @@
         },
         {
           "disabled": false,
-          "document": "数据流动 ID ，该接口可以通过 DescribeDataFlow 查询",
+          "document": "<p>需要沉降的路径或文件，仅支持传入1个路径，不允许为空。</p>",
+          "example": "/cfs/data",
+          "member": "string",
+          "name": "TaskPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据流动 ID ，该接口可以通过 DescribeDataFlow 查询</p>",
           "example": "cfs-dataflow-abcdefeg",
           "member": "string",
           "name": "DataFlowId",
@@ -1985,12 +1985,21 @@
         },
         {
           "disabled": false,
-          "document": "\t 当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。  ture：覆盖  false：不覆盖（同时也不会释放热存数据）  为空时，默认为false",
+          "document": "<p>当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。  ture：覆盖  false：不覆盖（同时也不会释放热存数据）  为空时，默认为false</p>",
           "example": "false",
           "member": "bool",
           "name": "IsOverwrite",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>【新增】数据清单文件路径，清单文件内每行一条待处理文件的完整路径。与 TaskPath 二选一。路径必须以 /cfs 开头，且必须为 CFS 文件系统内已存在的文件。示例值：/cfs/lists/archive_list.txt</p>",
+          "example": "/cfs/datalist",
+          "member": "string",
+          "name": "ListPath",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2000,7 +2009,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID",
+          "document": "<p>任务 ID</p>",
           "example": "task-20250101abcdef",
           "member": "string",
           "name": "TaskId",
@@ -4942,7 +4951,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "task-202411gatagah",
           "member": "string",
           "name": "TaskId",
@@ -4953,7 +4962,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态.\ninit：未执行\nrunning：执行中，finished：已完成\n,failed：失败\n,stopping：停止中,stopped：已停止",
+          "document": "<p>任务状态.<br>init：未执行<br>running：执行中，finished：已完成<br>,failed：失败<br>,stopping：停止中,stopped：已停止</p>",
           "example": "init",
           "member": "string",
           "name": "TaskStatus",
@@ -4964,7 +4973,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间",
+          "document": "<p>任务创建时间</p>",
           "example": "2024-10-30 12：43:44",
           "member": "string",
           "name": "CreationTime",
@@ -4975,7 +4984,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结束时间",
+          "document": "<p>任务结束时间</p>",
           "example": "2024-10-30 12：43:44",
           "member": "string",
           "name": "FinishTime",
@@ -4986,7 +4995,7 @@
         },
         {
           "disabled": false,
-          "document": "文件总数",
+          "document": "<p>文件总数</p>",
           "example": "20",
           "member": "uint64",
           "name": "FileTotalCount",
@@ -4997,7 +5006,7 @@
         },
         {
           "disabled": false,
-          "document": "处理成功文件数量",
+          "document": "<p>处理成功文件数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "FileSuccessedCount",
@@ -5008,7 +5017,7 @@
         },
         {
           "disabled": false,
-          "document": "当前已经失败的文件数",
+          "document": "<p>当前已经失败的文件数</p>",
           "example": "30",
           "member": "uint64",
           "name": "FileFailedCount",
@@ -5019,7 +5028,7 @@
         },
         {
           "disabled": false,
-          "document": "文件容量，单位Byte\n\n",
+          "document": "<p>文件容量，单位Byte</p>",
           "example": "3000000",
           "member": "uint64",
           "name": "FileTotalSize",
@@ -5030,7 +5039,7 @@
         },
         {
           "disabled": false,
-          "document": "已处理完成的文件容量，单位Byte\n\n",
+          "document": "<p>已处理完成的文件容量，单位Byte</p>",
           "example": "666666",
           "member": "uint64",
           "name": "FileSuccessedSize",
@@ -5041,7 +5050,7 @@
         },
         {
           "disabled": false,
-          "document": "已处理失败文件容量，单位Byte\n",
+          "document": "<p>已处理失败文件容量，单位Byte</p>",
           "example": "68788778",
           "member": "uint64",
           "name": "FileFailedSize",
@@ -5052,7 +5061,7 @@
         },
         {
           "disabled": false,
-          "document": "总文件列表",
+          "document": "<p>总文件列表</p>",
           "example": "https://cfs-migrate-xxxxx.cos.ap-chongqing.myqcloud.com/cfs-migrate-results/cfsmigrate-3d2cf062",
           "member": "string",
           "name": "FileTotalList",
@@ -5063,7 +5072,7 @@
         },
         {
           "disabled": false,
-          "document": "成功的文件列表",
+          "document": "<p>成功的文件列表</p>",
           "example": "https://cfs-migrate-xxxxx.cos.ap-chongqing.myqcloud.com/cfs-migrate-results/cfsmigrate-3d2cf062",
           "member": "string",
           "name": "FileSuccessedList",
@@ -5074,7 +5083,7 @@
         },
         {
           "disabled": false,
-          "document": "失败文件的列表",
+          "document": "<p>失败文件的列表</p>",
           "example": "https://cfs-migrate-xxxxx.cos.ap-chongqing.myqcloud.com/cfs-migrate-results/cfsmigrate-3d2cf062",
           "member": "string",
           "name": "FileFailedList",
@@ -5085,7 +5094,7 @@
         },
         {
           "disabled": false,
-          "document": "FileSystemId",
+          "document": "<p>FileSystemId</p>",
           "example": "cfs-4gagagag",
           "member": "string",
           "name": "FileSystemId",
@@ -5096,7 +5105,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "<p>任务名称</p>",
           "example": "agcg",
           "member": "string",
           "name": "TaskName",
@@ -5107,7 +5116,7 @@
         },
         {
           "disabled": false,
-          "document": "任务路径",
+          "document": "<p>任务路径</p>",
           "example": "/cfs/abc",
           "member": "string",
           "name": "TaskPath",
@@ -5118,7 +5127,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型,archive:表示沉降任务，restore：表示拉取任务",
+          "document": "<p>任务类型,archive:表示沉降任务，restore：表示拉取任务</p>",
           "example": "archive",
           "member": "string",
           "name": "Type",
@@ -5129,7 +5138,7 @@
         },
         {
           "disabled": false,
-          "document": "数据流动Id",
+          "document": "<p>数据流动Id</p>",
           "example": "cfs-dataflow-e9ec49eb",
           "member": "string",
           "name": "DataFlowId",
@@ -5140,13 +5149,24 @@
         },
         {
           "disabled": false,
-          "document": "当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。\n\nture：覆盖\n\nfalse：不覆盖（同时也不会释放热存数据）\n为空时，默认为false",
+          "document": "<p>当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。</p><p>ture：覆盖</p><p>false：不覆盖（同时也不会释放热存数据）<br>为空时，默认为false</p>",
           "example": "false",
           "member": "bool",
           "name": "IsOverwrite",
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>【新增】数据清单文件路径，清单文件内每行一条待处理文件的完整路径。与 TaskPath 二选一。路径必须以 /cfs 开头，且必须为 CFS 文件系统内已存在的文件。示例值：/cfs/lists/archive_list.txt</p>",
+          "example": "/cfs/lists/archive_list.txt",
+          "member": "string",
+          "name": "ListPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

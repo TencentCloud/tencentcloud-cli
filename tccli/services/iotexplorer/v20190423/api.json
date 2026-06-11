@@ -15807,7 +15807,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品ID",
+          "document": "<p>产品ID</p>",
           "example": "MVTYMD8YCD",
           "member": "string",
           "name": "ProductId",
@@ -15816,7 +15816,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名称",
+          "document": "<p>设备名称</p>",
           "example": "dev001",
           "member": "string",
           "name": "DeviceName",
@@ -15825,7 +15825,7 @@
         },
         {
           "disabled": false,
-          "document": "自然语言查询",
+          "document": "<p>自然语言查询</p>",
           "example": "有人走过",
           "member": "string",
           "name": "Query",
@@ -15834,7 +15834,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索结果总结的语言类型，支持的类型有：en-US、zh-CN、id-ID、th-TH",
+          "document": "<p>搜索结果总结的语言类型，支持的类型有：en-US、zh-CN、id-ID、th-TH</p>",
           "example": "zh-CN",
           "member": "string",
           "name": "SummaryLang",
@@ -15843,7 +15843,7 @@
         },
         {
           "disabled": false,
-          "document": "通道ID",
+          "document": "<p>通道ID</p>",
           "example": "0",
           "member": "uint64",
           "name": "ChannelId",
@@ -15852,7 +15852,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要返回总结，默认为True；  开启后会加大接口响应时长",
+          "document": "<p>是否需要返回总结，默认为True；  开启后会加大接口响应时长</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableSummary",
@@ -15861,7 +15861,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间。\n\n注：\n1. 单位为毫秒（ms）\n2. 如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后1天内的数据， 反之EndTimeMs也一样）\n3. 只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为\"过去三天关于猫咪的视频\"， 则会将\"过去三天忽略\"）",
+          "document": "<p>开始时间。</p><p>注：</p><ol><li>单位为毫秒（ms）</li><li>如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后1天内的数据， 反之EndTimeMs也一样）</li><li>只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为&quot;过去三天关于猫咪的视频&quot;， 则会将&quot;过去三天忽略&quot;）</li></ol>",
           "example": "1750158420000",
           "member": "int64",
           "name": "StartTimeMs",
@@ -15870,7 +15870,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。\n\n注：\n1. 单位为毫秒（ms）\n2. 如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后1天内的数据， 反之EndTimeMs也一样）\n3. 只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为\"过去三天关于猫咪的视频\"， 则会将\"过去三天忽略\"）",
+          "document": "<p>结束时间。</p><p>注：</p><ol><li>单位为毫秒（ms）</li><li>如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后1天内的数据， 反之EndTimeMs也一样）</li><li>只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为&quot;过去三天关于猫咪的视频&quot;， 则会将&quot;过去三天忽略&quot;）</li></ol>",
           "example": "1750244820000",
           "member": "int64",
           "name": "EndTimeMs",
@@ -15879,7 +15879,7 @@
         },
         {
           "disabled": false,
-          "document": "时区。默认值：Asia/Shanghai\n\n注：\n符合iana标准 https://www.iana.org/time-zones，例如Asia/Shanghai、Asia/Bangkok\n",
+          "document": "<p>时区。默认值：Asia/Shanghai</p><p>注：<br>符合iana标准 https://www.iana.org/time-zones，例如Asia/Shanghai、Asia/Bangkok</p>",
           "example": "Asia/Shanghai",
           "member": "string",
           "name": "TimeZone",
@@ -15888,7 +15888,7 @@
         },
         {
           "disabled": false,
-          "document": "取值为1表示高级搜索，取值为2表示简单搜索，默认为1",
+          "document": "<p>取值为1表示高级搜索，取值为2表示简单搜索，默认为1</p>",
           "example": "1",
           "member": "int64",
           "name": "SearchMode",
@@ -15897,7 +15897,7 @@
         },
         {
           "disabled": false,
-          "document": "最终输出的条数；仅当SearchMode为2时支持自定义设置，默认为50",
+          "document": "<p>最终输出的条数；仅当SearchMode为2时支持自定义设置，默认为50</p>",
           "example": "50",
           "member": "int64",
           "name": "Limit",
@@ -15906,7 +15906,7 @@
         },
         {
           "disabled": false,
-          "document": "向量搜索的相似度搜索半径，取值范围[-1, 1]；仅当SearchMode为2时支持自定义设置，默认为0.5",
+          "document": "<p>向量搜索的相似度搜索半径，取值范围[-1, 1]；仅当SearchMode为2时支持自定义设置，默认为0.5</p>",
           "example": "0.5",
           "member": "float",
           "name": "VectorSearchRadius",
@@ -15915,7 +15915,7 @@
         },
         {
           "disabled": false,
-          "document": "指定向量搜索最相似的 Top K；仅当SearchMode为2时支持自定义设置，默认为100",
+          "document": "<p>指定向量搜索最相似的 Top K；仅当SearchMode为2时支持自定义设置，默认为100</p>",
           "example": "100",
           "member": "int64",
           "name": "VectorSearchTopK",
@@ -15924,7 +15924,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索结果的排序方式，可选值：\n\n- `CORRELATION`：按相关性（默认）\n- `TIME_ASC`：按时间升序\n- `TIME_DESC`：按时间降序",
+          "document": "<p>搜索结果的排序方式，可选值：</p><ul><li><code>CORRELATION</code>：按相关性（默认）</li><li><code>TIME_ASC</code>：按时间升序</li><li><code>TIME_DESC</code>：按时间降序</li></ul>",
           "example": "CORRELATION",
           "member": "string",
           "name": "Order",
@@ -15939,7 +15939,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "基于搜索结果的总结",
+          "document": "<p>基于搜索结果的总结</p>",
           "example": "共1段视频：雨后路滑，浅色路人正小心行走。安全起见，请防滑慢行哦！",
           "member": "string",
           "name": "Summary",
@@ -15949,7 +15949,7 @@
         },
         {
           "disabled": false,
-          "document": "视频结果集",
+          "document": "<p>视频结果集</p>",
           "example": "无",
           "member": "TargetInfo",
           "name": "Targets",
@@ -15959,7 +15959,7 @@
         },
         {
           "disabled": false,
-          "document": "视频回放URL",
+          "document": "<p>视频回放URL</p>",
           "example": "https://domain.com/video.m3u8",
           "member": "string",
           "name": "VideoURL",
@@ -23781,7 +23781,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频唯一ID",
+          "document": "<p>视频唯一ID</p>",
           "example": "unique",
           "member": "string",
           "name": "Id",
@@ -23791,7 +23791,7 @@
         },
         {
           "disabled": false,
-          "document": "产品ID",
+          "document": "<p>产品ID</p>",
           "example": "MVTYMD8YCD",
           "member": "string",
           "name": "ProductId",
@@ -23801,7 +23801,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名称",
+          "document": "<p>设备名称</p>",
           "example": "dev001",
           "member": "string",
           "name": "DeviceName",
@@ -23811,7 +23811,7 @@
         },
         {
           "disabled": false,
-          "document": "视频起始时间（毫秒级Unix时间戳）",
+          "document": "<p>视频起始时间（毫秒级Unix时间戳）</p>",
           "example": "1744258527",
           "member": "int64",
           "name": "StartTimeMs",
@@ -23821,7 +23821,7 @@
         },
         {
           "disabled": false,
-          "document": "视频结束时间（毫秒级Unix时间戳）",
+          "document": "<p>视频结束时间（毫秒级Unix时间戳）</p>",
           "example": "1744258537",
           "member": "int64",
           "name": "EndTimeMs",
@@ -23831,7 +23831,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义事件ID，后续扩展使用",
+          "document": "<p>用户自定义事件ID，后续扩展使用</p>",
           "example": "alarm",
           "member": "string",
           "name": "EventId",
@@ -23841,7 +23841,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容摘要",
+          "document": "<p>视频内容摘要</p>",
           "example": "Two cats and a dog eating",
           "member": "string",
           "name": "Summary",
@@ -23851,7 +23851,7 @@
         },
         {
           "disabled": false,
-          "document": "通道ID",
+          "document": "<p>通道ID</p>",
           "example": "0",
           "member": "uint64",
           "name": "ChannelId",
@@ -23861,7 +23861,7 @@
         },
         {
           "disabled": false,
-          "document": "缩略图路径",
+          "document": "<p>缩略图路径</p>",
           "example": "/product/1.jpg",
           "member": "string",
           "name": "Thumbnail",

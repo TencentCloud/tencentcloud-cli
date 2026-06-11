@@ -1505,15 +1505,15 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeAISearchService\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev20260428en\",\n    \"Query\": \"person walking\",\n    \"SummaryLang\": \"en-US\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Summary\": \"1 video shows a person walking safely on a wet sidewalk after rain. Stay cautious on slippery paths!\",\n        \"Targets\": [\n            {\n                \"ChannelId\": 0,\n                \"DeviceName\": \"dev20260428en\",\n                \"EndTimeMs\": 1777356974727,\n                \"EventId\": \"\",\n                \"Id\": \"019dd2bb-273c-7a95-bf08-8da22f56f415_1\",\n                \"ProductId\": \"4AHMY9X89Y\",\n                \"StartTimeMs\": 1777356973727,\n                \"Summary\": \"A person in light-colored clothes walking on a wet and slippery roadside after the rain\",\n                \"Thumbnail\": \"/700000975417/4AHMY9X89Y/dev20260428en/events/1777356973.jpg\"\n            }\n        ],\n        \"VideoURL\": \"https://1259367869.vod2.myqcloud.com/timeshift/live/dev20260428en/timeshift.m3u8\",\n        \"RequestId\": \"b91d707d-bb24-40e8-8887-1984a58de77a\"\n    }\n}",
-        "title": "视频语义搜索（英文）"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeAISearchService\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev20260426\",\n    \"Query\": \"今天的视频\",\n    \"Order\": \"TIME_ASC\"\n}",
         "output": "{\n    \"Response\": {\n        \"Summary\": \"共2段视频：雨后湿滑路面行人慢行，蓝色货车弯道行驶。雨天路滑，请注意交通安全哦！\",\n        \"Targets\": [\n            {\n                \"ChannelId\": 0,\n                \"DeviceName\": \"dev20260426\",\n                \"EndTimeMs\": 1777212005402,\n                \"EventId\": \"\",\n                \"Id\": \"019dca17-1c33-7650-8294-bb99e524059b_1\",\n                \"ProductId\": \"4AHMY9X89Y\",\n                \"StartTimeMs\": 1777212005402,\n                \"Summary\": \"穿浅色衣物的人在雨后湿滑的路边行走\",\n                \"Thumbnail\": \"/700000975417/4AHMY9X89Y/dev20260426/events/1777212005.jpg\"\n            }\n        ],\n        \"VideoURL\": \"https://1259367869.vod2.myqcloud.com/timeshift/live/dev20260426/timeshift.m3u8\",\n        \"RequestId\": \"6e9d71e1-b778-415d-a276-59de83ecab97\"\n    }\n}",
         "title": "视频语义搜索（结果按时间升序排序）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeAISearchService\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev20260428en\",\n    \"Query\": \"person walking\",\n    \"SummaryLang\": \"en-US\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Summary\": \"1 video shows a person walking safely on a wet sidewalk after rain. Stay cautious on slippery paths!\",\n        \"Targets\": [\n            {\n                \"ChannelId\": 0,\n                \"DeviceName\": \"dev20260428en\",\n                \"EndTimeMs\": 1777356974727,\n                \"EventId\": \"\",\n                \"Id\": \"019dd2bb-273c-7a95-bf08-8da22f56f415_1\",\n                \"ProductId\": \"4AHMY9X89Y\",\n                \"StartTimeMs\": 1777356973727,\n                \"Summary\": \"A person in light-colored clothes walking on a wet and slippery roadside after the rain\",\n                \"Thumbnail\": \"/700000975417/4AHMY9X89Y/dev20260428en/events/1777356973.jpg\"\n            }\n        ],\n        \"VideoURL\": \"https://1259367869.vod2.myqcloud.com/timeshift/live/dev20260428en/timeshift.m3u8\",\n        \"RequestId\": \"b91d707d-bb24-40e8-8887-1984a58de77a\"\n    }\n}",
+        "title": "视频语义搜索（英文）"
       }
     ],
     "InvokeCloudStorageAIServiceTask": [

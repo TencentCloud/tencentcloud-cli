@@ -35,45 +35,7 @@ Output:
 }
 ```
 
-**Example 2: 视频语义搜索（英文）**
-
-
-
-Input: 
-
-```
-tccli iotexplorer InvokeAISearchService --cli-unfold-argument  \
-    --ProductId 4AHMY9X89Y \
-    --DeviceName dev20260428en \
-    --Query person walking \
-    --SummaryLang en-US
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Summary": "1 video shows a person walking safely on a wet sidewalk after rain. Stay cautious on slippery paths!",
-        "Targets": [
-            {
-                "ChannelId": 0,
-                "DeviceName": "dev20260428en",
-                "EndTimeMs": 1777356974727,
-                "EventId": "",
-                "Id": "019dd2bb-273c-7a95-bf08-8da22f56f415_1",
-                "ProductId": "4AHMY9X89Y",
-                "StartTimeMs": 1777356973727,
-                "Summary": "A person in light-colored clothes walking on a wet and slippery roadside after the rain",
-                "Thumbnail": "/700000975417/4AHMY9X89Y/dev20260428en/events/1777356973.jpg"
-            }
-        ],
-        "VideoURL": "https://1259367869.vod2.myqcloud.com/timeshift/live/dev20260428en/timeshift.m3u8",
-        "RequestId": "b91d707d-bb24-40e8-8887-1984a58de77a"
-    }
-}
-```
-
-**Example 3: 视频语义搜索（结果按时间升序排序）**
+**Example 2: 视频语义搜索（结果按时间升序排序）**
 
 
 
@@ -107,6 +69,44 @@ Output:
         ],
         "VideoURL": "https://1259367869.vod2.myqcloud.com/timeshift/live/dev20260426/timeshift.m3u8",
         "RequestId": "6e9d71e1-b778-415d-a276-59de83ecab97"
+    }
+}
+```
+
+**Example 3: 视频语义搜索（英文）**
+
+
+
+Input: 
+
+```
+tccli iotexplorer InvokeAISearchService --cli-unfold-argument  \
+    --ProductId 4AHMY9X89Y \
+    --DeviceName dev20260428en \
+    --Query person walking \
+    --SummaryLang en-US
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Summary": "1 video shows a person walking safely on a wet sidewalk after rain. Stay cautious on slippery paths!",
+        "Targets": [
+            {
+                "ChannelId": 0,
+                "DeviceName": "dev20260428en",
+                "EndTimeMs": 1777356974727,
+                "EventId": "",
+                "Id": "019dd2bb-273c-7a95-bf08-8da22f56f415_1",
+                "ProductId": "4AHMY9X89Y",
+                "StartTimeMs": 1777356973727,
+                "Summary": "A person in light-colored clothes walking on a wet and slippery roadside after the rain",
+                "Thumbnail": "/700000975417/4AHMY9X89Y/dev20260428en/events/1777356973.jpg"
+            }
+        ],
+        "VideoURL": "https://1259367869.vod2.myqcloud.com/timeshift/live/dev20260428en/timeshift.m3u8",
+        "RequestId": "b91d707d-bb24-40e8-8887-1984a58de77a"
     }
 }
 ```

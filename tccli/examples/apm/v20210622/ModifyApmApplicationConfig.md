@@ -1,4 +1,4 @@
-**Example 1: 成功示例**
+**Example 1: 修改应用配置**
 
 
 
@@ -6,10 +6,9 @@ Input:
 
 ```
 tccli apm ModifyApmApplicationConfig --cli-unfold-argument  \
-    --InstanceId apm-oJ7C40jYv \
-    --ServiceName springboot-service \
+    --InstanceId apm-eDyXPD6FF \
+    --ServiceName quote \
     --UrlConvergenceSwitch 0 \
-    --UrlConvergenceThreshold 1000 \
     --ExceptionFilter  \
     --UrlConvergence  \
     --ErrorCodeFilter  \
@@ -17,11 +16,8 @@ tccli apm ModifyApmApplicationConfig --cli-unfold-argument  \
     --IsRelatedLog 0 \
     --LogRegion  \
     --LogTopicID  \
-    --LogSet  \
-    --LogSource CLS \
-    --IgnoreOperationName abc
-ccc \
-    --EnableSnapshot True \
+    --IgnoreOperationName  \
+    --EnableSnapshot False \
     --SnapshotTimeout 2000 \
     --AgentEnable True \
     --TraceSquash True \
@@ -29,7 +25,7 @@ ccc \
     --InstrumentList.0.Name apm-spring-annotations \
     --InstrumentList.0.Enable True \
     --AgentOperationConfigView.RetentionValid False \
-    --AgentOperationConfigView.IgnoreOperation /test \
+    --AgentOperationConfigView.IgnoreOperation  \
     --AgentOperationConfigView.RetentionOperation  \
     --EnableLogConfig False \
     --EnableDashboardConfig False \
@@ -38,8 +34,8 @@ ccc \
     --LogIndexType 0 \
     --LogTraceIdKey  \
     --EnableSecurityConfig False \
-    --IsSqlInjectionAnalysis 1 \
-    --IsInstrumentationVulnerabilityScan 1 \
+    --IsSqlInjectionAnalysis 0 \
+    --IsInstrumentationVulnerabilityScan 0 \
     --IsRemoteCommandExecutionAnalysis 0 \
     --IsMemoryHijackingAnalysis 0 \
     --IsDeleteAnyFileAnalysis 0 \
@@ -57,16 +53,31 @@ ccc \
     --UrlAutoConvergenceEnable False \
     --UrlLongSegmentThreshold 40 \
     --UrlNumberSegmentThreshold 5 \
-    --DisableMemoryUsed 60 \
-    --DisableCpuUsed 60 \
-    --DbStatementParametersEnabled True
+    --DisableMemoryUsed 100 \
+    --DisableCpuUsed 100 \
+    --DbStatementParametersEnabled False \
+    --SlowSQLThresholds.0.Key default \
+    --SlowSQLThresholds.0.Value 2001 \
+    --EnableDesensitizationRule 0 \
+    --DesensitizationRule  \
+    --LogSpanIdKey  \
+    --AutoProfilingConfig.CpuProfilingEnable False \
+    --AutoProfilingConfig.MemoryProfilingEnable False \
+    --AutoProfilingConfig.CpuProfilingThreshold 80 \
+    --AutoProfilingConfig.MemoryProfilingThreshold 80 \
+    --AutoProfilingConfig.CpuProfilingDuration 60000 \
+    --AutoProfilingConfig.MemoryProfilingDuration 60000 \
+    --EnableThresholdConfig False \
+    --ErrRateThreshold 5 \
+    --ResponseDurationWarningThreshold 500 \
+    --UseDefaultFuseConfig True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "1514d407-9a83-4569-a9c6-0be6b2d6b9ca"
+        "RequestId": "7f53b1e8-a093-4150-9720-a0d9e887d89f"
     }
 }
 ```

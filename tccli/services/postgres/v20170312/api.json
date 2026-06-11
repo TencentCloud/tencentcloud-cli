@@ -2537,11 +2537,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
+          "document": "<p>实例ID。可通过<a href=\"https://cloud.tencent.com/document/api/409/16773\">DescribeDBInstances</a>接口获取</p>",
           "example": "postgres-xxxxxxxx",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份方式</p><p>枚举值：</p><ul><li>physical： 物理备份</li><li>logical： 逻辑备份</li><li>snapshot： 快照备份</li></ul>",
+          "example": "physical",
+          "member": "string",
+          "name": "BackupMethod",
+          "required": false,
           "type": "string"
         }
       ],
@@ -2552,7 +2561,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据备份集ID",
+          "document": "<p>数据备份集ID</p>",
           "example": "443c810b-53c6-5d8c-b6d2-1abbe5794529",
           "member": "string",
           "name": "BaseBackupId",
@@ -9411,7 +9420,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
+          "document": "<p>实例ID。可通过<a href=\"https://cloud.tencent.com/document/api/409/16773\">DescribeDBInstances</a>接口获取</p>",
           "example": "postgres-xxxxxxxx",
           "member": "string",
           "name": "DBInstanceId",
@@ -9420,7 +9429,7 @@
         },
         {
           "disabled": false,
-          "document": "实例最早开始备份时间",
+          "document": "<p>实例最早开始备份时间</p>",
           "example": "01:00:00",
           "member": "string",
           "name": "MinBackupStartTime",
@@ -9429,7 +9438,7 @@
         },
         {
           "disabled": false,
-          "document": "实例最晚开始备份时间",
+          "document": "<p>实例最晚开始备份时间</p>",
           "example": "02:00:00",
           "member": "string",
           "name": "MaxBackupStartTime",
@@ -9438,7 +9447,7 @@
         },
         {
           "disabled": false,
-          "document": "实例备份保留时长，取值范围为7-1830，单位是天",
+          "document": "<p>实例备份保留时长，取值范围为7-1830，单位是天</p>",
           "example": "7",
           "member": "uint64",
           "name": "BaseBackupRetentionPeriod",
@@ -9447,7 +9456,7 @@
         },
         {
           "disabled": false,
-          "document": "实例备份周期，若是星期维度，格式为小写星期英文单词，且至少设置两天备份；若是按月维度，格式为数字字符，如[\"1\",\"2\"]。",
+          "document": "<p>实例备份周期，若是星期维度，格式为小写星期英文单词，且至少设置两天备份；若是按月维度，格式为数字字符，如[&quot;1&quot;,&quot;2&quot;]。</p>",
           "example": "[\"monday\", \"tuesday\", \"wednesday\"]",
           "member": "string",
           "name": "BackupPeriod",
@@ -9456,7 +9465,7 @@
         },
         {
           "disabled": false,
-          "document": "实例日志备份保留时长，取值范围为7-1830，单位是天",
+          "document": "<p>实例日志备份保留时长，取值范围为7-1830，单位是天</p>",
           "example": "7",
           "member": "uint64",
           "name": "LogBackupRetentionPeriod",
@@ -9465,7 +9474,7 @@
         },
         {
           "disabled": false,
-          "document": "备份计划ID，用于指明要修改哪个备份计划，不传则是修改默认备份计划。",
+          "document": "<p>备份计划ID，用于指明要修改哪个备份计划，不传则是修改默认备份计划。</p>",
           "example": "0ee6843a-475b-5514-bd29-c432b75bb036",
           "member": "string",
           "name": "PlanId",
@@ -9474,10 +9483,19 @@
         },
         {
           "disabled": false,
-          "document": "要修改的备份计划名称。",
+          "document": "<p>要修改的备份计划名称。</p>",
           "example": "plan2",
           "member": "string",
           "name": "PlanName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份方式</p><p>枚举值：</p><ul><li>physical： 物理备份</li><li>logical： 逻辑备份</li><li>snapshot： 快照备份</li></ul>",
+          "example": "physical",
+          "member": "string",
+          "name": "BackupMethod",
           "required": false,
           "type": "string"
         }

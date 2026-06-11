@@ -587,6 +587,63 @@ def doModifyLibraDBForwardConfig(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyClusterPeriodScalePolicy(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyClusterPeriodScalePolicyRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ModifyClusterPeriodScalePolicy(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeBinlogListByVault(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -797,63 +854,6 @@ def doModifyMaintainPeriodConfig(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.ModifyMaintainPeriodConfig(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCopyClusterPasswordComplexity(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    profile.request_client = "_CLI_" + __version__
-    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
-        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CopyClusterPasswordComplexityRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.CopyClusterPasswordComplexity(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1157,6 +1157,63 @@ def doDescribeResourcePackageList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doOpenAIOptimizer(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.OpenAIOptimizerRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.OpenAIOptimizer(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeSupportProxyVersion(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1214,7 +1271,7 @@ def doDescribeSupportProxyVersion(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateAuditLogFile(args, parsed_globals):
+def doModifyVault(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1248,11 +1305,11 @@ def doCreateAuditLogFile(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateAuditLogFileRequest()
+    model = models.ModifyVaultRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateAuditLogFile(model)
+        rsp = client.ModifyVault(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1328,7 +1385,7 @@ def doDescribeLibraDBClusters(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyClusterBinlogRedoLogAutoCopyVault(args, parsed_globals):
+def doDescribeClusterServerlessScalePlans(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1362,11 +1419,11 @@ def doModifyClusterBinlogRedoLogAutoCopyVault(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyClusterBinlogRedoLogAutoCopyVaultRequest()
+    model = models.DescribeClusterServerlessScalePlansRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyClusterBinlogRedoLogAutoCopyVault(model)
+        rsp = client.DescribeClusterServerlessScalePlans(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1538,6 +1595,63 @@ def doCloseProxy(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.CloseProxy(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeClusters(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeClustersRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeClusters(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1955,7 +2069,7 @@ def doDeleteLibraDBCluster(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClusters(args, parsed_globals):
+def doCopyClusterPasswordComplexity(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1989,11 +2103,11 @@ def doDescribeClusters(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClustersRequest()
+    model = models.CopyClusterPasswordComplexityRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeClusters(model)
+        rsp = client.CopyClusterPasswordComplexity(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2126,7 +2240,7 @@ def doModifyAuditService(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDownloadLibraDBClusterList(args, parsed_globals):
+def doModifyClusterBinlogRedoLogAutoCopyVault(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2160,11 +2274,11 @@ def doDownloadLibraDBClusterList(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DownloadLibraDBClusterListRequest()
+    model = models.ModifyClusterBinlogRedoLogAutoCopyVaultRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DownloadLibraDBClusterList(model)
+        rsp = client.ModifyClusterBinlogRedoLogAutoCopyVault(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2564,6 +2678,63 @@ def doDescribeProxyNodes(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeProxyNodes(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCancelClusterServerlessScalePlan(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CancelClusterServerlessScalePlanRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CancelClusterServerlessScalePlan(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3266,6 +3437,63 @@ def doDescribeBinlogSaveDays(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateClusterPeriodScalePolicy(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateClusterPeriodScalePolicyRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateClusterPeriodScalePolicy(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeClusterInstanceGrps(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3362,6 +3590,63 @@ def doOfflineCluster(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.OfflineCluster(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doOpenClusterTransparentEncrypt(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.OpenClusterTransparentEncryptRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.OpenClusterTransparentEncrypt(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3665,7 +3950,7 @@ def doRenewLibraDBClusters(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeLibraDBClusterAutoMapRule(args, parsed_globals):
+def doDescribeBackupDownloadRestriction(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3699,11 +3984,11 @@ def doDescribeLibraDBClusterAutoMapRule(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeLibraDBClusterAutoMapRuleRequest()
+    model = models.DescribeBackupDownloadRestrictionRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeLibraDBClusterAutoMapRule(model)
+        rsp = client.DescribeBackupDownloadRestriction(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -5945,7 +6230,7 @@ def doDeleteLibraDBClusterAccounts(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doOpenClusterTransparentEncrypt(args, parsed_globals):
+def doDescribeClusterPeriodScalePolicy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -5979,11 +6264,11 @@ def doOpenClusterTransparentEncrypt(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.OpenClusterTransparentEncryptRequest()
+    model = models.DescribeClusterPeriodScalePolicyRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.OpenClusterTransparentEncrypt(model)
+        rsp = client.DescribeClusterPeriodScalePolicy(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -9365,7 +9650,7 @@ def doDescribeSQLExecutionPlan(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyVault(args, parsed_globals):
+def doCreateAuditLogFile(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -9399,11 +9684,11 @@ def doModifyVault(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyVaultRequest()
+    model = models.CreateAuditLogFileRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyVault(model)
+        rsp = client.CreateAuditLogFile(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -9422,7 +9707,7 @@ def doModifyVault(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeBackupDownloadRestriction(args, parsed_globals):
+def doDeleteClusterPeriodScalePolicy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -9456,11 +9741,11 @@ def doDescribeBackupDownloadRestriction(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeBackupDownloadRestrictionRequest()
+    model = models.DeleteClusterPeriodScalePolicyRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeBackupDownloadRestriction(model)
+        rsp = client.DeleteClusterPeriodScalePolicy(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -9917,6 +10202,63 @@ def doDescribeBackupList(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeBackupList(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDownloadLibraDBClusterList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DownloadLibraDBClusterListRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DownloadLibraDBClusterList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -11759,6 +12101,63 @@ def doCloseSSL(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeLibraDBClusterAutoMapRule(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeLibraDBClusterAutoMapRuleRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeLibraDBClusterAutoMapRule(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateProxy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -13091,23 +13490,25 @@ ACTION_MAP = {
     "ModifyAccountParams": doModifyAccountParams,
     "CreateAuditRuleTemplate": doCreateAuditRuleTemplate,
     "ModifyLibraDBForwardConfig": doModifyLibraDBForwardConfig,
+    "ModifyClusterPeriodScalePolicy": doModifyClusterPeriodScalePolicy,
     "DescribeBinlogListByVault": doDescribeBinlogListByVault,
     "DescribeVaultBackupClusterInfo": doDescribeVaultBackupClusterInfo,
     "DescribeClusterParamLogs": doDescribeClusterParamLogs,
     "ModifyMaintainPeriodConfig": doModifyMaintainPeriodConfig,
-    "CopyClusterPasswordComplexity": doCopyClusterPasswordComplexity,
     "DescribeBackupListByVault": doDescribeBackupListByVault,
     "CloseAuditService": doCloseAuditService,
     "DescribeLibraDBClusterAccountAllPrivileges": doDescribeLibraDBClusterAccountAllPrivileges,
     "DescribeVaults": doDescribeVaults,
     "DescribeResourcePackageList": doDescribeResourcePackageList,
+    "OpenAIOptimizer": doOpenAIOptimizer,
     "DescribeSupportProxyVersion": doDescribeSupportProxyVersion,
-    "CreateAuditLogFile": doCreateAuditLogFile,
+    "ModifyVault": doModifyVault,
     "DescribeLibraDBClusters": doDescribeLibraDBClusters,
-    "ModifyClusterBinlogRedoLogAutoCopyVault": doModifyClusterBinlogRedoLogAutoCopyVault,
+    "DescribeClusterServerlessScalePlans": doDescribeClusterServerlessScalePlans,
     "DescribeSlaveZones": doDescribeSlaveZones,
     "CloseProxyEndPoint": doCloseProxyEndPoint,
     "CloseProxy": doCloseProxy,
+    "DescribeClusters": doDescribeClusters,
     "DescribeProxySpecs": doDescribeProxySpecs,
     "InquirePriceModify": doInquirePriceModify,
     "ModifyDBInstanceSecurityGroups": doModifyDBInstanceSecurityGroups,
@@ -13115,10 +13516,10 @@ ACTION_MAP = {
     "DescribeBackupConfig": doDescribeBackupConfig,
     "DescribeBinlogDownloadUrl": doDescribeBinlogDownloadUrl,
     "DeleteLibraDBCluster": doDeleteLibraDBCluster,
-    "DescribeClusters": doDescribeClusters,
+    "CopyClusterPasswordComplexity": doCopyClusterPasswordComplexity,
     "AddServerlessRoInstances": doAddServerlessRoInstances,
     "ModifyAuditService": doModifyAuditService,
-    "DownloadLibraDBClusterList": doDownloadLibraDBClusterList,
+    "ModifyClusterBinlogRedoLogAutoCopyVault": doModifyClusterBinlogRedoLogAutoCopyVault,
     "DescribeRedoLogs": doDescribeRedoLogs,
     "CheckTransferClusterZone": doCheckTransferClusterZone,
     "DescribeBinlogConfig": doDescribeBinlogConfig,
@@ -13126,6 +13527,7 @@ ACTION_MAP = {
     "ModifyClusterStorage": doModifyClusterStorage,
     "ActivateInstance": doActivateInstance,
     "DescribeProxyNodes": doDescribeProxyNodes,
+    "CancelClusterServerlessScalePlan": doCancelClusterServerlessScalePlan,
     "TransferClusterZone": doTransferClusterZone,
     "IsolateLibraDBCluster": doIsolateLibraDBCluster,
     "DisassociateSecurityGroups": doDisassociateSecurityGroups,
@@ -13138,14 +13540,16 @@ ACTION_MAP = {
     "RollBackCluster": doRollBackCluster,
     "OfflineLibraDBCluster": doOfflineLibraDBCluster,
     "DescribeBinlogSaveDays": doDescribeBinlogSaveDays,
+    "CreateClusterPeriodScalePolicy": doCreateClusterPeriodScalePolicy,
     "DescribeClusterInstanceGrps": doDescribeClusterInstanceGrps,
     "OfflineCluster": doOfflineCluster,
+    "OpenClusterTransparentEncrypt": doOpenClusterTransparentEncrypt,
     "DescribeInstanceErrorLogs": doDescribeInstanceErrorLogs,
     "ModifyClusterName": doModifyClusterName,
     "ModifyLibraDBClusterName": doModifyLibraDBClusterName,
     "ModifyProxyRwSplit": doModifyProxyRwSplit,
     "RenewLibraDBClusters": doRenewLibraDBClusters,
-    "DescribeLibraDBClusterAutoMapRule": doDescribeLibraDBClusterAutoMapRule,
+    "DescribeBackupDownloadRestriction": doDescribeBackupDownloadRestriction,
     "ModifyVipVport": doModifyVipVport,
     "DeleteAuditRuleTemplates": doDeleteAuditRuleTemplates,
     "ModifyProxyDesc": doModifyProxyDesc,
@@ -13185,7 +13589,7 @@ ACTION_MAP = {
     "DeleteClusterDatabase": doDeleteClusterDatabase,
     "SwitchClusterZone": doSwitchClusterZone,
     "DeleteLibraDBClusterAccounts": doDeleteLibraDBClusterAccounts,
-    "OpenClusterTransparentEncrypt": doOpenClusterTransparentEncrypt,
+    "DescribeClusterPeriodScalePolicy": doDescribeClusterPeriodScalePolicy,
     "IsolateLibraDBInstance": doIsolateLibraDBInstance,
     "AddInstances": doAddInstances,
     "ModifyInstanceUpgradeLimitDays": doModifyInstanceUpgradeLimitDays,
@@ -13245,8 +13649,8 @@ ACTION_MAP = {
     "ReloadBalanceProxyNode": doReloadBalanceProxyNode,
     "CreateVault": doCreateVault,
     "DescribeSQLExecutionPlan": doDescribeSQLExecutionPlan,
-    "ModifyVault": doModifyVault,
-    "DescribeBackupDownloadRestriction": doDescribeBackupDownloadRestriction,
+    "CreateAuditLogFile": doCreateAuditLogFile,
+    "DeleteClusterPeriodScalePolicy": doDeleteClusterPeriodScalePolicy,
     "ModifyLibraDBClusterAccountPrivilege": doModifyLibraDBClusterAccountPrivilege,
     "DescribeIsolatedInstances": doDescribeIsolatedInstances,
     "ModifyAuditRuleTemplates": doModifyAuditRuleTemplates,
@@ -13255,6 +13659,7 @@ ACTION_MAP = {
     "StopCLSDelivery": doStopCLSDelivery,
     "DescribeLibraDBSlowLogs": doDescribeLibraDBSlowLogs,
     "DescribeBackupList": doDescribeBackupList,
+    "DownloadLibraDBClusterList": doDownloadLibraDBClusterList,
     "CreateResourcePackage": doCreateResourcePackage,
     "RenewClusters": doRenewClusters,
     "CreateClusterDatabase": doCreateClusterDatabase,
@@ -13287,6 +13692,7 @@ ACTION_MAP = {
     "DescribeBackupDownloadUrl": doDescribeBackupDownloadUrl,
     "SwitchClusterVpc": doSwitchClusterVpc,
     "CloseSSL": doCloseSSL,
+    "DescribeLibraDBClusterAutoMapRule": doDescribeLibraDBClusterAutoMapRule,
     "CreateProxy": doCreateProxy,
     "DescribeClusterDetail": doDescribeClusterDetail,
     "CreateCLSDelivery": doCreateCLSDelivery,

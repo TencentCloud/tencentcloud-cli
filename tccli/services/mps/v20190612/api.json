@@ -63,6 +63,13 @@
       "output": "CreateAdaptiveDynamicStreamingTemplateResponse",
       "status": "online"
     },
+    "CreateAigcAudioTask": {
+      "document": "调用该接口，用于创建AI生音频任务。",
+      "input": "CreateAigcAudioTaskRequest",
+      "name": "创建AIGC生音频任务",
+      "output": "CreateAigcAudioTaskResponse",
+      "status": "online"
+    },
     "CreateAigcImageTask": {
       "document": "调用该接口用于创建AIGC生图片任务。",
       "input": "CreateAigcImageTaskRequest",
@@ -579,6 +586,13 @@
       "input": "DescribeAdaptiveDynamicStreamingTemplatesRequest",
       "name": "获取转自适应码流模板列表",
       "output": "DescribeAdaptiveDynamicStreamingTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeAigcAudioTask": {
+      "document": "调用该接口，用于查询AIGC生视频任务的进度以及获取生成结果。",
+      "input": "DescribeAigcAudioTaskRequest",
+      "name": "查询AIGC生音频任务",
+      "output": "DescribeAigcAudioTaskResponse",
       "status": "online"
     },
     "DescribeAigcImageTask": {
@@ -8010,6 +8024,152 @@
       ],
       "usage": "in"
     },
+    "AiTryOnConfig": {
+      "document": "虚拟试穿任务配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>换装模型，取值：</p><ul><li>WAND-tryon-1.0-lite</li><li>WAND-tryon-1.0-flash</li><li>WAND-tryon-1.0-pro</li></ul>",
+          "example": "WAND-tryon-1.0-lite",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>换装指令。</p><p>为空时使用内置指令。</p>",
+          "example": "将图二的上衣替换到图一的模特身上",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出图片分辨率，取值：</p><ul><li>1K</li><li>2K</li><li>4K</li></ul><p>默认值：1K</p>",
+          "example": "1K",
+          "member": "string",
+          "name": "Resolution",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcAudioExtraParam": {
+      "document": "Aigc生音频扩展参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源id，根据具体需要填写。</p>",
+          "example": "438910555_1",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcAudioOutputAudioInfo": {
+      "document": "Aigc生音频任务，输出的音频信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>音频URl。</p>",
+          "example": "https://***t*m*li*******d-effect-13114********s.*p-guangzhou.my*********m/template/template_cover_image/captain_america.***",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频时长。</p>",
+          "example": "8",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcAudioOutputVideoInfo": {
+      "document": "Aigc生音频任务，输出的视频信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>视频URL。</p>",
+          "example": "https://syste***i****loud-effect-131**02***.co********ngzhou.my***o*d.com/tem**ate/template_cover_image/captain_america.mp4",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频时长。</p>",
+          "example": "8",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcAudioReferenceAudioInfo": {
+      "document": "参考音频信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参考音频URL信息。需外网可访问。</p>",
+          "example": "https://l****qcloud-tts-131140221*.cos.ap-**angzhou.myqcloud.c**********78_1513228070381297256.wav",
+          "member": "string",
+          "name": "AudioUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcAudioReferenceVideoInfo": {
+      "document": "用于AIGC视频生成的参考视频素材。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参考视频url。需要外网可访问。</p>",
+          "example": "https://liv***cloud-tts-1****02212.co******u****hou.myqcloud.com/251006278_1513228070381297256.mp4",
+          "member": "string",
+          "name": "VideoUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AigcImageExtraParam": {
       "document": "用于AIGC创作图片时用到的扩展参数信息。",
       "members": [
@@ -11508,6 +11668,133 @@
       ],
       "type": "object"
     },
+    "CreateAigcAudioTaskRequest": {
+      "document": "CreateAigcAudioTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名称。生音乐当前支持的模型: GL、MinimaxMusic。</p>",
+          "example": "Tme",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。<br>模型GL支持的版本号：2.0、3.0-clip、3.0-pro。<br>模型MinimaxMusic支持的版本号：2.0、2.5、2.6。</p>",
+          "example": "1.0",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定场景生音频。音乐: music。</p>",
+          "example": "music",
+          "member": "string",
+          "name": "SceneType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。</p>",
+          "example": "生成一段音乐",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>参考视频信息。仅部分模型支持。</p>",
+          "example": "无",
+          "member": "AigcAudioReferenceVideoInfo",
+          "name": "VideoInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>传入参考音频信息。</p><p>比如传入音频生成音乐时需要传入。</p>",
+          "example": "无",
+          "member": "AigcAudioReferenceAudioInfo",
+          "name": "AudioInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出音频格式，默认不填。mp3、wav。</p>",
+          "example": "wav",
+          "member": "string",
+          "name": "OutputAudioFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。</p>",
+          "example": "无",
+          "member": "AigcStoreCosParam",
+          "name": "StoreCosParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于传入要求的额外参数。</p>",
+          "example": "无",
+          "member": "AigcAudioExtraParam",
+          "name": "ExtraParameters",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。<br>示例MinimaxMusic模型传入歌词时：<br>{\"lyric\":{\"小马在快乐奔跑，花儿在开放\"}}</p>",
+          "example": "{\"sequential_image_generation\":\"auto\"}",
+          "member": "string",
+          "name": "AdditionalParameters",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>接口操作者名称。</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAigcAudioTaskResponse": {
+      "document": "CreateAigcAudioTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务创建成功后，返回的任务ID。<br>调用查询接口，轮询获取任务进度及生成结果。</p>",
+          "example": "24*******AigcAudio-6a38**3a9f51468da5bfc25****9a462",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAigcImageTaskRequest": {
       "document": "CreateAigcImageTask请求参数结构体",
       "members": [
@@ -11658,7 +11945,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>指定场景生视频。<br>注意：仅部分模型支持指定场景。</p><ol><li>Kling支持：动作控制，motion_control；数字人，avatar_i2v；对口型，lip_sync。</li><li>Mingmou支持：横转竖，land2port。</li><li>Vidu支持：特效模板，template_effect。</li></ol>",
+          "document": "<p>指定场景生成视频。<br>注意：仅部分模型支持指定场景。</p><ol><li>Kling支持：动作控制，motion_control；数字人，avatar_i2v；对口型，lip_sync。</li><li>Mingmou支持：横转竖，land2port。</li><li>Vidu支持：特效模板，template_effect。</li><li>Hunyuan支持: 3d世界模型, 3d_scene；涉及的返回文件非视频。</li></ol>",
           "example": "motion_control",
           "member": "string",
           "name": "SceneType",
@@ -16516,6 +16803,73 @@
           "member": "AdaptiveDynamicStreamingTemplate",
           "name": "AdaptiveDynamicStreamingTemplateSet",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcAudioTaskRequest": {
+      "document": "DescribeAigcAudioTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建AIGC生视频任务时，返回的任务ID。</p>",
+          "example": "24000145-******d**-cb46b8040b684b539bbd46****e*e2fd",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcAudioTaskResponse": {
+      "document": "DescribeAigcAudioTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务当前状态。 WAIT：等待中， RUN：执行中， FAIL：任务失败， DONE：任务成功。</p>",
+          "example": "DONE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当任务状态为 FAIL时，返回失败信息。</p>",
+          "example": "tme audio url is empty",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出的音频信息。</p>",
+          "example": "无",
+          "member": "AigcAudioOutputAudioInfo",
+          "name": "AudioInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出的视频信息，仅视频配音等场景会输出。</p>",
+          "example": "无",
+          "member": "AigcAudioOutputVideoInfo",
+          "name": "VideoInfos",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -26446,7 +26800,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片编码配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>图片编码配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageEncodeConfig",
           "name": "EncodeConfig",
@@ -26457,7 +26811,7 @@
         },
         {
           "disabled": false,
-          "document": "图片增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>图片增强配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageEnhanceConfig",
           "name": "EnhanceConfig",
@@ -26468,7 +26822,7 @@
         },
         {
           "disabled": false,
-          "document": "图片擦除配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>图片擦除配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageEraseConfig",
           "name": "EraseConfig",
@@ -26479,7 +26833,7 @@
         },
         {
           "disabled": false,
-          "document": "盲水印配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>盲水印配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BlindWatermarkConfig",
           "name": "BlindWatermarkConfig",
@@ -26490,7 +26844,7 @@
         },
         {
           "disabled": false,
-          "document": "美颜配置。",
+          "document": "<p>美颜配置。</p>",
           "example": "无",
           "member": "BeautyConfig",
           "name": "BeautyConfig",
@@ -26501,10 +26855,21 @@
         },
         {
           "disabled": false,
-          "document": "图片基础转换能力。",
+          "document": "<p>图片基础转换能力。</p>",
           "example": "无",
           "member": "ImageTransformConfig",
           "name": "TransformConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ai 换装配置。</p>",
+          "example": "无",
+          "member": "AiTryOnConfig",
+          "name": "AiTryOnConfig",
           "output_required": false,
           "required": false,
           "type": "object",

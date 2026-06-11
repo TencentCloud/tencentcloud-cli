@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli cbs RenewRemoteDisk --cli-unfold-argument ```
+tccli cbs RenewRemoteDisk --cli-unfold-argument  \
+    --DiskChargePrepaid.Period 1 \
+    --RemoteDiskId rdisk-b1f7xvod
+```
 
 Output: 
 ```

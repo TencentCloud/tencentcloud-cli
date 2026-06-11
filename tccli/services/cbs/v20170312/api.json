@@ -758,7 +758,26 @@
     },
     "AttachRemoteDisksRequest": {
       "document": "AttachRemoteDisks请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定待挂载单副本SSD硬盘的CVM实例。</p>",
+          "example": "ins-1v6br72e",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>一个或多个待挂载的单副本SSD硬盘ID。</p>",
+          "example": "[\"rdisk-1ztsk0jr\"]",
+          "member": "string",
+          "name": "RemoteDiskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "AttachRemoteDisksResponse": {
@@ -1609,7 +1628,71 @@
     },
     "CreateRemoteDisksRequest": {
       "document": "CreateRemoteDisks请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘计费类型。 </p><p>枚举值：</p><ul><li>PREPAID： 预付费，即包年包月</li><li>POSTPAID_BY_HOUR： 按小时后付费</li></ul>",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "DiskChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘大小，单位为GiB。</p><p>取值范围：[2000, 7000]</p>",
+          "example": "2000",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待挂载单副本SSD硬盘的CVM实例ID。</p>",
+          "example": "ins-75askm1r",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例所在的位置。通过该参数可以指定实例所属可用区，所属项目。若不指定项目，将在默认项目下进行创建。</p>",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预付费模式，即包年包月相关参数设置。通过该参数指定包年包月单副本SSD硬盘的购买时长、是否设置自动续费等属性。 创建预付费单副本SSD硬盘该参数必传，创建按小时后付费单副本SSD硬盘无需传该参数。</p>",
+          "example": "无",
+          "member": "RemoteDiskChargePrepaid",
+          "name": "DiskChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建单副本SSD硬盘数量，不传则默认为1。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "DiskCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD的显示名称。</p>",
+          "example": "TestRemoteDisk",
+          "member": "string",
+          "name": "DiskName",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CreateRemoteDisksResponse": {
@@ -2484,7 +2567,17 @@
     },
     "DescribeRemoteDisksDeniedActionsRequest": {
       "document": "DescribeRemoteDisksDeniedActions请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘ID列表。每次批量请求单副本SSD硬盘的上限为 100。</p>",
+          "example": "[\"rdisk-fluj9shv\"]",
+          "member": "string",
+          "name": "RemoteDiskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DescribeRemoteDisksDeniedActionsResponse": {
@@ -2813,7 +2906,35 @@
     },
     "DetachRemoteDisksRequest": {
       "document": "DetachRemoteDisks请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定从特定CVM实例上卸载单副本SSD硬盘。</p>",
+          "example": "ins-1v6br72e",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>一个或多个将要卸载的单副本SSD硬盘ID。</p>",
+          "example": "[\"rdisk-1ztsk0jr\"]",
+          "member": "string",
+          "name": "RemoteDiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>强制解挂，内部使用。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ForceDetach",
+          "required": false,
+          "type": "bool"
+        }
+      ],
       "type": "object"
     },
     "DetachRemoteDisksResponse": {
@@ -3777,7 +3898,44 @@
     },
     "InquirePriceCreateRemoteDisksRequest": {
       "document": "InquirePriceCreateRemoteDisks请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘计费类型。</p><p>枚举值：</p><ul><li>PREPAID： 预付费，即包年包月</li><li>POSTPAID_BY_HOUR： 按小时后付费</li></ul>",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "DiskChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘大小，单位为GiB。</p><p>取值范围：[2000, 7000]</p>",
+          "example": "2000",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。 创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。</p>",
+          "example": "无",
+          "member": "RemoteDiskChargePrepaid",
+          "name": "DiskChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买单副本SSD硬盘的数量。不填则默认为1。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "DiskCount",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "InquirePriceCreateRemoteDisksResponse": {
@@ -3886,7 +4044,26 @@
     },
     "InquirePriceRenewRemoteDisksRequest": {
       "document": "InquirePriceRenewRemoteDisks请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月云盘的购买时长。如果在该参数中指定CurInstanceDeadline，则会按对齐到子机到期时间来续费。如果是批量续费询价，该参数与Disks参数一一对应，元素数量需保持一致。</p>",
+          "example": "无",
+          "member": "RemoteDiskChargePrepaid",
+          "name": "DiskChargePrepaidSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>一个或多个单副本SSD硬盘ID。</p>",
+          "example": "[\"rdisk-1ztsk0jr\"]",
+          "member": "string",
+          "name": "RemoteDiskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "InquirePriceRenewRemoteDisksResponse": {
@@ -4446,7 +4623,35 @@
     },
     "ModifyRemoteDiskAttributesRequest": {
       "document": "ModifyRemoteDiskAttributes请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>一个或多个待操作的单副本SSD硬盘ID。如果传入多个单副本SSD硬盘ID，只支持所有硬盘修改为同一属性。</p>",
+          "example": "[\"rdisk-fluj9shv\"]",
+          "member": "string",
+          "name": "RemoteDiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的单副本SSD硬盘名称</p>",
+          "example": "TestRemoteSSD",
+          "member": "string",
+          "name": "DiskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的单副本SSD硬盘项目ID。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "ModifyRemoteDiskAttributesResponse": {
@@ -4895,6 +5100,39 @@
       ],
       "usage": "out"
     },
+    "RemoteDiskChargePrepaid": {
+      "document": "描述了单副本SSD硬盘的预付费计费模式。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "购买单副本SSD硬盘的时长，默认单位为月，取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要将单副本SSD硬盘的到期时间与挂载的子机对齐时，可传入该参数。该参数表示子机当前的到期时间，此时Period如果传入，则表示子机需要续费的时长，单副本SSD硬盘会自动按对齐到子机续费后的到期时间续费。",
+          "example": "2018-03-30T20:15:03+08:00",
+          "member": "string",
+          "name": "CurInstanceDeadline",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识。取值范围：\n<ul>\n  <li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>\n  <li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li>\n  <li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li>\n</ul>\n默认取值：NOTIFY_AND_MANUAL_RENEW。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "RenewDiskRequest": {
       "document": "RenewDisk请求参数结构体",
       "members": [
@@ -4933,7 +5171,26 @@
     },
     "RenewRemoteDiskRequest": {
       "document": "RenewRemoteDisk请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月单副本SSD硬盘的续费时长。 在云硬盘与挂载的实例一起续费的场景下，可以指定参数CurInstanceDeadline，此时单副本SSD硬盘会按对齐到实例续费后的到期时间来续费。</p>",
+          "example": "无",
+          "member": "RemoteDiskChargePrepaid",
+          "name": "DiskChargePrepaid",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘ID。</p>",
+          "example": "rdisk-1ztsk0jr",
+          "member": "string",
+          "name": "RemoteDiskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "RenewRemoteDiskResponse": {
@@ -5548,7 +5805,17 @@
     },
     "TerminateRemoteDisksRequest": {
       "document": "TerminateRemoteDisks请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>一个或多个单副本SSD硬盘ID。</p>",
+          "example": "[\"rdisk-1ztsk0jr\"]",
+          "member": "string",
+          "name": "RemoteDiskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "TerminateRemoteDisksResponse": {

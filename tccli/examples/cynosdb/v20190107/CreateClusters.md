@@ -1,48 +1,37 @@
-**Example 1: 购买新集群**
+**Example 1: 创建集群**
 
-购买新集群
+
 
 Input: 
 
 ```
 tccli cynosdb CreateClusters --cli-unfold-argument  \
-    --Count 1 \
-    --StoragePayMode 0 \
-    --VpcId vpc-1ptuei0b \
-    --Zone ap-guangzhou-3 \
-    --AdminPassword passwd@admin \
+    --Zone ap-guangzhou-5 \
+    --VpcId 0 \
+    --SubnetId 0 \
     --DbType MYSQL \
-    --ProjectId 0 \
-    --DbVersion 10.0 \
-    --Storage 100 \
-    --PayMode 0 \
-    --ClusterName newInstance \
-    --StorageLimit 100 \
-    --RollbackStrategy noneRollback \
-    --Memory 4 \
-    --SubnetId subnet-1tmw9t4o \
-    --Cpu 2 \
-    --HaCount 1
+    --DbVersion 8.0 \
+    --Cpu 1 \
+    --Memory 1 \
+    --InstanceCount 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ResourceIds": [
-            "cynosdbmysql-ins-67rmucgk"
-        ],
-        "RequestId": "132075",
-        "TranId": "20190522160000003106844584180998",
+        "BigDealIds": [],
         "ClusterIds": [
-            "cynosdbmysql-sls-9nts65r2"
-        ],
-        "BigDealIds": [
-            "142759"
+            "cynosdbmysql-********"
         ],
         "DealNames": [
-            "20190522112283"
-        ]
+            "2026*****************11"
+        ],
+        "RequestId": "7e55656e-37c6-44fe-9f81-34eafa652820",
+        "ResourceIds": [
+            "cynosdbmysql-ins-********"
+        ],
+        "TranId": "2026061198**5**9*8*****"
     }
 }
 ```

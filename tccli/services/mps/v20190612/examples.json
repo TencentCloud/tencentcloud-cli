@@ -96,6 +96,14 @@
         "title": "创建转自适应码流模板"
       }
     ],
+    "CreateAigcAudioTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAigcAudioTask\n<公共请求参数>\n\n{\n    \"ModelName\": \"Tme\",\n    \"ModelVersion\": \"1.0\",\n    \"SceneType\": \"music\",\n    \"Prompt\": \"生成一段音乐\",\n    \"VideoInfos\": [\n        {\n            \"VideoUrl\": \"https://l***-******-tts-131140***2.c***ap-*ua****ou.myqcloud.com/251006278_1513228070381297256.mp4\"\n        }\n    ],\n    \"AudioInfos\": [\n        {\n            \"AudioUrl\": \"https://li**-q*******ts-1311402212*cos*ap-guangzh****yqcloud.com/25*******_1513228070381297256.wav\"\n        }\n    ],\n    \"OutputAudioFormat\": \"wav\",\n    \"ExtraParameters\": {\n        \"ResourceId\": \"438910555_1\"\n    },\n    \"AdditionalParameters\": \"{\\\"sequential_image_generation\\\":\\\"auto\\\"}\",\n    \"Operator\": \"admin\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"24*******AigcAudio-6a38**3a9f51468da5bfc25****9a462\",\n        \"RequestId\": \"fcc72969-6464-45ba-8369-232f7a1e1c76\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CreateAigcImageTask": [
       {
         "document": "",
@@ -752,6 +760,14 @@
         "input": "https://mps.tencentcloudapi.com/?Action=DescribeAdaptiveDynamicStreamingTemplates\n&Definitions.0=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AdaptiveDynamicStreamingTemplateSet\": [\n            {\n                \"Comment\": \"转自适应码流模板1\",\n                \"Definition\": 1001,\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"DisableHigherVideoBitrate\": 1,\n                \"Name\": \"转自适应码流模板1\",\n                \"Format\": \"HLS\",\n                \"DisableHigherVideoResolution\": 1,\n                \"StreamInfos\": [\n                    {\n                        \"RemoveVideo\": 0,\n                        \"Audio\": {\n                            \"Codec\": \"libfdk_aac\",\n                            \"SampleRate\": 44100,\n                            \"AudioChannel\": 2,\n                            \"Bitrate\": 200\n                        },\n                        \"Video\": {\n                            \"Fps\": 25,\n                            \"Width\": 1080,\n                            \"Height\": 960,\n                            \"Vcrf\": 23,\n                            \"Codec\": \"libx264\",\n                            \"ResolutionAdaptive\": \"open\",\n                            \"FillType\": \"black\",\n                            \"Bitrate\": 1000,\n                            \"Gop\": 50\n                        },\n                        \"RemoveAudio\": 0\n                    }\n                ],\n                \"Type\": \"Preset\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "查询转自适应码流模板列表"
+      }
+    ],
+    "DescribeAigcAudioTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAigcAudioTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"24000145-******d**-cb46b8040b684b539bbd46****e*e2fd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AudioInfos\": [],\n        \"Message\": \"Invalid model name for music\",\n        \"Status\": \"FAIL\",\n        \"VideoInfos\": [],\n        \"RequestId\": \"127ff457-6804-467a-ac97-c592db56c164\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "DescribeAigcImageTask": [
