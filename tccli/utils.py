@@ -94,7 +94,13 @@ class Utils(object):
                       ensure_ascii=False,
                       sort_keys=True)
         try:
-            os.rename(temp_file, filename)
+            if os.name != "nt":
+                os.rename(temp_file, filename)
+            else:
+                if six.PY3:
+                    os.replace(temp_file, filename)
+                else:
+                    raise Exception("windows platform python2 is not supported, please upgrade to python3")
         except Exception:
             os.remove(temp_file)
             raise Exception("write configure file failed")
