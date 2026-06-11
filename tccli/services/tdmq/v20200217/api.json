@@ -637,6 +637,20 @@
       "output": "DescribeRabbitMQQueuesResponse",
       "status": "online"
     },
+    "DescribeRabbitMQTokenPwdRules": {
+      "document": "SSM查询密码生成规则",
+      "input": "DescribeRabbitMQTokenPwdRulesRequest",
+      "name": "SSM查询RabbitMQ密码生成规则",
+      "output": "DescribeRabbitMQTokenPwdRulesResponse",
+      "status": "online"
+    },
+    "DescribeRabbitMQTokenResource": {
+      "document": "SSM校验RabbitMQ实例信息",
+      "input": "DescribeRabbitMQTokenResourceRequest",
+      "name": "SSM校验RabbitMQ实例",
+      "output": "DescribeRabbitMQTokenResourceResponse",
+      "status": "online"
+    },
     "DescribeRabbitMQUser": {
       "document": "查询RabbitMQ用户列表",
       "input": "DescribeRabbitMQUserRequest",
@@ -901,6 +915,13 @@
       "input": "DescribeRocketMQVipInstancesRequest",
       "name": "查询 RocketMQ 专享和通用集群列表",
       "output": "DescribeRocketMQVipInstancesResponse",
+      "status": "online"
+    },
+    "DescribeRoleTokenRotateConfig": {
+      "document": "更新专业集群可用区",
+      "input": "DescribeRoleTokenRotateConfigRequest",
+      "name": "查询专业集群角色是否开启密钥轮转",
+      "output": "DescribeRoleTokenRotateConfigResponse",
       "status": "online"
     },
     "DescribeRoles": {
@@ -1176,11 +1197,25 @@
       "output": "ReceiveMessageResponse",
       "status": "online"
     },
+    "ResetInstancePassword": {
+      "document": "重置轮转密码",
+      "input": "ResetInstancePasswordRequest",
+      "name": "重置角色轮转密钥",
+      "output": "ResetInstancePasswordResponse",
+      "status": "online"
+    },
     "ResetMsgSubOffsetByTimestamp": {
       "document": "根据时间戳进行消息回溯，精确到毫秒",
       "input": "ResetMsgSubOffsetByTimestampRequest",
       "name": "消息回溯",
       "output": "ResetMsgSubOffsetByTimestampResponse",
+      "status": "online"
+    },
+    "ResetRabbitMQInstancePwd": {
+      "document": "SSM重置轮转密码",
+      "input": "ResetRabbitMQInstancePwdRequest",
+      "name": "SSM重置RabbitMQ实例密钥",
+      "output": "ResetRabbitMQInstancePwdResponse",
       "status": "online"
     },
     "ResetRocketMQConsumerOffSet": {
@@ -10956,6 +10991,153 @@
       ],
       "type": "object"
     },
+    "DescribeRabbitMQTokenPwdRulesRequest": {
+      "document": "DescribeRabbitMQTokenPwdRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "amqp-wdxk9k2q",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名称</p>",
+          "example": "test0318",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p>",
+          "example": "rabbitmq",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源所属地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRabbitMQTokenPwdRulesResponse": {
+      "document": "DescribeRabbitMQTokenPwdRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>密码规则</p>",
+          "example": "无",
+          "member": "PasswordRule",
+          "name": "Rules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密码最大长度</p>",
+          "example": "64",
+          "member": "int64",
+          "name": "RequiredLength",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRabbitMQTokenResourceRequest": {
+      "document": "DescribeRabbitMQTokenResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "amqp-ogmrjdk5",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名称</p>",
+          "example": "test_cjq",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例类型</p><p>枚举值：</p><ul><li>rabbitmq： rabbitmq类型</li></ul>",
+          "example": "rabbitmq",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>固定值%</p>",
+          "example": "%",
+          "member": "string",
+          "name": "AccountHost",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRabbitMQTokenResourceResponse": {
+      "document": "DescribeRabbitMQTokenResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启轮转</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnabledRotate",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRabbitMQUserRequest": {
       "document": "DescribeRabbitMQUser请求参数结构体",
       "members": [
@@ -14415,6 +14597,70 @@
           "name": "Instances",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoleTokenRotateConfigRequest": {
+      "document": "DescribeRoleTokenRotateConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>密钥名字</p>",
+          "example": "asddasammasdads",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群 ID</p>",
+          "example": "pulsar-g4de9kbzxxoz",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色</p>",
+          "example": "autoRole1",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品名字</p>",
+          "example": "Pulsar",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoleTokenRotateConfigResponse": {
+      "document": "DescribeRoleTokenRotateConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启轮转</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnabledRotate",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -18721,6 +18967,52 @@
       ],
       "usage": "out"
     },
+    "PasswordRule": {
+      "document": "rabbitmq用户密码生成规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>字符类型</p>",
+          "example": "lowercase",
+          "member": "string",
+          "name": "CharacterType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可使用字符</p>",
+          "example": "()`~!@#$%^&*_=|{}[]:;',.?/",
+          "member": "string",
+          "name": "Choices",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小长度</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "MinimumLength",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否必须为开头</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "MustStart",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PriceTag": {
       "document": "价格标签信息，一个完整的价格标签包含计价类别和计费项标签。",
       "members": [
@@ -22079,6 +22371,109 @@
       ],
       "type": "object"
     },
+    "ResetInstancePasswordRequest": {
+      "document": "ResetInstancePassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>轮转密钥名字</p>",
+          "example": "dadas",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群 ID</p>",
+          "example": "pulsar-op4og4jmozvk",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色名字</p>",
+          "example": "asdas",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品名字</p><p>枚举值：</p><ul><li>pulsar： pulsar 业务</li></ul>",
+          "example": "pulsar",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>轮转时间（分钟）</p>",
+          "example": "1440",
+          "member": "uint64",
+          "name": "RotateFreq",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetInstancePasswordResponse": {
+      "document": "ResetInstancePassword返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "Success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>耗时</p>",
+          "example": "107",
+          "member": "uint64",
+          "name": "TimeCost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间戳</p>",
+          "example": "1774958774848",
+          "member": "uint64",
+          "name": "ResetTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>token 值</p>",
+          "example": "eyJrZXlJZCI6InB1bHNhci1vcDRvZzRqbW96dmsiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhc2RhcyIsImV4cCI6MTc3NTA0NTE3NH0.T5CHC2fuuKg1Z3AylV0MuPhvVG_e4mBhnOSwRQhNakg",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResetMsgSubOffsetByTimestampRequest": {
       "document": "ResetMsgSubOffsetByTimestamp请求参数结构体",
       "members": [
@@ -22142,6 +22537,89 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetRabbitMQInstancePwdRequest": {
+      "document": "ResetRabbitMQInstancePwd请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "amqp-wdxk9k2q",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名称</p>",
+          "example": "test03187",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p>",
+          "example": "rabbitmq",
+          "member": "string",
+          "name": "ResourceRegionType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户密码</p>",
+          "example": "wrqwet21412",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号IP，固定值%</p>",
+          "example": "%",
+          "member": "string",
+          "name": "AccountHost",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetRabbitMQInstancePwdResponse": {
+      "document": "ResetRabbitMQInstancePwd返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接口耗时</p><p>单位：ms</p>",
+          "example": "501",
+          "member": "uint64",
+          "name": "TimeCost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>重置密码时间戳</p>",
+          "example": "1776246143727",
+          "member": "uint64",
+          "name": "ResetTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -799,7 +799,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务元数据信息，如服务名",
+          "document": "<p>服务元数据信息，如服务名</p>",
           "example": "无",
           "member": "ServiceMetaData",
           "name": "ServiceMetaData",
@@ -808,7 +808,7 @@
         },
         {
           "disabled": false,
-          "document": "资源相关信息",
+          "document": "<p>资源相关信息</p>",
           "example": "无",
           "member": "ComputeInfo",
           "name": "ComputeInfo",
@@ -817,7 +817,7 @@
         },
         {
           "disabled": false,
-          "document": "服务部署信息",
+          "document": "<p>服务部署信息</p>",
           "example": "无",
           "member": "DeploymentConfig",
           "name": "DeploymentConfigs",
@@ -826,7 +826,7 @@
         },
         {
           "disabled": false,
-          "document": "服务超参数配置",
+          "document": "<p>服务超参数配置</p>",
           "example": "无",
           "member": "HyperParam",
           "name": "HyperParam",
@@ -835,12 +835,21 @@
         },
         {
           "disabled": false,
-          "document": "网络设置",
+          "document": "<p>网络设置</p>",
           "example": "无",
           "member": "NetworkSetting",
           "name": "NetworkSetting",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全类型</p><p>枚举值：</p><ul><li>STANDARD： 标准推理</li><li>CONFIDENTIAL： 可信推理</li></ul>",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "SecurityType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -850,8 +859,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务ID",
-          "example": "svc-8z2f0oik",
+          "document": "<p>服务ID</p>",
+          "example": "svc-4lgsk0ja",
           "member": "string",
           "name": "ServiceId",
           "output_required": true,

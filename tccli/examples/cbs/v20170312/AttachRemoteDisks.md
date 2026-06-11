@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli cbs AttachRemoteDisks --cli-unfold-argument ```
+tccli cbs AttachRemoteDisks --cli-unfold-argument  \
+    --InstanceId ins-xxxxxxxx \
+    --RemoteDiskIds rdisk-b1f7xvod
+```
 
 Output: 
 ```

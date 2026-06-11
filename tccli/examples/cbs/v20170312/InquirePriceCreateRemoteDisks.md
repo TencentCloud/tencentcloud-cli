@@ -1,11 +1,14 @@
-**Example 1: 查询创建弹性单副本SSD硬盘的价格（预付费）**
+**Example 1: 查询创建弹性单副本SSD硬盘的价格（后付费）**
 
 
 
 Input: 
 
 ```
-tccli cbs InquirePriceCreateRemoteDisks --cli-unfold-argument ```
+tccli cbs InquirePriceCreateRemoteDisks --cli-unfold-argument  \
+    --DiskChargeType POSTPAID_BY_HOUR \
+    --DiskSize 3000
+```
 
 Output: 
 ```
@@ -16,14 +19,19 @@ Output:
 }
 ```
 
-**Example 2: 查询创建弹性单副本SSD硬盘的价格（后付费）**
+**Example 2: 查询创建弹性单副本SSD硬盘的价格（预付费）**
 
 
 
 Input: 
 
 ```
-tccli cbs InquirePriceCreateRemoteDisks --cli-unfold-argument ```
+tccli cbs InquirePriceCreateRemoteDisks --cli-unfold-argument  \
+    --DiskChargePrepaid.Period 1 \
+    --DiskChargeType PREPAID \
+    --DiskCount 1 \
+    --DiskSize 2000
+```
 
 Output: 
 ```

@@ -734,6 +734,22 @@
         "title": "查询RabbitMQ队列列表"
       }
     ],
+    "DescribeRabbitMQTokenPwdRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQTokenPwdRules\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"amqp-wdxk9k2q\",\n    \"ResourceAccount\": \"test0318\",\n    \"InstanceType\": \"rabbitmq\",\n    \"ResourceRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequiredLength\": 64,\n        \"Rules\": [\n            {\n                \"CharacterType\": \"specialcharacter\",\n                \"Choices\": \"()`~!@#$%^&*_=|{}[]:;',.?/\",\n                \"MinimumLength\": 0,\n                \"MustStart\": false\n            }\n        ],\n        \"RequestId\": \"067e81f1-a14d-4d1c-98c1-dafc62ac55ba\"\n    }\n}",
+        "title": "查询密码规则"
+      }
+    ],
+    "DescribeRabbitMQTokenResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQTokenResource\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"amqp-ogmrjdk5\",\n    \"ResourceAccount\": \"test_cjq\",\n    \"InstanceType\": \"rabbitmq\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"AccountHost\": \"%\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnabledRotate\": true,\n        \"RequestId\": \"d71ad677-f943-47dc-aeca-1da0379a81d4\"\n    }\n}",
+        "title": "查询开启cam验证的RabbitMQ资源"
+      }
+    ],
     "DescribeRabbitMQUser": [
       {
         "document": "",
@@ -1042,6 +1058,14 @@
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQVipInstances\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"23ca1a58-0388-4d2d-8465-653a53addda7\",\n        \"Instances\": [\n            {\n                \"Status\": 1,\n                \"PayMode\": 1,\n                \"Remark\": \"remark-info\",\n                \"AutoRenewFlag\": 1,\n                \"InstanceId\": \"rocketmq-vvqb9emabapx\",\n                \"NodeCount\": 3,\n                \"ExpireTime\": 1730877758000,\n                \"InstanceVersion\": \"4.9.3\",\n                \"MaxStorage\": 200,\n                \"MaxBandWidth\": 10,\n                \"SpecName\": \"rocket-vip-basic-1\",\n                \"ConfigDisplay\": \"基础型\",\n                \"InstanceName\": \"order-instance\",\n                \"MaxTps\": 4000,\n                \"AclEnabled\": true,\n                \"Retention\": 72,\n                \"MinRetention\": 72,\n                \"MaxRetention\": 960\n            }\n        ]\n    }\n}",
         "title": "获取实例列表"
+      }
+    ],
+    "DescribeRoleTokenRotateConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoleTokenRotateConfig\n<公共请求参数>\n\n{\n    \"SecretName\": \"asddasammasdads\",\n    \"UserResourceId\": \"pulsar-g4de9kbzxxoz\",\n    \"ResourceAccount\": \"autoRole1\",\n    \"InstanceType\": \"Pulsar\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnabledRotate\": true,\n        \"RequestId\": \"5ce3109e-595c-4849-933f-f1da9656e15e\"\n    }\n}",
+        "title": "查询是否开启轮转"
       }
     ],
     "DescribeRoles": [
@@ -1356,12 +1380,28 @@
         "title": "接收消息"
       }
     ],
+    "ResetInstancePassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetInstancePassword\n<公共请求参数>\n\n{\n    \"SecretName\": \"dadas\",\n    \"UserResourceId\": \"pulsar-op4og4jmozvk\",\n    \"ResourceAccount\": \"asdas\",\n    \"InstanceType\": \"pulsar\",\n    \"RotateFreq\": 1440\n}",
+        "output": "{\n    \"Response\": {\n        \"ResetTimestamp\": 1774958774848,\n        \"Status\": \"Success\",\n        \"TimeCost\": 107,\n        \"Token\": \"eyJrZXlJZCI6InB1bHNhci1vcDRvZzRqbW96dmsiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhc2RhcyIsImV4cCI6MTc3NTA0NTE3NH0.T5CHC2fuuKg1Z3AylV0MuPhvVG_e4mBhnOSwRQhNakg\",\n        \"RequestId\": \"fcc38084-db31-47ee-b86f-fbbaed67822c\"\n    }\n}",
+        "title": "创建轮转角色"
+      }
+    ],
     "ResetMsgSubOffsetByTimestamp": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetMsgSubOffsetByTimestamp\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"devNs\",\n    \"TopicName\": \"devTopic\",\n    \"Subscription\": \"devSub\",\n    \"ToTimestamp\": 1730690396152,\n    \"ClusterId\": \"pulsar-pnvjp9mbd947\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"3593f784-fcfb-4f23-b3dd-4751cba3aec7\"\n    }\n}",
         "title": "回溯消息"
+      }
+    ],
+    "ResetRabbitMQInstancePwd": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetRabbitMQInstancePwd\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"amqp-wdxk9k2q\",\n    \"ResourceAccount\": \"test03187\",\n    \"ResourceRegionType\": \"rabbitmq\",\n    \"Password\": \"wrqwet21412\",\n    \"AccountHost\": \"%\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResetTimestamp\": 1776246143727,\n        \"TimeCost\": 501,\n        \"RequestId\": \"baa90926-62f3-4010-af2b-7c5670c85fc3\"\n    }\n}",
+        "title": "重置ssm托管密码"
       }
     ],
     "ResetRocketMQConsumerOffSet": [

@@ -9548,7 +9548,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品名称代码",
+          "document": "<p>产品名称代码</p>",
           "example": "p_clb",
           "member": "string",
           "name": "BusinessCode",
@@ -9558,7 +9558,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称",
+          "document": "<p>产品名称</p>",
           "example": "负载均衡CLB",
           "member": "string",
           "name": "BusinessCodeName",
@@ -9568,7 +9568,7 @@
         },
         {
           "disabled": false,
-          "document": "折后总价",
+          "document": "<p>折后总价</p>",
           "example": "0.00",
           "member": "string",
           "name": "RealTotalCost",
@@ -9578,8 +9578,8 @@
         },
         {
           "disabled": false,
-          "document": "费用趋势",
-          "example": "0",
+          "document": "<p>费用趋势</p>",
+          "example": "无",
           "member": "ConsumptionSummaryTrend",
           "name": "Trend",
           "output_required": true,
@@ -9588,7 +9588,7 @@
         },
         {
           "disabled": false,
-          "document": "现金",
+          "document": "<p>现金</p>",
           "example": "2.02300000",
           "member": "string",
           "name": "CashPayAmount",
@@ -9598,7 +9598,7 @@
         },
         {
           "disabled": false,
-          "document": "赠送金",
+          "document": "<p>赠送金</p>",
           "example": "3.12000000",
           "member": "string",
           "name": "IncentivePayAmount",
@@ -9608,7 +9608,7 @@
         },
         {
           "disabled": false,
-          "document": "代金券",
+          "document": "<p>代金券</p>",
           "example": "1.02200000",
           "member": "string",
           "name": "VoucherPayAmount",
@@ -9618,7 +9618,7 @@
         },
         {
           "disabled": false,
-          "document": "分成金",
+          "document": "<p>分成金</p>",
           "example": "1.43000000",
           "member": "string",
           "name": "TransferPayAmount",
@@ -9628,7 +9628,7 @@
         },
         {
           "disabled": false,
-          "document": " 现金支付（税前）",
+          "document": "<p>现金支付（税前）</p>",
           "example": "0.02000000",
           "member": "string",
           "name": "AmountBeforeTax",
@@ -9638,7 +9638,7 @@
         },
         {
           "disabled": false,
-          "document": "税",
+          "document": "<p>税</p>",
           "example": "0.00",
           "member": "string",
           "name": "Tax",
@@ -9648,10 +9648,20 @@
         },
         {
           "disabled": false,
-          "document": "地域名称（仅在地域汇总总展示）",
+          "document": "<p>地域名称（仅在地域汇总中展示）</p>",
           "example": "Asia Pacific (Seoul)",
           "member": "string",
           "name": "RegionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>待分摊金额</p><p>剩余待分摊的折后总金额</p>",
+          "example": "100",
+          "member": "string",
+          "name": "LeftRealTotalCost",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -9664,7 +9674,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "0",
           "member": "string",
           "name": "ProjectId",
@@ -9674,7 +9684,7 @@
         },
         {
           "disabled": false,
-          "document": "项目名称",
+          "document": "<p>项目名称</p>",
           "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
@@ -9684,7 +9694,7 @@
         },
         {
           "disabled": false,
-          "document": "折后总价",
+          "document": "<p>折后总价</p>",
           "example": "41540.10",
           "member": "string",
           "name": "RealTotalCost",
@@ -9694,8 +9704,8 @@
         },
         {
           "disabled": false,
-          "document": "趋势",
-          "example": "{\"Type\":\"upward\",\"Value\":\"5.81\"}",
+          "document": "<p>趋势</p>",
+          "example": "无",
           "member": "ConsumptionSummaryTrend",
           "name": "Trend",
           "output_required": true,
@@ -9704,7 +9714,7 @@
         },
         {
           "disabled": false,
-          "document": "产品消耗详情",
+          "document": "<p>产品消耗详情</p>",
           "example": "无",
           "member": "ConsumptionBusinessSummaryDataItem",
           "name": "Business",
@@ -9714,7 +9724,7 @@
         },
         {
           "disabled": false,
-          "document": "现金",
+          "document": "<p>现金</p>",
           "example": "146.44115878",
           "member": "string",
           "name": "CashPayAmount",
@@ -9724,7 +9734,7 @@
         },
         {
           "disabled": false,
-          "document": "赠送金",
+          "document": "<p>赠送金</p>",
           "example": "41388.66792727",
           "member": "string",
           "name": "IncentivePayAmount",
@@ -9734,7 +9744,7 @@
         },
         {
           "disabled": false,
-          "document": "代金券",
+          "document": "<p>代金券</p>",
           "example": "4.99265135",
           "member": "string",
           "name": "VoucherPayAmount",
@@ -9744,7 +9754,7 @@
         },
         {
           "disabled": false,
-          "document": "分成金",
+          "document": "<p>分成金</p>",
           "example": "0.00000000",
           "member": "string",
           "name": "TransferPayAmount",
@@ -9754,7 +9764,7 @@
         },
         {
           "disabled": false,
-          "document": "税",
+          "document": "<p>税</p>",
           "example": "0.00000000",
           "member": "string",
           "name": "Tax",
@@ -9764,10 +9774,20 @@
         },
         {
           "disabled": false,
-          "document": "现金支付（税前）",
+          "document": "<p>现金支付（税前）</p>",
           "example": "146.44115878",
           "member": "string",
           "name": "AmountBeforeTax",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>待分摊金额</p><p>剩余待分摊的折后总金额</p>",
+          "example": "100",
+          "member": "string",
+          "name": "LeftRealTotalCost",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -9780,7 +9800,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域ID",
+          "document": "<p>地域ID</p>",
           "example": "8",
           "member": "string",
           "name": "RegionId",
@@ -9790,7 +9810,7 @@
         },
         {
           "disabled": false,
-          "document": "地域名称",
+          "document": "<p>地域名称</p>",
           "example": "华北地区（北京）",
           "member": "string",
           "name": "RegionName",
@@ -9800,7 +9820,7 @@
         },
         {
           "disabled": false,
-          "document": "折后总价",
+          "document": "<p>折后总价</p>",
           "example": "77916.41",
           "member": "string",
           "name": "RealTotalCost",
@@ -9810,8 +9830,8 @@
         },
         {
           "disabled": false,
-          "document": "趋势",
-          "example": "{\"Type\":\"downward\",\"Value\":\"43.97\"}",
+          "document": "<p>趋势</p>",
+          "example": "无",
           "member": "ConsumptionSummaryTrend",
           "name": "Trend",
           "output_required": true,
@@ -9820,7 +9840,7 @@
         },
         {
           "disabled": false,
-          "document": "产品消费详情",
+          "document": "<p>产品消费详情</p>",
           "example": "无",
           "member": "ConsumptionBusinessSummaryDataItem",
           "name": "Business",
@@ -9830,7 +9850,7 @@
         },
         {
           "disabled": false,
-          "document": "现金",
+          "document": "<p>现金</p>",
           "example": "77916.41339286",
           "member": "string",
           "name": "CashPayAmount",
@@ -9840,7 +9860,7 @@
         },
         {
           "disabled": false,
-          "document": "代金券",
+          "document": "<p>代金券</p>",
           "example": "0.00000000",
           "member": "string",
           "name": "VoucherPayAmount",
@@ -9850,7 +9870,7 @@
         },
         {
           "disabled": false,
-          "document": "赠送金",
+          "document": "<p>赠送金</p>",
           "example": "0.00000000",
           "member": "string",
           "name": "IncentivePayAmount",
@@ -9860,7 +9880,7 @@
         },
         {
           "disabled": false,
-          "document": "分成金",
+          "document": "<p>分成金</p>",
           "example": "0.00000000",
           "member": "string",
           "name": "TransferPayAmount",
@@ -9870,7 +9890,7 @@
         },
         {
           "disabled": false,
-          "document": "税",
+          "document": "<p>税</p>",
           "example": "0.00000000",
           "member": "string",
           "name": "Tax",
@@ -9880,10 +9900,20 @@
         },
         {
           "disabled": false,
-          "document": "现金支付（税前）",
+          "document": "<p>现金支付（税前）</p>",
           "example": "77916.41339286",
           "member": "string",
           "name": "AmountBeforeTax",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>待分摊金额</p><p>剩余待分摊的折后总金额</p>",
+          "example": "100",
+          "member": "string",
+          "name": "LeftRealTotalCost",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -9942,7 +9972,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源ID",
+          "document": "<p>资源ID</p>",
           "example": "lb-1weg57ny",
           "member": "string",
           "name": "ResourceId",
@@ -9952,7 +9982,7 @@
         },
         {
           "disabled": false,
-          "document": "资源名称",
+          "document": "<p>资源名称</p>",
           "example": "lb-6073eff6",
           "member": "string",
           "name": "ResourceName",
@@ -9962,7 +9992,7 @@
         },
         {
           "disabled": false,
-          "document": "折后总价",
+          "document": "<p>折后总价</p>",
           "example": "0.00",
           "member": "string",
           "name": "RealTotalCost",
@@ -9972,7 +10002,7 @@
         },
         {
           "disabled": false,
-          "document": "现金花费",
+          "document": "<p>现金花费</p>",
           "example": "0.00",
           "member": "string",
           "name": "CashPayAmount",
@@ -9982,7 +10012,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "0",
           "member": "string",
           "name": "ProjectId",
@@ -9992,7 +10022,7 @@
         },
         {
           "disabled": false,
-          "document": "项目名称",
+          "document": "<p>项目名称</p>",
           "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
@@ -10002,7 +10032,7 @@
         },
         {
           "disabled": false,
-          "document": "地域ID",
+          "document": "<p>地域ID</p>",
           "example": "1",
           "member": "string",
           "name": "RegionId",
@@ -10012,7 +10042,7 @@
         },
         {
           "disabled": false,
-          "document": "地域名称",
+          "document": "<p>地域名称</p>",
           "example": "广州一区",
           "member": "string",
           "name": "RegionName",
@@ -10022,7 +10052,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式",
+          "document": "<p>付费模式</p>",
           "example": "postPay",
           "member": "string",
           "name": "PayMode",
@@ -10032,7 +10062,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式名称",
+          "document": "<p>付费模式名称</p>",
           "example": "按量计费",
           "member": "string",
           "name": "PayModeName",
@@ -10042,7 +10072,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称代码",
+          "document": "<p>产品名称代码</p>",
           "example": "p_clb",
           "member": "string",
           "name": "BusinessCode",
@@ -10052,7 +10082,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称",
+          "document": "<p>产品名称</p>",
           "example": "负载均衡CLB",
           "member": "string",
           "name": "BusinessCodeName",
@@ -10062,7 +10092,7 @@
         },
         {
           "disabled": false,
-          "document": "消耗类型",
+          "document": "<p>消耗类型</p>",
           "example": "历史新购",
           "member": "string",
           "name": "ConsumptionTypeName",
@@ -10072,7 +10102,7 @@
         },
         {
           "disabled": false,
-          "document": "折前价",
+          "document": "<p>折前价</p>",
           "example": "205.59",
           "member": "string",
           "name": "RealCost",
@@ -10082,7 +10112,7 @@
         },
         {
           "disabled": false,
-          "document": "费用起始时间",
+          "document": "<p>费用起始时间</p>",
           "example": "2024-10-01 00:00:00",
           "member": "string",
           "name": "FeeBeginTime",
@@ -10092,7 +10122,7 @@
         },
         {
           "disabled": false,
-          "document": "费用结束时间",
+          "document": "<p>费用结束时间</p>",
           "example": "2024-10-28 23:59:59",
           "member": "string",
           "name": "FeeEndTime",
@@ -10102,7 +10132,7 @@
         },
         {
           "disabled": false,
-          "document": "天数",
+          "document": "<p>天数</p>",
           "example": "28",
           "member": "string",
           "name": "DayDiff",
@@ -10112,7 +10142,7 @@
         },
         {
           "disabled": false,
-          "document": "每日消耗",
+          "document": "<p>每日消耗</p>",
           "example": "5.13972603",
           "member": "string",
           "name": "DailyTotalCost",
@@ -10122,7 +10152,7 @@
         },
         {
           "disabled": false,
-          "document": "订单号",
+          "document": "<p>订单号</p>",
           "example": "202407301234",
           "member": "string",
           "name": "OrderId",
@@ -10132,7 +10162,7 @@
         },
         {
           "disabled": false,
-          "document": "代金券",
+          "document": "<p>代金券</p>",
           "example": "0.00000000",
           "member": "string",
           "name": "VoucherPayAmount",
@@ -10142,7 +10172,7 @@
         },
         {
           "disabled": false,
-          "document": "赠送金",
+          "document": "<p>赠送金</p>",
           "example": "0.00000000",
           "member": "string",
           "name": "IncentivePayAmount",
@@ -10152,7 +10182,7 @@
         },
         {
           "disabled": false,
-          "document": "分成金",
+          "document": "<p>分成金</p>",
           "example": "0.00000000",
           "member": "string",
           "name": "TransferPayAmount",
@@ -10162,7 +10192,7 @@
         },
         {
           "disabled": false,
-          "document": "税",
+          "document": "<p>税</p>",
           "example": "0.00000000",
           "member": "string",
           "name": "Tax",
@@ -10172,7 +10202,7 @@
         },
         {
           "disabled": false,
-          "document": "税率",
+          "document": "<p>税率</p>",
           "example": "0.00000000",
           "member": "string",
           "name": "TaxRate",
@@ -10182,7 +10212,7 @@
         },
         {
           "disabled": false,
-          "document": "现金支付（税前）",
+          "document": "<p>现金支付（税前）</p>",
           "example": "143.91232877",
           "member": "string",
           "name": "AmountBeforeTax",
@@ -10192,7 +10222,7 @@
         },
         {
           "disabled": false,
-          "document": "支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识",
+          "document": "<p>支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识</p>",
           "example": "1001234",
           "member": "string",
           "name": "PayerUin",
@@ -10202,7 +10232,7 @@
         },
         {
           "disabled": false,
-          "document": "使用者UIN：实际使用资源的账号 ID",
+          "document": "<p>使用者UIN：实际使用资源的账号 ID</p>",
           "example": "1001234",
           "member": "string",
           "name": "OwnerUin",
@@ -10212,7 +10242,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）",
+          "document": "<p>操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）</p>",
           "example": "1001234",
           "member": "string",
           "name": "OperateUin",
@@ -10222,7 +10252,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品编码",
+          "document": "<p>子产品编码</p>",
           "example": "sp_dnspackage_standard",
           "member": "string",
           "name": "ProductCode",
@@ -10232,7 +10262,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1",
+          "document": "<p>子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1</p>",
           "example": "DNS 解析套餐 - 企业版",
           "member": "string",
           "name": "ProductCodeName",
@@ -10242,7 +10272,7 @@
         },
         {
           "disabled": false,
-          "document": "地域类型",
+          "document": "<p>地域类型</p>",
           "example": "domestic",
           "member": "string",
           "name": "RegionType",
@@ -10252,7 +10282,7 @@
         },
         {
           "disabled": false,
-          "document": "地域类型名称",
+          "document": "<p>地域类型名称</p>",
           "example": "国内",
           "member": "string",
           "name": "RegionTypeName",
@@ -10262,7 +10292,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展字段1",
+          "document": "<p>扩展字段1</p>",
           "example": "extendA",
           "member": "string",
           "name": "Extend1",
@@ -10272,7 +10302,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展字段2",
+          "document": "<p>扩展字段2</p>",
           "example": "extendB",
           "member": "string",
           "name": "Extend2",
@@ -10282,7 +10312,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展字段3",
+          "document": "<p>扩展字段3</p>",
           "example": "extendC",
           "member": "string",
           "name": "Extend3",
@@ -10292,7 +10322,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展字段4",
+          "document": "<p>扩展字段4</p>",
           "example": "extendD",
           "member": "string",
           "name": "Extend4",
@@ -10302,7 +10332,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展字段5",
+          "document": "<p>扩展字段5</p>",
           "example": "extendE",
           "member": "string",
           "name": "Extend5",
@@ -10312,7 +10342,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型",
+          "document": "<p>实例类型</p>",
           "example": "exclusiveSale",
           "member": "string",
           "name": "InstanceType",
@@ -10322,7 +10352,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型名称",
+          "document": "<p>实例类型名称</p>",
           "example": "包销实例",
           "member": "string",
           "name": "InstanceTypeName",
@@ -10332,7 +10362,7 @@
         },
         {
           "disabled": false,
-          "document": "扣费时间：结算扣费时间",
+          "document": "<p>扣费时间：结算扣费时间</p>",
           "example": "2024-07-30 15:43:39",
           "member": "string",
           "name": "PayTime",
@@ -10342,7 +10372,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区：资源所属可用区，如广州三区",
+          "document": "<p>可用区：资源所属可用区，如广州三区</p>",
           "example": "广州一区",
           "member": "string",
           "name": "ZoneName",
@@ -10352,7 +10382,7 @@
         },
         {
           "disabled": false,
-          "document": "配置描述",
+          "document": "<p>配置描述</p>",
           "example": "云解析-企业标准版套餐: 1 个",
           "member": "string",
           "name": "ComponentConfig",
@@ -10362,10 +10392,20 @@
         },
         {
           "disabled": false,
-          "document": "标签信息",
+          "document": "<p>标签信息</p>",
           "example": "{\"标签键A\":\"标签值A\"}",
           "member": "string",
           "name": "Tags",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>待分摊金额</p><p>剩余待分摊的折后总金额</p>",
+          "example": "100",
+          "member": "string",
+          "name": "LeftRealTotalCost",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

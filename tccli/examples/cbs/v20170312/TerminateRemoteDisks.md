@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli cbs TerminateRemoteDisks --cli-unfold-argument ```
+tccli cbs TerminateRemoteDisks --cli-unfold-argument  \
+    --RemoteDiskIds rdisk-b1f7xvod
+```
 
 Output: 
 ```

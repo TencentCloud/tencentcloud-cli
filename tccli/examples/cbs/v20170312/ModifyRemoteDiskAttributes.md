@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli cbs ModifyRemoteDiskAttributes --cli-unfold-argument ```
+tccli cbs ModifyRemoteDiskAttributes --cli-unfold-argument  \
+    --DiskName my-remote-disk \
+    --RemoteDiskIds rdisk-b1f7xvod
+```
 
 Output: 
 ```
@@ -23,7 +26,10 @@ Output:
 Input: 
 
 ```
-tccli cbs ModifyRemoteDiskAttributes --cli-unfold-argument ```
+tccli cbs ModifyRemoteDiskAttributes --cli-unfold-argument  \
+    --ProjectId 10 \
+    --RemoteDiskIds rdisk-b1f7xvod
+```
 
 Output: 
 ```

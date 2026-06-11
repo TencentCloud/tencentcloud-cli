@@ -8,6 +8,14 @@
         "title": "创建PPT检测任务"
       }
     ],
+    "CreateSnapshot": [
+      {
+        "document": "创建快照任务",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSnapshot\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000001,\n    \"RoomId\": \"2322232\",\n    \"SnapshotMode\": \"Period\",\n    \"SnapshotPeriod\": 10,\n    \"CosBucket\": {\n        \"Name\": \"snapshot-result\",\n        \"Region\": \"ap-shanghai\",\n        \"Path\": \"snapshot\",\n        \"ResultDomain\": \"https://cdn.example.com\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g6ls63ps49vteb8bk1mb\"\n    }\n}",
+        "title": "创建快照任务"
+      }
+    ],
     "CreateSnapshotTask": [
       {
         "document": "",
@@ -88,6 +96,22 @@
         "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRunningTasks\n<公共请求参数>\n\n{\n    \"SdkAppID\": 1400000001,\n    \"TaskType\": \"WhiteboardPush\"\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Tasks\": [\n            {\n                \"TaskID\": \"bj0mt2l23osdj300hl31\",\n                \"TaskType\": \"WhiteboardPush\",\n                \"CreateTime\": \"2023-03-14 15:00:00\",\n                \"CancelTime\": \"\",\n                \"Status\": \"PROCESSING\",\n                \"Progress\": 11,\n                \"RoomID\": 12345,\n                \"FileURL\": \"\",\n                \"SdkAppID\": 1400000001\n            }\n        ],\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
         "title": "获取当前正在执行的白板推流任务列表"
+      }
+    ],
+    "DescribeSnapshot": [
+      {
+        "document": "查询白板快照任务",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTranscode\n<公共请求参数>\n\n{\n    \"TaskId\": \"g0jb42ps49vtebjshilb\",\n    \"SdkAppId\": \"1400000001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"Snapshots\": [\n            \"https://snapshot-result-1400000001.example.com/snapshot/0dhhmtptvchupgqo0q0d/1747905311610.mrk\",\n            \"https://snapshot-result-1400000001.example.com/snapshot/0dhhmtptvchupgqo0q0d/1747905282346.mrk\"\n        ],\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"0dhhmtptvchupgqo0q0d\"\n    }\n}",
+        "title": "查询白板快照任务"
+      }
+    ],
+    "DescribeSnapshotCallback": [
+      {
+        "document": "查询白板快照回调地址",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeTranscodeCallback\n&SdkAppId=1400000001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Callback\": \"https://example.com/snapshot/callback\",\n        \"CallbackKey\": \"6vg9G7Fd\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询白板快照回调地址"
       }
     ],
     "DescribeSnapshotTask": [
@@ -220,6 +244,22 @@
         "input": "https://tiw.tencentcloudapi.com/?Action=SetPPTCheckCallbackKey\n&SdkAppId=1400000001\n&CallbackKey=6vg9G7Fd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "设置回调鉴权密钥"
+      }
+    ],
+    "SetSnapshotCallback": [
+      {
+        "document": "设置白板快照任务回调地址",
+        "input": "https://tiw.tencentcloudapi.com/?Action=SetSnapshotCallback\n&SdkAppId=1400000001\n&Callback=https://example.com/snapshot/callback\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "设置白板快照任务回调地址"
+      }
+    ],
+    "SetSnapshotCallbackKey": [
+      {
+        "document": "设置白板快照任务回调鉴权密钥",
+        "input": "https://tiw.tencentcloudapi.com/?Action=SetTranscodeCallbackKey\n&SdkAppId=1400000001\n&CallbackKey=6vg9G7Fd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "设置白板快照任务回调鉴权密钥"
       }
     ],
     "SetTranscodeCallback": [

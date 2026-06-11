@@ -28648,7 +28648,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前时间",
+          "document": "<p>当前时间</p>",
           "example": "\"12345\"",
           "member": "string",
           "name": "CurrTime",
@@ -28659,7 +28659,7 @@
         },
         {
           "disabled": false,
-          "document": "已使用的计算单元",
+          "document": "<p>已使用的计算单元</p>",
           "example": "12345.1",
           "member": "float",
           "name": "UsedCU",
@@ -28670,7 +28670,7 @@
         },
         {
           "disabled": false,
-          "document": "资源负载",
+          "document": "<p>资源负载</p>",
           "example": "12345.1",
           "member": "float",
           "name": "ResourceLoad",
@@ -28681,13 +28681,35 @@
         },
         {
           "disabled": false,
-          "document": "资源配额",
+          "document": "<p>资源配额</p>",
           "example": "12345",
           "member": "int64",
           "name": "CUQuota",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU 用量</p>",
+          "example": "0.1",
+          "member": "float",
+          "name": "GpuUsage",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU 负载率</p>",
+          "example": "0.1",
+          "member": "float",
+          "name": "GpuLoad",
+          "output_required": false,
+          "required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],
@@ -51573,7 +51595,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源组id",
+          "document": "<p>资源组id</p>",
           "example": "res_001",
           "member": "string",
           "name": "ResourceId",
@@ -51582,7 +51604,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "1789065432",
           "member": "uint64",
           "name": "StartTime",
@@ -51591,12 +51613,21 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "1789065432",
           "member": "uint64",
           "name": "EndTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间id</p>",
+          "example": "17769279068904899",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -51606,7 +51637,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源组指标列表",
+          "document": "<p>资源组指标列表</p>",
           "example": "无",
           "member": "ListComputeResourceMetricsRsp",
           "name": "Data",

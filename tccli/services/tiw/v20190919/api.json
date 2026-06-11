@@ -7,6 +7,13 @@
       "output": "CreatePPTCheckTaskResponse",
       "status": "online"
     },
+    "CreateSnapshot": {
+      "document": "创建一个白板快照任务",
+      "input": "CreateSnapshotRequest",
+      "name": "创建白板快照任务",
+      "output": "CreateSnapshotResponse",
+      "status": "online"
+    },
     "CreateSnapshotTask": {
       "document": "创建白板板书生成任务, 在任务结束后，如果提供了回调地址，将通过回调地址通知板书生成结果",
       "input": "CreateSnapshotTaskRequest",
@@ -61,6 +68,20 @@
       "input": "DescribeRunningTasksRequest",
       "name": "查询当前执行中的任务列表",
       "output": "DescribeRunningTasksResponse",
+      "status": "online"
+    },
+    "DescribeSnapshot": {
+      "document": "查询白板快照任务的执行进度与转码结果，支持查询最近半年内的任务结果",
+      "input": "DescribeSnapshotRequest",
+      "name": "查询白板快照任务",
+      "output": "DescribeSnapshotResponse",
+      "status": "online"
+    },
+    "DescribeSnapshotCallback": {
+      "document": "查询白板快照回调地址",
+      "input": "DescribeSnapshotCallbackRequest",
+      "name": "查询白板快照回调地址",
+      "output": "DescribeSnapshotCallbackResponse",
       "status": "online"
     },
     "DescribeSnapshotTask": {
@@ -166,6 +187,20 @@
       "input": "SetPPTCheckCallbackKeyRequest",
       "name": "设置PPT检测任务回调密钥",
       "output": "SetPPTCheckCallbackKeyResponse",
+      "status": "online"
+    },
+    "SetSnapshotCallback": {
+      "document": "设置白板快照任务回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40260",
+      "input": "SetSnapshotCallbackRequest",
+      "name": "设置白板快照回调地址",
+      "output": "SetSnapshotCallbackResponse",
+      "status": "online"
+    },
+    "SetSnapshotCallbackKey": {
+      "document": "设置白板快照任务回调鉴权密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
+      "input": "SetSnapshotCallbackKeyRequest",
+      "name": "设置白板快照任务回调密钥",
+      "output": "SetSnapshotCallbackKeyResponse",
       "status": "online"
     },
     "SetTranscodeCallback": {
@@ -393,6 +428,79 @@
           "member": "string",
           "name": "TaskId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSnapshotRequest": {
+      "document": "CreateSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户应用的SdkAppId",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "互动白板房间Id",
+          "example": "2322232",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照模式，AllMarks：全部标记点；LatestMarksOnly：最新标记点；Period：周期标记点",
+          "example": "Period",
+          "member": "string",
+          "name": "SnapshotMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生成快照周期，单位：秒，快照模式为Period时生效",
+          "example": "10",
+          "member": "int64",
+          "name": "SnapshotPeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "快照文件存储的cos桶",
+          "example": "无",
+          "member": "SnapshotCosBucket",
+          "name": "CosBucket",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSnapshotResponse": {
+      "document": "CreateSnapshot返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "快照任务的唯一标识Id，用于查询该任务的进度以及任务结果",
+          "example": "gdhhmtptvchupo0p0q0d",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1174,6 +1282,129 @@
           "example": "无",
           "member": "RunningTaskItem",
           "name": "Tasks",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotCallbackRequest": {
+      "document": "DescribeSnapshotCallback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用的SdkAppId",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotCallbackResponse": {
+      "document": "DescribeSnapshotCallback返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务回调地址",
+          "example": "https://example.com/snapshot/callback",
+          "member": "string",
+          "name": "Callback",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务回调鉴权密钥",
+          "example": "6vg9G7Fd",
+          "member": "string",
+          "name": "CallbackKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotRequest": {
+      "document": "DescribeSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户的SdkAppId",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "白板快照任务的唯一标识Id",
+          "example": "g0jb42ps49vtebjshilb",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotResponse": {
+      "document": "DescribeSnapshot返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务的唯一标识Id",
+          "example": "0agdnligqtgtvkm65emb",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务当前进度,取值范围为0~100",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务的当前状态  QUEUED: 正在排队等待转换 PROCESSING: 转换中 FINISHED: 转换完成",
+          "example": "FINISHED",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照结果文件列表",
+          "example": "[\"https://snapshot-result-1400000001.example.com/snapshot/gdhhmtptvchupo0p0q0d/1626225433474.mrk\",\"https://napshot-result-1400000001.example/snapshot/gdhhmtptvchupo0p0q0d/1626225407110.mrk\"]",
+          "member": "string",
+          "name": "Snapshots",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2579,6 +2810,78 @@
       ],
       "type": "object"
     },
+    "SetSnapshotCallbackKeyRequest": {
+      "document": "SetSnapshotCallbackKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用的SdkAppId",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设置白板快照回调鉴权密钥，最长64字符，如果传入空字符串，那么删除现有的鉴权回调密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
+          "example": "6vg9G7Fd",
+          "member": "string",
+          "name": "CallbackKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetSnapshotCallbackKeyResponse": {
+      "document": "SetSnapshotCallbackKey返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetSnapshotCallbackRequest": {
+      "document": "SetSnapshotCallback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户的SdkAppId",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "白板快照进度回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持http或https协议，即回调地址以http://或https://开头。回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40260",
+          "example": "https://example.com/snapshot/callback",
+          "member": "string",
+          "name": "Callback",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetSnapshotCallbackResponse": {
+      "document": "SetSnapshotCallback返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SetTranscodeCallbackKeyRequest": {
       "document": "SetTranscodeCallbackKey请求参数结构体",
       "members": [
@@ -2885,6 +3188,48 @@
           "example": "xxxx.file.qcloud.com",
           "member": "string",
           "name": "Domain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "SnapshotCosBucket": {
+      "document": "互动白板快照任务cos桶参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cos桶名称",
+          "example": "snapshot-result",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cos桶地域",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cos桶目录",
+          "example": "subPath",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照文件的访问域名，默认是cos桶访问域名，可填写cdn域名",
+          "example": "https://xxx.example.com",
+          "member": "string",
+          "name": "ResultDomain",
           "required": false,
           "type": "string"
         }
