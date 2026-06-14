@@ -1106,6 +1106,13 @@
       "output": "DescribePolicyHitDataResponse",
       "status": "online"
     },
+    "DescribePublicCloudAssets": {
+      "document": "公网资产",
+      "input": "DescribePublicCloudAssetsRequest",
+      "name": "公网资产列表",
+      "output": "DescribePublicCloudAssetsResponse",
+      "status": "online"
+    },
     "DescribePublicIpAssets": {
       "document": "ip公网列表",
       "input": "DescribePublicIpAssetsRequest",
@@ -14387,6 +14394,52 @@
       ],
       "usage": "out"
     },
+    "CustomTag": {
+      "document": "云安全中心标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签ID",
+          "example": "",
+          "member": "uint64",
+          "name": "TagID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签颜色",
+          "example": "",
+          "member": "string",
+          "name": "TagColor",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DBAssetVO": {
       "document": "db资产输出字段",
       "members": [
@@ -24217,6 +24270,118 @@
           "example": "无",
           "member": "CosRiskInfo",
           "name": "PolicyHitDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicCloudAssetsRequest": {
+      "document": "DescribePublicCloudAssets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-0acb1**2**a**aee\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤内容",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型",
+          "example": "UpdateTime",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "Desc",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicCloudAssetsResponse": {
+      "document": "DescribePublicCloudAssets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资产数量",
+          "example": "56",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产集合",
+          "example": "无",
+          "member": "PublicAssetInfo",
+          "name": "Assets",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产类型集合",
+          "example": "无",
+          "member": "AttributeOptionSet",
+          "name": "AssetTypeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域集合",
+          "example": "无",
+          "member": "AttributeOptionSet",
+          "name": "RegionList",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -37126,6 +37291,282 @@
           "example": "CVE-2024-1889",
           "member": "string",
           "name": "CveId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PublicAssetInfo": {
+      "document": "资产信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>租户ID</p>",
+          "example": "1302396215",
+          "member": "uint64",
+          "name": "AppID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云厂商</p>",
+          "example": "tencent",
+          "member": "string",
+          "name": "Provider",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云厂商名称</p>",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "ProviderName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云账号ID</p>",
+          "example": "100014592178",
+          "member": "string",
+          "name": "CloudAccountID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云账号名称</p>",
+          "example": "声声乌龙",
+          "member": "string",
+          "name": "CloudAccountName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产ID</p>",
+          "example": "ins-nm9s2bya",
+          "member": "string",
+          "name": "AssetID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产名称</p>",
+          "example": "gl测试自动同步",
+          "member": "string",
+          "name": "AssetName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型</p>",
+          "example": "cdb_instance",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型名称</p>",
+          "example": "MySQL",
+          "member": "string",
+          "name": "AssetTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产标签</p>",
+          "example": "无",
+          "member": "AssetTag",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网地址</p>",
+          "example": "175.178.178.75",
+          "member": "string",
+          "name": "Address",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网地址类型</p>",
+          "example": "ipv4",
+          "member": "string",
+          "name": "AddressType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>解析地址</p>",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "ResolvedAddress",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>防护状态</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProtectStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险数量</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "RiskCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警数量</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AlarmCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例创建时间</p>",
+          "example": "2026-01-13T09:17:39+08:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>首次同步时间</p>",
+          "example": "2026-01-21T20:04:56+08:00",
+          "member": "string",
+          "name": "FirstSyncTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-02-06T16:52:18+08:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>严重风险总数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "CriticalRiskCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高风险总数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "HighRiskCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>中风险总数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "MediumRiskCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>低风险总数</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "LowRiskCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产唯一ID</p>",
+          "example": "bb787c9664c6852ff48aa1a27c460194",
+          "member": "string",
+          "name": "AssetRID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云安全中心标签</p>",
+          "example": "无",
+          "member": "CustomTag",
+          "name": "CustomTags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型图标</p>",
+          "example": "https://cloud-xspm-web-1258344699.cos.ap-guangzhou.myqcloud.com/asset-icon/databaseIcon_2d.svg",
+          "member": "string",
+          "name": "AssetTypeIconURL",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

@@ -1,5 +1,21 @@
 {
   "actions": {
+    "CreateGlossary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGlossary\n<公共请求参数>\n\n{\n    \"Name\": \"my-glossary\",\n    \"Source\": \"zh\",\n    \"Target\": \"en\",\n    \"Description\": \"test glossary\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreatedAt\": 1779967663,\n        \"GlossaryId\": \"14cf0f58e4f165ee414cbf43217650f2\",\n        \"Name\": \"my-glossary\",\n        \"RequestId\": \"46a9c46b-698b-42e8-9cc6-8a5604eeed01\"\n    }\n}",
+        "title": "CreateGlossary"
+      }
+    ],
+    "CreateGlossaryEntries": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGlossaryEntries\n<公共请求参数>\n\n{\n    \"GlossaryId\": \"c5a3fa588af94ddaa50ca896ae6392e5\",\n    \"Entries\": [\n        {\n            \"SourceTerm\": \"云服务器\",\n            \"TargetTerm\": \"Cloud Server\"\n        },\n        {\n            \"SourceTerm\": \"云服务器222\",\n            \"TargetTerm\": \"Cloud Server222\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Entries\": [\n            {\n                \"EntryId\": \"bfbc15bbefa2dfcec068372c774ef45c\",\n                \"SourceTerm\": \"云服务器\",\n                \"TargetTerm\": \"Cloud Server\",\n                \"UpdatedAt\": 1779970384\n            },\n            {\n                \"EntryId\": \"b395853160e117177041f0dff7a56274\",\n                \"SourceTerm\": \"云服务器222\",\n                \"TargetTerm\": \"Cloud Server222\",\n                \"UpdatedAt\": 1779970384\n            }\n        ],\n        \"RequestId\": \"04cfa4f3-68d1-4a85-9ae3-3e2bd6d46fbb\"\n    }\n}",
+        "title": "CreateGlossaryEntries"
+      }
+    ],
     "CreateTokenPlanApiKeys": [
       {
         "document": "",
@@ -14,6 +30,22 @@
         "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTokenPlanTeamOrderAndBuy\n<公共请求参数>\n\n{\n    \"ProductType\": \"enterprise\",\n    \"TeamName\": \"test-team\",\n    \"TimeSpan\": 1,\n    \"CreditOrToken\": 500000,\n    \"EnableAutoRenew\": false\n}",
         "output": "{\n    \"Response\": {\n        \"BigOrderId\": \"big-order-id\",\n        \"RequestId\": \"83c3a50c-370f-42da-bb89-8231fe73d125\"\n    }\n}",
         "title": "成功调用"
+      }
+    ],
+    "DeleteGlossary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGlossary\n<公共请求参数>\n\n{\n    \"GlossaryId\": \"b76ebbab3525c1df42be2d4d33076c7c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48ca2eec-0f0b-4ff7-a28c-18a7410e5461\"\n    }\n}",
+        "title": "DeleteGlossary"
+      }
+    ],
+    "DeleteGlossaryEntries": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGlossaryEntries\n<公共请求参数>\n\n{\n    \"GlossaryId\": \"c5a3fa588af94ddaa50ca896ae6392e5\",\n    \"Entries\": [\n        {\n            \"EntryId\": \"de5264e9caf06d96ef8faa5cce197d00\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23988745-1ac2-48f6-985d-e4dd1a90461c\"\n    }\n}",
+        "title": "DeleteGlossaryEntries"
       }
     ],
     "DeleteTokenPlanApiKey": [
@@ -38,6 +70,22 @@
         "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiKeyList\n<公共请求参数>\n\n{\n    \"Platform\": \"maas\",\n    \"Filters\": [\n        {\n            \"Name\": \"apiKeyName\",\n            \"Op\": \"EXACT\",\n            \"Values\": [\n                \"my-apikey\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ApiKeySet\": [\n            {\n                \"ApiKey\": \"sk-2b***3sQc\",\n                \"ApiKeyId\": \"ak-20260325-xxxxxx\",\n                \"AppId\": \"1300056794\",\n                \"BindType\": \"model_custom_endpoint_custom\",\n                \"BindingItems\": [\n                    {\n                        \"ResourceId\": \"deepseek-v3.2\",\n                        \"ResourceType\": \"model\"\n                    }\n                ],\n                \"CreateTime\": \"2026-03-25 19:50:56\",\n                \"Creator\": \"\",\n                \"Editable\": true,\n                \"Name\": \"my-apikey\",\n                \"Platform\": \"maas\",\n                \"Remark\": \"for test use\",\n                \"Status\": \"enable\",\n                \"SubUin\": \"1234556\",\n                \"Uin\": \"1234556\",\n                \"UpdateTime\": \"2026-03-25 19:50:56\"\n            }\n        ],\n        \"RequestId\": \"3ec32d91-3e21-40bf-8874-516fa9197d5b\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询 API 密钥列表。"
+      }
+    ],
+    "DescribeGlossaries": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlossaries\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Current\": 0,\n        \"Items\": [\n            {\n                \"CreatedTime\": \"2026-03-01T00:00:00Z\",\n                \"Description\": \"syytest\",\n                \"GlossaryId\": \"fc88eea3787c6fb1a7404b65e2c25cac\",\n                \"Name\": \"syytest-glossary\",\n                \"Source\": \"zh\",\n                \"Target\": \"en\",\n                \"UpdatedTime\": \"2026-03-01T00:00:00Z\"\n            }\n        ],\n        \"PageSize\": 20,\n        \"RequestId\": \"381ee90c-4f9a-499f-a1fe-0888593f7337\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "DescribeGlossaries"
+      }
+    ],
+    "DescribeGlossaryEntries": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlossaryEntries\n<公共请求参数>\n\n{\n    \"GlossaryId\": \"c5a3fa588af94ddaa50ca896ae6392e5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Entries\": [\n            {\n                \"EntryId\": \"b395853160e117177041f0dff7a56274\",\n                \"SourceTerm\": \"云服务器222\",\n                \"TargetTerm\": \"Cloud Server222\",\n                \"UpdatedAt\": 1779970384\n            },\n            {\n                \"EntryId\": \"bfbc15bbefa2dfcec068372c774ef45c\",\n                \"SourceTerm\": \"云服务器\",\n                \"TargetTerm\": \"Cloud Server\",\n                \"UpdatedAt\": 1779970384\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 20,\n        \"RequestId\": \"b32c2fcf-bbcc-40a0-8b6c-6af9a4e8a967\",\n        \"Total\": 2\n    }\n}",
+        "title": "DescribeGlossaryEntries"
       }
     ],
     "DescribeModelList": [
@@ -102,6 +150,14 @@
         "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsageRankList\n<公共请求参数>\n\n{\n    \"Dimension\": \"apikey\",\n    \"StartTime\": \"2026-04-09T00:00:00+08:00\",\n    \"EndTime\": \"2026-05-09T00:00:00+08:00\",\n    \"Period\": 86400\n}",
         "output": "{\n    \"Response\": {\n        \"Dimension\": \"apikey\",\n        \"EndTime\": \"2026-05-09T00:00:00+08:00\",\n        \"Limit\": 0,\n        \"MetricKeys\": [\n            \"TotalToken\",\n            \"InputTotalToken\",\n            \"OutputTotalToken\"\n        ],\n        \"MetricType\": \"tokens\",\n        \"Offset\": 0,\n        \"PageStats\": {\n            \"InputTotalToken\": 0,\n            \"OutputTotalToken\": 0,\n            \"TotalToken\": 0\n        },\n        \"Period\": 86400,\n        \"RequestId\": \"1568bc1c-946b-4c2b-b69f-6ba93f2bb258\",\n        \"StartTime\": \"2026-04-09T00:00:00+08:00\",\n        \"Timestamps\": [],\n        \"TopList\": [],\n        \"Total\": 0,\n        \"TotalStats\": {\n            \"InputTotalToken\": 0,\n            \"OutputTotalToken\": 0,\n            \"TotalToken\": 0\n        },\n        \"ViewName\": \"tokenhub_uin_apikeyid\"\n    }\n}",
         "title": "DescribeUsageRankList"
+      }
+    ],
+    "ModifyGlossaryEntries": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGlossaryEntries\n<公共请求参数>\n\n{\n    \"GlossaryId\": \"c5a3fa588af94ddaa50ca896ae6392e5\",\n    \"Entries\": [\n        {\n            \"EntryId\": \"bfbc15bbefa2dfcec068372c774ef45c\",\n            \"SourceTerm\": \"云服务器-修改后\",\n            \"TargetTerm\": \"Cloud Server-new\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Entries\": [\n            {\n                \"EntryId\": \"bfbc15bbefa2dfcec068372c774ef45c\",\n                \"SourceTerm\": \"云服务器-修改后\",\n                \"TargetTerm\": \"Cloud Server-new\",\n                \"UpdatedAt\": 1780024696\n            }\n        ],\n        \"RequestId\": \"1ed04a04-e786-43eb-a7c4-4b14ea4abd1d\"\n    }\n}",
+        "title": "ModifyGlossaryEntries"
       }
     ],
     "ModifyTokenPlanApiKey": [
