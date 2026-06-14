@@ -1463,7 +1463,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云对象存储COS以及第三方云存储账号信息\n0：腾讯云对象存储 COS\n1：AWS\n【注意】目前第三方云存储仅支持AWS，更多第三方云存储陆续支持中",
+          "document": "<p>腾讯云对象存储COS以及第三方云存储账号信息<br>0：腾讯云对象存储 COS<br>1：AWS<br>【注意】目前第三方云存储仅支持AWS，更多第三方云存储陆续支持中</p>",
           "example": "0",
           "member": "uint64",
           "name": "Vendor",
@@ -1472,7 +1472,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云对象存储的[地域信息]（https://cloud.tencent.com/document/product/436/6224#.E5.9C.B0.E5.9F.9F）。\n示例值：cn-shanghai-1\n\nAWS S3[地域信息]（https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions）",
+          "document": "<p>腾讯云对象存储的[地域信息]（https://cloud.tencent.com/document/product/436/6224#.E5.9C.B0.E5.9F.9F）。<br>示例值：cn-shanghai-1</p><p>AWS S3[地域信息]（https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions）</p>",
           "example": "ap-shanghai(cos, 具体参考云存储厂商支持的地域)",
           "member": "string",
           "name": "Region",
@@ -1481,7 +1481,7 @@
         },
         {
           "disabled": false,
-          "document": "云存储桶名称。",
+          "document": "<p>云存储桶名称。</p>",
           "example": "test-bucket",
           "member": "string",
           "name": "Bucket",
@@ -1490,7 +1490,7 @@
         },
         {
           "disabled": false,
-          "document": "云存储的access_key账号信息。\n若存储至腾讯云对象存储COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretId值。",
+          "document": "<p>云存储的access_key账号信息。<br>若存储至腾讯云对象存储COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretId值。</p>",
           "example": "test-accesskey",
           "member": "string",
           "name": "AccessKey",
@@ -1499,7 +1499,7 @@
         },
         {
           "disabled": false,
-          "document": "云存储的secret_key账号信息。\n若存储至腾讯云对象存储COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretKey值。",
+          "document": "<p>云存储的secret_key账号信息。<br>若存储至腾讯云对象存储COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretKey值。</p>",
           "example": "test-secretkey",
           "member": "string",
           "name": "SecretKey",
@@ -1508,7 +1508,7 @@
         },
         {
           "disabled": false,
-          "document": "云存储bucket 的指定位置，由字符串数组组成。合法的字符串范围az,AZ,0~9,'_'和'-'，举个例子，录制文件xxx.m3u8在 [\"prefix1\", \"prefix2\"]作用下，会变成prefix1/prefix2/TaskId/xxx.m3u8。",
+          "document": "<p>云存储bucket 的指定位置，由字符串数组组成。合法的字符串范围az,AZ,0~9,&#39;_&#39;和&#39;-&#39;，举个例子，录制文件xxx.m3u8在 [&quot;prefix1&quot;, &quot;prefix2&quot;]作用下，会变成prefix1/prefix2/TaskId/xxx.m3u8。</p>",
           "example": "[\"prefix1\", \"prefix2\"]",
           "member": "string",
           "name": "FileNamePrefix",
@@ -9237,7 +9237,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要停止的任务Id",
+          "document": "<p>需要停止的任务Id</p>",
           "example": "HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri",
           "member": "string",
           "name": "TaskId",

@@ -21849,7 +21849,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "拓展的目标及事件检测类别",
+          "document": "<p>拓展的目标及事件检测类别</p>",
           "example": "[\"baby\"]",
           "member": "string",
           "name": "DetectTypes",
@@ -21860,7 +21860,7 @@
         },
         {
           "disabled": false,
-          "document": "使该视频 / 图片录入搜索库，后续可进行搜索",
+          "document": "<p>使该视频 / 图片录入搜索库，后续可进行搜索</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableSearch",
@@ -21871,7 +21871,7 @@
         },
         {
           "disabled": false,
-          "document": "主输出语言，可选值包括：\n- `zh` 中文（默认值）\n- `en` 英语\n- `ja` 日语\n- `ko` 韩文\n- `pt-BR` 葡萄牙语（巴西）\n- `th` 泰语\n- `ms` 马来语",
+          "document": "<p>主输出语言，可选值包括：</p><ul><li><code>zh</code> 中文（默认值）</li><li><code>en</code> 英语</li><li><code>ja</code> 日语</li><li><code>ko</code> 韩文</li><li><code>pt-BR</code> 葡萄牙语（巴西）</li><li><code>th</code> 泰语</li><li><code>ms</code> 马来语</li></ul>",
           "example": "zh",
           "member": "string",
           "name": "OutputLang",
@@ -21882,7 +21882,7 @@
         },
         {
           "disabled": false,
-          "document": "次选输出语言，可选值包括：\n- `zh` 中文\n- `en` 英语\n- `ja` 日语\n- `ko` 韩文\n- `pt-BR` 葡萄牙语（巴西）\n- `th` 泰语\n- `ms` 马来语\n",
+          "document": "<p>次选输出语言，可选值包括：</p><ul><li><code>zh</code> 中文</li><li><code>en</code> 英语</li><li><code>ja</code> 日语</li><li><code>ko</code> 韩文</li><li><code>pt-BR</code> 葡萄牙语（巴西）</li><li><code>th</code> 泰语</li><li><code>ms</code> 马来语</li></ul>",
           "example": "en",
           "member": "string",
           "name": "AlternativeOutputLang",
@@ -21893,7 +21893,7 @@
         },
         {
           "disabled": false,
-          "document": "多摄像头布局定义。可选值包括：\n\n- 单摄（默认值）：`Single`\n\n- 双摄（纵向排列）- 全部画面：`Vertical,Num=2,Index=0;1`\n- 双摄（纵向排列）- 画面1：`Vertical,Num=2,Index=0`\n- 双摄（纵向排列）- 画面2：`Vertical,Num=2,Index=1`\n\n- 三摄（纵向排列）- 全部画面：`Vertical,Num=3,Index=0;1;2`\n- 三摄（纵向排列）- 画面1：`Vertical,Num=3,Index=0`\n- 三摄（纵向排列）- 画面2：`Vertical,Num=3,Index=1`\n- 三摄（纵向排列）- 画面3：`Vertical,Num=3,Index=2`\n- 三摄（纵向排列）- 画面1+2：`Vertical,Num=3,Index=0;1`\n- 三摄（纵向排列）- 画面1+3：`Vertical,Num=3,Index=0;2`\n- 三摄（纵向排列）- 画面2+3：`Vertical,Num=3,Index=1;2`",
+          "document": "<p>多摄像头布局定义。可选值包括：</p><ul><li><p>单摄（默认值）：<code>Single</code></p></li><li><p>双摄（纵向排列）- 全部画面：<code>Vertical,Num=2,Index=0;1</code></p></li><li><p>双摄（纵向排列）- 画面1：<code>Vertical,Num=2,Index=0</code></p></li><li><p>双摄（纵向排列）- 画面2：<code>Vertical,Num=2,Index=1</code></p></li><li><p>三摄（纵向排列）- 全部画面：<code>Vertical,Num=3,Index=0;1;2</code></p></li><li><p>三摄（纵向排列）- 画面1：<code>Vertical,Num=3,Index=0</code></p></li><li><p>三摄（纵向排列）- 画面2：<code>Vertical,Num=3,Index=1</code></p></li><li><p>三摄（纵向排列）- 画面3：<code>Vertical,Num=3,Index=2</code></p></li><li><p>三摄（纵向排列）- 画面1+2：<code>Vertical,Num=3,Index=0;1</code></p></li><li><p>三摄（纵向排列）- 画面1+3：<code>Vertical,Num=3,Index=0;2</code></p></li><li><p>三摄（纵向排列）- 画面2+3：<code>Vertical,Num=3,Index=1;2</code></p></li></ul>",
           "example": "Single",
           "member": "string",
           "name": "MultiCameraLayout",
@@ -21904,7 +21904,7 @@
         },
         {
           "disabled": false,
-          "document": "最大处理的输入视频时长，单位：秒（仅对视频输入生效）",
+          "document": "<p>最大处理的输入视频时长，单位：秒（仅对视频输入生效）</p>",
           "example": "30",
           "member": "int64",
           "name": "MaxDuration",

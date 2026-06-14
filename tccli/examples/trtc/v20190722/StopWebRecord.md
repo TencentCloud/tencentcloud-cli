@@ -1,4 +1,4 @@
-**Example 1: 停止页面录制任务**
+**Example 1: StopWebRecord示例**
 
 
 
@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli trtc StopWebRecord --cli-unfold-argument  \
-    --TaskId HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri
+    --TaskId dhze2exwGcZr+H5zWWXz2iwDFHCMwAt3jdEqk0A1wVJ13kfr4ZmnqxDt1PMMA7XPdRKxJFoYwlP85sCQdCY0GUmLfy4tmlZAkWvYUZun9mmAJi9s-T4MPRFygnj3nQ..
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2a76ee73-6579-42f0-8d57-1f6c9b9d7208"
+        "RequestId": "578050cb-9d6d-434f-9bc2-a2c47913ed31"
     }
 }
 ```

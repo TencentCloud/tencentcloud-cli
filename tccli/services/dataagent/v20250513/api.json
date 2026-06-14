@@ -14,6 +14,13 @@
       "output": "AddSceneResponse",
       "status": "online"
     },
+    "AppendKnowledgeTask": {
+      "document": "追加文件",
+      "input": "AppendKnowledgeTaskRequest",
+      "name": "文件追加",
+      "output": "AppendKnowledgeTaskResponse",
+      "status": "online"
+    },
     "ChatAI": {
       "document": "提供DataAgent 产品服务API",
       "input": "ChatAIRequest",
@@ -117,6 +124,13 @@
       "input": "QueryChunkListRequest",
       "name": "文档切片查询",
       "output": "QueryChunkListResponse",
+      "status": "online"
+    },
+    "QueryKnowledgeTask": {
+      "document": "查询文件任务状态",
+      "input": "QueryKnowledgeTaskRequest",
+      "name": "查询知识库任务",
+      "output": "QueryKnowledgeTaskResponse",
       "status": "online"
     },
     "QuerySceneList": {
@@ -308,6 +322,110 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AppendDocument": {
+      "document": "追加文件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件名称</p>",
+          "example": "test.csv",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件id</p>",
+          "example": "2ca9279d-21ea-4e39-8b3b-c49c65ba83ea",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件url</p>",
+          "example": "https://data-agent-dev-1353879163.cos.ap-chongqing.myqcloud.com/user-storage/100041873387/klbase-YuVJ1k3U37/2ca9279d-21ea-4e39-8b3b-c49c65ba83eb_test.csv",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件大小</p>",
+          "example": "111111",
+          "member": "float",
+          "name": "FileSize",
+          "output_required": false,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AppendKnowledgeTaskRequest": {
+      "document": "AppendKnowledgeTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "dataagent-haBKQxLt",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库id</p>",
+          "example": "klbase-YuVJ1k3U37",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件id</p>",
+          "example": "2ca9279d-21ea-4e39-8b3b-c49c65ba83eb",
+          "member": "string",
+          "name": "FileId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>追加的文档列表</p>",
+          "example": "无",
+          "member": "AppendDocument",
+          "name": "Documents",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AppendKnowledgeTaskResponse": {
+      "document": "AppendKnowledgeTask返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1010,6 +1128,56 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FileTaskStatus": {
+      "document": "文件任务状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件id</p>",
+          "example": "de1c7e8b-ace4-4d1f-8b2c-953d67a0128c",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>0： 处理中</li><li>1： 可用</li><li>-1： 错误</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否已拉取过状态</p><p>枚举值：</p><ul><li>0： 未被拉取过状态</li><li>1： 已被拉取过状态</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsTerminated",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息，状态-1时不为空</p>",
+          "example": "文件名：********.xlsx。追加文件结构与目标表不一致，请检查表头是否完整后重新上传。",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1912,6 +2080,61 @@
           "example": "无",
           "member": "Chunk",
           "name": "Chunks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryKnowledgeTaskRequest": {
+      "document": "QueryKnowledgeTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "dataagent-haBKQxLt",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库id</p>",
+          "example": "klbase-XPJwWgiLZv",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件id列表</p>",
+          "example": "[\"de1c7e8b-ace4-4d1f-8b2c-953d67a0128c\"]",
+          "member": "string",
+          "name": "FileIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryKnowledgeTaskResponse": {
+      "document": "QueryKnowledgeTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文档任务详情对象</p>",
+          "example": "无",
+          "member": "FileTaskStatus",
+          "name": "FileList",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false

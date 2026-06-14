@@ -22205,7 +22205,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1",
           "member": "string",
           "name": "ProjectId",
@@ -22214,7 +22214,7 @@
         },
         {
           "disabled": false,
-          "document": "触发运行名称",
+          "document": "<p>触发运行名称</p>",
           "example": "task_t1",
           "member": "string",
           "name": "TriggerName",
@@ -22223,7 +22223,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流过滤关键字，工作流名称 or 工作流ID",
+          "document": "<p>工作流过滤关键字，工作流名称 or 工作流ID</p>",
           "example": "9256-11ed-8909-bc",
           "member": "string",
           "name": "WorkflowKeyword",
@@ -22232,7 +22232,7 @@
         },
         {
           "disabled": false,
-          "document": "触发运行提交人过滤，多个提交人用英文逗号分割",
+          "document": "<p>触发运行提交人过滤，多个提交人用英文逗号分割</p>",
           "example": "jack",
           "member": "string",
           "name": "Creator",
@@ -22241,7 +22241,7 @@
         },
         {
           "disabled": false,
-          "document": "触发提交创建时间过滤，起始时间",
+          "document": "<p>触发提交创建时间过滤，起始时间</p>",
           "example": "2024-12-12 11:11:11",
           "member": "string",
           "name": "TriggerStartTime",
@@ -22250,7 +22250,7 @@
         },
         {
           "disabled": false,
-          "document": "触发提交创建时间过滤，结束时间",
+          "document": "<p>触发提交创建时间过滤，结束时间</p>",
           "example": "2024-12-12 12:11:11",
           "member": "string",
           "name": "TriggerEndTime",
@@ -22259,7 +22259,7 @@
         },
         {
           "disabled": false,
-          "document": "页码，整型",
+          "document": "<p>页码，整型</p>",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -22268,12 +22268,21 @@
         },
         {
           "disabled": false,
-          "document": "每页数目，整型",
+          "document": "<p>每页数目，整型</p>",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发ID</p>",
+          "example": "0cb959bb-cef9-4e64-9c16-4abd8c8dda76",
+          "member": "string",
+          "name": "TriggerId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -22284,7 +22293,7 @@
         {
           "disabled": false,
           "document": "请求来源，WEB 前端；CLIENT 客户端\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Web",
           "member": "string",
           "name": "RequestFromSource",
           "output_required": false,
@@ -22293,7 +22302,7 @@
         },
         {
           "disabled": false,
-          "document": "详情结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>详情结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ManualTriggerRecordOpsDtoPage",
           "name": "Data",

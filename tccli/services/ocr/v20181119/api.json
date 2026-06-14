@@ -371,13 +371,6 @@
       "output": "RecognizeGeneralInvoiceResponse",
       "status": "online"
     },
-    "RecognizeHealthCodeOCR": {
-      "document": "产品规划\n\n本接口支持北京、上海、广东、江苏、吉林、黑龙江、天津、辽宁、浙江、河南、四川、贵州、山东、安徽、福建、江西、湖北、湖南等省份健康码的识别，包括持码人姓名、持码人身份证号、健康码更新时间、健康码颜色、核酸检测结果、核酸检测间隔时长、核酸检测时间，疫苗接种信息，八个字段的识别结果输出。不同省市健康码显示的字段信息有所不同，上述字段的识别结果可能为空，以图片上具体展示的信息为准。\n\n默认接口请求频率限制：10次/秒。",
-      "input": "RecognizeHealthCodeOCRRequest",
-      "name": "健康码识别",
-      "output": "RecognizeHealthCodeOCRResponse",
-      "status": "deprecated"
-    },
     "RecognizeMedicalInvoiceOCR": {
       "document": "医疗发票识别目前支持全国统一门诊发票、全国统一住院发票、以及部分地方的门诊和住院发票的识别。\n\n默认接口请求频率限制：5次/秒。",
       "input": "RecognizeMedicalInvoiceOCRRequest",
@@ -412,13 +405,6 @@
       "name": "泰国身份证识别",
       "output": "RecognizeThaiIDCardOCRResponse",
       "status": "online"
-    },
-    "RecognizeTravelCardOCR": {
-      "document": "产品规划\n\n本接口支持通信大数据行程卡识别，包括行程卡颜色、更新时间、途经地、存在中高风险地区的城市、电话号码，五个字段的识别结果输出。\n\n默认接口请求频率限制：20次/秒。",
-      "input": "RecognizeTravelCardOCRRequest",
-      "name": "通信行程卡识别",
-      "output": "RecognizeTravelCardOCRResponse",
-      "status": "deprecated"
     },
     "RecognizeValidIDCardOCR": {
       "document": "本接口支持二代身份证、临时身份证、港澳台居住证、外国人永久居留证，字段内容识别功能，包括姓名、性别、民族、出生、出生日期、住址、公民身份号码、签发机关、有效期限、国籍、通行证号码、持证人持有号码；支持返回证件类型；支持翻拍、复印、边框不完整、遮挡、字段级反光和字段级完整性告警；支持卡片主体框裁剪和头像裁剪。\n\n重要提醒：本产品告警功能依托AI检测技术，不可作为审核的唯一依据，应用前请做好效果测试。\n\n默认接口请求频率限制：5次/秒。",
@@ -530,6 +516,13 @@
       "input": "VehicleRegCertOCRRequest",
       "name": "机动车登记证书识别",
       "output": "VehicleRegCertOCRResponse",
+      "status": "online"
+    },
+    "VerifyBizLicenseEnterprise3": {
+      "document": "提供比对核验企业名称、统一社会信用代码、法人姓名一致性的服务，助力快速核验企业资质。\n注意：核验准确率在99%以上，存在个别特殊情况下核验结果不准确，请选用前知悉。",
+      "input": "VerifyBizLicenseEnterprise3Request",
+      "name": "营业执照核验（企业二|三要素）",
+      "output": "VerifyBizLicenseEnterprise3Response",
       "status": "online"
     },
     "VerifyBizLicenseEnterprise4": {
@@ -14281,151 +14274,6 @@
       ],
       "type": "object"
     },
-    "RecognizeHealthCodeOCRRequest": {
-      "document": "RecognizeHealthCodeOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://bentest-1254418846.cos.ap-chengdu.myqcloud.com/%E5%81%A5%E5%BA%B7%E7%A0%81/089c.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "需要识别的健康码类型列表，为空或不填表示默认为自动识别。\n0:自动识别",
-          "example": "0",
-          "member": "int64",
-          "name": "Type",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "RecognizeHealthCodeOCRResponse": {
-      "document": "RecognizeHealthCodeOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "持码人姓名，如：王*（允许返回空值）",
-          "example": "王*",
-          "member": "string",
-          "name": "Name",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "持码人身份证号，如：11**************01（允许返回空值）",
-          "example": "11**************01",
-          "member": "string",
-          "name": "IDNumber",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "健康码更新时间（允许返回空值）",
-          "example": "01-10 15:40:23",
-          "member": "string",
-          "name": "Time",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "健康码颜色：绿色、黄色、红色（允许返回空值）",
-          "example": "绿色",
-          "member": "string",
-          "name": "Color",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "核酸检测间隔时长（允许返回空值）",
-          "example": "48小时",
-          "member": "string",
-          "name": "TestingInterval",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "核酸检测结果：阴性、阳性、暂无核酸检测记录（允许返回空值）",
-          "example": "阴性",
-          "member": "string",
-          "name": "TestingResult",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "核酸检测时间（允许返回空值）",
-          "example": "01-10 16:40:23",
-          "member": "string",
-          "name": "TestingTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "疫苗接种信息，返回接种针数或接种情况（允许返回空值）",
-          "example": "已完成全程接种",
-          "member": "string",
-          "name": "Vaccination",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "场所名称（允许返回空值）",
-          "example": "腾讯大厦",
-          "member": "string",
-          "name": "SpotName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "疫苗接种时间",
-          "example": "01-10 16:40:23",
-          "member": "string",
-          "name": "VaccinationTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "RecognizeMedicalInvoiceOCRRequest": {
       "document": "RecognizeMedicalInvoiceOCR请求参数结构体",
       "members": [
@@ -15013,92 +14861,6 @@
           "name": "CardCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RecognizeTravelCardOCRRequest": {
-      "document": "RecognizeTravelCardOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RecognizeTravelCardOCRResponse": {
-      "document": "RecognizeTravelCardOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "行程卡更新时间，格式为：XXXX.XX.XX XX:XX:XX",
-          "example": "2022.07.08 11:11:39",
-          "member": "string",
-          "name": "Time",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "行程卡颜色：绿色、黄色、红色",
-          "example": "绿色",
-          "member": "string",
-          "name": "Color",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "7天内到达或途经的城市（自2022年7月8日起，通信行程卡查询结果的覆盖时间范围由“14天”调整为“7天”）",
-          "example": "上海市",
-          "member": "string",
-          "name": "ReachedCity",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "7天内到达或途径存在中高风险地区的城市（自2022年6月29日起，通信行程卡取消“星号”标记，改字段将返回空值）",
-          "example": "上海市",
-          "member": "string",
-          "name": "RiskArea",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "电话号码",
-          "example": "150****3634",
-          "member": "string",
-          "name": "Telephone",
-          "output_required": true,
-          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -23109,6 +22871,90 @@
           "name": "VehicleRegCertInfos",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyBizLicenseEnterprise3Request": {
+      "document": "VerifyBizLicenseEnterprise3请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>统一社会信用代码</p>",
+          "example": "911101085636549482",
+          "member": "string",
+          "name": "CreditCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业名称</p>",
+          "example": "腾讯云计算机（北京）",
+          "member": "string",
+          "name": "EntName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>法人代表</p>",
+          "example": "李强",
+          "member": "string",
+          "name": "LrName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>核验类型 </p><p>枚举值：</p><ul><li>ENT_2META： 企业名称 、统一社会信用代码</li><li>ENT_3META： 企业名称 、统一社会信用代码 、法人代表名称</li></ul>",
+          "example": "ENT_2META",
+          "member": "string",
+          "name": "VerifyType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyBizLicenseEnterprise3Response": {
+      "document": "VerifyBizLicenseEnterprise3返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>0 成功，计费<br>1 系统异常，不计费<br>2 查询无结果，不计费</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "StatusCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证结果<br>1：三要素完全匹配<br>0：三要素不完全匹配<br>仅StatusCode为0时返回</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "VerifyResult",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业状态</p><p>枚举值：</p><ul><li>1： 开业（在营）/ 在营</li><li>2： 迁出 / 非在营</li><li>3： 注销</li><li>4： 吊销</li><li>5： 撤销</li><li>6： 停业</li><li>7： 撤销登记</li><li>0： 其他</li><li>/： 无法查询</li></ul><p>企业状态  当VerifyType参数为ENT_2META时，可返回：  0-7,  /   当VerifyType参数为ENT_3META时，可返回  1，2</p>",
+          "example": "1",
+          "member": "string",
+          "name": "OperatingStatus",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

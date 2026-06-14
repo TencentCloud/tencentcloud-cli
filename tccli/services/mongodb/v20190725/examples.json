@@ -80,6 +80,14 @@
         "title": "创建日志下载任务"
       }
     ],
+    "CreateSlowLogPatternDownloadTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSlowLogPatternDownloadTask\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-dlm2vwnd\",\n    \"StartTime\": \"2026-05-27 12:00:00\",\n    \"EndTime\": \"2026-05-27 14:00:00\",\n    \"ThresholdMs\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": [\n            0\n        ],\n        \"RequestId\": \"cca56ed7-3e9d-4f92-8432-47198229b64a\"\n    }\n}",
+        "title": "CreateSlowLogPatternDownloadTask"
+      }
+    ],
     "DeleteAccountUser": [
       {
         "document": "删除实例账号",
@@ -206,6 +214,14 @@
         "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeDBInstanceDeal\n&DealId=20200420111635\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Action\": \"purchase\",\n        \"DiscountPrice\": 759.33,\n        \"OriginalPrice\": 1116.67,\n        \"RequestId\": \"e79836e8-1864-45bf-aa63-0c7af31e7de5\",\n        \"Status\": 4\n    }\n}",
         "title": "查询订单详情"
+      }
+    ],
+    "DescribeDBInstanceLogToCLS": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceLogToCLS\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-2gdv46zn\",\n    \"CLSRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorLog\": {\n            \"CLSRegion\": \"\",\n            \"LogSetId\": \"\",\n            \"LogTopicId\": \"\",\n            \"Status\": \"OFF\"\n        },\n        \"OperationLog\": {\n            \"CLSRegion\": \"\",\n            \"LogSetId\": \"\",\n            \"LogTopicId\": \"\",\n            \"Status\": \"OFF\"\n        },\n        \"SlowLog\": {\n            \"CLSRegion\": \"ap-guangzhou\",\n            \"LogSetId\": \"64ae0139-0621-4e59-aba7-f60cd2264ab6\",\n            \"LogTopicId\": \"6af6a321-879e-415b-b612-64dad8a3c571\",\n            \"Status\": \"OFF\"\n        },\n        \"RequestId\": \"c11fe4ab-9d7f-4eed-bdcb-671ca55386ee\"\n    }\n}",
+        "title": "查询实例日志投递 CLS 的配置"
       }
     ],
     "DescribeDBInstanceNamespace": [
@@ -428,6 +444,14 @@
         "title": "在所有Mongos上执行FlushRouterConfig"
       }
     ],
+    "IncreaseDBInstanceConnectionLimit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IncreaseDBInstanceConnectionLimit\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4948bc9-c834-41ff-9563-141a8f6204db\"\n    }\n}",
+        "title": "提升实例最大连接数"
+      }
+    ],
     "InquirePriceCreateDBInstances": [
       {
         "document": "",
@@ -490,6 +514,14 @@
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupExpireTime\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-********\",\n    \"ExpireTime\": \"2026-06-06 04:02:00\",\n    \"BackupIds\": [\n        11123430\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailedBackups\": [\n            21123430\n        ],\n        \"RequestId\": \"35a28e4e-a5bf-441a-8729-b63442bd5cf2\"\n    }\n}",
         "title": "修改备份过期时间"
+      }
+    ],
+    "ModifyDBInstanceLogToCLS": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceLogToCLS\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-2gdv46zn\",\n    \"LogType\": \"MongoDB-SlowLog\",\n    \"Status\": \"ON\",\n    \"Logset\": \"64ae****-****-4e59-aba7-f60cd2264ab6\",\n    \"LogTopic\": \"6a*6a*21-****-****-b612-64dad8a3c571\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"263e942e-099e-4f5d-bcab-0d87ca4eed59\"\n    }\n}",
+        "title": "开启或关闭日志投递CLS"
       }
     ],
     "ModifyDBInstanceNetworkAddress": [

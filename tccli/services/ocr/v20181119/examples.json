@@ -508,14 +508,6 @@
         "title": "通用票据识别（高级版）"
       }
     ],
-    "RecognizeHealthCodeOCR": [
-      {
-        "document": "健康码识别",
-        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeHealthCodeOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Color\": \"绿色\",\n        \"IDNumber\": \"\",\n        \"Name\": \"王*一\",\n        \"RequestId\": \"632c1770-ef32-45e3-b4fc-2cc93ac0bad3\",\n        \"SpotName\": \"\",\n        \"TestingInterval\": \"48小时\",\n        \"TestingResult\": \"阴性\",\n        \"TestingTime\": \"2022-01-15 22:52\",\n        \"Time\": \"01-08 17:05:05\",\n        \"Vaccination\": \"已完成全程接种\",\n        \"VaccinationTime\": \"2021-07-25\"\n    }\n}",
-        "title": "健康码识别示例代码"
-      }
-    ],
     "RecognizeMedicalInvoiceOCR": [
       {
         "document": "医疗发票识别示例",
@@ -554,14 +546,6 @@
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeThaiIDCardOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"Address\": \"ที่อยู่ 21/19 หมู่ที่ 3 ต.บางคูรัด อ.บางบัวทอง จ.นนทบุรี\",\n        \"AdvancedInfo\": \"{\\\"ID\\\":0.9995814561843872,\\\"ThaiName\\\":0.9961479902267456,\\\"EnFirstName\\\":0.9232422113418579,\\\"EnLastName\\\":0.943652331829071,\\\"Birthday\\\":0.9828404188156128,\\\"EnBirthday\\\":0.92333984375,\\\"Religion\\\":1,\\\"ExpirationDate\\\":0.9919084906578064,\\\"IssueDate\\\":0.9893275499343872,\\\"EnExpirationDate\\\":0.9890950322151184,\\\"EnIssueDate\\\":0.9800618290901184,\\\"SerialNumber\\\":0.9995659589767456}\",\n        \"Birthday\": \"14 ธ.ค. 2509\",\n        \"EnBirthday\": \"14 Dec. 1966\",\n        \"EnExpirationDate\": \"13 Dec. 2024\",\n        \"EnFirstName\": \"Mr. Thanakit\",\n        \"EnIssueDate\": \"9 Dec. 2016\",\n        \"EnLastName\": \"Boonyopakron\",\n        \"ExpirationDate\": \"13 ธ.ค. 2567\",\n        \"ID\": \"3 1020 01968 75 6\",\n        \"IssueDate\": \"9 ธ.ค. 2559\",\n        \"PortraitImage\": \"\",\n        \"Religion\": \"พุทธ\",\n        \"RequestId\": \"d4af8019-08e0-4d8d-a986-e1f45efb4a6c\",\n        \"SerialNumber\": \"1204-03-12091012\",\n        \"ThaiName\": \"นาย ธนกฤต บุญโญปกรณ์\",\n        \"WarnCardInfos\": [\n            -9109\n        ]\n    }\n}",
         "title": "RecognizeThaiIDCardOCR调用"
-      }
-    ],
-    "RecognizeTravelCardOCR": [
-      {
-        "document": "通信行程卡识别",
-        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeTravelCardOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Color\": \"绿色\",\n        \"ReachedCity\": [\n            \"上海市\"\n        ],\n        \"RequestId\": \"49050856-4804-406b-821b-b3d750de3692\",\n        \"RiskArea\": [],\n        \"Telephone\": \"150****3634\",\n        \"Time\": \"2022.07.08 11:11:39\"\n    }\n}",
-        "title": "通信行程卡识别示例代码"
       }
     ],
     "RecognizeValidIDCardOCR": [
@@ -708,6 +692,14 @@
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VehicleRegCertOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/vehicle/VehicleRegCertOCR/VehicleRegCertOCR1.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"VehicleRegCertInfos\": [\n            {\n                \"Name\": \"编号\",\n                \"Value\": \"*310005169880*\"\n            },\n            {\n                \"Name\": \"机动车所有人1\",\n                \"Value\": \"李明\"\n            },\n            {\n                \"Name\": \"车辆识别代号/车架号\",\n                \"Value\": \"LFV8\"\n            },\n            {\n                \"Name\": \"身份证明名称1\",\n                \"Value\": \"居民身份证\"\n            },\n            {\n                \"Name\": \"号码1\",\n                \"Value\": \"339001198706168418\"\n            }\n        ],\n        \"RequestId\": \"393fa9e0-3827-4183-9fe7-68ed622028a1\"\n    }\n}",
         "title": "机动车登记证书识别示例代码"
+      }
+    ],
+    "VerifyBizLicenseEnterprise3": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyBizLicenseEnterprise3\n<公共请求参数>\n\n{\n    \"CreditCode\": \"12xxxxxxxxx3\",\n    \"EntName\": \"xxxxx生鲜食品超市（个体工商户）\",\n    \"LrName\": \"刘xxxxx\",\n    \"VerifyType\": \"ENT_3META\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ff3cb900-6961-402f-bb25-45b86cb6f695\",\n        \"StatusCode\": 0,\n        \"VerifyResult\": 1,\n        \"OperatingStatus\": \"1\"\n    }\n}",
+        "title": "三要素"
       }
     ],
     "VerifyBizLicenseEnterprise4": [
