@@ -195,16 +195,16 @@
     "CreateMicroservice": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMicroservice\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"namespace-v3gw3lna\",\n    \"MicroserviceName\": \"provider-app\",\n    \"MicroserviceDesc\": \"This is desc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0c42921-ff15-4718-a296-20403124f81b\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMicroservice\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"namespace-9ynm2mea\",\n    \"MicroserviceName\": \"app-jolyonzheng\",\n    \"MicroserviceDesc\": \"this is desc\",\n    \"ServiceType\": \"SDK\",\n    \"ServiceUrl\": \"www.tsf.com\",\n    \"Protocol\": \"http\",\n    \"ServiceDiscovery\": \"DNS\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"41521ae0-bce6-4bbe-af2a-753f7bb177ed\"\n    }\n}",
         "title": "创建微服务示例"
       }
     ],
     "CreateMicroserviceWithDetailResp": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMicroserviceWithDetailResp\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"namespace-vw8oox6v\",\n    \"MicroserviceName\": \"provider-demo-user\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b9daebe-d33d-4f78-8f23-e6c73026b4b0\",\n        \"Result\": \"ms-vwdjqqow\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMicroserviceWithDetailResp\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"namespace-9ynm2mea\",\n    \"MicroserviceName\": \"provider-demo-mock\",\n    \"MicroserviceDesc\": \"this is desc\",\n    \"ServiceType\": \"SDK\",\n    \"ServiceUrl\": \"www.tsf.com\",\n    \"Protocol\": \"http\",\n    \"ServiceDiscovery\": \"DNS\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"ms-alb4jggv\",\n        \"RequestId\": \"8bb8485c-977c-4fa9-aa7d-b6c000f44d8d\"\n    }\n}",
         "title": "新增微服务返回ID"
       }
     ],
@@ -675,7 +675,7 @@
     "DescribeContainerGroups": [
       {
         "document": "查询容器部署组列表",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeContainerGroups\r\n&ApplicationId=application-xxxxxxx\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeContainerGroups\n&ApplicationId=application-xxxxxxx\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"41a08459-9e0b-4609-841b-0859d6f844e1\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"Server\": \"ccr.ccs.tencentyun.com\",\n                    \"CpuLimit\": \"2.00\",\n                    \"GroupId\": \"group-xxxxxxx\",\n                    \"ClusterId\": \"cls-xxxxxxx\",\n                    \"TagName\": \"20190517xxxxxxx\",\n                    \"CpuRequest\": \"\",\n                    \"MemLimit\": \"4096.00\",\n                    \"GroupName\": \"testGroup\",\n                    \"RepoName\": \"tsf_410xxxxxxx/test\",\n                    \"CreateTime\": \"\",\n                    \"NamespaceId\": \"namespace-xxxxxxx\",\n                    \"MemRequest\": \"\",\n                    \"ClusterName\": \"示例\",\n                    \"NamespaceName\": \"testNamespace\",\n                    \"Alias\": \"aliasNamespace\",\n                    \"KubeInjectEnable\": true,\n                    \"UpdatedTime\": \"\"\n                }\n            ]\n        }\n    }\n}",
         "title": "查询容器部署组列表"
       }

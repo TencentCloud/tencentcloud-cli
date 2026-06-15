@@ -348,6 +348,14 @@
         "title": "修改项目"
       }
     ],
+    "ModifyResourceUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourceUser\n<公共请求参数>\n\n{\n    \"ProjectId\": 560,\n    \"UserId\": \"u1\",\n    \"EntityIds\": [\n        2477\n    ],\n    \"ResourceType\": \"page\",\n    \"Resource\": {\n        \"ResourceList\": [\n            {\n                \"ResourceName\": \"PageView\",\n                \"ResourceValue\": true,\n                \"CanChange\": true\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"uuid\",\n        \"Extra\": \"\",\n        \"Data\": null\n    }\n}",
+        "title": "修改"
+      }
+    ],
     "ModifyResourceUserGroup": [
       {
         "document": "",

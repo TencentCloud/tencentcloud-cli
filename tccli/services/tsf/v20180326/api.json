@@ -591,7 +591,7 @@
     "DescribeContainerGroups": {
       "document": "容器部署组列表",
       "input": "DescribeContainerGroupsRequest",
-      "name": "容器部署组列表",
+      "name": "查询容器部署组列表",
       "output": "DescribeContainerGroupsResponse",
       "status": "online"
     },
@@ -2100,6 +2100,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>API在线状态</p><p>枚举值：</p><ul><li>ONLINE： 在线</li><li>OFFLINE： 离线</li><li>UNKNOWN： 未知</li><li>DELETED： 查询服务治理API不存在</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "ApiOnlineStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2444,6 +2454,34 @@
         }
       ],
       "usage": "in"
+    },
+    "ApiParam": {
+      "document": "API 参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接口Method</p>",
+          "example": "POST",
+          "member": "string",
+          "name": "Method",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接口Path</p>",
+          "example": "/mock_api",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ApiRateLimitRule": {
       "document": "微服务网关API限流规则",
@@ -8995,7 +9033,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间ID。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
+          "document": "<p>命名空间ID。该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/api/649/36096\">DescribeSimpleNamespaces</a> 的返回值中的 NamespaceId 字段来获取或通过登录<a href=\"https://console.cloud.tencent.com/tsf/resource?tab=namespace\">控制台</a>查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/36098\">CreateNamespace</a>创建新的命名空间。</p>",
           "example": "namespace-v3gw3lna",
           "member": "string",
           "name": "NamespaceId",
@@ -9004,7 +9042,7 @@
         },
         {
           "disabled": false,
-          "document": "微服务名称。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceName 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。",
+          "document": "<p>微服务名称。该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/product/649/36084\">DescribeMicroservices</a> 的返回值中的 MicroserviceName 字段来获取或通过登录<a href=\"https://console.cloud.tencent.com/tse/tsf-consul?tab=service\">控制台</a>查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/85860\">CreateMicroserviceWithDetailResp</a>创建新的微服务。</p>",
           "example": "provider-app",
           "member": "string",
           "name": "MicroserviceName",
@@ -9013,10 +9051,46 @@
         },
         {
           "disabled": false,
-          "document": "微服务备注信息，最多支持200个字符。",
+          "document": "<p>微服务备注信息，最多支持200个字符。</p>",
           "example": "This is desc",
           "member": "string",
           "name": "MicroserviceDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型，默认SDK</p><p>枚举值：</p><ul><li>SDK： sdk服务</li><li>MESH_EXTERNAL： mesh外部服务</li></ul>",
+          "example": "SDK",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名+端口，或者是纯域名方式，其他的不允许配置，不支持 IP</p>",
+          "example": "www.tsf.com",
+          "member": "string",
+          "name": "ServiceUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议类型</p>",
+          "example": "http",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务发现方式</p><p>枚举值：</p><ul><li>DNS： DNS方式</li></ul>",
+          "example": "DNS",
+          "member": "string",
+          "name": "ServiceDiscovery",
           "required": false,
           "type": "string"
         }
@@ -9028,7 +9102,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新增结果。\ntrue：操作成功。\nfalse：操作失败。",
+          "document": "<p>新增结果。<br>true：操作成功。<br>false：操作失败。</p>",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -9050,7 +9124,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间ID。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
+          "document": "<p>命名空间ID。该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/api/649/36096\">DescribeSimpleNamespaces</a> 的返回值中的 NamespaceId 字段来获取或通过登录<a href=\"https://console.cloud.tencent.com/tsf/resource?tab=namespace\">控制台</a>查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/36098\">CreateNamespace</a>创建新的命名空间。</p>",
           "example": "namespace-vw8oox6v",
           "member": "string",
           "name": "NamespaceId",
@@ -9059,7 +9133,7 @@
         },
         {
           "disabled": false,
-          "document": "微服务名称，最多支持128个字符。",
+          "document": "<p>微服务名称，最多支持128个字符。</p>",
           "example": "provider-demo",
           "member": "string",
           "name": "MicroserviceName",
@@ -9068,10 +9142,46 @@
         },
         {
           "disabled": false,
-          "document": "微服务描述信息，最多支持200个字符。",
+          "document": "<p>微服务描述信息，最多支持200个字符。</p>",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "MicroserviceDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型，默认SDK</p><p>枚举值：</p><ul><li>SDK： sdk服务</li><li>MESH_EXTERNAL： mesh外部服务</li></ul>",
+          "example": "SDK",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名+端口，或者是纯域名方式，其他的不允许配置，不支持 IP</p>",
+          "example": "www.tsf.com",
+          "member": "string",
+          "name": "ServiceUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议类型</p>",
+          "example": "http",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务发现方式</p><p>枚举值：</p><ul><li>DNS： DNS方式</li></ul>",
+          "example": "DNS",
+          "member": "string",
+          "name": "ServiceDiscovery",
           "required": false,
           "type": "string"
         }
@@ -9083,7 +9193,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务ID。",
+          "document": "<p>微服务ID。</p>",
           "example": "ms-vwdjqqow",
           "member": "string",
           "name": "Result",
@@ -11045,7 +11155,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "application-9yn765ea",
           "member": "string",
           "name": "ApplicationId",
@@ -11054,7 +11164,7 @@
         },
         {
           "disabled": false,
-          "document": "可观测配置",
+          "document": "<p>可观测配置</p>",
           "example": "无",
           "member": "ContainerGroupObservabilityConfig",
           "name": "ObservabilityConfig",
@@ -11063,7 +11173,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-23iwxs1y",
           "member": "string",
           "name": "ClusterId",
@@ -11072,7 +11182,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组ID，分组唯一标识",
+          "document": "<p>部署组ID，分组唯一标识</p>",
           "example": "group-zvwpn3wy",
           "member": "string",
           "name": "GroupId",
@@ -11081,7 +11191,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的环境变量参数",
+          "document": "<p>业务容器的环境变量参数</p>",
           "example": "无",
           "member": "Env",
           "name": "Envs",
@@ -11090,7 +11200,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的挂载信息",
+          "document": "<p>业务容器的挂载信息</p>",
           "example": "无",
           "member": "VolumeMountInfo",
           "name": "VolumeMountInfoList",
@@ -11099,7 +11209,7 @@
         },
         {
           "disabled": false,
-          "document": "业务主容器生命周期钩子列表",
+          "document": "<p>业务主容器生命周期钩子列表</p>",
           "example": "无",
           "member": "LifeCycleHook",
           "name": "LifeCycleHookList",
@@ -11108,7 +11218,7 @@
         },
         {
           "disabled": false,
-          "document": "附属容器列表",
+          "document": "<p>附属容器列表</p>",
           "example": "无",
           "member": "ContainerInfo",
           "name": "AdditionalContainerList",
@@ -11117,7 +11227,7 @@
         },
         {
           "disabled": false,
-          "document": "容器卷信息",
+          "document": "<p>容器卷信息</p>",
           "example": "无",
           "member": "VolumeInfo",
           "name": "VolumeInfoList",
@@ -11126,7 +11236,7 @@
         },
         {
           "disabled": false,
-          "document": "Service访问配置列表",
+          "document": "<p>Service访问配置列表</p>",
           "example": "无",
           "member": "ServiceSetting",
           "name": "ServiceSettingList",
@@ -11135,7 +11245,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "consumer app",
           "member": "string",
           "name": "Alias",
@@ -11144,7 +11254,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组名称",
+          "document": "<p>部署组名称</p>",
           "example": "consumer-app",
           "member": "string",
           "name": "GroupName",
@@ -11153,7 +11263,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -11162,7 +11272,7 @@
         },
         {
           "disabled": false,
-          "document": "容器类型",
+          "document": "<p>容器类型</p>",
           "example": "Deployment",
           "member": "string",
           "name": "ContainerKind",
@@ -11171,7 +11281,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的 镜像Server ccr.ccs.tencentyun.com",
+          "document": "<p>业务容器的 镜像Server ccr.ccs.tencentyun.com</p>",
           "example": "ccr.ccs.tencentyun.com",
           "member": "string",
           "name": "Server",
@@ -11180,7 +11290,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的镜像名",
+          "document": "<p>业务容器的镜像名</p>",
           "example": "tsf_700001025656/test-sts-1",
           "member": "string",
           "name": "RepoName",
@@ -11189,7 +11299,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库类型",
+          "document": "<p>仓库类型</p>",
           "example": "personal",
           "member": "string",
           "name": "RepoType",
@@ -11198,7 +11308,7 @@
         },
         {
           "disabled": false,
-          "document": "TCR仓库信息",
+          "document": "<p>TCR仓库信息</p>",
           "example": "无",
           "member": "TcrRepoInfo",
           "name": "TcrRepoInfo",
@@ -11207,7 +11317,7 @@
         },
         {
           "disabled": false,
-          "document": "容器访问凭证名称",
+          "document": "<p>容器访问凭证名称</p>",
           "example": "qcloudregistry",
           "member": "string",
           "name": "SecretName",
@@ -11216,7 +11326,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的镜像版本号",
+          "document": "<p>业务容器的镜像版本号</p>",
           "example": "v1",
           "member": "string",
           "name": "TagName",
@@ -11225,7 +11335,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查",
+          "document": "<p>健康检查</p>",
           "example": "无",
           "member": "HealthCheckSettings",
           "name": "HealthCheckSettings",
@@ -11234,7 +11344,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的 cpu  request",
+          "document": "<p>业务容器的 cpu  request</p>",
           "example": "0.1",
           "member": "string",
           "name": "CpuRequest",
@@ -11243,7 +11353,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的 cpu limit",
+          "document": "<p>业务容器的 cpu limit</p>",
           "example": "0.5",
           "member": "string",
           "name": "CpuLimit",
@@ -11252,7 +11362,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的 mem request",
+          "document": "<p>业务容器的 mem request</p>",
           "example": "1024",
           "member": "string",
           "name": "MemRequest",
@@ -11261,7 +11371,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的 mem limit",
+          "document": "<p>业务容器的 mem limit</p>",
           "example": "200",
           "member": "string",
           "name": "MemLimit",
@@ -11270,7 +11380,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的 jvm 参数",
+          "document": "<p>业务容器的 jvm 参数</p>",
           "example": "-Xms128m -Xmx512m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m",
           "member": "string",
           "name": "JvmOpts",
@@ -11279,7 +11389,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为初始化容器 业务主容器不能为初始化容",
+          "document": "<p>是否为初始化容器 业务主容器不能为初始化容</p>",
           "example": "false",
           "member": "bool",
           "name": "InitContainerEnable",
@@ -11288,7 +11398,7 @@
         },
         {
           "disabled": false,
-          "document": "业务主容器是否为特权容器",
+          "document": "<p>业务主容器是否为特权容器</p>",
           "example": "false",
           "member": "bool",
           "name": "PrivilegeContainerEnable",
@@ -11297,7 +11407,7 @@
         },
         {
           "disabled": false,
-          "document": "业务主容器运行命令(转base64)",
+          "document": "<p>业务主容器运行命令(转base64)</p>",
           "example": "/bin/sh",
           "member": "string",
           "name": "RunCommand",
@@ -11306,7 +11416,7 @@
         },
         {
           "disabled": false,
-          "document": "业务主容器运行参数(转base64)",
+          "document": "<p>业务主容器运行参数(转base64)</p>",
           "example": "-c\\nwhile true; do echo hello; sleep 10; done",
           "member": "string",
           "name": "RunArg",
@@ -11315,7 +11425,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数量",
+          "document": "<p>实例数量</p>",
           "example": "1",
           "member": "int64",
           "name": "InstanceNum",
@@ -11324,7 +11434,7 @@
         },
         {
           "disabled": false,
-          "document": "调度策略",
+          "document": "<p>调度策略</p>",
           "example": "无",
           "member": "SchedulingStrategy",
           "name": "SchedulingStrategy",
@@ -11333,7 +11443,7 @@
         },
         {
           "disabled": false,
-          "document": "重启策略",
+          "document": "<p>重启策略</p>",
           "example": "Always",
           "member": "string",
           "name": "RestartPolicy",
@@ -11342,7 +11452,7 @@
         },
         {
           "disabled": false,
-          "document": "服务治理配置",
+          "document": "<p>服务治理配置</p>",
           "example": "NULL",
           "member": "string",
           "name": "ServiceSpecEncode",
@@ -11351,7 +11461,7 @@
         },
         {
           "disabled": false,
-          "document": "istio容器的 mem Request",
+          "document": "<p>istio容器的 mem Request</p>",
           "example": "200",
           "member": "string",
           "name": "IstioMemRequest",
@@ -11360,7 +11470,7 @@
         },
         {
           "disabled": false,
-          "document": " istio容器的 cpu Request",
+          "document": "<p>istio容器的 cpu Request</p>",
           "example": "0.4",
           "member": "string",
           "name": "IstioCpuRequest",
@@ -11369,7 +11479,7 @@
         },
         {
           "disabled": false,
-          "document": "istio容器的 mem Limit",
+          "document": "<p>istio容器的 mem Limit</p>",
           "example": "1024",
           "member": "string",
           "name": "IstioMemLimit",
@@ -11378,7 +11488,7 @@
         },
         {
           "disabled": false,
-          "document": "istio容器的 cpu Limit",
+          "document": "<p>istio容器的 cpu Limit</p>",
           "example": "1",
           "member": "string",
           "name": "IstioCpuLimit",
@@ -11387,7 +11497,7 @@
         },
         {
           "disabled": false,
-          "document": "服务治理配置",
+          "document": "<p>服务治理配置</p>",
           "example": "无",
           "member": "ContainerGroupServiceGovernanceConfig",
           "name": "ServiceGovernanceConfig",
@@ -11396,7 +11506,7 @@
         },
         {
           "disabled": false,
-          "document": "agent容器的 mem Request",
+          "document": "<p>agent容器的 mem Request</p>",
           "example": "200",
           "member": "string",
           "name": "AgentMemRequest",
@@ -11405,7 +11515,7 @@
         },
         {
           "disabled": false,
-          "document": "agent容器的 cpu Request",
+          "document": "<p>agent容器的 cpu Request</p>",
           "example": "0.1",
           "member": "string",
           "name": "AgentCpuRequest",
@@ -11414,7 +11524,7 @@
         },
         {
           "disabled": false,
-          "document": "agent容器的 mem Limit",
+          "document": "<p>agent容器的 mem Limit</p>",
           "example": "200",
           "member": "string",
           "name": "AgentMemLimit",
@@ -11423,7 +11533,7 @@
         },
         {
           "disabled": false,
-          "document": "agent容器的 cpu Limit",
+          "document": "<p>agent容器的 cpu Limit</p>",
           "example": "1",
           "member": "string",
           "name": "AgentCpuLimit",
@@ -11432,7 +11542,7 @@
         },
         {
           "disabled": false,
-          "document": "发布策略(0表示快速更新，1表示滚动更新。默认值为0)",
+          "document": "<p>发布策略(0表示快速更新，1表示滚动更新。默认值为0)</p>",
           "example": "0",
           "member": "int64",
           "name": "UpdateType",
@@ -11441,7 +11551,7 @@
         },
         {
           "disabled": false,
-          "document": "更新间隔,单位秒",
+          "document": "<p>更新间隔,单位秒</p>",
           "example": "10",
           "member": "int64",
           "name": "UpdateIvl",
@@ -11450,7 +11560,7 @@
         },
         {
           "disabled": false,
-          "document": "对应更新策略和策略配置参数",
+          "document": "<p>对应更新策略和策略配置参数</p>",
           "example": "25%",
           "member": "string",
           "name": "MaxSurge",
@@ -11459,7 +11569,7 @@
         },
         {
           "disabled": false,
-          "document": "对应更新策略和策略配置参数",
+          "document": "<p>对应更新策略和策略配置参数</p>",
           "example": "0",
           "member": "string",
           "name": "MaxUnavailable",
@@ -11468,7 +11578,7 @@
         },
         {
           "disabled": false,
-          "document": "预热参数配置",
+          "document": "<p>预热参数配置</p>",
           "example": "无",
           "member": "WarmupSetting",
           "name": "WarmupSetting",
@@ -11477,7 +11587,7 @@
         },
         {
           "disabled": false,
-          "document": "配置模版ID",
+          "document": "<p>配置模版ID</p>",
           "example": "template-id",
           "member": "string",
           "name": "ConfigTemplateId",
@@ -11486,7 +11596,7 @@
         },
         {
           "disabled": false,
-          "document": "配置模版Version",
+          "document": "<p>配置模版Version</p>",
           "example": "0",
           "member": "int64",
           "name": "ConfigTemplateVersion",
@@ -11495,7 +11605,7 @@
         },
         {
           "disabled": false,
-          "document": "是否清除数据卷信息",
+          "document": "<p>是否清除数据卷信息</p>",
           "example": "false",
           "member": "bool",
           "name": "VolumeClean",
@@ -11504,7 +11614,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间Id",
+          "document": "<p>命名空间Id</p>",
           "example": "namespace-xx",
           "member": "string",
           "name": "NamespaceId",
@@ -11513,7 +11623,7 @@
         },
         {
           "disabled": false,
-          "document": "是否部署agent容器",
+          "document": "<p>是否部署agent容器</p>",
           "example": "true",
           "member": "bool",
           "name": "DeployAgent",
@@ -11522,7 +11632,7 @@
         },
         {
           "disabled": false,
-          "document": "javaagent信息: SERVICE_AGENT/OT_AGENT",
+          "document": "<p>javaagent信息: SERVICE_AGENT/OT_AGENT</p>",
           "example": "无",
           "member": "AgentProfile",
           "name": "AgentProfileList",
@@ -11531,7 +11641,7 @@
         },
         {
           "disabled": false,
-          "document": "是否清除Service信息",
+          "document": "<p>是否清除Service信息</p>",
           "example": "false",
           "member": "bool",
           "name": "ServiceClean",
@@ -11540,7 +11650,7 @@
         },
         {
           "disabled": false,
-          "document": "是否清除Env信息",
+          "document": "<p>是否清除Env信息</p>",
           "example": "false",
           "member": "bool",
           "name": "EnvClean",
@@ -11549,7 +11659,7 @@
         },
         {
           "disabled": false,
-          "document": "本次部署的描述信息",
+          "document": "<p>本次部署的描述信息</p>",
           "example": "update image to v1",
           "member": "string",
           "name": "DeployDesc",
@@ -11558,7 +11668,7 @@
         },
         {
           "disabled": false,
-          "document": "k8s命名空间名称",
+          "document": "<p>k8s命名空间名称</p>",
           "example": "consumer",
           "member": "string",
           "name": "K8sNamespaceName",
@@ -11567,7 +11677,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用静态IP",
+          "document": "<p>是否启用静态IP</p>",
           "example": "false",
           "member": "bool",
           "name": "StaticIpEnabled",
@@ -11576,7 +11686,7 @@
         },
         {
           "disabled": false,
-          "document": "启动策略[OrderedReady/Parallel]",
+          "document": "<p>启动策略[OrderedReady/Parallel]</p>",
           "example": "OrderedReady",
           "member": "string",
           "name": "PodManagementPolicyType",
@@ -11585,7 +11695,7 @@
         },
         {
           "disabled": false,
-          "document": "滚动更新分区序号",
+          "document": "<p>滚动更新分区序号</p>",
           "example": "0",
           "member": "int64",
           "name": "Partition",
@@ -11594,10 +11704,19 @@
         },
         {
           "disabled": false,
-          "document": "是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数",
+          "document": "<p>是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数</p>",
           "example": "false",
           "member": "bool",
           "name": "IncrementalDeployment",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否不立即启动</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "DoNotStart",
           "required": false,
           "type": "bool"
         }
@@ -11635,7 +11754,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署容器应用是否成功。\ntrue：成功。\nfalse：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署容器应用是否成功。<br>true：成功。<br>false：失败。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DeployContainerApplicationResp",
           "name": "Result",
@@ -13798,7 +13917,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分组所属【应用ID】，可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
+          "document": "<p>分组所属【应用ID】，可通过调用<a href=\"https://cloud.tencent.com/document/product/649/36090\">DescribeApplications</a>查询已创建的应用列表或登录<a href=\"https://console.cloud.tencent.com/tsf/app?rid=1\">控制台</a>进行查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/36094\">CreateApplication</a>创建新的应用。</p>",
           "example": "application-zvw6zp9a",
           "member": "string",
           "name": "ApplicationId",
@@ -13807,7 +13926,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索字段，模糊搜索groupName字段",
+          "document": "<p>搜索字段，模糊搜索groupName字段</p>",
           "example": "foo-group",
           "member": "string",
           "name": "SearchWord",
@@ -13816,7 +13935,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，默认为 createTime字段，支持id， name， createTime",
+          "document": "<p>排序字段，默认为 createTime字段，支持id， name， createTime</p>",
           "example": "id",
           "member": "string",
           "name": "OrderBy",
@@ -13825,7 +13944,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式，默认为1：倒序排序，0：正序，1：倒序",
+          "document": "<p>排序方式，默认为1：倒序排序，0：正序，1：倒序</p>",
           "example": "0",
           "member": "int64",
           "name": "OrderType",
@@ -13834,7 +13953,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，取值从0开始",
+          "document": "<p>偏移量，取值从0开始</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -13843,7 +13962,7 @@
         },
         {
           "disabled": false,
-          "document": "分页个数，默认为20， 取值应为1~50",
+          "document": "<p>分页个数，默认为20， 取值应为1~50</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -13852,7 +13971,7 @@
         },
         {
           "disabled": false,
-          "document": "分组所属【集群ID】，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=docker)进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。",
+          "document": "<p>分组所属【集群ID】，可通过调用<a href=\"https://cloud.tencent.com/document/product/649/85857\">DescribeClusters</a>查询已创建的集群列表或登录<a href=\"https://console.cloud.tencent.com/tsf/resource?rid=1&amp;tab=docker\">控制台</a>进行查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/36049\">CreateCluster</a>创建新的集群。</p>",
           "example": "cls-2nhp3g1i",
           "member": "string",
           "name": "ClusterId",
@@ -13861,12 +13980,21 @@
         },
         {
           "disabled": false,
-          "document": "分组所属【命名空间 ID】，可通过调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
+          "document": "<p>分组所属【命名空间 ID】，可通过调用<a href=\"https://cloud.tencent.com/document/product/649/36096\">DescribeSimpleNamespaces</a>查询已创建的命名空间列表或登录<a href=\"https://console.cloud.tencent.com/tsf/resource?rid=1&amp;tab=namespace\">控制台</a>进行查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/36098\">CreateNamespace</a>创建新的命名空间。</p>",
           "example": "namespace-byxwl4da",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署组ID列表</p>",
+          "example": "[\"group-nal9zmxa\"]",
+          "member": "string",
+          "name": "GroupIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -13876,7 +14004,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询的权限数据对象",
+          "document": "<p>查询的权限数据对象</p>",
           "example": "无",
           "member": "ContainGroupResult",
           "name": "Result",
@@ -14429,7 +14557,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分组ID",
+          "document": "<p>分组ID</p>",
           "example": "grp-nb08ur29",
           "member": "string",
           "name": "GroupId",
@@ -14438,7 +14566,7 @@
         },
         {
           "disabled": false,
-          "document": "翻页偏移量",
+          "document": "<p>翻页偏移量</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -14447,7 +14575,7 @@
         },
         {
           "disabled": false,
-          "document": "每页的记录数",
+          "document": "<p>每页的记录数</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -14456,7 +14584,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字，支持 API path",
+          "document": "<p>搜索关键字，支持 API path</p>",
           "example": "/swagger",
           "member": "string",
           "name": "SearchWord",
@@ -14465,7 +14593,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "<p>部署组ID</p>",
           "example": "group-yd3b588a",
           "member": "string",
           "name": "GatewayDeployGroupId",
@@ -14474,10 +14602,28 @@
         },
         {
           "disabled": false,
-          "document": "发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)",
+          "document": "<p>发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)</p>",
           "example": "released",
           "member": "string",
           "name": "ReleaseStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回扩展出参字段名</p>",
+          "example": "[\"ApiOnlineStatus\"]",
+          "member": "string",
+          "name": "ExtendFieldList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务接口状态</p><p>枚举值：</p><ul><li>ONLINE： 在线状态</li><li>OFFLINE： 离线状态</li><li>UNKNOWN： 未知</li><li>DELETED： 查询MS API不存在</li></ul>",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "ApiOnlineStatus",
           "required": false,
           "type": "string"
         }
@@ -14489,7 +14635,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "翻页结构",
+          "document": "<p>翻页结构</p>",
           "example": "无",
           "member": "TsfPageApiDetailInfo",
           "name": "Result",
@@ -16328,7 +16474,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。",
+          "document": "<p>微服务ID。该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/product/649/36084\">DescribeMicroservices</a> 的返回值中的 MicroserviceId 字段来获取或通过登录<a href=\"https://console.cloud.tencent.com/tse/tsf-consul?tab=service\">控制台</a>查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/85860\">CreateMicroserviceWithDetailResp</a>创建新的微服务。</p>",
           "example": "ms-y5w8n5e9",
           "member": "string",
           "name": "MicroserviceId",
@@ -16337,7 +16483,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字。",
+          "document": "<p>搜索关键字。</p>",
           "example": "echo-feign-url",
           "member": "string",
           "name": "SearchWord",
@@ -16346,7 +16492,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为50。",
+          "document": "<p>返回数量，默认为20，最大值为50。</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -16355,12 +16501,21 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>批量查询API参数</p>",
+          "example": "无",
+          "member": "ApiParam",
+          "name": "BatchApiParamList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -16370,7 +16525,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务API列表。",
+          "document": "<p>微服务API列表。</p>",
           "example": "无",
           "member": "TsfApiListResponse",
           "name": "Result",
@@ -19233,7 +19388,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置中心类型[注册中心Registration、配置中心Configuration]",
+          "document": "<p>配置中心类型[注册中心Registration、配置中心Configuration]</p>",
           "example": "Registration",
           "member": "string",
           "name": "CenterType",
@@ -19244,7 +19399,7 @@
         },
         {
           "disabled": false,
-          "document": "实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取",
+          "document": "<p>实例id，通过<a href=\"https://console.cloud.tencent.com/tse/governance\">北极星控制台</a>获取</p>",
           "example": "ins-6a79x94v",
           "member": "string",
           "name": "InstanceId",
@@ -19255,7 +19410,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，例如北极星Polaris",
+          "document": "<p>实例类型，例如北极星Polaris</p>",
           "example": "Polaris",
           "member": "string",
           "name": "InstanceType",
@@ -19266,7 +19421,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "Polaris-Config",
           "member": "string",
           "name": "InstanceName",
@@ -19277,7 +19432,7 @@
         },
         {
           "disabled": false,
-          "document": "实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取",
+          "document": "<p>实例地域id，通过<a href=\"https://console.cloud.tencent.com/tse/governance\">北极星控制台</a>获取</p>",
           "example": "7",
           "member": "string",
           "name": "RegionId",
@@ -19288,7 +19443,7 @@
         },
         {
           "disabled": false,
-          "document": "实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取",
+          "document": "<p>实例命名空间ID，通过<a href=\"https://console.cloud.tencent.com/tse/governance\">北极星控制台</a>获取</p>",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "InstanceNamespaceId",
@@ -19299,7 +19454,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署组Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "group-6a73eg5v",
           "member": "string",
           "name": "GroupId",
@@ -19310,7 +19465,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1757324401000",
           "member": "uint64",
           "name": "CreateTime",
@@ -19321,7 +19476,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1757324863000",
           "member": "uint64",
           "name": "UpdateTime",
@@ -19329,6 +19484,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档ID</p>",
+          "example": "application-6a73eg5v",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -20019,7 +20185,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网关插件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>网关插件id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pgn-004mb1lw",
           "member": "string",
           "name": "Id",
@@ -20029,7 +20195,7 @@
         },
         {
           "disabled": false,
-          "document": "插件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>插件名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "plugin_tag",
           "member": "string",
           "name": "Name",
@@ -20039,7 +20205,7 @@
         },
         {
           "disabled": false,
-          "document": "插件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>插件类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Tag",
           "member": "string",
           "name": "Type",
@@ -20049,7 +20215,7 @@
         },
         {
           "disabled": false,
-          "document": "插件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>插件描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "This is desc",
           "member": "string",
           "name": "Description",
@@ -20059,7 +20225,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-12-19 21:00:00",
           "member": "string",
           "name": "CreatedTime",
@@ -20069,7 +20235,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-12-19 21:00:00",
           "member": "string",
           "name": "UpdatedTime",
@@ -20079,7 +20245,7 @@
         },
         {
           "disabled": false,
-          "document": "发布状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>发布状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "released",
           "member": "string",
           "name": "Status",
@@ -20089,7 +20255,7 @@
         },
         {
           "disabled": false,
-          "document": "是否禁用删除",
+          "document": "<p>是否禁用删除</p>",
           "example": "true",
           "member": "bool",
           "name": "DeleteDisabled",
@@ -20099,12 +20265,22 @@
         },
         {
           "disabled": false,
-          "document": "禁用原因",
+          "document": "<p>禁用原因</p>",
           "example": "已存在绑定资源,请解绑分组或API后重试",
           "member": "string",
           "name": "DeleteDisabledReason",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否不可绑定</p><p>枚举值：</p><ul><li>true： 禁止绑定</li><li>false： 允许绑定</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "BindDisabled",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -24602,7 +24778,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "API 请求路径",
+          "document": "<p>API 请求路径</p>",
           "example": "/echo",
           "member": "string",
           "name": "Path",
@@ -24612,7 +24788,7 @@
         },
         {
           "disabled": false,
-          "document": "请求方法",
+          "document": "<p>请求方法</p>",
           "example": "GET",
           "member": "string",
           "name": "Method",
@@ -24622,7 +24798,7 @@
         },
         {
           "disabled": false,
-          "document": "方法描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>方法描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "This is desc",
           "member": "string",
           "name": "Description",
@@ -24632,13 +24808,33 @@
         },
         {
           "disabled": false,
-          "document": "API状态 0:离线 1:在线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>API状态 0:离线 1:在线</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>API ID</p>",
+          "example": "msapi-a27424jv",
+          "member": "string",
+          "name": "ApiId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>API来源</p><p>枚举值：</p><ul><li>FROM_CONSUL： 服务注册</li><li>FROM_MANUAL： 手动录入</li></ul>",
+          "example": "FROM_CONSUL",
+          "member": "string",
+          "name": "SrcTypeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -29089,7 +29285,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总条数",
+          "document": "<p>总条数</p>",
           "example": "21",
           "member": "int64",
           "name": "TotalCount",
@@ -29099,7 +29295,7 @@
         },
         {
           "disabled": false,
-          "document": "业务日志列表",
+          "document": "<p>业务日志列表</p>",
           "example": "无",
           "member": "BusinessLogV2",
           "name": "Content",
@@ -29109,7 +29305,7 @@
         },
         {
           "disabled": false,
-          "document": "游标ID",
+          "document": "<p>游标ID</p>",
           "example": "scroll-6a79x94v",
           "member": "string",
           "name": "ScrollId",
@@ -29119,7 +29315,7 @@
         },
         {
           "disabled": false,
-          "document": "查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常",
+          "document": "<p>查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常</p>",
           "example": "SUCCESS",
           "member": "string",
           "name": "Status",
@@ -29129,12 +29325,22 @@
         },
         {
           "disabled": false,
-          "document": "查询es时，使用searchAfter返回的游标",
+          "document": "<p>查询es时，使用searchAfter返回的游标</p>",
           "example": "[\"1463538857\", \"654323\"]",
           "member": "string",
           "name": "SearchAfter",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否压缩</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Compressed",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -30624,7 +30830,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
+          "document": "<p>部署组ID，可通过调用<a href=\"https://cloud.tencent.com/document/api/649/36068\">DescribeContainerGroups</a>查询已创建的部署组列表或登录控制台进行查看；也可以调用<a href=\"https://cloud.tencent.com/document/api/649/36075\">CreateContainGroup</a>创建新的部署组。</p>",
           "example": "group-gyqnd7py",
           "member": "string",
           "name": "GroupId",
@@ -30633,7 +30839,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启健康检查",
+          "document": "<p>是否开启健康检查</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableHealthCheck",
@@ -30642,12 +30848,21 @@
         },
         {
           "disabled": false,
-          "document": "健康检查配置",
+          "document": "<p>健康检查配置</p>",
           "example": "无",
           "member": "HealthCheckSettings",
           "name": "HealthCheckSettings",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动重启</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "LivenessAutoRestart",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -30657,7 +30872,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "更新健康检查配置操作是否成功。\ntrue：操作成功。\nfalse：操作失败。",
+          "document": "<p>更新健康检查配置操作是否成功。<br>true：操作成功。<br>false：操作失败。</p>",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -30839,7 +31054,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "<p>部署组ID</p>",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -30849,7 +31064,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组名称",
+          "document": "<p>部署组名称</p>",
           "example": "app-group",
           "member": "string",
           "name": "GroupName",
@@ -30859,7 +31074,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组状态",
+          "document": "<p>部署组状态</p>",
           "example": "running",
           "member": "string",
           "name": "GroupStatus",
@@ -30869,7 +31084,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>程序包ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pkg-6a79x94v",
           "member": "string",
           "name": "PackageId",
@@ -30879,7 +31094,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>程序包名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "java-demo.jar",
           "member": "string",
           "name": "PackageName",
@@ -30889,7 +31104,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>程序包版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "latest",
           "member": "string",
           "name": "PackageVersion",
@@ -30899,7 +31114,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-6a79x94v",
           "member": "string",
           "name": "ClusterId",
@@ -30909,7 +31124,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "k8s-cls",
           "member": "string",
           "name": "ClusterName",
@@ -30919,7 +31134,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间ID",
+          "document": "<p>命名空间ID</p>",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
@@ -30929,7 +31144,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间名称",
+          "document": "<p>命名空间名称</p>",
           "example": "default",
           "member": "string",
           "name": "NamespaceName",
@@ -30939,7 +31154,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -30949,7 +31164,7 @@
         },
         {
           "disabled": false,
-          "document": "应用名称",
+          "document": "<p>应用名称</p>",
           "example": "app-java",
           "member": "string",
           "name": "ApplicationName",
@@ -30959,7 +31174,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组机器数目",
+          "document": "<p>部署组机器数目</p>",
           "example": "3",
           "member": "int64",
           "name": "InstanceCount",
@@ -30969,7 +31184,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组运行中机器数目",
+          "document": "<p>部署组运行中机器数目</p>",
           "example": "3",
           "member": "int64",
           "name": "RunInstanceCount",
@@ -30979,7 +31194,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组启动参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署组启动参数信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-Xms256m -Xmx1024m",
           "member": "string",
           "name": "StartupParameters",
@@ -30989,7 +31204,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组创建时间",
+          "document": "<p>部署组创建时间</p>",
           "example": "2020-12-12 11:34:56",
           "member": "string",
           "name": "CreateTime",
@@ -30999,7 +31214,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组更新时间",
+          "document": "<p>部署组更新时间</p>",
           "example": "1677830374",
           "member": "string",
           "name": "UpdateTime",
@@ -31009,7 +31224,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组停止机器数目",
+          "document": "<p>部署组停止机器数目</p>",
           "example": "0",
           "member": "int64",
           "name": "OffInstanceCount",
@@ -31019,7 +31234,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署组描述信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "this is a desc",
           "member": "string",
           "name": "GroupDesc",
@@ -31029,8 +31244,8 @@
         },
         {
           "disabled": false,
-          "document": "微服务类型",
-          "example": "DEF",
+          "document": "<p>微服务类型</p>",
+          "example": "D E F",
           "member": "string",
           "name": "MicroserviceType",
           "output_required": true,
@@ -31039,7 +31254,7 @@
         },
         {
           "disabled": false,
-          "document": "应用类型",
+          "document": "<p>应用类型</p>",
           "example": "C",
           "member": "string",
           "name": "ApplicationType",
@@ -31049,7 +31264,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组资源类型",
+          "document": "<p>部署组资源类型</p>",
           "example": "C",
           "member": "string",
           "name": "GroupResourceType",
@@ -31059,7 +31274,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组更新时间戳",
+          "document": "<p>部署组更新时间戳</p>",
           "example": "1562739472",
           "member": "int64",
           "name": "UpdatedTime",
@@ -31069,7 +31284,7 @@
         },
         {
           "disabled": false,
-          "document": "部署应用描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署应用描述信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "this is a desc",
           "member": "string",
           "name": "DeployDesc",
@@ -31079,7 +31294,7 @@
         },
         {
           "disabled": false,
-          "document": "滚动发布的更新方式",
+          "document": "<p>滚动发布的更新方式</p>",
           "example": "1",
           "member": "uint64",
           "name": "UpdateType",
@@ -31089,7 +31304,7 @@
         },
         {
           "disabled": false,
-          "document": "发布是否启用beta批次",
+          "document": "<p>发布是否启用beta批次</p>",
           "example": "false",
           "member": "bool",
           "name": "DeployBetaEnable",
@@ -31099,8 +31314,8 @@
         },
         {
           "disabled": false,
-          "document": "滚动发布的批次比例列表",
-          "example": "0.25",
+          "document": "<p>滚动发布的批次比例列表</p>",
+          "example": "[0.25]",
           "member": "float",
           "name": "DeployBatch",
           "output_required": true,
@@ -31109,7 +31324,7 @@
         },
         {
           "disabled": false,
-          "document": "滚动发布的批次执行方式",
+          "document": "<p>滚动发布的批次执行方式</p>",
           "example": "auto",
           "member": "string",
           "name": "DeployExeMode",
@@ -31119,7 +31334,7 @@
         },
         {
           "disabled": false,
-          "document": "滚动发布的每个批次的等待时间",
+          "document": "<p>滚动发布的每个批次的等待时间</p>",
           "example": "30",
           "member": "uint64",
           "name": "DeployWaitTime",
@@ -31129,7 +31344,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启了健康检查",
+          "document": "<p>是否开启了健康检查</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableHealthCheck",
@@ -31139,7 +31354,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>健康检查配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HealthCheckSettings",
           "name": "HealthCheckSettings",
@@ -31149,7 +31364,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>程序包类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "jar",
           "member": "string",
           "name": "PackageType",
@@ -31159,7 +31374,7 @@
         },
         {
           "disabled": false,
-          "document": "启动脚本 base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>启动脚本 base64编码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "this is a script",
           "member": "string",
           "name": "StartScript",
@@ -31169,7 +31384,7 @@
         },
         {
           "disabled": false,
-          "document": "停止脚本 base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>停止脚本 base64编码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "this is a script",
           "member": "string",
           "name": "StopScript",
@@ -31179,7 +31394,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署组备注</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
           "member": "string",
           "name": "Alias",
@@ -31189,8 +31404,8 @@
         },
         {
           "disabled": false,
-          "document": "javaagent信息",
-          "example": "SERVICE_AGENT/OT_AGENT",
+          "document": "<p>javaagent信息</p>",
+          "example": "无",
           "member": "AgentProfile",
           "name": "AgentProfileList",
           "output_required": true,
@@ -31199,7 +31414,7 @@
         },
         {
           "disabled": false,
-          "document": "预热属性配置",
+          "document": "<p>预热属性配置</p>",
           "example": "无",
           "member": "WarmupSetting",
           "name": "WarmupSetting",
@@ -31209,7 +31424,7 @@
         },
         {
           "disabled": false,
-          "document": "Envoy网关配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Envoy网关配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GatewayConfig",
           "name": "GatewayConfig",
@@ -31219,7 +31434,7 @@
         },
         {
           "disabled": false,
-          "document": "批次是否开启健康检查",
+          "document": "<p>批次是否开启健康检查</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableBatchHealthCheck",
@@ -31229,7 +31444,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启cgroup控制内存cpu",
+          "document": "<p>是否开启cgroup控制内存cpu</p>",
           "example": "false",
           "member": "bool",
           "name": "FilebeatCgroupEnable",
@@ -31239,7 +31454,7 @@
         },
         {
           "disabled": false,
-          "document": "filebeat使用cpu上限",
+          "document": "<p>filebeat使用cpu上限</p>",
           "example": "0.1",
           "member": "float",
           "name": "FilebeatMaxCpu",
@@ -31249,7 +31464,7 @@
         },
         {
           "disabled": false,
-          "document": "filebeat使用内存上限",
+          "document": "<p>filebeat使用内存上限</p>",
           "example": "100",
           "member": "int64",
           "name": "FilebeatMaxMem",
@@ -31259,7 +31474,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库ID",
+          "document": "<p>仓库ID</p>",
           "example": "application-xxxx",
           "member": "string",
           "name": "RepositoryId",
@@ -31269,7 +31484,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库名称",
+          "document": "<p>仓库名称</p>",
           "example": "仓库名",
           "member": "string",
           "name": "RepositoryName",
@@ -31279,12 +31494,22 @@
         },
         {
           "disabled": false,
-          "document": "仓库类型",
+          "document": "<p>仓库类型</p>",
           "example": "企业",
           "member": "string",
           "name": "RepositoryType",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动重启</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "LivenessAutoRestart",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

@@ -521,7 +521,7 @@
     "VerifyBizLicenseEnterprise3": {
       "document": "提供比对核验企业名称、统一社会信用代码、法人姓名一致性的服务，助力快速核验企业资质。\n注意：核验准确率在99%以上，存在个别特殊情况下核验结果不准确，请选用前知悉。",
       "input": "VerifyBizLicenseEnterprise3Request",
-      "name": "营业执照核验（企业二|三要素）",
+      "name": "营业执照核验（企业二或三要素）",
       "output": "VerifyBizLicenseEnterprise3Response",
       "status": "online"
     },
