@@ -168,6 +168,14 @@
         "title": "查询集群队列概览信息列表"
       }
     ],
+    "DescribeWorkspaceFamilies": [
+      {
+        "document": "查询HYBRID（算力互联）类别下有哪些规格族",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaceFamilies\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"workspace-class\",\n            \"Values\": [\n                \"HYBRID\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"WorkspaceFamilySet\": [\n            {\n                \"SpaceFamily\": \"64DZZ\",\n                \"SpaceClass\": \"HYBRID\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询HYBRID类别的规格族"
+      }
+    ],
     "DescribeWorkspaces": [
       {
         "document": "查看在上海8区的实例信息,限制返回结果最多为一项",

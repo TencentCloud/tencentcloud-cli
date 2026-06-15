@@ -34,6 +34,7 @@ Output:
                     "系统维护"
                 ],
                 "CreatedTime": "2025-07-15T00:11:18+08:00",
+                "AnnouncementTime": "2025-07-15T00:11:18+08:00",
                 "Read": false
             }
         ]

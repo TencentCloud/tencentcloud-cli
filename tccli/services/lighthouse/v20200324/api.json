@@ -2028,7 +2028,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "公告ID。",
+          "document": "<p>公告ID。</p>",
           "example": "lhanno-flew32s8",
           "member": "string",
           "name": "AnnouncementId",
@@ -2038,7 +2038,7 @@
         },
         {
           "disabled": false,
-          "document": "公告标题。",
+          "document": "<p>公告标题。</p>",
           "example": "游戏更新公告",
           "member": "string",
           "name": "Title",
@@ -2048,7 +2048,7 @@
         },
         {
           "disabled": false,
-          "document": "公告内容。",
+          "document": "<p>公告内容。</p>",
           "example": "服务已恢复，给您带来不便深表歉意。",
           "member": "string",
           "name": "Content",
@@ -2058,7 +2058,7 @@
         },
         {
           "disabled": false,
-          "document": "公告类型。\n取值：RECENT - 近期公告。UPDATE - 更新公告。",
+          "document": "<p>公告类型。<br>取值：RECENT - 近期公告。UPDATE - 更新公告。</p>",
           "example": "RECENT",
           "member": "string",
           "name": "AnnouncementType",
@@ -2068,7 +2068,7 @@
         },
         {
           "disabled": false,
-          "document": "公告状态。\n取值：ONLINE - 在线。",
+          "document": "<p>公告状态。<br>取值：ONLINE - 在线。</p>",
           "example": "ONLINE",
           "member": "string",
           "name": "AnnouncementState",
@@ -2078,7 +2078,7 @@
         },
         {
           "disabled": false,
-          "document": "公告标签列表。",
+          "document": "<p>公告标签列表。</p>",
           "example": "[\"游戏更新\", \"系统维护\"]",
           "member": "string",
           "name": "AnnouncementTagSet",
@@ -2088,7 +2088,7 @@
         },
         {
           "disabled": false,
-          "document": "公告创建时间。",
+          "document": "<p>公告创建时间。</p>",
           "example": "2025-07-15T00:11:18+08:00",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -2098,12 +2098,42 @@
         },
         {
           "disabled": false,
-          "document": "公告是否已读。",
+          "document": "<p>公告是否已读。</p>",
           "example": "false",
           "member": "bool",
           "name": "Read",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公告关联的镜像ID列表</p>",
+          "example": "[\"lhbp-o2ra0y9l\"]",
+          "member": "string",
+          "name": "BlueprintIdSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公告关联的镜像名列表</p>",
+          "example": "[\"cs2_linux_ptero\"]",
+          "member": "string",
+          "name": "BlueprintNameSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公告时间</p>",
+          "example": "2025-09-23T10:50:09+08:00",
+          "member": "datetime_iso",
+          "name": "AnnouncementTime",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -6604,7 +6634,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "公告ID列表。可通过本接口返回值的AnnouncementSet获取。列表长度最大值为100。",
+          "document": "<p>公告ID列表。可通过本接口返回值的AnnouncementSet获取。列表长度最大值为100。</p>",
           "example": "[\"lhanno-e8f2lgwh\"]",
           "member": "string",
           "name": "AnnouncementIds",
@@ -6613,7 +6643,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>announcement-id</li>按照【公告ID】进行过滤，不支持同时指定 AnnouncementIds 参数。\n<br>类型：String\n<br>必选：否\n<li>blueprint-id</li>查询该镜像关联的公告。\n<br>类型：String\n<br>必选：否\n<li>announcement-type</li>按照【公告类型】进行过滤。\n<br>类型：String\n<br>必选：否\n<br>可选值：RECENT - 近期公告。UPDATE - 更新公告\n<li>display-area</li>按照【公告展示区域】进行过滤。\n<br>类型：String\n<br>必选：否\n<br>可选值: GAME_PORTAL - 游戏专区\n<br>每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。",
+          "document": "<p>过滤器列表。</p><li>announcement-id</li>按照【公告ID】进行过滤，不支持同时指定 AnnouncementIds 参数。<br>类型：String<br>必选：否<li>blueprint-id</li>查询该镜像关联的公告。不能和 blueprint-name 同时使用。<br>类型：String<br>必选：否<li>blueprint-name</li>查询该镜像名关联的公告。不能和 blueprint-id 同时使用。<br>类型：String<br>必选：否<li>announcement-type</li>按照【公告类型】进行过滤。<br>类型：String<br>必选：否<br>可选值：RECENT - 近期公告。UPDATE - 更新公告<li>display-area</li>按照【公告展示区域】进行过滤。<br>类型：String<br>必选：否<br>可选值: GAME_PORTAL - 游戏专区。NORMAL - 非游戏专区<br>每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -6622,7 +6652,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为 0。",
+          "document": "<p>偏移量，默认为 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -6631,7 +6661,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为 20，最大值为 100。",
+          "document": "<p>返回数量，默认为 20，最大值为 100。</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -6646,7 +6676,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "公告总数量。",
+          "document": "<p>公告总数量。</p>",
           "example": "15",
           "member": "int64",
           "name": "TotalCount",
@@ -6656,7 +6686,7 @@
         },
         {
           "disabled": false,
-          "document": "公告列表。",
+          "document": "<p>公告列表。</p>",
           "example": "无",
           "member": "Announcement",
           "name": "AnnouncementSet",

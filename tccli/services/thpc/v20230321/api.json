@@ -147,6 +147,13 @@
       "output": "DescribeQueuesResponse",
       "status": "online"
     },
+    "DescribeWorkspaceFamilies": {
+      "document": "本接口（DescribeWorkspaceFamilies）用于查询工作空间规格族列表，支持按工作空间类别（workspace-class）进行过滤。",
+      "input": "DescribeWorkspaceFamiliesRequest",
+      "name": "查询工作空间规格族列表",
+      "output": "DescribeWorkspaceFamiliesResponse",
+      "status": "online"
+    },
     "DescribeWorkspaces": {
       "document": "本接口（DescribeWorkspaces）用于查询工作空间列表。",
       "input": "DescribeWorkspacesRequest",
@@ -2526,6 +2533,53 @@
       ],
       "type": "object"
     },
+    "DescribeWorkspaceFamiliesRequest": {
+      "document": "DescribeWorkspaceFamilies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<ul><li><strong>workspace-class</strong><p style=\"padding-left: 30px;\">按照【<strong>工作空间类别</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选值：STANDARD | FABRIC | HYBRID</p></li></ul><p style=\"padding-left: 30px;\">每次请求的<code>Filters</code>的上限为10，<code>Filter.Values</code>的上限为5。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceFamiliesResponse": {
+      "document": "DescribeWorkspaceFamilies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间规格族列表",
+          "example": "无",
+          "member": "SpaceFamilyInfo",
+          "name": "WorkspaceFamilySet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规格族总数",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeWorkspacesRequest": {
       "document": "DescribeWorkspaces请求参数结构体",
       "members": [
@@ -4506,6 +4560,32 @@
         }
       ],
       "usage": "both"
+    },
+    "SpaceFamilyInfo": {
+      "document": "工作空间规格族信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间规格族名称</p>",
+          "example": "96A",
+          "member": "string",
+          "name": "SpaceFamily",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间类别。取值范围：<br><li>STANDARD：标准型<br></li><li>FABRIC：互联型<br></li><li>HYBRID：算力互联型<br></li></p>",
+          "example": "HYBRID",
+          "member": "string",
+          "name": "SpaceClass",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SpaceInfo": {
       "document": "描述工作空间的信息",
