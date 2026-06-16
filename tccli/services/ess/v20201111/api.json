@@ -266,6 +266,13 @@
       "output": "CreateFlowGroupByTemplatesResponse",
       "status": "online"
     },
+    "CreateFlowGroupReminds": {
+      "document": "指定需要批量催办的合同组签署流程ID，按合同组维度进行催办\n##### 需要符合以下条件的合同才可被催办：\n<ol>\n<li>发起合同时，**设置了经办人通知方式**</li>\n<li>子合同中当前状态为 **待签署、待填写** 的签署人是催办的对象</li>\n<li>**每个合同的每个签署方最多3次*</li>\n</ol>\n\n**注意**\n- 催办结果会以签署方维度列出（不同公司下的同个员工会被视为两个不同的签署方，同一人分别作为个人签署方与企业签署方也会被视为两个不同的签署方）\n- 合同组只支持短信方式催办\n\n##### 催办的效果：\n\n###### 效果\n\n\n\n\n\n<li>对方会收到如下的短信通知</li>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/3caf94b7f540fa5736270d38528d3a7b.png)\n\n\n\n注：`合同催办是白名单功能，请联系客户经理申请开白后使用`",
+      "input": "CreateFlowGroupRemindsRequest",
+      "name": "合同组催办",
+      "output": "CreateFlowGroupRemindsResponse",
+      "status": "online"
+    },
     "CreateFlowGroupSignReview": {
       "document": "提交合同组签署流程审批结果的适用场景包括：\n\n1. 在使用[通过多文件创建合同组签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowGroupByFiles)或[通过多模板创建合同组签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowGroupByTemplates)创建合同组签署流程时，若指定了以下参数 为true，则可以调用此接口提交企业内部签署审批结果。即使是自动签署也需要进行审核通过才会进行签署。\n  - [FlowGroupInfo.NeedSignReview](https://qian.tencent.com/developers/companyApis/dataTypes/#flowgroupinfo)\n  - [ApproverInfo.ApproverNeedSignReview](https://qian.tencent.com/developers/companyApis/dataTypes/#approverinfo)\n\n\n2. 同一合同组，同一签署人可以多次提交签署审批结果，签署时的最后一个“审批结果”有效。",
       "input": "CreateFlowGroupSignReviewRequest",
@@ -6645,6 +6652,61 @@
           "name": "WorkflowInstanceId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowGroupRemindsRequest": {
+      "document": "CreateFlowGroupReminds请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同(流程)组的合同组Id</p>",
+          "example": "yD3**************************jJK",
+          "member": "string",
+          "name": "FlowGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowGroupRemindsResponse": {
+      "document": "CreateFlowGroupReminds返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合同组催办接口返回的详细信息。</p>",
+          "example": "无",
+          "member": "RemindFlowGroupRecord",
+          "name": "RemindFlowGroupRecords",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -21843,6 +21905,108 @@
         }
       ],
       "usage": "in"
+    },
+    "RemindFlowGroupDetail": {
+      "document": "催办合同组下签署人维度详细信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>该签署人在合同中的签署顺序</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ApproverOrder",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>签署人对应的签署id</p>",
+          "example": "yD3P3UUckpzamzebUyAzME71xJv9X9gk",
+          "member": "string",
+          "name": "SignId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>催办状态</p><p>枚举值：</p><ul><li>0： 成功</li><li>2： 无需催办</li><li>5： 超过次数限制</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述当前催办结果的原因</p>",
+          "example": "催办成功（短信）",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RemindFlowGroupRecord": {
+      "document": "合同组催办接口返回的详细信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>对应签署人出现的合同列表</p>",
+          "example": "[\"yD3P3UUckpzamzeuU1UyAzME71m7YVCw\"]",
+          "member": "string",
+          "name": "FlowIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对应签署人出现的合同名</p>",
+          "example": "[\"合同组(2份合同)-B2C-1\"]",
+          "member": "string",
+          "name": "FlowNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>签署人姓名</p>",
+          "example": "杨焰桢",
+          "member": "string",
+          "name": "ApproverName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>签署人手机号</p>",
+          "example": "147****8396",
+          "member": "string",
+          "name": "Mobile",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>催办合同组下签署人维度详细信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RemindFlowGroupDetail",
+          "name": "RemindMessageList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "RemindFlowRecords": {
       "document": "催办接口返回的详细信息。",

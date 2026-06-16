@@ -1856,6 +1856,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>新增版本时需要填写</p>",
           "example": "ms-testtest",
           "member": "string",
