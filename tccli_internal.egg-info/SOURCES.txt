@@ -603,6 +603,8 @@ tccli/services/ivld/__init__.py
 tccli/services/ivld/ivld_client.py
 tccli/services/keewidb/__init__.py
 tccli/services/keewidb/keewidb_client.py
+tccli/services/kiki/__init__.py
+tccli/services/kiki/kiki_client.py
 tccli/services/kms/__init__.py
 tccli/services/kms/kms_client.py
 tccli/services/kms/v20190118/api.json

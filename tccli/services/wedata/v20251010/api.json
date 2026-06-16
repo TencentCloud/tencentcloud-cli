@@ -18920,6 +18920,15 @@
           "name": "Operator",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间唯一id",
+          "example": "default",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -25322,6 +25331,15 @@
           "example": "tester",
           "member": "string",
           "name": "Operator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间唯一id",
+          "example": "default",
+          "member": "string",
+          "name": "WorkspaceId",
           "required": false,
           "type": "string"
         }
@@ -55515,7 +55533,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源名",
+          "document": "<p>资源名</p>",
           "example": "0",
           "member": "string",
           "name": "ResourceName",
@@ -55524,7 +55542,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型",
+          "document": "<p>资源类型</p>",
           "example": "TABLE",
           "member": "string",
           "name": "ResourceType",
@@ -55533,7 +55551,7 @@
         },
         {
           "disabled": false,
-          "document": "血缘方向",
+          "document": "<p>血缘方向</p>",
           "example": "INPUT",
           "member": "string",
           "name": "Direction",
@@ -55542,7 +55560,7 @@
         },
         {
           "disabled": false,
-          "document": "分页",
+          "document": "<p>分页</p>",
           "example": "无",
           "member": "Page",
           "name": "Page",
@@ -55551,10 +55569,19 @@
         },
         {
           "disabled": false,
-          "document": "ResourceId",
+          "document": "<p>ResourceId</p>",
           "example": "xx-xx-xx-xx",
           "member": "string",
           "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目id</p>",
+          "example": "123356573",
+          "member": "string",
+          "name": "WorkspaceId",
           "required": false,
           "type": "string"
         }
@@ -55566,7 +55593,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "响应数据",
+          "document": "<p>响应数据</p>",
           "example": "无",
           "member": "ListLineagesRsp",
           "name": "Data",
@@ -78384,6 +78411,15 @@
           "name": "Job",
           "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间唯一id",
+          "example": "default",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

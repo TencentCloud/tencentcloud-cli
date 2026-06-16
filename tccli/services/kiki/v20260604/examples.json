@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "CreateSessionLogViewUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: kiki.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSessionLogViewUrl\n<公共请求参数>\n\n{\n    \"Profile\": \"cloud-pc\",\n    \"TargetUin\": \"100024220771\",\n    \"SessionId\": \"0524c9b9-2793-41e2-8761-2fc0fc0a963f\",\n    \"IdentityIdList\": [\n        \"**********\"\n    ],\n    \"ExpireSeconds\": 3600\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1781598204,\n        \"Url\": \"https://kiki.woa.com/log?token=yFocKmrMSTEKWMjexwDhQsAfNSSJnIGHDIDj9bcmg9deWBN92HEvxqaVtbjQy4EUsn2DQEbsTjavTSU29u3nhxEMaq4S026_AKJTWcsVwctcZB5QbcMKTA_7dB6ek8Q0YgfIvnPJz8nOP8QhJIkiHw2HVaiKuvZqXzhtth0\",\n        \"RequestId\": \"2236780f-0cfe-4855-aaf0-66c1ca480290\"\n    }\n}",
+        "title": "获取日志链接"
+      }
+    ]
+  },
+  "version": "1.0"
+}

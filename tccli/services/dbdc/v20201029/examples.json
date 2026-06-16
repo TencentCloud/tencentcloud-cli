@@ -1,5 +1,105 @@
 {
   "actions": {
+    "AddNodesToDBCustomCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddNodesToDBCustomCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"dbcc-qjv7nng7\",\n    \"NodeIds\": [\n        \"dbcn-z4z0rbc9\"\n    ],\n    \"ImageId\": \"img-1tmhysjj\",\n    \"LoginSettings\": {\n        \"KeyIds\": [\n            \"skey-48hbnu45\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 753,\n        \"RequestId\": \"96d5fa5c-44f8-48d2-88fe-81f34b71ac07\"\n    }\n}",
+        "title": "集群添加已有节点（通过密钥登录节点）"
+      }
+    ],
+    "CheckRoleAuthorized": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckRoleAuthorized\n<公共请求参数>\n\n{\n    \"RoleName\": \"DBDC_QCSLinkedRoleOwnInCVMSSHKey\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"AUTHORIZED\",\n        \"Status\": \"AUTHORIZED\",\n        \"RequestId\": \"2de39dd4-45a8-4211-9096-15b03d6f3951\"\n    }\n}",
+        "title": "角色授权检查示例2"
+      }
+    ],
+    "CreateDBCustomCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBCustomCluster\n<公共请求参数>\n\n{\n    \"ContainerNetwork\": {\n        \"VpcId\": \"vpc-evvog2gd\",\n        \"SubnetIds\": [\n            \"subnet-clk8il4i\"\n        ]\n    },\n    \"ClusterName\": \"生产集群-001\",\n    \"ApiServerNetwork\": {\n        \"VpcId\": \"vpc-evvog2gd\",\n        \"SubnetId\": \"subnet-clk8il4i\"\n    },\n    \"ClusterDescription\": \"L500\",\n    \"Tags\": [\n        {\n            \"Key\": \"环境\",\n            \"Value\": \"生产\"\n        }\n    ],\n    \"ClientToken\": \"a8800d2e-db3e-41bb-8e49-f71fd8314047\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"dbcc-1p6xo1xz\",\n        \"TaskId\": 80,\n        \"RequestId\": \"95a44313-4cd0-436f-a9c1-99b449896ce6\"\n    }\n}",
+        "title": "创建 DB Custom 集群"
+      }
+    ],
+    "CreateDBCustomNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBCustomNodes\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-shanghai-5\",\n    \"ImageId\": \"img-2htjru6l\",\n    \"VpcId\": \"vpc-3kmj79e2\",\n    \"SubnetId\": \"subnet-pqebu78d\",\n    \"Period\": 1,\n    \"NodeType\": \"DB.AT5.8XLARGE128\",\n    \"NodeCount\": 1,\n    \"LoginSettings\": {\n        \"KeepImageLogin\": \"true\"\n    },\n    \"AutoRenew\": 2,\n    \"NodeName\": \"私有镜像自带SSHKey\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeIds\": [\n            \"dbcn-o2q3rj8t\"\n        ],\n        \"TaskId\": 756,\n        \"RequestId\": \"e7026ac1-125f-4e74-ae38-029ad41defe6\"\n    }\n}",
+        "title": "创建 DB Custom 节点（保持镜像的原始登录方式）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBCustomNodes\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-shanghai-5\",\n    \"ImageId\": \"img-1tmhysjj\",\n    \"VpcId\": \"vpc-3kmj79e2\",\n    \"SubnetId\": \"subnet-pqebu78d\",\n    \"Period\": 1,\n    \"NodeType\": \"DB.AT5.8XLARGE128\",\n    \"NodeCount\": 1,\n    \"LoginSettings\": {\n        \"KeyIds\": [\n            \"skey-48hbnu45\"\n        ]\n    },\n    \"AutoRenew\": 2,\n    \"NodeName\": \"5*SSHKeyID+公共镜像\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeIds\": [\n            \"dbcn-z4z0rbc9\"\n        ],\n        \"TaskId\": 746,\n        \"RequestId\": \"7203009a-4d1e-42e1-a394-83f118bbc995\"\n    }\n}",
+        "title": "创建 DB Custom 节点（通过密钥登录节点）"
+      }
+    ],
+    "DescribeDBCustomClusterDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomClusterDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"dbcc-jnfqi1b9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiServerNetwork\": {\n            \"SubnetId\": \"subnet-clk8il4i\",\n            \"VpcId\": \"vpc-evvog2gd\"\n        },\n        \"ClusterDescription\": \"该集群用于测试集群购买流程\",\n        \"ClusterId\": \"dbcc-jnfqi1b9\",\n        \"ClusterLevel\": \"L5\",\n        \"ClusterName\": \"测试 DB Custom 集群\",\n        \"ClusterNodeNum\": 1,\n        \"ClusterStatus\": \"Running\",\n        \"ClusterVersion\": \"1.34.1\",\n        \"ContainerNetwork\": {\n            \"SubnetIds\": [\n                \"subnet-clk8il4i\"\n            ],\n            \"VpcId\": \"vpc-evvog2gd\"\n        },\n        \"CreatedTime\": \"2026-06-01T15:08:04Z\",\n        \"Region\": \"ap-shanghai\",\n        \"Tags\": [\n            {\n                \"Key\": \"测试集群TagKey\",\n                \"Value\": \"测试集群TagValue\"\n            }\n        ],\n        \"RequestId\": \"969a02eb-0755-4162-a7ba-a6947a3d5628\"\n    }\n}",
+        "title": "查询 DB Custom 集群详情"
+      }
+    ],
+    "DescribeDBCustomClusterKubeconfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomClusterKubeconfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"dbcc-0cj0av3j\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Kubeconfig\": \"mock-kubeconfig-for-cls-mock00001\",\n        \"RequestId\": \"d5830035-cfbf-49bb-b6b3-a22d3b76b897\"\n    }\n}",
+        "title": "查询 DB Custom 集群 Kubeconfig 配置"
+      }
+    ],
+    "DescribeDBCustomClusterNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomClusterNodes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"dbcc-0cj0av3j\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeSet\": [\n            {\n                \"LanIP\": \"10.0.0.1\",\n                \"NodeId\": \"dbcn-0zan5xxk\",\n                \"NodeName\": \"测试节点1\",\n                \"NodeType\": \"DB.AT5.8XLARGE128\",\n                \"SSHEndpoint\": \"10.0.0.100:36000\",\n                \"Status\": \"running\",\n                \"Zone\": \"ap-shanghai-5\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"4603723b-56f3-4466-a46b-8fe4e9348918\"\n    }\n}",
+        "title": "查询 DB Custom 集群的节点列表"
+      }
+    ],
+    "DescribeDBCustomClusters": [
+      {
+        "document": "按标签筛选",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomClusters\n<公共请求参数>\n\n{\n    \"Tags\": [\n        {\n            \"Key\": \"DBCustomCluster\",\n            \"Value\": \"PRE-CLUSTER\"\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterSet\": [\n            {\n                \"ClusterDescription\": \"\",\n                \"ClusterId\": \"dbcc-nmtmsew8\",\n                \"ClusterLevel\": \"L500\",\n                \"ClusterName\": \"DBCustomPRE\",\n                \"ClusterNodeNum\": 0,\n                \"ClusterStatus\": \"Running\",\n                \"ClusterVersion\": \"1.32.2\",\n                \"CreatedTime\": \"2026-06-06T11:05:40Z\",\n                \"Region\": \"ap-shanghai\",\n                \"Tags\": [\n                    {\n                        \"Key\": \"DBCustomCluster\",\n                        \"Value\": \"PRE-CLUSTER\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"b5156a5a-122f-4d42-8322-06237ee54131\"\n    }\n}",
+        "title": "查询 DB Cluster 集群列表"
+      }
+    ],
+    "DescribeDBCustomImages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomImages\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageSet\": [\n            {\n                \"Architecture\": \"x86_64\",\n                \"ImageId\": \"img-1tmhysjj\",\n                \"ImageType\": \"PUBLIC_IMAGE\",\n                \"OsName\": \"TencentOS Server 3.2 with Driver\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"e25c30f8-c61e-4895-a8a9-1181389d2b74\"\n    }\n}",
+        "title": "查询 DB Custom 镜像列表"
+      }
+    ],
+    "DescribeDBCustomNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomNodes\n<公共请求参数>\n\n{\n    \"NodeIds\": [\n        \"dbcn-wamuy21e\"\n    ],\n    \"Filters\": [\n        {\n            \"Name\": \"cluster-id\",\n            \"Values\": [\n                \"dbcc-jnfqi1b9\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeSet\": [\n            {\n                \"AutoRenew\": 2,\n                \"CPU\": 4,\n                \"ChargeType\": \"PREPAID\",\n                \"ClusterId\": \"dbcc-jnfqi1b9\",\n                \"CreatedTime\": \"2026-06-01T14:14:40Z\",\n                \"DataDisks\": [\n                    {\n                        \"DiskName\": \"ImageDisk\",\n                        \"DiskSize\": 10,\n                        \"DiskType\": \"CLOUD_HSSD\"\n                    }\n                ],\n                \"ExpireTime\": \"2026-08-01T14:14:40Z\",\n                \"HostIp\": \"7E87DEECE245155C880A7CF5355CD81F\",\n                \"ImageId\": \"img-1tmhysjj\",\n                \"IsolatedTime\": \"\",\n                \"LanIP\": \"10.0.0.1\",\n                \"Memory\": 8,\n                \"NodeId\": \"dbcn-wamuy21e\",\n                \"NodeName\": \"测试节点\",\n                \"NodeType\": \"DB.AT5.8XLARGE128\",\n                \"OsName\": \"TencentOS Server 3.2 with Driver\",\n                \"RackId\": \"3E5BA837F9B5FFD91DCC02DBF501C7A7\",\n                \"SSHEndpoint\": \"10.0.0.100:36000\",\n                \"Status\": \"Running\",\n                \"SubnetId\": \"subnet-clk8il4i\",\n                \"SwitchId\": \"3E7A16039D8E141849DE7C837DE70ECC\",\n                \"SystemDisk\": {\n                    \"DiskSize\": 100,\n                    \"DiskType\": \"CLOUD_BSSD\"\n                },\n                \"Tags\": [\n                    {\n                        \"Key\": \"test-key1\",\n                        \"Value\": \"test-key1-value\"\n                    }\n                ],\n                \"VpcId\": \"vpc-evvog2gd\",\n                \"Zone\": \"ap-shanghai-5\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"e8841f33-dc54-4c5f-a1d4-b940bc09e1df\"\n    }\n}",
+        "title": "查询 DB Custom 节点列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomNodes\n<公共请求参数>\n\n{\n    \"Tags\": [\n        {\n            \"Key\": \"产品\",\n            \"Value\": \"DBCustom\"\n        }\n    ],\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeSet\": [\n            {\n                \"AutoRenew\": 2,\n                \"CPU\": 2,\n                \"ChargeType\": \"PREPAID\",\n                \"ClusterId\": \"\",\n                \"CreatedTime\": \"2026-06-05T12:52:38Z\",\n                \"DataDisks\": [\n                    {\n                        \"DiskName\": \"ImageDisk\",\n                        \"DiskSize\": 200,\n                        \"DiskType\": \"CLOUD_HSSD\"\n                    }\n                ],\n                \"ExpireTime\": \"2026-07-05T12:52:38Z\",\n                \"HostIp\": \"7E9DD09DDF2FFB1FFA0E7430F1DF9085\",\n                \"ImageId\": \"img-1tmhysjj\",\n                \"IsolatedTime\": \"\",\n                \"LanIP\": \"172.16.64.16\",\n                \"Memory\": 2,\n                \"NodeId\": \"dbcn-7avvxiri\",\n                \"NodeName\": \"DBCustomPRE2\",\n                \"NodeType\": \"DB.AT5.8XLARGE128\",\n                \"OsName\": \"TencentOS Server 3.2 with Driver\",\n                \"RackId\": \"9BD3E57A3DBE1201ACC65A0D06749DB8\",\n                \"SSHEndpoint\": \"172.16.64.12:22\",\n                \"Status\": \"Running\",\n                \"SubnetId\": \"subnet-huka6qhj\",\n                \"SwitchId\": \"1708E3E3DB05DE76DBEF337046C07BAE\",\n                \"SystemDisk\": {\n                    \"DiskSize\": 100,\n                    \"DiskType\": \"CLOUD_HSSD\"\n                },\n                \"Tags\": [\n                    {\n                        \"Key\": \"产品\",\n                        \"Value\": \"DBCustom\"\n                    }\n                ],\n                \"VpcId\": \"vpc-cseo7req\",\n                \"Zone\": \"ap-shanghai-5\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"60214b3e-4b60-432f-851e-150c0465ed04\"\n    }\n}",
+        "title": "查询 DB Custom 节点列表（按标签筛选）"
+      }
+    ],
+    "DescribeDBCustomTaskStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomTaskStatus\n<公共请求参数>\n\n{\n    \"TaskId\": 74\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"Succeeded\",\n        \"RequestId\": \"0d41f891-8589-45c3-8867-311a9df44c05\"\n    }\n}",
+        "title": "查询 DB Custom 任务状态"
+      }
+    ],
     "DescribeDBInstances": [
       {
         "document": "",
@@ -40,12 +140,68 @@
         "title": "请求示例DEMO"
       }
     ],
+    "DestroyDBCustomCluster": [
+      {
+        "document": "将无需使用的 DB Custom 集群销毁",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyDBCustomCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"dbcc-c4pwpw3d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 46,\n        \"RequestId\": \"f8093fdd-9d15-4c04-929c-4dea6b9e8e7e\"\n    }\n}",
+        "title": "销毁DB Custom 集群"
+      }
+    ],
+    "DestroyDBCustomNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyDBCustomNode\n<公共请求参数>\n\n{\n    \"NodeId\": \"dbcn-ne3hwv3l\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 65,\n        \"RequestId\": \"9d2202d0-82db-47b5-9fd4-c63c4ad41bdd\"\n    }\n}",
+        "title": "销毁 DB Custom 节点"
+      }
+    ],
+    "IsolateDBCustomNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateDBCustomNode\n<公共请求参数>\n\n{\n    \"NodeId\": \"dbcn-ne3hwv3l\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"019c7caa-d446-46d6-917e-fe546d5903f2\"\n    }\n}",
+        "title": "隔离 DB Custom 节点"
+      }
+    ],
+    "ModifyDBCustomClusterTags": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBCustomClusterTags\n<公共请求参数>\n\n{\n    \"ClusterId\": \"dbcc-q428ovsf\",\n    \"AddTags\": [\n        {\n            \"Key\": \"Tag1\",\n            \"Value\": \"Value1\"\n        }\n    ],\n    \"DeleteTagKeys\": [\n        \"testKey\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ef4d109-8dd7-4ef1-9834-c652cd84bdf0\"\n    }\n}",
+        "title": "为 DB Custom 集群修改标签"
+      }
+    ],
+    "ModifyDBCustomNodeTags": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBCustomNodeTags\n<公共请求参数>\n\n{\n    \"NodeId\": \"dbcn-j4xd1241\",\n    \"AddTags\": [\n        {\n            \"Key\": \"测试标签Key\",\n            \"Value\": \"测试标签Value\"\n        }\n    ],\n    \"DeleteTagKeys\": [\n        \"testkey\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4c6c23f-62bb-4568-a107-141c65290f8c\"\n    }\n}",
+        "title": "为 DB Custom 节点修改标签"
+      }
+    ],
     "ModifyInstanceName": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceName\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dbdc-56nsyijj\",\n    \"InstanceName\": \"excluster-for-user\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7212a9ec-a235-2144-98d4-59fbe6f14d79\"\n    }\n}",
         "title": "修改独享集群实例名称"
+      }
+    ],
+    "RemoveNodesFromDBCustomCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveNodesFromDBCustomCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"dbcc-3hvxwggn\",\n    \"NodeIds\": [\n        \"dbcn-8619etu0\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 66,\n        \"RequestId\": \"92118b77-cfaf-4017-bcbf-2a4984ac162b\"\n    }\n}",
+        "title": "从 DB Custom 集群中下架节点"
+      }
+    ],
+    "RenewDBCustomNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDBCustomNode\n<公共请求参数>\n\n{\n    \"NodeId\": \"dbcn-wamuy21e\",\n    \"Period\": 1,\n    \"AutoRenew\": 2,\n    \"AutoVoucher\": 1,\n    \"VoucherIds\": [\n        \"OZRCGNAVHYEQPQUVPZWIHD\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"55246970-8cf2-4a5a-a817-ef71d6777d08\"\n    }\n}",
+        "title": "续费 DB Custom 节点"
       }
     ]
   },

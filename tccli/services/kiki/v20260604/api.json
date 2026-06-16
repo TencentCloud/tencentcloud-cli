@@ -1,0 +1,103 @@
+{
+  "actions": {
+    "CreateSessionLogViewUrl": {
+      "document": "申请腾讯云智能助手日志查看签名链接",
+      "input": "CreateSessionLogViewUrlRequest",
+      "name": "创建会话日志查看签名链接",
+      "output": "CreateSessionLogViewUrlResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2026-06-04",
+    "api_brief": "内部运营系统服务，可审计的助手数据获取",
+    "serviceNameCN": "腾讯云官网智能助手",
+    "serviceShortName": "kiki"
+  },
+  "objects": {
+    "CreateSessionLogViewUrlRequest": {
+      "document": "CreateSessionLogViewUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>KiKI 运行环境</p><p>枚举值：</p><ul><li>cloud-pc： 腾讯云中国站</li><li>cloud-intl： 腾讯云国际站</li><li>woa： 腾讯内网</li></ul>",
+          "example": "cloud-pc",
+          "member": "string",
+          "name": "Profile",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>KiKi 用户 ID。腾讯云站点是用户的 Uin。腾讯内网站点是用户的企业微信名 (Rtx)</p>",
+          "example": "100024220771",
+          "member": "string",
+          "name": "TargetUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>KiKi 会话 ID</p>",
+          "example": "0524c9b9-2793-41e2-8761-2fc0fc0a963f",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权访问的企业微信名(Rtx)</p>",
+          "example": "[\"zhangsan\"]",
+          "member": "string",
+          "name": "IdentityIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>有效时间，最长 24 小时</p><p>取值范围：[60, 86400]</p><p>单位：秒</p><p>默认值：3600</p>",
+          "example": "3600",
+          "member": "uint64",
+          "name": "ExpireSeconds",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSessionLogViewUrlResponse": {
+      "document": "CreateSessionLogViewUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>可查看的日志签名 URL</p>",
+          "example": "https://kiki.woa.com/log?token=yFocKmrMSTEKWMjexwDhQsAfNSSJnIGHDIDj9bcmg9deWBN92HEvxqaVtbjQy4EUsn2DQEbsTjavTSU29u3nhxEMaq4S026_AKJTWcsVwctcZB5QbcMKTA_7dB6ek8Q0YgfIvnPJz8nOP8QhJIkiHw2HVaiKuvZqXzhtth0",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>有效时间戳</p><p>单位：秒</p>",
+          "example": "1781598204",
+          "member": "uint64",
+          "name": "ExpiredTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

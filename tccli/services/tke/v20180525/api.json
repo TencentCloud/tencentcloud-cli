@@ -6878,6 +6878,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>产品名称</p>",
+          "example": "tke",
+          "member": "string",
+          "name": "ProductName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>节点列表</p>",
           "example": "无",
           "member": "VirtualNodeSpec",

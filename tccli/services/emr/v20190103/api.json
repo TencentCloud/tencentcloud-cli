@@ -20361,7 +20361,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规格类型，如S2.MEDIUM8",
+          "document": "<p>规格类型，如S2.MEDIUM8</p>",
           "example": "S2.MEDIUM8",
           "member": "string",
           "name": "InstanceType",
@@ -20372,7 +20372,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘，系统盘个数不超过1块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>系统盘，系统盘个数不超过1块</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiskSpecInfo",
           "name": "SystemDisk",
@@ -20383,7 +20383,7 @@
         },
         {
           "disabled": false,
-          "document": "需要绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>需要绑定的标签列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -20394,7 +20394,7 @@
         },
         {
           "disabled": false,
-          "document": "云数据盘，云数据盘总个数不超过15块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>云数据盘，云数据盘总个数不超过15块</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiskSpecInfo",
           "name": "DataDisk",
@@ -20405,7 +20405,7 @@
         },
         {
           "disabled": false,
-          "document": "本地数据盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本地数据盘</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiskSpecInfo",
           "name": "LocalDataDisk",
@@ -20413,6 +20413,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点配置信息，目前仅提供给terraform平台校验参数使用</p>",
+          "example": "无",
+          "member": "ServiceDeploy",
+          "name": "SoftwareConfig",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -26102,6 +26113,34 @@
         }
       ],
       "usage": "out"
+    },
+    "ServiceDeploy": {
+      "document": "节点部署配置信息，给tf侧同学使用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>组件名称</p>",
+          "example": "knox-1.2.0",
+          "member": "string",
+          "name": "SoftwareName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组件下角色名称</p>",
+          "example": "[\"Ldap\"]",
+          "member": "string",
+          "name": "Roles",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ServiceDeployInfo": {
       "document": "服务的部署信息",
