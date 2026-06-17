@@ -6866,7 +6866,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "scecario结果",
+          "document": "<p>Scenario结果</p>",
           "example": "无",
           "member": "Scenario",
           "name": "Scenario",
@@ -6876,7 +6876,7 @@
         },
         {
           "disabled": false,
-          "document": "job结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>job结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Job",
           "name": "Jobs",

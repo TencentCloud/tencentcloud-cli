@@ -15,17 +15,20 @@ Output:
     "Response": {
         "AccountSet": [
             {
-                "UserId": "100000000",
+                "UserId": "1000001",
                 "Role": [
                     {
-                        "Organization": "org",
+                        "Organization": "1",
                         "Role": "Admin"
                     }
                 ],
-                "Notes": "xx"
+                "Notes": "账号备注",
+                "CreateAt": "2020-09-22T00:00:00+00:00",
+                "InstanceId": "grafana-abcdxxxx",
+                "Uin": "1000002"
             }
         ],
-        "RequestId": "qmunlpf51noe13qp5vyvg7mq5t4t4w6u"
+        "RequestId": "xxxxxxxx"
     }
 }
 ```

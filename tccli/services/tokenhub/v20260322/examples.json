@@ -58,10 +58,10 @@
     ],
     "DescribeApiKey": [
       {
-        "document": "输入ApiKeyId查询 API 密钥详情",
-        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiKey\n<公共请求参数>\n\n{\n    \"Platform\": \"maas\",\n    \"ApiKeyId\": \"ak-20260325-xxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ApiKey\": \"sk-xxxxxx\",\n        \"ApiKeyId\": \"ak-20260325-xxxxxx\",\n        \"AppId\": \"111111\",\n        \"BindType\": \"model_custom_endpoint_custom\",\n        \"BindingItems\": [\n            {\n                \"ResourceId\": \"deepseek-v3.2\",\n                \"ResourceType\": \"model\"\n            }\n        ],\n        \"CreateTime\": \"2026-03-25 19:50:56\",\n        \"Creator\": \"\",\n        \"Editable\": true,\n        \"Name\": \"my-apikey\",\n        \"Platform\": \"maas\",\n        \"Remark\": \"test-new-remark\",\n        \"RequestId\": \"b56014db-c0e2-4a0f-b2dc-0155684771ac\",\n        \"Status\": \"disable\",\n        \"SubUin\": \"112233\",\n        \"Uin\": \"112233\",\n        \"UpdateTime\": \"2026-03-25 20:43:53\"\n    }\n}",
-        "title": "输入ApiKeyId查询 API 密钥详情"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiKey\n<公共请求参数>\n\n{\n    \"Platform\": \"maas\",\n    \"ApiKeyId\": \"ak-20260609-f294a4aa4e2a7412780914226ad3ffd8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiKey\": \"sk-7PNKNHibBH617l8ly8xTzUj5Jej359BOJMjguq2St22CVEtM\",\n        \"ApiKeyId\": \"ak-20260609-f294a4aa4e2a7412780914226ad3ffd8\",\n        \"AppId\": \"1300056794\",\n        \"BindType\": \"all\",\n        \"BindingItems\": [],\n        \"CreateTime\": \"2026-06-09 20:55:16\",\n        \"Creator\": \"\",\n        \"Editable\": true,\n        \"IpWhitelist\": [],\n        \"Name\": \"my-api-key\",\n        \"Platform\": \"maas\",\n        \"Remark\": \"\",\n        \"Status\": \"enable\",\n        \"SubUin\": \"600000563014\",\n        \"Uin\": \"600000563014\",\n        \"UpdateTime\": \"2026-06-09 20:55:16\",\n        \"RequestId\": \"9a5c9c84-0566-4a8c-9be9-135d834e668c\"\n    }\n}",
+        "title": "DescribeApiKey"
       }
     ],
     "DescribeApiKeyList": [
