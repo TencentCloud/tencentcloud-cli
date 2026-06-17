@@ -14,7 +14,9 @@ Output:
 {
     "Response": {
         "RequestId": "fpllngzieyoh54e1244ols7k2hh3gdny",
-        "WhiteList": []
+        "WhiteList": [
+            "0.0.0.0/0"
+        ]
     }
 }
 ```

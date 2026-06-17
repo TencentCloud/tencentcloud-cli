@@ -10,7 +10,7 @@ tccli monitor DescribeGrafanaChannels --cli-unfold-argument  \
     --ChannelState 0 \
     --Limit 0 \
     --Offset 0 \
-    --ChannelName test \
+    --ChannelName **** \
     --ChannelIds nchannel-abcd1234
 ```
 
@@ -21,14 +21,14 @@ Output:
         "NotificationChannelSet": [
             {
                 "Receivers": [
-                    "123"
+                    "consumer-abcd1234"
                 ],
                 "ChannelId": "nchannel-abcd1234",
                 "OrganizationIds": [
                     "1"
                 ],
                 "UpdatedAt": "2020-09-22T00:00:00+00:00",
-                "ChannelName": "test",
+                "ChannelName": "****",
                 "CreatedAt": "2020-09-22T00:00:00+00:00"
             }
         ],

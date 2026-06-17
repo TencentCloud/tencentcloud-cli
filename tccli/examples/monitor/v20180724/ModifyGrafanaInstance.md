@@ -7,14 +7,14 @@ Input:
 ```
 tccli monitor ModifyGrafanaInstance --cli-unfold-argument  \
     --InstanceId grafana-abcdefgh \
-    --InstanceName test
+    --InstanceName instance-name
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "requestId"
     }
 }
 ```

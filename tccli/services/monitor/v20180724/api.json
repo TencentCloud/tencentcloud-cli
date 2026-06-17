@@ -491,7 +491,7 @@
       "status": "online"
     },
     "DescribeDNSConfig": {
-      "document": "列出 Grafana DNS 配置",
+      "document": "列出 Grafana DNS 配置。",
       "input": "DescribeDNSConfigRequest",
       "name": "列出 Grafana DNS 配置",
       "output": "DescribeDNSConfigResponse",
@@ -526,7 +526,7 @@
       "status": "online"
     },
     "DescribeGrafanaChannels": {
-      "document": "列出 Grafana 所有告警通道",
+      "document": "列出 Grafana 所有告警通道。",
       "input": "DescribeGrafanaChannelsRequest",
       "name": "列出 Grafana 所有告警通道",
       "output": "DescribeGrafanaChannelsResponse",
@@ -869,7 +869,7 @@
       "status": "online"
     },
     "DescribeSSOAccount": {
-      "document": "列出当前grafana实例的所有授权账号",
+      "document": "列出当前grafana实例的所有授权账号.",
       "input": "DescribeSSOAccountRequest",
       "name": "列出授权账号",
       "output": "DescribeSSOAccountResponse",
@@ -4904,7 +4904,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
+          "document": "<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -4913,7 +4913,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通道名称，例如：test",
+          "document": "<p>告警通道名称，例如：my-channel</p>",
           "example": "my-channel",
           "member": "string",
           "name": "ChannelName",
@@ -4922,8 +4922,8 @@
         },
         {
           "disabled": false,
-          "document": "接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID ",
-          "example": "[“notice-7k7q3qzr”]",
+          "document": "<p>接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID</p>",
+          "example": "[\"notice-7k7q3qzr\"]",
           "member": "string",
           "name": "Receivers",
           "required": true,
@@ -4931,7 +4931,7 @@
         },
         {
           "disabled": false,
-          "document": "默认为1，建议使用 OrganizationIds",
+          "document": "<p>默认为1，建议使用 OrganizationIds</p>",
           "example": "1",
           "member": "int64",
           "name": "OrgId",
@@ -4940,8 +4940,8 @@
         },
         {
           "disabled": false,
-          "document": "额外组织 ID 数组，已废弃，请使用 OrganizationIds",
-          "example": "[“out_field”]",
+          "document": "<p>额外组织 ID 数组，已废弃，请使用 OrganizationIds</p>",
+          "example": "[\"1\"]",
           "member": "string",
           "name": "ExtraOrgIds",
           "required": false,
@@ -4949,7 +4949,7 @@
         },
         {
           "disabled": false,
-          "document": "生效的所有组织 ID 数组，默认为 [\"1\"]",
+          "document": "<p>生效的所有组织 ID 数组，默认为 [&quot;1&quot;]</p>",
           "example": "[\"111324\"]",
           "member": "string",
           "name": "OrganizationIds",
@@ -4964,7 +4964,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通道 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>通道 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "channel-xxxxxxxx",
           "member": "string",
           "name": "ChannelId",
@@ -6110,7 +6110,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
+          "document": "<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>",
           "example": "myGrafana",
           "member": "string",
           "name": "InstanceId",
@@ -6119,7 +6119,7 @@
         },
         {
           "disabled": false,
-          "document": "用户账号 ID ，例如：10000000",
+          "document": "<p>用户账号 ID ，例如：10000000</p>",
           "example": "1000000000",
           "member": "string",
           "name": "UserId",
@@ -6128,8 +6128,8 @@
         },
         {
           "disabled": false,
-          "document": "权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)",
-          "example": "\"\"",
+          "document": "<p>权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)</p>",
+          "example": "无",
           "member": "GrafanaAccountRole",
           "name": "Role",
           "required": true,
@@ -6137,7 +6137,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "备注",
           "member": "string",
           "name": "Notes",
@@ -6152,8 +6152,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "已添加的用户 UIN",
-          "example": "无",
+          "document": "<p>已添加的用户 UIN</p>",
+          "example": "*",
           "member": "string",
           "name": "UserId",
           "output_required": true,
@@ -6743,8 +6743,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取",
-          "example": "[]",
+          "document": "<p>通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取</p>",
+          "example": "[\"nchannel-abcd1234\"]",
           "member": "string",
           "name": "ChannelIDs",
           "required": true,
@@ -6752,7 +6752,7 @@
         },
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
+          "document": "<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -9821,7 +9821,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
+          "document": "<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -9836,10 +9836,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "DNS 服务器数组",
-          "example": "[]",
+          "document": "<p>DNS 服务器数组</p>",
+          "example": "[\"114.114.114.114\"]",
           "member": "string",
           "name": "NameServers",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10076,7 +10077,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-12345678",
+          "document": "<p>Grafana 实例 ID，例如：grafana-12345678</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -10085,7 +10086,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -10094,7 +10095,7 @@
         },
         {
           "disabled": false,
-          "document": "查询数量",
+          "document": "<p>查询数量</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -10103,7 +10104,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通道名称，例如：test",
+          "document": "<p>告警通道名称，例如：test</p>",
           "example": "my-channel",
           "member": "string",
           "name": "ChannelName",
@@ -10112,7 +10113,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通道 ID，例如：nchannel-abcd1234",
+          "document": "<p>告警通道 ID，例如：nchannel-abcd1234</p>",
           "example": "[\"crule-123\"]",
           "member": "string",
           "name": "ChannelIds",
@@ -10121,7 +10122,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)",
+          "document": "<p>告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)</p>",
           "example": "1",
           "member": "int64",
           "name": "ChannelState",
@@ -10136,8 +10137,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警通道数组",
-          "example": "[]",
+          "document": "<p>告警通道数组</p>",
+          "example": "无",
           "member": "GrafanaChannel",
           "name": "NotificationChannelSet",
           "output_required": true,
@@ -10146,7 +10147,7 @@
         },
         {
           "disabled": false,
-          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -10343,7 +10344,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
+          "document": "<p>实例 ID</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -10352,7 +10353,7 @@
         },
         {
           "disabled": false,
-          "document": "集成 ID",
+          "document": "<p>集成 ID</p>",
           "example": "my-instance",
           "member": "string",
           "name": "IntegrationId",
@@ -10361,7 +10362,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "<p>类型</p>",
           "example": "grafana",
           "member": "string",
           "name": "Kind",
@@ -10376,8 +10377,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集成数组",
-          "example": "[]",
+          "document": "<p>集成数组</p>",
+          "example": "无",
           "member": "GrafanaIntegrationConfig",
           "name": "IntegrationSet",
           "required": true,
@@ -10398,7 +10399,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-12345678",
+          "document": "<p>Grafana 实例 ID，例如：grafana-12345678</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -10407,7 +10408,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -10416,7 +10417,7 @@
         },
         {
           "disabled": false,
-          "document": "查询数量",
+          "document": "<p>查询数量</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -10425,7 +10426,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通道名称，例如：test",
+          "document": "<p>告警通道名称，例如：test</p>",
           "example": "my-channel",
           "member": "string",
           "name": "ChannelName",
@@ -10434,7 +10435,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通道 ID，例如：nchannel-abcd1234",
+          "document": "<p>告警通道 ID，例如：nchannel-abcd1234</p>",
           "example": "[\"crule-123\"]",
           "member": "string",
           "name": "ChannelIDs",
@@ -10443,7 +10444,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通道状态",
+          "document": "<p>告警通道状态</p>",
           "example": "1",
           "member": "int64",
           "name": "ChannelState",
@@ -10458,8 +10459,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警通道数组",
-          "example": "[]",
+          "document": "<p>告警通道数组</p>",
+          "example": "无",
           "member": "GrafanaNotificationChannel",
           "name": "NotificationChannelSet",
           "output_required": true,
@@ -10468,7 +10469,7 @@
         },
         {
           "disabled": false,
-          "document": "通道数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>通道数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -10490,7 +10491,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
+          "document": "<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -10505,8 +10506,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "数组",
-          "example": "[]",
+          "document": "<p>数组</p>",
+          "example": "[\"0.0.0.0/0\"]",
           "member": "string",
           "name": "WhiteList",
           "type": "list",
@@ -15348,7 +15349,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
+          "document": "<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>",
           "example": "myGrafana",
           "member": "string",
           "name": "InstanceId",
@@ -15357,7 +15358,7 @@
         },
         {
           "disabled": false,
-          "document": "填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000",
+          "document": "<p>填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000</p>",
           "example": "10000",
           "member": "string",
           "name": "UserId",
@@ -15372,11 +15373,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "授权账号列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>授权账号列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GrafanaAccountInfo",
           "name": "AccountSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -16843,7 +16844,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "渠道 ID",
+          "document": "<p>渠道 ID</p>",
           "example": "channel-id",
           "member": "string",
           "name": "ChannelId",
@@ -16853,7 +16854,7 @@
         },
         {
           "disabled": false,
-          "document": "渠道名",
+          "document": "<p>渠道名</p>",
           "example": "channel-name",
           "member": "string",
           "name": "ChannelName",
@@ -16863,8 +16864,8 @@
         },
         {
           "disabled": false,
-          "document": "告警通道模板 ID 数组",
-          "example": "[]",
+          "document": "<p>告警通道模板 ID 数组</p>",
+          "example": "[\"notice-abcd1234\"]",
           "member": "string",
           "name": "Receivers",
           "required": true,
@@ -16873,7 +16874,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2021-03-11T16:54:33+08:00",
           "member": "datetime_iso",
           "name": "CreatedAt",
@@ -16883,7 +16884,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2021-03-11T16:54:33+08:00",
           "member": "datetime_iso",
           "name": "UpdatedAt",
@@ -16893,7 +16894,7 @@
         },
         {
           "disabled": false,
-          "document": "告警渠道的所有生效组织\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警渠道的所有生效组织</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1\", \"2\", \"3\"]",
           "member": "string",
           "name": "OrganizationIds",
@@ -17257,8 +17258,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 插件 ID",
-          "example": "",
+          "document": "<p>Grafana 插件 ID</p>",
+          "example": "piechart",
           "member": "string",
           "name": "PluginId",
           "required": true,
@@ -17267,8 +17268,8 @@
         },
         {
           "disabled": false,
-          "document": "Grafana 插件版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>Grafana 插件版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1.0.0",
           "member": "string",
           "name": "Version",
           "required": true,
@@ -18800,7 +18801,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
+          "document": "<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -18809,7 +18810,7 @@
         },
         {
           "disabled": false,
-          "document": "Grafana 实例名称，例如：test",
+          "document": "<p>Grafana 实例名称，例如：test</p>",
           "example": "my-instance-1",
           "member": "string",
           "name": "InstanceName",
@@ -25687,7 +25688,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
+          "document": "<p>实例 ID</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -25696,7 +25697,7 @@
         },
         {
           "disabled": false,
-          "document": "JSON 编码后的字符串，如 \"{\"server\":{\"root_url\":\"http://custom.domain\"}}\"",
+          "document": "<p>JSON 编码后的字符串，如 &quot;{&quot;server&quot;:{&quot;root_url&quot;:&quot;http://custom.domain&quot;}}&quot;</p>",
           "example": "\"{\"server\":{\"root_url\":\"http://custom.domain\"}}\"",
           "member": "string",
           "name": "Config",
