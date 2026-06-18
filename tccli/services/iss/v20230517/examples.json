@@ -188,14 +188,6 @@
         "title": "成功"
       }
     ],
-    "DeleteGateway": [
-      {
-        "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGateway\n<公共请求参数>\n\n{\n    \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c0dad392-6910-4516-b0b4-3d3908aa838b\"\n    }\n}",
-        "title": "成功"
-      }
-    ],
     "DeleteOrganization": [
       {
         "document": " ",
@@ -337,38 +329,6 @@
         "document": "success",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGBDeviceAddr\n<公共请求参数>\n\n{\n    \"DeviceIds\": [\n        \"3db****e3-****-****-b7be-****4be705d\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RemoteAddrs\": [\n                {\n                    \"Addr\": \"127.0.0.1\",\n                    \"DeviceId\": \"3db****e3-****-****-b7be-****4be705d\"\n                }\n            ]\n        },\n        \"RequestId\": \"887e50f0-****-****-a37d-c88b****19e3\"\n    }\n}",
-        "title": "成功"
-      }
-    ],
-    "DescribeGateway": [
-      {
-        "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGateway\n<公共请求参数>\n\n{\n    \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ClusterId\": \"12345678-abcd-efgh-ijkl-1234567890ab\",\n            \"ClusterName\": \"上海一区\",\n            \"CreatedAt\": \"2023-06-09T18:29:11+08:00\",\n            \"Description\": \"网关10-13\",\n            \"DeviceNum\": 1,\n            \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n            \"GwId\": \"2b8d8734bc**********3ff984a82f19\",\n            \"Name\": \"网关1\",\n            \"Status\": 0,\n            \"Version\": null\n        },\n        \"RequestId\": \"8716314f-29c4-40ae-9b68-601bd7c40b21\"\n    }\n}",
-        "title": "成功"
-      }
-    ],
-    "DescribeGatewayMonitor": [
-      {
-        "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewayMonitor\n<公共请求参数>\n\n{\n    \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ChannelOffline\": 0,\n            \"ChannelOnline\": 0,\n            \"ChannelPull\": 0,\n            \"ChannelTotal\": 0,\n            \"ChannelUnPull\": 0,\n            \"DeviceOffline\": 0,\n            \"DeviceOnline\": 0,\n            \"DeviceTotal\": 0,\n            \"UpFlow\": 0\n        },\n        \"RequestId\": \"58208bdd-38de-41c3-8671-3e662eea86c6\"\n    }\n}",
-        "title": "成功"
-      }
-    ],
-    "DescribeGatewayProtocol": [
-      {
-        "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewayProtocol\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Label\": \"海康SDK\",\n                \"TypeCode\": \"10001\",\n                \"Value\": 1\n            },\n            {\n                \"Label\": \"大华SDK\",\n                \"TypeCode\": \"10001\",\n                \"Value\": 2\n            },\n            {\n                \"Label\": \"宇视SDK\",\n                \"TypeCode\": \"10001\",\n                \"Value\": 3\n            },\n            {\n                \"Label\": \"Onvif\",\n                \"TypeCode\": \"10001\",\n                \"Value\": 4\n            },\n            {\n                \"Label\": \"GB28181\",\n                \"TypeCode\": \"10001\",\n                \"Value\": 5\n            }\n        ],\n        \"RequestId\": \"8e2c566d-8f7b-44f8-95c9-ee8bd0ab415b\"\n    }\n}",
-        "title": "成功"
-      }
-    ],
-    "DescribeGatewayVersion": [
-      {
-        "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewayVersion\n<公共请求参数>\n\n{\n    \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Services\": []\n        },\n        \"RequestId\": \"6c727d94-0025-4d36-8904-5c443d7a17e0\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -548,22 +508,6 @@
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDevices\n<公共请求参数>\n\n{\n    \"OrganizationId\": \"191\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AccessProtocol\": 2,\n                \"ChannelNum\": 1,\n                \"ClusterId\": \"4************************0\",\n                \"ClusterName\": \"上海一区\",\n                \"Code\": \"6************************4\",\n                \"Description\": \"\",\n                \"DeviceId\": \"2************************8\",\n                \"Name\": \"gb12138\",\n                \"OrganizationId\": \"191\",\n                \"Password\": \"30******96\",\n                \"Status\": 2,\n                \"TransportProtocol\": 1,\n                \"Type\": 2\n            }\n        ],\n        \"RequestId\": \"d217472e-ca9b-4a4d-bb4b-c45326ce8e3e\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "成功示例"
-      }
-    ],
-    "ListGatewayDevices": [
-      {
-        "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListGatewayDevices\n<公共请求参数>\n\n{\n    \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890abcd\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"ChannelNum\": 0,\n                    \"DeviceId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\",\n                    \"Ip\": \"192.168.0.1\",\n                    \"Name\": \"gw121138\",\n                    \"Port\": 8090,\n                    \"ProtocolType\": 1,\n                    \"ProtocolTypeName\": \"hik\",\n                    \"Status\": 0,\n                    \"Type\": 1\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"29b0c8a9-dd64-4ece-a42b-4b03f819c56b\"\n    }\n}",
-        "title": "成功"
-      }
-    ],
-    "ListGateways": [
-      {
-        "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListGateways\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"ClusterId\": \"abcdefgh-1234-5678-ijkl-1234567890ab\",\n                    \"ClusterName\": \"上海一区\",\n                    \"CreatedAt\": \"2007-01-01T08:00:00+08:00\",\n                    \"Description\": \"网管 211\",\n                    \"DeviceNum\": 0,\n                    \"GwId\": \"2b8d8734******************4a82f19\",\n                    \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n                    \"Name\": \"you think who you are\",\n                    \"Status\": 0,\n                    \"Region\": \"ap-shanghai\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"8f541de2-e247-4c93-98b7-8243d9e4f0ef\"\n    }\n}",
-        "title": "成功"
       }
     ],
     "ListOrganizationChannelNumbers": [
@@ -778,14 +722,6 @@
         "title": "成功"
       }
     ],
-    "UpdateGateway": [
-      {
-        "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGateway\n<公共请求参数>\n\n{\n    \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n    \"Description\": \"网关3314\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ClusterId\": \"hijklmno-efgh-5678-ijkl-1234567890abi\",\n            \"CreatedAt\": 0,\n            \"Description\": \"网关3314\",\n            \"GwId\": \"2b8d873*****************84a82f19\",\n            \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n            \"Name\": \"you think who you are\",\n            \"Secret\": \"0634***********432\",\n            \"Status\": 0,\n            \"Version\": \"\",\n            \"ClusterName\": \"上海 1\"\n        },\n        \"RequestId\": \"daf400f1-17b7-440d-8caf-f60d7749362f\"\n    }\n}",
-        "title": "成功"
-      }
-    ],
     "UpdateOrganization": [
       {
         "document": "资源不存在",
@@ -880,14 +816,6 @@
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\",\n    \"Name\": \"rtmp10088\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AccessProtocol\": 1,\n            \"AppId\": 1300000000,\n            \"ClusterId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\",\n            \"ClusterName\": \"上海一区\",\n            \"Code\": \"02Bu9VFOfl\",\n            \"Description\": \"\",\n            \"GatewayId\": \"\",\n            \"DeviceId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\",\n            \"Ip\": \"\",\n            \"Name\": \"rtmp10088\",\n            \"OrganizationId\": 10092,\n            \"Password\": \"\",\n            \"Port\": 0,\n            \"TransportProtocol\": 0,\n            \"Type\": 1,\n            \"Username\": \"\",\n            \"ProtocolType\": 1,\n            \"Status\": 1\n        },\n        \"RequestId\": \"ade1d1a7-6a0d-44d6-8633-b114e350bce9\"\n    }\n}",
         "title": "修改名称成功"
-      }
-    ],
-    "UpgradeGateway": [
-      {
-        "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeGateway\n<公共请求参数>\n\n{\n    \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7ea0bea-c9bb-493e-8f56-6cf4a647897f\"\n    }\n}",
-        "title": "成功"
       }
     ]
   },

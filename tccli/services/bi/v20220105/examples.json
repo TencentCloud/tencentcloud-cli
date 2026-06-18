@@ -24,6 +24,14 @@
         "title": "成功"
       }
     ],
+    "CreateCorpTag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCorpTag\n<公共请求参数>\n\n{\n    \"Name\": \"‘岗位’\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"9478b0d0-1e95-4d12-88a6-db36fb27a12b\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"Id\": 15\n        }\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "CreateDataTable": [
       {
         "document": "创建数据表",
@@ -70,6 +78,14 @@
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProject\n<公共请求参数>\n\n{\n    \"Name\": \"Name\",\n    \"ColorCode\": \"ColorCode\",\n    \"Logo\": \"Logo\",\n    \"Mark\": \"Mark\",\n    \"IsApply\": false,\n    \"DefaultPanelType\": 1982493789748932,\n    \"ManagePlatform\": \"ManagePlatform\"\n}",
         "output": "{\n    \"Response\": {\n        \"Extra\": \"1\",\n        \"Data\": {\n            \"Id\": 11010\n        },\n        \"Msg\": \"成功\",\n        \"RequestId\": \"dsjasdk121kdsfjksadk\"\n    }\n}",
         "title": "创建项目"
+      }
+    ],
+    "CreateTagTable": [
+      {
+        "document": "创建标签表",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTagTable\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"AutoImportProjectId\": 0,\n    \"AutoImportTableId\": 0,\n    \"AutoImportUinField\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Id\": 0\n        },\n        \"Extra\": \"abc\",\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建标签表"
       }
     ],
     "CreateUserGroup": [
@@ -308,6 +324,14 @@
         "title": "项目内-用户角色列表"
       }
     ],
+    "EditCorpTag": [
+      {
+        "document": "编辑企业标签(异步)",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EditCorpTag\n<公共请求参数>\n\n{\n    \"Id\": 0,\n    \"Name\": \"abc\",\n    \"ImportType\": \"abc\",\n    \"AutoImportTagTableId\": 0,\n    \"AutoImportField\": \"abc\",\n    \"AsyncRequest\": true,\n    \"AutoImportTagTableName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Extra\": \"abc\",\n        \"Msg\": \"abc\",\n        \"Data\": {\n            \"TranId\": \"abc\",\n            \"TranStatus\": 0,\n            \"Id\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "编辑企业标签(异步)"
+      }
+    ],
     "ExportScreenPage": [
       {
         "document": "导出自由画布",
@@ -372,6 +396,14 @@
         "title": "更新"
       }
     ],
+    "ModifyTagTable": [
+      {
+        "document": "编辑标签表",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTagTable\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"AutoImportProjectId\": 0,\n    \"AutoImportTableId\": 0,\n    \"AutoImportUinField\": \"abc\",\n    \"Id\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Id\": 0\n        },\n        \"Extra\": \"abc\",\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "编辑标签表"
+      }
+    ],
     "ModifyUserDetailInfo": [
       {
         "document": "",
@@ -402,6 +434,14 @@
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserRoleProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 1982493789748932,\n    \"UserId\": \"UserId\",\n    \"RoleIdList\": [\n        1982493789748932\n    ],\n    \"Email\": \"123***@qq.com\",\n    \"UserName\": \"zhangsan\",\n    \"AppUserId\": \"AppUserId\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"\",\n            \"ErrorLevel\": \"INFO\",\n            \"DocLink\": \"\",\n            \"FAQ\": \"\",\n            \"ReservedField\": \"\"\n        },\n        \"Extra\": \"\",\n        \"Msg\": \"成功\",\n        \"Data\": \"\",\n        \"RequestId\": \"sadd23jdsh-123cdjds\"\n    }\n}",
         "title": "项目-修改用户信息"
+      }
+    ],
+    "ModifyUserTag": [
+      {
+        "document": "修改用户标签值",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserTag\n<公共请求参数>\n\n{\n    \"UserId\": \"abc\",\n    \"TagList\": [\n        {\n            \"Id\": 0,\n            \"Name\": \"abc\",\n            \"Value\": \"abc\",\n            \"IsExternalManage\": true,\n            \"ManagePlatform\": \"abc\",\n            \"ImportType\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"abc\",\n        \"Extra\": \"abc\",\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改用户标签值"
       }
     ],
     "QueryUserGroupMember": [

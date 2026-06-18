@@ -21,6 +21,13 @@
       "output": "CreateAuthApiKeyResponse",
       "status": "online"
     },
+    "CreateCorpTag": {
+      "document": "创建企业标签",
+      "input": "CreateCorpTagRequest",
+      "name": "创建企业标签",
+      "output": "CreateCorpTagResponse",
+      "status": "online"
+    },
     "CreateDataTable": {
       "document": "添加数据表",
       "input": "CreateDataTableRequest",
@@ -61,6 +68,13 @@
       "input": "CreateProjectRequest",
       "name": "创建项目",
       "output": "CreateProjectResponse",
+      "status": "online"
+    },
+    "CreateTagTable": {
+      "document": "创建标签表",
+      "input": "CreateTagTableRequest",
+      "name": "创建标签表",
+      "output": "CreateTagTableResponse",
       "status": "online"
     },
     "CreateUserGroup": {
@@ -259,6 +273,13 @@
       "output": "DescribeUserRoleProjectListResponse",
       "status": "online"
     },
+    "EditCorpTag": {
+      "document": "编辑企业标签(异步)",
+      "input": "EditCorpTagRequest",
+      "name": "编辑企业标签(异步)",
+      "output": "EditCorpTagResponse",
+      "status": "online"
+    },
     "ExportScreenPage": {
       "document": "页面截图导出",
       "input": "ExportScreenPageRequest",
@@ -315,6 +336,13 @@
       "output": "ModifyResourceUserGroupResourceResponse",
       "status": "online"
     },
+    "ModifyTagTable": {
+      "document": "编辑标签表",
+      "input": "ModifyTagTableRequest",
+      "name": "编辑标签表",
+      "output": "ModifyTagTableResponse",
+      "status": "online"
+    },
     "ModifyUserDetailInfo": {
       "document": "修改用户角色信息",
       "input": "ModifyUserDetailInfoRequest",
@@ -341,6 +369,13 @@
       "input": "ModifyUserRoleProjectRequest",
       "name": "项目-修改用户角色信息",
       "output": "ModifyUserRoleProjectResponse",
+      "status": "online"
+    },
+    "ModifyUserTag": {
+      "document": "修改用户标签值",
+      "input": "ModifyUserTagRequest",
+      "name": "修改用户标签值",
+      "output": "ModifyUserTagResponse",
       "status": "online"
     },
     "QueryUserGroupMember": {
@@ -1124,6 +1159,73 @@
           "member": "ApiKeyAuthApplyVO",
           "name": "Data",
           "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCorpTagRequest": {
+      "document": "CreateCorpTag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCorpTagResponse": {
+      "document": "CreateCorpTag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataId",
+          "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2356,6 +2458,116 @@
         }
       ],
       "type": "object"
+    },
+    "CreateTagTableRequest": {
+      "document": "CreateTagTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签表名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签表关联的项目id",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoImportProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签表关联的数据表id",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoImportTableId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "uin对应字段",
+          "example": "无",
+          "member": "string",
+          "name": "AutoImportUinField",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTagTableResponse": {
+      "document": "CreateTagTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreateTagTableVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Extra",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTagTableVO": {
+      "document": "创建标签表出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签表id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateUserGroupMemberRequest": {
       "document": "CreateUserGroupMember请求参数结构体",
@@ -5624,6 +5836,172 @@
       ],
       "type": "object"
     },
+    "EditCorpTagRequest": {
+      "document": "EditCorpTag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签ID",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导入标签的模式(manual/auto)",
+          "example": "无",
+          "member": "string",
+          "name": "ImportType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动导入标签表的id",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoImportTagTableId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动导入标签的关联字段",
+          "example": "无",
+          "member": "string",
+          "name": "AutoImportField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否异步请求",
+          "example": "无",
+          "member": "bool",
+          "name": "AsyncRequest",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "自动导入标签表的表名",
+          "example": "无",
+          "member": "string",
+          "name": "AutoImportTagTableName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事务id",
+          "example": "无",
+          "member": "string",
+          "name": "TranId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EditCorpTagResponse": {
+      "document": "EditCorpTag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EditTagVO",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EditTagVO": {
+      "document": "同步标签数据出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TranId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TranStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "EmbedTokenInfo": {
       "document": "报表嵌出数据结构-强鉴权",
       "members": [
@@ -7491,6 +7869,125 @@
       ],
       "type": "object"
     },
+    "ModifyTagTableRequest": {
+      "document": "ModifyTagTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签表名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签表关联的项目id",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoImportProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签表关联的数据表id",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoImportTableId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "uin对应字段",
+          "example": "无",
+          "member": "string",
+          "name": "AutoImportUinField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签表id",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTagTableResponse": {
+      "document": "ModifyTagTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModifyTagTableVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Extra",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTagTableVO": {
+      "document": "创建标签表出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签表id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyUserDetailInfoRequest": {
       "document": "ModifyUserDetailInfo请求参数结构体",
       "members": [
@@ -7978,6 +8475,82 @@
           "disabled": false,
           "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "返回为null",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserTagRequest": {
+      "document": "ModifyUserTag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签信息",
+          "example": "无",
+          "member": "UserTagInfo",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserTagResponse": {
+      "document": "ModifyUserTag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -11068,6 +11641,78 @@
         }
       ],
       "usage": "out"
+    },
+    "UserTagInfo": {
+      "document": "用户标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否被托管\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsExternalManage",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签托管平台\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ManagePlatform",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "导入类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImportType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "UserVO": {
       "document": "基础用户信息",
