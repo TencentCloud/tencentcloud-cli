@@ -1,29 +1,29 @@
-# Release 3.0.1445.1
+# Release 3.0.1446.1
 
 ## Agent 沙箱服务(ags) 版本：2025-09-20
 
-### 第 13 次发布
+### 第 14 次发布
 
-发布时间：2026-06-18 01:07:49
+发布时间：2026-06-19 01:07:37
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+修改数据结构：
 
-* [PauseSandboxInstance](http://document.tencentcloudapi.woa.com/document/product/1804/88791)
+* [ResourceConfiguration](http://document.tencentcloudapi.woa.com/document/product/1804/87854#ResourceConfiguration)
 
-	* 新增出参：InstanceStatus
-
-
+	* 新增成员：Storage
 
 
-## 媒体处理(mps) 版本：2019-06-12
 
-### 第 179 次发布
 
-发布时间：2026-06-18 02:09:08
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 39 次发布
+
+发布时间：2026-06-19 01:09:45
 
 本次发布包含了以下内容：
 
@@ -31,37 +31,56 @@
 
 新增接口：
 
-* [DetectVideoWatermark](http://document.tencentcloudapi.woa.com/document/product/862/90803)
+* [CreateCorpTag](http://document.tencentcloudapi.woa.com/document/product/1707/90806)
+* [CreateTagTable](http://document.tencentcloudapi.woa.com/document/product/1707/90809)
+* [EditCorpTag](http://document.tencentcloudapi.woa.com/document/product/1707/90805)
+* [ModifyTagTable](http://document.tencentcloudapi.woa.com/document/product/1707/90808)
+* [ModifyUserTag](http://document.tencentcloudapi.woa.com/document/product/1707/90804)
+
+新增数据结构：
+
+* [CreateTagTableVO](http://document.tencentcloudapi.woa.com/document/product/1707/80324#CreateTagTableVO)
+* [EditTagVO](http://document.tencentcloudapi.woa.com/document/product/1707/80324#EditTagVO)
+* [ModifyTagTableVO](http://document.tencentcloudapi.woa.com/document/product/1707/80324#ModifyTagTableVO)
+* [UserTagInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#UserTagInfo)
 
 
 
-## TokenHub(tokenhub) 版本：2026-03-22
+## 智能视图计算平台(iss) 版本：2023-05-17
 
-### 第 7 次发布
+### 第 35 次发布
 
-发布时间：2026-06-18 02:34:51
+发布时间：2026-06-19 01:28:22
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+<font color="#dd0000">**删除接口**：</font>
 
-* [DescribeApiKey](http://document.tencentcloudapi.woa.com/document/product/1814/90444)
+* DeleteGateway
+* DescribeGateway
+* DescribeGatewayMonitor
+* DescribeGatewayProtocol
+* DescribeGatewayVersion
+* ListGatewayDevices
+* ListGateways
+* UpdateGateway
+* UpgradeGateway
 
-	* 新增出参：QuotaSet, QuotaStatus
+<font color="#dd0000">**删除数据结构**：</font>
 
-
-新增数据结构：
-
-* [QuotaInfo](http://document.tencentcloudapi.woa.com/document/product/1814/90425#QuotaInfo)
-
-修改数据结构：
-
-* [ApiKeyDetail](http://document.tencentcloudapi.woa.com/document/product/1814/90425#ApiKeyDetail)
-
-	* 新增成员：QuotaSet, QuotaStatus
-
+* DescribeGatewayData
+* DescribeGatewayMonitor
+* DescribeGatewayProtocolData
+* DescribeGatewayVersion
+* DescribeGatewayVersionData
+* GatewayDevice
+* GatewayVersion
+* GatewaysData
+* ListGatewayDevicesData
+* ListGatewaysData
+* UpdateGatewayData
 
 
 
