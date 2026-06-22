@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli tione DescribeBillingResourceGroupAttachedWorkspaces --cli-unfold-argument ```
+tccli tione DescribeBillingResourceGroupAttachedWorkspaces --cli-unfold-argument  \
+    --ResourceGroupId rsg-qdzrqv43
+```
 
 Output: 
 ```

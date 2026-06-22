@@ -4842,6 +4842,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>资源组ID</p>",
+          "example": "rsg-mhsj8wrk",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
           "example": "0",
           "member": "string",
@@ -8746,6 +8755,86 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点可用资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceInfo",
+          "name": "AvailableResource",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源组节点的IP</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "172.16.222.4",
+          "member": "string",
+          "name": "InstanceIP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源组节点的名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "节点1",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>cvm机型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SA9.2XLARGE16",
+          "member": "string",
+          "name": "CvmInstanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动续买</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoRenew",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否被隔离</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Isolated",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>维修任务信息</p>",
+          "example": "无",
+          "member": "RepairTaskInfo",
+          "name": "RepairTaskInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点可用区名称</p>",
+          "example": "ap-shanghai-3",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10660,7 +10749,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据源的相对路径，支持<@subaccount>这样的占位符",
+          "document": "<p>数据源的相对路径，支持&lt;@subaccount&gt;这样的占位符</p>",
           "example": "/dir1/<@subaccount>/",
           "member": "string",
           "name": "WorkDir",
@@ -12773,6 +12862,78 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RepairTaskInfo": {
+      "document": "cvm维修任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>维修任务ID</p>",
+          "example": "rep-7cmzc9du",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型ID<br>// - <code>101</code>：实例运行隐患<br>    // - <code>102</code>：实例运行异常<br>    // - <code>103</code>：实例硬盘异常<br>    // - <code>104</code>：实例网络连接异常<br>    // - <code>105</code>：实例运行预警<br>    // - <code>106</code>：实例硬盘预警<br>    // - <code>107</code>：实例维护升级</p>",
+          "example": "104",
+          "member": "uint64",
+          "name": "TaskTypeId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型中文名</p>",
+          "example": "实例网络连接异常",
+          "member": "string",
+          "name": "TaskTypeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务创建时间</p>",
+          "example": "2024-09-24 10:11:27",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务详情</p>",
+          "example": "监控到您的云主机实例RDMA网络连接异常，可能会导致您的业务程序性能受损。如您无法恢复异常网口，请反馈我们进行在线维修，感谢您的支持与理解。",
+          "member": "string",
+          "name": "TaskDetail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品类型，支持取值：<br>    //<br>    // - <code>CVM</code>：云服务器<br>    // - <code>CDH</code>：专用宿主机<br>    // - <code>CPM2.0</code>：裸金属云服务器</p>",
+          "example": "CPM2.0",
+          "member": "string",
+          "name": "Product",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

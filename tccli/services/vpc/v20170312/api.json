@@ -6759,11 +6759,11 @@
       "usage": "out"
     },
     "CcnPolicyBasedRoutingRule": {
-      "document": "查询云联网策略路由匹配规则",
+      "document": "云联网策略路由匹配规则",
       "members": [
         {
           "disabled": false,
-          "document": "策略路由下一跳ID",
+          "document": "<p>策略路由下一跳ID</p>",
           "example": "pbrnh-8kas9zm7",
           "member": "string",
           "name": "PolicyBasedRoutingNextHopId",
@@ -6774,7 +6774,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型[VPC,DIRECTCONNECT,VPNGW]",
+          "document": "<p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>",
           "example": "VPC",
           "member": "string",
           "name": "InstanceType",
@@ -6785,7 +6785,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "vpc-6zgq4gsp",
           "member": "string",
           "name": "InstanceId",
@@ -6796,7 +6796,7 @@
         },
         {
           "disabled": false,
-          "document": "源地址CIDR",
+          "document": "<p>源地址CIDR</p>",
           "example": "10.0.0.0/16",
           "member": "string",
           "name": "SourceCidrBlock",
@@ -6807,7 +6807,7 @@
         },
         {
           "disabled": false,
-          "document": "目的地址CIDR",
+          "document": "<p>目的地址CIDR</p>",
           "example": "192.168.0.0/24",
           "member": "string",
           "name": "DestinationCidrBlock",
@@ -6818,7 +6818,7 @@
         },
         {
           "disabled": false,
-          "document": "优先级",
+          "document": "<p>优先级</p>",
           "example": "1",
           "member": "int64",
           "name": "Priority",
@@ -6829,7 +6829,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "rule",
           "member": "string",
           "name": "Description",
@@ -6840,10 +6840,32 @@
         },
         {
           "disabled": false,
-          "document": "策略路由匹配策略ID",
+          "document": "<p>策略路由匹配策略ID</p>",
           "example": "pbrrule-145s8ebs",
           "member": "string",
           "name": "PolicyBasedRoutingRuleId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目的端实例ID</p><p>枚举值：</p><ul><li>VPC： 私有网络</li></ul>",
+          "example": "VPC",
+          "member": "string",
+          "name": "DestinationInstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目的端实例ID</p>",
+          "example": "vpc-1x23rt62",
+          "member": "string",
+          "name": "DestinationInstanceId",
           "output_required": false,
           "required": false,
           "type": "string",

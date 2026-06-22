@@ -742,7 +742,7 @@
     ],
     "DescribeRocketMQMsg": [
       {
-        "document": "",
+        "document": "查询消息详情",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQMsg\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"test_ns\",\n    \"ClusterId\": \"rocketmq-4k4orqgq\",\n    \"TopicName\": \"test_topic\",\n    \"PulsarMsgId\": \"092BAE5A1656070DEA4E276DF0760089\",\n    \"MsgId\": \"092BAE5A1656070DEA4E276DF0760023\",\n    \"QueryDlqMsg\": false\n}",
         "output": "{\n    \"Response\": {\n        \"Body\": \"order-id-2ksn3b23\",\n        \"MsgId\": \"092BAE5A1656070DEA4E276DF0760089\",\n        \"ProduceTime\": \"2021-11-23 21:21:26\",\n        \"RequestId\": \"23ca1a58-0388-4d2d-8465-653a53addda7\",\n        \"Properties\": \"\",\n        \"ProducerAddr\": \"9.43.174.90\",\n        \"ShowTopicName\": \"test_topic\",\n        \"MessageTracks\": [\n            {\n                \"Group\": \"test_group\",\n                \"ConsumeStatus\": \"CONSUMED\",\n                \"TrackType\": \"CONSUMED\",\n                \"ExceptionDesc\": \"\"\n            }\n        ]\n    }\n}",
         "title": "查询消息详情"

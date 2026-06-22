@@ -1,16 +1,18 @@
-**Example 1: 添加绑定关系**
+**Example 1: Header 类型 Exchange 绑定队列**
 
-添加绑定关系
+
 
 Input: 
 
 ```
 tccli trabbit CreateRabbitMQServerlessBinding --cli-unfold-argument  \
-    --InstanceId amqp-slnatbyves \
-    --VirtualHost vhost \
-    --Source fanout-exchange-1061997075421934168 \
+    --InstanceId amqp-slranxpibb \
+    --VirtualHost / \
+    --Source ledou-test \
     --DestinationType queue \
-    --Destination queue-623992266636621729
+    --Destination ledou-test \
+    --Arguments.0.Key x-match \
+    --Arguments.0.Value all
 ```
 
 Output: 
@@ -18,9 +20,9 @@ Output:
 {
     "Response": {
         "BindingId": 0,
-        "InstanceId": "amqp-slnatbyves",
-        "RequestId": "1dd2c068-0d69-4ec4-a9e5-adce8cffa43b",
-        "VirtualHost": "vhost"
+        "InstanceId": "amqp-slranxpibb",
+        "VirtualHost": "/",
+        "RequestId": "0964a348-9573-41d1-89e0-9f1b42cacdc4"
     }
 }
 ```
