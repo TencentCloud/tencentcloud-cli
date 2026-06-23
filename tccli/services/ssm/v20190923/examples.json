@@ -66,10 +66,10 @@
     ],
     "DescribeSecret": [
       {
-        "document": "获取凭据详情信息",
-        "input": "https://ssm.tencentcloudapi.com/?Action=DescribeSecret\n&SecretName=test3-db-secret\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AdditionalConfig\": \"key1\",\n        \"AssociatedInstanceIDs\": [\n            \"cvm-test\"\n        ],\n        \"CreateTime\": 1730272571,\n        \"CreateUin\": 700001224419,\n        \"DeleteTime\": 0,\n        \"Description\": \"测试数据库凭据创建\",\n        \"KmsKeyId\": \"6abd1fdb-86d4-11ef-b72d-52540089bc41\",\n        \"ProductName\": \"Mysql\",\n        \"ProjectID\": 0,\n        \"RequestId\": \"deb31013-2d0d-4b0c-a9dd-b62d8c3b2465\",\n        \"ResourceID\": \"cdb-n4j3y33j\",\n        \"ResourceName\": \"testresource\",\n        \"RotationFrequency\": 30,\n        \"RotationStatus\": true,\n        \"SecretName\": \"test3-db-secret\",\n        \"SecretType\": 1,\n        \"Status\": \"Enabled\",\n        \"TargetUin\": 0\n    }\n}",
-        "title": "获取凭据详情信息"
+        "document": "获取凭据详细信息",
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecret\n<公共请求参数>\n\n{\n    \"SecretName\": \"SSM-OIDC-Weijiali_test_20260622004\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AdditionalConfig\": \"\",\n        \"AssociatedInstanceIDs\": [],\n        \"CreateTime\": 1782100116,\n        \"CreateUin\": 100044683131,\n        \"CreateUinString\": \"100044683131\",\n        \"DeleteTime\": 0,\n        \"Description\": \"\",\n        \"EncryptSwitching\": false,\n        \"EncryptType\": 0,\n        \"KmsKeyId\": \"fd950ef7-1ff5-11ea-90c1-525400ce83fb\",\n        \"ProductName\": \"default\",\n        \"ProjectID\": 0,\n        \"ResourceID\": \"1258641191_100044683131_customize_1782100116409066358_fy2\",\n        \"ResourceName\": \"\",\n        \"RotationFrequency\": 0,\n        \"RotationStatus\": false,\n        \"SecretName\": \"SSM-OIDC-Weijiali_test_20260622004\",\n        \"SecretType\": 0,\n        \"Status\": \"Enabled\",\n        \"TargetUin\": 0,\n        \"TargetUinString\": \"0\",\n        \"RequestId\": \"a8917cfc-d66b-4389-8c75-ae2697c3ca41\"\n    }\n}",
+        "title": "获取凭据详细信息"
       }
     ],
     "DescribeSupportedProducts": [

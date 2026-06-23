@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq ModifyInternalRocketMQInstance --cli-unfold-argument  \
-    --InstanceId rmq-sk87wwkd223 \
+    --InstanceId rocketmq-a5nzx52ab7jb \
     --MaxTopics 20
 ```
 

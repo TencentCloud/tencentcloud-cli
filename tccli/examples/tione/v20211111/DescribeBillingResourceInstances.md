@@ -49,7 +49,16 @@ Output:
                 "ExpireTime": "",
                 "AutoRenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "SpecId": "sv_tio_platform_cloud_post_gpu_80c368g_44090d_sw",
-                "SpecAlias": "80核358GB 4090D*4"
+                "SpecAlias": "80核358GB 4090D*4",
+                "AvailableResource": {
+                    "Cpu": 0,
+                    "Memory": 84,
+                    "Gpu": 0,
+                    "GpuType": "4090D",
+                    "RealGpu": 0,
+                    "RealGpuDetailSet": [],
+                    "EnableRDMA": false
+                }
             }
         ],
         "RequestId": "114e2564-3ce6-469c-b9c0-284a51247902"

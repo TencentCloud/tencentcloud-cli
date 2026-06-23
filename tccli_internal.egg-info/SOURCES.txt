@@ -321,6 +321,8 @@ tccli/services/cms/v20190321/api.json
 tccli/services/cms/v20190321/examples.json
 tccli/services/cnb/__init__.py
 tccli/services/cnb/cnb_client.py
+tccli/services/cngw/__init__.py
+tccli/services/cngw/cngw_client.py
 tccli/services/config/__init__.py
 tccli/services/config/config_client.py
 tccli/services/controlcenter/__init__.py
