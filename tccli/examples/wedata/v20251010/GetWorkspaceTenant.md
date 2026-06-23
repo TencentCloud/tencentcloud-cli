@@ -5,18 +5,20 @@
 Input: 
 
 ```
-tccli wedata GetWorkspaceTenant --cli-unfold-argument ```
+tccli wedata GetWorkspaceTenant --cli-unfold-argument  \
+    --WorkspaceId 1769**10*****2*90
+```
 
 Output: 
 ```
 {
     "Response": {
         "Data": {
-            "AppId": "1300055887",
-            "OwnerUin": "600000561778",
+            "AppId": "1***0***87",
+            "OwnerUin": "60**00*6***8",
             "VersionInfo": {
                 "CreateTime": "2025-11-04 12:26:33",
-                "Creator": "600000561778",
+                "Creator": "6000**56***8",
                 "ExpireTime": "2025-11-04 12:26:33",
                 "TrialVersionRemainingCu": 0,
                 "UpdateTime": "2025-11-04 12:26:33",

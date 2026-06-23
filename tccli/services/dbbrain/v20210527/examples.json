@@ -568,6 +568,14 @@
         "title": "按照Sql模板查询指定时间段内的慢日志详细信息"
       }
     ],
+    "DescribeSqlExplainV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSqlExplainV2\n<公共请求参数>\n\n{\n    \"Product\": \"mysql\",\n    \"SqlText\": \"select * from tao_test.example_table LIMIT 1;\",\n    \"InstanceId\": \"cdb-30p95ond\",\n    \"Visual\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Explain\": {\n            \"Data\": [\n                {\n                    \"Extra\": \"\",\n                    \"Filtered\": \"100.00\",\n                    \"Id\": \"1\",\n                    \"Key\": \"\",\n                    \"KeyLen\": \"\",\n                    \"Partitions\": \"\",\n                    \"PossibleKeys\": \"\",\n                    \"Ref\": \"\",\n                    \"Rows\": \"4\",\n                    \"SelectType\": \"SIMPLE\",\n                    \"Table\": \"example_table\",\n                    \"Type\": \"ALL\"\n                }\n            ],\n            \"Names\": [\n                \"id\"\n            ]\n        },\n        \"FieldDesc\": [\n            {\n                \"Desc\": \"表名\",\n                \"Field\": \"table_name\"\n            }\n        ],\n        \"Schema\": \"\",\n        \"SqlText\": \"select * from tao_test.example_table LIMIT 1;\",\n        \"Tables\": [\n            {\n                \"TableName\": \"example_table\",\n                \"TableSchema\": \"tao_test\"\n            }\n        ],\n        \"VisualExplain\": \"\",\n        \"RequestId\": \"eeb978d7-7a58-4a1c-a22e-2a018c05424c\"\n    }\n}",
+        "title": "查询执行计划V2"
+      }
+    ],
     "DescribeSqlFilters": [
       {
         "document": "查询实例SQL限流任务列表",

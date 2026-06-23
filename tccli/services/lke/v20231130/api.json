@@ -19803,8 +19803,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "问答ID",
-          "example": "无",
+          "document": "<p>问答ID</p>",
+          "example": "示例值",
           "member": "string",
           "name": "QaBizId",
           "required": true,
@@ -19812,17 +19812,17 @@
         },
         {
           "disabled": false,
-          "document": "是否采纳",
-          "example": "无",
-          "member": "bool",
-          "name": "IsAccepted",
+          "document": "<p>答案</p>",
+          "example": "示例值",
+          "member": "string",
+          "name": "Answer",
           "required": false,
-          "type": "bool"
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "分类ID",
-          "example": "无",
+          "document": "<p>分类ID</p>",
+          "example": "示例值",
           "member": "string",
           "name": "CateBizId",
           "required": false,
@@ -19830,8 +19830,17 @@
         },
         {
           "disabled": false,
-          "document": "问题",
-          "example": "无",
+          "document": "<p>是否采纳</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAccepted",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>问题</p>",
+          "example": "示例值",
           "member": "string",
           "name": "Question",
           "required": false,
@@ -19839,12 +19848,30 @@
         },
         {
           "disabled": false,
-          "document": "答案",
-          "example": "无",
+          "document": "<p>相似问</p>",
+          "example": "[\"你好吗？\"]",
           "member": "string",
-          "name": "Answer",
+          "name": "SimilarQuestions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>问题描述</p>",
+          "example": "\"问题描述\"",
+          "member": "string",
+          "name": "QuestionDesc",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>问答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableScope",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

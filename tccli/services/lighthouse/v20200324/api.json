@@ -15815,7 +15815,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数量。",
+          "document": "<p>总数量。</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -15825,7 +15825,7 @@
         },
         {
           "disabled": false,
-          "document": "运行中实例数量。",
+          "document": "<p>运行中实例数量。</p>",
           "example": "7",
           "member": "int64",
           "name": "RunningCount",
@@ -15835,7 +15835,7 @@
         },
         {
           "disabled": false,
-          "document": "待回收实例数量。",
+          "document": "<p>待回收实例数量。</p>",
           "example": "2",
           "member": "int64",
           "name": "ShutdownCount",
@@ -15845,7 +15845,7 @@
         },
         {
           "disabled": false,
-          "document": "即将到期实例数量。",
+          "document": "<p>即将到期实例数量。</p>",
           "example": "0",
           "member": "int64",
           "name": "ExpiringCount",
@@ -15855,11 +15855,21 @@
         },
         {
           "disabled": false,
-          "document": "已到期实例数量。",
+          "document": "<p>已到期实例数量。</p>",
           "example": "0",
           "member": "int64",
           "name": "ExpiredCount",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已关机实例数量。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "StoppedCount",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }

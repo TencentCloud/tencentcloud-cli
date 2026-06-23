@@ -10340,6 +10340,15 @@
           "name": "BillingItemLabel",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "176****0*68*4**90",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -41075,7 +41084,17 @@
     },
     "GetWorkspaceCurrentUserRequest": {
       "document": "GetWorkspaceCurrentUser请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "1769*******842890",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "GetWorkspaceCurrentUserResponse": {
@@ -41083,7 +41102,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前用户信息",
+          "document": "<p>当前用户信息</p>",
           "example": "无",
           "member": "GetCurrentUserRsp",
           "name": "Data",
@@ -41155,7 +41174,17 @@
     },
     "GetWorkspaceTenantRequest": {
       "document": "GetWorkspaceTenant请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "1769**10*****2*90",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "GetWorkspaceTenantResponse": {
@@ -41163,7 +41192,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "租户信息",
+          "document": "<p>租户信息</p>",
           "example": "无",
           "member": "GetTenantRsp",
           "name": "Data",
@@ -57976,7 +58005,17 @@
     },
     "ListSSMRegionsRequest": {
       "document": "ListSSMRegions请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "ListSSMRegionsResponse": {
@@ -57984,7 +58023,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "校验结果",
+          "document": "<p>校验结果</p>",
           "example": "无",
           "member": "ListSSMRegionsRsp",
           "name": "Data",
@@ -62688,7 +62727,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页信息",
+          "document": "<p>分页信息</p>",
           "example": "无",
           "member": "PageReq",
           "name": "PageRequest",
@@ -62697,7 +62736,7 @@
         },
         {
           "disabled": false,
-          "document": "查询参数，其中工作空间名称支持模糊查询",
+          "document": "<p>查询参数，其中工作空间名称支持模糊查询</p>",
           "example": "无",
           "member": "WorkspaceQueryParams",
           "name": "QueryParams",
@@ -62706,12 +62745,21 @@
         },
         {
           "disabled": false,
-          "document": "根据字段排序",
+          "document": "<p>根据字段排序</p>",
           "example": "无",
           "member": "SortInfo",
           "name": "SortInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "1769**10*6*8***90",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -62721,7 +62769,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "控制台工作空间列表响应体",
+          "document": "<p>控制台工作空间列表响应体</p>",
           "example": "无",
           "member": "ListWorkspacesRsp",
           "name": "Data",
@@ -90551,6 +90599,16 @@
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "uint64",
+          "name": "PlatformVersion",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

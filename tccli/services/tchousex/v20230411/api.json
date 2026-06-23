@@ -5622,7 +5622,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作类型，“CREATE\"表示创建、”MODIFY\"表示变更配置、“RENEW\"表示续费",
+          "document": "<p>操作类型，“CREATE&quot;表示创建、”MODIFY&quot;表示变更配置、“RENEW&quot;表示续费</p>",
           "example": "CREATE",
           "member": "string",
           "name": "Case",
@@ -5631,7 +5631,7 @@
         },
         {
           "disabled": false,
-          "document": "是否询价",
+          "document": "<p>是否询价</p>",
           "example": "true",
           "member": "bool",
           "name": "IsQueryPrice",
@@ -5640,7 +5640,7 @@
         },
         {
           "disabled": false,
-          "document": "Empty",
+          "document": "<p>Empty</p>",
           "example": "warehouse",
           "member": "string",
           "name": "InstanceType",
@@ -5649,7 +5649,7 @@
         },
         {
           "disabled": false,
-          "document": "Empty",
+          "document": "<p>Empty</p>",
           "example": "type",
           "member": "string",
           "name": "Type",
@@ -5658,7 +5658,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区，例如\"ap-guangzhou-3\"表示广州三区等",
+          "document": "<p>可用区，例如&quot;ap-guangzhou-3&quot;表示广州三区等</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -5667,7 +5667,7 @@
         },
         {
           "disabled": false,
-          "document": "用户集群的私有网络",
+          "document": "<p>用户集群的私有网络</p>",
           "example": "vpc-23dsaf234",
           "member": "string",
           "name": "UserVPCId",
@@ -5676,7 +5676,7 @@
         },
         {
           "disabled": false,
-          "document": "用户集群的子网",
+          "document": "<p>用户集群的子网</p>",
           "example": "subnet-dk34df34",
           "member": "string",
           "name": "UserSubnetId",
@@ -5685,7 +5685,7 @@
         },
         {
           "disabled": false,
-          "document": "用户集群的版本，例如“20.7.2.30”等",
+          "document": "<p>用户集群的版本，例如“20.7.2.30”等</p>",
           "example": "20.7.2.30",
           "member": "string",
           "name": "ProductVersion",
@@ -5694,7 +5694,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID，创建时为空，其他情况必须存在",
+          "document": "<p>集群ID，创建时为空，其他情况必须存在</p>",
           "example": "cdwch-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -5703,7 +5703,7 @@
         },
         {
           "disabled": false,
-          "document": "集群资源规格描述",
+          "document": "<p>集群资源规格描述</p>",
           "example": "无",
           "member": "ResourceSpec",
           "name": "Resources",
@@ -5712,7 +5712,7 @@
         },
         {
           "disabled": false,
-          "document": "集群规格修改参数",
+          "document": "<p>集群规格修改参数</p>",
           "example": "无",
           "member": "ResourceSpec",
           "name": "ModifySpec",
@@ -5721,7 +5721,7 @@
         },
         {
           "disabled": false,
-          "document": "计费信息",
+          "document": "<p>计费信息</p>",
           "example": "无",
           "member": "ChargeProperties",
           "name": "ChargeProperties",
@@ -5730,7 +5730,7 @@
         },
         {
           "disabled": false,
-          "document": "创建集群时需要填写InstanceName",
+          "document": "<p>创建集群时需要填写InstanceName</p>",
           "example": "InstanceName",
           "member": "string",
           "name": "InstanceName",
@@ -5739,7 +5739,7 @@
         },
         {
           "disabled": false,
-          "document": "购买页填写的标签列表",
+          "document": "<p>购买页填写的标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -5748,7 +5748,7 @@
         },
         {
           "disabled": false,
-          "document": "用户子网剩余ip数量",
+          "document": "<p>用户子网剩余ip数量</p>",
           "example": "10",
           "member": "int64",
           "name": "UserSubnetIPNum",
@@ -5757,7 +5757,7 @@
         },
         {
           "disabled": false,
-          "document": "挂盘类型，默认为0，裸盘挂载为1",
+          "document": "<p>挂盘类型，默认为0，裸盘挂载为1</p>",
           "example": "externel",
           "member": "string",
           "name": "Kind",
@@ -5766,7 +5766,7 @@
         },
         {
           "disabled": false,
-          "document": "定时启停执行计划",
+          "document": "<p>定时启停执行计划</p>",
           "example": "无",
           "member": "RegularPlan",
           "name": "RegularPlan",
@@ -5775,7 +5775,7 @@
         },
         {
           "disabled": false,
-          "document": "spark规格",
+          "document": "<p>spark规格</p>",
           "example": "无",
           "member": "SparkSpecV1",
           "name": "SparkSpec",
@@ -5784,7 +5784,7 @@
         },
         {
           "disabled": true,
-          "document": "spark sql 规模限制",
+          "document": "<p>spark sql 规模限制</p>",
           "example": "4cu",
           "member": "string",
           "name": "SparkSpecName",
@@ -5793,7 +5793,7 @@
         },
         {
           "disabled": true,
-          "document": "是否允许开启spark规模限制",
+          "document": "<p>是否允许开启spark规模限制</p>",
           "example": "true",
           "member": "bool",
           "name": "SparkEnableResourceLimit",
@@ -5802,7 +5802,7 @@
         },
         {
           "disabled": true,
-          "document": "spark资源上限规格",
+          "document": "<p>spark资源上限规格</p>",
           "example": "16",
           "member": "int64",
           "name": "SparkResourceLimitCount",
@@ -5811,7 +5811,7 @@
         },
         {
           "disabled": false,
-          "document": "集群登录密码\t",
+          "document": "<p>集群登录密码</p>",
           "example": "adfadfadfs",
           "member": "string",
           "name": "InstancePwd",
@@ -5820,7 +5820,7 @@
         },
         {
           "disabled": false,
-          "document": "分时弹性执行计划",
+          "document": "<p>分时弹性执行计划</p>",
           "example": "无",
           "member": "ElasticPlan",
           "name": "ElasticPlan",
@@ -5829,7 +5829,7 @@
         },
         {
           "disabled": false,
-          "document": "离线任务并发数",
+          "document": "<p>离线任务并发数</p>",
           "example": "5",
           "member": "int64",
           "name": "OfflineTaskLimit",
@@ -5838,7 +5838,7 @@
         },
         {
           "disabled": false,
-          "document": "SQL计算集群名称",
+          "document": "<p>SQL计算集群名称</p>",
           "example": "VirtualClusterName",
           "member": "string",
           "name": "VirtualClusterName",
@@ -5847,7 +5847,7 @@
         },
         {
           "disabled": false,
-          "document": "支持的登录方式 1-非CAM 2-CAM",
+          "document": "<p>支持的登录方式 1-非CAM 2-CAM</p>",
           "example": "[1,2]",
           "member": "uint64",
           "name": "SupportLoginType",
@@ -5856,7 +5856,7 @@
         },
         {
           "disabled": false,
-          "document": "加密存储方式 1-不加密 2-cos 3-kms",
+          "document": "<p>加密存储方式 1-不加密 2-cos 3-kms</p>",
           "example": "1",
           "member": "uint64",
           "name": "CipherMode",
@@ -5865,7 +5865,7 @@
         },
         {
           "disabled": false,
-          "document": "kmsId kms加密必填",
+          "document": "<p>kmsId kms加密必填</p>",
           "example": "abcdersds",
           "member": "string",
           "name": "KmsId",
@@ -5874,7 +5874,7 @@
         },
         {
           "disabled": false,
-          "document": "32位字符串",
+          "document": "<p>32位字符串</p>",
           "example": "f93c0ff2-95b5-4d8c-995c-f04b79b8da39",
           "member": "string",
           "name": "KernelKey",
@@ -5883,7 +5883,7 @@
         },
         {
           "disabled": false,
-          "document": "是否优雅停止",
+          "document": "<p>是否优雅停止</p>",
           "example": "true",
           "member": "bool",
           "name": "GracefulEnable",
@@ -5892,7 +5892,7 @@
         },
         {
           "disabled": false,
-          "document": "cos桶模式 0-托管桶 1-自有桶 2-新建自有桶",
+          "document": "<p>cos桶模式 0-托管桶 1-自有桶 2-新建自有桶</p>",
           "example": "0",
           "member": "uint64",
           "name": "CosType",
@@ -5901,7 +5901,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义COS参数",
+          "document": "<p>用户自定义COS参数</p>",
           "example": "无",
           "member": "UserDefineCosSpec",
           "name": "UserDefineCosSpec",
@@ -5910,7 +5910,7 @@
         },
         {
           "disabled": false,
-          "document": "自动扩缩容参数",
+          "document": "<p>自动扩缩容参数</p>",
           "example": "无",
           "member": "AutoScalePlan",
           "name": "AutoScalePlan",
@@ -5919,7 +5919,7 @@
         },
         {
           "disabled": false,
-          "document": "TCLakeSpec",
+          "document": "<p>TCLakeSpec</p>",
           "example": "无",
           "member": "TCLakeSpec",
           "name": "TCLakeSpec",
@@ -5928,7 +5928,7 @@
         },
         {
           "disabled": false,
-          "document": "Warehouse类型 0 标准版，1 弹性版",
+          "document": "<p>Warehouse类型 0 标准版，1 弹性版</p>",
           "example": "1",
           "member": "int64",
           "name": "WarehouseType",
@@ -5937,7 +5937,7 @@
         },
         {
           "disabled": false,
-          "document": "ServerlessSpec，如果Warehouse类型是serverless，则必选",
+          "document": "<p>ServerlessSpec，如果Warehouse类型是serverless，则必选</p>",
           "example": "无",
           "member": "ServerlessSpec",
           "name": "ServerlessSpec",
@@ -5946,7 +5946,7 @@
         },
         {
           "disabled": false,
-          "document": "IsSecondaryZone",
+          "document": "<p>IsSecondaryZone</p>",
           "example": "true",
           "member": "bool",
           "name": "IsSecondaryZone",
@@ -5955,7 +5955,7 @@
         },
         {
           "disabled": false,
-          "document": "ldap 配置信息",
+          "document": "<p>ldap 配置信息</p>",
           "example": "无",
           "member": "LdapConfig",
           "name": "LdapConfig",
@@ -5964,7 +5964,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启ssl",
+          "document": "<p>是否开启ssl</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableSSL",
@@ -5973,12 +5973,21 @@
         },
         {
           "disabled": false,
-          "document": "1-共享模式 2-独占模式",
+          "document": "<p>1-共享模式 2-独占模式</p>",
           "example": "0",
           "member": "uint64",
           "name": "TCIMode",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多可用区信息</p>",
+          "example": "无",
+          "member": "SecondaryZoneInfo",
+          "name": "SecondaryZoneInfo",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5988,7 +5997,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "GoodsDetail对象",
+          "document": "<p>GoodsDetail对象</p>",
           "example": "GoodsDetailStr",
           "member": "string",
           "name": "GoodsDetailStr",
@@ -5998,7 +6007,7 @@
         },
         {
           "disabled": false,
-          "document": "GoodsCategoryId 表示操作类型",
+          "document": "<p>GoodsCategoryId 表示操作类型</p>",
           "example": "1001",
           "member": "int64",
           "name": "GoodsCategoryId",
@@ -6008,7 +6017,7 @@
         },
         {
           "disabled": false,
-          "document": "子商品码",
+          "document": "<p>子商品码</p>",
           "example": "Type",
           "member": "string",
           "name": "Type",
@@ -6018,7 +6027,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式，0后付费，1预付费",
+          "document": "<p>付费模式，0后付费，1预付费</p>",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
@@ -6028,7 +6037,7 @@
         },
         {
           "disabled": false,
-          "document": "地域ID",
+          "document": "<p>地域ID</p>",
           "example": "1001",
           "member": "int64",
           "name": "RegionId",
@@ -6038,7 +6047,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区ID",
+          "document": "<p>可用区ID</p>",
           "example": "1001",
           "member": "int64",
           "name": "ZoneId",
@@ -6048,7 +6057,7 @@
         },
         {
           "disabled": false,
-          "document": "资源标识符",
+          "document": "<p>资源标识符</p>",
           "example": "ResourceId",
           "member": "string",
           "name": "ResourceId",
@@ -6058,7 +6067,7 @@
         },
         {
           "disabled": false,
-          "document": "商品数目",
+          "document": "<p>商品数目</p>",
           "example": "20",
           "member": "int64",
           "name": "GoodsNum",
@@ -6068,7 +6077,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ErrorMsg",
           "member": "string",
           "name": "ErrorMsg",
@@ -6078,7 +6087,7 @@
         },
         {
           "disabled": false,
-          "document": "GoodsDetail",
+          "document": "<p>GoodsDetail</p>",
           "example": "GoodsDetail",
           "member": "string",
           "name": "GoodsDetail",
@@ -10840,7 +10849,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "<p>实例Id</p>",
           "example": "instance-vzarb8go",
           "member": "string",
           "name": "InstanceId",
@@ -10849,7 +10858,7 @@
         },
         {
           "disabled": false,
-          "document": "每页返回的条数",
+          "document": "<p>每页返回的条数</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -10858,7 +10867,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移值",
+          "document": "<p>偏移值</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -10867,7 +10876,7 @@
         },
         {
           "disabled": false,
-          "document": "用户登录凭证",
+          "document": "<p>用户登录凭证</p>",
           "example": "xxxfdfad",
           "member": "string",
           "name": "UserToken",
@@ -10876,7 +10885,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "u1",
           "member": "string",
           "name": "UserName",
@@ -10885,12 +10894,30 @@
         },
         {
           "disabled": false,
-          "document": "用户类型 1-非cam 2-cam",
+          "document": "<p>用户类型 1-非cam 2-cam</p>",
           "example": "[1]",
           "member": "uint64",
           "name": "UserType",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由类型</p><p>枚举值：</p><ul><li>UserPermission： 查询用户权限</li></ul>",
+          "example": "UserPermission",
+          "member": "string",
+          "name": "ApiType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户基本信息</p>",
+          "example": "无",
+          "member": "BasicUserInfo",
+          "name": "UserInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -10900,8 +10927,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " ",
+          "document": "<p>错误返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ok",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": false,
@@ -10910,7 +10937,7 @@
         },
         {
           "disabled": false,
-          "document": "序列化之后的数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>序列化之后的数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"TotalCount\":1,\"DescribeUserV2List\":[{\"UserName\":\"100006811818\",\"AssociatedUin\":\"100006811818\",\"AssociatedRole\":null,\"CreateTime\":\"2025-10-13T17:17:19+08:00\",\"CreateTimeAt\":1760347039,\"UserType\":2,\"AccountIdentity\":\"sysadmin\",\"Attrs\":[]}]}",
           "member": "string",
           "name": "ReturnData",
@@ -11787,6 +11814,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "SparkTaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -12573,6 +12610,28 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否多可用区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSecondaryZone",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>多可用区信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{}]",
+          "member": "string",
+          "name": "SecondaryZoneInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -14836,7 +14895,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "具体操作（必填）：CreateUser、EditorUser、BatchDeleteUser、ResetPassword、BatchTaskResult",
+          "document": "<p>具体操作（必填）：CreateUser、EditorUser、BatchDeleteUser、ResetPassword、BatchTaskResult</p>",
           "example": "CreateUser",
           "member": "string",
           "name": "ApiType",
@@ -14845,7 +14904,7 @@
         },
         {
           "disabled": false,
-          "document": "实例id 必填",
+          "document": "<p>实例id 必填</p>",
           "example": "instance-vzarb8go",
           "member": "string",
           "name": "InstanceId",
@@ -14854,7 +14913,7 @@
         },
         {
           "disabled": false,
-          "document": "-X用户登录凭证",
+          "document": "<p>-X用户登录凭证</p>",
           "example": "sdfsfds",
           "member": "string",
           "name": "UserToken",
@@ -14863,7 +14922,7 @@
         },
         {
           "disabled": false,
-          "document": "用户uin列表（cam必填）",
+          "document": "<p>用户uin列表（cam必填）</p>",
           "example": "无",
           "member": "BasicUserInfo",
           "name": "BasicUserInfos",
@@ -14872,10 +14931,19 @@
         },
         {
           "disabled": false,
-          "document": "角色id列表（绑定/解绑用户必传）",
+          "document": "<p>角色id列表（绑定/解绑用户必传）</p>",
           "example": "[1,2]",
           "member": "uint64",
           "name": "RoleIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>权限项</p>",
+          "example": "无",
+          "member": "PermissionInfo",
+          "name": "PermissionInfos",
           "required": false,
           "type": "list"
         }
@@ -14887,8 +14955,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " ",
+          "document": "<p>错误返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ok",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": false,
@@ -14897,8 +14965,8 @@
         },
         {
           "disabled": false,
-          "document": "序列化之后的数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " ",
+          "document": "<p>序列化之后的数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ok",
           "member": "string",
           "name": "ReturnData",
           "output_required": false,
@@ -15049,7 +15117,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "QueryID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>QueryID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "QueryID",
           "member": "string",
           "name": "QueryID",
@@ -15059,7 +15127,7 @@
         },
         {
           "disabled": false,
-          "document": "Statement\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Statement</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Statement",
           "member": "string",
           "name": "Statement",
@@ -15069,7 +15137,7 @@
         },
         {
           "disabled": false,
-          "document": "State\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>State</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "State",
           "member": "string",
           "name": "State",
@@ -15079,7 +15147,7 @@
         },
         {
           "disabled": false,
-          "document": "SubmitUser\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>SubmitUser</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SubmitUser",
           "member": "string",
           "name": "SubmitUser",
@@ -15089,7 +15157,7 @@
         },
         {
           "disabled": false,
-          "document": "StartTime\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>StartTime</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "StartTime",
           "member": "string",
           "name": "StartTime",
@@ -15099,7 +15167,7 @@
         },
         {
           "disabled": false,
-          "document": "Duration\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Duration</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
           "name": "Duration",
@@ -15109,7 +15177,7 @@
         },
         {
           "disabled": false,
-          "document": "VirtualWarehouse",
+          "document": "<p>VirtualWarehouse</p>",
           "example": "VirtualWarehouse",
           "member": "string",
           "name": "VirtualWarehouse",
@@ -15119,7 +15187,7 @@
         },
         {
           "disabled": false,
-          "document": "SessionRole",
+          "document": "<p>SessionRole</p>",
           "example": "SessionRole",
           "member": "string",
           "name": "SessionRole",
@@ -15129,7 +15197,7 @@
         },
         {
           "disabled": false,
-          "document": "QueryStatus\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>QueryStatus</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "QueryStatus",
           "member": "string",
           "name": "QueryStatus",
@@ -15139,10 +15207,30 @@
         },
         {
           "disabled": false,
-          "document": "TaskId",
+          "document": "<p>TaskId</p>",
           "example": "tchousex-z1v46c",
           "member": "string",
           "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CurrDatabase</p>",
+          "example": "db1",
+          "member": "string",
+          "name": "CurrDatabase",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>StatementType</p>",
+          "example": "query",
+          "member": "string",
+          "name": "StatementType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -16445,6 +16533,56 @@
       "document": "列表页搜索的标记列表",
       "members": [],
       "usage": "in"
+    },
+    "SecondaryZoneInfo": {
+      "document": "多可用区信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>多可用区</p>",
+          "example": "ap-chongqing-1",
+          "member": "string",
+          "name": "SecondaryZone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>暂未使用</p>",
+          "example": "subnet-sahddsf",
+          "member": "string",
+          "name": "SecondarySubnet",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>暂未使用</p>",
+          "example": "100",
+          "member": "string",
+          "name": "UserIpNum",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>暂未使用</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "SecondaryUserSubnetIPNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ServerlessSpec": {
       "document": "ServerlessSpec",
@@ -18539,6 +18677,16 @@
           "example": "--",
           "member": "string",
           "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "SparkTaskId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

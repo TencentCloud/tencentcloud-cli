@@ -99,7 +99,7 @@
     "CalculatePrice": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CalculatePrice\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CalculatePrice\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"176****0*68*4**90\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalPriceDiscount\": \"\"\n        },\n        \"RequestId\": \"a378da31-c416-46a5-87e8-c13d5e27b491\"\n    }\n}",
         "title": "demo"
       }
@@ -2071,16 +2071,16 @@
     "GetWorkspaceCurrentUser": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWorkspaceCurrentUser\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppId\": \"1300055887\",\n            \"OwnerUin\": \"600000561778\",\n            \"PolicyInfo\": [],\n            \"UserInfo\": {\n                \"Nickname\": \"wedata30-dev@tencent.com\",\n                \"Uin\": \"700002164618\",\n                \"UserName\": \"wedata30-dev@tencent.com\",\n                \"UserTag\": \"\"\n            }\n        },\n        \"RequestId\": \"76811b12-a0cc-4549-81a1-cbcbebf5f401\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWorkspaceCurrentUser\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"1769*******842890\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppId\": \"130*****87\",\n            \"OwnerUin\": \"6****0****78\",\n            \"PolicyInfo\": [],\n            \"UserInfo\": {\n                \"Nickname\": \"we**t*3*-***********.com\",\n                \"Uin\": \"70***2****18\",\n                \"UserName\": \"we***a*0*de*******n*.com\",\n                \"UserTag\": \"\"\n            }\n        },\n        \"RequestId\": \"76811b12-a0cc-4549-81a1-cbcbebf5f401\"\n    }\n}",
         "title": "获取工作空间当前用户"
       }
     ],
     "GetWorkspaceTenant": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWorkspaceTenant\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppId\": \"1300055887\",\n            \"OwnerUin\": \"600000561778\",\n            \"VersionInfo\": {\n                \"CreateTime\": \"2025-11-04 12:26:33\",\n                \"Creator\": \"600000561778\",\n                \"ExpireTime\": \"2025-11-04 12:26:33\",\n                \"TrialVersionRemainingCu\": 0,\n                \"UpdateTime\": \"2025-11-04 12:26:33\",\n                \"VersionStatus\": 3,\n                \"VersionType\": 2\n            }\n        },\n        \"RequestId\": \"9d5a4661-cb09-4807-9d35-d044956a62fd\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWorkspaceTenant\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"1769**10*****2*90\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppId\": \"1***0***87\",\n            \"OwnerUin\": \"60**00*6***8\",\n            \"VersionInfo\": {\n                \"CreateTime\": \"2025-11-04 12:26:33\",\n                \"Creator\": \"6000**56***8\",\n                \"ExpireTime\": \"2025-11-04 12:26:33\",\n                \"TrialVersionRemainingCu\": 0,\n                \"UpdateTime\": \"2025-11-04 12:26:33\",\n                \"VersionStatus\": 3,\n                \"VersionType\": 2\n            }\n        },\n        \"RequestId\": \"9d5a4661-cb09-4807-9d35-d044956a62fd\"\n    }\n}",
         "title": "获取租户信息"
       }
     ],
@@ -3321,8 +3321,8 @@
     "ListWorkspaces": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListWorkspaces\n<公共请求参数>\n\n{\n    \"PageRequest\": {\n        \"PageNumber\": 1,\n        \"PageSize\": 1\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"CreateTime\": \"2025-11-05 17:05:49\",\n                    \"Creator\": {\n                        \"Nickname\": \"wedata30-dev@tencent.com\",\n                        \"Uin\": \"700002164618\",\n                        \"UserName\": \"wedata30-dev@tencent.com\"\n                    },\n                    \"Description\": \"abel_1105\",\n                    \"ErrorReason\": \"\",\n                    \"Status\": 1,\n                    \"UpdateTime\": \"2025-11-05 17:05:49\",\n                    \"WorkspaceId\": \"17623335490472931\",\n                    \"WorkspaceName\": \"abel_1105\",\n                    \"WorkspaceRegion\": \"ap-guangzhou\"\n                }\n            ],\n            \"PageResponse\": {\n                \"PageNumber\": 1,\n                \"PageSize\": 1,\n                \"TotalCount\": 35,\n                \"TotalPageNumber\": 35\n            }\n        },\n        \"RequestId\": \"6b6335ea-4d28-43b3-91fb-92e6d738fa01\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListWorkspaces\n<公共请求参数>\n\n{\n    \"PageRequest\": {\n        \"PageNumber\": 1,\n        \"PageSize\": 1\n    },\n    \"WorkspaceId\": \"1769**10*6*8***90\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"CreateTime\": \"2025-11-05 17:05:49\",\n                    \"Creator\": {\n                        \"Nickname\": \"weda*a3**de*@*******.com\",\n                        \"Uin\": \"70*0*2*****8\",\n                        \"UserName\": \"wedat*3*-**v*t****nt.com\"\n                    },\n                    \"Description\": \"ab***1*05\",\n                    \"ErrorReason\": \"\",\n                    \"Status\": 1,\n                    \"UpdateTime\": \"2025-11-05 17:05:49\",\n                    \"WorkspaceId\": \"176**3*5*9**72931\",\n                    \"WorkspaceName\": \"****_*105\",\n                    \"WorkspaceRegion\": \"ap**ua*g**ou\"\n                }\n            ],\n            \"PageResponse\": {\n                \"PageNumber\": 1,\n                \"PageSize\": 1,\n                \"TotalCount\": 35,\n                \"TotalPageNumber\": 35\n            }\n        },\n        \"RequestId\": \"6b6335ea-4d28-43b3-91fb-92e6d738fa01\"\n    }\n}",
         "title": "成功调用"
       }
     ],

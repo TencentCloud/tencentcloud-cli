@@ -5,20 +5,22 @@
 Input: 
 
 ```
-tccli wedata GetWorkspaceCurrentUser --cli-unfold-argument ```
+tccli wedata GetWorkspaceCurrentUser --cli-unfold-argument  \
+    --WorkspaceId 1769*******842890
+```
 
 Output: 
 ```
 {
     "Response": {
         "Data": {
-            "AppId": "1300055887",
-            "OwnerUin": "600000561778",
+            "AppId": "130*****87",
+            "OwnerUin": "6****0****78",
             "PolicyInfo": [],
             "UserInfo": {
-                "Nickname": "wedata30-dev@tencent.com",
-                "Uin": "700002164618",
-                "UserName": "wedata30-dev@tencent.com",
+                "Nickname": "we**t*3*-***********.com",
+                "Uin": "70***2****18",
+                "UserName": "we***a*0*de*******n*.com",
                 "UserTag": ""
             }
         },

@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli wedata CalculatePrice --cli-unfold-argument ```
+tccli wedata CalculatePrice --cli-unfold-argument  \
+    --WorkspaceId 176****0*68*4**90
+```
 
 Output: 
 ```

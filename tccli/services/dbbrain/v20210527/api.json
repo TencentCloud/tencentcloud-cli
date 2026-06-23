@@ -497,6 +497,13 @@
       "output": "DescribeSlowLogsResponse",
       "status": "online"
     },
+    "DescribeSqlExplainV2": {
+      "document": "查询指定 SELECT SQL 在实例上的执行计划，常用于慢 SQL 分析、SQL 优化等场景。仅支持 SELECT 类语句",
+      "input": "DescribeSqlExplainV2Request",
+      "name": "查询 SQL 执行计划V2",
+      "output": "DescribeSqlExplainV2Response",
+      "status": "online"
+    },
     "DescribeSqlFilters": {
       "document": "查询实例SQL限流任务列表。",
       "input": "DescribeSqlFiltersRequest",
@@ -7497,6 +7504,138 @@
       ],
       "type": "object"
     },
+    "DescribeSqlExplainV2Request": {
+      "document": "DescribeSqlExplainV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务产品类型。取值：mysql（云数据库 MySQL）、cynosdb（TDSQL-C MySQL 版）、dcdb（TDSQL MySQL 版）、mariadb（TDSQL MariaDB 版）。</p>",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待分析的 SQL 语句。仅支持单条 SELECT 语句；若以 EXPLAIN 开头会自动剥离 EXPLAIN 前缀后分析。最大 4096 字符。</p>",
+          "example": "select * from tao_test.example_table LIMIT 1;",
+          "member": "string",
+          "name": "SqlText",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例 ID。MySQL: cdb-xxxxxxx，TDSQL-C: cynosdbmysql-ins-xxxxxxx，MariaDB: tdsql-xxxxx，TDSQL-MySQL： '集群id&amp;分片id',如果TDSQL-MySQL数据库类型同时传入了集群id则instanceId字段只需要传入分片id。最大 64 字符。与 ClusterId 至少需传入其一。</p>",
+          "example": "cdb-30p95ond",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名。可选；为空时按当前 SQL 上下文执行。最大 64 字符。</p>",
+          "example": "name",
+          "member": "string",
+          "name": "Schema",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。仅 TDSQL-MySQL时使用，与 InstanceId 至少需传入其一。最大 64 字符。</p>",
+          "example": "tdsqlshard-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否输出可视化执行树</p><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Visual",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSqlExplainV2Response": {
+      "document": "DescribeSqlExplainV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据库名，回显请求中的 Schema。</p>",
+          "example": "name",
+          "member": "string",
+          "name": "Schema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 文本，回显请求中的 SqlText。</p>",
+          "example": "select * from tao_test.example_table LIMIT 1;",
+          "member": "string",
+          "name": "SqlText",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 涉及的表名列表。</p>",
+          "example": "无",
+          "member": "SqlExplainTableRefV2",
+          "name": "Tables",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行计划详细信息。由数据库 EXPLAIN 输出透传，内容为 JSON 字符串，包含 Meta（列定义）与 Data（执行计划行）两部分；Format=JSON 时为 EXPLAIN FORMAT=JSON 的原始结果。</p>",
+          "example": "无",
+          "member": "SqlExplainResultV2",
+          "name": "Explain",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行计划字段说明列表。仅当请求 Visual=true 或走 SqlTemplateKey 路径时返回，用于前端展示字段中文释义。</p>",
+          "example": "无",
+          "member": "SqlExplainFieldDescV2",
+          "name": "FieldDesc",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可视化执行计划树，当Visual=true时返回</p>",
+          "example": "{  }",
+          "member": "string",
+          "name": "VisualExplain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSqlFiltersRequest": {
       "document": "DescribeSqlFilters请求参数结构体",
       "members": [
@@ -12409,6 +12548,210 @@
           "name": "Ratio",
           "output_required": true,
           "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SqlExplainFieldDescV2": {
+      "document": "执行计划字段说明项。提供 EXPLAIN / VisualExplain 输出中各字段的中文释义，便于前端在展示可视化执行计划时进行翻译。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>字段英文名，与 Explain / VisualExplain 中出现的字段一致，例如 access_type、key、rows。</p>",
+          "example": "OrderingOperation",
+          "member": "string",
+          "name": "Field",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段中文释义。</p>",
+          "example": "排序",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SqlExplainResultV2": {
+      "document": "EXPLAIN 输出结果。Names 为 EXPLAIN 列名顺序，Data 为按行展开的执行计划数据。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>EXPLAIN 列名顺序，与 Data 中每一行的字段一一对应。</p>",
+          "example": "[\"id\"]",
+          "member": "string",
+          "name": "Names",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行计划行列表。</p>",
+          "example": "无",
+          "member": "SqlExplainRowV2",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SqlExplainRowV2": {
+      "document": "EXPLAIN TRADITIONAL 格式的执行计划行（共 12 列），字段语义与 MySQL 原生 EXPLAIN 输出一致。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询块编号（对应 MySQL EXPLAIN 中的 id 列）。</p>",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询块类型（对应 MySQL EXPLAIN 中的 select_type 列）。常见取值：SIMPLE、PRIMARY、DERIVED、SUBQUERY、DEPENDENT SUBQUERY、UNION 等。</p>",
+          "example": "SIMPLE",
+          "member": "string",
+          "name": "SelectType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本行执行计划访问的表名（对应 MySQL EXPLAIN 中的 table 列），含派生表。</p>",
+          "example": "example_table",
+          "member": "string",
+          "name": "Table",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中的分区（对应 MySQL EXPLAIN 中的 partitions 列）。未使用分区时为空字符串。</p>",
+          "example": "example_partitions",
+          "member": "string",
+          "name": "Partitions",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问类型（对应 MySQL EXPLAIN 中的 type 列）。常见取值：ALL、index、range、ref、eq_ref、const、system 等，访问效率自左至右递增。</p>",
+          "example": "ALL",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>候选索引（对应 MySQL EXPLAIN 中的 possible_keys 列）。优化器认为可能用得上的索引列表，以英文逗号分隔。</p>",
+          "example": "example_possible_key",
+          "member": "string",
+          "name": "PossibleKeys",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实际选用的索引名（对应 MySQL EXPLAIN 中的 key 列）。未走索引时为空字符串。</p>",
+          "example": "example_key",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实际使用索引的长度（对应 MySQL EXPLAIN 中的 key_len 列），单位字节。</p>",
+          "example": "example_key_len",
+          "member": "string",
+          "name": "KeyLen",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>与索引比较的列或常量（对应 MySQL EXPLAIN 中的 ref 列）。</p>",
+          "example": "example_ref",
+          "member": "string",
+          "name": "Ref",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描行数（对应 MySQL EXPLAIN 中的 rows 列）。优化器估算需要扫描的行数。</p>",
+          "example": "4",
+          "member": "string",
+          "name": "Rows",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤比例（对应 MySQL EXPLAIN 中的 filtered 列）。存储引擎扫描后被 WHERE 过滤剩余的行数百分比。</p>",
+          "example": "100.00",
+          "member": "string",
+          "name": "Filtered",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>附加信息（对应 MySQL EXPLAIN 中的 extra 列）。常见值：Using index（覆盖索引）、Using where、Using temporary、Using filesort 等。</p>",
+          "example": "Using index",
+          "member": "string",
+          "name": "Extra",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SqlExplainTableRefV2": {
+      "document": "SQL 涉及的表信息。包含库名与表名，用于在前端展示 SQL 涉及的表清单。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>表名。</p>",
+          "example": "example_table",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>表所在的数据库名。</p>",
+          "example": "tao_test",
+          "member": "string",
+          "name": "TableSchema",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

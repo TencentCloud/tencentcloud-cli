@@ -1312,6 +1312,14 @@
         "title": "隔离只读分析引擎实例"
       }
     ],
+    "MockNodeDown": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MockNodeDown\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-pub24n35\",\n    \"InstanceId\": \"cynosdbmysql-ins-iiznk2ic\",\n    \"SetRecoverFail\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1043961,\n        \"TaskId\": 42046,\n        \"RequestId\": \"ff6e26c7-5a54-4555-9fdf-506e05e7c679\"\n    }\n}",
+        "title": "模拟节点宕机"
+      }
+    ],
     "ModifyAccountDescription": [
       {
         "document": "修改数据库账号描述信息",

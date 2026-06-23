@@ -1127,6 +1127,13 @@
       "output": "IsolateLibraDBInstanceResponse",
       "status": "online"
     },
+    "MockNodeDown": {
+      "document": "本接口（MockNodeDown）用于模拟集群内节点宕机",
+      "input": "MockNodeDownRequest",
+      "name": "模拟节点宕机",
+      "output": "MockNodeDownResponse",
+      "status": "online"
+    },
     "ModifyAccountDescription": {
       "document": "本接口(ModifyAccountDescription)用于修改数据库账号描述信息。",
       "input": "ModifyAccountDescriptionRequest",
@@ -25585,6 +25592,71 @@
         }
       ],
       "usage": "both"
+    },
+    "MockNodeDownRequest": {
+      "document": "MockNodeDown请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群Id</p>",
+          "example": "cynosdbmysql-pub24n35",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "cynosdbmysql-ins-iiznk2ic",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否让实例自动恢复失败</p><p>枚举值：</p><ul><li>fasle： 否</li><li>true： 是</li></ul>",
+          "example": "false",
+          "member": "bool",
+          "name": "SetRecoverFail",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "MockNodeDownResponse": {
+      "document": "MockNodeDown返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>xa0任务ID</p>",
+          "example": "42046",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Flow任务ID</p>",
+          "example": "1043961",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModelConfig": {
       "document": "模型接入配置",
