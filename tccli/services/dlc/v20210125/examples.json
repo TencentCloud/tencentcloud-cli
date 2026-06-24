@@ -1400,6 +1400,14 @@
         "title": "示例一"
       }
     ],
+    "ModifyResourcePushChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourcePushChannel\n<公共请求参数>\n\n{\n    \"ResourceIds\": [\n        \"dlccd4e-700001601851-1740047745-700001601739-25130105\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceIds\": [\n            \"dlccd4e-700001601851-1740047745-700001601739-25130105\"\n        ],\n        \"RequestId\": \"e1c146fe-7d87-4e7f-9453-c264e264cd11\"\n    }\n}",
+        "title": "修改资源推量渠道调用示例"
+      }
+    ],
     "ModifySparkApp": [
       {
         "document": "",

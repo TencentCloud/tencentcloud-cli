@@ -533,7 +533,7 @@
       "status": "online"
     },
     "ImportOpenApi": {
-      "document": "本接口（ImportOpenApi）用于将OpenAPI规范定义的API导入到API网关。 ",
+      "document": "本接口（ImportOpenApi）用于将OpenAPI规范定义的API导入到API网关。",
       "input": "ImportOpenApiRequest",
       "name": "导入OpenAPI",
       "output": "ImportOpenApiResponse",
@@ -2714,7 +2714,7 @@
         {
           "disabled": false,
           "document": "待绑定的环境。",
-          "example": "test",
+          "example": "formal",
           "member": "string",
           "name": "Environment",
           "required": true,
@@ -2750,7 +2750,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -9437,7 +9437,7 @@
           "example": "无",
           "member": "CreateApiRspSet",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13559,7 +13559,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },

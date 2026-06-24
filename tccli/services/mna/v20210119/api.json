@@ -175,6 +175,13 @@
       "output": "GetFlowStatisticByRegionResponse",
       "status": "online"
     },
+    "GetGatewayList": {
+      "document": "支持网关列表查询。包含网关名称、创建时间和网关状态（正常/异常）。支持基于网关名称的查询。默认按照创建时间倒序排列。",
+      "input": "GetGatewayListRequest",
+      "name": "获取网关列表",
+      "output": "GetGatewayListResponse",
+      "status": "online"
+    },
     "GetGroupDetail": {
       "document": "查看分组详细信息",
       "input": "GetGroupDetailRequest",
@@ -1847,6 +1854,62 @@
       ],
       "usage": "out"
     },
+    "GatewayInfo": {
+      "document": "网关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关ID</p>",
+          "example": "mpgw-0cdavk8g3t",
+          "member": "string",
+          "name": "GatewayId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关名称</p>",
+          "example": "CN-BJ-TEX-01",
+          "member": "string",
+          "name": "GatewayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间，单位：秒</p>",
+          "example": "1700793999",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关状态。0：正常，1：异常</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关实例数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "InstanceSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "GetActiveDeviceCountRequest": {
       "document": "GetActiveDeviceCount请求参数结构体",
       "members": [
@@ -2909,6 +2972,71 @@
           "name": "TotalValue",
           "output_required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetGatewayListRequest": {
+      "document": "GetGatewayList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码，从1开始",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页个数",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "网关名称",
+          "example": "CN-BJ-TEX-01",
+          "member": "string",
+          "name": "GatewayName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetGatewayListResponse": {
+      "document": "GetGatewayList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关列表",
+          "example": "无",
+          "member": "GatewayInfo",
+          "name": "GatewayList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总个数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

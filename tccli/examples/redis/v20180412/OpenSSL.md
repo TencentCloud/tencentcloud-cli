@@ -1,4 +1,4 @@
-**Example 1: 开启SSL请求示例**
+**Example 1: 示例**
 
 
 
@@ -6,15 +6,16 @@ Input:
 
 ```
 tccli redis OpenSSL --cli-unfold-argument  \
-    --InstanceId crs-dvchdv5
+    --InstanceId crs-gcd7l17r \
+    --AddressType 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TaskId": 329,
-        "RequestId": "e546784b-709c-401d-aba6-73037eb4e522"
+        "TaskId": -1,
+        "RequestId": "8a82392e-13dd-4a44-8ab1-2cd977fdaf20"
     }
 }
 ```

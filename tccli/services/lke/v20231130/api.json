@@ -2799,6 +2799,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否删除保护</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDeleteProtected",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

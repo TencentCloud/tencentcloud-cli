@@ -1769,7 +1769,7 @@
         },
         {
           "disabled": false,
-          "document": "支持的账号类型，可选：cam\\\\ldap,所有非cam都为ldap",
+          "document": "支持的账号类型，可选：cam\\ldap,所有非cam都为ldap",
           "example": "cam",
           "member": "string",
           "name": "AccountType",
@@ -1780,7 +1780,7 @@
         },
         {
           "disabled": false,
-          "document": "账号身份，可选：sysadmin\\\\admin\\\\user",
+          "document": "账号身份，可选：sysadmin\\admin\\user",
           "example": "admin",
           "member": "string",
           "name": "AccountIdentity",

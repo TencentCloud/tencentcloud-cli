@@ -6,6 +6,13 @@
       "name": "创建会话日志查看签名链接",
       "output": "CreateSessionLogViewUrlResponse",
       "status": "online"
+    },
+    "DescribeSessionLog": {
+      "document": "查询腾讯云智能助手日志",
+      "input": "DescribeSessionLogRequest",
+      "name": "查询会话日志内容",
+      "output": "DescribeSessionLogResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -87,6 +94,91 @@
           "name": "ExpiredTime",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSessionLogRequest": {
+      "document": "DescribeSessionLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>KiKI 运行环境</p><p>枚举值：</p><ul><li>cloud-pc： 腾讯云中国站</li><li>cloud-intl： 腾讯云国际站</li><li>woa： 腾讯内网</li></ul>",
+          "example": "cloud-pc",
+          "member": "string",
+          "name": "Profile",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>KiKi 用户 ID。腾讯云站点是用户的 Uin。腾讯内网站点是用户的企业微信名 (Rtx)</p>",
+          "example": "1000*****771",
+          "member": "string",
+          "name": "TargetUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>KiKi 会话 ID</p>",
+          "example": "9a6a68a5-a424-4ce7-85cb-060a78dd0dc4",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSessionLogResponse": {
+      "document": "DescribeSessionLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>消息内容，JSON格式</p>",
+          "example": "[{\"id\":\"956e6234-0679-423c-8100-dabde34d8f24\",\"role\":\"user\",\"parts\":[{\"type\":\"text\",\"text\":\"如何生成备案授权码\"}]}]",
+          "member": "string",
+          "name": "Messages",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息条数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "MessageCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话开始时间</p>",
+          "example": "2026-06-17T06:40:57.893Z",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话最后活跃时间</p>",
+          "example": "2026-06-17T06:40:57.893Z",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

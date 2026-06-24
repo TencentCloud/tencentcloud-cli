@@ -224,6 +224,14 @@
         "title": "查询审计日志文件列表"
       }
     ],
+    "DescribeDBAuditLogTopSqls": [
+      {
+        "document": "查询最近1分钟的审计日志topsql 列表",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBAuditLogTopSqls\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-06-24T11:58:50+08:00\",\n    \"EndTime\": \"2026-06-24T11:59:50+08:00\",\n    \"Product\": \"mysql\",\n    \"InstanceId\": \"cdb-h6b22q74\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TopSqls\": [\n            {\n                \"AffectRows\": 0,\n                \"AffectRowsAvg\": 0,\n                \"AffectRowsMax\": 0,\n                \"AffectRowsMin\": 0,\n                \"CheckRows\": 21,\n                \"CheckRowsAvg\": 1,\n                \"CheckRowsMax\": 1,\n                \"CheckRowsMin\": 1,\n                \"CpuTime\": 0.00157,\n                \"CpuTimeAvg\": 0.32343,\n                \"CpuTimeMax\": 0.000125,\n                \"CpuTimeMin\": 0.000416,\n                \"DB\": \"\",\n                \"ExecTimes\": 21,\n                \"IoWaitTime\": 0,\n                \"IoWaitTimeAvg\": 0,\n                \"IoWaitTimeMax\": 0,\n                \"IoWaitTimeMin\": 0,\n                \"Latency\": 0.13,\n                \"LatencyAvg\": 0.006173,\n                \"LatencyMax\": 0.00774,\n                \"LatencyMin\": 0.00401,\n                \"LockWaitTime\": 0,\n                \"LockWaitTimeAvg\": 0,\n                \"LockWaitTimeMax\": 0,\n                \"LockWaitTimeMin\": 0,\n                \"QueryTimeRatio\": \"29.0\",\n                \"SentRows\": 21,\n                \"SentRowsAvg\": 1,\n                \"SqlTemplate\": \"select @@max_allowed_packet\",\n                \"SqlTemplateId\": \"3978247360646555614\",\n                \"SqlText\": null,\n                \"SqlType\": \"Select\",\n                \"TableName\": \"\"\n            }\n        ],\n        \"TotalCount\": 15,\n        \"RequestId\": \"aec7ce88-cc46-4dfe-9e07-12867a2912e7\"\n    }\n}",
+        "title": "查看审计日志topsql"
+      }
+    ],
     "DescribeDBAutonomyAction": [
       {
         "document": "",

@@ -14512,6 +14512,7 @@
           "example": "无",
           "member": "string",
           "name": "InvocationId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
