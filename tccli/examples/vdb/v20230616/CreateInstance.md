@@ -1,4 +1,4 @@
-**Example 1: 免费版创建**
+**Example 1: 创建磁盘加密实例**
 
 
 
@@ -6,12 +6,25 @@ Input:
 
 ```
 tccli vdb CreateInstance --cli-unfold-argument  \
-    --VpcId vpc-68mjxcwm \
-    --SubnetId subnet-1m1hnqav \
+    --VpcId vpc-n4c3s8u4 \
+    --SubnetId subnet-8apk7iir \
     --PayMode 0 \
-    --InstanceName test-base \
-    --SecurityGroupIds sg-b85lwctl \
-    --InstanceType base
+    --InstanceName vdb-disk \
+    --SecurityGroupIds sg-dxnd192j \
+    --PayPeriod 1 \
+    --AutoRenew 1 \
+    --Params None \
+    --ResourceTags.0.TagKey None \
+    --ResourceTags.0.TagValue None \
+    --ProductType 0 \
+    --InstanceType cluster \
+    --Mode two \
+    --GoodsNum 1 \
+    --Cpu 1 \
+    --Memory 2 \
+    --DiskSize 100 \
+    --WorkerNodeNum 2 \
+    --EnableEncryption False
 ```
 
 Output: 
@@ -19,9 +32,9 @@ Output:
 {
     "Response": {
         "InstanceIds": [
-            "vdb-j8mv****"
+            "vdb-17jsleiv"
         ],
-        "RequestId": "0d7fa142-011a-4416-be8c-320e44c9c3a9"
+        "RequestId": "617ca492-e31a-445f-b562-8a6588ed2a6b"
     }
 }
 ```

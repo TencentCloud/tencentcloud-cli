@@ -1,4 +1,4 @@
-**Example 1: DynamicInstance列表**
+**Example 1: RayCluster集群信息**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli emr DescribeDynamicInstanceList --cli-unfold-argument  \
-    --InstanceId emr-a2jqs6n3
+    --InstanceId emr-gq14f5p8
 ```
 
 Output: 
@@ -15,39 +15,24 @@ Output:
     "Response": {
         "DynamicInstanceList": [
             {
-                "CreateTime": "2025-12-27 16:43:18",
-                "PodCount": 4,
-                "RayClusterId": 28,
-                "RayClusterName": "raycluster",
-                "RedisCount": 1,
-                "SubmitType": 1
-            },
-            {
-                "CreateTime": "2025-12-27 14:58:55",
+                "CreateTime": "2026-06-22 21:00:17",
+                "DashboardUrl": "http://10.10.0.169/raycluster-777",
+                "Namespace": "251233702-emr-gq14f5p8",
                 "PodCount": 2,
-                "RayClusterId": 26,
-                "RayClusterName": "raycluster-template",
-                "RedisCount": 0,
-                "SubmitType": 2
-            },
-            {
-                "CreateTime": "2025-12-29 10:00:14",
-                "PodCount": 2,
-                "RayClusterId": 31,
-                "RayClusterName": "raycluster-template111",
-                "RedisCount": 0,
-                "SubmitType": 2
-            },
-            {
-                "CreateTime": "2025-12-25 09:56:44",
-                "PodCount": 2,
-                "RayClusterId": 14,
-                "RayClusterName": "rayclusterb",
+                "RayClusterId": 20,
+                "RayClusterName": "raycluster-777",
                 "RedisCount": 0,
                 "SubmitType": 1
             }
         ],
-        "RequestId": "232ecc58-b00a-429c-8d6d-e399cd40c6cc"
+        "WebUIInfos": [
+            {
+                "ServiceName": "JUPYTERLAB",
+                "Url": "http://10.0.254.11:53487",
+                "WebUIStatus": 2
+            }
+        ],
+        "RequestId": "937055aa-1972-4bc1-9f6d-157a9fac537c"
     }
 }
 ```

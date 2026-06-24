@@ -468,14 +468,6 @@
         "title": "QueryType=4信息提取"
       }
     ],
-    "RecognizeContainerOCR": [
-      {
-        "document": "集装箱识别",
-        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeContainerOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ContainerId\": \"APHU7042391\",\n        \"ContainerType\": \"45G1\",\n        \"GrossKG\": \"32500KG\",\n        \"GrossLB\": \"71650LB\",\n        \"PayloadKG\": \"28630KG\",\n        \"PayloadLB\": \"63120LB\",\n        \"TareKG\": \"3870KG\",\n        \"TareLB\": \"8530LB\",\n        \"CapacityM3\": \"76.4CUM\",\n        \"CapacityFT3\": \"2700CUFT\",\n        \"Warn\": [\n            -9926,\n            -9927\n        ],\n        \"RequestId\": \"45afaba3-5fb8-480e-83f9-2681f1373783\"\n    }\n}",
-        "title": "集装箱识别示例代码"
-      }
-    ],
     "RecognizeEncryptedIDCardOCR": [
       {
         "document": "身份证识别（安全加密版）示例",

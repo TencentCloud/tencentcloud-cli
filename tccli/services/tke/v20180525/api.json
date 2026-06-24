@@ -22716,7 +22716,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-0gudq56e",
           "member": "string",
           "name": "ClusterId",
@@ -22725,7 +22725,7 @@
         },
         {
           "disabled": false,
-          "document": "集群标签:\n[{\"TagKey\":\"env\",\"TagValue\":\"dev\"}]}]",
+          "document": "<p>集群标签:<br>[{&quot;TagKey&quot;:&quot;env&quot;,&quot;TagValue&quot;:&quot;dev&quot;}]}]</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -22734,10 +22734,19 @@
         },
         {
           "disabled": false,
-          "document": "是否同步集群内子资源标签",
+          "document": "<p>是否同步集群内子资源标签</p>",
           "example": "false",
           "member": "bool",
           "name": "SyncSubresource",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否同步节点池标签</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SyncNodePoolTags",
           "required": false,
           "type": "bool"
         }
@@ -22749,7 +22758,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",

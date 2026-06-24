@@ -2423,7 +2423,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分组ID",
+          "document": "<p>分组ID</p>",
           "example": "1a2b3c4d5e",
           "member": "string",
           "name": "GroupId",
@@ -2432,7 +2432,7 @@
         },
         {
           "disabled": false,
-          "document": "开始查找时间",
+          "document": "<p>开始查找时间</p>",
           "example": "1659514436",
           "member": "int64",
           "name": "BeginTime",
@@ -2441,7 +2441,7 @@
         },
         {
           "disabled": false,
-          "document": "截止时间",
+          "document": "<p>截止时间</p>",
           "example": "1659515436",
           "member": "int64",
           "name": "EndTime",
@@ -2450,7 +2450,7 @@
         },
         {
           "disabled": false,
-          "document": "流量种类（1：上行流量，2：下行流量， 3: 上下行总和）",
+          "document": "<p>流量种类（1：上行流量，2：下行流量， 3: 上下行总和）</p>",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -2459,7 +2459,7 @@
         },
         {
           "disabled": false,
-          "document": "时间粒度（1：按小时统计，2：按天统计）",
+          "document": "<p>时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "TimeGranularity",
@@ -2468,7 +2468,7 @@
         },
         {
           "disabled": false,
-          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。",
+          "document": "<p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>",
           "example": "MC",
           "member": "string",
           "name": "AccessRegion",
@@ -2477,7 +2477,7 @@
         },
         {
           "disabled": false,
-          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "document": "<p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "GatewayType",
@@ -2486,7 +2486,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID, 查询分组流量时无需使用。 查询应用流量时该字段为应用ID，GroupId 填写 \"-1\"",
+          "document": "<p>应用ID, 查询分组流量时无需使用。 查询应用流量时该字段为应用ID，GroupId 填写 &quot;-1&quot;</p>",
           "example": "mna-test1",
           "member": "string",
           "name": "MpApplicationId",
@@ -2501,8 +2501,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "流量详细信息",
-          "example": "{         \"Current\": 305576473,         \"Time\": \"1711555200\"       },       {         \"Current\": 3291852,         \"Time\": \"1711641600\"       }",
+          "document": "<p>流量详细信息</p>",
+          "example": "无",
           "member": "NetDetails",
           "name": "NetDetails",
           "output_required": true,
@@ -2511,7 +2511,7 @@
         },
         {
           "disabled": false,
-          "document": "查找时间段流量使用最大值（单位：byte）",
+          "document": "<p>查找时间段流量使用最大值（单位：byte）</p>",
           "example": "216516",
           "member": "float",
           "name": "MaxValue",
@@ -2521,7 +2521,7 @@
         },
         {
           "disabled": false,
-          "document": "查找时间段流量使用平均值（单位：byte）",
+          "document": "<p>查找时间段流量使用平均值（单位：byte）</p>",
           "example": "25151",
           "member": "float",
           "name": "AvgValue",
@@ -2531,7 +2531,7 @@
         },
         {
           "disabled": false,
-          "document": "查找时间段流量使用总量（单位：byte）",
+          "document": "<p>查找时间段流量使用总量（单位：byte）</p>",
           "example": "35465464",
           "member": "float",
           "name": "TotalValue",
@@ -2553,7 +2553,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备名称",
+          "document": "<p>设备名称</p>",
           "example": "devicexxxx",
           "member": "string",
           "name": "DeviceName",
@@ -2562,7 +2562,7 @@
         },
         {
           "disabled": false,
-          "document": "开始查找时间",
+          "document": "<p>开始查找时间</p>",
           "example": "1659514436",
           "member": "int64",
           "name": "BeginTime",
@@ -2571,7 +2571,7 @@
         },
         {
           "disabled": false,
-          "document": "截止时间",
+          "document": "<p>截止时间</p>",
           "example": "1659515436",
           "member": "int64",
           "name": "EndTime",
@@ -2580,7 +2580,7 @@
         },
         {
           "disabled": false,
-          "document": "流量种类（1：上行流量，2：下行流量，3：上下行总和）",
+          "document": "<p>流量种类（1：上行流量，2：下行流量，3：上下行总和）</p>",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -2589,7 +2589,7 @@
         },
         {
           "disabled": false,
-          "document": "时间粒度（1：按小时统计，2：按天统计）",
+          "document": "<p>时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "TimeGranularity",
@@ -2598,7 +2598,7 @@
         },
         {
           "disabled": false,
-          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。",
+          "document": "<p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>",
           "example": "MC",
           "member": "string",
           "name": "AccessRegion",
@@ -2607,7 +2607,7 @@
         },
         {
           "disabled": false,
-          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "document": "<p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "GatewayType",
@@ -2616,7 +2616,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名列表，用于查询多设备流量，该字段启用时DeviceId可传\"-1\"",
+          "document": "<p>设备名列表，用于查询多设备流量，该字段启用时DeviceId可传&quot;-1&quot;</p>",
           "example": "[\"device01\",\"device02\"]",
           "member": "string",
           "name": "DeviceList",
@@ -2631,7 +2631,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流量详细信息",
+          "document": "<p>流量详细信息</p>",
           "example": "无",
           "member": "NetDetails",
           "name": "NetDetails",
@@ -2641,7 +2641,7 @@
         },
         {
           "disabled": false,
-          "document": "查找时间段流量使用最大值（单位：byte）",
+          "document": "<p>查找时间段流量使用最大值（单位：byte）</p>",
           "example": "216516",
           "member": "float",
           "name": "MaxValue",
@@ -2651,7 +2651,7 @@
         },
         {
           "disabled": false,
-          "document": "查找时间段流量使用平均值（单位：byte）",
+          "document": "<p>查找时间段流量使用平均值（单位：byte）</p>",
           "example": "25151",
           "member": "float",
           "name": "AvgValue",
@@ -2661,7 +2661,7 @@
         },
         {
           "disabled": false,
-          "document": "查找时间段流量使用总量（单位：byte）",
+          "document": "<p>查找时间段流量使用总量（单位：byte）</p>",
           "example": "35465464",
           "member": "float",
           "name": "TotalValue",
@@ -2683,7 +2683,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始查找时间",
+          "document": "<p>开始查找时间</p>",
           "example": "1659514436",
           "member": "int64",
           "name": "BeginTime",
@@ -2692,7 +2692,7 @@
         },
         {
           "disabled": false,
-          "document": "截止时间",
+          "document": "<p>截止时间</p>",
           "example": "1659515436",
           "member": "int64",
           "name": "EndTime",
@@ -2701,7 +2701,7 @@
         },
         {
           "disabled": false,
-          "document": "流量种类（1：上行流量，2：下行流量， 3: 上下行总和）",
+          "document": "<p>流量种类（1：上行流量，2：下行流量， 3: 上下行总和）</p>",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -2710,7 +2710,7 @@
         },
         {
           "disabled": false,
-          "document": "时间粒度（1：按小时统计，2：按天统计）",
+          "document": "<p>时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "TimeGranularity",
@@ -2719,7 +2719,7 @@
         },
         {
           "disabled": false,
-          "document": "网关类型。0：公有云网关；1：自有网关。 ",
+          "document": "<p>网关类型。0：公有云网关；1：自有网关。</p>",
           "example": "0",
           "member": "int64",
           "name": "GatewayType",
@@ -2728,7 +2728,7 @@
         },
         {
           "disabled": false,
-          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。",
+          "document": "<p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>",
           "example": "MC",
           "member": "string",
           "name": "AccessRegion",
@@ -2743,7 +2743,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流量详细信息",
+          "document": "<p>流量详细信息</p>",
           "example": "无",
           "member": "NetDetails",
           "name": "NetDetails",
@@ -2753,7 +2753,7 @@
         },
         {
           "disabled": false,
-          "document": "查找时间段流量使用最大值（单位：byte）",
+          "document": "<p>查找时间段流量使用最大值（单位：byte）</p>",
           "example": "216516",
           "member": "float",
           "name": "MaxValue",
@@ -2763,7 +2763,7 @@
         },
         {
           "disabled": false,
-          "document": "查找时间段流量使用平均值（单位：byte）",
+          "document": "<p>查找时间段流量使用平均值（单位：byte）</p>",
           "example": "25151",
           "member": "float",
           "name": "AvgValue",
@@ -2773,7 +2773,7 @@
         },
         {
           "disabled": false,
-          "document": "查找时间段流量使用总量（单位：byte）",
+          "document": "<p>查找时间段流量使用总量（单位：byte）</p>",
           "example": "35465464",
           "member": "float",
           "name": "TotalValue",
@@ -2795,7 +2795,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备ID",
+          "document": "<p>设备ID</p>",
           "example": "245aee95-f37e-55d0-5258-19520bdf4b53",
           "member": "string",
           "name": "DeviceId",
@@ -2804,7 +2804,7 @@
         },
         {
           "disabled": false,
-          "document": "开始查找时间",
+          "document": "<p>开始查找时间</p>",
           "example": "1659514436",
           "member": "int64",
           "name": "BeginTime",
@@ -2813,7 +2813,7 @@
         },
         {
           "disabled": false,
-          "document": "截止时间",
+          "document": "<p>截止时间</p>",
           "example": "1659515436",
           "member": "int64",
           "name": "EndTime",
@@ -2822,7 +2822,7 @@
         },
         {
           "disabled": false,
-          "document": "流量种类（1：上行流量，2：下行流量，3：上下行总和）",
+          "document": "<p>流量种类（1：上行流量，2：下行流量，3：上下行总和）</p>",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -2831,7 +2831,7 @@
         },
         {
           "disabled": false,
-          "document": "时间粒度（1：按小时统计，2：按天统计）",
+          "document": "<p>时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "TimeGranularity",
@@ -2840,7 +2840,7 @@
         },
         {
           "disabled": false,
-          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。",
+          "document": "<p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>",
           "example": "MC",
           "member": "string",
           "name": "AccessRegion",
@@ -2849,7 +2849,7 @@
         },
         {
           "disabled": false,
-          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "document": "<p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "GatewayType",
@@ -2858,7 +2858,7 @@
         },
         {
           "disabled": false,
-          "document": "设备ID列表，用于查询多设备流量，该字段启用时DeviceId可传\"-1\"",
+          "document": "<p>设备ID列表，用于查询多设备流量，该字段启用时DeviceId可传&quot;-1&quot;</p>",
           "example": "[\"mna-test1\",\"mna-test2\"]",
           "member": "string",
           "name": "DeviceList",
@@ -2873,7 +2873,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流量详细信息",
+          "document": "<p>流量详细信息</p>",
           "example": "无",
           "member": "NetDetails",
           "name": "NetDetails",
@@ -2883,7 +2883,7 @@
         },
         {
           "disabled": false,
-          "document": "查找时间段流量使用最大值（单位：byte）",
+          "document": "<p>查找时间段流量使用最大值（单位：byte）</p>",
           "example": "216516",
           "member": "float",
           "name": "MaxValue",
@@ -2893,7 +2893,7 @@
         },
         {
           "disabled": false,
-          "document": "查找时间段流量使用平均值（单位：byte）",
+          "document": "<p>查找时间段流量使用平均值（单位：byte）</p>",
           "example": "25151",
           "member": "float",
           "name": "AvgValue",
@@ -2903,7 +2903,7 @@
         },
         {
           "disabled": false,
-          "document": "查找时间段流量使用总量（单位：byte）",
+          "document": "<p>查找时间段流量使用总量（单位：byte）</p>",
           "example": "35465464",
           "member": "float",
           "name": "TotalValue",
@@ -3384,7 +3384,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备id列表，单次最多请求10个设备",
+          "document": "<p>设备id列表，单次最多请求10个设备</p>",
           "example": "[\"mna-dev1\"]",
           "member": "string",
           "name": "DeviceIds",
@@ -3393,7 +3393,7 @@
         },
         {
           "disabled": false,
-          "document": "1659514436",
+          "document": "<p>1659514436</p>",
           "example": "1659514436",
           "member": "int64",
           "name": "BeginTime",
@@ -3402,7 +3402,7 @@
         },
         {
           "disabled": false,
-          "document": "1659515000",
+          "document": "<p>1659515000</p>",
           "example": "1659515000",
           "member": "int64",
           "name": "EndTime",
@@ -3411,7 +3411,7 @@
         },
         {
           "disabled": false,
-          "document": "统计流量类型（1：上行流量，2：下行流量， 3: 上下行总和）",
+          "document": "<p>统计流量类型（1：上行流量，2：下行流量， 3: 上下行总和）</p>",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -3420,7 +3420,7 @@
         },
         {
           "disabled": false,
-          "document": "统计时间粒度（1：按小时统计，2：按天统计）",
+          "document": "<p>统计时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "TimeGranularity",
@@ -3429,7 +3429,7 @@
         },
         {
           "disabled": false,
-          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。",
+          "document": "<p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>",
           "example": "MC",
           "member": "string",
           "name": "AccessRegion",
@@ -3438,7 +3438,7 @@
         },
         {
           "disabled": false,
-          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "document": "<p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "GatewayType",
@@ -3453,7 +3453,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量设备流量信息",
+          "document": "<p>批量设备流量信息</p>",
           "example": "无",
           "member": "FlowDetails",
           "name": "FlowDetails",
@@ -3668,7 +3668,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备名。若不指定设备，可传\"-1\"",
+          "document": "<p>设备名。若不指定设备，可传&quot;-1&quot;</p>",
           "example": "\"devicexxx\"",
           "member": "string",
           "name": "DeviceName",
@@ -3677,7 +3677,7 @@
         },
         {
           "disabled": false,
-          "document": "统计开始时间，单位：s",
+          "document": "<p>统计开始时间，单位：s</p>",
           "example": "1661212800",
           "member": "int64",
           "name": "BeginTime",
@@ -3686,7 +3686,7 @@
         },
         {
           "disabled": false,
-          "document": "统计结束时间，单位：s",
+          "document": "<p>统计结束时间，单位：s</p>",
           "example": "1661587200",
           "member": "int64",
           "name": "EndTime",
@@ -3695,7 +3695,7 @@
         },
         {
           "disabled": false,
-          "document": "聚合粒度：\n1:按小时统计\n2:按天统计",
+          "document": "<p>时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "TimeGranularity",
@@ -3704,7 +3704,7 @@
         },
         {
           "disabled": false,
-          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。",
+          "document": "<p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>",
           "example": "MC",
           "member": "string",
           "name": "AccessRegion",
@@ -3713,7 +3713,7 @@
         },
         {
           "disabled": false,
-          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "document": "<p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "GatewayType",
@@ -3722,7 +3722,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名列表，最多10个设备，下载多个设备流量时使用，此时DeviceName可传\"-1\"",
+          "document": "<p>设备名列表，最多10个设备，下载多个设备流量时使用，此时DeviceName可传&quot;-1&quot;</p>",
           "example": "[\"device1\",\"device2\"]",
           "member": "string",
           "name": "DeviceList",
@@ -3731,7 +3731,7 @@
         },
         {
           "disabled": false,
-          "document": "设备分组ID，若不指定分组则不传，按分组下载数据时使用",
+          "document": "<p>设备分组ID，若不指定分组则不传，按分组下载数据时使用</p>",
           "example": "\"group-test\"",
           "member": "string",
           "name": "GroupId",
@@ -3740,7 +3740,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID，若不指定应用不填，按应用下载数据时使用",
+          "document": "<p>应用ID，若不指定应用不填，按应用下载数据时使用</p>",
           "example": "\"app-fvwy7esyat\"",
           "member": "string",
           "name": "MpApplicationId",
@@ -3755,7 +3755,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件地址url",
+          "document": "<p>文件地址url</p>",
           "example": "\"http://xxxx\"",
           "member": "string",
           "name": "FilePath",
@@ -3777,7 +3777,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备ID。若不指定设备，可传\"-1\"",
+          "document": "<p>设备ID。若不指定设备，可传&quot;-1&quot;</p>",
           "example": "\"mna-xxx\"",
           "member": "string",
           "name": "DeviceId",
@@ -3786,7 +3786,7 @@
         },
         {
           "disabled": false,
-          "document": "统计开始时间，单位：s",
+          "document": "<p>统计开始时间，单位：s</p>",
           "example": "1661212800",
           "member": "int64",
           "name": "BeginTime",
@@ -3795,7 +3795,7 @@
         },
         {
           "disabled": false,
-          "document": "统计结束时间，单位：s",
+          "document": "<p>统计结束时间，单位：s</p>",
           "example": "1661587200",
           "member": "int64",
           "name": "EndTime",
@@ -3804,7 +3804,7 @@
         },
         {
           "disabled": false,
-          "document": "聚合粒度：\n1:按小时统计\n2:按天统计",
+          "document": "<p>时间粒度</p><p>枚举值：</p><ul><li>1： 按小时统计</li><li>2： 按天统计</li><li>3： 按分钟统计</li><li>4： 按5分钟统计</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "TimeGranularity",
@@ -3813,7 +3813,7 @@
         },
         {
           "disabled": false,
-          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。",
+          "document": "<p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。</p>",
           "example": "MC",
           "member": "string",
           "name": "AccessRegion",
@@ -3822,7 +3822,7 @@
         },
         {
           "disabled": false,
-          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "document": "<p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "GatewayType",
@@ -3831,7 +3831,7 @@
         },
         {
           "disabled": false,
-          "document": "设备ID列表，最多10个设备，下载多个设备流量和时使用，此时DeviceId可传\"-1\"",
+          "document": "<p>设备ID列表，最多10个设备，下载多个设备流量和时使用，此时DeviceId可传&quot;-1&quot;</p>",
           "example": "[\"mna-test1\",\"mna-test2\"]",
           "member": "string",
           "name": "DeviceList",
@@ -3840,7 +3840,7 @@
         },
         {
           "disabled": false,
-          "document": "设备分组ID，若不指定分组则不传，按分组下载数据时使用",
+          "document": "<p>设备分组ID，若不指定分组则不传，按分组下载数据时使用</p>",
           "example": "\"group-test\"",
           "member": "string",
           "name": "GroupId",
@@ -3855,7 +3855,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件地址url",
+          "document": "<p>文件地址url</p>",
           "example": "\"http://xxxx\"",
           "member": "string",
           "name": "FilePath",

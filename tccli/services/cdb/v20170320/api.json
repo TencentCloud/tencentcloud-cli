@@ -5313,7 +5313,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
+          "document": "<p>代理组 ID。可通过 <a href=\"https://cloud.tencent.com/document/api/236/90585\">DescribeCdbProxyInfo</a> 接口获取。</p>",
           "example": "proxy-kti9m7m1",
           "member": "string",
           "name": "ProxyGroupId",
@@ -5322,7 +5322,7 @@
         },
         {
           "disabled": false,
-          "document": "权重分配模式，\n系统自动分配：\"system\"， 自定义：\"custom\"",
+          "document": "<p>权重分配模式，<br>系统自动分配：&quot;system&quot;， 自定义：&quot;custom&quot;</p>",
           "example": "system",
           "member": "string",
           "name": "WeightMode",
@@ -5331,7 +5331,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启延迟剔除，取值：\"true\" | \"false\"",
+          "document": "<p>是否开启延迟剔除，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "IsKickOut",
@@ -5340,7 +5340,7 @@
         },
         {
           "disabled": false,
-          "document": "最小保留数量，最小取值：0",
+          "document": "<p>最小保留数量，最小取值：0</p>",
           "example": "2",
           "member": "uint64",
           "name": "MinCount",
@@ -5349,7 +5349,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟剔除阈值，最小取值：1，范围：1 - 10000，整数。",
+          "document": "<p>延迟剔除阈值，最小取值：1，范围：1 - 10000，整数。</p>",
           "example": "100",
           "member": "uint64",
           "name": "MaxDelay",
@@ -5358,7 +5358,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启故障转移，取值：\"true\" | \"false\"",
+          "document": "<p>是否开启故障转移，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "FailOver",
@@ -5367,7 +5367,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动添加RO，取值：\"true\" | \"false\"",
+          "document": "<p>是否自动添加RO，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoAddRo",
@@ -5376,7 +5376,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是只读，取值：\"true\" | \"false\"",
+          "document": "<p>是否是只读，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "ReadOnly",
@@ -5385,7 +5385,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启事务分离，取值：\"true\" | \"false\"",
+          "document": "<p>是否开启事务分离，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "TransSplit",
@@ -5394,8 +5394,8 @@
         },
         {
           "disabled": false,
-          "document": "读写权重分配",
-          "example": "[{\"Region\": \"ap-guangzhou\",\"Zone\": \"ap-guangzhou-2\",\"ProxyInstance\": [{\"InstanceId\": \"cdb-aykuksx3\",\"Weight\": 100}]}]",
+          "document": "<p>读写权重分配</p>",
+          "example": "无",
           "member": "ProxyAllocation",
           "name": "ProxyAllocation",
           "required": true,
@@ -5403,7 +5403,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
+          "document": "<p>私有网络 ID。可通过 <a href=\"https://cloud.tencent.com/document/product/236/15872\">DescribeDBInstances</a> 接口获取。</p>",
           "example": "vpc-ixw3ll2d",
           "member": "string",
           "name": "UniqVpcId",
@@ -5412,7 +5412,7 @@
         },
         {
           "disabled": false,
-          "document": "私有子网 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
+          "document": "<p>私有子网 ID。可通过 <a href=\"https://cloud.tencent.com/document/product/236/15872\">DescribeDBInstances</a> 接口获取。</p>",
           "example": "subnet-0z3r56vq",
           "member": "string",
           "name": "UniqSubnetId",
@@ -5421,7 +5421,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启连接池。默认关闭。\n注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。",
+          "document": "<p>是否开启连接池。默认关闭。<br>注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。</p>",
           "example": "true",
           "member": "bool",
           "name": "ConnectionPool",
@@ -5430,7 +5430,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "andy_proxy",
           "member": "string",
           "name": "Desc",
@@ -5439,7 +5439,7 @@
         },
         {
           "disabled": false,
-          "document": "IP 地址。不填则默认为所选 VPC 下支持的随机一个 IP。",
+          "document": "<p>IP 地址。不填则默认为所选 VPC 下支持的随机一个 IP。</p>",
           "example": "192.0.0.1",
           "member": "string",
           "name": "Vip",
@@ -5448,7 +5448,7 @@
         },
         {
           "disabled": false,
-          "document": "端口。默认值3306。",
+          "document": "<p>端口。默认值3306。</p>",
           "example": "80",
           "member": "uint64",
           "name": "VPort",
@@ -5457,8 +5457,8 @@
         },
         {
           "disabled": false,
-          "document": "安全组",
-          "example": "sg-4qvsxc1a",
+          "document": "<p>安全组</p>",
+          "example": "[\"sg-4qvsxc1a\"]",
           "member": "string",
           "name": "SecurityGroup",
           "required": false,
@@ -5466,7 +5466,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池类型。可选值 transaction（事务级别连接池），connection（会话级别连接池），ConnectionPool 为 true 时生效。默认值：connection。",
+          "document": "<p>连接池类型。可选值 transaction（事务级别连接池），connection（会话级别连接池），ConnectionPool 为 true 时生效。默认值：connection。</p>",
           "example": "connection",
           "member": "string",
           "name": "ConnectionPoolType",
@@ -5475,7 +5475,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自适应负载均衡。默认关闭。",
+          "document": "<p>是否开启自适应负载均衡。默认关闭。</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoLoadBalance",
@@ -5484,7 +5484,7 @@
         },
         {
           "disabled": false,
-          "document": "接入模式。nearBy - 就近访问，balance - 均衡分配，默认值：nearBy。",
+          "document": "<p>接入模式。nearBy - 就近访问，balance - 均衡分配，默认值：nearBy。</p>",
           "example": "nearBy",
           "member": "string",
           "name": "AccessMode",
@@ -5499,7 +5499,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务ID",
+          "document": "<p>异步任务ID</p>",
           "example": "a6040589-3b098df5-b551d9e5-81c6bfdc",
           "member": "string",
           "name": "AsyncRequestId",

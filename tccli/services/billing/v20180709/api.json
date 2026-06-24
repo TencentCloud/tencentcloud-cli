@@ -8967,7 +8967,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "组件类型名称",
+          "document": "<p>组件类型名称</p>",
           "example": "公网网络-流量",
           "member": "string",
           "name": "ComponentCodeName",
@@ -8977,7 +8977,7 @@
         },
         {
           "disabled": false,
-          "document": "组件名称",
+          "document": "<p>组件名称</p>",
           "example": "公网IP-按流量计费",
           "member": "string",
           "name": "ItemCodeName",
@@ -8987,7 +8987,7 @@
         },
         {
           "disabled": false,
-          "document": "刊例价",
+          "document": "<p>刊例价</p>",
           "example": "0.80000000",
           "member": "string",
           "name": "SinglePrice",
@@ -8997,7 +8997,7 @@
         },
         {
           "disabled": false,
-          "document": "刊例价单位",
+          "document": "<p>刊例价单位</p>",
           "example": "元/GB/小时",
           "member": "string",
           "name": "PriceUnit",
@@ -9007,7 +9007,7 @@
         },
         {
           "disabled": false,
-          "document": "用量",
+          "document": "<p>用量</p>",
           "example": "0.00000099",
           "member": "string",
           "name": "UsedAmount",
@@ -9017,7 +9017,7 @@
         },
         {
           "disabled": false,
-          "document": "用量单位",
+          "document": "<p>用量单位</p>",
           "example": "GB",
           "member": "string",
           "name": "UsedAmountUnit",
@@ -9027,7 +9027,7 @@
         },
         {
           "disabled": false,
-          "document": "原价",
+          "document": "<p>原价</p>",
           "example": "0.00000079",
           "member": "string",
           "name": "Cost",
@@ -9037,7 +9037,7 @@
         },
         {
           "disabled": false,
-          "document": "折扣",
+          "document": "<p>折扣</p>",
           "example": "0.65000000",
           "member": "string",
           "name": "Discount",
@@ -9047,7 +9047,7 @@
         },
         {
           "disabled": false,
-          "document": "折后价",
+          "document": "<p>折后价</p>",
           "example": "0.00000051",
           "member": "string",
           "name": "RealCost",
@@ -9057,7 +9057,7 @@
         },
         {
           "disabled": false,
-          "document": "代金券支付金额",
+          "document": "<p>代金券支付金额</p>",
           "example": "0.00000051",
           "member": "string",
           "name": "VoucherPayAmount",
@@ -9067,7 +9067,7 @@
         },
         {
           "disabled": false,
-          "document": "现金支付金额",
+          "document": "<p>现金支付金额</p>",
           "example": "0.00000000",
           "member": "string",
           "name": "CashPayAmount",
@@ -9077,11 +9077,31 @@
         },
         {
           "disabled": false,
-          "document": "赠送金支付金额",
+          "document": "<p>赠送金支付金额</p>",
           "example": "0.00000000",
           "member": "string",
           "name": "IncentivePayAmount",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组件类型code</p>",
+          "example": "v_eip_bandwidth",
+          "member": "string",
+          "name": "ComponentCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组件名称code</p>",
+          "example": "sv_eip_bandwidth",
+          "member": "string",
+          "name": "ItemCode",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9287,6 +9307,16 @@
           "example": "2026-03-16 08:16:24",
           "member": "string",
           "name": "PayTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品名称code</p>",
+          "example": "p_tpns",
+          "member": "string",
+          "name": "BusinessCode",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -10384,7 +10414,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否查询临时额度",
+          "document": "<p>是否查询临时额度</p>",
           "example": "true",
           "member": "bool",
           "name": "TempCredit",
@@ -10399,7 +10429,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "接口做过变更,为兼容老接口,本字段与RealBalance相同,为当前真实可用余额,单位 分",
+          "document": "<p>接口做过变更,为兼容老接口,本字段与RealBalance相同,为当前真实可用余额,单位 分</p>",
           "example": "10000",
           "member": "int64",
           "name": "Balance",
@@ -10409,7 +10439,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的用户Uin",
+          "document": "<p>查询的用户Uin</p>",
           "example": "1",
           "member": "uint64",
           "name": "Uin",
@@ -10419,7 +10449,7 @@
         },
         {
           "disabled": false,
-          "document": "当前真实可用余额,单位 分",
+          "document": "<p>当前真实可用余额,单位 分。RealBalance=CashAccountBalance+IncomeIntoAccountBalance+PresentAccountBalance-FreezeAmount-OweAmount</p><p>单位：分</p>",
           "example": "1.0",
           "member": "float",
           "name": "RealBalance",
@@ -10429,7 +10459,7 @@
         },
         {
           "disabled": false,
-          "document": "现金账户余额,单位 分",
+          "document": "<p>现金账户余额,单位 分</p>",
           "example": "1.0",
           "member": "float",
           "name": "CashAccountBalance",
@@ -10439,7 +10469,7 @@
         },
         {
           "disabled": false,
-          "document": "收益转入账户余额,单位 分",
+          "document": "<p>收益转入账户余额,单位 分</p>",
           "example": "1.0",
           "member": "float",
           "name": "IncomeIntoAccountBalance",
@@ -10449,7 +10479,7 @@
         },
         {
           "disabled": false,
-          "document": "赠送账户余额,单位 分",
+          "document": "<p>赠送账户余额,单位 分</p>",
           "example": "1.0",
           "member": "float",
           "name": "PresentAccountBalance",
@@ -10459,7 +10489,7 @@
         },
         {
           "disabled": false,
-          "document": "冻结金额,单位 分",
+          "document": "<p>冻结金额,单位 分</p>",
           "example": "1.0",
           "member": "float",
           "name": "FreezeAmount",
@@ -10469,7 +10499,7 @@
         },
         {
           "disabled": false,
-          "document": "欠费金额,单位 分",
+          "document": "<p>欠费金额,单位 分</p>",
           "example": "1.0",
           "member": "float",
           "name": "OweAmount",
@@ -10479,7 +10509,7 @@
         },
         {
           "disabled": true,
-          "document": "是否允许欠费消费",
+          "document": "<p>是否允许欠费消费</p>",
           "example": "true",
           "member": "bool",
           "name": "IsAllowArrears",
@@ -10489,7 +10519,7 @@
         },
         {
           "disabled": true,
-          "document": "是否限制信用额度",
+          "document": "<p>是否限制信用额度</p>",
           "example": "true",
           "member": "bool",
           "name": "IsCreditLimited",
@@ -10499,7 +10529,7 @@
         },
         {
           "disabled": false,
-          "document": "信用额度,单位 分",
+          "document": "<p>信用额度,单位 分</p>",
           "example": "1.0",
           "member": "float",
           "name": "CreditAmount",
@@ -10509,7 +10539,7 @@
         },
         {
           "disabled": false,
-          "document": "可用信用额度,单位 分",
+          "document": "<p>可用信用额度,单位 分。CreditBalance=CashAccountBalance+IncomeIntoAccountBalance+PresentAccountBalance+CreditAmount-OweAmount</p><p>单位：分</p>",
           "example": "1.0",
           "member": "float",
           "name": "CreditBalance",
@@ -10519,7 +10549,7 @@
         },
         {
           "disabled": false,
-          "document": "真实可用信用额度,单位 分",
+          "document": "<p>真实可用信用额度,单位 分。RealCreditBalance=CreditBalance-FreezeAmount</p><p>单位：分</p>",
           "example": "1.0",
           "member": "float",
           "name": "RealCreditBalance",
@@ -10529,7 +10559,7 @@
         },
         {
           "disabled": false,
-          "document": "临时额度，单位 分",
+          "document": "<p>临时额度，单位 分</p>",
           "example": "1.0",
           "member": "float",
           "name": "TempCredit",
@@ -10539,7 +10569,7 @@
         },
         {
           "disabled": false,
-          "document": "临时额度详情",
+          "document": "<p>临时额度详情</p>",
           "example": "无",
           "member": "UinTempAmountModel",
           "name": "TempAmountInfoList",
