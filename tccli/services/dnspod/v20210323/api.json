@@ -266,6 +266,13 @@
       "output": "DescribeDomainListResponse",
       "status": "online"
     },
+    "DescribeDomainLogFilterFile": {
+      "document": "获取域名操作日志导出文件下载地址",
+      "input": "DescribeDomainLogFilterFileRequest",
+      "name": "获取域名操作日志导出文件下载地址",
+      "output": "DescribeDomainLogFilterFileResponse",
+      "status": "online"
+    },
     "DescribeDomainLogList": {
       "document": "获取域名日志",
       "input": "DescribeDomainLogListRequest",
@@ -4287,6 +4294,106 @@
           "name": "DomainList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainLogFilterFileRequest": {
+      "document": "DescribeDomainLogFilterFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要获取操作日志的域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要获取操作日志的域名 Id，如果传了 DomainId，系统将会忽略 Domain 参数。 可以通过接口 DescribeDomainList 查到所有的 Domain 以及 DomainId",
+          "example": "81345824",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "通过关键字搜索，支持搜索字段：账户 UIN、操作 IP、操作内容",
+          "example": "keyword",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作时间范围起始时间(仅支持近6个月的日志查询)",
+          "example": "2023-01-01 00:00:00",
+          "member": "string",
+          "name": "OperateBegin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作时间范围截止时间(仅支持近6个月的日志查询)",
+          "example": "2023-02-01 00:00:00",
+          "member": "string",
+          "name": "OperateEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作账号 UIN 精确匹配",
+          "example": "123123123",
+          "member": "uint64",
+          "name": "OperateUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "操作 IP 精确匹配",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "OperateClientIP",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作内容 模糊匹配",
+          "example": "操作内容",
+          "member": "string",
+          "name": "OperateContent",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainLogFilterFileResponse": {
+      "document": "DescribeDomainLogFilterFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件下载地址。",
+          "example": "https://dnspod-1252222.cos.ap-guangzhou.myqcloud.com/log_export_txt_5299821_fd02de3b3fd6696e7d96383119db2b4b.txt?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDPZ7V",
+          "member": "string",
+          "name": "DownloadURL",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

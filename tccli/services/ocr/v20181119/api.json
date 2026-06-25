@@ -8793,7 +8793,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "key信息组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>key信息组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Key",
           "name": "Key",
@@ -8803,13 +8803,23 @@
         },
         {
           "disabled": false,
-          "document": "Value信息组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Value信息组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Value",
           "name": "Value",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回这个字段是否比对审核通过</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AuditResult",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8819,7 +8829,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自定义抽取功能需返回的字段名称。",
+          "document": "<p>自定义抽取功能需返回的字段名称。</p>",
           "example": "姓名",
           "member": "string",
           "name": "KeyName",
@@ -8828,7 +8838,7 @@
         },
         {
           "disabled": false,
-          "document": "默认 0；0表示kv对  1表示 表格字段。\n",
+          "document": "<p>默认 0；0表示kv对  1表示 表格字段。</p>",
           "example": "0",
           "member": "int64",
           "name": "KeyType",
@@ -8837,10 +8847,28 @@
         },
         {
           "disabled": false,
-          "document": "抽取字段的描述内容。\n",
+          "document": "<p>抽取字段的描述内容。</p>",
           "example": "提示词",
           "member": "string",
           "name": "KeyPrompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义字段对应期望的值内容（这个一般需要对字段审核比对才需要输入）。</p>",
+          "example": "张三",
+          "member": "string",
+          "name": "KeyExpectedValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义字段审核比对的规则prompt。</p><p>比如keyname是姓名，KeyExpectedValue 张三，KeyAuditPrompt设置为“字符需要完全匹配则审核返回正确”/“字符匹配90%就审核返回正确”</p>",
+          "example": "字符需要完全匹配则审核返回正确",
+          "member": "string",
+          "name": "KeyAuditPrompt",
           "required": false,
           "type": "string"
         }

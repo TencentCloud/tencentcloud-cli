@@ -399,6 +399,20 @@
       "output": "DescribeCVMAssetsResponse",
       "status": "online"
     },
+    "DescribeCWPMachineDetail": {
+      "document": "主机详情",
+      "input": "DescribeCWPMachineDetailRequest",
+      "name": "查询主机详情",
+      "output": "DescribeCWPMachineDetailResponse",
+      "status": "online"
+    },
+    "DescribeCWPMachines": {
+      "document": "主机列表",
+      "input": "DescribeCWPMachinesRequest",
+      "name": "查询主机列表",
+      "output": "DescribeCWPMachinesResponse",
+      "status": "online"
+    },
     "DescribeCallRecord": {
       "document": "获取调用记录列表",
       "input": "DescribeCallRecordRequest",
@@ -1489,6 +1503,13 @@
       "input": "ModifyIaCTokenPeriodRequest",
       "name": "修改IaC检测接入Token存储周期",
       "output": "ModifyIaCTokenPeriodResponse",
+      "status": "online"
+    },
+    "ModifyMachineRemark": {
+      "document": "修改主机资产备注信息",
+      "input": "ModifyMachineRemarkRequest",
+      "name": "修改主机备注信息",
+      "output": "ModifyMachineRemarkResponse",
       "status": "online"
     },
     "ModifyOrganizationAccountStatus": {
@@ -5479,6 +5500,56 @@
       ],
       "usage": "both"
     },
+    "AssetTagModifyAssetItem": {
+      "document": "操作资产标签资产信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>appid</p>",
+          "example": "260083796",
+          "member": "uint64",
+          "name": "AppID",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型</p>",
+          "example": "server_host",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ins-7xdsd8tg",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云厂商</p>",
+          "example": "tencent",
+          "member": "string",
+          "name": "Provider",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AssetViewCFGRisk": {
       "document": "资产视角配置风险",
       "members": [
@@ -9313,6 +9384,52 @@
           "member": "string",
           "name": "InstallStatus",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ContainerEnvInfo": {
+      "document": "容器环境信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点类型</p>",
+          "example": "WORKER",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>docker版本</p>",
+          "example": "17.03",
+          "member": "string",
+          "name": "DockerVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>containerd版本</p>",
+          "example": "v1.6.9-tke.8",
+          "member": "string",
+          "name": "ContainerdVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件系统类型</p>",
+          "example": "overlay",
+          "member": "string",
+          "name": "FileSystemType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -16436,6 +16553,135 @@
           "name": "ProtectStatusList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCWPMachineDetailRequest": {
+      "document": "DescribeCWPMachineDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ins-4ty8h8gy",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-a01\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCWPMachineDetailResponse": {
+      "document": "DescribeCWPMachineDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>主机详情</p>",
+          "example": "无",
+          "member": "MachineDetail",
+          "name": "MachineDetail",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCWPMachinesRequest": {
+      "document": "DescribeCWPMachines请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-a1f\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>一、主表字段筛选（需要指定 OperatorType）<br>MachineName：主机名称，支持 OperatorType 9(模糊)、7(IN)，Values示例：[&quot;test-server&quot;]<br>MachineIp：内网IP，支持 OperatorType 9(模糊)、7(IN)，Values示例：[&quot;10.0.0.1&quot;]<br>MachineWanIp：外网IP，支持 OperatorType 9(模糊)、7(IN)，Values示例：[&quot;1.2.3.4&quot;]<br>InstanceID：实例ID，支持 OperatorType 9(模糊)、7(IN)，Values示例：[&quot;ins-xxxxx&quot;]<br>MachineStatus / InstanceStatus：实例状态，支持 OperatorType 7(IN)、1(等于)，Values示例：[&quot;RUNNING&quot;]，可选值：RUNNING/STOPPED/EXPIRED<br>MachineOs：操作系统类型，支持 OperatorType 7(IN)，Values示例：[&quot;1&quot;]，值为数字编码，见下方OsType说明<br>VpcId：VPC ID，支持 OperatorType 7(IN)、1(等于)，Values示例：[&quot;vpc-xxxxx&quot;]<br>CloudFromEnum：云服务商，支持 OperatorType 7(IN)、1(等于)，Values示例：[&quot;0&quot;]，值为数字编码，见下方CloudFrom说明<br>Region ：地域，支持 OperatorType 7(IN)、1(等于)，Values示例：[&quot;ap-guangzhou&quot;]<br>AppId：账号AppId，支持 OperatorType 7(IN)、1(等于)，Values示例：[&quot;1234567890&quot;]<br>ProjectId：项目ID，支持 OperatorType 7(IN)、1(等于)，Values示例：[&quot;0&quot;]</p><p>二、预筛选字段（不需要指定 OperatorType）<br>AgentStatus：Agent状态，单选，Values示例：[&quot;ONLINE&quot;]，可选值：ONLINE/OFFLINE/UNINSTALL<br>ProtectType：防护类型（综合），Values示例：[&quot;ULTIMATE&quot;]，可选值：BASIC/PRO/ULTIMATE/NONE<br>CsipProtectType：CSIP防护类型，Values示例：[&quot;ULTIMATE&quot;]，可选值：BASIC/PRO/ULTIMATE/NONE<br>CloudTags：云标签，Values示例：[&quot;tagKey$tagValue&quot;]，格式：tagKey$tagValue 或 tagKey（只匹配key），最多5个值<br>Tags：资产标签，Values示例：[&quot;123&quot;]，值为标签ID<br>ExposedStatus：暴露状态，单选，Values示例：[&quot;EXPOSED&quot;]，可选值：NOT_APPLICABLE/EXPOSED/UNEXPOSED</p><p>三、特殊筛选字段（不需要指定 OperatorType）<br>NetworkType：网络类型，单选，Values示例：[&quot;1&quot;]，1=VPC网络, 2=基础网络, 3=非腾讯云网络<br>MachineType：机器类型，可多选，Values示例：[&quot;CVM&quot;]，可选值：CVM/BM/ECM/LH/EKS-NATIVE/ECS/EC2/VMS<br>Common：通用搜索，单选，Values示例：[&quot;关键词&quot;]，同时对内网IP、外网IP、主机名称、实例ID做模糊匹配</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要tat状态信息</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedTatStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要额外信息，如安全中心标签、腾讯云标签</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "MoreInformation",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要容器信息，如容器数、核数、容器防护状态</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedContainerInfo",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCWPMachinesResponse": {
+      "document": "DescribeCWPMachines返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>主机列表</p>",
+          "example": "无",
+          "member": "Machine",
+          "name": "Machines",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "18",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -26881,6 +27127,72 @@
       ],
       "type": "object"
     },
+    "DiskPartitionInfo": {
+      "document": "磁盘分区信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分区名称</p>",
+          "example": "/dev/vda1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂载路径</p>",
+          "example": "/",
+          "member": "string",
+          "name": "Path",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用百分比</p>",
+          "example": "11.1530485",
+          "member": "float",
+          "name": "Percent",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区大小(MB)</p>",
+          "example": "50267",
+          "member": "uint64",
+          "name": "Size",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区类型</p>",
+          "example": "ext4",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已使用(MB)</p>",
+          "example": "5703",
+          "member": "uint64",
+          "name": "Used",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DomainAssetVO": {
       "document": "域名资产",
       "members": [
@@ -33665,6 +33977,931 @@
       ],
       "usage": "out"
     },
+    "Machine": {
+      "document": "主机列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent状态，取值：ONLINE-在线，OFFLINE-离线，UNINSTALL-未安装</p>",
+          "example": "UNINSTALL",
+          "member": "string",
+          "name": "AgentStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent版本</p>",
+          "example": "5.3.4.134",
+          "member": "string",
+          "name": "AgentVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号AppId</p>",
+          "example": "260199982",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云服务商</p>",
+          "example": "AWS",
+          "member": "string",
+          "name": "CloudFromEnum",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云标签列表</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "CloudTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CSIP防护类型，取值：BASIC-基础版，PRO-专业版，ULTIMATE-旗舰版</p>",
+          "example": "ULTIMATE",
+          "member": "string",
+          "name": "CsipProtectType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>暴露状态</p>",
+          "example": "NONE",
+          "member": "string",
+          "name": "ExposedStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "i-0e16ac05aace48b3f",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态，取值：RUNNING-运行中，STOPPED-已关机，EXPIRED-待回收</p>",
+          "example": "STOPPED",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网卡IP列表</p>",
+          "example": "[\"fe80::ce1:2fff:fe6c:8e7f\"]",
+          "member": "string",
+          "name": "IpList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为新增主机（15天内新增）</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsNew",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内核版本</p>",
+          "example": "6.1.172-216.329.amzn2023.x86_64",
+          "member": "string",
+          "name": "KernelVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次离线时间（Unix时间戳）</p>",
+          "example": "1780490597",
+          "member": "int64",
+          "name": "LatestOfflineTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网IP</p>",
+          "example": "172.31.13.233",
+          "member": "string",
+          "name": "MachineIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机名称</p>",
+          "example": "ip-172-31-13-233.cn-north-1.compute.internal",
+          "member": "string",
+          "name": "MachineName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作系统</p>",
+          "example": "Amazon Linux release 2023.11.20260526 (Amazon Linu",
+          "member": "string",
+          "name": "MachineOs",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外网IP</p>",
+          "example": "71.136.113.24",
+          "member": "string",
+          "name": "MachineWanIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费模式，取值：PREPAID-预付费，POSTPAID-后付费</p>",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>防护类型，取值：NONE-无防护，BASIC-基础版，PRO-专业版，ULTIMATE-旗舰版，PRO_LH-轻量版</p>",
+          "example": "ULTIMATE",
+          "member": "string",
+          "name": "ProtectType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机唯一标识</p>",
+          "example": "ec21668e-4bd7-bba7-1783-dc7c621b7764",
+          "member": "string",
+          "name": "Quuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域信息</p>",
+          "example": "无",
+          "member": "RegionInfo",
+          "name": "RegionInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "测试一下备注",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产标签列表</p>",
+          "example": "无",
+          "member": "MiniTagItem",
+          "name": "TagItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签修改信息</p>",
+          "example": "无",
+          "member": "AssetTagModifyAssetItem",
+          "name": "TagModifyInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TAT状态，取值：ONLINE-在线，OFFLINE-离线</p>",
+          "example": "Offline",
+          "member": "string",
+          "name": "TatStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent唯一标识</p>",
+          "example": "ec21668e-4bd7-bba7-1783-dc7c621b7764",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC ID</p>",
+          "example": "vpc-0be7348a2104b01bf",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机节点类型</p><p>枚举值：</p><ul><li>NONE： 主机节点</li><li>CLUSTER： 集群节点</li><li>CONTAINER： 容器节点</li></ul>",
+          "example": "NONE",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器防护状态</p><p>枚举值：</p><ul><li>Enabled： 开启防护</li><li>Disabled： 关闭防护</li><li>Unknown： 未知</li></ul>",
+          "example": "Unknown",
+          "member": "string",
+          "name": "ContainerDefendStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器数量</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ContainerCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>核数</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "CpuCoreCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MachineDetail": {
+      "document": "主机列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent状态</p>",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "AgentStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent版本</p>",
+          "example": "5.3.4.134",
+          "member": "string",
+          "name": "AgentVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号AppId</p>",
+          "example": "260199983",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型名称</p>",
+          "example": "Other",
+          "member": "string",
+          "name": "AssetTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统启动时间（Unix时间戳）</p>",
+          "example": "1780108163",
+          "member": "int64",
+          "name": "BootTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买时间（Unix时间戳）</p>",
+          "example": "1780409243",
+          "member": "int64",
+          "name": "BuyTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云服务商</p>",
+          "example": "Tencent",
+          "member": "string",
+          "name": "CloudFromEnum",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云标签列表</p>",
+          "example": "无",
+          "member": "Tags",
+          "name": "CloudTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内核版本</p>",
+          "example": "6.6.117-45.7.3.tl4.x86_64",
+          "member": "string",
+          "name": "CoreVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU信息</p>",
+          "example": "Intel(R) Xeon(R) Platinum 8255C CPU @ 2.50GHz",
+          "member": "string",
+          "name": "Cpu",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU负载</p>",
+          "example": "低",
+          "member": "string",
+          "name": "CpuLoad",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU核数</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "CpuSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备型号</p>",
+          "example": "CVM",
+          "member": "string",
+          "name": "DeviceVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘分区信息</p>",
+          "example": "无",
+          "member": "DiskPartitionInfo",
+          "name": "Disks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>到期时间（Unix时间戳）</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>暴露状态</p>",
+          "example": "NONE",
+          "member": "string",
+          "name": "ExposedStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安装时间（Unix时间戳）</p>",
+          "example": "1780409204",
+          "member": "int64",
+          "name": "InstallTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ins-f1vbqysn",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态</p>",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内核版本</p>",
+          "example": "6.6.117-45.7.3.tl4.x86_64",
+          "member": "string",
+          "name": "KernelVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次在线时间（Unix时间戳）</p>",
+          "example": "1780753429",
+          "member": "int64",
+          "name": "LatestLiveTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次离线时间（Unix时间戳）</p>",
+          "example": "1780752897",
+          "member": "int64",
+          "name": "LatestOfflineTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网IP</p>",
+          "example": "172.20.11.16",
+          "member": "string",
+          "name": "MachineIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机名称</p>",
+          "example": "VM-11-16-tencentos",
+          "member": "string",
+          "name": "MachineName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作系统（云采集）</p>",
+          "example": "TencentOS Server 4",
+          "member": "string",
+          "name": "MachineOs",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机状态</p>",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "MachineStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外网IP</p>",
+          "example": "129.28.108.211",
+          "member": "string",
+          "name": "MachineWanIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存大小(MB)</p>",
+          "example": "1963",
+          "member": "uint64",
+          "name": "MemSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存使用率</p>",
+          "example": "21.50",
+          "member": "string",
+          "name": "MemoryLoad",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网卡信息</p>",
+          "example": "无",
+          "member": "NetworkCardInfo",
+          "name": "NetCards",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作系统（端采集）</p>",
+          "example": "TencentOS Server 4",
+          "member": "string",
+          "name": "OsByAgent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费模式</p>",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已防护天数</p>",
+          "example": "6",
+          "member": "uint64",
+          "name": "ProtectDays",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>防护类型</p>",
+          "example": "ULTIMATE",
+          "member": "string",
+          "name": "ProtectType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机唯一标识</p>",
+          "example": "08472a84-d8d3-46b5-9788-2b339234eae8",
+          "member": "string",
+          "name": "Quuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域信息</p>",
+          "example": "无",
+          "member": "RegionInfo",
+          "name": "RegionInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "测试一下备注",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>序列号</p>",
+          "example": "8ceae791-925f-4a77-be58-22e9f7ead617",
+          "member": "string",
+          "name": "SerialNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产标签列表</p>",
+          "example": "无",
+          "member": "MiniTagItem",
+          "name": "TagItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签修改信息</p>",
+          "example": "无",
+          "member": "AssetTagModifyAssetItem",
+          "name": "TagModifyInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent唯一标识</p>",
+          "example": "08472a84-d8d3-46b5-9788-2b339234eae8",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC CIDR</p>",
+          "example": "172.16.0.0/16",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC ID</p>",
+          "example": "vpc-qxhwdt6c",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC名称</p>",
+          "example": "Default-VPC",
+          "member": "string",
+          "name": "VpcName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机节点类型</p><p>枚举值：</p><ul><li>NONE： 主机节点</li><li>CLUSTER： 集群节点</li><li>CONTAINER： 容器节点</li></ul>",
+          "example": "CLUSTER",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器防护状态</p><p>枚举值：</p><ul><li>Enabled： 开启防护</li><li>Disabled： 关闭防护</li><li>Unknown： 未知</li></ul>",
+          "example": "UNKNOWN",
+          "member": "string",
+          "name": "ContainerDefendStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群签证md5</p>",
+          "example": "322bb3be14b329663839d929dbfc68cb",
+          "member": "string",
+          "name": "ClusterCaMd5",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器环境信息</p>",
+          "example": "无",
+          "member": "ContainerEnvInfo",
+          "name": "ContainerEnvInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "cls-9h6qoh3m",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群名称</p>",
+          "example": "yjjtest",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MiniTagItem": {
+      "document": "简要的资产标签元素",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签颜色</p>",
+          "example": "blue",
+          "member": "string",
+          "name": "Color",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "测试自动打标策略打标签",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签ID</p>",
+          "example": "152",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签键</p>",
+          "example": "应用",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值</p>",
+          "example": "门户",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签键英文</p>",
+          "example": "App",
+          "member": "string",
+          "name": "TagKeyEn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值英文</p>",
+          "example": "Index",
+          "member": "string",
+          "name": "TagValueEn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ModifyAlarmRiskStatusRequest": {
       "document": "ModifyAlarmRiskStatus请求参数结构体",
       "members": [
@@ -34647,6 +35884,51 @@
       ],
       "type": "object"
     },
+    "ModifyMachineRemarkRequest": {
+      "document": "ModifyMachineRemark请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ins-4ty8h8gy",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注信息</p>",
+          "example": "测试一下备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-a01\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMachineRemarkResponse": {
+      "document": "ModifyMachineRemark返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyOrganizationAccountStatusRequest": {
       "document": "ModifyOrganizationAccountStatus请求参数结构体",
       "members": [
@@ -35255,6 +36537,72 @@
           "name": "IsNewAsset",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NetworkCardInfo": {
+      "document": "网卡信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>DNS服务器</p>",
+          "example": "183.60.83.19,183.60.82.98",
+          "member": "string",
+          "name": "DnsServer",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关</p>",
+          "example": "172.16.16.1",
+          "member": "string",
+          "name": "Gateway",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地址</p>",
+          "example": "172.16.16.4",
+          "member": "string",
+          "name": "Ip",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IPv6地址</p>",
+          "example": "2001:db8:85a3::8a2e:370:7334",
+          "member": "string",
+          "name": "Ipv6",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>MAC地址</p>",
+          "example": "52:54:00:e1:d7:ac",
+          "member": "string",
+          "name": "Mac",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网卡名称</p>",
+          "example": "br-fc9a32f1bf4a",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -36229,6 +37577,62 @@
           "member": "string",
           "name": "RegionNameEN",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RegionInfo": {
+      "document": "地域信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "all-regions",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域编码</p>",
+          "example": "all",
+          "member": "string",
+          "name": "RegionCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域ID</p>",
+          "example": "999",
+          "member": "uint64",
+          "name": "RegionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域名称</p>",
+          "example": "全地域",
+          "member": "string",
+          "name": "RegionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域英文名称</p>",
+          "example": "All regions",
+          "member": "string",
+          "name": "RegionNameEn",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

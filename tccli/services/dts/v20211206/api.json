@@ -7831,7 +7831,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium",
+          "document": "<p>投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium</p>",
           "example": "Avro,Json",
           "member": "string",
           "name": "DataType",
@@ -7842,7 +7842,7 @@
         },
         {
           "disabled": false,
-          "document": "同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)",
+          "document": "<p>同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)</p>",
           "example": "Single（集中投递到单topic）,Multi (自定义topic名称)",
           "member": "string",
           "name": "TopicType",
@@ -7853,7 +7853,7 @@
         },
         {
           "disabled": false,
-          "document": "用于存储ddl的topic",
+          "document": "<p>用于存储ddl的topic</p>",
           "example": "topic-ddl",
           "member": "string",
           "name": "DDLTopicName",
@@ -7864,7 +7864,7 @@
         },
         {
           "disabled": false,
-          "document": "单topic和自定义topic的描述",
+          "document": "<p>单topic和自定义topic的描述</p>",
           "example": "无",
           "member": "TopicRule",
           "name": "TopicRules",
@@ -7875,7 +7875,7 @@
         },
         {
           "disabled": false,
-          "document": "其他附加信息，对于特定数据类型可设置额外参数，比如针对Canal兼容的功能支持：\"canalOfficialFormat\":\"on\"表示打开Canal兼容功能，默认不带。",
+          "document": "<p>其他附加信息，对于特定数据类型可设置额外参数。比如针对Canal兼容的功能支持：&quot;canalOfficialFormat&quot;:&quot;on&quot;表示打开Canal兼容功能，默认不带。针对大消息跳过的功能支持：&quot;skipLargeMessage&quot;:&quot;on&quot;表示开启跳过大消息，默认不带；开启时需同时设置&quot;maxMessageSizeMB&quot;为1~100的正整数字符串，表示最大消息大小阈值（MB），超过该大小的消息将被跳过，默认不带。</p>",
           "example": "无",
           "member": "KeyValuePairOption",
           "name": "DataOption",

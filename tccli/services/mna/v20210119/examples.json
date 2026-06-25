@@ -206,6 +206,14 @@
         "title": "正常场景"
       }
     ],
+    "GetGatewayList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetGatewayList\n<公共请求参数>\n\n{\n    \"GatewayName\": \"abc\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"GatewayList\": [\n            {\n                \"GatewayId\": \"abc\",\n                \"GatewayName\": \"abc\",\n                \"CreateTime\": 1709191947,\n                \"Status\": 1\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "GetGroupDetail": [
       {
         "document": "",

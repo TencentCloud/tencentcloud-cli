@@ -3667,7 +3667,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>预付费购买时长，例如 \"1m\",就是一个月,取值范围 1m~36m</p>",
+          "document": "<p>预付费购买时长，例如 &quot;1m&quot;,就是一个月,取值范围 1m~36m</p>",
           "example": "1m",
           "member": "string",
           "name": "Period",
@@ -3739,7 +3739,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例类型: [标准版实例]填写 \"standard\" (默认), [专业版实例]填写 \"profession\",[高级版实例]填写\"premium\"</p>",
+          "document": "<p>实例类型: [标准版实例]填写 &quot;standard&quot; (默认), [专业版实例]填写 &quot;profession&quot;,[高级版实例]填写&quot;premium&quot;</p>",
           "example": "profession",
           "member": "string",
           "name": "SpecificationsType",
@@ -3784,7 +3784,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>专业版/高级版实例磁盘类型，标准版实例不需要填写。\"CLOUD_SSD\"：SSD云硬盘；\"CLOUD_BASIC\"：高性能云硬盘。不传默认为 \"CLOUD_BASIC\"</p>",
+          "document": "<p>专业版/高级版实例磁盘类型，标准版实例不需要填写。&quot;CLOUD_SSD&quot;：SSD云硬盘；&quot;CLOUD_BASIC&quot;：高性能云硬盘。不传默认为 &quot;CLOUD_BASIC&quot;</p>",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -3853,6 +3853,15 @@
           "name": "CustomSSLCertId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性存储开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "StoreQuantityType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4480,6 +4489,15 @@
           "name": "CustomSSLCertId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性存储开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "StoreQuantityType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -15884,7 +15902,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要同步的MQTT Topic列表, CSV格式",
+          "document": "<p>需要同步的MQTT Topic列表, CSV格式</p>",
           "example": "topic-test",
           "member": "string",
           "name": "Topics",
@@ -15895,7 +15913,7 @@
         },
         {
           "disabled": false,
-          "document": "用于控制会话的持久性。cleanSession 为true时，连接时会创建一个全新的会话。 cleanSession = false时，连接时会恢复之前的会话。",
+          "document": "<p>用于控制会话的持久性。cleanSession 为true时，连接时会创建一个全新的会话。 cleanSession = false时，连接时会恢复之前的会话。</p>",
           "example": "true",
           "member": "bool",
           "name": "CleanSession",
@@ -15906,7 +15924,7 @@
         },
         {
           "disabled": false,
-          "document": "MQTT instance-id",
+          "document": "<p>MQTT instance-id</p>",
           "example": "resource-test",
           "member": "string",
           "name": "Resource",
@@ -15917,7 +15935,7 @@
         },
         {
           "disabled": false,
-          "document": "MQTT实例VIP",
+          "document": "<p>MQTT实例VIP</p>",
           "example": "10.0.0.5",
           "member": "string",
           "name": "Ip",
@@ -15928,7 +15946,7 @@
         },
         {
           "disabled": false,
-          "document": "MQTT VIP 端口",
+          "document": "<p>MQTT VIP 端口</p>",
           "example": "1883",
           "member": "int64",
           "name": "Port",
@@ -15939,7 +15957,7 @@
         },
         {
           "disabled": false,
-          "document": "MQTT实例用户名",
+          "document": "<p>MQTT实例用户名</p>",
           "example": "username-test",
           "member": "string",
           "name": "UserName",
@@ -15950,7 +15968,7 @@
         },
         {
           "disabled": false,
-          "document": "MQTT实例内账户密码",
+          "document": "<p>MQTT实例内账户密码</p>",
           "example": "password-test",
           "member": "string",
           "name": "Password",
@@ -15961,7 +15979,7 @@
         },
         {
           "disabled": false,
-          "document": "QoS",
+          "document": "<p>QoS</p>",
           "example": "1",
           "member": "int64",
           "name": "Qos",
@@ -15972,7 +15990,7 @@
         },
         {
           "disabled": false,
-          "document": "tasks.max 订阅Topic的并发Task个数, 默认为1; 当设置大于1时, 使用Shared Subscription",
+          "document": "<p>tasks.max 订阅Topic的并发Task个数, 默认为1; 当设置大于1时, 使用Shared Subscription</p>",
           "example": "1",
           "member": "int64",
           "name": "MaxTasks",
@@ -15983,7 +16001,7 @@
         },
         {
           "disabled": false,
-          "document": "MQTT 实例的Service VIP",
+          "document": "<p>MQTT 实例的Service VIP</p>",
           "example": "10.0.0.30",
           "member": "string",
           "name": "ServiceVip",
@@ -15994,7 +16012,7 @@
         },
         {
           "disabled": false,
-          "document": "MQTT实例的VPC ID",
+          "document": "<p>MQTT实例的VPC ID</p>",
           "example": "vpc-test",
           "member": "string",
           "name": "UniqVpcId",
@@ -16005,13 +16023,24 @@
         },
         {
           "disabled": false,
-          "document": "是否为自建集群, MQTT只支持非自建集群",
+          "document": "<p>是否为自建集群, MQTT只支持非自建集群</p>",
           "example": "false",
           "member": "bool",
           "name": "SelfBuilt",
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>MQTT消息过滤sql语句</p>",
+          "example": "WHERE region='gz' AND level='vip'",
+          "member": "string",
+          "name": "SqlFilter",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
