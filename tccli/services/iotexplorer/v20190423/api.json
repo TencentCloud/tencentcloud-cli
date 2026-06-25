@@ -140,8 +140,15 @@
       "output": "CreateDeviceChannelResponse",
       "status": "online"
     },
+    "CreateDevicePublishSDPAnswer": {
+      "document": "创建设备推流SDP应答，此接口调用前需要先调用CreateDeviceSDPAnswer接口以保证设备处于拉流状态，接口返回是另外一路webrtc推流SDP信息，可以用来进行标准的WHIP推流",
+      "input": "CreateDevicePublishSDPAnswerRequest",
+      "name": "创建设备推流SDP应答",
+      "output": "CreateDevicePublishSDPAnswerResponse",
+      "status": "online"
+    },
     "CreateDeviceSDPAnswer": {
-      "document": "创建设备SDP应答",
+      "document": "创建设备SDP应答，调用此接口后，后台会对传入参数的设备进行拉流，并返回webrtc answer SDP返回，可以进行WHEP协议拉流。",
       "input": "CreateDeviceSDPAnswerRequest",
       "name": "创建设备SDP应答",
       "output": "CreateDeviceSDPAnswerResponse",
@@ -320,6 +327,13 @@
       "input": "DeleteDeviceRequest",
       "name": "删除设备",
       "output": "DeleteDeviceResponse",
+      "status": "online"
+    },
+    "DeleteDeviceSDP": {
+      "document": "删除设备SDP应答，此接口调用是手动结束设备后台推拉流信息，快速响应挂断需求。",
+      "input": "DeleteDeviceSDPRequest",
+      "name": "删除设备SDP请求",
+      "output": "DeleteDeviceSDPResponse",
       "status": "online"
     },
     "DeleteDevices": {
@@ -4010,6 +4024,61 @@
       ],
       "type": "object"
     },
+    "CreateDevicePublishSDPAnswerRequest": {
+      "document": "CreateDevicePublishSDPAnswer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "NKG9ORH8VF",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "nandy_dev_trtc3",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SDP提议",
+          "example": "v=0\\r\\no=...",
+          "member": "string",
+          "name": "SDPOffer",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDevicePublishSDPAnswerResponse": {
+      "document": "CreateDevicePublishSDPAnswer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SDP应答",
+          "example": "v=0\r\no=- 0 0 IN IP4 127.0.0.1\r\ns=mock\r\nt=0 0",
+          "member": "string",
+          "name": "SDPAnswer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDeviceRequest": {
       "document": "CreateDevice请求参数结构体",
       "members": [
@@ -4138,6 +4207,15 @@
           "member": "string",
           "name": "SDPOffer",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户自定义拉流标识",
+          "example": "tag-test",
+          "member": "string",
+          "name": "RequesterTag",
+          "required": false,
           "type": "string"
         }
       ],
@@ -6448,6 +6526,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceSDPRequest": {
+      "document": "DeleteDeviceSDP请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "NKG9ORH8VF",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "nandy_dev_trtc3",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceSDPResponse": {
+      "document": "DeleteDeviceSDP返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -15693,7 +15807,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品ID",
+          "document": "<p>产品ID</p>",
           "example": "MVTYMD8YCD",
           "member": "string",
           "name": "ProductId",
@@ -15702,7 +15816,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名称",
+          "document": "<p>设备名称</p>",
           "example": "dev001",
           "member": "string",
           "name": "DeviceName",
@@ -15711,7 +15825,7 @@
         },
         {
           "disabled": false,
-          "document": "自然语言查询",
+          "document": "<p>自然语言查询</p>",
           "example": "有人走过",
           "member": "string",
           "name": "Query",
@@ -15720,7 +15834,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索结果总结的语言类型，支持的类型有：en-US、zh-CN、id-ID、th-TH",
+          "document": "<p>搜索结果总结的语言类型，支持的类型有：en-US、zh-CN、id-ID、th-TH</p>",
           "example": "zh-CN",
           "member": "string",
           "name": "SummaryLang",
@@ -15729,7 +15843,7 @@
         },
         {
           "disabled": false,
-          "document": "通道ID",
+          "document": "<p>通道ID</p>",
           "example": "0",
           "member": "uint64",
           "name": "ChannelId",
@@ -15738,7 +15852,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要返回总结，默认为True；  开启后会加大接口响应时长",
+          "document": "<p>是否需要返回总结，默认为True；  开启后会加大接口响应时长</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableSummary",
@@ -15747,7 +15861,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间。\n\n注：\n1. 单位为毫秒（ms）\n2. 如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后1天内的数据， 反之EndTimeMs也一样）\n3. 只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为\"过去三天关于猫咪的视频\"， 则会将\"过去三天忽略\"）",
+          "document": "<p>开始时间。</p><p>注：</p><ol><li>单位为毫秒（ms）</li><li>如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后1天内的数据， 反之EndTimeMs也一样）</li><li>只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为&quot;过去三天关于猫咪的视频&quot;， 则会将&quot;过去三天忽略&quot;）</li></ol>",
           "example": "1750158420000",
           "member": "int64",
           "name": "StartTimeMs",
@@ -15756,7 +15870,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。\n\n注：\n1. 单位为毫秒（ms）\n2. 如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后1天内的数据， 反之EndTimeMs也一样）\n3. 只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为\"过去三天关于猫咪的视频\"， 则会将\"过去三天忽略\"）",
+          "document": "<p>结束时间。</p><p>注：</p><ol><li>单位为毫秒（ms）</li><li>如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后1天内的数据， 反之EndTimeMs也一样）</li><li>只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为&quot;过去三天关于猫咪的视频&quot;， 则会将&quot;过去三天忽略&quot;）</li></ol>",
           "example": "1750244820000",
           "member": "int64",
           "name": "EndTimeMs",
@@ -15765,7 +15879,7 @@
         },
         {
           "disabled": false,
-          "document": "时区。默认值：Asia/Shanghai\n\n注：\n符合iana标准 https://www.iana.org/time-zones，例如Asia/Shanghai、Asia/Bangkok\n",
+          "document": "<p>时区。默认值：Asia/Shanghai</p><p>注：<br>符合iana标准 https://www.iana.org/time-zones，例如Asia/Shanghai、Asia/Bangkok</p>",
           "example": "Asia/Shanghai",
           "member": "string",
           "name": "TimeZone",
@@ -15774,7 +15888,7 @@
         },
         {
           "disabled": false,
-          "document": "取值为1表示高级搜索，取值为2表示简单搜索，默认为1",
+          "document": "<p>取值为1表示高级搜索，取值为2表示简单搜索，默认为1</p>",
           "example": "1",
           "member": "int64",
           "name": "SearchMode",
@@ -15783,7 +15897,7 @@
         },
         {
           "disabled": false,
-          "document": "最终输出的条数；仅当SearchMode为2时支持自定义设置，默认为50",
+          "document": "<p>最终输出的条数；仅当SearchMode为2时支持自定义设置，默认为50</p>",
           "example": "50",
           "member": "int64",
           "name": "Limit",
@@ -15792,7 +15906,7 @@
         },
         {
           "disabled": false,
-          "document": "向量搜索的相似度搜索半径，取值范围[-1, 1]；仅当SearchMode为2时支持自定义设置，默认为0.5",
+          "document": "<p>向量搜索的相似度搜索半径，取值范围[-1, 1]；仅当SearchMode为2时支持自定义设置，默认为0.5</p>",
           "example": "0.5",
           "member": "float",
           "name": "VectorSearchRadius",
@@ -15801,7 +15915,7 @@
         },
         {
           "disabled": false,
-          "document": "指定向量搜索最相似的 Top K；仅当SearchMode为2时支持自定义设置，默认为100",
+          "document": "<p>指定向量搜索最相似的 Top K；仅当SearchMode为2时支持自定义设置，默认为100</p>",
           "example": "100",
           "member": "int64",
           "name": "VectorSearchTopK",
@@ -15810,7 +15924,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索结果的排序方式，可选值：\n\n- `CORRELATION`：按相关性（默认）\n- `TIME_ASC`：按时间升序\n- `TIME_DESC`：按时间降序",
+          "document": "<p>搜索结果的排序方式，可选值：</p><ul><li><code>CORRELATION</code>：按相关性（默认）</li><li><code>TIME_ASC</code>：按时间升序</li><li><code>TIME_DESC</code>：按时间降序</li></ul>",
           "example": "CORRELATION",
           "member": "string",
           "name": "Order",
@@ -15825,7 +15939,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "基于搜索结果的总结",
+          "document": "<p>基于搜索结果的总结</p>",
           "example": "共1段视频：雨后路滑，浅色路人正小心行走。安全起见，请防滑慢行哦！",
           "member": "string",
           "name": "Summary",
@@ -15835,7 +15949,7 @@
         },
         {
           "disabled": false,
-          "document": "视频结果集",
+          "document": "<p>视频结果集</p>",
           "example": "无",
           "member": "TargetInfo",
           "name": "Targets",
@@ -15845,7 +15959,7 @@
         },
         {
           "disabled": false,
-          "document": "视频回放URL",
+          "document": "<p>视频回放URL</p>",
           "example": "https://domain.com/video.m3u8",
           "member": "string",
           "name": "VideoURL",
@@ -21735,7 +21849,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "拓展的目标及事件检测类别",
+          "document": "<p>拓展的目标及事件检测类别</p>",
           "example": "[\"baby\"]",
           "member": "string",
           "name": "DetectTypes",
@@ -21746,7 +21860,7 @@
         },
         {
           "disabled": false,
-          "document": "使该视频 / 图片录入搜索库，后续可进行搜索",
+          "document": "<p>使该视频 / 图片录入搜索库，后续可进行搜索</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableSearch",
@@ -21757,7 +21871,7 @@
         },
         {
           "disabled": false,
-          "document": "主输出语言，可选值包括：\n- `zh` 中文（默认值）\n- `en` 英语\n- `ja` 日语\n- `ko` 韩文\n- `pt-BR` 葡萄牙语（巴西）\n- `th` 泰语\n- `ms` 马来语",
+          "document": "<p>主输出语言，可选值包括：</p><ul><li><code>zh</code> 中文（默认值）</li><li><code>en</code> 英语</li><li><code>ja</code> 日语</li><li><code>ko</code> 韩文</li><li><code>pt-BR</code> 葡萄牙语（巴西）</li><li><code>th</code> 泰语</li><li><code>ms</code> 马来语</li></ul>",
           "example": "zh",
           "member": "string",
           "name": "OutputLang",
@@ -21768,7 +21882,7 @@
         },
         {
           "disabled": false,
-          "document": "次选输出语言，可选值包括：\n- `zh` 中文\n- `en` 英语\n- `ja` 日语\n- `ko` 韩文\n- `pt-BR` 葡萄牙语（巴西）\n- `th` 泰语\n- `ms` 马来语\n",
+          "document": "<p>次选输出语言，可选值包括：</p><ul><li><code>zh</code> 中文</li><li><code>en</code> 英语</li><li><code>ja</code> 日语</li><li><code>ko</code> 韩文</li><li><code>pt-BR</code> 葡萄牙语（巴西）</li><li><code>th</code> 泰语</li><li><code>ms</code> 马来语</li></ul>",
           "example": "en",
           "member": "string",
           "name": "AlternativeOutputLang",
@@ -21779,7 +21893,7 @@
         },
         {
           "disabled": false,
-          "document": "多摄像头布局定义。可选值包括：\n\n- 单摄（默认值）：`Single`\n\n- 双摄（纵向排列）- 全部画面：`Vertical,Num=2,Index=0;1`\n- 双摄（纵向排列）- 画面1：`Vertical,Num=2,Index=0`\n- 双摄（纵向排列）- 画面2：`Vertical,Num=2,Index=1`\n\n- 三摄（纵向排列）- 全部画面：`Vertical,Num=3,Index=0;1;2`\n- 三摄（纵向排列）- 画面1：`Vertical,Num=3,Index=0`\n- 三摄（纵向排列）- 画面2：`Vertical,Num=3,Index=1`\n- 三摄（纵向排列）- 画面3：`Vertical,Num=3,Index=2`\n- 三摄（纵向排列）- 画面1+2：`Vertical,Num=3,Index=0;1`\n- 三摄（纵向排列）- 画面1+3：`Vertical,Num=3,Index=0;2`\n- 三摄（纵向排列）- 画面2+3：`Vertical,Num=3,Index=1;2`",
+          "document": "<p>多摄像头布局定义。可选值包括：</p><ul><li><p>单摄（默认值）：<code>Single</code></p></li><li><p>双摄（纵向排列）- 全部画面：<code>Vertical,Num=2,Index=0;1</code></p></li><li><p>双摄（纵向排列）- 画面1：<code>Vertical,Num=2,Index=0</code></p></li><li><p>双摄（纵向排列）- 画面2：<code>Vertical,Num=2,Index=1</code></p></li><li><p>三摄（纵向排列）- 全部画面：<code>Vertical,Num=3,Index=0;1;2</code></p></li><li><p>三摄（纵向排列）- 画面1：<code>Vertical,Num=3,Index=0</code></p></li><li><p>三摄（纵向排列）- 画面2：<code>Vertical,Num=3,Index=1</code></p></li><li><p>三摄（纵向排列）- 画面3：<code>Vertical,Num=3,Index=2</code></p></li><li><p>三摄（纵向排列）- 画面1+2：<code>Vertical,Num=3,Index=0;1</code></p></li><li><p>三摄（纵向排列）- 画面1+3：<code>Vertical,Num=3,Index=0;2</code></p></li><li><p>三摄（纵向排列）- 画面2+3：<code>Vertical,Num=3,Index=1;2</code></p></li></ul>",
           "example": "Single",
           "member": "string",
           "name": "MultiCameraLayout",
@@ -21790,7 +21904,7 @@
         },
         {
           "disabled": false,
-          "document": "最大处理的输入视频时长，单位：秒（仅对视频输入生效）",
+          "document": "<p>最大处理的输入视频时长，单位：秒（仅对视频输入生效）</p>",
           "example": "30",
           "member": "int64",
           "name": "MaxDuration",
@@ -23667,7 +23781,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频唯一ID",
+          "document": "<p>视频唯一ID</p>",
           "example": "unique",
           "member": "string",
           "name": "Id",
@@ -23677,7 +23791,7 @@
         },
         {
           "disabled": false,
-          "document": "产品ID",
+          "document": "<p>产品ID</p>",
           "example": "MVTYMD8YCD",
           "member": "string",
           "name": "ProductId",
@@ -23687,7 +23801,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名称",
+          "document": "<p>设备名称</p>",
           "example": "dev001",
           "member": "string",
           "name": "DeviceName",
@@ -23697,7 +23811,7 @@
         },
         {
           "disabled": false,
-          "document": "视频起始时间（毫秒级Unix时间戳）",
+          "document": "<p>视频起始时间（毫秒级Unix时间戳）</p>",
           "example": "1744258527",
           "member": "int64",
           "name": "StartTimeMs",
@@ -23707,7 +23821,7 @@
         },
         {
           "disabled": false,
-          "document": "视频结束时间（毫秒级Unix时间戳）",
+          "document": "<p>视频结束时间（毫秒级Unix时间戳）</p>",
           "example": "1744258537",
           "member": "int64",
           "name": "EndTimeMs",
@@ -23717,7 +23831,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义事件ID，后续扩展使用",
+          "document": "<p>用户自定义事件ID，后续扩展使用</p>",
           "example": "alarm",
           "member": "string",
           "name": "EventId",
@@ -23727,7 +23841,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容摘要",
+          "document": "<p>视频内容摘要</p>",
           "example": "Two cats and a dog eating",
           "member": "string",
           "name": "Summary",
@@ -23737,7 +23851,7 @@
         },
         {
           "disabled": false,
-          "document": "通道ID",
+          "document": "<p>通道ID</p>",
           "example": "0",
           "member": "uint64",
           "name": "ChannelId",
@@ -23747,7 +23861,7 @@
         },
         {
           "disabled": false,
-          "document": "缩略图路径",
+          "document": "<p>缩略图路径</p>",
           "example": "/product/1.jpg",
           "member": "string",
           "name": "Thumbnail",
@@ -25000,7 +25114,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主输出语言，可选值包括：\n- `zh` 中文（默认值）\n- `en` 英语\n- `ja` 日语\n- `ko` 韩文\n- `pt-BR` 葡萄牙语（巴西）\n- `th` 泰语\n- `ms` 马来语",
+          "document": "<p>主输出语言，可选值包括：</p><ul><li><code>zh</code> 中文（默认值）</li><li><code>en</code> 英语</li><li><code>ja</code> 日语</li><li><code>ko</code> 韩文</li><li><code>pt-BR</code> 葡萄牙语（巴西）</li><li><code>th</code> 泰语</li><li><code>ms</code> 马来语</li></ul>",
           "example": "zh",
           "member": "string",
           "name": "OutputLang",
@@ -25011,7 +25125,7 @@
         },
         {
           "disabled": false,
-          "document": "次选输出语言，可选值包括：\n- `zh` 中文\n- `en` 英语\n- `ja` 日语\n- `ko` 韩文\n- `pt-BR` 葡萄牙语（巴西）\n- `th` 泰语\n- `ms` 马来语\n",
+          "document": "<p>次选输出语言，可选值包括：</p><ul><li><code>zh</code> 中文</li><li><code>en</code> 英语</li><li><code>ja</code> 日语</li><li><code>ko</code> 韩文</li><li><code>pt-BR</code> 葡萄牙语（巴西）</li><li><code>th</code> 泰语</li><li><code>ms</code> 马来语</li></ul>",
           "example": "en",
           "member": "string",
           "name": "AlternativeOutputLang",
@@ -25022,7 +25136,7 @@
         },
         {
           "disabled": false,
-          "document": "多摄像头布局定义。可选值包括：\n\n- 单摄（默认值）：`Single`\n\n- 双摄（纵向排列）- 全部画面：`Vertical,Num=2,Index=0;1`\n- 双摄（纵向排列）- 画面1：`Vertical,Num=2,Index=0`\n- 双摄（纵向排列）- 画面2：`Vertical,Num=2,Index=1`\n\n- 三摄（纵向排列）- 全部画面：`Vertical,Num=3,Index=0;1;2`\n- 三摄（纵向排列）- 画面1：`Vertical,Num=3,Index=0`\n- 三摄（纵向排列）- 画面2：`Vertical,Num=3,Index=1`\n- 三摄（纵向排列）- 画面3：`Vertical,Num=3,Index=2`\n- 三摄（纵向排列）- 画面1+2：`Vertical,Num=3,Index=0;1`\n- 三摄（纵向排列）- 画面1+3：`Vertical,Num=3,Index=0;2`\n- 三摄（纵向排列）- 画面2+3：`Vertical,Num=3,Index=1;2`",
+          "document": "<p>多摄像头布局定义。可选值包括：</p><ul><li><p>单摄（默认值）：<code>Single</code></p></li><li><p>双摄（纵向排列）- 全部画面：<code>Vertical,Num=2,Index=0;1</code></p></li><li><p>双摄（纵向排列）- 画面1：<code>Vertical,Num=2,Index=0</code></p></li><li><p>双摄（纵向排列）- 画面2：<code>Vertical,Num=2,Index=1</code></p></li><li><p>三摄（纵向排列）- 全部画面：<code>Vertical,Num=3,Index=0;1;2</code></p></li><li><p>三摄（纵向排列）- 画面1：<code>Vertical,Num=3,Index=0</code></p></li><li><p>三摄（纵向排列）- 画面2：<code>Vertical,Num=3,Index=1</code></p></li><li><p>三摄（纵向排列）- 画面3：<code>Vertical,Num=3,Index=2</code></p></li><li><p>三摄（纵向排列）- 画面1+2：<code>Vertical,Num=3,Index=0;1</code></p></li><li><p>三摄（纵向排列）- 画面1+3：<code>Vertical,Num=3,Index=0;2</code></p></li><li><p>三摄（纵向排列）- 画面2+3：<code>Vertical,Num=3,Index=1;2</code></p></li></ul>",
           "example": "Single",
           "member": "string",
           "name": "MultiCameraLayout",
@@ -25033,7 +25147,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展的目标及事件检测类别。可选值包括：\n\n**通用事件标签**\n- `person_enter` 有人进入\n- `vehicle_entering` 车辆进入\n- `vehicle_parking` 车辆停靠\n- `pet` 有宠物\n- `no_signal` 视频画面异常（无信号等）\n\n**看家护院**\n- `person_climbing_fence` 有人翻围墙\n- `door_window_open` 门窗被开启\n- `person_carrying_object` 有人搬运物品\n\n**商铺看管**\n- `person_at_cashier` 有人在收银台\n- `person_taking_goods` 有人拿商品\n- `person_night_moving` 夜间有人移动\n\n**公共及防火安全**\n- `person_stealing` 有人偷盗\n- `crowd` 多人聚集\n- `smoking` 有人吸烟\n- `safety_fire` 明火\n- `safety_smoke` 浓烟\n- `fireworks` 有人燃放烟花爆竹\n- `knife` 有人持刀\n- `gun` 有人持枪\n- `fight` 有人打架\n- `hurt` 有人受伤流血\n\n**养殖看护**\n- `person_feeding_animal` 有人投喂牲畜\n- `animal_lying` 有动物躺地上\n- `animal_wild_intrusion` 野生动物入侵\n\n**果园农田**\n- `person_picking_fruit` 有人采摘果实\n- `person_carrying_bag` 有人携带包裹\n\n**鱼塘看管**\n- `fishing` 有人钓鱼\n- `net_fishing` 有人撒网\n- `person_carrying_fishing_gear` 有人携带渔具\n- `loitering_near_water` 有人岸边逗留\n- `throwing_into_water` 有人投掷物品\n\n**婴儿看护**\n- `baby` 有婴儿\n- `baby_dropping` 婴儿跌落床铺\n- `person_holding_baby` 有人抱起婴儿\n- `baby_rolling` 婴儿翻滚\n- `baby_crying` 婴儿哭闹\n\n**儿童看护**\n- `child` 有小孩\n- `child_falling` 小孩摔倒\n- `child_entering_kitchen` 小孩进入厨房\n- `child_climbing_window` 小孩攀爬室内窗户\n- `child_near_water` 小孩靠近水域\n\n**老人看护**\n- `elderly` 有老人\n- `elderly_falling` 老人摔倒\n- `elderly_eating` 老人用餐\n- `elderly_using_stove` 老人使用灶具\n\n**宠物看护**\n- `pet_eating` 宠物进食\n- `pet_damaging` 宠物损坏家具\n- `pet_barking` 宠物吠叫\n- `pet_scratching_door` 宠物挠门\n\t",
+          "document": "<p>拓展的目标及事件检测类别。可选值包括：</p><p><strong>通用事件标签</strong></p><ul><li><code>person_enter</code> 有人进入</li><li><code>vehicle_entering</code> 车辆进入</li><li><code>vehicle_parking</code> 车辆停靠</li><li><code>pet</code> 有宠物</li><li><code>no_signal</code> 视频画面异常（无信号等）</li></ul><p><strong>看家护院</strong></p><ul><li><code>person_climbing_fence</code> 有人翻围墙</li><li><code>door_window_open</code> 门窗被开启</li><li><code>person_carrying_object</code> 有人搬运物品</li></ul><p><strong>商铺看管</strong></p><ul><li><code>person_at_cashier</code> 有人在收银台</li><li><code>person_taking_goods</code> 有人拿商品</li><li><code>person_night_moving</code> 夜间有人移动</li></ul><p><strong>公共及防火安全</strong></p><ul><li><code>person_stealing</code> 有人偷盗</li><li><code>crowd</code> 多人聚集</li><li><code>smoking</code> 有人吸烟</li><li><code>safety_fire</code> 明火</li><li><code>safety_smoke</code> 浓烟</li><li><code>fireworks</code> 有人燃放烟花爆竹</li><li><code>knife</code> 有人持刀</li><li><code>gun</code> 有人持枪</li><li><code>fight</code> 有人打架</li><li><code>hurt</code> 有人受伤流血</li></ul><p><strong>养殖看护</strong></p><ul><li><code>person_feeding_animal</code> 有人投喂牲畜</li><li><code>animal_lying</code> 有动物躺地上</li><li><code>animal_wild_intrusion</code> 野生动物入侵</li></ul><p><strong>果园农田</strong></p><ul><li><code>person_picking_fruit</code> 有人采摘果实</li><li><code>person_carrying_bag</code> 有人携带包裹</li></ul><p><strong>鱼塘看管</strong></p><ul><li><code>fishing</code> 有人钓鱼</li><li><code>net_fishing</code> 有人撒网</li><li><code>person_carrying_fishing_gear</code> 有人携带渔具</li><li><code>loitering_near_water</code> 有人岸边逗留</li><li><code>throwing_into_water</code> 有人投掷物品</li></ul><p><strong>婴儿看护</strong></p><ul><li><code>baby</code> 有婴儿</li><li><code>baby_dropping</code> 婴儿跌落床铺</li><li><code>person_holding_baby</code> 有人抱起婴儿</li><li><code>baby_rolling</code> 婴儿翻滚</li><li><code>baby_crying</code> 婴儿哭闹</li></ul><p><strong>儿童看护</strong></p><ul><li><code>child</code> 有小孩</li><li><code>child_falling</code> 小孩摔倒</li><li><code>child_entering_kitchen</code> 小孩进入厨房</li><li><code>child_climbing_window</code> 小孩攀爬室内窗户</li><li><code>child_near_water</code> 小孩靠近水域</li></ul><p><strong>老人看护</strong></p><ul><li><code>elderly</code> 有老人</li><li><code>elderly_falling</code> 老人摔倒</li><li><code>elderly_eating</code> 老人用餐</li><li><code>elderly_using_stove</code> 老人使用灶具</li></ul><p><strong>宠物看护</strong></p><ul><li><code>pet_eating</code> 宠物进食</li><li><code>pet_damaging</code> 宠物损坏家具</li><li><code>pet_barking</code> 宠物吠叫</li><li><code>pet_scratching_door</code> 宠物挠门</li></ul>",
           "example": "[\"child_falling\", \"baby_crying\"]",
           "member": "string",
           "name": "DetectTypes",
@@ -25044,7 +25158,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义检测标签",
+          "document": "<p>自定义检测标签</p>",
           "example": "无",
           "member": "VisionCustomDetectQuery",
           "name": "CustomDetectQueries",
@@ -25055,13 +25169,24 @@
         },
         {
           "disabled": false,
-          "document": "标签持续检测配置",
+          "document": "<p>标签持续检测配置</p>",
           "example": "无",
           "member": "SeeDetectContinuousConfig",
           "name": "DetectContinuous",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义摘要提示词</p>",
+          "example": "用不超过15字的一句话描述这段视频的主要内容。",
+          "member": "string",
+          "name": "SummaryPrompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

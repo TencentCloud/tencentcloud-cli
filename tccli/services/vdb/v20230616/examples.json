@@ -11,9 +11,9 @@
     "CreateInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstance\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-68mjxcwm\",\n    \"SubnetId\": \"subnet-1m1hnqav\",\n    \"PayMode\": 0,\n    \"InstanceName\": \"test-base\",\n    \"SecurityGroupIds\": [\n        \"sg-b85lwctl\"\n    ],\n    \"InstanceType\": \"base\"\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceIds\": [\n            \"vdb-j8mv****\"\n        ],\n        \"RequestId\": \"0d7fa142-011a-4416-be8c-320e44c9c3a9\"\n    }\n}",
-        "title": "免费版创建"
+        "input": "POST / HTTP/1.1\nHost: vdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstance\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-n4c3s8u4\",\n    \"SubnetId\": \"subnet-8apk7iir\",\n    \"PayMode\": 0,\n    \"InstanceName\": \"vdb-disk\",\n    \"SecurityGroupIds\": [\n        \"sg-dxnd192j\"\n    ],\n    \"PayPeriod\": 1,\n    \"AutoRenew\": 1,\n    \"Params\": null,\n    \"ResourceTags\": [\n        {\n            \"TagKey\": null,\n            \"TagValue\": null\n        }\n    ],\n    \"ProductType\": 0,\n    \"InstanceType\": \"cluster\",\n    \"Mode\": \"two\",\n    \"GoodsNum\": 1,\n    \"Cpu\": 1,\n    \"Memory\": 2,\n    \"DiskSize\": 100,\n    \"WorkerNodeNum\": 2,\n    \"EnableEncryption\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceIds\": [\n            \"vdb-17jsleiv\"\n        ],\n        \"RequestId\": \"617ca492-e31a-445f-b562-8a6588ed2a6b\"\n    }\n}",
+        "title": "创建磁盘加密实例"
       }
     ],
     "DescribeDBSecurityGroups": [

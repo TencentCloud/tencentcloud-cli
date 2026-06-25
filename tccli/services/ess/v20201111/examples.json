@@ -88,6 +88,14 @@
         "title": "未生成自动签链接，撤销链接失败"
       }
     ],
+    "CreateArchiveFlowTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateArchiveFlowTask\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDtT9UUckp*****************Q0bO6\"\n    },\n    \"ArchiveFlows\": [\n        {\n            \"ResourceIds\": [\n                \"yD3hnUUck***************vmOnrcHE\"\n            ],\n            \"FlowName\": \"测试3-flow_name\",\n            \"FlowType\": \"租房合同\",\n            \"BusinessId\": \"测试3-business_id\",\n            \"CreatorName\": \"发起方\",\n            \"ApproverInfo\": [\n                {\n                    \"ApproverName\": \"李白\",\n                    \"ApproverType\": 1,\n                    \"ApproverMobile\": \"1763******1\",\n                    \"ApproverEmail\": \"175******1@qq.com\",\n                    \"ApproverIdCardType\": \"ID_CARD\",\n                    \"ApproverIdCardNumber\": \"4115************12\",\n                    \"ApproveTime\": 1779157787\n                }\n            ],\n            \"CcInfo\": [\n                {\n                    \"ApproverName\": \"张三\"\n                }\n            ],\n            \"UserData\": \"用户的自定义数据\",\n            \"FlowDescription\": \"这是合同描述\",\n            \"ApproveTime\": 1779157787,\n            \"CustomCreatedOn\": 1779147787\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"yD3h6UUckpzjnz27UkwEdGoGm3LFAtgX\",\n        \"RequestId\": \"1b9bbc05-1ed1-4c9d-914b-44e327d79e51\"\n    }\n}",
+        "title": "创建合同归档任务"
+      }
+    ],
     "CreateBatchAdminChangeInvitations": [
       {
         "document": "提交创建企业超管信息变更，\n将企业典子谦示例企业的超管变更为典子谦。",
@@ -788,6 +796,14 @@
         "title": "创建一个有两份子合同的合同组签署流程（B2B、B2C），并且通过参数FlowGroupOptions控制开启合同组发起审批流"
       }
     ],
+    "CreateFlowGroupReminds": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowGroupReminds\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDCH5UUckpax3h9wUxHw4XzSpBev1wRg\"\n    },\n    \"FlowGroupId\": \"yD3**************************jJK\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RemindFlowGroupRecords\": [\n            {\n                \"ApproverName\": \"叶**\",\n                \"FlowIds\": [\n                    \"yD3**************************VCw\"\n                ],\n                \"FlowNames\": [\n                    \"合同组(2份合同)-单C-2\"\n                ],\n                \"Mobile\": \"156****8190\",\n                \"RemindMessageList\": [\n                    {\n                        \"ApproverOrder\": 0,\n                        \"Reason\": \"催办成功（短信）\",\n                        \"SignId\": \"yD3**************************9gk\",\n                        \"Status\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"52332bdd-67a4-4fb9-9efe-3a051b7c6c5d\"\n    }\n}",
+        "title": "合同组催办"
+      }
+    ],
     "CreateFlowGroupSignReview": [
       {
         "document": "1.签署审核通过企业签署人（ApproverType 设置为ORGANIZATION）\n2.使用企业名称 + 姓名 + 手机号 定位合同组内所有子合同的该签署人\n3.通过该签署人的签署审核（该签署人可以进行签署操作）（ReviewType 设置为PASS）",
@@ -1082,6 +1098,12 @@
         "title": "创建企业用户动态领取链接，并且预设企业名称"
       },
       {
+        "document": "发起流程后，给其中的B端动态签署方创建领取链接，并且要求必须全部领取签署。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationBatchSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UXXXzjEwg0vjoimj\"\n    },\n    \"Agent\": {\n        \"ProxyOrganizationId\": \"\"\n    },\n    \"FlowIds\": [\n        \"yDC5yUUntf6vnnUxxBTyJ8Ps0WGqAuHL\",\n        \"yDC5yUUntf6fccUEgcyeHwPz4wjnDSI4\"\n    ],\n    \"RecipientIds\": [\n        \"yDC5yUUntf6vn0UxxBTyJvfv3Xlckcye\",\n        \"yDC5yUUntf6mdgUEgcyeHCpCDmDjbsQJ\"\n    ],\n    \"DynamicSignOption\": {\n        \"DynamicReceiveType\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1706100107,\n        \"RequestId\": \"s1705495307288609862\",\n        \"SignUrl\": \"https://embed.test.qian.tencent.cn/contract-sign?embed=1&expiredOn=1706100107&code=yDCNBUUckpvlibz6UEMbkWeSzl6YurH0&shortKey=yDCNBUzgvS93aBhXs3ae&channel=TENCENTCLOUD\"\n    }\n}",
+        "title": "创建企业用户动态领取链接，指定要求全部领取签署"
+      },
+      {
         "document": "参与人不在链接中， 无法生成链接报错",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationBatchSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UXXXzjEwg0vjoimj\"\n    },\n    \"Agent\": {\n        \"ProxyOrganizationId\": \"\"\n    },\n    \"FlowIds\": [\n        \"yDRIxxxxxxxxxxxxxxxxxxxxxxxxxx0s\",\n        \"yDwFmUUckpstqfvzUxxx3jo1f3cqjkGm\",\n        \"yDwFmUUckpst10i3UxxxSat8PWOt2iQF\"\n    ],\n    \"Name\": \"典子谦\",\n    \"Mobile\": \"13200000000\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"OperationDenied\",\n            \"Message\": \"[yDRIxxxxxxxxxxxxxxxxxxxxxxxxxx0s yDwFmUUckpstqfvzUxxx3jo1f3cqjkGm yDwFmUUckpst10i3UxxxSat8PWOt2iQF]，经办人不是合同的实际签署人;\"\n        },\n        \"RequestId\": \"xxxxxxxxxxxxxxx\"\n    }\n}",
@@ -1110,12 +1132,6 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationBatchSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UXXXzjEwg0vjoimj\"\n    },\n    \"Agent\": {\n        \"ProxyOrganizationId\": \"\"\n    },\n    \"FlowGroupId\": \"yDwFmUUckpstqfvzUxxx3jo1f3cqjkGm\",\n    \"UserId\": \"yDRCLUUgygq2xun5UXXXzjEwg0vjoimj\",\n    \"Name\": \"张三\",\n    \"Mobile\": \"18888888888\"\n}",
         "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1706100107,\n        \"RequestId\": \"s1705495307288609862\",\n        \"SignUrl\": \"https://embed.test.qian.tencent.cn/contract-sign?embed=1&expiredOn=1706100107&code=yDCNBUUckpvlibz6UEMbkWeSzl6YurH0&shortKey=yDCNBUzgvS93aBhXs3ae&channel=TENCENTCLOUD\"\n    }\n}",
         "title": "获取合同组签署链接"
-      },
-      {
-        "document": "发起流程后，给其中的B端动态签署方创建领取链接，并且要求必须全部领取签署。",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationBatchSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UXXXzjEwg0vjoimj\"\n    },\n    \"Agent\": {\n        \"ProxyOrganizationId\": \"\"\n    },\n    \"FlowIds\": [\n        \"yDC5yUUntf6vnnUxxBTyJ8Ps0WGqAuHL\",\n        \"yDC5yUUntf6fccUEgcyeHwPz4wjnDSI4\"\n    ],\n    \"RecipientIds\": [\n        \"yDC5yUUntf6vn0UxxBTyJvfv3Xlckcye\",\n        \"yDC5yUUntf6mdgUEgcyeHCpCDmDjbsQJ\"\n    ],\n    \"DynamicSignOption\": {\n        \"DynamicReceiveType\": 1\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1706100107,\n        \"RequestId\": \"s1705495307288609862\",\n        \"SignUrl\": \"https://embed.test.qian.tencent.cn/contract-sign?embed=1&expiredOn=1706100107&code=yDCNBUUckpvlibz6UEMbkWeSzl6YurH0&shortKey=yDCNBUzgvS93aBhXs3ae&channel=TENCENTCLOUD\"\n    }\n}",
-        "title": "创建企业用户动态领取链接，指定要求全部领取签署"
       }
     ],
     "CreateOrganizationGroupInvitationLink": [
@@ -1598,6 +1614,14 @@
         "title": "删除单点登录企业员工"
       }
     ],
+    "DescribeArchiveFlowTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeArchiveFlowTask\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDtT9UUck*****************NQ0bO6\"\n    },\n    \"TaskId\": \"yD3h6UUck*****************bBSBfp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ArchiveFlowResults\": [\n            {\n                \"ArchiveFlowStatus\": 0,\n                \"BusinessId\": \"测试1-business_id\",\n                \"ErrorMessage\": \"\",\n                \"FlowId\": \"yD3h6UUckp***************2sDw4ME\",\n                \"ResourceIdList\": [\n                    \"yD3hnUUck*****************OnrcHE\"\n                ]\n            }\n        ],\n        \"Status\": 2,\n        \"RequestId\": \"45ba5969-15db-407b-8eb7-454884394151\"\n    }\n}",
+        "title": "根据任务id查询归档任务状态"
+      }
+    ],
     "DescribeBatchOrganizationRegistrationTasks": [
       {
         "document": "1.通过创建企业批量认证任务 创建了三个认证任务\n2.其中一条认证流认证成功，一条认证流提交成功，一条认证流失败\n3.返回具体的详细信息",
@@ -1747,15 +1771,15 @@
     "DescribeExtendedServiceAuthDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExtendedServiceAuthDetail\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvveUEfH3DjvMmg3ZkjQ\"\n    },\n    \"ExtendServiceType\": \"OPEN_SERVER_SIGN\",\n    \"Agent\": {},\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"AuthInfoDetail\": {\n            \"AuthOrganizationTotal\": 1,\n            \"AuthUserTotal\": 1,\n            \"HasAuthOrganizationList\": [\n                {\n                    \"AuthorizeTime\": 1689129513,\n                    \"AuthorizedOrganizationId\": \"yDwf3xxxxxxxxxxxFOE0qLixm\",\n                    \"AuthorizedOrganizationName\": \"xxxxx有限责任公司\",\n                    \"OrganizationId\": \"yDR0MUxxxxxxxxxxxxxxJAuJ4xN\",\n                    \"OrganizationName\": \"xxx公司\",\n                    \"TemplateId\": \"yDwxxxxxxxxtSqKhFvy\",\n                    \"TemplateName\": \"B2B 双方静默签署\"\n                }\n            ],\n            \"HasAuthUserList\": [\n                {\n                    \"BelongTo\": \"CurrentOrg\",\n                    \"MainOrganizationId\": \"\",\n                    \"UserId\": \"yDxjKxxxxxxxx4zjESzn1dvkm5\"\n                }\n            ],\n            \"Name\": \"企业静默签（自动签署）\",\n            \"Type\": \"OPEN_SERVER_SIGN\"\n        },\n        \"RequestId\": \"d03c95cb-82f4-488a-a832-4ced6e367a54\"\n    }\n}",
-        "title": "查询企业扩展服务授权详情-自动签"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExtendedServiceAuthDetail\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvveUEfH3DjvMmg3ZkjQ\"\n    },\n    \"ExtendServiceType\": \"BATCH_SIGN\",\n    \"Agent\": {},\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"AuthInfoDetail\": {\n            \"AuthOrganizationTotal\": 0,\n            \"AuthUserTotal\": 1,\n            \"HasAuthOrganizationList\": [],\n            \"HasAuthUserList\": [\n                {\n                    \"BelongTo\": \"CurrentOrg\",\n                    \"MainOrganizationId\": \"\",\n                    \"UserId\": \"yDxjKxxxxxxxx4zjESzn1dvkm5\"\n                }\n            ],\n            \"Name\": \"批量签署\",\n            \"Type\": \"BATCH_SIGN\"\n        },\n        \"RequestId\": \"d03c95cb-82f4-488a-a832-4ced6e367a54\"\n    }\n}",
         "title": "查询企业扩展服务授权详情-批量签署"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExtendedServiceAuthDetail\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvveUEfH3DjvMmg3ZkjQ\"\n    },\n    \"ExtendServiceType\": \"OPEN_SERVER_SIGN\",\n    \"Agent\": {},\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthInfoDetail\": {\n            \"AuthOrganizationTotal\": 1,\n            \"AuthUserTotal\": 1,\n            \"HasAuthOrganizationList\": [\n                {\n                    \"AuthorizeTime\": 1689129513,\n                    \"AuthorizedOrganizationId\": \"yDwf3xxxxxxxxxxxFOE0qLixm\",\n                    \"AuthorizedOrganizationName\": \"xxxxx有限责任公司\",\n                    \"OrganizationId\": \"yDR0MUxxxxxxxxxxxxxxJAuJ4xN\",\n                    \"OrganizationName\": \"xxx公司\",\n                    \"TemplateId\": \"yDwxxxxxxxxtSqKhFvy\",\n                    \"TemplateName\": \"B2B 双方静默签署\"\n                }\n            ],\n            \"HasAuthUserList\": [\n                {\n                    \"BelongTo\": \"CurrentOrg\",\n                    \"MainOrganizationId\": \"\",\n                    \"UserId\": \"yDxjKxxxxxxxx4zjESzn1dvkm5\"\n                }\n            ],\n            \"Name\": \"企业静默签（自动签署）\",\n            \"Type\": \"OPEN_SERVER_SIGN\"\n        },\n        \"RequestId\": \"d03c95cb-82f4-488a-a832-4ced6e367a54\"\n    }\n}",
+        "title": "查询企业扩展服务授权详情-自动签"
       }
     ],
     "DescribeExtendedServiceAuthInfos": [
@@ -1800,20 +1824,20 @@
         "title": "获取下载文件链接 --- 单个合同"
       },
       {
-        "document": "下载多个合同文件",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileUrls\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxM6UyK********QDV8dJUuO4zjEu\"\n    },\n    \"FileType\": \"PDF\",\n    \"BusinessType\": \"DOCUMENT\",\n    \"FileName\": \"合同\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"BusinessIds\": [\n        \"11114444\",\n        \"11114444555\",\n        \"12315215515\",\n        \"12415251512\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FileUrls\": [\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/file/xxxx.PDF?key=abc\",\n                \"Option\": \"\"\n            },\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/file/DOCUMENT/xxxx.PDF?key=abc\",\n                \"Option\": \"\"\n            },\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/file/DOCUMENT/xxx.PDF?key=abc\",\n                \"Option\": \"\"\n            },\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/file/DOCUMENT/xxx.PDF?key=abc\",\n                \"Option\": \"\"\n            }\n        ],\n        \"TotalCount\": 4,\n        \"RequestId\": \"XXXX\"\n    }\n}",
-        "title": "获取下载文件链接 --- 多个文件"
-      },
-      {
         "document": "下载文件压缩包",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileUrls\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"f2d8********f56b7\"\n    },\n    \"FileType\": \"ZIP\",\n    \"BusinessType\": \"DOCUMENT\",\n    \"FileName\": \"合同\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"BusinessIds\": [\n        \"e1a5****dfabfdbec6\",\n        \"670d****590d4dcd\",\n        \"dc3df****07f8323\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FileUrls\": [\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/files/DOCUMENT/xxxx.ZIP?key=key********1234\",\n                \"Option\": \"\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"XXXX\"\n    }\n}",
         "title": "获取下载文件链接 --- 压缩多文件"
       },
       {
+        "document": "下载多个合同文件",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileUrls\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxM6UyK********QDV8dJUuO4zjEu\"\n    },\n    \"FileType\": \"PDF\",\n    \"BusinessType\": \"DOCUMENT\",\n    \"FileName\": \"合同\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"BusinessIds\": [\n        \"11114444\",\n        \"11114444555\",\n        \"12315215515\",\n        \"12415251512\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FileUrls\": [\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/file/xxxx.PDF?key=abc\",\n                \"Option\": \"\"\n            },\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/file/DOCUMENT/xxxx.PDF?key=abc\",\n                \"Option\": \"\"\n            },\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/file/DOCUMENT/xxx.PDF?key=abc\",\n                \"Option\": \"\"\n            },\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/file/DOCUMENT/xxx.PDF?key=abc\",\n                \"Option\": \"\"\n            }\n        ],\n        \"TotalCount\": 4,\n        \"RequestId\": \"XXXX\"\n    }\n}",
+        "title": "获取下载文件链接 --- 多个文件"
+      },
+      {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileUrls\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDw6yUUgyg3caowzUx4GQptRKfMnJqX8\"\n    },\n    \"BusinessType\": \"FLOW\",\n    \"BusinessIds\": [\"yDtGEUUckp95ebqbUxQS8nN8JR1lqIvb\"],\n    \"FileType\": \"JPG\"\n}\n\n",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileUrls\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDw6yUUgyg3caowzUx4GQptRKfMnJqX8\"\n    },\n    \"BusinessType\": \"FLOW\",\n    \"BusinessIds\": [\n        \"yDtGEUUckp95ebqbUxQS8nN8JR1lqIvb\"\n    ],\n    \"FileType\": \"JPG\"\n}",
         "output": "{\n    \"Response\": {\n        \"FileUrls\": [\n            {\n                \"Option\": \"{\\\"width\\\":595.32,\\\"height\\\":841.92}\",\n                \"Url\": \"https://file.test.ess.tencent.cn/file/FLOW/yDtGEUUckp95ebqbUxQS8nN8JR1lqIvb/0/0.JPG?hkey=e01db63a678fcda3d\"\n            },\n            {\n                \"Option\": \"{\\\"width\\\":595.32,\\\"height\\\":841.92}\",\n                \"Url\": \"https://file.test.ess.tencent.cn/file/FLOW/yDtGEUUckp95ebqbUxQS8nN8JR1lqIvb/0/1.JPG?hkey=e01db63a678fcda3dba85\"\n            },\n            {\n                \"Option\": \"{\\\"width\\\":595.32,\\\"height\\\":841.92}\",\n                \"Url\": \"https://file.test.ess.tencent.cn/file/FLOW/yDtGEUUckp95ebqbUxQS8nN8JR1lqIvb/0/2.JPG?hkey=e01db63a678fcda3dba85d1b\"\n            },\n            {\n                \"Option\": \"{\\\"width\\\":595.28,\\\"height\\\":841.89}\",\n                \"Url\": \"https://file.test.ess.tencent.cn/file/FLOW/yDtGEUUckp95ebqbUxQS8nN8JR1lqIvb/0/3.JPG?hkey=e01db63a678044f08e14f9870532559c\"\n            },\n            {\n                \"Option\": \"{\\\"width\\\":595.28,\\\"height\\\":841.89}\",\n                \"Url\": \"https://file.test.ess.tencent.cn/file/FLOW/yDtGEUUckp95ebqbUxQS8nN8JR1lqIvb/0/4.JPG?hkey=e01db63a678fcda3d2559c\"\n            },\n            {\n                \"Option\": \"{\\\"width\\\":595.28,\\\"height\\\":841.89}\",\n                \"Url\": \"https://file.test.ess.tencent.cn/file/FLOW/yDtGEUUckp95ebqbUxQS8nN8JR1lqIvb/0/5.JPG?hkey=e01db63a678fcda3dba85d\"\n            }\n        ],\n        \"RequestId\": \"4e02b62e-162b-4f57-8567-0cf257da2c72\",\n        \"TotalCount\": 6\n    }\n}",
         "title": "获取合同的图片链接"
       }

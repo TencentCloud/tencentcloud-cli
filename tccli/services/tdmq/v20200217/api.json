@@ -10338,7 +10338,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "rocketmq-4k4orqgq",
           "member": "string",
           "name": "ClusterId",
@@ -10347,7 +10347,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间，4.x 通用集群命名空间固定为: tdmq_default",
+          "document": "<p>命名空间，4.x 通用集群命名空间固定为: tdmq_default</p>",
           "example": "test_ns",
           "member": "string",
           "name": "EnvironmentId",
@@ -10356,7 +10356,7 @@
         },
         {
           "disabled": false,
-          "document": "主题，查询死信时传groupId",
+          "document": "<p>主题，查询死信时传groupId</p>",
           "example": "test_topic",
           "member": "string",
           "name": "TopicName",
@@ -10365,7 +10365,7 @@
         },
         {
           "disabled": false,
-          "document": "消息id",
+          "document": "<p>消息id</p>",
           "example": "092BAE5A1656070DEA4E276DF0760089",
           "member": "string",
           "name": "MsgId",
@@ -10374,7 +10374,7 @@
         },
         {
           "disabled": false,
-          "document": "pulsar消息id",
+          "document": "<p>pulsar消息id</p>",
           "example": "092BAE5A1656070DEA4E276DF0760089",
           "member": "string",
           "name": "PulsarMsgId",
@@ -10383,7 +10383,7 @@
         },
         {
           "disabled": true,
-          "document": "查询死信时该值为true，只对Rocketmq有效",
+          "document": "<p>查询死信时该值为true，只对Rocketmq有效</p>",
           "example": "false",
           "member": "bool",
           "name": "QueryDlqMsg",
@@ -10392,7 +10392,7 @@
         },
         {
           "disabled": false,
-          "document": "查询死信时该值为true，只对Rocketmq有效",
+          "document": "<p>查询死信时该值为true，只对Rocketmq有效</p>",
           "example": "false",
           "member": "bool",
           "name": "QueryDeadLetterMessage",
@@ -10401,7 +10401,7 @@
         },
         {
           "disabled": false,
-          "document": "分页Offset",
+          "document": "<p>分页Offset</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -10410,7 +10410,7 @@
         },
         {
           "disabled": false,
-          "document": "分页Limit",
+          "document": "<p>分页Limit</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -10419,12 +10419,21 @@
         },
         {
           "disabled": false,
-          "document": "根据消费组名称过滤消费详情",
+          "document": "<p>根据消费组名称过滤消费详情</p>",
           "example": "test_group",
           "member": "string",
           "name": "FilterTrackGroup",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询延迟消息或定时消息时，该值为true</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "QueryDelayMessage",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10434,7 +10443,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "消息体",
+          "document": "<p>消息体</p>",
           "example": "order-id-2ksn3b23",
           "member": "string",
           "name": "Body",
@@ -10444,7 +10453,7 @@
         },
         {
           "disabled": false,
-          "document": "详情参数",
+          "document": "<p>详情参数</p>",
           "example": "{\"type\":\"normal\"}",
           "member": "string",
           "name": "Properties",
@@ -10454,7 +10463,7 @@
         },
         {
           "disabled": false,
-          "document": "生产时间",
+          "document": "<p>生产时间</p>",
           "example": "2021-11-23 21:21:26",
           "member": "string",
           "name": "ProduceTime",
@@ -10464,7 +10473,7 @@
         },
         {
           "disabled": false,
-          "document": "消息id",
+          "document": "<p>消息id</p>",
           "example": "092BAE5A1656070DEA4E276DF0760089",
           "member": "string",
           "name": "MsgId",
@@ -10474,7 +10483,7 @@
         },
         {
           "disabled": false,
-          "document": "生产者地址",
+          "document": "<p>生产者地址</p>",
           "example": "9.43.174.90",
           "member": "string",
           "name": "ProducerAddr",
@@ -10484,7 +10493,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组消费情况列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消费组消费情况列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RocketMQMessageTrack",
           "name": "MessageTracks",
@@ -10494,7 +10503,7 @@
         },
         {
           "disabled": false,
-          "document": "详情页展示的topic名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>详情页展示的topic名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test_topic",
           "member": "string",
           "name": "ShowTopicName",
@@ -10504,7 +10513,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组消费情况列表总数",
+          "document": "<p>消费组消费情况列表总数</p>",
           "example": "100",
           "member": "int64",
           "name": "MessageTracksCount",
@@ -14769,7 +14778,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "专享实例ID",
+          "document": "<p>专享实例ID</p>",
           "example": "rocketmq-4k4orqgq",
           "member": "string",
           "name": "InstanceId",
@@ -14778,7 +14787,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "order-service-instance",
           "member": "string",
           "name": "Name",
@@ -14787,7 +14796,7 @@
         },
         {
           "disabled": false,
-          "document": "实例备注信息",
+          "document": "<p>实例备注信息</p>",
           "example": "info-mark",
           "member": "string",
           "name": "Remark",
@@ -14796,7 +14805,7 @@
         },
         {
           "disabled": false,
-          "document": "实例消息保留时间，小时为单位",
+          "document": "<p>实例消息保留时间，小时为单位</p>",
           "example": "72",
           "member": "int64",
           "name": "MessageRetention",
@@ -14805,7 +14814,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启删除保护",
+          "document": "<p>是否开启删除保护</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableDeletionProtection",
@@ -14814,12 +14823,21 @@
         },
         {
           "disabled": false,
-          "document": "控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5",
+          "document": "<p>控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5</p>",
           "example": "0.6",
           "member": "float",
           "name": "SendReceiveRatio",
           "required": false,
           "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启ACL</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AclEnabled",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -16076,7 +16094,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群Id。",
+          "document": "<p>集群Id。</p>",
           "example": "1000",
           "member": "string",
           "name": "ClusterId",
@@ -16086,7 +16104,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称。",
+          "document": "<p>集群名称。</p>",
           "example": "pulsar-mw4qmgaq298g",
           "member": "string",
           "name": "ClusterName",
@@ -16096,7 +16114,7 @@
         },
         {
           "disabled": false,
-          "document": "说明信息。",
+          "document": "<p>说明信息。</p>",
           "example": "devRemark",
           "member": "string",
           "name": "Remark",
@@ -16106,7 +16124,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2021-04-21 19:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -16116,7 +16134,7 @@
         },
         {
           "disabled": false,
-          "document": "集群状态，0:创建中，1:正常，2:隔离",
+          "document": "<p>集群状态，0:创建中，1:正常，2:隔离</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -16126,7 +16144,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版本",
+          "document": "<p>集群版本</p>",
           "example": "2.5.1",
           "member": "string",
           "name": "Version",
@@ -16136,7 +16154,7 @@
         },
         {
           "disabled": false,
-          "document": "节点分布情况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点分布情况</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InstanceNodeDistribution",
           "name": "NodeDistribution",
@@ -16146,7 +16164,7 @@
         },
         {
           "disabled": false,
-          "document": "最大储存容量，单位：MB",
+          "document": "<p>最大储存容量，单位：MB</p>",
           "example": "1000",
           "member": "uint64",
           "name": "MaxStorage",
@@ -16156,7 +16174,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以修改路由\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否可以修改路由</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "CanEditRoute",
@@ -16166,7 +16184,7 @@
         },
         {
           "disabled": false,
-          "document": "代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PULSAR.P1/PULSAR.P2",
           "member": "string",
           "name": "BillingLabelVersion",
@@ -16176,7 +16194,7 @@
         },
         {
           "disabled": false,
-          "document": "实例到期时间戳，毫秒级精度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例到期时间戳，毫秒级精度。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1725165113283",
           "member": "int64",
           "name": "ExpireTime",
@@ -16186,7 +16204,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自动创建主题\ntrue就是开启了，false是关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启自动创建主题<br>true就是开启了，false是关闭</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "AutoCreateTopicStatus",
@@ -16196,7 +16214,7 @@
         },
         {
           "disabled": false,
-          "document": "自动创建主题的默认分区数，如果没开启就是0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自动创建主题的默认分区数，如果没开启就是0</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "DefaultPartitionNumber",
@@ -16206,7 +16224,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义的租户别名，如果没有，会复用专业集群 ID\n",
+          "document": "<p>用户自定义的租户别名，如果没有，会复用专业集群 ID</p>",
           "example": "pulsar-mw4qmgaq298g",
           "member": "string",
           "name": "Tenant",
@@ -16216,10 +16234,30 @@
         },
         {
           "disabled": false,
-          "document": "删除保护开关标识",
+          "document": "<p>删除保护开关标识</p>",
           "example": "0",
           "member": "int64",
           "name": "DeleteProtection",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启弹性tps</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ElasticTpsEnabled",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启数据加密</p><p>枚举值：</p><ul><li>0： 关闭数据加密</li><li>1： 开启数据加密</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "EncryptionStatus",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -16232,7 +16270,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群规格名称",
+          "document": "<p>集群规格名称</p>",
           "example": "标准型",
           "member": "string",
           "name": "SpecName",
@@ -16242,7 +16280,7 @@
         },
         {
           "disabled": false,
-          "document": "峰值tps",
+          "document": "<p>峰值tps</p>",
           "example": "5000",
           "member": "uint64",
           "name": "MaxTps",
@@ -16252,7 +16290,7 @@
         },
         {
           "disabled": false,
-          "document": "峰值带宽。单位：mbps",
+          "document": "<p>峰值带宽。单位：mbps</p>",
           "example": "50",
           "member": "uint64",
           "name": "MaxBandWidth",
@@ -16262,7 +16300,7 @@
         },
         {
           "disabled": false,
-          "document": "最大命名空间个数",
+          "document": "<p>最大命名空间个数</p>",
           "example": "50",
           "member": "uint64",
           "name": "MaxNamespaces",
@@ -16272,7 +16310,7 @@
         },
         {
           "disabled": false,
-          "document": "可以创建的最大主题数",
+          "document": "<p>可以创建的最大主题数</p>",
           "example": "4000",
           "member": "uint64",
           "name": "MaxTopics",
@@ -16282,7 +16320,7 @@
         },
         {
           "disabled": false,
-          "document": "规格外弹性TPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规格外弹性TPS</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2000",
           "member": "uint64",
           "name": "ScalableTps",
@@ -16292,7 +16330,7 @@
         },
         {
           "disabled": false,
-          "document": "32或者128\n当前集群topic的最大分区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>32或者128<br>当前集群topic的最大分区数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "32",
           "member": "uint64",
           "name": "MaxPartitions",
@@ -16302,7 +16340,7 @@
         },
         {
           "disabled": false,
-          "document": "最大延迟消息数量。0代表没有限制\t",
+          "document": "<p>最大延迟消息数量。0代表没有限制</p>",
           "example": "2000000",
           "member": "int64",
           "name": "MaxDelayedMessages",
@@ -16312,7 +16350,7 @@
         },
         {
           "disabled": false,
-          "document": "可以创建的最大主题分区数",
+          "document": "<p>可以创建的最大主题分区数</p>",
           "example": "1",
           "member": "int64",
           "name": "MaxTopicsPartitioned",
@@ -16322,7 +16360,7 @@
         },
         {
           "disabled": false,
-          "document": "单broker最大链接数",
+          "document": "<p>单broker最大链接数</p>",
           "example": "1",
           "member": "int64",
           "name": "BrokerMaxConnections",
@@ -16332,7 +16370,7 @@
         },
         {
           "disabled": false,
-          "document": "单IP最大链接数",
+          "document": "<p>单IP最大链接数</p>",
           "example": "1",
           "member": "int64",
           "name": "BrokerMaxConnectionsPerIp",
@@ -16342,10 +16380,20 @@
         },
         {
           "disabled": false,
-          "document": "弹性存储集群最大存储规格；固定存储该值为0",
+          "document": "<p>弹性存储集群最大存储规格；固定存储该值为0</p>",
           "example": "1",
           "member": "int64",
           "name": "MaximumElasticStorage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前集群可使用的全量TPS，包括弹性TPS</p>",
+          "example": "2000",
+          "member": "int64",
+          "name": "TotalTps",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -19209,7 +19257,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "rocketmq-4k4orqgq",
           "member": "string",
           "name": "ClusterId",
@@ -19219,7 +19267,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "rocket-order-instance",
           "member": "string",
           "name": "ClusterName",
@@ -19229,7 +19277,7 @@
         },
         {
           "disabled": false,
-          "document": "地域信息",
+          "document": "<p>地域信息</p>",
           "example": "华南地区",
           "member": "string",
           "name": "Region",
@@ -19239,7 +19287,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，毫秒为单位",
+          "document": "<p>创建时间，毫秒为单位</p>",
           "example": "1729478721",
           "member": "uint64",
           "name": "CreateTime",
@@ -19249,7 +19297,7 @@
         },
         {
           "disabled": false,
-          "document": "集群说明信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群说明信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "info-remark",
           "member": "string",
           "name": "Remark",
@@ -19259,7 +19307,7 @@
         },
         {
           "disabled": false,
-          "document": "公网接入地址",
+          "document": "<p>公网接入地址</p>",
           "example": "rocketmq.access.public.com:9867",
           "member": "string",
           "name": "PublicEndPoint",
@@ -19269,7 +19317,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC接入地址",
+          "document": "<p>VPC接入地址</p>",
           "example": "rocketmq.resource.vpc.com:5010",
           "member": "string",
           "name": "VpcEndPoint",
@@ -19279,7 +19327,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持命名空间接入点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否支持命名空间接入点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "SupportNamespaceEndpoint",
@@ -19289,7 +19337,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>VPC信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VpcConfig",
           "name": "Vpcs",
@@ -19299,7 +19347,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为专享实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否为专享实例</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsVip",
@@ -19309,7 +19357,7 @@
         },
         {
           "disabled": false,
-          "document": "Rocketmq集群标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Rocketmq集群标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "RocketMQFlag",
@@ -19319,7 +19367,7 @@
         },
         {
           "disabled": false,
-          "document": "计费状态，1表示正常，2表示已停服，3表示已销毁\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计费状态，1表示正常，2表示已停服，3表示已销毁</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -19329,7 +19377,7 @@
         },
         {
           "disabled": false,
-          "document": "欠费停服时间，毫秒为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>欠费停服时间，毫秒为单位</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1729478721",
           "member": "int64",
           "name": "IsolateTime",
@@ -19339,7 +19387,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP协议公网接入地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>HTTP协议公网接入地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://ip:port",
           "member": "string",
           "name": "HttpPublicEndpoint",
@@ -19349,7 +19397,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP协议VPC接入地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>HTTP协议VPC接入地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://ip:port",
           "member": "string",
           "name": "HttpVpcEndpoint",
@@ -19359,7 +19407,7 @@
         },
         {
           "disabled": false,
-          "document": "TCP内部接入地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>TCP内部接入地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "namespace.internal:port",
           "member": "string",
           "name": "InternalEndpoint",
@@ -19369,7 +19417,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP协议内部接入地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>HTTP协议内部接入地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://ip:port",
           "member": "string",
           "name": "HttpInternalEndpoint",
@@ -19379,7 +19427,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启ACL鉴权，专享实例支持关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启ACL鉴权，专享实例支持关闭</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "AclEnabled",
@@ -19389,7 +19437,7 @@
         },
         {
           "disabled": false,
-          "document": "公网CLB实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>公网CLB实例ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "clbId",
           "member": "string",
           "name": "PublicClbId",
@@ -19399,7 +19447,7 @@
         },
         {
           "disabled": false,
-          "document": "vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>vip</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vip",
           "member": "string",
           "name": "Vip",
@@ -19409,7 +19457,7 @@
         },
         {
           "disabled": false,
-          "document": "所属VPC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所属VPC</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mqvpc296",
           "member": "string",
           "name": "VpcId",
@@ -19419,7 +19467,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持迁移\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否支持迁移</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "SupportMigration",
@@ -19429,7 +19477,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "InstanceStatus",
@@ -19439,7 +19487,7 @@
         },
         {
           "disabled": false,
-          "document": "集群所属可用区，表明集群归属的可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群所属可用区，表明集群归属的可用区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100001",
           "member": "int64",
           "name": "ZoneId",
@@ -19449,7 +19497,7 @@
         },
         {
           "disabled": false,
-          "document": "集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[100001]",
           "member": "int64",
           "name": "ZoneIds",
@@ -19459,7 +19507,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已冻结",
+          "document": "<p>是否已冻结</p>",
           "example": "false",
           "member": "bool",
           "name": "IsFrozen",
@@ -19469,7 +19517,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自动创建主题",
+          "document": "<p>是否开启自动创建主题</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoCreateTopicEnabled",
@@ -19479,7 +19527,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启集群Admin能力",
+          "document": "<p>是否开启集群Admin能力</p>",
           "example": "false",
           "member": "bool",
           "name": "AdminFeatureEnabled",
@@ -19489,7 +19537,7 @@
         },
         {
           "disabled": false,
-          "document": "Admin AK\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Admin AK</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ak5pe5ae0cca",
           "member": "string",
           "name": "AdminAccessKey",
@@ -19499,7 +19547,7 @@
         },
         {
           "disabled": false,
-          "document": "Admin SK\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Admin SK</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sk4ea181d5da",
           "member": "string",
           "name": "AdminSecretKey",
@@ -19509,13 +19557,23 @@
         },
         {
           "disabled": false,
-          "document": "是否开启删除保护",
+          "document": "<p>是否开启删除保护</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableDeletionProtection",
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启自动创建消费组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoCreateConsumeGroupEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -20987,7 +21045,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "rmq-4k4orqgq1",
           "member": "string",
           "name": "InstanceId",
@@ -20997,7 +21055,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "order-instance",
           "member": "string",
           "name": "InstanceName",
@@ -21007,7 +21065,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本",
+          "document": "<p>实例版本</p>",
           "example": "4.9.3",
           "member": "string",
           "name": "InstanceVersion",
@@ -21017,7 +21075,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败",
+          "document": "<p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败</p>",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -21027,7 +21085,7 @@
         },
         {
           "disabled": false,
-          "document": "节点数量",
+          "document": "<p>节点数量</p>",
           "example": "5",
           "member": "uint64",
           "name": "NodeCount",
@@ -21037,7 +21095,7 @@
         },
         {
           "disabled": false,
-          "document": "实例配置规格名称",
+          "document": "<p>实例配置规格名称</p>",
           "example": "基础型",
           "member": "string",
           "name": "ConfigDisplay",
@@ -21047,7 +21105,7 @@
         },
         {
           "disabled": false,
-          "document": "峰值TPS",
+          "document": "<p>峰值TPS</p>",
           "example": "10000",
           "member": "uint64",
           "name": "MaxTps",
@@ -21057,7 +21115,7 @@
         },
         {
           "disabled": false,
-          "document": "峰值带宽，Mbps为单位",
+          "document": "<p>峰值带宽，Mbps为单位</p>",
           "example": "1200",
           "member": "uint64",
           "name": "MaxBandWidth",
@@ -21067,7 +21125,7 @@
         },
         {
           "disabled": false,
-          "document": "存储容量，GB为单位",
+          "document": "<p>存储容量，GB为单位</p>",
           "example": "100",
           "member": "uint64",
           "name": "MaxStorage",
@@ -21077,7 +21135,7 @@
         },
         {
           "disabled": false,
-          "document": "实例到期时间，毫秒为单位",
+          "document": "<p>实例到期时间，毫秒为单位</p>",
           "example": "100000",
           "member": "uint64",
           "name": "ExpireTime",
@@ -21087,7 +21145,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)",
+          "document": "<p>自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>",
           "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
@@ -21097,7 +21155,7 @@
         },
         {
           "disabled": false,
-          "document": "0-后付费，1-预付费",
+          "document": "<p>0-后付费，1-预付费</p>",
           "example": "0",
           "member": "uint64",
           "name": "PayMode",
@@ -21107,7 +21165,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息",
+          "document": "<p>备注信息</p>",
           "example": "remark-info",
           "member": "string",
           "name": "Remark",
@@ -21117,8 +21175,8 @@
         },
         {
           "disabled": false,
-          "document": "实例配置ID",
-          "example": "vip-basic-1",
+          "document": "<p>实例规格</p><p>枚举值：</p><ul><li>rocket-vip-basic-0： 通用集群</li><li>rocket-vip-basic-1： 专享集群-基础型</li><li>rocket-vip-basic-2： 专享集群-标准型</li><li>rocket-vip-basic-3： 专享集群-高阶I型</li><li>rocket-vip-basic-4： 专享集群-高阶II型</li></ul>",
+          "example": "rocket-vip-basic-0",
           "member": "string",
           "name": "SpecName",
           "output_required": true,
@@ -21127,7 +21185,7 @@
         },
         {
           "disabled": false,
-          "document": "最大可设置消息保留时间，小时为单位",
+          "document": "<p>最大可设置消息保留时间，小时为单位</p>",
           "example": "168",
           "member": "int64",
           "name": "MaxRetention",
@@ -21137,7 +21195,7 @@
         },
         {
           "disabled": false,
-          "document": "最小可设置消息保留时间，小时为单位",
+          "document": "<p>最小可设置消息保留时间，小时为单位</p>",
           "example": "24",
           "member": "int64",
           "name": "MinRetention",
@@ -21147,7 +21205,7 @@
         },
         {
           "disabled": false,
-          "document": "实例消息保留时间，小时为单位",
+          "document": "<p>实例消息保留时间，小时为单位</p>",
           "example": "72",
           "member": "int64",
           "name": "Retention",
@@ -21157,7 +21215,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启ACL鉴权",
+          "document": "<p>是否开启ACL鉴权</p>",
           "example": "true",
           "member": "bool",
           "name": "AclEnabled",
@@ -21167,7 +21225,7 @@
         },
         {
           "disabled": false,
-          "document": "销毁时间",
+          "document": "<p>销毁时间</p>",
           "example": "369182637452345",
           "member": "uint64",
           "name": "DestroyTime",

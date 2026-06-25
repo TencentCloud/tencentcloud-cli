@@ -92,7 +92,7 @@
       "status": "online"
     },
     "CreateAigcCustomVoice": {
-      "document": "该接口用于创建 AIGC 自定义音色。",
+      "document": "该接口用于创建 AIGC 自定义音色。注意，调用本接口会产生创建自定义音色费用，请参考[计费文档](https://cloud.tencent.com/document/product/266/95125#5e5217e8-29fc-467e-ac2d-853648f988b7)。",
       "input": "CreateAigcCustomVoiceRequest",
       "name": "创建 AIGC 自定义音色",
       "output": "CreateAigcCustomVoiceResponse",
@@ -621,6 +621,13 @@
       "input": "DescribeAigcFaceInfoRequest",
       "name": "获取 AIGC 人脸信息",
       "output": "DescribeAigcFaceInfoResponse",
+      "status": "online"
+    },
+    "DescribeAigcFaceInfoAsync": {
+      "document": "该接口用于异步获取 AIGC 人脸信息。注意，调用本接口会产生人脸识别费用，请参考[计费文档](https://cloud.tencent.com/document/product/266/95125#96b3b59a-f9e1-49e9-966a-bedb70a4bf12)。",
+      "input": "DescribeAigcFaceInfoAsyncRequest",
+      "name": "异步获取 AIGC 人脸信息",
+      "output": "DescribeAigcFaceInfoAsyncResponse",
       "status": "online"
     },
     "DescribeAigcUsageData": {
@@ -2099,6 +2106,17 @@
           "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>第三方DRM加密信息。暂不支持任务流的方式使用第三方DRM信息发起任务。</p>",
+          "example": "无",
+          "member": "ThirdPartyDrmInfo",
+          "name": "DrmInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -7360,6 +7378,45 @@
       ],
       "usage": "in"
     },
+    "AiTryOnConfig": {
+      "document": "AI换装配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>换装模型。</p><p>枚举值：</p><ul><li>WAND-tryon-1.0-lite： 轻量档，速度优先。</li><li>WAND-tryon-1.0-flash： 均衡档，兼顾效果与时延。</li><li>WAND-tryon-1.0-pro： 高质量档，效果优先。</li></ul>",
+          "example": "WAND-tryon-1.0-lite",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入需要更换的衣物图片列表。支持1-4张图片。</p>",
+          "example": "无",
+          "member": "SceneAigcImageTaskInputFileInfo",
+          "name": "ClothesFileInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>换装指令Prompt。</p>",
+          "example": "纽扣扣起来。",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AigcAdvancedCustomElementInfo": {
       "document": "AIGC 高级自定义主体信息",
       "members": [
@@ -7980,8 +8037,10 @@
           "example": "File",
           "member": "string",
           "name": "Type",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7989,8 +8048,10 @@
           "example": "9662*********84062",
           "member": "string",
           "name": "FileId",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7998,11 +8059,13 @@
           "example": "https://************************.com/********************************************************/*********.mp4",
           "member": "string",
           "name": "Url",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "AigcImageOutputConfig": {
       "document": "AIGC 生图任务的输出媒体文件配置。",
@@ -8053,7 +8116,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>生成图片的分辨率。各模型可选值：</p><ul><li>OG：1K、2K、4K，默认1K；</li><li>GG 2.5：1K、2K、4K，默认1K；</li><li>GG 3.0：1K、2K、4K，默认1K；</li><li>GG 3.1：512、1K、2K、4K，默认1K；</li><li>Kling 2.1：1k、2k，默认1k；</li><li>Kling 3.0：1k、2k，默认1k；</li><li>Kling 3.0-Omni：1k、2k、4k，默认1k；</li><li>Kling O1：1k、2k、4k，默认1k；</li><li>SI 4.0：1K、2K、4K，默认1K；</li><li>SI 4.5：2K、4K，默认2K；</li><li>SI 5.0-lite：2K、3K，默认2K；</li><li>Vidu q2：1080p、2K、4K，默认1080p；</li><li>Hunyuan 3.0：暂不支持本字段，可通过<code>ExtInfo</code>字段设置分辨率；</li><li>Qwen 0925：暂不支持本字段，可通过<code>ExtInfo</code>字段设置分辨率；</li></ul>",
+          "document": "<p>生成图片的分辨率。各模型可选值：</p><ul><li>OG：1K、2K、4K，默认1K；</li><li>GG 2.5：1K、2K、4K，默认1K；</li><li>GG 3.0：1K、2K、4K，默认1K；</li><li>GG 3.1：720P、1K、2K、4K，默认1K；</li><li>Kling 2.1：1k、2k，默认1k；</li><li>Kling 3.0：1k、2k，默认1k；</li><li>Kling 3.0-Omni：1k、2k、4k，默认1k；</li><li>Kling O1：1k、2k、4k，默认1k；</li><li>SI 4.0：1K、2K、4K，默认1K；</li><li>SI 4.5：2K、4K，默认2K；</li><li>SI 5.0-lite：2K、3K，默认2K；</li><li>Vidu q2：1080p、2K、4K，默认1080p；</li><li>Hunyuan 3.0：暂不支持本字段，可通过<code>ExtInfo</code>字段设置分辨率；</li><li>Qwen 0925：暂不支持本字段，可通过<code>ExtInfo</code>字段设置分辨率；</li></ul>",
           "example": "1K",
           "member": "string",
           "name": "Resolution",
@@ -8147,8 +8210,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>AI生图场景类型，可选值：</p><ul><li>change_clothes：常规场景换衣。</li><li>change_clothes_under：特殊场景换衣。</li><li>change_clothes_top_wear：上半身换衣。</li><li>change_clothes_bottom_wear：下半身换衣。</li><li>change_clothes_full_wear：全身换衣。</li><li>product_image：AI生商品图。</li><li>outpainting: AI扩图。</li></ul>",
-          "example": "change_clothes",
+          "document": "<p>AI生图场景类型，可选值：</p><ul><li><code>ai_try_on</code>：AI 换装。</li><li><code>product_image</code>：AI 生商品图。</li><li><code>outpainting</code>: AI 扩图。</li></ul><p>下列 <code>Type</code> 已废弃，后续不再更新：</p><ul><li><code>change_clothes</code></li><li><code>change_clothes_under</code></li><li><code>change_clothes_top_wear</code></li><li><code>change_clothes_bottom_wear</code></li><li><code>change_clothes_full_wear</code></li></ul>",
+          "example": "ai_try_on",
           "member": "string",
           "name": "Type",
           "output_required": false,
@@ -8158,7 +8221,18 @@
         },
         {
           "disabled": false,
-          "document": "<p>当 Type 下列类型时，则该项为必填，表示AI 换衣生图配置参数：</p><ul><li>change_clothes</li><li>change_clothes_under</li><li>change_clothes_full_wear</li><li>change_clothes_top_wear</li><li>change_clothes_bottom_wear</li></ul>",
+          "document": "<p>当 Type 为 ai_try_on 时必填，表示 AI 换装配置参数。</p>",
+          "example": "无",
+          "member": "AiTryOnConfig",
+          "name": "AiTryOnConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p><strong>已废弃，请使用AiTryOnConfig。</strong>当 Type 下列类型时，则该项为必填，表示AI 换衣生图配置参数：</p><ul><li>change_clothes</li><li>change_clothes_under</li></ul>",
           "example": "无",
           "member": "ChangeClothesConfig",
           "name": "ChangeClothesConfig",
@@ -8169,7 +8243,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>当 Type 为 product_image 时有效，表示AI 生商品图配置参数。</p>",
+          "document": "<p>当 Type 为 product_image 时必填，表示AI 生商品图配置参数。</p>",
           "example": "无",
           "member": "ProductImageConfig",
           "name": "ProductImageConfig",
@@ -8642,7 +8716,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>生成视频的时长，单位：秒。</p><li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li><li>当 ModelName 是 PixVerse，可指定1-15，默认为5；</li>",
+          "document": "<p>生成视频的时长，单位：秒。</p><li>当 ModelName 是 Kling，可选值为3-15，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li><li>当 ModelName 是 PixVerse，可指定1-15，默认为5；</li>",
           "example": "8.0",
           "member": "float",
           "name": "Duration",
@@ -9482,7 +9556,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用于区分输入图像用于<strong>首（尾）帧生视频</strong>、<strong>图生视频</strong>或<strong>参考生视频</strong>。可选值：</p><ul><li>FirstFrame：用于首（尾）帧生视频 或 图生视频；</li><li>Reference：用于参考生视频；</li></ul><p><strong>注意，默认是FirstFrame</strong></p>",
+          "document": "<p>用于区分输入图像用于<strong>首（尾）帧生视频</strong>、<strong>图生视频</strong>或<strong>参考生视频</strong>。可选值：</p><ul><li>FirstFrame：用于首（尾）帧生视频的首帧 或 图生视频；</li><li>Reference：用于参考生视频；</li><li>LastFrame：用于首（尾）帧生视频的尾帧；</li></ul><p><strong>注意，默认是FirstFrame</strong></p>",
           "example": "FirstFrame",
           "member": "string",
           "name": "Usage",
@@ -13145,6 +13219,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>若已开通海外自定义主体库，可传入<code>True</code>使用海外自定义主体库。</p><p>枚举值：</p><ul><li>True： 使用海外自定义主体库。</li><li>False： 不使用海外自定义主体库。</li></ul>",
+          "example": "True",
+          "member": "string",
+          "name": "DisableModeration",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>",
           "example": "mySessionId",
           "member": "string",
@@ -13708,6 +13791,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</p>",
+          "example": "251441341",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "<p>模型名称。</p>",
           "example": "Kling",
           "member": "string",
@@ -13726,7 +13818,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>指定场景，目前支持sfx（音效）。</p>",
+          "document": "<p>指定场景，目前支持sfx（音效）、music（音乐）。</p>",
           "example": "sfx",
           "member": "string",
           "name": "SceneType",
@@ -13787,7 +13879,7 @@
         {
           "disabled": false,
           "document": "<p>任务创建成功后，返回的任务ID。<br>调用查询接口，轮询获取任务进度及生成结果。</p>",
-          "example": "251441341-AigcAudioTask-f3259ddeb615203726d73c03da05d9fft",
+          "example": "251441341-AigcAudioTask-ed886585de73592fca966e81b6bc2d20t",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
@@ -13955,6 +14047,15 @@
           "example": "myVideoId",
           "member": "string",
           "name": "VideoId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>若已开通海外自定义音色库，可传入<code>True</code>使用海外自定义音色库。</p><p>枚举值：</p><ul><li>True： 使用海外自定义音色库。</li><li>False： 不使用海外自定义音色库。</li></ul>",
+          "example": "True",
+          "member": "string",
+          "name": "DisableModeration",
           "required": false,
           "type": "string"
         },
@@ -14139,7 +14240,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型版本。取值：</p><li>当 ModelName 是 OG，可选值为 image2_low、image2_medium、image2_high；</li><li>当 ModelName 是 GG，可选值为 2.5、3.0、3.1；</li><li>当 ModelName 是 Jimeng，可选值为 4.0；</li><li>当 ModelName 是 SI，可选值为 4.0、4.5、5.0-lite；</li><li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1、3.0、3.0-Omni、O1；</li>",
+          "document": "<p>模型版本。取值：</p><li>当 ModelName 是 OG，可选值为 image2_low、image2_medium、image2_high；</li><li>当 ModelName 是 GG，可选值为 2.5、3.0、3.1；</li><li>当 ModelName 是 Jimeng，可选值为 4.0；</li><li>当 ModelName 是 SI，可选值为 4.0、4.5、5.0-lite；</li><li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1、3.0、3.0-Omni、O1、scene；</li>",
           "example": "3.0",
           "member": "string",
           "name": "ModelVersion",
@@ -14202,7 +14303,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>场景类型。取值如下：<li>当 ModelName 为 Hunyuan 时：   3d_panorama 表示全景图；</li><li>其他 ModelName 暂不支持。</li></p>",
+          "document": "<p>场景类型。取值如下：</p><li>当 ModelName 为 Hunyuan 时：   3d_panorama 表示全景图；</li><li>当 ModelName 为 Kling 时：   image_expand 表示扩图；</li><li>其他 ModelName 暂不支持。</li>",
           "example": "3d_panorama",
           "member": "string",
           "name": "SceneType",
@@ -14247,7 +14348,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>保留字段，特殊用途时使用。</p><ul><li><p>Hunyuan 3.0</p><ul><li>支持自由设置分辨率宽高，宽、高均在 [512, 2048] 像素范围内，宽高乘积 ≤ 1024x1024 像素。示例：<code>{&quot;AdditionalParameters&quot;: &quot;{\\&quot;size\\&quot;:\\&quot;728x1024\\&quot;}&quot;}</code></li></ul></li><li><p>SI 系列</p><ul><li>支持自由设置分辨率宽高：<ul><li>SI 4.0：合法总像素范围 [1280x720=921600, 4096x4096=16777216]，示例：<code>{&quot;AdditionalParameters&quot;: &quot;{\\&quot;size\\&quot;:\\&quot;728x1356\\&quot;}&quot;}</code></li><li>SI 4.5：合法总像素范围 [2560x1440=3686400, 4096x4096=16777216]，示例：<code>{&quot;AdditionalParameters&quot;: &quot;{\\&quot;size\\&quot;:\\&quot;2560x1440\\&quot;}&quot;}</code></li><li>SI 5.0-lite：合法总像素范围 [2560x1440=3686400, 3072x3072x1.1025=10404496]，示例：<code>{&quot;AdditionalParameters&quot;: &quot;{\\&quot;size\\&quot;:\\&quot;2560x1440\\&quot;}&quot;}</code></li></ul></li><li>可用于开启输出多张图像，示例：<code>{&quot;AdditionalParameters&quot;: &quot;{\\&quot;sequential_image_generation\\&quot;:\\&quot;auto\\&quot;}&quot;}</code>。除此之外，还需要在<code>Prompt</code>中说明需要输出图片张数，如：输出3张图片。</li></ul></li><li><p>Qwen 0925</p><ul><li>支持自由设置分辨率宽高，合法总像素范围 [512x512=261632, 2048x2048=4194304]。示例：<code>{&quot;AdditionalParameters&quot;: &quot;{\\&quot;size\\&quot;:\\&quot;728*1024\\&quot;}&quot;}</code></li></ul></li><li><p>OG</p><ul><li>支持自由设置分辨率宽高：<ul><li>计算像素大小，需要被16整除</li><li>总像素数必须至少为655,360，且不得超过 8,294,400</li><li>示例：<code>{&quot;AdditionalParameters&quot;: &quot;{\\&quot;size\\&quot;:\\&quot;728*1024\\&quot;}&quot;}</code></li></ul></li><li>支持设置透明图层：<ul><li>示例：<code>{&quot;AdditionalParameters&quot;: &quot;{\\&quot;background\\&quot;:\\&quot;transparent\\&quot;}&quot;}</code></li></ul></li></ul></li></ul>",
+          "document": "<p>保留字段，特殊用途时使用。</p><ul><li><p>Hunyuan 3.0</p><ul><li>支持自由设置分辨率宽高，宽、高均在 [512, 2048] 像素范围内，宽高乘积 ≤ 1024x1024 像素。示例：<code>{&quot;AdditionalParameters&quot;: &quot;{\\&quot;size\\&quot;:\\&quot;728x1024\\&quot;}&quot;}</code></li></ul></li><li><p>SI 系列</p><ul><li>支持自由设置分辨率宽高：<ul><li>SI 4.0：合法总像素范围 [1280x720=921600, 4096x4096=16777216]，示例：<code>{&quot;AdditionalParameters&quot;: &quot;{\\&quot;size\\&quot;:\\&quot;728x1356\\&quot;}&quot;}</code></li><li>SI 4.5：合法总像素范围 [2560x1440=3686400, 4096x4096=16777216]，示例：<code>{&quot;AdditionalParameters&quot;: &quot;{\\&quot;size\\&quot;:\\&quot;2560x1440\\&quot;}&quot;}</code></li><li>SI 5.0-lite：合法总像素范围 [2560x1440=3686400, 3072x3072x1.1025=10404496]，示例：<code>{&quot;AdditionalParameters&quot;: &quot;{\\&quot;size\\&quot;:\\&quot;2560x1440\\&quot;}&quot;}</code></li></ul></li><li>可用于开启输出多张图像，示例：<code>{&quot;AdditionalParameters&quot;: &quot;{\\&quot;sequential_image_generation\\&quot;:\\&quot;auto\\&quot;}&quot;}</code>。除此之外，还需要在<code>Prompt</code>中说明需要输出图片张数，如：输出3张图片。</li></ul></li><li><p>Qwen 0925</p><ul><li>支持自由设置分辨率宽高，合法总像素范围 [512x512=261632, 2048x2048=4194304]。示例：<code>{&quot;AdditionalParameters&quot;: &quot;{\\&quot;size\\&quot;:\\&quot;728*1024\\&quot;}&quot;}</code></li></ul></li><li><p>OG</p><ul><li>支持自由设置分辨率宽高：<ul><li>计算像素大小，需要被16整除</li><li>总像素数必须至少为655,360，且不得超过 8,294,400</li><li>示例：<code>{&quot;AdditionalParameters&quot;: &quot;{\\&quot;size\\&quot;:\\&quot;728*1024\\&quot;}&quot;}</code></li></ul></li><li>支持设置透明图层：<ul><li>示例：<code>{&quot;AdditionalParameters&quot;: &quot;{\\&quot;background\\&quot;:\\&quot;transparent\\&quot;}&quot;}</code></li></ul></li></ul></li><li><p>Kling</p><ul><li>支持设置扩图参数，示例：<code>{AdditionalParameters&quot;:&quot;{\\&quot;down_expansion_ratio\\&quot;:0.2,\\&quot;left_expansion_ratio\\&quot;:0.3,\\&quot;right_expansion_ratio\\&quot;:0.4,\\&quot;up_expansion_ratio\\&quot;:0.1}}</code><ul><li>通用约束：<ul><li>取值范围：[0, 2]；</li><li>新图片整体面积不得超过原图片的 3 倍；</li><li>可以通过 <code>Prompt</code> 字段传入正向提示词。</li><li>示例说明：<ul><li>up_expansion_ratio：向上扩充范围，基于原图高度的倍数计算。若原图高 20，参数值为 0.1，则原图顶边距离新图顶边为 20 × 0.1 = 2，该区域为扩图范围。</li><li>down_expansion_ratio：向下扩充范围，基于原图高度的倍数计算。若原图高 20，参数值为 0.2，则原图底边距离新图底边为 20 × 0.2 = 4，该区域为扩图范围。</li><li>left_expansion_ratio：向左扩充范围，基于原图宽度的倍数计算。若原图宽 30，参数值为 0.3，则原图左边距离新图左边为 30 × 0.3 = 9，该区域为扩图范围。</li><li>right_expansion_ratio：向右扩充范围，基于原图宽度的倍数计算。若原图宽 30，参数值为 0.4，则原图右边距离新图右边为 30 × 0.4 = 12，该区域为扩图范围。</li></ul></li></ul></li></ul></li></ul></li></ul>",
           "example": "{\"AdditionalParameters\": \"\"}",
           "member": "string",
           "name": "ExtInfo",
@@ -19499,6 +19600,217 @@
       ],
       "type": "object"
     },
+    "DescribeAigcFaceInfoAsyncInput": {
+      "document": "异步获取 AIGC 人脸信息输入。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>需要获取人脸信息的输入视频信息。</p>",
+          "example": "无",
+          "member": "AigcFaceInputFileInfo",
+          "name": "FileInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAigcFaceInfoAsyncOutput": {
+      "document": "异步获取 AIGC 人脸信息输出",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>人脸信息。</p>",
+          "example": "无",
+          "member": "AigcFaceInfo",
+          "name": "FaceInfoSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAigcFaceInfoAsyncRequest": {
+      "document": "DescribeAigcFaceInfoAsync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
+          "example": "250000002",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要获取人脸信息的输入视频信息，最多包含一个文件。</p>",
+          "example": "无",
+          "member": "AigcFaceInputFileInfo",
+          "name": "FileInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>",
+          "example": "my*******Id1",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。</p>",
+          "example": "my*******Context",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcFaceInfoAsyncResponse": {
+      "document": "DescribeAigcFaceInfoAsync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID。</p>",
+          "example": "251007502-DescribeAigcFaceInfoAsync-d5a02998082d0a58cecd7e69165b5245t",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcFaceInfoAsyncTask": {
+      "document": "异步获取 AIGC 人脸信息任务。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID。</p>",
+          "example": "251007502-DescribeAigcFaceInfoAsync-**********2d0a58cecd7e69165b5245t",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态，取值：<li>PROCESSING：处理中；</li><li>FINISH：已完成。</li></p>",
+          "example": "FINISH",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码。源异常时返回非0错误码，返回0时请使用各个具体任务的 ErrCode。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展错误码。</p><p>参数格式：扩展错误码。</p><p>枚举值：</p><ul><li>RequestLimitExceeded： 调用超出并发限制。</li><li>InvalidParameterValue： 参数错误。</li><li>InternalError： 内部错误。</li><li>FailedOperation： 操作失败。</li></ul>",
+          "example": "InternalError",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息。</p>",
+          "example": "task failed with status: FAIL, message: Something went wrong when we tried to get the contents of the file.",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务进度，取值范围 [0-100] 。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步获取 AIGC 人脸信息任务的输入信息。</p>",
+          "example": "无",
+          "member": "DescribeAigcFaceInfoAsyncInput",
+          "name": "Input",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步获取 AIGC 人脸信息任务的输出信息。</p>",
+          "example": "无",
+          "member": "DescribeAigcFaceInfoAsyncOutput",
+          "name": "Output",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>",
+          "example": "mySessionId1",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>",
+          "example": "mySessionContext",
+          "member": "string",
+          "name": "SessionContext",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeAigcFaceInfoRequest": {
       "document": "DescribeAigcFaceInfo请求参数结构体",
       "members": [
@@ -19592,6 +19904,15 @@
           "name": "APIKey",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>API Key</p>",
+          "example": "[\"abcxxx\"]",
+          "member": "string",
+          "name": "APIKeys",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -23336,7 +23657,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务；</li><li>ProcessMediaByMPS：MPS 视频处理任务；</li><li>AigcImageTask：AIGC 生图任务；</li><li>SceneAigcImageTask：场景化 AIGC 生图任务；</li><li>AigcVideoTask：AIGC 生视频任务；</li><li>ImportMediaKnowledge：导入媒体知识任务。</li><li>SceneAigcVideoTask：场景化 AIGC 生视频任务；</li><li> ExtractBlindWatermark：提取数字水印任务。</li><li> ExtractBlindWatermark：提取数字水印任务。</li><li> CreateAigcAdvancedCustomElement：创建自定义主体任务</li><li>CreateAigcCustomVoice：创建自定义音色任务</li><li>CreateAigcSubject：创建主体任务</li><li>AigcVideoRedrawTask：AIGC 视频转绘任务</li><li>CreateAigcAudioClone：AIGC 声音复刻任务</li></p>",
+          "document": "<p>任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务；</li><li>ProcessMediaByMPS：MPS 视频处理任务；</li><li>AigcImageTask：AIGC 生图任务；</li><li>SceneAigcImageTask：场景化 AIGC 生图任务；</li><li>AigcVideoTask：AIGC 生视频任务；</li><li>ImportMediaKnowledge：导入媒体知识任务。</li><li>SceneAigcVideoTask：场景化 AIGC 生视频任务；</li><li> ExtractBlindWatermark：提取数字水印任务。</li><li> ExtractBlindWatermark：提取数字水印任务。</li><li> CreateAigcAdvancedCustomElement：创建自定义主体任务</li><li>CreateAigcCustomVoice：创建自定义音色任务</li><li>CreateAigcSubject：创建主体任务</li><li>AigcVideoRedrawTask：AIGC 视频转绘任务</li><li>CreateAigcAudioClone：AIGC 声音复刻任务</li><li>DescribeAigcFaceInfoAsync：异步获取 AIGC 人脸信息任务</li></p>",
           "example": "Procedure",
           "member": "string",
           "name": "TaskType",
@@ -23716,7 +24037,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>AIGC 视频转绘信息，仅当 TaskType 为AigcVideoRedrawTask，该字段有值。</p>",
+          "document": "<p>AIGC 视频转绘信息，仅当 TaskType 为 AigcVideoRedrawTask，该字段有值。</p>",
           "example": "无",
           "member": "AigcVideoRedrawTask",
           "name": "AigcVideoRedrawTask",
@@ -23726,7 +24047,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>AIGC音效信息，仅当TaskType为AigcAudioTask时，该字段有值。</p>",
+          "document": "<p>AIGC音效信息，仅当 TaskType 为 AigcAudioTask，该字段有值。</p>",
           "example": "无",
           "member": "AigcAudioTask",
           "name": "AigcAudioTask",
@@ -23736,10 +24057,20 @@
         },
         {
           "disabled": false,
-          "document": "<p>AIGC 声音复刻信息，仅当 TaskType 为CreateAigcAudioClone，该字段有值。</p>",
+          "document": "<p>AIGC 声音复刻信息，仅当 TaskType 为 CreateAigcAudioClone，该字段有值。</p>",
           "example": "无",
           "member": "CreateAigcAudioCloneTask",
           "name": "CreateAigcAudioCloneTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步获取 AIGC 人脸信息，仅当 TaskType 为 DescribeAigcFaceInfoAsync，该字段有值。</p>",
+          "example": "无",
+          "member": "DescribeAigcFaceInfoAsyncTask",
+          "name": "DescribeAigcFaceInfoAsyncTask",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -25480,7 +25811,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件句柄，调用方必须调用 ConfirmEvents 来确认消息已经收到，确认有效时间 30 秒。失效后，事件可重新被获取。",
+          "document": "<p>事件句柄，调用方必须调用 ConfirmEvents 来确认消息已经收到，确认有效时间 30 秒。失效后，事件可重新被获取。</p>",
           "example": "14253**42576",
           "member": "string",
           "name": "EventHandle",
@@ -25490,7 +25821,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<li>QualityInspectComplete：音画质检测完成；</li>\n<li>QualityEnhanceComplete：音画质重生任务完成；</li>\n<li>PersistenceComplete：剪辑固化完成；</li>\n<li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>\n<li>ProcessMediaByMPSComplete：MPS视频处理完成。</li>\n<li>AigcImageTaskComplete：AIGC 生图任务完成。</li>\n<li>AigcVideoTaskComplete：AIGC 生视频任务完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
+          "document": "<p><b>支持事件类型：</b></p><li>NewFileUpload：视频上传完成；</li><li>ProcedureStateChanged：任务流状态变更；</li><li>FileDeleted：视频删除完成；</li><li>RestoreMediaComplete：视频取回完成；</li><li>PullComplete：视频转拉完成；</li><li>EditMediaComplete：视频编辑完成；</li><li>SplitMediaComplete：视频拆分完成；</li><li>ComposeMediaComplete：制作媒体文件完成；</li><li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li><li>RemoveWatermark：智能去除水印完成。</li><li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li><li>ReviewAudioVideoComplete：音视频审核完成；</li><li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li><li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li><li>DescribeFileAttributesComplete：获取文件属性完成；</li><li>QualityInspectComplete：音画质检测完成；</li><li>QualityEnhanceComplete：音画质重生任务完成；</li><li>PersistenceComplete：剪辑固化完成；</li><li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li><li>ProcessMediaByMPSComplete：MPS视频处理完成。</li><li>AigcImageTaskComplete：AIGC 生图任务完成。</li><li>AigcVideoTaskComplete：AIGC 生视频任务完成。</li><li>DescribeAigcFaceInfoAsyncComplete：异步获取 AIGC 人脸信息任务完成。</li><b>兼容 2017 版的事件类型：</b><li>TranscodeComplete：视频转码完成；</li><li>ConcatComplete：视频拼接完成；</li><li>ClipComplete：视频剪辑完成；</li><li>CreateImageSpriteComplete：视频截取雪碧图完成；</li><li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
           "example": "null",
           "member": "string",
           "name": "EventType",
@@ -25500,7 +25831,7 @@
         },
         {
           "disabled": false,
-          "document": "视频上传完成事件，当事件类型为 NewFileUpload 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频上传完成事件，当事件类型为 NewFileUpload 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileUploadTask",
           "name": "FileUploadEvent",
@@ -25510,7 +25841,7 @@
         },
         {
           "disabled": false,
-          "document": "任务流状态变更事件，当事件类型为 ProcedureStateChanged 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务流状态变更事件，当事件类型为 ProcedureStateChanged 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ProcedureTask",
           "name": "ProcedureStateChangeEvent",
@@ -25520,7 +25851,7 @@
         },
         {
           "disabled": false,
-          "document": "文件删除事件，当事件类型为 FileDeleted 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件删除事件，当事件类型为 FileDeleted 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileDeleteTask",
           "name": "FileDeleteEvent",
@@ -25530,7 +25861,7 @@
         },
         {
           "disabled": false,
-          "document": "视频转拉完成事件，当事件类型为 PullComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频转拉完成事件，当事件类型为 PullComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PullUploadTask",
           "name": "PullCompleteEvent",
@@ -25540,7 +25871,7 @@
         },
         {
           "disabled": false,
-          "document": "视频编辑完成事件，当事件类型为 EditMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频编辑完成事件，当事件类型为 EditMediaComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EditMediaTask",
           "name": "EditMediaCompleteEvent",
@@ -25550,7 +25881,7 @@
         },
         {
           "disabled": false,
-          "document": "视频拆分完成事件，当事件类型为 SplitMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频拆分完成事件，当事件类型为 SplitMediaComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SplitMediaTask",
           "name": "SplitMediaCompleteEvent",
@@ -25560,7 +25891,7 @@
         },
         {
           "disabled": false,
-          "document": "制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ComposeMediaTask",
           "name": "ComposeMediaCompleteEvent",
@@ -25570,7 +25901,7 @@
         },
         {
           "disabled": false,
-          "document": "视频剪辑完成事件，当事件类型为 ClipComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频剪辑完成事件，当事件类型为 ClipComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClipTask2017",
           "name": "ClipCompleteEvent",
@@ -25580,7 +25911,7 @@
         },
         {
           "disabled": false,
-          "document": "视频转码完成事件，当事件类型为 TranscodeComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频转码完成事件，当事件类型为 TranscodeComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TranscodeTask2017",
           "name": "TranscodeCompleteEvent",
@@ -25590,7 +25921,7 @@
         },
         {
           "disabled": false,
-          "document": "视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CreateImageSpriteTask2017",
           "name": "CreateImageSpriteCompleteEvent",
@@ -25600,7 +25931,7 @@
         },
         {
           "disabled": false,
-          "document": "视频拼接完成事件，当事件类型为 ConcatComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频拼接完成事件，当事件类型为 ConcatComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ConcatTask2017",
           "name": "ConcatCompleteEvent",
@@ -25610,7 +25941,7 @@
         },
         {
           "disabled": false,
-          "document": "视频按时间点截图完成事件，当事件类型为 CreateSnapshotByTimeOffsetComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频按时间点截图完成事件，当事件类型为 CreateSnapshotByTimeOffsetComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SnapshotByTimeOffsetTask2017",
           "name": "SnapshotByTimeOffsetCompleteEvent",
@@ -25620,7 +25951,7 @@
         },
         {
           "disabled": false,
-          "document": "微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WechatPublishTask",
           "name": "WechatPublishCompleteEvent",
@@ -25630,7 +25961,7 @@
         },
         {
           "disabled": false,
-          "document": "微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WechatMiniProgramPublishTask",
           "name": "WechatMiniProgramPublishCompleteEvent",
@@ -25640,7 +25971,7 @@
         },
         {
           "disabled": false,
-          "document": "智能去除水印完成事件，当事件类型为 RemoveWatermark 有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>智能去除水印完成事件，当事件类型为 RemoveWatermark 有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RemoveWatermarkTask",
           "name": "RemoveWatermarkCompleteEvent",
@@ -25650,7 +25981,7 @@
         },
         {
           "disabled": false,
-          "document": "视频取回完成事件，当事件类型为 RestoreMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频取回完成事件，当事件类型为 RestoreMediaComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RestoreMediaTask",
           "name": "RestoreMediaCompleteEvent",
@@ -25660,7 +25991,7 @@
         },
         {
           "disabled": false,
-          "document": "音画质重生完成事件，当事件类型为 RebuildMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>音画质重生完成事件，当事件类型为 RebuildMediaComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RebuildMediaTask",
           "name": "RebuildMediaCompleteEvent",
@@ -25670,7 +26001,7 @@
         },
         {
           "disabled": false,
-          "document": "溯源水印提取完成事件，当事件类型为 ExtractTraceWatermarkComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>溯源水印提取完成事件，当事件类型为 ExtractTraceWatermarkComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExtractTraceWatermarkTask",
           "name": "ExtractTraceWatermarkCompleteEvent",
@@ -25680,7 +26011,7 @@
         },
         {
           "disabled": false,
-          "document": "版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExtractCopyRightWatermarkTask",
           "name": "ExtractCopyRightWatermarkCompleteEvent",
@@ -25690,7 +26021,7 @@
         },
         {
           "disabled": false,
-          "document": "音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ReviewAudioVideoTask",
           "name": "ReviewAudioVideoCompleteEvent",
@@ -25700,7 +26031,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段已无效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>该字段已无效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ReduceMediaBitrateTask",
           "name": "ReduceMediaBitrateCompleteEvent",
@@ -25710,7 +26041,7 @@
         },
         {
           "disabled": false,
-          "document": "获取文件属性完成事件，当事件类型为 DescribeFileAttributesComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>获取文件属性完成事件，当事件类型为 DescribeFileAttributesComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeFileAttributesTask",
           "name": "DescribeFileAttributesCompleteEvent",
@@ -25720,7 +26051,7 @@
         },
         {
           "disabled": false,
-          "document": "音画质检测完成事件，当事件类型为 QualityInspectComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>音画质检测完成事件，当事件类型为 QualityInspectComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "QualityInspectTask",
           "name": "QualityInspectCompleteEvent",
@@ -25730,7 +26061,7 @@
         },
         {
           "disabled": false,
-          "document": "音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "QualityEnhanceTask",
           "name": "QualityEnhanceCompleteEvent",
@@ -25740,7 +26071,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaCastEvent",
           "name": "MediaCastStatusChangedEvent",
@@ -25750,7 +26081,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PersistenceCompleteTask",
           "name": "PersistenceCompleteEvent",
@@ -25760,7 +26091,7 @@
         },
         {
           "disabled": false,
-          "document": "自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ComplexAdaptiveDynamicStreamingTask",
           "name": "ComplexAdaptiveDynamicStreamingCompleteEvent",
@@ -25770,7 +26101,7 @@
         },
         {
           "disabled": false,
-          "document": "MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。",
+          "document": "<p>MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。</p>",
           "example": "无",
           "member": "ProcessMediaByMPS",
           "name": "ProcessMediaByMPSCompleteEvent",
@@ -25780,7 +26111,7 @@
         },
         {
           "disabled": false,
-          "document": "AIGC 生图任务信息，仅当 EventType 为 AigcImageTaskComplete 时有效。",
+          "document": "<p>AIGC 生图任务信息，仅当 EventType 为 AigcImageTaskComplete 时有效。</p>",
           "example": "无",
           "member": "AigcImageTask",
           "name": "AigcImageCompleteEvent",
@@ -25790,7 +26121,7 @@
         },
         {
           "disabled": false,
-          "document": "AIGC 生视频任务信息，仅当 EventType 为 AigcVideoTaskComplete 时有效。",
+          "document": "<p>AIGC 生视频任务信息，仅当 EventType 为 AigcVideoTaskComplete 时有效。</p>",
           "example": "无",
           "member": "AigcVideoTask",
           "name": "AigcVideoCompleteEvent",
@@ -25800,7 +26131,7 @@
         },
         {
           "disabled": false,
-          "document": "提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。",
+          "document": "<p>提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。</p>",
           "example": "无",
           "member": "ExtractBlindWatermarkTask",
           "name": "ExtractBlindWatermarkComplete",
@@ -25810,7 +26141,7 @@
         },
         {
           "disabled": false,
-          "document": "AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。",
+          "document": "<p>AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。</p>",
           "example": "无",
           "member": "SceneAigcImageTask",
           "name": "SceneAigcImageCompleteEvent",
@@ -25820,10 +26151,40 @@
         },
         {
           "disabled": false,
-          "document": "图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。",
+          "document": "<p>图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。</p>",
           "example": "无",
           "member": "ProcessImageAsyncTask",
           "name": "ProcessImageAsyncCompleteEvent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AIGC 自定义主体信息，仅当 EventType 为 CreateAigcAdvancedCustomElementCompleteEvent，该字段有值。</p>",
+          "example": "无",
+          "member": "CreateAigcAdvancedCustomElementTask",
+          "name": "CreateAigcAdvancedCustomElementCompleteEvent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AIGC 自定义音色信息，仅当 EventType 为 CreateAigcCustomVoiceCompleteEvent，该字段有值。</p>",
+          "example": "无",
+          "member": "CreateAigcCustomVoiceTask",
+          "name": "CreateAigcCustomVoiceCompleteEvent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步获取 AIGC 人脸信息，仅当 EventType 为 DescribeAigcFaceInfoAsyncComplete，该字段有值。</p>",
+          "example": "无",
+          "member": "DescribeAigcFaceInfoAsyncTask",
+          "name": "DescribeAigcFaceInfoAsyncCompleteEvent",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -29431,7 +29792,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "推流直播码。",
+          "document": "<p>推流直播码。</p>",
           "example": "record-stream",
           "member": "string",
           "name": "StreamId",
@@ -29440,7 +29801,7 @@
         },
         {
           "disabled": false,
-          "document": "流剪辑的开始时间，格式参照 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "<p>流剪辑的开始时间，格式参照 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式说明</a>。</p>",
           "example": "2018-09-20T10:00:00Z",
           "member": "string",
           "name": "StartTime",
@@ -29449,7 +29810,7 @@
         },
         {
           "disabled": false,
-          "document": "流剪辑的结束时间，格式参照 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "<p>流剪辑的结束时间，格式参照 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式说明</a>。</p>",
           "example": "2018-09-20T11:00:00Z",
           "member": "string",
           "name": "EndTime",
@@ -29458,7 +29819,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -29467,7 +29828,7 @@
         },
         {
           "disabled": false,
-          "document": "是否固化。0 不固化，1 固化。默认不固化。",
+          "document": "<p>是否固化。0 不固化，1 固化。默认不固化。</p>",
           "example": "1",
           "member": "int64",
           "name": "IsPersistence",
@@ -29476,7 +29837,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化后的视频存储过期时间。格式参照 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。仅 IsPersistence 为 1 时有效，默认剪辑固化的视频永不过期。",
+          "document": "<p>剪辑固化后的视频存储过期时间。格式参照 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式</a>。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。仅 IsPersistence 为 1 时有效，默认剪辑固化的视频永不过期。</p>",
           "example": "2023-08-01T10:00:00Z",
           "member": "string",
           "name": "ExpireTime",
@@ -29485,7 +29846,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化后的视频点播任务流处理，详见[上传指定任务流](https://cloud.tencent.com/document/product/266/9759)。仅 IsPersistence 为 1 时有效。",
+          "document": "<p>剪辑固化后的视频点播任务流处理，详见<a href=\"https://cloud.tencent.com/document/product/266/9759\">上传指定任务流</a>。仅 IsPersistence 为 1 时有效。</p>",
           "example": "LongVideoPreset",
           "member": "string",
           "name": "Procedure",
@@ -29494,7 +29855,7 @@
         },
         {
           "disabled": false,
-          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>\n仅 IsPersistence 为 1 时有效。",
+          "document": "<p>分类ID，用于对媒体进行分类管理，可通过 <a href=\"/document/product/266/31772\">创建分类</a> 接口，创建分类，获得分类 ID。</p><li>默认值：0，表示其他分类。</li>仅 IsPersistence 为 1 时有效。",
           "example": "0",
           "member": "int64",
           "name": "ClassId",
@@ -29503,7 +29864,7 @@
         },
         {
           "disabled": false,
-          "document": "来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。仅 IsPersistence 为 1 时有效。",
+          "document": "<p>来源上下文，用于透传用户请求信息，<a href=\"/document/product/266/7830\">上传完成回调</a> 将返回该字段值，最长 250 个字符。仅 IsPersistence 为 1 时有效。</p>",
           "example": "custom information for NewFileUpload",
           "member": "string",
           "name": "SourceContext",
@@ -29512,7 +29873,7 @@
         },
         {
           "disabled": false,
-          "document": "会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。仅 IsPersistence 为 1 时有效。",
+          "document": "<p>会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，<a href=\"/document/product/266/9636\">任务流状态变更回调</a> 将返回该字段值，最长 1000 个字符。仅 IsPersistence 为 1 时有效。</p>",
           "example": "custom information for ProcedureStateChanged",
           "member": "string",
           "name": "SessionContext",
@@ -29521,7 +29882,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要返回剪辑后的视频元信息。0 不需要，1 需要。默认不需要。",
+          "document": "<p>是否需要返回剪辑后的视频元信息。0 不需要，1 需要。默认不需要。</p>",
           "example": "0",
           "member": "uint64",
           "name": "MetaDataRequired",
@@ -29530,7 +29891,7 @@
         },
         {
           "disabled": false,
-          "document": "云点播中添加的用于时移播放的域名，必须在云直播已经[关联录制模板和开通时移服务](https://cloud.tencent.com/document/product/266/52220#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E5.85.B3.E8.81.94.E5.BD.95.E5.88.B6.E6.A8.A1.E6.9D.BF.3Ca-id.3D.22step3.22.3E.3C.2Fa.3E)。**如果本接口的首次调用时间在 2021-01-01T00:00:00Z 之后，则此字段为必选字段。**",
+          "document": "<p>云点播中添加的用于时移播放的域名，必须在云直播已经<a href=\"https://cloud.tencent.com/document/product/266/52220#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E5.85.B3.E8.81.94.E5.BD.95.E5.88.B6.E6.A8.A1.E6.9D.BF.3Ca-id.3D.22step3.22.3E.3C.2Fa.3E\">关联录制模板和开通时移服务</a>。<strong>如果本接口的首次调用时间在 2021-01-01T00:00:00Z 之后，则此字段为必选字段。</strong></p>",
           "example": "myexample2.com",
           "member": "string",
           "name": "Host",
@@ -29539,7 +29900,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑的直播流信息：\n<li>默认剪辑直播原始流。</li>\n<li>当StreamInfo中指定的Type为Transcoding，则剪辑TemplateId对应的直播转码流。</li>",
+          "document": "<p>剪辑的直播流信息：</p><li>默认剪辑直播原始流。</li><li>当StreamInfo中指定的Type为Transcoding，则剪辑TemplateId对应的直播转码流。</li>",
           "example": "无",
           "member": "LiveRealTimeClipStreamInfo",
           "name": "StreamInfo",
@@ -29548,7 +29909,7 @@
         },
         {
           "disabled": false,
-          "document": "系统保留字段，请勿填写。",
+          "document": "<p>系统保留字段，请勿填写。</p>",
           "example": "custom information for ExtInfo",
           "member": "string",
           "name": "ExtInfo",
@@ -29563,7 +29924,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "剪辑后的视频播放 URL。",
+          "document": "<p>剪辑后的视频播放 URL。</p>",
           "example": "http://video.com/playlist.m3u8",
           "member": "string",
           "name": "Url",
@@ -29573,7 +29934,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化后的视频的媒体文件的唯一标识。",
+          "document": "<p>剪辑固化后的视频的媒体文件的唯一标识。</p>",
           "example": "24820810452260000",
           "member": "string",
           "name": "FileId",
@@ -29583,7 +29944,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化后的视频任务流 ID。",
+          "document": "<p>剪辑固化后的视频任务流 ID。</p>",
           "example": "125******04-procedurev2-870b****************btt2",
           "member": "string",
           "name": "VodTaskId",
@@ -29593,7 +29954,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑后的视频元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>剪辑后的视频元信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
@@ -29603,7 +29964,7 @@
         },
         {
           "disabled": false,
-          "document": "<span id=\"p_segmentset\">剪辑后的视频片段信息。</span>",
+          "document": "<p><span id=\"p_segmentset\">剪辑后的视频片段信息。</span></p>",
           "example": "无",
           "member": "LiveRealTimeClipMediaSegmentInfo",
           "name": "SegmentSet",
@@ -41266,7 +41627,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要拉取的媒体 URL，暂不支持拉取 Dash 格式（可以支持 HLS）。\n支持的扩展名详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。请确保媒体 URL 可以访问。",
+          "document": "<p>要拉取的媒体 URL，暂不支持拉取 Dash 格式（可以支持 HLS）。<br>支持的扩展名详见<a href=\"https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B\">媒体类型</a>。请确保媒体 URL 可以访问。</p>",
           "example": "http://www.abc.com/abc.mp4",
           "member": "string",
           "name": "MediaUrl",
@@ -41275,7 +41636,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体文件类型（扩展名），支持的类型详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。\n如果 MediaType 不填或取值为空字符串，将根据 MediaUrl 自动获取文件类型。",
+          "document": "<p>媒体文件类型（扩展名），支持的类型详见<a href=\"https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B\">媒体类型</a>。<br>如果 MediaType 不填或取值为空字符串，将根据 MediaUrl 自动获取文件类型。</p>",
           "example": "mp4",
           "member": "string",
           "name": "MediaType",
@@ -41284,7 +41645,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "220000",
           "member": "uint64",
           "name": "SubAppId",
@@ -41293,7 +41654,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体名称。",
+          "document": "<p>媒体名称。</p>",
           "example": "media.mp4",
           "member": "string",
           "name": "MediaName",
@@ -41302,7 +41663,7 @@
         },
         {
           "disabled": false,
-          "document": "要拉取的视频封面 URL。支持的文件格式：gif、jpeg（jpg）、png。",
+          "document": "<p>要拉取的视频封面 URL。支持的文件格式：gif、jpeg（jpg）、png。</p>",
           "example": "xxx/cover.jpg",
           "member": "string",
           "name": "CoverUrl",
@@ -41311,7 +41672,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体后续任务操作，详见[上传指定任务流](https://cloud.tencent.com/document/product/266/9759)。",
+          "document": "<p>媒体后续任务操作，详见<a href=\"https://cloud.tencent.com/document/product/266/9759\">上传指定任务流</a>。</p>",
           "example": "MyProcedure",
           "member": "string",
           "name": "Procedure",
@@ -41320,7 +41681,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "<p>媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式说明</a>。</p>",
           "example": "2020-09-07T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "ExpireTime",
@@ -41329,7 +41690,7 @@
         },
         {
           "disabled": false,
-          "document": "指定上传园区，仅适用于对上传地域有特殊需求的用户：\n<li>不填默认上传至您的[默认地域](https://cloud.tencent.com/document/product/266/14059?from=11329#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)。</li>\n<li>若指定上传园区，请先确认[上传存储设置](https://cloud.tencent.com/document/product/266/14059?from=11329#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)已经开启相应的存储地域。</li>",
+          "document": "<p>指定上传园区，仅适用于对上传地域有特殊需求的用户：</p><li>不填默认上传至您的[默认地域](https://cloud.tencent.com/document/product/266/14059?from=11329#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)。</li><li>若指定上传园区，请先确认[上传存储设置](https://cloud.tencent.com/document/product/266/14059?from=11329#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)已经开启相应的存储地域。</li>",
           "example": "ap-beijing",
           "member": "string",
           "name": "StorageRegion",
@@ -41338,7 +41699,7 @@
         },
         {
           "disabled": false,
-          "document": "分类ID，用于对媒体进行分类管理，可通过[创建分类](https://cloud.tencent.com/document/product/266/7812)接口，创建分类，获得分类 ID。",
+          "document": "<p>分类ID，用于对媒体进行分类管理，可通过<a href=\"https://cloud.tencent.com/document/product/266/31772\">创建分类</a>接口，创建分类，获得分类 ID。</p>",
           "example": "1",
           "member": "int64",
           "name": "ClassId",
@@ -41347,7 +41708,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "document": "<p>任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "TasksPriority",
@@ -41356,7 +41717,7 @@
         },
         {
           "disabled": false,
-          "document": "来源上下文，用于透传用户请求信息，当指定 Procedure 任务后，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "document": "<p>来源上下文，用于透传用户请求信息，当指定 Procedure 任务后，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>",
           "example": "custom information for ProcedureStateChanged",
           "member": "string",
           "name": "SessionContext",
@@ -41365,7 +41726,7 @@
         },
         {
           "disabled": false,
-          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "document": "<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>",
           "example": "custom_session_id",
           "member": "string",
           "name": "SessionId",
@@ -41374,7 +41735,7 @@
         },
         {
           "disabled": false,
-          "document": "保留字段，特殊用途时使用。",
+          "document": "<p>保留字段，特殊用途时使用。</p>",
           "example": "ExtInfo1",
           "member": "string",
           "name": "ExtInfo",
@@ -41383,7 +41744,7 @@
         },
         {
           "disabled": false,
-          "document": "来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。",
+          "document": "<p>来源上下文，用于透传用户请求信息，<a href=\"/document/product/266/7830\">上传完成回调</a> 将返回该字段值，最长 250 个字符。</p>",
           "example": "custom information for NewFileUpload",
           "member": "string",
           "name": "SourceContext",
@@ -41392,7 +41753,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体存储路径，以/开头。\n只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以指定存储路径。",
+          "document": "<p>媒体存储路径，以/开头。<br>只有<a href=\"https://cloud.tencent.com/document/product/266/126825\">FileID + Path 模式</a>的子应用可以指定存储路径。</p>",
           "example": "/dir1/a.mp4",
           "member": "string",
           "name": "MediaStoragePath",
@@ -41407,7 +41768,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "拉取上传视频的任务 ID，可以通过该 ID 查询拉取上传任务的状态。",
+          "document": "<p>拉取上传视频的任务 ID，可以通过该 ID 查询拉取上传任务的状态。</p>",
           "example": "125xxxxxx07-pull-893dc41e6fdc22dcf24aa6e9c61cp94",
           "member": "string",
           "name": "TaskId",
@@ -45553,6 +45914,78 @@
       ],
       "usage": "both"
     },
+    "SPEKEDrm": {
+      "document": "第三方DRM厂商加密信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源标记，该字段内容为用户自定义； 支持1-128个字符的数字、字母、下划线(_)、中划线(-)。 该字段对应Speke请求中的cid字段。 注：不同DRM厂商对该字段的限制有所区别（如：华曦达不支持该字段带_），具体规则请与DRM厂商进行确认。</p>",
+          "example": "test-****************",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>DRM厂商访问地址，该字段内容从DRM厂商获取。注: 不同DRM厂商对子流的数量限制不一样，如 PallyCon 限制不能超过5条子流，DRMtoday厂商最多仅支持9条子流加密</p>",
+          "example": "https:*************.******************************************************************************",
+          "member": "string",
+          "name": "KeyServerUrl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>加密初始化向量(十六进制32字节字符串)，该字段内容为用户自定义。</p>",
+          "example": "3995502b2c0bed6c54ad1c89af9c5ea3a97b4b71048d4178fb234b4c6e85b4c9",
+          "member": "string",
+          "name": "Vector",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>加密方式，可选值：<br>cbcs：PlayReady，Widevine，FairPlay，Widevine+FairPlay，Widevine+PlayReady，PlayReady+FairPlay，Widevine+PlayReady+FairPlay支持；<br>cenc：PlayReady，Widevine，Widevine+PlayReady支持；<br>若不填FairPlay 默认cbcs；<br>PlayReady，Widevine 默认cenc；<br>Widevine+FairPlay，PlayReady+FairPlay，Widevine+PlayReady+FairPlay默认cbcs；<br>Widevine+PlayReady默认cenc；</p>",
+          "example": "cbcs",
+          "member": "string",
+          "name": "EncryptionMethod",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子流加密规则，默认 preset0<br>preset0：全部子流使用同一个key加密；<br>preset1：每个子流使用不同的key加密；</p>",
+          "example": "preset0",
+          "member": "string",
+          "name": "EncryptionPreset",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>DRM厂商请求方式。</p><p>枚举值：</p><ul><li>POST： 大多数DRM厂商使用POST方式请求。</li><li>GET： 部分DRM厂商支持GET方式请求。使用该种方式请求时，需要在KeyServerUrl字段带上各项请求信息。</li></ul><p>默认值：POST</p>",
+          "example": "GET",
+          "member": "string",
+          "name": "KeyAcquireMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SampleSnapshotTaskInput": {
       "document": "对视频做采样截图任务输入参数类型",
       "members": [
@@ -45777,7 +46210,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>输出图片编码格式参数。<strong>仅AI换衣场景有效。</strong></p>",
+          "document": "<p>输出图片编码格式参数。</p>",
           "example": "无",
           "member": "ImageSceneAigcEncodeConfig",
           "name": "EncodeConfig",
@@ -45810,7 +46243,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>输出分辨率。仅change_clothes、change_clothes_under场景有效。可选值：1K、2K、4K。</p>",
+          "document": "<p>输出分辨率。仅<code>ai_try_on</code>场景有效。可选值：1K、2K、4K。</p>",
           "example": "2K",
           "member": "string",
           "name": "Resolution",
@@ -47089,7 +47522,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要裁剪的腾讯云点播 HLS 视频 URL。",
+          "document": "<p>需要裁剪的腾讯云点播 HLS 视频 URL。</p>",
           "example": "http://example.com/xxxxx/aaaaaa/hhh.m3u8",
           "member": "string",
           "name": "Url",
@@ -47098,7 +47531,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -47107,7 +47540,7 @@
         },
         {
           "disabled": false,
-          "document": "裁剪的开始偏移时间，单位秒。默认 0，即从视频开头开始裁剪。负数表示距离视频结束多少秒开始裁剪。例如 -10 表示从倒数第 10 秒开始裁剪。",
+          "document": "<p>裁剪的开始偏移时间，单位秒。默认 0，即从视频开头开始裁剪。负数表示距离视频结束多少秒开始裁剪。例如 -10 表示从倒数第 10 秒开始裁剪。</p>",
           "example": "2.1",
           "member": "float",
           "name": "StartTimeOffset",
@@ -47116,7 +47549,7 @@
         },
         {
           "disabled": false,
-          "document": "裁剪的结束偏移时间，单位秒。默认 0，即裁剪到视频尾部。负数表示距离视频结束多少秒结束裁剪。例如 -10 表示到倒数第 10 秒结束裁剪。",
+          "document": "<p>裁剪的结束偏移时间，单位秒。默认 0，即裁剪到视频尾部。负数表示距离视频结束多少秒结束裁剪。例如 -10 表示到倒数第 10 秒结束裁剪。</p>",
           "example": "10.5",
           "member": "float",
           "name": "EndTimeOffset",
@@ -47125,7 +47558,7 @@
         },
         {
           "disabled": false,
-          "document": "是否固化。0 不固化，1 固化。默认不固化。",
+          "document": "<p>是否固化。0 不固化，1 固化。默认不固化。</p>",
           "example": "0",
           "member": "int64",
           "name": "IsPersistence",
@@ -47134,7 +47567,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化后的视频存储过期时间。格式参照 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。仅 IsPersistence 为 1 时有效，默认剪辑固化的视频永不过期。",
+          "document": "<p>剪辑固化后的视频存储过期时间。格式参照 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式</a>。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。仅 IsPersistence 为 1 时有效，默认剪辑固化的视频永不过期。</p>",
           "example": "2020-09-09T23:59:59+08:00",
           "member": "string",
           "name": "ExpireTime",
@@ -47143,7 +47576,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化后的视频点播任务流处理，详见[上传指定任务流](https://cloud.tencent.com/document/product/266/9759)。仅 IsPersistence 为 1 时有效。",
+          "document": "<p>剪辑固化后的视频点播任务流处理，详见<a href=\"https://cloud.tencent.com/document/product/266/9759\">上传指定任务流</a>。仅 IsPersistence 为 1 时有效。</p>",
           "example": "LongVideoPreset",
           "member": "string",
           "name": "Procedure",
@@ -47152,7 +47585,7 @@
         },
         {
           "disabled": false,
-          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>\n仅 IsPersistence 为 1 时有效。",
+          "document": "<p>分类ID，用于对媒体进行分类管理，可通过 <a href=\"/document/product/266/31772\">创建分类</a> 接口，创建分类，获得分类 ID。</p><li>默认值：0，表示其他分类。</li>仅 IsPersistence 为 1 时有效。",
           "example": "1",
           "member": "int64",
           "name": "ClassId",
@@ -47161,7 +47594,7 @@
         },
         {
           "disabled": false,
-          "document": "来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。仅 IsPersistence 为 1 时有效。",
+          "document": "<p>来源上下文，用于透传用户请求信息，<a href=\"/document/product/266/7830\">上传完成回调</a> 将返回该字段值，最长 250 个字符。仅 IsPersistence 为 1 时有效。</p>",
           "example": "rtmp://86094.livepush****_mix_file",
           "member": "string",
           "name": "SourceContext",
@@ -47170,7 +47603,7 @@
         },
         {
           "disabled": false,
-          "document": "会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。仅 IsPersistence 为 1 时有效。",
+          "document": "<p>会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，<a href=\"/document/product/266/9636\">任务流状态变更回调</a> 将返回该字段值，最长 1000 个字符。仅 IsPersistence 为 1 时有效。</p>",
           "example": "sessioncontext",
           "member": "string",
           "name": "SessionContext",
@@ -47179,7 +47612,7 @@
         },
         {
           "disabled": true,
-          "document": "该字段已废弃。",
+          "document": "<p>该字段已废弃。</p>",
           "example": "Rough",
           "member": "string",
           "name": "Precision",
@@ -47188,7 +47621,7 @@
         },
         {
           "disabled": false,
-          "document": "输出视频类型，取值有：<li>hls: 输出 hls 文件。</li>默认取值 hls。",
+          "document": "<p>输出视频类型，取值有：<li>hls: 输出 hls 文件。</li>默认取值 hls。</p>",
           "example": "hls",
           "member": "string",
           "name": "OutputMediaType",
@@ -47197,7 +47630,7 @@
         },
         {
           "disabled": false,
-          "document": "保留字段，特殊用途时使用。 示例值：\"\"",
+          "document": "<p>保留字段，特殊用途时使用。 示例值：&quot;&quot;</p>",
           "example": "extinfo",
           "member": "string",
           "name": "ExtInfo",
@@ -47212,7 +47645,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "裁剪后的视频地址。",
+          "document": "<p>裁剪后的视频地址。</p>",
           "example": "http://example.com/xxxxx/aaaaaa/10_50.m3u8",
           "member": "string",
           "name": "Url",
@@ -47222,7 +47655,7 @@
         },
         {
           "disabled": false,
-          "document": "裁剪后的视频元信息。目前`Size`，`Rotate`，`VideoDuration`，`AudioDuration` 几个字段暂时缺省，没有真实数据。",
+          "document": "<p>裁剪后的视频元信息。目前<code>Size</code>，<code>Rotate</code>，<code>VideoDuration</code>，<code>AudioDuration</code> 几个字段暂时缺省，没有真实数据。</p>",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
@@ -47232,7 +47665,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化后的视频的媒体文件的唯一标识。",
+          "document": "<p>剪辑固化后的视频的媒体文件的唯一标识。</p>",
           "example": "5285485487985271487",
           "member": "string",
           "name": "FileId",
@@ -47242,7 +47675,7 @@
         },
         {
           "disabled": false,
-          "document": "剪辑固化后的视频任务流 ID。",
+          "document": "<p>剪辑固化后的视频任务流 ID。</p>",
           "example": "123-taskid-51rqr",
           "member": "string",
           "name": "TaskId",
@@ -49304,6 +49737,34 @@
           "output_required": false,
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ThirdPartyDrmInfo": {
+      "document": "第三方Drm 加密信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>加密类型：</p><ul><li>FairPlay：只能用于HLS，切片格式只能是mp4</li><li>Widevine：可以用于HLS和DASH，切片格式只能是mp4</li><li>PlayReady：可以用于HLS和DASH，切片格式只能是mp4</li><li>Widevine+FairPlay，PlayReady+FairPlay，Widevine PlayReady FairPlay组合: 只能用于HLS，切片格式只能是mp4</li><li>Widevine PlayReady组合: 可用于HLS、MPEG-DASH，切片格式只能是mp4</li></ul>",
+          "example": "[\"Widevine\"]",
+          "member": "string",
+          "name": "DrmTypes",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>第三方DRM厂商信息。</p>",
+          "example": "无",
+          "member": "SPEKEDrm",
+          "name": "SPEKEDrm",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

@@ -73,7 +73,62 @@ Output:
 }
 ```
 
-**Example 2: 查询普通公网IP**
+**Example 2: 查询弹性公网EIP**
+
+查询弹性公网EIP。
+
+Input: 
+
+```
+tccli vpc DescribeAddresses --cli-unfold-argument  \
+    --AddressIds eip-12345678
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 0,
+        "AddressSet": [
+            {
+                "AddressId": "eip-12345678",
+                "AddressName": "demo",
+                "AddressStatus": "UNBIND",
+                "AddressIp": "34.3.4.5.6",
+                "InstanceId": "ins-12345678",
+                "CreatedTime": "2020-09-22T00:00:00+00:00",
+                "NetworkInterfaceId": "eni-12345678",
+                "PrivateAddressIp": "10.2.3.4",
+                "IsArrears": true,
+                "IsBlocked": true,
+                "IsEipDirectConnection": true,
+                "AddressType": "WanIp",
+                "CascadeRelease": true,
+                "EipAlgType": {
+                    "Ftp": true,
+                    "Sip": true
+                },
+                "InternetServiceProvider": "BGP",
+                "LocalBgp": true,
+                "Bandwidth": 1,
+                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                "TagSet": [
+                    {
+                        "Key": "name",
+                        "Value": "Sam"
+                    }
+                ],
+                "DeadlineDate": "2020-09-22",
+                "InstanceType": "CVM",
+                "Egress": "CENTER_EGRESS_1"
+            }
+        ],
+        "RequestId": "95eb79b9-2e72-45b1-a1ac-03138778521a"
+    }
+}
+```
+
+**Example 3: 查询普通公网IP**
 
 查询普通公网IP。
 
@@ -126,61 +181,6 @@ Output:
             }
         ],
         "RequestId": "f9b58176-c138-45ba-a0e2-7a55117e2833"
-    }
-}
-```
-
-**Example 3: 查询弹性公网EIP**
-
-查询弹性公网EIP。
-
-Input: 
-
-```
-tccli vpc DescribeAddresses --cli-unfold-argument  \
-    --AddressIds eip-12345678
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TotalCount": 0,
-        "AddressSet": [
-            {
-                "AddressId": "eip-12345678",
-                "AddressName": "demo",
-                "AddressStatus": "UNBIND",
-                "AddressIp": "34.3.4.5.6",
-                "InstanceId": "ins-12345678",
-                "CreatedTime": "2020-09-22T00:00:00+00:00",
-                "NetworkInterfaceId": "eni-12345678",
-                "PrivateAddressIp": "10.2.3.4",
-                "IsArrears": true,
-                "IsBlocked": true,
-                "IsEipDirectConnection": true,
-                "AddressType": "WanIp",
-                "CascadeRelease": true,
-                "EipAlgType": {
-                    "Ftp": true,
-                    "Sip": true
-                },
-                "InternetServiceProvider": "BGP",
-                "LocalBgp": true,
-                "Bandwidth": 1,
-                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
-                "TagSet": [
-                    {
-                        "Key": "name",
-                        "Value": "Sam"
-                    }
-                ],
-                "DeadlineDate": "2020-09-22",
-                "InstanceType": "CVM",
-                "Egress": "CENTER_EGRESS_1"
-            }
-        ],
-        "RequestId": "95eb79b9-2e72-45b1-a1ac-03138778521a"
     }
 }
 ```

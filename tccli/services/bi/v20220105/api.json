@@ -21,6 +21,20 @@
       "output": "CreateAuthApiKeyResponse",
       "status": "online"
     },
+    "CreateCorpTag": {
+      "document": "创建企业标签",
+      "input": "CreateCorpTagRequest",
+      "name": "创建企业标签",
+      "output": "CreateCorpTagResponse",
+      "status": "online"
+    },
+    "CreateDataTable": {
+      "document": "添加数据表",
+      "input": "CreateDataTableRequest",
+      "name": "添加数据表",
+      "output": "CreateDataTableResponse",
+      "status": "online"
+    },
     "CreateDatasource": {
       "document": "创建数据源",
       "input": "CreateDatasourceRequest",
@@ -54,6 +68,13 @@
       "input": "CreateProjectRequest",
       "name": "创建项目",
       "output": "CreateProjectResponse",
+      "status": "online"
+    },
+    "CreateTagTable": {
+      "document": "创建标签表",
+      "input": "CreateTagTableRequest",
+      "name": "创建标签表",
+      "output": "CreateTagTableResponse",
       "status": "online"
     },
     "CreateUserGroup": {
@@ -203,6 +224,13 @@
       "output": "DescribeResourceUserGroupPageListResponse",
       "status": "online"
     },
+    "DescribeSourceFieldList": {
+      "document": "原始数据表字段接口信息",
+      "input": "DescribeSourceFieldListRequest",
+      "name": "原始数据表字段接口",
+      "output": "DescribeSourceFieldListResponse",
+      "status": "online"
+    },
     "DescribeUserGroupInfo": {
       "document": "DescribeUserGroupInfo",
       "input": "DescribeUserGroupInfoRequest",
@@ -245,6 +273,13 @@
       "output": "DescribeUserRoleProjectListResponse",
       "status": "online"
     },
+    "EditCorpTag": {
+      "document": "编辑企业标签(异步)",
+      "input": "EditCorpTagRequest",
+      "name": "编辑企业标签(异步)",
+      "output": "EditCorpTagResponse",
+      "status": "online"
+    },
     "ExportScreenPage": {
       "document": "页面截图导出",
       "input": "ExportScreenPageRequest",
@@ -280,6 +315,13 @@
       "output": "ModifyProjectResponse",
       "status": "online"
     },
+    "ModifyResourceUser": {
+      "document": "按用户资源修改",
+      "input": "ModifyResourceUserRequest",
+      "name": "更新用户权限",
+      "output": "ModifyResourceUserResponse",
+      "status": "online"
+    },
     "ModifyResourceUserGroup": {
       "document": "更新用户组权限",
       "input": "ModifyResourceUserGroupRequest",
@@ -292,6 +334,13 @@
       "input": "ModifyResourceUserGroupResourceRequest",
       "name": "按资源 - 更新用户组权限",
       "output": "ModifyResourceUserGroupResourceResponse",
+      "status": "online"
+    },
+    "ModifyTagTable": {
+      "document": "编辑标签表",
+      "input": "ModifyTagTableRequest",
+      "name": "编辑标签表",
+      "output": "ModifyTagTableResponse",
       "status": "online"
     },
     "ModifyUserDetailInfo": {
@@ -322,6 +371,13 @@
       "output": "ModifyUserRoleProjectResponse",
       "status": "online"
     },
+    "ModifyUserTag": {
+      "document": "修改用户标签值",
+      "input": "ModifyUserTagRequest",
+      "name": "修改用户标签值",
+      "output": "ModifyUserTagResponse",
+      "status": "online"
+    },
     "QueryUserGroupMember": {
       "document": "QueryUserGroupMember",
       "input": "QueryUserGroupMemberRequest",
@@ -337,6 +393,210 @@
     "serviceShortName": "bi"
   },
   "objects": {
+    "ApiDatasourceConfig": {
+      "document": "API数据源连接配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API数据源解析结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "FieldsJsonData",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "连接类型1:直连 2:抽取\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ConnectionType",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "抽取频率配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FrequencyConfig",
+          "name": "FrequencyConfig",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1:GET 2:POST\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RequestMethod",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求头\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RequestHeader",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RequestParams",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求体\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RequestBody",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "passwd",
+          "member": "string",
+          "name": "Password",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1: 无鉴权 2:BASIC_AUTH\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AuthorizationType",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TableId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路径DbName映射\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "JsonPathDbNameMap",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "鉴权API\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AuthApi",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AppKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AppSecret",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据密钥Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据密钥初始化向量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SecretIv",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ApiKeyAuthApplyVO": {
       "document": "创建ApiKey接口出参",
       "members": [
@@ -911,12 +1171,335 @@
       ],
       "type": "object"
     },
+    "CreateCorpTagRequest": {
+      "document": "CreateCorpTag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCorpTagResponse": {
+      "document": "CreateCorpTag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataId",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataTableRequest": {
+      "document": "CreateDataTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "后端提供字典：数据表类型，1、数据库建表，2、SQL建表，3、Excel上传，4、API接入，5、腾讯文档，6、云数据库，7、手工输入，8、关联查询",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据表名称",
+          "example": "demo",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "所属文件夹",
+          "example": "1",
+          "member": "uint64",
+          "name": "FoldId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据源Id",
+          "example": "demo",
+          "member": "string",
+          "name": "DatasourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "物理表名",
+          "example": "demo",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "sql语句",
+          "example": "demo",
+          "member": "string",
+          "name": "Sql",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "excel地址",
+          "example": "demo",
+          "member": "string",
+          "name": "ExcelUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字段配置",
+          "example": "无",
+          "member": "TableField",
+          "name": "Fields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "多表关联使用: 1:数据源原表,2:本地表,3:Excel表,4:API表",
+          "example": "1",
+          "member": "uint64",
+          "name": "TableNodeType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "多表关联的原始表信息",
+          "example": "无",
+          "member": "JoinSourceTable",
+          "name": "Tables",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "多表关联的关联信息",
+          "example": "无",
+          "member": "JoinRelation",
+          "name": "Joins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "补充信息，如api数据源信息，腾讯文档接入信息等",
+          "example": "{\\\"sheetId\\\":\\\"tyzxz9\\\",\\\"fileId\\\":\\\"300000000$DVtDzHkKxxnq\\\"}",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否是异步",
+          "example": "true",
+          "member": "bool",
+          "name": "AsyncRequest",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "依赖的异步事务id",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "ParentTranId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API数据源配置",
+          "example": "无",
+          "member": "ApiDatasourceConfig",
+          "name": "ApiDatasourceConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "1",
+          "example": "无",
+          "member": "ParamCreateDTO",
+          "name": "ParamList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "dlc高级参数",
+          "example": "{\"meg\":\"dlc高级参数\"}",
+          "member": "string",
+          "name": "DlcExtInfo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询数据库",
+          "example": "1",
+          "member": "string",
+          "name": "QueryDbData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据表备注",
+          "example": "表备注",
+          "member": "string",
+          "name": "TableComment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询字段备注",
+          "example": "1",
+          "member": "int64",
+          "name": "QueryFieldRemark",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "字段备注列表",
+          "example": "无",
+          "member": "FieldRemarkDTO",
+          "name": "FieldRemarkList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataTableResponse": {
+      "document": "CreateDataTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成功返回数据表的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IdDTO",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDatasourceCloudRequest": {
       "document": "CreateDatasourceCloud请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "后端提供字典：域类型，1、腾讯云，2、本地",
+          "document": "<p>后端提供字典：域类型，1、腾讯云，2、本地</p>",
           "example": "{\\\"Type\\\":\\\"Own\\\",\\\"IsDefault\\\":true}",
           "member": "string",
           "name": "ServiceType",
@@ -925,7 +1508,7 @@
         },
         {
           "disabled": false,
-          "document": "驱动\n取值范围：\nMYSQL：MySQL数据库\nPRESTO：PRESTO数据库\nPOSTGRE：PostgreSQL数据库\nDLC：DLC数据库\nMSSQL：微软SQL Server数据库",
+          "document": "<p>驱动</p><p>枚举值：</p><ul><li>MYSQL： MySQL数据库</li><li>PRESTO： PRESTO数据库</li><li>POSTGRE： PostgreSQL数据库</li><li>DLC： DLC数据库</li><li>MSSQL： 微软SQL Server数据库</li></ul>",
           "example": "MYSQL",
           "member": "string",
           "name": "DbType",
@@ -934,7 +1517,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库编码",
+          "document": "<p>数据库编码</p>",
           "example": "utf8",
           "member": "string",
           "name": "Charset",
@@ -943,7 +1526,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "root",
           "member": "string",
           "name": "DbUser",
@@ -952,7 +1535,7 @@
         },
         {
           "disabled": false,
-          "document": "密码",
+          "document": "<p>密码</p>",
           "example": "******",
           "member": "string",
           "name": "DbPwd",
@@ -961,7 +1544,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称",
+          "document": "<p>数据库名称</p>",
           "example": "bi_demo",
           "member": "string",
           "name": "DbName",
@@ -970,7 +1553,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库别名",
+          "document": "<p>数据库别名</p>",
           "example": "腾讯云BI官方示例数据源",
           "member": "string",
           "name": "SourceName",
@@ -979,7 +1562,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1180",
           "member": "string",
           "name": "ProjectId",
@@ -988,7 +1571,7 @@
         },
         {
           "disabled": false,
-          "document": "公有云内网ip",
+          "document": "<p>公有云内网ip</p>",
           "example": "1",
           "member": "string",
           "name": "Vip",
@@ -997,7 +1580,7 @@
         },
         {
           "disabled": false,
-          "document": "公有云内网端口",
+          "document": "<p>公有云内网端口</p>",
           "example": "1",
           "member": "string",
           "name": "Vport",
@@ -1006,7 +1589,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc标识",
+          "document": "<p>vpc标识</p>",
           "example": "1",
           "member": "string",
           "name": "VpcId",
@@ -1015,7 +1598,7 @@
         },
         {
           "disabled": false,
-          "document": "统一vpc标识",
+          "document": "<p>统一vpc标识</p>",
           "example": "1",
           "member": "string",
           "name": "UniqVpcId",
@@ -1024,7 +1607,7 @@
         },
         {
           "disabled": false,
-          "document": "区域标识（gz,bj)",
+          "document": "<p>区域标识（gz,bj)</p>",
           "example": "33",
           "member": "string",
           "name": "RegionId",
@@ -1033,7 +1616,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展参数",
+          "document": "<p>扩展参数</p>",
           "example": "1",
           "member": "string",
           "name": "ExtraParam",
@@ -1042,7 +1625,7 @@
         },
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "<p>实例Id</p>",
           "example": "112",
           "member": "string",
           "name": "InstanceId",
@@ -1051,7 +1634,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源产品名",
+          "document": "<p>数据源产品名</p>",
           "example": "bi_demo",
           "member": "string",
           "name": "ProdDbName",
@@ -1060,7 +1643,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方数据源标识",
+          "document": "<p>第三方数据源标识</p>",
           "example": "1",
           "member": "string",
           "name": "DataOrigin",
@@ -1069,7 +1652,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方项目id",
+          "document": "<p>第三方项目id</p>",
           "example": "112",
           "member": "string",
           "name": "DataOriginProjectId",
@@ -1078,7 +1661,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方数据源id",
+          "document": "<p>第三方数据源id</p>",
           "example": "11011",
           "member": "string",
           "name": "DataOriginDatasourceId",
@@ -1087,7 +1670,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "1",
           "member": "string",
           "name": "ClusterId",
@@ -1096,7 +1679,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库schema",
+          "document": "<p>数据库schema</p>",
           "example": "DB2INST1",
           "member": "string",
           "name": "Schema",
@@ -1105,7 +1688,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库版本",
+          "document": "<p>数据库版本</p>",
           "example": "11.5",
           "member": "string",
           "name": "DbVersion",
@@ -1130,7 +1713,7 @@
         },
         {
           "disabled": false,
-          "document": "成功无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>成功无</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IdDTO",
           "name": "Data",
@@ -1140,7 +1723,7 @@
         },
         {
           "disabled": false,
-          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Extra",
@@ -1150,7 +1733,7 @@
         },
         {
           "disabled": false,
-          "document": "提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>提示</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "Msg",
@@ -1172,7 +1755,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "HOST",
+          "document": "<p>HOST</p>",
           "example": "192.168.101.1",
           "member": "string",
           "name": "DbHost",
@@ -1181,7 +1764,7 @@
         },
         {
           "disabled": false,
-          "document": "端口",
+          "document": "<p>端口</p>",
           "example": "3306",
           "member": "uint64",
           "name": "DbPort",
@@ -1190,7 +1773,7 @@
         },
         {
           "disabled": false,
-          "document": "后端提供字典：域类型，1、腾讯云，2、本地",
+          "document": "<p>后端提供字典：域类型，1、腾讯云，2、本地</p>",
           "example": "MYSQL",
           "member": "string",
           "name": "ServiceType",
@@ -1199,7 +1782,7 @@
         },
         {
           "disabled": false,
-          "document": "驱动\n取值范围：\nMYSQL：MySQL数据库\nPRESTO：PRESTO数据库\nPOSTGRE：PostgreSQL数据库\nDLC：DLC数据库\nMSSQL：微软SQL Server数据库",
+          "document": "<p>驱动</p><p>枚举值：</p><ul><li>MYSQL： MySQL数据库</li><li>PRESTO： PRESTO数据库</li><li>POSTGRE： PostgreSQL数据库</li><li>DLC： DLC数据库</li><li>MSSQL： 微软SQL Server数据库</li></ul>",
           "example": "MYSQL",
           "member": "string",
           "name": "DbType",
@@ -1208,7 +1791,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库编码",
+          "document": "<p>数据库编码</p>",
           "example": "utf8",
           "member": "string",
           "name": "Charset",
@@ -1217,7 +1800,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "root",
           "member": "string",
           "name": "DbUser",
@@ -1226,7 +1809,7 @@
         },
         {
           "disabled": false,
-          "document": "密码",
+          "document": "<p>密码</p>",
           "example": "******",
           "member": "string",
           "name": "DbPwd",
@@ -1235,7 +1818,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称",
+          "document": "<p>数据库名称</p>",
           "example": "bi_demo",
           "member": "string",
           "name": "DbName",
@@ -1244,7 +1827,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库别名",
+          "document": "<p>数据库别名</p>",
           "example": "腾讯云官方示例数据库",
           "member": "string",
           "name": "SourceName",
@@ -1253,7 +1836,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id",
+          "document": "<p>项目id</p>",
           "example": "1101",
           "member": "uint64",
           "name": "ProjectId",
@@ -1262,7 +1845,7 @@
         },
         {
           "disabled": false,
-          "document": "catalog值",
+          "document": "<p>catalog值</p>",
           "example": "public",
           "member": "string",
           "name": "Catalog",
@@ -1271,7 +1854,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方数据源标识",
+          "document": "<p>第三方数据源标识</p>",
           "example": "1",
           "member": "string",
           "name": "DataOrigin",
@@ -1280,7 +1863,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方项目id",
+          "document": "<p>第三方项目id</p>",
           "example": "1",
           "member": "string",
           "name": "DataOriginProjectId",
@@ -1289,7 +1872,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方数据源id",
+          "document": "<p>第三方数据源id</p>",
           "example": "1",
           "member": "string",
           "name": "DataOriginDatasourceId",
@@ -1298,7 +1881,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展参数",
+          "document": "<p>扩展参数</p>",
           "example": "1",
           "member": "string",
           "name": "ExtraParam",
@@ -1307,7 +1890,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云私有网络统一标识",
+          "document": "<p>腾讯云私有网络统一标识</p>",
           "example": "1",
           "member": "string",
           "name": "UniqVpcId",
@@ -1316,7 +1899,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ip",
+          "document": "<p>私有网络ip</p>",
           "example": "1",
           "member": "string",
           "name": "Vip",
@@ -1325,7 +1908,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络端口",
+          "document": "<p>私有网络端口</p>",
           "example": "1150",
           "member": "string",
           "name": "Vport",
@@ -1334,7 +1917,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云私有网络标识",
+          "document": "<p>腾讯云私有网络标识</p>",
           "example": "1",
           "member": "string",
           "name": "VpcId",
@@ -1343,8 +1926,8 @@
         },
         {
           "disabled": false,
-          "document": "操作权限限制",
-          "example": "10",
+          "document": "<p>操作权限限制</p>",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "OperationAuthLimit",
           "required": false,
@@ -1352,7 +1935,7 @@
         },
         {
           "disabled": false,
-          "document": "开启vpc",
+          "document": "<p>开启vpc</p>",
           "example": "true",
           "member": "bool",
           "name": "UseVPC",
@@ -1361,7 +1944,7 @@
         },
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "gz",
           "member": "string",
           "name": "RegionId",
@@ -1370,7 +1953,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库schema",
+          "document": "<p>数据库schema</p>",
           "example": "DB2INST1",
           "member": "string",
           "name": "Schema",
@@ -1379,7 +1962,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库版本",
+          "document": "<p>数据库版本</p>",
           "example": "11.5",
           "member": "string",
           "name": "DbVersion",
@@ -1404,8 +1987,8 @@
         },
         {
           "disabled": false,
-          "document": "数据源id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "<p>数据源id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "IdDTO",
           "name": "Data",
           "output_required": true,
@@ -1414,7 +1997,7 @@
         },
         {
           "disabled": false,
-          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Extra",
@@ -1424,7 +2007,7 @@
         },
         {
           "disabled": false,
-          "document": "提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>提示</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "Msg",
@@ -1621,7 +2204,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页数",
+          "document": "<p>页数</p>",
           "example": "1",
           "member": "int64",
           "name": "TableId",
@@ -1630,7 +2213,7 @@
         },
         {
           "disabled": false,
-          "document": "模式。\n取值范围：\n- ALL：全部\n- Specify：指定\n- TAG：标签\n\n默认值：ALL\n示例值：ALL",
+          "document": "<p>模式</p><p>枚举值：</p><ul><li>ALL： 全部</li><li>Specify： 指定</li><li>TAG： 标签</li></ul><p>默认值：ALL</p>",
           "example": "ALL",
           "member": "string",
           "name": "Mode",
@@ -1639,7 +2222,7 @@
         },
         {
           "disabled": false,
-          "document": "角色类型。\n取值范围：\n\n- ROLES：按角色\n- Others：其它\n\n默认值：Others\n示例值：Others",
+          "document": "<p>角色类型</p><p>枚举值：</p><ul><li>ROLES： 按角色</li><li>Others： 其它</li></ul><p>默认值：Others</p>",
           "example": "Others",
           "member": "string",
           "name": "RoleType",
@@ -1648,7 +2231,7 @@
         },
         {
           "disabled": false,
-          "document": "所有页码",
+          "document": "<p>所有页码</p>",
           "example": "1",
           "member": "int64",
           "name": "RoleId",
@@ -1657,7 +2240,7 @@
         },
         {
           "disabled": false,
-          "document": "规则信息",
+          "document": "<p>规则信息</p>",
           "example": "1",
           "member": "string",
           "name": "RulerInfo",
@@ -1666,7 +2249,7 @@
         },
         {
           "disabled": false,
-          "document": "类型。\n取值范围：\n\n- ROW：行权限\n- COLUMN：列权限\n\n默认值：ROW\n示例值：ROW",
+          "document": "<p>类型</p><p>枚举值：</p><ul><li>ROW： 行权限</li><li>COLUMN： 列权限</li></ul><p>默认值：ROW</p>",
           "example": "ROW",
           "member": "string",
           "name": "Type",
@@ -1675,7 +2258,7 @@
         },
         {
           "disabled": false,
-          "document": "开启状态。\n取值范围：\n\n- Open：开启\n- Close：关闭\n\n默认值：Close\n示例值：Close",
+          "document": "<p>开启状态</p><p>枚举值：</p><ul><li>Open： 开启</li><li>Close： 关闭</li></ul><p>默认值：Close</p>",
           "example": "Close",
           "member": "string",
           "name": "OpenStatus",
@@ -1684,7 +2267,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id",
+          "document": "<p>项目id</p>",
           "example": "1",
           "member": "int64",
           "name": "ProjectId",
@@ -1693,7 +2276,7 @@
         },
         {
           "disabled": false,
-          "document": "行列权限配置",
+          "document": "<p>行列权限配置</p>",
           "example": "无",
           "member": "RowColumnConfig",
           "name": "RowColumnConfigList",
@@ -1718,7 +2301,7 @@
         },
         {
           "disabled": false,
-          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Msg",
@@ -1728,7 +2311,7 @@
         },
         {
           "disabled": false,
-          "document": "112\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>112</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Extra",
@@ -1738,7 +2321,7 @@
         },
         {
           "disabled": false,
-          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Data",
@@ -1760,7 +2343,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目名称",
+          "document": "<p>项目名称</p>",
           "example": "1",
           "member": "string",
           "name": "Name",
@@ -1769,7 +2352,7 @@
         },
         {
           "disabled": false,
-          "document": "logo底色",
+          "document": "<p>logo底色</p>",
           "example": "1",
           "member": "string",
           "name": "ColorCode",
@@ -1778,7 +2361,7 @@
         },
         {
           "disabled": false,
-          "document": "项目Logo",
+          "document": "<p>项目Logo</p>",
           "example": "1",
           "member": "string",
           "name": "Logo",
@@ -1787,7 +2370,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "1",
           "member": "string",
           "name": "Mark",
@@ -1796,7 +2379,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许用户申请",
+          "document": "<p>是否允许用户申请</p>",
           "example": "false",
           "member": "bool",
           "name": "IsApply",
@@ -1805,8 +2388,8 @@
         },
         {
           "disabled": false,
-          "document": "默认看板\n取值范围：\n1：项目看板 \n2：我的看板",
-          "example": "1(1:项目看板  2：我的看板)",
+          "document": "<p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>",
+          "example": "1",
           "member": "int64",
           "name": "DefaultPanelType",
           "required": false,
@@ -1814,7 +2397,7 @@
         },
         {
           "disabled": false,
-          "document": "管理平台",
+          "document": "<p>管理平台</p>",
           "example": "saas",
           "member": "string",
           "name": "ManagePlatform",
@@ -1839,7 +2422,7 @@
         },
         {
           "disabled": false,
-          "document": "额外数据",
+          "document": "<p>额外数据</p>",
           "example": "1",
           "member": "string",
           "name": "Extra",
@@ -1849,8 +2432,8 @@
         },
         {
           "disabled": false,
-          "document": "数据",
-          "example": "11011",
+          "document": "<p>数据</p>",
+          "example": "无",
           "member": "Data",
           "name": "Data",
           "output_required": true,
@@ -1859,7 +2442,7 @@
         },
         {
           "disabled": false,
-          "document": "返回信息",
+          "document": "<p>返回信息</p>",
           "example": "成功",
           "member": "string",
           "name": "Msg",
@@ -1875,6 +2458,116 @@
         }
       ],
       "type": "object"
+    },
+    "CreateTagTableRequest": {
+      "document": "CreateTagTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签表名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签表关联的项目id",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoImportProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签表关联的数据表id",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoImportTableId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "uin对应字段",
+          "example": "无",
+          "member": "string",
+          "name": "AutoImportUinField",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTagTableResponse": {
+      "document": "CreateTagTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreateTagTableVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Extra",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTagTableVO": {
+      "document": "创建标签表出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签表id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateUserGroupMemberRequest": {
       "document": "CreateUserGroupMember请求参数结构体",
@@ -2060,7 +2753,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1",
           "member": "int64",
           "name": "ProjectId",
@@ -2069,7 +2762,7 @@
         },
         {
           "disabled": false,
-          "document": "角色ID列表",
+          "document": "<p>角色ID列表</p>",
           "example": "[1101,1102]",
           "member": "int64",
           "name": "RoleIdList",
@@ -2078,7 +2771,7 @@
         },
         {
           "disabled": true,
-          "document": "用户列表（废弃）",
+          "document": "<p>用户列表（废弃）</p>",
           "example": "无",
           "member": "UserIdAndUserName",
           "name": "UserList",
@@ -2087,7 +2780,7 @@
         },
         {
           "disabled": false,
-          "document": "用户列表（新）",
+          "document": "<p>用户列表（新）</p>",
           "example": "无",
           "member": "UserInfo",
           "name": "UserInfoList",
@@ -2112,7 +2805,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>扩展</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "返回为空",
           "member": "string",
           "name": "Extra",
@@ -2122,7 +2815,7 @@
         },
         {
           "disabled": false,
-          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataId",
           "name": "Data",
@@ -2132,7 +2825,7 @@
         },
         {
           "disabled": false,
-          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "Msg",
@@ -2885,7 +3578,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -2894,7 +3587,7 @@
         },
         {
           "disabled": false,
-          "document": "随机数",
+          "document": "<p>随机数</p>",
           "example": "1",
           "member": "string",
           "name": "Seed",
@@ -2903,8 +3596,8 @@
         },
         {
           "disabled": false,
-          "document": "默认看板\n取值范围：\n1：项目看板 \n2：我的看板",
-          "example": "page",
+          "document": "<p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>",
+          "example": "1",
           "member": "int64",
           "name": "DefaultPanelType",
           "required": false,
@@ -2928,7 +3621,7 @@
         },
         {
           "disabled": false,
-          "document": "”“",
+          "document": "<p>”“</p>",
           "example": "额外参数",
           "member": "string",
           "name": "Extra",
@@ -2938,7 +3631,7 @@
         },
         {
           "disabled": false,
-          "document": "\"\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>&quot;&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Data",
@@ -2948,7 +3641,7 @@
         },
         {
           "disabled": false,
-          "document": "\"\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>&quot;&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "Msg",
@@ -3614,7 +4307,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页数",
+          "document": "<p>页数</p>",
           "example": "1",
           "member": "int64",
           "name": "TableId",
@@ -3623,7 +4316,7 @@
         },
         {
           "disabled": false,
-          "document": "模式。\n取值范围：\n\n- ALL：全部\n- Specify：指定\n- TAG：标签\n\n默认值：ALL\n示例值：ALL",
+          "document": "<p>模式</p><p>枚举值：</p><ul><li>ALL： 全部</li><li>Specify： 指定</li><li>TAG： 标签</li></ul><p>默认值：ALL</p>",
           "example": "ALL",
           "member": "string",
           "name": "Mode",
@@ -3632,7 +4325,7 @@
         },
         {
           "disabled": false,
-          "document": "角色类型。\n取值范围：\n\n- ROLES：按角色\n- Others：其它\n\n默认值：Others\n示例值：Others",
+          "document": "<p>角色类型</p><p>枚举值：</p><ul><li>ROLES： 按角色</li><li>Others： 其它</li></ul><p>默认值：Others</p>",
           "example": "Others",
           "member": "string",
           "name": "RoleType",
@@ -3641,7 +4334,7 @@
         },
         {
           "disabled": false,
-          "document": "所有页码",
+          "document": "<p>所有页码</p>",
           "example": "1",
           "member": "int64",
           "name": "RoleId",
@@ -3650,7 +4343,7 @@
         },
         {
           "disabled": false,
-          "document": "类型。\n取值范围：\n\n- ROW：行权限\n- COLUMN：列权限\n\n默认值：ROW\n示例值：ROW",
+          "document": "<p>类型</p><p>枚举值：</p><ul><li>ROW： 行权限</li><li>COLUMN： 列权限</li></ul><p>默认值：ROW</p>",
           "example": "ROW",
           "member": "string",
           "name": "Type",
@@ -3659,7 +4352,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id",
+          "document": "<p>项目id</p>",
           "example": "125",
           "member": "int64",
           "name": "ProjectId",
@@ -3684,7 +4377,7 @@
         },
         {
           "disabled": false,
-          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Msg",
@@ -3694,7 +4387,7 @@
         },
         {
           "disabled": false,
-          "document": "112\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>112</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Extra",
@@ -3704,7 +4397,7 @@
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>无</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RankInfo",
           "name": "Data",
@@ -3820,7 +4513,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页数",
+          "document": "<p>页数</p>",
           "example": "1",
           "member": "int64",
           "name": "TableId",
@@ -3829,7 +4522,7 @@
         },
         {
           "disabled": false,
-          "document": "类型。\n取值范围：\n\n- ROW：行权限\n- COLUMN：列权限\n\n默认值：ROW\n示例值：ROW",
+          "document": "<p>类型</p><p>枚举值：</p><ul><li>ROW： 行权限</li><li>COLUMN： 列权限</li></ul><p>默认值：ROW</p>",
           "example": "ROW",
           "member": "string",
           "name": "Type",
@@ -3838,7 +4531,7 @@
         },
         {
           "disabled": false,
-          "document": "1",
+          "document": "<p>1</p>",
           "example": "1",
           "member": "string",
           "name": "ProjectId",
@@ -3863,7 +4556,7 @@
         },
         {
           "disabled": false,
-          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Msg",
@@ -3873,7 +4566,7 @@
         },
         {
           "disabled": false,
-          "document": "112\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>112</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Extra",
@@ -3883,7 +4576,7 @@
         },
         {
           "disabled": false,
-          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RowColumnStatus",
           "name": "Data",
@@ -3905,7 +4598,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目Id",
+          "document": "<p>项目Id</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -3914,7 +4607,7 @@
         },
         {
           "disabled": false,
-          "document": "默认看板\n取值范围：\n1：项目看板 \n2：我的看板",
+          "document": "<p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "DefaultPanelType",
@@ -3939,7 +4632,7 @@
         },
         {
           "disabled": false,
-          "document": "\"\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>&quot;&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"ext\"",
           "member": "string",
           "name": "Extra",
@@ -3949,7 +4642,7 @@
         },
         {
           "disabled": false,
-          "document": "\"\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>&quot;&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "Msg",
@@ -3959,8 +4652,8 @@
         },
         {
           "disabled": false,
-          "document": "项目详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"project\": \"\"}",
+          "document": "<p>项目详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Project",
           "name": "Data",
           "output_required": true,
@@ -4253,6 +4946,163 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSourceFieldListRequest": {
+      "document": "DescribeSourceFieldList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源Id",
+          "example": "1",
+          "member": "int64",
+          "name": "DataSourceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "表名",
+          "example": "table",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "sql内容",
+          "example": "table",
+          "member": "string",
+          "name": "Sql",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否是异步",
+          "example": "true",
+          "member": "bool",
+          "name": "AsyncRequest",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "异步事务id",
+          "example": "1",
+          "member": "string",
+          "name": "TranId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "11",
+          "example": "无",
+          "member": "ParamCreateDTO",
+          "name": "ParamList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "DLC扩展参数",
+          "example": "{\"id\":1}",
+          "member": "string",
+          "name": "DlcExtInfo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询数据库",
+          "example": "1",
+          "member": "string",
+          "name": "QueryDbData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据表 Id",
+          "example": "1",
+          "member": "string",
+          "name": "TableId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "后端提供字典：数据表类型，1、数据库建表，2、SQL建表，3、Excel上传，4、API接入，5、腾讯文档，6、云数据库，7、手工输入，8、关联查询",
+          "example": "1",
+          "member": "uint64",
+          "name": "TableType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSourceFieldListResponse": {
+      "document": "DescribeSourceFieldList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"msg\":\"额外信息\"}",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表中字段的列表",
+          "example": "无",
+          "member": "TableColumnListData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4619,7 +5469,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1101",
           "member": "int64",
           "name": "ProjectId",
@@ -4628,7 +5478,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "<p>无</p>",
           "example": "false",
           "member": "bool",
           "name": "AllPage",
@@ -4637,7 +5487,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "<p>无</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNo",
@@ -4646,7 +5496,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "<p>无</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -4655,7 +5505,7 @@
         },
         {
           "disabled": false,
-          "document": "是否过滤掉企业管理员",
+          "document": "<p>是否过滤掉企业管理员</p>",
           "example": "false",
           "member": "bool",
           "name": "IsFilterPerAuthUser",
@@ -4664,7 +5514,7 @@
         },
         {
           "disabled": false,
-          "document": "是否过滤掉当前用户",
+          "document": "<p>是否过滤掉当前用户</p>",
           "example": "false",
           "member": "bool",
           "name": "IsFilterCurrentUser",
@@ -4673,7 +5523,7 @@
         },
         {
           "disabled": false,
-          "document": "关键字",
+          "document": "<p>关键字</p>",
           "example": "zhangsan",
           "member": "string",
           "name": "Keyword",
@@ -4698,7 +5548,7 @@
         },
         {
           "disabled": false,
-          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CorpUserListData",
           "name": "Data",
@@ -4708,7 +5558,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>扩展</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"xx\":\"sd\"}",
           "member": "string",
           "name": "Extra",
@@ -4718,7 +5568,7 @@
         },
         {
           "disabled": false,
-          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "Msg",
@@ -4986,6 +5836,172 @@
       ],
       "type": "object"
     },
+    "EditCorpTagRequest": {
+      "document": "EditCorpTag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签ID",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导入标签的模式(manual/auto)",
+          "example": "无",
+          "member": "string",
+          "name": "ImportType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动导入标签表的id",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoImportTagTableId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动导入标签的关联字段",
+          "example": "无",
+          "member": "string",
+          "name": "AutoImportField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否异步请求",
+          "example": "无",
+          "member": "bool",
+          "name": "AsyncRequest",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "自动导入标签表的表名",
+          "example": "无",
+          "member": "string",
+          "name": "AutoImportTagTableName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事务id",
+          "example": "无",
+          "member": "string",
+          "name": "TranId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EditCorpTagResponse": {
+      "document": "EditCorpTag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EditTagVO",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EditTagVO": {
+      "document": "同步标签数据出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TranId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TranStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "EmbedTokenInfo": {
       "document": "报表嵌出数据结构-强鉴权",
       "members": [
@@ -5192,6 +6208,62 @@
       ],
       "usage": "out"
     },
+    "EmptyValue": {
+      "document": "空值展示样式配置值结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空值展示样式类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "custom",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "空值展示样式类型对应具体的展示字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "Custom",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EmptyValueConfig": {
+      "document": "空值展示样式配置结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数值类字段空值样式配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EmptyValue",
+          "name": "Number",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字符串字段空置样式配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EmptyValue",
+          "name": "String",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ErrorInfo": {
       "document": "自定义错误信息对象",
       "members": [
@@ -5379,12 +6451,116 @@
       ],
       "type": "object"
     },
+    "FieldRemarkDTO": {
+      "document": "字段备注信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "FieldName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段备注列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"id1\",\"id2\"]",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FrequencyConfig": {
+      "document": "定时任务执行频率配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Frequency",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Dates",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Time",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "间隔时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "IntervalTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1:SECOND,2:MINUTE,3:HOUR,4:DAY\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "IntervalTimeUnit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小时列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Hours",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分钟列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Minute",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "IdDTO": {
       "document": "仅包含id的对象",
       "members": [
         {
           "disabled": false,
-          "document": "请求id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -5395,7 +6571,7 @@
         },
         {
           "disabled": false,
-          "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AccessKey***AccessKey",
           "member": "string",
           "name": "AccessKey",
@@ -5406,7 +6582,7 @@
         },
         {
           "disabled": false,
-          "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "ProjectId",
@@ -5417,7 +6593,7 @@
         },
         {
           "disabled": false,
-          "document": "事务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事务id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TranId***TranId",
           "member": "string",
           "name": "TranId",
@@ -5428,13 +6604,194 @@
         },
         {
           "disabled": false,
-          "document": "事务状态\n取值范围：\n1: 处理中\n2: 处理成功\n3: 处理失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事务状态</p><p>枚举值：</p><ul><li>1： 处理中</li><li>2： 处理成功</li><li>3： 处理失败</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TranStatus",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "JoinRelation": {
+      "document": "多表关联原始表之间的关联信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表关联关系id,前端使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "JoinId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原表节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "SourceTableNodeId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标表节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "b",
+          "member": "string",
+          "name": "TargetTableNodeId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多表关联的关联类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "inner",
+          "member": "string",
+          "name": "JoinType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多表关联的字段列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "JoinRelationField",
+          "name": "Fields",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "JoinRelationField": {
+      "document": "多表关联原始表之间使用的关联字段信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段关联关系id,前端使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "FieldJoinId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原表字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "TableField",
+          "name": "SourceField",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标表字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "TableField",
+          "name": "TargetField",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "JoinSourceTable": {
+      "document": "多表关联原始表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1:数据源原表,2:本地表,3:Excel表,4:API表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TableNodeType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始表节点Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "TableNodeId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "b",
+          "member": "string",
+          "name": "ParentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "非必填, 数据源原表没有ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TableId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "必填,数据源原表用原始表名, 其他类型用BI的逻辑表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "t_user",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始表需要展示的字段列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "TableField",
+          "name": "Fields",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DatasourceId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "非必填,前端展示的数据源别名,excel建表需要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "TableAlias",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -5521,7 +6878,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "后端提供字典：域类型，1、腾讯云，2、本地",
+          "document": "<p>后端提供字典：域类型，1、腾讯云，2、本地</p>",
           "example": "1",
           "member": "string",
           "name": "ServiceType",
@@ -5530,7 +6887,7 @@
         },
         {
           "disabled": false,
-          "document": "驱动\n取值范围：\nMYSQL：MySQL数据库\nPRESTO：PRESTO数据库\nPOSTGRE：PostgreSQL数据库\nDLC：DLC数据库\nMSSQL：微软SQL Server数据库",
+          "document": "<p>驱动</p><p>枚举值：</p><ul><li>MYSQL： MySQL数据库</li><li>PRESTO： PRESTO数据库</li><li>POSTGRE： PostgreSQL数据库</li><li>DLC： DLC数据库</li><li>MSSQL： 微软SQL Server数据库</li></ul>",
           "example": "1",
           "member": "string",
           "name": "DbType",
@@ -5539,7 +6896,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库编码",
+          "document": "<p>数据库编码</p>",
           "example": "1",
           "member": "string",
           "name": "Charset",
@@ -5548,7 +6905,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "1",
           "member": "string",
           "name": "DbUser",
@@ -5557,7 +6914,7 @@
         },
         {
           "disabled": false,
-          "document": "密码",
+          "document": "<p>密码</p>",
           "example": "1",
           "member": "string",
           "name": "DbPwd",
@@ -5566,7 +6923,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称",
+          "document": "<p>数据库名称</p>",
           "example": "1",
           "member": "string",
           "name": "DbName",
@@ -5575,7 +6932,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库别名",
+          "document": "<p>数据库别名</p>",
           "example": "1",
           "member": "string",
           "name": "SourceName",
@@ -5584,7 +6941,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1",
           "member": "string",
           "name": "ProjectId",
@@ -5593,7 +6950,7 @@
         },
         {
           "disabled": false,
-          "document": "住键",
+          "document": "<p>住键</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -5602,7 +6959,7 @@
         },
         {
           "disabled": false,
-          "document": "公有云内网ip",
+          "document": "<p>公有云内网ip</p>",
           "example": "1",
           "member": "string",
           "name": "Vip",
@@ -5611,7 +6968,7 @@
         },
         {
           "disabled": false,
-          "document": "公有云内网端口",
+          "document": "<p>公有云内网端口</p>",
           "example": "1",
           "member": "string",
           "name": "Vport",
@@ -5620,7 +6977,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc标识",
+          "document": "<p>vpc标识</p>",
           "example": "1",
           "member": "string",
           "name": "VpcId",
@@ -5629,7 +6986,7 @@
         },
         {
           "disabled": false,
-          "document": "统一vpc标识",
+          "document": "<p>统一vpc标识</p>",
           "example": "1",
           "member": "string",
           "name": "UniqVpcId",
@@ -5638,7 +6995,7 @@
         },
         {
           "disabled": false,
-          "document": "区域标识（gz,bj)",
+          "document": "<p>区域标识（gz,bj)</p>",
           "example": "1",
           "member": "string",
           "name": "RegionId",
@@ -5647,7 +7004,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展参数",
+          "document": "<p>扩展参数</p>",
           "example": "1",
           "member": "string",
           "name": "ExtraParam",
@@ -5656,7 +7013,7 @@
         },
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "1",
           "member": "string",
           "name": "InstanceId",
@@ -5665,7 +7022,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源产品名",
+          "document": "<p>数据源产品名</p>",
           "example": "1",
           "member": "string",
           "name": "ProdDbName",
@@ -5674,7 +7031,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方数据源标识",
+          "document": "<p>第三方数据源标识</p>",
           "example": "21021",
           "member": "string",
           "name": "DataOrigin",
@@ -5683,7 +7040,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方项目id",
+          "document": "<p>第三方项目id</p>",
           "example": "1311",
           "member": "string",
           "name": "DataOriginProjectId",
@@ -5692,7 +7049,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方数据源id",
+          "document": "<p>第三方数据源id</p>",
           "example": "213313",
           "member": "string",
           "name": "DataOriginDatasourceId",
@@ -5701,7 +7058,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "46",
           "member": "string",
           "name": "ClusterId",
@@ -5710,7 +7067,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库schema",
+          "document": "<p>数据库schema</p>",
           "example": "DB2INST1",
           "member": "string",
           "name": "Schema",
@@ -5719,7 +7076,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库版本",
+          "document": "<p>数据库版本</p>",
           "example": "11.5",
           "member": "string",
           "name": "DbVersion",
@@ -5744,7 +7101,7 @@
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>无</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Data",
@@ -5754,7 +7111,7 @@
         },
         {
           "disabled": false,
-          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Extra",
@@ -5764,7 +7121,7 @@
         },
         {
           "disabled": false,
-          "document": "提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>提示</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Msg",
@@ -5786,7 +7143,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "HOST",
+          "document": "<p>HOST</p>",
           "example": "1",
           "member": "string",
           "name": "DbHost",
@@ -5795,7 +7152,7 @@
         },
         {
           "disabled": false,
-          "document": "端口",
+          "document": "<p>端口</p>",
           "example": "1",
           "member": "uint64",
           "name": "DbPort",
@@ -5804,7 +7161,7 @@
         },
         {
           "disabled": false,
-          "document": "后端提供字典：域类型，1、腾讯云，2、本地",
+          "document": "<p>后端提供字典：域类型，1、腾讯云，2、本地</p>",
           "example": "1",
           "member": "string",
           "name": "ServiceType",
@@ -5813,7 +7170,7 @@
         },
         {
           "disabled": false,
-          "document": "驱动\n取值范围：\nMYSQL：MySQL数据库\nPRESTO：PRESTO数据库\nPOSTGRE：PostgreSQL数据库\nDLC：DLC数据库\nMSSQL：微软SQL Server数据库",
+          "document": "<p>驱动</p><p>枚举值：</p><ul><li>MYSQL： MySQL数据库</li><li>PRESTO： PRESTO数据库</li><li>POSTGRE： PostgreSQL数据库</li><li>DLC： DLC数据库</li><li>MSSQL： 微软SQL Server数据库</li></ul>",
           "example": "1",
           "member": "string",
           "name": "DbType",
@@ -5822,7 +7179,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库编码",
+          "document": "<p>数据库编码</p>",
           "example": "1",
           "member": "string",
           "name": "Charset",
@@ -5831,7 +7188,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "1",
           "member": "string",
           "name": "DbUser",
@@ -5840,7 +7197,7 @@
         },
         {
           "disabled": false,
-          "document": "密码",
+          "document": "<p>密码</p>",
           "example": "1",
           "member": "string",
           "name": "DbPwd",
@@ -5849,7 +7206,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称",
+          "document": "<p>数据库名称</p>",
           "example": "1",
           "member": "string",
           "name": "DbName",
@@ -5858,7 +7215,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库别名",
+          "document": "<p>数据库别名</p>",
           "example": "1",
           "member": "string",
           "name": "SourceName",
@@ -5867,7 +7224,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源id",
+          "document": "<p>数据源id</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -5876,7 +7233,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "ProjectId",
@@ -5885,7 +7242,7 @@
         },
         {
           "disabled": false,
-          "document": "catalog值",
+          "document": "<p>catalog值</p>",
           "example": "presto catalog",
           "member": "string",
           "name": "Catalog",
@@ -5894,7 +7251,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方数据源标识",
+          "document": "<p>第三方数据源标识</p>",
           "example": "ssa",
           "member": "string",
           "name": "DataOrigin",
@@ -5903,7 +7260,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方项目id",
+          "document": "<p>第三方项目id</p>",
           "example": "1021",
           "member": "string",
           "name": "DataOriginProjectId",
@@ -5912,7 +7269,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方数据源id",
+          "document": "<p>第三方数据源id</p>",
           "example": "2129",
           "member": "string",
           "name": "DataOriginDatasourceId",
@@ -5921,7 +7278,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展参数",
+          "document": "<p>扩展参数</p>",
           "example": "{\"xx\":\"wq\"}",
           "member": "string",
           "name": "ExtraParam",
@@ -5930,7 +7287,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云私有网络统一标识",
+          "document": "<p>腾讯云私有网络统一标识</p>",
           "example": "1",
           "member": "string",
           "name": "UniqVpcId",
@@ -5939,7 +7296,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ip",
+          "document": "<p>私有网络ip</p>",
           "example": "1",
           "member": "string",
           "name": "Vip",
@@ -5948,7 +7305,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络端口",
+          "document": "<p>私有网络端口</p>",
           "example": "920",
           "member": "string",
           "name": "Vport",
@@ -5957,7 +7314,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云私有网络标识",
+          "document": "<p>腾讯云私有网络标识</p>",
           "example": "1",
           "member": "string",
           "name": "VpcId",
@@ -5966,7 +7323,7 @@
         },
         {
           "disabled": false,
-          "document": "开启vpc\t",
+          "document": "<p>开启vpc</p>",
           "example": "true",
           "member": "bool",
           "name": "UseVPC",
@@ -5975,8 +7332,8 @@
         },
         {
           "disabled": false,
-          "document": "地域",
-          "example": "gz\t",
+          "document": "<p>地域</p>",
+          "example": "gz",
           "member": "string",
           "name": "RegionId",
           "required": false,
@@ -5984,7 +7341,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库schema",
+          "document": "<p>数据库schema</p>",
           "example": "DB2INST1",
           "member": "string",
           "name": "Schema",
@@ -5993,7 +7350,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库版本",
+          "document": "<p>数据库版本</p>",
           "example": "11.5",
           "member": "string",
           "name": "DbVersion",
@@ -6018,7 +7375,7 @@
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>无</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Data",
@@ -6028,7 +7385,7 @@
         },
         {
           "disabled": false,
-          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Extra",
@@ -6038,7 +7395,7 @@
         },
         {
           "disabled": false,
-          "document": "提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>提示</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "Msg",
@@ -6060,7 +7417,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目Id",
+          "document": "<p>项目Id</p>",
           "example": "50",
           "member": "uint64",
           "name": "Id",
@@ -6069,7 +7426,7 @@
         },
         {
           "disabled": false,
-          "document": "名字",
+          "document": "<p>名字</p>",
           "example": "云数据源",
           "member": "string",
           "name": "Name",
@@ -6078,7 +7435,7 @@
         },
         {
           "disabled": false,
-          "document": "颜色值",
+          "document": "<p>颜色值</p>",
           "example": "#ffffff",
           "member": "string",
           "name": "ColorCode",
@@ -6087,7 +7444,7 @@
         },
         {
           "disabled": false,
-          "document": "图标",
+          "document": "<p>图标</p>",
           "example": "log.png",
           "member": "string",
           "name": "Logo",
@@ -6096,7 +7453,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "备注",
           "member": "string",
           "name": "Mark",
@@ -6105,7 +7462,7 @@
         },
         {
           "disabled": false,
-          "document": "可申请",
+          "document": "<p>可申请</p>",
           "example": "false",
           "member": "bool",
           "name": "IsApply",
@@ -6114,7 +7471,7 @@
         },
         {
           "disabled": false,
-          "document": "种子",
+          "document": "<p>种子</p>",
           "example": "\"12355\"",
           "member": "string",
           "name": "Seed",
@@ -6123,7 +7480,7 @@
         },
         {
           "disabled": false,
-          "document": "默认看板\n取值范围：\n1：项目看板 \n2：我的看板",
+          "document": "<p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "DefaultPanelType",
@@ -6132,7 +7489,7 @@
         },
         {
           "disabled": false,
-          "document": "2",
+          "document": "<p>2</p>",
           "example": "ALL",
           "member": "string",
           "name": "PanelScope",
@@ -6141,7 +7498,7 @@
         },
         {
           "disabled": false,
-          "document": "项目管理平台",
+          "document": "<p>项目管理平台</p>",
           "example": "saas",
           "member": "string",
           "name": "ManagePlatform",
@@ -6166,7 +7523,7 @@
         },
         {
           "disabled": false,
-          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"xa\":\"31\"}",
           "member": "string",
           "name": "Extra",
@@ -6176,7 +7533,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>返回数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "返回为null",
           "member": "string",
           "name": "Data",
@@ -6186,7 +7543,7 @@
         },
         {
           "disabled": false,
-          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "Msg",
@@ -6408,6 +7765,228 @@
         }
       ],
       "type": "object"
+    },
+    "ModifyResourceUserRequest": {
+      "document": "ModifyResourceUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目Id",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "1",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源",
+          "example": "无",
+          "member": "UserResourceDTO",
+          "name": "Resource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "实体类",
+          "example": "[1]",
+          "member": "int64",
+          "name": "EntityIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "page",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceUserResponse": {
+      "document": "ModifyResourceUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"xsa\":\"sa\"}",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "int64",
+          "name": "Data",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTagTableRequest": {
+      "document": "ModifyTagTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签表名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签表关联的项目id",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoImportProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签表关联的数据表id",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoImportTableId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "uin对应字段",
+          "example": "无",
+          "member": "string",
+          "name": "AutoImportUinField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签表id",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTagTableResponse": {
+      "document": "ModifyTagTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModifyTagTableVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Extra",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTagTableVO": {
+      "document": "创建标签表出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签表id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ModifyUserDetailInfoRequest": {
       "document": "ModifyUserDetailInfo请求参数结构体",
@@ -6911,6 +8490,82 @@
       ],
       "type": "object"
     },
+    "ModifyUserTagRequest": {
+      "document": "ModifyUserTag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签信息",
+          "example": "无",
+          "member": "UserTagInfo",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserTagResponse": {
+      "document": "ModifyUserTag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PageScreenListVO": {
       "document": "页面截图列表",
       "members": [
@@ -6983,12 +8638,84 @@
       ],
       "usage": "out"
     },
+    "ParamCreateDTO": {
+      "document": "1",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ParamName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DefaultValue",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数类型，string/datetime/number\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "string/datetime/number",
+          "member": "string",
+          "name": "ParamType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "格式化类型，yyyy-MM-dd HH:mm:ss.SSS（只有时间必填）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yyyy-MM-dd HH:mm:ss.SSS（只有时间必填）",
+          "member": "string",
+          "name": "FormatRule",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "复杂类型，格式化的另一种表达，例如YYYY-MM\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "可不填",
+          "member": "string",
+          "name": "ComplexType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作用域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "PermissionComponent": {
       "document": "商业版本权限单元",
       "members": [
         {
           "disabled": false,
-          "document": "权限值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>权限值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bi_datasource_read",
           "member": "string",
           "name": "ModuleId",
@@ -6999,7 +8726,7 @@
         },
         {
           "disabled": false,
-          "document": "可用性。\n取值范围：\n\n- usable：可用\n- visible：可见\n- disabled：不可用\n- hidden：隐藏\n\n默认值：disabled\n示例值：disabled\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用性</p><p>枚举值：</p><ul><li>usable： 可用</li><li>visible： 可见</li><li>disabled： 不可用</li><li>hidden： 隐藏</li></ul><p>默认值：disabled</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "disabled",
           "member": "string",
           "name": "IncludeType",
@@ -7010,7 +8737,7 @@
         },
         {
           "disabled": false,
-          "document": "目标升级版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标升级版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "v1",
           "member": "string",
           "name": "UpgradeVersionType",
@@ -7021,7 +8748,7 @@
         },
         {
           "disabled": false,
-          "document": "补充信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>补充信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "请升级到基础版或者专业版",
           "member": "string",
           "name": "Tips",
@@ -7032,7 +8759,7 @@
         },
         {
           "disabled": false,
-          "document": "补充信息的key值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>补充信息的key值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "basic",
           "member": "string",
           "name": "TipsKey",
@@ -7389,7 +9116,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>配置名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bi_datasource_read",
           "member": "string",
           "name": "ModuleId",
@@ -7400,7 +9127,7 @@
         },
         {
           "disabled": false,
-          "document": "配置方式。\n取值范围：\n\n- usable：可用\n- visible：可见\n- disabled：不可用\n- hidden：隐藏\n\n默认值：disabled\n示例值：disabled\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>配置方式</p><p>枚举值：</p><ul><li>usable： 可用</li><li>visible： 可见</li><li>disabled： 不可用</li><li>hidden： 隐藏</li></ul><p>默认值：disabled</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "disabled",
           "member": "string",
           "name": "IncludeType",
@@ -7411,7 +9138,7 @@
         },
         {
           "disabled": false,
-          "document": "额外参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>额外参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"xx\":\"\"}",
           "member": "string",
           "name": "Params",
@@ -8113,6 +9840,537 @@
       ],
       "usage": "both"
     },
+    "TableColumn": {
+      "document": "表的列数据抽象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "DbName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列的别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "AliasName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列的类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NUMBER",
+          "member": "string",
+          "name": "DbType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "段类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "number",
+          "member": "string",
+          "name": "FieldType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "Mark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "excel名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "ExcelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联的字典表Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DictId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联的字典表表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "DictName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多表关联新增字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "b",
+          "member": "string",
+          "name": "TableNodeId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段所属的表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo",
+          "member": "string",
+          "name": "TableName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户设置的带格式的目标复杂格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NUMBER",
+          "member": "string",
+          "name": "FieldComplexType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "格式规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "格式规则",
+          "member": "string",
+          "name": "FormatRule",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据字段是否过滤空值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsFilter",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算字段类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "agg",
+          "member": "string",
+          "name": "CalcType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算字段的公式内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "agg",
+          "member": "string",
+          "name": "CalcFormula",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算字段的中文公式内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "聚合",
+          "member": "string",
+          "name": "CalcDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Api数据源json路径名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "json.json2",
+          "member": "string",
+          "name": "JsonPathName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地理类型标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "province",
+          "member": "string",
+          "name": "Granularity",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义地图Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "GeoJsonId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "空值展示样式配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EmptyValueConfig",
+          "name": "EmptyValueConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原列名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "DbFieldName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否是复制字段操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCopyOperation",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否从普通字段复制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCopyFromNormal",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TableColumnListData": {
+      "document": "表的全部列名数据列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表中的列的列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TableColumn",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步事务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TranId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步事务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TranStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TableField": {
+      "document": "表字段描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "db里的字段column名",
+          "example": "1",
+          "member": "string",
+          "name": "DbName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "bi展示名",
+          "example": "1",
+          "member": "string",
+          "name": "AliasName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "db里的字段类型",
+          "example": "1",
+          "member": "string",
+          "name": "DbType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "BI归类后的抽象字段类型,比如字符串,数字,时间",
+          "example": "1",
+          "member": "string",
+          "name": "FieldType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段组合计算公式后生成的复杂明细类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "FieldComplexType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Mark",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段计算公式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "FormatRule",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据字段是否过滤空值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsFilter",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算字段类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BASIC",
+          "member": "string",
+          "name": "CalcType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算字段的公式内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[A]+[B]",
+          "member": "string",
+          "name": "CalcFormula",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算字段的中文公式内容, 前端展示使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[分销额]+[利息]",
+          "member": "string",
+          "name": "CalcDesc",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联字典表id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DictId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联字典表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "DictName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "非必填, 多表关联新增字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "b",
+          "member": "string",
+          "name": "TableNodeId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "excel\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "excel表",
+          "member": "string",
+          "name": "ExcelName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "非必填,多表关联新增字段,字段所属的表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo",
+          "member": "string",
+          "name": "TableName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "api数据源路径名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "json",
+          "member": "string",
+          "name": "JsonPathName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地理字段标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "province",
+          "member": "string",
+          "name": "Granularity",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地图id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "GeoJsonId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "空值展示样式配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EmptyValueConfig",
+          "name": "EmptyValueConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原列名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "DbFieldName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否是复制字段操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCopyOperation",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否从普通字段复制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCopyFromNormal",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "UserGroupDTO": {
       "document": "用户组",
       "members": [
@@ -8649,7 +10907,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户ID",
+          "document": "<p>用户ID</p>",
           "example": "1101",
           "member": "string",
           "name": "UserId",
@@ -8660,7 +10918,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "zhangsan",
           "member": "string",
           "name": "UserName",
@@ -8671,7 +10929,7 @@
         },
         {
           "disabled": false,
-          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>企业ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10201",
           "member": "string",
           "name": "CorpId",
@@ -8682,7 +10940,7 @@
         },
         {
           "disabled": false,
-          "document": "电子邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>电子邮箱</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123***@qq.com",
           "member": "string",
           "name": "Email",
@@ -8693,8 +10951,8 @@
         },
         {
           "disabled": false,
-          "document": "最后一次登录时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "zhangsan",
+          "document": "<p>最后一次登录时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-06-11T11:28:44+08:00",
           "member": "datetime_iso",
           "name": "LastLogin",
           "output_required": true,
@@ -8704,7 +10962,7 @@
         },
         {
           "disabled": false,
-          "document": "用户状态。\n取值范围：\n\n- 1：启用\n- 0：停用\n\n默认值：1\n示例值：1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户状态</p><p>枚举值：</p><ul><li>1： 启用</li><li>0： 停用</li></ul><p>默认值：1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -8715,8 +10973,8 @@
         },
         {
           "disabled": false,
-          "document": "首次登录是否修改密码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "zhangsan",
+          "document": "<p>首次登录是否修改密码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "FirstModify",
           "output_required": true,
@@ -8726,7 +10984,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>手机号码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "+861****797",
           "member": "string",
           "name": "PhoneNumber",
@@ -8737,7 +10995,7 @@
         },
         {
           "disabled": false,
-          "document": "手机区号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>手机区号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bj",
           "member": "string",
           "name": "AreaCode",
@@ -8748,7 +11006,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zhangsan",
           "member": "string",
           "name": "CreatedUser",
@@ -8759,8 +11017,8 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2023-10-12 15:12:56",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-06-11T11:28:44+08:00",
           "member": "datetime_iso",
           "name": "CreatedAt",
           "output_required": true,
@@ -8770,7 +11028,7 @@
         },
         {
           "disabled": false,
-          "document": "修改人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>修改人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zhangsan",
           "member": "string",
           "name": "UpdatedUser",
@@ -8781,8 +11039,8 @@
         },
         {
           "disabled": false,
-          "document": "更改时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2023-10-12 15:12:56",
+          "document": "<p>更改时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-06-11T11:28:44+08:00",
           "member": "datetime_iso",
           "name": "UpdatedAt",
           "output_required": true,
@@ -8792,7 +11050,7 @@
         },
         {
           "disabled": false,
-          "document": "系统全局角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>系统全局角色</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zhangsan",
           "member": "string",
           "name": "GlobalUserName",
@@ -8803,7 +11061,7 @@
         },
         {
           "disabled": false,
-          "document": "系统全局角色编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>系统全局角色编码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sys_common_user",
           "member": "string",
           "name": "GlobalUserCode",
@@ -8814,7 +11072,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>手机号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1329****797",
           "member": "string",
           "name": "Mobile",
@@ -8825,7 +11083,7 @@
         },
         {
           "disabled": false,
-          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "AppId",
@@ -8836,7 +11094,7 @@
         },
         {
           "disabled": false,
-          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "AppUserId",
@@ -8847,7 +11105,7 @@
         },
         {
           "disabled": false,
-          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "AppUserAliasName",
@@ -8858,7 +11116,7 @@
         },
         {
           "disabled": false,
-          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zhangsan",
           "member": "string",
           "name": "AppUserName",
@@ -8869,7 +11127,7 @@
         },
         {
           "disabled": false,
-          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "InValidateAppRange",
@@ -8880,8 +11138,8 @@
         },
         {
           "disabled": false,
-          "document": "-1 免激活  0 未激活  1 已激活 空代表待绑定\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "邮箱激活状态",
+          "document": "<p>-1 免激活  0 未激活  1 已激活 空代表待绑定</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "EmailActivationStatus",
           "output_required": false,
@@ -8891,8 +11149,8 @@
         },
         {
           "disabled": false,
-          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "主键id",
+          "document": "<p>1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100001",
           "member": "uint64",
           "name": "Id",
           "output_required": false,
@@ -9383,6 +11641,78 @@
         }
       ],
       "usage": "out"
+    },
+    "UserTagInfo": {
+      "document": "用户标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否被托管\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsExternalManage",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签托管平台\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ManagePlatform",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "导入类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImportType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "UserVO": {
       "document": "基础用户信息",

@@ -121,7 +121,7 @@
     "DescribeResourcesByTagsUnion": [
       {
         "document": "",
-        "input": "https://tag.tencentcloudapi.com/?Action=DescribeResourcesByTagsUnion\r\n&ServiceType=cvm\r\n&ResourcePrefix=instance\r\n&ResourceRegion=ap-beijing\r\n&ResourceId=ins-1234\r\n&TagFilters.0.TagKey=key1\r\n&<公共请求参数>",
+        "input": "https://tag.tencentcloudapi.com/?Action=DescribeResourcesByTagsUnion\n&ServiceType=cvm\n&ResourcePrefix=instance\n&ResourceRegion=ap-beijing\n&ResourceId=ins-1234\n&TagFilters.0.TagKey=key1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Rows\": [\n            {\n                \"ResourceRegion\": \"ap-guangzhou\",\n                \"ServiceType\": \"cvm\",\n                \"ResourcePrefix\": \"instance\",\n                \"ResourceId\": \"ins-asdfsadf\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"key1\",\n                        \"TagValue\": \"value1\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"5024400f-ae5c-4080-b3ca-f45bf9dae21a\"\n    }\n}",
         "title": "通过标签查询资源列表取并集"
       }

@@ -292,14 +292,6 @@
         "title": "中英文手写"
       }
     ],
-    "HmtResidentPermitOCR": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HmtResidentPermitOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/HmtResidentPermitOCR/HmtResidentPermitOCR2.png\",\n    \"CardSide\": \"FRONT\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Address\": \"合肥市高新区望江西路800号腾讯优图D7栋6号\",\n        \"Authority\": \"\",\n        \"Birth\": \"1985/2/1\",\n        \"CardType\": 0,\n        \"IdCardNo\": \"820000198502010022\",\n        \"Name\": \"蓝图图\",\n        \"PassNo\": \"\",\n        \"PortraitImageInfo\": {\n            \"ImageCoordinates\": {\n                \"X\": 0,\n                \"Y\": 0,\n                \"Width\": 0,\n                \"Height\": 0\n            },\n            \"PortraitImage\": \"\"\n        },\n        \"RequestId\": \"4685e626-f6ea-4ad8-a099-13933ea4bca9\",\n        \"Sex\": \"女\",\n        \"ValidDate\": \"\",\n        \"VisaNum\": \"0\"\n    }\n}",
-        "title": "HmtResidentPermitOCR调用"
-      }
-    ],
     "IDCardOCR": [
       {
         "document": "临时身份证告警调用示例 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)",
@@ -476,14 +468,6 @@
         "title": "QueryType=4信息提取"
       }
     ],
-    "RecognizeContainerOCR": [
-      {
-        "document": "集装箱识别",
-        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeContainerOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ContainerId\": \"APHU7042391\",\n        \"ContainerType\": \"45G1\",\n        \"GrossKG\": \"32500KG\",\n        \"GrossLB\": \"71650LB\",\n        \"PayloadKG\": \"28630KG\",\n        \"PayloadLB\": \"63120LB\",\n        \"TareKG\": \"3870KG\",\n        \"TareLB\": \"8530LB\",\n        \"CapacityM3\": \"76.4CUM\",\n        \"CapacityFT3\": \"2700CUFT\",\n        \"Warn\": [\n            -9926,\n            -9927\n        ],\n        \"RequestId\": \"45afaba3-5fb8-480e-83f9-2681f1373783\"\n    }\n}",
-        "title": "集装箱识别示例代码"
-      }
-    ],
     "RecognizeEncryptedIDCardOCR": [
       {
         "document": "身份证识别（安全加密版）示例",
@@ -514,14 +498,6 @@
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeGeneralInvoice\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/invoice/MixedInvoiceDetect/MixedInvoiceDetect1.jpg\",\n    \"EnableMultiplePage\": true\n}",
         "output": "{\n    \"Response\": {\n        \"MixedInvoiceItems\": [\n            {\n                \"Code\": \"OK\",\n                \"Type\": 3,\n                \"SubType\": \"VatSpecialInvoice\",\n                \"TypeDescription\": \"增值税发票\",\n                \"SubTypeDescription\": \"增值税专用发票\",\n                \"Polygon\": {\n                    \"LeftBottom\": {\n                        \"X\": 19,\n                        \"Y\": 888\n                    },\n                    \"LeftTop\": {\n                        \"X\": 19,\n                        \"Y\": 31\n                    },\n                    \"RightBottom\": {\n                        \"X\": 1347,\n                        \"Y\": 888\n                    },\n                    \"RightTop\": {\n                        \"X\": 1345,\n                        \"Y\": 31\n                    }\n                },\n                \"Angle\": 0,\n                \"SingleInvoiceInfos\": {\n                    \"AirTransport\": null,\n                    \"BusInvoice\": null,\n                    \"ElectronicFlightTicketFull\": null,\n                    \"ElectronicTrainTicketFull\": null,\n                    \"MachinePrintedInvoice\": null,\n                    \"MedicalHospitalizedInvoice\": null,\n                    \"MedicalOutpatientInvoice\": null,\n                    \"MotorVehicleSaleInvoice\": null,\n                    \"NonTaxIncomeElectronicBill\": null,\n                    \"NonTaxIncomeGeneralBill\": null,\n                    \"OtherInvoice\": null,\n                    \"QuotaInvoice\": null,\n                    \"ShippingInvoice\": null,\n                    \"TaxiTicket\": null,\n                    \"TollInvoice\": null,\n                    \"TrainTicket\": null,\n                    \"UsedCarPurchaseInvoice\": null,\n                    \"VatCommonInvoice\": null,\n                    \"VatElectronicCommonInvoice\": null,\n                    \"VatElectronicInvoiceBlockchain\": null,\n                    \"VatElectronicInvoiceFull\": null,\n                    \"VatElectronicInvoiceToll\": null,\n                    \"VatElectronicSpecialInvoice\": null,\n                    \"VatElectronicSpecialInvoiceFull\": null,\n                    \"VatInvoiceRoll\": null,\n                    \"VatSalesList\": null,\n                    \"TaxPayment\": null,\n                    \"CustomsPaymentReceipt\": null,\n                    \"VatSpecialInvoice\": {\n                        \"AcquisitionMark\": 0,\n                        \"AgentMark\": 0,\n                        \"BlockChainMark\": 0,\n                        \"Buyer\": \"深圳市腾讯计算机系统有限公司\",\n                        \"BuyerAddrTel\": \"深圳市南山区高新区高新南一路飞亚达大厦5-10楼0755-86013388\",\n                        \"BuyerBankAccount\": \"招商银行深圳分行振兴支行817282299619961\",\n                        \"BuyerTaxID\": \"440300708461136\",\n                        \"CheckCode\": \"\",\n                        \"Ciphertext\": \"*7-0<84019---5+68315-99->/51,>814<1/7922/<-23/908+>7474+3,78312-072<3<729-+4<6*315-094,->/5>18493/1-60*6-43/90<--78\",\n                        \"City\": \"深圳市\",\n                        \"Code\": \"4403152130\",\n                        \"CodeConfirm\": \"4403152130\",\n                        \"CompanySealContent\": \"发票专用章,深圳市游戏科技有限公司,04000,NANDN\",\n                        \"CompanySealMark\": 1,\n                        \"Date\": \"2016年04月11日\",\n                        \"ElectronicFullMark\": 0,\n                        \"ElectronicFullNumber\": \"\",\n                        \"FormName\": \"发票联\",\n                        \"FormType\": \"三\",\n                        \"Issuer\": \"张三\",\n                        \"Kind\": \"服务\",\n                        \"MachineCode\": \"\",\n                        \"Number\": \"14998456\",\n                        \"NumberConfirm\": \"14998456\",\n                        \"OilMark\": 0,\n                        \"PretaxAmount\": \"778.44\",\n                        \"Province\": \"广东省\",\n                        \"QRCodeMark\": 0,\n                        \"Receiptor\": \"李明\",\n                        \"Remark\": \"\",\n                        \"Reviewer\": \"晓艾\",\n                        \"Seller\": \"深圳市游戏科技有限公司\",\n                        \"SellerAddrTel\": \"深圳市南山区高新南一道3号赋安科技大楼A座301室0755-86315454\",\n                        \"SellerBankAccount\": \"浦发行深圳科技园支行79210154740015474\",\n                        \"SellerTaxID\": \"440300094040109\",\n                        \"ServiceName\": \"\",\n                        \"SubTax\": \"\",\n                        \"SubTotal\": \"\",\n                        \"Tax\": \"46.71\",\n                        \"TaxSealContent\": \"\",\n                        \"Title\": \"深圳增值税专用发票\",\n                        \"Total\": \"825.15\",\n                        \"TotalCn\": \"捌佰贰拾伍圆壹角伍分\",\n                        \"TransitMark\": 0,\n                        \"TravelTax\": \"\",\n                        \"VatInvoiceItemInfos\": [\n                            {\n                                \"DateEnd\": \"\",\n                                \"DateStart\": \"\",\n                                \"LicensePlate\": \"\",\n                                \"Name\": \"技术服务费\",\n                                \"Price\": \"\",\n                                \"Quantity\": \"\",\n                                \"SerialNumber\": \"\",\n                                \"Specification\": \"\",\n                                \"Tax\": \"46.71\",\n                                \"TaxRate\": \"6%\",\n                                \"Total\": \"778.44\",\n                                \"Unit\": \"\",\n                                \"VehicleType\": \"\"\n                            }\n                        ]\n                    },\n                    \"BankSlip\": null,\n                    \"OnlineTaxiItinerary\": null,\n                    \"CustomsDeclaration\": null,\n                    \"OverseasInvoice\": null,\n                    \"ShoppingReceipt\": null,\n                    \"SaleInventory\": null,\n                    \"MotorVehicleSaleInvoiceElectronic\": null,\n                    \"UsedCarPurchaseInvoiceElectronic\": null,\n                    \"ElectronicTollSummary\": null\n                },\n                \"Page\": 1,\n                \"CutImage\": \"\",\n                \"ItemPolygon\": []\n            }\n        ],\n        \"RequestId\": \"c129cda9-e306-472e-817b-4e133ac5c706\",\n        \"TotalPDFCount\": 1\n    }\n}",
         "title": "通用票据识别（高级版）"
-      }
-    ],
-    "RecognizeHealthCodeOCR": [
-      {
-        "document": "健康码识别",
-        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeHealthCodeOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Color\": \"绿色\",\n        \"IDNumber\": \"\",\n        \"Name\": \"王*一\",\n        \"RequestId\": \"632c1770-ef32-45e3-b4fc-2cc93ac0bad3\",\n        \"SpotName\": \"\",\n        \"TestingInterval\": \"48小时\",\n        \"TestingResult\": \"阴性\",\n        \"TestingTime\": \"2022-01-15 22:52\",\n        \"Time\": \"01-08 17:05:05\",\n        \"Vaccination\": \"已完成全程接种\",\n        \"VaccinationTime\": \"2021-07-25\"\n    }\n}",
-        "title": "健康码识别示例代码"
       }
     ],
     "RecognizeMedicalInvoiceOCR": [
@@ -562,14 +538,6 @@
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeThaiIDCardOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"Address\": \"ที่อยู่ 21/19 หมู่ที่ 3 ต.บางคูรัด อ.บางบัวทอง จ.นนทบุรี\",\n        \"AdvancedInfo\": \"{\\\"ID\\\":0.9995814561843872,\\\"ThaiName\\\":0.9961479902267456,\\\"EnFirstName\\\":0.9232422113418579,\\\"EnLastName\\\":0.943652331829071,\\\"Birthday\\\":0.9828404188156128,\\\"EnBirthday\\\":0.92333984375,\\\"Religion\\\":1,\\\"ExpirationDate\\\":0.9919084906578064,\\\"IssueDate\\\":0.9893275499343872,\\\"EnExpirationDate\\\":0.9890950322151184,\\\"EnIssueDate\\\":0.9800618290901184,\\\"SerialNumber\\\":0.9995659589767456}\",\n        \"Birthday\": \"14 ธ.ค. 2509\",\n        \"EnBirthday\": \"14 Dec. 1966\",\n        \"EnExpirationDate\": \"13 Dec. 2024\",\n        \"EnFirstName\": \"Mr. Thanakit\",\n        \"EnIssueDate\": \"9 Dec. 2016\",\n        \"EnLastName\": \"Boonyopakron\",\n        \"ExpirationDate\": \"13 ธ.ค. 2567\",\n        \"ID\": \"3 1020 01968 75 6\",\n        \"IssueDate\": \"9 ธ.ค. 2559\",\n        \"PortraitImage\": \"\",\n        \"Religion\": \"พุทธ\",\n        \"RequestId\": \"d4af8019-08e0-4d8d-a986-e1f45efb4a6c\",\n        \"SerialNumber\": \"1204-03-12091012\",\n        \"ThaiName\": \"นาย ธนกฤต บุญโญปกรณ์\",\n        \"WarnCardInfos\": [\n            -9109\n        ]\n    }\n}",
         "title": "RecognizeThaiIDCardOCR调用"
-      }
-    ],
-    "RecognizeTravelCardOCR": [
-      {
-        "document": "通信行程卡识别",
-        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeTravelCardOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Color\": \"绿色\",\n        \"ReachedCity\": [\n            \"上海市\"\n        ],\n        \"RequestId\": \"49050856-4804-406b-821b-b3d750de3692\",\n        \"RiskArea\": [],\n        \"Telephone\": \"150****3634\",\n        \"Time\": \"2022.07.08 11:11:39\"\n    }\n}",
-        "title": "通信行程卡识别示例代码"
       }
     ],
     "RecognizeValidIDCardOCR": [
@@ -716,6 +684,14 @@
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VehicleRegCertOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/vehicle/VehicleRegCertOCR/VehicleRegCertOCR1.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"VehicleRegCertInfos\": [\n            {\n                \"Name\": \"编号\",\n                \"Value\": \"*310005169880*\"\n            },\n            {\n                \"Name\": \"机动车所有人1\",\n                \"Value\": \"李明\"\n            },\n            {\n                \"Name\": \"车辆识别代号/车架号\",\n                \"Value\": \"LFV8\"\n            },\n            {\n                \"Name\": \"身份证明名称1\",\n                \"Value\": \"居民身份证\"\n            },\n            {\n                \"Name\": \"号码1\",\n                \"Value\": \"339001198706168418\"\n            }\n        ],\n        \"RequestId\": \"393fa9e0-3827-4183-9fe7-68ed622028a1\"\n    }\n}",
         "title": "机动车登记证书识别示例代码"
+      }
+    ],
+    "VerifyBizLicenseEnterprise3": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyBizLicenseEnterprise3\n<公共请求参数>\n\n{\n    \"CreditCode\": \"12xxxxxxxxx3\",\n    \"EntName\": \"xxxxx生鲜食品超市（个体工商户）\",\n    \"LrName\": \"刘xxxxx\",\n    \"VerifyType\": \"ENT_3META\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ff3cb900-6961-402f-bb25-45b86cb6f695\",\n        \"StatusCode\": 0,\n        \"VerifyResult\": 1,\n        \"OperatingStatus\": \"1\"\n    }\n}",
+        "title": "三要素"
       }
     ],
     "VerifyBizLicenseEnterprise4": [

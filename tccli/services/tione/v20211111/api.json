@@ -521,7 +521,7 @@
   },
   "metadata": {
     "apiVersion": "2021-11-11",
-    "api_brief": "介绍如何使用API对腾讯云 TI-ONE训练平台 进行操作，包括存储库、Notebook、任务训练等。",
+    "api_brief": "介绍如何使用API对腾讯云大模型训推平台 TI-ONE 进行操作，包括存储库、开发机、任务训练等。",
     "serviceNameCN": "TI-ONE 训练平台",
     "serviceShortName": "tione"
   },
@@ -1530,7 +1530,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据集名称，不超过60个字符，仅支持中英文、数字、下划线\"_\"、短横\"-\"，只能以中英文、数字开头",
+          "document": "<p>数据集名称，不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>",
           "example": "Voc2017",
           "member": "string",
           "name": "DatasetName",
@@ -1539,8 +1539,17 @@
         },
         {
           "disabled": false,
-          "document": "数据集类型:\nTYPE_DATASET_TEXT，文本\nTYPE_DATASET_IMAGE，图片\nTYPE_DATASET_TABLE，表格\nTYPE_DATASET_OTHER，其他",
-          "example": "TYPE_DATASET_TEXT",
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据集类型</p><p>枚举值：</p><ul><li>TYPE_DATASET_IMAGE： 图片</li><li>TYPE_DATASET_LLM： 大模型</li><li>TYPE_DATASET_TABLE： 表格</li><li>TYPE_DATASET_OTHER： 其他</li></ul>",
+          "example": "TYPE_DATASET_IMAGE",
           "member": "string",
           "name": "DatasetType",
           "required": false,
@@ -1548,7 +1557,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源cos路径",
+          "document": "<p>数据源cos路径</p>",
           "example": "无",
           "member": "CosPathInfo",
           "name": "StorageDataPath",
@@ -1557,7 +1566,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集标签cos存储路径",
+          "document": "<p>数据集标签cos存储路径</p>",
           "example": "无",
           "member": "CosPathInfo",
           "name": "StorageLabelPath",
@@ -1566,7 +1575,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集标签",
+          "document": "<p>数据集标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "DatasetTags",
@@ -1575,7 +1584,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集标注状态:\nSTATUS_NON_ANNOTATED，未标注\nSTATUS_ANNOTATED，已标注",
+          "document": "<p>数据集标注状态</p><p>枚举值：</p><ul><li>STATUS_NON_ANNOTATED： 未标注</li><li>STATUS_ANNOTATED： 已标注</li></ul>",
           "example": "STATUS_ANNOTATED",
           "member": "string",
           "name": "AnnotationStatus",
@@ -1584,7 +1593,7 @@
         },
         {
           "disabled": false,
-          "document": "标注类型:\nANNOTATION_TYPE_CLASSIFICATION，图片分类\nANNOTATION_TYPE_DETECTION，目标检测\nANNOTATION_TYPE_SEGMENTATION，图片分割\nANNOTATION_TYPE_TRACKING，目标跟踪\nANNOTATION_TYPE_OCR，OCR\nANNOTATION_TYPE_TEXT_CLASSIFICATION，文本分类",
+          "document": "<p>标注类型</p><p>枚举值：</p><ul><li>ANNOTATION_TYPE_CLASSIFICATION： 图片分类</li><li>ANNOTATION_TYPE_DETECTION： 目标检测</li><li>ANNOTATION_TYPE_SEGMENTATION： 图片分割</li><li>ANNOTATION_TYPE_TRACKING： 目标跟踪</li><li>ANNOTATION_TYPE_OCR： OCR</li></ul>",
           "example": "ANNOTATION_TYPE_DETECTION",
           "member": "string",
           "name": "AnnotationType",
@@ -1593,8 +1602,8 @@
         },
         {
           "disabled": false,
-          "document": "标注格式:\nANNOTATION_FORMAT_TI，TI平台格式\nANNOTATION_FORMAT_PASCAL，Pascal Voc\nANNOTATION_FORMAT_COCO，COCO\nANNOTATION_FORMAT_FILE，文件目录结构\nANNOTATION_FORMAT_TEXT_TI，文本类型TI平台格式\nANNOTATION_FORMAT_TXT，文本类型TXT格式\nANNOTATION_FORMAT_CSV，文本类型CSV格式\nANNOTATION_FORMAT_JSON，文本类型JSON格式",
-          "example": "VOC",
+          "document": "<p>标注格式</p><p>枚举值：</p><ul><li>ANNOTATION_FORMAT_TI： TI-ONE平台格式</li><li>ANNOTATION_FORMAT_PASCAL： Pascal Voc格式</li><li>ANNOTATION_FORMAT_COCO： COCO格式</li><li>ANNOTATION_FORMAT_FILE： 文件目录结构</li></ul>",
+          "example": "ANNOTATION_FORMAT_TI",
           "member": "string",
           "name": "AnnotationFormat",
           "required": false,
@@ -1602,7 +1611,7 @@
         },
         {
           "disabled": false,
-          "document": "表头信息",
+          "document": "<p>表头信息</p>",
           "example": "无",
           "member": "SchemaInfo",
           "name": "SchemaInfos",
@@ -1611,7 +1620,7 @@
         },
         {
           "disabled": false,
-          "document": "数据是否存在表头",
+          "document": "<p>数据是否存在表头</p>",
           "example": "true",
           "member": "bool",
           "name": "IsSchemaExisted",
@@ -1620,7 +1629,7 @@
         },
         {
           "disabled": false,
-          "document": "导入文件粒度\nTYPE_TEXT_LINE，按行\nTYPE_TEXT_FILE，按文件",
+          "document": "<p>导入文件粒度</p><p>枚举值：</p><ul><li>TYPE_TEXT_LINE： 按行</li><li>TYPE_TEXT_FILE： 按文件</li></ul>",
           "example": "TYPE_TEXT_LINE",
           "member": "string",
           "name": "ContentType",
@@ -1629,7 +1638,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集建模一级类别。LLM,CV,STRUCTURE,OTHER",
+          "document": "<p>数据集建模一级类别</p><p>枚举值：</p><ul><li>LLM： 大模型建模</li><li>CV： 传统CV建模</li><li>STRUCTURE： 大数据建模</li><li>OTHER： 其它</li></ul>",
           "example": "LLM",
           "member": "string",
           "name": "DatasetScene",
@@ -1638,7 +1647,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集标签。",
+          "document": "<p>数据集标签。</p>",
           "example": "[\"string\"]",
           "member": "string",
           "name": "SceneTags",
@@ -1647,7 +1656,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集CFS配置。仅支持LLM场景",
+          "document": "<p>数据集CFS配置。仅支持LLM场景</p>",
           "example": "无",
           "member": "CFSConfig",
           "name": "CFSConfig",
@@ -1662,7 +1671,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据集ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rodftu04veo",
           "member": "string",
           "name": "DatasetId",
@@ -1845,6 +1854,15 @@
     "CreateModelServiceRequest": {
       "document": "CreateModelService请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
         {
           "disabled": false,
           "document": "<p>新增版本时需要填写</p>",
@@ -4824,6 +4842,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>资源组ID</p>",
+          "example": "rsg-mhsj8wrk",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
           "example": "0",
           "member": "string",
@@ -5780,6 +5807,15 @@
           "member": "string",
           "name": "Service",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
           "type": "string"
         },
         {
@@ -8719,6 +8755,86 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点可用资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceInfo",
+          "name": "AvailableResource",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源组节点的IP</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "172.16.222.4",
+          "member": "string",
+          "name": "InstanceIP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源组节点的名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "节点1",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>cvm机型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SA9.2XLARGE16",
+          "member": "string",
+          "name": "CvmInstanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动续买</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoRenew",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否被隔离</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Isolated",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>维修任务信息</p>",
+          "example": "无",
+          "member": "RepairTaskInfo",
+          "name": "RepairTaskInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点可用区名称</p>",
+          "example": "ap-shanghai-3",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10633,7 +10749,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据源的相对路径，支持<@subaccount>这样的占位符",
+          "document": "<p>数据源的相对路径，支持&lt;@subaccount&gt;这样的占位符</p>",
           "example": "/dir1/<@subaccount>/",
           "member": "string",
           "name": "WorkDir",
@@ -12746,6 +12862,78 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RepairTaskInfo": {
+      "document": "cvm维修任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>维修任务ID</p>",
+          "example": "rep-7cmzc9du",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型ID<br>// - <code>101</code>：实例运行隐患<br>    // - <code>102</code>：实例运行异常<br>    // - <code>103</code>：实例硬盘异常<br>    // - <code>104</code>：实例网络连接异常<br>    // - <code>105</code>：实例运行预警<br>    // - <code>106</code>：实例硬盘预警<br>    // - <code>107</code>：实例维护升级</p>",
+          "example": "104",
+          "member": "uint64",
+          "name": "TaskTypeId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型中文名</p>",
+          "example": "实例网络连接异常",
+          "member": "string",
+          "name": "TaskTypeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务创建时间</p>",
+          "example": "2024-09-24 10:11:27",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务详情</p>",
+          "example": "监控到您的云主机实例RDMA网络连接异常，可能会导致您的业务程序性能受损。如您无法恢复异常网口，请反馈我们进行在线维修，感谢您的支持与理解。",
+          "member": "string",
+          "name": "TaskDetail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品类型，支持取值：<br>    //<br>    // - <code>CVM</code>：云服务器<br>    // - <code>CDH</code>：专用宿主机<br>    // - <code>CPM2.0</code>：裸金属云服务器</p>",
+          "example": "CPM2.0",
+          "member": "string",
+          "name": "Product",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

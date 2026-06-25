@@ -14235,7 +14235,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目id",
+          "document": "<p>项目id</p>",
           "example": "120000",
           "member": "int64",
           "name": "ProjectID",
@@ -14245,7 +14245,7 @@
         },
         {
           "disabled": false,
-          "document": "项目总分",
+          "document": "<p>项目总分</p>",
           "example": "100.0",
           "member": "float",
           "name": "Score",
@@ -14255,7 +14255,7 @@
         },
         {
           "disabled": false,
-          "document": "API性能评分",
+          "document": "<p>API性能评分</p>",
           "example": "0.0",
           "member": "float",
           "name": "ApiPerformanceScore",
@@ -14265,7 +14265,7 @@
         },
         {
           "disabled": false,
-          "document": "API可用性评分",
+          "document": "<p>API可用性评分</p>",
           "example": "0.0",
           "member": "float",
           "name": "ApiAvailableScore",
@@ -14275,7 +14275,7 @@
         },
         {
           "disabled": false,
-          "document": "API调用总数",
+          "document": "<p>API调用总数</p>",
           "example": "99",
           "member": "int64",
           "name": "ApiNum",
@@ -14285,7 +14285,7 @@
         },
         {
           "disabled": false,
-          "document": "API失败次数",
+          "document": "<p>API失败次数</p>",
           "example": "50",
           "member": "int64",
           "name": "ApiFail",
@@ -14295,7 +14295,7 @@
         },
         {
           "disabled": false,
-          "document": "API平均持续时间",
+          "document": "<p>API平均持续时间</p>",
           "example": "100.0",
           "member": "float",
           "name": "ApiDuration",
@@ -14305,7 +14305,7 @@
         },
         {
           "disabled": false,
-          "document": "页面性能评分",
+          "document": "<p>页面性能评分</p>",
           "example": "0.9",
           "member": "float",
           "name": "PagePerformanceScore",
@@ -14315,7 +14315,7 @@
         },
         {
           "disabled": false,
-          "document": "页面浏览量",
+          "document": "<p>页面浏览量</p>",
           "example": "799",
           "member": "int64",
           "name": "PagePv",
@@ -14325,7 +14325,7 @@
         },
         {
           "disabled": false,
-          "document": "独立访客数",
+          "document": "<p>独立访客数</p>",
           "example": "14",
           "member": "int64",
           "name": "PageUv",
@@ -14335,7 +14335,7 @@
         },
         {
           "disabled": false,
-          "document": "页面错误数",
+          "document": "<p>页面错误数</p>",
           "example": "114",
           "member": "int64",
           "name": "PageError",
@@ -14345,7 +14345,7 @@
         },
         {
           "disabled": false,
-          "document": "首屏时间",
+          "document": "<p>首屏时间</p>",
           "example": "123.0",
           "member": "float",
           "name": "PageDuration",
@@ -14355,7 +14355,7 @@
         },
         {
           "disabled": false,
-          "document": "平均 LCP",
+          "document": "<p>平均 LCP</p>",
           "example": "123.0",
           "member": "float",
           "name": "PageLCP",
@@ -14365,7 +14365,7 @@
         },
         {
           "disabled": false,
-          "document": "平均 FID",
+          "document": "<p>平均 FID</p>",
           "example": "123.0",
           "member": "float",
           "name": "PageFID",
@@ -14375,7 +14375,7 @@
         },
         {
           "disabled": false,
-          "document": "平均 CLS",
+          "document": "<p>平均 CLS</p>",
           "example": "123.0",
           "member": "float",
           "name": "PageCLS",
@@ -14385,7 +14385,7 @@
         },
         {
           "disabled": false,
-          "document": "平均 FCP",
+          "document": "<p>平均 FCP</p>",
           "example": "123.0",
           "member": "float",
           "name": "PageFCP",
@@ -14395,7 +14395,7 @@
         },
         {
           "disabled": false,
-          "document": "平均 INP",
+          "document": "<p>平均 INP</p>",
           "example": "123.0",
           "member": "float",
           "name": "PageINP",
@@ -14405,7 +14405,7 @@
         },
         {
           "disabled": false,
-          "document": "JavaScript错误评分",
+          "document": "<p>JavaScript错误评分</p>",
           "example": "0.1",
           "member": "float",
           "name": "JsErrorScore",
@@ -14415,7 +14415,7 @@
         },
         {
           "disabled": false,
-          "document": "静态资源可用性评分",
+          "document": "<p>静态资源可用性评分</p>",
           "example": "0.5",
           "member": "float",
           "name": "StaticAvailableScore",
@@ -14425,7 +14425,7 @@
         },
         {
           "disabled": false,
-          "document": "静态资源性能评分",
+          "document": "<p>静态资源性能评分</p>",
           "example": "0.6",
           "member": "float",
           "name": "StaticPerformanceScore",
@@ -14435,7 +14435,7 @@
         },
         {
           "disabled": false,
-          "document": "静态资源请求总数",
+          "document": "<p>静态资源请求总数</p>",
           "example": "50",
           "member": "int64",
           "name": "StaticNum",
@@ -14445,7 +14445,7 @@
         },
         {
           "disabled": false,
-          "document": "静态资源加载失败数",
+          "document": "<p>静态资源加载失败数</p>",
           "example": "12",
           "member": "int64",
           "name": "StaticFail",
@@ -14455,12 +14455,22 @@
         },
         {
           "disabled": false,
-          "document": "静态资源加载时间",
+          "document": "<p>静态资源加载时间</p>",
           "example": "123.0",
           "member": "float",
           "name": "StaticDuration",
           "output_required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>忽略的配置项</p>",
+          "example": "{\\\"Enabled\\\":true,\\\"ExcludedCount\\\":18,\\\"Items\\\":[{\\\"Msg\\\":\\\"Uncaught TypeError: AUTO_JS_UNCAUGHT_TIMER_TYPE\\\",\\\"Fingerprint\\\":\\\"\\\",\\\"Level\\\":\\\"4\\\",\\\"Count\\\":0,\\\"LastSeenAt\\\":1780515722}]}",
+          "member": "string",
+          "name": "Exclusion",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

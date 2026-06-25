@@ -7,8 +7,8 @@ Input:
 ```
 tccli vod SimpleHlsClip --cli-unfold-argument  \
     --Url http://example.com/xxxxx/aaaaaa/hhhh.m3u8 \
-    --StartTimeOffset 2.0 \
-    --EndTimeOffset 10.0
+    --StartTimeOffset 2 \
+    --EndTimeOffset 10
 ```
 
 Output: 
@@ -24,7 +24,7 @@ Output:
             "Bitrate": 622014,
             "Height": 480,
             "Width": 640,
-            "Duration": 48.0,
+            "Duration": 48,
             "Rotate": 0,
             "VideoStreamSet": [
                 {
@@ -47,8 +47,8 @@ Output:
                     "Codec": "aac"
                 }
             ],
-            "VideoDuration": 0.0,
-            "AudioDuration": 0.0,
+            "VideoDuration": 0,
+            "AudioDuration": 0,
             "Md5": "Md5"
         },
         "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
@@ -65,8 +65,8 @@ Input:
 ```
 tccli vod SimpleHlsClip --cli-unfold-argument  \
     --Url http://example.com/xxxxx/aaaaaa/hhh.m3u8 \
-    --StartTimeOffset 2.0 \
-    --EndTimeOffset 10.0
+    --StartTimeOffset 2 \
+    --EndTimeOffset 10
 ```
 
 Output: 
@@ -82,7 +82,7 @@ Output:
             "Bitrate": 622014,
             "Height": 480,
             "Width": 640,
-            "Duration": 48.0,
+            "Duration": 48,
             "Rotate": 0,
             "VideoStreamSet": [
                 {
@@ -105,8 +105,8 @@ Output:
                     "Codec": "aac"
                 }
             ],
-            "VideoDuration": 0.0,
-            "AudioDuration": 0.0,
+            "VideoDuration": 0,
+            "AudioDuration": 0,
             "Md5": "Md5"
         },
         "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"

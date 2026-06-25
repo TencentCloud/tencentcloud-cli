@@ -80,6 +80,14 @@
         "title": "调整保险箱备份保存时间将会删除多少备份"
       }
     ],
+    "CancelClusterServerlessScalePlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelClusterServerlessScalePlan\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xdbsbsgg\",\n    \"PlanId\": 12321\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "取消计划"
+      }
+    ],
     "CheckCreateLibraDBInstance": [
       {
         "document": "本接口（CheckCreateLibraDBInstance）用于校验集群是否可以添加只读分析引擎实例",
@@ -208,12 +216,20 @@
         "title": "创建数据库"
       }
     ],
+    "CreateClusterPeriodScalePolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterPeriodScalePolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xdbsbsgg\",\n    \"InstanceType\": \"rw\",\n    \"ScaleStartTime\": \"10:00\",\n    \"ScaleEndTime\": \"14:00\",\n    \"PolicyStartTime\": \"2025-10-01 00:00:00\",\n    \"PolicyEndTime\": \"2025-12-01 00:00:00\",\n    \"PeriodType\": \"day\",\n    \"PeriodConfig\": [],\n    \"MinCpu\": 0.5,\n    \"MaxCpu\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyId\": \"cynosdbmysql-spd-rye0gd5b\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建集群的周期弹性策略"
+      }
+    ],
     "CreateClusters": [
       {
-        "document": "购买新集群",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusters\n<公共请求参数>\n\n{\n    \"Count\": 1,\n    \"StoragePayMode\": 0,\n    \"VpcId\": \"vpc-1ptuei0b\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"AdminPassword\": \"passwd@admin\",\n    \"DbType\": \"MYSQL\",\n    \"ProjectId\": 0,\n    \"DbVersion\": \"10.0\",\n    \"Storage\": 100,\n    \"PayMode\": 0,\n    \"ClusterName\": \"newInstance\",\n    \"StorageLimit\": 100,\n    \"RollbackStrategy\": \"noneRollback\",\n    \"Memory\": 4,\n    \"SubnetId\": \"subnet-1tmw9t4o\",\n    \"Cpu\": 2,\n    \"HaCount\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"ResourceIds\": [\n            \"cynosdbmysql-ins-67rmucgk\"\n        ],\n        \"RequestId\": \"132075\",\n        \"TranId\": \"20190522160000003106844584180998\",\n        \"ClusterIds\": [\n            \"cynosdbmysql-sls-9nts65r2\"\n        ],\n        \"BigDealIds\": [\n            \"142759\"\n        ],\n        \"DealNames\": [\n            \"20190522112283\"\n        ]\n    }\n}",
-        "title": "购买新集群"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusters\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-5\",\n    \"VpcId\": \"0\",\n    \"SubnetId\": \"0\",\n    \"DbType\": \"MYSQL\",\n    \"DbVersion\": \"8.0\",\n    \"Cpu\": 1,\n    \"Memory\": 1,\n    \"InstanceCount\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"BigDealIds\": [],\n        \"ClusterIds\": [\n            \"cynosdbmysql-********\"\n        ],\n        \"DealNames\": [\n            \"2026*****************11\"\n        ],\n        \"RequestId\": \"7e55656e-37c6-44fe-9f81-34eafa652820\",\n        \"ResourceIds\": [\n            \"cynosdbmysql-ins-********\"\n        ],\n        \"TranId\": \"2026061198**5**9*8*****\"\n    }\n}",
+        "title": "创建集群"
       }
     ],
     "CreateIntegrateCluster": [
@@ -340,6 +356,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterDatabase\n<公共请求参数>\n\n{\n    \"DbNames\": [\n        \"db1\"\n    ],\n    \"ClusterId\": \"cynosdbmysql-j9i41hfv\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f569bea2-0a51-11ec-af61-525400542aa6\"\n    }\n}",
         "title": "创建数据库"
+      }
+    ],
+    "DeleteClusterPeriodScalePolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterPeriodScalePolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xdbsbsgg\",\n    \"PolicyId\": \"cynosdbmysql-spd-rye0gd5b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "删除策略"
       }
     ],
     "DeleteClusterSaveBackup": [
@@ -626,12 +650,28 @@
         "title": "查看集群密码复杂度详情"
       }
     ],
+    "DescribeClusterPeriodScalePolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterPeriodScalePolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xdbsbsgg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyList\": [\n            {\n                \"PolicyId\": \"cynosdbmysql-spd-rye0gd5b\",\n                \"MaxCpu\": 4,\n                \"MinCpu\": 1,\n                \"ScaleStartTime\": \"10:00\",\n                \"ScaleEndTime\": \"12:00\",\n                \"PolicyStartTime\": \"2025-12-01 00:12:00\",\n                \"PolicyEndTime\": \"2025-12-30 00:20:00\",\n                \"PeriodType\": \"day\",\n                \"PeriodConfig\": [],\n                \"Status\": \"normal\",\n                \"CreateTime\": \"2025-11-01 00:12:00\",\n                \"UpdateTime\": \"2025-11-21 00:12:00\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询策略"
+      }
+    ],
     "DescribeClusterReadOnly": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterReadOnly\n<公共请求参数>\n\n{\n    \"ClusterIds\": [\n        \"cynosdbmysql-jl17y89v\",\n        \"cynosdbmysql-2d9pq38h\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ClusterReadOnlyValues\": [\n            {\n                \"ClusterId\": \"cynosdbmysql-jl17y89v\",\n                \"ReadOnlyValue\": \"ON\"\n            },\n            {\n                \"ClusterId\": \"cynosdbmysql-2d9pq38h\",\n                \"ReadOnlyValue\": \"ON\"\n            }\n        ],\n        \"RequestId\": \"48b7cd8a-f6dd-4e47-a78a-ssfff\"\n    }\n}",
         "title": "查询集群只读开关"
+      }
+    ],
+    "DescribeClusterServerlessScalePlans": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterServerlessScalePlans\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xdbsbsgg\",\n    \"PlanId\": 12541\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ServerlessScalePlans\": [\n            {\n                \"PlanId\": 1231,\n                \"ClusterId\": \"cynosdbmysql-xbhshsbh\",\n                \"ObjectInstance\": \"cynosdbmysql-ins-xbhshsbh\",\n                \"PolicyId\": \"cynosdbmysql-spd-rye0gd5b\",\n                \"PolicyType\": \"PolicyTypePeriodScale\",\n                \"SourceMinCpu\": \"1.0\",\n                \"SourceMaxCpu\": \"8.0\",\n                \"TargetMinCpu\": \"2.0\",\n                \"TargetMaxCpu\": \"4.0\",\n                \"ExpectedStartTime\": \"2025-12-01 00:12:00\",\n                \"ExpectedEndTime\": \"2025-12-01 00:20:00\",\n                \"Status\": \"success\",\n                \"ScaleTaskId\": 131,\n                \"FailReason\": \"\",\n                \"ResetTaskId\": 0\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询计划"
       }
     ],
     "DescribeClusterTransparentEncryptInfo": [
@@ -1004,7 +1044,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerlessInstanceSpecs\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Specs\": [\n            {\n                \"MaxStorageSize\": 1000,\n                \"MinCpu\": 0.25,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.5,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 1000,\n                \"MinCpu\": 0.25,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 5000,\n                \"MinCpu\": 0.25,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 10000,\n                \"MinCpu\": 0.25,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 1000,\n                \"MinCpu\": 0.5,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 5000,\n                \"MinCpu\": 0.5,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 1\n            },\n            {\n                \"MaxStorageSize\": 10000,\n                \"MinCpu\": 0.5,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 5000,\n                \"MinCpu\": 0.0,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 10000,\n                \"MinCpu\": 0.0,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 10000,\n                \"MinCpu\": 0.0,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            }\n        ],\n        \"RequestId\": \"52-a341-4269-bce2-221ec952ea16|m\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Specs\": [\n            {\n                \"MaxStorageSize\": 1000,\n                \"MinCpu\": 0.25,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.5,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 1000,\n                \"MinCpu\": 0.25,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 5000,\n                \"MinCpu\": 0.25,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 10000,\n                \"MinCpu\": 0.25,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 1000,\n                \"MinCpu\": 0.5,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 5000,\n                \"MinCpu\": 0.5,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0,\n                \"HasStock\": true,\n                \"IsDefault\": 1\n            },\n            {\n                \"MaxStorageSize\": 10000,\n                \"MinCpu\": 0.5,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 5000,\n                \"MinCpu\": 0,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 10000,\n                \"MinCpu\": 0,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 10000,\n                \"MinCpu\": 0,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            }\n        ],\n        \"RequestId\": \"52-a341-4269-bce2-221ec952ea16|m\"\n    }\n}",
         "title": "查询Serverless实例可选规格"
       }
     ],
@@ -1320,6 +1360,14 @@
         "title": "用于修改/开启集群密码复杂度"
       }
     ],
+    "ModifyClusterPeriodScalePolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterPeriodScalePolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xdbsbsgg\",\n    \"PolicyId\": \"cynosdbmysql-spd-rye0gd5b\",\n    \"MaxCpu\": 4\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "修改周期策略"
+      }
+    ],
     "ModifyClusterReadOnly": [
       {
         "document": "",
@@ -1566,6 +1614,14 @@
         "title": "下线只读分析引擎"
       }
     ],
+    "OpenAIOptimizer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenAIOptimizer\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-06bf6v90\",\n    \"InstanceId\": \"cynosdbmysql-ins-n5yrdmp7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1048940,\n        \"RequestId\": \"bb284345-7ae7-405c-9180-dea44231a5b1\"\n    }\n}",
+        "title": "开启AI优化器"
+      }
+    ],
     "OpenAuditService": [
       {
         "document": "开通审计",
@@ -1801,8 +1857,8 @@
     "SwitchClusterZone": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchClusterZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-asd\",\n    \"OldZone\": \"ap-guangzhou-2\",\n    \"NewZone\": \"ap-guangzhou-3\",\n    \"IsInMaintainPeriod\": \"yes\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": 123,\n        \"RequestId\": \"128046\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchClusterZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-8f0sh2nj\",\n    \"OldZone\": \"ap-guangzhou-3\",\n    \"NewZone\": \"ap-guangzhou-5\",\n    \"IsInMaintainPeriod\": \"no\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 88529647,\n        \"TaskId\": 183430,\n        \"RequestId\": \"61e043aa-4b66-4021-a3cb-7b31df93def7\"\n    }\n}",
         "title": "主备可用区切换"
       }
     ],

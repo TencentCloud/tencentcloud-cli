@@ -220,6 +220,14 @@
         "title": "创建触发器"
       }
     ],
+    "DeleteAIModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAIModel\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-kpfrletb\",\n    \"Items\": [\n        {\n            \"NamespaceName\": \"ml-models\",\n            \"RepositoryName\": \"yolov8\",\n            \"Reference\": \"v2.0.0\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"09306de4-ff42-485a-83ea-20f88970cf80\"\n    }\n}",
+        "title": "模型删除示例"
+      }
+    ],
     "DeleteApplicationTriggerPersonal": [
       {
         "document": "",
@@ -400,6 +408,14 @@
         "title": "删除命名空间加签策略"
       }
     ],
+    "DeleteSkill": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSkill\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-kpfrletb\",\n    \"Items\": [\n        {\n            \"SkillName\": \"e2e-test/test-skill\",\n            \"SkillVersion\": \"2.0.0\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12aea243-4eca-42ef-8479-06649b1e4852\"\n    }\n}",
+        "title": "删除技能"
+      }
+    ],
     "DeleteTagRetentionRule": [
       {
         "document": "",
@@ -414,6 +430,14 @@
         "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWebhookTrigger\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"Namespace\": \"ns\",\n    \"Id\": 6\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"620fb647-fe86-4c25-866f-98bf867cd689\"\n    }\n}",
         "title": "删除触发器"
+      }
+    ],
+    "DescribeAIModelVersionDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIModelVersionDetail\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-kpfrletb\",\n    \"NamespaceName\": \"ml-models\",\n    \"RepositoryName\": \"gpt2-modctl\",\n    \"Reference\": \"v1.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Model\": {\n            \"Digest\": \"sha256:95a32bf97993f391a3135ad26c434e3610c583654d304b0449e626f9f96554e3\",\n            \"Family\": \"gpt2\",\n            \"FileFormat\": \"safetensors\",\n            \"Framework\": \"transformer\",\n            \"IsRecommended\": false,\n            \"ModelName\": \"gpt2\",\n            \"NamespaceName\": \"ml-models\",\n            \"ParamSize\": \"124m\",\n            \"Precision\": \"fp32\",\n            \"PushTime\": \"2026-03-24T05:06:55.444Z\",\n            \"Size\": 550966200,\n            \"Version\": \"v1.0\"\n        },\n        \"RequestId\": \"598203d2-41fe-46d6-a974-5d89f89acc8c\"\n    }\n}",
+        "title": "查询模型详情"
       }
     ],
     "DescribeApplicationTriggerLogPersonal": [
@@ -688,6 +712,22 @@
         "title": "查询服务级账号"
       }
     ],
+    "DescribeSkillDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSkillDetail\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-kpfrletb\",\n    \"SkillName\": \"cache-manager\",\n    \"SkillVersion\": \"2.0.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Skill\": {\n            \"Description\": \"cache-manager - MCP Server powered by node20\",\n            \"Runtime\": \"node20\",\n            \"SkillName\": \"cache-manager\",\n            \"SkillType\": \"MCP Server\",\n            \"SkillVersion\": \"2.0.0\",\n            \"Status\": \"active\",\n            \"Tags\": [\n                \"mcp\"\n            ],\n            \"UpdateTime\": \"2026-03-24T07:43:14.042Z\"\n        },\n        \"RequestId\": \"55dba911-617b-45a8-b7ff-3b21e774a890\"\n    }\n}",
+        "title": "获取技能详情"
+      }
+    ],
+    "DescribeSkillDownloadInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSkillDownloadInfo\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-kpfrletb\",\n    \"SkillName\": \"code-reviewer-2-0-0\",\n    \"SkillVersion\": \"2.0.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PreSignedDownloadURL\": \"https://tcr-k**r*****251**0398.cos.ap-guangzho*.myqclo*d.c**/docker/re*i*****v2/bl**s/s**256/7e/***ac6b2d***1***9f847**1*3fc2*648da8f1f36*6b2df21*dd*db927*e4ce3/data?x-co***ec***ty*to*en**p*H*n5*Y4lfP*HMG*Q*****OsrnlHnfc25919f2*43e9e******a80b2a5b3245eK*1ffxZgG1*e***r*C******p*QI*******vt0k**64NRvZ0beZt5p*udTxQ8f**l5b3XbfYYPgic2P2ovr4z-W*Al*FZ2-cxH5ylKrGhDAf8QbVSQO_DlfLwFbjIHUgk5AgvmhAsn7pTkS13epo2iSV5DTklqJTz2PojlDQ8LSwF2WJFHVYaZovG9VwpecOyf-eMxw2h9i99wihxAgK6E6LLGk7wJt-qjDLrF47maRaZOOaktq*9zk5XefvRV6VIs_Q8*6dCAABpAlQP***7QH4pSi0cABLX*Fb8bH6gALKJJOa*Ka*******k-rs8*RogQXDIy06pSyo3D8Xk4AX**bWR9**H5MCupdm4P**&q*sig***l*orithm*sha1&q-a*=AKID*8**RGF9**KuIb4*vbgn2cc*B*ItX3**-1XZ96x2*1-YK*kdkzA8*E*h******Pi&q-si*n-ti**=17745059*2%**17*4**9*02&q-k**-time=1774***902*3*177*509502&q-header-list=host&q-u*l-param-list=x-cos-security-token&q-signature=a8f76aa66fafe30bb0e69356c2021957bbc7f210\",\n        \"RequestId\": \"6d930ded-6a2c-4d98-b79a-22d689be22ff\"\n    }\n}",
+        "title": "获取技能下载链接"
+      }
+    ],
     "DescribeTagRetentionExecution": [
       {
         "document": "",
@@ -760,6 +800,38 @@
         "title": "复制个人版仓库镜像tag"
       }
     ],
+    "ListAIModelVersions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAIModelVersions\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-kpf**etb\",\n    \"NamespaceName\": \"ml-skills\",\n    \"RepositoryName\": \"skill-translate\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"VersionList\": [\n            {\n                \"IsRecommended\": false,\n                \"PushTime\": \"2026-03-23T13:27:14.977Z\",\n                \"Size\": 134813,\n                \"Version\": \"v2.0.0\"\n            }\n        ],\n        \"RequestId\": \"7323a77d-6e33-40c5-b737-ce2d3ebcd250\"\n    }\n}",
+        "title": "获取AI模型版本"
+      }
+    ],
+    "ListAIModels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAIModels\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-kp**letb\",\n    \"Namespace\": \"ml-models\",\n    \"Offset\": 10,\n    \"Limit\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelList\": [\n            {\n                \"Digest\": \"sha256:d745fff298ba0e3bef5e2edcec219c7094e38509a7588476d0d5f6530f22836f\",\n                \"ImageSize\": \"196237\",\n                \"Kind\": \"CNAI-Model\",\n                \"LatestVersion\": \"v1.1.0\",\n                \"ModelName\": \"t5-small\",\n                \"NamespaceName\": \"ml-models\",\n                \"UpdateTime\": \"2026-03-23T13:18:45.513Z\"\n            }\n        ],\n        \"TotalCount\": 15,\n        \"RequestId\": \"6ed4aa48-dac4-4ae2-93d2-4e4798180202\"\n    }\n}",
+        "title": "获取模型列表"
+      }
+    ],
+    "ListSkillVersions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListSkillVersions\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-kpfrletb\",\n    \"SkillName\": \"e2e-test/test-skill\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"VersionList\": [\n            {\n                \"PushTime\": \"2026-03-23T13:28:56.172Z\",\n                \"Size\": 1445,\n                \"Version\": \"1.0.0\"\n            }\n        ],\n        \"RequestId\": \"d614ddcb-0233-4ffb-be0a-a10252385736\"\n    }\n}",
+        "title": "查看skill 列表"
+      }
+    ],
+    "ListSkills": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListSkills\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-kpfrletb\",\n    \"Status\": \"active\",\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"SkillList\": [\n            {\n                \"Description\": \"cache-manager - MCP Server powered by node20\",\n                \"LatestVersion\": \"2.0.0\",\n                \"SkillName\": \"cache-manager\",\n                \"SkillType\": \"MCP Server\",\n                \"Status\": \"active\",\n                \"Tags\": [\n                    \"mcp\"\n                ],\n                \"UpdateTime\": \"2026-03-24T07:43:14.042Z\"\n            }\n        ],\n        \"TotalCount\": 21,\n        \"RequestId\": \"14c8656f-4b09-4764-8a10-3a16eeae8932\"\n    }\n}",
+        "title": "获取技能列表"
+      }
+    ],
     "ManageExternalEndpoint": [
       {
         "document": "",
@@ -820,6 +892,12 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=ModifyInstance\n&RegistryId=tcr-abc123\n&RegistryType=premium\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
         "title": "更新实例信息"
+      },
+      {
+        "document": "调整是否开启多版本控制",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-268s8hmm\",\n    \"EnableCosVersioning\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"602b2cf7-5499-446f-b7a7-cc62ae812fc6\"\n    }\n}",
+        "title": "更新实例"
       }
     ],
     "ModifyInstanceStorage": [

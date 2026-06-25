@@ -607,7 +607,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最后一次操作集群的时间</p>",
+          "document": "<p>最后一次操作集群的时间</p><p>默认值：-</p>",
           "example": "2020-01-21 01:00:10",
           "member": "string",
           "name": "UpdateTime",
@@ -697,7 +697,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>集群隔离时间; 没隔离时间，则为 -</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群隔离时间; 没隔离时间，则为 -</p><p>默认值：-</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-12-12 10:00:00",
           "member": "string",
           "name": "IsolatedTime",
@@ -1111,6 +1111,36 @@
           "example": "1",
           "member": "int64",
           "name": "MaxCuPerJob",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>元数据服务信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HiveMetastoreInfo",
+          "name": "HiveMetastore",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sg-xxx\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性网卡方案，0：POD弹性网卡，1：Node弹性网卡。</p><p>枚举值：</p><ul><li>0： POD弹性网卡</li><li>1： Node弹性网卡</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "NetEniType",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5391,6 +5421,132 @@
       ],
       "usage": "both"
     },
+    "HiveMetastoreInfo": {
+      "document": "HiveMetastoreInfo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>hms serialId</p>",
+          "example": "hms-2wvsln3v",
+          "member": "string",
+          "name": "HiveMetastoreSerialId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群SerialId</p>",
+          "example": "cluster-mpz47s4z",
+          "member": "string",
+          "name": "ClusterGroupSerialId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态枚举</p><p>枚举值：</p><ul><li>3： 运行中</li><li>1： 初始化中</li><li>2： 部署中</li><li>-2： 已删除</li></ul>",
+          "example": "3",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用核数</p><p>单位：cu</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用内存资源</p><p>单位：GB</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "MemGB",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>副本数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Replica",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>hms 访问uri</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "thrift://172.17.14.60:9083,thrift://172.17.17.142:9083",
+          "member": "string",
+          "name": "HiveUri",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>命名空间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "HiveNamespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-05-27 19:38:44",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-06-05 16:48:33",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Warehouse地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosn://metacos-1315051789/warehouse_sh",
+          "member": "string",
+          "name": "HiveMetastoreWarehouseDir",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>高级参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Property",
+          "name": "Config",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "JobConfig": {
       "document": "作业配置详情",
       "members": [
@@ -8531,7 +8687,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>setats集群的名字</p>",
+          "document": "<p>Setats集群名字</p>",
           "example": "setats-test",
           "member": "string",
           "name": "Name",
@@ -8542,7 +8698,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>setats集群注释</p>",
+          "document": "<p>Setats集群描述</p>",
           "example": "setats测试集群",
           "member": "string",
           "name": "Remark",

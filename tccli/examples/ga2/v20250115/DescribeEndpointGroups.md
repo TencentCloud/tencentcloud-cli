@@ -65,6 +65,7 @@ Output:
                         "EndpointPort": 26
                     }
                 ],
+                "IspType": "BGP",
                 "VirtualExistForwardingRuleFlag": false,
                 "EndpointConfigurations": [
                     {

@@ -49,13 +49,6 @@
       "output": "ChangeApiUsableStatusResponse",
       "status": "online"
     },
-    "ContinueRunFailedTaskBatch": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n对执行失败的任务批次执行续跑",
-      "input": "ContinueRunFailedTaskBatchRequest",
-      "name": "续跑任务批次",
-      "output": "ContinueRunFailedTaskBatchResponse",
-      "status": "deprecated"
-    },
     "CreateAllGatewayApiAsync": {
       "document": "一键导入API分组",
       "input": "CreateAllGatewayApiAsyncRequest",
@@ -238,20 +231,6 @@
       "output": "CreateRepositoryResponse",
       "status": "online"
     },
-    "CreateTask": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n创建任务",
-      "input": "CreateTaskRequest",
-      "name": "创建任务",
-      "output": "CreateTaskResponse",
-      "status": "deprecated"
-    },
-    "CreateTaskFlow": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n创建工作流",
-      "input": "CreateTaskFlowRequest",
-      "name": "创建工作流",
-      "output": "CreateTaskFlowResponse",
-      "status": "deprecated"
-    },
     "CreateUnitNamespaces": {
       "document": "批量创建单元化命名空间",
       "input": "CreateUnitNamespacesRequest",
@@ -405,20 +384,6 @@
       "name": "删除仓库",
       "output": "DeleteRepositoryResponse",
       "status": "online"
-    },
-    "DeleteServerlessGroup": {
-      "document": "serverless 能力已下线。下线对应接口。\n\n删除Serverless部署组",
-      "input": "DeleteServerlessGroupRequest",
-      "name": "删除部署组",
-      "output": "DeleteServerlessGroupResponse",
-      "status": "deprecated"
-    },
-    "DeleteTask": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n删除任务",
-      "input": "DeleteTaskRequest",
-      "name": "删除任务",
-      "output": "DeleteTaskResponse",
-      "status": "deprecated"
     },
     "DeleteUnitNamespaces": {
       "document": "删除单元化命名空间",
@@ -626,7 +591,7 @@
     "DescribeContainerGroups": {
       "document": "容器部署组列表",
       "input": "DescribeContainerGroupsRequest",
-      "name": "容器部署组列表",
+      "name": "查询容器部署组列表",
       "output": "DescribeContainerGroupsResponse",
       "status": "online"
     },
@@ -685,13 +650,6 @@
       "name": "查询文件配置项列表",
       "output": "DescribeFileConfigsResponse",
       "status": "online"
-    },
-    "DescribeFlowLastBatchState": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n查询工作流最新一个批次的状态信息",
-      "input": "DescribeFlowLastBatchStateRequest",
-      "name": "查询工作流最近一个批次的执行状态",
-      "output": "DescribeFlowLastBatchStateResponse",
-      "status": "deprecated"
     },
     "DescribeGatewayAllGroupApis": {
       "document": "查询网关所有分组下Api列表",
@@ -1050,27 +1008,6 @@
       "output": "DescribeStatisticsResponse",
       "status": "online"
     },
-    "DescribeTaskDetail": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n查询任务详情",
-      "input": "DescribeTaskDetailRequest",
-      "name": "查询任务详情",
-      "output": "DescribeTaskDetailResponse",
-      "status": "deprecated"
-    },
-    "DescribeTaskLastStatus": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n查询任务最近一次执行状态",
-      "input": "DescribeTaskLastStatusRequest",
-      "name": "查看任务最近执行批次状态",
-      "output": "DescribeTaskLastStatusResponse",
-      "status": "deprecated"
-    },
-    "DescribeTaskRecords": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n翻页查询任务列表",
-      "input": "DescribeTaskRecordsRequest",
-      "name": "查询任务列表",
-      "output": "DescribeTaskRecordsResponse",
-      "status": "deprecated"
-    },
     "DescribeUnitApiUseDetail": {
       "document": "查询网关API监控明细数据（仅单元化网关），非单元化网关使用DescribeApiUseDetail",
       "input": "DescribeUnitApiUseDetailRequest",
@@ -1127,20 +1064,6 @@
       "output": "DisableLaneRuleResponse",
       "status": "online"
     },
-    "DisableTask": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n停用任务",
-      "input": "DisableTaskRequest",
-      "name": "停用任务",
-      "output": "DisableTaskResponse",
-      "status": "deprecated"
-    },
-    "DisableTaskFlow": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n停用工作流",
-      "input": "DisableTaskFlowRequest",
-      "name": "停用工作流",
-      "output": "DisableTaskFlowResponse",
-      "status": "deprecated"
-    },
     "DisableUnitRoute": {
       "document": "禁用单元化路由",
       "input": "DisableUnitRouteRequest",
@@ -1183,20 +1106,6 @@
       "output": "EnableLaneRuleResponse",
       "status": "online"
     },
-    "EnableTask": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n启用任务",
-      "input": "EnableTaskRequest",
-      "name": "启用任务",
-      "output": "EnableTaskResponse",
-      "status": "deprecated"
-    },
-    "EnableTaskFlow": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n启用工作流",
-      "input": "EnableTaskFlowRequest",
-      "name": "启用工作流",
-      "output": "EnableTaskFlowResponse",
-      "status": "deprecated"
-    },
     "EnableUnitRoute": {
       "document": "启用单元化路由",
       "input": "EnableUnitRouteRequest",
@@ -1210,20 +1119,6 @@
       "name": "启用单元化规则",
       "output": "EnableUnitRuleResponse",
       "status": "online"
-    },
-    "ExecuteTask": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n手动执行一次任务",
-      "input": "ExecuteTaskRequest",
-      "name": "手动执行一次任务",
-      "output": "ExecuteTaskResponse",
-      "status": "deprecated"
-    },
-    "ExecuteTaskFlow": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n执行一次工作流",
-      "input": "ExecuteTaskFlowRequest",
-      "name": "执行一次工作流",
-      "output": "ExecuteTaskFlowResponse",
-      "status": "deprecated"
     },
     "ExpandGroup": {
       "document": "虚拟机部署组添加实例",
@@ -1316,13 +1211,6 @@
       "output": "ModifyProgramResponse",
       "status": "online"
     },
-    "ModifyTask": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n修改任务",
-      "input": "ModifyTaskRequest",
-      "name": "修改任务",
-      "output": "ModifyTaskResponse",
-      "status": "deprecated"
-    },
     "ModifyUploadInfo": {
       "document": "调用该接口和COS的上传接口后，需要调用此接口更新TSF中保存的程序包状态。\n调用此接口完成后，才标志上传包流程结束。",
       "input": "ModifyUploadInfoRequest",
@@ -1342,34 +1230,6 @@
       "input": "ReassociateBusinessLogConfigRequest",
       "name": "重关联业务日志配置",
       "output": "ReassociateBusinessLogConfigResponse",
-      "status": "deprecated"
-    },
-    "RedoTask": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n重新执行任务",
-      "input": "RedoTaskRequest",
-      "name": "重新执行任务",
-      "output": "RedoTaskResponse",
-      "status": "deprecated"
-    },
-    "RedoTaskBatch": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n重新执行任务批次",
-      "input": "RedoTaskBatchRequest",
-      "name": "重新执行任务批次",
-      "output": "RedoTaskBatchResponse",
-      "status": "deprecated"
-    },
-    "RedoTaskExecute": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n重新执行在某个节点上执行任务。",
-      "input": "RedoTaskExecuteRequest",
-      "name": "重新执行任务的一次执行",
-      "output": "RedoTaskExecuteResponse",
-      "status": "deprecated"
-    },
-    "RedoTaskFlowBatch": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n重新执行工作流批次",
-      "input": "RedoTaskFlowBatchRequest",
-      "name": "重新执行工作流批次",
-      "output": "RedoTaskFlowBatchResponse",
       "status": "deprecated"
     },
     "ReleaseApiGroup": {
@@ -1497,27 +1357,6 @@
       "name": "停止虚拟机部署组",
       "output": "StopGroupResponse",
       "status": "online"
-    },
-    "StopTaskBatch": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n停止执行中的任务批次， 非运行中的任务不可调用。",
-      "input": "StopTaskBatchRequest",
-      "name": "停止执行中的任务批次",
-      "output": "StopTaskBatchResponse",
-      "status": "deprecated"
-    },
-    "StopTaskExecute": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n停止正在某个节点上执行的任务",
-      "input": "StopTaskExecuteRequest",
-      "name": "停止正在执行的任务",
-      "output": "StopTaskExecuteResponse",
-      "status": "deprecated"
-    },
-    "TerminateTaskFlowBatch": {
-      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n停止一个工作流批次",
-      "input": "TerminateTaskFlowBatchRequest",
-      "name": "停止一个工作流批次",
-      "output": "TerminateTaskFlowBatchResponse",
-      "status": "deprecated"
     },
     "UnbindApiGroup": {
       "document": "API分组批量与网关解绑",
@@ -1887,23 +1726,6 @@
         }
       ],
       "type": "object"
-    },
-    "AdvanceSettings": {
-      "document": "高级选项设置",
-      "members": [
-        {
-          "disabled": false,
-          "document": "子任务单机并发数限制，默认值为2",
-          "example": "2",
-          "member": "int64",
-          "name": "SubTaskConcurrency",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
     },
     "Affinity": {
       "document": "亲和规则",
@@ -2278,6 +2100,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>API在线状态</p><p>枚举值：</p><ul><li>ONLINE： 在线</li><li>OFFLINE： 离线</li><li>UNKNOWN： 未知</li><li>DELETED： 查询服务治理API不存在</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "ApiOnlineStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2622,6 +2454,34 @@
         }
       ],
       "usage": "in"
+    },
+    "ApiParam": {
+      "document": "API 参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接口Method</p>",
+          "example": "POST",
+          "member": "string",
+          "name": "Method",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接口Path</p>",
+          "example": "/mock_api",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ApiRateLimitRule": {
       "document": "微服务网关API限流规则",
@@ -7199,43 +7059,6 @@
       ],
       "usage": "out"
     },
-    "ContinueRunFailedTaskBatchRequest": {
-      "document": "ContinueRunFailedTaskBatch请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务批次ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)页面点击任务ID进入执行记录页，第一列即为任务批次ID，在[任务执行记录](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=task)页能查看所有任务批次ID。",
-          "example": "batch-6a79x94v",
-          "member": "string",
-          "name": "BatchId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ContinueRunFailedTaskBatchResponse": {
-      "document": "ContinueRunFailedTaskBatch返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "true：操作成功、false：操作失败",
-          "example": "true",
-          "member": "bool",
-          "name": "Result",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "CosCredentials": {
       "document": "cos临时账号信息",
       "members": [
@@ -9210,7 +9033,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间ID。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
+          "document": "<p>命名空间ID。该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/api/649/36096\">DescribeSimpleNamespaces</a> 的返回值中的 NamespaceId 字段来获取或通过登录<a href=\"https://console.cloud.tencent.com/tsf/resource?tab=namespace\">控制台</a>查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/36098\">CreateNamespace</a>创建新的命名空间。</p>",
           "example": "namespace-v3gw3lna",
           "member": "string",
           "name": "NamespaceId",
@@ -9219,7 +9042,7 @@
         },
         {
           "disabled": false,
-          "document": "微服务名称。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceName 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。",
+          "document": "<p>微服务名称。该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/product/649/36084\">DescribeMicroservices</a> 的返回值中的 MicroserviceName 字段来获取或通过登录<a href=\"https://console.cloud.tencent.com/tse/tsf-consul?tab=service\">控制台</a>查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/85860\">CreateMicroserviceWithDetailResp</a>创建新的微服务。</p>",
           "example": "provider-app",
           "member": "string",
           "name": "MicroserviceName",
@@ -9228,10 +9051,46 @@
         },
         {
           "disabled": false,
-          "document": "微服务备注信息，最多支持200个字符。",
+          "document": "<p>微服务备注信息，最多支持200个字符。</p>",
           "example": "This is desc",
           "member": "string",
           "name": "MicroserviceDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型，默认SDK</p><p>枚举值：</p><ul><li>SDK： sdk服务</li><li>MESH_EXTERNAL： mesh外部服务</li></ul>",
+          "example": "SDK",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名+端口，或者是纯域名方式，其他的不允许配置，不支持 IP</p>",
+          "example": "www.tsf.com",
+          "member": "string",
+          "name": "ServiceUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议类型</p>",
+          "example": "http",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务发现方式</p><p>枚举值：</p><ul><li>DNS： DNS方式</li></ul>",
+          "example": "DNS",
+          "member": "string",
+          "name": "ServiceDiscovery",
           "required": false,
           "type": "string"
         }
@@ -9243,7 +9102,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新增结果。\ntrue：操作成功。\nfalse：操作失败。",
+          "document": "<p>新增结果。<br>true：操作成功。<br>false：操作失败。</p>",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -9265,7 +9124,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间ID。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
+          "document": "<p>命名空间ID。该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/api/649/36096\">DescribeSimpleNamespaces</a> 的返回值中的 NamespaceId 字段来获取或通过登录<a href=\"https://console.cloud.tencent.com/tsf/resource?tab=namespace\">控制台</a>查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/36098\">CreateNamespace</a>创建新的命名空间。</p>",
           "example": "namespace-vw8oox6v",
           "member": "string",
           "name": "NamespaceId",
@@ -9274,7 +9133,7 @@
         },
         {
           "disabled": false,
-          "document": "微服务名称，最多支持128个字符。",
+          "document": "<p>微服务名称，最多支持128个字符。</p>",
           "example": "provider-demo",
           "member": "string",
           "name": "MicroserviceName",
@@ -9283,10 +9142,46 @@
         },
         {
           "disabled": false,
-          "document": "微服务描述信息，最多支持200个字符。",
+          "document": "<p>微服务描述信息，最多支持200个字符。</p>",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "MicroserviceDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型，默认SDK</p><p>枚举值：</p><ul><li>SDK： sdk服务</li><li>MESH_EXTERNAL： mesh外部服务</li></ul>",
+          "example": "SDK",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名+端口，或者是纯域名方式，其他的不允许配置，不支持 IP</p>",
+          "example": "www.tsf.com",
+          "member": "string",
+          "name": "ServiceUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议类型</p>",
+          "example": "http",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务发现方式</p><p>枚举值：</p><ul><li>DNS： DNS方式</li></ul>",
+          "example": "DNS",
+          "member": "string",
+          "name": "ServiceDiscovery",
           "required": false,
           "type": "string"
         }
@@ -9298,7 +9193,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务ID。",
+          "document": "<p>微服务ID。</p>",
           "example": "ms-vwdjqqow",
           "member": "string",
           "name": "Result",
@@ -9815,251 +9710,6 @@
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateTaskFlowRequest": {
-      "document": "CreateTaskFlow请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "工作流名称",
-          "example": "exec-6g4rq8z6",
-          "member": "string",
-          "name": "FlowName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "触发方式",
-          "example": "无",
-          "member": "TaskRule",
-          "name": "TriggerRule",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "工作流任务节点列表",
-          "example": "无",
-          "member": "TaskFlowEdge",
-          "name": "FlowEdges",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "工作流执行超时时间，单位：毫秒",
-          "example": "3000",
-          "member": "uint64",
-          "name": "TimeOut",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "数据集列表",
-          "example": "[\"program-6a79x94v\"]",
-          "member": "string",
-          "name": "ProgramIdList",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateTaskFlowResponse": {
-      "document": "CreateTaskFlow返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "工作流 ID",
-          "example": "flow-6a79x94v",
-          "member": "string",
-          "name": "Result",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateTaskRequest": {
-      "document": "CreateTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务名称，任务长度64字符",
-          "example": "task-test",
-          "member": "string",
-          "name": "TaskName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务内容，长度限制65536个字节",
-          "example": "com.example.task.simpleTask",
-          "member": "string",
-          "name": "TaskContent",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行",
-          "example": "unicast",
-          "member": "string",
-          "name": "ExecuteType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务类型。当前只支持一种任务类型。枚举值，java：Java类任务",
-          "example": "java",
-          "member": "string",
-          "name": "TaskType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务超时时间，取值大于0，单位：毫秒（ms）",
-          "example": "30000",
-          "member": "uint64",
-          "name": "TimeOut",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "部署组ID。在[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)，点击应用ID进入应用部署页查看部署组ID。",
-          "example": "group-6a79x94v",
-          "member": "string",
-          "name": "GroupId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "触发规则",
-          "example": "无",
-          "member": "TaskRule",
-          "name": "TaskRule",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "重试次数，0 <= RetryCount<= 10",
-          "example": "0",
-          "member": "uint64",
-          "name": "RetryCount",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "重试间隔， 0 <= RetryInterval <= 600000， 时间单位 ms",
-          "example": "0",
-          "member": "uint64",
-          "name": "RetryInterval",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分片数量，仅当任务执行方式为分片执行时需要设置该值，取值范围2~1000",
-          "example": "0",
-          "member": "int64",
-          "name": "ShardCount",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分片参数",
-          "example": "无",
-          "member": "ShardArgument",
-          "name": "ShardArguments",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "判断任务成功的操作符",
-          "example": "GTE",
-          "member": "string",
-          "name": "SuccessOperator",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "判断任务成功率的阈值，如100",
-          "example": "100",
-          "member": "string",
-          "name": "SuccessRatio",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "高级设置",
-          "example": "无",
-          "member": "AdvanceSettings",
-          "name": "AdvanceSettings",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "任务参数，长度限制10000个字符",
-          "example": "taskArgumentTest",
-          "member": "string",
-          "name": "TaskArgument",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "数据集列表",
-          "example": "[\"program-6a79x94v\"]",
-          "member": "string",
-          "name": "ProgramIdList",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateTaskResponse": {
-      "document": "CreateTask返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "task-6a79x94v",
-          "member": "string",
-          "name": "Result",
-          "output_required": true,
-          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -11159,79 +10809,6 @@
       ],
       "type": "object"
     },
-    "DeleteServerlessGroupRequest": {
-      "document": "DeleteServerlessGroup请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "groupId，分组唯一标识",
-          "example": "",
-          "member": "string",
-          "name": "GroupId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteServerlessGroupResponse": {
-      "document": "DeleteServerlessGroup返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "结果true：成功；false：失败。",
-          "example": "",
-          "member": "bool",
-          "name": "Result",
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteTaskRequest": {
-      "document": "DeleteTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列和任务基本信息页查看任务ID。",
-          "example": "task-6a79x94v",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteTaskResponse": {
-      "document": "DeleteTask返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "true：删除成功，false：删除失败",
-          "example": "true",
-          "member": "bool",
-          "name": "Result",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DeleteUnitNamespacesRequest": {
       "document": "DeleteUnitNamespaces请求参数结构体",
       "members": [
@@ -11578,7 +11155,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "application-9yn765ea",
           "member": "string",
           "name": "ApplicationId",
@@ -11587,7 +11164,7 @@
         },
         {
           "disabled": false,
-          "document": "可观测配置",
+          "document": "<p>可观测配置</p>",
           "example": "无",
           "member": "ContainerGroupObservabilityConfig",
           "name": "ObservabilityConfig",
@@ -11596,7 +11173,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-23iwxs1y",
           "member": "string",
           "name": "ClusterId",
@@ -11605,7 +11182,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组ID，分组唯一标识",
+          "document": "<p>部署组ID，分组唯一标识</p>",
           "example": "group-zvwpn3wy",
           "member": "string",
           "name": "GroupId",
@@ -11614,7 +11191,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的环境变量参数",
+          "document": "<p>业务容器的环境变量参数</p>",
           "example": "无",
           "member": "Env",
           "name": "Envs",
@@ -11623,7 +11200,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的挂载信息",
+          "document": "<p>业务容器的挂载信息</p>",
           "example": "无",
           "member": "VolumeMountInfo",
           "name": "VolumeMountInfoList",
@@ -11632,7 +11209,7 @@
         },
         {
           "disabled": false,
-          "document": "业务主容器生命周期钩子列表",
+          "document": "<p>业务主容器生命周期钩子列表</p>",
           "example": "无",
           "member": "LifeCycleHook",
           "name": "LifeCycleHookList",
@@ -11641,7 +11218,7 @@
         },
         {
           "disabled": false,
-          "document": "附属容器列表",
+          "document": "<p>附属容器列表</p>",
           "example": "无",
           "member": "ContainerInfo",
           "name": "AdditionalContainerList",
@@ -11650,7 +11227,7 @@
         },
         {
           "disabled": false,
-          "document": "容器卷信息",
+          "document": "<p>容器卷信息</p>",
           "example": "无",
           "member": "VolumeInfo",
           "name": "VolumeInfoList",
@@ -11659,7 +11236,7 @@
         },
         {
           "disabled": false,
-          "document": "Service访问配置列表",
+          "document": "<p>Service访问配置列表</p>",
           "example": "无",
           "member": "ServiceSetting",
           "name": "ServiceSettingList",
@@ -11668,7 +11245,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "consumer app",
           "member": "string",
           "name": "Alias",
@@ -11677,7 +11254,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组名称",
+          "document": "<p>部署组名称</p>",
           "example": "consumer-app",
           "member": "string",
           "name": "GroupName",
@@ -11686,7 +11263,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -11695,7 +11272,7 @@
         },
         {
           "disabled": false,
-          "document": "容器类型",
+          "document": "<p>容器类型</p>",
           "example": "Deployment",
           "member": "string",
           "name": "ContainerKind",
@@ -11704,7 +11281,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的 镜像Server ccr.ccs.tencentyun.com",
+          "document": "<p>业务容器的 镜像Server ccr.ccs.tencentyun.com</p>",
           "example": "ccr.ccs.tencentyun.com",
           "member": "string",
           "name": "Server",
@@ -11713,7 +11290,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的镜像名",
+          "document": "<p>业务容器的镜像名</p>",
           "example": "tsf_700001025656/test-sts-1",
           "member": "string",
           "name": "RepoName",
@@ -11722,7 +11299,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库类型",
+          "document": "<p>仓库类型</p>",
           "example": "personal",
           "member": "string",
           "name": "RepoType",
@@ -11731,7 +11308,7 @@
         },
         {
           "disabled": false,
-          "document": "TCR仓库信息",
+          "document": "<p>TCR仓库信息</p>",
           "example": "无",
           "member": "TcrRepoInfo",
           "name": "TcrRepoInfo",
@@ -11740,7 +11317,7 @@
         },
         {
           "disabled": false,
-          "document": "容器访问凭证名称",
+          "document": "<p>容器访问凭证名称</p>",
           "example": "qcloudregistry",
           "member": "string",
           "name": "SecretName",
@@ -11749,7 +11326,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的镜像版本号",
+          "document": "<p>业务容器的镜像版本号</p>",
           "example": "v1",
           "member": "string",
           "name": "TagName",
@@ -11758,7 +11335,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查",
+          "document": "<p>健康检查</p>",
           "example": "无",
           "member": "HealthCheckSettings",
           "name": "HealthCheckSettings",
@@ -11767,7 +11344,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的 cpu  request",
+          "document": "<p>业务容器的 cpu  request</p>",
           "example": "0.1",
           "member": "string",
           "name": "CpuRequest",
@@ -11776,7 +11353,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的 cpu limit",
+          "document": "<p>业务容器的 cpu limit</p>",
           "example": "0.5",
           "member": "string",
           "name": "CpuLimit",
@@ -11785,7 +11362,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的 mem request",
+          "document": "<p>业务容器的 mem request</p>",
           "example": "1024",
           "member": "string",
           "name": "MemRequest",
@@ -11794,7 +11371,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的 mem limit",
+          "document": "<p>业务容器的 mem limit</p>",
           "example": "200",
           "member": "string",
           "name": "MemLimit",
@@ -11803,7 +11380,7 @@
         },
         {
           "disabled": false,
-          "document": "业务容器的 jvm 参数",
+          "document": "<p>业务容器的 jvm 参数</p>",
           "example": "-Xms128m -Xmx512m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m",
           "member": "string",
           "name": "JvmOpts",
@@ -11812,7 +11389,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为初始化容器 业务主容器不能为初始化容",
+          "document": "<p>是否为初始化容器 业务主容器不能为初始化容</p>",
           "example": "false",
           "member": "bool",
           "name": "InitContainerEnable",
@@ -11821,7 +11398,7 @@
         },
         {
           "disabled": false,
-          "document": "业务主容器是否为特权容器",
+          "document": "<p>业务主容器是否为特权容器</p>",
           "example": "false",
           "member": "bool",
           "name": "PrivilegeContainerEnable",
@@ -11830,7 +11407,7 @@
         },
         {
           "disabled": false,
-          "document": "业务主容器运行命令(转base64)",
+          "document": "<p>业务主容器运行命令(转base64)</p>",
           "example": "/bin/sh",
           "member": "string",
           "name": "RunCommand",
@@ -11839,7 +11416,7 @@
         },
         {
           "disabled": false,
-          "document": "业务主容器运行参数(转base64)",
+          "document": "<p>业务主容器运行参数(转base64)</p>",
           "example": "-c\\nwhile true; do echo hello; sleep 10; done",
           "member": "string",
           "name": "RunArg",
@@ -11848,7 +11425,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数量",
+          "document": "<p>实例数量</p>",
           "example": "1",
           "member": "int64",
           "name": "InstanceNum",
@@ -11857,7 +11434,7 @@
         },
         {
           "disabled": false,
-          "document": "调度策略",
+          "document": "<p>调度策略</p>",
           "example": "无",
           "member": "SchedulingStrategy",
           "name": "SchedulingStrategy",
@@ -11866,7 +11443,7 @@
         },
         {
           "disabled": false,
-          "document": "重启策略",
+          "document": "<p>重启策略</p>",
           "example": "Always",
           "member": "string",
           "name": "RestartPolicy",
@@ -11875,7 +11452,7 @@
         },
         {
           "disabled": false,
-          "document": "服务治理配置",
+          "document": "<p>服务治理配置</p>",
           "example": "NULL",
           "member": "string",
           "name": "ServiceSpecEncode",
@@ -11884,7 +11461,7 @@
         },
         {
           "disabled": false,
-          "document": "istio容器的 mem Request",
+          "document": "<p>istio容器的 mem Request</p>",
           "example": "200",
           "member": "string",
           "name": "IstioMemRequest",
@@ -11893,7 +11470,7 @@
         },
         {
           "disabled": false,
-          "document": " istio容器的 cpu Request",
+          "document": "<p>istio容器的 cpu Request</p>",
           "example": "0.4",
           "member": "string",
           "name": "IstioCpuRequest",
@@ -11902,7 +11479,7 @@
         },
         {
           "disabled": false,
-          "document": "istio容器的 mem Limit",
+          "document": "<p>istio容器的 mem Limit</p>",
           "example": "1024",
           "member": "string",
           "name": "IstioMemLimit",
@@ -11911,7 +11488,7 @@
         },
         {
           "disabled": false,
-          "document": "istio容器的 cpu Limit",
+          "document": "<p>istio容器的 cpu Limit</p>",
           "example": "1",
           "member": "string",
           "name": "IstioCpuLimit",
@@ -11920,7 +11497,7 @@
         },
         {
           "disabled": false,
-          "document": "服务治理配置",
+          "document": "<p>服务治理配置</p>",
           "example": "无",
           "member": "ContainerGroupServiceGovernanceConfig",
           "name": "ServiceGovernanceConfig",
@@ -11929,7 +11506,7 @@
         },
         {
           "disabled": false,
-          "document": "agent容器的 mem Request",
+          "document": "<p>agent容器的 mem Request</p>",
           "example": "200",
           "member": "string",
           "name": "AgentMemRequest",
@@ -11938,7 +11515,7 @@
         },
         {
           "disabled": false,
-          "document": "agent容器的 cpu Request",
+          "document": "<p>agent容器的 cpu Request</p>",
           "example": "0.1",
           "member": "string",
           "name": "AgentCpuRequest",
@@ -11947,7 +11524,7 @@
         },
         {
           "disabled": false,
-          "document": "agent容器的 mem Limit",
+          "document": "<p>agent容器的 mem Limit</p>",
           "example": "200",
           "member": "string",
           "name": "AgentMemLimit",
@@ -11956,7 +11533,7 @@
         },
         {
           "disabled": false,
-          "document": "agent容器的 cpu Limit",
+          "document": "<p>agent容器的 cpu Limit</p>",
           "example": "1",
           "member": "string",
           "name": "AgentCpuLimit",
@@ -11965,7 +11542,7 @@
         },
         {
           "disabled": false,
-          "document": "发布策略(0表示快速更新，1表示滚动更新。默认值为0)",
+          "document": "<p>发布策略(0表示快速更新，1表示滚动更新。默认值为0)</p>",
           "example": "0",
           "member": "int64",
           "name": "UpdateType",
@@ -11974,7 +11551,7 @@
         },
         {
           "disabled": false,
-          "document": "更新间隔,单位秒",
+          "document": "<p>更新间隔,单位秒</p>",
           "example": "10",
           "member": "int64",
           "name": "UpdateIvl",
@@ -11983,7 +11560,7 @@
         },
         {
           "disabled": false,
-          "document": "对应更新策略和策略配置参数",
+          "document": "<p>对应更新策略和策略配置参数</p>",
           "example": "25%",
           "member": "string",
           "name": "MaxSurge",
@@ -11992,7 +11569,7 @@
         },
         {
           "disabled": false,
-          "document": "对应更新策略和策略配置参数",
+          "document": "<p>对应更新策略和策略配置参数</p>",
           "example": "0",
           "member": "string",
           "name": "MaxUnavailable",
@@ -12001,7 +11578,7 @@
         },
         {
           "disabled": false,
-          "document": "预热参数配置",
+          "document": "<p>预热参数配置</p>",
           "example": "无",
           "member": "WarmupSetting",
           "name": "WarmupSetting",
@@ -12010,7 +11587,7 @@
         },
         {
           "disabled": false,
-          "document": "配置模版ID",
+          "document": "<p>配置模版ID</p>",
           "example": "template-id",
           "member": "string",
           "name": "ConfigTemplateId",
@@ -12019,7 +11596,7 @@
         },
         {
           "disabled": false,
-          "document": "配置模版Version",
+          "document": "<p>配置模版Version</p>",
           "example": "0",
           "member": "int64",
           "name": "ConfigTemplateVersion",
@@ -12028,7 +11605,7 @@
         },
         {
           "disabled": false,
-          "document": "是否清除数据卷信息",
+          "document": "<p>是否清除数据卷信息</p>",
           "example": "false",
           "member": "bool",
           "name": "VolumeClean",
@@ -12037,7 +11614,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间Id",
+          "document": "<p>命名空间Id</p>",
           "example": "namespace-xx",
           "member": "string",
           "name": "NamespaceId",
@@ -12046,7 +11623,7 @@
         },
         {
           "disabled": false,
-          "document": "是否部署agent容器",
+          "document": "<p>是否部署agent容器</p>",
           "example": "true",
           "member": "bool",
           "name": "DeployAgent",
@@ -12055,7 +11632,7 @@
         },
         {
           "disabled": false,
-          "document": "javaagent信息: SERVICE_AGENT/OT_AGENT",
+          "document": "<p>javaagent信息: SERVICE_AGENT/OT_AGENT</p>",
           "example": "无",
           "member": "AgentProfile",
           "name": "AgentProfileList",
@@ -12064,7 +11641,7 @@
         },
         {
           "disabled": false,
-          "document": "是否清除Service信息",
+          "document": "<p>是否清除Service信息</p>",
           "example": "false",
           "member": "bool",
           "name": "ServiceClean",
@@ -12073,7 +11650,7 @@
         },
         {
           "disabled": false,
-          "document": "是否清除Env信息",
+          "document": "<p>是否清除Env信息</p>",
           "example": "false",
           "member": "bool",
           "name": "EnvClean",
@@ -12082,7 +11659,7 @@
         },
         {
           "disabled": false,
-          "document": "本次部署的描述信息",
+          "document": "<p>本次部署的描述信息</p>",
           "example": "update image to v1",
           "member": "string",
           "name": "DeployDesc",
@@ -12091,7 +11668,7 @@
         },
         {
           "disabled": false,
-          "document": "k8s命名空间名称",
+          "document": "<p>k8s命名空间名称</p>",
           "example": "consumer",
           "member": "string",
           "name": "K8sNamespaceName",
@@ -12100,7 +11677,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用静态IP",
+          "document": "<p>是否启用静态IP</p>",
           "example": "false",
           "member": "bool",
           "name": "StaticIpEnabled",
@@ -12109,7 +11686,7 @@
         },
         {
           "disabled": false,
-          "document": "启动策略[OrderedReady/Parallel]",
+          "document": "<p>启动策略[OrderedReady/Parallel]</p>",
           "example": "OrderedReady",
           "member": "string",
           "name": "PodManagementPolicyType",
@@ -12118,7 +11695,7 @@
         },
         {
           "disabled": false,
-          "document": "滚动更新分区序号",
+          "document": "<p>滚动更新分区序号</p>",
           "example": "0",
           "member": "int64",
           "name": "Partition",
@@ -12127,10 +11704,19 @@
         },
         {
           "disabled": false,
-          "document": "是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数",
+          "document": "<p>是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数</p>",
           "example": "false",
           "member": "bool",
           "name": "IncrementalDeployment",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否不立即启动</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "DoNotStart",
           "required": false,
           "type": "bool"
         }
@@ -12168,7 +11754,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署容器应用是否成功。\ntrue：成功。\nfalse：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署容器应用是否成功。<br>true：成功。<br>false：失败。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DeployContainerApplicationResp",
           "name": "Result",
@@ -14331,7 +13917,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分组所属【应用ID】，可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
+          "document": "<p>分组所属【应用ID】，可通过调用<a href=\"https://cloud.tencent.com/document/product/649/36090\">DescribeApplications</a>查询已创建的应用列表或登录<a href=\"https://console.cloud.tencent.com/tsf/app?rid=1\">控制台</a>进行查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/36094\">CreateApplication</a>创建新的应用。</p>",
           "example": "application-zvw6zp9a",
           "member": "string",
           "name": "ApplicationId",
@@ -14340,7 +13926,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索字段，模糊搜索groupName字段",
+          "document": "<p>搜索字段，模糊搜索groupName字段</p>",
           "example": "foo-group",
           "member": "string",
           "name": "SearchWord",
@@ -14349,7 +13935,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，默认为 createTime字段，支持id， name， createTime",
+          "document": "<p>排序字段，默认为 createTime字段，支持id， name， createTime</p>",
           "example": "id",
           "member": "string",
           "name": "OrderBy",
@@ -14358,7 +13944,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式，默认为1：倒序排序，0：正序，1：倒序",
+          "document": "<p>排序方式，默认为1：倒序排序，0：正序，1：倒序</p>",
           "example": "0",
           "member": "int64",
           "name": "OrderType",
@@ -14367,7 +13953,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，取值从0开始",
+          "document": "<p>偏移量，取值从0开始</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -14376,7 +13962,7 @@
         },
         {
           "disabled": false,
-          "document": "分页个数，默认为20， 取值应为1~50",
+          "document": "<p>分页个数，默认为20， 取值应为1~50</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -14385,7 +13971,7 @@
         },
         {
           "disabled": false,
-          "document": "分组所属【集群ID】，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=docker)进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。",
+          "document": "<p>分组所属【集群ID】，可通过调用<a href=\"https://cloud.tencent.com/document/product/649/85857\">DescribeClusters</a>查询已创建的集群列表或登录<a href=\"https://console.cloud.tencent.com/tsf/resource?rid=1&amp;tab=docker\">控制台</a>进行查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/36049\">CreateCluster</a>创建新的集群。</p>",
           "example": "cls-2nhp3g1i",
           "member": "string",
           "name": "ClusterId",
@@ -14394,12 +13980,21 @@
         },
         {
           "disabled": false,
-          "document": "分组所属【命名空间 ID】，可通过调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
+          "document": "<p>分组所属【命名空间 ID】，可通过调用<a href=\"https://cloud.tencent.com/document/product/649/36096\">DescribeSimpleNamespaces</a>查询已创建的命名空间列表或登录<a href=\"https://console.cloud.tencent.com/tsf/resource?rid=1&amp;tab=namespace\">控制台</a>进行查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/36098\">CreateNamespace</a>创建新的命名空间。</p>",
           "example": "namespace-byxwl4da",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署组ID列表</p>",
+          "example": "[\"group-nal9zmxa\"]",
+          "member": "string",
+          "name": "GroupIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -14409,7 +14004,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询的权限数据对象",
+          "document": "<p>查询的权限数据对象</p>",
           "example": "无",
           "member": "ContainGroupResult",
           "name": "Result",
@@ -14911,43 +14506,6 @@
       ],
       "type": "object"
     },
-    "DescribeFlowLastBatchStateRequest": {
-      "document": "DescribeFlowLastBatchState请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "工作流 ID。前往[工作流管理](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=workflowManage)，在工作流列表第一列和工作流详情页查看工作流ID。",
-          "example": "flow-6a79x94v",
-          "member": "string",
-          "name": "FlowId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeFlowLastBatchStateResponse": {
-      "document": "DescribeFlowLastBatchState返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "工作流批次最新状态",
-          "example": "无",
-          "member": "TaskFlowLastBatchState",
-          "name": "Result",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeGatewayAllGroupApisRequest": {
       "document": "DescribeGatewayAllGroupApis请求参数结构体",
       "members": [
@@ -14999,7 +14557,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分组ID",
+          "document": "<p>分组ID</p>",
           "example": "grp-nb08ur29",
           "member": "string",
           "name": "GroupId",
@@ -15008,7 +14566,7 @@
         },
         {
           "disabled": false,
-          "document": "翻页偏移量",
+          "document": "<p>翻页偏移量</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -15017,7 +14575,7 @@
         },
         {
           "disabled": false,
-          "document": "每页的记录数",
+          "document": "<p>每页的记录数</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -15026,7 +14584,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字，支持 API path",
+          "document": "<p>搜索关键字，支持 API path</p>",
           "example": "/swagger",
           "member": "string",
           "name": "SearchWord",
@@ -15035,7 +14593,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "<p>部署组ID</p>",
           "example": "group-yd3b588a",
           "member": "string",
           "name": "GatewayDeployGroupId",
@@ -15044,10 +14602,28 @@
         },
         {
           "disabled": false,
-          "document": "发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)",
+          "document": "<p>发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)</p>",
           "example": "released",
           "member": "string",
           "name": "ReleaseStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回扩展出参字段名</p>",
+          "example": "[\"ApiOnlineStatus\"]",
+          "member": "string",
+          "name": "ExtendFieldList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务接口状态</p><p>枚举值：</p><ul><li>ONLINE： 在线状态</li><li>OFFLINE： 离线状态</li><li>UNKNOWN： 未知</li><li>DELETED： 查询MS API不存在</li></ul>",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "ApiOnlineStatus",
           "required": false,
           "type": "string"
         }
@@ -15059,7 +14635,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "翻页结构",
+          "document": "<p>翻页结构</p>",
           "example": "无",
           "member": "TsfPageApiDetailInfo",
           "name": "Result",
@@ -16898,7 +16474,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。",
+          "document": "<p>微服务ID。该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/product/649/36084\">DescribeMicroservices</a> 的返回值中的 MicroserviceId 字段来获取或通过登录<a href=\"https://console.cloud.tencent.com/tse/tsf-consul?tab=service\">控制台</a>查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/85860\">CreateMicroserviceWithDetailResp</a>创建新的微服务。</p>",
           "example": "ms-y5w8n5e9",
           "member": "string",
           "name": "MicroserviceId",
@@ -16907,7 +16483,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字。",
+          "document": "<p>搜索关键字。</p>",
           "example": "echo-feign-url",
           "member": "string",
           "name": "SearchWord",
@@ -16916,7 +16492,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为50。",
+          "document": "<p>返回数量，默认为20，最大值为50。</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -16925,12 +16501,21 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>批量查询API参数</p>",
+          "example": "无",
+          "member": "ApiParam",
+          "name": "BatchApiParamList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -16940,7 +16525,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务API列表。",
+          "document": "<p>微服务API列表。</p>",
           "example": "无",
           "member": "TsfApiListResponse",
           "name": "Result",
@@ -18856,189 +18441,6 @@
       ],
       "type": "object"
     },
-    "DescribeTaskDetailRequest": {
-      "document": "DescribeTaskDetail请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列和任务基本信息页查看任务ID。",
-          "example": "task-jzdv5qao",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务历史ID。查询任务列表 [DescribeTaskRecords](https://cloud.tencent.com/document/api/649/56136) 返回值字段 TaskLogId",
-          "example": "tlog-zex89wp5",
-          "member": "string",
-          "name": "TaskLogId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTaskDetailResponse": {
-      "document": "DescribeTaskDetail返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务详情",
-          "example": "无",
-          "member": "TaskRecord",
-          "name": "Result",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTaskLastStatusRequest": {
-      "document": "DescribeTaskLastStatus请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列和任务基本信息页查看任务ID。",
-          "example": "task-6a79x94v",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTaskLastStatusResponse": {
-      "document": "DescribeTaskLastStatus返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务上一次执行状态",
-          "example": "无",
-          "member": "TaskLastExecuteStatus",
-          "name": "Result",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTaskRecordsRequest": {
-      "document": "DescribeTaskRecords请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "翻页偏移量。默认值为0",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "翻页查询单页数量。默认值为 20，最大值为 1000",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "模糊查询关键字，支持任务ID和任务名称。",
-          "example": "taskName",
-          "member": "string",
-          "name": "SearchWord",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务启用状态。一共2种状态可选，ENABLED：启用，DISABLED：停用",
-          "example": "enabled",
-          "member": "string",
-          "name": "TaskState",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "部署组ID。前往[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)点击应用ID进入应用部署列表页面获取部署组ID。",
-          "example": "group-abl8j7xy",
-          "member": "string",
-          "name": "GroupId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务类型。当前只支持一种任务类型。枚举值，java：Java类任务",
-          "example": "java",
-          "member": "string",
-          "name": "TaskType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行",
-          "example": "unicast",
-          "member": "string",
-          "name": "ExecuteType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务ID列表。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列查看任务ID。",
-          "example": "[\"task-6a79x94v\"]",
-          "member": "string",
-          "name": "Ids",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTaskRecordsResponse": {
-      "document": "DescribeTaskRecords返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务记录列表",
-          "example": "无",
-          "member": "TaskRecordPage",
-          "name": "Result",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeUnitApiUseDetailRequest": {
       "document": "DescribeUnitApiUseDetail请求参数结构体",
       "members": [
@@ -19578,80 +18980,6 @@
       ],
       "type": "object"
     },
-    "DisableTaskFlowRequest": {
-      "document": "DisableTaskFlow请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "工作流 ID。[工作流管理](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=workflowManage)列表页查看工作流ID。",
-          "example": "flow-6a79x94v",
-          "member": "string",
-          "name": "FlowId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DisableTaskFlowResponse": {
-      "document": "DisableTaskFlow返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "true成功，false: 失败",
-          "example": "true",
-          "member": "bool",
-          "name": "Result",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DisableTaskRequest": {
-      "document": "DisableTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务ID。[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页查看任务ID。",
-          "example": "task-6a79x94v",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DisableTaskResponse": {
-      "document": "DisableTask返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "true：操作成功，false：操作失败",
-          "example": "true",
-          "member": "bool",
-          "name": "Result",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DisableUnitRouteRequest": {
       "document": "DisableUnitRoute请求参数结构体",
       "members": [
@@ -19942,80 +19270,6 @@
       ],
       "type": "object"
     },
-    "EnableTaskFlowRequest": {
-      "document": "EnableTaskFlow请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "工作流 ID。[工作流管理](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=workflowManage)列表页查看工作流ID。",
-          "example": "flow-6a79x94v",
-          "member": "string",
-          "name": "FlowId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "EnableTaskFlowResponse": {
-      "document": "EnableTaskFlow返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "true成功，false: 失败",
-          "example": "true",
-          "member": "bool",
-          "name": "Result",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "EnableTaskRequest": {
-      "document": "EnableTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务ID。[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页查看任务ID。",
-          "example": "task-6a79x94v",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "EnableTaskResponse": {
-      "document": "EnableTask返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "true：操作成功，false：操作失败",
-          "example": "false",
-          "member": "bool",
-          "name": "Result",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "EnableUnitRouteRequest": {
       "document": "EnableUnitRoute请求参数结构体",
       "members": [
@@ -20134,7 +19388,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置中心类型[注册中心Registration、配置中心Configuration]",
+          "document": "<p>配置中心类型[注册中心Registration、配置中心Configuration]</p>",
           "example": "Registration",
           "member": "string",
           "name": "CenterType",
@@ -20145,7 +19399,7 @@
         },
         {
           "disabled": false,
-          "document": "实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取",
+          "document": "<p>实例id，通过<a href=\"https://console.cloud.tencent.com/tse/governance\">北极星控制台</a>获取</p>",
           "example": "ins-6a79x94v",
           "member": "string",
           "name": "InstanceId",
@@ -20156,7 +19410,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，例如北极星Polaris",
+          "document": "<p>实例类型，例如北极星Polaris</p>",
           "example": "Polaris",
           "member": "string",
           "name": "InstanceType",
@@ -20167,7 +19421,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "Polaris-Config",
           "member": "string",
           "name": "InstanceName",
@@ -20178,7 +19432,7 @@
         },
         {
           "disabled": false,
-          "document": "实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取",
+          "document": "<p>实例地域id，通过<a href=\"https://console.cloud.tencent.com/tse/governance\">北极星控制台</a>获取</p>",
           "example": "7",
           "member": "string",
           "name": "RegionId",
@@ -20189,7 +19443,7 @@
         },
         {
           "disabled": false,
-          "document": "实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取",
+          "document": "<p>实例命名空间ID，通过<a href=\"https://console.cloud.tencent.com/tse/governance\">北极星控制台</a>获取</p>",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "InstanceNamespaceId",
@@ -20200,7 +19454,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署组Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "group-6a73eg5v",
           "member": "string",
           "name": "GroupId",
@@ -20211,7 +19465,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1757324401000",
           "member": "uint64",
           "name": "CreateTime",
@@ -20222,7 +19476,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1757324863000",
           "member": "uint64",
           "name": "UpdateTime",
@@ -20230,83 +19484,20 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档ID</p>",
+          "example": "application-6a73eg5v",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
-    },
-    "ExecuteTaskFlowRequest": {
-      "document": "ExecuteTaskFlow请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "工作流 ID。[工作流管理](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=workflowManage)列表页查看工作流ID。",
-          "example": "flow-6a79x94v",
-          "member": "string",
-          "name": "FlowId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ExecuteTaskFlowResponse": {
-      "document": "ExecuteTaskFlow返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "操作成功返回工作流批次ID，操作失败返回空字符串。",
-          "example": "fbatch-6g4rq8z6",
-          "member": "string",
-          "name": "Result",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ExecuteTaskRequest": {
-      "document": "ExecuteTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页查看任务ID。",
-          "example": "task-jzdv5qao",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ExecuteTaskResponse": {
-      "document": "ExecuteTask返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "操作成功返回任务批次ID，操作失败返回空字符串。",
-          "example": "batch-mdq33ove",
-          "member": "string",
-          "name": "Result",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "ExpandGroupRequest": {
       "document": "ExpandGroup请求参数结构体",
@@ -20994,7 +20185,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网关插件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>网关插件id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pgn-004mb1lw",
           "member": "string",
           "name": "Id",
@@ -21004,7 +20195,7 @@
         },
         {
           "disabled": false,
-          "document": "插件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>插件名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "plugin_tag",
           "member": "string",
           "name": "Name",
@@ -21014,7 +20205,7 @@
         },
         {
           "disabled": false,
-          "document": "插件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>插件类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Tag",
           "member": "string",
           "name": "Type",
@@ -21024,7 +20215,7 @@
         },
         {
           "disabled": false,
-          "document": "插件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>插件描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "This is desc",
           "member": "string",
           "name": "Description",
@@ -21034,7 +20225,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-12-19 21:00:00",
           "member": "string",
           "name": "CreatedTime",
@@ -21044,7 +20235,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-12-19 21:00:00",
           "member": "string",
           "name": "UpdatedTime",
@@ -21054,7 +20245,7 @@
         },
         {
           "disabled": false,
-          "document": "发布状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>发布状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "released",
           "member": "string",
           "name": "Status",
@@ -21064,7 +20255,7 @@
         },
         {
           "disabled": false,
-          "document": "是否禁用删除",
+          "document": "<p>是否禁用删除</p>",
           "example": "true",
           "member": "bool",
           "name": "DeleteDisabled",
@@ -21074,12 +20265,22 @@
         },
         {
           "disabled": false,
-          "document": "禁用原因",
+          "document": "<p>禁用原因</p>",
           "example": "已存在绑定资源,请解绑分组或API后重试",
           "member": "string",
           "name": "DeleteDisabledReason",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否不可绑定</p><p>枚举值：</p><ul><li>true： 禁止绑定</li><li>false： 允许绑定</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "BindDisabled",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -25425,187 +24626,6 @@
       ],
       "type": "object"
     },
-    "ModifyTaskRequest": {
-      "document": "ModifyTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页查看任务ID。",
-          "example": "task-klwqrnlw",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务名称，长度限制为64字符。在任务管理列表页面第一列或是任务基本信息页查看任务名称。",
-          "example": "demohaha",
-          "member": "string",
-          "name": "TaskName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务类型。当前只支持一种任务类型。枚举值，java：Java类任务",
-          "example": "java",
-          "member": "string",
-          "name": "TaskType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务内容，长度限制为 65536 字节",
-          "example": "com.tencent.task.example.SimpleTask",
-          "member": "string",
-          "name": "TaskContent",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务执行方式，枚举值。unicast：随机单节点执行，broadcast：广播执行，shard：分片执行",
-          "example": "unicast",
-          "member": "string",
-          "name": "ExecuteType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "触发规则",
-          "example": "无",
-          "member": "TaskRule",
-          "name": "TaskRule",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "超时时间，取值大于0，单位：毫秒（ms）",
-          "example": "60000",
-          "member": "uint64",
-          "name": "TimeOut",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "部署组ID。在[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)，点击应用ID进入应用部署页查看部署组ID。",
-          "example": "group-aedpen6v",
-          "member": "string",
-          "name": "GroupId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "分片数量，取值范围2~1000",
-          "example": "1",
-          "member": "int64",
-          "name": "ShardCount",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分片参数",
-          "example": "无",
-          "member": "ShardArgument",
-          "name": "ShardArguments",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "高级设置",
-          "example": "无",
-          "member": "AdvanceSettings",
-          "name": "AdvanceSettings",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "判断任务成功的操作符 GT/GTE",
-          "example": "GTE",
-          "member": "string",
-          "name": "SuccessOperator",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "判断任务成功率的阈值，取值范围：1-100，单位：百分比（%）",
-          "example": "100",
-          "member": "int64",
-          "name": "SuccessRatio",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "重试次数，取值范围 0 - 10，单位：次",
-          "example": "0",
-          "member": "uint64",
-          "name": "RetryCount",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "重试间隔，取值范围 0-600，单位：秒（s）",
-          "example": "0",
-          "member": "uint64",
-          "name": "RetryInterval",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "任务参数，长度限制10000个字符",
-          "example": "0",
-          "member": "string",
-          "name": "TaskArgument",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "数据集列表。",
-          "example": "[\"program-6a79x94v\"]",
-          "member": "string",
-          "name": "ProgramIdList",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyTaskResponse": {
-      "document": "ModifyTask返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "更新是否成功。true：操作成功、false：操作失败",
-          "example": "true",
-          "member": "bool",
-          "name": "Result",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "ModifyUploadInfoRequest": {
       "document": "ModifyUploadInfo请求参数结构体",
       "members": [
@@ -25758,7 +24778,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "API 请求路径",
+          "document": "<p>API 请求路径</p>",
           "example": "/echo",
           "member": "string",
           "name": "Path",
@@ -25768,7 +24788,7 @@
         },
         {
           "disabled": false,
-          "document": "请求方法",
+          "document": "<p>请求方法</p>",
           "example": "GET",
           "member": "string",
           "name": "Method",
@@ -25778,7 +24798,7 @@
         },
         {
           "disabled": false,
-          "document": "方法描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>方法描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "This is desc",
           "member": "string",
           "name": "Description",
@@ -25788,13 +24808,33 @@
         },
         {
           "disabled": false,
-          "document": "API状态 0:离线 1:在线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>API状态 0:离线 1:在线</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>API ID</p>",
+          "example": "msapi-a27424jv",
+          "member": "string",
+          "name": "ApiId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>API来源</p><p>枚举值：</p><ul><li>FROM_CONSUL： 服务注册</li><li>FROM_MANUAL： 手动录入</li></ul>",
+          "example": "FROM_CONSUL",
+          "member": "string",
+          "name": "SrcTypeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -27212,181 +26252,6 @@
     "ReassociateBusinessLogConfigResponse": {
       "document": "ReassociateBusinessLogConfig返回参数结构体",
       "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RedoTaskBatchRequest": {
-      "document": "RedoTaskBatch请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页查看任务ID。",
-          "example": "task-6a79x94v",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务批次ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)页面点击任务ID进入任务详情，进入执行记录列表页，第一列即为任务批次ID。",
-          "example": "batch-6a79x94v",
-          "member": "string",
-          "name": "BatchId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RedoTaskBatchResponse": {
-      "document": "RedoTaskBatch返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "批次流水ID",
-          "example": "blog-6a79x94v",
-          "member": "string",
-          "name": "Result",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RedoTaskExecuteRequest": {
-      "document": "RedoTaskExecute请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务批次ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)页面第一列点击任务ID进入任务详情，进入执行记录列表页，第一列内容即为任务批次ID。",
-          "example": "batch-6a79x94v",
-          "member": "string",
-          "name": "BatchId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务执行ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)页面第一列点击任务ID进入任务详情，进入执行记录页，点击批次ID进入执行详情列表页，第一列即为任务执行ID。",
-          "example": "execute-6a79x94v",
-          "member": "string",
-          "name": "ExecuteId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页查看任务ID。",
-          "example": "task-6a79x94v",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RedoTaskExecuteResponse": {
-      "document": "RedoTaskExecute返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "成功返回执行批次流水ID。失败返回空字符串。",
-          "example": "elog-hb6fg5d5",
-          "member": "string",
-          "name": "Result",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RedoTaskFlowBatchRequest": {
-      "document": "RedoTaskFlowBatch请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "工作流批次 ID。在[工作流管理](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=workflowManage)页面，点击第一列的工作流ID进入工作流执行记录列表页面，第一列的内容即为工作流批次ID。",
-          "example": "fbatch-6a79x94v",
-          "member": "string",
-          "name": "FlowBatchId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RedoTaskFlowBatchResponse": {
-      "document": "RedoTaskFlowBatch返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "工作流批次历史 ID。操作失败时不返回该字段，返回错误码。",
-          "example": "fblog-6a79x94f",
-          "member": "string",
-          "name": "Result",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RedoTaskRequest": {
-      "document": "RedoTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页查看任务ID。",
-          "example": "task-6a79x94v",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RedoTaskResponse": {
-      "document": "RedoTask返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "操作成功任务批次ID。操作失败返回空字符串。",
-          "example": "batch-qmqrqa87",
-          "member": "string",
-          "name": "Result",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -29408,34 +28273,6 @@
       ],
       "usage": "out"
     },
-    "ShardArgument": {
-      "document": "分片参数",
-      "members": [
-        {
-          "disabled": false,
-          "document": "分片参数 KEY，整形, 范围 [1,1000]",
-          "example": "32",
-          "member": "uint64",
-          "name": "ShardKey",
-          "output_required": true,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "分片参数 VALUE\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "string",
-          "name": "ShardValue",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "both"
-    },
     "ShrinkGroupRequest": {
       "document": "ShrinkGroup请求参数结构体",
       "members": [
@@ -30041,107 +28878,6 @@
       ],
       "type": "object"
     },
-    "StopTaskBatchRequest": {
-      "document": "StopTaskBatch请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务批次ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)页面点击任务ID进入任务详情，进入执行记录列表页，第一列即为任务批次ID。",
-          "example": "batch-2kjs83",
-          "member": "string",
-          "name": "BatchId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页面可以查看任务ID。",
-          "example": "task-kw92ux",
-          "member": "string",
-          "name": "TaskId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "StopTaskBatchResponse": {
-      "document": "StopTaskBatch返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "返回 true 或 false。true：操作成功，false：操作失败",
-          "example": "true",
-          "member": "bool",
-          "name": "Result",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "StopTaskExecuteRequest": {
-      "document": "StopTaskExecute请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务执行ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)页面点击任务ID进入任务详情，进入执行记录页，点击批次ID进入执行详情列表页，第一列即为任务执行ID。",
-          "example": "execute-k2is9h",
-          "member": "string",
-          "name": "ExecuteId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务批次ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)页面点击任务ID进入任务详情，进入执行记录列表页，第一列即为任务批次ID。",
-          "example": "batch-k2is9h",
-          "member": "string",
-          "name": "BatchId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页面可以查看任务ID。",
-          "example": "task-k2is9h",
-          "member": "string",
-          "name": "TaskId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "StopTaskExecuteResponse": {
-      "document": "StopTaskExecute返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "返回 true 或 false。true：操作成功，false：操作失败",
-          "example": "true",
-          "member": "bool",
-          "name": "Result",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "Tag": {
       "document": "标签",
       "members": [
@@ -30170,180 +28906,6 @@
       ],
       "usage": "both"
     },
-    "TaskFlowEdge": {
-      "document": "工作流图中的边",
-      "members": [
-        {
-          "disabled": false,
-          "document": "节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点\"且\"时为 AND，为逻辑节点\"或\"时为 OR，节点类型为头节点时为字符串\"head\"",
-          "example": "head",
-          "member": "string",
-          "name": "NodeId",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "子节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点\"且\"时为 AND，为逻辑节点\"或\"时为 OR",
-          "example": "task-x8orm34b",
-          "member": "string",
-          "name": "ChildNodeId",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否核心任务,Y/N",
-          "example": "N",
-          "member": "string",
-          "name": "CoreNode",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "边类型，上下游任务依赖触发关系。一共2个值，Y：成功触发，N：失败触发",
-          "example": "Y",
-          "member": "string",
-          "name": "EdgeType",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务节点类型，一共有4种类型，AND：逻辑节点且，OR：逻辑节点或，TASK：任务节点，START：头节点",
-          "example": "START",
-          "member": "string",
-          "name": "NodeType",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "X轴坐标位置",
-          "example": "12",
-          "member": "string",
-          "name": "PositionX",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Y轴坐标位置",
-          "example": "32",
-          "member": "string",
-          "name": "PositionY",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "图 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回",
-          "example": "graph-2p7d984g",
-          "member": "string",
-          "name": "GraphId",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "工作流 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回",
-          "example": "flow-2p7d984g",
-          "member": "string",
-          "name": "FlowId",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "节点名称",
-          "example": "head",
-          "member": "string",
-          "name": "NodeName",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务ID，新建工作流时不需要填写，查看工作流图时后端返回",
-          "example": "task-x8orm34b",
-          "member": "string",
-          "name": "TaskId",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务历史ID，新建工作流时不需要填写，查看工作流图时后端返回",
-          "example": "tlog-x8orm34b",
-          "member": "string",
-          "name": "TaskLogId",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "TaskFlowLastBatchState": {
-      "document": "工作流最近批次的状态",
-      "members": [
-        {
-          "disabled": false,
-          "document": "批次ID",
-          "example": "fbatch-6a79x94v",
-          "member": "string",
-          "name": "FlowBatchId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "批次历史ID",
-          "example": "fblog-6a79x94v",
-          "member": "string",
-          "name": "FlowBatchLogId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "状态,WAITING/SUCCESS/FAILED/RUNNING/TERMINATING",
-          "example": "RUNNING",
-          "member": "string",
-          "name": "State",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "TaskId": {
       "document": "任务id",
       "members": [
@@ -30359,313 +28921,6 @@
         }
       ],
       "usage": "out"
-    },
-    "TaskLastExecuteStatus": {
-      "document": "任务最近一次执行状态",
-      "members": [
-        {
-          "disabled": false,
-          "document": "批次ID",
-          "example": "batch-6a79x94v",
-          "member": "string",
-          "name": "BatchId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "运行状态，RUNNING/SUCCESS/FAIL/HALF/TERMINATED",
-          "example": "RUNNING",
-          "member": "string",
-          "name": "State",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "批次历史ID",
-          "example": "blog-6a79x94v",
-          "member": "string",
-          "name": "BatchLogId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "TaskRecord": {
-      "document": "任务定义",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务名称",
-          "example": "test-task",
-          "member": "string",
-          "name": "TaskName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务类型",
-          "example": "java",
-          "member": "string",
-          "name": "TaskType",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行",
-          "example": "unicast",
-          "member": "string",
-          "name": "ExecuteType",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务内容，长度限制65535字节",
-          "example": "content",
-          "member": "string",
-          "name": "TaskContent",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "分组ID",
-          "example": "group-6a79x94v",
-          "member": "string",
-          "name": "GroupId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "超时时间，单位：毫秒。",
-          "example": "30000",
-          "member": "int64",
-          "name": "TimeOut",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "重试次数",
-          "example": "2",
-          "member": "int64",
-          "name": "RetryCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "重试间隔，单位：毫秒。",
-          "example": "20000",
-          "member": "int64",
-          "name": "RetryInterval",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "触发规则",
-          "example": "无",
-          "member": "TaskRule",
-          "name": "TaskRule",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务启用状态。一共2种状态可选，ENABLED：启用，DISABLED：停用",
-          "example": "ENABLE",
-          "member": "string",
-          "name": "TaskState",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "task-6a79x94v",
-          "member": "string",
-          "name": "TaskId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "判断任务成功的操作符",
-          "example": "=",
-          "member": "string",
-          "name": "SuccessOperator",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "判断任务成功的阈值",
-          "example": "100",
-          "member": "int64",
-          "name": "SuccessRatio",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "分片数量",
-          "example": "32",
-          "member": "int64",
-          "name": "ShardCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "高级设置",
-          "example": "无",
-          "member": "AdvanceSettings",
-          "name": "AdvanceSettings",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "分片参数",
-          "example": "无",
-          "member": "ShardArgument",
-          "name": "ShardArguments",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "所属工作流ID",
-          "example": "[\"flow-6a79x94v\"]",
-          "member": "string",
-          "name": "BelongFlowIds",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务历史ID",
-          "example": "tlog-6a79x94v",
-          "member": "string",
-          "name": "TaskLogId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "触发类型，一共3种类型，WorkFlow：工作流触发，Cron：定时触发，FixRate：周期触发",
-          "example": "WorkFlow",
-          "member": "string",
-          "name": "TriggerType",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务参数，长度限制10000个字符",
-          "example": "1,2,3,4,5",
-          "member": "string",
-          "name": "TaskArgument",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "TaskRecordPage": {
-      "document": "翻页查询的任务记录返回",
-      "members": [
-        {
-          "disabled": false,
-          "document": "总数量",
-          "example": "21",
-          "member": "int64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务记录列表",
-          "example": "无",
-          "member": "TaskRecord",
-          "name": "Content",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "TaskRule": {
-      "document": "任务规则",
-      "members": [
-        {
-          "disabled": false,
-          "document": "触发规则类型，枚举值。一共3个值，Cron：定时触发，Repeat：周期触发，WorkFlow：工作流触发",
-          "example": "Cron",
-          "member": "string",
-          "name": "RuleType",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Cron类型规则，cron表达式。",
-          "example": "0 0/1 * * * ?",
-          "member": "string",
-          "name": "Expression",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "时间间隔， 单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
-          "member": "uint64",
-          "name": "RepeatInterval",
-          "output_required": true,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "both"
     },
     "TcrRepoInfo": {
       "document": "tcr仓库信息",
@@ -30727,43 +28982,6 @@
         }
       ],
       "usage": "both"
-    },
-    "TerminateTaskFlowBatchRequest": {
-      "document": "TerminateTaskFlowBatch请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "工作流批次 ID，在[工作流执行记录](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=taskflow)列表页第一列获取。",
-          "example": "fbatch-2ks9hk",
-          "member": "string",
-          "name": "FlowBatchId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "TerminateTaskFlowBatchResponse": {
-      "document": "TerminateTaskFlowBatch返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "是否停止成功，true：停止成功，false：停止失败",
-          "example": "true",
-          "member": "bool",
-          "name": "Result",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "ThreadPicture": {
       "document": "jvm监控数据线程数据封装",
@@ -31067,7 +29285,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总条数",
+          "document": "<p>总条数</p>",
           "example": "21",
           "member": "int64",
           "name": "TotalCount",
@@ -31077,7 +29295,7 @@
         },
         {
           "disabled": false,
-          "document": "业务日志列表",
+          "document": "<p>业务日志列表</p>",
           "example": "无",
           "member": "BusinessLogV2",
           "name": "Content",
@@ -31087,7 +29305,7 @@
         },
         {
           "disabled": false,
-          "document": "游标ID",
+          "document": "<p>游标ID</p>",
           "example": "scroll-6a79x94v",
           "member": "string",
           "name": "ScrollId",
@@ -31097,7 +29315,7 @@
         },
         {
           "disabled": false,
-          "document": "查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常",
+          "document": "<p>查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常</p>",
           "example": "SUCCESS",
           "member": "string",
           "name": "Status",
@@ -31107,12 +29325,22 @@
         },
         {
           "disabled": false,
-          "document": "查询es时，使用searchAfter返回的游标",
+          "document": "<p>查询es时，使用searchAfter返回的游标</p>",
           "example": "[\"1463538857\", \"654323\"]",
           "member": "string",
           "name": "SearchAfter",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否压缩</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Compressed",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -32602,7 +30830,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
+          "document": "<p>部署组ID，可通过调用<a href=\"https://cloud.tencent.com/document/api/649/36068\">DescribeContainerGroups</a>查询已创建的部署组列表或登录控制台进行查看；也可以调用<a href=\"https://cloud.tencent.com/document/api/649/36075\">CreateContainGroup</a>创建新的部署组。</p>",
           "example": "group-gyqnd7py",
           "member": "string",
           "name": "GroupId",
@@ -32611,7 +30839,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启健康检查",
+          "document": "<p>是否开启健康检查</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableHealthCheck",
@@ -32620,12 +30848,21 @@
         },
         {
           "disabled": false,
-          "document": "健康检查配置",
+          "document": "<p>健康检查配置</p>",
           "example": "无",
           "member": "HealthCheckSettings",
           "name": "HealthCheckSettings",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动重启</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "LivenessAutoRestart",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -32635,7 +30872,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "更新健康检查配置操作是否成功。\ntrue：操作成功。\nfalse：操作失败。",
+          "document": "<p>更新健康检查配置操作是否成功。<br>true：操作成功。<br>false：操作失败。</p>",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -32817,7 +31054,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "<p>部署组ID</p>",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -32827,7 +31064,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组名称",
+          "document": "<p>部署组名称</p>",
           "example": "app-group",
           "member": "string",
           "name": "GroupName",
@@ -32837,7 +31074,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组状态",
+          "document": "<p>部署组状态</p>",
           "example": "running",
           "member": "string",
           "name": "GroupStatus",
@@ -32847,7 +31084,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>程序包ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pkg-6a79x94v",
           "member": "string",
           "name": "PackageId",
@@ -32857,7 +31094,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>程序包名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "java-demo.jar",
           "member": "string",
           "name": "PackageName",
@@ -32867,7 +31104,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>程序包版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "latest",
           "member": "string",
           "name": "PackageVersion",
@@ -32877,7 +31114,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-6a79x94v",
           "member": "string",
           "name": "ClusterId",
@@ -32887,7 +31124,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "k8s-cls",
           "member": "string",
           "name": "ClusterName",
@@ -32897,7 +31134,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间ID",
+          "document": "<p>命名空间ID</p>",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
@@ -32907,7 +31144,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间名称",
+          "document": "<p>命名空间名称</p>",
           "example": "default",
           "member": "string",
           "name": "NamespaceName",
@@ -32917,7 +31154,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -32927,7 +31164,7 @@
         },
         {
           "disabled": false,
-          "document": "应用名称",
+          "document": "<p>应用名称</p>",
           "example": "app-java",
           "member": "string",
           "name": "ApplicationName",
@@ -32937,7 +31174,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组机器数目",
+          "document": "<p>部署组机器数目</p>",
           "example": "3",
           "member": "int64",
           "name": "InstanceCount",
@@ -32947,7 +31184,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组运行中机器数目",
+          "document": "<p>部署组运行中机器数目</p>",
           "example": "3",
           "member": "int64",
           "name": "RunInstanceCount",
@@ -32957,7 +31194,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组启动参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署组启动参数信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-Xms256m -Xmx1024m",
           "member": "string",
           "name": "StartupParameters",
@@ -32967,7 +31204,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组创建时间",
+          "document": "<p>部署组创建时间</p>",
           "example": "2020-12-12 11:34:56",
           "member": "string",
           "name": "CreateTime",
@@ -32977,7 +31214,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组更新时间",
+          "document": "<p>部署组更新时间</p>",
           "example": "1677830374",
           "member": "string",
           "name": "UpdateTime",
@@ -32987,7 +31224,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组停止机器数目",
+          "document": "<p>部署组停止机器数目</p>",
           "example": "0",
           "member": "int64",
           "name": "OffInstanceCount",
@@ -32997,7 +31234,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署组描述信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "this is a desc",
           "member": "string",
           "name": "GroupDesc",
@@ -33007,8 +31244,8 @@
         },
         {
           "disabled": false,
-          "document": "微服务类型",
-          "example": "DEF",
+          "document": "<p>微服务类型</p>",
+          "example": "D E F",
           "member": "string",
           "name": "MicroserviceType",
           "output_required": true,
@@ -33017,7 +31254,7 @@
         },
         {
           "disabled": false,
-          "document": "应用类型",
+          "document": "<p>应用类型</p>",
           "example": "C",
           "member": "string",
           "name": "ApplicationType",
@@ -33027,7 +31264,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组资源类型",
+          "document": "<p>部署组资源类型</p>",
           "example": "C",
           "member": "string",
           "name": "GroupResourceType",
@@ -33037,7 +31274,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组更新时间戳",
+          "document": "<p>部署组更新时间戳</p>",
           "example": "1562739472",
           "member": "int64",
           "name": "UpdatedTime",
@@ -33047,7 +31284,7 @@
         },
         {
           "disabled": false,
-          "document": "部署应用描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署应用描述信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "this is a desc",
           "member": "string",
           "name": "DeployDesc",
@@ -33057,7 +31294,7 @@
         },
         {
           "disabled": false,
-          "document": "滚动发布的更新方式",
+          "document": "<p>滚动发布的更新方式</p>",
           "example": "1",
           "member": "uint64",
           "name": "UpdateType",
@@ -33067,7 +31304,7 @@
         },
         {
           "disabled": false,
-          "document": "发布是否启用beta批次",
+          "document": "<p>发布是否启用beta批次</p>",
           "example": "false",
           "member": "bool",
           "name": "DeployBetaEnable",
@@ -33077,8 +31314,8 @@
         },
         {
           "disabled": false,
-          "document": "滚动发布的批次比例列表",
-          "example": "0.25",
+          "document": "<p>滚动发布的批次比例列表</p>",
+          "example": "[0.25]",
           "member": "float",
           "name": "DeployBatch",
           "output_required": true,
@@ -33087,7 +31324,7 @@
         },
         {
           "disabled": false,
-          "document": "滚动发布的批次执行方式",
+          "document": "<p>滚动发布的批次执行方式</p>",
           "example": "auto",
           "member": "string",
           "name": "DeployExeMode",
@@ -33097,7 +31334,7 @@
         },
         {
           "disabled": false,
-          "document": "滚动发布的每个批次的等待时间",
+          "document": "<p>滚动发布的每个批次的等待时间</p>",
           "example": "30",
           "member": "uint64",
           "name": "DeployWaitTime",
@@ -33107,7 +31344,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启了健康检查",
+          "document": "<p>是否开启了健康检查</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableHealthCheck",
@@ -33117,7 +31354,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>健康检查配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HealthCheckSettings",
           "name": "HealthCheckSettings",
@@ -33127,7 +31364,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>程序包类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "jar",
           "member": "string",
           "name": "PackageType",
@@ -33137,7 +31374,7 @@
         },
         {
           "disabled": false,
-          "document": "启动脚本 base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>启动脚本 base64编码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "this is a script",
           "member": "string",
           "name": "StartScript",
@@ -33147,7 +31384,7 @@
         },
         {
           "disabled": false,
-          "document": "停止脚本 base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>停止脚本 base64编码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "this is a script",
           "member": "string",
           "name": "StopScript",
@@ -33157,7 +31394,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署组备注</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
           "member": "string",
           "name": "Alias",
@@ -33167,8 +31404,8 @@
         },
         {
           "disabled": false,
-          "document": "javaagent信息",
-          "example": "SERVICE_AGENT/OT_AGENT",
+          "document": "<p>javaagent信息</p>",
+          "example": "无",
           "member": "AgentProfile",
           "name": "AgentProfileList",
           "output_required": true,
@@ -33177,7 +31414,7 @@
         },
         {
           "disabled": false,
-          "document": "预热属性配置",
+          "document": "<p>预热属性配置</p>",
           "example": "无",
           "member": "WarmupSetting",
           "name": "WarmupSetting",
@@ -33187,7 +31424,7 @@
         },
         {
           "disabled": false,
-          "document": "Envoy网关配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Envoy网关配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GatewayConfig",
           "name": "GatewayConfig",
@@ -33197,7 +31434,7 @@
         },
         {
           "disabled": false,
-          "document": "批次是否开启健康检查",
+          "document": "<p>批次是否开启健康检查</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableBatchHealthCheck",
@@ -33207,7 +31444,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启cgroup控制内存cpu",
+          "document": "<p>是否开启cgroup控制内存cpu</p>",
           "example": "false",
           "member": "bool",
           "name": "FilebeatCgroupEnable",
@@ -33217,7 +31454,7 @@
         },
         {
           "disabled": false,
-          "document": "filebeat使用cpu上限",
+          "document": "<p>filebeat使用cpu上限</p>",
           "example": "0.1",
           "member": "float",
           "name": "FilebeatMaxCpu",
@@ -33227,7 +31464,7 @@
         },
         {
           "disabled": false,
-          "document": "filebeat使用内存上限",
+          "document": "<p>filebeat使用内存上限</p>",
           "example": "100",
           "member": "int64",
           "name": "FilebeatMaxMem",
@@ -33237,7 +31474,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库ID",
+          "document": "<p>仓库ID</p>",
           "example": "application-xxxx",
           "member": "string",
           "name": "RepositoryId",
@@ -33247,7 +31484,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库名称",
+          "document": "<p>仓库名称</p>",
           "example": "仓库名",
           "member": "string",
           "name": "RepositoryName",
@@ -33257,12 +31494,22 @@
         },
         {
           "disabled": false,
-          "document": "仓库类型",
+          "document": "<p>仓库类型</p>",
           "example": "企业",
           "member": "string",
           "name": "RepositoryType",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动重启</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "LivenessAutoRestart",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

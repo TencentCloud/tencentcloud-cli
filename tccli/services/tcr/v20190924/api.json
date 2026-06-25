@@ -182,6 +182,13 @@
       "output": "CreateWebhookTriggerResponse",
       "status": "online"
     },
+    "DeleteAIModel": {
+      "document": "删除指定模型版本（通过 tag 或 digest 引用）。调用 Harbor v2 API 删除 artifact。",
+      "input": "DeleteAIModelRequest",
+      "name": "删除指定模型版本",
+      "output": "DeleteAIModelResponse",
+      "status": "online"
+    },
     "DeleteApplicationTriggerPersonal": {
       "document": "用于删除应用更新触发器",
       "input": "DeleteApplicationTriggerPersonalRequest",
@@ -329,6 +336,13 @@
       "output": "DeleteSignaturePolicyResponse",
       "status": "online"
     },
+    "DeleteSkill": {
+      "document": "删除指定 Skill",
+      "input": "DeleteSkillRequest",
+      "name": "删除指定 Skill",
+      "output": "DeleteSkillResponse",
+      "status": "online"
+    },
     "DeleteTagRetentionRule": {
       "document": "删除版本保留规则",
       "input": "DeleteTagRetentionRuleRequest",
@@ -341,6 +355,13 @@
       "input": "DeleteWebhookTriggerRequest",
       "name": "删除触发器",
       "output": "DeleteWebhookTriggerResponse",
+      "status": "online"
+    },
+    "DescribeAIModelVersionDetail": {
+      "document": "查询模型详情",
+      "input": "DescribeAIModelVersionDetailRequest",
+      "name": "模型版本的详细参数",
+      "output": "DescribeAIModelVersionDetailResponse",
       "status": "online"
     },
     "DescribeApplicationTriggerLogPersonal": {
@@ -581,6 +602,20 @@
       "output": "DescribeServiceAccountsResponse",
       "status": "online"
     },
+    "DescribeSkillDetail": {
+      "document": "查询单个 Skill 的完整详情",
+      "input": "DescribeSkillDetailRequest",
+      "name": "查询单个 Skill 的完整详情",
+      "output": "DescribeSkillDetailResponse",
+      "status": "online"
+    },
+    "DescribeSkillDownloadInfo": {
+      "document": "返回 Skill 下载链接",
+      "input": "DescribeSkillDownloadInfoRequest",
+      "name": "获取skill下载链接",
+      "output": "DescribeSkillDownloadInfoResponse",
+      "status": "online"
+    },
     "DescribeTagRetentionExecution": {
       "document": "查询版本保留执行记录",
       "input": "DescribeTagRetentionExecutionRequest",
@@ -642,6 +677,34 @@
       "input": "DuplicateImagePersonalRequest",
       "name": "复制个人版仓库镜像版本",
       "output": "DuplicateImagePersonalResponse",
+      "status": "online"
+    },
+    "ListAIModelVersions": {
+      "document": "查询指定模型仓库的所有版本列表。调用 Harbor v2 API 获取 artifact 列表，从 extra_attrs 提取模型元数据（框架、任务类型、精度等），从 tags 判断是否为推荐版本。",
+      "input": "ListAIModelVersionsRequest",
+      "name": "模型列表",
+      "output": "ListAIModelVersionsResponse",
+      "status": "online"
+    },
+    "ListAIModels": {
+      "document": "查询指定实例下的 AI 模型列表。可按 namespace 和仓库名过滤。每条记录代表一个模型仓库，返回最新版本信息。",
+      "input": "ListAIModelsRequest",
+      "name": "模型列表获取",
+      "output": "ListAIModelsResponse",
+      "status": "online"
+    },
+    "ListSkillVersions": {
+      "document": "查询指定 Skill 的版本历史列表",
+      "input": "ListSkillVersionsRequest",
+      "name": "查询指定 Skill 的版本列表",
+      "output": "ListSkillVersionsResponse",
+      "status": "online"
+    },
+    "ListSkills": {
+      "document": "查询指定实例下的 AI Skill 列表。",
+      "input": "ListSkillsRequest",
+      "name": "AI Skill 列表",
+      "output": "ListSkillsResponse",
       "status": "online"
     },
     "ManageExternalEndpoint": {
@@ -2606,6 +2669,42 @@
       ],
       "usage": "out"
     },
+    "DeleteAIModelRequest": {
+      "document": "DeleteAIModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TCR实例ID</p>",
+          "example": "tcr-kpfrletb",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型删除</p>",
+          "example": "无",
+          "member": "DeleteModelItem",
+          "name": "Items",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAIModelResponse": {
+      "document": "DeleteAIModel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteApplicationTriggerPersonalRequest": {
       "document": "DeleteApplicationTriggerPersonal请求参数结构体",
       "members": [
@@ -3000,6 +3099,39 @@
         }
       ],
       "type": "object"
+    },
+    "DeleteModelItem": {
+      "document": "删除模型结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Reference",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "DeleteMultipleSecurityPolicyRequest": {
       "document": "DeleteMultipleSecurityPolicy请求参数结构体",
@@ -3470,6 +3602,42 @@
       ],
       "type": "object"
     },
+    "DeleteSkillRequest": {
+      "document": "DeleteSkill请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TCR实例ID</p>",
+          "example": "tcr-kpfrletb",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除技能列表</p>",
+          "example": "无",
+          "member": "SkillType",
+          "name": "Items",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSkillResponse": {
+      "document": "DeleteSkill返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteTagRetentionRuleRequest": {
       "document": "DeleteTagRetentionRule请求参数结构体",
       "members": [
@@ -3542,6 +3710,70 @@
     "DeleteWebhookTriggerResponse": {
       "document": "DeleteWebhookTrigger返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIModelVersionDetailRequest": {
+      "document": "DescribeAIModelVersionDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TCR实例ID</p>",
+          "example": "tcr-kpfrletb",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>命名空间</p>",
+          "example": "ml-models",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库名</p>",
+          "example": "gpt2-modctl",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本</p>",
+          "example": "v1.0",
+          "member": "string",
+          "name": "Reference",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIModelVersionDetailResponse": {
+      "document": "DescribeAIModelVersionDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型详情</p>",
+          "example": "无",
+          "member": "ModelDetail",
+          "name": "Model",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5687,6 +5919,116 @@
       ],
       "type": "object"
     },
+    "DescribeSkillDetailRequest": {
+      "document": "DescribeSkillDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TCR实例ID</p>",
+          "example": "tcr-kpfrletb",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>技能名称</p>",
+          "example": "cache-manager",
+          "member": "string",
+          "name": "SkillName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>技能版本</p>",
+          "example": "2.0.0",
+          "member": "string",
+          "name": "SkillVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSkillDetailResponse": {
+      "document": "DescribeSkillDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>技能详情</p>",
+          "example": "无",
+          "member": "Skill",
+          "name": "Skill",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSkillDownloadInfoRequest": {
+      "document": "DescribeSkillDownloadInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TCR实例ID</p>",
+          "example": "tcr-kpfrletb",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>技能名称</p>",
+          "example": "code-reviewer-2-0-0",
+          "member": "string",
+          "name": "SkillName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>技能版本</p>",
+          "example": "2.0.0",
+          "member": "string",
+          "name": "SkillVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSkillDownloadInfoResponse": {
+      "document": "DescribeSkillDownloadInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>下载链接</p>",
+          "example": "https://tcr-k**r*****251**0398.cos.ap-guangzho*.myqclo*d.c**/docker/re*i*****v2/bl**s/s**256/7e/***ac6b2d***1***9f847**1*3fc2*648da8f1f36*6b2df21*dd*db927*e4ce3/data",
+          "member": "string",
+          "name": "PreSignedDownloadURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTagRetentionExecutionRequest": {
       "document": "DescribeTagRetentionExecution请求参数结构体",
       "members": [
@@ -6819,6 +7161,356 @@
       ],
       "usage": "out"
     },
+    "ListAIModelVersionsRequest": {
+      "document": "ListAIModelVersions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TCR实例ID</p>",
+          "example": "tcr-kpf**etb",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>命名空间</p>",
+          "example": "ml-skills",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库名称</p>",
+          "example": "skill-translate",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限制</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIModelVersionsResponse": {
+      "document": "ListAIModelVersions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本列表</p>",
+          "example": "无",
+          "member": "VersionList",
+          "name": "VersionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIModelsRequest": {
+      "document": "ListAIModels请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TCR实例ID</p>",
+          "example": "tcr-kp**letb",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>命名空间</p>",
+          "example": "ml-models",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "gpt2-medium",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大限制</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模糊搜索</p>",
+          "example": "small",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIModelsResponse": {
+      "document": "ListAIModels返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "15",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型列表</p>",
+          "example": "无",
+          "member": "ModelList",
+          "name": "ModelList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSkillVersionsRequest": {
+      "document": "ListSkillVersions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TCR实例ID</p>",
+          "example": "tcr-kpfrletb",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>技能名称</p>",
+          "example": "e2e-test/test-skill",
+          "member": "string",
+          "name": "SkillName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大限制</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSkillVersionsResponse": {
+      "document": "ListSkillVersions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Skill版本列表</p>",
+          "example": "无",
+          "member": "SkillVersionList",
+          "name": "VersionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSkillsRequest": {
+      "document": "ListSkills请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TCR实例ID</p>",
+          "example": "tcr-kpfrletb",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模糊查询</p>",
+          "example": "my-test-skill-test",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>技能名称</p>",
+          "example": "my-test-skill-test",
+          "member": "string",
+          "name": "SkillName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>技能类型</p><p>枚举值：</p><ul><li>MCP Server： MCP Server 类型</li></ul>",
+          "example": "MCP Server",
+          "member": "string",
+          "name": "SkillType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>active： 活跃</li></ul>",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限制</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSkillsResponse": {
+      "document": "ListSkills返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "21",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>技能类型</p>",
+          "example": "无",
+          "member": "SkillList",
+          "name": "SkillList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ManageExternalEndpointRequest": {
       "document": "ManageExternalEndpoint请求参数结构体",
       "members": [
@@ -7055,6 +7747,208 @@
       ],
       "type": "object"
     },
+    "ModelDetail": {
+      "document": "模型详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "NamespaceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Digest",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "int64",
+          "name": "Size",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Framework",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Precision",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "FileFormat",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "ParamSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Family",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "bool",
+          "name": "IsRecommended",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "PushTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelList": {
+      "document": "模型详细参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "NamespaceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "LatestVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Kind",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "ImageSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Digest",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyApplicationTriggerPersonalRequest": {
       "document": "ModifyApplicationTriggerPersonal请求参数结构体",
       "members": [
@@ -7231,7 +8125,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "tcr-abc123",
           "member": "string",
           "name": "RegistryId",
@@ -7240,7 +8134,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的规格,\n基础版：basic\n标准版：standard\n高级版：premium",
+          "document": "<p>实例的规格,<br>基础版：basic<br>标准版：standard<br>高级版：premium</p>",
           "example": "premium",
           "member": "string",
           "name": "RegistryType",
@@ -7249,10 +8143,19 @@
         },
         {
           "disabled": false,
-          "document": "实例删除保护，false为关闭",
+          "document": "<p>实例删除保护，false为关闭</p>",
           "example": "false",
           "member": "bool",
           "name": "DeletionProtection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例是否开启多版本控制，false为关闭</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableCosVersioning",
           "required": false,
           "type": "bool"
         }
@@ -9669,6 +10572,228 @@
       ],
       "usage": "both"
     },
+    "Skill": {
+      "document": "查询单个 Skill 的完整详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "SkillName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "SkillVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "SkillType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Runtime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SkillList": {
+      "document": "查询指定实例下的 AI Skill 列表。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "SkillName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "SkillType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "LatestVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SkillType": {
+      "document": "skill 数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "SkillName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "SkillVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "SkillVersionList": {
+      "document": "skill VersionList",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "int64",
+          "name": "Size",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "PushTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Tag": {
       "document": "云标签Tag",
       "members": [
@@ -10717,6 +11842,52 @@
         }
       ],
       "type": "object"
+    },
+    "VersionList": {
+      "document": "模型版本详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "int64",
+          "name": "Size",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "bool",
+          "name": "IsRecommended",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "PushTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "VpcAndDomainInfo": {
       "document": "vpc和domain信息",

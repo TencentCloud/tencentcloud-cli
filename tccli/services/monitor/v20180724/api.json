@@ -105,6 +105,13 @@
       "output": "CreateGrafanaNotificationChannelResponse",
       "status": "online"
     },
+    "CreateOnCallForm": {
+      "document": "创建值班表",
+      "input": "CreateOnCallFormRequest",
+      "name": "创建值班表",
+      "output": "CreateOnCallFormResponse",
+      "status": "online"
+    },
     "CreatePolicyGroup": {
       "document": "增加策略组",
       "input": "CreatePolicyGroupRequest",
@@ -250,6 +257,13 @@
       "input": "DeleteGrafanaNotificationChannelRequest",
       "name": "删除 Grafana 告警通道",
       "output": "DeleteGrafanaNotificationChannelResponse",
+      "status": "online"
+    },
+    "DeleteOnCallForms": {
+      "document": "删除值班表接口",
+      "input": "DeleteOnCallFormsRequest",
+      "name": "删除值班表",
+      "output": "DeleteOnCallFormsResponse",
       "status": "online"
     },
     "DeletePolicyGroup": {
@@ -456,7 +470,7 @@
       "status": "online"
     },
     "DescribeDNSConfig": {
-      "document": "列出 Grafana DNS 配置",
+      "document": "列出 Grafana DNS 配置。",
       "input": "DescribeDNSConfigRequest",
       "name": "列出 Grafana DNS 配置",
       "output": "DescribeDNSConfigResponse",
@@ -484,7 +498,7 @@
       "status": "online"
     },
     "DescribeGrafanaChannels": {
-      "document": "列出 Grafana 所有告警通道",
+      "document": "列出 Grafana 所有告警通道。",
       "input": "DescribeGrafanaChannelsRequest",
       "name": "列出 Grafana 所有告警通道",
       "output": "DescribeGrafanaChannelsResponse",
@@ -558,6 +572,20 @@
       "input": "DescribeNotificationContentTemplateSupportsRequest",
       "name": "查询通知内容模板支持的变量及函数",
       "output": "DescribeNotificationContentTemplateSupportsResponse",
+      "status": "online"
+    },
+    "DescribeOnCallForm": {
+      "document": "查询值班表详情",
+      "input": "DescribeOnCallFormRequest",
+      "name": "查询值班表详情",
+      "output": "DescribeOnCallFormResponse",
+      "status": "online"
+    },
+    "DescribeOnCallForms": {
+      "document": "查询值班列表",
+      "input": "DescribeOnCallFormsRequest",
+      "name": "查询值班列表",
+      "output": "DescribeOnCallFormsResponse",
       "status": "online"
     },
     "DescribePhoneAlarmFlowTotalCount": {
@@ -799,7 +827,7 @@
       "status": "online"
     },
     "DescribeSSOAccount": {
-      "document": "列出当前grafana实例的所有授权账号",
+      "document": "列出当前grafana实例的所有授权账号.",
       "input": "DescribeSSOAccountRequest",
       "name": "列出授权账号",
       "output": "DescribeSSOAccountResponse",
@@ -1139,6 +1167,13 @@
       "input": "UpdateGrafanaWhiteListRequest",
       "name": "更新 Grafana 白名单",
       "output": "UpdateGrafanaWhiteListResponse",
+      "status": "online"
+    },
+    "UpdateOnCallForm": {
+      "document": "修改值班表",
+      "input": "UpdateOnCallFormRequest",
+      "name": "修改值班表",
+      "output": "UpdateOnCallFormResponse",
       "status": "online"
     },
     "UpdatePrometheusAgentStatus": {
@@ -3564,6 +3599,42 @@
       ],
       "usage": "out"
     },
+    "CoverStaffInfo": {
+      "document": "轮班人员组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "轮班人员id组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CoverStaffIDs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "轮班开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CoverStartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "轮班结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CoverEndTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CreateAlarmNoticeRequest": {
       "document": "CreateAlarmNotice请求参数结构体",
       "members": [
@@ -4650,7 +4721,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
+          "document": "<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -4659,7 +4730,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通道名称，例如：test",
+          "document": "<p>告警通道名称，例如：my-channel</p>",
           "example": "my-channel",
           "member": "string",
           "name": "ChannelName",
@@ -4668,8 +4739,8 @@
         },
         {
           "disabled": false,
-          "document": "接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID ",
-          "example": "[“notice-7k7q3qzr”]",
+          "document": "<p>接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID</p>",
+          "example": "[\"notice-7k7q3qzr\"]",
           "member": "string",
           "name": "Receivers",
           "required": true,
@@ -4677,7 +4748,7 @@
         },
         {
           "disabled": false,
-          "document": "默认为1，建议使用 OrganizationIds",
+          "document": "<p>默认为1，建议使用 OrganizationIds</p>",
           "example": "1",
           "member": "int64",
           "name": "OrgId",
@@ -4686,8 +4757,8 @@
         },
         {
           "disabled": false,
-          "document": "额外组织 ID 数组，已废弃，请使用 OrganizationIds",
-          "example": "[“out_field”]",
+          "document": "<p>额外组织 ID 数组，已废弃，请使用 OrganizationIds</p>",
+          "example": "[\"1\"]",
           "member": "string",
           "name": "ExtraOrgIds",
           "required": false,
@@ -4695,7 +4766,7 @@
         },
         {
           "disabled": false,
-          "document": "生效的所有组织 ID 数组，默认为 [\"1\"]",
+          "document": "<p>生效的所有组织 ID 数组，默认为 [&quot;1&quot;]</p>",
           "example": "[\"111324\"]",
           "member": "string",
           "name": "OrganizationIds",
@@ -4710,13 +4781,140 @@
       "members": [
         {
           "disabled": false,
-          "document": "通道 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>通道 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "channel-xxxxxxxx",
           "member": "string",
           "name": "ChannelId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOnCallFormRequest": {
+      "document": "CreateOnCallForm请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "固定值，为\"monitor\"",
+          "example": "monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "值班表名称",
+          "example": "form-12345",
+          "member": "string",
+          "name": "OnCallFormName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "值班人员id组",
+          "example": "无",
+          "member": "StaffInfo",
+          "name": "StaffInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "轮转类型",
+          "example": "无",
+          "member": "string",
+          "name": "RotationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "换班时间",
+          "example": "12:00",
+          "member": "string",
+          "name": "ShiftTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "有效期开始时间，单位s",
+          "example": "1648742400",
+          "member": "int64",
+          "name": "EffectiveStartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "有效期结束时间，单位s",
+          "example": "1649520000",
+          "member": "int64",
+          "name": "EffectiveEndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "时区(-12 - 12)",
+          "example": "9",
+          "member": "float",
+          "name": "TimeZone",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "值班表描述",
+          "example": "无",
+          "member": "string",
+          "name": "OnCallFormDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "轮班信息",
+          "example": "无",
+          "member": "CoverStaffInfo",
+          "name": "CoverStaffInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模板绑定的标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOnCallFormResponse": {
+      "document": "CreateOnCallForm返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "值班表id",
+          "example": "form-12345",
+          "member": "string",
+          "name": "OnCallFormID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5638,7 +5836,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
+          "document": "<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>",
           "example": "myGrafana",
           "member": "string",
           "name": "InstanceId",
@@ -5647,7 +5845,7 @@
         },
         {
           "disabled": false,
-          "document": "用户账号 ID ，例如：10000000",
+          "document": "<p>用户账号 ID ，例如：10000000</p>",
           "example": "1000000000",
           "member": "string",
           "name": "UserId",
@@ -5656,8 +5854,8 @@
         },
         {
           "disabled": false,
-          "document": "权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)",
-          "example": "\"\"",
+          "document": "<p>权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)</p>",
+          "example": "无",
           "member": "GrafanaAccountRole",
           "name": "Role",
           "required": true,
@@ -5665,7 +5863,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "备注",
           "member": "string",
           "name": "Notes",
@@ -5680,8 +5878,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "已添加的用户 UIN",
-          "example": "无",
+          "document": "<p>已添加的用户 UIN</p>",
+          "example": "*",
           "member": "string",
           "name": "UserId",
           "output_required": true,
@@ -6056,8 +6254,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取",
-          "example": "[]",
+          "document": "<p>通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取</p>",
+          "example": "[\"nchannel-abcd1234\"]",
           "member": "string",
           "name": "ChannelIDs",
           "required": true,
@@ -6065,7 +6263,7 @@
         },
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
+          "document": "<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -6078,6 +6276,60 @@
     "DeleteGrafanaNotificationChannelResponse": {
       "document": "DeleteGrafanaNotificationChannel返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOnCallFormsRequest": {
+      "document": "DeleteOnCallForms请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "固定值，为\"monitor\"",
+          "example": "monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要删除的值班表id",
+          "example": "无",
+          "member": "string",
+          "name": "OnCallFormIDs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOnCallFormsResponse": {
+      "document": "DeleteOnCallForms返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "失败删除的排班id",
+          "example": "无",
+          "member": "string",
+          "name": "FailedOnCallFormIDs",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成功删除的排班id",
+          "example": "无",
+          "member": "string",
+          "name": "SuccessOnCallFormIDs",
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6183,7 +6435,7 @@
         {
           "disabled": false,
           "document": "告警策略名称(可通过 DescribePrometheusAlertPolicy 接口获取)，名称完全相同的告警策略才会删除",
-          "example": "[\"testName\"]",
+          "example": "[\"CPUUsage\"]",
           "member": "string",
           "name": "Names",
           "required": false,
@@ -8934,7 +9186,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
+          "document": "<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -8949,10 +9201,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "DNS 服务器数组",
-          "example": "[]",
+          "document": "<p>DNS 服务器数组</p>",
+          "example": "[\"114.114.114.114\"]",
           "member": "string",
           "name": "NameServers",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9135,7 +9388,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-12345678",
+          "document": "<p>Grafana 实例 ID，例如：grafana-12345678</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -9144,7 +9397,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -9153,7 +9406,7 @@
         },
         {
           "disabled": false,
-          "document": "查询数量",
+          "document": "<p>查询数量</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -9162,7 +9415,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通道名称，例如：test",
+          "document": "<p>告警通道名称，例如：test</p>",
           "example": "my-channel",
           "member": "string",
           "name": "ChannelName",
@@ -9171,7 +9424,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通道 ID，例如：nchannel-abcd1234",
+          "document": "<p>告警通道 ID，例如：nchannel-abcd1234</p>",
           "example": "[\"crule-123\"]",
           "member": "string",
           "name": "ChannelIds",
@@ -9180,7 +9433,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)",
+          "document": "<p>告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)</p>",
           "example": "1",
           "member": "int64",
           "name": "ChannelState",
@@ -9195,8 +9448,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警通道数组",
-          "example": "[]",
+          "document": "<p>告警通道数组</p>",
+          "example": "无",
           "member": "GrafanaChannel",
           "name": "NotificationChannelSet",
           "output_required": true,
@@ -9392,7 +9645,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
+          "document": "<p>实例 ID</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -9401,7 +9654,7 @@
         },
         {
           "disabled": false,
-          "document": "集成 ID",
+          "document": "<p>集成 ID</p>",
           "example": "my-instance",
           "member": "string",
           "name": "IntegrationId",
@@ -9410,7 +9663,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "<p>类型</p>",
           "example": "grafana",
           "member": "string",
           "name": "Kind",
@@ -9425,8 +9678,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集成数组",
-          "example": "[]",
+          "document": "<p>集成数组</p>",
+          "example": "无",
           "member": "GrafanaIntegrationConfig",
           "name": "IntegrationSet",
           "required": true,
@@ -9447,7 +9700,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-12345678",
+          "document": "<p>Grafana 实例 ID，例如：grafana-12345678</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -9456,7 +9709,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -9465,7 +9718,7 @@
         },
         {
           "disabled": false,
-          "document": "查询数量",
+          "document": "<p>查询数量</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -9474,7 +9727,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通道名称，例如：test",
+          "document": "<p>告警通道名称，例如：test</p>",
           "example": "my-channel",
           "member": "string",
           "name": "ChannelName",
@@ -9483,7 +9736,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通道 ID，例如：nchannel-abcd1234",
+          "document": "<p>告警通道 ID，例如：nchannel-abcd1234</p>",
           "example": "[\"crule-123\"]",
           "member": "string",
           "name": "ChannelIDs",
@@ -9492,7 +9745,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通道状态",
+          "document": "<p>告警通道状态</p>",
           "example": "1",
           "member": "int64",
           "name": "ChannelState",
@@ -9507,8 +9760,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警通道数组",
-          "example": "[]",
+          "document": "<p>告警通道数组</p>",
+          "example": "无",
           "member": "GrafanaNotificationChannel",
           "name": "NotificationChannelSet",
           "output_required": true,
@@ -9529,7 +9782,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
+          "document": "<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -9544,8 +9797,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "数组",
-          "example": "[]",
+          "document": "<p>数组</p>",
+          "example": "[\"0.0.0.0/0\"]",
           "member": "string",
           "name": "WhiteList",
           "type": "list",
@@ -9735,6 +9988,150 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOnCallFormRequest": {
+      "document": "DescribeOnCallForm请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "固定值，为\"monitor\"",
+          "example": "monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "值班id",
+          "example": "无",
+          "member": "string",
+          "name": "OnCallFormID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOnCallFormResponse": {
+      "document": "DescribeOnCallForm返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "值班详情",
+          "example": "无",
+          "member": "OneOnCallForm",
+          "name": "OnCallForm",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOnCallFormsRequest": {
+      "document": "DescribeOnCallForms请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "固定值，为\"monitor\"",
+          "example": "无",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询起始位",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询页数",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "支持userId进行检索",
+          "example": "无",
+          "member": "string",
+          "name": "OnCallFormStaffIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "值班类型",
+          "example": "无",
+          "member": "string",
+          "name": "RotationType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "支持id、name进行检索",
+          "example": "无",
+          "member": "string",
+          "name": "OnCallFormName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOnCallFormsResponse": {
+      "document": "DescribeOnCallForms返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排班信息",
+          "example": "无",
+          "member": "OnCallForm",
+          "name": "OnCallForms",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14069,7 +14466,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
+          "document": "<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>",
           "example": "myGrafana",
           "member": "string",
           "name": "InstanceId",
@@ -14078,7 +14475,7 @@
         },
         {
           "disabled": false,
-          "document": "填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000",
+          "document": "<p>填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000</p>",
           "example": "10000",
           "member": "string",
           "name": "UserId",
@@ -14093,11 +14490,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "授权账号列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>授权账号列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GrafanaAccountInfo",
           "name": "AccountSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -15161,7 +15558,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "渠道 ID",
+          "document": "<p>渠道 ID</p>",
           "example": "channel-id",
           "member": "string",
           "name": "ChannelId",
@@ -15171,7 +15568,7 @@
         },
         {
           "disabled": false,
-          "document": "渠道名",
+          "document": "<p>渠道名</p>",
           "example": "channel-name",
           "member": "string",
           "name": "ChannelName",
@@ -15181,8 +15578,8 @@
         },
         {
           "disabled": false,
-          "document": "告警通道模板 ID 数组",
-          "example": "[]",
+          "document": "<p>告警通道模板 ID 数组</p>",
+          "example": "[\"notice-abcd1234\"]",
           "member": "string",
           "name": "Receivers",
           "required": true,
@@ -15191,7 +15588,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2021-03-11T16:54:33+08:00",
           "member": "datetime_iso",
           "name": "CreatedAt",
@@ -15201,7 +15598,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2021-03-11T16:54:33+08:00",
           "member": "datetime_iso",
           "name": "UpdatedAt",
@@ -15211,7 +15608,7 @@
         },
         {
           "disabled": false,
-          "document": "告警渠道的所有生效组织\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警渠道的所有生效组织</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1\", \"2\", \"3\"]",
           "member": "string",
           "name": "OrganizationIds",
@@ -15575,8 +15972,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 插件 ID",
-          "example": "",
+          "document": "<p>Grafana 插件 ID</p>",
+          "example": "piechart",
           "member": "string",
           "name": "PluginId",
           "required": true,
@@ -15585,8 +15982,8 @@
         },
         {
           "disabled": false,
-          "document": "Grafana 插件版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>Grafana 插件版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1.0.0",
           "member": "string",
           "name": "Version",
           "required": true,
@@ -17098,7 +17495,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
+          "document": "<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -17107,7 +17504,7 @@
         },
         {
           "disabled": false,
-          "document": "Grafana 实例名称，例如：test",
+          "document": "<p>Grafana 实例名称，例如：test</p>",
           "example": "my-instance-1",
           "member": "string",
           "name": "InstanceName",
@@ -17923,6 +18320,228 @@
       ],
       "usage": "both"
     },
+    "OnCallForm": {
+      "document": "排班信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排班id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "form-12345",
+          "member": "string",
+          "name": "OnCallFormID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "排班名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OnCallFormName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "排班描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OnCallFormDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "轮值类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RotationType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "换班时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ShiftTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "有效期开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "EffectiveStartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "有效期结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "EffectiveEndTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "TimeZone",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前值班人员\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CurrOnCallStaffs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OneOnCallForm": {
+      "document": "排班详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "值班id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OnCallFormID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值班名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OnCallFormName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值班描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OnCallFormDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值班人员\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StaffInfo",
+          "name": "StaffInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "轮班类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RotationType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "换班时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ShiftTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值班有效期开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "EffectiveStartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值班有效期结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "EffectiveEndTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "TimeZone",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "替班信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CoverStaffInfo",
+          "name": "CoverStaffInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Operator": {
       "document": "维度支持的操作符信息",
       "members": [
@@ -18456,7 +19075,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群类型。可填入tke、eks、tkeedge、tdcc、external，分别代表标准集群、弹性集群、边缘集群、注册集群、外部集群",
+          "document": "<p>集群类型。可填入tke、eks、tkeedge、tdcc、external，分别代表标准集群、弹性集群、边缘集群、注册集群、外部集群</p>",
           "example": "tke",
           "member": "string",
           "name": "ClusterType",
@@ -18465,8 +19084,8 @@
         },
         {
           "disabled": false,
-          "document": "集成容器服务中关联的集群ID",
-          "example": "cls-abc",
+          "document": "<p>集成容器服务中关联的集群ID</p>",
+          "example": "cls-fmbxa",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -18474,8 +19093,8 @@
         },
         {
           "disabled": false,
-          "document": "该参数未使用，不需要填写",
-          "example": "test",
+          "document": "<p>该参数未使用，不需要填写</p>",
+          "example": "prometheus agent for cls-fmbxa",
           "member": "string",
           "name": "Describe",
           "required": false,
@@ -21870,6 +22489,22 @@
       ],
       "usage": "both"
     },
+    "StaffInfo": {
+      "document": "值班人员id组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "值班人员id组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"StaffIDs\":[                 \"123\",                 \"456\"             ]",
+          "member": "string",
+          "name": "StaffIDs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SyncPrometheusTempRequest": {
       "document": "SyncPrometheusTemp请求参数结构体",
       "members": [
@@ -22900,7 +23535,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
+          "document": "<p>实例 ID</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -22909,7 +23544,7 @@
         },
         {
           "disabled": false,
-          "document": "JSON 编码后的字符串，如 \"{\"server\":{\"root_url\":\"http://custom.domain\"}}\"",
+          "document": "<p>JSON 编码后的字符串，如 &quot;{&quot;server&quot;:{&quot;root_url&quot;:&quot;http://custom.domain&quot;}}&quot;</p>",
           "example": "\"{\"server\":{\"root_url\":\"http://custom.domain\"}}\"",
           "member": "string",
           "name": "Config",
@@ -23120,6 +23755,132 @@
     "UpdateGrafanaWhiteListResponse": {
       "document": "UpdateGrafanaWhiteList返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOnCallFormRequest": {
+      "document": "UpdateOnCallForm请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "固定值，为\"monitor\"",
+          "example": "monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "值班表id",
+          "example": "form-12345",
+          "member": "string",
+          "name": "OnCallFormID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "值班表名称",
+          "example": "test",
+          "member": "string",
+          "name": "OnCallFormName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "值班人员id组",
+          "example": "无",
+          "member": "StaffInfo",
+          "name": "StaffInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "轮转类型",
+          "example": "day/week",
+          "member": "string",
+          "name": "RotationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "换班时间",
+          "example": "12:00",
+          "member": "string",
+          "name": "ShiftTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "有效期开始时间，单位s",
+          "example": "1648742400",
+          "member": "int64",
+          "name": "EffectiveStartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "有效期结束时间，单位s",
+          "example": "1649520000",
+          "member": "int64",
+          "name": "EffectiveEndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "时区(-12 - 12)",
+          "example": "无",
+          "member": "float",
+          "name": "TimeZone",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "值班表描述",
+          "example": "无",
+          "member": "string",
+          "name": "OnCallFormDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "轮班信息",
+          "example": "无",
+          "member": "CoverStaffInfo",
+          "name": "CoverStaffInfos",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOnCallFormResponse": {
+      "document": "UpdateOnCallForm返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "值班表id",
+          "example": "form-12345",
+          "member": "string",
+          "name": "OnCallFormID",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -23379,7 +24140,7 @@
         {
           "disabled": false,
           "document": "聚合规则名称",
-          "example": "1",
+          "example": "ingress",
           "member": "string",
           "name": "Name",
           "required": true,

@@ -96,6 +96,14 @@
         "title": "创建转自适应码流模板"
       }
     ],
+    "CreateAigcAudioTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAigcAudioTask\n<公共请求参数>\n\n{\n    \"ModelName\": \"Tme\",\n    \"ModelVersion\": \"1.0\",\n    \"SceneType\": \"music\",\n    \"Prompt\": \"生成一段音乐\",\n    \"VideoInfos\": [\n        {\n            \"VideoUrl\": \"https://l***-******-tts-131140***2.c***ap-*ua****ou.myqcloud.com/251006278_1513228070381297256.mp4\"\n        }\n    ],\n    \"AudioInfos\": [\n        {\n            \"AudioUrl\": \"https://li**-q*******ts-1311402212*cos*ap-guangzh****yqcloud.com/25*******_1513228070381297256.wav\"\n        }\n    ],\n    \"OutputAudioFormat\": \"wav\",\n    \"ExtraParameters\": {\n        \"ResourceId\": \"438910555_1\"\n    },\n    \"AdditionalParameters\": \"{\\\"sequential_image_generation\\\":\\\"auto\\\"}\",\n    \"Operator\": \"admin\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"24*******AigcAudio-6a38**3a9f51468da5bfc25****9a462\",\n        \"RequestId\": \"fcc72969-6464-45ba-8369-232f7a1e1c76\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CreateAigcImageTask": [
       {
         "document": "",
@@ -754,6 +762,14 @@
         "title": "查询转自适应码流模板列表"
       }
     ],
+    "DescribeAigcAudioTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAigcAudioTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"24000145-******d**-cb46b8040b684b539bbd46****e*e2fd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AudioInfos\": [],\n        \"Message\": \"Invalid model name for music\",\n        \"Status\": \"FAIL\",\n        \"VideoInfos\": [],\n        \"RequestId\": \"127ff457-6804-467a-ac97-c592db56c164\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeAigcImageTask": [
       {
         "document": "",
@@ -1348,6 +1364,20 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectVideoSubtitleArea\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Type\": \"URL\",\n        \"UrlInputInfo\": {\n            \"Url\": \"http://*********************************************************************************************************************************************.mp4\"\n        }\n    },\n    \"VideoLanguage\": \"zh_en\",\n    \"UserExtPara\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"Height\": 1280,\n        \"Result\": [\n            {\n                \"Area\": {\n                    \"LeftTopX\": 64,\n                    \"LeftTopY\": 748,\n                    \"RightBottomX\": 576,\n                    \"RightBottomY\": 791,\n                    \"Unit\": 2\n                },\n                \"Confidence\": 70\n            }\n        ],\n        \"Width\": 720,\n        \"RequestId\": \"4af4d815-d608-4aff-afb3-45f3b46563b0\"\n    }\n}",
         "title": "发起字幕框检测"
+      }
+    ],
+    "DetectVideoWatermark": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectVideoWatermark\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Type\": \"URL\",\n        \"UrlInputInfo\": {\n            \"Url\": \"https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/ppeterhuang/yjcp_badcase_cut.mp4\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Confidence\": 98.33333333333333,\n        \"Description\": \"右下方有小红书Logo，左上方有“小红书”文字Logo，右上方有个人头像Logo，右上方有“喜老登”文字Logo。\",\n        \"HasWatermark\": true,\n        \"RequestId\": \"d02e3ed3-327f-42fc-9d34-c2e3ed8fba93\"\n    }\n}",
+        "title": "正常发起水印检测任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectVideoWatermark\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Type\": \"URL\",\n        \"UrlInputInfo\": {\n            \"Url\": \"https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/ppeterhuang/yjcp_badcase_cut.mp4\"\n        }\n    },\n    \"UserExtPara\": \"{\\\"key\\\": \\\"value\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Confidence\": 99,\n        \"Description\": \"左下方有小红书Logo，右下方有小红书Logo，左上方有“小红书”台标，右上方有“喜老登”文字和用户头像。\",\n        \"HasWatermark\": true,\n        \"RequestId\": \"f94119bd-ab31-42c5-a445-16f9e8c7d741\"\n    }\n}",
+        "title": "正常发起水印检测任务带扩展"
       }
     ],
     "DisableSchedule": [

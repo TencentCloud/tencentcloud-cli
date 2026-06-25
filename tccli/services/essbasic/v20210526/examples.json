@@ -468,6 +468,12 @@
         "title": "创建企业动态签署领取链接"
       },
       {
+        "document": "发起合同指定B端企业员工为动态签署方，通过此接口获取动态领取链接，指定要求全部合同领取进行签署。",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateOrganizationBatchSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"kevinlcheng\"\n        }\n    },\n    \"FlowIds\": [\n        \"yDtK2UUckpfmgingU1UyHCZxCSSvzgqj\"\n    ],\n    \"RecipientIds\": [\n        \"yDtK2UUckpfmgindUyHCZxCEZrJgOW8c\"\n    ],\n    \"DynamicSignOption\": {\n        \"DynamicReceiveType\": 1\n    },\n    \"CanBatchReject\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1767668544,\n        \"SignUrl\": \"https://embed.qian.tencent.com/contract-batchsign?embed=1&expiredOn=1767668544&code=yDtKzUUjfirlg0UELHh8vSRBXpQy0eNn&shortKey=yDtKzURSnZttci5qlP81&channel=PROXYCHANNEL\",\n        \"RequestId\": \"d21351b2-9733-4cf4-bc41-df22795ac73e\"\n    }\n}",
+        "title": "创建企业动态签署领取链接，并且指定要全部领取签署"
+      },
+      {
         "document": "发起合同指定B端企业员工为动态签署方，通过此接口获取动态领取链接。预设企业OpenId，要求只能由对应企业员工点击领取链接进行领取。",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateOrganizationBatchSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"kevinlcheng\"\n        }\n    },\n    \"FlowIds\": [\n        \"yDtK2UUckpfmgingU1UyHCZxCSSvzgqj\"\n    ],\n    \"RecipientIds\": [\n        \"yDtK2UUckpfmgindUyHCZxCEZrJgOW8c\"\n    ],\n    \"DynamicSignOption\": {\n        \"OrganizationOpenId\": \"dian_zi_qian\"\n    },\n    \"CanBatchReject\": true\n}",
         "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1767619145,\n        \"SignUrl\": \"https://embed.test.qian.tencent.cn/contract-batchsign?embed=1&expiredOn=1767619145&code=yDtK2UUckpfmpuhxUuyfSWJxqnEnA7KP&shortKey=yDtK2UemxQpCrgNgy100&channel=PROXYCHANNEL\",\n        \"RequestId\": \"b9f75514-0559-4699-be54-11019de12574\"\n    }\n}",
@@ -484,12 +490,6 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateOrganizationBatchSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"60exxxxxxxxxxxxxxxxxxxxxc16e9\",\n        \"ProxyOrganizationOpenId\": \"org_open_id\"\n    },\n    \"Name\": \"\",\n    \"Mobile\": \"\",\n    \"FlowIds\": [\n        \"yDxxxxxxxxxxxxxxxxxxxxxxxx\"\n    ],\n    \"OpenId\": \"user_open_id\"\n}",
         "output": "{\n    \"Response\": {\n        \"SignUrl\": \"https://embed.test.qian.tencent.cn/console/?channel=PROXYCHANNEL&expiredTime=1695805069&code=xxxxx&menuStatus=ENABLE&token=xxxx\",\n        \"ExpiredTime\": 0,\n        \"RequestId\": \"s1695804769054178191\"\n    }\n}",
         "title": "创建签署链接"
-      },
-      {
-        "document": "发起合同指定B端企业员工为动态签署方，通过此接口获取动态领取链接，指定要求全部合同领取进行签署。",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateOrganizationBatchSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"kevinlcheng\"\n        }\n    },\n    \"FlowIds\": [\n        \"yDtK2UUckpfmgingU1UyHCZxCSSvzgqj\"\n    ],\n    \"RecipientIds\": [\n        \"yDtK2UUckpfmgindUyHCZxCEZrJgOW8c\"\n    ],\n    \"DynamicSignOption\": {\n        \"DynamicReceiveType\": 1\n    },\n    \"CanBatchReject\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1767668544,\n        \"SignUrl\": \"https://embed.qian.tencent.com/contract-batchsign?embed=1&expiredOn=1767668544&code=yDtKzUUjfirlg0UELHh8vSRBXpQy0eNn&shortKey=yDtKzURSnZttci5qlP81&channel=PROXYCHANNEL\",\n        \"RequestId\": \"d21351b2-9733-4cf4-bc41-df22795ac73e\"\n    }\n}",
-        "title": "创建企业动态签署领取链接，并且指定要全部领取签署"
       }
     ],
     "ChannelCreateOrganizationModifyQrCode": [
@@ -942,6 +942,12 @@
     ],
     "CreateConsoleLoginUrl": [
       {
+        "document": "生成到模板详情的控制台链接",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"典子谦示例企业\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"\n    },\n    \"Module\": \"TEMPLATE\",\n    \"ModuleId\": \"yDwFdUUckpsvet4jUEn0aFRxtu5TdalM\",\n    \"MenuStatus\": \"ENABLE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://es*.ap*.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&templateId=yDxlzxxxoTxQfVnyxs&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"ProxyOperatorIsVerified\": false,\n        \"RequestId\": \"s16221***14775648\"\n    }\n}",
+        "title": "生成到模板详情的控制台链接"
+      },
+      {
         "document": "如果<b>典子谦示例企业的员工张三已经完成了认证和加入企业</b>，  此时给典子谦示例企业的员工张三生成登录的PC控制台的链接\n\n典子谦示例企业的定义标识为：org_dianziqian\n员工张三定义员工标识为：n9527\n",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"典子谦示例企业\",\n    \"ProxyOperatorName\": \"张三\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://xxx.xxxx.tencent.com/?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"ProxyOperatorIsVerified\": false,\n        \"RequestId\": \"s16221***14775648\"\n    }\n}",
@@ -952,12 +958,6 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"典子谦示例企业\",\n    \"ProxyOperatorName\": \"张三\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://xxx.xxxx.tencent.com/?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"ProxyOperatorIsVerified\": false,\n        \"RequestId\": \"s16221***14775648\"\n    }\n}",
         "title": "生成默认的控制台认证链接"
-      },
-      {
-        "document": "生成到模板详情的控制台链接",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"典子谦示例企业\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"\n    },\n    \"Module\": \"TEMPLATE\",\n    \"ModuleId\": \"yDwFdUUckpsvet4jUEn0aFRxtu5TdalM\",\n    \"MenuStatus\": \"ENABLE\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://es*.ap*.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&templateId=yDxlzxxxoTxQfVnyxs&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"ProxyOperatorIsVerified\": false,\n        \"RequestId\": \"s16221***14775648\"\n    }\n}",
-        "title": "生成到模板详情的控制台链接"
       }
     ],
     "CreateEmployeeChangeUrl": [

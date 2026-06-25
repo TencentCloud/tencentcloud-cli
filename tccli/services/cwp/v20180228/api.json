@@ -3789,8 +3789,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "异地登录白名单实体",
-          "example": "{\"EndTime\": \"2020-11-11 10:1****\", \"HostInfos\": [{\"Quuid\": \"f3567720-cb97-4dd8-919d-6d41506c****\", \"Uuid\": \"f3567720-cb97-4dd8-919d-6d41506c****\"}], \"IsGlobal\": 1, \"Places\": [{\"CityId\": 197, \"CountryId\": 1, \"Location\": \"\\u5e7f\\u4e1c\\u7701-\\u5e7f\\u5dde\\u5e02\", \"ProvinceId\": 19}], \"Remark\": \"\\u5821\\u5792\\u673a\\u5230jump\", \"SrcIp\": \"197.135.****\", \"StartTime\": \"2020-11-11 10:1****\", \"UserName\": \"root\"}",
+          "document": "<p>异地登录白名单实体</p>",
+          "example": "无",
           "member": "HostLoginWhiteObj",
           "name": "HostLoginWhiteObj",
           "required": true,
@@ -3798,7 +3798,7 @@
         },
         {
           "disabled": false,
-          "document": "事件同步处理方式：\n  \"\" -- 不操作\n  \"All\" -- 将符合此配置的所有事件记录加白\n  \"Id\" -- 将EventId对应的事件记录加白",
+          "document": "<p>事件同步处理方式：<br>  &quot;&quot; -- 不操作<br>  &quot;All&quot; -- 将符合此配置的所有事件记录加白<br>  &quot;Id&quot; -- 将EventId对应的事件记录加白</p>",
           "example": "All",
           "member": "string",
           "name": "ProcessType",
@@ -3807,7 +3807,7 @@
         },
         {
           "disabled": false,
-          "document": "异地登录事件ID，当ProcessType为Id时此项必填",
+          "document": "<p>异地登录事件ID，当ProcessType为Id时此项必填</p>",
           "example": "1",
           "member": "uint64",
           "name": "EventId",
@@ -3822,8 +3822,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "重复添加的提示列表",
-          "example": "{\"Quuid\":\"a15a2cac-0bea-478d-a5d0-f54be8******\",\"\"Uuid\":\"a15a2cac-0bea-478d-a5d0-f54be8******\", \"Id\":1021}",
+          "document": "<p>重复添加的提示列表</p>",
+          "example": "无",
           "member": "DuplicateHosts",
           "name": "DuplicateHosts",
           "output_required": true,
@@ -13010,7 +13010,7 @@
         {
           "disabled": false,
           "document": "规则是否为空，为空则填充默认规则",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "Enable",
           "output_required": true,
@@ -13923,7 +13923,7 @@
         {
           "disabled": false,
           "document": "附加信息",
-          "example": "{\"WanIP\":\"1.1.1.1\",\"PrivateIP\":\"1.1.1.1\",\"NetworkType\":1,\"NetworkName\":\"vpc-id\",\"InstanceID\":\"ins-id\",\"HostName\":\"hn\"}\t",
+          "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
           "output_required": false,
@@ -15687,7 +15687,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "白名单ID (最大 100 条)",
+          "document": "<p>白名单ID (最大 100 条)</p>",
           "example": "[36040272]",
           "member": "uint64",
           "name": "Ids",
@@ -15714,7 +15714,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要删除的记录id值,最大长度100个",
+          "document": "<p>需要删除的记录id值,最大长度100个</p>",
           "example": "[1,2]",
           "member": "uint64",
           "name": "Ids",
@@ -20672,7 +20672,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断",
+          "document": "<p>阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断</p>",
           "example": "STANDARD_MODE",
           "member": "string",
           "name": "Mode",
@@ -20682,8 +20682,8 @@
         },
         {
           "disabled": false,
-          "document": "标准阻断模式的配置",
-          "example": "{             \"Ttl\": 1         }",
+          "document": "<p>标准阻断模式的配置</p>",
+          "example": "无",
           "member": "StandardModeConfig",
           "name": "StandardModeConfig",
           "output_required": true,
@@ -20746,7 +20746,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "(已废弃) 阻断开关状态: 0 -- 关闭  1 -- 高级阻断 2 -- 基础阻断(只阻断情报库黑ip)",
+          "document": "<p>(已废弃) 阻断开关状态: 0 -- 关闭  1 -- 高级阻断 2 -- 基础阻断(只阻断情报库黑ip)</p>",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -20756,7 +20756,7 @@
         },
         {
           "disabled": false,
-          "document": "是否弹窗提示信息 false: 关闭，true: 开启",
+          "document": "<p>是否弹窗提示信息 false: 关闭，true: 开启</p>",
           "example": "false",
           "member": "bool",
           "name": "ShowTips",
@@ -20766,7 +20766,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启智能过白模式",
+          "document": "<p>是否开启智能过白模式</p>",
           "example": "true",
           "member": "bool",
           "name": "OpenSmartMode",
@@ -20776,7 +20776,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启情报IP阻断",
+          "document": "<p>是否开启情报IP阻断</p>",
           "example": "true",
           "member": "bool",
           "name": "BanBlackIp",
@@ -20786,7 +20786,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启漏洞IP阻断",
+          "document": "<p>是否开启漏洞IP阻断</p>",
           "example": "true",
           "member": "bool",
           "name": "BanVulIp",
@@ -20796,7 +20796,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启规则阻断",
+          "document": "<p>是否开启规则阻断</p>",
           "example": "true",
           "member": "bool",
           "name": "BanByRule",
@@ -23468,8 +23468,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "爆破阻断规则列表",
-          "example": "[{\"Enable\": true, \"TimeRange\": 5, \"LoginFailTimes\": 5, \"TimeRangeDefault\": 1, \"LoginFailTimesDefault\": 10}]",
+          "document": "<p>爆破阻断规则列表</p>",
+          "example": "无",
           "member": "BruteAttackRuleList",
           "name": "Rules",
           "output_required": true,
@@ -26710,7 +26710,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启防卸载 <li>0 否</li> <li>1 是</li> <li>9 未设置,和0一样是未开启</li>",
+          "document": "<p>是否开启防卸载 <li>0 否</li> <li>1 是</li> <li>9 未设置,和0一样是未开启</li></p>",
           "example": "1",
           "member": "uint64",
           "name": "Enable",
@@ -26720,7 +26720,7 @@
         },
         {
           "disabled": false,
-          "document": "开启范围 <li>0 自选主机</li> <li>1 全部主机</li>",
+          "document": "<p>开启范围 <li>0 自选主机</li> <li>1 全部主机</li></p>",
           "example": "1",
           "member": "uint64",
           "name": "Scope",
@@ -26730,7 +26730,7 @@
         },
         {
           "disabled": false,
-          "document": "正选主机配置数",
+          "document": "<p>正选主机配置数</p>",
           "example": "188",
           "member": "uint64",
           "name": "IncludeHostCount",
@@ -26740,7 +26740,7 @@
         },
         {
           "disabled": false,
-          "document": "反选主机配置数",
+          "document": "<p>反选主机配置数</p>",
           "example": "2",
           "member": "uint64",
           "name": "ExcludeHostCount",
@@ -26750,7 +26750,7 @@
         },
         {
           "disabled": false,
-          "document": "正选quuid配置列表",
+          "document": "<p>正选quuid配置列表</p>",
           "example": "[\"ce2d32e2-59ab-4859-****-05eb20d252be\"]",
           "member": "string",
           "name": "IncludeQuuid",
@@ -26760,7 +26760,7 @@
         },
         {
           "disabled": false,
-          "document": "反选quuid配置列表",
+          "document": "<p>反选quuid配置列表</p>",
           "example": "[\"ce2d32e2-59ab-4859-****-05eb20d252be\"]",
           "member": "string",
           "name": "ExcludeQuuid",
@@ -26770,7 +26770,7 @@
         },
         {
           "disabled": false,
-          "document": "已开启机器数",
+          "document": "<p>已开启机器数</p>",
           "example": "20",
           "member": "uint64",
           "name": "EnableCount",
@@ -26780,7 +26780,7 @@
         },
         {
           "disabled": false,
-          "document": "未启机器数",
+          "document": "<p>未启机器数</p>",
           "example": "19",
           "member": "uint64",
           "name": "DisableCount",
@@ -26803,7 +26803,7 @@
         {
           "disabled": false,
           "document": "<li>Name - string - 是否必填：否 - 主机名</li> <li>InstanceId - string - 是否必填：否 - 实例ID</li> <li>PublicIp - string - 是否必填：否 - 公网IP</li> <li>PrivateIp - string - 是否必填：否 - 私网IP</li>",
-          "example": "[{\"ExactMatch\": true, \"Name\": \"Name\", \"Values\": [“nameA”]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -26811,7 +26811,7 @@
         },
         {
           "disabled": false,
-          "document": "限制条数,默认10,最大100",
+          "document": "<p>限制条数,默认10,最大100</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -26820,7 +26820,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量,默认0",
+          "document": "<p>偏移量,默认0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -26829,7 +26829,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式: [ASC:升序|DESC:降序]",
+          "document": "<p>排序方式: [ASC:升序|DESC:降序]</p>",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -26838,7 +26838,7 @@
         },
         {
           "disabled": false,
-          "document": "可选排序列: [Id]",
+          "document": "<p>可选排序列: [Id]</p>",
           "example": "Id",
           "member": "string",
           "name": "By",
@@ -26853,7 +26853,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "10",
           "member": "uint64",
           "name": "Total",
@@ -26863,7 +26863,7 @@
         },
         {
           "disabled": false,
-          "document": "主机列表",
+          "document": "<p>主机列表</p>",
           "example": "无",
           "member": "ClientSettingHost",
           "name": "List",
@@ -26885,7 +26885,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要返回的数量，默认为10，最大值为100",
+          "document": "<p>需要返回的数量，默认为10，最大值为100</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -26894,7 +26894,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -26903,8 +26903,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>SrcIP - String - 是否必填：否 - 来源IP筛选</li><li>Location - String - 是否必填：否 - 登录地筛选</li><li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>",
-          "example": "[{\"ExactMatch\": false, \"Name\": \"Uuid\", \"Values\": [\"loginwhite****\"]}]",
+          "document": "<p>过滤条件。<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>SrcIP - String - 是否必填：否 - 来源IP筛选</li><li>Location - String - 是否必填：否 - 登录地筛选</li><li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li></p>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -26918,7 +26918,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数量",
+          "document": "<p>总数量</p>",
           "example": "12",
           "member": "uint64",
           "name": "TotalCount",
@@ -26928,8 +26928,8 @@
         },
         {
           "disabled": false,
-          "document": "合并后的白名单列表",
-          "example": "[             {                 \"Id\": 357790160,                 \"Places\": [                     {                         \"CityId\": 0,                         \"ProvinceId\": 0,                         \"CountryId\": 52,                         \"Location\": \"阿尔及利亚\"                     }                 ],                 \"UserName\": \"root\",                 \"SrcIp\": \"1.1.1.1\",                 \"IsGlobal\": 0,                 \"CreateTime\": \"2019-12-25 11:57:15\",                 \"ModifyTime\": \"2019-12-25 11:57:15\",                 \"Locale\": \"\",                 \"Locations\": \"\",                 \"Remark\": \"myremark***\",                 \"StartTime\": \"2020-11-21 15:16:00\",                 \"EndTime\": \"2020-11-21 15:16:00\",                 \"Name\": \"cwp\",                 \"Desc\": \"1.1.1.1\",                 \"Uuid\": \"be6f6eec-0825-4e67-ab9a-c8568bbf736c\"             }         ]",
+          "document": "<p>合并后的白名单列表</p>",
+          "example": "无",
           "member": "LoginWhiteCombinedInfo",
           "name": "LoginWhiteCombinedInfos",
           "output_required": true,
@@ -26950,7 +26950,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "白名单ID",
+          "document": "<p>白名单ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -26959,7 +26959,7 @@
         },
         {
           "disabled": false,
-          "document": "需要返回的数量，最大值为1000",
+          "document": "<p>需要返回的数量，最大值为1000</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -26968,7 +26968,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -26977,8 +26977,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>",
-          "example": "[     {         \"Name\": \"IpOrAlias\",         \"Values\": [             \"1.1.2.3\"         ],         \"ExactMatch\": true     } ]",
+          "document": "<p>过滤条件 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li></p>",
+          "example": "无",
           "member": "AssetFilters",
           "name": "Filters",
           "required": false,
@@ -26992,7 +26992,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -27002,8 +27002,8 @@
         },
         {
           "disabled": false,
-          "document": "服务器列表",
-          "example": "[             {                 \"MachineName\": \"机器名称\",                 \"Quuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",                 \"MachineWanIp\": \"1.1.1.1\",                 \"Uuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",                 \"MachineIp\": \"1.1.1.1\",                 \"Tags\": [                     {                         \"Name\": \"cwp\",                         \"TagId\": 1,                         \"Rid\": 1                     }                 ]             }         ]",
+          "document": "<p>服务器列表</p>",
+          "example": "无",
           "member": "HostDesc",
           "name": "Hosts",
           "output_required": true,
@@ -27089,8 +27089,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "筛选条件\n多个条件筛选时 Keywords,TimeBetween,取交集\n<li> Keywords 实例名称/内网/公网IP</li>\n<li> TimeBetween 时间区间</li>",
-          "example": "[{\"Name\":\"Keywords\",\"Values\":[\"dev\"]}]",
+          "document": "<p>筛选条件<br>多个条件筛选时 Keywords,TimeBetween,取交集</p><li> Keywords 实例名称/内网/公网IP</li><li> TimeBetween 时间区间</li>",
+          "example": "无",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -27098,7 +27098,7 @@
         },
         {
           "disabled": false,
-          "document": "限制条数,默认10 ,最大100",
+          "document": "<p>限制条数,默认10 ,最大100</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -27107,7 +27107,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量,默认0",
+          "document": "<p>偏移量,默认0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -27116,7 +27116,7 @@
         },
         {
           "disabled": false,
-          "document": "正序, ASC , 倒序 DESC , 默认ASC",
+          "document": "<p>正序, ASC , 倒序 DESC , 默认ASC</p>",
           "example": "ASC",
           "member": "string",
           "name": "Order",
@@ -27125,7 +27125,7 @@
         },
         {
           "disabled": false,
-          "document": "AgentLastOfflineTime 客户端最后离线时间\nAutoClearTime 清理时间",
+          "document": "<p>AgentLastOfflineTime 客户端最后离线时间<br>AutoClearTime 清理时间</p>",
           "example": "AgentLastOfflineTime",
           "member": "string",
           "name": "By",
@@ -27140,7 +27140,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总条数",
+          "document": "<p>总条数</p>",
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
@@ -27150,8 +27150,8 @@
         },
         {
           "disabled": false,
-          "document": "列表数据",
-          "example": "[       {         \"AgentLastOfflineTime\": \"2022-08-18 10:25:11\",         \"CreateTime\": \"2022-12-06 18:31:59\",         \"Id\": 2,         \"InstanceId\": \"\",         \"InstanceName\": \"new\",         \"PrivateIp\": \"10.0.0.1\",         \"PublicIp\": \"\"       },       {         \"AgentLastOfflineTime\": \"2022-08-29 16:08:03\",         \"CreateTime\": \"2022-12-06 18:32:18\",         \"Id\": 3,         \"InstanceId\": \"\",         \"InstanceName\": \"vul-test-123\",         \"PrivateIp\": \"10.0.0.2\",         \"PublicIp\": \"\"       }     ]",
+          "document": "<p>列表数据</p>",
+          "example": "无",
           "member": "MachineClearHistory",
           "name": "List",
           "output_required": true,
@@ -27289,7 +27289,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资产总数",
+          "document": "<p>资产总数</p>",
           "example": "132",
           "member": "uint64",
           "name": "MachineCnt",
@@ -27299,7 +27299,7 @@
         },
         {
           "disabled": true,
-          "document": "腾讯云服务商机器数",
+          "document": "<p>腾讯云服务商机器数</p>",
           "example": "0",
           "member": "uint64",
           "name": "TencentCloudMachineCnt",
@@ -27309,7 +27309,7 @@
         },
         {
           "disabled": true,
-          "document": "阿里云服务商机器数",
+          "document": "<p>阿里云服务商机器数</p>",
           "example": "0",
           "member": "uint64",
           "name": "AliCloudMachineCnt",
@@ -27319,7 +27319,7 @@
         },
         {
           "disabled": true,
-          "document": "百度云服务商机器数",
+          "document": "<p>百度云服务商机器数</p>",
           "example": "0",
           "member": "uint64",
           "name": "BaiduCloudMachineCnt",
@@ -27329,7 +27329,7 @@
         },
         {
           "disabled": true,
-          "document": "IDC机器数",
+          "document": "<p>IDC机器数</p>",
           "example": "0",
           "member": "uint64",
           "name": "IDCMachineCnt",
@@ -27339,7 +27339,7 @@
         },
         {
           "disabled": true,
-          "document": "其他云服务商机器数",
+          "document": "<p>其他云服务商机器数</p>",
           "example": "0",
           "member": "uint64",
           "name": "OtherCloudMachineCnt",
@@ -27349,7 +27349,7 @@
         },
         {
           "disabled": false,
-          "document": "已防护机器数",
+          "document": "<p>已防护机器数</p>",
           "example": "34",
           "member": "uint64",
           "name": "ProtectMachineCnt",
@@ -27359,7 +27359,7 @@
         },
         {
           "disabled": false,
-          "document": "已防护基础版机器数",
+          "document": "<p>已防护基础版机器数</p>",
           "example": "34",
           "member": "uint64",
           "name": "BaseMachineCnt",
@@ -27369,7 +27369,7 @@
         },
         {
           "disabled": false,
-          "document": "已防护专业版机器数",
+          "document": "<p>已防护专业版机器数</p>",
           "example": "0",
           "member": "uint64",
           "name": "SpecialtyMachineCnt",
@@ -27379,7 +27379,7 @@
         },
         {
           "disabled": false,
-          "document": "已防护旗舰版机器数",
+          "document": "<p>已防护旗舰版机器数</p>",
           "example": "34",
           "member": "uint64",
           "name": "FlagshipMachineCnt",
@@ -27389,7 +27389,7 @@
         },
         {
           "disabled": false,
-          "document": "存在风险的机器数",
+          "document": "<p>存在风险的机器数</p>",
           "example": "35",
           "member": "uint64",
           "name": "RiskMachineCnt",
@@ -27399,7 +27399,7 @@
         },
         {
           "disabled": false,
-          "document": "比较昨日风险机器数",
+          "document": "<p>比较昨日风险机器数</p>",
           "example": "35",
           "member": "int64",
           "name": "CompareYesterdayRiskMachineCnt",
@@ -27409,7 +27409,7 @@
         },
         {
           "disabled": false,
-          "document": "比较昨日未防护机器数",
+          "document": "<p>比较昨日未防护机器数</p>",
           "example": "64",
           "member": "int64",
           "name": "CompareYesterdayNotProtectMachineCnt",
@@ -27419,7 +27419,7 @@
         },
         {
           "disabled": false,
-          "document": "比较昨日即将到期的机器数",
+          "document": "<p>比较昨日即将到期的机器数</p>",
           "example": "2",
           "member": "int64",
           "name": "CompareYesterdayDeadlineMachineCnt",
@@ -27429,7 +27429,7 @@
         },
         {
           "disabled": false,
-          "document": "即将到期的机器数",
+          "document": "<p>即将到期的机器数</p>",
           "example": "2",
           "member": "uint64",
           "name": "DeadlineMachineCnt",
@@ -27439,7 +27439,7 @@
         },
         {
           "disabled": false,
-          "document": "未防护机器数",
+          "document": "<p>未防护机器数</p>",
           "example": "64",
           "member": "uint64",
           "name": "NotProtectMachineCnt",
@@ -27449,7 +27449,7 @@
         },
         {
           "disabled": false,
-          "document": "已防护轻量机器数（Lighthouse机器）",
+          "document": "<p>已防护轻量机器数（Lighthouse机器）</p>",
           "example": "0",
           "member": "uint64",
           "name": "LHGeneralDiscountCnt",
@@ -27459,7 +27459,7 @@
         },
         {
           "disabled": false,
-          "document": "比较昨日新增的主机数",
+          "document": "<p>比较昨日新增的主机数</p>",
           "example": "132",
           "member": "int64",
           "name": "CompareYesterdayMachineCnt",
@@ -27469,7 +27469,7 @@
         },
         {
           "disabled": false,
-          "document": "自动清理时间,最大720小时,最小0, 默认0 ,0=关闭",
+          "document": "<p>自动清理时间,最大720小时,最小0, 默认0 ,0=关闭</p>",
           "example": "1",
           "member": "uint64",
           "name": "MachineDestroyAfterOfflineHours",
@@ -27479,8 +27479,8 @@
         },
         {
           "disabled": false,
-          "document": "云服务器类型数组",
-          "example": "[       {         \"CloudFrom\": 0,         \"MachineCnt\": 124       },       {         \"CloudFrom\": 1,         \"MachineCnt\": 2       },       {         \"CloudFrom\": 2,         \"MachineCnt\": 6       }     ]",
+          "document": "<p>云服务器类型数组</p>",
+          "example": "无",
           "member": "CloudFromCnt",
           "name": "CloudFrom",
           "output_required": false,
@@ -27872,8 +27872,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作系统列表",
-          "example": "[{\"Name\": \"CentOS\", \"MachineOSType\": 1}]",
+          "document": "<p>操作系统列表</p>",
+          "example": "无",
           "member": "OsName",
           "name": "List",
           "output_required": true,
@@ -28179,7 +28179,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器所属专区类型 \nCVM 云服务器\nBM 黑石\nECM 边缘计算\nLH 轻量应用服务器\nOther 混合云专区",
+          "document": "<p>机器所属专区类型<br>CVM 云服务器<br>BM 黑石<br>ECM 边缘计算<br>LH 轻量应用服务器<br>Other 混合云专区</p>",
           "example": "CVM",
           "member": "string",
           "name": "MachineType",
@@ -28188,7 +28188,7 @@
         },
         {
           "disabled": false,
-          "document": "机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others",
+          "document": "<p>机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "MachineRegion",
@@ -28197,7 +28197,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为10，最大值为100。",
+          "document": "<p>返回数量，默认为10，最大值为100。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -28206,7 +28206,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -28215,7 +28215,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>Ips - String - 是否必填：否 - 通过ip查询 </li>\n<li>Names - String - 是否必填：否 - 通过实例名查询 </li>\n<li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li>\n<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>\n<li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li>\n<li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li>\n<li> AgentStatus- String 是否必填: 否 - ALL 全部; ONLINE 防护中; OFFLINE 已离线;UNINSTALLED 未安装</li>\n<li> MachineStatus- String 是否必填: 否 - ALL 全部; RUNNING 运行中; STOPPED 已关机; EXPIRED 待回收</li>",
+          "document": "<p>过滤条件。</p><li>Ips - String - 是否必填：否 - 通过ip查询 </li><li>Names - String - 是否必填：否 - 通过实例名查询 </li><li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li><li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li><li>Risk - String 是否必填: 否 - 风险主机( yes ) </li><li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li><li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li><li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li><li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li><li> AgentStatus- String 是否必填: 否 - ALL 全部; ONLINE 防护中; OFFLINE 已离线;UNINSTALLED 未安装</li><li> MachineStatus- String 是否必填: 否 - ALL 全部; RUNNING 运行中; STOPPED 已关机; EXPIRED 待回收</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -28224,12 +28224,21 @@
         },
         {
           "disabled": false,
-          "document": "机器所属业务ID列表",
+          "document": "<p>机器所属业务ID列表</p>",
           "example": "[1024]",
           "member": "uint64",
           "name": "ProjectIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>机器对应的APPID</p>",
+          "example": "1302396215",
+          "member": "uint64",
+          "name": "MachineAppId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -28239,7 +28248,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主机列表",
+          "document": "<p>主机列表</p>",
           "example": "无",
           "member": "Machine",
           "name": "Machines",
@@ -28249,7 +28258,7 @@
         },
         {
           "disabled": false,
-          "document": "主机数量",
+          "document": "<p>主机数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
@@ -28684,7 +28693,17 @@
     },
     "DescribeMalwareTimingScanSettingRequest": {
       "document": "DescribeMalwareTimingScanSetting请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品类型 0-主机安全(默认) 1-安全中心</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ProductType",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeMalwareTimingScanSettingResponse": {
@@ -28692,7 +28711,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检测模式 0 全盘检测  1快速检测",
+          "document": "<p>检测模式 0 全盘检测  1快速检测</p>",
           "example": "1",
           "member": "uint64",
           "name": "CheckPattern",
@@ -28702,7 +28721,7 @@
         },
         {
           "disabled": false,
-          "document": "检测周期 开始时间",
+          "document": "<p>检测周期 开始时间</p>",
           "example": "00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -28712,7 +28731,7 @@
         },
         {
           "disabled": false,
-          "document": "检测周期 超时结束时间",
+          "document": "<p>检测周期 超时结束时间</p>",
           "example": "02:00:00",
           "member": "string",
           "name": "EndTime",
@@ -28722,7 +28741,7 @@
         },
         {
           "disabled": false,
-          "document": "是否全部服务器 1 全部 2 自选",
+          "document": "<p>是否全部服务器 1 全部 2 自选</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsGlobal",
@@ -28732,7 +28751,7 @@
         },
         {
           "disabled": false,
-          "document": "自选服务器时必须 主机quuid的string数组",
+          "document": "<p>自选服务器时必须 主机quuid的string数组</p>",
           "example": "[\"972290ce-2e07-4689-8f92-f617239bbf82\"]",
           "member": "string",
           "name": "QuuidList",
@@ -28742,7 +28761,7 @@
         },
         {
           "disabled": false,
-          "document": "监控模式 0 标准 1深度",
+          "document": "<p>监控模式 0 标准 1深度</p>",
           "example": "1",
           "member": "uint64",
           "name": "MonitoringPattern",
@@ -28752,7 +28771,7 @@
         },
         {
           "disabled": false,
-          "document": "周期 1每天",
+          "document": "<p>周期 1每天</p>",
           "example": "1",
           "member": "uint64",
           "name": "Cycle",
@@ -28762,7 +28781,7 @@
         },
         {
           "disabled": false,
-          "document": "定时检测开关 0 关闭1 开启",
+          "document": "<p>定时检测开关 0 关闭1 开启</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableScan",
@@ -28772,7 +28791,7 @@
         },
         {
           "disabled": false,
-          "document": "唯一ID",
+          "document": "<p>唯一ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -28782,7 +28801,7 @@
         },
         {
           "disabled": false,
-          "document": "实时监控0 关闭 1开启",
+          "document": "<p>实时监控0 关闭 1开启</p>",
           "example": "1",
           "member": "int64",
           "name": "RealTimeMonitoring",
@@ -28792,7 +28811,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动隔离：1-是，0-否",
+          "document": "<p>是否自动隔离：1-是，0-否</p>",
           "example": "1",
           "member": "uint64",
           "name": "AutoIsolation",
@@ -28802,7 +28821,7 @@
         },
         {
           "disabled": false,
-          "document": "一键扫描超时时长，如：1800秒（s）",
+          "document": "<p>一键扫描超时时长，如：1800秒（s）</p>",
           "example": "60",
           "member": "uint64",
           "name": "ClickTimeout",
@@ -28812,7 +28831,7 @@
         },
         {
           "disabled": false,
-          "document": "是否杀掉进程 1杀掉 0不杀掉 只有开启自动隔离才生效",
+          "document": "<p>是否杀掉进程 1杀掉 0不杀掉 只有开启自动隔离才生效</p>",
           "example": "1",
           "member": "uint64",
           "name": "KillProcess",
@@ -28822,7 +28841,7 @@
         },
         {
           "disabled": false,
-          "document": "1标准模式（只报严重、高危）、2增强模式（报严重、高危、中危）、3严格模式（报严重、高、中、低、提示）",
+          "document": "<p>1标准模式（只报严重、高危）、2增强模式（报严重、高危、中危）、3严格模式（报严重、高、中、低、提示）</p>",
           "example": "1",
           "member": "uint64",
           "name": "EngineType",
@@ -28832,7 +28851,7 @@
         },
         {
           "disabled": false,
-          "document": "启发引擎 0 关闭 1开启",
+          "document": "<p>启发引擎 0 关闭 1开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "EnableInspiredEngine",
@@ -28842,7 +28861,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启恶意进程查杀[0:未开启,1:开启]",
+          "document": "<p>是否开启恶意进程查杀[0:未开启,1:开启]</p>",
           "example": "1",
           "member": "uint64",
           "name": "EnableMemShellScan",
@@ -28852,7 +28871,7 @@
         },
         {
           "disabled": false,
-          "document": "防护模式 0 标准 1 重保",
+          "document": "<p>防护模式 0 标准 1 重保</p>",
           "example": "0",
           "member": "uint64",
           "name": "ProtectMode",
@@ -28862,7 +28881,7 @@
         },
         {
           "disabled": false,
-          "document": "查杀范围 0 脚本类之外的恶意文件，1全部恶意文件",
+          "document": "<p>查杀范围 0 脚本类之外的恶意文件，1全部恶意文件</p>",
           "example": "0",
           "member": "uint64",
           "name": "ProtectFileScope",
@@ -28872,7 +28891,7 @@
         },
         {
           "disabled": false,
-          "document": "执行清理开关 0未开启 1开启",
+          "document": "<p>执行清理开关 0未开启 1开启</p>",
           "example": "0",
           "member": "uint64",
           "name": "DoClean",
@@ -28882,7 +28901,7 @@
         },
         {
           "disabled": false,
-          "document": "自选的隔离主机集合",
+          "document": "<p>自选的隔离主机集合</p>",
           "example": "[\"972290ce-2e07-4689-8f92-f617239bbf82\"]",
           "member": "string",
           "name": "QuaraUuids",
@@ -28892,7 +28911,7 @@
         },
         {
           "disabled": false,
-          "document": "用户选择的隔离范围，0：默认全隔离 1：用户自选",
+          "document": "<p>用户选择的隔离范围，0：默认全隔离 1：用户自选</p>",
           "example": "0",
           "member": "uint64",
           "name": "QuaraScope",
@@ -29169,7 +29188,17 @@
     },
     "DescribeNetAttackSettingRequest": {
       "document": "DescribeNetAttackSetting请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品类型 0-主机安全 1-安全中心</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProductType",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeNetAttackSettingResponse": {
@@ -29177,7 +29206,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "0 关闭网络攻击检测，1开启网络攻击检测",
+          "document": "<p>0 关闭网络攻击检测，1开启网络攻击检测</p>",
           "example": "1",
           "member": "uint64",
           "name": "NetAttackEnable",
@@ -29187,7 +29216,7 @@
         },
         {
           "disabled": false,
-          "document": "0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略",
+          "document": "<p>0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略</p>",
           "example": "1",
           "member": "uint64",
           "name": "NetAttackAlarmStatus",
@@ -29197,7 +29226,7 @@
         },
         {
           "disabled": false,
-          "document": "1 全部旗舰版主机，0 InstanceIds列表主机",
+          "document": "<p>1 全部旗舰版主机，0 InstanceIds列表主机</p>",
           "example": "1",
           "member": "uint64",
           "name": "Scope",
@@ -29207,7 +29236,7 @@
         },
         {
           "disabled": false,
-          "document": "自选主机",
+          "document": "<p>自选主机</p>",
           "example": "[\"d92d72\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -29217,7 +29246,7 @@
         },
         {
           "disabled": false,
-          "document": "自选排除主机",
+          "document": "<p>自选排除主机</p>",
           "example": "[\"d92d7\"]",
           "member": "string",
           "name": "ExcludeInstanceIds",
@@ -29227,7 +29256,7 @@
         },
         {
           "disabled": false,
-          "document": "新增资产自动包含 0 不包含 1包含",
+          "document": "<p>新增资产自动包含 0 不包含 1包含</p>",
           "example": "1",
           "member": "uint64",
           "name": "AutoInclude",
@@ -32023,7 +32052,17 @@
     },
     "DescribeReverseShellSystemPolicyConfigRequest": {
       "document": "DescribeReverseShellSystemPolicyConfig请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品类型 0-主机安全(默认) 1-安全中心</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ProductType",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeReverseShellSystemPolicyConfigResponse": {
@@ -32031,7 +32070,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "内网告警展示",
+          "document": "<p>内网告警展示</p>",
           "example": "true",
           "member": "bool",
           "name": "InnerNetAlarmShow",
@@ -32041,7 +32080,7 @@
         },
         {
           "disabled": false,
-          "document": "内网ip展示",
+          "document": "<p>内网ip展示</p>",
           "example": "true",
           "member": "bool",
           "name": "InnerIPShow",
@@ -42080,7 +42119,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "24563",
           "member": "string",
           "name": "TaskId",
@@ -42095,7 +42134,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "PENDING：正在生成下载链接，FINISHED：下载链接已生成，ERROR：网络异常等异常情况",
+          "document": "<p>PENDING：正在生成下载链接，FINISHED：下载链接已生成，ERROR：网络异常等异常情况</p>",
           "example": "FINISHED",
           "member": "string",
           "name": "Status",
@@ -42105,11 +42144,21 @@
         },
         {
           "disabled": false,
-          "document": "下载链接",
+          "document": "<p>下载链接</p>",
           "example": "DownloadUrl",
           "member": "string",
           "name": "DownloadUrl",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件名称</p>",
+          "example": "filename",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -43408,8 +43457,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤键的名称。",
-          "example": "Keywords",
+          "document": "<p>过滤键的名称。</p>",
+          "example": "Name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -43417,8 +43466,8 @@
         },
         {
           "disabled": false,
-          "document": "一个或者多个过滤值。",
-          "example": "1.1.1.1",
+          "document": "<p>一个或者多个过滤值。</p>",
+          "example": "[\"TA0010\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -43426,8 +43475,8 @@
         },
         {
           "disabled": false,
-          "document": "模糊搜索",
-          "example": "false",
+          "document": "<p>模糊搜索</p>",
+          "example": "true",
           "member": "bool",
           "name": "ExactMatch",
           "required": false,
@@ -46031,7 +46080,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主机名称。",
+          "document": "<p>主机名称。</p>",
           "example": "stone",
           "member": "string",
           "name": "MachineName",
@@ -46041,7 +46090,7 @@
         },
         {
           "disabled": false,
-          "document": "主机系统。",
+          "document": "<p>主机系统。</p>",
           "example": "centos",
           "member": "string",
           "name": "MachineOs",
@@ -46051,7 +46100,7 @@
         },
         {
           "disabled": false,
-          "document": "主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li>\t",
+          "document": "<p>主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li></p>",
           "example": "ONLINE",
           "member": "string",
           "name": "MachineStatus",
@@ -46061,7 +46110,7 @@
         },
         {
           "disabled": false,
-          "document": "ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装",
+          "document": "<p>ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装</p>",
           "example": "ONLINE",
           "member": "string",
           "name": "AgentStatus",
@@ -46071,7 +46120,7 @@
         },
         {
           "disabled": false,
-          "document": "RUNNING 运行中; STOPED 已关机; EXPIRED 待回收\t",
+          "document": "<p>RUNNING 运行中; STOPED 已关机; EXPIRED 待回收</p>",
           "example": "RUNNING",
           "member": "string",
           "name": "InstanceStatus",
@@ -46081,7 +46130,7 @@
         },
         {
           "disabled": false,
-          "document": "主机安全Uuid，若客户端长时间不在线将返回空字符。",
+          "document": "<p>主机安全Uuid，若客户端长时间不在线将返回空字符。</p>",
           "example": "8c09e1b1-5611-45b3-9c02-737996011b81",
           "member": "string",
           "name": "Uuid",
@@ -46091,7 +46140,7 @@
         },
         {
           "disabled": false,
-          "document": "CVM或BM机器唯一Uuid。",
+          "document": "<p>CVM或BM机器唯一Uuid。</p>",
           "example": "8c09e1b1-5611-45b3-9c02-737996011b81",
           "member": "string",
           "name": "Quuid",
@@ -46101,7 +46150,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞数。",
+          "document": "<p>漏洞数。</p>",
           "example": "2",
           "member": "int64",
           "name": "VulNum",
@@ -46111,7 +46160,7 @@
         },
         {
           "disabled": false,
-          "document": "主机IP。",
+          "document": "<p>主机IP。</p>",
           "example": "10.0.0.2",
           "member": "string",
           "name": "MachineIp",
@@ -46121,7 +46170,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是专业版。\n<li>true： 是</li>\n<li>false：否</li>",
+          "document": "<p>是否是专业版。</p><li>true： 是</li><li>false：否</li>",
           "example": "false",
           "member": "bool",
           "name": "IsProVersion",
@@ -46131,7 +46180,7 @@
         },
         {
           "disabled": false,
-          "document": "主机外网IP。",
+          "document": "<p>主机外网IP。</p>",
           "example": "114.11.12.13",
           "member": "string",
           "name": "MachineWanIp",
@@ -46141,7 +46190,7 @@
         },
         {
           "disabled": false,
-          "document": "主机状态。\n<li>POSTPAY: 表示后付费，即按量计费  </li>\n<li>PREPAY: 表示预付费，即包年包月</li>",
+          "document": "<p>主机状态。</p><li>POSTPAY: 表示后付费，即按量计费  </li><li>PREPAY: 表示预付费，即包年包月</li>",
           "example": "PREPAY",
           "member": "string",
           "name": "PayMode",
@@ -46151,7 +46200,7 @@
         },
         {
           "disabled": false,
-          "document": "木马数。",
+          "document": "<p>木马数。</p>",
           "example": "1",
           "member": "int64",
           "name": "MalwareNum",
@@ -46161,8 +46210,8 @@
         },
         {
           "disabled": false,
-          "document": "标签信息",
-          "example": "[{\"Rid\":0,\"Name\":\"tag-01\",\"TagId\":1}]",
+          "document": "<p>标签信息</p>",
+          "example": "无",
           "member": "MachineTag",
           "name": "Tag",
           "output_required": true,
@@ -46171,7 +46220,7 @@
         },
         {
           "disabled": false,
-          "document": "基线风险数。",
+          "document": "<p>基线风险数。</p>",
           "example": "2",
           "member": "int64",
           "name": "BaselineNum",
@@ -46181,7 +46230,7 @@
         },
         {
           "disabled": false,
-          "document": "网络风险数。",
+          "document": "<p>网络风险数。</p>",
           "example": "2",
           "member": "int64",
           "name": "CyberAttackNum",
@@ -46191,7 +46240,7 @@
         },
         {
           "disabled": false,
-          "document": "风险状态。\n<li>SAFE：安全</li>\n<li>RISK：风险</li>\n<li>UNKNOWN：未知</li>",
+          "document": "<p>风险状态。</p><li>SAFE：安全</li><li>RISK：风险</li><li>UNKNOWN：未知</li>",
           "example": "RISK",
           "member": "string",
           "name": "SecurityStatus",
@@ -46201,7 +46250,7 @@
         },
         {
           "disabled": false,
-          "document": "入侵事件数",
+          "document": "<p>入侵事件数</p>",
           "example": "1",
           "member": "int64",
           "name": "InvasionNum",
@@ -46211,8 +46260,8 @@
         },
         {
           "disabled": false,
-          "document": "地域信息",
-          "example": "{\"RegionCode\":\"gz\",\"Region\":\"ap-guangzhuo\",\"RegionId\":1,\"RegionName\":\"广州\",\"RegionNameEn\":\"chine guangzhou\"}",
+          "document": "<p>地域信息</p>",
+          "example": "无",
           "member": "RegionInfo",
           "name": "RegionInfo",
           "output_required": true,
@@ -46221,7 +46270,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态 TERMINATED_PRO_VERSION 已销毁",
+          "document": "<p>实例状态 TERMINATED_PRO_VERSION 已销毁</p>",
           "example": "TERMINATED_PRO_VERSION",
           "member": "string",
           "name": "InstanceState",
@@ -46231,7 +46280,7 @@
         },
         {
           "disabled": false,
-          "document": "防篡改 授权状态 1 授权 0 未授权",
+          "document": "<p>防篡改 授权状态 1 授权 0 未授权</p>",
           "example": "1",
           "member": "uint64",
           "name": "LicenseStatus",
@@ -46241,7 +46290,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1",
           "member": "int64",
           "name": "ProjectId",
@@ -46251,7 +46300,7 @@
         },
         {
           "disabled": false,
-          "document": "是否有资产扫描接口，0无，1有",
+          "document": "<p>是否有资产扫描接口，0无，1有</p>",
           "example": "1",
           "member": "uint64",
           "name": "HasAssetScan",
@@ -46261,7 +46310,7 @@
         },
         {
           "disabled": false,
-          "document": "机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区",
+          "document": "<p>机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区</p>",
           "example": "CVM",
           "member": "string",
           "name": "MachineType",
@@ -46271,7 +46320,7 @@
         },
         {
           "disabled": false,
-          "document": "内核版本",
+          "document": "<p>内核版本</p>",
           "example": "3.10.0-1127.19.1.el7.x86_64",
           "member": "string",
           "name": "KernelVersion",
@@ -46281,7 +46330,7 @@
         },
         {
           "disabled": false,
-          "document": "防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版",
+          "document": "<p>防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版</p>",
           "example": "BASIC_VERSION",
           "member": "string",
           "name": "ProtectType",
@@ -46291,8 +46340,8 @@
         },
         {
           "disabled": false,
-          "document": "云标签信息",
-          "example": "[{\"TagKey\":\"tagKey\",\"TagValue\":\"tagValue\"}]",
+          "document": "<p>云标签信息</p>",
+          "example": "无",
           "member": "Tags",
           "name": "CloudTags",
           "output_required": true,
@@ -46301,7 +46350,7 @@
         },
         {
           "disabled": false,
-          "document": "是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机",
+          "document": "<p>是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsAddedOnTheFifteen",
@@ -46311,7 +46360,7 @@
         },
         {
           "disabled": false,
-          "document": "主机ip列表",
+          "document": "<p>主机ip列表</p>",
           "example": "1.1.1.1,2.2.2.2",
           "member": "string",
           "name": "IpList",
@@ -46321,7 +46370,7 @@
         },
         {
           "disabled": false,
-          "document": "所属网络",
+          "document": "<p>所属网络</p>",
           "example": "vpc-sda",
           "member": "string",
           "name": "VpcId",
@@ -46331,8 +46380,8 @@
         },
         {
           "disabled": false,
-          "document": "附加信息",
-          "example": "{\"WanIP\":\"1.1.1.1\",\"PrivateIP\":\"1.1.1.1\",\"NetworkType\":1,\"NetworkName\":\"vpc-id\",\"InstanceID\":\"ins-id\",\"HostName\":\"hn\"}",
+          "document": "<p>附加信息</p>",
+          "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
           "output_required": false,
@@ -46341,7 +46390,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-sad143",
           "member": "string",
           "name": "InstanceId",
@@ -46351,7 +46400,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息",
+          "document": "<p>备注信息</p>",
           "example": "remark",
           "member": "string",
           "name": "Remark",
@@ -46361,10 +46410,30 @@
         },
         {
           "disabled": false,
-          "document": "主机安全agent版本",
+          "document": "<p>主机安全agent版本</p>",
           "example": "2.0.1.1",
           "member": "string",
           "name": "AgentVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机器对应APPID</p>",
+          "example": "260146618",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全中心付费版本</p>",
+          "example": "BASIC_VERSION",
+          "member": "string",
+          "name": "CSIPProtectType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -48187,7 +48256,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断",
+          "document": "<p>阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断</p>",
           "example": "STANDARD_MODE",
           "member": "string",
           "name": "Mode",
@@ -48196,7 +48265,7 @@
         },
         {
           "disabled": false,
-          "document": "阻断时间，用于标准阻断模式",
+          "document": "<p>阻断时间，用于标准阻断模式</p>",
           "example": "2",
           "member": "uint64",
           "name": "Ttl",
@@ -48619,8 +48688,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "暴力破解判断规则",
-          "example": "[\"TimeRange\":10,\"LoginFailTimes\":10]",
+          "document": "<p>暴力破解判断规则</p>",
+          "example": "无",
           "member": "BruteAttackRule",
           "name": "Rules",
           "required": true,
@@ -49613,7 +49682,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "白名单用户（多个用户逗号隔开）",
+          "document": "<p>白名单用户（多个用户逗号隔开）</p>",
           "example": "root",
           "member": "string",
           "name": "UserName",
@@ -49622,7 +49691,7 @@
         },
         {
           "disabled": false,
-          "document": "更新后记录的白名单维度信息",
+          "document": "<p>更新后记录的白名单维度信息</p>",
           "example": "127.0.0.1",
           "member": "string",
           "name": "SrcIp",
@@ -49631,7 +49700,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -49640,7 +49709,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "EndTime",
@@ -49649,7 +49718,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -49658,7 +49727,7 @@
         },
         {
           "disabled": false,
-          "document": "是否对所有服务器生效，0-否，1-是",
+          "document": "<p>是否对所有服务器生效，0-否，1-是</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsGlobal",
@@ -49667,7 +49736,7 @@
         },
         {
           "disabled": false,
-          "document": "白名单ID",
+          "document": "<p>白名单ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -49676,8 +49745,8 @@
         },
         {
           "disabled": false,
-          "document": "服务器列表",
-          "example": "[         {             \"Quuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",             \"Uuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\"         }     ]",
+          "document": "<p>服务器列表</p>",
+          "example": "无",
           "member": "HostInfo",
           "name": "Hosts",
           "required": false,
@@ -49685,8 +49754,8 @@
         },
         {
           "disabled": false,
-          "document": "地域列表",
-          "example": "[         {             \"CityId\": 1,             \"ProvinceId\": 1,             \"CountryId\": 1,             \"Location\": \"1.1.1.1\"         }     ]",
+          "document": "<p>地域列表</p>",
+          "example": "无",
           "member": "Place",
           "name": "Places",
           "required": false,
@@ -49712,7 +49781,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "清理规则时间, 0 表示关闭, 单位为天, 最大为 30天",
+          "document": "<p>清理规则时间, 0 表示关闭, 单位为天, 最大为 30天</p>",
           "example": "1",
           "member": "uint64",
           "name": "ClearRule",
@@ -49820,7 +49889,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检测模式 0 全盘检测  1快速检测",
+          "document": "<p>检测模式 0 全盘检测  1快速检测</p>",
           "example": "1",
           "member": "uint64",
           "name": "CheckPattern",
@@ -49829,7 +49898,7 @@
         },
         {
           "disabled": false,
-          "document": "检测周期 开始时间，如：02:00:00",
+          "document": "<p>检测周期 开始时间，如：02:00:00</p>",
           "example": "00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -49838,7 +49907,7 @@
         },
         {
           "disabled": false,
-          "document": "检测周期 超时结束时间，如：04:00:00",
+          "document": "<p>检测周期 超时结束时间，如：04:00:00</p>",
           "example": "02:00:00",
           "member": "string",
           "name": "EndTime",
@@ -49847,7 +49916,7 @@
         },
         {
           "disabled": false,
-          "document": "是否全部服务器 1 全部 2 自选",
+          "document": "<p>是否全部服务器 1 全部 2 自选</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsGlobal",
@@ -49856,7 +49925,7 @@
         },
         {
           "disabled": false,
-          "document": "定时检测开关 0 关闭 1开启",
+          "document": "<p>定时检测开关 0 关闭 1开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "EnableScan",
@@ -49865,7 +49934,7 @@
         },
         {
           "disabled": false,
-          "document": "监控模式 0 标准 1深度",
+          "document": "<p>监控模式 0 标准 1深度</p>",
           "example": "1",
           "member": "uint64",
           "name": "MonitoringPattern",
@@ -49874,7 +49943,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描周期 默认每天 1",
+          "document": "<p>扫描周期 默认每天 1</p>",
           "example": "1",
           "member": "uint64",
           "name": "Cycle",
@@ -49883,7 +49952,7 @@
         },
         {
           "disabled": false,
-          "document": "实时监控 0 关闭 1开启",
+          "document": "<p>实时监控 0 关闭 1开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "RealTimeMonitoring",
@@ -49892,7 +49961,7 @@
         },
         {
           "disabled": false,
-          "document": "自选服务器时必须 主机quuid的string数组",
+          "document": "<p>自选服务器时必须 主机quuid的string数组</p>",
           "example": "[\"quuidA\"]",
           "member": "string",
           "name": "QuuidList",
@@ -49901,7 +49970,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动隔离 1隔离 0 不隔离",
+          "document": "<p>是否自动隔离 1隔离 0 不隔离</p>",
           "example": "1",
           "member": "uint64",
           "name": "AutoIsolation",
@@ -49910,7 +49979,7 @@
         },
         {
           "disabled": false,
-          "document": "是否杀掉进程 1杀掉 0不杀掉",
+          "document": "<p>是否杀掉进程 1杀掉 0不杀掉</p>",
           "example": "1",
           "member": "uint64",
           "name": "KillProcess",
@@ -49919,7 +49988,7 @@
         },
         {
           "disabled": false,
-          "document": "1 清理, 0 不清理\n<li>本操作会修复被篡改的系统命令，计划任务等系统文件，操作中请确保yum/apt 可用</li>",
+          "document": "<p>1 清理, 0 不清理</p><li>本操作会修复被篡改的系统命令，计划任务等系统文件，操作中请确保yum/apt 可用</li>",
           "example": "1",
           "member": "uint64",
           "name": "DoClean",
@@ -49928,7 +49997,7 @@
         },
         {
           "disabled": false,
-          "document": "1标准模式（只报严重、高危）、2增强模式（报严重、高危、中危）、3严格模式（报严重、高、中、低、提示）",
+          "document": "<p>1标准模式（只报严重、高危）、2增强模式（报严重、高危、中危）、3严格模式（报严重、高、中、低、提示）</p>",
           "example": "1",
           "member": "uint64",
           "name": "EngineType",
@@ -49937,7 +50006,7 @@
         },
         {
           "disabled": false,
-          "document": "启发引擎开关 0 关闭 1开启",
+          "document": "<p>启发引擎开关 0 关闭 1开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "EnableInspiredEngine",
@@ -49946,7 +50015,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启恶意进程查杀[0:未开启,1:开启]",
+          "document": "<p>是否开启恶意进程查杀[0:未开启,1:开启]</p>",
           "example": "1",
           "member": "uint64",
           "name": "EnableMemShellScan",
@@ -49955,7 +50024,7 @@
         },
         {
           "disabled": false,
-          "document": "防护模式 0 标准 1重保",
+          "document": "<p>防护模式 0 标准 1重保</p>",
           "example": "0",
           "member": "uint64",
           "name": "ProtectMode",
@@ -49964,7 +50033,7 @@
         },
         {
           "disabled": false,
-          "document": "查杀范围 0 脚本类之外的恶意文件，1全部恶意文件",
+          "document": "<p>查杀范围 0 脚本类之外的恶意文件，1全部恶意文件</p>",
           "example": "0",
           "member": "uint64",
           "name": "ProtectFileScope",
@@ -49973,7 +50042,7 @@
         },
         {
           "disabled": false,
-          "document": "自选的隔离主机集合",
+          "document": "<p>自选的隔离主机集合</p>",
           "example": "[\"quuidA\"]",
           "member": "string",
           "name": "QuaraUuids",
@@ -49982,10 +50051,19 @@
         },
         {
           "disabled": false,
-          "document": "用户选择的隔离范围，0：默认全隔离 1：用户自选",
+          "document": "<p>用户选择的隔离范围，0：默认全隔离 1：用户自选</p>",
           "example": "1",
           "member": "uint64",
           "name": "QuaraScope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品类型 0-主机安全(默认) 1-安全中心</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ProductType",
           "required": false,
           "type": "int"
         }
@@ -50108,7 +50186,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "0 关闭网络攻击检测，1开启网络攻击检测",
+          "document": "<p>0 关闭网络攻击检测，1开启网络攻击检测</p>",
           "example": "1",
           "member": "uint64",
           "name": "NetAttackEnable",
@@ -50117,7 +50195,7 @@
         },
         {
           "disabled": false,
-          "document": "0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略",
+          "document": "<p>0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略</p>",
           "example": "1",
           "member": "uint64",
           "name": "NetAttackAlarmStatus",
@@ -50126,7 +50204,7 @@
         },
         {
           "disabled": false,
-          "document": "1 全部旗舰版主机，0 Quuids列表主机",
+          "document": "<p>1 全部旗舰版主机，0 Quuids列表主机</p>",
           "example": "1",
           "member": "uint64",
           "name": "Scope",
@@ -50135,7 +50213,7 @@
         },
         {
           "disabled": false,
-          "document": "自选主机",
+          "document": "<p>自选主机</p>",
           "example": "[\"d92d7\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -50144,7 +50222,7 @@
         },
         {
           "disabled": false,
-          "document": "自选排除的主机",
+          "document": "<p>自选排除的主机</p>",
           "example": "[\"d92d\"]",
           "member": "string",
           "name": "ExcludeInstanceIds",
@@ -50153,10 +50231,19 @@
         },
         {
           "disabled": false,
-          "document": "新增资产自动包含 0 不包含 1包含",
+          "document": "<p>新增资产自动包含 0 不包含 1包含</p>",
           "example": "1",
           "member": "uint64",
           "name": "AutoInclude",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品类型 0-主机安全 1-安全中心</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProductType",
           "required": false,
           "type": "int"
         }

@@ -470,6 +470,14 @@
         "title": "列出访问密钥"
       }
     ],
+    "ListAccounts": [
+      {
+        "document": "获取所有类型的子账号列表",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAllSubAccounts\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"IsTruncated\": false,\n        \"Marker\": \"\",\n        \"Users\": [\n            {\n                \"ConsoleLogin\": 1,\n                \"CountryCode\": \"86\",\n                \"CreateTime\": \"2022-11-23 17:07:28\",\n                \"Email\": \"gavi*******@tencent.com\",\n                \"Name\": \"gavi*******@tencent.com\",\n                \"PhoneNum\": \"132****0828\",\n                \"Remark\": \"\",\n                \"Uid\": 906949110,\n                \"Uin\": 0,\n                \"UserType\": \"Owner\"\n            }\n        ],\n        \"RequestId\": \"e89738b3-7eb3-46fe-be37-7d3210625d78\"\n    }\n}",
+        "title": "获取所有类型的子账号列表"
+      }
+    ],
     "ListAttachedGroupPolicies": [
       {
         "document": "查询用户组3349关联的策略列表",

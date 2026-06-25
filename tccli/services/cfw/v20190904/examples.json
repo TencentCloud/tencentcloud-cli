@@ -50,6 +50,14 @@
         "title": "添加VPC内网间规则2"
       }
     ],
+    "CloseClusterNatFwSwitch": [
+      {
+        "document": "关闭NAT CCN集群模式防火墙开关",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseClusterNatFwSwitch\n<公共请求参数>\n\n{\n    \"NatInsId\": \"cfwnat-xxxxxxxx\",\n    \"CcnId\": \"ccn-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b3a2e60-1b2c-4d3e-a4f5-6789abcdef01\"\n    }\n}",
+        "title": "关闭NAT CCN集群模式防火墙开关"
+      }
+    ],
     "CreateAcRules": [
       {
         "document": "",
@@ -378,6 +386,14 @@
         "title": "查询cfw引擎升级状态"
       }
     ],
+    "DescribeClusterNatCcnFwSwitchList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterNatCcnFwSwitchList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AssetType\": \"nat\",\n                \"AttachId\": \"\",\n                \"AttachIns\": null,\n                \"Bypass\": 0,\n                \"Endpoints\": null,\n                \"FwType\": \"nat\",\n                \"InsObj\": \"nat-0ktoayqe\",\n                \"IpVersion\": 0,\n                \"IpsAction\": 0,\n                \"NatVpcId\": \"\",\n                \"NonCluster\": 0,\n                \"ObjName\": \"NAT测试\",\n                \"Region\": \"eu-frankfurt\",\n                \"RoutingMode\": 0,\n                \"Status\": 0,\n                \"SwitchMode\": 1,\n                \"TransEnable\": 0\n            }\n        ],\n        \"RegionList\": [\n            {\n                \"Text\": \"法兰克福\",\n                \"Value\": \"eu-frankfurt\"\n            }\n        ],\n        \"Total\": 8,\n        \"RequestId\": \"7b1b108b-271a-4b84-8eaf-e2e962144a9c\"\n    }\n}",
+        "title": "开关查询示例"
+      }
+    ],
     "DescribeClusterVpcFwSwitchs": [
       {
         "document": "查询集群模式Vpc间防火墙开关",
@@ -504,6 +520,22 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatAcRule\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Direction\",\n            \"Values\": [\n                \"0\"\n            ],\n            \"OperatorType\": 1\n        }\n    ],\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"Uuid\": 238778,\n                \"InternalUuid\": 1726341068438565,\n                \"OrderIndex\": 19,\n                \"SourceContent\": \"ins-gt3h3i8f\",\n                \"SourceType\": \"instance\",\n                \"TargetContent\": \"mb_1300448058_1702866694255\",\n                \"TargetType\": \"template\",\n                \"Port\": \"-1/-1\",\n                \"Protocol\": \"ANY\",\n                \"Scope\": \"ap-guangzhou\",\n                \"ScopeDesc\": \"广州地域\",\n                \"Direction\": 0,\n                \"RuleAction\": \"log\",\n                \"Description\": \"autotest_nat_add\",\n                \"Count\": 0,\n                \"LastHitTime\": \"2024-11-03 03:14:44\",\n                \"Enable\": \"true\",\n                \"Invalid\": 0,\n                \"CountryCode\": 0,\n                \"CityCode\": 0,\n                \"CountryName\": \"中国\",\n                \"CityName\": \"广东省\",\n                \"IsRegion\": 0,\n                \"CloudCode\": \"0\",\n                \"IsCloud\": 0,\n                \"InstanceName\": \"proIns\",\n                \"Status\": 0,\n                \"BetaList\": [],\n                \"ParamTemplateId\": \"pp-336ad325\",\n                \"ParamTemplateName\": \"andy\",\n                \"TargetName\": \"prodst\",\n                \"SourceName\": \"prosrc\"\n            }\n        ],\n        \"AllTotal\": 1,\n        \"RequestId\": \"efa6461b-9410-4cd8-9168-73f37d6ed532\"\n    }\n}",
         "title": "查询NAT访问控制列表实例1"
+      }
+    ],
+    "DescribeNatCcnFwSwitch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatCcnFwSwitch\n<公共请求参数>\n\n{\n    \"NatInsId\": \"nat-********\",\n    \"CcnId\": \"ccn-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessInstanceList\": [\n            {\n                \"AccessCidrList\": [\n                    \"33.224.128.0/18\"\n                ],\n                \"AccessCidrMode\": 1,\n                \"InstanceId\": \"vpc-k5yzoiod\",\n                \"InstanceRegion\": \"eu-frankfurt\",\n                \"InstanceType\": \"VPC\"\n            }\n        ],\n        \"Bypass\": 0,\n        \"CcnId\": \"ccn-********\",\n        \"RoutingMode\": 1,\n        \"SwitchMode\": 1,\n        \"RequestId\": \"7cee694a-1bfb-4deb-824e-20420654104d\"\n    }\n}",
+        "title": "NAT配置示例"
+      }
+    ],
+    "DescribeNatFwClusterRegionStatus": [
+      {
+        "document": "nat所在地域防火墙集群部署状态",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatFwClusterRegionStatus\n<公共请求参数>\n\n{\n    \"NatClusterRegionStatusQueryList\": [\n        {\n            \"CcnId\": \"ccn-c0qmm031\",\n            \"NatInsId\": \"nat-45yn1tks\",\n            \"AssetType\": \"nat_ccn\",\n            \"RoutingMode\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RegionFwStatus\": [\n            {\n                \"CcnId\": \"ccn-c0qmm031\",\n                \"Cidr\": \"10.31.0.0/26\",\n                \"NatInsId\": \"nat-45yn1tks\",\n                \"Region\": \"eu-frankfurt\",\n                \"RoutingMode\": 1,\n                \"Status\": \"Custom\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"fd6c0cc2-0be1-437e-b363-de4384c2c2da\"\n    }\n}",
+        "title": "nat所在地域防火墙集群部署状态"
       }
     ],
     "DescribeNatFwDnatRule": [
@@ -690,16 +722,10 @@
     ],
     "ExpandCfwVertical": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExpandCfwVertical\n<公共请求参数>\n\n{\n    \"FwType\": \"nat\",\n    \"Width\": 200,\n    \"CfwInstance\": \"cfwnat-d2afc817\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "防火墙垂直扩容"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExpandCfwVertical\n<公共请求参数>\n\n{\n    \"FwType\": \"nat\",\n    \"Width\": 200,\n    \"CfwInstance\": \"cfwnat-d2afc817\",\n    \"ElasticSwitch\": 1,\n    \"ElasticBandwidth\": 220\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "防火墙规格调整开启弹性计费"
+        "document": "扩容实例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExpandCfwVertical\n<公共请求参数>\n\n{\n    \"FwType\": \"nat\",\n    \"Width\": 121,\n    \"CfwInstance\": \"cfwnat-e366d270\",\n    \"ElasticSwitch\": 1,\n    \"ElasticBandwidth\": 290,\n    \"Tags\": [\n        {\n            \"TagKey\": null,\n            \"TagValue\": null\n        }\n    ],\n    \"ElasticTrafficSwitch\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8fcb913a-80ee-4ace-bf11-7c5a0592be7e\"\n    }\n}",
+        "title": "扩容实例"
       }
     ],
     "ModifyAcRule": [
@@ -788,6 +814,22 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlockTop\n<公共请求参数>\n\n{\n    \"OpeType\": \"2\",\n    \"UniqueId\": \"dsahjd********\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3a822d02-e5f0-4a87-9b77-f3da6912fea1\"\n    }\n}",
         "title": "ModifyBlockTop取消置顶接口"
+      }
+    ],
+    "ModifyClusterFwBypass": [
+      {
+        "document": "开启NAT集群防火墙的Bypass模式，禁用正常下一跳使流量绕过防火墙",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterFwBypass\n<公共请求参数>\n\n{\n    \"FwType\": \"NAT_FW\",\n    \"CcnId\": \"ccn-iidlg5oh\",\n    \"Enable\": false,\n    \"NatInsId\": \"nat-nlq8cmtw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1bf5e5a2-2a1d-4284-bbea-29d504e7a3d7\"\n    }\n}",
+        "title": "开启NAT集群防火墙Bypass"
+      }
+    ],
+    "ModifyClusterNatFwSwitch": [
+      {
+        "document": "修改NAT CCN集群防火墙的自动接入VPC列表",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterNatFwSwitch\n<公共请求参数>\n\n{\n    \"NatCcnSwitch\": {\n        \"NatInsId\": \"cfwnat-xxxxxxxx\",\n        \"CcnId\": \"ccn-xxxxxxxx\",\n        \"SwitchMode\": 1,\n        \"RoutingMode\": 1,\n        \"LeadVpcCidr\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b3a2e60-1b2c-4d3e-a4f5-6789abcdef01\"\n    }\n}",
+        "title": "修改NAT CCN集群模式防火墙开关配置"
       }
     ],
     "ModifyClusterVpcFwSwitch": [
@@ -1000,6 +1042,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcFwSequenceRules\n<公共请求参数>\n\n{\n    \"RuleChangeItems\": [\n        {\n            \"OrderIndex\": 2,\n            \"NewOrderIndex\": 1\n        },\n        {\n            \"OrderIndex\": 1,\n            \"NewOrderIndex\": 2\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "vpc间规则快速排序"
+      }
+    ],
+    "OpenClusterNatFwSwitch": [
+      {
+        "document": "以自动接入+策略路由模式开启NAT CCN集群防火墙开关",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenClusterNatFwSwitch\n<公共请求参数>\n\n{\n    \"NatCcnSwitch\": {\n        \"NatInsId\": \"cfwnat-xxxxxxxx\",\n        \"CcnId\": \"ccn-xxxxxxxx\",\n        \"SwitchMode\": 1,\n        \"RoutingMode\": 1,\n        \"LeadVpcCidr\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b3a2e60-1b2c-4d3e-a4f5-6789abcdef01\"\n    }\n}",
+        "title": "开启NAT CCN集群模式防火墙开关"
       }
     ],
     "RemoveAcRule": [

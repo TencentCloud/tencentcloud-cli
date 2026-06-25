@@ -125,6 +125,15 @@
           "name": "Url",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用模式。</p><p>枚举值：</p><ul><li>0： 端到端图片翻译大模型pro版</li><li>1： 端到端图片翻译大模型lite版</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Mode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -1,5 +1,19 @@
 {
   "actions": {
+    "CreateGlossary": {
+      "document": "创建术语库。\n\n在当前应用下创建一个新的翻译术语库，用于自定义源语言到目标语言的术语映射。创建成功后返回术语库 ID，可通过该 ID 进一步管理术语条目。",
+      "input": "CreateGlossaryRequest",
+      "name": "创建术语库",
+      "output": "CreateGlossaryResponse",
+      "status": "online"
+    },
+    "CreateGlossaryEntries": {
+      "document": "批量创建术语条目。\n\n在指定术语库下批量创建术语条目。单次最多创建 100 条。",
+      "input": "CreateGlossaryEntriesRequest",
+      "name": "批量创建术语条目",
+      "output": "CreateGlossaryEntriesResponse",
+      "status": "online"
+    },
     "CreateTokenPlanApiKeys": {
       "document": "批量创建 TokenPlan APIKey。\n\n传入名称前缀和数量，自动按 {ApiKeyName}-{序号} 格式生成名称（如 aaa-1, aaa-2）。允许同名。支持部分成功，最多 100 条。",
       "input": "CreateTokenPlanApiKeysRequest",
@@ -12,6 +26,20 @@
       "input": "CreateTokenPlanTeamOrderAndBuyRequest",
       "name": "创建 Token Plan 套餐",
       "output": "CreateTokenPlanTeamOrderAndBuyResponse",
+      "status": "online"
+    },
+    "DeleteGlossary": {
+      "document": "删除术语库。\n\n删除指定的术语库及其下所有术语条目。删除操作幂等，对不存在的术语库返回成功。调用接口后，若通过 DescribeGlossaries 接口查询不到对应术语库，则表示删除成功。",
+      "input": "DeleteGlossaryRequest",
+      "name": "删除术语库",
+      "output": "DeleteGlossaryResponse",
+      "status": "online"
+    },
+    "DeleteGlossaryEntries": {
+      "document": "批量删除术语条目。\n\n在指定术语库下批量删除术语条目。单次最多删除 200 条。若术语库不存在或不属于当前应用，返回 ResourceNotFound 错误。",
+      "input": "DeleteGlossaryEntriesRequest",
+      "name": "批量删除术语条目",
+      "output": "DeleteGlossaryEntriesResponse",
       "status": "online"
     },
     "DeleteTokenPlanApiKey": {
@@ -33,6 +61,27 @@
       "input": "DescribeApiKeyListRequest",
       "name": "查询 API 密钥列表",
       "output": "DescribeApiKeyListResponse",
+      "status": "online"
+    },
+    "DescribeGlossaries": {
+      "document": "查询术语库列表。\n\n查询当前应用下的术语库列表。支持分页、过滤和排序。",
+      "input": "DescribeGlossariesRequest",
+      "name": "查询术语库列表",
+      "output": "DescribeGlossariesResponse",
+      "status": "online"
+    },
+    "DescribeGlossaryEntries": {
+      "document": "查询术语条目列表。\n\n查询指定术语库下的术语条目。支持分页。",
+      "input": "DescribeGlossaryEntriesRequest",
+      "name": "查询术语条目列表",
+      "output": "DescribeGlossaryEntriesResponse",
+      "status": "online"
+    },
+    "DescribeModelList": {
+      "document": "查询模型列表。\n\n支持按模型 ID、模型名称、模型能力等条件筛选，支持分页和排序。",
+      "input": "DescribeModelListRequest",
+      "name": "查询模型列表",
+      "output": "DescribeModelListResponse",
       "status": "online"
     },
     "DescribeTokenPlan": {
@@ -66,7 +115,7 @@
     "DescribeTokenPlanApiKeyUsageDetail": {
       "document": "查询 TokenPlan APIKey 调用明细。\n\n从 CLS 日志服务查询套餐下的调用明细，按 pkg_id 过滤，支持游标分页。",
       "input": "DescribeTokenPlanApiKeyUsageDetailRequest",
-      "name": "查询 TokenPlan APIKey 调用明细",
+      "name": "查询 TokenPlan 企业版 API Key 调用明细",
       "output": "DescribeTokenPlanApiKeyUsageDetailResponse",
       "status": "online"
     },
@@ -82,6 +131,13 @@
       "input": "DescribeUsageRankListRequest",
       "name": "查询用量排行列表",
       "output": "DescribeUsageRankListResponse",
+      "status": "online"
+    },
+    "ModifyGlossaryEntries": {
+      "document": "批量修改术语条目。\n\n在指定术语库下批量修改术语条目。单次最多修改 200 条。",
+      "input": "ModifyGlossaryEntriesRequest",
+      "name": "批量修改术语条目",
+      "output": "ModifyGlossaryEntriesResponse",
       "status": "online"
     },
     "ModifyTokenPlanApiKey": {
@@ -282,6 +338,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Token 限额信息多维度列表。未配置限额时不返回该字段。",
+          "example": "无",
+          "member": "QuotaInfo",
+          "name": "QuotaSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Token 限额状态。空字符串表示未配置任何限额包；active 表示已配置且当前可用；inactive 表示已配置但额度耗尽",
+          "example": "active",
+          "member": "string",
+          "name": "QuotaStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -346,6 +422,17 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源状态",
+          "example": "pre-offline",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -365,6 +452,136 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateGlossaryEntriesRequest": {
+      "document": "CreateGlossaryEntries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID。可通过 DescribeGlossaries 接口获取。",
+          "example": "aa5efee60bd5275d0ebc4bdf528eebb4",
+          "member": "string",
+          "name": "GlossaryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "术语条目列表。单次最多 100 个。",
+          "example": "无",
+          "member": "GlossaryEntryInput",
+          "name": "Entries",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlossaryEntriesResponse": {
+      "document": "CreateGlossaryEntries返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建成功的术语条目列表。",
+          "example": "无",
+          "member": "GlossaryEntryItem",
+          "name": "Entries",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlossaryRequest": {
+      "document": "CreateGlossary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库名称。最大 50 字符。",
+          "example": "my-glossary",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源语言代码。最大 16 字符。例如：zh（中文）、en（英文）。",
+          "example": "zh",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标语言代码。最大 16 字符。例如：zh（中文）、en（英文）。",
+          "example": "en",
+          "member": "string",
+          "name": "Target",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "术语库描述。最大 255 字符。",
+          "example": "test glossary",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlossaryResponse": {
+      "document": "CreateGlossary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID。",
+          "example": "glossary-a1b2c3d4",
+          "member": "string",
+          "name": "GlossaryId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "术语库名称。",
+          "example": "my-glossary",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。Unix 时间戳（毫秒）。",
+          "example": "1717000000000",
+          "member": "int64",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateTokenPlanApiKeysRequest": {
       "document": "CreateTokenPlanApiKeys请求参数结构体",
@@ -531,6 +748,84 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlossaryEntriesRequest": {
+      "document": "DeleteGlossaryEntries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID。可通过 DescribeGlossaries 接口获取。",
+          "example": "glossary-a1b2c3d4",
+          "member": "string",
+          "name": "GlossaryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待删除的术语条目列表。单次最多 200 个。",
+          "example": "无",
+          "member": "DeleteGlossaryEntryInput",
+          "name": "Entries",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlossaryEntriesResponse": {
+      "document": "DeleteGlossaryEntries返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlossaryEntryInput": {
+      "document": "删除术语条目项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语条目 ID。可通过 DescribeGlossaryEntries 接口获取。",
+          "example": "0b93af68c6cdc928b99d5b3fed6a3f93",
+          "member": "string",
+          "name": "EntryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DeleteGlossaryRequest": {
+      "document": "DeleteGlossary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID。可通过 DescribeGlossaries 接口获取。",
+          "example": "glossary-a1b2c3d4",
+          "member": "string",
+          "name": "GlossaryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlossaryResponse": {
+      "document": "DeleteGlossary返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -847,6 +1142,222 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "Token 限额多维度信息。未配置限额时不返回该字段。",
+          "example": "无",
+          "member": "QuotaInfo",
+          "name": "QuotaSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Token 限额状态。空字符串表示未配置任何限额包；active 表示已配置且当前可用；inactive 表示已配置但额度耗尽",
+          "example": "active",
+          "member": "string",
+          "name": "QuotaStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlossariesRequest": {
+      "document": "DescribeGlossaries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数量。默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件列表。支持的过滤字段：GlossaryId（术语库 ID）、Name（名称）、Source（源语言代码）、Target（目标语言代码）。",
+          "example": "无",
+          "member": "RequestFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序条件列表。支持的排序字段：CreatedTime（创建时间）、UpdatedTime（更新时间）。",
+          "example": "无",
+          "member": "RequestSort",
+          "name": "Sorts",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlossariesResponse": {
+      "document": "DescribeGlossaries返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库列表。",
+          "example": "无",
+          "member": "GlossaryItem",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的术语库总数。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前页码。",
+          "example": "1",
+          "member": "int64",
+          "name": "Current",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页大小。",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlossaryEntriesRequest": {
+      "document": "DescribeGlossaryEntries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID。可通过 DescribeGlossaries 接口获取。",
+          "example": "glossary-a1b2c3d4",
+          "member": "string",
+          "name": "GlossaryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码。默认为 1。",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页大小。默认为 20，最大值为 200。",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlossaryEntriesResponse": {
+      "document": "DescribeGlossaryEntries返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语条目列表。",
+          "example": "无",
+          "member": "GlossaryEntryItem",
+          "name": "Entries",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的术语条目总数。",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前页码。",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页大小。",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelListRequest": {
+      "document": "DescribeModelList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeModelListResponse": {
+      "document": "DescribeModelList返回参数结构体",
+      "members": [
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1034,12 +1545,134 @@
     },
     "DescribeTokenPlanApiKeyUsageDetailRequest": {
       "document": "DescribeTokenPlanApiKeyUsageDetail请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐 ID。可通过DescribeTokenPlanList接口获取。",
+          "example": "tp-ent-abcdefgh",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间，RFC3339 格式。不传默认为结束时间前 15 分钟。",
+          "example": "2026-04-06T00:00:00Z",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，RFC3339 格式。不传默认为当前时间。",
+          "example": "2026-04-06T12:00:00Z",
+          "member": "string",
+          "name": "To",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式。取值：asc（升序）、desc（降序），默认为 desc。",
+          "example": "desc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回条数，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "翻页上下文，首次查询不传，后续传入上次返回的 Context，直到 ListOver 为 true。",
+          "example": "Context",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按 API Key ID 精确过滤。最大 128 字符。与 ApiKeyName 至少需传入其一，都传时以 ApiKeyId 为准。可通过 DescribeTokenPlanApiKeyList 接口获取。",
+          "example": "ak-tp-20260511-e72cbd58f07906010f862a5acd597010",
+          "member": "string",
+          "name": "ApiKeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按 API Key 名称模糊过滤。最大 64 字符。与 ApiKeyId 至少需传入其一，都传时以 ApiKeyId 为准。",
+          "example": "apikey-test",
+          "member": "string",
+          "name": "ApiKeyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按模型 ID (Model ID) 精确过滤。需要按模型名称过滤时传入该字段。",
+          "example": "auto",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeTokenPlanApiKeyUsageDetailResponse": {
       "document": "DescribeTokenPlanApiKeyUsageDetail返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "翻页上下文，传入下一次请求的 Context 参数继续翻页。",
+          "example": "Context",
+          "member": "string",
+          "name": "Context",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已到末尾，为 true 时无需继续翻页。",
+          "example": "true",
+          "member": "bool",
+          "name": "ListOver",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用明细列表。",
+          "example": "无",
+          "member": "UsageDetailItem",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "\t 套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ProductType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1540,6 +2173,231 @@
       ],
       "type": "object"
     },
+    "GlossaryEntryInput": {
+      "document": "新建术语条目项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源语言术语。最大 1000 字符。",
+          "example": "云服务器",
+          "member": "string",
+          "name": "SourceTerm",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标语言术语。最大 1000 字符。",
+          "example": "Cloud Server",
+          "member": "string",
+          "name": "TargetTerm",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "GlossaryEntryItem": {
+      "document": "术语条目详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语条目 ID。",
+          "example": "0b93af68c6cdc928b99d5b3fed6a3f93",
+          "member": "string",
+          "name": "EntryId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源语言术语。",
+          "example": "云服务器",
+          "member": "string",
+          "name": "SourceTerm",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标语言术语。",
+          "example": "Cloud Server",
+          "member": "string",
+          "name": "TargetTerm",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。Unix 时间戳（毫秒）。",
+          "example": "1780561971",
+          "member": "int64",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GlossaryItem": {
+      "document": "术语库详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID。",
+          "example": "glossary-a1b2c3d4",
+          "member": "string",
+          "name": "GlossaryId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "术语库名称。",
+          "example": "my-glossary",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "术语库描述。",
+          "example": "test glossary",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源语言代码。",
+          "example": "zh",
+          "member": "string",
+          "name": "Source",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标语言代码。",
+          "example": "en",
+          "member": "string",
+          "name": "Target",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2026-03-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。",
+          "example": "2026-03-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyGlossaryEntriesRequest": {
+      "document": "ModifyGlossaryEntries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID。可通过 DescribeGlossaries 接口获取。",
+          "example": "glossary-a1b2c3d4",
+          "member": "string",
+          "name": "GlossaryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "术语条目列表。单次最多 200 个。",
+          "example": "无",
+          "member": "ModifyGlossaryEntryInput",
+          "name": "Entries",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlossaryEntriesResponse": {
+      "document": "ModifyGlossaryEntries返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改后的术语条目列表。",
+          "example": "无",
+          "member": "GlossaryEntryItem",
+          "name": "Entries",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlossaryEntryInput": {
+      "document": "修改术语条目项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语条目 ID。可通过 DescribeGlossaryEntries 接口获取。",
+          "example": "3a82012132f4da00ab3cf623b43a6aa1",
+          "member": "string",
+          "name": "EntryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源语言术语。最大 1000 字符。不传则保持不变。",
+          "example": "云服务器",
+          "member": "string",
+          "name": "SourceTerm",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标语言术语。最大 1000 字符。不传则保持不变。",
+          "example": "cloud server",
+          "member": "string",
+          "name": "TargetTerm",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "ModifyTokenPlanApiKeyRequest": {
       "document": "ModifyTokenPlanApiKey请求参数结构体",
       "members": [
@@ -1658,6 +2516,82 @@
         }
       ],
       "type": "object"
+    },
+    "QuotaInfo": {
+      "document": "Token 限额信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "限额包 ID。",
+          "example": "limit-6xaznx2ke5",
+          "member": "string",
+          "name": "PkgId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限额包状态。取值：1（正常）、3（已耗尽）、4（已销毁）。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限额周期。取值：d（按日）、m（按月）、lifetime（总额度，不重置）。",
+          "example": "d",
+          "member": "string",
+          "name": "CycleUnit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维度当期限额总量（Token 数）。使用字符串避免大数精度丢失。",
+          "example": "1000",
+          "member": "string",
+          "name": "CycleCredits",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维度当期已使用量（Token 数）。使用字符串避免大数精度丢失。",
+          "example": "0",
+          "member": "string",
+          "name": "CycleUsed",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限额生效起始时间。",
+          "example": "2026-06-09T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限额过期时间。",
+          "example": "2046-06-09T21:12:17+08:00",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RenewTokenPlanTeamOrderRequest": {
       "document": "RenewTokenPlanTeamOrder请求参数结构体",
@@ -2589,6 +3523,152 @@
         }
       ],
       "type": "object"
+    },
+    "UsageDetailItem": {
+      "document": "Token Plan 企业版套餐调用明细项（字段与 CLS 日志对齐）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主账号 UIN。",
+          "example": "700002501094",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型名称。",
+          "example": "deepseek-v3.2",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "APIKey ID。",
+          "example": "ak-test",
+          "member": "string",
+          "name": "ApiKeyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "APIKey 名称。",
+          "example": "hello-world",
+          "member": "string",
+          "name": "ApiKeyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求 ID。",
+          "example": "test-001",
+          "member": "string",
+          "name": "RequestId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求时间（RFC3339 格式）。",
+          "example": "2026-04-06T12:00:00Z",
+          "member": "string",
+          "name": "RequestTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入 token 数。",
+          "example": "1200",
+          "member": "int64",
+          "name": "InputToken",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "缓存 token 数。",
+          "example": "100",
+          "member": "int64",
+          "name": "CacheToken",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出 token 数。",
+          "example": "800",
+          "member": "int64",
+          "name": "OutputToken",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总 token 数。",
+          "example": "2100",
+          "member": "int64",
+          "name": "TotalToken",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未命中缓存输入消耗额度。单位说明如下：\n- 套餐类型为专业套餐（enterprise），单位取值为积分；\n- 套餐类型轻享套餐（enterprise-auto），单位取值为 token。",
+          "example": "1000",
+          "member": "string",
+          "name": "InputQuota",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "缓存消耗额度。单位说明如下：\n- 套餐类型为专业套餐（enterprise），单位取值为积分；\n- 套餐类型轻享套餐（enterprise-auto），单位取值为 token。",
+          "example": "500",
+          "member": "string",
+          "name": "CacheQuota",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出消耗额度。单位说明如下：\n- 套餐类型为专业套餐（enterprise），单位取值为积分；\n- 套餐类型轻享套餐（enterprise-auto），单位取值为 token。",
+          "example": "500",
+          "member": "string",
+          "name": "OutputQuota",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总消耗额度。单位说明如下：\n- 套餐类型为专业套餐（enterprise），单位取值为积分；\n- 套餐类型轻享套餐（enterprise-auto），单位取值为 token。",
+          "example": "2000",
+          "member": "string",
+          "name": "TotalQuota",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UsageRankItem": {
       "document": "排行列表中的单个对象用量项，含对象标识、时间周期内的统计值（Stats）和时间周期内的时序点列表（Series，仅 ShowAll=false 时返回）。",

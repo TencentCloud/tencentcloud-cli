@@ -42,10 +42,16 @@
     ],
     "CreateTopic": [
       {
-        "document": "创建主题",
-        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"test_topic\",\n    \"TopicType\": \"NORMAL\",\n    \"QueueNum\": 16,\n    \"Remark\": \"测试主题\"\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"InstanceId\": \"rmq-72mo3a9o\",\n        \"RequestId\": \"97f45511-b653-4e2a-ade6-58c8d3ae523b\",\n        \"Topic\": \"test_topic\"\n    }\n}",
-        "title": "创建主题示例"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-16jm9787qv\",\n    \"Topic\": \"test_normal_topic\",\n    \"TopicType\": \"NORMAL\",\n    \"QueueNum\": 3,\n    \"Remark\": \"test remark\",\n    \"MsgTTL\": 72\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"rmq-16jm9787qv\",\n        \"Topic\": \"test_normal_topic\",\n        \"RequestId\": \"08087f18-5882-4d01-81c2-696b69404926\"\n    }\n}",
+        "title": "创建普通主题"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-16jm9787qv\",\n    \"Topic\": \"test_lite_topic\",\n    \"TopicType\": \"LITE\",\n    \"QueueNum\": 3,\n    \"Remark\": \"test remark\",\n    \"MsgTTL\": 72,\n    \"AutoExpireDelete\": true,\n    \"AutoExpireTime\": 1800\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"rmq-16jm9787qv\",\n        \"Topic\": \"test_lite_topic\",\n        \"RequestId\": \"201510ab-d42c-4bc6-81d2-50ba9a10d60c\"\n    }\n}",
+        "title": "创建轻量主题"
       }
     ],
     "DeleteConsumerGroup": [
@@ -163,23 +169,29 @@
     "DescribeMessageList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"topic\",\n    \"Offset\": 0,\n    \"Limit\": 1,\n    \"MsgId\": \"1EAE3915000721B8D17C2C5BB31638D1\",\n    \"StartTime\": 1683613796174,\n    \"EndTime\": 1683613796174,\n    \"TaskRequestId\": \"901a6956-1ab9-7fb7-3bf5-9f02b7aa2a7d\"\n}",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"topic\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"MsgId\": \"1EAE3915000721B8D17C2C5BB31638D1\",\n    \"StartTime\": 1683613796174,\n    \"EndTime\": 1683613796174,\n    \"TaskRequestId\": \"901a6956-1ab9-7fb7-3bf5-9f02b7aa2a7d\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DeadLetterResendSuccessTimes\": null,\n                \"DeadLetterResendTimes\": null,\n                \"Keys\": \"test_key\",\n                \"MsgId\": \"1EAE3915000721B8D17C2C5BB31638D1\",\n                \"ProduceTime\": \"2023-05-09 14:43:27\",\n                \"ProducerAddr\": \"30.174.57.21\",\n                \"Tags\": \"test_tag\"\n            }\n        ],\n        \"RequestId\": \"7426c613-085b-48c4-9257-87a208a8adcc\",\n        \"TaskRequestId\": \"901a6956-1ab9-7fb7-3bf5-9f02b7aa2a7d\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "查询消息列表"
+        "title": "查询普通消息列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-16jm9787qv\",\n    \"Topic\": \"test_topic_parent\",\n    \"StartTime\": 1774421710000,\n    \"EndTime\": 1774422130842,\n    \"TaskRequestId\": \"901a6956-1ab9-7fb7-3bf5-9f02b7aa2a7d\",\n    \"LiteTopic\": \"test_lite_topic\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DeadLetterResendSuccessTimes\": null,\n                \"DeadLetterResendTimes\": null,\n                \"Keys\": null,\n                \"MsgId\": \"0B8D67BE00072D98A3357ED050E50000\",\n                \"ProduceTime\": \"2026-03-25 14:59:41.416\",\n                \"ProducerAddr\": \"11.141.103.190\",\n                \"Tags\": null\n            }\n        ],\n        \"TaskRequestId\": \"901a6956-1ab9-7fb7-3bf5-9f02b7aa2a7d\",\n        \"TotalCount\": 1,\n        \"RequestId\": \"588524c3-f6bd-4321-b274-308d632b0e1c\"\n    }\n}",
+        "title": "查询轻量消息列表"
       }
     ],
     "DescribeMessageTrace": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageTrace\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"topic\",\n    \"MsgId\": \"1EAE3915000721B8D17C2C5BB31638D1\"\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Data\": \"{\\\"MsgId\\\":\\\"1EAE3915000721B8D17C2C5BB31638D1\\\",\\\"Status\\\":0,\\\"ProduceTime\\\":\\\"2023-05-09 14:43:27,127\\\",\\\"ProducerAddr\\\":\\\"30.174.57.21\\\",\\\"MsgKey\\\":\\\"testKey\\\",\\\"MsgTags\\\":\\\"testTag\\\",\\\"Duration\\\":76}\",\n                \"Stage\": \"produce\"\n            },\n            {\n                \"Data\": \"{\\\"MsgId\\\":\\\"1EAE3915000721B8D17C2C5BB31638D1\\\",\\\"Status\\\":0,\\\"PersistTime\\\":\\\"2023-05-09 14:43:27,184\\\"}\",\n                \"Stage\": \"persist\"\n            },\n            {\n                \"Data\": \"{\\\"TotalCount\\\":1,\\\"RocketMqConsumeLogs\\\":[{\\\"MsgId\\\":\\\"1EAE3915000721B8D17C2C5BB31638D1\\\",\\\"Status\\\":2,\\\"PushTime\\\":\\\"2023-05-09 14:43:27,205\\\",\\\"ConsumerAddr\\\":\\\"11.139.244.247\\\",\\\"ConsumerGroup\\\":\\\"group\\\",\\\"RetryTimes\\\":1}]}\",\n                \"Stage\": \"consume\"\n            }\n        ],\n        \"RequestId\": \"0112153a-8cba-44f1-b7a5-5e412d493940\",\n        \"ShowTopicName\": \"test_topic\"\n    }\n}",
-        "title": "查询普通消息的轨迹"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageTrace\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-cdqzmmgz8o\",\n    \"Topic\": \"\",\n    \"MsgId\": \"010242ECB90067325E06F41EFF00000000\",\n    \"QueryDelayMessage\": true\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Data\": \"{\\\"MsgId\\\":\\\"010242ECB90067325E06F41EFF00000000\\\",\\\"Status\\\":0,\\\"ProduceTime\\\":\\\"2024-09-12 14:06:55,591\\\",\\\"ProducerAddr\\\":\\\"9.218.232.160:32038\\\",\\\"MsgKey\\\":\\\"topic1\\\",\\\"MsgTags\\\":\\\"tag0\\\",\\\"Duration\\\":2}\",\n                \"Stage\": \"produce\"\n            },\n            {\n                \"Data\": \"{\\\"MsgId\\\":\\\"010242ECB90067325E06F41EFF00000000\\\",\\\"Status\\\":0,\\\"PersistTime\\\":\\\"2024-09-12 14:06:55,590\\\"}\",\n                \"Stage\": \"persist\"\n            },\n            {\n                \"Data\": \"{\\\"TotalCount\\\":0,\\\"RocketMqConsumeLogs\\\":[]}\",\n                \"Stage\": \"consume\"\n            }\n        ],\n        \"RequestId\": \"2e4374f9-0c98-4d77-af20-2bc414ccaefd\",\n        \"ShowTopicName\": \"test_topic\"\n    }\n}",
         "title": "查询延迟消息的轨迹"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageTrace\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"topic\",\n    \"MsgId\": \"1EAE3915000721B8D17C2C5BB31638D1\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Data\": \"{\\\"MsgId\\\":\\\"1EAE3915000721B8D17C2C5BB31638D1\\\",\\\"Status\\\":0,\\\"ProduceTime\\\":\\\"2023-05-09 14:43:27,127\\\",\\\"ProducerAddr\\\":\\\"30.174.57.21\\\",\\\"MsgKey\\\":\\\"testKey\\\",\\\"MsgTags\\\":\\\"testTag\\\",\\\"Duration\\\":76}\",\n                \"Stage\": \"produce\"\n            },\n            {\n                \"Data\": \"{\\\"MsgId\\\":\\\"1EAE3915000721B8D17C2C5BB31638D1\\\",\\\"Status\\\":0,\\\"PersistTime\\\":\\\"2023-05-09 14:43:27,184\\\"}\",\n                \"Stage\": \"persist\"\n            },\n            {\n                \"Data\": \"{\\\"TotalCount\\\":1,\\\"RocketMqConsumeLogs\\\":[{\\\"MsgId\\\":\\\"1EAE3915000721B8D17C2C5BB31638D1\\\",\\\"Status\\\":2,\\\"PushTime\\\":\\\"2023-05-09 14:43:27,205\\\",\\\"ConsumerAddr\\\":\\\"11.139.244.247\\\",\\\"ConsumerGroup\\\":\\\"group\\\",\\\"RetryTimes\\\":1}]}\",\n                \"Stage\": \"consume\"\n            }\n        ],\n        \"RequestId\": \"0112153a-8cba-44f1-b7a5-5e412d493940\",\n        \"ShowTopicName\": \"test_topic\"\n    }\n}",
+        "title": "查询普通消息的轨迹"
       }
     ],
     "DescribeMigratingGroupStats": [
@@ -336,7 +348,7 @@
     ],
     "ModifyTopic": [
       {
-        "document": "修改主题属性",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"test_topic\",\n    \"QueueNum\": 6\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"945afc69-1c24-4891-a2ce-c5fa6032ba75\"\n    }\n}",
         "title": "修改主题属性"
@@ -376,10 +388,16 @@
     ],
     "SendMessage": [
       {
-        "document": "发送消息",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendMessage\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"test_topic\",\n    \"MsgBody\": \"This is a normal message for Apache RocketMQ.\",\n    \"MsgKey\": \"test_key\",\n    \"MsgTag\": \"test_kag\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"MsgId\": \"1EAE3915000721B8D17C2C5BB31638D1\",\n        \"RequestId\": \"256f8223-d0e2-4400-9481-763989799560\"\n    }\n}",
-        "title": "发送消费"
+        "title": "发送普通消息"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendMessage\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-16jm9787qv\",\n    \"Topic\": \"test_topic_parent\",\n    \"MsgBody\": \"This is a normal message for Apache RocketMQ.\",\n    \"LiteTopic\": \"test_lite_topic\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MsgId\": \"0B8D67BE00072D98A3357ED050E50000\",\n        \"RequestId\": \"ac76f2f5-8ed0-4800-9cc2-c168e4a0e9a0\"\n    }\n}",
+        "title": "发送轻量消息"
       }
     ],
     "VerifyMessageConsumption": [

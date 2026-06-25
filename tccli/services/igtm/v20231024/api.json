@@ -3086,8 +3086,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集合中的地址池id与权重，数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"PoolId\":314,\"Weight\":1}]",
+          "document": "<p>集合中的地址池id与权重，数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MainPoolWeight",
           "name": "AddressPools",
           "output_required": false,
@@ -3097,7 +3097,7 @@
         },
         {
           "disabled": false,
-          "document": "地址池集合id",
+          "document": "<p>地址池集合id</p>",
           "example": "1",
           "member": "uint64",
           "name": "MainAddressPoolId",
@@ -3108,7 +3108,7 @@
         },
         {
           "disabled": false,
-          "document": "切换阀值，不能大于主力集合内地址总数",
+          "document": "<p>切换阈值，不能大于主力集合内地址总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "MinSurviveNum",
@@ -3119,7 +3119,7 @@
         },
         {
           "disabled": false,
-          "document": "切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重",
+          "document": "<p>切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重</p>",
           "example": "ALL",
           "member": "string",
           "name": "TrafficStrategy",
@@ -3164,7 +3164,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "地址池id",
+          "document": "<p>地址池id</p>",
           "example": "5",
           "member": "uint64",
           "name": "PoolId",
@@ -3173,7 +3173,7 @@
         },
         {
           "disabled": false,
-          "document": "地址池名称，不允许重复",
+          "document": "<p>地址池名称，不允许重复</p>",
           "example": "addressGroup",
           "member": "string",
           "name": "PoolName",
@@ -3182,7 +3182,7 @@
         },
         {
           "disabled": false,
-          "document": "流量策略: WEIGHT负载均衡，ALL解析全部",
+          "document": "<p>流量策略: WEIGHT负载均衡，ALL解析全部</p>",
           "example": "ALL",
           "member": "string",
           "name": "TrafficStrategy",
@@ -3191,7 +3191,7 @@
         },
         {
           "disabled": false,
-          "document": "监控器id，当监控器已关联策略时，此字段必传",
+          "document": "<p>监控器id，当监控器已关联策略时，此字段必传</p>",
           "example": "1",
           "member": "uint64",
           "name": "MonitorId",
@@ -3200,12 +3200,21 @@
         },
         {
           "disabled": false,
-          "document": "地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。",
+          "document": "<p>地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。</p>",
           "example": "无",
           "member": "Address",
           "name": "AddressSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否保留资源</p><p>枚举值：</p><ul><li>false： 全量操作，会有删除逻辑</li><li>true： 不会删除原有资源</li></ul>",
+          "example": "false",
+          "member": "bool",
+          "name": "KeepResource",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3215,7 +3224,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否修改成功",
+          "document": "<p>是否修改成功</p>",
           "example": "success",
           "member": "string",
           "name": "Msg",
@@ -3519,7 +3528,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "gtm-Ul65AOsdfDvxVD",
           "member": "string",
           "name": "InstanceId",
@@ -3528,7 +3537,7 @@
         },
         {
           "disabled": false,
-          "document": "策略id",
+          "document": "<p>策略id</p>",
           "example": "3",
           "member": "uint64",
           "name": "StrategyId",
@@ -3537,8 +3546,8 @@
         },
         {
           "disabled": false,
-          "document": "解析线路，需要全量传参",
-          "example": "境外:欧洲,美国,东南亚",
+          "document": "<p>解析线路，需要全量传参</p>",
+          "example": "无",
           "member": "Source",
           "name": "Source",
           "required": true,
@@ -3546,8 +3555,8 @@
         },
         {
           "disabled": false,
-          "document": "主力地址池集合，需要全量传参",
-          "example": "[{\"AddressPools\":[{\"PoolId\":1,\"Weight\":50}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"weight\"},{\"AddressPools\":[{\"PoolId\":3,\"Weight\":30}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"weight\"},{\"AddressPools\":[{\"PoolId\":3}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"all\"}]",
+          "document": "<p>主力地址池集合，需要全量传参</p>",
+          "example": "无",
           "member": "MainAddressPool",
           "name": "MainAddressPoolSet",
           "required": true,
@@ -3555,8 +3564,8 @@
         },
         {
           "disabled": false,
-          "document": "兜底地址池集合，需要全量传参",
-          "example": "[{\"AddressPools\":[{\"PoolId\":1}]}]",
+          "document": "<p>兜底地址池集合，需要全量传参</p>",
+          "example": "无",
           "member": "MainAddressPool",
           "name": "FallbackAddressPoolSet",
           "required": true,
@@ -3564,7 +3573,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名称，不允许重复",
+          "document": "<p>策略名称，不允许重复</p>",
           "example": "name",
           "member": "string",
           "name": "StrategyName",
@@ -3573,7 +3582,7 @@
         },
         {
           "disabled": false,
-          "document": "策略开启状态：ENABLED开启；DISABLED关闭",
+          "document": "<p>策略开启状态：ENABLED开启；DISABLED关闭</p>",
           "example": "ENABLED",
           "member": "string",
           "name": "IsEnabled",
@@ -3582,7 +3591,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启策略强制保留默认线路 disabled, enabled，默认不开启且只有一个策略能开启",
+          "document": "<p>是否开启策略强制保留默认线路 disabled, enabled，默认不开启且只有一个策略能开启</p>",
           "example": "enabled",
           "member": "string",
           "name": "KeepDomainRecords",
@@ -3591,12 +3600,21 @@
         },
         {
           "disabled": false,
-          "document": "调度模式：AUTO默认；STOP仅暂停不切换",
+          "document": "<p>调度模式：AUTO默认；STOP仅暂停不切换</p>",
           "example": "AUTO",
           "member": "string",
           "name": "SwitchPoolType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否保留资源</p><p>枚举值：</p><ul><li>false： 全量操作，会有删除逻辑</li><li>true： 不会删除原有资源</li></ul>",
+          "example": "false",
+          "member": "bool",
+          "name": "KeepResource",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3606,7 +3624,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否成功",
+          "document": "<p>是否成功</p>",
           "example": "success",
           "member": "string",
           "name": "Msg",

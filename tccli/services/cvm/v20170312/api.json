@@ -7344,7 +7344,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例所在的位置。",
+          "document": "<p>实例所在的位置。</p>",
           "example": "无",
           "member": "Placement",
           "name": "Placement",
@@ -7354,7 +7354,7 @@
         },
         {
           "disabled": false,
-          "document": "实例`ID`。",
+          "document": "<p>实例<code>ID</code>。</p>",
           "example": "ins-9bxebleo",
           "member": "string",
           "name": "InstanceId",
@@ -7364,7 +7364,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机型。",
+          "document": "<p>实例机型。</p>",
           "example": "S1.SMALL1",
           "member": "string",
           "name": "InstanceType",
@@ -7374,7 +7374,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的CPU核数，单位：核。",
+          "document": "<p>实例的CPU核数，单位：核。</p>",
           "example": "1",
           "member": "int64",
           "name": "CPU",
@@ -7384,7 +7384,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存容量，单位：`GiB`。",
+          "document": "<p>实例内存容量，单位：<code>GiB</code>。</p>",
           "example": "1",
           "member": "int64",
           "name": "Memory",
@@ -7394,7 +7394,7 @@
         },
         {
           "disabled": false,
-          "document": "实例业务状态。取值范围：<br><li>NORMAL：表示正常状态的实例</li><li>EXPIRED：表示过期的实例</li><li>PROTECTIVELY_ISOLATED：表示被安全隔离的实例。</li>",
+          "document": "<p>实例业务状态。取值范围：<br><li>NORMAL：表示正常状态的实例</li><li>EXPIRED：表示过期的实例</li><li>PROTECTIVELY_ISOLATED：表示被安全隔离的实例。</li></p>",
           "example": "NORMAL",
           "member": "string",
           "name": "RestrictState",
@@ -7404,7 +7404,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称。",
+          "document": "<p>实例名称。</p>",
           "example": "测试实例",
           "member": "string",
           "name": "InstanceName",
@@ -7414,7 +7414,7 @@
         },
         {
           "disabled": false,
-          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。取值范围：<br><li>PREPAID：预付费，即包年包月</li><br><li>POSTPAID_BY_HOUR：按小时后付费</li><br><li>CDHPAID：独享子机（基于专用宿主机创建，宿主机部分的资源不收费）</li><br><li>SPOTPAID：竞价付费</li><br><li>CDCPAID：专用集群付费</li>",
+          "document": "<p>实例<a href=\"https://cloud.tencent.com/document/product/213/2180\">计费类型</a>。取值范围：<br><li>PREPAID：预付费，即包年包月</li><br><li>POSTPAID_BY_HOUR：按小时后付费</li><br><li>CDHPAID：独享子机（基于专用宿主机创建，宿主机部分的资源不收费）</li><br><li>SPOTPAID：竞价付费</li><br><li>CDCPAID：专用集群付费</li></p>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -7424,7 +7424,7 @@
         },
         {
           "disabled": false,
-          "document": "实例系统盘信息。",
+          "document": "<p>实例系统盘信息。</p>",
           "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
@@ -7434,7 +7434,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数据盘信息。",
+          "document": "<p>实例数据盘信息。</p>",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
@@ -7444,7 +7444,7 @@
         },
         {
           "disabled": false,
-          "document": "实例主网卡的内网`IP`列表。",
+          "document": "<p>实例主网卡的内网<code>IP</code>列表。</p>",
           "example": "[\"172.16.32.78\"]",
           "member": "string",
           "name": "PrivateIpAddresses",
@@ -7454,7 +7454,7 @@
         },
         {
           "disabled": false,
-          "document": "实例主网卡的公网`IP`列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例主网卡的公网<code>IP</code>列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"110.207.11.190\"]",
           "member": "string",
           "name": "PublicIpAddresses",
@@ -7464,7 +7464,7 @@
         },
         {
           "disabled": false,
-          "document": "实例带宽信息。",
+          "document": "<p>实例带宽信息。</p>",
           "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
@@ -7474,7 +7474,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属虚拟私有网络信息。",
+          "document": "<p>实例所属虚拟私有网络信息。</p>",
           "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
@@ -7484,7 +7484,7 @@
         },
         {
           "disabled": false,
-          "document": "生产实例所使用的镜像`ID`。",
+          "document": "<p>生产实例所使用的镜像<code>ID</code>。</p>",
           "example": "img-9qabwvbn",
           "member": "string",
           "name": "ImageId",
@@ -7494,7 +7494,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。取值范围：<br><li>`NOTIFY_AND_MANUAL_RENEW`：表示通知即将过期，但不自动续费</li><li>`NOTIFY_AND_AUTO_RENEW`：表示通知即将过期，而且自动续费</li><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`：表示不通知即将过期，也不自动续费。\n</li><li>注意：后付费模式本项为null</li>",
+          "document": "<p>自动续费标识。取值范围：<br><li><code>NOTIFY_AND_MANUAL_RENEW</code>：表示通知即将过期，但不自动续费</li><li><code>NOTIFY_AND_AUTO_RENEW</code>：表示通知即将过期，而且自动续费</li><li><code>DISABLE_NOTIFY_AND_MANUAL_RENEW</code>：表示不通知即将过期，也不自动续费。</p></li><li>注意：后付费模式本项为null</li>",
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -7504,7 +7504,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。",
+          "document": "<p>创建时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。</p>",
           "example": "2020-03-10T02:43:51Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -7514,7 +7514,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。注意：后付费模式本项为null",
+          "document": "<p>到期时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。注意：后付费模式本项为null</p>",
           "example": "2020-04-10T02:47:36Z",
           "member": "datetime_iso",
           "name": "ExpiredTime",
@@ -7524,7 +7524,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统名称。",
+          "document": "<p>操作系统名称。</p>",
           "example": "CentOS 7.6 64bit",
           "member": "string",
           "name": "OsName",
@@ -7534,7 +7534,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。",
+          "document": "<p>实例所属安全组。该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/api/215/15808\">DescribeSecurityGroups</a> 的返回值中的sgId字段来获取。</p>",
           "example": "[\"sg-p1ezv4wz\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -7544,7 +7544,7 @@
         },
         {
           "disabled": false,
-          "document": "实例登录设置。目前只返回实例所关联的密钥。",
+          "document": "<p>实例登录设置。目前只返回实例所关联的密钥。</p>",
           "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
@@ -7554,7 +7554,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态。状态类型详见[实例状态表](https://cloud.tencent.com/document/api/213/15753#InstanceStatus)",
+          "document": "<p>实例状态。状态类型详见<a href=\"https://cloud.tencent.com/document/api/213/15753#InstanceStatus\">实例状态表</a></p>",
           "example": "RUNNING",
           "member": "string",
           "name": "InstanceState",
@@ -7564,7 +7564,7 @@
         },
         {
           "disabled": false,
-          "document": "实例关联的标签列表。",
+          "document": "<p>实例关联的标签列表。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -7574,7 +7574,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的关机计费模式。\n取值范围：<br><li>KEEP_CHARGING：关机继续收费</li><li>STOP_CHARGING：关机停止收费</li><li>NOT_APPLICABLE：实例处于非关机状态或者不适用关机停止计费的条件</li>",
+          "document": "<p>实例的关机计费模式。<br>取值范围：<br><li>KEEP_CHARGING：关机继续收费</li><li>STOP_CHARGING：关机停止收费</li><li>NOT_APPLICABLE：实例处于非关机状态或者不适用关机停止计费的条件</li></p>",
           "example": "NOT_APPLICABLE",
           "member": "string",
           "name": "StopChargingMode",
@@ -7584,7 +7584,7 @@
         },
         {
           "disabled": false,
-          "document": "实例全局唯一ID",
+          "document": "<p>实例全局唯一ID</p>",
           "example": "68b510db-b4c1-4630-a62b-73d0c7c970f9",
           "member": "string",
           "name": "Uuid",
@@ -7594,7 +7594,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的最新操作。例：StopInstances、ResetInstance。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例的最新操作。例：StopInstances、ResetInstance。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RenewInstances",
           "member": "string",
           "name": "LatestOperation",
@@ -7604,7 +7604,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的最新操作状态。取值范围：<br><li>SUCCESS：表示操作成功</li><li>OPERATING：表示操作执行中</li><li>FAILED：表示操作失败</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例的最新操作状态。取值范围：<br><li>SUCCESS：表示操作成功</li><li>OPERATING：表示操作执行中</li><li>FAILED：表示操作失败</li></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
@@ -7614,7 +7614,7 @@
         },
         {
           "disabled": false,
-          "document": "实例最新操作的唯一请求 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例最新操作的唯一请求 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3554eb5b-1cfa-471a-ae76-dc436c9d43e8",
           "member": "string",
           "name": "LatestOperationRequestId",
@@ -7624,7 +7624,7 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组ID。",
+          "document": "<p>分散置放群组ID。</p>",
           "example": "ps-l7sdunxx",
           "member": "string",
           "name": "DisasterRecoverGroupId",
@@ -7634,7 +7634,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的IPv6地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例的IPv6地址。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"xx.xxxxx.xxx\"]",
           "member": "string",
           "name": "IPv6Addresses",
@@ -7644,7 +7644,7 @@
         },
         {
           "disabled": false,
-          "document": "CAM角色名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>CAM角色名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "admin",
           "member": "string",
           "name": "CamRoleName",
@@ -7654,7 +7654,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群`ID`。",
+          "document": "<p>高性能计算集群<code>ID</code>。</p>",
           "example": "hpc-4dxxetpt",
           "member": "string",
           "name": "HpcClusterId",
@@ -7664,7 +7664,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群`IP`列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>高性能计算集群<code>IP</code>列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"xx.xxxxx.xxx\"]",
           "member": "string",
           "name": "RdmaIpAddresses",
@@ -7674,7 +7674,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在的专用集群`ID`。",
+          "document": "<p>实例所在的专用集群<code>ID</code>。</p>",
           "example": "cluster-du3jken",
           "member": "string",
           "name": "DedicatedClusterId",
@@ -7684,7 +7684,7 @@
         },
         {
           "disabled": false,
-          "document": "实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>",
+          "document": "<p>实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li></p>",
           "example": "NOTISOLATED",
           "member": "string",
           "name": "IsolatedSource",
@@ -7694,7 +7694,7 @@
         },
         {
           "disabled": false,
-          "document": "GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。",
+          "document": "<p>GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。</p>",
           "example": "无",
           "member": "GPUInfo",
           "name": "GPUInfo",
@@ -7704,7 +7704,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的操作系统许可类型，默认为TencentCloud",
+          "document": "<p>实例的操作系统许可类型，默认为TencentCloud</p>",
           "example": "TencentCloud",
           "member": "string",
           "name": "LicenseType",
@@ -7714,7 +7714,7 @@
         },
         {
           "disabled": false,
-          "document": "实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>true：表示开启实例保护，不允许通过api接口删除实例</li><li>false：表示关闭实例保护，允许通过api接口删除实例</li><br>默认取值：false。",
+          "document": "<p>实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>true：表示开启实例保护，不允许通过api接口删除实例</li><li>false：表示关闭实例保护，允许通过api接口删除实例</li><br>默认取值：false。</p>",
           "example": "false",
           "member": "bool",
           "name": "DisableApiTermination",
@@ -7724,7 +7724,7 @@
         },
         {
           "disabled": false,
-          "document": "默认登录用户。",
+          "document": "<p>默认登录用户。</p>",
           "example": "root",
           "member": "string",
           "name": "DefaultLoginUser",
@@ -7734,7 +7734,7 @@
         },
         {
           "disabled": false,
-          "document": "默认登录端口。",
+          "document": "<p>默认登录端口。</p>",
           "example": "22",
           "member": "int64",
           "name": "DefaultLoginPort",
@@ -7744,7 +7744,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的最新操作错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例的最新操作错误信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "None",
           "member": "string",
           "name": "LatestOperationErrorMsg",
@@ -7754,7 +7754,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。**注：内测中**。",
+          "document": "<p>自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。<strong>注：内测中</strong>。</p>",
           "example": "无",
           "member": "Metadata",
           "name": "Metadata",
@@ -7764,12 +7764,22 @@
         },
         {
           "disabled": false,
-          "document": "实例绑定的公网IPv6地址。",
+          "document": "<p>实例绑定的公网IPv6地址。</p>",
           "example": "[\"240d:c000:f000:ac00:5460:6340:16aa:6\"]",
           "member": "string",
           "name": "PublicIPv6Addresses",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述了实例CPU拓扑结构的相关信息。</p>",
+          "example": "无",
+          "member": "CpuTopology",
+          "name": "CpuTopology",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -12437,7 +12447,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br>\n<li>LOCAL_BASIC：本地硬盘</li>\n<li>LOCAL_SSD：本地SSD硬盘</li>\n<li>CLOUD_BASIC：普通云硬盘</li>\n<li>CLOUD_SSD：SSD云硬盘</li>\n<li>CLOUD_PREMIUM：高性能云硬盘</li>\n<li>CLOUD_BSSD：通用型SSD云硬盘</li>\n<li>CLOUD_HSSD：增强型SSD云硬盘</li>\n<li>CLOUD_TSSD：极速型SSD云硬盘</li><br>\n默认取值：当前有库存的硬盘类型。",
+          "document": "<p>系统盘类型。系统盘类型限制详见<a href=\"https://cloud.tencent.com/document/product/213/4952\">存储概述</a>。取值范围：<br></p><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_BSSD：通用型SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li><br>默认取值：当前有库存的硬盘类型。",
           "example": "CLOUD_HSSD",
           "member": "string",
           "name": "DiskType",
@@ -12448,7 +12458,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘ID。\n该参数目前仅用于 [DescribeInstances](https://cloud.tencent.com/document/product/213/15728) 等查询类接口的返回参数，不可用于 [RunInstances](https://cloud.tencent.com/document/product/213/15730) 等写接口的入参。",
+          "document": "<p>系统盘ID。<br>该参数目前仅用于 <a href=\"https://cloud.tencent.com/document/product/213/15728\">DescribeInstances</a> 等查询类接口的返回参数，不可用于 <a href=\"https://cloud.tencent.com/document/product/213/15730\">RunInstances</a> 等写接口的入参。</p>",
           "example": "disk-xyzw1a3x",
           "member": "string",
           "name": "DiskId",
@@ -12459,7 +12469,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘大小，单位：GiB。默认值为 50",
+          "document": "<p>系统盘大小，单位：GiB。默认值为 50</p>",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
@@ -12470,7 +12480,7 @@
         },
         {
           "disabled": false,
-          "document": "所属的独享集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所属的独享集群ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cdc-xxxxxx",
           "member": "string",
           "name": "CdcId",
@@ -12481,11 +12491,33 @@
         },
         {
           "disabled": false,
-          "document": "磁盘名称，长度不超过128 个字符。",
+          "document": "<p>磁盘名称，长度不超过128 个字符。</p>",
           "example": "name",
           "member": "string",
           "name": "DiskName",
           "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统盘是否加密。取值范围：true：加密false：不加密默认取值：false该参数目前仅用于 RunInstances 接口。当前参数灰度中。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Encrypt",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。该参数目前仅用于 RunInstances 接口。当前参数灰度中。</p>",
+          "example": "kms-abcd1234",
+          "member": "string",
+          "name": "KmsKeyId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

@@ -48,7 +48,22 @@ Output:
                 "SubnetId": "subnet-s21doiba",
                 "Vport": 6008,
                 "Disk": 200,
-                "CreateTime": "2006-01-02 15:04:05"
+                "CreateTime": "2006-01-02 15:04:05",
+                "PayMode": "0",
+                "StorageNodeCpu": "1",
+                "StorageNodeMem": "2",
+                "RenewFlag": "0",
+                "SubAccountUin": "32183618631",
+                "InstanceType": "hybrid",
+                "StorageType": "CLOUD_HSSD",
+                "ExpireAt": "2006-02-02 15:04:05",
+                "DestroyedAt": "2006-02-02 15:04:05",
+                "AccountTag": "external",
+                "AppId": 38125321753,
+                "IsolatedAt": "2006-01-02 15:04:05",
+                "Uin": "32183618631",
+                "Replications": 3,
+                "IsolatedFrom": "2006-01-02 15:04:05"
             }
         ],
         "RequestId": "a93d2900-ef72-11eb-ab93-0716f253da76",

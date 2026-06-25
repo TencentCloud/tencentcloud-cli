@@ -2013,7 +2013,7 @@
           "example": "[]",
           "member": "ApplicationDataStatistics",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

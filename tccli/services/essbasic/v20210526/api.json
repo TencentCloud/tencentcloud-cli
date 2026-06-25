@@ -113,7 +113,7 @@
       "status": "online"
     },
     "ChannelCreateFlowReminds": {
-      "document": "指定需要批量催办的签署流程ID，批量催办合同，最多100个。需要符合以下条件的合同才可被催办\n1. 合同中当前状态为 **待签署** 的签署人是催办的对象\n2. **每个合同只能催办一次**\n\n**催办的效果**: 对方会收到如下的短信通知\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/3caf94b7f540fa5736270d38528d3a7b.png)\n\n\n**注**：`合同催办是白名单功能，请联系客户经理申请开白后使用`",
+      "document": "指定需要批量催办的签署流程ID，批量催办合同，最多100个。需要符合以下条件的合同才可被催办\n1. 合同中当前状态为 **待签署** 的签署人是催办的对象\n2. **每个合同每个人只能催办一次**\n\n**催办的效果**: 对方会收到如下的短信通知\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/3caf94b7f540fa5736270d38528d3a7b.png)\n\n\n**注**：`合同催办是白名单功能，请联系客户经理申请开白后使用`",
       "input": "ChannelCreateFlowRemindsRequest",
       "name": "合同催办",
       "output": "ChannelCreateFlowRemindsResponse",
@@ -176,7 +176,7 @@
       "status": "online"
     },
     "ChannelCreateReleaseFlow": {
-      "document": "发起解除协议的主要应用场景为：基于一份已经签署的合同(签署流程)，进行解除操作。\n解除协议的模板是官方提供，经过提供法务审核，暂不支持自定义。具体用法可以参考文档[合同解除](https://qian.tencent.com/developers/partner/flow_release)。\n\n注意：\n<ul><li><code>原合同必须签署完</code>成后才能发起解除协议。</li>\n<li>只有原合同企业类型的参与人才能发起解除协议，<code>个人参与方不能发起解除协议</code>。</li>\n<li>原合同个人类型参与人必须是解除协议的参与人，<code>不能更换其他第三方个人</code>参与解除协议。</li>\n<li>如果原合同企业参与人无法参与解除协议，可以指定同企业具有同等权限的<code>企业员工代为处理</code>。</li>\n<li>发起解除协议同发起其他企业合同一样，也会参与合同<code>扣费</code>，扣费标准同其他类型合同。</li>\n<li>在解除协议签署完毕后，原合同变为已解除状态。</li>\n<li>非原合同企业参与人发起解除协议时，需要有<code>解除合同的权限</code>。</li>\n</ul>",
+      "document": "发起解除协议的主要应用场景为：基于一份已经签署的合同(签署流程)，进行解除操作。\n解除协议的模板是官方提供，经过提供法务审核，暂不支持自定义，[点击查看解除协议模板示例](https://qcloudimg.tencent-cloud.cn/raw/279b53002cf178ac89ba2c4f31b2dd8a.pdf)。具体用法可以参考文档[合同解除](https://qian.tencent.com/developers/partner/flow_release)。\n\n注意：\n<ul><li><code>原合同必须签署完</code>成后才能发起解除协议。</li>\n<li>只有原合同企业类型的参与人才能发起解除协议，<code>个人参与方不能发起解除协议</code>。</li>\n<li>原合同个人类型参与人必须是解除协议的参与人，<code>不能更换其他第三方个人</code>参与解除协议。</li>\n<li>如果原合同企业参与人无法参与解除协议，可以指定同企业具有同等权限的<code>企业员工代为处理</code>。</li>\n<li>发起解除协议同发起其他企业合同一样，也会参与合同<code>扣费</code>，扣费标准同其他类型合同。</li>\n<li>在解除协议签署完毕后，原合同变为已解除状态。</li>\n<li>非原合同企业参与人发起解除协议时，需要有<code>解除合同的权限</code>。</li>\n</ul>",
       "input": "ChannelCreateReleaseFlowRequest",
       "name": "发起解除协议",
       "output": "ChannelCreateReleaseFlowResponse",
@@ -3461,7 +3461,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括子客企业及应用编、号等详细内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。",
+          "document": "<p>关于渠道应用的相关信息，包括子客企业及应用编、号等详细内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3470,7 +3470,7 @@
         },
         {
           "disabled": false,
-          "document": "请指定需执行批量签署的流程ID，数量范围为1-100。 您可登录腾讯电子签控制台，浏览 \"合同\"->\"合同中心\" 以查阅某一合同的FlowId（在页面中显示为合同ID）。 用户将利用链接对这些合同实施批量操作。\t",
+          "document": "<p>请指定需执行批量签署的流程ID，数量范围为1-100。 您可登录腾讯电子签控制台，浏览 &quot;合同&quot;-&gt;&quot;合同中心&quot; 以查阅某一合同的FlowId（在页面中显示为合同ID）。 用户将利用链接对这些合同实施批量操作。</p>",
           "example": "[\"yDxxxxxxxxxxxxxxxxxxxxxxxx\"]",
           "member": "string",
           "name": "FlowIds",
@@ -3479,7 +3479,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方应用平台的用户openid。 您可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查阅某位员工的OpenId。 OpenId必须是传入合同（FlowId）中的签署人。\n\n<ul>\n<li>1. 若OpenId为空，Name和Mobile 必须提供。</li>\n<li>2. 若OpenId 与 Name，Mobile均存在，将优先采用OpenId对应的员工。\t</li>\n</ul>",
+          "document": "<p>第三方应用平台的用户openid。 您可登录腾讯电子签控制台，在 &quot;更多能力&quot;-&gt;&quot;组织管理&quot; 中查阅某位员工的OpenId。 OpenId必须是传入合同（FlowId）中的签署人。</p><ul><li>1. 若OpenId为空，Name和Mobile 必须提供。</li><li>2. 若OpenId 与 Name，Mobile均存在，将优先采用OpenId对应的员工。    </li></ul>",
           "example": "user_open_id",
           "member": "string",
           "name": "OpenId",
@@ -3488,7 +3488,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的姓名。\n经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。\n\n注：`请确保和合同中填入的一致`",
+          "document": "<p>签署方经办人的姓名。<br>经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。</p><p>注：<code>请确保和合同中填入的一致</code></p>",
           "example": "张三",
           "member": "string",
           "name": "Name",
@@ -3497,7 +3497,7 @@
         },
         {
           "disabled": false,
-          "document": "员工手机号，必须与姓名一起使用。 如果OpenId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。\t",
+          "document": "<p>员工手机号，必须与姓名一起使用。 如果OpenId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。</p>",
           "example": "13800000000",
           "member": "string",
           "name": "Mobile",
@@ -3506,7 +3506,7 @@
         },
         {
           "disabled": false,
-          "document": "合同组Id，传入此参数则可以不传FlowIds",
+          "document": "<p>合同组Id，传入此参数则可以不传FlowIds</p>",
           "example": "yDttAUUckpxbczx6UySqdD5wIcNyCCQW",
           "member": "string",
           "name": "FlowGroupId",
@@ -3515,7 +3515,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`",
+          "document": "<p>是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul></p>",
           "example": "false",
           "member": "bool",
           "name": "CanBatchReject",
@@ -3524,7 +3524,7 @@
         },
         {
           "disabled": false,
-          "document": "动态签署方领取链接配置。",
+          "document": "<p>动态签署方领取链接配置。</p>",
           "example": "无",
           "member": "DynamicSignOption",
           "name": "DynamicSignOption",
@@ -3533,7 +3533,7 @@
         },
         {
           "disabled": false,
-          "document": "为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。 注：生成动态签署方领取时此参数必传。",
+          "document": "<p>为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。 注：生成动态签署方领取时此参数必传。</p>",
           "example": "[\"yDtK2UUckpfmgindUyHCZxCEZrJgOW8c\"]",
           "member": "string",
           "name": "RecipientIds",
@@ -3548,7 +3548,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。\t",
+          "document": "<p>批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。</p>",
           "example": "https://embed.test.qian.tencent.cn/console/?channel=PROXYCHANNEL&expiredTime=1695805069&code=xxxxx&menuStatus=ENABLE&token=xxxx",
           "member": "string",
           "name": "SignUrl",
@@ -3558,7 +3558,7 @@
         },
         {
           "disabled": false,
-          "document": "链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。",
+          "document": "<p>链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。</p>",
           "example": "1695805069",
           "member": "int64",
           "name": "ExpiredTime",
@@ -6349,7 +6349,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>签署方经办人的证件类型，支持以下类型</p><ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li><li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li><li>OTHER_CARD_TYPE : 其他证件</li></ul><p>注: <code>其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。</code></p>",
+          "document": "<p>签署方经办人的证件类型，支持以下类型</p><ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li><li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>",
           "example": "ID_CARD",
           "member": "string",
           "name": "ApproverIdCardType",
@@ -7350,7 +7350,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  <a href=\"https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png\" target=\"_blank\">Agent.AppId</a></li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId</li>\n</ul>注:\n`1. 企业激活时， 此时的Agent.ProxyOrganizationOpenId将会是企业激活后企业的唯一标识，建议开发者保存企业ProxyOrganizationOpenId，后续各项接口调用皆需要此参数。 `\n`2. 员工认证时， 此时的Agent.ProxyOperator.OpenId将会是员工认证加入企业后的唯一标识，建议开发者保存此员工的OpenId，后续各项接口调用皆需要此参数。 `\n`3. 同渠道应用(Agent.AppId)下，企业唯一标识ProxyOrganizationOpenId需要保持唯一，员工唯一标识OpenId也要保持唯一 (而不是企业下唯一)。 `",
+          "document": "<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容<br>此接口下面信息必填。</p><ul><li>渠道应用标识:  <a href=\"https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png\" target=\"_blank\">Agent.AppId</a></li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li><li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId</li></ul>注:<code>1. 企业激活时， 此时的Agent.ProxyOrganizationOpenId将会是企业激活后企业的唯一标识，建议开发者保存企业ProxyOrganizationOpenId，后续各项接口调用皆需要此参数。</code><code>2. 员工认证时， 此时的Agent.ProxyOperator.OpenId将会是员工认证加入企业后的唯一标识，建议开发者保存此员工的OpenId，后续各项接口调用皆需要此参数。</code><code>3. 同渠道应用(Agent.AppId)下，企业唯一标识ProxyOrganizationOpenId需要保持唯一，员工唯一标识OpenId也要保持唯一 (而不是企业下唯一)。</code>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -7359,7 +7359,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台子客的企业名称，请确认该企业名称与企业营业执照中注册的名称完全一致。\n<font color=\"red\">\n在测试环境联调的过程中，企业名称请统一加上“测试”二字，如：典子谦示例企业测试，否则将无法审核通过。\n企业名称请使用以下名称, 以下名称可以不用走收录。\n**子客测试专用企业1 - 子客测试专用企业9**</font>\n\n注:\n `1. 如果名称中包含英文括号()，请使用中文括号（）代替。`\n `2、该名称需要与Agent.ProxyOrganizationOpenId相匹配,  企业激活后Agent.ProxyOrganizationOpenId会跟此企业名称一一绑定; 如果您的企业已经在认证授权中或者激活完成，这里修改子客企业名字将不会生效。 `",
+          "document": "<p>第三方平台子客的企业名称，请确认该企业名称与企业营业执照中注册的名称完全一致。<br><font color=\"red\"><br>在测试环境联调的过程中，企业名称请统一加上“测试”二字，如：典子谦示例企业测试，否则将无法审核通过。<br>企业名称请使用以下名称, 以下名称可以不用走收录。<br><strong>子客测试专用企业1 - 子客测试专用企业9</strong></font></p><p>注:<br> <code>1. 如果名称中包含英文括号()，请使用中文括号（）代替。</code><br> <code>2、该名称需要与Agent.ProxyOrganizationOpenId相匹配,  企业激活后Agent.ProxyOrganizationOpenId会跟此企业名称一一绑定; 如果您的企业已经在认证授权中或者激活完成，这里修改子客企业名字将不会生效。</code></p>",
           "example": "典子谦示例企业测试",
           "member": "string",
           "name": "ProxyOrganizationName",
@@ -7368,7 +7368,7 @@
         },
         {
           "disabled": false,
-          "document": "子客企业统一社会信用代码，最大长度200个字符\n注意：`如果您的企业已经在认证授权中或者激活完成，这里修改子客企业名字将不会生效`。",
+          "document": "<p>子客企业统一社会信用代码，最大长度200个字符<br>注意：<code>如果您的企业已经在认证授权中或者激活完成，这里修改子客企业名字将不会生效</code>。</p>",
           "example": "9XXXXXXXXXXXXXXXX1",
           "member": "string",
           "name": "UniformSocialCreditCode",
@@ -7377,7 +7377,7 @@
         },
         {
           "disabled": false,
-          "document": "子客企业员工的姓名，最大长度50个字符,  员工的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。\n\n注：`该姓名需要和Agent.ProxyOperator.OpenId相匹配,  当员工完成认证后该姓名会和Agent.ProxyOperator.OpenId一一绑定, 若员工已认证加入企业，这里修改经办人名字传入将不会生效`",
+          "document": "<p>子客企业员工的姓名，最大长度50个字符,  员工的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。</p><p>注：<code>该姓名需要和Agent.ProxyOperator.OpenId相匹配,  当员工完成认证后该姓名会和Agent.ProxyOperator.OpenId一一绑定, 若员工已认证加入企业，这里修改经办人名字传入将不会生效</code></p>",
           "example": "典子谦",
           "member": "string",
           "name": "ProxyOperatorName",
@@ -7386,7 +7386,7 @@
         },
         {
           "disabled": false,
-          "document": "子客企业员工的手机码,  支持国内手机号11位数字(无需加+86前缀或其他字符)。注：`该手机号需要和Agent.ProxyOperator.OpenId相匹配,  当员工完成认证后该手机号会和Agent.ProxyOperator.OpenId一一绑定, 若员工已认证加入企业，这里修改经办人手机号传入将不会生效`",
+          "document": "<p>子客企业员工的手机码,  支持国内手机号11位数字(无需加+86前缀或其他字符)。注：<code>该手机号需要和Agent.ProxyOperator.OpenId相匹配,  当员工完成认证后该手机号会和Agent.ProxyOperator.OpenId一一绑定, 若员工已认证加入企业，这里修改经办人手机号传入将不会生效</code></p>",
           "example": "18888888888",
           "member": "string",
           "name": "ProxyOperatorMobile",
@@ -7395,7 +7395,7 @@
         },
         {
           "disabled": false,
-          "document": "Web控制台登录后进入的功能模块,  支持的模块包括：\n<ul>\n<li> **空值** :(默认)企业中心模块</li>\n<li> **DOCUMENT** :合同管理模块</li>\n<li> **TEMPLATE** :企业模板管理模块</li>\n<li> **SEAL** :印章管理模块</li>\n<li> **OPERATOR** :组织管理模块</li></ul>\n注意：\n1、如果EndPoint选择\"CHANNEL\"或\"APP\"，该参数仅支持传递\"SEAL\"，进入印章管理模块\n2、该参数**仅在企业和员工激活已经完成，登录控制台场景才生效**。",
+          "document": "<p>Web控制台登录后进入的功能模块,  支持的模块包括：</p><ul><li> **空值** :(默认)企业中心模块</li><li> **DOCUMENT** :合同管理模块</li><li> **TEMPLATE** :企业模板管理模块</li><li> **SEAL** :印章管理模块</li><li> **OPERATOR** :组织管理模块</li></ul>注意：1、如果EndPoint选择\"CHANNEL\"或\"APP\"，该参数仅支持传递\"SEAL\"，进入印章管理模块2、该参数**仅在企业和员工激活已经完成，登录控制台场景才生效**。",
           "example": "SEAL",
           "member": "string",
           "name": "Module",
@@ -7404,7 +7404,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数和Module参数配合使用，用于指定模块下的资源Id，指定后链接登录将展示该资源的详情。\n\n根据Module参数的不同所代表的含义不同(ModuleId需要和Module对应，ModuleId可以通过API或者控制台获取到)。当前支持：\n<table> <thead> <tr> <th>Module传值</th> <th>ModuleId传值</th> <th>进入的目标页面</th> </tr> </thead> <tbody> <tr> <td>SEAL</td> <td>印章ID</td> <td>查看指定印章的详情页面</td> </tr> <tr> <td>TEMPLATE</td> <td>合同模板ID</td> <td>指定模板的详情页面</td> </tr> <tr> <td>DOCUMENT</td> <td>合同ID</td> <td>指定合同的详情页面</td> </tr> </tbody> </table>\n注意：该参数**仅在企业和员工激活完成，登录控制台场景才生效**。\n",
+          "document": "<p>该参数和Module参数配合使用，用于指定模块下的资源Id，指定后链接登录将展示该资源的详情。</p><p>根据Module参数的不同所代表的含义不同(ModuleId需要和Module对应，ModuleId可以通过API或者控制台获取到)。当前支持：</p><table> <thead> <tr> <th>Module传值</th> <th>ModuleId传值</th> <th>进入的目标页面</th> </tr> </thead> <tbody> <tr> <td>SEAL</td> <td>印章ID</td> <td>查看指定印章的详情页面</td> </tr> <tr> <td>TEMPLATE</td> <td>合同模板ID</td> <td>指定模板的详情页面</td> </tr> <tr> <td>DOCUMENT</td> <td>合同ID</td> <td>指定合同的详情页面</td> </tr> </tbody> </table>注意：该参数**仅在企业和员工激活完成，登录控制台场景才生效**。",
           "example": "yDRSRUUgygj6qnwfUuO4zjEwc193c2hH",
           "member": "string",
           "name": "ModuleId",
@@ -7413,7 +7413,7 @@
         },
         {
           "disabled": false,
-          "document": "是否展示左侧菜单栏 \n<ul><li> **ENABLE** : (默认)进入web控制台展示左侧菜单栏</li>\n<li> **DISABLE** : 进入web控制台不展示左侧菜单栏</li></ul>\n注：该参数**仅在企业和员工激活完成，登录控制台场景才生效**。",
+          "document": "<p>是否展示左侧菜单栏 </p><ul><li> **ENABLE** : (默认)进入web控制台展示左侧菜单栏</li><li> **DISABLE** : 进入web控制台不展示左侧菜单栏</li></ul>注：该参数**仅在企业和员工激活完成，登录控制台场景才生效**。",
           "example": "ENABLE",
           "member": "string",
           "name": "MenuStatus",
@@ -7422,7 +7422,7 @@
         },
         {
           "disabled": false,
-          "document": "生成链接的类型：\n<ul><li>**PC**：(默认)<font color=\"red\">web控制台</font>链接, 需要在PC浏览器中打开</li>\n<li>**CHANNEL**：H5跳转到电子签小程序链接, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>**SHORT_URL**：<font color=\"red\">H5</font>跳转到电子签小程序链接的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>**WEIXIN_QRCODE_URL**：直接跳转至电子签小程序的二维码链接，无需通过中转页。<font color=\"red\">您需要自行将其转换为二维码，使用微信扫码后可直接进入。请注意，直接点击链接是无效的。</font></li>\n<li>**APP**：<font color=\"red\">APP或小程序</font>跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li>\n<li>**H5**：<font color=\"red\">H5长链接</font>跳转H5链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li>\n<li>**SHORT_H5**：<font color=\"red\">H5短链</font>跳转H5的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签H5页面</li></ul>",
+          "document": "<p>生成链接的类型：</p><ul><li>**PC**：(默认)<font color=\"red\">web控制台</font>链接, 需要在PC浏览器中打开</li><li>**CHANNEL**：H5跳转到电子签小程序链接, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li><li>**SHORT_URL**：<font color=\"red\">H5</font>跳转到电子签小程序链接的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li><li>**WEIXIN_QRCODE_URL**：直接跳转至电子签小程序的二维码链接，无需通过中转页。<font color=\"red\">您需要自行将其转换为二维码，使用微信扫码后可直接进入。请注意，直接点击链接是无效的。</font></li><li>**APP**：<font color=\"red\">APP或小程序</font>跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li><li>**H5**：<font color=\"red\">H5长链接</font>跳转H5链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li><li>**SHORT_H5**：<font color=\"red\">H5短链</font>跳转H5的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签H5页面</li></ul>",
           "example": "PC",
           "member": "string",
           "name": "Endpoint",
@@ -7431,7 +7431,7 @@
         },
         {
           "disabled": false,
-          "document": "<font color=\"red\">已废弃</font> 请使用 JumpEvents 参数，进行替换。\n触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：\n<ul><li> **VERIFIED** :企业认证完成/员工认证完成后跳回原App/小程序</li></ul>",
+          "document": "<p><font color=\"red\">已废弃</font> 请使用 JumpEvents 参数，进行替换。<br>触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：</p><ul><li> **VERIFIED** :企业认证完成/员工认证完成后跳回原App/小程序</li></ul>",
           "example": "VERIFIED",
           "member": "string",
           "name": "AutoJumpBackEvent",
@@ -7440,7 +7440,7 @@
         },
         {
           "disabled": false,
-          "document": "可选的此企业允许的授权方式, 可以设置的方式有:\n<ul>\n<li>2：转法定代表人授权</li>\n<li>5：授权书+对公打款</li>\n</ul>",
+          "document": "<p>可选的此企业允许的授权方式, 可以设置的方式有:</p><ul><li>2：转法定代表人授权</li><li>5：授权书+对公打款</li></ul>",
           "example": "[2, 5]",
           "member": "int64",
           "name": "AuthorizationTypes",
@@ -7449,7 +7449,7 @@
         },
         {
           "disabled": false,
-          "document": "子客经办人身份证\n注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持中国大陆居民身份证类型`。",
+          "document": "<p>子客经办人身份证<br>注意：<code>如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持中国大陆居民身份证类型</code>。</p>",
           "example": "620000198802020000",
           "member": "string",
           "name": "ProxyOperatorIdCardNumber",
@@ -7458,7 +7458,7 @@
         },
         {
           "disabled": false,
-          "document": "<font color=\"red\">已废弃</font> 请使用 JumpEvents 参数，进行替换。\n认证完成跳转链接。\n注意：`此功能仅在Endpoint参数设置成 H5 或 PC时才有效`。",
+          "document": "<p><font color=\"red\">已废弃</font> 请使用 JumpEvents 参数，进行替换。<br>认证完成跳转链接。<br>注意：<code>此功能仅在Endpoint参数设置成 H5 或 PC时才有效</code>。</p>",
           "example": "https://qian.tencent.com/",
           "member": "string",
           "name": "AutoJumpUrl",
@@ -7467,7 +7467,7 @@
         },
         {
           "disabled": false,
-          "document": "是否展示头顶导航栏  <ul><li> **ENABLE** : (默认)进入web控制台展示头顶导航栏</li> <li> **DISABLE** : 进入web控制台不展示头顶导航栏</li></ul> 注：该参数**仅在企业和员工激活完成，登录控制台场景才生效**。\n\n<a href=\"https://qcloudimg.tencent-cloud.cn/raw/dd54f333140c711cf6a88e3801bcd178.png\" target=\"_blank\">点击查看头顶导航栏位置</a>",
+          "document": "<p>是否展示头顶导航栏  <ul><li> <strong>ENABLE</strong> : (默认)进入web控制台展示头顶导航栏</li> <li> <strong>DISABLE</strong> : 进入web控制台不展示头顶导航栏</li></ul> 注：该参数<strong>仅在企业和员工激活完成，登录控制台场景才生效</strong>。</p><p><a href=\"https://qcloudimg.tencent-cloud.cn/raw/dd54f333140c711cf6a88e3801bcd178.png\" target=\"_blank\">点击查看头顶导航栏位置</a></p>",
           "example": "ENABLE",
           "member": "string",
           "name": "TopNavigationStatus",
@@ -7476,7 +7476,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动激活子客企业，有下面两种选项：\n\n**false（默认设置）**：不自动激活子客户。您需要通过控制台或调用[激活或者续期子企业](https://qian.tencent.com/developers/partnerApis/accounts/CreateChannelSubOrganizationActive)接口手动完成激活过程。\n\n**true**：若持有的许可证充足，子客户企业注册完成后将自动激活，无需手动操作或访问控制台。\n\n<b>注</b>：如果<b>应用扩展服务</b>中的<b>自动激活子客企业</b>为打开态， 则忽略本接口的AutoActive这个参数（若持有的许可证充足，子客户企业注册完成后将自动激活），具体位置参考下图：\n![image](https://qcloudimg.tencent-cloud.cn/raw/c3639b05503d3735bac483d17aa6b0a3.png)",
+          "document": "<p>是否自动激活子客企业，有下面两种选项：</p><p><strong>false（默认设置）</strong>：不自动激活子客户。您需要通过控制台或调用<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateChannelSubOrganizationActive\">激活或者续期子企业</a>接口手动完成激活过程。</p><p><strong>true</strong>：若持有的许可证充足，子客户企业注册完成后将自动激活，无需手动操作或访问控制台。</p><p><b>注</b>：如果<b>应用扩展服务</b>中的<b>自动激活子客企业</b>为打开态， 则忽略本接口的AutoActive这个参数（若持有的许可证充足，子客户企业注册完成后将自动激活），具体位置参考下图：<br><img src=\"https://qcloudimg.tencent-cloud.cn/raw/c3639b05503d3735bac483d17aa6b0a3.png\" alt=\"image\"></p>",
           "example": "false",
           "member": "bool",
           "name": "AutoActive",
@@ -7485,7 +7485,7 @@
         },
         {
           "disabled": false,
-          "document": "营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。",
+          "document": "<p>营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。</p>",
           "example": "aHR0cHM6Ly9jYXBpLndvYS5jb20vhaWwlM0ZpZCUzRGVzc2Jhc2ljJTI2dGFiJTNEYXBp..图片base64省略",
           "member": "string",
           "name": "BusinessLicense",
@@ -7494,7 +7494,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。\t",
+          "document": "<p>组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。</p>",
           "example": "深圳市南山区高新区科技中一路腾讯大厦",
           "member": "string",
           "name": "ProxyAddress",
@@ -7503,7 +7503,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构法人的姓名。 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。\t",
+          "document": "<p>组织机构法人的姓名。 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。</p>",
           "example": "典子谦",
           "member": "string",
           "name": "ProxyLegalName",
@@ -7512,7 +7512,7 @@
         },
         {
           "disabled": false,
-          "document": "授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。\n p.s. 如果上传授权书 ，需遵循以下条件 \n1. 超管的信息（超管姓名，超管手机号）必须为必填参数。 \n2. 认证方式AuthorizationTypes必须只能是上传授权书方式\t",
+          "document": "<p>授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。<br> p.s. 如果上传授权书 ，需遵循以下条件 </p><ol><li>超管的信息（超管姓名，超管手机号）必须为必填参数。 </li><li>认证方式AuthorizationTypes必须只能是上传授权书方式</li></ol>",
           "example": "[\"/9j/4A5IWWEAgABA*********\"]",
           "member": "string",
           "name": "PowerOfAttorneys",
@@ -7521,7 +7521,7 @@
         },
         {
           "disabled": false,
-          "document": "企业认证时个性化能力信息",
+          "document": "<p>企业认证时个性化能力信息</p>",
           "example": "无",
           "member": "OrganizationAuthorizationOptions",
           "name": "OrganizationAuthorizationOptions",
@@ -7530,7 +7530,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构对公打款 账号，账户名跟企业名称一致。\n\np.s.\n只有认证方式是授权书+对公打款时才生效。",
+          "document": "<p>组织机构对公打款 账号，账户名跟企业名称一致。</p><p>p.s.<br>只有认证方式是授权书+对公打款时才生效。</p>",
           "example": "6222024060740816912",
           "member": "string",
           "name": "BankAccountNumber",
@@ -7539,7 +7539,7 @@
         },
         {
           "disabled": true,
-          "document": "无",
+          "document": "<p>无</p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -7548,7 +7548,7 @@
         },
         {
           "disabled": false,
-          "document": "跳转事件，其中包括认证期间收录，授权书审核，企业认证的回跳事件。\np.s.Endpoint如果是APP 类型，请传递JumpUrl为<font color=\"red\">\"true\" </font>\n如果 Endpoint 是 H5 类型，请参考文档跳转电子签H5 p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。",
+          "document": "<p>跳转事件，其中包括认证期间收录，授权书审核，企业认证的回跳事件。<br>p.s.Endpoint如果是APP 类型，请传递JumpUrl为<font color=\"red\">&quot;true&quot; </font><br>如果 Endpoint 是 H5 类型，请参考文档跳转电子签H5 p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。</p>",
           "example": "无",
           "member": "JumpEvent",
           "name": "JumpEvents",
@@ -7557,7 +7557,7 @@
         },
         {
           "disabled": false,
-          "document": "企业证照类型：\n<ul>\n<li> **USCC** :(默认)工商组织营业执照</li>\n<li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li>\n</ul>\n",
+          "document": "<p>企业证照类型：</p><ul><li> **USCC** :(默认)工商组织营业执照</li><li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li><li> **CLINICFILLINGCERTIFICATE* :诊所备案证</li></ul><p>枚举值：</p><ul><li>USCC： 工商组织营业执照</li><li>PRACTICELICENSEOFMEDICALINSTITUTION： 医疗机构执业许可证</li><li>CLINICFILLINGCERTIFICATE： 诊所备案证</li></ul>",
           "example": "USCC",
           "member": "string",
           "name": "ProxyOrganizationIdCardType",
@@ -7572,7 +7572,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "跳转链接, 链接的有效期根据企业,员工状态和终端等有区别, 可以参考下表\n<table> <thead> <tr> <th>子客企业状态</th> <th>子客企业员工状态</th> <th>Endpoint</th> <th>链接有效期限</th> </tr> </thead>  <tbody> <tr> <td>企业未激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr>  <tr> <td>企业未激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr> <tr> <td>企业已激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>PC</td> <td>5分钟</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr> </tbody> </table>\n\n注： \n1. <font color=\"red\">链接仅单次有效</font>，每次登录需要需要重新创建新的链接\n2. 创建的链接应避免被转义，如：&被转义为\\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义\n3. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）\n",
+          "document": "<p>跳转链接, 链接的有效期根据企业,员工状态和终端等有区别, 可以参考下表</p><table> <thead> <tr> <th>子客企业状态</th> <th>子客企业员工状态</th> <th>Endpoint</th> <th>链接有效期限</th> </tr> </thead>  <tbody> <tr> <td>企业未激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr>  <tr> <td>企业未激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr> <tr> <td>企业已激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>PC</td> <td>5分钟</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>CHANNEL/APP/H5/SHORT_H5/WEIXIN_QRCODE_URL</td> <td>30天</td>  </tr> </tbody> </table><p>注： </p><ol><li><font color=\"red\">链接仅单次有效</font>，每次登录需要需要重新创建新的链接</li><li>创建的链接应避免被转义，如：&amp;被转义为\\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义</li><li><font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）</li></ol>",
           "example": "https://es*.ap*.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&templateId=yDxlzxxxoTxQfVnyxs&menuStatus=ENABLE",
           "member": "string",
           "name": "ConsoleUrl",
@@ -7582,7 +7582,7 @@
         },
         {
           "disabled": false,
-          "document": "子客企业是否已开通腾讯电子签，\n<ul><li> **true** :已经开通腾讯电子签</li>\n<li> **false** :还未开通腾讯电子签</li></ul>\n\n注：`企业是否实名根据传参Agent.ProxyOrganizationOpenId进行判断，非企业名称或者社会信用代码`",
+          "document": "<p>子客企业是否已开通腾讯电子签，</p><ul><li> **true** :已经开通腾讯电子签</li><li> **false** :还未开通腾讯电子签</li></ul><p>注：<code>企业是否实名根据传参Agent.ProxyOrganizationOpenId进行判断，非企业名称或者社会信用代码</code></p>",
           "example": "false",
           "member": "bool",
           "name": "IsActivated",
@@ -7592,7 +7592,7 @@
         },
         {
           "disabled": false,
-          "document": "当前经办人是否已认证并加入功能\n<ul><li> **true** : 已经认证加入公司</li>\n<li> **false** : 还未认证加入公司</li></ul>\n注意：**员工是否实名是根据Agent.ProxyOperator.OpenId判断，非经办人姓名**",
+          "document": "<p>当前经办人是否已认证并加入功能</p><ul><li> **true** : 已经认证加入公司</li><li> **false** : 还未认证加入公司</li></ul>注意：**员工是否实名是根据Agent.ProxyOperator.OpenId判断，非经办人姓名**",
           "example": "false",
           "member": "bool",
           "name": "ProxyOperatorIsVerified",
@@ -10573,7 +10573,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。\n",
+          "document": "<p>签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。</p>",
           "example": "yDRS4UUgygqdcj51UuO4zjEyWTmzsIAR",
           "member": "string",
           "name": "RecipientId",
@@ -10582,7 +10582,7 @@
         },
         {
           "disabled": false,
-          "document": "指定企业经办签署人OpenId\n\n注: `签署人OpenId未实名时，需要传入签署人姓名以及手机号码。`",
+          "document": "<p>指定企业经办签署人OpenId</p><p>注: <code>签署人OpenId未实名时，需要传入签署人姓名以及手机号码。</code></p>",
           "example": "n9527",
           "member": "string",
           "name": "OpenId",
@@ -10591,7 +10591,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人姓名",
+          "document": "<p>签署人姓名</p>",
           "example": "张三",
           "member": "string",
           "name": "ApproverName",
@@ -10600,7 +10600,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人手机号码",
+          "document": "<p>签署人手机号码</p>",
           "example": "18888888888",
           "member": "string",
           "name": "ApproverMobile",
@@ -10609,7 +10609,7 @@
         },
         {
           "disabled": false,
-          "document": "企业名称",
+          "document": "<p>企业名称</p>",
           "example": "张三示例公司",
           "member": "string",
           "name": "OrganizationName",
@@ -10618,7 +10618,7 @@
         },
         {
           "disabled": false,
-          "document": "企业OpenId",
+          "document": "<p>企业OpenId</p>",
           "example": "org_dianziqian",
           "member": "string",
           "name": "OrganizationOpenId",
@@ -10627,7 +10627,7 @@
         },
         {
           "disabled": false,
-          "document": "签署企业非渠道子客，默认为false，即表示同一渠道下的企业；如果为true，则目前表示接收方企业为SaaS企业, 为渠道子客时，OrganizationOpenId 必传",
+          "document": "<p>签署企业非渠道子客，默认为false，即表示同一渠道下的企业；如果为true，则目前表示接收方企业为SaaS企业, 为渠道子客时，OrganizationOpenId 必传</p>",
           "example": "false",
           "member": "bool",
           "name": "NotChannelOrganization",
@@ -10636,7 +10636,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD 中国大陆居民身份证</li>\n<li>HONGKONG_AND_MACAO 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN 中国港澳台居民居住证(格式同中国大陆居民身份证)</li>\n<li>OTHER_CARD_TYPE 其他证件</li></ul>\n\n注: `1.其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`\n`2.补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
+          "document": "<p>签署方经办人的证件类型，支持以下类型</p><ul><li>ID_CARD 中国大陆居民身份证</li><li>HONGKONG_AND_MACAO 中国港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul><p>注:补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。</p>",
           "example": "ID_CARD",
           "member": "string",
           "name": "ApproverIdCardType",
@@ -10645,7 +10645,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
+          "document": "<p>签署方经办人的证件号码，应符合以下规则</p><ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li><li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li><li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul><p>注：<code>补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。</code></p>",
           "example": "620000198802020000",
           "member": "string",
           "name": "ApproverIdCardNumber",
@@ -10654,7 +10654,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程ID\n- 补充合同组子合同动态签署人时必传。\n- 补充正常合同，请阅读：<a href=\"https://qian.tencent.com/developers/partnerApis/flows/ChannelCreateFlowApprovers/\" target=\"_blank\">补充签署人接口</a>接口使用说明",
+          "document": "<p>合同流程ID</p><ul><li>补充合同组子合同动态签署人时必传。</li><li>补充正常合同，请阅读：<a href=\"https://qian.tencent.com/developers/partnerApis/flows/ChannelCreateFlowApprovers/\" target=\"_blank\">补充签署人接口</a>接口使用说明</li></ul>",
           "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "FlowId",
@@ -10940,7 +10940,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>签署方经办人的证件类型，支持以下类型</p><ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li><li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li><li>OTHER_CARD_TYPE : 其他证件</li></ul><p>注: <code>其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。</code></p>",
+          "document": "<p>签署方经办人的证件类型，支持以下类型</p><ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li><li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",

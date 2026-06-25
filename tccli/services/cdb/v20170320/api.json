@@ -1245,8 +1245,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "账号名，可输入1 - 32个字符。",
-          "example": "andy",
+          "document": "<p>账号名，可输入1 - 32个字符。</p>",
+          "example": "andy1",
           "member": "string",
           "name": "User",
           "output_required": false,
@@ -1256,7 +1256,7 @@
         },
         {
           "disabled": false,
-          "document": "账号的主机。\n说明：\n1. IP 形式，支持填入%。\n2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。",
+          "document": "<p>账号的主机。</p><p>IP 形式，支持填入%。</p>",
           "example": "172.1.1.1",
           "member": "string",
           "name": "Host",
@@ -4866,7 +4866,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "document": "<p>实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>",
           "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
@@ -4875,7 +4875,7 @@
         },
         {
           "disabled": false,
-          "document": "云数据库账号。",
+          "document": "<p>云数据库账号。</p>",
           "example": "无",
           "member": "Account",
           "name": "Accounts",
@@ -4884,7 +4884,7 @@
         },
         {
           "disabled": false,
-          "document": "新账户的密码。\n说明：\n1. 在8 ～ 64位字符数以内（推荐12位以上）。\n2. 至少包含其中两项：小写字母 a ~ z 或 大写字母 A ～ Z。数字0 ～ 9。_+-,&=!@#$%^*().|。\n3. 不能包含非法字符。",
+          "document": "<p>新账户的密码。<br>说明：</p><ol><li>在8 ～ 64位字符数以内（推荐12位以上）。</li><li>至少包含其中两项：小写字母 a ~ z 或 大写字母 A ～ Z。数字0 ～ 9。_+-,&amp;=!@#$%^*().|。</li><li>不能包含非法字符。</li></ol>",
           "example": "fsdgfdgfd",
           "member": "string",
           "name": "Password",
@@ -4893,7 +4893,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息。最多支持输入255个字符。",
+          "document": "<p>备注信息。最多支持输入255个字符。</p>",
           "example": "test description",
           "member": "string",
           "name": "Description",
@@ -4902,7 +4902,7 @@
         },
         {
           "disabled": false,
-          "document": "新账户最大可用连接数，默认值为10240，最大可设置值为10240。",
+          "document": "<p>新账户最大可用连接数，默认值为10240，最大可设置值为10240。</p>",
           "example": "1",
           "member": "int64",
           "name": "MaxUserConnections",
@@ -4917,7 +4917,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
+          "document": "<p>异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。</p>",
           "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
@@ -5313,7 +5313,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
+          "document": "<p>代理组 ID。可通过 <a href=\"https://cloud.tencent.com/document/api/236/90585\">DescribeCdbProxyInfo</a> 接口获取。</p>",
           "example": "proxy-kti9m7m1",
           "member": "string",
           "name": "ProxyGroupId",
@@ -5322,7 +5322,7 @@
         },
         {
           "disabled": false,
-          "document": "权重分配模式，\n系统自动分配：\"system\"， 自定义：\"custom\"",
+          "document": "<p>权重分配模式，<br>系统自动分配：&quot;system&quot;， 自定义：&quot;custom&quot;</p>",
           "example": "system",
           "member": "string",
           "name": "WeightMode",
@@ -5331,7 +5331,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启延迟剔除，取值：\"true\" | \"false\"",
+          "document": "<p>是否开启延迟剔除，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "IsKickOut",
@@ -5340,7 +5340,7 @@
         },
         {
           "disabled": false,
-          "document": "最小保留数量，最小取值：0",
+          "document": "<p>最小保留数量，最小取值：0</p>",
           "example": "2",
           "member": "uint64",
           "name": "MinCount",
@@ -5349,7 +5349,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟剔除阈值，最小取值：1，范围：1 - 10000，整数。",
+          "document": "<p>延迟剔除阈值，最小取值：1，范围：1 - 10000，整数。</p>",
           "example": "100",
           "member": "uint64",
           "name": "MaxDelay",
@@ -5358,7 +5358,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启故障转移，取值：\"true\" | \"false\"",
+          "document": "<p>是否开启故障转移，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "FailOver",
@@ -5367,7 +5367,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动添加RO，取值：\"true\" | \"false\"",
+          "document": "<p>是否自动添加RO，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoAddRo",
@@ -5376,7 +5376,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是只读，取值：\"true\" | \"false\"",
+          "document": "<p>是否是只读，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "ReadOnly",
@@ -5385,7 +5385,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启事务分离，取值：\"true\" | \"false\"",
+          "document": "<p>是否开启事务分离，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "TransSplit",
@@ -5394,8 +5394,8 @@
         },
         {
           "disabled": false,
-          "document": "读写权重分配",
-          "example": "[{\"Region\": \"ap-guangzhou\",\"Zone\": \"ap-guangzhou-2\",\"ProxyInstance\": [{\"InstanceId\": \"cdb-aykuksx3\",\"Weight\": 100}]}]",
+          "document": "<p>读写权重分配</p>",
+          "example": "无",
           "member": "ProxyAllocation",
           "name": "ProxyAllocation",
           "required": true,
@@ -5403,7 +5403,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
+          "document": "<p>私有网络 ID。可通过 <a href=\"https://cloud.tencent.com/document/product/236/15872\">DescribeDBInstances</a> 接口获取。</p>",
           "example": "vpc-ixw3ll2d",
           "member": "string",
           "name": "UniqVpcId",
@@ -5412,7 +5412,7 @@
         },
         {
           "disabled": false,
-          "document": "私有子网 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
+          "document": "<p>私有子网 ID。可通过 <a href=\"https://cloud.tencent.com/document/product/236/15872\">DescribeDBInstances</a> 接口获取。</p>",
           "example": "subnet-0z3r56vq",
           "member": "string",
           "name": "UniqSubnetId",
@@ -5421,7 +5421,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启连接池。默认关闭。\n注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。",
+          "document": "<p>是否开启连接池。默认关闭。<br>注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。</p>",
           "example": "true",
           "member": "bool",
           "name": "ConnectionPool",
@@ -5430,7 +5430,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "andy_proxy",
           "member": "string",
           "name": "Desc",
@@ -5439,7 +5439,7 @@
         },
         {
           "disabled": false,
-          "document": "IP 地址。不填则默认为所选 VPC 下支持的随机一个 IP。",
+          "document": "<p>IP 地址。不填则默认为所选 VPC 下支持的随机一个 IP。</p>",
           "example": "192.0.0.1",
           "member": "string",
           "name": "Vip",
@@ -5448,7 +5448,7 @@
         },
         {
           "disabled": false,
-          "document": "端口。默认值3306。",
+          "document": "<p>端口。默认值3306。</p>",
           "example": "80",
           "member": "uint64",
           "name": "VPort",
@@ -5457,8 +5457,8 @@
         },
         {
           "disabled": false,
-          "document": "安全组",
-          "example": "sg-4qvsxc1a",
+          "document": "<p>安全组</p>",
+          "example": "[\"sg-4qvsxc1a\"]",
           "member": "string",
           "name": "SecurityGroup",
           "required": false,
@@ -5466,7 +5466,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池类型。可选值 transaction（事务级别连接池），connection（会话级别连接池），ConnectionPool 为 true 时生效。默认值：connection。",
+          "document": "<p>连接池类型。可选值 transaction（事务级别连接池），connection（会话级别连接池），ConnectionPool 为 true 时生效。默认值：connection。</p>",
           "example": "connection",
           "member": "string",
           "name": "ConnectionPoolType",
@@ -5475,7 +5475,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自适应负载均衡。默认关闭。",
+          "document": "<p>是否开启自适应负载均衡。默认关闭。</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoLoadBalance",
@@ -5484,7 +5484,7 @@
         },
         {
           "disabled": false,
-          "document": "接入模式。nearBy - 就近访问，balance - 均衡分配，默认值：nearBy。",
+          "document": "<p>接入模式。nearBy - 就近访问，balance - 均衡分配，默认值：nearBy。</p>",
           "example": "nearBy",
           "member": "string",
           "name": "AccessMode",
@@ -5499,7 +5499,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务ID",
+          "document": "<p>异步任务ID</p>",
           "example": "a6040589-3b098df5-b551d9e5-81c6bfdc",
           "member": "string",
           "name": "AsyncRequestId",
@@ -6055,7 +6055,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区信息，请使用 <a href=\"https://cloud.tencent.com/document/api/236/17229\">获取云数据库可售卖规格</a> 接口获取可创建的可用区。</p><p>若您创建单节点、双节点、三节点、四节点实例，此参数为必填项，请指定可用区，若不指定可用区，则系统会自动选择一个可用区（可能不是您希望部署的可用区）；若您创建云盘版实例，此参数不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置。</p>",
+          "document": "<p>可用区信息，请使用 <a href=\"https://cloud.tencent.com/document/api/236/17229\">获取云数据库可售卖规格</a> 接口获取可创建的可用区。</p><p>若您创建单节点、双节点、三节点、四节点实例，此参数为必填项，请指定可用区，若不指定可用区，则系统会自动选择一个可用区（可能不是您希望部署的可用区）；若您创建云盘版集群实例，此参数不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置。</p>",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
@@ -6217,7 +6217,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例隔离类型。支持值包括：&quot;UNIVERSAL&quot; - 通用型实例，&quot;EXCLUSIVE&quot; - 独享型实例，&quot;BASIC_V2&quot; - ONTKE 单节点实例，&quot;CLOUD_NATIVE_CLUSTER&quot; - 云盘版标准型，&quot;CLOUD_NATIVE_CLUSTER_EXCLUSIVE&quot; - 云盘版加强型。不指定则默认为通用型实例。<br>说明：如果创建的是云盘版实例，此参数为必填。</p>",
+          "document": "<p>实例隔离类型。</p><p>枚举值：</p><ul><li><p>UNIVERSAL： 通用型实例</p></li><li><p>EXCLUSIVE： 独享型实例</p></li><li><p>CLOUD_NATIVE_CLUSTER： 云盘版标准型</p></li><li><p>CLOUD_NATIVE_CLUSTER_EXCLUSIVE： 云盘版加强型</p></li><li><p>CLOUD_NATIVE_CLUSTER_ULTRA： 云盘版旗舰型</p></li><li><p>若此参数不指定，则默认为通用型实例。</p></li><li><p>如果创建的是云盘版实例，此参数为必填。</p></li><li><p>如果创建的是单节点实例，此参数请填写为：CLOUD_NATIVE_CLUSTER，并指定参数 InstanceNodes 等于1。</p></li></ul>",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
@@ -6244,7 +6244,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例节点数。</p><p>对于 RO 和 基础版实例，该值默认为1。如果需要购买三节点实例，请将该值设置为3，或指定 BackupZone 参数；当购买主实例，且未指定该参数和 BackupZone 参数时，该值默认是2，即购买双节点实例；如果需要购买四节点实例，请将该值设置为4，或指定 FourthZone 参数。</p>",
+          "document": "<p>实例节点数。</p><p>对于 RO 和单节点实例，该值默认为1。如果需要购买三节点实例，请将该值设置为3，或指定 BackupZone 参数；当购买主实例，且未指定该参数和 BackupZone 参数时，该值默认是2，即购买双节点实例；如果需要购买四节点实例，请将该值设置为4，或指定 FourthZone 参数。</p>",
           "example": "2",
           "member": "int64",
           "name": "InstanceNodes",
@@ -6453,7 +6453,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区信息，请使用 <a href=\"https://cloud.tencent.com/document/api/236/17229\">获取云数据库可售卖规格</a> 接口获取可创建的可用区。</p><p>若您创建单节点、双节点、三节点、四节点实例，此参数为必填项，请指定可用区，若不指定可用区，则系统会自动选择一个可用区（可能不是您希望部署的可用区）；若您创建云盘版实例，此参数不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置。</p>",
+          "document": "<p>可用区信息，请使用 <a href=\"https://cloud.tencent.com/document/api/236/17229\">获取云数据库可售卖规格</a> 接口获取可创建的可用区。</p><p>若您创建单节点、双节点、三节点、四节点实例，此参数为必填项，请指定可用区，若不指定可用区，则系统会自动选择一个可用区（可能不是您希望部署的可用区）；若您创建云盘版集群实例，此参数不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置。</p>",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
@@ -6651,7 +6651,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例隔离类型。支持值包括：&quot;UNIVERSAL&quot; - 通用型实例，&quot;EXCLUSIVE&quot; - 独享型实例，&quot;BASIC_V2&quot; - ONTKE 单节点实例，&quot;CLOUD_NATIVE_CLUSTER&quot; - 云盘版标准型，&quot;CLOUD_NATIVE_CLUSTER_EXCLUSIVE&quot; - 云盘版加强型。不指定则默认为通用型实例。<br>说明：如果创建的是云盘版实例，此参数为必填。</p>",
+          "document": "<p>实例隔离类型。</p><p>枚举值：</p><ul><li><p>UNIVERSAL： 通用型实例</p></li><li><p>EXCLUSIVE： 独享型实例</p></li><li><p>CLOUD_NATIVE_CLUSTER： 云盘版标准型</p></li><li><p>CLOUD_NATIVE_CLUSTER_EXCLUSIVE： 云盘版加强型</p></li><li><p>CLOUD_NATIVE_CLUSTER_ULTRA： 云盘版旗舰型</p></li><li><p>若此参数不指定，则默认为通用型实例。</p></li><li><p>如果创建的是云盘版实例，此参数为必填。</p></li><li><p>如果创建的是单节点实例，此参数请填写为：CLOUD_NATIVE_CLUSTER，并指定参数 InstanceNodes 等于1。</p></li></ul>",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
@@ -6678,7 +6678,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例节点数。</p><p>对于 RO 和基础版实例，该值默认为1。如果需要购买三节点实例，请将该值设置为3，或指定 BackupZone 参数；当购买主实例，且未指定该参数和 BackupZone 参数时，该值默认是2，即购买双节点实例；如果需要购买四节点实例，请将该值设置为4，或指定 FourthZone 参数。</p>",
+          "document": "<p>实例节点数。</p><p>对于 RO 和单节点实例，该值默认为1。如果需要购买三节点实例，请将该值设置为3，或指定 BackupZone 参数；当购买主实例，且未指定该参数和 BackupZone 参数时，该值默认是2，即购买双节点实例；如果需要购买四节点实例，请将该值设置为4，或指定 FourthZone 参数。</p>",
           "example": "2",
           "member": "int64",
           "name": "InstanceNodes",
@@ -6768,7 +6768,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>云盘版节点拓扑配置。<br>说明：若购买的是云盘版实例，此参数为必填，需设置云盘版实例的 RW 和 RO 节点拓扑，RO 节点范围是1 - 5个，请至少设置1个 RO 节点。</p>",
+          "document": "<p>云盘版实例的节点拓扑配置。</p><p>若购买的是云盘版实例，此参数为必填，需设置云盘版实例的 RW 和 RO 节点拓扑，RO 节点范围是1 - 5个，请至少设置1个 RO 节点。</p>",
           "example": "无",
           "member": "ClusterTopology",
           "name": "ClusterTopology",

@@ -14,6 +14,13 @@
       "output": "AddSceneResponse",
       "status": "online"
     },
+    "AppendKnowledgeTask": {
+      "document": "追加文件",
+      "input": "AppendKnowledgeTaskRequest",
+      "name": "文件追加",
+      "output": "AppendKnowledgeTaskResponse",
+      "status": "online"
+    },
     "ChatAI": {
       "document": "提供DataAgent 产品服务API",
       "input": "ChatAIRequest",
@@ -117,6 +124,13 @@
       "input": "QueryChunkListRequest",
       "name": "文档切片查询",
       "output": "QueryChunkListResponse",
+      "status": "online"
+    },
+    "QueryKnowledgeTask": {
+      "document": "查询文件任务状态",
+      "input": "QueryKnowledgeTaskRequest",
+      "name": "查询知识库任务",
+      "output": "QueryKnowledgeTaskResponse",
       "status": "online"
     },
     "QuerySceneList": {
@@ -317,12 +331,116 @@
       ],
       "type": "object"
     },
+    "AppendDocument": {
+      "document": "追加文件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件名称</p>",
+          "example": "test.csv",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件id</p>",
+          "example": "2ca9279d-21ea-4e39-8b3b-c49c65ba83ea",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件url</p>",
+          "example": "https://data-agent-dev-1353879163.cos.ap-chongqing.myqcloud.com/user-storage/100041873387/klbase-YuVJ1k3U37/2ca9279d-21ea-4e39-8b3b-c49c65ba83eb_test.csv",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件大小</p>",
+          "example": "111111",
+          "member": "float",
+          "name": "FileSize",
+          "output_required": false,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AppendKnowledgeTaskRequest": {
+      "document": "AppendKnowledgeTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "dataagent-haBKQxLt",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库id</p>",
+          "example": "klbase-YuVJ1k3U37",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件id</p>",
+          "example": "2ca9279d-21ea-4e39-8b3b-c49c65ba83eb",
+          "member": "string",
+          "name": "FileId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>追加的文档列表</p>",
+          "example": "无",
+          "member": "AppendDocument",
+          "name": "Documents",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AppendKnowledgeTaskResponse": {
+      "document": "AppendKnowledgeTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChatAIRequest": {
       "document": "ChatAI请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "会话ID",
+          "document": "<p>会话ID</p>",
           "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8",
           "member": "string",
           "name": "SessionId",
@@ -331,7 +449,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
@@ -340,7 +458,7 @@
         },
         {
           "disabled": false,
-          "document": "问题内容",
+          "document": "<p>问题内容</p>",
           "example": "what are you doing ?",
           "member": "string",
           "name": "Question",
@@ -349,7 +467,7 @@
         },
         {
           "disabled": false,
-          "document": "上下文",
+          "document": "<p>上下文</p>",
           "example": "{\\\"KnowledgeBases\\\":[{\\\"KnowledgeBaseId\\\":\\\"klbase-kSnxNtvrXI\\\",\\\"FileIds\\\":[],\\\"Databases\\\":[{\\\"MCP\\\":{\\\"DataSourceId\\\":\\\"datasource_tchoused_example\\\"},\\\"DbTables\\\":[]}]}],\\\"WhiteList\\\":[]}",
           "member": "string",
           "name": "Context",
@@ -358,7 +476,7 @@
         },
         {
           "disabled": false,
-          "document": "模型",
+          "document": "<p>模型</p>",
           "example": "deepseek",
           "member": "string",
           "name": "Model",
@@ -367,7 +485,7 @@
         },
         {
           "disabled": false,
-          "document": "是否深度思考",
+          "document": "<p>是否深度思考</p>",
           "example": "false",
           "member": "bool",
           "name": "DeepThinking",
@@ -376,7 +494,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源id",
+          "document": "<p>数据源id</p>",
           "example": "[\"cdb-8zau2hln\",\"cdwdoris-1yxlfzhj\"]",
           "member": "string",
           "name": "DataSourceIds",
@@ -385,7 +503,7 @@
         },
         {
           "disabled": false,
-          "document": "agent类型",
+          "document": "<p>agent类型</p>",
           "example": "Analysis",
           "member": "string",
           "name": "AgentType",
@@ -394,7 +512,7 @@
         },
         {
           "disabled": false,
-          "document": "需要重新生成答案的记录ID",
+          "document": "<p>需要重新生成答案的记录ID</p>",
           "example": "e5b6a2e4-3b9b-4d41",
           "member": "string",
           "name": "OldRecordId",
@@ -403,7 +521,7 @@
         },
         {
           "disabled": false,
-          "document": "知识库id列表",
+          "document": "<p>知识库id列表</p>",
           "example": "[\"id1\",\"id2\"]",
           "member": "string",
           "name": "KnowledgeBaseIds",
@@ -430,7 +548,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "切片ID",
+          "document": "<p>切片ID</p>",
           "example": "sdjfi",
           "member": "string",
           "name": "Id",
@@ -441,7 +559,7 @@
         },
         {
           "disabled": false,
-          "document": "切片内容",
+          "document": "<p>切片内容</p>",
           "example": "content",
           "member": "string",
           "name": "Content",
@@ -452,7 +570,7 @@
         },
         {
           "disabled": false,
-          "document": "切片的字数",
+          "document": "<p>切片的字数</p>",
           "example": "10",
           "member": "int64",
           "name": "Size",
@@ -463,13 +581,24 @@
         },
         {
           "disabled": false,
-          "document": "切片概要",
+          "document": "<p>切片概要</p>",
           "example": "summary",
           "member": "string",
           "name": "Summary",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分段类型</p><p>枚举值：</p><ul><li>0： 自动分段</li><li>1： 新建分段</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ChunkSource",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -915,6 +1044,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2025-12-23 18:23:32",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>分片策略</p>",
           "example": "无",
           "member": "KnowledgeTaskConfig",
@@ -988,6 +1128,56 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FileTaskStatus": {
+      "document": "文件任务状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件id</p>",
+          "example": "de1c7e8b-ace4-4d1f-8b2c-953d67a0128c",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>0： 处理中</li><li>1： 可用</li><li>-1： 错误</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否已拉取过状态</p><p>枚举值：</p><ul><li>0： 未被拉取过状态</li><li>1： 已被拉取过状态</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsTerminated",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息，状态-1时不为空</p>",
+          "example": "文件名：********.xlsx。追加文件结构与目标表不一致，请检查表头是否完整后重新上传。",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1474,6 +1664,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启表格结构化提取</p><p>枚举值：</p><ul><li>0： 不开启表格提取</li><li>1： 开启表格提取</li></ul><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableExtractDb",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1577,7 +1778,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
@@ -1586,7 +1787,7 @@
         },
         {
           "disabled": false,
-          "document": "文件ID",
+          "document": "<p>文件ID</p>",
           "example": "3fd5442a-2764-4f3d-a589-5399ce087284",
           "member": "string",
           "name": "FileId",
@@ -1595,7 +1796,7 @@
         },
         {
           "disabled": false,
-          "document": "切片ID",
+          "document": "<p>切片ID</p>",
           "example": "4c49fb67-38c7-4dea-b61c-bb545c9cac67",
           "member": "string",
           "name": "ChunkId",
@@ -1604,7 +1805,7 @@
         },
         {
           "disabled": false,
-          "document": "编辑后的文本",
+          "document": "<p>编辑后的文本</p>",
           "example": "this is  my test. hello world",
           "member": "string",
           "name": "Content",
@@ -1613,7 +1814,16 @@
         },
         {
           "disabled": false,
-          "document": "知识库id",
+          "document": "<p>分段概要</p>",
+          "example": "this is chunk content summary",
+          "member": "string",
+          "name": "Summary",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库id</p>",
           "example": "kbase-fsdfs",
           "member": "string",
           "name": "KnowledgeBaseId",
@@ -1803,7 +2013,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "表示第一页",
+          "document": "<p>表示第一页</p>",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -1812,7 +2022,7 @@
         },
         {
           "disabled": false,
-          "document": "默认一页展示 10 条",
+          "document": "<p>默认一页展示 10 条</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -1821,7 +2031,7 @@
         },
         {
           "disabled": false,
-          "document": "知识库id",
+          "document": "<p>知识库id</p>",
           "example": "kbase-fdsfs",
           "member": "string",
           "name": "KnowledgeBaseId",
@@ -1836,7 +2046,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "100",
           "member": "int64",
           "name": "Total",
@@ -1846,10 +2056,85 @@
         },
         {
           "disabled": false,
-          "document": "分片信息",
+          "document": "<p>文档的自动分段数</p>",
+          "example": "99",
+          "member": "int64",
+          "name": "AutoTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档的手动新建分段数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ManualTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分片信息</p>",
           "example": "无",
           "member": "Chunk",
           "name": "Chunks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryKnowledgeTaskRequest": {
+      "document": "QueryKnowledgeTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "dataagent-haBKQxLt",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库id</p>",
+          "example": "klbase-XPJwWgiLZv",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件id列表</p>",
+          "example": "[\"de1c7e8b-ace4-4d1f-8b2c-953d67a0128c\"]",
+          "member": "string",
+          "name": "FileIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryKnowledgeTaskResponse": {
+      "document": "QueryKnowledgeTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文档任务详情对象</p>",
+          "example": "无",
+          "member": "FileTaskStatus",
+          "name": "FileList",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false

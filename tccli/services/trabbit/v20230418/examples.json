@@ -2,10 +2,10 @@
   "actions": {
     "CreateRabbitMQServerlessBinding": [
       {
-        "document": "添加绑定关系",
-        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQServerlessBinding\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-slnatbyves\",\n    \"VirtualHost\": \"vhost\",\n    \"Source\": \"fanout-exchange-1061997075421934168\",\n    \"DestinationType\": \"queue\",\n    \"Destination\": \"queue-623992266636621729\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BindingId\": 0,\n        \"InstanceId\": \"amqp-slnatbyves\",\n        \"RequestId\": \"1dd2c068-0d69-4ec4-a9e5-adce8cffa43b\",\n        \"VirtualHost\": \"vhost\"\n    }\n}",
-        "title": "添加绑定关系"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQServerlessBinding\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-slranxpibb\",\n    \"VirtualHost\": \"/\",\n    \"Source\": \"ledou-test\",\n    \"DestinationType\": \"queue\",\n    \"Destination\": \"ledou-test\",\n    \"Arguments\": [\n        {\n            \"Key\": \"x-match\",\n            \"Value\": \"all\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BindingId\": 0,\n        \"InstanceId\": \"amqp-slranxpibb\",\n        \"VirtualHost\": \"/\",\n        \"RequestId\": \"0964a348-9573-41d1-89e0-9f1b42cacdc4\"\n    }\n}",
+        "title": "Header 类型 Exchange 绑定队列"
       }
     ],
     "CreateRabbitMQServerlessExchange": [

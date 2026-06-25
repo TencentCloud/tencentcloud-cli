@@ -1,6 +1,6 @@
-**Example 1: 获取指定id设备流量使用信息**
+**Example 1: 获取多个设备的流量使用信息之和**
 
-获取指定id设备流量使用信息
+
 
 Input: 
 
@@ -8,7 +8,8 @@ Input:
 tccli mna GetFlowStatistic --cli-unfold-argument  \
     --EndTime 1659514692 \
     --Type 1 \
-    --DeviceId mna-dev1 \
+    --DeviceId  \
+    --DeviceList mna-dev1 mna-dev2 \
     --TimeGranularity 1 \
     --BeginTime 1659513692
 ```
@@ -39,9 +40,9 @@ Output:
 }
 ```
 
-**Example 2: 获取多个设备的流量使用信息之和**
+**Example 2: 获取指定id设备流量使用信息**
 
-
+获取指定id设备流量使用信息
 
 Input: 
 
@@ -49,8 +50,7 @@ Input:
 tccli mna GetFlowStatistic --cli-unfold-argument  \
     --EndTime 1659514692 \
     --Type 1 \
-    --DeviceId  \
-    --DeviceList mna-dev1 mna-dev2 \
+    --DeviceId mna-dev1 \
     --TimeGranularity 1 \
     --BeginTime 1659513692
 ```

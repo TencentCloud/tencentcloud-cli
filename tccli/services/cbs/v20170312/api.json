@@ -28,6 +28,13 @@
       "output": "AttachDisksResponse",
       "status": "online"
     },
+    "AttachRemoteDisks": {
+      "document": "本接口用于挂载一个或多个弹性单副本SSD硬盘到指定的云服务器实例上。仅支持弹性盘类型。",
+      "input": "AttachRemoteDisksRequest",
+      "name": "挂载弹性单副本SSD硬盘",
+      "output": "AttachRemoteDisksResponse",
+      "status": "online"
+    },
     "BindAutoSnapshotPolicy": {
       "document": "本接口（BindAutoSnapshotPolicy）用于绑定云硬盘到指定的定期快照策略。\n\n* 每个地域下的定期快照策略配额限制请参考文档[定期快照](/document/product/362/8191)。\n* 当已绑定定期快照策略的云硬盘处于未使用状态（即弹性云盘未挂载或非弹性云盘的主机处于关机状态）将不会创建定期快照。",
       "input": "BindAutoSnapshotPolicyRequest",
@@ -68,6 +75,13 @@
       "input": "CreateDisksRequest",
       "name": "创建云硬盘",
       "output": "CreateDisksResponse",
+      "status": "online"
+    },
+    "CreateRemoteDisks": {
+      "document": "本接口用于创建弹性单副本SSD硬盘并自动挂载到指定实例。弹性盘在创建时就需要绑定目标实例，计费回调后由CBS自身完成装箱+挂载的全流程。",
+      "input": "CreateRemoteDisksRequest",
+      "name": "创建弹性单副本SSD硬盘",
+      "output": "CreateRemoteDisksResponse",
       "status": "online"
     },
     "CreateSnapshot": {
@@ -161,6 +175,27 @@
       "output": "DescribeInstancesDiskNumResponse",
       "status": "online"
     },
+    "DescribeRemoteDiskConfigQuota": {
+      "document": "本接口用于查询单副本SSD硬盘机型搭配配额。可根据机型族、机型规格、可用区、付费方式等条件过滤查询结果。",
+      "input": "DescribeRemoteDiskConfigQuotaRequest",
+      "name": "查询单副本SSD硬盘机型搭配配额",
+      "output": "DescribeRemoteDiskConfigQuotaResponse",
+      "status": "online"
+    },
+    "DescribeRemoteDisks": {
+      "document": "本接口用于查询已购买的单副本SSD硬盘列表。可根据单副本SSD硬盘ID、类型、状态等条件过滤查询结果。",
+      "input": "DescribeRemoteDisksRequest",
+      "name": "查询单副本SSD硬盘列表",
+      "output": "DescribeRemoteDisksResponse",
+      "status": "online"
+    },
+    "DescribeRemoteDisksDeniedActions": {
+      "document": "本接口用于查询一个或多个单副本SSD硬盘的操作限制列表。",
+      "input": "DescribeRemoteDisksDeniedActionsRequest",
+      "name": "查询单副本SSD硬盘操作限制列表",
+      "output": "DescribeRemoteDisksDeniedActionsResponse",
+      "status": "online"
+    },
     "DescribeSnapshotGroups": {
       "document": "本接口（DescribeSnapshotGroups）用于查询快照组列表。\n* 可以根据快照组ID、快照组状态、快照组关联的快照ID等来查询快照组列表，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的快照组列表。",
       "input": "DescribeSnapshotGroupsRequest",
@@ -196,6 +231,13 @@
       "output": "DetachDisksResponse",
       "status": "online"
     },
+    "DetachRemoteDisks": {
+      "document": "本接口用于从云服务器实例上卸载一个或多个弹性单副本SSD硬盘。仅支持弹性盘类型。",
+      "input": "DetachRemoteDisksRequest",
+      "name": "卸载弹性单副本SSD硬盘",
+      "output": "DetachRemoteDisksResponse",
+      "status": "online"
+    },
     "GetSnapOverview": {
       "document": "为进一步规范化API命名，该接口决定预下线，新接口命名为：DescribeSnapshotOverview\n\n获取快照概览信息",
       "input": "GetSnapOverviewRequest",
@@ -210,6 +252,13 @@
       "output": "InitializeDisksResponse",
       "status": "online"
     },
+    "InquirePriceCreateRemoteDisks": {
+      "document": "该接口用于查询创建弹性单副本SSD硬盘的价格。支持预付费和后付费两种计费类型的询价。",
+      "input": "InquirePriceCreateRemoteDisksRequest",
+      "name": "查询创建弹性单副本SSD硬盘的价格",
+      "output": "InquirePriceCreateRemoteDisksResponse",
+      "status": "online"
+    },
     "InquirePriceModifyDiskBackupQuota": {
       "document": "本接口（InquirePricePriceModifyDiskBackupQuota）用于修改云硬盘备份点配额询价。",
       "input": "InquirePriceModifyDiskBackupQuotaRequest",
@@ -222,6 +271,13 @@
       "input": "InquirePriceModifyDiskExtraPerformanceRequest",
       "name": "调整云硬盘额外性能询价",
       "output": "InquirePriceModifyDiskExtraPerformanceResponse",
+      "status": "online"
+    },
+    "InquirePriceRenewRemoteDisks": {
+      "document": "该接口用于查询续费弹性单副本SSD硬盘的价格。",
+      "input": "InquirePriceRenewRemoteDisksRequest",
+      "name": "查询续费弹性单副本SSD硬盘的价格",
+      "output": "InquirePriceRenewRemoteDisksResponse",
       "status": "online"
     },
     "InquiryPriceCreateDisks": {
@@ -287,6 +343,13 @@
       "output": "ModifyDisksRenewFlagResponse",
       "status": "online"
     },
+    "ModifyRemoteDiskAttributes": {
+      "document": "本接口用于修改单副本SSD硬盘的属性，包括硬盘名称和项目ID。",
+      "input": "ModifyRemoteDiskAttributesRequest",
+      "name": "修改单副本SSD硬盘属性",
+      "output": "ModifyRemoteDiskAttributesResponse",
+      "status": "online"
+    },
     "ModifySnapshotAttribute": {
       "document": "本接口（ModifySnapshotAttribute）用于修改指定快照的属性。\n\n* 本接口支持修改快照名称及到期时间，以及将非永久快照修改为永久快照。\n* “快照名称”仅为方便用户管理之用，腾讯云并不以此名称作为提交工单或是进行快照管理操作的依据。",
       "input": "ModifySnapshotAttributeRequest",
@@ -308,6 +371,13 @@
       "output": "RenewDiskResponse",
       "status": "online"
     },
+    "RenewRemoteDisk": {
+      "document": "该接口用于续费弹性单副本SSD硬盘。用户发起续费下单后，由计费系统完成扣费和到期时间更新。",
+      "input": "RenewRemoteDiskRequest",
+      "name": "续费弹性单副本SSD硬盘",
+      "output": "RenewRemoteDiskResponse",
+      "status": "online"
+    },
     "ResizeDisk": {
       "document": "本接口（ResizeDisk）用于扩容云硬盘。\n\n* 只支持扩容弹性云盘。云硬盘类型可以通过[DescribeDisks](/document/product/362/16315)接口查询，见输出参数中Portable字段解释。非弹性云硬盘需通过[ResizeInstanceDisks](/document/product/213/15731)接口扩容。\n* 本接口为异步接口，接口成功返回时，云盘并未立即扩容到指定大小，可通过接口[DescribeDisks](/document/product/362/16315)来查询对应云盘的状态，如果云盘的状态为“EXPANDING”，表示正在扩容中。",
       "input": "ResizeDiskRequest",
@@ -315,11 +385,32 @@
       "output": "ResizeDiskResponse",
       "status": "online"
     },
+    "SwitchParameterCreateRemoteDisks": {
+      "document": "该接口用于获取创建弹性单副本SSD硬盘的订单参数，生成的订单参数由前端透传到计费系统用于发货。创建时必须指定云服务器实例。",
+      "input": "SwitchParameterCreateRemoteDisksRequest",
+      "name": "获取创建弹性单副本SSD硬盘的订单参数",
+      "output": "SwitchParameterCreateRemoteDisksResponse",
+      "status": "online"
+    },
+    "SwitchParameterRenewRemoteDisks": {
+      "document": "该接口用于获取续费弹性单副本SSD硬盘的订单参数，生成的订单参数由前端透传到计费系统用于续费。",
+      "input": "SwitchParameterRenewRemoteDisksRequest",
+      "name": "获取续费弹性单副本SSD硬盘的订单参数",
+      "output": "SwitchParameterRenewRemoteDisksResponse",
+      "status": "online"
+    },
     "TerminateDisks": {
       "document": "本接口（TerminateDisks）用于退还云硬盘。\n\n* 不再使用的云盘，可通过本接口主动退还。\n* 本接口支持退还预付费云盘和按小时后付费云盘。按小时后付费云盘可直接退还，预付费云盘需符合退还规则。\n* 支持批量操作，每次请求批量云硬盘的上限为100。如果批量云盘存在不允许操作的，请求会以特定错误码返回。",
       "input": "TerminateDisksRequest",
       "name": "退还云硬盘",
       "output": "TerminateDisksResponse",
+      "status": "online"
+    },
+    "TerminateRemoteDisks": {
+      "document": "本接口用于销毁一个或多个弹性单副本SSD硬盘。仅支持弹性盘类型，且要求硬盘处于 INITED 或 UNINIT 状态。",
+      "input": "TerminateRemoteDisksRequest",
+      "name": "销毁弹性单副本SSD硬盘",
+      "output": "TerminateRemoteDisksResponse",
       "status": "online"
     },
     "UnbindAutoSnapshotPolicy": {
@@ -655,6 +746,42 @@
     },
     "AttachDisksResponse": {
       "document": "AttachDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachRemoteDisksRequest": {
+      "document": "AttachRemoteDisks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定待挂载单副本SSD硬盘的CVM实例。</p>",
+          "example": "ins-1v6br72e",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>一个或多个待挂载的单副本SSD硬盘ID。</p>",
+          "example": "[\"rdisk-1ztsk0jr\"]",
+          "member": "string",
+          "name": "RemoteDiskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachRemoteDisksResponse": {
+      "document": "AttachRemoteDisks返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1499,6 +1626,87 @@
       ],
       "type": "object"
     },
+    "CreateRemoteDisksRequest": {
+      "document": "CreateRemoteDisks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘计费类型。 </p><p>枚举值：</p><ul><li>PREPAID： 预付费，即包年包月</li><li>POSTPAID_BY_HOUR： 按小时后付费</li></ul>",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "DiskChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘大小，单位为GiB。</p><p>取值范围：[2000, 7000]</p>",
+          "example": "2000",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待挂载单副本SSD硬盘的CVM实例ID。</p>",
+          "example": "ins-75askm1r",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例所在的位置。通过该参数可以指定实例所属可用区，所属项目。若不指定项目，将在默认项目下进行创建。</p>",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预付费模式，即包年包月相关参数设置。通过该参数指定包年包月单副本SSD硬盘的购买时长、是否设置自动续费等属性。 创建预付费单副本SSD硬盘该参数必传，创建按小时后付费单副本SSD硬盘无需传该参数。</p>",
+          "example": "无",
+          "member": "RemoteDiskChargePrepaid",
+          "name": "DiskChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建单副本SSD硬盘数量，不传则默认为1。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "DiskCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD的显示名称。</p>",
+          "example": "TestRemoteDisk",
+          "member": "string",
+          "name": "DiskName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRemoteDisksResponse": {
+      "document": "CreateRemoteDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSnapshotGroupRequest": {
       "document": "CreateSnapshotGroup请求参数结构体",
       "members": [
@@ -2330,6 +2538,87 @@
       ],
       "type": "object"
     },
+    "DescribeRemoteDiskConfigQuotaRequest": {
+      "document": "DescribeRemoteDiskConfigQuota请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤条件。支持的过滤条件如下：</p><ul><li>instance-family：按照机型族过滤。</li><li>instance-type：按照机型规格过滤。</li><li>zone：按照可用区过滤。</li><li>instance-charge-type：按照付费方式过滤。取值范围：PREPAID、POSTPAID_BY_HOUR、SPOTPAID、UNDERWRITE。</li></ul>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRemoteDiskConfigQuotaResponse": {
+      "document": "DescribeRemoteDiskConfigQuota返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRemoteDisksDeniedActionsRequest": {
+      "document": "DescribeRemoteDisksDeniedActions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘ID列表。每次批量请求单副本SSD硬盘的上限为 100。</p>",
+          "example": "[\"rdisk-fluj9shv\"]",
+          "member": "string",
+          "name": "RemoteDiskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRemoteDisksDeniedActionsResponse": {
+      "document": "DescribeRemoteDisksDeniedActions返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRemoteDisksRequest": {
+      "document": "DescribeRemoteDisks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤条件。此参数不支持与 RemoteDiskIds 同时指定。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRemoteDisksResponse": {
+      "document": "DescribeRemoteDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSnapshotGroupsRequest": {
       "document": "DescribeSnapshotGroups请求参数结构体",
       "members": [
@@ -2605,6 +2894,51 @@
     },
     "DetachDisksResponse": {
       "document": "DetachDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachRemoteDisksRequest": {
+      "document": "DetachRemoteDisks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定从特定CVM实例上卸载单副本SSD硬盘。</p>",
+          "example": "ins-1v6br72e",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>一个或多个将要卸载的单副本SSD硬盘ID。</p>",
+          "example": "[\"rdisk-1ztsk0jr\"]",
+          "member": "string",
+          "name": "RemoteDiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>强制解挂，内部使用。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ForceDetach",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachRemoteDisksResponse": {
+      "document": "DetachRemoteDisks返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3562,6 +3896,60 @@
       ],
       "type": "object"
     },
+    "InquirePriceCreateRemoteDisksRequest": {
+      "document": "InquirePriceCreateRemoteDisks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘计费类型。</p><p>枚举值：</p><ul><li>PREPAID： 预付费，即包年包月</li><li>POSTPAID_BY_HOUR： 按小时后付费</li></ul>",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "DiskChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘大小，单位为GiB。</p><p>取值范围：[2000, 7000]</p>",
+          "example": "2000",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。 创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。</p>",
+          "example": "无",
+          "member": "RemoteDiskChargePrepaid",
+          "name": "DiskChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买单副本SSD硬盘的数量。不填则默认为1。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "DiskCount",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceCreateRemoteDisksResponse": {
+      "document": "InquirePriceCreateRemoteDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InquirePriceModifyDiskBackupQuotaRequest": {
       "document": "InquirePriceModifyDiskBackupQuota请求参数结构体",
       "members": [
@@ -3645,6 +4033,42 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceRenewRemoteDisksRequest": {
+      "document": "InquirePriceRenewRemoteDisks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月云盘的购买时长。如果在该参数中指定CurInstanceDeadline，则会按对齐到子机到期时间来续费。如果是批量续费询价，该参数与Disks参数一一对应，元素数量需保持一致。</p>",
+          "example": "无",
+          "member": "RemoteDiskChargePrepaid",
+          "name": "DiskChargePrepaidSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>一个或多个单副本SSD硬盘ID。</p>",
+          "example": "[\"rdisk-1ztsk0jr\"]",
+          "member": "string",
+          "name": "RemoteDiskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceRenewRemoteDisksResponse": {
+      "document": "InquirePriceRenewRemoteDisks返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4197,6 +4621,51 @@
       ],
       "type": "object"
     },
+    "ModifyRemoteDiskAttributesRequest": {
+      "document": "ModifyRemoteDiskAttributes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>一个或多个待操作的单副本SSD硬盘ID。如果传入多个单副本SSD硬盘ID，只支持所有硬盘修改为同一属性。</p>",
+          "example": "[\"rdisk-fluj9shv\"]",
+          "member": "string",
+          "name": "RemoteDiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的单副本SSD硬盘名称</p>",
+          "example": "TestRemoteSSD",
+          "member": "string",
+          "name": "DiskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的单副本SSD硬盘项目ID。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRemoteDiskAttributesResponse": {
+      "document": "ModifyRemoteDiskAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySnapshotAttributeRequest": {
       "document": "ModifySnapshotAttribute请求参数结构体",
       "members": [
@@ -4631,6 +5100,39 @@
       ],
       "usage": "out"
     },
+    "RemoteDiskChargePrepaid": {
+      "document": "描述了单副本SSD硬盘的预付费计费模式。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "购买单副本SSD硬盘的时长，默认单位为月，取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要将单副本SSD硬盘的到期时间与挂载的子机对齐时，可传入该参数。该参数表示子机当前的到期时间，此时Period如果传入，则表示子机需要续费的时长，单副本SSD硬盘会自动按对齐到子机续费后的到期时间续费。",
+          "example": "2018-03-30T20:15:03+08:00",
+          "member": "string",
+          "name": "CurInstanceDeadline",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识。取值范围：\n<ul>\n  <li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>\n  <li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li>\n  <li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li>\n</ul>\n默认取值：NOTIFY_AND_MANUAL_RENEW。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "RenewDiskRequest": {
       "document": "RenewDisk请求参数结构体",
       "members": [
@@ -4667,12 +5169,48 @@
       ],
       "type": "object"
     },
+    "RenewRemoteDiskRequest": {
+      "document": "RenewRemoteDisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月单副本SSD硬盘的续费时长。 在云硬盘与挂载的实例一起续费的场景下，可以指定参数CurInstanceDeadline，此时单副本SSD硬盘会按对齐到实例续费后的到期时间来续费。</p>",
+          "example": "无",
+          "member": "RemoteDiskChargePrepaid",
+          "name": "DiskChargePrepaid",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘ID。</p>",
+          "example": "rdisk-1ztsk0jr",
+          "member": "string",
+          "name": "RemoteDiskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewRemoteDiskResponse": {
+      "document": "RenewRemoteDisk返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResizeDiskRequest": {
       "document": "ResizeDisk请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘扩容后的大小，单位为GB，必须大于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。",
+          "document": "<p>云硬盘扩容后的大小，单位为GB，必须大于当前云硬盘大小。云盘大小取值范围参见云硬盘<a href=\"/document/product/362/2353\">产品分类</a>的说明。</p>",
           "example": "100",
           "member": "uint64",
           "name": "DiskSize",
@@ -4681,7 +5219,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。该字段仅供单块云硬盘扩容时传入。",
+          "document": "<p>云硬盘ID， 通过<a href=\"/document/product/362/16315\">DescribeDisks</a>接口查询。该字段仅供单块云硬盘扩容时传入。</p>",
           "example": "disk-l7mxexxc",
           "member": "string",
           "name": "DiskId",
@@ -4734,8 +5272,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "快照所在的位置。",
-          "example": "{\"ProjectId\":0,\"Zone\":\"ap-guangzhou-4\"}",
+          "document": "<p>快照所在的位置。</p>",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "output_required": true,
@@ -4744,7 +5282,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为跨地域复制的快照。取值范围：\n<ul>\n    <li>true：表示为跨地域复制的快照。</li>\n    <li>false：本地域的快照。</li>\n</ul>",
+          "document": "<p>是否为跨地域复制的快照。取值范围：</p><ul>    <li>true：表示为跨地域复制的快照。</li>    <li>false：本地域的快照。</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "CopyFromRemote",
@@ -4754,7 +5292,7 @@
         },
         {
           "disabled": false,
-          "document": "快照的状态。取值范围：\n<ul>\n    <li>NORMAL：正常</li>\n    <li>CREATING：创建中</li>\n    <li>ROLLBACKING：回滚中</li>\n    <li>COPYING_FROM_REMOTE：跨地域复制中</li>\n    <li>CHECKING_COPIED：复制校验中</li>\n    <li>TORECYCLE：待回收</li>\n</ul>",
+          "document": "<p>快照的状态。取值范围：</p><ul>    <li>NORMAL：正常</li>    <li>CREATING：创建中</li>    <li>ROLLBACKING：回滚中</li>    <li>COPYING_FROM_REMOTE：跨地域复制中</li>    <li>CHECKING_COPIED：复制校验中</li>    <li>TORECYCLE：待回收</li></ul>",
           "example": "NORMAL",
           "member": "string",
           "name": "SnapshotState",
@@ -4764,7 +5302,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为永久快照。取值范围：\n<ul>\n    <li>true：永久快照</li>\n    <li>false：非永久快照</li>\n</ul>",
+          "document": "<p>是否为永久快照。取值范围：</p><ul>    <li>true：永久快照</li>    <li>false：非永久快照</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "IsPermanent",
@@ -4774,7 +5312,7 @@
         },
         {
           "disabled": false,
-          "document": "快照名称，用户自定义的快照别名。调用[ModifySnapshotAttribute](/document/product/362/15650)可修改此字段。",
+          "document": "<p>快照名称，用户自定义的快照别名。调用<a href=\"/document/product/362/15650\">ModifySnapshotAttribute</a>可修改此字段。</p>",
           "example": "auto_disk-ahp9x398",
           "member": "string",
           "name": "SnapshotName",
@@ -4784,7 +5322,7 @@
         },
         {
           "disabled": false,
-          "document": "快照到期时间。如果快照为永久保留，此字段为空。",
+          "document": "<p>快照到期时间。如果快照为永久保留，此字段为空。</p>",
           "example": "2021-11-24 16:00:00",
           "member": "datetime",
           "name": "DeadlineTime",
@@ -4794,7 +5332,7 @@
         },
         {
           "disabled": false,
-          "document": "快照创建进度百分比，快照创建成功后此字段恒为100。",
+          "document": "<p>快照创建进度百分比，快照创建成功后此字段恒为100。</p>",
           "example": "100",
           "member": "uint64",
           "name": "Percent",
@@ -4804,8 +5342,8 @@
         },
         {
           "disabled": false,
-          "document": "快照关联的镜像列表。",
-          "example": "[{\"ImageName\":\"image_win\",\"ImageId\":\"img-ju2hzzik\"}]",
+          "document": "<p>快照关联的镜像列表。</p>",
+          "example": "无",
           "member": "Image",
           "name": "Images",
           "output_required": true,
@@ -4814,7 +5352,7 @@
         },
         {
           "disabled": false,
-          "document": "快照当前被共享数。",
+          "document": "<p>快照当前被共享数。</p>",
           "example": "0",
           "member": "uint64",
           "name": "ShareReference",
@@ -4824,7 +5362,7 @@
         },
         {
           "disabled": false,
-          "document": "快照类型，目前该项取值可以为`PRIVATE_SNAPSHOT`（私有快照）或者`SHARED_SNAPSHOT`（共享快照）",
+          "document": "<p>快照类型，目前该项取值可以为<code>PRIVATE_SNAPSHOT</code>（私有快照）或者<code>SHARED_SNAPSHOT</code>（共享快照）</p>",
           "example": "PRIVATE_SNAPSHOT",
           "member": "string",
           "name": "SnapshotType",
@@ -4834,7 +5372,7 @@
         },
         {
           "disabled": false,
-          "document": "创建此快照的云硬盘大小，单位GiB。",
+          "document": "<p>创建此快照的云硬盘大小，单位GiB。</p>",
           "example": "10",
           "member": "uint64",
           "name": "DiskSize",
@@ -4844,7 +5382,7 @@
         },
         {
           "disabled": false,
-          "document": "创建此快照的云硬盘ID。",
+          "document": "<p>创建此快照的云硬盘ID。</p>",
           "example": "disk-7rftdagm",
           "member": "string",
           "name": "DiskId",
@@ -4854,7 +5392,7 @@
         },
         {
           "disabled": false,
-          "document": "快照正在跨地域复制的目的地域，若没有则返回`[]`。",
+          "document": "<p>快照正在跨地域复制的目的地域，若没有则返回<code>[]</code>。</p>",
           "example": "[\"ap-guangzhou\", \"ap-nanjing\"]",
           "member": "string",
           "name": "CopyingToRegions",
@@ -4864,7 +5402,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为加密盘创建的快照。取值范围：\n<ul>\n    <li>true：该快照为加密盘创建的</li>\n    <li>false：非加密盘创建的快照</li>\n</ul>",
+          "document": "<p>是否为加密盘创建的快照。取值范围：</p><ul>    <li>true：该快照为加密盘创建的</li>    <li>false：非加密盘创建的快照</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "Encrypt",
@@ -4874,7 +5412,7 @@
         },
         {
           "disabled": false,
-          "document": "快照的创建时间。",
+          "document": "<p>快照的创建时间。</p>",
           "example": "2019-07-15 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
@@ -4884,7 +5422,7 @@
         },
         {
           "disabled": false,
-          "document": "快照关联的镜像个数。",
+          "document": "<p>快照关联的镜像个数。</p>",
           "example": "0",
           "member": "uint64",
           "name": "ImageCount",
@@ -4894,7 +5432,7 @@
         },
         {
           "disabled": false,
-          "document": "创建此快照的云硬盘类型。取值范围：\n<ul>\n    <li>SYSTEM_DISK：系统盘</li>\n    <li>DATA_DISK：数据盘</li>\n</ul>\n",
+          "document": "<p>创建此快照的云硬盘类型。取值范围：</p><ul>    <li>SYSTEM_DISK：系统盘</li>    <li>DATA_DISK：数据盘</li></ul>",
           "example": "SYSTEM_DISK",
           "member": "string",
           "name": "DiskUsage",
@@ -4904,7 +5442,7 @@
         },
         {
           "disabled": false,
-          "document": "快照ID。",
+          "document": "<p>快照ID。</p>",
           "example": "snap-29ykydfb",
           "member": "string",
           "name": "SnapshotId",
@@ -4914,7 +5452,7 @@
         },
         {
           "disabled": false,
-          "document": "快照开始共享的时间。",
+          "document": "<p>快照开始共享的时间。</p>",
           "example": "2021-07-15",
           "member": "date",
           "name": "TimeStartShare",
@@ -4924,12 +5462,42 @@
         },
         {
           "disabled": false,
-          "document": "快照绑定的标签列表。",
-          "example": "[{\"Key\":\"cloud-key\",\"Value\":\"cloud-value\"}]",
+          "document": "<p>快照绑定的标签列表。</p>",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照是否锁定。取值范围：</p><ul>    <li>true：已锁定</li>    <li>false：未锁定</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsLocked",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照记录的最新修改时间</p>",
+          "example": "2025-03-25T20:46:13+08:00",
+          "member": "datetime_iso",
+          "name": "LatestModifyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动快照策略ID，仅当该快照由自动快照策略方式创建时才会返回。</p>",
+          "example": "asp-1yhjqsow",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -5127,6 +5695,50 @@
       ],
       "usage": "out"
     },
+    "SwitchParameterCreateRemoteDisksRequest": {
+      "document": "SwitchParameterCreateRemoteDisks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例所在的位置。通过该参数可以指定实例所属可用区、所属项目等属性。</p>",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchParameterCreateRemoteDisksResponse": {
+      "document": "SwitchParameterCreateRemoteDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchParameterRenewRemoteDisksRequest": {
+      "document": "SwitchParameterRenewRemoteDisks请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "SwitchParameterRenewRemoteDisksResponse": {
+      "document": "SwitchParameterRenewRemoteDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Tag": {
       "document": "标签。",
       "members": [
@@ -5181,6 +5793,33 @@
     },
     "TerminateDisksResponse": {
       "document": "TerminateDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateRemoteDisksRequest": {
+      "document": "TerminateRemoteDisks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>一个或多个单副本SSD硬盘ID。</p>",
+          "example": "[\"rdisk-1ztsk0jr\"]",
+          "member": "string",
+          "name": "RemoteDiskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateRemoteDisksResponse": {
+      "document": "TerminateRemoteDisks返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

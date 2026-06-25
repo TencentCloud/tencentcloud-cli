@@ -295,7 +295,7 @@
       "status": "online"
     },
     "CreateK8sApiAbnormalRuleInfo": {
-      "document": "创建k8sapi异常事件规则",
+      "document": "创建k8sapi异常事件规则。RuleInfoList中的Action仅支持RULE_MODE_ALERT（告警），不再支持RULE_MODE_RELEASE/PASS（放行）。EventID参数已移除，事件加白请使用白名单接口ModifyK8sApiAbnormalWhitelist。",
       "input": "CreateK8sApiAbnormalRuleInfoRequest",
       "name": "创建k8sapi异常事件规则",
       "output": "CreateK8sApiAbnormalRuleInfoResponse",
@@ -1331,7 +1331,7 @@
       "status": "online"
     },
     "DescribeK8sApiAbnormalRuleList": {
-      "document": "查询k8sapi异常请求规则列表",
+      "document": "查询k8sapi异常请求规则列表。支持按集群名称（ClusterName）和集群ID（ClusterID）模糊查找规则，全集群规则（is_all=1）始终返回。响应新增RuleInfoList（子规则内容）、RuleActions（执行动作去重列表）、EffectAllCluster字段。",
       "input": "DescribeK8sApiAbnormalRuleListRequest",
       "name": "查询k8sapi异常请求规则列表",
       "output": "DescribeK8sApiAbnormalRuleListResponse",
@@ -2220,7 +2220,7 @@
       "status": "online"
     },
     "ModifyK8sApiAbnormalRuleInfo": {
-      "document": "修改k8sapi异常规则信息",
+      "document": "修改k8sapi异常规则信息。RuleInfoList中的Action仅支持RULE_MODE_ALERT（告警），不再支持RULE_MODE_RELEASE/PASS（放行）。",
       "input": "ModifyK8sApiAbnormalRuleInfoRequest",
       "name": "修改k8sapi异常规则信息",
       "output": "ModifyK8sApiAbnormalRuleInfoResponse",
@@ -2538,6 +2538,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>进程路径</p>",
+          "example": "/bin/busybox",
+          "member": "string",
+          "name": "ProcessPath",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>策略模式，   RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>",
           "example": "RULE_MODE_RELEASE",
           "member": "string",
@@ -2549,12 +2560,12 @@
         },
         {
           "disabled": false,
-          "document": "<p>进程路径</p>",
-          "example": "/bin/busybox",
+          "document": "<p>命令行参数</p>",
+          "example": "ls -l",
           "member": "string",
-          "name": "ProcessPath",
-          "output_required": true,
-          "required": true,
+          "name": "CmdLine",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2576,17 +2587,6 @@
           "member": "string",
           "name": "RuleLevel",
           "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>命令行参数</p>",
-          "example": "ls -l",
-          "member": "string",
-          "name": "CmdLine",
-          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3162,18 +3162,134 @@
       ],
       "usage": "out"
     },
+    "AbnormalProcessRuleExtSetItem": {
+      "document": "异常进程策略列表扩展项（扁平独立结构体，含子规则内容和执行动作）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户自定义策略子规则列表。IsDefault=false时有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AbnormalProcessChildRuleInfo",
+          "name": "ChildRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "编辑用户名称",
+          "example": "2345435634",
+          "member": "string",
+          "name": "EditUserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略生效镜像数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "EffectImageCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "true: 默认策略，false:自定义策略",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDefault",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为全部镜像规则。true表示对所有镜像生效",
+          "example": "false",
+          "member": "bool",
+          "name": "IsGlobal",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "true: 策略启用，false：策略禁用",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEnable",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则组中所有执行动作的去重列表。RULE_MODE_ALERT:告警 RULE_MODE_HOLDUP:拦截\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"RULE_MODE_ALERT\",\"RULE_MODE_HOLDUP\"]",
+          "member": "string",
+          "name": "RuleActions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略Id",
+          "example": "sub1",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略名字",
+          "example": "myetest",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统策略子规则列表。IsDefault=true时有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AbnormalProcessSystemChildRuleInfo",
+          "name": "SystemChildRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略更新时间, 存在为空的情况",
+          "example": "2020-12-1 12:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AbnormalProcessRuleInfo": {
       "document": "运行时安全，异常进程检测策略",
       "members": [
         {
           "disabled": false,
-          "document": "true:策略启用，false:策略禁用",
-          "example": "true",
-          "member": "bool",
-          "name": "IsEnable",
+          "document": "用户策略的子策略数组",
+          "example": "无",
+          "member": "AbnormalProcessChildRuleInfo",
+          "name": "ChildRules",
           "output_required": true,
           "required": true,
-          "type": "bool",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3189,13 +3305,13 @@
         },
         {
           "disabled": false,
-          "document": "用户策略的子策略数组",
-          "example": "[{\"RuleMode\":\"RULE_MODE_RELEASE\",\"ProcessPath\":\"/bin/busybox\",\"RuleId\":\"childsub1\",\"RuleLevel\":\"MIDDLE\"}]",
-          "member": "AbnormalProcessChildRuleInfo",
-          "name": "ChildRules",
+          "document": "true:策略启用，false:策略禁用",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEnable",
           "output_required": true,
           "required": true,
-          "type": "list",
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -3207,6 +3323,28 @@
           "output_required": true,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否是系统默认策略",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDefault",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为全部镜像规则。true表示对所有镜像生效",
+          "example": "false",
+          "member": "bool",
+          "name": "IsGlobal",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -3223,23 +3361,12 @@
         {
           "disabled": false,
           "document": "系统策略的子策略数组",
-          "example": "[{\"RuleMode\":\"RULE_MODE_RELEASE\",\"ProcessPath\":\"/bin/busybox\",\"RuleId\":\"childsub1\",\"RuleLevel\":\"MIDDLE\"}]",
+          "example": "无",
           "member": "AbnormalProcessSystemChildRuleInfo",
           "name": "SystemChildRules",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否是系统默认策略",
-          "example": "false",
-          "member": "bool",
-          "name": "IsDefault",
-          "output_required": true,
-          "required": false,
-          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -3250,17 +3377,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "子策略Id",
-          "example": "childsub 1",
-          "member": "string",
-          "name": "RuleId",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "子策略状态，true为开启，false为关闭",
           "example": "true",
           "member": "bool",
@@ -3268,6 +3384,17 @@
           "output_required": true,
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子策略Id",
+          "example": "childsub 1",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -3311,10 +3438,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>策略模式,  RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>",
-          "example": "RULE_MODE_RELEASE",
+          "document": "<p>进程路径</p>",
+          "example": "/home/bin/",
           "member": "string",
-          "name": "RuleMode",
+          "name": "ProcessPath",
           "output_required": true,
           "required": true,
           "type": "string",
@@ -3322,10 +3449,10 @@
         },
         {
           "disabled": false,
-          "document": "<p>进程路径</p>",
-          "example": "/home/bin/",
+          "document": "<p>策略模式,  RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>",
+          "example": "RULE_MODE_RELEASE",
           "member": "string",
-          "name": "ProcessPath",
+          "name": "RuleMode",
           "output_required": true,
           "required": true,
           "type": "string",
@@ -3344,22 +3471,22 @@
         },
         {
           "disabled": false,
-          "document": "<p>子策略id</p>",
-          "example": "645c925a18d0c0e2365173a7",
+          "document": "<p>命令行参数</p>",
+          "example": "ls -l",
           "member": "string",
-          "name": "RuleId",
-          "output_required": true,
+          "name": "CmdLine",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "<p>命令行参数</p>",
-          "example": "ls -l",
+          "document": "<p>子策略id</p>",
+          "example": "645c925a18d0c0e2365173a7",
           "member": "string",
-          "name": "CmdLine",
-          "output_required": false,
+          "name": "RuleId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3839,18 +3966,134 @@
       ],
       "usage": "out"
     },
+    "AccessControlRuleExtSetItem": {
+      "document": "文件篡改策略列表扩展项（扁平独立结构体，含子规则内容和执行动作）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户自定义策略子规则列表。IsDefault=false时有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccessControlChildRuleInfo",
+          "name": "ChildRules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "编辑用户名称",
+          "example": "2345435634",
+          "member": "string",
+          "name": "EditUserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略生效镜像数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "EffectImageCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "true: 默认策略，false:自定义策略",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDefault",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为全部镜像规则。true表示对所有镜像生效",
+          "example": "false",
+          "member": "bool",
+          "name": "IsGlobal",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "true: 策略启用，false：策略禁用",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEnable",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则组中所有执行动作的去重列表。RULE_MODE_ALERT:告警 RULE_MODE_HOLDUP:拦截\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"RULE_MODE_ALERT\",\"RULE_MODE_HOLDUP\"]",
+          "member": "string",
+          "name": "RuleActions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略Id",
+          "example": "sub1",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略名字",
+          "example": "myetest",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统策略子规则列表。IsDefault=true时有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccessControlSystemChildRuleInfo",
+          "name": "SystemChildRules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略更新时间, 存在为空的情况",
+          "example": "2020-12-1 12:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AccessControlRuleInfo": {
       "document": "容器运行时，访问控制策略信息",
       "members": [
         {
           "disabled": false,
-          "document": "开关,true:开启，false:禁用",
-          "example": "true",
-          "member": "bool",
-          "name": "IsEnable",
+          "document": "用户策略的子策略数组",
+          "example": "无",
+          "member": "AccessControlChildRuleInfo",
+          "name": "ChildRules",
           "output_required": true,
           "required": true,
-          "type": "bool",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3866,13 +4109,13 @@
         },
         {
           "disabled": false,
-          "document": "用户策略的子策略数组",
-          "example": "[{\"RuleMode\":\"RULE_MODE_RELEASE\",\"ProcessPath\":\"/home/bin/\",\"TargetFilePath\":\"/home/file/a.txt\",\"RuleId\":\"645c925a18d0c0e2365173a7\"}]",
-          "member": "AccessControlChildRuleInfo",
-          "name": "ChildRules",
+          "document": "开关,true:开启，false:禁用",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEnable",
           "output_required": true,
           "required": true,
-          "type": "list",
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -3884,6 +4127,28 @@
           "output_required": true,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否是系统默认策略",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDefault",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "true:全部镜像，false:指定镜像。IsGlobal=true时ImageIds返回空数组",
+          "example": "false",
+          "member": "bool",
+          "name": "IsGlobal",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -3900,23 +4165,12 @@
         {
           "disabled": false,
           "document": "系统策略的子策略数组",
-          "example": "[{\"RuleMode\":\"RULE_MODE_RELEASE\",\"ProcessPath\":\"/home/bin/\",\"TargetFilePath\":\"/home/file/a.txt\",\"RuleId\":\"645c925a18d0c0e2365173a7\"}]",
+          "example": "无",
           "member": "AccessControlSystemChildRuleInfo",
           "name": "SystemChildRules",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否是系统默认策略",
-          "example": "false",
-          "member": "bool",
-          "name": "IsDefault",
-          "output_required": true,
-          "required": false,
-          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -3925,6 +4179,17 @@
     "AccessControlSystemChildRuleInfo": {
       "document": "容器运行时安全，访问控制系统策略的子策略信息",
       "members": [
+        {
+          "disabled": false,
+          "document": "子策略状态，true为开启，false为关闭",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEnable",
+          "output_required": true,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
         {
           "disabled": false,
           "document": "子策略Id",
@@ -3945,17 +4210,6 @@
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "子策略状态，true为开启，false为关闭",
-          "example": "true",
-          "member": "bool",
-          "name": "IsEnable",
-          "output_required": true,
-          "required": true,
-          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -5292,7 +5546,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-abhq0j4o",
           "member": "string",
           "name": "ClusterID",
@@ -5302,7 +5556,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "bx_test_tmp",
           "member": "string",
           "name": "ClusterName",
@@ -5312,7 +5566,7 @@
         },
         {
           "disabled": false,
-          "document": "集群状态\nCSR_RUNNING: 运行中\nCSR_EXCEPTION:异常\nCSR_DEL:已经删除",
+          "document": "<p>集群状态<br>CSR_RUNNING: 运行中<br>CSR_EXCEPTION:异常<br>CSR_DEL:已经删除</p>",
           "example": "CSR_RUNNING",
           "member": "string",
           "name": "Status",
@@ -5322,7 +5576,17 @@
         },
         {
           "disabled": false,
-          "document": "绑定规则名称",
+          "document": "<p>绑定的集群ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-dqxpsm",
+          "member": "string",
+          "name": "BindRuleID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定规则名称</p>",
           "example": "系统规则",
           "member": "string",
           "name": "BindRuleName",
@@ -5332,7 +5596,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型:\nCT_TKE:TKE集群;\nCT_USER_CREATE:用户自建集群;\nCT_TKE_SERVERLESS:TKE Serverless集群;",
+          "document": "<p>集群类型:<br>CT_TKE:TKE集群;<br>CT_USER_CREATE:用户自建集群;<br>CT_TKE_SERVERLESS:TKE Serverless集群;</p>",
           "example": "INDEPENDENT_CLUSTER",
           "member": "string",
           "name": "ClusterType",
@@ -5342,7 +5606,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版本",
+          "document": "<p>集群版本</p>",
           "example": "1.18.4",
           "member": "string",
           "name": "ClusterVersion",
@@ -5352,7 +5616,7 @@
         },
         {
           "disabled": false,
-          "document": "内存量",
+          "document": "<p>内存量</p>",
           "example": "8053063680",
           "member": "int64",
           "name": "MemLimit",
@@ -5362,7 +5626,7 @@
         },
         {
           "disabled": false,
-          "document": "cpu",
+          "document": "<p>cpu</p>",
           "example": "4500",
           "member": "int64",
           "name": "CpuLimit",
@@ -5372,7 +5636,7 @@
         },
         {
           "disabled": false,
-          "document": "集群审计开关状态：\n已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed",
+          "document": "<p>集群审计开关状态：<br>已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed</p>",
           "example": "Closed",
           "member": "string",
           "name": "ClusterAuditStatus",
@@ -5382,7 +5646,7 @@
         },
         {
           "disabled": false,
-          "document": "接入状态:\n未接入: AccessedNone\n已防护: AccessedDefended\n未防护: AccessedInstalled\n部分防护: AccessedPartialDefence\n接入异常: AccessedException\n卸载异常: AccessedUninstallException\n接入中: AccessedInstalling\n卸载中: AccessedUninstalling",
+          "document": "<p>接入状态:<br>未接入: AccessedNone<br>已防护: AccessedDefended<br>未防护: AccessedInstalled<br>部分防护: AccessedPartialDefence<br>接入异常: AccessedException<br>卸载异常: AccessedUninstallException<br>接入中: AccessedInstalling<br>卸载中: AccessedUninstalling</p>",
           "example": "AccessedNone",
           "member": "string",
           "name": "AccessedStatus",
@@ -9693,7 +9957,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开关",
+          "document": "<p>开关</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -9702,7 +9966,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描开始时间\n01:00 时分",
+          "document": "<p>扫描开始时间<br>01:00 时分</p>",
           "example": "01:00",
           "member": "string",
           "name": "ScanTime",
@@ -9711,7 +9975,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描周期",
+          "document": "<p>扫描周期</p>",
           "example": "2",
           "member": "uint64",
           "name": "ScanPeriod",
@@ -9720,7 +9984,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描木马",
+          "document": "<p>扫描木马</p>",
           "example": "true",
           "member": "bool",
           "name": "ScanVirus",
@@ -9729,7 +9993,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描敏感信息",
+          "document": "<p>扫描敏感信息</p>",
           "example": "true",
           "member": "bool",
           "name": "ScanRisk",
@@ -9738,7 +10002,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描漏洞",
+          "document": "<p>扫描漏洞</p>",
           "example": "true",
           "member": "bool",
           "name": "ScanVul",
@@ -9747,7 +10011,7 @@
         },
         {
           "disabled": true,
-          "document": "全部镜像",
+          "document": "<p>全部镜像</p>",
           "example": "false",
           "member": "bool",
           "name": "All",
@@ -9756,7 +10020,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义镜像",
+          "document": "<p>自定义镜像</p>",
           "example": "[\"sha256:525b6e9fc890470bdb8a85a65ef2158fec8a61cc2946c0717a6e4d425644ae5c\"]",
           "member": "string",
           "name": "Images",
@@ -9765,7 +10029,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像是否存在运行中的容器",
+          "document": "<p>镜像是否存在运行中的容器</p>",
           "example": "true",
           "member": "bool",
           "name": "ContainerRunning",
@@ -9774,7 +10038,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描",
+          "document": "<p>扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描 , 3:集群筛选扫描</p><p>取值范围：[0, 3]</p><p>默认值：0</p>",
           "example": "0",
           "member": "uint64",
           "name": "ScanScope",
@@ -9783,7 +10047,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描结束时间\n02:00 时分",
+          "document": "<p>扫描结束时间<br>02:00 时分</p>",
           "example": "04:00",
           "member": "string",
           "name": "ScanEndTime",
@@ -9792,10 +10056,19 @@
         },
         {
           "disabled": false,
-          "document": "排除扫描的镜像",
+          "document": "<p>排除扫描的镜像</p>",
           "example": "[\"sha256:525b6e9fc890470bdb8a85a65ef2158fec8a61cc2946c0717a6e4d425644ae5c\"]",
           "member": "string",
           "name": "ExcludeImages",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "[\"cls-xt1t\"]",
+          "member": "string",
+          "name": "ClusterIDs",
           "required": false,
           "type": "list"
         }
@@ -9819,7 +10092,7 @@
       "members": [
         {
           "disabled": true,
-          "document": "是否扫描全部镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。",
+          "document": "<p>是否扫描全部镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。</p>",
           "example": "true",
           "member": "bool",
           "name": "All",
@@ -9828,7 +10101,7 @@
         },
         {
           "disabled": false,
-          "document": "需要扫描的镜像列表；全部镜像，镜像列表和根据过滤条件筛选三选一。",
+          "document": "<p>需要扫描的镜像列表；全部镜像，镜像列表和根据过滤条件筛选三选一。</p>",
           "example": "[\"sha256:c849b2717cdc2efcea3e032d121dcbfbc6f212ba37e4d2af50e53c7c6ecb****\"]",
           "member": "string",
           "name": "Images",
@@ -9837,7 +10110,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描漏洞；漏洞，木马和风险需选其一",
+          "document": "<p>扫描漏洞；漏洞，木马和风险需选其一</p>",
           "example": "true",
           "member": "bool",
           "name": "ScanVul",
@@ -9846,7 +10119,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描木马；漏洞，木马和风险需选其一",
+          "document": "<p>扫描木马；漏洞，木马和风险需选其一</p>",
           "example": "false",
           "member": "bool",
           "name": "ScanVirus",
@@ -9855,7 +10128,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描风险；漏洞，木马和风险需选其一",
+          "document": "<p>扫描风险；漏洞，木马和风险需选其一</p>",
           "example": "false",
           "member": "bool",
           "name": "ScanRisk",
@@ -9864,7 +10137,7 @@
         },
         {
           "disabled": false,
-          "document": "根据过滤条件筛选出镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。",
+          "document": "<p>根据过滤条件筛选出镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。</p>",
           "example": "无",
           "member": "AssetFilters",
           "name": "Filters",
@@ -9873,7 +10146,7 @@
         },
         {
           "disabled": false,
-          "document": "根据过滤条件筛选出镜像，再排除个别镜像",
+          "document": "<p>根据过滤条件筛选出镜像，再排除个别镜像</p>",
           "example": "[\"sha256:80beff5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5bb0cd4f9211\"]",
           "member": "string",
           "name": "ExcludeImageIds",
@@ -9882,7 +10155,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像是否存在运行中的容器",
+          "document": "<p>镜像是否存在运行中的容器</p>",
           "example": "true",
           "member": "bool",
           "name": "ContainerRunning",
@@ -9891,7 +10164,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描",
+          "document": "<p>扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描 3:集群扫描</p><p>取值范围：[0, 3]</p><p>默认值：0</p>",
           "example": "2",
           "member": "uint64",
           "name": "ScanScope",
@@ -9900,7 +10173,7 @@
         },
         {
           "disabled": false,
-          "document": "任务超时时长单位秒，默认1小时",
+          "document": "<p>任务超时时长单位秒，默认1小时</p>",
           "example": "3600",
           "member": "uint64",
           "name": "Timeout",
@@ -9909,12 +10182,21 @@
         },
         {
           "disabled": false,
-          "document": "一键扫描任务。默认false表示非一键扫描，true一键扫描",
+          "document": "<p>一键扫描任务。默认false表示非一键扫描，true一键扫描</p>",
           "example": "false",
           "member": "bool",
           "name": "IsOneClickScanningTask",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "[\"cls-txq1\"]",
+          "member": "string",
+          "name": "ClusterIDs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9924,7 +10206,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "41033",
           "member": "string",
           "name": "TaskID",
@@ -10981,7 +11263,7 @@
         {
           "disabled": false,
           "document": "规则详情",
-          "example": "{     \"RuleName\": \"rulename1\",     \"Status\": true,     \"RuleInfoList\": [         {             \"Scope\": \"{\\\"RequestURI\\\":\\\"/apis/cowsajhhoa.k8s.io/v\\\",\\\"RequestUser\\\":\\\"“name”:”sanpasahsad-contaosaer-leader”）\\\\\\\"\\\",\\\"ResponseStatusCode\\\":\\\"200\\\",\\\"SourceIPS\\\":\\\"10.255.0.43\\\",\\\"UserAgent\\\":\\\"snapshot-controller\\\",\\\"Verb\\\":\\\"update\\\"}\",             \"Action\": \"RULE_MODE_ALERT\",             \"RiskLevel\": \"NOTICE\",             \"Status\": true,             \"IsDelete\": false         }     ],     \"EffectClusterIDSet\": [      ],     \"RuleType\": \"USER_DEFINED_RULE\",     \"EffectAllCluster\": true,     \"RuleID\": \"rule-id\" }",
+          "example": "无",
           "member": "K8sApiAbnormalRuleInfo",
           "name": "RuleInfo",
           "required": true,
@@ -10998,8 +11280,8 @@
         },
         {
           "disabled": false,
-          "document": "事件ID(适用于事件加白场景)",
-          "example": "1",
+          "document": "事件ID(已废弃，保留兼容性。事件加白请使用白名单接口 ModifyK8sApiAbnormalWhitelist)",
+          "example": "0",
           "member": "uint64",
           "name": "EventID",
           "required": false,
@@ -12116,7 +12398,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "本地镜像扫描范围类型。ALL:全部本地镜像，NOT_SCAN：全部已授权未扫描本地镜像，IMAGEIDS:自选本地镜像ID",
+          "document": "<p>本地镜像扫描范围类型</p><p>枚举值：</p><ul><li>ALL： 全部本地镜像</li><li>NOT_SCAN： 全部已授权未扫描本地镜像</li><li>IMAGEIDS： 自选本地镜像ID</li><li>CLUSTER： 集群筛选</li></ul>",
           "example": "ALL",
           "member": "string",
           "name": "LocalImageScanType",
@@ -12125,7 +12407,7 @@
         },
         {
           "disabled": false,
-          "document": "根据已授权的本地镜像IDs扫描，优先权高于根据满足条件的已授权的本地镜像。",
+          "document": "<p>根据已授权的本地镜像IDs扫描，优先权高于根据满足条件的已授权的本地镜像。</p>",
           "example": "[\"sha256:0837c4abfc8a3c0cda6a87c2d882e6530abd0caf180eeb3b4dc1534f3d47****\"]",
           "member": "string",
           "name": "LocalImageIDs",
@@ -12134,7 +12416,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库镜像扫描范围类型。ALL:全部仓库镜像，NOT_SCAN：全部已授权未扫描仓库镜像，IMAGEIDS:自选仓库镜像ID",
+          "document": "<p>仓库镜像扫描范围类型。ALL:全部仓库镜像，NOT_SCAN：全部已授权未扫描仓库镜像，IMAGEIDS:自选仓库镜像ID</p>",
           "example": "ALL",
           "member": "string",
           "name": "RegistryImageScanType",
@@ -12143,7 +12425,7 @@
         },
         {
           "disabled": false,
-          "document": "根据已授权的仓库镜像IDs扫描，优先权高于根据满足条件的已授权的仓库镜像。",
+          "document": "<p>根据已授权的仓库镜像IDs扫描，优先权高于根据满足条件的已授权的仓库镜像。</p>",
           "example": "[10086]",
           "member": "uint64",
           "name": "RegistryImageIDs",
@@ -12152,7 +12434,7 @@
         },
         {
           "disabled": false,
-          "document": "本地镜像重新漏洞扫描时的任务ID",
+          "document": "<p>本地镜像重新漏洞扫描时的任务ID</p>",
           "example": "1002",
           "member": "int64",
           "name": "LocalTaskID",
@@ -12161,7 +12443,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库镜像重新漏洞扫描时的任务ID",
+          "document": "<p>仓库镜像重新漏洞扫描时的任务ID</p>",
           "example": "1003",
           "member": "int64",
           "name": "RegistryTaskID",
@@ -12170,7 +12452,7 @@
         },
         {
           "disabled": false,
-          "document": "本地镜像容器运行中",
+          "document": "<p>本地镜像容器运行中</p>",
           "example": "true",
           "member": "bool",
           "name": "LocalImageContainerRunning",
@@ -12179,7 +12461,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库镜像容器运行中",
+          "document": "<p>仓库镜像容器运行中</p>",
           "example": "true",
           "member": "bool",
           "name": "RegistryImageContainerRunning",
@@ -12188,12 +12470,39 @@
         },
         {
           "disabled": false,
-          "document": "仓库镜像是否是最新",
+          "document": "<p>仓库镜像是否是最新</p>",
           "example": "true",
           "member": "bool",
           "name": "IsLatest",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要剔除的本地镜像id</p>",
+          "example": "[\"sha256:wbeyyes\"]",
+          "member": "string",
+          "name": "ExcludeLocalImageIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要剔除的仓库镜像id</p>",
+          "example": "[1324]",
+          "member": "uint64",
+          "name": "ExcludeRegistryImageIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "[\"cls-qwyx\"]",
+          "member": "string",
+          "name": "LocalClusterIDs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12203,7 +12512,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "本地镜像重新漏洞扫描时的任务ID",
+          "document": "<p>本地镜像重新漏洞扫描时的任务ID</p>",
           "example": "1",
           "member": "int64",
           "name": "LocalTaskID",
@@ -12213,7 +12522,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库镜像重新漏洞扫描时的任务ID",
+          "document": "<p>仓库镜像重新漏洞扫描时的任务ID</p>",
           "example": "1",
           "member": "int64",
           "name": "RegistryTaskID",
@@ -13122,15 +13431,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略唯一id",
-          "example": "sub1",
-          "member": "string",
-          "name": "RuleId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "镜像id, 在添加白名单的时候使用",
           "example": "sha256:9aae1601d6832af6c69ef257f09f9d4e41646ed287a269cf62ac39d8d",
           "member": "string",
@@ -13155,6 +13455,15 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略唯一id",
+          "example": "sub1",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13165,7 +13474,7 @@
         {
           "disabled": false,
           "document": "异常进程策略详细信息",
-          "example": "{             \"RuleId\": \"6045892534b9a9000c4ae5ba\",             \"IsEnable\": true,             \"IsDefault\": false,             \"RuleName\": \"9999\",             \"ChildRules\": [                 {                     \"RuleId\": \"6020e81134b9a9000c50b56a\",                     \"RuleMode\": \"RULE_MODE_ALERT\",                     \"ProcessPath\": \"/bin/ptest\",                     \"RuleLevel\": \"MIDDLE\"                 },                 {                     \"RuleId\": \"60212ddd98dab16785dfeab2\",                     \"RuleMode\": \"RULE_MODE_ALERT\",                     \"ProcessPath\": \"/usr/bin/ps\",                     \"RuleLevel\": \"MIDDLE\"                 },                 {                     \"RuleId\": \"6021472934b9a9000c358fa3\",                     \"RuleMode\": \"RULE_MODE_RELEASE\",                     \"ProcessPath\": \"/usr/bin/top\",                     \"RuleLevel\": \"MIDDLE\"                 },                 {                     \"RuleId\": \"602f603d34b9a9000cb2b405\",                     \"RuleMode\": \"RULE_MODE_ALERT\",                     \"ProcessPath\": \"/usr/bin/tail\",                     \"RuleLevel\": \"MIDDLE\"                 },                 {                     \"RuleId\": \"60326e4434b9a9000c0897a8\",                     \"RuleMode\": \"RULE_MODE_ALERT\",                     \"ProcessPath\": \"/usr/bin/busybox\",                     \"RuleLevel\": \"MIDDLE\"                 },                 {                     \"RuleId\": \"60337df034b9a9000c2240c8\",                     \"RuleMode\": \"RULE_MODE_ALERT\",                     \"ProcessPath\": \"/usr/bin/sss\",                     \"RuleLevel\": \"MIDDLE\"                 }             ],             \"SystemChildRules\": [],             \"ImageIds\": [                 \"sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16********\"             ]         }",
+          "example": "无",
           "member": "AbnormalProcessRuleInfo",
           "name": "RuleDetail",
           "output_required": true,
@@ -13186,6 +13495,24 @@
       "members": [
         {
           "disabled": false,
+          "document": "排序字段",
+          "example": "FoundTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数,\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"2\"]}]\n<li>ImageName- String - 是否必填：否 - 镜像名称，模糊查找绑定了该镜像的规则 </li>\n<li>ImageId- String - 是否必填：否 - 镜像ID，模糊查找绑定了该镜像的规则 </li>\n<li>RuleType- String - 是否必填：否 - 策略类型过滤，取值：system（系统策略）、user（用户策略） </li>\n<li>RuleAction- String - 是否必填：否 - 执行动作过滤，取值：RULE_MODE_ALERT（告警）、RULE_MODE_HOLDUP（拦截） </li>\n",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "需要返回的数量，默认为10，最大值为100",
           "example": "10",
           "member": "uint64",
@@ -13204,28 +13531,10 @@
         },
         {
           "disabled": false,
-          "document": "过滤参数,\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"2\"]}]",
-          "example": "[{\"Name\":\"Status\",\"Values\":[\"2\"]}]",
-          "member": "RunTimeFilters",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "升序降序,asc desc",
           "example": "desc",
           "member": "string",
           "name": "Order",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "排序字段",
-          "example": "FoundTime",
-          "member": "string",
-          "name": "By",
           "required": false,
           "type": "string"
         }
@@ -13237,22 +13546,32 @@
       "members": [
         {
           "disabled": false,
+          "document": "异常进程策略扩展信息列表（含子规则内容和执行动作）。新前端优先使用此字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AbnormalProcessRuleExtSetItem",
+          "name": "RuleExtSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常进程策略信息列表",
+          "example": "无",
+          "member": "RuleBaseInfo",
+          "name": "RuleSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "事件总数量",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "异常进程策略信息列表",
-          "example": "[             {                 \"UpdateTime\": \"2022-01-01 00:00:00\",                 \"IsEnable\": true,                 \"RuleId\": \"10001\",                 \"EffectImageCount\": 1,                 \"EditUserName\": \"admin\",                 \"RuleName\": \"rule_name\",                 \"IsDefault\": true             }         ]",
-          "member": "RuleBaseInfo",
-          "name": "RuleSet",
-          "output_required": true,
-          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -13551,15 +13870,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略唯一id",
-          "example": "sub1",
-          "member": "string",
-          "name": "RuleId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "镜像id, 仅仅在事件加白的时候使用",
           "example": "sha256:9aae1601d6832af6c69ef257f09f9d4e41646ed287a269cf62ac39d8d",
           "member": "string",
@@ -13584,6 +13894,15 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略唯一id",
+          "example": "sub1",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13594,7 +13913,7 @@
         {
           "disabled": false,
           "document": "运行时策略详细信息",
-          "example": " {             \"RuleId\": \"6045899634b9a9000c4ae5bb\",             \"IsEnable\": true,             \"IsDefault\": false,             \"RuleName\": \"kkkkk\",             \"ChildRules\": [                 {                     \"RuleId\": \"603279ba34b9a9000c0897ae\",                     \"RuleMode\": \"RULE_MODE_HOLDUP\",                     \"ProcessPath\": \"/usr/bin/vi\",                     \"TargetFilePath\": \"*.txt\"                 },                 {                     \"RuleId\": \"60327a7b34b9a9000c0897af\",                     \"RuleMode\": \"RULE_MODE_ALERT\",                     \"ProcessPath\": \"/data/a.out\",                     \"TargetFilePath\": \"/tmp/test2.txt\"                 },                 {                     \"RuleId\": \"6033081114b9a9000c0897b0\",                     \"RuleMode\": \"RULE_MODE_HOLDUP\",                     \"ProcessPath\": \"/usr/bin/coreutils\",                     \"TargetFilePath\": \"/tmp/test.txt\"                 },                 {                     \"RuleId\": \"60337e1034b9a9000c2240c9\",                     \"RuleMode\": \"RULE_MODE_ALERT\",                     \"ProcessPath\": \"/data/a.out\",                     \"TargetFilePath\": \"/tmp/test.txt\"                 },                 {                     \"RuleId\": \"60361e8234b9a9000cf7a3ee\",                     \"RuleMode\": \"RULE_MODE_ALERT\",                     \"ProcessPath\": \"/usr/bin/vi\",                     \"TargetFilePath\": \"*.HTML\"                 },                 {                     \"RuleId\": \"603772d334b9a9000cd92ae8\",                     \"RuleMode\": \"RULE_MODE_ALERT\",                     \"ProcessPath\": \"/usr/bin/iv\",                     \"TargetFilePath\": \"*.HTML\"                 },                 {                     \"RuleId\": \"6045899634b9a9000c4ae5bc\",                     \"RuleMode\": \"RULE_MODE_RELEASE\",                     \"ProcessPath\": \"/usr/bin/vi\",                     \"TargetFilePath\": \"/1.txt\"                 }             ],             \"SystemChildRules\": [],             \"ImageIds\": [                 \"sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55\",                 \"sha256:e50c909a8df2b7c8b92a6e8730e210ebe98e5082871e66edd8ef4d90838cbd25\",                 \"sha256:298ec0e28760b8eb1aad79711dc29c19041c61d7cf342dd1f445e91f30500549\"             ]         }",
+          "example": "无",
           "member": "AccessControlRuleInfo",
           "name": "RuleDetail",
           "output_required": true,
@@ -13615,6 +13934,24 @@
       "members": [
         {
           "disabled": false,
+          "document": "排序字段",
+          "example": "FoundTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数,\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"2\"]}]\n<li>ImageName- String - 是否必填：否 - 镜像名称，模糊查找绑定了该镜像的规则 </li>\n<li>ImageId- String - 是否必填：否 - 镜像ID，模糊查找绑定了该镜像的规则 </li>\n<li>RuleType- String - 是否必填：否 - 策略类型过滤，取值：system（系统策略）、user（用户策略） </li>\n<li>RuleAction- String - 是否必填：否 - 执行动作过滤，取值：RULE_MODE_ALERT（告警）、RULE_MODE_HOLDUP（拦截） </li>\n",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "需要返回的数量，默认为10，最大值为100",
           "example": "10",
           "member": "uint64",
@@ -13633,28 +13970,10 @@
         },
         {
           "disabled": false,
-          "document": "过滤参数,\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"2\"]}]",
-          "example": "[{\"Name\":\"Status\",\"Values\":[\"2\"]}]",
-          "member": "RunTimeFilters",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "升序降序,asc desc",
           "example": "desc",
           "member": "string",
           "name": "Order",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "排序字段",
-          "example": "FoundTime",
-          "member": "string",
-          "name": "By",
           "required": false,
           "type": "string"
         }
@@ -13666,22 +13985,32 @@
       "members": [
         {
           "disabled": false,
+          "document": "访问控制策略扩展信息列表（含子规则内容和执行动作）。新前端优先使用此字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccessControlRuleExtSetItem",
+          "name": "RuleExtSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问控制策略信息列表",
+          "example": "无",
+          "member": "RuleBaseInfo",
+          "name": "RuleSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "事件总数量",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "访问控制策略信息列表",
-          "example": "[             {                 \"UpdateTime\": \"2022-01-01 00:00:00\",                 \"IsEnable\": true,                 \"RuleId\": \"10001\",                 \"EffectImageCount\": 1,                 \"EditUserName\": \"admin\",                 \"RuleName\": \"rule_name\",                 \"IsDefault\": true             }         ]",
-          "member": "RuleBaseInfo",
-          "name": "RuleSet",
-          "output_required": true,
-          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -17740,8 +18069,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "开关",
-          "example": "True",
+          "document": "<p>开关</p>",
+          "example": "true",
           "member": "bool",
           "name": "Enable",
           "output_required": true,
@@ -17750,7 +18079,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描时刻(完整时间;后端按0时区解析时分秒)",
+          "document": "<p>扫描时刻(完整时间;后端按0时区解析时分秒)</p>",
           "example": "16:40",
           "member": "string",
           "name": "ScanTime",
@@ -17760,7 +18089,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描间隔",
+          "document": "<p>扫描间隔</p>",
           "example": "7",
           "member": "uint64",
           "name": "ScanPeriod",
@@ -17770,8 +18099,8 @@
         },
         {
           "disabled": false,
-          "document": "扫描木马",
-          "example": "True",
+          "document": "<p>扫描木马</p>",
+          "example": "true",
           "member": "bool",
           "name": "ScanVirus",
           "output_required": true,
@@ -17780,8 +18109,8 @@
         },
         {
           "disabled": false,
-          "document": "扫描敏感信息",
-          "example": "True",
+          "document": "<p>扫描敏感信息</p>",
+          "example": "true",
           "member": "bool",
           "name": "ScanRisk",
           "output_required": true,
@@ -17790,8 +18119,8 @@
         },
         {
           "disabled": false,
-          "document": "扫描漏洞",
-          "example": "False",
+          "document": "<p>扫描漏洞</p>",
+          "example": "false",
           "member": "bool",
           "name": "ScanVul",
           "output_required": true,
@@ -17800,8 +18129,8 @@
         },
         {
           "disabled": true,
-          "document": "扫描全部镜像",
-          "example": "False",
+          "document": "<p>扫描全部镜像</p>",
+          "example": "false",
           "member": "bool",
           "name": "All",
           "output_required": true,
@@ -17810,7 +18139,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义扫描镜像",
+          "document": "<p>自定义扫描镜像</p>",
           "example": "[\"sha256:1bcdd560259ccde678b09eff49dfe004bc100f223f7b92bd0a1ad40d0031****\"]",
           "member": "string",
           "name": "Images",
@@ -17820,8 +18149,8 @@
         },
         {
           "disabled": false,
-          "document": "镜像是否存在运行中的容器",
-          "example": "False",
+          "document": "<p>镜像是否存在运行中的容器</p>",
+          "example": "false",
           "member": "bool",
           "name": "ContainerRunning",
           "output_required": false,
@@ -17830,7 +18159,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描",
+          "document": "<p>扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描 3:集群筛选扫描</p>",
           "example": "0",
           "member": "uint64",
           "name": "ScanScope",
@@ -17840,7 +18169,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描结束时间 02:00 时分",
+          "document": "<p>扫描结束时间 02:00 时分</p>",
           "example": "17:00",
           "member": "string",
           "name": "ScanEndTime",
@@ -17850,7 +18179,7 @@
         },
         {
           "disabled": false,
-          "document": "排除的扫描镜像",
+          "document": "<p>排除的扫描镜像</p>",
           "example": "[\"sha256:ac6561363190fcbf423909a5b6d6dbe0c02ea8125c8857bfa455c64254db****\"]",
           "member": "string",
           "name": "ExcludeImages",
@@ -17860,7 +18189,7 @@
         },
         {
           "disabled": false,
-          "document": "最后一次扫描时间",
+          "document": "<p>最后一次扫描时间</p>",
           "example": "2024-10-30 16:4****",
           "member": "string",
           "name": "LastScanTime",
@@ -17870,12 +18199,22 @@
         },
         {
           "disabled": false,
-          "document": "扫描结果(Success|InsufficientLicense|ImageNeedIsEmpty|InternalError)",
+          "document": "<p>扫描结果(Success|InsufficientLicense|ImageNeedIsEmpty|InternalError)</p>",
           "example": "Success",
           "member": "string",
           "name": "ScanResult",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "[\"cls-1txt\"]",
+          "member": "string",
+          "name": "ClusterIDs",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -23761,8 +24100,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>RuleType - string  - 是否必填: 否 -规则类型</li>\n<li>Status - string  - 是否必填: 否 -状态</li>",
-          "example": "[{\"ExactMatch\": false, \"Name\": \"RuleType \", \"Values\": [\"1\"]}]",
+          "document": "排序字段。\n<li>UpdateTime - string  - 是否必填: 否 -最后更新时间</li>\n<li>EffectClusterCount - string  - 是否必填: 否 -影响集群数</li>",
+          "example": "UpdateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>RuleType - string  - 是否必填: 否 -规则类型</li>\n<li>Status - string  - 是否必填: 否 -状态</li>\n<li>RuleName - string  - 是否必填: 否 -规则名称(模糊查询)</li>\n<li>ClusterName - string  - 是否必填: 否 -集群名称，模糊查找绑定了该集群的规则（含全集群规则）</li>\n<li>ClusterID - string  - 是否必填: 否 -集群ID，模糊查找绑定了该集群的规则（含全集群规则）</li>\n<li>RuleAction - string  - 是否必填: 否 -执行动作过滤，取值：RULE_MODE_ALERT（告警）、RULE_MODE_HOLDUP（拦截）</li>",
+          "example": "无",
           "member": "RunTimeFilters",
           "name": "Filters",
           "required": false,
@@ -23794,15 +24142,6 @@
           "name": "Order",
           "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "排序字段。\n<li>UpdateTime - string  - 是否必填: 否 -最后更新时间</li>\n<li>EffectClusterCount - string  - 是否必填: 否 -影响集群数</li>",
-          "example": "UpdateTime",
-          "member": "string",
-          "name": "By",
-          "required": false,
-          "type": "string"
         }
       ],
       "type": "object"
@@ -23813,7 +24152,7 @@
         {
           "disabled": false,
           "document": "规则列表",
-          "example": "[{\"EffectClusterCount\": 4, \"OprUin\": \"\", \"RuleID\": \"SYSTEM\", \"RuleName\": \"\\u7cfb\\u7edf\\u89c4\\u5219\", \"RuleType\": \"SYSTEM_DEFINED_****\", \"Status\": true, \"UpdateTime\": \"\"}]",
+          "example": "无",
           "member": "K8sApiAbnormalRuleListItem",
           "name": "List",
           "output_required": true,
@@ -37705,35 +38044,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则名称",
-          "example": "rulename1",
-          "member": "string",
-          "name": "RuleName",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "状态",
-          "example": "true",
+          "document": "是否所有集群生效",
+          "example": "false",
           "member": "bool",
-          "name": "Status",
+          "name": "EffectAllCluster",
           "output_required": true,
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "规则信息列表",
-          "example": "[{\"Scope\":\"ANONYMOUS_ACCESS\",\"Action\":\"RULE_MODE_ALERT\",\"RiskLevel\":\"NOTICE\",\"Status\":true,\"IsDelete\":true}]",
-          "member": "K8sApiAbnormalRuleScopeInfo",
-          "name": "RuleInfoList",
-          "output_required": true,
-          "required": true,
-          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -37749,6 +38066,28 @@
         },
         {
           "disabled": false,
+          "document": "规则信息列表",
+          "example": "无",
+          "member": "K8sApiAbnormalRuleScopeInfo",
+          "name": "RuleInfoList",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "rulename1",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "规则类型\nRT_SYSTEM 系统规则\nRT_USER 用户自定义",
           "example": "USER_DEFINED_RULE",
           "member": "string",
@@ -37760,10 +38099,10 @@
         },
         {
           "disabled": false,
-          "document": "是否所有集群生效",
-          "example": "false",
+          "document": "状态",
+          "example": "true",
           "member": "bool",
-          "name": "EffectAllCluster",
+          "name": "Status",
           "output_required": true,
           "required": true,
           "type": "bool",
@@ -37788,6 +38127,46 @@
       "members": [
         {
           "disabled": false,
+          "document": "是否全部集群生效。true表示全部集群生效，false表示仅指定集群生效",
+          "example": "true",
+          "member": "bool",
+          "name": "EffectAllCluster",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "受影响集群总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "EffectClusterCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "编辑账号",
+          "example": "12784687",
+          "member": "string",
+          "name": "OprUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则组中所有执行动作的去重列表。当前黑名单仅包含 RULE_MODE_ALERT（告警）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"RULE_MODE_ALERT\"]",
+          "member": "string",
+          "name": "RuleActions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "规则ID",
           "example": "1",
           "member": "string",
@@ -37795,6 +38174,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子规则内容列表，从 rule_details JSON 反序列化\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "K8sApiAbnormalRuleScopeInfo",
+          "name": "RuleInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -37818,12 +38207,12 @@
         },
         {
           "disabled": false,
-          "document": "受影响集群总数",
-          "example": "10",
-          "member": "uint64",
-          "name": "EffectClusterCount",
+          "document": "状态",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
           "output_required": true,
-          "type": "int",
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -37835,26 +38224,6 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "编辑账号",
-          "example": "12784687",
-          "member": "string",
-          "name": "OprUin",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "状态",
-          "example": "true",
-          "member": "bool",
-          "name": "Status",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -37864,18 +38233,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>范围<br>系统事件:<br>ANONYMOUS_ACCESS: 匿名访问<br>ABNORMAL_UA_REQ: 异常UA请求<br>ANONYMOUS_ABNORMAL_PERMISSION: 匿名用户权限异动<br>GET_CREDENTIALS: 凭据信息获取<br>MOUNT_SENSITIVE_PATH: 敏感路径挂载<br>COMMAND_RUN: 命令执行<br>PRIVILEGE_CONTAINER: 特权容器<br>EXCEPTION_CRONTAB_TASK: 异常定时任务<br>STATICS_POD: 静态pod创建<br>ABNORMAL_CREATE_POD: 异常pod创建<br>USER_DEFINED: 用户自定义</p>",
-          "example": "{\\\"RequestURI\\\":\\\"/apis/cowsajhhoa.k8s.io/v\\\",\\\"RequestUser\\\":\\\"“name”:”sanpasahsad-contaosaer-leader”）\\\\\\\"\\\",\\\"ResponseStatusCode\\\":\\\"200\\\",\\\"SourceIPS\\\":\\\"10.255.0.43\\\",\\\"UserAgent\\\":\\\"snapshot-controller\\\",\\\"Verb\\\":\\\"update\\\"}",
-          "member": "string",
-          "name": "Scope",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>动作(RULE_MODE_ALERT: 告警 RULE_MODE_RELEASE:放行)</p>",
+          "document": "<p>执行动作。黑名单规则仅支持 RULE_MODE_ALERT（告警），不再支持 RULE_MODE_RELEASE/PASS（放行）。放行请使用白名单接口 ModifyK8sApiAbnormalWhitelist</p>",
           "example": "RULE_MODE_ALERT",
           "member": "string",
           "name": "Action",
@@ -37886,24 +38244,13 @@
         },
         {
           "disabled": false,
-          "document": "<p>威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示</p>",
-          "example": "NOTICE",
+          "document": "<p>范围<br>系统事件:<br>ANONYMOUS_ACCESS: 匿名访问<br>ABNORMAL_UA_REQ: 异常UA请求<br>ANONYMOUS_ABNORMAL_PERMISSION: 匿名用户权限异动<br>GET_CREDENTIALS: 凭据信息获取<br>MOUNT_SENSITIVE_PATH: 敏感路径挂载<br>COMMAND_RUN: 命令执行<br>PRIVILEGE_CONTAINER: 特权容器<br>EXCEPTION_CRONTAB_TASK: 异常定时任务<br>STATICS_POD: 静态pod创建<br>ABNORMAL_CREATE_POD: 异常pod创建<br>USER_DEFINED: 用户自定义</p>",
+          "example": "{\"Verb\":\"update\",\"RequestURI\":\"/apis/apps/v1\",\"SourceIPS\":\"10.255.0.43\",\"UserAgent\":\"snapshot-controller\"}",
           "member": "string",
-          "name": "RiskLevel",
+          "name": "Scope",
           "output_required": true,
-          "required": false,
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>开关状态(true:开 false:关) 适用于系统规则</p>",
-          "example": "true",
-          "member": "bool",
-          "name": "Status",
-          "output_required": true,
-          "required": false,
-          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -37919,6 +38266,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示</p>",
+          "example": "NOTICE",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>规则类型对应中文</p>",
           "example": "可疑容器创建",
           "member": "string",
@@ -37926,6 +38284,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开关状态(true:开 false:关) 适用于系统规则</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -39048,7 +39417,7 @@
         {
           "disabled": false,
           "document": "规则详情",
-          "example": "{     \"Status\": true,     \"RuleInfoList\": [         {             \"Action\": \"RULE_MODE_ALERT\",             \"IsDelete\": false,             \"RiskLevel\": \"NOTICE\",             \"Scope\": \"{\\\"RequestURI\\\":\\\"/apis/cowsajhhoa.k8s.io/v\\\",\\\"RequestUser\\\":\\\"“name”:”sanpasahsad-contaosaer-leader”）\\\\\\\"\\\",\\\"ResponseStatusCode\\\":\\\"200\\\",\\\"SourceIPS\\\":\\\"10.255.0.43\\\",\\\"UserAgent\\\":\\\"snapshot-controller\\\",\\\"Verb\\\":\\\"update\\\"}\",             \"Status\": true         }     ],     \"EffectClusterIDSet\": [      ],     \"RuleID\": \"d1b9dbe2-f78d-491a-b514-f0aa19d8ae4b\",     \"RuleType\": \"USER_DEFINED_RULE\",     \"EffectAllCluster\": true,     \"RuleName\": \"rulename-test\" }",
+          "example": "无",
           "member": "K8sApiAbnormalRuleInfo",
           "name": "RuleInfo",
           "required": true,
@@ -43291,12 +43660,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "true: 默认策略，false:自定义策略",
-          "example": "true",
-          "member": "bool",
-          "name": "IsDefault",
+          "document": "编辑用户名称",
+          "example": "2345435634",
+          "member": "string",
+          "name": "EditUserName",
           "output_required": true,
-          "type": "bool",
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -43311,20 +43680,40 @@
         },
         {
           "disabled": false,
-          "document": "策略Id",
-          "example": "sub1",
-          "member": "string",
-          "name": "RuleId",
+          "document": "true: 默认策略，false:自定义策略",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDefault",
           "output_required": true,
-          "type": "string",
+          "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略更新时间, 存在为空的情况",
-          "example": "2020-12-1 12:00:00",
+          "document": "是否为全部镜像规则。true表示对所有镜像生效",
+          "example": "false",
+          "member": "bool",
+          "name": "IsGlobal",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "true: 策略启用，false：策略禁用",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEnable",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略Id",
+          "example": "sub1",
           "member": "string",
-          "name": "UpdateTime",
+          "name": "RuleId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -43341,22 +43730,12 @@
         },
         {
           "disabled": false,
-          "document": "编辑用户名称",
-          "example": "2345435634",
+          "document": "策略更新时间, 存在为空的情况",
+          "example": "2020-12-1 12:00:00",
           "member": "string",
-          "name": "EditUserName",
+          "name": "UpdateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "true: 策略启用，false：策略禁用",
-          "example": "true",
-          "member": "bool",
-          "name": "IsEnable",
-          "output_required": true,
-          "type": "bool",
           "value_allowed_null": false
         }
       ],

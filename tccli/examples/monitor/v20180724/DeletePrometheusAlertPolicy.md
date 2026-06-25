@@ -8,7 +8,7 @@ Input:
 tccli monitor DeletePrometheusAlertPolicy --cli-unfold-argument  \
     --InstanceId prom-kjshgr \
     --AlertIds alert-jsbgvr \
-    --Names test
+    --Names CPUUsage
 ```
 
 Output: 

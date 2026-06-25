@@ -76,7 +76,33 @@ Output:
 }
 ```
 
-**Example 4: 参与人不在链接中， 无法生成链接报错**
+**Example 4: 创建企业用户动态领取链接，指定要求全部领取签署**
+
+发起流程后，给其中的B端动态签署方创建领取链接，并且要求必须全部领取签署。
+
+Input: 
+
+```
+tccli ess CreateOrganizationBatchSignUrl --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UXXXzjEwg0vjoimj \
+    --Agent.ProxyOrganizationId  \
+    --FlowIds yDC5yUUntf6vnnUxxBTyJ8Ps0WGqAuHL yDC5yUUntf6fccUEgcyeHwPz4wjnDSI4 \
+    --RecipientIds yDC5yUUntf6vn0UxxBTyJvfv3Xlckcye yDC5yUUntf6mdgUEgcyeHCpCDmDjbsQJ \
+    --DynamicSignOption.DynamicReceiveType 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ExpiredTime": 1706100107,
+        "RequestId": "s1705495307288609862",
+        "SignUrl": "https://embed.test.qian.tencent.cn/contract-sign?embed=1&expiredOn=1706100107&code=yDCNBUUckpvlibz6UEMbkWeSzl6YurH0&shortKey=yDCNBUzgvS93aBhXs3ae&channel=TENCENTCLOUD"
+    }
+}
+```
+
+**Example 5: 参与人不在链接中， 无法生成链接报错**
 
 参与人不在链接中， 无法生成链接报错
 
@@ -104,7 +130,7 @@ Output:
 }
 ```
 
-**Example 5: 基于RecipientIds 生成他方签署链接**
+**Example 6: 基于RecipientIds 生成他方签署链接**
 
 
 
@@ -132,7 +158,7 @@ Output:
 }
 ```
 
-**Example 6: 根据员工UserId获取批量签署链接**
+**Example 7: 根据员工UserId获取批量签署链接**
 
 根据员工UserId获取批量签署链接
 
@@ -157,7 +183,7 @@ Output:
 }
 ```
 
-**Example 7: 根据员工姓名和手机号获取批量签署链接**
+**Example 8: 根据员工姓名和手机号获取批量签署链接**
 
 根据员工姓名和手机号获取批量签署链接
 
@@ -183,7 +209,7 @@ Output:
 }
 ```
 
-**Example 8: 获取合同组签署链接**
+**Example 9: 获取合同组签署链接**
 
 
 
@@ -197,32 +223,6 @@ tccli ess CreateOrganizationBatchSignUrl --cli-unfold-argument  \
     --UserId yDRCLUUgygq2xun5UXXXzjEwg0vjoimj \
     --Name 张三 \
     --Mobile 18888888888
-```
-
-Output: 
-```
-{
-    "Response": {
-        "ExpiredTime": 1706100107,
-        "RequestId": "s1705495307288609862",
-        "SignUrl": "https://embed.test.qian.tencent.cn/contract-sign?embed=1&expiredOn=1706100107&code=yDCNBUUckpvlibz6UEMbkWeSzl6YurH0&shortKey=yDCNBUzgvS93aBhXs3ae&channel=TENCENTCLOUD"
-    }
-}
-```
-
-**Example 9: 创建企业用户动态领取链接，指定要求全部领取签署**
-
-发起流程后，给其中的B端动态签署方创建领取链接，并且要求必须全部领取签署。
-
-Input: 
-
-```
-tccli ess CreateOrganizationBatchSignUrl --cli-unfold-argument  \
-    --Operator.UserId yDRCLUUgygq2xun5UXXXzjEwg0vjoimj \
-    --Agent.ProxyOrganizationId  \
-    --FlowIds yDC5yUUntf6vnnUxxBTyJ8Ps0WGqAuHL yDC5yUUntf6fccUEgcyeHwPz4wjnDSI4 \
-    --RecipientIds yDC5yUUntf6vn0UxxBTyJvfv3Xlckcye yDC5yUUntf6mdgUEgcyeHCpCDmDjbsQJ \
-    --DynamicSignOption.DynamicReceiveType 1
 ```
 
 Output: 

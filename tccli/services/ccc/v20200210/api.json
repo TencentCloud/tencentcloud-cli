@@ -1165,6 +1165,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点跳转的原因，仅画布为灵活模式时有值</p>",
+          "example": "用户回复“有的”，明确表达了购车意向，提取状态“购车意向”为“有意向购车”。根据条件匹配，流转至节点1（询问车型）。话术承接用户的肯定回答，并询问具体车型。",
+          "member": "string",
+          "name": "TraverseReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

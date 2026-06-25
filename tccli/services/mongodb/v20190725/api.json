@@ -70,6 +70,13 @@
       "output": "CreateLogDownloadTaskResponse",
       "status": "online"
     },
+    "CreateSlowLogPatternDownloadTask": {
+      "document": "创建慢日志统计下载任务",
+      "input": "CreateSlowLogPatternDownloadTaskRequest",
+      "name": "创建慢日志统计下载任务",
+      "output": "CreateSlowLogPatternDownloadTaskResponse",
+      "status": "online"
+    },
     "DeleteAccountUser": {
       "document": "本接口（DeleteAccountUser）用于删除实例的自定义账号。",
       "input": "DeleteAccountUserRequest",
@@ -180,6 +187,13 @@
       "input": "DescribeDBInstanceDealRequest",
       "name": "获取数据库实例订单详情",
       "output": "DescribeDBInstanceDealResponse",
+      "status": "online"
+    },
+    "DescribeDBInstanceLogToCLS": {
+      "document": "获取日志投递的相关配置信息",
+      "input": "DescribeDBInstanceLogToCLSRequest",
+      "name": "查询实例日志投递CLS的配置",
+      "output": "DescribeDBInstanceLogToCLSResponse",
       "status": "online"
     },
     "DescribeDBInstanceNamespace": {
@@ -364,6 +378,13 @@
       "output": "FlushInstanceRouterConfigResponse",
       "status": "online"
     },
+    "IncreaseDBInstanceConnectionLimit": {
+      "document": "终止实例流程",
+      "input": "IncreaseDBInstanceConnectionLimitRequest",
+      "name": "提升实例最大连接数",
+      "output": "IncreaseDBInstanceConnectionLimitResponse",
+      "status": "online"
+    },
     "InquirePriceCreateDBInstances": {
       "document": "本接口（InquirePriceCreateDBInstances）用于创建数据库实例询价。本接口参数中必须传入region参数，否则无法通过校验。本接口仅允许针对购买限制范围内的实例配置进行询价。",
       "input": "InquirePriceCreateDBInstancesRequest",
@@ -418,6 +439,13 @@
       "input": "ModifyBackupExpireTimeRequest",
       "name": "修改备份过期时间",
       "output": "ModifyBackupExpireTimeResponse",
+      "status": "online"
+    },
+    "ModifyDBInstanceLogToCLS": {
+      "document": "开启或关闭MongoDB慢日志、错误日志、操作日志投递CLS",
+      "input": "ModifyDBInstanceLogToCLSRequest",
+      "name": "开启或关闭日志投递CLS",
+      "output": "ModifyDBInstanceLogToCLSResponse",
       "status": "online"
     },
     "ModifyDBInstanceNetworkAddress": {
@@ -481,6 +509,13 @@
       "input": "OpenAuditServiceRequest",
       "name": "开通审计",
       "output": "OpenAuditServiceResponse",
+      "status": "online"
+    },
+    "PromoteDBInstanceToActive": {
+      "document": "本接口（PromoteDBInstanceToActive）用于灾备实例转正",
+      "input": "PromoteDBInstanceToActiveRequest",
+      "name": "灾备实例转正",
+      "output": "PromoteDBInstanceToActiveResponse",
       "status": "online"
     },
     "RenameInstance": {
@@ -1656,7 +1691,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
+          "document": "<p>实例 ID。例如：cmgo-p8vn****。请登录 <a href=\"https://console.cloud.tencent.com/mongodb\">MongoDB 控制台</a>在实例列表复制实例 ID。</p>",
           "example": "cmgo-ayxpky6l",
           "member": "string",
           "name": "InstanceId",
@@ -1665,7 +1700,7 @@
         },
         {
           "disabled": false,
-          "document": "设置备份方式。\n- 0：逻辑备份。\n- 1：物理备份。\n- 3：快照备份。\n**说明**:\n1. 通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。\n2. 实例开通存储加密，则备份方式不能为物理备份。",
+          "document": "<p>设置备份方式。</p><ul><li>0：逻辑备份。</li><li>1：物理备份。</li><li>3：快照备份。<br><strong>说明</strong>:</li><li>通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。</li><li>实例开通存储加密，则备份方式不能为物理备份。</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "BackupMethod",
@@ -1674,12 +1709,21 @@
         },
         {
           "disabled": false,
-          "document": "备份备注信息。",
+          "document": "<p>备份备注信息。</p>",
           "example": "remarkInfo",
           "member": "string",
           "name": "BackupRemark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>保存天数，-2-永久保留（不定期保留），-1-跟随长期保留时长，0-按配置天数，1~7300-自定义天数（最长20年）</p><p>单位：天</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "BackupRetentionDays",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1689,7 +1733,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询备份流程的状态。",
+          "document": "<p>查询备份流程的状态。</p>",
           "example": "4773",
           "member": "string",
           "name": "AsyncRequestId",
@@ -2548,6 +2592,79 @@
           "name": "Status",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSlowLogPatternDownloadTaskRequest": {
+      "document": "CreateSlowLogPatternDownloadTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID。请登录 <a href=\"https://console.cloud.tencent.com/mongodb\">MongoDB 控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "cmgo-dlm2vwnd",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>采集慢日志开始时间</p>",
+          "example": "2026-05-27 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>采集慢日志结束时间</p>",
+          "example": "2026-05-27 14:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>慢日志采集阈值</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "ThresholdMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>慢日志类型</p>",
+          "example": "[\"find\"]",
+          "member": "string",
+          "name": "Commands",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSlowLogPatternDownloadTaskResponse": {
+      "document": "CreateSlowLogPatternDownloadTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>下载任务状态</p>",
+          "example": "[0]",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -4021,6 +4138,72 @@
           "name": "InstanceId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceLogToCLSRequest": {
+      "document": "DescribeDBInstanceLogToCLS请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定实例ID。例如：cmgo-p8vn****。请登录 MongoDB 控制台在实例列表复制实例 ID。</p>",
+          "example": "cmgo-2gdv46zn",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CLS服务所在地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CLSRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceLogToCLSResponse": {
+      "document": "DescribeDBInstanceLogToCLS返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例错误日志投递配置</p>",
+          "example": "无",
+          "member": "LogToCLSConfig",
+          "name": "ErrorLog",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例慢日志投递配置</p>",
+          "example": "无",
+          "member": "LogToCLSConfig",
+          "name": "SlowLog",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例操作日志投递配置</p>",
+          "example": "无",
+          "member": "LogToCLSConfig",
+          "name": "OperationLog",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -5890,6 +6073,23 @@
       ],
       "type": "object"
     },
+    "IncreaseDBInstanceConnectionLimitRequest": {
+      "document": "IncreaseDBInstanceConnectionLimit请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "IncreaseDBInstanceConnectionLimitResponse": {
+      "document": "IncreaseDBInstanceConnectionLimit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InquirePriceCreateDBInstancesRequest": {
       "document": "InquirePriceCreateDBInstances请求参数结构体",
       "members": [
@@ -7554,6 +7754,52 @@
       ],
       "usage": "out"
     },
+    "LogToCLSConfig": {
+      "document": "日志投递CLS配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>CLS服务所在地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CLSRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递状态打开或者关闭</p>",
+          "example": "OFF",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CLS日志集ID</p>",
+          "example": "64ae0139-0621-4e59-aba7-f60cd2264ab6",
+          "member": "string",
+          "name": "LogSetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志主题ID</p>",
+          "example": "6af6a321-879e-415b-b612-64dad8a3c571",
+          "member": "string",
+          "name": "LogTopicId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyAuditServiceRequest": {
       "document": "ModifyAuditService请求参数结构体",
       "members": [
@@ -7654,6 +7900,96 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceLogToCLSRequest": {
+      "document": "ModifyDBInstanceLogToCLS请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定实例ID。例如：cmgo-p8vn****。请登录 MongoDB 控制台在实例列表复制实例 ID。</p>",
+          "example": "cmgo-2gdv46zn",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型。MongoDB-ErrorLog：错误日志，MongoDB-SlowLog：慢日志，MongoDB-OperationLog：操作日志</p>",
+          "example": "MongoDB-SlowLog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递状态。ON：开启，OFF：关闭。</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要创建日志集。默认为 false。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "CreateLogset",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要创建日志集时为日志集名称；选择已有日志集时，为日志集 ID。默认为空。 说明：1. 当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。2.  当参数 CreateLogset 的值为 true 时，Logset 填日志集命名，例如 my_test，否则需要填日志集 id，例如 6adsaw-****。</p>",
+          "example": "64ae****-****-4e59-aba7-f60cd2264ab6",
+          "member": "string",
+          "name": "Logset",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要创建日志主题。默认为 false。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "CreateLogTopic",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要创建日志主题时为日志主题名称；选择已有日志主题时，为日志主题 ID。默认为空。 说明：1. 当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。2. 2.  当参数 CreateLogTopic 的值为 true 时，LogTopic 填日志主题命名，例如 my_test，否则需要填日志主题id，例如 6adsaw-****。</p>",
+          "example": "6a*6a*21-****-****-b612-64dad8a3c571",
+          "member": "string",
+          "name": "LogTopic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CLS 所在地域，不填则默认为 Region 的参数值。</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CLSRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceLogToCLSResponse": {
+      "document": "ModifyDBInstanceLogToCLS返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8573,6 +8909,52 @@
       ],
       "usage": "both"
     },
+    "PromoteDBInstanceToActiveRequest": {
+      "document": "PromoteDBInstanceToActive请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "灾备实例id",
+          "example": "cmgo-a7bb6vd7",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主实例id",
+          "example": "cmgo-ggh7rpz5",
+          "member": "string",
+          "name": "MasterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PromoteDBInstanceToActiveResponse": {
+      "document": "PromoteDBInstanceToActive返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "10001",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RemoveNodeList": {
       "document": "修改实例节点详情。",
       "members": [
@@ -9328,7 +9710,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定实例ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。\n",
+          "document": "<p>指定实例ID。例如：cmgo-p8vn****。请登录 <a href=\"https://console.cloud.tencent.com/mongodb\">MongoDB 控制台</a>在实例列表复制实例 ID。</p>",
           "example": "cmgo-7pjedvz7",
           "member": "string",
           "name": "InstanceId",
@@ -9337,8 +9719,8 @@
         },
         {
           "disabled": false,
-          "document": "维护时间窗开始时间。取值范围为\"00:00-23:00\"的任意整点或半点，如00:00或00:30。",
-          "example": "\"04:00\"",
+          "document": "<p>维护时间窗开始时间。取值范围为&quot;00:00-23:00&quot;的任意整点或半点，如00:00或00:30。</p>",
+          "example": "04:00",
           "member": "string",
           "name": "MaintenanceStart",
           "required": true,
@@ -9346,11 +9728,20 @@
         },
         {
           "disabled": false,
-          "document": "维护时间窗结束时间。\n- 取值范围为\"00:00-23:00\"的任意整点或半点，维护时间持续时长最小为30分钟，最大为3小时。\n- 结束时间务必是基于开始时间向后的时间。",
-          "example": "\"05:00\"",
+          "document": "<p>维护时间窗结束时间。</p><ul><li>取值范围为&quot;00:00-23:00&quot;的任意整点或半点，维护时间持续时长最小为30分钟，最大为3小时。</li><li>结束时间务必是基于开始时间向后的时间。</li></ul>",
+          "example": "05:00",
           "member": "string",
           "name": "MaintenanceEnd",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定每周内维护时间窗口的具体日期。  格式：请输入 1-7 之间的数字代表周一到周日（例如：1 代表周一），多个日期请用英文逗号 , 分隔。 示例：输入 1,3,5 表示维护窗口周期在每周的周一、周三、周五。 默认值：不设置，则默认为全周期 (1,2,3,4,5,6,7)。</p>",
+          "example": "1,2,3,4,5,6,7",
+          "member": "string",
+          "name": "MaintenanceDays",
+          "required": false,
           "type": "string"
         }
       ],

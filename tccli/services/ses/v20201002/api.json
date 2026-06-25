@@ -3707,7 +3707,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日期",
+          "document": "<p>日期</p>",
           "example": "2024-08-08",
           "member": "date",
           "name": "SendDate",
@@ -3717,7 +3717,7 @@
         },
         {
           "disabled": false,
-          "document": "邮件请求数量",
+          "document": "<p>邮件请求数量</p>",
           "example": "2",
           "member": "uint64",
           "name": "RequestCount",
@@ -3727,7 +3727,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云通过数量",
+          "document": "<p>腾讯云通过数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "AcceptedCount",
@@ -3737,7 +3737,7 @@
         },
         {
           "disabled": false,
-          "document": "送达数量",
+          "document": "<p>送达数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "DeliveredCount",
@@ -3747,7 +3747,7 @@
         },
         {
           "disabled": false,
-          "document": "打开邮件的用户数量，根据收件人去重",
+          "document": "<p>打开邮件总次数</p>",
           "example": "0",
           "member": "uint64",
           "name": "OpenedCount",
@@ -3757,7 +3757,7 @@
         },
         {
           "disabled": false,
-          "document": "点击了邮件中的链接数量用户数量",
+          "document": "<p>点击了邮件中的链接数量用户数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "ClickedCount",
@@ -3767,7 +3767,7 @@
         },
         {
           "disabled": false,
-          "document": "退信数量",
+          "document": "<p>退信数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "BounceCount",
@@ -3777,7 +3777,7 @@
         },
         {
           "disabled": false,
-          "document": "取消订阅的用户数量",
+          "document": "<p>取消订阅的用户数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "UnsubscribeCount",

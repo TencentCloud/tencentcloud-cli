@@ -2558,6 +2558,28 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义镜像</p>",
+          "example": "无",
+          "member": "ImageInfoV2",
+          "name": "ImageInfoV2",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建动态实例参数</p>",
+          "example": "无",
+          "member": "DynamicInstanceForm",
+          "name": "DynamicInstanceForm",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3407,6 +3429,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>加入节点池的模式</p><p>枚举值：</p><ul><li>Inherit： 从节点池继承配置</li><li>OnlyJoin： 仅加入节点池，不继承配置</li></ul><p>默认值：Inherit</p>",
+          "example": "Inherit",
+          "member": "string",
+          "name": "NodePoolJoinMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3831,6 +3864,15 @@
           "example": "无",
           "member": "ContainerExtraConf",
           "name": "ContainerExtraConf",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>spark监控</p>",
+          "example": "无",
+          "member": "EnableSparkAppMonitorInfo",
+          "name": "EnableSparkAppMonitorInfo",
           "required": false,
           "type": "object"
         }
@@ -4831,55 +4873,98 @@
       "usage": "both"
     },
     "CustomMetaDBInfo": {
-      "document": "用户Hive-MetaDB信息",
+      "document": "用户自定义数据库信息",
       "members": [
         {
           "disabled": false,
-          "document": "自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname",
+          "document": "<p>自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname</p>",
           "example": "jdbc:mysql://ip:port/hive",
           "member": "string",
           "name": "MetaDataJdbcUrl",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义MetaDB用户名",
+          "document": "<p>自定义MetaDB用户名</p>",
           "example": "userName",
           "member": "string",
           "name": "MetaDataUser",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义MetaDB密码",
+          "document": "<p>自定义MetaDB密码</p>",
           "example": "pwd",
           "member": "string",
           "name": "MetaDataPass",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "hive共享元数据库类型。取值范围：\n<li>EMR_DEFAULT_META：表示集群默认创建</li>\n<li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li>\n<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
+          "document": "<p>hive共享元数据库类型。取值范围：</p><li>EMR_DEFAULT_META：表示集群默认创建</li><li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li><li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
           "example": "EMR_DEFAULT_META",
           "member": "string",
           "name": "MetaType",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "EMR-MetaDB实例",
+          "document": "<p>EMR-MetaDB实例</p>",
           "example": "MetaDB-example",
           "member": "string",
           "name": "UnifyMetaInstanceId",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组件</p>",
+          "example": "[\"ranger\"]",
+          "member": "string",
+          "name": "Components",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>metadb版本</p>",
+          "example": "mysql8",
+          "member": "string",
+          "name": "DefaultMetaVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CDBId</p>",
+          "example": "emr-onniypag",
+          "member": "string",
+          "name": "LinkInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CustomMetaInfo": {
       "document": "用户自建Hive-MetaDB信息",
@@ -5309,26 +5394,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "共用组件名",
+          "document": "共用组件名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zookeeper",
           "member": "string",
           "name": "ServiceName",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "共用组件集群",
+          "document": "共用组件集群\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "emr-123",
           "member": "string",
           "name": "InstanceId",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "DeployYarnConfRequest": {
       "document": "DeployYarnConf请求参数结构体",
@@ -6287,6 +6374,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>镜像信息</p>",
+          "example": "无",
+          "member": "ImageInfoV2",
+          "name": "ImageInfoV2",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -6300,7 +6397,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "emr 集群 id",
+          "document": "<p>emr 集群 id</p>",
           "example": "emr-3jojf892",
           "member": "string",
           "name": "InstanceId",
@@ -6315,10 +6412,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "RayCluster 集群列表",
+          "document": "<p>RayCluster 集群列表</p>",
           "example": "无",
           "member": "RayCluster",
           "name": "DynamicInstanceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务访问url</p>",
+          "example": "无",
+          "member": "WebUIInfo",
+          "name": "WebUIInfos",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -10272,352 +10379,481 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>DynamicInstance名，长度限制1-64字符，只能包含小写字母</p>",
+          "document": "<p>DynamicInstance名，长度限制1-64字符，只能包含小写字母</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rayClusterBigdata",
           "member": "string",
           "name": "DynamicInstanceName",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>命名空间</p>",
+          "document": "<p>命名空间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "251233709-emr-p2ww5xsr",
           "member": "string",
           "name": "Namespace",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>是否支持高可用</p>",
+          "document": "<p>是否支持高可用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "SupportHA",
+          "output_required": false,
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>自定义镜像信息</p>",
+          "document": "<p>自定义镜像信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CustomImage",
           "name": "CustomImage",
+          "output_required": false,
           "required": false,
-          "type": "object"
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>资源组配置</p>",
+          "document": "<p>资源组配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DynamicInstanceGroup",
           "name": "DynamicInstanceGroups",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>是否支持存储配置</p>",
+          "document": "<p>是否支持存储配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "SupportPV",
+          "output_required": false,
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>cbs存储卷列表</p>",
+          "document": "<p>cbs存储卷列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CBSVolume",
           "name": "CBSVolumes",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>cfs存储卷列表，只包含cfs，不包含cfs turbo</p>",
+          "document": "<p>cfs存储卷列表，只包含cfs，不包含cfs turbo</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CFSVolume",
           "name": "CFSVolumes",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>cos存储卷列表</p>",
+          "document": "<p>cos存储卷列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "COSVolume",
           "name": "COSVolumes",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>挂载卷列表</p>",
+          "document": "<p>挂载卷列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VolumeMount",
           "name": "VolumeMounts",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>pod标签</p>",
+          "document": "<p>pod标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TkeLabel",
           "name": "Labels",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>Tolerations定义</p>",
+          "document": "<p>Tolerations定义</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Toleration",
           "name": "Tolerations",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>环境变量</p>",
+          "document": "<p>环境变量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NameValue",
           "name": "Envs",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>依赖外部组件</p>",
+          "document": "<p>依赖外部组件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DependService",
           "name": "DependServices",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>是否开启token鉴权</p>",
+          "document": "<p>是否开启token鉴权</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "SupportToken",
+          "output_required": false,
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>cfs trubo挂载列表，不包含标准版cfs</p>",
+          "document": "<p>cfs trubo挂载列表，不包含标准版cfs</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CFSTurboVolume",
           "name": "CFSTurboVolumes",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义镜像</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageInfoV2",
+          "name": "ImageInfoV2",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>GooseFS盘</p>",
+          "example": "无",
+          "member": "GooseFSVolume",
+          "name": "GooseFSVolumes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "DynamicInstanceGroup": {
       "document": "创建DynamicInstance提交的表单数据中的group部分",
       "members": [
         {
           "disabled": false,
-          "document": "<p>资源组类型</p>",
+          "document": "<p>资源组类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "headGroup",
           "member": "string",
           "name": "GroupType",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>资源组名称</p>",
+          "document": "<p>资源组名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "headGroup1",
           "member": "string",
           "name": "GroupName",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>pod cpu核数</p>",
+          "document": "<p>pod cpu核数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "PodCpu",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>pod mem大小（GB）</p>",
+          "document": "<p>pod mem大小（GB）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
           "name": "PodMem",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>pod gpu类型</p>",
+          "document": "<p>pod gpu类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "T4",
           "member": "string",
           "name": "PodGpuType",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>pod gpu块数</p>",
+          "document": "<p>pod gpu块数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "PodGpu",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>pod个数</p>",
+          "document": "<p>pod个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "PodNum",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>pod弹性最小个数</p>",
+          "document": "<p>pod弹性最小个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "MinPodNum",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>pod弹性最大个数，当MaxPodNum &gt; MinPodNum时，默认表示开启弹性扩缩容，将在范围内扩缩容</p>",
+          "document": "<p>pod弹性最大个数，当MaxPodNum &gt; MinPodNum时，默认表示开启弹性扩缩容，将在范围内扩缩容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "uint64",
           "name": "MaxPodNum",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>是否支持存储配置</p>",
+          "document": "<p>是否支持存储配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "SupportPV",
+          "output_required": false,
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>cbs存储卷列表</p>",
+          "document": "<p>cbs存储卷列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CBSVolume",
           "name": "CBSVolumes",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>cfs存储卷列表</p>",
+          "document": "<p>cfs存储卷列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CFSVolume",
           "name": "CFSVolumes",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>cos存储卷列表</p>",
+          "document": "<p>cos存储卷列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "COSVolume",
           "name": "COSVolumes",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>挂载卷列表</p>",
+          "document": "<p>挂载卷列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VolumeMount",
           "name": "VolumeMounts",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>pod标签</p>",
+          "document": "<p>pod标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TkeLabel",
           "name": "Labels",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>Tolerations定义</p>",
+          "document": "<p>Tolerations定义</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Toleration",
           "name": "Tolerations",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>环境变量</p>",
+          "document": "<p>环境变量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NameValue",
           "name": "Envs",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>节点调度策略</p>",
+          "document": "<p>节点调度策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"nodeSelector\":\"1\"}",
           "member": "string",
           "name": "SchedulingPolicy",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>资源标签</p>",
+          "document": "<p>资源标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"custom1\": 1}",
           "member": "string",
           "name": "ResourceLabel",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>GPU资源厂商key</p>",
+          "document": "<p>GPU资源厂商key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "nvidia.com/gpu",
           "member": "string",
           "name": "PodGpuResourceKey",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>CFS Turbo 挂载列表</p>",
+          "document": "<p>CFS Turbo 挂载列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CFSTurboVolume",
           "name": "CFSTurboVolumes",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>GooseFS盘</p>",
+          "example": "无",
+          "member": "GooseFSVolume",
+          "name": "GooseFSVolumes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>启动前指令</p>",
+          "example": "*****",
+          "member": "string",
+          "name": "PreStartCommand",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ray启动前指令</p>",
+          "example": "*****",
+          "member": "string",
+          "name": "RayStartParams",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "DynamicInstanceGroupSpec": {
       "document": "DynamicInstanceGroupSpec",
       "members": [
         {
           "disabled": false,
-          "document": "group 名称",
+          "document": "<p>group 名称</p>",
           "example": "rayClusterHeader",
           "member": "string",
           "name": "Name",
@@ -10628,7 +10864,7 @@
         },
         {
           "disabled": false,
-          "document": "pod 数量",
+          "document": "<p>pod 数量</p>",
           "example": "5",
           "member": "int64",
           "name": "PodCount",
@@ -10639,7 +10875,7 @@
         },
         {
           "disabled": false,
-          "document": "最小节点数",
+          "document": "<p>最小节点数</p>",
           "example": "2",
           "member": "int64",
           "name": "MinNodes",
@@ -10650,7 +10886,7 @@
         },
         {
           "disabled": false,
-          "document": "最大节点数",
+          "document": "<p>最大节点数</p>",
           "example": "7",
           "member": "int64",
           "name": "MaxNodes",
@@ -10661,7 +10897,7 @@
         },
         {
           "disabled": false,
-          "document": " 是否开启存储配置",
+          "document": "<p>是否开启存储配置</p>",
           "example": "true",
           "member": "bool",
           "name": "StorageConfigEnabled",
@@ -10672,7 +10908,7 @@
         },
         {
           "disabled": false,
-          "document": "headGroup:head;\nworkerGroup:worker",
+          "document": "<p>headGroup:head;<br>workerGroup:worker</p>",
           "example": "headGroup",
           "member": "string",
           "name": "GroupType",
@@ -10683,7 +10919,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU 核数",
+          "document": "<p>CPU 核数</p>",
           "example": "1",
           "member": "int64",
           "name": "Cpu",
@@ -10694,7 +10930,7 @@
         },
         {
           "disabled": false,
-          "document": "内存(GB)",
+          "document": "<p>内存(GB)</p>",
           "example": "2",
           "member": "int64",
           "name": "MemSize",
@@ -10705,7 +10941,7 @@
         },
         {
           "disabled": false,
-          "document": "GPU类型",
+          "document": "<p>GPU类型</p>",
           "example": "T4",
           "member": "string",
           "name": "GpuType",
@@ -10716,7 +10952,7 @@
         },
         {
           "disabled": false,
-          "document": "GPU核数",
+          "document": "<p>GPU核数</p>",
           "example": "2",
           "member": "int64",
           "name": "Gpu",
@@ -10727,7 +10963,7 @@
         },
         {
           "disabled": false,
-          "document": "资源标签",
+          "document": "<p>资源标签</p>",
           "example": "{\"key\":\"value\"}",
           "member": "string",
           "name": "ResourceLabels",
@@ -10738,7 +10974,7 @@
         },
         {
           "disabled": false,
-          "document": "环境变量",
+          "document": "<p>环境变量</p>",
           "example": "无",
           "member": "NameValue",
           "name": "Env",
@@ -10749,7 +10985,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "无",
           "member": "NameValue",
           "name": "Labels",
@@ -10760,7 +10996,7 @@
         },
         {
           "disabled": false,
-          "document": "容忍度",
+          "document": "<p>容忍度</p>",
           "example": "无",
           "member": "Toleration",
           "name": "Tolerations",
@@ -10771,7 +11007,7 @@
         },
         {
           "disabled": false,
-          "document": "调度策略",
+          "document": "<p>调度策略</p>",
           "example": "{\"key\":\"value\"}",
           "member": "string",
           "name": "Scheduler",
@@ -10782,13 +11018,35 @@
         },
         {
           "disabled": false,
-          "document": "卷目录",
+          "document": "<p>卷目录</p>",
           "example": "无",
           "member": "PersistentVolume",
           "name": "PersistentVolume",
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>前置启动命令</p>",
+          "example": "fafdkyUIAHJH==",
+          "member": "string",
+          "name": "PreStartCommand",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>RayStart启动参数</p>",
+          "example": "fafdkyUIAHJH==",
+          "member": "string",
+          "name": "RayStartParams",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -11675,6 +11933,56 @@
       ],
       "usage": "out"
     },
+    "EnableSparkAppMonitorInfo": {
+      "document": "spark开启app监控 对应的Prometheus",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "prom-2cx3078a",
+          "member": "string",
+          "name": "PrometheusInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>grafana实例id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "grafana-oucb89ne",
+          "member": "string",
+          "name": "GrafanaInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启关闭状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableMonitor",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>grafana访问地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cloud-grafana.woa.com/grafana-oucb89ne/",
+          "member": "string",
+          "name": "GrafanaURL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Execution": {
       "document": "执行动作。",
       "members": [
@@ -11916,6 +12224,100 @@
         }
       ],
       "usage": "out"
+    },
+    "GooseFSVolume": {
+      "document": "GooseFSVolume",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存储卷名</p>",
+          "example": "fuckest",
+          "member": "string",
+          "name": "VolumeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>gooseFS实例ID</p>",
+          "example": "g_cvm_5uek3d41",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>gooseFS 命名空间</p>",
+          "example": "572-251233705",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>在命名空间中的挂载路径</p>",
+          "example": "/",
+          "member": "string",
+          "name": "SubPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>FuseVERSION描述</p>",
+          "example": "v1.5.2",
+          "member": "string",
+          "name": "FuseVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Client Version描述，例如 GOOSE-1.5.2</p>",
+          "example": "v1.5.2",
+          "member": "string",
+          "name": "ClientVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认挂载参数</p>",
+          "example": "allow_other,direct_io",
+          "member": "string",
+          "name": "MountOptions",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认JVM参数</p>",
+          "example": "-Xms4g -Xmx8g -XX:MaxDirectMemorySize=8g -XX:+UseG1GC",
+          "member": "string",
+          "name": "JvmOptions",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "GroupGlobalConfs": {
       "document": "集群所有伸缩组全局参数信息",
@@ -12387,6 +12789,155 @@
           "example": "tcr-test.tencentcloudcr.com/test/spark:v3.3.2",
           "member": "string",
           "name": "Image",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageInfoV2": {
+      "document": "EMR on TKE集群组件镜像信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>镜像类型</p><p>枚举值：</p><ul><li>official： 官方镜像</li><li>custom： 自定义镜像</li><li>imageUrl： 镜像地址</li></ul>",
+          "example": "official",
+          "member": "string",
+          "name": "ImageMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "1",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是存量镜像</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "LegacyCCR",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像地址</p>",
+          "example": "ccr.ccs.tencentyun.com/emr-image/spark:v3.3.2-60-618-release",
+          "member": "string",
+          "name": "FullImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本</p>",
+          "example": "3.3.2",
+          "member": "string",
+          "name": "MainVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像地址域名</p>",
+          "example": "ccr.ccs.tencentyun.com",
+          "member": "string",
+          "name": "RegistryUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像命名空间</p>",
+          "example": "emr-image",
+          "member": "string",
+          "name": "NamespaceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库名</p>",
+          "example": "spark",
+          "member": "string",
+          "name": "RepoName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像版本标签</p>",
+          "example": "v3.3.2-60-618-release.alias.2",
+          "member": "string",
+          "name": "Tag",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>",
+          "example": "username",
+          "member": "string",
+          "name": "Username",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密码</p>",
+          "example": "*********",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像拉取密钥</p>",
+          "example": "无",
+          "member": "ImagePullSecret",
+          "name": "ImagePullSecret",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像拉取策略</p>",
+          "example": "IfNotPresent",
+          "member": "string",
+          "name": "ImagePullPolicy",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -15149,6 +15700,33 @@
           "name": "CFSTurboVolumes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义镜像</p>",
+          "example": "无",
+          "member": "CustomImage",
+          "name": "CustomImage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义镜像</p>",
+          "example": "无",
+          "member": "ImageInfoV2",
+          "name": "ImageInfoV2",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>GooseFS盘</p>",
+          "example": "无",
+          "member": "GooseFSVolume",
+          "name": "GooseFSVolumes",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -17513,7 +18091,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规格类型，如S2.MEDIUM8",
+          "document": "<p>规格类型，如S2.MEDIUM8</p>",
           "example": "S2.MEDIUM8",
           "member": "string",
           "name": "InstanceType",
@@ -17524,7 +18102,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘，系统盘个数不超过1块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>系统盘，系统盘个数不超过1块</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiskSpecInfo",
           "name": "SystemDisk",
@@ -17535,7 +18113,7 @@
         },
         {
           "disabled": false,
-          "document": "需要绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>需要绑定的标签列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -17546,7 +18124,7 @@
         },
         {
           "disabled": false,
-          "document": "云数据盘，云数据盘总个数不超过15块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>云数据盘，云数据盘总个数不超过15块</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiskSpecInfo",
           "name": "DataDisk",
@@ -17557,7 +18135,7 @@
         },
         {
           "disabled": false,
-          "document": "本地数据盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本地数据盘</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiskSpecInfo",
           "name": "LocalDataDisk",
@@ -17565,6 +18143,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点配置信息，目前仅提供给terraform平台校验参数使用</p>",
+          "example": "无",
+          "member": "ServiceDeploy",
+          "name": "SoftwareConfig",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -18057,6 +18646,28 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要提供高性能计算集群</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedHpcClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是GPU机型</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsGpuInstance",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -18710,6 +19321,17 @@
           "example": "无",
           "member": "CFSTurboVolume",
           "name": "CFSTurboVolumes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>goosefs volume挂载信息</p>",
+          "example": "无",
+          "member": "GooseFSVolume",
+          "name": "GooseFSVolumes",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -20091,6 +20713,17 @@
           "example": "http://xxxx/raycluster",
           "member": "string",
           "name": "DashboardUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命名空间</p>",
+          "example": "251233702-emr-gq14f5p8",
+          "member": "string",
+          "name": "Namespace",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -22374,6 +23007,34 @@
           "example": "无",
           "member": "ComponentBasicRestartInfo",
           "name": "ComponentInfoList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceDeploy": {
+      "document": "节点部署配置信息，给tf侧同学使用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>组件名称</p>",
+          "example": "knox-1.2.0",
+          "member": "string",
+          "name": "SoftwareName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组件下角色名称</p>",
+          "example": "[\"Ldap\"]",
+          "member": "string",
+          "name": "Roles",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -25391,6 +26052,45 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "WebUIInfo": {
+      "document": "WebUI访问信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>访问地址，可能为空</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://xxxx/",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>WebUI状态包括：<br>-1表示当前服务没有WebUI；<br>0表示当前服务有WebUI，但是没有安装KNOX服务；<br>1表示当前服务有WebUI并安装有KNOX服务，但是KNOX没有开启公网访问；<br>2表示，当前服务有WebUI，安装有KNOX服务且已开启公网访问。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
+          "member": "int64",
+          "name": "WebUIStatus",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MLFLOW",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

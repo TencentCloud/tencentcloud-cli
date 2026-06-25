@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli monitor DescribeGrafanaIntegrations --cli-unfold-argument  \
-    --IntegrationId xx \
-    --InstanceId xx \
-    --Kind xx
+    --IntegrationId integration-abcd1234 \
+    --InstanceId grafana-abcd1234 \
+    --Kind tencent-managed-promestheus
 ```
 
 Output: 
@@ -17,13 +17,14 @@ Output:
     "Response": {
         "IntegrationSet": [
             {
-                "IntegrationId": "xx",
-                "Content": "xx",
-                "Kind": "xx",
-                "Description": "xx"
+                "IntegrationId": "integration-abcd1234",
+                "Content": "{\"type\":\"prometheus\"}",
+                "Kind": "tencent-managed-promestheus",
+                "Description": "managed prometheus integration",
+                "GrafanaURL": "http://<grafana root url>"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "requestId"
     }
 }
 ```

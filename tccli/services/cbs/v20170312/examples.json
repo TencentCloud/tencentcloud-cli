@@ -32,6 +32,14 @@
         "title": "挂载云硬盘"
       }
     ],
+    "AttachRemoteDisks": [
+      {
+        "document": "将弹性单副本SSD硬盘挂载到指定的云服务器实例。",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachRemoteDisks\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-xxxxxxxx\",\n    \"RemoteDiskIds\": [\n        \"rdisk-b1f7xvod\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\"\n    }\n}",
+        "title": "挂载弹性单副本SSD硬盘"
+      }
+    ],
     "BindAutoSnapshotPolicy": [
       {
         "document": "给单块盘绑定定期快照策略",
@@ -90,6 +98,14 @@
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDisks\n<公共请求参数>\n\n{\n    \"DiskName\": \"postPayDisk\",\n    \"Placement\": {\n        \"ProjectId\": 0,\n        \"Zone\": \"ap-guangzhou-3\"\n    },\n    \"DiskChargeType\": \"POSTPAID_BY_HOUR\",\n    \"DiskCount\": 1,\n    \"DiskType\": \"CLOUD_PREMIUM\",\n    \"DiskSize\": 100\n}",
         "output": "{\n    \"Response\": {\n        \"DiskIdSet\": [\n            \"disk-ecjc4cpw\"\n        ],\n        \"RequestId\": \"fe2274fa-eaec-4009-807b-6ffc00963fec\"\n    }\n}",
         "title": "创建按小时后付费云盘"
+      }
+    ],
+    "CreateRemoteDisks": [
+      {
+        "document": "创建并挂载一块弹性单副本SSD硬盘到指定实例。",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRemoteDisks\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-23kmz0bd\",\n    \"DiskSize\": 2000,\n    \"DiskChargeType\": \"PREPAID\",\n    \"Placement\": {\n        \"Zone\": \"ap-qingyuan-1\"\n    },\n    \"DiskCount\": 1,\n    \"DiskName\": \"helloworld\",\n    \"DiskChargePrepaid\": {\n        \"Period\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a285b92a-3328-42d0-90df-3aa663c6cb76\"\n    }\n}",
+        "title": "创建弹性单副本SSD硬盘"
       }
     ],
     "CreateSnapshot": [
@@ -196,6 +212,36 @@
         "title": "查询多个实例挂载的云硬盘数量"
       }
     ],
+    "DescribeRemoteDiskConfigQuota": [
+      {
+        "document": "按机型族和可用区过滤查询单副本SSD硬盘配额。",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRemoteDiskConfigQuota\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"instance-family\",\n            \"Values\": [\n                \"S5\"\n            ]\n        },\n        {\n            \"Name\": \"zone\",\n            \"Values\": [\n                \"ap-guangzhou-3\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\"\n    }\n}",
+        "title": "查询单副本SSD硬盘机型搭配配额"
+      }
+    ],
+    "DescribeRemoteDisks": [
+      {
+        "document": "按可用区和状态过滤查询单副本SSD硬盘。",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRemoteDisks\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"zone\",\n            \"Values\": [\n                \"ap-guangzhou-2\"\n            ]\n        },\n        {\n            \"Name\": \"remote-disk-state\",\n            \"Values\": [\n                \"ATTACHED\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\"\n    }\n}",
+        "title": "按条件查询单副本SSD硬盘列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRemoteDisks\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\"\n    }\n}",
+        "title": "查询单副本SSD硬盘列表"
+      }
+    ],
+    "DescribeRemoteDisksDeniedActions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRemoteDisksDeniedActions\n<公共请求参数>\n\n{\n    \"RemoteDiskIds\": [\n        \"rdisk-b1f7xvod\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\"\n    }\n}",
+        "title": "查询单副本SSD硬盘操作限制列表"
+      }
+    ],
     "DescribeSnapshotGroups": [
       {
         "document": "查询所有快照组列表",
@@ -236,6 +282,14 @@
         "title": "卸载单块云硬盘"
       }
     ],
+    "DetachRemoteDisks": [
+      {
+        "document": "将弹性单副本SSD硬盘从云服务器实例上卸载。",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachRemoteDisks\n<公共请求参数>\n\n{\n    \"RemoteDiskIds\": [\n        \"rdisk-lmgwx283\"\n    ],\n    \"InstanceId\": \"ins-rqwynzj6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c25d403-b163-438f-8329-b9a8368c639e\"\n    }\n}",
+        "title": "卸载弹性单副本SSD硬盘"
+      }
+    ],
     "GetSnapOverview": [
       {
         "document": "",
@@ -252,6 +306,20 @@
         "title": "重新初始化云硬盘"
       }
     ],
+    "InquirePriceCreateRemoteDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceCreateRemoteDisks\n<公共请求参数>\n\n{\n    \"DiskChargeType\": \"POSTPAID_BY_HOUR\",\n    \"DiskSize\": 3000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\"\n    }\n}",
+        "title": "查询创建弹性单副本SSD硬盘的价格（后付费）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceCreateRemoteDisks\n<公共请求参数>\n\n{\n    \"DiskChargePrepaid\": {\n        \"Period\": 1\n    },\n    \"DiskChargeType\": \"PREPAID\",\n    \"DiskCount\": 1,\n    \"DiskSize\": 2000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\"\n    }\n}",
+        "title": "查询创建弹性单副本SSD硬盘的价格（预付费）"
+      }
+    ],
     "InquirePriceModifyDiskBackupQuota": [
       {
         "document": "",
@@ -266,6 +334,14 @@
         "input": "https://ecm.tencentcloudapi.com/?Action=InquirePriceModifyDiskExtraPerformance\n&DiskId=disk-dritwhhm\n&ThroughputPerformance=200\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2473a107-d3ee-49b6-98f1-2fa630610b85\",\n        \"DiskPrice\": {\n            \"DiscountPrice\": 611.51,\n            \"UnitPrice\": null,\n            \"UnitPriceHigh\": null,\n            \"OriginalPriceHigh\": null,\n            \"OriginalPrice\": 611.51,\n            \"UnitPriceDiscount\": null,\n            \"UnitPriceDiscountHigh\": null,\n            \"DiscountPriceHigh\": null,\n            \"ChargeUnit\": null\n        }\n    }\n}",
         "title": "500G HSSD 额外购买200M性能询价"
+      }
+    ],
+    "InquirePriceRenewRemoteDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceRenewRemoteDisks\n<公共请求参数>\n\n{\n    \"DiskChargePrepaidSet\": [\n        {\n            \"Period\": 1\n        }\n    ],\n    \"RemoteDiskIds\": [\n        \"rdisk-12345678\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\"\n    }\n}",
+        "title": "查询续费弹性单副本SSD硬盘的价格"
       }
     ],
     "InquiryPriceCreateDisks": [
@@ -358,6 +434,20 @@
         "title": "修改云盘自动续费属性"
       }
     ],
+    "ModifyRemoteDiskAttributes": [
+      {
+        "document": "修改一个单副本SSD硬盘的名称。",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRemoteDiskAttributes\n<公共请求参数>\n\n{\n    \"DiskName\": \"my-remote-disk\",\n    \"RemoteDiskIds\": [\n        \"rdisk-b1f7xvod\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\"\n    }\n}",
+        "title": "修改单副本SSD硬盘名称"
+      },
+      {
+        "document": "批量修改多个单副本SSD硬盘的项目ID。",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRemoteDiskAttributes\n<公共请求参数>\n\n{\n    \"ProjectId\": 10,\n    \"RemoteDiskIds\": [\n        \"rdisk-b1f7xvod\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\"\n    }\n}",
+        "title": "批量修改单副本SSD硬盘项目ID"
+      }
+    ],
     "ModifySnapshotAttribute": [
       {
         "document": "修改某个快照的名称",
@@ -388,6 +478,14 @@
         "title": "续费实例时，需续费挂载的预付费云硬盘，使云硬盘与实例的到期时间对齐。"
       }
     ],
+    "RenewRemoteDisk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewRemoteDisk\n<公共请求参数>\n\n{\n    \"DiskChargePrepaid\": {\n        \"Period\": 1\n    },\n    \"RemoteDiskId\": \"rdisk-b1f7xvod\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\"\n    }\n}",
+        "title": "续费弹性单副本SSD硬盘"
+      }
+    ],
     "ResizeDisk": [
       {
         "document": "将云硬盘扩容到200G",
@@ -396,12 +494,36 @@
         "title": "将云硬盘扩容到200G"
       }
     ],
+    "SwitchParameterCreateRemoteDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchParameterCreateRemoteDisks\n<公共请求参数>\n\n{\n    \"Placement\": {\n        \"Zone\": \"ap-guangzhou-3\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\"\n    }\n}",
+        "title": "获取创建弹性单副本SSD硬盘的订单参数"
+      }
+    ],
+    "SwitchParameterRenewRemoteDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchParameterRenewRemoteDisks\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\"\n    }\n}",
+        "title": "获取续费弹性单副本SSD硬盘的订单参数"
+      }
+    ],
     "TerminateDisks": [
       {
         "document": "销毁两块云硬盘",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"disk-g27hqeo2\",\n        \"disk-lzrg2pwi\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"52c965d2-5deb-459a-8b5a-b3b9a1376544\"\n    }\n}",
         "title": "批量退还云硬盘"
+      }
+    ],
+    "TerminateRemoteDisks": [
+      {
+        "document": "销毁一个或多个弹性单副本SSD硬盘。",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateRemoteDisks\n<公共请求参数>\n\n{\n    \"RemoteDiskIds\": [\n        \"rdisk-b1f7xvod\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\"\n    }\n}",
+        "title": "销毁弹性单副本SSD硬盘"
       }
     ],
     "UnbindAutoSnapshotPolicy": [

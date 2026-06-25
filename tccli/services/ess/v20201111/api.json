@@ -35,6 +35,13 @@
       "output": "CancelUserAutoSignEnableUrlResponse",
       "status": "online"
     },
+    "CreateArchiveFlowTask": {
+      "document": "创建合同归档任务\n\n合同归档接口用于将外部系统生成的合同、线下签署完成的合同或历史存量合同归档至腾讯电子签系统，实现合同统一管理。\n\n调用方提交合同文件资源、合同基础信息、签署方信息等数据后，系统将异步创建归档任务进行处理。归档成功后，系统会生成唯一的归档合同 ID（ArchivedFlowId），用于后续合同查询和管理。\n\n合同归档流程：\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/1c99715285540088b97a0435895736a1.png)\n1. 使用<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\" target=\"_blank\">UploadFiles</a> 上传文件返回resourceId\n2. 根据resourceId调用CreateArchiveFlowTask创建合同归档任务返回任务id\n3. 通过任务ID查询合同归档任务状态",
+      "input": "CreateArchiveFlowTaskRequest",
+      "name": "创建合同归档任务",
+      "output": "CreateArchiveFlowTaskResponse",
+      "status": "online"
+    },
     "CreateBatchAdminChangeInvitations": {
       "document": "本接口（CreateBatchAdminChangeInvitations）用于批量创建企业超管信息变更。\n该接口为提交任务接口,如果需要获得链接， 需要使用接口创建超管变更链接(CreateBatchAdminChangeInvitationsUrl)。\n\n批量创建链接有以下限制：\n\n1. 单次最多创建10个企业的超管变更。\n2. 同一批创建的企业不能重复,唯一值为企业 Id。\n\n注意：\n此接口创建的超管变更企业，必须是以下两种企业。\n1. 集团子企业，调用方必须是主企业。\n2. 代认证企业，此企业是由[创建企业认证链接](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthUrl)创建的",
       "input": "CreateBatchAdminChangeInvitationsRequest",
@@ -259,6 +266,13 @@
       "output": "CreateFlowGroupByTemplatesResponse",
       "status": "online"
     },
+    "CreateFlowGroupReminds": {
+      "document": "指定需要批量催办的合同组签署流程ID，按合同组维度进行催办\n##### 需要符合以下条件的合同才可被催办：\n\n1. 发起合同时，**设置了经办人通知方式**\n2. 子合同中当前状态为 **待签署、待填写** 的签署人是催办的对象\n3. **每个合同的每个签署方最多3次**\n\n\n**注意**\n- 催办结果会以签署方维度列出（不同公司下的同个员工会被视为两个不同的签署方，同一人分别作为个人签署方与企业签署方也会被视为两个不同的签署方）\n- 合同组只支持短信方式催办\n\n##### 催办的效果：\n\n###### 效果\n\n\n\n\n\n<li>对方会收到如下的短信通知</li>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/3caf94b7f540fa5736270d38528d3a7b.png)\n\n\n\n注：`合同催办是白名单功能，请联系客户经理申请开白后使用`",
+      "input": "CreateFlowGroupRemindsRequest",
+      "name": "合同组催办",
+      "output": "CreateFlowGroupRemindsResponse",
+      "status": "online"
+    },
     "CreateFlowGroupSignReview": {
       "document": "提交合同组签署流程审批结果的适用场景包括：\n\n1. 在使用[通过多文件创建合同组签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowGroupByFiles)或[通过多模板创建合同组签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowGroupByTemplates)创建合同组签署流程时，若指定了以下参数 为true，则可以调用此接口提交企业内部签署审批结果。即使是自动签署也需要进行审核通过才会进行签署。\n  - [FlowGroupInfo.NeedSignReview](https://qian.tencent.com/developers/companyApis/dataTypes/#flowgroupinfo)\n  - [ApproverInfo.ApproverNeedSignReview](https://qian.tencent.com/developers/companyApis/dataTypes/#approverinfo)\n\n\n2. 同一合同组，同一签署人可以多次提交签署审批结果，签署时的最后一个“审批结果”有效。",
       "input": "CreateFlowGroupSignReviewRequest",
@@ -267,7 +281,7 @@
       "status": "online"
     },
     "CreateFlowReminds": {
-      "document": "指定需要批量催办的签署流程ID，批量催办合同，最多100个。需要符合以下条件的合同才可被催办：\n\n1. 发起合同时，**签署人的NotifyType需设置为sms**\n2. 合同中当前状态为 **待签署** 的签署人是催办的对象\n3. **每个合同只能催办一次**\n\n**催办的效果**: 对方会收到如下的短信通知\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/3caf94b7f540fa5736270d38528d3a7b.png)\n\n注：`合同催办是白名单功能，请联系客户经理申请开白后使用`",
+      "document": "指定需要批量催办的签署流程ID，批量催办合同，最多100个\n##### 需要符合以下条件的合同才可被催办：\n<ol>\n<li>发起合同时，**设置了签署人通知类型：SMS,EMAIL,ALL**</li>\n<li>合同中当前状态为 **待签署** 的签署人是催办的对象</li>\n<li>**每个合同的每个签署方最多3次*</li>\n</ol>\n\n##### 催办的规则和效果：\n###### 规则\n\n- 指定RemindTypes，会触发符合签署人NotifyType的通知类型\n    -  这里EMAIL类型例外，如果指定了RemindEmailInfos，那么就会按照指定的email来通知，不管签署人NotifyType是否设置了EMAIL通知类型\n        - 如果指定了RemindEmailInfos，那么就会按照指定的email来通知\n- 若未指定RemindTypes，则按照发起合同时设置的签署人原始通知类型处理\n\n###### 效果\n\n\n<li>对方会收到如下的短信通知</li>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/3caf94b7f540fa5736270d38528d3a7b.png)\n\n<li>对方会收到如下的邮件通知</li>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/0841ccbd8db9747760b17914dcc166c6.png)\n\n注：`合同催办是白名单功能，请联系客户经理申请开白后使用`",
       "input": "CreateFlowRemindsRequest",
       "name": "合同催办",
       "output": "CreateFlowRemindsResponse",
@@ -442,7 +456,7 @@
       "status": "online"
     },
     "CreateReleaseFlow": {
-      "document": "发起解除协议的主要应用场景为：基于一份已经签署的合同（签署流程），进行解除操作。\n解除协议的模板是官方提供 ，经过提供法务审核，暂不支持自定义。具体用法可以参考文档[合同解除](https://qian.tencent.com/developers/company/flow_release)。\n\n注意：\n<ul>\n<li><strong>完成原合同签署后方可发起解除协议：</strong>只有在原合同所有签署人完成签署后，才可以启动解除协议的流程。</li>\n<li><strong>原合同状态更新：</strong>解除协议一旦签署完毕，原合同状态将更新为“已解除”。</li>\n<li><strong>解除协议的个人参与要求：</strong>原合同中的个人参与者必须直接参与解除协议，禁止替换为其他第三方个人。</li>\n<li><strong>企业参与人的代理权：</strong>若原合同的企业参与人无法亲自参与解除协议，可指派具有等同权限的企业员工代行。</li>\n<li><strong>解除协议的费用问题：</strong>发起解除协议将产生费用，其扣费标准与其他企业合同相同。</li>\n<li><strong>解除协议的发起资格：</strong>仅限原合同中的企业类型参与者发起解除协议，个人参与者无此权限。</li>\n<li><strong>非原合同企业参与者的权限：</strong>非原合同的企业参与者发起解除协议时，必须具备相应的解除权限。</li>\n<li><strong>自动签署：</strong>支持本企业的自动签署，不支持其他企业的自动签署（不能不动声色的把别人参与的合同作废了）</li>\n</ul>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/3427941ecb091bf0c55009bad192dd1c.png)",
+      "document": "发起解除协议的主要应用场景为：基于一份已经签署的合同（签署流程），进行解除操作。\n解除协议的模板是官方提供 ，经过提供法务审核，暂不支持自定义，[点击查看解除协议模板示例PDF](https://qcloudimg.tencent-cloud.cn/raw/279b53002cf178ac89ba2c4f31b2dd8a.pdf)。具体用法可以参考文档[合同解除](https://qian.tencent.com/developers/company/flow_release)。\n\n注意：\n<ul>\n<li><strong>完成原合同签署后方可发起解除协议：</strong>只有在原合同所有签署人完成签署后，才可以启动解除协议的流程。</li>\n<li><strong>原合同状态更新：</strong>解除协议一旦签署完毕，原合同状态将更新为“已解除”。</li>\n<li><strong>解除协议的个人参与要求：</strong>原合同中的个人参与者必须直接参与解除协议，禁止替换为其他第三方个人。</li>\n<li><strong>企业参与人的代理权：</strong>若原合同的企业参与人无法亲自参与解除协议，可指派具有等同权限的企业员工代行。</li>\n<li><strong>解除协议的费用问题：</strong>发起解除协议将产生费用，其扣费标准与其他企业合同相同。</li>\n<li><strong>解除协议的发起资格：</strong>仅限原合同中的企业类型参与者发起解除协议，个人参与者无此权限。</li>\n<li><strong>非原合同企业参与者的权限：</strong>非原合同的企业参与者发起解除协议时，必须具备相应的解除权限。</li>\n<li><strong>自动签署：</strong>支持本企业的自动签署，不支持其他企业的自动签署（不能不动声色的把别人参与的合同作废了）</li>\n</ul>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/3427941ecb091bf0c55009bad192dd1c.png)",
       "input": "CreateReleaseFlowRequest",
       "name": "发起解除协议",
       "output": "CreateReleaseFlowResponse",
@@ -572,6 +586,13 @@
       "input": "DeleteSingleSignOnEmployeesRequest",
       "name": "删除单点登录企业员工信息",
       "output": "DeleteSingleSignOnEmployeesResponse",
+      "status": "online"
+    },
+    "DescribeArchiveFlowTask": {
+      "document": "查询归档任务的执行结果， 用于获取合同归档任务的当前处理状态及执行结果。",
+      "input": "DescribeArchiveFlowTaskRequest",
+      "name": "查询合同归档任务状态",
+      "output": "DescribeArchiveFlowTaskResponse",
       "status": "online"
     },
     "DescribeBatchOrganizationRegistrationTasks": {
@@ -1260,7 +1281,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>签署方经办人的证件类型，支持以下类型，样式可以参考<a href=\"https://qian.tencent.com/developers/partner/id_card_support/\" target=\"_blank\">常见个人证件类型介绍</a></p><ul><li>ID_CARD 中国大陆居民身份证  (默认值)</li><li>HONGKONG_AND_MACAO 港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)</li><li>OTHER_CARD_TYPE 其他证件</li></ul><p>注: </p><ol><li><b>其他证件类型为白名单功能</b>，使用前请联系对接的客户经理沟通。</li><li>港澳居民来往内地通行证 和  港澳台居民居住证 类型的签署人<b>至少要过一次大陆的海关</b>才能使用。</li></ol>",
+          "document": "<p>签署方经办人的证件类型，支持以下类型，样式可以参考<a href=\"https://qian.tencent.com/developers/partner/id_card_support/\" target=\"_blank\">常见个人证件类型介绍</a><br>&lt;ul&gt;<li>ID_CARD 中国大陆居民身份证  (默认值)</li></p><li>HONGKONG_AND_MACAO 港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)</li><p>注:  港澳居民来往内地通行证 和  港澳台居民居住证 类型的签署人<b>至少要过一次大陆的海关</b>才能使用。</p>",
           "example": "ID_CARD",
           "member": "string",
           "name": "ApproverIdCardType",
@@ -1703,12 +1724,167 @@
       ],
       "type": "object"
     },
+    "ArchiveFlowApproverInfo": {
+      "document": "归档合同的参与人信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>个人签署人姓名，如果传入，必须是证件上的真实中文名；中文名最长 25 个字符；</p>",
+          "example": "李白",
+          "member": "string",
+          "name": "ApproverName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参与者类型，用于区分个人或企业，可选类型如下:<br><strong>0</strong>：企业<br><strong>1</strong>：个人</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ApproverType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业签署方名称。长度不超过 200 个字符。<br>如果名称中包含英文括号()，请使用中文括号（）代替。<br>如果签署方是企业签署方(approverType = 0 )， 则企业名称必填。</p>",
+          "example": "***有限公司",
+          "member": "string",
+          "name": "OrganizationName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>签署人手机号，必须是合法手机号。</p>",
+          "example": "1763****261",
+          "member": "string",
+          "name": "ApproverMobile",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>签署人邮箱， 必须是合法邮箱格式。</p>",
+          "example": "1752*****1@qq.com",
+          "member": "string",
+          "name": "ApproverEmail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>签署方经办人的证件类型，支持以下类型，样式可以参考<a href=\"https://qian.tencent.com/developers/partner/id_card_support/\" target=\"_blank\">常见个人证件类型介绍</a></p><ul><li>ID_CARD 中国大陆居民身份证  (默认值)</li><li>HONGKONG_AND_MACAO 港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)</li><li>OTHER_CARD_TYPE 其他证件</li></ul>",
+          "example": "ID_CARD",
+          "member": "string",
+          "name": "ApproverIdCardType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>签署方经办人的证件号码，应符合以下规则</p><ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li><li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li><li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "example": "411*************12",
+          "member": "string",
+          "name": "ApproverIdCardNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前参与者的签署时间，Unix 秒级时间戳。</p>",
+          "example": "1779157787",
+          "member": "int64",
+          "name": "ApproveTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ArchiveFlowResult": {
+      "document": "归档合同结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>归档合同id</p>",
+          "example": "yD3h6UUc**************ev42sDw4ME",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同处理结果</p><p>枚举值：</p><ul><li>0： 成功</li><li>1： 失败</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ArchiveFlowStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务自定义id</p>",
+          "example": "****business_id",
+          "member": "string",
+          "name": "BusinessId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源ID列表</p>",
+          "example": "[\"yD3hnUUck**********Tv60CvmOnrcHE\"]",
+          "member": "string",
+          "name": "ResourceIdList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "PDF验签**",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AuthInfoDetail": {
       "document": "企业扩展服务授权列表详情",
       "members": [
         {
           "disabled": false,
-          "document": "扩展服务类型，和入参一致",
+          "document": "<p>扩展服务类型，和入参一致</p>",
           "example": "OPEN_SERVER_SIGN",
           "member": "string",
           "name": "Type",
@@ -1719,7 +1895,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展服务名称",
+          "document": "<p>扩展服务名称</p>",
           "example": "企业静默签（自动签署）",
           "member": "string",
           "name": "Name",
@@ -1730,7 +1906,7 @@
         },
         {
           "disabled": false,
-          "document": "授权员工列表",
+          "document": "<p>授权员工列表</p>",
           "example": "无",
           "member": "HasAuthUser",
           "name": "HasAuthUserList",
@@ -1741,7 +1917,7 @@
         },
         {
           "disabled": false,
-          "document": "授权企业列表（企业自动签时，该字段有值）",
+          "document": "<p>授权企业列表（企业自动签时，该字段有值）</p>",
           "example": "无",
           "member": "HasAuthOrganization",
           "name": "HasAuthOrganizationList",
@@ -1752,7 +1928,7 @@
         },
         {
           "disabled": false,
-          "document": "授权员工列表总数",
+          "document": "<p>授权员工列表总数</p>",
           "example": "0",
           "member": "int64",
           "name": "AuthUserTotal",
@@ -1763,7 +1939,7 @@
         },
         {
           "disabled": false,
-          "document": "授权企业列表总数",
+          "document": "<p>授权企业列表总数</p>",
           "example": "1",
           "member": "int64",
           "name": "AuthOrganizationTotal",
@@ -3233,6 +3409,157 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateArchiveFlow": {
+      "document": "创建归档合同信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合同文件的资源id，使用<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\" target=\"_blank\">UploadFiles</a> 上传文件返回resourceId，目前一个合同只能支持一个资源ID。</p>",
+          "example": "[\"yD3hnUUckpzj3147Ux9Tv60CvmOnrcHE\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同名称，不传时系统会使用合同资源文件名作为合同名称；最终合同名称不能为空；长度不能超过200，只能由中文、字母、数字和下划线组成。</p>",
+          "example": "测试3-flow_name",
+          "member": "string",
+          "name": "FlowName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同类型，自定义文本字符串，长度不能超过200。</p>",
+          "example": "租房合同",
+          "member": "string",
+          "name": "FlowType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用方业务系统中的合同业务编号，可以用于外部系统和归档合同做关联，长度不超过 128 字节</p>",
+          "example": "**3*business_id",
+          "member": "string",
+          "name": "BusinessId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同发起方/创建人名称，用于归档合同展示和检索，长度不超过 32 字符</p>",
+          "example": "发起方",
+          "member": "string",
+          "name": "CreatorName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>签署人信息列表，用于记录合同由哪些个人或企业签署，最多 50 个参与者。</p>",
+          "example": "无",
+          "member": "ArchiveFlowApproverInfo",
+          "name": "ApproverInfo",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关注人信息列表，用于记录合同关注对象，最多 50 个关注者。</p>",
+          "example": "无",
+          "member": "ArchiveFlowApproverInfo",
+          "name": "CcInfo",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用方自定义透传数据，可用于保存业务扩展信息，长度不超过 20480 字节。</p>",
+          "example": "用户的自定义数据",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同描述/备注信息，长度不超过 1000 个字符</p>",
+          "example": "这是合同描述",
+          "member": "string",
+          "name": "FlowDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同签署完成时间，Unix 秒级时间戳</p>",
+          "example": "1779157787",
+          "member": "int64",
+          "name": "ApproveTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同发起时间/合同原始创建时间，Unix 秒级时间戳</p>",
+          "example": "1779147787",
+          "member": "int64",
+          "name": "CustomCreatedOn",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateArchiveFlowTaskRequest": {
+      "document": "CreateArchiveFlowTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>执行本接口操作的员工信息。注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>归档合同列表，一次最多支持50个合同</p>",
+          "example": "无",
+          "member": "CreateArchiveFlow",
+          "name": "ArchiveFlows",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateArchiveFlowTaskResponse": {
+      "document": "CreateArchiveFlowTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>归档任务ID，后续使用 <a href=\"\">查询归档任务状态</a>接口获取归档任务执行结果</p>",
+          "example": "yD3h6UUckpzjnz27UkwEdGoGm3LFAtgX",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateBatchAdminChangeInvitationsRequest": {
       "document": "CreateBatchAdminChangeInvitations请求参数结构体",
@@ -6336,6 +6663,61 @@
       ],
       "type": "object"
     },
+    "CreateFlowGroupRemindsRequest": {
+      "document": "CreateFlowGroupReminds请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同(流程)组的合同组Id</p>",
+          "example": "yD3**************************jJK",
+          "member": "string",
+          "name": "FlowGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowGroupRemindsResponse": {
+      "document": "CreateFlowGroupReminds返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合同组催办接口返回的详细信息。</p>",
+          "example": "无",
+          "member": "RemindFlowGroupRecord",
+          "name": "RemindFlowGroupRecords",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateFlowGroupSignReviewRequest": {
       "document": "CreateFlowGroupSignReview请求参数结构体",
       "members": [
@@ -8426,6 +8808,15 @@
           "name": "AuthorizationMethod",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业认证页面隐藏上传营业执照<br><img src=\"https://qcloudimg.tencent-cloud.cn/raw/cf827ce0e2043d8cc85e0735c9cfa3fc.png\" alt=\"image\"><br><img src=\"https://qcloudimg.tencent-cloud.cn/raw/f908cabe71238c78ee8fafc70888a344.png\" alt=\"image\"></p>",
+          "example": "false",
+          "member": "bool",
+          "name": "HideBizLicense",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -8467,7 +8858,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n支持填入集团子公司经办人 userId 代发合同。\n\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "document": "<p>执行本接口操作的员工信息。使用此接口时，必须填写userId。<br>支持填入集团子公司经办人 userId 代发合同。</p><p>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -8476,7 +8867,7 @@
         },
         {
           "disabled": false,
-          "document": "请指定需执行批量签署的流程ID，数量范围为1-100。您可登录腾讯电子签控制台，浏览 \"合同\"->\"合同中心\" 以查阅某一合同的FlowId（在页面中显示为合同ID）。用户将利用链接对这些合同实施批量操作。  注：生成动态签署方领取时此参数必传。 ",
+          "document": "<p>请指定需执行批量签署的流程ID，数量范围为1-100。您可登录腾讯电子签控制台，浏览 &quot;合同&quot;-&gt;&quot;合同中心&quot; 以查阅某一合同的FlowId（在页面中显示为合同ID）。用户将利用链接对这些合同实施批量操作。  注：生成动态签署方领取时此参数必传。</p>",
           "example": "[\"yDxZtUyKQD2JuqUuO4zjERYG3XNeEJXw\"]",
           "member": "string",
           "name": "FlowIds",
@@ -8485,7 +8876,7 @@
         },
         {
           "disabled": false,
-          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "document": "<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -8494,7 +8885,7 @@
         },
         {
           "disabled": false,
-          "document": "员工在腾讯电子签平台的独特身份标识，为32位字符串。\n您可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查阅某位员工的UserId（在页面中显示为用户ID）。\nUserId必须是传入合同（FlowId）中的签署人。\n\n<ul>\n<li>1. 若UserId为空，Name和Mobile 必须提供。</li>\n<li>2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。</li>\n</ul>",
+          "document": "<p>员工在腾讯电子签平台的独特身份标识，为32位字符串。<br>您可登录腾讯电子签控制台，在 &quot;更多能力&quot;-&gt;&quot;组织管理&quot; 中查阅某位员工的UserId（在页面中显示为用户ID）。<br>UserId必须是传入合同（FlowId）中的签署人。</p><ul><li>1. 若UserId为空，Name和Mobile 必须提供。</li><li>2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。</li></ul>",
           "example": "yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84",
           "member": "string",
           "name": "UserId",
@@ -8503,7 +8894,7 @@
         },
         {
           "disabled": false,
-          "document": "员工姓名，必须与手机号码一起使用。\n如果UserId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。",
+          "document": "<p>员工姓名，必须与手机号码一起使用。<br>如果UserId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。</p>",
           "example": "张三",
           "member": "string",
           "name": "Name",
@@ -8512,7 +8903,7 @@
         },
         {
           "disabled": false,
-          "document": "员工手机号，必须与姓名一起使用。\n 如果UserId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。",
+          "document": "<p>员工手机号，必须与姓名一起使用。<br> 如果UserId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。</p>",
           "example": "187****7192",
           "member": "string",
           "name": "Mobile",
@@ -8521,7 +8912,7 @@
         },
         {
           "disabled": false,
-          "document": "为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。您可以通过查询合同接口（DescribeFlowInfo）查询此参数。若传了此参数，则可以不传 UserId, Name, Mobile等参数  注：生成动态签署方领取时此参数必传。",
+          "document": "<p>为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。您可以通过查询合同接口（DescribeFlowInfo）查询此参数。若传了此参数，则可以不传 UserId, Name, Mobile等参数  注：生成动态签署方领取时此参数必传。</p>",
           "example": "[\"yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E\"]",
           "member": "string",
           "name": "RecipientIds",
@@ -8530,7 +8921,7 @@
         },
         {
           "disabled": false,
-          "document": "合同组Id，传入此参数则可以不传FlowIds",
+          "document": "<p>合同组Id，传入此参数则可以不传FlowIds</p>",
           "example": "yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E",
           "member": "string",
           "name": "FlowGroupId",
@@ -8539,7 +8930,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`",
+          "document": "<p>是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul></p>",
           "example": "false",
           "member": "bool",
           "name": "CanBatchReject",
@@ -8548,7 +8939,7 @@
         },
         {
           "disabled": false,
-          "document": "动态签署方领取链接配置。",
+          "document": "<p>动态签署方领取链接配置。</p>",
           "example": "无",
           "member": "DynamicSignOption",
           "name": "DynamicSignOption",
@@ -8563,7 +8954,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。",
+          "document": "<p>批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。</p>",
           "example": "https://essurl.cn/bR8**HA",
           "member": "string",
           "name": "SignUrl",
@@ -8573,7 +8964,7 @@
         },
         {
           "disabled": false,
-          "document": "链接过期截止时间，格式为Unix标准时间戳（秒），默认为7天后截止。",
+          "document": "<p>链接过期截止时间，格式为Unix标准时间戳（秒），默认为7天后截止。</p>",
           "example": "1736478119",
           "member": "int64",
           "name": "ExpiredTime",
@@ -11570,6 +11961,62 @@
       ],
       "usage": "both"
     },
+    "DescribeArchiveFlowTaskRequest": {
+      "document": "DescribeArchiveFlowTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>执行本接口操作的员工信息。注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务id，<a href=\"\">创建归档任务</a>时返回</p>",
+          "example": "yD3h6UUck*****************bBSBfp",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeArchiveFlowTaskResponse": {
+      "document": "DescribeArchiveFlowTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务状态</p><p>枚举值：</p><ul><li>0： 待处理</li><li>1： 处理中</li><li>2： 任务完成</li><li>3： 任务完成(存在失败)</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每条合同的处理结果，与创建任务的archive_flows列表顺序一致</p>",
+          "example": "无",
+          "member": "ArchiveFlowResult",
+          "name": "ArchiveFlowResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBatchOrganizationRegistrationTasksRequest": {
       "document": "DescribeBatchOrganizationRegistrationTasks请求参数结构体",
       "members": [
@@ -12895,8 +13342,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
-          "example": "yD************oimj",
+          "document": "<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>",
+          "example": "无",
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
@@ -12904,7 +13351,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询的扩展服务类型。\n如下所示：\n<ul><li>OPEN_SERVER_SIGN：企业静默签署</li>\n<li>BATCH_SIGN：批量签署</li>\n</ul>\n",
+          "document": "<p>要查询的扩展服务类型。<br>如下所示：</p><ul><li>OPEN_SERVER_SIGN：企业静默签署</li><li>BATCH_SIGN：批量签署</li></ul>",
           "example": "OPEN_SERVER_SIGN",
           "member": "string",
           "name": "ExtendServiceType",
@@ -12913,7 +13360,7 @@
         },
         {
           "disabled": false,
-          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "document": "<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -12922,7 +13369,7 @@
         },
         {
           "disabled": false,
-          "document": "指定每页返回的数据条数，和Offset参数配合使用。 注：`1.默认值为20，单页做大值为200。`\t",
+          "document": "<p>指定每页返回的数据条数，和Offset参数配合使用。 注：<code>1.默认值为20，单页做大值为200。</code></p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -12931,12 +13378,21 @@
         },
         {
           "disabled": false,
-          "document": "查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用。 注：`1.offset从0开始，即第一页为0。` `2.默认从第一页返回。`\t",
+          "document": "<p>查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用。 注：<code>1.offset从0开始，即第一页为0。</code> <code>2.默认从第一页返回。</code></p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询指定的合作方企业的授权信息，当ExtendServiceType=OPEN_SERVER_SIGN：企业静默签署时有效</p>",
+          "example": "典子签企业",
+          "member": "string",
+          "name": "PartnerOrganizationName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12946,7 +13402,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务授权的信息列表，根据查询类型返回特定扩展服务的授权状况。",
+          "document": "<p>服务授权的信息列表，根据查询类型返回特定扩展服务的授权状况。</p>",
           "example": "无",
           "member": "AuthInfoDetail",
           "name": "AuthInfoDetail",
@@ -13098,7 +13554,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "document": "<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -13107,7 +13563,7 @@
         },
         {
           "disabled": false,
-          "document": "文件对应的业务类型，目前支持：<ul><li>**FLOW ** : <font color=\"red\">如需下载合同文件请选择此项</font></li><li>**TEMPLATE ** : 如需下载模板文件请选择此项</li><li>**DOCUMENT  **: 如需下载文档文件请选择此项</li><li>**SEAL  **: 如需下载印章图片请选择此项</li><li>**DIGITFILE**: 如需下载加签文件请选择此项</li></ul>",
+          "document": "<p>文件对应的业务类型，目前支持：<ul><li><strong>FLOW</strong> : <font color=\"red\">如需下载合同文件请选择此项</font></li><li><strong>TEMPLATE</strong> : 如需下载模板文件请选择此项</li><li><strong>DOCUMENT</strong>: 如需下载文档文件请选择此项</li><li><strong>SEAL</strong>: 如需下载印章图片请选择此项</li><li><strong>DIGITFILE</strong>: 如需下载加签文件请选择此项</li><li><strong>ARCHIVE</strong>: 如需下载合同归档文件请选择此项</li></ul></p><p>枚举值：</p><ul><li>FLOW： 如需下载合同文件请选择此项</li><li>TEMPLATE： 如需下载模板文件请选择此项</li><li>DOCUMENT： 如需下载文档文件请选择此项</li><li>SEAL： 如需下载印章图片请选择此项</li><li>DIGITFILE： 如需下载加签文件请选择此项</li><li>ARCHIVE： 如需下载合同归档文件请选择此项</li></ul>",
           "example": "DOCUMENT",
           "member": "string",
           "name": "BusinessType",
@@ -13116,7 +13572,7 @@
         },
         {
           "disabled": false,
-          "document": "业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul>",
+          "document": "<p>业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul></p>",
           "example": "[\"yDRSRUUgygj6rq7wUuO4zjECxndqQApl\",\"yDwFkUUckpstzjhfUugNAWf1KibXqS26\"]",
           "member": "string",
           "name": "BusinessIds",
@@ -13125,7 +13581,7 @@
         },
         {
           "disabled": false,
-          "document": "下载后的文件命名，只有FileType为zip的时候生效",
+          "document": "<p>下载后的文件命名，只有FileType为zip的时候生效</p>",
           "example": "张三的入职合同",
           "member": "string",
           "name": "FileName",
@@ -13134,7 +13590,7 @@
         },
         {
           "disabled": false,
-          "document": "要下载的文件类型，取值如下：\n<ul>\n<li>JPG</li>\n<li>PDF</li>\n<li>ZIP</li>\n</ul>",
+          "document": "<p>要下载的文件类型，取值如下：</p><ul><li>JPG</li><li>PDF</li><li>ZIP</li></ul>",
           "example": "PDF",
           "member": "string",
           "name": "FileType",
@@ -13143,7 +13599,7 @@
         },
         {
           "disabled": false,
-          "document": "指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。",
+          "document": "<p>指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -13152,7 +13608,7 @@
         },
         {
           "disabled": false,
-          "document": "指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。",
+          "document": "<p>指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。</p>",
           "example": "0",
           "member": "int64",
           "name": "Limit",
@@ -13161,7 +13617,7 @@
         },
         {
           "disabled": false,
-          "document": "下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)",
+          "document": "<p>下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)</p>",
           "example": "0",
           "member": "int64",
           "name": "UrlTtl",
@@ -13170,7 +13626,7 @@
         },
         {
           "disabled": true,
-          "document": "暂不开放",
+          "document": "<p>暂不开放</p>",
           "example": "1",
           "member": "string",
           "name": "CcToken",
@@ -13179,7 +13635,7 @@
         },
         {
           "disabled": true,
-          "document": "暂不开放",
+          "document": "<p>暂不开放</p>",
           "example": "1",
           "member": "string",
           "name": "Scene",
@@ -13188,7 +13644,7 @@
         },
         {
           "disabled": false,
-          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "document": "<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -13203,7 +13659,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件URL信息；\n链接不是永久链接,  过期时间受UrlTtl入参的影响,  默认有效期5分钟后,  到期后链接失效。",
+          "document": "<p>文件URL信息；<br>链接不是永久链接,  过期时间受UrlTtl入参的影响,  默认有效期5分钟后,  到期后链接失效。</p>",
           "example": "无",
           "member": "FileUrl",
           "name": "FileUrls",
@@ -13213,7 +13669,7 @@
         },
         {
           "disabled": false,
-          "document": "URL数量",
+          "document": "<p>URL数量</p>",
           "example": "4",
           "member": "int64",
           "name": "TotalCount",
@@ -16092,7 +16548,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。\n模板发起合同时，该参数为必填项。\n文件发起合同时，该参数无需传值。\n如果开发者后序用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。",
+          "document": "<p>签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。<br>模板发起合同时，该参数为必填项。<br>文件发起合同时，该参数无需传值。<br>如果开发者后序用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。</p>",
           "example": "yDwhSUUckp3lqxlpUu6Ni3SvjJPoxxxx",
           "member": "string",
           "name": "RecipientId",
@@ -16101,7 +16557,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人来源\nWEWORKAPP: 企业微信\n<br/>仅【企微或签】时指定WEWORKAPP",
+          "document": "<p>签署人来源<br>WEWORKAPP: 企业微信<br><br>仅【企微或签】时指定WEWORKAPP</p>",
           "example": "WEWORKAPP",
           "member": "string",
           "name": "ApproverSource",
@@ -16110,7 +16566,7 @@
         },
         {
           "disabled": false,
-          "document": "企业微信UserId\n<br/>当ApproverSource为WEWORKAPP的企微或签场景下，必须指企业自有应用获取企业微信的UserId",
+          "document": "<p>企业微信UserId<br><br>当ApproverSource为WEWORKAPP的企微或签场景下，必须指企业自有应用获取企业微信的UserId</p>",
           "example": "zhangsan",
           "member": "string",
           "name": "CustomUserId",
@@ -16119,7 +16575,7 @@
         },
         {
           "disabled": false,
-          "document": "企业签署人的员工姓名。除企业微信应用场景（ApproverSource设置为WEWORKAPP）外，本字段为必填。",
+          "document": "<p>企业签署人的员工姓名。除企业微信应用场景（ApproverSource设置为WEWORKAPP）外，本字段为必填。</p>",
           "example": "张三",
           "member": "string",
           "name": "ApproverName",
@@ -16128,7 +16584,7 @@
         },
         {
           "disabled": false,
-          "document": "补充企业签署人员工手机号\n<ul>\n<li>ApproverSource!=WEWORKAPP时，必传</li>\n</ul>",
+          "document": "<p>补充企业签署人员工手机号</p><ul><li>ApproverSource!=WEWORKAPP时，必传</li></ul>",
           "example": "18800000000",
           "member": "string",
           "name": "ApproverMobile",
@@ -16137,7 +16593,7 @@
         },
         {
           "disabled": false,
-          "document": "补充企业动态签署人时，需要指定对应企业名称",
+          "document": "<p>补充企业动态签署人时，需要指定对应企业名称</p>",
           "example": "张三示例企业",
           "member": "string",
           "name": "OrganizationName",
@@ -16146,7 +16602,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD 中国大陆居民身份证</li>\n<li>HONGKONG_AND_MACAO 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN 中国港澳台居民居住证(格式同中国大陆居民身份证)</li>\n<li>OTHER_CARD_TYPE 其他证件</li></ul>\n\n注: `1.其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`\n`2.补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
+          "document": "<p>签署方经办人的证件类型，支持以下类型</p><ul><li>ID_CARD 中国大陆居民身份证</li><li>HONGKONG_AND_MACAO 中国港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul><p>注: 补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。</p>",
           "example": "ID_CARD",
           "member": "string",
           "name": "ApproverIdCardType",
@@ -16155,7 +16611,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串</li></ul>\n\n注：`补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
+          "document": "<p>签署方经办人的证件号码，应符合以下规则</p><ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li><li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字</li><li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串</li></ul><p>注：<code>补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。</code></p>",
           "example": "37000019890303000X",
           "member": "string",
           "name": "ApproverIdCardNumber",
@@ -16164,7 +16620,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程ID\n- 补充合同组子合同动态签署人时必传。\n- 补充普通合同时，请阅读：<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口</a>的接口使用说明",
+          "document": "<p>合同流程ID</p><ul><li>补充合同组子合同动态签署人时必传。</li><li>补充普通合同时，请阅读：<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowApprovers/\" target=\"_blank\">补充签署人接口</a>的接口使用说明</li></ul>",
           "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "FlowId",
@@ -16173,7 +16629,7 @@
         },
         {
           "disabled": false,
-          "document": "通知类型：\n<li>当FillApproverType =0，或签场景补充签署人时，指定是否发送或签领取短信</li>\n\n<li>SMS：开启或签领取短信通知</li>\n\n<li>NONE：关闭或签领取短信通知</li>\n\n<li>当NotifyType=NONE时，可调用<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateSchemeUrl\" target=\"_blank\" rel=\"noopener noreferrer\">获取跳转至腾讯电子签小程序的签署链接</a>接口生成签署链接来完成或签领取</li>\n\n\n",
+          "document": "<p>通知类型：</p><li>当FillApproverType =0，或签场景补充签署人时，指定是否发送或签领取短信</li><li>SMS：开启或签领取短信通知</li><li>NONE：关闭或签领取短信通知</li><li>当NotifyType=NONE时，可调用<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateSchemeUrl\" target=\"_blank\" rel=\"noopener noreferrer\">获取跳转至腾讯电子签小程序的签署链接</a>接口生成签署链接来完成或签领取</li>",
           "example": "SMS",
           "member": "string",
           "name": "NotifyType",
@@ -17216,7 +17672,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。\n该名称还将用于合同签署完成后的下载文件名。",
+          "document": "<p>合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。<br>该名称还将用于合同签署完成后的下载文件名。</p>",
           "example": "2025入职合同",
           "member": "string",
           "name": "FlowName",
@@ -17225,7 +17681,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程参与者信息，最大限制50方\n注意 approver中的顺序需要和模板中的顺序保持一致， 否则会导致模板中配置的信息无效。",
+          "document": "<p>签署流程参与者信息，最大限制50方<br>注意 approver中的顺序需要和模板中的顺序保持一致， 否则会导致模板中配置的信息无效。</p>",
           "example": "无",
           "member": "ApproverInfo",
           "name": "Approvers",
@@ -17234,7 +17690,7 @@
         },
         {
           "disabled": false,
-          "document": "文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。\n注：此字段定义为数组，但仅支持单个文件",
+          "document": "<p>文件资源ID，通过多文件上传<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\">UploadFiles</a>接口获得，为32位字符串。<br>注：此字段定义为数组，但仅支持单个文件</p>",
           "example": "[\"yDt1JUUckp77a2omUyEmko88eg49PTsN\"]",
           "member": "string",
           "name": "FileIds",
@@ -17243,7 +17699,7 @@
         },
         {
           "disabled": false,
-          "document": "合同模板ID，为32位字符串。\n建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。\n可登录腾讯电子签控制台，在 \"模板\"->\"模板中心\"->\"列表展示设置\"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。",
+          "document": "<p>合同模板ID，为32位字符串。<br>建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。<br>可登录腾讯电子签控制台，在 &quot;模板&quot;-&gt;&quot;模板中心&quot;-&gt;&quot;列表展示设置&quot;选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。</p>",
           "example": "yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH",
           "member": "string",
           "name": "TemplateId",
@@ -17252,7 +17708,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程的类型(如销售合同/入职合同等)，最大长度200个字符",
+          "document": "<p>签署流程的类型(如销售合同/入职合同等)，最大长度200个字符</p>",
           "example": "劳务合同",
           "member": "string",
           "name": "FlowType",
@@ -17261,7 +17717,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程描述,最大长度1000个字符",
+          "document": "<p>签署流程描述,最大长度1000个字符</p>",
           "example": "2025入职合同",
           "member": "string",
           "name": "FlowDescription",
@@ -17270,7 +17726,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程的签署截止时间。\n\n值为unix时间戳,精确到秒,不传默认为当前时间一年后\n示例值：1604912664",
+          "document": "<p>签署流程的签署截止时间。</p><p>值为unix时间戳,精确到秒,不传默认为当前时间一年后<br>示例值：1604912664</p>",
           "example": "1736751627",
           "member": "int64",
           "name": "Deadline",
@@ -17279,7 +17735,7 @@
         },
         {
           "disabled": true,
-          "document": "合同（流程）的回调地址",
+          "document": "<p>合同（流程）的回调地址</p>",
           "example": "http://www.qq.com/callback",
           "member": "string",
           "name": "CallbackUrl",
@@ -17288,7 +17744,7 @@
         },
         {
           "disabled": false,
-          "document": "调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。\n在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。\n回调的相关说明可参考开发者中心的<a href=\"https://qian.tencent.com/developers/company/callback_types_v2\" target=\"_blank\">回调通知</a>模块。",
+          "document": "<p>调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。<br>在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。<br>回调的相关说明可参考开发者中心的<a href=\"https://qian.tencent.com/developers/company/callback_types_v2\" target=\"_blank\">回调通知</a>模块。</p>",
           "example": "VXNlckRhdGE=",
           "member": "string",
           "name": "UserData",
@@ -17297,7 +17753,7 @@
         },
         {
           "disabled": false,
-          "document": "发送类型：\ntrue：无序签\nfalse：有序签\n注：默认为false（有序签），请和模板中的配置保持一致\n示例值：true",
+          "document": "<p>发送类型：<br>true：无序签<br>false：有序签<br>注：默认为false（有序签），请和模板中的配置保持一致<br>示例值：true</p>",
           "example": "true",
           "member": "bool",
           "name": "Unordered",
@@ -17306,7 +17762,7 @@
         },
         {
           "disabled": false,
-          "document": "模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体\n<ul><li>单行文本控件</li>\n<li>多行文本控件</li>\n<li>勾选框控件</li>\n<li>数字控件</li>\n<li>图片控件</li>\n<li>动态表格等填写控件</li></ul>",
+          "document": "<p>模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体</p><ul><li>单行文本控件</li><li>多行文本控件</li><li>勾选框控件</li><li>数字控件</li><li>图片控件</li><li>动态表格等填写控件</li></ul>",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -17315,7 +17771,7 @@
         },
         {
           "disabled": false,
-          "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。\n若设置为true，审核结果需通过接口 [CreateFlowSignReview](https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowSignReview) 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。\n\n注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。\n示例值：true",
+          "document": "<p>发起方企业的签署人进行签署操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。<br>若设置为true，审核结果需通过接口 <a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowSignReview\">CreateFlowSignReview</a> 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。</p><p>注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。<br>示例值：true</p>",
           "example": "true",
           "member": "bool",
           "name": "NeedSignReview",
@@ -17324,7 +17780,7 @@
         },
         {
           "disabled": false,
-          "document": "个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN\n",
+          "document": "<p>个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN</p>",
           "example": "E_PRESCRIPTION_AUTO_SIGN",
           "member": "string",
           "name": "AutoSignScene",
@@ -17333,12 +17789,21 @@
         },
         {
           "disabled": false,
-          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
+          "document": "<p>在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:<img src=\"https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png\" alt=\"FlowDisplayType\"></p>",
           "example": "1",
           "member": "int64",
           "name": "FlowDisplayType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>抄送人信息</p>",
+          "example": "无",
+          "member": "CcInfo",
+          "name": "CcInfos",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -17707,7 +18172,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "授权企业id",
+          "document": "<p>授权企业id</p>",
           "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
           "member": "string",
           "name": "OrganizationId",
@@ -17718,7 +18183,7 @@
         },
         {
           "disabled": false,
-          "document": "授权企业名称",
+          "document": "<p>授权企业名称</p>",
           "example": "张三示例企业",
           "member": "string",
           "name": "OrganizationName",
@@ -17729,7 +18194,7 @@
         },
         {
           "disabled": false,
-          "document": "被授权企业id",
+          "document": "<p>被授权企业id</p>",
           "example": "yDw6yUUgyg3caowzUx4GQptRKfMnJqX8",
           "member": "string",
           "name": "AuthorizedOrganizationId",
@@ -17740,7 +18205,7 @@
         },
         {
           "disabled": false,
-          "document": "被授权企业名称",
+          "document": "<p>被授权企业名称</p>",
           "example": "李四示例企业",
           "member": "string",
           "name": "AuthorizedOrganizationName",
@@ -17751,7 +18216,7 @@
         },
         {
           "disabled": false,
-          "document": "授权模板id（仅当授权方式为模板授权时有值）",
+          "document": "<p>授权模板id（仅当授权方式为模板授权时有值）</p>",
           "example": "yDt1JUUckp77a2omUyEmko88eg49PTsN",
           "member": "string",
           "name": "TemplateId",
@@ -17762,7 +18227,7 @@
         },
         {
           "disabled": false,
-          "document": "授权模板名称（仅当授权方式为模板授权时有值）",
+          "document": "<p>授权模板名称（仅当授权方式为模板授权时有值）</p>",
           "example": "入职合同",
           "member": "string",
           "name": "TemplateName",
@@ -17773,7 +18238,7 @@
         },
         {
           "disabled": false,
-          "document": "授权时间，格式为时间戳，单位s",
+          "document": "<p>授权时间，格式为时间戳，单位s</p>",
           "example": "1736751627",
           "member": "int64",
           "name": "AuthorizeTime",
@@ -19208,7 +19673,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署方经办人的类型，支持以下类型\n<ul><li> ORGANIZATION 企业（含企业自动签）</li>\n<li>PERSON 个人（含个人自动签）</li></ul>",
+          "document": "<p>签署方经办人的类型，支持以下类型</p><ul><li> ORGANIZATION 企业（含企业自动签）</li><li>PERSON 个人（含个人自动签）</li></ul>",
           "example": "ORGANIZATION",
           "member": "string",
           "name": "ApproverType",
@@ -19217,7 +19682,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的姓名。 经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。",
+          "document": "<p>签署方经办人的姓名。 经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。</p>",
           "example": "张三",
           "member": "string",
           "name": "ApproverName",
@@ -19226,7 +19691,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。 请确认手机号所有方为此合同签署方。",
+          "document": "<p>签署方经办人手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。 请确认手机号所有方为此合同签署方。</p>",
           "example": "18888888888",
           "member": "string",
           "name": "ApproverMobile",
@@ -19235,7 +19700,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD 中国大陆居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN 中国港澳台居民居住证(格式同居民身份证)</li>\n<li>OTHER_CARD_TYPE 其他证件</li></ul>\n\n注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`",
+          "document": "<p>签署方经办人的证件类型，支持以下类型</p><ul><li>ID_CARD 中国大陆居民身份证  (默认值)</li><li>HONGKONG_AND_MACAO 中国港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN 中国港澳台居民居住证(格式同居民身份证)</li></ul>",
           "example": "ID_CARD",
           "member": "string",
           "name": "ApproverIdCardType",
@@ -19244,7 +19709,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "<p>签署方经办人的证件号码，应符合以下规则</p><ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li><li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li><li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "37000019890303000X",
           "member": "string",
           "name": "ApproverIdCardNumber",
@@ -19253,7 +19718,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构名称。\n请确认该名称与企业营业执照中注册的名称一致。\n如果名称中包含英文括号()，请使用中文括号（）代替。\n如果签署方是企业签署方(approverType = 0 或者 approverType = 3)， 则企业名称必填。\n",
+          "document": "<p>组织机构名称。<br>请确认该名称与企业营业执照中注册的名称一致。<br>如果名称中包含英文括号()，请使用中文括号（）代替。<br>如果签署方是企业签署方(approverType = 0 或者 approverType = 3)， 则企业名称必填。</p>",
           "example": "张三示例企业",
           "member": "string",
           "name": "OrganizationName",
@@ -21449,6 +21914,108 @@
         }
       ],
       "usage": "in"
+    },
+    "RemindFlowGroupDetail": {
+      "document": "催办合同组下签署人维度详细信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>该签署人在合同中的签署顺序</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ApproverOrder",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>签署人对应的签署id，签署方唯一编号，一个全局唯一的标识符，不同的流程不会出现冲突。</p><p>在<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowSignUrl/\">CreateFlowSignUrl</a>、<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateBatchQuickSignUrl/\">CreateBatchQuickSignUrl</a>等接口生成签署链接时，可以通过查询合同流程的详情信息接口 <a href=\"https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/\">DescribeFlowInfo</a> 获取签署人的Signld，然后可以将此值传入，为该签署人创建签署链接。这样可以避免重复传输姓名、手机号、证件号等其他信息。</p>",
+          "example": "yD3P3UUckpzamzebUyAzME71xJv9X9gk",
+          "member": "string",
+          "name": "SignId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>催办状态</p><p>枚举值：</p><ul><li>0： 成功</li><li>2： 无需催办</li><li>5： 超过次数限制</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述当前催办结果的原因</p>",
+          "example": "催办成功（短信）",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RemindFlowGroupRecord": {
+      "document": "合同组催办接口返回的详细信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>对应签署人出现的合同列表</p>",
+          "example": "[\"yD3P3UUckpzamzeuU1UyAzME71m7YVCw\"]",
+          "member": "string",
+          "name": "FlowIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对应签署人出现的合同名</p>",
+          "example": "[\"合同组(2份合同)-B2C-1\"]",
+          "member": "string",
+          "name": "FlowNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>签署人姓名</p>",
+          "example": "杨焰桢",
+          "member": "string",
+          "name": "ApproverName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>签署人手机号</p>",
+          "example": "147****8396",
+          "member": "string",
+          "name": "Mobile",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>催办合同组下签署人维度详细信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RemindFlowGroupDetail",
+          "name": "RemindMessageList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "RemindFlowRecords": {
       "document": "催办接口返回的详细信息。",

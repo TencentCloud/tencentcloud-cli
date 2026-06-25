@@ -336,6 +336,14 @@
         "title": "查询客户端详情"
       }
     ],
+    "DescribeCloudAppList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudAppList\n<公共请求参数>\n\n{\n    \"EnvId\": \"l******-******53798f7294\",\n    \"DeployType\": \"static-hosting\",\n    \"PageSize\": 1,\n    \"PageNo\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceList\": [\n            {\n                \"AppPath\": \"/React_New_TestT\",\n                \"CreateTime\": \"2026-05-29 10:58:46\",\n                \"DeployType\": \"static-hosting\",\n                \"Domain\": \"****************************************.webapps.tcloudbase.com\",\n                \"Framework\": \"react\",\n                \"LatestBuildTime\": \"2026-05-29 10:58:46\",\n                \"LatestStatus\": \"SUCCESS\",\n                \"LatestVersionName\": \"React_New_TestT-001\",\n                \"ServiceName\": \"React_New_TestT\"\n            }\n        ],\n        \"Total\": 6,\n        \"RequestId\": \"6f480c2b-7a8a-46e6-8207-09c472e70466\"\n    }\n}",
+        "title": "查询云应用列表"
+      }
+    ],
     "DescribeCloudBaseBuildService": [
       {
         "document": "通过环境id,获得云托管代码上传url, 用来上传代码",
@@ -358,6 +366,28 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCreateMySQLResult\n<公共请求参数>\n\n{\n    \"EnvId\": \"**s*e*-********2dbc0df14561\",\n    \"TaskId\": \"38654\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"FailReason\": null,\n            \"FreezeStatus\": false,\n            \"Status\": \"success\"\n        },\n        \"RequestId\": \"c110db5b-5fd8-4a02-9a86-c2a46679abd7\"\n    }\n}",
         "title": "DescribeCreateMySQLResult"
+      }
+    ],
+    "DescribeCreditsUsage": [
+      {
+        "document": "查询资源点用量",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCreditsUsage\n<公共请求参数>\n\n{\n    \"StartDate\": \"2026-02-01\",\n    \"EndDate\": \"2026-03-01\",\n    \"EnvId\": \"ridge-work-p01-5gevsxb851439e3b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeductValue\": 39745.66,\n        \"HistoryDeducted\": 0,\n        \"PackageDeductValue\": 0,\n        \"ReportValue\": 0,\n        \"RequestId\": \"b82674f3-2b57-41ff-aa75-8c77e8d5ed99\"\n    }\n}",
+        "title": "查询资源点用量"
+      }
+    ],
+    "DescribeCreditsUsageDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCreditsUsageDetail\n<公共请求参数>\n\n{\n    \"Modules\": [\n        \"EKS\"\n    ],\n    \"StartDate\": \"2025-12-21\",\n    \"EndDate\": \"2025-12-23\",\n    \"NeedUsageDetails\": false,\n    \"EnvId\": \"yntest-1gudy58n050fbe21\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Usages\": [\n            {\n                \"CreditsValue\": 10.41,\n                \"DeductValue\": 10.41,\n                \"EnvId\": \"yntest-1gudy58n050fbe21\",\n                \"MetricUsageDetail\": [\n                    {\n                        \"BillingCycleType\": \"daily\",\n                        \"CreditsValue\": 10.41,\n                        \"DeductValue\": 10.41,\n                        \"MetricName\": \"Flux\",\n                        \"PackageDeductValue\": 0,\n                        \"ReportValue\": 0,\n                        \"ResourceType\": \"NAT\",\n                        \"Unit\": \"Byte\",\n                        \"Value\": 13976221,\n                        \"ValueDetailList\": []\n                    }\n                ],\n                \"Module\": \"EKS\",\n                \"PackageDeductValue\": 0,\n                \"ReportValue\": 0\n            }\n        ],\n        \"RequestId\": \"9c4f04f0-b5cf-4e13-ada1-30a80fefe714\"\n    }\n}",
+        "title": "不返回用量明细"
+      },
+      {
+        "document": "NeedUsageDetails为 true返回用量明细，且 StartDate和EndDate为同一天",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCreditsUsageDetail\n<公共请求参数>\n\n{\n    \"Modules\": [\n        \"EKS\"\n    ],\n    \"StartDate\": \"2025-12-31\",\n    \"EndDate\": \"2025-12-31\",\n    \"NeedUsageDetails\": true,\n    \"EnvId\": \"yntest-1gudy58n050fbe21\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Usages\": [\n            {\n                \"CreditsValue\": 13.06,\n                \"DeductValue\": 13.06,\n                \"EnvId\": \"yntest-1gudy58n050fbe21\",\n                \"MetricUsageDetail\": [\n                    {\n                        \"BillingCycleType\": \"daily\",\n                        \"CreditsValue\": 13.06,\n                        \"DeductValue\": 13.06,\n                        \"MetricName\": \"Flux\",\n                        \"PackageDeductValue\": 0,\n                        \"ReportValue\": 0,\n                        \"ResourceType\": \"NAT\",\n                        \"Unit\": \"Byte\",\n                        \"Value\": 17559586,\n                        \"ValueDetailList\": [\n                            {\n                                \"CalcTime\": \"2025-12-30 23:00:00\",\n                                \"CreditsValue\": 0.65,\n                                \"DeductValue\": 0.65,\n                                \"PackageDeductValue\": 0,\n                                \"RawValue\": 869001,\n                                \"ReportValue\": 0\n                            }\n                        ]\n                    }\n                ],\n                \"Module\": \"EKS\",\n                \"PackageDeductValue\": 0,\n                \"ReportValue\": 0\n            }\n        ],\n        \"RequestId\": \"eabff6d3-363e-499f-8654-194508286361\"\n    }\n}",
+        "title": "返回用量明细"
       }
     ],
     "DescribeCurveData": [
@@ -402,6 +432,14 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeEnvLimit\n&Source=miniapp\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"CurrentFreeEnvNum\": 0,\n        \"ChangePayTotal\": 0,\n        \"CurrentChangePayMonthly\": 0,\n        \"MaxDeleteMonthly\": 0,\n        \"MaxEnvNum\": 0,\n        \"ChangePayMonthly\": 0,\n        \"CurrentChangePayTotal\": 0,\n        \"MaxDeleteTotal\": 0,\n        \"CurrentEnvNum\": 0,\n        \"CurrentDeleteMonthly\": 0,\n        \"CurrentDeleteTotal\": 0,\n        \"CurrentFreeTrialNum\": 0,\n        \"MaxFreeTrialNum\": 0,\n        \"MaxFreeEnvNum\": 0,\n        \"RequestId\": \"uuid-here\"\n    }\n}",
         "title": "查询环境个数上限接口"
+      }
+    ],
+    "DescribeEnvPlans": [
+      {
+        "document": "当需要获取可售卖的套餐信息，以用来调用CreateEnv等接口进行下单时",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvPlans\n<公共请求参数>\n\n{\n    \"PackageId\": \"baas_personal\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PlanList\": [\n            {\n                \"PackageDescription\": \"新手入门，高性价比\",\n                \"PackageId\": \"baas_personal\",\n                \"PackageTitle\": \"个人版\",\n                \"PackageType\": \"default\",\n                \"ResourceLimit\": \"{\\\"Qps\\\":500,\\\"InvokeNum\\\":{\\\"TimeUnit\\\":\\\"m\\\",\\\"Unit\\\":\\\"万次\\\",\\\"MaxSize\\\":20},\\\"Capacity\\\":{\\\"TimeUnit\\\":\\\"m\\\",\\\"Unit\\\":\\\"GB\\\",\\\"MaxSize\\\":3},\\\"Cdn\\\":{\\\"Flux\\\":{\\\"TimeUnit\\\":\\\"m\\\",\\\"Unit\\\":\\\"GB\\\",\\\"MaxSize\\\":10},\\\"BackFlux\\\":{\\\"TimeUnit\\\":\\\"m\\\",\\\"Unit\\\":\\\"GB\\\",\\\"MaxSize\\\":10}},\\\"Scf\\\":{\\\"Concurrency\\\":0,\\\"OutFlux\\\":{\\\"TimeUnit\\\":\\\"m\\\",\\\"Unit\\\":\\\"GB\\\",\\\"MaxSize\\\":4},\\\"MemoryUse\\\":{\\\"TimeUnit\\\":\\\"m\\\",\\\"Unit\\\":\\\"万GBS\\\",\\\"MaxSize\\\":15}},\\\"AI\\\":{\\\"Token\\\":{\\\"TimeUnit\\\":\\\"m\\\",\\\"Unit\\\":\\\"个\\\",\\\"MaxSize\\\":100000}},\\\"ResUse\\\":{\\\"MemoryUse\\\":{\\\"TimeUnit\\\":\\\"m\\\",\\\"Unit\\\":\\\"万CU\\\",\\\"MaxSize\\\":15}},\\\"Hosting\\\":{\\\"Capacity\\\":{\\\"TimeUnit\\\":\\\"m\\\",\\\"Unit\\\":\\\"GB\\\",\\\"MaxSize\\\":1}},\\\"APP\\\":{\\\"ReleaseAppNum\\\":{\\\"TimeUnit\\\":\\\"m\\\",\\\"Unit\\\":\\\"个\\\",\\\"MaxSize\\\":3}},\\\"Auth\\\":{\\\"UserNum\\\":{\\\"TimeUnit\\\":\\\"m\\\",\\\"Unit\\\":\\\"百\\\",\\\"MaxSize\\\":2}},\\\"Credits\\\":{\\\"TimeUnit\\\":\\\"m\\\",\\\"Unit\\\":\\\"个\\\",\\\"MaxSize\\\":\\\"40000\\\"}}\",\n                \"UnitPrice\": \"39.9\"\n            }\n        ],\n        \"RequestId\": \"95e8f5b1-a591-481c-a73f-5eee45abea04\"\n    }\n}",
+        "title": "查询个人版套餐版本信息"
       }
     ],
     "DescribeEnvs": [

@@ -541,8 +541,8 @@
     "StartWebRecord": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartWebRecord\n<公共请求参数>\n\n{\n    \"RecordUrl\": \"https://web-record-xxxxx.cos.ap-xxx.myqcloud.com/xxxx/xxx.mp4\",\n    \"StorageParams\": {\n        \"CloudStorage\": {\n            \"Vendor\": 0,\n            \"Bucket\": \"webrecord-1234589\",\n            \"Region\": \"ap-chengdu\",\n            \"AccessKey\": \"AKxxxxxx\",\n            \"SecretKey\": \"Idxxxxxx\",\n            \"FileNamePrefix\": [\n                \"record\",\n                \"video\"\n            ]\n        }\n    },\n    \"SdkAppId\": 1600011111,\n    \"MaxDurationLimit\": 3600,\n    \"WebRecordVideoParams\": {\n        \"Width\": 1280,\n        \"Height\": 720,\n        \"Format\": \"mp4\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri\",\n        \"RequestId\": \"2a76ee73-6579-42f0-8d57-1f6c9b9d7208\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartWebRecord\n<公共请求参数>\n\n{\n    \"RecordUrl\": \"https://webrtc-troubleshooting-demo-1258344699.cos-website.ap-guangzhou.myqcloud.com/whip-demos/test_webrecorder.html?video_count=1&video_resolution=720\",\n    \"StorageParams\": {\n        \"CloudStorage\": {\n            \"Vendor\": 0,\n            \"Region\": \"ap-nanjing\",\n            \"Bucket\": \"***************************************\",\n            \"AccessKey\": \"************************************\",\n            \"SecretKey\": \"KN9espVu2tUoreAPN4UJr89tNaWDeqmR\",\n            \"FileNamePrefix\": [\n                \"isaaccheng\"\n            ]\n        }\n    },\n    \"SdkAppId\": 1400188366,\n    \"WebRecordVideoParams\": {\n        \"Width\": 1280,\n        \"Height\": 720,\n        \"Format\": \"mp4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"N0VeWap2ZikvkBMy7vdQ2dHU-YweB2t48eNBquMyTewJWDH+GbjwpE1MLL9fuVSCWqv02VeJuL2IpqQ1dZArUQ66XwuZV7H9gK48N3nOnfGd0Vq78D-CkHWBmtvWbw..\",\n        \"RequestId\": \"981dca49-afc8-4af7-9fa8-1d2408f94b8a\"\n    }\n}",
         "title": "启动一个页面录制任务"
       }
     ],
@@ -597,9 +597,9 @@
     "StopWebRecord": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopWebRecord\n<公共请求参数>\n\n{\n    \"TaskId\": \"HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a76ee73-6579-42f0-8d57-1f6c9b9d7208\"\n    }\n}",
-        "title": "停止页面录制任务"
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopWebRecord\n<公共请求参数>\n\n{\n    \"TaskId\": \"dhze2exwGcZr+H5zWWXz2iwDFHCMwAt3jdEqk0A1wVJ13kfr4ZmnqxDt1PMMA7XPdRKxJFoYwlP85sCQdCY0GUmLfy4tmlZAkWvYUZun9mmAJi9s-T4MPRFygnj3nQ..\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"578050cb-9d6d-434f-9bc2-a2c47913ed31\"\n    }\n}",
+        "title": "StopWebRecord示例"
       }
     ],
     "TextToSpeech": [

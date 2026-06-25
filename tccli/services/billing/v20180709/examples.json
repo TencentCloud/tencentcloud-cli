@@ -506,6 +506,14 @@
         "title": "查询归集规则详情"
       }
     ],
+    "DescribeOrgMemberAccountBalance": [
+      {
+        "document": "查余额用例返回验证",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrgMemberAccountBalance\n<公共请求参数>\n\n{\n    \"MemberUins\": [\n        \"700001941608\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"BasicCreditAmount\": 0,\n                \"CashAccountBalance\": 36365911,\n                \"CreditAmount\": 0,\n                \"IsCreditAccount\": false,\n                \"MemberName\": \"kleinerwang_test\",\n                \"MemberUin\": \"700001941608\",\n                \"OweAmount\": 0,\n                \"RealBalance\": 36365911,\n                \"TempCredit\": 0\n            }\n        ],\n        \"PageNumber\": 1,\n        \"PageSize\": 1,\n        \"TotalCount\": 1,\n        \"RequestId\": \"241b92ef-b68e-4827-ae15-5ef7f3bd4009\"\n    }\n}",
+        "title": "查余额用例返回验证"
+      }
+    ],
     "DescribeRenewInstances": [
       {
         "document": "",

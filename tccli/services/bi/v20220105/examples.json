@@ -24,6 +24,22 @@
         "title": "成功"
       }
     ],
+    "CreateCorpTag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCorpTag\n<公共请求参数>\n\n{\n    \"Name\": \"‘岗位’\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"9478b0d0-1e95-4d12-88a6-db36fb27a12b\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"Id\": 15\n        }\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "CreateDataTable": [
+      {
+        "document": "创建数据表",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataTable\n<公共请求参数>\n\n{\n    \"Type\": 1,\n    \"Name\": \"testdata\",\n    \"FoldId\": 1,\n    \"DatasourceId\": \"testdata\",\n    \"TableName\": \"testdata\",\n    \"Sql\": \"testdata\",\n    \"ExcelUrl\": \"testdata\",\n    \"Fields\": [\n        {\n            \"DbName\": \"testdata\",\n            \"AliasName\": \"testdata\",\n            \"DbType\": \"testdata\",\n            \"FieldType\": \"testdata\",\n            \"FieldComplexType\": \"testdata\",\n            \"Mark\": \"testdata\",\n            \"FormatRule\": \"testdata\",\n            \"IsFilter\": true,\n            \"CalcType\": \"testdata\",\n            \"CalcFormula\": \"testdata\",\n            \"CalcDesc\": \"testdata\",\n            \"DictId\": 1,\n            \"DictName\": \"testdata\",\n            \"TableNodeId\": \"testdata\",\n            \"ExcelName\": \"testdata\",\n            \"TableName\": \"testdata\",\n            \"JsonPathName\": \"testdata\",\n            \"Granularity\": \"testdata\"\n        }\n    ],\n    \"ProjectId\": 1,\n    \"TableNodeType\": 1,\n    \"Tables\": [\n        {\n            \"TableNodeType\": 1,\n            \"TableNodeId\": \"testdata\",\n            \"ParentId\": \"testdata\",\n            \"TableId\": \"testdata\",\n            \"TableName\": \"testdata\",\n            \"Fields\": [\n                {\n                    \"DbName\": \"testdata\",\n                    \"AliasName\": \"testdata\",\n                    \"DbType\": \"testdata\",\n                    \"FieldType\": \"testdata\",\n                    \"FieldComplexType\": \"testdata\",\n                    \"Mark\": \"testdata\",\n                    \"FormatRule\": \"testdata\",\n                    \"IsFilter\": true,\n                    \"CalcType\": \"testdata\",\n                    \"CalcFormula\": \"testdata\",\n                    \"CalcDesc\": \"testdata\",\n                    \"DictId\": 1,\n                    \"DictName\": \"testdata\",\n                    \"TableNodeId\": \"testdata\",\n                    \"ExcelName\": \"testdata\",\n                    \"TableName\": \"testdata\",\n                    \"JsonPathName\": \"testdata\",\n                    \"Granularity\": \"testdata\"\n                }\n            ],\n            \"DatasourceId\": 1,\n            \"TableAlias\": \"testdata\"\n        }\n    ],\n    \"Joins\": [\n        {\n            \"JoinId\": \"testdata\",\n            \"SourceTableNodeId\": \"testdata\",\n            \"TargetTableNodeId\": \"testdata\",\n            \"JoinType\": \"testdata\",\n            \"Fields\": [\n                {\n                    \"FieldJoinId\": \"testdata\",\n                    \"SourceField\": {\n                        \"DbName\": \"testdata\",\n                        \"AliasName\": \"testdata\",\n                        \"DbType\": \"testdata\",\n                        \"FieldType\": \"testdata\",\n                        \"FieldComplexType\": \"testdata\",\n                        \"Mark\": \"testdata\",\n                        \"FormatRule\": \"testdata\",\n                        \"IsFilter\": true,\n                        \"CalcType\": \"testdata\",\n                        \"CalcFormula\": \"testdata\",\n                        \"CalcDesc\": \"testdata\",\n                        \"DictId\": 1,\n                        \"DictName\": \"testdata\",\n                        \"TableNodeId\": \"testdata\",\n                        \"ExcelName\": \"testdata\",\n                        \"TableName\": \"testdata\",\n                        \"JsonPathName\": \"testdata\",\n                        \"Granularity\": \"testdata\"\n                    }\n                }\n            ]\n        }\n    ],\n    \"ExtInfo\": \"testdata\",\n    \"DlcExtInfo\": \"testdata\",\n    \"AsyncRequest\": true,\n    \"ParentTranId\": \"testdata\",\n    \"ApiDatasourceConfig\": {\n        \"FieldsJsonData\": \"testdata\",\n        \"ConnectionType\": 1,\n        \"FrequencyConfig\": {\n            \"Frequency\": \"testdata\",\n            \"Dates\": [\n                0\n            ],\n            \"Time\": \"testdata\",\n            \"IntervalTime\": 1,\n            \"IntervalTimeUnit\": 1,\n            \"Hours\": [\n                0\n            ],\n            \"Minute\": [\n                0\n            ]\n        },\n        \"Url\": \"testdata\",\n        \"RequestMethod\": 1,\n        \"RequestHeader\": \"testdata\",\n        \"RequestParams\": \"testdata\",\n        \"RequestBody\": \"testdata\",\n        \"UserName\": \"testdata\",\n        \"Password\": \"testdata\",\n        \"AuthorizationType\": 1,\n        \"TableId\": 1,\n        \"JsonPathDbNameMap\": \"testdata\"\n    },\n    \"ParamList\": [\n        {\n            \"ParamName\": \"testdata\",\n            \"DefaultValue\": \"testdata\",\n            \"ParamType\": \"testdata\",\n            \"FormatRule\": \"testdata\",\n            \"ComplexType\": \"testdata\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Id\": 0,\n            \"AccessKey\": \"testdata\",\n            \"ProjectId\": 1,\n            \"TranId\": \"testdata\",\n            \"TranStatus\": 0\n        },\n        \"Extra\": \"testdata\",\n        \"Msg\": \"testdata\",\n        \"RequestId\": \"testdata\"\n    }\n}",
+        "title": "创建数据表"
+      }
+    ],
     "CreateDatasource": [
       {
         "document": "创建数据源",
@@ -62,6 +78,14 @@
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProject\n<公共请求参数>\n\n{\n    \"Name\": \"Name\",\n    \"ColorCode\": \"ColorCode\",\n    \"Logo\": \"Logo\",\n    \"Mark\": \"Mark\",\n    \"IsApply\": false,\n    \"DefaultPanelType\": 1982493789748932,\n    \"ManagePlatform\": \"ManagePlatform\"\n}",
         "output": "{\n    \"Response\": {\n        \"Extra\": \"1\",\n        \"Data\": {\n            \"Id\": 11010\n        },\n        \"Msg\": \"成功\",\n        \"RequestId\": \"dsjasdk121kdsfjksadk\"\n    }\n}",
         "title": "创建项目"
+      }
+    ],
+    "CreateTagTable": [
+      {
+        "document": "创建标签表",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTagTable\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"AutoImportProjectId\": 0,\n    \"AutoImportTableId\": 0,\n    \"AutoImportUinField\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Id\": 0\n        },\n        \"Extra\": \"abc\",\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建标签表"
       }
     ],
     "CreateUserGroup": [
@@ -244,6 +268,14 @@
         "title": "查询"
       }
     ],
+    "DescribeSourceFieldList": [
+      {
+        "document": "原始数据表字段接口",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSourceFieldList\n<公共请求参数>\n\n{\n    \"DataSourceId\": 0,\n    \"TableName\": \"testdata\",\n    \"Sql\": \"testdata\",\n    \"ProjectId\": 1,\n    \"AsyncRequest\": true,\n    \"TranId\": \"testdata\",\n    \"DlcExtInfo\": \"testdata\",\n    \"ParamList\": [\n        {\n            \"ParamName\": \"testdata\",\n            \"DefaultValue\": \"testdata\",\n            \"ParamType\": \"testdata\",\n            \"FormatRule\": \"testdata\",\n            \"ComplexType\": \"testdata\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Extra\": \"testdata\",\n        \"Msg\": \"testdata\",\n        \"Data\": {\n            \"List\": [\n                {\n                    \"DbName\": \"testdata\",\n                    \"AliasName\": \"testdata\",\n                    \"DbType\": \"testdata\",\n                    \"FieldType\": \"testdata\",\n                    \"Mark\": \"testdata\",\n                    \"ExcelName\": \"testdata\",\n                    \"DictId\": 0,\n                    \"DictName\": \"testdata\",\n                    \"TableNodeId\": \"testdata\",\n                    \"TableName\": \"testdata\",\n                    \"FieldComplexType\": \"testdata\",\n                    \"FormatRule\": \"testdata\",\n                    \"IsFilter\": true,\n                    \"CalcType\": \"testdata\",\n                    \"CalcFormula\": \"testdata\",\n                    \"CalcDesc\": \"testdata\",\n                    \"JsonPathName\": \"testdata\",\n                    \"Granularity\": \"testdata\"\n                }\n            ],\n            \"TranId\": \"testdata\",\n            \"TranStatus\": 0\n        },\n        \"RequestId\": \"testdata\"\n    }\n}",
+        "title": "原始数据表字段接口"
+      }
+    ],
     "DescribeUserGroupInfo": [
       {
         "document": "DescribeUserGroupInfo",
@@ -292,6 +324,14 @@
         "title": "项目内-用户角色列表"
       }
     ],
+    "EditCorpTag": [
+      {
+        "document": "编辑企业标签(异步)",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EditCorpTag\n<公共请求参数>\n\n{\n    \"Id\": 0,\n    \"Name\": \"abc\",\n    \"ImportType\": \"abc\",\n    \"AutoImportTagTableId\": 0,\n    \"AutoImportField\": \"abc\",\n    \"AsyncRequest\": true,\n    \"AutoImportTagTableName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Extra\": \"abc\",\n        \"Msg\": \"abc\",\n        \"Data\": {\n            \"TranId\": \"abc\",\n            \"TranStatus\": 0,\n            \"Id\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "编辑企业标签(异步)"
+      }
+    ],
     "ExportScreenPage": [
       {
         "document": "导出自由画布",
@@ -332,6 +372,14 @@
         "title": "修改项目"
       }
     ],
+    "ModifyResourceUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourceUser\n<公共请求参数>\n\n{\n    \"ProjectId\": 560,\n    \"UserId\": \"u1\",\n    \"EntityIds\": [\n        2477\n    ],\n    \"ResourceType\": \"page\",\n    \"Resource\": {\n        \"ResourceList\": [\n            {\n                \"ResourceName\": \"PageView\",\n                \"ResourceValue\": true,\n                \"CanChange\": true\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"uuid\",\n        \"Extra\": \"\",\n        \"Data\": null\n    }\n}",
+        "title": "修改"
+      }
+    ],
     "ModifyResourceUserGroup": [
       {
         "document": "",
@@ -346,6 +394,14 @@
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourceUserGroupResource\n<公共请求参数>\n\n{\n    \"ProjectId\": 1,\n    \"UserGroupId\": \"1\",\n    \"EntityIds\": [\n        1\n    ],\n    \"ResourceType\": \"page\",\n    \"Resource\": {\n        \"ResourceList\": [\n            {\n                \"ResourceName\": \"PageView\",\n                \"ResourceValue\": true,\n                \"CanChange\": true\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"uid\",\n        \"Extra\": \"\",\n        \"Data\": null\n    }\n}",
         "title": "更新"
+      }
+    ],
+    "ModifyTagTable": [
+      {
+        "document": "编辑标签表",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTagTable\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"AutoImportProjectId\": 0,\n    \"AutoImportTableId\": 0,\n    \"AutoImportUinField\": \"abc\",\n    \"Id\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Id\": 0\n        },\n        \"Extra\": \"abc\",\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "编辑标签表"
       }
     ],
     "ModifyUserDetailInfo": [
@@ -378,6 +434,14 @@
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserRoleProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 1982493789748932,\n    \"UserId\": \"UserId\",\n    \"RoleIdList\": [\n        1982493789748932\n    ],\n    \"Email\": \"123***@qq.com\",\n    \"UserName\": \"zhangsan\",\n    \"AppUserId\": \"AppUserId\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"\",\n            \"ErrorLevel\": \"INFO\",\n            \"DocLink\": \"\",\n            \"FAQ\": \"\",\n            \"ReservedField\": \"\"\n        },\n        \"Extra\": \"\",\n        \"Msg\": \"成功\",\n        \"Data\": \"\",\n        \"RequestId\": \"sadd23jdsh-123cdjds\"\n    }\n}",
         "title": "项目-修改用户信息"
+      }
+    ],
+    "ModifyUserTag": [
+      {
+        "document": "修改用户标签值",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserTag\n<公共请求参数>\n\n{\n    \"UserId\": \"abc\",\n    \"TagList\": [\n        {\n            \"Id\": 0,\n            \"Name\": \"abc\",\n            \"Value\": \"abc\",\n            \"IsExternalManage\": true,\n            \"ManagePlatform\": \"abc\",\n            \"ImportType\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"abc\",\n        \"Extra\": \"abc\",\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改用户标签值"
       }
     ],
     "QueryUserGroupMember": [
