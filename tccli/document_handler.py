@@ -175,6 +175,14 @@ class ActionDocumentHandler(BaseDocumentHandler):
                     self.doc.write('[%s ...]' % (param_info["members"]))
                 else:
                     self.doc.doc_description('[%s ...]' % (param_info["members"]))
+            elif isinstance(param_info["members"], str):
+                # 自引用截断占位：members 为类型名字符串（如 "AllocationRuleExpression"），
+                # 直接渲染 RecursiveRef 占位，不再向下展开
+                placeholder = '[<RecursiveRef:%s> ...]' % param_info["members"]
+                if self.doc.style.indentation > 2:
+                    self.doc.write(placeholder)
+                else:
+                    self.doc.doc_description(placeholder)
             else:
                 self.doc.write('[') if self.doc.style.indentation > 2 \
                     else self.doc.doc_description('[')
@@ -187,8 +195,14 @@ class ActionDocumentHandler(BaseDocumentHandler):
                 self.doc.style.new_line()
                 self.doc.doc_description(']')
         else:
-            if param_info["members"] not in BASE_TYPE:
-                self._handle_object_members(param_info["members"], param_info["type"])
+            if param_info["members"] in BASE_TYPE:
+                return
+            if isinstance(param_info["members"], str):
+                # 自引用截断占位（非 Array 形态）：members 为类型名字符串，
+                # 直接渲染 RecursiveRef 占位
+                self.doc.doc_description('<RecursiveRef:%s>' % param_info["members"])
+                return
+            self._handle_object_members(param_info["members"], param_info["type"])
 
     def _handle_object_members(self, param_info, param_type):
         if param_type == "Array" or self.doc.style.indentation == 2:
@@ -216,6 +230,9 @@ class ActionDocumentHandler(BaseDocumentHandler):
     def _unfold_complex_object(self, param_info):
         if not param_info["type"] == "Array" and param_info["members"] in BASE_TYPE:
             return
+        # 自引用截断占位：非 Array 且 members 为类型名字符串，无可展开内容，直接跳过
+        if not param_info["type"] == "Array" and isinstance(param_info["members"], str):
+            return
 
         self.doc.style.new_line()
         self.doc.doc_title('JSON Syntax')
@@ -232,13 +249,18 @@ class ActionDocumentHandler(BaseDocumentHandler):
     def _complex_object_doc(self, param_info, option):
         if param_info["members"] in BASE_TYPE:
             return
+        # 自引用截断占位：members 为类型名字符串，无子成员可遍历，直接返回
+        if not isinstance(param_info["members"], dict):
+            return
         self.doc.style.indent()
         for sub_param, sub_param_info in param_info["members"].items():
             self.doc.style.new_line()
             self._doc_title(option, sub_param, sub_param_info)
             self.doc.doc_description('%s' % sub_param_info["document"])
             self.doc.style.new_line()
-            if sub_param_info["members"] not in BASE_TYPE:
+            # 仅当子成员的 members 仍然是 dict（即未被截断且非基础类型）时才继续递归
+            if sub_param_info["members"] not in BASE_TYPE \
+                    and isinstance(sub_param_info["members"], dict):
                 self._complex_object_doc(sub_param_info, option)
         self.doc.style.dedent()
         self.doc.style.new_line()
