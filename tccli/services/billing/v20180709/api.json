@@ -4505,7 +4505,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品名称：用户所采购的各类云产品，例如：云服务器 CVM",
+          "document": "<p>产品名称：用户所采购的各类云产品，例如：云服务器 CVM</p>",
           "example": "云服务器CVM",
           "member": "string",
           "name": "BusinessCodeName",
@@ -4515,7 +4515,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1",
+          "document": "<p>子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1</p>",
           "example": "云服务器CVM-标准型S1",
           "member": "string",
           "name": "ProductCodeName",
@@ -4525,7 +4525,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式：资源的计费模式，区分为包年包月和按量计费",
+          "document": "<p>计费模式：资源的计费模式，区分为包年包月和按量计费</p>",
           "example": "按量计费",
           "member": "string",
           "name": "PayModeName",
@@ -4535,7 +4535,7 @@
         },
         {
           "disabled": false,
-          "document": "项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目",
+          "document": "<p>项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目</p>",
           "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
@@ -4545,7 +4545,7 @@
         },
         {
           "disabled": false,
-          "document": "地域：资源所属地域，如华南地区（广州）",
+          "document": "<p>地域：资源所属地域，如华南地区（广州）</p>",
           "example": "华南地区（广州）",
           "member": "string",
           "name": "RegionName",
@@ -4555,7 +4555,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区：资源所属可用区，如广州三区",
+          "document": "<p>可用区：资源所属可用区，如广州三区</p>",
           "example": "广州三区",
           "member": "string",
           "name": "ZoneName",
@@ -4565,7 +4565,7 @@
         },
         {
           "disabled": false,
-          "document": "资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID",
+          "document": "<p>资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID</p>",
           "example": "ins-rb7bmkwx",
           "member": "string",
           "name": "ResourceId",
@@ -4575,7 +4575,7 @@
         },
         {
           "disabled": false,
-          "document": "资源别名：用户在控制台为资源设置的名称，如果未设置，则默认为空",
+          "document": "<p>资源别名：用户在控制台为资源设置的名称，如果未设置，则默认为空</p>",
           "example": "emr-Core.3_emr-4g83a3k3",
           "member": "string",
           "name": "ResourceName",
@@ -4585,7 +4585,7 @@
         },
         {
           "disabled": false,
-          "document": "交易类型，如包年包月新购、包年包月续费、按量计费扣费等类型",
+          "document": "<p>交易类型，如包年包月新购、包年包月续费、按量计费扣费等类型</p>",
           "example": "包年包月新购",
           "member": "string",
           "name": "ActionTypeName",
@@ -4595,7 +4595,7 @@
         },
         {
           "disabled": false,
-          "document": "订单ID：包年包月计费模式下对应子订单号。后付费计费模式下账单费用不存在订单概念，可忽略此参数。\n",
+          "document": "<p>订单ID：包年包月计费模式下对应子订单号。后付费计费模式下账单费用不存在订单概念，可忽略此参数。</p>",
           "example": "20211202400008418120371",
           "member": "string",
           "name": "OrderId",
@@ -4605,7 +4605,7 @@
         },
         {
           "disabled": false,
-          "document": "交易ID：结算扣费单号",
+          "document": "<p>交易ID：结算扣费单号</p>",
           "example": "20211202400008418120371",
           "member": "string",
           "name": "BillId",
@@ -4615,7 +4615,7 @@
         },
         {
           "disabled": false,
-          "document": "扣费时间：结算扣费时间",
+          "document": "<p>扣费时间：结算扣费时间</p>",
           "example": "2021-12-02 12:45:12",
           "member": "datetime",
           "name": "PayTime",
@@ -4625,7 +4625,7 @@
         },
         {
           "disabled": false,
-          "document": "开始使用时间：产品服务开始使用时间",
+          "document": "<p>开始使用时间：产品服务开始使用时间</p>",
           "example": "2021-12-02 12:45:05",
           "member": "datetime",
           "name": "FeeBeginTime",
@@ -4635,7 +4635,7 @@
         },
         {
           "disabled": false,
-          "document": "结束使用时间：产品服务结束使用时间",
+          "document": "<p>结束使用时间：产品服务结束使用时间</p>",
           "example": "2021-12-03 12:45:05",
           "member": "datetime",
           "name": "FeeEndTime",
@@ -4645,8 +4645,8 @@
         },
         {
           "disabled": false,
-          "document": "组件列表",
-          "example": "[           {             \"ComponentCodeName\": \"实例\",            ",
+          "document": "<p>组件列表</p>",
+          "example": "无",
           "member": "BillDetailComponent",
           "name": "ComponentSet",
           "output_required": true,
@@ -4655,7 +4655,7 @@
         },
         {
           "disabled": false,
-          "document": "支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识",
+          "document": "<p>支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识</p>",
           "example": "909619400",
           "member": "string",
           "name": "PayerUin",
@@ -4665,7 +4665,7 @@
         },
         {
           "disabled": false,
-          "document": "使用者UIN：实际使用资源的账号 ID",
+          "document": "<p>使用者UIN：实际使用资源的账号 ID</p>",
           "example": "909619400",
           "member": "string",
           "name": "OwnerUin",
@@ -4675,7 +4675,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）",
+          "document": "<p>操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）</p>",
           "example": "909619400",
           "member": "string",
           "name": "OperateUin",
@@ -4685,8 +4685,8 @@
         },
         {
           "disabled": false,
-          "document": "标签信息",
-          "example": "[           {             \"TagKey\": \"jemmahuang\",             \"T",
+          "document": "<p>标签信息</p>",
+          "example": "无",
           "member": "BillTagInfo",
           "name": "Tags",
           "output_required": true,
@@ -4695,7 +4695,7 @@
         },
         {
           "disabled": false,
-          "document": "产品编码",
+          "document": "<p>产品编码</p>",
           "example": "p_cdn",
           "member": "string",
           "name": "BusinessCode",
@@ -4705,7 +4705,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品编码",
+          "document": "<p>子产品编码</p>",
           "example": "sp_cvm_sa2",
           "member": "string",
           "name": "ProductCode",
@@ -4715,7 +4715,7 @@
         },
         {
           "disabled": false,
-          "document": "交易类型编码",
+          "document": "<p>交易类型编码</p>",
           "example": "postpay_deduct_h",
           "member": "string",
           "name": "ActionType",
@@ -4725,7 +4725,7 @@
         },
         {
           "disabled": false,
-          "document": "地域ID",
+          "document": "<p>地域ID</p>",
           "example": "1",
           "member": "string",
           "name": "RegionId",
@@ -4735,7 +4735,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -4745,8 +4745,8 @@
         },
         {
           "disabled": false,
-          "document": "价格属性：该组件除单价、时长外的其他影响折扣定价的属性信息",
-          "example": "[\"操作系统\"：\"linux\"，\"连续使用时长T\"：\"第三阶梯\"，\"平台\"：\"云平\"]",
+          "document": "<p>价格属性：该组件除单价、时长外的其他影响折扣定价的属性信息</p>",
+          "example": "[\"操作系统：linux\"]",
           "member": "string",
           "name": "PriceInfo",
           "output_required": true,
@@ -4755,8 +4755,8 @@
         },
         {
           "disabled": false,
-          "document": "关联交易单据ID：和本笔交易关联单据 ID，如，冲销订单，记录原订单、重结订单，退费单记录对应的原购买订单号",
-          "example": "{                     \"PrepayPurchase\":\"20230707400000439953321\",                     \"PrepayRenew\":\"20230707400000440668101,20230707400000440730331,20230707400000440886501\"                 }",
+          "document": "<p>关联交易单据ID：和本笔交易关联单据 ID，如，冲销订单，记录原订单、重结订单，退费单记录对应的原购买订单号</p>",
+          "example": "无",
           "member": "BillDetailAssociatedOrder",
           "name": "AssociatedOrder",
           "output_required": false,
@@ -4765,7 +4765,7 @@
         },
         {
           "disabled": false,
-          "document": "计算说明：特殊交易类型计费结算的详细计算说明，如退费及变配",
+          "document": "<p>计算说明：特殊交易类型计费结算的详细计算说明，如退费及变配</p>",
           "example": "\"退款：686.51元，现金券： 0元,代金券/折扣券不退（订单号20230707400000439953321\"",
           "member": "string",
           "name": "Formula",
@@ -4775,7 +4775,7 @@
         },
         {
           "disabled": false,
-          "document": "计费规则：各产品详细的计费规则官网说明链接",
+          "document": "<p>计费规则：各产品详细的计费规则官网说明链接</p>",
           "example": "https://buy.cloud.tencent.com/price/cvm",
           "member": "string",
           "name": "FormulaUrl",
@@ -4785,7 +4785,7 @@
         },
         {
           "disabled": false,
-          "document": "账单归属日",
+          "document": "<p>账单归属日</p>",
           "example": "2023-10-10 00:00:00",
           "member": "string",
           "name": "BillDay",
@@ -4795,7 +4795,7 @@
         },
         {
           "disabled": false,
-          "document": "账单归属月",
+          "document": "<p>账单归属月</p>",
           "example": "2023-10-01 00:00:00",
           "member": "string",
           "name": "BillMonth",
@@ -4805,7 +4805,7 @@
         },
         {
           "disabled": false,
-          "document": "账单记录ID",
+          "document": "<p>账单记录ID</p>",
           "example": "1852019429362647040",
           "member": "string",
           "name": "Id",
@@ -4815,7 +4815,7 @@
         },
         {
           "disabled": false,
-          "document": "国内国际编码",
+          "document": "<p>国内国际编码</p>",
           "example": "international",
           "member": "string",
           "name": "RegionType",
@@ -4825,7 +4825,7 @@
         },
         {
           "disabled": false,
-          "document": "国内国际：资源所属区域类型（国内、国际）",
+          "document": "<p>国内国际：资源所属区域类型（国内、国际）</p>",
           "example": "International",
           "member": "string",
           "name": "RegionTypeName",
@@ -4835,8 +4835,8 @@
         },
         {
           "disabled": false,
-          "document": "备注属性（实例配置）：其他备注信息，如预留实例的预留实例类型和交易类型、CCN 产品的两端地域信息",
-          "example": "优惠生效单号：T2024041930694; 本条账单类型：调账-重出单; ",
+          "document": "<p>备注属性（实例配置）：其他备注信息，如预留实例的预留实例类型和交易类型、CCN 产品的两端地域信息</p>",
+          "example": "优惠生效单号：T2024041930694; 本条账单类型：调账-重出单;",
           "member": "string",
           "name": "ReserveDetail",
           "output_required": false,
@@ -4845,7 +4845,7 @@
         },
         {
           "disabled": false,
-          "document": "优惠对象",
+          "document": "<p>优惠对象</p>",
           "example": "用户折扣",
           "member": "string",
           "name": "DiscountObject",
@@ -4855,7 +4855,7 @@
         },
         {
           "disabled": false,
-          "document": "优惠类型",
+          "document": "<p>优惠类型</p>",
           "example": "折扣",
           "member": "string",
           "name": "DiscountType",
@@ -4865,10 +4865,20 @@
         },
         {
           "disabled": false,
-          "document": "优惠内容",
+          "document": "<p>优惠内容</p>",
           "example": "0.7",
           "member": "string",
           "name": "DiscountContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源扩展信息：体现资源维度的扩展信息，与L2账单的扩展字段信息保持一致。</p>",
+          "example": "示例值：内网IP: 192.168.1.13;公网IP: 119.45.173.163",
+          "member": "string",
+          "name": "ExtendField",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

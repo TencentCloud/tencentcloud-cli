@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AssociateBudget": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateBudget\n<公共请求参数>\n\n{\n    \"BudgetId\": \"budget-1a2b3c4d\",\n    \"Resources\": [\n        {\n            \"Type\": \"Key\",\n            \"ModelRouterId\": \"cmr-abc12345\",\n            \"KeyId\": \"vkey-abc12345\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "关联Key到Budget"
+      }
+    ],
     "AssociateCustomizedConfig": [
       {
         "document": "关联配置",
@@ -70,12 +78,36 @@
         "title": "克隆负载均衡"
       }
     ],
+    "CreateBudget": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBudget\n<公共请求参数>\n\n{\n    \"BudgetName\": \"production-budget\",\n    \"BudgetConfigs\": [\n        {\n            \"MaxBudget\": 100,\n            \"BudgetDuration\": \"7d\"\n        }\n    ],\n    \"RateLimitConfig\": {\n        \"TPM\": 100000,\n        \"RPM\": 60\n    },\n    \"Resources\": [\n        {\n            \"Type\": \"ModelRouter\",\n            \"ModelRouterId\": \"cmr-abc12345\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BudgetId\": \"budget-1a2b3c4d\",\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "创建Budget并关联实例"
+      }
+    ],
     "CreateClsLogSet": [
       {
         "document": "创建日志集。",
         "input": "https://clb.tencentcloudapi.com/?Action=CreateClsLogSet\n&LogsetName=clb_logset\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"LogsetId\": \"578dd0ad-2e7c-488b-b5fe-0b23da3537eb\",\n        \"RequestId\": \"8b038842-70b2-411b-a1a2-c7fcde195d2c\"\n    }\n}",
         "title": "创建日志集。"
+      }
+    ],
+    "CreateKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKey\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-pm53f9c3\",\n    \"KeyName\": \"测试key\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Key\": \"sk-uI_NjZwG9s9p3VS1wkL26ABYni4hbCEsq0-SOOlzkGL2-882Qp9XsHzKZaI27zQO4R5c18Im1wh4aUYGW0dizfMT\",\n        \"KeyId\": \"vkey-cgjyw5xj\",\n        \"RequestId\": \"d81e7b1f-3587-491b-8556-9e47222fecfd\"\n    }\n}",
+        "title": "创建Key"
+      }
+    ],
+    "CreateKeys": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKeys\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-jcxor1gp\",\n    \"Keys\": [\n        {\n            \"KeyName\": \"批量创建Key测试\"\n        }\n    ],\n    \"BudgetId\": \"budget-86mldfuv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreatedKeys\": [\n            {\n                \"Key\": \"sk-W3BfTOx0ZWJ4llGNwbEZ81twh-2HxgwcFfED7fVychbNXZdTE-S0mHxdkKTHWk_q_bEJaAl8ykT0eJbgBdlsxZ5V23LtL3j0Pdx0bBxivg\",\n                \"KeyId\": \"vkey-evbmx1m1\",\n                \"KeyName\": \"批量创建Key测试\"\n            }\n        ],\n        \"RequestId\": \"83e382d1-2823-4a87-b10a-896898d27f77\"\n    }\n}",
+        "title": "批量创建Key"
       }
     ],
     "CreateListener": [
@@ -144,6 +176,14 @@
         "title": "指定snat ip添加SnatIp"
       }
     ],
+    "CreateModelRouter": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelRouter\n<公共请求参数>\n\n{\n    \"ModelRouterType\": \"Enterprise\",\n    \"ModelRouterName\": \"test-enterprise-modelrouter\",\n    \"Schema\": \"HTTPS\",\n    \"Port\": 443,\n    \"CertId\": \"SCkPG15A\",\n    \"NetworkType\": \"Intranet\",\n    \"VpcId\": \"vpc-fc7eyow9\",\n    \"SubnetId\": \"subnet-2cxt138a\",\n    \"RateLimitConfig\": {\n        \"TPM\": 100000,\n        \"RPM\": 60\n    },\n    \"RouterSetting\": {\n        \"RoutingStrategy\": \"SimpleShuffle\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelRouterId\": \"cmr-c8q8ltxn\",\n        \"RequestId\": \"87343b8e-0928-4c01-b874-058851db309b\"\n    }\n}",
+        "title": "创建模型路由实例"
+      }
+    ],
     "CreateRule": [
       {
         "document": "",
@@ -166,6 +206,30 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"PartitionCount\": 3,\n    \"TopicName\": \"clb-topic\"\n}",
         "output": "{\n    \"Response\": {\n        \"TopicId\": \"b046ae5f-00cf-4e90-880c-215e5ae7b6xy\",\n        \"RequestId\": \"dccf2ce3-0277-465a-9c60-260cfb141d65\"\n    }\n}",
         "title": "创建主题。"
+      }
+    ],
+    "CreateUserGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserGroup\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-pm53f9c3\",\n    \"UserGroupName\": \"核心业务组\",\n    \"Models\": [\n        \"deepseek-v3\"\n    ],\n    \"IntentRouters\": [\n        \"ir-chat\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"UserGroupId\": \"ugrp-9f8e7d6c\",\n        \"RequestId\": \"d81e7b1f-3587-491b-8556-9e47222fecfd\"\n    }\n}",
+        "title": "创建用户组"
+      }
+    ],
+    "DeleteBudgets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBudgets\n<公共请求参数>\n\n{\n    \"BudgetIds\": [\n        \"budget-1a2b3c4d\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "删除Budget"
+      }
+    ],
+    "DeleteKeys": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKeys\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-olvt6wl0\",\n    \"KeyIds\": [\n        \"mkey-zgqlu7mf\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8eb12ad2-57b0-4398-8165-c1af96be00bb\"\n    }\n}",
+        "title": "删除API key"
       }
     ],
     "DeleteListener": [
@@ -206,6 +270,14 @@
         "title": "删除snatip"
       }
     ],
+    "DeleteModelRouters": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteModelRouters\n<公共请求参数>\n\n{\n    \"ModelRouterIds\": [\n        \"cmr-us0nbo8q\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5412e633-2278-4644-b4ff-e6280dd5de70\"\n    }\n}",
+        "title": "删除模型路由实例"
+      }
+    ],
     "DeleteRewrite": [
       {
         "document": "",
@@ -228,6 +300,14 @@
         "input": "https://clb.tencentcloudapi.com/?Action=DeleteTargetGroups\n&TargetGroupIds.0=lbtg-f1phe5j6\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4e0ec156-655b-47e4-a483-a954b632a49a\"\n    }\n}",
         "title": "删除目标组"
+      }
+    ],
+    "DeleteUserGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserGroups\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-pm53f9c3\",\n    \"UserGroupIds\": [\n        \"ugrp-9f8e7d6c\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d81e7b1f-3587-491b-8556-9e47222fecfd\"\n    }\n}",
+        "title": "删除用户组"
       }
     ],
     "DeregisterFunctionTargets": [
@@ -262,6 +342,14 @@
         "title": "解绑一个传统型负载均衡的后端服务"
       }
     ],
+    "DescribeAsyncJobs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAsyncJobs\n<公共请求参数>\n\n{\n    \"RequestIds\": [\n        \"79539486-dfe3-4be4-b9f8-f8a18bac205a\"\n    ],\n    \"NextToken\": \"eyJjdXJzb3JfaWQiOiAxfQ==\",\n    \"MaxResults\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Jobs\": [\n            {\n                \"ApiName\": \"CreateModelRouter\",\n                \"RequestId\": \"f522c7e1-4913-4cc8-8672-c41b80d01164\",\n                \"ResourceIds\": [\n                    \"cmr-d2r861wq\"\n                ],\n                \"Status\": \"Processing\"\n            }\n        ],\n        \"MaxResults\": 1,\n        \"NextToken\": \"\",\n        \"TotalCount\": 1,\n        \"RequestId\": \"d8e86b63-069a-4844-84a7-110aeba8d4b6\"\n    }\n}",
+        "title": "查询异步任务"
+      }
+    ],
     "DescribeBlockIPList": [
       {
         "document": "",
@@ -276,6 +364,22 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlockIPTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"localjob010916173469001234567890\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 6,\n        \"RequestId\": \"83329908-a282-4f9f-8ab-033a3025baff\"\n    }\n}",
         "title": "查询封禁IP（黑名单）异步任务的执行状态"
+      }
+    ],
+    "DescribeBudgetAssociations": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBudgetAssociations\n<公共请求参数>\n\n{\n    \"BudgetId\": \"budget-qygts98h\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AssociationSet\": [\n            {\n                \"BudgetId\": \"budget-qygts98h\",\n                \"CreatedTime\": \"2026-04-18T20:31:53+08:00\",\n                \"KeyId\": \"vkey-gnswk5t5\",\n                \"ModelRouterId\": \"cmr-3lxl0rmz\",\n                \"Status\": \"Active\",\n                \"Type\": \"Key\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d7432208-9ad0-45f5-b004-48863728455b\"\n    }\n}",
+        "title": "查询Budget关联的资源"
+      }
+    ],
+    "DescribeBudgets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBudgets\n<公共请求参数>\n\n{\n    \"BudgetIds\": [\n        \"budget-1a2b3c4d\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"BudgetSet\": [\n            {\n                \"BudgetId\": \"budget-1a2b3c4d\",\n                \"BudgetName\": \"production-budget\",\n                \"BudgetConfigs\": [\n                    {\n                        \"MaxBudget\": 100,\n                        \"BudgetDuration\": \"7d\"\n                    }\n                ],\n                \"RateLimitConfig\": {\n                    \"TPM\": 100000,\n                    \"RPM\": 60\n                },\n                \"Status\": \"Active\",\n                \"CreatedTime\": \"2026-04-14T12:00:00+08:00\",\n                \"ModifiedTime\": \"2026-04-14T12:10:00+08:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "查询Budget列表"
       }
     ],
     "DescribeClassicalLBByInstanceId": [
@@ -466,6 +570,30 @@
         "title": "查询负载均衡详细信息"
       }
     ],
+    "DescribeModelRouterDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelRouterDetail\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-h2tdbhtz\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelRouter\": {\n            \"CreatedTime\": \"2026-04-07T11:06:48+08:00\",\n            \"Domain\": \"lb-531cv26i-x07lj684b5nps1ko.clb.gz-tencentclb.com\",\n            \"ModelRouterId\": \"cmr-h2tdbhtz\",\n            \"ModelRouterName\": \"test-enterprise-tgw-polaris\",\n            \"ModelRouterType\": \"Enterprise\",\n            \"BudgetId\": \"budget-1a2b3c4d\",\n            \"BudgetName\": \"production-budget\",\n            \"CreditUsage\": {\n                \"Limit\": 100,\n                \"Used\": 12.34,\n                \"BudgetResetAt\": \"2026-04-21T00:00:00+08:00\"\n            },\n            \"ModifiedTime\": \"2026-04-08T00:11:21+08:00\",\n            \"NetworkType\": \"Internet\",\n            \"RateLimitConfig\": {\n                \"RPM\": 60,\n                \"TPM\": 100000\n            },\n            \"RouterSetting\": {\n                \"FallBack\": null,\n                \"RoutingStrategy\": \"SimpleShuffle\"\n            },\n            \"SecurityStatus\": \"Normal\",\n            \"ServiceEndPoints\": [\n                {\n                    \"CertId\": \"SCkPG15A\",\n                    \"Port\": 443,\n                    \"Schema\": \"HTTPS\"\n                }\n            ],\n            \"Status\": \"Active\",\n            \"SubnetId\": \"subnet-2cxt138a\",\n            \"Tags\": [\n                {\n                    \"TagKey\": \"tes2t\",\n                    \"TagValue\": \"2\"\n                }\n            ],\n            \"TradeStatus\": \"Normal\",\n            \"Vip\": \"43.136.247.59\",\n            \"VpcId\": \"vpc-fc7eyow9\"\n        },\n        \"RequestId\": \"80171270-1687-4764-b352-9476750c2061\"\n    }\n}",
+        "title": "查询模型路由实例详情"
+      }
+    ],
+    "DescribeModelRouterQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelRouterQuota\n<公共请求参数>\n\n{\n    \"QuotaTypes\": [\n        \"cmr_quota_enterprise_model_router_num\"\n    ],\n    \"ResourceIds\": [\n        \"cmr-oei1qdkf\"\n    ],\n    \"DisplayFields\": [\n        \"Available\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Quotas\": [\n            {\n                \"Available\": 100,\n                \"Limit\": 100,\n                \"QuotaType\": \"cmr_quota_enterprise_model_router_num\",\n                \"ResourceId\": \"cmr-oei1qdkf\",\n                \"Used\": null\n            }\n        ],\n        \"RequestId\": \"d4ad5923-a10d-4e0d-8b75-b76e472ecddd\"\n    }\n}",
+        "title": "查询配额"
+      }
+    ],
+    "DescribeModelRouters": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelRouters\n<公共请求参数>\n\n{\n    \"ModelRouterIds\": [\n        \"cmr-rc1mry4d\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelRouterSet\": [\n            {\n                \"CreatedTime\": \"2026-03-27T14:10:08+08:00\",\n                \"Domain\": \"\",\n                \"ModelRouterId\": \"cmr-rc1mry4d\",\n                \"ModelRouterName\": \"test-enterprise-tgw-polaris\",\n                \"ModelRouterType\": \"Enterprise\",\n                \"BudgetId\": \"budget-1a2b3c4d\",\n                \"BudgetName\": \"production-budget\",\n                \"CreditUsageSet\": [\n                    {\n                        \"BudgetDuration\": \"1d\",\n                        \"Limit\": 100,\n                        \"Used\": 12.34,\n                        \"BudgetResetAt\": \"2026-04-17T00:00:00+08:00\"\n                    },\n                    {\n                        \"BudgetDuration\": \"30d\",\n                        \"Limit\": 1000,\n                        \"Used\": 123.45,\n                        \"BudgetResetAt\": \"2026-05-01T00:00:00+08:00\"\n                    }\n                ],\n                \"ModifiedTime\": \"2026-03-27T22:10:36+08:00\",\n                \"NetworkType\": \"Intranet\",\n                \"SecurityStatus\": \"Normal\",\n                \"Status\": \"Active\",\n                \"Tags\": [],\n                \"TradeStatus\": \"Normal\",\n                \"Vip\": \"172.16.0.28\",\n                \"VpcId\": \"vpc-fc7eyow9\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"f6abe033-5e38-4637-a372-9cb5b2d85c9b\"\n    }\n}",
+        "title": "查询模型路由实例"
+      }
+    ],
     "DescribeQuota": [
       {
         "document": "",
@@ -556,6 +684,22 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskStatus\n<公共请求参数>\n\n{\n    \"TaskId\": \"55c85074-3e7f-4c6d-864f-673660d4f8de\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"LoadBalancerIds\": [\n            \"lb-6efswuxa\"\n        ],\n        \"RequestId\": \"917384bc-5b8d-4b68-a0bc-a58f815e8e3b\"\n    }\n}",
         "title": "查询异步任务状态"
+      }
+    ],
+    "DescribeUserGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserGroups\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-pm53f9c3\",\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"UserGroups\": [\n            {\n                \"UserGroupId\": \"ugrp-9f8e7d6c\",\n                \"UserGroupName\": \"核心业务组\",\n                \"Status\": \"Active\",\n                \"ModelRouterId\": \"cmr-pm53f9c3\",\n                \"Models\": [\n                    \"deepseek-v3\"\n                ],\n                \"IntentRouters\": [\n                    \"ir-chat\"\n                ],\n                \"BudgetId\": \"budget-x1y2z3\",\n                \"BudgetName\": \"核心组月度预算\",\n                \"CreditUsageSet\": [\n                    {\n                        \"BudgetDuration\": \"30d\",\n                        \"Limit\": 1000.0,\n                        \"Used\": 128.45,\n                        \"BudgetResetAt\": \"2026-07-01T00:00:00+08:00\"\n                    }\n                ],\n                \"KeyCount\": 12,\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"dept\",\n                        \"TagValue\": \"payments\"\n                    }\n                ],\n                \"CreatedTime\": \"2026-06-16T10:00:00Z\",\n                \"ModifiedTime\": \"2026-06-16T10:00:00Z\"\n            },\n            {\n                \"UserGroupId\": \"ugrp-ungrouped\",\n                \"UserGroupName\": \"ungrouped\",\n                \"Status\": \"Active\",\n                \"ModelRouterId\": \"cmr-pm53f9c3\",\n                \"Models\": [],\n                \"IntentRouters\": [],\n                \"BudgetId\": \"\",\n                \"BudgetName\": \"\",\n                \"CreditUsageSet\": [],\n                \"KeyCount\": 7,\n                \"Tags\": []\n            }\n        ],\n        \"RequestId\": \"d81e7b1f-3587-491b-8556-9e47222fecfd\"\n    }\n}",
+        "title": "查询用户组列表"
+      }
+    ],
+    "DisassociateBudget": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateBudget\n<公共请求参数>\n\n{\n    \"BudgetId\": \"budget-1a2b3c4d\",\n    \"Resources\": [\n        {\n            \"Type\": \"Key\",\n            \"ModelRouterId\": \"cmr-abc12345\",\n            \"KeyId\": \"vkey-abc12345\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "解除Key的Budget关联"
       }
     ],
     "DisassociateCustomizedConfig": [
@@ -654,6 +798,14 @@
         "title": "设置header，开启黑名单功能"
       }
     ],
+    "ModifyBudgetAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBudgetAttributes\n<公共请求参数>\n\n{\n    \"BudgetId\": \"budget-1a2b3c4d\",\n    \"BudgetName\": \"production-budget-v2\",\n    \"BudgetConfigs\": [\n        {\n            \"MaxBudget\": 200,\n            \"BudgetDuration\": \"30d\"\n        }\n    ],\n    \"RateLimitConfig\": {\n        \"TPM\": 200000,\n        \"RPM\": 120\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "修改Budget属性"
+      }
+    ],
     "ModifyDomain": [
       {
         "document": "",
@@ -676,6 +828,36 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFunctionTargets\n<公共请求参数>\n\n{\n    \"LocationId\": \"loc-xxxxxxxx\",\n    \"ListenerId\": \"lbl-xxxxxxxx\",\n    \"FunctionTargets\": [\n        {\n            \"Function\": {\n                \"FunctionNamespace\": \"ns_test\",\n                \"FunctionName\": \"name_test\",\n                \"FunctionQualifier\": \"version_test\"\n            },\n            \"Weight\": 66\n        }\n    ],\n    \"LoadBalancerId\": \"lb-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"85c7b3e8-7fd8-4c62-8b3b-7ba52d7a1dca\"\n    }\n}",
         "title": "修改负载均衡转发规则上所绑定的云函数。"
+      }
+    ],
+    "ModifyKeyAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyKeyAttributes\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-olvt6wl0\",\n    \"KeyId\": \"mkey-6n3rb91v\",\n    \"KeyName\": \"testkey2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed911e5d-104f-44b7-8e13-408772adefd2\"\n    }\n}",
+        "title": "修改模型路由实例名称"
+      }
+    ],
+    "ModifyKeysBlockStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyKeysBlockStatus\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-jcxor1gp\",\n    \"Blocked\": false,\n    \"KeyIds\": [\n        \"vkey-91rjfoiz\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72713713-da7c-46ef-9213-42e0747cd325\"\n    }\n}",
+        "title": "启用Key"
+      }
+    ],
+    "ModifyKeysUserGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyKeysUserGroup\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-pm53f9c3\",\n    \"UserGroupId\": \"ugrp-9f8e7d6c\",\n    \"KeyIds\": [\n        \"mkey-aaa111\",\n        \"mkey-bbb222\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d81e7b1f-3587-491b-8556-9e47222fecfd\"\n    }\n}",
+        "title": "批量入组"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyKeysUserGroup\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-pm53f9c3\",\n    \"UserGroupId\": \"ugrp-ungrouped\",\n    \"KeyIds\": [\n        \"mkey-aaa111\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d81e7b1f-3587-491b-8556-9e47222fecfd\"\n    }\n}",
+        "title": "批量移出到未分组"
       }
     ],
     "ModifyListener": [
@@ -730,6 +912,20 @@
         "title": "修改负载均衡所属项目"
       }
     ],
+    "ModifyModelRouterAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelRouterAttributes\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-h2tdbhtz\",\n    \"ModelRouterName\": \"测试模型路由名称\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"34c0e8fc-1ad7-4599-bcc4-f312f0ec22f1\"\n    }\n}",
+        "title": "修改模型路由实例名称"
+      },
+      {
+        "document": "将企业型实例 HTTPS 服务端点绑定的证书替换为 SCkPG15A，替换后立即生效。仅企业型且服务端点为 HTTPS 的实例支持。",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelRouterAttributes\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-h2tdbhtz\",\n    \"CertId\": \"SCkPG15A\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"34c0e8fc-1ad7-4599-bcc4-f312f0ec22f1\"\n    }\n}",
+        "title": "替换实例的 HTTPS 证书"
+      }
+    ],
     "ModifyRule": [
       {
         "document": "修改一条转发规则的健康检查参数及转发策略。",
@@ -776,6 +972,22 @@
         "input": "https://clb.tencentcloudapi.com/?Action=ModifyTargetWeight\n&LoadBalancerId=lb-cuxw2rm0\n&ListenerId=lbl-d1ubsydq\n&Targets.0.InstanceId=ins-dm4xtz0i\n&Targets.0.Port=334\n&Weight=8\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"85c7b3e8-7fd8-4c62-8b3b-7ba52d7a1dca\"\n    }\n}",
         "title": "修改四层监听器上绑定的后端服务的权重"
+      }
+    ],
+    "ModifyUserGroupAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserGroupAttributes\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-pm53f9c3\",\n    \"UserGroupId\": \"ugrp-9f8e7d6c\",\n    \"Models\": [\n        \"deepseek-v3\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d81e7b1f-3587-491b-8556-9e47222fecfd\"\n    }\n}",
+        "title": "修改用户组属性"
+      }
+    ],
+    "RegenerateKeys": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegenerateKeys\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-jcxor1gp\",\n    \"KeyIds\": [\n        \"vkey-g2kyvhih\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RegeneratedKeys\": [\n            {\n                \"Key\": \"sk-HvvyVk2DvoMuG1t0MEzz4qLqWZ8-xNUlVzUZo1jtzW3opZ9eMok0nfgEhd-lLFgqKxY3d-0qFy2aohD5sKRPJu1Hlv1irSX6-nStS-9xXA\",\n                \"KeyId\": \"vkey-g2kyvhih\"\n            }\n        ],\n        \"RequestId\": \"e6ca32ca-5157-4feb-9692-4a3d8962df53\"\n    }\n}",
+        "title": "重新生成Key"
       }
     ],
     "RegisterFunctionTargets": [

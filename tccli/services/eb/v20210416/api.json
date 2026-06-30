@@ -711,7 +711,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符",
+          "document": "<p>事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符</p>",
           "example": "EventBusName",
           "member": "string",
           "name": "EventBusName",
@@ -720,7 +720,7 @@
         },
         {
           "disabled": false,
-          "document": "事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符",
+          "document": "<p>事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符</p>",
           "example": "这是一个描述",
           "member": "string",
           "name": "Description",
@@ -729,8 +729,8 @@
         },
         {
           "disabled": false,
-          "document": "EB存储时长",
-          "example": "无",
+          "document": "<p>事件存储时长</p><p>单位：day</p>",
+          "example": "1",
           "member": "int64",
           "name": "SaveDays",
           "required": false,
@@ -738,8 +738,8 @@
         },
         {
           "disabled": false,
-          "document": "EB是否开启存储",
-          "example": "无",
+          "document": "<p>是否开启事件存储</p>",
+          "example": "false",
           "member": "bool",
           "name": "EnableStore",
           "required": false,
@@ -753,7 +753,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件集ID",
+          "document": "<p>事件集ID</p>",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
@@ -1248,8 +1248,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始时间",
-          "example": "无",
+          "document": "<p>起始时间</p>",
+          "example": "1725961968000",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -1257,8 +1257,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
-          "example": "无",
+          "document": "<p>结束时间</p>",
+          "example": "1725965568000",
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -1266,7 +1266,7 @@
         },
         {
           "disabled": false,
-          "document": "事件集ID",
+          "document": "<p>事件集ID</p>",
           "example": "eb-xxxxxx",
           "member": "string",
           "name": "EventBusId",
@@ -1275,7 +1275,7 @@
         },
         {
           "disabled": false,
-          "document": "聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)",
+          "document": "<p>聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)</p>",
           "example": "RuleIds",
           "member": "string",
           "name": "GroupField",
@@ -1284,7 +1284,7 @@
         },
         {
           "disabled": false,
-          "document": "页数",
+          "document": "<p>页数</p>",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -1293,7 +1293,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数据大小",
+          "document": "<p>每页数据大小</p>",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -1302,8 +1302,8 @@
         },
         {
           "disabled": false,
-          "document": "筛选条件",
-          "example": "[{\"key\":\"host\",\"operator\":\"eq\",\"value\":\"106.53.106.243\"},{\"type\":\"AND\",\"filters\":[{\"key\":\"region\",\"operator\":\"like\",\"value\":\"*guangzhou*\"},{\"key\":\"type\",\"operator\":\"eq\",\"value\":\"cvm:ErrorEvent:GuestReboot\"}]},{\"type\":\"OR\",\"filters\":[{\"key\":\"field1\",\"operator\":\"like\",\"value\":\"*access*\"},{\"key\":\"field2\",\"operator\":\"eq\",\"value\":\"custorm\"}]}]",
+          "document": "<p>筛选条件</p>",
+          "example": "无",
           "member": "LogFilter",
           "name": "Filter",
           "required": false,
@@ -1317,8 +1317,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件查询维度值结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>事件查询维度值结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ckafka.cloud.tencent\"]",
           "member": "string",
           "name": "Results",
           "output_required": true,
@@ -1339,7 +1339,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网络连接类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>网络连接类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "privatelink",
           "member": "string",
           "name": "NetMode",
@@ -1350,7 +1350,7 @@
         },
         {
           "disabled": false,
-          "document": "索引前缀\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>索引前缀</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "esindex",
           "member": "string",
           "name": "IndexPrefix",
@@ -1361,7 +1361,7 @@
         },
         {
           "disabled": false,
-          "document": "es日志轮换粒度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>es日志轮换粒度</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "none",
           "member": "string",
           "name": "RotationInterval",
@@ -1372,7 +1372,7 @@
         },
         {
           "disabled": false,
-          "document": "DTS事件配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>DTS事件配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "default",
           "member": "string",
           "name": "OutputMode",
@@ -1383,7 +1383,7 @@
         },
         {
           "disabled": false,
-          "document": "DTS索引配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>DTS索引配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "default",
           "member": "string",
           "name": "IndexSuffixMode",
@@ -1394,7 +1394,7 @@
         },
         {
           "disabled": false,
-          "document": "es模版类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>es模版类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "_type",
           "member": "string",
           "name": "IndexTemplateType",
@@ -1670,7 +1670,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件集ID",
+          "document": "<p>事件集ID</p>",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
@@ -1685,7 +1685,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
           "name": "ModTime",
@@ -1694,7 +1694,7 @@
         },
         {
           "disabled": false,
-          "document": "事件集描述",
+          "document": "<p>事件集描述</p>",
           "example": "这是一个描述",
           "member": "string",
           "name": "Description",
@@ -1703,7 +1703,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "<p>日志主题ID</p>",
           "example": "78a5887e-357d-4bac-baca-1de008fa6ff0",
           "member": "string",
           "name": "ClsTopicId",
@@ -1712,7 +1712,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
           "name": "AddTime",
@@ -1721,7 +1721,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集ID",
+          "document": "<p>日志集ID</p>",
           "example": "78a5887e-357d-4bac-baca-1de008fa6ff0",
           "member": "string",
           "name": "ClsLogsetId",
@@ -1730,7 +1730,7 @@
         },
         {
           "disabled": false,
-          "document": "事件集名称",
+          "document": "<p>事件集名称</p>",
           "example": "eb",
           "member": "string",
           "name": "EventBusName",
@@ -1739,7 +1739,7 @@
         },
         {
           "disabled": false,
-          "document": "事件集ID",
+          "document": "<p>事件集ID</p>",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
@@ -1748,7 +1748,7 @@
         },
         {
           "disabled": false,
-          "document": "（已废弃）事件集类型",
+          "document": "<p>事件集类型</p><p>枚举值：</p><ul><li>Cloud： 云服务事件集</li><li>Platform： 平台事件集</li><li>Custom： 自定义事件集</li></ul>",
           "example": "Cloud",
           "member": "string",
           "name": "Type",
@@ -1757,8 +1757,8 @@
         },
         {
           "disabled": false,
-          "document": "计费模式",
-          "example": "无",
+          "document": "<p>计费模式</p>",
+          "example": "Postpaid",
           "member": "string",
           "name": "PayMode",
           "type": "string",
@@ -1766,8 +1766,8 @@
         },
         {
           "disabled": false,
-          "document": "EB日志存储时长\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>EB日志存储时长</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "SaveDays",
           "type": "int",
@@ -1775,8 +1775,8 @@
         },
         {
           "disabled": false,
-          "document": "EB日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>EB日志主题ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sdk-eda*ac8",
           "member": "string",
           "name": "LogTopicId",
           "type": "string",
@@ -1784,7 +1784,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启存储</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "EnableStore",
@@ -1793,7 +1793,7 @@
         },
         {
           "disabled": false,
-          "document": "消息序列，是否有序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消息序列，是否有序</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Disorder",
           "member": "string",
           "name": "LinkMode",
@@ -1814,8 +1814,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "平台产品事件类型",
-          "example": "eb_platform_test:TEST:ALL，此值根据ListPlatformEventNames接口获取",
+          "document": "<p>平台产品事件类型</p>",
+          "example": "network:ErrorEvent:PublicNetworkAlarm",
           "member": "string",
           "name": "EventType",
           "required": true,
@@ -1829,8 +1829,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "平台产品事件模板",
-          "example": "无",
+          "document": "<p>平台产品事件模板</p>",
+          "example": "{\"source\":\"network.cloud.tencent\",\"type\":\"network:ErrorEvent:PublicNetworkAlarm\",\"subject\":\"ap-guangzhou\",\"time\":1687860662350,\"region\":\"ap-guangzhou\",\"status\": \"-\",\"data\":{\"dimensions\": {\"status\": \"未恢复\",\"type\": \"外网异常\"}}}",
           "member": "string",
           "name": "EventTemplate",
           "output_required": true,
@@ -1851,8 +1851,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件集ID",
-          "example": "eb-xxxxxxxx",
+          "document": "<p>事件集ID</p>",
+          "example": "eb-rjn6exxw",
           "member": "string",
           "name": "EventBusId",
           "required": true,
@@ -1860,8 +1860,8 @@
         },
         {
           "disabled": false,
-          "document": "事件规则ID",
-          "example": "rule-xxxxxxxx",
+          "document": "<p>事件规则ID</p>",
+          "example": "rule-rjn6essz",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -1875,8 +1875,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件集id",
-          "example": "eb-xxxxxxxx",
+          "document": "<p>事件集id</p>",
+          "example": "eb-rjn*xw",
           "member": "string",
           "name": "EventBusId",
           "output_required": true,
@@ -1885,8 +1885,8 @@
         },
         {
           "disabled": false,
-          "document": "事件规则id",
-          "example": "rule-xxxxxxxx",
+          "document": "<p>事件规则id</p>",
+          "example": "rule-rjd*sz",
           "member": "string",
           "name": "RuleId",
           "output_required": true,
@@ -1895,8 +1895,8 @@
         },
         {
           "disabled": false,
-          "document": "事件规则名称",
-          "example": "rule",
+          "document": "<p>事件规则名称</p>",
+          "example": "my-rule",
           "member": "string",
           "name": "RuleName",
           "output_required": true,
@@ -1905,7 +1905,7 @@
         },
         {
           "disabled": false,
-          "document": "事件规则状态",
+          "document": "<p>事件规则状态</p>",
           "example": "Active",
           "member": "string",
           "name": "Status",
@@ -1915,7 +1915,7 @@
         },
         {
           "disabled": false,
-          "document": "使能开关",
+          "document": "<p>使能开关</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -1925,7 +1925,7 @@
         },
         {
           "disabled": false,
-          "document": "事件规则描述",
+          "document": "<p>事件规则描述</p>",
           "example": "这是一个描述",
           "member": "string",
           "name": "Description",
@@ -1935,7 +1935,7 @@
         },
         {
           "disabled": false,
-          "document": "事件模式",
+          "document": "<p>事件模式</p>",
           "example": "\"{\\\"source\\\":[\\\"cvm.cloud.tencent\\\"]}\"",
           "member": "string",
           "name": "EventPattern",
@@ -1945,7 +1945,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
           "name": "AddTime",
@@ -1955,7 +1955,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
           "name": "ModTime",
@@ -2382,7 +2382,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件集ID",
+          "document": "<p>事件集ID</p>",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
@@ -2391,7 +2391,7 @@
         },
         {
           "disabled": false,
-          "document": "事件规则ID",
+          "document": "<p>事件规则ID</p>",
           "example": "rule-xxxxxxxx",
           "member": "string",
           "name": "RuleId",
@@ -2400,7 +2400,7 @@
         },
         {
           "disabled": false,
-          "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）",
+          "document": "<p>根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）</p>",
           "example": "ModTime",
           "member": "string",
           "name": "OrderBy",
@@ -2409,7 +2409,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "0",
           "member": "int64",
           "name": "Limit",
@@ -2418,7 +2418,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，默认为0。",
+          "document": "<p>分页偏移量，默认为0。</p>",
           "example": "20",
           "member": "int64",
           "name": "Offset",
@@ -2427,7 +2427,7 @@
         },
         {
           "disabled": false,
-          "document": "以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）",
+          "document": "<p>以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）</p>",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -2442,7 +2442,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标总数",
+          "document": "<p>目标总数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -2452,7 +2452,7 @@
         },
         {
           "disabled": false,
-          "document": "目标信息",
+          "document": "<p>目标信息</p>",
           "example": "无",
           "member": "Target",
           "name": "Targets",
@@ -2599,8 +2599,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>事件名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "外网异常告警",
           "member": "string",
           "name": "EventName",
           "output_required": true,
@@ -2609,8 +2609,8 @@
         },
         {
           "disabled": false,
-          "document": "事件类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>事件类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "network:ErrorEvent:PublicNetworkAlarm",
           "member": "string",
           "name": "EventType",
           "output_required": true,
@@ -2625,8 +2625,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "平台事件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>平台事件名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "外网异常告警",
           "member": "string",
           "name": "EventName",
           "output_required": true,
@@ -2635,8 +2635,8 @@
         },
         {
           "disabled": false,
-          "document": "平台事件匹配规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>平台事件匹配规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{    \"source\":\"network.cloud.tencent\",    \"type\":\"network:ErrorEvent:PublicNetworkAlarm\"}",
           "member": "string",
           "name": "EventPattern",
           "output_required": true,
@@ -2651,8 +2651,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "平台产品名称",
-          "example": "无",
+          "document": "<p>平台产品名称</p>",
+          "example": "基础网络",
           "member": "string",
           "name": "ProductName",
           "output_required": true,
@@ -2661,8 +2661,8 @@
         },
         {
           "disabled": false,
-          "document": "平台产品类型",
-          "example": "无",
+          "document": "<p>平台产品类型</p>",
+          "example": "network",
           "member": "string",
           "name": "ProductType",
           "output_required": true,
@@ -2920,7 +2920,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始时间unix 毫秒时间戳",
+          "document": "<p>起始时间unix 毫秒时间戳</p>",
           "example": "1702538123708",
           "member": "int64",
           "name": "StartTime",
@@ -2929,7 +2929,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间unix 毫秒时间戳",
+          "document": "<p>结束时间unix 毫秒时间戳</p>",
           "example": "1702539023708",
           "member": "int64",
           "name": "EndTime",
@@ -2938,7 +2938,7 @@
         },
         {
           "disabled": false,
-          "document": "事件集ID",
+          "document": "<p>事件集ID</p>",
           "example": "eb-xxxxxx",
           "member": "string",
           "name": "EventBusId",
@@ -2947,7 +2947,7 @@
         },
         {
           "disabled": false,
-          "document": "页码",
+          "document": "<p>页码</p>",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -2956,7 +2956,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数据大小",
+          "document": "<p>每页数据大小</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -2965,8 +2965,8 @@
         },
         {
           "disabled": false,
-          "document": "事件查询筛选条件；示例如下：[{\"key\":\"host\",\"operator\":\"eq\",\"value\":\"106.53.106.243\"},{\"type\":\"AND\",\"filters\":[{\"key\":\"region\",\"operator\":\"like\",\"value\":\"*guangzhou*\"},{\"key\":\"type\",\"operator\":\"eq\",\"value\":\"cvm:ErrorEvent:GuestReboot\"}]},{\"type\":\"OR\",\"filters\":[{\"key\":\"field1\",\"operator\":\"like\",\"value\":\"*access*\"},{\"key\":\"field2\",\"operator\":\"eq\",\"value\":\"custorm\"}]}]",
-          "example": "[{\"key\":\"host\",\"operator\":\"eq\",\"value\":\"106.53.106.243\"},{\"type\":\"AND\",\"filters\":[{\"key\":\"region\",\"operator\":\"like\",\"value\":\"*guangzhou*\"},{\"key\":\"type\",\"operator\":\"eq\",\"value\":\"cvm:ErrorEvent:GuestReboot\"}]},{\"type\":\"OR\",\"filters\":[{\"key\":\"field1\",\"operator\":\"like\",\"value\":\"*access*\"},{\"key\":\"field2\",\"operator\":\"eq\",\"value\":\"custorm\"}]}]",
+          "document": "<p>事件查询筛选条件；示例如下：[{&quot;key&quot;:&quot;host&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;106.53.106.243&quot;},{&quot;type&quot;:&quot;AND&quot;,&quot;filters&quot;:[{&quot;key&quot;:&quot;region&quot;,&quot;operator&quot;:&quot;like&quot;,&quot;value&quot;:&quot;<em>guangzhou</em>&quot;},{&quot;key&quot;:&quot;type&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;cvm:ErrorEvent:GuestReboot&quot;}]},{&quot;type&quot;:&quot;OR&quot;,&quot;filters&quot;:[{&quot;key&quot;:&quot;field1&quot;,&quot;operator&quot;:&quot;like&quot;,&quot;value&quot;:&quot;<em>access</em>&quot;},{&quot;key&quot;:&quot;field2&quot;,&quot;operator&quot;:&quot;eq&quot;,&quot;value&quot;:&quot;custom&quot;}]}]</p>",
+          "example": "无",
           "member": "LogFilter",
           "name": "Filter",
           "required": false,
@@ -2974,7 +2974,7 @@
         },
         {
           "disabled": false,
-          "document": "事件查询结果排序，[\"timestamp\",\"subject\"]",
+          "document": "<p>事件查询结果排序，[&quot;timestamp&quot;,&quot;subject&quot;]</p>",
           "example": "[\"timestamp\",\"subject\"]",
           "member": "string",
           "name": "OrderFields",
@@ -2983,7 +2983,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式，asc 从旧到新，desc 从新到旧",
+          "document": "<p>排序方式，asc 从旧到新，desc 从新到旧</p>",
           "example": "desc",
           "member": "string",
           "name": "OrderBy",
@@ -2998,8 +2998,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>事件总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "Total",
           "output_required": true,
@@ -3008,8 +3008,8 @@
         },
         {
           "disabled": false,
-          "document": "每页事件条数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>每页事件条数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "output_required": true,
@@ -3018,8 +3018,8 @@
         },
         {
           "disabled": false,
-          "document": "页码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>页码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "output_required": true,
@@ -3028,7 +3028,7 @@
         },
         {
           "disabled": false,
-          "document": "事件查询结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件查询结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SearchLogResult",
           "name": "Results",
@@ -3050,8 +3050,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "单条日志上报时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>单条日志上报时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-06-24 12:00:07",
           "member": "string",
           "name": "Timestamp",
           "required": false,
@@ -3060,8 +3060,8 @@
         },
         {
           "disabled": false,
-          "document": "日志内容详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>日志内容详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"source\":\"network.cloud.tencent\",\"type\":\"network:ErrorEvent:PublicNetworkAlarm\",\"subject\":\"ap-guangzhou\",\"time\":1687860662350,\"region\":\"ap-guangzhou\",\"status\": \"-\",\"data\":{\"dimensions\": {\"status\": \"未恢复\",\"type\": \"外网异常\"}}}",
           "member": "string",
           "name": "Message",
           "required": false,
@@ -3070,8 +3070,8 @@
         },
         {
           "disabled": false,
-          "document": "事件来源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>事件来源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "network.cloud.tencent",
           "member": "string",
           "name": "Source",
           "required": false,
@@ -3080,8 +3080,8 @@
         },
         {
           "disabled": false,
-          "document": "事件类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>事件类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "network:ErrorEvent:PublicNetworkAlarm",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -3090,7 +3090,7 @@
         },
         {
           "disabled": false,
-          "document": "事件匹配规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件匹配规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rule-xxxx",
           "member": "string",
           "name": "RuleIds",
@@ -3100,7 +3100,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-xxxx",
           "member": "string",
           "name": "Subject",
@@ -3110,7 +3110,7 @@
         },
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -3120,8 +3120,8 @@
         },
         {
           "disabled": false,
-          "document": "事件状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>事件状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -3136,7 +3136,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "default:虚拟集群; exclusive:专业集群",
           "member": "string",
           "name": "ClusterType",
@@ -3147,8 +3147,8 @@
         },
         {
           "disabled": false,
-          "document": "集群支撑网接入点\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>集群支撑网接入点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认为空",
           "member": "string",
           "name": "ClusterEndPoint",
           "output_required": false,
@@ -3192,7 +3192,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标类型",
+          "document": "<p>目标类型</p>",
           "example": "scf",
           "member": "string",
           "name": "Type",
@@ -3202,7 +3202,7 @@
         },
         {
           "disabled": false,
-          "document": "事件集ID",
+          "document": "<p>事件集ID</p>",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
@@ -3212,7 +3212,7 @@
         },
         {
           "disabled": false,
-          "document": "目标ID",
+          "document": "<p>目标ID</p>",
           "example": "target-xxxxxxxx",
           "member": "string",
           "name": "TargetId",
@@ -3222,7 +3222,7 @@
         },
         {
           "disabled": false,
-          "document": "目标描述",
+          "document": "<p>目标描述</p>",
           "example": "无",
           "member": "TargetDescription",
           "name": "TargetDescription",
@@ -3232,7 +3232,7 @@
         },
         {
           "disabled": false,
-          "document": "事件规则ID",
+          "document": "<p>事件规则ID</p>",
           "example": "rule-xxxxxxxx",
           "member": "string",
           "name": "RuleId",
@@ -3242,7 +3242,7 @@
         },
         {
           "disabled": false,
-          "document": "开启批量投递使能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>开启批量投递使能</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "EnableBatchDelivery",
@@ -3252,7 +3252,7 @@
         },
         {
           "disabled": false,
-          "document": "批量投递最长等待时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>批量投递最长等待时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "BatchTimeout",
@@ -3262,7 +3262,7 @@
         },
         {
           "disabled": false,
-          "document": "批量投递最大事件条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>批量投递最大事件条数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "BatchEventCount",
@@ -3498,7 +3498,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件集ID",
+          "document": "<p>事件集ID</p>",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
@@ -3507,7 +3507,7 @@
         },
         {
           "disabled": false,
-          "document": "事件集描述，不限字符类型，200字符描述以内",
+          "document": "<p>事件集描述，不限字符类型，200字符描述以内</p>",
           "example": "这是一个描述",
           "member": "string",
           "name": "Description",
@@ -3516,7 +3516,7 @@
         },
         {
           "disabled": false,
-          "document": "事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符",
+          "document": "<p>事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符</p>",
           "example": "EventBusName",
           "member": "string",
           "name": "EventBusName",
@@ -3525,8 +3525,8 @@
         },
         {
           "disabled": false,
-          "document": "EB日志存储时长",
-          "example": "无",
+          "document": "<p>事件存储时长</p><p>单位：day</p>",
+          "example": "1",
           "member": "int64",
           "name": "SaveDays",
           "required": false,
@@ -3534,8 +3534,8 @@
         },
         {
           "disabled": false,
-          "document": "EB日志主题ID",
-          "example": "无",
+          "document": "<p>事件存储主题ID</p>",
+          "example": "sdk-edfb****4ac8",
           "member": "string",
           "name": "LogTopicId",
           "required": false,
@@ -3543,8 +3543,8 @@
         },
         {
           "disabled": false,
-          "document": "是否开启存储",
-          "example": "true",
+          "document": "<p>是否开启存储</p>",
+          "example": "false",
           "member": "bool",
           "name": "EnableStore",
           "required": false,

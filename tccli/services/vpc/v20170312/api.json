@@ -40255,7 +40255,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "document": "<p>CCN实例ID。形如：ccn-f49l6u0z。</p>",
           "example": "ccn-gjug0kul",
           "member": "string",
           "name": "CcnId",
@@ -40266,7 +40266,7 @@
         },
         {
           "disabled": false,
-          "document": "qos id。",
+          "document": "<p>qos id。</p>",
           "example": "1",
           "member": "uint64",
           "name": "QosId",
@@ -40277,7 +40277,7 @@
         },
         {
           "disabled": false,
-          "document": "描述。",
+          "document": "<p>描述。</p>",
           "example": "qos-desc",
           "member": "string",
           "name": "QosPolicyDescription",
@@ -40288,7 +40288,7 @@
         },
         {
           "disabled": false,
-          "document": "名称。",
+          "document": "<p>名称。</p>",
           "example": "qos-name",
           "member": "string",
           "name": "QosPolicyName",
@@ -40299,7 +40299,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽。",
+          "document": "<p>带宽。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Bandwidth",
@@ -40310,10 +40310,76 @@
         },
         {
           "disabled": false,
-          "document": "流量调度策略ID。",
+          "document": "<p>流量调度策略ID。</p>",
           "example": "qos-n4i5plee",
           "member": "string",
           "name": "QosPolicyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务等级信息</p>",
+          "example": "AU",
+          "member": "string",
+          "name": "QosLevel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务等级信息</p>",
+          "example": "金",
+          "member": "string",
+          "name": "ServiceLevel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>带宽ID</p><p>参数格式：fcr-xxx</p>",
+          "example": "fcr-a4i5plee",
+          "member": "string",
+          "name": "RegionFlowControlId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>源地域</p><p>参数格式：ap-xxx</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "LocalRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目的地域</p><p>参数格式：ap-xxx</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "RemoteRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量匹配策略ID</p>",
+          "example": "tm-xxx",
+          "member": "string",
+          "name": "TrafficMatchPolicyId",
           "output_required": false,
           "required": false,
           "type": "string",

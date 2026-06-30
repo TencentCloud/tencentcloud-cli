@@ -21,7 +21,8 @@ Output:
         "TaskResultCode": -401,
         "TaskResultMsg": "Invalid Para",
         "TaskStatus": "FAILED",
-        "RequestId": "4aa73c85-8159-4911-87d7-32852738f9af"
+        "RequestId": "4aa73c85-8159-4911-87d7-32852738f9af",
+        "RequestBody": "{\"Input\":{\"Url\":\"https://*****-**********.cos.ap-guangzhou.myqcloud.com/************/1s.mp4\"},\"Action\":\"CreateVideoRedrawTask\",\"RequestId\":\"b3f6347c-6549-43ad-b2a9-9ade0faf947d\",\"Uin\":\"**********\",\"Region\":\"\",\"AppId\":*********}"
     }
 }
 ```

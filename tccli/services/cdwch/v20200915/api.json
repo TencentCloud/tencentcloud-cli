@@ -707,7 +707,7 @@
       "usage": "out"
     },
     "Charge": {
-      "document": "集群计费相关信息\n",
+      "document": "集群计费相关信息",
       "members": [
         {
           "disabled": false,
@@ -715,26 +715,29 @@
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "PREPAID需要传递，是否自动续费，1表示自动续费开启",
+          "document": "ChargeType为PREPAID时，必传，表示是否自动续费，1表示自动续费开启",
           "example": "1",
           "member": "int64",
           "name": "RenewFlag",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预付费需要传递，计费时间长度，多少个月",
+          "document": "ChargeType为PREPAID时，必传，表示计费时间长度，多少个月",
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1167,7 +1170,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-beijing-2",
           "member": "string",
           "name": "Zone",
@@ -1176,7 +1179,7 @@
         },
         {
           "disabled": false,
-          "document": "是否高可用",
+          "document": "<p>是否高可用</p>",
           "example": "false",
           "member": "bool",
           "name": "HaFlag",
@@ -1185,7 +1188,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络",
+          "document": "<p>私有网络</p>",
           "example": "vpc-8visjoh9",
           "member": "string",
           "name": "UserVPCId",
@@ -1194,7 +1197,7 @@
         },
         {
           "disabled": false,
-          "document": "子网",
+          "document": "<p>子网</p>",
           "example": "subnet-03ij1dki",
           "member": "string",
           "name": "UserSubnetId",
@@ -1203,7 +1206,7 @@
         },
         {
           "disabled": false,
-          "document": "系统版本",
+          "document": "<p>系统版本</p>",
           "example": "21.8.12.29",
           "member": "string",
           "name": "ProductVersion",
@@ -1212,7 +1215,7 @@
         },
         {
           "disabled": false,
-          "document": "计费方式",
+          "document": "<p>计费方式</p>",
           "example": "无",
           "member": "Charge",
           "name": "ChargeProperties",
@@ -1221,7 +1224,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "cdwch-test",
           "member": "string",
           "name": "InstanceName",
@@ -1230,7 +1233,7 @@
         },
         {
           "disabled": false,
-          "document": "数据节点\nSpecName从DescribeSpec接口中返回的DataSpec.Name获取",
+          "document": "<p>数据节点<br>SpecName从DescribeSpec接口中返回的DataSpec.Name获取</p>",
           "example": "无",
           "member": "NodeSpec",
           "name": "DataSpec",
@@ -1239,7 +1242,7 @@
         },
         {
           "disabled": true,
-          "document": "标签列表（废弃）",
+          "document": "<p>标签列表（废弃）</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -1248,7 +1251,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "<p>日志主题ID</p>",
           "example": "\"cls-xdeaged\"",
           "member": "string",
           "name": "ClsLogSetId",
@@ -1257,7 +1260,7 @@
         },
         {
           "disabled": false,
-          "document": "COS桶名称",
+          "document": "<p>COS桶名称</p>",
           "example": "cdwch-cos",
           "member": "string",
           "name": "CosBucketName",
@@ -1266,7 +1269,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。",
+          "document": "<p>是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。</p>",
           "example": "0",
           "member": "int64",
           "name": "MountDiskType",
@@ -1275,7 +1278,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是ZK高可用",
+          "document": "<p>是否是ZK高可用</p>",
           "example": "false",
           "member": "bool",
           "name": "HAZk",
@@ -1284,7 +1287,7 @@
         },
         {
           "disabled": false,
-          "document": "ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取",
+          "document": "<p>ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取</p>",
           "example": "无",
           "member": "NodeSpec",
           "name": "CommonSpec",
@@ -1293,7 +1296,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "TagItems",
@@ -1302,7 +1305,7 @@
         },
         {
           "disabled": false,
-          "document": "副可用区信息",
+          "document": "<p>副可用区信息</p>",
           "example": "无",
           "member": "SecondaryZoneInfo",
           "name": "SecondaryZoneInfo",
@@ -1311,10 +1314,19 @@
         },
         {
           "disabled": false,
-          "document": "default账号登陆实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符",
+          "document": "<p>default账号登录实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符</p>",
           "example": "Test@579",
           "member": "string",
           "name": "CkDefaultUserPwd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型</p>",
+          "example": "ssc",
+          "member": "string",
+          "name": "ClusterType",
           "required": false,
           "type": "string"
         }
@@ -1326,7 +1338,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流程ID",
+          "document": "<p>流程ID</p>",
           "example": "59",
           "member": "string",
           "name": "FlowId",
@@ -1336,7 +1348,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "cdwch-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -1346,7 +1358,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息",
+          "document": "<p>错误信息</p>",
           "example": "InvalidParameter",
           "member": "string",
           "name": "ErrorMsg",

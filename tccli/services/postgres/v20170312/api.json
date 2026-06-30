@@ -1553,7 +1553,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份周期",
+          "document": "<p>备份周期</p>",
           "example": "[\\\"monday\\\",\\\"thursday\\\",\\\"friday\\\"]",
           "member": "string",
           "name": "BackupPeriod",
@@ -1563,7 +1563,7 @@
         },
         {
           "disabled": false,
-          "document": "数据备份保留时长。单位：天",
+          "document": "<p>数据备份保留时长。单位：天</p>",
           "example": "3",
           "member": "uint64",
           "name": "BaseBackupRetentionPeriod",
@@ -1573,7 +1573,7 @@
         },
         {
           "disabled": false,
-          "document": "开始备份的最早时间",
+          "document": "<p>开始备份的最早时间</p>",
           "example": "01:00:00",
           "member": "string",
           "name": "MinBackupStartTime",
@@ -1583,7 +1583,7 @@
         },
         {
           "disabled": false,
-          "document": "开始备份的最晚时间",
+          "document": "<p>开始备份的最晚时间</p>",
           "example": "02:00:00",
           "member": "string",
           "name": "MaxBackupStartTime",
@@ -1593,7 +1593,17 @@
         },
         {
           "disabled": false,
-          "document": "备份计划ID",
+          "document": "<p>备份类型</p><p>枚举值：</p><ul><li>physical： 物理备份</li><li>logical： 逻辑备份</li><li>snapshot： 快照备份</li></ul>",
+          "example": "physical",
+          "member": "string",
+          "name": "BackupMethod",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份计划ID</p>",
           "example": "f6adc02a-432e-536f-a5f3-3dbf40ecd683",
           "member": "string",
           "name": "PlanId",
@@ -1603,7 +1613,7 @@
         },
         {
           "disabled": false,
-          "document": "备份计划自定义名称。",
+          "document": "<p>备份计划自定义名称。</p>",
           "example": "default",
           "member": "string",
           "name": "PlanName",
@@ -1613,7 +1623,7 @@
         },
         {
           "disabled": false,
-          "document": "日志备份保留时长。单位：天",
+          "document": "<p>日志备份保留时长。单位：天</p>",
           "example": "3",
           "member": "uint64",
           "name": "LogBackupRetentionPeriod",
@@ -1623,7 +1633,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2024-10-09 15:16:51",
           "member": "string",
           "name": "CreatedTime",
@@ -1633,7 +1643,7 @@
         },
         {
           "disabled": false,
-          "document": "最近一次的修改时间。",
+          "document": "<p>最近一次的修改时间。</p>",
           "example": "2024-11-09 15:16:51",
           "member": "string",
           "name": "UpdatedTime",
@@ -1643,7 +1653,7 @@
         },
         {
           "disabled": false,
-          "document": "备份计划类型。系统默认创建的为default，自定义的为custom。",
+          "document": "<p>备份计划类型。系统默认创建的为default，自定义的为custom。</p>",
           "example": "default",
           "member": "string",
           "name": "PlanType",
@@ -1653,7 +1663,7 @@
         },
         {
           "disabled": false,
-          "document": "备份周期类型。当前支持week、month。",
+          "document": "<p>备份周期类型。当前支持week、month。</p>",
           "example": "week",
           "member": "string",
           "name": "BackupPeriodType",

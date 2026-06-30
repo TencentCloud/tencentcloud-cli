@@ -2018,12 +2018,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
+          "document": "<p>实例 ID。请登录<a href=\"https://console.cloud.tencent.com/redis\">Redis控制台</a>在实例列表复制实例 ID。</p>",
           "example": "crs-deindi7de",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SSL地址类型。</p><p>枚举值：</p><ul><li>0：  不限。</li><li>1： 内网IPv4。</li><li>2：  内网IPv6。</li><li>3： 外网。</li><li>-1： 未指定。</li></ul><p>默认值：0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AddressType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2033,7 +2042,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID。",
+          "document": "<p>任务ID。</p>",
           "example": "486489",
           "member": "int64",
           "name": "TaskId",

@@ -68,6 +68,14 @@
         "title": "取消一码多签签署码-已失效"
       }
     ],
+    "CancelOrganizationFlows": [
+      {
+        "document": "全量撤销企业合同，不设置撤销理由",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelOrganizationFlows\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"yD3PzUUckpz9xtr0UEXbI1FB1dWeEKrH\",\n        \"RequestId\": \"38659e30-744c-4899-9fe1-feeb50e222dd\"\n    }\n}",
+        "title": "全量撤销企业合同"
+      }
+    ],
     "CancelUserAutoSignEnableUrl": [
       {
         "document": "撤销自动签开通链接成功",
@@ -1667,6 +1675,12 @@
       }
     ],
     "DescribeCancelFlowsTask": [
+      {
+        "document": "查询全量撤销企业合同任务结果",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCancelFlowsTask\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\"\n    },\n    \"TaskId\": \"yD3POUUckpzz6onbUy8Im5DBfEstv2zM\",\n    \"CancelType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"FailureFlows\": [],\n        \"SuccessFlowIds\": [\n            \"yD3PCUUckpzv5at9U1UxZEpOywg0E9oG\"\n        ],\n        \"TaskId\": \"yD3POUUckpzz6onbUy8Im5DBfEstv2zM\",\n        \"TaskStatus\": \"END\",\n        \"RequestId\": \"b3c22211-aec1-4948-8676-28c1f1d33f87\"\n    }\n}",
+        "title": "查询全量撤销企业合同任务结果"
+      },
       {
         "document": "通过TaskId查询批量撤销任务结果",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCancelFlowsTask\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n    },\n    \"TaskId\": \"yDCVWUUckpwkjgiuUWGW8cRAzd93BVQb\"\n}",

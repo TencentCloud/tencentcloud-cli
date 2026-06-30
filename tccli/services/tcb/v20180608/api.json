@@ -9842,7 +9842,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境ID",
+          "document": "<p>环境ID</p>",
           "example": "test-23",
           "member": "string",
           "name": "EnvId",
@@ -9851,12 +9851,21 @@
         },
         {
           "disabled": false,
-          "document": "环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符",
+          "document": "<p>环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符</p>",
           "example": "iAmNickName",
           "member": "string",
           "name": "Alias",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按量计费QPS上限，大于套餐配额时生效。-1表示关闭QPS按量计费。</p>",
+          "example": "1000",
+          "member": "int64",
+          "name": "CustomQps",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -6024,7 +6024,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "0: 非安全手机校验 1: 安全手机校验。",
+          "document": "<p>0: 非安全手机校验 1: 安全手机校验。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Phone",
@@ -6035,7 +6035,7 @@
         },
         {
           "disabled": false,
-          "document": "0: 非硬token校验 1: 硬token校验。",
+          "document": "<p>0: 非硬token校验 1: 硬token校验。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Token",
@@ -6046,7 +6046,7 @@
         },
         {
           "disabled": false,
-          "document": "0: 非软token校验 1: 软token校验",
+          "document": "<p>0: 非软token校验 1: 软token校验</p>",
           "example": "0",
           "member": "uint64",
           "name": "Stoken",
@@ -6057,7 +6057,7 @@
         },
         {
           "disabled": false,
-          "document": "0: 非微信校验 1: 微信校验",
+          "document": "<p>0: 非微信校验 1: 微信校验</p>",
           "example": "0",
           "member": "uint64",
           "name": "Wechat",
@@ -6068,7 +6068,7 @@
         },
         {
           "disabled": false,
-          "document": "0: 非自定义校验 1: 自定义校验",
+          "document": "<p>0: 非自定义校验 1: 自定义校验</p>",
           "example": "0",
           "member": "uint64",
           "name": "Custom",
@@ -6079,7 +6079,7 @@
         },
         {
           "disabled": false,
-          "document": "0: 非邮箱校验 1: 邮箱校验",
+          "document": "<p>0: 非邮箱校验 1: 邮箱校验</p>",
           "example": "0",
           "member": "uint64",
           "name": "Mail",
@@ -6090,10 +6090,21 @@
         },
         {
           "disabled": false,
-          "document": "0: 非u2f硬件token 1: u2f硬件token",
+          "document": "<p>0: 非u2f硬件token 1: u2f硬件token</p>",
           "example": "0",
           "member": "uint64",
           "name": "U2FToken",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>0: 非passkey 校验 1: passkey校验</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Passkey",
           "output_required": false,
           "required": false,
           "type": "int",

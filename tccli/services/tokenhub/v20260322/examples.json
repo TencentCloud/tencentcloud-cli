@@ -147,7 +147,7 @@
     "DescribeUsageRankList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsageRankList\n<公共请求参数>\n\n{\n    \"Dimension\": \"apikey\",\n    \"StartTime\": \"2026-04-09T00:00:00+08:00\",\n    \"EndTime\": \"2026-05-09T00:00:00+08:00\",\n    \"Period\": 86400\n}",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsageRankList\n<公共请求参数>\n\n{\n    \"Dimension\": \"apikey\",\n    \"StartTime\": \"2026-04-09T00:00:00+08:00\",\n    \"EndTime\": \"2026-05-09T00:00:00+08:00\",\n    \"Period\": 86400,\n    \"Target\": \"ak-20260618-**************************\"\n}",
         "output": "{\n    \"Response\": {\n        \"Dimension\": \"apikey\",\n        \"EndTime\": \"2026-05-09T00:00:00+08:00\",\n        \"Limit\": 0,\n        \"MetricKeys\": [\n            \"TotalToken\",\n            \"InputTotalToken\",\n            \"OutputTotalToken\"\n        ],\n        \"MetricType\": \"tokens\",\n        \"Offset\": 0,\n        \"PageStats\": {\n            \"InputTotalToken\": 0,\n            \"OutputTotalToken\": 0,\n            \"TotalToken\": 0\n        },\n        \"Period\": 86400,\n        \"RequestId\": \"1568bc1c-946b-4c2b-b69f-6ba93f2bb258\",\n        \"StartTime\": \"2026-04-09T00:00:00+08:00\",\n        \"Timestamps\": [],\n        \"TopList\": [],\n        \"Total\": 0,\n        \"TotalStats\": {\n            \"InputTotalToken\": 0,\n            \"OutputTotalToken\": 0,\n            \"TotalToken\": 0\n        },\n        \"ViewName\": \"tokenhub_uin_apikeyid\"\n    }\n}",
         "title": "DescribeUsageRankList"
       }

@@ -36,9 +36,6 @@ Output:
                 "SubStatus": {
                     "ApprovalId": "0",
                     "SubStatusList": []
-                },
-                "TemplatePublish": {
-                    "IsPublished": false
                 }
             },
             "Config": {
@@ -266,12 +263,6 @@ Output:
                 },
                 "ShareUrl": "https://tde.xiaowei.cloud.tencent.com/webim_exp/#/chat/leSlPm"
             },
-            "SharedKnowledgeList": [
-                {
-                    "KnowledgeId": "204**************76",
-                    "KnowledgeName": "**********423"
-                }
-            ],
             "Status": {
                 "Status": 2,
                 "StatusDescription": "运行中"

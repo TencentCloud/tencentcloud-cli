@@ -23,14 +23,14 @@ Output:
         "TotalCount": 0,
         "Notices": [
             {
-                "Id": "abc",
-                "Name": "abc",
-                "UpdatedAt": "abc",
-                "UpdatedBy": "abc",
-                "NoticeType": "abc",
+                "Id": "notice-id",
+                "Name": "notice-name",
+                "UpdatedAt": "2020-10-10 10:10:10",
+                "UpdatedBy": "2020-10-10 10:10:10",
+                "NoticeType": "normal",
                 "UserNotices": [
                     {
-                        "ReceiverType": "abc",
+                        "ReceiverType": "webhook",
                         "UserIds": [
                             0
                         ],
@@ -40,7 +40,7 @@ Output:
                         "StartTime": 0,
                         "EndTime": 0,
                         "NoticeWay": [
-                            "abc"
+                            ""
                         ],
                         "PhoneOrder": [
                             0
@@ -49,20 +49,20 @@ Output:
                         "PhoneInnerInterval": 0,
                         "PhoneCircleInterval": 0,
                         "NeedPhoneArriveNotice": 0,
-                        "PhoneCallType": "abc",
+                        "PhoneCallType": "",
                         "Weekday": [
                             0
                         ],
                         "OnCallFormIDs": [
-                            "abc"
+                            ""
                         ]
                     }
                 ],
                 "URLNotices": [
                     {
-                        "URL": "abc",
+                        "URL": "",
                         "IsValid": 0,
-                        "ValidationCode": "abc",
+                        "ValidationCode": "",
                         "StartTime": 0,
                         "EndTime": 0,
                         "Weekday": [
@@ -71,28 +71,28 @@ Output:
                     }
                 ],
                 "IsPreset": 0,
-                "NoticeLanguage": "abc",
+                "NoticeLanguage": "",
                 "PolicyIds": [
-                    "abc"
+                    ""
                 ],
-                "AMPConsumerId": "abc",
+                "AMPConsumerId": "",
                 "CLSNotices": [
                     {
                         "Enable": 0,
-                        "Region": "abc",
-                        "LogSetId": "abc",
-                        "TopicId": "abc"
+                        "Region": "",
+                        "LogSetId": "",
+                        "TopicId": ""
                     }
                 ],
                 "Tags": [
                     {
-                        "Key": "abc",
-                        "Value": "abc"
+                        "Key": "",
+                        "Value": ""
                     }
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "xyz"
     }
 }
 ```

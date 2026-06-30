@@ -566,10 +566,10 @@
     ],
     "DescribeReleaseFiles": [
       {
-        "document": "获取应用对应sourcemap文件列表",
-        "input": "https://rum.tencentcloudapi.com/?Action=DescribeReleaseFiles\n&ProjectID=1\n&<公共请求参数>\n{\n  \"ProjectID\": 2,\n  \"FileName\": \"2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Files\": [\n            {\n                \"Version\": \"0.01\",\n                \"FileKey\": \"****test\",\n                \"FileName\": \"a.js.map\",\n                \"FileHash\": \"****test\"\n            }\n        ],\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取应用对应sourcemap文件列表"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReleaseFiles\n<公共请求参数>\n\n{\n    \"ProjectID\": 137889,\n    \"IgnoreDefaultTimeRange\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Files\": [],\n        \"RequestId\": \"71a4b54e-5f6f-4d5b-b5f6-6a11458f8e6c\"\n    }\n}",
+        "title": "查询Sourcemap"
       }
     ],
     "DescribeRumGroupLog": [

@@ -21,7 +21,7 @@ Output:
         "EventBusName": "default",
         "ModTime": "2022-12-12T20:09:46+08:00",
         "PayMode": "",
-        "LogTopicId": "xxx",
+        "LogTopicId": "*",
         "SaveDays": "1",
         "EnableStore": true,
         "LinkMode": "Disorder",

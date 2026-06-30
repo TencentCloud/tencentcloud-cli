@@ -372,18 +372,12 @@
         "title": "1"
       }
     ],
-    "ResetUserPassword": [
+    "ResetUsersPassword": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetUserPassword\n<公共请求参数>\n\n{\n    \"UserName\": \"test_user\",\n    \"InstanceId\": \"tdsql3-d8fffc3c\",\n    \"Host\": \"%\",\n    \"Password\": \"dasdfadasdf231!@\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a93d2900-ef72-11eb-ab93-0716f253da76\"\n    }\n}",
-        "title": "重置用户密码"
-      },
-      {
-        "document": "使用加密密码重置用户密码",
-        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetUserPassword\n<公共请求参数>\n\n{\n    \"UserName\": \"test1234567\",\n    \"InstanceId\": \"tdsql3-f44c7c8e\",\n    \"Host\": \"%\",\n    \"EncryptedPassword\": \"lNepasen9UqXCGYFXc3kkT2GIa5Byc+8CcCOCkTxxTZ/Dow03USfrJrnTLB9cclK6k3RWruGAnP7CbogfauT2otyiIepAEfGK5fHgOZwZCfgrM3J6/K2nxTdYaYjtQP6cyMYbW+07/EdKpUSOpv+6MGw3nPDPrJFDNOvt8EjEbJ9+fU/zC+O4CNX7HdHNeWUtlMRtTEIeqXInjYb5M32aB01SrIEWSel6K2SMpjjzXsKqSVZl/nrHkWsXTd5Xn8ysuV/2Eu1dipXVbhR8lWQ1y57qopPIuz0v2ARODgVTPyY550g/hl3Tz7ScJxynJEL4AajBy7i8po0WA5Ctg1Eiw==\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"15636f30-1e3f-4d8b-887c-c1eae1a1cc78\"\n    }\n}",
-        "title": "重置用户加密密码"
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetUsersPassword\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-831053d8\",\n    \"Users\": [\n        {\n            \"UserName\": \"test1\",\n            \"Host\": \"%\",\n            \"Password\": \"tdstore@123\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 4295045724,\n        \"RequestId\": \"76fc6e35-0f49-40e5-90f2-2cc165841df7\"\n    }\n}",
+        "title": "批量重置用户密码"
       }
     ],
     "RestartDBInstances": [

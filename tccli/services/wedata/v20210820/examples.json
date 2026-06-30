@@ -2161,7 +2161,7 @@
     "ModifyRuleTemplate": [
       {
         "document": "编辑规则模板",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRuleTemplate\n<公共请求参数>\n\n{\n    \"SourceEngineTypes\": [\n        1\n    ],\n    \"Name\": \"模版名\",\n    \"SqlExpression\": \"c2VsZWN0IGNvdW50KCR7dGFibGVfY29sdW1uXzJ9ID0gJHt0YWJsZV9jb2x1bW5fMn0=\",\n    \"QualityDim\": 1,\n    \"MultiSourceFlag\": true,\n    \"TemplateId\": 1,\n    \"Type\": 1,\n    \"SourceObjectType\": 1,\n    \"Description\": \"描述\"\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRuleTemplate\n<公共请求参数>\n\n{\n    \"SourceEngineTypes\": [\n        1\n    ],\n    \"Name\": \"模版名\",\n    \"SqlExpression\": \"c2VsZWN0IGNvdW50KCR7dGFibGVfY29sdW1uXzJ9ID0gJHt0YWJsZV9jb2x1bW5fMn0=\",\n    \"QualityDim\": 1,\n    \"MultiSourceFlag\": true,\n    \"TemplateId\": 1,\n    \"Type\": 1,\n    \"SourceObjectType\": 1,\n    \"Description\": \"数据质量规则模板描述\",\n    \"ProjectId\": \"1934035434134845\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69\"\n    }\n}",
         "title": "编辑规则模板"
       }

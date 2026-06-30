@@ -432,6 +432,34 @@
         "title": "资产中心统计"
       }
     ],
+    "DescribeCLSLogIndexV3": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCLSLogIndexV3\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"topicId\",\n            \"Values\": [\n                \"csip-test-logaccess-251308491-tcss-process_port_assets\"\n            ]\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicIndexInfos\": [\n            {\n                \"IncludeInternalFields\": false,\n                \"MetadataFlag\": 0,\n                \"ModifyTime\": \"2026-04-20 17:29:52\",\n                \"Rule\": {\n                    \"DynamicIndex\": {\n                        \"Status\": true\n                    },\n                    \"FullText\": {\n                        \"CaseSensitive\": false,\n                        \"ContainZH\": true,\n                        \"Tokenizer\": \"@&()='\\\",;:<>[]{}/ \\n\\t\\r\\\\\"\n                    },\n                    \"KeyValue\": {\n                        \"CaseSensitive\": false,\n                        \"KeyValues\": [\n                            {\n                                \"Key\": \"container_id\",\n                                \"Value\": {\n                                    \"Alias\": \"\",\n                                    \"ContainZH\": true,\n                                    \"SqlFlag\": true,\n                                    \"Tokenizer\": \"@&?|#()='\\\",;:<>[]{}/ \\n\\t\\r\\\\\",\n                                    \"Type\": \"text\"\n                                }\n                            }\n                        ]\n                    }\n                },\n                \"Status\": true,\n                \"TopicId\": \"csip-test-logaccess-251308491-tcss-process_port_assets\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d5582c09-3297-4d31-902c-abc50f5a90be\"\n    }\n}",
+        "title": "DescribeCLSLogIndexV3-test1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCLSLogIndexV3\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"topicId\",\n            \"Values\": [\n                \"93-8056-4113-8f3e-82a4e16e\"\n            ]\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicIndexInfos\": [\n            {\n                \"IncludeInternalFields\": true,\n                \"MetadataFlag\": 1,\n                \"ModifyTime\": \"2026-05-14 10:00:00\",\n                \"Rule\": {\n                    \"DynamicIndex\": {\n                        \"Status\": true\n                    },\n                    \"FullText\": {\n                        \"CaseSensitive\": false,\n                        \"ContainZH\": true,\n                        \"Tokenizer\": \"@&()='\\\",;:<>[]{}/ \\n\\t\\r\"\n                    },\n                    \"KeyValue\": {\n                        \"CaseSensitive\": false,\n                        \"KeyValues\": [\n                            {\n                                \"Key\": \"level\",\n                                \"Value\": {\n                                    \"Alias\": \"log_level\",\n                                    \"ContainZH\": false,\n                                    \"SqlFlag\": true,\n                                    \"Tokenizer\": \"@&()='\\\",;:<>[]{}/ \\n\\t\\r\",\n                                    \"Type\": \"text\"\n                                }\n                            }\n                        ]\n                    },\n                    \"Tag\": {\n                        \"CaseSensitive\": false,\n                        \"KeyValues\": [\n                            {\n                                \"Key\": \"__FILENAME__\",\n                                \"Value\": {\n                                    \"Alias\": \"filename\",\n                                    \"ContainZH\": false,\n                                    \"SqlFlag\": true,\n                                    \"Tokenizer\": \"@&()='\\\",;:<>[]{}/ \\n\\t\\r\",\n                                    \"Type\": \"text\"\n                                }\n                            }\n                        ]\n                    }\n                },\n                \"Status\": true,\n                \"TopicId\": \"mock-topic-id-251308491\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"e744f19b-71f4-4583-80e2-8dec444150f2\"\n    }\n}",
+        "title": "DescribeCLSLogIndexV3-test2"
+      }
+    ],
+    "DescribeCLSLogListV3": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCLSLogListV3\n<公共请求参数>\n\n{\n    \"Topics\": [\n        {\n            \"TopicId\": \"csip-test-logaccess-251308491-tcss-container_assets\"\n        }\n    ],\n    \"From\": 1776300037000,\n    \"To\": 1776310037000,\n    \"Query\": \"*\",\n    \"SyntaxRule\": 1,\n    \"MemberId\": [\n        \"mem-tencent-testa1b2\"\n    ],\n    \"Sort\": \"\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"SamplingRate\": 1,\n    \"HighLight\": false,\n    \"UseNewAnalysis\": false,\n    \"QueryOptimize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Analysis\": false,\n        \"AnalysisResults\": [],\n        \"ColNames\": [],\n        \"Context\": \"Y29udGV4dC1mMzI5ZTc0Ny05NzM1LTRmNDQtYjk4NS1hMDA2NjcwNDMwYWIxNzc2MzEwNjMyMzU2\",\n        \"ListOver\": false,\n        \"Results\": [\n            {\n                \"FileName\": \"\",\n                \"HighLights\": [],\n                \"HostName\": \"\",\n                \"IndexStatus\": \"\",\n                \"LogJson\": \"{\\\"quuid\\\":\\\"95a59821-0b97-4114-a8c6-a42f73ff752e\\\",\\\"insert_time\\\":\\\"1775739716\\\",\\\"host_inner_ip\\\":\\\"172.18.10.7\\\",\\\"table_id\\\":\\\"65490569\\\",\\\"table_name\\\":\\\"asset_host_info\\\",\\\"uuid\\\":\\\"95a59821-0b97-4114-a8c6-a42f73ff752e\\\",\\\"hostname\\\":\\\"QTA_VM\\\",\\\"update_time\\\":\\\"1776310035\\\",\\\"event_type\\\":\\\"TCSS_ASSET_HOST\\\",\\\"appid\\\":\\\"251196288\\\",\\\"cls_event_type\\\":\\\"asset_host_info\\\",\\\"event_mod\\\":\\\"MOD\\\",\\\"event_time\\\":\\\"1776310035\\\",\\\"status\\\":\\\"ONLINE\\\"}\",\n                \"PkgId\": \"\",\n                \"PkgLogId\": \"\",\n                \"RawLog\": \"\",\n                \"Source\": \"21.215.132.152\",\n                \"Time\": 1776310036000,\n                \"TopicId\": \"89cc4300-c3c5-4011-92c4-6214f59a6169\",\n                \"TopicName\": \"csip-test-logaccess-251308491-tcss-container_assets\"\n            }\n        ],\n        \"SamplingRate\": 0,\n        \"Topics\": {\n            \"Errors\": [],\n            \"Infos\": [\n                {\n                    \"Context\": \"Y29udGV4dC1mMzI5ZTc0Ny05NzM1LTRmNDQtYjk4NS1hMDA2NjcwNDMwYWIxNzc2MzEwNjMyMzU2\",\n                    \"Period\": 180,\n                    \"TopicId\": \"csip-test-logaccess-251308491-tcss-container_assets\"\n                }\n            ]\n        },\n        \"RequestId\": \"f353404c-3828-442c-9385-5b3373b20c4b\"\n    }\n}",
+        "title": "DescribeCLSLogListV3-test1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCLSLogListV3\n<公共请求参数>\n\n{\n    \"From\": 1776300037000,\n    \"To\": 1776310037000,\n    \"Query\": \"*\",\n    \"SyntaxRule\": 1,\n    \"Topics\": [\n        {\n            \"TopicId\": \"topic-cls-testq\",\n            \"Context\": \"context-aa\"\n        }\n    ],\n    \"MemberId\": [\n        \"mem-tencent-te\"\n    ],\n    \"Sort\": \"desc\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Analysis\": false,\n        \"AnalysisRecords\": [\n            \"{\\\"level\\\":\\\"INFO\\\",\\\"count\\\":1}\"\n        ],\n        \"AnalysisResults\": [\n            {\n                \"Data\": [\n                    {\n                        \"Key\": \"level\",\n                        \"Value\": \"INFO\"\n                    }\n                ]\n            }\n        ],\n        \"ColNames\": [\n            \"level\"\n        ],\n        \"Columns\": [\n            {\n                \"Name\": \"level\",\n                \"Type\": \"text\"\n            }\n        ],\n        \"Context\": \"mock-context\",\n        \"ListOver\": true,\n        \"Results\": [\n            {\n                \"FileName\": \"/var/log/mock.log\",\n                \"HighLights\": [\n                    {\n                        \"Key\": \"msg\",\n                        \"Values\": [\n                            \"mock\"\n                        ]\n                    }\n                ],\n                \"HostName\": \"mock-host\",\n                \"IndexStatus\": \"Success\",\n                \"LogJson\": \"{\\\"level\\\":\\\"INFO\\\",\\\"msg\\\":\\\"mock log\\\"}\",\n                \"PkgId\": \"mock-pkg-id\",\n                \"PkgLogId\": \"0\",\n                \"RawLog\": \"mock raw log\",\n                \"Source\": \"127.0.0.1\",\n                \"Time\": 1715692800000,\n                \"TopicId\": \"mock-topic-251308491\",\n                \"TopicName\": \"mock-topic-251308491\"\n            }\n        ],\n        \"SamplingRate\": 1,\n        \"Topics\": {\n            \"Errors\": [\n                {\n                    \"ErrorCodeStr\": \"MockError\",\n                    \"ErrorMsg\": \"mock error message\",\n                    \"TopicId\": \"mock-topic-251308491\"\n                }\n            ],\n            \"Infos\": [\n                {\n                    \"Context\": \"mock-context\",\n                    \"Period\": 7,\n                    \"TopicId\": \"mock-topic-251308491\"\n                }\n            ]\n        },\n        \"RequestId\": \"b7423c66-9780-4a31-9190-f493c64a81b7\"\n    }\n}",
+        "title": "DescribeCLSLogListV3-test2"
+      }
+    ],
     "DescribeCSIPRiskStatistics": [
       {
         "document": "",
@@ -1228,6 +1256,30 @@
         "title": "获取网卡列表"
       }
     ],
+    "DescribeNotifyAssetConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotifyAssetConfig\n<公共请求参数>\n\n{\n    \"Modules\": [\n        \"Alert\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"AssetRange\": 2,\n                \"CloudTags\": [],\n                \"ExcludedInstanceIds\": [],\n                \"InstanceIds\": [\n                    \"ins-********\"\n                ],\n                \"Module\": \"Alert\",\n                \"SubModule\": \"BRUTE_FORCE\",\n                \"TagIds\": [],\n                \"TotalCount\": 10\n            }\n        ],\n        \"RequestId\": \"02f6385b-5b8e-450d-b77b-b727370d5d15\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeNotifySetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotifySetting\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AssetRange\": 1,\n                \"BeginTime\": \"00:00:00\",\n                \"EndTime\": \"23:59:59\",\n                \"Mode\": 0,\n                \"Module\": \"Alert\",\n                \"Option\": [\n                    \"CRITICAL\"\n                ],\n                \"Status\": 1\n            }\n        ],\n        \"MemberId\": [\n            \"mem-tencent-ae85b7873563d4bc\"\n        ],\n        \"RequestId\": \"ee85ee67-aa09-4eb0-9d73-ebb63b46bc90\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeNotifySettingAlert": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotifySettingAlert\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Settings\": [\n            {\n                \"AssetRange\": 2,\n                \"BeginTime\": \"00:00:00\",\n                \"EndTime\": \"23:59:59\",\n                \"Item\": [],\n                \"Mode\": 1,\n                \"Module\": \"Alert\",\n                \"Option\": [\n                    \"HIGH\"\n                ],\n                \"Status\": 1,\n                \"SubModule\": \"BRUTE_FORCE\"\n            }\n        ],\n        \"RequestId\": \"c5785954-2e97-4927-94de-e567399c0305\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeOrganizationInfo": [
       {
         "document": "查询集团账号详情",
@@ -1756,6 +1808,30 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMachineRemark\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-4ty8h8gy\",\n    \"Remark\": \"测试一下备注\",\n    \"MemberId\": [\n        \"mem-a01\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9d2d345a-dc00-4f9f-8a77-55f5c640def1\"\n    }\n}",
         "title": "1"
+      }
+    ],
+    "ModifyNotifyAssetConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNotifyAssetConfig\n<公共请求参数>\n\n{\n    \"Items\": [\n        {\n            \"Module\": \"Agent\",\n            \"SubModule\": \"\",\n            \"AssetRange\": 1,\n            \"ExcludedInstanceIds\": [\n                \"ins-xxx\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"32a21e5b-14e2-4c89-b1ed-a65ae63fdd08\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyNotifySetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNotifySetting\n<公共请求参数>\n\n{\n    \"Module\": \"AkSk\",\n    \"Mode\": 0,\n    \"Status\": 1,\n    \"BeginTime\": \"09:00:00\",\n    \"EndTime\": \"18:00:00\",\n    \"Option\": [\n        \"CRITICAL\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"caaa7927-5161-4511-973f-971189e8dbdb\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "ModifyNotifySettingAlert": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNotifySettingAlert\n<公共请求参数>\n\n{\n    \"Settings\": [\n        {\n            \"Module\": \"Alert\",\n            \"Mode\": 1,\n            \"Status\": 1,\n            \"BeginTime\": \"00:00:00\",\n            \"EndTime\": \"23:59:59\",\n            \"AssetRange\": 1,\n            \"Option\": [\n                \"HIGH\"\n            ],\n            \"SubModule\": \"MALWARE_FILE\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a87258c5-0d2c-47a9-aaad-a32de4f69f43\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "ModifyOrganizationAccountStatus": [

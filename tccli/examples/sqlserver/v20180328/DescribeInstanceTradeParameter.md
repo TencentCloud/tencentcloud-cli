@@ -20,7 +20,7 @@ tccli sqlserver DescribeInstanceTradeParameter --cli-unfold-argument  \
     --Weekly 1 3 5 \
     --StartTime 01:00 \
     --Span 3 \
-    --MultiZones true \
+    --MultiZones True \
     --Cpu 2 \
     --MachineType CLOUD_BSSD
 ```

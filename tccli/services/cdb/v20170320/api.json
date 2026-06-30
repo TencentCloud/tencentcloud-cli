@@ -1273,7 +1273,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "账号备注信息",
+          "document": "<p>账号备注信息</p>",
           "example": "your note",
           "member": "string",
           "name": "Notes",
@@ -1283,7 +1283,7 @@
         },
         {
           "disabled": false,
-          "document": "账号的域名",
+          "document": "<p>账号的域名</p>",
           "example": "%",
           "member": "string",
           "name": "Host",
@@ -1293,7 +1293,7 @@
         },
         {
           "disabled": false,
-          "document": "账号的名称",
+          "document": "<p>账号的名称</p>",
           "example": "root",
           "member": "string",
           "name": "User",
@@ -1303,7 +1303,7 @@
         },
         {
           "disabled": false,
-          "document": "账号信息修改时间",
+          "document": "<p>账号信息修改时间</p>",
           "example": "2020-09-09 16:40:30",
           "member": "datetime",
           "name": "ModifyTime",
@@ -1313,7 +1313,7 @@
         },
         {
           "disabled": false,
-          "document": "修改密码的时间",
+          "document": "<p>修改密码的时间</p>",
           "example": "2020-09-09 16:40:30",
           "member": "datetime",
           "name": "ModifyPasswordTime",
@@ -1323,7 +1323,7 @@
         },
         {
           "disabled": true,
-          "document": "该值已废弃",
+          "document": "<p>该值已废弃</p>",
           "example": "2021-09-09 16:40:30",
           "member": "datetime",
           "name": "CreateTime",
@@ -1333,7 +1333,7 @@
         },
         {
           "disabled": false,
-          "document": "用户最大可用实例连接数",
+          "document": "<p>用户最大可用实例连接数</p>",
           "example": "10240",
           "member": "int64",
           "name": "MaxUserConnections",
@@ -1343,7 +1343,7 @@
         },
         {
           "disabled": false,
-          "document": "用户账号是否开启了密码轮转",
+          "document": "<p>用户账号是否开启了密码轮转</p>",
           "example": "true",
           "member": "bool",
           "name": "OpenCam",

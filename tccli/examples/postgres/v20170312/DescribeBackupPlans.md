@@ -15,6 +15,7 @@ Output:
     "Response": {
         "Plans": [
             {
+                "BackupMethod": "physical",
                 "BackupPeriod": "[\"monday\",\"tuesday\",\"wednesday\",\"thursday\",\"friday\",\"saturday\",\"sunday\"]",
                 "BackupPeriodType": "week",
                 "BaseBackupRetentionPeriod": 7,
@@ -26,6 +27,7 @@ Output:
                 "PlanType": "default"
             },
             {
+                "BackupMethod": "physical",
                 "BackupPeriod": "[\"1\",\"2\"]",
                 "BackupPeriodType": "month",
                 "BaseBackupRetentionPeriod": 40,

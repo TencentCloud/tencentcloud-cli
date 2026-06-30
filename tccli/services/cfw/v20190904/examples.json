@@ -506,6 +506,14 @@
         "title": "日志审计日志查询"
       }
     ],
+    "DescribeNDRAssetIdentificationCursorList": [
+      {
+        "document": "游标分页获取NDR资产识别结果列表",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNDRAssetIdentificationCursorList\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Cursor\": \"eyJ2IjoxLCJzY29wZSI6IkRlc2NyaWJlTkRSQXNzZXRJZGVudGlmaWNhdGlvbkN1cnNvckxpc3QiLCJzb3J0IjpbeyJmaWVsZCI6ImZpcnN0X2lkZW50aWZpY2F0aW9uX3RpbWUiLCJvcmRlciI6ImRlc2MifSx7ImZpZWxkIjoiaWQiLCJvcmRlciI6ImRlc2MifV0sImtleSI6eyJmaXJzdF9pZGVudGlmaWNhdGlvbl90aW1lIjoxNzgxNzY3NDAyNzEwLCJpZCI6MTI0MDgwOH0sImZpbHRlcl9oYXNoIjoiMzdiZjRiMTg5NGJiYmI0NjhjMDVkYmEyOWNiYzNhMmQ0NGZiZWI2MTQ5MmU0YTU0ZTFkMWZhNjYzNGVjZTE3ZSJ9.G5ykrOlC_8tIbsRCrtAJynqflr0vP49UxRU049cHqmA\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AssetCategory\": \"Web\",\n                \"AssetId\": \"9610880907754151002\",\n                \"AssetService\": \"HTTP\",\n                \"AssetVersion\": \"\",\n                \"FirstIdentificationTime\": \"2026-06-18 15:23:13\",\n                \"IdentificationSource\": \"0\",\n                \"InstanceId\": \"ins-lyqnistm\",\n                \"InstanceName\": \"gz-jacob-server\",\n                \"InstanceType\": \"CVM\",\n                \"Ip\": \"159.75.93.123\",\n                \"IpType\": \"0\",\n                \"IpVersion\": \"0\",\n                \"LatestIdentificationTime\": \"2026-06-18 15:49:38\",\n                \"Port\": 8025,\n                \"Protocol\": \"HTTP\",\n                \"Region\": \"ap-guangzhou\",\n                \"ServerAddr\": \"159.75.93.123:8025\",\n                \"VpcId\": \"vpc-imk763v1\",\n                \"VpcName\": \"Default-VPC\"\n            }\n        ],\n        \"HasMore\": true,\n        \"NextCursor\": \"eyJ2IjoxLCJzY29wZSI6IkRlc2NyaWJlTkRSQXNzZXRJZGVudGlmaWNhdGlvbkN1cnNvckxpc3QiLCJzb3J0IjpbeyJmaWVsZCI6ImZpcnN0X2lkZW50aWZpY2F0aW9uX3RpbWUiLCJvcmRlciI6ImRlc2MifSx7ImZpZWxkIjoiaWQiLCJvcmRlciI6ImRlc2MifV0sImtleSI6eyJmaXJzdF9pZGVudGlmaWNhdGlvbl90aW1lIjoxNzgxNzY0Njg4MjQ4LCJpZCI6MTI0MDc5OX0sImZpbHRlcl9oYXNoIjoiMzdiZjRiMTg5NGJiYmI0NjhjMDVkYmEyOWNiYzNhMmQ0NGZiZWI2MTQ5MmU0YTU0ZTFkMWZhNjYzNGVjZTE3ZSJ9.ec_GdYigkqvRONZEDwvTqE7DKuKFFYc0uVf0Qypykro\",\n        \"RequestId\": \"6d54184a-58d1-4588-abc4-f5b6d98ca9ca\"\n    }\n}",
+        "title": "游标分页获取NDR资产识别结果列表"
+      }
+    ],
     "DescribeNDRAssetIdentificationList": [
       {
         "document": "获取资产识别结果列表",

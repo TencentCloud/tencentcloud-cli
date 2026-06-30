@@ -9,7 +9,8 @@ tccli tokenhub DescribeUsageRankList --cli-unfold-argument  \
     --Dimension apikey \
     --StartTime 2026-04-09T00:00:00+08:00 \
     --EndTime 2026-05-09T00:00:00+08:00 \
-    --Period 86400
+    --Period 86400 \
+    --Target ak-20260618-**************************
 ```
 
 Output: 

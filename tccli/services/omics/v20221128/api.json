@@ -140,6 +140,13 @@
       "output": "GetRunCallsResponse",
       "status": "online"
     },
+    "GetRunJobLog": {
+      "document": "获取任务详情文件。",
+      "input": "GetRunJobLogRequest",
+      "name": "获取子任务日志",
+      "output": "GetRunJobLogResponse",
+      "status": "online"
+    },
     "GetRunMetadataFile": {
       "document": "获取任务详情文件。",
       "input": "GetRunMetadataFileRequest",
@@ -2380,6 +2387,79 @@
           "name": "Calls",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRunJobLogRequest": {
+      "document": "GetRunJobLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务Uuid。</p>",
+          "example": "f9dfef5d-b5a2-4668-bf76-239a022e485d",
+          "member": "string",
+          "name": "RunUuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子任务id</p>",
+          "example": "plan-prophetic-reed-camel-685183",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型</p><p>枚举值：</p><ul><li>stdout： 标准输出</li><li>stderr： 标准错误</li></ul>",
+          "example": "stderr",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目ID。<br>（不填使用指定地域下的默认项目）</p>",
+          "example": "prj-legal-cyan-goat-888314",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子任务路径，无子任务可填空</p>",
+          "example": "/",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRunJobLogResponse": {
+      "document": "GetRunJobLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志内容</p>",
+          "example": "Read1 before filtering:total reads: 10000total .....",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

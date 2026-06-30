@@ -2464,6 +2464,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>是否开启自动备份</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableCosBackup",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "<p>cdcId，使用cdc子网时传递</p>",
           "example": "cluster-xxxxxx",
           "member": "string",

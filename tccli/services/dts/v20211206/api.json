@@ -168,6 +168,13 @@
       "output": "DescribeMigrateDBInstancesResponse",
       "status": "online"
     },
+    "DescribeMigrateGtidCompareReport": {
+      "document": "gtid校验",
+      "input": "DescribeMigrateGtidCompareReportRequest",
+      "name": "查询迁移任务gtid校验结果",
+      "output": "DescribeMigrateGtidCompareReportResponse",
+      "status": "online"
+    },
     "DescribeMigrationCheckJob": {
       "document": "本接口用于创建校验后,获取校验的结果. 能查询到当前校验的状态和进度. \n若通过校验, 则可调用'StartMigrateJob' 开始迁移.\n若未通过校验, 则能查询到校验失败的原因. 请按照报错, 通过'ModifyMigrationJob'修改迁移配置或是调整源/目标实例的相关参数.",
       "input": "DescribeMigrationCheckJobRequest",
@@ -250,6 +257,13 @@
       "input": "DescribeSyncCompareTasksRequest",
       "name": "查询同步一致性校验任务列表",
       "output": "DescribeSyncCompareTasksResponse",
+      "status": "online"
+    },
+    "DescribeSyncGtidCompareReport": {
+      "document": "gtid校验",
+      "input": "DescribeSyncGtidCompareReportRequest",
+      "name": "查询同步任务gtid校验结果",
+      "output": "DescribeSyncGtidCompareReportResponse",
       "status": "online"
     },
     "DescribeSyncJobs": {
@@ -4209,6 +4223,91 @@
       ],
       "type": "object"
     },
+    "DescribeMigrateGtidCompareReportRequest": {
+      "document": "DescribeMigrateGtidCompareReport请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "dts-49pe4shn",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建的校验任务id",
+          "example": "dts-fmvhilus-cmp-2nq0i0my",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要展示不一致详情",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedDiffDetail",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMigrateGtidCompareReportResponse": {
+      "document": "DescribeMigrateGtidCompareReport返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "校验结论",
+          "example": "same",
+          "member": "string",
+          "name": "Conclusion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "校验状态",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "校验类型",
+          "example": "gtid",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不一致详情",
+          "example": "无",
+          "member": "DifferenceDetails",
+          "name": "Detail",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMigrationCheckJobRequest": {
       "document": "DescribeMigrationCheckJob请求参数结构体",
       "members": [
@@ -5805,6 +5904,91 @@
       ],
       "type": "object"
     },
+    "DescribeSyncGtidCompareReportRequest": {
+      "document": "DescribeSyncGtidCompareReport请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "sync-hxjkg3nm",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建的校验任务id",
+          "example": "sync-gurx65fs-cmp-as2v0bi6",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要展示不一致详情",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedDiffDetail",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSyncGtidCompareReportResponse": {
+      "document": "DescribeSyncGtidCompareReport返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "校验结论",
+          "example": "different",
+          "member": "string",
+          "name": "Conclusion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "校验状态",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "校验类型",
+          "example": "gtid",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不一致详情",
+          "example": "无",
+          "member": "DifferenceDetails",
+          "name": "Detail",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSyncJobsRequest": {
       "document": "DescribeSyncJobs请求参数结构体",
       "members": [
@@ -6402,6 +6586,102 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DifferenceDetails": {
+      "document": "校验得出的不一致详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "校验结果",
+          "example": "inconsistent",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源库gtid set",
+          "example": "2e8fd913-0284-11f1-886a-6c0b84d603f8:1-208534",
+          "member": "string",
+          "name": "SrcGtidSets",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标库gtid set",
+          "example": "2e8fd913-0284-11f1-886a-6c0b84d603f8:1-208533",
+          "member": "string",
+          "name": "DstGtidSets",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源库差异的gtid set",
+          "example": "2e8fd913-0284-11f1-886a-6c0b84d603f8:208534",
+          "member": "string",
+          "name": "DiffSrc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源库中不一致的表",
+          "example": "[\"sbtest.loop2x_t\"]",
+          "member": "string",
+          "name": "DiffSrcTables",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标库差异的gtid set",
+          "example": "2e8fd913-0284-11f1-886a-6c0b84d603f8:83180",
+          "member": "string",
+          "name": "DiffDst",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "校验结束时间",
+          "example": "2026-02-06T16:41:44+08:00",
+          "member": "string",
+          "name": "CompareTimestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步范围内的不一致表",
+          "example": "[\"sbtest.loop2x_t\"]",
+          "member": "string",
+          "name": "DiffSrcTablesNeedSync",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步范围内是否存在不一致的表",
+          "example": "true",
+          "member": "bool",
+          "name": "DiffSrcIsNeedSync",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -27,7 +27,7 @@
     "CreateEventBus": [
       {
         "document": "创建事件集",
-        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEventBus\n<公共请求参数>\n\n{\n    \"EventBusName\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEventBus\n<公共请求参数>\n\n{\n    \"EventBusName\": \"myEventbus\"\n}",
         "output": "{\n    \"Response\": {\n        \"EventBusId\": \"eb-xxxxxxxx\",\n        \"RequestId\": \"e3d43926-c2cd-49f2-97f0-53db21e6fcea\"\n    }\n}",
         "title": "创建事件集"
       }
@@ -114,23 +114,23 @@
       {
         "document": "获取事件集",
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEventBus\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AddTime\": \"2022-12-12T20:09:46+08:00\",\n        \"ClsLogsetId\": \"\",\n        \"ClsTopicId\": \"\",\n        \"Description\": \"\",\n        \"EventBusId\": \"eb-0gdrbv5q\",\n        \"EventBusName\": \"default\",\n        \"ModTime\": \"2022-12-12T20:09:46+08:00\",\n        \"PayMode\": \"\",\n        \"LogTopicId\": \"xxx\",\n        \"SaveDays\": \"1\",\n        \"EnableStore\": true,\n        \"LinkMode\": \"Disorder\",\n        \"RequestId\": \"ffd4aae2-c29e-40a8-b18c-037a17ed810c\",\n        \"Type\": \"Cloud\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AddTime\": \"2022-12-12T20:09:46+08:00\",\n        \"ClsLogsetId\": \"\",\n        \"ClsTopicId\": \"\",\n        \"Description\": \"\",\n        \"EventBusId\": \"eb-0gdrbv5q\",\n        \"EventBusName\": \"default\",\n        \"ModTime\": \"2022-12-12T20:09:46+08:00\",\n        \"PayMode\": \"\",\n        \"LogTopicId\": \"*\",\n        \"SaveDays\": \"1\",\n        \"EnableStore\": true,\n        \"LinkMode\": \"Disorder\",\n        \"RequestId\": \"ffd4aae2-c29e-40a8-b18c-037a17ed810c\",\n        \"Type\": \"Cloud\"\n    }\n}",
         "title": "获取事件集"
       }
     ],
     "GetPlatformEventTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPlatformEventTemplate\n<公共请求参数>\n\n{\n    \"EventType\": \"eb_platform_test:TEST:ALL\"\n}",
-        "output": "{\n    \"Response\": {\n        \"EventTemplate\": \"{\\n\\t\\t\\t\\t\\t\\\"specversion\\\": \\\"1.0\\\",\\n\\t\\t\\t\\t\\t\\\"id\\\": \\\"752e37c8-3528-47f1-8311-98c01e2e89c4\\\",\\n\\t\\t\\t\\t\\t\\\"source\\\": \\\"platform.cloud.tencent\\\",\\n\\t\\t\\t\\t\\t\\\"type\\\": \\\"eb_platform_test:TEST:ALL\\\",\\n\\t\\t\\t\\t\\t\\\"subject\\\": \\\"ins-xxxx\\\",\\n\\t\\t\\t\\t\\t\\\"time\\\": 1693986756,\\n\\t\\t\\t\\t\\t\\\"region\\\": \\\"ap-guangzhou\\\",\\n\\t\\t\\t\\t\\t\\\"datacontenttype\\\": \\\"application/json;charset=utf-8\\\",\\n\\t\\t\\t\\t\\t\\\"tags\\\": {\\n\\t\\t\\t\\t\\t  \\\"key1\\\": \\\"value1\\\",\\n\\t\\t\\t\\t\\t  \\\"key2\\\": \\\"value2\\\"\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\\"data\\\": {\\n\\t\\t\\t\\t\\t  \\\"appId\\\": 1253970226,\\n\\t\\t\\t\\t\\t  \\\"requestID\\\": \\\"xxxxxxxx\\\",\\n\\t\\t\\t\\t\\t  \\\"errorCode\\\": \\\"0\\\",\\n\\t\\t\\t\\t\\t  \\\"errorMessage\\\": \\\"permission verify\\\",\\n\\t\\t\\t\\t\\t  \\\"actionType\\\": \\\"Write\\\"\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t  }\",\n        \"RequestId\": \"d8078f15-962d-4407-a4dc-dec4676a9c03\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPlatformEventTemplate\n<公共请求参数>\n\n{\n    \"EventType\": \"network:ErrorEvent:PublicNetworkAlarm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EventTemplate\": \"{\\n\\t\\t\\t\\t\\t\\\"specversion\\\": \\\"1.0\\\",\\n\\t\\t\\t\\t\\t\\\"id\\\": \\\"752e37c8-3528-47f1-8311-98c01e2e89c4\\\",\\n\\t\\t\\t\\t\\t\\\"source\\\": \\\"platform.cloud.tencent\\\",\\n\\t\\t\\t\\t\\t\\\"type\\\": \\\"network:ErrorEvent:PublicNetworkAlarm\\\",\\n\\t\\t\\t\\t\\t\\\"subject\\\": \\\"ins-xxxx\\\",\\n\\t\\t\\t\\t\\t\\\"time\\\": 1693986756,\\n\\t\\t\\t\\t\\t\\\"region\\\": \\\"ap-guangzhou\\\",\\n\\t\\t\\t\\t\\t\\\"datacontenttype\\\": \\\"application/json;charset=utf-8\\\",\\n\\t\\t\\t\\t\\t\\\"tags\\\": {\\n\\t\\t\\t\\t\\t  \\\"key1\\\": \\\"value1\\\",\\n\\t\\t\\t\\t\\t  \\\"key2\\\": \\\"value2\\\"\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\\"data\\\": {\\n\\t\\t\\t\\t\\t  \\\"appId\\\": 1253970226,\\n\\t\\t\\t\\t\\t  \\\"requestID\\\": \\\"xxxxxxxx\\\",\\n\\t\\t\\t\\t\\t  \\\"errorCode\\\": \\\"0\\\",\\n\\t\\t\\t\\t\\t  \\\"errorMessage\\\": \\\"permission verify\\\",\\n\\t\\t\\t\\t\\t  \\\"actionType\\\": \\\"Write\\\"\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t  }\",\n        \"RequestId\": \"d8078f15-962d-4407-a4dc-dec4676a9c03\"\n    }\n}",
         "title": "获取平台产品事件模板"
       }
     ],
     "GetRule": [
       {
         "document": "获取规则详情",
-        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRule\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2\",\n    \"RuleId\": \"rule-qr2wsqqy\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AddTime\": \"2021-04-29T20:01:27+08:00\",\n        \"Description\": \"\",\n        \"Enable\": true,\n        \"EventBusId\": \"eb-l65vlc2u\",\n        \"EventPattern\": \"{\\\"data\\\":{\\\"prefix\\\":[\\\"1\\\",\\\"2\\\"]}}\",\n        \"ModTime\": \"2021-04-29T20:01:28+08:00\",\n        \"RequestId\": \"9babdbaf-85d9-4d79-8eb7-14fd989cf99a\",\n        \"RuleId\": \"rule-qr2wsqqy\",\n        \"RuleName\": \"test\",\n        \"Status\": \"Active\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRule\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l6***c2\",\n    \"RuleId\": \"rule-qr***qqy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AddTime\": \"2021-04-29T20:01:27+08:00\",\n        \"Description\": \"\",\n        \"Enable\": true,\n        \"EventBusId\": \"eb-l6***c2u\",\n        \"EventPattern\": \"{\\\"data\\\":{\\\"prefix\\\":[\\\"1\\\",\\\"2\\\"]}}\",\n        \"ModTime\": \"2021-04-29T20:01:28+08:00\",\n        \"RequestId\": \"9babdbaf-85d9-4d79-8eb7-14fd989cf99a\",\n        \"RuleId\": \"rule-qr***qqy\",\n        \"RuleName\": \"my-rule\",\n        \"Status\": \"Active\"\n    }\n}",
         "title": "获取规则详情"
       }
     ],
@@ -193,8 +193,8 @@
     "ListTargets": [
       {
         "document": "获取目标列表",
-        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTargets\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2\",\n    \"RuleId\": \"rule-fdltium8\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Targets\": [\n            {\n                \"Type\": \"abc\",\n                \"EventBusId\": \"abc\",\n                \"TargetId\": \"abc\",\n                \"TargetDescription\": {\n                    \"ResourceDescription\": \"abc\",\n                    \"SCFParams\": {\n                        \"BatchTimeout\": 0,\n                        \"BatchEventCount\": 0,\n                        \"EnableBatchDelivery\": true\n                    },\n                    \"CkafkaTargetParams\": {\n                        \"TopicName\": \"abc\",\n                        \"RetryPolicy\": {\n                            \"RetryInterval\": 1,\n                            \"MaxRetryAttempts\": 1\n                        }\n                    },\n                    \"ESTargetParams\": {\n                        \"NetMode\": \"abc\",\n                        \"IndexPrefix\": \"abc\",\n                        \"RotationInterval\": \"abc\",\n                        \"OutputMode\": \"abc\",\n                        \"IndexSuffixMode\": \"abc\",\n                        \"IndexTemplateType\": \"abc\"\n                    }\n                },\n                \"RuleId\": \"abc\",\n                \"EnableBatchDelivery\": true,\n                \"BatchTimeout\": 0,\n                \"BatchEventCount\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTargets\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l6***c2\",\n    \"RuleId\": \"rule-fd***um8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9730f16-0098-45d8-a55f-fd59fd7ed050\",\n        \"Targets\": [\n            {\n                \"BatchEventCount\": 0,\n                \"BatchTimeout\": 0,\n                \"EnableBatchDelivery\": false,\n                \"EventBusId\": \"eb-l6***c2\",\n                \"RuleId\": \"rule-fd***um8\",\n                \"TargetDescription\": {\n                    \"CkafkaTargetParams\": {\n                        \"EventDeliveryFormat\": \"\",\n                        \"RetryPolicy\": {\n                            \"MaxRetryAttempts\": 0,\n                            \"RetryInterval\": 0\n                        },\n                        \"TopicName\": \"\"\n                    },\n                    \"ESTargetParams\": {\n                        \"IndexPrefix\": \"\",\n                        \"IndexSuffixMode\": \"\",\n                        \"IndexTemplateType\": \"\",\n                        \"NetMode\": \"\",\n                        \"OutputMode\": \"\",\n                        \"RotationInterval\": \"\"\n                    },\n                    \"ResourceDescription\": \"qcs::eb-amp:ap-guangzhou:uin/my-uin:\",\n                    \"SCFParams\": {\n                        \"BatchEventCount\": 0,\n                        \"BatchTimeout\": 0,\n                        \"EnableBatchDelivery\": false\n                    }\n                },\n                \"TargetId\": \"target-5q***fmx\",\n                \"Type\": \"amp\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取目标列表"
       }
     ],
@@ -217,8 +217,8 @@
     "SearchLog": [
       {
         "document": "事件查询",
-        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchLog\n<公共请求参数>\n\n{\n    \"StartTime\": 1673233483024,\n    \"EndTime\": 1673838283024,\n    \"EventBusId\": \"eb-xxxxx\",\n    \"Page\": 1,\n    \"Limit\": 1000\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"584caa6b-26d8-4ba5-858d-df1182730075\",\n        \"Results\": [\n            {\n                \"Timestamp\": \"xxx\",\n                \"Message\": \"xxx-1\",\n                \"Source\": \"xxx\",\n                \"Type\": \"xzz\",\n                \"RuleIds\": \"xxx\",\n                \"Subject\": \"xxx\",\n                \"Region\": \"xxx\",\n                \"Status\": \"xxx\"\n            }\n        ],\n        \"Total\": 1000,\n        \"Limit\": 500,\n        \"Page\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchLog\n<公共请求参数>\n\n{\n    \"StartTime\": 1673233483024,\n    \"EndTime\": 1673838283024,\n    \"EventBusId\": \"eb-xxxxx\",\n    \"Page\": 1,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"584caa6b-26d8-4ba5-858d-df1182730075\",\n        \"Results\": [\n            {\n                \"Timestamp\": \"2023-01-09 11:04:43\",\n                \"Message\": \"event-data\",\n                \"Source\": \"ckafka.cloud.tencent\",\n                \"Type\": \"消费分组成员心跳超时(ckafka:ErrorEvent:ConsumerGroupMemberHeartbeatTimeout)\",\n                \"RuleIds\": \"rule-gr*jo\",\n                \"Subject\": \"ckafka-xxx\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": \"1\"\n            }\n        ],\n        \"Total\": 1,\n        \"Limit\": 10,\n        \"Page\": 1\n    }\n}",
         "title": "事件查询"
       }
     ],
@@ -233,7 +233,7 @@
     "UpdateEventBus": [
       {
         "document": "更新事件集",
-        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEventBus\n<公共请求参数>\n\n{\n    \"EventBusName\": \"test111\",\n    \"EventBusId\": \"eb-l65vlc2\"\n}",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEventBus\n<公共请求参数>\n\n{\n    \"EventBusName\": \"EventBusName\",\n    \"EventBusId\": \"eb-l6***c2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"18484e4f-f6f1-4b87-8827-27422b30c8c4\"\n    }\n}",
         "title": "更新事件集"
       }

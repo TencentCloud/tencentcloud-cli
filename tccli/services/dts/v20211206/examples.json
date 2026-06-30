@@ -198,6 +198,14 @@
         "title": "查询迁移实例列表"
       }
     ],
+    "DescribeMigrateGtidCompareReport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMigrateGtidCompareReport\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-49pe4shn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Conclusion\": \"same\",\n        \"Detail\": [\n            {\n                \"CompareTimestamp\": \"2026-02-09T14:48:47+08:00\",\n                \"DiffDst\": \"\",\n                \"DiffSrc\": \"7137921b-0247-11f1-8c65-02208de0dcc7:702713-703158\",\n                \"DiffSrcIsNeedSync\": false,\n                \"DiffSrcTables\": [],\n                \"DiffSrcTablesNeedSync\": [],\n                \"DstGtidSets\": \"7137921b-0247-11f1-8c65-02208de0dcc7:1-702712\",\n                \"Result\": \"consistent\",\n                \"SrcGtidSets\": \"7137921b-0247-11f1-8c65-02208de0dcc7:1-703158\"\n            }\n        ],\n        \"Status\": \"success\",\n        \"Type\": \"gtid\",\n        \"RequestId\": \"359c197e-f6fb-4b24-b4f2-aae6abcea090\"\n    }\n}",
+        "title": "迁移任务的gtid校验"
+      }
+    ],
     "DescribeMigrationCheckJob": [
       {
         "document": "",
@@ -292,6 +300,14 @@
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSyncCompareTasks\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-e7ukka6g\"\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CheckProcess\": {\n                    \"Message\": \"\",\n                    \"Status\": \"\",\n                    \"StepAll\": 0,\n                    \"StepNow\": 0,\n                    \"Percent\": 0,\n                    \"Steps\": []\n                },\n                \"CompareProcess\": {\n                    \"Message\": \"done\",\n                    \"Status\": \"\",\n                    \"StepAll\": 0,\n                    \"StepNow\": 0,\n                    \"Steps\": []\n                },\n                \"CompareTaskId\": \"sync-amm1jw5q-cmp-bmuum7jk\",\n                \"Conclusion\": \"same\",\n                \"Config\": {\n                    \"ObjectItems\": [\n                        {\n                            \"DbMode\": \"partial\",\n                            \"DbName\": \"big100\",\n                            \"SchemaName\": \"\",\n                            \"TableMode\": \"partial\",\n                            \"Tables\": null,\n                            \"ViewMode\": \"none\",\n                            \"Views\": null\n                        },\n                        {\n                            \"DbMode\": \"all\",\n                            \"DbName\": \"db1\",\n                            \"SchemaName\": \"\",\n                            \"TableMode\": \"all\",\n                            \"Tables\": null,\n                            \"ViewMode\": \"all\",\n                            \"Views\": null\n                        }\n                    ],\n                    \"ObjectMode\": \"partial\",\n                    \"AdvancedObjects\": [\n                        \"abc\"\n                    ]\n                },\n                \"CreatedAt\": \"2022-07-11 17:21:02\",\n                \"FinishedAt\": \"2022-07-11 17:24:54\",\n                \"Method\": \"dataCheck\",\n                \"Options\": {\n                    \"Method\": \"dataCheck\",\n                    \"SampleRate\": 100,\n                    \"ThreadCount\": 1\n                },\n                \"JobId\": \"sync-amm1jw5q\",\n                \"Message\": \"done\",\n                \"StartedAt\": \"2022-07-11 17:24:09\",\n                \"Status\": \"success\",\n                \"TaskName\": \"defaultCmpTask\"\n            }\n        ],\n        \"RequestId\": \"11d35c90-01bb-11ed-bad9-7b3bbe11abda\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询一致性校验任务列表"
+      }
+    ],
+    "DescribeSyncGtidCompareReport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSyncGtidCompareReport\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-hxjkg3nm\",\n    \"NeedDiffDetail\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Conclusion\": \"different\",\n        \"Detail\": [\n            {\n                \"CompareTimestamp\": \"2026-02-06T11:18:05+08:00\",\n                \"DiffDst\": \"\",\n                \"DiffSrc\": \"2e8fd913-0284-11f1-886a-6c0b84d603f8:111378-115020\",\n                \"DiffSrcIsNeedSync\": true,\n                \"DiffSrcTables\": [\n                    \"percona_57.sbtest1\"\n                ],\n                \"DiffSrcTablesNeedSync\": [\n                    \"percona_57.sbtest10\"\n                ],\n                \"DstGtidSets\": \"2e8fd913-0284-11f1-886a-6c0b84d603f8:1-111377\",\n                \"Result\": \"inconsistent\",\n                \"SrcGtidSets\": \"2e8fd913-0284-11f1-886a-6c0b84d603f8:1-115020\"\n            }\n        ],\n        \"Status\": \"success\",\n        \"Type\": \"gtid\",\n        \"RequestId\": \"5b33dbf9-26af-4864-933b-d3d509a45bcb\"\n    }\n}",
+        "title": "同步任务的gtid校验"
       }
     ],
     "DescribeSyncJobs": [

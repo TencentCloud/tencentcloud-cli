@@ -262,14 +262,6 @@
         "title": "查询API详情"
       }
     ],
-    "DescribeApiApp": [
-      {
-        "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeApiApp\n&ApiAppId=app-kzofrjbl\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"ApiAppSet\": [\n                {\n                    \"ApiAppName\": \"testapp\",\n                    \"ApiAppId\": \"app-kzofrjbl\",\n                    \"ApiAppKey\": \"\",\n                    \"ApiAppSecret\": \"\",\n                    \"CreatedTime\": \"2020-12-01T10:44:55Z\",\n                    \"ModifiedTime\": \"2020-12-01T10:44:55Z\",\n                    \"ApiAppDesc\": \"\"\n                }\n            ]\n        },\n        \"RequestId\": \"98f5e9a5-c31d-470c-a7a9-325dcbb41d5b\"\n    }\n}",
-        "title": "DescribeApiApp"
-      }
-    ],
     "DescribeApiAppBindApisStatus": [
       {
         "document": "",

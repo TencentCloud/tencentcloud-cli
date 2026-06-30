@@ -693,6 +693,13 @@
       "output": "DescribePrometheusConfigResponse",
       "status": "online"
     },
+    "DescribePrometheusCreateInstanceQuota": {
+      "document": "查询Prometheus实例创建配额\n\n配额不分地域，可从任意支持地域请求",
+      "input": "DescribePrometheusCreateInstanceQuotaRequest",
+      "name": "获取账号Prometheus实例创建配额",
+      "output": "DescribePrometheusCreateInstanceQuotaResponse",
+      "status": "online"
+    },
     "DescribePrometheusGlobalConfig": {
       "document": "获得实例级别抓取配置",
       "input": "DescribePrometheusGlobalConfigRequest",
@@ -4239,7 +4246,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "[{Key: \"ip\" Value: \"1.1.1.1\"}]",
+          "example": "无",
           "member": "PrometheusRuleKV",
           "name": "Labels",
           "required": false,
@@ -4248,7 +4255,7 @@
         {
           "disabled": false,
           "document": "注释列表。\n\n告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。",
-          "example": "[{Key: \"summary\" Value: \"规则名称\"}]",
+          "example": "无",
           "member": "PrometheusRuleKV",
           "name": "Annotations",
           "required": false,
@@ -4293,8 +4300,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，monitor",
-          "example": "monitor,",
+          "document": "<p>固定值，monitor</p>",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -4302,8 +4309,8 @@
         },
         {
           "disabled": false,
-          "document": "视图名",
-          "example": "cvm_device,",
+          "document": "<p>视图名</p>",
+          "example": "cvm_device",
           "member": "string",
           "name": "ViewName",
           "required": true,
@@ -4311,7 +4318,7 @@
         },
         {
           "disabled": false,
-          "document": "组名",
+          "document": "<p>组名</p>",
           "example": "测试API新增,",
           "member": "string",
           "name": "GroupName",
@@ -4320,8 +4327,8 @@
         },
         {
           "disabled": false,
-          "document": "是否为与关系",
-          "example": "0,",
+          "document": "<p>是否为与关系</p>",
+          "example": "0",
           "member": "int64",
           "name": "IsUnionRule",
           "required": false,
@@ -4329,7 +4336,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "测试API创建一下模板,",
           "member": "string",
           "name": "Remark",
@@ -4338,8 +4345,8 @@
         },
         {
           "disabled": false,
-          "document": "父ID",
-          "example": "无",
+          "document": "<p>父ID</p>",
+          "example": "25678",
           "member": "int64",
           "name": "ParentGroupID",
           "required": false,
@@ -4347,8 +4354,8 @@
         },
         {
           "disabled": false,
-          "document": "是否屏蔽",
-          "example": "无",
+          "document": "<p>是否屏蔽</p>",
+          "example": "1",
           "member": "int64",
           "name": "IsShielded",
           "required": false,
@@ -4356,8 +4363,8 @@
         },
         {
           "disabled": false,
-          "document": "复合告警表达式",
-          "example": "无",
+          "document": "<p>复合告警表达式</p>",
+          "example": "1 AND 2 OR 3",
           "member": "string",
           "name": "ComplexExpression",
           "required": false,
@@ -4365,7 +4372,7 @@
         },
         {
           "disabled": false,
-          "document": "指标告警条件",
+          "document": "<p>指标告警条件</p>",
           "example": "无",
           "member": "ModifyConditionsTemplateRequestCondition",
           "name": "Conditions",
@@ -4374,7 +4381,7 @@
         },
         {
           "disabled": false,
-          "document": "事件告警条件",
+          "document": "<p>事件告警条件</p>",
           "example": "无",
           "member": "ModifyConditionsTemplateRequestEventCondition",
           "name": "EventConditions",
@@ -4389,7 +4396,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板策略组ID",
+          "document": "<p>模板策略组ID</p>",
           "example": "1998842",
           "member": "int64",
           "name": "GroupID",
@@ -6056,7 +6063,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模块名，这里填“monitor”",
+          "document": "<p>模块名，这里填“monitor”</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -6065,7 +6072,7 @@
         },
         {
           "disabled": false,
-          "document": "屏蔽策略Id列表",
+          "document": "<p>屏蔽策略Id列表</p>",
           "example": "[\"Shield-2a2818gxe6\"]",
           "member": "string",
           "name": "Shields",
@@ -6128,7 +6135,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
+          "document": "<p>实例 ID</p>",
           "example": "prom-id",
           "member": "string",
           "name": "InstanceId",
@@ -6137,7 +6144,7 @@
         },
         {
           "disabled": false,
-          "document": "类型(可通过 DescribeExporterIntegrations获取)",
+          "document": "<p>类型(可通过 DescribeExporterIntegrations获取)</p>",
           "example": "mysql-exporter",
           "member": "string",
           "name": "Kind",
@@ -6146,8 +6153,8 @@
         },
         {
           "disabled": false,
-          "document": "名字",
-          "example": "test",
+          "document": "<p>名字</p>",
+          "example": "integration-name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6155,7 +6162,7 @@
         },
         {
           "disabled": false,
-          "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群(EKS) </li>\n<li> 3= Prometheus管理的弹性集群(MEKS) </li>",
+          "document": "<p>Kubernetes 集群类型，取值如下：</p><li> 1= 容器集群(TKE) </li><li> 2=弹性集群(EKS) </li><li> 3= Prometheus管理的弹性集群(MEKS) </li>",
           "example": "3",
           "member": "int64",
           "name": "KubeType",
@@ -6164,7 +6171,7 @@
         },
         {
           "disabled": false,
-          "document": "集群 ID，可不填",
+          "document": "<p>集群 ID，可不填</p>",
           "example": "cls-id",
           "member": "string",
           "name": "ClusterId",
@@ -7460,7 +7467,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模块名，这里填“monitor”",
+          "document": "<p>模块名，这里填“monitor”</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -7469,7 +7476,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知模板 id",
+          "document": "<p>告警通知模板 id</p>",
           "example": "notice-2g892hg8",
           "member": "string",
           "name": "NoticeId",
@@ -7484,7 +7491,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警通知模板详细信息",
+          "document": "<p>告警通知模板详细信息</p>",
           "example": "无",
           "member": "AlarmNotice",
           "name": "Notice",
@@ -7506,7 +7513,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模块名，这里填“monitor”",
+          "document": "<p>模块名，这里填“monitor”</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -7515,7 +7522,7 @@
         },
         {
           "disabled": false,
-          "document": "页码 最小为1",
+          "document": "<p>页码 最小为1</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -7524,7 +7531,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小 1～200",
+          "document": "<p>分页大小 1～200</p>",
           "example": "20",
           "member": "int64",
           "name": "PageSize",
@@ -7533,7 +7540,7 @@
         },
         {
           "disabled": false,
-          "document": "按更新时间排序方式 ASC=正序 DESC=倒序",
+          "document": "<p>按更新时间排序方式 ASC=正序 DESC=倒序</p>",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -7542,7 +7549,7 @@
         },
         {
           "disabled": false,
-          "document": "主账号 uid 用于创建预设通知",
+          "document": "<p>主账号 uid 用于创建预设通知</p>",
           "example": "1234567",
           "member": "int64",
           "name": "OwnerUid",
@@ -7551,7 +7558,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知模板名称 用来模糊搜索",
+          "document": "<p>告警通知模板名称 用来模糊搜索</p>",
           "example": "模板",
           "member": "string",
           "name": "Name",
@@ -7560,7 +7567,7 @@
         },
         {
           "disabled": false,
-          "document": "根据接收人过滤告警通知模板需要选定通知用户类型 USER=用户 GROUP=用户组 传空=不按接收人过滤",
+          "document": "<p>根据接收人过滤告警通知模板需要选定通知用户类型 USER=用户 GROUP=用户组 传空=不按接收人过滤</p>",
           "example": "USER",
           "member": "string",
           "name": "ReceiverType",
@@ -7569,8 +7576,8 @@
         },
         {
           "disabled": false,
-          "document": "接收对象列表",
-          "example": "[]",
+          "document": "<p>接收对象列表</p>",
+          "example": "[121101]",
           "member": "int64",
           "name": "UserIds",
           "required": false,
@@ -7578,8 +7585,8 @@
         },
         {
           "disabled": false,
-          "document": "接收组列表",
-          "example": "[]",
+          "document": "<p>接收组列表</p>",
+          "example": "[121101]",
           "member": "int64",
           "name": "GroupIds",
           "required": false,
@@ -7587,7 +7594,7 @@
         },
         {
           "disabled": false,
-          "document": "根据通知模板 id 过滤，空数组/不传则不过滤",
+          "document": "<p>根据通知模板 id 过滤，空数组/不传则不过滤</p>",
           "example": "[\"notice-ah28cv9d\"]",
           "member": "string",
           "name": "NoticeIds",
@@ -7596,7 +7603,7 @@
         },
         {
           "disabled": false,
-          "document": "模板根据标签过滤",
+          "document": "<p>模板根据标签过滤</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -7605,8 +7612,8 @@
         },
         {
           "disabled": false,
-          "document": "值班列表",
-          "example": "无",
+          "document": "<p>值班列表</p>",
+          "example": "[\"form-id\"]",
           "member": "string",
           "name": "OnCallFormIDs",
           "required": false,
@@ -7620,7 +7627,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警通知模板总数",
+          "document": "<p>告警通知模板总数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -7630,7 +7637,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知模板列表",
+          "document": "<p>告警通知模板列表</p>",
           "example": "无",
           "member": "AlarmNotice",
           "name": "Notices",
@@ -7652,7 +7659,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -7661,7 +7668,7 @@
         },
         {
           "disabled": false,
-          "document": "页数，从 1 开始计数，默认 1",
+          "document": "<p>页数，从 1 开始计数，默认 1</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -7670,7 +7677,7 @@
         },
         {
           "disabled": false,
-          "document": "每页的数量，取值1~100，默认20",
+          "document": "<p>每页的数量，取值1~100，默认20</p>",
           "example": "20",
           "member": "int64",
           "name": "PageSize",
@@ -7679,7 +7686,7 @@
         },
         {
           "disabled": false,
-          "document": "按策略名称模糊搜索",
+          "document": "<p>按策略名称模糊搜索</p>",
           "example": "policy-24sxe890",
           "member": "string",
           "name": "PolicyName",
@@ -7688,7 +7695,7 @@
         },
         {
           "disabled": false,
-          "document": "根据监控类型过滤 不选默认查所有类型 \"MT_QCE\"=云产品监控,当Dimension不为空时，该项为必填项",
+          "document": "<p>根据监控类型过滤 不选默认查所有类型 &quot;MT_QCE&quot;=云产品监控,当Dimension不为空时，该项为必填项</p>",
           "example": "[\"MT_QCE\"]",
           "member": "string",
           "name": "MonitorTypes",
@@ -7697,7 +7704,7 @@
         },
         {
           "disabled": false,
-          "document": "根据命名空间过滤，不同策略类型的值详见\n[策略类型列表](https://cloud.tencent.com/document/product/248/50397)当Dimension不为空时，该项为必填项",
+          "document": "<p>根据命名空间过滤，不同策略类型的值详见<br><a href=\"https://cloud.tencent.com/document/product/248/50397\">策略类型列表</a>当Dimension不为空时，该项为必填项</p>",
           "example": "[\"cvm_device\"]",
           "member": "string",
           "name": "Namespaces",
@@ -7706,7 +7713,7 @@
         },
         {
           "disabled": false,
-          "document": "告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：`[[{\"name\":\"unInstanceId\",\"value\":\"ins-qr888845g\"}]]`具体也可以参考下方的示例 2。不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时",
+          "document": "<p>告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：<code>[[{&quot;name&quot;:&quot;unInstanceId&quot;,&quot;value&quot;:&quot;ins-qr888845g&quot;}]]</code>具体也可以参考下方的示例 2。不同云产品参数示例详见 <a href=\"https://cloud.tencent.com/document/product/248/50397\">维度信息Dimensions列表</a>注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时</p>",
           "example": "[[{\"name\":\"unInstanceId\",\"value\":\"ins-qr888845g\"}]]",
           "member": "string",
           "name": "Dimensions",
@@ -7715,7 +7722,7 @@
         },
         {
           "disabled": false,
-          "document": "根据接收人搜索，可以使用“访问管理”的 [拉取子用户 ListUsers](https://cloud.tencent.com/document/product/598/34587) 接口获取用户列表 或 [查询子用户 GetUser](https://cloud.tencent.com/document/product/598/34590) 接口查询子用户详情，此处填入返回结果中的 `Uid` 字段",
+          "document": "<p>根据接收人搜索，可以使用“访问管理”的 <a href=\"https://cloud.tencent.com/document/product/598/34587\">拉取子用户 ListUsers</a> 接口获取用户列表 或 <a href=\"https://cloud.tencent.com/document/product/598/34590\">查询子用户 GetUser</a> 接口查询子用户详情，此处填入返回结果中的 <code>Uid</code> 字段</p>",
           "example": "[9989]",
           "member": "int64",
           "name": "ReceiverUids",
@@ -7724,7 +7731,7 @@
         },
         {
           "disabled": false,
-          "document": "根据接收组搜索，可以使用“访问管理”的 [查询用户组列表 ListGroups](https://cloud.tencent.com/document/product/598/34589) 接口获取用户组列表 或 [列出用户关联的用户组 ListGroupsForUser](https://cloud.tencent.com/document/product/598/34588) 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 `GroupId ` 字段",
+          "document": "<p>根据接收组搜索，可以使用“访问管理”的 <a href=\"https://cloud.tencent.com/document/product/598/34589\">查询用户组列表 ListGroups</a> 接口获取用户组列表 或 <a href=\"https://cloud.tencent.com/document/product/598/34588\">列出用户关联的用户组 ListGroupsForUser</a> 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 <code>GroupId</code> 字段</p>",
           "example": "[1112]",
           "member": "int64",
           "name": "ReceiverGroups",
@@ -7733,8 +7740,8 @@
         },
         {
           "disabled": false,
-          "document": "根据默认策略筛选 不传展示全部策略 DEFAULT=展示默认策略 NOT_DEFAULT=展示非默认策略",
-          "example": "[DEFAULT]",
+          "document": "<p>根据默认策略筛选 不传展示全部策略 DEFAULT=展示默认策略 NOT_DEFAULT=展示非默认策略</p>",
+          "example": "[\"DEFAULT\"]",
           "member": "string",
           "name": "PolicyType",
           "required": false,
@@ -7742,7 +7749,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，例如按照最后修改时间排序，Field: \"UpdateTime\"",
+          "document": "<p>排序字段，例如按照最后修改时间排序，Field: &quot;UpdateTime&quot;</p>",
           "example": "PolicyId",
           "member": "string",
           "name": "Field",
@@ -7751,7 +7758,7 @@
         },
         {
           "disabled": false,
-          "document": "排序顺序：升序：ASC  降序：DESC",
+          "document": "<p>排序顺序：升序：ASC  降序：DESC</p>",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -7760,7 +7767,7 @@
         },
         {
           "disabled": false,
-          "document": "策略所属项目的id数组，可在此页面查看\n[项目管理](https://console.cloud.tencent.com/project)",
+          "document": "<p>策略所属项目的id数组，可在此页面查看<br><a href=\"https://console.cloud.tencent.com/project\">项目管理</a></p>",
           "example": "[1]",
           "member": "int64",
           "name": "ProjectIds",
@@ -7769,8 +7776,8 @@
         },
         {
           "disabled": false,
-          "document": "通知模板的id列表，可查询通知模板列表获取。\n可使用 [查询通知模板列表](https://cloud.tencent.com/document/product/248/51280) 接口查询。",
-          "example": "[1,2]",
+          "document": "<p>通知模板的id列表，可查询通知模板列表获取。<br>可使用 <a href=\"https://cloud.tencent.com/document/product/248/51280\">查询通知模板列表</a> 接口查询。</p>",
+          "example": "[\"notice-ayg\"]",
           "member": "string",
           "name": "NoticeIds",
           "required": false,
@@ -7778,8 +7785,8 @@
         },
         {
           "disabled": false,
-          "document": "根据触发条件筛选 不传展示全部策略 STATIC=展示静态阈值策略 DYNAMIC=展示动态阈值策略",
-          "example": "[STATIC]",
+          "document": "<p>根据触发条件筛选 不传展示全部策略 STATIC=展示静态阈值策略 DYNAMIC=展示动态阈值策略</p>",
+          "example": "[\"STATIC\"]",
           "member": "string",
           "name": "RuleTypes",
           "required": false,
@@ -7787,8 +7794,8 @@
         },
         {
           "disabled": false,
-          "document": "告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]",
-          "example": "1",
+          "document": "<p>告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]</p>",
+          "example": "[1]",
           "member": "int64",
           "name": "Enable",
           "required": false,
@@ -7796,7 +7803,7 @@
         },
         {
           "disabled": false,
-          "document": "传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。",
+          "document": "<p>传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。</p>",
           "example": "1",
           "member": "int64",
           "name": "NotBindingNoticeRule",
@@ -7805,7 +7812,7 @@
         },
         {
           "disabled": false,
-          "document": "实例分组id",
+          "document": "<p>实例分组id</p>",
           "example": "1",
           "member": "int64",
           "name": "InstanceGroupId",
@@ -7814,7 +7821,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0",
+          "document": "<p>是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0</p>",
           "example": "1",
           "member": "int64",
           "name": "NeedCorrespondence",
@@ -7823,7 +7830,7 @@
         },
         {
           "disabled": false,
-          "document": "按照触发任务（例如弹性伸缩）过滤策略。最多10个",
+          "document": "<p>按照触发任务（例如弹性伸缩）过滤策略。最多10个</p>",
           "example": "无",
           "member": "AlarmPolicyTriggerTask",
           "name": "TriggerTasks",
@@ -7832,7 +7839,7 @@
         },
         {
           "disabled": false,
-          "document": "根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略",
+          "document": "<p>根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略</p>",
           "example": "[\"ONECLICK\"]",
           "member": "string",
           "name": "OneClickPolicyType",
@@ -7841,7 +7848,7 @@
         },
         {
           "disabled": false,
-          "document": "返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤",
+          "document": "<p>返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤</p>",
           "example": "1",
           "member": "int64",
           "name": "NotBindAll",
@@ -7850,7 +7857,7 @@
         },
         {
           "disabled": false,
-          "document": "返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤",
+          "document": "<p>返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤</p>",
           "example": "1",
           "member": "int64",
           "name": "NotInstanceGroup",
@@ -7859,7 +7866,7 @@
         },
         {
           "disabled": false,
-          "document": "策略根据标签过滤",
+          "document": "<p>策略根据标签过滤</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -7868,7 +7875,7 @@
         },
         {
           "disabled": false,
-          "document": "prom实例id，自定义指标策略时会用到",
+          "document": "<p>prom实例id，自定义指标策略时会用到</p>",
           "example": "prom-xxxx",
           "member": "string",
           "name": "PromInsId",
@@ -7877,8 +7884,8 @@
         },
         {
           "disabled": false,
-          "document": "根据排班表搜索",
-          "example": "无",
+          "document": "<p>根据排班表搜索</p>",
+          "example": "[\"form-axy\"]",
           "member": "string",
           "name": "ReceiverOnCallFormIDs",
           "required": false,
@@ -7886,7 +7893,7 @@
         },
         {
           "disabled": false,
-          "document": "通知内容模板ID筛选",
+          "document": "<p>通知内容模板ID筛选</p>",
           "example": "[\"tmpl-1\",\"tmpl-2\"]",
           "member": "string",
           "name": "NoticeContentTmplIDs",
@@ -7895,7 +7902,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为预设策略，1是，0否",
+          "document": "<p>是否为预设策略，1是，0否</p>",
           "example": "1",
           "member": "int64",
           "name": "IsPredefined",
@@ -7910,7 +7917,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略总数",
+          "document": "<p>策略总数</p>",
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
@@ -7920,7 +7927,7 @@
         },
         {
           "disabled": false,
-          "document": "策略数组",
+          "document": "<p>策略数组</p>",
           "example": "无",
           "member": "AlarmPolicy",
           "name": "Policies",
@@ -7942,7 +7949,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -7951,7 +7958,7 @@
         },
         {
           "disabled": false,
-          "document": "告警策略ID",
+          "document": "<p>告警策略ID</p>",
           "example": "policy-t1pvz47f",
           "member": "string",
           "name": "PolicyId",
@@ -7966,7 +7973,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略详情",
+          "document": "<p>策略详情</p>",
           "example": "无",
           "member": "AlarmPolicy",
           "name": "Policy",
@@ -8044,8 +8051,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
-          "example": "",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -8059,28 +8066,31 @@
       "members": [
         {
           "disabled": false,
-          "document": "配额总数",
-          "example": "",
+          "document": "<p>配额总数</p>",
+          "example": "100",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总使用量",
-          "example": "",
+          "document": "<p>总使用量</p>",
+          "example": "10",
           "member": "int64",
           "name": "Used",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "短信配额信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>短信配额信息列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribeAlarmSmsQuotaQuota",
           "name": "QuotaList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8098,7 +8108,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Prometheus 实例 ID",
+          "document": "<p>Prometheus 实例 ID</p>",
           "example": "my-prom-gg",
           "member": "string",
           "name": "InstanceId",
@@ -8107,7 +8117,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为 20，最大值为 100",
+          "document": "<p>返回数量，默认为 20，最大值为 100</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -8116,7 +8126,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为 0",
+          "document": "<p>偏移量，默认为 0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -8125,7 +8135,7 @@
         },
         {
           "disabled": false,
-          "document": "规则 ID",
+          "document": "<p>规则 ID</p>",
           "example": "arule-f2vx278",
           "member": "string",
           "name": "RuleId",
@@ -8134,7 +8144,7 @@
         },
         {
           "disabled": false,
-          "document": "规则状态码，取值如下：\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>",
+          "document": "<p>规则状态码，取值如下：</p><li>2=RuleEnabled</li><li>3=RuleDisabled</li>",
           "example": "2",
           "member": "int64",
           "name": "RuleState",
@@ -8143,7 +8153,7 @@
         },
         {
           "disabled": false,
-          "document": "规则名称",
+          "document": "<p>规则名称</p>",
           "example": "告警规则测试",
           "member": "string",
           "name": "RuleName",
@@ -8152,7 +8162,7 @@
         },
         {
           "disabled": false,
-          "document": "报警策略模板分类",
+          "document": "<p>报警策略模板分类</p>",
           "example": "TargetDown",
           "member": "string",
           "name": "Type",
@@ -8167,7 +8177,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "报警规则数量",
+          "document": "<p>报警规则数量</p>",
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
@@ -8177,7 +8187,7 @@
         },
         {
           "disabled": false,
-          "document": "报警规则详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>报警规则详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrometheusRuleSet",
           "name": "AlertRuleSet",
@@ -8584,7 +8594,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "接口模块名，当前取值monitor",
+          "document": "<p>接口模块名，当前取值monitor</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -8593,7 +8603,7 @@
         },
         {
           "disabled": false,
-          "document": "起始时间，默认一天前的时间戳",
+          "document": "<p>起始时间，默认一天前的时间戳</p>",
           "example": "1573660800",
           "member": "int64",
           "name": "StartTime",
@@ -8602,7 +8612,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，默认当前时间戳",
+          "document": "<p>结束时间，默认当前时间戳</p>",
           "example": "1573919999",
           "member": "int64",
           "name": "EndTime",
@@ -8611,7 +8621,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数，每页返回的数量，取值1~100，默认20",
+          "document": "<p>分页参数，每页返回的数量，取值1~100，默认20</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -8620,7 +8630,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数，页偏移量，从0开始计数，默认0",
+          "document": "<p>分页参数，页偏移量，从0开始计数，默认0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -8629,7 +8639,7 @@
         },
         {
           "disabled": false,
-          "document": "根据发生时间排序，取值ASC或DESC",
+          "document": "<p>根据发生时间排序，取值ASC或DESC</p>",
           "example": "DESC",
           "member": "string",
           "name": "OccurTimeOrder",
@@ -8638,8 +8648,8 @@
         },
         {
           "disabled": false,
-          "document": "根据项目ID过滤",
-          "example": "[\"0\\n\"]",
+          "document": "<p>根据项目ID过滤</p>",
+          "example": "[0]",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
@@ -8647,8 +8657,8 @@
         },
         {
           "disabled": false,
-          "document": "根据策略类型过滤",
-          "example": "[\"cvm_device\\n\"]",
+          "document": "<p>根据策略类型过滤</p>",
+          "example": "[\"cvm_device\"]",
           "member": "string",
           "name": "ViewNames",
           "required": false,
@@ -8656,8 +8666,8 @@
         },
         {
           "disabled": false,
-          "document": "根据告警状态过滤",
-          "example": "[\"1\\n\"]",
+          "document": "<p>根据告警状态过滤</p>",
+          "example": "[1]",
           "member": "int64",
           "name": "AlarmStatus",
           "required": false,
@@ -8665,8 +8675,8 @@
         },
         {
           "disabled": false,
-          "document": "根据告警对象过滤",
-          "example": "123",
+          "document": "<p>根据告警对象过滤</p>",
+          "example": "ins-xybd",
           "member": "string",
           "name": "ObjLike",
           "required": false,
@@ -8674,7 +8684,7 @@
         },
         {
           "disabled": false,
-          "document": "根据实例组ID过滤",
+          "document": "<p>根据实例组ID过滤</p>",
           "example": "[11233]",
           "member": "int64",
           "name": "InstanceGroupIds",
@@ -8683,8 +8693,8 @@
         },
         {
           "disabled": false,
-          "document": "根据指标名过滤",
-          "example": "[\"mem_used\\n\"]",
+          "document": "<p>根据指标名过滤</p>",
+          "example": "[\"mem_used\"]",
           "member": "string",
           "name": "MetricNames",
           "required": false,
@@ -8698,7 +8708,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeBasicAlarmListAlarms",
           "name": "Alarms",
@@ -8708,7 +8718,7 @@
         },
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "Total",
@@ -8718,7 +8728,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备注信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "This method is deprecated! Use `DescribeAlarmHistories` instead!",
           "member": "string",
           "name": "Warning",
@@ -8787,40 +8797,40 @@
         {
           "disabled": false,
           "document": "对象唯一id",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UniqueId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "表示对象实例的维度集合，jsonObj字符串",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Dimensions",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "IsShielded",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "对象所在的地域",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8918,7 +8928,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -8927,8 +8937,8 @@
         },
         {
           "disabled": false,
-          "document": "策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0",
-          "example": "11111",
+          "document": "<p>策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0</p>",
+          "example": "25678",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -8936,7 +8946,7 @@
         },
         {
           "disabled": false,
-          "document": "告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0",
+          "document": "<p>告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0</p>",
           "example": "policy-xxxxx",
           "member": "string",
           "name": "PolicyId",
@@ -8945,7 +8955,7 @@
         },
         {
           "disabled": false,
-          "document": "每次返回的数量，取值1~100，默认20",
+          "document": "<p>每次返回的数量，取值1~100，默认20</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -8954,7 +8964,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&Limit=20 返回第 0 到 19 项，Offset=20&Limit=20 返回第 20 到 39 项，以此类推",
+          "document": "<p>偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&amp;Limit=20 返回第 0 到 19 项，Offset=20&amp;Limit=20 返回第 20 到 39 项，以此类推</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -8963,7 +8973,7 @@
         },
         {
           "disabled": false,
-          "document": "筛选对象的维度信息",
+          "document": "<p>筛选对象的维度信息</p>",
           "example": "无",
           "member": "DescribeBindingPolicyObjectListDimension",
           "name": "Dimensions",
@@ -8978,7 +8988,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "绑定的对象实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的对象实例列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeBindingPolicyObjectListInstance",
           "name": "List",
@@ -8988,7 +8998,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的对象实例总数",
+          "document": "<p>绑定的对象实例总数</p>",
           "example": "3",
           "member": "int64",
           "name": "Total",
@@ -8998,7 +9008,7 @@
         },
         {
           "disabled": false,
-          "document": "未屏蔽的对象实例数",
+          "document": "<p>未屏蔽的对象实例数</p>",
           "example": "3",
           "member": "int64",
           "name": "NoShieldedSum",
@@ -9008,7 +9018,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的实例分组信息，没有绑定实例分组则为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的实例分组信息，没有绑定实例分组则为空</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeBindingPolicyObjectListInstanceGroup",
           "name": "InstanceGroup",
@@ -9076,7 +9086,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -9085,7 +9095,7 @@
         },
         {
           "disabled": false,
-          "document": "视图名，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device",
+          "document": "<p>视图名，由 <a href=\"https://cloud.tencent.com/document/product/248/48683\">DescribeAllNamespaces</a> 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device</p>",
           "example": "cvm_device",
           "member": "string",
           "name": "ViewName",
@@ -9094,8 +9104,8 @@
         },
         {
           "disabled": false,
-          "document": "根据触发条件模板名称过滤查询",
-          "example": "test",
+          "document": "<p>根据触发条件模板名称过滤查询</p>",
+          "example": "cpuHigh",
           "member": "string",
           "name": "GroupName",
           "required": false,
@@ -9103,8 +9113,8 @@
         },
         {
           "disabled": false,
-          "document": "根据触发条件模板ID过滤查询",
-          "example": " 1998658",
+          "document": "<p>根据触发条件模板ID过滤查询</p>",
+          "example": "1998658",
           "member": "string",
           "name": "GroupID",
           "required": false,
@@ -9112,7 +9122,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数，每页返回的数量，取值1~100，默认20",
+          "document": "<p>分页参数，每页返回的数量，取值1~100，默认20</p>",
           "example": "1",
           "member": "int64",
           "name": "Limit",
@@ -9121,7 +9131,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数，页偏移量，从0开始计数，默认0",
+          "document": "<p>分页参数，页偏移量，从0开始计数，默认0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -9130,7 +9140,7 @@
         },
         {
           "disabled": false,
-          "document": "指定按更新时间的排序方式，asc=升序, desc=降序",
+          "document": "<p>指定按更新时间的排序方式，asc=升序, desc=降序</p>",
           "example": "desc",
           "member": "string",
           "name": "UpdateTimeOrder",
@@ -9139,7 +9149,7 @@
         },
         {
           "disabled": false,
-          "document": "指定按绑定策略数目的排序方式，asc=升序, desc=降序",
+          "document": "<p>指定按绑定策略数目的排序方式，asc=升序, desc=降序</p>",
           "example": "desc",
           "member": "string",
           "name": "PolicyCountOrder",
@@ -9154,7 +9164,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板总数",
+          "document": "<p>模板总数</p>",
           "example": "1",
           "member": "int64",
           "name": "Total",
@@ -9164,7 +9174,7 @@
         },
         {
           "disabled": false,
-          "document": "模板列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模板列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TemplateGroup",
           "name": "TemplateGroupList",
@@ -9223,7 +9233,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
+          "document": "<p>实例 ID</p>",
           "example": "prom-evrh1x32",
           "member": "string",
           "name": "InstanceId",
@@ -9232,7 +9242,7 @@
         },
         {
           "disabled": false,
-          "document": "Kubernetes 集群类型，可不填。取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群(EKS) </li>\n<li> 3= Prometheus管理的弹性集群(MEKS) </li>",
+          "document": "<p>Kubernetes 集群类型，可不填。取值如下：</p><li> 1= 容器集群(TKE) </li><li> 2=弹性集群(EKS) </li><li> 3= Prometheus管理的弹性集群(MEKS) </li>",
           "example": "3",
           "member": "int64",
           "name": "KubeType",
@@ -9241,7 +9251,7 @@
         },
         {
           "disabled": false,
-          "document": "集群 ID，可不填",
+          "document": "<p>集群 ID，可不填</p>",
           "example": "cls-evrh1x32",
           "member": "string",
           "name": "ClusterId",
@@ -9250,7 +9260,7 @@
         },
         {
           "disabled": false,
-          "document": "类型(不填返回全部集成。可通过 DescribePrometheusIntegrations 接口获取，取每一项中的 ExporterType 字段)",
+          "document": "<p>类型(不填返回全部集成。可通过 DescribePrometheusIntegrations 接口获取，取每一项中的 ExporterType 字段)</p>",
           "example": "mysql-exporter",
           "member": "string",
           "name": "Kind",
@@ -9259,8 +9269,8 @@
         },
         {
           "disabled": false,
-          "document": "名字",
-          "example": "test",
+          "document": "<p>名字</p>",
+          "example": "redis",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -9274,7 +9284,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集成配置列表",
+          "document": "<p>集成配置列表</p>",
           "example": "无",
           "member": "IntegrationConfiguration",
           "name": "IntegrationSet",
@@ -10147,7 +10157,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "默认monitor",
+          "document": "<p>默认monitor</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -10156,7 +10166,7 @@
         },
         {
           "disabled": false,
-          "document": "unix时间戳，单位：s",
+          "document": "<p>unix时间戳，单位：s</p>",
           "example": "1659893700",
           "member": "int64",
           "name": "QueryTime",
@@ -10171,8 +10181,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "电话流水总数",
-          "example": "无",
+          "document": "<p>电话流水总数</p>",
+          "example": "100",
           "member": "int64",
           "name": "Count",
           "required": true,
@@ -10750,8 +10760,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
-          "example": "",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -10765,8 +10775,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警策略条件列表",
-          "example": "",
+          "document": "<p>告警策略条件列表</p>",
+          "example": "无",
           "member": "DescribePolicyConditionListCondition",
           "name": "Conditions",
           "type": "list",
@@ -11262,7 +11272,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -11271,7 +11281,7 @@
         },
         {
           "disabled": false,
-          "document": "策略组id",
+          "document": "<p>策略组id</p>",
           "example": "1247756",
           "member": "int64",
           "name": "GroupId",
@@ -11286,7 +11296,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略组名称",
+          "document": "<p>策略组名称</p>",
           "example": "策略",
           "member": "string",
           "name": "GroupName",
@@ -11296,7 +11306,7 @@
         },
         {
           "disabled": false,
-          "document": "策略组所属的项目id",
+          "document": "<p>策略组所属的项目id</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -11306,7 +11316,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为默认策略，0表示非默认策略，1表示默认策略",
+          "document": "<p>是否为默认策略，0表示非默认策略，1表示默认策略</p>",
           "example": "1",
           "member": "int64",
           "name": "IsDefault",
@@ -11316,7 +11326,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型",
+          "document": "<p>策略类型</p>",
           "example": "cvm_device",
           "member": "string",
           "name": "ViewName",
@@ -11326,8 +11336,8 @@
         },
         {
           "disabled": false,
-          "document": "策略说明",
-          "example": "无",
+          "document": "<p>策略说明</p>",
+          "example": "该策略用于业务下的数据库实例",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -11336,7 +11346,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型名称",
+          "document": "<p>策略类型名称</p>",
           "example": "云服务器基础监控",
           "member": "string",
           "name": "ShowName",
@@ -11346,7 +11356,7 @@
         },
         {
           "disabled": false,
-          "document": "最近编辑的用户uin",
+          "document": "<p>最近编辑的用户uin</p>",
           "example": "100040701662",
           "member": "string",
           "name": "LastEditUin",
@@ -11356,7 +11366,7 @@
         },
         {
           "disabled": false,
-          "document": "最近编辑时间",
+          "document": "<p>最近编辑时间</p>",
           "example": "1718159371",
           "member": "string",
           "name": "UpdateTime",
@@ -11366,8 +11376,8 @@
         },
         {
           "disabled": false,
-          "document": "该策略支持的地域",
-          "example": "bj",
+          "document": "<p>该策略支持的地域</p>",
+          "example": "[\"bj\"]",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -11376,8 +11386,8 @@
         },
         {
           "disabled": false,
-          "document": "策略类型的维度列表",
-          "example": "uuid",
+          "document": "<p>策略类型的维度列表</p>",
+          "example": "[\"uuid\"]",
           "member": "string",
           "name": "DimensionGroup",
           "output_required": true,
@@ -11386,7 +11396,7 @@
         },
         {
           "disabled": false,
-          "document": "阈值规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>阈值规则列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribePolicyGroupInfoCondition",
           "name": "ConditionsConfig",
@@ -11396,7 +11406,7 @@
         },
         {
           "disabled": false,
-          "document": "产品事件规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>产品事件规则列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribePolicyGroupInfoEventCondition",
           "name": "EventConfig",
@@ -11406,7 +11416,7 @@
         },
         {
           "disabled": false,
-          "document": "用户接收人列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户接收人列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribePolicyGroupInfoReceiverInfo",
           "name": "ReceiverInfos",
@@ -11416,7 +11426,7 @@
         },
         {
           "disabled": false,
-          "document": "用户回调信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户回调信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribePolicyGroupInfoCallback",
           "name": "Callback",
@@ -11426,7 +11436,7 @@
         },
         {
           "disabled": false,
-          "document": "模板策略组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模板策略组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribePolicyGroupInfoConditionTpl",
           "name": "ConditionsTemp",
@@ -11436,7 +11446,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以设置成默认策略",
+          "document": "<p>是否可以设置成默认策略</p>",
           "example": "false",
           "member": "bool",
           "name": "CanSetDefault",
@@ -11446,7 +11456,7 @@
         },
         {
           "disabled": false,
-          "document": "是否且规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否且规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "IsUnionRule",
@@ -11750,7 +11760,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -11759,7 +11769,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数，每页返回的数量，取值1~100",
+          "document": "<p>分页参数，每页返回的数量，取值1~100</p>",
           "example": "2",
           "member": "int64",
           "name": "Limit",
@@ -11768,7 +11778,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数，页偏移量，从0开始计数",
+          "document": "<p>分页参数，页偏移量，从0开始计数</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -11777,8 +11787,8 @@
         },
         {
           "disabled": false,
-          "document": "按策略名搜索",
-          "example": "test",
+          "document": "<p>按策略名搜索</p>",
+          "example": "使用率高",
           "member": "string",
           "name": "Like",
           "required": false,
@@ -11786,7 +11796,7 @@
         },
         {
           "disabled": false,
-          "document": "实例分组id",
+          "document": "<p>实例分组id</p>",
           "example": "12345",
           "member": "int64",
           "name": "InstanceGroupId",
@@ -11795,7 +11805,7 @@
         },
         {
           "disabled": false,
-          "document": "按更新时间排序, asc 或者 desc",
+          "document": "<p>按更新时间排序, asc 或者 desc</p>",
           "example": "asc",
           "member": "string",
           "name": "UpdateTimeOrder",
@@ -11804,7 +11814,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id列表",
+          "document": "<p>项目id列表</p>",
           "example": "[1]",
           "member": "int64",
           "name": "ProjectIds",
@@ -11813,8 +11823,8 @@
         },
         {
           "disabled": false,
-          "document": "告警策略类型列表",
-          "example": "[cvm_device]",
+          "document": "<p>告警策略类型列表</p>",
+          "example": "[\"cvm_device\"]",
           "member": "string",
           "name": "ViewNames",
           "required": false,
@@ -11822,7 +11832,7 @@
         },
         {
           "disabled": false,
-          "document": "是否过滤无接收人策略组, 1表示过滤, 0表示不过滤",
+          "document": "<p>是否过滤无接收人策略组, 1表示过滤, 0表示不过滤</p>",
           "example": "0",
           "member": "int64",
           "name": "FilterUnuseReceiver",
@@ -11831,8 +11841,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件, 接收组列表",
-          "example": "[123]",
+          "document": "<p>过滤条件, 接收组列表</p>",
+          "example": "[\"4789\"]",
           "member": "string",
           "name": "Receivers",
           "required": false,
@@ -11840,8 +11850,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件, 接收人列表",
-          "example": "[12345]",
+          "document": "<p>过滤条件, 接收人列表</p>",
+          "example": "[\"4598\"]",
           "member": "string",
           "name": "ReceiverUserList",
           "required": false,
@@ -11849,8 +11859,8 @@
         },
         {
           "disabled": false,
-          "document": "维度组合字段(json字符串), 例如[[{\"name\":\"unInstanceId\",\"value\":\"ins-6e4b2aaa\"}]]",
-          "example": "{}",
+          "document": "<p>维度组合字段(json字符串), 例如[[{&quot;name&quot;:&quot;unInstanceId&quot;,&quot;value&quot;:&quot;ins-6e4b2aaa&quot;}]]</p>",
+          "example": "{\"name\":\"unInstanceId\",\"value\":\"ins-6e4b2aaa\"}",
           "member": "string",
           "name": "Dimensions",
           "required": false,
@@ -11858,7 +11868,7 @@
         },
         {
           "disabled": false,
-          "document": "模板策略组id, 多个id用逗号分隔",
+          "document": "<p>模板策略组id, 多个id用逗号分隔</p>",
           "example": "123,345",
           "member": "string",
           "name": "ConditionTempGroupId",
@@ -11867,7 +11877,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件, 接收人或者接收组, user表示接收人, group表示接收组",
+          "document": "<p>过滤条件, 接收人或者接收组, user表示接收人, group表示接收组</p>",
           "example": "user",
           "member": "string",
           "name": "ReceiverType",
@@ -11876,7 +11886,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，告警策略是否已启动或停止",
+          "document": "<p>过滤条件，告警策略是否已启动或停止</p>",
           "example": "true",
           "member": "bool",
           "name": "IsOpen",
@@ -11891,7 +11901,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>策略组列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribePolicyGroupListGroup",
           "name": "GroupList",
@@ -11901,7 +11911,7 @@
         },
         {
           "disabled": false,
-          "document": "策略组总数",
+          "document": "<p>策略组总数</p>",
           "example": "142",
           "member": "int64",
           "name": "Total",
@@ -11911,7 +11921,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备注信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "This method is deprecated! Use `DescribeAlarmPolicies` instead!",
           "member": "string",
           "name": "Warning",
@@ -11933,8 +11943,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
-          "example": "",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -11942,8 +11952,8 @@
         },
         {
           "disabled": false,
-          "document": "策略组Id",
-          "example": "",
+          "document": "<p>策略组Id</p>",
+          "example": "3678",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -11957,8 +11967,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否为多地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>是否为多地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "IsMultiRegion",
           "type": "bool",
@@ -11966,8 +11976,8 @@
         },
         {
           "disabled": false,
-          "document": "地域统计列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>地域统计列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RegionPolicyObjectCount",
           "name": "RegionList",
           "type": "list",
@@ -13107,6 +13117,33 @@
           "name": "ImageNeedUpdate",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusCreateInstanceQuotaRequest": {
+      "document": "DescribePrometheusCreateInstanceQuota请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePrometheusCreateInstanceQuotaResponse": {
+      "document": "DescribePrometheusCreateInstanceQuota返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>prometheus实例创建配额</p>",
+          "example": "无",
+          "member": "PrometheusInstanceQuotaDetail",
+          "name": "QuotaDetail",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -16060,8 +16097,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>实例组ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1266",
           "member": "int64",
           "name": "InstanceGroupId",
           "required": true,
@@ -16070,8 +16107,8 @@
         },
         {
           "disabled": false,
-          "document": "实例组名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>实例组名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"name_01\"",
           "member": "string",
           "name": "InstanceGroupName",
           "required": true,
@@ -16086,8 +16123,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例组 Id",
-          "example": "",
+          "document": "<p>实例组 Id</p>",
+          "example": "1662",
           "member": "int64",
           "name": "Id",
           "required": true,
@@ -16096,8 +16133,8 @@
         },
         {
           "disabled": false,
-          "document": "实例组名称",
-          "example": "",
+          "document": "<p>实例组名称</p>",
+          "example": "\"name_01\"",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -16112,8 +16149,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "名字",
-          "example": "test",
+          "document": "<p>名字</p>",
+          "example": "integration-name",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -16122,7 +16159,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "<p>类型</p>",
           "example": "blackbox-exporter",
           "member": "string",
           "name": "Kind",
@@ -16132,7 +16169,7 @@
         },
         {
           "disabled": false,
-          "document": "内容",
+          "document": "<p>内容</p>",
           "example": "{\"name\":\"test\",\"kind\":\"blackbox-exporter\",\"spec\":{\"scrapeSpec\":{\"interval\":\"15s\"},\"instanceSpec\":{\"module\":\"http_get\",\"urls\":[\"http://test.com\"]},\"exporterSpec\":{}}}",
           "member": "string",
           "name": "Content",
@@ -16142,7 +16179,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "<p>状态</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -16152,7 +16189,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型",
+          "document": "<p>实例类型</p>",
           "example": "MySQL",
           "member": "string",
           "name": "Category",
@@ -16162,7 +16199,7 @@
         },
         {
           "disabled": false,
-          "document": "实例描述",
+          "document": "<p>实例描述</p>",
           "example": "root:**@localhost:3306",
           "member": "string",
           "name": "InstanceDesc",
@@ -16172,7 +16209,7 @@
         },
         {
           "disabled": false,
-          "document": "dashboard 的 URL",
+          "document": "<p>dashboard 的 URL</p>",
           "example": "http://xx",
           "member": "string",
           "name": "GrafanaDashboardURL",
@@ -16398,8 +16435,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "Agent 安装命令\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>Agent 安装命令</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Agent 具体安装命令",
           "member": "string",
           "name": "Install",
           "required": true,
@@ -16408,8 +16445,8 @@
         },
         {
           "disabled": false,
-          "document": "Agent 重启命令\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>Agent 重启命令</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Agent 具体重启命令",
           "member": "string",
           "name": "Restart",
           "required": true,
@@ -16418,8 +16455,8 @@
         },
         {
           "disabled": false,
-          "document": "Agent 停止命令\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>Agent 停止命令</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Agent 具体停止命令",
           "member": "string",
           "name": "Stop",
           "required": true,
@@ -16428,8 +16465,8 @@
         },
         {
           "disabled": false,
-          "document": "Agent 状态检测命令\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>Agent 状态检测命令</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Agent 具体状态命令",
           "member": "string",
           "name": "StatusCheck",
           "required": true,
@@ -16438,8 +16475,8 @@
         },
         {
           "disabled": false,
-          "document": "Agent 日志检测命令\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>Agent 日志检测命令</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Agent 具体日志命令",
           "member": "string",
           "name": "LogCheck",
           "required": true,
@@ -16600,8 +16637,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "允许使用的运算符",
-          "example": "",
+          "document": "<p>允许使用的运算符</p>",
+          "example": "[\"*\"]",
           "member": "string",
           "name": "Operator",
           "required": true,
@@ -16610,8 +16647,8 @@
         },
         {
           "disabled": false,
-          "document": "允许配置的数据周期，以秒为单位",
-          "example": "",
+          "document": "<p>允许配置的数据周期，以秒为单位</p>",
+          "example": "[1]",
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -16620,8 +16657,8 @@
         },
         {
           "disabled": false,
-          "document": "允许配置的持续周期个数",
-          "example": "",
+          "document": "<p>允许配置的持续周期个数</p>",
+          "example": "[3600]",
           "member": "int64",
           "name": "ContinuePeriod",
           "required": true,
@@ -16970,7 +17007,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模块名，固定值 monitor",
+          "document": "<p>模块名，固定值 monitor</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -16979,7 +17016,7 @@
         },
         {
           "disabled": false,
-          "document": "告警策略 ID",
+          "document": "<p>告警策略 ID</p>",
           "example": "policy-hi498gw3h2",
           "member": "string",
           "name": "PolicyId",
@@ -16988,8 +17025,8 @@
         },
         {
           "disabled": false,
-          "document": "触发条件模板 Id，可不传",
-          "example": "123",
+          "document": "<p>触发条件模板 Id，可不传</p>",
+          "example": "5780",
           "member": "int64",
           "name": "ConditionTemplateId",
           "required": false,
@@ -16997,8 +17034,8 @@
         },
         {
           "disabled": false,
-          "document": "指标触发条件",
-          "example": "{\"IsUnionRule\":0,\"Rules\":[{\"MetricName\":\"cpuusage\",\"AggregationDimensions\":[\"xxx\"],\"Period\":0,\"AggregateType\":\"stat\",\"Operator\":\"=\",\"Value\":\"val\",\"RuleType\":\"ruletype\"}],\"ComplexExpression\":\"complex\"}",
+          "document": "<p>指标触发条件</p>",
+          "example": "无",
           "member": "AlarmPolicyCondition",
           "name": "Condition",
           "required": false,
@@ -17006,8 +17043,8 @@
         },
         {
           "disabled": false,
-          "document": "事件触发条件",
-          "example": "{\"Rules\":[{\"MetricName\":\"cpu\"\"Period\":0,\"AggregateType\":\"stat\",\"Operator\":\"=\",\"Value\":\"val\",\"Unit\":\"unit\",\"RuleType\":\"rule\",\"IsAdvanced\":0,\"IsOpen\":0,\"ProductId\":\"abc\",\"ValueMax\":0,\"ValueMin\":0}]}",
+          "document": "<p>事件触发条件</p>",
+          "example": "无",
           "member": "AlarmPolicyEventCondition",
           "name": "EventCondition",
           "required": false,
@@ -17015,8 +17052,8 @@
         },
         {
           "disabled": false,
-          "document": "全局过滤条件",
-          "example": "{     \"Type\": \"abc\",     \"Expression\": \"abc\",     \"Dimensions\": \"abc\"   }",
+          "document": "<p>全局过滤条件</p>",
+          "example": "无",
           "member": "AlarmPolicyFilter",
           "name": "Filter",
           "required": false,
@@ -17024,8 +17061,8 @@
         },
         {
           "disabled": false,
-          "document": "聚合维度列表，指定按哪些维度 key 来做 group by",
-          "example": "[     \"abc\"   ]",
+          "document": "<p>聚合维度列表，指定按哪些维度 key 来做 group by</p>",
+          "example": "[     \"instance\"   ]",
           "member": "string",
           "name": "GroupBy",
           "required": false,
@@ -17033,8 +17070,8 @@
         },
         {
           "disabled": false,
-          "document": "日志告警创建请求参数信息",
-          "example": "{     \"InstanceId\": \"abc\",     \"Filter\": [       {         \"Key\": \"abc\",         \"Operator\": \"abc\",         \"Value\": \"abc\"       }     ],     \"AlarmMerge\": \"abc\",     \"AlarmMergeTime\": \"abc\"   }",
+          "document": "<p>日志告警创建请求参数信息</p>",
+          "example": "无",
           "member": "LogAlarmReq",
           "name": "LogAlarmReqInfo",
           "required": false,
@@ -17042,7 +17079,7 @@
         },
         {
           "disabled": false,
-          "document": "模板id，专供prom使用",
+          "document": "<p>模板id，专供prom使用</p>",
           "example": "[\"notice-2323\"]",
           "member": "string",
           "name": "NoticeIds",
@@ -17051,7 +17088,7 @@
         },
         {
           "disabled": false,
-          "document": "启停状态，0=停用，1=启用",
+          "document": "<p>启停状态，0=停用，1=启用</p>",
           "example": "0",
           "member": "int64",
           "name": "Enable",
@@ -17060,7 +17097,7 @@
         },
         {
           "disabled": false,
-          "document": "专供prom策略名称",
+          "document": "<p>专供prom策略名称</p>",
           "example": "\"prom-1234\"",
           "member": "string",
           "name": "PolicyName",
@@ -17069,7 +17106,7 @@
         },
         {
           "disabled": false,
-          "document": "事件配置的告警",
+          "document": "<p>事件配置的告警</p>",
           "example": "\"{\\\"source\\\":[\\\"cvm.cloud.tencent\\\"]}\"",
           "member": "string",
           "name": "EbSubject",
@@ -17531,8 +17568,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "指标id",
-          "example": "",
+          "document": "<p>指标id</p>",
+          "example": "234",
           "member": "int64",
           "name": "MetricId",
           "required": true,
@@ -17541,8 +17578,8 @@
         },
         {
           "disabled": false,
-          "document": "比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等",
-          "example": "",
+          "document": "<p>比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等</p>",
+          "example": "1",
           "member": "int64",
           "name": "CalcType",
           "required": true,
@@ -17551,8 +17588,8 @@
         },
         {
           "disabled": false,
-          "document": "检测阈值",
-          "example": "",
+          "document": "<p>检测阈值</p>",
+          "example": "12",
           "member": "string",
           "name": "CalcValue",
           "required": true,
@@ -17561,8 +17598,8 @@
         },
         {
           "disabled": false,
-          "document": "检测指标的数据周期",
-          "example": "",
+          "document": "<p>检测指标的数据周期</p>",
+          "example": "3600",
           "member": "int64",
           "name": "CalcPeriod",
           "required": true,
@@ -17571,8 +17608,8 @@
         },
         {
           "disabled": false,
-          "document": "持续周期个数",
-          "example": "",
+          "document": "<p>持续周期个数</p>",
+          "example": "2",
           "member": "int64",
           "name": "ContinuePeriod",
           "required": true,
@@ -17581,8 +17618,8 @@
         },
         {
           "disabled": false,
-          "document": "告警发送收敛类型。0连续告警，1指数告警",
-          "example": "",
+          "document": "<p>告警发送收敛类型。0连续告警，1指数告警</p>",
+          "example": "0",
           "member": "int64",
           "name": "AlarmNotifyType",
           "required": true,
@@ -17591,8 +17628,8 @@
         },
         {
           "disabled": false,
-          "document": "告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次",
-          "example": "",
+          "document": "<p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>",
+          "example": "3600",
           "member": "int64",
           "name": "AlarmNotifyPeriod",
           "required": true,
@@ -17601,8 +17638,8 @@
         },
         {
           "disabled": false,
-          "document": "规则id，不填表示新增，填写了ruleId表示在已存在的规则基础上进行修改",
-          "example": "",
+          "document": "<p>规则id，不填表示新增，填写了ruleId表示在已存在的规则基础上进行修改</p>",
+          "example": "1342",
           "member": "int64",
           "name": "RuleId",
           "required": false,
@@ -17617,8 +17654,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件id",
-          "example": "",
+          "document": "<p>事件id</p>",
+          "example": "2432",
           "member": "int64",
           "name": "EventId",
           "required": true,
@@ -17627,8 +17664,8 @@
         },
         {
           "disabled": false,
-          "document": "告警发送收敛类型。0连续告警，1指数告警",
-          "example": "",
+          "document": "<p>告警发送收敛类型。0连续告警，1指数告警</p>",
+          "example": "0",
           "member": "int64",
           "name": "AlarmNotifyType",
           "required": true,
@@ -17637,8 +17674,8 @@
         },
         {
           "disabled": false,
-          "document": "告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次",
-          "example": "",
+          "document": "<p>告警发送周期单位秒。&lt;0 不触发, 0 只触发一次, &gt;0 每隔triggerTime秒触发一次</p>",
+          "example": "3600",
           "member": "int64",
           "name": "AlarmNotifyPeriod",
           "required": true,
@@ -17647,8 +17684,8 @@
         },
         {
           "disabled": false,
-          "document": "规则id，不填表示新增，填写了ruleId表示在已存在的规则基础上进行修改",
-          "example": "",
+          "document": "<p>规则id，不填表示新增，填写了ruleId表示在已存在的规则基础上进行修改</p>",
+          "example": "133",
           "member": "int64",
           "name": "RuleId",
           "required": false,
@@ -17663,8 +17700,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
-          "example": "",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -17672,8 +17709,8 @@
         },
         {
           "disabled": false,
-          "document": "策略组id",
-          "example": "",
+          "document": "<p>策略组id</p>",
+          "example": "4798",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -17681,8 +17718,8 @@
         },
         {
           "disabled": false,
-          "document": "告警类型",
-          "example": "",
+          "document": "<p>告警类型</p>",
+          "example": "cvm_device",
           "member": "string",
           "name": "ViewName",
           "required": true,
@@ -17690,8 +17727,8 @@
         },
         {
           "disabled": false,
-          "document": "策略组名称",
-          "example": "",
+          "document": "<p>策略组名称</p>",
+          "example": "cpu 告警",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -17699,8 +17736,8 @@
         },
         {
           "disabled": false,
-          "document": "指标告警条件的且或关系，1表示且告警，所有指标告警条件都达到才告警，0表示或告警，任意指标告警条件达到都告警",
-          "example": "",
+          "document": "<p>是否复合告警</p><p>枚举值：</p><ul><li>1： 所有指标告警条件都达到才告警</li><li>0： 任意指标告警条件达到都告警</li></ul>",
+          "example": "0",
           "member": "int64",
           "name": "IsUnionRule",
           "required": true,
@@ -17708,8 +17745,8 @@
         },
         {
           "disabled": false,
-          "document": "指标告警条件规则，不填表示删除已有的所有指标告警条件规则",
-          "example": "",
+          "document": "<p>指标告警条件规则，不填表示删除已有的所有指标告警条件规则</p>",
+          "example": "无",
           "member": "ModifyPolicyGroupCondition",
           "name": "Conditions",
           "required": false,
@@ -17717,8 +17754,8 @@
         },
         {
           "disabled": false,
-          "document": "事件告警条件，不填表示删除已有的事件告警条件",
-          "example": "",
+          "document": "<p>事件告警条件，不填表示删除已有的事件告警条件</p>",
+          "example": "无",
           "member": "ModifyPolicyGroupEventCondition",
           "name": "EventConditions",
           "required": false,
@@ -17726,8 +17763,8 @@
         },
         {
           "disabled": false,
-          "document": "模板策略组id",
-          "example": "",
+          "document": "<p>模板策略组id</p>",
+          "example": "198",
           "member": "int64",
           "name": "ConditionTempGroupId",
           "required": false,
@@ -17741,10 +17778,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略组id",
-          "example": "",
+          "document": "<p>策略组id</p>",
+          "example": "4798",
           "member": "int64",
           "name": "GroupId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18167,8 +18205,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "监控类型",
-          "example": "",
+          "document": "<p>监控类型</p>",
+          "example": "MT_QCE",
           "member": "string",
           "name": "MonitorType",
           "required": true,
@@ -18177,8 +18215,8 @@
         },
         {
           "disabled": false,
-          "document": "策略类型值",
-          "example": "",
+          "document": "<p>策略类型值</p>",
+          "example": "cvm_disk",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -18193,7 +18231,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警通知模板 ID",
+          "document": "<p>告警通知模板 ID</p>",
           "example": "notice-xxx",
           "member": "string",
           "name": "NoticeId",
@@ -18203,8 +18241,8 @@
         },
         {
           "disabled": false,
-          "document": "告警通知模板绑定的告警策略ID列表",
-          "example": "无",
+          "document": "<p>告警通知模板绑定的告警策略ID列表</p>",
+          "example": "[\"policy-xxxxabcd\"]",
           "member": "string",
           "name": "PolicyIds",
           "required": false,
@@ -18599,8 +18637,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "该监控数据点生成的时间点",
-          "example": "",
+          "document": "<p>该监控数据点生成的时间点</p>",
+          "example": "17726738",
           "member": "uint64",
           "name": "Timestamp",
           "required": true,
@@ -18609,8 +18647,8 @@
         },
         {
           "disabled": false,
-          "document": "监控数据点的值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>监控数据点的值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1738.98",
           "member": "float",
           "name": "Value",
           "required": true,
@@ -18625,8 +18663,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否可设为默认告警策略",
-          "example": "",
+          "document": "<p>是否可设为默认告警策略</p>",
+          "example": "true",
           "member": "bool",
           "name": "CanSetDefault",
           "required": true,
@@ -18635,8 +18673,8 @@
         },
         {
           "disabled": false,
-          "document": "告警策略组ID",
-          "example": "",
+          "document": "<p>告警策略组ID</p>",
+          "example": "13421",
           "member": "int64",
           "name": "GroupID",
           "required": true,
@@ -18645,8 +18683,8 @@
         },
         {
           "disabled": false,
-          "document": "告警策略组名称",
-          "example": "",
+          "document": "<p>告警策略组名称</p>",
+          "example": "\"groupname\"",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -18655,8 +18693,8 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
-          "example": "",
+          "document": "<p>创建时间</p>",
+          "example": "13238842",
           "member": "int64",
           "name": "InsertTime",
           "required": true,
@@ -18665,8 +18703,8 @@
         },
         {
           "disabled": false,
-          "document": "是否为默认告警策略",
-          "example": "",
+          "document": "<p>是否为默认告警策略</p>",
+          "example": "1",
           "member": "int64",
           "name": "IsDefault",
           "required": true,
@@ -18675,8 +18713,8 @@
         },
         {
           "disabled": false,
-          "document": "告警策略启用状态",
-          "example": "",
+          "document": "<p>告警策略启用状态</p>",
+          "example": "true",
           "member": "bool",
           "name": "Enable",
           "required": true,
@@ -18685,8 +18723,8 @@
         },
         {
           "disabled": false,
-          "document": "最后修改人UIN",
-          "example": "",
+          "document": "<p>最后修改人UIN</p>",
+          "example": "13454231",
           "member": "int64",
           "name": "LastEditUin",
           "required": true,
@@ -18695,8 +18733,8 @@
         },
         {
           "disabled": false,
-          "document": "未屏蔽的实例数",
-          "example": "",
+          "document": "<p>未屏蔽的实例数</p>",
+          "example": "3",
           "member": "int64",
           "name": "NoShieldedInstanceCount",
           "required": true,
@@ -18705,8 +18743,8 @@
         },
         {
           "disabled": false,
-          "document": "父策略组ID",
-          "example": "",
+          "document": "<p>父策略组ID</p>",
+          "example": "231",
           "member": "int64",
           "name": "ParentGroupID",
           "required": true,
@@ -18715,8 +18753,8 @@
         },
         {
           "disabled": false,
-          "document": "所属项目ID",
-          "example": "",
+          "document": "<p>所属项目ID</p>",
+          "example": "13432",
           "member": "int64",
           "name": "ProjectID",
           "required": true,
@@ -18725,8 +18763,8 @@
         },
         {
           "disabled": false,
-          "document": "告警接收对象信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>告警接收对象信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PolicyGroupReceiverInfo",
           "name": "ReceiverInfos",
           "required": true,
@@ -18735,8 +18773,8 @@
         },
         {
           "disabled": false,
-          "document": "备注信息",
-          "example": "",
+          "document": "<p>备注信息</p>",
+          "example": "“this is a remark”",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -18745,8 +18783,8 @@
         },
         {
           "disabled": false,
-          "document": "修改时间",
-          "example": "",
+          "document": "<p>修改时间</p>",
+          "example": "143243543",
           "member": "int64",
           "name": "UpdateTime",
           "required": true,
@@ -18755,8 +18793,8 @@
         },
         {
           "disabled": false,
-          "document": "总绑定实例数",
-          "example": "",
+          "document": "<p>总绑定实例数</p>",
+          "example": "21",
           "member": "int64",
           "name": "TotalInstanceCount",
           "required": true,
@@ -18765,8 +18803,8 @@
         },
         {
           "disabled": false,
-          "document": "视图",
-          "example": "",
+          "document": "<p>视图</p>",
+          "example": "\"qce/cvm\"",
           "member": "string",
           "name": "ViewName",
           "required": true,
@@ -18775,8 +18813,8 @@
         },
         {
           "disabled": false,
-          "document": "是否为与关系规则",
-          "example": "",
+          "document": "<p>是否为与关系规则</p>",
+          "example": "1",
           "member": "int64",
           "name": "IsUnionRule",
           "required": true,
@@ -18791,8 +18829,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "有效时段结束时间",
-          "example": "",
+          "document": "<p>有效时段结束时间</p>",
+          "example": "1332123",
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -18801,8 +18839,8 @@
         },
         {
           "disabled": false,
-          "document": "是否需要发送通知",
-          "example": "",
+          "document": "<p>是否需要发送通知</p>",
+          "example": "1",
           "member": "int64",
           "name": "NeedSendNotice",
           "required": true,
@@ -18811,8 +18849,8 @@
         },
         {
           "disabled": false,
-          "document": "告警接收渠道\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>告警接收渠道</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"email\"]",
           "member": "string",
           "name": "NotifyWay",
           "required": true,
@@ -18821,8 +18859,8 @@
         },
         {
           "disabled": false,
-          "document": "电话告警对个人间隔（秒）",
-          "example": "",
+          "document": "<p>电话告警对个人间隔（秒）</p>",
+          "example": "3600",
           "member": "int64",
           "name": "PersonInterval",
           "required": true,
@@ -18831,8 +18869,8 @@
         },
         {
           "disabled": false,
-          "document": "消息接收组列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>消息接收组列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1]",
           "member": "int64",
           "name": "ReceiverGroupList",
           "required": true,
@@ -18841,8 +18879,8 @@
         },
         {
           "disabled": false,
-          "document": "接受者类型",
-          "example": "",
+          "document": "<p>接受者类型</p>",
+          "example": "\"usergroup\"",
           "member": "string",
           "name": "ReceiverType",
           "required": true,
@@ -18851,8 +18889,8 @@
         },
         {
           "disabled": false,
-          "document": "接收人列表。通过平台接口查询到的接收人id列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>接收人列表。通过平台接口查询到的接收人id列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1]",
           "member": "int64",
           "name": "ReceiverUserList",
           "required": true,
@@ -18861,8 +18899,8 @@
         },
         {
           "disabled": false,
-          "document": "告警恢复通知方式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>告警恢复通知方式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"email\"]",
           "member": "string",
           "name": "RecoverNotify",
           "required": true,
@@ -18871,8 +18909,8 @@
         },
         {
           "disabled": false,
-          "document": "电话告警每轮间隔（秒）",
-          "example": "",
+          "document": "<p>电话告警每轮间隔（秒）</p>",
+          "example": "3600",
           "member": "int64",
           "name": "RoundInterval",
           "required": true,
@@ -18881,8 +18919,8 @@
         },
         {
           "disabled": false,
-          "document": "电话告警轮数",
-          "example": "",
+          "document": "<p>电话告警轮数</p>",
+          "example": "1",
           "member": "int64",
           "name": "RoundNumber",
           "required": true,
@@ -18891,8 +18929,8 @@
         },
         {
           "disabled": false,
-          "document": "电话告警通知时机。可选\"OCCUR\"(告警时通知),\"RECOVER\"(恢复时通知)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>电话告警通知时机。可选&quot;OCCUR&quot;(告警时通知),&quot;RECOVER&quot;(恢复时通知)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"OCCUR\"]",
           "member": "string",
           "name": "SendFor",
           "required": true,
@@ -18901,8 +18939,8 @@
         },
         {
           "disabled": false,
-          "document": "有效时段开始时间",
-          "example": "",
+          "document": "<p>有效时段开始时间</p>",
+          "example": "2312321",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -18911,8 +18949,8 @@
         },
         {
           "disabled": false,
-          "document": "电话告警接收者uid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>电话告警接收者uid</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1]",
           "member": "int64",
           "name": "UIDList",
           "required": true,
@@ -18927,26 +18965,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签Key",
-          "example": "",
+          "document": "<p>标签Key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"key\"",
           "member": "string",
           "name": "Key",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "标签Value",
-          "example": "",
+          "document": "<p>标签Value</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value",
           "member": "string",
           "name": "Value",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ProductSimple": {
       "document": "云产品监控支持的产品简要信息",
@@ -18989,8 +19029,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "Agent 名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>Agent 名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "agent-name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -18999,8 +19039,8 @@
         },
         {
           "disabled": false,
-          "document": "Agent ID",
-          "example": "",
+          "document": "<p>Agent ID</p>",
+          "example": "atdfqx12",
           "member": "string",
           "name": "AgentId",
           "required": true,
@@ -19009,8 +19049,8 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID",
-          "example": "",
+          "document": "<p>实例 ID</p>",
+          "example": "prom-xxxxabcd",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -19019,8 +19059,8 @@
         },
         {
           "disabled": false,
-          "document": "Agent IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>Agent IP</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "Ipv4",
           "required": true,
@@ -19029,8 +19069,8 @@
         },
         {
           "disabled": false,
-          "document": "心跳时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>心跳时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-06-06 10:10:10",
           "member": "string",
           "name": "HeartbeatTime",
           "required": true,
@@ -19039,8 +19079,8 @@
         },
         {
           "disabled": false,
-          "document": "最近一次错误\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>最近一次错误</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "具体的报错，为空则无报错",
           "member": "string",
           "name": "LastError",
           "required": true,
@@ -19049,8 +19089,8 @@
         },
         {
           "disabled": false,
-          "document": "Agent 版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>Agent 版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5.3.2",
           "member": "string",
           "name": "AgentVersion",
           "required": true,
@@ -19059,8 +19099,8 @@
         },
         {
           "disabled": false,
-          "document": "Agent 状态",
-          "example": "",
+          "document": "<p>Agent 状态</p>",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -19491,8 +19531,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "alertmanager url",
-          "example": "无",
+          "document": "<p>alertmanager url</p>",
+          "example": "http://x.x.x.x:port/",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -19501,8 +19541,8 @@
         },
         {
           "disabled": false,
-          "document": "alertmanager部署所在集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>alertmanager部署所在集群类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tke",
           "member": "string",
           "name": "ClusterType",
           "required": false,
@@ -19511,8 +19551,8 @@
         },
         {
           "disabled": false,
-          "document": "alertmanager部署所在集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>alertmanager部署所在集群ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-xxxabcd",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -19553,7 +19593,7 @@
           "example": "alert-xa2asdxz",
           "member": "string",
           "name": "Id",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -19586,7 +19626,7 @@
           "example": "2025-10-24 20:15:39",
           "member": "string",
           "name": "UpdatedAt",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -19597,7 +19637,7 @@
           "example": "cls-23as23sdf2",
           "member": "string",
           "name": "ClusterId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -19610,7 +19650,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则名称",
+          "document": "<p>规则名称</p>",
           "example": "Example",
           "member": "string",
           "name": "Name",
@@ -19620,7 +19660,7 @@
         },
         {
           "disabled": false,
-          "document": "prometheus语句",
+          "document": "<p>prometheus语句</p>",
           "example": "Example",
           "member": "string",
           "name": "Rule",
@@ -19630,8 +19670,8 @@
         },
         {
           "disabled": false,
-          "document": "额外标签",
-          "example": "Name=a,Value=b",
+          "document": "<p>额外标签</p>",
+          "example": "无",
           "member": "Label",
           "name": "Labels",
           "required": true,
@@ -19640,7 +19680,7 @@
         },
         {
           "disabled": false,
-          "document": "告警发送模板",
+          "document": "<p>告警发送模板</p>",
           "example": "temp-xxx",
           "member": "string",
           "name": "Template",
@@ -19650,7 +19690,7 @@
         },
         {
           "disabled": false,
-          "document": "持续时间",
+          "document": "<p>持续时间</p>",
           "example": "1s",
           "member": "string",
           "name": "For",
@@ -19660,7 +19700,7 @@
         },
         {
           "disabled": false,
-          "document": "该条规则的描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>该条规则的描述信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "example-describe",
           "member": "string",
           "name": "Describe",
@@ -19670,8 +19710,8 @@
         },
         {
           "disabled": false,
-          "document": "参考prometheus rule中的annotations\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Name=a,Value=b",
+          "document": "<p>参考prometheus rule中的annotations</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Label",
           "name": "Annotations",
           "required": false,
@@ -19680,8 +19720,8 @@
         },
         {
           "disabled": false,
-          "document": "告警规则状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>告警规则状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "RuleState",
           "required": false,
@@ -19976,8 +20016,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "HTTP 状态码",
-          "example": "",
+          "document": "<p>HTTP 状态码</p>",
+          "example": "200",
           "member": "int64",
           "name": "StatusCode",
           "output_required": true,
@@ -19986,8 +20026,8 @@
         },
         {
           "disabled": false,
-          "document": "HTTP 响应体",
-          "example": "",
+          "document": "<p>HTTP 响应体</p>",
+          "example": "\"{}\"",
           "member": "string",
           "name": "ResponseBody",
           "output_required": true,
@@ -20057,6 +20097,42 @@
           "member": "int64",
           "name": "HasApiOperation",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PrometheusInstanceQuotaDetail": {
+      "document": "Prometheus实例创建配额信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>prometheus实例创建总限制数量</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前账号下创建prometheus实例数量</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "Usage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>剩余可用prometheus实例创建数量</p>",
+          "example": "16",
+          "member": "int64",
+          "name": "Available",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -20496,7 +20572,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "prom-xxx",
           "member": "string",
           "name": "InstanceId",
@@ -20506,8 +20582,8 @@
         },
         {
           "disabled": false,
-          "document": "实例名",
-          "example": "xxx",
+          "document": "<p>实例名</p>",
+          "example": "instance-name-xxx",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -20516,8 +20592,8 @@
         },
         {
           "disabled": false,
-          "document": "VPC ID",
-          "example": "vpc-xxx",
+          "document": "<p>VPC ID</p>",
+          "example": "vpc-abcdxxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -20526,7 +20602,7 @@
         },
         {
           "disabled": false,
-          "document": "子网ID",
+          "document": "<p>子网ID</p>",
           "example": "subnet-xxx",
           "member": "string",
           "name": "SubnetId",
@@ -20536,7 +20612,7 @@
         },
         {
           "disabled": false,
-          "document": "运行状态（1:正在创建；2:运行中；3:异常；4:重启中；5:销毁中； 6:已停机； 7: 已删除）",
+          "document": "<p>运行状态（1:正在创建；2:运行中；3:异常；4:重启中；5:销毁中； 6:已停机； 7: 已删除）</p>",
           "example": "2",
           "member": "int64",
           "name": "InstanceStatus",
@@ -20546,7 +20622,7 @@
         },
         {
           "disabled": false,
-          "document": "计费状态（1:正常；2:过期; 3:销毁; 4:分配中; 5:分配失败）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计费状态（1:正常；2:过期; 3:销毁; 4:分配中; 5:分配失败）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "ChargeStatus",
@@ -20556,7 +20632,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启 Grafana（0:不开启，1:开启）",
+          "document": "<p>是否开启 Grafana（0:不开启，1:开启）</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableGrafana",
@@ -20566,7 +20642,7 @@
         },
         {
           "disabled": false,
-          "document": "Grafana 面板 URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Grafana 面板 URL</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://prom-xxx.grafana.xxx.prom.tencent-cloud.com",
           "member": "string",
           "name": "GrafanaURL",
@@ -20576,7 +20652,7 @@
         },
         {
           "disabled": false,
-          "document": "实例付费类型（1:试用版；2:预付费）",
+          "document": "<p>实例付费类型（1:试用版；2:预付费）</p>",
           "example": "2",
           "member": "int64",
           "name": "InstanceChargeType",
@@ -20586,7 +20662,7 @@
         },
         {
           "disabled": false,
-          "document": "规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规格名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "基础1",
           "member": "string",
           "name": "SpecName",
@@ -20596,7 +20672,7 @@
         },
         {
           "disabled": false,
-          "document": "存储周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存储周期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "15",
           "member": "int64",
           "name": "DataRetentionTime",
@@ -20606,7 +20682,7 @@
         },
         {
           "disabled": false,
-          "document": "购买的实例过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>购买的实例过期时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-14T17:16:12+08:00",
           "member": "string",
           "name": "ExpireTime",
@@ -20616,7 +20692,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记(0:不自动续费；1:开启自动续费；2:禁止自动续费；-1:无效)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自动续费标记(0:不自动续费；1:开启自动续费；2:禁止自动续费；-1:无效)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -20626,7 +20702,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定集群总数",
+          "document": "<p>绑定集群总数</p>",
           "example": "2",
           "member": "int64",
           "name": "BoundTotal",
@@ -20636,7 +20712,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定集群正常状态总数",
+          "document": "<p>绑定集群正常状态总数</p>",
           "example": "2",
           "member": "int64",
           "name": "BoundNormal",
@@ -20646,7 +20722,7 @@
         },
         {
           "disabled": false,
-          "document": "资源包状态，0-无可用资源包，1-有可用资源包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源包状态，0-无可用资源包，1-有可用资源包</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "ResourcePackageStatus",
@@ -20656,7 +20732,7 @@
         },
         {
           "disabled": false,
-          "document": "资源包规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源包规格名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "”xxxx“",
           "member": "string",
           "name": "ResourcePackageSpecName",
@@ -20810,8 +20886,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否启用",
-          "example": "无",
+          "document": "<p>是否启用</p>",
+          "example": "true",
           "member": "bool",
           "name": "Enabled",
           "required": true,
@@ -20820,8 +20896,8 @@
         },
         {
           "disabled": false,
-          "document": "通道类型，默认为amp，支持以下\namp\nwebhook\nalertmanager",
-          "example": "无",
+          "document": "<p>通道类型，默认为amp，支持以下<br>amp<br>webhook<br>alertmanager</p>",
+          "example": "amp",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -20830,8 +20906,8 @@
         },
         {
           "disabled": false,
-          "document": "如果Type为webhook, 则该字段为必填项\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>如果Type为webhook, 则该字段为必填项</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://1.1.1.1",
           "member": "string",
           "name": "WebHook",
           "required": false,
@@ -20840,7 +20916,7 @@
         },
         {
           "disabled": false,
-          "document": "如果Type为alertmanager, 则该字段为必填项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>如果Type为alertmanager, 则该字段为必填项</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrometheusAlertManagerConfig",
           "name": "AlertManager",
@@ -20850,8 +20926,8 @@
         },
         {
           "disabled": false,
-          "document": "收敛时间",
-          "example": "无",
+          "document": "<p>收敛时间</p>",
+          "example": "2020-10-10 10:10:10",
           "member": "string",
           "name": "RepeatInterval",
           "required": false,
@@ -20860,8 +20936,8 @@
         },
         {
           "disabled": false,
-          "document": "生效起始时间",
-          "example": "无",
+          "document": "<p>生效起始时间</p>",
+          "example": "2020-10-10 10:10:10",
           "member": "string",
           "name": "TimeRangeStart",
           "required": false,
@@ -20870,8 +20946,8 @@
         },
         {
           "disabled": false,
-          "document": "生效结束时间",
-          "example": "无",
+          "document": "<p>生效结束时间</p>",
+          "example": "2020-10-10 10:10:10",
           "member": "string",
           "name": "TimeRangeEnd",
           "required": false,
@@ -20880,8 +20956,8 @@
         },
         {
           "disabled": false,
-          "document": "告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"SMS\"]",
           "member": "string",
           "name": "NotifyWay",
           "required": false,
@@ -20890,8 +20966,8 @@
         },
         {
           "disabled": false,
-          "document": "告警接收组（用户组）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>告警接收组（用户组）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Consumer-xxxxabcd\"]",
           "member": "string",
           "name": "ReceiverGroups",
           "required": false,
@@ -20900,8 +20976,8 @@
         },
         {
           "disabled": false,
-          "document": "电话告警顺序。\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>电话告警顺序。<br>注：NotifyWay选择CALL，采用该参数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[100]",
           "member": "uint64",
           "name": "PhoneNotifyOrder",
           "required": false,
@@ -20910,8 +20986,8 @@
         },
         {
           "disabled": false,
-          "document": "电话告警次数。\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>电话告警次数。<br>注：NotifyWay选择CALL，采用该参数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
           "member": "int64",
           "name": "PhoneCircleTimes",
           "required": false,
@@ -20920,8 +20996,8 @@
         },
         {
           "disabled": false,
-          "document": "电话告警轮内间隔。单位：秒\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>电话告警轮内间隔。单位：秒<br>注：NotifyWay选择CALL，采用该参数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
           "member": "int64",
           "name": "PhoneInnerInterval",
           "required": false,
@@ -20930,8 +21006,8 @@
         },
         {
           "disabled": false,
-          "document": "电话告警轮外间隔。单位：秒\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>电话告警轮外间隔。单位：秒<br>注：NotifyWay选择CALL，采用该参数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
           "member": "int64",
           "name": "PhoneCircleInterval",
           "required": false,
@@ -20940,8 +21016,8 @@
         },
         {
           "disabled": false,
-          "document": "电话告警触达通知\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>电话告警触达通知<br>注：NotifyWay选择CALL，采用该参数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "PhoneArriveNotice",
           "required": false,
@@ -21118,8 +21194,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "键",
-          "example": "",
+          "document": "<p>键</p>",
+          "example": "AllowChangeAlertmanagerRouteConfig",
           "member": "string",
           "name": "Key",
           "required": true,
@@ -21128,8 +21204,8 @@
         },
         {
           "disabled": false,
-          "document": "值",
-          "example": "",
+          "document": "<p>值</p>",
+          "example": "true",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -21144,8 +21220,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则 ID",
-          "example": "",
+          "document": "<p>规则 ID</p>",
+          "example": "rule-xxxxabcd",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -21154,8 +21230,8 @@
         },
         {
           "disabled": false,
-          "document": "规则名称",
-          "example": "",
+          "document": "<p>规则名称</p>",
+          "example": "rule-name-1",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -21164,8 +21240,8 @@
         },
         {
           "disabled": false,
-          "document": "规则状态码",
-          "example": "",
+          "document": "<p>规则状态码</p>",
+          "example": "1",
           "member": "int64",
           "name": "RuleState",
           "required": true,
@@ -21174,8 +21250,8 @@
         },
         {
           "disabled": false,
-          "document": "规则类别\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>规则类别</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "recodingRule",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -21184,8 +21260,8 @@
         },
         {
           "disabled": false,
-          "document": "规则标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>规则标签列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PrometheusRuleKV",
           "name": "Labels",
           "required": true,
@@ -21194,8 +21270,8 @@
         },
         {
           "disabled": false,
-          "document": "规则注释列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>规则注释列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PrometheusRuleKV",
           "name": "Annotations",
           "required": true,
@@ -21204,8 +21280,8 @@
         },
         {
           "disabled": false,
-          "document": "规则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>规则表达式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "up == 1",
           "member": "string",
           "name": "Expr",
           "required": true,
@@ -21214,8 +21290,8 @@
         },
         {
           "disabled": false,
-          "document": "规则报警持续时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>规则报警持续时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1h",
           "member": "string",
           "name": "Duration",
           "required": true,
@@ -21224,8 +21300,8 @@
         },
         {
           "disabled": false,
-          "document": "报警接收组列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>报警接收组列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Consumer-xxxxabcd\"]",
           "member": "string",
           "name": "Receivers",
           "required": true,
@@ -21234,8 +21310,8 @@
         },
         {
           "disabled": false,
-          "document": "规则运行健康状态，取值如下：\n<li>unknown 未知状态</li>\n<li>pending 加载中</li>\n<li>ok 运行正常</li>\n<li>err 运行错误</li>",
-          "example": "",
+          "document": "<p>规则运行健康状态，取值如下：</p><li>unknown 未知状态</li><li>pending 加载中</li><li>ok 运行正常</li><li>err 运行错误</li>",
+          "example": "ok",
           "member": "string",
           "name": "Health",
           "required": true,
@@ -21244,8 +21320,8 @@
         },
         {
           "disabled": false,
-          "document": "规则创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>规则创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-10-10 10:10:10",
           "member": "string",
           "name": "CreatedAt",
           "required": true,
@@ -21254,8 +21330,8 @@
         },
         {
           "disabled": false,
-          "document": "规则更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>规则更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-10-10 10:10:10",
           "member": "string",
           "name": "UpdatedAt",
           "required": true,
@@ -21316,8 +21392,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "键",
-          "example": "",
+          "document": "<p>键</p>",
+          "example": "label-key",
           "member": "string",
           "name": "Key",
           "output_required": true,
@@ -21327,8 +21403,8 @@
         },
         {
           "disabled": false,
-          "document": "值",
-          "example": "",
+          "document": "<p>值</p>",
+          "example": "label-value",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -21344,8 +21420,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签的健值",
-          "example": "",
+          "document": "<p>标签的健值</p>",
+          "example": "tag-key",
           "member": "string",
           "name": "Key",
           "required": true,
@@ -21354,8 +21430,8 @@
         },
         {
           "disabled": false,
-          "document": "标签对应的值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>标签对应的值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tag-value",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -21545,8 +21621,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改名称",
-          "example": "无",
+          "document": "<p>修改名称</p>",
+          "example": "modify-name",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -21555,8 +21631,8 @@
         },
         {
           "disabled": false,
-          "document": "修改描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>修改描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "modify template name",
           "member": "string",
           "name": "Describe",
           "required": false,
@@ -21565,7 +21641,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为cluster时有效，\n模板中的ServiceMonitor规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当Level为cluster时有效，<br>模板中的ServiceMonitor规则列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "ServiceMonitors",
@@ -21575,7 +21651,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为cluster时有效，\n模板中的PodMonitors规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当Level为cluster时有效，<br>模板中的PodMonitors规则列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "PodMonitors",
@@ -21585,7 +21661,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为cluster时有效，\n模板中的RawJobs规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当Level为cluster时有效，<br>模板中的RawJobs规则列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "RawJobs",
@@ -21595,7 +21671,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为instance时有效，\n模板中的聚合规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当Level为instance时有效，<br>模板中的聚合规则列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "RecordRules",
@@ -21605,7 +21681,7 @@
         },
         {
           "disabled": false,
-          "document": "修改内容，只有当模板类型是Alert时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>修改内容，只有当模板类型是Alert时生效</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrometheusAlertPolicyItem",
           "name": "AlertDetailRules",
@@ -21621,8 +21697,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标所在地域",
-          "example": "xxx",
+          "document": "<p>目标所在地域</p>",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -21632,8 +21708,8 @@
         },
         {
           "disabled": false,
-          "document": "目标实例",
-          "example": "xxx",
+          "document": "<p>目标实例</p>",
+          "example": "prom-xxxxabcd",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -21643,8 +21719,8 @@
         },
         {
           "disabled": false,
-          "document": "集群id，只有当采集模板的Level为cluster的时候需要\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "<p>集群id，只有当采集模板的Level为cluster的时候需要</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-xxxxabcd",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
@@ -21654,8 +21730,8 @@
         },
         {
           "disabled": false,
-          "document": "最后一次同步时间， 用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "<p>最后一次同步时间， 用于出参</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-10-10 10:10:10",
           "member": "string",
           "name": "SyncTime",
           "output_required": true,
@@ -21665,8 +21741,8 @@
         },
         {
           "disabled": false,
-          "document": "当前使用的模板版本，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "<p>当前使用的模板版本，用于出参</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
           "member": "string",
           "name": "Version",
           "output_required": true,
@@ -21676,8 +21752,8 @@
         },
         {
           "disabled": false,
-          "document": "集群类型，只有当采集模板的Level为cluster的时候需要\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "<p>集群类型，只有当采集模板的Level为cluster的时候需要</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tke",
           "member": "string",
           "name": "ClusterType",
           "output_required": true,
@@ -21687,8 +21763,8 @@
         },
         {
           "disabled": false,
-          "document": "用于出参，实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "<p>用于出参，实例名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "prom-xxxxabcd",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -21698,8 +21774,8 @@
         },
         {
           "disabled": false,
-          "document": "用于出参，集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "<p>用于出参，集群名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-xxxxabcd",
           "member": "string",
           "name": "ClusterName",
           "output_required": true,
@@ -21715,8 +21791,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区",
-          "example": "无",
+          "document": "<p>可用区</p>",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -21725,8 +21801,8 @@
         },
         {
           "disabled": false,
-          "document": "可用区 ID",
-          "example": "无",
+          "document": "<p>可用区 ID</p>",
+          "example": "1600001",
           "member": "int64",
           "name": "ZoneId",
           "output_required": true,
@@ -21735,8 +21811,8 @@
         },
         {
           "disabled": false,
-          "document": "可用区状态( 0: 不可用；1: 可用)",
-          "example": "无",
+          "document": "<p>可用区状态( 0: 不可用；1: 可用)</p>",
+          "example": "1",
           "member": "int64",
           "name": "ZoneState",
           "output_required": true,
@@ -21745,8 +21821,8 @@
         },
         {
           "disabled": false,
-          "document": "地域 ID",
-          "example": "无",
+          "document": "<p>地域 ID</p>",
+          "example": "16",
           "member": "int64",
           "name": "RegionId",
           "output_required": true,
@@ -21755,8 +21831,8 @@
         },
         {
           "disabled": false,
-          "document": "可用区名（目前为中文）",
-          "example": "无",
+          "document": "<p>可用区名（目前为中文）</p>",
+          "example": "广州",
           "member": "string",
           "name": "ZoneName",
           "output_required": true,
@@ -21765,8 +21841,8 @@
         },
         {
           "disabled": false,
-          "document": "可用区资源状态(0:资源不足，不可使用；1:资源足够)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>可用区资源状态(0:资源不足，不可使用；1:资源足够)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "ZoneResourceState",
           "output_required": true,
@@ -21937,7 +22013,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则 ID",
+          "document": "<p>规则 ID</p>",
           "example": "arule-xxx",
           "member": "string",
           "name": "RuleId",
@@ -21947,7 +22023,7 @@
         },
         {
           "disabled": false,
-          "document": "规则状态码",
+          "document": "<p>规则状态码</p>",
           "example": "1",
           "member": "int64",
           "name": "RuleState",
@@ -21957,7 +22033,7 @@
         },
         {
           "disabled": false,
-          "document": "分组名称",
+          "document": "<p>分组名称</p>",
           "example": "groupname",
           "member": "string",
           "name": "Name",
@@ -21967,7 +22043,7 @@
         },
         {
           "disabled": false,
-          "document": "规则内容组",
+          "document": "<p>规则内容组</p>",
           "example": "groupname",
           "member": "string",
           "name": "Group",
@@ -21977,7 +22053,7 @@
         },
         {
           "disabled": false,
-          "document": "规则数量",
+          "document": "<p>规则数量</p>",
           "example": "1",
           "member": "int64",
           "name": "Total",
@@ -21987,8 +22063,8 @@
         },
         {
           "disabled": false,
-          "document": "规则创建时间",
-          "example": "\"\"",
+          "document": "<p>规则创建时间</p>",
+          "example": "2026-06-20 05:12:12",
           "member": "string",
           "name": "CreatedAt",
           "output_required": true,
@@ -21997,8 +22073,8 @@
         },
         {
           "disabled": false,
-          "document": "规则最近更新时间",
-          "example": "\"\"",
+          "document": "<p>规则最近更新时间</p>",
+          "example": "2026-06-20 05:12:12",
           "member": "string",
           "name": "UpdatedAt",
           "output_required": true,
@@ -22007,7 +22083,7 @@
         },
         {
           "disabled": false,
-          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "examplename",
           "member": "string",
           "name": "RuleName",
@@ -22023,8 +22099,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域",
-          "example": "",
+          "document": "<p>地域</p>",
+          "example": "\"beijing\"",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -22033,8 +22109,8 @@
         },
         {
           "disabled": false,
-          "document": "绑定的实例数量",
-          "example": "",
+          "document": "<p>绑定的实例数量</p>",
+          "example": "12",
           "member": "int64",
           "name": "Count",
           "required": true,
@@ -23012,7 +23088,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -23021,8 +23097,8 @@
         },
         {
           "disabled": false,
-          "document": "策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0",
-          "example": "11111",
+          "document": "<p>策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0</p>",
+          "example": "5780",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -23030,7 +23106,7 @@
         },
         {
           "disabled": false,
-          "document": "告警策略ID，使用此字段时 GroupId 会被忽略",
+          "document": "<p>告警策略ID，使用此字段时 GroupId 会被忽略</p>",
           "example": "policy-acv124",
           "member": "string",
           "name": "PolicyId",
@@ -23039,7 +23115,7 @@
         },
         {
           "disabled": false,
-          "document": "事件配置的告警",
+          "document": "<p>事件配置的告警</p>",
           "example": "\"{\\\"source\\\":[\\\"cvm.cloud.tencent\\\"]}\"",
           "member": "string",
           "name": "EbSubject",
@@ -23048,7 +23124,7 @@
         },
         {
           "disabled": false,
-          "document": "是否配置了事件告警",
+          "document": "<p>是否配置了事件告警</p>",
           "example": "1",
           "member": "int64",
           "name": "EbEventFlag",

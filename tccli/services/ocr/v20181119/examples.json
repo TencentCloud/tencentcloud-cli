@@ -388,6 +388,14 @@
         "title": "混贴票据识别示例代码（识别指定类型）"
       }
     ],
+    "MultimodalDocParse": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MultimodalDocParse\n<公共请求参数>\n\n{\n    \"FileUrl\": \"http://example.com/doc.pdf\",\n    \"FileType\": 7\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultUrl\": \"https://example.com/result.zip\",\n        \"RequestId\": \"bfe1cd50-c8a5-4310-acf5-389e3e750fcc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "PassportOCR": [
       {
         "document": "PassportOCR调用   [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=PassportOCR)",

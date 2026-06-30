@@ -11157,6 +11157,50 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>飞书应用ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "LarkAppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>飞书UserId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1001",
+          "member": "string",
+          "name": "LarkUserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>飞书OpenId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ou_af9763******************47b2d752",
+          "member": "string",
+          "name": "LarkOpenId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>飞书UserName</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zhangsan",
+          "member": "string",
+          "name": "LarkUserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11166,7 +11210,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户ID",
+          "document": "<p>用户ID</p>",
           "example": "11010",
           "member": "string",
           "name": "UserId",
@@ -11177,7 +11221,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "zhangsan",
           "member": "string",
           "name": "UserName",
@@ -11188,7 +11232,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>邮箱</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123123***@qq.com",
           "member": "string",
           "name": "Email",
@@ -11199,7 +11243,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>手机号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "+86213***323",
           "member": "string",
           "name": "PhoneNumber",
@@ -11210,7 +11254,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号区号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>手机号区号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "086",
           "member": "string",
           "name": "AreaCode",
@@ -11221,7 +11265,7 @@
         },
         {
           "disabled": false,
-          "document": "企微账号id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>企微账号id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1101",
           "member": "string",
           "name": "AppUserId",
@@ -11232,10 +11276,21 @@
         },
         {
           "disabled": false,
-          "document": "企微账号名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>企微账号名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zhangsan",
           "member": "string",
           "name": "AppUserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>飞书OpenId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ou_af9763******************47b2d752",
+          "member": "string",
+          "name": "LarkOpenId",
           "output_required": false,
           "required": false,
           "type": "string",

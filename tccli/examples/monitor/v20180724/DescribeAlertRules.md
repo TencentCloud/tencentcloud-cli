@@ -44,8 +44,8 @@ Output:
                 ],
                 "Duration": "1m",
                 "Receivers": [
-                    "123",
-                    "456"
+                    "Consumer-xxs2szzw",
+                    "notice-cz232d2d"
                 ],
                 "CreatedAt": "2020-08-24T09:39:27Z",
                 "UpdatedAt": "2020-08-24T09:39:27Z"
@@ -78,8 +78,8 @@ Output:
                 ],
                 "Duration": "1m",
                 "Receivers": [
-                    "123",
-                    "456"
+                    "Consumer-xxs2szzw",
+                    "notice-cz232d2d"
                 ],
                 "CreatedAt": "2020-08-24T09:39:17Z",
                 "UpdatedAt": "2020-08-24T09:39:17Z"

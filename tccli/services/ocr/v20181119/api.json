@@ -287,6 +287,13 @@
       "output": "MixedInvoiceOCRResponse",
       "status": "online"
     },
+    "MultimodalDocParse": {
+      "document": "本接口支持解析多种类型的文档文件（PDF、Word、PPT、Excel、Markdown、TXT、图片、WPS），返回解析后的结果文件下载地址（zip压缩包，包含markdown、json和图片）。\n\n支持的文件大小：PDF/Word/PPT支持150M且300页以内、Excel支持10M以内、TXT支持10M以内、图片文件支持70M以内。\n\n默认接口请求频率限制：5 并发。",
+      "input": "MultimodalDocParseRequest",
+      "name": "多模态解析（文档版）",
+      "output": "MultimodalDocParseResponse",
+      "status": "online"
+    },
     "PassportOCR": {
       "document": "<b>此接口为护照识别（中国大陆地区护照）的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/37657\">护照识别（多国多地区护照）</a>。</b>\n\n本接口支持中国大陆地区护照个人资料页多个字段的检测与识别。已支持字段包括英文姓名、中文姓名、国家码、护照号、出生地、出生日期、国籍英文、性别英文、有效期、签发地点英文、签发日期、持证人签名、护照机读码（MRZ码）等。\n\n默认接口请求频率限制：10次/秒。",
       "input": "PassportOCRRequest",
@@ -512,7 +519,7 @@
       "status": "online"
     },
     "VerifyBizLicenseEnterprise3": {
-      "document": "提供比对核验企业名称、统一社会信用代码、法人姓名一致性的服务，助力快速核验企业资质。\n注意：核验准确率在99%以上，存在个别特殊情况下核验结果不准确，请选用前知悉。",
+      "document": "提供比对核验企业名称、统一社会信用代码、法人姓名（可选）一致性的服务，助力快速核验企业资质。\n注意：\n存在个别特殊情况下核验结果不准确，请选用前知悉；\n按周更新企业信息变更情况，如遇到未及时更新的情况，可联系在线客服转产品团队进行人工处理。",
       "input": "VerifyBizLicenseEnterprise3Request",
       "name": "营业执照核验（企业二或三要素）",
       "output": "VerifyBizLicenseEnterprise3Response",
@@ -5343,8 +5350,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片/PDF的 Base64 值。 要求图片/PDF经Base64编码后不超过 10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。 图片支持的像素范围：需介于20-10000px之间。 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==\t",
+          "document": "<p>图片/PDF的 Base64 值。 要求图片/PDF经Base64编码后不超过 10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。 图片支持的像素范围：需介于20-10000px之间。 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -5352,7 +5359,7 @@
         },
         {
           "disabled": false,
-          "document": "图片/PDF的 Url 地址。 要求图片/PDF经Base64编码后不超过 10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。 图片支持的像素范围：需介于20-10000px之间。 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "<p>图片/PDF的 Url 地址。 要求图片/PDF经Base64编码后不超过 10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。 图片支持的像素范围：需介于20-10000px之间。 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -5361,7 +5368,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义抽取需要的字段名称、字段类型、字段提示词。",
+          "document": "<p>自定义抽取需要的字段名称、字段类型、字段提示词。</p>",
           "example": "无",
           "member": "ItemNames",
           "name": "ItemNames",
@@ -5370,12 +5377,30 @@
         },
         {
           "disabled": false,
-          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF时有效。",
+          "document": "<p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF时有效。</p>",
           "example": "1",
           "member": "int64",
           "name": "PdfPageNumber",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要返回坐标</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableCoord",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要开启审核逻辑(支持对字段配置比对内容和比对的语意规则)</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableAudit",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5385,7 +5410,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。",
+          "document": "<p>图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。</p>",
           "example": "1.0",
           "member": "float",
           "name": "Angle",
@@ -5395,7 +5420,7 @@
         },
         {
           "disabled": false,
-          "document": "配置结构化文本信息。",
+          "document": "<p>配置结构化文本信息。</p>",
           "example": "无",
           "member": "GroupInfo",
           "name": "StructuralList",
@@ -5405,7 +5430,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行错误码。当任务状态不为 FAIL 时，该值为\"\"。",
+          "document": "<p>任务执行错误码。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>",
           "example": "FailedOperation.PDFParseFailed",
           "member": "string",
           "name": "ErrorCode",
@@ -5415,7 +5440,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行错误信息。当任务状态不为 FAIL 时，该值为\"\"。",
+          "document": "<p>任务执行错误信息。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>",
           "example": "PDF解析失败",
           "member": "string",
           "name": "ErrorMessage",
@@ -11155,6 +11180,79 @@
         }
       ],
       "usage": "out"
+    },
+    "MultimodalDocParseRequest": {
+      "document": "MultimodalDocParse请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件的 Url 地址，支持FileType参数对应的文件格式及大小。文件下载时间不超过3秒。文件存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
+          "example": "http://example.com/doc.pdf",
+          "member": "string",
+          "name": "FileUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持解析的文件类型。</p><p>1：PDF 文档；</p><p>2：Word 文档（.doc / .docx）；</p><p>3：PPT 演示文稿（.ppt / .pptx）；</p><p>4：Excel 表格（.xls / .xlsx）；</p><p>5：Markdown 文档（.md）；</p><p>6：纯文本文件（.txt）；</p><p>7：图片文件（.png / .jpg / .jpeg 等）；</p><p>8：WPS 文档；</p><p>0：未知文件类型。</p><p></p><p>支持的文件大小：</p><p>PDF/WORD/PPT支持150M且300页以内、EXCEL支持10M以内、TXT支持10M以内、图片文件支持70M以内。</p><p></p><p>默认值：1</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "FileType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出格式。</p><p>1：json格式</p><p>2：markdown格式</p><p>3：xml格式</p><p>9：json+markdown+xml格式</p><p></p><p>默认值：9</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "ResultType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持子图解析。</p><p></p><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSubImg",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要识别的页码范围，单次调用最多支持300页。</p><p>参数格式：1-10</p>",
+          "example": "1-2",
+          "member": "string",
+          "name": "PageRange",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MultimodalDocParseResponse": {
+      "document": "MultimodalDocParse返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>结果的临时下载地址。文件类型为zip压缩包，下载链接有效期30分钟。压缩包内包含*.md、*.json以及images文件夹。</p>",
+          "example": "https://example.com/result.zip",
+          "member": "string",
+          "name": "ResultUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "NonTaxIncomeBill": {
       "document": "非税收入",

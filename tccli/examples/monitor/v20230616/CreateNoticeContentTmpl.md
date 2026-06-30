@@ -37,7 +37,7 @@ Output:
 {
     "Response": {
         "RequestId": "aae79e81-4824-4b97-9307-2c7ff8f73e2e",
-        "TmplID": "ntpl-3r1spzjn"
+        "TmplID": "*"
     }
 }
 ```

@@ -7,6 +7,13 @@
       "output": "AddLoginWhiteListsResponse",
       "status": "online"
     },
+    "AddVulIgnoreRule": {
+      "document": "添加漏洞忽略规则",
+      "input": "AddVulIgnoreRuleRequest",
+      "name": "添加漏洞忽略规则",
+      "output": "AddVulIgnoreRuleResponse",
+      "status": "online"
+    },
     "ChangeRuleEventsIgnoreStatus": {
       "document": "根据检测项id或事件id批量忽略事件或取消忽略",
       "input": "ChangeRuleEventsIgnoreStatusRequest",
@@ -3830,6 +3837,33 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddVulIgnoreRuleRequest": {
+      "document": "AddVulIgnoreRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "忽略规则集合",
+          "example": "[     {         \"VulID\": 1,         \"AssetScopeType\": 0,         \"IncludeQuuidList\": [          ],         \"ExcludeQuuidList\": [          ]     } ]",
+          "member": "VulIgnoreRule",
+          "name": "RuleDetailList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddVulIgnoreRuleResponse": {
+      "document": "AddVulIgnoreRule返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -65207,6 +65241,122 @@
         }
       ],
       "usage": "out"
+    },
+    "VulIgnoreRule": {
+      "document": "漏洞忽略规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "漏洞规则ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "VulID",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<li>0:全部主机</li>\n<li>1:自选主机</li>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AssetScopeType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自选主机情况下自选主机quuid列表",
+          "example": "[\"195ce807-fake-4e7a-aed7-9dca2b62b864\"]",
+          "member": "string",
+          "name": "IncludeQuuidList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全部主机情况下排出的主机",
+          "example": "[\"195ce807-fake-4e7a-aed7-9dca2b62b864\"]",
+          "member": "string",
+          "name": "ExcludeQuuidList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "忽略的原因",
+          "example": "不想关注该漏洞",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置主机数",
+          "example": "1",
+          "member": "uint64",
+          "name": "ConfigHostCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实际受影响主机数",
+          "example": "1",
+          "member": "uint64",
+          "name": "AffectedHostCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞名字",
+          "example": "Apache",
+          "member": "string",
+          "name": "VulName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "忽略规则ID",
+          "example": "101",
+          "member": "uint64",
+          "name": "RuleID",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近更新时间",
+          "example": "2020-12-01 00:00:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "VulInfoByCveId": {
       "document": "根据cve_id查询漏洞详情",

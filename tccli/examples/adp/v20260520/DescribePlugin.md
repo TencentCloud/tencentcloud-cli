@@ -15,6 +15,17 @@ Output:
 {
     "Response": {
         "Plugin": {
+            "Config": {
+                "MCPPluginConfig": {
+                    "ExternalMCPServerUrl": "",
+                    "MCPServerUrl": "",
+                    "MCPTransport": 1,
+                    "PluginHeader": [],
+                    "PluginQuery": [],
+                    "SSEReadTimeout": 300,
+                    "Timeout": 60
+                }
+            },
             "CreateTime": "1745313719",
             "Operation": {
                 "AllowExternalAccess": false,

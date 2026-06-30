@@ -29315,6 +29315,58 @@
       ],
       "usage": "out"
     },
+    "KnowledgeAnalysisInfo": {
+      "document": "知识库媒体分析信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>大模型解析模板号</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>大模型解析结果</p>",
+          "example": "无",
+          "member": "KnowledgeAnalysisResult",
+          "name": "AnalysisResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KnowledgeAnalysisResult": {
+      "document": "知识库媒体分析结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>处理任务类型</p><p>枚举值：</p><ul><li>AiAnalysis.DescriptionTask： 智能摘要任务</li><li>AiAnalysis.VideoComprehensionTask： 视频理解任务</li><li>SmartSubtitle.AsrFullTextTask： 智能语音全文识别任务</li></ul>",
+          "example": "AiAnalysis.DescriptionTask",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务输出文件集合</p>",
+          "example": "无",
+          "member": "MPSOutputFileInfo",
+          "name": "File",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "KnowledgeBasesInfo": {
       "document": "媒资智能知识库信息",
       "members": [
@@ -29324,6 +29376,16 @@
           "example": "[\"default\"]",
           "member": "string",
           "name": "Bases",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库中媒体分析信息</p>",
+          "example": "无",
+          "member": "KnowledgeAnalysisInfo",
+          "name": "KnowledgeAnalysisInfos",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false

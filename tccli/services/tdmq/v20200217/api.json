@@ -631,11 +631,11 @@
       "status": "online"
     },
     "DescribeRocketMQMigratingTopicList": {
-      "document": "查询Topic迁移状态列表，源集群和目标集群客户端数量信息需要配合DescribeRocketMQSmoothMigrationTaskTopicInsNum接口查询",
+      "document": "历史接口，对应接口已迁移到trocket\n\n查询Topic迁移状态列表，源集群和目标集群客户端数量信息需要配合DescribeRocketMQSmoothMigrationTaskTopicInsNum接口查询",
       "input": "DescribeRocketMQMigratingTopicListRequest",
       "name": "平滑迁移：查询Topic迁移状态列表",
       "output": "DescribeRocketMQMigratingTopicListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeRocketMQMsg": {
       "document": "查询 RocketMQ 消息详情。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的查询消息详情接口文档见 [DescribeMessage](https://cloud.tencent.com/document/api/1493/114594)。",
@@ -687,11 +687,11 @@
       "status": "online"
     },
     "DescribeRocketMQSmoothMigrationTask": {
-      "document": "用于获取RocketMQ平滑迁移任务详情",
+      "document": "历史接口，对应接口已迁移到trocket\n\n用于获取RocketMQ平滑迁移任务详情",
       "input": "DescribeRocketMQSmoothMigrationTaskRequest",
       "name": "获取RocketMQ平滑迁移任务详情",
       "output": "DescribeRocketMQSmoothMigrationTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeRocketMQSubscriptions": {
       "document": "查询 RocketMQ 消费组订阅关系列表。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群查询消费组订阅的主题列表接口文档见 [DescribeTopicListByGroup](https://cloud.tencent.com/document/api/1493/115314)。",
@@ -806,18 +806,18 @@
       "status": "online"
     },
     "ImportRocketMQConsumerGroups": {
-      "document": "输入迁移任务id和要导入的Group，导入后台",
+      "document": "历史接口，对应接口已迁移到trocket\n\n输入迁移任务id和要导入的Group，导入后台",
       "input": "ImportRocketMQConsumerGroupsRequest",
       "name": "平滑迁移：导入消费者组列表",
       "output": "ImportRocketMQConsumerGroupsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ImportRocketMQTopics": {
-      "document": "导入topic列表",
+      "document": "历史接口，对应接口已迁移到trocket\n\n导入topic列表",
       "input": "ImportRocketMQTopicsRequest",
       "name": "平滑迁移：导入topic列表",
       "output": "ImportRocketMQTopicsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyCluster": {
       "document": "更新集群信息",

@@ -11244,7 +11244,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目 id",
+          "document": "<p>项目 id</p>",
           "example": "1",
           "member": "int64",
           "name": "ProjectID",
@@ -11253,7 +11253,7 @@
         },
         {
           "disabled": false,
-          "document": "文件版本",
+          "document": "<p>文件版本</p>",
           "example": "0.0.1",
           "member": "string",
           "name": "FileVersion",
@@ -11262,12 +11262,21 @@
         },
         {
           "disabled": false,
-          "document": "查询过滤条件（根据sourcemap的文件名模糊匹配）",
+          "document": "<p>查询过滤条件（根据sourcemap的文件名模糊匹配）</p>",
           "example": "test.js",
           "member": "string",
           "name": "FileName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>false/不传=保留「最近 3 个月」约束（旧行为）；true=绕过时间窗口</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoreDefaultTimeRange",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11277,8 +11286,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件信息列表",
-          "example": "[{\"Version\":\"0.01\",\"FileKey\":\"****test\",\"FileName\":\"a.js.map\",\"FileHash\":\"****test\"}]",
+          "document": "<p>文件信息列表</p>",
+          "example": "无",
           "member": "ReleaseFile",
           "name": "Files",
           "output_required": true,
@@ -13435,7 +13444,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件版本",
+          "document": "<p>文件版本</p>",
           "example": "0.0.1",
           "member": "string",
           "name": "Version",
@@ -13446,7 +13455,7 @@
         },
         {
           "disabled": false,
-          "document": "文件唯一 key",
+          "document": "<p>文件唯一 key</p>",
           "example": "DFFDSGGSDFFDS",
           "member": "string",
           "name": "FileKey",
@@ -13457,7 +13466,7 @@
         },
         {
           "disabled": false,
-          "document": "文件名",
+          "document": "<p>文件名</p>",
           "example": "a.js.map",
           "member": "string",
           "name": "FileName",
@@ -13468,7 +13477,7 @@
         },
         {
           "disabled": false,
-          "document": "文件哈希值",
+          "document": "<p>文件哈希值</p>",
           "example": "asdfdsfdsg/f/g",
           "member": "string",
           "name": "FileHash",
@@ -13479,13 +13488,24 @@
         },
         {
           "disabled": false,
-          "document": "文件 id",
+          "document": "<p>文件 id</p>",
           "example": "1",
           "member": "int64",
           "name": "ID",
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-06-25 15:50:51",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

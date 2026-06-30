@@ -9,7 +9,7 @@ tccli adp ModifySpace --cli-unfold-argument  \
     --Name 编辑名称 \
     --Description 描述更改 \
     --SpaceId UYiGYydT \
-    --FieldMask.Paths name description
+    --FieldMask.Paths Name Description
 ```
 
 Output: 

@@ -965,7 +965,7 @@
       },
       {
         "document": "镜像仓库详情",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryRegistryDetail\n<公共请求参数>\n\n{\n    \"RegistryId\": \"10\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryRegistryDetail\n<公共请求参数>\n\n{\n    \"RegistryId\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5187d432-1753-4376-81b6-12e1f7e6ecf5\",\n        \"Name\": \"jfrog****\",\n        \"Username\": \"test-user\",\n        \"Password\": \"test-passwd\",\n        \"Url\": \"https://127.0.0.1:8080\",\n        \"RegistryType\": \"harbor\",\n        \"RegistryVersion\": \"v2\",\n        \"NetType\": \"public\",\n        \"RegistryRegion\": \"default\",\n        \"SpeedLimit\": 1,\n        \"Insecure\": 0\n    }\n}",
         "title": "镜像仓库详情"
       }
@@ -2797,7 +2797,7 @@
     "RemoveAssetImageRegistryRegistryDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveAssetImageRegistryRegistryDetail\n<公共请求参数>\n\n{\n    \"RegistryId\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveAssetImageRegistryRegistryDetail\n<公共请求参数>\n\n{\n    \"RegistryId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a64a4f9-864c-49c6-adcb-21b483de477a\"\n    }\n}",
         "title": "删除单个镜像仓库详细信息"
       }

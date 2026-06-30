@@ -224,13 +224,6 @@
       "output": "DescribeApiResponse",
       "status": "online"
     },
-    "DescribeApiApp": {
-      "document": "历史接口，已经无用户调用\n\n本接口（DescribeApiApp）用于根据应用ID搜索应用。此接口已下线，如需使用功能请使用DescribeApiAppsStatus接口。",
-      "input": "DescribeApiAppRequest",
-      "name": "搜索应用",
-      "output": "DescribeApiAppResponse",
-      "status": "deprecated"
-    },
     "DescribeApiAppBindApisStatus": {
       "document": "本接口（DescribeApiAppBindApisStatus）查询应用绑定的Api列表。",
       "input": "DescribeApiAppBindApisStatusRequest",
@@ -274,7 +267,7 @@
       "status": "online"
     },
     "DescribeApiKeysStatus": {
-      "document": "本接口（DescribeApiKeysStatus）用于查询密钥列表。\n当用户创建了多个密钥对时，可使用本接口查询一个或多个 API 密钥信息。",
+      "document": "本接口（DescribeApiKeysStatus）用于查询密钥列表。\n当用户创建了多个密钥对时，可使用本接口查询一个或多个 API 密钥信息1。",
       "input": "DescribeApiKeysStatusRequest",
       "name": "查询密钥列表",
       "output": "DescribeApiKeysStatusResponse",
@@ -1047,7 +1040,7 @@
         {
           "disabled": false,
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "x x",
+          "example": "app*********",
           "member": "string",
           "name": "ApiAppName",
           "output_required": true,
@@ -1057,7 +1050,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "x x",
+          "example": "app-************",
           "member": "string",
           "name": "ApiAppId",
           "output_required": true,
@@ -1067,7 +1060,7 @@
         {
           "disabled": false,
           "document": "应用SECRET\n注意:此字段可能返回null，表示取不到有效值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "sajsnda",
+          "example": "abeds***********",
           "member": "string",
           "name": "ApiAppSecret",
           "output_required": true,
@@ -1107,7 +1100,7 @@
         {
           "disabled": false,
           "document": "应用KEY\n注意:此字段可能返回null，表示取不到有效值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "sajsnda",
+          "example": "AKID******************",
           "member": "string",
           "name": "ApiAppKey",
           "output_required": true,
@@ -3334,7 +3327,7 @@
         {
           "disabled": false,
           "document": "用户自定义密钥名称。",
-          "example": "test",
+          "example": "testSecret",
           "member": "string",
           "name": "SecretName",
           "required": true,
@@ -3343,7 +3336,7 @@
         {
           "disabled": false,
           "document": "密钥类型，支持 auto 和 manual（自定义密钥），默认为 auto。",
-          "example": "xx",
+          "example": "auto",
           "member": "string",
           "name": "AccessKeyType",
           "required": false,
@@ -3352,7 +3345,7 @@
         {
           "disabled": false,
           "document": "用户自定义密钥 ID，AccessKeyType 为 manual 时必传。长度为5 - 50字符，由字母、数字、英文下划线组成。",
-          "example": "xx",
+          "example": "AKID***********************************************",
           "member": "string",
           "name": "AccessKeyId",
           "required": false,
@@ -3361,7 +3354,7 @@
         {
           "disabled": false,
           "document": "用户自定义密钥 Key，AccessKeyType 为 manual 时必传。长度为10 - 50字符，由字母、数字、英文下划线。",
-          "example": "xx",
+          "example": "qYSyjR************************************",
           "member": "string",
           "name": "AccessKeySecret",
           "required": false,
@@ -5589,43 +5582,6 @@
           "member": "ApiAppApiInfos",
           "name": "Result",
           "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeApiAppRequest": {
-      "document": "DescribeApiApp请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "应用ID。",
-          "example": "app-kzofrjbl",
-          "member": "string",
-          "name": "ApiAppId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeApiAppResponse": {
-      "document": "DescribeApiApp返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "应用详情。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ApiAppInfos",
-          "name": "Result",
-          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10824,7 +10780,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -10888,7 +10844,7 @@
           "example": "无",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },

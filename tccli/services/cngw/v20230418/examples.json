@@ -1,0 +1,427 @@
+{
+  "actions": {
+    "AddCloudNativeAPIGatewayConsumerGroupAuth": [
+      {
+        "document": "模型API给消费者分组授权",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCloudNativeAPIGatewayConsumerGroupAuth\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-1b59c523\",\n    \"ResourceType\": \"ModelAPI\",\n    \"ResourceId\": \"e3aa4fe271c24bb4aa7cca41db5a4e75\",\n    \"ConsumerGroupIds\": [\n        \"cg-d4fbcc88676d50\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45b34a9a-57f7-4c8d-8fb2-150256f637f1\"\n    }\n}",
+        "title": "模型API给消费者分组授权"
+      }
+    ],
+    "AddCloudNativeAPIGatewayConsumerInGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCloudNativeAPIGatewayConsumerInGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-4e588095\",\n    \"ConsumerGroupId\": \"cg-9a130aba0f747c\",\n    \"ConsumerIds\": [\n        \"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"828b6c28-24d2-4988-97d7-e12e4fa8acef\",\n        \"Result\": true\n    }\n}",
+        "title": "添加消费者到分组"
+      }
+    ],
+    "BindCloudNativeAPIGatewaySecretKey": [
+      {
+        "document": "消费者凭证， ResourceIds 只能传一个",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ResourceType\": \"Consumer\",\n    \"ResourceIds\": [\n        \"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\"\n    ],\n    \"SecretKeyId\": \"secret-3bc27fec\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c3f37e8-5bc2-416b-b2e1-14c3775fd24c\",\n        \"Result\": true\n    }\n}",
+        "title": "添加消费者凭证"
+      }
+    ],
+    "CreateCloudNativeAPIGatewayConsumer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayConsumer\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"Name\": \"消费者\",\n    \"Description\": \"消费者描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3575b458-81a9-49ea-8a49-64432fe22ed0\",\n        \"Result\": {\n            \"ID\": \"consumer-6021c8b0\",\n            \"Success\": true\n        }\n    }\n}",
+        "title": "创建消费者"
+      }
+    ],
+    "CreateCloudNativeAPIGatewayConsumerGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayConsumerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-73a0405d\",\n    \"Name\": \"testgroup\",\n    \"Status\": \"Enable\",\n    \"Description\": \"创建消费者分组\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ID\": \"cg-3bb9e0c9cb9df4\",\n            \"Success\": true\n        },\n        \"RequestId\": \"48345f8b-601f-492c-8643-25566660dd01\"\n    }\n}",
+        "title": "创建消费者分组"
+      }
+    ],
+    "CreateCloudNativeAPIGatewayLLMModelAPI": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayLLMModelAPI\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-4eb46023\",\n    \"Name\": \"ModelAPI-Hunyuan\",\n    \"SceneType\": \"Chat\",\n    \"RequestProtocol\": \"OpenAI\",\n    \"ListModelServiceId\": [\n        \"1006154d-8770-xx\"\n    ],\n    \"RouteList\": [\n        {\n            \"Name\": \"base\",\n            \"Paths\": [\n                \"/v1/chat/completions\"\n            ]\n        }\n    ],\n    \"BasePath\": \"/qq\",\n    \"Description\": \"OpenAI协议LLM接口\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9b49623-c235-4839-b1d6-1f6f23ae8dcd\",\n        \"Result\": true,\n        \"ModelAPIId\": \"9006154d-8770-xx\"\n    }\n}",
+        "title": "创建 AI 网关模型 API"
+      }
+    ],
+    "CreateCloudNativeAPIGatewayLLMModelService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayLLMModelService\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-01f976d0\",\n    \"Name\": \"qwen\",\n    \"ServiceType\": \"LLMService\",\n    \"ModelProvider\": \"qwen\",\n    \"ModelProtocol\": \"OpenAI-Qwen\",\n    \"ModelSelector\": \"PassThrough\",\n    \"SecretKeyIds\": [\n        \"secret-de0acbccee344b\"\n    ],\n    \"EnableModelParamCheck\": false,\n    \"UpstreamURL\": \"https://dashscope.aliyuncs.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelServiceId\": \"843a043a19d445a8a27e5be0fd182a0c\",\n        \"Result\": true,\n        \"RequestId\": \"d7e3ffad-4d6d-42fd-b2f5-6c3c81f294a0\"\n    }\n}",
+        "title": "创建模型服务"
+      }
+    ],
+    "CreateCloudNativeAPIGatewayMCPServer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayMCPServer\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-27268511\",\n    \"Name\": \"test-virtual-mcp-2\",\n    \"DisplayName\": \"虚拟MCP\",\n    \"ServerType\": \"Rest2MCP\",\n    \"Transport\": \"StreamableHttp\",\n    \"UpstreamType\": \"VirtualMCPServer\",\n    \"Timeout\": 3000,\n    \"RetryCount\": 3,\n    \"Description\": \"虚拟MCP服务\",\n    \"EnableHealthCheck\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ID\": \"deae9637-1fb1-46cf-8c14-cab71114a2b9\",\n            \"Success\": true\n        },\n        \"RequestId\": \"aacffe14-af80-4969-90ff-d945cfe44464\"\n    }\n}",
+        "title": "创建MCP Server"
+      }
+    ],
+    "CreateCloudNativeAPIGatewayMCPTool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayMCPTool\n<公共请求参数>\n\n{\n    \"ContentType\": \"application/json\",\n    \"DisplayName\": \"获取用户信息\",\n    \"ServiceId\": \"4e141ac6-f0cd-4d35-80f0-75e47f5d56a6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ID\": \"2e86a9fb-0354-441f-a25f-0e58814a4807\",\n            \"Success\": true\n        },\n        \"RequestId\": \"51b02dbf-98d8-4a91-8f7c-2e73ae2b0182\"\n    }\n}",
+        "title": "创建MCP工具"
+      }
+    ],
+    "CreateCloudNativeAPIGatewaySecretKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"SecretType\": \"ApiKey\",\n    \"Name\": \"测试KMS密钥\",\n    \"GenerateType\": \"KMS\",\n    \"ResourceType\": \"Consumer\",\n    \"KmsKeyName\": \"XX\",\n    \"KmsKeyVersion\": \"v1\",\n    \"Description\": \"测试密钥\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f6008b8-249c-4b5c-a5ea-09bedb2a5b3b\",\n        \"Result\": {\n            \"ID\": \"secret-30859974\",\n            \"Success\": true\n        }\n    }\n}",
+        "title": "创建KMS秘钥"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"SecretType\": \"ApiKey\",\n    \"Name\": \"测试系统密钥\",\n    \"GenerateType\": \"System\",\n    \"ResourceType\": \"Consumer\",\n    \"Description\": \"密钥\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0edc69d-f575-44da-ba7a-b40656fcf878\",\n        \"Result\": {\n            \"ID\": \"secret-152eb264\",\n            \"Success\": true\n        }\n    }\n}",
+        "title": "创建自动生成密钥"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"SecretType\": \"ApiKey\",\n    \"Name\": \"测试自定义密钥\",\n    \"GenerateType\": \"Custom\",\n    \"ResourceType\": \"Consumer\",\n    \"SecretValue\": \"sk-xxxxxxxx\",\n    \"Description\": \"测试密钥\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"173ebf7b-7beb-442d-bc4f-7a66eebd8264\",\n        \"Result\": {\n            \"ID\": \"secret-c3966447\",\n            \"Success\": true\n        }\n    }\n}",
+        "title": "创建自定义密钥"
+      }
+    ],
+    "DeleteCloudNativeAPIGatewayConsumer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayConsumer\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ConsumerId\": \"50ec02a9-3e96-47b4-a275-22f402e15e21\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"33b25c73-4050-4a52-bc18-8586bd900fb5\"\n    }\n}",
+        "title": "删除消费者"
+      }
+    ],
+    "DeleteCloudNativeAPIGatewayConsumerGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayConsumerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ConsumerGroupId\": \"cg-6021c8b0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"905b39a5-5165-4d80-a338-1a1b63f28f34\"\n    }\n}",
+        "title": "删除消费者组"
+      }
+    ],
+    "DeleteCloudNativeAPIGatewayLLMModelAPI": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayLLMModelAPI\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-04b00666\",\n    \"ModelAPIId\": \"9ab0f08a1bab42699c85839fda1461c1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"810f49bf-aad4-4380-9be3-7b90045f375c\",\n        \"Result\": true\n    }\n}",
+        "title": "删除 LLM 模型 API 信息"
+      }
+    ],
+    "DeleteCloudNativeAPIGatewayLLMModelService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayLLMModelService\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-04b00666\",\n    \"ModelServiceId\": \"03e9cb42c0944d98afcacd55066fa667\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bf341b99-089f-4a43-a705-957db92979da\",\n        \"Result\": true\n    }\n}",
+        "title": "删除 LLM 模型服务信息"
+      }
+    ],
+    "DeleteCloudNativeAPIGatewayMCPServer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayMCPServer\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-545fe799\",\n    \"ServerId\": \"06d46e56-ff98-4745-861d-66f61742e3fd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"96948475-ab6e-4926-84c2-25512cbc6976\"\n    }\n}",
+        "title": "删除MCP Server"
+      }
+    ],
+    "DeleteCloudNativeAPIGatewayMCPTool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayMCPTool\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-545fe799\",\n    \"ToolId\": \"1ce6bcd3-c9dd-432a-8207-6f479d74fa1e\",\n    \"ServerId\": \"7c01f858-6444-472c-862f-2c9fba063958\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"04662c46-1fdf-4be5-8d8a-9b9f6c9711e5\"\n    }\n}",
+        "title": "删除MCP工具"
+      }
+    ],
+    "DeleteCloudNativeAPIGatewaySecretKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"SecretKeyId\": \"secret-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"01dd9245-3f77-48d0-aac5-1cd5b9a524b0\"\n    }\n}",
+        "title": "删除密钥"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayConsumer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayConsumer\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ConsumerId\": \"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e6bfe546-a077-4935-905b-b97ba97fef2f\",\n        \"Result\": {\n            \"ConsumerGroups\": [\n                {\n                    \"ConsumerGroupId\": \"cg-5070cb47\",\n                    \"CreateTime\": \"2025-11-20 09:53:12\",\n                    \"Description\": \"分组描述\",\n                    \"ModifyTime\": \"2025-11-20 09:53:12\",\n                    \"Name\": \"分组3\",\n                    \"Status\": \"Enable\"\n                },\n                {\n                    \"ConsumerGroupId\": \"cg-6021c8b0\",\n                    \"CreateTime\": \"2025-11-19 16:55:08\",\n                    \"Description\": \"消费者分组描述\",\n                    \"ModifyTime\": \"2025-11-20 10:26:35\",\n                    \"Name\": \"消费者组\",\n                    \"Status\": \"Disable\"\n                }\n            ],\n            \"ConsumerId\": \"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\",\n            \"CreateTime\": \"2025-11-19 16:58:43\",\n            \"Description\": \"消费者1\",\n            \"ModifyTime\": \"2025-11-19 16:58:43\",\n            \"Name\": \"消费者1\"\n        }\n    }\n}",
+        "title": "查看详情"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayConsumerGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayConsumerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ConsumerGroupId\": \"cg-2cd91a00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0379d5e4-6a1e-4baf-bb92-6cd11cbe197a\",\n        \"Result\": {\n            \"ConsumerGroupId\": \"cg-2cd91a00\",\n            \"CreateTime\": \"2025-11-11 11:11:11\",\n            \"Description\": \"分组描述\",\n            \"ModifyTime\": \"2025-11-11 11:11:11\",\n            \"Name\": \"分组1\",\n            \"Status\": \"Enable\"\n        }\n    }\n}",
+        "title": "查询分组详情"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayLLMModelAPI": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMModelAPI\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-4eb46023\",\n    \"ModelAPIId\": \"a1b2c3d4e5f6789012345678901234ab\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Id\": \"a1b2c3d4e5f6789012345678901234ab\",\n            \"CreateTime\": \"2026-05-19T15:00:00+08:00\",\n            \"ModifyTime\": \"2026-05-19T15:00:00+08:00\",\n            \"Name\": \"openai_chat\",\n            \"SceneType\": \"Chat\",\n            \"RequestProtocol\": \"openai\",\n            \"RouteList\": [\n                {\n                    \"Name\": \"openai_chat_route_1\",\n                    \"Methods\": [\n                        \"POST\"\n                    ],\n                    \"Paths\": [\n                        \"/v1/chat/completions\"\n                    ]\n                }\n            ],\n            \"BasePath\": \"/v1/openai\",\n            \"StripPath\": false,\n            \"Description\": \"大模型统一聊天 API\",\n            \"ModelServiceId\": \"d0742b86605340438a8018c658156622\",\n            \"ModelServiceName\": \"openai_test\",\n            \"MatchHeaders\": [],\n            \"EnableCrossServiceFallback\": false\n        },\n        \"RequestId\": \"f1234567-89ab-cdef-0123-456789abcdef\"\n    }\n}",
+        "title": "查询单个 LLM 模型 API 信息"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayLLMModelAPIs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMModelAPIs\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-04b00666\",\n    \"Limit\": 10,\n    \"Offset\": null,\n    \"Filters\": [\n        {\n            \"Name\": \"Name\",\n            \"Values\": [\n                \"openai\"\n            ]\n        }\n    ],\n    \"Keyword\": \"openai\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"959caf3b-f74c-4cd1-9260-3b7713e55604\",\n        \"Result\": {\n            \"DataList\": [\n                {\n                    \"BasePath\": \"\",\n                    \"CreateTime\": \"2025-11-26 10:16:59\",\n                    \"Description\": \"OpenAI 格式模型 API\",\n                    \"Id\": \"9ab0f08a1bab42699c85839fda1461c1\",\n                    \"ModifyTime\": \"2025-11-26 10:16:59\",\n                    \"Name\": \"openai_chat_测试4\",\n                    \"RequestProtocol\": \"OpenAI\",\n                    \"RouteList\": [\n                        {\n                            \"Name\": \"base\",\n                            \"Paths\": [\n                                \"/v1/chat/completions\"\n                            ]\n                        }\n                    ],\n                    \"SceneType\": \"Chat\",\n                    \"StripPath\": false\n                },\n                {\n                    \"BasePath\": \"/base\",\n                    \"CreateTime\": \"2025-11-26 10:16:16\",\n                    \"Description\": \"OpenAI 格式模型 API\",\n                    \"Id\": \"769ebd672acb4640b0a35a31bd429de9\",\n                    \"ModifyTime\": \"2025-11-26 10:16:16\",\n                    \"Name\": \"openai_chat_测试3\",\n                    \"RequestProtocol\": \"OpenAI\",\n                    \"RouteList\": [\n                        {\n                            \"Name\": \"base\",\n                            \"Paths\": [\n                                \"/v1/chat/completions\"\n                            ]\n                        }\n                    ],\n                    \"SceneType\": \"Chat\",\n                    \"StripPath\": true\n                },\n                {\n                    \"BasePath\": \"\",\n                    \"CreateTime\": \"2025-11-26 10:15:18\",\n                    \"Description\": \"OpenAI 格式模型 API\",\n                    \"Id\": \"66ae5965beed4196966876a778c28995\",\n                    \"ModifyTime\": \"2025-11-26 10:15:18\",\n                    \"Name\": \"openai_chat_测试2\",\n                    \"RequestProtocol\": \"OpenAI\",\n                    \"RouteList\": [\n                        {\n                            \"Name\": \"base\",\n                            \"Paths\": [\n                                \"/v1/chat/completions\"\n                            ]\n                        }\n                    ],\n                    \"SceneType\": \"Chat\",\n                    \"StripPath\": false\n                },\n                {\n                    \"BasePath\": \"\",\n                    \"CreateTime\": \"2025-11-26 10:13:16\",\n                    \"Description\": \"OpenAI 格式模型 API\",\n                    \"Id\": \"b529dd8141ea4234a4c4d87930108f68\",\n                    \"ModifyTime\": \"2025-11-26 10:13:16\",\n                    \"Name\": \"openai_chat_测试\",\n                    \"RequestProtocol\": \"OpenAI\",\n                    \"RouteList\": [\n                        {\n                            \"Name\": \"base\",\n                            \"Paths\": [\n                                \"/v1/chat/completions\"\n                            ]\n                        }\n                    ],\n                    \"SceneType\": \"Chat\",\n                    \"StripPath\": false\n                }\n            ],\n            \"TotalCount\": 4\n        }\n    }\n}",
+        "title": "查询 LLM 模型 API 列表"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayLLMModelService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMModelService\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-4eb46023\",\n    \"ModelServiceId\": \"d0742b86605340438a8018c658156622\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Id\": \"d0742b86605340438a8018c658156622\",\n            \"Name\": \"openai_test\",\n            \"CreateTime\": \"2026-05-19T15:00:00+08:00\",\n            \"ModifyTime\": \"2026-05-19T15:00:00+08:00\",\n            \"ServiceType\": \"LLMService\",\n            \"ModelProvider\": \"openai\",\n            \"ModelProtocol\": \"OpenAI/V1\",\n            \"UpstreamURL\": \"\",\n            \"ModelSelector\": \"Specify\",\n            \"DefaultModel\": \"gpt-5.1\",\n            \"EnableModelFallback\": true,\n            \"ModelFallbackRule\": {\n                \"FallbackModels\": [\n                    \"gpt-5.2\",\n                    \"gpt-5-mini\"\n                ]\n            },\n            \"EnableModelParamCheck\": false,\n            \"Description\": \"OpenAI 模型服务\",\n            \"ConnectTimeout\": 10000,\n            \"WriteTimeout\": 60000,\n            \"ReadTimeout\": 60000,\n            \"Retries\": 0,\n            \"UpstreamUrlMode\": \"AutoConcat\",\n            \"SNI\": \"\"\n        },\n        \"RequestId\": \"bb67a5c6-44c2-4ad7-acb4-bffdd4aa68fe\"\n    }\n}",
+        "title": "查询单个 LLM 模型服务列表"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayLLMModelServices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMModelServices\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0703606b\",\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DataList\": [\n                {\n                    \"ConnectTimeout\": 10000,\n                    \"CreateTime\": \"2026-05-18 09:02:49\",\n                    \"Description\": \"\",\n                    \"EnableModelParamCheck\": false,\n                    \"Id\": \"d0742b86605340438a8018c658156622\",\n                    \"ModelProtocol\": \"OpenAI-Custom\",\n                    \"ModelProvider\": \"custom\",\n                    \"ModelSelector\": \"PassThrough\",\n                    \"ModifyTime\": \"2026-05-18 09:02:49\",\n                    \"Name\": \"custom\",\n                    \"ReadTimeout\": 60000,\n                    \"Retries\": 0,\n                    \"SNI\": \"generativelanguage.googleapis.com\",\n                    \"ServiceType\": \"LLMService\",\n                    \"UpstreamURL\": \"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent\",\n                    \"UpstreamUrlMode\": \"FixedPath\",\n                    \"WriteTimeout\": 60000\n                }\n            ],\n            \"TotalCount\": 2\n        },\n        \"RequestId\": \"faeffc01-bda7-4fec-8407-7d8198b0bda9\"\n    }\n}",
+        "title": "查询模型服务"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayLLMTokenUsageList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMTokenUsageList\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0663f44f\",\n    \"StartTime\": 1779638400,\n    \"EndTime\": 1779690592,\n    \"Filters\": [\n        {\n            \"Name\": \"ConsumerId\",\n            \"Values\": [\n                \"2e36f421-e08f-4e9e-a610-1b1f84c9cb6d\"\n            ]\n        }\n    ],\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DataList\": [\n                {\n                    \"CacheReadInputTokens\": 0,\n                    \"ConsumerGroups\": [\n                        {\n                            \"ConsumerGroupId\": \"cg-3155bd3c9fd0df\",\n                            \"Name\": \"test-consumer-group-1\"\n                        }\n                    ],\n                    \"ConsumerId\": \"2e36f421-e08f-4e9e-a610-1b1f84c9cb6d\",\n                    \"ConsumerName\": \"test-consumer-2\",\n                    \"Cost\": \"0.00\",\n                    \"Currency\": \"CNY\",\n                    \"InputTokens\": 45,\n                    \"ModelServiceId\": \"b97facfd14724ccea64358fd1769b784\",\n                    \"ModelServiceName\": \"qwen\",\n                    \"OutputTokens\": 11,\n                    \"RequestCount\": 2,\n                    \"TotalTokens\": 56\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"79a1003e-8d6f-4b14-a61e-b04c4f9e004b\"\n    }\n}",
+        "title": "根据消费者筛选"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMTokenUsageList\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0663f44f\",\n    \"StartTime\": 1779638400,\n    \"EndTime\": 1779690592,\n    \"Filters\": [\n        {\n            \"Name\": \"ConsumerGroupId\",\n            \"Values\": [\n                \"cg-6e111dd2fc5cee\"\n            ]\n        }\n    ],\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DataList\": [\n                {\n                    \"CacheReadInputTokens\": 0,\n                    \"ConsumerGroups\": [\n                        {\n                            \"ConsumerGroupId\": \"cg-6e111dd2fc5cee\",\n                            \"Name\": \"test-consumer-group-2\"\n                        }\n                    ],\n                    \"ConsumerId\": \"2e36f421-e08f-4e9e-a610-1b1f84c9cb6d\",\n                    \"ConsumerName\": \"test-consumer-2\",\n                    \"Cost\": \"0.00\",\n                    \"Currency\": \"CNY\",\n                    \"InputTokens\": 45,\n                    \"ModelServiceId\": \"b97facfd14724ccea64358fd1769b784\",\n                    \"ModelServiceName\": \"qwen\",\n                    \"OutputTokens\": 11,\n                    \"RequestCount\": 2,\n                    \"TotalTokens\": 56\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"dff1a641-28ea-4c7f-91cc-c89467dc70ef\"\n    }\n}",
+        "title": "根据消费者组筛选"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayLLMTokenUsageStatistics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMTokenUsageStatistics\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-********\",\n    \"StartTime\": 1777996800,\n    \"EndTime\": 1778688000\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Currency\": \"CNY\",\n            \"TopConsumers\": [\n                {\n                    \"ConsumerName\": \"test-consumer-1\",\n                    \"TotalTokens\": 2685\n                }\n            ],\n            \"TotalCachedReadInputTokens\": 0,\n            \"TotalCost\": \"0.077996\",\n            \"TotalInputTokens\": 222,\n            \"TotalOutputTokens\": 3262,\n            \"TotalRequestCount\": 19\n        },\n        \"RequestId\": \"46f2429e-db7f-48f3-a028-634d7f861ee5\"\n    }\n}",
+        "title": "成功-查询全部消费者与消费者组"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMTokenUsageStatistics\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0663f44f\",\n    \"StartTime\": 1779638400,\n    \"EndTime\": 1779690592,\n    \"Filters\": [\n        {\n            \"Name\": \"ConsumerGroupId\",\n            \"Values\": [\n                \"cg-6e111dd2fc5cee\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Currency\": \"CNY\",\n            \"TopConsumers\": [\n                {\n                    \"ConsumerId\": \"2e36f421-e08f-4e9e-a610-1b1f84c9cb6d\",\n                    \"ConsumerName\": \"test-consumer-2\",\n                    \"TotalTokens\": 56\n                }\n            ],\n            \"TotalCachedReadInputTokens\": 0,\n            \"TotalCost\": \"0.0\",\n            \"TotalInputTokens\": 45,\n            \"TotalOutputTokens\": 11,\n            \"TotalRequestCount\": 2\n        },\n        \"RequestId\": \"6ac1d99b-58a9-42df-82a0-78d53c63aa31\"\n    }\n}",
+        "title": "成功-根据消费者组过滤"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLLMTokenUsageStatistics\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0663f44f\",\n    \"StartTime\": 1777996800,\n    \"EndTime\": 1778774400,\n    \"Filters\": [\n        {\n            \"Name\": \"ConsumerId\",\n            \"Values\": [\n                \"2e36f421-e08f-4e9e-a610-1b1f84c9cb6d\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Currency\": \"CNY\",\n            \"TopConsumers\": [\n                {\n                    \"ConsumerName\": \"test-consumer-2\",\n                    \"TotalTokens\": 619\n                }\n            ],\n            \"TotalCachedReadInputTokens\": 0,\n            \"TotalCost\": \"0.006118\",\n            \"TotalInputTokens\": 48,\n            \"TotalOutputTokens\": 571,\n            \"TotalRequestCount\": 3\n        },\n        \"RequestId\": \"36ffccea-99cc-4cc0-97ef-f9dd0b45c377\"\n    }\n}",
+        "title": "成功-根据消费者过滤"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayMCPServer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayMCPServer\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-545fe799\",\n    \"ServerId\": \"667065f5-6796-4430-b987-9a8b43c3d5b1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"CreateTime\": \"2026-04-15 16:50:50\",\n            \"Description\": \"\",\n            \"DisplayName\": \"giteeasd\",\n            \"MCPEndpoint\": \"/mcpservers/gitee/mcp\",\n            \"Name\": \"gitee\",\n            \"RetryCount\": 3,\n            \"ServerId\": \"667065f5-6796-4430-b987-9a8b43c3d5b1\",\n            \"ServerType\": \"MCP\",\n            \"Timeout\": 3000,\n            \"Transport\": \"StreamableHttp\",\n            \"UpdateTime\": \"2026-04-15 16:54:34\",\n            \"UpstreamInfo\": {\n                \"Host\": \"api.gitee.com\",\n                \"MCPEndpoint\": \"/mcp\",\n                \"Port\": 443,\n                \"Protocol\": \"https\"\n            },\n            \"UpstreamType\": \"HostIP\"\n        },\n        \"RequestId\": \"98535882-57b3-4f26-a506-a3ce68d2269b\"\n    }\n}",
+        "title": "查看MCPServer 详情"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayMCPServerACL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayMCPServerACL\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-********\",\n    \"ServerId\": \"********-****-****-****-************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ACLConsumerGroups\": [\n                {\n                    \"Id\": \"cg-**************\",\n                    \"Name\": \"默认消费者组\"\n                }\n            ],\n            \"ACLConsumers\": [\n                {\n                    \"Id\": \"********-****-****-****-************\",\n                    \"Name\": \"****\"\n                }\n            ],\n            \"ACLType\": \"Deny\",\n            \"AuthType\": \"None\"\n        },\n        \"RequestId\": \"e392e2bd-d7dd-469e-b04f-f33d774e27e0\"\n    }\n}",
+        "title": "查看MCP服务黑白名单鉴权规则"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayMCPServerAuth": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayMCPServerAuth\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-********\",\n    \"ServerId\": \"204f2888-7b53-4499-9061-24e623b2bdbd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"AuthType\": \"ApiKey\"\n        },\n        \"RequestId\": \"7ff301e6-8ac5-4c8d-b117-986b71b708c9\"\n    }\n}",
+        "title": "查询MCP服务认证配置"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayMCPServerList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayMCPServerList\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-3fbee12c\",\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DataList\": [\n                {\n                    \"CreateTime\": \"2026-04-14 17:38:00\",\n                    \"Description\": \"\",\n                    \"DisplayName\": \"gitee\",\n                    \"MCPEndpoint\": \"/mcpservers/gitee/mcp\",\n                    \"Name\": \"gitee\",\n                    \"RetryCount\": 3,\n                    \"ServerId\": \"c47474e8-a1f0-4945-8b6e-2364a98beb49\",\n                    \"ServerType\": \"MCP\",\n                    \"Timeout\": 3000,\n                    \"Transport\": \"StreamableHttp\",\n                    \"UpdateTime\": \"2026-04-14 17:38:00\",\n                    \"UpstreamInfo\": {\n                        \"Host\": \"api.gitee.com\",\n                        \"MCPEndpoint\": \"/mcp\",\n                        \"Port\": 443,\n                        \"Protocol\": \"https\"\n                    },\n                    \"UpstreamType\": \"HostIP\"\n                }\n            ],\n            \"TotalCount\": 4\n        },\n        \"RequestId\": \"39188583-9f3f-42cf-bac1-fdf154f32955\"\n    }\n}",
+        "title": "查询MCP Server 列表"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayMCPTool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayMCPTool\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-545fe799\",\n    \"ServerId\": \"865e3a7d-54da-469c-82eb-a63b09d8f47f\",\n    \"ToolId\": \"3aab6316-69bb-4610-b10c-479c9320f1b0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"28fc33b6-4ad0-43e1-923b-4c011e563026\"\n    }\n}",
+        "title": "查询 MCP 工具详情"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayMCPToolACLList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayMCPToolACLList\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-********\",\n    \"ServerId\": \"********-****-****-****-************\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Keyword\": \"mcp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ACLType\": \"Deny\",\n            \"DataList\": [],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"92ba1ffc-4c82-47fd-9272-e3d75bfa866b\"\n    }\n}",
+        "title": "查看 MCP Server Tool ACL 列表"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayMCPToolList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayMCPToolList\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-545fe799\",\n    \"ServerId\": \"865e3a7d-54da-469c-82eb-a63b09d8f47f\",\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DataList\": [\n                {\n                    \"ContentType\": \"application/json\",\n                    \"CreateTime\": \"2026-04-15 09:44:41\",\n                    \"Description\": \"创建订单\",\n                    \"DisplayName\": \"创建订单\",\n                    \"InputParams\": [\n                        {\n                            \"Description\": \"id\",\n                            \"Name\": \"id\",\n                            \"Position\": \"query\",\n                            \"Required\": true,\n                            \"Type\": \"string\"\n                        }\n                    ],\n                    \"Method\": \"POST\",\n                    \"Name\": \"create_order\",\n                    \"Path\": \"/api/orders\",\n                    \"ServiceId\": \"\",\n                    \"ToolId\": \"3aab6316-69bb-4610-b10c-479c9320f1b0\",\n                    \"UpdateTime\": \"2026-04-15 09:46:32\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"d0351c51-ab4a-4d08-b262-20029c1b6b10\"\n    }\n}",
+        "title": "查询MCP Tool 列表"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewaySecretKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"SecretKeyId\": \"secret-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8edcd3b9-68fd-42a9-bba3-d38e17ee4777\",\n        \"Result\": {\n            \"BindCount\": 0,\n            \"CreateTime\": \"2025-11-19 10:39:44\",\n            \"Description\": \"密钥描述\",\n            \"GenerateType\": \"System\",\n            \"KmsKeyName\": \"\",\n            \"KmsKeyVersion\": \"\",\n            \"ModifyTime\": \"2025-11-19 16:04:39\",\n            \"Name\": \"密钥11\",\n            \"ResourceType\": \"Consumer\",\n            \"SecretKeyId\": \"secret-xxxx\",\n            \"SecretType\": \"ApiKey\",\n            \"SecretValue\": \"sk-****ptz\",\n            \"Status\": \"Enable\"\n        }\n    }\n}",
+        "title": "查询密钥详情"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewaySecretKeyValue": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewaySecretKeyValue\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"SecretKeyId\": \"secret-c75001b1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"07313ba2-08a8-4933-9cd6-00052ffdd79a\",\n        \"Result\": \"sk-xxxxxxxx\"\n    }\n}",
+        "title": "查询密钥值"
+      }
+    ],
+    "ModifyCloudNativeAPIGatewayConsumer": [
+      {
+        "document": "修改消费者信息",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayConsumer\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-e0e9a565\",\n    \"ConsumerId\": \"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\",\n    \"Name\": \"消费者1\",\n    \"Description\": \"消费者描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d793cfa-f682-47f8-b92d-0cb656c75c42\"\n    }\n}",
+        "title": "修改消费者信息"
+      }
+    ],
+    "ModifyCloudNativeAPIGatewayConsumerGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayConsumerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ConsumerGroupId\": \"cg-6021c8b0\",\n    \"Name\": \"消费者组\",\n    \"Description\": \"消费者分组描述\",\n    \"Status\": \"Disable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"905b39a5-5165-4d80-a338-1a1b63f28f34\"\n    }\n}",
+        "title": "修改消费者分组"
+      }
+    ],
+    "ModifyCloudNativeAPIGatewayLLMModelAPI": [
+      {
+        "document": "修改模型 API",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayLLMModelAPI\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-2abb07bf\",\n    \"ModelAPIId\": \"323e58bceacf4128823c60c93bbe9ca1\",\n    \"Name\": \"test1\",\n    \"BasePath\": \"/test1\",\n    \"Description\": \"\",\n    \"MatchHeaders\": [],\n    \"EnableCrossServiceFallback\": true,\n    \"CrossServiceFallbackConfig\": {\n        \"TriggerConditions\": [\n            \"ServiceUnavailable\"\n        ],\n        \"FallbackServiceChain\": [\n            {\n                \"ModelServiceId\": \"3dcaac5d48cc4d39a8ed79937fe720c6\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"9b9acb5f-9230-4a4b-abcb-180211952df0\"\n    }\n}",
+        "title": "修改模型 API"
+      }
+    ],
+    "ModifyCloudNativeAPIGatewayLLMModelService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayLLMModelService\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-01f976d0\",\n    \"ModelServiceId\": \"843a043a19d445a8a27e5be0fd182a0c\",\n    \"Name\": \"qwen\",\n    \"ModelSelector\": \"PassThrough\",\n    \"EnableModelParamCheck\": false,\n    \"Description\": \"\",\n    \"UpstreamURL\": \"https://dashscope.aliyuncs.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"ec1c252b-1306-42d5-9ad1-368f76aade3f\"\n    }\n}",
+        "title": "修改模型服务"
+      }
+    ],
+    "ModifyCloudNativeAPIGatewayMCPServer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayMCPServer\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c67671ec\",\n    \"DisplayName\": \"dev\",\n    \"ServerId\": \"d49b1959-f847-4012-8af8-e286aa360ee8\",\n    \"UpstreamType\": \"HostIP\",\n    \"Timeout\": 3000,\n    \"RetryCount\": 3,\n    \"UpstreamInfo\": {\n        \"ServiceId\": \"4e141ac6-f0cd-4d35-80f0-75e47f5d56a6\"\n    },\n    \"Description\": \"开发 mcp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f3d825c4-8ef1-4209-accf-f18e615c3923\"\n    }\n}",
+        "title": "修改MCP 服务"
+      }
+    ],
+    "ModifyCloudNativeAPIGatewayMCPServerACL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayMCPServerACL\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-********\",\n    \"ServerId\": \"********-****-****-****-************\",\n    \"ACLType\": \"Deny\",\n    \"ACLConsumerIds\": [\n        \"********-****-****-****-************\"\n    ],\n    \"ACLConsumerGroupIds\": [\n        \"cg-**************\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f6d1ce10-18d7-441e-a80e-75c82e8e1758\"\n    }\n}",
+        "title": "更新MCP服务黑白名单鉴权规则"
+      }
+    ],
+    "ModifyCloudNativeAPIGatewayMCPServerAuth": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayMCPServerAuth\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-********\",\n    \"ServerId\": \"204f2888-7b53-4499-9061-24e623b2bdbd\",\n    \"AuthType\": \"ApiKey\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d892b099-5093-40e5-b2bf-7bcae3d9792b\"\n    }\n}",
+        "title": "修改MCP服务认证配置"
+      }
+    ],
+    "ModifyCloudNativeAPIGatewayMCPServerStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayMCPServerStatus\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-46a97dc8\",\n    \"ServerId\": \"18845314-b041-4364-b091-af9ee6086c54\",\n    \"Status\": \"Offline\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"1f1fbc53-f4c3-4498-8009-6af6c59f73f2\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "ModifyCloudNativeAPIGatewayMCPTool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayMCPTool\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-46a97dc8\",\n    \"ServerId\": \"18845314-b041-4364-b091-af9ee6086c54\",\n    \"ToolId\": \"9bc61b25-7eec-4812-b81a-d39457e2980d\",\n    \"Name\": \"talent\",\n    \"Path\": \"/get\",\n    \"ContentType\": \"application/json\",\n    \"Method\": \"GET\",\n    \"DisplayName\": \"展示\",\n    \"Description\": \"真是个天才\",\n    \"ToolVersion\": \"2026052757\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"05a48f1c-5c3d-4dcc-b2f2-4e673ac35f2a\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "ModifyCloudNativeAPIGatewayMCPToolACL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayMCPToolACL\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-********\",\n    \"ServerId\": \"204f2888-7b53-4499-9061-24e623b2bdbd\",\n    \"ToolId\": \"f15f49c3-4c99-4930-bd4b-7284f74dda0d\",\n    \"ACLType\": \"Allow\",\n    \"ACLConsumerIds\": [\n        \"ef504000-a818-4e95-97e2-563e236fa26f\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"18e46cf4-3129-4dc5-84f5-f27f88e6bfff\"\n    }\n}",
+        "title": "修改MCP工具鉴权配置"
+      }
+    ],
+    "ModifyCloudNativeAPIGatewayMCPToolStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayMCPToolStatus\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-46a97dc8\",\n    \"ServerId\": \"18845314-b041-4364-b091-af9ee6086c54\",\n    \"Status\": \"Enable\",\n    \"ToolId\": \"9bc61b25-7eec-4812-b81a-d39457e2980d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"c9f70c79-35ca-462c-aa8f-45e89c6c67ff\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "ModifyCloudNativeAPIGatewaySecretKey": [
+      {
+        "document": "修改密钥",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"Name\": \"密钥11\",\n    \"SecretKeyId\": \"secret-xxx\",\n    \"Description\": \"秘钥描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"09b30d12-03bf-4631-aa09-4d5a1a4c18e0\"\n    }\n}",
+        "title": "修改密钥"
+      }
+    ],
+    "RemoveCloudNativeAPIGatewayConsumerGroupAuth": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveCloudNativeAPIGatewayConsumerGroupAuth\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-1b59c523\",\n    \"ResourceType\": \"ModelAPI\",\n    \"ResourceId\": \"e3aa4fe271c24bb4aa7cca41db5a4e75\",\n    \"ConsumerGroupIds\": [\n        \"cg-d4fbcc88676d50\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2eb7e299-cd5c-4aaf-bbb2-b02ca61a5d49\"\n    }\n}",
+        "title": "从模型API里解除分组授权"
+      }
+    ],
+    "RemoveCloudNativeAPIGatewayConsumerInGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveCloudNativeAPIGatewayConsumerInGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ConsumerGroupId\": \"cg-6021c8b0\",\n    \"ConsumerIds\": [\n        \"consumer-d6cdf6af\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14e46e9e-fa3d-4bdc-86bc-b73a8a69239c\"\n    }\n}",
+        "title": "从消费者组里移除消费者"
+      }
+    ],
+    "UnbindCloudNativeAPIGatewaySecretKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewaySecretKeyRef\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ResourceType\": \"Consumer\",\n    \"ResourceIds\": [\n        \"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\"\n    ],\n    \"SecretKeyId\": \"secret-3bc27fec\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fe5e247d-cab5-4ddc-a02c-4b50e0966fed\"\n    }\n}",
+        "title": "解绑密钥"
+      }
+    ]
+  },
+  "version": "1.0"
+}

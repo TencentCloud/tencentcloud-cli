@@ -406,6 +406,13 @@
       "output": "DescribeLogsResponse",
       "status": "online"
     },
+    "DescribeNDRAssetIdentificationCursorList": {
+      "document": "DescribeNDRAssetIdentificationCursorList - 游标获取NDR资产识别结果列表",
+      "input": "DescribeNDRAssetIdentificationCursorListRequest",
+      "name": "游标获取NDR资产识别结果列表",
+      "output": "DescribeNDRAssetIdentificationCursorListResponse",
+      "status": "online"
+    },
     "DescribeNDRAssetIdentificationList": {
       "document": "DescribeNDRAssetIdentificationList - 获取NDR资产识别结果列表",
       "input": "DescribeNDRAssetIdentificationListRequest",
@@ -7871,6 +7878,81 @@
           "name": "AppProtocolList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNDRAssetIdentificationCursorListRequest": {
+      "document": "DescribeNDRAssetIdentificationCursorList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>每页条数</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页游标</p><p>前一页返回的NextCursor</p>",
+          "example": "eyJ2IjoxLCJzY29wZSI6IkRlc2NyaWJlTkRSQXNzZX",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询过滤条件，多个条件之间为AND的关系</p>",
+          "example": "无",
+          "member": "OperatorFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNDRAssetIdentificationCursorListResponse": {
+      "document": "DescribeNDRAssetIdentificationCursorList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询结果列表</p>",
+          "example": "无",
+          "member": "NDRAssetServiceInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下一页游标</p>",
+          "example": "eyJ2IjoxLCJzY29wZSI6IkRlc2NyaWJlTkRSQXNzZXRJZGVudGlmaWNhdGlvbkN1cnNvck",
+          "member": "string",
+          "name": "NextCursor",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否存在更多数据</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HasMore",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         },
         {

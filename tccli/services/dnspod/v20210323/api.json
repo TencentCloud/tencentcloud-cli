@@ -1266,8 +1266,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>套餐类型：<br>DP_PLUS：专业版<br>DP_EXPERT：企业版<br>DP_ULTRA：尊享版</p><p>增值服务类型<br>LB：负载均衡<br>URL：URL转发<br>DMONITOR_TASKS：D监控任务数<br>DMONITOR_IP：D监控备用 IP 数<br>CUSTOMLINE：自定义线路数</p>",
-          "example": "DP_EXPERT",
+          "document": "<p>套餐类型 或 增值服务类型</p><p>枚举值：</p><ul><li>DP_PLUS： 专业版</li><li>DP_EXPERT： 企业版</li><li>DP_ULTRA： 尊享版</li><li>LB： 负载均衡</li><li>URL： URL转发</li><li>DMONITOR_TASKS： D监控任务数</li><li>DMONITOR_IP： D监控备用 IP 数</li><li>CUSTOMLINE： 自定义线路数</li></ul><p>升级场景，需传入当前域名绑定的套餐类型</p>",
+          "example": "DP_ULTRA",
           "member": "string",
           "name": "GoodsChildType",
           "required": true,
@@ -1294,7 +1294,7 @@
         {
           "disabled": false,
           "document": "<p>需要绑定套餐的域名，如 dnspod.cn，如果是续费或升级，domain 参数必须要传，新购可不传。</p>",
-          "example": "qqqqq.asia",
+          "example": "*****.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -1336,7 +1336,7 @@
         {
           "disabled": false,
           "document": "<p>大订单号，一个大订单号下可以有多个子订单，说明是同一次下单</p>",
-          "example": "20260112880021950228161",
+          "example": "20260112880021950185241",
           "member": "string",
           "name": "BigDealId",
           "output_required": true,
@@ -1367,7 +1367,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "询价类型，1 新购，2 续费，3 套餐升级（增值服务暂时只支持新购）",
+          "document": "<p>询价类型，1 新购，2 续费，3 套餐升级（增值服务暂时只支持新购）</p>",
           "example": "1",
           "member": "uint64",
           "name": "DealType",
@@ -1376,7 +1376,7 @@
         },
         {
           "disabled": false,
-          "document": "商品类型，1 域名套餐 2 增值服务",
+          "document": "<p>商品类型，1 域名套餐 2 增值服务</p>",
           "example": "1",
           "member": "uint64",
           "name": "GoodsType",
@@ -1385,7 +1385,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐类型：\nDP_PLUS：专业版\nDP_EXPERT：企业版\nDP_ULTRA：尊享版\n\n增值服务类型\nLB：负载均衡\nURL：URL转发\nDMONITOR_TASKS：D监控任务数\nDMONITOR_IP：D监控备用 IP 数\nCUSTOMLINE：自定义线路数",
+          "document": "<p>套餐类型 或 增值服务类型</p><p>枚举值：</p><ul><li>DP_PLUS： 专业版</li><li>DP_EXPERT： 企业版</li><li>DP_ULTRA： 尊享版</li><li>LB： 负载均衡</li><li>URL： URL转发</li><li>DMONITOR_TASKS： D监控任务数</li><li>DMONITOR_IP： D监控备用 IP 数</li><li>CUSTOMLINE： 自定义线路数</li></ul><p>升级场景，需传入当前域名绑定的套餐类型</p>",
           "example": "DP_PLUS",
           "member": "string",
           "name": "GoodsChildType",
@@ -1394,7 +1394,7 @@
         },
         {
           "disabled": false,
-          "document": "增值服务购买数量，如果是域名套餐固定为1，如果是增值服务则按以下规则：\n负载均衡、D监控任务数、D监控备用 IP 数、自定义线路数、URL 转发（必须是5的正整数倍，如 5、10、15 等）",
+          "document": "<p>增值服务购买数量，如果是域名套餐固定为1，如果是增值服务则按以下规则：<br>负载均衡、D监控任务数、D监控备用 IP 数、自定义线路数、URL 转发（必须是5的正整数倍，如 5、10、15 等）</p>",
           "example": "1",
           "member": "uint64",
           "name": "GoodsNum",
@@ -1403,7 +1403,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自动续费，1 开启，2 不开启（增值服务暂不支持自动续费），默认值为 2 不开启",
+          "document": "<p>是否开启自动续费，1 开启，2 不开启（增值服务暂不支持自动续费），默认值为 2 不开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "AutoRenew",
@@ -1412,8 +1412,8 @@
         },
         {
           "disabled": false,
-          "document": "需要绑定套餐的域名，如 dnspod.cn，如果是续费或升级，domain 参数必须要传，新购可不传。",
-          "example": "testses.com",
+          "document": "<p>需要绑定套餐的域名，如 dnspod.cn，如果是续费或升级，domain 参数必须要传，新购可不传。</p>",
+          "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -1421,7 +1421,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐时长：\n1. 套餐以月为单位（按月只能是 3、6 还有 12 的倍数），套餐例如购买一年则传12，最大120 。（续费最低一年）\n2. 升级套餐时不需要传。\n3. 增值服务的时长单位为年，买一年传1（增值服务新购按年只能是 1，增值服务续费最大为 10）",
+          "document": "<p>套餐时长：</p><ol><li>套餐以月为单位（按月只能是 3、6 还有 12 的倍数），套餐例如购买一年则传12，最大120 。（续费最低一年）</li><li>升级套餐时不需要传。</li><li>增值服务的时长单位为年，买一年传1（增值服务新购按年只能是 1，增值服务续费最大为 10）</li></ol>",
           "example": "3",
           "member": "uint64",
           "name": "TimeSpan",
@@ -1430,7 +1430,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐类型，需要升级到的套餐类型，只有升级时需要。",
+          "document": "<p>套餐类型，需要升级到的套餐类型，只有升级时需要。</p>",
           "example": "DP_EXTRA",
           "member": "string",
           "name": "NewPackageType",
@@ -1445,7 +1445,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "大订单号，一个大订单号下可以有多个子订单，说明是同一次下单",
+          "document": "<p>大订单号，一个大订单号下可以有多个子订单，说明是同一次下单</p>",
           "example": "20170101122341",
           "member": "string",
           "name": "BigDealId",
@@ -1455,7 +1455,7 @@
         },
         {
           "disabled": false,
-          "document": "子订单列表",
+          "document": "<p>子订单列表</p>",
           "example": "无",
           "member": "Deals",
           "name": "DealList",

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli eb UpdateEventBus --cli-unfold-argument  \
-    --EventBusName test111 \
-    --EventBusId eb-l65vlc2
+    --EventBusName EventBusName \
+    --EventBusId eb-l6***c2
 ```
 
 Output: 

@@ -14,7 +14,8 @@ tccli wedata ModifyRuleTemplate --cli-unfold-argument  \
     --TemplateId 1 \
     --Type 1 \
     --SourceObjectType 1 \
-    --Description 描述
+    --Description 数据质量规则模板描述 \
+    --ProjectId 1934035434134845
 ```
 
 Output: 

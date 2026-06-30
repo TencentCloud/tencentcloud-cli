@@ -2854,7 +2854,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "可用区",
           "example": "ap-guangzhou-3",
           "member": "string",
@@ -19337,7 +19337,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "可用区。\n说明：请正确输入集群所在的主可用区，若输入非集群所在的主可用区可能显示调用成功，但实际执行会失败。",
           "example": "ap-guangzhou-3",
           "member": "string",
@@ -26829,7 +26829,7 @@
         {
           "disabled": false,
           "document": "<p>集群自动暂停的延迟，单位秒，可选范围[600,691200]，默认600</p>",
-          "example": "100",
+          "example": "600",
           "member": "int64",
           "name": "AutoPauseDelay",
           "required": false,
@@ -30064,12 +30064,12 @@
       "usage": "in"
     },
     "QueryFilter": {
-      "document": "查询过滤器",
+      "document": "查询过滤器。用于 DescribeClusterAndInstances 接口的过滤条件。",
       "members": [
         {
           "disabled": false,
-          "document": "搜索字符串",
-          "example": "[\"1723\"]",
+          "document": "字段值列表，与 Names 一一对应。InstanceId/ClusterId 为精确匹配，InstanceName 默认模糊匹配",
+          "example": "[\"cynosdbmysql-ins-abcd1234\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -30077,16 +30077,16 @@
         },
         {
           "disabled": false,
-          "document": "搜索字段，目前支持：\"InstanceId\", \"ProjectId\", \"InstanceName\", \"Vip\"",
-          "example": "[\"projectId\"]",
+          "document": "搜索字段名称列表，仅支持以下 3 个字段（不区分大小写，多个值为 OR 关系）：ClusterId（按集群 ID 过滤，精确匹配）、InstanceId（按实例 ID 反查所属集群）、InstanceName（按实例名称反查所属集群，默认 LIKE 模糊匹配，ExactMatch=true 时精确匹配）。InstanceId 与 InstanceName 同时传入时取交集（AND 语义）。",
+          "example": "[\"InstanceId\"]",
           "member": "string",
           "name": "Names",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
           "disabled": false,
-          "document": "是否精确匹配",
+          "document": "是否精确匹配。仅对 InstanceName 生效：true 精确匹配，false（默认）LIKE 模糊匹配。",
           "example": "false",
           "member": "bool",
           "name": "ExactMatch",
@@ -30095,8 +30095,8 @@
         },
         {
           "disabled": false,
-          "document": "搜索字段",
-          "example": "projectId",
+          "document": "搜索字段名称（单个字段模式，与 Names 二选一）。支持：ClusterId、InstanceId、InstanceName",
+          "example": "InstanceId",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -30104,8 +30104,8 @@
         },
         {
           "disabled": true,
-          "document": "操作符",
-          "example": "1000****4352",
+          "document": "操作符（预留字段，当前未启用）。可选值：>、>=、!=、=、<、<=",
+          "example": "=",
           "member": "string",
           "name": "Operator",
           "required": false,

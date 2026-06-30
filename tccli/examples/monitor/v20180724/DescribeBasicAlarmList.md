@@ -26,38 +26,39 @@ Output:
             {
                 "Id": 1,
                 "ProjectId": 0,
-                "ProjectName": "abc",
+                "ProjectName": "默认项目",
                 "Status": 0,
-                "AlarmStatus": "abc",
-                "GroupId": 0,
-                "GroupName": "abc",
-                "FirstOccurTime": "abc",
-                "Duration": 0,
-                "LastOccurTime": "abc",
-                "Content": "abc",
-                "ObjName": "abc",
-                "ObjId": "abc",
-                "ViewName": "abc",
-                "Vpc": "abc",
-                "MetricId": 0,
-                "MetricName": "abc",
+                "AlarmStatus": "未恢复",
+                "GroupId": 12345,
+                "GroupName": "cpu",
+                "FirstOccurTime": "2026-06-26 10:15:30",
+                "Duration": 300,
+                "LastOccurTime": "2026-06-26 10:20:30",
+                "Content": "CPU利用率超过90%，当前值95.2%",
+                "ObjName": "ins-a1b2c3d4",
+                "ObjId": "ins-a1b2c3d4",
+                "ViewName": "cvm_device",
+                "Vpc": "vpc-12345678",
+                "MetricId": 5000,
+                "MetricName": "cpu_usage",
                 "AlarmType": 0,
-                "Region": "abc",
-                "Dimensions": "abc",
+                "Region": "ap-guangzhou",
+                "Dimensions": "{\"unInstanceId\":\"ins-a1b2c3d4\"}",
                 "NotifyWay": [
-                    "abc"
+                    "SMS",
+                    "EMAIL"
                 ],
                 "InstanceGroup": [
                     {
-                        "InstanceGroupId": 0,
-                        "InstanceGroupName": "abc"
+                        "InstanceGroupId": 6789,
+                        "InstanceGroupName": "生产环境-Web服务器组"
                     }
                 ]
             }
         ],
-        "Total": 0,
-        "Warning": "abc",
-        "RequestId": "abc"
+        "Total": 1,
+        "Warning": "",
+        "RequestId": "3a5f7e2d-8b1c-4d6a-9e0f-1a2b3c4d5e6f"
     }
 }
 ```

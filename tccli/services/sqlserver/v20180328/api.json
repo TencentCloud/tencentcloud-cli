@@ -2433,7 +2433,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取",
+          "document": "<p>实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -2442,7 +2442,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的CPU核心数",
+          "document": "<p>实例的CPU核心数</p>",
           "example": "2",
           "member": "uint64",
           "name": "Cpu",
@@ -2451,7 +2451,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存大小，单位GB",
+          "document": "<p>实例内存大小，单位GB</p>",
           "example": "2",
           "member": "uint64",
           "name": "Memory",
@@ -2460,7 +2460,7 @@
         },
         {
           "disabled": false,
-          "document": "实例磁盘大小，单位GB",
+          "document": "<p>实例磁盘大小，单位GB</p>",
           "example": "20",
           "member": "uint64",
           "name": "Storage",
@@ -2469,7 +2469,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC子网ID，形如subnet-bdoe83fa",
+          "document": "<p>VPC子网ID，形如subnet-bdoe83fa</p>",
           "example": "subnet-pudyecyk",
           "member": "string",
           "name": "SubnetId",
@@ -2478,7 +2478,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC网络ID，形如vpc-dsp338hz",
+          "document": "<p>VPC网络ID，形如vpc-dsp338hz</p>",
           "example": "vpc-huew581t",
           "member": "string",
           "name": "VpcId",
@@ -2487,7 +2487,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例的宿主机类型，CLOUD_PREMIUM-虚拟机高性能云硬盘，CLOUD_SSD-虚拟机SSD云硬盘,CLOUD_HSSD-虚拟机增强型SSD云硬盘，CLOUD_BSSD-虚拟机通用型SSD云盘",
+          "document": "<p>购买实例的宿主机类型，CLOUD_PREMIUM-虚拟机高性能云硬盘，CLOUD_SSD-虚拟机SSD云硬盘,CLOUD_HSSD-虚拟机增强型SSD云硬盘，CLOUD_BSSD-虚拟机通用型SSD云盘</p>",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "MachineType",
@@ -2496,7 +2496,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。",
+          "document": "<p>付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。</p>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -2505,7 +2505,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "0",
           "member": "uint64",
           "name": "ProjectId",
@@ -2514,7 +2514,7 @@
         },
         {
           "disabled": false,
-          "document": "本次购买几个实例，默认值为1。取值不超过10",
+          "document": "<p>本次购买几个实例，默认值为1。取值不超过10</p>",
           "example": "1",
           "member": "uint64",
           "name": "GoodsNum",
@@ -2523,7 +2523,7 @@
         },
         {
           "disabled": false,
-          "document": "sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。",
+          "document": "<p>sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。</p>",
           "example": "2008R2",
           "member": "string",
           "name": "DBVersion",
@@ -2532,7 +2532,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例周期，默认取值为1，表示一个月。取值不超过48",
+          "document": "<p>购买实例周期，默认取值为1，表示一个月。取值不超过48</p>",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -2541,8 +2541,8 @@
         },
         {
           "disabled": false,
-          "document": "安全组列表，填写形如sg-xxx的安全组ID",
-          "example": "sg-xxx",
+          "document": "<p>安全组列表，填写形如sg-xxx的安全组ID</p>",
+          "example": "[\"sg-xxx\"]",
           "member": "string",
           "name": "SecurityGroupList",
           "required": false,
@@ -2550,7 +2550,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。",
+          "document": "<p>自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。</p>",
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -2559,7 +2559,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动使用代金券；1 - 是，0 - 否，默认不使用",
+          "document": "<p>是否自动使用代金券；1 - 是，0 - 否，默认不使用</p>",
           "example": "2",
           "member": "int64",
           "name": "AutoVoucher",
@@ -2568,8 +2568,8 @@
         },
         {
           "disabled": false,
-          "document": "代金券ID数组，目前单个订单只能使用一张",
-          "example": "VoucherIds",
+          "document": "<p>代金券ID数组，目前单个订单只能使用一张</p>",
+          "example": "[\"VoucherIds\"]",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -2577,8 +2577,8 @@
         },
         {
           "disabled": false,
-          "document": "可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末",
-          "example": "[\"1\\n\"]",
+          "document": "<p>可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末</p>",
+          "example": "[1]",
           "member": "int64",
           "name": "Weekly",
           "required": false,
@@ -2586,7 +2586,7 @@
         },
         {
           "disabled": false,
-          "document": "可维护时间窗配置，每天可维护的开始时间",
+          "document": "<p>可维护时间窗配置，每天可维护的开始时间</p>",
           "example": "00:00",
           "member": "string",
           "name": "StartTime",
@@ -2595,7 +2595,7 @@
         },
         {
           "disabled": false,
-          "document": "可维护时间窗配置，持续时间，单位：小时",
+          "document": "<p>可维护时间窗配置，持续时间，单位：小时</p>",
           "example": "6",
           "member": "int64",
           "name": "Span",
@@ -2604,8 +2604,8 @@
         },
         {
           "disabled": false,
-          "document": "新建实例绑定的标签集合",
-          "example": "[{\"TagKey\": \"created-by\",\"TagValue\": \"andy\"}]",
+          "document": "<p>新建实例绑定的标签集合</p>",
+          "example": "无",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "required": false,
@@ -2613,7 +2613,7 @@
         },
         {
           "disabled": false,
-          "document": "系统字符集排序规则，默认：Chinese_PRC_CI_AS",
+          "document": "<p>系统字符集排序规则，默认：Chinese_PRC_CI_AS</p>",
           "example": "Chinese_PRC_CI_AS",
           "member": "string",
           "name": "Collation",
@@ -2622,7 +2622,7 @@
         },
         {
           "disabled": false,
-          "document": "系统时区，默认：China Standard Time",
+          "document": "<p>系统时区，默认：China Standard Time</p>",
           "example": "China Standard Time",
           "member": "string",
           "name": "TimeZone",
@@ -2631,10 +2631,19 @@
         },
         {
           "disabled": false,
-          "document": "磁盘加密标识，0-不加密，1-加密",
+          "document": "<p>磁盘加密标识，0-不加密，1-加密</p>",
           "example": "0",
           "member": "int64",
           "name": "DiskEncryptFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外磁盘 IO 吞吐量，仅 CLOUD_HSSD 支持</p><p>取值范围：[0, 650]</p><p>单位：MB/s</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "ThroughputPerformance",
           "required": false,
           "type": "int"
         }
@@ -2646,7 +2655,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单名称",
+          "document": "<p>订单名称</p>",
           "example": "20200713383000001111250",
           "member": "string",
           "name": "DealName",
@@ -2915,7 +2924,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取",
+          "document": "<p>实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -2924,7 +2933,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存大小，单位GB",
+          "document": "<p>实例内存大小，单位GB</p>",
           "example": "2",
           "member": "int64",
           "name": "Memory",
@@ -2933,7 +2942,7 @@
         },
         {
           "disabled": false,
-          "document": "实例磁盘大小，单位GB",
+          "document": "<p>实例磁盘大小，单位GB</p>",
           "example": "100",
           "member": "int64",
           "name": "Storage",
@@ -2942,7 +2951,7 @@
         },
         {
           "disabled": false,
-          "document": "实例核心数",
+          "document": "<p>实例核心数</p>",
           "example": "2",
           "member": "uint64",
           "name": "Cpu",
@@ -2951,7 +2960,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例的宿主机磁盘类型,CLOUD_HSSD-虚拟机加强型SSD云盘，CLOUD_TSSD-虚拟机极速型SSD云盘，CLOUD_BSSD-虚拟机通用型SSD云盘",
+          "document": "<p>购买实例的宿主机磁盘类型,CLOUD_HSSD-虚拟机加强型SSD云盘，CLOUD_TSSD-虚拟机极速型SSD云盘，CLOUD_BSSD-虚拟机通用型SSD云盘</p>",
           "example": "CLOUD_BSSD",
           "member": "string",
           "name": "MachineType",
@@ -2960,7 +2969,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。",
+          "document": "<p>付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。</p>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -2969,7 +2978,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1003",
           "member": "int64",
           "name": "ProjectId",
@@ -2978,7 +2987,7 @@
         },
         {
           "disabled": false,
-          "document": "本次购买几个实例，默认值为1。取值不超过10",
+          "document": "<p>本次购买几个实例，默认值为1。取值不超过10</p>",
           "example": "1",
           "member": "int64",
           "name": "GoodsNum",
@@ -2987,7 +2996,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置",
+          "document": "<p>VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置</p>",
           "example": "subnet-bdoe83fa",
           "member": "string",
           "name": "SubnetId",
@@ -2996,7 +3005,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置",
+          "document": "<p>VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置</p>",
           "example": "vpc-dsp338hz",
           "member": "string",
           "name": "VpcId",
@@ -3005,7 +3014,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例周期，默认取值为1，表示一个月。取值不超过48",
+          "document": "<p>购买实例周期，默认取值为1，表示一个月。取值不超过48</p>",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -3014,7 +3023,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动使用代金券；1 - 是，0 - 否，默认不使用",
+          "document": "<p>是否自动使用代金券；1 - 是，0 - 否，默认不使用</p>",
           "example": "0",
           "member": "int64",
           "name": "AutoVoucher",
@@ -3023,7 +3032,7 @@
         },
         {
           "disabled": false,
-          "document": "代金券ID数组，目前单个订单只能使用一张",
+          "document": "<p>代金券ID数组，目前单个订单只能使用一张</p>",
           "example": "VoucherIds",
           "member": "string",
           "name": "VoucherIds",
@@ -3032,8 +3041,8 @@
         },
         {
           "disabled": false,
-          "document": "sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。",
-          "example": "2008R2",
+          "document": "<p>sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2017。</p>",
+          "example": "2017",
           "member": "string",
           "name": "DBVersion",
           "required": false,
@@ -3041,7 +3050,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。",
+          "document": "<p>自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。</p>",
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -3050,7 +3059,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组列表，填写形如sg-xxx的安全组ID",
+          "document": "<p>安全组列表，填写形如sg-xxx的安全组ID</p>",
           "example": "sg-xxxx",
           "member": "string",
           "name": "SecurityGroupList",
@@ -3059,7 +3068,7 @@
         },
         {
           "disabled": false,
-          "document": "可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末",
+          "document": "<p>可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末</p>",
           "example": "1",
           "member": "int64",
           "name": "Weekly",
@@ -3068,7 +3077,7 @@
         },
         {
           "disabled": false,
-          "document": "可维护时间窗配置，每天可维护的开始时间",
+          "document": "<p>可维护时间窗配置，每天可维护的开始时间</p>",
           "example": "2020-04-09 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -3077,7 +3086,7 @@
         },
         {
           "disabled": false,
-          "document": "可维护时间窗配置，持续时间，单位：小时",
+          "document": "<p>可维护时间窗配置，持续时间，单位：小时</p>",
           "example": "2",
           "member": "int64",
           "name": "Span",
@@ -3086,8 +3095,8 @@
         },
         {
           "disabled": false,
-          "document": "是否跨可用区部署，默认值为false",
-          "example": "ture",
+          "document": "<p>是否跨可用区部署，默认值为false</p>",
+          "example": "true",
           "member": "bool",
           "name": "MultiZones",
           "required": false,
@@ -3095,7 +3104,7 @@
         },
         {
           "disabled": false,
-          "document": "新建实例绑定的标签集合",
+          "document": "<p>新建实例绑定的标签集合</p>",
           "example": "[{\"TagKey\": \"created-by\",\"TagValue\": \"andy\"}]",
           "member": "ResourceTag",
           "name": "ResourceTags",
@@ -3104,7 +3113,7 @@
         },
         {
           "disabled": false,
-          "document": "系统字符集排序规则，默认：Chinese_PRC_CI_AS",
+          "document": "<p>系统字符集排序规则，默认：Chinese_PRC_CI_AS</p>",
           "example": "Chinese_PRC_CI_AS",
           "member": "string",
           "name": "Collation",
@@ -3113,7 +3122,7 @@
         },
         {
           "disabled": false,
-          "document": "系统时区，默认：China Standard Time",
+          "document": "<p>系统时区，默认：China Standard Time</p>",
           "example": "China Standard Time",
           "member": "string",
           "name": "TimeZone",
@@ -3122,7 +3131,7 @@
         },
         {
           "disabled": false,
-          "document": "是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。",
+          "document": "<p>是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。</p>",
           "example": "false",
           "member": "bool",
           "name": "MultiNodes",
@@ -3131,7 +3140,7 @@
         },
         {
           "disabled": false,
-          "document": "备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。",
+          "document": "<p>备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。</p>",
           "example": "[\"ap-guangzhou-1\"]",
           "member": "string",
           "name": "DrZones",
@@ -3140,12 +3149,30 @@
         },
         {
           "disabled": false,
-          "document": "磁盘加密标识，0-不加密，1-加密",
+          "document": "<p>磁盘加密标识，0-不加密，1-加密</p>",
           "example": "0",
           "member": "int64",
           "name": "DiskEncryptFlag",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外磁盘 IO 性能，仅 CLOUD_HSSD 支持</p><p>取值范围：[0, 650]</p><p>单位：MB/s</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "ThroughputPerformance",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用性策略</p><p>枚举值：</p><ul><li>Async： 可用性优先（异步传输）</li><li>Sync： 可靠性优先（同步传输）</li></ul><p>默认值：Async</p><p>仅 AlwaysOn 双节点架构生效，单节点/多节点/MIRROR 架构忽略此参数</p>",
+          "example": "Async",
+          "member": "string",
+          "name": "AvailabilityStrategy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3155,7 +3182,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单名称",
+          "document": "<p>订单名称</p>",
           "example": "20200318114212",
           "member": "string",
           "name": "DealName",
@@ -3177,7 +3204,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主实例ID，格式如：mssql-3l3fgqn7",
+          "document": "<p>主实例ID，格式如：mssql-3l3fgqn7</p>",
           "example": "mssql-6upluvd5",
           "member": "string",
           "name": "InstanceId",
@@ -3186,7 +3213,7 @@
         },
         {
           "disabled": false,
-          "document": "实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取",
+          "document": "<p>实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取</p>",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
@@ -3195,7 +3222,7 @@
         },
         {
           "disabled": false,
-          "document": "只读组类型选项，1-按照一个实例一个只读组的方式发货，2-新建只读组后发货，所有实例都在这个只读组下面， 3-发货的所有实例都在已有的只读组下面",
+          "document": "<p>只读组类型选项，1-按照一个实例一个只读组的方式发货，2-新建只读组后发货，所有实例都在这个只读组下面， 3-发货的所有实例都在已有的只读组下面</p>",
           "example": "2",
           "member": "int64",
           "name": "ReadOnlyGroupType",
@@ -3204,7 +3231,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存大小，单位GB",
+          "document": "<p>实例内存大小，单位GB</p>",
           "example": "2",
           "member": "int64",
           "name": "Memory",
@@ -3213,7 +3240,7 @@
         },
         {
           "disabled": false,
-          "document": "实例磁盘大小，单位GB",
+          "document": "<p>实例磁盘大小，单位GB</p>",
           "example": "10",
           "member": "int64",
           "name": "Storage",
@@ -3222,7 +3249,7 @@
         },
         {
           "disabled": false,
-          "document": "实例核心数",
+          "document": "<p>实例核心数</p>",
           "example": "2",
           "member": "uint64",
           "name": "Cpu",
@@ -3231,7 +3258,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例的宿主机磁盘类型,CLOUD_HSSD-虚拟机加强型SSD云盘，CLOUD_TSSD-虚拟机极速型SSD云盘，CLOUD_BSSD-虚拟机通用型SSD云盘",
+          "document": "<p>购买实例的宿主机磁盘类型,CLOUD_HSSD-虚拟机加强型SSD云盘，CLOUD_TSSD-虚拟机极速型SSD云盘，CLOUD_BSSD-虚拟机通用型SSD云盘</p>",
           "example": "CLOUD_BSSD",
           "member": "string",
           "name": "MachineType",
@@ -3240,7 +3267,7 @@
         },
         {
           "disabled": false,
-          "document": "0-默认不升级主实例，1-强制升级主实例完成ro部署；主实例为非集群版时需要填1，强制升级为集群版。填1 说明您已同意将主实例升级到集群版实例。",
+          "document": "<p>0-默认不升级主实例，1-强制升级主实例完成ro部署；主实例为非集群版时需要填1，强制升级为集群版。填1 说明您已同意将主实例升级到集群版实例。</p>",
           "example": "1",
           "member": "int64",
           "name": "ReadOnlyGroupForcedUpgrade",
@@ -3249,7 +3276,7 @@
         },
         {
           "disabled": false,
-          "document": "ReadOnlyGroupType=3时必填,已存在的只读组ID",
+          "document": "<p>ReadOnlyGroupType=3时必填,已存在的只读组ID</p>",
           "example": "mssqlrg-dj5i29c5n",
           "member": "string",
           "name": "ReadOnlyGroupId",
@@ -3258,7 +3285,7 @@
         },
         {
           "disabled": false,
-          "document": "ReadOnlyGroupType=2时必填，新建的只读组名称",
+          "document": "<p>ReadOnlyGroupType=2时必填，新建的只读组名称</p>",
           "example": "default_name",
           "member": "string",
           "name": "ReadOnlyGroupName",
@@ -3267,7 +3294,7 @@
         },
         {
           "disabled": false,
-          "document": "ReadOnlyGroupType=2时必填，新建的只读组是否开启延迟剔除功能，1-开启，0-关闭。当只读副本与主实例延迟大于阈值后，自动剔除。",
+          "document": "<p>ReadOnlyGroupType=2时必填，新建的只读组是否开启延迟剔除功能，1-开启，0-关闭。当只读副本与主实例延迟大于阈值后，自动剔除。</p>",
           "example": "1",
           "member": "int64",
           "name": "ReadOnlyGroupIsOfflineDelay",
@@ -3276,7 +3303,7 @@
         },
         {
           "disabled": false,
-          "document": "ReadOnlyGroupType=2 且 ReadOnlyGroupIsOfflineDelay=1时必填，新建的只读组延迟剔除的阈值。",
+          "document": "<p>ReadOnlyGroupType=2 且 ReadOnlyGroupIsOfflineDelay=1时必填，新建的只读组延迟剔除的阈值。</p>",
           "example": "10",
           "member": "int64",
           "name": "ReadOnlyGroupMaxDelayTime",
@@ -3285,7 +3312,7 @@
         },
         {
           "disabled": false,
-          "document": "ReadOnlyGroupType=2 且 ReadOnlyGroupIsOfflineDelay=1时必填，新建的只读组延迟剔除后至少保留只读副本的个数。",
+          "document": "<p>ReadOnlyGroupType=2 且 ReadOnlyGroupIsOfflineDelay=1时必填，新建的只读组延迟剔除后至少保留只读副本的个数。</p>",
           "example": "1",
           "member": "int64",
           "name": "ReadOnlyGroupMinInGroup",
@@ -3294,7 +3321,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。",
+          "document": "<p>付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。</p>",
           "example": "POSTPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -3303,7 +3330,7 @@
         },
         {
           "disabled": false,
-          "document": "本次即将购买的实例数量，默认取值2。",
+          "document": "<p>本次即将购买的实例数量，默认取值2。</p>",
           "example": "2",
           "member": "int64",
           "name": "GoodsNum",
@@ -3312,7 +3339,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置",
+          "document": "<p>VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置</p>",
           "example": "subnet-gdy95gfs",
           "member": "string",
           "name": "SubnetId",
@@ -3321,7 +3348,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置",
+          "document": "<p>VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置</p>",
           "example": "vpc-3xq2t5al",
           "member": "string",
           "name": "VpcId",
@@ -3330,7 +3357,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例周期，默认取值为1，表示一个月。取值不超过48",
+          "document": "<p>购买实例周期，默认取值为1，表示一个月。取值不超过48</p>",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -3339,8 +3366,8 @@
         },
         {
           "disabled": false,
-          "document": "安全组列表，填写形如sg-xxx的安全组ID",
-          "example": "sg-xxx",
+          "document": "<p>安全组列表，填写形如sg-xxx的安全组ID</p>",
+          "example": "[\"sg-xxx\"]",
           "member": "string",
           "name": "SecurityGroupList",
           "required": false,
@@ -3348,7 +3375,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动使用代金券；1 - 是，0 - 否，默认不使用",
+          "document": "<p>是否自动使用代金券；1 - 是，0 - 否，默认不使用</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoVoucher",
@@ -3357,8 +3384,8 @@
         },
         {
           "disabled": false,
-          "document": "代金券ID数组，目前单个订单只能使用一张",
-          "example": "VoucherIds",
+          "document": "<p>代金券ID数组，目前单个订单只能使用一张</p>",
+          "example": "[\"VoucherIds\"]",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -3366,8 +3393,8 @@
         },
         {
           "disabled": false,
-          "document": "新建实例绑定的标签集合",
-          "example": "[{\"TagKey\": \"created-by\",\"TagValue\": \"andy\"}]",
+          "document": "<p>新建实例绑定的标签集合</p>",
+          "example": "无",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "required": false,
@@ -3375,7 +3402,7 @@
         },
         {
           "disabled": false,
-          "document": "系统字符集排序规则，默认：Chinese_PRC_CI_AS",
+          "document": "<p>系统字符集排序规则，默认：Chinese_PRC_CI_AS</p>",
           "example": "Chinese_PRC_CI_AS",
           "member": "string",
           "name": "Collation",
@@ -3384,7 +3411,7 @@
         },
         {
           "disabled": false,
-          "document": "系统时区，默认：China Standard Time",
+          "document": "<p>系统时区，默认：China Standard Time</p>",
           "example": "China Standard Time",
           "member": "string",
           "name": "TimeZone",
@@ -3393,10 +3420,19 @@
         },
         {
           "disabled": false,
-          "document": "磁盘加密标识，0-不加密，1-加密",
+          "document": "<p>磁盘加密标识，0-不加密，1-加密</p>",
           "example": "0",
           "member": "int64",
           "name": "DiskEncryptFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外磁盘 IO 吞吐量，仅 CLOUD_HSSD 支持</p><p>取值范围：[0, 650]</p><p>单位：MB/s</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ThroughputPerformance",
           "required": false,
           "type": "int"
         }
@@ -3408,7 +3444,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单名称数组",
+          "document": "<p>订单名称数组</p>",
           "example": "[\"20200722117963\"]",
           "member": "string",
           "name": "DealNames",
@@ -3430,7 +3466,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取",
+          "document": "<p>实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -3439,7 +3475,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存大小，单位GB",
+          "document": "<p>实例内存大小，单位GB</p>",
           "example": "2",
           "member": "int64",
           "name": "Memory",
@@ -3448,7 +3484,7 @@
         },
         {
           "disabled": false,
-          "document": "实例磁盘大小，单位GB",
+          "document": "<p>实例磁盘大小，单位GB</p>",
           "example": "100",
           "member": "int64",
           "name": "Storage",
@@ -3457,7 +3493,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。",
+          "document": "<p>付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。</p>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -3466,7 +3502,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1003",
           "member": "int64",
           "name": "ProjectId",
@@ -3475,7 +3511,7 @@
         },
         {
           "disabled": false,
-          "document": "本次购买几个实例，默认值为1。取值不超过10",
+          "document": "<p>本次购买几个实例，默认值为1。取值不超过10</p>",
           "example": "1",
           "member": "int64",
           "name": "GoodsNum",
@@ -3484,7 +3520,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置",
+          "document": "<p>VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置</p>",
           "example": "subnet-bdoe83fa",
           "member": "string",
           "name": "SubnetId",
@@ -3493,7 +3529,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置",
+          "document": "<p>VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置</p>",
           "example": "vpc-dsp338hz",
           "member": "string",
           "name": "VpcId",
@@ -3502,7 +3538,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例周期，默认取值为1，表示一个月。取值不超过48",
+          "document": "<p>购买实例周期，默认取值为1，表示一个月。取值不超过48</p>",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -3511,7 +3547,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动使用代金券；1 - 是，0 - 否，默认不使用",
+          "document": "<p>是否自动使用代金券；1 - 是，0 - 否，默认不使用</p>",
           "example": "0",
           "member": "int64",
           "name": "AutoVoucher",
@@ -3520,8 +3556,8 @@
         },
         {
           "disabled": false,
-          "document": "代金券ID数组，目前单个订单只能使用一张",
-          "example": "VoucherIds",
+          "document": "<p>代金券ID数组，目前单个订单只能使用一张</p>",
+          "example": "[\"VoucherIds\"]",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -3529,7 +3565,7 @@
         },
         {
           "disabled": false,
-          "document": "sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。",
+          "document": "<p>sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。</p>",
           "example": "2008R2",
           "member": "string",
           "name": "DBVersion",
@@ -3538,7 +3574,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。",
+          "document": "<p>自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。</p>",
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -3547,8 +3583,8 @@
         },
         {
           "disabled": false,
-          "document": "安全组列表，填写形如sg-xxx的安全组ID",
-          "example": "sg-xxxx",
+          "document": "<p>安全组列表，填写形如sg-xxx的安全组ID</p>",
+          "example": "[\"sg-xxx\"]",
           "member": "string",
           "name": "SecurityGroupList",
           "required": false,
@@ -3556,8 +3592,8 @@
         },
         {
           "disabled": false,
-          "document": "可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末",
-          "example": "1",
+          "document": "<p>可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末</p>",
+          "example": "[1]",
           "member": "int64",
           "name": "Weekly",
           "required": false,
@@ -3565,7 +3601,7 @@
         },
         {
           "disabled": false,
-          "document": "可维护时间窗配置，每天可维护的开始时间",
+          "document": "<p>可维护时间窗配置，每天可维护的开始时间</p>",
           "example": "2020-04-09 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -3574,7 +3610,7 @@
         },
         {
           "disabled": false,
-          "document": "可维护时间窗配置，持续时间，单位：小时",
+          "document": "<p>可维护时间窗配置，持续时间，单位：小时</p>",
           "example": "2",
           "member": "int64",
           "name": "Span",
@@ -3583,7 +3619,7 @@
         },
         {
           "disabled": false,
-          "document": "购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL",
+          "document": "<p>购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL</p>",
           "example": "DUAL",
           "member": "string",
           "name": "HAType",
@@ -3592,8 +3628,8 @@
         },
         {
           "disabled": false,
-          "document": "是否跨可用区部署，默认值为false",
-          "example": "ture",
+          "document": "<p>是否跨可用区部署，默认值为false</p>",
+          "example": "true",
           "member": "bool",
           "name": "MultiZones",
           "required": false,
@@ -3601,8 +3637,8 @@
         },
         {
           "disabled": false,
-          "document": "新建实例绑定的标签集合",
-          "example": "[{\"TagKey\": \"created-by\",\"TagValue\": \"andy\"}]",
+          "document": "<p>新建实例绑定的标签集合</p>",
+          "example": "无",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "required": false,
@@ -3610,7 +3646,7 @@
         },
         {
           "disabled": false,
-          "document": "系统字符集排序规则，默认：Chinese_PRC_CI_AS",
+          "document": "<p>系统字符集排序规则，默认：Chinese_PRC_CI_AS</p>",
           "example": "Chinese_PRC_CI_AS",
           "member": "string",
           "name": "Collation",
@@ -3619,7 +3655,7 @@
         },
         {
           "disabled": false,
-          "document": "系统时区，默认：China Standard Time",
+          "document": "<p>系统时区，默认：China Standard Time</p>",
           "example": "China Standard Time",
           "member": "string",
           "name": "TimeZone",
@@ -3628,7 +3664,7 @@
         },
         {
           "disabled": false,
-          "document": "是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。",
+          "document": "<p>是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。</p>",
           "example": "false",
           "member": "bool",
           "name": "MultiNodes",
@@ -3637,12 +3673,21 @@
         },
         {
           "disabled": false,
-          "document": "备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。",
+          "document": "<p>备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。</p>",
           "example": "[\"ap-guangzhou-1\"]",
           "member": "string",
           "name": "DrZones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用性策略</p><p>枚举值：</p><ul><li>Async： 可用性优先（异步传输）</li><li>Sync： 可靠性优先（同步传输）</li></ul><p>默认值：Async</p><p>仅 AlwaysOn 双节点架构生效，单节点/多节点/MIRROR 架构忽略此参数</p>",
+          "example": "Async",
+          "member": "string",
+          "name": "AvailabilityStrategy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3652,7 +3697,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单名称",
+          "document": "<p>订单名称</p>",
           "example": "20200318114212",
           "member": "string",
           "name": "DealName",
@@ -3662,7 +3707,7 @@
         },
         {
           "disabled": false,
-          "document": "订单名称数组",
+          "document": "<p>订单名称数组</p>",
           "example": "[\"20200318114212\"]",
           "member": "string",
           "name": "DealNames",
@@ -4614,7 +4659,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "mssql-dj5i29c5n",
           "member": "string",
           "name": "InstanceId",
@@ -4624,7 +4669,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "Name",
           "member": "string",
           "name": "Name",
@@ -4634,7 +4679,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在项目ID",
+          "document": "<p>实例所在项目ID</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -4644,7 +4689,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在地域ID",
+          "document": "<p>实例所在地域ID</p>",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
@@ -4654,7 +4699,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在可用区ID",
+          "document": "<p>实例所在可用区ID</p>",
           "example": "100004",
           "member": "int64",
           "name": "ZoneId",
@@ -4664,7 +4709,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在私有网络ID，基础网络时为 0",
+          "document": "<p>实例所在私有网络ID，基础网络时为 0</p>",
           "example": "3834195",
           "member": "int64",
           "name": "VpcId",
@@ -4674,7 +4719,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在私有网络子网ID，基础网络时为 0",
+          "document": "<p>实例所在私有网络子网ID，基础网络时为 0</p>",
           "example": "67890",
           "member": "int64",
           "name": "SubnetId",
@@ -4684,7 +4729,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态。取值范围： <li>1：申请中</li> <li>2：运行中</li> <li>3：受限运行中 (主备切换中)</li> <li>4：已隔离</li> <li>5：回收中</li> <li>6：已回收</li> <li>7：任务执行中 (实例做备份、回档等操作)</li> <li>8：已下线</li> <li>9：实例扩容中</li> <li>10：实例迁移中</li> <li>11：只读</li> <li>12：重启中</li>  <li>13：实例修改中且待切换</li> <li>14：订阅发布创建中</li> <li>15：订阅发布修改中</li> <li>16：实例修改中且切换中</li> <li>17：创建RO副本中</li>",
+          "document": "<p>实例状态。取值范围： <li>1：申请中</li> <li>2：运行中</li> <li>3：受限运行中 (主备切换中)</li> <li>4：已隔离</li> <li>5：回收中</li> <li>6：已回收</li> <li>7：任务执行中 (实例做备份、回档等操作)</li> <li>8：已下线</li> <li>9：实例扩容中</li> <li>10：实例迁移中</li> <li>11：只读</li> <li>12：重启中</li>  <li>13：实例修改中且待切换</li> <li>14：订阅发布创建中</li> <li>15：订阅发布修改中</li> <li>16：实例修改中且切换中</li> <li>17：创建RO副本中</li></p>",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -4694,7 +4739,7 @@
         },
         {
           "disabled": false,
-          "document": "实例访问IP",
+          "document": "<p>实例访问IP</p>",
           "example": "192.168.0.16",
           "member": "string",
           "name": "Vip",
@@ -4704,7 +4749,7 @@
         },
         {
           "disabled": false,
-          "document": "实例访问端口",
+          "document": "<p>实例访问端口</p>",
           "example": "1433",
           "member": "int64",
           "name": "Vport",
@@ -4714,7 +4759,7 @@
         },
         {
           "disabled": false,
-          "document": "实例创建时间",
+          "document": "<p>实例创建时间</p>",
           "example": "2020-04-09 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
@@ -4724,7 +4769,7 @@
         },
         {
           "disabled": false,
-          "document": "实例更新时间",
+          "document": "<p>实例更新时间</p>",
           "example": "2020-04-09 00:00:00",
           "member": "datetime",
           "name": "UpdateTime",
@@ -4734,7 +4779,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费开始时间",
+          "document": "<p>实例计费开始时间</p>",
           "example": "2020-04-09 00:00:00",
           "member": "datetime",
           "name": "StartTime",
@@ -4744,7 +4789,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费结束时间",
+          "document": "<p>实例计费结束时间</p>",
           "example": "2020-04-09 00:00:00",
           "member": "datetime",
           "name": "EndTime",
@@ -4754,7 +4799,7 @@
         },
         {
           "disabled": false,
-          "document": "实例隔离时间",
+          "document": "<p>实例隔离时间</p>",
           "example": "2020-04-09 00:00:00",
           "member": "datetime",
           "name": "IsolateTime",
@@ -4764,7 +4809,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存大小，单位G",
+          "document": "<p>实例内存大小，单位G</p>",
           "example": "64",
           "member": "int64",
           "name": "Memory",
@@ -4774,7 +4819,7 @@
         },
         {
           "disabled": false,
-          "document": "实例已经使用存储空间大小，单位G",
+          "document": "<p>实例已经使用存储空间大小，单位G</p>",
           "example": "500",
           "member": "int64",
           "name": "UsedStorage",
@@ -4784,7 +4829,7 @@
         },
         {
           "disabled": false,
-          "document": "实例存储空间大小，单位G",
+          "document": "<p>实例存储空间大小，单位G</p>",
           "example": "500",
           "member": "int64",
           "name": "Storage",
@@ -4794,7 +4839,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本",
+          "document": "<p>实例版本</p>",
           "example": "SQL Server 2008 Enterprise",
           "member": "string",
           "name": "VersionName",
@@ -4804,7 +4849,7 @@
         },
         {
           "disabled": false,
-          "document": "实例续费标记，0-正常续费，1-自动续费，2-到期不续费",
+          "document": "<p>实例续费标记，0-正常续费，1-自动续费，2-到期不续费</p>",
           "example": "0",
           "member": "int64",
           "name": "RenewFlag",
@@ -4814,7 +4859,7 @@
         },
         {
           "disabled": false,
-          "document": "实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，6-多节点集群，7-多节点集群跨可用区，9-自研机房",
+          "document": "<p>实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，6-多节点集群，7-多节点集群跨可用区，9-自研机房</p>",
           "example": "1",
           "member": "int64",
           "name": "Model",
@@ -4824,7 +4869,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在地域名称，如 ap-guangzhou",
+          "document": "<p>实例所在地域名称，如 ap-guangzhou</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -4834,7 +4879,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在可用区名称，如 ap-guangzhou-1",
+          "document": "<p>实例所在可用区名称，如 ap-guangzhou-1</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -4844,7 +4889,7 @@
         },
         {
           "disabled": false,
-          "document": "备份时间点",
+          "document": "<p>备份时间点</p>",
           "example": "00:00",
           "member": "string",
           "name": "BackupTime",
@@ -4854,7 +4899,7 @@
         },
         {
           "disabled": false,
-          "document": "实例付费模式， 0-按量计费，1-包年包月",
+          "document": "<p>实例付费模式， 0-按量计费，1-包年包月</p>",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
@@ -4864,7 +4909,7 @@
         },
         {
           "disabled": false,
-          "document": "实例唯一UID",
+          "document": "<p>实例唯一UID</p>",
           "example": "gamedb.gz000.cdb.db",
           "member": "string",
           "name": "Uid",
@@ -4874,7 +4919,7 @@
         },
         {
           "disabled": false,
-          "document": "实例cpu核心数",
+          "document": "<p>实例cpu核心数</p>",
           "example": "4",
           "member": "int64",
           "name": "Cpu",
@@ -4884,7 +4929,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本代号",
+          "document": "<p>实例版本代号</p>",
           "example": "2008R2",
           "member": "string",
           "name": "Version",
@@ -4894,7 +4939,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型代号：\"TS85\"-物理机，本地SSD硬盘；\"Z3\"-物理机早期版本，本地SSD硬盘；\"CLOUD_BASIC\"-虚拟机，普通云硬盘；\"CLOUD_PREMIUM\"-虚拟机，高性能云硬盘；\"CLOUD_SSD\"-虚拟机，云SSD硬盘；\"CLOUD_HSSD\"-虚拟机，增强型SSD云硬盘；\"CLOUD_TSSD\"-虚拟机，极速型SSD云硬盘；\"CLOUD_BSSD\"-虚拟机，通用型SSD云硬盘",
+          "document": "<p>实例类型代号：&quot;TS85&quot;-物理机，本地SSD硬盘；&quot;Z3&quot;-物理机早期版本，本地SSD硬盘；&quot;CLOUD_BASIC&quot;-虚拟机，普通云硬盘；&quot;CLOUD_PREMIUM&quot;-虚拟机，高性能云硬盘；&quot;CLOUD_SSD&quot;-虚拟机，云SSD硬盘；&quot;CLOUD_HSSD&quot;-虚拟机，增强型SSD云硬盘；&quot;CLOUD_TSSD&quot;-虚拟机，极速型SSD云硬盘；&quot;CLOUD_BSSD&quot;-虚拟机，通用型SSD云硬盘</p>",
           "example": "TS85",
           "member": "string",
           "name": "Type",
@@ -4904,7 +4949,7 @@
         },
         {
           "disabled": false,
-          "document": "计费ID",
+          "document": "<p>计费ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Pid",
@@ -4914,7 +4959,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属VPC的唯一字符串ID，格式如：vpc-xxx，基础网络时为空字符串",
+          "document": "<p>实例所属VPC的唯一字符串ID，格式如：vpc-xxx，基础网络时为空字符串</p>",
           "example": "vpc-xxxxx",
           "member": "string",
           "name": "UniqVpcId",
@@ -4924,7 +4969,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属子网的唯一字符串ID，格式如： subnet-xxx，基础网络时为空字符串",
+          "document": "<p>实例所属子网的唯一字符串ID，格式如： subnet-xxx，基础网络时为空字符串</p>",
           "example": "subnet-xxxxx",
           "member": "string",
           "name": "UniqSubnetId",
@@ -4934,7 +4979,7 @@
         },
         {
           "disabled": false,
-          "document": "实例隔离操作",
+          "document": "<p>实例隔离操作</p>",
           "example": "User",
           "member": "string",
           "name": "IsolateOperator",
@@ -4944,7 +4989,7 @@
         },
         {
           "disabled": false,
-          "document": "发布订阅标识，SUB-订阅实例，PUB-发布实例，空值-没有发布订阅的普通实例",
+          "document": "<p>发布订阅标识，SUB-订阅实例，PUB-发布实例，空值-没有发布订阅的普通实例</p>",
           "example": "SUB",
           "member": "string",
           "name": "SubFlag",
@@ -4954,7 +4999,7 @@
         },
         {
           "disabled": false,
-          "document": "只读标识，RO-只读实例，MASTER-有RO实例的主实例，空值-没有只读组的非RO实例",
+          "document": "<p>只读标识，RO-只读实例，MASTER-有RO实例的主实例，空值-没有只读组的非RO实例</p>",
           "example": "MASTER",
           "member": "string",
           "name": "ROFlag",
@@ -4964,7 +5009,7 @@
         },
         {
           "disabled": false,
-          "document": "容灾类型，MIRROR-镜像，ALWAYSON-AlwaysOn, SINGLE-单例",
+          "document": "<p>容灾类型，MIRROR-镜像，ALWAYSON-AlwaysOn, SINGLE-单例</p>",
           "example": "MIRROR",
           "member": "string",
           "name": "HAFlag",
@@ -4974,7 +5019,7 @@
         },
         {
           "disabled": false,
-          "document": "实例绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例绑定的标签列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResourceTag",
           "name": "ResourceTags",
@@ -4984,7 +5029,7 @@
         },
         {
           "disabled": false,
-          "document": "备份模式，master_pkg-主节点打包备份(默认) ；master_no_pkg-主节点不打包备份；slave_pkg-从节点打包备份(always on集群有效)；slave_no_pkg-从节点不打包备份(always on集群有效)；只读副本对该值无效。",
+          "document": "<p>备份模式，master_pkg-主节点打包备份(默认) ；master_no_pkg-主节点不打包备份；slave_pkg-从节点打包备份(always on集群有效)；slave_no_pkg-从节点不打包备份(always on集群有效)；只读副本对该值无效。</p>",
           "example": "master_pkg",
           "member": "string",
           "name": "BackupModel",
@@ -4994,7 +5039,7 @@
         },
         {
           "disabled": false,
-          "document": "实例备份信息",
+          "document": "<p>实例备份信息</p>",
           "example": "instance note",
           "member": "string",
           "name": "InstanceNote",
@@ -5004,7 +5049,7 @@
         },
         {
           "disabled": false,
-          "document": "备份周期",
+          "document": "<p>备份周期</p>",
           "example": "[1]",
           "member": "int64",
           "name": "BackupCycle",
@@ -5014,7 +5059,7 @@
         },
         {
           "disabled": false,
-          "document": "备份周期类型，[daily、weekly、monthly]",
+          "document": "<p>备份周期类型，[daily、weekly、monthly]</p>",
           "example": "daily",
           "member": "string",
           "name": "BackupCycleType",
@@ -5024,7 +5069,7 @@
         },
         {
           "disabled": false,
-          "document": "数据(日志)备份保留时间",
+          "document": "<p>数据(日志)备份保留时间</p>",
           "example": "7",
           "member": "int64",
           "name": "BackupSaveDays",
@@ -5034,7 +5079,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型 HA-高可用，RO-只读实例，SI-基础版，BI-商业智能服务，cvmHA-云盘高可用，cvmRO-云盘只读实例，MultiHA-多节点，cvmMultiHA-云盘多节点\n",
+          "document": "<p>实例类型 HA-高可用，RO-只读实例，SI-基础版，BI-商业智能服务，cvmHA-云盘高可用，cvmRO-云盘只读实例，MultiHA-多节点，cvmMultiHA-云盘多节点</p>",
           "example": "HA",
           "member": "string",
           "name": "InstanceType",
@@ -5044,7 +5089,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域备份目的地域，如果为空，则表示未开启跨地域备份",
+          "document": "<p>跨地域备份目的地域，如果为空，则表示未开启跨地域备份</p>",
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "CrossRegions",
@@ -5054,7 +5099,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域备份状态 enable-开启，disable-关闭",
+          "document": "<p>跨地域备份状态 enable-开启，disable-关闭</p>",
           "example": "enable",
           "member": "string",
           "name": "CrossBackupEnabled",
@@ -5064,7 +5109,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域备份保留天数，则默认7天",
+          "document": "<p>跨地域备份保留天数，则默认7天</p>",
           "example": "7",
           "member": "uint64",
           "name": "CrossBackupSaveDays",
@@ -5074,7 +5119,7 @@
         },
         {
           "disabled": false,
-          "document": "外网地址域名",
+          "document": "<p>外网地址域名</p>",
           "example": "gz.xxx.sqlserver.tencent.com",
           "member": "string",
           "name": "DnsPodDomain",
@@ -5084,7 +5129,7 @@
         },
         {
           "disabled": false,
-          "document": "外网端口号",
+          "document": "<p>外网端口号</p>",
           "example": "2032",
           "member": "int64",
           "name": "TgwWanVPort",
@@ -5094,7 +5139,7 @@
         },
         {
           "disabled": false,
-          "document": "系统字符集排序规则，默认：Chinese_PRC_CI_AS",
+          "document": "<p>系统字符集排序规则，默认：Chinese_PRC_CI_AS</p>",
           "example": "Chinese_PRC_CI_AS",
           "member": "string",
           "name": "Collation",
@@ -5104,7 +5149,7 @@
         },
         {
           "disabled": false,
-          "document": "系统时区，默认：China Standard Time",
+          "document": "<p>系统时区，默认：China Standard Time</p>",
           "example": "China Standard Time",
           "member": "string",
           "name": "TimeZone",
@@ -5114,7 +5159,7 @@
         },
         {
           "disabled": false,
-          "document": "是否跨AZ",
+          "document": "<p>是否跨AZ</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDrZone",
@@ -5124,7 +5169,7 @@
         },
         {
           "disabled": false,
-          "document": "双节点实例备可用区信息",
+          "document": "<p>双节点实例备可用区信息</p>",
           "example": "无",
           "member": "SlaveZones",
           "name": "SlaveZones",
@@ -5134,7 +5179,7 @@
         },
         {
           "disabled": false,
-          "document": "架构标识，SINGLE-单节点 DOUBLE-双节点",
+          "document": "<p>架构标识，SINGLE-单节点 DOUBLE-双节点</p>",
           "example": "DOUBLE",
           "member": "string",
           "name": "Architecture",
@@ -5144,7 +5189,7 @@
         },
         {
           "disabled": false,
-          "document": "类型标识，EXCLUSIVE-独享型，SHARED-共享型",
+          "document": "<p>类型标识，EXCLUSIVE-独享型，SHARED-共享型</p>",
           "example": "EXCLUSIVE",
           "member": "string",
           "name": "Style",
@@ -5154,13 +5199,23 @@
         },
         {
           "disabled": false,
-          "document": "多节点实例备可用区信息",
+          "document": "<p>多节点实例备可用区信息</p>",
           "example": "无",
           "member": "SlaveZones",
           "name": "MultiSlaveZones",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外IO吞吐量</p><p>单位：MB/s</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "ThroughputPerformance",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9720,7 +9775,7 @@
         {
           "disabled": false,
           "document": "安全组列表，填写形如sg-xxx的安全组ID",
-          "example": "sg-xxxx",
+          "example": "[\"sg-xxxx\"]",
           "member": "string",
           "name": "SecurityGroupList",
           "required": false,
@@ -9738,7 +9793,7 @@
         {
           "disabled": false,
           "document": "可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末",
-          "example": "1",
+          "example": "[1]",
           "member": "int64",
           "name": "Weekly",
           "required": false,
@@ -9765,7 +9820,7 @@
         {
           "disabled": false,
           "document": "是否跨可用区部署，默认值为false",
-          "example": "ture",
+          "example": "true",
           "member": "bool",
           "name": "MultiZones",
           "required": false,
@@ -9774,7 +9829,7 @@
         {
           "disabled": false,
           "document": "新建实例绑定的标签集合",
-          "example": "[resource tag]",
+          "example": "无",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "required": false,
@@ -11823,7 +11878,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库实例ID，形如mssql-njj2mtpl",
+          "document": "<p>数据库实例ID，形如mssql-njj2mtpl</p>",
           "example": "mssql-dj5i29c5n",
           "member": "string",
           "name": "InstanceId",
@@ -11832,7 +11887,7 @@
         },
         {
           "disabled": false,
-          "document": "实例变配后的CPU核心数，不填则不修改",
+          "document": "<p>实例变配后的CPU核心数，不填则不修改</p>",
           "example": "1",
           "member": "int64",
           "name": "Cpu",
@@ -11841,7 +11896,7 @@
         },
         {
           "disabled": false,
-          "document": "实例变配后内存大小，单位GB，不填则不修改",
+          "document": "<p>实例变配后内存大小，单位GB，不填则不修改</p>",
           "example": "2",
           "member": "int64",
           "name": "Memory",
@@ -11850,7 +11905,7 @@
         },
         {
           "disabled": false,
-          "document": "实例变配后磁盘大小，单位GB，不填则不修改",
+          "document": "<p>实例变配后磁盘大小，单位GB，不填则不修改</p>",
           "example": "500",
           "member": "int64",
           "name": "Storage",
@@ -11859,7 +11914,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本，不填则不修改",
+          "document": "<p>实例版本，不填则不修改</p>",
           "example": "2008R2",
           "member": "string",
           "name": "DBVersion",
@@ -11868,7 +11923,7 @@
         },
         {
           "disabled": false,
-          "document": "实例变配后的类型，可选值：CLUSTER-集群，不填则不修改",
+          "document": "<p>实例变配后的类型，可选值：CLUSTER-集群，不填则不修改</p>",
           "example": "CLUSTER",
           "member": "string",
           "name": "HAType",
@@ -11877,7 +11932,7 @@
         },
         {
           "disabled": false,
-          "document": "实例变配后的跨可用区类型，可选值： SameZones-修改为同可用区 MultiZones-修改为跨可用区，不填则不修改",
+          "document": "<p>实例变配后的跨可用区类型，可选值： SameZones-修改为同可用区 MultiZones-修改为跨可用区，不填则不修改</p>",
           "example": "SameZones",
           "member": "string",
           "name": "MultiZones",
@@ -11886,12 +11941,21 @@
         },
         {
           "disabled": false,
-          "document": "多节点架构实例的备节点可用区，默认为空。如果需要在变配的同时修改指定备节点的可用区时必传，当MultiZones = MultiZones时主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。",
+          "document": "<p>多节点架构实例的备节点可用区，默认为空。如果需要在变配的同时修改指定备节点的可用区时必传，当MultiZones = MultiZones时主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。</p>",
           "example": "无",
           "member": "DrZoneInfo",
           "name": "DrZones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外磁盘IO吞吐量</p><p>取值范围：[0, 650]</p><p>单位：MB/s</p><p>不传-保持原值不变；0-取消额外IO；&gt;0-设为新值</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ThroughputPerformance",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -11901,7 +11965,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "本变配是否对实例有影响，0-没有影响 1-有影响",
+          "document": "<p>本变配是否对实例有影响，0-没有影响 1-有影响</p>",
           "example": "1",
           "member": "int64",
           "name": "IsAffect",
@@ -11911,7 +11975,7 @@
         },
         {
           "disabled": false,
-          "document": "本变配是否可以执行 0-不通过，不能变配 1-通过，可以变配",
+          "document": "<p>本变配是否可以执行 0-不通过，不能变配 1-通过，可以变配</p>",
           "example": "1",
           "member": "int64",
           "name": "Passed",
@@ -11921,7 +11985,7 @@
         },
         {
           "disabled": false,
-          "document": "本变配是升配还是降配，down-降配 up-升配",
+          "document": "<p>本变配是升配还是降配，down-降配 up-升配</p>",
           "example": "down",
           "member": "string",
           "name": "ModifyMode",
@@ -11931,7 +11995,7 @@
         },
         {
           "disabled": false,
-          "document": "检查项列表",
+          "document": "<p>检查项列表</p>",
           "example": "无",
           "member": "CheckItem",
           "name": "CheckItems",
@@ -12801,7 +12865,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。",
+          "document": "<p>可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。</p>",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
@@ -12810,7 +12874,7 @@
         },
         {
           "disabled": false,
-          "document": "内存大小，单位：GB",
+          "document": "<p>内存大小，单位：GB</p>",
           "example": "2",
           "member": "int64",
           "name": "Memory",
@@ -12819,7 +12883,7 @@
         },
         {
           "disabled": false,
-          "document": "实例容量大小，单位：GB。",
+          "document": "<p>实例容量大小，单位：GB。</p>",
           "example": "300",
           "member": "int64",
           "name": "Storage",
@@ -12828,7 +12892,7 @@
         },
         {
           "disabled": false,
-          "document": "计费类型，取值支持 PREPAID，POSTPAID。",
+          "document": "<p>计费类型，取值支持 PREPAID，POSTPAID。</p>",
           "example": "POSTPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -12837,7 +12901,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长，单位：月。取值为1到48，默认为1",
+          "document": "<p>购买时长，单位：月。取值为1到48，默认为1</p>",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -12846,7 +12910,7 @@
         },
         {
           "disabled": false,
-          "document": "一次性购买的实例数量。取值1-100，默认取值为1",
+          "document": "<p>一次性购买的实例数量。取值1-100，默认取值为1</p>",
           "example": "1",
           "member": "int64",
           "name": "GoodsNum",
@@ -12855,7 +12919,7 @@
         },
         {
           "disabled": false,
-          "document": "sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。",
+          "document": "<p>sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。</p>",
           "example": "2008R2",
           "member": "string",
           "name": "DBVersion",
@@ -12864,7 +12928,7 @@
         },
         {
           "disabled": false,
-          "document": "预购买实例的CPU核心数",
+          "document": "<p>预购买实例的CPU核心数</p>",
           "example": "2",
           "member": "int64",
           "name": "Cpu",
@@ -12873,7 +12937,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例的类型 HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本型，SI-单节点型,cvmHA-虚拟机双机高可用,cvmRO-虚拟机只读，MultiHA-多节点，cvmMultiHA-云盘",
+          "document": "<p>购买实例的类型 HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本型，SI-单节点型,cvmHA-虚拟机双机高可用,cvmRO-虚拟机只读，MultiHA-多节点，cvmMultiHA-云盘</p>",
           "example": "HA",
           "member": "string",
           "name": "InstanceType",
@@ -12882,7 +12946,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例的宿主机类型，PM-物理机, CLOUD_PREMIUM-虚拟机高性能云盘，CLOUD_SSD-虚拟机SSD云盘,\nCLOUD_HSSD-虚拟机加强型SSD云盘，CLOUD_TSSD-虚拟机极速型SSD云盘，CLOUD_BSSD-虚拟机通用型SSD云盘",
+          "document": "<p>购买实例的宿主机类型，PM-物理机, CLOUD_PREMIUM-虚拟机高性能云盘，CLOUD_SSD-虚拟机SSD云盘,<br>CLOUD_HSSD-虚拟机加强型SSD云盘，CLOUD_TSSD-虚拟机极速型SSD云盘，CLOUD_BSSD-虚拟机通用型SSD云盘</p>",
           "example": "PM",
           "member": "string",
           "name": "MachineType",
@@ -12891,12 +12955,21 @@
         },
         {
           "disabled": false,
-          "document": "备节点可用区，默认为空。如果是多节点架构时必传，并且备机可用区集合最小为2个，最大不超过5个。",
+          "document": "<p>备节点可用区，默认为空。如果是多节点架构时必传，并且备机可用区集合最小为2个，最大不超过5个。</p>",
           "example": "[\"ap-guangzhou-3\"]",
           "member": "string",
           "name": "DrZones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外磁盘 IO 吞吐量，仅 CLOUD_HSSD 支持</p><p>取值范围：[0, 650]</p><p>单位：MB/s</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "ThroughputPerformance",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -12906,7 +12979,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "未打折前价格，其值除以100表示最终的价格。\nInstanceChargeType=PREPAID时，单位是\"每月\"。\nInstanceChargeType=POSTPAID时，单位是\"每小时\"。\n例如10010，在InstanceChargeType=PREPAID情况下，表示每月100.10元。",
+          "document": "<p>未打折前价格，其值除以100表示最终的价格。<br>InstanceChargeType=PREPAID时，单位是&quot;每月&quot;。<br>InstanceChargeType=POSTPAID时，单位是&quot;每小时&quot;。<br>例如10010，在InstanceChargeType=PREPAID情况下，表示每月100.10元。</p>",
           "example": "20988",
           "member": "int64",
           "name": "OriginalPrice",
@@ -12916,7 +12989,7 @@
         },
         {
           "disabled": false,
-          "document": "实际需要支付的价格，其值除以100表示最终的价格。\nInstanceChargeType=PREPAID时，单位是\"每月\"。\nInstanceChargeType=POSTPAID时，单位是\"每小时\"。\n例如10010，在InstanceChargeType=PREPAID情况下，表示每月100.10元。",
+          "document": "<p>实际需要支付的价格，其值除以100表示最终的价格。<br>InstanceChargeType=PREPAID时，单位是&quot;每月&quot;。<br>InstanceChargeType=POSTPAID时，单位是&quot;每小时&quot;。<br>例如10010，在InstanceChargeType=PREPAID情况下，表示每月100.10元。</p>",
           "example": "20988",
           "member": "int64",
           "name": "Price",
@@ -13003,7 +13076,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，形如mssql-njj2mtpl",
+          "document": "<p>实例ID，形如mssql-njj2mtpl</p>",
           "example": "mssql-njj2mtpl",
           "member": "string",
           "name": "InstanceId",
@@ -13012,7 +13085,7 @@
         },
         {
           "disabled": false,
-          "document": "实例升级后的内存大小，单位GB，其值不能比当前实例内存小",
+          "document": "<p>实例升级后的内存大小，单位GB，其值不能比当前实例内存小</p>",
           "example": "8",
           "member": "int64",
           "name": "Memory",
@@ -13021,7 +13094,7 @@
         },
         {
           "disabled": false,
-          "document": "实例升级后的磁盘大小，单位GB，其值不能比当前实例磁盘小",
+          "document": "<p>实例升级后的磁盘大小，单位GB，其值不能比当前实例磁盘小</p>",
           "example": "300",
           "member": "int64",
           "name": "Storage",
@@ -13030,10 +13103,19 @@
         },
         {
           "disabled": false,
-          "document": "实例升级后的CPU核心数，其值不能比当前实例CPU小",
+          "document": "<p>实例升级后的CPU核心数，其值不能比当前实例CPU小</p>",
           "example": "2",
           "member": "int64",
           "name": "Cpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外磁盘 IO 吞吐量</p><p>取值范围：[0, 650]</p><p>单位：MB/s</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "ThroughputPerformance",
           "required": false,
           "type": "int"
         }
@@ -13045,7 +13127,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "未打折的原价，其值除以100表示最终的价格。例如10094表示100.94元",
+          "document": "<p>未打折的原价，其值除以100表示最终的价格。例如10094表示100.94元</p>",
           "example": "149696",
           "member": "int64",
           "name": "OriginalPrice",
@@ -13055,7 +13137,7 @@
         },
         {
           "disabled": false,
-          "document": "实际需要支付价格，其值除以100表示最终的价格。例如10094表示100.94元",
+          "document": "<p>实际需要支付价格，其值除以100表示最终的价格。例如10094表示100.94元</p>",
           "example": "149696",
           "member": "int64",
           "name": "Price",
@@ -18978,7 +19060,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例规格ID，利用DescribeZones返回的SpecId，结合DescribeProductConfig返回的可售卖规格信息，可获悉某个可用区下可购买什么规格的实例",
+          "document": "<p>实例规格ID，利用DescribeZones返回的SpecId，结合DescribeProductConfig返回的可售卖规格信息，可获悉某个可用区下可购买什么规格的实例</p>",
           "example": "22",
           "member": "int64",
           "name": "SpecId",
@@ -18988,7 +19070,7 @@
         },
         {
           "disabled": false,
-          "document": "机型ID",
+          "document": "<p>机型ID</p>",
           "example": "TS85",
           "member": "string",
           "name": "MachineType",
@@ -18998,7 +19080,7 @@
         },
         {
           "disabled": false,
-          "document": "机型中文名称",
+          "document": "<p>机型中文名称</p>",
           "example": "高IO",
           "member": "string",
           "name": "MachineTypeName",
@@ -19008,7 +19090,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库版本信息。取值为2008R2（表示SQL Server 2008 R2），2012SP3（表示SQL Server 2012），2016SP1（表示SQL Server 2016 SP1）",
+          "document": "<p>数据库版本信息。取值为2008R2（表示SQL Server 2008 R2），2012SP3（表示SQL Server 2012），2016SP1（表示SQL Server 2016 SP1）</p>",
           "example": "2008R2",
           "member": "string",
           "name": "Version",
@@ -19018,7 +19100,7 @@
         },
         {
           "disabled": false,
-          "document": "Version字段对应的版本名称",
+          "document": "<p>Version字段对应的版本名称</p>",
           "example": "SQL Server 2008 Enterprise",
           "member": "string",
           "name": "VersionName",
@@ -19028,7 +19110,7 @@
         },
         {
           "disabled": false,
-          "document": "内存大小，单位GB",
+          "document": "<p>内存大小，单位GB</p>",
           "example": "128",
           "member": "int64",
           "name": "Memory",
@@ -19038,7 +19120,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU核数",
+          "document": "<p>CPU核数</p>",
           "example": "16",
           "member": "int64",
           "name": "CPU",
@@ -19048,7 +19130,7 @@
         },
         {
           "disabled": false,
-          "document": "此规格下最小的磁盘大小，单位GB",
+          "document": "<p>此规格下最小的磁盘大小，单位GB</p>",
           "example": "10",
           "member": "int64",
           "name": "MinStorage",
@@ -19058,7 +19140,7 @@
         },
         {
           "disabled": false,
-          "document": "此规格下最大的磁盘大小，单位GB",
+          "document": "<p>此规格下最大的磁盘大小，单位GB</p>",
           "example": "3000",
           "member": "int64",
           "name": "MaxStorage",
@@ -19068,7 +19150,7 @@
         },
         {
           "disabled": false,
-          "document": "此规格对应的QPS大小",
+          "document": "<p>此规格对应的QPS大小</p>",
           "example": "61000",
           "member": "int64",
           "name": "QPS",
@@ -19078,7 +19160,7 @@
         },
         {
           "disabled": false,
-          "document": "此规格的中文描述信息",
+          "document": "<p>此规格的中文描述信息</p>",
           "example": "独立用户数上千万人的大型应用",
           "member": "string",
           "name": "SuitInfo",
@@ -19088,7 +19170,7 @@
         },
         {
           "disabled": false,
-          "document": "此规格对应的包年包月Pid",
+          "document": "<p>此规格对应的包年包月Pid</p>",
           "example": "10908",
           "member": "int64",
           "name": "Pid",
@@ -19098,7 +19180,7 @@
         },
         {
           "disabled": false,
-          "document": "此规格对应的按量计费Pid列表",
+          "document": "<p>此规格对应的按量计费Pid列表</p>",
           "example": "[10908]",
           "member": "int64",
           "name": "PostPid",
@@ -19108,7 +19190,7 @@
         },
         {
           "disabled": false,
-          "document": "此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有",
+          "document": "<p>此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有</p>",
           "example": "ALL",
           "member": "string",
           "name": "PayModeStatus",
@@ -19118,7 +19200,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点\n示例值：HA",
+          "document": "<p>购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点<br>示例值：HA</p>",
           "example": "HA",
           "member": "string",
           "name": "InstanceType",
@@ -19128,12 +19210,82 @@
         },
         {
           "disabled": false,
-          "document": "跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有",
+          "document": "<p>跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有</p>",
           "example": "ALL",
           "member": "string",
           "name": "MultiZonesStatus",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小磁盘容量时的基准</p><p>单位：IOPS</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "MinBaselineIOPS",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大磁盘容量时的基准</p><p>单位：IOPS</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxBaselineIOPS",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小磁盘容量时的基准吞吐量</p><p>单位：MB/s</p>",
+          "example": "15",
+          "member": "uint64",
+          "name": "MinBaselineThroughput",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大磁盘容量时的基准吞吐量</p><p>单位：MB/s</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "MaxBaselineThroughput",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持额外 IO 性能</p><p>枚举值：</p><ul><li>TRUE： 支持额外 IO 性能</li><li>FALSE： 不支持额外 IO 性能</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "ExtraIOSupported",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外 IO 最大吞吐量</p><p>单位：MB/s</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "MaxExtraThroughput",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持额外 IO 的最小磁盘容量</p><p>单位： GB</p><p>默认值：460</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "MinDiskSizeForExtraIO",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -19144,7 +19296,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可售卖的规格唯一ID",
+          "document": "<p>可售卖的规格唯一ID</p>",
           "example": "1",
           "member": "string",
           "name": "Id",
@@ -19154,7 +19306,7 @@
         },
         {
           "disabled": false,
-          "document": "实例规格ID",
+          "document": "<p>实例规格ID</p>",
           "example": "23",
           "member": "uint64",
           "name": "SpecId",
@@ -19164,7 +19316,7 @@
         },
         {
           "disabled": false,
-          "document": "此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有",
+          "document": "<p>此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有</p>",
           "example": "ALL",
           "member": "string",
           "name": "PayModeStatus",
@@ -19174,7 +19326,7 @@
         },
         {
           "disabled": false,
-          "document": "产品类型，购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点",
+          "document": "<p>产品类型，购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点</p>",
           "example": "HA",
           "member": "string",
           "name": "InstanceType",
@@ -19184,7 +19336,7 @@
         },
         {
           "disabled": false,
-          "document": "该规格支持的是否跨可用去，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有",
+          "document": "<p>该规格支持的是否跨可用去，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有</p>",
           "example": "SameZones",
           "member": "string",
           "name": "MultiZonesStatus",
@@ -19194,7 +19346,7 @@
         },
         {
           "disabled": false,
-          "document": "架构标识，SINGLE-单节点 DOUBLE-双节点 TRIPLE-三节点 MULTI-多节点\n示例值：SINGLE",
+          "document": "<p>架构标识，SINGLE-单节点 DOUBLE-双节点 TRIPLE-三节点 MULTI-多节点<br>示例值：SINGLE</p>",
           "example": "SINGLE",
           "member": "string",
           "name": "Architecture",
@@ -19204,7 +19356,7 @@
         },
         {
           "disabled": false,
-          "document": "类型标识，EXCLUSIVE-独享型，SHARED-共享型",
+          "document": "<p>类型标识，EXCLUSIVE-独享型，SHARED-共享型</p>",
           "example": "EXCLUSIVE",
           "member": "string",
           "name": "Style",
@@ -19214,7 +19366,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库版本信息",
+          "document": "<p>数据库版本信息</p>",
           "example": "2008R2",
           "member": "string",
           "name": "Version",
@@ -19224,7 +19376,7 @@
         },
         {
           "disabled": false,
-          "document": "每个可用区的售卖状态集合",
+          "document": "<p>每个可用区的售卖状态集合</p>",
           "example": "无",
           "member": "ZoneStatus",
           "name": "ZoneStatusSet",
@@ -19234,7 +19386,7 @@
         },
         {
           "disabled": false,
-          "document": "规格的参考价格，实际价格以询价接口为准",
+          "document": "<p>规格的参考价格，实际价格以询价接口为准</p>",
           "example": "无",
           "member": "Price",
           "name": "Price",
@@ -19244,11 +19396,81 @@
         },
         {
           "disabled": false,
-          "document": "规格售卖状态 1-正常 2-关闭售卖但是可以升级 3-完全关闭售卖",
+          "document": "<p>规格售卖状态 1-正常 2-关闭售卖但是可以升级 3-完全关闭售卖</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小磁盘容量时的基准 </p><p>单位：IOPS</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "MinBaselineIOPS",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大磁盘容量时的基准 </p><p>单位：IOPS</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxBaselineIOPS",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小磁盘容量时的基准吞吐量 </p><p>单位：MB/s</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "MinBaselineThroughput",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大磁盘容量时的基准吞吐量 </p><p>单位：MB/s</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxBaselineThroughput",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持额外 IO 性能</p><p>枚举值：</p><ul><li>TRUE： 支持额外 IO 性能</li><li>FALSE： 不支持额外 IO 性能</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "ExtraIOSupported",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外 IO 最大吞吐量 </p><p>单位：MB/s</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "MaxExtraThroughput",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持额外 IO 的最小磁盘容量</p><p>单位：GB</p><p>默认值：460</p>",
+          "example": "460",
+          "member": "uint64",
+          "name": "MinDiskSizeForExtraIO",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -19866,7 +20088,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，形如mssql-j8kv137v",
+          "document": "<p>实例ID，形如mssql-j8kv137v</p>",
           "example": "mssql-j8kv137v",
           "member": "string",
           "name": "InstanceId",
@@ -19875,7 +20097,7 @@
         },
         {
           "disabled": false,
-          "document": "实例升级后内存大小，单位GB，其值不能小于当前实例内存大小",
+          "document": "<p>实例升级后内存大小，单位GB，其值不能小于当前实例内存大小</p>",
           "example": "4",
           "member": "int64",
           "name": "Memory",
@@ -19884,7 +20106,7 @@
         },
         {
           "disabled": false,
-          "document": "实例升级后磁盘大小，单位GB，其值不能小于当前实例磁盘大小",
+          "document": "<p>实例升级后磁盘大小，单位GB，其值不能小于当前实例磁盘大小</p>",
           "example": "400",
           "member": "int64",
           "name": "Storage",
@@ -19893,7 +20115,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动使用代金券，0 - 不使用；1 - 默认使用。取值默认为0",
+          "document": "<p>是否自动使用代金券，0 - 不使用；1 - 默认使用。取值默认为0</p>",
           "example": "0",
           "member": "int64",
           "name": "AutoVoucher",
@@ -19902,7 +20124,7 @@
         },
         {
           "disabled": false,
-          "document": "代金券ID，目前单个订单只能使用一张代金券",
+          "document": "<p>代金券ID，目前单个订单只能使用一张代金券</p>",
           "example": "[\"134\"]",
           "member": "string",
           "name": "VoucherIds",
@@ -19911,7 +20133,7 @@
         },
         {
           "disabled": false,
-          "document": "实例升级后的CPU核心数",
+          "document": "<p>实例升级后的CPU核心数</p>",
           "example": "1",
           "member": "int64",
           "name": "Cpu",
@@ -19920,7 +20142,7 @@
         },
         {
           "disabled": false,
-          "document": "升级sqlserver的版本，目前支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise）版本等。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息，版本不支持降级，不填则不修改版本",
+          "document": "<p>升级sqlserver的版本，目前支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise）版本等。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息，版本不支持降级，不填则不修改版本</p>",
           "example": "2008R2",
           "member": "string",
           "name": "DBVersion",
@@ -19929,7 +20151,7 @@
         },
         {
           "disabled": false,
-          "document": "升级sqlserver的高可用架构,从镜像容灾升级到always on集群容灾，仅支持2017及以上版本且支持always on高可用的实例，不支持降级到镜像方式容灾，CLUSTER-升级为always on容灾，不填则不修改高可用架构",
+          "document": "<p>升级sqlserver的高可用架构,从镜像容灾升级到always on集群容灾，仅支持2017及以上版本且支持always on高可用的实例，不支持降级到镜像方式容灾，CLUSTER-升级为always on容灾，不填则不修改高可用架构</p>",
           "example": "CLUSTER",
           "member": "string",
           "name": "HAType",
@@ -19938,7 +20160,7 @@
         },
         {
           "disabled": false,
-          "document": "修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为跨可用区",
+          "document": "<p>修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为跨可用区</p>",
           "example": "MultiZones",
           "member": "string",
           "name": "MultiZones",
@@ -19947,7 +20169,7 @@
         },
         {
           "disabled": false,
-          "document": "执行变配的方式，默认为 1。支持值包括：0 - 立刻执行，1 - 维护时间窗执行",
+          "document": "<p>执行变配的方式，默认为 1。支持值包括：0 - 立刻执行，1 - 维护时间窗执行</p>",
           "example": "1",
           "member": "int64",
           "name": "WaitSwitch",
@@ -19956,7 +20178,7 @@
         },
         {
           "disabled": false,
-          "document": "多节点架构实例的备节点可用区，默认为空。如果需要在变配的同时修改指定备节点的可用区时必传，当MultiZones = MultiZones时主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。\n",
+          "document": "<p>多节点架构实例的备节点可用区，默认为空。如果需要在变配的同时修改指定备节点的可用区时必传，当MultiZones = MultiZones时主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。</p>",
           "example": "无",
           "member": "DrZoneInfo",
           "name": "DrZones",
@@ -19965,10 +20187,19 @@
         },
         {
           "disabled": false,
-          "document": "是否自动升级数据库的兼容性级别，默认0。0-否，1-是",
+          "document": "<p>是否自动升级数据库的兼容性级别，默认0。0-否，1-是</p>",
           "example": "0",
           "member": "int64",
           "name": "UpgradeCompatLevel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外磁盘 IO 吞吐量，仅 CLOUD_HSSD 支持</p><p>取值范围：[0, 650]</p><p>单位：MB/s</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "ThroughputPerformance",
           "required": false,
           "type": "int"
         }
@@ -19980,7 +20211,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单名称",
+          "document": "<p>订单名称</p>",
           "example": "201806261980",
           "member": "string",
           "name": "DealName",

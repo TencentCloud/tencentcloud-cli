@@ -1,12 +1,45 @@
-**Example 1: DNSPod商品下单示例**
+**Example 1: DNSPod商品下单示例-套餐升级**
 
- DNSPod商品下单示例
+套餐升级-专业版升级为企业版
 
 Input: 
 
 ```
 tccli dnspod CreateDeal --cli-unfold-argument  \
-    --Domain 8988.ltd \
+    --Domain dnspod.cn \
+    --NewPackageType DP_EXPERT \
+    --GoodsNum 1 \
+    --AutoRenew 1 \
+    --DealType 3 \
+    --GoodsChildType DP_PLUS \
+    --GoodsType 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "BigDealId": "20251208409118512305171",
+        "DealList": [
+            {
+                "DealId": "2902231877",
+                "DealName": "20251208409118512305181"
+            }
+        ],
+        "RequestId": "1595ce14-89d0-42c3-b7e0-7670f6945181"
+    }
+}
+```
+
+**Example 2: DNSPod商品下单示例-套餐新购**
+
+套餐新购
+
+Input: 
+
+```
+tccli dnspod CreateDeal --cli-unfold-argument  \
+    --Domain dnspod.cn \
     --NewPackageType  \
     --GoodsNum 1 \
     --TimeSpan 12 \

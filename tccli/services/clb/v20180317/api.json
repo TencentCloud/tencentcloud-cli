@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AssociateBudget": {
+      "document": "将Budget关联到企业型模型路由实例或企业型实例下的Key。资源已关联其他Budget时，本次请求会替换为新的Budget。",
+      "input": "AssociateBudgetRequest",
+      "name": "关联Budget",
+      "output": "AssociateBudgetResponse",
+      "status": "online"
+    },
     "AssociateCustomizedConfig": {
       "document": "关联配置到server或location，根据配置类型关联到server或location。准备下线，请使用SetCustomizedConfigForLoadBalancer。",
       "input": "AssociateCustomizedConfigRequest",
@@ -56,11 +63,32 @@
       "output": "CloneLoadBalancerResponse",
       "status": "online"
     },
+    "CreateBudget": {
+      "document": "创建Budget对象。可在创建时通过Resources同时关联已存在的企业型模型路由实例或企业型实例下的Key。创建请求提交后，可通过DescribeBudgets查询状态。",
+      "input": "CreateBudgetRequest",
+      "name": "创建Budget",
+      "output": "CreateBudgetResponse",
+      "status": "online"
+    },
     "CreateClsLogSet": {
       "document": "创建CLB专有日志集，此日志集用于存储CLB的日志。",
       "input": "CreateClsLogSetRequest",
       "name": "创建CLB专有日志集",
       "output": "CreateClsLogSetResponse",
+      "status": "online"
+    },
+    "CreateKey": {
+      "document": "创建 API Key",
+      "input": "CreateKeyRequest",
+      "name": "创建 API Key",
+      "output": "CreateKeyResponse",
+      "status": "online"
+    },
+    "CreateKeys": {
+      "document": "批量创建Key",
+      "input": "CreateKeysRequest",
+      "name": "批量创建Key",
+      "output": "CreateKeysResponse",
       "status": "online"
     },
     "CreateListener": {
@@ -84,6 +112,13 @@
       "output": "CreateLoadBalancerSnatIpsResponse",
       "status": "online"
     },
+    "CreateModelRouter": {
+      "document": "创建模型路由实例",
+      "input": "CreateModelRouterRequest",
+      "name": "创建模型路由实例",
+      "output": "CreateModelRouterResponse",
+      "status": "online"
+    },
     "CreateRule": {
       "document": "CreateRule 接口用于在一个已存在的负载均衡七层监听器下创建转发规则，七层监听器中，后端服务必须绑定到规则上而非监听器上。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。",
       "input": "CreateRuleRequest",
@@ -103,6 +138,27 @@
       "input": "CreateTopicRequest",
       "name": "创建主题",
       "output": "CreateTopicResponse",
+      "status": "online"
+    },
+    "CreateUserGroup": {
+      "document": "在指定模型路由实例下创建一个用户组。用户组是介于模型路由实例与 Key 之间的一层可选分组，可为组内 Key 统一配置模型白名单，并通过关联 Budget 统一管理额度。创建为异步操作，接口会同步返回用户组ID，可凭返回的 RequestId 调用 DescribeAsyncJobs 查询创建进度。",
+      "input": "CreateUserGroupRequest",
+      "name": "创建用户组",
+      "output": "CreateUserGroupResponse",
+      "status": "online"
+    },
+    "DeleteBudgets": {
+      "document": "删除Budget对象。Budget存在任何关联资源时不允许删除，需要先调用DisassociateBudget解除关联。",
+      "input": "DeleteBudgetsRequest",
+      "name": "删除Budget",
+      "output": "DeleteBudgetsResponse",
+      "status": "online"
+    },
+    "DeleteKeys": {
+      "document": "批量删除 API Key。",
+      "input": "DeleteKeysRequest",
+      "name": "批量删除 API Key",
+      "output": "DeleteKeysResponse",
       "status": "online"
     },
     "DeleteListener": {
@@ -133,6 +189,13 @@
       "output": "DeleteLoadBalancerSnatIpsResponse",
       "status": "online"
     },
+    "DeleteModelRouters": {
+      "document": "删除模型路由实例",
+      "input": "DeleteModelRoutersRequest",
+      "name": "删除模型路由",
+      "output": "DeleteModelRoutersResponse",
+      "status": "online"
+    },
     "DeleteRewrite": {
       "document": "DeleteRewrite 接口支持删除指定转发规则之间的重定向关系。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
       "input": "DeleteRewriteRequest",
@@ -152,6 +215,13 @@
       "input": "DeleteTargetGroupsRequest",
       "name": "删除目标组",
       "output": "DeleteTargetGroupsResponse",
+      "status": "online"
+    },
+    "DeleteUserGroups": {
+      "document": "批量删除用户组。组内若仍存在 Key，将拒绝删除（错误码 ResourceInUse），需先将 Key 移出或迁移到其他组。删除为异步操作，可凭返回的 RequestId 调用 DescribeAsyncJobs 查询进度。",
+      "input": "DeleteUserGroupsRequest",
+      "name": "删除用户组",
+      "output": "DeleteUserGroupsResponse",
       "status": "online"
     },
     "DeregisterFunctionTargets": {
@@ -182,6 +252,13 @@
       "output": "DeregisterTargetsFromClassicalLBResponse",
       "status": "online"
     },
+    "DescribeAsyncJobs": {
+      "document": "查询异步任务信息",
+      "input": "DescribeAsyncJobsRequest",
+      "name": "查询异步任务信息",
+      "output": "DescribeAsyncJobsResponse",
+      "status": "online"
+    },
     "DescribeBlockIPList": {
       "document": "查询一个负载均衡所封禁的IP列表（黑名单）。（接口灰度中，如需使用请提工单）",
       "input": "DescribeBlockIPListRequest",
@@ -194,6 +271,20 @@
       "input": "DescribeBlockIPTaskRequest",
       "name": "查询封禁IP（黑名单）异步任务的执行状态",
       "output": "DescribeBlockIPTaskResponse",
+      "status": "online"
+    },
+    "DescribeBudgetAssociations": {
+      "document": "查询指定Budget关联的资源列表。支持按资源类型过滤。",
+      "input": "DescribeBudgetAssociationsRequest",
+      "name": "查询Budget关联资源",
+      "output": "DescribeBudgetAssociationsResponse",
+      "status": "online"
+    },
+    "DescribeBudgets": {
+      "document": "查询Budget列表。",
+      "input": "DescribeBudgetsRequest",
+      "name": "查询Budget列表",
+      "output": "DescribeBudgetsResponse",
       "status": "online"
     },
     "DescribeClassicalLBByInstanceId": {
@@ -329,6 +420,27 @@
       "output": "DescribeLoadBalancersDetailResponse",
       "status": "online"
     },
+    "DescribeModelRouterDetail": {
+      "document": "查询模型路由详细信息",
+      "input": "DescribeModelRouterDetailRequest",
+      "name": "查询模型路由详情",
+      "output": "DescribeModelRouterDetailResponse",
+      "status": "online"
+    },
+    "DescribeModelRouterQuota": {
+      "document": "查询用户配额信息",
+      "input": "DescribeModelRouterQuotaRequest",
+      "name": "查询模型路由用户配额信息",
+      "output": "DescribeModelRouterQuotaResponse",
+      "status": "online"
+    },
+    "DescribeModelRouters": {
+      "document": "查询模型路由列表页",
+      "input": "DescribeModelRoutersRequest",
+      "name": "查询模型路由列表页",
+      "output": "DescribeModelRoutersResponse",
+      "status": "online"
+    },
     "DescribeQuota": {
       "document": "查询用户当前地域下的各项配额",
       "input": "DescribeQuotaRequest",
@@ -399,6 +511,20 @@
       "output": "DescribeTaskStatusResponse",
       "status": "online"
     },
+    "DescribeUserGroups": {
+      "document": "查询指定模型路由实例下的用户组列表或详情，支持按ID、名称、状态、标签过滤及分页。真实用户组按名称字典序升序返回；返回列表末尾恒追加一个「未分组」虚拟分组（UserGroupId 固定为 ugrp-ungrouped、UserGroupName 固定为 ungrouped），它并非用户真实创建的用户组，而是代表该实例下所有未归属任何用户组的 Key（其 KeyCount 为无组 Key 数，不计入 TotalCount，不可修改或删除）。",
+      "input": "DescribeUserGroupsRequest",
+      "name": "查询用户组列表",
+      "output": "DescribeUserGroupsResponse",
+      "status": "online"
+    },
+    "DisassociateBudget": {
+      "document": "解除Budget与模型路由实例或Key的关联。",
+      "input": "DisassociateBudgetRequest",
+      "name": "解除Budget关联",
+      "output": "DisassociateBudgetResponse",
+      "status": "online"
+    },
     "DisassociateCustomizedConfig": {
       "document": "去关联个性化配置，准备下线，请使用SetCustomizedConfigForLoadBalancer。",
       "input": "DisassociateCustomizedConfigRequest",
@@ -462,6 +588,13 @@
       "output": "ModifyBlockIPListResponse",
       "status": "online"
     },
+    "ModifyBudgetAttributes": {
+      "document": "修改Budget属性。BudgetResetAt不支持作为入参设置。修改请求提交后，可通过DescribeBudgets查询状态。",
+      "input": "ModifyBudgetAttributesRequest",
+      "name": "修改Budget属性",
+      "output": "ModifyBudgetAttributesResponse",
+      "status": "online"
+    },
     "ModifyDomain": {
       "document": "ModifyDomain接口用来修改负载均衡七层监听器下的域名。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。",
       "input": "ModifyDomainRequest",
@@ -481,6 +614,27 @@
       "input": "ModifyFunctionTargetsRequest",
       "name": "修改转发规则绑定的云函数",
       "output": "ModifyFunctionTargetsResponse",
+      "status": "online"
+    },
+    "ModifyKeyAttributes": {
+      "document": "修改 API Key 的属性",
+      "input": "ModifyKeyAttributesRequest",
+      "name": "修改API Key的属性",
+      "output": "ModifyKeyAttributesResponse",
+      "status": "online"
+    },
+    "ModifyKeysBlockStatus": {
+      "document": "禁用/启用Key",
+      "input": "ModifyKeysBlockStatusRequest",
+      "name": "禁用或启用Key",
+      "output": "ModifyKeysBlockStatusResponse",
+      "status": "online"
+    },
+    "ModifyKeysUserGroup": {
+      "document": "批量变更 Key 的用户组归属：UserGroupId 传真实用户组ID表示批量入组/跨组移动，传 ugrp-ungrouped 表示批量移出到未分组。变更为异步操作，可凭返回的 RequestId 调用 DescribeAsyncJobs 查询进度。",
+      "input": "ModifyKeysUserGroupRequest",
+      "name": "批量变更Key归属组",
+      "output": "ModifyKeysUserGroupResponse",
       "status": "online"
     },
     "ModifyListener": {
@@ -516,6 +670,13 @@
       "input": "ModifyLoadBalancersProjectRequest",
       "name": "修改负载均衡所属项目",
       "output": "ModifyLoadBalancersProjectResponse",
+      "status": "online"
+    },
+    "ModifyModelRouterAttributes": {
+      "document": "修改模型路由属性。支持修改实例名称、限速配置、路由配置，以及替换企业型实例 HTTPS 服务端点绑定的证书（CertId）。每次调用至少传入一个待修改的属性字段，未传入的字段保持原值不变。其中证书替换在请求内同步完成，成功返回即已生效；其余属性修改异步生效，可通过 DescribeModelRouterDetail 接口查询修改结果。",
+      "input": "ModifyModelRouterAttributesRequest",
+      "name": "修改模型路由实例属性",
+      "output": "ModifyModelRouterAttributesResponse",
       "status": "online"
     },
     "ModifyRule": {
@@ -558,6 +719,20 @@
       "input": "ModifyTargetWeightRequest",
       "name": "修改监听器绑定的后端机器的转发权重",
       "output": "ModifyTargetWeightResponse",
+      "status": "online"
+    },
+    "ModifyUserGroupAttributes": {
+      "document": "修改用户组的名称、模型白名单或关联预算。仅修改传入的字段；其中数组类字段（Models）传入即整体覆盖。BudgetId 传入即关联/替换该组预算（不支持解绑，解绑用 DisassociateBudget）。修改为异步操作，可凭返回的 RequestId 调用 DescribeAsyncJobs 查询进度。",
+      "input": "ModifyUserGroupAttributesRequest",
+      "name": "修改用户组属性",
+      "output": "ModifyUserGroupAttributesResponse",
+      "status": "online"
+    },
+    "RegenerateKeys": {
+      "document": "批量重新生成Key",
+      "input": "RegenerateKeysRequest",
+      "name": "批量重新生成Key",
+      "output": "RegenerateKeysResponse",
       "status": "online"
     },
     "RegisterFunctionTargets": {
@@ -645,6 +820,42 @@
     "serviceShortName": "clb"
   },
   "objects": {
+    "AssociateBudgetRequest": {
+      "document": "AssociateBudget请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Budget ID。</p>",
+          "example": "budget-1a2b3c4d",
+          "member": "string",
+          "name": "BudgetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要关联的资源列表。</p><p>仅支持企业型模型路由实例和企业型实例下的Key。同一请求内不允许重复资源；资源已关联其他Budget时将替换为新的Budget。</p>",
+          "example": "无",
+          "member": "BudgetResource",
+          "name": "Resources",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateBudgetResponse": {
+      "document": "AssociateBudget返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AssociateCustomizedConfigRequest": {
       "document": "AssociateCustomizedConfig请求参数结构体",
       "members": [
@@ -1512,6 +1723,283 @@
         }
       ],
       "usage": "out"
+    },
+    "BudgetAssociation": {
+      "document": "Budget关联资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Budget ID。</p>",
+          "example": "budget-1a2b3c4d",
+          "member": "string",
+          "name": "BudgetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联创建时间。</p>",
+          "example": "2026-04-14T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Key ID。仅当Type为Key时返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vkey-abc12345",
+          "member": "string",
+          "name": "KeyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例ID。</p><p>当Type为ModelRouter时表示关联资源本身；当Type为Key时表示Key所属实例。</p>",
+          "example": "cmr-abc12345",
+          "member": "string",
+          "name": "ModelRouterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul>",
+          "example": "Key",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联关系的状态</p><p>枚举值：</p><ul><li>Active： 已生效</li><li>Configuring： 配置中</li><li>ConfigureFailed： 配置失败</li></ul>",
+          "example": "Active",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BudgetConfig": {
+      "document": "Budget预算配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>预算刷新周期。</p><p>枚举值：</p><ul><li>1d：按天刷新</li><li>7d：按周刷新</li><li>30d：按月刷新</li></ul><p>不传时默认30d。同一个Budget下每种刷新周期最多配置一次。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7d",
+          "member": "string",
+          "name": "BudgetDuration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>下一次刷新的时间</p>",
+          "example": "2026-06-06T00:00:00+08:00",
+          "member": "string",
+          "name": "BudgetResetAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大预算。</p><p>单位：credit。取值需大于0且不超过10000000000；不传时默认100000。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "float",
+          "name": "MaxBudget",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BudgetConfigInput": {
+      "document": "Budget预算配置入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>预算刷新周期。</p><p>支持取值：</p><ul><li>1d：按天刷新</li><li>7d：按周刷新</li><li>30d：按月刷新</li></ul><p>不传时默认使用30d。同一个Budget下每种刷新周期最多配置一次。</p>",
+          "example": "7d",
+          "member": "string",
+          "name": "BudgetDuration",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大预算。</p><p>单位：credit。取值需大于0且不超过10000000000；不传时默认100000。</p>",
+          "example": "100",
+          "member": "float",
+          "name": "MaxBudget",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "usage": "in"
+    },
+    "BudgetInfo": {
+      "document": "Budget信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>关联的key数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AssociationKeyCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型路由数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AssociationModelRouterCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的用户组数量</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AssociationUserGroupCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Budget预算配置数组。</p><p>最多返回3个元素，每种刷新周期（1d/7d/30d）各一个。</p>",
+          "example": "无",
+          "member": "BudgetConfig",
+          "name": "BudgetConfigs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Budget ID。</p>",
+          "example": "budget-1a2b3c4d",
+          "member": "string",
+          "name": "BudgetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Budget名称。</p>",
+          "example": "production-budget",
+          "member": "string",
+          "name": "BudgetName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "2026-04-17T11:00:05+08:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间。</p>",
+          "example": "2026-04-17T07:03:47+08:00",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Budget限速信息。</p>",
+          "example": "无",
+          "member": "RateLimitConfigForBudget",
+          "name": "RateLimitConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Budget状态。</p><p>枚举值：</p><ul><li>Provisioning：创建中</li><li>Active：运行中</li><li>Configuring：变配中</li><li>Deleting：删除中</li><li>ProvisionFailed：创建失败</li><li>ConfigureFailed：变配失败</li><li>DeletionFailed：删除失败</li></ul>",
+          "example": "Active",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BudgetResource": {
+      "document": "Budget关联资源对象。仅支持企业型模型路由实例和企业型实例下的Key。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例ID。</p><p>当Type为ModelRouter时表示要关联的实例；当Type为Key时表示Key所属实例。</p>",
+          "example": "cmr-abc12345",
+          "member": "string",
+          "name": "ModelRouterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li><li>UserGroup：用户组（Type 为 UserGroup 时需传 UserGroupId）</li></ul>",
+          "example": "Key",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Key ID。</p><p>字段本身选填；当Type为Key时必填，当Type为ModelRouter时不传。</p>",
+          "example": "vkey-abc12345",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组ID</p>",
+          "example": "ugrp-93eee43e",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "CertIdRelatedWithLoadBalancers": {
       "document": "证书ID，以及与该证书ID关联的负载均衡实例列表",
@@ -2569,6 +3057,34 @@
       ],
       "usage": "out"
     },
+    "ClusterInfo": {
+      "document": "模型路由集群信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>独占集群ID</p>",
+          "example": "mcls-public",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型</p><p>枚举值：</p><ul><li>Public： 公有云集群</li><li>Exclusive： 独占集群</li></ul><p>默认值：Public</p>",
+          "example": "Public",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ClusterItem": {
       "document": "独占集群信息",
       "members": [
@@ -2776,6 +3292,70 @@
       ],
       "usage": "out"
     },
+    "CreateBudgetRequest": {
+      "document": "CreateBudget请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>预算配置数组。</p><p>数组长度最大为1。BudgetResetAt不支持作为入参设置。</p>",
+          "example": "无",
+          "member": "BudgetConfigInput",
+          "name": "BudgetConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Budget名称。</p><p>不传默认为空字符串。</p>",
+          "example": "production-budget",
+          "member": "string",
+          "name": "BudgetName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Budget限速配置。</p>",
+          "example": "无",
+          "member": "RateLimitConfigForBudget",
+          "name": "RateLimitConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建Budget时同时关联的资源列表。</p><p>仅支持企业型模型路由实例和企业型实例下的Key。如果资源不存在或不可关联，创建请求失败；资源已关联其他Budget时将替换为新创建的Budget。</p>",
+          "example": "无",
+          "member": "BudgetResource",
+          "name": "Resources",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBudgetResponse": {
+      "document": "CreateBudget返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Budget ID。</p><p>创建请求提交后返回，可通过DescribeBudgets查询状态。</p>",
+          "example": "budget-1a2b3c4d",
+          "member": "string",
+          "name": "BudgetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateClsLogSetRequest": {
       "document": "CreateClsLogSet请求参数结构体",
       "members": [
@@ -2820,6 +3400,189 @@
           "name": "LogsetId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateKeyRequest": {
+      "document": "CreateKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例ID</p>",
+          "example": "cmr-pm53f9c3",
+          "member": "string",
+          "name": "ModelRouterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Key名称</p>",
+          "example": "测试key",
+          "member": "string",
+          "name": "KeyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限速配置</p>",
+          "example": "无",
+          "member": "RateLimitConfigForKey",
+          "name": "RateLimitConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的积分预算ID</p>",
+          "example": "budget-6sek5osn",
+          "member": "string",
+          "name": "BudgetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要关联的用户组ID</p>",
+          "example": "ugrp-93eee43e",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateKeyResponse": {
+      "document": "CreateKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Key的ID</p>",
+          "example": "vkey-cgjyw5xj",
+          "member": "string",
+          "name": "KeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回的真实Key</p>",
+          "example": "sk-uI_NjZwG9s9p3VS1wkL26ABYni4hbCEsq0-SOOlzkGL2-882Qp9XsHzKZaI27zQO4R5c18Im1wh4aUYGW0dizfMT",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateKeysRequest": {
+      "document": "CreateKeys请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由ID</p>",
+          "example": "cmr-jcxor1gp",
+          "member": "string",
+          "name": "ModelRouterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要绑定的预算信息，所有Key共用</p>",
+          "example": "budget-86mldfuv",
+          "member": "string",
+          "name": "BudgetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Key列表</p>",
+          "example": "无",
+          "member": "InputKeyInfo",
+          "name": "Keys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>批量创建Key的模式</p><p>枚举值：</p><ul><li>Generate： 平台生成Key</li><li>Import： 导入自带Key</li></ul><p>默认值：Generate</p>",
+          "example": "Import",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限速信息，所有Key共用</p>",
+          "example": "无",
+          "member": "RateLimitConfigForKey",
+          "name": "RateLimitConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签。所有Key都会绑定该标签。</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要关联的用户组ID</p>",
+          "example": "ugrp-93eee43e",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateKeysResponse": {
+      "document": "CreateKeys返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建的Key的信息</p>",
+          "example": "无",
+          "member": "CreatedKey",
+          "name": "CreatedKeys",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3491,6 +4254,151 @@
       ],
       "type": "object"
     },
+    "CreateModelRouterRequest": {
+      "document": "CreateModelRouter请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由类型</p><p>枚举值：</p><ul><li>Shared： 共享型</li><li>Enterprise： 企业级</li></ul>",
+          "example": "Enterprise",
+          "member": "string",
+          "name": "ModelRouterType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例名称</p><p>默认值：-</p>",
+          "example": "test-enterprise-modelrouter",
+          "member": "string",
+          "name": "ModelRouterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例的网络协议</p><p>枚举值：</p><ul><li>HTTP： HTTP协议</li><li>HTTPS： HTTPS协议</li></ul>",
+          "example": "HTTPS",
+          "member": "string",
+          "name": "Schema",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由的监听端口</p><p>取值范围：[1, 65535]</p>",
+          "example": "443",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书ID</p><p>入参限制：当Scheme为HTTPS时，该参数必传</p>",
+          "example": "SCkPG15A",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络类型</p><p>枚举值：</p><ul><li>Internet： 公网</li><li>Intranet： 内网</li></ul>",
+          "example": "Intranet",
+          "member": "string",
+          "name": "NetworkType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例所属VPC的ID</p>",
+          "example": "vpc-fc7eyow9",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例所属子网的ID</p>",
+          "example": "subnet-2cxt138a",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的积分预算ID</p>",
+          "example": "budget-6sek5osn",
+          "member": "string",
+          "name": "BudgetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限速配置</p>",
+          "example": "无",
+          "member": "RateLimitConfigForModelRouter",
+          "name": "RateLimitConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由配置</p>",
+          "example": "无",
+          "member": "RouterSettingWithoutFallBack",
+          "name": "RouterSetting",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群信息</p>",
+          "example": "无",
+          "member": "ClusterInfo",
+          "name": "ClusterInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateModelRouterResponse": {
+      "document": "CreateModelRouter返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例ID</p>",
+          "example": "cmr-c8q8ltxn",
+          "member": "string",
+          "name": "ModelRouterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRuleRequest": {
       "document": "CreateRule请求参数结构体",
       "members": [
@@ -3782,6 +4690,183 @@
       ],
       "type": "object"
     },
+    "CreateUserGroupRequest": {
+      "document": "CreateUserGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例ID。用户组将创建在该实例下。</p>",
+          "example": "cmr-pm53f9c3",
+          "member": "string",
+          "name": "ModelRouterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组名称。必填。同一模型路由实例下名称唯一，长度不超过255个字符。</p>",
+          "example": "核心业务组",
+          "member": "string",
+          "name": "UserGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>建组时直接关联的预算 ID（须为已存在的 Budget）。关联后由该 Budget 统一管理本组的消费上限与限速。不传表示不关联预算，可建组后再用 AssociateBudget 关联。</p>",
+          "example": "budget-1a2b3c4d",
+          "member": "string",
+          "name": "BudgetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组意图路由白名单（ir-xxx）。每一项须为该实例已创建的意图路由名。命中意图路由名时其内部真实模型自动豁免白名单。为空表示不授权任何意图路由。</p>",
+          "example": "[\"ir-chat\"]",
+          "member": "string",
+          "name": "IntentRouters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>建组时同时绑定的已有 Key ID 列表，最多100个。每个 Key 须属于同一模型路由实例。建组与绑定为一个原子异步任务，任一 Key 失败则整组创建回滚。不传表示建空组。</p>",
+          "example": "[\"mkey-aaa111\",\"mkey-bbb222\"]",
+          "member": "string",
+          "name": "KeyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组真实模型白名单。每一项须为该实例已关联的模型名。为空表示不在用户组层限制真实模型（按实例层白名单生效）。</p>",
+          "example": "[\"deepseek-v3\"]",
+          "member": "string",
+          "name": "Models",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表，最多50个。</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserGroupResponse": {
+      "document": "CreateUserGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>新建用户组的ID。</p>",
+          "example": "ugrp-9f8e7d6c",
+          "member": "string",
+          "name": "UserGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatedKey": {
+      "document": "批量创建的Key信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>明文Key</p>",
+          "example": "sk-W3BfTOx0ZWJ4llGNwbEZ81twh-2HxgwcFfED7fVychbNXZdTE-S0mHxdkKTHWk_q_bEJaAl8ykT0eJbgBdlsxZ5V23LtL3j0Pdx0bBxivg",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Key的ID</p>",
+          "example": "vkey-evbmx1m1",
+          "member": "string",
+          "name": "KeyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Key的名称</p>",
+          "example": "批量创建Key测试",
+          "member": "string",
+          "name": "KeyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreditUsage": {
+      "document": "Credit使用情况。该结构用于 CreditUsageSet 数组中的逐周期用量。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Budget刷新周期。</p><p>枚举值：</p><ul><li>1d：按天刷新</li><li>7d：按周刷新</li><li>30d：按月刷新</li></ul><p>仅在 CreditUsageSet 数组元素中返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30d",
+          "member": "string",
+          "name": "BudgetDuration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>下次刷新时间。</p><p>用户组关联Budget且Budget设置重置周期时返回；未关联Budget或未设置重置周期时为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-07-01T00:00:00+08:00",
+          "member": "string",
+          "name": "BudgetResetAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Credit上限。</p><p>用户组关联Budget且Budget设置最大预算时返回；未设置最大预算时为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "float",
+          "name": "Limit",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组已使用的Credit数量。</p>",
+          "example": "128.45",
+          "member": "float",
+          "name": "Used",
+          "output_required": true,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CrossTargets": {
       "document": "跨域2.0云联网下子机和网卡信息",
       "members": [
@@ -3867,6 +4952,69 @@
         }
       ],
       "usage": "out"
+    },
+    "DeleteBudgetsRequest": {
+      "document": "DeleteBudgets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>要删除的Budget ID列表。</p>",
+          "example": "[\"budget-1a2b3c4d\"]",
+          "member": "string",
+          "name": "BudgetIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBudgetsResponse": {
+      "document": "DeleteBudgets返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteKeysRequest": {
+      "document": "DeleteKeys请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由ID</p>",
+          "example": "cmr-olvt6wl0",
+          "member": "string",
+          "name": "ModelRouterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>key的ID列表</p>",
+          "example": "[\"mkey-zgqlu7mf\"]",
+          "member": "string",
+          "name": "KeyIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteKeysResponse": {
+      "document": "DeleteKeys返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteListenerRequest": {
       "document": "DeleteListener请求参数结构体",
@@ -4002,6 +5150,33 @@
     },
     "DeleteLoadBalancerSnatIpsResponse": {
       "document": "DeleteLoadBalancerSnatIps返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteModelRoutersRequest": {
+      "document": "DeleteModelRouters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例ID列表</p>",
+          "example": "[\"cmr-us0nbo8q\"]",
+          "member": "string",
+          "name": "ModelRouterIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteModelRoutersResponse": {
+      "document": "DeleteModelRouters返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4155,6 +5330,42 @@
     },
     "DeleteTargetGroupsResponse": {
       "document": "DeleteTargetGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserGroupsRequest": {
+      "document": "DeleteUserGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例ID。</p>",
+          "example": "cmr-pm53f9c3",
+          "member": "string",
+          "name": "ModelRouterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待删除的用户组ID列表，单次1-100个。不可包含「未分组」虚拟分组 ugrp-ungrouped。组内仍有 Key 时将拒绝删除，需先将 Key 移出或迁移到其他组。</p>",
+          "example": "[\"ugrp-9f8e7d6c\"]",
+          "member": "string",
+          "name": "UserGroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserGroupsResponse": {
+      "document": "DeleteUserGroups返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4381,6 +5592,91 @@
       ],
       "type": "object"
     },
+    "DescribeAsyncJobsRequest": {
+      "document": "DescribeAsyncJobs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>请求ID列表</p>",
+          "example": "[\"79539486-dfe3-4be4-b9f8-f8a18bac205a\"]",
+          "member": "string",
+          "name": "RequestIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页游标</p>",
+          "example": "eyJjdXJzb3JfaWQiOiAxfQ==",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次查询最大数量</p><p>取值范围：[1, 100]</p><p>默认值：20</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAsyncJobsResponse": {
+      "document": "DescribeAsyncJobs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>异步任务列表</p>",
+          "example": "无",
+          "member": "Job",
+          "name": "Jobs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页游标</p>",
+          "example": "eyJjdXJzb3JfaWQiOiAxfQ==",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次查询最大数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxResults",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次查询总数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBlockIPListRequest": {
       "document": "DescribeBlockIPList请求参数结构体",
       "members": [
@@ -4481,6 +5777,154 @@
           "member": "int64",
           "name": "Status",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBudgetAssociationsRequest": {
+      "document": "DescribeBudgetAssociations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Budget ID。</p><p>一次只允许查询一个Budget。</p>",
+          "example": "budget-qygts98h",
+          "member": "string",
+          "name": "BudgetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型。</p><p>枚举值：</p><ul><li>ModelRouter：模型路由实例</li><li>Key：模型路由Key</li></ul><p>不传时返回全部资源类型。</p>",
+          "example": "Key",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次查询偏移量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次查询限制的数量</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBudgetAssociationsResponse": {
+      "document": "DescribeBudgetAssociations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Budget关联资源列表。</p>",
+          "example": "无",
+          "member": "BudgetAssociation",
+          "name": "AssociationSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的总数。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBudgetsRequest": {
+      "document": "DescribeBudgets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Budget ID列表。</p>",
+          "example": "[\"budget-1a2b3c4d\"]",
+          "member": "string",
+          "name": "BudgetIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤列表。</p><p>支持：BudgetId、BudgetName、Status。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次查询限制的数量。</p><p>取值范围：[1, 100]</p><p>默认值：20。</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次查询偏移量。</p><p>默认值：0。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBudgetsResponse": {
+      "document": "DescribeBudgets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Budget列表。</p>",
+          "example": "无",
+          "member": "BudgetInfo",
+          "name": "BudgetSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的总数。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5725,6 +7169,172 @@
       ],
       "type": "object"
     },
+    "DescribeModelRouterDetailRequest": {
+      "document": "DescribeModelRouterDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例ID</p>",
+          "example": "cmr-h2tdbhtz",
+          "member": "string",
+          "name": "ModelRouterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelRouterDetailResponse": {
+      "document": "DescribeModelRouterDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例详情</p>",
+          "example": "无",
+          "member": "ModelRouterDetail",
+          "name": "ModelRouter",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelRouterQuotaRequest": {
+      "document": "DescribeModelRouterQuota请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>配额类型</p>",
+          "example": "[\"cmr_quota_enterprise_model_router_num\"]",
+          "member": "string",
+          "name": "QuotaTypes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要查询的资源ID</p>",
+          "example": "[\"cmr-oei1qdkf\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要展示的字段</p><p>枚举值：</p><ul><li>Used： 已使用的配额数量</li><li>Available： 剩余的配额数量</li></ul>",
+          "example": "[\"Available\"]",
+          "member": "string",
+          "name": "DisplayFields",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelRouterQuotaResponse": {
+      "document": "DescribeModelRouterQuota返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>配额信息</p>",
+          "example": "无",
+          "member": "ModelRouterQuota",
+          "name": "Quotas",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelRoutersRequest": {
+      "document": "DescribeModelRouters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p><p>支持：ModelRouterName、ModelRouterType、Status、BudgetId、tag-key、tag:&lt;tag-key&gt;。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，1-100，默认 20</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例ID列表</p>",
+          "example": "[\"cmr-rc1mry4d\"]",
+          "member": "string",
+          "name": "ModelRouterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量，默认 0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelRoutersResponse": {
+      "document": "DescribeModelRouters返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例列表</p>",
+          "example": "无",
+          "member": "ModelRouterSet",
+          "name": "ModelRouterSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的总数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeQuotaRequest": {
       "document": "DescribeQuota请求参数结构体",
       "members": [],
@@ -6335,6 +7945,125 @@
       ],
       "type": "object"
     },
+    "DescribeUserGroupsRequest": {
+      "document": "DescribeUserGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例ID。</p>",
+          "example": "cmr-pm53f9c3",
+          "member": "string",
+          "name": "ModelRouterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组ID列表，用于按ID过滤，单次最多100个；可包含「未分组」虚拟分组 ugrp-ungrouped。</p>",
+          "example": "[\"ugrp-9f8e7d6c\"]",
+          "member": "string",
+          "name": "UserGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤列表。支持：UserGroupName、Status、tag-key、tag:&lt;tag-key&gt;。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次查询限制的数量</p><p>取值范围：[1, 100]</p><p>默认值：20</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次查询偏移量</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserGroupsResponse": {
+      "document": "DescribeUserGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户组列表。</p>",
+          "example": "无",
+          "member": "UserGroupInfo",
+          "name": "UserGroups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的总数（含「未分组」逻辑组 ugrp-ungrouped：当其未被过滤条件排除时计入，即 TotalCount = 真实用户组数 + 1）。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateBudgetRequest": {
+      "document": "DisassociateBudget请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Budget ID。</p>",
+          "example": "budget-1a2b3c4d",
+          "member": "string",
+          "name": "BudgetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要解除关联的资源列表。</p>",
+          "example": "无",
+          "member": "BudgetResource",
+          "name": "Resources",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateBudgetResponse": {
+      "document": "DisassociateBudget返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisassociateCustomizedConfigRequest": {
       "document": "DisassociateCustomizedConfig请求参数结构体",
       "members": [
@@ -6465,13 +8194,30 @@
       ],
       "usage": "both"
     },
+    "FallBackItem": {
+      "document": "路由FallBack配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>默认回退模型列表</p>",
+          "example": "[\"gpt-4o\"]",
+          "member": "string",
+          "name": "DefaultFallBackModels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "过滤器条件",
       "members": [
         {
           "disabled": false,
           "document": "<p>过滤器的名称</p>",
-          "example": "tag-key",
+          "example": "UserGroupName",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6480,7 +8226,7 @@
         {
           "disabled": false,
           "document": "<p>过滤器的值数组</p>",
-          "example": "[\"tke-clusterId\"]",
+          "example": "[\"核心业务组\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -6846,6 +8592,30 @@
       ],
       "usage": "out"
     },
+    "InputKeyInfo": {
+      "document": "创建Key的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Key的名称</p>",
+          "example": "批量创建Key测试",
+          "member": "string",
+          "name": "KeyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>导入的明文Key</p><p>仅允许导入Key模式下输入</p>",
+          "example": "sk-3a9f2c8b1d4e6f7a0b5c9d8e2f1a3b4c",
+          "member": "string",
+          "name": "PlainKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "InquiryPriceCreateLoadBalancerRequest": {
       "document": "InquiryPriceCreateLoadBalancer请求参数结构体",
       "members": [
@@ -7188,6 +8958,56 @@
         }
       ],
       "usage": "out"
+    },
+    "Job": {
+      "document": "异步任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接口名称</p>",
+          "example": "DeleteModel",
+          "member": "string",
+          "name": "ApiName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求ID</p>",
+          "example": "fce26480-9478-4e2d-a1e0-5bcdac748c9d",
+          "member": "string",
+          "name": "RequestId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步任务状态</p><p>枚举值：</p><ul><li>Processing： 进行中</li><li>Succeeded： 成功</li><li>Failed： 失败</li></ul>",
+          "example": "Processing",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源ID</p>",
+          "example": "[\"byok-f7x84r7z\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "LBChargePrepaid": {
       "document": "lb实例包年包月相关配置属性",
@@ -9136,6 +10956,474 @@
       ],
       "type": "object"
     },
+    "ModelRouterDetail": {
+      "document": "查询单个实例详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-04-06T17:00:20+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例域名</p>",
+          "example": "lb-0zmphd9k-90ewzupvm84yr1sa.clb.gz-tencentclb.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由ID</p>",
+          "example": "cmr-oei1qdkf",
+          "member": "string",
+          "name": "ModelRouterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由名称</p><p>默认值：-</p>",
+          "example": "test-enterprise-tgw-polaris",
+          "member": "string",
+          "name": "ModelRouterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由类型</p><p>枚举值：</p><ul><li>Shared： 共享型</li><li>Enterprise： 企业级</li></ul>",
+          "example": "Enterprise",
+          "member": "string",
+          "name": "ModelRouterType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p>",
+          "example": "2026-04-07T20:11:53+08:00",
+          "member": "datetime_iso",
+          "name": "ModifiedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例网络类型</p><p>枚举值：</p><ul><li>Internet： 公网</li><li>Intranet： 内网</li></ul>",
+          "example": "Internet",
+          "member": "string",
+          "name": "NetworkType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由限速信息</p>",
+          "example": "无",
+          "member": "RateLimitConfigForModelRouter",
+          "name": "RateLimitConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由的路由配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RouterSettingWithFallBack",
+          "name": "RouterSetting",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例的安全状态</p><p>枚举值：</p><ul><li>Normal： 正常</li><li>Banned： 已封禁</li><li>Frozen： 已冻结</li></ul>",
+          "example": "Normal",
+          "member": "string",
+          "name": "SecurityStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由网络配置列表</p>",
+          "example": "无",
+          "member": "ServiceEndPoints",
+          "name": "ServiceEndPoints",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例状态</p><p>枚举值：</p><ul><li>Active： 运行中</li><li>Provisioning： 创建中</li><li>Configuring： 变配中</li></ul>",
+          "example": "Active",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例所属子网的ID</p>",
+          "example": "subnet-2cxt138a",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例的计费状态</p><p>枚举值：</p><ul><li>Normal： 正常</li><li>Isolated： 已隔离</li></ul>",
+          "example": "Normal",
+          "member": "string",
+          "name": "TradeStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例VIP</p>",
+          "example": "43.136.247.56",
+          "member": "string",
+          "name": "Vip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例所属VPC的ID</p>",
+          "example": "vpc-fc7eyow9",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "budget-1a2b3c4d",
+          "member": "string",
+          "name": "BudgetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "production-budget",
+          "member": "string",
+          "name": "BudgetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例的Credit使用情况。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreditUsage",
+          "name": "CreditUsage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例按Budget刷新周期划分的Credit使用情况。</p><p>当关联Budget配置多个刷新周期时，按1d、7d、30d顺序返回各周期用量；未关联Budget时返回空数组。</p>",
+          "example": "无",
+          "member": "CreditUsage",
+          "name": "CreditUsageSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全组ID列表</p>",
+          "example": "[\"sg-fktcbp0l\"]",
+          "member": "string",
+          "name": "SecurityGroups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群信息</p>",
+          "example": "无",
+          "member": "ClusterInfo",
+          "name": "ClusterInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelRouterQuota": {
+      "document": "模型路由相关配额",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>配额名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cmr_quota_enterprise_model_router_num",
+          "member": "string",
+          "name": "QuotaType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cmr-oei1qdkf",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额上限</p><p>单位：个</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>已使用配额数量</p><p>单位：个</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Used",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>剩余配额数量</p><p>单位：个</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Available",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelRouterSet": {
+      "document": "模型路由列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "budget-1a2b3c4d",
+          "member": "string",
+          "name": "BudgetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "production-budget",
+          "member": "string",
+          "name": "BudgetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群信息</p>",
+          "example": "无",
+          "member": "ClusterInfo",
+          "name": "ClusterInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-03-30T16:57:01+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例按Budget刷新周期划分的Credit使用情况。</p><p>当关联Budget配置多个刷新周期时，按1d、7d、30d顺序返回各周期用量；未关联Budget时返回空数组。</p>",
+          "example": "无",
+          "member": "CreditUsage",
+          "name": "CreditUsageSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例域名</p>",
+          "example": "lb-4y36j534-kuq30s51xyzt62ec.clb.gz-tencentclb.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由ID</p>",
+          "example": "cmr-5amt4ct1",
+          "member": "string",
+          "name": "ModelRouterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由名称</p><p>默认值：-</p>",
+          "example": "test-enterprise-router",
+          "member": "string",
+          "name": "ModelRouterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由类型</p><p>枚举值：</p><ul><li>Shared： 共享型</li><li>Enterprise： 企业级</li></ul>",
+          "example": "Enterprise",
+          "member": "string",
+          "name": "ModelRouterType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p>",
+          "example": "2026-03-31T00:57:27+08:00",
+          "member": "datetime_iso",
+          "name": "ModifiedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例网络类型</p><p>枚举值：</p><ul><li>Internet： 公网</li><li>Intranet： 内网</li></ul>",
+          "example": "Internet",
+          "member": "string",
+          "name": "NetworkType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例的安全状态</p><p>枚举值：</p><ul><li>Normal： 正常</li><li>Banned： 已封禁</li><li>Frozen： 已冻结</li></ul>",
+          "example": "Normal",
+          "member": "string",
+          "name": "SecurityStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例状态</p><p>枚举值：</p><ul><li>Active： 运行中</li><li>Provisioning： 创建中</li><li>Configuring： 变配中</li></ul>",
+          "example": "Provisioning",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例的计费状态</p><p>枚举值：</p><ul><li>Normal： 正常</li><li>Isolated： 已隔离</li></ul>",
+          "example": "Normal",
+          "member": "string",
+          "name": "TradeStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例VIP</p>",
+          "example": "172.16.48.113",
+          "member": "string",
+          "name": "Vip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例所属VPC的ID</p>",
+          "example": "vpc-j5bxoqef",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyBlockIPListRequest": {
       "document": "ModifyBlockIPList请求参数结构体",
       "members": [
@@ -9209,6 +11497,60 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBudgetAttributesRequest": {
+      "document": "ModifyBudgetAttributes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Budget ID。</p>",
+          "example": "budget-1a2b3c4d",
+          "member": "string",
+          "name": "BudgetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预算配置数组。</p><p>数组长度最大为1。BudgetResetAt不支持作为入参设置。</p>",
+          "example": "无",
+          "member": "BudgetConfigInput",
+          "name": "BudgetConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Budget名称。</p>",
+          "example": "production-budget-v2",
+          "member": "string",
+          "name": "BudgetName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Budget限速配置。</p>",
+          "example": "无",
+          "member": "RateLimitConfigForBudget",
+          "name": "RateLimitConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBudgetAttributesResponse": {
+      "document": "ModifyBudgetAttributes返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -9451,6 +11793,150 @@
     },
     "ModifyFunctionTargetsResponse": {
       "document": "ModifyFunctionTargets返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyKeyAttributesRequest": {
+      "document": "ModifyKeyAttributes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例ID</p>",
+          "example": "cmr-olvt6wl0",
+          "member": "string",
+          "name": "ModelRouterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>API Key的ID</p>",
+          "example": "mkey-6n3rb91v",
+          "member": "string",
+          "name": "KeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Key的名称</p>",
+          "example": "testkey2",
+          "member": "string",
+          "name": "KeyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限速配置</p>",
+          "example": "无",
+          "member": "RateLimitConfigForKey",
+          "name": "RateLimitConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyKeyAttributesResponse": {
+      "document": "ModifyKeyAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyKeysBlockStatusRequest": {
+      "document": "ModifyKeysBlockStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例ID</p>",
+          "example": "cmr-jcxor1gp",
+          "member": "string",
+          "name": "ModelRouterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否停止使用</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Blocked",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要修改的Key的ID列表</p>",
+          "example": "[\"vkey-91rjfoiz\"]",
+          "member": "string",
+          "name": "KeyIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyKeysBlockStatusResponse": {
+      "document": "ModifyKeysBlockStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyKeysUserGroupRequest": {
+      "document": "ModifyKeysUserGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例ID。</p>",
+          "example": "cmr-pm53f9c3",
+          "member": "string",
+          "name": "ModelRouterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标归属用户组ID。传真实用户组ID表示批量入组或跨组移动（Key 已属其它组则改为目标组）；传 ugrp-ungrouped 表示批量移出到未分组。</p>",
+          "example": "ugrp-9f8e7d6c",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待变更归属的 Key ID 列表，单次1-100个。</p>",
+          "example": "[\"mkey-aaa111\",\"mkey-bbb222\"]",
+          "member": "string",
+          "name": "KeyIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyKeysUserGroupResponse": {
+      "document": "ModifyKeysUserGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9931,6 +12417,69 @@
       ],
       "type": "object"
     },
+    "ModifyModelRouterAttributesRequest": {
+      "document": "ModifyModelRouterAttributes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由ID</p>",
+          "example": "cmr-h2tdbhtz",
+          "member": "string",
+          "name": "ModelRouterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由名称</p>",
+          "example": "测试模型路由名称",
+          "member": "string",
+          "name": "ModelRouterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限速配置</p>",
+          "example": "无",
+          "member": "RateLimitConfigForModelRouter",
+          "name": "RateLimitConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由配置</p>",
+          "example": "无",
+          "member": "RouterSettingWithFallBack",
+          "name": "RouterSetting",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的 HTTPS 证书ID，用于替换实例 HTTPS 服务端点当前绑定的证书。常用于证书到期前的更换场景。</p><p>使用限制：</p><ul><li>仅企业型（Enterprise）且服务端点协议为 HTTPS 的实例支持修改证书。</li><li>证书须为 SSL 证书控制台中状态为“已签发”（可用）且未过期的服务器证书（SVR 类型）。可在 <a href=\"https://console.cloud.tencent.com/ssl\">SSL 证书控制台</a> 查看证书ID。</li><li>替换后新证书立即生效，过程中不会中断业务流量。</li><li>若传入的证书与当前绑定的证书相同，接口直接返回成功，不做任何变更。</li></ul><p>不传则证书保持不变。可通过 <code>DescribeModelRouterDetail</code> 接口的 <code>ServiceEndPoints.CertId</code> 字段查询当前绑定的证书。</p>",
+          "example": "SCkPG15A",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyModelRouterAttributesResponse": {
+      "document": "ModifyModelRouterAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRuleRequest": {
       "document": "ModifyRule请求参数结构体",
       "members": [
@@ -10390,6 +12939,78 @@
       ],
       "type": "object"
     },
+    "ModifyUserGroupAttributesRequest": {
+      "document": "ModifyUserGroupAttributes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例ID。</p>",
+          "example": "cmr-pm53f9c3",
+          "member": "string",
+          "name": "ModelRouterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待修改的用户组ID。不可为「未分组」虚拟分组 ugrp-ungrouped。</p>",
+          "example": "ugrp-9f8e7d6c",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组关联的预算ID。不传则不修改预算关联；传入有效 budget-xxx 则将该用户组关联到此预算（若已关联其它预算则替换为本预算）。仅支持关联/替换，不支持解绑——解绑请用 DisassociateBudget。预算与组内 Key、所属实例的预算各自独立判定。</p>",
+          "example": "budget-1a2b3c4d",
+          "member": "string",
+          "name": "BudgetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组意图路由白名单（ir-xxx）。每一项须为该实例已创建的意图路由名。不传则不修改；传入即整体覆盖。</p>",
+          "example": "[\"ir-chat\"]",
+          "member": "string",
+          "name": "IntentRouters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组真实模型白名单。每一项须为该实例已关联的模型名。不传则不修改；传入即整体覆盖。</p>",
+          "example": "[\"deepseek-v3\"]",
+          "member": "string",
+          "name": "Models",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组名称。不传则不修改；传入时长度不超过255个字符、同实例下唯一。</p>",
+          "example": "核心业务组",
+          "member": "string",
+          "name": "UserGroupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserGroupAttributesResponse": {
+      "document": "ModifyUserGroupAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "MultiCertInfo": {
       "document": "CLB监听器或规则绑定的多证书信息",
       "members": [
@@ -10518,6 +13139,183 @@
           "name": "QuotaLimit",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RateLimitConfigForBudget": {
+      "document": "Budget限速配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>每分钟限制的请求数量。</p><p>单位：次/分钟。</p>",
+          "example": "60",
+          "member": "uint64",
+          "name": "RPM",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每分钟限制的Token数量。</p><p>单位：个/分钟。</p>",
+          "example": "100000",
+          "member": "uint64",
+          "name": "TPM",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RateLimitConfigForKey": {
+      "document": "限速配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>最大并发请求数量</p><p>单位：次</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxParallelRequest",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每分钟限制的请求数量</p><p>单位：次/分钟</p>",
+          "example": "30",
+          "member": "uint64",
+          "name": "RPM",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每分钟限制的Token数量</p><p>单位：个/分钟</p>",
+          "example": "50000",
+          "member": "uint64",
+          "name": "TPM",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RateLimitConfigForModelRouter": {
+      "document": "限速配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>每分钟限制的请求数量</p><p>单位：次/分钟</p>",
+          "example": "60",
+          "member": "uint64",
+          "name": "RPM",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每分钟限制的Token数量</p><p>单位：个/分钟</p>",
+          "example": "100000",
+          "member": "uint64",
+          "name": "TPM",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RegenerateKeysRequest": {
+      "document": "RegenerateKeys请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例ID</p>",
+          "example": "cmr-jcxor1gp",
+          "member": "string",
+          "name": "ModelRouterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Key的ID列表</p>",
+          "example": "[\"vkey-g2kyvhih\"]",
+          "member": "string",
+          "name": "KeyIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RegenerateKeysResponse": {
+      "document": "RegenerateKeys返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>重新生成后的Key的信息</p>",
+          "example": "无",
+          "member": "RegeneratedKey",
+          "name": "RegeneratedKeys",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>重新生成失败的Key的ID列表</p>",
+          "example": "[\"vkey-g2kyvhih\"]",
+          "member": "string",
+          "name": "FailedKeyIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegeneratedKey": {
+      "document": "重新生成的Key信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Key的ID</p>",
+          "example": "vkey-g2kyvhih",
+          "member": "string",
+          "name": "KeyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>重新生成的明文Key</p>",
+          "example": "sk-HvvyVk2DvoMuG1t0MEzz4qLqWZ8-xNUlVzUZo1jtzW3opZ9eMok0nfgEhd-lLFgqKxY3d-0qFy2aohD5sKRPJu1Hlv1irSX6-nStS-9xXA",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -10999,6 +13797,60 @@
         }
       ],
       "usage": "out"
+    },
+    "RouterSettingWithFallBack": {
+      "document": "路由设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>回退策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FallBackItem",
+          "name": "FallBack",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型内路由策略</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LeastBusy： 最低繁忙路由</li><li>LatencyBasedRouting： 最低延迟路由</li><li>UsageBasedRouting： 用量均衡路由</li><li>CostBasedRouting： 最低积分路由</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SimpleShuffle",
+          "member": "string",
+          "name": "RoutingStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>CostBasedRouting： 最低积分路由</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SimpleShuffle",
+          "member": "string",
+          "name": "CrossModelGroupRoutingStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RouterSettingWithoutFallBack": {
+      "document": "路由设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>路由策略</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LeastBusy： 最低繁忙路由</li><li>LatencyBasedRouting： 最低延迟路由</li><li>UsageBasedRouting： 用量均衡路由</li><li>CostBasedRouting： 最低积分路由</li></ul>",
+          "example": "SimpleShuffle",
+          "member": "string",
+          "name": "RoutingStrategy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "RsTagRule": {
       "document": "修改节点标签的数据类型",
@@ -11666,6 +14518,42 @@
       ],
       "usage": "out"
     },
+    "ServiceEndPoints": {
+      "document": "模型路由网络服务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>证书ID</p>",
+          "example": "SCkPG15A",
+          "member": "string",
+          "name": "CertId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>监听端口</p>",
+          "example": "443",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络协议</p>",
+          "example": "HTTPS",
+          "member": "string",
+          "name": "Schema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SetCustomizedConfigForLoadBalancerRequest": {
       "document": "SetCustomizedConfigForLoadBalancer请求参数结构体",
       "members": [
@@ -11711,6 +14599,15 @@
           "example": "[lb-55rh44i6]",
           "member": "string",
           "name": "LoadBalancerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
           "required": false,
           "type": "list"
         }
@@ -11998,7 +14895,7 @@
       "usage": "out"
     },
     "TagInfo": {
-      "document": "负载均衡的标签信息",
+      "document": "模型路由实例的标签信息",
       "members": [
         {
           "disabled": false,
@@ -12907,6 +15804,142 @@
           "name": "SpecAvailabilitySet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UserGroupInfo": {
+      "document": "用户组信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户组ID。「未分组」虚拟分组固定为 ugrp-ungrouped。</p>",
+          "example": "ugrp-9f8e7d6c",
+          "member": "string",
+          "name": "UserGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组名称。「未分组」虚拟分组固定为 ungrouped。</p>",
+          "example": "核心业务组",
+          "member": "string",
+          "name": "UserGroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属模型路由实例ID。</p>",
+          "example": "cmr-pm53f9c3",
+          "member": "string",
+          "name": "ModelRouterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组状态。</p><p>枚举值：</p><ul><li>Creating：创建中</li><li>Active：正常</li><li>Configuring：配置中</li><li>Deleting：删除中</li></ul><p>「未分组」虚拟分组（ugrp-ungrouped）恒为 Active。</p>",
+          "example": "Active",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组真实模型白名单。「未分组」虚拟分组为空数组。</p>",
+          "example": "[\"deepseek-v3\"]",
+          "member": "string",
+          "name": "Models",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组意图路由白名单（ir-xxx）。「未分组」虚拟分组为空数组。</p>",
+          "example": "[\"ir-chat\"]",
+          "member": "string",
+          "name": "IntentRouters",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的Budget ID。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "budget-x1y2z3",
+          "member": "string",
+          "name": "BudgetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的Budget名称。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "核心组月度预算",
+          "member": "string",
+          "name": "BudgetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组多刷新周期 Credit 使用情况。</p><p>无多周期预算时为空数组。</p>",
+          "example": "无",
+          "member": "CreditUsage",
+          "name": "CreditUsageSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组当前包含的 Key 数量。「未分组」虚拟分组（ugrp-ungrouped）返回该模型路由实例下未归属任何用户组的 Key 数量。</p>",
+          "example": "12",
+          "member": "int64",
+          "name": "KeyCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表。「未分组」虚拟分组为空数组。</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。「未分组」虚拟分组不返回此字段。</p>",
+          "example": "2026-06-16T10:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间。「未分组」虚拟分组不返回此字段。</p>",
+          "example": "2026-06-16T10:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

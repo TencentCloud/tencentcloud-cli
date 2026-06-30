@@ -1022,6 +1022,46 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启自动分析</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AnalysisAutoEnable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>头采样开关</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableHeadSampler",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随父类型</li></ul>",
+          "example": "parentbased_traceidratio",
+          "member": "string",
+          "name": "HeadSamplerType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>采样阈值，100等于关闭采样，0表示全采样</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "HeadSamplerArg",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5879,6 +5919,33 @@
           "name": "UseDefaultFuseConfig",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启探针头采样</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableHeadSampler",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随parent</li></ul>",
+          "example": "parentbased_traceidratio",
+          "member": "string",
+          "name": "HeadSamplerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>采样率</p><p>取值范围：[0, 100]</p><p>默认值：100</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "HeadSamplerArg",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

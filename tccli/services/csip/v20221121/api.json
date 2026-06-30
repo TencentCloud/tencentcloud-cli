@@ -378,6 +378,20 @@
       "output": "DescribeCFWAssetStatisticsResponse",
       "status": "online"
     },
+    "DescribeCLSLogIndexV3": {
+      "document": "获取日志索引信息",
+      "input": "DescribeCLSLogIndexV3Request",
+      "name": "获取日志索引信息v3",
+      "output": "DescribeCLSLogIndexV3Response",
+      "status": "online"
+    },
+    "DescribeCLSLogListV3": {
+      "document": "日志分析检索接口v3",
+      "input": "DescribeCLSLogListV3Request",
+      "name": "日志分析cls日志检索v3",
+      "output": "DescribeCLSLogListV3Response",
+      "status": "online"
+    },
     "DescribeCSIPRiskStatistics": {
       "document": "获取风险中心风险概况示例",
       "input": "DescribeCSIPRiskStatisticsRequest",
@@ -1064,6 +1078,27 @@
       "output": "DescribeNICAssetsResponse",
       "status": "online"
     },
+    "DescribeNotifyAssetConfig": {
+      "document": "获取通知资产范围配置",
+      "input": "DescribeNotifyAssetConfigRequest",
+      "name": "获取通知资产范围配置",
+      "output": "DescribeNotifyAssetConfigResponse",
+      "status": "online"
+    },
+    "DescribeNotifySetting": {
+      "document": "获取通知设置",
+      "input": "DescribeNotifySettingRequest",
+      "name": "获取通知设置",
+      "output": "DescribeNotifySettingResponse",
+      "status": "online"
+    },
+    "DescribeNotifySettingAlert": {
+      "document": "获取告警中心通知高级配置",
+      "input": "DescribeNotifySettingAlertRequest",
+      "name": "获取告警中心通知高级配置",
+      "output": "DescribeNotifySettingAlertResponse",
+      "status": "online"
+    },
     "DescribeOrganizationInfo": {
       "document": "查询集团账号详情",
       "input": "DescribeOrganizationInfoRequest",
@@ -1510,6 +1545,27 @@
       "input": "ModifyMachineRemarkRequest",
       "name": "修改主机备注信息",
       "output": "ModifyMachineRemarkResponse",
+      "status": "online"
+    },
+    "ModifyNotifyAssetConfig": {
+      "document": "修改通知资产范围配置",
+      "input": "ModifyNotifyAssetConfigRequest",
+      "name": "修改通知资产范围配置",
+      "output": "ModifyNotifyAssetConfigResponse",
+      "status": "online"
+    },
+    "ModifyNotifySetting": {
+      "document": "修改通知设置",
+      "input": "ModifyNotifySettingRequest",
+      "name": "修改通知设置",
+      "output": "ModifyNotifySettingResponse",
+      "status": "online"
+    },
+    "ModifyNotifySettingAlert": {
+      "document": "修改告警中心通知高级配置",
+      "input": "ModifyNotifySettingAlertRequest",
+      "name": "修改告警中心通知高级配置",
+      "output": "ModifyNotifySettingAlertResponse",
       "status": "online"
     },
     "ModifyOrganizationAccountStatus": {
@@ -16305,6 +16361,342 @@
       ],
       "type": "object"
     },
+    "DescribeCLSLogIndexV3Request": {
+      "document": "DescribeCLSLogIndexV3请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "LogCLSFilter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-32439480b741cb4e\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>limit限制</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>offset</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCLSLogIndexV3Response": {
+      "document": "DescribeCLSLogIndexV3返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>主题信息</p>",
+          "example": "无",
+          "member": "LogTopicIndexInfo",
+          "name": "TopicIndexInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCLSLogListV3Request": {
+      "document": "DescribeCLSLogListV3请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>",
+          "example": "1776300037000",
+          "member": "int64",
+          "name": "From",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "1776310037000",
+          "member": "int64",
+          "name": "To",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询条件</p>",
+          "example": "*",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>语法</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SyntaxRule",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主题</p>",
+          "example": "无",
+          "member": "LogContextInfo",
+          "name": "Topics",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-testa1b2\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序</p>",
+          "example": "desc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>limit</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>offset</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>采样</p>",
+          "example": "1",
+          "member": "float",
+          "name": "SamplingRate",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否高亮</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "HighLight",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否采用新分析</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "UseNewAnalysis",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询优化</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "QueryOptimize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主题id</p>",
+          "example": "csip-test-logaccess-251308491-tcss-container_assets",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>上下文信息</p>",
+          "example": "b1b6-a90d595ac704",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询类型</p>",
+          "example": "[\"cls_event_type:login\"]",
+          "member": "string",
+          "name": "SubQueryTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCLSLogListV3Response": {
+      "document": "DescribeCLSLogListV3返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>上下文</p>",
+          "example": "Y29udGV4dC1mMzI5ZTc0Ny05NzM1LTRmNDQtYjk4NS1hMDA2NjcwNDMwYWIxNzc2MzEwNjMyMzU2",
+          "member": "string",
+          "name": "Context",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>listover</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ListOver",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否采用分析</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Analysis",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果</p>",
+          "example": "无",
+          "member": "LogSearchResult",
+          "name": "Results",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列名</p>",
+          "example": "[\"cls_event_type\"]",
+          "member": "string",
+          "name": "ColNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析结果</p>",
+          "example": "无",
+          "member": "LogItems",
+          "name": "AnalysisResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析记录</p>",
+          "example": "[\"cls_event_type\"]",
+          "member": "string",
+          "name": "AnalysisRecords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列名</p>",
+          "example": "无",
+          "member": "LogColumn",
+          "name": "Columns",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>采样</p>",
+          "example": "0",
+          "member": "float",
+          "name": "SamplingRate",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主题信息</p>",
+          "example": "无",
+          "member": "LogSearchTopics",
+          "name": "Topics",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCSIPRiskStatisticsRequest": {
       "document": "DescribeCSIPRiskStatistics请求参数结构体",
       "members": [
@@ -23316,6 +23708,107 @@
           "member": "FilterDataObject",
           "name": "AppIdList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotifyAssetConfigRequest": {
+      "document": "DescribeNotifyAssetConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模块名</p>",
+          "example": "[\"Alert\"]",
+          "member": "string",
+          "name": "Modules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotifyAssetConfigResponse": {
+      "document": "DescribeNotifyAssetConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资产范围配置</p>",
+          "example": "无",
+          "member": "NotifyAssetConfigItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotifySettingAlertRequest": {
+      "document": "DescribeNotifySettingAlert请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeNotifySettingAlertResponse": {
+      "document": "DescribeNotifySettingAlert返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>通知配置</p>",
+          "example": "无",
+          "member": "NotifySetting",
+          "name": "Settings",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotifySettingRequest": {
+      "document": "DescribeNotifySetting请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeNotifySettingResponse": {
+      "document": "DescribeNotifySetting返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>通知设置列表</p>",
+          "example": "无",
+          "member": "NotifySetting",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>成员账号Id</p>",
+          "example": "[\"mem-tencent-ae85b7873563d4bc\"]",
+          "member": "string",
+          "name": "MemberId",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -33977,6 +34470,648 @@
       ],
       "usage": "out"
     },
+    "LogCLSFilter": {
+      "document": "日志过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>键</p>",
+          "example": "topicId",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>值</p>",
+          "example": "[\"csip-test-logaccess-260147294-csip_soc-ai_agent_security\"]",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "LogColumn": {
+      "document": "日志列信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "level",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>类型</p>",
+          "example": "text",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogContextInfo": {
+      "document": "日志检索上下文信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>主题id</p>",
+          "example": "csip-test-logaccess-251308491-bhsaas-asset_login",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上下文</p>",
+          "example": "context-aa",
+          "member": "string",
+          "name": "Context",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LogDynamicIndex": {
+      "document": "日志动态索引信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogFullTextInfo": {
+      "document": "日志全文索引信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>大小写敏感</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CaseSensitive",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>token</p>",
+          "example": "@&()='\",;:<>[]{}/ \n\t\r\\",
+          "member": "string",
+          "name": "Tokenizer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>包含中文</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ContainZH",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogHighLightItem": {
+      "document": "日志高亮信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>键</p>",
+          "example": "msg",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>值</p>",
+          "example": "[\"mock\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogIndexRuleInfo": {
+      "document": "日志索引规则信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全文索引</p>",
+          "example": "无",
+          "member": "LogFullTextInfo",
+          "name": "FullText",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>键值索引</p>",
+          "example": "无",
+          "member": "LogRuleKeyValueInfo",
+          "name": "KeyValue",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "无",
+          "member": "LogRuleKeyValueInfo",
+          "name": "Tag",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>动态索引</p>",
+          "example": "无",
+          "member": "LogDynamicIndex",
+          "name": "DynamicIndex",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogItem": {
+      "document": "日志条目",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>键</p>",
+          "example": "level",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>值</p>",
+          "example": "INFO",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogItems": {
+      "document": "日志条目列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数值</p>",
+          "example": "无",
+          "member": "LogItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogKeyValueInfo": {
+      "document": "日志键值索引详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>键</p>",
+          "example": "container_id",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>值</p>",
+          "example": "无",
+          "member": "LogValueInfo",
+          "name": "Value",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogRuleKeyValueInfo": {
+      "document": "日志键值索引规则信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>大小写敏感</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CaseSensitive",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>键值索引信息</p>",
+          "example": "无",
+          "member": "LogKeyValueInfo",
+          "name": "KeyValues",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogSearchErrors": {
+      "document": "日志检索错误信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>主题</p>",
+          "example": "mock-topic-251308491",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "mock error message",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "MockError",
+          "member": "string",
+          "name": "ErrorCodeStr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogSearchInfos": {
+      "document": "日志检索信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>主题</p>",
+          "example": "csip-test-logaccess-251308491-tcss-container_assets",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间间隔</p>",
+          "example": "180",
+          "member": "int64",
+          "name": "Period",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上下文</p>",
+          "example": "Y29udGV4dC1mMzI5ZTc0Ny05NzM1LTRmNDQtYjk4NS1hMDA2NjcwNDMwYWIxNzc2MzEwNjMyMzU2",
+          "member": "string",
+          "name": "Context",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogSearchResult": {
+      "document": "日志检索结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>时间</p>",
+          "example": "1778205767000",
+          "member": "int64",
+          "name": "Time",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主题</p>",
+          "example": "csip-test-logaccess-251308491-tcss-container_assets",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主题名</p>",
+          "example": "csip-test-logaccess-251308491-tcss-process_port_assets",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>源</p>",
+          "example": "21.215.253.171",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件名</p>",
+          "example": "/var/log/mock.log",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>pkgid</p>",
+          "example": "mock-pkg-id",
+          "member": "string",
+          "name": "PkgId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>pkglogid</p>",
+          "example": "0",
+          "member": "string",
+          "name": "PkgLogId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>json数据</p>",
+          "example": "{\"container_port\":\"3333\"}",
+          "member": "string",
+          "name": "LogJson",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机名</p>",
+          "example": "mock-host",
+          "member": "string",
+          "name": "HostName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>log信息</p>",
+          "example": "mock raw log",
+          "member": "string",
+          "name": "RawLog",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引状态</p>",
+          "example": "Success",
+          "member": "string",
+          "name": "IndexStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高亮信息</p>",
+          "example": "无",
+          "member": "LogHighLightItem",
+          "name": "HighLights",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogSearchTopics": {
+      "document": "日志检索主题信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "无",
+          "member": "LogSearchErrors",
+          "name": "Errors",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>正常信息</p>",
+          "example": "无",
+          "member": "LogSearchInfos",
+          "name": "Infos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogTopicIndexInfo": {
+      "document": "日志主题索性信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>主题</p>",
+          "example": "csip-test-logaccess-251308491-tcss-process_port_assets",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则</p>",
+          "example": "无",
+          "member": "LogIndexRuleInfo",
+          "name": "Rule",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p>",
+          "example": "2026-04-20 17:29:52",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否包含</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IncludeInternalFields",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>元数据标签</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "MetadataFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogValueInfo": {
+      "document": "日志索引值描述信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>类型</p>",
+          "example": "text",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "@&?|#()='\",;:<>[]{}/ \n\t\r\\",
+          "member": "string",
+          "name": "Tokenizer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>sql标签</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SqlFlag",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>包含中文</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ContainZH",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>别名</p>",
+          "example": "log_level",
+          "member": "string",
+          "name": "Alias",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Machine": {
       "document": "主机列表",
       "members": [
@@ -35929,6 +37064,132 @@
       ],
       "type": "object"
     },
+    "ModifyNotifyAssetConfigRequest": {
+      "document": "ModifyNotifyAssetConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资产范围配置</p>",
+          "example": "无",
+          "member": "NotifyAssetConfigItem",
+          "name": "Items",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNotifyAssetConfigResponse": {
+      "document": "ModifyNotifyAssetConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNotifySettingAlertRequest": {
+      "document": "ModifyNotifySettingAlert请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>通知配置</p>",
+          "example": "无",
+          "member": "NotifySetting",
+          "name": "Settings",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNotifySettingAlertResponse": {
+      "document": "ModifyNotifySettingAlert返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNotifySettingRequest": {
+      "document": "ModifyNotifySetting请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>通知模块</p><p>枚举值：</p><ul><li>AkSk： 云API风险治理</li><li>Alert： 告警中心</li><li>Agent： 客户端</li></ul>",
+          "example": "AkSk",
+          "member": "string",
+          "name": "Module",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知设置模式</p><p>枚举值：</p><ul><li>0： 标准模式</li><li>1： 高级模式</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "Mode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知状态</p><p>枚举值：</p><ul><li>0： 通知关闭</li><li>1： 通知开启</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知开始时间</p><p>参数格式：hh:mm:ss</p>",
+          "example": "09:00:00",
+          "member": "string",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知结束时间</p><p>参数格式：hh:mm:ss</p>",
+          "example": "18:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知选项</p><p>枚举值：</p><ul><li>CRITICAL： 告警等级：严重</li><li>HIGH： 告警等级：高危</li><li>MEDIUM： 告警等级：中危</li><li>LOW： 告警等级：低危</li><li>INFO： 告警等级：提醒</li><li>AGENT_UNINSTALL： 客户端卸载</li><li>AGENT_OFFLINE： 客户端离线</li></ul>",
+          "example": "[\"CRITICAL\"]",
+          "member": "string",
+          "name": "Option",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNotifySettingResponse": {
+      "document": "ModifyNotifySetting返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyOrganizationAccountStatusRequest": {
       "document": "ModifyOrganizationAccountStatus请求参数结构体",
       "members": [
@@ -36685,6 +37946,205 @@
         }
       ],
       "usage": "in"
+    },
+    "NotifyAssetConfigItem": {
+      "document": "通知资产范围配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模块名</p>",
+          "example": "Alert",
+          "member": "string",
+          "name": "Module",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子模块</p>",
+          "example": "BRUTE_FORCE",
+          "member": "string",
+          "name": "SubModule",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产范围</p><p>枚举值：</p><ul><li>0： 无含义</li><li>1： 全部</li><li>2： 自选</li><li>3： 按标签</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "AssetRange",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>选中的实例ID</p>",
+          "example": "[\"ins-cnbtehzg\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>剔除的实例ID</p>",
+          "example": "[\"ins-hh9o95fp\"]",
+          "member": "string",
+          "name": "ExcludedInstanceIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签ID</p>",
+          "example": "[8]",
+          "member": "int64",
+          "name": "TagIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云标签</p>",
+          "example": "[\"测试环境一$测试环境值一\"]",
+          "member": "string",
+          "name": "CloudTags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NotifySetting": {
+      "document": "通知设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>通知模块</p><p>枚举值：</p><ul><li>AkSk： 云API风险治理</li><li>Alert： 告警中心</li><li>Agent： 客户端</li></ul>",
+          "example": "Agent",
+          "member": "string",
+          "name": "Module",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知设置模式</p><p>枚举值：</p><ul><li>0： 标准模式</li><li>1： 高级模式</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "Mode",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知状态</p><p>枚举值：</p><ul><li>0： 通知关闭</li><li>1： 通知开启</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知开始时间</p><p>参数格式：hh:mm:ss</p>",
+          "example": "00:00:00",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知结束时间</p><p>参数格式：hh:mm:ss</p>",
+          "example": "23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产范围</p><p>枚举值：</p><ul><li>1： 全部主机</li><li>2： 自选主机</li><li>3： 按标签选择</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "AssetRange",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知选项</p><p>枚举值：</p><ul><li>CRITICAL： 告警等级：严重</li><li>HIGH： 告警等级：高危</li><li>MEDIUM： 告警等级：中危</li><li>LOW： 告警等级：低危</li><li>INFO： 告警等级：提醒</li><li>AGENT_UNINSTALL： 客户端卸载</li><li>AGENT_OFFLINE： 客户端离线</li></ul>",
+          "example": "[\"MEDIUM\"]",
+          "member": "string",
+          "name": "Option",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知模块（二级模块）</p>",
+          "example": "BRUTE_FORCE",
+          "member": "string",
+          "name": "SubModule",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>处置状态等</p>",
+          "example": "[\"PENDING\"]",
+          "member": "string",
+          "name": "Item",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "OrganizationInfo": {
       "document": "集团账号详情",

@@ -16933,8 +16933,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "仓库唯一id",
-          "example": "sd23",
+          "document": "<p>仓库唯一id</p>",
+          "example": "1",
           "member": "int64",
           "name": "RegistryId",
           "required": true,
@@ -16948,7 +16948,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "仓库名",
+          "document": "<p>仓库名</p>",
           "example": "tcr2",
           "member": "string",
           "name": "Name",
@@ -16958,7 +16958,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "ni",
           "member": "string",
           "name": "Username",
@@ -16968,7 +16968,7 @@
         },
         {
           "disabled": false,
-          "document": "密码",
+          "document": "<p>密码</p>",
           "example": "passwd",
           "member": "string",
           "name": "Password",
@@ -16978,7 +16978,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库url",
+          "document": "<p>仓库url</p>",
           "example": "http://good.com.cn",
           "member": "string",
           "name": "Url",
@@ -16988,7 +16988,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库类型，列表：harbor",
+          "document": "<p>仓库类型，列表：harbor</p>",
           "example": "harbor",
           "member": "string",
           "name": "RegistryType",
@@ -16998,7 +16998,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库版本",
+          "document": "<p>仓库版本</p>",
           "example": "v1.x",
           "member": "string",
           "name": "RegistryVersion",
@@ -17008,7 +17008,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型，列表：public（公网）,private（私网）",
+          "document": "<p>网络类型，列表：public（公网）,private（私网）</p>",
           "example": "public",
           "member": "string",
           "name": "NetType",
@@ -17018,7 +17018,7 @@
         },
         {
           "disabled": false,
-          "document": "区域，列表:default（默认）",
+          "document": "<p>区域，列表:default（默认）</p>",
           "example": "default",
           "member": "string",
           "name": "RegistryRegion",
@@ -17028,7 +17028,7 @@
         },
         {
           "disabled": false,
-          "document": "限速",
+          "document": "<p>限速</p>",
           "example": "10",
           "member": "uint64",
           "name": "SpeedLimit",
@@ -17038,7 +17038,7 @@
         },
         {
           "disabled": false,
-          "document": "安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1",
+          "document": "<p>安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1</p>",
           "example": "0",
           "member": "uint64",
           "name": "Insecure",
@@ -17048,8 +17048,8 @@
         },
         {
           "disabled": false,
-          "document": "联通性检测结果详情",
-          "example": "[{\"ConnDetectMessage\": \"\", \"ConnDetectStatus\": \"status_conne****\", \"FailReason\": \"\", \"Quuid\": \"backend\", \"Solution\": \"\", \"Uuid\": \"backend\"}]",
+          "document": "<p>联通性检测结果详情</p>",
+          "example": "无",
           "member": "RegistryConnDetectResult",
           "name": "ConnDetectDetail",
           "output_required": false,
@@ -17058,7 +17058,7 @@
         },
         {
           "disabled": false,
-          "document": "tcr情况下instance_id",
+          "document": "<p>tcr情况下instance_id</p>",
           "example": "1",
           "member": "string",
           "name": "InstanceID",
@@ -17068,7 +17068,7 @@
         },
         {
           "disabled": false,
-          "document": "同步方式，0全量同步，1增量同步",
+          "document": "<p>同步方式，0全量同步，1增量同步</p>",
           "example": "0",
           "member": "uint64",
           "name": "SyncMode",
@@ -17078,7 +17078,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动授权&扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像",
+          "document": "<p>是否自动授权&amp;扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像</p>",
           "example": "true",
           "member": "bool",
           "name": "NeedScan",
@@ -17088,8 +17088,8 @@
         },
         {
           "disabled": false,
-          "document": "webhook接入地址",
-          "example": "http://up.yd.qcloud.com/tcss/registry/webhook_id\t",
+          "document": "<p>webhook接入地址</p>",
+          "example": "http://up.yd.qcloud.com/tcss/registry/webhook_id",
           "member": "string",
           "name": "WebhookUrl",
           "output_required": false,
@@ -17098,7 +17098,7 @@
         },
         {
           "disabled": false,
-          "document": "webhook接入token\t",
+          "document": "<p>webhook接入token</p>",
           "example": "token",
           "member": "string",
           "name": "WebhookToken",
@@ -42180,8 +42180,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "仓库唯一id",
-          "example": "sd23",
+          "document": "<p>仓库唯一id</p>",
+          "example": "1",
           "member": "int64",
           "name": "RegistryId",
           "required": true,

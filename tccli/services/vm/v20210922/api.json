@@ -667,6 +667,21 @@
       ],
       "type": "object"
     },
+    "DecodeParams": {
+      "document": "视频解码参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>视频截帧参数</p><p>取值范围：[0, 30]</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ImageFrequency",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "DescribeTaskDetailRequest": {
       "document": "DescribeTaskDetail请求参数结构体",
       "members": [
@@ -1518,6 +1533,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文章标题</p>",
+          "example": "这是文章标题",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1937,6 +1962,15 @@
           "name": "TextContent",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文章标题</p>",
+          "example": "这是文章标题",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2160,7 +2194,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据ID",
+          "document": "<p>数据ID</p>",
           "example": "080cbccd-4d19-4792-b2cb-28dc52d108e4",
           "member": "string",
           "name": "DataId",
@@ -2169,7 +2203,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名",
+          "document": "<p>任务名</p>",
           "example": "cmsop",
           "member": "string",
           "name": "Name",
@@ -2178,10 +2212,19 @@
         },
         {
           "disabled": false,
-          "document": "任务输入",
+          "document": "<p>任务输入</p>",
           "example": "无",
           "member": "StorageInfo",
           "name": "Input",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频解码参数</p>",
+          "example": "无",
+          "member": "DecodeParams",
+          "name": "DecodeParams",
           "required": false,
           "type": "object"
         }

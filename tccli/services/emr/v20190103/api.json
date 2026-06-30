@@ -14433,6 +14433,15 @@
           "name": "ContainerExtraConf",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否强制检查自定义组件的合理性，目前仅提供给tf侧使用</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CheckServiceDeployInfo",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

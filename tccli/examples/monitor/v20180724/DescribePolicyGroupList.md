@@ -18,10 +18,10 @@ Output:
         "GroupList": [
             {
                 "GroupId": 0,
-                "GroupName": "abc",
+                "GroupName": "default-alarm-group",
                 "IsOpen": true,
-                "ViewName": "abc",
-                "LastEditUin": "abc",
+                "ViewName": "cvm_device",
+                "LastEditUin": "100000001",
                 "UpdateTime": 0,
                 "InsertTime": 0,
                 "UseSum": 0,
@@ -29,28 +29,28 @@ Output:
                 "IsDefault": 0,
                 "CanSetDefault": true,
                 "ParentGroupId": 0,
-                "Remark": "abc",
+                "Remark": "默认告警策略组",
                 "ProjectId": 0,
                 "Conditions": [
                     {
-                        "MetricShowName": "abc",
+                        "MetricShowName": "CPU利用率",
                         "Period": 0,
                         "MetricId": 0,
                         "RuleId": 0,
-                        "Unit": "abc",
+                        "Unit": "%",
                         "AlarmNotifyType": 0,
                         "AlarmNotifyPeriod": 0,
                         "CalcType": 0,
-                        "CalcValue": "abc",
+                        "CalcValue": "90",
                         "ContinueTime": 0,
-                        "MetricName": "abc"
+                        "MetricName": "cpu_usage"
                     }
                 ],
                 "EventConditions": [
                     {
                         "EventId": 0,
                         "RuleId": 0,
-                        "EventShowName": "abc",
+                        "EventShowName": "磁盘只读",
                         "AlarmNotifyPeriod": 0,
                         "AlarmNotifyType": 0
                     }
@@ -65,9 +65,9 @@ Output:
                         ],
                         "StartTime": 0,
                         "EndTime": 0,
-                        "ReceiverType": "abc",
+                        "ReceiverType": "group",
                         "NotifyWay": [
-                            "abc"
+                            "SMS"
                         ],
                         "UidList": [
                             0
@@ -77,29 +77,29 @@ Output:
                         "PersonInterval": 0,
                         "NeedSendNotice": 0,
                         "SendFor": [
-                            "abc"
+                            "ALARM"
                         ],
                         "RecoverNotify": [
-                            "abc"
+                            "SMS"
                         ],
-                        "ReceiveLanguage": "abc"
+                        "ReceiveLanguage": "zh-CN"
                     }
                 ],
                 "ConditionsTemp": {
                     "GroupId": 0,
-                    "GroupName": "abc",
-                    "ViewName": "abc",
-                    "Remark": "abc",
-                    "LastEditUin": "abc",
+                    "GroupName": "default-alarm-group",
+                    "ViewName": "cvm_device",
+                    "Remark": "默认告警策略组",
+                    "LastEditUin": "100000001",
                     "UpdateTime": 0,
                     "InsertTime": 0,
                     "IsUnionRule": 0
                 },
                 "InstanceGroup": {
                     "InstanceGroupId": 0,
-                    "ViewName": "abc",
-                    "LastEditUin": "abc",
-                    "GroupName": "abc",
+                    "ViewName": "cvm_device",
+                    "LastEditUin": "100000001",
+                    "GroupName": "default-instance-group",
                     "InstanceSum": 0,
                     "UpdateTime": 0,
                     "InsertTime": 0
@@ -108,8 +108,8 @@ Output:
             }
         ],
         "Total": 0,
-        "Warning": "abc",
-        "RequestId": "abc"
+        "Warning": "",
+        "RequestId": "wafdafasdfew-adfadfasfdeaf-erqer"
     }
 }
 ```
