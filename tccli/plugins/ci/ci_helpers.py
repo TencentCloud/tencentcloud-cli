@@ -144,7 +144,7 @@ def handle_cos_error(e):
         }
     else:
         result = {"Error": {"Code": "ClientError", "Message": str(e)}}
-    print(json.dumps(result, indent=2, ensure_ascii=False), file=sys.stderr)
+    sys.stderr.write(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
     sys.exit(1)
 
 
@@ -180,7 +180,7 @@ def print_result(data, headers=None):
         req_ids = _extract_request_id(headers)
         if req_ids:
             # 将 RequestId 注入到输出中，放在最前面
-            data = {**req_ids, **data}
+            data.update(req_ids)
     print(json.dumps(data, indent=2, ensure_ascii=False))
 
 
@@ -227,5 +227,5 @@ def save_response_to_file(response, output_path):
             f.write(response)
             total_bytes = len(response)
         else:
-            raise ValueError(f"Unsupported response type: {type(response)}")
+            raise ValueError("Unsupported response type: %s" % type(response))
     return total_bytes

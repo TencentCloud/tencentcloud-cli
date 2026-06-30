@@ -174,7 +174,7 @@ def image_upload_process(args, parsed_globals):
 
         # 校验本地文件存在
         if not os.path.isfile(local):
-            raise FileNotFoundError(f"本地文件不存在: {local}")
+            raise FileNotFoundError("本地文件不存在: %s" % local)
 
         pic_operations = json.dumps({
             "is_pic_info": 1,

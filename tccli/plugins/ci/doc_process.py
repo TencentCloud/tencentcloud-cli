@@ -51,7 +51,7 @@ def doc_preview(args, parsed_globals):
         # 确定输出路径
         ext = args.get("dsttype") or args.get("image_type") or "png"
         base = os.path.splitext(os.path.basename(args["key"]))[0]
-        default_name = f"{base}_page{page}.{ext}"
+        default_name = "%s_page%s.%s" % (base, page, ext)
         output = args.get("local_path") or default_name
 
         total_bytes = save_response_to_file(response, output)
@@ -100,7 +100,7 @@ def doc_preview_html(args, parsed_globals):
             output = args["local_path"]
         else:
             base = os.path.splitext(os.path.basename(args["key"]))[0]
-            output = f"{base}_preview.html"
+            output = "base_preview.html" % base
 
         total_bytes = save_response_to_file(response, output)
         print_result({

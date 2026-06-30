@@ -84,7 +84,7 @@ def video_snapshot(args, parsed_globals):
             Bucket=bucket,
             Key=key,
             Time=str(time_point),
-            **kwargs,
+            **kwargs
         )
 
         # 确定输出路径

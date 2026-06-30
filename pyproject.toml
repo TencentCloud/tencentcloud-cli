@@ -26,6 +26,7 @@ dependencies = [
     "six>=1.16.0",
     "tencentcloud-sdk-python>=3.1.118",
     "cos-python-sdk-v5>=1.9.0",
+    'futures>=3.2.0; python_version < "3.2"',
 ]
 
 [project.urls]
