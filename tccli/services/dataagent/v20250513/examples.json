@@ -64,6 +64,22 @@
         "title": "示例"
       }
     ],
+    "ExecuteAgentApi": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecuteAgentApi\n<公共请求参数>\n\n{\n    \"RequestPath\": \"/api/agents\",\n    \"RequestData\": \"agentType=builtin\",\n    \"RequestType\": \"get\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentData\": \"data too long, just for show\",\n        \"ErrorMsg\": \"success\",\n        \"RequestPath\": \"/api/agents\",\n        \"RequestId\": \"a8dbf68c-e822-47cf-bea6-a4927bf692c1\"\n    }\n}",
+        "title": "ExecuteAgentApi"
+      }
+    ],
+    "ExecuteAgentApiV1": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecuteAgentApiV1\n<公共请求参数>\n\n{\n    \"RequestPath\": \"/api/teams/big-data-team/sessions/20260603_211035_cc30c0/chat/events\",\n    \"RequestType\": \"event-stream\"\n}",
+        "output": "{\n  \"index\": 4,\n  \"delta\": \" SSE\"\n}",
+        "title": "request success"
+      }
+    ],
     "GetJobsByKnowledgeBaseId": [
       {
         "document": "示例",

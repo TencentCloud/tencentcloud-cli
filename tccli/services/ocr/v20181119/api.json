@@ -12615,7 +12615,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "<p>图片的 Base64 值。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -12624,7 +12624,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG格式。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "document": "<p>图片的 Url 地址。要求图片经Base64编码后不超过 10M，支持PNG、JPG、JPEG、PDF格式。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/QrcodeOCR/QrcodeOCR1.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -12639,8 +12639,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "二维码/条形码识别结果信息，具体内容请点击左侧链接。",
-          "example": "[{\"Position\":{\"LeftBottom\":{\"X\":161,\"Y\":640},\"LeftTop\":{\"X\":161,\"Y\":158},\"RightBottom\":{\"X\":638,\"Y\":640},\"RightTop\":{\"X\":638,\"Y\":158}},\"TypeName\":\"QR_CODE\",\"Url\":\"http://weixin.qq.com/r/LBNqcsHEhpz5rYUR90Y_\"}]",
+          "document": "<p>二维码/条形码识别结果信息，具体内容请点击左侧链接。</p>",
+          "example": "无",
           "member": "QrcodeResultsInfo",
           "name": "CodeResults",
           "output_required": true,
@@ -12649,8 +12649,8 @@
         },
         {
           "disabled": false,
-          "document": "图片大小，具体内容请点击左侧链接。",
-          "example": "{\"High\":800,\"Wide\":800}",
+          "document": "<p>图片大小，具体内容请点击左侧链接。</p>",
+          "example": "无",
           "member": "QrcodeImgSize",
           "name": "ImgSize",
           "output_required": true,

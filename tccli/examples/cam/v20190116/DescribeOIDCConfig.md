@@ -1,4 +1,4 @@
-**Example 1: 获取角色OIDC配置**
+**Example 1: 获取OIDC配置**
 
 
 
@@ -6,23 +6,24 @@ Input:
 
 ```
 tccli cam DescribeOIDCConfig --cli-unfold-argument  \
-    --Name Name
+    --Name testName
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Description": "Desc",
-        "ProviderType": 11,
-        "IdentityUrl": "https://*****.qq.cn/",
-        "IdentityKey": "ewogICAgImtleXMiOiBbCiAgICAg********jenYyT0kiCiAgICAgICAgfQogICAgXQp9",
+        "AutoRotateKey": 1,
         "ClientId": [
-            "61adcf0******bc9546"
+            "61adcf00620c31e3ddbc9546"
         ],
-        "Name": "Name",
+        "Description": "OIDC 联合身份",
+        "IdentityKey": "eyJrZXlzIjpbeyJrdHkiOiJSU0EiLCJ1c2UiOiJzaWciLCJraWQiOiI3S2Mz************************************************************NG1SOHEzSHhON3ZZMmVLOWFKZkI2c0NnUGhVNXRXZFhtWnJRMW9JIn1dfQ==",
+        "IdentityUrl": "https://xxx.qq.cn/oidc",
+        "Name": "testName",
+        "ProviderType": 11,
         "Status": 11,
-        "RequestId": "24366174-63dd-42ba-8073-bd6b0af0f241"
+        "RequestId": "1df46551-65d8-4df2-8ad4-89fe28aa4740"
     }
 }
 ```

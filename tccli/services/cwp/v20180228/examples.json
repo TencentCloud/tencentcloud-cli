@@ -2038,7 +2038,7 @@
       {
         "document": "获取单台主机/全部主机专业版状态",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeProVersionStatus\n&Uuid=add4a78a-0d59-11e8-b7ab-00e081e1a5c5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"454fbac3-8546-4c16-8c1a-69x3ab73ba3b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"UNOPENED\",\n        \"RequestId\": \"454fbac3-8546-4c16-8c1a-69x3ab73ba3b\"\n    }\n}",
         "title": "获取专业版状态"
       }
     ],
@@ -2254,7 +2254,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecommendedProtectCpu\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d55bcffb-2c87-43c8-afe8-543e6a0c48aa\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Number\": 0,\n        \"RequestId\": \"d55bcffb-2c87-43c8-afe8-543e6a0c48aa\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -2358,7 +2358,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSafeInfo\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"Context\": \"安全事件解析之暴力破解篇\",\n        \"Title\": \"安全通知\",\n        \"Url\": \"http://xxxx.com\",\n        \"EventName\": \"XXX漏洞\",\n        \"EventCategory\": 2,\n        \"EffectHostCount\": 0,\n        \"IsShow\": true,\n        \"Id\": 1\n    }\n}",
         "title": "查询安全通知"
       }
     ],
@@ -2630,7 +2630,7 @@
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrialReport\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aa3ccfe9-5dc3-40d2-8831-aa99e9a12207\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AddMachineCnt\": 8,\n        \"AutoBlockBruteCnt\": 46,\n        \"AutoDefenceCnt\": 0,\n        \"AutoIsolateMalwareCnt\": 2,\n        \"AutoVulFixCnt\": -1,\n        \"BaselineRiskCnt\": 214,\n        \"BashCnt\": -1,\n        \"BruteAlarmCnt\": 415,\n        \"CloudFrom\": [\n            {\n                \"CloudFrom\": 0,\n                \"MachineCnt\": 218\n            },\n            {\n                \"CloudFrom\": 2,\n                \"MachineCnt\": 2\n            },\n            {\n                \"CloudFrom\": 3,\n                \"MachineCnt\": 1\n            }\n        ],\n        \"DnsCnt\": 0,\n        \"EventCnt\": 0,\n        \"FileTamperCnt\": 0,\n        \"IsShow\": false,\n        \"JavaShellCnt\": -1,\n        \"MalwareAlarmCnt\": 59,\n        \"RequestId\": \"aa3ccfe9-5dc3-40d2-8831-aa99e9a12207\",\n        \"VulCnt\": 26\n    }\n}",
         "title": "示例"
       }
     ],

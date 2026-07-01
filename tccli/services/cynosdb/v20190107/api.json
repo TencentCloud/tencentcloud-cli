@@ -29537,7 +29537,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库代理组ID",
+          "document": "<p>数据库代理组ID</p>",
           "example": "cynosdbmysql-proxy-mdhg55su",
           "member": "string",
           "name": "ProxyGroupId",
@@ -29547,7 +29547,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理组节点个数",
+          "document": "<p>数据库代理组节点个数</p>",
           "example": "3",
           "member": "int64",
           "name": "ProxyNodeCount",
@@ -29557,7 +29557,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理组状态",
+          "document": "<p>数据库代理组状态</p>",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -29567,7 +29567,7 @@
         },
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -29577,7 +29577,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
@@ -29587,7 +29587,7 @@
         },
         {
           "disabled": false,
-          "document": "当前代理版本",
+          "document": "<p>当前代理版本</p>",
           "example": "1.3.11",
           "member": "string",
           "name": "CurrentProxyVersion",
@@ -29597,7 +29597,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-i2weamox",
           "member": "string",
           "name": "ClusterId",
@@ -29607,7 +29607,7 @@
         },
         {
           "disabled": false,
-          "document": "用户AppId",
+          "document": "<p>用户AppId</p>",
           "example": "1772344699",
           "member": "int64",
           "name": "AppId",
@@ -29617,11 +29617,31 @@
         },
         {
           "disabled": false,
-          "document": "读写节点开通数据库代理",
+          "document": "<p>读写节点开通数据库代理</p>",
           "example": "yes",
           "member": "string",
           "name": "OpenRw",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-06-12 11:30:50",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-06-12 11:35:44",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -29876,7 +29896,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库代理节点ID",
+          "document": "<p>数据库代理节点ID</p>",
           "example": "cynosdbmysql-proxyNode-pv4hg4na",
           "member": "string",
           "name": "ProxyNodeId",
@@ -29886,7 +29906,7 @@
         },
         {
           "disabled": false,
-          "document": "节点当前连接数, DescribeProxyNodes接口此字段值不返回",
+          "document": "<p>节点当前连接数, DescribeProxyNodes接口此字段值不返回</p>",
           "example": "157",
           "member": "int64",
           "name": "ProxyNodeConnections",
@@ -29896,7 +29916,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理节点cpu",
+          "document": "<p>数据库代理节点cpu</p>",
           "example": "2",
           "member": "int64",
           "name": "Cpu",
@@ -29906,7 +29926,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理节点内存",
+          "document": "<p>数据库代理节点内存</p>",
           "example": "4000",
           "member": "int64",
           "name": "Mem",
@@ -29916,7 +29936,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理节点状态",
+          "document": "<p>数据库代理节点状态</p>",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -29926,7 +29946,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理组ID",
+          "document": "<p>数据库代理组ID</p>",
           "example": "cynosdbmysql-proxy-mdhg57su",
           "member": "string",
           "name": "ProxyGroupId",
@@ -29936,7 +29956,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-i2weamox",
           "member": "string",
           "name": "ClusterId",
@@ -29946,7 +29966,7 @@
         },
         {
           "disabled": false,
-          "document": "用户AppID",
+          "document": "<p>用户AppID</p>",
           "example": "1772344699",
           "member": "int64",
           "name": "AppId",
@@ -29956,7 +29976,7 @@
         },
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -29966,7 +29986,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
@@ -29976,11 +29996,31 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理节点名字",
+          "document": "<p>数据库代理节点名字</p>",
           "example": "cynosdbmysql-proxyNode-q52v1wp4",
           "member": "string",
           "name": "OssProxyNodeName",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-06-12 11:30:50",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-06-12 11:30:50",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

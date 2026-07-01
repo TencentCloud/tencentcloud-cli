@@ -8326,6 +8326,15 @@
           "name": "CosInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>转绘任务参数</p>",
+          "example": "无",
+          "member": "VideoRedrawTaskInfo",
+          "name": "TaskInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -25905,6 +25914,23 @@
         }
       ],
       "usage": "in"
+    },
+    "VideoRedrawTaskInfo": {
+      "document": "Aigc 转绘、替换等任务参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>转绘视频风格，如动漫、赛博朋克、水墨等</p>",
+          "example": "粘土风",
+          "member": "string",
+          "name": "Style",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "WatermarkInfo": {
       "document": "水印信息。",

@@ -8943,7 +8943,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启异步工作流",
+          "document": "<p>是否开启异步工作流</p>",
           "example": "false",
           "member": "bool",
           "name": "AsyncWorkflow",
@@ -8954,7 +8954,7 @@
         },
         {
           "disabled": false,
-          "document": "状态 发布状态(UNPUBLISHED: 待发布 PUBLISHING: 发布中 PUBLISHED: 已发布 PUBLISHED_FAIL:发布失败；DRAFT：待调试)",
+          "document": "<p>状态 发布状态(UNPUBLISHED: 待发布 PUBLISHING: 发布中 PUBLISHED: 已发布 PUBLISHED_FAIL:发布失败；DRAFT：待调试)</p>",
           "example": "PUBLISHING",
           "member": "string",
           "name": "Status",
@@ -8965,7 +8965,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流描述",
+          "document": "<p>工作流描述</p>",
           "example": "我的工作流信息",
           "member": "string",
           "name": "WorkflowDescription",
@@ -8976,7 +8976,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流Id",
+          "document": "<p>工作流Id</p>",
           "example": "250b6*****************a-0436b0cc5717",
           "member": "string",
           "name": "WorkflowId",
@@ -8987,13 +8987,24 @@
         },
         {
           "disabled": false,
-          "document": "工作流名称",
+          "document": "<p>工作流名称</p>",
           "example": "我的工作流",
           "member": "string",
           "name": "WorkflowName",
           "output_required": false,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流是否启用</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

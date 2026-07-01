@@ -83,9 +83,9 @@
     "CreateOIDCConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOIDCConfig\n<公共请求参数>\n\n{\n    \"IdentityKey\": \"ewogICAgImtleXMiOiBbCiAgIC***************V9jenYyT0kiCiAgICAgICAgfQogICAgXQp9\",\n    \"IdentityUrl\": \"https://*******.qq.cn/\",\n    \"Name\": \"oidc\",\n    \"ClientId\": [\n        \"61adcf00******ddbc9546\"\n    ],\n    \"Description\": \"Desc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d8de866-7385-4230-8f28-060a92d723ee\"\n    }\n}",
-        "title": "添加角色OIDC配置"
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOIDCConfig\n<公共请求参数>\n\n{\n    \"IdentityUrl\": \"https://dev-6237974.okta.com\",\n    \"ClientId\": [\n        \"61adcf00620c31e3ddbc9546\"\n    ],\n    \"Name\": \"OIDC\",\n    \"IdentityKey\": \"eyJrZXlzIjpbeyJrdHkiOiJSU0EiLCJ1c2UiOiJzaWciLCJraWQiOiI3S2Mz***********************************************************MNG1SOHEzSHhON3ZZMmVLOWFKZkI2c0NnUGhVNXRXZFhtWnJRMW9JIn1dfQ\",\n    \"Description\": \"修改配置信息\",\n    \"AutoRotateKey\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"92643b0c-42ad-46cb-98b8-080fa81d5a5c\"\n    }\n}",
+        "title": "创建OIDC角色身份提供商"
       }
     ],
     "CreatePolicy": [
@@ -251,9 +251,9 @@
     "DescribeOIDCConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOIDCConfig\n<公共请求参数>\n\n{\n    \"Name\": \"Name\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Description\": \"Desc\",\n        \"ProviderType\": 11,\n        \"IdentityUrl\": \"https://*****.qq.cn/\",\n        \"IdentityKey\": \"ewogICAgImtleXMiOiBbCiAgICAg********jenYyT0kiCiAgICAgICAgfQogICAgXQp9\",\n        \"ClientId\": [\n            \"61adcf0******bc9546\"\n        ],\n        \"Name\": \"Name\",\n        \"Status\": 11,\n        \"RequestId\": \"24366174-63dd-42ba-8073-bd6b0af0f241\"\n    }\n}",
-        "title": "获取角色OIDC配置"
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOIDCConfig\n<公共请求参数>\n\n{\n    \"Name\": \"testName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoRotateKey\": 1,\n        \"ClientId\": [\n            \"61adcf00620c31e3ddbc9546\"\n        ],\n        \"Description\": \"OIDC 联合身份\",\n        \"IdentityKey\": \"eyJrZXlzIjpbeyJrdHkiOiJSU0EiLCJ1c2UiOiJzaWciLCJraWQiOiI3S2Mz************************************************************NG1SOHEzSHhON3ZZMmVLOWFKZkI2c0NnUGhVNXRXZFhtWnJRMW9JIn1dfQ==\",\n        \"IdentityUrl\": \"https://xxx.qq.cn/oidc\",\n        \"Name\": \"testName\",\n        \"ProviderType\": 11,\n        \"Status\": 11,\n        \"RequestId\": \"1df46551-65d8-4df2-8ad4-89fe28aa4740\"\n    }\n}",
+        "title": "获取OIDC配置"
       }
     ],
     "DescribeRoleList": [
@@ -695,9 +695,9 @@
     "UpdateOIDCConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOIDCConfig\n<公共请求参数>\n\n{\n    \"IdentityKey\": \"ewogICAgImtleXMiOiBbCiAgICAgICAgewogIC************klJbUpsLV9jenYyT0kiCiAgICAgICAgfQogICAgXQp9\",\n    \"IdentityUrl\": \"https://test.qq.cn/\",\n    \"Name\": \"test-oidc\",\n    \"ClientId\": [\n        \"61adcf0*****9546\"\n    ],\n    \"Description\": \"Desc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"59b8efa4-cdd3-46dd-b9e7-0925aa1bee74\"\n    }\n}",
-        "title": "修改角色OIDC配置"
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOIDCConfig\n<公共请求参数>\n\n{\n    \"IdentityUrl\": \"https://dev-6237974.okta.com\",\n    \"ClientId\": [\n        \"61adcf00620c31e3ddbc9546\"\n    ],\n    \"Name\": \"oidc\",\n    \"IdentityKey\": \"eyJrZXlzIjpbeyJrdHkiOiJSU0EiLCJ1c2UiOiJzaWciLCJraWQiOiI3S2Mz***********************************************************MNG1SOHEzSHhON3ZZMmVLOWFKZkI2c0NnUGhVNXRXZFhtWnJRMW9JIn1dfQ\",\n    \"Description\": \"修改配置信息\",\n    \"AutoRotateKey\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"68bedb22-0c9d-4f83-9509-f79249ef7fd2\"\n    }\n}",
+        "title": "修改配置信息"
       }
     ],
     "UpdatePasswordRules": [

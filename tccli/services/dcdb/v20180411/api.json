@@ -665,33 +665,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "新增分片的数量",
+          "document": "<p>新增分片的数量</p>",
           "example": "1",
           "member": "int64",
           "name": "ShardCount",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
-          "document": "分片内存大小，单位 GB",
+          "document": "<p>分片内存大小，单位 GB</p>",
           "example": "2",
           "member": "int64",
           "name": "ShardMemory",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
-          "document": "分片存储大小，单位 GB",
+          "document": "<p>分片存储大小，单位 GB</p>",
           "example": "10",
           "member": "int64",
           "name": "ShardStorage",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>DCN实例的规格</p>",
+          "example": "无",
+          "member": "DcnInsShardConfig",
+          "name": "DcnInsShardConfigs",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -3743,6 +3749,39 @@
         }
       ],
       "usage": "out"
+    },
+    "DcnInsShardConfig": {
+      "document": "DCN实例添加分片时对端实例期望添加的分片规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "tdsqlshard-0dcii9y9d9",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存大小</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘大小</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Storage",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "Deal": {
       "document": "订单信息",

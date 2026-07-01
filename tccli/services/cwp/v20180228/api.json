@@ -14222,7 +14222,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单号",
+          "document": "<p>订单号</p>",
           "example": "dealName",
           "member": "string",
           "name": "DealName",
@@ -14231,7 +14231,7 @@
         },
         {
           "disabled": false,
-          "document": "可选参数: 1专业版-包年包月 , 2 旗舰版-包年包月",
+          "document": "<p>授权类型</p><p>枚举值：</p><ul><li>1： 专业版-包年包月</li><li>2： 旗舰版-包年包月</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "LicenseType",
@@ -14240,8 +14240,8 @@
         },
         {
           "disabled": false,
-          "document": "机器列表",
-          "example": "[quuid1]",
+          "document": "<p>机器列表</p>",
+          "example": "[\"quuid1\"]",
           "member": "string",
           "name": "QuuidList",
           "required": false,
@@ -14249,7 +14249,7 @@
         },
         {
           "disabled": false,
-          "document": "是否全选机器",
+          "document": "<p>是否全选机器</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAll",
@@ -29960,7 +29960,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主机安全客户端UUID、填写\"all\"表示所有主机。",
+          "document": "<p>主机安全客户端UUID、填写&quot;all&quot;表示所有主机。</p>",
           "example": "e8f91530-02c7-3e98-d84d-26df60d981ef",
           "member": "string",
           "name": "Uuid",
@@ -29973,6 +29973,16 @@
     "DescribeProVersionStatusResponse": {
       "document": "DescribeProVersionStatus返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>开通状态。</p><li>UNOPENED：未开通专业版</li><li>OPENED：已开通专业版</li>",
+          "example": "UNOPENED",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -31808,6 +31818,16 @@
       "document": "DescribeRecommendedProtectCpu返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "<p>推荐购买数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Number",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -32582,6 +32602,86 @@
     "DescribeSafeInfoResponse": {
       "document": "DescribeSafeInfo返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>文本内容</p>",
+          "example": "安全事件解析之**篇",
+          "member": "string",
+          "name": "Context",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标题</p>",
+          "example": "安全通知",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>超链接地址</p>",
+          "example": "http://****.com",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>受影响机器数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "EffectHostCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>受影响事件名称</p>",
+          "example": "***漏洞",
+          "member": "string",
+          "name": "EventName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>受影响事件类型 0 无 1 木马 2 漏洞 3基线</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "EventCategory",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否展示通知</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsShow",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Id值</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -34879,6 +34979,166 @@
     "DescribeTrialReportResponse": {
       "document": "DescribeTrialReport返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否展示</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsShow",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>新增机器数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AddMachineCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>基线风险数(检测项)</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "BaselineRiskCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>漏洞数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "VulCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>木马告警成功数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "MalwareAlarmCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>爆破告警成功数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "BruteAlarmCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动隔离木马数(成功)</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoIsolateMalwareCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动阻断数(成功)</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoBlockBruteCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动防御漏洞数(成功)</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoDefenceCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>漏洞自动修复数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoVulFixCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>java内存码告警数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "JavaShellCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>核心文件监控告警数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "FileTamperCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件调查数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EventCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>恶意请求事件数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "DnsCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高危命令事件数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "BashCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云服务器厂商类型</p>",
+          "example": "无",
+          "member": "CloudFromCnt",
+          "name": "CloudFrom",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -49064,7 +49324,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源ID",
+          "document": "<p>资源ID</p>",
           "example": "1",
           "member": "string",
           "name": "ResourceId",
@@ -49073,7 +49333,7 @@
         },
         {
           "disabled": false,
-          "document": "授权类型",
+          "document": "<p>授权类型</p><p>枚举值：</p><ul><li>1： 专业版-包年包月</li><li>2： 旗舰版-包年包月</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "LicenseType",
@@ -49082,8 +49342,8 @@
         },
         {
           "disabled": false,
-          "document": "是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)",
-          "example": "ture",
+          "document": "<p>是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)</p>",
+          "example": "false",
           "member": "bool",
           "name": "IsAll",
           "required": false,
@@ -49091,7 +49351,7 @@
         },
         {
           "disabled": false,
-          "document": "需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数. 最大长度=2000",
+          "document": "<p>需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数. 最大长度=2000</p>",
           "example": "[\"4c4c4544-004c-5410-805a-cac04f46****\"]",
           "member": "string",
           "name": "QuuidList",
@@ -49106,7 +49366,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "TaskId",
@@ -49202,7 +49462,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源ID",
+          "document": "<p>资源ID</p>",
           "example": "cwplic-92c9****",
           "member": "string",
           "name": "ResourceId",
@@ -49211,7 +49471,7 @@
         },
         {
           "disabled": false,
-          "document": "授权类型\n- 0 按量付费-专业版\n- 1 包年包月-专业版\n- 2 包年包月-旗舰版\n- 3 包年包月-轻量版",
+          "document": "<p>授权类型</p><p>枚举值：</p><ul><li>1： 专业版-包年包月</li><li>2： 旗舰版-包年包月</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "LicenseType",
@@ -49220,8 +49480,8 @@
         },
         {
           "disabled": false,
-          "document": "是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)",
-          "example": "ture",
+          "document": "<p>是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)</p>",
+          "example": "false",
           "member": "bool",
           "name": "IsAll",
           "required": false,
@@ -49229,7 +49489,7 @@
         },
         {
           "disabled": false,
-          "document": "需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.\n最大长度=100",
+          "document": "<p>需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.<br>最大长度=100</p>",
           "example": "[\"4c4c4544-0053-4d10-8052-c4c04f53****\"]",
           "member": "string",
           "name": "QuuidList",
@@ -49244,8 +49504,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "只有解绑失败的才有该值.",
-          "example": "[{\"Quuid\":\"4c4c4544-0053-4d10-8052-c4c04f53****\",\"ErrMsg\":\"解绑次数不足 \"}]  ",
+          "document": "<p>只有解绑失败的才有该值.</p>",
+          "example": "无",
           "member": "LicenseUnBindRsp",
           "name": "ErrMsg",
           "output_required": true,
