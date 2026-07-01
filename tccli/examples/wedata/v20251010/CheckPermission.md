@@ -1,23 +1,14 @@
-**Example 1: 检查权限**
+**Example 1: CheckPermission**
 
-
+权限校验
 
 Input: 
 
 ```
 tccli wedata CheckPermission --cli-unfold-argument  \
-    --Resources.0.ResourceType Catalog \
-    --Resources.0.ResourceUri DataLakeCatalog \
-    --Permissions.0.Name USE_CATALOG \
-    --Permissions.0.DisplayName None \
-    --Permissions.0.Description None \
-    --Permissions.0.IsRead None \
-    --Permissions.0.IsManage None \
-    --Permissions.0.Granted None \
-    --Permissions.0.InheritedObject.ResourceType None \
-    --Permissions.0.InheritedObject.ResourceUri None \
-    --Permissions.0.Inherited None \
-    --Permissions.0.IsEdit None
+    --Resources.0.ResourceType METALAKE \
+    --Resources.0.ResourceUri default \
+    --Permissions.0.Name GRANT_PRIVILEGES
 ```
 
 Output: 
@@ -29,6 +20,9 @@ Output:
                 {
                     "PermissionResults": [
                         {
+                            "CatalogID": "",
+                            "CatalogName": "",
+                            "Condition": "",
                             "Description": "",
                             "DisplayName": "",
                             "Granted": true,
@@ -36,18 +30,21 @@ Output:
                             "InheritedObject": null,
                             "IsEdit": false,
                             "IsManage": false,
+                            "IsMetaDataPermission": false,
                             "IsRead": false,
-                            "Name": "USE_CATALOG"
+                            "Name": "GRANT_PRIVILEGES",
+                            "WorkSpaceID": "",
+                            "WorkSpaceName": ""
                         }
                     ],
                     "Resource": {
-                        "ResourceType": "Catalog",
-                        "ResourceUri": "DataLakeCatalog"
+                        "ResourceType": "METALAKE",
+                        "ResourceUri": "default"
                     }
                 }
             ]
         },
-        "RequestId": "922e97ba-8209-4cc2-b7c8-e03ccd2bce35"
+        "RequestId": "8396b742-54ee-49b3-b709-6d0155e53427"
     }
 }
 ```

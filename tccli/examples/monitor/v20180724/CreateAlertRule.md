@@ -10,7 +10,7 @@ tccli monitor CreateAlertRule --cli-unfold-argument  \
     --InstanceId prom-abcd1234 \
     --Expr "up{service=\"rig-prometheus-agent\"}>0" \
     --Duration 5m \
-    --RuleName test \
+    --RuleName recording-rule-example \
     --RuleState 2
 ```
 

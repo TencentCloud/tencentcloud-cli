@@ -2850,6 +2850,15 @@
           "name": "ModelProtocol",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义模型协议配置</p>",
+          "example": "{         \"request\": {           \"userPromptPaths\": [             \"input.message\"           ]         },         \"response\": {           \"streamContentPaths\": [             \"rawEvent.content\"           ]         }       }",
+          "member": "string",
+          "name": "RawCustomModelProtocolConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6949,6 +6958,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义模型协议配置</p>",
+          "example": "{         \"request\": {           \"userPromptPaths\": [             \"input.message\"           ]         },         \"response\": {           \"streamContentPaths\": [             \"rawEvent.content\"           ]         }       }",
+          "member": "string",
+          "name": "RawCustomModelProtocolConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9857,6 +9876,15 @@
           "example": "OpenAI",
           "member": "string",
           "name": "ModelProtocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义模型协议配置</p>",
+          "example": "{         \"request\": {           \"userPromptPaths\": [             \"input.message\"           ]         },         \"response\": {           \"streamContentPaths\": [             \"rawEvent.content\"           ]         }       }",
+          "member": "string",
+          "name": "RawCustomModelProtocolConfig",
           "required": false,
           "type": "string"
         }

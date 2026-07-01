@@ -83,6 +83,8 @@ tccli/services/ai3d/__init__.py
 tccli/services/ai3d/ai3d_client.py
 tccli/services/aiart/__init__.py
 tccli/services/aiart/aiart_client.py
+tccli/services/alb/__init__.py
+tccli/services/alb/alb_client.py
 tccli/services/ame/__init__.py
 tccli/services/ame/ame_client.py
 tccli/services/ame/v20190916/api.json

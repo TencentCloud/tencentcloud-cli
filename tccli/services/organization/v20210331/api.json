@@ -9470,7 +9470,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否创建的成员。true-是、false-否；成员不是创建的成员不允许删除",
+          "document": "<p>是否创建的成员。true-是、false-否；成员不是创建的成员不允许删除</p>",
           "example": "true",
           "member": "bool",
           "name": "IsCreateMember",
@@ -9480,7 +9480,7 @@
         },
         {
           "disabled": false,
-          "document": "成员删除许可。true-开启、false-关闭；成员删除许可关闭时不允许删除",
+          "document": "<p>成员删除许可。true-开启、false-关闭；成员删除许可关闭时不允许删除</p>",
           "example": "true",
           "member": "bool",
           "name": "DeletionPermission",
@@ -9490,7 +9490,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可信服务委派管理员。true-是、false-否；成员是可信服务委派管理员不允许删除",
+          "document": "<p>是否可信服务委派管理员。true-是、false-否；成员是可信服务委派管理员不允许删除</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAssignManager",
@@ -9500,7 +9500,7 @@
         },
         {
           "disabled": false,
-          "document": "是否主体管理员。true-是、false-否；成员是主体管理员不允许删除",
+          "document": "<p>是否主体管理员。true-是、false-否；成员是主体管理员不允许删除</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAuthManager",
@@ -9510,7 +9510,7 @@
         },
         {
           "disabled": false,
-          "document": "是否共享资源管理员。true-是、false-否；成员是共享资源管理员不允许删除",
+          "document": "<p>是否共享资源管理员。true-是、false-否；成员是共享资源管理员不允许删除</p>",
           "example": "false",
           "member": "bool",
           "name": "IsShareManager",
@@ -9520,7 +9520,7 @@
         },
         {
           "disabled": false,
-          "document": "成员是否设置了操作审批。true-是、false-否；成员设置了操作审批时不允许删除",
+          "document": "<p>成员是否设置了操作审批。true-是、false-否；成员设置了操作审批时不允许删除</p>",
           "example": "false",
           "member": "bool",
           "name": "OperateProcess",
@@ -9530,7 +9530,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许解除成员财务权限。true-是、false-否；成员不能解除财务权限时不允许删除",
+          "document": "<p>是否允许解除成员财务权限。true-是、false-否；成员不能解除财务权限时不允许删除</p>",
           "example": "true",
           "member": "bool",
           "name": "BillingPermission",
@@ -9540,7 +9540,7 @@
         },
         {
           "disabled": false,
-          "document": "存在的资源列表。账号存在资源时不允许删除",
+          "document": "<p>存在的资源列表。账号存在资源时不允许删除</p>",
           "example": "[\"cvm\"]",
           "member": "string",
           "name": "ExistResources",
@@ -9550,12 +9550,32 @@
         },
         {
           "disabled": false,
-          "document": "检测失败的资源列表。账号有资源检测失败时不允许删除。",
+          "document": "<p>检测失败的资源列表。账号有资源检测失败时不允许删除。</p>",
           "example": "[\"cvm\"]",
           "member": "string",
           "name": "DetectFailedResources",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否部署身份中心权限。部署权限不允许删除</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>",
+          "example": "false",
+          "member": "bool",
+          "name": "CICRoleConfig",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否同步身份中心用户。同步用户不允许删除</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>",
+          "example": "false",
+          "member": "bool",
+          "name": "CICUserConfig",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

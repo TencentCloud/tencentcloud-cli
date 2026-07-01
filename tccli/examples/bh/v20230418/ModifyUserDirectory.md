@@ -6,19 +6,21 @@ Input:
 
 ```
 tccli bh ModifyUserDirectory --cli-unfold-argument  \
-    --Id 3 \
-    --UserOrgSet.0.OrgId 4712 \
-    --UserOrgSet.0.OrgName 测试部 \
-    --UserOrgSet.0.OrgIdPath 1233.85232.4712 \
-    --UserOrgSet.0.OrgNamePath 全网账户.钉钉.测试部 \
-    --UserOrgSet.0.UserTotal 11
+    --Id 4294967478 \
+    --UserOrgSet.0.OrgId 900790 \
+    --UserOrgSet.0.OrgName test_ioa_01 \
+    --UserOrgSet.0.OrgIdPath 819729.899412.900790 \
+    --UserOrgSet.0.OrgNamePath 全网账户.test_ioa.test_ioa_01 \
+    --UserOrgSet.0.UserTotal 1 \
+    --AutoSync True \
+    --SyncCron 00 02 * * *
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2edsdg-cfe9-47sf2e-b241-22wfrew"
+        "RequestId": "b5a8f379-c2a7-46d5-8841-89b09ea07026"
     }
 }
 ```

@@ -74,7 +74,7 @@
     ],
     "CreateDataRetrieval": [
       {
-        "document": "",
+        "document": "仅 Turbo 系列文件系统支持数据检索",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataRetrieval\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-4e5e76ff8\",\n    \"DataRetrievalName\": \"default\",\n    \"DayOfWeek\": \"3,4\",\n    \"Hour\": \"12,13\"\n}",
         "output": "{\n    \"Response\": {\n        \"DataRetrievalId\": \"dataretrieval-1234bdbc\",\n        \"RequestId\": \"b3df3eb8-cd14-4c0a-8b8d-11a7ad082b40\"\n    }\n}",
         "title": "创建数据检索策略"
@@ -162,7 +162,7 @@
     ],
     "DeleteDataRetrieval": [
       {
-        "document": "",
+        "document": "仅 Turbo 系列文件系统支持数据检索",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataRetrieval\n<公共请求参数>\n\n{\n    \"DataRetrievalId\": \"dataretrieval-20507000\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f28168c8-8560-4e8b-8844-746cc501826f\"\n    }\n}",
         "title": "删除数据检索策略"
@@ -282,7 +282,7 @@
     ],
     "DescribeDataRetrieval": [
       {
-        "document": "",
+        "document": "仅 Turbo 系列文件系统支持数据检索",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataRetrieval\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"DataRetrievals\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"c2ccc267-f806-45fd-9676-eb0c54d0f69f\"\n    }\n}",
         "title": "查询数据检索"
@@ -290,7 +290,7 @@
     ],
     "DescribeDataRetrievalTask": [
       {
-        "document": "",
+        "document": "仅 Turbo 系列文件系统支持数据检索",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataRetrievalTask\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-03-11 11:50:42\",\n    \"EndTime\": \"2026-03-12 11:50:42\",\n    \"DataRetrievalId\": \"dataretrieval-589fa03c\",\n    \"Offset\": 0,\n    \"Limit\": 8\n}",
         "output": "{\n    \"Response\": {\n        \"DataRetrievalTasks\": [\n            {\n                \"CompoundCondition\": \"from entries|where size &gt;4096\",\n                \"CreateTime\": \"2026-03-12 11:05:15\",\n                \"DataRetrievalId\": \"dataretrieval-589fa03c\",\n                \"DataRetrievalTaskID\": \"dataretrievaltask-d54f5d2c\",\n                \"DirNum\": 0,\n                \"FileList\": \"\",\n                \"FileNum\": 0,\n                \"FileSystemId\": \"cfs-44b3b2f23\",\n                \"QueryCondition\": \"from entries|where size &gt;4096\",\n                \"Size\": 0,\n                \"State\": \"waiting\"\n            }\n        ],\n        \"TotalCount\": 20,\n        \"RequestId\": \"6cf33841-7379-4801-9c6b-d55be465680f\"\n    }\n}",
         "title": "查询数据检索任务"
@@ -362,7 +362,7 @@
     ],
     "ModifyDataRetrieval": [
       {
-        "document": "",
+        "document": "仅 Turbo 系列文件系统支持数据检索",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDataRetrieval\n<公共请求参数>\n\n{\n    \"DataRetrievalId\": \"dataretrieval-72986e77\",\n    \"DataRetrievalName\": \"default-rule\",\n    \"CompoundCondition\": \"from entries|where size >4096\",\n    \"QueryCondition\": \"path:/cfs/abc/* AND type:file AND size:>0\",\n    \"DayOfMonth\": \"1\",\n    \"Hour\": \"12\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bebba10a-eb1f-492b-8a64-468ed48394f5\"\n    }\n}",
         "title": "修改数据检索策略"

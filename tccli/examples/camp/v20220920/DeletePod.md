@@ -1,17 +1,20 @@
-**Example 1: 删除Pod**
+**Example 1: 删除pod固定IP和PVC**
 
-删除Pod
+
 
 Input: 
 
 ```
-tccli camp DeletePod --cli-unfold-argument ```
+tccli camp DeletePod --cli-unfold-argument  \
+    --DeletePodIP True \
+    --DeletePVC True
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "67580ea3-66a3-4826-a589-6fa567ed544e"
+        "RequestId": "cd0fc7c6-93c4-4f19-9594-c4b157f624c8"
     }
 }
 ```

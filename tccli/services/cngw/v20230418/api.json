@@ -7,6 +7,20 @@
       "output": "AddCloudNativeAPIGatewayConsumerGroupAuthResponse",
       "status": "online"
     },
+    "AddCloudNativeAPIGatewayConsumerInGroup": {
+      "document": "将消费者添加到消费者组。",
+      "input": "AddCloudNativeAPIGatewayConsumerInGroupRequest",
+      "name": "AI网关添加消费者到消费者组",
+      "output": "AddCloudNativeAPIGatewayConsumerInGroupResponse",
+      "status": "online"
+    },
+    "BindCloudNativeAPIGatewaySecretKey": {
+      "document": "添加密钥与资源的引用关系接口",
+      "input": "BindCloudNativeAPIGatewaySecretKeyRequest",
+      "name": "绑定AI网关密钥",
+      "output": "BindCloudNativeAPIGatewaySecretKeyResponse",
+      "status": "online"
+    },
     "CreateCloudNativeAPIGatewayConsumer": {
       "document": "创建AI网关消费者。",
       "input": "CreateCloudNativeAPIGatewayConsumerRequest",
@@ -314,11 +328,25 @@
       "name": "移除AI网关消费者组授权",
       "output": "RemoveCloudNativeAPIGatewayConsumerGroupAuthResponse",
       "status": "online"
+    },
+    "RemoveCloudNativeAPIGatewayConsumerInGroup": {
+      "document": "将消费者从消费者组移除。",
+      "input": "RemoveCloudNativeAPIGatewayConsumerInGroupRequest",
+      "name": "AI网关消费者组中移除消费者",
+      "output": "RemoveCloudNativeAPIGatewayConsumerInGroupResponse",
+      "status": "online"
+    },
+    "UnbindCloudNativeAPIGatewaySecretKey": {
+      "document": "解绑密钥",
+      "input": "UnbindCloudNativeAPIGatewaySecretKeyRequest",
+      "name": "解绑AI网关密钥",
+      "output": "UnbindCloudNativeAPIGatewaySecretKeyResponse",
+      "status": "online"
     }
   },
   "metadata": {
     "apiVersion": "2023-04-18",
-    "api_brief": "介绍如何使用 API 对云原生智能网关进行操作",
+    "api_brief": "介绍如何使用API对云原生智能网关进行操作",
     "serviceNameCN": "云原生智能网关",
     "serviceShortName": "cngw"
   },
@@ -2042,6 +2070,125 @@
     "AddCloudNativeAPIGatewayConsumerGroupAuthResponse": {
       "document": "AddCloudNativeAPIGatewayConsumerGroupAuth返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCloudNativeAPIGatewayConsumerInGroupRequest": {
+      "document": "AddCloudNativeAPIGatewayConsumerInGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例id",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组 ID（以 cg- 开头）。</p>",
+          "example": "cg-xxx",
+          "member": "string",
+          "name": "ConsumerGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者 ID 列表，长度 1-10。</p>",
+          "example": "[\"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\"]",
+          "member": "string",
+          "name": "ConsumerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCloudNativeAPIGatewayConsumerInGroupResponse": {
+      "document": "AddCloudNativeAPIGatewayConsumerInGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否成功。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindCloudNativeAPIGatewaySecretKeyRequest": {
+      "document": "BindCloudNativeAPIGatewaySecretKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例id",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "Consumer",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源ID，当前最多支持一个",
+          "example": "[\"consumer-xxx\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "密钥id",
+          "example": "secret-xx",
+          "member": "string",
+          "name": "SecretKeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindCloudNativeAPIGatewaySecretKeyResponse": {
+      "document": "BindCloudNativeAPIGatewaySecretKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6653,6 +6800,105 @@
     },
     "RemoveCloudNativeAPIGatewayConsumerGroupAuthResponse": {
       "document": "RemoveCloudNativeAPIGatewayConsumerGroupAuth返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveCloudNativeAPIGatewayConsumerInGroupRequest": {
+      "document": "RemoveCloudNativeAPIGatewayConsumerInGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例id",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组 ID（以 cg- 开头）。</p>",
+          "example": "cg-xxx",
+          "member": "string",
+          "name": "ConsumerGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者 ID 列表，长度 1-10。</p>",
+          "example": "[\"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\"]",
+          "member": "string",
+          "name": "ConsumerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveCloudNativeAPIGatewayConsumerInGroupResponse": {
+      "document": "RemoveCloudNativeAPIGatewayConsumerInGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindCloudNativeAPIGatewaySecretKeyRequest": {
+      "document": "UnbindCloudNativeAPIGatewaySecretKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例id",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "Consumer/LLM",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源ID，当前最多支持一个",
+          "example": "[\"consumer-xxx\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "密钥id",
+          "example": "secret-xx",
+          "member": "string",
+          "name": "SecretKeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindCloudNativeAPIGatewaySecretKeyResponse": {
+      "document": "UnbindCloudNativeAPIGatewaySecretKey返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

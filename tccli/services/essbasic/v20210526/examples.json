@@ -14,6 +14,14 @@
         "title": "结束动态签署合同失败"
       }
     ],
+    "CancelOrganizationFlows": [
+      {
+        "document": "全量撤销企业合同",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelOrganizationFlows\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"es******************n_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"k*********g\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"yD3PzUUckpzfafu8UaytqwM63aaNhNqP\",\n        \"RequestId\": \"658033fa-247c-4e49-b8e5-cc7da03b1863\"\n    }\n}",
+        "title": "全量撤销企业合同"
+      }
+    ],
     "ChannelBatchCancelFlows": [
       {
         "document": "撤销4个合同，并且自定义撤销理由，使用只保留身份信息的方式(CancelMessageFormat 设置为2) </br>\n假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方-典子谦示例企业以\"合同内容错误，需要修正\"的理由撤销当前合同</br>\n其中合同yDmFdUUckpsvi8mpUEn0aFR1tWzReolk 已经签署完成，无法撤销。",
@@ -1209,6 +1217,12 @@
       }
     ],
     "DescribeCancelFlowsTask": [
+      {
+        "document": "查询全量撤销企业合同任务结果",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCancelFlowsTask\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"kevinlcheng\"\n        }\n    },\n    \"TaskId\": \"yD3POUUckpzme5ekUxM7lqE1ODrkqmYz\",\n    \"CancelType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"FailureFlows\": [],\n        \"SuccessFlowIds\": [\n            \"yD3POUUckpzx1mhdU1UuDSYM1xwPbeJL\"\n        ],\n        \"TaskId\": \"yD3POUUckpzme5ekUxM7lqE1ODrkqmYz\",\n        \"TaskStatus\": \"END\",\n        \"RequestId\": \"d3becccb-75e5-43fc-9be6-27ccf7bd4067\"\n    }\n}",
+        "title": "查询全量撤销企业合同任务结果"
+      },
       {
         "document": "查询批量撤销任务结果",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCancelFlowsTask\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRS4UUgygqdcj8xUuO4zjEwOT7IN8Ec\"\n    },\n    \"TaskId\": \"yDCVWUUckpwkjgiuUWGW8cRAzd84BVQa\"\n}",

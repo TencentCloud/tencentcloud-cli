@@ -9,7 +9,7 @@ tccli monitor DescribeConditionsTemplateList --cli-unfold-argument  \
     --ViewName cvm_device \
     --Module monitor \
     --UpdateTimeOrder desc \
-    --GroupName test \
+    --GroupName cpu \
     --Limit 1 \
     --Offset 0 \
     --GroupID  1998658
@@ -19,100 +19,104 @@ Output:
 ```
 {
     "Response": {
-        "Total": 0,
+        "Total": 1,
         "TemplateGroupList": [
             {
                 "Conditions": [
                     {
-                        "AlarmNotifyPeriod": 0,
+                        "AlarmNotifyPeriod": 86400,
                         "AlarmNotifyType": 0,
-                        "CalcType": "abc",
-                        "CalcValue": "abc",
-                        "ContinueTime": "abc",
-                        "MetricID": 0,
-                        "MetricDisplayName": "abc",
-                        "Period": 0,
-                        "RuleID": 0,
-                        "Unit": "abc",
+                        "CalcType": "1",
+                        "CalcValue": "95",
+                        "ContinueTime": "300",
+                        "MetricID": 33,
+                        "MetricDisplayName": "CPU利用率",
+                        "Period": 60,
+                        "RuleID": 100001,
+                        "Unit": "%",
                         "IsAdvanced": 0,
-                        "IsOpen": 0,
-                        "ProductId": "abc",
+                        "IsOpen": 1,
+                        "ProductId": "cvm",
                         "HierarchicalValue": {
-                            "Remind": "abc",
-                            "Warn": "abc",
-                            "Serious": "abc"
+                            "Remind": "80",
+                            "Warn": "90",
+                            "Serious": "95"
                         }
                     }
                 ],
                 "EventConditions": [
                     {
-                        "AlarmNotifyPeriod": "abc",
-                        "AlarmNotifyType": "abc",
-                        "EventID": "abc",
-                        "EventDisplayName": "abc",
-                        "RuleID": "abc",
-                        "MetricName": "abc"
+                        "AlarmNotifyPeriod": "86400",
+                        "AlarmNotifyType": "0",
+                        "EventID": "disk_readonly",
+                        "EventDisplayName": "磁盘只读",
+                        "RuleID": "200001",
+                        "MetricName": "disk_readonly"
                     }
                 ],
                 "PolicyGroups": [
                     {
                         "CanSetDefault": true,
-                        "GroupID": 0,
-                        "GroupName": "abc",
-                        "InsertTime": 0,
+                        "GroupID": 4001,
+                        "GroupName": "生产环境告警策略",
+                        "InsertTime": 1719302400,
                         "IsDefault": 0,
                         "Enable": true,
-                        "LastEditUin": 0,
-                        "NoShieldedInstanceCount": 0,
-                        "ParentGroupID": 0,
+                        "LastEditUin": 100012345,
+                        "NoShieldedInstanceCount": 15,
+                        "ParentGroupID": 3001,
                         "ProjectID": 0,
                         "ReceiverInfos": [
                             {
-                                "EndTime": 0,
-                                "NeedSendNotice": 0,
+                                "EndTime": 86399,
+                                "NeedSendNotice": 1,
                                 "NotifyWay": [
-                                    "abc"
+                                    "SMS",
+                                    "EMAIL",
+                                    "WECHAT"
                                 ],
-                                "PersonInterval": 0,
+                                "PersonInterval": 3600,
                                 "ReceiverGroupList": [
-                                    0
+                                    5001
                                 ],
-                                "ReceiverType": "abc",
+                                "ReceiverType": "group",
                                 "ReceiverUserList": [
-                                    0
+                                    100012345
                                 ],
                                 "RecoverNotify": [
-                                    "abc"
+                                    "SMS",
+                                    "EMAIL"
                                 ],
-                                "RoundInterval": 0,
-                                "RoundNumber": 0,
+                                "RoundInterval": 60,
+                                "RoundNumber": 3,
                                 "SendFor": [
-                                    "abc"
+                                    "alarm",
+                                    "ok"
                                 ],
                                 "StartTime": 0,
                                 "UIDList": [
-                                    0
+                                    100012345
                                 ]
                             }
                         ],
-                        "Remark": "abc",
-                        "UpdateTime": 0,
-                        "TotalInstanceCount": 0,
-                        "ViewName": "abc",
+                        "Remark": "生产环境核心主机告警",
+                        "UpdateTime": 1719388800,
+                        "TotalInstanceCount": 20,
+                        "ViewName": "cvm_device",
                         "IsUnionRule": 0
                     }
                 ],
-                "GroupID": 0,
-                "GroupName": "abc",
-                "InsertTime": 0,
-                "LastEditUin": 0,
-                "Remark": "abc",
-                "UpdateTime": 0,
-                "ViewName": "abc",
+                "GroupID": 3001,
+                "GroupName": "CVM基础监控模板",
+                "InsertTime": 1719302400,
+                "LastEditUin": 100012345,
+                "Remark": "适用于CVM实例的基础监控告警模板",
+                "UpdateTime": 1719388800,
+                "ViewName": "cvm_device",
                 "IsUnionRule": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "f8a7e6d5-c4b3-2a19-8e7f-0d1c2b3a4e5f"
     }
 }
 ```

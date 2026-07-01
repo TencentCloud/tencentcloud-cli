@@ -8,6 +8,22 @@
         "title": "模型API给消费者分组授权"
       }
     ],
+    "AddCloudNativeAPIGatewayConsumerInGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCloudNativeAPIGatewayConsumerInGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-4e588095\",\n    \"ConsumerGroupId\": \"cg-9a130aba0f747c\",\n    \"ConsumerIds\": [\n        \"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"828b6c28-24d2-4988-97d7-e12e4fa8acef\",\n        \"Result\": true\n    }\n}",
+        "title": "添加消费者到分组"
+      }
+    ],
+    "BindCloudNativeAPIGatewaySecretKey": [
+      {
+        "document": "消费者凭证， ResourceIds 只能传一个",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindCloudNativeAPIGatewaySecretKey\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ResourceType\": \"Consumer\",\n    \"ResourceIds\": [\n        \"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\"\n    ],\n    \"SecretKeyId\": \"secret-3bc27fec\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c3f37e8-5bc2-416b-b2e1-14c3775fd24c\",\n        \"Result\": true\n    }\n}",
+        "title": "添加消费者凭证"
+      }
+    ],
     "CreateCloudNativeAPIGatewayConsumer": [
       {
         "document": "",
@@ -388,6 +404,22 @@
         "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveCloudNativeAPIGatewayConsumerGroupAuth\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-1b59c523\",\n    \"ResourceType\": \"ModelAPI\",\n    \"ResourceId\": \"e3aa4fe271c24bb4aa7cca41db5a4e75\",\n    \"ConsumerGroupIds\": [\n        \"cg-d4fbcc88676d50\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2eb7e299-cd5c-4aaf-bbb2-b02ca61a5d49\"\n    }\n}",
         "title": "从模型API里解除分组授权"
+      }
+    ],
+    "RemoveCloudNativeAPIGatewayConsumerInGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveCloudNativeAPIGatewayConsumerInGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ConsumerGroupId\": \"cg-6021c8b0\",\n    \"ConsumerIds\": [\n        \"consumer-d6cdf6af\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14e46e9e-fa3d-4bdc-86bc-b73a8a69239c\"\n    }\n}",
+        "title": "从消费者组里移除消费者"
+      }
+    ],
+    "UnbindCloudNativeAPIGatewaySecretKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewaySecretKeyRef\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-c7fb18e4\",\n    \"ResourceType\": \"Consumer\",\n    \"ResourceIds\": [\n        \"c31f5dd7-eab5-4e77-ac18-31add3c94a9d\"\n    ],\n    \"SecretKeyId\": \"secret-3bc27fec\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fe5e247d-cab5-4ddc-a02c-4b50e0966fed\"\n    }\n}",
+        "title": "解绑密钥"
       }
     ]
   },

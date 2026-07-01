@@ -96,7 +96,8 @@ Output:
                     "bj",
                     "gz",
                     "nj"
-                ]
+                ],
+                "DeprecatingInfo": null
             },
             {
                 "EventMetrics": null,
@@ -180,7 +181,8 @@ Output:
                     "bj",
                     "gz",
                     "nj"
-                ]
+                ],
+                "DeprecatingInfo": null
             },
             {
                 "EventMetrics": null,
@@ -265,10 +267,11 @@ Output:
                     "bj",
                     "gz",
                     "nj"
-                ]
+                ],
+                "DeprecatingInfo": null
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "wfadfafvafdbvd-aedrwerex"
     }
 }
 ```

@@ -13,6 +13,7 @@ Output:
 ```
 {
     "Response": {
+        "Status": "UNOPENED",
         "RequestId": "454fbac3-8546-4c16-8c1a-69x3ab73ba3b"
     }
 }

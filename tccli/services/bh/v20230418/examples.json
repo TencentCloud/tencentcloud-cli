@@ -161,8 +161,8 @@
     "CreateUserDirectory": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserDirectory\n<公共请求参数>\n\n{\n    \"DirId\": 523353,\n    \"DirName\": \"dept1\",\n    \"Source\": 0,\n    \"SourceName\": \"自建账号\",\n    \"UserCount\": 45,\n    \"UserOrgSet\": [\n        {\n            \"OrgId\": 47723,\n            \"OrgName\": \"开发部\",\n            \"OrgIdPath\": \"1233.85232.45245\",\n            \"OrgNamePath\": \"全网账户.钉钉.开发部\",\n            \"UserTotal\": 12\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Id\": 234,\n        \"RequestId\": \"3c123219-cfe9-4722e-b241-22wfrew\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserDirectory\n<公共请求参数>\n\n{\n    \"DirId\": 899412,\n    \"DirName\": \"test_ioa\",\n    \"UserOrgSet\": [\n        {\n            \"OrgId\": 900790,\n            \"OrgName\": \"test_ioa_01\",\n            \"OrgIdPath\": \"819729.899412.900790\",\n            \"OrgNamePath\": \"全网账户.test_ioa.test_ioa_01\",\n            \"UserTotal\": 1,\n            \"BindGroupIds\": [\n                16786204\n            ]\n        }\n    ],\n    \"Source\": 0,\n    \"SourceName\": \"自建账户\",\n    \"UserCount\": 23,\n    \"AutoSync\": true,\n    \"SyncCron\": \"0 02 * * *\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 4294967484,\n        \"RequestId\": \"066a0dd2-55a9-4602-82e6-145d5faccf1e\"\n    }\n}",
         "title": "创建用户目录"
       }
     ],
@@ -497,8 +497,8 @@
     "DescribeUserDirectory": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDirectory\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"UserDirSet\": [\n            {\n                \"Id\": 43,\n                \"DirId\": 35122,\n                \"DirName\": \"钉钉\",\n                \"Source\": 1001,\n                \"SourceName\": \"钉钉\",\n                \"CreateTime\": \"2025-04-22T00:00:00+00:00\",\n                \"UserTotal\": 34\n            }\n        ],\n        \"RequestId\": \"cf85w9eee-b651-4ff3q-9b49-173f9f55733f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDirectory\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"UserDirSet\": [\n            {\n                \"AutoSync\": true,\n                \"CreateTime\": \"2026-06-24T09:57:23+08:00\",\n                \"DirId\": 899412,\n                \"DirName\": \"test_ioa\",\n                \"Id\": 4294967478,\n                \"NextSyncTime\": \"2026-07-01T10:00:00+08:00\",\n                \"Source\": 0,\n                \"SourceName\": \"自建账户\",\n                \"SyncCron\": \"00 10 * * 3\",\n                \"UserOrgSet\": [\n                    {\n                        \"BindGroupIds\": [],\n                        \"OrgId\": 900790,\n                        \"OrgIdPath\": \"819729.899412.900790\",\n                        \"OrgName\": \"test_ioa_01\",\n                        \"OrgNamePath\": \"全网账户.test_ioa.test_ioa_01\",\n                        \"UserTotal\": 1\n                    }\n                ],\n                \"UserTotal\": 23\n            }\n        ],\n        \"RequestId\": \"8c8368b5-c4a0-4778-8f4a-1866b0667933\"\n    }\n}",
         "title": "获取用户目录"
       }
     ],
@@ -755,8 +755,8 @@
     "ModifyUserDirectory": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserDirectory\n<公共请求参数>\n\n{\n    \"Id\": 3,\n    \"UserOrgSet\": [\n        {\n            \"OrgId\": 4712,\n            \"OrgName\": \"测试部\",\n            \"OrgIdPath\": \"1233.85232.4712\",\n            \"OrgNamePath\": \"全网账户.钉钉.测试部\",\n            \"UserTotal\": 11\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2edsdg-cfe9-47sf2e-b241-22wfrew\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserDirectory\n<公共请求参数>\n\n{\n    \"Id\": 4294967478,\n    \"UserOrgSet\": [\n        {\n            \"OrgId\": 900790,\n            \"OrgName\": \"test_ioa_01\",\n            \"OrgIdPath\": \"819729.899412.900790\",\n            \"OrgNamePath\": \"全网账户.test_ioa.test_ioa_01\",\n            \"UserTotal\": 1\n        }\n    ],\n    \"AutoSync\": true,\n    \"SyncCron\": \"00 02 * * *\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b5a8f379-c2a7-46d5-8841-89b09ea07026\"\n    }\n}",
         "title": "修改用户目录"
       }
     ],

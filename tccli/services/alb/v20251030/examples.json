@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "ModifyTargetGroupAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTargetGroupAttributes\n<公共请求参数>\n\n{\n    \"HealthCheckConfig\": {\n        \"HealthCheckCodes\": [\n            \"http_1xx\"\n        ],\n        \"HealthCheckEnabled\": true,\n        \"HealthCheckHealthyThreshold\": 2,\n        \"HealthCheckHost\": \"example.com\",\n        \"HealthCheckHttpVersion\": \"HTTP1.1\",\n        \"HealthCheckInterval\": 10,\n        \"HealthCheckMethod\": \"GET\",\n        \"HealthCheckPath\": \"/hello/index.html\",\n        \"HealthCheckPort\": 80,\n        \"HealthCheckProtocol\": \"HTTP\",\n        \"HealthCheckTimeout\": 2,\n        \"HealthCheckUnhealthyThreshold\": 2\n    },\n    \"KeepaliveEnabled\": true,\n    \"SchedulerAlgorithm\": \"wrr\",\n    \"StickySessionConfig\": {\n        \"Cookie\": \"SERVERID\",\n        \"CookieTimeout\": 20,\n        \"StickySessionEnabled\": true,\n        \"StickySessionType\": \"Insert\"\n    },\n    \"TargetGroupId\": \"lbtg-0zrnc9qa\",\n    \"TargetGroupName\": \"test-group\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "修改目标组"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1042,7 +1042,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>节点是否自动续费标记</p><p>枚举值：</p><ul><li>1： 自动续费</li><li>0： 不自动续费</li></ul>",
+          "document": "<p>节点是否自动续费标记</p><p>枚举值：</p><ul><li>1： 自动续费</li><li>2： 不自动续费</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "AutoRenew",
@@ -1405,7 +1405,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>DB Custom 集群状态</p><p>枚举值：</p><ul><li>Creating： 创建中</li><li>Running： 运行中</li><li>Destroying： 销毁中</li></ul>",
+          "document": "<p>DB Custom 集群状态</p><p>枚举值：</p><ul><li>Creating： 创建中</li><li>Running： 运行中</li><li>Destroying： 销毁中</li><li>Initializing： 初始化中</li></ul>",
           "example": "Running",
           "member": "string",
           "name": "ClusterStatus",

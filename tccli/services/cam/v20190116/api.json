@@ -2152,7 +2152,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份提供商URL",
+          "document": "<p>身份提供商URL</p>",
           "example": "https://xxx.qq.cn/oidc",
           "member": "string",
           "name": "IdentityUrl",
@@ -2161,8 +2161,8 @@
         },
         {
           "disabled": false,
-          "document": "客户端ID",
-          "example": "61adcf00620c31e3ddbc9546",
+          "document": "<p>客户端ID</p>",
+          "example": "[\"61adcf00620c31e3ddbc9546\"]",
           "member": "string",
           "name": "ClientId",
           "required": true,
@@ -2170,7 +2170,7 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "<p>名称</p>",
           "example": "OIDC",
           "member": "string",
           "name": "Name",
@@ -2179,7 +2179,7 @@
         },
         {
           "disabled": false,
-          "document": "签名公钥，需要base64",
+          "document": "<p>签名公钥，需要base64</p>",
           "example": "baz****",
           "member": "string",
           "name": "IdentityKey",
@@ -2188,12 +2188,21 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "this is description",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>OIDC公钥自动轮转开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRotateKey",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3121,7 +3130,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "名称",
+          "document": "<p>名称</p>",
           "example": "OIDC",
           "member": "string",
           "name": "Name",
@@ -3136,7 +3145,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份提供商类型 11角色身份提供商",
+          "document": "<p>身份提供商类型 11角色身份提供商</p>",
           "example": "11",
           "member": "uint64",
           "name": "ProviderType",
@@ -3146,7 +3155,7 @@
         },
         {
           "disabled": false,
-          "document": "身份提供商URL",
+          "document": "<p>身份提供商URL</p>",
           "example": "11",
           "member": "string",
           "name": "IdentityUrl",
@@ -3156,7 +3165,7 @@
         },
         {
           "disabled": false,
-          "document": "签名公钥",
+          "document": "<p>签名公钥</p>",
           "example": "dgab***",
           "member": "string",
           "name": "IdentityKey",
@@ -3166,8 +3175,8 @@
         },
         {
           "disabled": false,
-          "document": "客户端id",
-          "example": "sbzw***",
+          "document": "<p>客户端id</p>",
+          "example": "[\"sbzw***\"]",
           "member": "string",
           "name": "ClientId",
           "output_required": true,
@@ -3176,7 +3185,7 @@
         },
         {
           "disabled": false,
-          "document": "状态：0:未设置，11:已开启，2:已禁用",
+          "document": "<p>状态：0:未设置，11:已开启，2:已禁用</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -3186,7 +3195,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "desc",
           "member": "string",
           "name": "Description",
@@ -3196,12 +3205,22 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "<p>名称</p>",
           "example": "OIDC",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>OIDC公钥自动轮转开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRotateKey",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -7037,7 +7056,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "0: 非安全手机校验 1: 安全手机校验。",
+          "document": "<p>0: 非安全手机校验 1: 安全手机校验。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Phone",
@@ -7048,7 +7067,7 @@
         },
         {
           "disabled": false,
-          "document": "0: 非硬token校验 1: 硬token校验。",
+          "document": "<p>0: 非硬token校验 1: 硬token校验。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Token",
@@ -7059,7 +7078,7 @@
         },
         {
           "disabled": false,
-          "document": "0: 非软token校验 1: 软token校验",
+          "document": "<p>0: 非软token校验 1: 软token校验</p>",
           "example": "0",
           "member": "uint64",
           "name": "Stoken",
@@ -7070,7 +7089,7 @@
         },
         {
           "disabled": false,
-          "document": "0: 非微信校验 1: 微信校验",
+          "document": "<p>0: 非微信校验 1: 微信校验</p>",
           "example": "0",
           "member": "uint64",
           "name": "Wechat",
@@ -7081,7 +7100,7 @@
         },
         {
           "disabled": false,
-          "document": "0: 非自定义校验 1: 自定义校验",
+          "document": "<p>0: 非自定义校验 1: 自定义校验</p>",
           "example": "0",
           "member": "uint64",
           "name": "Custom",
@@ -7092,7 +7111,7 @@
         },
         {
           "disabled": false,
-          "document": "0: 非邮箱校验 1: 邮箱校验",
+          "document": "<p>0: 非邮箱校验 1: 邮箱校验</p>",
           "example": "0",
           "member": "uint64",
           "name": "Mail",
@@ -7103,10 +7122,21 @@
         },
         {
           "disabled": false,
-          "document": "0: 非u2f硬件token 1: u2f硬件token",
+          "document": "<p>0: 非u2f硬件token 1: u2f硬件token</p>",
           "example": "0",
           "member": "uint64",
           "name": "U2FToken",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>0: 非passkey 校验 1: passkey校验</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Passkey",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -9039,7 +9069,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份提供商URL",
+          "document": "<p>身份提供商URL</p>",
           "example": "https://xxx.qq.cn/oidc",
           "member": "string",
           "name": "IdentityUrl",
@@ -9048,8 +9078,8 @@
         },
         {
           "disabled": false,
-          "document": "客户端ID",
-          "example": "61adcf00620c31e3ddbc9546",
+          "document": "<p>客户端ID</p>",
+          "example": "[\"61adcf00620c31e3ddbc9546\"]",
           "member": "string",
           "name": "ClientId",
           "required": true,
@@ -9057,7 +9087,7 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "<p>名称</p>",
           "example": "OIDC",
           "member": "string",
           "name": "Name",
@@ -9066,7 +9096,7 @@
         },
         {
           "disabled": false,
-          "document": "签名公钥，需要base64",
+          "document": "<p>签名公钥，需要base64</p>",
           "example": "dazw****",
           "member": "string",
           "name": "IdentityKey",
@@ -9075,12 +9105,21 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "this is description",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>OIDC公钥自动轮转开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值：0</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRotateKey",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

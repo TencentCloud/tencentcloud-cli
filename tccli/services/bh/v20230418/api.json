@@ -3901,7 +3901,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目录id",
+          "document": "<p>目录id</p>",
           "example": "523353",
           "member": "uint64",
           "name": "DirId",
@@ -3910,7 +3910,7 @@
         },
         {
           "disabled": false,
-          "document": "目录名称",
+          "document": "<p>目录名称</p>",
           "example": "dept1",
           "member": "string",
           "name": "DirName",
@@ -3919,7 +3919,7 @@
         },
         {
           "disabled": false,
-          "document": "ioa分组信息",
+          "document": "<p>ioa分组信息</p>",
           "example": "无",
           "member": "UserOrg",
           "name": "UserOrgSet",
@@ -3928,7 +3928,7 @@
         },
         {
           "disabled": false,
-          "document": "ioa关联用户源类型",
+          "document": "<p>ioa关联用户源类型</p>",
           "example": "0",
           "member": "uint64",
           "name": "Source",
@@ -3937,7 +3937,7 @@
         },
         {
           "disabled": false,
-          "document": "ioa关联用户源名称",
+          "document": "<p>ioa关联用户源名称</p>",
           "example": "自建账号",
           "member": "string",
           "name": "SourceName",
@@ -3946,12 +3946,30 @@
         },
         {
           "disabled": false,
-          "document": "目录包含用户数",
+          "document": "<p>目录包含用户数</p>",
           "example": "45",
           "member": "uint64",
           "name": "UserCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启自动同步</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoSync",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步周期（5段式 crontab 表达式）</p>",
+          "example": "30 11 * * *",
+          "member": "string",
+          "name": "SyncCron",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3961,7 +3979,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目录Id",
+          "document": "<p>目录Id</p>",
           "example": "4",
           "member": "uint64",
           "name": "Id",
@@ -6755,7 +6773,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页大小",
+          "document": "<p>分页大小</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -6764,7 +6782,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移",
+          "document": "<p>分页偏移</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -6779,8 +6797,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户目录集",
-          "example": "[       {         \"Id\": 43,         \"DirId\": 35122,         \"DirName\": \"钉钉\",         \"Source\": 1001,         \"SourceName\": \"钉钉\",         \"CreateTime\": \"2025-04-22T00:00:00+00:00\",         \"UserTotal\": 34       }     ]",
+          "document": "<p>用户目录集</p>",
+          "example": "无",
           "member": "UserDirectory",
           "name": "UserDirSet",
           "output_required": true,
@@ -6789,7 +6807,7 @@
         },
         {
           "disabled": false,
-          "document": "用户目录集总数",
+          "document": "<p>用户目录集总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -8216,7 +8234,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ioa用户组织id",
+          "document": "<p>ioa用户组织id</p>",
           "example": "85232",
           "member": "uint64",
           "name": "OrgId",
@@ -8227,7 +8245,7 @@
         },
         {
           "disabled": false,
-          "document": "ioa用户组织名称",
+          "document": "<p>ioa用户组织名称</p>",
           "example": "开发部",
           "member": "string",
           "name": "OrgName",
@@ -8238,7 +8256,7 @@
         },
         {
           "disabled": false,
-          "document": "ioa用户组织id路径\t",
+          "document": "<p>ioa用户组织id路径</p>",
           "example": "2321.23341.2334",
           "member": "string",
           "name": "OrgIdPath",
@@ -8249,8 +8267,8 @@
         },
         {
           "disabled": false,
-          "document": "ioa用户组织名称路径\t",
-          "example": "全网账户.钉钉.开发部",
+          "document": "<p>ioa用户组织名称路径</p>",
+          "example": "全网账户.测试.开发部",
           "member": "string",
           "name": "OrgNamePath",
           "output_required": true,
@@ -8260,13 +8278,24 @@
         },
         {
           "disabled": false,
-          "document": "ioa关联用户源类型",
+          "document": "<p>ioa关联用户源类型</p>",
           "example": "0",
           "member": "uint64",
           "name": "Source",
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户所属目录</p>",
+          "example": "测试/开发部",
+          "member": "string",
+          "name": "UserDirName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -10033,7 +10062,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目录id",
+          "document": "<p>目录id</p>",
           "example": "3",
           "member": "uint64",
           "name": "Id",
@@ -10042,12 +10071,30 @@
         },
         {
           "disabled": false,
-          "document": "ioa分组信息",
-          "example": "[{\"OrgId\":47723,\"OrgName\":\"开发部\"\"}]",
+          "document": "<p>ioa分组信息</p>",
+          "example": "无",
           "member": "UserOrg",
           "name": "UserOrgSet",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启自动同步</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoSync",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步周期（5段式 crontab 表达式）</p>",
+          "example": "0 02 * * *",
+          "member": "string",
+          "name": "SyncCron",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14236,7 +14283,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目录id",
+          "document": "<p>目录id</p>",
           "example": "2",
           "member": "uint64",
           "name": "Id",
@@ -14247,7 +14294,7 @@
         },
         {
           "disabled": false,
-          "document": "ioa目录id",
+          "document": "<p>ioa目录id</p>",
           "example": "4762342",
           "member": "uint64",
           "name": "DirId",
@@ -14258,7 +14305,7 @@
         },
         {
           "disabled": false,
-          "document": "ioa目录名称",
+          "document": "<p>ioa目录名称</p>",
           "example": "钉钉",
           "member": "string",
           "name": "DirName",
@@ -14269,7 +14316,7 @@
         },
         {
           "disabled": false,
-          "document": "ioa关联用户源类型",
+          "document": "<p>ioa关联用户源类型</p>",
           "example": "0",
           "member": "uint64",
           "name": "Source",
@@ -14280,7 +14327,7 @@
         },
         {
           "disabled": false,
-          "document": "ioa关联用户源名称",
+          "document": "<p>ioa关联用户源名称</p>",
           "example": "自建账户",
           "member": "string",
           "name": "SourceName",
@@ -14291,7 +14338,7 @@
         },
         {
           "disabled": false,
-          "document": "目录包含用户数",
+          "document": "<p>目录包含用户数</p>",
           "example": "42",
           "member": "uint64",
           "name": "UserTotal",
@@ -14302,7 +14349,7 @@
         },
         {
           "disabled": false,
-          "document": "目录接入时间",
+          "document": "<p>目录接入时间</p>",
           "example": "2025-04-02T08:00:01+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -14313,13 +14360,46 @@
         },
         {
           "disabled": false,
-          "document": "目录下的组织细节信息",
-          "example": "[{\"OrgId\":3455,\"OrgName\":\"开发部\"}]",
+          "document": "<p>目录下的组织细节信息</p>",
+          "example": "无",
           "member": "UserOrg",
           "name": "UserOrgSet",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启自动同步</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoSync",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步周期（5段式 crontab 表达式）</p>",
+          "example": "30 11 * * *",
+          "member": "string",
+          "name": "SyncCron",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下次同步时间</p><p>参数格式：2026-06-05T11:30:00+08:00</p>",
+          "example": "2026-06-05T11:30:00+08:00",
+          "member": "string",
+          "name": "NextSyncTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -14330,7 +14410,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ioa用户组织id",
+          "document": "<p>ioa用户组织id</p>",
           "example": "85232",
           "member": "uint64",
           "name": "OrgId",
@@ -14341,7 +14421,7 @@
         },
         {
           "disabled": false,
-          "document": "ioa用户组织名称",
+          "document": "<p>ioa用户组织名称</p>",
           "example": "钉钉",
           "member": "string",
           "name": "OrgName",
@@ -14352,7 +14432,7 @@
         },
         {
           "disabled": false,
-          "document": "ioa用户组织id路径",
+          "document": "<p>ioa用户组织id路径</p>",
           "example": "1233.85232.45245",
           "member": "string",
           "name": "OrgIdPath",
@@ -14363,7 +14443,7 @@
         },
         {
           "disabled": false,
-          "document": "ioa用户组织名称路径",
+          "document": "<p>ioa用户组织名称路径</p>",
           "example": "全网账户.钉钉.开发部",
           "member": "string",
           "name": "OrgNamePath",
@@ -14374,13 +14454,24 @@
         },
         {
           "disabled": false,
-          "document": "ioa用户组织id下的用户数",
+          "document": "<p>ioa用户组织id下的用户数</p>",
           "example": "21",
           "member": "uint64",
           "name": "UserTotal",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组织绑定的用户组 id 列表</p>",
+          "example": "[16785704]",
+          "member": "uint64",
+          "name": "BindGroupIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

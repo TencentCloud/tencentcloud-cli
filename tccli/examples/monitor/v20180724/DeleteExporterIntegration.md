@@ -10,7 +10,7 @@ tccli monitor DeleteExporterIntegration --cli-unfold-argument  \
     --KubeType 3 \
     --ClusterId cls-xx \
     --Kind mysql-exporter \
-    --Name test
+    --Name integration-name
 ```
 
 Output: 

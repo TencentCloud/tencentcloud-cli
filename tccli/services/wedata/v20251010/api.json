@@ -8740,6 +8740,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "bool",
+          "name": "Deleted",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10240,6 +10251,17 @@
           "example": "29.34",
           "member": "string",
           "name": "TotalPriceDiscount",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>价格单位</p><p>枚举值：</p><ul><li>USD： 美元</li><li>CNY： 元</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "USD",
+          "member": "string",
+          "name": "Currency",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -12805,7 +12827,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源",
+          "document": "<p>资源</p>",
           "example": "无",
           "member": "PrivilegeResource",
           "name": "Resources",
@@ -12814,12 +12836,21 @@
         },
         {
           "disabled": false,
-          "document": "权限",
+          "document": "<p>权限</p>",
           "example": "无",
           "member": "PrivilegeInfo",
           "name": "Permissions",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间spaceId</p>",
+          "example": "17623497097012366",
+          "member": "string",
+          "name": "WorkspaceID",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12829,7 +12860,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "鉴权结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>鉴权结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PermissionCheckResultRsp",
           "name": "Data",
@@ -14854,6 +14885,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "bool",
+          "name": "Deleted",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -48532,7 +48574,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据目录唯一ID",
+          "document": "<p>数据目录唯一ID</p>",
           "example": "765c5c5-c29a-457d-8c74-5f3bbe25ccce",
           "member": "string",
           "name": "CatalogID",
@@ -48541,10 +48583,19 @@
         },
         {
           "disabled": false,
-          "document": "数据目录名称",
+          "document": "<p>数据目录名称</p>",
           "example": "mico_catalog_1107_1",
           "member": "string",
           "name": "CatalogName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间id</p>",
+          "example": "17623497097012366",
+          "member": "string",
+          "name": "WorkspaceID",
           "required": false,
           "type": "string"
         }
@@ -48556,7 +48607,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>权限结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkspaceCatalogsResult",
           "name": "Data",
@@ -54582,7 +54633,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源类型",
+          "document": "<p>资源类型</p>",
           "example": "[\"Catalogt\"]",
           "member": "string",
           "name": "ResourceTypes",
@@ -54591,7 +54642,7 @@
         },
         {
           "disabled": false,
-          "document": "CatalogType",
+          "document": "<p>CatalogType</p>",
           "example": "MODEL",
           "member": "string",
           "name": "CatalogType",
@@ -54600,12 +54651,21 @@
         },
         {
           "disabled": false,
-          "document": "是否递归",
+          "document": "<p>是否递归</p>",
           "example": "false",
           "member": "bool",
           "name": "Recursive",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间id</p>",
+          "example": "17623497097012366",
+          "member": "string",
+          "name": "WorkspaceID",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -54615,7 +54675,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "获取资源权限详情",
+          "document": "<p>获取资源权限详情</p>",
           "example": "无",
           "member": "GetGrantPrivilegesRsp",
           "name": "Data",
@@ -59372,7 +59432,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据目录名",
+          "document": "<p>数据目录名</p>",
           "example": "DataLakeCatalog",
           "member": "string",
           "name": "CatalogName",
@@ -59381,7 +59441,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名",
+          "document": "<p>数据库名</p>",
           "example": "default",
           "member": "string",
           "name": "SchemaName",
@@ -59390,7 +59450,7 @@
         },
         {
           "disabled": false,
-          "document": "最大结果条数",
+          "document": "<p>最大结果条数</p>",
           "example": "1",
           "member": "int64",
           "name": "MaxResults",
@@ -59399,7 +59459,7 @@
         },
         {
           "disabled": false,
-          "document": "分页token",
+          "document": "<p>分页token</p>",
           "example": "eyJvZmZzZXQiOjMwfQ==",
           "member": "string",
           "name": "PageToken",
@@ -59408,7 +59468,7 @@
         },
         {
           "disabled": false,
-          "document": "调用时所在workspace唯一id",
+          "document": "<p>调用时所在workspace唯一id</p>",
           "example": "231434145236852",
           "member": "string",
           "name": "WorkspaceId",
@@ -59417,8 +59477,8 @@
         },
         {
           "disabled": false,
-          "document": "数据获取选项，可选，控制是否返回权限信息及按权限过滤",
-          "example": "",
+          "document": "<p>数据获取选项，可选，控制是否返回权限信息及按权限过滤</p>",
+          "example": "无",
           "member": "FetchOption",
           "name": "FetchOption",
           "required": false,
@@ -59432,7 +59492,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ListTablesRsp",
           "name": "Data",
@@ -67975,6 +68035,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "DenyPrivilegeList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -68680,6 +68751,17 @@
           "example": "default",
           "member": "string",
           "name": "WorkSpaceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Condition",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -92678,7 +92760,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "baf0f102-93f3-4d5a-9153-1688396ba3b4",
           "member": "string",
           "name": "TaskTypeId",
@@ -92689,7 +92771,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NOTEBOOK",
           "member": "string",
           "name": "TaskTypeName",
@@ -92700,7 +92782,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型显示信息（BASE64格式）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型显示信息（BASE64格式）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "eyJlbi1VUyI6ICJOb3RlYm9vayBUYXNrIiwgInpoLUNOIjogIk5vdGVib29r5Lu75YqhIn0=",
           "member": "string",
           "name": "DisplayTaskType",
@@ -92711,7 +92793,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型描述信息（BASE64格式）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型描述信息（BASE64格式）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "eyJlbi1VUyI6ICJOb3RlYm9vayIsICJ6aC1DTiI6ICJOb3RlYm9vayJ9",
           "member": "string",
           "name": "TaskTypeDesc",
@@ -92722,10 +92804,32 @@
         },
         {
           "disabled": false,
-          "document": "模块类型，默认为 ONEFLOW\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模块类型，默认为 ONEFLOW</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ONEFLOW",
           "member": "string",
           "name": "ModuleType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属分类标识，如：COMPUTE、DATA_INTEGRATION、FLOW_CONTROL、OPS_MONITOR</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "COMPUTE",
+          "member": "string",
+          "name": "CategoryKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属分类显示名称（BASE64格式），JSON多语言格式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"zh-CN\":\"计算任务\",\"en-US\":\"Compute\"}",
+          "member": "string",
+          "name": "CategoryDisplayName",
           "output_required": false,
           "required": false,
           "type": "string",

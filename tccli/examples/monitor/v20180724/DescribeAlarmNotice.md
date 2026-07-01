@@ -15,79 +15,58 @@ Output:
 {
     "Response": {
         "Notice": {
-            "AMPConsumerId": "xx",
-            "URLNotices": [
-                {
-                    "ValidationCode": "xx",
-                    "URL": "xx",
-                    "IsValid": 0,
-                    "Weekday": [
-                        0
-                    ],
-                    "StartTime": 0,
-                    "EndTime": 0
-                },
-                {
-                    "ValidationCode": "xx",
-                    "URL": "xx",
-                    "IsValid": 0,
-                    "Weekday": [
-                        0
-                    ],
-                    "StartTime": 0,
-                    "EndTime": 0
-                }
-            ],
-            "Name": "xx",
-            "NoticeType": "xx",
-            "CLSNotices": [
-                {
-                    "TopicId": "xx",
-                    "Region": "xx",
-                    "Enable": 0,
-                    "LogSetId": "xx"
-                }
-            ],
-            "UpdatedBy": "xx",
+            "AMPConsumerId": "Consumer-*x****f***",
+            "CLSNotices": [],
+            "Id": "notice-60vrut83",
+            "IsLoginFree": 0,
+            "IsPreset": 0,
+            "Name": "auto-dy5r8i",
+            "NoticeLanguage": "zh-CN",
+            "NoticeType": "ALL",
             "PolicyIds": [
-                "policy-58hbt18"
+                "policy-********"
             ],
+            "Tags": null,
+            "TimeZoneName": "",
+            "URLNotices": [],
+            "UpdatedAt": "2026-06-29 14:02:49",
+            "UpdatedBy": "10002*******",
             "UserNotices": [
                 {
-                    "NoticeWay": [
-                        "EMAIL",
-                        "CALL"
+                    "EndTime": 86399,
+                    "GroupIds": [
+                        309306
                     ],
                     "NeedPhoneArriveNotice": 1,
-                    "PhoneOrder": [
-                        162208,
-                        168105
+                    "NoticeWay": [
+                        "SMS",
+                        "EMAIL"
                     ],
-                    "PhoneCallType": "xx",
-                    "UserIds": [
-                        168105,
-                        162208
+                    "OnCallFormIDs": [
+                        ""
                     ],
-                    "ReceiverType": "xx",
-                    "PhoneCircleInterval": 60,
-                    "GroupIds": [
-                        0
-                    ],
+                    "PhoneCallType": "CIRCLE",
+                    "PhoneCircleInterval": 180,
+                    "PhoneCircleTimes": 1,
+                    "PhoneInnerInterval": 180,
+                    "PhoneOrder": null,
+                    "ReceiverType": "GROUP",
                     "StartTime": 0,
-                    "PhoneCircleTimes": 2,
-                    "EndTime": 3600,
-                    "PhoneInnerInterval": 60,
+                    "UserIds": null,
+                    "VoiceConfirmKey": "",
                     "Weekday": [
-                        0
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7
                     ]
                 }
-            ],
-            "IsPreset": 0,
-            "UpdatedAt": "xx",
-            "NoticeLanguage": "xx",
-            "Id": "xx"
+            ]
         },
-        "RequestId": "xx"
+        "RequestId": "4aa5868c-35a1-49f0-b639-f9c85cbc904c"
     }
 }
 ```

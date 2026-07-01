@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli monitor DeleteAlarmShields --cli-unfold-argument  \
-    --Shields xx \
-    --Module xx
+    --Shields shield-adax \
+    --Module monitor
 ```
 
 Output: 

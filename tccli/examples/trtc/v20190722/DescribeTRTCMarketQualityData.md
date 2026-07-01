@@ -26,7 +26,7 @@ Output:
                         "audioFreezeRate",
                         "networkDelay",
                         "joinSuccessRate",
-                        "joinSuccessRate"
+                        "joinSuccessIn5sRate"
                     ],
                     "Values": [
                         {

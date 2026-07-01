@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli eb CreateEventBus --cli-unfold-argument  \
-    --EventBusName test
+    --EventBusName myEventbus
 ```
 
 Output: 

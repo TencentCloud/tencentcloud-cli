@@ -1,12 +1,13 @@
 **Example 1: ListCatalogWorkspaces**
 
-ListCatalogWorkspaces
+catalog工作空间列表
 
 Input: 
 
 ```
 tccli wedata ListCatalogWorkspaces --cli-unfold-argument  \
-    --CatalogID tccatalog.v1.uid1876356801930330423
+    --CatalogName c4 \
+    --WorkspaceID 17623497097012366
 ```
 
 Output: 
@@ -18,15 +19,15 @@ Output:
                 {
                     "CatalogID": "tccatalog.v1.uid1876356801930330423",
                     "CatalogName": "c4",
-                    "CreatedTime": "1767114565",
-                    "PermissionLevel": "1",
-                    "UpdatedTime": "1767114565",
-                    "WorkspaceID": "17624147441995300",
-                    "WorkspaceName": "bs_1106_1"
+                    "CreatedTime": "1773903972",
+                    "PermissionLevel": "2",
+                    "UpdatedTime": "1773903972",
+                    "WorkspaceID": "17676920188276733",
+                    "WorkspaceName": "workflow_z2"
                 }
             ]
         },
-        "RequestId": "cc6f55e6-11cc-42e2-a3ea-5396bed79992"
+        "RequestId": "a1fd7e1b-e0c7-4d2d-9c64-e559c9b16905"
     }
 }
 ```

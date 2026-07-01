@@ -16,6 +16,7 @@ Output:
         "RequestId": "8979fc1e-9564-4fc9-bf7d-2958ce679b72",
         "IdentityType": "DOMAIN",
         "VerifiedForSendingStatus": false,
+        "DKIMOption": 0,
         "Attributes": [
             {
                 "Type": "TXT",

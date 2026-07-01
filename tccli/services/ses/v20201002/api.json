@@ -1158,7 +1158,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。",
+          "document": "<p>您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。</p>",
           "example": "mail.qcloud.com",
           "member": "string",
           "name": "EmailIdentity",
@@ -1167,7 +1167,7 @@
         },
         {
           "disabled": false,
-          "document": "生成的dkim密钥长度。0:1024，1:2048",
+          "document": "<p>生成的dkim密钥长度。0:1024，1:2048</p>",
           "example": "0",
           "member": "uint64",
           "name": "DKIMOption",
@@ -1176,7 +1176,7 @@
         },
         {
           "disabled": false,
-          "document": "tag 标签",
+          "document": "<p>tag 标签</p>",
           "example": "无",
           "member": "TagList",
           "name": "TagList",
@@ -1191,7 +1191,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "验证类型。固定值：DOMAIN",
+          "document": "<p>验证类型。固定值：DOMAIN</p>",
           "example": "DOMAIN",
           "member": "string",
           "name": "IdentityType",
@@ -1201,7 +1201,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已通过验证",
+          "document": "<p>是否已通过验证</p>",
           "example": "true",
           "member": "bool",
           "name": "VerifiedForSendingStatus",
@@ -1211,12 +1211,22 @@
         },
         {
           "disabled": false,
-          "document": "需要配置的DNS信息",
+          "document": "<p>需要配置的DNS信息</p>",
           "example": "无",
           "member": "DNSAttributes",
           "name": "Attributes",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>dkim位数</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： 双签</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "DKIMOption",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1799,7 +1809,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "发信域名",
+          "document": "<p>发信域名</p>",
           "example": "mail.qcloud.com",
           "member": "string",
           "name": "IdentityName",
@@ -1809,7 +1819,7 @@
         },
         {
           "disabled": false,
-          "document": "验证类型，固定为DOMAIN",
+          "document": "<p>验证类型，固定为DOMAIN</p>",
           "example": "DOMAIN",
           "member": "string",
           "name": "IdentityType",
@@ -1819,7 +1829,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已通过验证",
+          "document": "<p>是否已通过验证</p>",
           "example": "false",
           "member": "bool",
           "name": "SendingEnabled",
@@ -1829,7 +1839,7 @@
         },
         {
           "disabled": false,
-          "document": "当前信誉等级",
+          "document": "<p>当前信誉等级</p>",
           "example": "10",
           "member": "uint64",
           "name": "CurrentReputationLevel",
@@ -1839,7 +1849,7 @@
         },
         {
           "disabled": false,
-          "document": "当日最高发信量",
+          "document": "<p>当日最高发信量</p>",
           "example": "10000",
           "member": "uint64",
           "name": "DailyQuota",
@@ -1849,7 +1859,7 @@
         },
         {
           "disabled": false,
-          "document": "域名配置的独立ip",
+          "document": "<p>域名配置的独立ip</p>",
           "example": "[\"0.0.0.0\",\"1.1.1.1\"]",
           "member": "string",
           "name": "SendIp",
@@ -1859,12 +1869,22 @@
         },
         {
           "disabled": false,
-          "document": "tag 标签",
+          "document": "<p>tag 标签</p>",
           "example": "无",
           "member": "TagList",
           "name": "TagList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>dkim位数</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： 双签</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "DKIMOption",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -2040,7 +2060,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "发信域名",
+          "document": "<p>发信域名</p>",
           "example": "example.com",
           "member": "string",
           "name": "EmailIdentity",
@@ -2055,7 +2075,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "验证类型。固定值：DOMAIN",
+          "document": "<p>验证类型。固定值：DOMAIN</p>",
           "example": "DOMAIN",
           "member": "string",
           "name": "IdentityType",
@@ -2065,7 +2085,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已通过验证",
+          "document": "<p>是否已通过验证</p>",
           "example": "true",
           "member": "bool",
           "name": "VerifiedForSendingStatus",
@@ -2075,12 +2095,22 @@
         },
         {
           "disabled": false,
-          "document": "DNS配置详情",
+          "document": "<p>DNS配置详情</p>",
           "example": "无",
           "member": "DNSAttributes",
           "name": "Attributes",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>dkim密钥长度</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： both</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "DKIMOption",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -3890,12 +3920,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "请求验证的域名",
+          "document": "<p>请求验证的域名</p>",
           "example": "example.com",
           "member": "string",
           "name": "EmailIdentity",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>匹分控制台新老API</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "NewAPI",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>dkim位数</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： 双签</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "DKIMOption",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3905,7 +3953,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "验证类型。固定值：DOMAIN",
+          "document": "<p>验证类型。固定值：DOMAIN</p>",
           "example": "DOMAIN",
           "member": "string",
           "name": "IdentityType",
@@ -3915,7 +3963,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已通过验证",
+          "document": "<p>是否已通过验证</p>",
           "example": "true",
           "member": "bool",
           "name": "VerifiedForSendingStatus",
@@ -3925,12 +3973,22 @@
         },
         {
           "disabled": false,
-          "document": "需要配置的DNS信息",
+          "document": "<p>需要配置的DNS信息</p>",
           "example": "无",
           "member": "DNSAttributes",
           "name": "Attributes",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>dkim位数</p><p>枚举值：</p><ul><li>0： 1024</li><li>1： 2048</li><li>2： 双签</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "DKIMOption",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

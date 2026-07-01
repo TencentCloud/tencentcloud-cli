@@ -104,6 +104,20 @@
         "title": "查询 TKE 节点池列表"
       }
     ],
+    "DescribeNodePoolsElasticityStrength": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodePoolsElasticityStrength\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dba66477-a2cb-4e5c-8e0b-890ba92ac33a\"\n    }\n}",
+        "title": "弹性健康度健康示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodePoolsElasticityStrength\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1f1dd6d2-3156-4019-92a5-a2470df3ee80\"\n    }\n}",
+        "title": "弹性健康度风险示例"
+      }
+    ],
     "DescribeZoneInstanceConfigInfos": [
       {
         "document": "",

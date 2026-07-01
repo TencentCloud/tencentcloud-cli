@@ -347,7 +347,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主域名",
+          "document": "<p>主域名</p>",
           "example": "qq.com",
           "member": "string",
           "name": "Domain",
@@ -356,7 +356,7 @@
         },
         {
           "disabled": false,
-          "document": "生效范围（预留，暂未使用）",
+          "document": "<p>生效范围（预留，暂未使用）</p>",
           "example": "1",
           "member": "string",
           "name": "Area",
@@ -365,10 +365,19 @@
         },
         {
           "disabled": false,
-          "document": "劫持的IP（可为空，默认0.0.0.0）",
+          "document": "<p>劫持的IP（可为空，默认0.0.0.0）</p>",
           "example": "0.0.0.0",
           "member": "string",
           "name": "ForwardIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>DNS 记录类型，决定本次封禁/解封作用于哪种 DNS 查询应答。</p><p>枚举值：</p><ul><li>A： IPv4 地址记录，默认 0.0.0.0 实现封禁</li><li>AAAA： IPv6 地址记录，默认 :: 实现封禁</li></ul><p>默认值：A</p><p>A 类型对应 IPv4 地址，AAAA 类型对应 IPv6 地址。同一域名的 A 与 AAAA 互相独立，需分别提交。</p>",
+          "example": "*AAAA”",
+          "member": "string",
+          "name": "RecordType",
           "required": false,
           "type": "string"
         }

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli monitor CreateConditionsTemplate --cli-unfold-argument  \
-    --EventConditions.0.EventID 123 \
+    --EventConditions.0.EventID 256 \
     --EventConditions.0.AlarmNotifyType 0 \
-    --EventConditions.0.AlarmNotifyPeriod 123 \
+    --EventConditions.0.AlarmNotifyPeriod 278 \
     --EventConditions.0.RuleID 0 \
     --Remark abcd \
     --ViewName cvm \

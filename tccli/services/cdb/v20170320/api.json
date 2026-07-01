@@ -1558,7 +1558,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "账号备注信息",
+          "document": "<p>账号备注信息</p>",
           "example": "your note",
           "member": "string",
           "name": "Notes",
@@ -1568,7 +1568,7 @@
         },
         {
           "disabled": false,
-          "document": "账号的域名",
+          "document": "<p>账号的域名</p>",
           "example": "%",
           "member": "string",
           "name": "Host",
@@ -1578,7 +1578,7 @@
         },
         {
           "disabled": false,
-          "document": "账号的名称",
+          "document": "<p>账号的名称</p>",
           "example": "root",
           "member": "string",
           "name": "User",
@@ -1588,7 +1588,7 @@
         },
         {
           "disabled": false,
-          "document": "账号信息修改时间",
+          "document": "<p>账号信息修改时间</p>",
           "example": "2020-09-09 16:40:30",
           "member": "datetime",
           "name": "ModifyTime",
@@ -1598,7 +1598,7 @@
         },
         {
           "disabled": false,
-          "document": "修改密码的时间",
+          "document": "<p>修改密码的时间</p>",
           "example": "2020-09-09 16:40:30",
           "member": "datetime",
           "name": "ModifyPasswordTime",
@@ -1608,7 +1608,7 @@
         },
         {
           "disabled": true,
-          "document": "该值已废弃",
+          "document": "<p>该值已废弃</p>",
           "example": "2021-09-09 16:40:30",
           "member": "datetime",
           "name": "CreateTime",
@@ -1618,7 +1618,7 @@
         },
         {
           "disabled": false,
-          "document": "用户最大可用实例连接数",
+          "document": "<p>用户最大可用实例连接数</p>",
           "example": "10240",
           "member": "int64",
           "name": "MaxUserConnections",
@@ -1628,12 +1628,42 @@
         },
         {
           "disabled": false,
-          "document": "用户账号是否开启了密码轮转",
+          "document": "<p>用户账号是否开启了密码轮转</p>",
           "example": "true",
           "member": "bool",
           "name": "OpenCam",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号类型 </p><p>枚举值：</p><ul><li>auto： 自动读写分离账号，可读可写，路由行为与当前一致</li><li>readonly： 只读账号，仅读操作，写操作由 Proxy 拦截返回错误</li><li>normal： 常规账号，所有查询默认路由到主库</li></ul>",
+          "example": "auto",
+          "member": "string",
+          "name": "AccountType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>只读策略</p><p>枚举值：</p><ul><li>failover_to_master： 备机故障读主机    从库延迟超阈值时，切换到主库读取</li><li>failover_error： 备机故障报错    从库延迟超阈值时，向应用返回错误</li><li>slave_only： 只从备机读取    始终只读从库，忽略延迟（常用于 binlog 同步场景）</li></ul>",
+          "example": "failover_to_master",
+          "member": "string",
+          "name": "ReadPolicy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>延迟阈值</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DelayThreshold",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

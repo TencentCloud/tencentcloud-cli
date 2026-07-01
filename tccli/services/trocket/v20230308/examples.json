@@ -538,6 +538,14 @@
         "title": "修改主题属性"
       }
     ],
+    "ModifyTopicMetaInternal": [
+      {
+        "document": "运营端更新管控本地Topic元数据成功",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopicMetaInternal\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-4k4orqgq\",\n    \"Topic\": \"topic-498283\",\n    \"QueueNum\": 4,\n    \"Remark\": \"test-remark\",\n    \"TopicType\": \"FIFO\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45bc44b4-432a-4b2d-b0ba-a63dcc34b480\"\n    }\n}",
+        "title": "运营端更新管控本地Topic元数据"
+      }
+    ],
     "ModifyUserPurchaseConfig": [
       {
         "document": "修改成功响应",

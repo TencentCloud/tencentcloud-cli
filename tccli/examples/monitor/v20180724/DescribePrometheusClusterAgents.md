@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor DescribePrometheusClusterAgents --cli-unfold-argument  \
-    --InstanceId prom-abc \
+    --InstanceId prom-xxxxxxxx \
     --Limit 1 \
     --Offset 1
 ```
@@ -17,8 +17,8 @@ Output:
     "Response": {
         "Agents": [
             {
-                "ClusterId": "cls-abc",
-                "ClusterName": "abc",
+                "ClusterId": "cls-xxxxxxxx",
+                "ClusterName": "clusterName",
                 "ClusterType": "tke",
                 "EnableExternal": false,
                 "ExternalLabels": [
@@ -36,7 +36,7 @@ Output:
                 "ReadyAgentNum": 1,
                 "Region": "ap-guangzhou",
                 "Status": "normal",
-                "VpcId": "vpc-abc"
+                "VpcId": "vpc-xxxxxxxx"
             }
         ],
         "IsFirstBind": false,

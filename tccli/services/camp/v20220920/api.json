@@ -168,13 +168,6 @@
       "output": "DescribeApplicationResourcesResponse",
       "status": "online"
     },
-    "DescribeApplicationStatus": {
-      "document": "查看应用状态",
-      "input": "DescribeApplicationStatusRequest",
-      "name": "查看应用状态",
-      "output": "DescribeApplicationStatusResponse",
-      "status": "online"
-    },
     "DescribeApplications": {
       "document": "获取平台应用列表",
       "input": "DescribeApplicationsRequest",
@@ -243,6 +236,13 @@
       "input": "DescribeInstanceRequest",
       "name": "获取应用实例详情",
       "output": "DescribeInstanceResponse",
+      "status": "online"
+    },
+    "DescribeInstanceAvailability": {
+      "document": "创建实例预测资源是否满足要求",
+      "input": "DescribeInstanceAvailabilityRequest",
+      "name": "创建实例预测资源是否满足要求",
+      "output": "DescribeInstanceAvailabilityResponse",
       "status": "online"
     },
     "DescribeInstanceStatus": {
@@ -411,6 +411,20 @@
       "input": "ListInstancesRequest",
       "name": "拉取应用实例基础信息列表",
       "output": "ListInstancesResponse",
+      "status": "online"
+    },
+    "ModifyAlarmPolicy": {
+      "document": "修改云原生告警策略",
+      "input": "ModifyAlarmPolicyRequest",
+      "name": "修改告警策略",
+      "output": "ModifyAlarmPolicyResponse",
+      "status": "online"
+    },
+    "ModifyAlarmPolicyTargets": {
+      "document": "修改告警策略监控对象",
+      "input": "ModifyAlarmPolicyTargetsRequest",
+      "name": "修改监控对象",
+      "output": "ModifyAlarmPolicyTargetsResponse",
       "status": "online"
     },
     "ModifyApplication": {
@@ -596,17 +610,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "本批次升级允许升级失败的Pod个数或比例\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10%",
-          "member": "string",
-          "name": "MaxFailed",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "详细配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AutoBatchUpdateDetail",
@@ -614,6 +617,17 @@
           "output_required": true,
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本批次升级允许升级失败的Pod个数或比例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10%",
+          "member": "string",
+          "name": "MaxFailed",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1283,6 +1297,23 @@
       ],
       "usage": "both"
     },
+    "CLBProxyProtocolConfig": {
+      "document": "clb ProxyProtocolConfig 相关配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启 ProxyProtocol",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CLBSessionConfig": {
       "document": "CLB会话保持相关配置，仅TCP/UDP协议支持",
       "members": [
@@ -1665,6 +1696,17 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启删除保护\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -4521,6 +4563,24 @@
           "name": "GracePeriodSeconds",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开启固定IP的workload删除pod ip",
+          "example": "true",
+          "member": "bool",
+          "name": "DeletePodIP",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "删除pod pvc资源",
+          "example": "true",
+          "member": "bool",
+          "name": "DeletePVC",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4896,23 +4956,6 @@
       ],
       "type": "object"
     },
-    "DescribeApplicationStatusRequest": {
-      "document": "DescribeApplicationStatus请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeApplicationStatusResponse": {
-      "document": "DescribeApplicationStatus返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeApplicationsRequest": {
       "document": "DescribeApplications请求参数结构体",
       "members": [
@@ -5272,6 +5315,217 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceAvailabilityRequest": {
+      "document": "DescribeInstanceAvailability请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "\t业务 ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\t应用 ID",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境名称",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\t实例名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\t组件信息",
+          "example": "无",
+          "member": "Component",
+          "name": "Components",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "策略信息",
+          "example": "无",
+          "member": "Policy",
+          "name": "Policies",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用平台标识",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\t云标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "\t创建者",
+          "example": "无",
+          "member": "User",
+          "name": "Creator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "创建来源",
+          "example": "无",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\t来源平台URL",
+          "example": "无",
+          "member": "string",
+          "name": "SourceURL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\t只读模式",
+          "example": "无",
+          "member": "string",
+          "name": "ReadOnly",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\t模块信息",
+          "example": "无",
+          "member": "Module",
+          "name": "Modules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "\t智研属性",
+          "example": "无",
+          "member": "ZhiYanObject",
+          "name": "ZhiYan",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "\t迁移属性",
+          "example": "无",
+          "member": "Migration",
+          "name": "Migration",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "\tCMDB 管理员",
+          "example": "无",
+          "member": "User",
+          "name": "CMDBAdmins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceAvailabilityResponse": {
+      "document": "DescribeInstanceAvailability返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源满足状态，true表示满足\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ResourceSatisfied",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源不满足原因",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区可部署的副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZoneAvailabilityCount",
+          "name": "ZoneAvailabilityCount",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "hpa开启状态,true表示开启hpa",
+          "example": "无",
+          "member": "bool",
+          "name": "HpaStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5913,6 +6167,15 @@
           "example": "csig",
           "member": "string",
           "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "业务ID",
+          "example": "prj-xxxxxx",
+          "member": "string",
+          "name": "ProjectID",
           "required": false,
           "type": "string"
         }
@@ -7733,7 +7996,7 @@
         {
           "disabled": false,
           "document": "双向 RST 开关\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "bool",
+          "example": "true",
           "member": "bool",
           "name": "DeregisterTargetRST",
           "output_required": false,
@@ -7773,6 +8036,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "proxyProtocol 相关设置",
+          "example": "无",
+          "member": "CLBProxyProtocolConfig",
+          "name": "ProxyProtocolConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8054,6 +8328,87 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyAlarmPolicyRequest": {
+      "document": "ModifyAlarmPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务ID",
+          "example": "prj-xxxx",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID",
+          "example": "policy-xxxx",
+          "member": "string",
+          "name": "PolicyID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新策略名称",
+          "example": "test-policy",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用告警策略",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmPolicyResponse": {
+      "document": "ModifyAlarmPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmPolicyTargetsRequest": {
+      "document": "ModifyAlarmPolicyTargets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警策略生效的CMDB三级模块范围",
+          "example": "无",
+          "member": "ModuleScope",
+          "name": "EffectiveModuleScopes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmPolicyTargetsResponse": {
+      "document": "ModifyAlarmPolicyTargets返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyApplicationRequest": {
       "document": "ModifyApplication请求参数结构体",
@@ -8820,6 +9175,23 @@
       ],
       "usage": "both"
     },
+    "ModuleScope": {
+      "document": "CMDB模块范围信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CMDB三级模块信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Module",
+          "name": "Modules",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "NFSVolumeSource": {
       "document": "NFS 存储结构",
       "members": [
@@ -9319,7 +9691,7 @@
         {
           "disabled": false,
           "document": "原始数据",
-          "example": "无",
+          "example": "\"“",
           "member": "string",
           "name": "Raw",
           "output_required": true,
@@ -9379,7 +9751,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "\"“",
           "member": "string",
           "name": "ClusterID",
           "output_required": true,
@@ -9389,7 +9761,7 @@
         {
           "disabled": false,
           "document": "集群类型",
-          "example": "无",
+          "example": "\"“",
           "member": "string",
           "name": "ClusterType",
           "output_required": true,
@@ -9399,7 +9771,7 @@
         {
           "disabled": false,
           "document": "VPC信息",
-          "example": "vpc-xxx",
+          "example": "vpc-123abc",
           "member": "string",
           "name": "VPC",
           "output_required": false,
@@ -9409,7 +9781,7 @@
         {
           "disabled": false,
           "document": "名字空间",
-          "example": "无",
+          "example": "\"“",
           "member": "string",
           "name": "Namespace",
           "output_required": true,
@@ -9439,7 +9811,7 @@
         {
           "disabled": false,
           "document": "弹性IP",
-          "example": "无",
+          "example": "\"“",
           "member": "string",
           "name": "EIP",
           "output_required": false,
@@ -9449,7 +9821,7 @@
         {
           "disabled": false,
           "document": "节点名称",
-          "example": "无",
+          "example": "\"“",
           "member": "string",
           "name": "NodeName",
           "output_required": true,
@@ -9469,7 +9841,7 @@
         {
           "disabled": false,
           "document": "状态",
-          "example": "无",
+          "example": "\"“",
           "member": "string",
           "name": "State",
           "output_required": true,
@@ -9489,7 +9861,7 @@
         {
           "disabled": false,
           "document": "更新状态",
-          "example": "无",
+          "example": "\"“",
           "member": "string",
           "name": "UpdateState",
           "output_required": false,
@@ -9499,7 +9871,7 @@
         {
           "disabled": false,
           "document": "当前版本",
-          "example": "无",
+          "example": "\"“",
           "member": "string",
           "name": "CurrentRevision",
           "output_required": false,
@@ -9509,7 +9881,7 @@
         {
           "disabled": false,
           "document": "更新版本",
-          "example": "无",
+          "example": "\"“",
           "member": "string",
           "name": "UpdateRevision",
           "output_required": false,
@@ -9519,7 +9891,7 @@
         {
           "disabled": false,
           "document": "WebShell链接",
-          "example": "无",
+          "example": "\"“",
           "member": "string",
           "name": "WebShell",
           "output_required": false,
@@ -9539,7 +9911,7 @@
         {
           "disabled": false,
           "document": "IPV6地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"“",
           "member": "string",
           "name": "IPV6",
           "output_required": false,
@@ -9549,7 +9921,7 @@
         {
           "disabled": false,
           "document": "当前pod模版版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"“",
           "member": "string",
           "name": "CurrentPodTemplateRevision",
           "output_required": false,
@@ -9559,7 +9931,7 @@
         {
           "disabled": false,
           "document": "目标pod模版版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"“",
           "member": "string",
           "name": "TargetPodTemplateRevision",
           "output_required": false,
@@ -9579,9 +9951,19 @@
         {
           "disabled": false,
           "document": "pod的Label信息",
-          "example": "无",
+          "example": "\"“",
           "member": "string",
           "name": "Labels",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pod 唯一ID",
+          "example": "tad-xxxxxxx-1",
+          "member": "string",
+          "name": "PodUUID",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -10040,6 +10422,26 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域状态，Active：可用，UnActive：不可用",
+          "example": "Active",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不可用原因，Unauthorized：未授权",
+          "example": "Unauthorized",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11147,14 +11549,25 @@
         },
         {
           "disabled": false,
-          "document": "升级跳过的Pod跳过优雅终止\t",
+          "document": "升级跳过的Pod跳过优雅终止\t\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "CloseGraceTermination",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩容用旧版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ScaleUpUseOldRevision",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11659,7 +12072,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定标准输出和和标准错误输出，all（全部）,stdout（标准输出）,stderr（错误输出）\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指定标准输出和标准错误输出，all（全部）,stdout（标准输出）,stderr（错误输出）\t\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
           "member": "string",
           "name": "Stream",
@@ -11670,8 +12083,8 @@
         },
         {
           "disabled": false,
-          "document": "type设置为采集容器内文件container需配置，采集日志文件所在的Empdir Volume\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "type设置为采集容器内文件container需配置，采集日志文件所在的Emptydir Volume\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "log",
           "member": "string",
           "name": "Volume",
           "output_required": true,
@@ -11682,7 +12095,7 @@
         {
           "disabled": false,
           "document": "日志文件路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"/log1\"]",
           "member": "string",
           "name": "Paths",
           "output_required": true,
@@ -11693,7 +12106,7 @@
         {
           "disabled": false,
           "document": "过滤采集路径",
-          "example": "无",
+          "example": "[\"file1\"]",
           "member": "string",
           "name": "ExcludeFiles",
           "output_required": false,
@@ -11707,6 +12120,28 @@
           "example": "无",
           "member": "Label",
           "name": "Fields",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多行采集能力",
+          "example": "^test",
+          "member": "string",
+          "name": "MultiLine",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志过滤规则（正则）",
+          "example": "[\"content1\"]",
+          "member": "string",
+          "name": "ExcludeLines",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -11812,6 +12247,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11822,8 +12258,180 @@
           "example": "1",
           "member": "uint64",
           "name": "Weight",
+          "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ZoneAvailabilityCount": {
+      "document": "可用区可部署的副本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可部署的副本数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cpu容量，单位Core\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Cpu",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存容量，单位Gi\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Memory",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Gpu 容量，单位 卡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "GpuCore",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Gpu内容，单位Gi\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "GpuMemory",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cpu请求量，单位Core\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "RequestCpu",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存请求量，单位Gi\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "RequestMemory",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Gpu 请求量，单位 卡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "RequestGpuCore",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Gpu内存请求量，单位Gi\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "RequestGpuMemory",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求CPU核数,开启hpa时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "MinRequestCpu",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求内存大小Gi,开启hpa时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "MinRequestMemory",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求GPU卡数,开启hpa时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "MinRequestGpuCore",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求GPU内存,开启hpa时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "MinRequestGpuMemory",
+          "output_required": false,
+          "required": false,
+          "type": "float",
           "value_allowed_null": true
         }
       ],

@@ -134,10 +134,10 @@
     ],
     "DeletePod": [
       {
-        "document": "删除Pod",
-        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePod\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
-        "title": "删除Pod"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePod\n<公共请求参数>\n\n{\n    \"DeletePodIP\": true,\n    \"DeletePVC\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd0fc7c6-93c4-4f19-9594-c4b157f624c8\"\n    }\n}",
+        "title": "删除pod固定IP和PVC"
       }
     ],
     "DeletePolicy": [
@@ -208,14 +208,6 @@
         "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationResources\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
         "title": "查看应用资源列表"
-      }
-    ],
-    "DescribeApplicationStatus": [
-      {
-        "document": "查看应用状态",
-        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationStatus\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
-        "title": "查看应用状态"
       }
     ],
     "DescribeApplications": [
@@ -296,6 +288,14 @@
         "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstance\n<公共请求参数>\n\n{\n    \"InstanceID\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取应用实例详情"
+      }
+    ],
+    "DescribeInstanceAvailability": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceAvailability\n<公共请求参数>\n\n\n\n{\n    \"ProjectID\": \"prj-xxxxxx\",\n    \"ApplicationID\": \"app-xxxxxx\",\n    \"EnvironmentName\": \"development\",\n    \"Name\": \"qwe\",\n    \"Components\": [\n        {\n            \"Name\": \"qwe\",\n            \"Type\": \"deployment\",\n            \"Properties\": {\n                \"Deployment\": \"{\\\"kind\\\":\\\"Deployment\\\",\\\"apiVersion\\\":\\\"apps/v1\\\",\\\"metadata\\\":{\\\"name\\\":\\\"gpu\\\",\\\"labels\\\":{\\\"k8s-app\\\":\\\"gpu\\\"},\\\"annotations\\\":{\\\"descheduler.alpha.kubernetes.io/pdb\\\":\\\"5\\\"}},\\\"spec\\\":{\\\"replicas\\\":1,\\\"template\\\":{\\\"metadata\\\":{\\\"annotations\\\":{},\\\"labels\\\":{\\\"k8s-app\\\":\\\"gpu\\\"}},\\\"spec\\\":{\\\"terminationGracePeriodSeconds\\\":30,\\\"containers\\\":[{\\\"name\\\":\\\"c\\\",\\\"image\\\":\\\"c:c\\\",\\\"env\\\":[],\\\"envForm\\\":[],\\\"resources\\\":{\\\"limits\\\":{\\\"cpu\\\":\\\"1\\\",\\\"memory\\\":\\\"2Gi\\\",\\\"tke.cloud.tencent.com/qgpu-core\\\":10,\\\"tke.cloud.tencent.com/qgpu-memory\\\":1},\\\"requests\\\":{\\\"cpu\\\":\\\"1\\\",\\\"memory\\\":\\\"2Gi\\\",\\\"tke.cloud.tencent.com/qgpu-core\\\":10,\\\"tke.cloud.tencent.com/qgpu-memory\\\":1}}}],\\\"imagePullSecrets\\\":[{\\\"name\\\":\\\"csighub-andrewren\\\"}]}},\\\"selector\\\":{\\\"matchLabels\\\":{\\\"k8s-app\\\":\\\"gpu\\\"}}}}\"\n            },\n            \"Traits\": [\n                {\n                    \"Type\": \"replicas\",\n                    \"Properties\": {\n                        \"Replicas\": {\n                            \"Replicas\": 2\n                        }\n                    }\n                }\n            ]\n        }\n    ],\n    \"Policies\": [\n        {\n            \"Name\": \"gz\",\n            \"Type\": \"placement\",\n            \"Properties\": {\n                \"Placement\": {\n                    \"Type\": \"dynamic\",\n                    \"Region\": \"ap-guangzhou\",\n                    \"Components\": [\n                        \"qwe\"\n                    ],\n                    \"Zones\": [\n                        {\n                            \"Zone\": \"*\"\n                        }\n                    ],\n                    \"MinZones\": 2,\n                    \"Strategy\": \"Capacity\"\n                }\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceSatisfied\": true,\n        \"Message\": \"\",\n        \"HpaStatus\": false,\n        \"ZoneAvailabilityCount\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-4\",\n                \"Count\": 27,\n                \"Cpu\": 27,\n                \"Memory\": 54,\n                \"GpuCore\": 2.7,\n                \"GpuMemory\": 27,\n                \"RequestCpu\": 2,\n                \"RequestMemory\": 4,\n                \"RequestGpuCore\": 0.2,\n                \"RequestGpuMemory\": 2,\n                \"MinRequestCpu\": 0,\n                \"MinRequestMemory\": 0,\n                \"MinRequestGpuCore\": 0,\n                \"MinRequestGpuMemory\": 0\n            },\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-7\",\n                \"Count\": 0,\n                \"Cpu\": 0,\n                \"Memory\": 0,\n                \"GpuCore\": 0,\n                \"GpuMemory\": 0,\n                \"RequestCpu\": 0,\n                \"RequestMemory\": 0,\n                \"RequestGpuCore\": 0,\n                \"RequestGpuMemory\": 0,\n                \"MinRequestCpu\": 0,\n                \"MinRequestMemory\": 0,\n                \"MinRequestGpuCore\": 0,\n                \"MinRequestGpuMemory\": 0\n            },\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-6\",\n                \"Count\": 0,\n                \"Cpu\": 0,\n                \"Memory\": 0,\n                \"GpuCore\": 0,\n                \"GpuMemory\": 0,\n                \"RequestCpu\": 0,\n                \"RequestMemory\": 0,\n                \"RequestGpuCore\": 0,\n                \"RequestGpuMemory\": 0,\n                \"MinRequestCpu\": 0,\n                \"MinRequestMemory\": 0,\n                \"MinRequestGpuCore\": 0,\n                \"MinRequestGpuMemory\": 0\n            },\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"Count\": 0,\n                \"Cpu\": 0,\n                \"Memory\": 0,\n                \"GpuCore\": 0,\n                \"GpuMemory\": 0,\n                \"RequestCpu\": 0,\n                \"RequestMemory\": 0,\n                \"RequestGpuCore\": 0,\n                \"RequestGpuMemory\": 0,\n                \"MinRequestCpu\": 0,\n                \"MinRequestMemory\": 0,\n                \"MinRequestGpuCore\": 0,\n                \"MinRequestGpuMemory\": 0\n            }\n        ],\n        \"RequestId\": \"8bf7756e-b882-4265-836a-c5d98bff8497\"\n    }\n}",
+        "title": "创建实例预测资源是否满足要求"
       }
     ],
     "DescribeInstanceStatus": [
@@ -488,6 +488,22 @@
         "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListInstances\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "拉取应用实例基础信息列表"
+      }
+    ],
+    "ModifyAlarmPolicy": [
+      {
+        "document": "修改告警策略基本信息",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmPolicy\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"PolicyID\": \"abc\",\n    \"Name\": \"abc\",\n    \"Enable\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "ModifyAlarmPolicy"
+      }
+    ],
+    "ModifyAlarmPolicyTargets": [
+      {
+        "document": "修改告警策略绑定对象",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmPolicyTargets\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "ModifyAlarmPolicyTargets"
       }
     ],
     "ModifyApplication": [

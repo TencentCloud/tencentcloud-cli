@@ -1,0 +1,289 @@
+{
+  "actions": {
+    "ModifyTargetGroupAttributes": {
+      "document": "修改目标组。",
+      "input": "ModifyTargetGroupAttributesRequest",
+      "name": "修改目标组",
+      "output": "ModifyTargetGroupAttributesResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2025-10-30",
+    "api_brief": "ALB API 主要提供包括不限于以下几类核心管理能力：\nu200b实例管理u200b\n创建、删除、修改ALB实例的基本属性和网络配置。\nu200b监听与路由管理u200b\n配置监听器及基于路径/域名的精细转发规则，实现流量调度。\nu200b后端服务管理u200b\n管理后端服务器组，动态注册或注销后端服务节点。\nu200b监控数据查询u200b\n获取QPS、延迟、流量等关键指标，用于监控与告警。\n这些接口共同支撑了ALB的自动化运维和弹性扩缩容。",
+    "serviceNameCN": "应用型负载均衡",
+    "serviceShortName": "alb"
+  },
+  "objects": {
+    "HealthCheckConfig": {
+      "document": "健康检查配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启健康检查。\n- **true**：开启。\n- **false**：不开启。",
+          "example": "true",
+          "member": "bool",
+          "name": "HealthCheckEnabled",
+          "output_required": true,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查状态码。取值：\n- 当健康检查协议为**HTTP/HTTPS**时：\n\t- **http_1xx**\n\t- **http_2xx**（默认值）\n\t-  **http_3xx**\n\t-  **http_4xx**\n\t-  **http_5xx**\n- 当健康检查协议为**gRPC**时：默认值为12，数值范围为0-99，输入值可为数值、多个数值或者范围以及相互组合，如：\n\t- **\"20\"**\n\t- **\"0-99\"**\n> 仅当**HealthCheckProtocol**设置为**HTTP** 、**HTTPS**、**GRPC** 或者**GRPCS**时，该参数生效。",
+          "example": "[\"http_2xx\"]",
+          "member": "string",
+          "name": "HealthCheckCodes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "判定后端服务健康的阈值，当健康检查连续成功多少次后，后端服务的状态由**不健康**变为**健康**。\n取值范围：**2**-**10**。\n默认值：**2**。",
+          "example": "2",
+          "member": "uint64",
+          "name": "HealthCheckHealthyThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查域名。该参数不设置时默认使用后端服务的内网IP作为健康检查地址。\n域名限制：\n- 长度限制为 **1-255** 个字符。\n- 可包含小写字母、数字、短划线（-）和半角句号（.）。\n- 至少包含一个半角句号（.），半角句号（.）不能出现在开头或结尾。\n- 最右侧的域标签，只能包含字母，不能包含数字或短划线（-）。\n- 短划线（-）不能出现在开头或结尾。\n>仅当 **HealthCheckProtocol** 设置为 **HTTP、HTTPS** 、**GRPC**、**GRPCS** 时，该参数生效。",
+          "example": "example.com",
+          "member": "string",
+          "name": "HealthCheckHost",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查 HTTP 协议版本，取值：\n- **HTTP1.1**（默认）\n- **HTTP1.0** \n> 仅当**HealthCheckProtocol**设置为**HTTP** 或 **HTTPS** 时，该参数生效。",
+          "example": "HTTP1.1",
+          "member": "string",
+          "name": "HealthCheckHttpVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查的时间间隔。单位：秒。\n取值范围：**2**-**300**。\n默认值：**5**。",
+          "example": "10",
+          "member": "uint64",
+          "name": "HealthCheckInterval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查方法，取值：\n- **GET**\n- **HEAD**（默认值）\n> 仅当**HealthCheckProtocol**设置为**HTTP** 或 **HTTPS** 时，该参数生效。",
+          "example": "GET",
+          "member": "string",
+          "name": "HealthCheckMethod",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查的转发规则路径。\n长度为 1~80 个字符，只能使用字母、数字、字符`-/.%?#&=`以及扩展字符`_;~!（)*[]@$^:',+`。 URL 必须以正斜线（/）开头。\n> 仅当**HealthCheckProtocol**为**HTTP**、**HTTPS** 、**GRPC**、**GRPCS**时，转发规则路径参数生效。",
+          "example": "/hello/index.html",
+          "member": "string",
+          "name": "HealthCheckPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查访问后端服务器的端口。\n\n取值范围：**0-65535**。\n\n默认值：**0**，表示后端服务器的端口。",
+          "example": "80",
+          "member": "uint64",
+          "name": "HealthCheckPort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查协议。取值：\n- **HTTP**（默认）：通过发送 HEAD 或 GET 请求模拟浏览器的访问行为来检查服务器应用是否健康。\n- **HTTPS**：通过发送 HEAD 或 GET 请求模拟浏览器的访问行为来检查服务器应用是否健康。（数据加密，相比 HTTP 更安全。）\n- **TCP**：通过发送 SYN 握手报文来检测服务器端口是否存活。\n- **GRPC**：通过发送 POST 请求来检查服务器应用是否健康。\n- **GRPCS**：通过发送 POST 请求来检查服务器应用是否健康。",
+          "example": "HTTP",
+          "member": "string",
+          "name": "HealthCheckProtocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查的响应超时时间。单位：秒。\n取值范围：**2**-**60**。\n默认值：**2**。",
+          "example": "2",
+          "member": "uint64",
+          "name": "HealthCheckTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "判定后端服务不健康的阈值，当健康检查连续失败多少次后，后端服务的状态由**健康**变为**不健康**。\n取值范围：**2**-**10**。\n默认值：**2**。",
+          "example": "2",
+          "member": "uint64",
+          "name": "HealthCheckUnhealthyThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyTargetGroupAttributesRequest": {
+      "document": "ModifyTargetGroupAttributes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否预览此次请求。\n- **false**（默认）：发送普通请求，直接修改目标组。\n- **true**：发送预览请求，检查修改目标组的参数、格式、业务限制等是否符合要求。",
+          "example": "true",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "健康检查配置。\n",
+          "example": "无",
+          "member": "HealthCheckConfig",
+          "name": "HealthCheckConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启长连接。",
+          "example": "true",
+          "member": "bool",
+          "name": "KeepaliveEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "调度算法。取值：\n- **wrr**：加权轮训，按照权重选择后端服务器，权重越高的服务器被轮训到的概率越高。\n- **wlc**：加权最小连接数，当不同后端服务器权重值相同时，当前连接数越小的后端服务器被轮询到的概率越高。",
+          "example": "wrr",
+          "member": "string",
+          "name": "SchedulerAlgorithm",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话保持配置。",
+          "example": "无",
+          "member": "StickySessionConfig",
+          "name": "StickySessionConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "目标组 ID，格式为 lbtg- 后接 8 位字母数字。",
+          "example": "lbtg-0zrnc9qa",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标组名称。长度为 1~255 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。不传目标组名称时默认使用ID作为目标组名称。",
+          "example": "test-group",
+          "member": "string",
+          "name": "TargetGroupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTargetGroupAttributesResponse": {
+      "document": "ModifyTargetGroupAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StickySessionConfig": {
+      "document": "会话保持配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启会话保持。\n- **true**：开启。\n- **false**：不开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "StickySessionEnabled",
+          "output_required": true,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义 Cookie 名称。\n长度为 1~255 个字符，只能包含英文字母和数字字符，且不能为`tgw_l7_tg_route`，该字段为目标组间会话保持Cookie保留字段。\n>仅当 **StickySessionEnabled** 为 **true** 时该参数生效。",
+          "example": "SERVERID",
+          "member": "string",
+          "name": "Cookie",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话保持时间。\n取值范围：**1-86400**，单位：**秒**。\n默认值：**1000**。\n>仅当 **StickySessionEnabled** 为 **true**时，该参数生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "CookieTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "会话保持类型（处理Cookie的方式）。\n- **Insert**（默认值）：植入 Cookie。 客户端第一次访问后端服务时，应用型负载均衡会在返回请求中植入 Cookie。下次客户端请求时携带该 Cookie，负载均衡将请求转发到上次请求的相同后端服务。\n- **Rewrite**：重写 Cookie。 负载均衡会对用户自定义的 Cookie 进行重写，下次客户端请求时携带该 Cookie，负载均衡将请求转发到上次请求的相同后端服务。\n>仅当 **StickySessionEnabled** 为 **true** 时该参数生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Insert",
+          "member": "string",
+          "name": "StickySessionType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

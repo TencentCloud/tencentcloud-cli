@@ -6,50 +6,51 @@ Input:
 
 ```
 tccli eb ListTargets --cli-unfold-argument  \
-    --EventBusId eb-l65vlc2 \
-    --RuleId rule-fdltium8
+    --EventBusId eb-l6***c2 \
+    --RuleId rule-fd***um8
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "RequestId": "b9730f16-0098-45d8-a55f-fd59fd7ed050",
         "Targets": [
             {
-                "Type": "abc",
-                "EventBusId": "abc",
-                "TargetId": "abc",
+                "BatchEventCount": 0,
+                "BatchTimeout": 0,
+                "EnableBatchDelivery": false,
+                "EventBusId": "eb-l6***c2",
+                "RuleId": "rule-fd***um8",
                 "TargetDescription": {
-                    "ResourceDescription": "abc",
-                    "SCFParams": {
-                        "BatchTimeout": 0,
-                        "BatchEventCount": 0,
-                        "EnableBatchDelivery": true
-                    },
                     "CkafkaTargetParams": {
-                        "TopicName": "abc",
+                        "EventDeliveryFormat": "",
                         "RetryPolicy": {
-                            "RetryInterval": 1,
-                            "MaxRetryAttempts": 1
-                        }
+                            "MaxRetryAttempts": 0,
+                            "RetryInterval": 0
+                        },
+                        "TopicName": ""
                     },
                     "ESTargetParams": {
-                        "NetMode": "abc",
-                        "IndexPrefix": "abc",
-                        "RotationInterval": "abc",
-                        "OutputMode": "abc",
-                        "IndexSuffixMode": "abc",
-                        "IndexTemplateType": "abc"
+                        "IndexPrefix": "",
+                        "IndexSuffixMode": "",
+                        "IndexTemplateType": "",
+                        "NetMode": "",
+                        "OutputMode": "",
+                        "RotationInterval": ""
+                    },
+                    "ResourceDescription": "qcs::eb-amp:ap-guangzhou:uin/my-uin:",
+                    "SCFParams": {
+                        "BatchEventCount": 0,
+                        "BatchTimeout": 0,
+                        "EnableBatchDelivery": false
                     }
                 },
-                "RuleId": "abc",
-                "EnableBatchDelivery": true,
-                "BatchTimeout": 0,
-                "BatchEventCount": 0
+                "TargetId": "target-5q***fmx",
+                "Type": "amp"
             }
         ],
-        "RequestId": "abc"
+        "TotalCount": 1
     }
 }
 ```

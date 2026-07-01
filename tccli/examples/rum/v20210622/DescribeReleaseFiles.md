@@ -1,32 +1,21 @@
-**Example 1: 获取应用对应sourcemap文件列表**
+**Example 1: 查询Sourcemap**
 
-获取应用对应sourcemap文件列表
+
 
 Input: 
 
 ```
 tccli rum DescribeReleaseFiles --cli-unfold-argument  \
-    --ProjectID '1
-
-{
-  "ProjectID": 2,
-  "FileName": "2"
-}'
+    --ProjectID 137889 \
+    --IgnoreDefaultTimeRange True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Files": [
-            {
-                "Version": "0.01",
-                "FileKey": "****test",
-                "FileName": "a.js.map",
-                "FileHash": "****test"
-            }
-        ],
-        "RequestId": "65a8fec7-2b39-4b11-893f-3715279d235f"
+        "Files": [],
+        "RequestId": "71a4b54e-5f6f-4d5b-b5f6-6a11458f8e6c"
     }
 }
 ```
