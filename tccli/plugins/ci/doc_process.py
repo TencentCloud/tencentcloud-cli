@@ -100,7 +100,7 @@ def doc_preview_html(args, parsed_globals):
             output = args["local_path"]
         else:
             base = os.path.splitext(os.path.basename(args["key"]))[0]
-            output = "base_preview.html" % base
+            output = "%s_preview.html" % base
 
         total_bytes = save_response_to_file(response, output)
         print_result({
