@@ -40934,7 +40934,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流量镜像实例ID",
+          "document": "<p>流量镜像实例ID</p>",
           "example": "imgf-cvfp7xo8",
           "member": "string",
           "name": "TrafficMirrorId",
@@ -40943,7 +40943,7 @@
         },
         {
           "disabled": false,
-          "document": "流量镜像采集方向",
+          "document": "<p>流量镜像采集方向</p>",
           "example": "ALL",
           "member": "string",
           "name": "Direction",
@@ -40952,7 +40952,7 @@
         },
         {
           "disabled": false,
-          "document": "流量镜像采集对象",
+          "document": "<p>流量镜像采集对象</p>",
           "example": "[\"eni-1iso930s\"]",
           "member": "string",
           "name": "CollectorSrcs",
@@ -40961,7 +40961,7 @@
         },
         {
           "disabled": false,
-          "document": "流量镜像需要过滤的natgw实例",
+          "document": "<p>流量镜像需要过滤的natgw实例</p>",
           "example": "nat-sow01oa8",
           "member": "string",
           "name": "NatId",
@@ -40970,7 +40970,7 @@
         },
         {
           "disabled": false,
-          "document": "流量镜像需要过滤的五元组规则",
+          "document": "<p>流量镜像需要过滤的五元组规则</p>",
           "example": "无",
           "member": "TrafficMirrorFilter",
           "name": "CollectorNormalFilters",
@@ -40979,7 +40979,7 @@
         },
         {
           "disabled": false,
-          "document": "流量镜像入站过滤规则。",
+          "document": "<p>流量镜像入站过滤规则。</p>",
           "example": "无",
           "member": "TrafficMirrorFilter",
           "name": "IngressFilterRules",
@@ -40988,7 +40988,7 @@
         },
         {
           "disabled": false,
-          "document": "流量镜像出站过滤规则。",
+          "document": "<p>流量镜像出站过滤规则。</p>",
           "example": "无",
           "member": "TrafficMirrorFilter",
           "name": "EgressFilterRules",

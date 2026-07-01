@@ -105,6 +105,11 @@ tccli dts ModifyMigrationJob --cli-unfold-argument  \
     --MigrateOption.IsMigrateAccount True \
     --MigrateOption.IsOverrideRoot True \
     --MigrateOption.IsDstReadOnly True \
+    --MigrateOption.RateLimit.DumpRps -1 \
+    --MigrateOption.RateLimit.DumpThread -1 \
+    --MigrateOption.RateLimit.LoadRps -1 \
+    --MigrateOption.RateLimit.LoadThread -1 \
+    --MigrateOption.RateLimit.SinkerThread 32 \
     --SrcInfo.Supplier  \
     --SrcInfo.Region ap-qingyuan \
     --SrcInfo.AccessType cdb \

@@ -6,9 +6,8 @@ Input:
 
 ```
 tccli wedata ListTaskVersions --cli-unfold-argument  \
-    --TaskId 20250723102549746 \
-    --ProjectId 1464962169590902784 \
-    --TaskVersionType SUBMIT
+    --ProjectId 3107313458352103424 \
+    --TaskId 20260109115445849
 ```
 
 Output: 
@@ -18,22 +17,23 @@ Output:
         "Data": {
             "Items": [
                 {
-                    "ApproveStatus": "u65e0u9700u5ba1u6279",
+                    "ApproveStatus": null,
                     "ApproveUserUin": null,
-                    "CreateTime": "2025-08-27 14:48:32",
-                    "CreateUserUin": "100028579606",
-                    "Status": "Y",
-                    "VersionId": "20250723102549746_20250827144832136",
-                    "VersionNum": "V41",
-                    "VersionRemark": "11"
+                    "CreateTime": "2026-01-09 11:56:30",
+                    "CreateUserUin": "700001893691",
+                    "Status": null,
+                    "UsedVersion": null,
+                    "VersionId": "20260109115445849_20260109115630120",
+                    "VersionNum": "V3",
+                    "VersionRemark": ""
                 }
             ],
             "PageNumber": 1,
             "PageSize": 10,
-            "TotalCount": 14,
-            "TotalPageNumber": 2
+            "TotalCount": 3,
+            "TotalPageNumber": 1
         },
-        "RequestId": "8babe7ee-868b-4e7b-a82f-825835e6482a"
+        "RequestId": "11c54132-3b1c-4f5f-abd6-039214193ec7"
     }
 }
 ```

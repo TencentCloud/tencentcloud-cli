@@ -33,7 +33,8 @@ tccli oceanus CreateJobConfig --cli-unfold-argument  \
     --JobManagerCpu 0 \
     --JobManagerMem 0 \
     --TaskManagerCpu 0 \
-    --TaskManagerMem 0
+    --TaskManagerMem 0 \
+    --OperatorName *********@126.com
 ```
 
 Output: 

@@ -5821,7 +5821,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "1625444040",
           "member": "int64",
           "name": "StartTime",
@@ -5830,7 +5830,7 @@
         },
         {
           "disabled": false,
-          "document": "allcount：性能视图，day：14天数据，vp：性能，ckuv：uv，ckpv：pv，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等",
+          "document": "<p>allcount：性能视图，day：14天数据，vp：性能，ckuv：uv，ckpv：pv，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等</p>",
           "example": "pagepv",
           "member": "string",
           "name": "Type",
@@ -5839,7 +5839,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "1625454840",
           "member": "int64",
           "name": "EndTime",
@@ -5848,7 +5848,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1",
           "member": "int64",
           "name": "ID",
@@ -5857,7 +5857,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义2",
+          "document": "<p>自定义2</p>",
           "example": "optimized",
           "member": "string",
           "name": "ExtSecond",
@@ -5866,7 +5866,7 @@
         },
         {
           "disabled": false,
-          "document": "浏览器引擎",
+          "document": "<p>浏览器引擎</p>",
           "example": "ie7",
           "member": "string",
           "name": "Engine",
@@ -5875,7 +5875,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商",
+          "document": "<p>运营商</p>",
           "example": "中国移动",
           "member": "string",
           "name": "Isp",
@@ -5884,7 +5884,7 @@
         },
         {
           "disabled": false,
-          "document": "来源页面",
+          "document": "<p>来源页面， 可多选，用 “,” 隔开的 String</p>",
           "example": "index.html",
           "member": "string",
           "name": "From",
@@ -5893,7 +5893,7 @@
         },
         {
           "disabled": false,
-          "document": "日志等级",
+          "document": "<p>日志等级</p>",
           "example": "1",
           "member": "string",
           "name": "Level",
@@ -5902,7 +5902,7 @@
         },
         {
           "disabled": false,
-          "document": "品牌",
+          "document": "<p>品牌</p>",
           "example": "苹果",
           "member": "string",
           "name": "Brand",
@@ -5911,7 +5911,7 @@
         },
         {
           "disabled": false,
-          "document": "地区",
+          "document": "<p>地区</p>",
           "example": "中国",
           "member": "string",
           "name": "Area",
@@ -5920,7 +5920,7 @@
         },
         {
           "disabled": false,
-          "document": "版本",
+          "document": "<p>版本</p>",
           "example": "1.2.1",
           "member": "string",
           "name": "VersionNum",
@@ -5929,7 +5929,7 @@
         },
         {
           "disabled": false,
-          "document": "平台",
+          "document": "<p>平台</p>",
           "example": "2",
           "member": "string",
           "name": "Platform",
@@ -5938,7 +5938,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义3",
+          "document": "<p>自定义3</p>",
           "example": "normal",
           "member": "string",
           "name": "ExtThird",
@@ -5947,7 +5947,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义1",
+          "document": "<p>自定义1</p>",
           "example": "offline",
           "member": "string",
           "name": "ExtFirst",
@@ -5956,7 +5956,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知",
+          "document": "<p>网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知</p>",
           "example": "2",
           "member": "string",
           "name": "NetType",
@@ -5965,7 +5965,7 @@
         },
         {
           "disabled": false,
-          "document": "机型",
+          "document": "<p>机型</p>",
           "example": "三星",
           "member": "string",
           "name": "Device",
@@ -5974,7 +5974,7 @@
         },
         {
           "disabled": false,
-          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
+          "document": "<p>显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。</p>",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -5983,7 +5983,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统",
+          "document": "<p>操作系统</p>",
           "example": "ios",
           "member": "string",
           "name": "Os",
@@ -5992,7 +5992,7 @@
         },
         {
           "disabled": false,
-          "document": "浏览器",
+          "document": "<p>浏览器</p>",
           "example": "ie",
           "member": "string",
           "name": "Browser",
@@ -6001,7 +6001,7 @@
         },
         {
           "disabled": false,
-          "document": "环境",
+          "document": "<p>环境</p>",
           "example": "prod",
           "member": "string",
           "name": "Env",
@@ -6010,7 +6010,7 @@
         },
         {
           "disabled": false,
-          "document": "group by 参数值枚举1:1m  2:5m  3:30m  4:1h \n 5:1d",
+          "document": "<p>group by 参数值枚举1:1m  2:5m  3:30m  4:1h<br> 5:1d</p>",
           "example": "1",
           "member": "int64",
           "name": "GroupByType",
@@ -6019,7 +6019,7 @@
         },
         {
           "disabled": false,
-          "document": "1: 查询智研\n0: 走旧逻辑，已下线，勿使用",
+          "document": "<p>1: 查询智研<br>0: 走旧逻辑，已下线，勿使用</p>",
           "example": "1",
           "member": "int64",
           "name": "IsNewData",
@@ -6028,7 +6028,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义4",
+          "document": "<p>自定义4</p>",
           "example": "ext4",
           "member": "string",
           "name": "ExtFourth",
@@ -6037,7 +6037,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义5",
+          "document": "<p>自定义5</p>",
           "example": "ext5",
           "member": "string",
           "name": "ExtFifth",
@@ -6046,7 +6046,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义6",
+          "document": "<p>自定义6</p>",
           "example": "ext6",
           "member": "string",
           "name": "ExtSixth",
@@ -6055,7 +6055,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义7",
+          "document": "<p>自定义7</p>",
           "example": "ext7",
           "member": "string",
           "name": "ExtSeventh",
@@ -6064,7 +6064,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义8",
+          "document": "<p>自定义8</p>",
           "example": "ext8",
           "member": "string",
           "name": "ExtEighth",
@@ -6073,7 +6073,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义9",
+          "document": "<p>自定义9</p>",
           "example": "ext9",
           "member": "string",
           "name": "ExtNinth",
@@ -6082,7 +6082,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义10",
+          "document": "<p>自定义10</p>",
           "example": "ext10",
           "member": "string",
           "name": "ExtTenth",
@@ -6091,7 +6091,7 @@
         },
         {
           "disabled": false,
-          "document": "时间段",
+          "document": "<p>时间段</p>",
           "example": "1m",
           "member": "string",
           "name": "Granularity",
@@ -6106,7 +6106,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
+          "document": "<p>返回值</p>",
           "example": "\"{\\\"request_id\\\":\\\"4f93b7fc-1857-4f4d-b3ac-eb63719a8bc5\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"",
           "member": "string",
           "name": "Result",

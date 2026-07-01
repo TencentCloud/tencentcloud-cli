@@ -370,6 +370,14 @@
         "title": "创建 TWeSee 回调目标"
       }
     ],
+    "CreateTWeSeeDirectUploadCredential": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeDirectUploadCredential\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ChannelId\": 0,\n    \"CallbackId\": \"cb-n9sl1wur\",\n    \"CustomId\": \"custom-id-123\",\n    \"DurationSeconds\": 86400,\n    \"MaxInvokeCount\": 200,\n    \"StorageRegion\": \"ap-guangzhou\",\n    \"UploadMethod\": \"manifest\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1782809094,\n        \"SecretId\": \"AKIDbz4LQvqmLPyr9wHI2jo***********************i1cuAW8mbg5nd5HMUvjh26\",\n        \"SecretKey\": \"sxuVY/Gx0MYKgcj***************vO+OWUsqrxFgU=\",\n        \"StorageBucket\": \"twesee-input-test-1258344699\",\n        \"StoragePath\": \"Direct/700000975417/019f128d-8cfa-774d-a195-5bc9f9e4e5d9/\",\n        \"StorageRegion\": \"ap-guangzhou\",\n        \"Token\": \"8tE1OzlWwpXFWOoHgaZIj8tkfxYrfMDa66eac88da6820056a20bdb1928cfe5050AXEPri_7vsnPiWB9dNtYuSXlxlCr1ziGfXw2OJm9HRUImer3rIMrqIX-qURjgfS85QYWk4w_3VGrH6ogH3iq9H-KlbnyTXPDaTjBkMsudFyhO7MYajMoaUZC*****************************************************************************************************************************************************************************************O8nplkBg1AbAldlJ-1nb-Hr-1pRSusV2k4qgDKjnp2-7gPD8Pmu2kqFDYyLY5fp8ktMj_r6ZBMPRso4kj_m1qSvdMKqmnlZbW1tJXLJ0ltJb1KLinCY8iGB_hFbj2AKorF_BSF30Bl47oDsHLvWivEVuVFX1yNSH2KdIdT7ZldmK97wLNZVISGwqY\",\n        \"RequestId\": \"8be65a7a-cfc9-45f7-ac4c-3210cbfb48b6\"\n    }\n}",
+        "title": "创建 TWeSee COS 直传凭据"
+      }
+    ],
     "CreateTWeSeePostPaidService": [
       {
         "document": "",

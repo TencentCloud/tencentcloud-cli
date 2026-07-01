@@ -1492,7 +1492,7 @@
       "status": "online"
     },
     "DescribeLoginTypeGlobalConf": {
-      "document": "获取防卸载全局配置",
+      "document": "获取扫码登录全局配置",
       "input": "DescribeLoginTypeGlobalConfRequest",
       "name": "获取扫码登录全局配置",
       "output": "DescribeLoginTypeGlobalConfResponse",
@@ -26744,7 +26744,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>是否开启防卸载 <li>0 否</li> <li>1 是</li> <li>9 未设置,和0一样是未开启</li></p>",
+          "document": "<p>是否开启扫码登录 <li>0 否</li> <li>1 是</li> <li>9 未设置,和0一样是未开启</li></p>",
           "example": "1",
           "member": "uint64",
           "name": "Enable",

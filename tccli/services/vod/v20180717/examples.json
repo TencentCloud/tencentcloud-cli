@@ -162,6 +162,14 @@
         "title": "发起生成 AIGC 图片的任务"
       }
     ],
+    "CreateAigcQuota": [
+      {
+        "document": "设置生图任务配额为1000张图片",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAigcQuota\n<公共请求参数>\n\n{\n    \"SubAppId\": 200000004,\n    \"QuotaType\": \"Image\",\n    \"QuotaLimit\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6eccbd58-caee-4480-8048-90bff384404c\"\n    }\n}",
+        "title": "调整生图任务配额"
+      }
+    ],
     "CreateAigcSubject": [
       {
         "document": "",
@@ -556,6 +564,14 @@
         "title": "删除 AIGC API Token"
       }
     ],
+    "DeleteAigcQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAigcQuota\n<公共请求参数>\n\n{\n    \"SubAppId\": 200000004,\n    \"QuotaType\": \"Image\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"861b6e52-fbb6-4023-9ee0-e9173fa6ebf2\"\n    }\n}",
+        "title": "删除生图任务配额限制"
+      }
+    ],
     "DeleteAnimatedGraphicsTemplate": [
       {
         "document": "",
@@ -850,6 +866,14 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAigcFaceInfoAsync\n<公共请求参数>\n\n{\n    \"SubAppId\": 250000002,\n    \"FileInfos\": [\n        {\n            \"Type\": \"Url\",\n            \"Url\": \"https://150******************************************************************************************20.mp4\"\n        }\n    ],\n    \"SessionId\": \"my*******Id1\",\n    \"SessionContext\": \"my*******Context\",\n    \"TasksPriority\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"251007502-DescribeAigcFaceInfoAsync-d5a02998082d0a58cecd7e69165b5245t\",\n        \"RequestId\": \"fc945039-2d72-4591-9ce7-780856bc4e24\"\n    }\n}",
         "title": "异步获取 AIGC 人脸信息"
+      }
+    ],
+    "DescribeAigcQuotas": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAigcQuotas\n<公共请求参数>\n\n{\n    \"SubAppId\": 251382264,\n    \"QuotaType\": \"Image\"\n}",
+        "output": "{\n    \"Response\": {\n        \"QuotaSet\": [\n            {\n                \"QuotaLimit\": 2000,\n                \"QuotaType\": \"Image\",\n                \"Usage\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"f25627b7-fd15-4f51-a90f-7ed4abdf1b72\"\n    }\n}",
+        "title": "查询生图任务配额"
       }
     ],
     "DescribeAigcUsageData": [
@@ -1592,6 +1616,14 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAdaptiveDynamicStreamingTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 10038,\n    \"StreamInfos\": [\n        {\n            \"Audio\": {\n                \"SampleRate\": 44100,\n                \"Codec\": \"flac\",\n                \"Bitrate\": 1000\n            },\n            \"Video\": {\n                \"Codec\": \"libx264\",\n                \"Bitrate\": 2000,\n                \"Fps\": 25\n            }\n        }\n    ],\n    \"Name\": \"转自适应码流模板2\",\n    \"Format\": \"HLS\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改转自适应码流模板"
+      }
+    ],
+    "ModifyAigcQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAigcQuota\n<公共请求参数>\n\n{\n    \"SubAppId\": 200000004,\n    \"QuotaType\": \"Image\",\n    \"QuotaLimit\": 2000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd44c32f-5ccc-4bd4-a6cc-f07e006182f7\"\n    }\n}",
+        "title": "调整生图任务配额"
       }
     ],
     "ModifyAnimatedGraphicsTemplate": [

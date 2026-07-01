@@ -238,6 +238,13 @@
       "output": "DescribeTopicListByGroupResponse",
       "status": "online"
     },
+    "DescribeTopicStats": {
+      "document": "获取主题队列级别的消费详情\n当前 API 适用集群：5.x 铂金版集群",
+      "input": "DescribeTopicStatsRequest",
+      "name": "查询主题队列级别的消费详情",
+      "output": "DescribeTopicStatsResponse",
+      "status": "online"
+    },
     "DoHealthCheckOnMigratingTopic": {
       "document": "检查迁移中的主题是否处于正常状态，只有处于正常状态的主题，才可以进入下一个迁移阶段",
       "input": "DoHealthCheckOnMigratingTopicRequest",
@@ -3872,6 +3879,89 @@
       ],
       "type": "object"
     },
+    "DescribeTopicStatsRequest": {
+      "document": "DescribeTopicStats请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
+          "example": "topic-976839",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
+          "example": "rmq-16o4n24npr",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费组ID，可通过DescribeConsumerGroupList接口返回的ConsumerGroup字段或控制台查询</p>",
+          "example": "group-2026-05-28-405103",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量，默认20。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicStatsResponse": {
+      "document": "DescribeTopicStats返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数",
+          "example": "18",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列级别的消费详情</p>",
+          "example": "无",
+          "member": "TopicStatsDetail",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DetailedRolePerm": {
       "document": "Topic&Group维度的权限配置",
       "members": [
@@ -6971,6 +7061,72 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicStatsDetail": {
+      "document": "主题队列级别的消费详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Broker节点名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rmqbroker-cd-16o4n24npr-0",
+          "member": "string",
+          "name": "BrokerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列编号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "QueueId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>生产消息位点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "BrokerOffset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最新消费位点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CommitOffset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>堆积总数</p><p>单位：条</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "MessageCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最后消费时间</p><p>单位：毫秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1779948561234",
+          "member": "int64",
+          "name": "LastUpdateTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

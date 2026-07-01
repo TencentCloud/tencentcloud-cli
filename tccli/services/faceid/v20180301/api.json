@@ -2700,7 +2700,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "EID商户ID。\n- 商户ID通过人脸核身控制台[自助接入](https://console.cloud.tencent.com/faceid/access)申请。\n- 商户ID与您通过腾讯云人脸核身控制台完成自助接入时所使用的腾讯云账号绑定。\n- 必须使用申请该商户ID时登录的腾讯云账号所对应的腾讯云API密钥调用该接口。",
+          "document": "<p>EID商户ID。</p><ul><li>商户ID通过人脸核身控制台<a href=\"https://console.cloud.tencent.com/faceid/access\">自助接入</a>申请。</li><li>商户ID与您通过腾讯云人脸核身控制台完成自助接入时所使用的腾讯云账号绑定。</li><li>必须使用申请该商户ID时登录的腾讯云账号所对应的腾讯云API密钥调用该接口。</li></ul>",
           "example": "0NSJ243206261600932123",
           "member": "string",
           "name": "MerchantId",
@@ -2709,7 +2709,7 @@
         },
         {
           "disabled": false,
-          "document": "身份标识。\n- 未使用OCR服务时，必须传入。\n- 规则：a-z，A-Z，0-9组合。\n- 最长长度32位。",
+          "document": "<p>身份标识。</p><ul><li>未使用OCR服务时，必须传入。</li><li>规则：a-z，A-Z，0-9组合。</li><li>最长长度32位。</li></ul>",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -2718,7 +2718,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名。\n- 未使用OCR服务时，必须传入。\n- 最长长度32位。\n- 中文请使用UTF-8编码。",
+          "document": "<p>姓名。</p><ul><li>未使用OCR服务时，必须传入。</li><li>最长长度32位。</li><li>中文请使用UTF-8编码。</li></ul>",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -2727,7 +2727,7 @@
         },
         {
           "disabled": false,
-          "document": "透传字段，在获取验证结果时返回。\n- 最长长度1024位。",
+          "document": "<p>透传字段，在获取验证结果时返回。</p><ul><li>最长长度1024位。</li></ul>",
           "example": "202411011707591990200060000",
           "member": "string",
           "name": "Extra",
@@ -2736,7 +2736,7 @@
         },
         {
           "disabled": false,
-          "document": "小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。",
+          "document": "<p>小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。</p>",
           "example": "无",
           "member": "GetEidTokenConfig",
           "name": "Config",
@@ -2745,7 +2745,7 @@
         },
         {
           "disabled": false,
-          "document": "用户从Url中进入核身认证结束后重定向的回调链接地址。\n- 最长长度1024位。\n- EidToken会在该链接的query参数中。",
+          "document": "<p>用户从Url中进入核身认证结束后重定向的回调链接地址。</p><ul><li>最长长度1024位。</li><li>EidToken会在该链接的query参数中。</li></ul>",
           "example": "https://faceid.qq.com",
           "member": "string",
           "name": "RedirectUrl",
@@ -2754,7 +2754,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。\n- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "<p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -2769,7 +2769,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一次核身流程的标识。\n- 有效时间为600秒。\n- 完成核身后，可用该标识获取验证结果信息。",
+          "document": "<p>一次核身流程的标识。</p><ul><li>有效时间为600秒。</li><li>完成核身后，可用该标识获取验证结果信息。</li></ul>",
           "example": "CE6621F1A-0F1E-45BD-BE13-34C045CEA7681",
           "member": "string",
           "name": "EidToken",
@@ -2779,7 +2779,7 @@
         },
         {
           "disabled": false,
-          "document": "发起核身流程的URL。\n- 用于H5场景核身。",
+          "document": "<p>发起核身流程的URL。</p><ul><li>用于H5场景核身。</li></ul>",
           "example": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa50a8f2ac379585f53&redirect_uri=https%3A%2F%2Feid.faceid.qq.com%2Fapi%2Fv1%2FGetOpenId%3Ftoken%3DCE6611F1A-0F1E-455BD-BE13-34C05CEA7681&component_appid=wx9802ee81e68d6dee#wechat_redirec",
           "member": "string",
           "name": "Url",

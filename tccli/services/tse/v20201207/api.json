@@ -12078,7 +12078,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回数量，默认为 20，最大值为 100。",
+          "document": "<p>返回数量，默认为 20，最大值为 100。</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -12087,7 +12087,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为 0。",
+          "document": "<p>偏移量，默认为 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -12096,7 +12096,7 @@
         },
         {
           "disabled": false,
-          "document": "请求过滤参数，支持按照实例名称、ID和标签键值（Name、GatewayId、Tag）筛选",
+          "document": "<p>请求过滤参数，支持按照实例名称、ID和标签键值（Name、GatewayId、Tag）筛选</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -12111,7 +12111,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "获取云原生API网关实例列表响应结果。",
+          "document": "<p>获取云原生API网关实例列表响应结果。</p>",
           "example": "无",
           "member": "ListCloudNativeAPIGatewayResult",
           "name": "Result",

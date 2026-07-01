@@ -1144,9 +1144,156 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>桶列表信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClusterBucketInfo",
+          "name": "ClusterBuckets",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群隔离时间，0为7天，1为15天</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsolationPolicyVersion",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "ClusterBucketInfo": {
+      "document": "ClusterBucketInfo 结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>桶唯一id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cb-ay6axio2",
+          "member": "string",
+          "name": "SerialId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "64",
+          "member": "int64",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>桶名字</p>",
+          "example": "test-hk-1315051789",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>桶类型</p><p>枚举值：</p><ul><li>0： 普通桶</li><li>1： 加速桶</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "BucketType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>鉴权类型</p><p>枚举值：</p><ul><li>0： 不鉴权</li><li>1： 鉴权</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AuthMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否默认属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsDefault",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>桶状态</p><p>枚举值：</p><ul><li>1： 正常</li><li>0： 禁用</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35",
+          "member": "int64",
+          "name": "JobCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p><p>参数格式：yyyy-MM-dd HH:mm:ss</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-03-31 10:12:31",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p><p>参数格式：yyyy-MM-dd HH:mm:ss</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-03-31 10:12:31",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ClusterGroupSetItem": {
       "document": "工作空间集群组信息",
@@ -2398,7 +2545,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>checkpoint 超时时间</p>",
+          "document": "<p>checkpoint 超时时间</p><p>单位：秒</p>",
           "example": "36000",
           "member": "int64",
           "name": "CheckpointTimeoutSecond",
@@ -2407,7 +2554,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>checkpoint 间隔时间</p>",
+          "document": "<p>checkpoint 间隔时间</p><p>单位：秒</p>",
           "example": "600",
           "member": "int64",
           "name": "CheckpointIntervalSecond",
@@ -2422,6 +2569,33 @@
           "name": "VariableReplaceMode",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>user</p>",
+          "example": "*********@126.com",
+          "member": "string",
+          "name": "OperatorName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置更新范围 0=全量(默认) 1=仅开发 2=仅运维</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ConfigScope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态桶名字</p>",
+          "example": "metacos-1315051789",
+          "member": "string",
+          "name": "StateCOSBucket",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2990,7 +3164,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业ID",
+          "document": "<p>作业ID</p>",
           "example": "cql-ses24dtd",
           "member": "string",
           "name": "JobId",
@@ -2999,8 +3173,8 @@
         },
         {
           "disabled": false,
-          "document": "作业配置版本数组",
-          "example": "[\"1\\n\",\"2\\n\"]",
+          "document": "<p>作业配置版本数组</p>",
+          "example": "[1]",
           "member": "int64",
           "name": "JobConfigVersions",
           "required": true,
@@ -3008,12 +3182,21 @@
         },
         {
           "disabled": false,
-          "document": "工作空间 SerialId",
+          "document": "<p>工作空间 SerialId</p>",
           "example": "space-xxx",
           "member": "string",
           "name": "WorkSpaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置更新范围 0=全量(默认) 1=仅开发 2=仅运维</p><p>取值范围：[0, 2]</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ConfigScope",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4472,6 +4655,15 @@
           "name": "WorkSpaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回形式</p><p>枚举值：</p><ul><li>0： 树形结构</li><li>1： 平铺结构</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "FlatMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5942,7 +6134,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>checkpoint 超时时间</p>",
+          "document": "<p>checkpoint 超时时间</p><p>单位：秒</p>",
           "example": "36000",
           "member": "int64",
           "name": "CheckpointTimeoutSecond",
@@ -5952,7 +6144,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>checkpoint 间隔时间</p>",
+          "document": "<p>checkpoint 间隔时间</p><p>单位：秒</p>",
           "example": "600",
           "member": "int64",
           "name": "CheckpointIntervalSecond",
@@ -5969,6 +6161,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照桶</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "autotest-gz-1315051789",
+          "member": "string",
+          "name": "StateCOSBucket",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志桶</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-hk-1315051789",
+          "member": "string",
+          "name": "LogCOSBucket",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6220,7 +6432,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cql-xxx",
           "member": "string",
           "name": "JobId",
@@ -6230,7 +6442,7 @@
         },
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -6240,7 +6452,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -6250,7 +6462,7 @@
         },
         {
           "disabled": false,
-          "document": "用户AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户AppId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "AppId",
@@ -6260,7 +6472,7 @@
         },
         {
           "disabled": false,
-          "document": "用户UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户UIN</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "string",
           "name": "OwnerUin",
@@ -6270,7 +6482,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建者UIN</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "string",
           "name": "CreatorUin",
@@ -6280,7 +6492,7 @@
         },
         {
           "disabled": false,
-          "document": "作业名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "Name",
@@ -6290,7 +6502,7 @@
         },
         {
           "disabled": false,
-          "document": "作业类型，1：sql作业，2：Jar作业\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业类型，1：sql作业，2：Jar作业</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "JobType",
@@ -6300,7 +6512,7 @@
         },
         {
           "disabled": false,
-          "document": "作业状态，1：未初始化，2：未发布，3：操作中，4：运行中，5：停止，6：暂停，-1：故障\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业状态，1：未初始化，2：未发布，3：操作中，4：运行中，5：停止，6：暂停，-1：故障</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
           "name": "Status",
@@ -6310,7 +6522,7 @@
         },
         {
           "disabled": false,
-          "document": "作业创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-11 16:44:44",
           "member": "string",
           "name": "CreateTime",
@@ -6320,7 +6532,7 @@
         },
         {
           "disabled": false,
-          "document": "作业启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业启动时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-11 16:44:44",
           "member": "string",
           "name": "StartTime",
@@ -6330,7 +6542,7 @@
         },
         {
           "disabled": false,
-          "document": "作业停止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业停止时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-11 16:44:44",
           "member": "string",
           "name": "StopTime",
@@ -6340,7 +6552,7 @@
         },
         {
           "disabled": false,
-          "document": "作业更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-11 16:44:44",
           "member": "string",
           "name": "UpdateTime",
@@ -6350,7 +6562,7 @@
         },
         {
           "disabled": false,
-          "document": "作业累计运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业累计运行时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "13864986",
           "member": "int64",
           "name": "TotalRunMillis",
@@ -6360,7 +6572,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备注信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "Remark",
@@ -6370,7 +6582,7 @@
         },
         {
           "disabled": false,
-          "document": "操作错误提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作错误提示信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "success",
           "member": "string",
           "name": "LastOpResult",
@@ -6380,7 +6592,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "ClusterName",
@@ -6390,7 +6602,7 @@
         },
         {
           "disabled": false,
-          "document": "最新配置版本号，包括已经删除的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最新配置版本号，包括已经删除的版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "LatestJobConfigVersion",
@@ -6400,7 +6612,7 @@
         },
         {
           "disabled": false,
-          "document": "最新的版本号，不包括已经删除的版本号",
+          "document": "<p>最新的版本号，不包括已经删除的版本号</p>",
           "example": "1",
           "member": "int64",
           "name": "LatestValidJobConfigVersion",
@@ -6410,7 +6622,7 @@
         },
         {
           "disabled": false,
-          "document": "已发布的配置版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>已发布的配置版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "PublishedJobConfigVersion",
@@ -6420,7 +6632,7 @@
         },
         {
           "disabled": false,
-          "document": "运行的CU数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行的CU数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RunningCuNum",
@@ -6430,7 +6642,7 @@
         },
         {
           "disabled": false,
-          "document": "作业内存规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业内存规格</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
           "name": "CuMem",
@@ -6440,7 +6652,7 @@
         },
         {
           "disabled": false,
-          "document": "作业状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业状态描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "running",
           "member": "string",
           "name": "StatusDesc",
@@ -6450,7 +6662,7 @@
         },
         {
           "disabled": false,
-          "document": "运行状态时表示单次运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行状态时表示单次运行时间</p><p>单位：毫秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "124",
           "member": "int64",
           "name": "CurrentRunMillis",
@@ -6460,7 +6672,7 @@
         },
         {
           "disabled": false,
-          "document": "作业所在的集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业所在的集群ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cluster-xxx",
           "member": "string",
           "name": "ClusterId",
@@ -6470,7 +6682,7 @@
         },
         {
           "disabled": false,
-          "document": "作业管理WEB UI 入口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业管理WEB UI 入口</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://175.24.255.193//cql-czvy480r-78/?defaultToken=0",
           "member": "string",
           "name": "WebUIUrl",
@@ -6480,7 +6692,7 @@
         },
         {
           "disabled": false,
-          "document": "作业所在集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业所在集群类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "SchedulerType",
@@ -6490,7 +6702,7 @@
         },
         {
           "disabled": false,
-          "document": "作业所在集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业所在集群状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "ClusterStatus",
@@ -6500,7 +6712,7 @@
         },
         {
           "disabled": false,
-          "document": "细粒度下的运行的CU数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>细粒度下的运行的CU数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.5",
           "member": "float",
           "name": "RunningCu",
@@ -6510,7 +6722,7 @@
         },
         {
           "disabled": false,
-          "document": "作业运行的 Flink 版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业运行的 Flink 版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Flink-1.11",
           "member": "string",
           "name": "FlinkVersion",
@@ -6520,7 +6732,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间 SerialId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作空间 SerialId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "space-xxx",
           "member": "string",
           "name": "WorkSpaceId",
@@ -6530,7 +6742,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作空间名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mysqItemSpace",
           "member": "string",
           "name": "WorkSpaceName",
@@ -6540,7 +6752,7 @@
         },
         {
           "disabled": false,
-          "document": "作业标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -6550,7 +6762,7 @@
         },
         {
           "disabled": false,
-          "document": "作业异常事件信息\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业异常事件信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "JobEventInfo",
           "name": "EventInfo",
@@ -6560,7 +6772,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "desc",
           "member": "string",
           "name": "Description",
@@ -6570,7 +6782,7 @@
         },
         {
           "disabled": false,
-          "document": "0:代表没开启调优任务，1:开启智能调优，2:代表定时调优\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>0:代表没开启调优任务，1:开启智能调优，2:代表定时调优</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "ScalingType",
@@ -6580,7 +6792,7 @@
         },
         {
           "disabled": false,
-          "document": "使用CPU数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>使用CPU数目</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
           "name": "RunningCpu",
@@ -6590,7 +6802,7 @@
         },
         {
           "disabled": false,
-          "document": "使用内存数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>使用内存数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2.0",
           "member": "float",
           "name": "RunningMem",
@@ -6600,7 +6812,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开了默认告警\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开了默认告警</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "OpenJobDefaultAlarm",
@@ -6610,7 +6822,7 @@
         },
         {
           "disabled": false,
-          "document": "操作中描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作中描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "操作中",
           "member": "string",
           "name": "ProgressDesc",
@@ -6620,7 +6832,7 @@
         },
         {
           "disabled": false,
-          "document": "停止持续告警",
+          "document": "<p>停止持续告警</p>",
           "example": "1",
           "member": "int64",
           "name": "ContinueAlarm",
@@ -6630,7 +6842,7 @@
         },
         {
           "disabled": false,
-          "document": "作业重启次数",
+          "document": "<p>作业重启次数</p>",
           "example": "1",
           "member": "int64",
           "name": "RestartCount",
@@ -6640,7 +6852,7 @@
         },
         {
           "disabled": false,
-          "document": "期望是开启默认告警",
+          "document": "<p>期望是开启默认告警</p>",
           "example": "1",
           "member": "int64",
           "name": "ExpectJobDefaultAlarmStatus",
@@ -6650,13 +6862,53 @@
         },
         {
           "disabled": false,
-          "document": "jdk版本",
+          "document": "<p>jdk版本</p>",
           "example": "8",
           "member": "string",
           "name": "JdkVersion",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态桶名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-bucket-10001",
+          "member": "string",
+          "name": "StateCOSBucket",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的状态桶名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-bucket-10002",
+          "member": "string",
+          "name": "NewStateCOSBucket",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>同类型</p><p>枚举值：</p><ul><li>0： 普通桶</li><li>1： 加速桶</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "StateCOSBucketType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的桶类型</p><p>枚举值：</p><ul><li>0： 普通桶</li><li>1： 加速桶</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "NewStateCOSBucketType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8304,143 +8556,173 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主键</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "VersionId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "状态 1: Active; 2: Expired; 3: InProgress; 4: Failed; 5: Timeout\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态 1: Active; 2: Expired; 3: InProgress; 4: Failed; 5: Timeout</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1652962710",
           "member": "int64",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1652962710",
           "member": "int64",
           "name": "UpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cosn://kkingtest-123/123/123/cql-i7985eg9/27/flink-checkpoints/0",
           "member": "string",
           "name": "Path",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>大小</p><p>单位：Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "89446",
           "member": "int64",
           "name": "Size",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RecordType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "运行作业实例的顺序 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行作业实例的顺序 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "JobRuntimeId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Description",
           "member": "string",
           "name": "Description",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "固定超时时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>固定超时时间</p><p>单位：毫秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Timeout",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "快照 serialId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>快照 serialId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cql-6w8eab6f",
           "member": "string",
           "name": "SerialId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "耗时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>耗时</p><p>单位：毫秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TimeConsuming",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "快照路径状态 1：可用；2：不可用；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>快照路径状态 1：可用；2：不可用；</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "PathStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Flink版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Flink-1.18",
+          "member": "string",
+          "name": "FlinkVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>CheckPoint是否增量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UNSUPPORTED",
+          "member": "string",
+          "name": "IsIncremental",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>checkpoint 大小</p><p>单位：Byte</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CheckpointSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8705,6 +8987,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群隔离时间，0为7天，1为15天</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "IsolationPolicyVersion",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -9413,7 +9706,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cql-xxx",
           "member": "string",
           "name": "JobId",
@@ -9423,7 +9716,7 @@
         },
         {
           "disabled": false,
-          "document": "作业名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sql1",
           "member": "string",
           "name": "Name",
@@ -9433,7 +9726,7 @@
         },
         {
           "disabled": false,
-          "document": "作业类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "JobType",
@@ -9443,7 +9736,7 @@
         },
         {
           "disabled": false,
-          "document": "作业占用资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业占用资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2.00",
           "member": "float",
           "name": "RunningCu",
@@ -9453,7 +9746,7 @@
         },
         {
           "disabled": false,
-          "document": "作业状态 启动或者停止或者暂停\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业状态 启动或者停止或者暂停</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -9463,7 +9756,7 @@
         },
         {
           "disabled": false,
-          "document": "0:代表没开启调优任务，1:开启智能调优，2:代表定时调优\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>0:代表没开启调优任务，1:开启智能调优，2:代表定时调优</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "ScalingType",
@@ -9473,7 +9766,7 @@
         },
         {
           "disabled": false,
-          "document": "RunningCpu\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>RunningCpu</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
           "name": "RunningCpu",
@@ -9483,7 +9776,7 @@
         },
         {
           "disabled": false,
-          "document": "RunningMem\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>RunningMem</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
           "name": "RunningMem",
@@ -9493,7 +9786,7 @@
         },
         {
           "disabled": false,
-          "document": "sql\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>sql</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "select * from table",
           "member": "string",
           "name": "DecodeSqlCode",
@@ -9503,12 +9796,22 @@
         },
         {
           "disabled": false,
-          "document": "发布版本配置id",
+          "document": "<p>发布版本配置id</p>",
           "example": "1",
           "member": "int64",
           "name": "PublishedJobConfigId",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>完整的文件夹路径，仅在平铺模式下返回</p>",
+          "example": "root",
+          "member": "string",
+          "name": "FolderPath",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

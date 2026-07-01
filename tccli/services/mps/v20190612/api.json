@@ -26537,10 +26537,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片处理相关的prompt。",
+          "document": "<p>图片处理相关的prompt。</p>",
           "example": "one cat and one dog",
           "member": "string",
           "name": "Prompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>prompt 对应的 role。</p>",
+          "example": "UserPrompt",
+          "member": "string",
+          "name": "Role",
           "output_required": false,
           "required": false,
           "type": "string",

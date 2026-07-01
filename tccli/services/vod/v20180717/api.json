@@ -105,6 +105,13 @@
       "output": "CreateAigcImageTaskResponse",
       "status": "online"
     },
+    "CreateAigcQuota": {
+      "document": "用于创建并启用 AIGC 配额配置，配额用量从启用配额功能时开始累计，达到限额后将无法继续使用 AIGC 功能。\n\n如果删除配额后重新启用，用量将清零并重新计算。\n\n由于AGC内客生成为异步任务，无法获取实时用量数据，因此配额限制存在一定误差，无法实现与设置额度完全精准的控制。",
+      "input": "CreateAigcQuotaRequest",
+      "name": "创建 AIGC 配额",
+      "output": "CreateAigcQuotaResponse",
+      "status": "online"
+    },
     "CreateAigcSubject": {
       "document": "该接口用于创建 AIGC 自定义主体（Vidu）。注意，调用本接口会产生费用，请参考[计费文档](https://cloud.tencent.com/document/product/266/95125#96b3b59a-f9e1-49e9-966a-bedb70a4bf12)。",
       "input": "CreateAigcSubjectRequest",
@@ -392,6 +399,13 @@
       "output": "DeleteAigcApiTokenResponse",
       "status": "online"
     },
+    "DeleteAigcQuota": {
+      "document": "用于删除 AIGC 配额配置，删除后，将不再限制 AIGC 任务的发起。\n\n如果删除配额后重新启用，用量将清零并重新计算。",
+      "input": "DeleteAigcQuotaRequest",
+      "name": "删除 AIGC 配额",
+      "output": "DeleteAigcQuotaResponse",
+      "status": "online"
+    },
     "DeleteAnimatedGraphicsTemplate": {
       "document": "删除用户自定义转动图模板。",
       "input": "DeleteAnimatedGraphicsTemplateRequest",
@@ -628,6 +642,13 @@
       "input": "DescribeAigcFaceInfoAsyncRequest",
       "name": "异步获取 AIGC 人脸信息",
       "output": "DescribeAigcFaceInfoAsyncResponse",
+      "status": "online"
+    },
+    "DescribeAigcQuotas": {
+      "document": "用于查询 AIGC 配额配置。",
+      "input": "DescribeAigcQuotasRequest",
+      "name": "查询 AIGC 配额",
+      "output": "DescribeAigcQuotasResponse",
       "status": "online"
     },
     "DescribeAigcUsageData": {
@@ -1146,6 +1167,13 @@
       "input": "ModifyAdaptiveDynamicStreamingTemplateRequest",
       "name": "修改转自适应码流模板",
       "output": "ModifyAdaptiveDynamicStreamingTemplateResponse",
+      "status": "online"
+    },
+    "ModifyAigcQuota": {
+      "document": "用于编辑 AIGC 配额配置，配额用量从启用配额功能时开始累计，达到限额后将无法继续使用 AIGC 功能。\n\n由于AGC内客生成为异步任务，无法获取实时用量数据，因此配额限制存在一定误差，无法实现与设置额度完全精准的控制。",
+      "input": "ModifyAigcQuotaRequest",
+      "name": "修改 AIGC 配额",
+      "output": "ModifyAigcQuotaResponse",
       "status": "online"
     },
     "ModifyAnimatedGraphicsTemplate": {
@@ -8641,6 +8669,52 @@
       ],
       "usage": "out"
     },
+    "AigcQuotaItem": {
+      "document": "AIGC 配额",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>配额类型</p><p>枚举值：</p><ul><li>Image： AIGC 生图任务</li><li>Video： AIGC 生视频任务</li><li>Text： AIGC 生文任务</li></ul>",
+          "example": "Text",
+          "member": "string",
+          "name": "QuotaType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅当QuotaLimit=Text时有效，用于选择需要进行配额限制ApiToken</p>",
+          "example": "F******************************t",
+          "member": "string",
+          "name": "ApiToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务的配额数</p><p>单位：</p><ul><li>当QuotaLimit=Image时，单位为张</li><li>当QuotaLimit=Video时，单位为秒</li><li>当QuotaLimit=Text时，单位为token</li></ul>",
+          "example": "2000",
+          "member": "uint64",
+          "name": "QuotaLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已经使用的用量数</p><p>单位：</p><ul><li>当QuotaLimit=Image时，单位为张</li><li>当QuotaLimit=Video时，单位为秒</li><li>当QuotaLimit=Text时，单位为token</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Usage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AigcUsageDataItem": {
       "document": "AIGC 统计数据",
       "members": [
@@ -14380,6 +14454,60 @@
       ],
       "type": "object"
     },
+    "CreateAigcQuotaRequest": {
+      "document": "CreateAigcQuota请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p><strong>点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</strong></p>",
+          "example": "200000004",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额类型</p><p>枚举值：</p><ul><li>Image： AIGC 生图任务</li><li>Video： AIGC 生视频任务</li><li>Text： AIGC 生文任务</li></ul>",
+          "example": "Image",
+          "member": "string",
+          "name": "QuotaType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务的配额数</p><p>单位：</p><ul><li>当QuotaLimit=Image时，单位为张</li><li>当QuotaLimit=Video时，单位为秒</li><li>当QuotaLimit=Text时，单位为token</li></ul>",
+          "example": "1000",
+          "member": "uint64",
+          "name": "QuotaLimit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅当QuotaLimit=Text时有效，用于选择需要进行配额限制ApiToken</p>",
+          "example": "FnHR1a9GmP4qvdYiLEMGuddRHfLRU40t",
+          "member": "string",
+          "name": "ApiToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAigcQuotaResponse": {
+      "document": "CreateAigcQuota返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAigcSubjectInput": {
       "document": "创建主体输入信息。",
       "members": [
@@ -18268,6 +18396,51 @@
       ],
       "type": "object"
     },
+    "DeleteAigcQuotaRequest": {
+      "document": "DeleteAigcQuota请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p><strong>点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</strong></p>",
+          "example": "200000004",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额类型</p><p>枚举值：</p><ul><li>Image： AIGC 生图任务</li><li>Video： AIGC 生视频任务</li><li>Text： AIGC 生文任务</li></ul>",
+          "example": "Image",
+          "member": "string",
+          "name": "QuotaType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅当QuotaLimit=Text时有效，用于选择需要进行配额限制ApiToken</p>",
+          "example": "FnHR1a9GmP4qvdYiLEMGuddRHfLRU40t",
+          "member": "string",
+          "name": "ApiToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAigcQuotaResponse": {
+      "document": "DeleteAigcQuota返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAnimatedGraphicsTemplateRequest": {
       "document": "DeleteAnimatedGraphicsTemplate请求参数结构体",
       "members": [
@@ -19846,6 +20019,89 @@
           "name": "FaceInfoSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcQuotasRequest": {
+      "document": "DescribeAigcQuotas请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p><strong>点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</strong></p>",
+          "example": "200000004",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额类型</p><p>枚举值：</p><ul><li>Image： AIGC 生图任务</li><li>Video： AIGC 生视频任务</li><li>Text： AIGC 生文任务</li></ul>",
+          "example": "Image",
+          "member": "string",
+          "name": "QuotaType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅当QuotaLimit=Text时有效，用于选择需要进行配额限制ApiToken</p>",
+          "example": "F******************************t",
+          "member": "string",
+          "name": "ApiToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页返回的记录条数，将返回第 Offset 到第 Offset+Limit-1 条。</p><p>取值范围：[1, 100]</p><p>默认值：10</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。</p><p>默认值：0</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcQuotasResponse": {
+      "document": "DescribeAigcQuotas返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>配额列表</p>",
+          "example": "无",
+          "member": "AigcQuotaItem",
+          "name": "QuotaSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总条数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -35577,6 +35833,60 @@
     },
     "ModifyAdaptiveDynamicStreamingTemplateResponse": {
       "document": "ModifyAdaptiveDynamicStreamingTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAigcQuotaRequest": {
+      "document": "ModifyAigcQuota请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p><strong>点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</strong></p>",
+          "example": "200000004",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额类型</p><p>枚举值：</p><ul><li>Image： AIGC 生图任务</li><li>Video： AIGC 生视频任务</li><li>Text： AIGC 生文任务</li></ul>",
+          "example": "Image",
+          "member": "string",
+          "name": "QuotaType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务的配额数</p><p>单位：</p><ul><li>当QuotaLimit=Image时，单位为张</li><li>当QuotaLimit=Video时，单位为秒</li><li>当QuotaLimit=Text时，单位为token</li></ul>",
+          "example": "2000",
+          "member": "uint64",
+          "name": "QuotaLimit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅当QuotaLimit=Text时有效，用于选择需要进行配额限制ApiToken</p>",
+          "example": "F******************************t",
+          "member": "string",
+          "name": "ApiToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAigcQuotaResponse": {
+      "document": "ModifyAigcQuota返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

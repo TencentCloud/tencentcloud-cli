@@ -234,7 +234,42 @@ Output:
 }
 ```
 
-**Example 7: 发起合同后，获取C端签署人的H5批量领取链接**
+**Example 7: 发起合同后，为企业员工生成动态签署方领取链接**
+
+为企业员工生成动态签署方领取链接，需要指定企业名称
+
+Input: 
+
+```
+tccli essbasic ChannelCreateBatchQuickSignUrl --cli-unfold-argument  \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.AppId yDRSRUUgygj6rq7wUuO4zjECxndqQApl \
+    --ApproverSignTypes 1 3 \
+    --FlowApproverInfo.ApproverType ORGANIZATION \
+    --FlowIds yDwFkUUckpstin4sUuZjBEY5Ia2XB7sz yDwFkUUckpstzjhfUugNAWf1KibXqS26 \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.FlowId yDwFkUUckpstin4sUuZjBEY5Ia2XB7sz \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.RecipientId yDCmvUUckpup6xhwUxKRs1rIRejg254i \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.1.FlowId yDwFkUUckpstzjhfUugNAWf1KibXqS26 \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.1.RecipientId yDCmvUUckpup6xh1UxKRs1rwHjT5QyHH
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfo": {
+            "ApproverType": "ORGANIZATION",
+            "LongUrl": "https://quick.test.qian.tencent.cn/guide?ApproverType=1&Code=yD3gJ*****m**************9TLxs0E&CodeType=QUICK&DeviceStore=1&shortKey=yD3gJ********4C78Q80&token=2EmWUBTuNB",
+            "Mobile": "",
+            "Name": "",
+            "SignUrl": "https://test.essurl.cn/2EmWUBTuNB"
+        },
+        "RequestId": "b8ea1990-4444-4979-ab34-c007ee32efac"
+    }
+}
+```
+
+**Example 8: 发起合同后，获取C端签署人的H5批量领取链接**
 
 1. 创建批量签署链接的合同签署方，必须都是动态签署人且未补充。
 2. 批量签署的合同数量不少于1份，不超过100份
@@ -275,7 +310,7 @@ Output:
 }
 ```
 
-**Example 8: 错误示例-为个人用户生成H5批量签署链接，既传入了合同流程ID信息，又传入了合同组ID信息**
+**Example 9: 错误示例-为个人用户生成H5批量签署链接，既传入了合同流程ID信息，又传入了合同组ID信息**
 
 1. 指定了合同流程ID信息
 2. 指定了合同组ID信息
@@ -308,7 +343,7 @@ Output:
 }
 ```
 
-**Example 9: 错误示例-为个人用户生成H5批量签署链接，没有指定合同流程ID信息，也没有指定合同组ID信息**
+**Example 10: 错误示例-为个人用户生成H5批量签署链接，没有指定合同流程ID信息，也没有指定合同组ID信息**
 
 1. 没有指定合同流程ID信息
 2. 没有指定合同组ID信息
@@ -339,7 +374,7 @@ Output:
 }
 ```
 
-**Example 10: 错误示例-创建签署链接中指定的C端个人用户不在合同参与人列表中**
+**Example 11: 错误示例-创建签署链接中指定的C端个人用户不在合同参与人列表中**
 
 1. 合同已经创建完成，其中个人用户为A
 2. 创建个人H5批量签署链接中的ApproverType指定了个人类型(ApproverType=PERSON)
@@ -374,7 +409,7 @@ Output:
 }
 ```
 
-**Example 11: 错误示例-创建签署链接的企业不是待批量签署合同的发起方**
+**Example 12: 错误示例-创建签署链接的企业不是待批量签署合同的发起方**
 
 1. 企业A创建了一些合同
 2. 企业B用上述合同编号创建批量签署链接
@@ -404,6 +439,41 @@ Output:
             "Message": "不支持非当前企业发起的合同，生成批量签署链接。不满足合同:[\"yDwFkUUckpstzjhfUugNAWf1KibXqS26\"]"
         },
         "RequestId": "s1698**02"
+    }
+}
+```
+
+**Example 13: 发起合同后，为员工生成动态签署方领取链接**
+
+发起合同后，为SaaS企业员工生成动态签署方领取链接，需预设企业名称
+
+Input: 
+
+```
+tccli essbasic ChannelCreateBatchQuickSignUrl --cli-unfold-argument  \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.AppId yDRSRUUgygj6rq7wUuO4zjECxndqQApl \
+    --ApproverSignTypes 1 3 \
+    --FlowApproverInfo.ApproverType ORGANIZATION \
+    --FlowGroupId yD3JmUUckped60vkU1Ux1nLZkvvVD0m8 \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.FlowId yDwFkUUckpstin4sUuZjBEY5Ia2XB7sz \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.RecipientId yDCmvUUckpup6xhwUxKRs1rIRejg254i \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.1.FlowId yDwFkUUckpstzjhfUugNAWf1KibXqS26 \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.1.RecipientId yDCmvUUckpup6xh1UxKRs1rwHjT5QyHH
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfo": {
+            "ApproverType": "ORGANIZATION",
+            "LongUrl": "https://quick.test.qian.tencent.cn/guide?ApproverType=1&Code=yD3gJU*******************w9QKEbk&CodeType=QUICK&DeviceStore=1&shortKey=yD3**********DeGQT2c&token=MItRUBTuNA",
+            "Mobile": "15321202492",
+            "Name": "",
+            "SignUrl": "https://test.essurl.cn/MItRUBTuNA"
+        },
+        "RequestId": "00cff089-ba85-457f-864a-4f479ae98d39"
     }
 }
 ```

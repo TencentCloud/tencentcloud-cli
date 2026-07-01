@@ -8433,6 +8433,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>迁移配置阶段限速相关参数</p>",
+          "example": "无",
+          "member": "RateLimit",
+          "name": "RateLimit",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9932,6 +9943,67 @@
         }
       ],
       "usage": "out"
+    },
+    "RateLimit": {
+      "document": "数据迁移限速配置对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全量导出线程数，如果不设置或设置为0则表示保持当前值，最大值为16</p>",
+          "example": "8",
+          "member": "int64",
+          "name": "DumpThread",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全量导出Rps，如果不设置或设置为0则表示保持当前值，最大值为50000000</p>",
+          "example": "400000",
+          "member": "int64",
+          "name": "DumpRps",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全量导入线程数，如果不设置或设置为0则表示保持当前值，最大值为16</p>",
+          "example": "8",
+          "member": "int64",
+          "name": "LoadThread",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全量导入Rps，如果不设置或设置为0则表示保持当前值，最大值为50000000</p>",
+          "example": "400000",
+          "member": "int64",
+          "name": "LoadRps",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>增量导入线程数，如果不设置或设置为0则表示保持当前值，最大值为128</p>",
+          "example": "16",
+          "member": "int64",
+          "name": "SinkerThread",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RateLimitOption": {
       "document": "迁移和同步任务限速的详细信息",

@@ -1578,7 +1578,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则ID",
+          "document": "<p>规则ID</p>",
           "example": "cr-3xhsd76j603v0a8ma0i73",
           "member": "string",
           "name": "RuleId",
@@ -2634,7 +2634,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合规包ID",
+          "document": "<p>合规包ID</p>",
           "example": "cp-p2fnfklc7sdwho2t4wcf",
           "member": "string",
           "name": "CompliancePackId",
@@ -2661,7 +2661,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则ID",
+          "document": "<p>规则ID</p>",
           "example": "cr-3xhsd76j603v0a8ma0i73",
           "member": "string",
           "name": "RuleId",
@@ -3804,7 +3804,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合规包ID",
+          "document": "<p>合规包ID</p>",
           "example": "cp-3kr5im1ssbg6tdo5jbi9",
           "member": "string",
           "name": "CompliancePackId",
@@ -3813,7 +3813,7 @@
         },
         {
           "disabled": false,
-          "document": "规则ID",
+          "document": "<p>规则ID</p>",
           "example": "cr-xhsd76j603v0a8ma0i73",
           "member": "string",
           "name": "ConfigRuleId",
@@ -4506,7 +4506,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每页显示数量",
+          "document": "<p>每页显示数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "MaxResults",
@@ -4515,7 +4515,7 @@
         },
         {
           "disabled": false,
-          "document": "账号组ID",
+          "document": "<p>账号组ID</p>",
           "example": "ca-sdfs7734h24",
           "member": "string",
           "name": "AccountGroupId",
@@ -4524,8 +4524,8 @@
         },
         {
           "disabled": false,
-          "document": "resourceName：资源名  resourceId ：资源ID resourceType：资源类型",
-          "example": "[     {         \"Values\": [             \"QCS::CVM::Instance\"         ],         \"Name\": \"resourceType\"     } ]",
+          "document": "<p>resourceName：资源名  resourceId ：资源ID resourceType：资源类型</p>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4533,8 +4533,8 @@
         },
         {
           "disabled": false,
-          "document": "标签",
-          "example": "  [         {             \"TagKey\": \"TAG1\",             \"TagValue\": \"TAG3\"         }     ]",
+          "document": "<p>标签</p>",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -4542,7 +4542,7 @@
         },
         {
           "disabled": false,
-          "document": "下一页token",
+          "document": "<p>下一页token</p>",
           "example": "E5WbfJQIT0Abtaj4RxODhsX",
           "member": "string",
           "name": "NextToken",
@@ -4551,7 +4551,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式 asc、desc",
+          "document": "<p>排序方式 asc、desc</p>",
           "example": "desc",
           "member": "string",
           "name": "OrderType",
@@ -4566,7 +4566,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "详情",
+          "document": "<p>详情</p>",
           "example": "无",
           "member": "AggregateResourceInfo",
           "name": "Items",
@@ -4576,13 +4576,23 @@
         },
         {
           "disabled": false,
-          "document": "下一页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>下一页</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "E5WbfJQIT0Abtaj4RxODhsX",
           "member": "string",
           "name": "NextToken",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4708,7 +4718,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量",
+          "document": "<p>数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -4717,7 +4727,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -4726,7 +4736,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包名称",
+          "document": "<p>合规包名称</p>",
           "example": "1",
           "member": "string",
           "name": "CompliancePackName",
@@ -4735,7 +4745,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级\n1：高风险。\n2：中风险。\n3：低风险。",
+          "document": "<p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>",
           "example": "[1,2]",
           "member": "uint64",
           "name": "RiskLevel",
@@ -4744,7 +4754,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包状态 ACTIVE、NO_ACTIVE",
+          "document": "<p>合规包状态 ACTIVE、NO_ACTIVE</p>",
           "example": "ACTICE",
           "member": "string",
           "name": "Status",
@@ -4753,8 +4763,8 @@
         },
         {
           "disabled": false,
-          "document": "评估状态合规： 'COMPLIANT'\n不合规： 'NON_COMPLIANT'",
-          "example": "COMPLIANT",
+          "document": "<p>评估状态合规： &#39;COMPLIANT&#39;<br>不合规： &#39;NON_COMPLIANT&#39;</p>",
+          "example": "[\"COMPLIANT\"]",
           "member": "string",
           "name": "ComplianceResult",
           "required": false,
@@ -4762,10 +4772,19 @@
         },
         {
           "disabled": false,
-          "document": "排序类型, 倒序：desc，顺序：asc",
+          "document": "<p>排序类型, 倒序：desc，顺序：asc</p>",
           "example": "desc",
           "member": "string",
           "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>包含合规包规则统计信息</p><p>枚举值：</p><ul><li>1： 是</li></ul>",
+          "example": "1",
+          "member": "string",
+          "name": "IncludeCompliancePackRuleResult",
           "required": false,
           "type": "string"
         }
@@ -4777,21 +4796,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "4",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "详情",
+          "document": "<p>详情</p>",
           "example": "无",
           "member": "ConfigCompliancePack",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4993,7 +5012,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每页显示数量",
+          "document": "<p>每页显示数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "MaxResults",
@@ -5002,8 +5021,8 @@
         },
         {
           "disabled": false,
-          "document": "resourceName：资源名  resourceId ：资源ID",
-          "example": "[]",
+          "document": "<p>resourceName：资源名  resourceId ：资源ID</p>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -5011,8 +5030,8 @@
         },
         {
           "disabled": false,
-          "document": "标签",
-          "example": "[     {         \"tagKey\": \"运营部门\",         \"tagValue\": \"开发部     } ]",
+          "document": "<p>标签</p>",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -5020,7 +5039,7 @@
         },
         {
           "disabled": false,
-          "document": "下一页token",
+          "document": "<p>下一页token</p>",
           "example": "C3IptlTj6hTlW0WKVO3NI",
           "member": "string",
           "name": "NextToken",
@@ -5029,7 +5048,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式 asc、desc",
+          "document": "<p>排序方式 asc、desc</p>",
           "example": "desc",
           "member": "string",
           "name": "OrderType",
@@ -5044,8 +5063,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "详情",
-          "example": "{\"ResourceType\":\"cvm\"}",
+          "document": "<p>详情</p>",
+          "example": "无",
           "member": "ResourceListInfo",
           "name": "Items",
           "output_required": true,
@@ -5054,13 +5073,23 @@
         },
         {
           "disabled": false,
-          "document": "下一页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>下一页</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "C3IptlTj6hTlW0WKVO3NI",
           "member": "string",
           "name": "NextToken",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5416,7 +5445,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则ID",
+          "document": "<p>规则ID</p>",
           "example": "cr-3xhsd76j603v0a8ma0i73",
           "member": "string",
           "name": "RuleId",
@@ -6574,7 +6603,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合规包名称",
+          "document": "<p>合规包名称</p>",
           "example": "合规包1",
           "member": "string",
           "name": "CompliancePackName",
@@ -6583,7 +6612,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级",
+          "document": "<p>风险等级</p>",
           "example": "1",
           "member": "uint64",
           "name": "RiskLevel",
@@ -6592,7 +6621,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包ID",
+          "document": "<p>合规包ID</p>",
           "example": "cp-fc507gbwtks141giu8p2",
           "member": "string",
           "name": "CompliancePackId",
@@ -6601,7 +6630,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包规则",
+          "document": "<p>合规包规则</p>",
           "example": "无",
           "member": "CompliancePackRule",
           "name": "ConfigRules",
@@ -6610,8 +6639,8 @@
         },
         {
           "disabled": false,
-          "document": "描述",
-          "example": "描述",
+          "document": "<p>描述</p>",
+          "example": "合规包描述",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -6637,7 +6666,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合规包ID",
+          "document": "<p>合规包ID</p>",
           "example": "cp-3kr5im1ssbg6tdo5jbi9",
           "member": "string",
           "name": "CompliancePackId",
@@ -6646,7 +6675,7 @@
         },
         {
           "disabled": false,
-          "document": "ACTIVE：启用\nUN_ACTIVE ：停用",
+          "document": "<p>ACTIVE：启用<br>UN_ACTIVE ：停用</p>",
           "example": "ACTIVE 、UN_ACTIVE",
           "member": "string",
           "name": "Status",
@@ -6772,7 +6801,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "触发类型，最多支持两种",
+          "document": "<p>触发类型，最多支持两种</p>",
           "example": "无",
           "member": "TriggerType",
           "name": "TriggerType",
@@ -6781,7 +6810,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级\n1：高风险。\n2：中风险。\n3：低风险。",
+          "document": "<p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>",
           "example": "2",
           "member": "uint64",
           "name": "RiskLevel",
@@ -6790,7 +6819,7 @@
         },
         {
           "disabled": false,
-          "document": "规则ID",
+          "document": "<p>规则ID</p>",
           "example": "cr-2xhsd76j603v0a8ma0i73",
           "member": "string",
           "name": "RuleId",
@@ -6799,7 +6828,7 @@
         },
         {
           "disabled": false,
-          "document": "规则名称",
+          "document": "<p>规则名称</p>",
           "example": "规则1",
           "member": "string",
           "name": "RuleName",
@@ -6808,7 +6837,7 @@
         },
         {
           "disabled": false,
-          "document": "入参",
+          "document": "<p>入参</p>",
           "example": "无",
           "member": "InputParameter",
           "name": "InputParameter",
@@ -6817,7 +6846,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "规则描述",
           "member": "string",
           "name": "Description",
@@ -6826,8 +6855,8 @@
         },
         {
           "disabled": false,
-          "document": "规则评估地域范围，规则仅对指定地域中的资源生效。\n支持的地域范围config:ListResourceRegions返回的地域",
-          "example": "无",
+          "document": "<p>规则评估地域范围，规则仅对指定地域中的资源生效。<br>支持的地域范围config:ListResourceRegions返回的地域</p>",
+          "example": "[\"ap-guangzhuo\"]",
           "member": "string",
           "name": "RegionsScope",
           "required": false,
@@ -6835,7 +6864,7 @@
         },
         {
           "disabled": false,
-          "document": "规则评估标签范围，规则仅对绑定指定标签的资源生效。",
+          "document": "<p>规则评估标签范围，规则仅对绑定指定标签的资源生效。</p>",
           "example": "无",
           "member": "Tag",
           "name": "TagsScope",
@@ -6844,8 +6873,8 @@
         },
         {
           "disabled": false,
-          "document": "规则对指定资源ID无效，即不对该资源执行评估。",
-          "example": "无",
+          "document": "<p>规则对指定资源ID无效，即不对该资源执行评估。</p>",
+          "example": "[\"r_111111\"]",
           "member": "string",
           "name": "ExcludeResourceIdsScope",
           "required": false,

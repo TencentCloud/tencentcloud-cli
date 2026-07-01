@@ -1358,6 +1358,33 @@
           "name": "Body",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "连接UserProperty作为Header转发，默认false",
+          "example": "false",
+          "member": "bool",
+          "name": "IncludingUserProperties",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "vpcsvcId\nHTTP认证需要通过vpc网络访问时需要配置",
+          "example": "vpcsvc-1234",
+          "member": "string",
+          "name": "VpcSvcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络连接类型\nvpc：vpc网络\npublic：公网\n通过vpc网络连接需要设置VpcSvcId参数",
+          "example": "vpc",
+          "member": "string",
+          "name": "NetworkType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2701,6 +2728,24 @@
           "name": "Number",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0:查询在线和离线客户端（默认值）\n1:查询在线客户端\n2:查询离线客户端",
+          "example": "0",
+          "member": "int64",
+          "name": "OnlineStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "在线连接：表示最后的连接时间\n离线连接：表示最后的断开连接时间",
+          "example": "1767086893065",
+          "member": "int64",
+          "name": "MaxTimestamp",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3276,8 +3321,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询条件列表,支持以下字段\nInstanceName：集群名模糊搜索\nInstanceId：集群id精确搜索\nInstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）\n注意：配置TagFilters时该查询条件不生效。",
-          "example": "[{\"Name\":\"InstanceName\",\"Values\":[\"instance1\"]}]",
+          "document": "<p>查询条件列表,支持以下字段<br>InstanceName：集群名模糊搜索<br>InstanceId：集群id精确搜索<br>InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）<br>PayMode：付费模式搜索（PREPAID-包年包月，POSTPAID-按小时计费）<br>ExpiredBefore：按过期时间过滤：仅筛选包年包月（PREPAID）集群<br>注意：配置TagFilters时该查询条件不生效。</p>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3285,7 +3330,7 @@
         },
         {
           "disabled": false,
-          "document": "查询起始位置，默认0",
+          "document": "<p>查询起始位置，默认0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -3294,7 +3339,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果限制数量，默认20，最大100",
+          "document": "<p>查询结果限制数量，默认20，最大100</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -3303,8 +3348,8 @@
         },
         {
           "disabled": false,
-          "document": "标签过滤器",
-          "example": "[{\"TagKey\":\"tag1-key\",\"TagValue\":[\"tag1-value\"]}]",
+          "document": "<p>标签过滤器</p>",
+          "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
@@ -3318,7 +3363,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询总数",
+          "document": "<p>查询总数</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -3328,7 +3373,7 @@
         },
         {
           "disabled": false,
-          "document": "实例列表",
+          "document": "<p>实例列表</p>",
           "example": "无",
           "member": "MQTTInstanceItem",
           "name": "Data",
@@ -3721,6 +3766,36 @@
           "name": "BlockRuleLimit",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除保护开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteProtect",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群客户端事件格式</p><p>枚举值：</p><ul><li>V1： 详见官网文档</li><li>V2： 详见官网文档</li><li>V3： 详见官网文档</li></ul><p>默认值：V3</p>",
+          "example": "V3",
+          "member": "string",
+          "name": "EventDialect",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息HASH策略</p><p>枚举值：</p><ul><li>TOPIC_NAME： 按主题名</li><li>CLIENT_ID： 按客户端ID</li></ul><p>默认值：TOPIC_NAME</p>",
+          "example": "TOPIC_NAME",
+          "member": "string",
+          "name": "HashMessagePolicy",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -4990,6 +5065,15 @@
           "name": "ClientId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否清理session，默认false",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteSession",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5153,6 +5237,26 @@
           "name": "MQTTClientSubscriptions",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "clean-session标志，在客户端使用mqtt5协议时，该字段即clean-start",
+          "example": "true",
+          "member": "bool",
+          "name": "CleanSession",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MQTT5协议：expireIntervalInSeconds",
+          "example": "3600",
+          "member": "int64",
+          "name": "ExpireIntervalInSeconds",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -5511,7 +5615,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "单个共享订阅组TopicFilter数限制",
           "example": "10",
           "member": "int64",
@@ -5538,6 +5642,16 @@
           "name": "MaxTopicFilterPerAutoSubscriptionPolicy",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群删除保护开关",
+          "example": "false",
+          "member": "bool",
+          "name": "DeleteProtect",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

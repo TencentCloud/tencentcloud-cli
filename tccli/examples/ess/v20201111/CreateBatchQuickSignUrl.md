@@ -235,7 +235,73 @@ Output:
 }
 ```
 
-**Example 7: 错误示例-创建签署链接中指定的C端个人用户不在合同参与人列表中**
+**Example 7: 生成H5员工动态签署方领取链接**
+
+生成H5员工动态签署方领取链接，需要预设企业名称
+
+Input: 
+
+```
+tccli ess CreateBatchQuickSignUrl --cli-unfold-argument  \
+    --FlowApproverInfo.ApproverType 0 \
+    --Operator.UserId yDwfGUUckps8w3ppUy083fBEtMy3ygXT \
+    --FlowIds yD3gJUUckpmmt8bnU1UE42xe9uXlceoe \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.FlowId yD3JmUUckped60w7U1Ux1nLZkuIkTsFe \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.RecipientId yD3JmUUckped60w9Ux1nLZkwwMZZuyL1 \
+    --PresetApproverInfo.OrganizationName xxxxx有限公司
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfo": {
+            "ApproverMobile": "",
+            "ApproverName": "",
+            "ApproverType": 0,
+            "LongUrl": "https://quick.test.qian.tencent.cn/guide?ApproverType=1&Code=yD**********************TJOL3n0N&CodeType=QUICK&DeviceStore=1&shortKey=yD3**************E61&token=Rpx*U*Tu*6",
+            "SignUrl": "https://test.essurl.cn/lolTUBYoqJ"
+        },
+        "RequestId": "s1782877263830882448"
+    }
+}
+```
+
+**Example 8: 生成H5员工合同组动态签署方领取链接**
+
+生成H5员工合同组动态签署方领取链接，需预设企业名称
+
+Input: 
+
+```
+tccli ess CreateBatchQuickSignUrl --cli-unfold-argument  \
+    --FlowApproverInfo.ApproverType 0 \
+    --FlowGroupId yD3PKUUckpzied4uU1UEsCbrt1kiwxeD \
+    --Operator.UserId yDCjhUUckp4k6ye4UyizwKWB8V9TwCPa \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.FlowId yD3JmUUckped60wiU1Ux1nLZkwgNafwN \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.RecipientId yD3JmUUckped60wcUx1nLZkx71cC8I3e \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.1.FlowId yD3JmUUckped60w7U1Ux1nLZkuIkTsFe \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.1.RecipientId yD3JmUUckped60w9Ux1nLZkwwMZZuyL1 \
+    --PresetApproverInfo.OrganizationName xxxx责任公司
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfo": {
+            "ApproverMobile": "",
+            "ApproverName": "",
+            "ApproverType": 0,
+            "LongUrl": "https://quick.test.qian.tencent.cn/guide?ApproverType=1&Code=yD**********************TJOL3n0N&CodeType=QUICK&DeviceStore=1&shortKey=yD3**************E61&token=Rpx*U*Tu*6",
+            "SignUrl": "https://test.essurl.cn/lolTUBYoqJ"
+        },
+        "RequestId": "s1782877263830882448"
+    }
+}
+```
+
+**Example 9: 错误示例-创建签署链接中指定的C端个人用户不在合同参与人列表中**
 
 1. 合同已经创建完成，其中个人用户为A
 2. 创建个人H5批量签署链接中的ApproverType指定了个人类型(ApproverType=1)
@@ -270,7 +336,7 @@ Output:
 }
 ```
 
-**Example 8: 错误示例-创建签署链接的企业不是待批量签署合同的发起方**
+**Example 10: 错误示例-创建签署链接的企业不是待批量签署合同的发起方**
 
 1. 企业A创建了一些合同
 2. 企业B用上述合同编号创建批量签署链接
@@ -304,7 +370,7 @@ Output:
 }
 ```
 
-**Example 9: 错误示例，为个人用户生成H5批量签署链接，没有指定合同流程ID信息，也没有指定合同组ID信息**
+**Example 11: 错误示例，为个人用户生成H5批量签署链接，没有指定合同流程ID信息，也没有指定合同组ID信息**
 
 1. 没有指定合同流程ID信息
 2. 没有指定合同组ID信息
@@ -335,7 +401,7 @@ Output:
 }
 ```
 
-**Example 10: 集团主企业代子企业创建H5批量签署链接**
+**Example 12: 集团主企业代子企业创建H5批量签署链接**
 
 1. 集团主企业有权限代替子企业发起合同
 2. 个人用户在批量签署的合同中是待签署的状态

@@ -19,6 +19,7 @@ Output:
 ```
 {
     "Response": {
+        "Count": 10,
         "Items": [
             {
                 "ResourceStatus": "Running",

@@ -11719,6 +11719,15 @@
           "name": "DoNotStart",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像Secret列表</p>",
+          "example": "[\"secret\"]",
+          "member": "string",
+          "name": "ImagePullSecretList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

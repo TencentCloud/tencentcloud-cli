@@ -304,6 +304,14 @@
         "title": "调用示例"
       }
     ],
+    "DescribeAILinkSetting": [
+      {
+        "document": "查询AI-Link智链引擎配置",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAILinkSetting\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-68************00\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AILinkEnable\": 1,\n        \"RuleScopeDeep\": 1,\n        \"RuleScopeBalanced\": 1,\n        \"RuleScopePrecise\": 1,\n        \"Scope\": 1,\n        \"Quuids\": [\n            \"66******-****-****-****-**********9d\"\n        ],\n        \"ExcludeQuuids\": [\n            \"36******-****-****-****-**********53\"\n        ],\n        \"AutoInclude\": 1,\n        \"RequestId\": \"8c1f7156-fc01-4905-b286-e08f4db0eec2\"\n    }\n}",
+        "title": "DescribeAILinkSetting"
+      }
+    ],
     "DescribeAKAnalysisDetail": [
       {
         "document": "",
@@ -1130,6 +1138,30 @@
         "title": "查询Dspm白名单策略"
       }
     ],
+    "DescribeEDRRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEDRRuleList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AttackStageCounts\": [\n            {\n                \"AttackStage\": \"TA0002\",\n                \"Count\": 218\n            }\n        ],\n        \"DetectTypeCounts\": [\n            {\n                \"Count\": 688,\n                \"DetectType\": 0\n            }\n        ],\n        \"List\": [\n            {\n                \"Action\": 0,\n                \"AttackStage\": \"TA0009\",\n                \"CWPScope\": 1,\n                \"Confidence\": 1,\n                \"ContentType\": \"cmdline\",\n                \"CreateTime\": \"2026-03-02T15:11:09+08:00\",\n                \"Description\": \"检测yapi应用中使用cat、head、tail、tac、less、more、vi、vim、nano、getent、vipw、vigr等命令查看/etc/passwd、/etc/shadow等/etc敏感文件或authorized_keys、bash_history等用户认证文件的行为\",\n                \"DetectMode\": 0,\n                \"DetectType\": 0,\n                \"ExcludeImageIDs\": [],\n                \"ExcludeQUUIDS\": [],\n                \"ImageIDs\": [],\n                \"ImageNamesRegex\": \"\",\n                \"Level\": 2,\n                \"ModifyTime\": \"2026-03-02T15:11:09+08:00\",\n                \"Name\": \"yapi应用查看敏感文件\",\n                \"QUUIDS\": [],\n                \"RuleID\": \"383\",\n                \"RuleType\": 0,\n                \"Status\": 0,\n                \"SupportBlock\": 0,\n                \"TCSSScope\": 1\n            }\n        ],\n        \"TotalCount\": 688,\n        \"RequestId\": \"de366fc1-5524-4d68-a1fa-ab3ecebb6c02\"\n    }\n}",
+        "title": "edr策略列表"
+      }
+    ],
+    "DescribeEdrAlertInfo": [
+      {
+        "document": "获取EDR告警详情",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdrAlertInfo\n<公共请求参数>\n\n{\n    \"Target\": {\n        \"Id\": 1000000000004319,\n        \"AppId\": 260108008,\n        \"AlertId\": \"2e44dee79d7d98335f2c2ec5c33aaf0a\",\n        \"Quuid\": \"8a4eac2e-d5e0-4422-8ab1-5199ccffd9c0\",\n        \"InstanceId\": \"ins-llfob98q\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Alert\": {\n            \"AlertCategory\": \"AI_LINK_ENGINE\",\n            \"AlertId\": \"2e44dee79d7d98335f2c2ec5c33aaf0a\",\n            \"AlertName\": \"多行为攻击\",\n            \"AlertSource\": \"HOST\",\n            \"AlertSubType\": \"MULTI_BEHAVIOR_ATTACK\",\n            \"AppId\": 260108008,\n            \"AttackStage\": \"\",\n            \"CSIPTags\": [],\n            \"ClusterId\": \"\",\n            \"ContainerId\": \"\",\n            \"Content\": \"{\\\"alert_raw_id\\\":\\\"eql-333a7b877fc181df\\\",\\\"alert_raw_ids\\\":[\\\"eql-333a7b877fc181df\\\"],\\\"alert_source_engine\\\":\\\"AI-Link\\\",\\\"alert_source_rule_mode\\\":\\\"balanced\\\",\\\"alert_type_category\\\":\\\"command\\\",\\\"behaviors\\\":[{\\\"action\\\":\\\"process_snapshot\\\",\\\"behavior_description\\\":\\\"bash DNS process_snapshot a.qqmusic1.com\\\",\\\"behavior_description_en\\\":\\\"bash DNS process_snapshot a.qqmusic1.com\\\",\\\"dataset\\\":\\\"cwp.dns\\\",\\\"destination_ip\\\":\\\"13.158.37.189\\\",\\\"dns_question_name\\\":\\\"a.qqmusic1.com\\\",\\\"parent_process_cmdline\\\":\\\"\\\",\\\"parent_process_name\\\":\\\"\\\",\\\"process_command_line\\\":\\\"/bin/sh -c sleep 100\\\",\\\"process_executable\\\":\\\"bash\\\",\\\"process_md5\\\":\\\"4002e96f27590cee08ca6bf6d32db707\\\",\\\"process_name\\\":\\\"bash\\\",\\\"process_pid\\\":62635,\\\"process_start\\\":\\\"\\\",\\\"pstree\\\":\\\"[{\\\\\\\"exe\\\\\\\":\\\\\\\"bash\\\\\\\",\\\\\\\"cmdline\\\\\\\":\\\\\\\"/bin/sh -c sleep 100\\\\\\\",\\\\\\\"pid\\\\\\\":62635,\\\\\\\"name\\\\\\\":\\\\\\\"bash\\\\\\\"}]\\\",\\\"threat_intels\\\":[{\\\"field\\\":\\\"dns_question_name\\\",\\\"ioc_type\\\":\\\"domain\\\",\\\"ioc_value\\\":\\\"a.qqmusic1.com\\\",\\\"domain_detail\\\":{\\\"Result\\\":\\\"black\\\",\\\"Basis\\\":[\\\"情报分析\\\"],\\\"RegistrarName\\\":\\\"redacted for privacy\\\",\\\"DNSHistory\\\":[{\\\"IP\\\":\\\"47.238.142.66\\\",\\\"Tags\\\":[\\\"ValleyRAT远控木马\\\",\\\"Winos4.0恶意软件\\\",\\\"树狼远控木马\\\",\\\"银狐组织\\\"],\\\"Location\\\":[\\\"中国\\\",\\\"中国香港\\\",\\\"中国香港\\\"],\\\"ISP\\\":\\\"阿里云\\\",\\\"FirstSeen\\\":\\\"2026-01-28 05:54:05\\\",\\\"LastSeen\\\":\\\"2026-05-31 17:06:04\\\"},{\\\"IP\\\":\\\"8.217.103.109\\\",\\\"Tags\\\":[\\\"代理秒拨\\\"],\\\"Location\\\":[\\\"中国\\\",\\\"中国香港\\\",\\\"中国香港\\\"],\\\"ISP\\\":\\\"阿里云\\\",\\\"FirstSeen\\\":\\\"2026-04-14 15:48:00\\\",\\\"LastSeen\\\":\\\"2026-05-01 05:05:02\\\"},{\\\"IP\\\":\\\"47.75.116.189\\\",\\\"Tags\\\":[\\\"ValleyRAT远控木马\\\",\\\"Winos4.0恶意软件\\\",\\\"银狐组织\\\"],\\\"Location\\\":[\\\"中国\\\",\\\"中国香港\\\",\\\"中国香港\\\"],\\\"ISP\\\":\\\"阿里云\\\",\\\"FirstSeen\\\":\\\"2026-05-30 10:02:11\\\",\\\"LastSeen\\\":\\\"2026-05-30 10:02:11\\\"}]}},{\\\"field\\\":\\\"destination_ip\\\",\\\"ioc_type\\\":\\\"ip\\\",\\\"ioc_value\\\":\\\"13.158.37.189\\\",\\\"ip_detail\\\":{\\\"Result\\\":\\\"suspicious\\\",\\\"Tags\\\":[\\\"银狐组织\\\",\\\"代理秒拨\\\"],\\\"Basis\\\":\\\"情报分析\\\",\\\"ISP\\\":\\\"亚马逊\\\",\\\"Location\\\":[\\\"日本\\\",\\\"东京都\\\",\\\"东京\\\"],\\\"Family\\\":[\\\"银狐\\\"],\\\"Purpose\\\":[\\\"IDC-IP\\\"],\\\"Referer\\\":[{\\\"Domain\\\":\\\"uu.goldeyeuu.io\\\",\\\"Tags\\\":[\\\"Zusy银行木马\\\"],\\\"Time\\\":\\\"2026-05-27 00:00:00\\\"},{\\\"Domain\\\":\\\"wk.goldeyeuu.io\\\",\\\"Tags\\\":[\\\"Zusy银行木马\\\"],\\\"Time\\\":\\\"2026-05-27 00:00:00\\\"}]}}],\\\"timestamp\\\":\\\"2026-05-26T06:06:47.134112932+08:00\\\",\\\"user_name\\\":\\\"root\\\",\\\"working_directory\\\":\\\"\\\"}],\\\"edr_rule_id\\\":\\\"rule-c24e613eff9b86d9\\\",\\\"edr_rule_name\\\":\\\"多字段测试规则-宽列滚动\\\",\\\"execute_user\\\":\\\"root\\\",\\\"harm_description\\\":\\\"黑客在入侵服务器后，为了进行下一步的恶意操作，会执行恶意文件下载、连接矿池、添加公钥、查看敏感文件等操作。\\\",\\\"suggest_scheme\\\":\\\"1.检查恶意进程及非法端口，删除可疑的启动项和定时任务；2.隔离或者删除相关的木马文件；3.对系统进行风险排查，并进行安全加固\\\"}\",\n            \"ContentType\": \"\",\n            \"DetectMode\": \"BALANCED\",\n            \"EventCount\": 1,\n            \"FirstDetectTime\": \"2026-05-25 14:52:56\",\n            \"HarmDesc\": \"黑客在入侵服务器后，为了进行下一步的恶意操作，会执行恶意文件下载、连接矿池、添加公钥、查看敏感文件等操作。\",\n            \"HarmDescSource\": \"default\",\n            \"Id\": 1000000000004319,\n            \"ImageId\": \"\",\n            \"InstanceId\": \"ins-llfob98q\",\n            \"InstanceName\": \"\",\n            \"IntelSource\": \"\",\n            \"IsProVersion\": 1,\n            \"LatestDetectTime\": \"2026-05-25 14:52:56\",\n            \"Level\": \"MEDIUM\",\n            \"ModifyTime\": \"2026-05-28 17:38:45\",\n            \"MultiBehaviorDetectionMode\": \"command\",\n            \"PrivateIp\": \"\",\n            \"PublicIp\": \"\",\n            \"Quuid\": \"8a4eac2e-d5e0-4422-8ab1-5199ccffd9c0\",\n            \"RuleId\": \"908776\",\n            \"RuleName\": \"\",\n            \"RuleType\": 0,\n            \"SourceDesc\": \"规则引擎: AI-Link 智链引擎\\n规则 908776\\n检测模式: 均衡\",\n            \"Status\": \"PENDING\",\n            \"SuggestScheme\": \"1.检查恶意进程及非法端口，删除可疑的启动项和定时任务；2.隔离或者删除相关的木马文件；3.对系统进行风险排查，并进行安全加固\",\n            \"ThreatTags\": [],\n            \"Verdict\": \"\",\n            \"VerdictBasis\": \"\"\n        },\n        \"RequestId\": \"f8998684-7376-4fcf-9c6d-4f20dd0591a0\"\n    }\n}",
+        "title": "DescribeEdrAlertInfo"
+      }
+    ],
+    "DescribeEdrAlertList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdrAlertList\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Order\": \"DESC\",\n    \"By\": \"LatestDetectTime\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AlertCategoryCounts\": [\n            {\n                \"AlertCategory\": \"VIRUS_TROJAN\",\n                \"Count\": 245\n            }\n        ],\n        \"AttackStageCounts\": [\n            {\n                \"AttackStage\": \"\",\n                \"Count\": 3182\n            }\n        ],\n        \"List\": [\n            {\n                \"AlertCategory\": \"VIRUS_TROJAN\",\n                \"AlertId\": \"3d4463f3f4a7bdee02520b0f83a11c6a\",\n                \"AlertSource\": \"HOST\",\n                \"AlertSubType\": \"MALWARE_PROCESS\",\n                \"AppId\": 260146618,\n                \"AttackStage\": \"\",\n                \"ClusterId\": \"\",\n                \"ContainerId\": \"\",\n                \"ContentType\": \"\",\n                \"DetectMode\": \"PRECISE\",\n                \"EventCount\": 2,\n                \"FirstDetectTime\": \"2026-05-30 17:28:21\",\n                \"Id\": 1000000000008822,\n                \"ImageId\": \"\",\n                \"InstanceId\": \"ins-f1vbqysn\",\n                \"InstanceName\": \"VM-11-16-tencentos\",\n                \"IsProVersion\": 1,\n                \"LatestDetectTime\": \"2026-06-03 17:14:29\",\n                \"Level\": \"CRITICAL\",\n                \"PrivateIp\": \"172.20.11.16\",\n                \"PublicIp\": \"129.28.108.211\",\n                \"Quuid\": \"8ceae791-925f-4a77-be58-22e9f7ead617\",\n                \"RuleId\": \"mp_15003\",\n                \"RuleName\": \"\",\n                \"RuleType\": 0,\n                \"Status\": \"PENDING\"\n            }\n        ],\n        \"TotalCount\": 3496,\n        \"RequestId\": \"dd11c00c-d7b4-48ec-8a7b-00e7bcdc909c\"\n    }\n}",
+        "title": "edr告警列表"
+      }
+    ],
     "DescribeExposeAssetCategory": [
       {
         "document": "",
@@ -1650,6 +1682,14 @@
         "title": "下载导出日志"
       }
     ],
+    "ModifyAILinkSetting": [
+      {
+        "document": "修改AI-Link智链引擎配置",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAILinkSetting\n<公共请求参数>\n\n{\n    \"AILinkEnable\": 1,\n    \"RuleScopeDeep\": 1,\n    \"RuleScopeBalanced\": 1,\n    \"RuleScopePrecise\": 1,\n    \"Scope\": 1,\n    \"AutoInclude\": 1,\n    \"MemberId\": [\n        \"mem-68************00\"\n    ],\n    \"Quuids\": [\n        \"66******-****-****-****-**********9d\"\n    ],\n    \"ExcludeQuuids\": [\n        \"36******-****-****-****-**********53\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"95c9fd49-f547-4425-b67a-67bb99396e13\"\n    }\n}",
+        "title": "ModifyAILinkSetting"
+      }
+    ],
     "ModifyAlarmRiskStatus": [
       {
         "document": "",
@@ -1792,6 +1832,22 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmWhitelistStrategy\n<公共请求参数>\n\n{\n    \"WhitelistStrategyId\": \"d13d396a-d798-4229-899f-023da9230532\",\n    \"Rule\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
         "title": "修改Dspm白名单策略"
+      }
+    ],
+    "ModifyEDRRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEDRRule\n<公共请求参数>\n\n{\n    \"RuleType\": 1,\n    \"AlertAction\": 1,\n    \"CWPScope\": 1,\n    \"TCSSScope\": 1,\n    \"Status\": 1,\n    \"MemberId\": [\n        \"mem-tencent-e74488e0ba0cd8fe\"\n    ],\n    \"Name\": \"白名单3\",\n    \"ContentType\": \"ip_outbound\",\n    \"Level\": 1,\n    \"DetectMode\": 1,\n    \"AttackStage\": \"TA0043\",\n    \"RuleID\": \"44ff42d6-70ee-4d20-84ad-5240d8286a07\",\n    \"Description\": \"白名单\",\n    \"DealOldEvents\": 0,\n    \"Md5List\": [\n        \"098f6bcd4621d373cade4e832627b4f6\"\n    ],\n    \"FileName\": [\n        \"L3Vzci9sb2MvYmlu\"\n    ],\n    \"FileDirectory\": [\n        \"L3Vzci9sb2MvYmlu\"\n    ],\n    \"CmdLineRules\": {\n        \"Process\": {\n            \"Exe\": \"/usr/local/bin\",\n            \"CmdLine\": \"/test3\"\n        },\n        \"ParentProcess\": {\n            \"Exe\": \"/usr/local/bin\",\n            \"CmdLine\": \"/test3\"\n        },\n        \"AncestorProcess\": {\n            \"Exe\": \"/usr/local/bin\",\n            \"CmdLine\": \"/test3\"\n        }\n    },\n    \"Domains\": [\n        \"d3d3LmJhaWR1LmNvbQ==\"\n    ],\n    \"OutboundIP\": [\n        \"MS4xLjEuNw==\"\n    ],\n    \"InboundIP\": [\n        \"MS4xLjEuNw==\"\n    ],\n    \"ImageIDs\": [\n        \"sha256: 3599d4bcee082427c6b335a5b0d98892d2f5f0d7b1e5dc49c12e882f0f4a133f\"\n    ],\n    \"ProcessNetworkRules\": {\n        \"Process\": {\n            \"Exe\": \"/usr/local/bin\",\n            \"CmdLine\": \"/test3\"\n        },\n        \"DstIP\": \"1.1.1.1-1.1.1.10\",\n        \"ParentProcess\": {\n            \"Exe\": \"/usr/local/bin\",\n            \"CmdLine\": \"/test3\"\n        },\n        \"DstPorts\": [\n            222\n        ]\n    },\n    \"TargetAppIDs\": [\n        260199983\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8fdad8e2-2e71-4da5-bf68-836743e6231a\"\n    }\n}",
+        "title": "创建策略"
+      }
+    ],
+    "ModifyEdrAlertPermanentIgnore": [
+      {
+        "document": "永久忽略EDR多行为告警",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdrAlertPermanentIgnore\n<公共请求参数>\n\n{\n    \"Targets\": [\n        {\n            \"Id\": 10001,\n            \"AlertId\": \"alert-abc-123\",\n            \"AppId\": 1234567890,\n            \"InstanceId\": \"ins-xxx\"\n        }\n    ],\n    \"MemberId\": [\n        \"mem-68************00\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IgnoredCount\": 1,\n        \"RequestId\": \"8c1f7156-fc01-4905-b286-e08f4db0eec2\"\n    }\n}",
+        "title": "ModifyEdrAlertPermanentIgnore"
       }
     ],
     "ModifyIaCTokenPeriod": [
