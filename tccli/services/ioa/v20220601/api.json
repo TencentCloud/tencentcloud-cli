@@ -1956,21 +1956,21 @@
     "DescribeResourceGrantedAccountGroups": {
       "document": "列表账户组直接关联的资源，私有化调用path为：capi/NGN/DescribeResourceGrantedAccounts",
       "input": "DescribeResourceGrantedAccountGroupsRequest",
-      "name": "DescribeResourceGrantedAccountGroups",
+      "name": "查询授权的分组列表",
       "output": "DescribeResourceGrantedAccountGroupsResponse",
       "status": "online"
     },
     "DescribeResourceGrantedAccounts": {
       "document": "列表账户组直接关联的资源，私有化调用path为：capi/NGN/DescribeResourceGrantedAccounts",
       "input": "DescribeResourceGrantedAccountsRequest",
-      "name": "DescribeResourceGrantedAccounts",
+      "name": "查询直接授权的账号列表",
       "output": "DescribeResourceGrantedAccountsResponse",
       "status": "online"
     },
     "DescribeResourceGrantedVirtualGroups": {
       "document": "列表账户组直接关联的资源，私有化调用path为：capi/NGN/DescribeResourceGrantedVirtualGroups",
       "input": "DescribeResourceGrantedVirtualGroupsRequest",
-      "name": "DescribeResourceGrantedVirtualGroups",
+      "name": "查询授权的账号自定义分组列表",
       "output": "DescribeResourceGrantedVirtualGroupsResponse",
       "status": "online"
     },
@@ -2885,16 +2885,16 @@
       "status": "online"
     },
     "ModifyVirtualDeviceGroups": {
-      "document": "终端自定义分组增减终端，私有化调用path为：/capi/Assets/Device/ModifyVirtualDeviceGroups",
+      "document": "终端自定义分组批量增减终端，私有化调用path为：/capi/Assets/Device/ModifyVirtualDeviceGroups",
       "input": "ModifyVirtualDeviceGroupsRequest",
-      "name": "终端手动自定义分组增减终端",
+      "name": "终端自定义分组批量增减终端",
       "output": "ModifyVirtualDeviceGroupsResponse",
       "status": "online"
     },
     "ModifyVirtualGroupDevices": {
-      "document": "批量处理终端自定义分组增减终端，私有化调用path为：/capi/Assets/ModifyVirtualGroupDevices",
+      "document": "终端树分组下终端批量添加到终端自定义分组，私有化调用path为：/capi/Assets/ModifyVirtualGroupDevices",
       "input": "ModifyVirtualGroupDevicesRequest",
-      "name": "批量处理终端自定义分组增减终端",
+      "name": "终端树分组下终端整体添加到终端自定义分组",
       "output": "ModifyVirtualGroupDevicesResponse",
       "status": "online"
     },
@@ -7276,7 +7276,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "专线分组id",
+          "document": "<p>专线分组id</p>",
           "example": "d1s6tlo7sdg7nlb09ae0",
           "member": "string",
           "name": "GroupId",
@@ -7285,7 +7285,7 @@
         },
         {
           "disabled": false,
-          "document": "专线名称",
+          "document": "<p>专线名称</p>",
           "example": "默认专线名称",
           "member": "string",
           "name": "ConnectorName",
@@ -7294,7 +7294,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启IP透传",
+          "document": "<p>是否开启IP透传</p>",
           "example": "false",
           "member": "bool",
           "name": "IpTransparent",
@@ -7303,7 +7303,7 @@
         },
         {
           "disabled": false,
-          "document": "代理服务器地址",
+          "document": "<p>代理服务器地址</p>",
           "example": "1.1.1.1:8443",
           "member": "string",
           "name": "ProxyServer",
@@ -7312,7 +7312,7 @@
         },
         {
           "disabled": false,
-          "document": "连接器网关接入地址",
+          "document": "<p>连接器网关接入地址</p>",
           "example": "www.example.com",
           "member": "string",
           "name": "AccessAddress",
@@ -7321,7 +7321,7 @@
         },
         {
           "disabled": false,
-          "document": "连接器本地网关启用状态",
+          "document": "<p>连接器本地网关启用状态</p>",
           "example": "open",
           "member": "string",
           "name": "AccessSwitch",
@@ -7330,7 +7330,7 @@
         },
         {
           "disabled": false,
-          "document": "连接器网关接入端口",
+          "document": "<p>连接器网关接入端口</p>",
           "example": "9443",
           "member": "uint64",
           "name": "AccessPort",
@@ -7339,10 +7339,19 @@
         },
         {
           "disabled": false,
-          "document": "代理服务协议类型",
+          "document": "<p>代理服务协议类型</p>",
           "example": "OA或PPv2",
           "member": "string",
           "name": "ProxyProto",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP透传场景用于虚拟IP分配的网段</p>",
+          "example": "192.168.1.0/24",
+          "member": "string",
+          "name": "DeviceCidr",
           "required": false,
           "type": "string"
         }
@@ -7354,7 +7363,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务响应数据",
+          "document": "<p>业务响应数据</p>",
           "example": "无",
           "member": "ConnectorInfo",
           "name": "Data",
@@ -15289,7 +15298,17 @@
     },
     "DescribeConnectorGroupsRequest": {
       "document": "DescribeConnectorGroups请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用于筛选连接器类型，local 值用于过滤出开启本地网关的连接器</p><p>枚举值：</p><ul><li>local： 开启本地网关的连接器</li></ul>",
+          "example": "local",
+          "member": "string",
+          "name": "GroupType",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeConnectorGroupsResponse": {
@@ -18235,7 +18254,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "【必填】设备分组id（需要和OsType匹配），下面是私有化场景下默认id：id-名称-操作系统1\t全网终端\tWin2\t未分组终端\tWin30000000\t服务器\tWin40000101\t全网终端\tLinux40000102\t未分组终端\tLinux40000103\t服务器\tLinux40000201\t全网终端\tmacOS40000202\t未分组终端\tmacOS40000203\t服务器\tmacOS40000401\t全网终端\tAndroid40000402\t未分组终端\tAndroid40000501\t全网终端\tiOS40000502\t未分组终端\tiOSSaaS需要调用分组接口DescribeDeviceChildGroups获取对应分组id",
+          "document": "<p>【必填】设备分组id（需要和OsType匹配），下面是私有化场景下默认id：id-名称-操作系统1    全网终端    Win2    未分组终端    Win30000000    服务器    Win40000101    全网终端    Linux40000102    未分组终端    Linux40000103    服务器    Linux40000201    全网终端    macOS40000202    未分组终端    macOS40000203    服务器    macOS40000401    全网终端    Android40000402    未分组终端    Android40000501    全网终端    iOS40000502    未分组终端    iOSSaaS需要调用分组接口DescribeDeviceChildGroups获取对应分组id</p>",
           "example": "93",
           "member": "int64",
           "name": "GroupId",
@@ -18244,7 +18263,7 @@
         },
         {
           "disabled": false,
-          "document": "【必填】系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)，需要和GroupId或者GroupIds匹配",
+          "document": "<p>【必填】系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本））(只支持32位)，需要和GroupId或者GroupIds匹配</p><p>枚举值：</p><ul><li>0： Windows</li><li>1： Linux</li><li>2： macOS</li><li>4： Android</li><li>5： iOS</li><li>-1： 全系统（SaaS一体化版本）</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -18262,7 +18281,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件参数（字段含义请参考接口返回值）  - Name, 类型String，支持操作：【eq，like，ilike】，支持排序  - UserName, 类型String，支持操作：【eq，like，ilike】，支持排序  - IoaUserName，类型String，支持操作：【eq，like，ilike】，支持排序  - MacAddr, 类型String，支持操作：【eq，like，ilike】，支持排序  - Ip, 类型String，支持操作：【eq，like，ilike】，支持排序  - Mid, 类型String，支持操作：【eq，like，ilike】，支持排序  ，支持排序分页参数  - PageNum 从1开始，小于等于0时使用默认参数 - PageSize 最大值5000，最好不超过100",
+          "document": "<p>过滤条件参数（字段含义请参考接口返回值）  - Name, 类型String，支持操作：【eq，like，ilike】，支持排序  - UserName, 类型String，支持操作：【eq，like，ilike】，支持排序  - IoaUserName，类型String，支持操作：【eq，like，ilike】，支持排序  - MacAddr, 类型String，支持操作：【eq，like，ilike】，支持排序  - Ip, 类型String，支持操作：【eq，like，ilike】，支持排序  - Mid, 类型String，支持操作：【eq，like，ilike】，支持排序  ，支持排序分页参数  - PageNum 从1开始，小于等于0时使用默认参数 - PageSize 最大值5000，最好不超过100</p>",
           "example": "无",
           "member": "Condition",
           "name": "Condition",
@@ -18271,7 +18290,7 @@
         },
         {
           "disabled": false,
-          "document": "设备唯一标识符列表",
+          "document": "<p>设备唯一标识符列表</p>",
           "example": "[\"220b182d3b4f4a84af0d925e6d36a97468764434\"]",
           "member": "string",
           "name": "MidList",
@@ -18286,7 +18305,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页的data数据",
+          "document": "<p>分页的data数据</p>",
           "example": "无",
           "member": "DescribeDeviceHardwareInfoListRspData",
           "name": "Data",
@@ -28883,7 +28902,16 @@
       "members": [
         {
           "disabled": false,
-          "document": "终端唯一标识Mid",
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>终端唯一标识Mid</p>",
           "example": "B454307F6CA03B56E0CFEC44EABF93BB67E56D6F",
           "member": "string",
           "name": "Mid",
@@ -28892,7 +28920,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件、分页参数\n<li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>",
+          "document": "<p>过滤条件、分页参数</p><li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>",
           "example": "无",
           "member": "Condition",
           "name": "Condition",
@@ -28901,7 +28929,7 @@
         },
         {
           "disabled": false,
-          "document": "0:win 2:mac",
+          "document": "<p>0:win 2:mac</p>",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -28916,7 +28944,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务响应数据",
+          "document": "<p>业务响应数据</p>",
           "example": "无",
           "member": "DescribeSoftwareInformationPageData",
           "name": "Data",
@@ -36218,7 +36246,7 @@
         {
           "disabled": false,
           "document": "Filters 条件过滤",
-          "example": "[   {     \"Field\": \"Client.Account\",     \"Values\": [       \"zhangsan\"     ],     \"Operator\": \"like\",     \"Describe\": \"登录账号：zhangsan\"   },   {     \"Field\": \"Client.OSType\",     \"Values\": [       \"0\"     ],     \"Operator\": \"eq\",     \"Describe\": \"终端类型：Windows\"   } ]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "output_required": false,
@@ -40433,7 +40461,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "专线id",
+          "document": "<p>专线id</p>",
           "example": "30DRnq9uXdcpobE6jrsotYMPDiI",
           "member": "string",
           "name": "ConnectorId",
@@ -40442,7 +40470,7 @@
         },
         {
           "disabled": false,
-          "document": "可修改的字段包括GroupId,ConnectorName,IpTransparent(取值open/close),ProxyServer,AccessAddress,AccessPort,ProxyProto",
+          "document": "<p>可修改的字段包括GroupId,ConnectorName,IpTransparent(取值open/close),ProxyServer,AccessAddress,AccessPort,ProxyProto,DeviceCidr</p>",
           "example": "无",
           "member": "FieldInfo",
           "name": "Fields",

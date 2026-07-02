@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mqtt DescribeInstance --cli-unfold-argument  \
-    --InstanceId mqtt-3ja5wo5b
+    --InstanceId mqtt-vv39gdgx
 ```
 
 Output: 
@@ -14,42 +14,45 @@ Output:
 {
     "Response": {
         "AuthorizationPolicy": true,
-        "AuthorizationPolicyLimit": 10,
+        "AuthorizationPolicyLimit": 20,
         "AutoSubscriptionPolicyLimit": 10,
-        "AutomaticActivation": false,
-        "BlockRuleLimit": 5,
+        "AutomaticActivation": true,
+        "BlockRuleLimit": 10,
         "ClientNumLimit": 2000,
-        "CreatedTime": 1772163943,
+        "CreatedTime": 1779417260,
+        "DeleteProtect": false,
         "DestroyTime": 0,
         "DeviceCertificateProvisionType": "API",
-        "ExpiryTime": 0,
-        "InstanceId": "mqtt-3ja5wo5b",
-        "InstanceName": "mqtt-shared-test3",
+        "EventDialect": "V3",
+        "ExpiryTime": 1782095659578,
+        "HashMessagePolicy": "TOPIC_NAME",
+        "InstanceId": "mqtt-vv39gdgx",
+        "InstanceName": "********-0522",
         "InstanceStatus": "RUNNING",
-        "InstanceType": "BASIC",
+        "InstanceType": "PRO",
         "MaxCaNum": 20,
         "MaxSubscription": 60000,
         "MaxSubscriptionPerClient": 30,
-        "MaxTopicFilterPerAutoSubscriptionPolicy": 5,
+        "MaxTopicFilterPerAutoSubscriptionPolicy": 20,
         "MaxTopicFilterPerSharedSubscriptionGroup": 10,
         "MessageEnrichmentRuleLimit": 10,
         "MessageRate": -1,
-        "PayMode": "POSTPAID",
-        "RegistrationCode": "",
+        "PayMode": "PREPAID",
+        "RegistrationCode": "01d6bc37-***********e4d-52571cac864d",
         "Remark": "",
         "RenewFlag": 1,
         "ServerCertLimit": 3,
         "SharedSubscriptionGroupLimit": 20,
-        "SkuCode": "basic_2k",
+        "SkuCode": "pro_2k_1",
         "TopicNum": 0,
-        "TopicNumLimit": 20,
+        "TopicNumLimit": 300,
         "TopicPrefixSlashLimit": 2,
         "TpsLimit": 2000,
         "TransportLayerSecurity": "TLSv1.3,TLSv1.2,TLSv1.1,TLSv1",
         "TrustedCaLimit": 3,
         "UseDefaultServerCert": true,
-        "X509Mode": "TLS",
-        "RequestId": "2202b107-4def-4fa4-a487-0499c77620db"
+        "X509Mode": "BYOC",
+        "RequestId": "13264181-6610-46e1-9971-293cea0b7227"
     }
 }
 ```

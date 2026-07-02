@@ -27057,7 +27057,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片处理相关的prompt。",
+          "document": "<p>图片处理相关的prompt。</p>",
           "example": "one cat and one dog",
           "member": "string",
           "name": "Prompt",
@@ -27068,8 +27068,8 @@
         },
         {
           "disabled": false,
-          "document": "prompt 对应的 role。",
-          "example": "user",
+          "document": "<p>prompt 对应的 role。</p>",
+          "example": "UserPrompt",
           "member": "string",
           "name": "Role",
           "output_required": false,

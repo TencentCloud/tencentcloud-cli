@@ -20,6 +20,7 @@ Output:
 ```
 {
     "Response": {
+        "Count": 10,
         "Items": [
             {
                 "ResourceOwnerName": "昵称",
