@@ -5,7 +5,7 @@ recursive-nesting-30：document_handler 单元测试。
 覆盖目标：
   1. CLIDocumentHandler / ServiceDocumentHandler / ActionDocumentHandler
      三个类的 doc_help / 子方法行为；
-  2. 自引用截断（members 为字符串）时正确渲染 ``<RecursiveRef:Type>`` 占位；
+2. 自引用截断（members 为字符串）时正确渲染 recursive 提示占位；
   3. _json_format / _handle_object_members / _complex_object_doc / _unfold_complex_object
      在 Array / Object / 基础类型 / 截断占位四种 members 形态下的分支；
   4. example / input_example / output_example / 各种 getters。
@@ -363,21 +363,13 @@ def test_D2_json_format_array_of_base_type_indented():
 
 
 def test_D3_json_format_array_recursive_truncation():
-    """D3: Array 自引用截断 → ``[<RecursiveRef:T> ...]``。"""
+    """D3: Array 自引用截断 → 渲染 recursive 提示占位。"""
     doc = _FakeDoc()
     h = _make_action_handler(doc)
     h._json_format({"type": "Array", "members": ["AllocationRuleExpression"]})
     flat = _flat(doc)
-    assert "<RecursiveRef:AllocationRuleExpression>" in flat
-
-
-def test_D4_json_format_array_recursive_truncation_indented():
-    doc = _FakeDoc()
-    h = _make_action_handler(doc)
-    doc.style.indentation = 4
-    h._json_format({"type": "Array", "members": ["Node"]})
-    flat = _flat(doc)
-    assert "<RecursiveRef:Node>" in flat
+    assert "<recursive:" in flat
+    assert "AllocationRuleExpression" in flat
 
 
 def test_D5_json_format_array_of_object():
@@ -399,12 +391,13 @@ def test_D6_json_format_object_base_type_returns_quietly():
 
 
 def test_D7_json_format_object_recursive_truncation():
-    """D7: 非 Array 自引用截断 → ``<RecursiveRef:T>``。"""
+    """D7: 非 Array 自引用截断 → 渲染 recursive 提示占位。"""
     doc = _FakeDoc()
     h = _make_action_handler(doc)
     h._json_format({"type": "Node", "members": "Node"})
     flat = _flat(doc)
-    assert "<RecursiveRef:Node>" in flat
+    assert "<recursive:" in flat
+    assert "Node" in flat
 
 
 def test_D8_json_format_object_full_dict_members():

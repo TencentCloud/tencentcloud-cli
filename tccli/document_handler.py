@@ -177,8 +177,8 @@ class ActionDocumentHandler(BaseDocumentHandler):
                     self.doc.doc_description('[%s ...]' % (param_info["members"]))
             elif isinstance(param_info["members"], str):
                 # 自引用截断占位：members 为类型名字符串（如 "AllocationRuleExpression"），
-                # 直接渲染 RecursiveRef 占位，不再向下展开
-                placeholder = '[<RecursiveRef:%s> ...]' % param_info["members"]
+                # 直接渲染 recursive 提示占位，不再向下展开
+                placeholder = '[<recursive: fill with a JSON object of type %s, same shape as parent> ...]' % param_info["members"]
                 if self.doc.style.indentation > 2:
                     self.doc.write(placeholder)
                 else:
@@ -199,8 +199,9 @@ class ActionDocumentHandler(BaseDocumentHandler):
                 return
             if isinstance(param_info["members"], str):
                 # 自引用截断占位（非 Array 形态）：members 为类型名字符串，
-                # 直接渲染 RecursiveRef 占位
-                self.doc.doc_description('<RecursiveRef:%s>' % param_info["members"])
+                # 直接渲染 recursive 提示占位
+                self.doc.doc_description(
+                    '<recursive: fill with a JSON object of type %s, same shape as parent>' % param_info["members"])
                 return
             self._handle_object_members(param_info["members"], param_info["type"])
 

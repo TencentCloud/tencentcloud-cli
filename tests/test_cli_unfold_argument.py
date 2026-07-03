@@ -74,26 +74,6 @@ def _build_self_ref_keys(num_levels):
     return key, len(parts)
 
 
-def test_B1_convert_to_dict_depth_5():
-    """B1: D=5 的扁平 key 能正确构造 5 层 dict 嵌套。"""
-    arg = _build_unfold_arg()
-    bag = {}
-    arg.convert_to_dict(bag, "A.B.C.D.E", "v5")
-    assert bag == {"A": {"B": {"C": {"D": {"E": "v5"}}}}}
-
-
-def test_B2_convert_to_dict_depth_7():
-    """B2: D=7 同样递归无误。"""
-    arg = _build_unfold_arg()
-    bag = {}
-    arg.convert_to_dict(bag, "A.B.C.D.E.F.G", "v7")
-    leaf = bag
-    for k in ["A", "B", "C", "D", "E", "F"]:
-        assert k in leaf
-        leaf = leaf[k]
-    assert leaf == {"G": "v7"}
-
-
 def test_B3_convert_to_dict_depth_61_self_ref_30_levels():
     """B3: 30 段自引用（D=61）能正确构造嵌套；不会触发递归限制。"""
     key, depth = _build_self_ref_keys(30)

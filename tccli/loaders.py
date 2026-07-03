@@ -344,15 +344,14 @@ class Loader(object):
         param_info[para["name"]]["members"] = member
         return param_info
 
-    def _get_param_info(self, param_model, object_model, visited=None, depth=0, max_depth=20):
-        # visited 沿当前 DFS 路径记录已展开的复合类型名，用于检测自引用/相互引用导致的环
+    def _get_param_info(self, param_model, object_model, visited=None):
+        # visited 沿当前 DFS 路径记录已展开的复合类型名，命中即截断
         if visited is None:
             visited = frozenset()
         param_info = {}
         for para in param_model:
             member = para["member"]
-            # 命中环或超过最大深度：不再向下展开，作为占位 leaf 处理
-            recursive_hit = member not in BASE_TYPE and (member in visited or depth >= max_depth)
+            recursive_hit = member not in BASE_TYPE and member in visited
             if para["type"] == "list":
                 if member not in BASE_TYPE:
                     if recursive_hit:
@@ -363,7 +362,7 @@ class Loader(object):
                             param_info, para, "list",
                             [self._get_param_info(
                                 object_model[member]["members"], object_model,
-                                visited | {member}, depth + 1, max_depth)])
+                                visited | {member})])
                 else:
                     self._filling_param_info(
                         param_info, para, "list", [member])
@@ -377,7 +376,7 @@ class Loader(object):
                             param_info, para, member,
                             self._get_param_info(
                                 object_model[member]["members"], object_model,
-                                visited | {member}, depth + 1, max_depth))
+                                visited | {member}))
                 else:
                     self._filling_param_info(param_info, para, member, member)
         return param_info
@@ -392,35 +391,38 @@ class Loader(object):
         param_model = service_model["objects"]
         return self._get_param_info(param_model[action + "Response"]["members"], param_model)
 
-    def _generate_param_skeleton(self, param_model, name, visited=None, depth=0, max_depth=20):
-        # visited 沿路径记录已展开的复合类型名，用于检测自引用导致的无限递归
+    def _generate_param_skeleton(self, param_model, name, visited=None):
+        # visited 沿路径记录已展开的复合类型名，命中即以字符串占位表示自引用
         if visited is None:
             visited = frozenset()
         param_skeleton = {}
         for para in param_model:
             member = para["member"]
-            recursive_hit = member not in BASE_TYPE and (member in visited or depth >= max_depth)
+            recursive_hit = member not in BASE_TYPE and member in visited
             if para["type"] == "list":
                 if member not in BASE_TYPE:
                     if recursive_hit:
-                        # 自引用：用占位字符串表示该处需要使用 JSON 整体传入
-                        param_skeleton[para["name"]] = ["RecursiveRef<%s>" % member]
+                        param_skeleton[para["name"]] = [
+                            "<recursive: fill '%s' with a JSON object of type %s (self-referenced)>"
+                            % (para["name"], member)]
                     else:
                         param_skeleton[para["name"]] = \
                             [self._generate_param_skeleton(
                                 name[member]["members"], name,
-                                visited | {member}, depth + 1, max_depth)]
+                                visited | {member})]
                 else:
                     param_skeleton[para["name"]] = [PARAM_TYPE_MAP[member]]
             else:
                 if member not in BASE_TYPE:
                     if recursive_hit:
-                        param_skeleton[para["name"]] = "RecursiveRef<%s>" % member
+                        param_skeleton[para["name"]] = \
+                            "<recursive: fill '%s' with a JSON object of type %s (self-referenced)>" \
+                            % (para["name"], member)
                     else:
                         param_skeleton[para["name"]] = \
                             self._generate_param_skeleton(
                                 name[member]["members"], name,
-                                visited | {member}, depth + 1, max_depth)
+                                visited | {member})
                 else:
                     param_skeleton[para["name"]] = PARAM_TYPE_MAP[member]
         return param_skeleton
@@ -461,15 +463,13 @@ class Loader(object):
         return all_param_list
 
     def _recur_get_unfold_param_info(self, param_model, object_model, return_param_list, param_list,
-                                     visited=None, depth=0, max_depth=20):
+                                     visited=None):
         for para in param_model:
-            self._get_unfold_param_info(object_model, return_param_list, param_list, para,
-                                        visited, depth, max_depth)
+            self._get_unfold_param_info(object_model, return_param_list, param_list, para, visited)
         if param_list.pop().isdigit():
             param_list.pop()
 
-    def _get_unfold_param_info(self, object_model, return_param_list, param_list, para,
-                               visited=None, depth=0, max_depth=20):
+    def _get_unfold_param_info(self, object_model, return_param_list, param_list, para, visited=None):
         # visited 沿路径维护，识别自引用类型（如 AllocationRuleExpression.Children）
         if visited is None:
             visited = frozenset()
@@ -478,8 +478,7 @@ class Loader(object):
             param_list.append('0')
         member = para["member"]
         if member not in BASE_TYPE:
-            # 命中环或超出最大深度：把当前路径作为占位 leaf 登记，不再继续展开
-            if member in visited or depth >= max_depth:
+            if member in visited:
                 tmp = copy.deepcopy(param_list)
                 return_param_list.append(tmp)
                 if param_list.pop().isdigit():
@@ -487,7 +486,7 @@ class Loader(object):
                 return
             self._recur_get_unfold_param_info(object_model[member]["members"],
                                               object_model, return_param_list, param_list,
-                                              visited | {member}, depth + 1, max_depth)
+                                              visited | {member})
         else:
             tmp = copy.deepcopy(param_list)
             return_param_list.append(tmp)
