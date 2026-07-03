@@ -5,13 +5,12 @@
 重点覆盖：
 1. 普通（无环）schema：保证修复未引入回归。
 2. 自引用（直接 / 间接 / 兄弟共享类型）schema：核心修复点。
-3. max_depth 兜底：防御深度爆炸。
-4. _generate_param_skeleton：自引用占位 RecursiveRef<T>。
-5. _get_unfold_param_info：自引用接口可被 unfold，不再 RecursionError。
-6. _filling_unfold_param_info：截断点 type=Object，文档附加提示。
-7. 公共方法 get_param_info / get_output_param_info / generate_param_skeleton /
+3. _generate_param_skeleton：自引用处以字符串占位表示（<recursive: fill '<field>' with a JSON object of type <T> (self-referenced)>）。
+4. _get_unfold_param_info：自引用接口可被 unfold，不再 RecursionError。
+5. _filling_unfold_param_info：截断点 type=Object，文档附加提示。
+6. 公共方法 get_param_info / get_output_param_info / generate_param_skeleton /
    get_unfold_param_info 的端到端行为。
-8. 真实仓库数据：billing 含自引用接口、cvm 普通接口。
+7. 真实仓库数据：billing 含自引用接口、cvm 普通接口。
 
 使用 pytest 风格：每个 test_* 函数内 assert，文件末尾不再调用，pytest 自动发现。
 """
@@ -272,10 +271,10 @@ def test_B4_sibling_shared_type_not_falsely_truncated():
 
 
 # ============================================================
-# C. 深度上限（max_depth）
+# C. 深度嵌套（无 max_depth 时全展开）
 # ============================================================
-def test_C1_default_max_depth_allows_normal_nesting():
-    """C1: 默认 max_depth=20 不会误截断常见嵌套（构造深度 5 链）。"""
+def test_C1_deep_nesting_full_expand():
+    """C1: 深度嵌套（无环）应完整展开到最内层。"""
     # 构造 XRequest -> L1 -> L2 -> L3 -> L4 -> L5 -> string
     objects = {"XRequest": {"members": [
         {"name": "F", "type": "object", "member": "L1",
@@ -303,32 +302,11 @@ def test_C1_default_max_depth_allows_normal_nesting():
     assert cur["members"]["Leaf"]["type"] == "String"
 
 
-def test_C2_custom_max_depth_truncates():
-    """C2: 显式传 max_depth=1，第二层就被截断。"""
-    objects = {
-        "L1": {"members": [{"name": "F", "type": "object", "member": "L2",
-                            "document": "", "required": True}]},
-        "L2": {"members": [{"name": "F", "type": "object", "member": "L3",
-                            "document": "", "required": True}]},
-        "L3": {"members": [{"name": "F", "type": "string", "member": "string",
-                            "document": "", "required": True}]},
-    }
-    ld = Loader()
-    # depth 从 0 开始；进入 L2 时 recursive_hit 判断 depth(0) >= max_depth(1)? 否，展开
-    # 进入 L3 时 depth=1 >= max_depth=1 → 截断
-    res = ld._get_param_info(
-        objects["L1"]["members"], objects, max_depth=1)
-    inner = res["F"]["members"]["F"]
-    # 截断后 members 是占位字符串（类型名）
-    assert inner["members"] == "L3"
-    assert inner["type"] == "L3"  # 未做 PARAM_TYPE_MAP 映射，保持 raw 名
-
-
 # ============================================================
 # D. _generate_param_skeleton
 # ============================================================
 def test_D1_skeleton_self_ref_object_emits_placeholder():
-    """D1: Object 自引用 → 第二层出现 'RecursiveRef<T>'。"""
+    """D1: Object 自引用 → 第二层以字符串占位表示。"""
     objects = {
         "LinkRequest": {
             "members": [
@@ -349,17 +327,20 @@ def test_D1_skeleton_self_ref_object_emits_placeholder():
     skeleton = ld.generate_param_skeleton("svc", "v", "Link")
     # Head 完整展开一层
     assert skeleton["Head"]["Val"] == "String"
-    # Head.Next 是自引用截断点
-    assert skeleton["Head"]["Next"] == "RecursiveRef<LinkNode>"
+    # Head.Next 是自引用截断点：字符串占位，含字段名与类型名
+    assert skeleton["Head"]["Next"] == \
+        "<recursive: fill 'Next' with a JSON object of type LinkNode (self-referenced)>"
 
 
 def test_D2_skeleton_self_ref_list_emits_placeholder_list():
-    """D2: List<Self> → ['RecursiveRef<T>'] （在 Tree 自引用模型上验证）。"""
+    """D2: List<Self> → [字符串占位]（在 Tree 自引用模型上验证）。"""
     ld = _make_loader(_self_ref_list_model())
     skeleton = ld.generate_param_skeleton("svc", "v", "Tree")
     # Root 是 Node，展开一层后 Children 出现自引用截断
     assert skeleton["Root"]["Value"] == "String"
-    assert skeleton["Root"]["Children"] == ["RecursiveRef<Node>"]
+    assert skeleton["Root"]["Children"] == [
+        "<recursive: fill 'Children' with a JSON object of type Node (self-referenced)>"
+    ]
 
 
 def test_D3_skeleton_normal_nested_unchanged():
@@ -521,10 +502,12 @@ def test_G2_get_output_param_info_public():
 
 
 def test_G3_generate_param_skeleton_public():
-    """G3: generate_param_skeleton 公共方法 + 自引用占位。"""
+    """G3: generate_param_skeleton 公共方法 + 自引用字符串占位。"""
     ld = _make_loader(_self_ref_list_model())
     skeleton = ld.generate_param_skeleton("svc", "v", "Tree")
-    assert skeleton["Root"]["Children"] == ["RecursiveRef<Node>"]
+    assert skeleton["Root"]["Children"] == [
+        "<recursive: fill 'Children' with a JSON object of type Node (self-referenced)>"
+    ]
 
 
 def test_G4_get_unfold_param_info_public():
@@ -583,10 +566,12 @@ def test_H2_real_billing_self_ref_does_not_crash():
     info = ld.get_param_info("billing", "2018-07-09", chosen)
     assert isinstance(info, dict)
 
-    # 2) generate_param_skeleton 应在自引用处出现占位
+    # 2) generate_param_skeleton 应在自引用处出现字符串占位
     skeleton = ld.generate_param_skeleton("billing", "2018-07-09", chosen)
     flat = repr(skeleton)
-    assert "RecursiveRef<" in flat
+    assert "<recursive: fill " in flat
+    assert "(self-referenced)" in flat
+    assert "AllocationRuleExpression" in flat
 
     # 3) get_unfold_param_info 不抛，且至少有一个截断标记字段
     unfold = ld.get_unfold_param_info("billing", "2018-07-09", chosen)
