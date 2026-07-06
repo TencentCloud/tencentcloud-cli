@@ -20309,7 +20309,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资产实例id",
+          "document": "<p>资产实例id</p>",
           "example": "csb-w7d82d1q",
           "member": "string",
           "name": "AssetId",
@@ -20318,7 +20318,7 @@
         },
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -20327,7 +20327,7 @@
         },
         {
           "disabled": false,
-          "document": "筛选项",
+          "document": "<p>筛选项</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filter",
@@ -20342,7 +20342,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -20352,7 +20352,7 @@
         },
         {
           "disabled": false,
-          "document": "结果集",
+          "document": "<p>结果集</p>",
           "example": "无",
           "member": "DspmAssetDatabaseInfo",
           "name": "DataSet",
@@ -20438,7 +20438,7 @@
         },
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -20776,7 +20776,7 @@
         },
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -21104,7 +21104,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "字典类型（RootCategory：一级分类，IdentifyRule:敏感识别数据项）",
+          "document": "<p>字典类型（RootCategory：一级分类，IdentifyRule:敏感识别数据项）</p>",
           "example": "RootCategory",
           "member": "string",
           "name": "DictType",
@@ -21113,7 +21113,16 @@
         },
         {
           "disabled": false,
-          "document": "筛选条件",
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12e1se11\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>筛选条件</p>",
           "example": "无",
           "member": "WhereFilter",
           "name": "Filters",
@@ -21128,7 +21137,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果集",
+          "document": "<p>结果集</p>",
           "example": "无",
           "member": "DspmDictionary",
           "name": "DataSet",
@@ -21777,7 +21786,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -22674,10 +22683,19 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按照资产类型过滤</p><p>枚举值：</p><ul><li>cdb： cdb</li><li>mariadb： mariadb</li><li>cynosdb： cynosdb</li></ul><p>默认值：默认值为空，即不按照资产类型过滤，返回所有资产信息</p>",
+          "example": "[\"cdb\"]",
+          "member": "string",
+          "name": "AssetType",
           "required": false,
           "type": "list"
         }
@@ -22689,7 +22707,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资产统计信息",
+          "document": "<p>资产统计信息</p>",
           "example": "无",
           "member": "DspmAssetCount",
           "name": "AssetCount",
@@ -22699,7 +22717,7 @@
         },
         {
           "disabled": false,
-          "document": "访问Ip统计信息",
+          "document": "<p>访问Ip统计信息</p>",
           "example": "无",
           "member": "DspmIpCount",
           "name": "IpCount",
@@ -22709,7 +22727,7 @@
         },
         {
           "disabled": false,
-          "document": "用户账号统计信息",
+          "document": "<p>用户账号统计信息</p>",
           "example": "无",
           "member": "DspmAccountCount",
           "name": "UserCount",
@@ -22719,7 +22737,7 @@
         },
         {
           "disabled": false,
-          "document": "风险统计信息",
+          "document": "<p>风险统计信息</p>",
           "example": "无",
           "member": "DspmRiskCount",
           "name": "RiskCount",
@@ -22729,7 +22747,7 @@
         },
         {
           "disabled": false,
-          "document": "资产安全分析统计信息",
+          "document": "<p>资产安全分析统计信息</p>",
           "example": "无",
           "member": "DspmSecurityAnalyseStatusCount",
           "name": "AnalyseAssetStatusCount",
@@ -27444,7 +27462,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-5b28e2760c18f07a\"]",
           "member": "string",
           "name": "MemberId",
@@ -29970,7 +29988,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败",
+          "document": "<p>识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败</p>",
           "example": "3",
           "member": "uint64",
           "name": "Status",
@@ -29980,7 +29998,7 @@
         },
         {
           "disabled": false,
-          "document": "识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败",
+          "document": "<p>识别任务状态 0:未识别 1:识别中 2:识别终止 3:识别成功 4:识别失败</p>",
           "example": "识别中",
           "member": "string",
           "name": "StatusInfo",
@@ -29990,7 +30008,7 @@
         },
         {
           "disabled": false,
-          "document": "识别进度",
+          "document": "<p>识别进度</p>",
           "example": "100.00",
           "member": "float",
           "name": "Progress",
@@ -30000,7 +30018,7 @@
         },
         {
           "disabled": false,
-          "document": "最近扫描时间",
+          "document": "<p>最近扫描时间</p>",
           "example": "2025-09-07 12:00:00",
           "member": "string",
           "name": "LatestScanTime",
@@ -30010,7 +30028,7 @@
         },
         {
           "disabled": false,
-          "document": "识别失败信息",
+          "document": "<p>识别失败信息</p>",
           "example": "数据采集失败",
           "member": "string",
           "name": "ErrorInfo",
@@ -30020,7 +30038,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库数量",
+          "document": "<p>数据库数量</p>",
           "example": "12",
           "member": "uint64",
           "name": "DbCount",
@@ -30030,7 +30048,7 @@
         },
         {
           "disabled": false,
-          "document": "分类id集合",
+          "document": "<p>分类id集合</p>",
           "example": "[106]",
           "member": "uint64",
           "name": "CategoryIds",
@@ -30040,7 +30058,7 @@
         },
         {
           "disabled": false,
-          "document": "分类名称集合",
+          "document": "<p>分类名称集合</p>",
           "example": "[\"个人身份信息\"]",
           "member": "string",
           "name": "CategoryNames",
@@ -30050,7 +30068,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描任务配置",
+          "document": "<p>扫描任务配置</p>",
           "example": "无",
           "member": "DspmSensitiveScanTaskConfig",
           "name": "TaskConfig",
@@ -30060,12 +30078,22 @@
         },
         {
           "disabled": false,
-          "document": "识别结果分类详情",
+          "document": "<p>识别结果分类详情</p>",
           "example": "无",
           "member": "DspmIdentifyCategoryDetail",
           "name": "CategoryDetails",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "455",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -30076,7 +30104,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资产实例id",
+          "document": "<p>资产实例id</p>",
           "example": "cdb-23qhyhxa",
           "member": "string",
           "name": "AssetId",
@@ -30086,7 +30114,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称",
+          "document": "<p>数据库名称</p>",
           "example": "test_db",
           "member": "string",
           "name": "DbName",
@@ -30096,7 +30124,7 @@
         },
         {
           "disabled": false,
-          "document": "总表数",
+          "document": "<p>总表数</p>",
           "example": "10",
           "member": "uint64",
           "name": "TableCount",
@@ -30106,7 +30134,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感表数",
+          "document": "<p>敏感表数</p>",
           "example": "5",
           "member": "uint64",
           "name": "SensitiveTableCount",
@@ -30116,7 +30144,7 @@
         },
         {
           "disabled": false,
-          "document": "数据项id集合",
+          "document": "<p>数据项id集合</p>",
           "example": "[5800]",
           "member": "uint64",
           "name": "RuleIds",
@@ -30126,7 +30154,7 @@
         },
         {
           "disabled": false,
-          "document": "数据项名称集合",
+          "document": "<p>数据项名称集合</p>",
           "example": "[\"姓名\"]",
           "member": "string",
           "name": "RuleNames",
@@ -30136,7 +30164,7 @@
         },
         {
           "disabled": false,
-          "document": "分类id集合",
+          "document": "<p>分类id集合</p>",
           "example": "[356]",
           "member": "uint64",
           "name": "CategoryIds",
@@ -30146,7 +30174,7 @@
         },
         {
           "disabled": false,
-          "document": "分类名称集合",
+          "document": "<p>分类名称集合</p>",
           "example": "[\"个人信息\"]",
           "member": "string",
           "name": "CategoryNames",
@@ -30156,7 +30184,7 @@
         },
         {
           "disabled": false,
-          "document": "分类详情",
+          "document": "<p>分类详情</p>",
           "example": "无",
           "member": "DspmIdentifyCategoryDetail",
           "name": "CategoryDetails",
@@ -31125,6 +31153,16 @@
         },
         {
           "disabled": false,
+          "document": "集群类型（MongoDB），与云接口 DescribeDBInstances 的 ClusterType 一致：0-副本集 1-分片；非 MongoDB 资产固定 0",
+          "example": "0",
+          "member": "int64",
+          "name": "ClusterType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "是否支持敏感数据识别。0 不支持；1 支持",
           "example": "1",
           "member": "int64",
@@ -31599,7 +31637,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据项id",
+          "document": "<p>数据项id</p>",
           "example": "5836",
           "member": "uint64",
           "name": "RuleId",
@@ -31609,7 +31647,7 @@
         },
         {
           "disabled": false,
-          "document": "数据项名称",
+          "document": "<p>数据项名称</p>",
           "example": "QQ",
           "member": "string",
           "name": "RuleName",
@@ -31619,7 +31657,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感级别id",
+          "document": "<p>敏感级别id</p>",
           "example": "8",
           "member": "uint64",
           "name": "LevelId",
@@ -31629,7 +31667,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感级别名称",
+          "document": "<p>敏感级别名称</p>",
           "example": "敏感",
           "member": "string",
           "name": "LevelName",
@@ -31639,7 +31677,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感程度",
+          "document": "<p>敏感程度</p>",
           "example": "10",
           "member": "uint64",
           "name": "LevelScore",
@@ -38000,11 +38038,11 @@
       "usage": "out"
     },
     "MiniTagItem": {
-      "document": "简要的资产标签元素",
+      "document": "简要的资产标签元素，CSIP 内部使用。",
       "members": [
         {
           "disabled": false,
-          "document": "<p>标签颜色</p>",
+          "document": "标签展示颜色。",
           "example": "blue",
           "member": "string",
           "name": "Color",
@@ -38015,7 +38053,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述</p>",
+          "document": "标签描述。",
           "example": "测试自动打标策略打标签",
           "member": "string",
           "name": "Description",
@@ -38026,7 +38064,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>标签ID</p>",
+          "document": "标签 ID。",
           "example": "152",
           "member": "uint64",
           "name": "ID",
@@ -38037,7 +38075,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>标签键</p>",
+          "document": "标签键（中文）。",
           "example": "应用",
           "member": "string",
           "name": "TagKey",
@@ -38048,7 +38086,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>标签值</p>",
+          "document": "标签值（中文）。",
           "example": "门户",
           "member": "string",
           "name": "TagValue",
@@ -38059,7 +38097,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>标签键英文</p>",
+          "document": "标签键（英文）。",
           "example": "App",
           "member": "string",
           "name": "TagKeyEn",
@@ -38070,7 +38108,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>标签值英文</p>",
+          "document": "标签值（英文）。",
           "example": "Index",
           "member": "string",
           "name": "TagValueEn",
@@ -38591,7 +38629,7 @@
         },
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -45021,11 +45059,11 @@
       "usage": "out"
     },
     "Tag": {
-      "document": "标签",
+      "document": "云上原生标签键值对。",
       "members": [
         {
           "disabled": false,
-          "document": "标签名称",
+          "document": "标签键。",
           "example": "name1",
           "member": "string",
           "name": "Name",
@@ -45036,7 +45074,7 @@
         },
         {
           "disabled": false,
-          "document": "标签内容",
+          "document": "标签值。",
           "example": "value1",
           "member": "string",
           "name": "Value",

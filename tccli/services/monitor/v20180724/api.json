@@ -631,11 +631,11 @@
       "status": "online"
     },
     "DescribeProductEventList": {
-      "document": "分页获取产品事件的列表",
+      "document": "已不再使用\n\n分页获取产品事件的列表",
       "input": "DescribeProductEventListRequest",
       "name": "获取产品事件列表",
       "output": "DescribeProductEventListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeProductList": {
       "document": "查询腾讯云可观测平台云产品列表，支持云服务器CVM、云数据库、云消息队列、负载均衡、容器服务、专线等云产品。",
@@ -3992,7 +3992,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模块名，这里填“monitor”",
+          "document": "<p>模块名，这里填“monitor”</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -4001,7 +4001,7 @@
         },
         {
           "disabled": false,
-          "document": "屏蔽策略名称",
+          "document": "<p>屏蔽策略名称</p>",
           "example": "测试屏蔽",
           "member": "string",
           "name": "Name",
@@ -4010,7 +4010,7 @@
         },
         {
           "disabled": false,
-          "document": "监控类型",
+          "document": "<p>监控类型</p>",
           "example": "MT_QCE",
           "member": "string",
           "name": "MonitorType",
@@ -4019,7 +4019,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间即策略类型",
+          "document": "<p>命名空间即策略类型</p>",
           "example": "CKAFKA-CONSUMERGROUP-TOPIC",
           "member": "string",
           "name": "NameSpace",
@@ -4028,7 +4028,7 @@
         },
         {
           "disabled": false,
-          "document": "屏蔽时间类型 FOREVER_SHIELD:永久屏蔽 PERIOD_SHIELD:绝对时间范围屏蔽 LOOP_SHIELD:相对时间范围屏蔽",
+          "document": "<p>屏蔽时间类型 FOREVER_SHIELD:永久屏蔽 PERIOD_SHIELD:绝对时间范围屏蔽 LOOP_SHIELD:相对时间范围屏蔽</p>",
           "example": "LOOP_SHIELD",
           "member": "string",
           "name": "ShieldTimeType",
@@ -4037,7 +4037,7 @@
         },
         {
           "disabled": false,
-          "document": "屏蔽对象",
+          "document": "<p>屏蔽对象</p>",
           "example": "[\"cafka-xxx\", \"cafka-xxx\"]",
           "member": "string",
           "name": "ShieldObject",
@@ -4046,7 +4046,7 @@
         },
         {
           "disabled": false,
-          "document": "屏蔽指标 为空则为全部指标",
+          "document": "<p>屏蔽指标 为空则为全部指标</p>",
           "example": "[\"UnconsumeTopic\", \"MaxOffsetTopic\"]",
           "member": "string",
           "name": "ShieldMetric",
@@ -4055,7 +4055,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间 相对时间范围:36000 绝对时间范围:1648742400 缺省:0",
+          "document": "<p>开始时间 相对时间范围:36000 绝对时间范围:1648742400 缺省:0</p>",
           "example": "36000",
           "member": "uint64",
           "name": "StartTime",
@@ -4064,7 +4064,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间 相对时间范围:72000 绝对时间范围:1649088000 缺省:0",
+          "document": "<p>结束时间 相对时间范围:72000 绝对时间范围:1649088000 缺省:0</p>",
           "example": "72000",
           "member": "uint64",
           "name": "EndTime",
@@ -4073,7 +4073,7 @@
         },
         {
           "disabled": false,
-          "document": "循环开始日期 2022/04/01 缺省:0",
+          "document": "<p>循环开始日期 2022/04/01 缺省:0</p>",
           "example": "1648742400",
           "member": "uint64",
           "name": "LoopStartDate",
@@ -4082,7 +4082,7 @@
         },
         {
           "disabled": false,
-          "document": "循环结束日期 2022/04/05 缺省:0",
+          "document": "<p>循环结束日期 2022/04/05 缺省:0</p>",
           "example": "1649088000",
           "member": "uint64",
           "name": "LoopEndDate",
@@ -4091,7 +4091,7 @@
         },
         {
           "disabled": false,
-          "document": "需要屏蔽的策略ID",
+          "document": "<p>需要屏蔽的策略ID</p>",
           "example": "policy-1111",
           "member": "string",
           "name": "ShieldPolicyId",
@@ -4100,8 +4100,8 @@
         },
         {
           "disabled": false,
-          "document": "需要屏蔽的告警等级，取值范围Warn,Remind,Serious",
-          "example": "Warn",
+          "document": "<p>需要屏蔽的告警等级，取值范围Warn,Remind,Serious</p>",
+          "example": "[\"Warn\"]",
           "member": "string",
           "name": "ShieldAlarmLevel",
           "required": false,
@@ -4109,7 +4109,7 @@
         },
         {
           "disabled": false,
-          "document": "屏蔽类型，为OBJNAME是老版本实例名屏蔽，为POLICY是新版本维度匹配",
+          "document": "<p>屏蔽类型，为OBJNAME是实例屏蔽，为POLICY是策略屏蔽</p>",
           "example": "OBJNAME",
           "member": "string",
           "name": "VersionTag",
@@ -4118,7 +4118,7 @@
         },
         {
           "disabled": false,
-          "document": "屏蔽规则的描述",
+          "document": "<p>屏蔽规则的描述</p>",
           "example": "实例下线，告警策略不再需要",
           "member": "string",
           "name": "Description",
@@ -4127,7 +4127,7 @@
         },
         {
           "disabled": false,
-          "document": " 时区，东八区+8，西八区减8，以此类推\n",
+          "document": "<p>时区，东八区+8，西八区减8，以此类推</p>",
           "example": "5.5",
           "member": "float",
           "name": "TimeZone",
@@ -4136,7 +4136,7 @@
         },
         {
           "disabled": false,
-          "document": "屏蔽事件 为空则为全部指标",
+          "document": "<p>屏蔽事件 为空则为全部指标</p>",
           "example": "[\"cpm:ErrorEvent:SsdTempe\"]",
           "member": "string",
           "name": "ShieldEvent",
@@ -4145,7 +4145,7 @@
         },
         {
           "disabled": false,
-          "document": "是否对指标屏蔽 1=是 0=否",
+          "document": "<p>是否对指标屏蔽 1=是 0=否</p>",
           "example": "1",
           "member": "int64",
           "name": "ShieldMetricFlag",
@@ -4154,7 +4154,7 @@
         },
         {
           "disabled": false,
-          "document": "是否对事件屏蔽 1=是 0=否",
+          "document": "<p>是否对事件屏蔽 1=是 0=否</p>",
           "example": "1",
           "member": "int64",
           "name": "ShieldEventFlag",
@@ -4169,7 +4169,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "屏蔽规则的Id",
+          "document": "<p>屏蔽规则的Id</p>",
           "example": "Shield-xxxx",
           "member": "string",
           "name": "ShieldId",

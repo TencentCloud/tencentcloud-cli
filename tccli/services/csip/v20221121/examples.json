@@ -895,8 +895,8 @@
     "DescribeDspmAssetDatabaseList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetDatabaseList\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-21e9sdha\",\n    \"Filter\": {\n        \"Limit\": 10,\n        \"Offset\": 0\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DataSet\": [\n            {\n                \"AssetId\": \"cdb-c2thbt00\",\n                \"DbName\": \"test_db\",\n                \"TableCount\": 10,\n                \"SensitiveTableCount\": 5,\n                \"RuleIds\": [\n                    5800\n                ],\n                \"RuleNames\": [\n                    \"姓名\"\n                ]\n            }\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetDatabaseList\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-l8hhoqwd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"AssetId\": \"cdb-l8hhoqwd\",\n                \"CategoryDetails\": [\n                    {\n                        \"CategoryId\": 356,\n                        \"CategoryName\": \"个人信息\",\n                        \"RuleSet\": [\n                            {\n                                \"LevelId\": 10,\n                                \"LevelScore\": 1,\n                                \"RuleId\": 5836,\n                                \"RuleName\": \"QQ\"\n                            }\n                        ]\n                    }\n                ],\n                \"CategoryIds\": [\n                    355\n                ],\n                \"CategoryNames\": [\n                    \"个人敏感信息\"\n                ],\n                \"DbName\": \"dspm01\",\n                \"RuleIds\": [\n                    5800\n                ],\n                \"RuleNames\": [\n                    \"姓名\"\n                ],\n                \"SensitiveTableCount\": 1,\n                \"TableCount\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"cac6252a-7788-4606-8431-ab7e57432f72\"\n    }\n}",
         "title": "查询资产数据库信息"
       }
     ],
@@ -1101,9 +1101,9 @@
     "DescribeDspmStatistics": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmStatistics\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
-        "title": "查询Dspm统计信息"
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmStatistics\n<公共请求参数>\n\n{\n    \"AssetType\": [\n        \"cdb\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AnalyseAssetStatusCount\": {\n            \"AssetTypeCountSet\": [\n                {\n                    \"AssetType\": \"cdb\",\n                    \"CloseCount\": 0,\n                    \"ClosingCount\": 0,\n                    \"OpenCount\": 2,\n                    \"OpeningCount\": 0\n                }\n            ],\n            \"CloseCount\": 0,\n            \"ClosingCount\": 0,\n            \"OpenCount\": 2,\n            \"OpeningCount\": 0\n        },\n        \"AssetCount\": {\n            \"AlarmAssetCount\": 2,\n            \"AssetCount\": 2,\n            \"DangerRiskCount\": 0,\n            \"LowRiskCount\": 2,\n            \"RiskAssetCount\": 2\n        },\n        \"IpCount\": {\n            \"IpCount\": 2,\n            \"PrivateIpCount\": 2,\n            \"UnmarkedPublicIpCount\": 0\n        },\n        \"RiskCount\": {\n            \"AccountSensitiveOperation\": 0,\n            \"AttackSurfaceRisk\": 0,\n            \"LoginBehaviorAnomaly\": 35,\n            \"NumOfNewAlarmEvent\": 5,\n            \"NumOfNewConfigRisk\": 0,\n            \"PermissionAnomaly\": 18,\n            \"SQLBehaviorAnomaly\": 0,\n            \"UnprocessedAlarm\": 35,\n            \"UnprocessedRisk\": 18\n        },\n        \"UserCount\": {\n            \"PersonCount\": 2,\n            \"TotalAccountCount\": 4,\n            \"UinAccountCount\": 2\n        },\n        \"RequestId\": \"7f5e0bef-5349-4ec9-8476-7cf3a3bfff59\"\n    }\n}",
+        "title": "cdb测试用例"
       }
     ],
     "DescribeDspmSupportedAssetType": [

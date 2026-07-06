@@ -188,16 +188,10 @@
     ],
     "DescribeJobEvents": [
       {
-        "document": "请求参数不包含 \"RunningOrderIds\"时，接口为查询作业事件接口",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobEvents\n<公共请求参数>\n\n{\n    \"RunningOrderIds\": [\n        1\n    ],\n    \"Types\": [\n        \"1\",\n        \"2\"\n    ],\n    \"EndTimestamp\": 1630933910,\n    \"StartTimestamp\": 1630833910,\n    \"JobId\": \"cql-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RunningOrderIds\": [\n            1\n        ],\n        \"Events\": [\n            {\n                \"RunningOrderId\": 1,\n                \"Description\": \"作业停止事件\",\n                \"Timestamp\": 1630933810,\n                \"Type\": \"11\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"123345be-e89b-52f3-a456-426616274040\"\n    }\n}",
-        "title": "查询作业事件"
-      },
-      {
-        "document": "请求参数不包含 \"RunningOrderIds\"时，接口为查询作业实例ID接口",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobEvents\n<公共请求参数>\n\n{\n    \"WorkSpaceId\": \"space-xxxx\",\n    \"JobId\": \"cql-xxxx\",\n    \"StartTimestamp\": 1747994802,\n    \"EndTimestamp\": 1748513202\n}",
-        "output": "{\n    \"Response\": {\n        \"Events\": null,\n        \"RequestId\": \"a908a65e-aa94-4406-acc4-2aa64edb40c6\",\n        \"RunningOrderIds\": [\n            10,\n            9,\n            8,\n            7\n        ],\n        \"Versions\": [\n            1,\n            2,\n            3\n        ],\n        \"TotalCount\": 0\n    }\n}",
-        "title": "查询作业运行实例ID"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobEvents\n<公共请求参数>\n\n{\n    \"JobId\": \"cql-719492aj\",\n    \"StartTimestamp\": 1776360360,\n    \"EndTimestamp\": 1778952360,\n    \"Types\": [\n        \"1\"\n    ],\n    \"RunningOrderIds\": [\n        2041\n    ],\n    \"WorkSpaceId\": \"space-niu92ssm\",\n    \"Limit\": 50,\n    \"Offset\": 50\n}",
+        "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"CauseAnalysis\": \"\",\n                \"Description\": \"发生作业失败\",\n                \"Message\": \"作业从 RUNNING 状态变为 RESTARTING 状态，异常消息：org.apache.flink.kafka.shaded.org.apache.kafka.common.errors.IllegalSaslStateException: Unexpected handshake request with client mechanism PLAIN, enabled mechanisms are []\\n\",\n                \"RunningOrderId\": 2038,\n                \"Solution\": \"\",\n                \"SolutionLink\": \"https://cloud.tencent.com/document/product/849/64499\",\n                \"Timestamp\": 1778751035,\n                \"Type\": \"21\"\n            }\n        ],\n        \"RunningOrderIds\": [],\n        \"TotalCount\": 21371,\n        \"Versions\": null,\n        \"RequestId\": \"483f0637-17f5-468d-b140-85ff554053cb\"\n    }\n}",
+        "title": "demo"
       }
     ],
     "DescribeJobRuntimeInfo": [

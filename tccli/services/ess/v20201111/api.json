@@ -148,7 +148,7 @@
       "status": "online"
     },
     "CreateConvertTaskApi": {
-      "document": "此接口（CreateConvertTaskApi）用来将word、excel、html、图片、txt类型文件转换为PDF文件。<br />\n前提条件：源文件已经通过 <a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\" target=\"_blank\">文件上传接口</a>完成上传，并得到了源文件的资源Id。<br />\n适用场景1：已经上传了一个word文件，希望将该word文件转换成pdf文件后发起合同\n适用场景2：已经上传了一个jpg图片文件，希望将该图片文件转换成pdf文件后发起合同<br />\n转换文件是一个耗时操作，若想查看转换任务是否完成，可以通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/GetTaskResultApi\" target=\"_blank\">查询转换任务状态</a>接口获取任务状态。<br />\n注: \n1. `支持的文件类型有doc、docx、xls、xlsx、html、jpg、jpeg、png、bmp、txt`\n2. `可通过发起合同时设置预览来检查转换文件是否达到预期效果`",
+      "document": "此接口（CreateConvertTaskApi）用来将word、excel、html、图片、txt类型文件转换为PDF文件。<br />\n前提条件：源文件已经通过 <a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\" target=\"_blank\">文件上传接口</a>完成上传，并得到了源文件的资源Id。<br />\n适用场景1：已经上传了一个word文件，希望将该word文件转换成pdf文件后发起合同\n适用场景2：已经上传了一个jpg图片文件，希望将该图片文件转换成pdf文件后发起合同<br />\n转换文件是一个耗时操作，若想查看转换任务是否完成，可以通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/GetTaskResultApi\" target=\"_blank\">查询转换任务状态</a>接口获取任务状态。<br />\n<font color=\"red\">此接口于 2026 年 12月 31 日下线</font>，请使用新接口: <a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateFileConvertTask\" target=\"_blank\">新建文件转换任务（CreateFileConvertTask）</a><br />\n注: \n1. `支持的文件类型有doc、docx、xls、xlsx、html、jpg、jpeg、png、bmp、txt`\n2. `可通过发起合同时设置预览来检查转换文件是否达到预期效果`",
       "input": "CreateConvertTaskApiRequest",
       "name": "创建文件转换任务",
       "output": "CreateConvertTaskApiResponse",
@@ -208,6 +208,13 @@
       "input": "CreateExtendedServiceAuthInfosRequest",
       "name": "创建企业扩展服务授权",
       "output": "CreateExtendedServiceAuthInfosResponse",
+      "status": "online"
+    },
+    "CreateFileConvertTask": {
+      "document": "此接口（CreateFileConvertTask）用来将word、excel、html、图片、txt类型文件转换为PDF文件。<br />\n<font color=\"red\">原功能接口: </font><a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务（CreateConvertTaskApi）</a><br />\n前提条件：源文件已经通过 <a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\" target=\"_blank\">文件上传接口</a>完成上传，并得到了源文件的资源Id。<br />\n适用场景1：已经上传了一个word文件，希望将该word文件转换成pdf文件后发起合同\n适用场景2：已经上传了一个jpg图片文件，希望将该图片文件转换成pdf文件后发起合同<br />\n转换文件是一个耗时操作，若想查看转换任务是否完成，可以通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/DescribeFileConvertTask\" target=\"_blank\">查询转换任务状态</a>接口获取任务状态。<br />\n注: \n1. `支持的文件类型有doc、docx、xls、xlsx、html、jpg、jpeg、png、bmp、txt`\n2. `可通过发起合同时设置预览来检查转换文件是否达到预期效果`",
+      "input": "CreateFileConvertTaskRequest",
+      "name": "新建文件转换任务",
+      "output": "CreateFileConvertTaskResponse",
       "status": "online"
     },
     "CreateFileCounterSign": {
@@ -728,6 +735,13 @@
       "output": "DescribeExtendedServiceAuthInfosResponse",
       "status": "online"
     },
+    "DescribeFileConvertTask": {
+      "document": "此接口（DescribeFileConvertTask）用来查询转换任务的状态。如需发起转换任务，请使用<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateFileConvertTask\" target=\"_blank\">创建文件转换任务接口</a>进行资源文件的转换操作<br />\n<font color=\"red\">原功能接口: </font><a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/GetTaskResultApi\" target=\"_blank\">查询转换任务状态（GetTaskResultApi）</a><br />\n前提条件：已调用 <a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateFileConvertTask\" target=\"_blank\">创建文件转换任务接口</a>进行文件转换，并得到了返回的转换任务Id。<br />\n\n适用场景：已创建一个文件转换任务，想查询该文件转换任务的状态，或获取转换后的文件资源Id。<br />\n注：\n1. `大文件转换所需的时间可能会比较长`\n2.  `本接口返回的文件资源ID就是PDF资源ID，可以直接用于【用PDF文件创建签署流程】接口发起合同。`",
+      "input": "DescribeFileConvertTaskRequest",
+      "name": "查询文件转换任务状态",
+      "output": "DescribeFileConvertTaskResponse",
+      "status": "online"
+    },
     "DescribeFileCounterSignResult": {
       "document": "文件CA加签任务结果查询接口，用于查询 CreateFileCounterSign接口 发起的异步加签任务。\n\n注意：`此接口为『数字文件CA加签服务』白名单功能，使用前请联系对接的客户经理沟通。`",
       "input": "DescribeFileCounterSignResultRequest",
@@ -932,7 +946,7 @@
       "status": "online"
     },
     "GetTaskResultApi": {
-      "document": "此接口（GetTaskResultApi）用来查询转换任务的状态。如需发起转换任务，请使用<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务接口</a>进行资源文件的转换操作<br />\n前提条件：已调用 <a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务接口</a>进行文件转换，并得到了返回的转换任务Id。<br />\n\n适用场景：已创建一个文件转换任务，想查询该文件转换任务的状态，或获取转换后的文件资源Id。<br />\n注：\n1. `大文件转换所需的时间可能会比较长`\n2.  `本接口返回的文件资源ID就是PDF资源ID，可以直接用于【用PDF文件创建签署流程】接口发起合同。`",
+      "document": "此接口（GetTaskResultApi）用来查询转换任务的状态。如需发起转换任务，请使用<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务接口</a>进行资源文件的转换操作<br />\n前提条件：已调用 <a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务接口</a>进行文件转换，并得到了返回的转换任务Id。<br />\n\n适用场景：已创建一个文件转换任务，想查询该文件转换任务的状态，或获取转换后的文件资源Id。<br />\n<font color=\"red\">此接口于 2026 年 12月 31 日下线</font>，请使用新接口: <a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/DescribeFileConvertTask\" target=\"_blank\">查询文件转换任务状态（DescribeFileConvertTask）</a><br />\n注：\n1. `大文件转换所需的时间可能会比较长`\n2.  `本接口返回的文件资源ID就是PDF资源ID，可以直接用于【用PDF文件创建签署流程】接口发起合同。`",
       "input": "GetTaskResultApiRequest",
       "name": "查询转换任务状态",
       "output": "GetTaskResultApiResponse",
@@ -5812,6 +5826,79 @@
       ],
       "type": "object"
     },
+    "CreateFileConvertTaskRequest": {
+      "document": "CreateFileConvertTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>需要进行转换的资源文件类型<br>支持的文件类型如下：</p><p>枚举值：</p><ul><li>doc： doc</li><li>docx： docx</li><li>xls： xls</li><li>xlsx： xlsx</li><li>jpg： jpg</li><li>jpeg： jpeg</li><li>png： png</li><li>html： html</li><li>bmp： bmp</li></ul>",
+          "example": "docx",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要进行转换操作的文件资源名称，带资源后缀名。</p><p>注:  <code>资源名称长度限制为256个字符</code></p>",
+          "example": "转换文件名称",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要进行转换操作的文件资源Id，通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\" target=\"_blank\">UploadFiles</a>接口获取文件资源Id。</p><p>注:  <code>目前，此接口仅支持单个文件进行转换。</code></p>",
+          "example": "yD3JmUUckpe***********OREzv3aWCT",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFileConvertTaskResponse": {
+      "document": "CreateFileConvertTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接口返回的文件转换任务Id，可以调用接口<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/GetTaskResultApi\" target=\"_blank\">查询转换任务状态</a>获取转换任务的状态和转换后的文件资源Id。</p>",
+          "example": "2026070*******936482",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateFileCounterSignRequest": {
       "document": "CreateFileCounterSign请求参数结构体",
       "members": [
@@ -9872,7 +9959,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "个人用户姓名",
+          "document": "<p>个人用户姓名</p>",
           "example": "张三",
           "member": "string",
           "name": "UserName",
@@ -9881,7 +9968,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li> 中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "<p>证件号码，应符合以下规则</p><ul><li> 中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li><li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。。</li><li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "420528****1929",
           "member": "string",
           "name": "IdCardNumber",
@@ -9890,7 +9977,7 @@
         },
         {
           "disabled": false,
-          "document": "印章名称，长度1-50个字。",
+          "document": "<p>印章名称，长度1-50个字。</p>",
           "example": "财务章",
           "member": "string",
           "name": "SealName",
@@ -9899,7 +9986,7 @@
         },
         {
           "disabled": false,
-          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "document": "<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -9908,7 +9995,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li>\n<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同 中国大陆居民身份证)</li></ul>",
+          "document": "<p>证件类型，支持以下类型</p><ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li><li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同 中国大陆居民身份证)</li></ul>",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -9917,7 +10004,7 @@
         },
         {
           "disabled": true,
-          "document": "该字段已不再使用",
+          "document": "<p>该字段已不再使用</p>",
           "example": "该字段已不再使用",
           "member": "string",
           "name": "SealImage",
@@ -9926,7 +10013,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。",
+          "document": "<p>是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。</p>",
           "example": "false",
           "member": "bool",
           "name": "SealImageCompress",
@@ -9935,7 +10022,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号码；当需要开通自动签时，该参数必传",
+          "document": "<p>手机号码；当需要开通自动签时，该参数必传</p>",
           "example": "187****7831",
           "member": "string",
           "name": "Mobile",
@@ -9943,8 +10030,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "该字段已不再使用",
+          "disabled": true,
+          "document": "<p>该字段已不再使用</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableAutoSign",
@@ -9953,7 +10040,7 @@
         },
         {
           "disabled": false,
-          "document": "印章颜色（参数ProcessSeal=true时生效）\n默认值：BLACK黑色\n取值: \nBLACK 黑色,\nRED 红色,\nBLUE 蓝色。",
+          "document": "<p>印章颜色（参数ProcessSeal=true时生效）<br>默认值：BLACK黑色<br>取值:<br>BLACK 黑色,<br>RED 红色,<br>BLUE 蓝色。</p>",
           "example": "BLACK",
           "member": "string",
           "name": "SealColor",
@@ -9962,7 +10049,7 @@
         },
         {
           "disabled": false,
-          "document": "是否处理印章，默认不做印章处理。\n取值如下：\n<ul>\n<li>false：不做任何处理；</li>\n<li>true：做透明化处理和颜色增强。</li>\n</ul>",
+          "document": "<p>是否处理印章，默认不做印章处理。<br>取值如下：</p><ul><li>false：不做任何处理；</li><li>true：做透明化处理和颜色增强。</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "ProcessSeal",
@@ -9971,7 +10058,7 @@
         },
         {
           "disabled": false,
-          "document": "印章图片文件 id\n取值：\n填写的FileId通过UploadFiles接口上传文件获取。",
+          "document": "<p>印章图片文件 id<br>取值：<br>填写的FileId通过UploadFiles接口上传文件获取。</p>",
           "example": "false",
           "member": "string",
           "name": "FileId",
@@ -9980,7 +10067,7 @@
         },
         {
           "disabled": false,
-          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "document": "<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -9989,7 +10076,7 @@
         },
         {
           "disabled": false,
-          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次 1-不绑定，发起合同时将按标准合同套餐进行扣减\t",
+          "document": "<p>设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次 1-不绑定，发起合同时将按标准合同套餐进行扣减</p>",
           "example": "0",
           "member": "int64",
           "name": "LicenseType",
@@ -9998,7 +10085,7 @@
         },
         {
           "disabled": false,
-          "document": "自动签使用的场景值, 可以选择的场景值如下:\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>\n\n注: `不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN`",
+          "document": "<p>自动签使用的场景值, 可以选择的场景值如下:</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul><p>注: <code>不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN</code></p>",
           "example": "E_PRESCRIPTION_AUTO_SIGN",
           "member": "string",
           "name": "SceneKey",
@@ -10013,7 +10100,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导入生成的印章ID，为32位字符串。\n建议开发者保存此印章ID，开头实名认证后，通过此 ID查询导入的印章。",
+          "document": "<p>导入生成的印章ID，为32位字符串。<br>建议开发者保存此印章ID，开头实名认证后，通过此 ID查询导入的印章。</p>",
           "example": "yDCZHUUnitvronUuNTdBrElW0gOVqCfy",
           "member": "string",
           "name": "SealId",
@@ -13554,6 +13641,91 @@
           "name": "AuthInfoList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileConvertTaskRequest": {
+      "document": "DescribeFileConvertTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>转换任务Id，通过接口<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateFileConvertTask\" target=\"_blank\">创建文件转换任务接口</a>得到的转换任务id</p>",
+          "example": "2026070*******692601",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileConvertTaskResponse": {
+      "document": "DescribeFileConvertTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务Id</p>",
+          "example": "2026070*******692601",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态，需要关注的状态</p><p>枚举值：</p><ul><li>0： NeedTranform - 任务已提交</li><li>4： Processing - 文档转换中</li><li>8： TaskEnd - 任务处理完成</li><li>-2： DownloadFailed - 下载失败</li><li>-6： ProcessFailed - 转换失败</li><li>-13： ProcessTimeout - 转换文件超时</li></ul>",
+          "example": "8",
+          "member": "int64",
+          "name": "TaskStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态描述，需要关注的状态</p><ul><li> **NeedTranform** : 任务已提交</li><li> **Processing** : 文档转换中</li><li> **TaskEnd** : 任务处理完成</li><li> **DownloadFailed** : 下载失败</li><li> **ProcessFailed** : 转换失败</li><li> **ProcessTimeout** : 转换文件超时</li></ul>",
+          "example": "任务处理完成",
+          "member": "string",
+          "name": "TaskMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源Id（即FileId），用于<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles\">用PDF文件创建签署流程</a></p>",
+          "example": "yD3JmUUckpe***********MEcwFQDTq0",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

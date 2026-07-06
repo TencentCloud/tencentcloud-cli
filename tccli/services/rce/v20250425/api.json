@@ -15,6 +15,268 @@
     "serviceShortName": "rce"
   },
   "objects": {
+    "IpLocationInfo": {
+      "document": "IP地理位置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>IP地址所属国家</p>",
+          "example": "CN",
+          "member": "string",
+          "name": "Country",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地址所属省份</p>",
+          "example": "Hong Kong",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地址所属城市</p>",
+          "example": "Hong Kong",
+          "member": "string",
+          "name": "City",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地址所属地区</p>",
+          "example": "中国香港",
+          "member": "string",
+          "name": "District",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地址的经度</p>",
+          "example": "114.184921",
+          "member": "string",
+          "name": "Longitude",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地址的纬度</p>",
+          "example": "22.350617",
+          "member": "string",
+          "name": "Latitude",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地址所属时区</p>",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "Timezone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地址的邮政编码</p>",
+          "example": "999077",
+          "member": "string",
+          "name": "ZipCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IpNetworkInfo": {
+      "document": "IP基础网络信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>互联网服务提供商</p>",
+          "example": "Tencent",
+          "member": "string",
+          "name": "ISP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自治系统号</p>",
+          "example": "132203",
+          "member": "string",
+          "name": "ASN",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP注册组织名称</p>",
+          "example": "Tencent",
+          "member": "string",
+          "name": "Organization",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否保留IP</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsReserved",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否网关IP</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsGateway",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否任播网络</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAnycast",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否移动网络</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsMobile",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否动态IP</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDynamic",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否网络出口</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEgress",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否域名解析</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDNS",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否教育机构</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEducation",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否组织机构</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsInstitution",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否企业专线</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCompany",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否家用宽带</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsResidence",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否云服务</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCloudService",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否基础设施</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsInfrastructure",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否邮箱服务</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsMXServer",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ManageIPPortraitRiskInput": {
       "document": "业务入参",
       "members": [
@@ -156,6 +418,26 @@
           "name": "RiskType",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地理位置信息</p>",
+          "example": "无",
+          "member": "IpLocationInfo",
+          "name": "IpLocation",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP基础网络信息</p>",
+          "example": "无",
+          "member": "IpNetworkInfo",
+          "name": "IpNetwork",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

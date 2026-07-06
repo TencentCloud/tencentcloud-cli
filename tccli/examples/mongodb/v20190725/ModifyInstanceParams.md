@@ -1,14 +1,14 @@
-**Example 1: 修改mongoDB实例参数**
+**Example 1: 修改 MongoDB 实例参数**
 
-用户发起修改其mongoDB的参数配置
+
 
 Input: 
 
 ```
 tccli mongodb ModifyInstanceParams --cli-unfold-argument  \
-    --InstanceId cmgo-9d0p6umb \
-    --InstanceParams.0.Value operation.profiling.slowOpThresholdMs \
-    --InstanceParams.0.Key operation.profiling.slowOpThresholdMs
+    --InstanceId cmgo-g1fh**** \
+    --InstanceParams.0.Key operationProfiling.mode \
+    --InstanceParams.0.Value off
 ```
 
 Output: 
@@ -16,8 +16,8 @@ Output:
 {
     "Response": {
         "Changed": true,
-        "RequestId": "e51b4590-db7b-4835-9899-1f5c33f92fbf",
-        "TaskId": 0
+        "TaskId": 100000745,
+        "RequestId": "87582bb0-3be1-41e8-b54b-ecd8beb9a132"
     }
 }
 ```

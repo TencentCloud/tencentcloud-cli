@@ -22137,6 +22137,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义摘要提示词</p>",
+          "example": "重点描述画面中的变化与视觉特征",
+          "member": "string",
+          "name": "SummaryPrompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

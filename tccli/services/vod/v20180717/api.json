@@ -8715,6 +8715,227 @@
       ],
       "usage": "out"
     },
+    "AigcTextDetail": {
+      "document": "AIGC生文明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>每页条数</p>",
+          "example": "50",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上一页响应中返回的 scroll_token,用于翻下一页</p>",
+          "example": "eyJ0cyI6IjIwMjYtMDctMDFUMDg6MDU6MTEuMjc5WiIsImlkIjoiNmE0NGNhMzgxMDJiNzQzMWZlZmM1NDI2In0",
+          "member": "string",
+          "name": "ScrollToken",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生文详细数据</p>",
+          "example": "无",
+          "member": "AigcTextDetailData",
+          "name": "Data",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcTextDetailData": {
+      "document": "Aigc生文明细数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>请求开始时间(RFC3339)</p>",
+          "example": "2026-06-28T15:28:09Z",
+          "member": "string",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关层请求 ID</p>",
+          "example": "019f0ed8-6116-77a1-a09e-53741629cb8c",
+          "member": "string",
+          "name": "ReqId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端模型返回的对话 ID</p>",
+          "example": "019f0ed8-6116-77a1-a09e-53741629cb8c",
+          "member": "string",
+          "name": "ChatId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回给客户端的 HTTP 状态码</p>",
+          "example": "200",
+          "member": "uint64",
+          "name": "StatusCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名</p>",
+          "example": "gpt-5.4",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>",
+          "example": "251441341",
+          "member": "uint64",
+          "name": "SubAppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>脱敏后的 api_key:前 8 位 + ****(长度 ≤ 8 时原样返回)</p>",
+          "example": "D2JJ0DHJ****",
+          "member": "string",
+          "name": "ApiKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否流式返回</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Stream",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入 token 数</p>",
+          "example": "11",
+          "member": "int64",
+          "name": "InputTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出 token 数</p>",
+          "example": "51",
+          "member": "int64",
+          "name": "OutputTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中 prompt 缓存的 token 数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CacheInputTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总 token 数</p>",
+          "example": "62",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成阶段的tokens/秒</p>",
+          "example": "72.67847569910944",
+          "member": "float",
+          "name": "TPS",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>首字延迟(Time To First Token)</p><p>单位：秒</p>",
+          "example": "1.236",
+          "member": "float",
+          "name": "TTFT",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>端到端总耗时</p><p>单位：秒</p>",
+          "example": "1.937",
+          "member": "float",
+          "name": "Total",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>入口协议:completions / responses / anthropic</p>",
+          "example": "completions",
+          "member": "string",
+          "name": "ApiType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AigcUsageDataItem": {
       "document": "AIGC 统计数据",
       "members": [
@@ -20136,7 +20357,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>AIGC类型。</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li><li>Text： 文本</li><li>Audio： 音频</li><li>SceneAigcVideo： 场景化视频处理</li><li>SceneAigcImage： 场景化图片处理</li><li>SceneAigcTime： 场景化处理次数</li></ul>",
+          "document": "<p>AIGC类型。</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li><li>Text： 文本</li><li>Audio： 音频</li><li>SceneAigcVideo： 场景化视频处理</li><li>SceneAigcImage： 场景化图片处理</li><li>SceneAigcTime： 场景化处理次数</li><li>TextDetail： 文本详细记录</li></ul>",
           "example": "Image",
           "member": "string",
           "name": "AigcType",
@@ -20169,6 +20390,33 @@
           "name": "APIKeys",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询游标</p>",
+          "example": "eyJvZm*******JjMTIzIn0=",
+          "member": "string",
+          "name": "ScrollToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页大小，最大 200，超出会被截断为 200</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生文RequestId，当AigcType为TextDetail时有效。</p>",
+          "example": "019eca07-3ba2-7188-b7dc-52aebc032fae",
+          "member": "string",
+          "name": "ReqId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -20185,6 +20433,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生文详细日志</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AigcTextDetail",
+          "name": "AigcTextDetails",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -27,7 +27,7 @@
     "CreateMemoryPlusSpace": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMemoryPlusSpace\n<公共请求参数>\n\n{\n    \"Name\": \"name2\",\n    \"Description\": \"description2\",\n    \"GoodsNum\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMemoryPlusSpace\n<公共请求参数>\n\n{\n    \"Name\": \"name2\",\n    \"Description\": \"description2\",\n    \"GoodsNum\": 1,\n    \"PayMode\": -1\n}",
         "output": "{\n    \"Response\": {\n        \"SpaceIds\": [\n            \"mem-hn46****\"\n        ],\n        \"RequestId\": \"f8984e85-c84d-4b84-a481-af3ca3dd212f\"\n    }\n}",
         "title": "创建 Memory 实例"
       }

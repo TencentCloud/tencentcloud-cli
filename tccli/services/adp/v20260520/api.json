@@ -35,11 +35,32 @@
       "output": "CreateConversationResponse",
       "status": "online"
     },
+    "CreatePlugin": {
+      "document": "获取插件详情",
+      "input": "CreatePluginRequest",
+      "name": "创建插件",
+      "output": "CreatePluginResponse",
+      "status": "online"
+    },
     "CreateRelease": {
       "document": "新增发布任务",
       "input": "CreateReleaseRequest",
       "name": "新增发布任务",
       "output": "CreateReleaseResponse",
+      "status": "online"
+    },
+    "CreateSkill": {
+      "document": "创建skill",
+      "input": "CreateSkillRequest",
+      "name": "创建skill",
+      "output": "CreateSkillResponse",
+      "status": "online"
+    },
+    "CreateSkillShare": {
+      "document": "提交自定义Skill至企业级共享审批（两段式：提交→审批→回调创建共享任务）",
+      "input": "CreateSkillShareRequest",
+      "name": "创建Skill企业共享",
+      "output": "CreateSkillShareResponse",
       "status": "online"
     },
     "CreateSpace": {
@@ -70,6 +91,13 @@
       "output": "CreateWorkspaceCredentialResponse",
       "status": "online"
     },
+    "DeleteAgent": {
+      "document": "删除Agent",
+      "input": "DeleteAgentRequest",
+      "name": "删除 Agent",
+      "output": "DeleteAgentResponse",
+      "status": "online"
+    },
     "DeleteApp": {
       "document": "删除应用",
       "input": "DeleteAppRequest",
@@ -82,6 +110,27 @@
       "input": "DeleteConversationRequest",
       "name": "删除会话",
       "output": "DeleteConversationResponse",
+      "status": "online"
+    },
+    "DeletePlugin": {
+      "document": "修改插件",
+      "input": "DeletePluginRequest",
+      "name": "删除插件",
+      "output": "DeletePluginResponse",
+      "status": "online"
+    },
+    "DeleteSkill": {
+      "document": "删除自定义 Skill  鉴权：创建者 ∨ (编辑权限 ∧ 删除权限） 拒绝场景：非 Custom 类型 / 已共享 / 安全检测中 / 上架审批中 / 下架审批中",
+      "input": "DeleteSkillRequest",
+      "name": "删除Skill",
+      "output": "DeleteSkillResponse",
+      "status": "online"
+    },
+    "DeleteSkillShare": {
+      "document": "提交共享 Skill 下架审批（v2，两段式：提交→审批→回调下架共享 Skill） 鉴权：删除权 拒绝场景：未共享 / 上架审批中 / 下架审批中",
+      "input": "DeleteSkillShareRequest",
+      "name": "删除Skill企业共享",
+      "output": "DeleteSkillShareResponse",
       "status": "online"
     },
     "DeleteSpace": {
@@ -110,6 +159,13 @@
       "input": "DescribeAgentReleasePreviewListRequest",
       "name": "获取Agent发布列表",
       "output": "DescribeAgentReleasePreviewListResponse",
+      "status": "online"
+    },
+    "DescribeAgentSummaryList": {
+      "document": "查询 Agent 摘要信息列表",
+      "input": "DescribeAgentSummaryListRequest",
+      "name": "查询 Agent 摘要列表",
+      "output": "DescribeAgentSummaryListResponse",
       "status": "online"
     },
     "DescribeApp": {
@@ -196,6 +252,20 @@
       "output": "DescribeSkillCategoryListResponse",
       "status": "online"
     },
+    "DescribeSkillDetail": {
+      "document": "查询skill详情",
+      "input": "DescribeSkillDetailRequest",
+      "name": "查询Skill详情",
+      "output": "DescribeSkillDetailResponse",
+      "status": "online"
+    },
+    "DescribeSkillReferenceList": {
+      "document": "查询某个 Skill 被引用的详情列表（按 SkillRefType 分组：OpenClaw / cloud agent / 企业助手 agent） 鉴权：同 DescribeSkillDetail（能看该 Skill 即可查）",
+      "input": "DescribeSkillReferenceListRequest",
+      "name": "查询Skill引用列表",
+      "output": "DescribeSkillReferenceListResponse",
+      "status": "online"
+    },
     "DescribeSkillSummaryList": {
       "document": "查询 Skill 列表",
       "input": "DescribeSkillSummaryListRequest",
@@ -231,6 +301,20 @@
       "output": "DescribeVariableListResponse",
       "status": "online"
     },
+    "FavoritePlugin": {
+      "document": "收藏插件",
+      "input": "FavoritePluginRequest",
+      "name": "收藏插件",
+      "output": "FavoritePluginResponse",
+      "status": "online"
+    },
+    "FavoriteSkill": {
+      "document": "收藏skill",
+      "input": "FavoriteSkillRequest",
+      "name": "收藏skill",
+      "output": "FavoriteSkillResponse",
+      "status": "online"
+    },
     "ModifyAgent": {
       "document": "修改Agent配置信息",
       "input": "ModifyAgentRequest",
@@ -252,6 +336,20 @@
       "output": "ModifyConversationResponse",
       "status": "online"
     },
+    "ModifyPlugin": {
+      "document": "修改插件",
+      "input": "ModifyPluginRequest",
+      "name": "修改插件",
+      "output": "ModifyPluginResponse",
+      "status": "online"
+    },
+    "ModifySkill": {
+      "document": "Skill修改",
+      "input": "ModifySkillRequest",
+      "name": "修改skill",
+      "output": "ModifySkillResponse",
+      "status": "online"
+    },
     "ModifySpace": {
       "document": "编辑空间",
       "input": "ModifySpaceRequest",
@@ -264,6 +362,13 @@
       "input": "ModifyVariableRequest",
       "name": "更新参数变量",
       "output": "ModifyVariableResponse",
+      "status": "online"
+    },
+    "ReleaseSkill": {
+      "document": "上架skill",
+      "input": "ReleaseSkillRequest",
+      "name": "上架skill",
+      "output": "ReleaseSkillResponse",
       "status": "online"
     },
     "ResetConversation": {
@@ -285,6 +390,20 @@
       "input": "RollbackReleaseRequest",
       "name": "回滚发布",
       "output": "RollbackReleaseResponse",
+      "status": "online"
+    },
+    "UnfavoritePlugin": {
+      "document": "取消收藏插件",
+      "input": "UnfavoritePluginRequest",
+      "name": "取消收藏插件",
+      "output": "UnfavoritePluginResponse",
+      "status": "online"
+    },
+    "UnfavoriteSkill": {
+      "document": "取消收藏skill",
+      "input": "UnfavoriteSkillRequest",
+      "name": "取消收藏skill",
+      "output": "UnfavoriteSkillResponse",
       "status": "online"
     }
   },
@@ -1211,6 +1330,42 @@
         }
       ],
       "usage": "in"
+    },
+    "AgentSummary": {
+      "document": "Agent摘要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>AgentId</p>",
+          "example": "a2865c63-ecf4-4b23-9a21-602d8c838111",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 身份画像</p>",
+          "example": "无",
+          "member": "AgentProfile",
+          "name": "Profile",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高级设置;scope=0 时返回</p>",
+          "example": "无",
+          "member": "AgentAdvancedConfig",
+          "name": "AdvancedConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AgentSystemVariable": {
       "document": "系统参数",
@@ -4294,6 +4449,70 @@
       ],
       "type": "object"
     },
+    "CreatePluginRequest": {
+      "document": "CreatePlugin请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>插件基础资料</p>",
+          "example": "无",
+          "member": "PluginProfile",
+          "name": "Profile",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>插件类型配置</p>",
+          "example": "无",
+          "member": "PluginConfig",
+          "name": "Config",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前空间id</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>插件的工具列表</p>",
+          "example": "无",
+          "member": "Tool",
+          "name": "ToolList",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePluginResponse": {
+      "document": "CreatePlugin返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>插件id</p>",
+          "example": "acb14a04-a049-4a0c-bafa-9670e5d949f2",
+          "member": "string",
+          "name": "PluginId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateReleaseRequest": {
       "document": "CreateRelease请求参数结构体",
       "members": [
@@ -4366,6 +4585,189 @@
           "name": "ReleaseId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSkillRequest": {
+      "document": "CreateSkill请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Skill 创建方式，必填；仅允许</p><p>枚举值：</p><ul><li>1： FILE_UPLOAD（文件上传）</li><li>3： AIGC（AIGC生成）</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "CreateType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>skill包文件地址（zip）；FILE_UPLOAD / AIGC 均必填</p>",
+          "example": "/public/00skill/find-skills-0.1.0.zip",
+          "member": "string",
+          "name": "FileUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>skill展示描述</p>",
+          "example": "skill展示描述示例",
+          "member": "string",
+          "name": "DisplayDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>skill展示名称</p>",
+          "example": "skill-******",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图标地址</p>",
+          "example": "https://example.com/icon.png",
+          "member": "string",
+          "name": "IconUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>skill业务唯一标识名（同企业下唯一）；未传时从skill包解析</p>",
+          "example": "skill",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本号</p>",
+          "example": "1.0.3",
+          "member": "string",
+          "name": "SkillVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本变更说明</p>",
+          "example": "*新版*",
+          "member": "string",
+          "name": "UpdateDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSkillResponse": {
+      "document": "CreateSkill返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建成功后的skillID</p>",
+          "example": "dbc30c0f-**************-98b66bc9de94",
+          "member": "string",
+          "name": "SkillId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建成功后的版本ID</p>",
+          "example": "4f6579d9-**************-115eed7001a4",
+          "member": "string",
+          "name": "VersionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSkillShareRequest": {
+      "document": "CreateSkillShare请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>必填，申请备注（弹窗&quot;申请备注&quot;）</p>",
+          "example": "共享",
+          "member": "string",
+          "name": "ApplyRemark",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>必填，原skill_id</p>",
+          "example": "d2ab4ff6-c0b1-485c-a3dc-7c678a36ebac",
+          "member": "string",
+          "name": "SkillId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间ID，必填</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>必填，被共享的版本id（必须高于已共享版本）</p>",
+          "example": "4f5531c9-abd5-45cc-8647-1aa5844d2924",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSkillShareResponse": {
+      "document": "CreateSkillShare返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否走了审批流（false表示无需审批已直接创建共享任务）</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedApproval",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -4680,6 +5082,51 @@
       ],
       "type": "object"
     },
+    "DeleteAgentRequest": {
+      "document": "DeleteAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用Id</p>",
+          "example": "2059***********9648",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待删除AgentId</p>",
+          "example": "286fe**************************40939",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协作模式；0-Claw模式；1-Multi-Agent模式",
+          "example": "0",
+          "member": "int64",
+          "name": "CollaborationMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentResponse": {
+      "document": "DeleteAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAppRequest": {
       "document": "DeleteApp请求参数结构体",
       "members": [
@@ -4770,6 +5217,133 @@
     "DeleteConversationResponse": {
       "document": "DeleteConversation返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePluginRequest": {
+      "document": "DeletePlugin请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>插件id</p>",
+          "example": "acb14a04-a049-4a0c-bafa-9670e5d949f2",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePluginResponse": {
+      "document": "DeletePlugin返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSkillRequest": {
+      "document": "DeleteSkill请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Skill ID，必填</p>",
+          "example": "c7d41703-2245-4ac2-9228-5d587905596c",
+          "member": "string",
+          "name": "SkillId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间ID，必填</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSkillResponse": {
+      "document": "DeleteSkill返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSkillShareRequest": {
+      "document": "DeleteSkillShare请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>申请备注，必填（弹窗&quot;申请备注&quot;）</p>",
+          "example": "2334",
+          "member": "string",
+          "name": "ApplyRemark",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原 Skill ID，必填（前端无须感知 _shared 后缀）</p>",
+          "example": "d2ab4ff6-c0b1-485c-a3dc-7c678a36ebac",
+          "member": "string",
+          "name": "SkillId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间ID，必填</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原版本 ID，必填（与 CreateSkillShare 上架时传的同一 version_id）</p>",
+          "example": "0a7c8803-66ec-4173-89f0-4790c072087b",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSkillShareResponse": {
+      "document": "DeleteSkillShare返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否走审批流（false 表示无需审批已直接执行下架）</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedApproval",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4969,6 +5543,89 @@
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentSummaryListRequest": {
+      "document": "DescribeAgentSummaryList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询范围；0-单应用查询；1-跨应用查询</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Scope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用Id，Scope=0 时为目标应用ID（必填）；scope=1 时无需填写</p>",
+          "example": "206*************168",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件（name: \"SearchWord\", \"SpaceId\", \"AgentSource\", \"AppId\"）</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数目</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentSummaryListResponse": {
+      "document": "DescribeAgentSummaryList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent摘要信息</p>",
+          "example": "无",
+          "member": "AgentSummary",
+          "name": "AgentList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -6045,6 +6702,107 @@
       ],
       "type": "object"
     },
+    "DescribeSkillDetailRequest": {
+      "document": "DescribeSkillDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "skillID",
+          "example": "9e488e0c-ee1f-4b1c-b745-0e0e6f97e8c3",
+          "member": "string",
+          "name": "SkillId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "空间ID",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本过滤条件(多个Filter之间为AND关系,同一Filter的多个Values为OR关系): - Perspective: 视角枚举,字符串单值,Values 长度必须为 1,多值视为非法;仅作用于详情返回的 version_list 裁剪,不决定接口本身可见性;不传默认 USER (USER=使用者视角,version_list 仅返回已上线版本 / EDITOR=编辑者视角,version_list 返回全部存活版本 / ALL=全量视角,同 EDITOR)",
+          "example": "无",
+          "member": "Filter",
+          "name": "VersionFilterList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSkillDetailResponse": {
+      "document": "DescribeSkillDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "skill详情",
+          "example": "无",
+          "member": "SkillDetail",
+          "name": "SkillDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSkillReferenceListRequest": {
+      "document": "DescribeSkillReferenceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Skill ID，必填</p>",
+          "example": "153f0077-d47d-4080-886c-da3408d70744",
+          "member": "string",
+          "name": "SkillId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间ID，必填</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSkillReferenceListResponse": {
+      "document": "DescribeSkillReferenceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>按 SkillRefType 分组的引用汇总：某类型 total_count = 0 时不入组（不返回空占位） 本期同时落 OPENCLAW / AGENT / CORP_ASSISTANT 三路</p>",
+          "example": "无",
+          "member": "SkillReferenceGroup",
+          "name": "ReferenceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSkillSummaryListRequest": {
       "document": "DescribeSkillSummaryList请求参数结构体",
       "members": [
@@ -6487,6 +7245,78 @@
         }
       ],
       "usage": "both"
+    },
+    "FavoritePluginRequest": {
+      "document": "FavoritePlugin请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>插件id</p>",
+          "example": "adcda186-813b-4d70-bb3f-538a522fe4a5",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前空间id</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FavoritePluginResponse": {
+      "document": "FavoritePlugin返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FavoriteSkillRequest": {
+      "document": "FavoriteSkill请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>SkillId</p>",
+          "example": "8988*******************-ca5d3bdd0ffc",
+          "member": "string",
+          "name": "SkillId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FavoriteSkillResponse": {
+      "document": "FavoriteSkill返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "FieldMask": {
       "document": "FieldMask",
@@ -7708,6 +8538,168 @@
       ],
       "type": "object"
     },
+    "ModifyPluginRequest": {
+      "document": "ModifyPlugin请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>插件id</p>",
+          "example": "acb14a04-a049-4a0c-bafa-9670e5d949f2",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>插件版本号</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "PluginVersion",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>插件基础资料</p>",
+          "example": "无",
+          "member": "PluginProfile",
+          "name": "Profile",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>插件类型配置</p>",
+          "example": "无",
+          "member": "PluginConfig",
+          "name": "Config",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定需要更新的字段，避免全量覆盖</p>",
+          "example": "无",
+          "member": "FieldMask",
+          "name": "UpdateMask",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>插件的工具列表，mcp插件不传</p>",
+          "example": "无",
+          "member": "Tool",
+          "name": "ToolList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPluginResponse": {
+      "document": "ModifyPlugin返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySkillRequest": {
+      "document": "ModifySkill请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>SkillId</p>",
+          "example": "8988f8b5-**************-ca5d3bdd0ffc",
+          "member": "string",
+          "name": "SkillId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>skill描述</p>",
+          "example": "skill_****",
+          "member": "string",
+          "name": "DisplayDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>skill名称</p>",
+          "example": "skill_****",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>skill包文件地址（zip）；传入则触发新版本生成，需与SkillVersion、UpdateDescription配套传入</p>",
+          "example": "public*****il*********etter_v2026*******0*****ckag***ip",
+          "member": "string",
+          "name": "FileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图标地址</p>",
+          "example": "https://qidian-*************************************.myqcloud.com/public/2004076269431393728/image/ZdLTEaZpzWYlNEbNYTRL-2047574044935267136.png",
+          "member": "string",
+          "name": "IconUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>skill版本号（与FileUrl配套传入）</p>",
+          "example": "1.0.6",
+          "member": "string",
+          "name": "SkillVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本变更说明（与FileUrl配套传入）</p>",
+          "example": "*新版*",
+          "member": "string",
+          "name": "UpdateDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySkillResponse": {
+      "document": "ModifySkill返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySpaceRequest": {
       "document": "ModifySpace请求参数结构体",
       "members": [
@@ -8575,6 +9567,51 @@
       ],
       "usage": "both"
     },
+    "ReleaseSkillRequest": {
+      "document": "ReleaseSkill请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>SkillId</p>",
+          "example": "8988*******************-ca5d3bdd0ffc",
+          "member": "string",
+          "name": "SkillId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本ID</p>",
+          "example": "39**5***-*9**-48*********f9d99a31b35",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseSkillResponse": {
+      "document": "ReleaseSkill返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ReleaseSummary": {
       "document": "发布摘要信息",
       "members": [
@@ -9222,6 +10259,45 @@
       ],
       "usage": "both"
     },
+    "SkillDetail": {
+      "document": "skill详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用情况摘要",
+          "example": "无",
+          "member": "SkillReferenceSummary",
+          "name": "ReferenceSummaryList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Skill 摘要",
+          "example": "无",
+          "member": "SkillSummary",
+          "name": "SkillSummary",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本列表",
+          "example": "无",
+          "member": "SkillVersion",
+          "name": "VersionList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SkillNotice": {
       "document": "Skill 异常通知。",
       "members": [
@@ -9360,6 +10436,117 @@
           "name": "UpdateTime",
           "output_required": false,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SkillReferenceGroup": {
+      "document": "同一 SkillRefType 下的引用分组（含总数 + 引用详情列表）。 total_count 始终以未过滤的原始总量为准；reference_summary_list 受二次鉴权开关影响。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>该类型下的引用详情列表</p>",
+          "example": "无",
+          "member": "SkillReferenceSummary",
+          "name": "ReferenceSummaryList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>SKILL_REF_UNKNOWN</td><td>0</td><td>占位</td></tr><tr><td>SKILL_REF_OPENCLAW</td><td>1</td><td>openclaw</td></tr><tr><td>SKILL_REF_AGENT</td><td>2</td><td>agent</td></tr><tr><td>SKILL_REF_CORP_ASSISTANT</td><td>3</td><td>企业助手</td></tr></tbody></table>",
+          "example": "3",
+          "member": "int64",
+          "name": "ReferenceType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该类型下的引用总数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SkillReferenceSummary": {
+      "document": "引用摘要（用于详情页展示，对应DB t_skill_reference）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>关联ID</p>",
+          "example": "206**************04",
+          "member": "string",
+          "name": "ReferenceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联名称</p>",
+          "example": "ClawPro 助手-******",
+          "member": "string",
+          "name": "ReferenceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联类型</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | 占位 |<br>| 1 | ClawPro |<br>| 2 | agent |</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ReferenceType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间名称</p>",
+          "example": "默认工作空间",
+          "member": "string",
+          "name": "SpaceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Reference实例拥有者</p>",
+          "example": "chan******.com",
+          "member": "string",
+          "name": "Owner",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -10020,6 +11207,78 @@
         }
       ],
       "usage": "both"
+    },
+    "UnfavoritePluginRequest": {
+      "document": "UnfavoritePlugin请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>插件id</p>",
+          "example": "adcda186-813b-4d70-bb3f-538a522fe4a5",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前空间id</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnfavoritePluginResponse": {
+      "document": "UnfavoritePlugin返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnfavoriteSkillRequest": {
+      "document": "UnfavoriteSkill请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>SkillId</p>",
+          "example": "8988*******************-ca5d3bdd0ffc",
+          "member": "string",
+          "name": "SkillId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnfavoriteSkillResponse": {
+      "document": "UnfavoriteSkill返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Variable": {
       "document": "变量信息",

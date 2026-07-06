@@ -3733,7 +3733,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业的 ID",
+          "document": "<p>作业的 ID</p>",
           "example": "cql-6w8eab6f",
           "member": "string",
           "name": "JobId",
@@ -3742,7 +3742,7 @@
         },
         {
           "disabled": false,
-          "document": "筛选条件：起始 Unix 时间戳（秒）",
+          "document": "<p>筛选条件：起始 Unix 时间戳（秒）</p>",
           "example": "1630932161",
           "member": "uint64",
           "name": "StartTimestamp",
@@ -3751,7 +3751,7 @@
         },
         {
           "disabled": false,
-          "document": "筛选条件：结束 Unix 时间戳（秒）",
+          "document": "<p>筛选条件：结束 Unix 时间戳（秒）</p>",
           "example": "1631232466",
           "member": "uint64",
           "name": "EndTimestamp",
@@ -3760,7 +3760,7 @@
         },
         {
           "disabled": false,
-          "document": "事件类型。如果不传则返回所有类型的数据",
+          "document": "<p>事件类型。如果不传则返回所有类型的数据</p>",
           "example": "[\"1\"]",
           "member": "string",
           "name": "Types",
@@ -3769,7 +3769,7 @@
         },
         {
           "disabled": false,
-          "document": "运行实例 ID 数组",
+          "document": "<p>运行实例 ID 数组</p>",
           "example": "[1,2,3]",
           "member": "uint64",
           "name": "RunningOrderIds",
@@ -3778,12 +3778,30 @@
         },
         {
           "disabled": false,
-          "document": "工作空间 SerialId",
+          "document": "<p>工作空间 SerialId</p>",
           "example": "space-xxx",
           "member": "string",
           "name": "WorkSpaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回条数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>起始偏移个数</p>",
+          "example": "50",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3793,7 +3811,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "该作业指定范围内的事件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>该作业指定范围内的事件列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "JobEvent",
           "name": "Events",
@@ -3803,7 +3821,7 @@
         },
         {
           "disabled": false,
-          "document": "该作业指定范围内运行实例 ID 数组，仅当入参没有传入 RunningOrderIds 参数时才会返回。倒序输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>该作业指定范围内运行实例 ID 数组，仅当入参没有传入 RunningOrderIds 参数时才会返回。倒序输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[3,2,1]",
           "member": "uint64",
           "name": "RunningOrderIds",
@@ -3813,7 +3831,7 @@
         },
         {
           "disabled": false,
-          "document": "事件的总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件的总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
@@ -3823,7 +3841,7 @@
         },
         {
           "disabled": false,
-          "document": "实例对应的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例对应的版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[1,2,3]",
           "member": "uint64",
           "name": "Versions",
@@ -6190,63 +6208,83 @@
       "members": [
         {
           "disabled": false,
-          "document": "内部定义的事件类型",
+          "document": "<p>内部定义的事件类型</p>",
           "example": "11",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "事件类型的说明文字",
+          "document": "<p>事件类型的说明文字</p>",
           "example": "作业停止",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "事件发生的 Unix 时间戳（秒）",
+          "document": "<p>事件发生的 Unix 时间戳（秒）</p>",
           "example": "1630932161",
           "member": "uint64",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "事件发生时的运行 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件发生时的运行 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "RunningOrderId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "事件的一些可选说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件的一些可选说明</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "作业异常停止，原因是 TaskManager 重启次数达到阈值",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "异常事件的排查手册链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>异常事件的排查手册链接</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://www.example.org/link?id=12357",
           "member": "string",
           "name": "SolutionLink",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常事件原因分析</p>",
+          "example": "MySQL CDC Binlog位点过期：Flink作业尝试读取的binlog位点已被MySQL服务端清理，通常因作业长时间停止或MySQL binlog保留时间过短导致。",
+          "member": "string",
+          "name": "CauseAnalysis",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常事件处理的参考方案</p>",
+          "example": "1. 在MySQL中增大binlog保留时间(expire_logs_days)；2. 作业需要从最新快照重新全量同步：使用无状态恢复重启作业；",
+          "member": "string",
+          "name": "Solution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

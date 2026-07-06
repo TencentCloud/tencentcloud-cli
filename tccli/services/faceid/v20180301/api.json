@@ -1344,7 +1344,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "请求时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求时间戳。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1753091765496",
           "member": "string",
           "name": "ReqTime",
@@ -1354,7 +1354,7 @@
         },
         {
           "disabled": false,
-          "document": "本次活体一比一请求的唯一标记。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体一比一请求的唯一标记。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5139af2d-442c-4500-837f-9683baba76ae",
           "member": "string",
           "name": "Seq",
@@ -1364,7 +1364,7 @@
         },
         {
           "disabled": false,
-          "document": "参与本次活体一比一的身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参与本次活体一比一的身份证号。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "440111199001010000",
           "member": "string",
           "name": "Idcard",
@@ -1374,7 +1374,7 @@
         },
         {
           "disabled": false,
-          "document": "参与本次活体一比一的姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参与本次活体一比一的姓名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "张三",
           "member": "string",
           "name": "Name",
@@ -1384,7 +1384,7 @@
         },
         {
           "disabled": false,
-          "document": "本次活体一比一的相似度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体一比一的相似度。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100.00",
           "member": "string",
           "name": "Sim",
@@ -1394,7 +1394,7 @@
         },
         {
           "disabled": false,
-          "document": "本次活体一比一是否收费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体一比一是否收费</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsNeedCharge",
@@ -1404,7 +1404,7 @@
         },
         {
           "disabled": false,
-          "document": "本次活体一比一最终结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体一比一最终结果。0为成功</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Errcode",
@@ -1414,7 +1414,7 @@
         },
         {
           "disabled": false,
-          "document": "本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "Errmsg",
@@ -1424,7 +1424,7 @@
         },
         {
           "disabled": false,
-          "document": "本次活体结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体结果。0为成功</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Livestatus",
@@ -1434,7 +1434,7 @@
         },
         {
           "disabled": false,
-          "document": "本次活体结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体结果描述。（仅描述用，文案更新时不会通知。）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "Livemsg",
@@ -1444,7 +1444,7 @@
         },
         {
           "disabled": false,
-          "document": "本次一比一结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次一比一结果。0为成功</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Comparestatus",
@@ -1454,7 +1454,7 @@
         },
         {
           "disabled": false,
-          "document": "本次一比一结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次一比一结果描述。（仅描述用，文案更新时不会通知。）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "Comparemsg",
@@ -1464,8 +1464,8 @@
         },
         {
           "disabled": false,
-          "document": "比对库源类型。包括：\n公安商业库；\n业务方自有库（用户上传照片、客户的混合库、混合部署库）；\n二次验证库；\n人工审核库；\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "公安商业库",
+          "document": "<p>比对库源类型。包括：商业库；业务方自有库（用户上传照片、客户的混合库、混合部署库）；二次验证库；人工审核库；</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "商业库",
           "member": "string",
           "name": "CompareLibType",
           "output_required": true,
@@ -1474,7 +1474,7 @@
         },
         {
           "disabled": false,
-          "document": "枚举活体检测类型：\n0：未知\n1：数字活体\n2：动作活体\n3：静默活体\n4：一闪活体（动作+光线）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>枚举活体检测类型：<br>0：未知<br>1：数字活体<br>2：动作活体<br>3：静默活体<br>4：一闪活体（动作+光线）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "LivenessMode",

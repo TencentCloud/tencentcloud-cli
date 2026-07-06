@@ -122,10 +122,10 @@
     ],
     "GetServiceStatus": [
       {
-        "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=GetServiceStatus\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AccessKeyEscrowEnabled\": true,\n        \"ExpireTime\": \"2024-09-10 10:19:21\",\n        \"InvalidType\": 1,\n        \"PayModel\": \"Postpaid_SSM\",\n        \"QPSLimit\": 0,\n        \"RenewFlag\": 0,\n        \"RequestId\": \"b370f1c4-3e1c-4922-8ab2-6f717240f6ad\",\n        \"ResourceId\": \"test-rsid\",\n        \"SecretLimit\": 0,\n        \"ServiceEnabled\": true,\n        \"TotalCount\": 0\n    }\n}",
-        "title": "获取服务开启状态"
+        "document": "获取 SSM 服务开通状态",
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetServiceStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AccessKeyEscrowEnabled\": true,\n        \"ExpireTime\": \"2027-02-01 19:30:31\",\n        \"InvalidType\": 1,\n        \"PayModel\": \"Prepaid_SSM\",\n        \"QPSLimit\": 1000,\n        \"RenewFlag\": 1,\n        \"RequestId\": \"9a405d03-5cff-452b-bf0a-8576e2c1e1be\",\n        \"ResourceId\": \"SSM-Prepaid-rt64sffg\",\n        \"SecretLimit\": 5900,\n        \"ServiceEnabled\": true,\n        \"TotalCount\": 5541\n    }\n}",
+        "title": "获取 SSM 服务开通状态"
       }
     ],
     "ListSecretVersionIds": [

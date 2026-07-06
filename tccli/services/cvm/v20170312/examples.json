@@ -51,8 +51,8 @@
     "CreateDisasterRecoverGroup": [
       {
         "document": "创建分散置放群组",
-        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDisasterRecoverGroup\n<公共请求参数>\n\n{\n    \"Name\": \"MySWDisasterRecoverGroup\",\n    \"Type\": \"SW\",\n    \"Affinity\": 3,\n    \"TagSpecification\": [\n        {\n            \"ResourceType\": \"ps\",\n            \"Tags\": [\n                {\n                    \"Key\": \"MySWDisasterRecoverGroupKey\",\n                    \"Value\": \"MySWDisasterRecoverGroupValue\"\n                }\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2025-11-17 07:43:06\",\n        \"CurrentNum\": 0,\n        \"CvmQuotaTotal\": 20,\n        \"DisasterRecoverGroupId\": \"ps-39lmgkht\",\n        \"Name\": \"MySWDisasterRecoverGroup\",\n        \"RequestId\": \"59216e4c-c24d-46f8-bc88-ebc5081a595f\",\n        \"Type\": \"SW\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDisasterRecoverGroup\n<公共请求参数>\n\n{\n    \"Name\": \"MySWDisasterRecoverGroup\",\n    \"Type\": \"HOST\",\n    \"Affinity\": 3,\n    \"Strategy\": \"PARTITION\",\n    \"PartitionCount\": 2,\n    \"TagSpecification\": [\n        {\n            \"ResourceType\": \"ps\",\n            \"Tags\": [\n                {\n                    \"Key\": \"MySWDisasterRecoverGroupKey\",\n                    \"Value\": \"MySWDisasterRecoverGroupValue\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2025-11-17 07:43:06\",\n        \"CurrentNum\": 0,\n        \"CvmQuotaTotal\": 20,\n        \"DisasterRecoverGroupId\": \"ps-39lmgkht\",\n        \"Name\": \"MySWDisasterRecoverGroup\",\n        \"RequestId\": \"59216e4c-c24d-46f8-bc88-ebc5081a595f\",\n        \"Type\": \"HOST\",\n        \"Strategy\": \"PARTITION\",\n        \"PartitionCount\": 2\n    }\n}",
         "title": "创建分散置放群组"
       }
     ],

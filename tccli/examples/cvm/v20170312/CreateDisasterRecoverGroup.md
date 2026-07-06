@@ -7,8 +7,10 @@ Input:
 ```
 tccli cvm CreateDisasterRecoverGroup --cli-unfold-argument  \
     --Name MySWDisasterRecoverGroup \
-    --Type SW \
+    --Type HOST \
     --Affinity 3 \
+    --Strategy PARTITION \
+    --PartitionCount 2 \
     --TagSpecification.0.ResourceType ps \
     --TagSpecification.0.Tags.0.Key MySWDisasterRecoverGroupKey \
     --TagSpecification.0.Tags.0.Value MySWDisasterRecoverGroupValue
@@ -24,7 +26,9 @@ Output:
         "DisasterRecoverGroupId": "ps-39lmgkht",
         "Name": "MySWDisasterRecoverGroup",
         "RequestId": "59216e4c-c24d-46f8-bc88-ebc5081a595f",
-        "Type": "SW"
+        "Type": "HOST",
+        "Strategy": "PARTITION",
+        "PartitionCount": 2
     }
 }
 ```

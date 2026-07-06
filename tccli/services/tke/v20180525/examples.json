@@ -2176,6 +2176,14 @@
         "title": "回滚集群应用"
       }
     ],
+    "RotateClusterToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RotateClusterToken\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8859cd95-1c52-48fd-a100-600d9bfea6b1\"\n    }\n}",
+        "title": "轮转集群的token"
+      }
+    ],
     "RunPrometheusInstance": [
       {
         "document": "",

@@ -1,48 +1,42 @@
 **Example 1: 查询日志**
 
-查询http响应状态码（http_code）为200的日志
+查询protocol为HTTP的日志
 
 Input: 
 
 ```
 tccli cfw SearchLog --cli-unfold-argument  \
-    --TopicId 601c2a87-ca8e-49c9-xxxx-27286a970db5 \
-    --From 1679901909686 \
-    --To 1679902809686 \
-    --Query http_code:"200" \
+    --TopicId cfw_netflow_border \
+    --From 1782131614167 \
+    --To 1782736414167 \
+    --Query protocol:HTTP \
+    --SamplingRate 1 \
+    --SyntaxRule 1 \
     --Limit 1 \
+    --Context  \
     --Sort desc \
-    --UseNewAnalysis True \
-    --SyntaxRule 1
+    --UseNewAnalysis True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Context": "Y29udGV4dC0zZDVmZGI2NC1jNDZkLTQ2NzktYWM2OC1jYzg2NjUxYmVlMWExNjc5OTAyODEwNDM0",
-        "ListOver": false,
         "Analysis": false,
-        "ColNames": [],
-        "Columns": [],
+        "Context": "Y29udGV4dC0wMmUyNmVmYi05OTZiLTQzNTctYTA1Ny03OGY1NmU3ZmRmNzUxNzgyNzM2NDc1NzE5",
+        "ListOver": false,
+        "RequestId": "e660b374-1538-4631-be77-c9a6e6680180",
         "Results": [
             {
-                "Time": 1679902806070,
-                "TopicId": "601c2a87-ca8e-49c9-xxxx-27286a970db5",
-                "TopicName": "CDN Demo访问日志日志主题_10000100xxxx",
-                "Source": "",
                 "FileName": "",
-                "HostName": "",
-                "PkgId": "",
-                "PkgLogId": "",
-                "LogJson": "{\"referer\":\"http://qwunsag.2022.qq.com/prizes?activity_code=AVGCHaQFX02Eb\",\"method\":\"GET\",\"isp\":\"中国联通\",\"remote_port\":\"45088\",\"ua\":\"Mozilla/5.0 (Linux; Android 9; INE-AL00 Build/HUAWEIINE-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.99 XWEB/3211 MMWEBSDK/20210601 Mobile Safari/537.36 MMWEBID/6389 MicroMessenger/8.0.11.1980(0x28000B5B) Process/toolsmp WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64\",\"uuid\":\"acf1010c853f4a24bb3e92cc34e283e2\",\"version\":\"1\",\"file_size\":\"186358\",\"url\":\"/loxtxt/979884858.png\",\"request_range\":\"-\",\"rsp_size\":\"186830\",\"hit\":\"hit\",\"request_time\":\"2808\",\"http_code\":\"200\",\"param\":\"-\",\"sys_address\":\"9.130.154.208\",\"proto\":\"HTTPS\",\"host\":\"test.2022.cls.cn\",\"sys_datasource\":\"cq.3.4.v1.2.17\",\"client_ip\":\"116.116.247.167\",\"time\":\"1679902806070\",\"app_id\":\"1302700768\",\"prov\":\"内蒙古自治区\",\"timestamp\":\"2023-03-27T15:40:06+08:00\"}",
+                "LogJson": "{\"instance_id\":\"ins-gke2r5e0\",\"src_ip\":\"119.**.**.112\",\"dst_ip\":\"103.**.**.115\",\"src_port\":56980,\"dst_port\":80,\"protocol\":\"HTTP\",\"direction\":0,\"dst_domain\":\"www.**.com\",\"in_pkt_count\":8,\"in_pkt_len\":2998,\"out_pkt_count\":8,\"out_pkt_len\":416,\"total_pkt_count\":16,\"total_pkt_len\":3414,\"ti_tag\":\"\",\"start_time\":\"2026-06-29 14:12:11\",\"end_time\":\"2026-06-29 14:12:24\",\"supplier\":\"baidu.com\",\"src_country\":\"\",\"dst_country\":\"中国\",\"src_province\":\"\",\"dst_province\":\"广东省\",\"src_city\":\"\",\"dst_city\":\"\",\"address\":\"广东省\",\"src_lat\":0,\"dst_lat\":0,\"src_lon\":0,\"dst_lon\":0,\"insert_time\":1782713553,\"count\":0,\"url\":\"\",\"domain_flag\":0,\"port_status\":0,\"level\":0,\"bot_flag\":0,\"mode\":1,\"tcp_flag\":31,\"timestamp\":\"2026-06-29 14:12:11\",\"is_serial\":1,\"pkt_flags\":\"0212101810\",\"pkt_dir\":\"01001\",\"action_src\":1,\"acl_uuid\":\"\",\"acl_rule_id\":0,\"acl_detail\":\"\"}",
+                "PkgId": "5229A51C7BECDA416A3E478F-00000000000579C7",
+                "PkgLogId": "29622640",
                 "RawLog": "",
-                "IndexStatus": ""
+                "Time": 1782713531000,
+                "TopicId": "cfw_netflow_border"
             }
         ],
-        "AnalysisResults": [],
-        "AnalysisRecords": [],
-        "RequestId": "79f593e5-1374-4463-xxxx-c49d0b3c5290",
         "SamplingRate": 0
     }
 }

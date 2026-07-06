@@ -1757,6 +1757,13 @@
       "output": "RollbackClusterReleaseResponse",
       "status": "online"
     },
+    "RotateClusterToken": {
+      "document": "轮转集群的token",
+      "input": "RotateClusterTokenRequest",
+      "name": "轮转集群token",
+      "output": "RotateClusterTokenResponse",
+      "status": "online"
+    },
     "RunPrometheusInstance": {
       "document": "初始化TMP实例，开启集成中心时调用",
       "input": "RunPrometheusInstanceRequest",
@@ -16745,7 +16752,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-65r1c5nu",
           "member": "string",
           "name": "ClusterId",
@@ -16754,7 +16761,7 @@
         },
         {
           "disabled": false,
-          "document": "取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除",
+          "document": "<p>取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除</p>",
           "example": "true",
           "member": "bool",
           "name": "DeleteLogSetAndTopic",
@@ -16889,7 +16896,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-2r8kckml",
           "member": "string",
           "name": "ClusterId",
@@ -16898,12 +16905,21 @@
         },
         {
           "disabled": false,
-          "document": "取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除",
+          "document": "<p>取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除</p>",
           "example": "true",
           "member": "bool",
           "name": "DeleteLogSetAndTopic",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型 tke/eks</p><p>默认值：tke</p>",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18125,7 +18141,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-65r1c5nu",
           "member": "string",
           "name": "ClusterId",
@@ -18134,7 +18150,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志集ID，可以通过cls接口或者控制台获取",
+          "document": "<p>CLS日志集ID，可以通过cls接口或者控制台获取</p>",
           "example": "d93d9f91-a27a-4756-8575-e367fe885556",
           "member": "string",
           "name": "LogsetId",
@@ -18143,7 +18159,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志主题ID，可以通过cls接口或者控制台获取",
+          "document": "<p>CLS日志主题ID，可以通过cls接口或者控制台获取</p>",
           "example": "11305b73-15f1-42fe-9256-5b1495e40zx121",
           "member": "string",
           "name": "TopicId",
@@ -18152,10 +18168,19 @@
         },
         {
           "disabled": false,
-          "document": "topic所在region，默认为集群当前region",
+          "document": "<p>topic所在region，默认为集群当前region</p>",
           "example": "ap-chengdu",
           "member": "string",
           "name": "TopicRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型 tke/eks</p><p>默认值：tke</p>",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
           "required": false,
           "type": "string"
         }
@@ -18341,7 +18366,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-cluster",
           "member": "string",
           "name": "ClusterId",
@@ -18350,7 +18375,7 @@
         },
         {
           "disabled": false,
-          "document": "cls服务的logsetID，通过cls接口或者控制台获取",
+          "document": "<p>cls服务的logsetID，通过cls接口或者控制台获取</p>",
           "example": "cddc14ab-947c-4326-87b9-7b226f371xxxx",
           "member": "string",
           "name": "LogsetId",
@@ -18359,7 +18384,7 @@
         },
         {
           "disabled": false,
-          "document": "cls服务的topicID，通过cls接口或者控制台获取",
+          "document": "<p>cls服务的topicID，通过cls接口或者控制台获取</p>",
           "example": "11305b73-15f1-42fe-9256-5b1495e4xxzzx",
           "member": "string",
           "name": "TopicId",
@@ -18368,10 +18393,19 @@
         },
         {
           "disabled": false,
-          "document": "topic所在地域，默认为集群所在地域",
+          "document": "<p>topic所在地域，默认为集群所在地域</p>",
           "example": "ap-chengdu",
           "member": "string",
           "name": "TopicRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型 tke/eks</p><p>默认值：tke</p>",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
           "required": false,
           "type": "string"
         }
@@ -28296,6 +28330,23 @@
       ],
       "type": "object"
     },
+    "RotateClusterTokenRequest": {
+      "document": "RotateClusterToken请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RotateClusterTokenResponse": {
+      "document": "RotateClusterToken返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RouteInfo": {
       "document": "集群路由对象",
       "members": [
@@ -30045,11 +30096,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-65r1c5nu",
           "member": "string",
           "name": "ClusterId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型tke/eks</p><p>默认值：tke</p>",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
           "type": "string"
         }
       ],

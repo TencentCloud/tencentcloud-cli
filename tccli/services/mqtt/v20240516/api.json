@@ -6262,7 +6262,7 @@
         {
           "disabled": false,
           "document": "服务地址",
-          "example": " http://127.0.0.1",
+          "example": "http://127.0.0.1",
           "member": "string",
           "name": "Endpoint",
           "required": false,
@@ -6339,6 +6339,15 @@
           "name": "Body",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "连接UserProperty作为Header转发，默认false",
+          "example": "false",
+          "member": "bool",
+          "name": "IncludingUserProperties",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

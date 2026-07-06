@@ -8436,7 +8436,7 @@
         {
           "disabled": false,
           "document": "需要关联的标签列表。",
-          "example": "[{\"Key\": \"key\", \"Value\": \"value\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -8466,6 +8466,15 @@
           "example": "center_egress1",
           "member": "string",
           "name": "Egress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅用于申请特殊可用区带宽包，如：TEZ/EZ边缘可用区，CDZ专属可用区。具体可选可用区信息，请参考[DescribeDesignatedZones](https://cloud.tencent.com/document/product/215/128830)接口查询结果。",
+          "example": "ap-guangzhou-tez-nanning-1",
+          "member": "string",
+          "name": "DesignatedZone",
           "required": false,
           "type": "string"
         }
@@ -20208,7 +20217,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "内网保留IP唯一ID 列表",
+          "document": "<p>内网保留IP唯一ID 列表</p>",
           "example": "[\"rsvip-pvqgv9vi\", \"rsvip-calhlymy\"]",
           "member": "string",
           "name": "ReserveIpIds",
@@ -20217,8 +20226,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定ReserveIpIds和Filters。\n\nreserve-ip-id  - String - （过滤条件）内网保留 IP唯一 ID，形如：rsvip-pvqgv9vi。\nvpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。\nsubnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。\naddress-ip - String - （过滤条件）内网保留 IP 地址，形如：192.168.0.10。\nip-type - String - （过滤条件）业务类型 ipType，0。\nname - String - （过滤条件）名称。\nstate - String - （过滤条件）状态，可选值：Bind， UnBind。\nresource-id - String - （过滤条件）绑定的实例资源，形如：eni-059qmnif。\ntag-key - String -（过滤条件）按照标签键进行过滤。\ntag:tag-key - String - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。\n",
-          "example": "[             {                 \"Name\": \"state\",                 \"Values\": [ \"UnBind\" ]             }         ]",
+          "document": "<p>过滤条件，参数不支持同时指定ReserveIpIds和Filters。</p><p>reserve-ip-id  - String - （过滤条件）内网保留 IP唯一 ID，形如：rsvip-pvqgv9vi。<br>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。<br>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。<br>reserve-address-ip - String - （过滤条件）内网保留 IP 地址，形如：192.168.0.10。<br>ip-type - String - （过滤条件）业务类型 ipType，0。<br>name - String - （过滤条件）名称。<br>state - String - （过滤条件）状态，可选值：Bind， UnBind。<br>resource-id - String - （过滤条件）绑定的实例资源，形如：eni-059qmnif。<br>tag-key - String -（过滤条件）按照标签键进行过滤。<br>tag:tag-key - String - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</p>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -20226,7 +20235,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量。",
+          "document": "<p>偏移量。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -20235,7 +20244,7 @@
         },
         {
           "disabled": false,
-          "document": "请求对象个数。",
+          "document": "<p>请求对象个数。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -20250,8 +20259,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "内网保留 IP返回信息。",
-          "example": "[       {         \"CreatedTime\": \"2024-11-14 21:26:03\",         \"Description\": \"\",         \"IpType\": 0,         \"Name\": \"\",         \"ReserveIpAddress\": \"10.0.5.44\",         \"ReserveIpId\": \"rsvip-prrua2m6\",         \"ResourceId\": \"\",         \"State\": \"UnBind\",         \"TagSet\": [           {             \"Key\": \"qcs:tag:createdBy\",             \"Value\": \"Root:700000328799\"           },           {             \"Key\": \"ivan_tag\",             \"Value\": \"hello\"           }         ],         \"VpcId\": \"vpc-mcqaoy0f\"       }     ]",
+          "document": "<p>内网保留 IP返回信息。</p>",
+          "example": "无",
           "member": "ReserveIpAddressInfo",
           "name": "ReserveIpAddressSet",
           "output_required": false,
@@ -20260,7 +20269,7 @@
         },
         {
           "disabled": false,
-          "document": "返回内网保留IP的个数。",
+          "document": "<p>返回内网保留IP的个数。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",

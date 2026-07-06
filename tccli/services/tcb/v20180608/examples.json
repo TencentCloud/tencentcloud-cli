@@ -11,7 +11,7 @@
     "AllocateEnv": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AllocateEnv\n<公共请求参数>\n\n{\n    \"AllocateId\": \"m****************3\",\n    \"ExternalAppId\": \"appid*********\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AllocateEnv\n<公共请求参数>\n\n{\n    \"AllocateId\": \"m****************3\",\n    \"ExternalAppId\": \"appid*********\",\n    \"ExternalTag\": \"tab********sion=PR***TE\"\n}",
         "output": "{\n    \"Response\": {\n        \"EnvId\": \"******-d8gx4e0pr5de21d1c\",\n        \"ExternalAppId\": \"appid*********\",\n        \"RequestId\": \"633be6a9-049a-4a88-a111-e78be09d58bc\"\n    }\n}",
         "title": "从环境池里分配1个环境"
       }

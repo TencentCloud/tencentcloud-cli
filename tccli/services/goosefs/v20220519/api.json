@@ -696,7 +696,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "客户端节点IP",
+          "document": "<p>客户端节点IP</p>",
           "example": "10.0.1.2",
           "member": "string",
           "name": "ClientNodeIp",
@@ -706,7 +706,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端节点服务状态, Active(运行中), Adding(添加中), Destroying(销毁中), Down(已停止)",
+          "document": "<p>客户端节点服务状态, Active(运行中), Adding(添加中), Destroying(销毁中), Down(已停止)</p>",
           "example": "active",
           "member": "string",
           "name": "Status",
@@ -716,7 +716,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端节点类型，extend(扩展节点)，manager(管理节点)",
+          "document": "<p>客户端节点类型，extend(扩展节点)，manager(管理节点)</p>",
           "example": "extend",
           "member": "string",
           "name": "ClientType",
@@ -726,7 +726,7 @@
         },
         {
           "disabled": false,
-          "document": "节点所属vpcid\t",
+          "document": "<p>节点所属vpcid</p>",
           "example": "vpc-5ke3uoww",
           "member": "string",
           "name": "VpcId",
@@ -736,7 +736,7 @@
         },
         {
           "disabled": false,
-          "document": "节点所属子网id",
+          "document": "<p>节点所属子网id</p>",
           "example": "subnet-ihijdp5h",
           "member": "string",
           "name": "SubnetId",
@@ -746,8 +746,8 @@
         },
         {
           "disabled": false,
-          "document": "cvmId",
-          "example": "ins-m1r9uwdp\t",
+          "document": "<p>cvmId</p>",
+          "example": "ins-m1r9uwdp",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -756,10 +756,20 @@
         },
         {
           "disabled": false,
-          "document": "自定义挂载点",
+          "document": "<p>自定义挂载点</p>",
           "example": "/test",
           "member": "string",
           "name": "MountPoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端集群id</p>",
+          "example": "x-c50-2n3j5f9e-client-cluster-1",
+          "member": "string",
+          "name": "ClusterId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -846,7 +856,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)",
+          "document": "<p>数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)</p>",
           "example": "FS_TO_BUCKET",
           "member": "string",
           "name": "TaskType",
@@ -855,7 +865,7 @@
         },
         {
           "disabled": false,
-          "document": "COS存储桶名",
+          "document": "<p>COS存储桶名</p>",
           "example": "mybucket-1250000",
           "member": "string",
           "name": "Bucket",
@@ -864,7 +874,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统ID",
+          "document": "<p>文件系统ID</p>",
           "example": "x_c60_r3c4fa1f",
           "member": "string",
           "name": "FileSystemId",
@@ -873,7 +883,7 @@
         },
         {
           "disabled": false,
-          "document": "对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据",
+          "document": "<p>对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据</p>",
           "example": "aaa/bbb",
           "member": "string",
           "name": "TaskPath",
@@ -882,7 +892,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "<p>任务名称</p>",
           "example": "DOWNLOAD",
           "member": "string",
           "name": "TaskName",
@@ -891,7 +901,16 @@
         },
         {
           "disabled": false,
-          "document": "数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载",
+          "document": "<p>任务路径是否表示绝对路径（暂时仅支持沉降使用）</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsTaskPathAbsolute",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载</p>",
           "example": "MSP_AFM",
           "member": "string",
           "name": "RepositoryType",
@@ -900,7 +919,7 @@
         },
         {
           "disabled": false,
-          "document": "文件列表下载地址，以http开头",
+          "document": "<p>文件列表下载地址，以http开头</p>",
           "example": "https://location.com/list.txt",
           "member": "string",
           "name": "TextLocation",
@@ -908,8 +927,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "是否开启自定义路径(暂时仅供预热使用)",
+          "disabled": true,
+          "document": "<p>是否开启自定义路径(暂时仅供预热使用)</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableDataFlowSubPath",
@@ -917,11 +936,29 @@
           "type": "bool"
         },
         {
-          "disabled": false,
-          "document": "自定义路径(暂时仅供预热使用)",
+          "disabled": true,
+          "document": "<p>自定义路径(暂时仅供预热使用)</p>",
           "example": "dst/",
           "member": "string",
           "name": "DataFlowSubPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启自定义目的路径（预热任务表示本地路径，沉降任务表示COS桶前缀）</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableCustomDestPath",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义目的路径（预热任务表示本地路径，沉降任务表示COS桶前缀）</p>",
+          "example": "dst/",
+          "member": "string",
+          "name": "CustomDestPath",
           "required": false,
           "type": "string"
         }
@@ -933,7 +970,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "c1a2b3f4",
           "member": "string",
           "name": "TaskId",

@@ -1514,8 +1514,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "true表示服务已开通，false 表示服务尚未开通。",
-          "example": "1",
+          "document": "<p>true表示服务已开通，false 表示服务尚未开通。</p>",
+          "example": "true",
           "member": "bool",
           "name": "ServiceEnabled",
           "output_required": true,
@@ -1524,7 +1524,7 @@
         },
         {
           "disabled": false,
-          "document": "服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放。",
+          "document": "<p>服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放。</p>",
           "example": "1",
           "member": "int64",
           "name": "InvalidType",
@@ -1534,7 +1534,7 @@
         },
         {
           "disabled": false,
-          "document": "true表示用户已经可以使用密钥安全托管功能，\nfalse表示用户暂时不能使用密钥安全托管功能。",
+          "document": "<p>true表示用户已经可以使用密钥安全托管功能，<br>false表示用户暂时不能使用密钥安全托管功能。</p>",
           "example": "true",
           "member": "bool",
           "name": "AccessKeyEscrowEnabled",
@@ -1544,7 +1544,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "<p>过期时间</p>",
           "example": "2024-09-10 10:19:21",
           "member": "string",
           "name": "ExpireTime",
@@ -1554,7 +1554,7 @@
         },
         {
           "disabled": false,
-          "document": "计算性能限制",
+          "document": "<p>计算性能限制</p>",
           "example": "500",
           "member": "int64",
           "name": "QPSLimit",
@@ -1564,7 +1564,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据个数限制",
+          "document": "<p>凭据个数限制</p>",
           "example": "1000",
           "member": "int64",
           "name": "SecretLimit",
@@ -1574,7 +1574,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式",
+          "document": "<p>付费模式</p>",
           "example": "Postpaid_SSM",
           "member": "string",
           "name": "PayModel",
@@ -1584,7 +1584,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识，0:手动续费 1:自动续费 2:到期不续",
+          "document": "<p>自动续费标识，0:手动续费 1:自动续费 2:到期不续</p>",
           "example": "1",
           "member": "int64",
           "name": "RenewFlag",
@@ -1594,7 +1594,7 @@
         },
         {
           "disabled": false,
-          "document": "资源id",
+          "document": "<p>资源id</p>",
           "example": "SSM-Prepaid-co3j6qlg",
           "member": "string",
           "name": "ResourceId",
@@ -1604,10 +1604,20 @@
         },
         {
           "disabled": false,
-          "document": "已托管凭据个数",
+          "document": "<p>已托管凭据个数</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预付费购买 SSM 资源的地域 ID</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourceRegion",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

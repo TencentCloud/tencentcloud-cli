@@ -492,6 +492,14 @@
         "title": "创建企业扩展服务授权- 批量签署"
       }
     ],
+    "CreateFileConvertTask": [
+      {
+        "document": "适用场景：将docx文件转换为pdf",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileConvertTask\n<公共请求参数>\n\n{\n    \"ResourceType\": \"docx\",\n    \"ResourceName\": \"转换文件名称\",\n    \"ResourceId\": \"yD3JmUUckpe***********OREzv3aWCT\",\n    \"Operator\": {\n        \"UserId\": \"yDtT9UUckp9***********RvxYJ7r7py\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"2026070*******936482\",\n        \"RequestId\": \"06dd2333-4f98-4c16-b2fb-d54c3dd070d0\"\n    }\n}",
+        "title": "word文件转换示例"
+      }
+    ],
     "CreateFileCounterSign": [
       {
         "document": "文件CA加签--同步模式",
@@ -1279,7 +1287,7 @@
     "CreatePreparedPersonalEsign": [
       {
         "document": "通过准备好的印章图片创建个人印章",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePreparedPersonalEsign\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDCYCUUckp7k0tlrUxLgPeIB2r7yVxrA\"\n    },\n    \"UserName\": \"印章归属个人姓名\",\n    \"IdCardType\": \"\",\n    \"IdCardNumber\": \"身份证件号码\",\n    \"FileId\": \"yDxdfffxxxxxxxx\",\n    \"SealName\": \"我的印章名称\",\n    \"Mobile\": \"135*111\",\n    \"EnableAutoSign\": true\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePreparedPersonalEsign\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDCYCUUckp7k0tlrUxLgPeIB2r7yVxrA\"\n    },\n    \"UserName\": \"印章归属个人姓名\",\n    \"IdCardType\": \"\",\n    \"IdCardNumber\": \"身份证件号码\",\n    \"FileId\": \"yDxdfffxxxxxxxx\",\n    \"SealName\": \"我的印章名称\",\n    \"Mobile\": \"135*111\"\n}",
         "output": "{\n    \"Response\": {\n        \"SealId\": \"sealid-1\",\n        \"RequestId\": \"abc-3456-333-5555\"\n    }\n}",
         "title": "通过准备好的印章图片创建个人印章"
       }
@@ -1826,6 +1834,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExtendedServiceAuthInfos\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDR*****oimj\"\n    },\n    \"ExtendServiceType\": \"TEST\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"OperationDenied\",\n            \"Message\": \"不支持的扩展类型\"\n        },\n        \"RequestId\": \"s1**********72\"\n    }\n}",
         "title": "查询不支持的特定扩展服务"
+      }
+    ],
+    "DescribeFileConvertTask": [
+      {
+        "document": "通过转换任务Id查询任务状态",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileConvertTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"2026070*******692601\",\n    \"Operator\": {\n        \"UserId\": \"yDtT9UUckp9***********RvxYJ7r7py\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceId\": \"yD3JmUUckpe***********MEcwFQDTq0\",\n        \"TaskId\": \"2026070*******692601\",\n        \"TaskMessage\": \"任务处理完成\",\n        \"TaskStatus\": 8,\n        \"RequestId\": \"751ff83b-8f49-4684-bd80-f596b48ff3e5\"\n    }\n}",
+        "title": "通过转换任务Id查询任务状态"
       }
     ],
     "DescribeFileCounterSignResult": [

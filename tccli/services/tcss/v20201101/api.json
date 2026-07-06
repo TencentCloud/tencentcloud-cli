@@ -6540,7 +6540,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "cls-jvrv0kf2",
           "member": "string",
           "name": "ClusterId",
@@ -6550,7 +6550,17 @@
         },
         {
           "disabled": false,
-          "document": "集群名字",
+          "document": "<p>集群ca证书md5值</p>",
+          "example": "twewxxs",
+          "member": "string",
+          "name": "ClusterCAMD5",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群名字</p>",
           "example": "tke_test",
           "member": "string",
           "name": "ClusterName",
@@ -6560,7 +6570,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版本",
+          "document": "<p>集群版本</p>",
           "example": "1.8.8",
           "member": "string",
           "name": "ClusterVersion",
@@ -6570,7 +6580,7 @@
         },
         {
           "disabled": false,
-          "document": "集群操作系统",
+          "document": "<p>集群操作系统</p>",
           "example": "ubuntu18.04.1x86_64",
           "member": "string",
           "name": "ClusterOs",
@@ -6580,7 +6590,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "<p>集群类型</p>",
           "example": "MANAGED_CLUSTER",
           "member": "string",
           "name": "ClusterType",
@@ -6590,7 +6600,7 @@
         },
         {
           "disabled": false,
-          "document": "集群节点数",
+          "document": "<p>集群节点数</p>",
           "example": "2",
           "member": "uint64",
           "name": "ClusterNodeNum",
@@ -6600,7 +6610,7 @@
         },
         {
           "disabled": false,
-          "document": "集群区域",
+          "document": "<p>集群区域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -6610,7 +6620,7 @@
         },
         {
           "disabled": false,
-          "document": "防护状态: \n已防护: Defended \n未防护: UnDefended\n部分防护: PartDefened",
+          "document": "<p>防护状态:<br>已防护: Defended<br>未防护: UnDefended<br>部分防护: PartDefened</p>",
           "example": "UnDefended",
           "member": "string",
           "name": "DefenderStatus",
@@ -6620,7 +6630,7 @@
         },
         {
           "disabled": false,
-          "document": "集群状态",
+          "document": "<p>集群状态</p>",
           "example": "Running",
           "member": "string",
           "name": "ClusterStatus",
@@ -6630,7 +6640,7 @@
         },
         {
           "disabled": false,
-          "document": "集群运行子状态",
+          "document": "<p>集群运行子状态</p>",
           "example": "cluster sub status",
           "member": "string",
           "name": "ClusterSubStatus",
@@ -6640,7 +6650,7 @@
         },
         {
           "disabled": false,
-          "document": "集群的检测模式，为Cluster_Normal或者Cluster_Actived.",
+          "document": "<p>集群的检测模式，为Cluster_Normal或者Cluster_Actived.</p>",
           "example": "Cluster_Normal",
           "member": "string",
           "name": "ClusterCheckMode",
@@ -6650,7 +6660,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动定期检测",
+          "document": "<p>是否自动定期检测</p>",
           "example": "false",
           "member": "bool",
           "name": "ClusterAutoCheck",
@@ -6660,7 +6670,7 @@
         },
         {
           "disabled": false,
-          "document": "防护容器部署失败原因，为UserDaemonSetNotReady时,和UnreadyNodeNum转成\"N个节点防御容器为就绪\"，其他错误直接展示",
+          "document": "<p>防护容器部署失败原因，为UserDaemonSetNotReady时,和UnreadyNodeNum转成&quot;N个节点防御容器为就绪&quot;，其他错误直接展示</p>",
           "example": "NodeNotReady",
           "member": "string",
           "name": "DefenderErrorReason",
@@ -6670,7 +6680,7 @@
         },
         {
           "disabled": false,
-          "document": "防御容器没有ready状态的节点数量",
+          "document": "<p>防御容器没有ready状态的节点数量</p>",
           "example": "2",
           "member": "uint64",
           "name": "UnreadyNodeNum",
@@ -6680,7 +6690,7 @@
         },
         {
           "disabled": false,
-          "document": "严重风险检查项的数量",
+          "document": "<p>严重风险检查项的数量</p>",
           "example": "3",
           "member": "int64",
           "name": "SeriousRiskCount",
@@ -6690,7 +6700,7 @@
         },
         {
           "disabled": false,
-          "document": "高风险检查项的数量",
+          "document": "<p>高风险检查项的数量</p>",
           "example": "4",
           "member": "int64",
           "name": "HighRiskCount",
@@ -6700,7 +6710,7 @@
         },
         {
           "disabled": false,
-          "document": "中风险检查项的数量",
+          "document": "<p>中风险检查项的数量</p>",
           "example": "3",
           "member": "int64",
           "name": "MiddleRiskCount",
@@ -6710,7 +6720,7 @@
         },
         {
           "disabled": false,
-          "document": "提示风险检查项的数量",
+          "document": "<p>提示风险检查项的数量</p>",
           "example": "2",
           "member": "int64",
           "name": "HintRiskCount",
@@ -6720,7 +6730,7 @@
         },
         {
           "disabled": false,
-          "document": "检查失败原因",
+          "document": "<p>检查失败原因</p>",
           "example": "No_Result",
           "member": "string",
           "name": "CheckFailReason",
@@ -6730,7 +6740,7 @@
         },
         {
           "disabled": false,
-          "document": "检查状态,为Task_Running, NoRisk, HasRisk, Uncheck, Task_Error",
+          "document": "<p>检查状态,为Task_Running, NoRisk, HasRisk, Uncheck, Task_Error</p>",
           "example": "Checking",
           "member": "string",
           "name": "CheckStatus",
@@ -6740,7 +6750,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间,检查时间",
+          "document": "<p>任务创建时间,检查时间</p>",
           "example": "2020-11-21 15:16:00",
           "member": "string",
           "name": "TaskCreateTime",
@@ -6750,7 +6760,7 @@
         },
         {
           "disabled": false,
-          "document": "接入状态:\n未接入: AccessedNone\n已防护: AccessedDefended\n未防护: AccessedInstalled\n部分防护: AccessedPartialDefence\n接入异常: AccessedException\n卸载异常: AccessedUninstallException\n接入中: AccessedInstalling\n卸载中: AccessedUninstalling",
+          "document": "<p>接入状态:<br>未接入: AccessedNone<br>已防护: AccessedDefended<br>未防护: AccessedInstalled<br>部分防护: AccessedPartialDefence<br>接入异常: AccessedException<br>卸载异常: AccessedUninstallException<br>接入中: AccessedInstalling<br>卸载中: AccessedUninstalling</p>",
           "example": "AccessedDefe****",
           "member": "string",
           "name": "AccessedStatus",
@@ -6760,7 +6770,7 @@
         },
         {
           "disabled": false,
-          "document": "接入失败原因",
+          "document": "<p>接入失败原因</p>",
           "example": "AccessedSub****",
           "member": "string",
           "name": "AccessedSubStatus",
@@ -6770,7 +6780,7 @@
         },
         {
           "disabled": false,
-          "document": "接入/卸载失败原因",
+          "document": "<p>接入/卸载失败原因</p>",
           "example": "roles.rbac.authorization.k8s.io \"tcss-admin\" is forbidden: unable to create new content in namespace tcss because it is being terminated",
           "member": "string",
           "name": "AccessedErrorReason",
@@ -6780,7 +6790,7 @@
         },
         {
           "disabled": false,
-          "document": "节点总数",
+          "document": "<p>节点总数</p>",
           "example": "12",
           "member": "uint64",
           "name": "NodeCount",
@@ -6790,7 +6800,7 @@
         },
         {
           "disabled": false,
-          "document": "离线节点数",
+          "document": "<p>离线节点数</p>",
           "example": "0",
           "member": "uint64",
           "name": "OffLineNodeCount",
@@ -6800,7 +6810,7 @@
         },
         {
           "disabled": false,
-          "document": "未安装agent节点数",
+          "document": "<p>未安装agent节点数</p>",
           "example": "0",
           "member": "uint64",
           "name": "UnInstallAgentNodeCount",
@@ -6810,7 +6820,7 @@
         },
         {
           "disabled": false,
-          "document": "计费核数(弹性计费核数+普通计费核数)",
+          "document": "<p>计费核数(弹性计费核数+普通计费核数)</p>",
           "example": "364000",
           "member": "uint64",
           "name": "ChargeCoresCnt",
@@ -6820,8 +6830,8 @@
         },
         {
           "disabled": false,
-          "document": "master 地址列表",
-          "example": "['10.188.251.101;10.188.251.102;10.188.251.****']",
+          "document": "<p>master 地址列表</p>",
+          "example": "[\"172.30.8.4;\"]",
           "member": "string",
           "name": "MasterAddresses",
           "output_required": true,
@@ -6830,7 +6840,7 @@
         },
         {
           "disabled": false,
-          "document": "核数",
+          "document": "<p>核数</p>",
           "example": "364000",
           "member": "uint64",
           "name": "CoresCnt",
@@ -6840,7 +6850,7 @@
         },
         {
           "disabled": false,
-          "document": "集群审计开关状态：\n已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed",
+          "document": "<p>集群审计开关状态：<br>已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed</p>",
           "example": "Closed",
           "member": "string",
           "name": "ClusterAuditStatus",
@@ -6850,7 +6860,7 @@
         },
         {
           "disabled": false,
-          "document": "集群审计开关失败信息",
+          "document": "<p>集群审计开关失败信息</p>",
           "example": "cluster audit failed",
           "member": "string",
           "name": "ClusterAuditFailedInfo",
@@ -6860,7 +6870,7 @@
         },
         {
           "disabled": false,
-          "document": "所有者名称",
+          "document": "<p>所有者名称</p>",
           "example": "fx-qi",
           "member": "string",
           "name": "OwnerName",
@@ -25782,7 +25792,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "0：可申请试用可购买；1：只可购买(含试用审核不通过和试用过期)；2：试用生效中；3：专业版生效中；4：专业版过期",
+          "document": "<p>0：可申请试用可购买；1：只可购买(含试用审核不通过和试用过期)；2：试用生效中；3：专业版生效中；4：专业版过期</p>",
           "example": "0",
           "member": "int64",
           "name": "State",
@@ -25792,7 +25802,7 @@
         },
         {
           "disabled": false,
-          "document": "总资源核数 = 总防护核数 + 未防护核数",
+          "document": "<p>总资源核数 = 总防护核数 + 未防护核数</p>",
           "example": "10",
           "member": "uint64",
           "name": "AllCoresCnt",
@@ -25802,7 +25812,7 @@
         },
         {
           "disabled": false,
-          "document": "总防护核数 =已购核数+ 试用赠送核数 +弹性计费核数",
+          "document": "<p>总防护核数 =已购核数+ 试用赠送核数 +弹性计费核数</p>",
           "example": "164",
           "member": "uint64",
           "name": "CoresCnt",
@@ -25812,7 +25822,7 @@
         },
         {
           "disabled": false,
-          "document": "未防护核数(未开启防护资源核数)",
+          "document": "<p>未防护核数(未开启防护资源核数)</p>",
           "example": "10",
           "member": "uint64",
           "name": "UndefendCoresCnt",
@@ -25822,7 +25832,7 @@
         },
         {
           "disabled": false,
-          "document": "已购买核数",
+          "document": "<p>已购买核数</p>",
           "example": "15",
           "member": "uint64",
           "name": "AuthorizedCoresCnt",
@@ -25832,7 +25842,7 @@
         },
         {
           "disabled": false,
-          "document": "试用赠送专业版核心数",
+          "document": "<p>试用赠送专业版核心数</p>",
           "example": "10",
           "member": "int64",
           "name": "GivenAuthorizedCoresCnt",
@@ -25842,7 +25852,7 @@
         },
         {
           "disabled": false,
-          "document": "当前弹性计费核数数量",
+          "document": "<p>当前弹性计费核数数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "CurrentFlexibleCoresCnt",
@@ -25852,7 +25862,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像数",
+          "document": "<p>镜像数</p>",
           "example": "164",
           "member": "uint64",
           "name": "ImageCnt",
@@ -25862,7 +25872,7 @@
         },
         {
           "disabled": false,
-          "document": "已授权镜像数",
+          "document": "<p>已授权镜像数</p>",
           "example": "12",
           "member": "uint64",
           "name": "AuthorizedImageCnt",
@@ -25872,7 +25882,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "<p>过期时间</p>",
           "example": "2021-05-28 00:00:00",
           "member": "string",
           "name": "ExpirationTime",
@@ -25882,7 +25892,7 @@
         },
         {
           "disabled": false,
-          "document": "已购买镜像授权数",
+          "document": "<p>已购买镜像授权数</p>",
           "example": "143",
           "member": "uint64",
           "name": "PurchasedAuthorizedCnt",
@@ -25892,7 +25902,7 @@
         },
         {
           "disabled": false,
-          "document": "0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)",
+          "document": "<p>0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>",
           "example": "0",
           "member": "int64",
           "name": "AutomaticRenewal",
@@ -25902,7 +25912,7 @@
         },
         {
           "disabled": false,
-          "document": "试用期间赠送镜像授权数，可能会过期",
+          "document": "<p>试用期间赠送镜像授权数，可能会过期</p>",
           "example": "500",
           "member": "uint64",
           "name": "GivenAuthorizedCnt",
@@ -25912,7 +25922,7 @@
         },
         {
           "disabled": false,
-          "document": "起始时间",
+          "document": "<p>起始时间</p>",
           "example": "2021-05-28 00:00:00",
           "member": "string",
           "name": "BeginTime",
@@ -25922,7 +25932,7 @@
         },
         {
           "disabled": false,
-          "document": "子状态(具体意义依据State字段而定)\nState为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)",
+          "document": "<p>子状态(具体意义依据State字段而定)<br>State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)</p>",
           "example": "DESTROED",
           "member": "string",
           "name": "SubState",
@@ -25932,7 +25942,7 @@
         },
         {
           "disabled": false,
-          "document": "计费key",
+          "document": "<p>计费key</p>",
           "example": "sv_yunjing_css_pem",
           "member": "string",
           "name": "InquireKey",
@@ -25942,7 +25952,7 @@
         },
         {
           "disabled": false,
-          "document": "防护策略",
+          "document": "<p>防护策略</p>",
           "example": "Part",
           "member": "string",
           "name": "DefendPolicy",
@@ -25952,7 +25962,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性计费核数上限",
+          "document": "<p>弹性计费核数上限</p>",
           "example": "5000",
           "member": "uint64",
           "name": "FlexibleCoresLimit",
@@ -25962,7 +25972,7 @@
         },
         {
           "disabled": false,
-          "document": "已防护集群核数",
+          "document": "<p>已防护集群核数</p>",
           "example": "48",
           "member": "uint64",
           "name": "DefendClusterCoresCnt",
@@ -25972,7 +25982,7 @@
         },
         {
           "disabled": false,
-          "document": "已防护主机核数",
+          "document": "<p>已防护主机核数</p>",
           "example": "22",
           "member": "uint64",
           "name": "DefendHostCoresCnt",
@@ -25982,10 +25992,20 @@
         },
         {
           "disabled": false,
-          "document": "试用的专业版核数",
+          "document": "<p>试用的专业版核数</p>",
           "example": "0",
           "member": "uint64",
           "name": "TrialCoresCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无容器核数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "NoContainerCoresCnt",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

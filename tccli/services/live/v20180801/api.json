@@ -17006,7 +17006,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "直播域名。",
+          "document": "<p>直播域名。</p>",
           "example": "abc.com",
           "member": "string",
           "name": "Name",
@@ -17016,7 +17016,7 @@
         },
         {
           "disabled": false,
-          "document": "域名类型:\n0: 推流。\n1: 播放。",
+          "document": "<p>域名类型:<br>0: 推流。<br>1: 播放。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -17026,7 +17026,7 @@
         },
         {
           "disabled": false,
-          "document": "域名状态:\n0: 停用。\n1: 启用。",
+          "document": "<p>域名状态:<br>0: 停用。<br>1: 启用。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -17036,7 +17036,7 @@
         },
         {
           "disabled": false,
-          "document": "添加时间。\n注：此字段为北京时间（UTC+8时区）。",
+          "document": "<p>添加时间。<br>注：此字段为北京时间（UTC+8时区）。</p>",
           "example": "2011-09-09 11:11:11",
           "member": "string",
           "name": "CreateTime",
@@ -17046,7 +17046,7 @@
         },
         {
           "disabled": false,
-          "document": "是否有 CName 到固定规则域名:\n0: 否。\n1: 是。",
+          "document": "<p>是否有 CName 到固定规则域名:<br>0: 否。<br>1: 是。</p>",
           "example": "1",
           "member": "uint64",
           "name": "BCName",
@@ -17056,7 +17056,7 @@
         },
         {
           "disabled": false,
-          "document": "cname 对应的域名。",
+          "document": "<p>cname 对应的域名。</p>",
           "example": "abc.com",
           "member": "string",
           "name": "TargetDomain",
@@ -17066,7 +17066,7 @@
         },
         {
           "disabled": false,
-          "document": "播放区域，只在 Type=1 时该参数有意义。\n1: 国内。\n2: 全球。\n3: 海外。",
+          "document": "<p>播放区域，只在 Type=1 时该参数有意义。<br>1: 国内。<br>2: 全球。<br>3: 海外。</p>",
           "example": "2",
           "member": "int64",
           "name": "PlayType",
@@ -17076,7 +17076,7 @@
         },
         {
           "disabled": false,
-          "document": "是否慢直播:\n0: 普通直播。\n1: 慢直播。",
+          "document": "<p>是否慢直播:<br>0: 普通直播。<br>1: 慢直播。</p>",
           "example": "0",
           "member": "int64",
           "name": "IsDelayLive",
@@ -17086,7 +17086,7 @@
         },
         {
           "disabled": false,
-          "document": "当前客户使用的 cname 信息。",
+          "document": "<p>当前客户使用的 cname 信息。</p>",
           "example": "abc.com",
           "member": "string",
           "name": "CurrentCName",
@@ -17096,7 +17096,7 @@
         },
         {
           "disabled": false,
-          "document": "失效参数，可忽略。",
+          "document": "<p>失效参数，可忽略。</p>",
           "example": "1",
           "member": "int64",
           "name": "RentTag",
@@ -17106,7 +17106,7 @@
         },
         {
           "disabled": false,
-          "document": "失效参数，可忽略。\n注：此字段为北京时间（UTC+8时区）。",
+          "document": "<p>失效参数，可忽略。<br>注：此字段为北京时间（UTC+8时区）。</p>",
           "example": "2011-09-09 11:11:11",
           "member": "string",
           "name": "RentExpireTime",
@@ -17116,7 +17116,7 @@
         },
         {
           "disabled": false,
-          "document": "0: 标准直播。\n1: 小程序直播。",
+          "document": "<p>0: 标准直播。<br>1: 小程序直播。</p>",
           "example": "0",
           "member": "int64",
           "name": "IsMiniProgramLive",

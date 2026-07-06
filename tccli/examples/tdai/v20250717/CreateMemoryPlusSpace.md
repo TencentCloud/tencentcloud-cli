@@ -8,7 +8,8 @@ Input:
 tccli tdai CreateMemoryPlusSpace --cli-unfold-argument  \
     --Name name2 \
     --Description description2 \
-    --GoodsNum 1
+    --GoodsNum 1 \
+    --PayMode -1
 ```
 
 Output: 

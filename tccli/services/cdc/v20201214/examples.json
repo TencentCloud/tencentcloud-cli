@@ -35,7 +35,7 @@
     "DeleteDedicatedClusterImageCache": [
       {
         "document": "删除本地专用集群的云上镜像缓存",
-        "input": "POST / HTTP/1.1\nHost: cdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncDedicatedClusterImage\n<公共请求参数>\n\n{\n    \"DedicatedClusterId\": \"cluster-d8htgb6k\",\n    \"ImageId\": \"img-1n0le98u\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDedicatedClusterImageCache\n<公共请求参数>\n\n{\n    \"DedicatedClusterId\": \"cluster-d8htgb6k\",\n    \"ImageId\": \"img-1n0le98u\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"27d4ca38-284b-4ffb-ae1d-e9ff12c065b8\"\n    }\n}",
         "title": "删除本地专用集群的云上镜像缓存"
       }

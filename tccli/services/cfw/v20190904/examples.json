@@ -602,6 +602,22 @@
         "title": "ShowNatFwVpcDnsLst 展示租户NAT防火墙实例的vpc dns 开关信息"
       }
     ],
+    "DescribeOfflineExportTask": [
+      {
+        "document": "获取日志离线导出任务列表",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOfflineExportTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"test-export\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"TaskId\": \"322372\",\n                \"TaskName\": \"flow_border_out_31\",\n                \"DataLength\": 0,\n                \"Progress\": 0,\n                \"Status\": 0,\n                \"ExpireTime\": \"\",\n                \"ErrorInfo\": \"\",\n                \"CreateTime\": \"2025-01-07 09:18:56\",\n                \"UseUserCos\": 0\n            }\n        ],\n        \"ExportLimit\": -1,\n        \"ExportQuota\": 1099511627776,\n        \"ExportRemainQuota\": 1099511627776,\n        \"RequestId\": \"64eb2796-219e-4f5c-a2a7-928c2dd99880\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Total\": 142440\n    }\n}",
+        "title": "获取日志离线导出任务列表"
+      }
+    ],
+    "DescribeOfflineExportTemporaryCredentials": [
+      {
+        "document": "获取日志离线导出任务文件下载临时凭证",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOfflineExportTemporaryCredentials\n<公共请求参数>\n\n{\n    \"TaskId\": \"99281\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d8786ee-788f-440a-84bd-cd191f6cc18d\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\"\n    }\n}",
+        "title": "获取日志离线导出任务文件下载临时凭证"
+      }
+    ],
     "DescribeResourceGroup": [
       {
         "document": "",
@@ -636,10 +652,10 @@
     ],
     "DescribeSerialRegion": [
       {
-        "document": "查询串行防火墙地域带宽分配信息",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSerialRegion\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"SerialRegionLst\": [\n            {\n                \"Region\": \"ap-shanghai\",\n                \"Width\": 100\n            }\n        ],\n        \"UnUsedWidth\": 100,\n        \"UnUsedQuota\": 100,\n        \"RequestId\": \"11122333313\"\n    }\n}",
-        "title": "查询串行防火墙地域带宽分配信息"
+        "output": "{\n    \"Response\": {\n        \"BypassWidth\": 386,\n        \"EdgeElasticBandwidth\": 500,\n        \"EdgeElasticBandwidthLimit\": 952,\n        \"EdgeElasticSwitch\": 0,\n        \"EdgeElasticTrafficSwitch\": 1,\n        \"EdgeWidth\": 476,\n        \"SendBypassWidth\": 0,\n        \"SerialRegionLst\": [\n            {\n                \"ElasticBandwidth\": 30,\n                \"ElasticSwitch\": 0,\n                \"ElasticTrafficSwitch\": 0,\n                \"InFlowMax\": 65027431,\n                \"OutFlowMax\": 54982426,\n                \"Region\": \"ap-chengdu\",\n                \"Width\": 30\n            }\n        ],\n        \"UnUsedQuota\": 12,\n        \"UnUsedWidth\": 0,\n        \"RequestId\": \"61306356-34dc-44e6-8a7a-0c5a4aa2727e\"\n    }\n}",
+        "title": "互联网边界防火墙配额展示"
       }
     ],
     "DescribeSourceAsset": [
@@ -734,6 +750,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExpandCfwVertical\n<公共请求参数>\n\n{\n    \"FwType\": \"nat\",\n    \"Width\": 121,\n    \"CfwInstance\": \"cfwnat-e366d270\",\n    \"ElasticSwitch\": 1,\n    \"ElasticBandwidth\": 290,\n    \"Tags\": [\n        {\n            \"TagKey\": null,\n            \"TagValue\": null\n        }\n    ],\n    \"ElasticTrafficSwitch\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8fcb913a-80ee-4ace-bf11-7c5a0592be7e\"\n    }\n}",
         "title": "扩容实例"
+      }
+    ],
+    "ExportLogsOffline": [
+      {
+        "document": "日志分析日志离线导出",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportLogsOffline\n<公共请求参数>\n\n{\n    \"Index\": \"cfw_netflow_border\",\n    \"TaskType\": \"LogAnalysis\",\n    \"Query\": \"protocol:HTTP\",\n    \"StartTime\": \"2023-01-01 00:00:00\",\n    \"EndTime\": \"2023-01-01 23:59:59\",\n    \"TaskName\": \"导出日志\",\n    \"DataFormat\": \".json\",\n    \"CompressionFormat\": \".zip\",\n    \"Order\": \"desc\",\n    \"Length\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"b12dee5f-bca2-49bc-88c1-a838c7b93089\"\n    }\n}",
+        "title": "日志分析日志离线导出"
       }
     ],
     "ModifyAcRule": [
@@ -835,8 +859,8 @@
     "ModifyClusterNatFwSwitch": [
       {
         "document": "修改NAT CCN集群防火墙的自动接入VPC列表",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterNatFwSwitch\n<公共请求参数>\n\n{\n    \"NatCcnSwitch\": {\n        \"NatInsId\": \"cfwnat-xxxxxxxx\",\n        \"CcnId\": \"ccn-xxxxxxxx\",\n        \"SwitchMode\": 1,\n        \"RoutingMode\": 1,\n        \"LeadVpcCidr\": \"\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b3a2e60-1b2c-4d3e-a4f5-6789abcdef01\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterNatFwSwitch\n<公共请求参数>\n\n{\n    \"NatCcnSwitch\": {\n        \"NatInsId\": \"nat-3mc7mjzd\",\n        \"CcnId\": \"ccn-c0qmm031\",\n        \"SwitchMode\": 1,\n        \"RoutingMode\": 1,\n        \"AccessInstanceList\": [\n            {\n                \"InstanceId\": \"vpc-henonw6y\",\n                \"InstanceType\": \"VPC\",\n                \"InstanceRegion\": \"ap-tokyo\",\n                \"AccessCidrMode\": 1,\n                \"AccessCidrList\": [\n                    \"10.241.0.0/16\"\n                ]\n            }\n        ],\n        \"LeadVpcCidr\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ca2bbb3-316f-4255-b169-6e5544c2c70a\"\n    }\n}",
         "title": "修改NAT CCN集群模式防火墙开关配置"
       }
     ],
@@ -1092,6 +1116,14 @@
         "title": "删除NAT访问控制规则"
       }
     ],
+    "RemoveOfflineExportTask": [
+      {
+        "document": "删除日志离线导出任务",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveOfflineExportTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"1725\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"ebd1320b-4710-4ce9-8cfa-0d1a503d59ab\"\n    }\n}",
+        "title": "删除日志离线导出任务"
+      }
+    ],
     "RemoveVpcAcRule": [
       {
         "document": "",
@@ -1102,9 +1134,9 @@
     ],
     "SearchLog": [
       {
-        "document": "查询http响应状态码（http_code）为200的日志",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchLog\n<公共请求参数>\n\n{\n    \"TopicId\": \"601c2a87-ca8e-49c9-xxxx-27286a970db5\",\n    \"From\": 1679901909686,\n    \"To\": 1679902809686,\n    \"Query\": \"http_code:\\\"200\\\"\",\n    \"Limit\": 1,\n    \"Sort\": \"desc\",\n    \"UseNewAnalysis\": true,\n    \"SyntaxRule\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Context\": \"Y29udGV4dC0zZDVmZGI2NC1jNDZkLTQ2NzktYWM2OC1jYzg2NjUxYmVlMWExNjc5OTAyODEwNDM0\",\n        \"ListOver\": false,\n        \"Analysis\": false,\n        \"ColNames\": [],\n        \"Columns\": [],\n        \"Results\": [\n            {\n                \"Time\": 1679902806070,\n                \"TopicId\": \"601c2a87-ca8e-49c9-xxxx-27286a970db5\",\n                \"TopicName\": \"CDN Demo访问日志日志主题_10000100xxxx\",\n                \"Source\": \"\",\n                \"FileName\": \"\",\n                \"HostName\": \"\",\n                \"PkgId\": \"\",\n                \"PkgLogId\": \"\",\n                \"LogJson\": \"{\\\"referer\\\":\\\"http://qwunsag.2022.qq.com/prizes?activity_code=AVGCHaQFX02Eb\\\",\\\"method\\\":\\\"GET\\\",\\\"isp\\\":\\\"中国联通\\\",\\\"remote_port\\\":\\\"45088\\\",\\\"ua\\\":\\\"Mozilla/5.0 (Linux; Android 9; INE-AL00 Build/HUAWEIINE-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.99 XWEB/3211 MMWEBSDK/20210601 Mobile Safari/537.36 MMWEBID/6389 MicroMessenger/8.0.11.1980(0x28000B5B) Process/toolsmp WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64\\\",\\\"uuid\\\":\\\"acf1010c853f4a24bb3e92cc34e283e2\\\",\\\"version\\\":\\\"1\\\",\\\"file_size\\\":\\\"186358\\\",\\\"url\\\":\\\"/loxtxt/979884858.png\\\",\\\"request_range\\\":\\\"-\\\",\\\"rsp_size\\\":\\\"186830\\\",\\\"hit\\\":\\\"hit\\\",\\\"request_time\\\":\\\"2808\\\",\\\"http_code\\\":\\\"200\\\",\\\"param\\\":\\\"-\\\",\\\"sys_address\\\":\\\"9.130.154.208\\\",\\\"proto\\\":\\\"HTTPS\\\",\\\"host\\\":\\\"test.2022.cls.cn\\\",\\\"sys_datasource\\\":\\\"cq.3.4.v1.2.17\\\",\\\"client_ip\\\":\\\"116.116.247.167\\\",\\\"time\\\":\\\"1679902806070\\\",\\\"app_id\\\":\\\"1302700768\\\",\\\"prov\\\":\\\"内蒙古自治区\\\",\\\"timestamp\\\":\\\"2023-03-27T15:40:06+08:00\\\"}\",\n                \"RawLog\": \"\",\n                \"IndexStatus\": \"\"\n            }\n        ],\n        \"AnalysisResults\": [],\n        \"AnalysisRecords\": [],\n        \"RequestId\": \"79f593e5-1374-4463-xxxx-c49d0b3c5290\",\n        \"SamplingRate\": 0\n    }\n}",
+        "document": "查询protocol为HTTP的日志",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchLog\n<公共请求参数>\n\n{\n    \"TopicId\": \"cfw_netflow_border\",\n    \"From\": 1782131614167,\n    \"To\": 1782736414167,\n    \"Query\": \"protocol:HTTP\",\n    \"SamplingRate\": 1,\n    \"SyntaxRule\": 1,\n    \"Limit\": 1,\n    \"Context\": \"\",\n    \"Sort\": \"desc\",\n    \"UseNewAnalysis\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Analysis\": false,\n        \"Context\": \"Y29udGV4dC0wMmUyNmVmYi05OTZiLTQzNTctYTA1Ny03OGY1NmU3ZmRmNzUxNzgyNzM2NDc1NzE5\",\n        \"ListOver\": false,\n        \"RequestId\": \"e660b374-1538-4631-be77-c9a6e6680180\",\n        \"Results\": [\n            {\n                \"FileName\": \"\",\n                \"LogJson\": \"{\\\"instance_id\\\":\\\"ins-gke2r5e0\\\",\\\"src_ip\\\":\\\"119.**.**.112\\\",\\\"dst_ip\\\":\\\"103.**.**.115\\\",\\\"src_port\\\":56980,\\\"dst_port\\\":80,\\\"protocol\\\":\\\"HTTP\\\",\\\"direction\\\":0,\\\"dst_domain\\\":\\\"www.**.com\\\",\\\"in_pkt_count\\\":8,\\\"in_pkt_len\\\":2998,\\\"out_pkt_count\\\":8,\\\"out_pkt_len\\\":416,\\\"total_pkt_count\\\":16,\\\"total_pkt_len\\\":3414,\\\"ti_tag\\\":\\\"\\\",\\\"start_time\\\":\\\"2026-06-29 14:12:11\\\",\\\"end_time\\\":\\\"2026-06-29 14:12:24\\\",\\\"supplier\\\":\\\"baidu.com\\\",\\\"src_country\\\":\\\"\\\",\\\"dst_country\\\":\\\"中国\\\",\\\"src_province\\\":\\\"\\\",\\\"dst_province\\\":\\\"广东省\\\",\\\"src_city\\\":\\\"\\\",\\\"dst_city\\\":\\\"\\\",\\\"address\\\":\\\"广东省\\\",\\\"src_lat\\\":0,\\\"dst_lat\\\":0,\\\"src_lon\\\":0,\\\"dst_lon\\\":0,\\\"insert_time\\\":1782713553,\\\"count\\\":0,\\\"url\\\":\\\"\\\",\\\"domain_flag\\\":0,\\\"port_status\\\":0,\\\"level\\\":0,\\\"bot_flag\\\":0,\\\"mode\\\":1,\\\"tcp_flag\\\":31,\\\"timestamp\\\":\\\"2026-06-29 14:12:11\\\",\\\"is_serial\\\":1,\\\"pkt_flags\\\":\\\"0212101810\\\",\\\"pkt_dir\\\":\\\"01001\\\",\\\"action_src\\\":1,\\\"acl_uuid\\\":\\\"\\\",\\\"acl_rule_id\\\":0,\\\"acl_detail\\\":\\\"\\\"}\",\n                \"PkgId\": \"5229A51C7BECDA416A3E478F-00000000000579C7\",\n                \"PkgLogId\": \"29622640\",\n                \"RawLog\": \"\",\n                \"Time\": 1782713531000,\n                \"TopicId\": \"cfw_netflow_border\"\n            }\n        ],\n        \"SamplingRate\": 0\n    }\n}",
         "title": "查询日志"
       }
     ],

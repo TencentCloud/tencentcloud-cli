@@ -1,4 +1,4 @@
-**Example 1: 创建数据流动任务示例**
+**Example 1: 创建接口调用示例**
 
 
 
@@ -6,21 +6,19 @@ Input:
 
 ```
 tccli goosefs CreateDataRepositoryTask --cli-unfold-argument  \
-    --TaskType COS_TO_FS \
-    --Bucket bucket-123456 \
-    --FileSystemId x-c60-v321qq3 \
-    --TaskPath test/ \
-    --TaskName 预热任务 \
-    --EnableDataFlowSubPath True \
-    --DataFlowSubPath dst/
+    --TaskType FS_TO_COS \
+    --Bucket goosefsx-bj-df-test02-1252246555 \
+    --FileSystemId x-c60-3980hscb \
+    --TaskPath ace_test/ \
+    --TaskName ace测试
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TaskId": "x_task_1769158823183",
-        "RequestId": "7bc315dc-c3fa-4c23-b719-30e382d36afb"
+        "TaskId": "x_task_1782965149652",
+        "RequestId": "64ba388d-d33e-4194-8006-81b1cc2d1a00"
     }
 }
 ```

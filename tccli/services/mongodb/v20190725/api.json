@@ -8385,7 +8385,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。\n",
+          "document": "<p>指定实例 ID。例如：cmgo-p8vn****。请登录 <a href=\"https://console.cloud.tencent.com/mongodb\">MongoDB 控制台</a>在实例列表复制实例 ID。</p>",
           "example": "\"cmgo-jyjcw8yv\"",
           "member": "string",
           "name": "InstanceId",
@@ -8394,7 +8394,7 @@
         },
         {
           "disabled": false,
-          "document": "指定需修改的参数名及值。当前所支持的参数名及对应取值范围，请通过 [DescribeInstanceParams ](https://cloud.tencent.com/document/product/240/65903)获取。",
+          "document": "<p>指定需修改的参数名及值。当前所支持的参数名及对应取值范围，请通过 <a href=\"https://cloud.tencent.com/document/product/240/65903\">DescribeInstanceParams </a>获取。</p>",
           "example": "无",
           "member": "ModifyMongoDBParamType",
           "name": "InstanceParams",
@@ -8403,7 +8403,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型，包括：\n- IMMEDIATELY：立即调整。\n- DELAY：延迟调整。可选字段，不配置该参数则默认为立即调整。",
+          "document": "<p>操作类型，包括：</p><ul><li>IMMEDIATELY：立即调整。</li><li>DELAY：延迟调整。可选字段，不配置该参数则默认为立即调整。</li></ul>",
           "example": "IMMEDIATELY",
           "member": "string",
           "name": "ModifyType",
@@ -8418,7 +8418,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改参数配置是否生效。\n- true：参数修改后的值已生效。\n- false：执行失败。\n",
+          "document": "<p>修改参数配置是否生效。</p><ul><li>true：参数修改后的值已生效。</li><li>false：执行失败。</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "Changed",
@@ -8428,7 +8428,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数暂时无意义(兼容前端保留)。",
+          "document": "<p>该参数暂时无意义(兼容前端保留)。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TaskId",

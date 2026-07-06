@@ -1358,6 +1358,26 @@
       "document": "DescribeModelList返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "<p>模型列表。</p>",
+          "example": "无",
+          "member": "Model",
+          "name": "ModelSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的模型总数。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2313,6 +2333,484 @@
           "member": "datetime_iso",
           "name": "UpdatedTime",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Model": {
+      "document": "模型信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "Hy3 preview",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 ID。</p>",
+          "example": "hy3-preview",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型显示名称。</p>",
+          "example": "Hy3 preview",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型描述。</p>",
+          "example": "混元 Hy3 preview 面向 Agent 工作负载设计，采用 295B/21B 激活的 MoE 架构。",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型概要。</p>",
+          "example": "代码生成、长上下文与 Agent 能力扎实，适合 Coding Agent、文档自动化及多步工具调用工作流",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类型。取值：Text（文本）、Vision（视觉）、Multimodal（多模态）、Speech（语音）、Embedding（向量）。</p><p>枚举值：</p><ul><li>Text： 语言模型</li><li>Vision： 视觉模型</li><li>Multimodal： 多模态模型</li></ul>",
+          "example": "Text",
+          "member": "string",
+          "name": "ModelType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型品牌。</p>",
+          "example": "混元",
+          "member": "string",
+          "name": "Brand",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型图标。</p>",
+          "example": "无",
+          "member": "ModelImage",
+          "name": "ModelImage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型供应商。</p>",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "Provider",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li></ul>",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表。</p>",
+          "example": "[                             \"深度思考\",                             \"文本生成\"                         ]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费信息列表。</p>",
+          "example": "无",
+          "member": "ModelChargingInfo",
+          "name": "ModelChargingInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型规格。</p>",
+          "example": "无",
+          "member": "ModelSpec",
+          "name": "ModelSpec",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>发布时间。</p>",
+          "example": "2026-04-23T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ReleaseAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>推荐顺序，值越小排序越靠前。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "RecommendWeight",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型访问信息。包含模型在各站点和地域的可用性配置。为空时表示未配置地域信息，模型不可用。</p>",
+          "example": "无",
+          "member": "ModelAccessInfo",
+          "name": "ModelAccessInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>体验包信息。</p>",
+          "example": "无",
+          "member": "ModelFreeTrialInfo",
+          "name": "FreeTrialInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型下线时间，Status=pre-offline 时，会配置模型下线时间</p>",
+          "example": "2026-05-02T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "OfflineAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelAccessInfo": {
+      "document": "模型访问信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "各站点的地域可用性列表。为空时表示未配置地域信息，模型不可用。",
+          "example": "无",
+          "member": "ModelSiteRegion",
+          "name": "ModelSiteRegions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelChargingInfo": {
+      "document": "模型计费信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费类型。取值：Uniform（统一计费）、Tiered（阶梯计费）。",
+          "example": "Tiered",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费名称，阶梯计费时表示区间标识，统一计费为空。",
+          "example": "0<=输入<32k",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费场景，用于区分同一产品不同功能的计费。",
+          "example": "在线推理",
+          "member": "string",
+          "name": "Scenario",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费条目列表，顺序即前端展示顺序。",
+          "example": "无",
+          "member": "ModelChargingItem",
+          "name": "ChargingItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费单位。取值：TOKEN（词元）、COUNT（次）、CREDIT（积分）、PICTURE（张）。",
+          "example": "TOKEN",
+          "member": "string",
+          "name": "ChargeUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费参考链接。",
+          "example": "https://cloud.tencent.com/document/product/1804/123461#7aff517a-9178-43a0-9093-9f822dc07739",
+          "member": "string",
+          "name": "Reference",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelChargingItem": {
+      "document": "计费条目",
+      "members": [
+        {
+          "disabled": false,
+          "document": "价格维度标识。取值：Input（输入）、Output（输出）、Cache（缓存命中）、Thinking（思考）、BatchInput（批量输入）、BatchOutput（批量输出）、BatchCache（批量缓存命中）、ImageInput（输入图片）、ImageOutput（输出图片）、Search（搜索调用）。",
+          "example": "Input",
+          "member": "string",
+          "name": "PriceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "价格维度展示名，后端直接提供当前语言文本（如 输入、Input），前端无需翻译。",
+          "example": "输入",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "价格数值。",
+          "example": "1",
+          "member": "string",
+          "name": "Price",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "价格单位，后端直接提供当前语言文本（如 元/百万tokens、元/张、积分/次）。",
+          "example": "元/百万tokens",
+          "member": "string",
+          "name": "PriceUnit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelFreeTrialInfo": {
+      "document": "模型体验包信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推荐顺序，值越小排序越靠前。为空表示使用模型默认权重。",
+          "example": "1",
+          "member": "int64",
+          "name": "RecommendWeight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "体验包容量大小。",
+          "example": "1000000",
+          "member": "int64",
+          "name": "CapacitySize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容量单位。取值：token。",
+          "example": "token",
+          "member": "string",
+          "name": "Unit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效期天数（如90天）。为空表示不限期。",
+          "example": "90",
+          "member": "int64",
+          "name": "ValidityDays",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelImage": {
+      "document": "模型图标信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图标 URL。",
+          "example": "https://qcloudimg.tencent-cloud.cn/raw/672552a315809509bda19ecb65230671.png",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelSiteRegion": {
+      "document": "模型上线的站点、地域信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点标识。取值：domestic（国内站）、international（国际站）。",
+          "example": "domestic",
+          "member": "string",
+          "name": "Site",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该站点下可用的地域列表，遵循腾讯云标准地域编码（如 ap-guangzhou、ap-beijing、ap-singapore、na-siliconvalley 等）。为空数组时表示该站点无可用地域。",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "Regions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelSpec": {
+      "document": "模型规格信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每分钟处理 Token 数（Tokens Per Minute）。",
+          "example": "1000k",
+          "member": "string",
+          "name": "TPM",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每分钟请求数（Queries Per Minute）。",
+          "example": "60",
+          "member": "string",
+          "name": "QPM",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大输入 Token 长度。",
+          "example": "192k",
+          "member": "string",
+          "name": "MaxInputToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大输出 Token 长度。",
+          "example": "128k",
+          "member": "string",
+          "name": "MaxOutputToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上下文窗口长度。",
+          "example": "256k",
+          "member": "string",
+          "name": "ContextLength",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "并发数。",
+          "example": "10",
+          "member": "string",
+          "name": "Concurrency",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入要求描述。",
+          "example": "图片分辨率不超过4k (4096*2160)，视频分辨率不超过2k (2048*1080)",
+          "member": "string",
+          "name": "InputDescription",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
