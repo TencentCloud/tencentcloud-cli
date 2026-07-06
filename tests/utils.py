@@ -6,13 +6,19 @@ import sys
 
 
 def shell(cmd):
-    p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    p.wait()
+    if isinstance(cmd, str):
+        args = cmd
+        use_shell = True
+    else:
+        args = cmd
+        use_shell = False
+    p = subprocess.Popen(args, shell=use_shell, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdout, _ = p.communicate()
 
     if sys.version_info.major >= 3:
-        return p.stdout.read(409600).decode("utf-8")
+        return stdout.decode("utf-8")
 
-    return p.stdout.read(409600)
+    return stdout
 
 
 def recover_profile(prof="default"):

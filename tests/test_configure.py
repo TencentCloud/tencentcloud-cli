@@ -58,20 +58,24 @@ def test_configure_output_table():
 
 @recover_profile()
 def test_configure_credential():
-    sec_id = "xxx"
-    sec_key = "yyy"
+    sec_id = "AKIDabcdefghijklmn1234"
+    sec_key = "SKabcdefghijklmnopqrst5678"
 
     shell("tccli configure set secretId %s" % sec_id)
     shell("tccli configure set secretKey %s" % sec_key)
 
+    # configure get 会对敏感字段脱敏输出（末 4 位保留，其余替换为 *）
     output = shell("tccli configure get secretId").strip()
-    sec_id2 = output[len("secretId = "):]
+    masked_id = output[len("secretId = "):]
+    assert masked_id.endswith(sec_id[-4:])
+    assert "*" in masked_id
+    assert sec_id not in output
 
     output = shell("tccli configure get secretKey").strip()
-    sec_key2 = output[len("secretKey = "):]
-
-    assert sec_id == sec_id2
-    assert sec_key == sec_key2
+    masked_key = output[len("secretKey = "):]
+    assert masked_key.endswith(sec_key[-4:])
+    assert "*" in masked_key
+    assert sec_key not in output
 
 
 @recover_profile("user2")

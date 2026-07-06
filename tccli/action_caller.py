@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+import json
 import os
 import os.path as path
 import time
@@ -29,7 +30,10 @@ class GenericActionCaller(object):
     def available_versions(self):
         if not self._avail_vers:
             svc_path = os.path.join(path.dirname(path.abspath(__file__)), 'services', self._module)
-            dirs = os.listdir(svc_path)
+            try:
+                dirs = os.listdir(svc_path)
+            except OSError:
+                raise ConfigurationError("service '%s' not found" % self._module)
             self._avail_vers = [d for d in dirs if d[0] == "v" and os.path.isdir(path.join(svc_path, d))]
 
         return self._avail_vers
@@ -178,7 +182,10 @@ class GenericActionCaller(object):
             raise Exception("available versions: %s" % " ".join(self.available_versions()))
 
         if g_param[options_define.Waiter]:
-            param = eval(g_param[options_define.Waiter])
+            try:
+                param = json.loads(g_param[options_define.Waiter])
+            except ValueError as e:
+                raise Exception('`--waiter` must be a valid JSON string: %s' % str(e))
             if 'expr' not in param:
                 raise Exception('`expr` in `--waiter` must be defined')
             if 'to' not in param:
