@@ -11,6 +11,15 @@ from tccli.utils import Utils
 from tccli.loaders import Loader
 
 
+def mask_secret(value):
+    """将敏感凭证字符串转为"等长 `*` + 末 4 位"的脱敏形式；非字符串与空值直接返回。"""
+    if not isinstance(value, str) or value == "":
+        return value
+    if len(value) <= 4:
+        return "*" * len(value)
+    return "*" * (len(value) - 4) + value[-4:]
+
+
 class BasicConfigure(BasicCommand):
     NAME = ''
     DESCRIPTION = ''
@@ -29,16 +38,10 @@ class BasicConfigure(BasicCommand):
         ]
         self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.Token,
                           OptionsDefine.RoleArn, OptionsDefine.RoleSessionName, OptionsDefine.UseCVMRole]
-        self.sensitive_keys = (OptionsDefine.SecretId, OptionsDefine.SecretKey)
+        self.sensitive_cred_fields = {OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.Token}
         self.conf_service_list = [OptionsDefine.Version, OptionsDefine.Endpoint]
         self.cli_path = os.path.join(os.path.expanduser("~"), ".tccli")
         self._cli_data = Loader()
-
-    @staticmethod
-    def _mask_value(value):
-        if not isinstance(value, str) or not value or value == "None":
-            return value
-        return "*" + value[-4:]
 
     def _run_main(self, parsed_args, parsed_globals):
         raise NotImplementedError("_run_main")
@@ -125,8 +128,8 @@ class ConfigureListCommand(BasicConfigure):
     USEAGE = 'tccli configure list [--profile profile-name]'
     EXAMPLES = "$ tccli configure list\n" \
                "credential:\n" \
-               "secretId = *abcd\n" \
-               "secretKey = *wxyz\n" \
+               "secretId = ********************************\n" \
+               "secretKey = ********************************\n" \
                "configure:\n" \
                "region = ap-guangzhou\n" \
                "output = json\n" \
@@ -151,8 +154,8 @@ class ConfigureListCommand(BasicConfigure):
             for config in self.cred_list:
                 if config in cred and cred[config]:
                     value = cred[config]
-                    if config in self.sensitive_keys:
-                        value = self._mask_value(value)
+                    if config in self.sensitive_cred_fields:
+                        value = mask_secret(value)
                     self._stream.write("%s = %s\n" % (config, value))
 
         # other in x.configure
@@ -316,13 +319,7 @@ class ConfigureGetCommand(BasicConfigure):
                "region = ap-guangzhou\n" \
                "\n" \
                "$ tccli configure get cvm.version\n" \
-               "cvm.version = 2017-03-12\n" \
-               "\n" \
-               "$ tccli configure get secretId\n" \
-               "secretId = *abcd\n" \
-               "\n" \
-               "$ tccli configure get secretKey\n" \
-               "secretKey = *wxyz"
+               "cvm.version = 2017-03-12"
 
     ARG_TABLE = [
         {'name': 'varname',
@@ -353,20 +350,18 @@ class ConfigureGetCommand(BasicConfigure):
             cred = Utils.load_json_msg(cred_path)
 
         for varname in varname_list:
-            from_cred = False
             if varname in conf[OptionsDefine.SysParam] and conf[OptionsDefine.SysParam][varname]:
                 value = conf[OptionsDefine.SysParam][varname]
             elif varname in cred.keys() and cred[varname]:
                 value = cred[varname]
-                from_cred = True
             else:
                 try:
                     kv = varname.split(".")
                     value = conf[kv[0]][kv[1]]
                 except Exception as err:
                     raise ConfigurationError("%s in %s.configure not exist" % (varname, profile_name))
-            if from_cred and varname in self.sensitive_keys:
-                value = self._mask_value(value)
+            if varname in self.sensitive_cred_fields:
+                value = mask_secret(value)
             self._stream.write("%s = %s" % (varname, value))
             self._stream.write('\n')
 
