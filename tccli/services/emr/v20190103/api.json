@@ -1291,7 +1291,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "扩缩容规则名。",
+          "document": "<p>扩缩容规则名。</p>",
           "example": "测试策略",
           "member": "string",
           "name": "StrategyName",
@@ -1301,7 +1301,7 @@
         },
         {
           "disabled": false,
-          "document": "\"SCALE_OUT\"和\"SCALE_IN\"，分别表示扩容和缩容。",
+          "document": "<p>&quot;SCALE_OUT&quot;和&quot;SCALE_IN&quot;，分别表示扩容和缩容。</p>",
           "example": "SCALE_OUT",
           "member": "string",
           "name": "ScaleAction",
@@ -1311,7 +1311,7 @@
         },
         {
           "disabled": false,
-          "document": "取值为\"SUCCESS\",\"FAILED\",\"PART_SUCCESS\",\"IN_PROCESS\"，分别表示成功、失败、部分成功和流程中。",
+          "document": "<p>取值为&quot;SUCCESS&quot;,&quot;FAILED&quot;,&quot;PART_SUCCESS&quot;,&quot;IN_PROCESS&quot;，分别表示成功、失败、部分成功和流程中。</p>",
           "example": "IN_PROCESS",
           "member": "string",
           "name": "ActionStatus",
@@ -1321,7 +1321,7 @@
         },
         {
           "disabled": false,
-          "document": "流程触发时间。",
+          "document": "<p>流程触发时间。</p>",
           "example": "2021-07-21 00:00:00",
           "member": "string",
           "name": "ActionTime",
@@ -1331,7 +1331,7 @@
         },
         {
           "disabled": false,
-          "document": "扩缩容相关描述信息。",
+          "document": "<p>扩缩容相关描述信息。</p>",
           "example": "扩容成功5个",
           "member": "string",
           "name": "ScaleInfo",
@@ -1341,7 +1341,7 @@
         },
         {
           "disabled": false,
-          "document": "只在ScaleAction为SCALE_OUT时有效。",
+          "document": "<p>只在ScaleAction为SCALE_OUT时有效。</p>",
           "example": "1",
           "member": "int64",
           "name": "ExpectScaleNum",
@@ -1351,7 +1351,7 @@
         },
         {
           "disabled": false,
-          "document": "流程结束时间。",
+          "document": "<p>流程结束时间。</p>",
           "example": "2021-07-21 00:01:00",
           "member": "string",
           "name": "EndTime",
@@ -1361,7 +1361,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型，按负载或者按时间，1表示负载伸缩，2表示时间伸缩",
+          "document": "<p>策略类型，按负载或者按时间，1表示负载伸缩，2表示时间伸缩</p>",
           "example": "1",
           "member": "int64",
           "name": "StrategyType",
@@ -1371,7 +1371,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容时所使用规格信息。",
+          "document": "<p>扩容时所使用规格信息。</p>",
           "example": "四核八G。",
           "member": "string",
           "name": "SpecInfo",
@@ -1381,7 +1381,7 @@
         },
         {
           "disabled": false,
-          "document": "补偿扩容，0表示不开启，1表示开启",
+          "document": "<p>补偿扩容，0表示不开启，1表示开启</p>",
           "example": "0",
           "member": "int64",
           "name": "CompensateFlag",
@@ -1391,7 +1391,7 @@
         },
         {
           "disabled": false,
-          "document": "补偿次数",
+          "document": "<p>补偿次数</p>",
           "example": "0",
           "member": "int64",
           "name": "CompensateCount",
@@ -1401,7 +1401,7 @@
         },
         {
           "disabled": false,
-          "document": "重试次数",
+          "document": "<p>重试次数</p>",
           "example": "0",
           "member": "uint64",
           "name": "RetryCount",
@@ -1411,7 +1411,7 @@
         },
         {
           "disabled": false,
-          "document": "重试信息",
+          "document": "<p>重试信息</p>",
           "example": "重试次数: 1, 重试结束时间: 2023-12-08 12:00:00, 重试原因: 资源不足",
           "member": "string",
           "name": "RetryInfo",
@@ -1421,8 +1421,8 @@
         },
         {
           "disabled": false,
-          "document": "重试英文描述",
-          "example": "The scaling rule cannot be triggered because the elastic resource has reached the maximum node limit. ",
+          "document": "<p>重试英文描述</p>",
+          "example": "The scaling rule cannot be triggered because the elastic resource has reached the maximum node limit.",
           "member": "string",
           "name": "RetryEnReason",
           "output_required": false,
@@ -1431,12 +1431,22 @@
         },
         {
           "disabled": false,
-          "document": "重试描述",
+          "document": "<p>重试描述</p>",
           "example": "失败原因:  弹性资源已达到最大节点数限制，无法触发扩容，建议尝试调整最大节点数",
           "member": "string",
           "name": "RetryReason",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>缺失分类</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ShortageClass",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -2661,7 +2671,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ID号",
+          "document": "<p>ID号</p>",
           "example": "13284",
           "member": "int64",
           "name": "Id",
@@ -2671,7 +2681,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "emr-38om728d",
           "member": "string",
           "name": "ClusterId",
@@ -2681,7 +2691,7 @@
         },
         {
           "disabled": true,
-          "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标题</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "集群运行中",
           "member": "string",
           "name": "Ftitle",
@@ -2691,7 +2701,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名",
+          "document": "<p>集群名</p>",
           "example": "tencent_emr",
           "member": "string",
           "name": "ClusterName",
@@ -2701,7 +2711,7 @@
         },
         {
           "disabled": false,
-          "document": "地域ID",
+          "document": "<p>地域ID</p>",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
@@ -2711,7 +2721,7 @@
         },
         {
           "disabled": false,
-          "document": "地区ID",
+          "document": "<p>地区ID</p>",
           "example": "10002",
           "member": "int64",
           "name": "ZoneId",
@@ -2721,7 +2731,7 @@
         },
         {
           "disabled": false,
-          "document": "用户APPID",
+          "document": "<p>用户APPID</p>",
           "example": "251112431",
           "member": "int64",
           "name": "AppId",
@@ -2731,7 +2741,7 @@
         },
         {
           "disabled": false,
-          "document": "用户UIN",
+          "document": "<p>用户UIN</p>",
           "example": "100000122121",
           "member": "string",
           "name": "Uin",
@@ -2741,7 +2751,7 @@
         },
         {
           "disabled": false,
-          "document": "项目Id",
+          "document": "<p>项目Id</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -2751,7 +2761,7 @@
         },
         {
           "disabled": false,
-          "document": "集群VPCID",
+          "document": "<p>集群VPCID</p>",
           "example": "87821",
           "member": "int64",
           "name": "VpcId",
@@ -2761,7 +2771,7 @@
         },
         {
           "disabled": false,
-          "document": "子网ID",
+          "document": "<p>子网ID</p>",
           "example": "2021891",
           "member": "int64",
           "name": "SubnetId",
@@ -2771,7 +2781,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的状态码。取值范围：\n<li>2：表示集群运行中。</li>\n<li>3：表示集群创建中。</li>\n<li>4：表示集群扩容中。</li>\n<li>5：表示集群增加router节点中。</li>\n<li>6：表示集群安装组件中。</li>\n<li>7：表示集群执行命令中。</li>\n<li>8：表示重启服务中。</li>\n<li>9：表示进入维护中。</li>\n<li>10：表示服务暂停中。</li>\n<li>11：表示退出维护中。</li>\n<li>12：表示退出暂停中。</li>\n<li>13：表示配置下发中。</li>\n<li>14：表示销毁集群中。</li>\n<li>15：表示销毁core节点中。</li>\n<li>16：销毁task节点中。</li>\n<li>17：表示销毁router节点中。</li>\n<li>18：表示更改webproxy密码中。</li>\n<li>19：表示集群隔离中。</li>\n<li>20：表示集群冲正中。</li>\n<li>21：表示集群回收中。</li>\n<li>22：表示变配等待中。</li>\n<li>23：表示集群已隔离。</li>\n<li>24：表示缩容节点中。</li>\n<li>33：表示集群等待退费中。</li>\n<li>34：表示集群已退费。</li>\n<li>301：表示创建失败。</li>\n<li>302：表示扩容失败。</li>",
+          "document": "<p>实例的状态码。取值范围：</p><li>2：表示集群运行中。</li><li>3：表示集群创建中。</li><li>4：表示集群扩容中。</li><li>5：表示集群增加router节点中。</li><li>6：表示集群安装组件中。</li><li>7：表示集群执行命令中。</li><li>8：表示重启服务中。</li><li>9：表示进入维护中。</li><li>10：表示服务暂停中。</li><li>11：表示退出维护中。</li><li>12：表示退出暂停中。</li><li>13：表示配置下发中。</li><li>14：表示销毁集群中。</li><li>15：表示销毁core节点中。</li><li>16：销毁task节点中。</li><li>17：表示销毁router节点中。</li><li>18：表示更改webproxy密码中。</li><li>19：表示集群隔离中。</li><li>20：表示集群冲正中。</li><li>21：表示集群回收中。</li><li>22：表示变配等待中。</li><li>23：表示集群已隔离。</li><li>24：表示缩容节点中。</li><li>33：表示集群等待退费中。</li><li>34：表示集群已退费。</li><li>301：表示创建失败。</li><li>302：表示扩容失败。</li>",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -2781,7 +2791,7 @@
         },
         {
           "disabled": false,
-          "document": "添加时间",
+          "document": "<p>添加时间</p>",
           "example": "2021-10-18 19:46:32",
           "member": "string",
           "name": "AddTime",
@@ -2791,7 +2801,7 @@
         },
         {
           "disabled": false,
-          "document": "已经运行时间",
+          "document": "<p>已经运行时间</p>",
           "example": "0天18小时32分钟28秒",
           "member": "string",
           "name": "RunTime",
@@ -2801,7 +2811,7 @@
         },
         {
           "disabled": true,
-          "document": "集群产品配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群产品配置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EmrProductConfigOutter",
           "name": "Config",
@@ -2811,7 +2821,7 @@
         },
         {
           "disabled": false,
-          "document": "主节点外网IP",
+          "document": "<p>主节点外网IP</p>",
           "example": "--",
           "member": "string",
           "name": "MasterIp",
@@ -2821,7 +2831,7 @@
         },
         {
           "disabled": false,
-          "document": "EMR版本",
+          "document": "<p>EMR版本</p>",
           "example": "EMR-V2.5.0",
           "member": "string",
           "name": "EmrVersion",
@@ -2831,7 +2841,7 @@
         },
         {
           "disabled": false,
-          "document": "收费类型",
+          "document": "<p>收费类型</p>",
           "example": "0",
           "member": "int64",
           "name": "ChargeType",
@@ -2841,7 +2851,7 @@
         },
         {
           "disabled": false,
-          "document": "交易版本",
+          "document": "<p>交易版本</p>",
           "example": "1",
           "member": "int64",
           "name": "TradeVersion",
@@ -2851,7 +2861,7 @@
         },
         {
           "disabled": false,
-          "document": "资源订单ID",
+          "document": "<p>资源订单ID</p>",
           "example": "0",
           "member": "int64",
           "name": "ResourceOrderId",
@@ -2861,7 +2871,7 @@
         },
         {
           "disabled": false,
-          "document": "是否计费集群",
+          "document": "<p>是否计费集群</p>",
           "example": "0",
           "member": "int64",
           "name": "IsTradeCluster",
@@ -2871,7 +2881,7 @@
         },
         {
           "disabled": false,
-          "document": "集群错误状态告警信息",
+          "document": "<p>集群错误状态告警信息</p>",
           "example": "--",
           "member": "string",
           "name": "AlarmInfo",
@@ -2881,7 +2891,7 @@
         },
         {
           "disabled": false,
-          "document": "是否采用新架构",
+          "document": "<p>是否采用新架构</p>",
           "example": "1",
           "member": "int64",
           "name": "IsWoodpeckerCluster",
@@ -2891,7 +2901,7 @@
         },
         {
           "disabled": false,
-          "document": "元数据库信息",
+          "document": "<p>元数据库信息</p>",
           "example": "cdb-lvz9h3us",
           "member": "string",
           "name": "MetaDb",
@@ -2901,7 +2911,7 @@
         },
         {
           "disabled": false,
-          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -2911,7 +2921,7 @@
         },
         {
           "disabled": false,
-          "document": "Hive元数据信息",
+          "document": "<p>Hive元数据信息</p>",
           "example": "cdb-8mq5jdt1",
           "member": "string",
           "name": "HiveMetaDb",
@@ -2921,7 +2931,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型:EMR,CLICKHOUSE,DRUID",
+          "document": "<p>集群类型:EMR,CLICKHOUSE,DRUID</p>",
           "example": "HADOOP",
           "member": "string",
           "name": "ServiceClass",
@@ -2931,7 +2941,7 @@
         },
         {
           "disabled": false,
-          "document": "集群所有节点的别名序列化",
+          "document": "<p>集群所有节点的别名序列化</p>",
           "example": "\"eyJjNrIn0=\"",
           "member": "string",
           "name": "AliasInfo",
@@ -2941,7 +2951,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版本Id",
+          "document": "<p>集群版本Id</p>",
           "example": "20",
           "member": "int64",
           "name": "ProductId",
@@ -2951,7 +2961,7 @@
         },
         {
           "disabled": false,
-          "document": "地区ID",
+          "document": "<p>地区ID</p>",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
@@ -2961,7 +2971,7 @@
         },
         {
           "disabled": false,
-          "document": "场景名称",
+          "document": "<p>场景名称</p>",
           "example": "Hadoop-Default",
           "member": "string",
           "name": "SceneName",
@@ -2971,7 +2981,7 @@
         },
         {
           "disabled": false,
-          "document": "场景化集群类型",
+          "document": "<p>场景化集群类型</p>",
           "example": "Hadoop",
           "member": "string",
           "name": "SceneServiceClass",
@@ -2981,7 +2991,7 @@
         },
         {
           "disabled": false,
-          "document": "场景化EMR版本",
+          "document": "<p>场景化EMR版本</p>",
           "example": "ClickHouse-V1.0.0",
           "member": "string",
           "name": "SceneEmrVersion",
@@ -2991,7 +3001,7 @@
         },
         {
           "disabled": false,
-          "document": "场景化集群类型",
+          "document": "<p>场景化集群类型</p>",
           "example": "Hadoop",
           "member": "string",
           "name": "DisplayName",
@@ -3001,7 +3011,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc name",
+          "document": "<p>vpc name</p>",
           "example": "emr",
           "member": "string",
           "name": "VpcName",
@@ -3011,7 +3021,7 @@
         },
         {
           "disabled": false,
-          "document": "subnet name",
+          "document": "<p>subnet name</p>",
           "example": "emr-name",
           "member": "string",
           "name": "SubnetName",
@@ -3021,7 +3031,7 @@
         },
         {
           "disabled": false,
-          "document": "集群依赖关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群依赖关系</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClusterExternalServiceInfo",
           "name": "ClusterExternalServiceInfo",
@@ -3031,7 +3041,7 @@
         },
         {
           "disabled": false,
-          "document": "集群vpcid 字符串类型",
+          "document": "<p>集群vpcid 字符串类型</p>",
           "example": "vpc-34o0gwhj",
           "member": "string",
           "name": "UniqVpcId",
@@ -3041,7 +3051,7 @@
         },
         {
           "disabled": false,
-          "document": "子网id 字符串类型",
+          "document": "<p>子网id 字符串类型</p>",
           "example": "subnet-1laxlsao",
           "member": "string",
           "name": "UniqSubnetId",
@@ -3051,7 +3061,7 @@
         },
         {
           "disabled": false,
-          "document": "节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TopologyInfo",
           "name": "TopologyInfoList",
@@ -3061,7 +3071,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是跨AZ集群",
+          "document": "<p>是否是跨AZ集群</p>",
           "example": "false",
           "member": "bool",
           "name": "IsMultiZoneCluster",
@@ -3071,7 +3081,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开通异常节点自动补偿",
+          "document": "<p>是否开通异常节点自动补偿</p>",
           "example": "false",
           "member": "bool",
           "name": "IsCvmReplace",
@@ -3081,7 +3091,7 @@
         },
         {
           "disabled": false,
-          "document": "标题",
+          "document": "<p>标题</p>",
           "example": "集群运行中",
           "member": "string",
           "name": "ClusterTitle",
@@ -3091,7 +3101,7 @@
         },
         {
           "disabled": false,
-          "document": "集群产品配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群产品配置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EmrProductConfigDetail",
           "name": "ConfigDetail",
@@ -3101,7 +3111,7 @@
         },
         {
           "disabled": false,
-          "document": "集群绑定的文件系统数",
+          "document": "<p>集群绑定的文件系统数</p>",
           "example": "1",
           "member": "int64",
           "name": "BindFileSystemNum",
@@ -3111,7 +3121,7 @@
         },
         {
           "disabled": false,
-          "document": "rss集群的绑定列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>rss集群的绑定列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClusterRelationMeta",
           "name": "ClusterRelationInfoList",
@@ -3121,13 +3131,33 @@
         },
         {
           "disabled": false,
-          "document": "Redis信息",
+          "document": "<p>Redis信息</p>",
           "example": "crs-0kfb1a25",
           "member": "string",
           "name": "RedisId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启IO故障自愈</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsIOHungSelfRecovery",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>元数据信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomMetaDBInfo",
+          "name": "MetaDBGroupInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10268,6 +10298,112 @@
       ],
       "usage": "both"
     },
+    "DiskHealthIssue": {
+      "document": "磁盘",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>磁盘id</p>",
+          "example": "disk-aab8vffs",
+          "member": "string",
+          "name": "DiskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂载的目录</p>",
+          "example": "/data",
+          "member": "string",
+          "name": "MountDir",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备路径</p>",
+          "example": "/dev/vdb",
+          "member": "string",
+          "name": "DeviceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常类型</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CheckType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>优先级</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Severity",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "State",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>探测来源</p>",
+          "example": "agent_io_probe",
+          "member": "string",
+          "name": "DetectSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>第一次探测时间</p>",
+          "example": "2026-07-06T21:01:49+08:00",
+          "member": "string",
+          "name": "FirstDetectTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最新探测时间</p>",
+          "example": "2026-07-06T21:05:53+08:00",
+          "member": "string",
+          "name": "LastDetectTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>探测信息</p>",
+          "example": "io_probe_timeout_after_10s",
+          "member": "string",
+          "name": "DetectDetail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DiskSpec": {
       "document": "磁盘描述。",
       "members": [
@@ -13377,7 +13513,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "购买实例的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
+          "document": "<p>购买实例的时间单位。取值范围：</p><li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li><li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
           "example": "s",
           "member": "string",
           "name": "TimeUnit",
@@ -13386,7 +13522,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
+          "document": "<p>购买实例的时长。结合TimeUnit一起使用。</p><li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li><li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
           "example": "3600",
           "member": "uint64",
           "name": "TimeSpan",
@@ -13395,7 +13531,7 @@
         },
         {
           "disabled": false,
-          "document": "货币种类。取值范围：\n<li>CNY：表示人民币。</li>",
+          "document": "<p>货币种类。取值范围：</p><li>CNY：表示人民币。</li>",
           "example": "CNY",
           "member": "string",
           "name": "Currency",
@@ -13404,7 +13540,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
+          "document": "<p>实例计费模式。取值范围：</p><li>0：表示按量计费。</li><li>1：表示包年包月。</li>",
           "example": "0",
           "member": "uint64",
           "name": "PayMode",
@@ -13413,7 +13549,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启节点高可用。取值范围：\n<li>0：表示不开启节点高可用。</li>\n<li>1：表示开启节点高可用。\u0007</li>",
+          "document": "<p>是否开启节点高可用。取值范围：</p><li>0：表示不开启节点高可用。</li><li>1：表示开启节点高可用。x07</li>",
           "example": "0",
           "member": "uint64",
           "name": "SupportHA",
@@ -13422,7 +13558,7 @@
         },
         {
           "disabled": false,
-          "document": "部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：<li>ProductId为2(EMR-V2.0.1)的时候，必选组件包括：hdfs-2.7.3,yarn-2.7.3,zookeeper-3.4.9,knox-1.2.0</li><li>ProductId为16(EMR-V2.3.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.5.5,knox-1.2.0</li><li>ProductId为20(EMR-V2.5.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为30(EMR-V2.6.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.1,openldap-2.4.44,knox-1.2.0</li><li>ProductId为38(EMR-V2.7.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为57(EMR-V2.8.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为7(EMR-V3.0.0)的时候，必选组件包括：hdfs-3.1.2,yarn-3.1.2,zookeeper-3.4.9,knox-1.2.0</li><li>ProductId为25(EMR-V3.1.0)的时候，必选组件包括：hdfs-3.1.2,yarn-3.1.2,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为31(EMR-V3.1.1)的时候，必选组件包括：hdfs-3.1.2,yarn-3.1.2,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为28(EMR-V3.2.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为33(EMR-V3.2.1)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.1,openldap-2.4.44,knox-1.2.0</li><li>ProductId为34(EMR-V3.3.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.1,openldap-2.4.44,knox-1.2.0</li><li>ProductId为37(EMR-V3.4.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为44(EMR-V3.5.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为53(EMR-V3.6.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为58(EMR-V3.6.1)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.46,knox-1.6.1</li><li>ProductId为47(EMR-V4.0.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li>",
+          "document": "<p>部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：<li>ProductId为2(EMR-V2.0.1)的时候，必选组件包括：hdfs-2.7.3,yarn-2.7.3,zookeeper-3.4.9,knox-1.2.0</li><li>ProductId为16(EMR-V2.3.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.5.5,knox-1.2.0</li><li>ProductId为20(EMR-V2.5.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为30(EMR-V2.6.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.1,openldap-2.4.44,knox-1.2.0</li><li>ProductId为38(EMR-V2.7.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为57(EMR-V2.8.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为7(EMR-V3.0.0)的时候，必选组件包括：hdfs-3.1.2,yarn-3.1.2,zookeeper-3.4.9,knox-1.2.0</li><li>ProductId为25(EMR-V3.1.0)的时候，必选组件包括：hdfs-3.1.2,yarn-3.1.2,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为31(EMR-V3.1.1)的时候，必选组件包括：hdfs-3.1.2,yarn-3.1.2,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为28(EMR-V3.2.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为33(EMR-V3.2.1)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.1,openldap-2.4.44,knox-1.2.0</li><li>ProductId为34(EMR-V3.3.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.1,openldap-2.4.44,knox-1.2.0</li><li>ProductId为37(EMR-V3.4.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为44(EMR-V3.5.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为53(EMR-V3.6.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为58(EMR-V3.6.1)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.46,knox-1.6.1</li><li>ProductId为47(EMR-V4.0.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li></p>",
           "example": "[\"hdfs-2.7.3\"]",
           "member": "string",
           "name": "Software",
@@ -13431,7 +13567,7 @@
         },
         {
           "disabled": false,
-          "document": "询价的节点规格。",
+          "document": "<p>询价的节点规格。</p>",
           "example": "无",
           "member": "NewResourceSpec",
           "name": "ResourceSpec",
@@ -13440,7 +13576,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
+          "document": "<p>实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。</p>",
           "example": "无",
           "member": "Placement",
           "name": "Placement",
@@ -13449,7 +13585,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。",
+          "document": "<p>私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。</p>",
           "example": "无",
           "member": "VPCSettings",
           "name": "VPCSettings",
@@ -13458,7 +13594,7 @@
         },
         {
           "disabled": false,
-          "document": "hive共享元数据库类型。取值范围：\n<li>EMR_NEW_META：表示集群默认创建</li>\n<li>EMR_EXIT_METE：表示集群使用指定EMR-MetaDB。</li>\n<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
+          "document": "<p>hive共享元数据库类型。取值范围：</p><li>EMR_NEW_META：表示集群默认创建</li><li>EMR_EXIT_METE：表示集群使用指定EMR-MetaDB。</li><li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
           "example": "EMR_NEW_META",
           "member": "string",
           "name": "MetaType",
@@ -13467,7 +13603,7 @@
         },
         {
           "disabled": false,
-          "document": "EMR-MetaDB实例",
+          "document": "<p>EMR-MetaDB实例</p>",
           "example": "cdb-xxx",
           "member": "string",
           "name": "UnifyMetaInstanceId",
@@ -13476,7 +13612,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义MetaDB信息",
+          "document": "<p>自定义MetaDB信息</p>",
           "example": "无",
           "member": "CustomMetaInfo",
           "name": "MetaDBInfo",
@@ -13485,7 +13621,7 @@
         },
         {
           "disabled": false,
-          "document": "产品ID，不同产品ID表示不同的EMR产品版本。取值范围：<li>2：表示EMR-V2.0.1</li><li>16：表示EMR-V2.3.0</li><li>20：表示EMR-V2.5.0</li><li>30：表示EMR-V2.6.0</li><li>38：表示EMR-V2.7.0</li><li>57：表示EMR-V2.8.0</li><li>7：表示EMR-V3.0.0</li><li>25：表示EMR-V3.1.0</li><li>31：表示EMR-V3.1.1</li><li>28：表示EMR-V3.2.0</li><li>33：表示EMR-V3.2.1</li><li>34：表示EMR-V3.3.0</li><li>37：表示EMR-V3.4.0</li><li>44：表示EMR-V3.5.0</li><li>53：表示EMR-V3.6.0</li><li>58：表示EMR-V3.6.1</li><li>47：表示EMR-V4.0.0</li>",
+          "document": "<p>产品ID，不同产品ID表示不同的EMR产品版本。取值范围：<li>2：表示EMR-V2.0.1</li><li>16：表示EMR-V2.3.0</li><li>20：表示EMR-V2.5.0</li><li>30：表示EMR-V2.6.0</li><li>38：表示EMR-V2.7.0</li><li>57：表示EMR-V2.8.0</li><li>7：表示EMR-V3.0.0</li><li>25：表示EMR-V3.1.0</li><li>31：表示EMR-V3.1.1</li><li>28：表示EMR-V3.2.0</li><li>33：表示EMR-V3.2.1</li><li>34：表示EMR-V3.3.0</li><li>37：表示EMR-V3.4.0</li><li>44：表示EMR-V3.5.0</li><li>53：表示EMR-V3.6.0</li><li>58：表示EMR-V3.6.1</li><li>47：表示EMR-V4.0.0</li></p>",
           "example": "47",
           "member": "uint64",
           "name": "ProductId",
@@ -13494,7 +13630,7 @@
         },
         {
           "disabled": false,
-          "document": "场景化取值：Hadoop-Kudu，Hadoop-Zookeeper，Hadoop-Presto，Hadoop-Hbase",
+          "document": "<p>场景化取值：Hadoop-Kudu，Hadoop-Zookeeper，Hadoop-Presto，Hadoop-Hbase</p>",
           "example": "Hadoop-Hbase",
           "member": "string",
           "name": "SceneName",
@@ -13503,7 +13639,7 @@
         },
         {
           "disabled": false,
-          "document": "共用组件信息",
+          "document": "<p>共用组件信息</p>",
           "example": "无",
           "member": "ExternalService",
           "name": "ExternalService",
@@ -13512,7 +13648,7 @@
         },
         {
           "disabled": false,
-          "document": "当前默认值为0，跨AZ特性支持后为1",
+          "document": "<p>当前默认值为0，跨AZ特性支持后为1</p>",
           "example": "0",
           "member": "uint64",
           "name": "VersionID",
@@ -13521,7 +13657,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区的规格信息",
+          "document": "<p>可用区的规格信息</p>",
           "example": "无",
           "member": "MultiZoneSetting",
           "name": "MultiZoneSettings",
@@ -13530,7 +13666,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库版本",
+          "document": "<p>数据库版本</p>",
           "example": "mysql8",
           "member": "string",
           "name": "DefaultMetaVersion",
@@ -13539,12 +13675,21 @@
         },
         {
           "disabled": false,
-          "document": "0:不开通审计；1:开通审计",
+          "document": "<p>0:不开通审计；1:开通审计</p>",
           "example": "0",
           "member": "int64",
           "name": "NeedCdbAudit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义db数据</p>",
+          "example": "无",
+          "member": "CustomMetaDBInfo",
+          "name": "MetaDBGroupInfo",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -13554,7 +13699,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "原价，单位为元。",
+          "document": "<p>原价，单位为元。</p>",
           "example": "2.54",
           "member": "float",
           "name": "OriginalCost",
@@ -13564,7 +13709,7 @@
         },
         {
           "disabled": false,
-          "document": "折扣价，单位为元。",
+          "document": "<p>折扣价，单位为元。</p>",
           "example": "1.52",
           "member": "float",
           "name": "DiscountCost",
@@ -13574,7 +13719,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例的时间单位。取值范围：\n<li>s：表示秒。</li>\n<li>m：表示月份。</li>",
+          "document": "<p>购买实例的时间单位。取值范围：</p><li>s：表示秒。</li><li>m：表示月份。</li>",
           "example": "s",
           "member": "string",
           "name": "TimeUnit",
@@ -13584,7 +13729,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例的时长。",
+          "document": "<p>购买实例的时长。</p>",
           "example": "3600",
           "member": "int64",
           "name": "TimeSpan",
@@ -13594,7 +13739,7 @@
         },
         {
           "disabled": false,
-          "document": "价格清单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>价格清单</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ZoneDetailPriceResult",
           "name": "PriceList",
@@ -14442,6 +14587,15 @@
           "name": "CheckServiceDeployInfo",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义metadb信息</p>",
+          "example": "无",
+          "member": "CustomMetaDBInfo",
+          "name": "MetaDBGroupInfo",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -17273,7 +17427,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户APPID",
+          "document": "<p>用户APPID</p>",
           "example": "1211111111",
           "member": "int64",
           "name": "AppId",
@@ -17283,7 +17437,7 @@
         },
         {
           "disabled": false,
-          "document": "序列号",
+          "document": "<p>序列号</p>",
           "example": "e25cf56b-37f7-45b5-b8f2-c3e355052065",
           "member": "string",
           "name": "SerialNo",
@@ -17293,7 +17447,7 @@
         },
         {
           "disabled": false,
-          "document": "机器实例ID",
+          "document": "<p>机器实例ID</p>",
           "example": "ins-bg605040",
           "member": "string",
           "name": "OrderNo",
@@ -17303,7 +17457,7 @@
         },
         {
           "disabled": false,
-          "document": "master节点绑定外网IP",
+          "document": "<p>master节点绑定外网IP</p>",
           "example": "\"--\"",
           "member": "string",
           "name": "WanIp",
@@ -17313,7 +17467,7 @@
         },
         {
           "disabled": false,
-          "document": "节点类型。0:common节点；1:master节点\n；2:core节点；3:task节点",
+          "document": "<p>节点类型。0:common节点；1:master节点<br>；2:core节点；3:task节点</p>",
           "example": "1",
           "member": "int64",
           "name": "Flag",
@@ -17323,7 +17477,7 @@
         },
         {
           "disabled": false,
-          "document": "节点规格",
+          "document": "<p>节点规格</p>",
           "example": "CVM.S5",
           "member": "string",
           "name": "Spec",
@@ -17333,7 +17487,7 @@
         },
         {
           "disabled": false,
-          "document": "节点核数",
+          "document": "<p>节点核数</p>",
           "example": "8",
           "member": "int64",
           "name": "CpuNum",
@@ -17343,7 +17497,7 @@
         },
         {
           "disabled": false,
-          "document": "节点内存,单位b",
+          "document": "<p>节点内存,单位b</p>",
           "example": "34359738368",
           "member": "int64",
           "name": "MemSize",
@@ -17353,7 +17507,7 @@
         },
         {
           "disabled": false,
-          "document": "节点内存描述，单位GB",
+          "document": "<p>节点内存描述，单位GB</p>",
           "example": "32GB",
           "member": "string",
           "name": "MemDesc",
@@ -17363,7 +17517,7 @@
         },
         {
           "disabled": false,
-          "document": "节点所在region",
+          "document": "<p>节点所在region</p>",
           "example": "0",
           "member": "int64",
           "name": "RegionId",
@@ -17373,7 +17527,7 @@
         },
         {
           "disabled": false,
-          "document": "节点所在Zone",
+          "document": "<p>节点所在Zone</p>",
           "example": "19",
           "member": "int64",
           "name": "ZoneId",
@@ -17383,7 +17537,7 @@
         },
         {
           "disabled": false,
-          "document": "申请时间",
+          "document": "<p>申请时间</p>",
           "example": "2024-12-24 11:05:09",
           "member": "string",
           "name": "ApplyTime",
@@ -17393,7 +17547,7 @@
         },
         {
           "disabled": false,
-          "document": "释放时间",
+          "document": "<p>释放时间</p>",
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "FreeTime",
@@ -17403,7 +17557,7 @@
         },
         {
           "disabled": false,
-          "document": "硬盘大小",
+          "document": "<p>硬盘大小</p>",
           "example": "200.00 GB",
           "member": "string",
           "name": "DiskSize",
@@ -17413,7 +17567,7 @@
         },
         {
           "disabled": false,
-          "document": "节点描述",
+          "document": "<p>节点描述</p>",
           "example": "master.0",
           "member": "string",
           "name": "NameTag",
@@ -17423,7 +17577,7 @@
         },
         {
           "disabled": false,
-          "document": "节点部署服务",
+          "document": "<p>节点部署服务</p>",
           "example": "Filebeat,gateway,JobHistoryServer,ldap,NameNode,Zookeeper,ResourceManager,slapd,Sysctl,TimeLineServer",
           "member": "string",
           "name": "Services",
@@ -17433,7 +17587,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘\n",
+          "document": "<p>磁盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘</p>",
           "example": "4",
           "member": "int64",
           "name": "StorageType",
@@ -17443,7 +17597,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘大小，单位GB",
+          "document": "<p>系统盘大小，单位GB</p>",
           "example": "70",
           "member": "int64",
           "name": "RootSize",
@@ -17453,7 +17607,7 @@
         },
         {
           "disabled": false,
-          "document": "付费类型，0：按量计费；1：包年包月",
+          "document": "<p>付费类型，0：按量计费；1：包年包月</p>",
           "example": "0",
           "member": "int64",
           "name": "ChargeType",
@@ -17463,7 +17617,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库IP",
+          "document": "<p>数据库IP</p>",
           "example": "\"127.0.0.1\"",
           "member": "string",
           "name": "CdbIp",
@@ -17473,7 +17627,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库端口",
+          "document": "<p>数据库端口</p>",
           "example": "0",
           "member": "int64",
           "name": "CdbPort",
@@ -17483,7 +17637,7 @@
         },
         {
           "disabled": false,
-          "document": "硬盘容量,单位b",
+          "document": "<p>硬盘容量,单位b</p>",
           "example": "214748364800",
           "member": "int64",
           "name": "HwDiskSize",
@@ -17493,7 +17647,7 @@
         },
         {
           "disabled": false,
-          "document": "硬盘容量描述",
+          "document": "<p>硬盘容量描述</p>",
           "example": "200.00 GB",
           "member": "string",
           "name": "HwDiskSizeDesc",
@@ -17503,7 +17657,7 @@
         },
         {
           "disabled": false,
-          "document": "内存容量，单位b",
+          "document": "<p>内存容量，单位b</p>",
           "example": "34359738368",
           "member": "int64",
           "name": "HwMemSize",
@@ -17513,7 +17667,7 @@
         },
         {
           "disabled": false,
-          "document": "内存容量描述",
+          "document": "<p>内存容量描述</p>",
           "example": "32GB",
           "member": "string",
           "name": "HwMemSizeDesc",
@@ -17523,7 +17677,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "<p>过期时间</p>",
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "ExpireTime",
@@ -17533,7 +17687,7 @@
         },
         {
           "disabled": false,
-          "document": "节点资源ID",
+          "document": "<p>节点资源ID</p>",
           "example": "emr-vm-og6cdzw3",
           "member": "string",
           "name": "EmrResourceId",
@@ -17543,7 +17697,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标志",
+          "document": "<p>续费标志</p>",
           "example": "0",
           "member": "int64",
           "name": "IsAutoRenew",
@@ -17553,7 +17707,7 @@
         },
         {
           "disabled": false,
-          "document": "设备标识",
+          "document": "<p>设备标识</p>",
           "example": "VSELF_5",
           "member": "string",
           "name": "DeviceClass",
@@ -17563,7 +17717,7 @@
         },
         {
           "disabled": false,
-          "document": "支持变配",
+          "document": "<p>支持变配</p>",
           "example": "0",
           "member": "int64",
           "name": "Mutable",
@@ -17573,7 +17727,7 @@
         },
         {
           "disabled": false,
-          "document": "多云盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>多云盘</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MultiDiskMC",
           "name": "MCMultiDisk",
@@ -17583,7 +17737,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据库信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CdbInfo",
           "name": "CdbNodeInfo",
@@ -17593,7 +17747,7 @@
         },
         {
           "disabled": false,
-          "document": "内网IP",
+          "document": "<p>内网IP</p>",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Ip",
@@ -17603,7 +17757,7 @@
         },
         {
           "disabled": false,
-          "document": "此节点是否可销毁，1可销毁，0不可销毁",
+          "document": "<p>此节点是否可销毁，1可销毁，0不可销毁</p>",
           "example": "0",
           "member": "int64",
           "name": "Destroyable",
@@ -17613,7 +17767,7 @@
         },
         {
           "disabled": false,
-          "document": "节点绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点绑定的标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -17623,7 +17777,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是自动扩缩容节点，0为普通节点，1为自动扩缩容节点。",
+          "document": "<p>是否是自动扩缩容节点，0为普通节点，1为自动扩缩容节点。</p>",
           "example": "0",
           "member": "int64",
           "name": "AutoFlag",
@@ -17633,7 +17787,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型, host/pod",
+          "document": "<p>资源类型, host/pod</p>",
           "example": "HOST",
           "member": "string",
           "name": "HardwareResourceType",
@@ -17643,7 +17797,7 @@
         },
         {
           "disabled": false,
-          "document": "是否浮动规格，1是，0否",
+          "document": "<p>是否浮动规格，1是，0否</p>",
           "example": "0",
           "member": "int64",
           "name": "IsDynamicSpec",
@@ -17653,7 +17807,7 @@
         },
         {
           "disabled": false,
-          "document": "浮动规格值json字符串",
+          "document": "<p>浮动规格值json字符串</p>",
           "example": "\"无\"",
           "member": "string",
           "name": "DynamicPodSpec",
@@ -17663,7 +17817,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持变更计费类型 1是，0否",
+          "document": "<p>是否支持变更计费类型 1是，0否</p>",
           "example": "0",
           "member": "int64",
           "name": "SupportModifyPayMode",
@@ -17673,7 +17827,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘\n",
+          "document": "<p>系统盘类型，1 :本地盘 2 :云硬盘 3 : 本地SSD 4 : 云SSD 5 : 高效云盘 6 : 增强型SSD云硬盘 11 : 吞吐型云硬盘 12 : 极速型SSD云硬盘 13 : 通用型SSD云硬盘 14 : 大数据型云硬盘 15 : 高IO型云硬盘 16 : 远端SSD盘</p>",
           "example": "4",
           "member": "int64",
           "name": "RootStorageType",
@@ -17683,7 +17837,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区信息",
+          "document": "<p>可用区信息</p>",
           "example": "ap-chongqing-1",
           "member": "string",
           "name": "Zone",
@@ -17693,7 +17847,7 @@
         },
         {
           "disabled": false,
-          "document": "子网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子网</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SubnetInfo",
           "name": "SubnetInfo",
@@ -17703,7 +17857,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端",
+          "document": "<p>客户端</p>",
           "example": "HDFS,YARN,ZOOKEEPER,OPENLDAP,KNOX,FILEBEAT,RUNTIME",
           "member": "string",
           "name": "Clients",
@@ -17713,7 +17867,7 @@
         },
         {
           "disabled": false,
-          "document": "系统当前时间",
+          "document": "<p>系统当前时间</p>",
           "example": "2024-12-24 12:06:33",
           "member": "string",
           "name": "CurrentTime",
@@ -17723,7 +17877,7 @@
         },
         {
           "disabled": false,
-          "document": "是否用于联邦 ,1是，0否",
+          "document": "<p>是否用于联邦 ,1是，0否</p>",
           "example": "0",
           "member": "int64",
           "name": "IsFederation",
@@ -17733,7 +17887,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名称",
+          "document": "<p>设备名称</p>",
           "example": "EMR标准型S5",
           "member": "string",
           "name": "DeviceName",
@@ -17743,7 +17897,7 @@
         },
         {
           "disabled": false,
-          "document": "服务",
+          "document": "<p>服务</p>",
           "example": "\"无\"",
           "member": "string",
           "name": "ServiceClient",
@@ -17753,7 +17907,7 @@
         },
         {
           "disabled": false,
-          "document": "该实例是否开启实例保护，true为开启 false为关闭",
+          "document": "<p>该实例是否开启实例保护，true为开启 false为关闭</p>",
           "example": "true",
           "member": "bool",
           "name": "DisableApiTermination",
@@ -17763,7 +17917,7 @@
         },
         {
           "disabled": false,
-          "document": "0表示老计费，1表示新计费",
+          "document": "<p>0表示老计费，1表示新计费</p>",
           "example": "1",
           "member": "int64",
           "name": "TradeVersion",
@@ -17773,7 +17927,7 @@
         },
         {
           "disabled": false,
-          "document": "各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止",
+          "document": "<p>各组件状态，Zookeeper:STARTED,ResourceManager:STARTED，STARTED已启动，STOPED已停止</p>",
           "example": "Filebeat:STARTED,gateway:STARTED,JobHistoryServer:STARTED,NameNode:STARTED,Zookeeper:STARTED,ResourceManager:STARTED",
           "member": "string",
           "name": "ServicesStatus",
@@ -17783,7 +17937,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "\"无\"",
           "member": "string",
           "name": "Remark",
@@ -17793,7 +17947,7 @@
         },
         {
           "disabled": false,
-          "document": "共享集群id",
+          "document": "<p>共享集群id</p>",
           "example": "\"无\"",
           "member": "string",
           "name": "SharedClusterId",
@@ -17803,7 +17957,7 @@
         },
         {
           "disabled": false,
-          "document": "共享集群id描述",
+          "document": "<p>共享集群id描述</p>",
           "example": "\"无\"",
           "member": "string",
           "name": "SharedClusterIdDesc",
@@ -17813,7 +17967,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是定时销毁资源",
+          "document": "<p>是否是定时销毁资源</p>",
           "example": "true",
           "member": "bool",
           "name": "TimingResource",
@@ -17823,7 +17977,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型（HardwareResourceType）为pod时，对应的TKE集群id",
+          "document": "<p>资源类型（HardwareResourceType）为pod时，对应的TKE集群id</p>",
           "example": "cls-mlxxxxxx",
           "member": "string",
           "name": "TkeClusterId",
@@ -17833,7 +17987,7 @@
         },
         {
           "disabled": false,
-          "document": "新挂磁盘时可支持配置的服务名称列表",
+          "document": "<p>新挂磁盘时可支持配置的服务名称列表</p>",
           "example": "[\"HDFS\",\"YARN\"]",
           "member": "string",
           "name": "ConfigurableServices",
@@ -17843,7 +17997,7 @@
         },
         {
           "disabled": false,
-          "document": "节点标注信息，目前只提供给tf平台使用",
+          "document": "<p>节点标注信息，目前只提供给tf平台使用</p>",
           "example": "\"core1\"",
           "member": "string",
           "name": "NodeMark",
@@ -17853,7 +18007,7 @@
         },
         {
           "disabled": false,
-          "document": "包销资源是否支持设置自动续费",
+          "document": "<p>包销资源是否支持设置自动续费</p>",
           "example": "true",
           "member": "bool",
           "name": "UnderwriteSetAutoRenew",
@@ -17863,12 +18017,22 @@
         },
         {
           "disabled": false,
-          "document": "Gpu信息",
+          "document": "<p>Gpu信息</p>",
           "example": "1 * NVIDIA A10 1 * 24GB",
           "member": "string",
           "name": "GpuDesc",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘问题描述</p>",
+          "example": "无",
+          "member": "DiskHealthIssue",
+          "name": "DiskHealthIssues",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

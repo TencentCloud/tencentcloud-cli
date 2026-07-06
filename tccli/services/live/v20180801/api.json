@@ -7586,7 +7586,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板名称，例： 900p 仅支持字母和数字的组合。\n长度限制：\n  标准转码：1-10个字符\n  极速高清转码：3-10个字符",
+          "document": "<p>模板名称，例： 900p 仅支持字母和数字的组合。<br>长度限制：<br>  标准转码：1-10个字符<br>  极速高清转码：3-10个字符</p>",
           "example": "900p",
           "member": "string",
           "name": "TemplateName",
@@ -7595,7 +7595,7 @@
         },
         {
           "disabled": false,
-          "document": "视频码率。范围：0kbps - 8000kbps。\n0为保持原始码率。\n注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。",
+          "document": "<p>视频码率。范围：0kbps - 8000kbps。<br>0为保持原始码率。<br>注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。</p>",
           "example": "0",
           "member": "int64",
           "name": "VideoBitrate",
@@ -7604,7 +7604,7 @@
         },
         {
           "disabled": false,
-          "document": "音频编码：aac，默认aac。\n注意：当前该参数未生效，待后续支持！",
+          "document": "<p>音频编码：aac，默认aac。<br>注意：当前该参数未生效，待后续支持！</p>",
           "example": "aac",
           "member": "string",
           "name": "Acodec",
@@ -7613,7 +7613,7 @@
         },
         {
           "disabled": false,
-          "document": "音频码率，默认0。\n范围：0-500。",
+          "document": "<p>音频码率，默认0。<br>范围：0-500。</p>",
           "example": "0",
           "member": "int64",
           "name": "AudioBitrate",
@@ -7622,7 +7622,7 @@
         },
         {
           "disabled": false,
-          "document": "视频编码：h264/h265/origin，默认origin。\n\norigin: 保持原始编码格式",
+          "document": "<p>视频编码：h264/h265/origin，默认origin。</p><p>origin: 保持原始编码格式</p>",
           "example": "h264",
           "member": "string",
           "name": "Vcodec",
@@ -7631,7 +7631,7 @@
         },
         {
           "disabled": false,
-          "document": "模板描述。",
+          "document": "<p>模板描述。</p>",
           "example": "transcode",
           "member": "string",
           "name": "Description",
@@ -7640,7 +7640,7 @@
         },
         {
           "disabled": false,
-          "document": "是否保留视频，0：否，1：是。默认1。",
+          "document": "<p>是否保留视频，0：否，1：是。默认1。</p>",
           "example": "0",
           "member": "int64",
           "name": "NeedVideo",
@@ -7649,7 +7649,7 @@
         },
         {
           "disabled": false,
-          "document": "宽，默认0。\n范围[0-3000]\n数值必须是2的倍数，0是原始宽度",
+          "document": "<p>宽，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始宽度</p>",
           "example": "0",
           "member": "int64",
           "name": "Width",
@@ -7658,7 +7658,7 @@
         },
         {
           "disabled": false,
-          "document": "是否保留音频，0：否，1：是。默认1。",
+          "document": "<p>是否保留音频，0：否，1：是。默认1。</p>",
           "example": "0",
           "member": "int64",
           "name": "NeedAudio",
@@ -7667,7 +7667,7 @@
         },
         {
           "disabled": false,
-          "document": "高，默认0。\n范围[0-3000]\n数值必须是2的倍数，0是原始高度。\n极速高清模板（AiTransCode = 1 的时候）必须传。",
+          "document": "<p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始高度。<br>极速高清模板（AiTransCode = 1 的时候）必须传。</p>",
           "example": "0",
           "member": "int64",
           "name": "Height",
@@ -7676,7 +7676,7 @@
         },
         {
           "disabled": false,
-          "document": "帧率，默认0。\n范围0-60fps",
+          "document": "<p>帧率，默认0。<br>范围0-60fps</p>",
           "example": "0",
           "member": "int64",
           "name": "Fps",
@@ -7685,7 +7685,7 @@
         },
         {
           "disabled": false,
-          "document": "关键帧间隔，单位：秒。\n默认原始的间隔\n范围1-6",
+          "document": "<p>关键帧间隔，单位：秒。<br>默认原始的间隔<br>范围1-6</p>",
           "example": "2",
           "member": "int64",
           "name": "Gop",
@@ -7694,7 +7694,7 @@
         },
         {
           "disabled": false,
-          "document": "旋转角度，默认0。\n可取值：0，90，180，270",
+          "document": "<p>旋转角度，默认0。<br>可取值：0，90，180，270</p>",
           "example": "0",
           "member": "int64",
           "name": "Rotate",
@@ -7703,7 +7703,7 @@
         },
         {
           "disabled": false,
-          "document": "编码质量：\nbaseline/main/high。默认baseline",
+          "document": "<p>编码质量：<br>baseline/main/high。默认baseline</p>",
           "example": "baseline",
           "member": "string",
           "name": "Profile",
@@ -7712,7 +7712,7 @@
         },
         {
           "disabled": false,
-          "document": "当设置的码率>原始码率时，是否以原始码率为准。\n0：否， 1：是\n默认 0。",
+          "document": "<p>当设置的码率&gt;原始码率时，是否以原始码率为准。<br>0：否， 1：是<br>默认 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "BitrateToOrig",
@@ -7721,7 +7721,7 @@
         },
         {
           "disabled": false,
-          "document": "当设置的高度>原始高度时，是否以原始高度为准。\n0：否， 1：是\n默认 0。",
+          "document": "<p>当设置的高度&gt;原始高度时，是否以原始高度为准。<br>0：否， 1：是<br>默认 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "HeightToOrig",
@@ -7730,7 +7730,7 @@
         },
         {
           "disabled": false,
-          "document": "当设置的帧率>原始帧率时，是否以原始帧率为准。\n0：否， 1：是\n默认 0。",
+          "document": "<p>当设置的帧率&gt;原始帧率时，是否以原始帧率为准。<br>0：否， 1：是<br>默认 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "FpsToOrig",
@@ -7739,7 +7739,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是极速高清模板，0：否，1：是。默认0。",
+          "document": "<p>是否是极速高清模板，0：否，1：是。默认0。</p>",
           "example": "0",
           "member": "int64",
           "name": "AiTransCode",
@@ -7748,7 +7748,7 @@
         },
         {
           "disabled": false,
-          "document": "极速高清视频码率压缩比。\n极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)\n\n取值范围：0.0到0.5",
+          "document": "<p>极速高清视频码率压缩比。<br>极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)</p><p>取值范围：0.0 到 0.5<br>智能降码：0.5 到 0.9。</p>",
           "example": "0.0",
           "member": "float",
           "name": "AdaptBitratePercent",
@@ -7757,7 +7757,7 @@
         },
         {
           "disabled": false,
-          "document": "是否以短边作为高度，0：否，1：是。默认0。",
+          "document": "<p>是否以短边作为高度，0：否，1：是。默认0。</p>",
           "example": "0",
           "member": "int64",
           "name": "ShortEdgeAsHeight",
@@ -7766,7 +7766,7 @@
         },
         {
           "disabled": false,
-          "document": "DRM 加密类型，可选值：fairplay、normalaes、widevine。\n不传递或者为空字符串，清空之前的DRM配置。",
+          "document": "<p>DRM 加密类型，可选值：fairplay、normalaes、widevine。<br>不传递或者为空字符串，清空之前的DRM配置。</p>",
           "example": "normalaes",
           "member": "string",
           "name": "DRMType",
@@ -7775,7 +7775,7 @@
         },
         {
           "disabled": false,
-          "document": "DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。\n不传递或者为空字符串，清空之前的DRM配置。",
+          "document": "<p>DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。<br>不传递或者为空字符串，清空之前的DRM配置。</p>",
           "example": "AUDIO|HD",
           "member": "string",
           "name": "DRMTracks",
@@ -7784,7 +7784,7 @@
         },
         {
           "disabled": false,
-          "document": "是否创建自适应码率，默认值 0。\n0：否。\n1：是。",
+          "document": "<p>是否创建自适应码率，默认值 0。<br>0：否。<br>1：是。</p>",
           "example": "0",
           "member": "int64",
           "name": "IsAdaptiveBitRate",
@@ -7793,12 +7793,30 @@
         },
         {
           "disabled": false,
-          "document": "自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。",
+          "document": "<p>自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。</p>",
           "example": "无",
           "member": "ChildTemplateInfo",
           "name": "AdaptiveChildren",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否智能降码，1 表示智能降码。如果设置了智能降码，AiTransCode  = 1、Height = 0、VideoBitrate = 0、AdaptBitratePercent、AudienceThreshold 必须传递。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AudienceDrivenTranscode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能降码人数阈值，当 AudienceDrivenTranscode = 1 时需要传递。</p><p>取值范围：[100, 1000000]</p>",
+          "example": "1001",
+          "member": "int64",
+          "name": "AudienceThreshold",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7808,7 +7826,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板Id。",
+          "document": "<p>模板Id。</p>",
           "example": "459625",
           "member": "int64",
           "name": "TemplateId",
@@ -20280,7 +20298,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板 Id。",
+          "document": "<p>模板 Id。</p>",
           "example": "1001",
           "member": "int64",
           "name": "TemplateId",
@@ -20289,7 +20307,7 @@
         },
         {
           "disabled": false,
-          "document": "视频编码：h264/h265/origin，默认origin。\n\norigin: 保持原始编码格式",
+          "document": "<p>视频编码：h264/h265/origin，默认origin。</p><p>origin: 保持原始编码格式</p>",
           "example": "h265",
           "member": "string",
           "name": "Vcodec",
@@ -20298,7 +20316,7 @@
         },
         {
           "disabled": false,
-          "document": "音频编码：aac，默认aac。\n注意：当前该参数未生效，待后续支持！",
+          "document": "<p>音频编码：aac，默认aac。<br>注意：当前该参数未生效，待后续支持！</p>",
           "example": "aac",
           "member": "string",
           "name": "Acodec",
@@ -20307,7 +20325,7 @@
         },
         {
           "disabled": false,
-          "document": "音频码率，默认0。\n范围：0-500。",
+          "document": "<p>音频码率，默认0。<br>范围：0-500。</p>",
           "example": "600",
           "member": "int64",
           "name": "AudioBitrate",
@@ -20316,7 +20334,7 @@
         },
         {
           "disabled": false,
-          "document": "模板描述。",
+          "document": "<p>模板描述。</p>",
           "example": "transcode",
           "member": "string",
           "name": "Description",
@@ -20325,7 +20343,7 @@
         },
         {
           "disabled": false,
-          "document": "视频码率。范围：0kbps - 8000kbps。\n0为保持原始码率。\n注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。",
+          "document": "<p>视频码率。范围：0kbps - 8000kbps。<br>0为保持原始码率。<br>注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。</p>",
           "example": "1500",
           "member": "int64",
           "name": "VideoBitrate",
@@ -20334,7 +20352,7 @@
         },
         {
           "disabled": false,
-          "document": "宽。0-3000。\n数值必须是2的倍数，0是原始宽度",
+          "document": "<p>宽。0-3000。<br>数值必须是2的倍数，0是原始宽度</p>",
           "example": "250",
           "member": "int64",
           "name": "Width",
@@ -20343,7 +20361,7 @@
         },
         {
           "disabled": false,
-          "document": "是否保留视频，0：否，1：是。默认1。",
+          "document": "<p>是否保留视频，0：否，1：是。默认1。</p>",
           "example": "1",
           "member": "int64",
           "name": "NeedVideo",
@@ -20352,7 +20370,7 @@
         },
         {
           "disabled": false,
-          "document": "是否保留音频，0：否，1：是。默认1。",
+          "document": "<p>是否保留音频，0：否，1：是。默认1。</p>",
           "example": "1",
           "member": "int64",
           "name": "NeedAudio",
@@ -20361,7 +20379,7 @@
         },
         {
           "disabled": false,
-          "document": "高。0-3000。\n数值必须是2的倍数，0是原始宽度",
+          "document": "<p>高。0-3000。<br>数值必须是2的倍数，0是原始宽度</p>",
           "example": "240",
           "member": "int64",
           "name": "Height",
@@ -20370,7 +20388,7 @@
         },
         {
           "disabled": false,
-          "document": "帧率，默认0。\n范围0-60",
+          "document": "<p>帧率，默认0。<br>范围0-60</p>",
           "example": "30",
           "member": "int64",
           "name": "Fps",
@@ -20379,7 +20397,7 @@
         },
         {
           "disabled": false,
-          "document": "关键帧间隔，单位：秒。\n范围2-6",
+          "document": "<p>关键帧间隔，单位：秒。<br>范围2-6</p>",
           "example": "3",
           "member": "int64",
           "name": "Gop",
@@ -20388,7 +20406,7 @@
         },
         {
           "disabled": false,
-          "document": "旋转角度，默认0。\n可取值：0，90，180，270",
+          "document": "<p>旋转角度，默认0。<br>可取值：0，90，180，270</p>",
           "example": "0",
           "member": "int64",
           "name": "Rotate",
@@ -20397,7 +20415,7 @@
         },
         {
           "disabled": false,
-          "document": "编码质量：\nbaseline/main/high。",
+          "document": "<p>编码质量：<br>baseline/main/high。</p>",
           "example": "main",
           "member": "string",
           "name": "Profile",
@@ -20406,7 +20424,7 @@
         },
         {
           "disabled": false,
-          "document": "当设置的码率>原始码率时，是否以原始码率为准。\n0：否， 1：是\n默认 0。",
+          "document": "<p>当设置的码率&gt;原始码率时，是否以原始码率为准。<br>0：否， 1：是<br>默认 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "BitrateToOrig",
@@ -20415,7 +20433,7 @@
         },
         {
           "disabled": false,
-          "document": "当设置的高度>原始高度时，是否以原始高度为准。\n0：否， 1：是\n默认 0。",
+          "document": "<p>当设置的高度&gt;原始高度时，是否以原始高度为准。<br>0：否， 1：是<br>默认 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "HeightToOrig",
@@ -20424,7 +20442,7 @@
         },
         {
           "disabled": false,
-          "document": "当设置的帧率>原始帧率时，是否以原始帧率为准。\n0：否， 1：是\n默认 0。",
+          "document": "<p>当设置的帧率&gt;原始帧率时，是否以原始帧率为准。<br>0：否， 1：是<br>默认 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "FpsToOrig",
@@ -20433,7 +20451,7 @@
         },
         {
           "disabled": false,
-          "document": "极速高清视频码率压缩比。\n极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)\n\n取值范围：0.0到0.5",
+          "document": "<p>极速高清视频码率压缩比。<br>极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)</p><p>取值范围：0.0 到 0.5<br>智能降码：0.5 到 0.9</p>",
           "example": "1.1",
           "member": "float",
           "name": "AdaptBitratePercent",
@@ -20442,7 +20460,7 @@
         },
         {
           "disabled": false,
-          "document": "是否以短边作为高度，0：否，1：是。默认0。",
+          "document": "<p>是否以短边作为高度，0：否，1：是。默认0。</p>",
           "example": "1",
           "member": "int64",
           "name": "ShortEdgeAsHeight",
@@ -20451,7 +20469,7 @@
         },
         {
           "disabled": false,
-          "document": "DRM 加密类型，可选值：fairplay、normalaes、widevine。\n不传递或者为空字符串，清空之前的DRM配置。",
+          "document": "<p>DRM 加密类型，可选值：fairplay、normalaes、widevine。<br>不传递或者为空字符串，清空之前的DRM配置。</p>",
           "example": "fairplay",
           "member": "string",
           "name": "DRMType",
@@ -20460,7 +20478,7 @@
         },
         {
           "disabled": false,
-          "document": "DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。\n不传递或者为空字符串，清空之前的DRM配置。",
+          "document": "<p>DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。<br>不传递或者为空字符串，清空之前的DRM配置。</p>",
           "example": "AUDIO|HD",
           "member": "string",
           "name": "DRMTracks",
@@ -20469,7 +20487,7 @@
         },
         {
           "disabled": false,
-          "document": "是否创建自适应码率，默认值 0。\n0：否。\n1：是。",
+          "document": "<p>是否创建自适应码率，默认值 0。<br>0：否。<br>1：是。</p>",
           "example": "0",
           "member": "int64",
           "name": "IsAdaptiveBitRate",
@@ -20478,12 +20496,30 @@
         },
         {
           "disabled": false,
-          "document": "自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。",
+          "document": "<p>自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。</p>",
           "example": "无",
           "member": "ChildTemplateInfo",
           "name": "AdaptiveChildren",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否智能降码，1 表示智能降码。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AudienceDrivenTranscode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能降码人数阈值，当 AudienceDrivenTranscode = 1 时生效。  取值范围：[100, 1000000]。</p>",
+          "example": "1001",
+          "member": "int64",
+          "name": "AudienceThreshold",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -24774,7 +24810,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频编码：h264/h265/origin，默认h264。\n\norigin: 保持原始编码格式",
+          "document": "<p>视频编码：h264/h265/origin，默认h264。</p><p>origin: 保持原始编码格式</p>",
           "example": "h264",
           "member": "string",
           "name": "Vcodec",
@@ -24784,7 +24820,7 @@
         },
         {
           "disabled": false,
-          "document": "视频码率。范围：0kbps - 8000kbps。\n0为保持原始码率。\n注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。",
+          "document": "<p>视频码率。范围：0kbps - 8000kbps。<br>0为保持原始码率。<br>注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。</p>",
           "example": "0",
           "member": "int64",
           "name": "VideoBitrate",
@@ -24794,7 +24830,7 @@
         },
         {
           "disabled": false,
-          "document": "音频编码：aac，默认aac。\n注意：当前该参数未生效，待后续支持！",
+          "document": "<p>音频编码：aac，默认aac。<br>注意：当前该参数未生效，待后续支持！</p>",
           "example": "aac",
           "member": "string",
           "name": "Acodec",
@@ -24804,7 +24840,7 @@
         },
         {
           "disabled": false,
-          "document": "音频码率。取值范围：0kbps - 500kbps。\n默认0。",
+          "document": "<p>音频码率。取值范围：0kbps - 500kbps。<br>默认0。</p>",
           "example": "0",
           "member": "int64",
           "name": "AudioBitrate",
@@ -24814,7 +24850,7 @@
         },
         {
           "disabled": false,
-          "document": "宽，默认0。\n范围[0-3000]\n数值必须是2的倍数，0是原始宽度",
+          "document": "<p>宽，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始宽度</p>",
           "example": "0",
           "member": "int64",
           "name": "Width",
@@ -24824,7 +24860,7 @@
         },
         {
           "disabled": false,
-          "document": "高，默认0。\n范围[0-3000]\n数值必须是2的倍数，0是原始宽度",
+          "document": "<p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始宽度</p>",
           "example": "0",
           "member": "int64",
           "name": "Height",
@@ -24834,7 +24870,7 @@
         },
         {
           "disabled": false,
-          "document": "帧率，默认0。\n范围0-60fps",
+          "document": "<p>帧率，默认0。<br>范围0-60fps</p>",
           "example": "0",
           "member": "int64",
           "name": "Fps",
@@ -24844,7 +24880,7 @@
         },
         {
           "disabled": false,
-          "document": "关键帧间隔，单位：秒。\n默认原始的间隔\n范围2-6",
+          "document": "<p>关键帧间隔，单位：秒。<br>默认原始的间隔<br>范围2-6</p>",
           "example": "3",
           "member": "int64",
           "name": "Gop",
@@ -24854,7 +24890,7 @@
         },
         {
           "disabled": false,
-          "document": "旋转角度，默认0。\n可取值：0，90，180，270",
+          "document": "<p>旋转角度，默认0。<br>可取值：0，90，180，270</p>",
           "example": "0",
           "member": "int64",
           "name": "Rotate",
@@ -24864,7 +24900,7 @@
         },
         {
           "disabled": false,
-          "document": "编码质量：\nbaseline/main/high。默认baseline",
+          "document": "<p>编码质量：<br>baseline/main/high。默认baseline</p>",
           "example": "baseline",
           "member": "string",
           "name": "Profile",
@@ -24874,7 +24910,7 @@
         },
         {
           "disabled": false,
-          "document": "当设置的码率>原始码率时，是否以原始码率为准。\n0：否， 1：是\n默认 0。",
+          "document": "<p>当设置的码率&gt;原始码率时，是否以原始码率为准。<br>0：否， 1：是<br>默认 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "BitrateToOrig",
@@ -24884,7 +24920,7 @@
         },
         {
           "disabled": false,
-          "document": "当设置的高度>原始高度时，是否以原始高度为准。\n0：否， 1：是\n默认 0。",
+          "document": "<p>当设置的高度&gt;原始高度时，是否以原始高度为准。<br>0：否， 1：是<br>默认 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "HeightToOrig",
@@ -24894,7 +24930,7 @@
         },
         {
           "disabled": false,
-          "document": "当设置的帧率>原始帧率时，是否以原始帧率为准。\n0：否， 1：是\n默认 0。",
+          "document": "<p>当设置的帧率&gt;原始帧率时，是否以原始帧率为准。<br>0：否， 1：是<br>默认 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "FpsToOrig",
@@ -24904,7 +24940,7 @@
         },
         {
           "disabled": false,
-          "document": "是否保留视频。0：否，1：是。",
+          "document": "<p>是否保留视频。0：否，1：是。</p>",
           "example": "0",
           "member": "int64",
           "name": "NeedVideo",
@@ -24914,7 +24950,7 @@
         },
         {
           "disabled": false,
-          "document": "是否保留音频。0：否，1：是。",
+          "document": "<p>是否保留音频。0：否，1：是。</p>",
           "example": "0",
           "member": "int64",
           "name": "NeedAudio",
@@ -24924,7 +24960,7 @@
         },
         {
           "disabled": false,
-          "document": "模板 ID。",
+          "document": "<p>模板 ID。</p>",
           "example": "855123",
           "member": "int64",
           "name": "TemplateId",
@@ -24934,7 +24970,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名称。",
+          "document": "<p>模板名称。</p>",
           "example": "templatename",
           "member": "string",
           "name": "TemplateName",
@@ -24944,7 +24980,7 @@
         },
         {
           "disabled": false,
-          "document": "模板描述。",
+          "document": "<p>模板描述。</p>",
           "example": "description",
           "member": "string",
           "name": "Description",
@@ -24954,7 +24990,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是极速高清模板，0：否，1：是。默认0。",
+          "document": "<p>是否是极速高清模板，0：否，1：是。默认0。</p>",
           "example": "0",
           "member": "int64",
           "name": "AiTransCode",
@@ -24964,7 +25000,7 @@
         },
         {
           "disabled": false,
-          "document": "极速高清视频码率压缩比。\n极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)\n\n取值范围：0.0到0.5",
+          "document": "<p>极速高清视频码率压缩比。<br>极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)</p><p>取值范围：0.0到0.5</p>",
           "example": "0.5",
           "member": "float",
           "name": "AdaptBitratePercent",
@@ -24974,7 +25010,7 @@
         },
         {
           "disabled": false,
-          "document": "是否以短边作为高度，0：否，1：是。默认0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否以短边作为高度，0：否，1：是。默认0。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ShortEdgeAsHeight",
@@ -24984,7 +25020,7 @@
         },
         {
           "disabled": false,
-          "document": "DRM 加密类型，可选值：fairplay、normalaes、widevine。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>DRM 加密类型，可选值：fairplay、normalaes、widevine。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "widevine",
           "member": "string",
           "name": "DRMType",
@@ -24994,7 +25030,7 @@
         },
         {
           "disabled": false,
-          "document": "DRM 加密项，多个用|分割，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>DRM 加密项，多个用|分割，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AUDIO|UHD2",
           "member": "string",
           "name": "DRMTracks",
@@ -25004,7 +25040,7 @@
         },
         {
           "disabled": false,
-          "document": "是否创建自适应码率，默认值 0。\n0：否。\n1：是。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否创建自适应码率，默认值 0。<br>0：否。<br>1：是。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "IsAdaptiveBitRate",
@@ -25014,13 +25050,33 @@
         },
         {
           "disabled": false,
-          "document": "自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ChildTemplateInfo",
           "name": "AdaptiveChildren",
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否按需转码，0 否，1 是。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AudienceDrivenTranscode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>按需转码人数阈值。</p>",
+          "example": "1001",
+          "member": "int64",
+          "name": "AudienceThreshold",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

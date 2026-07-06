@@ -8,7 +8,8 @@ Input:
 tccli essbasic CreateEmployeeChangeUrl --cli-unfold-argument  \
     --Agent.AppId yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2 \
     --Agent.ProxyOperator.OpenId kevinlcheng_1 \
-    --OpenId kevinlcheng_1
+    --OpenId kevinlcheng_1 \
+    --NewMobile 182****2320
 ```
 
 Output: 

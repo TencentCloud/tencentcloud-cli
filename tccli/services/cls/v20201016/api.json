@@ -3286,7 +3286,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志服务地域",
+          "document": "<p>日志服务地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ClsRegion",
@@ -3296,7 +3296,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
@@ -3306,7 +3306,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集ID",
+          "document": "<p>日志集ID</p>",
           "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
           "member": "string",
           "name": "LogsetId",
@@ -3316,7 +3316,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "<p>日志主题ID</p>",
           "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
           "member": "string",
           "name": "TopicId",
@@ -3326,7 +3326,7 @@
         },
         {
           "disabled": false,
-          "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置",
+          "document": "<p>日志配置拓展信息， 一般用于存储额外的日志投递配置</p>",
           "example": "{\"ServiceName\":[\"HDFS\",\"KNOX\",\"YARN\",\"ZOOKEEPER\"],\"Policy\":0}",
           "member": "string",
           "name": "Extend",
@@ -3336,7 +3336,7 @@
         },
         {
           "disabled": false,
-          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
+          "document": "<p>日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS</p>",
           "example": "CDB-AUDIT",
           "member": "string",
           "name": "LogType",
@@ -3346,12 +3346,32 @@
         },
         {
           "disabled": false,
-          "document": "任务状态， 0创建中 1创建完成 2 删除中 ",
+          "document": "<p>任务状态， 0创建中 1创建完成 2 删除中</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递任务关联topic的标签信息</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "TopicTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递任务关联logset的标签信息</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "LogsetTags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -11676,6 +11696,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否携带topic和logset的标签信息</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "WithTags",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11701,6 +11730,16 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外信息。如查询topic、logset标签信息错误</p>",
+          "example": "some tags may not be available due to permission or error",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -15401,7 +15440,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id。",
+          "document": "<p>任务id。</p>",
           "example": "111024e3-01b0-4aeb-91f5-ee9f46a4a13c",
           "member": "string",
           "name": "TaskId",
@@ -15411,7 +15450,7 @@
         },
         {
           "disabled": false,
-          "document": "账号id。",
+          "document": "<p>账号id。</p>",
           "example": "198644793323",
           "member": "uint64",
           "name": "Uin",
@@ -15421,7 +15460,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题id。",
+          "document": "<p>日志主题id。</p>",
           "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
           "member": "string",
           "name": "TopicId",
@@ -15431,7 +15470,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称。",
+          "document": "<p>任务名称。</p>",
           "example": "template_1",
           "member": "string",
           "name": "Name",
@@ -15441,7 +15480,7 @@
         },
         {
           "disabled": false,
-          "document": "投递类型，0：实时投递，1：历史投递",
+          "document": "<p>投递类型，0：实时投递，1：历史投递</p>",
           "example": "0",
           "member": "uint64",
           "name": "DeliverType",
@@ -15451,7 +15490,7 @@
         },
         {
           "disabled": false,
-          "document": "投递文件大小，单位MB",
+          "document": "<p>投递文件大小，单位MB</p>",
           "example": "5",
           "member": "uint64",
           "name": "MaxSize",
@@ -15461,7 +15500,7 @@
         },
         {
           "disabled": false,
-          "document": "投递间隔 单位秒",
+          "document": "<p>投递间隔 单位秒</p>",
           "example": "300",
           "member": "uint64",
           "name": "Interval",
@@ -15471,7 +15510,7 @@
         },
         {
           "disabled": false,
-          "document": "投递时间范围的开始时间",
+          "document": "<p>投递时间范围的开始时间</p>",
           "example": "1741005340",
           "member": "uint64",
           "name": "StartTime",
@@ -15481,7 +15520,7 @@
         },
         {
           "disabled": false,
-          "document": "投递时间范围的结束时间",
+          "document": "<p>投递时间范围的结束时间</p>",
           "example": "1741006340",
           "member": "uint64",
           "name": "EndTime",
@@ -15491,7 +15530,7 @@
         },
         {
           "disabled": false,
-          "document": "dlc配置信息",
+          "document": "<p>dlc配置信息</p>",
           "example": "无",
           "member": "DlcInfo",
           "name": "DlcInfo",
@@ -15501,7 +15540,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启投递服务日志。1关闭，2开启",
+          "document": "<p>是否开启投递服务日志。1关闭，2开启</p>",
           "example": "2",
           "member": "uint64",
           "name": "HasServicesLog",
@@ -15511,7 +15550,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态。",
+          "document": "<p>任务状态。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -15521,7 +15560,7 @@
         },
         {
           "disabled": false,
-          "document": "任务进度。历史投递任务生效。",
+          "document": "<p>任务进度。历史投递任务生效。</p>",
           "example": "100",
           "member": "uint64",
           "name": "Progress",
@@ -15531,7 +15570,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题类型。0:标准主题，1:指标主题",
+          "document": "<p>日志主题类型。0:标准主题，1:指标主题</p>",
           "example": "0",
           "member": "uint64",
           "name": "BizType",
@@ -15541,7 +15580,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间。",
+          "document": "<p>任务创建时间。</p>",
           "example": "1741005340",
           "member": "uint64",
           "name": "CreateTime",
@@ -15551,16 +15590,102 @@
         },
         {
           "disabled": false,
-          "document": "任务修改时间。",
+          "document": "<p>任务修改时间。</p>",
           "example": "1741006340",
           "member": "uint64",
           "name": "UpdateTime",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动创建dlc字段</p><p>默认值：false</p><p>当您的日志中有新增字段时，系统自动将其投递至DLC</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoCreateField",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>将投递失败的日志存储至DLC表</p>",
+          "example": "无",
+          "member": "DlcFailHandle",
+          "name": "DlcFailHandle",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>",
+          "example": "log_keep(op_str_eq(v(\"type\"), \"kibana_stats\"))",
+          "member": "string",
+          "name": "DSLFilter",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "DlcFailHandle": {
+      "document": "dlc投递失败处理信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否存储到DLC</p><p>默认值：false</p><p>用于控制是否开启投递失败的日志存储至DLC表</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "StoreToDlc",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>DLC表信息</p>",
+          "example": "无",
+          "member": "DlcFailTableInfo",
+          "name": "DlcFailTableInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DlcFailTableInfo": {
+      "document": "dlc失败日志存储表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>DLC的表名称</p>",
+          "example": "********_fail_table",
+          "member": "string",
+          "name": "TableName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>表中的字段名称</p><p>字段类型必须是String类型</p>",
+          "example": "fail",
+          "member": "string",
+          "name": "FieldName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DlcFiledInfo": {
       "document": "数据湖计算服务（Data Lake Compute，简称DLC）数据字段配置信息",
@@ -19994,7 +20119,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
@@ -20003,7 +20128,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS",
+          "document": "<p>云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS</p>",
           "example": "CDB",
           "member": "string",
           "name": "AssumerName",
@@ -20012,7 +20137,7 @@
         },
         {
           "disabled": false,
-          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
+          "document": "<p>日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS</p>",
           "example": "CDB-AUDIT",
           "member": "string",
           "name": "LogType",
@@ -20021,7 +20146,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
+          "document": "<p>云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：</p><ul><li>CDS所有日志类型：ap-guangzhou</li><li>CDB-AUDIT: gz</li><li>TDSQL-C-AUDIT: gz</li><li>MongoDB-AUDIT: gz</li><li>MongoDB-SlowLog：ap-guangzhou</li><li>MongoDB-ErrorLog：ap-guangzhou</li><li>TDMYSQL-SLOW：gz</li><li>DCDB所有日志类型：gz</li><li>MariaDB所有日志类型：gz</li><li>PostgreSQL所有日志类型：gz</li><li>BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)</li><li>APIS所有日志类型：gz</li></ul>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudProductRegion",
@@ -20030,12 +20155,21 @@
         },
         {
           "disabled": false,
-          "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置",
+          "document": "<p>日志配置拓展信息， 一般用于存储额外的日志投递配置</p>",
           "example": "{\"ServiceName\":[\"HDFS\",\"KNOX\",\"YARN\",\"ZOOKEEPER\"],\"Policy\":0}",
           "member": "string",
           "name": "Extend",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签描述列表，通过指定该参数可以同时绑定标签到相应的logset和topic。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -20043,6 +20177,16 @@
     "ModifyCloudProductLogCollectionResponse": {
       "document": "ModifyCloudProductLogCollection返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>额外信息。如修改topic、logset标签失败。</p>",
+          "example": "tag modification partially failed: logset tags; topic tags",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

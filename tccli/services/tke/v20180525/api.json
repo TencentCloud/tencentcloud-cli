@@ -28590,7 +28590,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "运行时类型，支持的类型有 docker、containerd",
+          "document": "<p>运行时类型，支持的类型有 docker、containerd</p>",
           "example": "containerd",
           "member": "string",
           "name": "RuntimeType",
@@ -28601,7 +28601,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时版本，参考：https://cloud.tencent.com/document/api/457/105241",
+          "document": "<p>运行时版本，参考：https://cloud.tencent.com/document/api/457/105241</p>",
           "example": "1.6.24",
           "member": "string",
           "name": "RuntimeVersion",

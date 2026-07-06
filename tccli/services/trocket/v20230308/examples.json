@@ -16,6 +16,14 @@
         "title": "成功创建消费组"
       }
     ],
+    "CreateConsumerLabel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsumerLabel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-16je7x5e7o\",\n    \"Label\": \"gray_env\",\n    \"Group\": \"test_group\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Group\": \"test_group\",\n        \"InstanceId\": \"rmq-16je7x5e7o\",\n        \"Label\": \"gray_env\",\n        \"RequestId\": \"4f97b0a7-a11e-4428-878c-ffb54ee79f60\"\n    }\n}",
+        "title": "创建消费组灰度标签成功"
+      }
+    ],
     "CreateInstance": [
       {
         "document": "成功创建一个 TPS 2000 的 RocketMQ 5.x 集群。",
@@ -60,6 +68,22 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConsumerGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"ConsumerGroup\": \"test_group\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"8221cd04-dafc-438d-bc1f-816fd87df24e\"\n    }\n}",
         "title": "删除消费组"
+      }
+    ],
+    "DeleteConsumerLabel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConsumerLabel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-16je7x5e7o\",\n    \"Group\": \"test_group\",\n    \"Label\": \"gray_env\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5a5ded1e-0f0a-479b-90cc-a00cd7b168ff\"\n    }\n}",
+        "title": "删除标签成功"
+      }
+    ],
+    "DeleteConsumerRouteConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConsumerRouteConfig\n<公共请求参数>\n\n{\n    \"Topic\": \"test_topic\",\n    \"InstanceId\": \"rmq-16je7x5e7o\",\n    \"Group\": \"test_group\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d7e894b-5fd5-408f-959b-b13bab02a44a\"\n    }\n}",
+        "title": "删除消费组灰度路由配置成功"
       }
     ],
     "DeleteInstance": [
@@ -126,12 +150,44 @@
         "title": "获取消费组列表"
       }
     ],
+    "DescribeConsumerLabel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerLabel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-16je7x5e7o\",\n    \"Group\": \"test_group\",\n    \"Label\": \"gray_env\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Label\": {\n            \"Label\": \"gray_env\",\n            \"State\": \"DELETING\",\n            \"UpdatedAt\": 1782717266193\n        },\n        \"RequestId\": \"928cf954-b233-4582-b2af-135686c5b3e9\"\n    }\n}",
+        "title": "查询标签详情成功"
+      }
+    ],
+    "DescribeConsumerLabelList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerLabelList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-16je7x5e7o\",\n    \"Group\": \"test_group\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Labels\": [\n            {\n                \"Label\": \"gray_env\",\n                \"State\": \"ACTIVE\",\n                \"UpdatedAt\": 1782700846330\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"9d466284-9c30-4a9e-abde-7eca2b82e10a\"\n    }\n}",
+        "title": "查询消费组标签列表成功"
+      }
+    ],
     "DescribeConsumerLag": [
       {
         "document": "查询指定客户端堆积成功",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerLag\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-24kzek2b\",\n    \"ConsumerGroup\": \"test_group\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"ConsumerLag\": 260,\n        \"RequestId\": \"2b9eef15-a8bc-47a3-9445-9edcafccb459\"\n    }\n}",
         "title": "正常响应"
+      }
+    ],
+    "DescribeConsumerRouteConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerRouteConfig\n<公共请求参数>\n\n{\n    \"Topic\": \"test_topic\",\n    \"InstanceId\": \"rmq-16je7x5e7o\",\n    \"Group\": \"test_group\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CutTimestamp\": 1782730693958,\n        \"Rules\": [\n            {\n                \"MatchCondition\": \"test_tagC\",\n                \"TargetConsumerLabel\": \"test_env\"\n            }\n        ],\n        \"Version\": 1,\n        \"RequestId\": \"149126a6-3eb1-4120-b81a-d86425fb9e3a\"\n    }\n}",
+        "title": "查询消费组当前生效的灰度路由配置成功"
+      }
+    ],
+    "DescribeConsumerRouteVersionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerRouteVersionList\n<公共请求参数>\n\n{\n    \"Topic\": \"test_topic\",\n    \"InstanceId\": \"rmq-16je7x5e7o\",\n    \"Group\": \"test_group\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Versions\": [\n            {\n                \"CutTimestamp\": 1782730693958,\n                \"Rules\": [\n                    {\n                        \"MatchCondition\": \"test_tagC\",\n                        \"TargetConsumerLabel\": \"test_env\"\n                    }\n                ],\n                \"UpdatedAt\": 1782730693958,\n                \"Version\": 1\n            }\n        ],\n        \"RequestId\": \"68ff3f86-99a7-4df5-80b3-9eb7e9ec8edd\"\n    }\n}",
+        "title": "查询消费组灰度路由配置版本列表成功"
       }
     ],
     "DescribeFusionInstanceList": [
@@ -360,6 +416,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"test_topic\",\n    \"QueueNum\": 6\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"945afc69-1c24-4891-a2ce-c5fa6032ba75\"\n    }\n}",
         "title": "修改主题属性"
+      }
+    ],
+    "PutConsumerRouteConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutConsumerRouteConfig\n<公共请求参数>\n\n{\n    \"Topic\": \"test_topic\",\n    \"InstanceId\": \"rmq-16je7x5e7o\",\n    \"Group\": \"test_group\",\n    \"Rules\": [\n        {\n            \"MatchCondition\": \"test_tagA\",\n            \"TargetConsumerLabel\": \"test_env\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Group\": \"test_group\",\n        \"InstanceId\": \"rmq-16je7x5e7o\",\n        \"Topic\": \"test_topic\",\n        \"Version\": 1,\n        \"RequestId\": \"9bd61d2b-ffcc-4e2d-91f3-9c95ec852d9d\"\n    }\n}",
+        "title": "写入消费组灰度路由配置成功"
       }
     ],
     "RemoveMigratingTopic": [

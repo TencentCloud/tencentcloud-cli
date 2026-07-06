@@ -609,13 +609,6 @@
       "output": "RepairPGUserMigrationHistoryResponse",
       "status": "online"
     },
-    "RollbackPGUserMigrations": {
-      "document": "本接口（RollbackPGUserMigrations）用于按最近 N 条已应用 migration 倒序执行 rollback。",
-      "input": "RollbackPGUserMigrationsRequest",
-      "name": "回滚 Migration",
-      "output": "RollbackPGUserMigrationsResponse",
-      "status": "online"
-    },
     "RunCommands": {
       "document": "本接口（RunCommands）用于执行文档型数据库命令。",
       "input": "RunCommandsRequest",
@@ -11934,109 +11927,6 @@
         }
       ],
       "usage": "both"
-    },
-    "RollbackPGUserMigrationsRequest": {
-      "document": "RollbackPGUserMigrations请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>云开发环境ID</p>",
-          "example": "pg-ethan06-d9gzgavrt1f14772b",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>要回滚的条数</p><p>按照逆序回滚最近N条migration</p>",
-          "example": "2",
-          "member": "int64",
-          "name": "LastN",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "<p>等待获取数据库锁的最长时间</p><p>单位：毫秒</p><p>默认值：5000</p>",
-          "example": "5000",
-          "member": "int64",
-          "name": "LockTimeoutMs",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "<p>单条 SQL 执行最长时间，超过后由 PostgreSQL 取消该语句</p><p>单位：毫秒</p><p>默认值：300000</p>",
-          "example": "300000",
-          "member": "int64",
-          "name": "StatementTimeoutMs",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "<p>标记API调用来源</p>",
-          "example": "cli",
-          "member": "string",
-          "name": "Source",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RollbackPGUserMigrationsResponse": {
-      "document": "RollbackPGUserMigrations返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>任务ID</p><p>可通过DescribeTaskResult 接口查询进度</p>",
-          "example": "task-d9fd1d51",
-          "member": "string",
-          "name": "TaskId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>已成功回滚并删除 history 的 migration</p>",
-          "example": "无",
-          "member": "MigrationSummary",
-          "name": "RolledBack",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>未提供 Rollback SQL、视为成功并删除 history 的 migration</p>",
-          "example": "无",
-          "member": "MigrationSummary",
-          "name": "SkippedRollbackSql",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>执行 Rollback SQL 失败的 migration，可为空</p>",
-          "example": "无",
-          "member": "MigrationSummary",
-          "name": "Failed",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "RunCommandsRequest": {
       "document": "RunCommands请求参数结构体",

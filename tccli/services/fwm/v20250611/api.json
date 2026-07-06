@@ -1,0 +1,6618 @@
+{
+  "actions": {
+    "CancelIgnorePolicyRisk": {
+      "document": "取消忽略策略风险",
+      "input": "CancelIgnorePolicyRiskRequest",
+      "name": "取消忽略策略风险",
+      "output": "CancelIgnorePolicyRiskResponse",
+      "status": "online"
+    },
+    "CreateAnalyzePolicyTask": {
+      "document": "创建策略风险分析任务",
+      "input": "CreateAnalyzePolicyTaskRequest",
+      "name": "创建风险分析任务",
+      "output": "CreateAnalyzePolicyTaskResponse",
+      "status": "online"
+    },
+    "CreateEdgeAclRule": {
+      "document": "向已有的互联网边界ACL规则组中添加规则。需要先创建规则组，然后通过此接口添加规则。",
+      "input": "CreateEdgeAclRuleRequest",
+      "name": "创建互联网边界规则",
+      "output": "CreateEdgeAclRuleResponse",
+      "status": "online"
+    },
+    "CreateEdgeAclRuleGroup": {
+      "document": "创建互联网边界ACL规则组，支持同时创建多条规则。Product 必须为 cfw_edge_acl。规则支持 IP、域名、参数模板、实例、标签等多种源/目标类型。",
+      "input": "CreateEdgeAclRuleGroupRequest",
+      "name": "创建互联网边界规则组",
+      "output": "CreateEdgeAclRuleGroupResponse",
+      "status": "online"
+    },
+    "CreateNatAclRule": {
+      "document": "在已有规则组中添加NAT ACL规则",
+      "input": "CreateNatAclRuleRequest",
+      "name": "创建NAT边界规则",
+      "output": "CreateNatAclRuleResponse",
+      "status": "online"
+    },
+    "CreateNatAclRuleGroup": {
+      "document": "创建NAT ACL规则组（NAT边界防火墙规则组管理）",
+      "input": "CreateNatAclRuleGroupRequest",
+      "name": "创建NAT边界规则组",
+      "output": "CreateNatAclRuleGroupResponse",
+      "status": "online"
+    },
+    "CreateSecurityGroupRule": {
+      "document": "规则组编辑时添加规则（规则组管理）",
+      "input": "CreateSecurityGroupRuleRequest",
+      "name": "创建企业安全组规则",
+      "output": "CreateSecurityGroupRuleResponse",
+      "status": "online"
+    },
+    "CreateSecurityGroupRuleGroup": {
+      "document": "创建规则组（规则组管理）",
+      "input": "CreateSecurityGroupRuleGroupRequest",
+      "name": "创建企业安全组规则组",
+      "output": "CreateSecurityGroupRuleGroupResponse",
+      "status": "online"
+    },
+    "CreateStrategy": {
+      "document": "创建策略",
+      "input": "CreateStrategyRequest",
+      "name": "创建下发规则",
+      "output": "CreateStrategyResponse",
+      "status": "online"
+    },
+    "CreateVpcAclRule": {
+      "document": "在已有规则组中添加VPC ACL规则",
+      "input": "CreateVpcAclRuleRequest",
+      "name": "创建VPC边界规则",
+      "output": "CreateVpcAclRuleResponse",
+      "status": "online"
+    },
+    "CreateVpcAclRuleGroup": {
+      "document": "创建VPC ACL规则组（VPC间防火墙规则组管理）",
+      "input": "CreateVpcAclRuleGroupRequest",
+      "name": "创建VPC边界规则组",
+      "output": "CreateVpcAclRuleGroupResponse",
+      "status": "online"
+    },
+    "DeleteEdgeAclRule": {
+      "document": "批量删除互联网边界ACL规则。支持一次删除多条规则。",
+      "input": "DeleteEdgeAclRuleRequest",
+      "name": "删除互联网边界规则",
+      "output": "DeleteEdgeAclRuleResponse",
+      "status": "online"
+    },
+    "DeleteNatAclRule": {
+      "document": "删除NAT ACL规则",
+      "input": "DeleteNatAclRuleRequest",
+      "name": "删除NAT边界规则",
+      "output": "DeleteNatAclRuleResponse",
+      "status": "online"
+    },
+    "DeleteRuleGroup": {
+      "document": "删除规则组",
+      "input": "DeleteRuleGroupRequest",
+      "name": "删除规则组",
+      "output": "DeleteRuleGroupResponse",
+      "status": "online"
+    },
+    "DeleteSecurityGroupRule": {
+      "document": "删除规则（规则组管理）",
+      "input": "DeleteSecurityGroupRuleRequest",
+      "name": "删除企业安全组规则",
+      "output": "DeleteSecurityGroupRuleResponse",
+      "status": "online"
+    },
+    "DeleteStrategy": {
+      "document": "删除策略",
+      "input": "DeleteStrategyRequest",
+      "name": "删除下发规则",
+      "output": "DeleteStrategyResponse",
+      "status": "online"
+    },
+    "DeleteVpcAclRule": {
+      "document": "删除VPC ACL规则",
+      "input": "DeleteVpcAclRuleRequest",
+      "name": "删除VPC边界规则",
+      "output": "DeleteVpcAclRuleResponse",
+      "status": "online"
+    },
+    "DescribeEdgeAclRules": {
+      "document": "查询指定规则组下的互联网边界ACL规则列表。支持分页和多种过滤条件。",
+      "input": "DescribeEdgeAclRulesRequest",
+      "name": "查询互联网边界规则列表",
+      "output": "DescribeEdgeAclRulesResponse",
+      "status": "online"
+    },
+    "DescribeNatAclRules": {
+      "document": "查询NAT ACL规则列表",
+      "input": "DescribeNatAclRulesRequest",
+      "name": "查询NAT边界规则列表",
+      "output": "DescribeNatAclRulesResponse",
+      "status": "online"
+    },
+    "DescribeOrganMembers": {
+      "document": "查询集团下所有纳管成员账号列表，支持分页、排序和多条件筛选，仅管理员可调用",
+      "input": "DescribeOrganMembersRequest",
+      "name": "查询集团成员列表",
+      "output": "DescribeOrganMembersResponse",
+      "status": "online"
+    },
+    "DescribeOrganSummary": {
+      "document": "获取集团概览信息，包括集团名称、管理员信息、成员数量等",
+      "input": "DescribeOrganSummaryRequest",
+      "name": "获取集团概览",
+      "output": "DescribeOrganSummaryResponse",
+      "status": "online"
+    },
+    "DescribePolicyRiskAccountProductStats": {
+      "document": "查询账号+产品维度风险统计，按账号分组返回各产品的体检策略数、待整改风险数、整改率、最近体检时间等信息，支持按账号名称/ID搜索以及仅看待整改、仅超时未体检筛选",
+      "input": "DescribePolicyRiskAccountProductStatsRequest",
+      "name": "查询账号+产品维度风险统计",
+      "output": "DescribePolicyRiskAccountProductStatsResponse",
+      "status": "online"
+    },
+    "DescribeRiskAnalysisDetails": {
+      "document": "获取实时分析风险详情",
+      "input": "DescribeRiskAnalysisDetailsRequest",
+      "name": "实时分析风险详情",
+      "output": "DescribeRiskAnalysisDetailsResponse",
+      "status": "online"
+    },
+    "DescribeRiskCategoryStats": {
+      "document": "查询策略体检风险分类统计数据,包含各类风险的规则数量、处置状态、整改率等信息",
+      "input": "DescribeRiskCategoryStatsRequest",
+      "name": "查询风险分类统计数据",
+      "output": "DescribeRiskCategoryStatsResponse",
+      "status": "online"
+    },
+    "DescribeRiskList": {
+      "document": "查询用户所有规则的策略问题",
+      "input": "DescribeRiskListRequest",
+      "name": "查询策略风险列表",
+      "output": "DescribeRiskListResponse",
+      "status": "online"
+    },
+    "DescribeSecurityGroupRule": {
+      "document": "查询规则详情（规则组管理）",
+      "input": "DescribeSecurityGroupRuleRequest",
+      "name": "查询企业安全组规则详情",
+      "output": "DescribeSecurityGroupRuleResponse",
+      "status": "online"
+    },
+    "DescribeSecurityGroupRules": {
+      "document": "查询规则组中规则列表接口",
+      "input": "DescribeSecurityGroupRulesRequest",
+      "name": "查询企业安全组规则列表",
+      "output": "DescribeSecurityGroupRulesResponse",
+      "status": "online"
+    },
+    "DescribeStrategies": {
+      "document": "查询策略列表",
+      "input": "DescribeStrategiesRequest",
+      "name": "查询规则列表",
+      "output": "DescribeStrategiesResponse",
+      "status": "online"
+    },
+    "DescribeStrategy": {
+      "document": "查询策略详情",
+      "input": "DescribeStrategyRequest",
+      "name": "查询下发规则信息",
+      "output": "DescribeStrategyResponse",
+      "status": "online"
+    },
+    "DescribeStrategyAccounts": {
+      "document": "查看防火墙管理规则下发账号列表",
+      "input": "DescribeStrategyAccountsRequest",
+      "name": "查询防火墙管理规则下发账号",
+      "output": "DescribeStrategyAccountsResponse",
+      "status": "online"
+    },
+    "DescribeStrategyDispatchStatus": {
+      "document": "查询策略下发状态",
+      "input": "DescribeStrategyDispatchStatusRequest",
+      "name": "查询规则下发状态",
+      "output": "DescribeStrategyDispatchStatusResponse",
+      "status": "online"
+    },
+    "DescribeVpcAclRules": {
+      "document": "查询VPC ACL规则列表",
+      "input": "DescribeVpcAclRulesRequest",
+      "name": "查询VPC边界规则列表",
+      "output": "DescribeVpcAclRulesResponse",
+      "status": "online"
+    },
+    "DispatchStrategy": {
+      "document": "下发策略",
+      "input": "DispatchStrategyRequest",
+      "name": "下发规则",
+      "output": "DispatchStrategyResponse",
+      "status": "online"
+    },
+    "IgnorePolicyRisk": {
+      "document": "忽略策略问题",
+      "input": "IgnorePolicyRiskRequest",
+      "name": "忽略策略问题",
+      "output": "IgnorePolicyRiskResponse",
+      "status": "online"
+    },
+    "ModifyEdgeAclRule": {
+      "document": "修改互联网边界ACL规则。Rule 参数中必须包含 RuleId 用于指定要修改的规则。",
+      "input": "ModifyEdgeAclRuleRequest",
+      "name": "修改互联网边界规则",
+      "output": "ModifyEdgeAclRuleResponse",
+      "status": "online"
+    },
+    "ModifyEdgeAclRuleSequence": {
+      "document": "批量调整互联网边界ACL规则的执行顺序。Sequences 参数必须包含所有受影响的规则序号映射关系。",
+      "input": "ModifyEdgeAclRuleSequenceRequest",
+      "name": "修改互联网边界规则序号",
+      "output": "ModifyEdgeAclRuleSequenceResponse",
+      "status": "online"
+    },
+    "ModifyNatAclRule": {
+      "document": "修改NAT ACL规则",
+      "input": "ModifyNatAclRuleRequest",
+      "name": "修改NAT边界规则",
+      "output": "ModifyNatAclRuleResponse",
+      "status": "online"
+    },
+    "ModifyNatAclRuleSequence": {
+      "document": "调整NAT ACL规则优先级顺序",
+      "input": "ModifyNatAclRuleSequenceRequest",
+      "name": "NAT边界规则排序",
+      "output": "ModifyNatAclRuleSequenceResponse",
+      "status": "online"
+    },
+    "ModifyRuleGroup": {
+      "document": "修改规则组信息（规则组管理）",
+      "input": "ModifyRuleGroupRequest",
+      "name": "修改规则组信息",
+      "output": "ModifyRuleGroupResponse",
+      "status": "online"
+    },
+    "ModifySecurityGroupRule": {
+      "document": "修改规则（规则组管理）",
+      "input": "ModifySecurityGroupRuleRequest",
+      "name": "修改企业安全组规则",
+      "output": "ModifySecurityGroupRuleResponse",
+      "status": "online"
+    },
+    "ModifyStrategy": {
+      "document": "修改策略信息",
+      "input": "ModifyStrategyRequest",
+      "name": "编辑下发规则",
+      "output": "ModifyStrategyResponse",
+      "status": "online"
+    },
+    "ModifyStrategySequence": {
+      "document": "快速排序修改策略优先级",
+      "input": "ModifyStrategySequenceRequest",
+      "name": "下发规则快速排序",
+      "output": "ModifyStrategySequenceResponse",
+      "status": "online"
+    },
+    "ModifyVpcAclRule": {
+      "document": "修改VPC ACL规则",
+      "input": "ModifyVpcAclRuleRequest",
+      "name": "修改VPC边界规则",
+      "output": "ModifyVpcAclRuleResponse",
+      "status": "online"
+    },
+    "ModifyVpcAclRuleSequence": {
+      "document": "调整VPC ACL规则优先级顺序",
+      "input": "ModifyVpcAclRuleSequenceRequest",
+      "name": "VPC边界规则排序",
+      "output": "ModifyVpcAclRuleSequenceResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2025-06-11",
+    "api_brief": "提供防火墙管理产品的腾讯云控制台接口服务",
+    "serviceNameCN": "防火墙管理",
+    "serviceShortName": "fwm"
+  },
+  "objects": {
+    "Account": {
+      "document": "账号基本信息，主要有 Uin 和 AppId",
+      "members": [
+        {
+          "disabled": false,
+          "document": "租户appid",
+          "example": "12500000",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "租户uin",
+          "example": "10000001",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余可用额度",
+          "example": "1000",
+          "member": "int64",
+          "name": "RemainQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "租户名称",
+          "example": "天空之蓝",
+          "member": "string",
+          "name": "Nickname",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下发规则数",
+          "example": "100",
+          "member": "int64",
+          "name": "DispatchRuleNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品已有规则数",
+          "example": "100",
+          "member": "int64",
+          "name": "OriginRuleNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总额度",
+          "example": "10000",
+          "member": "int64",
+          "name": "TotalQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员Id",
+          "example": "mem-1300846651-100011616646",
+          "member": "string",
+          "name": "MemberId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AccountGroupInfo": {
+      "document": "账户组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账户组ID",
+          "example": "acg-23ras",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账户组名称",
+          "example": "生产环境组",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AccountGroupQuotaDetail": {
+      "document": "账号组配额详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账号组Id",
+          "example": "acg-2fafs",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号组名称",
+          "example": "生产组",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号组成员数",
+          "example": "2",
+          "member": "int64",
+          "name": "MemberCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "取组内 RemainQuota 最小成员的值",
+          "example": "10",
+          "member": "int64",
+          "name": "RemainQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同上成员的 TotalQuota",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同上成员的 DispatchRuleNum",
+          "example": "6",
+          "member": "int64",
+          "name": "DispatchRuleNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同上成员的 OriginRuleNum",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginRuleNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额最少的成员 Uin",
+          "example": "1342343243",
+          "member": "string",
+          "name": "BottleneckUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员列表",
+          "example": "无",
+          "member": "Account",
+          "name": "Members",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AccountProductDetailStats": {
+      "document": "单个产品的风险统计详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "enterprise_sg",
+          "member": "string",
+          "name": "Product",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "企业安全组",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检策略数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "int64",
+          "name": "PolicyCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "待整改风险数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "UntreatedRiskCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总风险数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15",
+          "member": "int64",
+          "name": "TotalRiskCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已处置数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "TreatedRiskCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已忽略数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "IgnoredRiskCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "整改率，如 50%，无需整改时为 无需整改\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0%",
+          "member": "string",
+          "name": "RectifyRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近一次体检时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-10-22 10:00:00",
+          "member": "string",
+          "name": "LastCheckTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子类 ID 列表",
+          "example": "[\"sub_001\", \"sub_003\", \"sub_007\"]",
+          "member": "string",
+          "name": "SubcategoryIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否超时未体检",
+          "example": "true",
+          "member": "bool",
+          "name": "IsOverdue",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AccountStatsGroup": {
+      "document": "按账号分组的风险统计数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成员账号信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MemberInfo",
+          "name": "Member",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该账号下所有产品待整改风险数汇总\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "UntreatedRiskCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该账号下各产品维度的风险统计列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccountProductDetailStats",
+          "name": "ProductStats",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "整改率",
+          "example": "16.0%",
+          "member": "string",
+          "name": "RectifyRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AddressTemplateSpecification": {
+      "document": "安全组地址模版",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP地址ID，例如：ipm-2uw6ujo6。",
+          "example": "ipm-2uw6ujo6",
+          "member": "string",
+          "name": "AddressId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " IP地址组ID，例如：ipmg-2uw6ujo6。",
+          "example": "ipm-2uw6ujo6",
+          "member": "string",
+          "name": "AddressGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AnalysisSgRuleInfoResp": {
+      "document": "企业安全组规则列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则id  等同RuleUuid",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则Id",
+          "example": "id-xxxx",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderIndex",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云防排序",
+          "example": "1",
+          "member": "int64",
+          "name": "CfwOrderIndex",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源规则内容",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "SourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(instance)\n2表示子网实例(instance)\n3表示CVM实例(instance)\n4表示CLB实例(instance)\n5表示ENI实例(instance)\n6表示数据库实例(instance)\n7表示模板(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的规则内容",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "TargetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(instance)\n2表示子网实例(instance)\n3表示CVM实例(instance)\n4表示CLB实例(instance)\n5表示ENI实例(instance)\n6表示数据库实例(instance)\n7表示模板(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)",
+          "example": "0",
+          "member": "int64",
+          "name": "TargetType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议名称\n取值范围:TCP/ANY/ICMP/UDP\nANY:表示所有\n",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "3306",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则策略\n取值范围:1/2\n1:阻断\n2:放行",
+          "example": "1",
+          "member": "int64",
+          "name": "Strategy",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "规则描述",
+          "member": "string",
+          "name": "Detail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务模板id",
+          "example": "tpm-3c140219",
+          "member": "string",
+          "name": "ServiceTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源资产名称",
+          "example": "tpm-3c140219",
+          "member": "string",
+          "name": "SouInstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源资产公网ip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "SouPublicIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源资产内网ip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "SouPrivateIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源资产网段信息",
+          "example": "10.0.0.0/32",
+          "member": "string",
+          "name": "SouCidr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源模板名称",
+          "example": "模板名称",
+          "member": "string",
+          "name": "SouParameterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的资产名称",
+          "example": "ins-3c140219",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的资产公网ip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的资产内网ip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "PrivateIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的资产网段信息",
+          "example": "10.0.0.0/32",
+          "member": "string",
+          "name": "Cidr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的模板名称",
+          "example": "模板名称",
+          "member": "string",
+          "name": "ParameterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口模板名称",
+          "example": "模板名称",
+          "member": "string",
+          "name": "ProtocolPortName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名解析的IP统计",
+          "example": "无",
+          "member": "SgDnsParseCount",
+          "name": "DnsParseCount",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则生效范围",
+          "example": "SG",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区：\n1防火墙管理最前分区\n2是云防规则\n3防火墙管理最后分区",
+          "example": "1",
+          "member": "int64",
+          "name": "RulePartition",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则组Id",
+          "example": "fwmrg-xxxxxxxxxx",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则组名称",
+          "example": "下发规则组",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则组内规则id",
+          "example": "539a6900-855b-484c-9c99-ac0c37028ddf",
+          "member": "string",
+          "name": "GroupRuleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略Id",
+          "example": "fwmsid-xxxxxxxxxx",
+          "member": "string",
+          "name": "StrategyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ip类型",
+          "example": "ipv4",
+          "member": "string",
+          "name": "IpVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MemberInfo",
+          "name": "BelongMember",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CancelIgnorePolicyRiskRequest": {
+      "document": "CancelIgnorePolicyRisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险ID",
+          "example": "1",
+          "member": "string",
+          "name": "RiskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "成员Id",
+          "example": "mem-tencent-e4f32cfd87465a17",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelIgnorePolicyRiskResponse": {
+      "document": "CancelIgnorePolicyRisk返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CommonFilter": {
+      "document": "通用筛选条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "筛选字段名。支持：SecurityGroupId、FwGroupId、Ip（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SecurityGroupId",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "筛选值列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作类型。1=等于，7=in，9=模糊匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "int64",
+          "name": "OperatorType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateAnalyzePolicyTaskRequest": {
+      "document": "CreateAnalyzePolicyTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品类型",
+          "example": "[\"EnterpriseSG\",\"SG\"]",
+          "member": "string",
+          "name": "Products",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "成员Id 列表",
+          "example": "[\"mem-1300846651-100011616646\"]",
+          "member": "string",
+          "name": "MemberIdSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAnalyzePolicyTaskResponse": {
+      "document": "CreateAnalyzePolicyTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态 ，1 表示执行中",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdgeAclRuleGroupRequest": {
+      "document": "CreateEdgeAclRuleGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组名称，长度1-50字符",
+          "example": "Edge边界规则组-测试",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品类型，固定为 cfw_edge_acl",
+          "example": "cfw_edge_acl",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "EdgeAclRuleInfo",
+          "name": "Rules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdgeAclRuleGroupResponse": {
+      "document": "CreateEdgeAclRuleGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdgeAclRuleRequest": {
+      "document": "CreateEdgeAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "EdgeAclRuleInfo",
+          "name": "Rules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdgeAclRuleResponse": {
+      "document": "CreateEdgeAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNatAclRuleGroupRequest": {
+      "document": "CreateNatAclRuleGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组名称",
+          "example": "\"NAT规则组-测试\"",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品类型，固定为 cfw_nat_acl",
+          "example": "cfw_nat_acl",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "NatAclRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNatAclRuleGroupResponse": {
+      "document": "CreateNatAclRuleGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNatAclRuleRequest": {
+      "document": "CreateNatAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "NatAclRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNatAclRuleResponse": {
+      "document": "CreateNatAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityGroupRuleGroupRequest": {
+      "document": "CreateSecurityGroupRuleGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "\"RG-13KAE\"",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品类型",
+          "example": "0",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "SecurityGroupRule",
+          "name": "Rules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityGroupRuleGroupResponse": {
+      "document": "CreateSecurityGroupRuleGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityGroupRuleRequest": {
+      "document": "CreateSecurityGroupRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组Id",
+          "example": "RG-SEF32",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "SecurityGroupRule",
+          "name": "Rules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityGroupRuleResponse": {
+      "document": "CreateSecurityGroupRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStrategyRequest": {
+      "document": "CreateStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品类型",
+          "example": "1",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下发账号",
+          "example": "[\"10000000698\",\"10000000697\"]",
+          "member": "string",
+          "name": "ReceiveAccount",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "前区规则组",
+          "example": "无",
+          "member": "StrategyReq",
+          "name": "PreStrategy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "后区规则组",
+          "example": "无",
+          "member": "StrategyReq",
+          "name": "PostStrategy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "下发账号组",
+          "example": "[\"10000000698\",\"10000000697\"]",
+          "member": "string",
+          "name": "ReceiveGroup",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStrategyResponse": {
+      "document": "CreateStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVpcAclRuleGroupRequest": {
+      "document": "CreateVpcAclRuleGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组名称",
+          "example": "\"VPC规则组-测试\"",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品类型，固定为 cfw_vpc_acl",
+          "example": "cfw_vpc_acl",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "VpcAclRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVpcAclRuleGroupResponse": {
+      "document": "CreateVpcAclRuleGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVpcAclRuleRequest": {
+      "document": "CreateVpcAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "VpcAclRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVpcAclRuleResponse": {
+      "document": "CreateVpcAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEdgeAclRuleRequest": {
+      "document": "DeleteEdgeAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要删除的规则ID列表",
+          "example": "[\"rule_001\", \"rule_002\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEdgeAclRuleResponse": {
+      "document": "DeleteEdgeAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNatAclRuleRequest": {
+      "document": "DeleteNatAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID列表",
+          "example": "[\"uuid-1\",\"uuid-2\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNatAclRuleResponse": {
+      "document": "DeleteNatAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRuleGroupRequest": {
+      "document": "DeleteRuleGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组Id列表",
+          "example": "[\"RG-234JSES\",\"RG-234JSES\"]",
+          "member": "string",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRuleGroupResponse": {
+      "document": "DeleteRuleGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecurityGroupRuleRequest": {
+      "document": "DeleteSecurityGroupRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组Id",
+          "example": "RG-23JSAE",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "[\"100\",\"102\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecurityGroupRuleResponse": {
+      "document": "DeleteSecurityGroupRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStrategyRequest": {
+      "document": "DeleteStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略Id列表",
+          "example": "[\"fwmsid_tqupwhxyt1\",\"fwmsid_296bree3jd\"]",
+          "member": "string",
+          "name": "StrategyIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStrategyResponse": {
+      "document": "DeleteStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpcAclRuleRequest": {
+      "document": "DeleteVpcAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID列表",
+          "example": "[\"uuid-1\",\"uuid-2\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpcAclRuleResponse": {
+      "document": "DeleteVpcAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeAclRulesRequest": {
+      "document": "DescribeEdgeAclRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则方向：0-出向，1-入向",
+          "example": "1",
+          "member": "int64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件列表，支持按 RuleId、Direction、Protocol、RuleAction 等字段过滤",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，默认100，最大1000",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移，默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序顺序，asc:升序 desc:降序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，支持 Sequence、RuleId 等",
+          "example": "Sequence",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeAclRulesResponse": {
+      "document": "DescribeEdgeAclRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "EdgeAclRuleResp",
+          "name": "Rules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不过滤的总数",
+          "example": "21",
+          "member": "int64",
+          "name": "AllTotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatAclRulesRequest": {
+      "document": "DescribeNatAclRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则方向：0-出向，1-入向",
+          "example": "1",
+          "member": "int64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序顺序，asc:升序 desc:降序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "Sequence",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatAclRulesResponse": {
+      "document": "DescribeNatAclRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "NatAclRuleResp",
+          "name": "Rules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不过滤的总数",
+          "example": "21",
+          "member": "int64",
+          "name": "AllTotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganMembersRequest": {
+      "document": "DescribeOrganMembers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "搜索过滤条件列表，支持按成员 ID、账号名称、身份、纳管状态等字段筛选",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，默认 20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，如 MemberCreateTime",
+          "example": "MemberCreateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式：asc 升序，desc 降序",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganMembersResponse": {
+      "document": "DescribeOrganMembers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团成员总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集团成员列表",
+          "example": "无",
+          "member": "OrganMemberItem",
+          "name": "Members",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganSummaryRequest": {
+      "document": "DescribeOrganSummary请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeOrganSummaryResponse": {
+      "document": "DescribeOrganSummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团概览",
+          "example": "无",
+          "member": "OrganSummary",
+          "name": "Summary",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyRiskAccountProductStatsRequest": {
+      "document": "DescribePolicyRiskAccountProductStats请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页大小，按账号分页，默认20，最大100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移，默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件列表。支持的筛选字段：AccountName（账号名称模糊搜索）、AccountId（账号Uin精确搜索）、OnlyUntreated（仅看待整改，值为1时生效）、OnlyOverdue（仅超时未体检，值为1时生效）",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyRiskAccountProductStatsResponse": {
+      "document": "DescribePolicyRiskAccountProductStats返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "按账号分组的风险统计列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccountStatsGroup",
+          "name": "AccountStats",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "满足条件的账号总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超时未体检的账号数",
+          "example": "2",
+          "member": "int64",
+          "name": "OverdueAccountCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超时未体检的产品数",
+          "example": "2",
+          "member": "int64",
+          "name": "OverdueProductCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskAnalysisDetailsRequest": {
+      "document": "DescribeRiskAnalysisDetails请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险ID",
+          "example": "c1w3",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询类型，analyze实时数据分析，task定时分析结果",
+          "example": "analyze",
+          "member": "string",
+          "name": "SearchType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "成员Id",
+          "example": "mem-tencent-e4f32cfd87465a17",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskAnalysisDetailsResponse": {
+      "document": "DescribeRiskAnalysisDetails返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险企业安全组规则列表",
+          "example": "无",
+          "member": "AnalysisSgRuleInfoResp",
+          "name": "EnterpriseSecurityGroupRule",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险安全组规则列表",
+          "example": "无",
+          "member": "SecurityGroupRiskPolicy",
+          "name": "SecurityGroupPolicy",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实时分析状态，1分析执行中请轮询，0分析已结束",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险企业安全组IPV6规则列表",
+          "example": "无",
+          "member": "AnalysisSgRuleInfoResp",
+          "name": "EnterpriseSecurityGroupRuleIPV6",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskCategoryStatsRequest": {
+      "document": "DescribeRiskCategoryStats请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页大小,默认20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量,默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "产品类型",
+          "example": "EnterpriseSG",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选器",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段：\"RuleCount\", \"TreatedCount\", \"IgnoredCount\", \"UntreatedCount\", \"DisposalRate\"",
+          "example": "UntreatedCount",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "顺序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "成员Id",
+          "example": "mem-1300846651-100011616646",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskCategoryStatsResponse": {
+      "document": "DescribeRiskCategoryStats返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险分类总数",
+          "example": "8",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险分类统计列表",
+          "example": "无",
+          "member": "RiskCategoryItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskListRequest": {
+      "document": "DescribeRiskList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条数限制",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "产品类型",
+          "example": "EnterpriseSG",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "FoundTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "成员Id",
+          "example": "mem-1300846651-100011616646",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskListResponse": {
+      "document": "DescribeRiskList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略问题列表",
+          "example": "无",
+          "member": "PolicyRisk",
+          "name": "PolicyRiskLst",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略问题数",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityGroupRuleRequest": {
+      "document": "DescribeSecurityGroupRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组Id",
+          "example": "RG-234HK",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则Id",
+          "example": "120",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityGroupRuleResponse": {
+      "document": "DescribeSecurityGroupRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则详情",
+          "example": "无",
+          "member": "SgRuleResp",
+          "name": "Rule",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityGroupRulesRequest": {
+      "document": "DescribeSecurityGroupRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组Id",
+          "example": "rg-2jsdas",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模糊搜索关键词",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityGroupRulesResponse": {
+      "document": "DescribeSecurityGroupRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "SecGroupRuleResp",
+          "name": "Rules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不过滤的规则总数",
+          "example": "22",
+          "member": "int64",
+          "name": "AllTotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStrategiesRequest": {
+      "document": "DescribeStrategies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品类型",
+          "example": "secgroup",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行区域：pre是前区，post 是后区",
+          "example": "pre",
+          "member": "string",
+          "name": "ExecArea",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "条数限制",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStrategiesResponse": {
+      "document": "DescribeStrategies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "102",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略列表",
+          "example": "无",
+          "member": "StrategyResp",
+          "name": "Strategies",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStrategyAccountsRequest": {
+      "document": "DescribeStrategyAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下发产品 secgroup // 企业安全组",
+          "example": "secgroup",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选器",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStrategyAccountsResponse": {
+      "document": "DescribeStrategyAccounts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账号列表",
+          "example": "无",
+          "member": "Account",
+          "name": "Accounts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号组列表",
+          "example": "无",
+          "member": "AccountGroupQuotaDetail",
+          "name": "AccountGroups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStrategyDispatchStatusRequest": {
+      "document": "DescribeStrategyDispatchStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品",
+          "example": "secgroup",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStrategyDispatchStatusResponse": {
+      "document": "DescribeStrategyDispatchStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "进度",
+          "example": "0.9",
+          "member": "float",
+          "name": "Progress",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下发开始时间",
+          "example": "2025-10-30 10:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下发结束时间",
+          "example": "2025-10-30 10:10:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下发状态，0无变动，1下发中，2下发成功，3下发失败，4更新待下发",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下发规则组数量",
+          "example": "3",
+          "member": "int64",
+          "name": "RuleGroupNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下发失败错误信息",
+          "example": "配额不足",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下发关联策略id列表",
+          "example": "[\"fwmsid_lhdp0plbic\"]",
+          "member": "string",
+          "name": "DispatchStrategyList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStrategyRequest": {
+      "document": "DescribeStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略Id",
+          "example": "SID-133",
+          "member": "string",
+          "name": "StrategyId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStrategyResponse": {
+      "document": "DescribeStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略详情",
+          "example": "无",
+          "member": "StrategyResp",
+          "name": "Strategy",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcAclRulesRequest": {
+      "document": "DescribeVpcAclRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcAclRulesResponse": {
+      "document": "DescribeVpcAclRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "VpcAclRuleResp",
+          "name": "Rules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不过滤的总数",
+          "example": "21",
+          "member": "int64",
+          "name": "AllTotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DispatchStrategyRequest": {
+      "document": "DispatchStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1:下发，2:中止",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "产品",
+          "example": "secgroup",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DispatchStrategyResponse": {
+      "document": "DispatchStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回状态",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EdgeAclRuleInfo": {
+      "document": "互联网边界规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID，修改规则时必填",
+          "example": "rule_001",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则执行顺序，数字越小优先级越高，创建规则组时必须从1开始严格递增",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderIndex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则方向：0-出站，1-入站",
+          "example": "1",
+          "member": "int64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "源地址内容，根据 SourceType 不同有不同的格式：ip 时为 IP/CIDR，domain 时为域名，template 时为模板ID，instance 时为实例ID列表（逗号分隔），tag 时为标签键值对（格式：key:value）",
+          "example": "192.168.1.0/24",
+          "member": "string",
+          "name": "SourceContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源地址类型：ip-IP地址，domain-域名，template-参数模板，instance-实例，tag-标签",
+          "example": "ip",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标地址内容，格式同 SourceContent",
+          "example": "10.0.0.0/8",
+          "member": "string",
+          "name": "TargetContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标地址类型：ip-IP地址，domain-域名，template-参数模板，instance-实例，tag-标签",
+          "example": "ip",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "端口，支持单端口、端口范围和逗号分隔的多端口，如：80、1-65535、80,443,8080",
+          "example": "80,443",
+          "member": "string",
+          "name": "Port",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型：TCP、UDP、ICMP、ANY",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则动作：accept-放行，drop-阻断，log-观察",
+          "example": "accept",
+          "member": "string",
+          "name": "RuleAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则描述，长度0-256字符",
+          "example": "允许内网访问",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生效范围：serial，串行；side，旁路；all，全局\t",
+          "example": "all",
+          "member": "string",
+          "name": "Scope",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则归属的成员账号ID（多账号场景下使用）。当 SourceType 或 TargetType 为 instance 或 tag 时，此参数必填，用于指定实例/标签所属的成员账号",
+          "example": "100023718505",
+          "member": "string",
+          "name": "BelongMemberId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "参数模板",
+          "example": "pp-23432",
+          "member": "string",
+          "name": "ParamTemplateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "EdgeAclRuleResp": {
+      "document": "互联网边界规则响应结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "rule_001",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则执行顺序",
+          "example": "1",
+          "member": "int64",
+          "name": "Sequence",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则方向：0-出站，1-入站",
+          "example": "1",
+          "member": "int64",
+          "name": "Direction",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源地址内容",
+          "example": "192.168.1.0/24",
+          "member": "string",
+          "name": "SourceContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源地址类型",
+          "example": "ip",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源地址名称（当类型为模板/实例/标签时返回对应名称）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "内网模板",
+          "member": "string",
+          "name": "SourceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标地址内容",
+          "example": "10.0.0.0/8",
+          "member": "string",
+          "name": "TargetContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标地址类型",
+          "example": "ip",
+          "member": "string",
+          "name": "TargetType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标地址名称（当类型为模板/实例/标签时返回对应名称）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "生产环境服务器",
+          "member": "string",
+          "name": "TargetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标端口",
+          "example": "80,443",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议类型",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则动作：accept-放行，drop-阻断，log-观察",
+          "example": "accept",
+          "member": "string",
+          "name": "RuleAction",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述",
+          "example": "允许内网访问",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则生效范围",
+          "example": "0",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域名称1（正则匹配时使用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "中国",
+          "member": "string",
+          "name": "CountryName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域名称2（正则匹配时使用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京",
+          "member": "string",
+          "name": "CityName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数模板ID（当类型为模板时返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tpl_001",
+          "member": "string",
+          "name": "ParamTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数模板名称（当类型为模板时返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "内网地址模板",
+          "member": "string",
+          "name": "ParamTemplateName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则是否失效：0-有效，1-失效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Invalid",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则归属的成员账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MemberInfo",
+          "name": "BelongMember",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国家Id",
+          "example": "0",
+          "member": "uint64",
+          "name": "CountryCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "城市Id",
+          "example": "0",
+          "member": "uint64",
+          "name": "CityCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0为正常规则,1为地域规则",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsRegion",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云厂商code",
+          "example": "0",
+          "member": "string",
+          "name": "CloudCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0为正常规则,1为云厂商规则",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsCloud",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "内部接口实例",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地区简称",
+          "example": "zd",
+          "member": "string",
+          "name": "CountryKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "省份、城市简称",
+          "example": "hn43",
+          "member": "string",
+          "name": "CityKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则创建时间",
+          "example": "2025-07-24 12:20:21",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则最近更新时间",
+          "example": "2025-07-24 12:20:21",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名数",
+          "example": "0",
+          "member": "int64",
+          "name": "DnsParseCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IgnorePolicyRiskRequest": {
+      "document": "IgnorePolicyRisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略问题ID",
+          "example": "0001",
+          "member": "string",
+          "name": "RiskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "成员Id",
+          "example": "mem-tencent-e4f32cfd87465a17",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IgnorePolicyRiskResponse": {
+      "document": "IgnorePolicyRisk返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MemberInfo": {
+      "document": "成员信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成员AppId",
+          "example": "16898822",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员Uin",
+          "example": "12121212",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员昵称",
+          "example": "天空之蓝",
+          "member": "string",
+          "name": "Nickname",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员Id",
+          "example": "1212-3232",
+          "member": "string",
+          "name": "MemberId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyEdgeAclRuleRequest": {
+      "document": "ModifyEdgeAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要修改的规则，必须包含RuleId",
+          "example": "无",
+          "member": "EdgeAclRuleInfo",
+          "name": "Rule",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEdgeAclRuleResponse": {
+      "document": "ModifyEdgeAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEdgeAclRuleSequenceRequest": {
+      "document": "ModifyEdgeAclRuleSequence请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "出入站方向 0=出向，1=入向",
+          "example": "1",
+          "member": "int64",
+          "name": "Direction",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则序号调整列表，必须包含所有受影响的规则",
+          "example": "无",
+          "member": "SequenceIndex",
+          "name": "Sequences",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEdgeAclRuleSequenceResponse": {
+      "document": "ModifyEdgeAclRuleSequence返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNatAclRuleRequest": {
+      "document": "ModifyNatAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则",
+          "example": "无",
+          "member": "NatAclRule",
+          "name": "Rule",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNatAclRuleResponse": {
+      "document": "ModifyNatAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNatAclRuleSequenceRequest": {
+      "document": "ModifyNatAclRuleSequence请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "序号调整列表",
+          "example": "无",
+          "member": "SequenceIndex",
+          "name": "Sequences",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则方向：1-入站规则，0-出站规则",
+          "example": "1",
+          "member": "int64",
+          "name": "Direction",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNatAclRuleSequenceResponse": {
+      "document": "ModifyNatAclRuleSequence返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRuleGroupRequest": {
+      "document": "ModifyRuleGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组名称",
+          "example": "RG-8UJS2",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则组名称",
+          "example": "重保规则组2",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRuleGroupResponse": {
+      "document": "ModifyRuleGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySecurityGroupRuleRequest": {
+      "document": "ModifySecurityGroupRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "RG-2KSFE",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则",
+          "example": "无",
+          "member": "SecurityGroupRule",
+          "name": "Rule",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySecurityGroupRuleResponse": {
+      "document": "ModifySecurityGroupRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStrategyRequest": {
+      "document": "ModifyStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略Id",
+          "example": "SID-211",
+          "member": "string",
+          "name": "StrategyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下发规则接收账号",
+          "example": "[\"1000000067\",\"100000045\"]",
+          "member": "string",
+          "name": "ReceiveAccount",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "1",
+          "member": "int64",
+          "name": "Sequence",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则组Id",
+          "example": "RG-2334J",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下发规则接收账号组",
+          "example": "[\"1000000067\",\"100000045\"]",
+          "member": "string",
+          "name": "ReceiveGroup",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStrategyResponse": {
+      "document": "ModifyStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStrategySequenceRequest": {
+      "document": "ModifyStrategySequence请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "优先级列表",
+          "example": "无",
+          "member": "SequenceIndex",
+          "name": "Sequences",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "执行区域",
+          "example": "post",
+          "member": "string",
+          "name": "ExecArea",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品类型",
+          "example": "secgroup",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStrategySequenceResponse": {
+      "document": "ModifyStrategySequence返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcAclRuleRequest": {
+      "document": "ModifyVpcAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则",
+          "example": "无",
+          "member": "VpcAclRule",
+          "name": "Rule",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcAclRuleResponse": {
+      "document": "ModifyVpcAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcAclRuleSequenceRequest": {
+      "document": "ModifyVpcAclRuleSequence请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组ID",
+          "example": "fwmrg_abc123xyz",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "序号调整列表",
+          "example": "无",
+          "member": "SequenceIndex",
+          "name": "Sequences",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcAclRuleSequenceResponse": {
+      "document": "ModifyVpcAclRuleSequence返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NatAclRule": {
+      "document": "NAT边界规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源地址内容",
+          "example": "10.0.0.0/24",
+          "member": "string",
+          "name": "SourceContent",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源类型：ip/url/template/instance/tag",
+          "example": "ip",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的地址内容",
+          "example": "0.0.0.0/0",
+          "member": "string",
+          "name": "TargetContent",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的类型：ip/url/template/instance/tag",
+          "example": "ip",
+          "member": "string",
+          "name": "TargetType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议：TCP/UDP/ICMP/ANY/HTTP/HTTPS/DNS/FTP等",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作：accept/drop/log",
+          "example": "accept",
+          "member": "string",
+          "name": "RuleAction",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级（从1开始）",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderIndex",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则生效范围：ALL-全局生效，ap-xxx-地域生效，cfwnat-xxx-NAT防火墙实例生效",
+          "example": "ALL",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则方向：1-入站规则，0-出站规则",
+          "example": "1",
+          "member": "int64",
+          "name": "Direction",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则ID（修改时必填）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "uuid-xxx",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口（ICMP协议时为空）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "允许HTTP流量",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ppm-xxx",
+          "member": "string",
+          "name": "ParamTemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则归属的成员账号ID（当Scope为cfwnat-xxx或SourceType/DestType为instance/tag时必填）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1300448058",
+          "member": "string",
+          "name": "BelongMemberId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "NatAclRuleResp": {
+      "document": "NAT边界规则响应结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "uuid-xxx",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "1",
+          "member": "int64",
+          "name": "Sequence",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则方向：0-出向，1-入向",
+          "example": "1",
+          "member": "int64",
+          "name": "Direction",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源地址内容",
+          "example": "10.0.0.0/24",
+          "member": "string",
+          "name": "SourceContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源类型",
+          "example": "ip",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-xxx",
+          "member": "string",
+          "name": "SourceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目的地址内容",
+          "example": "0.0.0.0/0",
+          "member": "string",
+          "name": "TargetContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的类型",
+          "example": "ip",
+          "member": "string",
+          "name": "TargetType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-xxx",
+          "member": "string",
+          "name": "TargetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "协议",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作：accept/drop/log",
+          "example": "accept",
+          "member": "string",
+          "name": "RuleAction",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "允许HTTP流量",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则生效范围",
+          "example": "ALL",
+          "member": "string",
+          "name": "Scope",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则生效范围描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "全部实例",
+          "member": "string",
+          "name": "ScopeDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfwnat-xxx",
+          "member": "string",
+          "name": "FwInsId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国家名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "中国",
+          "member": "string",
+          "name": "CountryName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "城市名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京",
+          "member": "string",
+          "name": "CityName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国家代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "86",
+          "member": "int64",
+          "name": "CountryCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "城市代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "131",
+          "member": "int64",
+          "name": "CityCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国家键值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CN",
+          "member": "string",
+          "name": "CountryKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "城市键值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BJ",
+          "member": "string",
+          "name": "CityKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否地域规则：0-否，1-是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsRegion",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云厂商代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tencent",
+          "member": "string",
+          "name": "CloudCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否云厂商规则：0-否，1-是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsCloud",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ppm-xxx",
+          "member": "string",
+          "name": "ParamTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "端口模板-HTTP",
+          "member": "string",
+          "name": "ParamTemplateName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则是否失效：0-有效，1-失效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Invalid",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则归属的成员账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MemberInfo",
+          "name": "BelongMember",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-01-01 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-01-01 12:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名数",
+          "example": "0",
+          "member": "int64",
+          "name": "DnsParseCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OrganMemberItem": {
+      "document": "集团成员信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成员 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mem-1300448058-100027980407",
+          "member": "string",
+          "name": "MemberId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员账号 AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1302385041",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账号Uin",
+          "example": "100027980407",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "子公司A",
+          "member": "string",
+          "name": "Nickname",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子账号数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "SubAccountCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属组织架构节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "技术部",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员身份：admin-管理员，delegatedAdmin-委派管理员，member-普通成员\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "member",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员身份显示名称（前端展示用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "普通成员",
+          "member": "string",
+          "name": "RoleDisplay",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属账户组 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccountGroupInfo",
+          "name": "AccountGroup",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云防火墙纳管状态：0-未纳管，1-已纳管\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CfwManaged",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云防火墙共享角色：sharer-共享者，user-使用者，none-未设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sharer",
+          "member": "string",
+          "name": "CfwShareRole",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云防火墙共享角色显示名称（前端展示用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "共享者",
+          "member": "string",
+          "name": "CfwShareRoleDisplay",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云防火墙共享者 AppId，成员角色为使用者时有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1300448058",
+          "member": "string",
+          "name": "CfwSharerAppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云防火墙计费实例 ID，非空表示已购买云防火墙\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfwins-abc12345",
+          "member": "string",
+          "name": "CfwInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略分析权限：0-关闭，1-开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PolicyAnalysisEnabled",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员加入集团时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-01-15 10:30:00",
+          "member": "string",
+          "name": "MemberCreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账号加入方式",
+          "example": "invite",
+          "member": "string",
+          "name": "JoinType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OrganSummary": {
+      "document": "集团概览",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团名称",
+          "example": "腾讯云集团",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "管理员账号信息",
+          "example": "无",
+          "member": "MemberInfo",
+          "name": "AdminInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "管理员/委派管理员数量",
+          "example": "2",
+          "member": "int64",
+          "name": "AdminCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已接入成员数",
+          "example": "10",
+          "member": "int64",
+          "name": "JoinedMemberCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入成员上限（-1表示无上限）",
+          "example": "100",
+          "member": "int64",
+          "name": "MemberLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入成员上限显示",
+          "example": "100",
+          "member": "string",
+          "name": "MemberLimitDisplay",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规格共享者数量",
+          "example": "3",
+          "member": "int64",
+          "name": "CfwSharerCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规格使用者数量",
+          "example": "5",
+          "member": "int64",
+          "name": "CfwUserCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部门名称列表",
+          "example": "[\"root\"]",
+          "member": "string",
+          "name": "Departments",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "纳管账号数",
+          "example": "1",
+          "member": "int64",
+          "name": "ManagedMemberCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "纳管产品数",
+          "example": "1",
+          "member": "int64",
+          "name": "ManagedProductCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "纳管账号数",
+          "example": "2",
+          "member": "int64",
+          "name": "CfwManageCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PolicyRisk": {
+      "document": "策略风险",
+      "members": [
+        {
+          "disabled": false,
+          "document": "问题对应的唯一uuid",
+          "example": "s1w45",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险大类",
+          "example": "无效规则",
+          "member": "string",
+          "name": "RiskCategory",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险子类",
+          "example": "未命中规则",
+          "member": "string",
+          "name": "RiskSubCategory",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则分类",
+          "example": "拒绝规则",
+          "member": "string",
+          "name": "RuleType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级，0：低风险\n1：中风险\n2：高风险",
+          "example": "2",
+          "member": "int64",
+          "name": "RiskLevel",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组",
+          "example": "所属产品",
+          "member": "string",
+          "name": "Product",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险包含的企业安全组规则ID",
+          "example": "[\"fwm-04556\"]",
+          "member": "string",
+          "name": "SgRuleId",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险包含安全组ID内的问题规则数",
+          "example": "2",
+          "member": "int64",
+          "name": "RuleCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险包含的安全组ID",
+          "example": "[\"sg-888\"]",
+          "member": "string",
+          "name": "SgId",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险特征",
+          "example": "无效规则",
+          "member": "string",
+          "name": "RiskFeature",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置建议",
+          "example": "基于业务实际需求，可考虑删除规则",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置状态，0：未处理，1：已处理，2：忽略",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发现时间",
+          "example": "2025-06-30 12:00:00",
+          "member": "string",
+          "name": "FoundTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置时间",
+          "example": "2025-06-30 13:00:00",
+          "member": "string",
+          "name": "DisposalTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ingress入站，Egress出站",
+          "example": "Egress",
+          "member": "string",
+          "name": "Direction",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险原因",
+          "example": "源IP、目的IP都是1.1.1.1，2.2.2.2",
+          "member": "string",
+          "name": "RiskReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ReceiveAccount": {
+      "document": "账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "租户 uin",
+          "example": "100000001",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "租户名称",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "Nickname",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0=账号uin，1=账号组",
+          "example": "1",
+          "member": "int64",
+          "name": "ReceiverType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "只有ReceiverType 是 1 时 才返回账号列表",
+          "example": "无",
+          "member": "MemberInfo",
+          "name": "Members",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RiskCategoryItem": {
+      "document": "风险分类统计项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险大类ID",
+          "example": "invalid_rule",
+          "member": "string",
+          "name": "CategoryId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险大类名称",
+          "example": "无效规则",
+          "member": "string",
+          "name": "CategoryName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险子类ID",
+          "example": "loss_of_effect_rules",
+          "member": "string",
+          "name": "SubcategoryId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险子类名称",
+          "example": "失效规则",
+          "member": "string",
+          "name": "SubcategoryName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级(0-低危,1-中危,2-高危)",
+          "example": "2",
+          "member": "int64",
+          "name": "RiskLevel",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级名称(低/中/高)",
+          "example": "高",
+          "member": "string",
+          "name": "RiskLevelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险描述",
+          "example": "规则关联的资产实例、地址模板、资源标签等模板已被部分或全部删除",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置建议",
+          "example": "建议直接删除该无效规则",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该类风险的规则数量",
+          "example": "15",
+          "member": "int64",
+          "name": "RuleCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已处置数量",
+          "example": "8",
+          "member": "int64",
+          "name": "TreatedCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已忽略数量",
+          "example": "2",
+          "member": "int64",
+          "name": "IgnoredCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "待整改数量",
+          "example": "5",
+          "member": "int64",
+          "name": "UntreatedCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "整改率(百分比字符串)",
+          "example": "66",
+          "member": "uint64",
+          "name": "DisposalRate",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有未处理风险\n-1: 未体检\n0: 无风险\n1: 有风险",
+          "example": "0",
+          "member": "int64",
+          "name": "HasRisk",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "整改状态：\nCompleted： 已整改完成（整改率 100%）\nIncomplete： 未整改完成（整改率 < 100%）\n-：未体检/无数据",
+          "example": "Completed",
+          "member": "string",
+          "name": "RemediationStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SecGroupRuleResp": {
+      "document": "企业安全组规则列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderIndex",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主键id",
+          "example": "uuid",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ip类型",
+          "example": "ipv4",
+          "member": "string",
+          "name": "IpVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源规则内容",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "SourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(instance)\n2表示子网实例(instance)\n3表示CVM实例(instance)\n4表示CLB实例(instance)\n5表示ENI实例(instance)\n6表示数据库实例(instance)\n7表示模板(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的规则内容",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "TargetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(instance)\n2表示子网实例(instance)\n3表示CVM实例(instance)\n4表示CLB实例(instance)\n5表示ENI实例(instance)\n6表示数据库实例(instance)\n7表示模板(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)",
+          "example": "0",
+          "member": "int64",
+          "name": "TargetType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议名称\n取值范围:TCP/ANY/ICMP/UDP\nANY:表示所有\n",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "80",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略",
+          "example": "1",
+          "member": "int64",
+          "name": "Strategy",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "放通TCP 80",
+          "member": "string",
+          "name": "Detail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务模板id",
+          "example": "tpm-3c140219",
+          "member": "string",
+          "name": "ServiceTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源资产名称",
+          "example": "ins-3c140219",
+          "member": "string",
+          "name": "SouInstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源资产公网ip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "SouPublicIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源资产内网ip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "SouPrivateIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源资产网段信息",
+          "example": "1.1.1.1/10",
+          "member": "string",
+          "name": "SouCidr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源模板名称",
+          "example": "模板名称",
+          "member": "string",
+          "name": "SouParameterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的资产名称",
+          "example": "ins-3c140219",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的资产公网ip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的资产内网ip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "PrivateIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的资产网段信息",
+          "example": "1.1.1.1/10",
+          "member": "string",
+          "name": "Cidr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的模板名称",
+          "example": "模板名称",
+          "member": "string",
+          "name": "ParameterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口模板名称",
+          "example": "模板名称",
+          "member": "string",
+          "name": "ProtocolPortName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则id  等同RuleUuid",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名解析的IP统计",
+          "example": "无",
+          "member": "SgDnsParseCount",
+          "name": "DnsParseCount",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则生效范围",
+          "example": "SG",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则最新一次是否有改动 取值范围：0/1 0:否 1:是",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则归属的成员账号（当FwGroupId为cfwg-xxx或SourceType/DestType为instance/tag时必填)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MemberInfo",
+          "name": "BelongMember",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SecurityGroupRiskPolicy": {
+      "document": "安全组风险规则详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全组规则索引号",
+          "example": "0",
+          "member": "int64",
+          "name": "PolicyIndex",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " 协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口(all, 离散port,  range)。",
+          "example": "22",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。",
+          "example": "无",
+          "member": "ServiceTemplateSpecification",
+          "name": "ServiceTemplate",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网段或IP(互斥)。",
+          "example": "182.2.2.1",
+          "member": "string",
+          "name": "CidrBlock",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网段或IPv6(互斥)。",
+          "example": "182.2.2.1",
+          "member": "string",
+          "name": "Ipv6CidrBlock",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组实例ID，例如：sg-ohuuioma。",
+          "example": "sg-ohuuioma",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP地址ID或者ID地址组ID。",
+          "example": "无",
+          "member": "AddressTemplateSpecification",
+          "name": "AddressTemplate",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作：ACCEPT 或 DROP。",
+          "example": "ACCEPT ",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组规则描述。",
+          "example": "TEST",
+          "member": "string",
+          "name": "PolicyDescription",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组规则当前版本",
+          "example": "10",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则方向，Egress出站规则，Ingress入站规则",
+          "example": "Egress",
+          "member": "string",
+          "name": "Direction",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组最近修改时间。",
+          "example": "2025-07-01 00:00:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组所在地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SecurityGroupRule": {
+      "document": "规则数据结构描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ip类型",
+          "example": "ipv4",
+          "member": "string",
+          "name": "IpVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"0.0.0.0/0\"",
+          "member": "string",
+          "name": "SourceContent",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"net\"",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目的地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"0.0.0.0/0\"",
+          "member": "string",
+          "name": "DestContent",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目的类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"net\"",
+          "member": "string",
+          "name": "DestType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ALL",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1/-1",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"ippm-12dsa\"",
+          "member": "string",
+          "name": "ServiceTemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "动作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"DROP\"",
+          "member": "string",
+          "name": "RuleAction",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"connect\"",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderIndex",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "rule id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12222",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生效范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"SG\"",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口类型",
+          "example": "0",
+          "member": "int64",
+          "name": "ProtocolPortType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则归属的成员账号ID（当FwGroupId为cfwg-xxx或SourceType/DestType为instance/tag时必填）",
+          "example": "1300448058",
+          "member": "string",
+          "name": "BelongMemberId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SequenceIndex": {
+      "document": "规则序号调整结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "原规则序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderIndex",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "新规则序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "NewOrderIndex",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceTemplateSpecification": {
+      "document": "安全组服务模版",
+      "members": [
+        {
+          "disabled": false,
+          "document": " 协议端口ID，例如：ppm-f5n1f8da。",
+          "example": "ppm-f5n1f8da",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议端口组ID，例如：ppmg-f5n1f8da",
+          "example": "ppmg-f5n1f8da",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SgDnsParseCount": {
+      "document": "企业安全组域名解析的IP统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "有效下发的IP个数，离散数据",
+          "example": "10",
+          "member": "int64",
+          "name": "ValidCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未下发的IP个数，离散数据",
+          "example": "10",
+          "member": "int64",
+          "name": "InvalidCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SgRuleResp": {
+      "document": "规则列表响应数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则Id",
+          "example": "fwm_newsg_1300448058_443a085a07b6b578326217e765ecc579_17610187015422",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "2",
+          "member": "int64",
+          "name": "Sequence",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ip类型",
+          "example": "ipv6",
+          "member": "string",
+          "name": "IpVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源内容",
+          "example": "2001:db8::/32",
+          "member": "string",
+          "name": "SrcContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源类型",
+          "example": "0",
+          "member": "string",
+          "name": "SrcType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的内容",
+          "example": "2001:db8::/32",
+          "member": "string",
+          "name": "DstContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的类型",
+          "example": "0",
+          "member": "string",
+          "name": "DstType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议端口参数模板",
+          "example": "0",
+          "member": "int64",
+          "name": "ProtocolPortType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议端口参数模板id",
+          "example": "ippm-13nsa",
+          "member": "string",
+          "name": "ServiceTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口段,支持单端口,多端口和端口段",
+          "example": "3306",
+          "member": "string",
+          "name": "DstPort",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略，1阻断，2放行",
+          "example": "ACCEPT",
+          "member": "string",
+          "name": "RuleAction",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "Test IPv6 rule",
+          "member": "string",
+          "name": "Detail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则来源，0为用户控制台添加",
+          "example": "0",
+          "member": "string",
+          "name": "RuleSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效范围,字节位,1:SG 企业安全组,2:LH 轻量服务器",
+          "example": "SG",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StrategyReq": {
+      "document": "创建策略的策略数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则组Id",
+          "example": "\"GR-1234\"",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "1",
+          "member": "int64",
+          "name": "Sequence",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "StrategyResp": {
+      "document": "查询策略时策略列表参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略Id",
+          "example": "SID-2JSS",
+          "member": "string",
+          "name": "StrategyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则组Id",
+          "example": "RG-10KJk",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则组名称",
+          "example": "重保规则组1",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则数",
+          "example": "2",
+          "member": "int64",
+          "name": "RuleCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略状态",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下发账号",
+          "example": "无",
+          "member": "ReceiveAccount",
+          "name": "ReceiveAccount",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "1",
+          "member": "int64",
+          "name": "Sequence",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下发失败原因",
+          "example": "配额不足",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下发失败原因类型",
+          "example": "SG_QUOTA_LIMIT",
+          "member": "string",
+          "name": "ErrorType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-10-14 11:23:32",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建人",
+          "example": "cfw-test@123",
+          "member": "string",
+          "name": "CreateBy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新人",
+          "example": "cfw-test@123",
+          "member": "string",
+          "name": "UpdateBy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行区域",
+          "example": "post",
+          "member": "string",
+          "name": "ExecArea",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建人名称",
+          "example": "天空之蓝",
+          "member": "string",
+          "name": "CreateName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新人名称",
+          "example": "天空之蓝",
+          "member": "string",
+          "name": "UpdateName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-10-14 11:23:32",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VpcAclRule": {
+      "document": "VPC边界规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源地址内容",
+          "example": "10.0.0.0/24",
+          "member": "string",
+          "name": "SourceContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源类型：ip/url/template/instance/tag",
+          "example": "ip",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目的地址内容",
+          "example": "0.0.0.0/0",
+          "member": "string",
+          "name": "DestContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目的类型：ip/url/template/instance/tag",
+          "example": "ip",
+          "member": "string",
+          "name": "DestType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协议：TCP/UDP/ICMP/ANY/HTTP/HTTPS/DNS/FTP等",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "动作：accept/drop/log",
+          "example": "accept",
+          "member": "string",
+          "name": "RuleAction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "优先级（从1开始）",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderIndex",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "边界防火墙ID：ALL表示全局，CFWS-xxx表示指定边界",
+          "example": "ALL",
+          "member": "string",
+          "name": "EdgeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防火墙实例ID（规则生效范围）：ALL-全局生效，ccn-xxx-云联网实例，cfwg-xxx-防火墙组实例",
+          "example": "ALL",
+          "member": "string",
+          "name": "FwGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID（修改时必填）",
+          "example": "uuid-xxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "端口（ICMP协议时为空）",
+          "example": "80",
+          "member": "string",
+          "name": "Port",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则描述",
+          "example": "允许HTTP流量",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "端口模板ID",
+          "example": "ppm-xxx",
+          "member": "string",
+          "name": "ParamTemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则归属的成员账号ID（当FwGroupId为cfwg-xxx或SourceType/DestType为instance/tag时必填）",
+          "example": "1300448058",
+          "member": "string",
+          "name": "BelongMemberId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "VpcAclRuleResp": {
+      "document": "VPC边界规则响应结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "uuid-xxx",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "1",
+          "member": "int64",
+          "name": "Sequence",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP版本：ipv4或ipv6",
+          "example": "ipv4",
+          "member": "string",
+          "name": "IpVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源地址内容",
+          "example": "10.0.0.0/24",
+          "member": "string",
+          "name": "SourceContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源类型",
+          "example": "ip",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-xxx",
+          "member": "string",
+          "name": "SourceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目的地址内容",
+          "example": "0.0.0.0/0",
+          "member": "string",
+          "name": "DestContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的类型",
+          "example": "ip",
+          "member": "string",
+          "name": "DestType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-xxx",
+          "member": "string",
+          "name": "DestName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "协议",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ppm-xxx",
+          "member": "string",
+          "name": "ParamTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "端口模板-HTTP",
+          "member": "string",
+          "name": "ParamTemplateName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "动作：accept/drop/log",
+          "example": "accept",
+          "member": "string",
+          "name": "RuleAction",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "允许HTTP流量",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "边界防火墙ID",
+          "example": "ALL",
+          "member": "string",
+          "name": "EdgeId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防火墙实例ID",
+          "example": "ALL",
+          "member": "string",
+          "name": "FwGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则是否失效：0-有效，1-失效",
+          "example": "0",
+          "member": "int64",
+          "name": "Invalid",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则归属的成员账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MemberInfo",
+          "name": "BelongMember",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则创建时间",
+          "example": "2026-03-04 16:45:45",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则修改时间",
+          "example": "2026-03-04 16:45:45",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名数",
+          "example": "0",
+          "member": "int64",
+          "name": "DnsParseCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防火墙组名称",
+          "example": "ccn-klt3mzot",
+          "member": "string",
+          "name": "FwGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

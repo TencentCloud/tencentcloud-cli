@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli tokenhub DescribeModelList --cli-unfold-argument ```
+tccli tokenhub DescribeModelList --cli-unfold-argument  \
+    --ModelIds deepseek-v3.2
+```
 
 Output: 
 ```

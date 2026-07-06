@@ -11888,7 +11888,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。<br>模型GL支持的版本号：2.0、3.0-clip、3.0-pro。<br>模型MinimaxMusic支持的版本号：2.0、2.5、2.6。</p>",
+          "document": "<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。<br>模型GL支持的版本号：3.0-clip、3.0-pro。<br>模型MinimaxMusic支持的版本号：2.0、2.5、2.6。</p>",
           "example": "1.0",
           "member": "string",
           "name": "ModelVersion",
@@ -12066,6 +12066,15 @@
           "name": "ImageInfos",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定图片输出张数。目前默认支持输出 1 张。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OutputImageCount",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": false,

@@ -14,6 +14,13 @@
       "output": "CreateConsumerGroupResponse",
       "status": "online"
     },
+    "CreateConsumerLabel": {
+      "document": "创建消费组灰度标签",
+      "input": "CreateConsumerLabelRequest",
+      "name": "创建消费组灰度标签",
+      "output": "CreateConsumerLabelResponse",
+      "status": "online"
+    },
     "CreateInstance": {
       "document": "创建 RocketMQ 5.x 集群。\n当前 API 适用集群：5.x 集群。创建 4.x 专享/通用集群的接口文档见 [CreateRocketMQVipInstance](https://cloud.tencent.com/document/product/1179/95721)。",
       "input": "CreateInstanceRequest",
@@ -47,6 +54,20 @@
       "input": "DeleteConsumerGroupRequest",
       "name": "删除消费组",
       "output": "DeleteConsumerGroupResponse",
+      "status": "online"
+    },
+    "DeleteConsumerLabel": {
+      "document": "删除消费组灰度标签",
+      "input": "DeleteConsumerLabelRequest",
+      "name": "删除消费组灰度标签",
+      "output": "DeleteConsumerLabelResponse",
+      "status": "online"
+    },
+    "DeleteConsumerRouteConfig": {
+      "document": "删除消费组灰度路由配置",
+      "input": "DeleteConsumerRouteConfigRequest",
+      "name": "删除消费组灰度路由配置",
+      "output": "DeleteConsumerRouteConfigResponse",
       "status": "online"
     },
     "DeleteInstance": {
@@ -105,11 +126,39 @@
       "output": "DescribeConsumerGroupListResponse",
       "status": "online"
     },
+    "DescribeConsumerLabel": {
+      "document": "查询消费组某个灰度标签详情",
+      "input": "DescribeConsumerLabelRequest",
+      "name": "查询消费组某个灰度标签详情",
+      "output": "DescribeConsumerLabelResponse",
+      "status": "online"
+    },
+    "DescribeConsumerLabelList": {
+      "document": "查询消费组下灰度标签列表",
+      "input": "DescribeConsumerLabelListRequest",
+      "name": "查询消费组下全部灰度标签列表",
+      "output": "DescribeConsumerLabelListResponse",
+      "status": "online"
+    },
     "DescribeConsumerLag": {
       "document": "查询指定消费组堆积数。\n当前 API 适用集群：4.x 集群和 5.x 集群。",
       "input": "DescribeConsumerLagRequest",
       "name": "查询指定消费组堆积数",
       "output": "DescribeConsumerLagResponse",
+      "status": "online"
+    },
+    "DescribeConsumerRouteConfig": {
+      "document": "查询消费组当前生效的灰度路由配置",
+      "input": "DescribeConsumerRouteConfigRequest",
+      "name": "查询消费组当前生效的灰度路由配置",
+      "output": "DescribeConsumerRouteConfigResponse",
+      "status": "online"
+    },
+    "DescribeConsumerRouteVersionList": {
+      "document": "查询消费组灰度路由配置版本列表",
+      "input": "DescribeConsumerRouteVersionListRequest",
+      "name": "查询消费组灰度路由配置版本列表",
+      "output": "DescribeConsumerRouteVersionListResponse",
       "status": "online"
     },
     "DescribeFusionInstanceList": {
@@ -299,6 +348,13 @@
       "input": "ModifyTopicRequest",
       "name": "修改主题属性",
       "output": "ModifyTopicResponse",
+      "status": "online"
+    },
+    "PutConsumerRouteConfig": {
+      "document": "写入消费组灰度路由配置",
+      "input": "PutConsumerRouteConfigRequest",
+      "name": "写入消费组灰度路由配置",
+      "output": "PutConsumerRouteConfigResponse",
       "status": "online"
     },
     "RemoveMigratingTopic": {
@@ -688,6 +744,45 @@
       ],
       "usage": "out"
     },
+    "ConsumerLabel": {
+      "document": "消费组标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "gray_env",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签状态</p><p>枚举值：</p><ul><li>ACTIVE： 生效中</li><li>DELETING： 删除中</li><li>UNKNOWN： 未知</li></ul>",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p><p>单位：毫秒(ms)</p>",
+          "example": "1782716021031",
+          "member": "int64",
+          "name": "UpdatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateConsumerGroupRequest": {
       "document": "CreateConsumerGroup请求参数结构体",
       "members": [
@@ -795,6 +890,81 @@
           "member": "string",
           "name": "ConsumerGroup",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConsumerLabelRequest": {
+      "document": "CreateConsumerLabel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
+          "example": "rmq-16je7x5e7o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "gray_env",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费组</p>",
+          "example": "test_group",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConsumerLabelResponse": {
+      "document": "CreateConsumerLabel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID</p>",
+          "example": "rmq-16je7x5e7o",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费组</p>",
+          "example": "test_group",
+          "member": "string",
+          "name": "Group",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "gray_env",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1305,6 +1475,96 @@
     },
     "DeleteConsumerGroupResponse": {
       "document": "DeleteConsumerGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConsumerLabelRequest": {
+      "document": "DeleteConsumerLabel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
+          "example": "rmq-16je7x5e7o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费组</p>",
+          "example": "test_group",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "gray_env",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConsumerLabelResponse": {
+      "document": "DeleteConsumerLabel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConsumerRouteConfigRequest": {
+      "document": "DeleteConsumerRouteConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
+          "example": "rmq-16je7x5e7o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费组</p>",
+          "example": "test_group",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConsumerRouteConfigResponse": {
+      "document": "DeleteConsumerRouteConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1892,6 +2152,117 @@
       ],
       "type": "object"
     },
+    "DescribeConsumerLabelListRequest": {
+      "document": "DescribeConsumerLabelList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
+          "example": "rmq-16je7x5e7o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费组</p>",
+          "example": "test_group",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerLabelListResponse": {
+      "document": "DescribeConsumerLabelList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表</p>",
+          "example": "无",
+          "member": "ConsumerLabel",
+          "name": "Labels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerLabelRequest": {
+      "document": "DescribeConsumerLabel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
+          "example": "rmq-16je7x5e7o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费组</p>",
+          "example": "test_group",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "gray_env",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerLabelResponse": {
+      "document": "DescribeConsumerLabel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签详情</p>",
+          "example": "无",
+          "member": "ConsumerLabel",
+          "name": "Label",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeConsumerLagRequest": {
       "document": "DescribeConsumerLag请求参数结构体",
       "members": [
@@ -1945,6 +2316,146 @@
           "name": "ConsumerLag",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerRouteConfigRequest": {
+      "document": "DescribeConsumerRouteConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
+          "example": "rmq-16je7x5e7o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费组</p>",
+          "example": "test_group",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerRouteConfigResponse": {
+      "document": "DescribeConsumerRouteConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>版本号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Version",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由规格</p>",
+          "example": "无",
+          "member": "RouteRule",
+          "name": "Rules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>切流时间戳</p>",
+          "example": "1782730693958",
+          "member": "int64",
+          "name": "CutTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerRouteVersionListRequest": {
+      "document": "DescribeConsumerRouteVersionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
+          "example": "rmq-16je7x5e7o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费组</p>",
+          "example": "test_group",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerRouteVersionListResponse": {
+      "document": "DescribeConsumerRouteVersionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本列表</p>",
+          "example": "无",
+          "member": "RouteRuleVersion",
+          "name": "Versions",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -5886,6 +6397,100 @@
       ],
       "usage": "out"
     },
+    "PutConsumerRouteConfigRequest": {
+      "document": "PutConsumerRouteConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
+          "example": "rmq-16je7x5e7o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费组</p>",
+          "example": "test_group",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由规则</p>",
+          "example": "无",
+          "member": "RouteRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "PutConsumerRouteConfigResponse": {
+      "document": "PutConsumerRouteConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID</p>",
+          "example": "rmq-16je7x5e7o",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主题</p>",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费组</p>",
+          "example": "test_group",
+          "member": "string",
+          "name": "Group",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Version",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RemoveMigratingTopicRequest": {
       "document": "RemoveMigratingTopic请求参数结构体",
       "members": [
@@ -6228,6 +6833,84 @@
         }
       ],
       "type": "object"
+    },
+    "RouteRule": {
+      "document": "消费组路由规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>路由匹配条件</p>",
+          "example": "test_tagA",
+          "member": "string",
+          "name": "MatchCondition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "test_env",
+          "member": "string",
+          "name": "TargetConsumerLabel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RouteRuleVersion": {
+      "document": "路由规则版本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>版本号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>切流时间戳</p><p>单位：毫秒（ms）</p>",
+          "example": "1782730693958",
+          "member": "int64",
+          "name": "CutTimestamp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间戳</p><p>单位：毫秒（ms）</p>",
+          "example": "1782730693958",
+          "member": "int64",
+          "name": "UpdatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由规则列表</p>",
+          "example": "无",
+          "member": "RouteRule",
+          "name": "Rules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SendMessageRequest": {
       "document": "SendMessage请求参数结构体",

@@ -42,10 +42,10 @@
     ],
     "CreateInstances": [
       {
-        "document": "创建实例",
-        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"ShardNum\": \"3\",\n    \"TypeId\": \"14\",\n    \"GoodsNum\": \"1\",\n    \"UniqVpcId\": \"vpc-qicyv9mz\",\n    \"MachineMemory\": \"2\",\n    \"Period\": \"1\",\n    \"ZoneId\": \"100002\",\n    \"ReplicasNum\": \"1\",\n    \"UniqSubnetId\": \"subnet-4rohwntq\",\n    \"DiskSize\": \"100\",\n    \"MemSize\": \"8\",\n    \"MachineCpu\": \"1\",\n    \"Password\": \"Test123456\",\n    \"InstanceName\": \"测试实例2\",\n    \"BillingMode\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DealName\": \"20250925297021530748195\",\n        \"InstanceIds\": [\n            \"kee-emg6bltn\"\n        ],\n        \"RequestId\": \"365b3029-06d5-4016-8054-518994bba781\"\n    }\n}",
-        "title": "示例1"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"TypeId\": 12,\n    \"UniqVpcId\": \"vpc-f76wgk85\",\n    \"UniqSubnetId\": \"subnet-jsmdnv1y\",\n    \"BillingMode\": 0,\n    \"GoodsNum\": 1,\n    \"Period\": 1,\n    \"ShardNum\": 3,\n    \"ReplicasNum\": 1,\n    \"MachineMemory\": 8,\n    \"ZoneId\": 100006,\n    \"InstanceName\": \"name1\",\n    \"Password\": \"Test123456\",\n    \"DiskSize\": 100,\n    \"MachineCpu\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"DealId\": \"20260706185023127858071\",\n        \"DealName\": \"20260706185023127858071\",\n        \"InstanceIds\": [\n            \"kee-8wb1cgrb\"\n        ],\n        \"RequestId\": \"9af572e5-ab19-4bca-84c6-85109a1350e4\"\n    }\n}",
+        "title": "创建存储板实例"
       }
     ],
     "DescribeAutoBackupConfig": [

@@ -983,7 +983,7 @@
     "CreateEmployeeChangeUrl": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmployeeChangeUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"kevinlcheng_1\"\n        }\n    },\n    \"OpenId\": \"kevinlcheng_1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmployeeChangeUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"kevinlcheng_1\"\n        }\n    },\n    \"OpenId\": \"kevinlcheng_1\",\n    \"NewMobile\": \"182****2320\"\n}",
         "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1741332331,\n        \"MiniAppPath\": \"/pages/guide/index?shortKey=yDtSJUde8JFIMAykHz79\",\n        \"RequestId\": \"s1740727531055190955\",\n        \"LongUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity********p-mp.html?to=CHANGE_MOBILE&shortKey=yD******************\",\n        \"ShortUrl\": \"https://test.essurl.cn/z2Wz******\"\n    }\n}",
         "title": "生成员工手机号变更链接-不指定手机号"
       },

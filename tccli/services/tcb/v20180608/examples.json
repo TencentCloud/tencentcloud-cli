@@ -870,14 +870,6 @@
         "title": "RepairPGUserMigrationHistory"
       }
     ],
-    "RollbackPGUserMigrations": [
-      {
-        "document": "回滚最近2条migration",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackPGUserMigrations\n<公共请求参数>\n\n{\n    \"EnvId\": \"pg-ethan06-d9gzgavrt1f14772b\",\n    \"LastN\": 2,\n    \"LockTimeoutMs\": 5000,\n    \"StatementTimeoutMs\": 300000,\n    \"Source\": \"cli\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"task-d9fd1d51\",\n        \"RequestId\": \"ac6ed9c4-1560-4896-8706-52f715d73fed\"\n    }\n}",
-        "title": "RollbackPGUserMigrations"
-      }
-    ],
     "RunCommands": [
       {
         "document": "",
