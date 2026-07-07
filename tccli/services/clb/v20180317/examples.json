@@ -1,5 +1,33 @@
 {
   "actions": {
+    "AddModelKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddModelKey\n<公共请求参数>\n\n{\n    \"ServiceProviderId\": \"byok-c8xrjgpt\",\n    \"Keys\": [\n        {\n            \"ApiKey\": \"2d\",\n            \"Name\": \"d\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"KeyIds\": [\n            \"mkey-0a8htk6l\"\n        ],\n        \"RequestId\": \"02f6124d-892c-4947-99e2-7237f60ad3e8\"\n    }\n}",
+        "title": "自定义模型添加Key"
+      }
+    ],
+    "AddModelRewrite": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddModelRewrite\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\",\n    \"SourceModel\": \"default\",\n    \"TargetModel\": \"IntentRouter/customer-support\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "兜底路由到意图路由（default → IntentRouter/customer-support）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddModelRewrite\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\",\n    \"SourceModel\": \"gpt-4o\",\n    \"TargetModel\": \"gpt-4o-mini\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "新增一条模型重写规则（gpt-4o → gpt-4o-mini）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddModelRewrite\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\",\n    \"SourceModel\": \"default\",\n    \"TargetModel\": \"gpt-4o-mini\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "新增兜底重写规则（default → gpt-4o-mini）"
+      }
+    ],
     "AssociateBudget": [
       {
         "document": "",
@@ -14,6 +42,22 @@
         "input": "https://clb.tencentcloudapi.com/?Action=AssociateCustomizedConfig\r\n&UconfigId=pz-asdfs\r\n&BindList.0.LoadBalancerId=asdfasdf\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
         "title": "关联配置"
+      }
+    ],
+    "AssociateModelRouterGuardrails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateModelRouterGuardrails\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\",\n    \"Guardrails\": [\n        {\n            \"Type\": \"WAF\",\n            \"InstanceId\": \"waf_2kw60zgy0908e8j3\",\n            \"ServiceId\": \"waf_rule_abc123\",\n            \"InputCheckDepth\": 5\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "关联 WAF Guardrail 防护"
+      }
+    ],
+    "AssociateModelsToModelRouter": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateModelsToModelRouter\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-oei1qdkf\",\n    \"Models\": [\n        {\n            \"ModelName\": \"gpt-4o\",\n            \"Provider\": \"openai\",\n            \"Type\": \"BYOK\",\n            \"ServiceProviderId\": \"model-pb9cvzsua\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26c44214-aeb1-46d7-8314-78f54a6e4486\"\n    }\n}",
+        "title": "将模型关联到模型路由实例"
       }
     ],
     "AssociateTargetGroups": [
@@ -70,6 +114,26 @@
         "title": "绑定云主机或弹性网卡"
       }
     ],
+    "ChatCompletions": [
+      {
+        "document": "pdf输入对话测试",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatCompletions\n<公共请求参数>\n\n{\n    \"ApiKey\": \"sk-3qIbn_4___xKHm6HwjTtncyCpHJD_ddDeB6ytjvpw2fq8G6x_LNO6t11Y_l7qQuKEfVH4t1s1gjUv3_vb2mqTkUv\",\n    \"Model\": \"gpt-4o-mini-test-connection\",\n    \"RequestPath\": \"/v1/chat/completions\",\n    \"Attachments\": [\n        {\n            \"Type\": \"pdf\",\n            \"Data\": \"data:application/pdf;base64,JVBERi0xLjQKJeLjz9MKMyAwIG9iago8PC9UeXBlIC9QYWdlCi9QYXJlbnQgMSAwIFIKL01lZGlhQm94IFswIDAgNjEyIDc5Ml0KL0NvbnRlbnRzIDQgMCBSCi9SZXNvdXJjZXMgPDwvRm9udCA8PC9GMSAyIDAgUj4+Pj4+PgplbmRvYmoKNCAwIG9iago8PC9MZW5ndGggNDQ+PgpzdHJlYW0KQlQKL0YxIDI0IFRmCjEwMCA3MDAgVGQKKHRlc3QpIFRqCkVUCmVuZHN0cmVhbQplbmRvYmoKMiAwIG9iago8PC9UeXBlIC9Gb250Ci9TdWJ0eXBlIC9UeXBlMQovQmFzZUZvbnQgL0hlbHZldGljYT4+CmVuZG9iagoxIDAgb2JqCjw8L1R5cGUgL1BhZ2VzCi9LaWRzIFszIDAgUl0KL0NvdW50IDE+PgplbmRvYmoKNSAwIG9iago8PC9UeXBlIC9DYXRhbG9nCi9QYWdlcyAxIDAgUj4+CmVuZG9iagp0cmFpbGVyCjw8L1NpemUgNgovUm9vdCA1IDAgUj4+CnN0YXJ0eHJlZgozMjQKJSVFT0Y=\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ChatResponseMessage\": \"[Fake v2] Detected user_text=\\\"What's this file about?\\\", images=0, files=1, format=openai-chat\",\n        \"RequestId\": \"cb9c6c5a-ba63-4dd1-a0ac-77f230d49989\"\n    }\n}",
+        "title": "pdf输入对话测试"
+      },
+      {
+        "document": "图像输入对话测试",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatCompletions\n<公共请求参数>\n\n{\n    \"ApiKey\": \"sk-3qIbn_4___xKHm6HwjTtncyCpHJD_ddDeB6ytjvpw2fq8G6x_LNO6t11Y_l7qQuKEfVH4t1s1gjUv3_vb2mqTkUv\",\n    \"Model\": \"gpt-4o-mini-test-connection\",\n    \"RequestPath\": \"/v1/chat/completions\",\n    \"Attachments\": [\n        {\n            \"Type\": \"image\",\n            \"Data\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII=\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ChatResponseMessage\": \"[Fake v2] Detected user_text=\\\"What's in this image?\\\", images=1, files=0, format=openai-chat\",\n        \"RequestId\": \"34551057-b067-41de-94e2-4604f15d9ab8\"\n    }\n}",
+        "title": "图像输入对话测试"
+      },
+      {
+        "document": "基础对话测试",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatCompletions\n<公共请求参数>\n\n{\n    \"ApiKey\": \"sk-3qIbn_4___xKHm6HwjTtncyCpHJD_ddDeB6ytjvpw2fq8G6x_LNO6t11Y_l7qQuKEfVH4t1s1gjUv3_vb2mqTkUv\",\n    \"Model\": \"gpt-4o-mini-test-connection\",\n    \"RequestPath\": \"/v1/messages\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ChatResponseMessage\": \"[Fake v2] Echo text-only: \\\"Hi, this is a connectivity test.\\\"\",\n        \"RequestId\": \"d5b8b664-f033-4e06-af59-c3a1cae1940e\"\n    }\n}",
+        "title": "基础对话测试"
+      }
+    ],
     "CloneLoadBalancer": [
       {
         "document": "克隆负载均衡。",
@@ -78,10 +142,24 @@
         "title": "克隆负载均衡"
       }
     ],
+    "CreateBYOKNetwork": [
+      {
+        "document": "初始化 VPC 网络，返回 ServiceProviderId 供后续 CreateModel 使用",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBYOKNetwork\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-abcd1234\",\n    \"SubnetId\": \"subnet-efgh5678\",\n    \"ServiceProviderName\": \"my-vpc-model\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b521a934-0358-497a-8e3a-f1242424747c\"\n    }\n}",
+        "title": "初始化BYOK VPC网络"
+      },
+      {
+        "document": "初始化 VPC 网络并绑定标签",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBYOKNetwork\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-abcd1234\",\n    \"SubnetId\": \"subnet-efgh5678\",\n    \"ServiceProviderName\": \"my-vpc-model\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c632b045-1469-508b-9f4b-g2353535858d\"\n    }\n}",
+        "title": "初始化BYOK VPC网络（带标签）"
+      }
+    ],
     "CreateBudget": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBudget\n<公共请求参数>\n\n{\n    \"BudgetName\": \"production-budget\",\n    \"BudgetConfigs\": [\n        {\n            \"MaxBudget\": 100,\n            \"BudgetDuration\": \"7d\"\n        }\n    ],\n    \"RateLimitConfig\": {\n        \"TPM\": 100000,\n        \"RPM\": 60\n    },\n    \"Resources\": [\n        {\n            \"Type\": \"ModelRouter\",\n            \"ModelRouterId\": \"cmr-abc12345\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBudget\n<公共请求参数>\n\n{\n    \"BudgetName\": \"production-budget\",\n    \"BudgetConfigs\": [\n        {\n            \"MaxBudget\": 100,\n            \"BudgetDuration\": \"1d\"\n        },\n        {\n            \"MaxBudget\": 1000,\n            \"BudgetDuration\": \"30d\"\n        }\n    ],\n    \"RateLimitConfig\": {\n        \"TPM\": 100000,\n        \"RPM\": 60\n    },\n    \"Resources\": [\n        {\n            \"Type\": \"ModelRouter\",\n            \"ModelRouterId\": \"cmr-abc12345\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"BudgetId\": \"budget-1a2b3c4d\",\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
         "title": "创建Budget并关联实例"
       }
@@ -92,6 +170,14 @@
         "input": "https://clb.tencentcloudapi.com/?Action=CreateClsLogSet\n&LogsetName=clb_logset\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"LogsetId\": \"578dd0ad-2e7c-488b-b5fe-0b23da3537eb\",\n        \"RequestId\": \"8b038842-70b2-411b-a1a2-c7fcde195d2c\"\n    }\n}",
         "title": "创建日志集。"
+      }
+    ],
+    "CreateIntentRouter": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntentRouter\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-giljntwo\",\n    \"RouteName\": \"IntentRouter/ekc-test\",\n    \"Tiers\": [\n        {\n            \"TierName\": \"default\",\n            \"Models\": [\n                \"gpt-4o-mini\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IntentRouterId\": \"ir-pb139vho\",\n        \"RequestId\": \"f2a262c3-b45c-4d8a-b1c3-ded110203ca3\"\n    }\n}",
+        "title": "创建意图路由"
       }
     ],
     "CreateKey": [
@@ -176,12 +262,40 @@
         "title": "指定snat ip添加SnatIp"
       }
     ],
+    "CreateModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModel\n<公共请求参数>\n\n{\n    \"AccessType\": \"PrivateCustom\",\n    \"ModelIds\": [\n        {\n            \"ModelId\": \"gpt-4o\",\n            \"ModelAlias\": \"2rasd\"\n        }\n    ],\n    \"Keys\": [\n        {\n            \"ApiKey\": \"sk-test-openai-key-003\",\n            \"Name\": \"test-key-5\"\n        }\n    ],\n    \"ModelProvider\": \"openai\",\n    \"ServiceProviderName\": \"custom\",\n    \"ApiBase\": \"http://127.0.0.1:8080\",\n    \"VpcId\": \"vpc-j5bxoqef\",\n    \"SubnetId\": \"subnet-60enc8ny\",\n    \"HostHeader\": \"www.a.com\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"ekkocao\",\n            \"TagValue\": \"t3\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"KeyIds\": [\n            \"mkey-ec5ukd0r\"\n        ],\n        \"ServiceProviderId\": \"byok-d4yf0jkd\",\n        \"RequestId\": \"65f4eb1b-14a8-401a-86c3-3394d1ee96cd\"\n    }\n}",
+        "title": "创建BYOK模型"
+      },
+      {
+        "document": "创建仅支持文本输入的byok实例",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModel\n<公共请求参数>\n\n{\n    \"AccessType\": \"PublicCustom\",\n    \"ModelProvider\": \"openai\",\n    \"ModelIds\": [\n        {\n            \"ModelId\": \"gpt-4o\",\n            \"ModelAlias\": \"my-gpt-4o\",\n            \"InputModalities\": [\n                \"text\"\n            ]\n        }\n    ],\n    \"Keys\": [\n        {\n            \"ApiKey\": \"sk-111111111\",\n            \"Name\": \"sk-1\"\n        }\n    ],\n    \"ApiBase\": \"http://11.141.93.26:10000/v1\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"text\",\n            \"TagValue\": \"text\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"KeyIds\": [\n            \"mkey-qd6kwrnt\"\n        ],\n        \"ServiceProviderId\": \"byok-lfwolo91\",\n        \"RequestId\": \"ff11ef23-44dc-45d5-88d2-5ca2f2338380\"\n    }\n}",
+        "title": "创建仅支持文本输入的byok实例"
+      }
+    ],
     "CreateModelRouter": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelRouter\n<公共请求参数>\n\n{\n    \"ModelRouterType\": \"Enterprise\",\n    \"ModelRouterName\": \"test-enterprise-modelrouter\",\n    \"Schema\": \"HTTPS\",\n    \"Port\": 443,\n    \"CertId\": \"SCkPG15A\",\n    \"NetworkType\": \"Intranet\",\n    \"VpcId\": \"vpc-fc7eyow9\",\n    \"SubnetId\": \"subnet-2cxt138a\",\n    \"RateLimitConfig\": {\n        \"TPM\": 100000,\n        \"RPM\": 60\n    },\n    \"RouterSetting\": {\n        \"RoutingStrategy\": \"SimpleShuffle\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"ModelRouterId\": \"cmr-c8q8ltxn\",\n        \"RequestId\": \"87343b8e-0928-4c01-b874-058851db309b\"\n    }\n}",
         "title": "创建模型路由实例"
+      }
+    ],
+    "CreateModelRouterResourcePackage": [
+      {
+        "document": "创建模型路由资源包",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelRouterResourcePackage\n<公共请求参数>\n\n{\n    \"ModelRouterResourcePackageAmount\": 100,\n    \"AutoPurchaseFlag\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20260409643022548203771\",\n        \"ModelRouterResourcePackageIds\": [\n            \"cmrcredit-k2800toa9um7rar\"\n        ],\n        \"RequestId\": \"268ce293-5068-44e3-a95b-9960ca90b4bc\"\n    }\n}",
+        "title": "创建模型路由资源包"
+      },
+      {
+        "document": "创建模型路由资源包自动使用代金券",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelRouterResourcePackage\n<公共请求参数>\n\n{\n    \"ModelRouterResourcePackageAmount\": 1000,\n    \"AutoPurchaseFlag\": 1,\n    \"AutoVoucher\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20260605096022961665431\",\n        \"ModelRouterResourcePackageIds\": [\n            \"cmrcredit-k4100tomk8hcni8\"\n        ],\n        \"RequestId\": \"b341631d-8996-4e49-941d-9e1a0040f845\"\n    }\n}",
+        "title": "创建模型路由资源包自动使用代金券"
       }
     ],
     "CreateRule": [
@@ -222,6 +336,14 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBudgets\n<公共请求参数>\n\n{\n    \"BudgetIds\": [\n        \"budget-1a2b3c4d\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
         "title": "删除Budget"
+      }
+    ],
+    "DeleteIntentRouter": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIntentRouter\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\",\n    \"IntentRouterId\": \"ir-abc12345\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "删除意图路由"
       }
     ],
     "DeleteKeys": [
@@ -268,6 +390,14 @@
         "input": "https://clb.tencentcloudapi.com/?Action=DeleteLoadBalancerSnatIps\n&LoadBalancerId=lb-cuxw2rm0\n&Ips.0=192.168.0.128\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"898b431c-2745-4b27-80f6-e6e8038a0683\"\n    }\n}",
         "title": "删除snatip"
+      }
+    ],
+    "DeleteModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteModel\n<公共请求参数>\n\n{\n    \"ServiceProviderIds\": [\n        \"byok-n0e1h881\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23b23eb1-4872-436c-982b-a33f4e2c3d9c\"\n    }\n}",
+        "title": "删除自定义模型"
       }
     ],
     "DeleteModelRouters": [
@@ -318,6 +448,14 @@
         "title": "将云函数从转发规则上解绑"
       }
     ],
+    "DeregisterModelsFromServiceProvider": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeregisterModelsFromServiceProvider\n<公共请求参数>\n\n{\n    \"ServiceProviderId\": \"byok-mc0rp293\",\n    \"ModelAliases\": [\n        \"4o\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08a69465-e0e9-4afe-b7a1-5b5bff535ed4\"\n    }\n}",
+        "title": "BYOK解绑成功场景"
+      }
+    ],
     "DeregisterTargetGroupInstances": [
       {
         "document": "",
@@ -340,6 +478,26 @@
         "input": "https://clb.tencentcloudapi.com/?Action=DeregisterTargetsFromClassicalLB\n&LoadBalancerId=lb-a3u5l5zc\n&InstanceIds.0=ins-odjhn6vc\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8ae0a06-f935-4a1b-bc73-f5055f3e1954\"\n    }\n}",
         "title": "解绑一个传统型负载均衡的后端服务"
+      }
+    ],
+    "DescribeAssociatedModelAvailability": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssociatedModelAvailability\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-jcxor1gp\",\n    \"Models\": [\n        \"claude-opus-4-6\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelAvailability\": [\n            {\n                \"Model\": \"claude-opus-4-6\",\n                \"Status\": \"Unavailable\"\n            }\n        ],\n        \"RequestId\": \"419c98bf-e319-4c86-bbd7-fadc09c3c9a0\"\n    }\n}",
+        "title": "查询模型路由实例下关联模型的可用性"
+      },
+      {
+        "document": "查询模型路由实例下关联模型的可用性（文本输入可用）",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssociatedModelAvailability\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-pmmvy9l7\",\n    \"Models\": [\n        \"gpt-4o-textonly\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelAvailability\": [\n            {\n                \"InputModalities\": [\n                    \"text\"\n                ],\n                \"Model\": \"gpt-4o-textonly\",\n                \"Status\": \"Available\"\n            }\n        ],\n        \"RequestId\": \"9bff26d3-85c8-4ad6-a436-20d302fa86ba\"\n    }\n}",
+        "title": "查询模型路由实例下关联模型的可用性（文本输入可用）"
+      },
+      {
+        "document": "查询模型路由实例下关联模型的可用性（模型不健康导致当前无可用输入多模态能力）",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssociatedModelAvailability\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-pmmvy9l7\",\n    \"Models\": [\n        \"gpt-4o-textonly\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelAvailability\": [\n            {\n                \"InputModalities\": [],\n                \"Model\": \"gpt-4o-textonly\",\n                \"Status\": \"Unavailable\"\n            }\n        ],\n        \"RequestId\": \"b2b48e35-aabb-479c-ab3b-d7b69562227e\"\n    }\n}",
+        "title": "查询模型路由实例下关联模型的可用性（模型不健康导致当前无可用输入多模态能力）"
       }
     ],
     "DescribeAsyncJobs": [
@@ -378,7 +536,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBudgets\n<公共请求参数>\n\n{\n    \"BudgetIds\": [\n        \"budget-1a2b3c4d\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
-        "output": "{\n    \"Response\": {\n        \"BudgetSet\": [\n            {\n                \"BudgetId\": \"budget-1a2b3c4d\",\n                \"BudgetName\": \"production-budget\",\n                \"BudgetConfigs\": [\n                    {\n                        \"MaxBudget\": 100,\n                        \"BudgetDuration\": \"7d\"\n                    }\n                ],\n                \"RateLimitConfig\": {\n                    \"TPM\": 100000,\n                    \"RPM\": 60\n                },\n                \"Status\": \"Active\",\n                \"CreatedTime\": \"2026-04-14T12:00:00+08:00\",\n                \"ModifiedTime\": \"2026-04-14T12:10:00+08:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BudgetSet\": [\n            {\n                \"BudgetId\": \"budget-1a2b3c4d\",\n                \"BudgetName\": \"production-budget\",\n                \"BudgetConfigs\": [\n                    {\n                        \"MaxBudget\": 100,\n                        \"BudgetDuration\": \"1d\"\n                    },\n                    {\n                        \"MaxBudget\": 1000,\n                        \"BudgetDuration\": \"30d\"\n                    }\n                ],\n                \"RateLimitConfig\": {\n                    \"TPM\": 100000,\n                    \"RPM\": 60\n                },\n                \"Status\": \"Active\",\n                \"AssociationModelRouterCount\": 1,\n                \"AssociationKeyCount\": 1,\n                \"CreatedTime\": \"2026-04-14T12:00:00+08:00\",\n                \"ModifiedTime\": \"2026-04-14T12:10:00+08:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
         "title": "查询Budget列表"
       }
     ],
@@ -468,6 +626,30 @@
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeIdleLoadBalancers\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"IdleLoadBalancers\": [\n            {\n                \"LoadBalancerId\": \"lb-1l1i6a3k\",\n                \"LoadBalancerName\": \"lb-613054ce\",\n                \"Region\": \"ap-guangzhou\",\n                \"Vip\": \"172.16.32.29\",\n                \"IdleReason\": \"NO_RULES\",\n                \"Status\": 1,\n                \"Forward\": 1,\n                \"Domain\": \"lb-xxxxx.tencentclb.com\"\n            }\n        ],\n        \"RequestId\": \"afa28690-f148-483f-9727-58c2f1da3794\"\n    }\n}",
         "title": "获取负载均衡闲置实例"
+      }
+    ],
+    "DescribeIntentRouterTiers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntentRouterTiers\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TierSet\": [\n            {\n                \"Description\": \"默认兜底 Tier，当语义路由无法将请求匹配到其他Tier 时使用.\",\n                \"DisplayName\": \"默认\",\n                \"TierId\": \"default\"\n            }\n        ],\n        \"TotalCount\": 11,\n        \"RequestId\": \"e4181a98-3310-40bc-b805-09a2733712df\"\n    }\n}",
+        "title": "查询语义路由Tier信息"
+      }
+    ],
+    "DescribeIntentRouters": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntentRouters\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"IntentRouterSet\": [\n            {\n                \"IntentRouterId\": \"ir-abc12345\",\n                \"RouteName\": \"IntentRouter/customer-support\",\n                \"Status\": \"Active\",\n                \"CreatedTime\": \"2024-01-01T00:00:00Z\",\n                \"UpdatedTime\": \"2024-01-01T00:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "查询意图路由列表"
+      }
+    ],
+    "DescribeKeys": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKeys\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-pm53f9c3\",\n    \"KeyIds\": [\n        \"vkey-lboa0hhh\"\n    ],\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Keys\": [\n            {\n                \"KeyId\": \"vkey-lboa0hhh\",\n                \"KeyName\": \"prod-key\",\n                \"Key\": \"sk-***BRk\",\n                \"Status\": \"Active\",\n                \"RateLimitConfig\": {\n                    \"TPM\": 50000,\n                    \"RPM\": 30,\n                    \"MaxParallelRequest\": 10\n                },\n                \"BudgetId\": \"budget-1a2b3c4d\",\n                \"BudgetName\": \"production-budget\",\n                \"CreditUsageSet\": [\n                    {\n                        \"BudgetDuration\": \"1d\",\n                        \"Limit\": 100,\n                        \"Used\": 12.34,\n                        \"BudgetResetAt\": \"2026-04-17T00:00:00+08:00\"\n                    },\n                    {\n                        \"BudgetDuration\": \"30d\",\n                        \"Limit\": 1000,\n                        \"Used\": 123.45,\n                        \"BudgetResetAt\": \"2026-05-01T00:00:00+08:00\"\n                    }\n                ],\n                \"Tags\": [],\n                \"CreatedTime\": \"2026-04-07T14:45:32+08:00\",\n                \"ModifiedTime\": \"2026-04-07T22:45:31+08:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "查询模型路由实例下的Key列表"
       }
     ],
     "DescribeLBListeners": [
@@ -570,12 +752,80 @@
         "title": "查询负载均衡详细信息"
       }
     ],
+    "DescribeModelAliases": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelAliases\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelAliasSet\": [\n            {\n                \"Coefficient\": {\n                    \"InputCoefficient\": 25,\n                    \"InputCachedCoefficient\": 3,\n                    \"OutputCoefficient\": 100\n                },\n                \"ModelAliasName\": \"gpt-4o\",\n                \"Source\": \"BYOK\",\n                \"Status\": \"Active\",\n                \"ServiceProviderCoefficientSet\": [\n                    {\n                        \"ServiceProviderId\": \"byok-52mdfb352\",\n                        \"ServiceProviderName\": \"openai-direct\",\n                        \"Coefficient\": {\n                            \"InputCoefficient\": 40,\n                            \"InputCachedCoefficient\": 5,\n                            \"OutputCoefficient\": 160\n                        }\n                    },\n                    {\n                        \"ServiceProviderId\": \"byok-7a1c9e02\",\n                        \"ServiceProviderName\": \"openai-proxy\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 7,\n        \"RequestId\": \"1f58bf6f-3576-4f1a-9f33-8ffdf9917369\"\n    }\n}",
+        "title": "查询模型别名列表"
+      }
+    ],
+    "DescribeModelAssociations": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelAssociations\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-mo1nqzs5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelAssociationSet\": [],\n        \"ModelRouterId\": \"cmr-mo1nqzs5\",\n        \"TotalCount\": 0,\n        \"RequestId\": \"ae6af60d-9352-4e66-bc81-7ffb1d31abcc\"\n    }\n}",
+        "title": "默认查询模型路由"
+      }
+    ],
+    "DescribeModelKeys": [
+      {
+        "document": "查询模型（包含多模态能力）和Key信息",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelKeys\n<公共请求参数>\n\n{\n    \"ServiceProviderIds\": [\n        \"byok-lfwolo91\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Models\": [\n            {\n                \"AccessType\": \"PublicCustom\",\n                \"ApiBase\": \"http://11.141.93.26:10000/v1\",\n                \"CreatedAt\": \"2026-06-01T07:37:25+00:00\",\n                \"HostHeader\": null,\n                \"KeyCount\": 3,\n                \"Keys\": [\n                    {\n                        \"CreatedAt\": \"2026-06-01T07:37:25+00:00\",\n                        \"KeyId\": \"mkey-qd6kwrnt\",\n                        \"Name\": \"sk-1\"\n                    }\n                ],\n                \"ModelIdsWithAlias\": [\n                    {\n                        \"AssociatedModelRouters\": [],\n                        \"InputModalities\": [\n                            \"text\"\n                        ],\n                        \"ModelAlias\": \"my-gpt-4o\",\n                        \"ModelId\": \"gpt-4o\",\n                        \"ProbedInputModalities\": [\n                            \"text\"\n                        ]\n                    }\n                ],\n                \"ModelProvider\": \"openai\",\n                \"Protocol\": \"openai\",\n                \"ServiceIps\": [],\n                \"ServiceProviderId\": \"byok-lfwolo91\",\n                \"ServiceProviderName\": null,\n                \"Status\": \"Active\",\n                \"SubnetId\": null,\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"text\",\n                        \"TagValue\": \"text\"\n                    }\n                ],\n                \"VerifySSL\": true,\n                \"VpcId\": null\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d4ac361b-35ee-47b0-95b1-a5051c483c57\"\n    }\n}",
+        "title": "查询模型（包含多模态能力）和Key信息"
+      }
+    ],
+    "DescribeModelNames": [
+      {
+        "document": "查询用户名下所有模型",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelNames\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ModelNames\": [\n            {\n                \"InputModalitiesUnion\": [\n                    \"text\"\n                ],\n                \"ModelName\": \"gpt-4.1-pdf\",\n                \"ServiceProviders\": [\n                    {\n                        \"InputModalities\": [\n                            \"text\"\n                        ],\n                        \"ModelProvider\": \"openai\",\n                        \"ServiceProviderId\": \"byok-qhygv05l\",\n                        \"ServiceProviderName\": \"byok_test\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 4,\n        \"RequestId\": \"7e0a2db8-1189-4282-8c76-35e2e75eee1e\"\n    }\n}",
+        "title": "查询用户名下所有模型"
+      }
+    ],
+    "DescribeModelRewrite": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelRewrite\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\",\n    \"SourceModel\": \"gpt-4o\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Rewrites\": [\n            {\n                \"SourceModel\": \"gpt-4o\",\n                \"TargetModel\": \"gpt-4o-mini\"\n            }\n        ],\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "按 SourceModel 精确过滤"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelRewrite\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Rewrites\": [\n            {\n                \"SourceModel\": \"default\",\n                \"TargetModel\": \"gpt-4o-mini\"\n            },\n            {\n                \"SourceModel\": \"gpt-4o\",\n                \"TargetModel\": \"gpt-4o-mini\"\n            }\n        ],\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "查询实例的全部重写规则"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelRewrite\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\",\n    \"SourceModel\": \"non-existing\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Rewrites\": [],\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "过滤未命中（返回空列表）"
+      }
+    ],
     "DescribeModelRouterDetail": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelRouterDetail\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-h2tdbhtz\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ModelRouter\": {\n            \"CreatedTime\": \"2026-04-07T11:06:48+08:00\",\n            \"Domain\": \"lb-531cv26i-x07lj684b5nps1ko.clb.gz-tencentclb.com\",\n            \"ModelRouterId\": \"cmr-h2tdbhtz\",\n            \"ModelRouterName\": \"test-enterprise-tgw-polaris\",\n            \"ModelRouterType\": \"Enterprise\",\n            \"BudgetId\": \"budget-1a2b3c4d\",\n            \"BudgetName\": \"production-budget\",\n            \"CreditUsage\": {\n                \"Limit\": 100,\n                \"Used\": 12.34,\n                \"BudgetResetAt\": \"2026-04-21T00:00:00+08:00\"\n            },\n            \"ModifiedTime\": \"2026-04-08T00:11:21+08:00\",\n            \"NetworkType\": \"Internet\",\n            \"RateLimitConfig\": {\n                \"RPM\": 60,\n                \"TPM\": 100000\n            },\n            \"RouterSetting\": {\n                \"FallBack\": null,\n                \"RoutingStrategy\": \"SimpleShuffle\"\n            },\n            \"SecurityStatus\": \"Normal\",\n            \"ServiceEndPoints\": [\n                {\n                    \"CertId\": \"SCkPG15A\",\n                    \"Port\": 443,\n                    \"Schema\": \"HTTPS\"\n                }\n            ],\n            \"Status\": \"Active\",\n            \"SubnetId\": \"subnet-2cxt138a\",\n            \"Tags\": [\n                {\n                    \"TagKey\": \"tes2t\",\n                    \"TagValue\": \"2\"\n                }\n            ],\n            \"TradeStatus\": \"Normal\",\n            \"Vip\": \"43.136.247.59\",\n            \"VpcId\": \"vpc-fc7eyow9\"\n        },\n        \"RequestId\": \"80171270-1687-4764-b352-9476750c2061\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelRouter\": {\n            \"CreatedTime\": \"2026-04-07T11:06:48+08:00\",\n            \"Domain\": \"lb-531cv26i-x07lj684b5nps1ko.clb.gz-tencentclb.com\",\n            \"ModelRouterId\": \"cmr-h2tdbhtz\",\n            \"ModelRouterName\": \"test-enterprise-tgw-polaris\",\n            \"ModelRouterType\": \"Enterprise\",\n            \"BudgetId\": \"budget-1a2b3c4d\",\n            \"BudgetName\": \"production-budget\",\n            \"CreditUsageSet\": [\n                {\n                    \"BudgetDuration\": \"1d\",\n                    \"Limit\": 100,\n                    \"Used\": 12.34,\n                    \"BudgetResetAt\": \"2026-04-17T00:00:00+08:00\"\n                },\n                {\n                    \"BudgetDuration\": \"30d\",\n                    \"Limit\": 1000,\n                    \"Used\": 123.45,\n                    \"BudgetResetAt\": \"2026-05-01T00:00:00+08:00\"\n                }\n            ],\n            \"ModifiedTime\": \"2026-04-08T00:11:21+08:00\",\n            \"NetworkType\": \"Internet\",\n            \"RateLimitConfig\": {\n                \"RPM\": 60,\n                \"TPM\": 100000\n            },\n            \"RouterSetting\": {\n                \"FallBack\": null,\n                \"RoutingStrategy\": \"SimpleShuffle\"\n            },\n            \"SecurityStatus\": \"Normal\",\n            \"ServiceEndPoints\": [\n                {\n                    \"CertId\": \"SCkPG15A\",\n                    \"Port\": 443,\n                    \"Schema\": \"HTTPS\"\n                }\n            ],\n            \"Status\": \"Active\",\n            \"SubnetId\": \"subnet-2cxt138a\",\n            \"Tags\": [\n                {\n                    \"TagKey\": \"tes2t\",\n                    \"TagValue\": \"2\"\n                }\n            ],\n            \"TradeStatus\": \"Normal\",\n            \"Vip\": \"43.136.247.59\",\n            \"VpcId\": \"vpc-fc7eyow9\"\n        },\n        \"RequestId\": \"80171270-1687-4764-b352-9476750c2061\"\n    }\n}",
         "title": "查询模型路由实例详情"
+      }
+    ],
+    "DescribeModelRouterGuardrails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelRouterGuardrails\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Guardrails\": [\n            {\n                \"GuardrailId\": \"gr-2x9k3ab1\",\n                \"Type\": \"WAF\",\n                \"InstanceId\": \"waf_2kw60zgy0908e8j3\",\n                \"ServiceId\": \"waf_rule_abc123\",\n                \"InputCheckDepth\": 5\n            }\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "查询 WAF Guardrail 防护"
+      }
+    ],
+    "DescribeModelRouterLogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelRouterLogs\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-pm53f9c3\",\n    \"KeyId\": \"vkey-cgjyw5xj\",\n    \"Model\": \"gpt-4o\",\n    \"Status\": \"failure\",\n    \"NextToken\": \"eyJwYWdlIjogMiwgInBhZ2Vfc2l6ZSI6IDIwfQ==\",\n    \"MaxResults\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Logs\": [],\n        \"NextToken\": \"\",\n        \"TotalCount\": 0,\n        \"RequestId\": \"110ce5a9-53aa-473a-af9b-8040404ae265\"\n    }\n}",
+        "title": "获取模型路由实例日志"
       }
     ],
     "DescribeModelRouterQuota": [
@@ -584,6 +834,22 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelRouterQuota\n<公共请求参数>\n\n{\n    \"QuotaTypes\": [\n        \"cmr_quota_enterprise_model_router_num\"\n    ],\n    \"ResourceIds\": [\n        \"cmr-oei1qdkf\"\n    ],\n    \"DisplayFields\": [\n        \"Available\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Quotas\": [\n            {\n                \"Available\": 100,\n                \"Limit\": 100,\n                \"QuotaType\": \"cmr_quota_enterprise_model_router_num\",\n                \"ResourceId\": \"cmr-oei1qdkf\",\n                \"Used\": null\n            }\n        ],\n        \"RequestId\": \"d4ad5923-a10d-4e0d-8b75-b76e472ecddd\"\n    }\n}",
         "title": "查询配额"
+      }
+    ],
+    "DescribeModelRouterResourcePackageDeduction": [
+      {
+        "document": "查询模型资源包抵扣详情",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelRouterResourcePackageDeduction\n<公共请求参数>\n\n{\n    \"DeductionTimeBegin\": \"2026-04-06 10:23:00\",\n    \"DeductionTimeEnd\": \"2026-04-10 20:23:00\",\n    \"ModelRouterResourcePackageId\": \"cmrcredit-k2800toa8gc7far\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelRouterResourcePackageDeductionSet\": [\n            {\n                \"ActualDosage\": \"100\",\n                \"AfterDeductionRemain\": \"0\",\n                \"BeforeDeductionRemain\": \"100\",\n                \"DeductionTime\": \"2026-04-09 19:30:00\",\n                \"Dosage\": \"2.2675737\",\n                \"EndTime\": \"2026-04-09 14:22:00\",\n                \"ModelRouterId\": \"cmr-a1b2c3d1\",\n                \"ModelRouterResourcePackageId\": \"cmrcredit-k2800toa8gc7far\",\n                \"StartTime\": \"2026-04-09 14:21:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"687e97f0-43d9-46bb-9f32-4f486c38d9b2\"\n    }\n}",
+        "title": "查询模型资源包抵扣详情"
+      }
+    ],
+    "DescribeModelRouterResourcePackages": [
+      {
+        "document": "查询模型路由资源包列表",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelRouterResourcePackages\n<公共请求参数>\n\n{\n    \"ModelRouterResourcePackageIds\": [\n        \"cmrcredit-k2800toa8g6hjar\"\n    ],\n    \"SortBy\": \"asc\",\n    \"Filters\": [\n        {\n            \"Name\": \"status\",\n            \"Values\": [\n                \"0\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelRouterResourcePackageSet\": [\n            {\n                \"AutoPurchaseFlag\": 0,\n                \"CapacityRemain\": \"100\",\n                \"CapacityRemainPrecise\": \"100\",\n                \"CapacitySize\": \"100\",\n                \"CapacitySizePrecise\": \"100\",\n                \"CreateTime\": \"2026-04-09 13:10:02\",\n                \"DeductionEndTime\": \"2029-04-09 13:10:00\",\n                \"DeductionStartTime\": \"2026-04-09 13:10:01\",\n                \"ExpiredTime\": \"\",\n                \"ModelRouterResourcePackageId\": \"cmrcredit-k2800toa8g6hjar\",\n                \"Status\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"TotalDosage\": 100,\n        \"RequestId\": \"9983568b-1d4f-426d-a5dc-e86367d8ab78\"\n    }\n}",
+        "title": "查询模型路由资源包列表"
       }
     ],
     "DescribeModelRouters": [
@@ -616,6 +882,22 @@
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeRewrite\n&LoadBalancerId=lb-qc2iq5yc\n&SourceListenerIds.0=lbl-j36caqde\n&SourceLocationIds.0=loc-5t7526km\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RewriteSet\": [\n            {\n                \"TargetType\": \"Node\",\n                \"DefaultServer\": false,\n                \"Certificate\": {\n                    \"SSLMode\": \"UNIDIRECTIONAL\",\n                    \"CertCaId\": \"Fm8Wnpg8\",\n                    \"CertId\": \"Gp7qwVYB\",\n                    \"ExtCertIds\": [\n                        \"ByYdJzpw\"\n                    ]\n                },\n                \"TrpcCallee\": \"CLB\",\n                \"ListenerId\": \"lbl-xxxxxxxx\",\n                \"WafDomainId\": \"waf-qI07Ou7A\",\n                \"HttpGzip\": true,\n                \"Scheduler\": \"WRR\",\n                \"TargetGroupList\": [\n                    {\n                        \"TargetGroupId\": \"lbtg-xxxxxxxx\",\n                        \"TargetGroupName\": \"testGroup\"\n                    }\n                ],\n                \"TargetGroup\": {\n                    \"TargetGroupId\": \"lbtg-xxxxxxxx\",\n                    \"TargetGroupName\": \"testGroup\"\n                },\n                \"Url\": \"/redirect\",\n                \"HealthCheck\": {\n                    \"RecvContext\": \"ping\",\n                    \"HealthSwitch\": 1,\n                    \"HttpCheckPath\": \"/check\",\n                    \"HttpCheckMethod\": \"head\",\n                    \"UnHealthNum\": 3,\n                    \"IntervalTime\": 5,\n                    \"HttpCode\": 15,\n                    \"SourceIpType\": 0,\n                    \"CheckPort\": 0,\n                    \"ContextType\": \"HTTP\",\n                    \"HttpCheckDomain\": \"test.xxx.com\",\n                    \"ExtendedCode\": \"12\",\n                    \"HealthNum\": 3,\n                    \"TimeOut\": 2,\n                    \"CheckType\": \"TCP \",\n                    \"SendContext\": \"pong\",\n                    \"HttpVersion\": \"HTTP/1.0\"\n                },\n                \"TrpcFunc\": \"trpcfunc_xxx\",\n                \"Http2\": false,\n                \"Domains\": [\n                    \"test.abc.com\"\n                ],\n                \"BeAutoCreated\": false,\n                \"Domain\": \"test.abc.com\",\n                \"ForwardType\": \"HTTP\",\n                \"RewriteTarget\": {\n                    \"TargetListenerId\": \"lbl-xxxxxxxx\",\n                    \"RewriteType\": \"Manual\",\n                    \"RewriteCode\": 0,\n                    \"TargetLocationId\": \"loc-xxxxxxxx\",\n                    \"TakeUrl\": true\n                },\n                \"QuicStatus\": \"OFF\",\n                \"LocationId\": \"loc-xxxxxxxx\",\n                \"SessionExpireTime\": 0,\n                \"CreateTime\": \"2022-03-23 10:37:16\"\n            }\n        ],\n        \"RequestId\": \"63bee47c-2bf9-4909-a8f7-67495dfe7b42\"\n    }\n}",
         "title": "指定转发规则ID查询重定向关系"
+      }
+    ],
+    "DescribeServiceProviderHealthStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceProviderHealthStatus\n<公共请求参数>\n\n{\n    \"ServiceProviderId\": \"byok-ldgl4ojr\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"HealthCheckResults\": [\n            {\n                \"Model\": \"gpt-4o\",\n                \"ProviderKeyId\": \"mkey-pqqjys9x\",\n                \"Status\": \"Unknown\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"f7dc2bb1-c99f-422b-93bd-9a32db701ea9\"\n    }\n}",
+        "title": "检查BYOK下模型的健康状态"
+      }
+    ],
+    "DescribeSupportedProviders": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSupportedProviders\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Providers\": [\n            {\n                \"DisplayName\": \"OpenAI\",\n                \"Provider\": \"openai\"\n            }\n        ],\n        \"TotalCount\": 4,\n        \"RequestId\": \"c8f1143f-7dcb-4279-8f25-26d1cbf06684\"\n    }\n}",
+        "title": "DescribeSupportedProviders"
       }
     ],
     "DescribeTargetGroupInstanceStatus": [
@@ -686,6 +968,14 @@
         "title": "查询异步任务状态"
       }
     ],
+    "DescribeUpperModels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUpperModels\n<公共请求参数>\n\n{\n    \"ApiKey\": \"sk-xxx\",\n    \"ApiBase\": \"http://11.141.93.233/v1\",\n    \"AccessType\": \"PublicBYOK\",\n    \"ModelProvider\": \"openai\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Models\": [\n            \"gpt-4o\"\n        ],\n        \"RequestId\": \"21038259-1326-4b35-92f9-b44e77cf25db\"\n    }\n}",
+        "title": "查询上游模型列表"
+      }
+    ],
     "DescribeUserGroups": [
       {
         "document": "",
@@ -710,12 +1000,44 @@
         "title": "解绑配置"
       }
     ],
+    "DisassociateModelRouterGuardrails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateModelRouterGuardrails\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\",\n    \"Guardrails\": [\n        {\n            \"GuardrailId\": \"gr-2x9k3ab1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "解除 WAF Guardrail 防护"
+      }
+    ],
+    "DisassociateModelsFromModelRouter": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateModelsFromModelRouter\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-h2tdbhtz\",\n    \"Models\": [\n        {\n            \"ModelName\": \"gpt-4o\",\n            \"Provider\": \"openai\",\n            \"Type\": \"BYOK\",\n            \"ServiceProviderId\": \"model-pb9cvzsua\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e32f5696-3439-4983-bc25-22a263c14ef0\"\n    }\n}",
+        "title": "模型从模型路由实例解除关联"
+      }
+    ],
     "DisassociateTargetGroups": [
       {
         "document": "",
         "input": "https://clb.tencentcloudapi.com/?Action=DisassociateTargetGroups\n&Associations.0.LoadBalancerId=lb-phbx2420\n&Associations.0.ListenerId=lbl-m2q6sp9m\n&Associations.0.LocationId=loc-jjqr0ric\n&Associations.0.TargetGroupId=lbtg-xxqr0ric\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bc953deb-02d7-4bd3-86a6-80421ec37776\"\n    }\n}",
         "title": "解绑规则与目标组的关联关系"
+      }
+    ],
+    "InquirePriceCreateModelRouterResourcePackage": [
+      {
+        "document": "创建模型路由资源包询价",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceCreateModelRouterResourcePackage\n<公共请求参数>\n\n{\n    \"ModelRouterResourcePackageAmount\": 100000\n}",
+        "output": "{\n    \"Response\": {\n        \"FirstBuy\": 1,\n        \"ModelRouterResourcePackagePrice\": {\n            \"ChargeUnit\": null,\n            \"Discount\": 100,\n            \"DiscountPrice\": 1000,\n            \"OriginalPrice\": 1000,\n            \"UnitPrice\": null,\n            \"UnitPriceDiscount\": null\n        },\n        \"RequestId\": \"8284cd85-3ece-4584-8584-cc3143b19bdb\"\n    }\n}",
+        "title": "创建模型路由资源包询价"
+      }
+    ],
+    "InquirePriceRefundModelRouterResourcePackage": [
+      {
+        "document": "退还模型路由资源包询价",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceRefundModelRouterResourcePackage\n<公共请求参数>\n\n{\n    \"ModelRouterResourcePackageIds\": [\n        \"cmrcredit-k2800toa9v5tnar\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelRouterResourcePackageRefundPrice\": [\n            {\n                \"ModelRouterPackageId\": \"cmrcredit-k2800toa9v5tnar\",\n                \"Price\": 1\n            }\n        ],\n        \"RequestId\": \"872ed7cd-7456-4b5f-822b-69c1d78282c9\"\n    }\n}",
+        "title": "退还模型路由资源包询价"
       }
     ],
     "InquiryPriceCreateLoadBalancer": [
@@ -801,7 +1123,7 @@
     "ModifyBudgetAttributes": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBudgetAttributes\n<公共请求参数>\n\n{\n    \"BudgetId\": \"budget-1a2b3c4d\",\n    \"BudgetName\": \"production-budget-v2\",\n    \"BudgetConfigs\": [\n        {\n            \"MaxBudget\": 200,\n            \"BudgetDuration\": \"30d\"\n        }\n    ],\n    \"RateLimitConfig\": {\n        \"TPM\": 200000,\n        \"RPM\": 120\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBudgetAttributes\n<公共请求参数>\n\n{\n    \"BudgetId\": \"budget-1a2b3c4d\",\n    \"BudgetName\": \"production-budget-v2\",\n    \"BudgetConfigs\": [\n        {\n            \"MaxBudget\": 200,\n            \"BudgetDuration\": \"7d\"\n        },\n        {\n            \"MaxBudget\": 2000,\n            \"BudgetDuration\": \"30d\"\n        }\n    ],\n    \"RateLimitConfig\": {\n        \"TPM\": 200000,\n        \"RPM\": 120\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
         "title": "修改Budget属性"
       }
@@ -828,6 +1150,20 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFunctionTargets\n<公共请求参数>\n\n{\n    \"LocationId\": \"loc-xxxxxxxx\",\n    \"ListenerId\": \"lbl-xxxxxxxx\",\n    \"FunctionTargets\": [\n        {\n            \"Function\": {\n                \"FunctionNamespace\": \"ns_test\",\n                \"FunctionName\": \"name_test\",\n                \"FunctionQualifier\": \"version_test\"\n            },\n            \"Weight\": 66\n        }\n    ],\n    \"LoadBalancerId\": \"lb-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"85c7b3e8-7fd8-4c62-8b3b-7ba52d7a1dca\"\n    }\n}",
         "title": "修改负载均衡转发规则上所绑定的云函数。"
+      }
+    ],
+    "ModifyIntentRouterAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIntentRouterAttribute\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\",\n    \"IntentRouterId\": \"ir-abc12345\",\n    \"RouteName\": \"IntentRouter/*****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "仅修改意图路由名称"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIntentRouterAttribute\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\",\n    \"IntentRouterId\": \"ir-abc12345\",\n    \"RouteName\": \"IntentRouter/new-route-name\",\n    \"Tiers\": [\n        {\n            \"TierName\": \"SIMPLE\",\n            \"Models\": [\n                \"gpt-4o-mini\"\n            ]\n        },\n        {\n            \"TierName\": \"MEDIUM\",\n            \"Models\": [\n                \"gpt-4o\"\n            ]\n        },\n        {\n            \"TierName\": \"COMPLEX\",\n            \"Models\": [\n                \"claude-3-5-sonnet\"\n            ]\n        },\n        {\n            \"TierName\": \"REASONING\",\n            \"Models\": [\n                \"o1-preview\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "修改意图路由属性（同时修改名称和分层）"
       }
     ],
     "ModifyKeyAttributes": [
@@ -912,6 +1248,22 @@
         "title": "修改负载均衡所属项目"
       }
     ],
+    "ModifyModelAliasAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelAliasAttributes\n<公共请求参数>\n\n{\n    \"Coefficient\": {\n        \"InputCoefficient\": 123,\n        \"InputCachedCoefficient\": 3,\n        \"OutputCoefficient\": 321\n    },\n    \"ModelAliasNames\": [\n        \"gpt-4o\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"71c612f8-b634-4a3b-b9f8-dcb79e5f36ca\"\n    }\n}",
+        "title": "修改输入输出系数"
+      }
+    ],
+    "ModifyModelAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelAttributes\n<公共请求参数>\n\n{\n    \"ServiceProviderId\": \"byok-kot39u7j\",\n    \"ServiceProviderName\": \"hello\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b521a934-0358-497a-8e3a-f1242424747c\"\n    }\n}",
+        "title": "修改BYOK的属性"
+      }
+    ],
     "ModifyModelRouterAttributes": [
       {
         "document": "",
@@ -926,12 +1278,36 @@
         "title": "替换实例的 HTTPS 证书"
       }
     ],
+    "ModifyModelRouterGuardrails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelRouterGuardrails\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\",\n    \"Guardrails\": [\n        {\n            \"GuardrailId\": \"gr-2x9k3ab1\",\n            \"InstanceId\": \"waf_2kw60zgy0908e8j3\",\n            \"ServiceId\": \"waf_rule_replaced\",\n            \"InputCheckDepth\": 8\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "修改 WAF Guardrail 防护"
+      }
+    ],
+    "ModifyModelRouterSecurityGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelRouterSecurityGroups\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-jcxor1gp\",\n    \"SecurityGroups\": [\n        \"sg-fktcbp0l\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2f68bbaf-8f33-4528-9512-1497d073fff5\"\n    }\n}",
+        "title": "绑定安全组"
+      }
+    ],
     "ModifyRule": [
       {
         "document": "修改一条转发规则的健康检查参数及转发策略。",
         "input": "https://clb.tencentcloudapi.com/?Action=ModifyRule\n&LoadBalancerId=lb-cuxw2rm0\n&ListenerId=lbl-4fbxq45k\n&LocationId=loc-9dr7bsl3\n&Url=/bar\n&Scheduler=LEAST_CONN\n&SessionExpireTime=75\n&HealthCheck.HealthSwitch=1\n&HealthCheck.IntervalTime=50\n&HealthCheck.HealthNum=3\n&HealthCheck.UnHealthNum=3\n&HealthCheck.HttpCode=7\n&HealthCheck.HttpCheckPath=/check\n&HealthCheck.HttpCheckDomain=foo.net\n&HealthCheck.HttpCheckMethod=GET\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d846dfd-27f3-4d74-bc00-ec9ae0570cb0\"\n    }\n}",
         "title": "修改一条转发规则的健康检查参数及转发策略"
+      }
+    ],
+    "ModifyServiceProviderModelAttributes": [
+      {
+        "document": "修改模型支持的多模态能力",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyServiceProviderModelAttributes\n<公共请求参数>\n\n{\n    \"ServiceProviderId\": \"byok-qhygv05l\",\n    \"ModelName\": \"gpt-4o\",\n    \"InputModalities\": [\n        \"text\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d8264fac-0eaa-4981-b63c-dec6df756770\"\n    }\n}",
+        "title": "修改模型支持的多模态能力"
       }
     ],
     "ModifyTargetGroupAttribute": [
@@ -982,6 +1358,14 @@
         "title": "修改用户组属性"
       }
     ],
+    "RefundModelRouterResourcePackage": [
+      {
+        "document": "退还模型路由资源包",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefundModelRouterResourcePackage\n<公共请求参数>\n\n{\n    \"ModelRouterResourcePackageIds\": [\n        \"cmrcredit-k2800toa9v5tnar\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DealNames\": [\n            \"20260409643022548182771\"\n        ],\n        \"RequestId\": \"aeb00c63-f7f5-4c0a-a5c2-a1bf192e4b31\"\n    }\n}",
+        "title": "退还模型路由资源包"
+      }
+    ],
     "RegenerateKeys": [
       {
         "document": "",
@@ -996,6 +1380,20 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterFunctionTargets\n<公共请求参数>\n\n{\n    \"LocationId\": \"loc-abcd1234\",\n    \"ListenerId\": \"lbl-d1ub****\",\n    \"FunctionTargets\": [\n        {\n            \"Function\": {\n                \"FunctionNamespace\": \"ns_test\",\n                \"FunctionName\": \"name_test\",\n                \"FunctionQualifier\": \"version_test\"\n            },\n            \"Weight\": 66\n        }\n    ],\n    \"LoadBalancerId\": \"lb-cuxw****\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"11b4338f-2d00-4766-bc67-581d959b3488\"\n    }\n}",
         "title": "绑定云函数到转发规则上"
+      }
+    ],
+    "RegisterModelsToServiceProvider": [
+      {
+        "document": "关联支持文本输入的模型",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterModelsToServiceProvider\n<公共请求参数>\n\n{\n    \"ServiceProviderId\": \"byok-7avt6gkt\",\n    \"Models\": [\n        {\n            \"ModelId\": \"claude-4-opus\",\n            \"ModelAlias\": \"claude-4-opus-test-connection\",\n            \"InputModalities\": [\n                \"text\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"689b521b-ab7a-406b-b23d-3317ac07d09e\"\n    }\n}",
+        "title": "关联支持文本输入的模型"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateModelsToServiceProvider\n<公共请求参数>\n\n{\n    \"ServiceProviderId\": \"byok-pegue82p\",\n    \"Models\": [\n        {\n            \"ModelId\": \"panda-model-1\",\n            \"ModelAlias\": \"panda-model-1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9a02d8e9-fb9f-4273-95e1-e3c7722b65b4\"\n    }\n}",
+        "title": "默认关联模型的请求"
       }
     ],
     "RegisterTargetGroupInstances": [
@@ -1032,6 +1430,34 @@
         "input": "https://clb.tencentcloudapi.com/?Action=RegisterTargetsWithClassicalLB\n&LoadBalancerId=lb-a3u5l5zc\n&Targets.0.InstanceId=ins-lhhn9fhk\n&Targets.0.Weight=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bab5b8c4-7e9f-4032-90fb-c61ee6678c73\"\n    }\n}",
         "title": "绑定一个后端服务到传统型负载均衡"
+      }
+    ],
+    "RemoveModelKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveModelKey\n<公共请求参数>\n\n{\n    \"ServiceProviderId\": \"byok-7s4bvf0l\",\n    \"KeyIds\": [\n        \"mkey-133x2eub\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be1b190d-18e0-4bb6-8910-bcdf1bc4d51b\"\n    }\n}",
+        "title": "删除Key"
+      }
+    ],
+    "RemoveModelRewrite": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveModelRewrite\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\",\n    \"SourceModel\": \"gpt-4o\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "删除一条模型重写规则"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveModelRewrite\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\",\n    \"SourceModel\": \"non-existing-source\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "删除不存在的规则（幂等成功）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveModelRewrite\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-abc12345\",\n    \"SourceModel\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "删除兜底重写规则"
       }
     ],
     "RenewLoadBalancers": [
@@ -1106,6 +1532,22 @@
         "input": "https://clb.tencentcloudapi.com/?Action=SetSecurityGroupForLoadbalancers\n&SecurityGroup=sg-12345678\n&OperationType=ADD\n&LoadBalancerIds.0=lb-0936o712\n&LoadBalancerIds.1=lb-tttt5555\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"00ca7fca-90f1-47fe-a724-5d7e96d04633\"\n    }\n}",
         "title": "绑定一个安全组至多个负载均衡"
+      }
+    ],
+    "TestModelInputModalities": [
+      {
+        "document": "\t\n模型支持图像输入",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TestModelInputModalities\n<公共请求参数>\n\n{\n    \"Model\": \"gpt-5\",\n    \"ProviderKey\": \"sk-1111\",\n    \"AccessType\": \"PublicCustom\",\n    \"ApiBase\": \"http://11.141.93.26:10000/v1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Model\": \"gpt-5\",\n        \"ProbeDetails\": [\n            {\n                \"ErrorInfo\": {\n                    \"ErrorStatus\": \"\",\n                    \"HttpCode\": 0,\n                    \"OriginalMessage\": \"\"\n                },\n                \"Modality\": \"image\",\n                \"Status\": \"Supported\"\n            }\n        ],\n        \"SupportedModalities\": [\n            \"text\"\n        ],\n        \"RequestId\": \"1c31d4b4-f209-4866-99d0-25248db915aa\"\n    }\n}",
+        "title": "模型支持图像输入"
+      }
+    ],
+    "TestServiceProviderConnection": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TestServiceProviderConnection\n<公共请求参数>\n\n{\n    \"Models\": [\n        \"deepseek-reasoner\"\n    ],\n    \"ProviderKey\": \"sk-40df882e447043fcaca5e0fce4af1db1\",\n    \"AccessType\": \"PublicCustom\",\n    \"ModelProtocol\": \"deepseek\",\n    \"ApiBase\": \"http://api.deepseek.com/v1\",\n    \"VerifySSL\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"ErrorInfo\": {\n                    \"ErrorStatus\": \"\",\n                    \"HttpCode\": 0,\n                    \"OriginalMessage\": \"\"\n                },\n                \"Model\": \"deepseek-reasoner\",\n                \"Status\": \"Success\",\n                \"TestConnectionRequest\": {\n                    \"RequestBody\": \"\",\n                    \"RequestHeaders\": \"\",\n                    \"RequestUrl\": \"\"\n                }\n            }\n        ],\n        \"RequestId\": \"0dc8d1e6-9fd3-41c9-a39e-dbd3d16da611\"\n    }\n}",
+        "title": "探测模型是否健康"
       }
     ]
   },

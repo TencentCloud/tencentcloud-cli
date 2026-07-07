@@ -104,6 +104,14 @@
         "title": "创建Dspm资产访问拓扑导出任务"
       }
     ],
+    "CreateDspmAssetIdentifyInfoExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmAssetIdentifyInfoExportJob\n<公共请求参数>\n\n{\n    \"AssetId\": \"cdb-l8hhoqwd\",\n    \"MemberId\": [\n        \"mem-121ws13a\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"e72870f6-6809-4bbd-9648-8f0bbadabecd\",\n        \"RequestId\": \"f0b69963-ea9e-4f67-9e81-bb5c95950534\"\n    }\n}",
+        "title": "创建Dspm资产数据识别结果导出任务"
+      }
+    ],
     "CreateDspmAssetsExportJob": [
       {
         "document": "",
@@ -120,12 +128,68 @@
         "title": "创建导出任务"
       }
     ],
+    "CreateDspmIdentifyCategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmIdentifyCategory\n<公共请求参数>\n\n{\n    \"Name\": \"kyrie测试分类02\",\n    \"MemberId\": [\n        \"mem-1209ejsa\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 358,\n        \"RequestId\": \"7443acba-f147-4416-a8ef-e1b217c6ae88\"\n    }\n}",
+        "title": "创建数据识别分类"
+      }
+    ],
+    "CreateDspmIdentifyComplianceCategoryRelation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmIdentifyComplianceCategoryRelation\n<公共请求参数>\n\n{\n    \"ComplianceId\": 10001,\n    \"CategoryId\": 358,\n    \"ParentCategoryId\": -1,\n    \"MemberId\": [\n        \"mem-12e1dsda\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86f82abd-6a37-4141-8179-b4040fb04d28\"\n    }\n}",
+        "title": "创建dspm数据识别模板分类关联"
+      }
+    ],
+    "CreateDspmIdentifyComplianceGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmIdentifyComplianceGroup\n<公共请求参数>\n\n{\n    \"Name\": \"kyrie测试\",\n    \"MemberId\": [\n        \"mem-23ed1ewd\"\n    ],\n    \"Description\": \"kyrie描述\",\n    \"LevelGroupId\": 1,\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 10000,\n        \"RequestId\": \"cfca9e29-4405-46ea-a240-d5e2ef55d8ff\"\n    }\n}",
+        "title": "创建dspm数据识别模板"
+      }
+    ],
+    "CreateDspmIdentifyComplianceGroupCopy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmIdentifyComplianceGroupCopy\n<公共请求参数>\n\n{\n    \"FromId\": 10001,\n    \"MemberId\": [\n        \"mem-3ewd1sa1\"\n    ],\n    \"Name\": \"kyrie复制\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 10002,\n        \"RequestId\": \"8bc048e2-449c-44d1-b215-387caa93e8c4\"\n    }\n}",
+        "title": "复制dspm数据识别模板"
+      }
+    ],
+    "CreateDspmIdentifyComplianceRuleRelation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmIdentifyComplianceRuleRelation\n<公共请求参数>\n\n{\n    \"ComplianceId\": 10001,\n    \"CategoryId\": 358,\n    \"Rules\": [\n        {\n            \"RuleId\": 5800,\n            \"LevelId\": 1\n        }\n    ],\n    \"MemberId\": [\n        \"mem-12e1ds1d\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e8b7623b-7fef-4a18-85a1-57565f0fa612\"\n    }\n}",
+        "title": "创建dspm数据识别模板数据项关联"
+      }
+    ],
     "CreateDspmIdentifyInfoListExportJob": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmIdentifyInfoListExportJob\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"JobID\": \"job-21c491y9\",\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
         "title": "创建Dspm身份列表导出任务"
+      }
+    ],
+    "CreateDspmIdentifyLevelGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmIdentifyLevelGroup\n<公共请求参数>\n\n{\n    \"Name\": \"自定义级别03\",\n    \"MemberId\": [\n        \"mem-23d21edw\"\n    ],\n    \"Description\": \"级别描述\",\n    \"LevelItems\": [\n        {\n            \"LevelName\": \"高\",\n            \"LevelScore\": 10\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 7,\n        \"RequestId\": \"2e0ce520-010b-4491-beea-58e3b37b3b1d\"\n    }\n}",
+        "title": "创建dspm数据识别分级组"
+      }
+    ],
+    "CreateDspmIdentifyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmIdentifyRule\n<公共请求参数>\n\n{\n    \"Name\": \"kyrie-kv-rule-004\",\n    \"Status\": 1,\n    \"StructuredRule\": \"1\",\n    \"UnStructuredRule\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 10009,\n        \"RequestId\": \"d11e8f63-703e-436c-a321-6f19eb33ff08\"\n    }\n}",
+        "title": "创建dspm数据识别数据项"
       }
     ],
     "CreateDspmPersonalIdentify": [
@@ -246,6 +310,54 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmExportTask\n<公共请求参数>\n\n{\n    \"TaskIds\": [\n        0\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1233-122k3-xx\"\n    }\n}",
         "title": "删除导出任务"
+      }
+    ],
+    "DeleteDspmIdentifyCategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmIdentifyCategory\n<公共请求参数>\n\n{\n    \"Ids\": [\n        358\n    ],\n    \"MemberId\": [\n        \"mem-12es1waa\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"632a685c-b3c7-4101-870d-df9ae4c227c8\"\n    }\n}",
+        "title": "删除数据识别分类"
+      }
+    ],
+    "DeleteDspmIdentifyComplianceCategoryRelation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmIdentifyComplianceCategoryRelation\n<公共请求参数>\n\n{\n    \"ComplianceId\": 10001,\n    \"CategoryId\": 358,\n    \"MemberId\": [\n        \"mem-23ed1d11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4ea3416-6cd6-4a37-8057-ead5829a689f\"\n    }\n}",
+        "title": "删除dspm数据识别模板分类关联"
+      }
+    ],
+    "DeleteDspmIdentifyComplianceGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmIdentifyComplianceGroup\n<公共请求参数>\n\n{\n    \"Ids\": [\n        10000\n    ],\n    \"MemberId\": [\n        \"mem-23ed123w\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f4324db7-c4a5-4397-aecf-82559b4168d3\"\n    }\n}",
+        "title": "DeleteDspmIdentifyComplianceGroup"
+      }
+    ],
+    "DeleteDspmIdentifyComplianceRuleRelation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmIdentifyComplianceRuleRelation\n<公共请求参数>\n\n{\n    \"ComplianceId\": 10001,\n    \"CategoryId\": 358,\n    \"RuleIds\": [\n        5801\n    ],\n    \"MemberId\": [\n        \"mem-12e1ews1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03c27b40-8c8d-44a2-8982-37c9cd3818ba\"\n    }\n}",
+        "title": "DeleteDspmIdentifyComplianceRuleRelation"
+      }
+    ],
+    "DeleteDspmIdentifyLevelGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmIdentifyLevelGroup\n<公共请求参数>\n\n{\n    \"Ids\": [\n        7\n    ],\n    \"MemberId\": [\n        \"mem-892jfdas\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8aef522d-df7e-46dd-ba93-329e3c36c040\"\n    }\n}",
+        "title": "DeleteDspmIdentifyLevelGroup"
+      }
+    ],
+    "DeleteDspmIdentifyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmIdentifyRule\n<公共请求参数>\n\n{\n    \"Ids\": [\n        10357\n    ],\n    \"MemberId\": [\n        \"mem-12ed1wca\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0a1848c8-2032-4519-ba53-89b34b517e6d\"\n    }\n}",
+        "title": "删除dspm数据识别数据项"
       }
     ],
     "DeleteDspmPersonalIdentify": [
@@ -700,6 +812,14 @@
         "title": "查看cos调用记录文件列表"
       }
     ],
+    "DescribeCosObjectScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosObjectScanTask\n<公共请求参数>\n\n{\n    \"TaskType\": 2,\n    \"MemberId\": [\n        \"mem-a6df317cb6a8c424\"\n    ],\n    \"BucketSet\": [\n        \"0313-vtanakwang-260082268\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"MemberTaskIdSet\": [\n            {\n                \"AppId\": 251002343,\n                \"LastScanTime\": 0,\n                \"TaskId\": \"\"\n            }\n        ],\n        \"RequestId\": \"daea542d-c4a7-48ca-84a2-4e4e255b29c6\"\n    }\n}",
+        "title": "查看cos对象存储扫描任务"
+      }
+    ],
     "DescribeCosOverview": [
       {
         "document": "",
@@ -916,6 +1036,22 @@
         "title": "查询dspm资产字段信息"
       }
     ],
+    "DescribeDspmAssetFieldSamples": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetFieldSamples\n<公共请求参数>\n\n{\n    \"AssetId\": \"tdsql-5a07uua3\",\n    \"DbName\": \"dspm01\",\n    \"TableName\": \"encryption\",\n    \"FieldName\": \"id\",\n    \"MemberId\": [\n        \"mem-12e1e311\"\n    ],\n    \"SchemaName\": \"schema\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            \"1\"\n        ],\n        \"RequestId\": \"1d90b55c-ff1d-4683-a059-ec7f98c294da\"\n    }\n}",
+        "title": "查询dspm资产字段样本值"
+      }
+    ],
+    "DescribeDspmAssetIdentifyInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAssetIdentifyInfoList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12ed1w12\"\n    ],\n    \"ComplianceId\": 9050\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"AssetId\": \"cdb-3gxg132h\",\n                \"AssetName\": \"cdb108345385\",\n                \"AssetType\": \"cdb\",\n                \"CategoryIds\": [\n                    355\n                ],\n                \"CategoryNames\": [\n                    \"个人敏感信息\"\n                ],\n                \"DetectedDbCount\": 1,\n                \"DetectedTableCount\": 1,\n                \"DetectedTime\": \"2026-06-02T10:57:47+08:00\",\n                \"LevelId\": 8,\n                \"LevelName\": \"敏感\",\n                \"LevelScore\": 10,\n                \"RuleIds\": [\n                    5800\n                ],\n                \"RuleNames\": [\n                    \"姓名\"\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"982933d7-0e72-4d54-9218-daee52a5545e\"\n    }\n}",
+        "title": "查询dspm资产数据识别信息列表"
+      }
+    ],
     "DescribeDspmAssetIds": [
       {
         "document": "",
@@ -996,6 +1132,64 @@
         "title": "查询导出任务"
       }
     ],
+    "DescribeDspmIdentifyCategoryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyCategoryList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12jnednj\"\n    ],\n    \"Filter\": {\n        \"Limit\": 10,\n        \"Offset\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"Id\": 359,\n                \"Name\": \"自定义分类\",\n                \"Type\": 1,\n                \"UpdateTime\": \"2026-04-27 17:00:32\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"b4d5f13f-43a0-4723-8ca9-ab768087c2f7\"\n    }\n}",
+        "title": "查询dspm数据识别分类列表"
+      }
+    ],
+    "DescribeDspmIdentifyComplianceCategoryRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyComplianceCategoryRuleList\n<公共请求参数>\n\n{\n    \"ComplianceId\": 10001,\n    \"CategoryId\": 358,\n    \"MemberId\": [\n        \"mem-12ed1wes\"\n    ],\n    \"Filter\": {\n        \"Limit\": 100\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"CategoryId\": 358,\n                \"ComplianceId\": 10001,\n                \"LevelId\": 1,\n                \"LevelName\": \"高\",\n                \"RuleId\": 5800,\n                \"RuleName\": \"姓名\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"91dfb897-62f4-45f4-beda-33a2d8756cc5\"\n    }\n}",
+        "title": "查询dspm数据识别模板分类关联数据项列表"
+      }
+    ],
+    "DescribeDspmIdentifyComplianceGroupDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyComplianceGroupDetail\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12edwqad\"\n    ],\n    \"Id\": 10000\n}",
+        "output": "{\n    \"Response\": {\n        \"Description\": \"kyrie描述\",\n        \"Detail\": [],\n        \"Id\": 10000,\n        \"LevelGroupId\": 1,\n        \"LevelGroupName\": \"系统-高中低\",\n        \"Name\": \"kyrie测试\",\n        \"Status\": 1,\n        \"Type\": 1,\n        \"RequestId\": \"0d7bc400-94ee-4dbd-a3a5-e3238cd3dfa5\"\n    }\n}",
+        "title": "DescribeDspmIdentifyComplianceGroupDetail"
+      }
+    ],
+    "DescribeDspmIdentifyComplianceGroupList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyComplianceGroupList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12313131\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"ApplyStatus\": 1,\n                \"Description\": \"2\",\n                \"Id\": 10001,\n                \"Name\": \"kyrie修改\",\n                \"Status\": 1,\n                \"Type\": 1,\n                \"UpdateTime\": \"2026-05-18 18:10:45\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"8a813e5e-1440-45ba-b9d3-54154c815204\"\n    }\n}",
+        "title": "DescribeDspmIdentifyComplianceGroupList"
+      }
+    ],
+    "DescribeDspmIdentifyDistributionStatistics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyDistributionStatistics\n<公共请求参数>\n\n{\n    \"StatType\": \"FieldTop5Asset\",\n    \"MemberId\": [\n        \"mem-12df23ed\"\n    ],\n    \"AssetType\": \"cdb\",\n    \"ComplianceId\": 9050\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"Name\": \"cdb-3gxg132h(cdb108345385)\",\n                \"Value\": 12\n            }\n        ],\n        \"RequestId\": \"880ac5c4-1b9b-410e-a7da-5c73b27ea44c\"\n    }\n}",
+        "title": "识别字段Top5"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyDistributionStatistics\n<公共请求参数>\n\n{\n    \"StatType\": \"FieldCategoryDistribution\",\n    \"MemberId\": [\n        \"mem-12df23ed\"\n    ],\n    \"AssetType\": \"cdb\",\n    \"ComplianceId\": 9050\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"Name\": \"个人敏感信息\",\n                \"Value\": 3\n            }\n        ],\n        \"RequestId\": \"11effbc0-20fb-48b6-82fc-de389e02e909\"\n    }\n}",
+        "title": "识别字段分类分布"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyDistributionStatistics\n<公共请求参数>\n\n{\n    \"StatType\": \"FieldLevelDistribution\",\n    \"MemberId\": [\n        \"mem-12df23ed\"\n    ],\n    \"AssetType\": \"cdb\",\n    \"ComplianceId\": 9050\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"Name\": \"敏感\",\n                \"Value\": 3\n            }\n        ],\n        \"RequestId\": \"644f3941-09ce-405f-ae28-398ba4343d56\"\n    }\n}",
+        "title": "识别字段分级分布"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyDistributionStatistics\n<公共请求参数>\n\n{\n    \"StatType\": \"AssetDistribution\",\n    \"MemberId\": [\n        \"mem-12df23ed\"\n    ],\n    \"AssetType\": \"cdb\",\n    \"ComplianceId\": 9050\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"Name\": \"AssetNum\",\n                \"Value\": 1\n            }\n        ],\n        \"RequestId\": \"b7e6e036-d7ed-4ae3-8ead-6f74a3bd133a\"\n    }\n}",
+        "title": "识别资产分布"
+      }
+    ],
     "DescribeDspmIdentifyIdList": [
       {
         "document": "",
@@ -1018,6 +1212,38 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyInfoList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InfoSet\": [],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
         "title": "查询Dspm身份信息列表"
+      }
+    ],
+    "DescribeDspmIdentifyLevelGroupList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyLevelGroupList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-123edwq9\"\n    ],\n    \"Filter\": {\n        \"Limit\": 10,\n        \"Offset\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"Description\": \"级别描述\",\n                \"Id\": 7,\n                \"LevelItems\": [\n                    {\n                        \"LevelId\": 18,\n                        \"LevelName\": \"高\",\n                        \"LevelScore\": 10\n                    }\n                ],\n                \"Name\": \"自定义级别03\",\n                \"Type\": 1,\n                \"UpdateTime\": \"2026-04-28 17:57:13\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"d7049b2d-c3e1-4952-8616-d7e09dbcdf78\"\n    }\n}",
+        "title": "查询dspm数据识别分级组列表"
+      }
+    ],
+    "DescribeDspmIdentifyRuleDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyRuleDetail\n<公共请求参数>\n\n{\n    \"Id\": 10000,\n    \"MemberId\": [\n        \"mem-12e1w112\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Description\": \"1\",\n        \"Id\": 10000,\n        \"Name\": \"kyrie测试\",\n        \"Status\": 1,\n        \"StructuredRule\": \"{\\n  \\\"NodeType\\\": \\\"operator\\\",\\n  \\\"OptType\\\": \\\"or\\\",\\n  \\\"RuleInfos\\\": [],\\n  \\\"Nodes\\\": [\\n    {\\n      \\\"NodeType\\\": \\\"operator\\\",\\n      \\\"OptType\\\": \\\"or\\\",\\n      \\\"RuleInfos\\\": [\\n        {\\n          \\\"DataSourceType\\\": \\\"field_comment\\\",\\n          \\\"RuleMethod\\\": \\\"match\\\",\\n          \\\"RuleType\\\": \\\"regex\\\",\\n          \\\"RuleContent\\\": \\\"(国家|国家代码)$\\\",\\n          \\\"Parameters\\\": {\\n            \\\"IsFullWordMatch\\\": \\\"false\\\",\\n            \\\"IsIgnoreCase\\\": \\\"true\\\"\\n          }\\n        }\\n      ],\\n      \\\"Nodes\\\": []\\n    },\\n    {\\n      \\\"NodeType\\\": \\\"operator\\\",\\n      \\\"OptType\\\": \\\"and\\\",\\n      \\\"RuleInfos\\\": [\\n        {\\n          \\\"DataSourceType\\\": \\\"field_name\\\",\\n          \\\"RuleMethod\\\": \\\"match\\\",\\n          \\\"RuleType\\\": \\\"keyword\\\",\\n          \\\"RuleContent\\\": \\\"country\\\\n国家\\\",\\n          \\\"Parameters\\\": {\\n            \\\"IsFullWordMatch\\\": \\\"false\\\",\\n            \\\"IsIgnoreCase\\\": \\\"true\\\"\\n          }\\n        },\\n        {\\n          \\\"DataSourceType\\\": \\\"field_name\\\",\\n          \\\"RuleMethod\\\": \\\"match\\\",\\n          \\\"RuleType\\\": \\\"keywordNotMatch\\\",\\n          \\\"RuleContent\\\": \\\"side\\\\nmusic\\\\nroad\\\\nlife\\\\nstyle\\\\nfolk\\\\nhouse\\\\nyard\\\\nwide\\\",\\n          \\\"Parameters\\\": {\\n            \\\"IsFullWordMatch\\\": \\\"false\\\",\\n            \\\"IsIgnoreCase\\\": \\\"true\\\"\\n          }\\n        }\\n      ],\\n      \\\"Nodes\\\": []\\n    }\\n  ]\\n}\",\n        \"Type\": 1,\n        \"UnStructuredRule\": \"{\\n  \\\"RegexRule\\\": {\\n    \\\"Operator\\\": \\\"or\\\",\\n    \\\"Contents\\\": [\\n      {\\n        \\\"RuleContent\\\": \\\"(?<=\\\\\\\\W)(中国|日本|韩国|朝鲜|蒙古|越南|柬埔寨|老挝|泰国|缅甸|菲律宾|文莱|马来西亚|新加坡|印度尼西亚|东帝汶|尼泊尔|不丹|巴基斯坦|印度|孟加拉国|马尔代夫|斯里兰卡|哈萨克斯坦|吉尔吉斯斯坦|塔吉克斯坦|乌兹别克斯坦|土库曼斯坦|阿富汗|伊朗|伊拉克|叙利亚|黎巴嫩|以色列|巴勒斯坦|约旦|沙特阿拉伯|巴林|卡塔尔|科威特|阿拉伯联合酋长国/阿联酋|阿曼|也门|格鲁吉亚|亚美尼亚|阿塞拜疆|土耳其|冰岛|丹麦|挪威|瑞典|芬兰|英国|爱尔兰|法国|摩纳哥|荷兰|比利时|卢森堡|德国|瑞士|列支敦士登|波兰|捷克|斯洛伐克|奥地利|匈牙利|爱沙尼亚|拉脱维亚|立陶宛|白俄罗斯|乌克兰|摩尔多瓦|俄罗斯|葡萄牙|西班牙|安道尔|意大利|圣马力诺|梵蒂冈|马耳他|斯洛文尼亚|克罗地亚|波黑|黑山|塞尔维亚|阿尔巴尼亚|北马其顿|保加利亚|希腊|罗马尼亚|塞浦路斯|埃及|利比亚|突尼斯|阿尔及利亚|摩洛哥|尼日尔|布基纳法索|马里|毛里塔尼亚|尼日利亚|贝宁|多哥|加纳|科特迪瓦|利比里亚|塞拉利昂|几内亚|几内亚比绍|塞内加尔|冈比亚|佛得角|乍得|中非|喀麦隆|刚果民主共和国|刚果共和国|加蓬|赤道几内亚|圣多美和普林西比|吉布提|索马里|厄立特里亚|埃塞俄比亚|苏丹|南苏丹|肯尼亚|坦桑尼亚|乌干达|卢旺达|布隆迪|塞舌尔|安哥拉|赞比亚|马拉维|莫桑比克|纳米比亚|博茨瓦纳|津巴布韦|南非|斯威士兰|莱索托|马达加斯加|毛里求斯|科摩罗|澳大利亚|新西兰|帕劳|密克罗尼西亚联邦|马绍尔群岛|瑙鲁|基里巴斯|巴布亚新几内亚|所罗门群岛|瓦努阿图|斐济|图瓦卢|萨摩亚|汤加|纽埃|库克群岛|加拿大|美国|墨西哥|危地马拉|伯利兹|萨尔瓦多|洪都拉斯|尼加拉瓜|哥斯达黎加|巴拿马|巴哈马|古巴|牙买加|海地|多米尼加|圣基茨和尼维斯|安提瓜和巴布达|多米尼克|圣卢西亚|巴巴多斯|圣文森特和格林纳丁斯|格林纳达|特立尼达和多巴哥|哥伦比亚|委内瑞拉|圭亚那|苏里南|厄瓜多尔|秘鲁|玻利维亚|巴西|智利|阿根廷|乌拉圭|巴拉圭|库拉索|China|Japan|South Korea|North Korea|Mongolia|Vietnam|Cambodia|Laos|Thailand|Myanmar|Philippines|Brunei|Malaysia|Singapore|Indonesia|Timor-Leste|Nepal|Bhutan|Pakistan|India|Bangladesh|Maldives|Sri Lanka|Kazakhstan|Kyrgyzstan|Tajikistan|Uzbekistan|Turkmenistan|Afghanistan|Iran|Iraq|Syria|Lebanon|Israel|Palestine|Jordan|Saudi Arabia|Bahrain|Qatar|Kuwait|United Arab Emirates|Oman|Yemen|Georgia|Armenia|Azerbaijan|Turkey|Iceland|Denmark|Norway|Sweden|Finland|The United Kingdom|Ireland|France|Monaco|Netherlands|Belgium|Luxembourg|Germany|Switzerland|Liechtenstein|Poland|Czechia|Slovakia|Austria|Hungary|Estonia|Latvia|Lithuania|Belarus|Ukraine|Moldova|Russian Federation|Portugal|Spain|Andorra|Italy|San Marino|Holy See|Malta|Slovenia|Croatia|Bosnia and Herzegovina|Montenegro|Serbia|Albania|North Macedonia|Bulgaria|Greece|Romania|Cyprus|Egypt|Libya|Tunisia|Algeria|Morocco|Niger|Burkina Faso|Mali|Mauritania|Nigeria|Benin|Togo|Ghana|Côte d'Ivoire|Liberia|Sierra Leone|Guinea|Guinea-Bissau|Senegal|Gambia|Cabo Verde|Chad|Central African Republic|Cameroon|The Democratic Republic of the Congo|Congo|Gabon|Equatorial Guinea|Sao Tome and Principe|Djibouti|Somalia|Eritrea|Ethiopia|Sudan|South Sudan|Kenya|Tanzania|Uganda|Rwanda|Burundi|Seychelles|Angola|Zambia|Malawi|Mozambique|Namibia|Botswana|Zimbabwe|South Africa|Eswatini|Lesotho|Madagascar|Mauritius|Comoros|Australia|New Zealand|Palau|Federated States of Micronesia|Marshall Islands|Nauru|Kiribati|Papua New Guinea|Solomon Islands|Vanuatu|Fiji|Tuvalu|Samoa|Tonga|Niue|Cook Islands|Canada|United States of America|Mexico|Guatemala|Belize|El Salvador|Honduras|Nicaragua|Costa Rica|Panama|Bahamas|Cuba|Jamaica|Haiti|Dominican Republic|Saint Kitts and Nevis|Antigua and Barbuda|Dominica|Saint Lucia|Barbados|Saint Vincent and the Grenadines|Grenada|Trinidad and Tobago|Colombia|Venezuela|Guyana|Suriname|Ecuador|Peru|Bolivia|Brazil|Chile|Argentina|Uruguay|Paraguay|Curaçao)(?=\\\\\\\\W)|(?i)(?<=((国家|国家代码|country|country_?code)\\\\\\\\W{1,7}))(\\\\\\\\d{2,3}|[A-Z]{2,3})(?=\\\\\\\\W)\\\",\\n        \\\"IsIgnoreCase\\\": false\\n      }\\n    ]\\n  },\\n  \\\"AlgorithmRule\\\": {\\n    \\\"Operator\\\": \\\"or\\\",\\n    \\\"Contents\\\": []\\n  },\\n  \\\"KeywordRule\\\": {\\n    \\\"Operator\\\": \\\"or\\\",\\n    \\\"Contents\\\": [\\n      {\\n        \\\"RuleContent\\\": \\\"国家\\\",\\n        \\\"IsIgnoreCase\\\": false\\n      },\\n      {\\n        \\\"RuleContent\\\": \\\"country\\\",\\n        \\\"IsIgnoreCase\\\": true\\n      }\\n    ]\\n  },\\n  \\\"IgnoreStringRule\\\": {\\n    \\\"Operator\\\": \\\"or\\\",\\n    \\\"Contents\\\": []\\n  },\\n  \\\"MaxMatchRule\\\": {\\n    \\\"Length\\\": 20\\n  },\\n  \\\"GlobalKeywordRule\\\": {\\n    \\\"Contents\\\": [],\\n    \\\"IsIgnoreCase\\\": true\\n  }\\n}\",\n        \"RequestId\": \"8667abd2-8e7e-4a9a-b30b-712a2e66d3b1\"\n    }\n}",
+        "title": "查询dspm数据识别数据项详情"
+      }
+    ],
+    "DescribeDspmIdentifyRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyRuleList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-829jduqa\"\n    ],\n    \"Filter\": {\n        \"Limit\": 10,\n        \"Offset\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"Description\": \"自定义描述\",\n                \"Id\": 5929,\n                \"Name\": \"自定义\",\n                \"Status\": 1,\n                \"Type\": 1,\n                \"UpdateTime\": \"2026-04-27 17:51:34\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"a439d1f6-3598-4010-9192-921d2d12a788\"\n    }\n}",
+        "title": "查询dspm数据识别数据项列表"
+      }
+    ],
+    "DescribeDspmIdentifyRuleTestResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyRuleTestResult\n<公共请求参数>\n\n{\n    \"RuleType\": \"Structured\",\n    \"RuleContent\": \"{\\\"NodeType\\\":\\\"operator\\\",\\\"OptType\\\":\\\"or\\\",\\\"RuleInfos\\\":[],\\\"Nodes\\\":[{\\\"NodeType\\\":\\\"operator\\\",\\\"OptType\\\":\\\"and\\\",\\\"RuleInfos\\\":[{\\\"DataSourceType\\\":\\\"field_name\\\",\\\"RuleMethod\\\":\\\"match\\\",\\\"RuleType\\\":\\\"keyword\\\",\\\"RuleContent\\\":\\\"email\\\"}],\\\"Nodes\\\":[]}]}\",\n    \"RuleId\": 5807,\n    \"MemberId\": [\n        \"mem-12e1wq1e\"\n    ],\n    \"StructuredTestContent\": [\n        {\n            \"Name\": \"field_name\",\n            \"Value\": \"email\"\n        }\n    ],\n    \"UnStructuredTestContent\": \"kyrie@tencent.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsMatch\": true,\n        \"RequestId\": \"f78a4edb-b592-48f6-b2af-04ebfde252be\"\n    }\n}",
+        "title": "DescribeDspmIdentifyRuleTestResult"
       }
     ],
     "DescribeDspmLogList": [
@@ -1706,6 +1932,22 @@
         "title": "修改cos审计监测账号"
       }
     ],
+    "ModifyCosAuditObjectIdentifyStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCosAuditObjectIdentifyStatus\n<公共请求参数>\n\n{\n    \"ResourceId\": \"cos-audit-757d9973\",\n    \"TextIdentifyStatus\": 1,\n    \"ImageIdentifyStatus\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfa48ae2-857d-460f-b194-ad4f267f6050\"\n    }\n}",
+        "title": "修改对象存储识别开关状态"
+      }
+    ],
+    "ModifyCosAuditObjectSampleRate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCosAuditObjectSampleRate\n<公共请求参数>\n\n{\n    \"BucketIdSet\": [\n        1346438\n    ],\n    \"SampleRateSet\": [\n        0.5\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"466d34ac-169a-4b5e-b194-9541b0871a66\"\n    }\n}",
+        "title": "修改COS审计采样率"
+      }
+    ],
     "ModifyCosMarkInfo": [
       {
         "document": "",
@@ -1720,6 +1962,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmAccessRecord\n<公共请求参数>\n\n{\n    \"Id\": [\n        {\n            \"SourceIp\": \"10.10.0.1\",\n            \"AssetId\": \"cdb-c2thbt00\",\n            \"RecordTime\": \"2025-03-01 12:00:00\"\n        }\n    ],\n    \"View\": \"ip\",\n    \"Noted\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
         "title": "修改Dspm访问管理信息"
+      }
+    ],
+    "ModifyDspmApplyingIdentifyComplianceGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmApplyingIdentifyComplianceGroup\n<公共请求参数>\n\n{\n    \"ComplianceId\": 10001,\n    \"MemberId\": [\n        \"mem-123e12s1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26873175-52b5-45a5-b6aa-fc7ae0089794\"\n    }\n}",
+        "title": "ModifyDspmApplyingIdentifyComplianceGroup"
       }
     ],
     "ModifyDspmApproveStatus": [
@@ -1754,6 +2004,14 @@
         "title": "修改Dspm资产数据扫描任务"
       }
     ],
+    "ModifyDspmAssetDataScanTaskStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmAssetDataScanTaskStatus\n<公共请求参数>\n\n{\n    \"TaskIds\": [\n        358\n    ],\n    \"Status\": 5,\n    \"MemberId\": [\n        \"mem-12e1w1ed\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"Status\": 3,\n                \"TaskId\": 358\n            }\n        ],\n        \"RequestId\": \"369fbf75-d652-4d49-a02d-a6a520862aaa\"\n    }\n}",
+        "title": "暂停、继续、终止Dspm资产数据识别扫描任务"
+      }
+    ],
     "ModifyDspmAssetLogDeliverySwitch": [
       {
         "document": "",
@@ -1778,12 +2036,76 @@
         "title": "修改日志备份设置"
       }
     ],
+    "ModifyDspmIdentifyCategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmIdentifyCategory\n<公共请求参数>\n\n{\n    \"Id\": 357,\n    \"Name\": \"自定义分类\",\n    \"MemberId\": [\n        \"mem-12dasdxa\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"69814135-502c-4b9d-9639-94da21ad8bb5\"\n    }\n}",
+        "title": "修改数据识别分类"
+      }
+    ],
+    "ModifyDspmIdentifyComplianceGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmIdentifyComplianceGroup\n<公共请求参数>\n\n{\n    \"Name\": \"kyrie修改\",\n    \"Id\": 10001,\n    \"MemberId\": [\n        \"mem-12edwq32\"\n    ],\n    \"Description\": \"2\",\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b241fd1-2899-45b1-abb0-289b9af54f95\"\n    }\n}",
+        "title": "修改dspm数据识别模板"
+      }
+    ],
+    "ModifyDspmIdentifyComplianceGroupStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmIdentifyComplianceGroupStatus\n<公共请求参数>\n\n{\n    \"Id\": 10001,\n    \"Status\": 1,\n    \"MemberId\": [\n        \"mem-23ed21we\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5fd7e8c7-aea0-474c-a09d-27351ed473eb\"\n    }\n}",
+        "title": "修改dspm数据识别模板状态"
+      }
+    ],
+    "ModifyDspmIdentifyComplianceRuleLevelInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmIdentifyComplianceRuleLevelInfo\n<公共请求参数>\n\n{\n    \"ComplianceId\": 10482,\n    \"RuleId\": 5917,\n    \"LevelId\": 2,\n    \"MemberId\": [\n        \"mem-1231es1s\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f69b71e-000f-4c1e-9b06-488d6fb453cb\"\n    }\n}",
+        "title": "修改dspm数据识别模板数据项关联级别信息"
+      }
+    ],
     "ModifyDspmIdentifyInfo": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmIdentifyInfo\n<公共请求参数>\n\n{\n    \"Subject\": \"pid_zdazymzh\",\n    \"Remark\": \"test remark\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"45ca21d4-f373-4274-9295-5380abc74bed\"\n    }\n}",
         "title": "修改Dspm身份信息"
+      }
+    ],
+    "ModifyDspmIdentifyLevelGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmIdentifyLevelGroup\n<公共请求参数>\n\n{\n    \"Id\": 7,\n    \"Name\": \"修改分级组\",\n    \"MemberId\": [\n        \"mem-012dass1\"\n    ],\n    \"Description\": \"修改分级组描述\",\n    \"LevelItems\": [\n        {\n            \"LevelName\": \"S1\",\n            \"LevelScore\": 10\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20952437-2bbe-44ca-95c8-3160e268df6b\"\n    }\n}",
+        "title": "ModifyDspmIdentifyLevelGroup"
+      }
+    ],
+    "ModifyDspmIdentifyLevelItem": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmIdentifyLevelItem\n<公共请求参数>\n\n{\n    \"Id\": 13669,\n    \"Name\": \"高\",\n    \"MemberId\": [\n        \"mem-12ed1w23\"\n    ],\n    \"LevelScore\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ff65546e-0bdf-48b6-825d-c4efad1e36ec\"\n    }\n}",
+        "title": "修改dspm数据识别分级项"
+      }
+    ],
+    "ModifyDspmIdentifyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmIdentifyRule\n<公共请求参数>\n\n{\n    \"Id\": 10357,\n    \"Name\": \"自定义手机号识别\",\n    \"MemberId\": [\n        \"mem-12e13wd1\"\n    ],\n    \"Status\": 1,\n    \"StructuredRule\": \"{\\\"NodeType\\\":\\\"operator\\\",\\\"OptType\\\":\\\"and\\\",\\\"Nodes\\\":[{\\\"NodeType\\\":\\\"operator\\\",\\\"OptType\\\":\\\"and\\\",\\\"RuleInfos\\\":[{\\\"DataSourceType\\\":\\\"field_value\\\",\\\"RuleMethod\\\":\\\"match\\\",\\\"RuleType\\\":\\\"keyword\\\",\\\"RuleContent\\\":\\\"phone\\\",\\\"Parameters\\\":{\\\"IsIgnoreCase\\\":\\\"true\\\"}}],\\\"Nodes\\\":[]}]}\",\n    \"UnStructuredRule\": \"{\\\"RegexRule\\\":{\\\"Operator\\\":\\\"or\\\",\\\"Contents\\\":[{\\\"RuleContent\\\":\\\"(?<=\\\\\\\\D)(13[0-9]|14[014-9]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\\\\\\\\d{8}(?=\\\\\\\\D)\\\",\\\"IsIgnoreCase\\\":true}]},\\\"MaxMatchRule\\\":{\\\"Length\\\":100}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7cb25fcd-6d28-4514-8b30-2585163ab240\"\n    }\n}",
+        "title": "修改dspm数据识别数据项"
+      }
+    ],
+    "ModifyDspmIdentifyRuleStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmIdentifyRuleStatus\n<公共请求参数>\n\n{\n    \"Ids\": [\n        10356\n    ],\n    \"Status\": 0,\n    \"MemberId\": [\n        \"mem-12ed1we1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5f7d5d3d-c628-4e6e-8eb0-a39042ce791b\"\n    }\n}",
+        "title": "修改dspm数据识别数据项状态"
       }
     ],
     "ModifyDspmIpInfo": [

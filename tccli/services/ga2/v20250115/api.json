@@ -202,7 +202,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "加速地域。",
+          "document": "<p>加速地域。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "AccelerateRegion",
@@ -213,7 +213,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽。",
+          "document": "<p>带宽。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Bandwidth",
@@ -224,7 +224,7 @@
         },
         {
           "disabled": false,
-          "document": "支持'BGP', '三网', '精品'，默认BGP。",
+          "document": "<p>支持&#39;BGP&#39;, &#39;QUALITY_BGP&#39;, &#39;STATIC_IP&#39;，默认BGP。</p><p>枚举值：</p><ul><li>BGP： BGP</li><li>STATIC_IP： 三网</li><li>QUALITY_BGP： 精品BGP</li></ul>",
           "example": "BGP",
           "member": "string",
           "name": "IspType",
@@ -235,7 +235,7 @@
         },
         {
           "disabled": false,
-          "document": "仅支持IPv4，默认是IPv4。",
+          "document": "<p>仅支持IPv4，默认是IPv4。</p>",
           "example": "IPv4",
           "member": "string",
           "name": "IpVersion",
@@ -246,7 +246,7 @@
         },
         {
           "disabled": false,
-          "document": "加速地域ID。",
+          "document": "<p>加速地域ID。</p>",
           "example": "area-np7tkvgs",
           "member": "string",
           "name": "AcceleratorAreaId",
@@ -257,7 +257,7 @@
         },
         {
           "disabled": false,
-          "document": "IP。",
+          "document": "<p>IP。</p>",
           "example": "[\"154.8.187.136\"]",
           "member": "string",
           "name": "IpAddress",
@@ -268,7 +268,7 @@
         },
         {
           "disabled": false,
-          "document": "IP信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IpAddressInfoSet",
           "name": "IpAddressInfoSet",
@@ -2732,7 +2732,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "IP地址。",
+          "document": "<p>IP地址。</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "IpAddress",
@@ -2743,11 +2743,22 @@
         },
         {
           "disabled": false,
-          "document": "IP类型。",
+          "document": "<p>IP类型。</p>",
           "example": "BGP",
           "member": "string",
           "name": "IspType",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ddos类型</p>",
+          "example": "Basic",
+          "member": "string",
+          "name": "DdosProtectionType",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false

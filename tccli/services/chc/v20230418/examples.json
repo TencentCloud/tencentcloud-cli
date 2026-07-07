@@ -264,12 +264,36 @@
         "title": "获取资源汇总"
       }
     ],
+    "DescribeWorkOrderCarCollectList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkOrderCarCollectList\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"driver-name\",\n            \"Values\": [\n                \"张\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CarSet\": [\n            {\n                \"CarNumber\": \"京A87653\",\n                \"DriverName\": \"张三\",\n                \"DriverNumber\": \"******************\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"d842523f-f4b3-47c1-962e-04cf446241f2\"\n    }\n}",
+        "title": "获取车辆信息"
+      }
+    ],
+    "DescribeWorkOrderContactCollectList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkOrderContactCollectList\n<公共请求参数>\n\n{\n    \"Offset\": 3,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ContactSet\": [\n            {\n                \"ContactName\": \"****\",\n                \"ContactPhone\": \"*****\"\n            }\n        ],\n        \"TotalCount\": 21,\n        \"RequestId\": \"37f95f74-d476-43ab-af2d-bb9c32b5ee54\"\n    }\n}",
+        "title": "获取联系人信息"
+      }
+    ],
     "DescribeWorkOrderList": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkOrderList\n<公共请求参数>\n\n{\n    \"Limit\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"646158b8-b20d-4843-a31a-883b78246cd8\",\n        \"TotalCount\": 3247,\n        \"WorkOrderSet\": [\n            {\n                \"CreateTime\": \"2025-03-07 11:11:59\",\n                \"Creator\": \"godwin2@test.com\",\n                \"OrderStatus\": \"processing\",\n                \"OrderType\": \"itCommon\",\n                \"ServiceType\": \"serverCommon\",\n                \"WorkOrderId\": \"ord-25030711115960582\"\n            }\n        ]\n    }\n}",
         "title": "查询工单列表"
+      }
+    ],
+    "DescribeWorkOrderPersonnelCollectList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkOrderPersonnelCollectList\n<公共请求参数>\n\n{\n    \"Offset\": 2,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"PersonnelSet\": [\n            {\n                \"Company\": \"****科技有限公司\",\n                \"IDCardNumber\": \"******************\",\n                \"IDCardType\": \"IDENTITY_CARD\",\n                \"LanguageType\": \"CHINESE\",\n                \"Name\": \"卡夫卡\",\n                \"TelNumber\": \"1**********\"\n            }\n        ],\n        \"TotalCount\": 51,\n        \"RequestId\": \"70695c72-bff9-4ca8-8722-74b17804d396\"\n    }\n}",
+        "title": "获取联系人信息"
       }
     ],
     "DescribeWorkOrderStatistics": [

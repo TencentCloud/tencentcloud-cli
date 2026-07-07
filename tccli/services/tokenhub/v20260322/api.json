@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CreateApiKey": {
+      "document": "创建 API 密钥。\n\n创建一个新的 API 密钥，创建成功后返回 API 密钥 ID。需指定平台类型、绑定方式和初始状态。",
+      "input": "CreateApiKeyRequest",
+      "name": "创建 API 密钥",
+      "output": "CreateApiKeyResponse",
+      "status": "online"
+    },
     "CreateGlossary": {
       "document": "创建术语库。\n\n在当前应用下创建一个新的翻译术语库，用于自定义源语言到目标语言的术语映射。创建成功后返回术语库 ID，可通过该 ID 进一步管理术语条目。",
       "input": "CreateGlossaryRequest",
@@ -26,6 +33,13 @@
       "input": "CreateTokenPlanTeamOrderAndBuyRequest",
       "name": "创建 Token Plan 套餐",
       "output": "CreateTokenPlanTeamOrderAndBuyResponse",
+      "status": "online"
+    },
+    "DeleteApiKey": {
+      "document": "删除指定的 API 密钥，同时清理关联的模型绑定关系。",
+      "input": "DeleteApiKeyRequest",
+      "name": "删除 API 密钥",
+      "output": "DeleteApiKeyResponse",
       "status": "online"
     },
     "DeleteGlossary": {
@@ -131,6 +145,20 @@
       "input": "DescribeUsageRankListRequest",
       "name": "查询用量排行列表",
       "output": "DescribeUsageRankListResponse",
+      "status": "online"
+    },
+    "ModifyApiKeyInfo": {
+      "document": "更新 API 密钥信息。\n\n更新 API 密钥的备注信息、 IP 白名单和 Token 限额（修改限额推荐使用QuotaDesired参数）。所有可选参数不传表示不修改。",
+      "input": "ModifyApiKeyInfoRequest",
+      "name": "更新 API 密钥信息",
+      "output": "ModifyApiKeyInfoResponse",
+      "status": "online"
+    },
+    "ModifyApiKeyStatus": {
+      "document": "更新 API 密钥的启用或禁用状态。",
+      "input": "ModifyApiKeyStatusRequest",
+      "name": "更新 API 密钥状态",
+      "output": "ModifyApiKeyStatusResponse",
       "status": "online"
     },
     "ModifyGlossaryEntries": {
@@ -436,6 +464,23 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateApiKeyRequest": {
+      "document": "CreateApiKey请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateApiKeyResponse": {
+      "document": "CreateApiKey返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateApiKeysResultItem": {
       "document": "批量创建成功项",
@@ -748,6 +793,23 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApiKeyRequest": {
+      "document": "DeleteApiKey请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteApiKeyResponse": {
+      "document": "DeleteApiKey返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2871,6 +2933,40 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyApiKeyInfoRequest": {
+      "document": "ModifyApiKeyInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyApiKeyInfoResponse": {
+      "document": "ModifyApiKeyInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApiKeyStatusRequest": {
+      "document": "ModifyApiKeyStatus请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyApiKeyStatusResponse": {
+      "document": "ModifyApiKeyStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyGlossaryEntriesRequest": {
       "document": "ModifyGlossaryEntries请求参数结构体",

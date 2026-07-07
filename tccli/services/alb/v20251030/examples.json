@@ -1,0 +1,401 @@
+{
+  "actions": {
+    "AddTargetsToTargetGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddTargetsToTargetGroup\n<公共请求参数>\n\n{\n    \"TargetGroupId\": \"lbtg-0zrnc9qa\",\n    \"Targets\": [\n        {\n            \"Port\": 80,\n            \"TargetIp\": \"10.0.0.1\",\n            \"Weight\": 100\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "向目标组内添加后端服务"
+      }
+    ],
+    "AssociateBandwidthPackageWithLoadBalancer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateBandwidthPackageWithLoadBalancer\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"BandwidthPackageId\": \"bwp-q8m2x4pa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aa1ca3f7-f928-4cb3-b6e1-a75b684225ab\"\n    }\n}",
+        "title": "实例绑定共享带宽包"
+      }
+    ],
+    "AssociateListenerAdditionalCertificates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateListenerAdditionalCertificates\n<公共请求参数>\n\n{\n    \"CertificateIds\": [\n        \"Fm8Wp7x8\"\n    ],\n    \"ListenerId\": \"lst-d9p3k7wa\",\n    \"LoadBalancerId\": \"alb-f8q2xk9m\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "监听器绑定扩展证书"
+      }
+    ],
+    "CreateHealthCheckTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHealthCheckTemplate\n<公共请求参数>\n\n{\n    \"HealthCheckCodes\": [\n        \"http_1xx\"\n    ],\n    \"HealthCheckHealthyThreshold\": 2,\n    \"HealthCheckHost\": \"example.com\",\n    \"HealthCheckHttpVersion\": \"HTTP1.1\",\n    \"HealthCheckInterval\": 10,\n    \"HealthCheckMethod\": \"GET\",\n    \"HealthCheckPath\": \"/hello/index.html\",\n    \"HealthCheckPort\": 80,\n    \"HealthCheckProtocol\": \"HTTP\",\n    \"HealthCheckTemplateName\": \"lbtg-0zrnc9qa-template\",\n    \"HealthCheckTimeout\": 2,\n    \"HealthCheckUnhealthyThreshold\": 2,\n    \"Tags\": [\n        {\n            \"TagKey\": \"key-xxx\",\n            \"TagValue\": \"value-xxx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"HealthCheckTemplateId\": \"hct-m4x8q2pa\",\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "创建健康检查模板"
+      }
+    ],
+    "CreateListener": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateListener\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"ListenerProtocol\": \"HTTPS\",\n    \"ListenerPort\": 80,\n    \"ListenerName\": \"443\",\n    \"DefaultActions\": [\n        {\n            \"Type\": \"TargetGroup\",\n            \"TargetGroupConfig\": {\n                \"TargetGroups\": [\n                    {\n                        \"TargetGroupId\": \"lbtg-0zrnc9qa\"\n                    }\n                ]\n            }\n        }\n    ],\n    \"CertificateIds\": [\n        \"Fm8Wp7x8\"\n    ],\n    \"CaEnabled\": false,\n    \"Http2Enabled\": false,\n    \"GzipEnabled\": false,\n    \"RequestTimeout\": 60,\n    \"IdleTimeout\": 15,\n    \"SecurityPolicyId\": \"tls-t2ckydug\",\n    \"XForwardedForConfig\": {\n        \"XForwardedForMode\": \"append\",\n        \"XForwardedForProtoEnabled\": false,\n        \"XForwardedForPortEnabled\": false,\n        \"XForwardedForHostEnabled\": false,\n        \"XForwardedForClientSrcPortEnabled\": false,\n        \"XTencentClientSDNEnabled\": false,\n        \"XTencentClientIDNEnabled\": false,\n        \"XTencentClientSerialEnabled\": false,\n        \"XTencentClientVerifyEnabled\": false\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ListenerId\": \"lst-d9p3k7wa\",\n        \"RequestId\": \"e3bc3ab0-e453-4a83-92c4-8fcdda1e08c1\"\n    }\n}",
+        "title": "创建监听器"
+      }
+    ],
+    "CreateLoadBalancer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancer\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-92hffaxb\",\n    \"AddressType\": \"Internet\",\n    \"ZoneMappings\": [\n        {\n            \"SubnetId\": \"subnet-bi75pogm\",\n            \"ZoneId\": \"ap-guangzhou-2\"\n        },\n        {\n            \"SubnetId\": \"subnet-bi75pogm\",\n            \"ZoneId\": \"ap-guangzhou-3\"\n        }\n    ],\n    \"LoadBalancerBillingConfig\": {\n        \"ChargeType\": \"POSTPAID_BY_HOUR\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"LoadBalancerId\": \"alb-f8q2xk9m\",\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "创建公网CLB"
+      }
+    ],
+    "CreateRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRules\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"ListenerId\": \"lst-d9p3k7wa\",\n    \"Rules\": [\n        {\n            \"Direction\": \"Request\",\n            \"Priority\": 1,\n            \"RuleName\": \"rule1\",\n            \"Conditions\": [\n                {\n                    \"Type\": \"Host\",\n                    \"HostConfig\": [\n                        \"test.com\"\n                    ]\n                }\n            ],\n            \"Actions\": [\n                {\n                    \"Type\": \"TargetGroup\",\n                    \"Order\": 1,\n                    \"TargetGroupConfig\": {\n                        \"TargetGroups\": [\n                            {\n                                \"TargetGroupId\": \"lbtg-0zrnc9qa\",\n                                \"Weight\": 10\n                            }\n                        ]\n                    }\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleIds\": [\n            \"rule-h8cy5gwl\"\n        ],\n        \"RequestId\": \"d3614848-765c-4890-b381-72a192ac8c21\"\n    }\n}",
+        "title": "创建规则"
+      }
+    ],
+    "CreateSecurityPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityPolicy\n<公共请求参数>\n\n{\n    \"Ciphers\": [\n        \"TLS_AES_128_GCM_SHA256\"\n    ],\n    \"SecurityPolicyName\": \"test-policy\",\n    \"TLSVersions\": [\n        \"TLSv1.2\",\n        \"TLSv1.3\"\n    ],\n    \"Tags\": [\n        {\n            \"TagKey\": \"key-xxx\",\n            \"TagValue\": \"value-xxx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SecurityPolicyId\": \"tls-t2ckydug\",\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "创建自定义安全策略"
+      }
+    ],
+    "CreateTargetGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTargetGroup\n<公共请求参数>\n\n{\n    \"HealthCheckConfig\": {\n        \"HealthCheckCodes\": [\n            \"http_1xx\"\n        ],\n        \"HealthCheckEnabled\": true,\n        \"HealthCheckHealthyThreshold\": 2,\n        \"HealthCheckHost\": \"example.com\",\n        \"HealthCheckHttpVersion\": \"HTTP1.1\",\n        \"HealthCheckInterval\": 10,\n        \"HealthCheckMethod\": \"GET\",\n        \"HealthCheckPath\": \"/hello/index.html\",\n        \"HealthCheckPort\": 80,\n        \"HealthCheckProtocol\": \"HTTP\",\n        \"HealthCheckTimeout\": 2,\n        \"HealthCheckUnhealthyThreshold\": 2\n    },\n    \"KeepaliveEnabled\": true,\n    \"Protocol\": \"HTTP\",\n    \"SchedulerAlgorithm\": \"wrr\",\n    \"StickySessionConfig\": {\n        \"Cookie\": \"SERVERID\",\n        \"CookieTimeout\": 20,\n        \"StickySessionEnabled\": true,\n        \"StickySessionType\": \"Insert\"\n    },\n    \"Tags\": [\n        {\n            \"TagKey\": \"key-xxx\",\n            \"TagValue\": \"value-xxx\"\n        }\n    ],\n    \"TargetGroupName\": \"test-group\",\n    \"TargetType\": \"Instance\",\n    \"VpcId\": \"vpc-92hffaxb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TargetGroupId\": \"lbtg-0zrnc9qa\",\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "创建目标组"
+      }
+    ],
+    "DeleteHealthCheckTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteHealthCheckTemplates\n<公共请求参数>\n\n{\n    \"HealthCheckTemplateIds\": [\n        \"hct-p7q4x2ma\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "删除健康检查模板"
+      }
+    ],
+    "DeleteListener": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteListener\n<公共请求参数>\n\n{\n    \"ListenerIds\": [\n        \"lst-d9p3k7wa\"\n    ],\n    \"LoadBalancerId\": \"alb-f8q2xk9m\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "删除监听器"
+      }
+    ],
+    "DeleteLoadBalancers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLoadBalancers\n<公共请求参数>\n\n{\n    \"LoadBalancerIds\": [\n        \"alb-f8q2xk9m\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a458011e-dc04-43bd-9851-3cc2276fb6fb\"\n    }\n}",
+        "title": "删除实例"
+      }
+    ],
+    "DeleteRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRules\n<公共请求参数>\n\n{\n    \"ListenerId\": \"lst-d9p3k7wa\",\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"RuleIds\": [\n        \"rule-h8cy5gwl\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "删除转发规则"
+      }
+    ],
+    "DeleteSecurityPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityPolicy\n<公共请求参数>\n\n{\n    \"SecurityPolicyIds\": [\n        \"tls-t2ckydug\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "删除安全策略"
+      }
+    ],
+    "DeleteTargetGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTargetGroups\n<公共请求参数>\n\n{\n    \"TargetGroupIds\": [\n        \"lbtg-0zrnc9qa\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "删除目标组"
+      }
+    ],
+    "DescribeAsyncJobs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAsyncJobs\n<公共请求参数>\n\n{\n    \"RequestIds\": [\n        \"c318a537-9bfa-40c2-b6d5-e6f872ad4b1f\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Jobs\": [\n            {\n                \"ApiName\": \"DisassociateBandwidthPackageFromLoadBalancer\",\n                \"RequestId\": \"c318a537-9bfa-40c2-b6d5-e6f872ad4b1f\",\n                \"ResourceIds\": [\n                    \"alb-f8q2xk9m\"\n                ],\n                \"Status\": \"Succeeded\"\n            }\n        ],\n        \"MaxResults\": 20,\n        \"NextToken\": \"\",\n        \"TotalCount\": 1,\n        \"RequestId\": \"e4bf85e4-739f-4a3e-9ce1-d98d1fa2a876\"\n    }\n}",
+        "title": "查询异步任务信息"
+      }
+    ],
+    "DescribeHealthCheckTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHealthCheckTemplates\n<公共请求参数>\n\n{\n    \"HealthCheckTemplateIds\": [\n        \"hct-m4x8q2pa\"\n    ],\n    \"MaxResults\": \"20\"\n}",
+        "output": "{\n    \"Response\": {\n        \"HealthCheckTemplates\": [\n            {\n                \"HealthCheckCodes\": [\n                    \"http_1xx\"\n                ],\n                \"HealthCheckHealthyThreshold\": 2,\n                \"HealthCheckHost\": \"example.com\",\n                \"HealthCheckHttpVersion\": \"HTTP1.1\",\n                \"HealthCheckInterval\": 10,\n                \"HealthCheckMethod\": \"GET\",\n                \"HealthCheckPath\": \"/hello/index.html\",\n                \"HealthCheckPort\": 80,\n                \"HealthCheckProtocol\": \"HTTP\",\n                \"HealthCheckTemplateId\": \"hct-m4x8q2pa\",\n                \"HealthCheckTemplateName\": \"target-group-health-check\",\n                \"CreateTime\": \"2025-01-01T08:30:00+08:00\",\n                \"ModifyTime\": \"2025-01-01T08:30:00+08:00\",\n                \"HealthCheckTimeout\": 2,\n                \"HealthCheckUnhealthyThreshold\": 2,\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"key-xxx\",\n                        \"TagValue\": \"value-xxx\"\n                    }\n                ]\n            }\n        ],\n        \"NextToken\": \"3974ae26e***\",\n        \"TotalCount\": 1,\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "查询健康检查模板列表"
+      }
+    ],
+    "DescribeListenerCertificates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListenerCertificates\n<公共请求参数>\n\n{\n    \"CertificateType\": \"SVR\",\n    \"ListenerId\": \"lst-d9p3k7wa\",\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"MaxResults\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Certificates\": [\n            {\n                \"CertificateId\": \"Fm8Wp7x8\",\n                \"CertificateType\": \"SVR\",\n                \"AssociatedTime\": \"2024-06-12T10:34:56Z\",\n                \"IsDefault\": true,\n                \"Status\": \"Associated\"\n            }\n        ],\n        \"MaxResults\": 20,\n        \"NextToken\": \"2c44874464923a9f\",\n        \"TotalCount\": 200,\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "查询监听器绑定证书列表"
+      }
+    ],
+    "DescribeListenerDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListenerDetail\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"ListenerId\": \"lst-d9p3k7wa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LoadBalancerId\": \"alb-f8q2xk9m\",\n        \"ListenerId\": \"lst-d9p3k7wa\",\n        \"ListenerName\": \"443\",\n        \"ListenerPort\": 80,\n        \"ListenerProtocol\": \"HTTPS\",\n        \"ListenerStatus\": \"Active\",\n        \"CertificateIds\": [\n            \"Fm8Wp7x8\"\n        ],\n        \"CaCertificateIds\": [],\n        \"GzipEnabled\": false,\n        \"CaEnabled\": false,\n        \"Http2Enabled\": false,\n        \"SecurityPolicyId\": \"tls-t2ckydug\",\n        \"IdleTimeout\": 15,\n        \"RequestTimeout\": 60,\n        \"XForwardedForConfig\": {\n            \"XForwardedForMode\": \"append\",\n            \"XForwardedForProtoEnabled\": false,\n            \"XForwardedForPortEnabled\": false,\n            \"XForwardedForHostEnabled\": false,\n            \"XForwardedForClientSrcPortEnabled\": false,\n            \"XTencentClientSDNEnabled\": false,\n            \"XTencentClientIDNEnabled\": false,\n            \"XTencentClientSerialEnabled\": false,\n            \"XTencentClientVerifyEnabled\": false\n        },\n        \"DefaultActions\": [\n            {\n                \"Type\": \"TargetGroup\",\n                \"TargetGroupConfig\": {\n                    \"TargetGroups\": [\n                        {\n                            \"TargetGroupId\": \"lbtg-0zrnc9qa\",\n                            \"Weight\": 10\n                        }\n                    ]\n                }\n            }\n        ],\n        \"Tags\": [],\n        \"RequestId\": \"cb7e17c7-9e71-42d2-9fa6-ed98bef10c93\"\n    }\n}",
+        "title": "查询监听器详情"
+      }
+    ],
+    "DescribeListenerHealthStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListenerHealthStatus\n<公共请求参数>\n\n{\n    \"IncludeRule\": false,\n    \"ListenerId\": \"lst-d9p3k7wa\",\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"MaxResults\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"ListenerId\": \"lst-d9p3k7wa\",\n        \"ListenerPort\": \"80\",\n        \"ListenerProtocol\": \"HTTP\",\n        \"NextToken\": \"2c44874464923a9f\",\n        \"RuleHealthStatusInfos\": [\n            {\n                \"IsDefaultRule\": \"false\",\n                \"RuleId\": \"rule-h8cy5gwl\",\n                \"TargetGroupHealthInfos\": [\n                    {\n                        \"HealthCheckEnabled\": true,\n                        \"TargetGroupId\": \"lbtg-0zrnc9qa\",\n                        \"TargetHealthStatusInfos\": [\n                            {\n                                \"Status\": \"Healthy\",\n                                \"TargetId\": \"ins-x8q2m4pa\",\n                                \"TargetIp\": \"10.0.0.1\",\n                                \"TargetPort\": 80\n                            }\n                        ],\n                        \"Type\": \"TargetGroup\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "查询监听器健康状态"
+      }
+    ],
+    "DescribeListeners": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListeners\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"MaxResults\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"LoadBalancerId\": \"alb-f8q2xk9m\",\n        \"Listeners\": [\n            {\n                \"ListenerId\": \"lst-d9p3k7wa\",\n                \"ListenerName\": \"443\",\n                \"ListenerProtocol\": \"HTTPS\",\n                \"ListenerPort\": 80,\n                \"ListenerStatus\": \"Active\",\n                \"GzipEnabled\": false,\n                \"Http2Enable\": false,\n                \"CaEnable\": false,\n                \"RequestTimeout\": 60,\n                \"IdleTimeout\": 15,\n                \"TlsSecurityPolicyId\": \"tls-t2ckydug\",\n                \"XForwardedForConfig\": {\n                    \"XForwardedForMode\": \"append\",\n                    \"XForwardedForProtoEnabled\": false,\n                    \"XForwardedForPortEnabled\": false,\n                    \"XForwardedForHostEnabled\": false,\n                    \"XForwardedForClientSrcPortEnabled\": false,\n                    \"XTencentClientSDNEnabled\": false,\n                    \"XTencentClientIDNEnabled\": false,\n                    \"XTencentClientSerialEnabled\": false,\n                    \"XTencentClientVerifyEnabled\": false\n                },\n                \"Tags\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"MaxResults\": 1,\n        \"NextToken\": \"\",\n        \"RequestId\": \"1d92eab2-8e5b-4c29-b1b8-4454479c7196\"\n    }\n}",
+        "title": "查询监听器列表"
+      }
+    ],
+    "DescribeLoadBalancerDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoadBalancerDetail\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"alb-f8q2xk9m\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LoadBalancerDetail\": {\n            \"AccessLogConfig\": {\n                \"LogSetId\": \"\",\n                \"LogTopicId\": \"\"\n            },\n            \"AddressIpVersion\": \"IPv4\",\n            \"AddressType\": \"Intranet\",\n            \"CreateTime\": \"2025-10-30T12:00:00+08:00\",\n            \"DeletionProtection\": {\n                \"DeletionProtectionEnabled\": false,\n                \"Reason\": \"\"\n            },\n            \"Domain\": \"alb-f8q2xk9m-vcpcq5puad9vp3xm.gz-tencentalb.com\",\n            \"LoadBalancerBillingConfig\": {\n                \"BandwidthPackageId\": \"bwp-q8m2x4pa\",\n                \"ChargeType\": \"POSTPAID_BY_HOUR\"\n            },\n            \"LoadBalancerId\": \"alb-f8q2xk9m\",\n            \"LoadBalancerName\": \"test-name\",\n            \"LoadBalancerOperationLocks\": [],\n            \"LoadBalancerStatus\": \"Active\",\n            \"ModificationProtection\": {\n                \"ModificationProtectionEnabled\": false,\n                \"OperatorUin\": \"\",\n                \"Reason\": \"\"\n            },\n            \"SecurityGroupIds\": [],\n            \"Tags\": [],\n            \"VpcId\": \"vpc-92hffaxb\",\n            \"ZoneMappings\": [\n                {\n                    \"LoadBalancerAddress\": {\n                        \"IPv4Address\": [\n                            {\n                                \"Address\": \"172.16.80.118\",\n                                \"AddressId\": \"\"\n                            }\n                        ],\n                        \"IPv6Address\": []\n                    },\n                    \"Status\": \"Active\",\n                    \"SubnetId\": \"subnet-bi75pogm\",\n                    \"ZoneId\": \"ap-guangzhou-3\"\n                },\n                {\n                    \"LoadBalancerAddress\": {\n                        \"IPv4Address\": [\n                            {\n                                \"Address\": \"172.16.32.181\",\n                                \"AddressId\": \"\"\n                            }\n                        ],\n                        \"IPv6Address\": []\n                    },\n                    \"Status\": \"Active\",\n                    \"SubnetId\": \"subnet-bi75pogm\",\n                    \"ZoneId\": \"ap-guangzhou-2\"\n                }\n            ]\n        },\n        \"RequestId\": \"f87fe97c-d4b3-4c1e-9256-36af067be287\"\n    }\n}",
+        "title": "查询实例详情"
+      }
+    ],
+    "DescribeLoadBalancers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoadBalancers\n<公共请求参数>\n\n{\n    \"MaxResults\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"LoadBalancers\": [\n            {\n                \"AddressIpVersion\": \"IPv4\",\n                \"AddressType\": \"Internet\",\n                \"CreateTime\": \"2026-05-25 18:27:42\",\n                \"DeletionProtection\": {\n                    \"DeletionProtectionEnabled\": false,\n                    \"Reason\": \"\"\n                },\n                \"Domain\": \"alb-f8q2xk9m-c0rpri8t217fy3ii.gz-tencentalb.com\",\n                \"LoadBalancerBillingConfig\": {\n                    \"BandwidthPackageId\": \"bwp-q8m2x4pa\",\n                    \"ChargeType\": \"POSTPAID_BY_HOUR\"\n                },\n                \"LoadBalancerId\": \"alb-f8q2xk9m\",\n                \"LoadBalancerName\": \"alb-f8q2xk9m\",\n                \"LoadBalancerOperationLocks\": [],\n                \"LoadBalancerStatus\": \"Active\",\n                \"ModificationProtection\": {\n                    \"ModificationProtectionEnabled\": false,\n                    \"OperatorUin\": \"\",\n                    \"Reason\": \"\"\n                },\n                \"Tags\": [],\n                \"VpcId\": \"vpc-92hffaxb\"\n            }\n        ],\n        \"MaxResults\": 1,\n        \"NextToken\": \"eyJsYXN0X3Jlc291cmNlX2lkIjogImFsYi01cWw0MHZzayIsICJsYXN0X2RiX2lkIjogNjY1MCwgInRvdGFsX2NvdW50IjogMjd9\",\n        \"TotalCount\": 27,\n        \"RequestId\": \"d635fb06-fa8a-41fe-bb34-ef1b0615364f\"\n    }\n}",
+        "title": "查询负载均衡实例列表"
+      }
+    ],
+    "DescribeQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQuota\n<公共请求参数>\n\n{\n    \"QuotaTypes\": [\n        \"alb_quota_loadbalancers_num\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Quotas\": [\n            {\n                \"Available\": null,\n                \"Limit\": 60,\n                \"QuotaType\": \"alb_quota_loadbalancers_num\",\n                \"ResourceId\": \"alblcu-e8p3x9mq\",\n                \"Used\": null\n            }\n        ],\n        \"RequestId\": \"c6585b63-353a-48cb-93ec-b23321e3b7ea\"\n    }\n}",
+        "title": "查询每个地域可创建的 ALB 实例数"
+      }
+    ],
+    "DescribeRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRules\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"ListenerId\": \"lst-d9p3k7wa\",\n    \"MaxResults\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"NextToken\": \"\",\n        \"Rules\": [\n            {\n                \"RuleId\": \"rule-h8cy5gwl\",\n                \"Priority\": 1,\n                \"RuleName\": \"rule1\",\n                \"Direction\": \"Request\",\n                \"Conditions\": [\n                    {\n                        \"Type\": \"Host\",\n                        \"HostConfig\": [\n                            \"test.com\"\n                        ]\n                    }\n                ],\n                \"Actions\": [\n                    {\n                        \"Type\": \"TargetGroup\",\n                        \"Order\": 1,\n                        \"TargetGroupConfig\": {\n                            \"TargetGroups\": [\n                                {\n                                    \"TargetGroupId\": \"lbtg-0zrnc9qa\",\n                                    \"Weight\": 10\n                                }\n                            ]\n                        }\n                    }\n                ],\n                \"Status\": \"Active\",\n                \"Tags\": []\n            }\n        ],\n        \"RequestId\": \"ed300290-70cc-41f6-af02-50e151f91f90\"\n    }\n}",
+        "title": "查询规则列表"
+      }
+    ],
+    "DescribeSecurityPolicies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityPolicies\n<公共请求参数>\n\n{\n    \"MaxResults\": 20,\n    \"SecurityPolicyIds\": [\n        \"tls-t2ckydug\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NextToken\": \"\",\n        \"SecurityPolicies\": [\n            {\n                \"SecurityPolicyId\": \"tls-t2ckydug\",\n                \"SecurityPolicyName\": \"test-policy\",\n                \"Status\": \"Active\",\n                \"TLSVersions\": [\n                    \"TLSv1.2\",\n                    \"TLSv1.3\"\n                ],\n                \"Ciphers\": [\n                    \"TLS_AES_128_GCM_SHA256\"\n                ],\n                \"CreateTime\": \"2025-01-01T08:30:00+08:00\",\n                \"Tags\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "查询自定义安全策略"
+      }
+    ],
+    "DescribeSecurityPolicyCapabilities": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityPolicyCapabilities\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"SecurityPolicyCapabilities\": [\n            {\n                \"TLSVersion\": \"TLSv1.3\",\n                \"Ciphers\": [\n                    \"TLS_AES_128_GCM_SHA256\"\n                ]\n            }\n        ],\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "获取支持的安全策略加密套件设置"
+      }
+    ],
+    "DescribeSecurityPolicyRelations": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityPolicyRelations\n<公共请求参数>\n\n{\n    \"SecurityPolicyIds\": [\n        \"tls-t2ckydug\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SecurityPolicyRelations\": [\n            {\n                \"SecurityPolicyId\": \"tls-t2ckydug\",\n                \"RelatedListeners\": [\n                    {\n                        \"LoadBalancerId\": \"alb-f8q2xk9m\",\n                        \"ListenerId\": \"lst-d9p3k7wa\",\n                        \"ListenerProtocol\": \"HTTPS\",\n                        \"ListenerPort\": 443\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "查询安全策略关联关系"
+      }
+    ],
+    "DescribeSystemSecurityPolicies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSystemSecurityPolicies\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"SecurityPolicies\": [\n            {\n                \"SecurityPolicyId\": \"tls-t2ckydug\",\n                \"SecurityPolicyName\": \"test-policy\",\n                \"Status\": \"Active\",\n                \"TLSVersions\": [\n                    \"TLSv1.2\",\n                    \"TLSv1.3\"\n                ],\n                \"Ciphers\": [\n                    \"TLS_AES_128_GCM_SHA256\"\n                ],\n                \"CreateTime\": \"2025-01-01T08:30:00+08:00\",\n                \"Tags\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "查询系统安全策略"
+      }
+    ],
+    "DescribeTargetGroupTargets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTargetGroupTargets\n<公共请求参数>\n\n{\n    \"MaxResults\": 20,\n    \"TargetGroupId\": \"lbtg-0zrnc9qa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NextToken\": \"\",\n        \"Targets\": [\n            {\n                \"TargetIp\": \"10.0.0.1\",\n                \"Port\": 80,\n                \"Weight\": 10,\n                \"TargetStatus\": \"Active\",\n                \"TargetType\": \"CVM\",\n                \"TargetId\": \"ins-x8q2m4pa\",\n                \"TargetName\": \"\",\n                \"EniId\": \"eni-p4q7x2ma\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "查询目标组内后端服务"
+      }
+    ],
+    "DescribeTargetGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTargetGroups\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Protocol\",\n            \"Values\": [\n                \"HTTP\",\n                \"HTTPS\"\n            ]\n        }\n    ],\n    \"MaxResults\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"TargetGroups\": [\n            {\n                \"TargetGroupId\": \"lbtg-0zrnc9qa\",\n                \"TargetGroupName\": \"group1\",\n                \"TargetType\": \"Instance\",\n                \"Protocol\": \"HTTP\",\n                \"VpcId\": \"vpc-92hffaxb\",\n                \"SchedulerAlgorithm\": \"wrr\",\n                \"CreateTime\": \"2026-06-03T11:18:25+08:00\",\n                \"KeepaliveEnabled\": false,\n                \"Tags\": [],\n                \"RelatedLoadBalancersCount\": 2,\n                \"TargetGroupStatus\": \"Active\",\n                \"HealthCheckConfig\": {\n                    \"HealthCheckEnabled\": true,\n                    \"HealthCheckPort\": 0,\n                    \"HealthCheckProtocol\": \"HTTP\",\n                    \"HealthCheckCodes\": [\n                        \"http_1xx\",\n                        \"http_2xx\",\n                        \"http_3xx\",\n                        \"http_4xx\"\n                    ],\n                    \"HealthCheckInterval\": 5,\n                    \"HealthCheckHttpVersion\": \"HTTP1.1\",\n                    \"HealthCheckMethod\": \"HEAD\",\n                    \"HealthCheckPath\": \"/\",\n                    \"HealthCheckTimeout\": 2,\n                    \"HealthCheckHealthyThreshold\": 3,\n                    \"HealthCheckUnhealthyThreshold\": 3,\n                    \"HealthCheckHost\": \"aaa.com\"\n                },\n                \"StickySessionConfig\": {\n                    \"StickySessionEnabled\": false\n                }\n            },\n            {\n                \"TargetGroupId\": \"lbtg-0zrnc9qa\",\n                \"TargetGroupName\": \"group2\",\n                \"TargetType\": \"Instance\",\n                \"Protocol\": \"HTTP\",\n                \"VpcId\": \"vpc-92hffaxb\",\n                \"SchedulerAlgorithm\": \"wrr\",\n                \"CreateTime\": \"2026-06-03T11:17:34+08:00\",\n                \"KeepaliveEnabled\": false,\n                \"Tags\": [],\n                \"RelatedLoadBalancersCount\": 0,\n                \"TargetGroupStatus\": \"Active\",\n                \"HealthCheckConfig\": {\n                    \"HealthCheckEnabled\": true,\n                    \"HealthCheckPort\": 0,\n                    \"HealthCheckProtocol\": \"HTTP\",\n                    \"HealthCheckCodes\": [\n                        \"http_1xx\",\n                        \"http_2xx\",\n                        \"http_3xx\",\n                        \"http_4xx\"\n                    ],\n                    \"HealthCheckInterval\": 5,\n                    \"HealthCheckHttpVersion\": \"HTTP1.1\",\n                    \"HealthCheckMethod\": \"HEAD\",\n                    \"HealthCheckPath\": \"/\",\n                    \"HealthCheckTimeout\": 2,\n                    \"HealthCheckHealthyThreshold\": 3,\n                    \"HealthCheckUnhealthyThreshold\": 3,\n                    \"HealthCheckHost\": \"aaa.com\"\n                },\n                \"StickySessionConfig\": {\n                    \"StickySessionEnabled\": false\n                }\n            }\n        ],\n        \"RequestId\": \"fb47afdf-9728-4362-ad51-7049878fca3a\"\n    }\n}",
+        "title": "查询目标组列表"
+      }
+    ],
+    "DescribeTargetGroupsByTarget": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTargetGroupsByTarget\n<公共请求参数>\n\n{\n    \"TargetId\": [\n        \"ins-x8q2m4pa\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "根据后端服务查询绑定的目标组"
+      }
+    ],
+    "DescribeZones": [
+      {
+        "document": "查询所有可用区",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZones\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Zones\": [\n            {\n                \"ZoneId\": \"ap-guangzhou-2\",\n                \"LocalName\": \"广州二区\",\n                \"ZoneStatus\": \"available\"\n            },\n            {\n                \"ZoneId\": \"ap-guangzhou-3\",\n                \"LocalName\": \"广州三区\",\n                \"ZoneStatus\": \"available\"\n            }\n        ],\n        \"RequestId\": \"4e5df572-e085-4e30-a3bb-d520768d1473\"\n    }\n}",
+        "title": "查询所有可用区"
+      }
+    ],
+    "DisassociateBandwidthPackageFromLoadBalancer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateBandwidthPackageFromLoadBalancer\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"BandwidthPackageId\": \"bwp-q8m2x4pa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c318a537-9bfa-40c2-b6d5-e6f872ad4b1f\"\n    }\n}",
+        "title": "实例解绑共享带宽包"
+      }
+    ],
+    "DisassociateListenerAdditionalCertificates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateListenerAdditionalCertificates\n<公共请求参数>\n\n{\n    \"CertificateIds\": [\n        \"Fm8Wp7x8\"\n    ],\n    \"ListenerId\": \"lst-d9p3k7wa\",\n    \"LoadBalancerId\": \"alb-f8q2xk9m\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "监听器解绑扩展证书"
+      }
+    ],
+    "InquirePriceCreateLoadBalancer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceCreateLoadBalancer\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"Discount\": 100,\n                \"UnitPrice\": 0.2,\n                \"UnitPriceDiscount\": 0.2\n            },\n            \"LcuPrice\": {\n                \"Discount\": 100,\n                \"UnitPrice\": 0.049,\n                \"UnitPriceDiscount\": 0.049\n            }\n        },\n        \"RequestId\": \"255917ce-96f9-46f6-9c13-8f498469e824\"\n    }\n}",
+        "title": "创建负载均衡实例询价"
+      }
+    ],
+    "ModifyHealthCheckTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHealthCheckTemplate\n<公共请求参数>\n\n{\n    \"HealthCheckCodes\": [\n        \"http_1xx\"\n    ],\n    \"HealthCheckHealthyThreshold\": 2,\n    \"HealthCheckHost\": \"example.com\",\n    \"HealthCheckHttpVersion\": \"HTTP1.1\",\n    \"HealthCheckInterval\": 10,\n    \"HealthCheckMethod\": \"GET\",\n    \"HealthCheckPath\": \"/hello/index.html\",\n    \"HealthCheckPort\": 80,\n    \"HealthCheckProtocol\": \"HTTP\",\n    \"HealthCheckTemplateId\": \"hct-m4x8q2pa\",\n    \"HealthCheckTemplateName\": \"lbtg-0zrnc9qa-template\",\n    \"HealthCheckTimeout\": 2,\n    \"HealthCheckUnhealthyThreshold\": 2,\n    \"Tags\": [\n        {\n            \"TagKey\": \"key-xxx\",\n            \"TagValue\": \"value-xxx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "修改健康检查模板"
+      }
+    ],
+    "ModifyListenerAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyListenerAttributes\n<公共请求参数>\n\n{\n    \"CaCertificateIds\": [\n        \"Fm8Wp7x8\"\n    ],\n    \"CaEnabled\": false,\n    \"CertificateIds\": [\n        \"Fm8Wp7x8\"\n    ],\n    \"DefaultActions\": [\n        {\n            \"TargetGroupConfig\": {\n                \"TargetGroupStickySession\": {\n                    \"Enabled\": false,\n                    \"Timeout\": 1000\n                },\n                \"TargetGroups\": [\n                    {\n                        \"TargetGroupId\": \"lbtg-0zrnc9qa\",\n                        \"Weight\": 10\n                    }\n                ]\n            },\n            \"Type\": \"TargetGroup\"\n        }\n    ],\n    \"GzipEnabled\": false,\n    \"Http2Enabled\": true,\n    \"IdleTimeout\": 15,\n    \"ListenerId\": \"lst-d9p3k7wa\",\n    \"ListenerName\": \"http_listener\",\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"RequestTimeout\": 60,\n    \"SecurityPolicyId\": \"tls-t2ckydug\",\n    \"XForwardedForConfig\": {\n        \"XForwardedForAlbIdEnabled\": false,\n        \"XForwardedForClientSrcPortEnabled\": false,\n        \"XForwardedForHostEnabled\": false,\n        \"XForwardedForMode\": \"append\",\n        \"XForwardedForPortEnabled\": false,\n        \"XForwardedForProtoEnabled\": false,\n        \"XTencentClientIDNEnabled\": false,\n        \"XTencentClientSDNEnabled\": false,\n        \"XTencentClientSerialEnabled\": false,\n        \"XTencentClientVerifyEnabled\": false\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "修改监听器"
+      }
+    ],
+    "ModifyLoadBalancerAddressType": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoadBalancerAddressType\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"AddressType\": \"Intranet\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a44ec7d9-94ce-4c45-8fb0-bab95dbb5122\"\n    }\n}",
+        "title": "将实例类型修改为内网"
+      }
+    ],
+    "ModifyLoadBalancerAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoadBalancerAttributes\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"LoadBalancerName\": \"test-name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed530899-814d-4b1f-90f6-832a89458728\"\n    }\n}",
+        "title": "修改实例名称"
+      }
+    ],
+    "ModifyLoadBalancerModificationProtection": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoadBalancerModificationProtection\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"ModificationProtectionEnabled\": true,\n    \"Reason\": \"prod_protection\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "设置负载均衡实例操作保护"
+      }
+    ],
+    "ModifyRulesAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRulesAttributes\n<公共请求参数>\n\n{\n    \"ListenerId\": \"lst-d9p3k7wa\",\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"Rules\": [\n        {\n            \"Actions\": [\n                {\n                    \"FixedResponseConfig\": {\n                        \"Content\": \"OK\",\n                        \"ContentType\": \"text/html\",\n                        \"HttpCode\": 200\n                    },\n                    \"InsertHeaderConfig\": {\n                        \"Key\": \"ClientVer\",\n                        \"Value\": \"1.0\",\n                        \"ValueType\": \"UserDefined\"\n                    },\n                    \"Order\": 1,\n                    \"RedirectConfig\": {\n                        \"Host\": \"www.redirect.com\",\n                        \"HttpCode\": 301,\n                        \"Path\": \"/redirecturl\",\n                        \"Port\": \"443\",\n                        \"Protocol\": \"HTTPS\",\n                        \"Query\": \"${query}\"\n                    },\n                    \"RemoveHeaderConfig\": {\n                        \"Key\": \"ClientVer\"\n                    },\n                    \"RewriteConfig\": {\n                        \"Host\": \"www.myhost.com\",\n                        \"Path\": \"/redirecturl\",\n                        \"Query\": \"${query}\"\n                    },\n                    \"TargetGroupConfig\": {\n                        \"TargetGroupStickySession\": {\n                            \"Enabled\": false,\n                            \"Timeout\": 1000\n                        },\n                        \"TargetGroups\": [\n                            {\n                                \"TargetGroupId\": \"lbtg-0zrnc9qa\",\n                                \"Weight\": 10\n                            }\n                        ]\n                    },\n                    \"Type\": \"TargetGroup\"\n                }\n            ],\n            \"Conditions\": [\n                {\n                    \"CookieConfig\": [\n                        {\n                            \"Key\": \"ClientId\",\n                            \"Value\": \"xea4cd\"\n                        }\n                    ],\n                    \"HeaderConfig\": {\n                        \"Key\": \"ClientVer\",\n                        \"Values\": [\n                            \"1.0\",\n                            \"1.1\"\n                        ]\n                    },\n                    \"HostConfig\": [\n                        \"www.myhost.com\"\n                    ],\n                    \"MethodConfig\": [\n                        \"GET\"\n                    ],\n                    \"PathConfig\": [\n                        \"/url\"\n                    ],\n                    \"QueryStringConfig\": [\n                        {\n                            \"Key\": \"ClientVer\",\n                            \"Value\": \"1.1\"\n                        }\n                    ],\n                    \"SourceIpConfig\": [\n                        \"192.168.1.3/32\"\n                    ],\n                    \"Type\": \"Host\"\n                }\n            ],\n            \"Priority\": 100,\n            \"RuleId\": \"rule-h8cy5gwl\",\n            \"RuleName\": \"newName\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "修改转发规则属性"
+      }
+    ],
+    "ModifySecurityPolicyAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityPolicyAttributes\n<公共请求参数>\n\n{\n    \"Ciphers\": [\n        \"TLS_AES_128_GCM_SHA256\"\n    ],\n    \"SecurityPolicyId\": \"tls-t2ckydug\",\n    \"SecurityPolicyName\": \"test-policy2\",\n    \"TLSVersions\": [\n        \"TLSv1.1\",\n        \"TLSv1.2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "修改安全策略"
+      }
+    ],
+    "ModifyTargetGroupAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTargetGroupAttributes\n<公共请求参数>\n\n{\n    \"HealthCheckConfig\": {\n        \"HealthCheckCodes\": [\n            \"http_1xx\"\n        ],\n        \"HealthCheckEnabled\": true,\n        \"HealthCheckHealthyThreshold\": 2,\n        \"HealthCheckHost\": \"example.com\",\n        \"HealthCheckHttpVersion\": \"HTTP1.1\",\n        \"HealthCheckInterval\": 10,\n        \"HealthCheckMethod\": \"GET\",\n        \"HealthCheckPath\": \"/hello/index.html\",\n        \"HealthCheckPort\": 80,\n        \"HealthCheckProtocol\": \"HTTP\",\n        \"HealthCheckTimeout\": 2,\n        \"HealthCheckUnhealthyThreshold\": 2\n    },\n    \"KeepaliveEnabled\": true,\n    \"SchedulerAlgorithm\": \"wrr\",\n    \"StickySessionConfig\": {\n        \"Cookie\": \"SERVERID\",\n        \"CookieTimeout\": 20,\n        \"StickySessionEnabled\": true,\n        \"StickySessionType\": \"Insert\"\n    },\n    \"TargetGroupId\": \"lbtg-0zrnc9qa\",\n    \"TargetGroupName\": \"test-group\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "修改目标组"
+      }
+    ],
+    "ModifyTargetsInTargetGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTargetsInTargetGroup\n<公共请求参数>\n\n{\n    \"TargetGroupId\": \"lbtg-0zrnc9qa\",\n    \"Targets\": [\n        {\n            \"Port\": 80,\n            \"TargetIp\": \"10.0.0.1\",\n            \"Weight\": 100\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "修改目标组内后端服务信息"
+      }
+    ],
+    "NotifyUnbindTarget": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: NotifyUnbindTarget\n<公共请求参数>\n\n{\n    \"Ips\": [\n        \"192.168.0.1\"\n    ],\n    \"NumericVpcId\": 143563231\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "通知负载均衡解绑后端服务"
+      }
+    ],
+    "RemoveTargetsFromTargetGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveTargetsFromTargetGroup\n<公共请求参数>\n\n{\n    \"TargetGroupId\": \"lbtg-0zrnc9qa\",\n    \"Targets\": [\n        {\n            \"Port\": 80,\n            \"TargetIp\": \"10.0.0.1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
+        "title": "从目标组内移除后端服务"
+      }
+    ],
+    "SetLoadBalancerSecurityGroups": [
+      {
+        "document": "负载均衡实例原来绑定了两个安全组：sg-0936o7sd、sg-m2k9q7pa，执行本操作后，安全组 sg-m2k9q7pa 将从此负载均衡实例解绑。",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetLoadBalancerSecurityGroups\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"SecurityGroups\": [\n        \"sg-0936o7sd\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00ca7fca-90f1-47fe-a724-5d7e96d04644\"\n    }\n}",
+        "title": "从负载均衡实例解绑一个安全组"
+      },
+      {
+        "document": "负载均衡实例原来未绑定任何安全组，执行本操作后，安全组 sg-0936o7sd、sg-m2k9q7pa 将被绑定至此负载均衡实例。",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetLoadBalancerSecurityGroups\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"SecurityGroups\": [\n        \"sg-0936o7sd\",\n        \"sg-m2k9q7pa\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00ca7fca-90f1-47fe-a724-5d7e96d04633\"\n    }\n}",
+        "title": "绑定多个安全组至负载均衡实例"
+      },
+      {
+        "document": "负载均衡实例原来已绑定若干个安全组，执行本操作后，所有安全组都将从此负载均衡实例解绑。",
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetLoadBalancerSecurityGroups\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"alb-f8q2xk9m\",\n    \"SecurityGroups\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00ca7fca-90f1-47fe-a724-5d7e96d04655\"\n    }\n}",
+        "title": "解绑所有安全组"
+      }
+    ]
+  },
+  "version": "1.0"
+}

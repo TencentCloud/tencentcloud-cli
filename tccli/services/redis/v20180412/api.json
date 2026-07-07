@@ -2091,7 +2091,7 @@
         {
           "disabled": false,
           "document": "<p>指定实例 ID。例如：crs-xjhsdj****。请登录<a href=\"https://console.cloud.tencent.com/redis\">Redis控制台</a>在实例列表复制实例 ID。</p>",
-          "example": "crs-hnio60jv",
+          "example": "crs-10fvqj29",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2109,7 +2109,7 @@
         {
           "disabled": false,
           "document": "<p>日志检索的起始时间。</p><p>参数格式：YYYY-MM-DD HH:mm:ss，例如 2026-03-06 00:00:00。返回结果中仅包含该时间点及之后的日志。</p>",
-          "example": "2026-03-05 12:42:39",
+          "example": "2026-07-07 19:24:07",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -2118,7 +2118,7 @@
         {
           "disabled": false,
           "document": "<p>日志检索的结束时间。</p><p>参数格式：YYYY-MM-DD HH:mm:ss，例如 2026-03-06 23:59:59。返回结果中仅包含该时间点及之前的日志。</p>",
-          "example": "2026-03-05 16:42:39",
+          "example": "2026-07-08 19:24:07",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -2148,6 +2148,16 @@
     "CreateExportTaskResponse": {
       "document": "CreateExportTask返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件名称</p>",
+          "example": "crs-10fvqj29_20260707-192407_to_20260708-192407_1783425093786.tar.gz",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

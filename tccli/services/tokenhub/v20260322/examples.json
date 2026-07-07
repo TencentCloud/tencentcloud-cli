@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateApiKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApiKey\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7fdc4d0-04d5-4c76-a55e-b8528047a782\"\n    }\n}",
+        "title": "CreateApiKey"
+      }
+    ],
     "CreateGlossary": [
       {
         "document": "",
@@ -30,6 +38,14 @@
         "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTokenPlanTeamOrderAndBuy\n<公共请求参数>\n\n{\n    \"ProductType\": \"enterprise\",\n    \"TeamName\": \"test-team\",\n    \"TimeSpan\": 1,\n    \"CreditOrToken\": 500000,\n    \"EnableAutoRenew\": false\n}",
         "output": "{\n    \"Response\": {\n        \"BigOrderId\": \"big-order-id\",\n        \"RequestId\": \"83c3a50c-370f-42da-bb89-8231fe73d125\"\n    }\n}",
         "title": "成功调用"
+      }
+    ],
+    "DeleteApiKey": [
+      {
+        "document": "删除 API 密钥",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApiKey\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d35eb080-e39b-4c61-8f04-86f3c66ba533\"\n    }\n}",
+        "title": "删除 API 密钥"
       }
     ],
     "DeleteGlossary": [
@@ -150,6 +166,22 @@
         "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsageRankList\n<公共请求参数>\n\n{\n    \"Dimension\": \"apikey\",\n    \"StartTime\": \"2026-04-09T00:00:00+08:00\",\n    \"EndTime\": \"2026-05-09T00:00:00+08:00\",\n    \"Period\": 86400,\n    \"Target\": \"ak-20260618-**************************\"\n}",
         "output": "{\n    \"Response\": {\n        \"Dimension\": \"apikey\",\n        \"EndTime\": \"2026-05-09T00:00:00+08:00\",\n        \"Limit\": 0,\n        \"MetricKeys\": [\n            \"TotalToken\",\n            \"InputTotalToken\",\n            \"OutputTotalToken\"\n        ],\n        \"MetricType\": \"tokens\",\n        \"Offset\": 0,\n        \"PageStats\": {\n            \"InputTotalToken\": 0,\n            \"OutputTotalToken\": 0,\n            \"TotalToken\": 0\n        },\n        \"Period\": 86400,\n        \"RequestId\": \"1568bc1c-946b-4c2b-b69f-6ba93f2bb258\",\n        \"StartTime\": \"2026-04-09T00:00:00+08:00\",\n        \"Timestamps\": [],\n        \"TopList\": [],\n        \"Total\": 0,\n        \"TotalStats\": {\n            \"InputTotalToken\": 0,\n            \"OutputTotalToken\": 0,\n            \"TotalToken\": 0\n        },\n        \"ViewName\": \"tokenhub_uin_apikeyid\"\n    }\n}",
         "title": "DescribeUsageRankList"
+      }
+    ],
+    "ModifyApiKeyInfo": [
+      {
+        "document": " 更新 API 密钥备注信息为“test-new-remark”",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApiKeyInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcdaaab-2aa3-4e03-87fb-795cf37b2079\"\n    }\n}",
+        "title": "ModifyApiKeyInfo 更新 API 密钥备注信息"
+      }
+    ],
+    "ModifyApiKeyStatus": [
+      {
+        "document": "更新 API 密钥状态为禁用",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApiKeyStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0f2e294c-6c10-4ff6-8165-c25b3c5d21e0\"\n    }\n}",
+        "title": "更新 API 密钥状态为禁用"
       }
     ],
     "ModifyGlossaryEntries": [

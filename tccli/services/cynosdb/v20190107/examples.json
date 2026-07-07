@@ -530,6 +530,14 @@
         "title": "查询保险箱下数据备份列表"
       }
     ],
+    "DescribeBackupOverview": [
+      {
+        "document": "Describe Backup Overview",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupOverview\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-gfo7ejhl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupLogicVolume\": 0.009,\n        \"BackupSnapshotVolume\": 0.212,\n        \"BackupTotalVolume\": 0.222,\n        \"BackupVolumeInfos\": [\n            {\n                \"BackupMethod\": \"auto\",\n                \"BackupType\": \"snapshot\",\n                \"BackupVolume\": 0.002\n            },\n            {\n                \"BackupMethod\": \"manual\",\n                \"BackupType\": \"snapshot\",\n                \"BackupVolume\": 0.21\n            },\n            {\n                \"BackupMethod\": \"auto\",\n                \"BackupType\": \"logic\",\n                \"BackupVolume\": 0\n            },\n            {\n                \"BackupMethod\": \"manual\",\n                \"BackupType\": \"logic\",\n                \"BackupVolume\": 0.009\n            }\n        ],\n        \"CrossRegionBackupVolume\": 0,\n        \"CrossRegionBackupVolumeInfos\": [\n            {\n                \"BackupMethod\": \"auto\",\n                \"BackupType\": \"snapshot\",\n                \"BackupVolume\": 0\n            },\n            {\n                \"BackupMethod\": \"manual\",\n                \"BackupType\": \"snapshot\",\n                \"BackupVolume\": 0\n            },\n            {\n                \"BackupMethod\": \"auto\",\n                \"BackupType\": \"logic\",\n                \"BackupVolume\": 0\n            },\n            {\n                \"BackupMethod\": \"manual\",\n                \"BackupType\": \"logic\",\n                \"BackupVolume\": 0\n            }\n        ],\n        \"CrossRegionLogVolume\": 0,\n        \"CrossRegions\": [],\n        \"CrossTotalVolume\": 0,\n        \"LogBinlogVolume\": 5.834,\n        \"LogRedoLogVolume\": 7.466,\n        \"LogTotalVolume\": 13.3,\n        \"RequestId\": \"ccb664a6-5093-40fb-938d-b2d7318c078d\"\n    }\n}",
+        "title": "备份用量总览"
+      }
+    ],
     "DescribeBinlogConfig": [
       {
         "document": "查询binlog配置信息",

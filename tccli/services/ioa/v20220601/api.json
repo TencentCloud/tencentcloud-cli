@@ -4351,7 +4351,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件参数（字段含义请参考接口返回值）\n\n- Mid, 类型String，支持操作：【eq，like，ilike】，支持排序\n- Name, 类型String，支持操作：【eq，like，ilike】，支持排序\n- Itime, 类型String，支持操作：【eq，like，ilike】，支持排序\n- UserName, 类型String，支持操作：【eq，like，ilike】，支持排序\n- MacAddr, 类型String，支持操作：【eq，like，ilike】，支持排序\n- UserId, 类型String，支持操作：【eq，like，ilike】，支持排序\n- Ip, 类型String，支持操作：【eq，like，ilike】，支持排序\n- Tags，类型String，支持操作：【eq，like，ilike】，支持排序\n- LocalIpList，类型String，支持操作：【eq，like，ilike】，支持排序\n- SerialNum，类型String，支持操作：【eq，like，ilike】，支持排序\n- Version，类型String，支持操作：【eq，like，ilike】，支持排序\n- StrVersion，类型String，支持操作：【eq，like，ilike】，支持排序\n- RtpStatus，类型String，支持操作：【eq，like，ilike】，**不支持排序**\n- HostName，类型String，支持操作：【eq，like，ilike】，支持排序\n- IoaUserName，类型String，支持操作：【eq，like，ilike】，支持排序\n- GroupName，类型String，支持操作：【eq，like，ilike】，支持排序\n- CriticalVulListCount，**类型Int**，支持操作：【eq】，**不支持排序**\n- RiskCount，**类型Int**，支持操作：【eq】，**不支持排序**\n- VulVersion，类型String，支持操作：【eq，like，ilike】，**不支持排序**\n- Virusver，类型String，支持操作：【eq，like，ilike】，**不支持排序**\n- SysRepver，类型String，支持操作：【eq，like，ilike】，**不支持排序**\n- BaseBoardSn，类型String，支持操作：【eq，like，ilike】，支持排序\n- Os，类型String，支持操作：【eq，like，ilike】，支持排序\n- ConnActiveTime，类型String，支持操作：【eq，like，ilike】，**不支持排序**\n- FirewallStatus，**类型Int**，支持操作：【eq】，**不支持排序**\n- ProfileName，类型String，支持操作：【eq，like，ilike】，支持排序\n- DomainName，类型String，支持操作：【eq，like，ilike】，支持排序\n- SysRepVersion，类型String，支持操作：【eq，like，ilike】，支持排序\n- VirusVer，类型String，支持操作：【eq，like，ilike】，支持排序\n- Cpu，类型String，支持操作：【eq，like，ilike】，支持排序\n- Memory，类型String，支持操作：【eq，like，ilike】，支持排序\n- HardDiskSize，类型String，支持操作：【eq，like，ilike】，支持排序\n- HardwareChangeCount，**类型Int**，支持操作：【eq】，支持排序\n- AccountName，类型String，支持操作：【like.ilike】，支持排序\n- AccountGroupName，类型String，支持操作：【like.ilike】，支持排序\n- ScreenRecordingPermission，**类型Int**，支持操作：【eq】，支持排序\n- DiskAccessPermission，**类型Int**，支持操作：【eq】，支持排序\n\n\n\n\n\n分页参数\n- PageNum 从1开始，小于等于0时使用默认参数\n- PageSize 最大值5000，最好不超过100",
+          "document": "<p>过滤条件参数（字段含义请参考接口返回值）</p><ul><li>Mid, 类型String，支持操作：【eq，like，ilike】，支持排序</li><li>Name, 类型String，支持操作：【eq，like，ilike】，支持排序</li><li>Itime, 类型String，支持操作：【eq，like，ilike】，支持排序</li><li>UserName, 类型String，支持操作：【eq，like，ilike】，支持排序</li><li>MacAddr, 类型String，支持操作：【eq，like，ilike】，支持排序</li><li>UserId, 类型String，支持操作：【eq，like，ilike】，支持排序</li><li>Ip, 类型String，支持操作：【eq，like，ilike】，支持排序</li><li>Tags，类型String，支持操作：【eq，like，ilike】，支持排序</li><li>LocalIpList，类型String，支持操作：【eq，like，ilike】，支持排序</li><li>SerialNum，类型String，支持操作：【eq，like，ilike】，支持排序</li><li>Version，类型String，支持操作：【eq，like，ilike】，支持排序</li><li>StrVersion，类型String，支持操作：【eq，like，ilike】，支持排序</li><li>RtpStatus，类型String，支持操作：【eq，like，ilike】，<strong>不支持排序</strong></li><li>HostName，类型String，支持操作：【eq，like，ilike】，支持排序</li><li>IoaUserName，类型String，支持操作：【eq，like，ilike】，支持排序</li><li>GroupName，类型String，支持操作：【eq，like，ilike】，支持排序</li><li>CriticalVulListCount，<strong>类型Int</strong>，支持操作：【eq】，<strong>不支持排序</strong></li><li>RiskCount，<strong>类型Int</strong>，支持操作：【eq】，<strong>不支持排序</strong></li><li>VulVersion，类型String，支持操作：【eq，like，ilike】，<strong>不支持排序</strong></li><li>Virusver，类型String，支持操作：【eq，like，ilike】，<strong>不支持排序</strong></li><li>SysRepver，类型String，支持操作：【eq，like，ilike】，<strong>不支持排序</strong></li><li>BaseBoardSn，类型String，支持操作：【eq，like，ilike】，支持排序</li><li>Os，类型String，支持操作：【eq，like，ilike】，支持排序</li><li>ConnActiveTime，类型String，支持操作：【eq，like，ilike】，<strong>不支持排序</strong></li><li>FirewallStatus，<strong>类型Int</strong>，支持操作：【eq】，<strong>不支持排序</strong></li><li>DomainName，类型String，支持操作：【eq，like，ilike】，支持排序</li><li>SysRepVersion，类型String，支持操作：【eq，like，ilike】，支持排序</li><li>VirusVer，类型String，支持操作：【eq，like，ilike】，支持排序</li><li>Cpu，类型String，支持操作：【eq，like，ilike】，支持排序</li><li>Memory，类型String，支持操作：【eq，like，ilike】，支持排序</li><li>HardDiskSize，类型String，支持操作：【eq，like，ilike】，支持排序</li><li>AccountName，类型String，支持操作：【like.ilike】，支持排序</li><li>AccountGroupName，类型String，支持操作：【like.ilike】，支持排序</li></ul><p>分页参数</p><ul><li>PageNum 从1开始，小于等于0时使用默认参数</li><li>PageSize 最大值5000，最好不超过100</li></ul>",
           "example": "无",
           "member": "Condition",
           "name": "Condition",
@@ -4360,7 +4360,7 @@
         },
         {
           "disabled": false,
-          "document": "【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配），下面是私有化场景下默认id：\nid-名称-操作系统\n1\t全网终端\tWin\n2\t未分组终端\tWin\n30000000\t服务器\tWin\n40000101\t全网终端\tLinux\n40000102\t未分组终端\tLinux\n40000103\t服务器\tLinux\n40000201\t全网终端\tmacOS\n40000202\t未分组终端\tmacOS\n40000203\t服务器\tmacOS\n40000401\t全网终端\tAndroid\n40000402\t未分组终端\tAndroid\n40000501\t全网终端\tiOS\n40000502\t未分组终端\tiOS\n\n\nSaaS需要调用分组接口DescribeDeviceChildGroups获取对应分组id",
+          "document": "<p>【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配），下面是私有化场景下默认id：<br>id-名称-操作系统<br>1    全网终端    Win<br>2    未分组终端    Win<br>30000000    服务器    Win<br>40000101    全网终端    Linux<br>40000102    未分组终端    Linux<br>40000103    服务器    Linux<br>40000201    全网终端    macOS<br>40000202    未分组终端    macOS<br>40000203    服务器    macOS<br>40000401    全网终端    Android<br>40000402    未分组终端    Android<br>40000501    全网终端    iOS<br>40000502    未分组终端    iOS</p><p>SaaS需要调用分组接口DescribeDeviceChildGroups获取对应分组id</p>",
           "example": "93",
           "member": "int64",
           "name": "GroupId",
@@ -4369,7 +4369,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)，需要和GroupId或者GroupIds匹配",
+          "document": "<p>系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)，需要和GroupId或者GroupIds匹配</p>",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -4378,7 +4378,7 @@
         },
         {
           "disabled": false,
-          "document": "在线状态 （2表示在线，0或者1表示离线）",
+          "document": "<p>在线状态 （2表示在线，0或者1表示离线）</p>",
           "example": "2",
           "member": "int64",
           "name": "OnlineStatus",
@@ -4387,7 +4387,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件--兼容旧接口,参数同Condition",
+          "document": "<p>过滤条件--兼容旧接口,参数同Condition</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4396,7 +4396,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段--兼容旧接口,参数同Condition",
+          "document": "<p>排序字段--兼容旧接口,参数同Condition</p>",
           "example": "无",
           "member": "Sort",
           "name": "Sort",
@@ -4405,7 +4405,7 @@
         },
         {
           "disabled": false,
-          "document": "获取第几页--兼容旧接口,参数同Condition",
+          "document": "<p>获取第几页--兼容旧接口,参数同Condition</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNum",
@@ -4414,7 +4414,7 @@
         },
         {
           "disabled": false,
-          "document": "每页获取数--兼容旧接口,参数同Condition",
+          "document": "<p>每页获取数--兼容旧接口,参数同Condition</p>",
           "example": "20",
           "member": "int64",
           "name": "PageSize",
@@ -4423,7 +4423,7 @@
         },
         {
           "disabled": false,
-          "document": "授权状态： 4基础授权 5高级授权",
+          "document": "<p>授权状态： 4基础授权 5高级授权</p>",
           "example": "4",
           "member": "int64",
           "name": "Status",
@@ -4432,7 +4432,7 @@
         },
         {
           "disabled": false,
-          "document": "【和GroupId必须有一个填写】设备分组id列表（需要和OsType匹配）\n",
+          "document": "<p>【和GroupId必须有一个填写】设备分组id列表（需要和OsType匹配）</p>",
           "example": "[93]",
           "member": "int64",
           "name": "GroupIds",
@@ -4447,7 +4447,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页的data数据",
+          "document": "<p>分页的data数据</p>",
           "example": "无",
           "member": "DescribeDevicesPageRsp",
           "name": "Data",

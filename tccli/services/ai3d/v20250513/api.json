@@ -1506,6 +1506,24 @@
           "name": "EnablePBR",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否保持模型UV，开启后模型布线纹理均不改变，UV布线不跟纹理进行改变，默认false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableKeepUV",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅支持正方形贴图，分辨率区间为720～4096，默认为4096</p>",
+          "example": "2048",
+          "member": "int64",
+          "name": "TextureSize",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

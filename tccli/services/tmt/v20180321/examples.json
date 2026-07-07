@@ -7,14 +7,6 @@
         "output": "{\n    \"Response\": {\n        \"Angle\": 270,\n        \"Data\": \"/9j/4AAQSkZJRg...rF530LvvALAD5Mkgv0ULqKbuJJbW5en/9k=\",\n        \"RequestId\": \"defb956d-xxxx-xxxx-xxxx-2595b7bc2c28\",\n        \"Source\": \"en\",\n        \"SourceText\": \"hello.\",\n        \"Target\": \"zh\",\n        \"TargetText\": \"你好。\",\n        \"TransDetails\": [\n            {\n                \"BoundingBox\": {\n                    \"Height\": 90,\n                    \"Width\": 518,\n                    \"X\": 348,\n                    \"Y\": 147\n                },\n                \"LineHeight\": 0,\n                \"LinesCount\": 0,\n                \"RotateParagraphRect\": {\n                    \"Coord\": [\n                        {\n                            \"X\": 348,\n                            \"Y\": 147\n                        },\n                        {\n                            \"X\": 866,\n                            \"Y\": 147\n                        },\n                        {\n                            \"X\": 866,\n                            \"Y\": 238\n                        },\n                        {\n                            \"X\": 348,\n                            \"Y\": 238\n                        }\n                    ],\n                    \"TiltAngle\": 0,\n                    \"Valid\": false\n                },\n                \"SourceLineText\": \"hello.\",\n                \"SpamCode\": 0,\n                \"TargetLineText\": \"你好。\"\n            }\n        ]\n    }\n}",
         "title": "调用示例"
       }
-    ],
-    "TextTranslate": [
-      {
-        "document": "文本翻译",
-        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextTranslate\n<公共请求参数>\n\n{\n    \"SourceText\": \"hello\",\n    \"Source\": \"en\",\n    \"Target\": \"zh\",\n    \"ProjectId\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TargetText\": \"你好\",\n        \"Source\": \"en\",\n        \"Target\": \"zh\",\n        \"RequestId\": \"000ee211-f19e-4a34-a214-e2bb1122d248\"\n    }\n}",
-        "title": "文本翻译调用示例"
-      }
     ]
   },
   "version": "1.0"

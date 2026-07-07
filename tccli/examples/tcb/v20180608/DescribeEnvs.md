@@ -111,8 +111,7 @@ Output:
                         "InstanceName": "postgres-4**0*5*g",
                         "Name": "postgres",
                         "Region": "ap-shanghai",
-                        "Status": 1,
-                        "Version": "17.6"
+                        "Status": 1
                     }
                 ],
                 "Region": "ap-shanghai",

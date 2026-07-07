@@ -21,11 +21,20 @@ Output:
             "ModelRouterType": "Enterprise",
             "BudgetId": "budget-1a2b3c4d",
             "BudgetName": "production-budget",
-            "CreditUsage": {
-                "Limit": 100,
-                "Used": 12.34,
-                "BudgetResetAt": "2026-04-21T00:00:00+08:00"
-            },
+            "CreditUsageSet": [
+                {
+                    "BudgetDuration": "1d",
+                    "Limit": 100,
+                    "Used": 12.34,
+                    "BudgetResetAt": "2026-04-17T00:00:00+08:00"
+                },
+                {
+                    "BudgetDuration": "30d",
+                    "Limit": 1000,
+                    "Used": 123.45,
+                    "BudgetResetAt": "2026-05-01T00:00:00+08:00"
+                }
+            ],
             "ModifiedTime": "2026-04-08T00:11:21+08:00",
             "NetworkType": "Internet",
             "RateLimitConfig": {

@@ -8,7 +8,9 @@ Input:
 tccli clb CreateBudget --cli-unfold-argument  \
     --BudgetName production-budget \
     --BudgetConfigs.0.MaxBudget 100 \
-    --BudgetConfigs.0.BudgetDuration 7d \
+    --BudgetConfigs.0.BudgetDuration 1d \
+    --BudgetConfigs.1.MaxBudget 1000 \
+    --BudgetConfigs.1.BudgetDuration 30d \
     --RateLimitConfig.TPM 100000 \
     --RateLimitConfig.RPM 60 \
     --Resources.0.Type ModelRouter \

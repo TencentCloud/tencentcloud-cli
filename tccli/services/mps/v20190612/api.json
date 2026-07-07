@@ -41964,6 +41964,72 @@
       ],
       "usage": "out"
     },
+    "SmartSubtitleTaskFullTextSegmentItem": {
+      "document": "智能字幕识别片段。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别片段置信度。取值：0~100。</p>",
+          "example": "100.0",
+          "member": "float",
+          "name": "Confidence",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>识别片段起始的偏移时间，单位：秒。</p>",
+          "example": "3.204",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>识别片段终止的偏移时间，单位：秒。</p>",
+          "example": "7.204",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>识别文本。</p>",
+          "example": "腾讯云媒体处理",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>翻译文本。</p>",
+          "example": "Tencent Cloud Media Processing",
+          "member": "string",
+          "name": "Trans",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人ID</p>",
+          "example": "女主",
+          "member": "string",
+          "name": "SpeakerId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SmartSubtitleTaskResultInput": {
       "document": "智能字幕翻译的输入。",
       "members": [
@@ -42003,6 +42069,16 @@
     "SmartSubtitleTaskTextResultOutput": {
       "document": "智能字幕识别结果。",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>智能字幕识别片段列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartSubtitleTaskFullTextSegmentItem",
+          "name": "SegmentSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "disabled": false,
           "document": "<p>识别字幕结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",

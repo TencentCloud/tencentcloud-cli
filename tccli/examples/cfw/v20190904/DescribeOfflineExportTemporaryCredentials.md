@@ -13,6 +13,7 @@ Output:
 ```
 {
     "Response": {
+        "Link": "https://export-log-offline-1*********.cos.ap.com",
         "RequestId": "2d8786ee-788f-440a-84bd-cd191f6cc18d",
         "ReturnCode": 0,
         "ReturnMsg": "success"

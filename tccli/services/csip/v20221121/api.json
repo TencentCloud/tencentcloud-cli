@@ -91,6 +91,13 @@
       "output": "CreateDspmAssetAccessTopologyExportJobResponse",
       "status": "online"
     },
+    "CreateDspmAssetIdentifyInfoExportJob": {
+      "document": "创建Dspm资产列表导出任务",
+      "input": "CreateDspmAssetIdentifyInfoExportJobRequest",
+      "name": "创建Dspm资产数据识别结果导出任务",
+      "output": "CreateDspmAssetIdentifyInfoExportJobResponse",
+      "status": "online"
+    },
     "CreateDspmAssetsExportJob": {
       "document": "创建Dspm资产列表导出任务",
       "input": "CreateDspmAssetsExportJobRequest",
@@ -105,11 +112,60 @@
       "output": "CreateDspmExportTaskResponse",
       "status": "online"
     },
+    "CreateDspmIdentifyCategory": {
+      "document": "创建dspm数据识别分类",
+      "input": "CreateDspmIdentifyCategoryRequest",
+      "name": "创建dspm数据识别分类",
+      "output": "CreateDspmIdentifyCategoryResponse",
+      "status": "online"
+    },
+    "CreateDspmIdentifyComplianceCategoryRelation": {
+      "document": "创建dspm数据识别模板分类关联",
+      "input": "CreateDspmIdentifyComplianceCategoryRelationRequest",
+      "name": "创建dspm数据识别模板分类关联",
+      "output": "CreateDspmIdentifyComplianceCategoryRelationResponse",
+      "status": "online"
+    },
+    "CreateDspmIdentifyComplianceGroup": {
+      "document": "创建dspm数据识别模板",
+      "input": "CreateDspmIdentifyComplianceGroupRequest",
+      "name": "创建dspm数据识别模板",
+      "output": "CreateDspmIdentifyComplianceGroupResponse",
+      "status": "online"
+    },
+    "CreateDspmIdentifyComplianceGroupCopy": {
+      "document": "复制dspm数据识别模板",
+      "input": "CreateDspmIdentifyComplianceGroupCopyRequest",
+      "name": "复制dspm数据识别模板",
+      "output": "CreateDspmIdentifyComplianceGroupCopyResponse",
+      "status": "online"
+    },
+    "CreateDspmIdentifyComplianceRuleRelation": {
+      "document": "创建dspm数据识别模板数据项关联",
+      "input": "CreateDspmIdentifyComplianceRuleRelationRequest",
+      "name": "创建dspm数据识别模板数据项关联",
+      "output": "CreateDspmIdentifyComplianceRuleRelationResponse",
+      "status": "online"
+    },
     "CreateDspmIdentifyInfoListExportJob": {
       "document": "创建Dspm身份列表导出任务",
       "input": "CreateDspmIdentifyInfoListExportJobRequest",
       "name": "创建Dspm身份列表导出任务",
       "output": "CreateDspmIdentifyInfoListExportJobResponse",
+      "status": "online"
+    },
+    "CreateDspmIdentifyLevelGroup": {
+      "document": "创建dspm数据识别分级组",
+      "input": "CreateDspmIdentifyLevelGroupRequest",
+      "name": "创建dspm数据识别分级组",
+      "output": "CreateDspmIdentifyLevelGroupResponse",
+      "status": "online"
+    },
+    "CreateDspmIdentifyRule": {
+      "document": "创建dspm数据识别数据项",
+      "input": "CreateDspmIdentifyRuleRequest",
+      "name": "创建dspm数据识别数据项",
+      "output": "CreateDspmIdentifyRuleResponse",
       "status": "online"
     },
     "CreateDspmPersonalIdentify": {
@@ -215,6 +271,48 @@
       "input": "DeleteDspmExportTaskRequest",
       "name": "删除导出任务",
       "output": "DeleteDspmExportTaskResponse",
+      "status": "online"
+    },
+    "DeleteDspmIdentifyCategory": {
+      "document": "删除dspm数据识别分类",
+      "input": "DeleteDspmIdentifyCategoryRequest",
+      "name": "删除dspm数据识别分类",
+      "output": "DeleteDspmIdentifyCategoryResponse",
+      "status": "online"
+    },
+    "DeleteDspmIdentifyComplianceCategoryRelation": {
+      "document": "删除dspm数据识别模板分类关联",
+      "input": "DeleteDspmIdentifyComplianceCategoryRelationRequest",
+      "name": "删除dspm数据识别模板分类关联",
+      "output": "DeleteDspmIdentifyComplianceCategoryRelationResponse",
+      "status": "online"
+    },
+    "DeleteDspmIdentifyComplianceGroup": {
+      "document": "删除dspm数据识别模板",
+      "input": "DeleteDspmIdentifyComplianceGroupRequest",
+      "name": "删除dspm数据识别模板",
+      "output": "DeleteDspmIdentifyComplianceGroupResponse",
+      "status": "online"
+    },
+    "DeleteDspmIdentifyComplianceRuleRelation": {
+      "document": "删除dspm数据识别模板数据项关联",
+      "input": "DeleteDspmIdentifyComplianceRuleRelationRequest",
+      "name": "删除dspm数据识别模板数据项关联",
+      "output": "DeleteDspmIdentifyComplianceRuleRelationResponse",
+      "status": "online"
+    },
+    "DeleteDspmIdentifyLevelGroup": {
+      "document": "删除dspm数据识别分级组",
+      "input": "DeleteDspmIdentifyLevelGroupRequest",
+      "name": "删除dspm数据识别分级组",
+      "output": "DeleteDspmIdentifyLevelGroupResponse",
+      "status": "online"
+    },
+    "DeleteDspmIdentifyRule": {
+      "document": "删除dspm数据识别数据项",
+      "input": "DeleteDspmIdentifyRuleRequest",
+      "name": "删除dspm数据识别数据项",
+      "output": "DeleteDspmIdentifyRuleResponse",
       "status": "online"
     },
     "DeleteDspmPersonalIdentify": {
@@ -602,6 +700,13 @@
       "output": "DescribeCosIpInvokeRecordFileResponse",
       "status": "online"
     },
+    "DescribeCosObjectScanTask": {
+      "document": "查询cos风险文件扫描任务",
+      "input": "DescribeCosObjectScanTaskRequest",
+      "name": "查看cos扫描任务状态",
+      "output": "DescribeCosObjectScanTaskResponse",
+      "status": "online"
+    },
     "DescribeCosOverview": {
       "document": "cos概览信息",
       "input": "DescribeCosOverviewRequest",
@@ -791,6 +896,20 @@
       "output": "DescribeDspmAssetFieldListResponse",
       "status": "online"
     },
+    "DescribeDspmAssetFieldSamples": {
+      "document": "查询dspm资产字段样本值",
+      "input": "DescribeDspmAssetFieldSamplesRequest",
+      "name": "查询dspm资产字段样本值",
+      "output": "DescribeDspmAssetFieldSamplesResponse",
+      "status": "online"
+    },
+    "DescribeDspmAssetIdentifyInfoList": {
+      "document": "查询dspm资产数据识别信息列表",
+      "input": "DescribeDspmAssetIdentifyInfoListRequest",
+      "name": "查询dspm资产数据识别信息列表",
+      "output": "DescribeDspmAssetIdentifyInfoListResponse",
+      "status": "online"
+    },
     "DescribeDspmAssetIds": {
       "document": "查询Dspm资产id列表",
       "input": "DescribeDspmAssetIdsRequest",
@@ -861,6 +980,41 @@
       "output": "DescribeDspmExportTaskResponse",
       "status": "online"
     },
+    "DescribeDspmIdentifyCategoryList": {
+      "document": "查询dspm数据识别分类列表",
+      "input": "DescribeDspmIdentifyCategoryListRequest",
+      "name": "查询dspm数据识别分类列表",
+      "output": "DescribeDspmIdentifyCategoryListResponse",
+      "status": "online"
+    },
+    "DescribeDspmIdentifyComplianceCategoryRuleList": {
+      "document": "查询dspm数据识别模板分类关联数据项列表",
+      "input": "DescribeDspmIdentifyComplianceCategoryRuleListRequest",
+      "name": "查询dspm数据识别模板分类关联数据项列表",
+      "output": "DescribeDspmIdentifyComplianceCategoryRuleListResponse",
+      "status": "online"
+    },
+    "DescribeDspmIdentifyComplianceGroupDetail": {
+      "document": "查询dspm识别模板详情",
+      "input": "DescribeDspmIdentifyComplianceGroupDetailRequest",
+      "name": "查询dspm数据识别模板详情",
+      "output": "DescribeDspmIdentifyComplianceGroupDetailResponse",
+      "status": "online"
+    },
+    "DescribeDspmIdentifyComplianceGroupList": {
+      "document": "查询dspm数据识别模板列表",
+      "input": "DescribeDspmIdentifyComplianceGroupListRequest",
+      "name": "查询dspm数据识别模板列表",
+      "output": "DescribeDspmIdentifyComplianceGroupListResponse",
+      "status": "online"
+    },
+    "DescribeDspmIdentifyDistributionStatistics": {
+      "document": "查询dspm数据识别分布统计",
+      "input": "DescribeDspmIdentifyDistributionStatisticsRequest",
+      "name": "查询dspm数据识别分布统计",
+      "output": "DescribeDspmIdentifyDistributionStatisticsResponse",
+      "status": "online"
+    },
     "DescribeDspmIdentifyIdList": {
       "document": "查询Dspm身份id列表",
       "input": "DescribeDspmIdentifyIdListRequest",
@@ -880,6 +1034,34 @@
       "input": "DescribeDspmIdentifyInfoListRequest",
       "name": "查询Dspm身份信息列表",
       "output": "DescribeDspmIdentifyInfoListResponse",
+      "status": "online"
+    },
+    "DescribeDspmIdentifyLevelGroupList": {
+      "document": "查询dspm数据识别分级组列表",
+      "input": "DescribeDspmIdentifyLevelGroupListRequest",
+      "name": "查询dspm数据识别分级组列表",
+      "output": "DescribeDspmIdentifyLevelGroupListResponse",
+      "status": "online"
+    },
+    "DescribeDspmIdentifyRuleDetail": {
+      "document": "查询dspm数据识别数据项详情",
+      "input": "DescribeDspmIdentifyRuleDetailRequest",
+      "name": "查询dspm数据识别数据项详情",
+      "output": "DescribeDspmIdentifyRuleDetailResponse",
+      "status": "online"
+    },
+    "DescribeDspmIdentifyRuleList": {
+      "document": "查询dspm数据识别数据项列表",
+      "input": "DescribeDspmIdentifyRuleListRequest",
+      "name": "查询dspm数据识别数据项列表",
+      "output": "DescribeDspmIdentifyRuleListResponse",
+      "status": "online"
+    },
+    "DescribeDspmIdentifyRuleTestResult": {
+      "document": "查询dspm数据识别数据项验证结果",
+      "input": "DescribeDspmIdentifyRuleTestResultRequest",
+      "name": "查询dspm数据识别数据项验证结果",
+      "output": "DescribeDspmIdentifyRuleTestResultResponse",
       "status": "online"
     },
     "DescribeDspmLogList": {
@@ -1456,6 +1638,20 @@
       "output": "ModifyCosAuditMonitorAccountResponse",
       "status": "online"
     },
+    "ModifyCosAuditObjectIdentifyStatus": {
+      "document": "修改对象存储识别开关",
+      "input": "ModifyCosAuditObjectIdentifyStatusRequest",
+      "name": "修改cos对象存储识别状态",
+      "output": "ModifyCosAuditObjectIdentifyStatusResponse",
+      "status": "online"
+    },
+    "ModifyCosAuditObjectSampleRate": {
+      "document": "设置对象存储扫描采样率",
+      "input": "ModifyCosAuditObjectSampleRateRequest",
+      "name": "设置对象存储内容识别采样率",
+      "output": "ModifyCosAuditObjectSampleRateResponse",
+      "status": "online"
+    },
     "ModifyCosMarkInfo": {
       "document": "修改对象存储备注",
       "input": "ModifyCosMarkInfoRequest",
@@ -1468,6 +1664,13 @@
       "input": "ModifyDspmAccessRecordRequest",
       "name": "修改Dspm访问管理信息",
       "output": "ModifyDspmAccessRecordResponse",
+      "status": "online"
+    },
+    "ModifyDspmApplyingIdentifyComplianceGroup": {
+      "document": "修改dspm当前应用的数据识别模板",
+      "input": "ModifyDspmApplyingIdentifyComplianceGroupRequest",
+      "name": "修改dspm当前应用的数据识别模板",
+      "output": "ModifyDspmApplyingIdentifyComplianceGroupResponse",
       "status": "online"
     },
     "ModifyDspmApproveStatus": {
@@ -1498,6 +1701,13 @@
       "output": "ModifyDspmAssetDataScanTaskResponse",
       "status": "online"
     },
+    "ModifyDspmAssetDataScanTaskStatus": {
+      "document": "修改Dspm资产数据扫描任务状态",
+      "input": "ModifyDspmAssetDataScanTaskStatusRequest",
+      "name": "修改Dspm资产数据识别扫描任务状态",
+      "output": "ModifyDspmAssetDataScanTaskStatusResponse",
+      "status": "online"
+    },
     "ModifyDspmAssetLogDeliverySwitch": {
       "document": "修改Dspm资产日志投递开关",
       "input": "ModifyDspmAssetLogDeliverySwitchRequest",
@@ -1519,11 +1729,67 @@
       "output": "ModifyDspmBackupSettingResponse",
       "status": "online"
     },
+    "ModifyDspmIdentifyCategory": {
+      "document": "修改dspm数据识别分类",
+      "input": "ModifyDspmIdentifyCategoryRequest",
+      "name": "修改dspm数据识别分类",
+      "output": "ModifyDspmIdentifyCategoryResponse",
+      "status": "online"
+    },
+    "ModifyDspmIdentifyComplianceGroup": {
+      "document": "修改dspm数据识别模板",
+      "input": "ModifyDspmIdentifyComplianceGroupRequest",
+      "name": "修改dspm数据识别模板",
+      "output": "ModifyDspmIdentifyComplianceGroupResponse",
+      "status": "online"
+    },
+    "ModifyDspmIdentifyComplianceGroupStatus": {
+      "document": "修改dspm数据识别模板状态",
+      "input": "ModifyDspmIdentifyComplianceGroupStatusRequest",
+      "name": "修改dspm数据识别模板状态",
+      "output": "ModifyDspmIdentifyComplianceGroupStatusResponse",
+      "status": "online"
+    },
+    "ModifyDspmIdentifyComplianceRuleLevelInfo": {
+      "document": "修改dspm数据识别模板数据项关联级别信息",
+      "input": "ModifyDspmIdentifyComplianceRuleLevelInfoRequest",
+      "name": "修改dspm数据识别模板数据项关联级别信息",
+      "output": "ModifyDspmIdentifyComplianceRuleLevelInfoResponse",
+      "status": "online"
+    },
     "ModifyDspmIdentifyInfo": {
       "document": "修改Dspm身份信息",
       "input": "ModifyDspmIdentifyInfoRequest",
       "name": "修改Dspm身份信息",
       "output": "ModifyDspmIdentifyInfoResponse",
+      "status": "online"
+    },
+    "ModifyDspmIdentifyLevelGroup": {
+      "document": "修改dspm数据识别分级组",
+      "input": "ModifyDspmIdentifyLevelGroupRequest",
+      "name": "修改dspm数据识别分级组",
+      "output": "ModifyDspmIdentifyLevelGroupResponse",
+      "status": "online"
+    },
+    "ModifyDspmIdentifyLevelItem": {
+      "document": "修改dspm数据识别分级信息",
+      "input": "ModifyDspmIdentifyLevelItemRequest",
+      "name": "修改dspm数据识别分级信息",
+      "output": "ModifyDspmIdentifyLevelItemResponse",
+      "status": "online"
+    },
+    "ModifyDspmIdentifyRule": {
+      "document": "修改dspm数据识别数据项",
+      "input": "ModifyDspmIdentifyRuleRequest",
+      "name": "修改dspm数据识别数据项",
+      "output": "ModifyDspmIdentifyRuleResponse",
+      "status": "online"
+    },
+    "ModifyDspmIdentifyRuleStatus": {
+      "document": "修改dspm数据识别数据项状态",
+      "input": "ModifyDspmIdentifyRuleStatusRequest",
+      "name": "修改dspm数据识别数据项状态",
+      "output": "ModifyDspmIdentifyRuleStatusResponse",
       "status": "online"
     },
     "ModifyDspmIpInfo": {
@@ -5583,7 +5849,7 @@
         {
           "disabled": false,
           "document": "标签的key值,可以是字母、数字、下划线",
-          "example": "tag-key",
+          "example": "app.kubernetes.io/instance",
           "member": "string",
           "name": "TagKey",
           "output_required": false,
@@ -5594,7 +5860,7 @@
         {
           "disabled": false,
           "document": "标签的vale值,可以是字母、数字、下划线",
-          "example": "tag-value",
+          "example": "tke-log-agent",
           "member": "string",
           "name": "TagValue",
           "output_required": false,
@@ -12956,6 +13222,61 @@
       ],
       "type": "object"
     },
+    "CreateDspmAssetIdentifyInfoExportJobRequest": {
+      "document": "CreateDspmAssetIdentifyInfoExportJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资产实例id</p>",
+          "example": "cdb-l8hhoqwd",
+          "member": "string",
+          "name": "AssetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-121ws13a\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤器</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmAssetIdentifyInfoExportJobResponse": {
+      "document": "CreateDspmAssetIdentifyInfoExportJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "e72870f6-6809-4bbd-9648-8f0bbadabecd",
+          "member": "string",
+          "name": "JobID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDspmAssetsExportJobRequest": {
       "document": "CreateDspmAssetsExportJob请求参数结构体",
       "members": [
@@ -13299,6 +13620,297 @@
       ],
       "type": "object"
     },
+    "CreateDspmIdentifyCategoryRequest": {
+      "document": "CreateDspmIdentifyCategory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分类名称</p>",
+          "example": "kyrie测试分类02",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-1209ejsa\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmIdentifyCategoryResponse": {
+      "document": "CreateDspmIdentifyCategory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分类ID</p>",
+          "example": "358",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmIdentifyComplianceCategoryRelationRequest": {
+      "document": "CreateDspmIdentifyComplianceCategoryRelation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别模板ID</p>",
+          "example": "10001",
+          "member": "uint64",
+          "name": "ComplianceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类ID</p>",
+          "example": "358",
+          "member": "int64",
+          "name": "CategoryId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>父分类ID</p>",
+          "example": "-1",
+          "member": "int64",
+          "name": "ParentCategoryId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12e1dsda\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmIdentifyComplianceCategoryRelationResponse": {
+      "document": "CreateDspmIdentifyComplianceCategoryRelation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmIdentifyComplianceGroupCopyRequest": {
+      "document": "CreateDspmIdentifyComplianceGroupCopy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>来源模板ID</p>",
+          "example": "10001",
+          "member": "uint64",
+          "name": "FromId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-3ewd1sa1\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板名称</p>",
+          "example": "kyrie复制",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板描述</p>",
+          "example": "模板复制描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmIdentifyComplianceGroupCopyResponse": {
+      "document": "CreateDspmIdentifyComplianceGroupCopy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板ID</p>",
+          "example": "10002",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmIdentifyComplianceGroupRequest": {
+      "document": "CreateDspmIdentifyComplianceGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>级别名称</p>",
+          "example": "kyrie测试",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-23ed1ewd\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "kyrie描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别组ID</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "LevelGroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>0： 不启用</li><li>1： 启用</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmIdentifyComplianceGroupResponse": {
+      "document": "CreateDspmIdentifyComplianceGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别模板ID</p>",
+          "example": "10000",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmIdentifyComplianceRuleRelationRequest": {
+      "document": "CreateDspmIdentifyComplianceRuleRelation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别模板ID</p>",
+          "example": "10001",
+          "member": "uint64",
+          "name": "ComplianceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类ID</p>",
+          "example": "358",
+          "member": "int64",
+          "name": "CategoryId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "DspmIdentifyCategoryRuleRelateItem",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12e1ds1d\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmIdentifyComplianceRuleRelationResponse": {
+      "document": "CreateDspmIdentifyComplianceRuleRelation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDspmIdentifyInfoListExportJobRequest": {
       "document": "CreateDspmIdentifyInfoListExportJob请求参数结构体",
       "members": [
@@ -13334,6 +13946,152 @@
           "name": "JobID",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmIdentifyLevelGroupRequest": {
+      "document": "CreateDspmIdentifyLevelGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分级组名称</p>",
+          "example": "自定义级别03",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-23d21edw\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "级别描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "DspmAddIdentifyLevelItem",
+          "name": "LevelItems",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmIdentifyLevelGroupResponse": {
+      "document": "CreateDspmIdentifyLevelGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分级组ID</p>",
+          "example": "7",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmIdentifyRuleRequest": {
+      "document": "CreateDspmIdentifyRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据项名称</p>",
+          "example": "kyrie-kv-rule-004",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-1e413dew1\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项描述</p>",
+          "example": "数据项描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项启用状态</p><p>枚举值：</p><ul><li>0： 未启用</li><li>1： 启用</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结构化规则</p>",
+          "example": "1",
+          "member": "string",
+          "name": "StructuredRule",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>非结构化规则</p>",
+          "example": "1",
+          "member": "string",
+          "name": "UnStructuredRule",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmIdentifyRuleResponse": {
+      "document": "CreateDspmIdentifyRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据项id</p>",
+          "example": "10009",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -14884,6 +15642,249 @@
     },
     "DeleteDspmExportTaskResponse": {
       "document": "DeleteDspmExportTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmIdentifyCategoryRequest": {
+      "document": "DeleteDspmIdentifyCategory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分类ID集合</p>",
+          "example": "[358]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12es1waa\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmIdentifyCategoryResponse": {
+      "document": "DeleteDspmIdentifyCategory返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmIdentifyComplianceCategoryRelationRequest": {
+      "document": "DeleteDspmIdentifyComplianceCategoryRelation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别模板ID</p>",
+          "example": "10001",
+          "member": "uint64",
+          "name": "ComplianceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类ID</p>",
+          "example": "358",
+          "member": "int64",
+          "name": "CategoryId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-23ed1d11\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmIdentifyComplianceCategoryRelationResponse": {
+      "document": "DeleteDspmIdentifyComplianceCategoryRelation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmIdentifyComplianceGroupRequest": {
+      "document": "DeleteDspmIdentifyComplianceGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别模板ID集合</p>",
+          "example": "[10000]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-23ed123w\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmIdentifyComplianceGroupResponse": {
+      "document": "DeleteDspmIdentifyComplianceGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmIdentifyComplianceRuleRelationRequest": {
+      "document": "DeleteDspmIdentifyComplianceRuleRelation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别模板ID</p>",
+          "example": "10001",
+          "member": "uint64",
+          "name": "ComplianceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类ID</p>",
+          "example": "358",
+          "member": "int64",
+          "name": "CategoryId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项ID集合</p>",
+          "example": "[5801]",
+          "member": "uint64",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12e1ews1\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmIdentifyComplianceRuleRelationResponse": {
+      "document": "DeleteDspmIdentifyComplianceRuleRelation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmIdentifyLevelGroupRequest": {
+      "document": "DeleteDspmIdentifyLevelGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>级别组id</p>",
+          "example": "[7]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-892jfdas\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmIdentifyLevelGroupResponse": {
+      "document": "DeleteDspmIdentifyLevelGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmIdentifyRuleRequest": {
+      "document": "DeleteDspmIdentifyRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据项id</p>",
+          "example": "[10357]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12ed1wca\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmIdentifyRuleResponse": {
+      "document": "DeleteDspmIdentifyRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18888,6 +19889,71 @@
       ],
       "type": "object"
     },
+    "DescribeCosObjectScanTaskRequest": {
+      "document": "DescribeCosObjectScanTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>1: 敏感数据识别 2:恶意文件扫描</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TaskType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-a6df317cb6a8c424\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储桶列表</p>",
+          "example": "[\"0313-vtanakwang-260082268\"]",
+          "member": "string",
+          "name": "BucketSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosObjectScanTaskResponse": {
+      "document": "DescribeCosObjectScanTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存储桶任务详情</p>",
+          "example": "无",
+          "member": "CosBucketTaskInfo",
+          "name": "BucketTaskIdSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>appid维度任务列表</p>",
+          "example": "无",
+          "member": "CosAssetSyncTaskInfo",
+          "name": "MemberTaskIdSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCosOverviewRequest": {
       "document": "DescribeCosOverview请求参数结构体",
       "members": [
@@ -20489,6 +21555,153 @@
       ],
       "type": "object"
     },
+    "DescribeDspmAssetFieldSamplesRequest": {
+      "document": "DescribeDspmAssetFieldSamples请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资产实例ID</p>",
+          "example": "tdsql-5a07uua3",
+          "member": "string",
+          "name": "AssetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名</p>",
+          "example": "dspm01",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>表名</p>",
+          "example": "encryption",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段名</p>",
+          "example": "id",
+          "member": "string",
+          "name": "FieldName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12e1e311\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>schema名</p>",
+          "example": "schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmAssetFieldSamplesResponse": {
+      "document": "DescribeDspmAssetFieldSamples返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "DataSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmAssetIdentifyInfoListRequest": {
+      "document": "DescribeDspmAssetIdentifyInfoList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12ed1w12\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>筛选项</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>识别模板id</p>",
+          "example": "9050",
+          "member": "uint64",
+          "name": "ComplianceId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmAssetIdentifyInfoListResponse": {
+      "document": "DescribeDspmAssetIdentifyInfoList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果集</p>",
+          "example": "无",
+          "member": "DspmAssetIdentifyInfo",
+          "name": "DataSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDspmAssetIdsRequest": {
       "document": "DescribeDspmAssetIds请求参数结构体",
       "members": [
@@ -21228,6 +22441,392 @@
       ],
       "type": "object"
     },
+    "DescribeDspmIdentifyCategoryListRequest": {
+      "document": "DescribeDspmIdentifyCategoryList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12jnednj\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyCategoryListResponse": {
+      "document": "DescribeDspmIdentifyCategoryList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p><p>单位：数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "DspmIdentifyCategoryItem",
+          "name": "DataSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyComplianceCategoryRuleListRequest": {
+      "document": "DescribeDspmIdentifyComplianceCategoryRuleList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别模板ID</p>",
+          "example": "10001",
+          "member": "uint64",
+          "name": "ComplianceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类ID</p>",
+          "example": "358",
+          "member": "int64",
+          "name": "CategoryId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12ed1wes\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyComplianceCategoryRuleListResponse": {
+      "document": "DescribeDspmIdentifyComplianceCategoryRuleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p><p>单位：数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "DspmIdentifyCategoryRuleRelateDetailItem",
+          "name": "DataSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyComplianceGroupDetailRequest": {
+      "document": "DescribeDspmIdentifyComplianceGroupDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12edwqad\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>识别模板ID</p>",
+          "example": "10000",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyComplianceGroupDetailResponse": {
+      "document": "DescribeDspmIdentifyComplianceGroupDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别模板ID</p>",
+          "example": "10000",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>识别模板名称</p>",
+          "example": "kyrie测试",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "kyrie描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板类型</p><p>枚举值：</p><ul><li>0： 内置</li><li>1： 自定义</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>0： 未启用</li><li>1： 启用</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联级别组ID</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "LevelGroupId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "DspmIdentifyComplianceCategoryRelation",
+          "name": "Detail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联级别组名称</p>",
+          "example": "系统-高中低",
+          "member": "string",
+          "name": "LevelGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-05-09 21:56:45",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p>",
+          "example": "2026-06-17 11:52:15",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyComplianceGroupListRequest": {
+      "document": "DescribeDspmIdentifyComplianceGroupList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12313131\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyComplianceGroupListResponse": {
+      "document": "DescribeDspmIdentifyComplianceGroupList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p><p>单位：数量</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "DspmIdentifyComplianceItem",
+          "name": "DataSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyDistributionStatisticsRequest": {
+      "document": "DescribeDspmIdentifyDistributionStatistics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>统计类型</p><p>枚举值：</p><ul><li>FieldTop5Asset： 识别字段Top5</li><li>FieldCategoryDistribution： 识别字段分类分布</li><li>FieldLevelDistribution： 识别字段级别分布</li><li>AssetDistribution： 识别资产分布</li></ul>",
+          "example": "FieldTop5Asset",
+          "member": "string",
+          "name": "StatType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12df23ed\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型</p><p>枚举值：</p><ul><li>cdb： 云数据库MySQL</li><li>mariadb： 云数据库MariaDB</li></ul>",
+          "example": "cdb",
+          "member": "string",
+          "name": "AssetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>识别模板id</p>",
+          "example": "9050",
+          "member": "uint64",
+          "name": "ComplianceId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyDistributionStatisticsResponse": {
+      "document": "DescribeDspmIdentifyDistributionStatistics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>结果</p>",
+          "example": "无",
+          "member": "DspmStatisticsItem",
+          "name": "DataSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDspmIdentifyIdListRequest": {
       "document": "DescribeDspmIdentifyIdList请求参数结构体",
       "members": [
@@ -21418,6 +23017,306 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyLevelGroupListRequest": {
+      "document": "DescribeDspmIdentifyLevelGroupList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-123edwq9\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyLevelGroupListResponse": {
+      "document": "DescribeDspmIdentifyLevelGroupList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p><p>单位：数量</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "DspmIdentifyLevelGroupItem",
+          "name": "DataSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyRuleDetailRequest": {
+      "document": "DescribeDspmIdentifyRuleDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据项id</p>",
+          "example": "10000",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12e1w112\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyRuleDetailResponse": {
+      "document": "DescribeDspmIdentifyRuleDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据项id</p>",
+          "example": "10000",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项名称</p>",
+          "example": "kyrie测试",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项描述</p>",
+          "example": "1",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项是否启用</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul><p>默认值：0</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项类型</p><p>枚举值：</p><ul><li>0： 内置</li><li>1： 自定义</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结构化规则</p>",
+          "example": "{\"NodeType\":\"operator\",\"OptType\":\"and\",\"Nodes\":[{\"NodeType\":\"operator\",\"OptType\":\"and\",\"RuleInfos\":[{\"DataSourceType\":\"field_value\",\"RuleMethod\":\"match\",\"RuleType\":\"keyword\",\"RuleContent\":\"phone\",\"Parameters\":{\"IsIgnoreCase\":\"true\"}}],\"Nodes\":[]}]}",
+          "member": "string",
+          "name": "StructuredRule",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>非结构化规则</p>",
+          "example": "{\"RegexRule\":{\"Operator\":\"or\",\"Contents\":[{\"RuleContent\":\"(?<=\\\\D)(13[0-9]|14[014-9]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\\\\d{8}(?=\\\\D)\",\"IsIgnoreCase\":true}]},\"MaxMatchRule\":{\"Length\":100}}",
+          "member": "string",
+          "name": "UnStructuredRule",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyRuleListRequest": {
+      "document": "DescribeDspmIdentifyRuleList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-829jduqa\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>筛选项</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyRuleListResponse": {
+      "document": "DescribeDspmIdentifyRuleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p><p>单位：数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果</p>",
+          "example": "无",
+          "member": "DspmIdentifyRuleItem",
+          "name": "DataSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyRuleTestResultRequest": {
+      "document": "DescribeDspmIdentifyRuleTestResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则类型</p><p>枚举值：</p><ul><li>structured： 结构化规则</li><li>unstructrued： 非结构化规则</li></ul>",
+          "example": "Structured",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则内容</p>",
+          "example": "{\"NodeType\":\"operator\",\"OptType\":\"or\",\"RuleInfos\":[],\"Nodes\":[{\"NodeType\":\"operator\",\"OptType\":\"and\",\"RuleInfos\":[{\"DataSourceType\":\"field_name\",\"RuleMethod\":\"match\",\"RuleType\":\"keyword\",\"RuleContent\":\"email\"}],\"Nodes\":[]}]}",
+          "member": "string",
+          "name": "RuleContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项id</p>",
+          "example": "5807",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12e1wq1e\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结构化测试内容</p>",
+          "example": "无",
+          "member": "DspmIdentifyRuleStructuredTestItem",
+          "name": "StructuredTestContent",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>非结构化测试内容</p>",
+          "example": "kyrie@tencent.com",
+          "member": "string",
+          "name": "UnStructuredTestContent",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmIdentifyRuleTestResultResponse": {
+      "document": "DescribeDspmIdentifyRuleTestResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否匹配成功</p><p>枚举值：</p><ul><li>true： 匹配成功</li><li>false： 匹配失败</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsMatch",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -28885,6 +30784,30 @@
       ],
       "usage": "out"
     },
+    "DspmAddIdentifyLevelItem": {
+      "document": "dspm数据识别级别信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>级别名称</p>",
+          "example": "高",
+          "member": "string",
+          "name": "LevelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别敏感程度</p><p>单位：分数</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "LevelScore",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "DspmApplyOrder": {
       "document": "申请单信息",
       "members": [
@@ -30311,6 +32234,208 @@
       ],
       "usage": "out"
     },
+    "DspmAssetIdentifyInfo": {
+      "document": "dspm资产数据识别统计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资产实例id</p>",
+          "example": "cdb-oq8mft6p",
+          "member": "string",
+          "name": "AssetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产名称</p>",
+          "example": "50wtb",
+          "member": "string",
+          "name": "AssetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型</p><p>枚举值：</p><ul><li>cdb： MySQL</li><li>mariadb： MariaDB</li><li>mongodb： MongoDB</li></ul>",
+          "example": "cdb",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已检出数据库数量</p>",
+          "example": "152",
+          "member": "uint64",
+          "name": "DetectedDbCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已检出表数量</p>",
+          "example": "302",
+          "member": "uint64",
+          "name": "DetectedTableCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项id集合</p>",
+          "example": "[10345]",
+          "member": "uint64",
+          "name": "RuleIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项名称集合</p>",
+          "example": "[\"20260618\"]",
+          "member": "string",
+          "name": "RuleNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类id集合</p>",
+          "example": "[10394]",
+          "member": "uint64",
+          "name": "CategoryIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类名称集合</p>",
+          "example": "[\"v_tanakwang00065\"]",
+          "member": "string",
+          "name": "CategoryNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最高级别ID</p>",
+          "example": "13645",
+          "member": "uint64",
+          "name": "LevelId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最高级别名称</p>",
+          "example": "一般",
+          "member": "string",
+          "name": "LevelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别敏感程度</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "LevelScore",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检出时间</p>",
+          "example": "2026-06-25T11:28:36+08:00",
+          "member": "string",
+          "name": "DetectedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类详情</p>",
+          "example": "无",
+          "member": "DspmIdentifyCategoryDetail",
+          "name": "CategoryDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>APPID</p>",
+          "example": "260082268",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号名称</p>",
+          "example": "成员账号",
+          "member": "string",
+          "name": "NickName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号ID</p>",
+          "example": "700002332361",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DspmAssetIdentifyTaskStatus": {
+      "document": "dspm数据识别任务状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "358",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态</p><p>枚举值：</p><ul><li>0： 未识别</li><li>1： 识别中</li><li>2： 识别终止</li><li>3： 识别成功</li><li>4： 识别失败</li><li>5： 暂停</li></ul>",
+          "example": "3",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DspmAssetInstance": {
       "document": "Dspm资产实例",
       "members": [
@@ -31364,6 +33489,400 @@
       ],
       "usage": "out"
     },
+    "DspmIdentifyCategoryItem": {
+      "document": "dspm数据识别分类列表项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分类ID</p>",
+          "example": "359",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类名称</p>",
+          "example": "自定义分类",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>类型</p><p>枚举值：</p><ul><li>0： 内置</li><li>1： 自定义</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-04-27 17:00:32",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "DspmIdentifyRefComplianceInfo",
+          "name": "ComplianceRelations",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DspmIdentifyCategoryRuleRelateDetailItem": {
+      "document": "dspm数据识别分类数据项关联详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别模板ID</p>",
+          "example": "10001",
+          "member": "uint64",
+          "name": "ComplianceId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类ID</p>",
+          "example": "358",
+          "member": "int64",
+          "name": "CategoryId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项ID</p>",
+          "example": "5800",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项名称</p>",
+          "example": "姓名",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别ID</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "LevelId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别名称</p>",
+          "example": "高",
+          "member": "string",
+          "name": "LevelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DspmIdentifyCategoryRuleRelateItem": {
+      "document": "dspm数据识别分类和数据项关联关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据项ID</p>",
+          "example": "5801",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别ID</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "LevelId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "DspmIdentifyComplianceCategoryRelation": {
+      "document": "dspm数据识别模板分类关联关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分类ID</p>",
+          "example": "131",
+          "member": "uint64",
+          "name": "CategoryId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类名称</p>",
+          "example": "个人出行信息",
+          "member": "string",
+          "name": "CategoryName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>父分类ID</p>",
+          "example": "100",
+          "member": "string",
+          "name": "CategoryParentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否叶子节点</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsLeaf",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类类型</p><p>枚举值：</p><ul><li>0： 内置</li><li>1： 自定义</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "CategoryType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类层级</p><p>单位：层</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "CategoryGrade",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "DspmIdentifyComplianceRuleRelation",
+          "name": "RuleRelations",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "DspmIdentifyComplianceCategoryRelation",
+          "name": "Children",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DspmIdentifyComplianceItem": {
+      "document": "dspm分类分级模板列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别模板ID</p>",
+          "example": "10001",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>识别模板名称</p>",
+          "example": "kyrie修改",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "2",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>启用状态</p><p>枚举值：</p><ul><li>0： 不启用</li><li>1： 启用</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板类型</p><p>枚举值：</p><ul><li>0： 内置</li><li>1： 自定义</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-05-15 11:25:06",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用状态</p><p>枚举值：</p><ul><li>0： 未应用</li><li>1： 应用中</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ApplyStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DspmIdentifyComplianceRuleRelation": {
+      "document": "dspm数据识别模板数据项关联关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据项ID</p>",
+          "example": "5916",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项名称</p>",
+          "example": "新西兰电话号码",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别ID</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "LevelId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别名称</p>",
+          "example": "低",
+          "member": "string",
+          "name": "LevelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别程度</p><p>单位：分数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "LevelScore",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结构化规则状态</p><p>枚举值：</p><ul><li>0： 未配置</li><li>1： 已配置</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "StructuredStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>非结构化规则状态</p><p>枚举值：</p><ul><li>0： 未配置</li><li>1： 已配置</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "UnStructuredStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项开启状态</p><p>枚举值：</p><ul><li>0： 未开启</li><li>1： 已开启</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DspmIdentifyCount": {
       "document": "Dspm身份统计信息",
       "members": [
@@ -31632,6 +34151,157 @@
       ],
       "usage": "out"
     },
+    "DspmIdentifyLevelGroupItem": {
+      "document": "dspm数据识别分级组列表项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>级别组id</p>",
+          "example": "7",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别组名称</p>",
+          "example": "自定义级别03",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别组描述</p>",
+          "example": "级别描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别组类型</p><p>枚举值：</p><ul><li>0： 内置</li><li>1： 自定义</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别信息</p>",
+          "example": "无",
+          "member": "DspmIdentifyLevelItem",
+          "name": "LevelItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>",
+          "example": "2026-04-28 17:57:13",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "DspmIdentifyRefComplianceInfo",
+          "name": "ComplianceRelations",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DspmIdentifyLevelItem": {
+      "document": "dspm数据识别级别信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>级别名称</p>",
+          "example": "低",
+          "member": "string",
+          "name": "LevelName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别风险程度（从低到高）</p><p>取值范围：[1, 10]</p><p>单位：程度</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "LevelScore",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别id</p>",
+          "example": "18",
+          "member": "uint64",
+          "name": "LevelId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DspmIdentifyRefComplianceInfo": {
+      "document": "dspm关联识别模板信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别模板ID</p>",
+          "example": "9050",
+          "member": "uint64",
+          "name": "ComplianceId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>识别模板名称</p>",
+          "example": "DSPM-敏感数据识别模板",
+          "member": "string",
+          "name": "ComplianceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>识别模板类型</p><p>枚举值：</p><ul><li>0： 内置</li><li>1： 自定义</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ComplianceType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DspmIdentifyRuleDetail": {
       "document": "dspm数据项详情",
       "members": [
@@ -31687,6 +34357,126 @@
         }
       ],
       "usage": "out"
+    },
+    "DspmIdentifyRuleItem": {
+      "document": "dspm分类分级数据项列表项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据项id</p>",
+          "example": "5929",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项名称</p>",
+          "example": "自定义",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项描述</p>",
+          "example": "自定义描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项是否启用</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项类型</p><p>枚举值：</p><ul><li>0： 内置</li><li>1： 自定义</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-04-27 17:51:34",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结构化规则配置状态</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "StructuredStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>非结构化规则配置状态</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "UnStructuredStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "DspmIdentifyRefComplianceInfo",
+          "name": "ComplianceRelations",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DspmIdentifyRuleStructuredTestItem": {
+      "document": "dspm结构化数据项测试",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参数名</p>",
+          "example": "field_name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数类型</p>",
+          "example": "email",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "DspmIp": {
       "document": "Dspm Ip信息",
@@ -32845,6 +35635,42 @@
           "name": "IsRunAtOnce",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DspmStatisticsItem": {
+      "document": "dspm统计项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>统计项名称</p>",
+          "example": "AssetNum",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>统计值</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Value",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "10",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -38309,6 +41135,87 @@
       ],
       "type": "object"
     },
+    "ModifyCosAuditObjectIdentifyStatusRequest": {
+      "document": "ModifyCosAuditObjectIdentifyStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源id</p>",
+          "example": "cos-audit-757d9973",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文本识别状态</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TextIdentifyStatus",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片识别状态</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ImageIdentifyStatus",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCosAuditObjectIdentifyStatusResponse": {
+      "document": "ModifyCosAuditObjectIdentifyStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCosAuditObjectSampleRateRequest": {
+      "document": "ModifyCosAuditObjectSampleRate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存储桶资产id集合</p>",
+          "example": "[1346438]",
+          "member": "uint64",
+          "name": "BucketIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>采样率集合</p>",
+          "example": "[0.5]",
+          "member": "float",
+          "name": "SampleRateSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCosAuditObjectSampleRateResponse": {
+      "document": "ModifyCosAuditObjectSampleRate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyCosMarkInfoRequest": {
       "document": "ModifyCosMarkInfo请求参数结构体",
       "members": [
@@ -38389,6 +41296,42 @@
     },
     "ModifyDspmAccessRecordResponse": {
       "document": "ModifyDspmAccessRecord返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmApplyingIdentifyComplianceGroupRequest": {
+      "document": "ModifyDspmApplyingIdentifyComplianceGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别模板id</p>",
+          "example": "10001",
+          "member": "uint64",
+          "name": "ComplianceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-123e12s1\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmApplyingIdentifyComplianceGroupResponse": {
+      "document": "ModifyDspmApplyingIdentifyComplianceGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -38670,6 +41613,61 @@
       ],
       "type": "object"
     },
+    "ModifyDspmAssetDataScanTaskStatusRequest": {
+      "document": "ModifyDspmAssetDataScanTaskStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "[358]",
+          "member": "uint64",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态</p><p>枚举值：</p><ul><li>1： 识别中</li><li>2： 识别终止</li><li>3： 识别成功</li><li>4： 识别失败</li><li>5： 暂停</li><li>0： 未识别</li></ul>",
+          "example": "5",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12e1w1ed\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmAssetDataScanTaskStatusResponse": {
+      "document": "ModifyDspmAssetDataScanTaskStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "DspmAssetIdentifyTaskStatus",
+          "name": "DataSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDspmAssetLogDeliverySwitchRequest": {
       "document": "ModifyDspmAssetLogDeliverySwitch请求参数结构体",
       "members": [
@@ -38823,6 +41821,213 @@
       ],
       "type": "object"
     },
+    "ModifyDspmIdentifyCategoryRequest": {
+      "document": "ModifyDspmIdentifyCategory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分类ID</p>",
+          "example": "357",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类名称</p>",
+          "example": "自定义分类",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12dasdxa\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmIdentifyCategoryResponse": {
+      "document": "ModifyDspmIdentifyCategory返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmIdentifyComplianceGroupRequest": {
+      "document": "ModifyDspmIdentifyComplianceGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别模板ID</p>",
+          "example": "10001",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>识别模板名称</p>",
+          "example": "kyrie修改",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12edwq32\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "2",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>0： 未启用</li><li>1： 启用</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmIdentifyComplianceGroupResponse": {
+      "document": "ModifyDspmIdentifyComplianceGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmIdentifyComplianceGroupStatusRequest": {
+      "document": "ModifyDspmIdentifyComplianceGroupStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别模板ID</p>",
+          "example": "10001",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>启用状态</p><p>枚举值：</p><ul><li>0： 不启用</li><li>1： 启用</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-23ed21we\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmIdentifyComplianceGroupStatusResponse": {
+      "document": "ModifyDspmIdentifyComplianceGroupStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmIdentifyComplianceRuleLevelInfoRequest": {
+      "document": "ModifyDspmIdentifyComplianceRuleLevelInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>识别模板ID</p>",
+          "example": "10482",
+          "member": "uint64",
+          "name": "ComplianceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项id</p>",
+          "example": "5917",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别项id</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "LevelId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-1231es1s\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmIdentifyComplianceRuleLevelInfoResponse": {
+      "document": "ModifyDspmIdentifyComplianceRuleLevelInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDspmIdentifyInfoRequest": {
       "document": "ModifyDspmIdentifyInfo请求参数结构体",
       "members": [
@@ -38849,6 +42054,249 @@
     },
     "ModifyDspmIdentifyInfoResponse": {
       "document": "ModifyDspmIdentifyInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmIdentifyLevelGroupRequest": {
+      "document": "ModifyDspmIdentifyLevelGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>级别组id</p>",
+          "example": "7",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别组名称</p>",
+          "example": "修改分级组",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-012dass1\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别组描述</p>",
+          "example": "修改分级组描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别信息</p>",
+          "example": "无",
+          "member": "DspmIdentifyLevelItem",
+          "name": "LevelItems",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmIdentifyLevelGroupResponse": {
+      "document": "ModifyDspmIdentifyLevelGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmIdentifyLevelItemRequest": {
+      "document": "ModifyDspmIdentifyLevelItem请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>级别组id</p>",
+          "example": "13669",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别组名称</p>",
+          "example": "高",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12ed1w23\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>敏感程度分</p><p>取值范围：[1, 10]</p><p>单位：敏感程度</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "LevelScore",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmIdentifyLevelItemResponse": {
+      "document": "ModifyDspmIdentifyLevelItem返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmIdentifyRuleRequest": {
+      "document": "ModifyDspmIdentifyRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据项id</p>",
+          "example": "10357",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项名称</p>",
+          "example": "自定义手机号识别",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12e13wd1\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项描述</p>",
+          "example": "自定义描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项启用状态</p><p>枚举值：</p><ul><li>0： 未启用</li><li>1： 启用</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结构化规则</p>",
+          "example": "{\"NodeType\":\"operator\",\"OptType\":\"and\",\"Nodes\":[{\"NodeType\":\"operator\",\"OptType\":\"and\",\"RuleInfos\":[{\"DataSourceType\":\"field_value\",\"RuleMethod\":\"match\",\"RuleType\":\"keyword\",\"RuleContent\":\"phone\",\"Parameters\":{\"IsIgnoreCase\":\"true\"}}],\"Nodes\":[]}]}",
+          "member": "string",
+          "name": "StructuredRule",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>非结构化规则</p>",
+          "example": "{\"RegexRule\":{\"Operator\":\"or\",\"Contents\":[{\"RuleContent\":\"(?<=\\\\D)(13[0-9]|14[014-9]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\\\\d{8}(?=\\\\D)\",\"IsIgnoreCase\":true}]},\"MaxMatchRule\":{\"Length\":100}}",
+          "member": "string",
+          "name": "UnStructuredRule",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmIdentifyRuleResponse": {
+      "document": "ModifyDspmIdentifyRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmIdentifyRuleStatusRequest": {
+      "document": "ModifyDspmIdentifyRuleStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据项id</p>",
+          "example": "[10356]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据项状态</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12ed1we1\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmIdentifyRuleStatusResponse": {
+      "document": "ModifyDspmIdentifyRuleStatus返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

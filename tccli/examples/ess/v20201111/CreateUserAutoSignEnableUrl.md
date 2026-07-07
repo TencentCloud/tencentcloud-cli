@@ -146,3 +146,37 @@ Output:
 }
 ```
 
+**Example 5: 获取H5开通跳转长链接**
+
+将UrlType参数设置为 H5SIGN，并且将EndPoint参数设置为HTTP，即可获得H5页面开通长链接
+
+Input: 
+
+```
+tccli ess CreateUserAutoSignEnableUrl --cli-unfold-argument  \
+    --Operator.UserId yDwgGUUckp1pgi0zUEfxo8AB2PEWmWZL \
+    --SceneKey E_PRESCRIPTION_AUTO_SIGN \
+    --AutoSignConfig.UserInfo.Name 刘付彩文 \
+    --AutoSignConfig.UserInfo.IdCardType ID_CARD \
+    --AutoSignConfig.UserInfo.IdCardNumber 440982199707195371 \
+    --AutoSignConfig.CertInfoCallback True \
+    --AutoSignConfig.UserDefineSeal True \
+    --AutoSignConfig.SealImgCallback True \
+    --EndPoint HTTP
+```
+
+Output: 
+```
+{
+    "Response": {
+        "AppId": "",
+        "AppOriginalId": "",
+        "Path": "",
+        "QrCode": "",
+        "Url": "https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?path=/pages/extra/auto-sign/service-enable&channel=autoSign&identityChange=0&organizationId=yDwf3UUckpshchk9Uuan1OkFOE0qLixm&sceneKey=E_PRESCRIPTION_AUTO_SIGN&confToken=yD3JcUUckpepfwn4U0WZWMEnH1vT2Qfo",
+        "UrlType": "",
+        "RequestId": "7bc4db09-310d-4357-9ca4-8f615b6a5dca"
+    }
+}
+```
+

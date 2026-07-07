@@ -61,3 +61,38 @@ Output:
 }
 ```
 
+**Example 3: 获取设置个人自动签印章的小程序长链接。**
+
+1. 企业已经开通自动签功能。
+2. 个人已经开通自动签。
+3.将参数EndPoint设置为HTTP
+
+Input: 
+
+```
+tccli essbasic ChannelCreateUserAutoSignSealUrl --cli-unfold-argument  \
+    --Agent.AppId yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2 \
+    --Agent.ProxyOrganizationOpenId ess_open_organization_1 \
+    --Agent.ProxyOperator.OpenId kevinlcheng \
+    --SceneKey E_PRESCRIPTION_AUTO_SIGN \
+    --UserInfo.Name 刘付彩文 \
+    --UserInfo.IdCardType ID_CARD \
+    --UserInfo.IdCardNumber 440982199707195371 \
+    --Operator.OpenId  \
+    --EndPoint HTTP
+```
+
+Output: 
+```
+{
+    "Response": {
+        "AppId": "",
+        "AppOriginalId": "",
+        "Path": "",
+        "QrCode": "",
+        "Url": "https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=KA_AUTO_ESIGN_MODIFY&channel=autoSign&identityChange=0&organizationId=yDwFmUUckpstjt1aUyN9xSlvgkLEa4NC&sceneKey=E_PRESCRIPTION_AUTO_SIGN&confToken=yD3JcUUckpepm1maUy4y9iHw6yuotr7l",
+        "RequestId": "85ecfeb6-974a-45d2-ba6e-a4ed27b30116"
+    }
+}
+```
+

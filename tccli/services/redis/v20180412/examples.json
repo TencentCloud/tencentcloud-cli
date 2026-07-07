@@ -99,9 +99,9 @@
     "CreateExportTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExportTask\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-hnio60jv\",\n    \"LogType\": \"auditLog\",\n    \"StartTime\": \"2026-03-05 12:42:39\",\n    \"EndTime\": \"2026-03-05 16:42:39\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dacf2bf0-b15f-44eb-9260-5de946778cbf\"\n    }\n}",
-        "title": "请求实例"
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExportTask\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-10fvqj29\",\n    \"LogType\": \"auditLog\",\n    \"StartTime\": \"2026-07-07 19:24:07\",\n    \"EndTime\": \"2026-07-08 19:24:07\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FileName\": \"crs-10fvqj29_20260707-192407_to_20260708-192407_1783425093786.tar.gz\",\n        \"RequestId\": \"ac118908-1ceb-42fb-bf22-5f4d0ea603e3\"\n    }\n}",
+        "title": "CreateExportTask"
       }
     ],
     "CreateInstanceAccount": [

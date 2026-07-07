@@ -11011,17 +11011,6 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>数据库引擎版本</p>",
-          "example": "17.6",
-          "member": "string",
-          "name": "Version",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
         }
       ],
       "usage": "both"

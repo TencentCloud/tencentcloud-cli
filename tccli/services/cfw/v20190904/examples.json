@@ -614,7 +614,7 @@
       {
         "document": "获取日志离线导出任务文件下载临时凭证",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOfflineExportTemporaryCredentials\n<公共请求参数>\n\n{\n    \"TaskId\": \"99281\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d8786ee-788f-440a-84bd-cd191f6cc18d\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Link\": \"https://export-log-offline-1*********.cos.ap.com\",\n        \"RequestId\": \"2d8786ee-788f-440a-84bd-cd191f6cc18d\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\"\n    }\n}",
         "title": "获取日志离线导出任务文件下载临时凭证"
       }
     ],

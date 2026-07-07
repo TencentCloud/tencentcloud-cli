@@ -5243,7 +5243,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "emr-o88f3whr",
           "member": "string",
           "name": "InstanceId",
@@ -5252,7 +5252,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组名称数组",
+          "document": "<p>用户组名称数组</p>",
           "example": "[\"group1\",\"group2\"]",
           "member": "string",
           "name": "GroupNames",
@@ -5267,12 +5267,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除返回结果",
+          "document": "<p>删除返回结果</p>",
           "example": "无",
           "member": "ResultItem",
           "name": "Data",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流程id</p>",
+          "example": "737",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -5352,7 +5362,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群实例ID",
+          "document": "<p>集群实例ID</p>",
           "example": "emr-o88f3whr",
           "member": "string",
           "name": "InstanceId",
@@ -5361,7 +5371,7 @@
         },
         {
           "disabled": false,
-          "document": "集群用户名列表",
+          "document": "<p>集群用户名列表</p>",
           "example": "[\"user1\"]",
           "member": "string",
           "name": "UserNameList",
@@ -5370,7 +5380,7 @@
         },
         {
           "disabled": false,
-          "document": "tke/eks集群id，容器集群传",
+          "document": "<p>tke/eks集群id，容器集群传</p>",
           "example": "emr-xxx",
           "member": "string",
           "name": "TkeClusterId",
@@ -5379,7 +5389,7 @@
         },
         {
           "disabled": false,
-          "document": "默认空，容器版传\"native\"",
+          "document": "<p>默认空，容器版传&quot;native&quot;</p>",
           "example": "native",
           "member": "string",
           "name": "DisplayStrategy",
@@ -5388,7 +5398,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组",
+          "document": "<p>用户组</p>",
           "example": "无",
           "member": "UserAndGroup",
           "name": "UserGroupList",
@@ -5397,7 +5407,7 @@
         },
         {
           "disabled": false,
-          "document": "是否删除家目录，只针对cvm集群",
+          "document": "<p>是否删除家目录，只针对cvm集群</p>",
           "example": "true",
           "member": "bool",
           "name": "DeleteHomeDir",
@@ -5410,6 +5420,16 @@
     "DeleteUserManagerUserListResponse": {
       "document": "DeleteUserManagerUserList返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>流程id</p>",
+          "example": "738",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -16784,7 +16804,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群字符串ID",
+          "document": "<p>集群字符串ID</p>",
           "example": "emr-o88f3whr",
           "member": "string",
           "name": "InstanceId",
@@ -16793,7 +16813,7 @@
         },
         {
           "disabled": false,
-          "document": "用户信息列表",
+          "document": "<p>用户信息列表</p>",
           "example": "[\"user1\"]",
           "member": "string",
           "name": "Users",
@@ -16802,7 +16822,7 @@
         },
         {
           "disabled": false,
-          "document": "用户主组，cvm集群为必填参数，tke集群选填",
+          "document": "<p>用户主组，cvm集群为必填参数，tke集群选填</p>",
           "example": "group4",
           "member": "string",
           "name": "UserGroup",
@@ -16811,7 +16831,7 @@
         },
         {
           "disabled": false,
-          "document": "用户副组",
+          "document": "<p>用户副组</p>",
           "example": "[\"group4\"]",
           "member": "string",
           "name": "Groups",
@@ -16820,7 +16840,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "modify",
           "member": "string",
           "name": "Remark",
@@ -16833,6 +16853,16 @@
     "ModifyUserGroupResponse": {
       "document": "ModifyUserGroup返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>流程id</p>",
+          "example": "287",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -16847,7 +16877,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群实例ID",
+          "document": "<p>集群实例ID</p>",
           "example": "emr-xxx",
           "member": "string",
           "name": "InstanceId",
@@ -16856,7 +16886,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "emr",
           "member": "string",
           "name": "UserName",
@@ -16865,7 +16895,7 @@
         },
         {
           "disabled": false,
-          "document": "密码",
+          "document": "<p>密码</p>",
           "example": "pwd-test-123",
           "member": "string",
           "name": "PassWord",
@@ -16874,7 +16904,7 @@
         },
         {
           "disabled": false,
-          "document": "是否同步密码",
+          "document": "<p>是否同步密码</p>",
           "example": "false",
           "member": "bool",
           "name": "SyncPwd",
@@ -16887,6 +16917,16 @@
     "ModifyUserManagerPwdResponse": {
       "document": "ModifyUserManagerPwd返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>流程id</p>",
+          "example": "732",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -16901,7 +16941,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "emr-o88f3whr",
           "member": "string",
           "name": "InstanceId",
@@ -16910,7 +16950,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组名",
+          "document": "<p>用户组名</p>",
           "example": "group3",
           "member": "string",
           "name": "Group",
@@ -16919,7 +16959,7 @@
         },
         {
           "disabled": false,
-          "document": "用户列表",
+          "document": "<p>用户列表</p>",
           "example": "[\"user1\"]",
           "member": "string",
           "name": "Users",
@@ -16928,7 +16968,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组描述",
+          "document": "<p>用户组描述</p>",
           "example": "modify",
           "member": "string",
           "name": "Description",
@@ -16937,7 +16977,7 @@
         },
         {
           "disabled": false,
-          "document": "枚举类, ADD, DELETE, SYNC\n\n\n枚举类说明:\n- ADD: 新增的批量用户, 多次新增相同的用户不会报错\n- DELETE: 从用户组里删除的批量用户, 删除不存在的用户不会报错\n- SYNC: 用于同步整个用户组, 当列表为空时代表清空整个用户组\n默认为SYNC\n",
+          "document": "<p>枚举类, ADD, DELETE, SYNC</p><p>枚举类说明:</p><ul><li>ADD: 新增的批量用户, 多次新增相同的用户不会报错</li><li>DELETE: 从用户组里删除的批量用户, 删除不存在的用户不会报错</li><li>SYNC: 用于同步整个用户组, 当列表为空时代表清空整个用户组<br>默认为SYNC</li></ul>",
           "example": "SYNC",
           "member": "string",
           "name": "OperateAction",
@@ -16952,12 +16992,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否修改成功",
+          "document": "<p>是否修改成功</p>",
           "example": "true",
           "member": "bool",
           "name": "Data",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流程id</p>",
+          "example": "288",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

@@ -1,4 +1,4 @@
-**Example 1: 请求实例**
+**Example 1: CreateExportTask**
 
 
 
@@ -6,17 +6,18 @@ Input:
 
 ```
 tccli redis CreateExportTask --cli-unfold-argument  \
-    --InstanceId crs-hnio60jv \
+    --InstanceId crs-10fvqj29 \
     --LogType auditLog \
-    --StartTime 2026-03-05 12:42:39 \
-    --EndTime 2026-03-05 16:42:39
+    --StartTime 2026-07-07 19:24:07 \
+    --EndTime 2026-07-08 19:24:07
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "dacf2bf0-b15f-44eb-9260-5de946778cbf"
+        "FileName": "crs-10fvqj29_20260707-192407_to_20260708-192407_1783425093786.tar.gz",
+        "RequestId": "ac118908-1ceb-42fb-bf22-5f4d0ea603e3"
     }
 }
 ```
