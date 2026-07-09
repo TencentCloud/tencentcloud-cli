@@ -21,6 +21,35 @@ def shell(cmd):
     return stdout
 
 
+_REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+_TCCLI_RUNNER = (
+    "{py} -c \"import sys; sys.path.insert(0, '{repo}'); "
+    "from tccli.main import main; sys.exit(main())\""
+).format(py=sys.executable, repo=_REPO_ROOT)
+
+
+def shell_with_stderr(cmd, clean_cred_env=False):
+    """执行命令，返回 (stdout, stderr, returncode)。
+    将命令中的 tccli 替换为当前源码入口，确保测试当前分支代码。
+    clean_cred_env=True 时从 env 中移除 AK/SK，用于测试无凭证场景。
+    """
+    cmd = cmd.replace("tccli ", _TCCLI_RUNNER + " ", 1)
+    env = os.environ.copy()
+    if clean_cred_env:
+        env.pop("TENCENTCLOUD_SECRET_ID", None)
+        env.pop("TENCENTCLOUD_SECRET_KEY", None)
+        env.pop("TENCENTCLOUD_SECRET_TOKEN", None)
+    p = subprocess.Popen(
+        cmd, shell=True,
+        stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+        env=env,
+    )
+    stdout, stderr = p.communicate()
+    if sys.version_info.major >= 3:
+        return stdout.decode("utf-8"), stderr.decode("utf-8"), p.returncode
+    return stdout, stderr, p.returncode
+
+
 def recover_profile(prof="default"):
     def decorator(func):
         @functools.wraps(func)
