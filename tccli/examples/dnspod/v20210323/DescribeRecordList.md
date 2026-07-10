@@ -10,7 +10,7 @@ tccli dnspod DescribeRecordList --cli-unfold-argument  \
     --Limit 2 \
     --Domain dnspod.cn \
     --DomainId 123 \
-    --Subdomain www \
+    --SubDomain www \
     --Keyword dnspod \
     --RecordType NS \
     --RecordLine 默认 \

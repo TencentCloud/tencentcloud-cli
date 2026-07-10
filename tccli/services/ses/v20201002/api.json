@@ -504,7 +504,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>邮件主题</p>",
+          "document": "<p>邮件主题</p><p>当使用模版发送时，支持使用模版变量参数填充</p>",
           "example": "邮件主题",
           "member": "string",
           "name": "Subject",
@@ -2891,7 +2891,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>邮件主题</p>",
+          "document": "<p>邮件主题</p><p>当使用模版发送时，支持使用模版变量参数填充</p>",
           "example": "YourTestSubject",
           "member": "string",
           "name": "Subject",

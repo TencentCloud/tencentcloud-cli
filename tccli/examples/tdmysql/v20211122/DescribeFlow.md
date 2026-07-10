@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli tdmysql DescribeFlow --cli-unfold-argument ```
+tccli tdmysql DescribeFlow --cli-unfold-argument  \
+    --FlowId 1
+```
 
 Output: 
 ```

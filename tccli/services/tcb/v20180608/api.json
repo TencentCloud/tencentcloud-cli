@@ -5713,7 +5713,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>回滚的sql 语句</p>",
+          "document": "<p>回滚的sql 语句</p><p>deprecated</p>",
           "example": "DROP TABLE IF EXISTS public.test;",
           "member": "string",
           "name": "Rollback",
@@ -5723,7 +5723,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>migration query 语句的checksum值</p><p>由服务端自动生成，同版本 checksum 不一致会拒绝执行</p>",
+          "document": "<p>migration query 语句的checksum值,由服务端自动生成，同版本 checksum 不一致会拒绝执行</p><p>deprecated</p>",
           "example": "eeaf0dd9391ba7829bd12b47482fab4a0e031a040f00cfb6eafc5c23b9fcf791",
           "member": "string",
           "name": "Checksum",
@@ -5733,7 +5733,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用于标记调用来源</p>",
+          "document": "<p>用于标记调用来源</p><p>deprecated</p>",
           "example": "repair",
           "member": "string",
           "name": "Source",
@@ -5743,7 +5743,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用于标记该条migration由谁创建，目前默认调用的用户uin</p>",
+          "document": "<p>用于标记该条migration由谁创建，目前默认调用的用户uin</p><p>deprecated</p>",
           "example": "100019231666",
           "member": "string",
           "name": "CreatedBy",
@@ -5753,7 +5753,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>该migration创建时间</p>",
+          "document": "<p>该migration创建时间</p><p>deprecated</p>",
           "example": "2026-05-26T11:34:19+08:00",
           "member": "string",
           "name": "CreatedAt",
@@ -5763,7 +5763,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>该migration应用时间</p>",
+          "document": "<p>该migration应用时间</p><p>deprecated</p>",
           "example": "2026-05-26T11:34:19+08:00",
           "member": "string",
           "name": "AppliedAt",
@@ -5773,7 +5773,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>该migration执行耗时</p><p>单位：毫秒</p>",
+          "document": "<p>该migration执行耗时</p><p>单位：毫秒</p><p>deprecated</p>",
           "example": "153",
           "member": "int64",
           "name": "DurationMs",
@@ -9618,7 +9618,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>migration query sql 语句checksum</p><p>服务端自动生成，同版本不同checksum会拒绝执行</p>",
+          "document": "<p>migration query sql 语句checksum，服务端自动生成，同版本不同checksum会拒绝执行</p><p>deprecated</p>",
           "example": "eeaf0dd9391ba7829bd12b47482fab4a0e031a040f00cfb6eafc5c23b9fcf791",
           "member": "string",
           "name": "Checksum",
@@ -9628,7 +9628,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>应用时间</p>",
+          "document": "<p>应用时间</p><p>deprecated</p>",
           "example": "2026-05-26T11:34:19+08:00",
           "member": "string",
           "name": "AppliedAt",
@@ -9638,7 +9638,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>请求来源</p>",
+          "document": "<p>请求来源</p><p>deprecated</p>",
           "example": "cloudapi",
           "member": "string",
           "name": "Source",
@@ -9648,7 +9648,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>migration 创建时间</p>",
+          "document": "<p>migration 创建时间</p><p>deprecated</p>",
           "example": "100019231666",
           "member": "string",
           "name": "CreatedBy",
@@ -11038,12 +11038,21 @@
         },
         {
           "disabled": false,
-          "document": "<p>标记请求来源</p>",
+          "document": "<p>标记请求来源</p><p>deprecated</p>",
           "example": "cli",
           "member": "string",
           "name": "Source",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许 out-of-order local migrations</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IncludeAll",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11682,12 +11691,21 @@
         },
         {
           "disabled": false,
-          "document": "<p>标记请求来源</p>",
+          "document": "<p>标记请求来源</p><p>deprecated</p>",
           "example": "cloudapi",
           "member": "string",
           "name": "Source",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>为true时允许 out-of-order local migrations</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IncludeAll",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

@@ -21524,6 +21524,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高性能集群ID</p>",
+          "example": "hpc-7yrjz5vr",
+          "member": "string",
+          "name": "HCCHpcClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

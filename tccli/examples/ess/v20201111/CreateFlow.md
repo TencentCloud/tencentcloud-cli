@@ -62,7 +62,35 @@ Output:
 }
 ```
 
-**Example 3: 创建签署流程**
+**Example 3: 创建含有或签签署人流程，签署方不指定具体的签署人**
+
+创建一个B端签署流程，签署方不指定具体的签署人
+注：
+`1.签署人相关信息为空，如：姓名、手机号码等`
+`2.CustomApproverTag需传值，表示为或签签署人（不确定具体的签署人），需后续进行补充。`
+
+Input: 
+
+```
+tccli ess CreateFlow --cli-unfold-argument  \
+    --Operator.UserId yDCp0UUckpay74u2Uxgcd4v1197NeSXv \
+    --FlowName 测试或签合同 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.CustomApproverTag custom_tag \
+    --Approvers.0.OrganizationName 典子谦示例企业
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "yD3arUUckpmvkpc7U1UuZIg1D1AlzXVo",
+        "RequestId": "1c5501d6-dd0b-4589-9132-79d8c4adee54"
+    }
+}
+```
+
+**Example 4: 创建签署流程**
 
 创建一个B2C流程
 
@@ -95,7 +123,7 @@ Output:
 }
 ```
 
-**Example 4: 创建签署流程-开启发起审批流**
+**Example 5: 创建签署流程-开启发起审批流**
 
 
 

@@ -127,7 +127,7 @@
       "status": "online"
     },
     "DescribeTokenPlanApiKeyUsageDetail": {
-      "document": "查询 TokenPlan APIKey 调用明细。\n\n从 CLS 日志服务查询套餐下的调用明细，按 pkg_id 过滤，支持游标分页。",
+      "document": "查询 TokenPlan APIKey 调用明细。\n\n从 CLS 日志服务查询套餐下的调用明细，按 team_id 过滤，支持游标分页。",
       "input": "DescribeTokenPlanApiKeyUsageDetailRequest",
       "name": "查询 TokenPlan 企业版 API Key 调用明细",
       "output": "DescribeTokenPlanApiKeyUsageDetailResponse",
@@ -2729,7 +2729,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "价格维度标识。取值：Input（输入）、Output（输出）、Cache（缓存命中）、Thinking（思考）、BatchInput（批量输入）、BatchOutput（批量输出）、BatchCache（批量缓存命中）、ImageInput（输入图片）、ImageOutput（输出图片）、Search（搜索调用）。",
+          "document": "<p>价格维度标识。取值：Input（输入）、Output（输出）、Cache（缓存命中）、Thinking（思考）、BatchInput（批量输入）、BatchOutput（批量输出）、BatchCache（批量缓存命中）、ImageInput（输入图片）、ImageOutput（输出图片）、Search（搜索调用）。</p>",
           "example": "Input",
           "member": "string",
           "name": "PriceName",
@@ -2739,7 +2739,7 @@
         },
         {
           "disabled": false,
-          "document": "价格维度展示名，后端直接提供当前语言文本（如 输入、Input），前端无需翻译。",
+          "document": "<p>价格维度展示名，后端直接提供当前语言文本（如 输入、Input），前端无需翻译。</p>",
           "example": "输入",
           "member": "string",
           "name": "DisplayName",
@@ -2749,7 +2749,7 @@
         },
         {
           "disabled": false,
-          "document": "价格数值。",
+          "document": "<p>价格数值。</p>",
           "example": "1",
           "member": "string",
           "name": "Price",
@@ -2759,11 +2759,21 @@
         },
         {
           "disabled": false,
-          "document": "价格单位，后端直接提供当前语言文本（如 元/百万tokens、元/张、积分/次）。",
+          "document": "<p>价格单位，后端直接提供当前语言文本（如 元/百万tokens、元/张、积分/次）。</p>",
           "example": "元/百万tokens",
           "member": "string",
           "name": "PriceUnit",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高峰价格，为空表示无高峰定价</p>",
+          "example": "1",
+          "member": "string",
+          "name": "PeakPrice",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

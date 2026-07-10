@@ -122,7 +122,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditKeywords\n<公共请求参数>\n\n{\n    \"Keywords\": [\n        {\n            \"Content\": \"content\",\n            \"Label\": \"321\"\n        }\n    ],\n    \"LibId\": \"4c49c04f-6617-4705-b3ff-bedce642bfcb\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DupInfos\": [\n            {\n                \"Content\": \"content\",\n                \"KeywordId\": \"8454212\",\n                \"CreateTime\": \"2018-11-29T19:00:00Z\",\n                \"Label\": \"321\"\n            }\n        ],\n        \"KeywordIds\": [\n            \"4895545216621\"\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DupInfos\": [\n            {\n                \"Content\": \"content\",\n                \"KeywordId\": \"8454212\",\n                \"CreateTime\": \"2018-11-29T19:00:00Z\",\n                \"Label\": \"321\"\n            }\n        ],\n        \"KeywordIds\": [\n            \"4895545216621\"\n        ],\n        \"Keywords\": [],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "直播审核创建关键词"
       }
     ],

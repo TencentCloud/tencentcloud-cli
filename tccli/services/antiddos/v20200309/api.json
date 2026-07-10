@@ -5181,7 +5181,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "IP 资源列表",
+          "document": "<p>IP 资源列表</p>",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "IpList",
@@ -5190,8 +5190,8 @@
         },
         {
           "disabled": false,
-          "document": "域名化资源传id",
-          "example": "id-xx",
+          "document": "<p>域名化资源传id</p>",
+          "example": "[\"ins-fovwfovx\"]",
           "member": "string",
           "name": "IdList",
           "required": false,
@@ -5199,8 +5199,8 @@
         },
         {
           "disabled": false,
-          "document": "地域名称",
-          "example": "guangzhou ",
+          "document": "<p>地域名称</p>",
+          "example": "1",
           "member": "uint64",
           "name": "FilterRegion",
           "required": false,
@@ -5208,8 +5208,8 @@
         },
         {
           "disabled": false,
-          "document": "cnameWaf资源",
-          "example": "id-xxx",
+          "document": "<p>cnameWaf资源</p>",
+          "example": "[\"id-xxx\"]",
           "member": "string",
           "name": "CnameWafIdList",
           "required": false,
@@ -5223,7 +5223,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回资源及状态，状态码：\n1 - 封堵状态\n2 - 正常状态\n3 - 攻击状态",
+          "document": "<p>返回资源及状态，状态码：<br>1 - 封堵状态<br>2 - 正常状态<br>3 - 攻击状态</p>",
           "example": "无",
           "member": "KeyValue",
           "name": "Data",
@@ -5233,7 +5233,7 @@
         },
         {
           "disabled": false,
-          "document": "域名化资产的名称",
+          "document": "<p>域名化资产的名称</p>",
           "example": "无",
           "member": "KeyValue",
           "name": "CLBData",
@@ -5243,7 +5243,7 @@
         },
         {
           "disabled": false,
-          "document": "cnamewaf资源状态",
+          "document": "<p>cnamewaf资源状态</p>",
           "example": "无",
           "member": "KeyValue",
           "name": "CnameWafData",

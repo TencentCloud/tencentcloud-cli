@@ -36,7 +36,7 @@
       "status": "online"
     },
     "CreateLoadBalancer": {
-      "document": "**CreateLoadBalancer**接口属于异步接口，即系统返回一个实例ID，但该应用型负载均衡实例尚未创建成功，系统后台的创建任务仍在进行。您可以调用[DescribeLoadBalancerDetail](214362)查询应用型负载均衡实例的创建状态：\n- 当应用型负载均衡实例处于**Provisioning**状态时，表示应用型负载均衡实例正在创建中。\n- 当应用型负载均衡实例处于**Active**状态时，表示应用型负载均衡实例创建成功。",
+      "document": "**CreateLoadBalancer**接口属于异步接口，即系统返回一个实例ID，但该应用型负载均衡实例尚未创建成功，系统后台的创建任务仍在进行。您可以调用[DescribeLoadBalancerDetail](https://cloud.tencent.com/document/api/1822/133711)查询应用型负载均衡实例的创建状态：\n- 当应用型负载均衡实例处于**Provisioning**状态时，表示应用型负载均衡实例正在创建中。\n- 当应用型负载均衡实例处于**Active**状态时，表示应用型负载均衡实例创建成功。",
       "input": "CreateLoadBalancerRequest",
       "name": "创建应用型负载均衡实例",
       "output": "CreateLoadBalancerResponse",
@@ -78,7 +78,7 @@
       "status": "online"
     },
     "DeleteLoadBalancers": {
-      "document": "**DeleteLoadBalancers**接口属于异步接口，即系统返回一个请求ID，但该应用型负载均衡实例尚未删除成功，系统后台的删除任务仍在进行。您可以调用[DescribeLoadBalancerDetails](214362)查询应用型负载均衡实例的删除状态：\n- 当应用型负载均衡实例处于**Deleting**状态时，表示应用型负载均衡实例正在删除中。\n- 当查询不到指定的应用型负载均衡实例时，表示应用型负载均衡实例删除成功。",
+      "document": "**DeleteLoadBalancers**接口属于异步接口，即系统返回一个请求ID，但该应用型负载均衡实例尚未删除成功，系统后台的删除任务仍在进行。您可以调用[DescribeLoadBalancerDetail](https://cloud.tencent.com/document/api/1822/133711)查询应用型负载均衡实例的删除状态：\n- 当应用型负载均衡实例处于**Deleting**状态时，表示应用型负载均衡实例正在删除中。\n- 当查询不到指定的应用型负载均衡实例时，表示应用型负载均衡实例删除成功。",
       "input": "DeleteLoadBalancersRequest",
       "name": "删除应用型负载均衡实例",
       "output": "DeleteLoadBalancersResponse",
@@ -274,7 +274,7 @@
       "status": "online"
     },
     "ModifyLoadBalancerAttributes": {
-      "document": "**ModifyLoadBalancerAttributes**接口属于异步接口，即系统返回一个请求ID，但该应用型负载均衡实例属性尚未修改成功，系统后台的修改任务仍在进行。您可以调用[DescribeLoadBalancerAttribute](214362)查询应用型负载均衡实例属性的修改状态：\n- 当应用型负载均衡实例属性处于**Configuring**状态时，表示应用型负载均衡实例属性正在修改中。\n- 当应用型负载均衡实例属性处于**Active**状态时，表示应用型负载均衡实例属性修改成功。",
+      "document": "**ModifyLoadBalancerAttributes**接口属于异步接口，即系统返回一个请求ID，但该应用型负载均衡实例属性尚未修改成功，系统后台的修改任务仍在进行。您可以调用[DescribeLoadBalancerDetail](https://cloud.tencent.com/document/api/1822/133711)查询应用型负载均衡实例属性的修改状态：\n- 当应用型负载均衡实例属性处于**Configuring**状态时，表示应用型负载均衡实例属性正在修改中。\n- 当应用型负载均衡实例属性处于**Active**状态时，表示应用型负载均衡实例属性修改成功。",
       "input": "ModifyLoadBalancerAttributesRequest",
       "name": "更新负载均衡实例属性",
       "output": "ModifyLoadBalancerAttributesResponse",
@@ -330,7 +330,7 @@
       "status": "online"
     },
     "SetLoadBalancerSecurityGroups": {
-      "document": "SetLoadBalancerSecurityGroups 接口支持对一个公网负载均衡实例执行设置（绑定、解绑）安全组操作。查询一个负载均衡实例目前已绑定的安全组，可使用 [DescribeLoadBalancerDetail](xxx) 接口。本接口是set语义，\n绑定操作时，入参需要传入负载均衡实例要绑定的所有安全组（已绑定的+新增绑定的）。\n解绑操作时，入参需要传入负载均衡实例执行解绑后所绑定的所有安全组；如果要解绑所有安全组，可不传此参数，或传入空数组。",
+      "document": "SetLoadBalancerSecurityGroups 接口支持对一个公网负载均衡实例执行设置（绑定、解绑）安全组操作。查询一个负载均衡实例目前已绑定的安全组，可使用 [DescribeLoadBalancerDetail](https://cloud.tencent.com/document/api/1822/133711) 接口。本接口是set语义，\n绑定操作时，入参需要传入负载均衡实例要绑定的所有安全组（已绑定的+新增绑定的）。\n解绑操作时，入参需要传入负载均衡实例执行解绑后所绑定的所有安全组；如果要解绑所有安全组，可不传此参数，或传入空数组。",
       "input": "SetLoadBalancerSecurityGroupsRequest",
       "name": "设置负载均衡实例的安全组",
       "output": "SetLoadBalancerSecurityGroupsResponse",
@@ -339,7 +339,7 @@
   },
   "metadata": {
     "apiVersion": "2025-10-30",
-    "api_brief": "ALB API 主要提供包括不限于以下几类核心管理能力：\nu200b实例管理u200b\n创建、删除、修改ALB实例的基本属性和网络配置。\nu200b监听与路由管理u200b\n配置监听器及基于路径/域名的精细转发规则，实现流量调度。\nu200b后端服务管理u200b\n管理后端服务器组，动态注册或注销后端服务节点。\nu200b监控数据查询u200b\n获取QPS、延迟、流量等关键指标，用于监控与告警。\n这些接口共同支撑了ALB的自动化运维和弹性扩缩容。",
+    "api_brief": "应用型负载均衡",
     "serviceNameCN": "应用型负载均衡",
     "serviceShortName": "alb"
   },
@@ -386,21 +386,21 @@
         },
         {
           "disabled": false,
+          "document": "需要添加至目标组的后端服务列表。单次请求最多支持添加 **50** 个后端服务。",
+          "example": "无",
+          "member": "TargetToAdd",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否预览此次请求。 \n- **false**（默认）：发送普通请求，直接添加后端服务至目标组。 \n- **true**：发送预览请求，检查添加后端服务的参数、格式、业务限制等是否符合要求。",
           "example": "false",
           "member": "bool",
           "name": "DryRun",
           "required": false,
           "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "需要添加至目标组的后端服务列表。单次请求最多支持添加 **50** 个后端服务。",
-          "example": "无",
-          "member": "TargetToAdd",
-          "name": "Targets",
-          "required": false,
-          "type": "list"
         }
       ],
       "type": "object"
@@ -1066,6 +1066,15 @@
         },
         {
           "disabled": false,
+          "document": "转发规则列表。",
+          "example": "无",
+          "member": "RuleInput",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "客户端Token，用于保证请求的幂等性。  从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符。  若您未指定，则系统自动使用API请求的RequestId作为ClientToken标识。每次API请求的RequestId不一样。",
           "example": "3e727335-f94c-468f-9989-21759a3b6d**e8",
           "member": "string",
@@ -1081,15 +1090,6 @@
           "name": "DryRun",
           "required": false,
           "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "转发规则列表。",
-          "example": "无",
-          "member": "RuleInput",
-          "name": "Rules",
-          "required": false,
-          "type": "list"
         }
       ],
       "type": "object"
@@ -1121,7 +1121,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全策略支持的加密套件列表。加密套件用于协商客户端与服务端之间的加密算法。\n\n**配置说明：**\n- 加密套件的可选范围取决于所选的 TLS 协议版本（TLSVersions 参数）。\n- 只要加密套件被任意一个已选 TLS 版本支持，即可添加到列表中。\n- 若 TLSVersions 包含 TLSv1.3：可不指定 TLSv1.3 专属加密套件（系统将自动补全全部 TLSv1.3 套件）；若指定，则必须包含全部 TLSv1.3 专属加密套件，不支持仅指定部分。\n\n**获取可用加密套件：**\n请调用 [DescribeSecurityPolicyCapabilities](https://cloud.tencent.com/document/api/xxx) 接口查询各 TLS 版本支持的加密套件列表。\n",
+          "document": "<p>安全策略支持的加密套件列表。加密套件用于协商客户端与服务端之间的加密算法。</p><p><strong>配置说明：</strong></p><ul><li>加密套件的可选范围取决于所选的 TLS 协议版本（TLSVersions 参数）。</li><li>只要加密套件被任意一个已选 TLS 版本支持，即可添加到列表中。</li><li>若 TLSVersions 包含 TLSv1.3：可不指定 TLSv1.3 专属加密套件（系统将自动补全全部 TLSv1.3 套件）；若指定，则必须包含全部 TLSv1.3 专属加密套件，不支持仅指定部分。</li></ul><p><strong>获取可用加密套件：</strong><br>请调用 <a href=\"https://cloud.tencent.com/document/api/1822/133718\">DescribeSecurityPolicyCapabilities</a> 接口查询各 TLS 版本支持的加密套件列表。</p>",
           "example": "[\"TLS_AES_128_GCM_SHA256\"]",
           "member": "string",
           "name": "Ciphers",
@@ -1130,7 +1130,7 @@
         },
         {
           "disabled": false,
-          "document": "安全策略支持的 TLS 协议版本列表。TLS（Transport Layer Security）协议用于保障客户端与负载均衡之间的通信安全。\n\n**可选值：**\n- **TLSv1.0**：兼容性最好，但安全性较低，不推荐在生产环境使用。\n- **TLSv1.1**：安全性略优于 TLSv1.0，但仍不推荐。\n- **TLSv1.2**：目前主流的安全协议版本，兼顾安全性与兼容性。\n- **TLSv1.3**：最新版本，安全性最高，性能更优，推荐优先使用。\n\n**建议：** 生产环境建议至少选择 TLSv1.2，若客户端支持，优先启用 TLSv1.3。\n",
+          "document": "<p>安全策略支持的 TLS 协议版本列表。TLS（Transport Layer Security）协议用于保障客户端与负载均衡之间的通信安全。</p><p><strong>可选值：</strong></p><ul><li><strong>TLSv1.0</strong>：兼容性最好，但安全性较低，不推荐在生产环境使用。</li><li><strong>TLSv1.1</strong>：安全性略优于 TLSv1.0，但仍不推荐。</li><li><strong>TLSv1.2</strong>：目前主流的安全协议版本，兼顾安全性与兼容性。</li><li><strong>TLSv1.3</strong>：最新版本，安全性最高，性能更优，推荐优先使用。</li></ul><p><strong>建议：</strong> 生产环境建议至少选择 TLSv1.2，若客户端支持，优先启用 TLSv1.3。</p>",
           "example": "[\"TLSv1.2\", \"TLSv1.3\"]",
           "member": "string",
           "name": "TLSVersions",
@@ -1139,7 +1139,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端幂等性令牌。\n\n用于保证请求的幂等性，防止因网络超时或客户端重试导致的重复创建。建议使用 UUID 作为令牌值。相同的 ClientToken 在有效期内重复请求时，服务端将返回相同的结果。\n",
+          "document": "<p>客户端幂等性令牌。</p><p>用于保证请求的幂等性，防止因网络超时或客户端重试导致的重复创建。建议使用 UUID 作为令牌值。相同的 ClientToken 在有效期内重复请求时，服务端将返回相同的结果。</p>",
           "example": "d2e3f6c4-5b87-4f3e-8a19-7b9f9f3a8b45",
           "member": "string",
           "name": "ClientToken",
@@ -1148,7 +1148,7 @@
         },
         {
           "disabled": false,
-          "document": "是否仅执行预检请求。取值：\n- **true**：仅执行预检请求，不实际创建资源。预检请求将验证参数格式、权限及资源配额等，帮助您在正式操作前发现潜在问题。\n- **false**（默认）：执行正常请求，通过预检后将直接创建安全策略。\n",
+          "document": "<p>是否仅执行预检请求。取值：</p><ul><li><strong>true</strong>：仅执行预检请求，不实际创建资源。预检请求将验证参数格式、权限及资源配额等，帮助您在正式操作前发现潜在问题。</li><li><strong>false</strong>（默认）：执行正常请求，通过预检后将直接创建安全策略。</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "DryRun",
@@ -1157,7 +1157,7 @@
         },
         {
           "disabled": false,
-          "document": "安全策略名称。用于标识和区分不同的安全策略。\n\n**命名规则：**\n- 长度为 2~128 个字符。\n- 必须以英文字母或中文开头。\n- 可包含英文字母、中文、数字、半角句号（.）、下划线（_）和短划线（-）。\n\n**建议：** 使用具有业务含义的名称，例如 \"prod-high-security\" 或 \"测试环境策略\"。\n",
+          "document": "<p>安全策略名称。用于标识和区分不同的安全策略。</p><p><strong>命名规则：</strong></p><ul><li>长度为 2~128 个字符。</li><li>必须以英文字母或中文开头。</li><li>可包含英文字母、中文、数字、半角句号（.）、下划线（_）和短划线（-）。</li></ul><p><strong>建议：</strong> 使用具有业务含义的名称，例如 &quot;prod-high-security&quot; 或 &quot;测试环境策略&quot;。</p>",
           "example": "test-policy",
           "member": "string",
           "name": "SecurityPolicyName",
@@ -1166,7 +1166,7 @@
         },
         {
           "disabled": false,
-          "document": "安全策略的标签列表。标签用于对资源进行分类和管理，便于按业务、环境、部门等维度筛选和组织资源。\n\n每个标签由键值对（Key-Value）组成，同一资源下标签键不可重复。\n",
+          "document": "<p>安全策略的标签列表。标签用于对资源进行分类和管理，便于按业务、环境、部门等维度筛选和组织资源。</p><p>每个标签由键值对（Key-Value）组成，同一资源下标签键不可重复。</p>",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -1181,7 +1181,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全策略 ID，格式为 tls- 后接 8 位字母数字。",
+          "document": "<p>安全策略 ID，格式为 tls- 后接 8 位字母数字。</p>",
           "example": "tls-t2ckydug",
           "member": "string",
           "name": "SecurityPolicyId",
@@ -1203,7 +1203,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标组类型。取值：\n- **Instance**（默认）：Cvm服务器类型或者Eni网卡类型。",
+          "document": "<p>目标组类型。取值：</p><ul><li><strong>Instance</strong>（默认）：Cvm服务器类型或者Eni网卡类型。</li></ul>",
           "example": "Instance",
           "member": "string",
           "name": "TargetType",
@@ -1212,7 +1212,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID。",
+          "document": "<p>私有网络 ID。</p>",
           "example": "vpc-92hffaxb",
           "member": "string",
           "name": "VpcId",
@@ -1221,7 +1221,7 @@
         },
         {
           "disabled": false,
-          "document": "是否预览此次请求。\n- **false**（默认）：发送普通请求，直接创建目标组。\n- **true**：发送预览请求，检查创建目标组的参数、格式、业务限制等是否符合要求。",
+          "document": "<p>是否预览此次请求。</p><ul><li><strong>false</strong>（默认）：发送普通请求，直接创建目标组。</li><li><strong>true</strong>：发送预览请求，检查创建目标组的参数、格式、业务限制等是否符合要求。</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "DryRun",
@@ -1230,7 +1230,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查配置。",
+          "document": "<p>健康检查配置。</p>",
           "example": "无",
           "member": "HealthCheckConfig",
           "name": "HealthCheckConfig",
@@ -1239,7 +1239,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启长连接。",
+          "document": "<p>是否开启长连接。</p>",
           "example": "true",
           "member": "bool",
           "name": "KeepaliveEnabled",
@@ -1248,7 +1248,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务协议类型。取值：\n- **HTTP**（默认）：支持绑定HTTP、HTTPS的监听器\n- **HTTPS**：支持绑定HTTPS类型的监听器\n- **GRPC**：支持绑定HTTPS类型的监听器\n- **GRPCS**：支持绑定HTTPS类型的监听器",
+          "document": "<p>后端服务协议类型。取值：</p><ul><li><strong>HTTP</strong>（默认）：支持绑定HTTP、HTTPS的监听器</li><li><strong>HTTPS</strong>：支持绑定HTTPS类型的监听器</li><li><strong>GRPC</strong>：支持绑定HTTPS类型的监听器</li><li><strong>GRPCS</strong>：支持绑定HTTPS类型的监听器</li></ul>",
           "example": "HTTP",
           "member": "string",
           "name": "Protocol",
@@ -1257,7 +1257,7 @@
         },
         {
           "disabled": false,
-          "document": "调度算法。取值：\n- **wrr**（默认）：加权轮训，按照权重选择后端服务器，权重越高的服务器被轮训到的概率越高。\n- **wlc**：加权最小连接数，当不同后端服务器权重值相同时，当前连接数越小的后端服务器被轮询到的概率越高。",
+          "document": "<p>调度算法。取值：</p><ul><li><strong>wrr</strong>（默认）：加权轮询，按照权重选择后端服务器，权重越高的服务器被轮询到的概率越高。</li><li><strong>wlc</strong>：加权最小连接数，当不同后端服务器权重值相同时，当前连接数越小的后端服务器被轮询到的概率越高。</li></ul>",
           "example": "wrr",
           "member": "string",
           "name": "SchedulerAlgorithm",
@@ -1266,7 +1266,7 @@
         },
         {
           "disabled": false,
-          "document": "会话保持配置。",
+          "document": "<p>会话保持配置。</p>",
           "example": "无",
           "member": "StickySessionConfig",
           "name": "StickySessionConfig",
@@ -1275,7 +1275,7 @@
         },
         {
           "disabled": false,
-          "document": "标签。",
+          "document": "<p>标签。</p>",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -1284,7 +1284,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组名称。默认为目标组ID。长度为 **1-255** 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。",
+          "document": "<p>目标组名称。默认为目标组ID。长度为 <strong>1-255</strong> 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。</p>",
           "example": "test-group",
           "member": "string",
           "name": "TargetGroupName",
@@ -1299,7 +1299,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标组 ID，格式为 lbtg- 后接 8 位字母数字。",
+          "document": "<p>目标组 ID，格式为 lbtg- 后接 8 位字母数字。</p>",
           "example": "lbtg-0zrnc9qa",
           "member": "string",
           "name": "TargetGroupId",
@@ -1349,21 +1349,21 @@
       "members": [
         {
           "disabled": false,
+          "document": "健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。",
+          "example": "[\"hct-p7q4x2ma\"]",
+          "member": "string",
+          "name": "HealthCheckTemplateIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否预览此次请求。\n- **false**（默认）：发送普通请求，直接删除模板。\n- **true**：发送预览请求，检查删除模板的参数、格式、业务限制等是否符合要求。",
           "example": "true",
           "member": "bool",
           "name": "DryRun",
           "required": false,
           "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。",
-          "example": "[\"hct-p7q4x2ma\"]",
-          "member": "string",
-          "name": "HealthCheckTemplateIds",
-          "required": false,
-          "type": "list"
         }
       ],
       "type": "object"
@@ -1714,7 +1714,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤器。通过指定的过滤条件来查询健康检查模版，支持：\n- Name的值为**HealthCheckTemplateName**。通过名称来筛选健康检查模版。**Values**的值为模版名称列表。\n- Name的值为**HealthCheckProtocol**。通过健康检查协议来筛选健康检查模版。**Values**的值为协议列表。\n- 通过标签方式筛选。",
+          "document": "<p>过滤器。通过指定的过滤条件来查询健康检查模板，支持：</p><ul><li>Name的值为<strong>HealthCheckTemplateName</strong>。通过名称来筛选健康检查模板。<strong>Values</strong>的值为模板名称列表。</li><li>Name的值为<strong>HealthCheckProtocol</strong>。通过健康检查协议来筛选健康检查模板。<strong>Values</strong>的值为协议列表。</li><li>通过标签方式筛选。</li></ul>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1723,7 +1723,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。",
+          "document": "<p>健康检查模板 ID 列表，ID 格式为 hct- 后接字母数字。</p>",
           "example": "[\"hct-m4x8q2pa\"]",
           "member": "string",
           "name": "HealthCheckTemplateIds",
@@ -1732,7 +1732,7 @@
         },
         {
           "disabled": false,
-          "document": "返回列表的数量，默认为20，最大值为100。",
+          "document": "<p>返回列表的数量，默认为20，最大值为100。</p>",
           "example": "20",
           "member": "string",
           "name": "MaxResults",
@@ -1741,7 +1741,7 @@
         },
         {
           "disabled": false,
-          "document": "下一次查询的Token值。第一次查询和没有下一次查询时，无需填写。\n如果有下一次查询，取值为上一次 API 调用返回的 NextToken 值。",
+          "document": "<p>下一次查询的Token值。第一次查询和没有下一次查询时，无需填写。<br>如果有下一次查询，取值为上一次 API 调用返回的 NextToken 值。</p>",
           "example": "3974ae26e***",
           "member": "string",
           "name": "NextToken",
@@ -1756,7 +1756,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "健康检查模板列表。",
+          "document": "<p>健康检查模板列表。</p>",
           "example": "无",
           "member": "HealthCheckTemplate",
           "name": "HealthCheckTemplates",
@@ -1766,7 +1766,7 @@
         },
         {
           "disabled": false,
-          "document": "下一次查询的Token值，如果当前是最后一页，返回为空。",
+          "document": "<p>下一次查询的Token值，如果当前是最后一页，返回为空。</p>",
           "example": "3974ae26e***",
           "member": "string",
           "name": "NextToken",
@@ -1776,7 +1776,7 @@
         },
         {
           "disabled": false,
-          "document": "经过筛选后查询到的健康检查模板总数。",
+          "document": "<p>经过筛选后查询到的健康检查模板总数。</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -3313,7 +3313,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "重定向的HTTP码，支持301、302、303、307、 308。",
+          "document": "<p>重定向的HTTP码，支持301、302、303、307、 308。</p>",
           "example": "200",
           "member": "int64",
           "name": "HttpCode",
@@ -3324,7 +3324,7 @@
         },
         {
           "disabled": false,
-          "document": "重定向的主机地址，默认值${host}。长度3 ~ 128个字符，支持的字符集为：a-z 0-9 _ . -。",
+          "document": "<p>重定向的主机地址，默认值${host}。长度3 ~ 128个字符，支持的字符集为：a-z 0-9 _ . -。</p>",
           "example": "example.com",
           "member": "string",
           "name": "Host",
@@ -3335,7 +3335,7 @@
         },
         {
           "disabled": false,
-          "document": "重定向的路径，默认值${path}。长度1 ~ 128个字符，支持的字符集为：a-z 0-9  ? =  _  . - / : 。",
+          "document": "<p>重定向的路径，默认值${path}。长度1 ~ 128个字符，支持的字符集为：a-z A-Z 0-9  ? =  _  . - / : 。</p>",
           "example": "/hello/index.html",
           "member": "string",
           "name": "Path",
@@ -3346,7 +3346,7 @@
         },
         {
           "disabled": false,
-          "document": "重定向的端口，默认值 ${port}。取值1 ~ 65535。",
+          "document": "<p>重定向的端口，默认值 ${port}。取值1 ~ 65535。</p>",
           "example": "80",
           "member": "string",
           "name": "Port",
@@ -3357,7 +3357,7 @@
         },
         {
           "disabled": false,
-          "document": "重定向的协议，取值：HTTP,HTTPS，默认值${protocol}。",
+          "document": "<p>重定向的协议，取值：HTTP,HTTPS，默认值${protocol}。</p>",
           "example": "HTTP",
           "member": "string",
           "name": "Protocol",
@@ -3368,7 +3368,7 @@
         },
         {
           "disabled": false,
-          "document": "重定向的查询字符串，默认值${query}。长度1 ~ 128字符，支持可打印字符，不支持 #[]{}\\|<>& 和空格。",
+          "document": "<p>重定向的查询字符串，默认值${query}。长度1 ~ 128字符，支持可打印字符，不支持 #[]{}|&lt;&gt;&amp; 和空格。</p>",
           "example": "${query}",
           "member": "string",
           "name": "Query",
@@ -3385,7 +3385,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "重写的主机地址，默认值${host}。长度3 ~ 128个字符，支持的字符集为：a-z 0-9 _ . -。",
+          "document": "<p>重写的主机地址，默认值${host}。长度3 ~ 128个字符，支持的字符集为：a-z 0-9 _ . -。</p>",
           "example": "example.com",
           "member": "string",
           "name": "Host",
@@ -3396,7 +3396,7 @@
         },
         {
           "disabled": false,
-          "document": "重写的路径，默认值${path}。长度1 ~ 128个字符，支持的字符集为：a-z 0-9 ? = _ . - / : 。",
+          "document": "<p>重写的路径，默认值${path}。长度1 ~ 128个字符，支持的字符集为：a-z A-Z 0-9 ? = _ . - / : 。</p>",
           "example": "/hello/index.html",
           "member": "string",
           "name": "Path",
@@ -3407,7 +3407,7 @@
         },
         {
           "disabled": false,
-          "document": "重写的查询字符串，默认值${query}。长度1 ~ 128字符，支持可打印字符，不支持 #[]{}|<>& 和空格。",
+          "document": "<p>重写的查询字符串，默认值${query}。长度1 ~ 128字符，支持可打印字符，不支持 #[]{}|&lt;&gt;&amp; 和空格。</p>",
           "example": "${query}",
           "member": "string",
           "name": "Query",
@@ -4961,19 +4961,19 @@
         },
         {
           "disabled": false,
-          "document": "是否只预检此次请求。取值：\n- true：仅执行预检，不实际操作资源。检查参数完整性、请求格式及业务限制，通过返回 DryRunOperation，不通过返回对应错误。\n- false（默认）：执行正常请求，检查通过后直接操作资源。",
-          "example": "false",
-          "member": "bool",
-          "name": "DryRun",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
           "document": "是否开启修改保护。开启后，可防止实例被意外修改或删除。\\n- true：开启修改保护\\n- false：关闭修改保护",
           "example": "true",
           "member": "bool",
           "name": "ModificationProtectionEnabled",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否只预检此次请求。取值：\n- true：仅执行预检，不实际操作资源。检查参数完整性、请求格式及业务限制，通过返回 DryRunOperation，不通过返回对应错误。\n- false（默认）：执行正常请求，检查通过后直接操作资源。",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
           "required": false,
           "type": "bool"
         },
@@ -5060,7 +5060,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全策略 ID，格式为 tls- 后接 8 位字母数字。",
+          "document": "<p>安全策略 ID，格式为 tls- 后接 8 位字母数字。</p>",
           "example": "tls-t2ckydug",
           "member": "string",
           "name": "SecurityPolicyId",
@@ -5069,7 +5069,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后的加密套件列表。加密套件用于协商客户端与服务端之间的加密算法。\n\n**配置说明：**\n- 加密套件的可选范围取决于所选的 TLS 协议版本（TLSVersions 参数）。\n- 只要加密套件被任意一个已选 TLS 版本支持，即可添加到列表中。\n- 若 TLSVersions 包含 TLSv1.3：可不指定 TLSv1.3 专属加密套件（系统将自动补全全部 TLSv1.3 套件）；若指定，则必须包含全部 TLSv1.3 专属加密套件，不支持仅指定部分。\n\n**获取可用加密套件：**\n请调用 [DescribeSecurityPolicyCapabilities](https://cloud.tencent.com/document/api/xxx) 接口查询各 TLS 版本支持的加密套件列表。\n\n**注意：** 若不传此参数，则保持原有配置不变。\n",
+          "document": "<p>修改后的加密套件列表。加密套件用于协商客户端与服务端之间的加密算法。</p><p><strong>配置说明：</strong></p><ul><li>加密套件的可选范围取决于所选的 TLS 协议版本（TLSVersions 参数）。</li><li>只要加密套件被任意一个已选 TLS 版本支持，即可添加到列表中。</li><li>若 TLSVersions 包含 TLSv1.3：可不指定 TLSv1.3 专属加密套件（系统将自动补全全部 TLSv1.3 套件）；若指定，则必须包含全部 TLSv1.3 专属加密套件，不支持仅指定部分。</li></ul><p><strong>获取可用加密套件：</strong><br>请调用 <a href=\"https://cloud.tencent.com/document/api/1822/133718\">DescribeSecurityPolicyCapabilities</a> 接口查询各 TLS 版本支持的加密套件列表。</p><p><strong>注意：</strong> 若不传此参数，则保持原有配置不变。</p>",
           "example": "[\"TLS_AES_128_GCM_SHA256\"]",
           "member": "string",
           "name": "Ciphers",
@@ -5078,7 +5078,7 @@
         },
         {
           "disabled": false,
-          "document": "是否仅执行预检请求。取值：\n- **true**：仅执行预检请求，不实际修改资源。预检请求将验证参数格式、权限及配置有效性等，帮助您在正式操作前发现潜在问题。\n- **false**（默认）：执行正常请求，通过预检后将直接修改安全策略。\n",
+          "document": "<p>是否仅执行预检请求。取值：</p><ul><li><strong>true</strong>：仅执行预检请求，不实际修改资源。预检请求将验证参数格式、权限及配置有效性等，帮助您在正式操作前发现潜在问题。</li><li><strong>false</strong>（默认）：执行正常请求，通过预检后将直接修改安全策略。</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "DryRun",
@@ -5087,7 +5087,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后的安全策略名称。用于标识和区分不同的安全策略。\n\n**命名规则：**\n- 长度为 2~128 个字符。\n- 必须以英文字母或中文开头。\n- 可包含英文字母、中文、数字、半角句号（.）、下划线（_）和短划线（-）。\n\n**注意：** 若不传此参数，则保持原有名称不变。\n",
+          "document": "<p>修改后的安全策略名称。用于标识和区分不同的安全策略。</p><p><strong>命名规则：</strong></p><ul><li>长度为 2~128 个字符。</li><li>必须以英文字母或中文开头。</li><li>可包含英文字母、中文、数字、半角句号（.）、下划线（_）和短划线（-）。</li></ul><p><strong>注意：</strong> 若不传此参数，则保持原有名称不变。</p>",
           "example": "test-policy2",
           "member": "string",
           "name": "SecurityPolicyName",
@@ -5096,7 +5096,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后的 TLS 协议版本列表。TLS（Transport Layer Security）协议用于保障客户端与负载均衡之间的通信安全。\n\n**可选值：**\n- **TLSv1.0**：兼容性最好，但安全性较低，不推荐在生产环境使用。\n- **TLSv1.1**：安全性略优于 TLSv1.0，但仍不推荐。\n- **TLSv1.2**：目前主流的安全协议版本，兼顾安全性与兼容性。\n- **TLSv1.3**：最新版本，安全性最高，性能更优，推荐优先使用。\n\n**注意：** \n- 若不传此参数，则保持原有配置不变。\n- 修改 TLS 版本时，请同步检查 Ciphers 参数的配置是否兼容。\n",
+          "document": "<p>修改后的 TLS 协议版本列表。TLS（Transport Layer Security）协议用于保障客户端与负载均衡之间的通信安全。</p><p><strong>可选值：</strong></p><ul><li><strong>TLSv1.0</strong>：兼容性最好，但安全性较低，不推荐在生产环境使用。</li><li><strong>TLSv1.1</strong>：安全性略优于 TLSv1.0，但仍不推荐。</li><li><strong>TLSv1.2</strong>：目前主流的安全协议版本，兼顾安全性与兼容性。</li><li><strong>TLSv1.3</strong>：最新版本，安全性最高，性能更优，推荐优先使用。</li></ul><p><strong>注意：</strong> </p><ul><li>若不传此参数，则保持原有配置不变。</li><li>修改 TLS 版本时，请同步检查 Ciphers 参数的配置是否兼容。</li></ul>",
           "example": "[\"TLSv1.1\", \"TLSv1.2\"]",
           "member": "string",
           "name": "TLSVersions",
@@ -5123,7 +5123,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否预览此次请求。\n- **false**（默认）：发送普通请求，直接修改目标组。\n- **true**：发送预览请求，检查修改目标组的参数、格式、业务限制等是否符合要求。",
+          "document": "<p>是否预览此次请求。</p><ul><li><strong>false</strong>（默认）：发送普通请求，直接修改目标组。</li><li><strong>true</strong>：发送预览请求，检查修改目标组的参数、格式、业务限制等是否符合要求。</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "DryRun",
@@ -5132,7 +5132,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查配置。\n",
+          "document": "<p>健康检查配置。</p>",
           "example": "无",
           "member": "HealthCheckConfig",
           "name": "HealthCheckConfig",
@@ -5141,7 +5141,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启长连接。",
+          "document": "<p>是否开启长连接。</p>",
           "example": "true",
           "member": "bool",
           "name": "KeepaliveEnabled",
@@ -5150,7 +5150,7 @@
         },
         {
           "disabled": false,
-          "document": "调度算法。取值：\n- **wrr**：加权轮训，按照权重选择后端服务器，权重越高的服务器被轮训到的概率越高。\n- **wlc**：加权最小连接数，当不同后端服务器权重值相同时，当前连接数越小的后端服务器被轮询到的概率越高。",
+          "document": "<p>调度算法。取值：</p><ul><li><strong>wrr</strong>：加权轮询，按照权重选择后端服务器，权重越高的服务器被轮询到的概率越高。</li><li><strong>wlc</strong>：加权最小连接数，当不同后端服务器权重值相同时，当前连接数越小的后端服务器被轮询到的概率越高。</li></ul>",
           "example": "wrr",
           "member": "string",
           "name": "SchedulerAlgorithm",
@@ -5159,7 +5159,7 @@
         },
         {
           "disabled": false,
-          "document": "会话保持配置。",
+          "document": "<p>会话保持配置。</p>",
           "example": "无",
           "member": "StickySessionConfig",
           "name": "StickySessionConfig",
@@ -5168,7 +5168,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组 ID，格式为 lbtg- 后接 8 位字母数字。",
+          "document": "<p>目标组 ID，格式为 lbtg- 后接 8 位字母数字。</p>",
           "example": "lbtg-0zrnc9qa",
           "member": "string",
           "name": "TargetGroupId",
@@ -5177,7 +5177,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组名称。长度为 1~255 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。不传目标组名称时默认使用ID作为目标组名称。",
+          "document": "<p>目标组名称。长度为 1~255 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。不传目标组名称时默认使用ID作为目标组名称。</p>",
           "example": "test-group",
           "member": "string",
           "name": "TargetGroupName",
@@ -5213,21 +5213,21 @@
         },
         {
           "disabled": false,
+          "document": "需要修改的后端服务列表。",
+          "example": "无",
+          "member": "TargetToModify",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否预览此次请求。 \n- **false**（默认）：发送普通请求，直接修改后端服务信息。 \n- **true**：发送预览请求，检查修改后端服务的参数、格式、业务限制等是否符合要求。",
           "example": "false",
           "member": "bool",
           "name": "DryRun",
           "required": false,
           "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "需要修改的后端服务列表。",
-          "example": "无",
-          "member": "TargetToModify",
-          "name": "Targets",
-          "required": false,
-          "type": "list"
         }
       ],
       "type": "object"
@@ -5484,21 +5484,21 @@
         },
         {
           "disabled": false,
+          "document": "需要从目标组移除的后端服务列表。单次请求最多移除 **50** 个后端服务。",
+          "example": "无",
+          "member": "TargetToRemove",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否预览此次请求。 \n- **false**（默认）：发送普通请求，直接移除后端服务。 \n- **true**：发送预览请求，检查移除后端服务的参数、格式、业务限制等是否符合要求。",
           "example": "false",
           "member": "bool",
           "name": "DryRun",
           "required": false,
           "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "需要从目标组移除的后端服务列表。单次请求最多移除 **50** 个后端服务。",
-          "example": "无",
-          "member": "TargetToRemove",
-          "name": "Targets",
-          "required": false,
-          "type": "list"
         }
       ],
       "type": "object"
@@ -6847,7 +6847,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子网 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子网 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-bi75pogm",
           "member": "string",
           "name": "SubnetId",
@@ -6858,7 +6858,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。\n您可以通过调用[DescribeZones](~~36064~~)接口获取可用区ID对应的可用区的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。<br>您可以通过调用<a href=\"https://cloud.tencent.com/document/api/1822/133727\">DescribeZones</a>接口获取可用区ID对应的可用区的信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "ZoneId",
@@ -6869,7 +6869,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡 VIP/EIP 信息",
+          "document": "<p>负载均衡 VIP/EIP 信息</p>",
           "example": "无",
           "member": "LoadBalancerAddress",
           "name": "LoadBalancerAddress",
@@ -6880,7 +6880,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区状态。取值：\n- **Active**：运行中。\n- **Stopped**：已停止。\n- **Shifted**：已移除。\n- **Starting**：启动中。\n- **Stopping**：停止中。",
+          "document": "<p>可用区状态。取值：</p><ul><li><strong>Active</strong>：运行中。</li><li><strong>Stopped</strong>：已停止。</li><li><strong>Shifted</strong>：已移除。</li><li><strong>Starting</strong>：启动中。</li><li><strong>Stopping</strong>：停止中。</li></ul>",
           "example": "Active",
           "member": "string",
           "name": "Status",
@@ -6908,7 +6908,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。<br>您可以通过调用<a href=\"~~36064~~\">DescribeZones</a>接口获取可用区ID对应的可用区的信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。<br>您可以通过调用<a href=\"https://cloud.tencent.com/document/api/1822/133727\">DescribeZones</a>接口获取可用区ID对应的可用区的信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "ZoneId",

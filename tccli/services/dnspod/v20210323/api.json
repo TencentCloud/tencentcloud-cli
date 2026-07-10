@@ -2673,7 +2673,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要添加的子域名 Zone 域。",
+          "document": "<p>要添加的子域名 Zone 域。</p>",
           "example": "sub.dnspod.cn",
           "member": "string",
           "name": "DomainZone",
@@ -2688,7 +2688,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要添加 TXT 记录的主域名。",
+          "document": "<p>需要添加 TXT 记录的主域名。</p>",
           "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
@@ -2697,8 +2697,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "需要添加 TXT 记录的主机记录。",
+          "disabled": true,
+          "document": "<p>需要添加 TXT 记录的主机记录。</p>",
           "example": "_dnspodcheck",
           "member": "string",
           "name": "Subdomain",
@@ -2708,7 +2708,7 @@
         },
         {
           "disabled": false,
-          "document": "需要添加记录类型。",
+          "document": "<p>需要添加记录类型。</p>",
           "example": "TXT",
           "member": "string",
           "name": "RecordType",
@@ -2718,7 +2718,7 @@
         },
         {
           "disabled": false,
-          "document": "需要添加 TXT 记录的记录值。",
+          "document": "<p>需要添加 TXT 记录的记录值。</p>",
           "example": "3D015C717021A7A639D53673DB781317",
           "member": "string",
           "name": "Value",
@@ -2728,11 +2728,21 @@
         },
         {
           "disabled": false,
-          "document": "需要添加 TXT 记录的上级域名(可选，主域名和上级域名任选一个添加即可)。",
+          "document": "<p>需要添加 TXT 记录的上级域名(可选，主域名和上级域名任选一个添加即可)。</p>",
           "example": "sub",
           "member": "string",
           "name": "ParentDomain",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要添加 TXT 记录的主机记录。</p><p>新增规范参数，建议优先使用SubDomain参数</p>",
+          "example": "_dnspodcheck",
+          "member": "string",
+          "name": "SubDomain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3743,7 +3753,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询解析量的域名",
+          "document": "<p>要查询解析量的域名</p>",
           "example": "example.com",
           "member": "string",
           "name": "Domain",
@@ -3752,7 +3762,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的开始时间，格式：YYYY-MM-DD",
+          "document": "<p>查询的开始时间，格式：YYYY-MM-DD</p>",
           "example": "2022-06-08",
           "member": "string",
           "name": "StartDate",
@@ -3761,7 +3771,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的结束时间，格式：YYYY-MM-DD",
+          "document": "<p>查询的结束时间，格式：YYYY-MM-DD</p>",
           "example": "2022-06-14",
           "member": "string",
           "name": "EndDate",
@@ -3769,8 +3779,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "DATE:按天维度统计 HOUR:按小时维度统计",
+          "disabled": true,
+          "document": "<p>DATE:按天维度统计 HOUR:按小时维度统计</p>",
           "example": "DATE",
           "member": "string",
           "name": "DnsFormat",
@@ -3779,12 +3789,21 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "document": "<p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。</p>",
           "example": "1143114",
           "member": "uint64",
           "name": "DomainId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>解析量数据格式</p><p>枚举值：</p><ul><li>DATE： 按天维度统计</li><li>HOUR： 按小时维度统计</li></ul><p>新增规范参数，同时传递DNSFormat和DnsFormat参数时，后端优先使用DNSFormat参数</p>",
+          "example": "DATE",
+          "member": "string",
+          "name": "DNSFormat",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3794,7 +3813,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前统计维度解析量小计",
+          "document": "<p>当前统计维度解析量小计</p>",
           "example": "无",
           "member": "DomainAnalyticsDetail",
           "name": "Data",
@@ -3804,7 +3823,7 @@
         },
         {
           "disabled": false,
-          "document": "域名解析量统计查询信息",
+          "document": "<p>域名解析量统计查询信息</p>",
           "example": "无",
           "member": "DomainAnalyticsInfo",
           "name": "Info",
@@ -3814,7 +3833,7 @@
         },
         {
           "disabled": false,
-          "document": "域名别名解析量统计信息",
+          "document": "<p>域名别名解析量统计信息</p>",
           "example": "无",
           "member": "DomainAliasAnalyticsItem",
           "name": "AliasData",
@@ -5509,7 +5528,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录</p>",
           "example": "admin",
           "member": "string",
@@ -5600,10 +5619,19 @@
         },
         {
           "disabled": false,
-          "document": "<p>查询不到数据时是否报错</p>枚举值：<ul><li> yes： 报错</li><li> no： 不报错，返回空列表</li></ul>默认值：yes",
+          "document": "<p>查询不到数据时是否报错</p><p>枚举值：</p><ul><li>yes： 报错</li><li>no： 不报错，返回空列表</li></ul><p>默认值：yes</p>",
           "example": "yes",
           "member": "string",
           "name": "ErrorOnEmpty",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录</p><p>新增规范参数，同时传递SubDomain和Subdomain参数时，后端优先使用SubDomain参数</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "SubDomain",
           "required": false,
           "type": "string"
         }
@@ -5884,7 +5912,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询解析量的域名",
+          "document": "<p>要查询解析量的域名</p>",
           "example": "example.com",
           "member": "string",
           "name": "Domain",
@@ -5893,7 +5921,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的开始时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。",
+          "document": "<p>查询的开始时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。</p>",
           "example": "2022-06-08",
           "member": "string",
           "name": "StartDate",
@@ -5902,7 +5930,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的结束时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。",
+          "document": "<p>查询的结束时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。</p>",
           "example": "2022-06-14",
           "member": "string",
           "name": "EndDate",
@@ -5910,22 +5938,31 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据",
+          "disabled": true,
+          "document": "<p>数据统计格式</p><p>枚举值：</p><ul><li>minute： 按十分钟维度统计数据</li><li>hour： 按小时维度统计数据</li><li>day： 按天维度统计数据</li></ul>",
           "example": "minute",
           "member": "string",
           "name": "DnsFormat",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
+          "document": "<p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>",
           "example": "435436",
           "member": "uint64",
           "name": "DomainId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据统计格式</p><p>枚举值：</p><ul><li>minute： 按十分钟维度统计数据</li><li>hour： 按小时维度统计数据</li><li>day： 按天维度统计数据</li></ul><p>新增规范参数，同时传递DNSFormat和DnsFormat参数时，后端优先使用DNSFormat参数</p>",
+          "example": "hour",
+          "member": "string",
+          "name": "DNSFormat",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5935,7 +5972,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "解析量明细",
+          "document": "<p>解析量明细</p>",
           "example": "无",
           "member": "ResolveCountDataItem",
           "name": "Data",
@@ -5945,7 +5982,7 @@
         },
         {
           "disabled": false,
-          "document": "解析量统计信息",
+          "document": "<p>解析量统计信息</p>",
           "example": "无",
           "member": "ResolveCountInfo",
           "name": "Info",
@@ -5955,7 +5992,7 @@
         },
         {
           "disabled": false,
-          "document": "别名解析量明细",
+          "document": "<p>别名解析量明细</p>",
           "example": "无",
           "member": "ResolveCountAliasItem",
           "name": "AliasData",
@@ -6330,7 +6367,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询解析量的域名",
+          "document": "<p>要查询解析量的域名</p>",
           "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
@@ -6339,7 +6376,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的开始时间，格式：YYYY-MM-DD",
+          "document": "<p>查询的开始时间，格式：YYYY-MM-DD</p>",
           "example": "2024-12-30",
           "member": "string",
           "name": "StartDate",
@@ -6348,7 +6385,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的结束时间，格式：YYYY-MM-DD",
+          "document": "<p>查询的结束时间，格式：YYYY-MM-DD</p>",
           "example": "2024-12-30",
           "member": "string",
           "name": "EndDate",
@@ -6356,17 +6393,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "要查询解析量的子域名",
-          "example": "www",
-          "member": "string",
-          "name": "Subdomain",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "DATE:按天维度统计 HOUR:按小时维度统计",
+          "disabled": true,
+          "document": "<p>DATE:按天维度统计 HOUR:按小时维度统计</p>",
           "example": "DATE",
           "member": "string",
           "name": "DnsFormat",
@@ -6375,12 +6403,39 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
+          "document": "<p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>",
           "example": "12620688",
           "member": "uint64",
           "name": "DomainId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": true,
+          "document": "<p>要查询解析量的子域名</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Subdomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要查询解析量的子域名</p><p>新增规范参数，同时传递SubDomain和Subdomain参数时，后端优先使用SubDomain参数</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "SubDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>解析量数据格式</p><p>枚举值：</p><ul><li>DATE： 按天维度统计</li><li>HOUR： 按小时维度统计</li></ul><p>新增规范参数，同时传递DNSFormat和DnsFormat参数时，后端优先使用DNSFormat参数</p>",
+          "example": "DATE",
+          "member": "string",
+          "name": "DNSFormat",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6390,28 +6445,31 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前统计维度解析量小计",
+          "document": "<p>当前统计维度解析量小计</p>",
           "example": "无",
           "member": "DomainAnalyticsDetail",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子域名解析量统计查询信息",
+          "document": "<p>子域名解析量统计查询信息</p>",
           "example": "无",
           "member": "SubdomainAnalyticsInfo",
           "name": "Info",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子域名别名解析量统计信息",
+          "document": "<p>子域名别名解析量统计信息</p>",
           "example": "无",
           "member": "SubdomainAliasAnalyticsItem",
           "name": "AliasData",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6520,7 +6578,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "偏移量，默认值为0。",
+          "document": "<p>偏移量，默认值为0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -6529,7 +6587,7 @@
         },
         {
           "disabled": false,
-          "document": "限制数量，默认值为20。",
+          "document": "<p>限制数量，默认值为20。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -6538,7 +6596,7 @@
         },
         {
           "disabled": false,
-          "document": "域名ID",
+          "document": "<p>域名ID</p>",
           "example": "12",
           "member": "uint64",
           "name": "DomainId",
@@ -6547,7 +6605,7 @@
         },
         {
           "disabled": false,
-          "document": "使用资源 ID 列表查询",
+          "document": "<p>使用资源 ID 列表查询</p>",
           "example": "[\"f815b34b\", \"a4ba8c4f\"]",
           "member": "string",
           "name": "ResourceIdList",
@@ -6556,7 +6614,7 @@
         },
         {
           "disabled": false,
-          "document": "增值服务类型",
+          "document": "<p>增值服务类型</p>",
           "example": "D_URLCOUNT",
           "member": "string",
           "name": "LimitType",
@@ -6571,7 +6629,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合筛选条件的套餐总数",
+          "document": "<p>符合筛选条件的套餐总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -6580,11 +6638,21 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "增值服务信息列表",
+          "disabled": true,
+          "document": "<p>增值服务信息列表</p>",
           "example": "无",
           "member": "VasListItem",
           "name": "VasList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>增值服务信息列表</p>",
+          "example": "无",
+          "member": "VasListItem",
+          "name": "VASList",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -6700,53 +6768,73 @@
       "document": "域名解析量统计查询信息",
       "members": [
         {
-          "disabled": false,
-          "document": "DATE:按天维度统计 HOUR:按小时维度统计",
+          "disabled": true,
+          "document": "<p>DATE:按天维度统计 HOUR:按小时维度统计</p>",
           "example": "DATE",
           "member": "string",
           "name": "DnsFormat",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "当前统计周期解析量总计",
+          "disabled": true,
+          "document": "<p>当前统计周期解析量总计</p>",
           "example": "10000",
           "member": "uint64",
           "name": "DnsTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前查询的域名",
+          "document": "<p>当前查询的域名</p>",
           "example": "example.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前统计周期开始时间",
+          "document": "<p>当前统计周期开始时间</p>",
           "example": "2022-06-08",
           "member": "string",
           "name": "StartDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前统计周期结束时间",
+          "document": "<p>当前统计周期结束时间</p>",
           "example": "2022-06-14",
           "member": "string",
           "name": "EndDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>解析量数据格式</p><p>枚举值：</p><ul><li>DATE： 按天维度统计</li><li>HOUR： 按小时维度统计</li></ul>",
+          "example": "DATE",
+          "member": "string",
+          "name": "DNSFormat",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前统计周期解析量总计</p>",
+          "example": "10000",
+          "member": "uint64",
+          "name": "DNSTotal",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -6929,7 +7017,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名ID",
+          "document": "<p>域名ID</p>",
           "example": "65456",
           "member": "uint64",
           "name": "DomainId",
@@ -6939,7 +7027,7 @@
         },
         {
           "disabled": false,
-          "document": "域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM",
+          "document": "<p>域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM</p>",
           "example": "enable",
           "member": "string",
           "name": "Status",
@@ -6949,7 +7037,7 @@
         },
         {
           "disabled": false,
-          "document": "域名套餐等级",
+          "document": "<p>域名套餐等级</p>",
           "example": "DP_EXTRA",
           "member": "string",
           "name": "Grade",
@@ -6959,7 +7047,7 @@
         },
         {
           "disabled": false,
-          "document": "域名分组ID",
+          "document": "<p>域名分组ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "GroupId",
@@ -6969,7 +7057,7 @@
         },
         {
           "disabled": false,
-          "document": "是否星标域名",
+          "document": "<p>是否星标域名</p>",
           "example": "no",
           "member": "string",
           "name": "IsMark",
@@ -6979,7 +7067,7 @@
         },
         {
           "disabled": false,
-          "document": "TTL(DNS记录缓存时间)，单位：秒",
+          "document": "<p>TTL(DNS记录缓存时间)，单位：秒</p>",
           "example": "600",
           "member": "uint64",
           "name": "TTL",
@@ -6988,8 +7076,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "cname加速启用状态",
+          "disabled": true,
+          "document": "<p>CNAME加速启用状态</p>",
           "example": "disable",
           "member": "string",
           "name": "CnameSpeedup",
@@ -6999,7 +7087,7 @@
         },
         {
           "disabled": false,
-          "document": "域名备注",
+          "document": "<p>域名备注</p>",
           "example": "firstdomain",
           "member": "string",
           "name": "Remark",
@@ -7009,7 +7097,7 @@
         },
         {
           "disabled": false,
-          "document": "域名Punycode",
+          "document": "<p>域名Punycode</p>",
           "example": "dnspod.cn",
           "member": "string",
           "name": "Punycode",
@@ -7018,8 +7106,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "域名DNS状态，错误：dnserror，正常：空字符串",
+          "disabled": true,
+          "document": "<p>域名DNS状态，错误：dnserror，正常：空字符串</p>",
           "example": "dnserror",
           "member": "string",
           "name": "DnsStatus",
@@ -7029,7 +7117,7 @@
         },
         {
           "disabled": false,
-          "document": "域名的NS列表",
+          "document": "<p>域名的NS列表</p>",
           "example": "[\"ns3.dnsv3.com\"]",
           "member": "string",
           "name": "DnspodNsList",
@@ -7039,7 +7127,7 @@
         },
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
@@ -7049,7 +7137,7 @@
         },
         {
           "disabled": false,
-          "document": "域名等级代号",
+          "document": "<p>域名等级代号</p>",
           "example": "2",
           "member": "uint64",
           "name": "GradeLevel",
@@ -7059,7 +7147,7 @@
         },
         {
           "disabled": false,
-          "document": "域名所属的用户ID",
+          "document": "<p>域名所属的用户ID</p>",
           "example": "12342",
           "member": "uint64",
           "name": "UserId",
@@ -7069,7 +7157,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为付费域名",
+          "document": "<p>是否为付费域名</p>",
           "example": "yes",
           "member": "string",
           "name": "IsVip",
@@ -7079,7 +7167,7 @@
         },
         {
           "disabled": false,
-          "document": "域名所有者的账号",
+          "document": "<p>域名所有者的账号</p>",
           "example": "dnspod@dnspod.cn",
           "member": "string",
           "name": "Owner",
@@ -7089,7 +7177,7 @@
         },
         {
           "disabled": false,
-          "document": "域名等级的描述",
+          "document": "<p>域名等级的描述</p>",
           "example": "免费版",
           "member": "string",
           "name": "GradeTitle",
@@ -7099,7 +7187,7 @@
         },
         {
           "disabled": false,
-          "document": "域名创建时间",
+          "document": "<p>域名创建时间</p>",
           "example": "2020-03-24 15:43:35",
           "member": "datetime",
           "name": "CreatedOn",
@@ -7109,7 +7197,7 @@
         },
         {
           "disabled": false,
-          "document": "最后操作时间",
+          "document": "<p>最后操作时间</p>",
           "example": "2020-03-24 15:43:35",
           "member": "datetime",
           "name": "UpdatedOn",
@@ -7119,7 +7207,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云账户Uin",
+          "document": "<p>腾讯云账户Uin</p>",
           "example": "100000014226",
           "member": "string",
           "name": "Uin",
@@ -7129,7 +7217,7 @@
         },
         {
           "disabled": false,
-          "document": "域名实际使用的NS列表",
+          "document": "<p>域名实际使用的NS列表</p>",
           "example": "[\"ns3.dnsv3.com\"]",
           "member": "string",
           "name": "ActualNsList",
@@ -7139,7 +7227,7 @@
         },
         {
           "disabled": false,
-          "document": "域名的记录数量",
+          "document": "<p>域名的记录数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "RecordCount",
@@ -7149,7 +7237,7 @@
         },
         {
           "disabled": false,
-          "document": "域名所有者的账户昵称",
+          "document": "<p>域名所有者的账户昵称</p>",
           "example": "lili",
           "member": "string",
           "name": "OwnerNick",
@@ -7159,7 +7247,7 @@
         },
         {
           "disabled": false,
-          "document": "是否在付费套餐宽限期",
+          "document": "<p>是否在付费套餐宽限期</p>",
           "example": "yes",
           "member": "string",
           "name": "IsGracePeriod",
@@ -7169,7 +7257,7 @@
         },
         {
           "disabled": false,
-          "document": "是否在付费套餐缓冲期",
+          "document": "<p>是否在付费套餐缓冲期</p>",
           "example": "yes",
           "member": "string",
           "name": "VipBuffered",
@@ -7179,7 +7267,7 @@
         },
         {
           "disabled": false,
-          "document": "VIP套餐有效期开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>VIP套餐有效期开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-11-28 11:54:57",
           "member": "string",
           "name": "VipStartAt",
@@ -7189,7 +7277,7 @@
         },
         {
           "disabled": false,
-          "document": "VIP套餐有效期结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>VIP套餐有效期结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-11-28 11:54:57",
           "member": "string",
           "name": "VipEndAt",
@@ -7199,7 +7287,7 @@
         },
         {
           "disabled": false,
-          "document": "VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Default",
           "member": "string",
           "name": "VipAutoRenew",
@@ -7209,7 +7297,7 @@
         },
         {
           "disabled": false,
-          "document": "VIP套餐资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>VIP套餐资源ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "43111772",
           "member": "string",
           "name": "VipResourceId",
@@ -7219,7 +7307,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是子域名。",
+          "document": "<p>是否是子域名。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsSubDomain",
@@ -7229,7 +7317,7 @@
         },
         {
           "disabled": false,
-          "document": "域名关联的标签列表",
+          "document": "<p>域名关联的标签列表</p>",
           "example": "无",
           "member": "TagItem",
           "name": "TagList",
@@ -7239,7 +7327,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用搜索引擎推送",
+          "document": "<p>是否启用搜索引擎推送</p>",
           "example": "no",
           "member": "string",
           "name": "SearchEnginePush",
@@ -7249,10 +7337,30 @@
         },
         {
           "disabled": false,
-          "document": "是否开启辅助 DNS",
+          "document": "<p>是否开启辅助 DNS</p>",
           "example": "yes",
           "member": "string",
           "name": "SlaveDNS",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名DNS状态，错误：dnserror，正常：空字符串</p>",
+          "example": "dnserror",
+          "member": "string",
+          "name": "DNSStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CNAME加速启用状态</p>",
+          "example": "disable",
+          "member": "string",
+          "name": "CNAMESpeedup",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8631,7 +8739,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
@@ -8640,7 +8748,7 @@
         },
         {
           "disabled": false,
-          "document": "记录ID。 可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId",
+          "document": "<p>记录ID。 可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId</p>",
           "example": "16411867",
           "member": "uint64",
           "name": "RecordId",
@@ -8649,7 +8757,7 @@
         },
         {
           "disabled": false,
-          "document": "记录线路，中文，比如：默认。",
+          "document": "<p>记录线路，中文，比如：默认。</p>",
           "example": "联通",
           "member": "string",
           "name": "RecordLine",
@@ -8658,7 +8766,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "document": "<p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。</p>",
           "example": "12620688",
           "member": "uint64",
           "name": "DomainId",
@@ -8667,8 +8775,8 @@
         },
         {
           "disabled": false,
-          "document": "主机记录，如 www，如果不传，默认为 @。",
-          "example": "www",
+          "document": "<p>主机记录，如 www，如果不传，默认为 @。</p>",
+          "example": "admin",
           "member": "string",
           "name": "SubDomain",
           "required": false,
@@ -8676,7 +8784,7 @@
         },
         {
           "disabled": false,
-          "document": "线路的 ID，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。",
+          "document": "<p>线路的 ID，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。</p>",
           "example": "10=1",
           "member": "string",
           "name": "RecordLineId",
@@ -8685,7 +8793,7 @@
         },
         {
           "disabled": false,
-          "document": "IP 地址，支持 IPv4、IPv6，例如 119.29.29.29 或者 2402:4e00::",
+          "document": "<p>IP 地址，支持 IPv4、IPv6，例如 119.29.29.29 或者 2402:4e00::</p>",
           "example": "119.29.29.29",
           "member": "string",
           "name": "Value",
@@ -8693,11 +8801,20 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "TTL值，如果不传，默认为域名的TTL值。",
+          "disabled": true,
+          "document": "<p>TTL值，如果不传，默认为域名的TTL值。</p>",
           "example": "600",
           "member": "uint64",
           "name": "Ttl",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TTL值，如果不传，默认为域名的TTL值。</p><p>新增规范参数，同时传递TTL和Ttl参数时，后端优先使用TTL参数</p>",
+          "example": "600",
+          "member": "uint64",
+          "name": "TTL",
           "required": false,
           "type": "int"
         }
@@ -8709,7 +8826,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "记录ID",
+          "document": "<p>记录ID</p>",
           "example": "16411867",
           "member": "uint64",
           "name": "RecordId",
@@ -10797,8 +10914,8 @@
       "document": "域名解析量统计信息",
       "members": [
         {
-          "disabled": false,
-          "document": "当前统计周期解析量总计",
+          "disabled": true,
+          "document": "<p>当前统计周期解析量总计</p>",
           "example": "10000",
           "member": "uint64",
           "name": "DnsTotal",
@@ -10808,7 +10925,7 @@
         },
         {
           "disabled": false,
-          "document": "当前查询的域名",
+          "document": "<p>当前查询的域名</p>",
           "example": "example.com",
           "member": "string",
           "name": "Domain",
@@ -10818,7 +10935,7 @@
         },
         {
           "disabled": false,
-          "document": "当前统计周期开始时间",
+          "document": "<p>当前统计周期开始时间</p>",
           "example": "2022-06-08",
           "member": "string",
           "name": "StartDate",
@@ -10828,7 +10945,7 @@
         },
         {
           "disabled": false,
-          "document": "当前统计周期结束时间",
+          "document": "<p>当前统计周期结束时间</p>",
           "example": "2022-06-14",
           "member": "string",
           "name": "EndDate",
@@ -10838,8 +10955,8 @@
         },
         {
           "disabled": false,
-          "document": "当前统计的子域名",
-          "example": "www",
+          "document": "<p>当前统计的子域名</p>",
+          "example": "admin",
           "member": "string",
           "name": "SubDomain",
           "output_required": true,
@@ -10847,11 +10964,31 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据",
+          "disabled": true,
+          "document": "<p>数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据</p>",
           "example": "hour",
           "member": "string",
           "name": "DnsFormat",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前统计周期解析量总计</p>",
+          "example": "10000",
+          "member": "uint64",
+          "name": "DNSTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据</p>",
+          "example": "hour",
+          "member": "string",
+          "name": "DNSFormat",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11371,62 +11508,92 @@
       "document": "子域名解析量统计查询信息",
       "members": [
         {
-          "disabled": false,
-          "document": "DATE:按天维度统计 HOUR:按小时维度统计",
+          "disabled": true,
+          "document": "<p>DATE:按天维度统计 HOUR:按小时维度统计</p>",
           "example": "DATE",
           "member": "string",
           "name": "DnsFormat",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "当前统计周期解析量总计",
+          "disabled": true,
+          "document": "<p>当前统计周期解析量总计</p>",
           "example": "10000",
           "member": "uint64",
           "name": "DnsTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前查询的域名",
+          "document": "<p>当前查询的域名</p>",
           "example": "example.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前统计周期开始时间",
+          "document": "<p>当前统计周期开始时间</p>",
           "example": "2022-06-08",
           "member": "string",
           "name": "StartDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前统计周期结束时间",
+          "document": "<p>当前统计周期结束时间</p>",
           "example": "2022-06-14",
           "member": "string",
           "name": "EndDate",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "<p>当前统计的子域名</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Subdomain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前统计的子域名",
-          "example": "www",
+          "document": "<p>解析量数据格式</p><p>枚举值：</p><ul><li>DATE： 按天维度统计</li><li>HOUR： 按小时维度统计</li></ul>",
+          "example": "DATE",
           "member": "string",
-          "name": "Subdomain",
-          "required": true,
+          "name": "DNSFormat",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前统计周期解析量总计</p>",
+          "example": "10000",
+          "member": "uint64",
+          "name": "DNSTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前统计的子域名</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "SubDomain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

@@ -7008,6 +7008,33 @@
           "name": "HasServicesLog",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动创建dlc字段</p><p>默认值：false</p><p>当您的日志中有新增字段时，系统自动将其投递至DLC</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoCreateField",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>将投递失败的日志存储至DLC表</p>",
+          "example": "无",
+          "member": "DlcFailHandle",
+          "name": "DlcFailHandle",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>",
+          "example": "log_keep(op_str_eq(v(\"type\"), \"kibana_stats\"))",
+          "member": "string",
+          "name": "DSLFilter",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -21297,6 +21324,33 @@
           "name": "Status",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动创建dlc字段</p><p>默认值：false</p><p>当您的日志中有新增字段时，系统自动将其投递至DLC</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoCreateField",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>将投递失败的日志存储至DLC表</p>",
+          "example": "无",
+          "member": "DlcFailHandle",
+          "name": "DlcFailHandle",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>",
+          "example": "log_keep(op_str_eq(v(\"type\"), \"kibana_stats\"))",
+          "member": "string",
+          "name": "DSLFilter",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

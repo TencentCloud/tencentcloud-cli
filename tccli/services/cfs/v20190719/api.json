@@ -344,7 +344,7 @@
       "status": "online"
     },
     "RunDataRetrievalTask": {
-      "document": "执行数据检索任务。\n\n手动触发指定数据检索的执行，创建一个新的数据检索任务。单个文件系统同时执行的任务数不超过 20 个。",
+      "document": "RunDataRetrievalTask 执行数据检索任务。\n手动触发指定数据检索的执行，创建一个新的数据检索任务。单个文件系统同时执行的任务数不超过 20 个。\n仅Turbo系列文件系统支持。",
       "input": "RunDataRetrievalTaskRequest",
       "name": "执行数据检索任务",
       "output": "RunDataRetrievalTaskResponse",
@@ -6342,7 +6342,17 @@
     },
     "RunDataRetrievalTaskRequest": {
       "document": "RunDataRetrievalTask请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据检索 ID。可通过 DescribeDataRetrieval 接口获取。</p>",
+          "example": "dataretrieval-7c29aea4",
+          "member": "string",
+          "name": "DataRetrievalId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "RunDataRetrievalTaskResponse": {

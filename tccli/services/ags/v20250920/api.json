@@ -384,7 +384,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像地址",
+          "document": "<p>镜像地址</p>",
           "example": "nginx:latest",
           "member": "string",
           "name": "Image",
@@ -393,12 +393,21 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code></p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>",
           "example": "enterprise",
           "member": "string",
           "name": "ImageRegistryType",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预热超时时长</p>",
+          "example": "60",
+          "member": "int64",
+          "name": "TimeoutMinutes",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -408,7 +417,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像地址",
+          "document": "<p>镜像地址</p>",
           "example": "nginx:latest",
           "member": "string",
           "name": "Image",
@@ -418,7 +427,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像 Digest",
+          "document": "<p>镜像 Digest</p>",
           "example": "sha256:abcdefg123...",
           "member": "string",
           "name": "ImageDigest",
@@ -428,7 +437,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>。</p>",
           "example": "enterprise",
           "member": "string",
           "name": "ImageRegistryType",

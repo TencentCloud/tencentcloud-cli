@@ -1172,6 +1172,14 @@
         "title": "开启 Grafana 单点登录"
       }
     ],
+    "EnablePredefinedPolicies": [
+      {
+        "document": "一键开启预设策略",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnablePredefinedPolicies\n<公共请求参数>\n\n{\n    \"PredefinedGroupID\": \"qce/cdb\",\n    \"NoticeIDs\": [\n        \"notice-lnrxepp7\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"79e08710-b7e2-4394-88c3-b00fcbef1bbe\"\n    }\n}",
+        "title": "一键开启预设策略"
+      }
+    ],
     "EnableSSOCamCheck": [
       {
         "document": "SSO单点登录时，开启cam鉴权",

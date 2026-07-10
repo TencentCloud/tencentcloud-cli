@@ -5419,7 +5419,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关键词列表。",
+          "document": "<p>关键词列表。</p>",
           "example": "无",
           "member": "AuditKeyword",
           "name": "Keywords",
@@ -5428,7 +5428,7 @@
         },
         {
           "disabled": false,
-          "document": "直播审核词库Id。",
+          "document": "<p>直播审核词库Id。</p>",
           "example": "4c49c04f-6617-4705-b3ff-bedce642bfcb",
           "member": "string",
           "name": "LibId",
@@ -5443,7 +5443,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "添加成功的关键词 Id 列表。",
+          "document": "<p>添加成功的关键词 Id 列表。</p>",
           "example": "[\"id1\",\"id2\"]",
           "member": "string",
           "name": "KeywordIds",
@@ -5453,10 +5453,20 @@
         },
         {
           "disabled": false,
-          "document": "重复关键词列表。",
+          "document": "<p>重复关键词列表。</p>",
           "example": "无",
           "member": "AuditKeywordInfo",
           "name": "DupInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>新增成功关键词列表</p>",
+          "example": "无",
+          "member": "AuditKeywordInfo",
+          "name": "Keywords",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false

@@ -505,13 +505,14 @@ Output:
 }
 ```
 
-**Example 8: 创建含有动态签署人流程，签署方不指定具体的签署人**
+**Example 8: 创建含有或签和动态签署人流程，签署方不指定具体的签署人，B端为或签，C端为动态签署方**
 
 创建一个B2C流程，两方签署方不指定具体的签署人
 注：
 `1.签署人相关信息为空，如：姓名、手机号码等`
 `2.FillType需传值为1，表示为动态签署人（不确定具体的签署人），需后续进行补充。`
-`3.需保留对应的角色编号，即RecipientId，后续补充具体的签署人时需指定对应的RecipientId`
+`3.CustomApproverTag需传值，表示为或签签署方（不确定具体的签署人），需后续进行补充。`
+`4.需保留对应的角色编号，即RecipientId，后续补充具体的签署人时需指定对应的RecipientId`
 
 Input: 
 
@@ -521,18 +522,19 @@ tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Agent.ProxyOrganizationId yDwFdUUckpsvm3ciUyVYxhuSAkZziLk7 \
     --FlowName 发起动态签署人合同示例 \
     --FlowType 合同 \
-    --Approvers.0.ApproverType 1 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.CustomApproverTag custom_tag \
+    --Approvers.0.OrganizationName 典子谦示例企业 \
     --Approvers.0.ApproverName  \
     --Approvers.0.ApproverMobile  \
     --Approvers.0.NotifyType NONE \
     --Approvers.0.ApproverSignTypes 1 \
     --Approvers.0.ApproverRoleName 甲方 \
-    --Approvers.0.ApproverOption.FillType 1 \
     --Approvers.0.SignComponents.0.ComponentPosX 160 \
     --Approvers.0.SignComponents.0.ComponentPosY 260 \
     --Approvers.0.SignComponents.0.ComponentWidth 100 \
     --Approvers.0.SignComponents.0.FileIndex 0 \
-    --Approvers.0.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --Approvers.0.SignComponents.0.ComponentType SIGN_SEAL \
     --Approvers.0.SignComponents.0.ComponentPage 1 \
     --Approvers.0.SignComponents.0.ComponentHeight 100 \
     --Approvers.0.SignComponents.1.ComponentPosX 160 \
@@ -542,6 +544,27 @@ tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Approvers.0.SignComponents.1.FileIndex 0 \
     --Approvers.0.SignComponents.1.ComponentType SIGN_DATE \
     --Approvers.0.SignComponents.1.ComponentPage 1 \
+    --Approvers.1.ApproverType 1 \
+    --Approvers.1.ApproverName  \
+    --Approvers.1.ApproverMobile  \
+    --Approvers.1.NotifyType NONE \
+    --Approvers.1.ApproverSignTypes 1 \
+    --Approvers.1.ApproverRoleName 乙方 \
+    --Approvers.1.ApproverOption.FillType 1 \
+    --Approvers.1.SignComponents.0.ComponentPosX 160 \
+    --Approvers.1.SignComponents.0.ComponentPosY 260 \
+    --Approvers.1.SignComponents.0.ComponentWidth 100 \
+    --Approvers.1.SignComponents.0.FileIndex 0 \
+    --Approvers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --Approvers.1.SignComponents.0.ComponentPage 1 \
+    --Approvers.1.SignComponents.0.ComponentHeight 100 \
+    --Approvers.1.SignComponents.1.ComponentPosX 160 \
+    --Approvers.1.SignComponents.1.ComponentPosY 360 \
+    --Approvers.1.SignComponents.1.ComponentWidth 50 \
+    --Approvers.1.SignComponents.1.ComponentHeight 50 \
+    --Approvers.1.SignComponents.1.FileIndex 0 \
+    --Approvers.1.SignComponents.1.ComponentType SIGN_DATE \
+    --Approvers.1.SignComponents.1.ComponentPage 1 \
     --FileIds yDR4yUUgyg1qqlj7UuO4zjES3G9Shoxk
 ```
 
@@ -554,8 +577,13 @@ Output:
         "Approvers": [
             {
                 "SignId": "",
-                "RecipientId": "yDw7hUUckpkmo432UunP4DaCo2sOe2oP",
+                "RecipientId": "yD3J6UUckpe0umpzUEI2HM61xJ9WIh5J",
                 "ApproverRoleName": "甲方"
+            },
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmo432UunP4DaCo2sOe2oP",
+                "ApproverRoleName": "乙方"
             }
         ],
         "RequestId": "s1665674603446404796"

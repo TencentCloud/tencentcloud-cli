@@ -1,4 +1,4 @@
-**Example 1: 创建预热镜像任务**
+**Example 1: 预热镜像**
 
 
 
@@ -7,7 +7,8 @@ Input:
 ```
 tccli ags CreatePreCacheImageTask --cli-unfold-argument  \
     --Image test.tencentcloudcr.com/example/app:0.2.2 \
-    --ImageRegistryType enterprise
+    --ImageRegistryType enterprise \
+    --TimeoutMinutes 60
 ```
 
 Output: 
@@ -15,9 +16,9 @@ Output:
 {
     "Response": {
         "Image": "test.tencentcloudcr.com/example/app:0.2.2",
-        "ImageDigest": "sha256:39e2c18395c3105ace919d1d285cd775d380e83581b132d8d742761123a1e675",
+        "ImageDigest": "sha256:axxxxxxxxxb98e195ae1d8c85d59fe1fb8c282bcccf1071f877db20f",
         "ImageRegistryType": "enterprise",
-        "RequestId": "57872da7-8d1e-4035-819f-92c26eaf9557"
+        "RequestId": "b538f3f1-da59-49e5-ac4b-41a440396ec6"
     }
 }
 ```

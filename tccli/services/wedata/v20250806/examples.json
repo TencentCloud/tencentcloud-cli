@@ -1364,10 +1364,16 @@
     ],
     "ListUpstreamOpsTasks": [
       {
-        "document": "",
+        "document": "异常示例（注意：此接口仅用于 任务调度 项目，其他类型项目使用此接口，可能会出现如下报错）",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUpstreamOpsTasks\n<公共请求参数>\n\n{\n    \"TaskId\": \"20250725174033396\",\n    \"ProjectId\": \"1460947878944567296\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound\",\n            \"Message\": \"WeData通用内部异常:资源未找到\"\n        },\n        \"RequestId\": \"07faa9b8-f855-48bd-903b-88f35e180f22\"\n    }\n}",
-        "title": "ListUpstreamOpsTasks"
+        "title": "ListUpstreamOpsTasks（异常）"
+      },
+      {
+        "document": "正常示例（注意：此接口仅用于 任务调度 项目）",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUpstreamOpsTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"2917455276892352512\",\n    \"TaskId\": \"20250917185450618\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"CycleType\": \"DAY_CYCLE\",\n                    \"ExecutionEndTime\": null,\n                    \"ExecutionStartTime\": null,\n                    \"FirstRunTime\": null,\n                    \"FirstSubmitTime\": \"2025-09-17 19:15:04\",\n                    \"FolderId\": \"e37d78f2-8d2e-11f0-a985-98039b019e92\",\n                    \"FolderName\": \"bbk\",\n                    \"OwnerUin\": null,\n                    \"ProjectId\": \"2917455276892352512\",\n                    \"ProjectName\": \"ZD_APItest\",\n                    \"ScheduleDesc\": \"u6bcfu592919:18u6267u884cu4e00u6b21\",\n                    \"Status\": \"Y\",\n                    \"TaskId\": \"20250909114238680\",\n                    \"TaskName\": \"bbk_py\",\n                    \"TaskTypeDesc\": \"Python\",\n                    \"TaskTypeId\": 30,\n                    \"WorkflowId\": \"d5de2330-a41d-4dca-8095-0e9562795987\",\n                    \"WorkflowName\": \"bbk_wf\"\n                }\n            ],\n            \"PageNumber\": 1,\n            \"PageSize\": 10,\n            \"TotalCount\": 1,\n            \"TotalPageNumber\": 1\n        },\n        \"RequestId\": \"cf558d27-2ca9-4f58-b97f-17b3a2e67de7\"\n    }\n}",
+        "title": "ListUpstreamOpsTasks（正常）"
       }
     ],
     "ListUpstreamTaskInstances": [

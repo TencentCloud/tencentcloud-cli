@@ -22,9 +22,9 @@
       "status": "online"
     },
     "CreateCloudModeration": {
-      "document": "接口说明：\n启动云端审核功能，完成房间内的音视频切片，视频截帧，或者录制音频流，送审到指定的审核商，完成审核。\n\n您可以通过此接口实现如下目标：\n* 指定审核参数（ModerationParams）来指定审核需要的详细参数。\n* 指定存储参数（ModerationStorageParams）将命中的审核文件指定上传到您希望的云存储，目前支持腾讯云（对象存储COS）和第三方AWS",
+      "document": "启动AI 内容理解功能，完成房间内的音视频切片，视频截帧，或者录制音频流，投递到AI内容理解，完成内容识别。您可以通过此接口实现如下目标：\n●指定内容参数（ModerationParams）来指定内容理解需要的详细参数。\n●指定存储参数（ModerationStorageParams）将命中的切片文件指定上传到您希望的云存储，目前支持腾讯云（对象存储COS）以及第三方AWS（S3）和阿里云（OSS）",
       "input": "CreateCloudModerationRequest",
-      "name": "创建云端审核",
+      "name": "启动AI 内容理解",
       "output": "CreateCloudModerationResponse",
       "status": "online"
     },
@@ -64,9 +64,9 @@
       "status": "online"
     },
     "DeleteCloudModeration": {
-      "document": "成功开启云端审核任务后，可以使用此接口来停止送审。",
+      "document": "成功开启AI 内容理解任务后，可以使用此接口来停止进行内容识别。",
       "input": "DeleteCloudModerationRequest",
-      "name": "停止云端审核",
+      "name": "停止AI 内容理解任务",
       "output": "DeleteCloudModerationResponse",
       "status": "online"
     },
@@ -134,9 +134,9 @@
       "status": "online"
     },
     "DescribeCloudModeration": {
-      "document": "成功开启审核任务后，可以使用此接口来查询审核任务状态和订阅的黑白名单信息。仅在任务进行时有效，任务退出后查询将会返回错误。",
+      "document": "成功开启AI 内容理解任务后，可以使用此接口来查询AI 内容理解任务状态和订阅的黑白名单信息。仅在任务进行时有效，任务退出后查询将会返回错误。",
       "input": "DescribeCloudModerationRequest",
-      "name": "查询云端审核信息",
+      "name": "查询AI 内容理解任务信息",
       "output": "DescribeCloudModerationResponse",
       "status": "online"
     },
@@ -344,9 +344,9 @@
       "status": "online"
     },
     "ModifyCloudModeration": {
-      "document": "成功开启云端审核任务后，可以使用此接口来更新订阅黑白名单。",
+      "document": "成功开启AI 内容理解任务后，可以使用此接口来更新订阅黑白名单。",
       "input": "ModifyCloudModerationRequest",
-      "name": "修改云端审核",
+      "name": "修改AI 内容理解任务",
       "output": "ModifyCloudModerationResponse",
       "status": "online"
     },
@@ -1685,7 +1685,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和TRTC的房间所对应的SdkAppId相同。",
+          "document": "<p>TRTC的<a href=\"https://cloud.tencent.com/document/product/647/46351#sdkappid\">SdkAppId</a>，和TRTC的房间所对应的SdkAppId相同。</p>",
           "example": "1400188366",
           "member": "uint64",
           "name": "SdkAppId",
@@ -1694,7 +1694,7 @@
         },
         {
           "disabled": false,
-          "document": "TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，为TRTC房间所对应的RoomId。",
+          "document": "<p>TRTC的<a href=\"https://cloud.tencent.com/document/product/647/46351#roomid\">RoomId</a>，为TRTC房间所对应的RoomId。</p>",
           "example": "295212",
           "member": "string",
           "name": "RoomId",
@@ -1703,7 +1703,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人的UserId，用于进房发起审核任务。【*注意】这个UserId不能与当前房间内的主播观众UserId重复。如果一个房间发起多个切片任务时，机器人的userid也不能相互重复，否则会中断前一个切片任务。建议可以把房间ID作为UserId的标识的一部分，即机器人UserId在房间内唯一。",
+          "document": "<p>机器人的UserId，用于进房发起AI 内容理解任务。【*注意】这个UserId不能与当前房间内的主播观众UserId重复。如果一个房间发起多个切片任务时，机器人的userid也不能相互重复，否则会中断前一个切片任务。建议可以把房间ID作为UserId的标识的一部分，即机器人UserId在房间内唯一。</p>",
           "example": "robot_1234",
           "member": "string",
           "name": "UserId",
@@ -1712,7 +1712,7 @@
         },
         {
           "disabled": false,
-          "document": "云端审核控制参数。",
+          "document": "<p>AI 内容理解控制参数。</p>",
           "example": "无",
           "member": "ModerationParams",
           "name": "ModerationParams",
@@ -1721,7 +1721,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码，具体计算方法请参考TRTC计算UserSig的方案。",
+          "document": "<p>机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码，具体计算方法请参考TRTC计算UserSig的方案。</p>",
           "example": "JwsjsHKgkAURt-lbv8fuXdyzAZauImIZBKDwJ3oKFdJhhkNI3r3yNx*B853XnA954GZLTsDiqSUAhH-l5VrM4zcsHGggAdvTTXCD-m6L63lGhSFiBTHmyhaCbegwIZ-WXfsu2kotauoccklT-Up0fOueN78pH15KFyrZZrtV*XI92-BNhSChKRV91jORYDw",
           "member": "string",
           "name": "UserSig",
@@ -1730,7 +1730,7 @@
         },
         {
           "disabled": false,
-          "document": "云端审核文件上传到云存储的参数。",
+          "document": "<p>AI 内容理解文件上传到云存储的参数。</p>",
           "example": "无",
           "member": "ModerationStorageParams",
           "name": "ModerationStorageParams",
@@ -1739,7 +1739,7 @@
         },
         {
           "disabled": false,
-          "document": "TRTC房间号的类型。 【*注意】必须和录制的房间所对应的RoomId类型相同: 0: 字符串类型的RoomId 1: 32位整型的RoomId（默认） 示例值：1",
+          "document": "<p>TRTC房间号的类型。 【*注意】必须和录制的房间所对应的RoomId类型相同: 0: 字符串类型的RoomId 1: 32位整型的RoomId（默认） 示例值：1</p>",
           "example": "1",
           "member": "uint64",
           "name": "RoomIdType",
@@ -1748,7 +1748,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID可以调用的时效性，从成功开启任务并获得TaskID后开始计算，超时后无法调用查询、更新和停止等接口，但是切片任务不会停止。 参数的单位是小时，默认24小时（1天），最大可设置72小时（3天），最小设置6小时。举例说明：如果不设置该参数，那么开始切片成功后，查询、更新和停止切片的调用时效为24个小时。",
+          "document": "<p>任务ID可以调用的时效性，从成功开启任务并获得TaskID后开始计算，超时后无法调用查询、更新和停止等接口，但是切片任务不会停止。 参数的单位是小时，默认24小时（1天），最大可设置72小时（3天），最小设置6小时。举例说明：如果不设置该参数，那么开始切片成功后，查询、更新和停止切片的调用时效为24个小时。</p>",
           "example": "24",
           "member": "uint64",
           "name": "ResourceExpiredHour",
@@ -1763,7 +1763,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云端审核服务分配的任务ID。任务ID是对一次切片任务生命周期过程的唯一标识，结束任务时会失去意义。任务ID需要业务保存下来，作为下次针对这个任务操作的参数",
+          "document": "<p>AI 内容理解服务分配的任务ID。任务ID是对一次切片任务生命周期过程的唯一标识，结束任务时会失去意义。任务ID需要业务保存下来，作为下次针对这个任务操作的参数</p>",
           "example": "-npVqpdU7pr3JUbUasDy5PLPQaHPhkPbIkDILoK-2OqyoZWQndibCtH88ztBhkWAhZCH9DwE.",
           "member": "string",
           "name": "TaskId",
@@ -2249,7 +2249,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。",
+          "document": "<p>TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。</p>",
           "example": "1400188366",
           "member": "uint64",
           "name": "SdkAppId",
@@ -2258,7 +2258,7 @@
         },
         {
           "disabled": false,
-          "document": "审核任务的唯一Id，在启动切片任务成功后会返回。",
+          "document": "<p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>",
           "example": "-npVoIhU7nQhuIyPncW+12qkkV--KL3bBznoI4K-4pycoZWQndibFvKbEU+fxxvJzuc+2xqATAE.",
           "member": "string",
           "name": "TaskId",
@@ -2273,7 +2273,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审核任务的唯一Id，在启动切片任务成功后会返回。",
+          "document": "<p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>",
           "example": "-npVoIhU7nQhuIyPncW+12qkkV--KL3bBznoI4K-4pycoZWQndibFvKbEU+fxxvJzuc+2xqATAE.",
           "member": "string",
           "name": "TaskId",
@@ -2853,7 +2853,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TRTC的SDKAppId，和录制的房间所对应的SDKAppId相同。",
+          "document": "<p>TRTC的SDKAppId，和录制的房间所对应的SDKAppId相同。</p>",
           "example": "1400188366",
           "member": "uint64",
           "name": "SdkAppId",
@@ -2862,7 +2862,7 @@
         },
         {
           "disabled": false,
-          "document": "云端审核任务的唯一Id，在启动切片任务成功后会返回。",
+          "document": "<p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>",
           "example": "-npVoIhU7uxalbjwbc-qxKyKqluNl93bUmLFI4K-4pycoZWQndibYzKsC3HkljEK3HikwogUxwE.",
           "member": "string",
           "name": "TaskId",
@@ -2877,8 +2877,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "切片任务的唯一Id，在启动切片任务成功后会返回。",
-          "example": "123",
+          "document": "<p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>",
+          "example": "npVoIhU7nVF+0aF9cAU08H4y253LKPbBX+UIoK-4pycoZWQndibGOPu9klhRT7bEDv5XoewCQE",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -2887,7 +2887,7 @@
         },
         {
           "disabled": false,
-          "document": "云端切片任务的状态信息。Idle:表示当前任务空闲中,InProgress:表示当前任务正在进行中,Exited:表示当前任务正在退出的过程中。",
+          "document": "<p>AI内容理解任务的状态信息。Idle:表示当前任务空闲中,InProgress:表示当前任务正在进行中,Exited:表示当前任务正在退出的过程中。</p><p>枚举值：</p><ul><li>InProgress： 进行中</li></ul>",
           "example": "InProgress",
           "member": "string",
           "name": "Status",
@@ -2897,8 +2897,8 @@
         },
         {
           "disabled": false,
-          "document": "订阅黑白名单",
-          "example": "{\"SubscribeAudioUserIds\":[],\"UnSubscribeAudioUserIds\":[],\"SubscribeVideoUserIds\":[],\"UnSubscribeVideoUserIds\":[]}",
+          "document": "<p>订阅黑白名单</p>",
+          "example": "无",
           "member": "SubscribeModerationUserIds",
           "name": "SubscribeStreamUserIds",
           "output_required": false,
@@ -6535,7 +6535,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核  默认值1 ",
+          "document": "<p>AI 内容理解任务类型， 1:音频切片理解，2:视频截帧理解，3:音视切片+视频截帧理解  默认值1 </p><p>枚举值：</p><ul><li>1： 音频切片理解</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "ModerationType",
@@ -6544,7 +6544,7 @@
         },
         {
           "disabled": false,
-          "document": "房间内持续没有用户（主播）上行推流的状态超过MaxIdleTime的时长，自动停止切片，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于1800秒(0.5小时)。示例值：30 ",
+          "document": "<p>房间内持续没有用户（主播）上行推流的状态超过MaxIdleTime的时长，自动停止切片，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于1800秒(0.5小时)。示例值：30</p>",
           "example": "30",
           "member": "uint64",
           "name": "MaxIdleTime",
@@ -6553,7 +6553,7 @@
         },
         {
           "disabled": false,
-          "document": "音频切片时长，默认15s 示例值：15, 范围15-60s",
+          "document": "<p>音频切片时长，默认15s 示例值：15, 范围15-60s</p>",
           "example": "15",
           "member": "uint64",
           "name": "SliceAudio",
@@ -6562,7 +6562,7 @@
         },
         {
           "disabled": false,
-          "document": "视频截帧间隔时长，默认5s, 范围1-60s",
+          "document": "<p>视频截帧间隔时长，默认5s, 范围1-60s</p>",
           "example": "5",
           "member": "uint64",
           "name": "SliceVideo",
@@ -6571,7 +6571,7 @@
         },
         {
           "disabled": false,
-          "document": "供应商枚举，\ntrtc : trtc内容理解（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\ntianyu : 天御内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nace  : ACE内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nshumei : 数美审核（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nyidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）",
+          "document": "<p>供应商枚举，<br>trtc : trtc内容理解</p>",
           "example": "ace",
           "member": "string",
           "name": "ModerationSupplier",
@@ -6580,7 +6580,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方审核商送审需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化",
+          "document": "<p>第三方内容理解供应商需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化</p>",
           "example": "无",
           "member": "ModerationSupplierParam",
           "name": "ModerationSupplierParam",
@@ -6589,7 +6589,7 @@
         },
         {
           "disabled": false,
-          "document": "是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件",
+          "document": "<p>是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件</p>",
           "example": "0",
           "member": "uint64",
           "name": "SaveModerationFile",
@@ -6598,7 +6598,7 @@
         },
         {
           "disabled": false,
-          "document": "是否回调所有审核结果:\u000b0 默认回调所有结果 \u000b1 仅回调命中结果 ",
+          "document": "<p>是否回调所有内容理解结果:\u000b0 默认回调所有结果 \u000b1 仅回调命中结果</p>",
           "example": "0",
           "member": "uint64",
           "name": "CallbackAllResults",
@@ -6607,7 +6607,7 @@
         },
         {
           "disabled": false,
-          "document": "指定订阅流白名单或者黑名单。",
+          "document": "<p>指定订阅流白名单或者黑名单。</p>",
           "example": "无",
           "member": "SubscribeModerationUserIds",
           "name": "SubscribeStreamUserIds",
@@ -6688,7 +6688,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。",
+          "document": "<p>TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。</p>",
           "example": "1400188366",
           "member": "uint64",
           "name": "SdkAppId",
@@ -6697,7 +6697,7 @@
         },
         {
           "disabled": false,
-          "document": "审核任务的唯一Id，在启动切片任务成功后会返回。",
+          "document": "<p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>",
           "example": "-npVoIhU7uxalbjwbc-qxKyKqluNl93bUmLFI4K-4pycoZWQndibYzKsC3HkljEK3HikwogUxwE.",
           "member": "string",
           "name": "TaskId",
@@ -6706,8 +6706,8 @@
         },
         {
           "disabled": false,
-          "document": "指定订阅流白名单或者黑名单。",
-          "example": "{\"SubscribeAudioUserIds\":[\"user1\"],\"SubscribeVideoUserIds\":[\"user2\"]}",
+          "document": "<p>指定订阅流白名单或者黑名单。</p>",
+          "example": "无",
           "member": "SubscribeStreamUserIds",
           "name": "SubscribeStreamUserIds",
           "required": false,
@@ -6721,7 +6721,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审核任务的唯一Id，在启动切片任务成功后会返回。",
+          "document": "<p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>",
           "example": "-npVoIhU7uxalbjwbc-qxKyKqluNl93bUmLFI4K-4pycoZWQndibYzKsC3HkljEK3HikwogUxwE.",
           "member": "string",
           "name": "TaskId",

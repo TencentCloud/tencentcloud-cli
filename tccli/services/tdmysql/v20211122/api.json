@@ -4186,7 +4186,17 @@
     },
     "DescribeFlowRequest": {
       "document": "DescribeFlow请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>流程ID</p>",
+          "example": "9841",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeFlowResponse": {

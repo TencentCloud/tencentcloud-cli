@@ -19,9 +19,9 @@
     "CreatePreCacheImageTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePreCacheImageTask\n<公共请求参数>\n\n{\n    \"Image\": \"test.tencentcloudcr.com/example/app:0.2.2\",\n    \"ImageRegistryType\": \"enterprise\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Image\": \"test.tencentcloudcr.com/example/app:0.2.2\",\n        \"ImageDigest\": \"sha256:39e2c18395c3105ace919d1d285cd775d380e83581b132d8d742761123a1e675\",\n        \"ImageRegistryType\": \"enterprise\",\n        \"RequestId\": \"57872da7-8d1e-4035-819f-92c26eaf9557\"\n    }\n}",
-        "title": "创建预热镜像任务"
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePreCacheImageTask\n<公共请求参数>\n\n{\n    \"Image\": \"test.tencentcloudcr.com/example/app:0.2.2\",\n    \"ImageRegistryType\": \"enterprise\",\n    \"TimeoutMinutes\": 60\n}",
+        "output": "{\n    \"Response\": {\n        \"Image\": \"test.tencentcloudcr.com/example/app:0.2.2\",\n        \"ImageDigest\": \"sha256:axxxxxxxxxb98e195ae1d8c85d59fe1fb8c282bcccf1071f877db20f\",\n        \"ImageRegistryType\": \"enterprise\",\n        \"RequestId\": \"b538f3f1-da59-49e5-ac4b-41a440396ec6\"\n    }\n}",
+        "title": "预热镜像"
       }
     ],
     "CreateSandboxTool": [

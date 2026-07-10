@@ -3893,7 +3893,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "[100003,100004]",
           "member": "int64",
           "name": "ZoneIds",
@@ -3902,7 +3902,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录[私有网络](https://console.cloud.tencent.com/vpc/vpc?rid=1)控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。",
+          "document": "<p>私有网络ID，形如 vpc-xxx。有效的 VpcId 可通过登录<a href=\"https://console.cloud.tencent.com/vpc/vpc?rid=1\">私有网络</a>控制台查询；也可以调用接口 <a href=\"https://cloud.tencent.com/document/api/215/1372\">DescribeVpcEx</a>，从接口返回中的 unVpcId 字段获取。若在创建子机时 VpcId 与 SubnetId 同时传入 DEFAULT，则强制使用默认 vpc 网络。</p>",
           "example": "vpc-5ghsr4p9",
           "member": "string",
           "name": "VpcId",
@@ -3911,7 +3911,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录[子网控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口 [DescribeSubnets](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。",
+          "document": "<p>私有网络子网 ID，形如 subnet-xxx。有效的私有网络子网 ID 可通过登录<a href=\"https://console.cloud.tencent.com/vpc/subnet?rid=1\">子网控制台</a>查询；也可以调用接口 <a href=\"https://cloud.tencent.com/document/api/215/15784\">DescribeSubnets</a>，从接口返回中的 unSubnetId 字段获取。若在创建子机时 SubnetId 与 VpcId 同时传入 DEFAULT，则强制使用默认 vpc 网络。</p>",
           "example": "subnet-67y9wil4",
           "member": "string",
           "name": "SubnetId",
@@ -3920,7 +3920,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "prod_rabbitmq",
           "member": "string",
           "name": "ClusterName",
@@ -3929,7 +3929,7 @@
         },
         {
           "disabled": false,
-          "document": "集群的节点规格，需要输入对应的规格标识：\n2C8G：rabbit-vip-profession-2c8g\n4C16G：rabbit-vip-profession-4c16g\n8C32G：rabbit-vip-profession-8c32g\n16C32G：rabbit-vip-basic-4\n16C64G：rabbit-vip-profession-16c64g\n2C4G：rabbit-vip-basic-5\n4C8G：rabbit-vip-basic-1\n8C16G（已售罄）：rabbit-vip-basic-2\n不传默认为 4C8G：rabbit-vip-basic-1",
+          "document": "<p>集群的节点规格，需要输入对应的规格标识：<br>2C8G：rabbit-vip-profession-2c8g<br>4C16G：rabbit-vip-profession-4c16g<br>8C32G：rabbit-vip-profession-8c32g<br>16C32G：rabbit-vip-basic-4<br>16C64G：rabbit-vip-profession-16c64g<br>2C4G：rabbit-vip-basic-5<br>4C8G：rabbit-vip-basic-1<br>8C16G（已售罄）：rabbit-vip-basic-2<br>不传默认为 4C8G：rabbit-vip-basic-1</p>",
           "example": "rabbit-vip-basic-1",
           "member": "string",
           "name": "NodeSpec",
@@ -3938,7 +3938,7 @@
         },
         {
           "disabled": false,
-          "document": "节点数量,多可用区最少为3节点。不传默认单可用区为1,多可用区为3",
+          "document": "<p>节点数量,多可用区最少为3节点。不传默认单可用区为1,多可用区为3</p>",
           "example": "1",
           "member": "int64",
           "name": "NodeNum",
@@ -3947,7 +3947,7 @@
         },
         {
           "disabled": false,
-          "document": "单节点存储规格,不传默认为200G",
+          "document": "<p>单节点存储规格,不传默认为200G</p>",
           "example": "200",
           "member": "int64",
           "name": "StorageSize",
@@ -3956,7 +3956,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false",
+          "document": "<p>是否开启默认镜像队列，true 表示为开启，false 表示为不开启。不传默认为 false。该参数对4.x集群不生效。</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableCreateDefaultHaMirrorQueue",
@@ -3965,7 +3965,7 @@
         },
         {
           "disabled": false,
-          "document": "仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true",
+          "document": "<p>仅预付费集群（PayMode 参数为 1 时）使用该参数，表示是否自动续费，true 表示打开自动续费。不传默认为 true</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoRenewFlag",
@@ -3974,7 +3974,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长,不传默认为1(月)",
+          "document": "<p>购买时长,不传默认为1(月)</p>",
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
@@ -3983,7 +3983,7 @@
         },
         {
           "disabled": false,
-          "document": "付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月",
+          "document": "<p>付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月</p>",
           "example": "1",
           "member": "uint64",
           "name": "PayMode",
@@ -3992,7 +3992,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版本，不传默认为 3.8.30，可选值为 3.8.30、3.11.8和3.13.7",
+          "document": "<p>集群版本，不传默认为 3.8.30，可选值为 3.8.30、3.11.8和3.13.7</p>",
           "example": "3.8.30",
           "member": "string",
           "name": "ClusterVersion",
@@ -4001,7 +4001,7 @@
         },
         {
           "disabled": false,
-          "document": "是否国际站请求，默认 false",
+          "document": "<p>是否国际站请求，默认 false</p>",
           "example": "false",
           "member": "bool",
           "name": "IsIntl",
@@ -4010,7 +4010,7 @@
         },
         {
           "disabled": false,
-          "document": "资源标签列表",
+          "document": "<p>资源标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "ResourceTags",
@@ -4019,7 +4019,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽大小，单位 Mbps",
+          "document": "<p>公网带宽大小，单位 Mbps</p>",
           "example": "5",
           "member": "uint64",
           "name": "Bandwidth",
@@ -4028,7 +4028,7 @@
         },
         {
           "disabled": false,
-          "document": "是否打开公网接入，不传默认为false",
+          "document": "<p>是否打开公网接入，不传默认为false</p>",
           "example": "false",
           "member": "bool",
           "name": "EnablePublicAccess",
@@ -4037,12 +4037,30 @@
         },
         {
           "disabled": false,
-          "document": "是否打开集群删除保护，不传默认为 false",
+          "document": "<p>是否打开集群删除保护，不传默认为 false</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableDeletionProtection",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型</p><p>枚举值：</p><ul><li>NORMAL： 公有云</li><li>CDC： 本地专用集群</li></ul>",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CDC 集群 ID</p>",
+          "example": "cdc-ewdew78qe",
+          "member": "string",
+          "name": "CdcClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4052,7 +4070,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单号 ID",
+          "document": "<p>订单号 ID</p>",
           "example": "20230110002025620411234",
           "member": "string",
           "name": "TranId",
@@ -4062,7 +4080,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID",
+          "document": "<p>实例 ID</p>",
           "example": "amqp-aegnagjg",
           "member": "string",
           "name": "InstanceId",
@@ -4084,7 +4102,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。",
+          "document": "<p>实例 ID，形如amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href=\"https://console.cloud.tencent.com/trabbitmq/cluster?rid=1\">TDMQ RabbitMQ 控制台</a>查询。</p>",
           "example": "amqp-2ppxx4rq",
           "member": "string",
           "name": "InstanceId",
@@ -4093,7 +4111,7 @@
         },
         {
           "disabled": false,
-          "document": "vhost名",
+          "document": "<p>vhost名</p>",
           "example": "testVhost",
           "member": "string",
           "name": "VirtualHost",
@@ -4102,7 +4120,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "hello",
           "member": "string",
           "name": "Description",
@@ -4111,7 +4129,7 @@
         },
         {
           "disabled": false,
-          "document": "消息轨迹开关,true打开,false关闭,默认关闭",
+          "document": "<p>消息轨迹开关,true打开,false关闭,默认关闭</p>",
           "example": "true",
           "member": "bool",
           "name": "TraceFlag",
@@ -4120,7 +4138,7 @@
         },
         {
           "disabled": false,
-          "document": "是否创建镜像队列策略，默认值 true",
+          "document": "<p>是否创建镜像队列策略，默认值 true。该参数对4.x集群不生效。</p>",
           "example": "true",
           "member": "bool",
           "name": "MirrorQueuePolicyFlag",
@@ -4135,7 +4153,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "vhost名",
+          "document": "<p>vhost名</p>",
           "example": "testVhost",
           "member": "string",
           "name": "VirtualHost",
@@ -16970,7 +16988,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群 ID",
+          "document": "<p>集群 ID</p>",
           "example": "amqp-jero744g",
           "member": "string",
           "name": "ClusterId",
@@ -16980,7 +16998,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "prod_rabbitmq",
           "member": "string",
           "name": "ClusterName",
@@ -16990,7 +17008,7 @@
         },
         {
           "disabled": false,
-          "document": "地域信息",
+          "document": "<p>地域信息</p>",
           "example": "华南地区",
           "member": "string",
           "name": "Region",
@@ -17000,7 +17018,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，毫秒为单位。unix 时间戳",
+          "document": "<p>创建时间，毫秒为单位。unix 时间戳</p>",
           "example": "1666257531142",
           "member": "uint64",
           "name": "CreateTime",
@@ -17010,7 +17028,7 @@
         },
         {
           "disabled": false,
-          "document": "集群说明信息",
+          "document": "<p>集群说明信息</p>",
           "example": "生产使用集群",
           "member": "string",
           "name": "Remark",
@@ -17020,7 +17038,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC及网络信息",
+          "document": "<p>VPC及网络信息</p>",
           "example": "无",
           "member": "VpcEndpointInfo",
           "name": "Vpcs",
@@ -17030,7 +17048,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区信息",
+          "document": "<p>可用区信息</p>",
           "example": "[190001]",
           "member": "int64",
           "name": "ZoneIds",
@@ -17040,7 +17058,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟主机数量",
+          "document": "<p>虚拟主机数量</p>",
           "example": "10",
           "member": "int64",
           "name": "VirtualHostNumber",
@@ -17050,7 +17068,7 @@
         },
         {
           "disabled": false,
-          "document": "队列数量",
+          "document": "<p>队列数量</p>",
           "example": "10",
           "member": "int64",
           "name": "QueueNumber",
@@ -17060,7 +17078,7 @@
         },
         {
           "disabled": false,
-          "document": "每秒生产消息数 单位：条/秒",
+          "document": "<p>每秒生产消息数 单位：条/秒</p>",
           "example": "2.3",
           "member": "float",
           "name": "MessagePublishRate",
@@ -17070,7 +17088,7 @@
         },
         {
           "disabled": false,
-          "document": "堆积消息数 单位：条",
+          "document": "<p>堆积消息数 单位：条</p>",
           "example": "5",
           "member": "int64",
           "name": "MessageStackNumber",
@@ -17080,7 +17098,7 @@
         },
         {
           "disabled": false,
-          "document": "实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳",
+          "document": "<p>实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳</p>",
           "example": "1666257531143",
           "member": "int64",
           "name": "ExpireTime",
@@ -17090,7 +17108,7 @@
         },
         {
           "disabled": false,
-          "document": "Channel数量",
+          "document": "<p>Channel数量</p>",
           "example": "10",
           "member": "int64",
           "name": "ChannelNumber",
@@ -17100,7 +17118,7 @@
         },
         {
           "disabled": false,
-          "document": "Connection数量",
+          "document": "<p>Connection数量</p>",
           "example": "10",
           "member": "int64",
           "name": "ConnectionNumber",
@@ -17110,7 +17128,7 @@
         },
         {
           "disabled": false,
-          "document": "Consumer数量",
+          "document": "<p>Consumer数量</p>",
           "example": "10",
           "member": "int64",
           "name": "ConsumerNumber",
@@ -17120,7 +17138,7 @@
         },
         {
           "disabled": false,
-          "document": "Exchang数量",
+          "document": "<p>Exchang数量</p>",
           "example": "10",
           "member": "int64",
           "name": "ExchangeNumber",
@@ -17130,7 +17148,7 @@
         },
         {
           "disabled": false,
-          "document": "集群异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群异常信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "节点[rabbit@rabbitmq-broker-2.rabbitmq-broker-internal.amqp-jero744g.svc.cluster.local]连接异常",
           "member": "string",
           "name": "ExceptionInformation",
@@ -17140,7 +17158,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败",
+          "document": "<p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败</p>",
           "example": "0",
           "member": "int64",
           "name": "ClusterStatus",
@@ -17150,7 +17168,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)",
+          "document": "<p>自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -17160,7 +17178,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启镜像队列策略。1表示开启，0表示没开启。",
+          "document": "<p>是否开启镜像队列策略。1表示开启，0表示没开启。</p>",
           "example": "1",
           "member": "int64",
           "name": "MirrorQueuePolicyFlag",
@@ -17170,7 +17188,7 @@
         },
         {
           "disabled": false,
-          "document": "每秒消费消息数 单位：条/秒",
+          "document": "<p>每秒消费消息数 单位：条/秒</p>",
           "example": "1.0",
           "member": "float",
           "name": "MessageConsumeRate",
@@ -17180,7 +17198,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版本信息",
+          "document": "<p>集群版本信息</p>",
           "example": "3.8.30",
           "member": "string",
           "name": "ClusterVersion",
@@ -17190,7 +17208,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式，0-后付费，1-预付费",
+          "document": "<p>计费模式，0-后付费，1-预付费</p>",
           "example": "0",
           "member": "uint64",
           "name": "PayMode",
@@ -17200,7 +17218,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，0 专享版、1 Serverless 版",
+          "document": "<p>实例类型，0 专享版、1 Serverless 版</p>",
           "example": "0",
           "member": "uint64",
           "name": "InstanceType",
@@ -17210,7 +17228,7 @@
         },
         {
           "disabled": false,
-          "document": "开始隔离时间。unix 时间戳",
+          "document": "<p>开始隔离时间。unix 时间戳</p>",
           "example": "1666257531143",
           "member": "int64",
           "name": "IsolatedTime",
@@ -17220,7 +17238,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为容器实例，默认 true",
+          "document": "<p>是否为容器实例，默认 true</p>",
           "example": "true",
           "member": "bool",
           "name": "Container",
@@ -17230,7 +17248,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -17240,7 +17258,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已开启删除保护",
+          "document": "<p>是否已开启删除保护</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableDeletionProtection",
@@ -17250,7 +17268,7 @@
         },
         {
           "disabled": false,
-          "document": "是否有vhost未开启镜像队列风险",
+          "document": "<p>是否有vhost未开启镜像队列风险</p>",
           "example": "true",
           "member": "bool",
           "name": "MirroredQueueRisk",
@@ -17260,7 +17278,7 @@
         },
         {
           "disabled": false,
-          "document": "是否提示风险",
+          "document": "<p>是否提示风险</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableRiskWarning",
@@ -17270,7 +17288,7 @@
         },
         {
           "disabled": false,
-          "document": "消费超时时间",
+          "document": "<p>消费超时时间</p>",
           "example": "1800000",
           "member": "uint64",
           "name": "ConsumeTimeout",
@@ -17280,12 +17298,32 @@
         },
         {
           "disabled": false,
-          "document": "最大Channel数",
+          "document": "<p>最大Channel数</p>",
           "example": "1024",
           "member": "uint64",
           "name": "ChannelMax",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型</p><p>枚举值：</p><ul><li>NORMAL： 公有云</li><li>CDC： 本地专用集群</li></ul>",
+          "example": "CDC",
+          "member": "string",
+          "name": "ClusterType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CDC集群ID</p>",
+          "example": "cdc-uytuq2tq",
+          "member": "string",
+          "name": "CdcClusterId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -18430,6 +18468,26 @@
           "example": "rabbitmq-stream://amqp-axrwrazp-gz-public-d.amqp.tencenttdmq.com:5552",
           "member": "string",
           "name": "PublicStreamAccessEndpoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型</p><p>枚举值：</p><ul><li>NORMAL： 公有云</li><li>CDC： 本地专用集群</li></ul>",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "ClusterType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CDC 集群 ID</p>",
+          "example": "cluster-sar14jjjww",
+          "member": "string",
+          "name": "CdcClusterId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

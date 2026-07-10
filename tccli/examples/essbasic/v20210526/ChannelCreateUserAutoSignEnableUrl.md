@@ -42,7 +42,45 @@ Output:
 }
 ```
 
-**Example 2: 获取小程序跳转链接**
+**Example 2: 获取H5开通跳转长链接**
+
+将UrlType参数设置为 H5SIGN，并且将参数EndPoint设置为HTTP，即可获得H5页面开通长链接
+
+Input: 
+
+```
+tccli essbasic ChannelCreateUserAutoSignEnableUrl --cli-unfold-argument  \
+    --Agent.AppId yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2 \
+    --Agent.ProxyOrganizationOpenId ess_open_organization_1 \
+    --Agent.ProxyOperator.OpenId kevinlcheng \
+    --SceneKey E_PRESCRIPTION_AUTO_SIGN \
+    --Operator.OpenId  \
+    --AutoSignConfig.UserInfo.Name 典子谦 \
+    --AutoSignConfig.UserInfo.IdCardType ID_CARD \
+    --AutoSignConfig.UserInfo.IdCardNumber 620000198802020000 \
+    --AutoSignConfig.CertInfoCallback True \
+    --AutoSignConfig.UserDefineSeal True \
+    --AutoSignConfig.SealImgCallback True \
+    --UrlType H5SIGN \
+    --EndPoint HTTP
+```
+
+Output: 
+```
+{
+    "Response": {
+        "AppId": "",
+        "AppOriginalId": "",
+        "Path": "",
+        "QrCode": "",
+        "Url": "https://quick.test.qian.tencent.cn/autoSign/open?BizType=H5SIGN&Code=yD3JcUUckpepevx5Uy4y9iHSx3WATor0&CodeType=QUICK&OrganizationId=yDwFmUUckpstjt1aUyN9xSlvgkLEa4NC&SceneKey=E_PRESCRIPTION_AUTO_SIGN",
+        "UrlType": "H5SIGN",
+        "RequestId": "240241da-6277-44a5-b624-a41a94799d06"
+    }
+}
+```
+
+**Example 3: 获取小程序跳转链接**
 
 UrlType参数是用来控制生成链接类型的，如果不传，则默认生成小程序跳转链接
 
@@ -86,7 +124,7 @@ Output:
 }
 ```
 
-**Example 3: 设置用户开通认证校验方式**
+**Example 4: 设置用户开通认证校验方式**
 
 通过 AutoSignConfig.VerifyChannels 参数，可以控制用户在开通的时候所使用的认证方式。以下例子为生成用户短信验证开通的链接为例，链接类型为H5跳转链接。
 
@@ -131,7 +169,7 @@ Output:
 }
 ```
 
-**Example 4: 通知对应开通用户以及设置过期时间**
+**Example 5: 通知对应开通用户以及设置过期时间**
 
 	
 可以使用短信通知用户点击链接进行开通，短信中的链接跳转到小程序或者H5取决于UrlType参数。下面的例子将使用H5跳转链接为例。 过期时间需要使用时间戳类型进行设置，要求请参考 "ExpiredTime" 参数。
@@ -173,43 +211,6 @@ Output:
         "RequestId": "5beb5f54-cf3d-4c26-a4ee-a97c85196a3e",
         "Url": "https://essurl.cn/q5nQ*CSFBZ",
         "UrlType": "H5SIGN"
-    }
-}
-```
-
-**Example 5: 获取H5开通跳转长链接**
-
-将UrlType参数设置为 H5SIGN，并且将参数EndPoint设置为HTTP，即可获得H5页面开通长链接
-
-Input: 
-
-```
-tccli essbasic ChannelCreateUserAutoSignEnableUrl --cli-unfold-argument  \
-    --Agent.AppId yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2 \
-    --Agent.ProxyOrganizationOpenId ess_open_organization_1 \
-    --Agent.ProxyOperator.OpenId kevinlcheng \
-    --SceneKey E_PRESCRIPTION_AUTO_SIGN \
-    --Operator.OpenId  \
-    --AutoSignConfig.UserInfo.Name 刘付彩文 \
-    --AutoSignConfig.UserInfo.IdCardType ID_CARD \
-    --AutoSignConfig.UserInfo.IdCardNumber 440982199707195371 \
-    --AutoSignConfig.CertInfoCallback True \
-    --AutoSignConfig.UserDefineSeal True \
-    --AutoSignConfig.SealImgCallback True \
-    --EndPoint HTTP
-```
-
-Output: 
-```
-{
-    "Response": {
-        "AppId": "",
-        "AppOriginalId": "",
-        "Path": "",
-        "QrCode": "",
-        "Url": "https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?path=/pages/extra/auto-sign/service-enable&channel=autoSign&identityChange=0&organizationId=yDwFmUUckpstjt1aUyN9xSlvgkLEa4NC&sceneKey=E_PRESCRIPTION_AUTO_SIGN&confToken=yD3JcUUckpepmb1wU0WZWMycyvognyFQ",
-        "UrlType": "",
-        "RequestId": "58f420f2-b59d-4574-8dab-83c93b4012e2"
     }
 }
 ```

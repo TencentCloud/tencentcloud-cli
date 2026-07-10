@@ -10949,7 +10949,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "虚拟集群名称",
+          "document": "<p>虚拟集群名称</p>",
           "example": "云盘批处理任务",
           "member": "string",
           "name": "DataEngineName",
@@ -10958,7 +10958,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为10，最大为100",
+          "document": "<p>返回数量，默认为10，最大为100</p>",
           "example": "1",
           "member": "int64",
           "name": "Limit",
@@ -10967,7 +10967,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0",
+          "document": "<p>偏移量，默认为0</p>",
           "example": "10",
           "member": "int64",
           "name": "Offset",
@@ -10976,10 +10976,28 @@
         },
         {
           "disabled": false,
-          "document": "资源组id",
+          "document": "<p>资源组id</p>",
           "example": "session_123",
           "member": "string",
           "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询开始时间，用于筛选资源组启停事件的时间范围，不传则不限制开始时间</p><p>参数格式：YYYY-mm-dd HH:MM:SS</p>",
+          "example": "2026-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询结束时间，用于筛选资源组启停事件的时间范围，不传则不限制结束时间。需大于等于 StartTime</p><p>参数格式：YYYY-mm-dd HH:MM:SS</p>",
+          "example": "2026-01-02 00:00:00",
+          "member": "string",
+          "name": "EndTime",
           "required": false,
           "type": "string"
         }
@@ -10991,7 +11009,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件详细信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HouseEventsInfo",
           "name": "Events",
@@ -11001,7 +11019,7 @@
         },
         {
           "disabled": false,
-          "document": "分页号",
+          "document": "<p>分页号</p>",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -11011,7 +11029,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小",
+          "document": "<p>分页大小</p>",
           "example": "50",
           "member": "int64",
           "name": "Size",
@@ -11021,7 +11039,7 @@
         },
         {
           "disabled": false,
-          "document": "总页数",
+          "document": "<p>总页数</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalPages",
@@ -11031,7 +11049,7 @@
         },
         {
           "disabled": false,
-          "document": "总条数",
+          "document": "<p>总条数</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",

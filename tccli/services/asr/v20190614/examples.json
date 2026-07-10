@@ -262,6 +262,14 @@
         "title": "注册说话人"
       }
     ],
+    "VoicePrintGroupList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintGroupList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"GroupIds\": [\n                \"group_name\"\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"06c3136c-8663-4ca2-be2c-b382c390f8ff\"\n    }\n}",
+        "title": "获取分组名称列表"
+      }
+    ],
     "VoicePrintGroupVerify": [
       {
         "document": "提供一段音频数据和提前注册的一组说话人数据进行比对， 返回topN",

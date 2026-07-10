@@ -15926,7 +15926,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "cfs的存储类型\n  // HP:通用性能型\n  // SD:通用标准型\n  // TP:turbo性能型\n  // TB:turbo标准型\n  // THP:吞吐型",
+          "document": "<p>cfs的存储类型<br>  // HP:通用性能型<br>  // SD:通用标准型<br>  // TP:turbo性能型<br>  // TB:turbo标准型<br>  // THP:吞吐型</p>",
           "example": "HP",
           "member": "string",
           "name": "CFSStorageType",
@@ -15936,7 +15936,7 @@
         },
         {
           "disabled": false,
-          "document": "cfs的协议",
+          "document": "<p>cfs的协议</p>",
           "example": "NFS",
           "member": "string",
           "name": "CFSProtocol",

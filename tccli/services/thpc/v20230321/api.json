@@ -4503,7 +4503,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间ID",
+          "document": "<p>工作空间ID</p>",
           "example": "wks-3rr4w3t7",
           "member": "string",
           "name": "SpaceId",
@@ -4513,7 +4513,17 @@
         },
         {
           "disabled": false,
-          "document": "工作空间类型",
+          "document": "<p>工作空间类别</p>",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "SpaceClass",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间类型</p>",
           "example": "96AS",
           "member": "string",
           "name": "SpaceFamily",
@@ -4523,7 +4533,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间规格",
+          "document": "<p>工作空间规格</p>",
           "example": "96AS.4XLARGE160",
           "member": "string",
           "name": "SpaceType",
@@ -4533,7 +4543,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间名称",
+          "document": "<p>工作空间名称</p>",
           "example": "workspace",
           "member": "string",
           "name": "SpaceName",
@@ -4543,7 +4553,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>ONLINE：表示运行中<br></li><li>ARREARS：表示隔离中<br></li><li>TERMINATING：表示销毁中。<br></li>",
+          "document": "<p>工作空间状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>ONLINE：表示运行中<br></li><li>ARREARS：表示隔离中<br></li><li>TERMINATING：表示销毁中。<br></li></p>",
           "example": "ONLINE",
           "member": "string",
           "name": "SpaceState",
@@ -4553,7 +4563,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间计费模式",
+          "document": "<p>工作空间计费模式</p>",
           "example": "PREPAID",
           "member": "string",
           "name": "SpaceChargeType",
@@ -4563,7 +4573,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间对应资源ID",
+          "document": "<p>工作空间对应资源ID</p>",
           "example": "ins-3zjugd6z",
           "member": "string",
           "name": "ResourceId",
@@ -4573,7 +4583,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识",
+          "document": "<p>自动续费标识</p>",
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -4583,8 +4593,8 @@
         },
         {
           "disabled": false,
-          "document": "工作空间关联的工作列表",
-          "example": "[{\"Key\": \"env\", \"Value\": \"product\"}]",
+          "document": "<p>工作空间关联的工作列表</p>",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -4593,7 +4603,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-09-22T00:00:00+00:00",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -4603,7 +4613,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间",
+          "document": "<p>到期时间</p>",
           "example": "2025-09-22T00:00:00+00:00",
           "member": "datetime_iso",
           "name": "ExpiredTime",
@@ -4613,8 +4623,8 @@
         },
         {
           "disabled": false,
-          "document": "工作空间所在位置",
-          "example": "{\"Zone\": \"ap-guangzhou-2\"}",
+          "document": "<p>工作空间所在位置</p>",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "output_required": true,
@@ -4623,7 +4633,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间的最新操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作空间的最新操作</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CreateWorkspaces",
           "member": "string",
           "name": "LatestOperation",
@@ -4633,13 +4643,23 @@
         },
         {
           "disabled": false,
-          "document": "工作空间的最新操作状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作空间的最新操作状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例的内网IP</p>",
+          "example": "[\"192.164.0.1\"]",
+          "member": "string",
+          "name": "PrivateIpAddresses",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -3620,7 +3620,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "系统自动时间",
+          "document": "<p>系统自动时间</p>",
           "example": "true",
           "member": "bool",
           "name": "BackupCustomAutoTime",
@@ -3631,7 +3631,7 @@
         },
         {
           "disabled": false,
-          "document": "表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200",
+          "document": "<p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>",
           "example": "0",
           "member": "uint64",
           "name": "BackupTimeBeg",
@@ -3642,7 +3642,7 @@
         },
         {
           "disabled": false,
-          "document": "表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200",
+          "document": "<p>表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>",
           "example": "0",
           "member": "uint64",
           "name": "BackupTimeEnd",
@@ -3653,7 +3653,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"full\"]",
           "member": "string",
           "name": "BackupWeekDays",
@@ -3664,7 +3664,7 @@
         },
         {
           "disabled": false,
-          "document": "间隔时间",
+          "document": "<p>间隔时间</p>",
           "example": "0",
           "member": "int64",
           "name": "BackupIntervalTime",
@@ -3675,7 +3675,7 @@
         },
         {
           "disabled": false,
-          "document": "表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600247=604800，最大为158112000",
+          "document": "<p>表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600247=604800，最大为158112000</p>",
           "example": "604800",
           "member": "uint64",
           "name": "ReserveDuration",
@@ -3686,7 +3686,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域备份开启\nyes-开启\nno-关闭",
+          "document": "<p>跨地域备份开启<br>yes-开启<br>no-关闭</p>",
           "example": "OFF",
           "member": "string",
           "name": "CrossRegionsEnable",
@@ -3697,7 +3697,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域备份地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>跨地域备份地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"ap-chengdu\"]",
           "member": "string",
           "name": "CrossRegions",
@@ -3708,7 +3708,18 @@
         },
         {
           "disabled": false,
-          "document": "自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份",
+          "document": "<p>跨地域备份保留时间</p><p>单位：天</p>",
+          "example": "8",
+          "member": "int64",
+          "name": "CrossRegionSaveDays",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份</p>",
           "example": "periodically",
           "member": "string",
           "name": "BackupTriggerStrategy",
@@ -3719,7 +3730,7 @@
         },
         {
           "disabled": false,
-          "document": "备份投递关系",
+          "document": "<p>备份投递关系</p>",
           "example": "无",
           "member": "CreateBackupVaultItem",
           "name": "AutoCopyVaults",
@@ -4209,7 +4220,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "binlog保留时间",
+          "document": "<p>binlog保留时间</p>",
           "example": "7",
           "member": "int64",
           "name": "BinlogSaveDays",
@@ -4220,7 +4231,7 @@
         },
         {
           "disabled": false,
-          "document": "binlog异地地域备份是否开启",
+          "document": "<p>binlog异地地域备份是否开启</p>",
           "example": "ON",
           "member": "string",
           "name": "BinlogCrossRegionsEnable",
@@ -4231,7 +4242,7 @@
         },
         {
           "disabled": false,
-          "document": "binlog异地地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>binlog异地地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "BinlogCrossRegions",
@@ -4242,7 +4253,18 @@
         },
         {
           "disabled": false,
-          "document": "保险箱信息",
+          "document": "<p>跨地域备份保留时间</p><p>单位：天</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "BinlogCrossRegionSaveDays",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>保险箱信息</p>",
           "example": "无",
           "member": "CreateBackupVaultItem",
           "name": "AutoCopyVaults",
@@ -4259,7 +4281,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Binlog文件名称",
+          "document": "<p>Binlog文件名称</p>",
           "example": "cynosdbmysql-xvgstw6s-backupfile-000001",
           "member": "string",
           "name": "FileName",
@@ -4269,7 +4291,7 @@
         },
         {
           "disabled": false,
-          "document": "文件大小，单位：字节",
+          "document": "<p>文件大小，单位：字节</p>",
           "example": "23478236",
           "member": "int64",
           "name": "FileSize",
@@ -4279,7 +4301,7 @@
         },
         {
           "disabled": false,
-          "document": "事务最早时间",
+          "document": "<p>事务最早时间</p>",
           "example": "2024-10-01 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -4289,7 +4311,7 @@
         },
         {
           "disabled": false,
-          "document": "事务最晚时间",
+          "document": "<p>事务最晚时间</p>",
           "example": "2024-10-10 00:00:00",
           "member": "string",
           "name": "FinishTime",
@@ -4299,7 +4321,7 @@
         },
         {
           "disabled": false,
-          "document": "Binlog文件ID",
+          "document": "<p>Binlog文件ID</p>",
           "example": "23467",
           "member": "int64",
           "name": "BinlogId",
@@ -4309,7 +4331,7 @@
         },
         {
           "disabled": false,
-          "document": "binlog所跨地域",
+          "document": "<p>binlog所跨地域</p>",
           "example": "[\"ap-shanghai\"]",
           "member": "string",
           "name": "CrossRegions",
@@ -4319,7 +4341,7 @@
         },
         {
           "disabled": false,
-          "document": "备份投递状态",
+          "document": "<p>备份投递状态</p>",
           "example": "done",
           "member": "string",
           "name": "CopyStatus",
@@ -4329,7 +4351,7 @@
         },
         {
           "disabled": false,
-          "document": "保险箱信息",
+          "document": "<p>保险箱信息</p>",
           "example": "无",
           "member": "VaultInfo",
           "name": "VaultInfos",
@@ -4339,7 +4361,7 @@
         },
         {
           "disabled": false,
-          "document": "加密秘钥key",
+          "document": "<p>加密秘钥key</p>",
           "example": "1764ae22-72f0-11f0-8904-52540009df14",
           "member": "string",
           "name": "EncryptKeyId",
@@ -4349,12 +4371,48 @@
         },
         {
           "disabled": false,
-          "document": "加密秘钥地域",
+          "document": "<p>加密秘钥地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "EncryptRegion",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份的地域分布信息</p>",
+          "example": "无",
+          "member": "BinlogRegionInfo",
+          "name": "ExistRegions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BinlogRegionInfo": {
+      "document": "各地域binlog保留信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>备份地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "BackupRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份ID</p>",
+          "example": "854194",
+          "member": "int64",
+          "name": "BackupId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -20697,7 +20755,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区,每个地域提供最佳实践",
+          "document": "<p>可用区,每个地域提供最佳实践</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -20706,7 +20764,7 @@
         },
         {
           "disabled": false,
-          "document": "购买计算节点个数",
+          "document": "<p>购买计算节点个数</p>",
           "example": "1",
           "member": "int64",
           "name": "GoodsNum",
@@ -20715,7 +20773,7 @@
         },
         {
           "disabled": false,
-          "document": "实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS",
+          "document": "<p>实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS</p>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstancePayMode",
@@ -20724,7 +20782,7 @@
         },
         {
           "disabled": false,
-          "document": "存储购买类型，可选值为：PREPAID, POSTPAID",
+          "document": "<p>存储购买类型，可选值为：PREPAID, POSTPAID</p>",
           "example": "POSTPAID",
           "member": "string",
           "name": "StoragePayMode",
@@ -20733,7 +20791,7 @@
         },
         {
           "disabled": false,
-          "document": "实例设备类型，支持值如下：\n- common：表示通用型\n- exclusive：表示独享型",
+          "document": "<p>实例设备类型，支持值如下：</p><ul><li>common：表示通用型</li><li>exclusive：表示独享型</li></ul>",
           "example": "exclusive",
           "member": "string",
           "name": "DeviceType",
@@ -20742,7 +20800,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU核数，PREPAID与POSTPAID实例类型必传",
+          "document": "<p>CPU核数，PREPAID与POSTPAID实例类型必传</p>",
           "example": "1",
           "member": "int64",
           "name": "Cpu",
@@ -20751,7 +20809,7 @@
         },
         {
           "disabled": false,
-          "document": "内存大小，单位G，PREPAID与POSTPAID实例类型必传",
+          "document": "<p>内存大小，单位G，PREPAID与POSTPAID实例类型必传</p>",
           "example": "1",
           "member": "int64",
           "name": "Memory",
@@ -20760,7 +20818,7 @@
         },
         {
           "disabled": false,
-          "document": "Ccu大小，serverless类型必传",
+          "document": "<p>Ccu大小，serverless类型必传</p>",
           "example": "0.5",
           "member": "float",
           "name": "Ccu",
@@ -20769,7 +20827,7 @@
         },
         {
           "disabled": false,
-          "document": "存储大小，PREPAID存储类型必传",
+          "document": "<p>存储大小，PREPAID存储类型必传</p>",
           "example": "10",
           "member": "int64",
           "name": "StorageLimit",
@@ -20778,7 +20836,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长，PREPAID购买类型必传",
+          "document": "<p>购买时长，PREPAID购买类型必传</p>",
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
@@ -20787,12 +20845,30 @@
         },
         {
           "disabled": false,
-          "document": "时长单位，可选值为：m,d。PREPAID购买类型必传",
+          "document": "<p>时长单位，可选值为：m,d。PREPAID购买类型必传</p>",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储架构类型。 枚举值：1.0/2.0 默认值：1.0</p>",
+          "example": "1.0",
+          "member": "string",
+          "name": "StorageVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储是否跨AZ，2.0存储架构下有效</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsMultiAz",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -20802,7 +20878,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例价格",
+          "document": "<p>实例价格</p>",
           "example": "无",
           "member": "TradePrice",
           "name": "InstancePrice",
@@ -20812,7 +20888,7 @@
         },
         {
           "disabled": false,
-          "document": "存储价格",
+          "document": "<p>存储价格</p>",
           "example": "无",
           "member": "TradePrice",
           "name": "StoragePrice",
@@ -24017,7 +24093,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启自动逻辑备份",
+          "document": "<p>是否开启自动逻辑备份</p>",
           "example": "OFF",
           "member": "string",
           "name": "LogicBackupEnable",
@@ -24028,7 +24104,7 @@
         },
         {
           "disabled": false,
-          "document": "自动逻辑备份开始时间",
+          "document": "<p>自动逻辑备份开始时间</p>",
           "example": "2",
           "member": "uint64",
           "name": "LogicBackupTimeBeg",
@@ -24039,7 +24115,7 @@
         },
         {
           "disabled": false,
-          "document": "自动逻辑备份结束时间",
+          "document": "<p>自动逻辑备份结束时间</p>",
           "example": "6",
           "member": "uint64",
           "name": "LogicBackupTimeEnd",
@@ -24050,7 +24126,7 @@
         },
         {
           "disabled": false,
-          "document": "自动逻辑备份保留时间\n单位：秒",
+          "document": "<p>自动逻辑备份保留时间<br>单位：秒</p>",
           "example": "7",
           "member": "uint64",
           "name": "LogicReserveDuration",
@@ -24061,7 +24137,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启跨地域逻辑备份\n可选值：ON/OFF",
+          "document": "<p>是否开启跨地域逻辑备份<br>可选值：ON/OFF</p>",
           "example": "ON",
           "member": "string",
           "name": "LogicCrossRegionsEnable",
@@ -24072,7 +24148,7 @@
         },
         {
           "disabled": false,
-          "document": "逻辑备份所跨地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>逻辑备份所跨地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "LogicCrossRegions",
@@ -24083,13 +24159,24 @@
         },
         {
           "disabled": false,
-          "document": "备份投递关系",
+          "document": "<p>备份投递关系</p>",
           "example": "无",
           "member": "CreateBackupVaultItem",
           "name": "AutoCopyVaults",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>天</p><p>单位：跨地域逻辑备份保留时间</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "LogicCrossRegionSaveDays",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -24938,7 +25025,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdb-123",
           "member": "string",
           "name": "ClusterId",
@@ -24947,11 +25034,20 @@
         },
         {
           "disabled": false,
-          "document": "Binlog保留天数",
+          "document": "<p>Binlog保留天数</p>",
           "example": "7",
           "member": "int64",
           "name": "BinlogSaveDays",
           "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>跨地域备份保留时间</p><p>单位：天</p>",
+          "example": "8",
+          "member": "int64",
+          "name": "BinlogCrossRegionSaveDays",
+          "required": false,
           "type": "int"
         }
       ],
@@ -27164,7 +27260,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-45knmnra",
           "member": "string",
           "name": "ClusterId",
@@ -27173,7 +27269,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启跨地域快照备份ON/OFF",
+          "document": "<p>是否开启跨地域快照备份ON/OFF</p>",
           "example": "ON",
           "member": "string",
           "name": "CrossRegionsEnable",
@@ -27182,12 +27278,21 @@
         },
         {
           "disabled": false,
-          "document": "快照备份所跨地域",
+          "document": "<p>快照备份所跨地域</p>",
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "CrossRegions",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>跨地域备份保留时间</p><p>单位：天</p>",
+          "example": "8",
+          "member": "int64",
+          "name": "CrossRegionSaveDays",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -27197,7 +27302,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "234321",
           "member": "int64",
           "name": "TaskId",
