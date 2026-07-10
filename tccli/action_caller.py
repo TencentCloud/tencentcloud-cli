@@ -15,6 +15,7 @@ import tccli.format_output as format_output
 import tccli.options_define as options_define
 from tccli import __version__
 from tccli.exceptions import ConfigurationError, ClientError, NoCredentialsError
+from tccli.loaders import Loader, BASE_TYPE
 from tccli.utils import Utils
 
 
@@ -81,7 +82,9 @@ class GenericActionCaller(object):
 
         start_time = time.time()
         while True:
-            json_obj = client.call_json(self._action, args)
+            raw = client.call_json(self._action, args)
+            json_obj = raw.get("Response", raw) if isinstance(raw, dict) else raw
+            json_obj = self._filter_response(json_obj, g_param[options_define.Version])
 
             if not g_param[options_define.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == \
                     g_param['OptionsDefine.WaiterInfo']['to']:
@@ -213,6 +216,46 @@ class GenericActionCaller(object):
                 if isinstance(value, six.text_type):
                     g_param[key] = value.encode('utf-8')
         return g_param
+
+    def _filter_response(self, data, version):
+        """加载 api.json 中 ActionResponse 的 schema，对响应 dict 做白名单字段投影"""
+        try:
+            loader = Loader()
+            service_model = loader.get_service_model(self._module, self.convert_version_str(version))
+            objects = service_model["objects"]
+            resp_name = self._action + "Response"
+            if resp_name not in objects:
+                return data
+            return self._filter_by_schema(data, objects[resp_name]["members"], objects)
+        except Exception:
+            return data
+
+    def _filter_by_schema(self, data, members, objects):
+        """按 schema members 递归投影 dict，丢弃未定义字段，复杂类型递归处理"""
+        if not isinstance(data, dict):
+            return data
+        result = {}
+        for para in members:
+            name = para["name"]
+            if name not in data:
+                continue
+            value = data[name]
+            if para["type"] == "list":
+                if para["member"] not in BASE_TYPE:
+                    if isinstance(value, list):
+                        sub_members = objects[para["member"]]["members"]
+                        result[name] = [self._filter_by_schema(item, sub_members, objects) for item in value]
+                    else:
+                        result[name] = value
+                else:
+                    result[name] = value
+            else:
+                if para["member"] not in BASE_TYPE:
+                    sub_members = objects[para["member"]]["members"]
+                    result[name] = self._filter_by_schema(value, sub_members, objects)
+                else:
+                    result[name] = value
+        return result
 
     def _ensure_credential(self, g_param):
         O = options_define
