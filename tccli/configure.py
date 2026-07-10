@@ -11,6 +11,15 @@ from tccli.utils import Utils
 from tccli.loaders import Loader
 
 
+def mask_secret(value):
+    """将敏感凭证字符串转为"等长 `*` + 末 4 位"的脱敏形式；非字符串与空值直接返回。"""
+    if not isinstance(value, str) or value == "":
+        return value
+    if len(value) <= 4:
+        return "*" * len(value)
+    return "*" * (len(value) - 4) + value[-4:]
+
+
 class BasicConfigure(BasicCommand):
     NAME = ''
     DESCRIPTION = ''
@@ -29,6 +38,7 @@ class BasicConfigure(BasicCommand):
         ]
         self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.Token,
                           OptionsDefine.RoleArn, OptionsDefine.RoleSessionName, OptionsDefine.UseCVMRole]
+        self.sensitive_cred_fields = {OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.Token}
         self.conf_service_list = [OptionsDefine.Version, OptionsDefine.Endpoint]
         self.cli_path = os.path.join(os.path.expanduser("~"), ".tccli")
         self._cli_data = Loader()
@@ -143,7 +153,10 @@ class ConfigureListCommand(BasicConfigure):
             cred = Utils.load_json_msg(cred_path)
             for config in self.cred_list:
                 if config in cred and cred[config]:
-                    self._stream.write("%s = %s\n" % (config, cred[config]))
+                    value = cred[config]
+                    if config in self.sensitive_cred_fields:
+                        value = mask_secret(value)
+                    self._stream.write("%s = %s\n" % (config, value))
 
         # other in x.configure
         is_exit, config_path = self._profile_existed(profile_name + ".configure")
@@ -347,6 +360,8 @@ class ConfigureGetCommand(BasicConfigure):
                     value = conf[kv[0]][kv[1]]
                 except Exception as err:
                     raise ConfigurationError("%s in %s.configure not exist" % (varname, profile_name))
+            if varname in self.sensitive_cred_fields:
+                value = mask_secret(value)
             self._stream.write("%s = %s" % (varname, value))
             self._stream.write('\n')
 
