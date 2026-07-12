@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli tokenhub DeleteApiKey --cli-unfold-argument ```
+tccli tokenhub DeleteApiKey --cli-unfold-argument  \
+    --ApiKeyId ak-20260325-xxxxxx \
+    --Platform maas
+```
 
 Output: 
 ```

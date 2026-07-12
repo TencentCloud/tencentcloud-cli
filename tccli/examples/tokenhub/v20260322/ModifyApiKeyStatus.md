@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli tokenhub ModifyApiKeyStatus --cli-unfold-argument ```
+tccli tokenhub ModifyApiKeyStatus --cli-unfold-argument  \
+    --ApiKeyId ak-20260325-xxxxxx \
+    --Platform maas \
+    --Status disable
+```
 
 Output: 
 ```

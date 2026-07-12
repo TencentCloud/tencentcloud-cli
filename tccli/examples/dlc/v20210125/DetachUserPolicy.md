@@ -23,3 +23,24 @@ Output:
 }
 ```
 
+**Example 2: 解绑用户鉴权策略（TF场景）**
+
+
+
+Input: 
+
+```
+tccli dlc DetachUserPolicy --cli-unfold-argument  \
+    --UserId 700002810925 \
+    --PolicyIds v1|USER|700002810925|DATABASE|COMMON|DataLakeCatalog|andrew_dlc_02||||||ASSAYER
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "05758b51-45e0-44a3-a6e5-77d6ee6e58d3"
+    }
+}
+```
+

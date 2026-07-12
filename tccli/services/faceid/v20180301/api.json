@@ -3592,7 +3592,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份证号。\n- 姓名和身份证号、ImageBase64、ImageUrl三者必须提供其中之一。\n- 若都提供了，则按照姓名和身份证号>ImageBase64>ImageUrl的优先级使用参数。",
+          "document": "<p>身份证号。</p><ul><li>姓名和身份证号、ImageBase64、ImageUrl三者必须提供其中之一。</li><li>若都提供了，则按照姓名和身份证号&gt;ImageBase64&gt;ImageUrl的优先级使用参数。</li></ul>",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -3601,7 +3601,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名。",
+          "document": "<p>姓名。</p>",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -3610,7 +3610,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证人像面的 Base64 值。\n- 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n- 支持的图片大小：所下载图片经Base64编码后不超过 3M。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
+          "document": "<p>身份证人像面的 Base64 值。</p><ul><li>支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。</li><li>支持的图片大小：所下载图片经Base64编码后不超过 3M。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。</li></ul>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -3619,7 +3619,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证人像面的 Url 地址。\n- 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n- 支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n- 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n- 非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "<p>身份证人像面的 Url 地址。</p><ul><li>支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。</li><li>支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。</li><li>图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。</li><li>非腾讯云存储的 Url 速度和稳定性可能受一定影响。</li></ul>",
           "example": "https://www.qq.com/image.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -3628,12 +3628,21 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。\n- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "<p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警配置。</p><ul><li>仅当使用ImageBase64或者ImageUrl时，告警配置生效</li><li>以下可选字段均为bool 类型，默认false。<ul><li>CopyWarn，复印件告警。</li><li>BorderCheckWarn，边框和框内遮挡告警。</li><li>ReshootWarn，翻拍告警。</li><li>DetectPsWarn，PS检测告警（疑似存在PS痕迹）。</li><li>TempIdWarn，临时身份证告警。</li><li>Quality，图片质量告警（评价图片模糊程度）。</li></ul></li><li>SDK 设置方式参考：Config = Json.stringify({&quot;CopyWarn&quot;:true,&quot;ReshootWarn&quot;:true})。</li><li>API 3.0 Explorer 设置方式参考：Config = {&quot;CopyWarn&quot;:true,&quot;Quality&quot;:true}。</li></ul>",
+          "example": "{\"CopyWarn\":true}",
+          "member": "string",
+          "name": "Config",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3643,7 +3652,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n- 收费结果码：\n0: 姓名和身份证号一致。\n-1: 姓名和身份证号不一致。\n- 不收费结果码：\n-2: 非法身份证号（长度、校验位等不正确）。\n-3: 非法姓名（长度、格式等不正确）。\n-4: 证件库服务异常。\n-5: 证件库中无此身份证记录。\n-6: 权威比对系统升级中，请稍后再试。\n-7: 认证次数超过当日限制。",
+          "document": "<p>认证结果码，收费情况如下。</p><ul><li>收费结果码：<br>0: 姓名和身份证号一致。<br>-1: 姓名和身份证号不一致。</li><li>不收费结果码：<br>-2: 非法身份证号（长度、校验位等不正确）。<br>-3: 非法姓名（长度、格式等不正确）。<br>-4: 证件库服务异常。<br>-5: 证件库中无此身份证记录。<br>-6: 权威比对系统升级中，请稍后再试。<br>-7: 认证次数超过当日限制。</li></ul>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -3653,7 +3662,7 @@
         },
         {
           "disabled": false,
-          "document": "业务结果描述。",
+          "document": "<p>业务结果描述。</p>",
           "example": "姓名和身份证号一致",
           "member": "string",
           "name": "Description",
@@ -3663,7 +3672,7 @@
         },
         {
           "disabled": false,
-          "document": "用于验证的姓名。",
+          "document": "<p>用于验证的姓名。</p>",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -3673,7 +3682,7 @@
         },
         {
           "disabled": false,
-          "document": "用于验证的身份证号。",
+          "document": "<p>用于验证的身份证号。</p>",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -3683,7 +3692,7 @@
         },
         {
           "disabled": false,
-          "document": "OCR得到的性别。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OCR得到的性别。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "男",
           "member": "string",
           "name": "Sex",
@@ -3693,7 +3702,7 @@
         },
         {
           "disabled": false,
-          "document": "OCR得到的民族。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OCR得到的民族。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "汉",
           "member": "string",
           "name": "Nation",
@@ -3703,7 +3712,7 @@
         },
         {
           "disabled": false,
-          "document": "OCR得到的生日。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OCR得到的生日。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1654/12/20",
           "member": "string",
           "name": "Birth",
@@ -3713,13 +3722,43 @@
         },
         {
           "disabled": false,
-          "document": "OCR得到的地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OCR得到的地址。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "北京市东城区景山前街4号紫禁城敬事房",
           "member": "string",
           "name": "Address",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>身份证头像照片的base64编码</p>",
+          "example": "/9j/4AAQSk=",
+          "member": "string",
+          "name": "Portrait",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警信息。</p><ul><li>Code 告警码列表和释义：<br>  &#39;-9101&#39;：身份证边框不完整告警。<br>  &#39;-9102&#39;：身份证复印件告警。<br>  &#39;-9103&#39;：身份证翻拍告警。<br>  &#39;-9105&#39;：身份证框内遮挡告警。&#39;<br>  &#39;-9104&#39;：临时身份证告警。<br>  &#39;-9106&#39;：身份证 PS 告警（疑似存在PS痕迹）。<br>  &#39;-9107&#39;：身份证反光告警。<br>  &#39;-9108&#39;：身份证复印件告警（仅黑白复印件）。<br>  &#39;-9109&#39;：身份证有效日期不合法告警。<br>  &#39;-8001&#39;：图片模糊告警。</li><li>多个会用“|” 隔开，如 &quot;-9101|-9106|-9104&quot;。</li></ul>",
+          "example": "-9101|-9106|-9104",
+          "member": "string",
+          "name": "Warnings",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片质量分数。</p><ul><li>当请求Config中配置图片模糊告警该参数才有意义。</li><li><ul><li>取值范围（0～100），目前默认阈值是50分，低于50分会触发模糊告警。</li></ul></li></ul>",
+          "example": "0",
+          "member": "float",
+          "name": "Quality",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

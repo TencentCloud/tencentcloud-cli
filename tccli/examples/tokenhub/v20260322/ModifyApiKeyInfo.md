@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli tokenhub ModifyApiKeyInfo --cli-unfold-argument ```
+tccli tokenhub ModifyApiKeyInfo --cli-unfold-argument  \
+    --ApiKeyId ak-20260320-a1b2c3d4 \
+    --Platform maas \
+    --Remark test-new-remark
+```
 
 Output: 
 ```

@@ -3,8 +3,8 @@
     "CreateApiKey": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApiKey\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7fdc4d0-04d5-4c76-a55e-b8528047a782\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApiKey\n<公共请求参数>\n\n{\n    \"ApiKeyName\": \"my-api-key\",\n    \"Platform\": \"maas\",\n    \"BindType\": \"all\",\n    \"Quotas\": [\n        {\n            \"CycleUnit\": \"d\",\n            \"CycleCredits\": \"1000\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiKeyId\": \"ak-20260609-f294a4aa4e2a7412780914226ad3ffd8\",\n        \"RequestId\": \"c7fdc4d0-04d5-4c76-a55e-b8528047a782\"\n    }\n}",
         "title": "CreateApiKey"
       }
     ],
@@ -43,7 +43,7 @@
     "DeleteApiKey": [
       {
         "document": "删除 API 密钥",
-        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApiKey\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApiKey\n<公共请求参数>\n\n{\n    \"ApiKeyId\": \"ak-20260325-xxxxxx\",\n    \"Platform\": \"maas\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d35eb080-e39b-4c61-8f04-86f3c66ba533\"\n    }\n}",
         "title": "删除 API 密钥"
       }
@@ -171,7 +171,7 @@
     "ModifyApiKeyInfo": [
       {
         "document": " 更新 API 密钥备注信息为“test-new-remark”",
-        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApiKeyInfo\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApiKeyInfo\n<公共请求参数>\n\n{\n    \"ApiKeyId\": \"ak-20260320-a1b2c3d4\",\n    \"Platform\": \"maas\",\n    \"Remark\": \"test-new-remark\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcdaaab-2aa3-4e03-87fb-795cf37b2079\"\n    }\n}",
         "title": "ModifyApiKeyInfo 更新 API 密钥备注信息"
       }
@@ -179,7 +179,7 @@
     "ModifyApiKeyStatus": [
       {
         "document": "更新 API 密钥状态为禁用",
-        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApiKeyStatus\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApiKeyStatus\n<公共请求参数>\n\n{\n    \"ApiKeyId\": \"ak-20260325-xxxxxx\",\n    \"Platform\": \"maas\",\n    \"Status\": \"disable\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0f2e294c-6c10-4ff6-8165-c25b3c5d21e0\"\n    }\n}",
         "title": "更新 API 密钥状态为禁用"
       }

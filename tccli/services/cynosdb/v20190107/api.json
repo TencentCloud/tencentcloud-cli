@@ -539,6 +539,13 @@
       "output": "DescribeClusterInstanceGrpsResponse",
       "status": "online"
     },
+    "DescribeClusterLevels": {
+      "document": "查询可支持的集群类型列表",
+      "input": "DescribeClusterLevelsRequest",
+      "name": "查询支持集群级别列表",
+      "output": "DescribeClusterLevelsResponse",
+      "status": "online"
+    },
     "DescribeClusterParamLogs": {
       "document": "本接口（DescribeClusterParamLogs）用于查询参数修改记录。",
       "input": "DescribeClusterParamLogsRequest",
@@ -14570,6 +14577,43 @@
           "member": "CynosdbInstanceGroup",
           "name": "InstanceGroupInfoList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterLevelsRequest": {
+      "document": "DescribeClusterLevels请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterLevelsResponse": {
+      "document": "DescribeClusterLevels返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群类型列表",
+          "example": "[\"P0\",\"P1\"]",
+          "member": "string",
+          "name": "LevelList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },

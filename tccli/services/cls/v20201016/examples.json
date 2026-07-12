@@ -717,8 +717,8 @@
     "DescribeCloudProductLogTasks": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\n      Host: xxx.tencentcloudapi.com\n      Content-Type: application/json\n      X-TC-Action: DescribeCloudProductLogTasks\n      <公共请求参数>\n      \n      {\n  \"Offset\": 0,\n  \"Limit\": 0,\n  \"Filters\": [\n    {\n      \"Key\": \"asummerName\",\n      \"Values\": [\n        \"cls\"\n      ]\n    }\n  ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"ClsRegion\": \"ap-guangzhou\",\n                \"InstanceId\": \"ins-r8hr2upy\",\n                \"LogsetId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\",\n                \"TopicId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\",\n                \"Extend\": \"\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudProductLogTasks\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"instanceId\",\n            \"Values\": [\n                \"cfs-48afd4bff\"\n            ]\n        }\n    ],\n    \"WithTags\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"ClsRegion\": \"ap-guangzhou-open\",\n                \"Extend\": \"rename\",\n                \"InstanceId\": \"cfs-48afd4bff\",\n                \"LogType\": \"han*****test\",\n                \"LogsetId\": \"29ccb4c0-ab2f-47ab-9dcd-31413b057812\",\n                \"LogsetTags\": [\n                    {\n                        \"Key\": \"name\",\n                        \"Value\": \"业务B\"\n                    }\n                ],\n                \"Status\": 1,\n                \"TopicId\": \"c344124a-68c8-4d34-ac46-04676625065e\",\n                \"TopicTags\": [\n                    {\n                        \"Key\": \"name\",\n                        \"Value\": \"业务B\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"5218cfeb-1810-477c-8ead-f3eadc6f71f9\"\n    }\n}",
         "title": "DescribeCloudProductLogTasks"
       }
     ],
@@ -1003,8 +1003,8 @@
     "DescribeMetricCorrectDimension": [
       {
         "document": "指标校准维度信息",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCorrectDimension\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7d9036c4-358a-46d3-bcef-f50e083efef7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMetricCorrectDimension\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"44a7e88d-36d8-4544-b435-985e368c024f\"\n    }\n}",
         "title": "指标校准维度信息"
       }
     ],

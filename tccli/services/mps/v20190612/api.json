@@ -8532,6 +8532,23 @@
       ],
       "usage": "both"
     },
+    "AigcVideoReferenceAudioInfo": {
+      "document": "参考音频信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参考音频URL信息。需外网可访问。</p>",
+          "example": "https://g*******api.oss-cn-ha*****u.ali*******o*****eral/audios/2026/*6**0/5*e4*3b6f102442180af5691e7b20e09.mp3",
+          "member": "string",
+          "name": "AudioUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AigcVideoReferenceImageInfo": {
       "document": "用于AIGC生视频创作的参考图片信息。",
       "members": [
@@ -12227,6 +12244,15 @@
           "example": "无",
           "member": "AigcVideoReferenceVideoInfo",
           "name": "VideoInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>部分模型支持参考音频传入，使用URL传入。</p>",
+          "example": "无",
+          "member": "AigcVideoReferenceAudioInfo",
+          "name": "AudioInfos",
           "required": false,
           "type": "list"
         },

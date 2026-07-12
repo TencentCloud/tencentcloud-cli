@@ -11227,6 +11227,106 @@
       ],
       "usage": "both"
     },
+    "BeautyEffectItem": {
+      "document": "图片美颜效果项。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启美颜。</p><p>枚举值：</p><ul><li>ON： 开</li><li>OFF： 关</li></ul>",
+          "example": "makeup",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>美颜项。</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>美颜强度。</p>",
+          "example": "90",
+          "member": "int64",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>附加资源路径。</p>",
+          "example": "/images/beauty/lips_wenroufen.png",
+          "member": "string",
+          "name": "ResourcePath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>附加信息。</p>",
+          "example": "{\"makeupLutStrength\": \"0\",\"mergeWithCurrentMotion\": \"false\"}",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BeautyFilterItem": {
+      "document": "美颜滤镜项。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启滤镜。</p><p>枚举值：</p><ul><li>ON： 开</li><li>OFF： 关</li></ul>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>滤镜项。</p>",
+          "example": "beauty.faceFeatureSoftlight",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>滤镜强度。</p>",
+          "example": "30",
+          "member": "int64",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BlackWhiteEdgeConfigureInfo": {
       "document": "视频画面黑边、白边、黑屏、白屏检测的控制参数。",
       "members": [
@@ -28605,6 +28705,34 @@
       ],
       "usage": "both"
     },
+    "ImageBeautyConfig": {
+      "document": "图片美颜配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>美颜效果项。</p>",
+          "example": "无",
+          "member": "BeautyEffectItem",
+          "name": "BeautyEffectItems",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>美颜滤镜项。</p>",
+          "example": "无",
+          "member": "BeautyFilterItem",
+          "name": "BeautyFilterItems",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ImageBlur": {
       "document": "图片模糊处理。",
       "members": [
@@ -40701,7 +40829,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片处理的FileId。",
+          "document": "<p>图片处理的FileId。</p>",
           "example": "237957913124",
           "member": "string",
           "name": "FileId",
@@ -40711,7 +40839,17 @@
         },
         {
           "disabled": false,
-          "document": "图片处理参数。",
+          "document": "<p>图片URL。</p>",
+          "example": "https://xxx.jpeg",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片处理参数。</p>",
           "example": "无",
           "member": "ProcessImageAsyncTaskInput",
           "name": "ImageTaskInput",
@@ -40721,7 +40859,7 @@
         },
         {
           "disabled": false,
-          "document": "图片处理任务的输出媒体文件配置。",
+          "document": "<p>图片处理任务的输出媒体文件配置。</p>",
           "example": "无",
           "member": "ProcessImageAsyncOutputConfig",
           "name": "OutputConfig",
@@ -41009,11 +41147,11 @@
       "type": "object"
     },
     "ProcessImageAsyncTask": {
-      "document": "图片异步处理配置",
+      "document": "图片异步处理配置。",
       "members": [
         {
           "disabled": false,
-          "document": "图片转码输出配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>图片转码输出配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageEncodeConfig",
           "name": "EncodeConfig",
@@ -41024,10 +41162,21 @@
         },
         {
           "disabled": false,
-          "document": "图片增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>图片增强配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageEnhanceConfig",
           "name": "EnhanceConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片美颜配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageBeautyConfig",
+          "name": "BeautyConfig",
           "output_required": false,
           "required": false,
           "type": "object",

@@ -70,3 +70,78 @@ Output:
 }
 ```
 
+**Example 2: test（TF场景）**
+
+
+
+Input: 
+
+```
+tccli dlc DescribeUserInfo --cli-unfold-argument  \
+    --UserId 700002810925 \
+    --Type DataAuth \
+    --PolicyId v1|USER|700002810925|DATABASE|COMMON|DataLakeCatalog|t0_lotuss||||||ASSAYER
+```
+
+Output: 
+```
+{
+    "Response": {
+        "UserInfo": {
+            "AccountType": "UserAccount",
+            "CatalogPolicyInfo": {
+                "PolicySet": [],
+                "TotalCount": 0
+            },
+            "DataPolicyInfo": {
+                "PolicySet": [
+                    {
+                        "Catalog": "DataLakeCatalog",
+                        "Column": "",
+                        "CreateTime": "",
+                        "DataEngine": "",
+                        "Database": "t0_lotuss",
+                        "Function": "",
+                        "Id": 797338,
+                        "Mode": "COMMON",
+                        "Operation": "ASSAYER",
+                        "Operator": "700002171047",
+                        "PolicyId": "v1|USER|700002810925|DATABASE|COMMON|DataLakeCatalog|t0_lotuss||||||ASSAYER",
+                        "PolicyType": "DATABASE",
+                        "ReAuth": false,
+                        "Source": "USER",
+                        "SourceId": 0,
+                        "SourceName": "",
+                        "Table": "",
+                        "View": ""
+                    }
+                ],
+                "TotalCount": 1
+            },
+            "EnginePolicyInfo": {
+                "PolicySet": [],
+                "TotalCount": 0
+            },
+            "ModelPolicyInfo": {
+                "PolicySet": [],
+                "TotalCount": 0
+            },
+            "RowFilterInfo": {
+                "PolicySet": [],
+                "TotalCount": 0
+            },
+            "Type": "DataAuth",
+            "UserAlias": "test-tf",
+            "UserDescription": "测试用户",
+            "UserId": "700002810925",
+            "UserType": "COMMON",
+            "WorkGroupInfo": {
+                "TotalCount": 0,
+                "WorkGroupSet": null
+            }
+        },
+        "RequestId": "4f710e03-5c67-4e2e-b93f-983a33855159"
+    }
+}
+```
+

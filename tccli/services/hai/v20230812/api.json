@@ -414,6 +414,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该套餐是否支持包年包月",
+          "example": "",
+          "member": "bool",
+          "name": "PrepaidEnable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该套餐是否支持按量计费",
+          "example": "",
+          "member": "bool",
+          "name": "PostpaidEnable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -658,6 +678,15 @@
           "name": "SecurityType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>包年包月参数(ServiceChargeType为包月时必填)</p>",
+          "example": "无",
+          "member": "ServiceChargePrepaid",
+          "name": "ServiceChargePrepaid",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -744,7 +773,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务ID",
+          "document": "<p>服务ID</p>",
           "example": "svc-fnay2k0u",
           "member": "string",
           "name": "ServiceId",
@@ -822,6 +851,15 @@
           "name": "SecurityType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>包年包月参数(包月时必填)</p>",
+          "example": "无",
+          "member": "ServiceChargePrepaid",
+          "name": "ServiceChargePrepaid",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -832,7 +870,7 @@
         {
           "disabled": false,
           "document": "<p>服务ID</p>",
-          "example": "svc-4lgsk0ja",
+          "example": "svc-6cjxl264",
           "member": "string",
           "name": "ServiceId",
           "output_required": true,
@@ -2946,6 +2984,45 @@
       ],
       "usage": "both"
     },
+    "ServiceChargePrepaid": {
+      "document": "服务级包年包月入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>购买时长，默认1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时长单位：MONTH(月)/DAY(天)</p>",
+          "example": "MONTH",
+          "member": "string",
+          "name": "TimeUnit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动续费：NOTIFY_AND_AUTO_RENEW/NOTIFY_AND_MANUAL_RENEW/DISABLE_NOTIFY_AND_MANUAL_RENEW</p>",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ServiceDetail": {
       "document": "服务详情",
       "members": [
@@ -3075,6 +3152,56 @@
           "example": "",
           "member": "uint64",
           "name": "TargetReplicas",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费类型：POSTPAID_BY_HOUR(按量)/PREPAID_BY_MONTH(包月)",
+          "example": "",
+          "member": "string",
+          "name": "ChargeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到期时间(包月)，按量为空",
+          "example": "",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识(包月)",
+          "example": "",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "受限状态(如欠费隔离)",
+          "example": "",
+          "member": "string",
+          "name": "RestrictState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自定义部署：1是 0否",
+          "example": "",
+          "member": "int64",
+          "name": "IsCustomDeploy",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

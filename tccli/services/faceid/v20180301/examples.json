@@ -327,9 +327,9 @@
     "IdCardOCRVerification": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IdCardOCRVerification\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://www.qq.com/image.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"姓名和身份证号一致\",\n        \"Name\": \"韦小宝\",\n        \"IdCard\": \"11204416541220243X\",\n        \"Sex\": \"男\",\n        \"Nation\": \"汉\",\n        \"Birth\": \"1654/12/20\",\n        \"Address\": \"北京市东城区景山前街4号紫禁城敬事房\",\n        \"RequestId\": \"a62f567c-1eea-4ef3-b51a-a9eb9bd84cd9\"\n    }\n}",
-        "title": "使用照片URL进行核验示例"
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IdCardOCRVerification\n<公共请求参数>\n\n{\n    \"IdCard\": \"11204416541220243X\",\n    \"Name\": \"韦小宝\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"姓名和身份证号一致\",\n        \"Name\": \"韦小宝\",\n        \"IdCard\": \"11204416541220243X\",\n        \"Sex\": \"\",\n        \"Nation\": \"\",\n        \"Birth\": \"\",\n        \"Address\": \"\",\n        \"RequestId\": \"945c69ad-d86c-47ea-ba33-419b1dc4d242\"\n    }\n}",
+        "title": "使用姓名身份证号进行验证示例"
       },
       {
         "document": "",
@@ -339,9 +339,9 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IdCardOCRVerification\n<公共请求参数>\n\n{\n    \"IdCard\": \"11204416541220243X\",\n    \"Name\": \"韦小宝\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"姓名和身份证号一致\",\n        \"Name\": \"韦小宝\",\n        \"IdCard\": \"11204416541220243X\",\n        \"Sex\": \"\",\n        \"Nation\": \"\",\n        \"Birth\": \"\",\n        \"Address\": \"\",\n        \"RequestId\": \"945c69ad-d86c-47ea-ba33-419b1dc4d242\"\n    }\n}",
-        "title": "使用姓名身份证号进行验证示例"
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IdCardOCRVerification\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://www.qq.com/image.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"姓名和身份证号一致\",\n        \"Name\": \"韦小宝\",\n        \"IdCard\": \"11204416541220243X\",\n        \"Sex\": \"男\",\n        \"Nation\": \"汉\",\n        \"Birth\": \"1654/12/20\",\n        \"Address\": \"北京市东城区景山前街4号紫禁城敬事房\",\n        \"RequestId\": \"a62f567c-1eea-4ef3-b51a-a9eb9bd84cd9\"\n    }\n}",
+        "title": "使用照片URL进行核验示例"
       },
       {
         "document": "",

@@ -1,4 +1,4 @@
-**Example 1: 使用照片URL进行核验示例**
+**Example 1: 使用姓名身份证号进行验证示例**
 
 
 
@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli faceid IdCardOCRVerification --cli-unfold-argument  \
-    --ImageUrl https://www.qq.com/image.jpg
+    --IdCard 11204416541220243X \
+    --Name 韦小宝
 ```
 
 Output: 
@@ -17,11 +18,11 @@ Output:
         "Description": "姓名和身份证号一致",
         "Name": "韦小宝",
         "IdCard": "11204416541220243X",
-        "Sex": "男",
-        "Nation": "汉",
-        "Birth": "1654/12/20",
-        "Address": "北京市东城区景山前街4号紫禁城敬事房",
-        "RequestId": "a62f567c-1eea-4ef3-b51a-a9eb9bd84cd9"
+        "Sex": "",
+        "Nation": "",
+        "Birth": "",
+        "Address": "",
+        "RequestId": "945c69ad-d86c-47ea-ba33-419b1dc4d242"
     }
 }
 ```
@@ -54,7 +55,7 @@ Output:
 }
 ```
 
-**Example 3: 使用姓名身份证号进行验证示例**
+**Example 3: 使用照片URL进行核验示例**
 
 
 
@@ -62,8 +63,7 @@ Input:
 
 ```
 tccli faceid IdCardOCRVerification --cli-unfold-argument  \
-    --IdCard 11204416541220243X \
-    --Name 韦小宝
+    --ImageUrl https://www.qq.com/image.jpg
 ```
 
 Output: 
@@ -74,11 +74,11 @@ Output:
         "Description": "姓名和身份证号一致",
         "Name": "韦小宝",
         "IdCard": "11204416541220243X",
-        "Sex": "",
-        "Nation": "",
-        "Birth": "",
-        "Address": "",
-        "RequestId": "945c69ad-d86c-47ea-ba33-419b1dc4d242"
+        "Sex": "男",
+        "Nation": "汉",
+        "Birth": "1654/12/20",
+        "Address": "北京市东城区景山前街4号紫禁城敬事房",
+        "RequestId": "a62f567c-1eea-4ef3-b51a-a9eb9bd84cd9"
     }
 }
 ```

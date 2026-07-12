@@ -2050,6 +2050,73 @@
       ],
       "usage": "both"
     },
+    "BetaLabel": {
+      "document": "灰度命中规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>键</p>",
+          "example": "polaris",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>值</p>",
+          "example": "无",
+          "member": "BetaLabelMatchString",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BetaLabelMatchString": {
+      "document": "命中匹配方式与值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>类型</p><p>枚举值：</p><ul><li>EXAT： 精确匹配</li></ul>",
+          "example": "EXACT",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>值</p>",
+          "example": "polaris",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>值类型</p><p>枚举值：</p><ul><li>TEXT： 文本</li></ul>",
+          "example": "TEXT",
+          "member": "string",
+          "name": "ValueType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BindAutoScalerResourceStrategyToGroupsRequest": {
       "document": "BindAutoScalerResourceStrategyToGroups请求参数结构体",
       "members": [
@@ -5266,7 +5333,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置文件发布id",
+          "document": "<p>配置文件发布id</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -5277,7 +5344,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布名称",
+          "document": "<p>配置文件发布名称</p>",
           "example": "application",
           "member": "string",
           "name": "Name",
@@ -5288,7 +5355,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布命名空间",
+          "document": "<p>配置文件发布命名空间</p>",
           "example": "namespaceName",
           "member": "string",
           "name": "Namespace",
@@ -5299,7 +5366,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布组",
+          "document": "<p>配置文件发布组</p>",
           "example": "provider-demo",
           "member": "string",
           "name": "Group",
@@ -5310,7 +5377,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布文件名称",
+          "document": "<p>配置文件发布文件名称</p>",
           "example": "application.yml",
           "member": "string",
           "name": "FileName",
@@ -5321,7 +5388,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布内容",
+          "document": "<p>配置文件发布内容</p>",
           "example": "hello",
           "member": "string",
           "name": "Content",
@@ -5332,7 +5399,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布注释",
+          "document": "<p>配置文件发布注释</p>",
           "example": "comment",
           "member": "string",
           "name": "Comment",
@@ -5343,7 +5410,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布Md5",
+          "document": "<p>配置文件发布Md5</p>",
           "example": "md5hash",
           "member": "string",
           "name": "Md5",
@@ -5354,7 +5421,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布版本",
+          "document": "<p>配置文件发布版本</p>",
           "example": "1",
           "member": "uint64",
           "name": "Version",
@@ -5365,7 +5432,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布创建时间",
+          "document": "<p>配置文件发布创建时间</p>",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "CreateTime",
@@ -5376,7 +5443,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布创建者",
+          "document": "<p>配置文件发布创建者</p>",
           "example": "usera",
           "member": "string",
           "name": "CreateBy",
@@ -5387,7 +5454,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布修改时间",
+          "document": "<p>配置文件发布修改时间</p>",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "ModifyTime",
@@ -5398,7 +5465,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布修改者",
+          "document": "<p>配置文件发布修改者</p>",
           "example": "usera",
           "member": "string",
           "name": "ModifyBy",
@@ -5409,7 +5476,7 @@
         },
         {
           "disabled": false,
-          "document": "发布描述",
+          "document": "<p>发布描述</p>",
           "example": "config-desc",
           "member": "string",
           "name": "ReleaseDescription",
@@ -5420,7 +5487,7 @@
         },
         {
           "disabled": false,
-          "document": "是否生效",
+          "document": "<p>是否生效</p>",
           "example": "true",
           "member": "bool",
           "name": "Active",
@@ -5431,7 +5498,7 @@
         },
         {
           "disabled": false,
-          "document": "格式",
+          "document": "<p>格式</p>",
           "example": "yaml",
           "member": "string",
           "name": "Format",
@@ -5442,7 +5509,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件ID",
+          "document": "<p>配置文件ID</p>",
           "example": "name",
           "member": "string",
           "name": "ConfigFileId",
@@ -5453,8 +5520,8 @@
         },
         {
           "disabled": false,
-          "document": "配置文件类型",
-          "example": "client_sdk",
+          "document": "<p>配置文件类型</p>",
+          "example": "1",
           "member": "int64",
           "name": "ConfigFileSupportedClient",
           "output_required": false,
@@ -5464,13 +5531,35 @@
         },
         {
           "disabled": false,
-          "document": "配置文件持久化",
+          "document": "<p>配置文件持久化</p>",
           "example": "无",
           "member": "ConfigFilePersistent",
           "name": "ConfigFilePersistent",
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>灰度标签</p>",
+          "example": "无",
+          "member": "BetaLabel",
+          "name": "BetaLabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>发布类型</p><p>枚举值：</p><ul><li>gary： 灰度发布</li></ul>",
+          "example": "gary",
+          "member": "string",
+          "name": "ReleaseType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

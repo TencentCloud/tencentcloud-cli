@@ -431,7 +431,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源 ID（模型 ID 或服务 ID）。",
+          "document": "<p>资源 ID（模型 ID 或服务 ID）。</p>",
           "example": "ep-xxx",
           "member": "string",
           "name": "ResourceId",
@@ -442,7 +442,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型。取值：endpoint（服务）、model（模型）。",
+          "document": "<p>资源类型。取值：endpoint（推理服务）、model（模型）。推荐绑定endpoint，绑定model即将下线。已绑定model的apikey仍可使用，但控制台回显将不会展示模型绑定列表。</p><p>枚举值：</p><ul><li>endpoint： 绑定到endpoint（默认推理服务或自定义推理服务）</li></ul>",
           "example": "endpoint",
           "member": "string",
           "name": "ResourceType",
@@ -453,7 +453,7 @@
         },
         {
           "disabled": false,
-          "document": "资源状态",
+          "document": "<p>资源状态</p>",
           "example": "pre-offline",
           "member": "string",
           "name": "Status",
@@ -467,12 +467,95 @@
     },
     "CreateApiKeyRequest": {
       "document": "CreateApiKey请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>API 密钥名称，创建后不可修改。</p>",
+          "example": "my-api-key",
+          "member": "string",
+          "name": "ApiKeyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台类型。取值：maas</p>",
+          "example": "maas",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定类型。取值：all（全部模型和接入点）、model_custom_endpoint_custom（自定义模型+自定义接入点）。</p><p>枚举值：</p><ul><li>all： 全部模型和接入点</li><li>model_custom_endpoint_custom： 自定义模型+自定义接入点</li></ul>",
+          "example": "all",
+          "member": "string",
+          "name": "BindType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注信息</p>",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>初始状态。取值：enable（启用）、disable（禁用）。不传默认 enable。</p>",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源绑定列表（model 和 endpoint 混合），每项需显式指定 ResourceType。BindType 为 all 时不填；BindType 为model_custom_endpoint_custom时必填。</p>",
+          "example": "无",
+          "member": "BindingItem",
+          "name": "Bindings",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP 白名单列表。支持 IPv4（如 1.2.3.4）和 CIDR（如 10.0.0.0/24）格式，IPv6暂不支持。最多 50 个条目，不支持重复。不传或传空数组表示不限制 IP。</p>",
+          "example": "[\"1.2.3.4\"]",
+          "member": "string",
+          "name": "IpWhitelist",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Token 限额配置多维度列表。可选，不传表示不开启限额。</p>",
+          "example": "无",
+          "member": "QuotaCreateItem",
+          "name": "Quotas",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "CreateApiKeyResponse": {
       "document": "CreateApiKey返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>apikey id</p>",
+          "example": "ak-20260624-39f1918de39ec5a7abc48f7a99c4e1a3",
+          "member": "string",
+          "name": "ApiKeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -804,7 +887,26 @@
     },
     "DeleteApiKeyRequest": {
       "document": "DeleteApiKey请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>API 密钥 ID。</p>",
+          "example": "ak-20260710-d41f81de4bb89ae10384b856c5692519",
+          "member": "string",
+          "name": "ApiKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台类型。取值：maas。</p>",
+          "example": "maas",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DeleteApiKeyResponse": {
@@ -2946,7 +3048,62 @@
     },
     "ModifyApiKeyInfoRequest": {
       "document": "ModifyApiKeyInfo请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>API 密钥 ID。</p>",
+          "example": "ak-20260624-39f1918de39ec5a7abc48f7a99c4e1a3",
+          "member": "string",
+          "name": "ApiKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台类型。取值：maas。</p>",
+          "example": "maas",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>API 密钥名称。最大 128 字符。不传表示不修改。</p>",
+          "example": "apikey-new-name",
+          "member": "string",
+          "name": "ApiKeyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注。</p>",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP 白名单列表。支持 IPv4（如 1.2.3.4）、CIDR（如 10.0.0.0/24）格式，IPv6暂不支持。最多 50 个，不支持重复。传入空数组表示清空白名单（不限制 IP）。不传表示不修改。</p>",
+          "example": "[\"1.2.3.4\"]",
+          "member": "string",
+          "name": "IpWhitelist",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>【修改限额推荐使用QuotaDesired参数】Token 限额期望状态。可选，不传表示不修改，传入空数组表示清空。和 Quotas（Token限额配置）字段互斥，不支持同时传入</p>",
+          "example": "无",
+          "member": "QuotasDesired",
+          "name": "QuotasDesired",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "ModifyApiKeyInfoResponse": {
@@ -2963,7 +3120,35 @@
     },
     "ModifyApiKeyStatusRequest": {
       "document": "ModifyApiKeyStatus请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>API 密钥 ID。</p>",
+          "example": "ak-20260710-d41f81de4bb89ae10384b856c5692519",
+          "member": "string",
+          "name": "ApiKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台类型。取值：maas。</p>",
+          "example": "maas",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态。取值：enable（启用）、disable（禁用）。</p>",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "ModifyApiKeyStatusResponse": {
@@ -3176,6 +3361,39 @@
       ],
       "type": "object"
     },
+    "QuotaCreateItem": {
+      "document": "Token 限额配置项（创建 API 密钥时用）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>限额周期。取值：d（按日）、m（按月）、lifetime（总额度，不重置）。</p>",
+          "example": "m",
+          "member": "string",
+          "name": "CycleUnit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>维度当期限额总量（Token 数），不能大于10万亿。使用字符串避免大数精度丢失。</p>",
+          "example": "1000",
+          "member": "string",
+          "name": "CycleCredits",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>月度限额起始日。CycleUnit 为 m 时可选，1~31，默认 1。小月（如 2 月）由下游自动取该月最后一天。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MonthStartDay",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "QuotaInfo": {
       "document": "Token 限额信息",
       "members": [
@@ -3251,6 +3469,45 @@
         }
       ],
       "usage": "out"
+    },
+    "QuotasDesired": {
+      "document": "Token 限额期望状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>限额周期，必填。取值：d（按日）、m（按月）、lifetime（总额度）。</p>",
+          "example": "m",
+          "member": "string",
+          "name": "CycleUnit",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单周期额度（Token 数），必填，不能大于10万亿。使用字符串避免大数精度丢失。同维度若与现网不同视为升配/降配。</p>",
+          "example": "1000",
+          "member": "string",
+          "name": "CycleCredits",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>月度限额起始日。CycleUnit=m 时可选，1~31，默认 1。小月（如 2 月）由下游自动取该月最后一天。已有月度限额包时，更新月起始日视为周期窗口切换，会 delete 旧包后 add 新包，累计额度会重置</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "MonthStartDay",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RenewTokenPlanTeamOrderRequest": {
       "document": "RenewTokenPlanTeamOrder请求参数结构体",

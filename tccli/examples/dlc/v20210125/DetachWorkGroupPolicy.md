@@ -22,3 +22,24 @@ Output:
 }
 ```
 
+**Example 2: 解绑工作组鉴权策略（TF场景）**
+
+
+
+Input: 
+
+```
+tccli dlc DetachWorkGroupPolicy --cli-unfold-argument  \
+    --WorkGroupId 221683 \
+    --PolicyIds v1|WORKGROUP|221683|DATABASE|COMMON|DataLakeCatalog|andrew_dlc_02||||||ASSAYER
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "8e98d880-156b-4151-9e06-38a5aa1bf010"
+    }
+}
+```
+

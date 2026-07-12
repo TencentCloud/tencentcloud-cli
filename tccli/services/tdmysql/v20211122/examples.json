@@ -176,7 +176,7 @@
       {
         "document": "查询flow",
         "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlow\n<公共请求参数>\n\n{\n    \"FlowId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ce9140d0-da19-497f-8a3b-d8f2ac27d52a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ce9140d0-da19-497f-8a3b-d8f2ac27d52a\",\n        \"Status\": \"success\"\n    }\n}",
         "title": "查询flow状态"
       }
     ],
