@@ -24625,12 +24625,12 @@
       "usage": "both"
     },
     "LLMPkg": {
-      "document": "有效大模型安全包信息",
+      "document": "大模型安全「后付费」资源信息（数据源：tb_waf_llm_resource），与 DescribeInstances 的 InstanceDetail.LLMPkg 保持一致",
       "members": [
         {
           "disabled": false,
-          "document": "资源id",
-          "example": "waf_2l14oqru09w8yw0b_0_llm",
+          "document": "<p>资源id</p>",
+          "example": "waf_2l2r0gne0amhqdp3_0_llm",
           "member": "string",
           "name": "ResourceIds",
           "output_required": true,
@@ -24640,7 +24640,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "<p>状态</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -24651,7 +24651,7 @@
         },
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "1",
           "member": "int64",
           "name": "Region",
@@ -24662,8 +24662,8 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
-          "example": "2025-09-09 12:56:14",
+          "document": "<p>开始时间</p>",
+          "example": "2026-07-06 16:17:09",
           "member": "string",
           "name": "BeginTime",
           "output_required": true,
@@ -24673,8 +24673,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
-          "example": "2025-09-10 12:56:15",
+          "document": "<p>结束时间</p>",
+          "example": "2038-01-01 00:00:00",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -24684,8 +24684,19 @@
         },
         {
           "disabled": false,
-          "document": "计费项",
-          "example": "sv_wsm_waf_llm_advanced",
+          "document": "<p>申请数量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "InquireNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费项标签，如 sv_wsm_waf_llm_prompt_attack</p>",
+          "example": "sv_wsm_waf_llm_prompt_attack",
           "member": "string",
           "name": "InquireKey",
           "output_required": true,

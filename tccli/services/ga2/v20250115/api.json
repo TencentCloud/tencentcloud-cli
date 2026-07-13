@@ -361,7 +361,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全球加速实例ID。",
+          "document": "<p>全球加速实例ID。</p>",
           "example": "ga-fkp17vr8",
           "member": "string",
           "name": "GlobalAcceleratorId",
@@ -370,7 +370,7 @@
         },
         {
           "disabled": false,
-          "document": "加速地域信息。",
+          "document": "<p>加速地域信息。一次最多创建10组加速地域。</p>",
           "example": "无",
           "member": "AcceleratorAreas",
           "name": "AcceleratorAreas",
@@ -385,7 +385,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务ID。",
+          "document": "<p>异步任务ID。</p>",
           "example": "4b995c0a-98f2-4dbc-84cc-71b1a63642e5",
           "member": "string",
           "name": "TaskId",
@@ -2996,7 +2996,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全球加速实例ID。",
+          "document": "<p>全球加速实例ID。</p>",
           "example": "ga-fkp17vr8",
           "member": "string",
           "name": "GlobalAcceleratorId",
@@ -3005,7 +3005,7 @@
         },
         {
           "disabled": false,
-          "document": "加速地域信息。",
+          "document": "<p>加速地域信息。</p><p>入参限制：数组长度不能超过10。</p>",
           "example": "无",
           "member": "AcceleratorAreas",
           "name": "AcceleratorAreas",
@@ -3020,7 +3020,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务ID。",
+          "document": "<p>异步任务ID。</p>",
           "example": "4b995c0a-98f2-4dbc-84cc-71b1a63642e5",
           "member": "string",
           "name": "TaskId",

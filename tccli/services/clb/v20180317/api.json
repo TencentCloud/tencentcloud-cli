@@ -3723,6 +3723,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群名称</p>",
+          "example": "自研共享集群-A",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

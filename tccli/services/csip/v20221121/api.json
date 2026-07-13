@@ -11269,6 +11269,17 @@
         },
         {
           "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "uint64",
+          "name": "IsAutoMonitor",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "bucket id集合",
           "example": "[\"1\",\"3\"]",
           "member": "string",

@@ -7691,6 +7691,67 @@
       ],
       "type": "object"
     },
+    "DeliverSummary": {
+      "document": "投递错误",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>投递类型，store（存储类），mq（消息通道）</p>",
+          "example": "store",
+          "member": "string",
+          "name": "DeliverType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递子类型：cls，ckafka。</p>",
+          "example": "CLS",
+          "member": "string",
+          "name": "DeliverSubType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递者</p>",
+          "example": "CLS",
+          "member": "string",
+          "name": "DeliverConsumer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递者名称</p>",
+          "example": "client",
+          "member": "string",
+          "name": "DeliverConsumerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递异常错误</p>",
+          "example": "success",
+          "member": "string",
+          "name": "DeliverError",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DeployGroupInfo": {
       "document": "置放群组信息",
       "members": [
@@ -8102,7 +8163,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例审计开启的状态。1-已开启审计；0-未开启审计。",
+          "document": "<p>实例审计开启的状态。1-已开启审计；0-未开启审计。</p>",
           "example": "1",
           "member": "int64",
           "name": "AuditSwitch",
@@ -8111,8 +8172,8 @@
         },
         {
           "disabled": false,
-          "document": "查询实例列表的过滤条件。",
-          "example": "[{\"Values\": [\"cdb-euu5fkcj\"], \"Name\": \"InstanceId\",\"ExactMatch\": true}]",
+          "document": "<p>查询实例列表的过滤条件。</p>",
+          "example": "无",
           "member": "AuditInstanceFilters",
           "name": "Filters",
           "required": false,
@@ -8120,7 +8181,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的审计规则模式。1-规则审计；0-全审计。",
+          "document": "<p>实例的审计规则模式。1-规则审计；0-全审计。</p>",
           "example": "1",
           "member": "int64",
           "name": "AuditMode",
@@ -8129,7 +8190,7 @@
         },
         {
           "disabled": false,
-          "document": "单次请求返回的数量。默认值为30，最大值为 20000。",
+          "document": "<p>单次请求返回的数量。默认值为30，最大值为 20000。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -8138,7 +8199,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认值为 0。",
+          "document": "<p>偏移量，默认值为 0。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -8153,7 +8214,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合查询条件的实例总数。",
+          "document": "<p>符合查询条件的实例总数。</p>",
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
@@ -8163,8 +8224,8 @@
         },
         {
           "disabled": false,
-          "document": "审计实例详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"BillingAmount\": 0,\"LowRealStorage\": 0,\"InstanceId\": \"cdb-euu5fkcj\",\"AuditTask\": 1,\"CreateAt\": \"2022-03-02 10:09:08\",\"AuditStatus\": \"1\"...}]",
+          "document": "<p>审计实例详细信息列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "InstanceDbAuditStatus",
           "name": "Items",
           "output_required": true,
@@ -14721,7 +14782,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "<p>实例ID。</p>",
           "example": "cdb-euu5fkcj",
           "member": "string",
           "name": "InstanceId",
@@ -14731,7 +14792,7 @@
         },
         {
           "disabled": false,
-          "document": "审计状态。ON-表示审计已开启，OFF-表示审计关闭",
+          "document": "<p>审计状态。ON-表示审计已开启，OFF-表示审计关闭</p>",
           "example": "ON",
           "member": "string",
           "name": "AuditStatus",
@@ -14741,7 +14802,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态。0-无任务；1-审计开启中，2-审计关闭中。",
+          "document": "<p>任务状态。0-无任务；1-审计开启中，2-审计关闭中。</p>",
           "example": "0",
           "member": "uint64",
           "name": "AuditTask",
@@ -14751,7 +14812,7 @@
         },
         {
           "disabled": false,
-          "document": "日志保留时长。支持值包括：\n7 - 一周；\n30 - 一个月；\n90 - 三个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年。",
+          "document": "<p>日志保留时长。支持值包括：<br>7 - 一周；<br>30 - 一个月；<br>90 - 三个月；<br>180 - 六个月；<br>365 - 一年；<br>1095 - 三年；<br>1825 - 五年。</p>",
           "example": "30",
           "member": "uint64",
           "name": "LogExpireDay",
@@ -14761,7 +14822,7 @@
         },
         {
           "disabled": false,
-          "document": "高频存储时长。支持值包括：\n3 - 3天；\n7 - 一周；\n30 - 一个月；\n90 - 三个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年。",
+          "document": "<p>高频存储时长。支持值包括：<br>3 - 3天；<br>7 - 一周；<br>30 - 一个月；<br>90 - 三个月；<br>180 - 六个月；<br>365 - 一年；<br>1095 - 三年；<br>1825 - 五年。</p>",
           "example": "7",
           "member": "uint64",
           "name": "HighLogExpireDay",
@@ -14771,7 +14832,7 @@
         },
         {
           "disabled": false,
-          "document": "低频存储时长。单位：天，等于日志保存时长减去高频存储时长。",
+          "document": "<p>低频存储时长。单位：天，等于日志保存时长减去高频存储时长。</p>",
           "example": "23",
           "member": "uint64",
           "name": "LowLogExpireDay",
@@ -14781,7 +14842,7 @@
         },
         {
           "disabled": false,
-          "document": "日志存储量(单位：GB)。",
+          "document": "<p>日志存储量(单位：GB)。</p>",
           "example": "173749.248",
           "member": "float",
           "name": "BillingAmount",
@@ -14791,7 +14852,7 @@
         },
         {
           "disabled": false,
-          "document": "高频存储量(单位：GB)。",
+          "document": "<p>高频存储量(单位：GB)。</p>",
           "example": "45639.68",
           "member": "float",
           "name": "HighRealStorage",
@@ -14801,7 +14862,7 @@
         },
         {
           "disabled": false,
-          "document": "低频存储量(单位：GB)。",
+          "document": "<p>低频存储量(单位：GB)。</p>",
           "example": "128109.568",
           "member": "float",
           "name": "LowRealStorage",
@@ -14811,7 +14872,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为全审计。true-表示全审计。",
+          "document": "<p>是否为全审计（true-表示全审计）</p>",
           "example": "true",
           "member": "bool",
           "name": "AuditAll",
@@ -14821,7 +14882,7 @@
         },
         {
           "disabled": false,
-          "document": "审计开通时间。",
+          "document": "<p>审计开通时间。</p>",
           "example": "2022-10-12 11:41:42",
           "member": "string",
           "name": "CreateAt",
@@ -14831,7 +14892,7 @@
         },
         {
           "disabled": false,
-          "document": "实例相关信息",
+          "document": "<p>实例相关信息</p>",
           "example": "无",
           "member": "AuditInstanceInfo",
           "name": "InstanceInfo",
@@ -14841,7 +14902,7 @@
         },
         {
           "disabled": false,
-          "document": "总存储量(单位：GB)。",
+          "document": "<p>总存储量(单位：GB)。</p>",
           "example": "173749.248",
           "member": "float",
           "name": "RealStorage",
@@ -14851,7 +14912,7 @@
         },
         {
           "disabled": false,
-          "document": "是否包含审计策略",
+          "document": "<p>是否包含审计策略</p>",
           "example": "false",
           "member": "bool",
           "name": "OldRule",
@@ -14861,7 +14922,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所应用的规则模板。",
+          "document": "<p>实例所应用的规则模板。</p>",
           "example": "[\"cdb-art-8qx2kcr7\"]",
           "member": "string",
           "name": "RuleTemplateIds",
@@ -14871,7 +14932,7 @@
         },
         {
           "disabled": false,
-          "document": "限免状态",
+          "document": "<p>限免状态</p>",
           "example": "\"TRIAL/EXPIRED/NONE\"",
           "member": "string",
           "name": "TrialStatus",
@@ -14881,7 +14942,7 @@
         },
         {
           "disabled": false,
-          "document": "限免开启时间",
+          "document": "<p>限免开启时间</p>",
           "example": "1",
           "member": "int64",
           "name": "TrialStartTime",
@@ -14891,7 +14952,7 @@
         },
         {
           "disabled": false,
-          "document": "限免持续时间",
+          "document": "<p>限免持续时间</p>",
           "example": "1",
           "member": "int64",
           "name": "TrialDuration",
@@ -14901,7 +14962,7 @@
         },
         {
           "disabled": false,
-          "document": "限免关闭时间",
+          "document": "<p>限免关闭时间</p>",
           "example": "1",
           "member": "int64",
           "name": "TrialCloseTime",
@@ -14911,12 +14972,32 @@
         },
         {
           "disabled": false,
-          "document": "限免期查询日志时长",
+          "document": "<p>限免期查询日志时长</p>",
           "example": "1",
           "member": "int64",
           "name": "TrialDescribeLogHours",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递信息</p>",
+          "example": "无",
+          "member": "DeliverSummary",
+          "name": "DeliverSummary",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启了投递，ON：开启，OFF：关闭</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "Deliver",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

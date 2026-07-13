@@ -689,7 +689,7 @@
       "usage": "out"
     },
     "AddressTemplateSpecification": {
-      "document": "安全组地址模版",
+      "document": "安全组地址模板",
       "members": [
         {
           "disabled": false,
@@ -721,7 +721,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则id  等同RuleUuid",
+          "document": "<p>规则id  等同RuleUuid</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -731,7 +731,7 @@
         },
         {
           "disabled": false,
-          "document": "规则Id",
+          "document": "<p>规则Id</p>",
           "example": "id-xxxx",
           "member": "string",
           "name": "RuleId",
@@ -741,7 +741,7 @@
         },
         {
           "disabled": false,
-          "document": "排序",
+          "document": "<p>排序</p>",
           "example": "1",
           "member": "int64",
           "name": "OrderIndex",
@@ -751,7 +751,7 @@
         },
         {
           "disabled": false,
-          "document": "云防排序",
+          "document": "<p>云防排序</p>",
           "example": "1",
           "member": "int64",
           "name": "CfwOrderIndex",
@@ -761,7 +761,7 @@
         },
         {
           "disabled": false,
-          "document": "源规则内容",
+          "document": "<p>源规则内容</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "SourceId",
@@ -771,7 +771,7 @@
         },
         {
           "disabled": false,
-          "document": "源规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(instance)\n2表示子网实例(instance)\n3表示CVM实例(instance)\n4表示CLB实例(instance)\n5表示ENI实例(instance)\n6表示数据库实例(instance)\n7表示模板(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)",
+          "document": "<p>源规则类型<br>取值范围 0/1/2/3/4/5/6/7/8/9<br>0表示ip(net),<br>1表示VPC实例(instance)<br>2表示子网实例(instance)<br>3表示CVM实例(instance)<br>4表示CLB实例(instance)<br>5表示ENI实例(instance)<br>6表示数据库实例(instance)<br>7表示模板(template)<br>8表示标签(tag)<br>9表示地域(region)</p><p>枚举值：</p><ul><li>0： IP / CIDR</li><li>1： VPC 实例</li><li>2： 子网 </li><li>3： CVM 实例</li><li>4： CLB 实例</li><li>5： ENI（弹性网卡）实例</li><li>6： CDB（云数据库）实例</li><li>7： 参数模板</li><li>8： 标签</li><li>9： 地域</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "SourceType",
@@ -781,7 +781,7 @@
         },
         {
           "disabled": false,
-          "document": "目的规则内容",
+          "document": "<p>目的规则内容</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "TargetId",
@@ -791,7 +791,7 @@
         },
         {
           "disabled": false,
-          "document": "目的规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(instance)\n2表示子网实例(instance)\n3表示CVM实例(instance)\n4表示CLB实例(instance)\n5表示ENI实例(instance)\n6表示数据库实例(instance)\n7表示模板(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)",
+          "document": "<p>目的规则类型<br>取值范围 0/1/2/3/4/5/6/7/8/9/100<br>0表示ip(net),<br>1表示VPC实例(instance)<br>2表示子网实例(instance)<br>3表示CVM实例(instance)<br>4表示CLB实例(instance)<br>5表示ENI实例(instance)<br>6表示数据库实例(instance)<br>7表示模板(template)<br>8表示标签(tag)<br>9表示地域(region)<br>100表示资产分组(resourcegroup)</p><p>枚举值：</p><ul><li>0： IP / CIDR</li><li>1： VPC 实例</li><li>2： 子网 </li><li>3： CVM 实例</li><li>4： CLB 实例</li><li>5： ENI（弹性网卡）实例</li><li>6： CDB（云数据库）实例</li><li>7： 参数模板</li><li>8： 标签</li><li>9： 地域</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "TargetType",
@@ -801,7 +801,7 @@
         },
         {
           "disabled": false,
-          "document": "协议名称\n取值范围:TCP/ANY/ICMP/UDP\nANY:表示所有\n",
+          "document": "<p>协议名称<br>取值范围:TCP/ANY/ICMP/UDP<br>ANY:表示所有</p>",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -811,7 +811,7 @@
         },
         {
           "disabled": false,
-          "document": "端口",
+          "document": "<p>端口</p>",
           "example": "3306",
           "member": "string",
           "name": "Port",
@@ -821,7 +821,7 @@
         },
         {
           "disabled": false,
-          "document": "规则策略\n取值范围:1/2\n1:阻断\n2:放行",
+          "document": "<p>规则策略<br>取值范围:1/2<br>1:阻断<br>2:放行</p>",
           "example": "1",
           "member": "int64",
           "name": "Strategy",
@@ -831,7 +831,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "规则描述",
           "member": "string",
           "name": "Detail",
@@ -841,7 +841,7 @@
         },
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -851,7 +851,7 @@
         },
         {
           "disabled": false,
-          "document": "服务模板id",
+          "document": "<p>服务模板id</p>",
           "example": "tpm-3c140219",
           "member": "string",
           "name": "ServiceTemplateId",
@@ -861,7 +861,7 @@
         },
         {
           "disabled": false,
-          "document": "源资产名称",
+          "document": "<p>源资产名称</p>",
           "example": "tpm-3c140219",
           "member": "string",
           "name": "SouInstanceName",
@@ -871,7 +871,7 @@
         },
         {
           "disabled": false,
-          "document": "源资产公网ip",
+          "document": "<p>源资产公网ip</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "SouPublicIp",
@@ -881,7 +881,7 @@
         },
         {
           "disabled": false,
-          "document": "源资产内网ip",
+          "document": "<p>源资产内网ip</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "SouPrivateIp",
@@ -891,7 +891,7 @@
         },
         {
           "disabled": false,
-          "document": "源资产网段信息",
+          "document": "<p>源资产网段信息</p>",
           "example": "10.0.0.0/32",
           "member": "string",
           "name": "SouCidr",
@@ -901,7 +901,7 @@
         },
         {
           "disabled": false,
-          "document": "源模板名称",
+          "document": "<p>源模板名称</p>",
           "example": "模板名称",
           "member": "string",
           "name": "SouParameterName",
@@ -911,7 +911,7 @@
         },
         {
           "disabled": false,
-          "document": "目的资产名称",
+          "document": "<p>目的资产名称</p>",
           "example": "ins-3c140219",
           "member": "string",
           "name": "InstanceName",
@@ -921,7 +921,7 @@
         },
         {
           "disabled": false,
-          "document": "目的资产公网ip",
+          "document": "<p>目的资产公网ip</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "PublicIp",
@@ -931,7 +931,7 @@
         },
         {
           "disabled": false,
-          "document": "目的资产内网ip",
+          "document": "<p>目的资产内网ip</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "PrivateIp",
@@ -941,7 +941,7 @@
         },
         {
           "disabled": false,
-          "document": "目的资产网段信息",
+          "document": "<p>目的资产网段信息</p>",
           "example": "10.0.0.0/32",
           "member": "string",
           "name": "Cidr",
@@ -951,7 +951,7 @@
         },
         {
           "disabled": false,
-          "document": "目的模板名称",
+          "document": "<p>目的模板名称</p>",
           "example": "模板名称",
           "member": "string",
           "name": "ParameterName",
@@ -961,7 +961,7 @@
         },
         {
           "disabled": false,
-          "document": "端口模板名称",
+          "document": "<p>端口模板名称</p>",
           "example": "模板名称",
           "member": "string",
           "name": "ProtocolPortName",
@@ -971,7 +971,7 @@
         },
         {
           "disabled": false,
-          "document": "域名解析的IP统计",
+          "document": "<p>域名解析的IP统计</p>",
           "example": "无",
           "member": "SgDnsParseCount",
           "name": "DnsParseCount",
@@ -981,7 +981,7 @@
         },
         {
           "disabled": false,
-          "document": "规则生效范围",
+          "document": "<p>规则生效范围</p>",
           "example": "SG",
           "member": "string",
           "name": "Scope",
@@ -991,7 +991,7 @@
         },
         {
           "disabled": false,
-          "document": "分区：\n1防火墙管理最前分区\n2是云防规则\n3防火墙管理最后分区",
+          "document": "<p>分区：<br>1防火墙管理最前分区<br>2是云防规则<br>3防火墙管理最后分区</p>",
           "example": "1",
           "member": "int64",
           "name": "RulePartition",
@@ -1001,7 +1001,7 @@
         },
         {
           "disabled": false,
-          "document": "规则组Id",
+          "document": "<p>规则组Id</p>",
           "example": "fwmrg-xxxxxxxxxx",
           "member": "string",
           "name": "GroupId",
@@ -1011,7 +1011,7 @@
         },
         {
           "disabled": false,
-          "document": "规则组名称",
+          "document": "<p>规则组名称</p>",
           "example": "下发规则组",
           "member": "string",
           "name": "GroupName",
@@ -1021,7 +1021,7 @@
         },
         {
           "disabled": false,
-          "document": "规则组内规则id",
+          "document": "<p>规则组内规则id</p>",
           "example": "539a6900-855b-484c-9c99-ac0c37028ddf",
           "member": "string",
           "name": "GroupRuleId",
@@ -1031,7 +1031,7 @@
         },
         {
           "disabled": false,
-          "document": "策略Id",
+          "document": "<p>策略Id</p>",
           "example": "fwmsid-xxxxxxxxxx",
           "member": "string",
           "name": "StrategyId",
@@ -1041,7 +1041,7 @@
         },
         {
           "disabled": false,
-          "document": "ip类型",
+          "document": "<p>ip类型</p>",
           "example": "ipv4",
           "member": "string",
           "name": "IpVersion",
@@ -1051,7 +1051,7 @@
         },
         {
           "disabled": false,
-          "document": "成员信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>成员信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MemberInfo",
           "name": "BelongMember",
@@ -1103,7 +1103,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "筛选字段名。支持：SecurityGroupId、FwGroupId、Ip（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>筛选字段名。支持：SecurityGroupId、FwGroupId、IP（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SecurityGroupId",
           "member": "string",
           "name": "Name",
@@ -1114,8 +1114,8 @@
         },
         {
           "disabled": false,
-          "document": "筛选值列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "<p>筛选值列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sg-79w20e4r\"]",
           "member": "string",
           "name": "Values",
           "output_required": false,
@@ -1125,7 +1125,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型。1=等于，7=in，9=模糊匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作类型。1=等于，7=in，9=模糊匹配</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7",
           "member": "int64",
           "name": "OperatorType",
@@ -3998,7 +3998,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "源地址内容",
+          "document": "<p>源地址内容</p>",
           "example": "10.0.0.0/24",
           "member": "string",
           "name": "SourceContent",
@@ -4009,7 +4009,7 @@
         },
         {
           "disabled": false,
-          "document": "源类型：ip/url/template/instance/tag",
+          "document": "<p>源类型：ip/url/template/instance/tag</p>",
           "example": "ip",
           "member": "string",
           "name": "SourceType",
@@ -4020,7 +4020,7 @@
         },
         {
           "disabled": false,
-          "document": "目的地址内容",
+          "document": "<p>目的地址内容</p>",
           "example": "0.0.0.0/0",
           "member": "string",
           "name": "TargetContent",
@@ -4031,7 +4031,7 @@
         },
         {
           "disabled": false,
-          "document": "目的类型：ip/url/template/instance/tag",
+          "document": "<p>目的类型：ip/url/template/instance/tag</p>",
           "example": "ip",
           "member": "string",
           "name": "TargetType",
@@ -4042,7 +4042,7 @@
         },
         {
           "disabled": false,
-          "document": "协议：TCP/UDP/ICMP/ANY/HTTP/HTTPS/DNS/FTP等",
+          "document": "<p>协议：TCP/UDP/ICMP/ANY/HTTP/HTTPS/DNS/FTP等</p>",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -4053,7 +4053,7 @@
         },
         {
           "disabled": false,
-          "document": "动作：accept/drop/log",
+          "document": "<p>动作：accept/drop/log</p>",
           "example": "accept",
           "member": "string",
           "name": "RuleAction",
@@ -4064,7 +4064,7 @@
         },
         {
           "disabled": false,
-          "document": "优先级（从1开始）",
+          "document": "<p>优先级（从1开始）</p>",
           "example": "1",
           "member": "int64",
           "name": "OrderIndex",
@@ -4075,7 +4075,7 @@
         },
         {
           "disabled": false,
-          "document": "规则生效范围：ALL-全局生效，ap-xxx-地域生效，cfwnat-xxx-NAT防火墙实例生效",
+          "document": "<p>规则生效范围：ALL-全局生效，ap-xxx-地域生效，cfwnat-xxx-NAT防火墙实例生效</p>",
           "example": "ALL",
           "member": "string",
           "name": "Scope",
@@ -4086,7 +4086,7 @@
         },
         {
           "disabled": false,
-          "document": "规则方向：1-入站规则，0-出站规则",
+          "document": "<p>规则方向：1-入站规则，0-出站规则</p>",
           "example": "1",
           "member": "int64",
           "name": "Direction",
@@ -4097,7 +4097,7 @@
         },
         {
           "disabled": false,
-          "document": "规则ID（修改时必填）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则ID（修改时必填）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "uuid-xxx",
           "member": "string",
           "name": "RuleId",
@@ -4108,7 +4108,7 @@
         },
         {
           "disabled": false,
-          "document": "端口（ICMP协议时为空）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>端口（ICMP协议时为空）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "80",
           "member": "string",
           "name": "Port",
@@ -4119,7 +4119,7 @@
         },
         {
           "disabled": false,
-          "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "允许HTTP流量",
           "member": "string",
           "name": "Description",
@@ -4130,7 +4130,7 @@
         },
         {
           "disabled": false,
-          "document": "端口模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>端口模板ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ppm-xxx",
           "member": "string",
           "name": "ParamTemplateId",
@@ -4141,7 +4141,7 @@
         },
         {
           "disabled": false,
-          "document": "规则归属的成员账号ID（当Scope为cfwnat-xxx或SourceType/DestType为instance/tag时必填）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则归属的成员账号ID(当Scope为cfwnat-xxx或SourceType/DestType为instance/tag时必填)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1300448058",
           "member": "string",
           "name": "BelongMemberId",
@@ -5185,7 +5185,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "排序",
+          "document": "<p>排序</p>",
           "example": "1",
           "member": "int64",
           "name": "OrderIndex",
@@ -5195,7 +5195,7 @@
         },
         {
           "disabled": false,
-          "document": "主键id",
+          "document": "<p>主键id</p>",
           "example": "uuid",
           "member": "string",
           "name": "RuleId",
@@ -5205,7 +5205,7 @@
         },
         {
           "disabled": false,
-          "document": "ip类型",
+          "document": "<p>ip类型</p>",
           "example": "ipv4",
           "member": "string",
           "name": "IpVersion",
@@ -5215,7 +5215,7 @@
         },
         {
           "disabled": false,
-          "document": "源规则内容",
+          "document": "<p>源规则内容</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "SourceId",
@@ -5225,7 +5225,7 @@
         },
         {
           "disabled": false,
-          "document": "源规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(instance)\n2表示子网实例(instance)\n3表示CVM实例(instance)\n4表示CLB实例(instance)\n5表示ENI实例(instance)\n6表示数据库实例(instance)\n7表示模板(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)",
+          "document": "<p>源规则类型<br>取值范围 0/1/2/3/4/5/6/7/8/9/100<br>0表示ip(net),<br>1表示VPC实例(instance)<br>2表示子网实例(instance)<br>3表示CVM实例(instance)<br>4表示CLB实例(instance)<br>5表示ENI实例(instance)<br>6表示数据库实例(instance)<br>7表示模板(template)<br>8表示标签(tag)<br>9表示地域(region)<br>100表示资产分组(resourcegroup)</p>",
           "example": "0",
           "member": "int64",
           "name": "SourceType",
@@ -5235,7 +5235,7 @@
         },
         {
           "disabled": false,
-          "document": "目的规则内容",
+          "document": "<p>目的规则内容</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "TargetId",
@@ -5245,7 +5245,7 @@
         },
         {
           "disabled": false,
-          "document": "目的规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(instance)\n2表示子网实例(instance)\n3表示CVM实例(instance)\n4表示CLB实例(instance)\n5表示ENI实例(instance)\n6表示数据库实例(instance)\n7表示模板(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)",
+          "document": "<p>目的规则类型<br>取值范围 0/1/2/3/4/5/6/7/8/9/100<br>0表示ip(net),<br>1表示VPC实例(instance)<br>2表示子网实例(instance)<br>3表示CVM实例(instance)<br>4表示CLB实例(instance)<br>5表示ENI实例(instance)<br>6表示数据库实例(instance)<br>7表示模板(template)<br>8表示标签(tag)<br>9表示地域(region)<br>100表示资产分组(resourcegroup)</p>",
           "example": "0",
           "member": "int64",
           "name": "TargetType",
@@ -5255,7 +5255,7 @@
         },
         {
           "disabled": false,
-          "document": "协议名称\n取值范围:TCP/ANY/ICMP/UDP\nANY:表示所有\n",
+          "document": "<p>协议名称<br>取值范围:TCP/ANY/ICMP/UDP<br>ANY:表示所有</p>",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -5265,7 +5265,7 @@
         },
         {
           "disabled": false,
-          "document": "端口",
+          "document": "<p>端口</p>",
           "example": "80",
           "member": "string",
           "name": "Port",
@@ -5275,7 +5275,7 @@
         },
         {
           "disabled": false,
-          "document": "策略",
+          "document": "<p>策略</p>",
           "example": "1",
           "member": "int64",
           "name": "Strategy",
@@ -5285,7 +5285,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "放通TCP 80",
           "member": "string",
           "name": "Detail",
@@ -5295,7 +5295,7 @@
         },
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -5305,7 +5305,7 @@
         },
         {
           "disabled": false,
-          "document": "服务模板id",
+          "document": "<p>服务模板id</p>",
           "example": "tpm-3c140219",
           "member": "string",
           "name": "ServiceTemplateId",
@@ -5315,7 +5315,7 @@
         },
         {
           "disabled": false,
-          "document": "源资产名称",
+          "document": "<p>源资产名称</p>",
           "example": "ins-3c140219",
           "member": "string",
           "name": "SouInstanceName",
@@ -5325,7 +5325,7 @@
         },
         {
           "disabled": false,
-          "document": "源资产公网ip",
+          "document": "<p>源资产公网ip</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "SouPublicIp",
@@ -5335,7 +5335,7 @@
         },
         {
           "disabled": false,
-          "document": "源资产内网ip",
+          "document": "<p>源资产内网ip</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "SouPrivateIp",
@@ -5345,7 +5345,7 @@
         },
         {
           "disabled": false,
-          "document": "源资产网段信息",
+          "document": "<p>源资产网段信息</p>",
           "example": "1.1.1.1/10",
           "member": "string",
           "name": "SouCidr",
@@ -5355,7 +5355,7 @@
         },
         {
           "disabled": false,
-          "document": "源模板名称",
+          "document": "<p>源模板名称</p>",
           "example": "模板名称",
           "member": "string",
           "name": "SouParameterName",
@@ -5365,7 +5365,7 @@
         },
         {
           "disabled": false,
-          "document": "目的资产名称",
+          "document": "<p>目的资产名称</p>",
           "example": "ins-3c140219",
           "member": "string",
           "name": "InstanceName",
@@ -5375,7 +5375,7 @@
         },
         {
           "disabled": false,
-          "document": "目的资产公网ip",
+          "document": "<p>目的资产公网ip</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "PublicIp",
@@ -5385,7 +5385,7 @@
         },
         {
           "disabled": false,
-          "document": "目的资产内网ip",
+          "document": "<p>目的资产内网ip</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "PrivateIp",
@@ -5395,7 +5395,7 @@
         },
         {
           "disabled": false,
-          "document": "目的资产网段信息",
+          "document": "<p>目的资产网段信息</p>",
           "example": "1.1.1.1/10",
           "member": "string",
           "name": "Cidr",
@@ -5405,7 +5405,7 @@
         },
         {
           "disabled": false,
-          "document": "目的模板名称",
+          "document": "<p>目的模板名称</p>",
           "example": "模板名称",
           "member": "string",
           "name": "ParameterName",
@@ -5415,7 +5415,7 @@
         },
         {
           "disabled": false,
-          "document": "端口模板名称",
+          "document": "<p>端口模板名称</p>",
           "example": "模板名称",
           "member": "string",
           "name": "ProtocolPortName",
@@ -5425,7 +5425,7 @@
         },
         {
           "disabled": false,
-          "document": "规则id  等同RuleUuid",
+          "document": "<p>规则id  等同RuleUuid</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -5435,7 +5435,7 @@
         },
         {
           "disabled": false,
-          "document": "域名解析的IP统计",
+          "document": "<p>域名解析的IP统计</p>",
           "example": "无",
           "member": "SgDnsParseCount",
           "name": "DnsParseCount",
@@ -5445,7 +5445,7 @@
         },
         {
           "disabled": false,
-          "document": "规则生效范围",
+          "document": "<p>规则生效范围</p>",
           "example": "SG",
           "member": "string",
           "name": "Scope",
@@ -5455,7 +5455,7 @@
         },
         {
           "disabled": false,
-          "document": "规则最新一次是否有改动 取值范围：0/1 0:否 1:是",
+          "document": "<p>规则最近一次是否有改动 取值范围：0/1 0:否 1:是</p>",
           "example": "1",
           "member": "int64",
           "name": "IsNew",
@@ -5465,7 +5465,7 @@
         },
         {
           "disabled": false,
-          "document": "规则归属的成员账号（当FwGroupId为cfwg-xxx或SourceType/DestType为instance/tag时必填)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则归属的成员账号（当FwGroupId为cfwg-xxx或SourceType/DestType为instance/tag时必填)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MemberInfo",
           "name": "BelongMember",
@@ -5836,7 +5836,7 @@
       "usage": "both"
     },
     "ServiceTemplateSpecification": {
-      "document": "安全组服务模版",
+      "document": "安全组服务模板",
       "members": [
         {
           "disabled": false,

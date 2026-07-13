@@ -6,13 +6,20 @@ Input:
 
 ```
 tccli tse ModifyCloudNativeAPIGatewayLLMModelService --cli-unfold-argument  \
-    --GatewayId gateway-01f976d0 \
-    --ModelServiceId 843a043a19d445a8a27e5be0fd182a0c \
-    --Name qwen \
-    --ModelSelector PassThrough \
+    --GatewayId gateway-9a766f25 \
+    --ModelServiceId 9f3d5fe7413a489cb9f13c84d10d5fd9 \
+    --Name dp-test-x \
+    --DefaultModel deepseek-v4-pro \
+    --ModelSelector Specify \
+    --EnableModelFallback False \
     --EnableModelParamCheck False \
-    --Description  \
-    --UpstreamURL https://dashscope.aliyuncs.com
+    --UpstreamURL https://api.deepseek.com \
+    --ConnectTimeout 10000 \
+    --WriteTimeout 60000 \
+    --ReadTimeout 60000 \
+    --UpstreamUrlMode AutoConcat \
+    --KeyRotationEnabled True \
+    --KeyRotationPeriodDays 9
 ```
 
 Output: 
@@ -20,7 +27,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "ec1c252b-1306-42d5-9ad1-368f76aade3f"
+        "RequestId": "153b86f2-7fb8-48dd-8e85-c697f68c9977"
     }
 }
 ```

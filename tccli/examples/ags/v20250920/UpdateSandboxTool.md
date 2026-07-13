@@ -6,21 +6,14 @@ Input:
 
 ```
 tccli ags UpdateSandboxTool --cli-unfold-argument  \
-    --ToolId sdt-ee4ywozw \
-    --Description 更新后的浏览器沙箱环境 \
-    --Tags.0.Key Environment \
-    --Tags.0.Value Staging \
-    --Tags.1.Key Team \
-    --Tags.1.Value AI-Agent \
-    --Tags.2.Key Version \
-    --Tags.2.Value v2.0
+    --ToolId sdt-********
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "custom-request-id-456"
+        "RequestId": "12345678-1234-1234-1234-1234567890ab"
     }
 }
 ```

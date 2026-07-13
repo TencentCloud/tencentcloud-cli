@@ -500,7 +500,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统id",
+          "document": "<p>文件系统id</p>",
           "example": "x-c60-1f2yq7b5",
           "member": "string",
           "name": "FileSystemId",
@@ -509,7 +509,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc网络ID",
+          "document": "<p>vpc网络ID</p>",
           "example": "vpc-5owubpl0",
           "member": "string",
           "name": "VpcId",
@@ -518,7 +518,7 @@
         },
         {
           "disabled": false,
-          "document": "子网id",
+          "document": "<p>子网id</p>",
           "example": "vpc-5owubpl0",
           "member": "string",
           "name": "SubnetId",
@@ -527,10 +527,19 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "CustomerCluster-2",
           "member": "string",
           "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区</p>",
+          "example": "ap-shanghai-5",
+          "member": "string",
+          "name": "Zone",
           "required": false,
           "type": "string"
         }
@@ -542,7 +551,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "客户端集群Id",
+          "document": "<p>客户端集群Id</p>",
           "example": "x-c60-1f2yq7b5-client-cluster-1",
           "member": "string",
           "name": "ClusterId",

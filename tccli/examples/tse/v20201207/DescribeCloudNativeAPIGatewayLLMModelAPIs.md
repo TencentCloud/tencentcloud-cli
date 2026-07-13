@@ -11,7 +11,8 @@ tccli tse DescribeCloudNativeAPIGatewayLLMModelAPIs --cli-unfold-argument  \
     --Offset None \
     --Filters.0.Name Name \
     --Filters.0.Values openai \
-    --Keyword openai
+    --Keyword openai \
+    --ConsumerId 048e0c69-ffb2-4ec7-aaaa-97c1e11f****
 ```
 
 Output: 

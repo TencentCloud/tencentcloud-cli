@@ -6039,7 +6039,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务系统 ID",
+          "document": "<p>业务系统 ID</p>",
           "example": "apm-6Dxp7Nd0B",
           "member": "string",
           "name": "InstanceId",
@@ -6048,7 +6048,7 @@
         },
         {
           "disabled": false,
-          "document": "业务系统名",
+          "document": "<p>业务系统名</p>",
           "example": "可观测-测试",
           "member": "string",
           "name": "Name",
@@ -6057,7 +6057,7 @@
         },
         {
           "disabled": false,
-          "document": "Tag 列表",
+          "document": "<p>Tag 列表</p>",
           "example": "无",
           "member": "ApmTag",
           "name": "Tags",
@@ -6066,7 +6066,7 @@
         },
         {
           "disabled": false,
-          "document": "业务系统描述",
+          "document": "<p>业务系统描述</p>",
           "example": "可观测-测试用的业务系统",
           "member": "string",
           "name": "Description",
@@ -6075,7 +6075,7 @@
         },
         {
           "disabled": false,
-          "document": "Trace 数据保存时长（单位：天）",
+          "document": "<p>Trace 数据保存时长（单位：天）</p>",
           "example": "7",
           "member": "int64",
           "name": "TraceDuration",
@@ -6084,7 +6084,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启计费",
+          "document": "<p>是否开启计费</p>",
           "example": "true",
           "member": "bool",
           "name": "OpenBilling",
@@ -6093,7 +6093,7 @@
         },
         {
           "disabled": false,
-          "document": "业务系统上报额度",
+          "document": "<p>业务系统上报额度</p>",
           "example": "10000000",
           "member": "uint64",
           "name": "SpanDailyCounters",
@@ -6102,7 +6102,7 @@
         },
         {
           "disabled": false,
-          "document": "错误率警示线，当应用的平均错误率超出该阈值时，系统会给出异常提示。",
+          "document": "<p>错误率警示线，当应用的平均错误率超出该阈值时，系统会给出异常提示。</p>",
           "example": "11",
           "member": "int64",
           "name": "ErrRateThreshold",
@@ -6111,7 +6111,7 @@
         },
         {
           "disabled": false,
-          "document": "采样率（单位：%）",
+          "document": "<p>采样率（单位：%）</p>",
           "example": "11",
           "member": "int64",
           "name": "SampleRate",
@@ -6120,7 +6120,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启错误采样（0=关, 1=开）",
+          "document": "<p>是否开启错误采样（0=关, 1=开）</p>",
           "example": "1",
           "member": "int64",
           "name": "ErrorSample",
@@ -6129,7 +6129,7 @@
         },
         {
           "disabled": false,
-          "document": "采样慢调用保存阈值（单位：ms）",
+          "document": "<p>采样慢调用保存阈值（单位：ms）</p>",
           "example": "500",
           "member": "int64",
           "name": "SlowRequestSavedThreshold",
@@ -6138,7 +6138,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启日志功能（0=关, 1=开）",
+          "document": "<p>是否开启日志功能（0=关, 1=开）</p>",
           "example": "0",
           "member": "int64",
           "name": "IsRelatedLog",
@@ -6147,7 +6147,7 @@
         },
         {
           "disabled": false,
-          "document": "日志地域，开启日志功能后才会生效",
+          "document": "<p>日志地域，开启日志功能后才会生效</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "LogRegion",
@@ -6156,7 +6156,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS 日志主题 ID，开启日志功能后才会生效",
+          "document": "<p>CLS 日志主题 ID，开启日志功能后才会生效</p>",
           "example": "cls-1c1cac",
           "member": "string",
           "name": "LogTopicID",
@@ -6165,7 +6165,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集，开启日志功能后才会生效",
+          "document": "<p>日志集，开启日志功能后才会生效</p>",
           "example": "cls-av2q1f1",
           "member": "string",
           "name": "LogSet",
@@ -6174,7 +6174,7 @@
         },
         {
           "disabled": false,
-          "document": "日志源，开启日志功能后才会生效",
+          "document": "<p>日志源，开启日志功能后才会生效</p>",
           "example": "CLS",
           "member": "string",
           "name": "LogSource",
@@ -6183,7 +6183,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义展示标签列表",
+          "document": "<p>用户自定义展示标签列表</p>",
           "example": "[\"oneTag\"]",
           "member": "string",
           "name": "CustomShowTags",
@@ -6192,7 +6192,7 @@
         },
         {
           "disabled": false,
-          "document": "修改计费模式（1为预付费，0为按量付费）",
+          "document": "<p>修改计费模式（1为预付费，0为按量付费）</p>",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
@@ -6201,7 +6201,7 @@
         },
         {
           "disabled": false,
-          "document": "响应时间警示线",
+          "document": "<p>响应时间警示线</p>",
           "example": "500",
           "member": "int64",
           "name": "ResponseDurationWarningThreshold",
@@ -6210,7 +6210,7 @@
         },
         {
           "disabled": false,
-          "document": "是否免费（0=付费版；1=TSF 受限免费版；2=免费版），默认0",
+          "document": "<p>是否免费（0=付费版；1=TSF 受限免费版；2=免费版），默认0</p>",
           "example": "0",
           "member": "int64",
           "name": "Free",
@@ -6219,7 +6219,7 @@
         },
         {
           "disabled": false,
-          "document": "是否关联 Dashboard（0=关,1=开）",
+          "document": "<p>是否关联 Dashboard（0=关,1=开）</p>",
           "example": "0",
           "member": "int64",
           "name": "IsRelatedDashboard",
@@ -6228,7 +6228,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的 Dashboard ID，开启关联 Dashboard 后才会生效",
+          "document": "<p>关联的 Dashboard ID，开启关联 Dashboard 后才会生效</p>",
           "example": "dashboard-agv1br13b",
           "member": "string",
           "name": "DashboardTopicID",
@@ -6237,7 +6237,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启 SQL 注入检测（0=关,1=开）",
+          "document": "<p>是否开启 SQL 注入检测（0=关,1=开）</p>",
           "example": "0",
           "member": "int64",
           "name": "IsSqlInjectionAnalysis",
@@ -6246,7 +6246,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启组件漏洞检测（0=关,1=开）",
+          "document": "<p>是否开启组件漏洞检测（0=关,1=开）</p>",
           "example": "0",
           "member": "int64",
           "name": "IsInstrumentationVulnerabilityScan",
@@ -6255,7 +6255,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启远程命令攻击检测",
+          "document": "<p>是否开启远程命令攻击检测</p>",
           "example": "0",
           "member": "int64",
           "name": "IsRemoteCommandExecutionAnalysis",
@@ -6264,7 +6264,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启内存马检测",
+          "document": "<p>是否开启内存马检测</p>",
           "example": "0",
           "member": "int64",
           "name": "IsMemoryHijackingAnalysis",
@@ -6273,7 +6273,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS索引类型(0=全文索引，1=键值索引)",
+          "document": "<p>CLS索引类型(0=全文索引，1=键值索引)</p>",
           "example": "0",
           "member": "int64",
           "name": "LogIndexType",
@@ -6282,7 +6282,7 @@
         },
         {
           "disabled": false,
-          "document": "traceId的索引key: 当CLS索引类型为键值索引时生效",
+          "document": "<p>traceId的索引key: 当CLS索引类型为键值索引时生效</p>",
           "example": "trace_id",
           "member": "string",
           "name": "LogTraceIdKey",
@@ -6291,7 +6291,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启删除任意文件检测（0-关闭，1-开启）",
+          "document": "<p>是否开启删除任意文件检测（0-关闭，1-开启）</p>",
           "example": "0",
           "member": "int64",
           "name": "IsDeleteAnyFileAnalysis",
@@ -6300,7 +6300,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启读取任意文件检测（0-关闭，1-开启）",
+          "document": "<p>是否开启读取任意文件检测（0-关闭，1-开启）</p>",
           "example": "0",
           "member": "int64",
           "name": "IsReadAnyFileAnalysis",
@@ -6309,7 +6309,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启上传任意文件检测（0-关闭，1-开启）",
+          "document": "<p>是否开启上传任意文件检测（0-关闭，1-开启）</p>",
           "example": "0",
           "member": "int64",
           "name": "IsUploadAnyFileAnalysis",
@@ -6318,7 +6318,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启包含任意文件检测（0-关闭，1-开启）",
+          "document": "<p>是否开启包含任意文件检测（0-关闭，1-开启）</p>",
           "example": "0",
           "member": "int64",
           "name": "IsIncludeAnyFileAnalysis",
@@ -6327,7 +6327,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启目录遍历检测（0-关闭，1-开启）",
+          "document": "<p>是否开启目录遍历检测（0-关闭，1-开启）</p>",
           "example": "0",
           "member": "int64",
           "name": "IsDirectoryTraversalAnalysis",
@@ -6336,7 +6336,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启模板引擎注入检测（0-关闭，1-开启）",
+          "document": "<p>是否开启模板引擎注入检测（0-关闭，1-开启）</p>",
           "example": "0",
           "member": "int64",
           "name": "IsTemplateEngineInjectionAnalysis",
@@ -6345,7 +6345,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启脚本引擎注入检测（0-关闭，1-开启）",
+          "document": "<p>是否开启脚本引擎注入检测（0-关闭，1-开启）</p>",
           "example": "0",
           "member": "int64",
           "name": "IsScriptEngineInjectionAnalysis",
@@ -6354,7 +6354,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启表达式注入检测（0-关闭，1-开启）",
+          "document": "<p>是否开启表达式注入检测（0-关闭，1-开启）</p>",
           "example": "0",
           "member": "int64",
           "name": "IsExpressionInjectionAnalysis",
@@ -6363,7 +6363,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启JNDI注入检测（0-关闭，1-开启）",
+          "document": "<p>是否开启JNDI注入检测（0-关闭，1-开启）</p>",
           "example": "0",
           "member": "int64",
           "name": "IsJNDIInjectionAnalysis",
@@ -6372,7 +6372,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启JNI注入检测（0-关闭，1-开启）",
+          "document": "<p>是否开启JNI注入检测（0-关闭，1-开启）</p>",
           "example": "0",
           "member": "int64",
           "name": "IsJNIInjectionAnalysis",
@@ -6381,7 +6381,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启Webshell后门检测（0-关闭，1-开启）",
+          "document": "<p>是否开启Webshell后门检测（0-关闭，1-开启）</p>",
           "example": "0",
           "member": "int64",
           "name": "IsWebshellBackdoorAnalysis",
@@ -6390,7 +6390,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启反序列化检测（0-关闭，1-开启）",
+          "document": "<p>是否开启反序列化检测（0-关闭，1-开启）</p>",
           "example": "0",
           "member": "int64",
           "name": "IsDeserializationAnalysis",
@@ -6399,7 +6399,7 @@
         },
         {
           "disabled": false,
-          "document": "URL长分段收敛阈值",
+          "document": "<p>URL长分段收敛阈值</p>",
           "example": "40",
           "member": "int64",
           "name": "UrlLongSegmentThreshold",
@@ -6408,7 +6408,7 @@
         },
         {
           "disabled": false,
-          "document": "URL数字分段收敛阈值",
+          "document": "<p>URL数字分段收敛阈值</p>",
           "example": "5",
           "member": "int64",
           "name": "UrlNumberSegmentThreshold",
@@ -6417,12 +6417,39 @@
         },
         {
           "disabled": false,
-          "document": "spanId的索引key: 当CLS索引类型为键值索引时生效",
+          "document": "<p>spanId的索引key: 当CLS索引类型为键值索引时生效</p>",
           "example": "span_id",
           "member": "string",
           "name": "LogSpanIdKey",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启探针头采样</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableHeadSampler",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>头采类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 默认</li></ul>",
+          "example": "parentbased_traceidratio",
+          "member": "string",
+          "name": "HeadSamplerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>头采采样率</p><p>取值范围：[0, 100]</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "HeadSamplerArg",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

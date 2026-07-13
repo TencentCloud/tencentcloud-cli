@@ -670,6 +670,14 @@
         "title": "实例缩容"
       }
     ],
+    "IsolatedInstancePre": [
+      {
+        "document": "隔离预付费实例",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolatedInstancePre\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-zanbmvve\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e9ec1976-4b9b-4379-99e4-5a0158d01ffb\",\n        \"Result\": {\n            \"Data\": {\n                \"DealNames\": [\n                    \"20250117797002527434061\"\n                ],\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-zanbmvve\"\n            },\n            \"DeleteRouteTimestamp\": null,\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok\"\n        }\n    }\n}",
+        "title": "隔离预付费实例"
+      }
+    ],
     "ModifyAccessPolicy": [
       {
         "document": "修改实例公网IP白名单配置",

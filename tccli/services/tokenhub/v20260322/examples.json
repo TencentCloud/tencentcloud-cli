@@ -8,6 +8,14 @@
         "title": "CreateApiKey"
       }
     ],
+    "CreateEndpoint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEndpoint\n<公共请求参数>\n\n{\n    \"EndpointName\": \"test-endpoint\",\n    \"ModelId\": \"deepseek-v3.2\",\n    \"ChargeType\": \"FREE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Endpoint\": {},\n        \"EndpointId\": \"ep-mxorl8ln\",\n        \"RequestId\": \"41cb8232-655d-42b4-b021-4f500866bd57\"\n    }\n}",
+        "title": "正常响应"
+      }
+    ],
     "CreateGlossary": [
       {
         "document": "",
@@ -46,6 +54,14 @@
         "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApiKey\n<公共请求参数>\n\n{\n    \"ApiKeyId\": \"ak-20260325-xxxxxx\",\n    \"Platform\": \"maas\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d35eb080-e39b-4c61-8f04-86f3c66ba533\"\n    }\n}",
         "title": "删除 API 密钥"
+      }
+    ],
+    "DeleteEndpoint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEndpoint\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6fb80692-71e3-42d2-9fde-d4722b6c62de\"\n    }\n}",
+        "title": "正常响应"
       }
     ],
     "DeleteGlossary": [
@@ -88,6 +104,14 @@
         "title": "查询 API 密钥列表。"
       }
     ],
+    "DescribeEndpoint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEndpoint\n<公共请求参数>\n\n{\n    \"EndpointId\": \"ep-uikic4v5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Endpoint\": {\n            \"ChargeDetail\": \"{\\\"FreeQuota\\\":{\\\"TotalQuota\\\":200,\\\"UsedQuota\\\":0,\\\"UsagePercent\\\":0,\\\"ExpireTime\\\":\\\"2026-09-21T17:39:22.10566639+08:00\\\"}}\",\n            \"ChargeType\": \"FREE\",\n            \"EndpointId\": \"ep-test\",\n            \"EndpointName\": \"测试服务\",\n            \"ModelId\": \"deepseek-v3.2\",\n            \"ModelName\": \"deepseek-v3.2\",\n            \"PaymentEnabled\": false,\n            \"ServiceType\": \"TEXT_GENERATION\",\n            \"Status\": \"ACTIVE\"\n        },\n        \"RequestId\": \"6903b78b-a277-46c7-9bb6-805da0ec6a57\"\n    }\n}",
+        "title": "正常响应"
+      }
+    ],
     "DescribeGlossaries": [
       {
         "document": "",
@@ -102,6 +126,14 @@
         "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlossaryEntries\n<公共请求参数>\n\n{\n    \"GlossaryId\": \"c5a3fa588af94ddaa50ca896ae6392e5\"\n}",
         "output": "{\n    \"Response\": {\n        \"Entries\": [\n            {\n                \"EntryId\": \"b395853160e117177041f0dff7a56274\",\n                \"SourceTerm\": \"云服务器222\",\n                \"TargetTerm\": \"Cloud Server222\",\n                \"UpdatedAt\": 1779970384\n            },\n            {\n                \"EntryId\": \"bfbc15bbefa2dfcec068372c774ef45c\",\n                \"SourceTerm\": \"云服务器\",\n                \"TargetTerm\": \"Cloud Server\",\n                \"UpdatedAt\": 1779970384\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 20,\n        \"RequestId\": \"b32c2fcf-bbcc-40a0-8b6c-6af9a4e8a967\",\n        \"Total\": 2\n    }\n}",
         "title": "DescribeGlossaryEntries"
+      }
+    ],
+    "DescribeModelEndpointList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelEndpointList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ModelEndpointSet\": [\n            {\n                \"ModelId\": \"hunyuan-role-latest\",\n                \"ModelName\": \"Hunyuan-role\",\n                \"PaymentEnabled\": false,\n                \"ServiceType\": \"TEXT_GENERATION\",\n                \"Status\": \"INACTIVE\"\n            },\n            {\n                \"ModelId\": \"minimax-m2.5\",\n                \"ModelName\": \"MiniMax-M2.5\",\n                \"PaymentEnabled\": false,\n                \"ServiceType\": \"TEXT_GENERATION\",\n                \"Status\": \"INACTIVE\"\n            },\n            {\n                \"ModelId\": \"glm-5\",\n                \"ModelName\": \"GLM-5\",\n                \"PaymentEnabled\": false,\n                \"ServiceType\": \"TEXT_GENERATION\",\n                \"Status\": \"INACTIVE\"\n            },\n            {\n                \"ModelId\": \"kimi-k2.5\",\n                \"ModelName\": \"kimi-k2.5\",\n                \"PaymentEnabled\": false,\n                \"ServiceType\": \"TEXT_GENERATION\",\n                \"Status\": \"INACTIVE\"\n            },\n            {\n                \"ModelId\": \"deepseek-v3.2\",\n                \"ModelName\": \"Deepseek-v3.2\",\n                \"PaymentEnabled\": false,\n                \"ServiceType\": \"TEXT_GENERATION\",\n                \"Status\": \"INACTIVE\"\n            },\n            {\n                \"ModelId\": \"hunyuan-2.0-instruct-20251111\",\n                \"ModelName\": \"HY 2.0 Instruct\",\n                \"PaymentEnabled\": false,\n                \"ServiceType\": \"TEXT_GENERATION\",\n                \"Status\": \"INACTIVE\"\n            },\n            {\n                \"ModelId\": \"hunyuan-2.0-thinking-20251109\",\n                \"ModelName\": \"HY 2.0 Think\",\n                \"PaymentEnabled\": false,\n                \"ServiceType\": \"TEXT_GENERATION\",\n                \"Status\": \"INACTIVE\"\n            },\n            {\n                \"ModelId\": \"kimi-k2-thinking-turbo\",\n                \"ModelName\": \"kimi-k2-thinking-turbo\",\n                \"PaymentEnabled\": false,\n                \"ServiceType\": \"TEXT_GENERATION\",\n                \"Status\": \"INACTIVE\"\n            },\n            {\n                \"ModelId\": \"deepseek-v3.1-terminus\",\n                \"ModelName\": \"Deepseek-v3.1\",\n                \"PaymentEnabled\": false,\n                \"ServiceType\": \"TEXT_GENERATION\",\n                \"Status\": \"INACTIVE\"\n            },\n            {\n                \"ModelId\": \"kimi-k2-turbo-preview\",\n                \"ModelName\": \"kimi-k2-turbo-preview\",\n                \"PaymentEnabled\": false,\n                \"ServiceType\": \"TEXT_GENERATION\",\n                \"Status\": \"INACTIVE\"\n            },\n            {\n                \"ModelId\": \"deepseek-r1-0528\",\n                \"ModelName\": \"Deepseek-r1-0528\",\n                \"PaymentEnabled\": false,\n                \"ServiceType\": \"TEXT_GENERATION\",\n                \"Status\": \"INACTIVE\"\n            },\n            {\n                \"ModelId\": \"deepseek-v3-0324\",\n                \"ModelName\": \"Deepseek-v3-0324\",\n                \"PaymentEnabled\": false,\n                \"ServiceType\": \"TEXT_GENERATION\",\n                \"Status\": \"INACTIVE\"\n            }\n        ],\n        \"RequestId\": \"96f7a35a-31fe-47c1-b481-ff9c95f716ee\",\n        \"TotalCount\": 12\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "DescribeModelList": [
@@ -182,6 +214,14 @@
         "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApiKeyStatus\n<公共请求参数>\n\n{\n    \"ApiKeyId\": \"ak-20260325-xxxxxx\",\n    \"Platform\": \"maas\",\n    \"Status\": \"disable\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0f2e294c-6c10-4ff6-8165-c25b3c5d21e0\"\n    }\n}",
         "title": "更新 API 密钥状态为禁用"
+      }
+    ],
+    "ModifyEndpoint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEndpoint\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7e47d49c-8b3b-40d8-9c52-794c5a20b97f\"\n    }\n}",
+        "title": " 正常响应"
       }
     ],
     "ModifyGlossaryEntries": [

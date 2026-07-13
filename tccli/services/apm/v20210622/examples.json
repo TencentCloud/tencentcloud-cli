@@ -236,10 +236,10 @@
     ],
     "ModifyApmInstance": [
       {
-        "document": "修改 APM 业务系统参数",
-        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApmInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"apm-CVfliqa8U\",\n    \"Tags\": [],\n    \"Description\": \"测试业务系统\",\n    \"TraceDuration\": 0,\n    \"Name\": \"测试业务系统\",\n    \"OpenBilling\": true,\n    \"SpanDailyCounters\": 1,\n    \"ErrRateThreshold\": 5,\n    \"SampleRate\": 50,\n    \"ErrorSample\": 1,\n    \"SlowRequestSavedThreshold\": 500,\n    \"IsRelatedLog\": 0,\n    \"LogRegion\": \"\",\n    \"LogTopicID\": \"\",\n    \"LogSet\": \"\",\n    \"LogSource\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-test-test\"\n    }\n}",
-        "title": "修改 APM 业务系统"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApmInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"apm-UUGYsY6rL\",\n    \"Name\": \"test-for-access\",\n    \"Tags\": [\n        {\n            \"Key\": \"负责人\",\n            \"Value\": \"leonnchen\"\n        },\n        {\n            \"Key\": \"运营产品\",\n            \"Value\": \"云监控产品\"\n        },\n        {\n            \"Key\": \"运营部门\",\n            \"Value\": \"云监控产品中心_1120\"\n        }\n    ],\n    \"TraceDuration\": 7,\n    \"SpanDailyCounters\": 0,\n    \"ErrRateThreshold\": 5,\n    \"SlowRequestSavedThreshold\": 500,\n    \"ErrorSample\": 1,\n    \"IsRelatedLog\": 0,\n    \"LogTopicID\": \"\",\n    \"LogRegion\": \"\",\n    \"CustomShowTags\": [],\n    \"PayMode\": 0,\n    \"ResponseDurationWarningThreshold\": 500,\n    \"IsInstrumentationVulnerabilityScan\": 1,\n    \"IsSqlInjectionAnalysis\": 1,\n    \"IsRelatedDashboard\": 0,\n    \"DashboardTopicID\": \"\",\n    \"Free\": 0,\n    \"LogTraceIdKey\": \"\",\n    \"IsRemoteCommandExecutionAnalysis\": 0,\n    \"IsMemoryHijackingAnalysis\": 0,\n    \"IsTemplateEngineInjectionAnalysis\": 0,\n    \"IsScriptEngineInjectionAnalysis\": 0,\n    \"IsExpressionInjectionAnalysis\": 0,\n    \"IsJNDIInjectionAnalysis\": 0,\n    \"IsJNIInjectionAnalysis\": 0,\n    \"IsWebshellBackdoorAnalysis\": 0,\n    \"IsDeserializationAnalysis\": 0,\n    \"IsDeleteAnyFileAnalysis\": 0,\n    \"IsReadAnyFileAnalysis\": 0,\n    \"IsUploadAnyFileAnalysis\": 0,\n    \"IsIncludeAnyFileAnalysis\": 0,\n    \"IsDirectoryTraversalAnalysis\": 0,\n    \"UrlLongSegmentThreshold\": 40,\n    \"UrlNumberSegmentThreshold\": 5,\n    \"LogSpanIdKey\": \"\",\n    \"EnableHeadSampler\": true,\n    \"HeadSamplerArg\": 12,\n    \"HeadSamplerType\": \"parentbased_traceidratio\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c728538-41ba-486d-ae09-60dd08183e46\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "ModifyApmPrometheusRule": [

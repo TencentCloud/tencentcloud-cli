@@ -180,7 +180,7 @@
       {
         "document": "通过该接口查询指定实例备份 ID 的备份信息。",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-g9my5vt7\",\n    \"BackupId\": \"154571841-1165701309-438602494\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BackupId\": \"154571841-1165701309-438602494\",\n        \"BackupSize\": 528,\n        \"BackupType\": \"0\",\n        \"EndTime\": \"2022-12-19 19:42:20\",\n        \"InstanceType\": 9,\n        \"Locked\": 0,\n        \"MemSize\": 2048,\n        \"Remark\": \"test005\",\n        \"ReplicasNum\": 1,\n        \"RequestId\": \"add15b91-8f3c-4ff3-ba52-7c64c9c435ba\",\n        \"ShardNum\": 3,\n        \"StartTime\": \"2022-12-19 19:41:42\",\n        \"Status\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupId\": \"154571841-1165701309-438602494\",\n        \"BackupSize\": 528,\n        \"BackupType\": \"0\",\n        \"EndTime\": \"2022-12-19 19:42:20\",\n        \"InstanceType\": 9,\n        \"Locked\": 0,\n        \"MemSize\": 2048,\n        \"Remark\": \"test005\",\n        \"ReplicasNum\": 1,\n        \"RequestId\": \"add15b91-8f3c-4ff3-ba52-7c64c9c435ba\",\n        \"ShardNum\": 3,\n        \"StartTime\": \"2022-12-19 19:41:42\",\n        \"Status\": 2,\n        \"DecryptKey\": \"rFGxk4E**********************U/nWERxvFx+FAY=\",\n        \"KmsKeyId\": \"b2f531ee-****-****-b8b2-52540087****\"\n    }\n}",
         "title": "查询备份信息详情"
       }
     ],
@@ -250,10 +250,10 @@
     ],
     "DescribeInstanceBackups": [
       {
-        "document": "通过该接口查询实例 crs-c7nuafdt 的备份列表。",
-        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceBackups\n<公共请求参数>\n\n{\n    \"Status\": [\n        2\n    ],\n    \"InstanceId\": \"crs-c7nuafdt\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"BackupSet\": [\n            {\n                \"BackupId\": \"154572601-1165734322-153731238\",\n                \"BackupSize\": 191,\n                \"BackupType\": \"0\",\n                \"EndTime\": \"2022-12-23 16:25:18\",\n                \"ExpireTime\": \"2022-12-30 16:24:41\",\n                \"FileType\": \"RDB-Redis 4.0\",\n                \"FullBackup\": 0,\n                \"InstanceId\": \"crs-c7nuafdt\",\n                \"InstanceName\": \"备份test\",\n                \"InstanceType\": 6,\n                \"Locked\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"Remark\": \"test001\",\n                \"StartTime\": \"2022-12-23 16:24:41\",\n                \"Status\": 2\n            }\n        ],\n        \"RequestId\": \"2a95bfa4-ac8c-43cd-b7b1-5a93817d8de2\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "示例1"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceBackups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-ei43p3gr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupSet\": [\n            {\n                \"BackupId\": \"165706342-5832225-1641692389\",\n                \"BackupSize\": 537,\n                \"BackupType\": \"1\",\n                \"Encrypted\": false,\n                \"EndTime\": \"2026-06-01 02:01:09\",\n                \"ExpireTime\": \"2026-06-08 02:00:48\",\n                \"FileType\": \"RDB-Redis 6.2\",\n                \"FullBackup\": 0,\n                \"InstanceId\": \"crs-ei43p3gr\",\n                \"InstanceName\": \"testbackup\",\n                \"InstanceType\": 16,\n                \"Locked\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"Remark\": \"\",\n                \"StartTime\": \"2026-06-01 02:00:48\",\n                \"Status\": 2\n            }\n        ],\n        \"TotalCount\": 6,\n        \"RequestId\": \"66bb2e15-b864-46ea-894d-529885087fb8\"\n    }\n}",
+        "title": "示例 1"
       }
     ],
     "DescribeInstanceDTSInfo": [

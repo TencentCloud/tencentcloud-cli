@@ -2808,7 +2808,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总实例个数",
+          "document": "<p>总实例个数</p>",
           "example": "3",
           "member": "int64",
           "name": "InstanceCount",
@@ -2818,7 +2818,7 @@
         },
         {
           "disabled": false,
-          "document": "运行实例个数",
+          "document": "<p>运行实例个数</p>",
           "example": "2",
           "member": "int64",
           "name": "RunInstanceCount",
@@ -2828,7 +2828,7 @@
         },
         {
           "disabled": false,
-          "document": "应用下部署组个数",
+          "document": "<p>应用下部署组个数</p>",
           "example": "2",
           "member": "int64",
           "name": "GroupCount",
@@ -2838,7 +2838,7 @@
         },
         {
           "disabled": false,
-          "document": "运行中部署组个数",
+          "document": "<p>运行中部署组个数</p>",
           "example": "2",
           "member": "string",
           "name": "RunningGroupCount",
@@ -2848,12 +2848,22 @@
         },
         {
           "disabled": false,
-          "document": "异常部署组个数",
+          "document": "<p>异常部署组个数</p>",
           "example": "0",
           "member": "string",
           "name": "AbnormalCount",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像tag数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ImageTagCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

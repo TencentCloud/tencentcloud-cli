@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tse CreateCloudNativeAPIGatewayLLMModelService --cli-unfold-argument  \
-    --GatewayId gateway-01f976d0 \
+    --GatewayId gateway-******** \
     --Name qwen \
     --ServiceType LLMService \
     --ModelProvider qwen \
@@ -14,7 +14,8 @@ tccli tse CreateCloudNativeAPIGatewayLLMModelService --cli-unfold-argument  \
     --ModelSelector PassThrough \
     --SecretKeyIds secret-de0acbccee344b \
     --EnableModelParamCheck False \
-    --UpstreamURL https://dashscope.aliyuncs.com
+    --UpstreamURL https://dashscope.aliyuncs.com \
+    --SourceId cls-********
 ```
 
 Output: 

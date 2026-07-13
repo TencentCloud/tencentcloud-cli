@@ -1,47 +1,4 @@
-**Example 1: 驾驶证主页识别示例   **
-
-驾驶证主页识别示例   
-
-Input: 
-
-```
-tccli ocr DriverLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/vehicle/DriverLicenseOCR/DriverLicenseOCR1.jpg \
-    --CardSide FRONT
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Address": "广东省深圳市南山区腾讯大厦",
-        "ArchivesCode": "",
-        "CardCode": "440305198305101408",
-        "Class": "C2",
-        "CumulativeScore": "",
-        "DateOfBirth": "1983-05-10",
-        "DateOfFirstIssue": "2005-05-01",
-        "EndDate": "2025-10-01",
-        "IssuingAuthority": "上海市公安局交通警察总队",
-        "Name": "刘洋",
-        "Nationality": "中国",
-        "RecognizeWarnCode": [],
-        "RecognizeWarnMsg": [],
-        "Record": "",
-        "RequestId": "9b0d1ee9-8fdb-4194-be58-212bee88a7fd",
-        "Sex": "女",
-        "StartDate": "2015-10-01",
-        "CurrentTime": "",
-        "GenerateTime": "",
-        "State": "",
-        "BackPageName": "",
-        "BackPageCardCode": "",
-        "DriverLicenseType": ""
-    }
-}
-```
-
-**Example 2: 驾驶证主页告警识别示例 **
+**Example 1: 驾驶证主页告警识别示例 **
 
 驾驶证主页告警识别示例 
 
@@ -78,6 +35,49 @@ Output:
         "RequestId": "c5ceedaa-cb6f-4210-af49-0a5dee461259",
         "Sex": "男",
         "StartDate": "2011-10-01",
+        "CurrentTime": "",
+        "GenerateTime": "",
+        "State": "",
+        "BackPageName": "",
+        "BackPageCardCode": "",
+        "DriverLicenseType": ""
+    }
+}
+```
+
+**Example 2: 驾驶证主页识别示例   **
+
+驾驶证主页识别示例   
+
+Input: 
+
+```
+tccli ocr DriverLicenseOCR --cli-unfold-argument  \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/vehicle/DriverLicenseOCR/DriverLicenseOCR1.jpg \
+    --CardSide FRONT
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Address": "广东省深圳市南山区腾讯大厦",
+        "ArchivesCode": "",
+        "CardCode": "440305198305101408",
+        "Class": "C2",
+        "CumulativeScore": "",
+        "DateOfBirth": "1983-05-10",
+        "DateOfFirstIssue": "2005-05-01",
+        "EndDate": "2025-10-01",
+        "IssuingAuthority": "上海市公安局交通警察总队",
+        "Name": "刘洋",
+        "Nationality": "中国",
+        "RecognizeWarnCode": [],
+        "RecognizeWarnMsg": [],
+        "Record": "",
+        "RequestId": "9b0d1ee9-8fdb-4194-be58-212bee88a7fd",
+        "Sex": "女",
+        "StartDate": "2015-10-01",
         "CurrentTime": "",
         "GenerateTime": "",
         "State": "",

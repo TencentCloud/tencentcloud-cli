@@ -9957,6 +9957,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AIGC 生视频任务的用量信息。</p>",
+          "example": "无",
+          "member": "AigcVideoTaskUsage",
+          "name": "Usage",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10062,6 +10072,32 @@
           "name": "UsageType",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AigcVideoTaskUsage": {
+      "document": "AIGC 生视频任务的用量。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入 Token 数目。</p>",
+          "example": "2027",
+          "member": "int64",
+          "name": "InputTokens",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>思考产生的 Token 数目。</p>",
+          "example": "507",
+          "member": "int64",
+          "name": "ThoughtTokens",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -2350,8 +2350,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "沙箱工具ID",
-          "example": "sdt-dibk4rra",
+          "document": "<p>沙箱工具ID</p>",
+          "example": "sdt-********",
           "member": "string",
           "name": "ToolId",
           "required": true,
@@ -2359,8 +2359,8 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具描述，最大长度200字符",
-          "example": "这是一个沙箱",
+          "document": "<p>沙箱工具描述，最大长度200字符</p>",
+          "example": "沙箱工具一号",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2368,7 +2368,7 @@
         },
         {
           "disabled": false,
-          "document": "网络配置",
+          "document": "<p>网络配置</p>",
           "example": "无",
           "member": "NetworkConfiguration",
           "name": "NetworkConfiguration",
@@ -2377,7 +2377,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -2386,7 +2386,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具自定义配置",
+          "document": "<p>沙箱工具自定义配置</p>",
           "example": "无",
           "member": "CustomConfiguration",
           "name": "CustomConfiguration",

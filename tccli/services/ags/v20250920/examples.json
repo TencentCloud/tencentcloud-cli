@@ -123,8 +123,8 @@
     "UpdateSandboxTool": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\",\n    \"Description\": \"更新后的浏览器沙箱环境\",\n    \"Tags\": [\n        {\n            \"Key\": \"Environment\",\n            \"Value\": \"Staging\"\n        },\n        {\n            \"Key\": \"Team\",\n            \"Value\": \"AI-Agent\"\n        },\n        {\n            \"Key\": \"Version\",\n            \"Value\": \"v2.0\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"custom-request-id-456\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678-1234-1234-1234-1234567890ab\"\n    }\n}",
         "title": "更新沙箱工具"
       }
     ]
